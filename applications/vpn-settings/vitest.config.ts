@@ -54,7 +54,7 @@ export default defineConfig({
             { find: /^.+\.(css|scss|less)$/, replacement: styleMock },
         ],
         coverage: {
-            enabled: false,
+            enabled: process.env.COLLECT_COVERAGE === 'true',
             provider: 'v8',
             reporter: ['text-summary', 'json'],
             include: ['src/**/*.{js,jsx,ts,tsx}'],

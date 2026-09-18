@@ -1,6 +1,7 @@
-const { JEST_MAX_WORKERS, JEST_WORKER_IDLE_MEMORY_LIMIT, JEST_CACHE_DIRECTORY } = process.env;
+const { JEST_MAX_WORKERS, JEST_WORKER_IDLE_MEMORY_LIMIT, JEST_CACHE_DIRECTORY, COLLECT_COVERAGE } = process.env;
 
 module.exports = {
+    collectCoverage: COLLECT_COVERAGE === 'true',
     ...(JEST_MAX_WORKERS ? { maxWorkers: JEST_MAX_WORKERS } : {}),
     // Only set when the env var is present: any value here, even a generous one, stops jest
     // from running tests in the main process, so an unconditional default would cost every

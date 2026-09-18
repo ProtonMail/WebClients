@@ -14,7 +14,7 @@
     "standalone-sheet": "cross-env STANDALONE_SHEET=true TS_NODE_TRANSPILE_ONLY=true TS_NODE_IGNORE_DIAGNOSTICS=5011 TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --babelLoader --noLogicalScss --no-api-proxy --no-error-logs --port 8090",
     "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --babelLoader --noLogicalScss",
     "test": "jest",
-    "test:ci": "jest --runInBand --ci --coverage --logHeapUsage",
+    "test:ci": "jest --runInBand --ci --logHeapUsage",
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {
