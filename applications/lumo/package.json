@@ -112,7 +112,7 @@
         "fake-indexeddb": "^6.2.5",
         "postcss": "^8.5.28",
         "sass": "^1.80.3",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "webpack": "^5.111.1"
     },
     "msw": {

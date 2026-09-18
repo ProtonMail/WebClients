@@ -21,6 +21,7 @@ import {
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { APERTUS_15_MODEL } from '@proton/lumo-api-client/core/chat-completions';
+import type { ChatCompletionsRequest } from '@proton/lumo-api-client/core/types';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -37,7 +38,6 @@ import {
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import { getLastRequestForMessage } from '../../services/feedback/lastRequestStore';
 import type { Message } from '../../types';
-import type { ChatCompletionsRequest } from '../../types-api';
 import {
     hasSeenNegativeFeedbackIntro,
     hasSeenPositiveFeedbackIntro,

@@ -1080,7 +1080,7 @@ export type MasterKeysBundle = {
     masterKeys: MasterKeysById;
 };
 
-export type MasterKeyFailureReason = 'undecryptable_envelopes' | 'no_primary_envelope' | 'unknown';
+type MasterKeyFailureReason = 'undecryptable_envelopes' | 'no_primary_envelope' | 'unknown';
 
 export type MasterKeyFailure = {
     message: string;

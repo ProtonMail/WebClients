@@ -12,7 +12,7 @@ interface Props {
     show: boolean;
 }
 
-export const ArtifactCreateSpotlightContent = () => {
+const ArtifactCreateSpotlightContent = () => {
     return (
         <div className="flex flex-column flex-nowrap items-start">
             <p className="text-lg text-bold m-0 mb-1">{c('collider_2025: Spotlight')
