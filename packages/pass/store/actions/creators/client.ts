@@ -62,11 +62,11 @@ export const bootSuccess = createAction('boot::success', (payload?: SyncResult) 
     pipe(withRequest({ id: bootRequest(), status: 'success' }), withStreamableAction)({ payload })
 );
 
-export const syncIntent = createAction('sync::intent', () =>
+export const syncIntent = createAction('sync::intent', (options?: { message?: string }) =>
     pipe(
         withRequest({ id: syncRequest(), status: 'start' }),
         withNotification({
-            text: c('Info').t`Syncing your vaults…`,
+            text: options?.message ?? c('Info').t`Syncing your vaults…`,
             type: 'info',
             expiration: -1,
             showCloseButton: false,
