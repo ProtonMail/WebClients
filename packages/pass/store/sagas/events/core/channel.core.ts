@@ -21,6 +21,7 @@ import { withRevalidate } from '../../../request/enhancers';
 import {
     selectAllAddresses,
     selectLatestEventId,
+    selectLatestUserEventId,
     selectSyncStrategy,
     selectUser,
     selectUserPlan,
@@ -65,7 +66,9 @@ export function* onUserRefreshed(eventUser?: User, keyPassword?: string) {
  * member is added to a group and needs it to decrypt its shared vaults. */
 export function* refreshUserData(extensionId: Maybe<string>, keyPassword?: string) {
     const data: HydratedUserState = yield call(getUserData, extensionId);
-    yield put(userRefresh(data));
+    /** `getUserData` returns a `null` userEventId: don't merge it and keep the current one */
+    const userEventId: MaybeNull<string> = yield select(selectLatestUserEventId);
+    yield put(userRefresh({ ...data, userEventId }));
     yield call(onUserRefreshed, data.user, keyPassword);
 }
 
