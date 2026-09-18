@@ -9,16 +9,16 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import ChallengeV5 from '@proton/challenge/Challenge';
-import { CHALLENGE_PATHNAME, getChallengeSrc } from '@proton/challenge/getChallengeSrc';
-import type { ChallengeRef as ChallengeV5Ref } from '@proton/challenge/interface';
+import ChallengeV5 from '@proton/challenge/v5/Challenge';
+import { CHALLENGE_PATHNAME, getChallengeSrc } from '@proton/challenge/v5/getChallengeSrc';
+import type { ChallengeRef as ChallengeV5Ref } from '@proton/challenge/v5/interface';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import Challenge from '@proton/components/containers/challenge/Challenge';
-import type { ChallengeRef, ChallengeResult } from '@proton/components/containers/challenge/interface';
+import ChallengeV4 from '@proton/components/containers/challenge/ChallengeV4';
+import type { ChallengeResult, ChallengeV4Ref } from '@proton/components/containers/challenge/interface';
 import { AuthType, type AuthTypeData, ExternalSSOFlow } from '@proton/components/containers/login/interface';
 import { handleLogin } from '@proton/components/containers/login/loginActions';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
@@ -153,7 +153,7 @@ const LoginForm = ({
     const { createNotification } = useNotifications();
 
     const usernameRef = useRef<HTMLInputElement>(null);
-    const challengeRefLogin = useRef<ChallengeRef>();
+    const challengeRefLogin = useRef<ChallengeV4Ref>();
     const challengeRefLoginV5 = useRef<ChallengeV5Ref>();
     const challengeV5 = useStaticExperiment('ChallengeV5') === 'v5';
     const [externalSSOState, setExternalSSOState] = useState<
@@ -420,7 +420,7 @@ const LoginForm = ({
             }
         />
     ) : (
-        <Challenge empty tabIndex={-1} challengeRef={challengeRefLogin} type={0} name="login" />
+        <ChallengeV4 empty tabIndex={-1} challengeRef={challengeRefLogin} type={0} name="login" />
     );
 
     const urlParams = new URLSearchParams();

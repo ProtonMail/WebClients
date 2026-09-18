@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import isDeepEqual from 'lodash/isEqual';
 import merge from 'lodash/merge';
 
-import type { ChallengeRef, ChallengeResult } from '@proton/components/containers/challenge/interface';
+import type { ChallengeResult, ChallengeV4Ref } from '@proton/components/containers/challenge/interface';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { runAfterScroll } from '@proton/shared/lib/dom/runAfterScroll';
@@ -161,7 +161,7 @@ interface AccountFormDataContextType {
     };
     errors: ErrorDetails & { emailAlreadyUsed: boolean };
     refs: {
-        challenge: MutableRefObject<ChallengeRef | undefined>;
+        challenge: MutableRefObject<ChallengeV4Ref | undefined>;
         form: RefObject<HTMLFormElement>;
         email: RefObject<HTMLInputElement>;
         username: RefObject<HTMLInputElement>;
@@ -404,7 +404,7 @@ export const AccountFormDataContextProvider = ({
     const inputValuesRef = useRef({ email: false, username: false });
 
     // HTML refs
-    const challengeRef = useRef<ChallengeRef>();
+    const challengeRef = useRef<ChallengeV4Ref>();
     const formRef = useRef<HTMLFormElement>(null);
     const emailRef = useRef<HTMLInputElement>(null);
     const usernameRef = useRef<HTMLInputElement>(null);

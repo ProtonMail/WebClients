@@ -7,7 +7,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import Challenge from '@proton/components/containers/challenge/Challenge';
+import ChallengeV4 from '@proton/components/containers/challenge/ChallengeV4';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import clsx from '@proton/utils/clsx';
@@ -78,7 +78,7 @@ const useEmailInput = ({
                 />
             </div>
             <div className={`${inputsWrapper}`}>
-                <Challenge
+                <ChallengeV4
                     getThemeData={getThemeData}
                     getIconsData={() => challengeIconsSvg}
                     bodyClassName="color-norm bg-transparent px-2"
@@ -264,7 +264,7 @@ const useEmailInput = ({
                             />
                         )}
                     </div>
-                </Challenge>
+                </ChallengeV4>
             </div>
         </>
     );

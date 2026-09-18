@@ -253,8 +253,8 @@ export { default as CalendarOtherPreferencesSection } from './containers/calenda
 export { default as CalendarsSettingsSection } from './containers/calendar/settings/CalendarsSettingsSection';
 export { default as CalendarSubpage } from './containers/calendar/settings/CalendarSubpage';
 export { default as CalendarTimeSection } from './containers/calendar/settings/CalendarTimeSection';
-export { default as Challenge } from './containers/challenge/Challenge';
-export type { ChallengeRef, ChallengeResult } from './containers/challenge/interface';
+export { default as ChallengeV4 } from './containers/challenge/ChallengeV4';
+export type { ChallengeResult, ChallengeV4Ref } from './containers/challenge/interface';
 export { default as ConfigProvider } from './containers/config/Provider';
 export { default as ContactEmailsProvider, useContactEmailsCache } from './containers/contacts/ContactEmailsProvider';
 export { default as CredentialLeakSection } from './containers/credentialLeak/CredentialLeakSection';
