@@ -9,7 +9,7 @@ import { PAGE_SIZE } from '../../../constants';
 import { getIdealSortedParticipants } from '../../../utils/participants/getIdealSortedParticipants';
 import { getVisuallyStableSortedParticipants } from '../../../utils/participants/getVisuallyStableSortedParticipants';
 import type { MeetState } from '../../rootReducer';
-import { SpotlightSources, selectSpotlightSource } from '../layoutSlice';
+import { SpotlightSources, selectIsSpotlightLayout, selectSpotlightSource } from '../layoutSlice';
 import { selectSelfView } from '../settings';
 import { selectActiveSpeakerIdentity, selectLocalParticipantIdentity } from './participantsSlice';
 
@@ -188,6 +188,14 @@ export const selectSpotlightParticipantIdentity = createSelector(
 
         return identities.find((identity) => identity !== localParticipantIdentity) ?? localParticipantIdentity;
     }
+);
+
+export const selectActiveSpeakerSpotlightIdentity = createSelector(
+    [selectIsSpotlightLayout, selectSpotlightSource, selectSpotlightParticipantIdentity],
+    (isSpotlightLayout, spotlightSource, spotlightParticipantIdentity) =>
+        isSpotlightLayout && spotlightSource === SpotlightSources.ActiveSpeaker
+            ? spotlightParticipantIdentity
+            : undefined
 );
 
 /** The spotlight participant is taken out here, before paging, so every page fills the same slots. */

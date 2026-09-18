@@ -1,5 +1,5 @@
-import type { Room, TrackPublication, VideoQuality } from 'livekit-client';
-import { ConnectionState, RemoteTrackPublication, Track } from 'livekit-client';
+import type { Room, TrackPublication } from 'livekit-client';
+import { ConnectionState, RemoteTrackPublication, Track, VideoQuality } from 'livekit-client';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -13,9 +13,12 @@ interface CacheEntry {
     publication: RemoteTrackPublication;
     pinned: boolean;
     forcePinned: boolean;
+    spotlightPinned: boolean;
     participantIdentity?: string;
     isEnqueued: boolean;
 }
+
+const isHeld = (entry: CacheEntry) => entry.pinned || entry.spotlightPinned;
 
 const removeValueInPlace = (arr: string[], value: string) => {
     const idx = arr.indexOf(value);
@@ -37,6 +40,8 @@ export class CameraTrackSubscriptionManager {
     private disableVideos = false;
     private participantsWithDisabledVideos: string[] = [];
     private participantQuality: VideoQuality | undefined;
+    private spotlightParticipantIdentity: string | undefined;
+    private videosPaused = false;
 
     constructor(capacity: number, room: Room) {
         this.capacity = capacity;
@@ -66,12 +71,46 @@ export class CameraTrackSubscriptionManager {
         this.participantsWithDisabledVideos = participantsWithDisabledVideos;
         this.participantQuality = participantQuality;
 
-        for (const [trackSid, entry] of this.entriesByTrackSid.entries()) {
-            if (entry.pinned && entry.participantIdentity) {
-                this.enqueueSubscriptionWork(trackSid);
+        void this.reconcileHeldEntries();
+    }
+
+    setSpotlightParticipantIdentity(spotlightParticipantIdentity: string | undefined) {
+        if (spotlightParticipantIdentity === this.spotlightParticipantIdentity) {
+            return;
+        }
+
+        const previouslySpotlighted = Array.from(this.entriesByTrackSid.values()).filter(
+            (entry) => entry.spotlightPinned
+        );
+
+        this.spotlightParticipantIdentity = spotlightParticipantIdentity;
+
+        for (const entry of previouslySpotlighted) {
+            entry.spotlightPinned = false;
+        }
+
+        const spotlighted = Array.from(this.entriesByTrackSid.values()).filter((entry) =>
+            this.isSpotlightIdentity(entry.participantIdentity)
+        );
+
+        for (const entry of spotlighted) {
+            entry.spotlightPinned = true;
+        }
+
+        for (const entry of previouslySpotlighted) {
+            if (!isHeld(entry)) {
+                this.unregister(entry.publication);
             }
         }
+
+        for (const entry of [...previouslySpotlighted, ...spotlighted]) {
+            this.enqueueHeldEntry(entry);
+        }
         void this.runSerialized(() => this.processSubscriptionQueue());
+    }
+
+    private isSpotlightIdentity(participantIdentity: string | undefined) {
+        return participantIdentity !== undefined && participantIdentity === this.spotlightParticipantIdentity;
     }
 
     register(publication: TrackPublication | undefined, participantIdentity?: string, forcePin: boolean = false) {
@@ -95,6 +134,7 @@ export class CameraTrackSubscriptionManager {
             if (participantIdentity) {
                 existing.participantIdentity = participantIdentity;
             }
+            existing.spotlightPinned = this.isSpotlightIdentity(existing.participantIdentity);
         } else {
             this.entriesByTrackSid.set(trackSid, {
                 publication,
@@ -102,6 +142,7 @@ export class CameraTrackSubscriptionManager {
                 participantIdentity,
                 isEnqueued: false,
                 forcePinned: forcePin,
+                spotlightPinned: this.isSpotlightIdentity(participantIdentity),
             });
         }
 
@@ -129,11 +170,19 @@ export class CameraTrackSubscriptionManager {
         const entry = this.entriesByTrackSid.get(trackSid);
 
         if (entry?.forcePinned) {
+            this.maybeEvict();
             return;
         }
 
         if (entry) {
             entry.pinned = false;
+
+            if (entry.spotlightPinned) {
+                this.markMostRecentlyUsed(trackSid);
+                this.maybeEvict();
+                return;
+            }
+
             entry.participantIdentity = undefined;
             if (entry.isEnqueued) {
                 entry.isEnqueued = false;
@@ -215,6 +264,19 @@ export class CameraTrackSubscriptionManager {
         this.pendingSubscriptionWorkTrackSids.push(trackSid);
     }
 
+    private enqueueHeldEntry(entry: CacheEntry) {
+        if (isHeld(entry) && entry.participantIdentity) {
+            this.enqueueSubscriptionWork(entry.publication.trackSid);
+        }
+    }
+
+    private reconcileHeldEntries() {
+        for (const entry of this.entriesByTrackSid.values()) {
+            this.enqueueHeldEntry(entry);
+        }
+        return this.runSerialized(() => this.processSubscriptionQueue());
+    }
+
     private async processSubscriptionQueue() {
         while (this.pendingSubscriptionWorkTrackSids.length) {
             const trackSid = this.pendingSubscriptionWorkTrackSids.shift()!;
@@ -237,7 +299,9 @@ export class CameraTrackSubscriptionManager {
             }
 
             const shouldBeDisabled =
-                this.disableVideos || this.participantsWithDisabledVideos.includes(participantIdentity);
+                this.videosPaused ||
+                this.disableVideos ||
+                this.participantsWithDisabledVideos.includes(participantIdentity);
 
             try {
                 if (!publication.isSubscribed) {
@@ -250,12 +314,12 @@ export class CameraTrackSubscriptionManager {
                     publication.setEnabled(desiredEnabled);
                 }
 
-                if (
-                    !shouldBeDisabled &&
-                    this.participantQuality !== undefined &&
-                    publication.videoQuality !== this.participantQuality
-                ) {
-                    publication.setVideoQuality(this.participantQuality);
+                const desiredQuality = this.isSpotlightIdentity(participantIdentity)
+                    ? VideoQuality.HIGH
+                    : this.participantQuality;
+
+                if (!shouldBeDisabled && desiredQuality !== undefined && publication.videoQuality !== desiredQuality) {
+                    publication.setVideoQuality(desiredQuality);
                 }
             } catch (error) {
                 // eslint-disable-next-line no-console
@@ -281,7 +345,7 @@ export class CameraTrackSubscriptionManager {
                 continue;
             }
 
-            if (entry.pinned) {
+            if (isHeld(entry)) {
                 index = index - 1;
                 continue;
             }
@@ -320,9 +384,7 @@ export class CameraTrackSubscriptionManager {
             return;
         }
 
-        const pinnedCameraTrackPublications = Array.from(this.entriesByTrackSid.values()).filter(
-            (entry) => entry.pinned
-        );
+        const pinnedCameraTrackPublications = Array.from(this.entriesByTrackSid.values()).filter(isHeld);
 
         const publicationsToSubscribe = pinnedCameraTrackPublications.filter(
             (publication) => !publication.publication.isSubscribed
@@ -357,6 +419,8 @@ export class CameraTrackSubscriptionManager {
      * would race with transform reattachment and cause a black screen.
      */
     async unsubscribeAllVideos() {
+        this.videosPaused = true;
+
         await this.runSerialized(async () => {
             const subscribedPublications = Array.from(this.entriesByTrackSid.values()).filter(
                 (entry) => entry.publication.isSubscribed
@@ -380,6 +444,8 @@ export class CameraTrackSubscriptionManager {
      * so E2EE decryption transforms are already in place when the SFU sends a fresh keyframe.
      */
     async resubscribeAllVideos() {
+        this.videosPaused = false;
+
         // Use the existing reconcileCameraTracks logic to resubscribe all pinned tracks
         if (this.room.state !== ConnectionState.Connected) {
             return;
@@ -387,7 +453,7 @@ export class CameraTrackSubscriptionManager {
 
         await this.runSerialized(async () => {
             const pinnedCameraTrackPublications = Array.from(this.entriesByTrackSid.values()).filter(
-                (entry) => entry.pinned && entry.publication.isSubscribed
+                (entry) => isHeld(entry) && entry.publication.isSubscribed
             );
 
             for (const entry of pinnedCameraTrackPublications) {
@@ -399,6 +465,8 @@ export class CameraTrackSubscriptionManager {
                 }
             }
         });
+
+        await this.reconcileHeldEntries();
     }
 
     destroy() {
@@ -414,6 +482,8 @@ export class CameraTrackSubscriptionManager {
         this.disableVideos = false;
         this.participantsWithDisabledVideos = [];
         this.participantQuality = undefined;
+        this.spotlightParticipantIdentity = undefined;
+        this.videosPaused = false;
 
         // Run cleanup through serialization to ensure pending operations complete first
         void this.runSerialized(() => {
