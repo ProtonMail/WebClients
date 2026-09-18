@@ -5,11 +5,12 @@ import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_ANDROID_URL, PASS_IOS_URL } from '@proton/shared/lib/pass/constants';
 import noop from '@proton/utils/noop';
 
 import { clients } from '../clients';
 import { usePasswordHistoryActions } from '../components/Password/PasswordHistoryActions';
-import { Clients, PASS_ANDROID_URL, PASS_IOS_URL } from '../constants';
+import { Clients } from '../constants';
 import { syncIntent } from '../store/actions';
 import { withTap } from '../utils/fp/pipe';
 

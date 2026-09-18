@@ -6,10 +6,11 @@ import { c } from 'ttag';
 
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_DOWNLOAD_URL } from '@proton/shared/lib/pass/constants';
 import noop from '@proton/utils/noop';
 
 import onboardingExtension from '../../../assets/desktop-onboarding/onboarding-extension.svg';
-import { PASS_DOWNLOAD_URL, UpsellRef } from '../../../constants';
+import { UpsellRef } from '../../../constants';
 import { useFeatureFlagVariant } from '../../../hooks/useFeatureFlagVariant';
 import { useNavigateToUpgrade } from '../../../hooks/useNavigateToUpgrade';
 import { usePassExtensionInstalled } from '../../../hooks/usePassExtensionInstalled';

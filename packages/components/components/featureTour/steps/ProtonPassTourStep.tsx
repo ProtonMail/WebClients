@@ -3,15 +3,14 @@ import { c } from 'ttag';
 import { organizationThunk } from '@proton/account/organization';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import { PASS_ANDROID_URL, PASS_DOWNLOAD_URL, PASS_IOS_URL, PASS_WEB_APP_URL } from '@proton/pass/constants';
 import { PLANS } from '@proton/payments/core/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isMobile } from '@proton/shared/lib/helpers/browser';
+import { PASS_ANDROID_URL, PASS_DOWNLOAD_URL, PASS_IOS_URL, PASS_WEB_APP_URL } from '@proton/shared/lib/pass/constants';
 import logoPass from '@proton/styles/assets/img/onboarding/feature_tour-logo-pass.svg';
 import passAppBackground from '@proton/styles/assets/img/onboarding/feature_tour-pass-background.svg';
 
-import type { FeatureTourStepProps } from '../interface';
-import type { ShouldDisplayTourStep } from '../interface';
+import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
