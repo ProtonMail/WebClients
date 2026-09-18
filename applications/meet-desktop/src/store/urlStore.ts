@@ -28,7 +28,7 @@ const urlSchema = z.object({
 
 export type URLConfig = z.infer<typeof urlSchema>;
 
-export const defaultAppURL: URLConfig = {
+const defaultAppURL: URLConfig = {
     account: "https://account.proton.me",
     meet: "https://meet.proton.me",
 };
