@@ -10,4 +10,5 @@ export type SearchViewModelAdapter = {
     isSearching: boolean;
     refreshResults: () => void;
     indexingProgress: IndexingProgress;
+    isIndexPartial: boolean;
 };

@@ -41,12 +41,14 @@ export abstract class IndexPopulator {
 
     async getStatus(db: SearchDB): Promise<IndexPopulatorStatus> {
         const state = await this.ensureState(db);
+        const capped = state.capped === true;
 
         if (state.done) {
             return {
                 done: true,
                 // Indexing already done, return the persisted progress
                 progress: state.progress,
+                capped,
             };
         }
 
@@ -54,6 +56,7 @@ export abstract class IndexPopulator {
             done: false,
             // Return in memory progress.
             progress: this.progress,
+            capped,
         };
     }
 
@@ -117,6 +120,9 @@ export abstract class IndexPopulator {
             done: false,
             generation: nextGeneration,
             progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+            // A fresh indexing campaign gets a fresh verdict — capped is otherwise sticky (never
+            // cleared by markAsDone, and never by index entry count dropping back down).
+            capped: false,
         });
 
         this.progress = { files: 0, folders: 0, albums: 0, photos: 0 };
@@ -162,6 +168,34 @@ export abstract class IndexPopulator {
             await db.putPopulatorState({ ...state, initialIndexingFailed: false });
         } catch (error) {
             sendErrorReportForSearch('Unable to clear initialIndexingFailed for index populator', error);
+        }
+    }
+
+    /**
+     * Whether this populator's index has hit SEARCH_MAX_INDEXED_DOCUMENTS (see
+     * IndexPopulatorState.capped). Falls back to false if the read fails: this only labels a
+     * metric/UI state, it must never block indexing.
+     */
+    async isCapped(db: SearchDB): Promise<boolean> {
+        try {
+            const state = await this.ensureState(db);
+            return state.capped === true;
+        } catch (error) {
+            sendErrorReportForSearch('Unable to read capped for index populator', error);
+            return false;
+        }
+    }
+
+    /**
+     * Set the sticky capped bit — either the initial walk stopped early, or an eviction sweep
+     * removed entries. Swallows write failures: it must never fail an otherwise successful walk.
+     */
+    async markAsCapped(db: SearchDB): Promise<void> {
+        try {
+            const state = await this.ensureState(db);
+            await db.putPopulatorState({ ...state, capped: true });
+        } catch (error) {
+            sendErrorReportForSearch('Unable to persist capped for index populator', error);
         }
     }
 

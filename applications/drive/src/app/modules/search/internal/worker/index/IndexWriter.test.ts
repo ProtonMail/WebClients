@@ -20,7 +20,7 @@ describe('IndexWriter integration', () => {
     let engine: ReturnType<typeof Engine.builder.prototype.build>;
     let blobStore: IndexBlobStore;
     let writer: IndexWriter;
-    let onDocumentCountUpdate: jest.Mock<Promise<void>, [number]>;
+    let onIndexEntryCountUpdate: jest.Mock<Promise<void>, [number]>;
 
     beforeEach(async () => {
         indexedDB = new IDBFactory();
@@ -28,8 +28,8 @@ describe('IndexWriter integration', () => {
         engine = Engine.builder().build();
         const cryptoKey = await generateAndImportKey();
         blobStore = new IndexBlobStore(IndexKind.MAIN, db, cryptoKey);
-        onDocumentCountUpdate = jest.fn().mockResolvedValue(undefined);
-        writer = new IndexWriter(engine, blobStore, onDocumentCountUpdate);
+        onIndexEntryCountUpdate = jest.fn().mockResolvedValue(undefined);
+        writer = new IndexWriter(engine, blobStore, onIndexEntryCountUpdate);
     });
 
     afterEach(() => {
@@ -326,24 +326,24 @@ describe('IndexWriter integration', () => {
         });
     });
 
-    describe('document count', () => {
-        it('calls onDocumentCountUpdate with the document count after a commit', async () => {
+    describe('index entry count', () => {
+        it('calls onIndexEntryCountUpdate with the index entry count after a commit', async () => {
             const session = writer.startWriteSession();
             session.insert(makeTestIndexEntry('doc-1'));
             session.insert(makeTestIndexEntry('doc-2'));
             await session.commit();
 
-            expect(onDocumentCountUpdate).toHaveBeenCalledWith(2);
+            expect(onIndexEntryCountUpdate).toHaveBeenCalledWith(2);
         });
 
-        it('an onDocumentCountUpdate rejection does not fail the commit', async () => {
-            onDocumentCountUpdate.mockRejectedValueOnce(new Error('quota exceeded'));
+        it('an onIndexEntryCountUpdate rejection does not fail the commit', async () => {
+            onIndexEntryCountUpdate.mockRejectedValueOnce(new Error('quota exceeded'));
 
             const session = writer.startWriteSession();
             session.insert(makeTestIndexEntry('doc-1'));
 
             await expect(session.commit()).resolves.toBeUndefined();
-            expect(onDocumentCountUpdate).toHaveBeenCalledWith(1);
+            expect(onIndexEntryCountUpdate).toHaveBeenCalledWith(1);
         });
     });
 

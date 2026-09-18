@@ -47,6 +47,7 @@ export const SearchView = () => {
         isSearching,
         refreshResults,
         indexingProgress,
+        isIndexPartial,
     } = searchModel;
 
     const contextMenuControls = useContextMenuStore();
@@ -124,7 +125,7 @@ export const SearchView = () => {
     }
 
     if (!isSearching && !loading && sortedItemUids.length === 0) {
-        return <NoSearchResultsView />;
+        return <NoSearchResultsView isIndexPartial={isIndexPartial} />;
     }
 
     const selectionStore = useSelectionStore.getState();
@@ -176,6 +177,15 @@ export const SearchView = () => {
 
     const isDriveExplorerLoading = isSearching || loading;
 
+    const partialIndexNotice = isIndexPartial && (
+        <p className="color-weak text-sm text-left my-2" style={{ marginLeft: '50px' }}>
+            {
+                // translator: Shown after search results when the search index only covers recent items
+                c('Info').t`Some older files aren't indexed because your Drive is too large to index fully.`
+            }
+        </p>
+    );
+
     return (
         <>
             <ToolbarRow
@@ -206,6 +216,7 @@ export const SearchView = () => {
                         showContextMenu: contextMenuControls.handleContextMenu,
                         close: contextMenuControls.close,
                     }}
+                    footer={partialIndexNotice}
                 />
                 {previewModal}
             </div>

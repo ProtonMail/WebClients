@@ -28,6 +28,10 @@ export type IndexingProgress = {
 export type IndexPopulatorStatus = {
     done: boolean;
     progress: IndexingProgress;
+    // True once this populator's index has hit SEARCH_MAX_INDEXED_DOCUMENTS - either the initial
+    // walk stopped early, or an eviction sweep has removed entries. Sticky: only cleared by
+    // markAsNotDone (a fresh indexing campaign), never by index entry count dropping back down.
+    capped: boolean;
 };
 
 export type SearchModuleState = {
@@ -43,6 +47,13 @@ export type SearchModuleState = {
     permanentError: PermanentErrorKind | null;
     // Per-populator status (progress, done, version) for UI and maintenance.
     indexPopulatorStatuses: IndexPopulatorStatus[];
+    // True once any populator's index has been capped (initial walk hard-stop or eviction sweep).
+    // Sticky, mirrors IndexPopulatorStatus.capped - drives the "Search recent items" UI.
+    isIndexPartial: boolean;
+    // Whether the user has permanently dismissed the one-time "partial index" notice. A user
+    // preference, not indexer state - read once at init from the worker/DB and updated locally
+    // on dismissal, rather than riding the SharedWorker's state broadcast (see SearchModule).
+    isPartialIndexNoticeDismissed: boolean;
 };
 
 type AttributeFilter = string | bigint | boolean;
@@ -64,6 +75,7 @@ export type IndexerTaskKind =
     | 'incremental-update-task'
     | 'cleanup-stale-blobs-task'
     | 'cleanup-stale-index-entries-task'
+    | 'evict-index-entries-task'
     | 'persist-data-task'
     | 'remove-tree-event-scope-id-task'
     | 'repair-failed-nodes-task';

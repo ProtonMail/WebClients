@@ -15,6 +15,7 @@ import {
     getIsTimeoutError,
     getIsUnreachableError,
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { Logger } from './Logger';
 import { getBridgedErrorDecision } from './bridgedErrorDecision';
@@ -24,11 +25,10 @@ import { getBridgedErrorDecision } from './bridgedErrorDecision';
 const ERROR_CHANNEL = 'search-module-errors';
 const isWorker = typeof SharedWorkerGlobalScope !== 'undefined';
 
-/** Errror payload sent over BroadcastChannel from the SharedWorker to the main thread. */
-type WorkerErrorMessage = {
-    error: Error;
-    context: Partial<ScopeContext>;
-};
+/** Error/message payloads sent over BroadcastChannel from the SharedWorker to the main thread. */
+type WorkerErrorMessage = { kind: 'error'; error: Error; context: Partial<ScopeContext> };
+type WorkerMessageReport = { kind: 'message'; message: string; context: Partial<ScopeContext> };
+type WorkerReportMessage = WorkerErrorMessage | WorkerMessageReport;
 
 /**
  * Reports a search error to Sentry with search metadata.
@@ -65,7 +65,7 @@ export function sendErrorReportForSearch(
         if (isWorker) {
             try {
                 const channel = new BroadcastChannel(ERROR_CHANNEL);
-                channel.postMessage({ error: normalizedError, context } satisfies WorkerErrorMessage);
+                channel.postMessage({ kind: 'error', error: normalizedError, context } satisfies WorkerErrorMessage);
                 channel.close();
             } catch (e) {
                 // BroadcastChannel can fail if the worker is shutting down.
@@ -81,15 +81,54 @@ export function sendErrorReportForSearch(
 }
 
 /**
- * Call once on the main thread to forward worker error reports to Sentry.
+ * Reports a non-error event to Sentry (via `captureMessage`) with search metadata - for events
+ * worth seeing in Sentry's rich, queryable event stream (tags, extra, breadcrumbs) without
+ * pretending they are errors, e.g. an index being capped or evicted. Prefer `sendErrorReportForSearch`
+ * for anything that represents an actual failure - this exists for informational events only.
+ *
+ * Same SharedWorker -> main-thread forwarding as `sendErrorReportForSearch` (Sentry is only
+ * initialized on the main thread). Never throws, for the same reason.
+ */
+export function sendMessageReportForSearch(message: string, additionalContext?: Partial<ScopeContext>) {
+    try {
+        const context: Partial<ScopeContext> = {
+            level: 'info',
+            ...additionalContext,
+            tags: { component: 'search', ...additionalContext?.tags },
+        };
+
+        if (isWorker) {
+            try {
+                const channel = new BroadcastChannel(ERROR_CHANNEL);
+                channel.postMessage({ kind: 'message', message, context } satisfies WorkerMessageReport);
+                channel.close();
+            } catch (e) {
+                // BroadcastChannel can fail if the worker is shutting down.
+                Logger.error('Failed to forward message report via BroadcastChannel', e);
+            }
+            return;
+        }
+
+        captureMessage(message, context);
+    } catch (e) {
+        Logger.error('Failed to sendMessageReportForSearch', e);
+    }
+}
+
+/**
+ * Call once on the main thread to forward worker error/message reports to Sentry.
  */
 export function listenForWorkerErrors() {
     if (isWorker) {
         return;
     }
     const channel = new BroadcastChannel(ERROR_CHANNEL);
-    channel.onmessage = (e: MessageEvent<WorkerErrorMessage>) => {
-        sendErrorReport(e.data.error, e.data.context);
+    channel.onmessage = (e: MessageEvent<WorkerReportMessage>) => {
+        if (e.data.kind === 'message') {
+            captureMessage(e.data.message, e.data.context);
+        } else {
+            sendErrorReport(e.data.error, e.data.context);
+        }
     };
 }
 

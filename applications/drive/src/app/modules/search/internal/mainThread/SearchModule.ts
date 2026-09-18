@@ -16,6 +16,7 @@ import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStat
 import type {
     ClientId,
     IndexKind,
+    IndexPopulatorStatus,
     SearchModuleState,
     SearchQuery,
     SearchResultItem,
@@ -90,6 +91,8 @@ export class SearchModule {
         isSearchable: false,
         permanentError: null,
         indexPopulatorStatuses: [],
+        isIndexPartial: false,
+        isPartialIndexNoticeDismissed: false,
     };
 
     // Callbacks notified whenever the search module state changes (e.g. React hooks).
@@ -162,15 +165,17 @@ export class SearchModule {
 
                 SearchModule.instance = new SearchModule(context);
 
-                const [isUserOptIn, indexerState] = await Promise.all([
+                const [isUserOptIn, indexerState, isPartialIndexNoticeDismissed] = await Promise.all([
                     SearchModule.instance.optInManager.isOptedIn(),
-                    SearchModule.instance.workerClient.queryIndexerState(),
+                    SearchModule.instance.queryPersistedIndexerDisplayState(),
+                    SearchModule.instance.workerClient.isPartialIndexNoticeDismissed(),
                 ]);
                 Logger.info(isUserOptIn ? 'Search: Opt-in user detected' : 'Search: User not opted in');
                 SearchModule.instance.setState({
                     ...SearchModule.instance.state,
                     isUserOptIn,
                     ...indexerState,
+                    isPartialIndexNoticeDismissed,
                 });
 
                 new ClientAppVersionGuard(context.userId, context.appVersion, async () =>
@@ -193,6 +198,39 @@ export class SearchModule {
         this.workerClient.start();
     }
 
+    /** Read indexer-derived *display* state directly from the DB rather than the worker.
+     *
+     * The worker's `queryIndexerState()` only knows about an `IndexerTaskQueue` that has already
+     * been constructed via `onClientAvailable`, which is triggered by `start()` (fire-and-forget,
+     * scheduled for idle time). On a cold worker - e.g. right after a page reload, before `start()`
+     * has run - that RPC would report an empty, non-partial index even though the DB already holds
+     * a complete, capped one from a previous session. Reading straight from the DB here sidesteps
+     * that startup race for `indexPopulatorStatuses`/`isIndexPartial` (used for progress/capped
+     * display only).
+     *
+     * Deliberately excludes `isSearchable`: that flag gates whether a search is safe to *run*, and
+     * must stay driven solely by the worker's own state broadcast (see `onStateChange` wiring in
+     * the constructor). The worker only ever broadcasts once `onClientAvailable` has constructed
+     * `this.searcher` - reporting `isSearchable: true` from this DB read instead would let a search
+     * fire before the worker has a searcher to run it against ("No searcher available"). */
+    private async queryPersistedIndexerDisplayState(): Promise<
+        Pick<SearchModuleState, 'indexPopulatorStatuses' | 'isIndexPartial'>
+    > {
+        const db = await this.searchDbPromise;
+        const populatorStates = await db.getAllPopulatorStates();
+
+        const indexPopulatorStatuses: IndexPopulatorStatus[] = populatorStates.map((state) => ({
+            done: state.done,
+            progress: state.progress,
+            capped: state.capped === true,
+        }));
+
+        return {
+            indexPopulatorStatuses,
+            isIndexPartial: indexPopulatorStatuses.some((status) => status.capped),
+        };
+    }
+
     /** Call when the user opts in to the search experience. */
     async optIn(): Promise<void> {
         await this.optInManager.optIn();
@@ -202,6 +240,12 @@ export class SearchModule {
 
     getState(): SearchModuleState {
         return this.state;
+    }
+
+    /** Permanently dismiss the one-time "partial index" notice. */
+    async dismissPartialIndexNotice(): Promise<void> {
+        this.setState({ ...this.state, isPartialIndexNoticeDismissed: true });
+        await this.workerClient.dismissPartialIndexNotice();
     }
 
     onStateChange(cb: (state: SearchModuleState) => void): () => void {
@@ -225,12 +269,14 @@ export class SearchModule {
         this.optInManager.dispose();
         this.throttledSdkDriveClient.dispose();
         this.setState({
+            ...this.state,
             isRunningOutdatedVersion: true,
             isIndexing: false,
             isSearchable: false,
             permanentError: null,
             isUserOptIn: false,
             indexPopulatorStatuses: [],
+            isIndexPartial: false,
         });
     }
 
@@ -242,6 +288,8 @@ export class SearchModule {
     /** Clear all search data and stop the search module. */
     async reset(): Promise<void> {
         await this.workerClient.reset();
+        // reset() clears the persisted dismissal (SearchDB.clear()) - keep the cache in sync.
+        this.setState({ ...this.state, isPartialIndexNoticeDismissed: false });
     }
 
     /**
@@ -251,6 +299,9 @@ export class SearchModule {
      */
     async rebuild(): Promise<void> {
         await this.workerClient.rebuild();
+        // rebuild() clears the persisted dismissal (SearchDB.clearIndex()): the new index may or
+        // may not end up capped again, so the notice should be able to fire again this session.
+        this.setState({ ...this.state, isPartialIndexNoticeDismissed: false });
         this.start();
     }
 

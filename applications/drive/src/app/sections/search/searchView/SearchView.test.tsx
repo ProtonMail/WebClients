@@ -66,6 +66,7 @@ const defaultAdapter: ReturnType<typeof useSearchViewModel> = {
     isSearching: false,
     refreshResults: jest.fn(),
     indexingProgress: { files: 0, folders: 0, albums: 0, photos: 0 },
+    isIndexPartial: false,
 };
 
 const withAdapter = (overrides: Partial<ReturnType<typeof useSearchViewModel>>) => {
@@ -121,6 +122,22 @@ describe('SearchView', () => {
         withAdapter({ isSearchable: true, isSearching: false });
         render(<SearchView />);
         expect(screen.getByText('No results found')).toBeInTheDocument();
+    });
+
+    it('adds a partial-index hint to NoSearchResultsView when the index is capped', () => {
+        withAdapter({ isSearchable: true, isSearching: false, isIndexPartial: true });
+        render(<SearchView />);
+        expect(
+            screen.getByText(/some older files aren't indexed because your drive is too large to index fully/i)
+        ).toBeInTheDocument();
+    });
+
+    it('does not show the partial-index hint when the index is not capped', () => {
+        withAdapter({ isSearchable: true, isSearching: false, isIndexPartial: false });
+        render(<SearchView />);
+        expect(
+            screen.queryByText(/some older files aren't indexed because your drive is too large to index fully/i)
+        ).not.toBeInTheDocument();
     });
 
     it('shows DriveExplorer when searching (even with empty results)', () => {
