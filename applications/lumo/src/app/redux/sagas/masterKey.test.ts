@@ -35,7 +35,11 @@ const run = (initial: MasterKeyState) => {
                     };
                 }
                 if (masterKeyFailed.match(action)) {
-                    credentials = { masterKeyState: { status: 'failed', message: action.payload } };
+                    const failure =
+                        typeof action.payload === 'string'
+                            ? { message: action.payload, reason: 'unknown' as const }
+                            : action.payload;
+                    credentials = { masterKeyState: { status: 'failed', ...failure } };
                 }
                 channel.put(action);
                 return action;
@@ -114,13 +118,17 @@ describe('waitForMasterKey', () => {
     });
 
     it('throws when the key load has already failed, without waiting', async () => {
-        const { task } = run({ status: 'failed', message: 'network down' });
+        const { task } = run({
+            status: 'failed',
+            message: 'network down',
+            reason: 'unknown',
+        });
         await expect(task.toPromise()).rejects.toThrow('network down');
     });
 
     it('throws when masterKeyFailed arrives while parked', async () => {
         const { task, dispatch, setState } = run({ status: 'loading' });
-        setState({ status: 'failed', message: 'boom' });
+        setState({ status: 'failed', message: 'boom', reason: 'unknown' });
         dispatch(masterKeyFailed('boom'));
         await expect(task.toPromise()).rejects.toThrow('boom');
     });
