@@ -120,7 +120,9 @@ const createChangeSignatureHandler =
     (mail: MailToolDeps): ToolHandler<ChangeSignatureParams, void> =>
     async ({ text }) => {
         if (!text.trim()) {
-            throw new ToolInputError('text must not be empty — to remove a signature, use remove_signature.');
+            throw new ToolInputError(
+                'text must not be empty. Removing a signature has its own tool; this one only changes the text.'
+            );
         }
         const address = getPrimaryAddressOrThrow(mail);
         const signature = toStoredHtml(text);

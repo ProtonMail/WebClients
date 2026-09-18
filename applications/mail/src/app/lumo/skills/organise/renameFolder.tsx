@@ -58,9 +58,7 @@ export const createRenameFolderHandler =
         const id = resolveTypedId(folder, ['folder'], references);
         const existing = mail.getFolders().find((candidate) => candidate.ID === id);
         if (!existing) {
-            throw new ToolInputError(
-                `Folder ${folder} no longer exists. Call list_folders again for the folders that do.`
-            );
+            throw new ToolInputError('That folder no longer exists. Re-read the folder list for the ones that do.');
         }
 
         await mail.updateLabel({ labelID: existing.ID, label: { ...existing, Name: name.trim() } });

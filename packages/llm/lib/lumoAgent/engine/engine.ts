@@ -220,7 +220,9 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         const handler = handlers[definition.name];
         if (!handler) {
             onTrace?.(new Error(`No handler registered for tool "${definition.name}".`));
-            return { ok: false, error: errorResult(`The tool "${definition.name}" is not available.`) };
+            // Named for the trace, not for the model: it knows which tool it just called, and a call
+            // name in a result is a call name it can quote at the user.
+            return { ok: false, error: errorResult('That tool is not available here.') };
         }
         // A handler that outlived its chain has nowhere to put a chip or image; the turn it belonged to is
         // gone. Checked at call time (not up front) since a handler can call `showImage` mid-run, before
@@ -249,7 +251,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
                 return { ok: false, error: errorResult(error.message) };
             }
             onTrace?.(error);
-            return { ok: false, error: errorResult(`The ${definition.name} tool failed. Try a different approach.`) };
+            return { ok: false, error: errorResult('That tool call failed. Try a different approach.') };
         }
     };
 
@@ -257,16 +259,18 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         const target = args.guide as ToolName;
         const targetDefinition = byName.get(target);
         if (!targetDefinition?.guide) {
-            return errorResult(`There is no guide for "${target}".`);
+            return errorResult('There is no guide for that tool.');
         }
         if (loadedGuides.has(target)) {
-            return okResult(`The ${target} guide is already loaded. Call ${target} now; do not load it again.`);
+            return okResult('That guide is already loaded. Call the tool now; do not load it again.');
         }
 
         loadedGuides.add(target);
         const guide = resolveGuide(targetDefinition);
         if (!guide) {
-            return freeResult(`There is no extra guidance for ${target}. It is now available — call it as described.`);
+            return freeResult(
+                'There is no extra guidance for that tool. It is now available, so call it as described.'
+            );
         }
         const loadGuide = byName.get(loadGuideToolName);
         onChip?.({
@@ -313,7 +317,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
     const executeOne = async (call: PendingClientToolCall, options?: ExecuteOptions): Promise<ClientToolResult> => {
         const definition = byName.get(call.name);
         if (!definition) {
-            return errorResult(`Unknown tool "${call.name}". Use one of the provided tools.`);
+            return errorResult('Unknown tool. Use one of the provided tools.');
         }
 
         const validation = validateToolArgs(definition.paramsSchema, parseArgs(call.arguments));
@@ -334,7 +338,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
         if (definition.kind === 'mutation') {
             if (!confirm) {
                 onTrace?.(new Error(`Mutation "${definition.name}" called but no confirm controller is configured.`));
-                return errorResult(`The tool "${definition.name}" is not available.`);
+                return errorResult('That tool is not available here.');
             }
             const action: ActionRequest = { type: definition.name, ...args };
             const decision = await confirm.requestConfirmation(action, collectLabels(action, references));

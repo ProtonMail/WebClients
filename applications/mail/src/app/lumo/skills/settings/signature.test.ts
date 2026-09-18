@@ -113,10 +113,12 @@ describe('changeSignatureModule', () => {
         expect(updateAddress).not.toHaveBeenCalled();
     });
 
-    it('rejects empty text with a self-correcting error naming remove_signature', async () => {
+    // ToolInputError specifically: the model has to be able to correct the call, and a plain Error
+    // reaches it as "the tool failed", which it answers by re-issuing the same empty text.
+    it('rejects empty text without writing, so a signature is never blanked by accident', async () => {
         const { updateAddress, change } = setUp([primaryAddress('Bob')]);
 
-        await expect(change('')).rejects.toThrow(/remove_signature/);
+        await expect(change('')).rejects.toThrow(ToolInputError);
         expect(updateAddress).not.toHaveBeenCalled();
     });
 

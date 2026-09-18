@@ -92,11 +92,11 @@ export const reviseDraftDefinition: ToolDefinition<ReviseDraftParams, ReviseDraf
     },
 };
 
-const stillOpeningError = (draft: string) =>
-    `The draft ${draft} has not finished opening, so nothing was changed. Say so and try again in a moment.`;
+const STILL_OPENING_ERROR =
+    'That draft has not finished opening, so nothing was changed. Say so and try again in a moment.';
 
-const bodyUnreplaceableError = (draft: string) =>
-    `The text of the draft ${draft} cannot be replaced, so nothing was changed: it carries a quoted ` +
+const BODY_UNREPLACEABLE_ERROR =
+    'The text of that draft cannot be replaced, so nothing was changed: it carries a quoted ' +
     'conversation that a rewrite would delete along with it. Tell the user you cannot rewrite this ' +
     'particular draft and offer to write what you would have said, for them to paste in themselves. ' +
     'Do not open a second draft, and do not try this call again.';
@@ -107,23 +107,22 @@ const bodyUnreplaceableError = (draft: string) =>
  */
 const assertChangeable = (
     { isOpen, isEditorReady, canReplaceBody, canReaddress }: DraftChangeability,
-    draft: string,
     { retargeted, rewrote }: { retargeted: boolean; rewrote: boolean }
 ): void => {
     if (!isOpen) {
         throw new ToolInputError(
-            `The draft ${draft} is no longer open, so nothing was changed. read_composer reports the drafts ` +
-                'that are open.'
+            'That draft is no longer open, so nothing was changed. Re-read the open composers to see ' +
+                'which drafts are still open.'
         );
     }
     if (rewrote && !isEditorReady) {
-        throw new ToolInputError(stillOpeningError(draft));
+        throw new ToolInputError(STILL_OPENING_ERROR);
     }
     if (rewrote && !canReplaceBody) {
-        throw new ToolInputError(bodyUnreplaceableError(draft));
+        throw new ToolInputError(BODY_UNREPLACEABLE_ERROR);
     }
     if (retargeted && !canReaddress) {
-        throw new ToolInputError(stillOpeningError(draft));
+        throw new ToolInputError(STILL_OPENING_ERROR);
     }
 };
 
@@ -151,17 +150,17 @@ export const createReviseDraftHandler =
 
         if (!body && !retargeted) {
             throw new ToolInputError(
-                `Nothing to change on the draft ${draft}: pass \`body\` to replace its text, ` +
+                'Nothing to change on that draft: pass `body` to replace its text, ' +
                     '`to` or `cc` to readdress it, or both.'
             );
         }
 
-        assertChangeable(mail.getDraftChangeability(composerID), draft, { retargeted, rewrote: !!body });
+        assertChangeable(mail.getDraftChangeability(composerID), { retargeted, rewrote: !!body });
 
         if (body) {
             const written = mail.writeDraftBody(composerID, body);
             if (!written) {
-                throw new ToolInputError(bodyUnreplaceableError(draft));
+                throw new ToolInputError(BODY_UNREPLACEABLE_ERROR);
             }
         }
         if (retargeted) {
