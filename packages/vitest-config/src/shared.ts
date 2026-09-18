@@ -8,6 +8,7 @@ export const sharedVitestConfig = defineConfig({
     },
     test: {
         coverage: {
+            enabled: process.env.COLLECT_COVERAGE === 'true',
             exclude: ['**/*.d.ts', '**/*.test.ts', '**/*.test.tsx'],
             include: ['src/**/*.{js,jsx,ts,tsx}'],
             provider: 'v8',

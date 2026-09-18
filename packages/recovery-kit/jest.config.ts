@@ -5,7 +5,6 @@ const jestConfig: Config = {
     preset: '@proton/jest-swc-preset',
     testRegex: '.*\\.test\\.ts$',
     clearMocks: true,
-    collectCoverage: true,
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     coverageThreshold: {
