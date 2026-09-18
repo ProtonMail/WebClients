@@ -57,6 +57,7 @@ vi.mock('@proton/shared/lib/helpers/browser', () => {
         isMobile: vi.fn().mockReturnValue(false),
         isMac: vi.fn().mockReturnValue(false),
         isLinux: vi.fn().mockReturnValue(false),
+        getBrowser: vi.fn().mockReturnValue({ name: 'Chrome', version: '141.0.0.0' }),
     };
 });
 

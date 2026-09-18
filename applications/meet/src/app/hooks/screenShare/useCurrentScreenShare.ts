@@ -13,12 +13,13 @@ import { showPermissionsModal } from '@proton/meet/store/slices/deviceManagement
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { updateParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
-import { isElectronApp, isElectronOnWindows, isElectronRuntimeAtLeast } from '@proton/shared/lib/helpers/desktop';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
 
 import { screenShareQuality } from '../../qualityConstants';
 import { findScreenShare } from '../../utils/findScreenShare';
+import { supportsRestrictOwnAudio } from '../../utils/supportsRestrictOwnAudio';
 import { useStableCallback } from '../useStableCallback';
 import { useScreenShareRoomEvents } from './useScreenShareRoomEvents';
 import { useScreenShareTrack } from './useScreenShareTrack';
@@ -26,13 +27,9 @@ import { useScreenShareTrack } from './useScreenShareTrack';
 const useSupportsRestrictOwnAudio = () => {
     const variant = useVariant('MeetScreenShareAudioSupportedElectronVersion');
 
-    const minimumVersion = variant.name === 'version' ? variant.payload?.value?.trim() : undefined;
+    const minimumElectronVersion = variant.name === 'version' ? variant.payload?.value?.trim() : undefined;
 
-    if (!minimumVersion) {
-        return false;
-    }
-
-    return !isElectronOnWindows || isElectronRuntimeAtLeast(minimumVersion);
+    return supportsRestrictOwnAudio(minimumElectronVersion);
 };
 
 export function useCurrentScreenShare({
