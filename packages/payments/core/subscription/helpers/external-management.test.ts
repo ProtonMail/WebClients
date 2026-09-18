@@ -1,5 +1,4 @@
-import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-
+import { buildSubscription } from '../../../testing/buildSubscription';
 import { FREE_SUBSCRIPTION, PLANS } from '../../constants';
 import { SubscriptionPlatform } from '../constants';
 import { hasLumoMobileSubscription, hasNoExternallyManagedLumoSubscription } from './external-management';
