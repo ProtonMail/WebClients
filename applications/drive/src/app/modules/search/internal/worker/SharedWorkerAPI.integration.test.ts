@@ -912,6 +912,7 @@ describe.skip('SharedWorkerAPI integration', () => {
                 isSearchable: false,
                 permanentError: null,
                 indexPopulatorStatuses: [],
+                isIndexPartial: false,
             });
         });
 
@@ -955,8 +956,66 @@ describe.skip('SharedWorkerAPI integration', () => {
             expect(result.indexPopulatorStatuses[0]).toEqual({
                 done: true,
                 progress: { files: 5, folders: 4, albums: 0, photos: 0 },
+                capped: false,
             });
         });
+    });
+
+    describe('Scenario: partial index state propagation', () => {
+        it('broadcasts isIndexPartial once a populator is capped, and clears it on rebuild', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            expect(state.history[state.history.length - 1].isIndexPartial).toBe(false);
+
+            // Seed `capped` directly on the persisted populator row - this test's job is to verify
+            // the broadcast plumbing (DB -> IndexerTaskQueue -> SharedWorkerAPI -> BroadcastChannel),
+            // not to re-derive `capped` from an actual eviction sweep or capped walk (covered by
+            // EvictIndexEntriesTask.test.ts and NodeTreeIndexPopulator.test.ts).
+            const db = await SearchDB.open(USER_ID);
+            const uid = `myfiles:${SCOPE_ID}`;
+            const populatorState = await db.getPopulatorState(uid);
+            if (!populatorState) {
+                throw new Error('expected a populator state row after bootstrap');
+            }
+            await db.putPopulatorState({ ...populatorState, capped: true });
+            db.close();
+
+            // Nothing broadcasts on a DB write alone - drive a real incremental update, which is
+            // what calls ctx.notifyIndexingProgress() and refreshes indexPopulatorStatuses/isIndexPartial.
+            state.checkpoint();
+            bridge.setNode('root-uid', folderWithParent('root-uid', 'My Files'));
+            bridge.setNode('folder-projects', folderWithParent('folder-projects', 'Projects', 'root-uid'));
+            bridge.setNode('report-q3', fileWithParent('report-q3', 'report-q3.pdf', 'folder-projects'));
+            bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeCreated, 'report-q3', 'folder-projects'));
+
+            // Poll via search (real microtask ticks interleaved with fake-timer advances, needed
+            // for the IncrementalUpdateTask debounce and IndexedDB callbacks to actually progress)
+            // until the new node is indexed. The queue-drain snapshot that immediately follows the
+            // task always refreshes populator statuses, so the broadcast lands in the same tick.
+            await advanceUntilSearch(api, 'report', (r) => r.some((x) => x.nodeUid === 'report-q3'));
+
+            const partial = await state.waitUntil((msg) => msg.isIndexPartial === true);
+            expectState(partial, { isIndexPartial: true });
+
+            // The one-time notice starts undismissed, and dismissing it is a user preference -
+            // not indexer state, so it must not ride the state broadcast (no new state.history entry).
+            expect(await api.isPartialIndexNoticeDismissed()).toBe(false);
+            state.checkpoint();
+            await api.dismissPartialIndexNotice();
+            expect(await api.isPartialIndexNoticeDismissed()).toBe(true);
+            state.expectNoUpdatesSinceCheckpoint();
+
+            // rebuild() must not leave a stale `true` behind for the fresh index that follows.
+            state.checkpoint();
+            await api.rebuild();
+            const afterRebuild = await state.next();
+            expectState(afterRebuild, { isIndexPartial: false });
+
+            // The dismissal is scoped to the index that earned it, not forever: rebuild() starts a
+            // fresh indexing campaign whose outcome the user hasn't been told about yet, so it
+            // resets the flag - if the new index ends up capped too, the notice fires again.
+            expect(await api.isPartialIndexNoticeDismissed()).toBe(false);
+        }, 15_000);
     });
 
     describe('Scenario: reset (clear browser data)', () => {

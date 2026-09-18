@@ -117,6 +117,24 @@ export class SharedWorkerAPI {
         return this.indexer?.getState() ?? DEFAULT_INDEXER_STATE;
     }
 
+    /** Whether the user has dismissed the one-time "partial index" notice. A user preference,
+     * not indexer state, so it is read once rather than riding the state broadcast.
+     *
+     * Opens the DB itself rather than relying on `this.db` from a prior `registerClient` -
+     * `SearchModule.getOrCreate()` calls this before `start()` (fire-and-forget `registerClient`)
+     * has any chance to run, so on a cold worker `this.db` would still be null here and `?? false`
+     * would silently mask a persisted dismissal for the rest of the session. */
+    async isPartialIndexNoticeDismissed(): Promise<boolean> {
+        const db = await this.getDb(this.userId);
+        return db.isPartialIndexNoticeDismissed();
+    }
+
+    /** Permanently dismiss the one-time "partial index" notice. */
+    async dismissPartialIndexNotice(): Promise<void> {
+        const db = await this.getDb(this.userId);
+        await db.setPartialIndexNoticeDismissed();
+    }
+
     /** Clear all search data and restart indexing from scratch. */
     async reset(): Promise<void> {
         Logger.info('SharedWorkerAPI: resetting search data');
@@ -137,6 +155,7 @@ export class SharedWorkerAPI {
             isSearchable: false,
             permanentError: null,
             indexPopulatorStatuses: [],
+            isIndexPartial: false,
         });
 
         // Clear active client so the next start() → registerClient triggers onClientAvailable.
@@ -164,6 +183,7 @@ export class SharedWorkerAPI {
             isSearchable: false,
             permanentError: null,
             indexPopulatorStatuses: [],
+            isIndexPartial: false,
         });
 
         this.clientsCoordinator.clearActiveClient();
@@ -347,14 +367,13 @@ export class SharedWorkerAPI {
                 this.searchMetrics
             );
 
-            // Broadcast initial indexer state so late-joining tabs don't stay at defaults.
-            this.stateChannel.postMessage(this.indexer.getState());
             this.indexer.onStateChange((state) => {
                 this.stateChannel?.postMessage({
                     isIndexing: state.isIndexing,
                     isSearchable: state.isSearchable,
                     permanentError: state.permanentError,
                     indexPopulatorStatuses: state.indexPopulatorStatuses,
+                    isIndexPartial: state.isIndexPartial,
                 });
             });
 

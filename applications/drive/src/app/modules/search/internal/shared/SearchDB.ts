@@ -34,8 +34,16 @@ export interface IndexPopulatorState {
     // is stale - see the regression test in MyFilesIndexPopulator.test.ts.
     initialIndexingFailed?: boolean;
     // Last-known total document count for this populator's index kind, persisted so it survives
-    // worker restarts. Diagnostics only - not used for indexing logic.
+    // worker restarts. Read by the eviction trigger to decide whether a sweep is needed.
     documentCount?: number;
+    // Sticky "this populator's index hit SEARCH_MAX_INDEXED_DOCUMENTS" - either the initial walk
+    // stopped early, or an eviction sweep has removed entries. Cleared only by markAsNotDone (a
+    // fresh indexing campaign gets a fresh verdict); never cleared by document count dropping back
+    // down, since that does not mean the index is complete again.
+    capped?: boolean;
+    // Epoch-ms of the last completed eviction sweep for this populator's index kind, used to space
+    // sweeps at least SEARCH_EVICTION_MIN_INTERVAL_MS apart.
+    lastEvictionAt?: number;
 }
 
 /** The index operation a repair entry must replay when its node is reprocessed:
@@ -227,18 +235,37 @@ export class SearchDB {
      * Stored on the populator state row for that index kind - assumes one populator per index
      * kind today (true for every `IndexKind`); the first match is used if that ever changes.
      */
-    async getDocumentCount(indexKind: IndexKind): Promise<number | undefined> {
+    async getIndexEntryCount(indexKind: IndexKind): Promise<number | undefined> {
         const states = await this.getAllPopulatorStates();
         return states.find((state) => state.indexKind === indexKind)?.documentCount;
     }
 
-    async setDocumentCount(indexKind: IndexKind, count: number): Promise<void> {
+    async setIndexEntryCount(indexKind: IndexKind, count: number): Promise<void> {
         const states = await this.getAllPopulatorStates();
         const state = states.find((s) => s.indexKind === indexKind);
         if (!state) {
             return;
         }
         await this.putPopulatorState({ ...state, documentCount: count });
+    }
+
+    /**
+     * Epoch-ms of the last completed eviction sweep for `indexKind`, so sweeps can be spaced at
+     * least SEARCH_EVICTION_MIN_INTERVAL_MS apart. Same one-populator-per-kind assumption as
+     * `getIndexEntryCount`.
+     */
+    async getLastEvictionAt(indexKind: IndexKind): Promise<number | undefined> {
+        const states = await this.getAllPopulatorStates();
+        return states.find((state) => state.indexKind === indexKind)?.lastEvictionAt;
+    }
+
+    async setLastEvictionAt(indexKind: IndexKind, timestamp: number): Promise<void> {
+        const states = await this.getAllPopulatorStates();
+        const state = states.find((s) => s.indexKind === indexKind);
+        if (!state) {
+            return;
+        }
+        await this.putPopulatorState({ ...state, lastEvictionAt: timestamp });
     }
 
     // --- User preferences & config ---
@@ -273,6 +300,20 @@ export class SearchDB {
 
     markSearchableIndex(): Promise<string> {
         return this.db.put('userSettings', true, 'hasSearchableIndex');
+    }
+
+    // Whether the user has dismissed the one-time "index is partial" notice ("Got it") for the
+    // current index. A user preference about a notice, not index state, so it lives here rather
+    // than on the populator row - but it is scoped to "this index", not forever: clearIndex()
+    // resets it (key rotation, blob-version wipe, or an explicit rebuild all start a fresh
+    // indexing campaign whose outcome - capped or not - the user hasn't been told about yet), and
+    // the full clear() ("Clear search data") resets it too.
+    async isPartialIndexNoticeDismissed(): Promise<boolean> {
+        return (await this.db.get('userSettings', 'partialIndexNoticeDismissed')) === true;
+    }
+
+    setPartialIndexNoticeDismissed(): Promise<string> {
+        return this.db.put('userSettings', true, 'partialIndexNoticeDismissed');
     }
 
     async getSearchLibraryBlobVersion(): Promise<string | undefined> {
@@ -412,6 +453,10 @@ export class SearchDB {
         await this.db.clear('treeEventScopeSubscriptions');
         await this.db.clear('indexPopulatorStates');
         await this.db.delete('userSettings', 'hasSearchableIndex');
+        // The dismissal is scoped to the index that earned it, not forever - a rebuild is a fresh
+        // initial indexing campaign, and the new index may or may not end up partial, so the user
+        // should be warned again if it does.
+        await this.db.delete('userSettings', 'partialIndexNoticeDismissed');
         await this.db.clear('treeVisitorStates');
         await this.db.clear('repairEntries');
     }
