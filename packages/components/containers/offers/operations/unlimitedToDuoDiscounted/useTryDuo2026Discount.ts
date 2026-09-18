@@ -23,7 +23,7 @@ export const useTryDuo2026Discount = ({ enabled }: Props) => {
     const { paymentsApi } = usePaymentsApi();
     const [currency] = useAutomaticCurrency();
 
-    const [loading, withLoading] = useLoading(enabled);
+    const [loading, withLoading] = useLoading();
     const [discount, setDiscount] = useState<number | undefined>(undefined);
 
     const plans = plansResult?.plans;
