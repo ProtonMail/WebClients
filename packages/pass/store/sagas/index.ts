@@ -20,6 +20,7 @@ import ssoSagas from './auth/sso.sagas';
 import unlock from './auth/unlock.saga';
 import boot from './client/boot.saga';
 import cache from './client/cache.saga';
+import forceSync from './client/force-sync.saga';
 import notification from './client/notification.saga';
 import offlineResume from './client/offline-resume.saga';
 import offlineSetup from './client/offline-setup.saga';
@@ -130,6 +131,7 @@ const COMMON_SAGAS = [
     events,
     exportUserData,
     featureFlags,
+    forceSync,
     groupsGetAll,
     groupsGet,
     groupsMembers,

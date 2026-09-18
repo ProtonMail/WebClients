@@ -20,6 +20,7 @@ export enum PassFeature {
     PassExtensionCustomTLDs = 'PassExtensionCustomTLDs',
     PassFileAttachmentsEssentialsUpsell = 'PassFileAttachmentsEssentialsUpsell',
     PassFolder = 'PassFolder',
+    PassForceSyncFolders = 'PassForceSyncFolders',
     PassGroupInvitesV1 = 'PassGroupInvitesV1',
     PassHideShowVault = 'PassHideShowVault',
     PassIFrameExtendedAutofill = 'PassIFrameExtendedAutofill',

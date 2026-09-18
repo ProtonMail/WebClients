@@ -3,6 +3,7 @@ import { deletePassDB, getPassDBUserID, getPassDBs } from 'proton-pass-web/lib/d
 import { getBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import { FORCE_SYNC_STORAGE_PREFIX, getForceSyncStorageKey } from '@proton/pass/lib/sync/force-sync';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
@@ -24,7 +25,13 @@ export const getSettingsStorageKey = getStorageKey(SETTINGS_STORAGE_KEY);
 export const getTelemetryStorageKey = getStorageKey(TELEMETRY_STORAGE_KEY);
 export const getSpotlightStorageKey = getStorageKey(SPOTLIGHT_STORAGE_KEY);
 
-const LOCALID_STORAGE_KEYS = [SETTINGS_STORAGE_KEY, TELEMETRY_STORAGE_KEY, B2B_STORAGE_KEY, SPOTLIGHT_STORAGE_KEY];
+const LOCALID_STORAGE_KEYS = [
+    SETTINGS_STORAGE_KEY,
+    TELEMETRY_STORAGE_KEY,
+    B2B_STORAGE_KEY,
+    SPOTLIGHT_STORAGE_KEY,
+    FORCE_SYNC_STORAGE_PREFIX,
+];
 const LOCALID_STORAGE_RE = new RegExp(`^(?:${LOCALID_STORAGE_KEYS.join('|')})::(\\d+)`);
 
 export const clearUserLocalData = (localID: number) => {
@@ -33,6 +40,7 @@ export const clearUserLocalData = (localID: number) => {
     localStorage.removeItem(getTelemetryStorageKey(localID));
     localStorage.removeItem(getB2BEventsStorageKey(localID));
     localStorage.removeItem(getSpotlightStorageKey(localID));
+    localStorage.removeItem(getForceSyncStorageKey(localID));
     localStorage.removeItem(getBiometricsStorageKey(localID));
 
     /** Completely wipes all data from file storage on logout.
