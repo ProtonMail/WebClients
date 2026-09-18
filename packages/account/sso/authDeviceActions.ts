@@ -32,7 +32,7 @@ export const confirmPendingAuthDevice = ({
             addressKeys,
             token: activation.token,
         });
-        validateAuthDevice({ deviceSecretData, confirmationCode });
+        validateAuthDevice({ pendingAuthDevice, deviceSecretData, confirmationCode });
 
         const api = getSilentApi(extra.api);
         const keyPassword = extra.authentication.getPassword();

@@ -13,6 +13,7 @@ import {
     decryptAuthDeviceActivationToken,
     encryptAuthDeviceSecret,
     getValidActivation,
+    isValidAuthDeviceConfirmationCode,
 } from '@proton/shared/lib/keys/device';
 import { generatePassword } from '@proton/shared/lib/password';
 import noop from '@proton/utils/noop';
@@ -128,7 +129,13 @@ export const confirmPendingMemberAuthDevice = ({
             prepareConfirmPendingMemberAuthDevice(pendingMemberAuthDevice)
         );
         try {
-            if (confirmMemberAuthDeviceData.deviceSecretData.confirmationCode !== confirmationCode) {
+            if (
+                !isValidAuthDeviceConfirmationCode({
+                    authDevice: confirmMemberAuthDeviceData.pendingAuthDevice,
+                    deviceSecretData: confirmMemberAuthDeviceData.deviceSecretData,
+                    confirmationCode,
+                })
+            ) {
                 throw new Error(c('sso').t`Invalid confirmation code`);
             }
             const api = getSilentApi(extra.api);

@@ -41,7 +41,7 @@ export const confirmPending = createRequestSaga({
             token: activation.token,
         });
 
-        validateAuthDevice({ deviceSecretData, confirmationCode });
+        validateAuthDevice({ pendingAuthDevice, deviceSecretData, confirmationCode });
 
         const keyPassword = getAuthStore().getPassword()!;
         yield activateAuthDevice({ api, keyPassword, deviceSecretData, pendingAuthDevice });
