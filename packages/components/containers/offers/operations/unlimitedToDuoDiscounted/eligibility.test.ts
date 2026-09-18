@@ -60,15 +60,10 @@ const baseProps = {
     protonConfig: appConfig('proton-mail'),
     offerConfig: configuration,
     preferredCurrency: 'EUR' as Currency,
+    pathname: '/',
 };
 
 describe('unlimitedToDuoDiscounted eligibility', () => {
-    beforeEach(() => {
-        // Eligibility reads window.location.pathname to resolve the parent app inside the account
-        // app. jsdom keeps whatever a previous test pushed, so reset it.
-        window.history.pushState({}, '', '/');
-    });
-
     it('should be eligible for a yearly Unlimited subscriber inside the window', () => {
         expect(getIsEligible({ ...baseProps, subscription: buildSubscription() })).toBe(true);
     });
@@ -141,10 +136,29 @@ describe('unlimitedToDuoDiscounted eligibility', () => {
     });
 
     it('should be eligible in the account app when reached from an eligible product', () => {
-        window.history.pushState({}, '', '/calendar/dashboard');
         const protonConfig = appConfig('proton-account');
 
-        expect(getIsEligible({ ...baseProps, protonConfig, subscription: buildSubscription() })).toBe(true);
+        expect(
+            getIsEligible({
+                ...baseProps,
+                protonConfig,
+                pathname: '/calendar/dashboard',
+                subscription: buildSubscription(),
+            })
+        ).toBe(true);
+    });
+
+    it('should not be eligible in the account app when reached from an ineligible product', () => {
+        const protonConfig = appConfig('proton-account');
+
+        expect(
+            getIsEligible({
+                ...baseProps,
+                protonConfig,
+                pathname: '/docs/dashboard',
+                subscription: buildSubscription(),
+            })
+        ).toBe(false);
     });
 
     it('should not be eligible in an app outside the offer scope', () => {

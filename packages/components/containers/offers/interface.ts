@@ -89,7 +89,7 @@ export interface OfferConfig {
         getCTAContent?: (discount?: number) => string;
         variant?: string;
     };
-    // Live coupon discount as a percentage, resolved at runtime by the offer's `useOffer` and passed to
+    // Live coupon discount as a percentage, resolved at runtime by the offer's `useOffer`
     topButtonDiscount?: number;
     tracking?: OfferTracking;
     images?: OfferImages;
