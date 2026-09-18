@@ -2,13 +2,14 @@ import { Provider } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { configureStore } from '@reduxjs/toolkit';
-import { renderHook, waitFor } from '@testing-library/react';
+import { act, renderHook, waitFor } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import { useMeetErrorReporting } from '@proton/meet';
 import {
     currentMeetingReducer,
     initialState as initialCurrentMeetingState,
+    resetCurrentMeeting,
 } from '@proton/meet/store/slices/currentMeeting';
 import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
 import { initialState as initialSettingsState, settingsReducer } from '@proton/meet/store/slices/settings';
@@ -153,6 +154,21 @@ describe('useMeetingInfoHydration', () => {
         expect(store.getState().meetSettings.waitingRoomSetting).toBe(true);
         expect(store.getState().currentMeeting.isMeetingLoading).toBe(false);
         expect(handleInvalidMeetingLink).not.toHaveBeenCalled();
+    });
+
+    it('hydrates again when leaving the meeting resets the state', async () => {
+        const { store } = renderHydration();
+
+        await waitFor(() => expect(store.getState().currentMeeting.isMeetingLoading).toBe(false));
+
+        act(() => {
+            store.dispatch(resetCurrentMeeting());
+        });
+
+        expect(meetingInfoThunkMock).toHaveBeenCalledTimes(2);
+
+        await waitFor(() => expect(store.getState().currentMeeting.isMeetingLoading).toBe(false));
+        expect(store.getState().meetSettings.waitingRoomSetting).toBe(true);
     });
 
     it('sends the user away when the meeting no longer exists', async () => {
