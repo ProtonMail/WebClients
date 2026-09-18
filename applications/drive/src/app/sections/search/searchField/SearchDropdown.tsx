@@ -23,6 +23,9 @@ interface Props {
     indexingProgress: IndexingProgress;
     permanentError: PermanentErrorKind | null;
     rebuild: () => Promise<void>;
+    isIndexPartial: boolean;
+    isPartialIndexNoticeDismissed: boolean;
+    onDismissPartialIndexNotice: () => void;
 }
 
 export function SearchDropdown({
@@ -36,6 +39,9 @@ export function SearchDropdown({
     indexingProgress,
     permanentError,
     rebuild,
+    isIndexPartial,
+    isPartialIndexNoticeDismissed,
+    onDismissPartialIndexNotice,
 }: Props) {
     const isReindexing = isIndexing && isSearchable;
     const showProgress = isIndexing && !isSearchable;
@@ -64,6 +70,32 @@ export function SearchDropdown({
         // Search stays available; tell the user results may be incomplete until it finishes.
         if (isReindexing) {
             return <ReindexingContent indexingProgress={indexingProgress} onClose={onClose} />;
+        }
+        // A capped index that is still on its initial walk (isIndexing && !isSearchable) shows
+        // progress first - the notice is more useful once the user can actually search.
+        if (showProgress) {
+            return (
+                <Content
+                    isSearchReady={isSearchReady}
+                    showProgress={showProgress}
+                    indexingProgress={indexingProgress}
+                    onClose={onClose}
+                />
+            );
+        }
+        // A capped index is still fully searchable, so it is disclosed only after the more
+        // urgent states above. Permanent, unlike ReindexingContent's transient state. Gated on the
+        // persisted dismissal so re-opening the dropdown after "Got it" (e.g. by focusing the
+        // field again) doesn't show it again.
+        if (isIndexPartial && !isPartialIndexNoticeDismissed) {
+            return (
+                <PartialIndexContent
+                    onClose={() => {
+                        onDismissPartialIndexNotice();
+                        onClose();
+                    }}
+                />
+            );
         }
         return (
             <Content
@@ -143,6 +175,26 @@ function ReindexingContent({ indexingProgress, onClose }: { indexingProgress: In
                 </p>
             </div>
             <IndexingProgressInfo progress={indexingProgress} isComplete={false} />
+            <div className="flex justify-end mt-4">
+                <Button shape="ghost" color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>
+            </div>
+        </div>
+    );
+}
+
+function PartialIndexContent({ onClose }: { onClose: () => void }) {
+    return (
+        <div className="px-5 pt-5 pb-4">
+            <div>
+                <div className="flex">
+                    <span className="inline-flex text-bold text-lg">{c('Info')
+                        .t`Search covers your recent items`}</span>
+                </div>
+                <p className="mb-0">
+                    {c('Info')
+                        .t`Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.`}
+                </p>
+            </div>
             <div className="flex justify-end mt-4">
                 <Button shape="ghost" color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>
             </div>

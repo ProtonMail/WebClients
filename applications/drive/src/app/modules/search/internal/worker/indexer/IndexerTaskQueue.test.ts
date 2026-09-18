@@ -19,7 +19,7 @@ import {
 import { resetTransientReportBurstsForTests } from '../../shared/searchMetrics';
 import type { TreeEventScopeId, UserId } from '../../shared/types';
 import { FakeMainThreadBridge } from '../../testing/FakeMainThreadBridge';
-import { findDocuments } from '../../testing/indexHelpers';
+import { findDocuments, indexDocuments, makeTestIndexEntry } from '../../testing/indexHelpers';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
 import { IndexKind, IndexRegistry } from '../index/IndexRegistry';
 import { createBridgedSearchMetrics } from '../workerSearchMetrics';
@@ -38,6 +38,13 @@ jest.mock('../../shared/errors', () => {
         ...actual,
         sendErrorReportForSearch: jest.fn(),
     };
+});
+
+// SEARCH_MAX_INDEXED_DOCUMENTS is 50_000 in production; shrink it so the eviction-trigger tests
+// don't need a 57k+-document fake tree just to cross the trigger (round(20 * 1.15) = 23).
+jest.mock('../../shared/config', () => {
+    const actual = jest.requireActual('../../shared/config');
+    return { ...actual, SEARCH_MAX_INDEXED_DOCUMENTS: 20 };
 });
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
@@ -343,6 +350,51 @@ describe('IndexerTaskQueue', () => {
         await waitForCondition(() => reg.lastEventId === 'evt-2');
 
         await queue.stop();
+    });
+
+    it('sweeps once an IncrementalUpdateTask pushes the index over the trigger', async () => {
+        const queue = createQueue();
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        // Bootstrap indexes the 2 real files from the fixture tree - comfortably under the
+        // trigger (23), so no sweep happens yet.
+        await state.waitForSearchable();
+        expect(await db.getIndexEntryCount(IndexKind.MAIN)).toBe(2);
+
+        // Simulate the index having grown past the trigger since bootstrap (e.g. many incremental
+        // node_created events) by seeding extra real, correctly-tagged entries directly, then
+        // driving one more incremental update through the normal event path - that update's
+        // completion is what must notice the index is over the trigger and enqueue a sweep.
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        const now = Date.now();
+        const oneYearMs = 365 * 24 * 60 * 60 * 1000;
+        const entries = Array.from({ length: 23 }, (_, i) =>
+            makeTestIndexEntry(`extra-doc-${i}`, {
+                modificationTime: { kind: 'integer', value: BigInt(now - i * oneYearMs) },
+                indexPopulatorKind: { kind: 'tag', value: 'myfiles' },
+                treeEventScopeId: { kind: 'tag', value: SCOPE_ID },
+                indexPopulatorVersion: { kind: 'integer', value: 1n },
+                indexPopulatorGeneration: { kind: 'integer', value: 1n },
+            })
+        );
+        await indexDocuments(instance.indexWriter, entries);
+        expect(await db.getIndexEntryCount(IndexKind.MAIN)).toBe(25);
+
+        jest.useFakeTimers();
+        bridge.emitEvent(SCOPE_ID, { type: 'fast_forward', eventId: 'evt-2' } as any);
+        await jest.advanceTimersByTimeAsync(5_000);
+        jest.useRealTimers();
+
+        await waitForCondition(async () => {
+            const populatorState = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+            return populatorState?.capped === true;
+        });
+
+        await queue.stop();
+
+        const finalCount = await db.getIndexEntryCount(IndexKind.MAIN);
+        expect(finalCount).toBeLessThan(25);
     });
 
     it('deletes legacy encrypted-search DB after bootstrap', async () => {

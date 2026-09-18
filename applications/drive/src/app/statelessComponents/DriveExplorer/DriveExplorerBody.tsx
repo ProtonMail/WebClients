@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { ReactNode, RefObject } from 'react';
 
 import { Table, TableBody } from '@proton/components';
 import clsx from '@proton/utils/clsx';
@@ -34,6 +34,7 @@ interface DriveExplorerBodyProps {
     hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
     a11y: DriveExplorerA11y;
+    footer?: ReactNode;
 }
 
 export const DriveExplorerBody = ({
@@ -51,6 +52,7 @@ export const DriveExplorerBody = ({
     hideSelectionHighlight = false,
     contextMenuControls,
     a11y,
+    footer,
 }: DriveExplorerBodyProps) => {
     const itemCount = loading ? itemIds.length + 1 : itemIds.length;
 
@@ -82,56 +84,59 @@ export const DriveExplorerBody = ({
     });
 
     return (
-        <div ref={containerRef} className="flex-1 overflow-auto" data-testid="drive-explorer-scroll">
-            {itemCount > 0 && (
-                <div
-                    className="w-full relative h-custom"
-                    style={{
-                        '--h-custom': `${virtualizer.getTotalSize()}px`,
-                    }}
-                >
-                    <Table
-                        className={clsx(
-                            'w-full h-custom',
-                            'simple-table--is-hoverable border-none border-collapse',
-                            'm-0 p-0',
-                            config?.tableClassName
-                        )}
-                        borderWeak
+        <div className="flex flex-column flex-1 overflow-hidden">
+            <div ref={containerRef} className="flex-1 overflow-auto" data-testid="drive-explorer-scroll">
+                {itemCount > 0 && (
+                    <div
+                        className="w-full relative h-custom"
                         style={{
                             '--h-custom': `${virtualizer.getTotalSize()}px`,
                         }}
                     >
-                        <TableBody>
-                            {virtualizer.getVirtualItems().map((virtualItem) => {
-                                const itemId = itemIds.at(virtualItem.index);
+                        <Table
+                            className={clsx(
+                                'w-full h-custom',
+                                'simple-table--is-hoverable border-none border-collapse',
+                                'm-0 p-0',
+                                config?.tableClassName
+                            )}
+                            borderWeak
+                            style={{
+                                '--h-custom': `${virtualizer.getTotalSize()}px`,
+                            }}
+                        >
+                            <TableBody>
+                                {virtualizer.getVirtualItems().map((virtualItem) => {
+                                    const itemId = itemIds.at(virtualItem.index);
 
-                                return (
-                                    <VirtualListItem
-                                        key={itemId || 'loading'}
-                                        virtualItem={virtualItem}
-                                        itemId={itemId}
-                                        cells={cells}
-                                        loading={loading}
-                                        totalItemCount={itemIds.length}
-                                        conditions={conditions}
-                                        selection={selection}
-                                        events={events}
-                                        onObserve={observeElement}
-                                        measureElement={virtualizer.measureElement}
-                                        getDragMoveControls={getDragMoveControls}
-                                        isMultiSelectionDisabled={isMultiSelectionDisabled}
-                                        showCheckboxColumn={showCheckboxColumn}
-                                        hideSelectionHighlight={hideSelectionHighlight}
-                                        contextMenuControls={contextMenuControls}
-                                        a11y={a11y}
-                                    />
-                                );
-                            })}
-                        </TableBody>
-                    </Table>
-                </div>
-            )}
+                                    return (
+                                        <VirtualListItem
+                                            key={itemId || 'loading'}
+                                            virtualItem={virtualItem}
+                                            itemId={itemId}
+                                            cells={cells}
+                                            loading={loading}
+                                            totalItemCount={itemIds.length}
+                                            conditions={conditions}
+                                            selection={selection}
+                                            events={events}
+                                            onObserve={observeElement}
+                                            measureElement={virtualizer.measureElement}
+                                            getDragMoveControls={getDragMoveControls}
+                                            isMultiSelectionDisabled={isMultiSelectionDisabled}
+                                            showCheckboxColumn={showCheckboxColumn}
+                                            hideSelectionHighlight={hideSelectionHighlight}
+                                            contextMenuControls={contextMenuControls}
+                                            a11y={a11y}
+                                        />
+                                    );
+                                })}
+                            </TableBody>
+                        </Table>
+                    </div>
+                )}
+                {footer}
+            </div>
         </div>
     );
 };

@@ -272,27 +272,27 @@ describe('SearchDB', () => {
                 });
 
             it('returns undefined when no populator state exists for the index kind', async () => {
-                expect(await db.getDocumentCount(IndexKind.MAIN)).toBeUndefined();
+                expect(await db.getIndexEntryCount(IndexKind.MAIN)).toBeUndefined();
             });
 
-            it('returns undefined before setDocumentCount is called', async () => {
+            it('returns undefined before setIndexEntryCount is called', async () => {
                 await seedPopulatorState();
-                expect(await db.getDocumentCount(IndexKind.MAIN)).toBeUndefined();
+                expect(await db.getIndexEntryCount(IndexKind.MAIN)).toBeUndefined();
             });
 
-            it('returns the stored count after setDocumentCount, without disturbing other fields', async () => {
+            it('returns the stored count after setIndexEntryCount, without disturbing other fields', async () => {
                 await seedPopulatorState();
-                await db.setDocumentCount(IndexKind.MAIN, 42);
+                await db.setIndexEntryCount(IndexKind.MAIN, 42);
 
-                expect(await db.getDocumentCount(IndexKind.MAIN)).toBe(42);
+                expect(await db.getIndexEntryCount(IndexKind.MAIN)).toBe(42);
                 expect(await db.getPopulatorState('pop-1')).toEqual(
                     expect.objectContaining({ uid: 'pop-1', done: true, documentCount: 42 })
                 );
             });
 
             it('is a no-op when no populator state exists yet for the index kind', async () => {
-                await db.setDocumentCount(IndexKind.MAIN, 42);
-                expect(await db.getDocumentCount(IndexKind.MAIN)).toBeUndefined();
+                await db.setIndexEntryCount(IndexKind.MAIN, 42);
+                expect(await db.getIndexEntryCount(IndexKind.MAIN)).toBeUndefined();
             });
         });
     });
@@ -524,6 +524,20 @@ describe('SearchDB', () => {
             await db.clearIndex();
             expect(await db.isOptedIn()).toBe(true);
             expect(await db.getSearchCryptoKey(identity)).toBe('secret');
+        });
+
+        it('resets the partial-index notice dismissal - a rebuild is a fresh campaign the user has not been told about yet', async () => {
+            await db.setPartialIndexNoticeDismissed();
+            await db.clearIndex();
+            expect(await db.isPartialIndexNoticeDismissed()).toBe(false);
+        });
+    });
+
+    describe('clear', () => {
+        it('resets the partial-index notice dismissal', async () => {
+            await db.setPartialIndexNoticeDismissed();
+            await db.clear();
+            expect(await db.isPartialIndexNoticeDismissed()).toBe(false);
         });
     });
 

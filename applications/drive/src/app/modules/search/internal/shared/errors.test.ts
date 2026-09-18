@@ -4,6 +4,8 @@ import {
     RateLimitedError as SdkRateLimitedError,
     ServerError as SdkServerError,
 } from '@proton/drive';
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { setBridgedErrorDecision } from './bridgedErrorDecision';
 import {
@@ -15,9 +17,24 @@ import {
     classifyError,
     isAbortError,
     isRepairableError,
+    listenForWorkerErrors,
     maybeWrapAsRepairableNodeError,
     sendErrorReportForSearch,
+    sendMessageReportForSearch,
 } from './errors';
+
+jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+    ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
+    captureMessage: jest.fn(),
+}));
+
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
+    ...jest.requireActual('@proton/drive/legacy/errorHandling'),
+    sendErrorReport: jest.fn(),
+}));
+
+const mockedCaptureMessage = jest.mocked(captureMessage);
+const mockedSendErrorReport = jest.mocked(sendErrorReport);
 
 describe('classifyError', () => {
     describe('permanent beats transient', () => {
@@ -274,5 +291,103 @@ describe('sendErrorReportForSearch never throws', () => {
         });
 
         expect(() => sendErrorReportForSearch('msg', hostile)).not.toThrow();
+    });
+});
+
+describe('sendMessageReportForSearch', () => {
+    beforeEach(() => {
+        mockedCaptureMessage.mockClear();
+    });
+
+    it('calls captureMessage with an info level and the search component tag', () => {
+        sendMessageReportForSearch('Search index capped (initial)', { extra: { documentCount: 50_000 } });
+
+        expect(mockedCaptureMessage).toHaveBeenCalledWith(
+            'Search index capped (initial)',
+            expect.objectContaining({
+                level: 'info',
+                tags: expect.objectContaining({ component: 'search' }),
+                extra: { documentCount: 50_000 },
+            })
+        );
+    });
+
+    it('lets the caller override the level', () => {
+        sendMessageReportForSearch('msg', { level: 'warning' });
+
+        expect(mockedCaptureMessage).toHaveBeenCalledWith('msg', expect.objectContaining({ level: 'warning' }));
+    });
+
+    it('never throws, even when the reporting backend fails', () => {
+        mockedCaptureMessage.mockImplementationOnce(() => {
+            throw new Error('reporting backend is down');
+        });
+
+        expect(() => sendMessageReportForSearch('msg')).not.toThrow();
+    });
+});
+
+describe('listenForWorkerErrors', () => {
+    // This test environment's BroadcastChannel does not actually deliver messages between
+    // instances (verified: two channels of the same name never see each other's postMessage
+    // here), so we can't drive this through a real second channel. Instead capture the
+    // BroadcastChannel instance listenForWorkerErrors() creates and invoke its onmessage handler
+    // directly with a synthetic event - exercising the exact routing logic under test, just
+    // without the real transport.
+    // This test environment's BroadcastChannel does not actually deliver messages between
+    // separate instances (verified directly: two channels of the same name never see each
+    // other's postMessage here). Instead, capture the real instance listenForWorkerErrors()
+    // creates internally and invoke the onmessage handler it assigns directly with a synthetic
+    // event - exercising the exact routing logic under test, just without the real transport.
+    // mockImplementationOnce restores the constructor after one call, so it never wraps itself.
+    let createdChannel: BroadcastChannel;
+
+    beforeEach(() => {
+        mockedCaptureMessage.mockClear();
+        mockedSendErrorReport.mockClear();
+
+        const RealBroadcastChannel = BroadcastChannel;
+        jest.spyOn(global, 'BroadcastChannel').mockImplementationOnce((name: string) => {
+            createdChannel = new RealBroadcastChannel(name);
+            return createdChannel;
+        });
+
+        listenForWorkerErrors();
+    });
+
+    afterEach(() => {
+        jest.restoreAllMocks();
+        createdChannel?.close();
+    });
+
+    const deliver = (data: unknown) => {
+        if (!createdChannel?.onmessage) {
+            throw new Error('listenForWorkerErrors did not register an onmessage handler');
+        }
+        createdChannel.onmessage({ data } as MessageEvent);
+    };
+
+    it('routes a kind: "message" payload to captureMessage', () => {
+        deliver({ kind: 'message', message: 'index capped', context: { level: 'info' } });
+
+        expect(mockedCaptureMessage).toHaveBeenCalledWith('index capped', { level: 'info' });
+        expect(mockedSendErrorReport).not.toHaveBeenCalled();
+    });
+
+    it('routes a kind: "error" payload to sendErrorReport', () => {
+        const error = new Error('boom');
+        deliver({ kind: 'error', error, context: { level: 'error' } });
+
+        expect(mockedSendErrorReport).toHaveBeenCalledWith(error, { level: 'error' });
+        expect(mockedCaptureMessage).not.toHaveBeenCalled();
+    });
+
+    it('treats a legacy payload with no `kind` (previous-bundle worker during a deploy overlap) as an error, not a lost message', () => {
+        const error = new Error('boom from an old worker bundle');
+        // Pre-`kind` shape: exactly what sendErrorReportForSearch posted before this change.
+        deliver({ error, context: { level: 'error' } });
+
+        expect(mockedSendErrorReport).toHaveBeenCalledWith(error, { level: 'error' });
+        expect(mockedCaptureMessage).not.toHaveBeenCalled();
     });
 });

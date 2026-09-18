@@ -3,6 +3,7 @@ import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import type { MainThreadBridge } from '../../mainThread/MainThreadBridge';
 import { Logger } from '../../shared/Logger';
 import type { SearchDB } from '../../shared/SearchDB';
+import { SEARCH_EVICTION_TRIGGER_RATIO, SEARCH_MAX_INDEXED_DOCUMENTS } from '../../shared/config';
 import { deleteLegacyEncryptedSearchDb } from '../../shared/encryptedSearchUtils';
 import type { PermanentErrorKind } from '../../shared/errors';
 import {
@@ -15,6 +16,7 @@ import type { SearchMetrics } from '../../shared/searchMetrics';
 import type { IndexPopulatorStatus, UserId } from '../../shared/types';
 import { brandTreeEventScopeId } from '../../shared/types';
 import type { IndexRegistry } from '../index/IndexRegistry';
+import { IndexKind } from '../index/IndexRegistry';
 import { gatherSearchDiagnostics } from '../searchDiagnostics';
 import { OnlineMonitor } from './OnlineMonitor';
 import type { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
@@ -23,6 +25,7 @@ import { MyFilesIndexPopulator } from './indexPopulators/MyFilesIndexPopulator';
 import type { BaseTask, TaskContext } from './tasks/BaseTask';
 import { CleanUpStaleBlobsTask } from './tasks/CleanUpTasks/CleanUpStaleBlobsTask';
 import { CleanUpStaleIndexEntryTask } from './tasks/CleanUpTasks/CleanUpStaleIndexEntryTask';
+import { EvictIndexEntriesTask } from './tasks/CleanUpTasks/EvictIndexEntriesTask';
 import { IncrementalUpdateTask } from './tasks/CoreTasks/IncrementalUpdateTask';
 import { IndexPopulatorTask } from './tasks/CoreTasks/IndexPopulatorTask';
 import { PersistDataTask } from './tasks/CoreTasks/PersistDataTask';
@@ -33,6 +36,7 @@ export type IndexerState = {
     isSearchable: boolean;
     permanentError: PermanentErrorKind | null;
     indexPopulatorStatuses: IndexPopulatorStatus[];
+    isIndexPartial: boolean;
 };
 
 export const DEFAULT_INDEXER_STATE: IndexerState = {
@@ -40,6 +44,7 @@ export const DEFAULT_INDEXER_STATE: IndexerState = {
     isSearchable: false,
     permanentError: null,
     indexPopulatorStatuses: [],
+    isIndexPartial: false,
 };
 
 // How often the indexer task queue reports indexing progress to the main thread.
@@ -83,6 +88,7 @@ export class IndexerTaskQueue {
         isSearchable: false,
         permanentError: null,
         indexPopulatorStatuses: [],
+        isIndexPartial: false,
     };
     private stateListeners = new Set<IndexerStateListener>();
 
@@ -116,9 +122,6 @@ export class IndexerTaskQueue {
         this.stopped = false;
         this.abortController = new AbortController();
 
-        const isSearchable = await this.db.isSearchable();
-        await this.updateState({ isSearchable });
-
         // Reap abandoned resumable-walk checkpoints (never active ones - those keep their
         // updatedAt fresh). Fire-and-forget: it must not block indexing startup.
         this.db.deleteStaleBFSVisitorStates(STALE_BFS_VISITOR_STATE_MS).catch((error: unknown) => {
@@ -130,6 +133,12 @@ export class IndexerTaskQueue {
         for (const task of bootstrapTasks) {
             this.enqueue(task);
         }
+
+        // Broadcast the first real snapshot only once `this.populators` is populated (createTasks
+        // above), so buildStatusFields() reads actual persisted capped/done state instead of
+        // reporting an empty, non-partial index just because no populator is registered yet.
+        const isSearchable = await this.db.isSearchable();
+        await this.updateState({ isSearchable });
 
         await this.processLoop();
     }
@@ -173,13 +182,20 @@ export class IndexerTaskQueue {
     }
 
     private async refreshIndexPopulatorStatuses(): Promise<void> {
-        const statuses = await this.buildIndexPopulatorStatuses();
-        this.state = { ...this.state, indexPopulatorStatuses: statuses };
+        this.state = { ...this.state, ...(await this.buildStatusFields()) };
         this.stateListeners.forEach((cb) => cb(this.state));
     }
 
     private buildIndexPopulatorStatuses(): Promise<IndexPopulatorStatus[]> {
         return Promise.all([...this.populators.values()].map((p) => p.getStatus(this.db)));
+    }
+
+    // Single source of truth for the two IndexerState fields derived from populator statuses, so
+    // the two `updateState`/`refreshIndexPopulatorStatuses` call sites can't disagree about
+    // isIndexPartial the way they briefly did for indexPopulatorStatuses alone.
+    private async buildStatusFields(): Promise<Pick<IndexerState, 'indexPopulatorStatuses' | 'isIndexPartial'>> {
+        const statuses = await this.buildIndexPopulatorStatuses();
+        return { indexPopulatorStatuses: statuses, isIndexPartial: statuses.some((s) => s.capped) };
     }
 
     private async areBootstrapPopulatorsDone(): Promise<boolean> {
@@ -233,13 +249,6 @@ export class IndexerTaskQueue {
 
             const task = this.queue.shift();
             if (!task) {
-                // Queue is draining — cancel any pending throttled progress refresh so it
-                // doesn't fire a late, redundant broadcast after the terminal snapshot. The
-                // snapshot we're about to emit already carries the terminal status.
-                if (this.progressNotifyTimeout) {
-                    clearTimeout(this.progressNotifyTimeout);
-                    this.progressNotifyTimeout = null;
-                }
                 // Only announce searchable once the bootstrap populators are actually done:
                 // chunked commits mean a transient-retry gap can drain the queue with a partially
                 // committed index. After bootstrap, re-indexes keep the last complete index visible
@@ -290,6 +299,25 @@ export class IndexerTaskQueue {
                 await this.run(persistDataTask, signal);
                 this.previousTask = persistDataTask;
             }
+
+            // Demand-driven, not periodic: an incremental update is exactly the moment the
+            // index entry count can have crossed the trigger. Checking here (rather than in
+            // postBootstrapTasks) means a full index scan only ever runs for users actually near
+            // the cap, not on every worker start.
+            if (task instanceof IncrementalUpdateTask) {
+                await this.maybeEnqueueEviction();
+            }
+        }
+    }
+
+    // Enqueues an EvictIndexEntriesTask if the index exceeds the eviction trigger. A cheap check
+    // (one IndexedDB read via getIndexEntryCount) - the expensive full-index scan only happens
+    // inside EvictIndexEntriesTask itself, and only once it has decided a sweep is actually needed.
+    private async maybeEnqueueEviction(): Promise<void> {
+        const trigger = Math.round(SEARCH_MAX_INDEXED_DOCUMENTS * SEARCH_EVICTION_TRIGGER_RATIO);
+        const count = await this.db.getIndexEntryCount(IndexKind.MAIN);
+        if (count !== undefined && count > trigger) {
+            this.enqueueOnce(new EvictIndexEntriesTask(IndexKind.MAIN));
         }
     }
 
@@ -447,11 +475,20 @@ export class IndexerTaskQueue {
         if (!changed) {
             return;
         }
+        // This refresh subsumes any pending throttled one (it reads fresher/equal data), so cancel
+        // it - otherwise it fires later with a stale `this.state` base and rebroadcasts redundantly.
+        // Only cancel here, on the path that actually refreshes: a `!changed` call above must leave
+        // a pending refresh alone, since it is the only thing that will still pick up a
+        // populator-only change (e.g. capped flipping) when isIndexing/isSearchable didn't move.
+        if (this.progressNotifyTimeout) {
+            clearTimeout(this.progressNotifyTimeout);
+            this.progressNotifyTimeout = null;
+        }
         // Refresh populator statuses on every broadcast so consumers always see
         // the latest `done` / progress values alongside whatever other field changed.
-        const statuses = await this.buildIndexPopulatorStatuses();
+        const statusFields = await this.buildStatusFields();
         // Re-merge against the latest `this.state` (may have been mutated by a concurrent updateState).
-        this.state = { ...this.state, ...patch, indexPopulatorStatuses: statuses };
+        this.state = { ...this.state, ...patch, ...statusFields };
         this.stateListeners.forEach((cb) => cb(this.state));
     }
 }

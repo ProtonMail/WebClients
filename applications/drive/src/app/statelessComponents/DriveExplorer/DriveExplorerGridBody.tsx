@@ -1,4 +1,4 @@
-import { type RefObject, useRef } from 'react';
+import { type ReactNode, type RefObject, useRef } from 'react';
 
 import { useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
@@ -33,6 +33,7 @@ interface DriveExplorerGridBodyProps {
     hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
     a11y: DriveExplorerA11y;
+    footer?: ReactNode;
 }
 
 const calculateCellDimensions = (areaWidth: number) => {
@@ -75,6 +76,7 @@ export const DriveExplorerGridBody = ({
     hideSelectionHighlight = false,
     contextMenuControls,
     a11y,
+    footer,
 }: DriveExplorerGridBodyProps) => {
     const gridContainerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(gridContainerRef);
@@ -113,44 +115,47 @@ export const DriveExplorerGridBody = ({
     });
 
     return (
-        <div
-            ref={containerRef}
-            className="h-full max-h-full overflow-x-hidden flex-1 overflow-auto scrollbar-gutter-stable-both-edges"
-            data-testid="drive-explorer-scroll"
-        >
-            <div ref={gridContainerRef} className="w-full h-full">
-                <div
-                    className="w-full h-custom relative"
-                    style={{
-                        '--h-custom': `${virtualizer.getTotalSize()}px`,
-                    }}
-                >
-                    {rect &&
-                        virtualizer.getVirtualItems().map((virtualRow) => {
-                            return (
-                                <VirtualGridRow
-                                    key={virtualRow.key}
-                                    virtualRow={virtualRow}
-                                    itemIds={itemIds}
-                                    itemsPerRow={itemsPerRow}
-                                    cellHeight={cellHeight}
-                                    rowCount={rowCount}
-                                    loading={loading}
-                                    selection={selection}
-                                    grid={grid}
-                                    events={events}
-                                    conditions={conditions}
-                                    isMultiSelectionDisabled={isMultiSelectionDisabled}
-                                    getDragMoveControls={getDragMoveControls}
-                                    showCheckboxColumn={showCheckboxColumn}
-                                    hideSelectionHighlight={hideSelectionHighlight}
-                                    contextMenuControls={contextMenuControls}
-                                    onObserve={observeElement}
-                                    a11y={a11y}
-                                />
-                            );
-                        })}
+        <div className="flex flex-column flex-1 overflow-hidden">
+            <div
+                ref={containerRef}
+                className="h-full max-h-full overflow-x-hidden flex-1 overflow-auto scrollbar-gutter-stable-both-edges"
+                data-testid="drive-explorer-scroll"
+            >
+                <div ref={gridContainerRef} className="w-full">
+                    <div
+                        className="w-full h-custom relative"
+                        style={{
+                            '--h-custom': `${virtualizer.getTotalSize()}px`,
+                        }}
+                    >
+                        {rect &&
+                            virtualizer.getVirtualItems().map((virtualRow) => {
+                                return (
+                                    <VirtualGridRow
+                                        key={virtualRow.key}
+                                        virtualRow={virtualRow}
+                                        itemIds={itemIds}
+                                        itemsPerRow={itemsPerRow}
+                                        cellHeight={cellHeight}
+                                        rowCount={rowCount}
+                                        loading={loading}
+                                        selection={selection}
+                                        grid={grid}
+                                        events={events}
+                                        conditions={conditions}
+                                        isMultiSelectionDisabled={isMultiSelectionDisabled}
+                                        getDragMoveControls={getDragMoveControls}
+                                        showCheckboxColumn={showCheckboxColumn}
+                                        hideSelectionHighlight={hideSelectionHighlight}
+                                        contextMenuControls={contextMenuControls}
+                                        onObserve={observeElement}
+                                        a11y={a11y}
+                                    />
+                                );
+                            })}
+                    </div>
                 </div>
+                {footer}
             </div>
         </div>
     );
