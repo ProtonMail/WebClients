@@ -1362,6 +1362,9 @@
       ],
       "Sign in with Google": [
         "Google oturumu açın"
+      ],
+      "Importing from Google": [
+        "Google üzerinden içe aktarma"
       ]
     },
     "Action: Docs": {
@@ -7997,6 +8000,15 @@
       ],
       "Won’t import photos, Google Docs and Sheets": [
         "Fotoğraflar, Google Dokümanlar ve E-tablolar içe aktarılmayacak"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (doğrulanmamış gönderici)"
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "Dosyalarınızı Google Drive üzerinden aktarıyoruz. İşlem tamamlandığında size bildireceğiz."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Dosyalarınız Google Drive üzerinden ${ DRIVE_APP_NAME } üzerine aktarıldı ve şifrelendi."
       ]
     },
     "info": {
@@ -11213,6 +11225,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "Deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için **bir ödeme yöntemi ekleyin**."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Ondan önce istediğiniz zaman iptal edebilirsiniz.** Deneme süresi sona erene kadar ${ planTitle } tarifesini ücretsiz olarak kullanabileceksiniz."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Deneme süreniz bittikten sonra kullanmayı sürdürürseniz** 30 gün içinde iptal edebilir ve ödediğiniz kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Tam aboneliğiniz başladığında...** 30 gün içinde aboneliğinizi iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
+      "If you continue after your trial,": [
+        "Deneme süreniz bittikten sonra kullanmayı sürdürürseniz,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
       ]
     },
     "Option": {
@@ -14697,6 +14733,12 @@
       ],
       "Your import is starting": [
         "İçe aktarma işleminiz başlıyor"
+      ],
+      "Your import is finished!": [
+        "İçe aktarma işleminiz tamamlandı!"
+      ],
+      "Your import is in progress": [
+        "İçe aktarma işleminiz sürüyor"
       ]
     },
     "Today icon tooltip in mini calendar": {
