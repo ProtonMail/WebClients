@@ -1,6 +1,6 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
-import type { Credentials, MasterKeysBundle } from '../../../types';
+import type { Credentials, MasterKeyFailure, MasterKeysBundle } from '../../../types';
 
 /**
  * Kept with its original name on purpose: `takeEvery(addMasterKey, initAppSaga)`
@@ -8,8 +8,15 @@ import type { Credentials, MasterKeysBundle } from '../../../types';
  */
 export const addMasterKey = createAction<MasterKeysBundle>('lumo/credentials/addMasterKey');
 
-/** The master key could not be fetched, decrypted, or minted. Terminal for this session. */
-export const masterKeyFailed = createAction<string>('lumo/credentials/masterKeyFailed');
+/** The master key could not be fetched, decrypted, or minted. */
+export const masterKeyFailed = createAction<string | MasterKeyFailure>('lumo/credentials/masterKeyFailed');
+
+export function normalizeMasterKeyFailure(payload: string | MasterKeyFailure): MasterKeyFailure {
+    if (typeof payload === 'string') {
+        return { message: payload, reason: 'unknown' };
+    }
+    return payload;
+}
 
 /** The user is not eligible for Lumo, so there is no master key to load. Not an error. */
 export const masterKeyIneligible = createAction('lumo/credentials/masterKeyIneligible');
@@ -41,7 +48,8 @@ const credentialsReducer = createReducer<Credentials>(initialState, (builder) =>
         })
         .addCase(masterKeyFailed, (_state, action) => {
             console.log('Action triggered: masterKeyFailed');
-            return { masterKeyState: { status: 'failed', message: action.payload } };
+            const failure = normalizeMasterKeyFailure(action.payload);
+            return { masterKeyState: { status: 'failed', ...failure } };
         })
         .addCase(masterKeyIneligible, () => {
             console.log('Action triggered: masterKeyIneligible');
