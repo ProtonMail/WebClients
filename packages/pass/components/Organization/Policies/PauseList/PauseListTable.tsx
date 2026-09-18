@@ -2,19 +2,19 @@ import { type FC, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
+
 import type {
     PauseListEntryAddDTO,
     PauseListEntryDeleteDTO,
     PauseListEntryUpdateDTO,
-} from '@proton/pass/lib/organization/types';
-import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '@proton/pass/types';
-
-import Table from '../../../components/table/Table';
-import TableBody from '../../../components/table/TableBody';
-import TableHeader from '../../../components/table/TableHeader';
-import TableHeaderCell from '../../../components/table/TableHeaderCell';
-import TableRow from '../../../components/table/TableRow';
+} from '../../../../lib/organization/types';
+import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '../../../../types';
+import { TableRowLoading } from '../../../Layout/Table/TableRowLoading';
 import { PauseListTableRowExisting, PauseListTableRowNew } from './PauseListTableRow';
 
 import './PauseListTable.scss';

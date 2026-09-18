@@ -10702,7 +10702,6 @@ __metadata:
     vitest: "npm:^4.1.11"
   peerDependencies:
     "@proton/activation": "*"
-    "@proton/pass": "*"
     "@proton/payments-ui": "*"
   languageName: unknown
   linkType: soft
@@ -11519,6 +11518,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
+    "@testing-library/user-event": "npm:^14.6.7"
     "@types/chrome": "npm:^0.2.9"
     "@types/lodash": "npm:^4.17.25"
     "@types/mime-types": "npm:^2.1.4"

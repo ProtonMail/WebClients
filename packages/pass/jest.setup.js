@@ -3,6 +3,7 @@ import { Blob, File } from 'buffer';
 import { ReadableStream, WritableStream } from 'stream/web';
 import { TextDecoder, TextEncoder } from 'util';
 
+import '@proton/components/testing/mockFlagSvg';
 import noop from '@proton/utils/noop';
 
 // Getting ReferenceError: TextDecoder is not defined without
@@ -55,3 +56,10 @@ expect.extend({
 });
 
 window.matchMedia = noop;
+
+// JSDom does not implement ResizeObserver, used by @proton/atoms Scroll
+window.ResizeObserver = jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+}));

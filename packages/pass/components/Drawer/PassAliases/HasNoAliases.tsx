@@ -3,10 +3,9 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
+import DrawerAppHeadline from '@proton/components/components/drawer/views/shared/DrawerAppHeadline';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import aliasSampleSvg from '@proton/styles/assets/img/illustrations/pass-aliases-alias-sample.svg';
-
-import DrawerAppHeadline from '../../shared/DrawerAppHeadline';
 
 const HasNoAliases = () => {
     const learnMoreLink = (

@@ -4,22 +4,22 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Pagination } from '@proton/components/components/pagination/index';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
+import SubSettingsSection from '@proton/components/containers/layout/SubSettingsSection';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
-import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import type { MonitorReport, UsageReport } from '@proton/pass/lib/organization/types';
-import type { MaybeNull, MemberMonitorReport } from '@proton/pass/types';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { Pagination } from '../../../components/pagination/index';
-import useErrorHandler from '../../../hooks/useErrorHandler';
-import SettingsSectionWide from '../../account/SettingsSectionWide';
-import { PromotionBanner } from '../../banner/PromotionBanner';
-import SubSettingsSection from '../../layout/SubSettingsSection';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
+import { usePassBridge } from '../../../lib/bridge/PassBridgeProvider';
+import type { MonitorReport, UsageReport } from '../../../lib/organization/types';
+import type { MaybeNull, MemberMonitorReport } from '../../../types';
 import { PassReportsMonitorTable } from './PassReportsMonitorTable';
 import { PassReportsUsageTable } from './PassReportsUsageTable';
 

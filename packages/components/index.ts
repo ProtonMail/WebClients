@@ -352,7 +352,6 @@ export { default as OrganizationSection } from './containers/organization/Organi
 export { default as OrganizationSpamFiltersSection } from './containers/organization/OrganizationSpamFiltersSection';
 export { default as OrganizationTwoFAEnforcementSection } from './containers/organization/OrganizationTwoFAEnforcementSection';
 export { default as OrganizationTwoFARemindersSection } from './containers/organization/OrganizationTwoFARemindersSection';
-export { default as PassPolicies } from './containers/organization/PassPolicies';
 export { default as OrganizationRetentionPoliciesSection } from './containers/organization/retentionPolicy/OrganizationRetentionPoliciesSection';
 export { default as SsoPage } from './containers/organization/sso/SsoPage';
 export { OtherMailPreferencesSection } from './containers/otherMailPreferences/OtherMailPreferencesSection';

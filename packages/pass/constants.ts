@@ -28,11 +28,8 @@ export const FOLDER_MAX_DEPTH = 5;
  * production API configuration */
 export const API_CONCURRENCY_TRESHOLD = 20;
 
-export const PASS_WEB_APP_URL = 'https://pass.proton.me';
 export const PASS_LEARN_MORE_URL = 'https://proton.me/pass';
 export const PASS_VIDEO_URL = 'https://proton.me/download/pass/videos/proton-pass-tutorial.webm';
-export const PASS_ANDROID_URL = 'https://play.google.com/store/apps/details?id=proton.android.pass';
-export const PASS_IOS_URL = 'https://apps.apple.com/us/app/proton-pass-password-manager/id6443490629';
 export const PASS_X_URL = 'https://x.com/Proton_Pass';
 export const PASS_REDDIT_URL = 'https://www.reddit.com/r/ProtonPass/';
 export const PASS_REQUEST_URL = 'https://protonmail.uservoice.com/forums/953584-proton-pass';
@@ -48,7 +45,6 @@ export const PASS_LINUX_DOWNLOAD_URL = 'https://proton.me/support/set-up-proton-
 export const PASS_DESKTOP_CHANGELOG_URL =
     'https://github.com/ProtonMail/WebClients/blob/main/applications/pass-desktop/CHANGELOG.md';
 export const SIMPLELOGIN_DOMAIN_SETTINGS_URL = 'https://app.simplelogin.io/dashboard/custom_domain';
-export const PASS_DOWNLOAD_URL = 'https://proton.me/pass/download';
 export const PASS_TROUBLESHOOT_URL = 'https://proton.me/support/pass-troubleshooting';
 export const PASS_HOWTO_URL = 'https://proton.me/support/pass/using-proton-pass';
 export const PASS_CREDENTIAL_CHECK_URL = 'https://credential-check.protonweb.com';
