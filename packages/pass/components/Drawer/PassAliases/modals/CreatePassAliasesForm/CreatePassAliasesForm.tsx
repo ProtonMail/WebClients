@@ -7,28 +7,28 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import type { Input } from '@proton/atoms/Input/Input';
+import Form from '@proton/components/components/form/Form';
+import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
+import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { InputField } from '@proton/components/components/v2/field/InputField';
+import TextArea from '@proton/components/components/v2/input/TextArea';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
 import { IcNote } from '@proton/icons/icons/IcNote';
-import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
-import type { AliasMailbox, AliasOptions } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import passAliasesLogo from '@proton/styles/assets/img/illustrations/pass-aliases-logo.svg';
 
-import Form from '../../../../../../form/Form';
-import InputFieldStacked from '../../../../../../inputFieldStacked/InputFieldStacked';
-import InputFieldStackedGroup from '../../../../../../inputFieldStacked/InputFieldStackedGroup';
-import type { ModalProps } from '../../../../../../modalTwo/Modal';
-import ModalTwo from '../../../../../../modalTwo/Modal';
-import ModalTwoContent from '../../../../../../modalTwo/ModalContent';
-import ModalTwoFooter from '../../../../../../modalTwo/ModalFooter';
-import ModalTwoHeader from '../../../../../../modalTwo/ModalHeader';
-import Option from '../../../../../../option/Option';
-import SelectTwo from '../../../../../../selectTwo/SelectTwo';
-import { InputField } from '../../../../../../v2/field/InputField';
-import TextArea from '../../../../../../v2/input/TextArea';
+import { deriveAliasPrefix } from '../../../../../lib/alias/alias.utils';
+import type { AliasMailbox, AliasOptions } from '../../../../../types';
 import { usePassAliasesContext } from '../../PassAliasesProvider';
 import type { CreateModalFormState } from '../../interface';
 import useCreateModalForm from './useCreatePassAliasesForm';
@@ -95,7 +95,6 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                     setLoadingData(false);
                 }
             } catch (e) {
-                // eslint-disable-next-line no-console
                 console.error(e);
                 traceInitiativeError('drawer-security-center', e);
                 createNotification({

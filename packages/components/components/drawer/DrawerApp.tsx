@@ -38,6 +38,8 @@ interface Props {
     customAppSettings?: ReactNode;
     /** Lumo drawer tab content; supplied by the product so components stays free of @proton/llm. */
     lumoDrawerView?: ReactNode;
+    /** Pass aliases section of the security center; supplied by the product so components stays free of @proton/pass. */
+    passAliasesView?: ReactNode;
     /**
      * Mail specific
      */
@@ -56,6 +58,7 @@ interface Props {
 const DrawerApp = ({
     customAppSettings,
     lumoDrawerView,
+    passAliasesView,
     onCompose,
     onMailTo,
     contactCustomActions,
@@ -141,7 +144,7 @@ const DrawerApp = ({
                         )}
 
                         {isSecurityCenterEnabled && appInView === DRAWER_NATIVE_APPS.SECURITY_CENTER && (
-                            <DrawerSecurityCenterView />
+                            <DrawerSecurityCenterView passAliasesView={passAliasesView} />
                         )}
 
                         {isVPNDrawerEnabled && appInView === DRAWER_NATIVE_APPS.VPN && <DrawerVPNView />}

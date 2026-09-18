@@ -6,20 +6,20 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/app-context/notifications/constants';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useAsyncError from '@proton/hooks/useAsyncError';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import useAuthentication from '../../../../../hooks/useAuthentication';
-import { useModalStateObject } from '../../../../modalTwo/useModalState';
+import { deriveAliasPrefix } from '../../../lib/alias/alias.utils';
+import { PassErrorCode } from '../../../lib/api/errors';
+import { usePassBridge } from '../../../lib/bridge/PassBridgeProvider';
+import type { PassBridgeAliasItem } from '../../../lib/bridge/types';
 import { filterPassAliases } from './PassAliases.helpers';
 import { PASS_ALIASES_ERROR_STEP, PassAliasesError } from './PassAliasesError';
 import { fetchPassAliases } from './PassAliasesProvider.helpers';
@@ -115,7 +115,7 @@ export const usePassAliasesSetup = (): PassAliasesProviderReturnedValues => {
                 passAliasesUpsellModal.openModal(true);
             } else {
                 const formattedError = new PassAliasesError(error, PASS_ALIASES_ERROR_STEP.CREATE_ALIAS);
-                // eslint-disable-next-line no-console
+
                 console.error(formattedError);
                 traceInitiativeError('drawer-security-center', formattedError);
 
