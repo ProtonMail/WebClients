@@ -1,10 +1,11 @@
-import type { EncodedItemKeyRotation, ItemKey, ShareKey } from '../../../../types';
+import type { EncodedItemKeyRotation, ItemKey, RotationKey } from '../../../../types';
 import { PassEncryptionTag } from '../../../../types';
 import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 
 type OpenItemKeyProcessParams = {
     encryptedItemKey: EncodedItemKeyRotation;
-    shareKey: ShareKey;
+    /** VaultKey for root items, FolderKey for items inside a folder */
+    shareKey: RotationKey;
 };
 
 export const openItemKey = async ({

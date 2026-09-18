@@ -73,7 +73,7 @@ export const RadioLabelledButton = <T extends RadioValue>({
                 value={value}
                 onChange={(e) => e.target.checked && onChange?.(value)}
             />
-            <div className="flex items-center gap-x-3 py-4">
+            <div className="flex items-center gap-x-3 py-1">
                 {children}
                 {checked && <IcCheckmark size={6} color="var(--interaction-norm)" />}
             </div>

@@ -24,8 +24,7 @@ import { useOnline } from '../../Core/ConnectivityProvider';
 import { useSpotlightFor } from '../../Spotlight/WithSpotlight';
 import { PassPlusPromotionButton } from '../../Upsell/PassPlusPromotionButton';
 import { useUpselling } from '../../Upsell/UpsellingProvider';
-import { VaultTag } from '../../Vault/VaultTag';
-import { VAULT_ICON_MAP } from '../../Vault/constants';
+import { FolderBreadcrumb } from '../../Vault/FolderBreadcrumb';
 import type { ItemViewProps } from '../../Views/types';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { DropdownMenuLabel } from '../Dropdown/DropdownMenuLabel';
@@ -269,7 +268,7 @@ export const ItemViewPanel: FC<Props> = ({
                                 {itemState.canMove && (
                                     <DropdownMenuButton
                                         onClick={itemActions.onMove}
-                                        label={c('Action').t`Move to another vault`}
+                                        label={c('Action').t`Move to`}
                                         icon="folder-arrow-in"
                                     />
                                 )}
@@ -321,11 +320,13 @@ export const ItemViewPanel: FC<Props> = ({
                         ];
                     })()}
                     subtitle={
-                        isVault && hasMultipleVaults ? (
-                            <VaultTag
-                                title={share.content.name}
-                                color={share.content.display.color}
-                                icon={VAULT_ICON_MAP[share.content.display.icon ?? VaultIcon.ICON1]}
+                        isVault && (hasMultipleVaults || revision.folderId) ? (
+                            <FolderBreadcrumb
+                                shareId={share.shareId}
+                                folderId={revision.folderId}
+                                vaultName={share.content.name}
+                                vaultColor={share.content.display.color}
+                                vaultIcon={share.content.display.icon ?? VaultIcon.ICON1}
                             />
                         ) : undefined
                     }

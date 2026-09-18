@@ -27,7 +27,7 @@ const FORM_ID = 'edit-note';
 
 export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSubmit, onCancel }) => {
     const { shareId } = share;
-    const { data: item, itemId, revision: lastRevision } = revision;
+    const { data: item, itemId, revision: lastRevision, folderId } = revision;
     const { metadata, ...uneditable } = item;
     const note = useDeobfuscatedValue(metadata.note);
 
@@ -38,6 +38,7 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ share, revision, onSub
             extraFields: deobfuscateExtraFields(item.extraFields),
             files: filesFormInitializer(),
             shareId,
+            folderId,
         },
         onSubmit: ({ name, note, files, extraFields }) => {
             const sanitizeOTP = bindOTPSanitizer(name);

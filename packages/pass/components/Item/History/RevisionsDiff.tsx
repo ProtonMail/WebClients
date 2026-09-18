@@ -54,7 +54,7 @@ export const RevisionDiff: FC = () => {
     const params = useParams<{ revision: string }>();
 
     const { item: latestItem, revisions } = useItemHistory();
-    const { shareId, itemId } = latestItem;
+    const { shareId, itemId, folderId } = latestItem;
     const share = useSelector(selectShare(shareId));
     const canRestore = share && isShareWritable(share);
 
@@ -150,7 +150,9 @@ export const RevisionDiff: FC = () => {
                             loading={restoring.has(file.fileID)}
                             disabled={selected === latest || !file.revisionRemoved || latestFileUUIDs.has(file.fileUID)}
                             onRestore={
-                                canRestore ? () => restoreFile({ shareId, itemId, fileId: file.fileID }) : undefined
+                                canRestore
+                                    ? () => restoreFile({ shareId, itemId, fileId: file.fileID, folderId })
+                                    : undefined
                             }
                         />
                     ))}

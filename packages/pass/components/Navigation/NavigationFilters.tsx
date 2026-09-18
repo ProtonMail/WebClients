@@ -32,6 +32,7 @@ export const NavigationFilters: FC<PropsWithChildren> = ({ children }) => {
     const setFilters = useCallback((update: Partial<ItemFilters>) => {
         const shouldPush =
             (update.selectedShareId && update.selectedShareId !== filtersRef.current.selectedShareId) ||
+            (update.selectedFolderId && update.selectedFolderId !== filtersRef.current.selectedFolderId) ||
             (update.sort && update.sort !== filtersRef.current.sort) ||
             (update.type && update.type !== filtersRef.current.type);
 

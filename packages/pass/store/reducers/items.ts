@@ -19,6 +19,8 @@ import {
     aliasSyncStatusToggle,
     emptyTrashProgress,
     fileLinkPending,
+    folderDelete,
+    foldersDeletedEvent,
     importItemsProgress,
     inviteAccept,
     itemAutofilled,
@@ -125,7 +127,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         if (shareDeleted.match(action)) return objectDelete(state, action.payload.shareId);
 
         if (itemCreate.intent.match(action)) {
-            const { shareId, optimisticId, optimisticTime, files, ...item } = action.payload;
+            const { shareId, optimisticId, optimisticTime, files, folderId, ...item } = action.payload;
             const optimisticItem = state?.[shareId]?.[optimisticId];
             const now = optimisticTime ?? getEpoch();
             const flags = files.toAdd.length > 0 ? ItemFlag.HasAttachments : 0;
@@ -153,6 +155,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                         shareId: shareId,
                         state: ItemState.Active,
                         shareCount: 0,
+                        folderId,
                     },
                 },
             });
@@ -233,6 +236,18 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             if (!state[shareId]) return state;
 
             return { ...state, [shareId]: objectFilter(state[shareId], (itemId) => !itemIds.has(itemId)) };
+        }
+
+        if (or(folderDelete.success.match, foldersDeletedEvent.match)(action)) {
+            const { shareId, folderIds } = action.payload;
+            if (!state[shareId]) return state;
+
+            const deletedFolderIds = new Set(folderIds);
+
+            return {
+                ...state,
+                [shareId]: objectFilter(state[shareId], (_itemId, item) => item.folderId === null || !deletedFolderIds.has(item.folderId)),
+            };
         }
 
         if (itemMove.success.match(action)) {

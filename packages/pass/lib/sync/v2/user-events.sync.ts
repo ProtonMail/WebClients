@@ -3,19 +3,23 @@ import { all, call, put, select } from 'redux-saga/effects';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { syncResult } from '../../../store/actions';
-import type { HydratedAccessState, ItemsByShareId, SharesState, VaultShareItem } from '../../../store/reducers';
+import type {
+    FoldersByShareId,
+    HydratedAccessState,
+    ItemsByShareId,
+    SharesState,
+    VaultShareItem,
+} from '../../../store/reducers';
 import type { OrganizationState } from '../../../store/reducers/organization';
 import type { ShareDedupeState } from '../../../store/reducers/shares-dedupe';
 import { selectLoadGroupInvites } from '../../../store/selectors/invites';
 import type { RootSagaOptions, State } from '../../../store/types';
 import type { BreachesGetResponse, Invite, Maybe, MaybeNull, Share, ShareGetResponse } from '../../../types';
 import { partition } from '../../../utils/array/partition';
-import { diadic } from '../../../utils/fp/variadics';
-import { merge } from '../../../utils/object/merge';
 import { allInvites } from '../../invites/invite.requests';
-import { requestItemsForShareId } from '../../items/item.requests';
 import { getAllBreaches } from '../../monitor/monitor.request';
 import { getOrganizationForPlan } from '../../organization/organization.requests';
+import { type SharesData, requestSharesData } from '../../shares/share.data';
 import { dedupeShares } from '../../shares/share.dedupe';
 import { parseShareResponse } from '../../shares/share.parser';
 import { requestShares } from '../../shares/share.requests';
@@ -30,16 +34,13 @@ export type SyncResultV2 = {
     breaches: BreachesGetResponse;
     invites: Invite[];
     items: ItemsByShareId;
+    folders: FoldersByShareId;
     organization: MaybeNull<OrganizationState>;
     shares: SharesState;
     userEventId: string;
     dedupe: ShareDedupeState;
     v: 2;
 };
-
-const intoItemsByShareId = async ({ shareId }: Share): Promise<ItemsByShareId> => ({
-    [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
-});
 
 /** Initialization step before polling user events v2 can start. This will ensure that no events are
  * lost since events will be processed from the moment in time just before the initial data sync happens.
@@ -65,8 +66,9 @@ export function* syncV2(state: State, { getCore }: RootSagaOptions): Generator<u
     const defaultVault: Maybe<VaultShareItem> = yield call(createDefaultVault, shares);
     if (defaultVault) shares.push(defaultVault);
 
-    /** 4. Get all items for all active shares */
-    const items: ItemsByShareId[] = yield all(shares.map((s) => call(intoItemsByShareId, s)));
+    /** 4. Get all folders and items for all active shares */
+    const { folders, items }: SharesData = yield call(requestSharesData, shares);
+
     /** 5. Get all invites — filter out stale accepted invites before parsing */
     const loadGroupInvites: boolean = selectLoadGroupInvites(state);
     const invites: Invite[] = yield call(allInvites, loadGroupInvites);
@@ -77,7 +79,8 @@ export function* syncV2(state: State, { getCore }: RootSagaOptions): Generator<u
         access,
         breaches,
         invites,
-        items: items.reduce(diadic(merge), {}),
+        items,
+        folders,
         organization,
         shares: toMap(shares, 'shareId'),
         userEventId,

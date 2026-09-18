@@ -41,7 +41,7 @@ export async function* createExportAttachmentsStream(
         if (signal.aborted) throw new DOMException('Export aborted', 'AbortError');
 
         const result = await resolveItemFiles(item);
-        const itemKey = await resolveItemKey(item.shareId, item.itemId);
+        const itemKey = await resolveItemKey(item.shareId, item.itemId, item.folderId);
         const itemFiles = await intoFileDescriptors(shareId, result, itemKey);
 
         /** Only export files that match the latest item revision */

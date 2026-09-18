@@ -12,12 +12,12 @@ export function* itemLinkPendingFiles(
     files: FileAttachmentsDTO,
     options: RootSagaOptions
 ): Generator<Promise<ItemRevision>, ItemRevision> {
-    const { shareId, itemId, revision } = item;
+    const { shareId, itemId, revision, folderId } = item;
     const key = getItemKey(item);
     const release = PendingFileLinkTracker.track(key);
 
     try {
-        const linked: ItemRevision = yield linkPendingFiles({ shareId, itemId, files, revision });
+        const linked: ItemRevision = yield linkPendingFiles({ shareId, itemId, files, revision, folderId });
         return linked;
     } catch (err) {
         options.onNotification?.({

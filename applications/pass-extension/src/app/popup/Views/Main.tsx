@@ -9,6 +9,7 @@ import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvi
 import { ContextMenuProvider } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAppConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
+import { FolderActionsProvider } from '@proton/pass/components/Folders/FolderActionsProvider';
 import { Header } from '@proton/pass/components/Header/Header';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
@@ -58,7 +59,7 @@ const MainSwitch: FC = () => {
                     <main
                         key="main"
                         id="main"
-                        className="flex flex-column flex-nowrap w-full h-full overflow-hidden anime-fade-in"
+                        className="flex flex-column flex-nowrap flex-1 h-full overflow-hidden anime-fade-in"
                         style={{ '--anime-delay': '50ms' }}
                     >
                         <AuthDeviceTopBanner />
@@ -100,23 +101,25 @@ export const Main: FC = () => {
             <OrganizationProvider>
                 <BulkSelectProvider>
                     <VaultActionsProvider>
-                        <ItemActionsProvider>
-                            <InviteProvider>
-                                <PasswordProvider>
-                                    <UpsellingProvider>
-                                        <SpotlightProvider>
-                                            <InAppNotificationProvider>
-                                                {lockSetup ? (
-                                                    <LockOnboarding onCancel={() => logout({ soft: true })} />
-                                                ) : (
-                                                    <MainSwitch />
-                                                )}
-                                            </InAppNotificationProvider>
-                                        </SpotlightProvider>
-                                    </UpsellingProvider>
-                                </PasswordProvider>
-                            </InviteProvider>
-                        </ItemActionsProvider>
+                        <FolderActionsProvider>
+                            <ItemActionsProvider>
+                                <InviteProvider>
+                                    <PasswordProvider>
+                                        <UpsellingProvider>
+                                            <SpotlightProvider>
+                                                <InAppNotificationProvider>
+                                                    {lockSetup ? (
+                                                        <LockOnboarding onCancel={() => logout({ soft: true })} />
+                                                    ) : (
+                                                        <MainSwitch />
+                                                    )}
+                                                </InAppNotificationProvider>
+                                            </SpotlightProvider>
+                                        </UpsellingProvider>
+                                    </PasswordProvider>
+                                </InviteProvider>
+                            </ItemActionsProvider>
+                        </FolderActionsProvider>
                     </VaultActionsProvider>
                 </BulkSelectProvider>
             </OrganizationProvider>

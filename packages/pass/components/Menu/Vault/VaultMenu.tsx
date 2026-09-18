@@ -24,7 +24,7 @@ type Props = {
 
 export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
     const { filters } = useNavigationFilters();
-    const { selectedShareId } = filters;
+    const { selectedShareId, selectedFolderId } = filters;
     const scope = useItemScope();
     const inTrash = scope === 'trash';
 
@@ -48,7 +48,7 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
                         vault={vault}
                         count={vault.count}
                         label={vault.content.name}
-                        selected={scope === 'share' && selectedShareId === vault.shareId}
+                        selected={scope === 'share' && selectedShareId === vault.shareId && !selectedFolderId}
                         canMove={isWritableVault(vault) && vault.count > 0}
                         canDelete={vault.owner}
                         canInvite={!vault.shared}
@@ -61,7 +61,7 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
                 <VaultMenuTrash selected={scope === 'trash'} onAction={onAction} />
             </>
         );
-    }, [vaults, vaultActions, selectedShareId, scope, totalSharedWithMe]);
+    }, [vaults, vaultActions, selectedShareId, selectedFolderId, scope, totalSharedWithMe]);
 
     return render?.(selectedVaultOption, menu) ?? menu;
 };

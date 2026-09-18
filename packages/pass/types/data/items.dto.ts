@@ -1,4 +1,4 @@
-import type { FileAttachmentsDTO, FileDescriptor, MaybeNull, ShareId, UniqueItem } from '..';
+import type { FileAttachmentsDTO, FileDescriptor, FolderId, MaybeNull, ShareId, UniqueItem } from '..';
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
 import type { IndexedByShareIdAndItemId, Item, ItemRevision, OptimisticItem, SelectedItem } from './items';
@@ -57,6 +57,7 @@ export type ItemImportIntentDTO = {
 
 export type ItemCreateIntent<T extends ItemType = ItemType> = Item<T, ItemCreateIntentDTO> & {
     files: FileAttachmentsDTO;
+    folderId: MaybeNull<string>;
 } & OptimisticItem;
 
 export type ItemCreateSuccess = OptimisticItem & { item: ItemRevision; alias?: ItemRevision };
@@ -68,7 +69,9 @@ export type ItemEditIntent<T extends ItemType = ItemType> = Item<T, ItemEditInte
     files: FileAttachmentsDTO;
 };
 
-export type ItemMoveIntent = SelectedItem & { targetShareId: ShareId };
+export type ItemMoveIntent = SelectedItem & { targetShareId: ShareId; targetFolderId?: MaybeNull<FolderId> };
+
+export type ItemDestination = { targetShareId: string; targetFolderId?: MaybeNull<string> };
 
 export type ItemImportIntent<T extends ItemType = ItemType> = Item<T, ItemImportIntentDTO> & {
     trashed: boolean;
@@ -124,4 +127,4 @@ export type SecureLink = UniqueItem & {
 
 export type ItemLinkFilesIntent = UniqueItem & { files: FileAttachmentsDTO };
 export type ItemLinkFilesSuccess = { item: ItemRevision };
-export type ItemRevisionLinkFiles = ItemLinkFilesIntent & { revision: number };
+export type ItemRevisionLinkFiles = ItemLinkFilesIntent & { revision: number; folderId: MaybeNull<string> };

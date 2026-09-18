@@ -45,7 +45,13 @@ import type { NotificationRequest } from '../../notification.app';
 import { NotificationHeader } from '../components/NotificationHeader';
 
 type Step = 'select' | 'passkey';
-type FormValues = { name: string; step: Step; selectedItem?: SelectedItem; shareId?: string };
+type FormValues = {
+    name: string;
+    step: Step;
+    selectedItem?: SelectedItem;
+    shareId?: string;
+    folderId?: MaybeNull<string>;
+};
 const formId = 'create-passkey';
 
 type PasskeyCreateViewProps = {
@@ -217,13 +223,13 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
     const username = publicKey.user?.name ?? publicKey.user?.displayName ?? '';
 
     const form = useFormik<FormValues>({
-        initialValues: { name: domain, step: 'select' },
+        initialValues: { name: domain, step: 'select', folderId: null },
         validate: (values) => {
             const errors: FormikErrors<FormValues> = { name: validateItemName(values.name) };
             if (!errors.name) delete errors.name;
             return errors;
         },
-        onSubmit: async ({ name, step, selectedItem, shareId }, { setFieldValue }) => {
+        onSubmit: async ({ name, step, selectedItem, shareId, folderId }, { setFieldValue }) => {
             try {
                 if (step === 'select' && !selectedItem) return await setFieldValue('step', 'passkey');
                 else setLoading(true);
@@ -264,7 +270,13 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                             type: WorkerMessageType.AUTOSAVE_REQUEST,
                             payload: selectedItem
                                 ? { ...base, ...selectedItem, type: AutosaveMode.UPDATE }
-                                : { ...base, shareId: shareId!, optimisticId, type: AutosaveMode.NEW },
+                                : {
+                                      ...base,
+                                      shareId: shareId!,
+                                      folderId: folderId ?? null,
+                                      optimisticId,
+                                      type: AutosaveMode.NEW,
+                                  },
                         }),
                         (res) => res.type === 'error' && throwError({ message: c('Warning').t`Unable to save` })
                     );

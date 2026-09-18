@@ -47,17 +47,21 @@ export function* processUserEvents(event: SyncEventListOutput, options: RootSaga
         return synced;
     }
 
-    /** Run all processors in parallel - each returns boolean indicating success */
+    /** Creation/update events must be applied in decryption order:
+     * shares -> folders -> items. Opening an item needs the folder key which itself
+     * needs the vault key (registered as a side-effect of fetching the resource) */
+    const sharesSynced: boolean = yield call(processSharesCreated, event.SharesCreated, options);
+    const foldersSynced: boolean = yield call(processFoldersUpdated, event.FoldersUpdated);
+
+    /** Run the remaining processors in parallel - each returns boolean indicating success */
     const results: boolean[] = yield all([
         call(processItemsUpdated, event.ItemsUpdated),
         call(processItemsDeleted, event.ItemsDeleted),
         call(processAliasNoteChanged, event.AliasNoteChanged),
         call(processPendingAliasToCreate, event.PendingAliasToCreateChanged),
         call(processBreachUpdate, event.BreachUpdate),
-        call(processSharesCreated, event.SharesCreated, options),
         call(processSharesUpdated, event.SharesUpdated),
         call(processSharesDeleted, event.SharesDeleted),
-        call(processFoldersUpdated, event.FoldersUpdated),
         call(processFoldersDeleted, event.FoldersDeleted),
         call(processUserRefresh, event.RefreshUser),
         call(processOrganizationInfoChanged, event.OrganizationInfoChanged, options),
@@ -66,5 +70,5 @@ export function* processUserEvents(event: SyncEventListOutput, options: RootSaga
         call(processSharesWithInvitesToCreate, event.SharesWithInvitesToCreate),
     ]);
 
-    return results.every(Boolean);
+    return sharesSynced && foldersSynced && results.every(Boolean);
 }

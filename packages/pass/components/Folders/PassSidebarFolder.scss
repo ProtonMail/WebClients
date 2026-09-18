@@ -1,0 +1,10 @@
+/* `.navigation-link` extends `%interactive`, which sets its own
+ * background (0,2,0 specificity), so here we chain 3 classes (0,3,0) */
+.navigation-link.pass-folder-item.is-selected {
+	&,
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: var(--interaction-norm-minor-2);
+	}
+}

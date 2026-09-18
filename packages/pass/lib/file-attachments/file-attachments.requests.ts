@@ -119,8 +119,8 @@ export const restoreRevisionFiles = async (
     ).Result.Item;
 
 export const linkPendingFiles = async <T extends ItemType>(dto: ItemRevisionLinkFiles): Promise<ItemRevision<T>> => {
-    const { revision, shareId, itemId, files } = dto;
-    const itemKey = await resolveItemKey(shareId, itemId);
+    const { revision, shareId, itemId, files, folderId } = dto;
+    const itemKey = await resolveItemKey(shareId, itemId, folderId);
 
     try {
         const encryptedItem = await (async (): Promise<ItemRevisionContentsResponse> => {
