@@ -1,8 +1,15 @@
+import { MINUTE } from '../constants';
 import type { Address, Api, Member, SignedKeyList, UserOrganization } from '../interfaces';
 import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '../keys/organizationKeyDto';
 import type { UnprivatizeMemberPayload } from '../keys/unprivatization';
 import queryPages from './helpers/queryPages';
 import type { PaginationParams } from './interface';
+
+/**
+ * Member pages are expensive on the API (especially with `IncludeAddresses`), and organizations with
+ * thousands of members need a lot of them, so they get a longer timeout than the default fetch one.
+ */
+const MEMBERS_TIMEOUT = MINUTE;
 
 export const searchMembers = (keywords?: string) => ({
     method: 'get',
@@ -10,6 +17,7 @@ export const searchMembers = (keywords?: string) => ({
     params: {
         q: keywords,
     },
+    timeout: MEMBERS_TIMEOUT,
 });
 
 export const searchMembersSummary = (params: { q: string; limit?: number; excludeGroupId?: string }) => ({
@@ -25,6 +33,7 @@ export const queryMembers = (params?: PaginationParams) => ({
         ...params,
         IncludeAddresses: 1,
     },
+    timeout: MEMBERS_TIMEOUT,
 });
 
 export const getAllMembers = (api: Api) => {
@@ -94,6 +103,7 @@ const queryAddresses = (memberID: string, params?: PaginationParams) => ({
     method: 'get',
     url: `core/v4/members/${memberID}/addresses`,
     params,
+    timeout: MEMBERS_TIMEOUT,
 });
 
 export const getAllMemberAddresses = (api: Api, memberID: string) => {
