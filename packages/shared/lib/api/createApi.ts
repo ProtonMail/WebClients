@@ -390,7 +390,10 @@ const createApi = ({
                 listeners.push(cb);
             },
             removeEventListener: (cb: ApiListenerCallback) => {
-                listeners.splice(listeners.indexOf(cb), 1);
+                const index = listeners.indexOf(cb);
+                if (index !== -1) {
+                    listeners.splice(index, 1);
+                }
             },
         });
     };
