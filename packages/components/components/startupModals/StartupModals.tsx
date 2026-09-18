@@ -29,22 +29,44 @@ const StartupModals = ({
     const modalVisibilitySignature = modals.map((m) => m.showModal).join('');
 
     useEffect(() => {
-        const startModalExpired = getStartModalExpired(initial, { time: Date.now() });
-        if (onceRef.current || domIsBusy() || startModalExpired) {
-            setModalOpen(false);
-            return;
-        }
-
         const modal = modals.find(({ showModal }) => showModal);
+        const isExpired = () => getStartModalExpired(initial, { time: Date.now() });
 
-        if (!modal) {
+        if (onceRef.current || !modal || isExpired()) {
             setModalOpen(false);
             return;
         }
 
-        onceRef.current = true;
-        modal.activateModal();
-        setModalOpen(true);
+        const activate = () => {
+            onceRef.current = true;
+            modal.activateModal();
+            setModalOpen(true);
+        };
+
+        if (!domIsBusy()) {
+            activate();
+            return;
+        }
+
+        if (!modal.retryUntilIdle) {
+            setModalOpen(false);
+            return;
+        }
+
+        const intervalId = window.setInterval(() => {
+            if (isExpired()) {
+                window.clearInterval(intervalId);
+                setModalOpen(false);
+                return;
+            }
+
+            if (!domIsBusy()) {
+                window.clearInterval(intervalId);
+                activate();
+            }
+        }, SECOND);
+
+        return () => window.clearInterval(intervalId);
     }, [modalVisibilitySignature]);
 
     const modal = modals.find(({ showModal }) => showModal);

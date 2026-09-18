@@ -379,6 +379,10 @@
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
+        "packages/offers-delivery": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
         "packages/pack": {
             "entry": [
                 "webpack.config.ts",
