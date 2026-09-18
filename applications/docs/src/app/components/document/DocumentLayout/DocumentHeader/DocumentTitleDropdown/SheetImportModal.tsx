@@ -1,21 +1,21 @@
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import { Button } from '@proton/atoms/Button/Button'
 import Checkbox from '@proton/components/components/input/Checkbox'
 import ModalTwo from '@proton/components/components/modalTwo/Modal'
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo'
-import Option from '@proton/components/components/option/Option'
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
-import { Button } from '@proton/atoms/Button/Button'
+import Option from '@proton/components/components/option/Option'
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo'
+import { SheetImportDestination, SheetImportSeparatorType, type SheetImportData } from '@proton/docs-shared'
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
-import { SheetImportDestination, SheetImportSeparatorType, type SheetImportData } from '@proton/docs-shared'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 import { useFlag } from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { c } from 'ttag'
 
-export interface SheetImportModalProps extends ModalStateProps {
+interface SheetImportModalProps extends ModalStateProps {
   handleImport: (data: SheetImportData) => void
 }
 
