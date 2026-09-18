@@ -82,7 +82,7 @@ type DecryptedMasterKeyEnvelope = {
     usedUserKeys: boolean;
 };
 
-async function decryptMasterKeyEnvelope(
+export async function decryptMasterKeyEnvelope(
     encryptedMasterKeyB64: string,
     userKeys: DecryptedKey<PrivateKeyReference>[],
     addressKeys?: DecryptedAddressKey<PrivateKeyReference>[]
@@ -98,11 +98,14 @@ async function decryptMasterKeyEnvelope(
     }
 
     if (addressKeys && addressKeys.length > 0) {
-        // Legacy envelopes were encrypted to an address key but signed by a user key.
+        // Before June 2025, envelopes were both encrypted and signed with the primary address key.
+        // During the transition to user keys, envelopes could instead be address-encrypted and
+        // user-signed. Both signer types are therefore required for legacy recovery.
+        const legacyVerificationKeys = [...userKeys, ...addressKeys];
         const withAddressKeys = await decryptAndVerifyMasterKeyWithKeys(
             encryptedMasterKeyB64,
             addressKeys,
-            userKeys,
+            legacyVerificationKeys,
             'address keys'
         );
         if (withAddressKeys) {
