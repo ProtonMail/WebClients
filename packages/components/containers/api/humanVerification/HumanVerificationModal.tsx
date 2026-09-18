@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import type { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
@@ -21,6 +21,7 @@ import { type HumanVerificationResult, HumanVerificationSteps, type Verification
 export interface HumanVerificationModalProps<
     T extends { humanVerificationResult?: HumanVerificationResult },
 > extends ModalProps {
+    api: Api;
     title?: string;
     token: string;
     methods: HumanVerificationMethodType[];
@@ -30,6 +31,7 @@ export interface HumanVerificationModalProps<
 }
 
 const HumanVerificationModal = <T extends { humanVerificationResult?: HumanVerificationResult }>({
+    api,
     title: maybeTitle,
     token,
     methods = [],
@@ -98,6 +100,7 @@ const HumanVerificationModal = <T extends { humanVerificationResult?: HumanVerif
             <ModalHeader title={title} hasClose={!isMandatory} />
             <ModalContent>
                 <HumanVerificationForm
+                    api={api}
                     theme={theme.information.dark ? 'dark' : undefined}
                     step={step}
                     onChangeStep={setStep}

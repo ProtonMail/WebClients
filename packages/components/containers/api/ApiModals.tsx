@@ -146,6 +146,7 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
             {verification && (
                 <Suspense fallback={null}>
                     <HumanVerificationModal
+                        api={api}
                         open={verification.open}
                         title={verification.payload.title}
                         token={verification.payload.token}
