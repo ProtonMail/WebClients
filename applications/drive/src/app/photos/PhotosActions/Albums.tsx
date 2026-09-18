@@ -34,33 +34,6 @@ export const createAlbum = async (name: string): Promise<NodeEntity | undefined>
     }
 };
 
-export const renameAlbum = async (nodeUid: string, name: string): Promise<void> => {
-    try {
-        const node = await getDriveForPhotos().updateAlbum(nodeUid, {
-            name,
-        });
-
-        await getBusDriver().emit(
-            {
-                type: BusDriverEventName.UPDATED_NODES,
-                items: [
-                    {
-                        uid: node.uid,
-                        parentUid: node.parentUid,
-                        isShared: node.isShared,
-                    },
-                ],
-            },
-            getDriveForPhotos()
-        );
-        getNotificationsManager().createNotification({
-            text: <span className="text-pre-wrap">{c('Notification').t`Album renamed successfully`}</span>,
-        });
-    } catch (e) {
-        handleSdkError(e);
-    }
-};
-
 // TODO: Check if we click really really fast, so maybe some abortController needed
 export const toggleFavorite = async (nodeUid: string) => {
     const photoItem = usePhotosStore.getState().getPhotoItem(nodeUid);

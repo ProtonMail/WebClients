@@ -45,7 +45,7 @@ export type SearchModuleState = {
     indexPopulatorStatuses: IndexPopulatorStatus[];
 };
 
-export type AttributeFilter = string | bigint | boolean;
+type AttributeFilter = string | bigint | boolean;
 
 export enum IndexKind {
     // The main default index: My files.

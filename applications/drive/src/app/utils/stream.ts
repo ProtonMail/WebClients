@@ -1,4 +1,4 @@
-export const untilStreamEnd = async <T>(stream: ReadableStream<T>, action?: (data: T) => Promise<void>) => {
+const untilStreamEnd = async <T>(stream: ReadableStream<T>, action?: (data: T) => Promise<void>) => {
     const reader = stream.getReader();
 
     const processResponse = async (result: ReadableStreamReadResult<T>): Promise<any> => {

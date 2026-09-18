@@ -69,21 +69,6 @@ const loadAlbumsFromIterator = async (iterator: AsyncIterable<MaybeMissingNode>)
     return fetchedUids;
 };
 
-export const loadAlbums = async (abortSignal?: AbortSignal) => {
-    const drive = getDriveForPhotos();
-    useAlbumsStore.getState().setLoadingList(true);
-    try {
-        const fetchedUids = await loadAlbumsFromIterator(
-            batchUidsToNodes(drive.experimental.iterateAlbumUids(abortSignal), drive)
-        );
-        useAlbumsStore.getState().cleanupStaleAlbums(fetchedUids, true);
-    } catch (e) {
-        handleSdkError(e);
-    } finally {
-        useAlbumsStore.getState().setLoadingList(false);
-    }
-};
-
 export const loadSharedWithMeAlbums = async (abortSignal?: AbortSignal) => {
     const drive = getDriveForPhotos();
     useAlbumsStore.getState().setLoadingList(true);

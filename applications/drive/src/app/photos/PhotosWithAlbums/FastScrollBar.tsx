@@ -62,7 +62,7 @@ export const getYearAndMonthFromCaptureTime = (captureTime?: Date): { year: numb
     return result;
 };
 
-export const getMonthName = (month: number): string => {
+const getMonthName = (month: number): string => {
     const MONTH_NAMES = [
         // translator: shorthand for January
         c('Info').t`Jan`,

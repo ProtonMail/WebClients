@@ -37,8 +37,8 @@ export type ThrottledSearchSdkDriveClient = {
  * A proper cross-component, lower-level implementation is tracked in DRVWEB-5551:
  * https://protonag.atlassian.net/browse/DRVWEB-5551
  */
-export const SEARCH_INDEXING_SDK_QUOTA_REQUEST = 400;
-export const SEARCH_INDEXING_SDK_QUOTA_INTERVAL_MS = 60_000;
+const SEARCH_INDEXING_SDK_QUOTA_REQUEST = 400;
+const SEARCH_INDEXING_SDK_QUOTA_INTERVAL_MS = 60_000;
 
 /**
  * Wraps a drive client so every node-fetch call used by background indexing goes through one

@@ -14,7 +14,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
 
-export type UseRenameDeviceInnerProps = {
+type UseRenameDeviceInnerProps = {
     deviceUid: string;
     drive?: ProtonDriveClient;
     onClose?: () => void;

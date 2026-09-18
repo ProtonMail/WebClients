@@ -43,8 +43,7 @@ const DEFAULT_MIME_TYPE = 'application/octet-stream';
  * At the same time if we set it too high you will feel the lag between closing the modal and finishing the transfer.
  */
 
-export type FileDownloader = Awaited<ReturnType<ProtonDriveClient['getFileDownloader']>>;
-export type FileRevisionDownloader = Awaited<ReturnType<ProtonDriveClient['getFileRevisionDownloader']>>;
+type FileDownloader = Awaited<ReturnType<ProtonDriveClient['getFileDownloader']>>;
 export type DownloadController = ReturnType<FileDownloader['downloadToStream']>;
 
 type ActiveDownload = {

@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 import { AlbumTag, type Tag } from '../../../legacy/store';
 
-export interface TagsProps<T extends Tag> {
+interface TagsProps<T extends Tag> {
     selectedTags: T[];
     tags: T[];
     onTagSelect: (tag: T[]) => void;

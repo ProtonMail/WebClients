@@ -21,7 +21,7 @@ const canOpenInSameTab = (APP_NAME: APP_NAMES, settingsApp: APP_NAMES | undefine
     return settingsApp ? settingsApp === toSettingsForApp : APP_NAME === toSettingsForApp;
 };
 
-export interface Props extends Omit<AppLinkProps, 'to' | 'toApp'> {
+interface Props extends Omit<AppLinkProps, 'to' | 'toApp'> {
     path: string;
     app?: APP_NAMES;
 }

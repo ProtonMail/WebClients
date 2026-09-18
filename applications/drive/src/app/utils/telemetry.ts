@@ -52,7 +52,7 @@ export enum Actions {
     SignUpFlowModal = 'signUpFlowModal',
     SignInFlowModal = 'signInFlowModal',
     OpenPublicLinkFromSharedWithMe = 'openPublicLinkFromSharedWithMe',
-    PublicScanAndDownload = 'publicScanAndDownload',
+    // PublicScanAndDownload = 'publicScanAndDownload',
     PublicDownload = 'publicDownload',
     PublicLinkVisit = 'publicLinkVisit',
     DeleteBookmarkFromSharedWithMe = 'DeleteBookmarkFromSharedWithMe',
@@ -72,12 +72,12 @@ export enum Actions {
     OnboardingV2UploadFile = 'onboardingV2UploadFile',
     OnboardingV2UploadFolder = 'onboardingV2UploadFolder',
     OnboardingV2UploadSkip = 'onboardingV2UploadSkip',
-    OnboardingAlbumShown = 'onboardingAlbumShown',
-    OnboardingAlbumPrimaryAction = 'onboardingAlbumPrimaryAction',
+    // OnboardingAlbumShown = 'onboardingAlbumShown',
+    // OnboardingAlbumPrimaryAction = 'onboardingAlbumPrimaryAction',
 
     // images
-    ConvertedHEIC = 'convertedHEIC',
-    ExtractedFromRaw = 'extractedFromRaw',
+    // ConvertedHEIC = 'convertedHEIC',
+    // ExtractedFromRaw = 'extractedFromRaw',
 }
 
 type PerformanceTelemetryAdditionalValues = {

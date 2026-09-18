@@ -1,5 +1,3 @@
-import type { AlbumProperties } from '../../../../legacy/store';
-
 export function noSelection(selectedItems: any[]): boolean {
     return selectedItems.length === 0;
 }
@@ -10,16 +8,4 @@ export function isMultiSelect(selectedItems: any[]): boolean {
 
 export function hasFoldersSelected(selectedItems: { isFile: boolean }[]): boolean {
     return selectedItems.some((item) => !item.isFile);
-}
-
-export function hasBookmarkSelected(selectedItems: { isBookmark?: boolean }[]): boolean {
-    return selectedItems.some((item) => item.isBookmark);
-}
-
-export function hasInvitationSelected(selectedItems: { isInvitation?: boolean }[]): boolean {
-    return selectedItems.some((item) => item.isInvitation);
-}
-
-export function hasAlbumSelected(selectedItems: { albumProperties?: AlbumProperties }[]): boolean {
-    return selectedItems.some((item) => !!item.albumProperties);
 }

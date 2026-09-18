@@ -182,42 +182,12 @@ export class SearchBlobCryptoError extends Error {
     }
 }
 
-/**
- * Thrown when a tree scope is removed (tree_remove signal).
- * Handled gracefully — entries are cleaned up, scope unregistered, processor continues.
- */
-export class ScopeRemovedError extends Error {
-    constructor(readonly treeEventScopeId: string) {
-        super(`Tree removed for scope ${treeEventScopeId}`);
-        this.name = 'ScopeRemovedError';
-    }
-}
-
 export const createQuotaExceededErrorMessage = async () => {
     const { usage, quota } = await navigator.storage.estimate();
     const usageMB = ((usage ?? 0) / 1024 / 1024).toFixed(1);
     const quotaMB = ((quota ?? 0) / 1024 / 1024).toFixed(1);
     return `${usageMB}MB / ${quotaMB}MB`;
 };
-
-/**
- * Thrown when attempting to subscribe to tree events for a scope that already has
- * an active subscription.
- */
-export class DuplicateEventSubscriptionError extends Error {
-    constructor(treeEventScopeId: string) {
-        super(`Already subscribed to tree events for scope ${treeEventScopeId}`);
-        this.name = 'DuplicateEventSubscriptionError';
-    }
-}
-
-/**
- * Returns true for transient IndexedDB errors where the transaction timed out
- * or was aborted by the browser under memory pressure. Safe to retry.
- */
-export function isTransactionInactiveError(e: unknown): boolean {
-    return e instanceof DOMException && e.name === 'TransactionInactiveError';
-}
 
 /**
  * Returns true for IndexedDB errors that indicate the database is corrupted
@@ -228,7 +198,7 @@ export function isTransactionInactiveError(e: unknown): boolean {
  * - DataError: invalid keys (tampered data)
  * - DataCloneError: unserializable values (tampered data)
  */
-export function isCorruptedDBError(e: unknown): boolean {
+function isCorruptedDBError(e: unknown): boolean {
     if (!(e instanceof DOMException)) {
         return false;
     }
@@ -299,7 +269,7 @@ export function tryCatchWithNotification<T>(fn: () => T | Promise<T>): () => Pro
     };
 }
 
-export type TransientErrorKind = 'rate-limited' | 'server' | 'network' | 'offline' | 'abort' | 'unknown';
+type TransientErrorKind = 'rate-limited' | 'server' | 'network' | 'offline' | 'abort' | 'unknown';
 
 export type ErrorDecision =
     { kind: 'permanent'; reason: PermanentErrorKind } | { kind: 'transient'; reason: TransientErrorKind };

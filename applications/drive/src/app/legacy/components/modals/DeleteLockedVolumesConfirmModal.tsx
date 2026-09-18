@@ -78,8 +78,6 @@ const DeleteLockedVolumesConfirmModal = ({
     );
 };
 
-export default DeleteLockedVolumesConfirmModal;
-
 export const useDeleteLockedVolumesConfirmModal = () => {
     return useModalTwoStatic(DeleteLockedVolumesConfirmModal);
 };

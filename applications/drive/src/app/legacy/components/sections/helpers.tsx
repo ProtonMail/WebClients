@@ -5,7 +5,6 @@ import { LinkURLType, SupportedMimeTypes } from '@proton/shared/lib/drive/consta
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { DecryptedLink } from '../../../legacy/store';
-import type { SharedWithMeItem } from './interface';
 
 export const selectMessageForItemList = (
     isFiles: boolean[],
@@ -26,7 +25,7 @@ export const toLinkURLType = (isFile: boolean) => {
     return isFile ? LinkURLType.FILE : LinkURLType.FOLDER;
 };
 
-export const getLocalizedDescription = (mimeType: string): string | undefined => {
+const getLocalizedDescription = (mimeType: string): string | undefined => {
     switch (mimeType) {
         case 'application/vnd.proton.doc':
             return DOCS_APP_NAME;
@@ -243,21 +242,6 @@ export const getSelectedItems = (
         return selectedItemIds
             .map((selectedItemId) => items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item[key]))
             .filter(isTruthy) as DecryptedLink[];
-    }
-
-    return [];
-};
-
-export const getSelectedSharedWithMeItems = (
-    items: SharedWithMeItem[],
-    selectedItemIds: string[]
-): SharedWithMeItem[] => {
-    if (items) {
-        return selectedItemIds
-            .map((selectedItemId) =>
-                items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item.rootShareId)
-            )
-            .filter(isTruthy) as SharedWithMeItem[];
     }
 
     return [];

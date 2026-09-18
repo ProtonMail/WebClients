@@ -14,7 +14,7 @@ import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/li
 import type { RenameModalViewProps } from './RenameModalView';
 import type { Drive } from './interface';
 
-export type RenameModalInnerProps = {
+type RenameModalInnerProps = {
     nodeUid: string;
     drive?: Drive;
 };

@@ -11,7 +11,7 @@ interface Props {
     selectedLinks: DecryptedLink[];
 }
 
-export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
+const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
     items.map((item) => generateNodeUid(item.volumeId, item.linkId));
 
 const MoveToFolderButton = ({ selectedLinks }: Props) => {
