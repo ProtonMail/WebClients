@@ -3,7 +3,6 @@ import type { Config } from 'jest';
 const jestConfig: Config = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
-    collectCoverage: true,
     collectCoverageFrom: [
         'src/**/*.{js,jsx,ts,tsx}',
         '!./**/*.interface.ts',
