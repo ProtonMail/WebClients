@@ -204,6 +204,7 @@ const Verify = () => {
         <AccountLockedUpsellForm />
     ) : (
         <HumanVerificationForm
+            api={api}
             theme={theme && darkThemes.includes(theme) ? 'dark' : 'light'}
             step={step}
             onChangeStep={setStep}
