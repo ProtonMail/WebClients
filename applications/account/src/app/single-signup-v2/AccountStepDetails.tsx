@@ -11,7 +11,7 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
-import Challenge from '@proton/components/containers/challenge/Challenge';
+import ChallengeV4 from '@proton/components/containers/challenge/ChallengeV4';
 import useRightToLeft from '@proton/hooks/useRightToLeft';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { PLANS } from '@proton/payments/core/constants';
@@ -201,7 +201,7 @@ const AccountStepDetails = ({
                     />
                 </div>
                 <div className={`${inputsWrapper} mb-4`}>
-                    <Challenge
+                    <ChallengeV4
                         getThemeData={getThemeData}
                         getIconsData={() => challengeIconsSvg}
                         bodyClassName="color-norm bg-transparent px-2"
@@ -381,7 +381,7 @@ const AccountStepDetails = ({
                                 />
                             )}
                         </div>
-                    </Challenge>
+                    </ChallengeV4>
 
                     {emailDescription && <div className="mb-4">{emailDescription}</div>}
 
