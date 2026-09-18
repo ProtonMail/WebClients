@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
@@ -50,11 +50,7 @@ export const Default: Story = {
         const [targetSize, setTargetSize] = useState(sizeOptions[1].value);
         const [placement, setPlacement] = useState<PopperPlacement>(allPopperPlacements[0]);
         const [borderRadius, setBorderRadius] = useState<BorderRadius>('md');
-        const [show, setShow] = useState(false);
-
-        useEffect(() => {
-            setTimeout(() => setShow(true), 500);
-        }, []);
+        const [show, setShow] = useState(true);
 
         const handleChangeSize = (size: string) => {
             setShow(false);
