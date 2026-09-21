@@ -273,7 +273,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                       ) : (
                         <Input
                           placeholder={s('Enter value')}
-                          value={fromValue}
+                          value={fromValue ?? ''}
                           onChange={(e) =>
                             form.setValue(`booleanRule.condition.values.${0}.userEnteredValue`, e.target.value)
                           }
@@ -284,7 +284,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                     {showToValue ? (
                       <Input
                         placeholder={s('Enter value')}
-                        value={toValue}
+                        value={toValue ?? ''}
                         onChange={(e) =>
                           form.setValue(`booleanRule.condition.values.${1}.userEnteredValue`, e.target.value)
                         }
