@@ -43,6 +43,10 @@ export class DirectMeetCoreClient implements MeetCoreClient {
         return this.app.joinMeetingWithAccessToken(...args);
     }
 
+    public joinMeeting2(...args: Parameters<App['joinMeeting2']>): Promise<void> {
+        return this.app.joinMeeting2(...args);
+    }
+
     public joinMeetingWithAccessTokenWithSwitchJoinType(
         ...args: Parameters<App['joinMeetingWithAccessTokenWithSwitchJoinType']>
     ): Promise<void> {
