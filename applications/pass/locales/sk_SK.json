@@ -789,6 +789,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ],
+      "Collapse": [
+        "Zbaliť"
+      ],
+      "Create folder": [
+        "Vytvoriť priečinok"
+      ],
+      "Create new folder": [
+        "Vytvoriť nový priečinok"
+      ],
+      "Expand": [
+        "Rozbaliť"
+      ],
+      "Move to": [
+        "Presunúť do"
+      ],
+      "Rename": [
+        "Premenovať"
       ]
     },
     "Activity": {
@@ -1444,6 +1462,21 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Failed to create folder": [
+        "Nepodarilo sa vytvoriť priečinok"
+      ],
+      "Failed to delete folder": [
+        "Priečinok sa nepodarilo vymazať.",
+        "Priečinky sa nepodarilo vymazať.",
+        "Priečinky sa nepodarilo vymazať.",
+        "Priečinky sa nepodarilo vymazať."
+      ],
+      "Failed to update folder": [
+        "Priečinok sa nepodarilo aktualizovať"
+      ],
+      "Folder name does not match": [
+        "Názov priečinka sa nezhoduje"
       ]
     },
     "Error message": {
@@ -2887,6 +2920,36 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV ponúka vhodný formát na zobrazenie údajov. Avšak kvôli svojej jednoduchosti, niektoré údaje nebudú zahrnuté (vlastné polia, štruktúra priečinkov atď.). Pre kompletný export odporúčame použiť iný formát."
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Priečinok \"${ payload.folder.name }\" bol vytvorený"
+      ],
+      "Folder deleted": [
+        "Priečinok odstránený"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Priečinok bol premenovaný na \"${ payload.folder.name }\""
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Prebieha úplná synchronizácia údajov s cieľom zlepšiť výkon aplikácie. Ďakujeme za trpezlivosť."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Presunutá bude len ${ count } položka v priečinku \"${ folderName }\". Položky v podpriečinkoch nebudú presunuté.",
+        "Presunuté budú len ${ count } položky v priečinku \"${ folderName }\". Položky v podpriečinkoch nebudú presunuté.",
+        "Presunutých bude len ${ count } položiek v priečinku \"${ folderName }\". Položky v podpriečinkoch nebudú presunuté.",
+        "Presunutých bude len ${ count } položiek v priečinku \"${ folderName }\". Položky v podpriečinkoch nebudú presunuté."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Presunutá bude len ${ count } položka. Položky v priečinkoch nebudú presunuté.",
+        "Presunuté budú len ${ count } položky. Položky v priečinkoch nebudú presunuté.",
+        "Presunutých bude len ${ count } položiek. Položky v priečinkoch nebudú presunuté.",
+        "Presunutých bude len ${ count } položiek. Položky v priečinkoch nebudú presunuté."
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Prepnite sa do iného priečinka alebo vytvorte položku v tomto priečinku"
       ]
     },
     "Keyboard key": {
@@ -4157,6 +4220,18 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "Confirm folder name": [
+        "Potvrďte názov priečinka"
+      ],
+      "Create a folder": [
+        "Vytvoriť priečinok"
+      ],
+      "Folder": [
+        "Priečinok"
+      ],
+      "Folders": [
+        "Priečinky"
       ]
     },
     "Link": {
@@ -4506,6 +4581,12 @@
       ],
       "Used on ${ url }": [
         "Používa sa na ${ url }"
+      ],
+      "Folder name": [
+        "Názov priečinka"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Opätovným zadaním \"${ name }\" potvrdíte odstránenie"
       ]
     },
     "Result": {
@@ -5257,6 +5338,39 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ],
+      "Create folder in \"${ vaultName }\"": [
+        "Vytvoriť priečinok v „${ vaultName }“"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Vytvoriť podpriečinok v „${ folderName }“"
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Vymazať priečinok „${ name }\"?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Vymazať trezor \"${ name }\"?"
+      ],
+      "Folder options": [
+        "Možnosti priečinka"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "Presunúť ${ count } položku do ${ target }",
+        "Presunúť ${ count } položky do ${ target }",
+        "Presunúť ${ count } položiek do ${ target }",
+        "Presunúť ${ count } položiek do ${ target }"
+      ],
+      "Move all items?": [
+        "Presunúť všetky položky?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Presunúť položku do \"${ target }\""
+      ],
+      "Rename folder": [
+        "Premenovať priečinok"
+      ],
+      "Your folder is empty": [
+        "Váš priečinok je prázdny"
       ]
     },
     "Title_cloned_item": {
@@ -5622,6 +5736,24 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Všetky položky v tomto priečinku vrátane jeho podpriečinkov budú vymazané. Túto akciu nie je možné vrátiť späť."
+      ],
+      "Folder name is required": [
+        "Názov priečinka je povinný"
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Trezor „${ name }“ a všetky jeho položky budú natrvalo odstránené. Túto akciu nie je možné vrátiť späť."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Dosiahli ste maximálnu úroveň vnorenia priečinkov"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Dosiahli ste maximálny počet priečinkov na tejto úrovni"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Dosiahli ste maximálny počet priečinkov v tomto trezore"
       ]
     }
   }

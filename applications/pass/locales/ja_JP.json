@@ -762,6 +762,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
+      ],
+      "Collapse": [
+        "閉じる"
+      ],
+      "Create folder": [
+        "フォルダを作成"
+      ],
+      "Create new folder": [
+        "新規フォルダーを作成"
+      ],
+      "Expand": [
+        "展開"
+      ],
+      "Move to": [
+        "移動先"
+      ],
+      "Rename": [
+        "名前を変更"
       ]
     },
     "Activity": {
@@ -1384,6 +1402,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "あなたのPIN コードは他のクライアント${ PASS_APP_NAME }にって削除されました"
+      ],
+      "Failed to create folder": [
+        "フォルダーの作成に失敗しました"
       ]
     },
     "Error message": {
@@ -3962,6 +3983,9 @@
       ],
       "ZIP or Postal code": [
         "郵便番号"
+      ],
+      "Folder": [
+        "フォルダー"
       ]
     },
     "Link": {
@@ -5005,6 +5029,9 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount }個のエイリアスを完全に削除しようとしています。"
+      ],
+      "Folder options": [
+        "フォルダー設定"
       ]
     },
     "Title_cloned_item": {

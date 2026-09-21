@@ -782,6 +782,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Collapse": [
+        "Réduire"
+      ],
+      "Create folder": [
+        "Créer un dossier"
+      ],
+      "Create new folder": [
+        "Créer un nouveau dossier"
+      ],
+      "Expand": [
+        "Développer"
+      ],
+      "Move to": [
+        "Déplacer vers"
+      ],
+      "Rename": [
+        "Renommer"
       ]
     },
     "Activity": {
@@ -1431,6 +1449,19 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Failed to create folder": [
+        "La création du dossier n'a pas abouti."
+      ],
+      "Failed to delete folder": [
+        "Impossible de supprimer le dossier",
+        "Impossible de supprimer les dossiers"
+      ],
+      "Failed to update folder": [
+        "Échec de la mise à jour du dossier"
+      ],
+      "Folder name does not match": [
+        "Le nom du dossier ne correspond pas"
       ]
     },
     "Error message": {
@@ -2818,6 +2849,32 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "Le CSV offre un format pratique pour visualiser vos données. Cependant, en raison de sa simplicité, certaines données ne seront pas incluses (champs personnalisés, structure de dossiers, etc.). Pour une exportation complète, nous recommandons d'utiliser un format différent."
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Le dossier \"${ payload.folder.name }\" a été créé"
+      ],
+      "Folder deleted": [
+        "Le dossier a été supprimé."
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Dossier renommé en \"${ payload.folder.name }\""
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Synchronisation complète des données pour améliorer les performances de l'application. Merci de votre patience."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Seulement ${ count } élément dans \"${ folderName }\" sera déplacé. Les éléments dans les sous-dossiers ne seront pas déplacés.",
+        "Seulement ${ count } éléments dans \"${ folderName }\" seront déplacés. Les éléments dans les sous-dossiers ne seront pas déplacés."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Seulement ${ count } élément sera déplacé. Les éléments dans les dossiers ne seront pas déplacés.",
+        "Seulement ${ count } éléments seront déplacés. Les éléments dans les dossiers ne seront pas déplacés."
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Sélectionnez un autre dossier ou créez un élément dans ce dossier"
       ]
     },
     "Keyboard key": {
@@ -4060,6 +4117,18 @@
       ],
       "ZIP or Postal code": [
         "Code postal"
+      ],
+      "Confirm folder name": [
+        "Confirmez le nom du dossier"
+      ],
+      "Create a folder": [
+        "Créer un dossier"
+      ],
+      "Folder": [
+        "Dossier"
+      ],
+      "Folders": [
+        "Dossiers"
       ]
     },
     "Link": {
@@ -4403,6 +4472,12 @@
       ],
       "Used on ${ url }": [
         "Utilisé sur ${ url }"
+      ],
+      "Folder name": [
+        "Nom du dossier"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Saisissez à nouveau \"${ name }\" pour confirmer la suppression"
       ]
     },
     "Result": {
@@ -5138,6 +5213,37 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "Create folder in \"${ vaultName }\"": [
+        "Créer un dossier dans ${ vaultName }"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Créer un sous-dossier dans \"${ folderName }\""
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Supprimer le dossier \"${ name }\" ?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Supprimer le coffre-fort \"${ name }\" ?"
+      ],
+      "Folder options": [
+        "Options de dossier"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "Déplacer ${ count } élément vers ${ target }",
+        "Déplacer ${ count } éléments vers ${ target }"
+      ],
+      "Move all items?": [
+        "Déplacer tous les éléments ?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Déplacer l'élément vers \"${ target }\""
+      ],
+      "Rename folder": [
+        "Renommer un dossier"
+      ],
+      "Your folder is empty": [
+        "Votre dossier est vide"
       ]
     },
     "Title_cloned_item": {
@@ -5495,6 +5601,24 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Tous les éléments dans ce dossier, dont ses sous-dossiers, seront supprimés. Cette action est irréversible."
+      ],
+      "Folder name is required": [
+        "Le nom du dossier est requis"
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Le coffre-fort \"${ name }\" et tous ses éléments seront définitivement supprimés. Cette action est irréversible."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Vous avez atteint le niveau maximal d'imbrication de dossiers"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Vous avez atteint le nombre maximal de dossiers à ce niveau"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Vous avez atteint le nombre maximal de dossiers dans ce coffre-fort"
       ]
     }
   }
