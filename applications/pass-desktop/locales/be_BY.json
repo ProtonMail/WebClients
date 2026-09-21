@@ -819,6 +819,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Collapse": [
+        "Згарнуць"
+      ],
+      "Create folder": [
+        "Стварыць папку"
+      ],
+      "Create new folder": [
+        "Стварыць новую папку"
+      ],
+      "Expand": [
+        "Разгарнуць"
+      ],
+      "Move to": [
+        "Перамясціць у"
+      ],
+      "Rename": [
+        "Перайменаваць"
       ]
     },
     "Activity": {
@@ -1482,6 +1500,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
+      ],
+      "Failed to create folder": [
+        "Не ўдалося стварыць папку"
+      ],
+      "Failed to delete folder": [
+        "Не ўдалося выдаліць папку",
+        "Не ўдалося выдаліць папкі",
+        "Не ўдалося выдаліць папкі",
+        "Не ўдалося выдаліць папкі"
+      ],
+      "Failed to update folder": [
+        "Не ўдалося абнавіць папку"
       ]
     },
     "Error message": {
@@ -2256,7 +2286,10 @@
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2977,6 +3010,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Folder deleted": [
+        "Папка выдалена"
       ]
     },
     "Keyboard key": {
@@ -4307,6 +4343,18 @@
       ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
+      ],
+      "Confirm folder name": [
+        "Пацвердзіце назву папкі"
+      ],
+      "Create a folder": [
+        "Стварыць папку"
+      ],
+      "Folder": [
+        "Папка"
+      ],
+      "Folders": [
+        "Папкі"
       ]
     },
     "Link": {
@@ -4670,6 +4718,9 @@
       ],
       "Used on ${ url }": [
         "Выкарыстоўваецца на ${ url }"
+      ],
+      "Folder name": [
+        "Назва папкі"
       ]
     },
     "Result": {
@@ -4678,6 +4729,9 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Гэты URL-адрас НЕ будзе заблакіраваны для аўтазапаўнення"
+      ],
+      "URL matches the rule": [
+        "URL-адрас адправядае правілу"
       ]
     },
     "Security Center - Info": {
@@ -5409,6 +5463,27 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ],
+      "Compromised password": [
+        "Скампраметаваны пароль"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Выдаліць сховішча \"${ name }\"?"
+      ],
+      "Enable offline mode": [
+        "Уключэнне рэжыму па-за сеткай"
+      ],
+      "Folder options": [
+        "Параметры папкі"
+      ],
+      "Move all items?": [
+        "Перамясціць усе элементы?"
+      ],
+      "Rename folder": [
+        "Перайменаваць папку"
+      ],
+      "Your folder is empty": [
+        "Ваша папка нічога не змяшчае"
       ]
     },
     "Title_cloned_item": {
@@ -5777,6 +5852,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ],
+      "Folder name is required": [
+        "Патрабуецца назва папкі"
       ]
     }
   }
