@@ -1,6 +1,12 @@
 import { sanitizeInlineStyle, sanitizeLexicalState } from './SanitizeLexicalState'
 
 describe('sanitizeInlineStyle', () => {
+  it('preserves the internal list marker color', () => {
+    const input = '--list-marker-color: rgb(109, 74, 255); color: rgb(255, 255, 255)'
+
+    expect(sanitizeInlineStyle(input)).toBe('--list-marker-color: rgb(109, 74, 255); color: rgb(255, 255, 255)')
+  })
+
   it('should allow safe CSS properties', () => {
     const input = 'color: red; font-size: 14px; background-color: #fff;'
     const result = sanitizeInlineStyle(input)
