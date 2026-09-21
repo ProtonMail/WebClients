@@ -163,6 +163,14 @@ export function sendMessageWithRedux(
                             }
                             break;
 
+                        case 'model':
+                            // A call can also generate a title or suggestions. Only the main
+                            // response's model belongs on the assistant message.
+                            if (message.target === 'message') {
+                                servingModelID = message.model;
+                            }
+                            break;
+
                         case 'token_data':
                             switch (message.target) {
                                 case 'title':
