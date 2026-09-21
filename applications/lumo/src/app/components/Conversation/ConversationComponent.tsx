@@ -100,6 +100,14 @@ const ConversationLayout = ({
     const [panelWidthPct, setPanelWidthPct] = useState(55);
     const panelWidthPctRef = useRef(panelWidthPct);
     panelWidthPctRef.current = panelWidthPct;
+    const dragWidthPctRef = useRef(panelWidthPct);
+    const artifactPanelContainerRef = useRef<HTMLDivElement>(null);
+
+    const applyArtifactPanelWidthPct = useCallback((pct: number) => {
+        if (artifactPanelContainerRef.current) {
+            artifactPanelContainerRef.current.style.flex = `0 0 ${pct}%`;
+        }
+    }, []);
 
     const handleArtifactResizePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
         e.preventDefault();
@@ -109,6 +117,7 @@ const ConversationLayout = ({
 
         const startX = e.clientX;
         const startPct = panelWidthPctRef.current;
+        dragWidthPctRef.current = startPct;
 
         document.body.style.cursor = 'col-resize';
         document.body.style.userSelect = 'none';
@@ -121,7 +130,8 @@ const ConversationLayout = ({
             const dx = ev.clientX - startX;
             const deltaPct = (dx / containerWidth) * 100;
             const newPct = Math.max(25, Math.min(75, startPct - deltaPct));
-            setPanelWidthPct(newPct);
+            dragWidthPctRef.current = newPct;
+            applyArtifactPanelWidthPct(newPct);
         };
 
         const cleanup = () => {
@@ -141,13 +151,14 @@ const ConversationLayout = ({
             if (ev.pointerId !== pointerId) {
                 return;
             }
+            setPanelWidthPct(dragWidthPctRef.current);
             cleanup();
         };
 
         handle.addEventListener('pointermove', handlePointerMove);
         handle.addEventListener('pointerup', handlePointerUp);
         handle.addEventListener('pointercancel', handlePointerUp);
-    }, []);
+    }, [applyArtifactPanelWidthPct]);
 
     return (
         <>
@@ -262,6 +273,7 @@ const ConversationLayout = ({
 
                     {isPanelOpen && !isArtifactMobileLayout && !isFullscreen && (
                         <div
+                            ref={artifactPanelContainerRef}
                             className="artifact-panel-container hidden md:flex flex-column min-w-0"
                             style={{ flex: `0 0 ${panelWidthPct}%` }}
                         >
