@@ -4,7 +4,6 @@ export type {
   CollaboratorCursorNavigationDestination,
   SheetsDependencies,
   SheetsEditorToShellActions,
-  SheetsExportFormat,
   SheetsFeatureFlags,
   SheetsFileMenuActions,
   SheetsSession,
