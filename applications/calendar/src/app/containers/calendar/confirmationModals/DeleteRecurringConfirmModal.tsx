@@ -149,6 +149,7 @@ const DeleteRecurringConfirmModal = ({
             ]}
             onSubmit={handleConfirm}
             open={isOpen}
+            enableDangerSubmitHotkey
         >
             <div className="mb-4">{alertText}</div>
             {warningText && (
