@@ -27,6 +27,7 @@ import { ArtifactPanelMobileOverlay } from './artifact/ArtifactPanelMobileOverla
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
 import DesktopApprovalCards from './messageChain/message/DesktopToolApproval/DesktopApprovalCards';
+import ToolBudgetCard from './messageChain/message/ToolBudget/ToolBudgetCard';
 import { WebSearchSourcesView } from './messageChain/message/toolCall/WebSearchSourcesView';
 import { useImageLimitInfo } from './useImageLimitInfo';
 
@@ -215,7 +216,12 @@ const ConversationLayout = ({
                                 onRetryPanelToggle={handleRetryPanelToggle}
                                 composerContainerRef={composerContainerRef}
                                 conversationId={conversationId}
-                                afterMessages={<DesktopApprovalCards />}
+                                afterMessages={
+                                    <>
+                                        <DesktopApprovalCards />
+                                        <ToolBudgetCard conversationId={conversationId} />
+                                    </>
+                                }
                             />
                             {/* TODO: update to show all conversations errors at some point */}
                             {conversationErrors.length > 0 && (
