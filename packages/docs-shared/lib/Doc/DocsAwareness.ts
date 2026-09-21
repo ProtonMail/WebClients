@@ -30,17 +30,6 @@ export type SafeDocsUserState = {
   title?: string
 }
 
-export type SheetsUserState = {
-  activeCell: {
-    rowIndex: number
-    columnIndex: number
-  }
-  name: string
-  sheetId: number
-  userId: string
-  title: string
-}
-
 export class DocsAwareness<T extends UnsafeDocsUserState | SafeDocsUserState = SafeDocsUserState> extends Awareness {
   getLocalState(): T | null {
     return super.getLocalState() as T
