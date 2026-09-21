@@ -45,11 +45,12 @@ class ProtonIconsTreeShakePlugin {
      * Removes unused icon definitions from the content
      * @param {string} source File content
      * @param {Set<string>} unused Set of unused icon names
+     * @param {string} prefix Id prefix pattern of the icon set (`ic` or `mime-(sm|md|lg)`)
      * @returns {string} Updated content with unused icons removed
      */
-    removeUnusedIcons(source, unused) {
+    removeUnusedIcons(source, unused, prefix) {
         unused.forEach((icon) => {
-            const regex = new RegExp(`<g id="(ic|mime-(sm|md|lg))-${icon}"[\\s\\S]*?<\/g>`, 'g');
+            const regex = new RegExp(`<g id="${prefix}-${icon}"[\\s\\S]*?<\/g>`, 'g');
             source = source.replace(regex, '');
         });
         return source;
@@ -66,16 +67,24 @@ class ProtonIconsTreeShakePlugin {
         const { source, map } = asset.source.sourceAndMap();
         const originalLength = source.length;
 
-        const unused = new Set([...this.mimeIcons, ...this.spriteIcons]);
+        /* Sprite and mime icons are kept apart: both sets share names (eg `folder`)
+         * and removal targets the id prefix, so merging them would strip a used
+         * sprite icon whenever its mime namesake is unused */
+        const unusedSprite = new Set(this.spriteIcons);
+        const unusedMime = new Set(this.mimeIcons);
 
         /* Identify used icons (may have false positives) via direct string match */
-        unused.forEach((icon) => source.includes(`"${icon}"`) && unused.delete(icon));
-        if (this.excludeMimeIcons) this.mimeIcons.forEach((icon) => unused.add(icon));
+        unusedSprite.forEach((icon) => source.includes(`"${icon}"`) && unusedSprite.delete(icon));
+        if (!this.excludeMimeIcons) {
+            unusedMime.forEach((icon) => source.includes(`"${icon}"`) && unusedMime.delete(icon));
+        }
 
-        console.info(`[ProtonIconsTreeShake] Found ${unused.size} unused icons in ${filename}`);
+        const unusedCount = unusedSprite.size + unusedMime.size;
+        console.info(`[ProtonIconsTreeShake] Found ${unusedCount} unused icons in ${filename}`);
 
-        if (unused.size > 0) {
-            const nextSource = this.removeUnusedIcons(source, unused);
+        if (unusedCount > 0) {
+            let nextSource = this.removeUnusedIcons(source, unusedSprite, 'ic');
+            nextSource = this.removeUnusedIcons(nextSource, unusedMime, 'mime-(sm|md|lg)');
 
             if (nextSource.length !== originalLength) {
                 const savedChars = originalLength - nextSource.length;
