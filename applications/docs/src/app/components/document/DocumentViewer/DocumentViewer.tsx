@@ -26,6 +26,7 @@ import {
 } from '@proton/docs-core'
 import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
+import { useGetPrimaryAddressKeys } from '@proton/docs-core/lib/DriveSDK/getDocumentKeys'
 import type {
   CommentMarkNodeChangeData,
   DocumentAction,
@@ -61,6 +62,7 @@ import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { getLogsAsJSON } from '~/utils/downloadLogs'
 import {
   useDocsDocumentViewerEventsSDK,
+  useDriveCompatSDK,
   useIsDarkThemeEnabled,
   useIsGatePrivateInviteAccessEnabled,
   useIsOpenTracerEnabled,
@@ -138,6 +140,8 @@ export function DocumentViewer({
 
   const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
   const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
+  const isDriveCompatSDK = useDriveCompatSDK()
+  const getPrimaryAddressKeys = useGetPrimaryAddressKeys()
   const isOpenTracerEnabled = useIsOpenTracerEnabled()
   const isDarkThemeEnabled = useIsDarkThemeEnabled()
   const { information: themeInformation } = useTheme()
@@ -628,6 +632,12 @@ export function DocumentViewer({
       return
     }
 
+    const handleInitError = (errorMessage: string, code?: DocsApiErrorCode) => {
+      void OpenTracer.trace('boot_doc_viewer_on_error', { code })
+      setError({ message: errorMessage, userUnderstandableMessage: false, code })
+      application.metrics.reportFullyBlockingErrorModal()
+    }
+
     const disposer = application.getDocLoader().addStatusObserver({
       onSuccess: (result) => {
         void OpenTracer.trace('boot_doc_viewer_on_success', {
@@ -652,24 +662,45 @@ export function DocumentViewer({
           }
         }
       },
-      onError: (errorMessage, code) => {
-        void OpenTracer.trace('boot_doc_viewer_on_error', { code })
-        setError({ message: errorMessage, userUnderstandableMessage: false, code })
-        application.metrics.reportFullyBlockingErrorModal()
-      },
+      onError: handleInitError,
     })
 
     if (!initializing) {
       setInitializing(true)
       void OpenTracer.trace('boot_doc_viewer_loader_initialize_start', { documentType })
-      void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType))
+
+      if (isDriveCompatSDK && isPrivateNode) {
+        getPrimaryAddressKeys()
+          .then((keys) => {
+            void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType), keys)
+          })
+          .catch((error) => {
+            const errorMessage = 'Failed to fetch primary address keys'
+            application.logger.error(errorMessage, error)
+            handleInitError(errorMessage)
+          })
+      } else {
+        void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType))
+      }
     }
 
     return () => {
       void OpenTracer.trace('boot_doc_viewer_dispose')
       disposer()
     }
-  }, [application, docOrchestrator, documentType, getLocalID, initializing, nodeMeta, accessReady])
+  }, [
+    application,
+    docOrchestrator,
+    documentType,
+    getLocalID,
+    initializing,
+    nodeMeta,
+    accessReady,
+    isDriveCompatSDK,
+    removeLocalIDFromUrl,
+    getPrimaryAddressKeys,
+    isPrivateNode,
+  ])
 
   useEffect(() => {
     if (docOrchestrator && editorFrame && editorController && !bridge) {
