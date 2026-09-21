@@ -18,7 +18,11 @@ import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
 import { PLANS } from '@proton/payments/core/constants';
-import { getIsB2BAudienceFromPlan, planSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
+import {
+    getIsB2BAudienceFromPlan,
+    organizationOrSubscriptionSupportsSSO,
+    upsellPlanSSO,
+} from '@proton/payments/core/plan/helpers';
 import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
@@ -48,6 +52,10 @@ import type { OrganizationRouterParams } from '../../content/router-params';
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
 const scribeValidApplications = new Set<string>([APPS.PROTONMAIL]);
+
+// Apps where VPN-specific organization settings (gateways, shared servers, always-on VPN) are shown.
+// Pass is included because VPN+Pass bundle business orgs manage these settings from within Pass.
+const vpnOrganizationSettingsApps = new Set<string>([APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS]);
 
 export const getOrganizationAppRoutes = ({
     app,
@@ -190,10 +198,16 @@ export const getOrganizationAppRoutes = ({
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
+    const orgOrSubscriptionSupportsSSO = organizationOrSubscriptionSupportsSSO({
+        organization,
+        subscription,
+        isSsoForPbsEnabled,
+    });
+
     const canShowSSOSection =
         permissions['account.sso_config.read'] &&
         appSupportsSSO(app) &&
-        (planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) || upsellPlanSSO(organization?.PlanName)) &&
+        (orgOrSubscriptionSupportsSSO || upsellPlanSSO(organization?.PlanName)) &&
         isOrgConfigured;
 
     const routes = {
@@ -319,6 +333,7 @@ export const getOrganizationAppRoutes = ({
             to: '/gateways',
             icon: IcServers,
             available:
+                vpnOrganizationSettingsApps.has(app) &&
                 permissions['account.gateway.read'] &&
                 (entitlements.orgHasMaxDedicatedIps || getHasVpnGatewaysUpsellPlan(subscription)),
             subsections: [
@@ -338,6 +353,7 @@ export const getOrganizationAppRoutes = ({
             to: '/shared-servers',
             icon: IcEarth,
             available:
+                vpnOrganizationSettingsApps.has(app) &&
                 isSharedServerFeatureEnabled &&
                 permissions['account.shared_server.read'] &&
                 entitlements.orgHasVpnLocationFilter,
@@ -360,6 +376,7 @@ export const getOrganizationAppRoutes = ({
             to: '/always-on-vpn',
             icon: IcVault,
             available:
+                vpnOrganizationSettingsApps.has(app) &&
                 isAlwaysOnVpnEnabled &&
                 permissions['account.always_on.read'] &&
                 (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
@@ -527,8 +544,7 @@ export const getOrganizationAppRoutes = ({
             to: '/single-sign-on',
             icon: IcKey,
             available: canShowSSOSection,
-            upgradeRequired:
-                !planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) && !!upsellPlanSSO(organization?.PlanName),
+            upgradeRequired: !orgOrSubscriptionSupportsSSO && !!upsellPlanSSO(organization?.PlanName),
         },
         accessControl: {
             id: 'accessControl',
