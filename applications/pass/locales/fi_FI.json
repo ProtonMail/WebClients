@@ -779,6 +779,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+      ],
+      "Collapse": [
+        "Pienennä"
+      ],
+      "Create folder": [
+        "Luo kansio"
+      ],
+      "Create new folder": [
+        "Luo uusi kansio"
+      ],
+      "Expand": [
+        "Laajenna"
+      ],
+      "Move to": [
+        "Siirrä kohteeseen"
+      ],
+      "Rename": [
+        "Nimeä uudelleen"
       ]
     },
     "Activity": {
@@ -1413,6 +1431,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koodisi poistettiin toiselta ${ PASS_APP_NAME } -päätteeltä"
+      ],
+      "Failed to create folder": [
+        "Kansion luominen epäonnistui"
       ]
     },
     "Error message": {
@@ -4033,6 +4054,9 @@
       ],
       "ZIP or Postal code": [
         "Postinumero"
+      ],
+      "Folder": [
+        "Kansio"
       ]
     },
     "Link": {
@@ -5087,6 +5111,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
+      ],
+      "Folder options": [
+        "Kansion valinnat"
       ]
     },
     "Title_cloned_item": {

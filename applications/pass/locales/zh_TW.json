@@ -762,6 +762,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "找不到您使用的密碼管理器？歡迎告訴我們"
+      ],
+      "Collapse": [
+        "收合"
+      ],
+      "Create folder": [
+        "新建資料夾"
+      ],
+      "Create new folder": [
+        "創建新資料夾"
+      ],
+      "Expand": [
+        "展開"
+      ],
+      "Move to": [
+        "移至"
+      ],
+      "Rename": [
+        "重新命名"
       ]
     },
     "Activity": {
@@ -1384,6 +1402,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 碼已被另一個 ${ PASS_APP_NAME } 用戶端移除"
+      ],
+      "Failed to create folder": [
+        "建立資料夾失敗"
       ]
     },
     "Error message": {
@@ -3959,6 +3980,9 @@
       ],
       "ZIP or Postal code": [
         "郵遞區號"
+      ],
+      "Folder": [
+        "資料夾"
       ]
     },
     "Link": {
@@ -5002,6 +5026,9 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您即將永久刪除 ${ aliasCount } 個別名。"
+      ],
+      "Folder options": [
+        "資料夾選項"
       ]
     },
     "Title_cloned_item": {
