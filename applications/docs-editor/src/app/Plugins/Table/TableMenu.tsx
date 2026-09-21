@@ -28,6 +28,7 @@ import { isCellHeaderColumn } from './TableUtils/isCellHeaderColumn'
 import { isCellHeaderRow } from './TableUtils/isCellHeaderRow'
 import { $toggleTableHeaderColumn } from './TableUtils/toggleTableHeaderColumn'
 import { $toggleTableHeaderRow } from './TableUtils/toggleTableHeaderRow'
+import { $fitTableToPageWidth } from './TableUtils/fitTableToPageWidth'
 
 type MenuPosition = {
   x: number
@@ -159,23 +160,7 @@ export function TableMenu() {
       if (!table) {
         return
       }
-      const rows = table.getChildren<TableRowNode>()
-      const firstRow = table.getFirstChild<TableRowNode>()
-      if (!firstRow) {
-        return
-      }
-      const columnCount = firstRow.getChildrenSize()
-      const rootElementWidth = rootElement.clientWidth
-      const computedStyle = getComputedStyle(rootElement)
-      const padding = parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight)
-      const width = rootElementWidth - padding
-      const columnWidth = width / columnCount
-      for (const row of rows) {
-        const cells = row.getChildren<TableCellNode>()
-        for (const cell of cells) {
-          cell.setWidth(columnWidth)
-        }
-      }
+      $fitTableToPageWidth(table, rootElement)
     })
   }
 
