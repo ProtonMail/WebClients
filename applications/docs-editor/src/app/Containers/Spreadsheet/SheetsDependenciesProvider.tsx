@@ -1,10 +1,28 @@
 import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
-import type { AppPlatform, FileMenuAction, SheetImportData, SheetsUserState } from '@proton/docs-shared'
+import type { AppPlatform, SheetImportData, SheetsUserState } from '@proton/docs-shared'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
 import type { SheetsLogger } from './contract/SheetsLogger'
+
+export type SheetsExportFormat = 'xlsx' | 'ods' | 'csv' | 'tsv'
+
+export type SheetsFileMenuActions = {
+  createSpreadsheet: () => Promise<void>
+  createDocument: () => Promise<void>
+  import: () => Promise<void>
+  makeCopy: () => Promise<void>
+  moveToFolder: () => Promise<void>
+  viewVersionHistory: () => Promise<void>
+  moveToTrash: () => Promise<void>
+  print: () => Promise<void>
+  download: (format: SheetsExportFormat) => Promise<void>
+  openHelp: () => Promise<void>
+  viewRecentSpreadsheets: () => Promise<void>
+  openProtonDrive: () => Promise<void>
+  toggleDebugMode: () => Promise<void>
+}
 
 /** Shell→editor: the shell pushes work or events into the editor. */
 export type SheetsShellToEditorActions = {
@@ -16,7 +34,7 @@ export type SheetsShellToEditorActions = {
 export type SheetsEditorToShellActions = {
   isFeatureFlagEnabled: (featureFlag: FeatureFlag) => Promise<boolean>
   openLink: (url: string) => Promise<void>
-  handleFileMenuAction: (action: FileMenuAction) => Promise<void>
+  fileMenuActions: SheetsFileMenuActions
   storeSpreadsheetAction: (type: SheetsActionType, content: unknown) => void
   storeSpreadsheetPatches: (patches: unknown, updateHash: string, type?: SheetsPatchesType) => void
   hasBasePatchesStored: () => Promise<boolean>
