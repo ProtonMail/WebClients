@@ -610,6 +610,7 @@ const MainContainer = () => {
                     </Switch>
                     {showZendeskChat.render && (
                         <LiveChatZendesk
+                            userEmail={user.Email || userSettings?.Email?.Value}
                             tags={getZendeskTags(user, organization)}
                             zendeskRef={zendeskRef}
                             autoLaunch={showZendeskChat.autoLaunch}

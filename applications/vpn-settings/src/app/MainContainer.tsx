@@ -26,6 +26,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { ThirdPartySection } from '@proton/calendar-video-conferencing/thirdParty/ThirdPartySection';
 import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
 import DeleteSection from '@proton/components/containers/account/DeleteSection';
@@ -117,6 +118,7 @@ const SettingsSearchArea = () => {
 
 const MainContainer: FunctionComponent = () => {
     const [user] = useUser();
+    const [userSettings] = useUserSettings();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [{ permissions }] = useUserPermissions();
@@ -461,6 +463,7 @@ const MainContainer: FunctionComponent = () => {
                             </Switch>
                             {showZendeskChat.render && (
                                 <LiveChatZendesk
+                                    userEmail={user.Email || userSettings?.Email?.Value}
                                     tags={getZendeskTags(user, organization)}
                                     zendeskRef={zendeskRef}
                                     autoLaunch={showZendeskChat.autoLaunch}
