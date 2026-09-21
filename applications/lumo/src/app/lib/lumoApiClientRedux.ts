@@ -4,6 +4,7 @@ import { getDesktopLumoApiClientConfig } from '@proton/lumo-api-client/core/desk
 import { getTerminalTypeFromApiError } from '@proton/lumo-api-client/core/generation-terminal';
 import type {
     AssistantCallOptions,
+    AssistantCallResult,
     GenerationResponseMessage,
     LumoApiClientConfig,
     Turn,
@@ -72,7 +73,7 @@ export function sendMessageWithRedux(
         errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
     } = {} as any
 ) {
-    return async (dispatch: LumoDispatch, getState: () => LumoState): Promise<void> => {
+    return async (dispatch: LumoDispatch, getState: () => LumoState): Promise<AssistantCallResult> => {
         const {
             config,
             messageId,
@@ -103,7 +104,7 @@ export function sendMessageWithRedux(
         });
 
         try {
-            await client.callAssistant(api, turns, {
+            return await client.callAssistant(api, turns, {
                 ...assistantOptions,
                 chunkCallback: async (message: GenerationResponseMessage) => {
                     switch (message.type) {

@@ -48,6 +48,7 @@ import {
 import {
     addConversation,
     deleteAllConversations,
+    deleteConversation,
     expireConversationsRequest,
     locallyDeleteConversationFromLocalRequest,
     locallyDeleteConversationFromRemoteRequest,
@@ -117,6 +118,8 @@ import {
     unindexAttachment,
 } from './attachments';
 import {
+    clearSuspendedChainOnDelete,
+    clearSuspendedChainsOnDeleteAll,
     deserializeConversationSaga,
     expireConversations,
     logPullConversationFailure,
@@ -530,6 +533,8 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(locallyDeleteConversationFromLocalRequest, softDeleteConversationFromLocal)},
         function*() { yield takeEvery(locallyDeleteConversationFromRemoteRequest, softDeleteConversationFromRemote)},
         function*() { yield takeEvery(locallyRefreshConversationFromRemoteRequest, refreshConversationFromRemote)},
+        function*() { yield takeEvery(deleteConversation, clearSuspendedChainOnDelete)},
+        function*() { yield takeEvery(deleteAllConversations, clearSuspendedChainsOnDeleteAll)},
 
         function*() { yield takeEvery(pushMessageRequest, noRaceSameId(pushMessage))},
         function*() { yield takeEvery(pushMessageSuccess, logPushMessageSuccess)},
