@@ -114,11 +114,14 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
         } catch (error: any) {
             this.onDeclined();
 
-            // if that's not a form validation error, then we have something unexpected,
-            // and we need to switch back to the old flow
-            if (!this.mustIgnoreError(error)) {
-                throw error;
+            // Expected user errors (decline, iframe validation): the user already sees actionable
+            // feedback, so rethrow flagged `ignore` to abort the flow without reporting to Sentry
+            // (getSentryError drops flagged errors). Unexpected errors propagate unflagged.
+            if (this.mustIgnoreError(error)) {
+                error.ignore = true;
             }
+
+            throw error;
         }
 
         return this.fetchedPaymentToken;
