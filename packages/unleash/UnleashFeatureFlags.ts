@@ -333,6 +333,7 @@ enum MeetFeatureFlag {
     MeetFixedAudioContextSampleRate = 'MeetFixedAudioContextSampleRate',
     MeetAdminLowerHand = 'MeetAdminLowerHand',
     MeetJoinTelemetry = 'MeetJoinTelemetry',
+    MeetNewJoinFunctions = 'MeetNewJoinFunctions',
     MeetAdaptiveStream = 'MeetAdaptiveStream',
     MeetDynacast = 'MeetDynacast',
     MeetSimulcast = 'MeetSimulcast',
