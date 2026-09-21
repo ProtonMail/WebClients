@@ -72,8 +72,8 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
     }
 
     if (getIsGlobalSSOAccount(options.user)) {
-        // Drive is blocked for Global SSO users as of 22.02.2025. Only Pass and VPN are allowed for these users.
-        return new Set([APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS]);
+        // Drive is blocked for Global SSO users as of 22.02.2025. Only Pass, VPN and Lumo are allowed for these users.
+        return new Set([APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS, APPS.PROTONLUMO]);
     }
 
     if (getIsExternalUserWithoutProtonAddressCreation(options.user)) {
@@ -139,6 +139,10 @@ export const getAvailableApps = (
     });
 };
 
-export const appSupportsSSO = (appName?: APP_NAMES) => {
-    return appName && [APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].some((ssoPlanName) => ssoPlanName === appName);
+export const appSupportsSSO = (appName?: APP_NAMES): boolean => {
+    if (!appName) {
+        return false;
+    }
+
+    return [APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS, APPS.PROTONLUMO].some((ssoPlanName) => ssoPlanName === appName);
 };

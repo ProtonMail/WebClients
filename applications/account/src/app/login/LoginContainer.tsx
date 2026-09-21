@@ -28,7 +28,7 @@ import { IcUser } from '@proton/icons/icons/IcUser';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getIsPassApp, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
+import { getIsLumoApp, getIsPassApp, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -118,7 +118,7 @@ const LoginContainer = ({
         if (state?.authTypeData) {
             return state.authTypeData;
         }
-        if (getIsVPNApp(toApp) || getIsPassApp(toApp)) {
+        if (getIsVPNApp(toApp) || getIsPassApp(toApp) || getIsLumoApp(toApp)) {
             return { type: AuthType.Auto };
         }
         return { type: AuthType.Srp };

@@ -12,7 +12,7 @@ import ForceRefreshContext from '@proton/components/containers/forceRefresh/cont
 import { AuthType } from '@proton/components/containers/login/interface';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
+import { getIsLumoApp, getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     APPS,
@@ -124,6 +124,9 @@ const getClientType = (toApp: APP_NAMES | undefined) => {
     }
     if (getIsPassApp(toApp)) {
         return CLIENT_TYPES.PASS;
+    }
+    if (getIsLumoApp(toApp)) {
+        return CLIENT_TYPES.LUMO;
     }
     return CLIENT_TYPES.MAIL;
 };

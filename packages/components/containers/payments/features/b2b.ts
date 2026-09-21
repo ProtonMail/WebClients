@@ -311,7 +311,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: null,
-                [PLANS.LUMO_BUSINESS]: null,
+                [PLANS.LUMO_BUSINESS]: getSSOIntegration(true),
                 [PLANS.MEET_BUSINESS]: null,
                 [PLANS.MEET]: null,
                 [PLANS.VISIONARY]: null,
