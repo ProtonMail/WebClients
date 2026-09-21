@@ -1,5 +1,6 @@
 export function sanitizeInlineStyle(styleString: string): string {
   const allowedProperties = [
+    '--list-marker-color',
     'color',
     'background-color',
     'font-size',
