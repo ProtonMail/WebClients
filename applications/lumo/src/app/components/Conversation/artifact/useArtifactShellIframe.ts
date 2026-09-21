@@ -96,29 +96,34 @@ export function useArtifactShellIframe(html: string | null): UseArtifactShellIfr
             return;
         }
 
-        let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+        let resizeFrameId: number | null = null;
+
+        const notifyShellResize = () => {
+            if (!loadedRef.current) {
+                return;
+            }
+            try {
+                iframeRef.current?.contentWindow?.postMessage({ type: ARTIFACT_RESIZE_MESSAGE }, shellOrigin);
+            } catch (error) {
+                console.error('[artifact-shell] resize postMessage failed', error);
+            }
+        };
 
         const observer = new ResizeObserver(() => {
-            if (debounceTimer !== null) {
-                clearTimeout(debounceTimer);
+            if (resizeFrameId !== null) {
+                return;
             }
-            debounceTimer = setTimeout(() => {
-                if (!loadedRef.current) {
-                    return;
-                }
-                try {
-                    iframeRef.current?.contentWindow?.postMessage({ type: ARTIFACT_RESIZE_MESSAGE }, shellOrigin);
-                } catch (error) {
-                    console.error('[artifact-shell] resize postMessage failed', error);
-                }
-            }, 200);
+            resizeFrameId = window.requestAnimationFrame(() => {
+                resizeFrameId = null;
+                notifyShellResize();
+            });
         });
 
         observer.observe(container);
         return () => {
             observer.disconnect();
-            if (debounceTimer !== null) {
-                clearTimeout(debounceTimer);
+            if (resizeFrameId !== null) {
+                window.cancelAnimationFrame(resizeFrameId);
             }
         };
     }, [isCrossOrigin, shellOrigin]);
