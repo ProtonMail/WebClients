@@ -11,6 +11,7 @@ import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationErrors } from '../../redux/slices/meta/errors';
 import { ComposerMode, type Conversation } from '../../types';
 import { ComposerComponent } from '../Composer/ComposerComponent';
+import { ArtifactProvider } from '../Conversation/artifact/ArtifactContext';
 import { MessageChainComponent } from '../Conversation/messageChain/MessageChainComponent';
 import { FloatingRetryPanel } from '../FloatingRetryPanel';
 import ErrorCard from '../Notifications/ErrorCard';
@@ -23,7 +24,7 @@ export interface AgentConversationComponentProps {
     prefillQuery?: string;
 }
 
-const AgentConversationComponent = ({
+const AgentConversationLayout = ({
     conversation,
     isGenerating,
     isProcessingAttachment,
@@ -107,6 +108,20 @@ const AgentConversationComponent = ({
                 />
             )}
         </div>
+    );
+};
+
+const AgentConversationComponent = (props: AgentConversationComponentProps) => {
+    const { messageChain } = useConversationActions();
+
+    return (
+        <ArtifactProvider
+            conversationId={props.conversation?.id}
+            linearChain={messageChain}
+            isGenerating={props.isGenerating}
+        >
+            <AgentConversationLayout {...props} />
+        </ArtifactProvider>
     );
 };
 
