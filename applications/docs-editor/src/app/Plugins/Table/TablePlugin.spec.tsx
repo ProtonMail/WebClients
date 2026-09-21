@@ -8,6 +8,7 @@ import {
   $insertNodes,
   $isParagraphNode,
   $isRangeSelection,
+  SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
 } from 'lexical'
 import { AllNodes } from '../../AllNodes'
 import { createRoot } from 'react-dom/client'
@@ -112,12 +113,18 @@ describe('TablePlugin', () => {
 
   const parser = new DOMParser()
 
-  async function insertTableHTML(html: string) {
+  async function pasteTableHTML(html: string) {
     await update(() => {
       const dom = parser.parseFromString(html, 'text/html')
       const generatedNodes = $generateNodesFromDOM(editor!, dom)
-      $getRoot().selectEnd()
-      $insertNodes(generatedNodes)
+      const selection = $getRoot().selectEnd()
+      const handled = editor!.dispatchCommand(SELECTION_INSERT_CLIPBOARD_NODES_COMMAND, {
+        nodes: generatedNodes,
+        selection,
+      })
+      if (!handled) {
+        $insertNodes(generatedNodes)
+      }
     })
   }
 
@@ -207,7 +214,7 @@ describe('TablePlugin', () => {
 
   describe('should unmerge cells that have rowspan/colspan', () => {
     beforeEach(async () => {
-      await insertTableHTML(mergedCellsHTML)
+      await pasteTableHTML(mergedCellsHTML)
     })
 
     testEditorState('table should be imported', () => {
@@ -232,6 +239,36 @@ describe('TablePlugin', () => {
         countSet.add(row.getChildrenSize())
       }
       expect(countSet.size).toBe(1)
+    })
+  })
+
+  test('should fit pasted tables to the editor width', async () => {
+    const rootElement = editor!.getRootElement()!
+    Object.defineProperty(rootElement, 'clientWidth', { configurable: true, value: 320 })
+    rootElement.style.paddingLeft = '10px'
+    rootElement.style.paddingRight = '10px'
+
+    await pasteTableHTML('<table><tr><td>One</td><td>Two</td><td>Three</td></tr></table>')
+
+    editor!.read(() => {
+      const cells = $getTables()[0].getFirstChildOrThrow<TableRowNode>().getChildren<TableCellNode>()
+      expect(cells.map((cell) => cell.getWidth())).toEqual([100, 100, 100])
+    })
+  })
+
+  test('should preserve explicit widths when a table is pasted', async () => {
+    const rootElement = editor!.getRootElement()!
+    Object.defineProperty(rootElement, 'clientWidth', { configurable: true, value: 320 })
+    rootElement.style.paddingLeft = '10px'
+    rootElement.style.paddingRight = '10px'
+
+    await pasteTableHTML(
+      '<table><tr><td style="width: 40px">One</td><td style="width: 260px">Two</td></tr></table>',
+    )
+
+    editor!.read(() => {
+      const cells = $getTables()[0].getFirstChildOrThrow<TableRowNode>().getChildren<TableCellNode>()
+      expect(cells.map((cell) => cell.getWidth())).toEqual([40, 260])
     })
   })
 
@@ -329,7 +366,7 @@ describe('TablePlugin', () => {
     for (const html of TablesWithUnalignedRowsAndColumns) {
       // eslint-disable-next-line @typescript-eslint/no-loop-func
       test(`table ${index++}`, async () => {
-        await insertTableHTML(html)
+        await pasteTableHTML(html)
 
         editor!.read(() => {
           const table = $getTables()[0]
