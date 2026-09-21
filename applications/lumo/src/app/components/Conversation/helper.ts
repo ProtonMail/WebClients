@@ -112,6 +112,8 @@ export type NewMessageData = {
     content: string;
     attachments: Attachment[];
     artifactAction?: ArtifactActionMeta;
+    artifactCreateModeActive?: boolean;
+    artifactRevisionTargetId?: string;
 };
 
 export type { ConversationContext } from './conversationContext';
@@ -399,7 +401,9 @@ export function sendMessage({
             lastMessage,
             date1,
             date2,
-            m.artifactAction
+            m.artifactAction,
+            m.artifactCreateModeActive,
+            m.artifactRevisionTargetId
         );
 
         // Save the user message to Redux and request push to persistence HTTP API
@@ -1082,7 +1086,9 @@ function createMessagePair(
     lastMessage: Message | undefined,
     date1: string,
     date2: string,
-    artifactAction?: ArtifactActionMeta
+    artifactAction?: ArtifactActionMeta,
+    artifactCreateModeActive?: boolean,
+    artifactRevisionTargetId?: string
 ) {
     const context = flattenAttachmentsForLlm(attachments);
     const shallowAttachments = stripDataFromAttachments(attachments);
@@ -1099,6 +1105,8 @@ function createMessagePair(
         blocks: [{ type: 'text', content }],
         ...(shallowAttachments.length && { attachments: shallowAttachments }),
         ...(artifactAction && { artifactAction }),
+        ...(artifactCreateModeActive && { artifactCreateModeActive: true }),
+        ...(artifactRevisionTargetId && { artifactRevisionTargetId }),
     };
 
     const assistantMessage: Message = {

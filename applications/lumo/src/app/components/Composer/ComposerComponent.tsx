@@ -42,6 +42,7 @@ import { ComposerToolbar } from './ComposerToolbar';
 import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useArtifactMode } from './hooks/useArtifactMode';
+import { useArtifactModePlaceholder } from './hooks/useArtifactModePlaceholder';
 import { useComposerWithImageGeneration } from './hooks/useComposerWithImageGeneration';
 import { useDictation } from './hooks/useDictation';
 import { useEditorQuery } from './hooks/useEditorQuery';
@@ -97,6 +98,7 @@ export type ComposerComponentProps = {
     optionalElementBelowComposer?: React.ReactNode;
     /** Minimal agent surface: hides image creation, sketch and Drive upload from the composer. */
     isAgent?: boolean;
+    canDisplayArtifactSpotlight?: boolean;
 };
 
 /**
@@ -127,6 +129,7 @@ const ComposerComponentInner = ({
     canShowGuestNotificationCard = false,
     optionalElementBelowComposer,
     isAgent = false,
+    canDisplayArtifactSpotlight = false,
     driveContext,
 }: ComposerComponentInnerProps) => {
     const { registerFileDropHandler } = useDragArea();
@@ -154,6 +157,7 @@ const ComposerComponentInner = ({
             onAbort: onAbort ?? (() => {}),
         });
     const { isArtifactMode, setIsArtifactMode } = useArtifactMode();
+    const artifactModePlaceholder = useArtifactModePlaceholder(isArtifactMode);
     const { artifactsView: isArtifactsViewFlagEnabled } = useLumoFlags();
 
     useEffect(() => {
@@ -521,9 +525,9 @@ const ComposerComponentInner = ({
                         <h2 className="sr-only">{c('collider_2025: Info')
                             .t`Ask anything to ${LUMO_SHORT_APP_NAME}`}</h2>
 
-                            {showLegalDisclaimer && <GuestDisclaimer />}
+                        {showLegalDisclaimer && <GuestDisclaimer />}
 
-                    <div className="composer-input-glow-wrapper w-full">
+                        <div className="composer-input-glow-wrapper w-full">
                             <div
                                 className={clsx('lumo-input-container bg-norm w-full', isGhostChatMode && 'ghost-mode')}
                             >
@@ -554,7 +558,7 @@ const ComposerComponentInner = ({
                                     browseFolderChildren={driveContext?.browseFolderChildren}
                                     downloadFile={driveContext?.downloadFile}
                                     userId={driveContext?.userId}
-                                    placeholder={placeholder}
+                                    placeholder={artifactModePlaceholder ?? placeholder}
                                 />
                                 <ComposerToolbar
                                     composerMode={composerMode}
@@ -570,14 +574,15 @@ const ComposerComponentInner = ({
                                     onArtifactModeChange={handleArtifactModeChange}
                                     canUseAgents={canUseAgents}
                                     isAgent={isAgent}
-                                        isDictating={isDictating}
+                                    isDictating={isDictating}
                                     isDictationConnected={isDictationConnected}
                                     dictationError={dictationError}
                                     onToggleDictation={handleStartDictation}
                                     onCancelDictation={handleCancelDictation}
                                     onAcceptDictation={handleAcceptDictation}
                                     getDictationAudioLevel={getAudioLevel}
-                            />
+                                    canDisplayArtifactSpotlight={canDisplayArtifactSpotlight}
+                                />
                             </div>
                         </div>
                         {optionalElementBelowComposer && <div className="mt-1.5">{optionalElementBelowComposer}</div>}

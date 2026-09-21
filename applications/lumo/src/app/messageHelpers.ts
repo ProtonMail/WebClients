@@ -241,9 +241,7 @@ function findUnpairedToolCallId(blocks: ContentBlock[]): string | undefined {
             continue;
         }
 
-        const hasResult = blocks.some(
-            (candidate) => isToolResultBlock(candidate) && candidate.tool_call_id === callId
-        );
+        const hasResult = blocks.some((candidate) => isToolResultBlock(candidate) && candidate.tool_call_id === callId);
         if (!hasResult) {
             return callId;
         }
@@ -289,7 +287,8 @@ function getFinanceSymbolFromCallContent(content: string): string | undefined {
 
 function getFinanceToolCalls(blocks: ContentBlock[]): ToolCallBlock[] {
     return blocks.filter(
-        (block): block is ToolCallBlock => isToolCallBlock(block) && getFinanceSymbolFromCallContent(block.content) !== undefined
+        (block): block is ToolCallBlock =>
+            isToolCallBlock(block) && getFinanceSymbolFromCallContent(block.content) !== undefined
     );
 }
 
@@ -438,7 +437,9 @@ export function messageContentEqual(a: Message, b: Message): boolean {
         a.toolResult === b.toolResult && // String comparison (cheap)
         a.blocks === b.blocks && // Reference equality (cheap, blocks array replaced on update)
         a.reasoning === b.reasoning && // String comparison for reasoning content
-        a.artifactAction === b.artifactAction
+        a.artifactAction === b.artifactAction &&
+        a.artifactCreateModeActive === b.artifactCreateModeActive &&
+        a.artifactRevisionTargetId === b.artifactRevisionTargetId
     );
 }
 
