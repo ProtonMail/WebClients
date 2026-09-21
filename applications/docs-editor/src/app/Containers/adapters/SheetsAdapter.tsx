@@ -1,5 +1,5 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
-import type { EditorRequiresClientMethods, SheetsUserState } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { SheetImportEvent } from '@proton/docs-shared'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import type { PropsWithChildren } from 'react'
@@ -19,6 +19,7 @@ import {
 } from '../Spreadsheet/public'
 import { useResolvedAppPlatform } from './useResolvedAppPlatform'
 import { createSheetsFileMenuActions } from './createSheetsFileMenuActions'
+import { toCollaboratorCursorNavigationDestination } from './collaboratorCursorNavigationAdapter'
 
 type SheetsAdapterProps = PropsWithChildren<{
   clientInvoker: EditorRequiresClientMethods
@@ -44,7 +45,10 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       subscribeToSheetImport: (callback) => application.eventBus.addEventCallback(callback, SheetImportEvent),
       subscribeToCollaboratorCursorNavigation: (callback) =>
         application.syncedState.subscribeToEvent('ScrollToUserCursorData', (data) => {
-          callback(data.state as unknown as SheetsUserState)
+          const destination = toCollaboratorCursorNavigationDestination(data.state)
+          if (destination) {
+            callback(destination)
+          }
         }),
     }),
     [application.eventBus, application.syncedState],

@@ -331,8 +331,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   }, [calculateNow, handleExcelFileImport, onCreateNewSheet, onInsertFile, onRenameSheet, subscribeToSheetImport])
 
   useEffect(() => {
-    return subscribeToCollaboratorCursorNavigation((userState) => {
-      state.goToCell(userState.sheetId, userState.activeCell.rowIndex, userState.activeCell.columnIndex)
+    return subscribeToCollaboratorCursorNavigation((destination) => {
+      state.goToCell(destination.sheetId, destination.rowIndex, destination.columnIndex)
     })
   }, [state, subscribeToCollaboratorCursorNavigation])
 
