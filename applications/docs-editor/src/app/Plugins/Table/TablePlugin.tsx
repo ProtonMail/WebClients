@@ -18,7 +18,9 @@ import {
   $isRangeSelection,
   $isTextNode,
   $nodesOfType,
+  COMMAND_PRIORITY_CRITICAL,
   COMMAND_PRIORITY_EDITOR,
+  SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
   SELECTION_CHANGE_COMMAND,
 } from 'lexical'
 import { useEffect, useState } from 'react'
@@ -49,6 +51,7 @@ import { duplicateSelectedColumn } from './TableUtils/duplicateSelectedColumn'
 import { $handleDeleteTableRowCommand } from './TableUtils/handleDeleteTableRowCommand'
 import { $handleDeleteTableColumnCommand } from './TableUtils/handleDeleteTableColumnCommand'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
+import { $fitTableToPageWidth, $getPastedTablesWithoutExplicitWidths } from './TableUtils/fitTableToPageWidth'
 
 export function TablePlugin(): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
@@ -95,6 +98,19 @@ export function TablePlugin(): JSX.Element | null {
 
   useEffect(() => {
     return mergeRegister(
+      editor.registerCommand(
+        SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
+        ({ nodes }) => {
+          const rootElement = editor.getRootElement()
+          if (rootElement) {
+            for (const table of $getPastedTablesWithoutExplicitWidths(nodes)) {
+              $fitTableToPageWidth(table, rootElement)
+            }
+          }
+          return false
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
       editor.registerCommand<InsertTableCommandPayload>(
         INSERT_TABLE_COMMAND,
         function $handleInsertTableCommand({ columns, rows, includeHeaders }) {
