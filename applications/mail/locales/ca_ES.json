@@ -2337,7 +2337,7 @@
         "Problema de pagament"
       ],
       "Sheets problem": [
-        "Hi ha hagut un problema amb els fulls de càlcul"
+        "Problema amb els fulls de càlcul"
       ],
       "Sign in problem": [
         "Problema d'inici de sessió"
@@ -9984,6 +9984,99 @@
       ],
       "Rewrote the draft": [
         "S'ha reescrit l'esborrany"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Una explicació ràpida de com us puc ajudar amb la vostra bústia de correu, des de trobar correus antics fins a redactar respostes, i del que no puc fer."
+      ],
+      "Draft a ${ kind }": [
+        "Redactar un esborrany de ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Redactar un esborrany de ${ kind } per a ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Redactar un esborrany de ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Redactar un esborrany de ${ kind } per a ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "S'ha redactat un esborrany de ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "S'ha redactat un esborrany de ${ kind }"
+      ],
+      "Edit ${ contact }": [
+        "Editar «${ contact }»"
+      ],
+      "Edit a contact": [
+        "Editar un contacte"
+      ],
+      "Edit contact": [
+        "Editar el contacte"
+      ],
+      "forward": [
+        "reenviar"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Ei Lumo, mira què és el que més rebo a la meva bústia d'entrada, i quines carpetes i filtres ja tinc, i després suggereix-me com mantenir-ho organitzat: què canviar del que tinc i qualsevol cosa nova que valgui la pena afegir. Explica'm el pla primer, i no moguis res fins que digui que sí."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Ei Lumo, me'n vaig fora i vull configurar una resposta d'absència de l'oficina. Demana'm les dates i què hi hauria de dir, i després mostra'm el missatge abans d'activar-lo."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Ei Lumo, busca'm els correus dels últims 7 dies i digues quins necessiten realment la meva resposta. Afegeix-m'hi una línia sobre què demana cadascun i deixa fora tot el que pugui ignorar."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Ei Lumo, guia'm per saber com em pots ajudar amb la meva bústia d'entrada. Quines coses et puc demanar que facis, i amb què no em pots ajudar."
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Revisaré el correu de la setmana passada i n'extrauré el que realment necessiti resposta, així ho podreu gestionar tot de cop."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Miraré de què rebeu més quantitat i les carpetes i filtres que ja teniu, i després us suggeriré què es pot millorar i què hi falta. No es mourà res fins que ho digueu."
+      ],
+      "open draft": [
+        "obrir l'esborrany"
+      ],
+      "Readdressed": [
+        "S'ha canviat l'adreça"
+      ],
+      "Remove signature": [
+        "Esborra la signatura"
+      ],
+      "Rename label": [
+        "Canvia el nom de l'etiqueta"
+      ],
+      "Rename this label": [
+        "Canvia el nom d'aquesta etiqueta"
+      ],
+      "reply": [
+        "respondre"
+      ],
+      "reply all": [
+        "respondre a tothom"
+      ],
+      "Revise the ${ draft }": [
+        "Revisar el ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "S'ha tornat a escriure i s'ha canviat l'adreça"
+      ],
+      "Set my out of office": [
+        "Configura el meu missatge d'absència de l'oficina"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Digueu-me quan sereu fora i què voleu que hi digui, i ho veureu tot abans que es desi."
+      ],
+      "Tidy up my inbox": [
+        "Ordena'm la safata d'entrada"
+      ],
+      "What can you do?": [
+        "Què podeu fer?"
+      ],
+      "What needs handling?": [
+        "Què cal gestionar?"
       ]
     },
     "info": {
@@ -10238,6 +10331,12 @@
       ],
       "Star": [
         "Destaca"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Tanca ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Obre ${ LUMO_SHORT_APP_NAME } / focus d'entrada"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10274,6 +10373,9 @@
       ],
       "Message shortcuts": [
         "Dreceres de missatge"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Dreceres de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label": {
@@ -11308,6 +11410,12 @@
       ],
       "Display name": [
         "Nom per a mostrar"
+      ],
+      "Cc": [
+        "Amb còpia"
+      ],
+      "To": [
+        "Per a"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13208,6 +13316,9 @@
       ],
       "Your subscription renews soon": [
         "La subscripció es renovarà aviat."
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunitat per obtenir el primer mes de ${ plan } a aquest preu."
       ]
     },
     "Offer fearue": {
@@ -13254,6 +13365,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Un nombre il·limitat d'àlies per protegir la vostra identitat"
+      ],
+      "Short @pm.me address": [
+        "Adreça curta de @pm.me"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13478,6 +13592,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Podreu utilitzar ${ planTitle } de manera gratuïta fins que finalitzi el període de prova."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Afegiu un mètode de pagament** per continuar utilitzant totes les funcions quan acabi el període de prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continueu després del període de prova,** podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
+      ],
+      "Add a payment method": [
+        "Afegir un mètode de pagament"
+      ],
+      "If you continue after your trial,": [
+        "Si continueu després del període de prova,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "per continuar utilitzant totes les funcions quan acabi el vostre període de prova."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat"
       ]
     },
     "Option": {
@@ -18316,6 +18454,16 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Canvia el nom de ${ folder } per…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Canvia el nom de ${ label } per…"
       ]
     }
   }

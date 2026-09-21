@@ -1750,6 +1750,12 @@
       ],
       "Add more details": [
         "Weitere Details hinzufügen"
+      ],
+      "Keep going": [
+        "Fortfahren"
+      ],
+      "Stop here": [
+        "Hier beenden"
       ]
     },
     "action": {
@@ -9972,6 +9978,102 @@
       ],
       "Update this filter": [
         "Diesen Filter aktualisieren"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } hat bisher ${ count } gedauert. Dennoch fortfahren?"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Ein kurzer Überblick darüber, womit ich dir bei deinem Posteingang helfen kann – von der Suche nach alten E-Mails bis zum Verfassen von Antworten – und was ich nicht tun kann."
+      ],
+      "Draft a ${ kind }": [
+        "${ kind } entwerfen"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "${ kind } an ${ recipient } entwerfen"
+      ],
+      "Draft an ${ kind }": [
+        "${ kind } entwerfen"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "${ kind } an ${ recipient } entwerfen"
+      ],
+      "Drafted a ${ kind }": [
+        "${ kind } entworfen"
+      ],
+      "Drafted an ${ kind }": [
+        "${ kind } entworfen"
+      ],
+      "Edit ${ contact }": [
+        "„${ contact }“ bearbeiten"
+      ],
+      "Edit a contact": [
+        "Einen Kontakt bearbeiten"
+      ],
+      "Edit contact": [
+        "Kontakt bearbeiten"
+      ],
+      "forward": [
+        "Weiterleiten"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Hey Lumo, schau dir mal an, was hauptsächlich in meinem Posteingang landet, und schau dir auch die Ordner und Filter an, die ich bereits habe. Schlag mir dann vor, wie ich alles übersichtlich halten kann: Was soll ich an den bestehenden ändern, und was sollte ich noch Neues hinzufügen? Erläutere mir zuerst den Plan und ändere nichts, bevor ich mein Einverständnis gegeben habe."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hey Lumo, ich fahre weg und möchte eine Abwesenheitsnotiz einrichten. Frag mich nach den Daten und was sie enthalten soll, und zeig mir die Nachricht, bevor du sie aktivierst."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Hey Lumo, durchsuche meine E-Mails der letzten 7 Tage und sag mir, welche davon tatsächlich eine Antwort von mir erfordern. Gib mir kurz einen Überblick darüber, was jede einzelnen verlangt, und lass alles weg, was ich ignorieren kann."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hey Lumo, erklär mir doch mal, wie du mir bei meinem Postfach helfen kannst. Was kann ich dich alles bitten zu tun, und womit kannst du mir nicht helfen?"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Ich werde die E-Mails der letzten Woche durchsehen und herausfiltern, was tatsächlich eine Antwort erfordert, damit du das alles auf einmal erledigen kannst."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Ich werde mir anschauen, was du am häufigsten erhältst und welche Ordner und Filter du bereits hast, und dir dann vorschlagen, was verbessert werden könnte und was noch fehlt. Es wird nichts geändert, bis du es sagst."
+      ],
+      "open draft": [
+        "Entwurf öffnen"
+      ],
+      "Readdressed": [
+        "Neu adressiert"
+      ],
+      "Remove signature": [
+        "Signatur entfernen"
+      ],
+      "Rename label": [
+        "Kategorie umbenennen"
+      ],
+      "Rename this label": [
+        "Diese Kategorie umbenennen"
+      ],
+      "reply": [
+        "Antworten"
+      ],
+      "reply all": [
+        "Allen Antworten"
+      ],
+      "Revise the ${ draft }": [
+        "${ draft } überarbeiten"
+      ],
+      "Rewrote and readdressed": [
+        "Überarbeitet und neu adressiert"
+      ],
+      "Set my out of office": [
+        "Abwesenheitsnotiz einrichten"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Sag mir, wann du weg bist und was dort stehen soll, und du siehst das Ganze, bevor es gespeichert wird."
+      ],
+      "Tidy up my inbox": [
+        "Meinen Posteingang aufräumen"
+      ],
+      "What can you do?": [
+        "Was kannst du tun?"
+      ],
+      "What needs handling?": [
+        "Was muss erledigt werden?"
       ]
     },
     "info": {
@@ -10226,6 +10328,12 @@
       ],
       "Star": [
         "Favorisieren"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } schließen"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "${ LUMO_SHORT_APP_NAME } öffnen / Eingabe fokussieren"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10262,6 +10370,9 @@
       ],
       "Message shortcuts": [
         "Nachrichten-Tastaturkürzel"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } Tastaturkürzel"
       ]
     },
     "Label": {
@@ -11296,6 +11407,12 @@
       ],
       "Until time": [
         "Bis dahin"
+      ],
+      "Cc": [
+        "Cc"
+      ],
+      "To": [
+        "An"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13466,6 +13583,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du kannst ${ planTitle } kostenlos nutzen, bis die Testversion ausläuft."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Zahlungsmethode hinzufügen**, um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Jederzeit vorher kündigen.** Du kannst ${ planTitle } bis zum Ende der Testversion kostenlos nutzen."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Wenn du nach Ablauf der Testversion fortfährst,** kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Sobald dein volles Abonnement beginnt,** kannst du immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen,"
+      ],
+      "If you continue after your trial,": [
+        "Wenn du nach Ablauf der Testversion fortfährst,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
       ]
     },
     "Option": {
@@ -18286,6 +18427,16 @@
       ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - Karte endet mit ${ Last4 }"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "${ folder } umbenennen in…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "${ label } umbenennen in…"
       ]
     }
   }

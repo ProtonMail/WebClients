@@ -10295,6 +10295,78 @@
       ],
       "Rewrote the draft": [
         "Перапісаць чарнавік"
+      ],
+      "Draft a ${ kind }": [
+        "Чарнавік ${ kind }"
+      ],
+      "Draft an ${ kind }": [
+        "Чарнавік ${ kind }"
+      ],
+      "Drafted a ${ kind }": [
+        "Чарнавы ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Чарнавы ${ kind }"
+      ],
+      "Edit ${ contact }": [
+        "Рэдагаваць ${ contact }"
+      ],
+      "Edit a contact": [
+        "Рэдагаваць кантакт"
+      ],
+      "Edit contact": [
+        "Рэдагаваць кантакт"
+      ],
+      "forward": [
+        "перасылка"
+      ],
+      "open draft": [
+        "адкрыць чарнавік"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Прачытаць чарнавік \"${ subject }\""
+      ],
+      "Read the open draft": [
+        "Прачытаць адкрыты чарнавік"
+      ],
+      "Readdressed": [
+        "Пераадрасавана"
+      ],
+      "Readdressed the draft": [
+        "Пераадрасаваць чарнавік"
+      ],
+      "Remove signature": [
+        "Выдаліць подпіс"
+      ],
+      "Rename label": [
+        "Перайменаваць метку"
+      ],
+      "Rename this label": [
+        "Перайменаваць гэту метку"
+      ],
+      "reply": [
+        "адказ"
+      ],
+      "reply all": [
+        "адказаць усім"
+      ],
+      "Revise the ${ draft }": [
+        "Перагдзець ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Перапісаць і пераадрасаваць"
+      ],
+      "Set my out of office": [
+        "Задаць, што я не на месцы"
+      ],
+      "Tidy up my inbox": [
+        "Навядзенне парадку ў маёй паштовай скрыні"
+      ],
+      "What can you do?": [
+        "Што можна зрабіць?"
+      ],
+      "What needs handling?": [
+        "Што неабходна апрацаваць?"
       ]
     },
     "info": {
@@ -11632,6 +11704,12 @@
       ],
       "Display name": [
         "Бачнае імя"
+      ],
+      "Cc": [
+        "Копія"
+      ],
+      "To": [
+        "Да"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13892,6 +13970,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "У вас будзе магчымасць карыстацца ${ planTitle } бясплатна да канца пробнага перыяду."
+      ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
       ]
     },
     "Option": {
@@ -15122,6 +15203,9 @@
       ],
       "User Admin": [
         "Адміністратар карыстальніка"
+      ],
+      "Organization Admin": [
+        "Адміністратар арганізацыі"
       ]
     },
     "Safety review": {
@@ -19016,6 +19100,16 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Перайменаваць ${ folder } на…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Перайменаваць ${ label } на…"
       ]
     }
   }
