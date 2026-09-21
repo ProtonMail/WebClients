@@ -1,0 +1,39 @@
+/*
+ * Styles for the temporary 0.99 promo. Self-contained so the whole offer can be removed
+ * in one piece. The purple to blue gradient is what visually distinguishes this promo
+ * from the permanent one-dollar offer.
+ */
+
+.zero-ninety-nine-table {
+	display: grid;
+	grid-template-columns: 1fr 4rem 4rem;
+}
+
+.zero-ninety-nine-table-item:last-child {
+	border-end-start-radius: var(--border-radius-lg);
+	border-end-end-radius: var(--border-radius-lg);
+}
+
+.zero-ninety-nine-table-header {
+	border-start-start-radius: var(--border-radius-lg);
+	border-start-end-radius: var(--border-radius-lg);
+
+	& p {
+		background: linear-gradient(to right, #7f5cff 0%, #6fb0ff 100%);
+	}
+}
+
+.zero-ninety-nine-price-gradient {
+	color: transparent;
+	background-clip: text;
+	background-image: linear-gradient(to right, #7f5cff 0%, #6fb0ff 100%);
+}
+
+.zero-ninety-nine-check {
+	box-shadow: 0 2px 6px rgb(var(--shadow-color, var(--shadow-default-color)) / 0.2);
+}
+
+.zero-ninety-nine-check svg path {
+	stroke: currentcolor;
+	stroke-width: 1;
+}
