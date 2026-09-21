@@ -32,7 +32,7 @@ import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
 import { create } from 'zustand'
 import { useEvent } from './components/utils'
 import { c } from 'ttag'
-import { LoadedFontFamilies, loadFont } from './font-state'
+import { isFontLoaded, loadFont } from './fonts/font-state'
 import debounce from 'lodash/debounce'
 import type { Doc as YDoc, Transaction } from 'yjs'
 import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
@@ -583,7 +583,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     }
     const fontFamiliesToRequest = new Set<string>()
     for (const xfs of xfsValues) {
-      if (xfs?.textFormat?.fontFamily && !LoadedFontFamilies.has(xfs.textFormat.fontFamily)) {
+      if (xfs?.textFormat?.fontFamily && !isFontLoaded(xfs.textFormat.fontFamily)) {
         fontFamiliesToRequest.add(xfs.textFormat.fontFamily)
       }
     }
