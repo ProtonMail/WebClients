@@ -809,6 +809,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Collapse": [
+        "Mimimera"
+      ],
+      "Create folder": [
+        "Skapa mapp"
+      ],
+      "Create new folder": [
+        "Skapa ny mapp"
+      ],
+      "Expand": [
+        "Expandera"
+      ],
+      "Move to": [
+        "Flytta till"
+      ],
+      "Rename": [
+        "Ändra namn"
       ]
     },
     "Activity": {
@@ -1481,6 +1499,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+      ],
+      "Failed to create folder": [
+        "Misslyckades att skapa mapp"
       ]
     },
     "Error message": {
@@ -2213,7 +2234,8 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2925,6 +2947,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "Folder deleted": [
+        "Mapp borttagen"
       ]
     },
     "Keyboard key": {
@@ -4227,6 +4252,15 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Create a folder": [
+        "Skapa en mapp"
+      ],
+      "Folder": [
+        "Mapp"
+      ],
+      "Folders": [
+        "Mappar"
       ]
     },
     "Link": {
@@ -5325,6 +5359,34 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Create folder in \"${ vaultName }\"": [
+        "Skapa mapp i ”${ vaultName }”"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Skapa undermapp i ”${ folderName }”"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Ta bort valv ”${ name }”?"
+      ],
+      "Folder options": [
+        "Mappalternativ"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "Flytta ${ count } objekt till ${ target }",
+        "Flytta ${ count } objekt till ${ target }"
+      ],
+      "Move all items?": [
+        "Flytta alla objekt?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Flytta objekt till ”${ target }”"
+      ],
+      "Rename folder": [
+        "Byt namn på mapp"
+      ],
+      "Your folder is empty": [
+        "Denna mapp är tom"
       ]
     },
     "Title_cloned_item": {

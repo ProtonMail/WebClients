@@ -798,6 +798,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ],
+      "Collapse": [
+        "Zwiń"
+      ],
+      "Create folder": [
+        "Utwórz folder"
+      ],
+      "Create new folder": [
+        "Utwórz nowy folder"
+      ],
+      "Expand": [
+        "Rozwiń"
+      ],
+      "Move to": [
+        "Przenieś do"
+      ],
+      "Rename": [
+        "Zmień nazwę"
       ]
     },
     "Activity": {
@@ -1452,6 +1470,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kod PIN został usunięty przez inną aplikację ${ PASS_APP_NAME }"
+      ],
+      "Failed to create folder": [
+        "Nie udało się utworzyć folderu"
       ]
     },
     "Error message": {
@@ -2223,7 +2244,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -4271,6 +4295,9 @@
       ],
       "ZIP or Postal code": [
         "Kod pocztowy"
+      ],
+      "Folder": [
+        "Folder"
       ]
     },
     "Link": {
@@ -5367,6 +5394,9 @@
         "Zamierzasz trwale usunąć ${ aliasCount } aliasy.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów."
+      ],
+      "Folder options": [
+        "Opcje folderu"
       ]
     },
     "Title_cloned_item": {

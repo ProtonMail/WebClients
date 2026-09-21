@@ -794,6 +794,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
+      ],
+      "Collapse": [
+        "ჩაკეცვა"
+      ],
+      "Create folder": [
+        "საქაღალდის შექმნა"
+      ],
+      "Create new folder": [
+        "ახალი საქაღალდის შექმნა"
+      ],
+      "Expand": [
+        "ამოკეცვა"
+      ],
+      "Move to": [
+        "გადატანა სად"
+      ],
+      "Rename": [
+        "სახელის გადარქმევა"
       ]
     },
     "Activity": {
@@ -1442,6 +1460,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "თქვენი PIN-კოდი წაშლილია სხვა ${ PASS_APP_NAME }-ის კლიენტის მიერ"
+      ],
+      "Failed to create folder": [
+        "საქაღალდის შექმნა ჩავარდა"
       ]
     },
     "Error message": {
@@ -2171,7 +2192,8 @@
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა სეიფში წაშლის მის უსაფრთხო ბმულებს."
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -4179,6 +4201,9 @@
       ],
       "ZIP or Postal code": [
         "Zip ან საფოსტო კოდი"
+      ],
+      "Folder": [
+        "საქაღალდე"
       ]
     },
     "Link": {
@@ -5253,6 +5278,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი.",
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
+      ],
+      "Folder options": [
+        "საქაღალდის მორგება"
       ]
     },
     "Title_cloned_item": {
