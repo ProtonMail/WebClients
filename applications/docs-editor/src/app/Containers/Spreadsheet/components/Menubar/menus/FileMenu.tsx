@@ -1,20 +1,20 @@
 import * as Icons from '../../icons'
 import * as Ariakit from '@ariakit/react'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
-import { useCallback, useEffect, useRef, useState, type ReactElement } from 'react'
+import { useCallback, useEffect, useRef, useState, type ComponentProps, type ReactElement } from 'react'
 import { c } from 'ttag'
 import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
-import type { FileMenuAction } from '@proton/docs-shared'
 import { CircleLoader } from '../../CircleLoader/CircleLoader'
 import { useFeatureFlag } from '../../../feature-flags'
-import { useSheetsDependencies } from '../../../SheetsDependenciesProvider'
+import { useSheetsDependencies, type SheetsExportFormat } from '../../../SheetsDependenciesProvider'
 import { useUI } from '../../../ui-store'
 import { VersionNumber } from '../../VersionNumber/VersionNumber'
 
 const { s } = createStringifier(strings)
 
 type WithLoading = <T>(promise: undefined | Promise<T | void> | (() => Promise<T | void>)) => Promise<T | void>
+type MenuAction = () => Promise<void>
 
 function unwrapPromise<T>(maybeWrappedPromise: Promise<T | void> | (() => Promise<T | void>)): Promise<T | void> {
   if (typeof maybeWrappedPromise === 'function') {
@@ -82,7 +82,7 @@ export interface FileMenuProps extends Ariakit.MenuProviderProps {
 }
 
 export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuProps) {
-  const { canEdit, canTrash, versionInfo, handleFileMenuAction, reportError } = useSheetsDependencies()
+  const { canEdit, canTrash, versionInfo, fileMenuActions, reportError } = useSheetsDependencies()
 
   const [showVersionNumber, setShowVersionNumber] = useState(false)
   const [showDebugToggle, setShowDebugToggle] = useState(false)
@@ -120,37 +120,51 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
     }
   }, [mounted])
 
-  const triggerMenuAction = useCallback(
-    (action: FileMenuAction) => handleFileMenuAction(action).catch(reportError),
-    [handleFileMenuAction, reportError],
-  )
+  const triggerMenuAction = useCallback((action: MenuAction) => action().catch(reportError), [reportError])
 
   return (
     <Ariakit.MenuProvider {...props} store={store}>
       <Ariakit.MenuButton render={renderMenuButton} />
       <UI.Menu unmountOnHide>
-        {!isPublicMode ? <NewSpreadsheetOption triggerMenuAction={triggerMenuAction} /> : null}
-        {!isPublicMode ? <NewDocumentOption triggerMenuAction={triggerMenuAction} /> : null}
+        {!isPublicMode ? (
+          <LoadingMenuOption
+            action={fileMenuActions.createSpreadsheet}
+            triggerMenuAction={triggerMenuAction}
+            icon={Icons.brandProtonSheets}
+            label={s('New spreadsheet')}
+          />
+        ) : null}
+        {!isPublicMode ? (
+          <LoadingMenuOption
+            action={fileMenuActions.createDocument}
+            triggerMenuAction={triggerMenuAction}
+            icon={Icons.brandProtonDocs}
+            label={s('New document')}
+          />
+        ) : null}
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.fileArrowInUp} />}
           onClick={() => {
-            void triggerMenuAction({
-              type: 'import',
-            })
+            void triggerMenuAction(fileMenuActions.import)
           }}
           disabled={!canEdit}
         >
           {s('Import')}
         </UI.MenuItem>
-        {!isPublicMode && (
+        {!isPublicMode ? (
+          <LoadingMenuOption
+            action={fileMenuActions.makeCopy}
+            triggerMenuAction={triggerMenuAction}
+            icon={Icons.squares}
+            label={s('Make a copy')}
+          />
+        ) : null}
+        {!isPublicMode ? (
           <>
-            <MakeACopyOption triggerMenuAction={triggerMenuAction} />
             <UI.MenuItem
               leadingIconSlot={<UI.Icon data={Icons.arrowsCross} />}
               onClick={() => {
-                void triggerMenuAction({
-                  type: 'move-to-folder',
-                })
+                void triggerMenuAction(fileMenuActions.moveToFolder)
               }}
             >
               {s('Move to folder')}
@@ -159,36 +173,37 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
             <UI.MenuItem
               leadingIconSlot={<UI.Icon data={Icons.clockRotateLeft} />}
               onClick={() => {
-                void triggerMenuAction({
-                  type: 'see-version-history',
-                })
+                void triggerMenuAction(fileMenuActions.viewVersionHistory)
               }}
             >
               {s('See version history')}
             </UI.MenuItem>
-            {canTrash && <MoveToTrashOption triggerMenuAction={triggerMenuAction} />}
+            {canTrash ? (
+              <LoadingMenuOption
+                action={fileMenuActions.moveToTrash}
+                triggerMenuAction={triggerMenuAction}
+                icon={Icons.trash}
+                label={s('Move to trash')}
+              />
+            ) : null}
           </>
-        )}
+        ) : null}
         <UI.MenuSeparator />
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.printer} />}
           onClick={() => {
-            void triggerMenuAction({
-              type: 'print',
-            })
+            void triggerMenuAction(fileMenuActions.print)
           }}
         >
           {s('Print')}
         </UI.MenuItem>
-        <DownloadSubmenu triggerMenuAction={triggerMenuAction} />
+        <DownloadSubmenu download={fileMenuActions.download} triggerMenuAction={triggerMenuAction} />
         <UI.MenuSeparator />
         <SpreadsheetSettings />
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.infoCircle} />}
           onClick={() => {
-            void triggerMenuAction({
-              type: 'help',
-            })
+            void triggerMenuAction(fileMenuActions.openHelp)
           }}
           hintSlot={
             showVersionNumber && (
@@ -205,9 +220,7 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.brandProtonSheets} />}
           onClick={() => {
-            void triggerMenuAction({
-              type: 'view-recent-spreadsheets',
-            })
+            void triggerMenuAction(fileMenuActions.viewRecentSpreadsheets)
           }}
         >
           {s('View recent spreadsheets')}
@@ -215,132 +228,74 @@ export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuP
         <UI.MenuItem
           leadingIconSlot={<UI.Icon data={Icons.brandProtonDrive} />}
           onClick={() => {
-            void triggerMenuAction({
-              type: 'open-proton-drive',
-            })
+            void triggerMenuAction(fileMenuActions.openProtonDrive)
           }}
         >
           {s('Open Proton Drive')}
         </UI.MenuItem>
         {/* TODO: add download logs option */}
-        {showDebugToggle && (
+        {showDebugToggle ? (
           <UI.MenuItem
             leadingIconSlot={<UI.Icon data={Icons.cogWheel} />}
             onClick={() => {
-              void triggerMenuAction({
-                type: 'toggle-debug-mode',
-              })
+              void triggerMenuAction(fileMenuActions.toggleDebugMode)
             }}
           >
             {s('Toggle debug mode')}
           </UI.MenuItem>
-        )}
+        ) : null}
       </UI.Menu>
     </Ariakit.MenuProvider>
   )
 }
 
-function NewSpreadsheetOption({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
+function LoadingMenuOption({
+  action,
+  triggerMenuAction,
+  icon,
+  label,
+}: {
+  action: MenuAction
+  triggerMenuAction: (action: MenuAction) => Promise<void>
+  icon: ComponentProps<typeof UI.Icon>['data']
+  label: string
+}) {
   const [loading, withLoading] = useMenuActionLoading()
   return (
     <UI.MenuItem
-      leadingIconSlot={<UI.Icon data={Icons.brandProtonSheets} />}
+      leadingIconSlot={<UI.Icon data={icon} />}
       disabled={loading}
       onClick={(e) => {
         e.preventDefault()
         e.stopPropagation()
-        void withLoading(
-          triggerMenuAction({
-            type: 'new-spreadsheet',
-          }),
-        )
+        void withLoading(triggerMenuAction(action))
       }}
       trailingIconSlot={loading && <CircleLoader size="small" className="ml-auto" />}
     >
-      {s('New spreadsheet')}
+      {label}
     </UI.MenuItem>
   )
 }
 
-function NewDocumentOption({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
-  const [loading, withLoading] = useMenuActionLoading()
-  return (
-    <UI.MenuItem
-      leadingIconSlot={<UI.Icon data={Icons.brandProtonDocs} />}
-      disabled={loading}
-      onClick={(e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        void withLoading(
-          triggerMenuAction({
-            type: 'new-document',
-          }),
-        )
-      }}
-      trailingIconSlot={loading && <CircleLoader size="small" className="ml-auto" />}
-    >
-      {s('New document')}
-    </UI.MenuItem>
-  )
-}
-
-function MakeACopyOption({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
-  const [loading, withLoading] = useMenuActionLoading()
-  return (
-    <UI.MenuItem
-      leadingIconSlot={<UI.Icon data={Icons.squares} />}
-      disabled={loading}
-      onClick={(e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        void withLoading(
-          triggerMenuAction({
-            type: 'make-a-copy',
-          }),
-        )
-      }}
-      trailingIconSlot={loading && <CircleLoader size="small" className="ml-auto" />}
-    >
-      {s('Make a copy')}
-    </UI.MenuItem>
-  )
-}
-
-function MoveToTrashOption({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
-  const [loading, withLoading] = useMenuActionLoading()
-  return (
-    <UI.MenuItem
-      leadingIconSlot={<UI.Icon data={Icons.trash} />}
-      disabled={loading}
-      onClick={(e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        void withLoading(
-          triggerMenuAction({
-            type: 'move-to-trash',
-          }),
-        )
-      }}
-      trailingIconSlot={loading && <CircleLoader size="small" className="ml-auto" />}
-    >
-      {s('Move to trash')}
-    </UI.MenuItem>
-  )
-}
-
-function DownloadSubmenu({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
+function DownloadSubmenu({
+  download,
+  triggerMenuAction,
+}: {
+  download: (format: SheetsExportFormat) => Promise<void>
+  triggerMenuAction: (action: MenuAction) => Promise<void>
+}) {
   const isSheetsODSExportEnabled = useFeatureFlag('SheetsODSExportEnabled')
+  const triggerDownload = (format: SheetsExportFormat) => triggerMenuAction(() => download(format))
 
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.arrowDownToSquare} />}>{s('Download')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.arrowDownToSquare} />}>
+        {s('Download')}
+      </UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
         <UI.MenuItem
           onClick={() => {
-            void triggerMenuAction({
-              type: 'download',
-              format: 'xlsx',
-            })
+            void triggerDownload('xlsx')
           }}
         >
           {s('Microsoft Excel (.xlsx)')}
@@ -348,10 +303,7 @@ function DownloadSubmenu({ triggerMenuAction }: { triggerMenuAction: (action: Fi
         {isSheetsODSExportEnabled && (
           <UI.MenuItem
             onClick={() => {
-              void triggerMenuAction({
-                type: 'download',
-                format: 'ods',
-              })
+              void triggerDownload('ods')
             }}
           >
             {s('OpenDocument Spreadsheet (.ods) (Beta)')}
@@ -359,20 +311,14 @@ function DownloadSubmenu({ triggerMenuAction }: { triggerMenuAction: (action: Fi
         )}
         <UI.MenuItem
           onClick={() => {
-            void triggerMenuAction({
-              type: 'download',
-              format: 'csv',
-            })
+            void triggerDownload('csv')
           }}
         >
           {s('Comma Separated Values (.csv)')}
         </UI.MenuItem>
         <UI.MenuItem
           onClick={() => {
-            void triggerMenuAction({
-              type: 'download',
-              format: 'tsv',
-            })
+            void triggerDownload('tsv')
           }}
         >
           {s('Tab Separated Values (.tsv)')}
@@ -387,7 +333,11 @@ function SpreadsheetSettings() {
   const store = useUI((ui) => ui.view.spreadsheetSettingsDialog.store)
 
   return (
-    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.cogWheel} />} disabled={isReadonly} onClick={() => store.show()}>
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon data={Icons.cogWheel} />}
+      disabled={isReadonly}
+      onClick={() => store.show()}
+    >
       {s('Settings')}
     </UI.MenuItem>
   )
