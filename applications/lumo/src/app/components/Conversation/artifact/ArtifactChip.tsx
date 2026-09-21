@@ -2,7 +2,6 @@ import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
 
 import type { MessageId } from '../../../types';
 import { useArtifactContext } from './ArtifactContext';
@@ -36,7 +35,6 @@ const ArtifactChipIcon = ({
             className={clsx(
                 'artifact-chip-icon shrink-0 flex items-center justify-center rounded',
                 visualState === 'active' && 'artifact-chip-icon--active',
-                visualState === 'default' && 'artifact-chip-icon--default',
                 visualState === 'superseded' && 'artifact-chip-icon--superseded'
             )}
         >
@@ -54,10 +52,7 @@ interface ArtifactChipSubtitleProps {
 const ArtifactChipSubtitle = ({ artifact, visualState, versionNumber }: ArtifactChipSubtitleProps) => {
     if (visualState === 'active') {
         return (
-            <span className="flex flex-row items-center gap-1 text-xs color-primary">
-                <span className="artifact-chip-active-dot rounded-full bg-primary shrink-0" />
-                {c('collider_2025:Info').t`Open in panel • v${versionNumber}`}
-            </span>
+            <span className="text-xs color-weak">{c('collider_2025:Info').t`Open in panel • v${versionNumber}`}</span>
         );
     }
 
@@ -114,24 +109,14 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
         return c('collider_2025:Action').t`Open`;
     })();
 
-    const actionButtonProps = (() => {
-        if (visualState === 'active') {
-            return { color: 'norm' as const, shape: 'outline' as const };
-        }
-        if (visualState === 'superseded') {
-            return { color: 'norm' as const, shape: 'outline' as const };
-        }
-        return { color: 'norm' as const, shape: 'solid' as const };
-    })();
+    const actionButtonProps = { color: 'weak' as const, shape: 'outline' as const };
 
     return (
         <button
             tabIndex={versionIndex === null ? -1 : 0}
             className={clsx(
-                'artifact-chip flex flex-row items-center gap-3 border rounded-lg p-3 mt-2 mb-4 w-full text-left',
-                visualState === 'default' && 'bg-norm border-weak',
-                visualState === 'active' && 'artifact-chip--active',
-                visualState === 'superseded' && 'bg-norm border-weak artifact-chip--superseded',
+                'artifact-chip flex flex-row items-center gap-3 border rounded-lg p-3 mt-2 mb-4 w-full text-left bg-norm border-weak',
+                visualState === 'superseded' && 'artifact-chip--superseded',
                 versionIndex !== null && 'cursor-pointer'
             )}
             onClick={versionIndex === null ? undefined : handleAction}
@@ -160,7 +145,6 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
             <Button
                 {...actionButtonProps}
                 size="small"
-                pill
                 className="shrink-0"
                 disabled={versionIndex === null}
                 onClick={(event) => {
@@ -170,7 +154,6 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
                 title={actionLabel}
             >
                 {actionLabel}
-                {visualState === 'default' && <IcArrowOutFromRectangle size={3} className="ml-1" />}
             </Button>
         </button>
     );

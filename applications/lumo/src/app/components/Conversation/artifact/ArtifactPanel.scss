@@ -63,45 +63,48 @@
 }
 
 .artifact-chip {
-	transition:
-		background 150ms ease,
-		border-color 150ms ease,
-		opacity 150ms ease;
+	transition: opacity 150ms ease;
 	user-select: none;
 
-	&--active {
-		border-color: var(--primary);
-		background: color-mix(in srgb, var(--primary) 8%, transparent);
-	}
-
 	&--superseded {
-		border-color: var(--border-weak);
+		opacity: 0.75;
 	}
 }
 
 .artifact-chip-icon {
 	inline-size: 2rem;
 	block-size: 2rem;
+	color: var(--text-norm);
+	transition: color 150ms ease;
 
-	&--default {
-		background: color-mix(in srgb, var(--primary) 12%, transparent);
+	&--active {
 		color: var(--primary);
 	}
 
-	&--active {
-		background: var(--primary);
-		color: var(--text-invert);
-	}
-
 	&--superseded {
-		background: var(--background-strong);
 		color: var(--text-hint);
 	}
 }
 
-.artifact-chip-active-dot {
-	inline-size: 6px;
-	block-size: 6px;
+.artifact-chip--loading {
+	cursor: default;
+}
+
+.artifact-panel-loading-icon {
+	animation: artifact-loading-icon-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes artifact-loading-icon-pulse {
+	0%,
+	100% {
+		opacity: 0.55;
+		transform: scale(0.96);
+	}
+
+	50% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 .artifact-code-content {
@@ -258,3 +261,29 @@
 	}
 }
 
+.artifact-export-status {
+	background: var(--background-norm);
+}
+
+// Transform-based spinner — keeps animating while html2canvas blocks the main thread (unlike SVG stroke loaders).
+.artifact-export-spinner {
+	border: 2px solid var(--border-weak);
+	border-radius: 50%;
+	border-block-start-color: var(--interaction-norm);
+	block-size: 2rem;
+	inline-size: 2rem;
+	animation: artifact-export-spinner-rotate 0.75s linear infinite;
+	will-change: transform;
+
+	&.is-small {
+		block-size: 1rem;
+		border-width: 1.5px;
+		inline-size: 1rem;
+	}
+}
+
+@keyframes artifact-export-spinner-rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}

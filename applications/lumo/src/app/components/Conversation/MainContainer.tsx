@@ -42,8 +42,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     const { handleSendMessage } = useConversationActions();
     const { isSmallScreen } = useIsLumoSmallScreen();
     const { aiPaperTrailPopup, aiPaperTrailRoute } = useLumoFlags();
-    const { shouldShowApertusAnnouncement, dismissApertusAnnouncement } =
-        useShouldShowApertusAnnouncement();
+    const { shouldShowApertusAnnouncement, dismissApertusAnnouncement } = useShouldShowApertusAnnouncement();
 
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const isGuest = useIsGuest();
@@ -128,6 +127,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                                 onOpenFilePreview={handleOpenFilePreview}
                                 canShowLegalDisclaimer={isGuest && isSmallScreen}
                                 canShowLumoUpsellToggle={true}
+                                canDisplayArtifactSpotlight={!shouldShowApertusAnnouncement}
                                 initialQuery={promptSuggestion || initialQuery}
                                 prefillQuery={prefillQuery}
                                 optionalElementBelowComposer={

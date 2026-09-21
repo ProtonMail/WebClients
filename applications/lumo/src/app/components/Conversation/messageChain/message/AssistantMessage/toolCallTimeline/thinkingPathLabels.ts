@@ -18,6 +18,7 @@ type ThinkingPhase =
     | 'edit_image'
     | 'proton_info'
     | 'web_extract'
+    | 'create_artifact'
     | 'other';
 
 function hashString(value: string): number {
@@ -52,6 +53,8 @@ function toolCallToPhase(toolCall: ToolCallData | ToolCallAnnouncement): Thinkin
             return 'proton_info';
         case 'web_extract':
             return 'web_extract';
+        case 'create_artifact':
+            return 'create_artifact';
         default:
             return 'other';
     }
@@ -116,6 +119,10 @@ const PHASE_ACTIVE: Record<ThinkingPhase, readonly (() => string)[]> = {
         () => c('collider_2025:Reasoning').t`Reading a web page`,
         () => c('collider_2025:Reasoning').t`Extracting page content`,
     ],
+    create_artifact: [
+        () => c('collider_2025:Reasoning').t`Creating artifact`,
+        () => c('collider_2025:Reasoning').t`Preparing your side panel`,
+    ],
     other: [() => c('collider_2025:Reasoning').t`Using a tool`],
 };
 
@@ -152,6 +159,10 @@ const PHASE_COMPLETE: Record<ThinkingPhase, readonly (() => string)[]> = {
     web_extract: [
         () => c('collider_2025:Reasoning').t`Read a web page`,
         () => c('collider_2025:Reasoning').t`Extracted page content`,
+    ],
+    create_artifact: [
+        () => c('collider_2025:Reasoning').t`Created artifact`,
+        () => c('collider_2025:Reasoning').t`Prepared your side panel`,
     ],
     other: [() => c('collider_2025:Reasoning').t`Used a tool`],
 };
@@ -194,8 +205,7 @@ function buildActiveActions(steps: ThinkingStep[], seed: string): string[] {
     }
 
     const activeToolStep = steps.find(
-        (step): step is Extract<ThinkingStep, { type: 'tool_call' }> =>
-            step.type === 'tool_call' && step.isActive
+        (step): step is Extract<ThinkingStep, { type: 'tool_call' }> => step.type === 'tool_call' && step.isActive
     );
 
     if (activeToolStep) {
