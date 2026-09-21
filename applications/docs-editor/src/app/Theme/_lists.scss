@@ -143,7 +143,11 @@ $list-style-types: (decimal, upper-alpha, lower-alpha, upper-roman, lower-roman)
 	margin-block-end: 0.25rem;
 
 	&::marker {
-		color: var(--listitem-marker-color, inherit);
+		// Lexical prefixes the custom text property with `--listitem-marker-` when copying it to the list item.
+		color: var(
+			--listitem-marker---list-marker-color,
+			var(--listitem-marker-background-color, var(--listitem-marker-color, inherit))
+		);
 		font-family: var(--listitem-marker-font-family, inherit);
 		font-size: var(--listitem-marker-font-size, inherit);
 	}
