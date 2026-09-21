@@ -4,7 +4,6 @@ import type {
   SheetImportData,
 } from '@proton/docs-shared'
 import { EditorSystemMode, SheetImportDestination, TranslatedResult } from '@proton/docs-shared'
-import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
@@ -22,7 +21,6 @@ import { Dialogs } from './components/Dialogs/Dialogs'
 import { Sidebar } from './components/Sidebar/Sidebar'
 import { useFocusSheet } from '@rowsncolumns/spreadsheet'
 import { EditingDisabledDialog } from './components/misc/EditingDisabledDialog'
-import type { SpreadsheetConversionType } from '@proton/shared/lib/docs/constants'
 import { CircleLoader } from './components/CircleLoader/CircleLoader'
 import { c } from 'ttag'
 import { useActiveBreakpoint } from './useActiveBreakpoint'
@@ -32,6 +30,7 @@ import { useFeatureFlag } from './feature-flags'
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
 import { getSheetNameFromFilename } from './sheet-import-name'
 import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
+import { canSheetsConvertType, getSheetsImportMimeType } from './supported-sheets-import-types'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -243,22 +242,25 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     if (!editorInitializationConfig) {
       return
     }
-    const canConvertFile =
-      editorInitializationConfig.mode === 'conversion' &&
-      ['xlsx', 'csv', 'tsv', 'ods'].includes(editorInitializationConfig.type.dataType)
     const setInitialVersionIfNotSet = () => {
       if (!didSetInitialVersion.current) {
         didSetInitialVersion.current = true
         setInitialVersion()
       }
     }
-    if (canConvertFile && !didConvertFromFile.current) {
+    if (
+      editorInitializationConfig.mode === 'conversion' &&
+      canSheetsConvertType(editorInitializationConfig.type.dataType) &&
+      !didConvertFromFile.current
+    ) {
       didConvertFromFile.current = true
-      const file = new File([editorInitializationConfig.data], `import.${editorInitializationConfig.type.dataType}`, {
-        type: SupportedProtonDocsMimeTypes[editorInitializationConfig.type.dataType as SpreadsheetConversionType],
+      const conversionDataType = editorInitializationConfig.type.dataType
+      const mimeType = getSheetsImportMimeType(conversionDataType)
+      const file = new File([editorInitializationConfig.data], `import.${conversionDataType}`, {
+        type: mimeType,
       })
-      const isExcelFile = editorInitializationConfig.type.dataType === 'xlsx'
-      const isODSFile = editorInitializationConfig.type.dataType === 'ods'
+      const isExcelFile = conversionDataType === 'xlsx'
+      const isODSFile = conversionDataType === 'ods'
       if (isExcelFile || isODSFile) {
         void handleExcelFileImport(file, isExcelFile ? 'excel' : 'ods').then(setInitialVersionIfNotSet)
       } else {
@@ -286,8 +288,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   sheetsRef.current = sheets
   useEffect(() => {
     return subscribeToSheetImport((data: SheetImportData) => {
-      const isExcelFile = data.file.type === SupportedProtonDocsMimeTypes.xlsx
-      const isODSFile = data.file.type === SupportedProtonDocsMimeTypes.ods
+      const isExcelFile = data.file.type === getSheetsImportMimeType('xlsx')
+      const isODSFile = data.file.type === getSheetsImportMimeType('ods')
       if (isExcelFile || isODSFile) {
         void handleExcelFileImport(data.file, isExcelFile ? 'excel' : 'ods')
         return
