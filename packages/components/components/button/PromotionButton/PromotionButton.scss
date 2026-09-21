@@ -67,6 +67,21 @@
 		}
 	}
 
+	// 0.99 introductory pricing offer for existing free users
+	&--purple-blue-gradient {
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				background: linear-gradient(to right, #7f5cff 0%, #6fb0ff 100%);
+
+				--text-norm: white;
+
+				border: 0;
+			}
+		}
+	}
+
 	&--pink {
 		// used for some promotions
 		&#{&} {

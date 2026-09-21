@@ -62,6 +62,10 @@ export enum FeatureCode {
     MailPostSignupOneDollarState = 'MailPostSignupOneDollarState',
     DrivePostSignupOneDollarState = 'DrivePostSignupOneDollarState',
 
+    // Flags needed by the 0.99 promo for existing free users.
+    MailPostSignupZeroNinetyNineState = 'MailPostSignupZeroNinetyNineState',
+    HideMailPostSignupZeroNinetyNineOffer = 'HideMailPostSignupZeroNinetyNineOffer',
+
     // Flags needed by the b2b onboarding
     B2BOnboardingSpotlight = 'B2BOnboardingSpotlight',
     ShowB2BOnboardingButton = 'ShowB2BOnboardingButton',

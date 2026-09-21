@@ -23,6 +23,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeTruthy();
         });
@@ -41,6 +42,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeTruthy();
         });
@@ -59,6 +61,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeFalsy();
         });
@@ -77,6 +80,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeFalsy();
         });
@@ -95,6 +99,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeTruthy();
         });
@@ -113,6 +118,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: subDays(today, 31).getTime() / 1000,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeFalsy();
         });
@@ -133,6 +139,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 14).getTime() / 1000,
@@ -155,6 +162,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 30).getTime() / 1000,
@@ -177,6 +185,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 31).getTime() / 1000,
@@ -202,6 +211,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeTruthy();
         });
@@ -221,6 +231,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeFalsy();
         });
@@ -239,6 +250,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: true,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeFalsy();
         });
@@ -257,6 +269,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: true,
                     hasHadSubscription: true,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeFalsy();
         });
@@ -275,6 +288,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeFalsy();
         });
@@ -293,6 +307,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeFalsy();
         });
@@ -311,8 +326,49 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailPostSignupOneDollarPromoDisabled: false,
                     hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
                 })
             ).toBeFalsy();
+        });
+    });
+
+    describe('Zero ninety nine offer interaction', () => {
+        it('should not be eligible if the user hid the 0.99 offer', () => {
+            const user = {
+                isFree: true,
+                isDelinquent: false,
+                CreateTime: subDays(today, 3).getTime() / 1000,
+            } as unknown as UserModel;
+
+            expect(
+                getIsUserEligibleForOneDollar({
+                    user,
+                    protonConfig,
+                    offerStartDateTimeStamp: 0,
+                    mailPostSignupOneDollarPromoDisabled: false,
+                    hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: true,
+                })
+            ).toBeFalsy();
+        });
+
+        it('should be eligible if the user did not hide the 0.99 offer', () => {
+            const user = {
+                isFree: true,
+                isDelinquent: false,
+                CreateTime: subDays(today, 3).getTime() / 1000,
+            } as unknown as UserModel;
+
+            expect(
+                getIsUserEligibleForOneDollar({
+                    user,
+                    protonConfig,
+                    offerStartDateTimeStamp: 0,
+                    mailPostSignupOneDollarPromoDisabled: false,
+                    hasHadSubscription: false,
+                    hasHiddenZeroNinetyNineOffer: false,
+                })
+            ).toBeTruthy();
         });
     });
 });
