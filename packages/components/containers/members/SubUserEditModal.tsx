@@ -14,6 +14,7 @@ import {
     getPrivateText,
     getRolesTabBanner,
 } from '@proton/account';
+import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/account/members/memberUnprivatization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
@@ -33,7 +34,6 @@ import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
-import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components/modalTwo/Modal';

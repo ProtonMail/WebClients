@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { getPrivateAdminError, setMemberOwnerRole } from '@proton/account';
+import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/account/members/memberUnprivatization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { canManageOwnerRole, hasUserSourcedOwnerRole } from '@proton/account/organizationRoles/helpers';
@@ -12,7 +13,6 @@ import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
-import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
 
 import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
 import Toggle from '../../../components/toggle/Toggle';

@@ -1,5 +1,7 @@
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import type { KTLocalStorageAPI, KeyTransparencyState } from '@proton/shared/lib/interfaces';
+import type { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
+
+import type { KeyTransparencyState } from '../interfaces';
 
 /**
  * Return the default set of functions to use local storage,

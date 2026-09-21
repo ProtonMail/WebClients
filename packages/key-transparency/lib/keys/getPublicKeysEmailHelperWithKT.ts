@@ -1,8 +1,9 @@
-import { RECIPIENT_TYPES } from '../../constants';
-import { API_CUSTOM_ERROR_CODES } from '../../errors';
-import type { Api, ApiKeysConfig, KTUserContext } from '../../interfaces';
-import { KT_VERIFICATION_STATUS } from '../../interfaces';
-import { getExternalKeys, getInternalKeys, getMailCapableKeys, supportsMail } from '../../keys';
+import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import type { Api, ApiKeysConfig, KTUserContext } from '@proton/shared/lib/interfaces';
+import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
+import { getExternalKeys, getInternalKeys, getMailCapableKeys, supportsMail } from '@proton/shared/lib/keys';
+
 import { getAndVerifyApiKeys } from './getAndVerifyApiKeys';
 
 const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_EXTERNAL, KEY_GET_INPUT_INVALID, KEY_GET_INVALID_KT } =
