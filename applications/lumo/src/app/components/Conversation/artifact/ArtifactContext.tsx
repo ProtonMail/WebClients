@@ -246,16 +246,26 @@ export const ArtifactProvider = ({
 
     const selectedEntry = selectedId ? registry[selectedId] : undefined;
     const selectedVersion = selectedEntry?.versions[selectedVersionIndex];
-    const selectedArtifact: ParsedArtifact | null =
-        selectedEntry && selectedVersion
-            ? {
-                  id: selectedEntry.id,
-                  type: selectedEntry.type,
-                  title: selectedEntry.title,
-                  language: selectedVersion.language ?? selectedEntry.language,
-                  content: selectedVersion.content,
-              }
-            : null;
+    const selectedArtifact = useMemo((): ParsedArtifact | null => {
+        if (!selectedEntry || !selectedVersion) {
+            return null;
+        }
+
+        return {
+            id: selectedEntry.id,
+            type: selectedEntry.type,
+            title: selectedEntry.title,
+            language: selectedVersion.language ?? selectedEntry.language,
+            content: selectedVersion.content,
+        };
+    }, [
+        selectedEntry?.id,
+        selectedEntry?.type,
+        selectedEntry?.title,
+        selectedEntry?.language,
+        selectedVersion?.language,
+        selectedVersion?.content,
+    ]);
 
     const isSelectedVersionProvisional =
         selectedId !== null && isArtifactVersionProvisional(registry, selectedId, selectedVersionIndex);

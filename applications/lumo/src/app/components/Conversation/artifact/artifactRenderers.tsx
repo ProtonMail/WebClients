@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, memo } from 'react';
 
 import { c } from 'ttag';
 
@@ -23,7 +23,21 @@ export interface ArtifactRendererProps {
     showLineNumbers?: boolean;
 }
 
-export const CodeRenderer = ({ artifact, showLineNumbers }: ArtifactRendererProps) => {
+const ArtifactMarkdownBody = memo(function ArtifactMarkdownBody({ content }: { content: string }) {
+    return (
+        <Suspense
+            fallback={
+                <pre className="text-monospace text-sm m-0 overflow-auto color-norm whitespace-pre-wrap">{content}</pre>
+            }
+        >
+            <div className="artifact-markdown prose">
+                <MarkdownRenderer>{content}</MarkdownRenderer>
+            </div>
+        </Suspense>
+    );
+});
+
+export const CodeRenderer = memo(function CodeRenderer({ artifact, showLineNumbers }: ArtifactRendererProps) {
     const { theme } = useLumoTheme();
 
     if (!artifact.content) {
@@ -47,26 +61,16 @@ export const CodeRenderer = ({ artifact, showLineNumbers }: ArtifactRendererProp
             </Suspense>
         </div>
     );
-};
+});
 
-export const DocumentRenderer = ({ artifact }: ArtifactRendererProps) => {
+export const DocumentRenderer = memo(function DocumentRenderer({ artifact }: ArtifactRendererProps) {
     if (!artifact.content) {
         return <p className="color-hint text-sm p-4">{c('collider_2025:Info').t`No content generated`}</p>;
     }
 
     return (
         <div className="artifact-document-content overflow-auto flex-1 min-h-0 min-w-0 w-full h-full p-4">
-            <Suspense
-                fallback={
-                    <pre className="text-monospace text-sm m-0 overflow-auto color-norm whitespace-pre-wrap">
-                        {artifact.content}
-                    </pre>
-                }
-            >
-                <div className="artifact-markdown prose">
-                    <MarkdownRenderer>{artifact.content}</MarkdownRenderer>
-                </div>
-            </Suspense>
+            <ArtifactMarkdownBody content={artifact.content} />
         </div>
     );
-};
+});

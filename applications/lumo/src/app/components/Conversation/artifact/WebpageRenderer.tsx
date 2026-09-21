@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -46,7 +46,7 @@ export function buildArtifactDocument(html: string): string {
     return doctype + doc.documentElement.outerHTML;
 }
 
-export const WebpageRenderer = ({ artifact }: ArtifactRendererProps) => {
+export const WebpageRenderer = memo(function WebpageRenderer({ artifact }: ArtifactRendererProps) {
     const document = useMemo(
         () => (artifact.content ? buildArtifactDocument(artifact.content) : null),
         [artifact.content]
@@ -90,4 +90,4 @@ export const WebpageRenderer = ({ artifact }: ArtifactRendererProps) => {
             />
         </div>
     );
-};
+});
