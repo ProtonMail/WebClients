@@ -386,6 +386,7 @@ enum LumoFeatureFlag {
     LumoNativeAuthIOS = 'LumoNativeAuthIOS',
     LumoCustomAgents = 'LumoCustomAgents',
     LumoArtifactsView = 'LumoArtifactsView',
+    LumoArtifactsViewSpotlight = 'LumoArtifactsViewSpotlight',
     LumoAiPaperTrail = 'LumoAiPaperTrail',
     LumoAiPaperTrailRoute = 'LumoAiPaperTrailRoute',
     LumoAiPaperTrailPopup = 'LumoAiPaperTrailPopup',

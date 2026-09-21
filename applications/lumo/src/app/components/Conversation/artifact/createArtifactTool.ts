@@ -40,8 +40,8 @@ export const createArtifactToolExecutor: ClientToolExecutor = {
                     'with the exact same ' +
                     '`id` and the full updated content (never a diff or partial update); use a new `id` ' +
                     "only for a genuinely new, unrelated artifact. If the user's message references an " +
-                    'artifact by its id, reuse that same id. Write a brief intro in your reply before ' +
-                    'calling this.',
+                    'artifact by its id, reuse that same id. Call this tool promptly once the content is ' +
+                    'ready; add at most a brief confirmation afterward if needed.',
                 parameters: {
                     type: 'object',
                     properties: {

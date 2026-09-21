@@ -300,7 +300,11 @@ const ConversationLayout = ({
 const ConversationComponent = (props: ConversationComponentProps) => {
     const { messageChain } = useConversationActions();
     return (
-        <ArtifactProvider conversationId={props.conversation?.id} linearChain={messageChain}>
+        <ArtifactProvider
+            conversationId={props.conversation?.id}
+            linearChain={messageChain}
+            isGenerating={props.isGenerating}
+        >
             <ConversationLayout {...props} />
         </ArtifactProvider>
     );
