@@ -265,6 +265,7 @@ export class AppDependencies extends DependencyContainer {
         compatWrapper,
         this.get<CacheService>(App_TYPES.CacheService),
         this.get<LoggerInterface>(App_TYPES.Logger),
+        unleashClient,
       )
     })
 

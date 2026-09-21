@@ -72,6 +72,7 @@ import {
   useRenameWithSDK,
   useTrashWithSDK,
   useIsODTEnabled,
+  useDriveCompatSDK,
 } from '~/utils/flags'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
@@ -84,6 +85,7 @@ import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { generateNodeUid } from '@proton/drive'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
 import type { UserModel } from '@proton/shared/lib/interfaces'
+import { getShareId } from '@proton/docs-core/lib/DriveSDK/getShareId'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -118,6 +120,7 @@ export function DocumentTitleDropdown({
   const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
   const renameWithSDK = useRenameWithSDK()
   const trashWithSDK = useTrashWithSDK()
+  const replaceCompatWithSDK = useDriveCompatSDK()
   const isSheetsEnabled = useIsSheetsEnabled()
   const isODTEnabled = useIsODTEnabled()
 
@@ -310,15 +313,14 @@ export function DocumentTitleDropdown({
     let to: string | undefined
     if (!!privateContext && isPrivateNodeMeta(nodeMeta)) {
       const { compat } = privateContext
-      // Drive is share-based and not volume-based so we need
-      // to get and use the shareId (and not volumeId)
-      const shareId = await compat.getShareId(nodeMeta)
+      // Drive still uses share ID for URLs
+      const shareId = replaceCompatWithSDK ? await getShareId(nodeMeta) : await compat.getShareId(nodeMeta)
       if (node.parentNodeId) {
         to = `/${shareId}/folder/${node.parentNodeId}`
       }
     }
     openProtonDrive(to)
-  }, [documentState, openProtonDrive, privateContext])
+  }, [documentState, openProtonDrive, privateContext, replaceCompatWithSDK])
 
   const handleSheetImportData = useCallback(
     (data: SheetImportData) => {

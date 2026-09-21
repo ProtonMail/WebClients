@@ -22,6 +22,7 @@ import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { jwtDecode } from 'jwt-decode'
 import { realtimeTokenPayloadSchema } from './FetchRealtimeToken'
 import type { GetNodePermissions } from './GetNodePermissions'
+import type { PrimaryAddressKeys } from '../DriveSDK/getDocumentKeys'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 type LoadDocumentResult<E extends DocumentState | PublicDocumentState> = {
@@ -50,6 +51,7 @@ export class LoadDocument {
 
   async executePrivate(
     nodeMeta: NodeMeta,
+    primaryAddressKeys?: PrimaryAddressKeys,
   ): Promise<DynamicResult<LoadDocumentResult<DocumentState>, ErrorResult>> {
     LoadLogger.logEventRelativeToLoadTime('[LoadDocument] Beginning to load document')
     void OpenTracer.trace('boot_load_document_execute_private_start')
@@ -63,10 +65,11 @@ export class LoadDocument {
             return result
           })
           .catch((error) => {
+            // TODO this catch might be useless because GetNode returns Result.fail on errors (doesn't throw)
             throw new Error(`Failed to load node: ${error}`)
           }),
         this.getDocumentKeys
-          .execute(nodeMeta, { useCache: true })
+          .execute(nodeMeta, { useCache: true }, primaryAddressKeys)
           .then((result) => {
             LoadLogger.logEventRelativeToLoadTime('[LoadDocument] getDocumentKeys')
             return result

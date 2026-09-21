@@ -1,3 +1,4 @@
+import type { PrimaryAddressKeys } from '../../DriveSDK/getDocumentKeys'
 import { AuthenticatedDocController } from '../../AuthenticatedDocController/AuthenticatedDocController'
 import { CommentController } from '../Comments/CommentController'
 import type { DocumentState } from '../../State/DocumentState'
@@ -83,7 +84,11 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     this.docController?.destroy()
   }
 
-  public async initialize(nodeMeta: NodeMeta, documentType: DocumentType): Promise<void> {
+  public async initialize(
+    nodeMeta: NodeMeta,
+    documentType: DocumentType,
+    primaryAddressKeys?: PrimaryAddressKeys,
+  ): Promise<void> {
     void OpenTracer.trace('boot_doc_loader_initialize_start', { documentType })
     if (this.docController) {
       throw new Error('[DocLoader] docController already initialized')
@@ -91,7 +96,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
 
     const startTime = Date.now()
 
-    const loadResult = await this.loadDocument.executePrivate(nodeMeta)
+    const loadResult = await this.loadDocument.executePrivate(nodeMeta, primaryAddressKeys)
     if (loadResult.isFailed()) {
       void OpenTracer.trace('boot_doc_loader_initialize_private_failed', { code: loadResult.getErrorObject().code })
       this.logger.error('Failed to load private document', loadResult.getErrorObject())
