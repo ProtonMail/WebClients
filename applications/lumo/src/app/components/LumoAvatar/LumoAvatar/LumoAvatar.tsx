@@ -10,7 +10,7 @@ import './LumoAvatar.scss';
 
 interface LumoAvatarProps {
     isGenerating: boolean;
-    toolCallName?: ToolCallName;
+    toolCallName?: ToolCallName | 'create_artifact';
 }
 
 const lightMap = {
@@ -61,7 +61,7 @@ const darkMap = {
 
 type LumoAvatarAnimationKey = keyof typeof lightMap;
 
-const useThemeLumoAvatarAnimation = (isGenerating: boolean, toolCallName?: ToolCallName) => {
+const useThemeLumoAvatarAnimation = (isGenerating: boolean, toolCallName?: ToolCallName | 'create_artifact') => {
     const { isGhostChatMode } = useGhostChat();
     const { isDarkLumoTheme } = useLumoTheme();
 
@@ -81,6 +81,8 @@ const useThemeLumoAvatarAnimation = (isGenerating: boolean, toolCallName?: ToolC
                 key = 'ghostThinking';
             } else if (toolCallName === 'web_search' || toolCallName === 'proton_info') {
                 key = 'webSearch';
+            } else if (toolCallName === 'create_artifact') {
+                key = 'generating';
             } else {
                 key = 'generating';
             }

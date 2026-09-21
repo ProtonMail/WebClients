@@ -43,7 +43,15 @@ import type {
     ImageGenerationOptions,
     RetryStrategy,
 } from '../types';
-import { type ConversationId, type Message, Role, type Space, type SpaceId, ConversationStatus, getSpaceDek } from '../types';
+import {
+    type ConversationId,
+    ConversationStatus,
+    type Message,
+    Role,
+    type Space,
+    type SpaceId,
+    getSpaceDek,
+} from '../types';
 import {
     fillAttachmentFromSearchIndex,
     refreshAttachmentFromSearchIndex,
@@ -80,7 +88,8 @@ export type HandleSendMessage = (
     isWebSearchButtonToggled: boolean,
     imageOptions?: ImageGenerationOptions,
     artifactModeActive?: boolean,
-    isFromQueryParam?: boolean
+    isFromQueryParam?: boolean,
+    artifactRevisionTargetId?: string
 ) => Promise<void>;
 export type HandleSendArtifactAction = (meta: ArtifactActionMeta, isWebSearchButtonToggled: boolean) => Promise<void>;
 export type HandleRegenerateMessage = (
@@ -223,6 +232,7 @@ export const useLumoActions = ({
             imageOptions,
             artifactModeActive,
             artifactAction,
+            artifactRevisionTargetId,
             isFromQueryParam,
         } = actionParams;
         if (!newMessageContent?.trim() && provisionalAttachments.length === 0) return;
@@ -285,6 +295,8 @@ export const useLumoActions = ({
                     content: newMessageContent ?? '',
                     attachments: filledAttachments,
                     ...(artifactAction && { artifactAction }),
+                    ...(artifactModeActive && { artifactCreateModeActive: true }),
+                    ...(artifactRevisionTargetId && { artifactRevisionTargetId }),
                 },
                 conversationContext: {
                     spaceId,
@@ -681,7 +693,8 @@ export const useLumoActions = ({
         isWebSearchButtonToggled: boolean,
         imageOptions?: ImageGenerationOptions,
         artifactModeActive?: boolean,
-        isFromQueryParam?: boolean
+        isFromQueryParam?: boolean,
+        artifactRevisionTargetId?: string
     ) => {
         sendMessageSendEvent();
 
@@ -692,6 +705,7 @@ export const useLumoActions = ({
             imageOptions,
             artifactModeActive,
             isFromQueryParam,
+            artifactRevisionTargetId,
         });
     };
 
@@ -710,6 +724,7 @@ export const useLumoActions = ({
             newMessageContent: buildArtifactActionLlmPrompt(meta),
             isWebSearchButtonToggled,
             artifactAction: meta,
+            artifactRevisionTargetId: meta.artifactId,
         });
     };
 

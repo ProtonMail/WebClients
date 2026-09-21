@@ -9,11 +9,13 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { useChatLimitGate } from '../../../../../hooks/useChatLimitGate';
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import type { HandleRegenerateMessage } from '../../../../../hooks/useLumoActions';
+import { useLumoFlags } from '../../../../../hooks/useLumoFlags';
 import type { SearchItem, ToolCallName } from '../../../../../lib/toolCall/types';
 import { getMessageBlocks, getMessageContent, messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import type { ContentBlock, Message, MessageUsage, RetryStrategy, SiblingInfo } from '../../../../../types';
+import { Role } from '../../../../../types-api';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import LumoButton from '../../../../Buttons/LumoButton';
@@ -24,7 +26,9 @@ import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import SiblingSelector from '../../../../SiblingSelector';
 import { ArtifactChip } from '../../../artifact/ArtifactChip';
+import { ArtifactChipLoading } from '../../../artifact/ArtifactChipLoading';
 import { useArtifactContext } from '../../../artifact/ArtifactContext';
+import { getToolCallNameFromBlock, isArtifactGenerationLoading } from '../../../artifact/artifactGenerationState';
 import { getArtifactVersionIndexForMessage } from '../../../artifact/artifactRegistry';
 import {
     CREATE_ARTIFACT_TOOL_NAME,
@@ -56,7 +60,7 @@ interface AssistantActionToolbarProps {
     retryButtonRef: React.RefObject<HTMLButtonElement>;
     isLastMessage: boolean;
     isGenerating: boolean;
-    toolCallName?: ToolCallName;
+    toolCallName?: ToolCallName | 'create_artifact';
 }
 
 const AssistantActionToolbar = ({
@@ -228,6 +232,7 @@ const AssistantMessage = ({
     const retryButtonRef = useRef<HTMLButtonElement>(null);
 
     const showNextPromptSuggestionEnabled = useFlag('LumoShowNextPromptSuggestions');
+    const { artifactsView: isArtifactsViewFlagEnabled } = useLumoFlags();
 
     // Get blocks for interleaved rendering
     const blocks = useMemo(
@@ -247,6 +252,32 @@ const AssistantMessage = ({
     }, [artifactBlocksKey, blocks]);
 
     const hasArtifacts = completeArtifacts.length > 0;
+
+    const parentUserMessage = useMemo(() => {
+        if (!message.parentId) {
+            return undefined;
+        }
+
+        const parent = messageChain.find((entry) => {
+            return entry.id === message.parentId;
+        });
+
+        if (!parent || parent.role !== Role.User) {
+            return undefined;
+        }
+
+        return parent;
+    }, [message.parentId, messageChain]);
+
+    const showArtifactGenerationLoading =
+        isArtifactsViewFlagEnabled &&
+        isArtifactGenerationLoading({
+            isGenerating,
+            isLastMessage,
+            completeArtifacts,
+            blocks,
+            parentUserMessage,
+        });
 
     // Hide create_artifact tool_call/tool_result blocks from the generic tool-call timeline —
     // ArtifactChip renders them instead, below.
@@ -320,6 +351,22 @@ const AssistantMessage = ({
     const hasToolCall = blocks.some((b) => b.type === 'tool_call');
     const lastToolCall = blocks.findLast((b) => b.type === 'tool_call');
     const lastToolCallParsed = lastToolCall?.type === 'tool_call' ? parseToolCallBlock(lastToolCall) : null;
+    const lastToolCallName = (() => {
+        if (lastToolCallParsed?.name) {
+            return lastToolCallParsed.name;
+        }
+
+        if (!lastToolCall) {
+            return undefined;
+        }
+
+        const rawName = getToolCallNameFromBlock(lastToolCall);
+        if (rawName === CREATE_ARTIFACT_TOOL_NAME) {
+            return CREATE_ARTIFACT_TOOL_NAME;
+        }
+
+        return undefined;
+    })();
 
     const handleLinkClick = useCallback(
         (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -392,8 +439,11 @@ const AssistantMessage = ({
                                                 messageContentContainerRef={markdownContainerRef}
                                                 reasoning={message.reasoning}
                                             />
-                                            {hasArtifacts && (
+                                            {(showArtifactGenerationLoading || hasArtifacts) && (
                                                 <div className="flex flex-column gap-1 mt-1">
+                                                    {showArtifactGenerationLoading && !hasArtifacts && (
+                                                        <ArtifactChipLoading />
+                                                    )}
                                                     {completeArtifacts.map((artifact) => (
                                                         <ArtifactChip
                                                             key={`${artifact.id}-${message.id}`}
@@ -423,7 +473,7 @@ const AssistantMessage = ({
                                         retryButtonRef={retryButtonRef}
                                         isLastMessage={isLastMessage}
                                         isGenerating={isGenerating}
-                                        toolCallName={lastToolCallParsed?.name}
+                                        toolCallName={lastToolCallName}
                                     />
 
                                     {shouldShowNextPromptSuggestions && message.suggestedQuestions && (
