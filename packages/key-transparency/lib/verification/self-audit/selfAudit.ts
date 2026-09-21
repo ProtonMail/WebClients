@@ -1,15 +1,10 @@
 import { serverTime } from '@protontech/crypto';
+
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
-import type {
-    Api,
-    GetLatestEpoch,
-    KTLocalStorageAPI,
-    KTUserContext,
-    SelfAuditState,
-} from '@proton/shared/lib/interfaces';
+import type { Api, KTLocalStorageAPI, KTUserContext } from '@proton/shared/lib/interfaces';
 
 import { getSelfAuditInterval } from '../../helpers/utils';
-import type { SelfAuditResult } from '../../interfaces';
+import type { GetLatestEpoch, SelfAuditResult, SelfAuditState } from '../../interfaces';
 import { auditAddress } from './addressAudit';
 import { checkLSBlobs } from './verifyLocalStorage';
 

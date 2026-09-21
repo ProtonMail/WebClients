@@ -5,13 +5,9 @@ import { c } from 'ttag';
 
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getSilentApi } from '../api/helpers/customConfig';
-import { getAndVerifyApiKeys } from '../api/helpers/getAndVerifyApiKeys';
 import type { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayloadV2 } from '../api/organization';
 import type {
     Address,
-    Api,
-    KTUserContext,
     KeyGenConfig,
     KeyPair,
     Member,
@@ -400,30 +396,6 @@ export const acceptInvitation = async ({
     });
 };
 
-export const getVerifiedPublicKeys = async ({
-    api,
-    email,
-    ktUserContext,
-}: {
-    email: string;
-    api: Api;
-    ktUserContext: KTUserContext;
-}) => {
-    if (!email) {
-        throw new Error('Missing email');
-    }
-
-    const { addressKeys } = await getAndVerifyApiKeys({
-        api,
-        email,
-        ktUserContext,
-        internalKeysOnly: false,
-        noCache: true,
-    });
-
-    return addressKeys;
-};
-
 export interface OrganizationKeyTokenData {
     sessionKey: SessionKey;
     binaryData: Uint8Array<ArrayBuffer>;
@@ -554,57 +526,6 @@ export const validateOrganizationKeySignature = async ({
         const error = new Error(c('Error').t`Signature verification failed`);
         error.name = 'SignatureError';
         throw error;
-    }
-};
-
-export enum OrganizationSignatureState {
-    publicKeys = 0,
-    valid = 1,
-    error = 2,
-}
-
-export const validateOrganizationSignatureHelper = async ({
-    email,
-    privateKey,
-    armoredSignature,
-    ktUserContext,
-    api,
-}: {
-    email: string;
-    privateKey: PrivateKeyReference;
-    armoredSignature: string;
-    ktUserContext: KTUserContext;
-    api: Api;
-}) => {
-    const silentApi = getSilentApi(api);
-
-    const adminEmailPublicKeys = (
-        await getVerifiedPublicKeys({
-            api: silentApi,
-            email,
-            ktUserContext,
-        })
-    ).map(({ publicKey }) => publicKey);
-
-    if (!adminEmailPublicKeys.length) {
-        return {
-            state: OrganizationSignatureState.publicKeys,
-        };
-    }
-
-    try {
-        await validateOrganizationKeySignature({
-            verificationKeys: adminEmailPublicKeys,
-            organizationKey: privateKey,
-            armoredSignature,
-        });
-        return {
-            state: OrganizationSignatureState.valid,
-        };
-    } catch (e) {
-        return {
-            state: OrganizationSignatureState.error,
-        };
     }
 };
 

@@ -12,10 +12,11 @@ import {
     persistSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { Member } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeysHelper, getIsMemberInManualApproveState } from '@proton/shared/lib/keys';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import type { MembersState } from '../members';
+import { getIsMemberInManualApproveState } from '../members/memberUnprivatization';
 import { unprivatizeMembersManual } from '../members/unprivatizeMembers';
 import type { OrganizationState } from '../organization';
 import { getOrganizationTokenThunk } from './actions';

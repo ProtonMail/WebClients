@@ -1,9 +1,9 @@
-import type { UploadMissingSKL } from '@proton/shared/lib/interfaces';
 import { getSignedKeyList } from '@proton/shared/lib/keys';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
 import { fetchProof, updateSignedKeyList } from '../../helpers/apiHelpers';
 import { KT_ERROR_TYPE, throwKTError } from '../../helpers/utils';
+import type { UploadMissingSKL } from '../../interfaces';
 import { saveSKLToLS } from '../../storage/saveSKLToLS';
 import { verifyProofOfAbsenceForAllRevision } from '../verifyProofs';
 

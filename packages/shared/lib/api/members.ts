@@ -1,7 +1,7 @@
 import { MINUTE } from '../constants';
 import type { Address, Api, Member, SignedKeyList, UserOrganization } from '../interfaces';
 import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '../keys/organizationKeyDto';
-import type { UnprivatizeMemberPayload } from '../keys/unprivatization';
+import type { UnprivatizeMemberPayload } from '../keys/unprivatizationDto';
 import queryPages from './helpers/queryPages';
 import type { PaginationParams } from './interface';
 

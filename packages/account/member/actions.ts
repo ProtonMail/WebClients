@@ -17,13 +17,6 @@ import type {
     MemberUnprivatizationOutput,
     Organization,
 } from '@proton/shared/lib/interfaces';
-import {
-    type ParsedUnprivatizationData,
-    acceptUnprivatization,
-    getIsMemberInManualAcceptState,
-    parseUnprivatizationData,
-    validateUnprivatizationData,
-} from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
@@ -31,6 +24,13 @@ import { type AddressesState, addressesThunk } from '../addresses';
 import { type InactiveKeysState, selectInactiveKeys } from '../inactiveKeys';
 import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';
+import { getIsMemberInManualAcceptState } from '../members/memberUnprivatization';
+import {
+    type ParsedUnprivatizationData,
+    acceptUnprivatization,
+    parseUnprivatizationData,
+    validateUnprivatizationData,
+} from '../members/unprivatization';
 import { type OrganizationState, organizationThunk } from '../organization';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';

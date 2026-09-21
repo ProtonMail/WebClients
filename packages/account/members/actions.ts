@@ -44,13 +44,8 @@ import type {
     RoleAssignment,
 } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
-import {
-    getInvitationData,
-    getIsPasswordless,
-    getSignedInvitationData,
-    setupMemberKeys,
-} from '@proton/shared/lib/keys';
-import { getIsMemberSetup, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
+import { getIsPasswordless, setupMemberKeys } from '@proton/shared/lib/keys';
+import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import { getHasIncompleteOrgKeyGrant, getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
@@ -89,6 +84,8 @@ import {
     updateMemberRoles,
     upsertMember,
 } from './index';
+import { getMemberUnprivatizationMode } from './memberUnprivatization';
+import { getInvitationData, getSignedInvitationData } from './unprivatization';
 import { deleteRequestUnprivatization, requestUnprivatization, unprivatizeSelf } from './unprivatizeActions';
 import { getRequiredOwnerRoleId, updateOwnerRole } from './updateOwnerRole';
 import validateAddUser from './validateAddUser';
@@ -766,9 +763,10 @@ export const createMember = ({
                     c('Error').t`Organization key must be activated to create invited users`
                 );
             }
+            const address = `${firstAddressParts.Local}@${firstAddressParts.Domain}`;
             const invitationData = await getInvitationData({
                 api,
-                address: `${firstAddressParts.Local}@${firstAddressParts.Domain}`,
+                address,
                 expectRevisionChange: true,
             });
             const invitationSignature = await getSignedInvitationData(organizationKey.privateKey, invitationData);
