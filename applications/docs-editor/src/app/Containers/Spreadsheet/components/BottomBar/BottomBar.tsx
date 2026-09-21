@@ -22,7 +22,6 @@ import { getStringifiedColor } from '@rowsncolumns/spreadsheet'
 import { ColorPicker } from '../shared/ColorPicker'
 import { SheetStatus } from './SheetStatus'
 import { isDuplicateSheetName } from '../../is-duplicate-sheet-name'
-import { useFeatureFlag } from '../../feature-flags'
 import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
 
 const { s } = createStringifier(strings)
@@ -368,7 +367,7 @@ const NewSheetButton = memo(function NewSheetButton() {
 export type BottomBarProps = ComponentPropsWithoutRef<'div'>
 
 export const BottomBar = memo(function BottomBar(props: BottomBarProps) {
-  const isSheetsStatusBarEnabled = useFeatureFlag('SheetsStatusBarEnabled')
+  const { featureFlags } = useSheetsDependencies()
 
   return (
     <div {...props} className="border-weak bg-weak flex items-center gap-2.5 border-t pl-3 pr-14 print:hidden">
@@ -378,7 +377,7 @@ export const BottomBar = memo(function BottomBar(props: BottomBarProps) {
         <NewSheetButton />
       </div>
 
-      {isSheetsStatusBarEnabled && (
+      {featureFlags.SheetsStatusBarEnabled && (
         <div className="ml-auto shrink-0">
           <SheetStatus />
         </div>
