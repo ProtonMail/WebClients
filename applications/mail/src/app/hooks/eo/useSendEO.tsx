@@ -13,11 +13,11 @@ import { MIN_DELAY_SENT_NOTIFICATION } from '@proton/mail-composer/constants';
 import { encryptFile } from '@proton/mail-composer/helpers/attachment/attachmentUploader';
 import { getDecryptedAttachment } from '@proton/mail-message/helpers/attachment/attachmentLoader';
 import { createBlob, readContentIDandLocation } from '@proton/mail-message/helpers/message/messageEmbeddeds';
-import { prepareExport } from '@proton/mail-message/helpers/message/messageExport';
 import type { MessageKeys, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { EOReply } from '@proton/shared/lib/api/eo';
 import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { EO_MESSAGE_REDIRECT_PATH } from '../../constants';
@@ -76,7 +76,30 @@ export const useSendEO = ({ message, encryptionKey, outsideKey }: Props) => {
         }
     };
 
-    const send = async () => {
+    /** `replyContent` is exported by the caller so it can realign the model with the editor
+     *  first. See `ensureMessageContent` in EOComposer.
+     */
+    const send = async (replyContent: string) => {
+        /** An empty export means the editor never became usable or the document was wiped.
+         *  Encrypting it delivers a blank reply with no error at all, so refuse the send and
+         *  report it instead of silently losing what the user wrote.
+         */
+        if (replyContent.trim() === '') {
+            captureMessage('EO reply aborted because the composer produced an empty body', {
+                extra: {
+                    hasMessageDocument: !!message.messageDocument?.document,
+                    attachmentCount: message.data?.Attachments?.length ?? 0,
+                },
+            });
+
+            createNotification({
+                type: 'error',
+                text: c('Error').t`Cannot send an empty message. Message is not sent.`,
+            });
+
+            throw new Error('EO reply has an empty body');
+        }
+
         notifManager.ID = createNotification({
             text: <SendingMessageNotification manager={notifManager} />,
             expiration: -1,
@@ -84,8 +107,6 @@ export const useSendEO = ({ message, encryptionKey, outsideKey }: Props) => {
         });
 
         try {
-            const replyContent = prepareExport(message);
-
             const Body = (
                 await CryptoProxy.encryptMessage({
                     textData: replyContent,

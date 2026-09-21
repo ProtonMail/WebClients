@@ -17,12 +17,21 @@ interface Props {
     id: string;
     onAddAttachments: (files: File[]) => void;
     message: MessageState;
+    exportReplyContent: () => string;
     encryptionKey?: PublicKeyReference;
     outsideKey?: MessageKeys;
     numberOfReplies: number;
 }
 
-const EOReplyFooter = ({ id, onAddAttachments, message, encryptionKey, outsideKey, numberOfReplies }: Props) => {
+const EOReplyFooter = ({
+    id,
+    onAddAttachments,
+    exportReplyContent,
+    message,
+    encryptionKey,
+    outsideKey,
+    numberOfReplies,
+}: Props) => {
     const history = useHistory();
 
     const [isSending, setIsSending] = useState(false);
@@ -41,7 +50,7 @@ const EOReplyFooter = ({ id, onAddAttachments, message, encryptionKey, outsideKe
         setIsSending(true);
 
         try {
-            await send();
+            await send(exportReplyContent());
         } catch {
             setIsSending(false);
         }

@@ -37,10 +37,11 @@ const EOReply = ({ setSessionStorage }: Props) => {
                         encryptionKey={message.PublicKey}
                         outsideKey={outsideKey}
                         header={<EOReplyHeader message={messageState} />}
-                        renderFooter={({ message: reply, onAddAttachments }) => (
+                        renderFooter={({ message: reply, onAddAttachments, exportReplyContent }) => (
                             <EOReplyFooter
                                 id={id}
                                 onAddAttachments={onAddAttachments}
+                                exportReplyContent={exportReplyContent}
                                 message={reply}
                                 encryptionKey={message.PublicKey}
                                 outsideKey={outsideKey}
