@@ -31,7 +31,11 @@ export const useZendeskChat = (user: UserModel) => {
 
     const handleOpenZendeskChat = canAccessZendeskChat
         ? () => {
-              setShowZendeskChat({ autoLaunch: true, render: true });
+              if (showZendeskChat.render) {
+                  zendeskRef.current?.open();
+              } else {
+                  setShowZendeskChat({ autoLaunch: true, render: true });
+              }
           }
         : undefined;
 
