@@ -27,4 +27,3 @@ export * from './missingKeysMemberProcess';
 export * from './missingKeysSelfProcess';
 export * from './updateActiveKeys';
 export * from './keySource';
-export * from './unprivatization';

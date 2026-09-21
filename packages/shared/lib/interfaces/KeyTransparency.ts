@@ -1,13 +1,11 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 
-import type { Epoch, SelfAuditResult } from '@proton/key-transparency/interfaces';
-
 import type { APP_NAMES } from '../constants';
 import type { PrimaryAddressKeysForSigning } from '../keys';
 import type { Address } from './Address';
 import type { Api } from './Api';
 import type { ProcessedApiKey } from './EncryptionPreferences';
-import type { DecryptedAddressKey, DecryptedKey, KeyPair } from './Key';
+import type { DecryptedKey } from './Key';
 import type { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
 import type { User } from './User';
 
@@ -16,19 +14,6 @@ export interface KTLocalStorageAPI {
     removeItem: (key: string) => Promise<void | undefined>;
     getItem: (key: string) => Promise<string | null | undefined>;
     setItem: (key: string, value: string) => Promise<void | undefined>;
-}
-
-export interface SelfAuditState {
-    userKeys: KeyPair[];
-    lastSelfAudit: SelfAuditResult | undefined;
-    addresses: {
-        address: Address;
-        addressKeys: DecryptedAddressKey[];
-    }[];
-}
-
-export interface KeyTransparencyState {
-    selfAuditResult?: SelfAuditResult;
 }
 
 export type KeyTransparencyVerify = (
@@ -94,8 +79,6 @@ export enum KeyTransparencyActivation {
     SHOW_UI = 2,
 }
 
-export type GetLatestEpoch = ({ api, forceRefresh }: { api: Api; forceRefresh?: boolean }) => Promise<Epoch>;
-
 export enum KT_VERIFICATION_STATUS {
     VERIFIED_KEYS = 0,
     UNVERIFIED_KEYS = 1,
@@ -106,14 +89,6 @@ export interface KeyTransparencyVerificationResult {
     status: KT_VERIFICATION_STATUS;
     keysChangedRecently?: boolean;
 }
-
-export type UploadMissingSKL = (data: {
-    address: Address;
-    addressKeys: DecryptedAddressKey[];
-    epoch: Epoch;
-    ktUserContext: KTUserContext;
-    api: Api;
-}) => Promise<void>;
 
 export type ResetSelfAudit = (options: {
     api: Api;

@@ -2,6 +2,12 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { ParsedUnprivatizationData } from '@proton/account/members/unprivatization';
+import {
+    parseUnprivatizationData,
+    setupKeysWithUnprivatization,
+    validateUnprivatizationData,
+} from '@proton/account/members/unprivatization';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -25,12 +31,6 @@ import { APPS, type APP_NAMES, BRAND_NAME, HTTP_STATUS_CODE } from '@proton/shar
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Address, Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getResetAddressesKeysV2 } from '@proton/shared/lib/keys';
-import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys/unprivatization';
-import {
-    parseUnprivatizationData,
-    setupKeysWithUnprivatization,
-    validateUnprivatizationData,
-} from '@proton/shared/lib/keys/unprivatization';
 import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 import { getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';

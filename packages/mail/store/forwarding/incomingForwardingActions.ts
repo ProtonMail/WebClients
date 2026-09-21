@@ -14,8 +14,8 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { deleteForwarding as deleteForwardingConfig, rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
-import { acceptIncomingForwarding } from '@proton/shared/lib/keys/forward/acceptIncomingForwarding';
 
+import { acceptIncomingForwarding } from './acceptIncomingForwarding';
 import { getIncomingAddressForwarding, incomingAddressForwardingsActions } from './incoming';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
