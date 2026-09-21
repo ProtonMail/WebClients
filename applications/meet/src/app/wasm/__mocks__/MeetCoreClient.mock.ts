@@ -14,6 +14,7 @@ const createDefaultMocks = () =>
     ({
         ping: vi.fn().mockResolvedValue(undefined),
         joinMeetingWithAccessToken: vi.fn().mockResolvedValue(undefined),
+        joinMeeting2: vi.fn().mockResolvedValue(undefined),
         joinMeetingWithAccessTokenWithSwitchJoinType: vi.fn().mockResolvedValue(undefined),
         joinRoomWithProposal: vi.fn().mockResolvedValue(undefined),
         // An empty list rather than `undefined`, since callers iterate the result.
