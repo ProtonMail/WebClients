@@ -11133,6 +11133,7 @@ __metadata:
     happy-dom: "npm:^20.14.3"
     pkijs: "npm:^3.4.0"
     pvutils: "npm:^1.2.0"
+    ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
     vitest: "npm:^4.1.11"
   languageName: unknown
@@ -11839,7 +11840,6 @@ __metadata:
     vitest: "npm:^4.1.11"
     zod: "npm:^3.25.76"
   peerDependencies:
-    "@proton/key-transparency": "workspace:^"
     electron: "*"
   languageName: unknown
   linkType: soft
@@ -40443,6 +40443,7 @@ __metadata:
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
     "@proton/jest-swc-preset": "workspace:^"
+    "@proton/key-transparency": "workspace:^"
     "@proton/llm": "workspace:^"
     "@proton/logger": "workspace:^"
     "@proton/lumo-ui": "workspace:^"
@@ -40979,6 +40980,7 @@ __metadata:
     "@proton/hooks": "workspace:^"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/icons": "workspace:^"
+    "@proton/key-transparency": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/pack": "workspace:packages/pack"
     "@proton/pass": "workspace:^"

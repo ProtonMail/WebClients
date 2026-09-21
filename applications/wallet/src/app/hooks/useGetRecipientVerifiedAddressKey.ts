@@ -4,8 +4,8 @@ import { CryptoProxy, type PublicKeyReference } from '@protontech/crypto';
 
 import { getKTUserContext } from '@proton/account/kt/actions';
 import { useApi } from '@proton/app-context/useApi';
+import { getAndVerifyApiKeys } from '@proton/key-transparency/keys';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import type { ProcessedApiKey } from '@proton/shared/lib/interfaces';
 import { getKeyHasFlagsToVerify } from '@proton/shared/lib/keys';
 import { verifySignedData } from '@proton/wallet/utils/crypto';

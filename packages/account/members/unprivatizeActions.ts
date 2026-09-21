@@ -12,14 +12,7 @@ import {
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
 import type { Api, KTUserContext, Member, MemberReadyForAutomaticUnprivatization } from '@proton/shared/lib/interfaces';
-import {
-    getInvitationData,
-    getIsMemberInAutomaticApproveState,
-    getIsMemberInManualAcceptState,
-    getSignedInvitationData,
-    getUnprivatizeMemberPayload,
-} from '@proton/shared/lib/keys';
-import { getIsMemberSetup, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
+import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
 
 import { type EntitlementsState, entitlementsThunk } from '../entitlements';
@@ -32,6 +25,12 @@ import type { OrganizationRolesState } from '../organizationRoles';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import { MemberCreationValidationError, type MembersState, getMemberAddresses } from './index';
+import {
+    getIsMemberInAutomaticApproveState,
+    getIsMemberInManualAcceptState,
+    getMemberUnprivatizationMode,
+} from './memberUnprivatization';
+import { getInvitationData, getSignedInvitationData, getUnprivatizeMemberPayload } from './unprivatization';
 import { updateOwnerRole } from './updateOwnerRole';
 
 export const unprivatizeMember = ({

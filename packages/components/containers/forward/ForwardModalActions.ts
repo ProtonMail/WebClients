@@ -1,14 +1,16 @@
+import { CryptoProxy, type PublicKeyReference } from '@protontech/crypto';
 import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import { type AddressKeysState, addressKeysThunk } from '@proton/account/addressKeys';
+import { generateNewE2EEForwardingCompatibleAddressKey } from '@proton/account/addressKeys/generateNewE2EEForwardingCompatibleAddressKey';
+import { unsetV6PrimaryKey } from '@proton/account/addressKeys/unsetV6PrimaryKey';
 import { addressesThunk } from '@proton/account/addresses';
 import type { KtState } from '@proton/account/kt';
 import { getKTActivation } from '@proton/account/kt/actions';
 import { getPublicKeysForInboxThunk } from '@proton/account/publicKeys/publicKeysForInbox';
 import { userThunk } from '@proton/account/user';
 import { type UserKeysState, userKeysThunk } from '@proton/account/userKeys';
-import { CryptoProxy, type PublicKeyReference } from '@protontech/crypto';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ForwardModalKeyState } from '@proton/mail/store/forwarding/outgoingForwardingActions';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -20,10 +22,6 @@ import {
     getEmailFromKey,
     getPrimaryActiveAddressKeyForEncryption,
 } from '@proton/shared/lib/keys';
-import {
-    generateNewE2EEForwardingCompatibleAddressKey,
-    handleUnsetV6PrimaryKey,
-} from '@proton/shared/lib/keys/forward/keyHelpers';
 
 import type { ForwardModalState } from './ForwardModalInterface';
 
@@ -155,7 +153,7 @@ export const fixupPrimaryKeyV6 = ({
             dispatch(userThunk()),
             dispatch(userKeysThunk()),
         ]);
-        await handleUnsetV6PrimaryKey({
+        await unsetV6PrimaryKey({
             api: silentApi,
             ID: keyState.forwarderPrimaryKeysInfo.v6.ID,
             forwarderAddress,

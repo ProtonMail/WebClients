@@ -39,13 +39,3 @@ export const KT_VE_VERIFICATION_CONTEXT = {
     value: `key-transparency.verified-epoch.${epochChainVersion}`,
     required: true,
 };
-
-export const KT_SKL_SIGNING_CONTEXT = {
-    value: 'key-transparency.key-list',
-    critical: false,
-};
-
-export const KT_SKL_VERIFICATION_CONTEXT = {
-    value: 'key-transparency.key-list',
-    required: false,
-};

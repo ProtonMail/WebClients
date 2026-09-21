@@ -6,7 +6,6 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type {
     Api,
     FetchedSignedKeyList,
-    GetLatestEpoch,
     KTUserContext,
     KeyTransparencyVerificationResult,
     ProcessedApiKey,
@@ -14,12 +13,12 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
 import { ParsedSignedKeyList } from '@proton/shared/lib/keys/parsedSignedKeyList';
+import { KT_SKL_VERIFICATION_CONTEXT } from '@proton/shared/lib/keys/signedKeyListContext';
 
-import { KT_SKL_VERIFICATION_CONTEXT } from '../constants/constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
 import { fetchEpochByEpochID, fetchProof } from '../helpers/apiHelpers';
 import { KT_ERROR_TYPE, KeyTransparencyError, StaleEpochError, getEmailDomain, throwKTError } from '../helpers/utils';
-import type { Proof } from '../interfaces';
+import type { GetLatestEpoch, Proof } from '../interfaces';
 import { saveSKLToLS } from '../storage/saveSKLToLS';
 import {
     verifyProofOfAbsenceForAllRevision,

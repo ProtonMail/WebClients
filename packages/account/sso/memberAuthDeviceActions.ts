@@ -6,7 +6,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { activateMemberAuthDeviceConfig, rejectMemberAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { DecryptedKey, Member } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getIsMemberInManualApproveState, getMemberKeys } from '@proton/shared/lib/keys';
+import { generateKeySaltAndPassphrase, getMemberKeys } from '@proton/shared/lib/keys';
 import type { DeviceSecretData, MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
 import {
     AuthDeviceState,
@@ -19,6 +19,7 @@ import { generatePassword } from '@proton/shared/lib/password';
 import noop from '@proton/utils/noop';
 
 import { getMemberAddresses } from '../members';
+import { getIsMemberInManualApproveState } from '../members/memberUnprivatization';
 import { unprivatizeMembersManual } from '../members/unprivatizeMembers';
 import { organizationKeyThunk } from '../organizationKey';
 import type { MemberAuthDevicesState, PendingAdminActivation } from './memberAuthDevices';

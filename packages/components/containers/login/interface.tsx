@@ -1,3 +1,4 @@
+import type { ParsedUnprivatizationData } from '@proton/account/members/unprivatization';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse, AuthVersion, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -12,7 +13,7 @@ import type {
     KeySalt as tsKeySalt,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
-import type { AddressGenerationSetup, ClaimableAddress, ParsedUnprivatizationData } from '@proton/shared/lib/keys';
+import type { AddressGenerationSetup, ClaimableAddress } from '@proton/shared/lib/keys';
 import type { AuthDeviceOutput, DeviceData, DeviceSecretData, DeviceSecretUser } from '@proton/shared/lib/keys/device';
 import type { OrganizationData, UnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 

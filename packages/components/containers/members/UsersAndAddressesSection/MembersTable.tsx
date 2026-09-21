@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/account/members/memberUnprivatization';
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
 import type { UseMembersUsageResult } from '@proton/account/members/useMembersUsage';
 import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
@@ -23,12 +24,7 @@ import { hasMailProduct } from '@proton/shared/lib/helpers/organization';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
-import {
-    MemberUnprivatizationMode,
-    getIsMemberDisabled,
-    getIsMemberInvited,
-    getMemberUnprivatizationMode,
-} from '@proton/shared/lib/keys/memberHelper';
+import { getIsMemberDisabled, getIsMemberInvited } from '@proton/shared/lib/keys/memberHelper';
 import { getHasPausedRoleAssignment } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 

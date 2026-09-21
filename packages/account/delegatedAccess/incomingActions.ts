@@ -1,5 +1,6 @@
 import { type ThunkAction, type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 
+import { getAndVerifyApiKeys } from '@proton/key-transparency/keys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -7,7 +8,6 @@ import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promise
 import { revoke } from '@proton/shared/lib/api/auth';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';

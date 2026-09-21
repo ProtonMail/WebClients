@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { KT_ERROR_TYPE, ktKeyVerificationFailureTelemetryAndMetrics, ktSentryReport } from '@proton/key-transparency/helpers';
+import type { Api, ApiKeysConfig, KTUserContext } from '@proton/shared/lib/interfaces';
+import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
-import type { Api, ApiKeysConfig, KTUserContext } from '../../interfaces';
-import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '../../interfaces';
+import { KT_ERROR_TYPE, ktKeyVerificationFailureTelemetryAndMetrics, ktSentryReport } from '../helpers/utils';
 import getPublicKeysEmailHelperWithKT from './getPublicKeysEmailHelperWithKT';
 
 export const KEY_VERIFICATION_ERROR_MESSAGE = c('loc_nightly: Key verification error')

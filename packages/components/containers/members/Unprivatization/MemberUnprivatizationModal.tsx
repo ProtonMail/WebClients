@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { memberAcceptUnprivatization, memberRejectUnprivatization } from '@proton/account/member/actions';
+import type { ParsedUnprivatizationData } from '@proton/account/members/unprivatization';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
@@ -9,7 +10,6 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import type { Member } from '@proton/shared/lib/interfaces';
-import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys';
 import { getMemberHasOrgKeyResetPrivatization } from '@proton/shared/lib/keys/memberHelper';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
