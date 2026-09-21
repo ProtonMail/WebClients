@@ -13,7 +13,7 @@ interface Props {
     promoLoading?: boolean;
     promoIcon?: IconComponent;
     promoChildren: ReactNode;
-    promoColor: 'full-gradient' | 'norm' | 'outline-gradient';
+    promoColor: 'full-gradient' | 'purple-blue-gradient' | 'norm' | 'outline-gradient';
     spotlightBorderRadius?: 'xl' | 'md';
     spotlightShow: boolean;
     spotlightContent: ReactNode;
@@ -63,6 +63,7 @@ export const SpotlightWithPromo = ({
                     size="medium"
                     buttonGradient={promoColor === 'outline-gradient'}
                     fullGradient={promoColor === 'full-gradient'}
+                    purpleBlueGradient={promoColor === 'purple-blue-gradient'}
                     responsive
                 >
                     {promoChildren}

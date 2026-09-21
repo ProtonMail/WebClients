@@ -783,6 +783,9 @@ export enum MAIL_UPSELL_PATHS {
     ONE_DOLLAR_INITIAL_REMINDER = 'one-dollar-initial-reminder',
     ONE_DOLLAR_SECOND_REMINDER = 'one-dollar-second-reminder',
     ONE_DOLLAR_LAST_REMINDER = 'one-dollar-last-reminder',
+    ZERO_NINETY_NINE_INITIAL_REMINDER = 'zero-ninety-nine-initial-reminder',
+    ZERO_NINETY_NINE_SECOND_REMINDER = 'zero-ninety-nine-second-reminder',
+    ZERO_NINETY_NINE_LAST_REMINDER = 'zero-ninety-nine-last-reminder',
     GO_UNLIMITED_2025 = 'go-unlimited-2025',
     UNLIMITED_TO_DUO = 'unlimited-to-duo',
     // Monthly subscriber upsell

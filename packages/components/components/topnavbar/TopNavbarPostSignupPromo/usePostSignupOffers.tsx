@@ -15,6 +15,8 @@ import { DrivePostSignupOneDollar } from './PostSignupOneDollar/DrivePostSignupO
 import { useDrivePostSignupOneDollar } from './PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollar';
 import { MailPostSignupOneDollar } from './PostSignupOneDollar/MailPostSignupOneDollar/MailPostSignupOneDollar';
 import { useMailPostSignupOneDollar } from './PostSignupOneDollar/MailPostSignupOneDollar/useMailPostSignupOneDollar';
+import { MailPostSignup099 } from './PostSignupZeroNinetyNine/MailPostSignup099';
+import { useMailPostSignup099 } from './PostSignupZeroNinetyNine/useMailPostSignup099';
 import { UnlimitedToDuoOffer } from './UnlimitedToDuoOffer/UnlimitedToDuoOffer';
 import { useUnlimitedToDuoOffer } from './UnlimitedToDuoOffer/hooks/useUnlimitedToDuoOffer';
 import type { OfferHookReturnValue } from './common/helpers/interface';
@@ -31,6 +33,7 @@ interface Offer extends Pick<OfferHookReturnValue, 'isLoading' | 'isEligible'> {
 
 export const usePostSignupOffers = ({ app }: Props) => {
     const mailPostSignup = useMailPostSignupOneDollar();
+    const mailPostSignup099 = useMailPostSignup099();
     const drivePostSignup = useDrivePostSignupOneDollar();
     const alwaysOnUpsell = useAlwaysOnUpsell();
 
@@ -45,6 +48,12 @@ export const usePostSignupOffers = ({ app }: Props) => {
 
     // Define offers in order of priority
     const offers: Offer[] = [
+        {
+            id: 'mail-zero-ninety-nine-offer',
+            isEligible: mailPostSignup099.isEligible,
+            isLoading: mailPostSignup099.isLoading,
+            Component: MailPostSignup099,
+        },
         {
             id: 'mail-one-dollar-offer',
             isEligible: mailPostSignup.isEligible,
