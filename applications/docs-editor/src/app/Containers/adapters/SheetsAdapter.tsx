@@ -20,6 +20,7 @@ import {
 import { useResolvedAppPlatform } from './useResolvedAppPlatform'
 import { createSheetsFileMenuActions } from './createSheetsFileMenuActions'
 import { toCollaboratorCursorNavigationDestination } from './collaboratorCursorNavigationAdapter'
+import { useSheetsFeatureFlags } from './useSheetsFeatureFlags'
 
 type SheetsAdapterProps = PropsWithChildren<{
   clientInvoker: EditorRequiresClientMethods
@@ -33,6 +34,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
   const { application } = useApplication()
   const { theme } = useEditorTheme()
   const appPlatform = useResolvedAppPlatform(clientInvoker)
+  const featureFlags = useSheetsFeatureFlags(clientInvoker)
 
   const { userName, receivedEverythingFromRTS } = useSyncedState()
   const role = application.getRole()
@@ -56,7 +58,6 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
 
   const editorToShellActions = useMemo<SheetsEditorToShellActions>(
     () => ({
-      isFeatureFlagEnabled: (featureFlag) => clientInvoker.checkIfFeatureFlagIsEnabled(featureFlag),
       openLink: (url) => clientInvoker.openLink(url),
       fileMenuActions: createSheetsFileMenuActions(clientInvoker),
       storeSpreadsheetAction: (type, content) => {
@@ -103,6 +104,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       logger,
       appPlatform,
       theme,
+      featureFlags,
     }),
     [
       appPlatform,
@@ -112,6 +114,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       canTrash,
       logger,
       theme,
+      featureFlags,
       receivedEverythingFromRTS,
       userName,
     ],

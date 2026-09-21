@@ -5,7 +5,7 @@ import { CURRENCY } from '../../constants'
 import { createStringifier } from '../../stringifier'
 import * as UI from '../ui'
 import { useUI } from '../../ui-store'
-import { useFeatureFlag } from '../../feature-flags'
+import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
 
 const { s } = createStringifier(strings)
 const NUMBER_FORMAT_NEW_BADGE_STORAGE_KEY_PREFIX = 'sheets:number-format-new-badge-dismissed:'
@@ -44,8 +44,7 @@ type NumberFormatsMenuPopoverProps = {
 function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopoverProps) {
   const menu = Ariakit.useMenuContext()
   const values = Ariakit.useStoreState(menu, 'values')
-  const isSheetsCustomNumberFormatEnabled = useFeatureFlag('SheetsCustomNumberFormatEnabled')
-  const isSheetsCustomDateTimeFormatEnabled = useFeatureFlag('SheetsCustomDateTimeFormatEnabled')
+  const { featureFlags } = useSheetsDependencies()
   const currencySubMenu = Ariakit.useMenuStore({ values, focusLoop: true })
   const currencyMounted = Ariakit.useStoreState(currencySubMenu, 'mounted')
   const Menu = asSubmenu ? UI.SubMenu : UI.Menu
@@ -186,7 +185,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
       >
         {s('Custom currency')}
       </UI.MenuItem>
-      {isSheetsCustomNumberFormatEnabled && (
+      {featureFlags.SheetsCustomNumberFormatEnabled && (
         <UI.MenuItem
           leadingIndent
           onClick={() => {
@@ -198,7 +197,7 @@ function NumberFormatsMenuPopover({ asSubmenu = false }: NumberFormatsMenuPopove
           {s('Custom number')}
         </UI.MenuItem>
       )}
-      {isSheetsCustomDateTimeFormatEnabled && (
+      {featureFlags.SheetsCustomDateTimeFormatEnabled && (
         <UI.MenuItem
           leadingIndent
           onClick={() => {

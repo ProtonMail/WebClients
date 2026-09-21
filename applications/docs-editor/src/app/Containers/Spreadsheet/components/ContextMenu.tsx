@@ -16,7 +16,7 @@ const { s } = createStringifier(strings)
 import { number2Alpha } from '@rowsncolumns/utils'
 import { Direction, type GridRange, isCellWithinBounds, selectionFromActiveCell } from '@rowsncolumns/grid'
 import * as Icons from './icons'
-import { useFeatureFlag } from '../feature-flags'
+import { useSheetsDependencies } from '../SheetsDependenciesProvider'
 
 type ContextMenuWrapperProps = {
   isOpen?: boolean
@@ -124,7 +124,7 @@ export function ContextMenu({
   const openConditionalFormat = useUI.$.format.conditional.open
   const openDataValidation = useUI.$.data.validation.open
   const onAutoResize = useUI((ui) => ui.legacy.onAutoResize)
-  const isSheetsTablesEnabled = useFeatureFlag('SheetsTablesEnabled')
+  const { featureFlags } = useSheetsDependencies()
 
   const multiColumnTitle = generateMultiDimTitle(selectedColumnHeadersIds, 'y')
   const multiRowTitle = generateMultiDimTitle(selectedRowHeadersIds, 'x')
@@ -691,7 +691,7 @@ export function ContextMenu({
 
           <UI.MenuSeparator />
 
-          {isSheetsTablesEnabled && !activeTable ? (
+          {featureFlags.SheetsTablesEnabled && !activeTable ? (
             <UI.MenuItem
               leadingIconSlot={<UI.Icon data={Icons.tableCheck} />}
               onClick={() => {
