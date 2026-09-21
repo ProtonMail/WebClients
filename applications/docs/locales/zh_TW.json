@@ -3542,6 +3542,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️無法解密的名字"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密失敗的項目名稱: ${ message }"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名稱長度最多為 ${ MAX_NODE_NAME_LENGTH } 個字元"
+      ],
+      "Request aborted": [
+        "請求已中止"
       ]
     },
     "error": {
@@ -7907,6 +7916,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "您可以免費使用 ${ planTitle }，直到試用結束為止。"
+      ],
+      "Add a payment method": [
+        "添加付款方式"
       ]
     },
     "Option": {
@@ -8387,6 +8399,9 @@
     "q3campaign2026: Action": {
       "Get the deal": [
         "取得優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
       ]
     },
     "q3campaign2026: Info": {
@@ -10474,6 +10489,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ CALENDAR_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 和 ${ VPN_SHORT_APP_NAME }"
       ]
     }
   }
