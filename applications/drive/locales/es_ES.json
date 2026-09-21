@@ -4191,6 +4191,9 @@
       ],
       "Something went wrong": [
         "Se ha producido un error."
+      ],
+      "Could not grant access to the organization key": [
+        "No se ha podido conceder acceso a la clave de la organización"
       ]
     },
     "error": {
@@ -8369,6 +8372,9 @@
       ],
       "URL wildcard pattern": [
         "Patrón de comodín de URL"
+      ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
       ]
     },
     "Label for contact group color": {
@@ -11039,6 +11045,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
+      ],
+      "Please enter the account holder name": [
+        "Introduce el nombre del titular de la cuenta"
       ]
     },
     "Payments.error": {
@@ -14102,6 +14111,9 @@
       ],
       "Something went wrong": [
         "Se ha producido un error."
+      ],
+      "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importado por ${ PRODUCT_NAMES.EASY_SWITCH }"
       ]
     },
     "Today icon tooltip in mini calendar": {

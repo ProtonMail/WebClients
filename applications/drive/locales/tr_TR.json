@@ -1365,6 +1365,9 @@
       ],
       "Importing from Google": [
         "Google üzerinden içe aktarma"
+      ],
+      "Search recent items": [
+        "Son ögeleri ara"
       ]
     },
     "Action: Docs": {
@@ -8009,6 +8012,15 @@
       ],
       "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
         "Dosyalarınız Google Drive üzerinden ${ DRIVE_APP_NAME } üzerine aktarıldı ve şifrelendi."
+      ],
+      "Search covers your recent items": [
+        "Arama sonuçlarında, son ögeleriniz görüntülenir"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Drive depolama alanınızın dizini tümüyle oluşturulamayacak kadar büyük olduğundan bazı eski dosyalar dizine eklenmedi."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Drive depolama alanınızın dizini bu tarayıcıda tümüyle oluşturulamayacak kadar büyük olduğundan arama yalnızca son ögelerinize bakar. Daha eski dosyalar sonuçlarda görüntülenmeyebilir."
       ]
     },
     "info": {

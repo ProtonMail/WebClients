@@ -1359,6 +1359,15 @@
       ],
       "Ignore": [
         "Ignorar"
+      ],
+      "Importing from Google": [
+        "Importando desde Google"
+      ],
+      "Search recent items": [
+        "Buscar elementos recientes"
+      ],
+      "Sign in with Google": [
+        "Iniciar sesión con Google"
       ]
     },
     "Action: Docs": {
@@ -7943,6 +7952,63 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para mantener la suscripción. ${ learnMoreLink }"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (remitente no verificado)"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Ocurrió un error inesperado mientras se importaban sus datos. Intente de nuevo más tarde."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Conectándose a Google Drive para configurar su importación segura a ${ DRIVE_APP_NAME }."
+      ],
+      "Email you once import is finished": [
+        "Recibirá un correo una vez que finalice la importación"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF a continuación."
+      ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Luego necesitará iniciar sesión en la cuenta de Google y otorgar acceso a ${ BRAND_NAME } a los datos."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Actualice para asegurarse de que la importación finalice con éxito."
+      ],
+      "Read once and encrypted on arrival": [
+        "Leer una vez y cifrado al llegar"
+      ],
+      "Search covers your recent items": [
+        "La búsqueda cubre sus elementos recientes"
+      ],
+      "Sit back and we will let you know.": [
+        "Relájese y le avisaremos."
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Algunos archivos antiguos no están indexados porque su Drive es demasiado grande para indexarlos por completo."
+      ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Se usa solo para copiarlos en ${ DRIVE_APP_NAME }."
+      ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "No soportamos importaciones de fotos, Google Docs, Sheets y Slides. Asegúrese que su Google Drive no está vacío."
+      ],
+      "We support most files": [
+        "Soportamos la mayoría de archivos"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Le enviaremos un correo cuando la importación termine. Una vez finalizada encontrará la importación en una carpeta."
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "Estamos importando sus archivos desde Google Drive. Le avisaremos cuando esté terminado."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "No se importarán fotos, Google Docs y Sheets"
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Su Drive es demasiado grande para indexarse ​​por completo en este navegador, por lo que la búsqueda examina sus elementos más recientes. Es posible que los archivos más antiguos no aparezcan en los resultados."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Sus archivos fueron importados y cifrados con éxito desde Google Drive a ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -11219,6 +11285,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Podrá usar ${ planTitle } hasta que termine la prueba, gratuitamente."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Añada un método de pago** para seguir usando todas las funciones después de finalizar el periodo de prueba."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancele en cualquier momento antes de esa fecha.** Podrá usar ${ planTitle } hasta que la prueba finalice, libre de cargos."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continúa después de la prueba**, podrá cancelar dentro de 30 días y obtener un reembolso proporcional."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una vez que su suscripción completa inicie**, aún podrá cancelar dentro de 30 días y obtener un reembolso ponderado."
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
+      "If you continue after your trial,": [
+        "Si continúa después de la prueba,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "para seguir usando todas las funciones después de finalizar el periodo de prueba."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
       ]
     },
     "Option": {
@@ -13250,6 +13340,9 @@
       ],
       "Your videos will appear here": [
         "Sus videos aparecerán aquí"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Leemos sus archivos una vez para copiarlos y luego ciframos cada uno con sus claves de ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -14679,6 +14772,33 @@
       ],
       "Something went wrong": [
         "Algo salió mal"
+      ],
+      "Connect your Google account": [
+        "Conecte su cuenta de Google"
+      ],
+      "Easy switch": [
+        "Easy switch"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "La importación inició pero su almacenamiento no será suficiente"
+      ],
+      "Setting up your import": [
+        "Configurando su importación"
+      ],
+      "Sign in to Google": [
+        "Iniciar sesión en Google"
+      ],
+      "We could not find anything to import": [
+        "No pudimos encontrar nada para importar"
+      ],
+      "Your import is finished!": [
+        "¡Su importación finalizó!"
+      ],
+      "Your import is in progress": [
+        "Su importación está en progreso"
+      ],
+      "Your import is starting": [
+        "La importación está empezando"
       ]
     },
     "Today icon tooltip in mini calendar": {
