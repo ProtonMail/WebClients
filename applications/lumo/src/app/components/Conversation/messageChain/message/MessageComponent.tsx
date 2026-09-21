@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../..//hooks/useLumoActions';
+import { useLumoFlags } from '../../../..//hooks/useLumoFlags';
 import type { SiblingInfo } from '../../../..//hooks/usePreferredSiblings';
 import type { Message } from '../../../../types';
 import { type Attachment, Role, isCompactionMessage, isManualArtifactEditMessage } from '../../../../types';
@@ -82,6 +83,7 @@ const MessageComponentPure = ({
     isGenerating,
     onRetryPanelToggle,
 }: MessageComponentProps) => {
+    const { artifactsView: isArtifactsViewFlagEnabled } = useLumoFlags();
     const messageContent = message?.content;
     const isUser = message.role === Role.User;
     const isRunning = message.placeholder || false;
@@ -103,6 +105,10 @@ const MessageComponentPure = ({
     // A manual artifact edit is a synthetic, non-generating message (no LLM turn) — rendered
     // as a small clickable divider rather than a chat bubble, same treatment as compaction.
     if (isManualArtifactEditMessage(message)) {
+        if (!isArtifactsViewFlagEnabled) {
+            return null;
+        }
+
         return (
             <ChatContainerItem
                 className="artifact-edit-msg mb-6"

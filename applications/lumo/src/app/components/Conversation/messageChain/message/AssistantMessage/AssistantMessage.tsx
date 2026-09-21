@@ -35,6 +35,7 @@ import {
     extractCompleteArtifactsFromBlocks,
     getCompleteArtifactBlocksKey,
 } from '../../../artifact/createArtifactTool';
+import type { ParsedArtifact } from '../../../artifact/parseArtifacts';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
@@ -207,6 +208,76 @@ function DebugInfo(props: {
     );
 }
 
+interface AssistantMessageArtifactSectionProps {
+    completeArtifacts: ParsedArtifact[];
+    isGenerating: boolean;
+    isLastMessage: boolean;
+    messageId: string;
+    showArtifactGenerationLoading: boolean;
+}
+
+const AssistantMessageArtifactSection = ({
+    completeArtifacts,
+    isGenerating,
+    isLastMessage,
+    messageId,
+    showArtifactGenerationLoading,
+}: AssistantMessageArtifactSectionProps) => {
+    const { selectedId, openArtifact, registry, panelUserClosed, resetPanelUserClosed } = useArtifactContext();
+    const hasArtifacts = completeArtifacts.length > 0;
+
+    const wasGeneratingRef = useRef(isGenerating);
+    useEffect(() => {
+        const generationStarted = !wasGeneratingRef.current && isGenerating;
+        wasGeneratingRef.current = isGenerating;
+
+        if (isLastMessage && generationStarted) {
+            resetPanelUserClosed();
+        }
+    }, [isLastMessage, isGenerating, resetPanelUserClosed]);
+
+    const hasAutoOpenedRef = useRef(false);
+    useEffect(() => {
+        hasAutoOpenedRef.current = false;
+    }, [messageId]);
+
+    useEffect(() => {
+        if (!isLastMessage || completeArtifacts.length === 0 || !completeArtifacts[0] || hasAutoOpenedRef.current) {
+            return;
+        }
+
+        const artifact = completeArtifacts[0];
+        const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, messageId);
+        if (versionIndex === null) {
+            return;
+        }
+
+        if (panelUserClosed) {
+            return;
+        }
+
+        if (selectedId !== null) {
+            return;
+        }
+
+        hasAutoOpenedRef.current = true;
+        openArtifact(artifact.id, versionIndex);
+    }, [isLastMessage, completeArtifacts, registry, messageId, panelUserClosed, selectedId, openArtifact]);
+
+    if (!showArtifactGenerationLoading && !hasArtifacts) {
+        return null;
+    }
+
+    return (
+        <div className="flex flex-column gap-1 mt-1">
+            {showArtifactGenerationLoading && !hasArtifacts && <ArtifactChipLoading />}
+            {completeArtifacts.map((artifact) => {
+                return <ArtifactChip key={`${artifact.id}-${messageId}`} artifact={artifact} messageId={messageId} />;
+            })}
+        </div>
+    );
+};
+
 const AssistantMessage = ({
     isLoading,
     isRunning: _isRunning,
@@ -282,7 +353,7 @@ const AssistantMessage = ({
     // Hide create_artifact tool_call/tool_result blocks from the generic tool-call timeline —
     // ArtifactChip renders them instead, below.
     const cleanedBlocks = useMemo(() => {
-        if (!hasArtifacts) {
+        if (!isArtifactsViewFlagEnabled || !hasArtifacts) {
             return blocks;
         }
         const artifactCallIndices = new Set<number>();
@@ -298,51 +369,7 @@ const AssistantMessage = ({
             }
             return !(block.type === 'tool_result' && artifactCallIndices.has(idx - 1));
         });
-    }, [blocks, hasArtifacts]);
-
-    const { selectedId, openArtifact, registry, panelUserClosed, resetPanelUserClosed } = useArtifactContext();
-
-    const wasGeneratingRef = useRef(isGenerating);
-    useEffect(() => {
-        const generationStarted = !wasGeneratingRef.current && isGenerating;
-        wasGeneratingRef.current = isGenerating;
-
-        if (isLastMessage && generationStarted) {
-            resetPanelUserClosed();
-        }
-    }, [isLastMessage, isGenerating, resetPanelUserClosed]);
-
-    const hasAutoOpenedRef = useRef(false);
-    useEffect(() => {
-        hasAutoOpenedRef.current = false;
-    }, [message.id]);
-
-    useEffect(() => {
-        if (!isLastMessage || completeArtifacts.length === 0 || !completeArtifacts[0] || hasAutoOpenedRef.current) {
-            return;
-        }
-
-        const artifact = completeArtifacts[0];
-        const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, message.id);
-        if (versionIndex === null) {
-            return;
-        }
-
-        if (panelUserClosed) {
-            return;
-        }
-
-        // Only auto-open into an empty panel. If something is already open — including the same
-        // artifact at a specific version the user picked via a chip — do not override that choice.
-        // (Re-listing selectedId here re-ran this effect on every chip click and snapped back to
-        // the latest version from the last message.)
-        if (selectedId !== null) {
-            return;
-        }
-
-        hasAutoOpenedRef.current = true;
-        openArtifact(artifact.id, versionIndex);
-    }, [isLastMessage, completeArtifacts, registry, message.id, panelUserClosed, selectedId, openArtifact]);
+    }, [blocks, hasArtifacts, isArtifactsViewFlagEnabled]);
 
     // Extract search results for legacy sources button
     const searchResults = useMemo(() => extractSearchResults(blocks), [blocks]);
@@ -439,19 +466,14 @@ const AssistantMessage = ({
                                                 messageContentContainerRef={markdownContainerRef}
                                                 reasoning={message.reasoning}
                                             />
-                                            {(showArtifactGenerationLoading || hasArtifacts) && (
-                                                <div className="flex flex-column gap-1 mt-1">
-                                                    {showArtifactGenerationLoading && !hasArtifacts && (
-                                                        <ArtifactChipLoading />
-                                                    )}
-                                                    {completeArtifacts.map((artifact) => (
-                                                        <ArtifactChip
-                                                            key={`${artifact.id}-${message.id}`}
-                                                            artifact={artifact}
-                                                            messageId={message.id}
-                                                        />
-                                                    ))}
-                                                </div>
+                                            {isArtifactsViewFlagEnabled && (
+                                                <AssistantMessageArtifactSection
+                                                    completeArtifacts={completeArtifacts}
+                                                    isGenerating={isGenerating}
+                                                    isLastMessage={isLastMessage}
+                                                    messageId={message.id}
+                                                    showArtifactGenerationLoading={showArtifactGenerationLoading}
+                                                />
                                             )}
                                         </>
                                     ) : (
