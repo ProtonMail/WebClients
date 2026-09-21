@@ -8,6 +8,7 @@ export type {
   SheetsDependencies,
   SheetsEditorToShellActions,
   SheetsExportFormat,
+  SheetsFeatureFlags,
   SheetsFileMenuActions,
   SheetsSession,
   SheetsShellToEditorActions,
