@@ -26,7 +26,6 @@ import { c } from 'ttag'
 import { useActiveBreakpoint } from './useActiveBreakpoint'
 
 import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
-import { useFeatureFlag } from './feature-flags'
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
 import { getSheetNameFromFilename } from './sheet-import-name'
 import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
@@ -78,6 +77,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     subscribeToSheetImport,
     subscribeToCollaboratorCursorNavigation,
     theme,
+    featureFlags,
   } = useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
 
@@ -125,12 +125,9 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     [reportError, reportSheetsYjsDriftDetected, showYjsDriftDetectedErrorModal],
   )
 
-  const isPatchesStorageEnabled = useFeatureFlag('SheetsPatchesStorageEnabled')
-  const isActionsStorageEnabled = useFeatureFlag('SheetsActionsStorageEnabled')
-  const isDriftDetectionEnabled = useFeatureFlag('SheetsDriftDetectionEnabled')
   const storeAction = useMemo(
-    () => (isActionsStorageEnabled ? storeSpreadsheetAction : () => {}),
-    [isActionsStorageEnabled, storeSpreadsheetAction],
+    () => (featureFlags.SheetsActionsStorageEnabled ? storeSpreadsheetAction : () => {}),
+    [featureFlags.SheetsActionsStorageEnabled, storeSpreadsheetAction],
   )
 
   const state = useProtonSheetsState({
@@ -140,8 +137,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     isConversionFlow: editorInitializationConfig?.mode === 'conversion',
     pushPatches: storeSpreadsheetPatches,
     hasBasePatchesStored,
-    isPatchesStorageEnabled,
-    isDriftDetectionEnabled,
+    isPatchesStorageEnabled: featureFlags.SheetsPatchesStorageEnabled,
+    isDriftDetectionEnabled: featureFlags.SheetsDriftDetectionEnabled,
     colorMode: theme,
     onYjsDriftDetected: handleYjsDriftDetected,
     storeAction,

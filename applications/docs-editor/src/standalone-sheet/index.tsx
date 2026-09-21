@@ -57,9 +57,18 @@ function StandaloneSheet() {
       },
       appPlatform: null,
       theme,
+      featureFlags: {
+        SheetsActionsStorageEnabled: true,
+        SheetsCustomDateTimeFormatEnabled: true,
+        SheetsCustomNumberFormatEnabled: true,
+        SheetsDriftDetectionEnabled: true,
+        SheetsODSExportEnabled: true,
+        SheetsPatchesStorageEnabled: true,
+        SheetsStatusBarEnabled: true,
+        SheetsTablesEnabled: true,
+      },
       subscribeToSheetImport: () => () => {},
       subscribeToCollaboratorCursorNavigation: () => () => {},
-      isFeatureFlagEnabled: async () => false,
       openLink: async (url) => {
         window.open(url, '_blank', 'noopener,noreferrer')
       },
