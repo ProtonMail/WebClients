@@ -34,3 +34,7 @@ export const getZendeskTags = (user: UserModel, organization: OrganizationExtend
     }
     return planNames;
 };
+
+export const isZdBlockedDomain = (email: string | undefined) => {
+    return !!email && email.toLowerCase().endsWith('.ru');
+};
