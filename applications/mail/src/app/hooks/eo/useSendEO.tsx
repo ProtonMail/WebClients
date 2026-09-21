@@ -21,6 +21,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { EO_MESSAGE_REDIRECT_PATH } from '../../constants';
+import { hasNothingBeforeBlockquote } from '../../helpers/eo/replyContent';
 import { EOAddReply } from '../../store/eo/eoActions';
 import type { EOMessageReply } from '../../store/eo/eoType';
 import { useMailDispatch } from '../../store/hooks';
@@ -80,9 +81,10 @@ export const useSendEO = ({ message, encryptionKey, outsideKey }: Props) => {
      *  first. See `ensureMessageContent` in EOComposer.
      */
     const send = async (replyContent: string) => {
-        /** An empty export means the editor never became usable or the document was wiped.
-         *  Encrypting it delivers a blank reply with no error at all, so refuse the send and
-         *  report it instead of silently losing what the user wrote.
+        /** A totally empty export means the message document was wiped. It is narrow on
+         *  purpose: a reply draft always carries the quoted original and the signature, so
+         *  this does not fire when only the recipient's own text went missing. Encrypting an
+         *  empty string is never right though, so refuse the send outright.
          */
         if (replyContent.trim() === '') {
             captureMessage('EO reply aborted because the composer produced an empty body', {
@@ -98,6 +100,19 @@ export const useSendEO = ({ message, encryptionKey, outsideKey }: Props) => {
             });
 
             throw new Error('EO reply has an empty body');
+        }
+
+        /** This is the shape users actually reported. It is only reported, never blocked:
+         *  replying with an attachment and no text is legitimate, and `attachmentCount` tells
+         *  the two apart. It exists to show whether content is still going missing now that
+         *  EOComposer realigns the model with the editor before exporting.
+         */
+        if (hasNothingBeforeBlockquote(replyContent)) {
+            captureMessage('EO reply sent with no content before the quoted original', {
+                extra: {
+                    attachmentCount: message.data?.Attachments?.length ?? 0,
+                },
+            });
         }
 
         notifManager.ID = createNotification({
