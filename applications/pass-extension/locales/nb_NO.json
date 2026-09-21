@@ -806,6 +806,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
+      ],
+      "Collapse": [
+        "Skjul"
+      ],
+      "Create folder": [
+        "Opprett mappe"
+      ],
+      "Create new folder": [
+        "Opprett ny mappe"
+      ],
+      "Expand": [
+        "Utvid"
+      ],
+      "Move to": [
+        "Flytt til"
+      ],
+      "Rename": [
+        "Gi nytt navn"
       ]
     },
     "Activity": {
@@ -1488,6 +1506,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
+      ],
+      "Failed to create folder": [
+        "Kunne ikke opprette mappe"
       ]
     },
     "Error message": {
@@ -4225,6 +4246,9 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Folder": [
+        "Mappe"
       ]
     },
     "Link": {
@@ -5322,6 +5346,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er i ferd med å slette permanent ${ aliasCount } alias.",
         "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
+      ],
+      "Folder options": [
+        "Alternativer for mapper"
       ]
     },
     "Title_cloned_item": {

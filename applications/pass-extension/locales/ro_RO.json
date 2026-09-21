@@ -808,6 +808,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Collapse": [
+        "Restrângere"
+      ],
+      "Create folder": [
+        "Creare folder"
+      ],
+      "Create new folder": [
+        "Creare folder"
+      ],
+      "Expand": [
+        "Extindere"
+      ],
+      "Move to": [
+        "Mutare în"
+      ],
+      "Rename": [
+        "Redenumire"
       ]
     },
     "Activity": {
@@ -1493,6 +1511,20 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "Failed to create folder": [
+        "Crearea folderului a eșuat."
+      ],
+      "Failed to delete folder": [
+        "Ștergerea folderului a eșuat.",
+        "Ștergerea folderelor a eșuat.",
+        "Ștergerea folderelor a eșuat."
+      ],
+      "Failed to update folder": [
+        "Nu s-a reușit actualizarea folderului."
+      ],
+      "Folder name does not match": [
+        "Numele folderului nu corespunde."
       ]
     },
     "Error message": {
@@ -3043,6 +3075,34 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV oferă un format convenabil pentru a vă vizualiza datele. Cu toate acestea, datorită simplității sale, unele date nu vor fi incluse (câmpuri personale, structura folderelor etc.). Pentru o exportare completă, vă recomandăm să utilizați un alt format."
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "S-a creat folderul „${ payload.folder.name }”"
+      ],
+      "Folder deleted": [
+        "Folder șters"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Folderul s-a redenumit cu „${ payload.folder.name }”"
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Sincronizare completă a datelor pentru îmbunătățirea performanței aplicației. Vă mulțumim pentru răbdare."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Se va muta doar ${ count } articol din „${ folderName }”. Articolele din subfoldere nu vor fi mutate.",
+        "Se vor muta doar ${ count } articole din „${ folderName }”. Articolele din subfoldere nu vor fi mutate.",
+        "Se vor muta doar ${ count } de articole din „${ folderName }”. Articolele din subfoldere nu vor fi mutate."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Se va muta doar ${ count } articol. Articolele din foldere nu vor fi mutate.",
+        "Se vor muta doar ${ count } articole. Articolele din foldere nu vor fi mutate.",
+        "Se vor muta doar ${ count } de articole. Articolele din foldere nu vor fi mutate."
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Comutați la alt folder sau creați un articol în acest folder"
       ]
     },
     "Keyboard key": {
@@ -4272,6 +4332,18 @@
       ],
       "ZIP or Postal code": [
         "Cod poștal"
+      ],
+      "Confirm folder name": [
+        "Confirmare nume folder"
+      ],
+      "Create a folder": [
+        "Creare folder"
+      ],
+      "Folder": [
+        "Folder"
+      ],
+      "Folders": [
+        "Foldere"
       ]
     },
     "Link": {
@@ -4616,6 +4688,12 @@
       ],
       "Used on ${ url }": [
         "Folosit la ${ url }"
+      ],
+      "Folder name": [
+        "Nume folder"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Rescrieți „${ name }” pentru a confirma ștergerea."
       ]
     },
     "Result": {
@@ -5380,6 +5458,38 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Create folder in \"${ vaultName }\"": [
+        "Creare folder în „${ vaultName }”"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Creare subfolder în „${ folderName }”"
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Ștergere folderul „${ name }\"?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Ștergeți seiful „${ name }”?"
+      ],
+      "Folder options": [
+        "Opțiuni foldere"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "Mutare ${ count } articol în ${ target }",
+        "Mutare ${ count } articole în ${ target }",
+        "Mutare ${ count } de articole în ${ target }"
+      ],
+      "Move all items?": [
+        "Mutați toate articolele?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Mutare articol în „${ target }”"
+      ],
+      "Rename folder": [
+        "Redenumire folder"
+      ],
+      "Your folder is empty": [
+        "Folderul este gol"
       ]
     },
     "Title_cloned_item": {
@@ -5742,6 +5852,24 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Toate articolele din acest folder, inclusiv subfolderele acestuia, vor fi șterse. Nu puteți reface această acțiune."
+      ],
+      "Folder name is required": [
+        "Numele folderului este obligatoriu"
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Seiful „${ name }” și toate articolele sale vor fi șterse definitiv. Nu puteți reface această acțiune."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Ați atins nivelul maxim de imbricare a folderelor."
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Ați atins numărul maxim de foldere la acest nivel."
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Ați atins numărul maxim de foldere pentru acest seif."
       ]
     }
   }
