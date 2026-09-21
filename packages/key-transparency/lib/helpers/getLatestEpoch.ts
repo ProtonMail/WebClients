@@ -1,7 +1,6 @@
 import { HOUR } from '@proton/shared/lib/constants';
-import type { GetLatestEpoch } from '@proton/shared/lib/interfaces';
 
-import type { Epoch } from '../interfaces';
+import type { Epoch, GetLatestEpoch } from '../interfaces';
 import { fetchLatestEpoch } from './apiHelpers';
 
 const lifetime = 2 * HOUR;

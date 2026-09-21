@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import type { KeyTransparencyState } from '@proton/key-transparency/interfaces';
 import { getAuditResult, getKTLocalStorage, storeAuditResult } from '@proton/key-transparency/storage';
-import type { KeyTransparencyState } from '@proton/shared/lib/interfaces';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 

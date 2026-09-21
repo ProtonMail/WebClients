@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import useOrganizationIdentity from '@proton/account/organizationKey/useOrganizationIdentity';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -36,7 +37,6 @@ import OrganizationLogoRemovalModal from './logoUpload/OrganizationLogoRemovalMo
 import OrganizationLogoTipsModal from './logoUpload/OrganizationLogoTipsModal';
 import { OrganizationLogoUploadUpsellBanner } from './logoUpload/OrganizationLogoUploadUpsellBanner';
 import { useOrganizationTheme } from './logoUpload/useOrganizationTheme';
-import useOrganizationIdentity from './useOrganizationIdentity';
 
 interface Props {
     app: APP_NAMES;

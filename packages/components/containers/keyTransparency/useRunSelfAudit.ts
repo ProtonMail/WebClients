@@ -15,7 +15,7 @@ import {
     getSelfAuditInterval,
     ktSentryReportError,
 } from '@proton/key-transparency/helpers';
-import type { SelfAuditResult } from '@proton/key-transparency/interfaces';
+import type { SelfAuditResult, SelfAuditState } from '@proton/key-transparency/interfaces';
 import { reportSelfAuditErrors } from '@proton/key-transparency/shared';
 import { getKTLocalStorage } from '@proton/key-transparency/storage';
 import { selfAudit } from '@proton/key-transparency/verification';
@@ -24,7 +24,7 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
-import type { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey, KeyPair } from '@proton/shared/lib/interfaces';
 
 const SELF_AUDIT_MAX_TRIALS = 6;
 

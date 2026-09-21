@@ -11,6 +11,7 @@ import {
     disableMember,
     enableMember,
 } from '@proton/account/members/actions';
+import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/account/members/memberUnprivatization';
 import { useMemberAddresses } from '@proton/account/members/useMemberAddresses';
 import { useMemberRoles } from '@proton/account/members/useMemberRoles';
 import { getDomainAddressError, getDomainError } from '@proton/account/members/validateAddUser';
@@ -42,7 +43,6 @@ import { APPS, type APP_NAMES, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE }
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { type Address, type EnhancedMember, MEMBER_STATE, type Member } from '@proton/shared/lib/interfaces';
-import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
 import {
     getIsDomainActive,
     getOrganizationDenomination,

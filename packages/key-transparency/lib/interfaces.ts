@@ -1,4 +1,11 @@
-import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    Api,
+    DecryptedAddressKey,
+    FetchedSignedKeyList,
+    KTUserContext,
+    KeyPair,
+} from '@proton/shared/lib/interfaces';
 
 import type { KT_CERTIFICATE_ISSUER, KT_DOMAINS } from './constants/constants';
 import type { KeyTransparencyError } from './helpers/utils';
@@ -104,3 +111,26 @@ export interface SelfAuditError {
     failedTrials: number;
     tooManyRetries: boolean;
 }
+
+export interface SelfAuditState {
+    userKeys: KeyPair[];
+    lastSelfAudit: SelfAuditResult | undefined;
+    addresses: {
+        address: Address;
+        addressKeys: DecryptedAddressKey[];
+    }[];
+}
+
+export interface KeyTransparencyState {
+    selfAuditResult?: SelfAuditResult;
+}
+
+export type GetLatestEpoch = ({ api, forceRefresh }: { api: Api; forceRefresh?: boolean }) => Promise<Epoch>;
+
+export type UploadMissingSKL = (data: {
+    address: Address;
+    addressKeys: DecryptedAddressKey[];
+    epoch: Epoch;
+    ktUserContext: KTUserContext;
+    api: Api;
+}) => Promise<void>;

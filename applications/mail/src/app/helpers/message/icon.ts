@@ -1,11 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/key-transparency/keys';
 import type {
     MessageState,
     MessageVerification,
     MessageWithOptionalBody,
 } from '@proton/mail/store/messages/messagesTypes';
-import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';

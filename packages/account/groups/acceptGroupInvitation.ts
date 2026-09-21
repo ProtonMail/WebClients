@@ -2,10 +2,10 @@ import { CryptoProxy, type PrivateKeyReferenceV4 } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { createKTVerifier } from '@proton/key-transparency/helpers';
+import { getAndVerifyApiKeys } from '@proton/key-transparency/keys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
 import {
     decryptMemberToken,
@@ -14,7 +14,7 @@ import {
     getEmailFromKey,
     splitKeys,
 } from '@proton/shared/lib/keys';
-import { generateForwardingAddressKey as generateGroupMemberAddressKey } from '@proton/shared/lib/keys/forward/keyHelpers';
+import { generateForwardingAddressKey as generateGroupMemberAddressKey } from '@proton/shared/lib/keys/forward/generateForwardingAddressKey';
 import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';

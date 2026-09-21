@@ -1,7 +1,6 @@
 import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
-import { verifyOutboundPublicKeys } from '@proton/key-transparency/helpers';
-import isTruthy from '@proton/utils/isTruthy';
 
+import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import type {
     Api,
     ApiAddressKey,
@@ -10,8 +9,10 @@ import type {
     KTUserContext,
     KeyTransparencyVerificationResult,
     ProcessedApiKey,
-} from '../../interfaces';
-import { getAllPublicKeys } from '../keys';
+} from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
+
+import { verifyOutboundPublicKeys } from '../helpers/verifyOutboundPublicKeys';
 
 export interface ApiKeysWithKTStatus {
     Address: {

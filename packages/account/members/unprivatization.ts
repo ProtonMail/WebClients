@@ -3,50 +3,44 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { fetchSignedKeyLists } from '@proton/key-transparency/helpers/apiHelpers';
-import noop from '@proton/utils/noop';
-
-import { getAndVerifyApiKeys } from '../api/helpers/getAndVerifyApiKeys';
-import { setupKeys } from '../api/keys';
+import { getAndVerifyApiKeys, getVerifiedPublicKeys } from '@proton/key-transparency/keys';
+import { setupKeys } from '@proton/shared/lib/api/keys';
 import type {
     Address,
     Api,
     CachedOrganizationKey,
     DecryptedKey,
     KTUserContext,
-    Member,
     MemberInvitationData,
     MemberReadyForAutomaticUnprivatization,
-    MemberReadyForManualUnprivatization,
-    MemberUnprivatization,
-    MemberUnprivatizationAcceptState,
-    MemberUnprivatizationAutomaticApproveState,
-    MemberUnprivatizationManualApproveState,
     MemberUnprivatizationOutput,
     PrivateMemberUnprivatizationOutput,
     PublicMemberUnprivatizationOutput,
     Unwrap,
-} from '../interfaces';
-import { MemberUnprivatizationState } from '../interfaces';
-import { srpVerify } from '../srp';
-import { decryptKeyPacket, encryptAndSignKeyPacket } from './keypacket';
-import { encryptMemberToken } from './memberToken';
-import type { OrganizationKeyActivation } from './organizationKeyDto';
+} from '@proton/shared/lib/interfaces';
+import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
+import { encryptMemberToken } from '@proton/shared/lib/keys/memberToken';
+import type { OrganizationKeyActivation } from '@proton/shared/lib/keys/organizationKeyDto';
 import {
     generatePublicMemberActivation,
     getDecryptedOrganizationKeyTokenData,
     getIsPasswordless,
-    getVerifiedPublicKeys,
     validateOrganizationKeySignature,
-} from './organizationKeys';
-import type { ResetAddressKeysPayload } from './resetKeys';
+} from '@proton/shared/lib/keys/organizationKeys';
+import type { ResetAddressKeysPayload } from '@proton/shared/lib/keys/resetKeys';
+import type {
+    UnprivatizeMemberAddressKeyDto,
+    UnprivatizeMemberPayload,
+    UnprivatizeMemberUserKeyDto,
+} from '@proton/shared/lib/keys/unprivatizationDto';
+import { srpVerify } from '@proton/shared/lib/srp';
+import noop from '@proton/utils/noop';
+
+import { parseInvitationData } from './memberUnprivatization';
 
 const MEMBER_SIGNATURE_CONTEXT = {
     INVITATION_DATA_SIGNATURE_CONTEXT: 'account.unprivatization-invitation-data',
     KEY_TOKEN_SIGNATURE_CONTEXT: 'account.key-token.user-unprivatization',
-};
-
-export const parseInvitationData = (data: string): MemberInvitationData => {
-    return JSON.parse(data);
 };
 
 const serializeInvitationData = (data: MemberInvitationData) => {
@@ -64,12 +58,14 @@ export const getInvitationData = async ({
     expectRevisionChange?: boolean;
     admin?: boolean;
 }) => {
+    // An address with no signed key list yet, or an unreachable API, falls back to the first
+    // revision rather than failing the invitation.
     let revision = 1;
     try {
         const result = await fetchSignedKeyLists(api, 0, address);
         const last = result[result.length - 1];
         revision = last.Revision + (expectRevisionChange ? 1 : 0);
-    } catch { }
+    } catch {}
     return serializeInvitationData({
         Address: address,
         Revision: revision,
@@ -109,12 +105,12 @@ const getDecryptedOrganizationActivationToken = async ({
         // No verification in Global SSO case
         ...(verificationKeys
             ? {
-                verificationKeys,
-                signatureContext: {
-                    value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT,
-                    required: true,
-                },
-            }
+                  verificationKeys,
+                  signatureContext: {
+                      value: MEMBER_SIGNATURE_CONTEXT.KEY_TOKEN_SIGNATURE_CONTEXT,
+                      required: true,
+                  },
+              }
             : {}),
     });
 
@@ -199,22 +195,22 @@ export const parseUnprivatizationData = async ({
 }): Promise<
     | { type: 'private'; payload: { unprivatizationData: PrivateMemberUnprivatizationOutput } }
     | {
-        type: 'public';
-        payload: {
-            orgPublicKey: PublicKeyReference;
-            invitationData: MemberInvitationData;
-            unprivatizationData: PublicMemberUnprivatizationOutput;
-            invitationAddress: Address;
-        };
-    }
+          type: 'public';
+          payload: {
+              orgPublicKey: PublicKeyReference;
+              invitationData: MemberInvitationData;
+              unprivatizationData: PublicMemberUnprivatizationOutput;
+              invitationAddress: Address;
+          };
+      }
     | {
-        type: 'gsso';
-        payload: {
-            orgPublicKey: PublicKeyReference;
-            unprivatizationData: PublicMemberUnprivatizationOutput;
-            invitationAddress: Address;
-        };
-    }
+          type: 'gsso';
+          payload: {
+              orgPublicKey: PublicKeyReference;
+              unprivatizationData: PublicMemberUnprivatizationOutput;
+              invitationAddress: Address;
+          };
+      }
 > => {
     if (unprivatizationData.PrivateIntent) {
         return {
@@ -447,76 +443,6 @@ const reencryptAddressKeyToken = async ({
     });
 };
 
-interface UnprivatizeMemberUserKeyDto {
-    OrgPrivateKey: string;
-    OrgToken: string;
-}
-
-interface UnprivatizeMemberAddressKeyDto {
-    AddressKeyID: string;
-    OrgSignature: string;
-    OrgTokenKeyPacket: string;
-}
-
-export interface UnprivatizeMemberPayload {
-    UserKeys: UnprivatizeMemberUserKeyDto[];
-    AddressKeys: UnprivatizeMemberAddressKeyDto[];
-    OrganizationKeyActivation?: OrganizationKeyActivation;
-}
-
-const getIsMemberUnprivatizationInAutomaticApproveState = (
-    unprivatizationData: MemberUnprivatization | null
-): unprivatizationData is MemberUnprivatizationAutomaticApproveState => {
-    return Boolean(
-        unprivatizationData?.State === MemberUnprivatizationState.Ready &&
-        !unprivatizationData.PrivateIntent &&
-        unprivatizationData.InvitationData &&
-        unprivatizationData.InvitationSignature &&
-        unprivatizationData.ActivationToken &&
-        (unprivatizationData.PrivateKeys?.length || 0) > 0
-    );
-};
-
-const getIsMemberUnprivatizationInManualApproveState = (
-    unprivatizationData: MemberUnprivatization | null
-): unprivatizationData is MemberUnprivatizationManualApproveState => {
-    return Boolean(
-        unprivatizationData?.State === MemberUnprivatizationState.Ready &&
-        !unprivatizationData.PrivateIntent &&
-        !unprivatizationData.InvitationData &&
-        !unprivatizationData.InvitationSignature &&
-        unprivatizationData.ActivationToken &&
-        (unprivatizationData.PrivateKeys?.length || 0) > 0
-    );
-};
-
-const getIsMemberUnprivatizationInManualAcceptState = (
-    unprivatizationData: MemberUnprivatization | null
-): unprivatizationData is MemberUnprivatizationAcceptState => {
-    return Boolean(
-        unprivatizationData?.State === MemberUnprivatizationState.Pending &&
-        !unprivatizationData.PrivateIntent &&
-        unprivatizationData.InvitationData &&
-        unprivatizationData.InvitationSignature &&
-        !unprivatizationData.ActivationToken &&
-        !unprivatizationData.PrivateKeys?.length
-    );
-};
-
-export const getIsMemberInAutomaticApproveState = (
-    member: Member
-): member is MemberReadyForAutomaticUnprivatization => {
-    return getIsMemberUnprivatizationInAutomaticApproveState(member.Unprivatization);
-};
-
-export const getIsMemberInManualApproveState = (member: Member): member is MemberReadyForManualUnprivatization => {
-    return getIsMemberUnprivatizationInManualApproveState(member.Unprivatization);
-};
-
-export const getIsMemberInManualAcceptState = (member: Member): member is MemberReadyForManualUnprivatization => {
-    return getIsMemberUnprivatizationInManualAcceptState(member.Unprivatization);
-};
-
 export const unprivatizeMemberHelper = async ({
     admin,
     data: { ActivationToken, PrivateKeys },
@@ -614,7 +540,7 @@ export const unprivatizeMemberHelper = async ({
     };
 };
 
-export class UnprivatizationRevisionError extends Error { }
+export class UnprivatizationRevisionError extends Error {}
 
 export const getUnprivatizeMemberPayload = async ({
     api,

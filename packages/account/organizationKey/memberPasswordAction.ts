@@ -5,12 +5,7 @@ import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { disable2FA } from '@proton/shared/lib/api/settings';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api, Member } from '@proton/shared/lib/interfaces';
-import {
-    generateKeySaltAndPassphrase,
-    getIsMemberInManualApproveState,
-    getIsPasswordless,
-    getMemberKeys,
-} from '@proton/shared/lib/keys';
+import { generateKeySaltAndPassphrase, getIsPasswordless, getMemberKeys } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -18,6 +13,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import { addressesThunk } from '../addresses';
 import { type MembersState, getMemberAddresses, upsertMember } from '../members';
 import { getMember } from '../members/getMember';
+import { getIsMemberInManualApproveState } from '../members/memberUnprivatization';
 import { unprivatizeMembersManual } from '../members/unprivatizeMembers';
 import { type OrganizationState, organizationThunk } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';

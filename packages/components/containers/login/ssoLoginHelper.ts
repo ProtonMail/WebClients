@@ -1,3 +1,8 @@
+import {
+    parseUnprivatizationData,
+    setupKeysWithUnprivatization,
+    validateUnprivatizationData,
+} from '@proton/account/members/unprivatization';
 import { activateAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
@@ -8,9 +13,6 @@ import {
     generateKeySaltAndPassphrase,
     getDecryptedUserKeysHelper,
     getResetAddressesKeysV2,
-    parseUnprivatizationData,
-    setupKeysWithUnprivatization,
-    validateUnprivatizationData,
 } from '@proton/shared/lib/keys';
 import type {
     AuthDeviceOutput,
