@@ -90,6 +90,10 @@ function getDashboardAvailability(overrides: Overrides) {
     return getAccountAppRoutes(buildDefaultParams(overrides)).routes.dashboard.available;
 }
 
+function getTwoFaSubsection(result: ReturnType<typeof getAccountAppRoutes>) {
+    return result.routes.password.subsections.find((subsection) => subsection.id === 'two-fa');
+}
+
 describe('getAccountAppRoutes', () => {
     describe('cancel-subscription subsection available property', () => {
         beforeEach(() => {
@@ -214,6 +218,41 @@ describe('getAccountAppRoutes', () => {
         it('is not available for a member of a subscribed organization without the dashboard permission', () => {
             const permissions = getOrgPermissions([], false);
             expect(getDashboardAvailability({ user: subscribedOrgMember, permissions })).toBe(false);
+        });
+    });
+
+    describe('two-factor authentication subsection for SSO users', () => {
+        const globalSsoUser = buildUser({
+            Flags: { ...buildUser().Flags, sso: true },
+            Keys: buildUser().Keys,
+        });
+        const vpnOnlySsoUser = buildUser({
+            Flags: { ...buildUser().Flags, sso: true },
+            Keys: [],
+        });
+
+        it('is hidden for global SSO users in Lumo account settings', () => {
+            const result = getAccountAppRoutes(
+                buildDefaultParams({
+                    app: APPS.PROTONLUMO,
+                    user: globalSsoUser,
+                })
+            );
+
+            expect(result.routes.password.available).toBe(true);
+            expect(getTwoFaSubsection(result)?.available).toBe(false);
+        });
+
+        it('is hidden for VPN-only SSO users', () => {
+            const result = getAccountAppRoutes(
+                buildDefaultParams({
+                    app: APPS.PROTONLUMO,
+                    user: vpnOnlySsoUser,
+                })
+            );
+
+            expect(result.routes.password.available).toBe(false);
+            expect(getTwoFaSubsection(result)?.available).toBe(false);
         });
     });
 });

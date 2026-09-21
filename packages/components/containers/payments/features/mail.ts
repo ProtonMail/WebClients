@@ -642,7 +642,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getNDomainsFeature({ n: 0 }),
-                [PLANS.LUMO_BUSINESS]: getNDomainsFeature({ n: 0 }),
+                [PLANS.LUMO_BUSINESS]: getNDomainsFeature({ n: plansMap[PLANS.LUMO_BUSINESS]?.MaxDomains ?? 5 }),
                 [PLANS.MEET_BUSINESS]: getNDomainsFeature({ n: 1 }),
                 [PLANS.MEET]: getNDomainsFeature({ n: 1 }),
                 [PLANS.VISIONARY]: getNDomainsFeature({ n: plansMap[PLANS.VISIONARY]?.MaxDomains || 10 }),

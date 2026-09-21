@@ -1,6 +1,12 @@
 import { getTestPlansMap } from '../../testing/data-plans';
 import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
-import { getAddonNameByPlan, isMultiUserPersonalPlan } from './helpers';
+import {
+    getAddonNameByPlan,
+    isMultiUserPersonalPlan,
+    organizationOrSubscriptionSupportsSSO,
+    planSupportsSSO,
+    subscriptionSupportsSSO,
+} from './helpers';
 import type { Plan } from './interface';
 
 describe('getAddonNameByPlan', () => {
@@ -74,5 +80,40 @@ describe('isMultiUserPersonalPlan', () => {
         expect(isMultiUserPersonalPlan({ [PLANS.FAMILY]: 1 })).toBe(true);
         expect(isMultiUserPersonalPlan({ [PLANS.VISIONARY]: 1 })).toBe(true);
         expect(isMultiUserPersonalPlan({ [PLANS.PASS_FAMILY]: 1 })).toBe(true);
+    });
+});
+
+describe('planSupportsSSO', () => {
+    it('returns true for business plans that support SSO', () => {
+        expect(planSupportsSSO(PLANS.VPN_BUSINESS, false)).toBe(true);
+        expect(planSupportsSSO(PLANS.PASS_BUSINESS, false)).toBe(true);
+        expect(planSupportsSSO(PLANS.LUMO_BUSINESS, false)).toBe(true);
+    });
+
+    it('returns false for plans without SSO support', () => {
+        expect(planSupportsSSO(PLANS.MAIL, false)).toBe(false);
+        expect(planSupportsSSO(undefined, false)).toBe(undefined);
+    });
+});
+
+describe('subscriptionSupportsSSO', () => {
+    it('returns true when subscription includes an SSO-capable plan', () => {
+        expect(subscriptionSupportsSSO({ Plans: [{ Name: PLANS.LUMO_BUSINESS }] }, false)).toBe(true);
+    });
+
+    it('returns false when subscription has no SSO-capable plan', () => {
+        expect(subscriptionSupportsSSO({ Plans: [{ Name: PLANS.LUMO }] }, false)).toBe(false);
+    });
+});
+
+describe('organizationOrSubscriptionSupportsSSO', () => {
+    it('returns true for Lumo Business via subscription when org plan name is missing', () => {
+        expect(
+            organizationOrSubscriptionSupportsSSO({
+                organization: {},
+                subscription: { Plans: [{ Name: PLANS.LUMO_BUSINESS }] },
+                isSsoForPbsEnabled: false,
+            })
+        ).toBe(true);
     });
 });

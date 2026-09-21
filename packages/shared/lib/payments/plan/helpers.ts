@@ -194,15 +194,41 @@ export const getIsSentinelPlan = (planName: PLANS | ADDON_NAMES | undefined) => 
     return sentinelPlans.has(planName);
 };
 
+const getSsoSupportedPlans = (isSsoForPbsEnabled: boolean) => {
+    const plans = [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS, PLANS.VPN_PASS_BUNDLE_BUSINESS, PLANS.LUMO_BUSINESS];
+    if (isSsoForPbsEnabled) {
+        plans.push(PLANS.BUNDLE_BIZ_2025, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_PRO);
+    }
+    return plans;
+};
+
 export const planSupportsSSO = (planName: PLANS | undefined, isSsoForPbsEnabled: boolean) => {
     if (!planName) {
         return;
     }
-    const plans = [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS, PLANS.VPN_PASS_BUNDLE_BUSINESS];
-    if (isSsoForPbsEnabled) {
-        plans.push(PLANS.BUNDLE_BIZ_2025, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_PRO);
-    }
-    return plans.some((ssoPlanName) => ssoPlanName === planName);
+    return getSsoSupportedPlans(isSsoForPbsEnabled).some((ssoPlanName) => ssoPlanName === planName);
+};
+
+export const subscriptionSupportsSSO = (
+    subscription: { Plans?: { Name: PLANS | ADDON_NAMES }[] } | undefined,
+    isSsoForPbsEnabled: boolean
+) => {
+    return subscription?.Plans?.some((plan) => planSupportsSSO(plan.Name as PLANS, isSsoForPbsEnabled)) ?? false;
+};
+
+export const organizationOrSubscriptionSupportsSSO = ({
+    organization,
+    subscription,
+    isSsoForPbsEnabled,
+}: {
+    organization?: { PlanName?: PLANS };
+    subscription?: { Plans?: { Name: PLANS | ADDON_NAMES }[] };
+    isSsoForPbsEnabled: boolean;
+}) => {
+    return (
+        planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) ||
+        subscriptionSupportsSSO(subscription, isSsoForPbsEnabled)
+    );
 };
 
 export const upsellPlanSSO = (planName?: PLANS) => {

@@ -799,6 +799,7 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Two-factor authentication`,
                         invisibleTitle: true,
                         id: 'two-fa',
+                        // 2FA for SSO users (both global and VPN-only) is handled by their identity provider
                         available: !user.Flags.sso,
                         keywords: [
                             c('Label').t`Authenticator app`,

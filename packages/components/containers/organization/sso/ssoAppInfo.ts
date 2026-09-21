@@ -9,6 +9,9 @@ export const getSsoKbUrl = (app: APP_NAMES) => {
     if (app === APPS.PROTONPASS) {
         return getKnowledgeBaseUrl('/pass-set-up-sso');
     }
+    if (app === APPS.PROTONLUMO) {
+        return getKnowledgeBaseUrl('/lumo-set-up-sso');
+    }
 };
 
 export const getSsoUpsellPlan = (app: APP_NAMES) => {
@@ -17,6 +20,9 @@ export const getSsoUpsellPlan = (app: APP_NAMES) => {
     }
     if (app === APPS.PROTONPASS) {
         return PLANS.PASS_BUSINESS;
+    }
+    if (app === APPS.PROTONLUMO) {
+        return PLANS.LUMO_BUSINESS;
     }
 };
 
