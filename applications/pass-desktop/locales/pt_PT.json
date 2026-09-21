@@ -794,6 +794,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "O seu gestor de palavras-passe não está aqui? Solicite-o."
+      ],
+      "Collapse": [
+        "Fechar"
+      ],
+      "Create folder": [
+        "Criar uma pasta"
+      ],
+      "Create new folder": [
+        "Criar uma pasta"
+      ],
+      "Expand": [
+        "Expandir"
+      ],
+      "Move to": [
+        "Mover para"
+      ],
+      "Rename": [
+        "Renomear"
       ]
     },
     "Activity": {
@@ -1442,6 +1460,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "O Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }."
+      ],
+      "Failed to create folder": [
+        "Erro na criação da pasta"
       ]
     },
     "Error message": {
@@ -2171,7 +2192,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -4176,6 +4198,9 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Folder": [
+        "Pasta"
       ]
     },
     "Link": {
@@ -5250,6 +5275,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está prestes a eliminar permanentemente ${ aliasCount } alias.",
         "Está prestes a eliminar permanentemente ${ aliasCount } aliases."
+      ],
+      "Folder options": [
+        "Opções de pasta"
       ]
     },
     "Title_cloned_item": {

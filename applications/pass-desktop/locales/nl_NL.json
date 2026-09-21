@@ -809,6 +809,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
+      ],
+      "Collapse": [
+        "Inklappen"
+      ],
+      "Create folder": [
+        "Maak map"
+      ],
+      "Create new folder": [
+        "Nieuwe map aanmaken"
+      ],
+      "Expand": [
+        "Uitklappen"
+      ],
+      "Move to": [
+        "Verplaatsen naar"
+      ],
+      "Rename": [
+        "Hernoem"
       ]
     },
     "Activity": {
@@ -1475,6 +1493,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Uw PIN-code is verwijderd door een andere ${ PASS_APP_NAME }-client"
+      ],
+      "Failed to create folder": [
+        "Mislukt om map aan te maken"
       ]
     },
     "Error message": {
@@ -2207,7 +2228,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -4221,6 +4243,9 @@
       ],
       "ZIP or Postal code": [
         "Postcode"
+      ],
+      "Folder": [
+        "Map"
       ]
     },
     "Link": {
@@ -5316,6 +5341,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ],
+      "Folder options": [
+        "Mapopties"
       ]
     },
     "Title_cloned_item": {

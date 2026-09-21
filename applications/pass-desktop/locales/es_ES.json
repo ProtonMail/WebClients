@@ -794,6 +794,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
+      ],
+      "Collapse": [
+        "Minimizar"
+      ],
+      "Create folder": [
+        "Crear una carpeta"
+      ],
+      "Create new folder": [
+        "Crear una nueva carpeta"
+      ],
+      "Expand": [
+        "Expandir"
+      ],
+      "Move to": [
+        "Mover a"
+      ],
+      "Rename": [
+        "Renombrar"
       ]
     },
     "Activity": {
@@ -1448,6 +1466,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se ha eliminado el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "Failed to create folder": [
+        "Error al crear la carpeta"
       ]
     },
     "Error message": {
@@ -2180,7 +2201,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -4191,6 +4213,9 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Folder": [
+        "Carpeta"
       ]
     },
     "Link": {
@@ -5265,6 +5290,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Estás a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Folder options": [
+        "Opciones de carpeta"
       ]
     },
     "Title_cloned_item": {
