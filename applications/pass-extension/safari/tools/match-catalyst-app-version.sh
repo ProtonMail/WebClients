@@ -7,6 +7,9 @@ script_dir=$(dirname "${BASH_SOURCE[0]}")
 python_path=$(command -v python || command -v python3 || command -v /usr/bin/env python)
 extension_version=$("$python_path" "$script_dir/get-extension-version.py")
 
+# The CI runner keeps a pre-installed gem set that can be older than the lockfile
+bundle install
+
 # Match the catalyst app'sv version with the extension's version
 echo "Extension version is $extension_version. Matching catalyst app's version..."
 bundle exec fastlane bump_version_number version_number:"$extension_version"
