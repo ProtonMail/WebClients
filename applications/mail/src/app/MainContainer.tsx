@@ -6,6 +6,7 @@ import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchS
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import { useConfig } from '@proton/app-context/useConfig';
 import ApiModalsHVUpsell from '@proton/components/containers/api/ApiModalsHVUpsell';
+import { useEventNotifier } from '@proton/components/containers/eventNotifier/useEventNotifier';
 import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
@@ -18,6 +19,7 @@ import useOnline from '@proton/components/hooks/useOnline';
 import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLoading.ts';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { logger } from '@proton/logger';
+import { EventNotifierLoopType } from '@proton/shared/lib/eventNotifier/interface';
 
 import { ROUTE_MAIN } from './constants';
 import { CheckAllRefProvider } from './containers/CheckAllRefProvider';
@@ -29,6 +31,15 @@ import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { useInboxDesktopHeartbeat } from './hooks/useInboxDesktopHeartbeat';
 import MailAppShell from './router/MailAppShell';
 import { extraThunkArguments } from './store/thunk';
+
+// Every one of these loops is consumed through the event loop Mail runs.
+const EVENT_NOTIFIER_LOOP_TYPES: EventNotifierLoopType[] = [
+    EventNotifierLoopType.Mail,
+    EventNotifierLoopType.Calendar,
+    EventNotifierLoopType.Contacts,
+    EventNotifierLoopType.Core,
+    EventNotifierLoopType.Legacy,
+];
 
 const MainContainer: FunctionComponent = () => {
     const { APP_NAME } = useConfig();
@@ -45,6 +56,8 @@ const MainContainer: FunctionComponent = () => {
     useEffect(() => {
         logger.debug(`API Status`, apiStatus);
     }, [apiStatus]);
+
+    useEventNotifier({ types: EVENT_NOTIFIER_LOOP_TYPES, debug: logger.debug });
 
     useInboxDesktopHeartbeat();
     useInboxDesktopMetrics();
