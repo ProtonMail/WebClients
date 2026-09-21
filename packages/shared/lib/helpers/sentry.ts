@@ -51,6 +51,72 @@ const context: SentryContext = {
     enabled: true,
 };
 
+const EMAIL_PARAM_REGEX = /email=[^&]+/gi;
+const FRAGMENT_REGEX = /(?:#|%23).*$/is;
+
+/**
+ * Maximum depth we walk into `data` / `extra` containers when redacting. Kept in
+ * sync with the `normalizeDepth` passed to Sentry's `init`, since anything
+ * deeper than that is dropped before it leaves the browser anyway.
+ */
+const MAX_REDACTION_DEPTH = 5;
+
+type RedactionOptions = {
+    /**
+     * `ui.*` breadcrumb messages are DOM selectors (e.g. `div#root > button`),
+     * where a `#` carries no secret and redacting it destroys the selector.
+     */
+    redactFragment?: boolean;
+};
+
+/**
+ * Redact the two classes of value we consider sensitive anywhere in a Sentry event:
+ * - anything after a hash, which may be sensitive (e.g. a public share password,
+ *   Ex: https://drive.proton.dev/urls/TBYS1295RG#[password]);
+ * - `email` query parameters, which are PII (the keys/all endpoint accepts one).
+ */
+export const redactSensitiveString = (value: string, { redactFragment = true }: RedactionOptions = {}) => {
+    const withoutEmail = value.replace(EMAIL_PARAM_REGEX, 'email=[Filtered]');
+
+    return redactFragment ? withoutEmail.replace(FRAGMENT_REGEX, '#[Filtered]') : withoutEmail;
+};
+
+const isPlainObject = (value: unknown): value is Record<string, unknown> => {
+    if (typeof value !== 'object' || value === null) {
+        return false;
+    }
+    const prototype = Object.getPrototypeOf(value);
+
+    return prototype === Object.prototype || prototype === null;
+};
+
+/**
+ * Redact every string reachable in a plain object / array, in place. Only plain
+ * objects and arrays are traversed, so class instances handed to Sentry are left
+ * for its own serialiser to deal with.
+ */
+const redactSensitiveContainer = (
+    container: Record<string, unknown> | unknown[],
+    options?: RedactionOptions,
+    depth = 0
+) => {
+    if (depth >= MAX_REDACTION_DEPTH) {
+        return;
+    }
+
+    const entries: [string | number, unknown][] = Array.isArray(container)
+        ? container.map((value, index) => [index, value])
+        : Object.entries(container);
+
+    for (const [key, value] of entries) {
+        if (typeof value === 'string') {
+            (container as Record<string | number, unknown>)[key] = redactSensitiveString(value, options);
+        } else if (Array.isArray(value) || isPlainObject(value)) {
+            redactSensitiveContainer(value, options, depth + 1);
+        }
+    }
+};
+
 export const setUID = (uid: string | undefined) => {
     context.authHeaders = uid ? getUIDHeaders(uid) : {};
 };
@@ -275,6 +341,21 @@ function main({
                         breadcrumb.message = breadcrumb.message.replace(/\[title=".+?"\]/g, '[title="(Filtered)"]');
                     }
 
+                    // The rules above only cover the breadcrumb categories that existed when they
+                    // were written. Every other breadcrumb has to get the same treatment rather
+                    // than passing through untouched: `drive.logger`, for instance, carries every
+                    // Drive log line as a free-form string. Redact generically so that the next
+                    // category someone adds is covered by default.
+                    const redactFragment = !breadcrumb.category?.startsWith('ui.');
+
+                    if (breadcrumb.message) {
+                        breadcrumb.message = redactSensitiveString(breadcrumb.message, { redactFragment });
+                    }
+
+                    if (breadcrumb.data) {
+                        redactSensitiveContainer(breadcrumb.data, { redactFragment });
+                    }
+
                     return breadcrumb;
                 });
             }
@@ -284,7 +365,7 @@ function main({
             if (event.exception && event.exception.values) {
                 event.exception.values = event.exception.values.map((error) => {
                     if (error.value) {
-                        error.value = error.value.replace(/(?:#|%23).*$/is, '#[Filtered]');
+                        error.value = redactSensitiveString(error.value);
                     }
 
                     return error;
@@ -298,6 +379,13 @@ function main({
                     type: hint.originalException.type,
                     target: String(hint.originalException.target),
                 };
+            }
+
+            // `extra` is free-form and is never enumerated above, yet it carries raw strings
+            // (e.g. Drive's `extra.logMessage`, which is the verbatim log line whose copy in
+            // `event.exception` we do redact). Run last so additions above are covered too.
+            if (event.extra) {
+                redactSensitiveContainer(event.extra);
             }
 
             return event;
