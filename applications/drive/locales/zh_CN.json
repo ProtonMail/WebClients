@@ -1352,6 +1352,15 @@
       ],
       "Ignore": [
         "忽略"
+      ],
+      "Importing from Google": [
+        "正在从 Google 导入"
+      ],
+      "Search recent items": [
+        "搜索最近项目"
+      ],
+      "Sign in with Google": [
+        "使用 Google 登录"
       ]
     },
     "Action: Docs": {
@@ -7810,6 +7819,63 @@
       ],
       "${ steps } step": [
         "${ steps } 个步骤"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor }（未验证的发送者）"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "导入您的数据时发生意外错误，请稍后重试。"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "正在关联 Google Drive，以设置到 ${ DRIVE_APP_NAME } 的安全导入。"
+      ],
+      "Email you once import is finished": [
+        "导入完成后通过邮件通知您"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "为顺利完成导入，您需要如上图所示勾选所有权限。"
+      ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "接下来，您需要登录您的 Google 账户，并授予 ${ BRAND_NAME } 访问您数据的权限。"
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "请升级以确保导入顺利完成。"
+      ],
+      "Read once and encrypted on arrival": [
+        "读取一次，到达时即加密"
+      ],
+      "Search covers your recent items": [
+        "搜索涵盖您最近的项目"
+      ],
+      "Sit back and we will let you know.": [
+        "请您稍等，我们会通知您。"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "部分较早的文件未建立索引，因为您的云端硬盘过大，无法完整建立索引。"
+      ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "仅用于将其复制到 ${ DRIVE_APP_NAME }。"
+      ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "我们不支持导入照片、Google 文档、表格和幻灯片。请确保您的 Google Drive 不为空。"
+      ],
+      "We support most files": [
+        "我们支持大多数文件"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "导入完成后我们会通过邮件通知您。完成后，您会在某个文件夹中找到导入的内容。"
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "我们正在从 Google Drive 导入您的文件，完成后我们会通知您。"
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "不会导入照片、Google 文档和表格"
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "您的云端硬盘过大，无法在此浏览器中完整建立索引，因此搜索仅涵盖您最近的项目。较早的文件可能不会出现在结果中。"
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "您的文件已成功从 Google Drive 导入并加密至 ${ DRIVE_APP_NAME }。"
       ]
     },
     "info": {
@@ -10948,6 +11014,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "您将能够免费使用 ${ planTitle } 直到试用期结束。"
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**添加支付方式**，以便在试用期结束后继续使用所有功能。"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**如果您在试用期结束后继续使用，** 可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
+      ],
+      "If you continue after your trial,": [
+        "如果您在试用期结束后继续使用，"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "以便在试用期结束后继续使用所有功能。"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "您可以在 30 天内取消，并获得按比例退款。"
       ]
     },
     "Option": {
@@ -12839,6 +12929,9 @@
       ],
       "Your videos will appear here": [
         "您的视频将在此处显示"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "我们会读取一次您的文件以进行复制，然后使用您的 ${ BRAND_NAME } 密钥逐一加密。"
       ]
     },
     "Success": {
@@ -14248,6 +14341,33 @@
       ],
       "Something went wrong": [
         "出了些问题"
+      ],
+      "Connect your Google account": [
+        "关联您的 Google 账户"
+      ],
+      "Easy switch": [
+        "轻松切换"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "导入已开始，但您的存储空间不足以完成此次导入"
+      ],
+      "Setting up your import": [
+        "正在设置您的导入"
+      ],
+      "Sign in to Google": [
+        "登录 Google"
+      ],
+      "We could not find anything to import": [
+        "我们找不到可导入的内容"
+      ],
+      "Your import is finished!": [
+        "您的导入已完成！"
+      ],
+      "Your import is in progress": [
+        "您的导入正在进行"
+      ],
+      "Your import is starting": [
+        "正在启动导入"
       ]
     },
     "Today icon tooltip in mini calendar": {

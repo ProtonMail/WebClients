@@ -1365,6 +1365,9 @@
       ],
       "Importing from Google": [
         "Importerer fra Google"
+      ],
+      "Search recent items": [
+        "Søg i seneste elementer"
       ]
     },
     "Action: Docs": {
@@ -7987,6 +7990,15 @@
       ],
       "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
         "Dine filer blev importeret og krypteret fra Google Drive til ${ DRIVE_APP_NAME }."
+      ],
+      "Search covers your recent items": [
+        "Søgning dækker dine seneste elementer"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Nogle ældre filer er ikke indekseret, da din Drive er for stor til helt at indeksere."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Din Drive er for stor til at indeksere helt i denne browser, så søgningen kigger på dine seneste elementer. Ældre filer vises muligvis ikke i resultaterne."
       ]
     },
     "info": {
@@ -11226,7 +11238,7 @@
         "for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
-        "så kan du stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+        "så kan du annullere inden for 30 dage og få en forholdsmæssig refusion."
       ]
     },
     "Option": {
