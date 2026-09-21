@@ -23,7 +23,6 @@ import type { CacheConfig } from './CacheConfig';
 import type { NodeMeta } from './NodeMeta';
 import type { DocumentNodeMeta } from './_documents';
 import { useDocuments } from './_documents';
-import type { DocumentKeys } from './_documents/DocumentKeys';
 import type { DecryptedNode } from './_nodes/interface';
 import useNode from './_nodes/useNode';
 import useNodes from './_nodes/useNodes';
@@ -77,9 +76,9 @@ export interface DriveCompat {
     createDocumentNode: (parentMeta: NodeMeta, name: string, documentType: DocumentType) => Promise<DocumentNodeMeta>;
 
     /**
-     * Gets the keys for a given document node.
+     * Gets the content key for a given document node.
      */
-    getDocumentKeys: (meta: NodeMeta) => Promise<DocumentKeys>;
+    getDocumentKeys: (meta: NodeMeta) => Promise<SessionKey>;
 
     /**
      * Renames a document node.
@@ -222,23 +221,25 @@ export const useDriveCompat = (): DriveCompat => {
     };
 
     return {
-        getDocumentKeys: withResolveShareId(getDocumentKeys),
-        getLatestNode: withResolveShareId(getLatestNode),
-        getNodeContents: withResolveShareId(getNodeContents),
-        getShareId: withResolveShareId(({ shareId }) => shareId),
-        openDocument,
-        openDocumentWindow,
         getVerificationKey,
         getKeysForLocalStorageEncryption,
         getPrimaryAddressKeys,
+
+        // ? probably does not need SDK or any BE at all
+        openDocument,
+        openDocumentWindow,
 
         // No feature parity in Drive SDK - has to be done in Realtime SDK
         createDocumentNode: withResolveShareId(createDocumentNode),
 
         // SDK counterpart used when feature flag ON
         getNode: withResolveShareId(getNode),
+        getLatestNode: withResolveShareId(getLatestNode),
+        getNodeContents: withResolveShareId(getNodeContents),
+        getShareId: withResolveShareId(({ shareId }) => shareId),
         getMyFilesNodeMeta,
         findAvailableNodeName: withResolveShareId(findAvailableNodeName),
+        getDocumentKeys: withResolveShareId(getDocumentKeys),
         // DocumentViewer calls DocLoader calls LoadDocument calls GetNodePermissions calls this
         getNodePermissions: withResolveShareId(getNodePermissions),
         // Used only in RecentDocumentsService - remove after rollout of DocsLoadRecentsWithDriveSDK

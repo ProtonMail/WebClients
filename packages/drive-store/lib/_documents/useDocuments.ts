@@ -18,7 +18,6 @@ import useShare from '../../store/_shares/useShare';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import type { LegacyNodeMeta } from '../NodeMeta';
-import type { DocumentKeys } from './DocumentKeys';
 import type { DocumentNodeMeta } from './interface';
 
 export const useDocuments = () => {
@@ -129,21 +128,16 @@ export const useDocuments = () => {
         };
     };
 
-    const getDocumentKeys = async ({ shareId, linkId }: Omit<LegacyNodeMeta, 'volumeId'>): Promise<DocumentKeys> => {
+    const getDocumentKeys = async ({ shareId, linkId }: Omit<LegacyNodeMeta, 'volumeId'>) => {
         const contentKey = await getLinkSessionKey(abortSignal, shareId, linkId);
-        const { privateKey: addressKey, address } = await getDocumentSigningKeys(shareId);
 
-        if (!contentKey || !addressKey || !address) {
-            throw new EnrichedError('Could not find document keys', {
+        if (!contentKey) {
+            throw new EnrichedError('Could not find document content key', {
                 tags: { shareId, linkId },
             });
         }
 
-        return {
-            documentContentKey: contentKey,
-            userAddressPrivateKey: addressKey,
-            userOwnAddress: address.Email,
-        };
+        return contentKey;
     };
 
     const renameDocument = async ({ shareId, linkId }: LegacyNodeMeta, newName: string): Promise<void> => {
