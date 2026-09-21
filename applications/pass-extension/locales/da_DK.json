@@ -806,6 +806,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Collapse": [
+        "Fold sammen"
+      ],
+      "Create folder": [
+        "Opret mappe"
+      ],
+      "Create new folder": [
+        "Opret ny mappe"
+      ],
+      "Expand": [
+        "Udvid"
+      ],
+      "Move to": [
+        "Flyt til"
+      ],
+      "Rename": [
+        "Omdøb"
       ]
     },
     "Activity": {
@@ -1488,6 +1506,19 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
+      ],
+      "Failed to create folder": [
+        "Kunne ikke oprette mappe"
+      ],
+      "Failed to delete folder": [
+        "Kunne ikke slette mappe",
+        "Kunne ikke slette mapper"
+      ],
+      "Failed to update folder": [
+        "Mappen kunne ikke opdateres"
+      ],
+      "Folder name does not match": [
+        "Mappenavn matcher ikke"
       ]
     },
     "Error message": {
@@ -3010,6 +3041,32 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV er et praktisk format til visning af dine data. Men på grund af dets enkelhed vil nogle data ikke blive inkluderet. (brugerdefinerede felter, mappestruktur...). For en komplet eksport anbefaler vi, at du bruger et andet format."
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Mappen \"${ payload.folder.name }\" blev oprettet"
+      ],
+      "Folder deleted": [
+        "Mappe slettet"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Mappe omdøbt til \"${ payload.folder.name }\""
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Fuld datasynkronisering for at forbedre appens ydeevne. Tak for din tålmodighed."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Kun ${ count } element i \"${ folderName }\" flyttes. Elementer i undermapper flyttes ikke.",
+        "Kun ${ count } elementer i \"${ folderName }\" flyttes. Elementer i undermapper flyttes ikke."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Kun ${ count } element flyttes. Elementer i mapper flyttes ikke.",
+        "Kun ${ count } elementer flyttes. Elementer i mapper flyttes ikke."
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Skift til en anden mappe, eller opret et element i denne mappe"
       ]
     },
     "Keyboard key": {
@@ -4225,6 +4282,18 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Confirm folder name": [
+        "Bekræft mappenavn"
+      ],
+      "Create a folder": [
+        "Opret en mappe"
+      ],
+      "Folder": [
+        "Mappe"
+      ],
+      "Folders": [
+        "Mapper"
       ]
     },
     "Link": {
@@ -4566,6 +4635,12 @@
       ],
       "Used on ${ url }": [
         "Brugt på ${ url }"
+      ],
+      "Folder name": [
+        "Mappenavn"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Indtast \"${ name }\" igen for at bekræfte sletning"
       ]
     },
     "Result": {
@@ -5322,6 +5397,37 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ],
+      "Create folder in \"${ vaultName }\"": [
+        "Opret mappe i \"${ vaultName }\""
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Opret undermappe i \"${ folderName }\""
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Slet mappen “${ name }\"?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Slet boksen \"${ name }\"?"
+      ],
+      "Folder options": [
+        "Mappeindstillinger"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "Flyt ${ count } element til ${ target }",
+        "Flyt ${ count } elementer til ${ target }"
+      ],
+      "Move all items?": [
+        "Flyt alle elementer?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Flyt element til \"${ target }\""
+      ],
+      "Rename folder": [
+        "Omdøb mappe"
+      ],
+      "Your folder is empty": [
+        "Din mappe er tom"
       ]
     },
     "Title_cloned_item": {
@@ -5680,6 +5786,24 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Alle elementer i denne mappe, inklusiv dens undermapper, vil blive slettet. Du kan ikke fortryde."
+      ],
+      "Folder name is required": [
+        "Mappenavn er påkrævet"
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Boksen \"${ name }\" og alle dens elementer vil blive slettet permanent. Du kan ikke fortryde denne handling."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Du har nået det dybeste niveau for undermapper"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Du har nået det maksimale antal mapper for dette niveau"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Du har nået det maksimale antal mapper for denne boks"
       ]
     }
   }

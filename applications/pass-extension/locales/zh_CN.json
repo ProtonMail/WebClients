@@ -804,6 +804,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
+      ],
+      "Collapse": [
+        "收起"
+      ],
+      "Create folder": [
+        "新建文件夹"
+      ],
+      "Create new folder": [
+        "创建文件夹"
+      ],
+      "Expand": [
+        "展开"
+      ],
+      "Move to": [
+        "移至"
+      ],
+      "Rename": [
+        "重命名"
       ]
     },
     "Activity": {
@@ -1483,6 +1501,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
+      ],
+      "Failed to create folder": [
+        "创建文件夹失败"
+      ],
+      "Failed to delete folder": [
+        "删除文件夹失败"
+      ],
+      "Failed to update folder": [
+        "更新文件夹失败"
+      ],
+      "Folder name does not match": [
+        "文件夹名称不匹配"
       ]
     },
     "Error message": {
@@ -2977,6 +3007,30 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV 提供了一种便捷的数据查看格式。但由于其格式简单，部分数据将不会被包含（自定义字段、文件夹结构等）。如需完整导出，我们建议使用其他格式。"
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "文件夹“${ payload.folder.name }”已创建"
+      ],
+      "Folder deleted": [
+        "文件夹已删除"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "文件夹已重命名为“${ payload.folder.name }”"
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "全量数据同步以提升应用性能，感谢您的耐心等待。"
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "仅“${ folderName }”中的 ${ count } 项将被移动，子文件夹中的项目不会被移动。"
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "仅 ${ count } 项将被移动，文件夹中的项目不会被移动。"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "切换到其他文件夹或在此文件夹中创建项目"
       ]
     },
     "Keyboard key": {
@@ -4175,6 +4229,18 @@
       ],
       "ZIP or Postal code": [
         "邮政编码"
+      ],
+      "Confirm folder name": [
+        "确认文件夹名称"
+      ],
+      "Create a folder": [
+        "新建文件夹"
+      ],
+      "Folder": [
+        "文件夹"
+      ],
+      "Folders": [
+        "文件夹"
       ]
     },
     "Link": {
@@ -4513,6 +4579,12 @@
       ],
       "Used on ${ url }": [
         "用于 ${ url }"
+      ],
+      "Folder name": [
+        "文件夹名称"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "重新输入“${ name }”以确认删除"
       ]
     },
     "Result": {
@@ -5261,6 +5333,36 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ],
+      "Create folder in \"${ vaultName }\"": [
+        "在“${ vaultName }”中创建文件夹"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "在“${ folderName }”中创建子文件夹"
+      ],
+      "Delete folder \"${ name }\"?": [
+        "删除文件夹“${ name }”？"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "删除保险库“${ name }”？"
+      ],
+      "Folder options": [
+        "文件夹选项"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "将 ${ count } 项移至 ${ target }"
+      ],
+      "Move all items?": [
+        "移动所有项目？"
+      ],
+      "Move item to \"${ target }\"": [
+        "将项目移至“${ target }”"
+      ],
+      "Rename folder": [
+        "重命名文件夹"
+      ],
+      "Your folder is empty": [
+        "您的文件夹为空"
       ]
     },
     "Title_cloned_item": {
@@ -5615,6 +5717,24 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的订阅不允许您创建多个保险库。 所有项目都将导入到您的第一个保险库中。 要导入多个保险库，请升级您的订阅。"
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "此文件夹中的所有项目（包括其子文件夹）将被删除，此操作无法撤销！"
+      ],
+      "Folder name is required": [
+        "文件夹名称为必填项"
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "保险库“${ name }”及其所有项目将被永久删除，此操作无法撤销！"
+      ],
+      "You've reached the maximum folder nesting level": [
+        "您已达到文件夹嵌套层级上限"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "您已达到此层级的文件夹数量上限"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "您已达到此保险库的文件夹数量上限"
       ]
     }
   }
