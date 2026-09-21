@@ -9984,6 +9984,99 @@
       ],
       "Rewrote the draft": [
         "Taslak yeniden yazıldı"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "E-posta kutunuzda eski e-postaları bulmaktan yanıt taslakları hazırlamaya kadar size nasıl yardımcı olabileceğim ve neleri yapamayacağım ile ilgili kısa bir özet."
+      ],
+      "Draft a ${ kind }": [
+        "Bir ${ kind } taslağı hazırla"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "${ recipient } için bir ${ kind } taslağı hazırla"
+      ],
+      "Draft an ${ kind }": [
+        "${ kind } taslağı hazırla"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "${ recipient } için bir ${ kind } taslağı hazırla"
+      ],
+      "Drafted a ${ kind }": [
+        "Bir ${ kind } taslağı hazırlandı"
+      ],
+      "Drafted an ${ kind }": [
+        "Bir ${ kind } taslağı hazırlandı"
+      ],
+      "Edit ${ contact }": [
+        "${ contact } kişisini düzenle"
+      ],
+      "Edit a contact": [
+        "Bir kişiyi düzenle"
+      ],
+      "Edit contact": [
+        "Kişiyi düzenle"
+      ],
+      "forward": [
+        "ilet"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Selam Lumo, gelen kutuma en çok ne tür e-postalar geldiğine ve var olan klasörlerim ile süzgeçlerime bir göz at. Ardından bunları nasıl düzenli tutabileceğim ile ilgili önerilerde bulun: Var olanlarda neleri değiştirmem gerektiğini ve eklenmesi gereken yeni şeyler varsa bunları da belirt. Önce planı bana ayrıntılı olarak anlat ve ben onay verene kadar hiçbir şeyi değiştirme."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Selam Lumo, bir süreliğine yokum ve “iş yeri dışında” yanıtını ayarlamak istiyorum. Tarihleri ve iletinin içeriğini bana sor sonra da kullanıma almadan önce iletiyi bana göster."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Selam Lumo, son 7 gün içindeki e-postalarımı ara ve gerçekten yanıtlamam gerekenleri söyle. Her birinde ne istendiği ile ilgili kısa bir özet ver ve göz ardı edebileceğim şeyleri katma."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Selam Lumo, e-posta kutumla ilgili bana nasıl yardımcı olabileceğini anlatır mısın? Senden ne tür şeyler isteyebilirim ve hangi konularda yardımcı olamazsın?"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Geçen haftanın e-postalarını gözden geçirip gerçekten yanıtlanması gerekenleri ayıracağım. Böylece sen de tümünü tek seferde halledebilirsin."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "En çok ulaştığınız içeriklere ve var olan klasörleriniz ile süzgeçlerinize bakacağım. Ardından nelerin iyileştirilebileceğini önerip ve nelerin eksik olduğunu söyleyeceğim. Siz onay verene kadar herhangi bir değişiklik yapılmayacak."
+      ],
+      "open draft": [
+        "taslağı aç"
+      ],
+      "Readdressed": [
+        "Gözden geçirildi"
+      ],
+      "Remove signature": [
+        "İmzayı kaldır"
+      ],
+      "Rename label": [
+        "Etiketi yeniden adlandır"
+      ],
+      "Rename this label": [
+        "Bu etiketi yeniden adlandır"
+      ],
+      "reply": [
+        "yanıtla"
+      ],
+      "reply all": [
+        "tümünü yanıtla"
+      ],
+      "Revise the ${ draft }": [
+        "${ draft } taslağını düzelt"
+      ],
+      "Rewrote and readdressed": [
+        "Yeniden yazıldı ve gözden geçirildi"
+      ],
+      "Set my out of office": [
+        "\"İş yeri dışında\" ayarımı yap"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Ne zaman uzakta olacağını ve ne yazılmasını istediğini bana söyle. Kaydetmeden önce tümünü görebileceksin."
+      ],
+      "Tidy up my inbox": [
+        "Gelen kutumu düzenle"
+      ],
+      "What can you do?": [
+        "Neler yapabilirsiniz?"
+      ],
+      "What needs handling?": [
+        "Nelerin işlenmesi gerekiyor?"
       ]
     },
     "info": {
@@ -10238,6 +10331,12 @@
       ],
       "Star": [
         "Yıldız ekle"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasını kapat"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasını aç / girişe odaklan"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10274,6 +10373,9 @@
       ],
       "Message shortcuts": [
         "İleti kısayolları"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } kısayolları"
       ]
     },
     "Label": {
@@ -11308,6 +11410,12 @@
       ],
       "Display name": [
         "Görüntülenecek ad"
+      ],
+      "Cc": [
+        "Kopya"
+      ],
+      "To": [
+        "Alıcı"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13478,6 +13586,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "Deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için **bir ödeme yöntemi ekleyin**."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Ondan önce istediğiniz zaman iptal edebilirsiniz.** Deneme süresi sona erene kadar ${ planTitle } tarifesini ücretsiz olarak kullanabileceksiniz."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Deneme süreniz bittikten sonra kullanmayı sürdürürseniz** 30 gün içinde iptal edebilir ve ödediğiniz kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Tam aboneliğiniz başladığında...** 30 gün içinde aboneliğinizi iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
+      "If you continue after your trial,": [
+        "Deneme süreniz bittikten sonra kullanmayı sürdürürseniz,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
       ]
     },
     "Option": {
@@ -18316,6 +18448,16 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "${ folder } adını değiştir…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "${ label } adını değiştir…"
       ]
     }
   }

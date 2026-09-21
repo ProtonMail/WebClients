@@ -9775,6 +9775,94 @@
       ],
       "Update this filter": [
         "Uppdatera detta filter"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Lägg till ${ contact } till dina kontakter"
+      ],
+      "Change a display setting": [
+        "Ändra en visningsinställning"
+      ],
+      "Change how your mail is grouped": [
+        "Ändra hur din e-post är grupperad"
+      ],
+      "Edit ${ contact }": [
+        "Redigera ${ contact }"
+      ],
+      "Edit a contact": [
+        "Redigera en kontakt"
+      ],
+      "Edit contact": [
+        "Redigera kontakt"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Hej Lumo, ta en titt på vad jag får mest av i min inkorg, på de mappar och filter jag redan har, och föreslå sen hur jag kan hålla det organiserat: vad som kan ändras på de jag redan har, och något nytt värt att lägga till. Gå igenom planen med mig först, och flytta ingenting innan jag säger ja."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hej Lumo, jag kommer att vara borta och vill konfigurera ett autosvar. Fråga mig om vilka datum det gäller och vad det ska stå, visa mig sen meddelandet innan du aktiverar det."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hej Lumo, gå igenom med mig om hur du kan hjälpa mig med min e-post. Vilka saker kan jag be dig att göra, och vad kan du inte hjälpa mig med?"
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Jag tittar på vad du får mest av och de mappar och filter du redan har, och kommer därefter med förslag på vad som kan förbättras och vad som saknas. Ingenting flyttas utan din tillåtelse."
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Märk ${ emails } som ${ names }"
+      ],
+      "Mark ${ emails } as unread": [
+        "Markera ${ emails } som olästa"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Flytta ${ emails } till ${ destination }"
+      ],
+      "No draft open": [
+        "Inget utkast öppet"
+      ],
+      "Not found in the foundation-search index.": [
+        "Hittades inte i foundation-search-indexet."
+      ],
+      "Opened a draft": [
+        "Öppnade ett utkast"
+      ],
+      "Read ${ count } open draft": [
+        "Läst ${ count } öppet utkast",
+        "Läst ${ count } öppna utkast"
+      ],
+      "Read the open draft": [
+        "Läs det öppnade utkastet"
+      ],
+      "Remove signature": [
+        "Ta bort signatur"
+      ],
+      "Rename label": [
+        "Byt namn på etikett"
+      ],
+      "reply": [
+        "svara"
+      ],
+      "reply all": [
+        "svara alla"
+      ],
+      "Results came from the local search.": [
+        "Resultaten kom från den lokala sökningen."
+      ],
+      "Results came from the server.": [
+        "Resultaten kom från servern."
+      ],
+      "Rewrote the draft": [
+        "Skrev om utkastet"
+      ],
+      "Set auto-reply": [
+        "Ställ in automatiskt svar"
+      ],
+      "Source document in encrypted search index": [
+        "Källdokument i krypterat sökindex"
+      ],
+      "Turn on your away message": [
+        "Aktivera ditt frånvaromeddelande"
+      ],
+      "What can you do?": [
+        "Vad kan du göra?"
       ]
     },
     "info": {
@@ -10029,6 +10117,9 @@
       ],
       "Star": [
         "Stjärnmärk"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Stäng ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -11069,6 +11160,12 @@
       ],
       "New name": [
         "Nytt namn"
+      ],
+      "Return on": [
+        "Tillbaka den"
+      ],
+      "To": [
+        "Till"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13233,6 +13330,15 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Lägg till en betalningsmetod** för kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
+      "If you continue after your trial,": [
+        "Om du fortsätter efter din provperiod,"
       ]
     },
     "Option": {
@@ -18025,11 +18131,18 @@
       ],
       "Bank transfer - ${ iban }": [
         "Banköverföring - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort slutar på ${ Last4 }"
       ]
     },
     "Snooze info": {
       "Snooze ${ emails }": [
         "Snooza ${ emails }"
+      ],
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-post → ${ wakeTime }",
+        "${ count } e-post → ${ wakeTime }"
       ]
     }
   }

@@ -9782,6 +9782,123 @@
       ],
       "Update this filter": [
         "更新筛选"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "快速介绍我能在您的邮箱里帮上什么忙，从查找旧邮件到起草回复，以及我做不到的事。"
+      ],
+      "Draft a ${ kind }": [
+        "起草一封${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "起草一封发给 ${ recipient } 的${ kind }"
+      ],
+      "Draft an ${ kind }": [
+        "起草一封${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "起草一封发给 ${ recipient } 的${ kind }"
+      ],
+      "Drafted a ${ kind }": [
+        "已起草一封${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "已起草一封${ kind }"
+      ],
+      "Edit ${ contact }": [
+        "编辑${ contact }"
+      ],
+      "Edit a contact": [
+        "编辑联系人"
+      ],
+      "Edit contact": [
+        "编辑联系人"
+      ],
+      "forward": [
+        "转发"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "嗨 Lumo，看看我收件箱里最常收到什么，以及我已有的文件夹和筛选器，然后建议如何保持井然有序：已有的该改什么，有什么值得新增的。先给我讲讲方案，我说可以之前不要动任何东西。"
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "嗨 Lumo，我要出门了，想设置一个自动回复。先问我要日期和内容，然后在开启之前把消息给我看看。"
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "嗨 Lumo，搜索我最近 7 天的邮件，告诉我哪些确实需要我回复。每封用一句话说明它在要什么，可以忽略的就不要列出来。"
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "嗨 Lumo，给我讲讲你能怎么帮我处理邮箱。我可以让你做哪些事，哪些事你帮不了？"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "我会翻一遍上周的邮件，挑出确实需要回复的，让你一次性处理完。"
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "我会看看你最常收到什么，以及你已有的文件夹和过滤器，然后建议哪些可以改进、还缺什么。在你确认之前不会改动任何东西。"
+      ],
+      "No draft open": [
+        "没有打开的草稿"
+      ],
+      "open draft": [
+        "打开草稿"
+      ],
+      "Opened a draft": [
+        "已打开一份草稿"
+      ],
+      "Read ${ count } open draft": [
+        "读取 ${ count } 封打开的草稿"
+      ],
+      "Read draft \"${ subject }\"": [
+        "读取草稿“${ subject }”"
+      ],
+      "Read the open draft": [
+        "读取打开的草稿"
+      ],
+      "Readdressed": [
+        "已重新填写收件人"
+      ],
+      "Readdressed the draft": [
+        "已重新填写草稿收件人"
+      ],
+      "Remove signature": [
+        "移除签名"
+      ],
+      "Rename label": [
+        "重命名标签"
+      ],
+      "Rename this label": [
+        "重命名此标签"
+      ],
+      "reply": [
+        "回复"
+      ],
+      "reply all": [
+        "全部回复"
+      ],
+      "Revise the ${ draft }": [
+        "修改${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "已重写并重新填写收件人"
+      ],
+      "Rewrote and readdressed the draft": [
+        "已重写并重新填写草稿收件人"
+      ],
+      "Rewrote the draft": [
+        "已重写草稿"
+      ],
+      "Set my out of office": [
+        "设置我的自动回复"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "告诉我你何时外出以及想让它说什么，保存前你会看到完整内容。"
+      ],
+      "Tidy up my inbox": [
+        "整理我的收件箱"
+      ],
+      "What can you do?": [
+        "你能做什么？"
+      ],
+      "What needs handling?": [
+        "有什么需要处理的？"
       ]
     },
     "info": {
@@ -10031,6 +10148,12 @@
       ],
       "Star": [
         "星标"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "关闭 ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "打开 ${ LUMO_SHORT_APP_NAME } / 聚焦输入框"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10067,6 +10190,9 @@
       ],
       "Message shortcuts": [
         "邮件快捷键"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } 快捷键"
       ]
     },
     "Label": {
@@ -11098,6 +11224,12 @@
       ],
       "Display name": [
         "称呼"
+      ],
+      "Cc": [
+        "抄送"
+      ],
+      "To": [
+        "收件人"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13223,6 +13355,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "您将能够免费使用 ${ planTitle } 直到试用期结束。"
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**添加支付方式**，以便在试用期结束后继续使用所有功能。"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**如果您在试用期结束后继续使用，** 可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
+      ],
+      "If you continue after your trial,": [
+        "如果您在试用期结束后继续使用，"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "以便在试用期结束后继续使用所有功能。"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "您可以在 30 天内取消，并获得按比例退款。"
       ]
     },
     "Option": {
@@ -17914,6 +18070,16 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "将 ${ folder } 重命名为…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "将 ${ label } 重命名为…"
       ]
     }
   }
