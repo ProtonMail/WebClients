@@ -67,8 +67,11 @@ const White = 'rgba(255, 255, 255, 1)'
 
 type ColorCombination = {
   background: string | null
+  marker: string | null
   text: string | null
 }
+
+type ColorPreview = Pick<ColorCombination, 'background' | 'text'>
 
 function Color({
   color,
@@ -82,7 +85,7 @@ function Color({
   color: ColorCombination
   label: string
   onSelect: (color: ColorCombination) => void
-  setPreviewColor: (color: ColorCombination) => void
+  setPreviewColor: (color: ColorPreview) => void
   resetPreviewColor: () => void
   name: string
   type: 'text' | 'highlight' | 'background'
@@ -116,13 +119,15 @@ export function FontColorMenu({
   onTextColorChange,
   currentBackgroundColor,
   onBackgroundColorChange,
+  onMarkerColorChange,
 }: {
   currentTextColor: string | null
   onTextColorChange: (color: string | null) => void
   currentBackgroundColor: string | null
   onBackgroundColorChange: (color: string | null) => void
+  onMarkerColorChange?: (color: string | null) => void
 }) {
-  const defaultPreviewColor = useMemo(
+  const defaultPreviewColor = useMemo<ColorPreview>(
     () => ({
       background: currentBackgroundColor,
       text: currentTextColor,
@@ -139,14 +144,16 @@ export function FontColorMenu({
     (color: ColorCombination) => {
       onBackgroundColorChange(color.background)
       onTextColorChange(color.text)
+      onMarkerColorChange?.(color.marker)
     },
-    [onBackgroundColorChange, onTextColorChange],
+    [onBackgroundColorChange, onMarkerColorChange, onTextColorChange],
   )
 
   const clearColor = useCallback(() => {
     onBackgroundColorChange(null)
     onTextColorChange(null)
-  }, [onBackgroundColorChange, onTextColorChange])
+    onMarkerColorChange?.(null)
+  }, [onBackgroundColorChange, onMarkerColorChange, onTextColorChange])
 
   return (
     <div className="space-y-2 px-4 py-2">
@@ -174,6 +181,7 @@ export function FontColorMenu({
               type="text"
               color={{
                 background: null,
+                marker: color.base,
                 text: color.base,
               }}
               label={c('Label').t`${name} text color with no background`}
@@ -194,6 +202,7 @@ export function FontColorMenu({
               type="highlight"
               color={{
                 background: color.lowOpacity,
+                marker: color.intense,
                 text: color.intense,
               }}
               label={c('Label').t`${name} text color and highlight`}
@@ -214,6 +223,7 @@ export function FontColorMenu({
               type="background"
               color={{
                 background: color.base,
+                marker: color.base,
                 text: White,
               }}
               label={c('Label').t`${name} background color and white text color`}

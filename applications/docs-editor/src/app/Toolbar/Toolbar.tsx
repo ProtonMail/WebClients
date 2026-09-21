@@ -1017,6 +1017,7 @@ export default function DocumentEditorToolbar({
               onTextColorChange={(color) => updateTextStyle('color', color)}
               currentBackgroundColor={backgroundColor}
               onBackgroundColorChange={(color) => updateTextStyle('background-color', color)}
+              onMarkerColorChange={(color) => updateTextStyle('--list-marker-color', color)}
             />
           ),
           disabled: !isEditable,
