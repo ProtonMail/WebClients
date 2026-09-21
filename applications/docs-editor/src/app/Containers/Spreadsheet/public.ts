@@ -6,6 +6,8 @@ export type { SpreadsheetRef } from './Spreadsheet'
 export type {
   SheetsDependencies,
   SheetsEditorToShellActions,
+  SheetsExportFormat,
+  SheetsFileMenuActions,
   SheetsSession,
   SheetsShellToEditorActions,
 } from './SheetsDependenciesProvider'
