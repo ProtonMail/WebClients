@@ -1,5 +1,5 @@
 import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
-import type { AppPlatform, SheetImportData, SheetsUserState } from '@proton/docs-shared'
+import type { AppPlatform, SheetImportData } from '@proton/docs-shared'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { PropsWithChildren } from 'react'
@@ -24,10 +24,18 @@ export type SheetsFileMenuActions = {
   toggleDebugMode: () => Promise<void>
 }
 
+export type CollaboratorCursorNavigationDestination = {
+  sheetId: number
+  rowIndex: number
+  columnIndex: number
+}
+
 /** Shell→editor: the shell pushes work or events into the editor. */
 export type SheetsShellToEditorActions = {
   subscribeToSheetImport: (callback: (data: SheetImportData) => void) => () => void
-  subscribeToCollaboratorCursorNavigation: (callback: (userState: SheetsUserState) => void) => () => void
+  subscribeToCollaboratorCursorNavigation: (
+    callback: (destination: CollaboratorCursorNavigationDestination) => void,
+  ) => () => void
 }
 
 /** Editor→shell: the editor asks the shell to perform a side effect. */

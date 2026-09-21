@@ -4,6 +4,7 @@ export type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
 export type { SheetsLogger } from './contract/SheetsLogger'
 export type { SpreadsheetRef } from './Spreadsheet'
 export type {
+  CollaboratorCursorNavigationDestination,
   SheetsDependencies,
   SheetsEditorToShellActions,
   SheetsExportFormat,
