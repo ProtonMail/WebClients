@@ -13,7 +13,7 @@ import noop from '@proton/utils/noop';
 
 import { useSilentApi } from '../../hooks/useSilentApi';
 import type { ZendeskRef } from './helper';
-import { getZendeskIframeUrl } from './helper';
+import { getZendeskIframeUrl, isZdBlockedDomain } from './helper';
 
 type MessageDestination = 'proton' | 'zendesk';
 
@@ -67,9 +67,10 @@ interface Props {
     autoLaunch: boolean;
     locale: string;
     tags: string[];
+    userEmail: string | undefined;
 }
 
-const LiveChatZendesk = ({ zendeskRef, autoLaunch, locale, tags }: Props) => {
+const LiveChatZendesk = ({ zendeskRef, autoLaunch, locale, tags, userEmail }: Props) => {
     const api = useSilentApi();
     const [style, setStyle] = useState({
         position: 'absolute',
@@ -147,6 +148,17 @@ const LiveChatZendesk = ({ zendeskRef, autoLaunch, locale, tags }: Props) => {
         // `id` is from Zendesk. Talk to support team for any questions
         sendMessage(['messenger:set', 'conversationFields', [{ id: '34274976897554', value: tags[0] }]]);
     }, [loaded, tags]);
+
+    useEffect(() => {
+        if (!loaded || !userEmail) {
+            return;
+        }
+        sendMessage([
+            'messenger:set',
+            'conversationFields',
+            [{ id: '38957198048530', value: isZdBlockedDomain(userEmail) }],
+        ]);
+    }, [loaded, userEmail]);
 
     useEffect(() => {
         if (!loaded || !pendingLoadingRef.current) {
