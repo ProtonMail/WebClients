@@ -17,6 +17,7 @@ interface Props {
     mailPostSignupOneDollarPromoDisabled: boolean;
     hasHadSubscription: boolean;
     driveOfferStartDateTimestamp?: PostSubscriptionOneDollarOfferState;
+    hasHiddenZeroNinetyNineOffer: boolean;
 }
 
 export const getIsUserEligibleForOneDollar = ({
@@ -26,8 +27,15 @@ export const getIsUserEligibleForOneDollar = ({
     mailPostSignupOneDollarPromoDisabled,
     hasHadSubscription,
     driveOfferStartDateTimestamp,
+    hasHiddenZeroNinetyNineOffer,
 }: Props) => {
     if (mailPostSignupOneDollarPromoDisabled) {
+        return false;
+    }
+
+    // A user who opted out of the temporary 0.99 promo should not be offered the one-dollar
+    // offer straight afterwards. Remove this along with the 0.99 promo.
+    if (hasHiddenZeroNinetyNineOffer) {
         return false;
     }
 
