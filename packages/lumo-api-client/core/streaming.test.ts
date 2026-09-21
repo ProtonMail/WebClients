@@ -25,6 +25,31 @@ describe('StreamProcessor', () => {
         ]);
     });
 
+    it('emits the serving model before the content it serves', () => {
+        const processor = new StreamProcessor();
+
+        const messages = processor.processChunk(
+            `data: ${JSON.stringify({
+                model: '3b6be88a',
+                choices: [{ index: 0, delta: { content: 'Hello' } }],
+            })}\n\n`
+        );
+
+        expect(messages).toEqual([
+            {
+                type: 'model',
+                target: 'message',
+                model: '3b6be88a',
+            },
+            {
+                type: 'token_data',
+                target: 'message',
+                count: 0,
+                content: 'Hello',
+            },
+        ]);
+    });
+
     it('defaults untagged content deltas to the outgoing lumo target', () => {
         const processor = new StreamProcessor('title');
 
@@ -118,25 +143,20 @@ describe('StreamProcessor', () => {
         ]);
     });
 
-    it('carries the SSE model hash into usage messages', () => {
+    it('emits the model even when the stream has no usage event', () => {
         const processor = new StreamProcessor();
 
-        processor.processChunk(
+        const messages = processor.processChunk(
             `data: ${JSON.stringify({
                 model: '3b6be88a',
-                choices: [{ index: 0, delta: { content: 'Hello' } }],
             })}\n\n`
         );
 
-        const messages = processor.processChunk(`data: ${JSON.stringify({ usage: { completion_tokens: 1 } })}\n\n`);
-
         expect(messages).toEqual([
             {
-                type: 'usage',
-                usage: {
-                    completion_tokens: 1,
-                    model: '3b6be88a',
-                },
+                type: 'model',
+                target: 'message',
+                model: '3b6be88a',
             },
         ]);
     });
