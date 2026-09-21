@@ -3649,6 +3649,27 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
+      ],
+      "A contact with this email address already exists": [
+        "Já existe um contato com este endereço de e-mail"
+      ],
+      "Bookmark password is not available": [
+        "A senha do marcador não está disponível"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Não foi possível carregar a pré-visualização da imagem: ${ message }"
+      ],
+      "Expiration date cannot be in the past": [
+        "A data de expiração não pode ser anterior ao passado"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Falha ao descriptografar a chave de nó: ${ message }"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta a assinatura para ${ signatureType }"
+      ],
+      "Too many server errors, please try again later": [
+        "Muitos erros ao servidor, tente novamente mais tarde"
       ]
     },
     "error": {
@@ -3973,6 +3994,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Sua conta está usando ${ usedSpace } de armazenamento, o que excede o espaço de ${ inviteSpace } que você recebeu. Apague alguns dados ou peça ao administrador do plano para aumentar seu armazenamento."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Você está convidado a vincular sua conta da ${ BRAND_NAME } a este grupo familiar e aproveitar todos os seus recursos premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5912,6 +5936,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuário não pode ser migrado devido a incompatibilidades de plataforma."
       ]
     },
     "info": {
@@ -8230,6 +8257,12 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Você poderá usar ${ planTitle } até o fim da avaliação, gratuitamente."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adicione uma forma de pagamento** para continuar usando todos os recursos após o término do período de teste."
+      ],
+      "Add a payment method": [
+        "Adicionar método de pagamento"
       ]
     },
     "Option": {
