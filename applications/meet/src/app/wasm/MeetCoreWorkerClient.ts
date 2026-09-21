@@ -97,6 +97,10 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         return this.request('joinMeetingWithAccessToken', args);
     }
 
+    public joinMeeting2(...args: Parameters<MeetCoreClient['joinMeeting2']>): Promise<void> {
+        return this.request('joinMeeting2', args);
+    }
+
     public joinMeetingWithAccessTokenWithSwitchJoinType(
         ...args: Parameters<MeetCoreClient['joinMeetingWithAccessTokenWithSwitchJoinType']>
     ): Promise<void> {
