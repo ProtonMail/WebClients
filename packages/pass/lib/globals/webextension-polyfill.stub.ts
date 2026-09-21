@@ -1,1 +1,1 @@
-module.exports = (globalThis as any).browser;
+export default (globalThis as any).browser;
