@@ -1,15 +1,14 @@
-import { call, delay, put, race, select, take, takeLeading } from 'redux-saga/effects';
+import { call, delay, put, race, select, take, takeLatest } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { HOUR, MINUTE } from '@proton/shared/lib/constants';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { hasFoldersApi } from '../../../lib/folders/folders.requests';
 import type { ForceSyncEntry, ForceSyncStore } from '../../../lib/sync/force-sync';
 import type { Share } from '../../../types';
 import { PassFeature } from '../../../types/api/features';
 import { logger } from '../../../utils/logger';
-import { bootSuccess, stateDestroy, syncFailure, syncIntent, syncSuccess } from '../../actions';
+import { bootSuccess, getUserFeaturesSuccess, stateDestroy, syncFailure, syncIntent, syncSuccess } from '../../actions';
 import { syncRequest } from '../../actions/requests';
 import { selectRequestInFlight } from '../../request/selectors';
 import { selectAllVaults, selectFeatureFlag } from '../../selectors';
@@ -40,17 +39,18 @@ function* anyVaultHasFolders(): Generator<unknown, { hasFolders: boolean; failed
     return { hasFolders: false, failed };
 }
 
-export function* checkForForceSync(store: ForceSyncStore): Generator {
+/** Returns `true` once there is no force sync needed for this account. */
+export function* checkForForceSync(store: ForceSyncStore): Generator<unknown, boolean> {
     const entry: ForceSyncEntry = yield call(store.read);
-    if (entry.done || entry.attempts >= MAX_ATTEMPTS) return;
-    if (Date.now() - entry.lastAttemptAt < MIN_RETRY_INTERVAL) return;
+    if (entry.done || entry.attempts >= MAX_ATTEMPTS) return true;
+    if (Date.now() - entry.lastAttemptAt < MIN_RETRY_INTERVAL) return false;
 
     const enabled: boolean = yield select(selectFeatureFlag(PassFeature.PassForceSyncFolders));
-    if (!enabled) return;
+    if (!enabled) return false;
 
     /** The sync watcher only listens for syncIntent when idle (see sync.saga.ts),
      * so dispatching it now would be lost and we would wait forever for a result. */
-    if (yield select(selectRequestInFlight(syncRequest()))) return;
+    if (yield select(selectRequestInFlight(syncRequest()))) return false;
 
     const attempts = entry.attempts + 1;
     yield call(store.write, { ...entry, attempts, lastAttemptAt: Date.now() });
@@ -73,17 +73,22 @@ export function* checkForForceSync(store: ForceSyncStore): Generator {
                 timeout: delay(SYNC_TIMEOUT),
             });
 
-            if (!ok) return logger.warn('[ForceSync] Sync did not complete, will retry');
-        } else if (failed) return;
+            if (!ok) {
+                logger.warn('[ForceSync] Sync did not complete, will retry');
+                return false;
+            }
+        } else if (failed) return false;
 
         yield call(store.write, { done: true, attempts, lastAttemptAt: Date.now() });
+        return true;
     } catch (err) {
         logger.warn('[ForceSync] Check failed, will retry', err);
+        return false;
     }
 }
 
 export default function* watcher(options: RootSagaOptions) {
-    yield takeLeading(bootSuccess.match, function* (action) {
+    yield takeLatest(bootSuccess.match, function* (action) {
         const store = options.getForceSyncStore?.();
         if (!store) return;
 
@@ -96,15 +101,18 @@ export default function* watcher(options: RootSagaOptions) {
         }
 
         yield race({
-            /** Checks hourly for sessions that never restart. On the extension
-             * the service worker is shut down when idle and restarted on demand,
-             * so boot alone already covers most checks there. */
             check: call(function* () {
-                yield call(checkForForceSync, store);
+                while (true) {
+                    const done: boolean = yield call(checkForForceSync, store);
+                    if (done) return;
 
-                while (!EXTENSION_BUILD) {
-                    yield wait(CHECK_INTERVAL);
-                    yield call(checkForForceSync, store);
+                    yield race({
+                        /** bootSuccess fires before the feature flags are refreshed,
+                         * so the first check may read a stale value. */
+                        features: take(getUserFeaturesSuccess.match),
+                        /** Checks hourly for sessions that never restart. */
+                        tick: delay(CHECK_INTERVAL),
+                    });
                 }
             }),
             destroyed: take(stateDestroy.match),
