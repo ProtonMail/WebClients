@@ -7861,6 +7861,15 @@
       ],
       "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
         "Google Drive에서 ${ DRIVE_APP_NAME }로 모든 파일이 성공적으로 불러오기/암호화되었습니다."
+      ],
+      "Search covers your recent items": [
+        "최근 항목만 검색할 수 있습니다"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "사용자의 Drive 전체 용량이 색인하기에 너무 큽니다. 일부 오래된 파일은 색인되지 않았습니다."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "용량이 너무 큰 관계로 현재 접속한 브라우저에서 사용자의 Drive 전체를 색인할 수 없습니다. 최근 항목만 검색할 수 있습니다. 오래된 파일은 결과에 노출되지 않을 수 있습니다."
       ]
     },
     "info": {

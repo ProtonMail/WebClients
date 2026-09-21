@@ -1379,6 +1379,9 @@
       ],
       "Importing from Google": [
         "Import z Google"
+      ],
+      "Search recent items": [
+        "Hľadať nedávne položky"
       ]
     },
     "Action: Docs": {
@@ -8236,6 +8239,18 @@
       ],
       "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
         "Vaše súbory boli úspešne importované z Google Drive a zašifrované v ${ DRIVE_APP_NAME }."
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)"
+      ],
+      "Search covers your recent items": [
+        "Vyhľadávanie zahŕňa vaše nedávne položky"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Niektoré staršie súbory nie sú indexované, pretože váš Drive je príliš veľký na to, aby sa dal úplne indexovať."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Váš Drive je príliš veľký na to, aby sa v tomto prehliadači indexoval v celom rozsahu, preto vyhľadávanie prehľadáva len vaše najnovšie položky. Staršie súbory sa vo výsledkoch nemusia zobraziť."
       ]
     },
     "info": {
@@ -11608,6 +11623,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Budete môcť používať ${ planTitle } až do konca skúšobného obdobia, bez poplatku."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Pridajte spôsob platby**, aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Zrušiť môžete kedykoľvek pred týmto termínom.** ${ planTitle } budete môcť bezplatne využívať až do konca skúšobného obdobia."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Ak budete pokračovať aj po skončení skúšobnej doby,** môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Po začatí platnosti predplatného...** môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
+      ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
+      ],
+      "If you continue after your trial,": [
+        "Ak budete pokračovať aj po skončení skúšobnej doby,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
       ]
     },
     "Option": {

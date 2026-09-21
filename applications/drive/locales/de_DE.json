@@ -549,7 +549,7 @@
         "Zu meinen Dateien"
       ],
       "Go to parent": [
-        "Zum übergeordneten"
+        "Zum übergeordneten Ordner"
       ],
       "Go to settings": [
         "Einstellungen öffnen"
@@ -1258,8 +1258,8 @@
         "Neu indexieren"
       ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
-        "Hinzufügen zu \"${ name }\" (${ photoCount } Foto)",
-        "Hinzufügen zu \"${ name }\" (${ photoCount } Fotos)"
+        "Zu „${ name }“ hinzufügen (${ photoCount } Foto",
+        "Zu „${ name }“ hinzufügen (${ photoCount } Fotos"
       ],
       "Save photo to your gallery": [
         "Foto in deiner Galerie speichern"
@@ -1356,6 +1356,18 @@
       ],
       "Sign in with Google": [
         "Mit Google Konto anmelden"
+      ],
+      "Importing from Google": [
+        "Wird von Google importiert"
+      ],
+      "Keep going": [
+        "Fortfahren"
+      ],
+      "Search recent items": [
+        "Letzte Einträge suchen"
+      ],
+      "Stop here": [
+        "Hier beenden"
       ]
     },
     "Action: Docs": {
@@ -3631,7 +3643,7 @@
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
       "Downloads of desktop apps are currently unavailable": [
-        "Downloads von Desktop-Apps sind derzeit nicht verfügbar"
+        "Das Herunterladen von Desktop-Apps ist derzeit nicht möglich."
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Die Bearbeitung der Rechnungsadresse ist im Moment nicht möglich. Bitte versuche es später noch einmal."
@@ -4131,7 +4143,7 @@
         "Wir konnten einige deiner gespeicherten geteilten Links nicht laden."
       ],
       "We were not able to load some of your shared items": [
-        "Wir konnten einige deiner geteilten Einträge nicht laden."
+        "Einige deiner freigegebenen Elemente konnten nicht geladen werden"
       ],
       "We were not able to load some search results": [
         "Einige Suchergebnisse konnten nicht geladen werden."
@@ -4143,7 +4155,7 @@
         "Der Ordnerinhalt konnte nicht geladen werden"
       ],
       "We're sorry, but free upload is not available right now.": [
-        "Es tut uns leid, aber der kostenlose Upload ist derzeit nicht verfügbar."
+        "Es tut uns leid, aber das kostenlose Hochladen ist derzeit nicht verfügbar."
       ],
       "Wrong billing address": [
         "Ungültige Rechnungsadresse"
@@ -4654,7 +4666,7 @@
         "App ist zurzeit nicht verfügbar"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Bitte habe etwas Geduld, bis wir den Fehler behoben haben."
+        "Bitte haben Sie noch etwas Geduld, bis der Fehler behoben ist."
       ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
@@ -5883,7 +5895,7 @@
         "Verschlüsselte Suchdaten löschen"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Beim Löschen der Browserdaten wird der Suchindex auf diesem Gerät gelöscht. Alle Dateien müssen beim Verwenden der Suchfunktion erneut indiziert werden."
+        "Durch das Löschen der Browserdaten wird der Suchindex auf diesem Gerät gelöscht. Bei der Nutzung der Suchfunktion müssen alle Dateien erneut indiziert werden."
       ],
       "Clears browser data related to the encrypted search.": [
         "Löscht die Browserdaten im Zusammenhang mit der verschlüsselten Suche."
@@ -5922,7 +5934,7 @@
         "Fortfahren"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "${ DRIVE_APP_NAME } weiter verwenden und Laufwerk später entsperren"
+        "${ DRIVE_APP_NAME } weiterhin verwenden und Drive später entsperren"
       ],
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
@@ -6199,7 +6211,7 @@
         "Hol dir die App, um Fotos von deinem Telefon zu sichern, oder lade sie hier hoch."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Hole dir die Desktop-App um Dateien von deinem Computer zu synchronisieren."
+        "Lade dir die Desktop-App herunter, um Dateien von deinem Computer synchronisieren zu können."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Lerne ${ DRIVE_APP_NAME } kennen und sichere dir deinen 3 GB-Speicherplatzbonus! Fange noch heute an."
@@ -6281,7 +6293,7 @@
         "Indizierung läuft"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "${ esProgress } von ${ totalProgressToShow } Elementen wurden indiziert"
+        "${ esProgress } von insgesamt ${ totalProgressToShow } Elementen wurden indiziert"
       ],
       "Indexing search results…": [
         "Suchresultate werden indexiert…"
@@ -6525,7 +6537,7 @@
         "In öffentlichen WLAN-Netzwerken"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "Eines deiner verschlüsselten Laufwerke ist gesperrt. Dies ist höchstwahrscheinlich auf ein kürzlich geändertes Passwort zurückzuführen."
+        "Eines deiner verschlüsselten Laufwerke ist gesperrt. Dies ist höchstwahrscheinlich auf eine kürzlich erfolgte Passwortzurücksetzung zurückzuführen."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
@@ -6537,7 +6549,7 @@
         "oder entdecke andere Funktionen:"
       ],
       "Or use the \"+ New\" button": [
-        "Oder benutze den \"+ Neu\" Button."
+        "Oder klicke auf die Schaltfläche „+ Neu“"
       ],
       "Organization size": [
         "Organisationsgröße"
@@ -6718,7 +6730,7 @@
         "Bericht wurde gesendet"
       ],
       "Request access, or switch to an account with access.": [
-        "Beantrage Zugriff, oder wechsle zu einem Konto mit Zugriff."
+        "Beantrage den Zugriff oder wechsle zu einem Konto mit Zugriffsrechten."
       ],
       "Requested item doesn't exist anymore": [
         "Angeforderter Eintrag existiert nicht mehr"
@@ -6733,7 +6745,7 @@
         "Wiederhergestellte Dateien ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
-        "Fotos werden wiederhergestellt... bitte behalte den Tab offen."
+        "Fotos werden wiederhergestellt … Bitte lasse den Tab geöffnet"
       ],
       "Running diagnostics...": [
         "Diagnose wird ausgeführt..."
@@ -6859,10 +6871,10 @@
         "Einige Einträge sind fehlgeschlagen"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Einige deiner Dateien sind nicht mehr zugänglich. Stelle den Zugriff auf deine Dateien wieder her. ${ StartRecoveryButton }"
+        "Auf einige deiner Dateien kann nicht mehr zugegriffen werden. Stelle den Zugriff auf deine Dateien wieder her. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Einige Fotos in diesem Album sind nicht in deiner Timeline gespeichert. Wenn du dieses Album löscht, werden diese Fotos dauerhaft gelöscht."
+        "Einige Fotos in diesem Album sind nicht in deiner Chronik gespeichert. Wenn du dieses Album löschst, werden diese Fotos dauerhaft gelöscht."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Einige Websites und Streaming-Dienste blockieren Inhalte je nach Region. Mit einem VPN kannst du diese Beschränkungen umgehen und frei auf das Internet zugreifen."
@@ -6959,7 +6971,7 @@
         "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte lade die Datei herunter."
       ],
       "This can NOT be undone. Please enter the device name to confirm removal.": [
-        "Dies kann NICHT rückgängig gemacht werden. Bitte gib den Gerätenamen ein, um das Entfernen zu bestätigen."
+        "Dieser Vorgang kann NICHT widerrufen werden. Bitte gib den Gerätenamen ein, um das Löschen zu bestätigen."
       ],
       "This file is too large to preview": [
         "Die Datei ist zu groß, um in der Vorschau angezeigt zu werden."
@@ -6980,8 +6992,8 @@
         "Dieses Element existiert bereits in deiner Bibliothek."
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Dieser Eintrag ist nicht in deiner Fotobibliothek gespeichert. Wenn du ihn aus diesem Album entfernst, verlierst du dauerhaft den Zugriff darauf.",
-        "Einige der ausgewählten Einträge sind nicht in deiner Fotobibliothek gespeichert. Wenn du sie aus diesem Album entfernst, verlierst du dauerhaft den Zugriff darauf."
+        "Dieses Element ist nicht in deiner Fotobibliothek gespeichert. Wenn es aus diesem Album entfernt wird, kann darauf nicht mehr zugegriffen werden.",
+        "Einige der ausgewählten Elemente sind nicht in deiner Fotobibliothek gespeichert. Wenn diese aus diesem Album entfernt werden, kann darauf nicht mehr zugegriffen werden."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
@@ -7053,7 +7065,7 @@
         "Um eine wirklich private Suche zu ermöglichen, muss ${ DRIVE_APP_NAME } deine Dateien lokal indexieren."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Um eine wirklich private Suche zu ermöglichen, müssen wir deine Dateien lokal indizieren. Du kannst ${ DRIVE_APP_NAME } wie gewohnt weiternutzen - wir informieren dich, sobald die Indexierung erfolgt ist."
+        "Um eine wirklich private Suche zu ermöglichen, müssen deine Dateien lokal indiziert werden. Du kannst ${ DRIVE_APP_NAME } weiterhin wie gewohnt nutzen – du wirst benachrichtigt, sobald die Indizierung abgeschlossen ist."
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
         "Um eine echte Suche zu ermöglichen, müssen wir deine Dateien lokal indizieren. Du kannst ${ DRIVE_APP_NAME } wie gewohnt weiter nutzen - wir geben dir Bescheid, sobald die Indexierung abgeschlossen ist."
@@ -7221,7 +7233,7 @@
         "Warnung"
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
-        "Gut gemacht, du hast deinen Speicherplatz um 5 GB erhöht!"
+        "Gut gemacht, du hast gerade deinen Speicherplatz auf 5 GB erweitert!"
       ],
       "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
         "Wir haben technische Probleme. Alle Aktionen im Zusammenhang mit Alben sind temporär deaktiviert."
@@ -7290,7 +7302,7 @@
         "Wer hat Zugriff"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "wird auf die Version vom ${ formattedRevisionDate } wiederhergestellt. Alle anderen Versionen bleiben erhalten."
+        "wird auf die Version vom ${ formattedRevisionDate } zurückgesetzt. Alle anderen Versionen bleiben weiterhin gespeichert."
       ],
       "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
         "Mit ${ DRIVE_APP_NAME } sind deine Daten durch Ende-zu-Ende-Verschlüsselung geschützt."
@@ -7402,8 +7414,8 @@
         "Alle nicht gespeicherten Änderungen gehen verloren."
       ],
       "You will need to save it again from the public link page.": [
-        "Du musst es von der Seite mit den öffentlichen Links erneut speichern.",
-        "Du musst sie von der Seite mit den öffentlichen Links erneut speichern."
+        "Du musst es erneut über die Seite mit den öffentlichen Links speichern.",
+        "Du musst sie erneut über die Seite mit den öffentlichen Links speichern."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
@@ -7643,7 +7655,7 @@
         "${ DRIVE_APP_NAME } hat festgestellt, dass der lokale Suchindex beschädigt ist und nicht mehr verwendet werden kann. Erstelle den Index neu, um die Suchfunktion wiederherzustellen."
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Die Indexierung ist in einen unerwarteten Zustand geraten und kann nicht fortgesetzt werden. Erstelle den Index neu, um das Problem zu beheben."
+        "Bei der Indizierung ist ein unerwarteter Fehler aufgetreten, sodass sie nicht fortgesetzt werden kann. Erstelle den Index neu, um das Problem zu beheben."
       ],
       "Not enough storage space": [
         "Nicht genügend Speicherplatz"
@@ -7664,13 +7676,13 @@
         "Suche befindet sich in einem ungültigen Zustand"
       ],
       "Search is ready. Your files have been indexed.": [
-        "Suche ist bereit. Deine Dateien sind indexiert."
+        "Die Suche ist abgeschlossen. Deine Dateien wurden indiziert."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
         "Bei der Suche ist ein interner Fehler aufgetreten. Erstelle den Index neu, um das Problem zu beheben."
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "Deinem Browser ist beim Indexieren der Dateien für die Suche der Speicherplatz ausgegangen. Schaffe Speicherplatz und erstelle den Index anschließend neu."
+        "In deinem Browser ist der Speicherplatz während der Indizierung der Dateien für die Suche aufgebraucht. Gib Speicherplatz frei und erstelle den Index anschließend neu."
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "Erstelle eine sichere Cloud für ${ memberCount } Mitglied",
@@ -7685,8 +7697,8 @@
         "Wir konnten diese Fotos nicht in deinem Drive speichern"
       ],
       "We were not able to add this photo to your album": [
-        "Wir konnten dieses Foto nicht in deinem Album hinzufügen",
-        "Wir konnten diese Fotos nicht in deinem Album hinzufügen"
+        "Dieses Foto konnte nicht zu deinem Album hinzugefügt werden.",
+        "Einige Fotos konnte nicht zu deinem Album hinzugefügt werden."
       ],
       "Included": [
         "Enthalten"
@@ -7765,7 +7777,7 @@
         "Hiermit bestätige ich nach bestem Wissen und Gewissen, dass die im Bericht enthaltenen Angaben und Aussagen richtig und vollständig sind."
       ],
       "Re-indexing in progress": [
-        "Neuindizierung läuft"
+        "Neuindizierung wird durchgeführt"
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Deine Dateien werden gerade neu indiziert. Du kannst weiterhin suchen – die Ergebnisse sind möglicherweise unvollständig, bis der Vorgang abgeschlossen ist. Wir informieren dich, sobald der Vorgang abgeschlossen ist."
@@ -7973,6 +7985,27 @@
       ],
       "Won’t import photos, Google Docs and Sheets": [
         "Fotos, Google Docs und Sheets lassen sich nicht importieren"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (nicht verifizierter Absender)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
+        "${ LUMO_SHORT_APP_NAME } hat bisher ${ count } gedauert. Dennoch fortfahren?"
+      ],
+      "Search covers your recent items": [
+        "Die Suche umfasst deine letzten Einträge"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Einige ältere Dateien sind nicht indiziert, da dein Drive zu groß ist, um vollständig indiziert zu werden."
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "Deine Dateien aus Google Drive werden durch uns importiert. Wir geben dir Bescheid, sobald es abgeschlossen ist."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Ihr Drive ist zu groß, um in diesem Browser vollständig indiziert zu werden. Daher werden bei der Suche nur deine neuesten Einträge berücksichtigt. Ältere Dateien werden möglicherweise nicht in den Ergebnissen angezeigt."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Deine Dateien wurden erfolgreich von Google Drive in ${ DRIVE_APP_NAME } importiert und verschlüsselt."
       ]
     },
     "info": {
@@ -8143,7 +8176,7 @@
         "App-Passwort"
       ],
       "Applications in a business setting": [
-        "Anwendungen für Unternehmen"
+        "Anwendungen im geschäftlichen Umfeld"
       ],
       "Apply to all duplicated files": [
         "Auf alle doppelten Dateien anwenden"
@@ -10810,7 +10843,7 @@
         "Fehler beim Erstellen der Tabellenkalkulation"
       ],
       "This secure link expired, please change expire date in sharing settings": [
-        "Dieser sichere Link ist abgelaufen, bitte ändere das Ablaufdatum in den Freigabeeinstellungen"
+        "Dieser sichere Link ist abgelaufen. Bitte ändere das Ablaufdatum in den Freigabeeinstellungen."
       ],
       "Trash failed to be emptied": [
         "Der Papierkorb konnte nicht geleert werden"
@@ -10834,7 +10867,7 @@
         "„${ ellipsedName }“ erfolgreich erstellt"
       ],
       "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" gelöscht"
+        "„${ ellipsedName }“ wurde gelöscht"
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "„${ ellipsedName }“ dauerhaft aus dem Papierkorb gelöscht"
@@ -11183,7 +11216,7 @@
         "Dateien und Ordner teilen"
       ],
       "Sync and access your files from anywhere": [
-        "Synchronisierung und Zugriff auf deine Dateien von überall aus"
+        "Synchronisiere deine Dateien und greife von überall darauf zu"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Der Besitzer muss den geteilten Zugang bestätigen. Sobald dies erledigt wurde, wirst du eine E-Mail erhalten."
@@ -11246,6 +11279,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du kannst ${ planTitle } kostenlos nutzen, bis die Testversion ausläuft."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Zahlungsmethode hinzufügen**, um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Jederzeit vorher kündigen.** Du kannst ${ planTitle } bis zum Ende der Testversion kostenlos nutzen."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Wenn du nach Ablauf der Testversion fortfährst,** kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Sobald dein volles Abonnement beginnt,** kannst du immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen,"
+      ],
+      "If you continue after your trial,": [
+        "Wenn du nach Ablauf der Testversion fortfährst,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
       ]
     },
     "Option": {
@@ -14594,7 +14651,7 @@
         "Deine Begrüßungsaktionen"
       ],
       "You’re off to a great start!": [
-        "Du hast einen tollen Start hingelegt."
+        "Das ist doch mal ein toller Start!"
       ],
       "You’ve got 5 GB of storage": [
         "Du hast 5 GB Speicherplatz"
@@ -14727,6 +14784,12 @@
       ],
       "Your import is starting": [
         "Dein Datenimport wird gestartet"
+      ],
+      "Your import is finished!": [
+        "Dein Import ist abgeschlossen."
+      ],
+      "Your import is in progress": [
+        "Dein Import läuft gerade"
       ]
     },
     "Today icon tooltip in mini calendar": {

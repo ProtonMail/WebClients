@@ -11110,6 +11110,15 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Lägg till en betalningsmetod** för kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
+      "If you continue after your trial,": [
+        "Om du fortsätter efter din provperiod,"
       ]
     },
     "Option": {
@@ -11525,6 +11534,9 @@
       ],
       "Bank transfer - ${ iban }": [
         "Banköverföring - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort slutar på ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14579,6 +14591,12 @@
       ],
       "Your import is starting": [
         "Din import startar"
+      ],
+      "Your import is finished!": [
+        "Din import är klar!"
+      ],
+      "Your import is in progress": [
+        "Din import pågår"
       ]
     },
     "Today icon tooltip in mini calendar": {

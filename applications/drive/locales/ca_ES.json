@@ -1365,6 +1365,9 @@
       ],
       "Importing from Google": [
         "S'està important des de Google"
+      ],
+      "Search recent items": [
+        "Cercar-ho en els elements recents"
       ]
     },
     "Action: Docs": {
@@ -1833,7 +1836,7 @@
         "Problema de pagament"
       ],
       "Sheets problem": [
-        "Hi ha hagut un problema amb els fulls de càlcul"
+        "Problema amb els fulls de càlcul"
       ],
       "Sign in problem": [
         "Problema d'inici de sessió"
@@ -8009,6 +8012,15 @@
       ],
       "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
         "Els vostres fitxers s'han importat i xifrat correctament des de Google Drive a ${ DRIVE_APP_NAME }."
+      ],
+      "Search covers your recent items": [
+        "La cerca inclou els vostres elements recents"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Alguns fitxers antics no estan indexats perquè el vostre Drive és massa gran per indexar-lo completament."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "El vostre Drive és massa gran per indexar-lo completament en aquest navegador, de manera que la cerca només mostra els elements més recents. És possible que els fitxers més antics no apareguin en els resultats."
       ]
     },
     "info": {
