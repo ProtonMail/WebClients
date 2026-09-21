@@ -1,6 +1,6 @@
 import '../app/style'
 import './standalone-sheet.css'
-import { EditorSystemMode, type FileMenuAction } from '@proton/docs-shared'
+import { EditorSystemMode } from '@proton/docs-shared'
 import { createRoot } from 'react-dom/client'
 import { type ComponentProps, useCallback, useEffect, useMemo, useState } from 'react'
 import {
@@ -14,16 +14,16 @@ import { createStandaloneSession } from './session'
 
 document.title = 'Standalone Sheet'
 
-function describeFileAction(action: FileMenuAction) {
-  return action.type === 'download' ? `download ${action.format}` : action.type.replaceAll('-', ' ')
-}
-
 function StandaloneSheet() {
   const { theme } = useEditorTheme()
   const [ready, setReady] = useState(false)
   const [migrationEditingLocked, setMigrationEditingLocked] = useState(false)
   const [errorLocked, setErrorLocked] = useState(false)
   const [message, setMessage] = useState('Loading fixture…')
+  const reportUnavailableFileMenuAction = useCallback((action: string) => {
+    setMessage(`File action triggered: ${action}. This action is unavailable in standalone mode.`)
+    return Promise.resolve()
+  }, [])
   const publishError = useCallback((error: unknown) => {
     console.error(error)
     setMessage(String(error))
@@ -47,7 +47,7 @@ function StandaloneSheet() {
       receivedEverythingFromRTS: ready,
       userName: 'Standalone developer',
       canEdit: true,
-      canTrash: false,
+      canTrash: true,
       isDevOrBlack: () => true,
       versionInfo: { environment: undefined, version: 'standalone' },
       logger: {
@@ -63,10 +63,20 @@ function StandaloneSheet() {
       openLink: async (url) => {
         window.open(url, '_blank', 'noopener,noreferrer')
       },
-      handleFileMenuAction: async (action) => {
-        setMessage(
-          `File action triggered: ${describeFileAction(action)}. This action is unavailable in standalone mode.`,
-        )
+      fileMenuActions: {
+        createSpreadsheet: () => reportUnavailableFileMenuAction('new spreadsheet'),
+        createDocument: () => reportUnavailableFileMenuAction('new document'),
+        import: () => reportUnavailableFileMenuAction('import'),
+        makeCopy: () => reportUnavailableFileMenuAction('make a copy'),
+        moveToFolder: () => reportUnavailableFileMenuAction('move to folder'),
+        viewVersionHistory: () => reportUnavailableFileMenuAction('see version history'),
+        moveToTrash: () => reportUnavailableFileMenuAction('move to trash'),
+        print: () => reportUnavailableFileMenuAction('print'),
+        download: (format) => reportUnavailableFileMenuAction(`download ${format}`),
+        openHelp: () => reportUnavailableFileMenuAction('help'),
+        viewRecentSpreadsheets: () => reportUnavailableFileMenuAction('view recent spreadsheets'),
+        openProtonDrive: () => reportUnavailableFileMenuAction('open Proton Drive'),
+        toggleDebugMode: () => reportUnavailableFileMenuAction('toggle debug mode'),
       },
       storeSpreadsheetAction: () => {},
       storeSpreadsheetPatches: () => {},
@@ -84,7 +94,7 @@ function StandaloneSheet() {
       reportSheetsYjsDriftDetected: (reason) => publishError(new Error(reason)),
       showYjsDriftDetectedErrorModal: (details) => publishError(new Error(JSON.stringify(details))),
     }),
-    [ready, publishError, theme],
+    [ready, publishError, reportUnavailableFileMenuAction, theme],
   )
   const onEditorLoadResult = useCallback<ComponentProps<typeof StandaloneSheetsEditor>['onEditorLoadResult']>(
     (result) => {

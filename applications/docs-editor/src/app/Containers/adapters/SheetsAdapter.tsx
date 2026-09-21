@@ -18,6 +18,7 @@ import {
   type SheetsShellToEditorActions,
 } from '../Spreadsheet/public'
 import { useResolvedAppPlatform } from './useResolvedAppPlatform'
+import { createSheetsFileMenuActions } from './createSheetsFileMenuActions'
 
 type SheetsAdapterProps = PropsWithChildren<{
   clientInvoker: EditorRequiresClientMethods
@@ -53,7 +54,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
     () => ({
       isFeatureFlagEnabled: (featureFlag) => clientInvoker.checkIfFeatureFlagIsEnabled(featureFlag),
       openLink: (url) => clientInvoker.openLink(url),
-      handleFileMenuAction: (action) => clientInvoker.handleFileMenuAction(action),
+      fileMenuActions: createSheetsFileMenuActions(clientInvoker),
       storeSpreadsheetAction: (type, content) => {
         void clientInvoker.storeSpreadsheetAction(type, content).catch(console.error)
       },
