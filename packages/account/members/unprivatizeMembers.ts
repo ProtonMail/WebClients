@@ -13,13 +13,6 @@ import type {
     MemberReadyForAutomaticUnprivatization,
     MemberReadyForManualUnprivatization,
 } from '@proton/shared/lib/interfaces';
-import {
-    UnprivatizationRevisionError,
-    getIsMemberInAutomaticApproveState,
-    getIsMemberInManualApproveState,
-    type getUnprivatizeMemberPayload,
-    unprivatizeMemberHelper,
-} from '@proton/shared/lib/keys';
 
 import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';
@@ -39,6 +32,12 @@ import {
     setUnprivatizationState,
     upsertMember,
 } from './index';
+import { getIsMemberInAutomaticApproveState, getIsMemberInManualApproveState } from './memberUnprivatization';
+import {
+    UnprivatizationRevisionError,
+    type getUnprivatizeMemberPayload,
+    unprivatizeMemberHelper,
+} from './unprivatization';
 import { unprivatizeMember } from './unprivatizeActions';
 
 type RequiredState = KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState;

@@ -4,10 +4,11 @@ import { c } from 'ttag';
 
 import { memberThunk } from '@proton/account/member';
 import { getPendingUnprivatizationRequest } from '@proton/account/member/actions';
+import type { ParsedUnprivatizationData } from '@proton/account/members/unprivatization';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Member } from '@proton/shared/lib/interfaces';
-import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import TopBanner from '../../topBanners/TopBanner';
@@ -37,7 +38,7 @@ const UnprivatizationRequestTopBanner = () => {
                 }
             }
         };
-        run();
+        run().catch(noop);
     }, []);
 
     if (!data) {

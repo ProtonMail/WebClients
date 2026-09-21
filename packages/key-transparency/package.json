@@ -4,10 +4,10 @@
     "license": "MIT",
     "author": "ProtonMail",
     "exports": {
-        "./constants": "./lib/constants/index.ts",
         "./helpers": "./lib/helpers/index.ts",
         "./helpers/apiHelpers": "./lib/helpers/apiHelpers.ts",
         "./interfaces": "./lib/interfaces.ts",
+        "./keys": "./lib/keys/index.ts",
         "./shared": "./lib/shared/index.ts",
         "./storage": "./lib/storage/index.ts",
         "./verification": "./lib/verification/index.ts"
@@ -30,7 +30,8 @@
         "asn1js": "^3.0.10",
         "date-fns": "^2.30.0",
         "pkijs": "^3.4.0",
-        "pvutils": "^1.2.0"
+        "pvutils": "^1.2.0",
+        "ttag": "^1.8.12"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",

@@ -1,7 +1,8 @@
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
-import { parseInvitationData } from '@proton/shared/lib/keys/unprivatization';
+
+import { parseInvitationData } from '../members/memberUnprivatization';
 
 export type RoleChangeClassification =
     | {

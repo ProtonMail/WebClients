@@ -1,21 +1,7 @@
 import { ADDRESS_STATUS } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { canonicalizeInternalEmail } from '../helpers/email';
-import {
-    type EnhancedMember,
-    MEMBER_FLAGS,
-    MEMBER_STATE,
-    type Member,
-    type MemberInvitationData,
-    MemberUnprivatizationState,
-} from '../interfaces';
-import { parseInvitationData } from './unprivatization';
-
-const getHasMemberUnprivatization = (
-    member?: Member
-): member is Member & { Unprivatization: NonNullable<Member['Unprivatization']> } => {
-    return Boolean(member && member.Unprivatization);
-};
+import { type EnhancedMember, MEMBER_FLAGS, MEMBER_STATE, type Member } from '../interfaces';
 
 export const getIsMemberSetup = (member?: Member) => {
     return Boolean(member?.PublicKey);
@@ -39,47 +25,6 @@ export const getIsMemberInvited = (
     State: MEMBER_STATE.STATUS_INVITED;
 } => {
     return member?.State === MEMBER_STATE.STATUS_INVITED;
-};
-
-export enum MemberUnprivatizationMode {
-    None = 0,
-    MagicLinkInvite = 1,
-    GSSO = 2,
-    AdminAccess = 3,
-}
-
-export const getMemberUnprivatizationMode = (member?: Member) => {
-    if (getHasMemberUnprivatization(member)) {
-        let invitationData: MemberInvitationData | null = null;
-        try {
-            const InvitationData = member.Unprivatization.InvitationData;
-            invitationData = InvitationData ? parseInvitationData(InvitationData) : null;
-        } catch {}
-        return {
-            makeAdmin: invitationData?.Admin === true,
-            exists: true,
-            pending:
-                member.Unprivatization.State === MemberUnprivatizationState.Pending ||
-                member.Unprivatization.State === MemberUnprivatizationState.Ready,
-            mode: (() => {
-                if (member.SSO) {
-                    return MemberUnprivatizationMode.GSSO;
-                }
-                const isMemberSetup = getIsMemberSetup(member);
-                if (isMemberSetup) {
-                    return MemberUnprivatizationMode.AdminAccess;
-                }
-                return MemberUnprivatizationMode.MagicLinkInvite;
-            })(),
-        };
-    }
-
-    return {
-        makeAdmin: false,
-        exists: false,
-        mode: MemberUnprivatizationMode.None,
-        pending: false,
-    };
 };
 
 /**

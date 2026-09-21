@@ -1,6 +1,5 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressDisabled } from '../helpers/addressStatus';
@@ -15,6 +14,7 @@ import type {
 } from '../interfaces';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
 import { type PrimaryAddressKeysForSigning, getPrimaryAddressKeysForSigning } from './getPrimaryKey';
+import { KT_SKL_SIGNING_CONTEXT } from './signedKeyListContext';
 
 export { ParsedSignedKeyList } from './parsedSignedKeyList';
 

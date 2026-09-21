@@ -1,6 +1,9 @@
-import getPublicKeysEmailHelper from '../../lib/api/helpers/getPublicKeysEmailHelper';
-import { KEY_FLAG, RECIPIENT_TYPES } from '../../lib/constants';
-import { type KTUserContext, KeyTransparencyActivation } from '../../lib/interfaces';
+import { vi } from 'vitest';
+
+import { KEY_FLAG, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { type KTUserContext, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+
+import { getPublicKeysEmailHelper } from '../lib/keys';
 
 const getApiError = ({ message, response = { headers: { get: () => '' } }, data, status }: any) => {
     const error: any = new Error(message);
