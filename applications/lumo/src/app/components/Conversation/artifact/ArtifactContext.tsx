@@ -1,8 +1,12 @@
 import { type ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
+import { getMessageBlocks } from '../../../messageHelpers';
 import type { Message } from '../../../types';
+import { Role } from '../../../types-api';
+import { isArtifactGenerationLoading, isArtifactRevisionLoading } from './artifactGenerationState';
 import type { ArtifactRegistry } from './artifactRegistry';
 import { isArtifactVersionProvisional } from './artifactRegistry';
+import { extractCompleteArtifactsFromBlocks } from './createArtifactTool';
 import type { ParsedArtifact } from './parseArtifacts';
 import { useArtifactRegistry } from './useArtifactRegistry';
 
@@ -28,6 +32,9 @@ interface ArtifactContextValue {
     panelUserClosed: boolean;
     resetPanelUserClosed: () => void;
     isSelectedVersionProvisional: boolean;
+    isArtifactGenerationLoading: boolean;
+    isArtifactRevisionLoading: boolean;
+    isLoadingPanelOpen: boolean;
 }
 
 const ArtifactContext = createContext<ArtifactContextValue | null>(null);
@@ -36,18 +43,76 @@ interface ArtifactProviderProps {
     children: ReactNode;
     conversationId?: string;
     linearChain: Message[];
+    isGenerating?: boolean;
 }
 
-export const ArtifactProvider = ({ children, conversationId, linearChain }: ArtifactProviderProps) => {
+export const ArtifactProvider = ({
+    children,
+    conversationId,
+    linearChain,
+    isGenerating = false,
+}: ArtifactProviderProps) => {
     const registry = useArtifactRegistry(linearChain);
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [selectedVersionIndex, setSelectedVersionIndex] = useState(0);
     const [panelUserClosed, setPanelUserClosed] = useState(false);
     const [isFullscreen, setIsFullscreen] = useState(false);
+    const [isLoadingPanelOpen, setIsLoadingPanelOpen] = useState(false);
     const [seenVersionKeys, setSeenVersionKeys] = useState<Set<string>>(new Set());
     const prevVersionCountsRef = useRef<Record<string, number>>({});
     const selectedVersionIndexRef = useRef(selectedVersionIndex);
     selectedVersionIndexRef.current = selectedVersionIndex;
+
+    const lastMessage = linearChain.at(-1);
+    const parentUserMessage = useMemo(() => {
+        if (!lastMessage?.parentId) {
+            return undefined;
+        }
+
+        const parent = linearChain.find((message) => {
+            return message.id === lastMessage.parentId;
+        });
+
+        if (!parent || parent.role !== Role.User) {
+            return undefined;
+        }
+
+        return parent;
+    }, [lastMessage?.parentId, linearChain]);
+
+    const artifactGenerationLoading = useMemo(() => {
+        if (!lastMessage || lastMessage.role !== Role.Assistant) {
+            return false;
+        }
+
+        const blocks = getMessageBlocks(lastMessage);
+
+        return isArtifactGenerationLoading({
+            isGenerating,
+            isLastMessage: true,
+            completeArtifacts: extractCompleteArtifactsFromBlocks(blocks),
+            blocks,
+            parentUserMessage,
+        });
+    }, [lastMessage, isGenerating, parentUserMessage]);
+
+    const artifactRevisionLoading = useMemo(() => {
+        if (!lastMessage || lastMessage.role !== Role.Assistant) {
+            return false;
+        }
+
+        const blocks = getMessageBlocks(lastMessage);
+
+        return isArtifactRevisionLoading({
+            isGenerating,
+            isLastMessage: true,
+            completeArtifacts: extractCompleteArtifactsFromBlocks(blocks),
+            parentUserMessage,
+            selectedId,
+            selectedVersionIndex,
+            registry,
+        });
+    }, [lastMessage, isGenerating, parentUserMessage, selectedId, selectedVersionIndex, registry]);
 
     const markSeen = useCallback((id: string, versionIndex: number) => {
         const key = `${id}:${versionIndex}`;
@@ -66,6 +131,7 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
         setSelectedVersionIndex(0);
         setPanelUserClosed(true);
         setIsFullscreen(false);
+        setIsLoadingPanelOpen(false);
     }, []);
 
     const enterFullscreen = useCallback(() => {
@@ -86,9 +152,24 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
         setSelectedVersionIndex(0);
         setPanelUserClosed(false);
         setIsFullscreen(false);
+        setIsLoadingPanelOpen(false);
         setSeenVersionKeys(new Set());
         prevVersionCountsRef.current = {};
     }, [conversationId]);
+
+    useEffect(() => {
+        if (!artifactGenerationLoading) {
+            setIsLoadingPanelOpen(false);
+            return;
+        }
+
+        if (panelUserClosed || selectedId !== null) {
+            setIsLoadingPanelOpen(false);
+            return;
+        }
+
+        setIsLoadingPanelOpen(true);
+    }, [artifactGenerationLoading, panelUserClosed, selectedId]);
 
     const openArtifact = useCallback(
         (id: string, versionIndex?: number) => {
@@ -101,6 +182,7 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
             setSelectedId(id);
             setSelectedVersionIndex(index);
             setPanelUserClosed(false);
+            setIsLoadingPanelOpen(false);
             markSeen(id, index);
         },
         [registry, markSeen]
@@ -187,7 +269,7 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
             openArtifact,
             goToVersion,
             hasUnseenRevision,
-            isPanelOpen: selectedArtifact !== null,
+            isPanelOpen: selectedArtifact !== null || isLoadingPanelOpen,
             closePanel,
             isFullscreen,
             enterFullscreen,
@@ -195,6 +277,9 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
             panelUserClosed,
             resetPanelUserClosed,
             isSelectedVersionProvisional,
+            isArtifactGenerationLoading: artifactGenerationLoading,
+            isArtifactRevisionLoading: artifactRevisionLoading,
+            isLoadingPanelOpen,
         }),
         [
             registry,
@@ -204,6 +289,7 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
             openArtifact,
             goToVersion,
             hasUnseenRevision,
+            isLoadingPanelOpen,
             closePanel,
             isFullscreen,
             enterFullscreen,
@@ -211,6 +297,8 @@ export const ArtifactProvider = ({ children, conversationId, linearChain }: Arti
             panelUserClosed,
             resetPanelUserClosed,
             isSelectedVersionProvisional,
+            artifactGenerationLoading,
+            artifactRevisionLoading,
         ]
     );
 

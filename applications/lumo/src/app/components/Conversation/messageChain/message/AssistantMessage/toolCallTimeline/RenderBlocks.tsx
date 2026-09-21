@@ -6,6 +6,8 @@ import { findToolResultForCall } from '../../../../../../messageHelpers';
 import type { ContentBlock, Message, ThinkingTimelineEvent, ToolCallBlock } from '../../../../../../types';
 import { isToolCallBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMarkdownRenderer';
+import { getToolCallNameFromBlock } from '../../../../artifact/artifactGenerationState';
+import { CREATE_ARTIFACT_TOOL_NAME } from '../../../../artifact/createArtifactTool';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
 import { WeatherToolResult, parseWeatherResult } from './WeatherToolResult';
@@ -134,6 +136,15 @@ function toToolCallStep(
     const toolCall = parseToolCallBlock(block);
 
     if (!toolCall) {
+        const toolCallName = getToolCallNameFromBlock(block);
+        if (toolCallName === CREATE_ARTIFACT_TOOL_NAME) {
+            return {
+                type: 'tool_call',
+                toolCall: { name: CREATE_ARTIFACT_TOOL_NAME },
+                isActive: isInProgress,
+            };
+        }
+
         if (isInProgress) {
             return createInProgressToolCallStep(block.content);
         }

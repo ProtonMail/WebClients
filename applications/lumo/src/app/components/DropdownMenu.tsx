@@ -16,6 +16,7 @@ export type DropdownOptions = {
     label: string;
     value?: string;
     icon: React.ReactNode;
+    disabled?: boolean;
     onClick: (e?: React.MouseEvent) => void | Promise<void> | ((option: string) => void) | (() => Promise<void>);
 };
 interface Props {
@@ -49,6 +50,7 @@ const DropdownMenu = ({ options, onToggle, visibleOnHover = false }: Props) => {
                             onClick={(e) => option.onClick(e)}
                             key={index}
                             className="flex flex-row flex-nowrap items-center gap-2 w-full"
+                            disabled={option.disabled}
                             ref={ref}
                         >
                             {option.icon}

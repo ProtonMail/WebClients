@@ -69,6 +69,32 @@ const result = (opts: WebpackEnvArguments): Configuration => {
         );
     }
 
+    // jspdf dynamically imports dompurify from its optional dependency path; yarn hoists
+    // dompurify to the workspace root, so webpack must alias it explicitly.
+    config.resolve = config.resolve ?? {};
+    config.resolve.alias = {
+        ...(typeof config.resolve.alias === 'object' && !Array.isArray(config.resolve.alias)
+            ? config.resolve.alias
+            : {}),
+        dompurify: path.resolve(__dirname, '../../node_modules/dompurify'),
+    };
+
+    // pptxgenjs marks Node built-ins as false in its `browser` field using `node:fs` / `node:https`
+    // keys. Webpack 5 does not apply those stubs and instead tries to resolve the `node:` URI
+    // scheme, which breaks dev-server reload when the lazy pptxgenjs chunk is compiled.
+    config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
+            resource.request = resource.request.replace(/^node:/, '');
+        })
+    );
+    config.resolve.fallback = {
+        ...(typeof config.resolve.fallback === 'object' && !Array.isArray(config.resolve.fallback)
+            ? config.resolve.fallback
+            : {}),
+        fs: false,
+        https: false,
+    };
+
     // @ts-ignore
     config.module.rules.push({
         test: /\.worker$/,

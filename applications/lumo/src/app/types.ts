@@ -490,6 +490,12 @@ export type MessagePriv = {
     /** When set, the user message was sent from the artifact panel selection UI. */
     artifactAction?: ArtifactActionMeta;
 
+    /** True when the user sent this message with Create Artifact mode active in the composer. */
+    artifactCreateModeActive?: boolean;
+
+    /** Artifact id the user was viewing (latest version) in the panel when this message was sent. */
+    artifactRevisionTargetId?: string;
+
     /**
      * When set, this is a synthetic, non-generating message representing the user manually
      * editing an artifact's content directly (not via the LLM). Rendered as a clickable
@@ -594,6 +600,8 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null)) &&
         (value.usage === undefined || (typeof value.usage === 'object' && value.usage !== null)) &&
         (value.artifactAction === undefined || isArtifactActionMeta(value.artifactAction)) &&
+        (value.artifactCreateModeActive === undefined || typeof value.artifactCreateModeActive === 'boolean') &&
+        (value.artifactRevisionTargetId === undefined || typeof value.artifactRevisionTargetId === 'string') &&
         (value.artifactManualEdit === undefined || isArtifactManualEditMeta(value.artifactManualEdit))
     );
 }
@@ -620,6 +628,8 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         requestedModel,
         compaction,
         artifactAction,
+        artifactCreateModeActive,
+        artifactRevisionTargetId,
         artifactManualEdit,
         usage,
     } = m;
@@ -639,6 +649,8 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         requestedModel,
         compaction,
         artifactAction,
+        artifactCreateModeActive,
+        artifactRevisionTargetId,
         artifactManualEdit,
         usage,
     };
@@ -682,6 +694,9 @@ export function cleanMessage(message: Message): Message {
         modelID,
         requestedModel,
         compaction,
+        artifactAction,
+        artifactCreateModeActive,
+        artifactRevisionTargetId,
         artifactManualEdit,
         usage,
     } = message;
@@ -707,6 +722,9 @@ export function cleanMessage(message: Message): Message {
         ...(modelID !== undefined && { modelID }),
         ...(requestedModel !== undefined && { requestedModel }),
         ...(compaction !== undefined && { compaction }),
+        ...(artifactAction !== undefined && { artifactAction }),
+        ...(artifactCreateModeActive !== undefined && { artifactCreateModeActive }),
+        ...(artifactRevisionTargetId !== undefined && { artifactRevisionTargetId }),
         ...(artifactManualEdit !== undefined && { artifactManualEdit }),
         ...(usage !== undefined && { usage }),
     };
@@ -761,6 +779,8 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.requestedModel === undefined &&
         value.compaction === undefined &&
         value.artifactAction === undefined &&
+        value.artifactCreateModeActive === undefined &&
+        value.artifactRevisionTargetId === undefined &&
         value.usage === undefined
     );
 }
@@ -1284,6 +1304,7 @@ export interface ActionParams {
     imageOptions?: ImageGenerationOptions;
     artifactModeActive?: boolean;
     artifactAction?: ArtifactActionMeta;
+    artifactRevisionTargetId?: string;
     /** True when the message was auto-sent from a ?q= URL parameter. */
     isFromQueryParam?: boolean;
 }

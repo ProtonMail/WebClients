@@ -19,6 +19,7 @@ import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
 import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
 import { sendUpgradeButtonClickedEvent } from '../../util/telemetry';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
+import { NewLabel } from '../NewLabel';
 import { ConnectorList } from './ConnectorList';
 import { MenuDropdown, type MenuDropdownProps, MenuItem } from './components/MenuDropdown';
 
@@ -28,6 +29,7 @@ interface ToolMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anch
     onClickCreateImageOption: () => void;
     onClickCreateArtifactOption: () => void;
     canUseAgents?: boolean;
+    showArtifactNewLabel?: boolean;
 }
 
 export const ToolMenuDropdown = ({
@@ -37,6 +39,7 @@ export const ToolMenuDropdown = ({
     onClickCreateImageOption,
     onClickCreateArtifactOption,
     canUseAgents = false,
+    showArtifactNewLabel = false,
 }: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const isGuest = useIsGuest();
@@ -112,6 +115,7 @@ export const ToolMenuDropdown = ({
             icon: <LumoIcon name="FileText" size={16} />,
             getLabel: () => c('collider_2025: Action').t`Create artifact`,
             getDescription: undefined,
+            badge: showArtifactNewLabel ? <NewLabel /> : undefined,
             onClick: onClickCreateArtifactOption,
             onClose: onClose,
             canShow: isArtifactsViewFlagEnabled,
