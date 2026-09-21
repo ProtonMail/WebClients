@@ -9956,6 +9956,49 @@
       ],
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Logger hjelper oss å forstå hva som skjedde før problemet oppstod. De inkluderer apphandlinger og feilmeldinger, men ikke noe meldingsinnhold."
+      ],
+      "Edit ${ contact }": [
+        "Rediger ${ contact }"
+      ],
+      "Edit a contact": [
+        "Rediger en kontakt"
+      ],
+      "Edit contact": [
+        "Rediger kontakt"
+      ],
+      "No draft open": [
+        "Ingen utkast åpne"
+      ],
+      "Opened a draft": [
+        "Åpnet et utkast"
+      ],
+      "Read ${ count } open draft": [
+        "Leste ${ count } åpent utkast",
+        "Leste ${ count } åpne utkast"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Lese utkast \"${ subject }\""
+      ],
+      "Read the open draft": [
+        "Lese det åpne utkastet"
+      ],
+      "Readdressed the draft": [
+        "Endret tilnærmingen på utkastet"
+      ],
+      "Remove signature": [
+        "Fjerne signatur"
+      ],
+      "Rename label": [
+        "Endre etikettnavn"
+      ],
+      "Rename this label": [
+        "Endre navnet på denne etiketten"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Skrev om utkastet og endret tilnærmingen"
+      ],
+      "Rewrote the draft": [
+        "Skrev om utkastet"
       ]
     },
     "info": {
@@ -18264,6 +18307,16 @@
     "q3campaign2026: Info, Family, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Endre navnet på mappen ${ folder } til..."
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Endre navnet på etiketten ${ label } til..."
       ]
     }
   }

@@ -9984,6 +9984,99 @@
       ],
       "Rewrote the draft": [
         "Omskrev udkastet"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "En hurtig gennemgang af hvad jeg kan hjælpe dig med i dine e-mails, fra at finde gamle mails til at skrive udkast, og hvad jeg ikke kan."
+      ],
+      "Draft a ${ kind }": [
+        "Skriv udkast af ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Skriv udkast af ${ kind } til ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Skriv udkast af ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Skriv udkast af ${ kind } til ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "Skrev udkast af ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Skrev udkast af ${ kind }"
+      ],
+      "Edit ${ contact }": [
+        "Rediger ${ contact }"
+      ],
+      "Edit a contact": [
+        "Rediger en kontakt"
+      ],
+      "Edit contact": [
+        "Rediger kontakt"
+      ],
+      "forward": [
+        "videresend"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Hej Lumo, tag et kig på hvad jeg får mest af i min indbakke, og de mapper og filtre jeg allerede har. Kom med nogle anbefalinger til at holde tingene organiseret: hvad der kan ændres af det jeg allerede har, og hvad der er værd at tilføje. Fortæl mig planen først, og lad være med at flytte noget medmindre jeg siger det."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hej Lumo, jeg kommer til at være væk og vil gerne indstille et automatisk svar. Bed mig om datoerne og hvad der skal stå, og vis mig så beskeden før du slår den til."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Hej Lumo, søg efter mine e-mails de seneste 7 dage, og fortæl mig hvilke rent faktisk kræver at jeg svarer. Giv mig én sætning om hvad hver enkelt spørger om, og udelad alt der kan ignoreres."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hej Lumo, vis mig hvordan du kan hjælpe mig med mine e-mails. Hvilke ting kan jeg bede dig om at gøre, og hvad kan du ikke hjælpe mig med?"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Jeg gennemgår e-mails indenfor den sidste uge, og henter dem der rent faktisk kræver et svar, så du kan tage dig af det i ét hug."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Jeg kigger på hvad du får mest af, hvilke mapper og filtre du allerede har, og derefter anbefaler jeg hvad der kan forbedres og mangler. Intet bliver flyttet medmindre du siger det."
+      ],
+      "open draft": [
+        "åbn udkast"
+      ],
+      "Readdressed": [
+        "Rettede adressen"
+      ],
+      "Remove signature": [
+        "Fjern signatur"
+      ],
+      "Rename label": [
+        "Omdøb etiket"
+      ],
+      "Rename this label": [
+        "Omdøb denne etiket"
+      ],
+      "reply": [
+        "svar"
+      ],
+      "reply all": [
+        "svar alle"
+      ],
+      "Revise the ${ draft }": [
+        "Omskriv ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Omskrev og rettede adressen"
+      ],
+      "Set my out of office": [
+        "Indstil automatisk svar"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Fortæl mig hvornår du er væk og hvad der skal stå. Du får hele svaret at se før det bliver gemt."
+      ],
+      "Tidy up my inbox": [
+        "Ryd op i min indbakke"
+      ],
+      "What can you do?": [
+        "Hvad kan du?"
+      ],
+      "What needs handling?": [
+        "Hvad skal håndteres?"
       ]
     },
     "info": {
@@ -10238,6 +10331,12 @@
       ],
       "Star": [
         "Stjerne"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Luk ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Åbn ${ LUMO_SHORT_APP_NAME } / fokuser input"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10274,6 +10373,9 @@
       ],
       "Message shortcuts": [
         "Beskedgenveje"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME }-genveje"
       ]
     },
     "Label": {
@@ -11308,6 +11410,12 @@
       ],
       "Display name": [
         "Visningsnavn"
+      ],
+      "Cc": [
+        "Cc"
+      ],
+      "To": [
+        "Til"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13478,6 +13586,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du vil kunne bruge ${ planTitle } indtil prøveversionen udløber, uden beregning."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Tilføj en betalingsmetode** for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Annuller når som helst før da**. Du vil kunne bruge ${ planTitle } indtil prøveperioden slutter, uden beregning."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Hvis du forsætter efter din prøveperiode,** så kan du stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Så snart dit abonnement starter...** kan du stadig annullere indenfor 30 dage og få en forholdsmæssig refusion."
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
+      "If you continue after your trial,": [
+        "Hvis du forsætter efter din prøveperiode,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "så kan du annullere inden for 30 dage og få en forholdsmæssig refusion."
       ]
     },
     "Option": {
@@ -18316,6 +18448,16 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Omdøb ${ folder } til..."
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Omdøb ${ label } til..."
       ]
     }
   }

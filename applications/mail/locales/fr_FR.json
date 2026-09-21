@@ -9714,6 +9714,99 @@
       ],
       "Rewrote the draft": [
         "Réécriture du brouillon"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Une démonstration rapide de l'aide que je peux apporter à la gestion de votre messagerie, de la recherche d'anciens messages à l'ébauche de réponses, et mes limites."
+      ],
+      "Draft a ${ kind }": [
+        "Rédiger un ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Rédiger un ${ kind } pour ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Rédiger un ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Rédiger un ${ kind } pour ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "A rédigé un ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "A rédigé un ${ kind }"
+      ],
+      "Edit ${ contact }": [
+        "Modifier ${ contact }"
+      ],
+      "Edit a contact": [
+        "Modifier un contact"
+      ],
+      "Edit contact": [
+        "Modifier le contact"
+      ],
+      "forward": [
+        "transférer"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Salut Lumo, regardes ce que je reçois le plus dans la messagerie, ainsi que dans les dossiers et les filtres. Puis suggère-moi comment la garder organisée : lesquels changer et quoi de nouveau à ajouter. Expliques moi l'idée avant, et ne changes rien avant mon accord."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Salut Lumo, je vais être indisponible et je veux configurer une réponse automatique d'absence. Demandes moi les dates et le contenu, puis montres moi le message avant de l'activer."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Salut Lumo, recherches mes messages des 7 derniers jours et dis-moi lesquels ont vraiment besoin d'une réponse de ma part. Résume-les en une ligne chacun, et exclus ce qui n'est pas essentiel."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Salut Lumo, expliques moi comment tu peux m'aider avec ma messagerie. Quels types de tâches puis-je te demander, et quelles sont les limites de ton aide ?"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Je vais passer en revue les messages de la semaine dernière et identifier ceux qui nécessitent vraiment une réponse, pour que tu puisses les traiter d'un coup."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Je regarderai les messages les plus fréquents, ainsi que les dossiers et filtres existants, puis je proposerai des améliorations et identifierai ce qui manque. Rien ne sera déplacé avant votre accord."
+      ],
+      "open draft": [
+        "brouillon ouvert"
+      ],
+      "Readdressed": [
+        "Réadressé"
+      ],
+      "Remove signature": [
+        "Retirer la signature"
+      ],
+      "Rename label": [
+        "Modifier le nom du label"
+      ],
+      "Rename this label": [
+        "Modifier le nom de ce label"
+      ],
+      "reply": [
+        "répondre"
+      ],
+      "reply all": [
+        "répondre à tous"
+      ],
+      "Revise the ${ draft }": [
+        "Réviser le ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Réécrit et réadressé"
+      ],
+      "Set my out of office": [
+        "Configures mon message d'absence"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Dites-moi quand vous serez absent et qu'aimeriez vous dire, et vous verrez l'ensemble avant validation."
+      ],
+      "Tidy up my inbox": [
+        "Organises ma boite de réception"
+      ],
+      "What can you do?": [
+        "Que pouvez-vous faire ?"
+      ],
+      "What needs handling?": [
+        "Que faut-il traiter ?"
       ]
     },
     "info": {
@@ -9968,6 +10061,12 @@
       ],
       "Star": [
         "Favori"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Fermer ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Ouvrir ${ LUMO_SHORT_APP_NAME } / Activer le champ de saisie"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10004,6 +10103,9 @@
       ],
       "Message shortcuts": [
         "Raccourcis des messages"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Raccourcis ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label": {
@@ -10981,6 +11083,12 @@
       ],
       "Display name": [
         "Nom d'affichage"
+      ],
+      "Cc": [
+        "Cc"
+      ],
+      "To": [
+        "Pour"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12881,6 +12989,9 @@
       ],
       "Your subscription renews soon": [
         "Votre abonnement se renouvelle bientôt."
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Dernière chance pour obtenir votre premier mois de ${ plan } à ce prix."
       ]
     },
     "Offer fearue": {
@@ -12927,6 +13038,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Un nombre illimité d'alias pour protéger votre identité"
+      ],
+      "Short @pm.me address": [
+        "Adresse courte @pm.me"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13151,6 +13265,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la version d'essai, et ce, gratuitement."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Ajoutez un moyen de paiement** pour continuer à utiliser toutes les fonctionnalités après votre période d'essai."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Résiliez à tout moment avant l'échéance.** Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la période d'essai, gratuitement."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si vous continuez après votre période d'essai, ** vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Une fois que votre abonnement complet débuté... ** Vous pouvez toujours annuler dans les 30 jours et recevoir un remboursement au prorata."
+      ],
+      "Add a payment method": [
+        "Ajouter un moyen de paiement"
+      ],
+      "If you continue after your trial,": [
+        "Si vous poursuivez après votre période d'essai,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "Pour continuer d'utiliser toutes les fonctionnalités après la fin de votre période d'essai."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
       ]
     },
     "Option": {
@@ -17959,6 +18097,16 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Modifier le nom de ${ folder } en…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Modifier le nom de ${ label } en…"
       ]
     }
   }
