@@ -69,6 +69,7 @@ export enum CommonFeatureFlag {
     PassSimpleLoginLifetimeOffer = 'PassSimpleLoginLifetimeOffer',
     MaxContactsImport = 'MaxContactsImport',
     EventLoopInterval = 'EventLoopInterval',
+    PingOMatic = 'PingOMatic',
     DesktopDownloadApiEnabled = 'DesktopDownloadApiEnabled',
     LogWasmLoadingDisabled = 'LogWasmLoadingDisabled',
     PasswordRemindersOrg = 'PasswordRemindersOrg',

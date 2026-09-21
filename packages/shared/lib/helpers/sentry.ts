@@ -383,6 +383,7 @@ export enum SentryCommonInitiatives {
     POST_SUBSCRIPTION = 'post-subscription',
     ENCRYPTED_SEARCH = 'encrypted-search',
     CONTACT_IMPORT = 'contact-import',
+    EVENT_NOTIFIER = 'event-notifier',
 }
 
 export enum SentryCalendarInitiatives {
