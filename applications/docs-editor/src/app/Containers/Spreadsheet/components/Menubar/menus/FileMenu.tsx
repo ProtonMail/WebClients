@@ -6,7 +6,6 @@ import { c } from 'ttag'
 import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
 import { CircleLoader } from '../../CircleLoader/CircleLoader'
-import { useFeatureFlag } from '../../../feature-flags'
 import { useSheetsDependencies, type SheetsExportFormat } from '../../../SheetsDependenciesProvider'
 import { useUI } from '../../../ui-store'
 import { VersionNumber } from '../../VersionNumber/VersionNumber'
@@ -284,7 +283,7 @@ function DownloadSubmenu({
   download: (format: SheetsExportFormat) => Promise<void>
   triggerMenuAction: (action: MenuAction) => Promise<void>
 }) {
-  const isSheetsODSExportEnabled = useFeatureFlag('SheetsODSExportEnabled')
+  const { featureFlags } = useSheetsDependencies()
   const triggerDownload = (format: SheetsExportFormat) => triggerMenuAction(() => download(format))
 
   return (
@@ -300,7 +299,7 @@ function DownloadSubmenu({
         >
           {s('Microsoft Excel (.xlsx)')}
         </UI.MenuItem>
-        {isSheetsODSExportEnabled && (
+        {featureFlags.SheetsODSExportEnabled && (
           <UI.MenuItem
             onClick={() => {
               void triggerDownload('ods')
