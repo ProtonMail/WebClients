@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { ArtifactPreviewErrorBoundary } from './ArtifactPreviewErrorBoundary';
 import { CodeRenderer } from './artifactRenderers';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
@@ -13,22 +15,31 @@ interface ArtifactRendererProps {
     webpageViewMode?: WebpageViewMode;
 }
 
-const ArtifactRenderer = ({ artifact, showLineNumbers, webpageViewMode }: ArtifactRendererProps) => {
+const ArtifactRenderer = memo(function ArtifactRenderer({
+    artifact,
+    showLineNumbers,
+    webpageViewMode,
+}: ArtifactRendererProps) {
     if (artifact.type === 'webpage' && webpageViewMode === 'code') {
         return <CodeRenderer artifact={{ ...artifact, language: 'html' }} showLineNumbers={showLineNumbers} />;
     }
     const { Renderer } = ARTIFACT_TYPE_CONFIG[artifact.type];
     return <Renderer artifact={artifact} showLineNumbers={showLineNumbers} />;
-};
+});
 
 interface ArtifactContentProps extends ArtifactRendererProps {
     resetKey: string;
 }
 
-export const ArtifactContent = ({ artifact, showLineNumbers, webpageViewMode, resetKey }: ArtifactContentProps) => {
+export const ArtifactContent = memo(function ArtifactContent({
+    artifact,
+    showLineNumbers,
+    webpageViewMode,
+    resetKey,
+}: ArtifactContentProps) {
     return (
         <ArtifactPreviewErrorBoundary resetKey={resetKey} content={artifact.content}>
             <ArtifactRenderer artifact={artifact} showLineNumbers={showLineNumbers} webpageViewMode={webpageViewMode} />
         </ArtifactPreviewErrorBoundary>
     );
-};
+});

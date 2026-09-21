@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useMemo, useState } from 'react';
+import { Suspense, lazy, memo, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -57,7 +57,12 @@ interface PresentationIframeContentProps {
     themeCss: string;
 }
 
-function PresentationIframeContent({ artifact, revealJs, revealCss, themeCss }: PresentationIframeContentProps) {
+const PresentationIframeContent = memo(function PresentationIframeContent({
+    artifact,
+    revealJs,
+    revealCss,
+    themeCss,
+}: PresentationIframeContentProps) {
     // Chart placeholders (see presentationCharts.ts) need an async pre-render pass to swap them
     // for inert SVG before the deck is templated into the sandboxed iframe. Most decks have no
     // charts, so that pass is skipped entirely (synchronous passthrough) rather than always paying
@@ -123,7 +128,7 @@ function PresentationIframeContent({ artifact, revealJs, revealCss, themeCss }: 
             />
         </div>
     );
-}
+});
 
 // Lazy-loaded together since they're only ever used together (~176KB raw, smaller gzipped) —
 // only fetched once a presentation artifact is actually opened, same pattern as the syntax
@@ -145,7 +150,7 @@ const LazyPresentationIframe = lazy(() =>
     }))
 );
 
-export const PresentationRenderer = ({ artifact }: ArtifactRendererProps) => {
+export const PresentationRenderer = memo(function PresentationRenderer({ artifact }: ArtifactRendererProps) {
     if (!artifact.content) {
         return <p className="color-hint text-sm p-4">{c('collider_2025:Info').t`No content generated`}</p>;
     }
@@ -155,4 +160,4 @@ export const PresentationRenderer = ({ artifact }: ArtifactRendererProps) => {
             <LazyPresentationIframe artifact={artifact} />
         </Suspense>
     );
-};
+});
