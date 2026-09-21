@@ -73,6 +73,7 @@ export interface ParticipantTrackSettingsInfoData {
 export interface MeetCoreClient {
     ping(): Promise<bigint>;
     joinMeetingWithAccessToken(...args: Parameters<App['joinMeetingWithAccessToken']>): Promise<void>;
+    joinMeeting2(...args: Parameters<App['joinMeeting2']>): Promise<void>;
     joinMeetingWithAccessTokenWithSwitchJoinType(
         ...args: Parameters<App['joinMeetingWithAccessTokenWithSwitchJoinType']>
     ): Promise<void>;
