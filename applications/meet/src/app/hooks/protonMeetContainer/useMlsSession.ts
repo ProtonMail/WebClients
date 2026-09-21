@@ -8,6 +8,7 @@ import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setMlsRetrying } from '@proton/meet/store/slices/connectionSlice';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { CAPTIONS_AGENT_RETRY_DELAYS_MS } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -78,6 +79,8 @@ export const useMlsSession = ({
     const liveCaptionsEnabled = useLiveCaptionsFeatureEnabled();
     const liveCaptionsEnabledRef = useRef(liveCaptionsEnabled);
     liveCaptionsEnabledRef.current = liveCaptionsEnabled;
+
+    const isMeetNewJoinFunctionsEnabled = useFlag('MeetNewJoinFunctions');
 
     const agentAdmissionRef = useRef<AgentAdmissionController | null>(null);
 
@@ -213,14 +216,28 @@ export const useMlsSession = ({
 
         try {
             const sessionId = authentication.hasSession() ? authentication.getUID() : null;
-            await meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType(
-                accessToken,
-                meetingLinkName,
-                meetingPassword,
-                sessionId,
-                true,
-                isWaitingRoom
-            );
+            if (isMeetNewJoinFunctionsEnabled) {
+                // eslint-disable-next-line no-console
+                console.log('Joining meeting with join function v2');
+                await meetCoreClient.joinMeeting2(
+                    accessToken,
+                    meetingLinkName,
+                    meetingPassword,
+                    sessionId,
+                    isWaitingRoom
+                );
+            } else {
+                // eslint-disable-next-line no-console
+                console.log('Joining meeting with join function v1');
+                await meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType(
+                    accessToken,
+                    meetingLinkName,
+                    meetingPassword,
+                    sessionId,
+                    true,
+                    isWaitingRoom
+                );
+            }
 
             await meetCoreClient.setMlsGroupUpdateHandler();
             await meetCoreClient.setLiveKitAdminChangeHandler();
