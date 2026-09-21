@@ -10140,10 +10140,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@proton-meet/proton-meet-core@npm:1.3.9":
-  version: 1.3.9
-  resolution: "@proton-meet/proton-meet-core@npm:1.3.9"
-  checksum: 10/a5b85c7b3ed8f30df3ee03585f9d99a023e83453f5dab5ba4cd89a47bdac958c7a1135a6185323e58dda303b4ca14eb8155ac46dbf5c31fad33bafd74fe79b22
+"@proton-meet/proton-meet-core@npm:1.3.11":
+  version: 1.3.11
+  resolution: "@proton-meet/proton-meet-core@npm:1.3.11"
+  checksum: 10/2756b64ca98e3d4db9bd77ed6c9065dd3d38dcb41336e69ba37a40cb61e7a579d3e17d6c5d433af1b88dd23bcae2b6dcc611c608f054d6429091c9cf6e081b27
   languageName: node
   linkType: hard
 
@@ -40607,7 +40607,7 @@ __metadata:
     "@livekit/krisp-noise-filter": "npm:^0.4.4"
     "@livekit/track-processors": "npm:^0.8.0"
     "@mediapipe/tasks-vision": "npm:^0.10.35"
-    "@proton-meet/proton-meet-core": "npm:1.3.9"
+    "@proton-meet/proton-meet-core": "npm:1.3.11"
     "@proton/account": "workspace:^"
     "@proton/app-context": "workspace:packages/app-context"
     "@proton/atoms": "workspace:packages/atoms"
