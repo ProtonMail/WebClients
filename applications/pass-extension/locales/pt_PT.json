@@ -154,6 +154,9 @@
       "Close navigation": [
         "Fechar navegação"
       ],
+      "Collapse": [
+        "Fechar"
+      ],
       "Configure": [
         "Configurar"
       ],
@@ -235,6 +238,9 @@
       "Create contact": [
         "Criar um contacto"
       ],
+      "Create folder": [
+        "Criar uma pasta"
+      ],
       "Create identity": [
         "Criar uma identidade"
       ],
@@ -243,6 +249,9 @@
       ],
       "Create login": [
         "Criar um início de sessão"
+      ],
+      "Create new folder": [
+        "Criar uma pasta"
       ],
       "Create new login": [
         "Criar um início de sessão"
@@ -342,6 +351,9 @@
       ],
       "Exclude from monitoring": [
         "Excluir da monitorização"
+      ],
+      "Expand": [
+        "Expandir"
       ],
       "Export": [
         "Exportar"
@@ -484,8 +496,8 @@
       "Move all items": [
         "Mover todos os itens"
       ],
-      "Move to another vault": [
-        "Mover para outro cofre"
+      "Move to": [
+        "Mover para"
       ],
       "Move to trash": [
         "Mover para o lixo"
@@ -570,6 +582,9 @@
       ],
       "Remove member": [
         "Remover o membro"
+      ],
+      "Rename": [
+        "Renomear"
       ],
       "Request a feature": [
         "Pedir uma funcionalidade"
@@ -1104,6 +1119,9 @@
       ],
       "Failed to create domain": [
         "Erro ao criar o domínio"
+      ],
+      "Failed to create folder": [
+        "Erro na criação da pasta"
       ],
       "Failed to create new mailbox": [
         "Erro ao criar a nova caixa de correio"
@@ -1866,9 +1884,6 @@
       ],
       "Creating alias...": [
         "A criar o alias..."
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "Um ficheiro CSV oferece um formato conveniente para visualizar os seus dados. No entanto, devido à sua simplicidade, alguns dados não serão incluídos (campos personalizados, chaves de acesso. .). Para uma exportação completa, recomendamos utilizar um formato diferente."
       ],
       "Current version": [
         "Versão atual"
@@ -3432,6 +3447,9 @@
       "Floor, apartment, building": [
         "Andar, apartamento, edifício"
       ],
+      "Folder": [
+        "Pasta"
+      ],
       "For a one-off sharing": [
         "Para partilha única"
       ],
@@ -4472,9 +4490,6 @@
       "Please describe the problem and include any error messages": [
         "Descreva o problema e inclua quaisquer mensagens de erro."
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Introduza novamente \"${ vaultName }\" para confirmar a eliminação."
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Pesquisar ${ pluralItemType } em ${ vaultName }"
       ],
@@ -4827,9 +4842,6 @@
       "Delete this item?": [
         "Eliminar este item?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Eliminar o cofre «${ vaultName }»?"
-      ],
       "Did you know?": [
         "Sabia?"
       ],
@@ -4883,6 +4895,9 @@
       ],
       "Fill password": [
         "Preencher a palavra-passe"
+      ],
+      "Folder options": [
+        "Opções de pasta"
       ],
       "Get Started": [
         "Começar"
@@ -4971,19 +4986,12 @@
       "Modified": [
         "Modificado"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Mover ${ count } item para o ${ vaultName }",
-        "Mover ${ count } itens para o ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Mover ${ trashedItemsCount } item para o lixo?",
         "Mover ${ trashedItemsCount } itens para o lixo?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Mover todos os itens para «${ vaultName }»?"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "Mover o item para «${ vaultName }»"
       ],
       "MX record": [
         "Registo MX"
@@ -5522,9 +5530,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Não é possível iniciar sessão no ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "O cofre «${ vaultName }» e todos os seus itens serão eliminados permanentemente. Não é possível anular esta ação."
       ],
       "Vault name is required": [
         "O nome do cofre é obrigatório."
