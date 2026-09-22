@@ -6,10 +6,9 @@ interface UseArtifactModeResult {
 }
 
 /**
- * Explicit, user-initiated "Create artifact" mode for the composer, mirroring
- * `useImageGenerationMode`. Entering it is the sole trigger for a *new* artifact —
- * revisions of an already-existing artifact are handled separately, based on
- * conversation state rather than this toggle (see `artifactToolMode` in helper.ts).
+ * Explicit, user-initiated "Create artifact" mode for the composer (phase 2).
+ * Persisted availability is handled by `ArtifactCreationProvider`; this hook is
+ * reserved for a future one-shot explicit mode with placeholders.
  */
 export const useArtifactMode = (): UseArtifactModeResult => {
     const [isArtifactMode, setIsArtifactMode] = useState(false);

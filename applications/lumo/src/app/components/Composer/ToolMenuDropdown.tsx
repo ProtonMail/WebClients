@@ -10,6 +10,7 @@ import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/const
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
+import { useArtifactCreation } from '../../providers/ArtifactCreationProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch } from '../../redux/hooks';
@@ -27,9 +28,9 @@ import './ToolMenuDropdown.scss';
 
 interface ToolMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anchorRef' | 'onClose'> {
     onClickCreateImageOption: () => void;
-    onClickCreateArtifactOption: () => void;
     canUseAgents?: boolean;
     showArtifactNewLabel?: boolean;
+    onArtifactCreationToggle?: () => void;
 }
 
 export const ToolMenuDropdown = ({
@@ -37,11 +38,12 @@ export const ToolMenuDropdown = ({
     anchorRef,
     onClose,
     onClickCreateImageOption,
-    onClickCreateArtifactOption,
     canUseAgents = false,
     showArtifactNewLabel = false,
+    onArtifactCreationToggle,
 }: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
+    const { isArtifactCreationEnabled, handleArtifactCreationToggle } = useArtifactCreation();
     const isGuest = useIsGuest();
     const {
         imageTools: isImageToolsFlagEnabled,
@@ -69,6 +71,15 @@ export const ToolMenuDropdown = ({
             handleWebSearchButtonClick();
         },
         [handleWebSearchButtonClick]
+    );
+
+    const handleArtifactCreationToggleChange = useCallback(
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            e.stopPropagation();
+            onArtifactCreationToggle?.();
+            handleArtifactCreationToggle();
+        },
+        [handleArtifactCreationToggle, onArtifactCreationToggle]
     );
 
     const handleCreateImageClick = useCallback(() => {
@@ -112,16 +123,6 @@ export const ToolMenuDropdown = ({
             isDisabled: imageLimitExhausted,
         },
         {
-            icon: <LumoIcon name="FileText" size={16} />,
-            getLabel: () => c('collider_2025: Action').t`Create artifact`,
-            getDescription: undefined,
-            badge: showArtifactNewLabel ? <NewLabel /> : undefined,
-            onClick: onClickCreateArtifactOption,
-            onClose: onClose,
-            canShow: isArtifactsViewFlagEnabled,
-            isDisabled: false,
-        },
-        {
             icon: <LumoIcon name="Bot" size={16} />,
             getLabel: () => c('collider_2025: Action').t`Custom ${LUMO_SHORT_APP_NAME}s`,
             getDescription: isGuest ? () => c('collider_2025:Placeholder').t`Sign in required` : undefined,
@@ -135,6 +136,7 @@ export const ToolMenuDropdown = ({
     const visibleToolMenuItems = toolMenuItems.filter((item) => item.canShow);
     const showImageUpsellFooter =
         imageLimitExhausted && !hasLumoPlus && Boolean(imageUpsellConfig?.onUpgrade || imageUpsellConfig?.path);
+    const showToolToggles = isToolsFlagEnabled || isArtifactsViewFlagEnabled;
 
     return (
         <MenuDropdown
@@ -163,7 +165,7 @@ export const ToolMenuDropdown = ({
                         </div>
                     ))}
 
-                    {visibleToolMenuItems.length > 1 && (
+                    {visibleToolMenuItems.length > 0 && showToolToggles && (
                         <hr className="my-1 w-custom mx-auto" style={{ '--w-custom': '90%' }} />
                     )}
 
@@ -178,6 +180,25 @@ export const ToolMenuDropdown = ({
                                 path={imageUpsellConfig?.path}
                                 onClick={imageUpsellOnClick}
                             />
+                        </div>
+                    )}
+
+                    {isArtifactsViewFlagEnabled && (
+                        /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
+                        <div
+                            className="flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="flex items-center gap-3">
+                                <LumoIcon name="FileText" size={16} />
+                                <div className="flex flex-column">
+                                    <span className="text-sm font-medium flex items-center gap-2">
+                                        {c('collider_2025: Action').t`Create artifact`}
+                                        {showArtifactNewLabel ? <NewLabel /> : null}
+                                    </span>
+                                </div>
+                            </div>
+                            <Toggle checked={isArtifactCreationEnabled} onChange={handleArtifactCreationToggleChange} />
                         </div>
                     )}
 
