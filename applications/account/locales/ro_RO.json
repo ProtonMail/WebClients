@@ -1523,6 +1523,9 @@
       "No, thanks": [
         "Nu, mulțumesc"
       ],
+      "Not now": [
+        "Nu acum"
+      ],
       "OK": [
         "OK"
       ],
@@ -5551,7 +5554,7 @@
         "Legătura web pentru deconectare de pe toate dispozitivele a expirat. Încercați să vă reconectați pentru a primi una nouă."
       ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
-        "Acest lucru vă permite să redobândiți accesul la cont ${ BRAND_NAME }, dar nu vă recuperează datele criptate."
+        "Acest lucru vă permite să redobândiți accesul la contul ${ BRAND_NAME }, dar nu vă recuperează datele criptate."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
@@ -14864,6 +14867,9 @@
       "Cancel / close": [
         "Anulare/Închidere"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Închidere ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Închidere ciornă"
       ],
@@ -14975,6 +14981,9 @@
       "Next period": [
         "Perioada următoare"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Deschidere ${ LUMO_SHORT_APP_NAME } / focalizare pe câmpul de introducere"
+      ],
       "Open command panel": [
         "Deschidere panou de comandă"
       ],
@@ -15047,6 +15056,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Scurtături ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Combinații de taste acțiuni"
       ],
@@ -19733,6 +19745,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Ultima șansă pentru a obține 80% reducere în prima lună pentru ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Ultima șansă de a obține prima lună de ${ plan } la acest preț."
+      ],
       "Last day to save": [
         "Ultima zi de economisire"
       ],
@@ -19815,6 +19830,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Adresă scurtă @pm.me"
+      ],
       "Storage": [
         "Spațiu"
       ],
@@ -19845,11 +19863,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " vizitați ${ helpCenterLink } sau contactați ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adăugați o metodă de plată** pentru a continua să utilizați toate funcțiile după expirarea perioadei de probare."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puteți anula oricând înainte de acel moment.** Veți putea utiliza ${ planTitle } gratuit până la expirarea perioadei de probare."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Dacă alegeți să continuați după perioada de probare,** puteți anula în termen de 30 de zile și puteți primi o rambursare proporțională."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**După ce începe abonamentul complet,** încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Anulați oricând înainte de ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Anulați oricând înainte de această dată."
       ],
       "contact our support team": [
         "contactați asistența noastră"
@@ -19863,17 +19893,23 @@
       "help center": [
         "centru de ajutor"
       ],
+      "If you continue after your trial,": [
+        "Dacă mai continuați după perioada de probare,"
+      ],
       "If you need help,": [
         "Dacă aveți nevoie de ajutor,"
       ],
       "Once your full subscription starts...": [
         "După ce începe abonamentul complet..."
       ],
+      "to keep using all of the features after your trial ends.": [
+        "pentru a continua să utilizații toate funcțiile după expirarea perioadei de probare."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Puteți încă anula în termen de 30 de zile și puteți obține o rambursare proporțională."
-      ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Puteți folosi ${ planTitle } până la terminarea perioadei de evaluare fără a vi se aplica vreo taxă."
@@ -19883,9 +19919,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de evaluare."
       ]
     },
     "Option": {
@@ -21770,78 +21803,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Valorificați oferta"
-      ],
-      "Summer Sale": [
-        "Reduceri de vară"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/lună"
-      ],
-      "15 GB storage": [
-        "15 GB de spațiu de stocare"
-      ],
-      "2 TB data storage": [
-        "2 TB de spațiu de stocare pentru date"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de spațiu de stocare: de 40 de ori planul actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de spațiu de stocare pentru date"
-      ],
-      "500 GB storage": [
-        "500 GB de spațiu de stocare"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acces complet la ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Conturi individuale pentru 6 utilizatori"
-      ],
-      "Individual accounts for you and a partner": [
-        "Conturi individuale pentru dvs. și un partener"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor conectat de documente și foi de calcul"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierelor"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protecție mai puternică împotriva amenințărilor cibernetice"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Număr nelimitat de foldere, etichete și filtre"
-      ],
-      "Use your own email domain": [
-        "Utilizați propriul domeniu de e-mail"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "pentru 12 luni"
-      ],
-      "SUMMER SALE": [
-        "REDUCERI DE VARĂ"
       ]
     },
     "q3campaign2026: Action": {
@@ -26900,7 +26861,7 @@
         "Dispozitiv"
       ],
       "Device data backup": [
-        "Conservare date dispozitiv"
+        "Conservare date pe dispozitiv"
       ],
       "Device name": [
         "Nume dispozitiv"
@@ -29345,7 +29306,7 @@
         "Este prea scump"
       ],
       "Other": [
-        "Alt motiv"
+        "Altceva"
       ]
     },
     "VPN Dashboard": {
@@ -29674,6 +29635,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont ${ BRAND_NAME }. Luați în considerare modificarea opțiunilor de importare."
+      ],
+      "This organization has more users than we can currently migrate. Please contact customer support for assistance.": [
+        "Această organizație are mai mulți utilizatori decât se pot migra în prezent. Contactați serviciul de asistență pentru clienți."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
         "Aceasta va șterge toate mesajele, folderele și etichetele create în timpul importării."

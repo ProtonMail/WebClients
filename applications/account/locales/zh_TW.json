@@ -1161,6 +1161,9 @@
       "No, thanks": [
         "不用了，謝謝"
       ],
+      "Not now": [
+        "現在不要"
+      ],
       "OK": [
         "好"
       ],
@@ -6768,6 +6771,9 @@
       "Failed to decrypt content key: ${ message }": [
         "解密內容金鑰失敗: ${ message }"
       ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密失敗的項目名稱: ${ message }"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "無法取得使用中工作階段。請 ${ refresh } 或稍後再試。"
       ],
@@ -6932,6 +6938,9 @@
       ],
       "Name does not match": [
         "名稱不相符"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名稱長度最多為 ${ MAX_NODE_NAME_LENGTH } 個字元"
       ],
       "Name must not be empty": [
         "名稱不得留空"
@@ -7121,6 +7130,9 @@
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "已移除重複的收件者：${ joinedRecipients }"
+      ],
+      "Request aborted": [
+        "請求已中止"
       ],
       "Request timed out": [
         "需求逾時"
@@ -13578,6 +13590,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } 捷徑"
+      ],
       "Action shortcuts": [
         "動作快捷鍵"
       ],
@@ -18109,11 +18124,11 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " 參閱我們的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
       ],
+      "Add a payment method": [
+        "添加付款方式"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "於 ${ cancelDate } 前隨時取消。"
-      ],
-      "Cancel anytime before then.": [
-        "於之前隨時取消。"
       ],
       "contact our support team": [
         "聯絡我們的客戶支援團隊"
@@ -18136,9 +18151,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "您仍然可以在 30 天內取消並獲得按比例的退款。"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "您仍然可以在 30 天內取消並獲得按比例的退款。"
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "您可使用 ${ planTitle } 直到試用結束，您將不會被收費。"
       ],
@@ -18147,9 +18159,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "您可以免費使用 ${ planTitle }，直到試用結束為止。"
       ]
     },
     "Option": {
@@ -19855,81 +19864,12 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "取得優惠"
-      ],
-      "Summer Sale": [
-        "夏季特賣"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/每月"
-      ],
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "2 TB data storage": [
-        "2 TB 資料儲存空間"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 儲存空間：您目前方案的 40 倍"
-      ],
-      "3 TB data storage": [
-        "3 TB 資料儲存空間"
-      ],
-      "500 GB storage": [
-        "500 GB 儲存空間"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "完整存取 ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "6 位使用者的個人帳號"
-      ],
-      "Individual accounts for you and a partner": [
-        "供您與夥伴使用的個人帳號"
-      ],
-      "Online document and spreadsheet editor": [
-        "線上文件和試算表編輯器"
-      ],
-      "Recover previous file versions": [
-        "復原先前的檔案版本"
-      ],
-      "Stronger protection against cyber threats": [
-        "針對網路威脅的更強大保護"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "資料夾、標籤與篩選器無上限"
-      ],
-      "Use your own email domain": [
-        "使用您自己的電子郵件網域"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12 個月"
-      ],
-      "SUMMER SALE": [
-        "夏季特賣"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "取得優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
       ]
     },
     "q3campaign2026: Info": {
@@ -19944,6 +19884,11 @@
       ],
       "500 GB of secure storage": [
         "500 GB 安全儲存空間"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ CALENDAR_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 和 ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Drive first": {
