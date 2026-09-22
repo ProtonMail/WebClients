@@ -17,12 +17,12 @@
         "@proton/utils": "workspace:^"
     },
     "devDependencies": {
-        "@jest/globals": "^30.4.1",
+        "@jest/globals": "^30.5.2",
         "@proton/eslint-config-proton": "workspace:^",
-        "eslint": "^10.9.0",
+        "eslint": "^10.11.0",
         "typescript": "^6.0.3"
     },
     "peerDependencies": {
-        "@jest/globals": "^30.4.1"
+        "@jest/globals": "^30.5.2"
     }
 }
