@@ -266,21 +266,27 @@ export function DebugMenu({ docController, editorController, documentState, docu
           <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
             Download state as JSON
             <Ariakit.TooltipProvider>
-              <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
+              <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
+                <IcInfoCircle />
+              </Ariakit.TooltipAnchor>
               <Tooltip>Downloads the current Yjs and local state of the document as JSON</Tooltip>
             </Ariakit.TooltipProvider>
           </Button>
           <Button size="small" onClick={downloadYJSStateAsUpdate}>
             Download YJS state as single update
             <Ariakit.TooltipProvider>
-              <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
+              <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
+                <IcInfoCircle />
+              </Ariakit.TooltipAnchor>
               <Tooltip>Downloads the current Yjs state as a single update</Tooltip>
             </Ariakit.TooltipProvider>
           </Button>
           <Button size="small" onClick={() => editorController.downloadBaseCommit()}>
             Download base commit updates
             <Ariakit.TooltipProvider>
-              <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
+              <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
+                <IcInfoCircle />
+              </Ariakit.TooltipAnchor>
               <Tooltip>Downloads the updates from the base commit only</Tooltip>
             </Ariakit.TooltipProvider>
           </Button>
@@ -289,7 +295,9 @@ export function DebugMenu({ docController, editorController, documentState, docu
               <Button size="small" onClick={() => docController.downloadAllUpdatesAsZip()}>
                 Download all updates as ZIP
                 <Ariakit.TooltipProvider>
-                  <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
+                  <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
+                    <IcInfoCircle />
+                  </Ariakit.TooltipAnchor>
                   <Tooltip>Downloads all updates as a ZIP file</Tooltip>
                 </Ariakit.TooltipProvider>
               </Button>
@@ -302,14 +310,18 @@ export function DebugMenu({ docController, editorController, documentState, docu
               >
                 Download update debug information
                 <Ariakit.TooltipProvider>
-                  <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
+                  <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
+                    <IcInfoCircle />
+                  </Ariakit.TooltipAnchor>
                   <Tooltip>Downloads debug information about all updates, does not include the content</Tooltip>
                 </Ariakit.TooltipProvider>
               </Button>
               <Button size="small" onClick={() => docController.downloadObfuscatedUpdates()}>
                 Download obfuscated updates
                 <Ariakit.TooltipProvider>
-                  <Ariakit.TooltipAnchor render={<IcInfoCircle />} />
+                  <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
+                    <IcInfoCircle />
+                  </Ariakit.TooltipAnchor>
                   <Tooltip>
                     Downloads all updates obfuscated so that they can be used for debugging without revealing sensitive
                     data
