@@ -41,7 +41,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
     const icon = isImporting ? (
         <IcArrowsRotate alt="" className={clsx(navigationIconClassName, 'easy-switch-sidebar-icon--spinning')} />
     ) : (
-        <img src={googleDriveLogo} alt="Google Drive" className={clsx(navigationIconClassName, 'w-4')} />
+        <img src={googleDriveLogo} alt="" className={clsx(navigationIconClassName, 'w-4')} />
     );
 
     return (
