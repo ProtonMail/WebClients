@@ -1,31 +1,12 @@
-import { GenerateUUID } from '@proton/docs-shared'
-import type { LexicalNode } from 'lexical'
-import { $createRangeSelection, $getNodeByKey, $getSelection, $setSelection } from 'lexical'
-import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
-import type { SetImageSizePayload } from '../Image/ImagePlugin'
 import { $findMatchingParent, $wrapNodeInElement } from '@lexical/utils'
-import { $createImageNode } from '../Image/ImageNode'
-import { $isImageNode } from '../Image/isImageNode'
-import { $getImageNodeInSelection, getDragImageData, $canDropImage, getDragSelection } from '../Image/ImageUtils'
+import { GenerateUUID } from '@proton/docs-shared'
 import type { Logger } from '@proton/shared/lib/logs'
-
-export function $insertImageNodeAsSuggestion(
-  node: LexicalNode,
-  onSuggestionCreation: (id: string) => void,
-  logger: Logger,
-): boolean {
-  logger.info('Insert image node as suggestion')
-  const selection = $getSelection()
-  if (!selection) {
-    logger.info('No selection available')
-    return true
-  }
-  const suggestionID = GenerateUUID()
-  const suggestion = $createSuggestionNode(suggestionID, 'insert').append(node)
-  selection.insertNodes([suggestion])
-  onSuggestionCreation(suggestionID)
-  return true
-}
+import { $createRangeSelection, $getNodeByKey, $setSelection } from 'lexical'
+import { $createImageNode } from '../Image/ImageNode'
+import type { SetImageSizePayload } from '../Image/ImagePlugin'
+import { $canDropImage, $getImageNodeInSelection, getDragImageData, getDragSelection } from '../Image/ImageUtils'
+import { $isImageNode } from '../Image/isImageNode'
+import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 
 export function $handleImageSizeChangeAsSuggestion(
   payload: SetImageSizePayload,

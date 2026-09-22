@@ -1,10 +1,10 @@
-import * as Icons from '../icons'
-import { type ComponentPropsWithRef, createContext, forwardRef, useContext } from 'react'
 import * as Ariakit from '@ariakit/react'
-import { Icon } from '../ui'
 import { clsx } from 'clsx'
-import { createComponent } from '../utils'
+import { type ComponentPropsWithRef, createContext, forwardRef, useContext } from 'react'
 import { twMerge } from 'tailwind-merge'
+import * as Icons from '../icons'
+import { Icon } from '../ui'
+import { createComponent } from '../utils'
 
 export interface SidebarDialogStore {
   id: string
@@ -44,20 +44,6 @@ export function useSidebarContext() {
 
   return context
 }
-
-export const NativeSelect = forwardRef<HTMLSelectElement, ComponentPropsWithRef<'select'>>(function NativeSelect(
-  { ...props },
-  ref,
-) {
-  return (
-    <div className="border-weak relative isolate h-[36px] rounded-lg border">
-      <select className="absolute inset-0 appearance-none px-3 text-[13px]" {...props} ref={ref} />
-      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-        <Icon className="shrink-0" data={Icons.chevronDownFilled} />
-      </div>
-    </div>
-  )
-})
 
 export const FormGroup = forwardRef<HTMLDivElement, Ariakit.RoleProps>(function FormGroup(
   { className, ...props },

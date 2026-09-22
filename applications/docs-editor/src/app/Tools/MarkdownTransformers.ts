@@ -4,9 +4,9 @@ import {
   $convertToMarkdownString,
   CHECK_LIST,
   ELEMENT_TRANSFORMERS,
+  MULTILINE_ELEMENT_TRANSFORMERS,
   TEXT_FORMAT_TRANSFORMERS,
   TEXT_MATCH_TRANSFORMERS,
-  MULTILINE_ELEMENT_TRANSFORMERS,
 } from '@lexical/markdown'
 import {
   $createHorizontalRuleNode,
@@ -73,7 +73,7 @@ function mapToTableCells(textContent: string): TableCellNode[] | null {
   return match[1].split('|').map((text) => createTableCell(text))
 }
 
-export const TABLE: ElementTransformer = {
+const TABLE: ElementTransformer = {
   dependencies: [TableNode, TableRowNode, TableCellNode],
   export: (node: LexicalNode) => {
     if (!$isTableNode(node)) {

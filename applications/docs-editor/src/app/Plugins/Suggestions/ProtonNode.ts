@@ -1,3 +1,5 @@
+import { addClassNamesToElement } from '@lexical/utils'
+import type { SuggestionType } from '@proton/docs-shared/lib/SuggestionType'
 import type {
   BaseSelection,
   EditorConfig,
@@ -10,8 +12,6 @@ import type {
 import { $isRangeSelection, $isRootOrShadowRoot, ElementNode } from 'lexical'
 import type { SuggestionProperties } from './Types'
 import { ProtonNodeTypes, SuggestionTypesThatAffectWholeParent } from './Types'
-import type { SuggestionType } from '@proton/docs-shared/lib/SuggestionType'
-import { addClassNamesToElement } from '@lexical/utils'
 
 type ProtonNodeProperties = SuggestionProperties
 
@@ -175,7 +175,7 @@ export class ProtonNode extends ElementNode {
   }
 }
 
-export function $createProtonNode(props: ProtonNodeProperties) {
+function $createProtonNode(props: ProtonNodeProperties) {
   return new ProtonNode(props)
 }
 

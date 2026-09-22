@@ -1,6 +1,6 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { $createTextNode, $getRoot, $isParagraphNode, $createParagraphNode } from 'lexical'
-import { useEffect, useCallback, useRef } from 'react'
+import { $createParagraphNode, $createTextNode, $getRoot, $isParagraphNode } from 'lexical'
+import { useCallback, useEffect, useRef } from 'react'
 
 type Props = {
   enabled: boolean
@@ -74,7 +74,7 @@ const LOWER_CASE_LETTERS = 'abcdefghijklmnopqrstuvwxyz'.split('')
 const CHARACTER_SET = [...LOWER_CASE_LETTERS]
 const CHARACTER_SET_LENGTH = CHARACTER_SET.length
 
-export function generateRandomString(length: number): string {
+function generateRandomString(length: number): string {
   const buffer = new Uint8Array(length)
   window.crypto.getRandomValues(buffer)
   return [...buffer].map((x) => CHARACTER_SET[x % CHARACTER_SET_LENGTH]).join('')
