@@ -213,9 +213,6 @@
       "Copy address": [
         "Копировать адрес"
       ],
-      "Copy alias “${ name }”": [
-        "Скопировать псевдоним «${ name }»"
-      ],
       "Copy as markdown": [
         "Копировать в формате markdown"
       ],
@@ -242,9 +239,6 @@
       ],
       "Create a new contact group": [
         "Создать новую группу контактов"
-      ],
-      "Create and copy alias": [
-        "Создать и скопировать псевдоним"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Создать новый ${ SHEETS_APP_NAME }"
@@ -566,9 +560,6 @@
       ],
       "No, thanks": [
         "Нет, спасибо"
-      ],
-      "Not now": [
-        "Не сейчас"
       ],
       "OK": [
         "OK"
@@ -2684,9 +2675,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Ваш бесплатный аккаунт ${ MAIL_APP_NAME } имеет ограниченный объем хранилища, поэтому мы импортируем только ваши самые последние письма из Gmail."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
       ]
     },
     "description": {
@@ -2946,18 +2934,6 @@
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
-      "Alias is not valid": [
-        "Псевдоним недействителен"
-      ],
-      "Alias is required": [
-        "Требуется псевдоним"
-      ],
-      "Alias options could not be resolved": [
-        "Параметры псевдонима не могут быть определены"
-      ],
-      "Aliases could not be loaded": [
-        "Не удалось загрузить псевдонимы"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
       ],
@@ -2982,12 +2958,6 @@
       "An error occurred while creating a new document. Please try again.": [
         "При создании нового документа произошла ошибка. Попробуйте еще раз."
       ],
-      "An error occurred while loading alias options": [
-        "При загрузке опций псевдонима произошла ошибка"
-      ],
-      "An error occurred while saving your alias": [
-        "При сохранении псевдонима произошла ошибка"
-      ],
       "Authentication canceled.": [
         "Аутентификация отменена."
       ],
@@ -3011,12 +2981,6 @@
       ],
       "Contact signature not verified": [
         "Подпись контакта не подтверждена"
-      ],
-      "Could not open created vault": [
-        "Не могу открыть созданное хранилище"
-      ],
-      "Could not open updated vault": [
-        "Не могу открыть обновлённое хранилище"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
@@ -3059,9 +3023,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Внешние приглашения временно отключены. Повторите попытку позже"
-      ],
-      "Failed loading group members": [
-        "Ошибка при загрузке членов группы"
       ],
       "Failed to change permissions settings": [
         "Не удалось изменить настройки разрешений"
@@ -3117,9 +3078,6 @@
       "Folder name cannot be empty.": [
         "Имя папки не может быть пустым."
       ],
-      "Forward address is required": [
-        "Требуется адрес для пересылки"
-      ],
       "Image upload failed": [
         "Не удалось загрузить изображение"
       ],
@@ -3147,9 +3105,6 @@
       "Invalid verification code": [
         "Неверный код подтверждения"
       ],
-      "Item content cannot exceed 40KB": [
-        "Содержимое элемента не может превышать 40 Кбайт"
-      ],
       "Label name cannot be empty.": [
         "Имя ярлыка не может быть пустым."
       ],
@@ -3167,12 +3122,6 @@
       ],
       "Missing signature": [
         "Подпись отсутствует"
-      ],
-      "Name is required": [
-        "Требуется имя"
-      ],
-      "Network error": [
-        "Ошибка сети"
       ],
       "No calendars found to import": [
         "Не найдено календарей для импорта"
@@ -3647,9 +3596,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Когда дополнительный пароль включен, управлять псевдонимами можно только в ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -5828,9 +5774,6 @@
       "Additional comments": [
         "Дополнительные комментарии"
       ],
-      "Alias title": [
-        "Название псевдонима"
-      ],
       "Allow editors to change permissions and share": [
         "Разрешить редакторам изменять разрешения и делиться ссылкой"
       ],
@@ -5939,9 +5882,6 @@
       "Drive": [
         "Хранилище"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "например, Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Редактор"
       ],
@@ -5978,12 +5918,6 @@
       "Erase this link and remove everyone with access": [
         "Стереть эту ссылку и удалить всех, кто имеет к ней доступ"
       ],
-      "Exact host matching": [
-        "Точное соответствие хоста"
-      ],
-      "Exact URL matching": [
-        "Точное соответствие URL"
-      ],
       "Expiry": [
         "Срок действия"
       ],
@@ -5998,9 +5932,6 @@
       ],
       "Folder name": [
         "Имя папки"
-      ],
-      "Forwards to": [
-        "Переслать"
       ],
       "From: ${ fromEmail }": [
         "От: ${ fromEmail }"
@@ -6089,17 +6020,11 @@
       "Navigation": [
         "Навигация"
       ],
-      "Never fill on this exact URL": [
-        "Никогда не заполнять на этом точном URL"
-      ],
       "New password": [
         "Новый пароль"
       ],
       "Not active": [
         "Неактивна"
-      ],
-      "Note": [
-        "Заметка"
       ],
       "Notification": [
         "Уведомление"
@@ -6112,9 +6037,6 @@
       ],
       "Optional": [
         "Необязательно"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Родительский домен и поддомены (по умолчанию)"
       ],
       "Password": [
         "Пароль"
@@ -6137,12 +6059,6 @@
       "Postal code": [
         "Почтовый индекс"
       ],
-      "Premium domain": [
-        "Платный домен"
-      ],
-      "Public domain": [
-        "Общедоступный домен"
-      ],
       "Public keys": [
         "Открытые ключи"
       ],
@@ -6154,9 +6070,6 @@
       ],
       "Region": [
         "Регион"
-      ],
-      "Regular expression": [
-        "Регулярное выражение"
       ],
       "Require password": [
         "Требовать пароль"
@@ -6181,9 +6094,6 @@
       ],
       "Skip feedback": [
         "Пропустить обратную связь"
-      ],
-      "Starts with": [
-        "Начинается с"
       ],
       "Stop sharing": [
         "Прекратить доступ"
@@ -6218,9 +6128,6 @@
       "Upload picture": [
         "Загрузить изображение"
       ],
-      "URL wildcard pattern": [
-        "Шаблон URL с подстановочными знаками"
-      ],
       "Username": [
         "Имя пользователя"
       ],
@@ -6244,12 +6151,6 @@
       ],
       "What happened?": [
         "Что случилось?"
-      ],
-      "Your alias": [
-        "Ваш псевдоним"
-      ],
-      "Your domain": [
-        "Ваш домен"
       ],
       "Your IP": [
         "Ваш IP-адрес"
@@ -6583,24 +6484,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Правило соответствия «Начинается с»"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Правило точного соответствия (под) домена"
-      ],
-      "Exact URL matching rule": [
-        "Правило точного соответствия URL"
-      ],
-      "Never fill with this exact URL": [
-        "Никогда не заполнять с этим точным URL"
-      ],
-      "Regular expression rule": [
-        "Правило регулярного выражения"
-      ],
-      "Wildcard pattern matching rule": [
-        "Правило соответствия шаблону с подстановочными знаками"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бесплатный пробный период завершился. ${ nonAutoRenewalAction }"
       ],
@@ -8058,9 +7941,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Отмените в любое время до ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "Вы можете отменить подписку в любое время до этого момента."
-      ],
       "contact our support team": [
         "свяжитесь с нашей службой поддержки"
       ],
@@ -8082,9 +7962,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Вы все еще можете отменить подписку в течение 30 дней и получить пропорциональный возврат средств."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Вы все еще можете отменить подписку в течение 30 дней и получить пропорциональный возврат средств."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Вы можете использовать тариф ${ planTitle } до окончания пробного периода без взимания платы."
       ],
@@ -8093,9 +7970,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ваша полная подписка на ${ planTitle } начинается ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Вы сможете бесплатно использовать ${ planTitle } до окончания пробной версии."
       ]
     },
     "Option": {
@@ -8511,78 +8385,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Получить со скидкой"
-      ],
-      "Summer Sale": [
-        "Летние скидки"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/месяц"
-      ],
-      "15 GB storage": [
-        "15 ГБ для хранения"
-      ],
-      "2 TB data storage": [
-        "2 ТБ для хранения данных"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 ГБ для хранения: в 40 раз больше вашего текущего тарифа"
-      ],
-      "3 TB data storage": [
-        "3 ТБ для хранения данных"
-      ],
-      "500 GB storage": [
-        "500 ГБ для хранения"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Скидки рассчитываются от стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платежного цикла."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Полный доступ к ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Индивидуальные аккаунты для 6 пользователей"
-      ],
-      "Individual accounts for you and a partner": [
-        "Индивидуальные аккаунты для вас и партнера"
-      ],
-      "Online document and spreadsheet editor": [
-        "Онлайн-редактор документов и электронных таблиц"
-      ],
-      "Recover previous file versions": [
-        "Восстанавливайте предыдущие версии файлов"
-      ],
-      "Stronger protection against cyber threats": [
-        "Усиленная защита от киберугроз"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Перейдите на наш годовой тариф и сэкономьте ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Use your own email domain": [
-        "Используйте собственный домен адреса электронной почты"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "на 12 месяцев"
-      ],
-      "SUMMER SALE": [
-        "ЛЕТНИЕ СКИДКИ"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Воспользоваться предложением"
@@ -8761,49 +8563,6 @@
     "Section": {
       "Org setup and account security": [
         "Настройка организации и безопасность аккаунта"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Все псевдонимы"
-      ],
-      "Create alias": [
-        "Создать псевдоним"
-      ],
-      "Create an alias": [
-        "Создать псевдоним"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Создавайте псевдонимы на лету и легко управляйте псевдонимами и паролями."
-      ],
-      "Hide-my-email aliases": [
-        "Псевдонимы hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Псевдонимы Hide-my-email позволяют регистрироваться в Интернете, не сообщая свой адрес электронной почты. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Новый псевдоним"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Открыть ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Защитите свои личные данные в Интернете"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Попробуйте ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Используется на Amazon для покупок и прочего"
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Когда вас попросят указать адрес электронной почты, укажите вместо него этот псевдоним. Псевдонимы предоставляются с помощью ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(откроет ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -9648,12 +9407,6 @@
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
-      "Alias copied to clipboard": [
-        "Псевдоним скопирован в буфер обмена"
-      ],
-      "Alias saved and copied": [
-        "Псевдоним сохранён и скопирован"
-      ],
       "Canceling import": [
         "Отмена импорта"
       ],
@@ -9689,9 +9442,6 @@
       ],
       "Invitation rejected": [
         "Приглашение отклонено"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Последние измененные псевдонимы хранятся в вашем самом старом хранилище"
       ],
       "Phone number copied to clipboard": [
         "Номер телефона скопирован в буфер обмена"
@@ -10224,9 +9974,6 @@
       ],
       "My files": [
         "Мои файлы"
-      ],
-      "Need more aliases?": [
-        "Нужно больше псевдонимов?"
       ],
       "Need to share more files with edit access?": [
         "Нужно предоставить доступ с правом редактирования к другим файлам?"
@@ -10774,9 +10521,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "Режим «${ modeLabelStong }» обеспечивает мощный контроль, но одна ошибка может привести к тому, что автозаполнение сработает и заполнит данные на мошеннических или фишинговых сайтах."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы уверены, что хотите навсегда удалить ${ count } контакт?",
