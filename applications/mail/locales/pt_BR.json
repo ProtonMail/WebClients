@@ -1249,6 +1249,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "Executar nos servidores da ${ BRAND_NAME }"
       ],
+      "Run realistic session": [
+        "Realizar uma sessão realista"
+      ],
       "Save": [
         "Salvar"
       ],
@@ -1746,6 +1749,16 @@
     "action": {
       "Search messages": [
         "Pesquisar mensagens"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Renomear ${ folder } para…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Renomear ${ label } para…"
       ]
     },
     "Action: Sheets": {
@@ -4722,6 +4735,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Identidade e endereços > Domínio curto (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Já existe um contato com este endereço de e-mail"
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -4778,6 +4794,9 @@
       ],
       "Authentication error.": [
         "Erro de autenticação."
+      ],
+      "Bookmark password is not available": [
+        "A senha do marcador não está disponível"
       ],
       "Calendar limit reached": [
         "Limite de calendários atingido"
@@ -4848,6 +4867,9 @@
       ],
       "Could not load sharing details": [
         "Não foi possível carregar os detalhes do compartilhamento"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Não foi possível carregar a pré-visualização da imagem: ${ message }"
       ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
@@ -4932,6 +4954,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "Erro ao carregar anexos. Mensagem não enviada."
       ],
+      "Expiration date cannot be in the past": [
+        "A data de expiração não pode ser anterior ao passado"
+      ],
       "Failed loading group members": [
         "Falha ao carregar membros do grupo"
       ],
@@ -4949,6 +4974,9 @@
       ],
       "Failed to decrypt item name: ${ message }": [
         "Falha ao descriptografar o nome do item: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Falha ao descriptografar a chave de nó: ${ message }"
       ],
       "Failed to decrypt revision metadata": [
         "Falha ao descriptografar os metadados da revisão"
@@ -5076,6 +5104,9 @@
       ],
       "Missing signature": [
         "Assinatura ausente"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta a assinatura para ${ signatureType }"
       ],
       "Moving item to a non-folder is not allowed": [
         "Não é permitido mover o item para um local que não seja uma pasta"
@@ -5364,6 +5395,9 @@
       "Something went wrong while fetching available domains": [
         "Ocorreu um erro ao buscar os domínios disponíveis"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Ocorreu um erro. Feche a janela modal e tente novamente."
+      ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente."
       ],
@@ -5484,6 +5518,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
+      ],
+      "Too many server errors, please try again later": [
+        "Muitos erros ao servidor, tente novamente mais tarde"
       ],
       "Too many server requests, please try again later": [
         "Muitas solicitações ao servidor, tente novamente mais tarde"
@@ -5949,6 +5986,9 @@
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Você tem faturas não pagas. Você deve pagá-las antes de aderir a um plano familiar."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Você está convidado a vincular sua conta da ${ BRAND_NAME } a este grupo familiar e aproveitar todos os seus recursos premium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
@@ -7122,6 +7162,10 @@
         "${ selectedFoldersCountLocalized } marcador selecionado",
         "${ selectedFoldersCountLocalized } marcadores selecionados"
       ],
+      "${ steps } step": [
+        "${ steps } passo",
+        "${ steps } passos"
+      ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
@@ -7488,6 +7532,15 @@
       "Change display setting": [
         "Alterar configuração de exibição"
       ],
+      "Change how your mail is grouped": [
+        "Altere a forma como seus e-mails são agrupados"
+      ],
+      "Change your list density": [
+        "Altere a densidade da sua lista"
+      ],
+      "Change your mailbox layout": [
+        "Altere o layout da sua caixa de correio"
+      ],
       "Change your password": [
         "Alterar sua senha"
       ],
@@ -7716,6 +7769,12 @@
       "Draft": [
         "Rascunho"
       ],
+      "Draft an ${ kind }": [
+        "Redija um ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Redija um ${ kind } para ${ recipient }"
+      ],
       "Draft discarded": [
         "Rascunho descartado"
       ],
@@ -7742,6 +7801,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gerencie e cancele a assinatura de newsletters e listas de e-mails facilmente."
+      ],
+      "Edit ${ contact }": [
+        "Editar ${ contact }"
+      ],
+      "Edit a contact": [
+        "Editar um contato"
+      ],
+      "Edit contact": [
+        "Editar contato"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -7904,6 +7972,9 @@
       "Forgot password?": [
         "Esqueceu sua senha?"
       ],
+      "forward": [
+        "encaminhar"
+      ],
       "Found ${ count } contact": [
         "Encontrei ${ count } contato",
         "Encontrei ${ count } contatos"
@@ -7950,6 +8021,15 @@
       "here": [
         "aqui"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Ei Lumo, dê uma olhada no que mais recebo na minha caixa de entrada e nas pastas e filtros que já tenho; depois, sugira como manter tudo organizado — o que alterar no que já existe e o que mais valeria a pena adicionar. Explique o plano para mim antes e não mova nada até que eu dê o meu \"ok\"."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Ei Lumo, vou viajar e quero configurar uma resposta automática de ausência. Pergunte-me as datas e o conteúdo da mensagem e, depois, mostre-me a mensagem antes de ativá-la."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Ei Lumo, explique-me como você pode me ajudar com a minha caixa de e-mail. Que tipo de coisas posso pedir para você fazer e com o que você não pode ajudar?"
+      ],
       "Hide original message": [
         "Ocultar mensagem original"
       ],
@@ -7958,6 +8038,9 @@
       ],
       "How hide-my-email aliases works": [
         "Como funcionam os aliases do hide-my-email"
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Vou analisar o que você mais recebe, bem como as pastas e os filtros que já possui; depois, sugerirei melhorias e apontarei o que está faltando. Nada será alterado sem a sua autorização."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estou enviando essa mensagem para um usuário que não usam o ${ MAIL_APP_NAME }."
@@ -8159,6 +8242,9 @@
       "Manage your labels": [
         "Gerenciar seus marcadores"
       ],
+      "Mark ${ emails } as read": [
+        "Marca ${ emails } como lidos"
+      ],
       "Mark ${ emails } as unread": [
         "Marca ${ emails } como lido"
       ],
@@ -8285,6 +8371,9 @@
       "No conversation to read": [
         "Nenhum diálogo para ler"
       ],
+      "No draft open": [
+        "Nenhum rascunho aberto"
+      ],
       "No email address": [
         "Nenhum endereço de e-mail"
       ],
@@ -8348,6 +8437,9 @@
       "Not connected": [
         "Não conectado"
       ],
+      "Not found in the foundation-search index.": [
+        "Não encontrado no índice-base de busca."
+      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
@@ -8365,6 +8457,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais de suas chaves de confiança foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
+      ],
+      "open draft": [
+        "abrir rascunho"
       ],
       "Open shortcut cheat sheet": [
         "Abrir o mapa de atalhos"
@@ -8559,8 +8654,15 @@
         "Ler ${ count } mensagem nessa conversa",
         "Ler ${ count } mensagens nessa conversa"
       ],
+      "Read ${ count } open draft": [
+        "Ler ${ count } rascunho aberto",
+        "Ler ${ count } rascunhos abertos"
+      ],
       "Read open email “${ subject }”": [
         "Ler e-mail aberto “${ subject }”"
+      ],
+      "Read the open draft": [
+        "Ler o rascunho aberto"
       ],
       "Read your ${ count } filter": [
         "Ler e-mails de ${ count } filtro",
@@ -8574,8 +8676,17 @@
         "Ler e-mails de ${ count } marcador",
         "Ler e-mails de ${ count } marcadores"
       ],
+      "Read your auto-reply": [
+        "Leia sua resposta automática"
+      ],
+      "Read your display settings": [
+        "Ler as configurações de exibição"
+      ],
       "Read your signature": [
         "Leia sua assinatura"
+      ],
+      "Readdressed": [
+        "Revisado"
       ],
       "Recipient: ": [
         "Destinatário: "
@@ -8598,14 +8709,32 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Lembre-se de atualizar isso em seu gerenciador de senhas ou onde quer que você mantenha suas informações de conta e login."
       ],
+      "Remove signature": [
+        "Remover assinatura"
+      ],
+      "Remove the star from ${ emails }": [
+        "Remover favorito de ${ emails }"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Remove todos os dados associados com esse aplicativo (incluindo mensagens baixadas, …)"
       ],
       "Rename folder": [
         "Renomear pasta"
       ],
+      "Rename label": [
+        "Renomear marcador"
+      ],
       "Rename this folder": [
         "Renomear esta pasta"
+      ],
+      "Rename this label": [
+        "Renomear este marcador"
+      ],
+      "reply": [
+        "responder"
+      ],
+      "reply all": [
+        "responder a todos"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Reportar uma mensagem como tentativa de phishing enviará a mensagem para nós, para podermos analisá-la e aprimorar nossos filtros. Isso significa que conseguiremos ver todo o conteúdo da mensagem."
@@ -8615,6 +8744,15 @@
       ],
       "Restore": [
         "Restaurar"
+      ],
+      "Results came from the local search.": [
+        "Resultados retornados da pesquisa local."
+      ],
+      "Revise the ${ draft }": [
+        "Revise o ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Reescrito e reendereçado"
       ],
       "Right to Left": [
         "Direita para esquerda"
@@ -8663,6 +8801,9 @@
       ],
       "Searched for mail to ${ recipient }": [
         "Pesquisei por e-mails para ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Pesquisado por “${ keyword }”"
       ],
       "Searched the web": [
         "Pesquisou na web"
@@ -8731,6 +8872,9 @@
       "Set auto-reply": [
         "Configurar resposta automática"
       ],
+      "Set my out of office": [
+        "Configurar minha mensagem de ausência do escritório"
+      ],
       "Set signature": [
         "Definir assinatura"
       ],
@@ -8787,6 +8931,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
+      ],
+      "Source document in encrypted search index": [
+        "Documento de origem no índice de pesquisa criptografado"
       ],
       "Star ${ emails }": [
         "Favoritar ${ emails }"
@@ -9065,6 +9212,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Esse código único pode ser usado por sites e provedores de serviços de internet para vincular sua localização e histórico de navegação ao seu dispositivo"
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuário não pode ser migrado devido a incompatibilidades de plataforma."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Isso foi mostrado a você porque o assunto do seu e-mail contém palavras-chave para redefinição de senha."
       ],
@@ -9073,6 +9223,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
+      ],
+      "Tidy up my inbox": [
+        "Organizar minha caixa de entrada"
       ],
       "to ${ destinationElement } folder.": [
         "para a pasta ${ destinationElement }."
@@ -9169,6 +9322,9 @@
       ],
       "Turn on to search the content of your messages": [
         "Ative para pesquisar o conteúdo de suas mensagens"
+      ],
+      "Turn on your away message": [
+        "Ative sua mensagem de ausência"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Não é possível acessar os recursos de armazenamento nesse navegador, precisamos desse acesso para permitir a pesquisa de conteúdo de mensagens."
@@ -9355,6 +9511,12 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "What can you do?": [
+        "O que você pode fazer?"
+      ],
+      "What needs handling?": [
+        "O que precisa ser resolvido?"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Quando você deseja que sua mensagem seja excluída automaticamente da caixa de entrada do destinatário e da pasta de envio?"
@@ -9809,6 +9971,9 @@
       "Cancel / close": [
         "Cancelar / fechar"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Fechar ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Fechar rascunho"
       ],
@@ -9965,6 +10130,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Atalhos do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Atalhos de ação"
       ],
@@ -10150,6 +10318,9 @@
       "BTC amount": [
         "Valor em BTC"
       ],
+      "Burst write": [
+        "Escrita em lote"
+      ],
       "Calendar": [
         "Calendário"
       ],
@@ -10176,6 +10347,9 @@
       ],
       "CC": [
         "CC"
+      ],
+      "Cc": [
+        "Cc"
       ],
       "Choose what to do instead": [
         "Escolha o que fazer em vez disso"
@@ -10540,6 +10714,9 @@
       "Log performance": [
         "Registro de desempenho"
       ],
+      "Long tasks (≥ 50 ms)": [
+        "Tarefas demoradas (≥ 50 ms)"
+      ],
       "Mail debugging information": [
         "Informações de depuração de e-mail"
       ],
@@ -10735,6 +10912,9 @@
       "Read / export": [
         "Leitura / Exportação"
       ],
+      "Realistic session": [
+        "Sessão realista"
+      ],
       "Recipient": [
         "Destinatário"
       ],
@@ -10879,6 +11059,9 @@
       "Time": [
         "Hora"
       ],
+      "To": [
+        "Para"
+      ],
       "To:": [
         "Para:"
       ],
@@ -10968,6 +11151,9 @@
       ],
       "Write": [
         "Escrita"
+      ],
+      "Write (whole session)": [
+        "Escrever (sessão inteira)"
       ],
       "Writing assistant": [
         "Assistente de escrita"
@@ -13124,11 +13310,14 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite nossa ${ helpCenterLink } ou ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adicione uma forma de pagamento** para continuar usando todos os recursos após o término do período de teste."
+      ],
+      "Add a payment method": [
+        "Adicionar método de pagamento"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancele a qualquer momento antes do ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Cancele a qualquer momento antes disso."
       ],
       "contact our support team": [
         "Contate nossa equipe de suporte"
@@ -13151,9 +13340,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Você pode usar ${ planTitle } até o fim da avaliação e não será cobrado."
       ],
@@ -13162,9 +13348,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Sua assinatura completa do ${ planTitle } começa em ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Você poderá usar ${ planTitle } até o fim da avaliação, gratuitamente."
       ]
     },
     "Option": {
@@ -13592,6 +13775,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Falha ao inicializar o ${ IDEAL_WERO_BRAND_NAME }. Tente novamente mais tarde."
+      ],
       "Invalid card number": [
         "O número do cartão não é válido."
       ],
@@ -13614,6 +13800,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Ocorreu um erro. A verificação do Google Pay falhou."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, você autoriza a ${ BRAND_NAME } e a Stripe, nossa provedora de serviços de pagamento, a realizar cobranças futuras da sua assinatura nesta conta bancária via Débito Direto, e autoriza seu banco a debitar esses valores. Seu primeiro pagamento é realizado agora via ${ IDEAL_WERO_BRAND_NAME }. Seu plano é renovado automaticamente até que você o cancele; notificaremos você antes de cada cobrança. Para cobranças via débito direto, você pode solicitar um reembolso ao seu banco em até 8 semanas após a data do débito, conforme os termos do seu contrato com o banco. Isso não se aplica ao pagamento via ${ IDEAL_WERO_BRAND_NAME } que você está realizando agora."
       ]
     },
     "Payments.info": {
@@ -14075,78 +14266,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aproveitar a oferta"
-      ],
-      "Summer Sale": [
-        "Oferta Especial"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mês"
-      ],
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "2 TB data storage": [
-        "2 TB de armazenamento de dados"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de armazenamento: 40x o seu plano atual"
-      ],
-      "3 TB data storage": [
-        "3 TB de armazenamento de dados"
-      ],
-      "500 GB storage": [
-        "500 GB de armazenamento"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acesso total ao ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Contas individuais para 6 usuários"
-      ],
-      "Individual accounts for you and a partner": [
-        "Contas individuais para você e um parceiro"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor on-line de documentos e planilhas"
-      ],
-      "Recover previous file versions": [
-        "Recupere versões anteriores de arquivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Proteção mais forte contra ameaças cibernéticas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, marcadores e filtros ilimitados"
-      ],
-      "Use your own email domain": [
-        "Use seu próprio domínio de e-mail"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "por 12 meses"
-      ],
-      "SUMMER SALE": [
-        "OFERTA ESPECIAL"
       ]
     },
     "q3campaign2026: Action": {

@@ -1523,6 +1523,9 @@
       "No, thanks": [
         "Nie, ďakujem"
       ],
+      "Not now": [
+        "Teraz nie"
+      ],
       "OK": [
         "OK"
       ],
@@ -15024,6 +15027,9 @@
       "Cancel / close": [
         "Zrušiť / zatvoriť"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Zavrieť ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Zavrieť koncept"
       ],
@@ -15135,6 +15141,9 @@
       "Next period": [
         "Ďalšie obdobie"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Otvoriť ${ LUMO_SHORT_APP_NAME } / zameranie na vstup"
+      ],
       "Open command panel": [
         "Otvoriť príkazový panel"
       ],
@@ -15207,6 +15216,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Skratky ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Skratky činností"
       ],
@@ -20066,11 +20078,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " navštívte naše ${ helpCenterLink } alebo ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Pridajte spôsob platby**, aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Zrušiť môžete kedykoľvek pred týmto termínom.** ${ planTitle } budete môcť bezplatne využívať až do konca skúšobného obdobia."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Ak budete pokračovať aj po skončení skúšobnej doby,** môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Po začatí platnosti predplatného...** môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
+      ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Zrušiť môžete kedykoľvek pred ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Zrušiť môžete kedykoľvek predtým."
       ],
       "contact our support team": [
         "kontaktujte náš tím podpory"
@@ -20084,17 +20108,23 @@
       "help center": [
         "centrum pomoci"
       ],
+      "If you continue after your trial,": [
+        "Ak budete pokračovať aj po skončení skúšobnej doby,"
+      ],
       "If you need help,": [
         "Ak potrebujete pomoc,"
       ],
       "Once your full subscription starts...": [
         "Akonáhle začne vaše plné predplatné..."
       ],
+      "to keep using all of the features after your trial ends.": [
+        "aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Stále môžete zrušiť do 30 dní a získať pomernú náhradu späť."
-      ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Stále môžete do 30 dní zrušiť a získať späť pomernú náhradu."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
@@ -20104,9 +20134,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaše plné ${ planTitle } predplatné začína dňa ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Budete môcť používať ${ planTitle } až do konca skúšobného obdobia, bez poplatku."
       ]
     },
     "Option": {
@@ -22010,78 +22037,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Využite ponuku"
-      ],
-      "Summer Sale": [
-        "Letný výpredaj"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mesačným"
-      ],
-      "15 GB storage": [
-        "15 GB úložisko"
-      ],
-      "2 TB data storage": [
-        "2 TB dátové úložisko"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB úložisko: 40x váš súčasný plán"
-      ],
-      "3 TB data storage": [
-        "3 TB dátové úložisko"
-      ],
-      "500 GB storage": [
-        "500 GB úložisko"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Zľavy vychádzajú zo štandardných mesačných cien. Po skončení fakturačného obdobia sa vaše predplatné obnoví za štandardnú ročnú sadzbu."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Plný prístup k službe ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Samostatné účty pre 6 používateľov"
-      ],
-      "Individual accounts for you and a partner": [
-        "Samostatné účty pre vás a partnera"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online editor dokumentov a tabuliek"
-      ],
-      "Recover previous file versions": [
-        "Obnovte predchádzajúce verzie súborov"
-      ],
-      "Stronger protection against cyber threats": [
-        "Silnejšia ochrana pred kybernetickými hrozbami"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Prejdite na náš ročný plán a ušetrite ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Neobmedzený počet priečinkov, štítkov a filtrov"
-      ],
-      "Use your own email domain": [
-        "Používajte vlastnú emailovú doménu"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "na 12 mesiacov"
-      ],
-      "SUMMER SALE": [
-        "LETNÝ VÝPREDAJ"
       ]
     },
     "q3campaign2026: Action": {
@@ -30030,6 +29985,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
+      ],
+      "This organization has more users than we can currently migrate. Please contact customer support for assistance.": [
+        "Táto organizácia má viac používateľov, než koľko ich momentálne dokážeme presunúť. Ak potrebujete pomoc, obráťte sa na zákaznícku podporu."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
         "Toto vymaže všetky správy, priečinky a štítky vytvorené počas importu."

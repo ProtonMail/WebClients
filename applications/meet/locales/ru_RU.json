@@ -453,6 +453,9 @@
       "Refresh the page": [
         "Обновить страницу"
       ],
+      "refresh the page": [
+        "обновить страницу"
+      ],
       "Rejoin meeting": [
         "Снова присоединиться к встрече"
       ],
@@ -1884,6 +1887,9 @@
       "Something went wrong": [
         "Что-то пошло не так"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
+      ],
       "Something went wrong. Please try again.": [
         "Что-то пошло не так. Пожалуйста, попробуйте еще раз."
       ],
@@ -2651,6 +2657,9 @@
       ],
       "Successfully deleted meeting": [
         "Встреча удалена"
+      ],
+      "support team": [
+        "служба поддержки"
       ],
       "Thank you for hosting a premium meeting.": [
         "Спасибо за проведение платной встречи."

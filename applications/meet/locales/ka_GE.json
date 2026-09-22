@@ -449,6 +449,9 @@
       "Refresh the page": [
         "გვერდის განახლება"
       ],
+      "refresh the page": [
+        "გვერდის განახლება"
+      ],
       "Rejoin meeting": [
         "თავიდან მიერთება შეხვედრასთან"
       ],
@@ -1878,6 +1881,9 @@
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "რაღაც არასწორად მუშაობს. გასაგრძელებლად ${ refresh }. თუ ჯერ კიდევ ხედავთ შეცდომის შეტყობინებას, დაუკავშირდით ჩვენს ${ supportTeam }."
+      ],
       "Something went wrong. Please try again.": [
         "რაღაც არასწორად წავიდა. თავიდან სცადეთ."
       ],
@@ -2629,6 +2635,9 @@
       ],
       "Successfully deleted meeting": [
         "შეხვედრა წარმატებით წაიშალა"
+      ],
+      "support team": [
+        "მხარდაჭერის გუნდი"
       ],
       "Thank you for hosting a premium meeting.": [
         "გმადლობთ პრემიუმ შეხვედრის მასპინძლობისთვის."

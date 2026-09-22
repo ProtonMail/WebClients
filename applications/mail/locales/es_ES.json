@@ -4180,6 +4180,9 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Los correos nuevos de ${ senderEmailAddress } no entregarán y se eliminarán de forma permanente."
       ],
+      "No ads. No trackers": [
+        "Sin anuncios. Sin rastreadores"
+      ],
       "No folders": [
         "Sin carpetas"
       ],
@@ -4746,6 +4749,9 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "No se puede activar la búsqueda de contenido. Reinicia la aplicación o borra los datos."
+      ],
+      "Could not grant access to the organization key": [
+        "No se ha podido conceder acceso a la clave de la organización"
       ],
       "Could not open created vault": [
         "No se ha podido abrir la caja fuerte creada."
@@ -6653,6 +6659,10 @@
         "${ count } correo electrónico",
         "${ count } correos electrónicos"
       ],
+      "${ count } email · ${ names }": [
+        "${ count } correo electrónico · ${ names }",
+        "${ count } correos electrónicos · ${ names }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
@@ -7024,6 +7034,9 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Las subcarpetas también se eliminarán. Sin embargo, los correos electrónicos almacenados en la carpeta ${ nameDeleted } no se eliminarán y se pueden encontrar en la carpeta Todos los mensajes."
+      ],
+      "Apply labels": [
+        "Aplicar etiquetas"
       ],
       "Apply to future messages": [
         "Aplicar a los mensajes futuros"
@@ -7480,6 +7493,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Todo lo incluido en ${ planOrAppName }, y además:"
       ],
+      "Expand logs": [
+        "Expandir registros"
+      ],
       "Expand selection": [
         "Expandir la selección"
       ],
@@ -7772,6 +7788,9 @@
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Establecer ${ MAIL_APP_NAME } como aplicación de correo predeterminada"
+      ],
       "Manage your folders": [
         "Administra tus carpetas"
       ],
@@ -7783,6 +7802,12 @@
       ],
       "Mark all as unread": [
         "Marcar todo como no leído"
+      ],
+      "Mark as read": [
+        "Marcar como leído"
+      ],
+      "Mark as unread": [
+        "Marcar como no leído"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -9498,6 +9523,9 @@
       ],
       "Account holder": [
         "Titular de la cuenta"
+      ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
       ],
       "Actions": [
         "Acciones"
@@ -12460,9 +12488,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Cancela en cualquier momento antes del ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "Cancela en cualquier momento antes de esa fecha."
-      ],
       "contact our support team": [
         "pónte en contacto con nuestro equipo de soporte"
       ],
@@ -12484,9 +12509,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Todavía puedes cancelar en un plazo de 30 días y obtener un reembolso proporcional."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Todavía puedes cancelar en un plazo de 30 días y obtener un reembolso proporcional."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Podrás usar ${ planTitle } hasta que termine la prueba y no se te hará ningún cargo."
       ],
@@ -12495,9 +12517,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tu suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Podrás usar ${ planTitle } hasta que termine la prueba, gratuitamente."
       ]
     },
     "Option": {
@@ -12618,6 +12637,9 @@
       "Permanent": [
         "Permanente"
       ],
+      "Remind me later": [
+        "Recordármelo más tarde"
+      ],
       "Repeat daily": [
         "Repetir diariamente"
       ],
@@ -12626,6 +12648,9 @@
       ],
       "Repeat weekly": [
         "Repetir semanalmente"
+      ],
+      "Yes, don't show again": [
+        "Sí, no volver a mostrar"
       ]
     },
     "Option group": {
@@ -12918,6 +12943,9 @@
       ],
       "Invalid security code": [
         "El código de seguridad no es válido."
+      ],
+      "Please enter the account holder name": [
+        "Introduce el nombre del titular de la cuenta"
       ],
       "Something went wrong. Please try again later.": [
         "Se ha producido un error. Inténtalo de nuevo más tarde."
@@ -13359,78 +13387,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aprovecha la oferta"
-      ],
-      "Summer Sale": [
-        "Descuento de verano"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/meses"
-      ],
-      "15 GB storage": [
-        "15 GB de almacenamiento"
-      ],
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de almacenamiento: 40 veces tu plan actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "500 GB storage": [
-        "500 GB de almacenamiento"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acceso completo a ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para ti y otra persona"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor online de documentos y hojas de cálculo"
-      ],
-      "Recover previous file versions": [
-        "Recupera las versiones previas de los archivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra las ciberamenazas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cámbiate a nuestro plan anual y ahorra ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Use your own email domain": [
-        "Usa tu propio dominio de correo electrónico"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "SUMMER SALE": [
-        "DESCUENTO DE VERANO"
       ]
     },
     "q3campaign2026: Action": {
@@ -15930,6 +15886,9 @@
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
+      ],
+      "Keep this banner hidden?": [
+        "¿Mantener oculto este banner?"
       ],
       "Label as": [
         "Etiquetar como"

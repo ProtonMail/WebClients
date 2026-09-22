@@ -233,9 +233,6 @@
       "Copy address": [
         "Kopírovat adresu"
       ],
-      "Copy alias “${ name }”": [
-        "Kopírovat alias \"${ name }\""
-      ],
       "Copy booking page link": [
         "Kopírovat odkaz na rezervační stránku"
       ],
@@ -274,9 +271,6 @@
       ],
       "Create an event": [
         "Vytvořit událost"
-      ],
-      "Create and copy alias": [
-        "Vytvořit a kopírovat alias"
       ],
       "Create booking page": [
         "Vytvořit rezervační stránku"
@@ -724,6 +718,9 @@
       ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -3287,9 +3284,6 @@
       ],
       "You’ll get a secure email with the details shortly.": [
         "Brzy obdržíte zabezpečený e-mail s detaily."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3625,18 +3619,6 @@
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
       ],
-      "Alias is not valid": [
-        "Alias není platný"
-      ],
-      "Alias is required": [
-        "Alias je povinný"
-      ],
-      "Alias options could not be resolved": [
-        "Možnosti aliasu nelze vyřešit"
-      ],
-      "Aliases could not be loaded": [
-        "Aliasy se nepodařilo načíst"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
       ],
@@ -3648,12 +3630,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Částka je nižší než minimální možná hodnota (${ minimumAmount })."
-      ],
-      "An error occurred while loading alias options": [
-        "Došlo k chybě při načítání možností aliasu"
-      ],
-      "An error occurred while saving your alias": [
-        "Při ukládání vašeho aliasu došlo k chybě"
       ],
       "Answer failed to be sent": [
         "Odpověď se nepodařilo odeslat"
@@ -3699,12 +3675,6 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Vyhledávání obsahu nelze povolit. Restartujte aplikaci nebo smažte data."
-      ],
-      "Could not open created vault": [
-        "Nelze otevřít vytvořený trezor"
-      ],
-      "Could not open updated vault": [
-        "Nelze aktualizovat vytvořený trezor"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této události selhalo."
@@ -3760,9 +3730,6 @@
       "Event not found": [
         "Událost nebyla nalezena"
       ],
-      "Failed loading group members": [
-        "Načtení členů skupiny selhalo"
-      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "Nepodařilo se přidat existující videokonferenci ${ MEET_APP_NAME }"
       ],
@@ -3798,9 +3765,6 @@
       ],
       "Folder name cannot be empty.": [
         "Název složky nesmí být prázdný."
-      ],
-      "Forward address is required": [
-        "Adresa přeposílání je vyžadována"
       ],
       "Image upload failed": [
         "Nahrávání obrázku se nezdařilo"
@@ -3856,9 +3820,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Lze přesunout události pouze mezi ${ minDateString } - ${ maxDateString }"
       ],
-      "Item content cannot exceed 40KB": [
-        "Obsah položky nemůže přesáhnout 40KB"
-      ],
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
       ],
@@ -3880,14 +3841,8 @@
       "Missing signature": [
         "Chybí podpis"
       ],
-      "Name is required": [
-        "Název je povinný"
-      ],
       "Name required": [
         "Název je povinný"
-      ],
-      "Network error": [
-        "Chyba sítě"
       ],
       "No booking page data received": [
         "Nebyly přijaty žádné údaje z rezervační stránky"
@@ -4080,6 +4035,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Při vyhledávání volných domén došlo k chybě"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Něco se pokazilo. Prosím, zkuste to znovu."
@@ -4399,9 +4357,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Pokud je povoleno dodatečné heslo, lze správu aliasů provádět pouze v ${ PASS_APP_NAME }."
       ],
       "You need an active personal calendar to import events": [
         "Pro import událostí potřebujete aktivní osobní kalendář"
@@ -6339,6 +6294,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Předplatné končí: Chcete-li si ponechat výhody svého předplatného ${ planName }, restartujte své předplatné v Obchodě Play do ${ byDate }. ${ reactivateLink }"
       ],
+      "support team": [
+        "tým podpory"
+      ],
       "Surveillance": [
         "Sledování"
       ],
@@ -7082,9 +7040,6 @@
       "Address": [
         "Adresa"
       ],
-      "Alias title": [
-        "Název aliasu"
-      ],
       "All day": [
         "Celý den"
       ],
@@ -7220,9 +7175,6 @@
       "Drive": [
         "Drive"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "například Amazon, eBay, Etsy"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -7268,12 +7220,6 @@
       "Every": [
         "Každý"
       ],
-      "Exact host matching": [
-        "Shoda přesného hostitele"
-      ],
-      "Exact URL matching": [
-        "Shoda přesné URL"
-      ],
       "Expires": [
         "Vyprší"
       ],
@@ -7288,9 +7234,6 @@
       ],
       "Folder location": [
         "Umístění složky"
-      ],
-      "Forwards to": [
-        "Přeposílá na"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -7388,14 +7331,8 @@
       "Navigation": [
         "Navigace"
       ],
-      "Never fill on this exact URL": [
-        "Nikdy nevyplňovat na této přesné URL"
-      ],
       "New password": [
         "Nové heslo"
-      ],
-      "Note": [
-        "Poznámka"
       ],
       "Notification": [
         "Oznámení"
@@ -7420,9 +7357,6 @@
       ],
       "Organizer": [
         "Organizátor"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Nadřazená doména a subdomény (výchozí)"
       ],
       "participant": [
         "účastník",
@@ -7463,26 +7397,17 @@
       "Postal code": [
         "PSČ"
       ],
-      "Premium domain": [
-        "Prémiová doména"
-      ],
       "Primary": [
         "Primární"
       ],
       "Proration": [
         "Prorace"
       ],
-      "Public domain": [
-        "Veřejná doména"
-      ],
       "Public keys": [
         "Veřejné klíče"
       ],
       "Region": [
         "Kraj"
-      ],
-      "Regular expression": [
-        "Regulární výraz"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Odebrat videokonferenci ${ MEET_APP_NAME }"
@@ -7522,9 +7447,6 @@
       ],
       "Start date": [
         "Datum zahájení"
-      ],
-      "Starts with": [
-        "Začíná na"
       ],
       "State": [
         "Stát"
@@ -7574,9 +7496,6 @@
       "URL": [
         "URL"
       ],
-      "URL wildcard pattern": [
-        "Vzor URL se zástupnými znaky"
-      ],
       "Username": [
         "Uživatelské jméno"
       ],
@@ -7607,14 +7526,8 @@
       "What happened?": [
         "Co se stalo?"
       ],
-      "Your alias": [
-        "Váš alias"
-      ],
       "Your calendar URL": [
         "URL adresa vašeho kalendáře"
-      ],
-      "Your domain": [
-        "Vaše doména"
       ],
       "Your IP": [
         "Vaše IP"
@@ -8032,29 +7945,11 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Pravidlo shody „Začíná na“"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Pravidlo pro shodu přesné (sub)domény"
-      ],
-      "Exact URL matching rule": [
-        "Pravidlo shody přesné URL"
-      ],
       "Fw:": [
         "Fw:"
       ],
-      "Never fill with this exact URL": [
-        "Nikdy nevyplňovat s touto přesnou URL"
-      ],
       "Re:": [
         "Re:"
-      ],
-      "Regular expression rule": [
-        "Pravidlo regulárního výrazu"
-      ],
-      "Wildcard pattern matching rule": [
-        "Pravidlo shody se vzorem se zástupnými znaky"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Bezplatná zkušební verze skončila. ${ nonAutoRenewalAction }"
@@ -9690,9 +9585,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Zrušit můžete kdykoli před ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "Zrušit můžete kdykoli před uplynutím této doby."
-      ],
       "contact our support team": [
         "kontaktujte náš tým podpory"
       ],
@@ -9714,9 +9606,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Do 30 dnů můžete předplatné zrušit a získat poměrnou část peněz zpět."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Do 30 dnů můžete předplatné zrušit a získat poměrnou část peněz zpět."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Můžete používat ${ planTitle } až do skončení zkušební verze a nebudou vám účtovány žádné poplatky."
       ],
@@ -9725,9 +9614,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaše plné předplatné ${ planTitle } začíná ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "${ planTitle } budete moci bezplatně používat až do vypršení zkušební verze."
       ]
     },
     "Option": {
@@ -10527,78 +10413,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Využít nabídku"
-      ],
-      "Summer Sale": [
-        "Letní výprodej"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/měsíčně"
-      ],
-      "15 GB storage": [
-        "15GB úložiště"
-      ],
-      "2 TB data storage": [
-        "2TB datové úložiště"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200GB úložiště: 40× váš současný plán"
-      ],
-      "3 TB data storage": [
-        "3TB datové úložiště"
-      ],
-      "500 GB storage": [
-        "500GB úložiště"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všechny prémiové funkce služeb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všechny prémiové funkce služeb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Slevy vycházejí ze standardních měsíčních cen. Vaše předplatné se na konci fakturačního cyklu obnoví za standardní roční sazbu."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Plný přístup k ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuální účty pro 6 uživatelů"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuální účty pro vás a partnera"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online editor dokumentů a tabulek"
-      ],
-      "Recover previous file versions": [
-        "Obnova předchozích verzí souborů"
-      ],
-      "Stronger protection against cyber threats": [
-        "Silnější ochrana proti kybernetickým hrozbám"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Přejděte na náš roční plán a ušetřete ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Neomezený počet složek, štítků a filtrů"
-      ],
-      "Use your own email domain": [
-        "Používejte svou vlastní e-mailovou doménu"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "na 12 měsíců"
-      ],
-      "SUMMER SALE": [
-        "LETNÍ VÝPRODEJ"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Využít nabídku"
@@ -10752,49 +10566,6 @@
     "Section": {
       "Org setup and account security": [
         "Nastavení organizace a zabezpečení účtu"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Všechny aliasy"
-      ],
-      "Create alias": [
-        "Vytvořit alias"
-      ],
-      "Create an alias": [
-        "Vytvořit alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Vygenerujte aliasy za běhu a jednoduše spravujte svoje aliasy a hesla."
-      ],
-      "Hide-my-email aliases": [
-        "Aliasy Hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliasy Hide-my-email vám umožní zaregistrovat se do online služeb, aniž byste museli sdílet svou hlavní e-mailovou adresu. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nový alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Otevřít ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Chraňte svou digitální identitu"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Vyzkoušejte ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Použito na Amazonu pro nakupování, atd."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(otevře ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -11947,12 +11718,6 @@
       "Address copied to clipboard": [
         "Adresa byla zkopírována do schránky"
       ],
-      "Alias copied to clipboard": [
-        "Alias byl zkopírován do schránky"
-      ],
-      "Alias saved and copied": [
-        "Alias uložen a zkopírován"
-      ],
       "All events deleted": [
         "Všechny události byly vymazány"
       ],
@@ -12084,9 +11849,6 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "Nastavení klávesových zkratek upraveno"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Naposledy upravené aliasy uložené ve vašem nejstarším trezoru"
       ],
       "Participants notified and all events updated": [
         "Účastníci byli upozorněni a všechny události aktualizovány"
@@ -12759,9 +12521,6 @@
       "Mobile": [
         "Mobil"
       ],
-      "Need more aliases?": [
-        "Potřebujete více aliasů?"
-      ],
       "Network error": [
         "Chyba sítě"
       ],
@@ -13421,9 +13180,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "Pravidlo ${ modeLabelStong } poskytuje silnou kontrolu, ale jediná chyba může způsobit, že automatické vyplňování porovná a vyplní údaje na podvodných nebo phishingových webech."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Jste si jistí, že chcete trvale smazat ${ count } kontakt?",

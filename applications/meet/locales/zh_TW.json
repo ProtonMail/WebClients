@@ -447,6 +447,9 @@
       "Refresh the page": [
         "重新整理此頁面"
       ],
+      "refresh the page": [
+        "重新整理此頁面"
+      ],
       "Rejoin meeting": [
         "重新加入會議"
       ],
@@ -1827,6 +1830,9 @@
       "Failed to decrypt content key: ${ message }": [
         "解密內容金鑰失敗: ${ message }"
       ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密失敗的項目名稱: ${ message }"
+      ],
       "Failed to decrypt session key": [
         "解密工作階段金鑰失敗"
       ],
@@ -1908,6 +1914,9 @@
       "Moving item to a non-folder is not allowed": [
         "不允許將項目移動到非資料夾"
       ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名稱長度最多為 ${ MAX_NODE_NAME_LENGTH } 個字元"
+      ],
       "Name must not be empty": [
         "名稱不得留空"
       ],
@@ -1934,6 +1943,9 @@
       ],
       "Please allow screen sharing in your system permissions, then try again": [
         "請在系統權限中允許螢幕共享，然後再試一次"
+      ],
+      "Request aborted": [
+        "請求已中止"
       ],
       "Request timed out": [
         "需求逾時"
@@ -1964,6 +1976,9 @@
       ],
       "Something went wrong": [
         "發生錯誤"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
       ],
       "Something went wrong. Please try again.": [
         "發生錯誤，請稍後再試。"
@@ -2741,6 +2756,9 @@
       ],
       "Successfully deleted meeting": [
         "已成功刪除會議"
+      ],
+      "support team": [
+        "支援團隊"
       ],
       "Thank you for hosting a premium meeting.": [
         "感謝您舉辦頂級質子版會議。"

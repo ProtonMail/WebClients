@@ -13629,11 +13629,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " ${ helpCenterLink } 또는 ${ contactSupportLink }에 방문하세요."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "무료 체험 종료 후에도 모든 기능을 계속 사용하려면 **결제 방법을 추가하세요**."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**해당 날짜 전에 언제든지 취소하세요.** 무료 체험 종료일 전까지 별도 청구 없이 ${ planTitle }을(를) 계속 사용할 수 있습니다."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**무료 체험 이후에도 플랜을 유지하는 경우** 30일 이내에 취소시 사용량에 비례하여 환불받으실 수 있습니다."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**정식 구독이 시작된 후에도...** 30일 내에 구독 취소 시 사용량에 비례하여 환불 받을 수 있습니다."
+      ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "${ cancelDate }전까지 언제든지 취소하세요."
-      ],
-      "Cancel anytime before then.": [
-        "그때까지 언제든지 취소하실 수 있습니다."
       ],
       "contact our support team": [
         "자사 고객 지원팀에 문의"
@@ -13647,17 +13659,23 @@
       "help center": [
         "지원 센터"
       ],
+      "If you continue after your trial,": [
+        "무료 체험 이후에도 유지한다면,"
+      ],
       "If you need help,": [
         "도움이 필요하시다면,"
       ],
       "Once your full subscription starts...": [
         "전체 구독이 시작되면..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
+      "to keep using all of the features after your trial ends.": [
+        "- 모든 기능을 계속 사용하려면 결제 방법을 추가하세요."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
         "30일 내에 구독 취소시 사용량이 비례하여 환불을 받으실 수 있습니다."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "30일 내에 구독 취소시 사용량에 비례하여 환불을 받으실 수 있습니다."
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "30일 내에 구독 취소시 사용량이 비례하여 환불을 받으실 수 있습니다."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "무료 체험 종료일까지 계속 ${ planTitle }을(를) 사용하실 수 있어요. 구독료는 청구되지 않습니다."
@@ -13667,9 +13685,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "회원님의 ${ planTitle } 구독이 ${ boldEndDate }에 시작됩니다."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "무료 체험 기간 종료 전까지 ${ planTitle }을(를) 무료로 계속 사용 가능합니다."
       ]
     },
     "Option": {
@@ -14814,78 +14829,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "할인 받기"
-      ],
-      "Summer Sale": [
-        "여름 세일"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/월"
-      ],
-      "15 GB storage": [
-        "15 GB 저장공간"
-      ],
-      "2 TB data storage": [
-        "2 TB 데이터 저장공간"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 저장공간: 현재 요금제의 40배"
-      ],
-      "3 TB data storage": [
-        "3 TB 데이터 저장공간"
-      ],
-      "500 GB storage": [
-        "500 GB 저장공간"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }에 대한 완전한 접근"
-      ],
-      "Individual accounts for 6 users": [
-        "6인용 개별 계정"
-      ],
-      "Individual accounts for you and a partner": [
-        "귀하와 파트너를 위한 개별 계정"
-      ],
-      "Online document and spreadsheet editor": [
-        "온라인 문서 및 스프레드시트 편집기"
-      ],
-      "Recover previous file versions": [
-        "이전 파일 버전 복구"
-      ],
-      "Stronger protection against cyber threats": [
-        "사이버 위협에 대한 더욱 강력한 보호"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "무제한 폴더, 라벨 및 필터"
-      ],
-      "Use your own email domain": [
-        "나만의 이메일 도메인 사용"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12개월 동안"
-      ],
-      "SUMMER SALE": [
-        "여름 세일"
       ]
     },
     "q3campaign2026: Action": {
@@ -19618,6 +19561,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "플랜에 추가됨: ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "관리자는 사용자 계정을 관리하고 다른 사용자에게 관리자 권한을 부여할 수 있습니다."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "조직 관리자는 다른 구성원의 사용자 계정을 관리하고 관리자 권한을 부여할 수 있습니다. 주 관리자만 조직의 플랜을 수정할 수 있습니다."

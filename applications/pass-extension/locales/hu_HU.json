@@ -145,6 +145,9 @@
       "Close navigation": [
         "Navigáció bezárása"
       ],
+      "Collapse": [
+        "Összecsukás"
+      ],
       "Confirm": [
         "Jóváhagyás"
       ],
@@ -193,6 +196,9 @@
       "Create contact": [
         "Névjegy létrehozása"
       ],
+      "Create folder": [
+        "Mappa létrehozása"
+      ],
       "Create identity": [
         "Személyazonosság létrehozása"
       ],
@@ -201,6 +207,9 @@
       ],
       "Create login": [
         "Bejelentkezés létrehozása"
+      ],
+      "Create new folder": [
+        "Új mappa létrehozása"
       ],
       "Create new login": [
         "Új bejelentkezés létrehozása"
@@ -291,6 +300,9 @@
       ],
       "Exclude from monitoring": [
         "Kizárás a megfigyelésből"
+      ],
+      "Expand": [
+        "Kibontás"
       ],
       "Export": [
         "Exportálás"
@@ -424,8 +436,8 @@
       "Move all items": [
         "Minden elem áthelyezése"
       ],
-      "Move to another vault": [
-        "Áthelyezés másik tárolóba"
+      "Move to": [
+        "Áthelyezés ide"
       ],
       "Move to trash": [
         "Áthelyezés a lomtárba"
@@ -504,6 +516,9 @@
       ],
       "Remove member": [
         "Tag eltávolítása"
+      ],
+      "Rename": [
+        "Átnevezés"
       ],
       "Request a feature": [
         "Funkció ajánlása"
@@ -974,6 +989,9 @@
       ],
       "Failed to create domain": [
         "Nem sikerült létrehozni a domain nevet"
+      ],
+      "Failed to create folder": [
+        "Nem sikerült létrehozni a mappát"
       ],
       "Failed to create new mailbox": [
         "Nem sikerült új postafiókot létrehozni"
@@ -1622,9 +1640,6 @@
       ],
       "Creating alias...": [
         "E-mail álnév létrehozása..."
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "A CSV egy kényelmes formátum az adatok megtekintésére. Egyszerűsége miatt azonban egyes adatok nem lesznek benne (egyéni mezők, hozzáférési kulcsok...). A teljes exportáláshoz javasoljuk, hogy más formátumot használjon."
       ],
       "Current version": [
         "Jelenlegi változat"
@@ -2958,6 +2973,9 @@
       "Floor, apartment, building": [
         "Emelet, lakás, épület"
       ],
+      "Folder": [
+        "Mappa"
+      ],
       "For a one-off sharing": [
         "Egyszeri megosztás esetén"
       ],
@@ -3930,9 +3948,6 @@
       "Please describe the problem and include any error messages": [
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "A törlés jóváhagyásához, írja be, hogy \"${ vaultName }\""
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ pluralItemType } keresése itt: ${ vaultName }"
       ],
@@ -4239,9 +4254,6 @@
       "Delete this item?": [
         "Elem törlése?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Tároló törlése: \"${ vaultName }\"?"
-      ],
       "Did you know?": [
         "Tudta?"
       ],
@@ -4295,6 +4307,9 @@
       ],
       "Fill password": [
         "Jelszó kitöltése"
+      ],
+      "Folder options": [
+        "Mappa beállításai"
       ],
       "Get Started": [
         "Kezdés"
@@ -4374,19 +4389,12 @@
       "Modified": [
         "Módosítva"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count } elem mozgatása ${ vaultName } tárolóba",
-        "${ count } elem mozgatása ${ vaultName } tárolóba"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount } elem áthelyezése a Lomtárba?",
         "${ trashedItemsCount } elem áthelyezése a Lomtárba?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Az összes elem áthelyezése ide: „${ vaultName }”?"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "Elem mozgatása a következőbe: „${ vaultName }”"
       ],
       "MX record": [
         "MX rekord"
@@ -4881,9 +4889,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "A ${ PASS_APP_NAME } bejelentkezés nem sikerült. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "A(z) \"${ vaultName }\" tároló és a teljes tartalma véglegesen törlésre kerül. Ez nem vonható vissza."
       ],
       "Vault name is required": [
         "A tárolónév megadása kötelező"

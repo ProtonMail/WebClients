@@ -217,9 +217,6 @@
       "Copy address": [
         "Adresse kopieren"
       ],
-      "Copy alias “${ name }”": [
-        "Alias “${ name }” kopieren"
-      ],
       "Copy as markdown": [
         "Als Markdown kopieren"
       ],
@@ -246,9 +243,6 @@
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
-      ],
-      "Create and copy alias": [
-        "Erstellen und Alias kopieren"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Neues ${ SHEETS_APP_NAME } erstellen"
@@ -572,9 +566,6 @@
       ],
       "No, thanks": [
         "Nein, danke"
-      ],
-      "Not now": [
-        "Nicht jetzt"
       ],
       "OK": [
         "OK"
@@ -2685,9 +2676,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Dein kostenloses ${ MAIL_APP_NAME }-Konto enthält begrenzten Speicherplatz, darum können wir nur deine aktuellsten Gmail-Nachrichten importieren."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
       ]
     },
     "description": {
@@ -2954,18 +2942,6 @@
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
-      "Alias is not valid": [
-        "Alias ist ungültig"
-      ],
-      "Alias is required": [
-        "Alias ist erforderlich"
-      ],
-      "Alias options could not be resolved": [
-        "Fehler beim Auflösen der Aliasoptionen."
-      ],
-      "Aliases could not be loaded": [
-        "Aliasse konnten nicht geladen werden"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Der gesamte Speicherplatz wurde zugeordnet. Bitte reduziere den anderen Benutzern zugewiesenen Speicherplatz."
       ],
@@ -2989,12 +2965,6 @@
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Fehler beim Erstellen eines neuen Dokuments. Bitte versuche es erneut."
-      ],
-      "An error occurred while loading alias options": [
-        "Beim Laden der Alias-Optionen ist ein Fehler aufgetreten"
-      ],
-      "An error occurred while saving your alias": [
-        "Fehler beim Speichern deines Alias."
       ],
       "Authentication canceled.": [
         "Authentifizierung abgebrochen."
@@ -3062,12 +3032,6 @@
       "Could not load the image preview: ${ message }": [
         "Bildvorschau konnte nicht geladen werden: ${ message }"
       ],
-      "Could not open created vault": [
-        "Erstellter Tresor konnte nicht geöffnet werden."
-      ],
-      "Could not open updated vault": [
-        "Aktualisierter Tresor konnte nicht geöffnet werden."
-      ],
       "Could not read part of this file: ${ message }": [
         "Ein Teil dieser Datei konnte nicht gelesen werden: ${ message }"
       ],
@@ -3129,9 +3093,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Externe Einladungen sind vorübergehend deaktiviert. Bitte versuche es später erneut."
-      ],
-      "Failed loading group members": [
-        "Gruppenmitglieder konnten nicht geladen werden"
       ],
       "Failed to change permissions settings": [
         "Fehler beim Ändern der Berechtigungseinstellungen"
@@ -3226,9 +3187,6 @@
       "Folder name cannot be empty.": [
         "Name des Ordners kann nicht leer sein."
       ],
-      "Forward address is required": [
-        "Weiterleitungsadresse ist erforderlich"
-      ],
       "Image preview not found": [
         "Bildvorschau nicht gefunden"
       ],
@@ -3261,9 +3219,6 @@
       ],
       "Invitation not found": [
         "Einladung nicht gefunden"
-      ],
-      "Item content cannot exceed 40KB": [
-        "Der Inhalt des Eintrags darf 40 KB nicht überschreiten."
       ],
       "Item not found": [
         "Eintrag nicht gefunden"
@@ -3311,18 +3266,12 @@
       "Moving root item is not allowed": [
         "Das Verschieben des Stammeintrags ist nicht zulässig"
       ],
-      "Name is required": [
-        "Name ist erforderlich"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein",
         "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein"
       ],
       "Name must not be empty": [
         "Name darf nicht leer sein"
-      ],
-      "Network error": [
-        "Netzwerkfehler"
       ],
       "No calendars found to import": [
         "Keine Kalender zum Importieren vorhanden"
@@ -3893,9 +3842,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Wenn das zusätzliche Passwort aktiviert ist, kann die Alias-Verwaltung nur in ${ PASS_APP_NAME } erfolgen."
       ]
     },
     "Error notification": {
@@ -6116,9 +6062,6 @@
       "Additional comments": [
         "Zusätzliche Kommentare"
       ],
-      "Alias title": [
-        "Aliasbezeichnung"
-      ],
       "Allow editors to change permissions and share": [
         "Ermögliche es Bearbeitern, Berechtigungen zu ändern und zu teilen"
       ],
@@ -6236,9 +6179,6 @@
       "Drive": [
         "Drive"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "z. B. Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Bearbeiter"
       ],
@@ -6278,12 +6218,6 @@
       "Erase this link and remove everyone with access": [
         "Diesen Link löschen und jeden mit Zugriff entfernen"
       ],
-      "Exact host matching": [
-        "Genaue Host-Übereinstimmung"
-      ],
-      "Exact URL matching": [
-        "Genaue URL-Übereinstimmung"
-      ],
       "Expiry": [
         "Ablauf"
       ],
@@ -6298,9 +6232,6 @@
       ],
       "Folder name": [
         "Ordnername"
-      ],
-      "Forwards to": [
-        "Leitet weiter an"
       ],
       "From: ${ fromEmail }": [
         "Von: ${ fromEmail }"
@@ -6395,17 +6326,11 @@
       "Navigation": [
         "Navigation"
       ],
-      "Never fill on this exact URL": [
-        "Niemals auf dieser genauen URL ausfüllen"
-      ],
       "New password": [
         "Neues Passwort"
       ],
       "Not active": [
         "Nicht aktiv"
-      ],
-      "Note": [
-        "Notiz"
       ],
       "Notification": [
         "Benachrichtigung"
@@ -6418,9 +6343,6 @@
       ],
       "Optional": [
         "Optional"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Übergeordnete Domain und Subdomains (Standard)"
       ],
       "Password": [
         "Passwort"
@@ -6443,12 +6365,6 @@
       "Postal code": [
         "Postleitzahl"
       ],
-      "Premium domain": [
-        "Premium-Domain"
-      ],
-      "Public domain": [
-        "Öffentliche Domain"
-      ],
       "Public keys": [
         "Öffentliche Schlüssel"
       ],
@@ -6460,9 +6376,6 @@
       ],
       "Region": [
         "Region"
-      ],
-      "Regular expression": [
-        "Regulärer Ausdruck"
       ],
       "Require password": [
         "Passwort erforderlich"
@@ -6487,9 +6400,6 @@
       ],
       "Skip feedback": [
         "Rückmeldung überspringen"
-      ],
-      "Starts with": [
-        "Beginnt mit"
       ],
       "Stop sharing": [
         "Freigabe beenden"
@@ -6524,9 +6434,6 @@
       "Upload picture": [
         "Bild hochladen"
       ],
-      "URL wildcard pattern": [
-        "URL-Platzhalter-Muster"
-      ],
       "Username": [
         "Benutzername"
       ],
@@ -6550,12 +6457,6 @@
       ],
       "What happened?": [
         "Problembeschreibung"
-      ],
-      "Your alias": [
-        "Dein Alias"
-      ],
-      "Your domain": [
-        "Deine Domain"
       ],
       "Your IP": [
         "Deine IP"
@@ -6879,24 +6780,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "„Beginnt mit“-Übereinstimmungsregel"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Genaue (Sub-) Domain-Übereinstimmungsregel"
-      ],
-      "Exact URL matching rule": [
-        "Genaue URL-Übereinstimmungsregel"
-      ],
-      "Never fill with this exact URL": [
-        "Niemals mit dieser genauen URL ausfüllen"
-      ],
-      "Regular expression rule": [
-        "Reguläre-Ausdruck-Regel"
-      ],
-      "Wildcard pattern matching rule": [
-        "Platzhalter-Übereinstimmungsregel"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Deine kostenlose Testversion ist abgelaufen. ${ nonAutoRenewalAction }"
       ],
@@ -8213,6 +8096,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Letzte Chance: 80 % Rabatt auf deinen ersten Monat mit ${ plan }"
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Das ist deine letzte Chance, den ersten Monat von ${ plan } zu diesem Preis zu erhalten."
+      ],
       "Last day to save": [
         "Letzter Tag zum Sparen"
       ],
@@ -8295,6 +8181,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Kurze @pm.me E-Mail-Adresse"
+      ],
       "Storage": [
         "Speicherplatz"
       ],
@@ -8309,11 +8198,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besuche ${ helpCenterLink } oder ${ contactSupportLink }"
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Zahlungsmethode hinzufügen**, um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Jederzeit vorher kündigen.** Du kannst ${ planTitle } bis zum Ende der Testversion kostenlos nutzen."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Wenn du nach Ablauf der Testversion fortfährst,** kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Sobald dein volles Abonnement beginnt,** kannst du immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen,"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Jederzeit vor dem ${ cancelDate } kündigen."
-      ],
-      "Cancel anytime before then.": [
-        "Du kannst jederzeit vorher kündigen."
       ],
       "contact our support team": [
         "Kontaktiere unser Support-Team"
@@ -8327,16 +8228,22 @@
       "help center": [
         "Hilfezentrum"
       ],
+      "If you continue after your trial,": [
+        "Wenn du nach Ablauf der Testversion fortfährst,"
+      ],
       "If you need help,": [
         "Wenn du Hilfe benötigst,"
       ],
       "Once your full subscription starts...": [
         "Sobald dein vollständiges Abonnement beginnt ..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Du kannst immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      "to keep using all of the features after your trial ends.": [
+        "um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Du kannst immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -8347,9 +8254,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Dein vollständiges ${ planTitle }-Abonnement beginnt am ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du kannst ${ planTitle } kostenlos nutzen, bis die Testversion ausläuft."
       ]
     },
     "Option": {
@@ -8765,78 +8669,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Deal sichern"
-      ],
-      "Summer Sale": [
-        "Sommer Sale"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/Monat"
-      ],
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "2 TB data storage": [
-        "2 TB Datenspeicher"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB Datenspeicher"
-      ],
-      "500 GB storage": [
-        "500 GB Speicher"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Voller Zugriff auf ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Eigene Konten für 6 Benutzer"
-      ],
-      "Individual accounts for you and a partner": [
-        "Eigene Konten für dich und einen Partner"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online-Dokumenten- und Tabelleneditor"
-      ],
-      "Recover previous file versions": [
-        "Stelle frühere Dateiversionen wieder her"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyber-Bedrohungen"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "für 12 Monate"
-      ],
-      "SUMMER SALE": [
-        "SOMMER SALE"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Deal sichern"
@@ -9037,49 +8869,6 @@
     "Section": {
       "Org setup and account security": [
         "Einrichtung von Organisationen und Kontosicherheit"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Alle Aliasse"
-      ],
-      "Create alias": [
-        "Alias erstellen"
-      ],
-      "Create an alias": [
-        "Alias erstellen"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generiere Aliasse im Handumdrehen und verwalte deine Aliasse und Passwörter ganz einfach."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-Aliasse"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Mit Hide-my-email-Aliassen kannst du dich online für Dinge anmelden, ohne deine E-Mail-Adresse preiszugeben. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Neuer Alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } öffnen"
-      ],
-      "Protect your online identity": [
-        "Schütze deine Online-Identität"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } ausprobieren"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Verwendet auf Amazon für Shopping, etc."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(dadurch wird ${ PASS_APP_NAME } geöffnet)"
       ]
     },
     "Security Center - Action": {
@@ -9881,12 +9670,6 @@
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
       ],
-      "Alias copied to clipboard": [
-        "Alias in die Zwischenablage kopiert"
-      ],
-      "Alias saved and copied": [
-        "Alias gespeichert und kopiert"
-      ],
       "Canceling import": [
         "Import wird abgebrochen"
       ],
@@ -9918,9 +9701,6 @@
       ],
       "Invitation rejected": [
         "Einladung abgelehnt"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Zuletzt geänderte Aliasse, die in deinem ältesten Tresor gespeichert sind"
       ],
       "Phone number copied to clipboard": [
         "Telefonnummer in die Zwischenablage kopiert"
@@ -10438,9 +10218,6 @@
       ],
       "My files": [
         "Meine Dateien"
-      ],
-      "Need more aliases?": [
-        "Brauchst du mehr Aliasse?"
       ],
       "Need to share more files with edit access?": [
         "Musst du mehr Dateien mit Bearbeitungszugang teilen?"
@@ -10984,9 +10761,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } bietet eine leistungsstarke Kontrolle, aber ein einziger Fehler kann dazu führen, dass das automatische Ausfüllen auf betrügerischen oder Phishing-Websites übereinstimmt und Daten ausfüllt."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Möchtest du wirklich ${ count } Kontakt dauerhaft löschen?",

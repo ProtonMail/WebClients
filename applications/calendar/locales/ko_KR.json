@@ -233,9 +233,6 @@
       "Copy address": [
         "주소 복사하기"
       ],
-      "Copy alias “${ name }”": [
-        "별칭 \"${ name }\" 복사"
-      ],
       "Copy booking page link": [
         "예약 페이지 링크 복사"
       ],
@@ -274,9 +271,6 @@
       ],
       "Create an event": [
         "이벤트 생성"
-      ],
-      "Create and copy alias": [
-        "별칭 생성 및 복사"
       ],
       "Create booking page": [
         "예약 페이지 만들기"
@@ -724,6 +718,9 @@
       ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Remove": [
         "삭제"
@@ -3236,9 +3233,6 @@
       ],
       "You’ll get a secure email with the details shortly.": [
         "곧 세부사항이 담긴 보안 이메일이 발송됩니다."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
       ]
     },
     "description": {
@@ -3571,18 +3565,6 @@
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
       ],
-      "Alias is not valid": [
-        "유효하지 않은 별칭임"
-      ],
-      "Alias is required": [
-        "별칭이 필요합니다."
-      ],
-      "Alias options could not be resolved": [
-        "별칭 옵션을 확인할 수 없습니다."
-      ],
-      "Aliases could not be loaded": [
-        "별칭을 불러올 수 없습니다."
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "모든 저장 공간이 할당되었습니다. 다른 사용자에게 할당 된 저장공간을 줄이십시오."
       ],
@@ -3594,12 +3576,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "최소 금액 (${ minimumAmount })미만입니다."
-      ],
-      "An error occurred while loading alias options": [
-        "별칭 옵션 로드 중 오류가 발생했습니다."
-      ],
-      "An error occurred while saving your alias": [
-        "별칭을 저장하는 도중 오류가 발생했습니다."
       ],
       "Answer failed to be sent": [
         "대답 전송 실패"
@@ -3685,12 +3661,6 @@
       "Could not load the image preview: ${ message }": [
         "이미지 미리보기를 불러올 수 없음: ${ message }"
       ],
-      "Could not open created vault": [
-        "생성된 금고를 열 수 없습니다."
-      ],
-      "Could not open updated vault": [
-        "업데이트된 금고를 열 수 없습니다."
-      ],
       "Could not read part of this file: ${ message }": [
         "해당 파일의 일부를 읽을 수 없음: ${ message }"
       ],
@@ -3763,9 +3733,6 @@
       "Expiration date cannot be in the past": [
         "만료일은 과거일 수 없습니다"
       ],
-      "Failed loading group members": [
-        "그룹 구성원을 로드하는 데 실패했습니다"
-      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } 화상 회의 추가 실패"
       ],
@@ -3835,9 +3802,6 @@
       "Folder name cannot be empty.": [
         "폴더 이름은 비워둘 수 없습니다."
       ],
-      "Forward address is required": [
-        "전달 주소가 필요합니다."
-      ],
       "Image preview not found": [
         "이미지 미리보기를 사용할 수 없음"
       ],
@@ -3898,9 +3862,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "${ minDateString } - ${ maxDateString } 사이만 이벤트를 이동할 수 있습니다."
       ],
-      "Item content cannot exceed 40KB": [
-        "항목 콘텐츠가 40KB를 초과할 수 없습니다."
-      ],
       "Item not found": [
         "항목을 찾을 수 없습니다"
       ],
@@ -3949,9 +3910,6 @@
       "Moving root item is not allowed": [
         "상위 항목에 대한 이동은 허용되지 않습니다."
       ],
-      "Name is required": [
-        "이름은 필수입니다"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "이름은 최대 ${ MAX_NODE_NAME_LENGTH }글자까지입니다."
       ],
@@ -3960,9 +3918,6 @@
       ],
       "Name required": [
         "이름이 필요합니다"
-      ],
-      "Network error": [
-        "네트워크 오류"
       ],
       "No booking page data received": [
         "예약 페이지 데이터를 수신할 수 없음"
@@ -4197,6 +4152,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "사용가능한 도메인을 가져오는 동안 문제가 발생했습니다."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
       ],
       "Something went wrong. Please try again.": [
         "문제가 발생했습니다. 다시 시도해주세요."
@@ -4561,9 +4519,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "추가 비밀번호 설정 시, 별칭 관리는 ${ PASS_APP_NAME } 에서만 가능합니다."
       ],
       "You need an active personal calendar to import events": [
         "이벤트를 가져오려면 활성화된 개인 캘린더가 있어야 합니다"
@@ -6452,6 +6407,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "구독 종료: ${ planName } 혜택을 유지하려면, ${ byDate }까지 Google Play Store에서 구독을 갱신하십시오. ${ reactivateLink }"
       ],
+      "support team": [
+        "지원 팀"
+      ],
       "Surveillance": [
         "감시"
       ],
@@ -7207,9 +7165,6 @@
       "Address": [
         "주소"
       ],
-      "Alias title": [
-        "별칭 제목"
-      ],
       "All day": [
         "매일"
       ],
@@ -7351,9 +7306,6 @@
       "Drive": [
         "드라이브"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "예: Amazon, eBay, Etsy"
-      ],
       "Email": [
         "이메일"
       ],
@@ -7399,12 +7351,6 @@
       "Every": [
         "전체"
       ],
-      "Exact host matching": [
-        "정확한 호스트 일치"
-      ],
-      "Exact URL matching": [
-        "정확한 URL 일치"
-      ],
       "Expires": [
         "만료"
       ],
@@ -7419,9 +7365,6 @@
       ],
       "Folder location": [
         "폴더 위치"
-      ],
-      "Forwards to": [
-        "다음으로 전달:"
       ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
@@ -7519,14 +7462,8 @@
       "Navigation": [
         "내비게이션"
       ],
-      "Never fill on this exact URL": [
-        "이 정확한 URL에서 자동완성 사용 안 함"
-      ],
       "New password": [
         "새 비밀번호"
-      ],
-      "Note": [
-        "메모"
       ],
       "Notification": [
         "알림"
@@ -7551,9 +7488,6 @@
       ],
       "Organizer": [
         "주최자"
-      ],
-      "Parent domain and subdomains (default)": [
-        "상위 도메인 및 하위 도메인(기본값)"
       ],
       "participant": [
         "참가자"
@@ -7591,26 +7525,17 @@
       "Postal code": [
         "우편번호"
       ],
-      "Premium domain": [
-        "프리미엄 도메인"
-      ],
       "Primary": [
         "우선 순위"
       ],
       "Proration": [
         "할당"
       ],
-      "Public domain": [
-        "공개 도메인"
-      ],
       "Public keys": [
         "공개 키"
       ],
       "Region": [
         "시/도"
-      ],
-      "Regular expression": [
-        "정규식"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } 화상 회의 삭제"
@@ -7650,9 +7575,6 @@
       ],
       "Start date": [
         "시작일"
-      ],
-      "Starts with": [
-        "다음으로 시작"
       ],
       "State": [
         "시/도"
@@ -7702,9 +7624,6 @@
       "URL": [
         "URL"
       ],
-      "URL wildcard pattern": [
-        "URL 와일드카드 패턴"
-      ],
       "Username": [
         "사용자 이름"
       ],
@@ -7735,14 +7654,8 @@
       "What happened?": [
         "무슨 일인가요?"
       ],
-      "Your alias": [
-        "내 별칭"
-      ],
       "Your calendar URL": [
         "내 캘린더 URL"
-      ],
-      "Your domain": [
-        "나의 도메인"
       ],
       "Your IP": [
         "나의 IP"
@@ -8130,29 +8043,11 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "'다음으로 시작' 일치 규칙"
-      ],
-      "Exact (sub) domain matching rule": [
-        "정확한 (하위) 도메인 일치 규칙"
-      ],
-      "Exact URL matching rule": [
-        "정확한 URL 일치 규칙"
-      ],
       "Fw:": [
         "전달:"
       ],
-      "Never fill with this exact URL": [
-        "이 정확한 URL에서는 자동완성 안 함"
-      ],
       "Re:": [
         "회신:"
-      ],
-      "Regular expression rule": [
-        "정규식 규칙"
-      ],
-      "Wildcard pattern matching rule": [
-        "와일드카드 패턴 일치 규칙"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "무료 체험이 종료되었습니다. ${ nonAutoRenewalAction }"
@@ -9648,11 +9543,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " ${ helpCenterLink } 또는 ${ contactSupportLink }에 방문하세요."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "무료 체험 종료 후에도 모든 기능을 계속 사용하려면 **결제 방법을 추가하세요**."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**해당 날짜 전에 언제든지 취소하세요.** 무료 체험 종료일 전까지 별도 청구 없이 ${ planTitle }을(를) 계속 사용할 수 있습니다."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**무료 체험 이후에도 플랜을 유지하는 경우** 30일 이내에 취소시 사용량에 비례하여 환불받으실 수 있습니다."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**정식 구독이 시작된 후에도...** 30일 내에 구독 취소 시 사용량에 비례하여 환불 받을 수 있습니다."
+      ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "${ cancelDate }전까지 언제든지 취소하세요."
-      ],
-      "Cancel anytime before then.": [
-        "그때까지 언제든지 취소하실 수 있습니다."
       ],
       "contact our support team": [
         "자사 고객 지원팀에 문의"
@@ -9666,17 +9573,23 @@
       "help center": [
         "지원 센터"
       ],
+      "If you continue after your trial,": [
+        "무료 체험 이후에도 유지한다면,"
+      ],
       "If you need help,": [
         "도움이 필요하시다면,"
       ],
       "Once your full subscription starts...": [
         "전체 구독이 시작되면..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
+      "to keep using all of the features after your trial ends.": [
+        "- 모든 기능을 계속 사용하려면 결제 방법을 추가하세요."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
         "30일 내에 구독 취소시 사용량이 비례하여 환불을 받으실 수 있습니다."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "30일 내에 구독 취소시 사용량에 비례하여 환불을 받으실 수 있습니다."
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "30일 내에 구독 취소시 사용량이 비례하여 환불을 받으실 수 있습니다."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "무료 체험 종료일까지 계속 ${ planTitle }을(를) 사용하실 수 있어요. 구독료는 청구되지 않습니다."
@@ -9686,9 +9599,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "회원님의 ${ planTitle } 구독이 ${ boldEndDate }에 시작됩니다."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "무료 체험 기간 종료 전까지 ${ planTitle }을(를) 무료로 계속 사용 가능합니다."
       ]
     },
     "Option": {
@@ -10496,78 +10406,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "할인 받기"
-      ],
-      "Summer Sale": [
-        "여름 세일"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/월"
-      ],
-      "15 GB storage": [
-        "15 GB 저장공간"
-      ],
-      "2 TB data storage": [
-        "2 TB 데이터 저장공간"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 저장공간: 현재 요금제의 40배"
-      ],
-      "3 TB data storage": [
-        "3 TB 데이터 저장공간"
-      ],
-      "500 GB storage": [
-        "500 GB 저장공간"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 premium 기능"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }에 대한 완전한 접근"
-      ],
-      "Individual accounts for 6 users": [
-        "6인용 개별 계정"
-      ],
-      "Individual accounts for you and a partner": [
-        "귀하와 파트너를 위한 개별 계정"
-      ],
-      "Online document and spreadsheet editor": [
-        "온라인 문서 및 스프레드시트 편집기"
-      ],
-      "Recover previous file versions": [
-        "이전 파일 버전 복구"
-      ],
-      "Stronger protection against cyber threats": [
-        "사이버 위협에 대한 더욱 강력한 보호"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "무제한 폴더, 라벨 및 필터"
-      ],
-      "Use your own email domain": [
-        "나만의 이메일 도메인 사용"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12개월 동안"
-      ],
-      "SUMMER SALE": [
-        "여름 세일"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "특가로 구매"
@@ -10740,49 +10578,6 @@
     "Section": {
       "Org setup and account security": [
         "조직 설정 및 계정 보안"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "모든 별칭"
-      ],
-      "Create alias": [
-        "별칭 생성"
-      ],
-      "Create an alias": [
-        "별칭 생성"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "즉석에서 만들어지는 별칭, 그리고 간편한 별칭과 비밀번호의 관리."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email 별칭"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email 별칭은 이메일 주소 공유 없이도 로그인할 수 있도록 해줍니다. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "새 별칭"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 열기"
-      ],
-      "Protect your online identity": [
-        "나의 온라인 신원 보호"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 체험"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "쇼핑을 위해 쿠팡에서 사용됨, 기타 등등."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "이메일 주소를 누군가 물어본다면, 별칭을 대신 제공하세요. 별칭이 ${ passLink }에 의해 제공됩니다."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME }을 엽니다)"
       ]
     },
     "Security Center - Action": {
@@ -11839,12 +11634,6 @@
       "Address copied to clipboard": [
         "주소가 클립보드에 복사되었습니다"
       ],
-      "Alias copied to clipboard": [
-        "별칭이 클립보드에 복사됨"
-      ],
-      "Alias saved and copied": [
-        "별칭이 저장 및 복사되었습니다"
-      ],
       "All events deleted": [
         "모든 이벤트 삭제됨"
       ],
@@ -11970,9 +11759,6 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "키보드 단축키 설정 업데이트 됨"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "마지막으로 편집한 별칭이 가장 오래된 금고에 보관되었습니다"
       ],
       "Participants notified and all events updated": [
         "참가자에게 알람 전송됨 및 모든 이벤트 업로드됨"
@@ -12615,9 +12401,6 @@
       "Mobile": [
         "모바일"
       ],
-      "Need more aliases?": [
-        "별칭이 더 필요하신가요?"
-      ],
       "Network error": [
         "네트워크 오류"
       ],
@@ -13259,9 +13042,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }이 가장 최근의 메시지를 시작하여 가능한 많은 데이터를 전송합니다."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong }은 강력한 제어 기능을 제공하지만, 단 하나의 오류로도 사기 또는 피싱 웹사이트에서 자동완성이 일치하여 데이터가 입력될 수 있습니다."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"

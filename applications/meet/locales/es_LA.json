@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } bajó la mano"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } le mencionó: ${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } levantó la mano"
       ],
@@ -45,6 +48,10 @@
       ],
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
+      ],
+      "${ suggestionCount } mention suggestion available": [
+        "${ suggestionCount } sugerencia de mención disponible",
+        "${ suggestionCount } sugerencias de menciones disponibles"
       ],
       "A participant joined the meeting": [
         "Un participante se unió a la reunión"
@@ -157,6 +164,9 @@
       "You have been muted by the host": [
         "Se ha silenciado su micrófono"
       ],
+      "You were mentioned: ${ message }": [
+        "Se le mencionó: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "Su cámara fue desactivada por el anfitrión"
       ],
@@ -167,6 +177,10 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } mención nueva",
+        "${ newMentionCount } menciones nuevas"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } nuevo",
@@ -312,6 +326,9 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Dismiss new mentions": [
+        "Descartar menciones nuevas"
       ],
       "Dismiss new messages": [
         "Descartar mensajes nuevos"
@@ -472,6 +489,9 @@
       "Open link": [
         "Abrir enlace"
       ],
+      "Open mention from ${ senderName } in chat": [
+        "Abrir mención de ${ senderName } en el chat"
+      ],
       "Participants join after you approve them": [
         "Los participantes se unen después de que los apruebe"
       ],
@@ -529,6 +549,9 @@
       ],
       "Refresh the page": [
         "Refrescar la página"
+      ],
+      "refresh the page": [
+        "refresque la página"
       ],
       "Rejoin meeting": [
         "Volver a unirse a la reunión"
@@ -2172,6 +2195,9 @@
       "Live captions have stopped.": [
         "Se detuvieron los subtítulos en directo."
       ],
+      "Message is too long to send": [
+        "Mensaje demasiado extenso para enviar"
+      ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "El acceso al micrófono está bloqueado. Permítalo en los ajustes del navegador."
       ],
@@ -2281,6 +2307,9 @@
       "Something went wrong": [
         "Ocurrió un error."
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Hubo un problema. ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
+      ],
       "Something went wrong. Please try again.": [
         "Hubo un problema. Intente de nuevo."
       ],
@@ -2292,6 +2321,12 @@
       ],
       "The meeting password is invalid": [
         "La contraseña de la reunión no es válida"
+      ],
+      "The mention could not be added because the message is at its character limit": [
+        "No se pudo añadir la mención porque el mensaje alcanzó el límite de caracteres"
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "El campo de mensaje no está disponible. Actualice la página."
       ],
       "The selected microphone is no longer available.": [
         "El micrófono seleccionado ya no está disponible."
@@ -2624,6 +2659,9 @@
         "${ replyCount } respuesta",
         "${ replyCount } respuestas"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } le mencionó"
+      ],
       "${ spotlightParticipantName } is the active speaker": [
         "${ spotlightParticipantName } es el hablante activo"
       ],
@@ -2815,6 +2853,9 @@
       "End-to-end encryption is active for this chat.": [
         "El cifrado de extremo a extremo está activo para este chat."
       ],
+      "enter": [
+        "ingresar"
+      ],
       "Enter code": [
         "Ingresar código"
       ],
@@ -2889,6 +2930,9 @@
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Si está usando Firefox, asegúrese de que PeerConnection está activado."
+      ],
+      "Incoming video off": [
+        "Video entrante apagado"
       ],
       "Internet connection lost": [
         "Sin conexión a Internet"
@@ -2989,6 +3033,9 @@
       "Member": [
         "Miembro"
       ],
+      "Mention from ${ senderName }": [
+        "Mención de ${ senderName }"
+      ],
       "Message actions": [
         "Acciones del mensaje"
       ],
@@ -3057,6 +3104,9 @@
       ],
       "Not sent, check your connection.": [
         "No enviado, compruebe su conexión."
+      ],
+      "notify everyone here": [
+        "notificar a todos aquí"
       ],
       "Only meetings you created appear here": [
         "Aquí solo aparecen las reuniones que ha creado usted"
@@ -3210,6 +3260,9 @@
       ],
       "Successfully deleted meeting": [
         "Reunión eliminada con éxito"
+      ],
+      "support team": [
+        "equipo de soporte"
       ],
       "Thank you for hosting a premium meeting.": [
         "Gracias por organizar una reunión premium."
@@ -3571,6 +3624,9 @@
       "Every year": [
         "Anualmente"
       ],
+      "everyone": [
+        "todos"
+      ],
       "Google Calendar": [
         "Calendario de Google"
       ],
@@ -3612,6 +3668,9 @@
       ],
       "Meeting link": [
         "Enlace de la reunión"
+      ],
+      "Mention a participant": [
+        "Mencionar un participante"
       ],
       "Message": [
         "Mensaje"
@@ -3699,6 +3758,9 @@
       ],
       "Track SID": [
         "Seguimiento de SID"
+      ],
+      "unknown": [
+        "desconocido"
       ],
       "Uploaded image": [
         "Imagen cargada"
@@ -3806,6 +3868,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Su reunión personal se rotó con éxito"
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Gracias. Sus comentarios han sido enviados."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "No puede enviar comentarios de una reunión a la que no ha asistido"

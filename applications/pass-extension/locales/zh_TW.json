@@ -154,6 +154,9 @@
       "Close navigation": [
         "關閉導覽"
       ],
+      "Collapse": [
+        "收合"
+      ],
       "Configure": [
         "配置"
       ],
@@ -235,6 +238,9 @@
       "Create contact": [
         "創建聯絡人"
       ],
+      "Create folder": [
+        "新建資料夾"
+      ],
       "Create identity": [
         "創建新身份"
       ],
@@ -243,6 +249,9 @@
       ],
       "Create login": [
         "創建登入"
+      ],
+      "Create new folder": [
+        "創建新資料夾"
       ],
       "Create new login": [
         "創建新的登入"
@@ -342,6 +351,9 @@
       ],
       "Exclude from monitoring": [
         "排除監控"
+      ],
+      "Expand": [
+        "展開"
       ],
       "Export": [
         "匯出"
@@ -484,8 +496,8 @@
       "Move all items": [
         "移動所有物品"
       ],
-      "Move to another vault": [
-        "移動到另一個保管庫"
+      "Move to": [
+        "移至"
       ],
       "Move to trash": [
         "移至垃圾桶"
@@ -570,6 +582,9 @@
       ],
       "Remove member": [
         "移除成員"
+      ],
+      "Rename": [
+        "重新命名"
       ],
       "Request a feature": [
         "提出新功能建議"
@@ -1099,6 +1114,9 @@
       ],
       "Failed to create domain": [
         "無法建立網域"
+      ],
+      "Failed to create folder": [
+        "建立資料夾失敗"
       ],
       "Failed to create new mailbox": [
         "無法建立新電子郵件信箱"
@@ -1843,9 +1861,6 @@
       ],
       "Creating alias...": [
         "生成別名..."
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV 提供了一種便於檢視資料的格式。然而，由於其結構簡單，某些資料將不會被包含在內（如自訂欄位、通行密鑰等）。若要進行完整匯出，我們建議使用其他格式。"
       ],
       "Current version": [
         "目前版本"
@@ -3384,6 +3399,9 @@
       "Floor, apartment, building": [
         "樓層、公寓、建築"
       ],
+      "Folder": [
+        "資料夾"
+      ],
       "For a one-off sharing": [
         "一次性連結"
       ],
@@ -4421,9 +4439,6 @@
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "重新輸入${ vaultName }以確認刪除"
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "於${ vaultName }搜尋${ pluralItemType }"
       ],
@@ -4773,9 +4788,6 @@
       "Delete this item?": [
         "刪除此項目嗎？"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "確定要刪除保管庫 \"${ vaultName }\"？"
-      ],
       "Did you know?": [
         "您知道嗎？"
       ],
@@ -4829,6 +4841,9 @@
       ],
       "Fill password": [
         "填寫密碼"
+      ],
+      "Folder options": [
+        "資料夾選項"
       ],
       "Get Started": [
         "入門指南"
@@ -4917,17 +4932,11 @@
       "Modified": [
         "修改日期"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "將 ${ count } 個項目移動到 ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "要將 ${ trashedItemsCount } 個項目移至垃圾桶嗎？"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "要將所有項目移至「${ vaultName }」嗎？"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "將項目移至「${ vaultName }」"
       ],
       "MX record": [
         "MX 記錄"
@@ -5459,9 +5468,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "無法登入至${ PASS_APP_NAME }。${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "保管庫「${ vaultName }」及其所有項目將被永久刪除。無法復原此動作。"
       ],
       "Vault name is required": [
         "保管庫需要名字"

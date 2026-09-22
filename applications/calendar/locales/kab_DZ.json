@@ -491,6 +491,9 @@
       "Refresh the page": [
         "Smiren asebter"
       ],
+      "refresh the page": [
+        "smiren asebter"
+      ],
       "Remove": [
         "Kkes"
       ],
@@ -2323,9 +2326,6 @@
       "Address primary private key not found": [
         "Tasarut tamaẓlayt tagejdant n tansa ulac-itt"
       ],
-      "Alias options could not be resolved": [
-        "Tixtiṛiyin n alias ggummant ad ṣegment"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Amḍiq n usekles meṛṛa yettunefk-ak. Ma ulac aɣilif, senɣes amḍiq ittunefken i yiseqdacen-nniḍen."
       ],
@@ -2367,12 +2367,6 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Anadi n ugbur ur yezmir ara ad yettwarmad deg yiminig-a. Ttxil ffeɣ seg uskar n tunigin tusligin neɣ seqdec iminig-nniḍen."
-      ],
-      "Could not open created vault": [
-        "Yugi ad yeldi usenduq yettwarnan"
-      ],
-      "Could not open updated vault": [
-        "Yugi ad yeldi usenduq yettwaleqqmen"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Tuccḍa di tukksa n uwgelhen: tukksa n uwgelhen n tedyanin-agi tecceḍ."
@@ -2455,9 +2449,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Asenkez n yiznan yezmer kan ad yili gar ${ minDateString } de ${ maxDateString }"
       ],
-      "Item content cannot exceed 40KB": [
-        "Agbur n uferdis ur yezmir ara ad iɛeddi 40KAṬ"
-      ],
       "Label name cannot be empty.": [
         "Isem n tebzimt ur ilaq ara ad yili d ilem."
       ],
@@ -2469,9 +2460,6 @@
       ],
       "Name required": [
         "Isem yettwasra"
-      ],
-      "Network error": [
-        "Tuccḍa n uzeṭṭa"
       ],
       "No calendars found to import": [
         "Ulac iwitayen i yettwafen i uktar"
@@ -2586,6 +2574,9 @@
       ],
       "Something went wrong": [
         "Yella wayen yeḍran"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
       ],
       "Something went wrong. Please try again.": [
         "Yella kra i yeḍran, ttxil ɛreḍ tikkelt-nniḍen."
@@ -3872,6 +3863,9 @@
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Kra seg tririyin-inek·inem ɣef tneḍruyin yettwaleqqmen yakan sɣur amsuddes ad ṛuḥen."
       ],
+      "support team": [
+        "tarbaɛt n tallalt"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Ulac-it akka tura. Ma ulac aɣilif, senqed ticki."
       ],
@@ -4200,9 +4194,6 @@
       "Address": [
         "Tansa"
       ],
-      "Alias title": [
-        "Mefferisem azwel"
-      ],
       "All day": [
         "Ass meṛṛa"
       ],
@@ -4371,9 +4362,6 @@
       "Folder location": [
         "Ideg n ukaram"
       ],
-      "Forwards to": [
-        "Welleh ɣer"
-      ],
       "From: ${ fromEmail }": [
         "Sɣur: ${ fromEmail }"
       ],
@@ -4451,9 +4439,6 @@
       ],
       "New password": [
         "Awal uffir amaynut"
-      ],
-      "Note": [
-        "Tamawt"
       ],
       "Notification": [
         "Ilɣa"
@@ -5861,95 +5846,9 @@
         "Imayl uzzig seg ${ BRAND_NAME }"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Faṛes tagnit"
-      ],
-      "Summer Sale": [
-        "Tanzayt n unebdu"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/ayyur"
-      ],
-      "15 GB storage": [
-        "15 GAṬ n uḥraz"
-      ],
-      "2 TB data storage": [
-        "Aklas n isefka n 2 TAṬ"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "Aklas n 200 GB: 40 n tikkal aɣawas-ik n tura"
-      ],
-      "3 TB data storage": [
-        "Aklas n isefka n 3 TAṬ"
-      ],
-      "500 GB storage": [
-        "500 GAṬ n uḥraz"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Akk timahilin premium n ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, d ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Akk timahilin premium n ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, d ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Isenqasen bnan ɣef watig amagnu n yal aggur. Tajerridt-ik ad tettuɣal s watig amagnu n yal aseggas mi ara tfak tuzya n tfaturt."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Anekcum ummid ɣer ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Imiḍanen iymanen i 6 n yimseqdacen"
-      ],
-      "Individual accounts for you and a partner": [
-        "Imiḍanen iymanen i kečč d umrec-ik"
-      ],
-      "Online document and spreadsheet editor": [
-        "Amaẓrag s tuqqna n isemliyen d tkaṛḍiwin n usiḍen"
-      ],
-      "Recover previous file versions": [
-        "Ssuɣal tilqamin yezrin n ufaylu"
-      ],
-      "Stronger protection against cyber threats": [
-        "Amestan ijehden mgal isgagen isenselkimen"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Ssenfel ɣer uɣawas-nneɣ n yal aseggas tessefrit ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ikaramen, tibzimin, d yimsizedgen war tilas"
-      ],
-      "Use your own email domain": [
-        "Seqdec taɣult-ik n yimayl"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "i 12 wayyuren"
-      ],
-      "SUMMER SALE": [
-        "TANZAYT N UNEBDU"
-      ]
-    },
     "Reload event button tooltip": {
       "Reload event": [
         "Sali tikkelt niḍen tadyant"
-      ]
-    },
-    "Security Center": {
-      "Create alias": [
-        "Rnu alias"
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email aliases"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Ldi ${ PASS_APP_NAME }"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Ɛreḍ ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {

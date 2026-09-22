@@ -172,6 +172,9 @@
       "Close navigation": [
         "Fermer la navigation"
       ],
+      "Collapse": [
+        "Réduire"
+      ],
       "Confirm": [
         "Confirmer"
       ],
@@ -250,6 +253,9 @@
       "Create contact": [
         "Créer un contact"
       ],
+      "Create folder": [
+        "Créer un dossier"
+      ],
       "Create identity": [
         "Créer une identité"
       ],
@@ -258,6 +264,9 @@
       ],
       "Create login": [
         "Créer un identifiant"
+      ],
+      "Create new folder": [
+        "Créer un nouveau dossier"
       ],
       "Create new items": [
         "Créer de nouveaux éléments"
@@ -360,6 +369,9 @@
       ],
       "Exclude from monitoring": [
         "Exclure de la surveillance"
+      ],
+      "Expand": [
+        "Développer"
       ],
       "Export": [
         "Exporter"
@@ -505,8 +517,8 @@
       "Move all items": [
         "Déplacer tous les éléments"
       ],
-      "Move to another vault": [
-        "Déplacer vers un autre coffre-fort"
+      "Move to": [
+        "Déplacer vers"
       ],
       "Move to trash": [
         "Déplacer dans la corbeille"
@@ -606,6 +618,9 @@
       ],
       "Remove member": [
         "Retirer le membre"
+      ],
+      "Rename": [
+        "Renommer"
       ],
       "Request a feature": [
         "Demander une fonctionnalité"
@@ -1158,6 +1173,9 @@
       "Failed to create domain": [
         "La création du domaine n'a pas abouti."
       ],
+      "Failed to create folder": [
+        "La création du dossier n'a pas abouti."
+      ],
       "Failed to create new mailbox": [
         "La création de la messagerie n'a pas abouti."
       ],
@@ -1172,6 +1190,10 @@
       ],
       "Failed to delete email address from monitoring": [
         "L'adresse e-mail n'a pas pu être supprimée de la surveillance."
+      ],
+      "Failed to delete folder": [
+        "Impossible de supprimer le dossier",
+        "Impossible de supprimer les dossiers"
       ],
       "Failed to delete selected items": [
         "Les éléments sélectionnés n'ont pas pu être supprimés."
@@ -1260,6 +1282,9 @@
       "Failed to update domain name.": [
         "La mise à jour du nom de domaine n'a pas abouti."
       ],
+      "Failed to update folder": [
+        "Échec de la mise à jour du dossier"
+      ],
       "Failed to update monitoring settings": [
         "Les paramètres de surveillance n'ont pas pu être mis à jour."
       ],
@@ -1289,6 +1314,9 @@
       ],
       "File does not match expected format": [
         "Le fichier ne correspond pas au format attendu."
+      ],
+      "Folder name does not match": [
+        "Le nom du dossier ne correspond pas"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "L'importation du coffre-fort « ${ vaultData.name } » n'a pas abouti : ${ errorMessage }"
@@ -1881,8 +1909,8 @@
       "Created item": [
         "Élément créé"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "Le CSV offre un format pratique pour visualiser vos données. Cependant, en raison de sa simplicité, certaines données ne seront pas incluses (champs personnalisés, clés d'accès...). Pour une exportation complète, nous vous recommandons d’utiliser un format différent."
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "Le CSV offre un format pratique pour visualiser vos données. Cependant, en raison de sa simplicité, certaines données ne seront pas incluses (champs personnalisés, structure de dossiers, etc.). Pour une exportation complète, nous recommandons d'utiliser un format différent."
       ],
       "Current version": [
         "Version actuelle"
@@ -2031,6 +2059,15 @@
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Recherchez « OpenSSH Authentication Agent », puis sélectionnez avec le bouton droit de la souris « Propriétés »."
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Le dossier \"${ payload.folder.name }\" a été créé"
+      ],
+      "Folder deleted": [
+        "Le dossier a été supprimé."
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Dossier renommé \"${ payload.folder.name }\""
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Suivez ces étapes pour importer vos données à l'aide d'un fichier CSV générique :"
       ],
@@ -2046,6 +2083,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "L'adresse de transfert a été copiée dans le presse-papiers. Envoyez un e-mail à cette adresse et ${ Email } le recevra."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Synchronisation complète des données pour améliorer les performances de l'application. Merci de votre patience."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Les mots de passe générés seront stockés pendant ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaine.",
@@ -2219,8 +2259,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2281,6 +2320,14 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accès en ligne à ${ PASS_APP_NAME } nécessitera un code PIN. Vous serez déconnecté après 3 tentatives n'ayant pas abouti."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Seulement ${ count } élément dans \"${ folderName }\" sera déplacé. Les éléments dans les sous-dossiers ne seront pas déplacés.",
+        "Seulement ${ count } éléments dans \"${ folderName }\" seront déplacés. Les éléments dans les sous-dossiers ne seront pas déplacés."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Seulement ${ count } élément sera déplacé. Les éléments dans les dossiers ne seront pas déplacés.",
+        "Seulement ${ count } éléments seront déplacés. Les éléments dans les dossiers ne seront pas déplacés."
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Seuls les jetons expirés depuis moins de 30 jours sont affichés. Les jetons plus anciens sont automatiquement supprimés."
@@ -2591,6 +2638,9 @@
       ],
       "Suggested": [
         "Suggestions"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Sélectionnez un autre dossier ou créez un élément dans ce dossier"
       ],
       "Switch to another vault or create an item in this vault": [
         "Changez de coffre-fort ou créez un élément dans ce coffre-fort."
@@ -3218,6 +3268,9 @@
       "Company": [
         "Entreprise"
       ],
+      "Confirm folder name": [
+        "Confirmez le nom du dossier"
+      ],
       "Confirm vault name": [
         "Confirmer le nom du coffre-fort"
       ],
@@ -3247,6 +3300,9 @@
       ],
       "Create a custom item": [
         "Créer un élément personnalisé"
+      ],
+      "Create a folder": [
+        "Créer un dossier"
       ],
       "Create a hide-my-email alias": [
         "Créer un alias « hide-my-email »"
@@ -3418,6 +3474,12 @@
       ],
       "Floor, apartment, building": [
         "Étage, appartement, immeuble"
+      ],
+      "Folder": [
+        "Dossier"
+      ],
+      "Folders": [
+        "Dossiers"
       ],
       "For a one-off sharing": [
         "Pour un partage unique"
@@ -4535,6 +4597,9 @@
       "Enter username": [
         "Saisir un nom d'utilisateur"
       ],
+      "Folder name": [
+        "Nom du dossier"
+      ],
       "Full Name": [
         "Nom complet"
       ],
@@ -4562,8 +4627,8 @@
       "Please describe the problem and include any error messages": [
         "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Saisissez à nouveau « ${ vaultName } » pour confirmer la suppression."
+      "Retype \"${ name }\" to confirm deletion": [
+        "Saisissez à nouveau \"${ name }\" pour confirmer la suppression"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Recherchez les ${ pluralItemType } dans ${ vaultName }."
@@ -4889,11 +4954,17 @@
       "Create contact": [
         "Créer un contact"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Créer un dossier dans ${ vaultName }"
+      ],
       "Create new access token": [
         "Créer un nouveau jeton d'accès"
       ],
       "Create PIN code": [
         "Créez un code PIN"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Créer un sous-dossier dans \"${ folderName }\""
       ],
       "Created": [
         "Création"
@@ -4929,14 +5000,17 @@
       "Delete domain": [
         "Supprimer le domaine "
       ],
+      "Delete folder \"${ name }\"?": [
+        "Supprimer le dossier \"${ name }\" ?"
+      ],
       "Delete mailbox": [
         "Supprimer la messagerie"
       ],
       "Delete this item?": [
         "Voulez-vous supprimer cet élément ?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Voulez-vous supprimer le coffre-fort « ${ vaultName } » ?"
+      "Delete vault \"${ name }\"?": [
+        "Supprimer le coffre-fort \"${ name }\" ?"
       ],
       "Did you know?": [
         "Le saviez-vous ?"
@@ -4985,6 +5059,9 @@
       ],
       "Excluded items": [
         "Éléments exclus"
+      ],
+      "Folder options": [
+        "Options de dossier"
       ],
       "Get Started": [
         "Commencer"
@@ -5064,9 +5141,9 @@
       "Modified": [
         "Modifié"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Déplacer ${ count } élément vers ${ vaultName }",
-        "Déplacer ${ count } éléments vers ${ vaultName }"
+      "Move ${ count } item to ${ target }": [
+        "Déplacer ${ count } élément vers ${ target }",
+        "Déplacer ${ count } éléments vers ${ target }"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Voulez-vous mettre ${ trashedItemsCount } élément à la corbeille ?",
@@ -5075,8 +5152,11 @@
       "Move all items to \"${ vaultName }\"?": [
         "Déplacer tous les éléments vers « ${ vaultName } » ?"
       ],
-      "Move item to \"${ vaultName }\"": [
-        "Déplacer l'élément vers « ${ vaultName } »"
+      "Move all items?": [
+        "Déplacer tous les éléments ?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Déplacer l'élément vers \"${ target }\""
       ],
       "MX record": [
         "Enregistrement MX"
@@ -5171,6 +5251,9 @@
       ],
       "Remove secure link?": [
         "Retirer le lien sécurisé ?"
+      ],
+      "Rename folder": [
+        "Renommer un dossier"
       ],
       "Reset history for this item?": [
         "Voulez-vous réinitialiser l'historique de cet élément ?"
@@ -5323,6 +5406,9 @@
       "Your exposed information": [
         "Vos informations exposées"
       ],
+      "Your folder is empty": [
+        "Votre dossier est vide"
+      ],
       "Your new access token": [
         "Votre nouveau jeton d'accès"
       ],
@@ -5414,6 +5500,9 @@
       "Aliases in trash will continue forwarding emails.": [
         "Les alias dans la corbeille continueront de rediriger les e-mails."
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Tous les éléments dans ce dossier, dont ses sous-dossiers, seront supprimés. Cette action est irréversible."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tous les éléments dans la corbeille seront définitivement supprimés. Vous ne pouvez pas annuler cette action."
       ],
@@ -5496,6 +5585,9 @@
       ],
       "Failed to load breaches.": [
         "Les fuites de données n'ont pas pu être chargées."
+      ],
+      "Folder name is required": [
+        "Le nom du dossier est requis"
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Accorder l'accès au presse-papiers pour activer l'effacement automatique des mots de passe et des données copiés."
@@ -5633,8 +5725,8 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Impossible de se connecter à ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Le coffre-fort « ${ vaultName } » et tous ses éléments seront définitivement supprimés. Vous ne pouvez pas annuler cette action."
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Le coffre-fort \"${ name }\" et tous ses éléments seront définitivement supprimés. Cette action est irréversible."
       ],
       "Vault name is required": [
         "Le nom du coffre-fort est nécessaire."
@@ -5668,6 +5760,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Vous n'aurez plus accès à ce coffre-fort. Pour le rejoindre à nouveau, il vous faudra une nouvelle invitation."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Vous avez atteint le niveau maximal d'imbrication de dossiers"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Vous avez atteint le nombre maximal de dossiers à ce niveau"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Vous avez atteint le nombre maximal de dossiers dans ce coffre-fort"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Votre administrateur doit créer un coffre-fort pour vous avant que vous ne puissiez créer des éléments."

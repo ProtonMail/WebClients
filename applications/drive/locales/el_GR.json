@@ -276,12 +276,6 @@
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
       ],
-      "Copy alias “${ name }”": [
-        "Αντιγραφή ψευδώνυμου “${ name }”"
-      ],
-      "Copy debug transcript": [
-        "Αντιγραφή μεταγραφής εντοπισμού σφαλμάτων"
-      ],
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
       ],
@@ -305,9 +299,6 @@
       ],
       "Create album": [
         "Δημιουργία άλμπουμ"
-      ],
-      "Create and copy alias": [
-        "Δημιουργία και αντιγραφή ψευδωνύμου"
       ],
       "Create business account": [
         "Δημιουργία επαγγελματικού λογαριασμού"
@@ -610,6 +601,9 @@
       ],
       "Import from Outlook": [
         "Εισαγωγή από Outlook"
+      ],
+      "Importing from Google": [
+        "Εισαγωγή από Google"
       ],
       "Increase": [
         "Αύξηση"
@@ -3145,9 +3139,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Ο δωρεάν λογαριασμός σας ${ MAIL_APP_NAME } διαθέτει περιορισμένο αποθηκευτικό χώρο, επομένως θα εισάγουμε μόνο τα πιο πρόσφατα email σας στο Gmail."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3424,18 +3415,6 @@
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
-      "Alias is not valid": [
-        "Το ψευδώνυμο δεν είναι έγκυρο"
-      ],
-      "Alias is required": [
-        "Απαιτείται ψευδώνυμο"
-      ],
-      "Alias options could not be resolved": [
-        "Δεν ήταν δυνατή η επίλυση των επιλογών ψευδωνύμου"
-      ],
-      "Aliases could not be loaded": [
-        "Τα ψευδώνυμα δεν μπορούν να φορτωθούν"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Έχει κατανεμηθεί όλος ο αποθηκευτικός χώρος. Παρακαλούμε μειώστε την κατανομή του σε άλλους χρήστες."
       ],
@@ -3450,12 +3429,6 @@
       ],
       "An error occurred": [
         "Παρουσιάστηκε σφάλμα"
-      ],
-      "An error occurred while loading alias options": [
-        "Παρουσιάστηκε σφάλμα κατά τη φόρτωση επιλογών ψευδωνύμου"
-      ],
-      "An error occurred while saving your alias": [
-        "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του ψευδώνυμου σας."
       ],
       "Authentication canceled.": [
         "Ο έλεγχος ταυτότητας ακυρώθηκε."
@@ -3541,12 +3514,6 @@
       "Could not load the image preview: ${ message }": [
         "Δεν ήταν δυνατή η φόρτωση της προεπισκόπησης εικόνας: ${ message }"
       ],
-      "Could not open created vault": [
-        "Δεν ήταν δυνατό το άνοιγμα της δημιουργημένης κρύπτης"
-      ],
-      "Could not open updated vault": [
-        "Δεν ήταν δυνατό το άνοιγμα της ενημερωμένης κρύπτης"
-      ],
       "Could not read part of this file: ${ message }": [
         "Δεν ήταν δυνατή η ανάγνωση μέρους αυτού του αρχείου: ${ message }"
       ],
@@ -3629,9 +3596,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Οι εξωτερικές προσκλήσεις είναι προσωρινά απενεργοποιημένες. Παρακαλούμε προσπαθήστε ξανά αργότερα"
-      ],
-      "Failed loading group members": [
-        "Αποτυχία φόρτωσης μελών ομάδας"
       ],
       "Failed to change permissions settings": [
         "Αποτυχία αλλαγής ρυθμίσεων δικαιωμάτων"
@@ -3723,9 +3687,6 @@
       "Folder not found": [
         "Ο φάκελος δεν βρέθηκε"
       ],
-      "Forward address is required": [
-        "Απαιτείται η διεύθυνση προώθησης"
-      ],
       "Image preview not found": [
         "Δεν βρέθηκε προεπισκόπηση εικόνας"
       ],
@@ -3774,9 +3735,6 @@
       "Invitation not found": [
         "Η πρόσκληση δεν βρέθηκε"
       ],
-      "Item content cannot exceed 40KB": [
-        "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40KB"
-      ],
       "Item not found": [
         "Το στοιχείο δεν βρέθηκε"
       ],
@@ -3823,18 +3781,12 @@
       "Moving root item is not allowed": [
         "Δεν επιτρέπεται η μετακίνηση ριζικού στοιχείου"
       ],
-      "Name is required": [
-        "Απαιτείται όνομα"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Το όνομα δεν πρέπει να υπερβαίνει τον ${ MAX_NODE_NAME_LENGTH } χαρακτήρα",
         "Το όνομα δεν πρέπει να υπερβαίνει τους ${ MAX_NODE_NAME_LENGTH } χαρακτήρες"
       ],
       "Name must not be empty": [
         "Το όνομα δεν πρέπει να είναι κενό"
-      ],
-      "Network error": [
-        "Σφάλμα δικτύου"
       ],
       "No calendars found to import": [
         "Δεν βρέθηκαν ημερολόγια προς εισαγωγή."
@@ -4477,9 +4429,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Όταν είναι ενεργοποιημένος ο επιπλέον κωδικός πρόσβασης, η διαχείριση ψευδωνύμων μπορεί να γίνει μόνο στο ${ PASS_APP_NAME }."
       ],
       "You may also refresh the page or try again later.": [
         "Μπορείτε επίσης να ανανεώσετε την σελίδα ή να προσπαθήσετε αργότερα."
@@ -5343,6 +5292,9 @@
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME } σήμα"
       ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (μη επαληθευμένος αποστολέας)"
+      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } πρόσκληση σε εκκρεμότητα",
         "${ invitationsCount } προσκλήσεις σε εκκρεμότητα"
@@ -5795,9 +5747,6 @@
       ],
       "Data integrity check failed": [
         "Ο έλεγχος ακεραιότητας δεδομένων απέτυχε"
-      ],
-      "Debug transcript copied": [
-        "Η μεταγραφή εντοπισμού σφαλμάτων αντιγράφηκε"
       ],
       "Dec": [
         "Δεκ"
@@ -7203,6 +7152,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
       ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "Εισάγουμε τα αρχεία σας από το Google Drive. Θα σας ενημερώσουμε μόλις ολοκληρωθεί η διαδικασία."
+      ],
       "Week": [
         "Εβδομάδα"
       ],
@@ -7413,6 +7365,9 @@
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Τα αρχεία σας δεν είναι πλέον προσβάσιμα, λόγω επαναφοράς κωδικού πρόσβασης. Για επαναπόκτηση πρόσβασης, ανεβάστε ξανά το παλιό κλειδί κρυπτογράφησης. ${ KeyReactivationButton }"
       ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Τα αρχεία σας εισήχθησαν και κρυπτογραφήθηκαν με επιτυχία από το Google Drive στο ${ DRIVE_APP_NAME }."
+      ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
@@ -7622,9 +7577,6 @@
       "Address": [
         "Διεύθυνση"
       ],
-      "Alias title": [
-        "Τίτλος ψευδωνύμου"
-      ],
       "All": [
         "Όλα"
       ],
@@ -7833,9 +7785,6 @@
       "Duplicate found": [
         "Βρέθηκε διπλότυπο"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "π.χ., Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Επεξεργαστής"
       ],
@@ -7875,15 +7824,6 @@
       "Environment compatible": [
         "Συμβατό με το περιβάλλον"
       ],
-      "Exact host matching": [
-        "Ακριβής αντιστοίχιση κεντρικού υπολογιστή"
-      ],
-      "Exact URL matching": [
-        "Ακριβής αντιστοίχιση URL"
-      ],
-      "Expired": [
-        "Έχει λήξει"
-      ],
       "Expired on ${ formatted }": [
         "Έληξε στις ${ formatted }"
       ],
@@ -7922,9 +7862,6 @@
       ],
       "Folder name": [
         "Όνομα φακέλου"
-      ],
-      "Forwards to": [
-        "Προώθηση σε"
       ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
@@ -8046,9 +7983,6 @@
       "Never expires": [
         "Δε λήγει ποτέ"
       ],
-      "Never fill on this exact URL": [
-        "Ποτέ μη συμπληρώνετε αυτήν ακριβώς τη διεύθυνση URL"
-      ],
       "New password": [
         "Νέος κωδικός"
       ],
@@ -8060,9 +7994,6 @@
       ],
       "Not selected": [
         "Δεν είναι επιλεγμένο"
-      ],
-      "Note": [
-        "Σημείωση"
       ],
       "Notification": [
         "Ειδοποίηση"
@@ -8081,9 +8012,6 @@
       ],
       "Outdated version": [
         "Ξεπερασμένη έκδοση"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Γονικός τομέας και υποτομείς (προεπιλογή)"
       ],
       "Password": [
         "Κωδικός πρόσβασης"
@@ -8124,23 +8052,14 @@
       "Postal code": [
         "Ταχυδρομικός κώδικας"
       ],
-      "Premium domain": [
-        "Premium τομέας"
-      ],
       "Proration": [
         "Προμήθεια"
-      ],
-      "Public domain": [
-        "Δημόσιος τομέας"
       ],
       "Public keys": [
         "Δημόσια κλειδιά"
       ],
       "Region": [
         "Περιοχή"
-      ],
-      "Regular expression": [
-        "Κανονική έκφραση"
       ],
       "Replace existing folder or file": [
         "Αντικατάσταση υπάρχοντος φακέλου ή αρχείου"
@@ -8217,9 +8136,6 @@
       "Start date": [
         "Ημερομηνία Έναρξης"
       ],
-      "Starts with": [
-        "Ξεκινάει με"
-      ],
       "State": [
         "Πολιτεία"
       ],
@@ -8286,9 +8202,6 @@
       "Uploaded by": [
         "Ανέβηκε από"
       ],
-      "URL wildcard pattern": [
-        "Πρότυπο μπαλαντέρ URL"
-      ],
       "User opted in": [
         "Ο χρήστης επέλεξε να συμμετάσχει"
       ],
@@ -8324,12 +8237,6 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "Ναι, επιθυμώ την οριστική διαγραφή των παλιών αρχείων μου"
-      ],
-      "Your alias": [
-        "Το ψευδώνυμο σας"
-      ],
-      "Your domain": [
-        "Ο τομέας σας"
       ],
       "Your IP": [
         "Η διεύθυνση IP σας"
@@ -8703,24 +8610,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Κανόνας αντιστοίχισης 'Ξεκινά με'"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Ακριβής κανόνας αντιστοίχισης (υπο) τομέα"
-      ],
-      "Exact URL matching rule": [
-        "Κανόνας αντιστοίχισης ακριβούς διεύθυνσης URL"
-      ],
-      "Never fill with this exact URL": [
-        "Ποτέ μην συμπληρώνετε με αυτήν ακριβώς τη διεύθυνση URL"
-      ],
-      "Regular expression rule": [
-        "Κανόνας κανονικής έκφρασης"
-      ],
-      "Wildcard pattern matching rule": [
-        "Κανόνας αντιστοίχισης μοτίβου μπαλαντέρ"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Η δωρεάν δοκιμή σας έχει λήξει. ${ nonAutoRenewalAction }"
       ],
@@ -10062,9 +9951,6 @@
       "Access updated": [
         "Η πρόσβαση ενημερώθηκε"
       ],
-      "Album renamed successfully": [
-        "Το άλμπουμ μετονομάστηκε με επιτυχία"
-      ],
       "All items deleted permanently from trash": [
         "Όλα τα στοιχεία εξαλείφθηκαν οριστικά από τα διαγραμμένα"
       ],
@@ -10517,11 +10403,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " επισκεφθείτε το ${ helpCenterLink } ή ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Προσθέστε έναν τρόπο πληρωμής** για να συνεχίσετε να χρησιμοποιείτε όλες τις λειτουργίες μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή πριν από τότε.** Θα μπορείτε να χρησιμοποιείτε το ${ planTitle } δωρεάν μέχρι τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Αν συνεχίσετε μετά τη δοκιμαστική περίοδο,** μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Μόλις ξεκινήσει η πλήρης συνδρομή σας...** Μπορείτε ακόμα να την ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Ακυρώστε οποιαδήποτε στιγμή πριν από τις ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Ακυρώστε οποιαδήποτε στιγμή πριν από τότε."
       ],
       "contact our support team": [
         "επικοινωνήστε με την ομάδα υποστήριξής μας"
@@ -10535,16 +10433,22 @@
       "help center": [
         "κέντρο βοήθειας"
       ],
+      "If you continue after your trial,": [
+        "Αν συνεχίσετε μετά τη δοκιμή σας,"
+      ],
       "If you need help,": [
         "Εάν χρειάζεστε βοήθεια,"
       ],
       "Once your full subscription starts...": [
         "Μόλις ξεκινήσει η πλήρης συνδρομή σας..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Μπορείτε ακόμα να ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
+      "to keep using all of the features after your trial ends.": [
+        "για να συνεχίσετε να χρησιμοποιείτε όλες τις λειτουργίες μετά τη λήξη της δοκιμαστικής περιόδου."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Μπορείτε ακόμα να ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -10555,9 +10459,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Η πλήρης συνδρομή σας ${ planTitle } ξεκινά στις ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Θα μπορείτε να χρησιμοποιήσετε ${ planTitle } δωρεάν μέχρι το τέλος της δοκιμαστικής περιόδου."
       ]
     },
     "Option": {
@@ -11316,78 +11217,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Αποκτήστε την προσφορά"
-      ],
-      "Summer Sale": [
-        "Καλοκαιρινές εκπτώσεις"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/μήνας"
-      ],
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "2 TB data storage": [
-        "Χώρος αποθήκευσης δεδομένων 2 TB"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
-      ],
-      "3 TB data storage": [
-        "Χώρος αποθήκευσης δεδομένων 3 TB"
-      ],
-      "500 GB storage": [
-        "500 GB αποθηκευτικός χώρος"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια τιμή όταν λήξει ο κύκλος χρέωσης."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Πλήρης πρόσβαση στο ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Ατομικοί λογαριασμοί για 6 χρήστες"
-      ],
-      "Individual accounts for you and a partner": [
-        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online πρόγραμμα επεξεργασίας εγγράφων και υπολογιστικών φύλλων"
-      ],
-      "Recover previous file versions": [
-        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
-      ],
-      "Stronger protection against cyber threats": [
-        "Ισχυρότερη προστασία από κυβερνοαπειλές"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Μεταβείτε στο ετήσιο πρόγραμμά μας και εξοικονομήστε ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
-      ],
-      "Use your own email domain": [
-        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "για 12 μήνες"
-      ],
-      "SUMMER SALE": [
-        "ΚΑΛΟΚΑΙΡΙΝΕΣ ΕΚΠΤΩΣΕΙΣ"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Αποκτήστε την προσφορά"
@@ -11550,49 +11379,6 @@
     "Section": {
       "Org setup and account security": [
         "Ρύθμιση του οργανισμού και ασφάλεια λογαριασμού"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Όλα τα ψευδώνυμα"
-      ],
-      "Create alias": [
-        "Δημιουργία ψευδώνυμου"
-      ],
-      "Create an alias": [
-        "Δημιουργία ψευδωνύμου"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Δημιουργήστε ψευδώνυμα εν κινήσει και διαχειριστείτε εύκολα τα ψευδώνυμα και τους κωδικούς πρόσβασής σας."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email ψευδώνυμα"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Τα ψευδώνυμα Hide-my-email σάς επιτρέπουν να εγγράφεστε για πράγματα στο διαδίκτυο χωρίς να μοιράζεστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Νέο ψευδώνυμο"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Άνοιγμα ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Προστατέψτε την ηλεκτρονική σας ταυτότητα"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Δοκιμάστε το ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Χρησιμοποιείται στο Amazon για ψώνια κ.λπ."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Τα ψευδώνυμα παρέχονται από το ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(θα ανοίξει ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -12678,12 +12464,6 @@
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
-      "Alias copied to clipboard": [
-        "Το ψευδώνυμο αντιγράφηκε στο πρόχειρο"
-      ],
-      "Alias saved and copied": [
-        "Το ψευδώνυμο αποθηκεύτηκε και αντιγράφηκε"
-      ],
       "Billing details updated": [
         "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ],
@@ -12721,9 +12501,6 @@
       ],
       "Invitation rejected": [
         "Η πρόσκληση απορρίφθηκε"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Πιο πρόσφατα τροποποιημένα ψευδώνυμα της παλαιότερης κρύπτης σας"
       ],
       "Payment method added": [
         "Προστέθηκε τρόπος πληρωμής"
@@ -13472,9 +13249,6 @@
       "Name": [
         "Όνομα"
       ],
-      "Need more aliases?": [
-        "Χρειάζεστε περισσότερα ψευδώνυμα;"
-      ],
       "Need to share more files with edit access?": [
         "Θέλετε να μοιραστείτε περισσότερα αρχεία με πρόσβαση επεξεργασίας;"
       ],
@@ -13971,6 +13745,12 @@
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
       ],
+      "Your import is finished!": [
+        "Η εισαγωγή σας ολοκληρώθηκε!"
+      ],
+      "Your import is in progress": [
+        "Η εισαγωγή σας βρίσκεται σε εξέλιξη."
+      ],
       "Your import is starting": [
         "Η εισαγωγή σας εκκινεί"
       ],
@@ -14286,9 +14066,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "Το ${ modeLabelStong } παρέχει ισχυρό έλεγχο, αλλά ένα μόνο σφάλμα μπορεί να προκαλέσει την αντιστοίχιση και συμπλήρωση δεδομένων από την αυτόματη συμπλήρωση σε δόλιες ιστοσελίδες ή ιστοσελίδες ηλεκτρονικού \"ψαρέματος\" (phishing)."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",

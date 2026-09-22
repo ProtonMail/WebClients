@@ -151,6 +151,9 @@
       "Close navigation": [
         "Cerrar la navegación"
       ],
+      "Collapse": [
+        "Minimizar"
+      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -229,6 +232,9 @@
       "Create contact": [
         "Crear un contacto"
       ],
+      "Create folder": [
+        "Crear una carpeta"
+      ],
       "Create identity": [
         "Crear una identidad"
       ],
@@ -237,6 +243,9 @@
       ],
       "Create login": [
         "Crear inicio de sesión"
+      ],
+      "Create new folder": [
+        "Crear una nueva carpeta"
       ],
       "Create new items": [
         "Crear elementos"
@@ -330,6 +339,9 @@
       ],
       "Exclude from monitoring": [
         "Excluir del monitoreo"
+      ],
+      "Expand": [
+        "Expandir"
       ],
       "Export": [
         "Exportar"
@@ -472,8 +484,8 @@
       "Move all items": [
         "Mover todos los elementos"
       ],
-      "Move to another vault": [
-        "Mover a otra caja fuerte"
+      "Move to": [
+        "Mover a"
       ],
       "Move to trash": [
         "Mover a la papelera"
@@ -561,6 +573,9 @@
       ],
       "Remove member": [
         "Eliminar el miembro"
+      ],
+      "Rename": [
+        "Renombrar"
       ],
       "Request a feature": [
         "Solicitar una función"
@@ -1074,6 +1089,9 @@
       ],
       "Failed to create domain": [
         "Error al crear el dominio"
+      ],
+      "Failed to create folder": [
+        "Error al crear la carpeta"
       ],
       "Failed to create new mailbox": [
         "Error al crear el buzón"
@@ -1763,9 +1781,6 @@
       ],
       "Created item": [
         "Elemento creado"
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "El formato CSV es conveniente para visualizar tus datos. Por su simpleza, algunos datos no serán incluidos (campos personalizados, claves de acceso...). Para exportar datos de manera completa, utiliza otro formato."
       ],
       "Current version": [
         "Versión actual"
@@ -3235,6 +3250,9 @@
       "Floor, apartment, building": [
         "Piso, apartamento, edificio"
       ],
+      "Folder": [
+        "Carpeta"
+      ],
       "For a one-off sharing": [
         "Para un uso único"
       ],
@@ -4325,9 +4343,6 @@
       "Please describe the problem and include any error messages": [
         "Describe el problema e incluye cualquier mensaje de error."
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Reescribe \"${ vaultName }\" para confirmar la eliminación."
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Buscar ${ pluralItemType } en ${ vaultName }"
       ],
@@ -4683,9 +4698,6 @@
       "Delete this item?": [
         "¿Eliminar este elemento?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "¿Eliminar la caja fuerte «${ vaultName }»?"
-      ],
       "Did you know?": [
         "¿Lo sabías?"
       ],
@@ -4730,6 +4742,9 @@
       ],
       "Excluded items": [
         "Elementos excluidos"
+      ],
+      "Folder options": [
+        "Opciones de carpeta"
       ],
       "Get Started": [
         "Comenzar"
@@ -4809,19 +4824,12 @@
       "Modified": [
         "Modificado"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Mover ${ count } elemento a ${ vaultName }",
-        "Mover ${ count } elementos a ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "¿Mover ${ trashedItemsCount } elemento a la papelera?",
         "¿Mover ${ trashedItemsCount } elementos a la papelera?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "¿Mover todos los elementos a «${ vaultName }»?"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "Mover el elemento a «${ vaultName }»"
       ],
       "MX record": [
         "Registro MX"
@@ -5362,9 +5370,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No se puede iniciar sesión en ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "La caja fuerte \"${ vaultName }\" y todos tus elementos serán eliminados permanentemente. No puedes deshacer esta acción."
       ],
       "Vault name is required": [
         "El nombre de la caja fuerte es requerido."

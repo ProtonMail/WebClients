@@ -1155,6 +1155,9 @@
       "No, thanks": [
         "ไม่ทำการต่อ ขอบคุณ"
       ],
+      "Not now": [
+        "ไม่ใช่ตอนนี้"
+      ],
       "OK": [
         "ตกลง"
       ],
@@ -17835,9 +17838,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "ยกเลิกได้ทุกเมื่อก่อนวันที่ ${ cancelDate }"
       ],
-      "Cancel anytime before then.": [
-        "ยกเลิกได้ทุกเมื่อก่อนเวลานั้น"
-      ],
       "contact our support team": [
         "ติดต่อฝ่ายสนับสนุนของเรา"
       ],
@@ -17859,9 +17859,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "คุณยังสามารถยกเลิกได้ภายใน 30 วันและรับเงินคืนตามสัดส่วน"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "คุณยังสามารถยกเลิกได้ภายใน 30 วันและรับเงินคืนตามสัดส่วน"
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "คุณสามารถใช้ ${ planTitle } ได้จนกว่าการทดลองใช้จะสิ้นสุด และคุณจะไม่ถูกเรียกเก็บเงิน"
       ],
@@ -17870,9 +17867,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "การสมัครสมาชิก ${ planTitle } เต็มรูปแบบของคุณจะเริ่มต้นในวันที่ ${ boldEndDate }"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "คุณจะสามารถใช้ ${ planTitle } ได้จนกว่าการทดลองใช้จะสิ้นสุดลงโดยไม่มีค่าใช้จ่าย"
       ]
     },
     "Option": {
@@ -19545,78 +19539,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "รับข้อเสนอ"
-      ],
-      "Summer Sale": [
-        "โปรโมชันฤดูร้อน"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/เดือน"
-      ],
-      "15 GB storage": [
-        "พื้นที่จัดเก็บ 15 GB"
-      ],
-      "2 TB data storage": [
-        "พื้นที่จัดเก็บข้อมูล 2 TB"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "พื้นที่จัดเก็บ 200 GB: มากกว่าแผนปัจจุบันถึง 40 เท่า"
-      ],
-      "3 TB data storage": [
-        "พื้นที่จัดเก็บข้อมูล 3 TB"
-      ],
-      "500 GB storage": [
-        "พื้นที่จัดเก็บ 500 GB"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "คุณสมบัติพรีเมียมทั้งหมดของ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } และ ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "คุณสมบัติพรีเมียมทั้งหมดของ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } และ ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "ส่วนลดอิงตามราคามาตรฐานรายเดือน การสมัครสมาชิกจะต่ออายุในอัตรามาตรฐานรายปีเมื่อสิ้นสุดรอบการชำระเงิน"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "เข้าถึง ${ VPN_APP_NAME } ได้อย่างเต็มรูปแบบ"
-      ],
-      "Individual accounts for 6 users": [
-        "บัญชีส่วนบุคคลสำหรับผู้ใช้ 6 ราย"
-      ],
-      "Individual accounts for you and a partner": [
-        "บัญชีส่วนบุคคลสำหรับตนเองและพาร์ทเนอร์"
-      ],
-      "Online document and spreadsheet editor": [
-        "เครื่องมือแก้ไขเอกสารและตารางคำนวณออนไลน์"
-      ],
-      "Recover previous file versions": [
-        "กู้คืนเวอร์ชันไฟล์ก่อนหน้า"
-      ],
-      "Stronger protection against cyber threats": [
-        "การป้องกันที่แข็งแกร่งยิ่งขึ้นจากภัยคุกคามทางไซเบอร์"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "เปลี่ยนมาใช้แผนรายปีและประหยัด ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "โฟลเดอร์ ป้ายกำกับ และตัวกรองไม่จำกัด"
-      ],
-      "Use your own email domain": [
-        "ใช้โดเมนอีเมลของตนเอง"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "เป็นเวลา 12 เดือน"
-      ],
-      "SUMMER SALE": [
-        "ลดราคาต้อนรับฤดูร้อน"
       ]
     },
     "Recovery Email": {

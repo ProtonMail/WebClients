@@ -276,12 +276,6 @@
       "Copy address": [
         "Copiar la dirección"
       ],
-      "Copy alias “${ name }”": [
-        "Copiar el alias «${ name }»"
-      ],
-      "Copy debug transcript": [
-        "Copiar transcripción de depuración"
-      ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
@@ -305,9 +299,6 @@
       ],
       "Create album": [
         "Crear un álbum"
-      ],
-      "Create and copy alias": [
-        "Crear y copiar alias"
       ],
       "Create business account": [
         "Crear cuenta de empresa"
@@ -610,6 +601,9 @@
       ],
       "Import from Outlook": [
         "Importar desde Outlook"
+      ],
+      "Importing from Google": [
+        "Importando desde Google"
       ],
       "Increase": [
         "Aumentar"
@@ -968,6 +962,9 @@
       "Search is unavailable": [
         "La búsqueda no está disponible"
       ],
+      "Search recent items": [
+        "Buscar elementos recientes"
+      ],
       "See how": [
         "Ver cómo"
       ],
@@ -1069,6 +1066,9 @@
       ],
       "Show side panel": [
         "Mostrar el panel lateral"
+      ],
+      "Sign in with Google": [
+        "Iniciar sesión con Google"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -3142,9 +3142,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Su cuenta gratuita de ${ MAIL_APP_NAME } incluye almacenamiento limitado, así que solo importaremos sus correos electrónicos de Gmail más recientes."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
       ]
     },
     "description": {
@@ -3421,18 +3418,6 @@
       "Address primary private key not found": [
         "Clave privada principal de la dirección no encontrada"
       ],
-      "Alias is not valid": [
-        "Alias inválido"
-      ],
-      "Alias is required": [
-        "Se requiere el alias"
-      ],
-      "Alias options could not be resolved": [
-        "No se pudieron resolver las opciones de alias"
-      ],
-      "Aliases could not be loaded": [
-        "No se pudo cargar el alias"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Todo el espacio de almacenamiento ha sido asignado. Reduzca el almacenamiento asignado a otros usuarios."
       ],
@@ -3447,12 +3432,6 @@
       ],
       "An error occurred": [
         "Ocurrió un error"
-      ],
-      "An error occurred while loading alias options": [
-        "Ocurrió un error al cargar las opciones del alias"
-      ],
-      "An error occurred while saving your alias": [
-        "Ocurrió un error al guardar el alias"
       ],
       "Authentication canceled.": [
         "Autenticación cancelada."
@@ -3538,12 +3517,6 @@
       "Could not load the image preview: ${ message }": [
         "No se pudo cargar la vista previa de imagen: ${ message }"
       ],
-      "Could not open created vault": [
-        "No se pudo abrir la bóveda creada"
-      ],
-      "Could not open updated vault": [
-        "No se pudo abrir la bóveda actualizada"
-      ],
       "Could not read part of this file: ${ message }": [
         "No se pudo leer parte de este archivo: ${ message }"
       ],
@@ -3626,9 +3599,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Las invitaciones externas están desactivadas temporalmente. Inténtelo más tarde."
-      ],
-      "Failed loading group members": [
-        "Error al cargar los miembros del grupo"
       ],
       "Failed to change permissions settings": [
         "Error al cambiar los ajustes de permisos"
@@ -3720,9 +3690,6 @@
       "Folder not found": [
         "Carpeta no encontrada"
       ],
-      "Forward address is required": [
-        "Se requiere la dirección de reenvío"
-      ],
       "Image preview not found": [
         "Vista previa de imagen no encontrada"
       ],
@@ -3771,9 +3738,6 @@
       "Invitation not found": [
         "Invitación no encontrada"
       ],
-      "Item content cannot exceed 40KB": [
-        "El contenido del elemento no puede exceder de 40 KB"
-      ],
       "Item not found": [
         "Elemento no encontrado"
       ],
@@ -3820,18 +3784,12 @@
       "Moving root item is not allowed": [
         "No está permitido mover el elemento raíz"
       ],
-      "Name is required": [
-        "El nombre es obligatorio."
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "El nombre debe tener como máximo ${ MAX_NODE_NAME_LENGTH } caracter",
         "El nombre debe tener como máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
       ],
       "Name must not be empty": [
         "El nombre no debe estar vacío"
-      ],
-      "Network error": [
-        "Error de red"
       ],
       "No calendars found to import": [
         "No se encontraron calendarios para importar"
@@ -4474,9 +4432,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No pudimos cargar esta página. Actualice la página o revise la conexión a internet."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Cuando la contraseña adicional está activada, la gestión de alias solo puede hacerse en ${ PASS_APP_NAME }."
       ],
       "You may also refresh the page or try again later.": [
         "También puede refrescar la página o intentarlo más tarde."
@@ -5340,6 +5295,9 @@
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "Marca de ${ IDEAL_WERO_BRAND_NAME }"
       ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (remitente no verificado)"
+      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } invitación pendiente",
         "${ invitationsCount } invitaciones pendientes"
@@ -5581,6 +5539,9 @@
       "An issue occurred during the restore process.": [
         "Ocurrió un problema durante el proceso de restauración."
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Ocurrió un error inesperado mientras se importaban sus datos. Intente de nuevo más tarde."
+      ],
       "and": [
         "y"
       ],
@@ -5725,6 +5686,9 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conéctese a ${ VPN_APP_NAME } para navegar de forma privada."
       ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Conectándose a Google Drive para configurar su importación segura a ${ DRIVE_APP_NAME }."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contacto asignado al grupo ${ contactGroupName }"
       ],
@@ -5786,9 +5750,6 @@
       ],
       "Data integrity check failed": [
         "Error en la comprobación de integridad de los datos"
-      ],
-      "Debug transcript copied": [
-        "Transcripción de depuración copiada"
       ],
       "Dec": [
         "Dic."
@@ -5887,6 +5848,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para los dominios que ya posee. El registro de dominio no está disponible actualmente a través de ${ BRAND_NAME }. Puede alojar correo electrónico para dominios registrados en cualquier registrador de dominios."
+      ],
+      "Email you once import is finished": [
+        "Recibirá un correo una vez que finalice la importación"
       ],
       "Emails are automatically signed": [
         "Los correos son firmados automáticamente"
@@ -5996,6 +5960,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Por solo ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF a continuación."
       ],
       "Forgot password?": [
         "¿Contraseña olvidada?"
@@ -6329,6 +6296,9 @@
       "New": [
         "Nuevo"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Luego necesitará iniciar sesión en la cuenta de Google y otorgar acceso a ${ BRAND_NAME } a los datos."
+      ],
       "No": [
         "No"
       ],
@@ -6520,6 +6490,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Intente de nuevo usando un método de pago diferente o contacte con el banco."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Actualice para asegurarse de que la importación finalice con éxito."
+      ],
       "Please use another browser or download the file.": [
         "Use otro navegador o descargue el archivo."
       ],
@@ -6586,6 +6559,9 @@
       "Read folder context": [
         "Leer contexto de la carpeta"
       ],
+      "Read once and encrypted on arrival": [
+        "Leer una vez y cifrado al llegar"
+      ],
       "Read this file": [
         "Leí este archivo"
       ],
@@ -6645,6 +6621,9 @@
       ],
       "Search cannot be enabled in this browser": [
         "No se puede activar la búsqueda en este navegador"
+      ],
+      "Search covers your recent items": [
+        "La búsqueda cubre sus elementos recientes"
       ],
       "Search data can't be read": [
         "No se pueden leer los datos de la búsqueda"
@@ -6751,6 +6730,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
       ],
+      "Sit back and we will let you know.": [
+        "Relájese y le avisaremos."
+      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Algunos gobiernos bloquean o restringen el acceso a ciertos sitios web. Una VPN ayuda a evitar la censura al mantener su actividad e identidad privadas."
       ],
@@ -6759,6 +6741,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Algunos de los archivos ya no son accesibles. Restaure el acceso a los archivos. ${ StartRecoveryButton }"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Algunos archivos antiguos no están indexados porque su Drive es demasiado grande para indexarlos por completo."
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Algunas fotos de este álbum no se han guardado en su cronología. Si elimina este álbum, esas fotos se eliminarán permanentemente."
@@ -7084,6 +7069,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Use este formulario para notificarnos sobre archivos compartidos\ninapropiados, ilegales o maliciosos. Está a punto de denunciar:"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Se usa solo para copiarlos en ${ DRIVE_APP_NAME }."
+      ],
       "username": [
         "nombre de usuario"
       ],
@@ -7133,11 +7121,17 @@
       "We couldn’t process your payment.": [
         "No pudimos procesar el pago."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "No soportamos importaciones de fotos, Google Docs, Sheets y Slides. Asegúrese que su Google Drive no está vacío."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Necesitamos autenticar su método de pago con el banco."
       ],
       "We need to authenticate your payment with your bank.": [
         "Necesitamos autenticar el pago con el banco."
+      ],
+      "We support most files": [
+        "Soportamos la mayoría de archivos"
       ],
       "We use 3-D Secure to protect your payments": [
         "Se usa 3-D Secure para proteger sus pagos."
@@ -7145,6 +7139,9 @@
       "We were not able to add this photo to your album": [
         "No pudimos añadir esta foto en su álbum",
         "No pudimos añadir algunas fotos en su álbum"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Le enviaremos un correo cuando la importación termine. Una vez finalizada encontrará la importación en una carpeta."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Le redirigiremos a ${ IDEAL_WERO_BRAND_NAME } en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
@@ -7163,6 +7160,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "Estamos importando sus archivos desde Google Drive. Le avisaremos cuando esté terminado."
       ],
       "Week": [
         "Semana"
@@ -7193,6 +7193,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "será restaurado a la versión del ${ formattedRevisionDate }. Todas las otras versiones se guardarán."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "No se importarán fotos, Google Docs y Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -7356,6 +7359,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a la cuenta de ${ BRAND_NAME }."
       ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Su Drive es demasiado grande para indexarse ​​por completo en este navegador, por lo que la búsqueda examina sus elementos más recientes. Es posible que los archivos más antiguos no aparezcan en los resultados."
+      ],
       "Your email address and password were leaked:": [
         "La dirección de correo electrónico y contraseña fueron filtradas:"
       ],
@@ -7370,6 +7376,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Sus archivos ya no son accesibles debido a un restablecimiento de contraseña. Vuelva a cargar la clave de cifrado antigua para recuperar el acceso. ${ KeyReactivationButton }"
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Sus archivos fueron importados y cifrados con éxito desde Google Drive a ${ DRIVE_APP_NAME }."
       ],
       "Your files will be encrypted and then saved": [
         "Los archivos serán cifrados y luego guardados."
@@ -7583,9 +7592,6 @@
       "Album": [
         "Álbum"
       ],
-      "Alias title": [
-        "Título del alias"
-      ],
       "All": [
         "Todos"
       ],
@@ -7794,9 +7800,6 @@
       "Duplicate found": [
         "Duplicado encontrado"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "p. ej., Amazon, eBay, Mercado Libre"
-      ],
       "Editor": [
         "Editor"
       ],
@@ -7836,15 +7839,6 @@
       "Environment compatible": [
         "Entorno compatible"
       ],
-      "Exact host matching": [
-        "Coincidencia de host exacta"
-      ],
-      "Exact URL matching": [
-        "Coincidencia de URL exacta"
-      ],
-      "Expired": [
-        "Expirado"
-      ],
       "Expired on ${ formatted }": [
         "Expiró el ${ formatted }"
       ],
@@ -7883,9 +7877,6 @@
       ],
       "Folder name": [
         "Nombre de la carpeta"
-      ],
-      "Forwards to": [
-        "Reenvía a"
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
@@ -8007,9 +7998,6 @@
       "Never expires": [
         "Nunca expira"
       ],
-      "Never fill on this exact URL": [
-        "Nunca completar esta URL exacta"
-      ],
       "New password": [
         "Contraseña nueva"
       ],
@@ -8021,9 +8009,6 @@
       ],
       "Not selected": [
         "Sin selección"
-      ],
-      "Note": [
-        "Nota"
       ],
       "Notification": [
         "Notificación"
@@ -8042,9 +8027,6 @@
       ],
       "Outdated version": [
         "Versión obsoleta"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Dominio principal y subdominios (por defecto)"
       ],
       "Password": [
         "Contraseña"
@@ -8085,23 +8067,14 @@
       "Postal code": [
         "Código postal"
       ],
-      "Premium domain": [
-        "Dominio premium"
-      ],
       "Proration": [
         "Prorrateo"
-      ],
-      "Public domain": [
-        "Dominio público"
       ],
       "Public keys": [
         "Claves públicas"
       ],
       "Region": [
         "Estado"
-      ],
-      "Regular expression": [
-        "Expresión regular"
       ],
       "Replace existing folder or file": [
         "Reemplazar la carpeta o el archivo existente"
@@ -8178,9 +8151,6 @@
       "Start date": [
         "Fecha inicial"
       ],
-      "Starts with": [
-        "Comienza con"
-      ],
       "State": [
         "Estado"
       ],
@@ -8247,9 +8217,6 @@
       "Uploaded by": [
         "Cargado por"
       ],
-      "URL wildcard pattern": [
-        "Patrón comodín de URL"
-      ],
       "User opted in": [
         "El usuario optó por participar"
       ],
@@ -8285,12 +8252,6 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "Sí, quiero eliminar permanentemente mis archivos antiguos"
-      ],
-      "Your alias": [
-        "Su alias"
-      ],
-      "Your domain": [
-        "Su dominio"
       ],
       "Your IP": [
         "Su IP"
@@ -8664,24 +8625,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Regla de coincidencia «Comienza con»"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Regla de coincidencia de (sub)dominio exacto"
-      ],
-      "Exact URL matching rule": [
-        "Regla de coincidencia de URL exacta"
-      ],
-      "Never fill with this exact URL": [
-        "Nunca completar con esta URL exacta"
-      ],
-      "Regular expression rule": [
-        "Regla de expresión regular"
-      ],
-      "Wildcard pattern matching rule": [
-        "Regla de coincidencia de patrón comodín"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Su prueba gratuita ha finalizado. ${ nonAutoRenewalAction }"
       ],
@@ -10080,9 +10023,6 @@
       "Access updated": [
         "Acceso actualizado"
       ],
-      "Album renamed successfully": [
-        "Álbum renombrado con éxito"
-      ],
       "All items deleted permanently from trash": [
         "Todos los elementos eliminados permanentemente de la papelera"
       ],
@@ -10535,11 +10475,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite nuestro ${ helpCenterLink } o contacte a nuestro ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Añada un método de pago** para seguir usando todas las funciones después de finalizar el periodo de prueba."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancele en cualquier momento antes de esa fecha.** Podrá usar ${ planTitle } hasta que la prueba finalice, libre de cargos."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continúa después de la prueba**, podrá cancelar dentro de 30 días y obtener un reembolso proporcional."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una vez que su suscripción completa inicie**, aún podrá cancelar dentro de 30 días y obtener un reembolso ponderado."
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancele en cualquier momento antes del ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Cancele en cualquier momento antes de esa fecha."
       ],
       "contact our support team": [
         "póngase en contacto con nuestro equipo de soporte"
@@ -10553,16 +10505,22 @@
       "help center": [
         "centro de ayuda"
       ],
+      "If you continue after your trial,": [
+        "Si continúa después de la prueba,"
+      ],
       "If you need help,": [
         "Si necesita ayuda,"
       ],
       "Once your full subscription starts...": [
         "Una vez que comience su suscripción completa..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Todavía puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
+      "to keep using all of the features after your trial ends.": [
+        "para seguir usando todas las funciones después de finalizar el periodo de prueba."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Todavía puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -10573,9 +10531,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Su suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Podrá usar ${ planTitle } hasta que termine la prueba, gratuitamente."
       ]
     },
     "Option": {
@@ -11334,78 +11289,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aproveche la oferta"
-      ],
-      "Summer Sale": [
-        "Ofertas de verano"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mes"
-      ],
-      "15 GB storage": [
-        "15 GB de almacenamiento"
-      ],
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de almacenamiento: 40 veces su plan actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "500 GB storage": [
-        "500 GB de almacenamiento"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acceso completo a ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para usted y su pareja"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor en línea de documentos y hojas de cálculo"
-      ],
-      "Recover previous file versions": [
-        "Recupere versiones anteriores de archivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra ciberamenazas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Use your own email domain": [
-        "Use su propio dominio de correo electrónico"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "SUMMER SALE": [
-        "OFERTAS DE VERANO"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Aproveche la oferta"
@@ -11568,49 +11451,6 @@
     "Section": {
       "Org setup and account security": [
         "Configuración de la organización y seguridad de la cuenta"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Todos los alias"
-      ],
-      "Create alias": [
-        "Crear un alias"
-      ],
-      "Create an alias": [
-        "Crear un alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Genere alias rápidamente, y administre fácilmente sus alias y contraseñas."
-      ],
-      "Hide-my-email aliases": [
-        "Alias de hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Los alias de hide-my-email le permiten registrarse en sitios sin compartir la dirección de correo electrónico. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nuevo alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Abrir ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Proteja su identidad en línea"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Pruebe ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Usado para compras en Amazon, etc."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Cuando se le pida la dirección de correo electrónico, indique este alias en su lugar. Los alias son proporcionados por ${ passLink }"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(abrirá ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -12650,6 +12490,9 @@
       "Shared by ${ sharedBy }": [
         "Compartido por ${ sharedBy }"
       ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Leemos sus archivos una vez para copiarlos y luego ciframos cada uno con sus claves de ${ BRAND_NAME }."
+      ],
       "Your favorited photos will appear here": [
         "Sus fotos favoritas aparecerán aquí"
       ],
@@ -12693,12 +12536,6 @@
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
       ],
-      "Alias copied to clipboard": [
-        "Alias copiado al portapapeles"
-      ],
-      "Alias saved and copied": [
-        "Alias guardado y copiado"
-      ],
       "Billing details updated": [
         "Detalles de facturación actualizados"
       ],
@@ -12736,9 +12573,6 @@
       ],
       "Invitation rejected": [
         "Invitación rechazada"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Los últimos alias modificados están guardados en su bóveda más antigua"
       ],
       "Payment method added": [
         "Método de pago agregado"
@@ -13107,6 +12941,9 @@
       "Connect your custom domain": [
         "Conecte su dominio personalizado"
       ],
+      "Connect your Google account": [
+        "Conecte su cuenta de Google"
+      ],
       "Contact Details": [
         "Datos del contacto"
       ],
@@ -13269,6 +13106,9 @@
       "Drop to upload": [
         "Soltar para cargar"
       ],
+      "Easy switch": [
+        "Easy switch"
+      ],
       "Edit billing address": [
         "Editar la dirección de la factura"
       ],
@@ -13406,6 +13246,9 @@
       "Import groups": [
         "Importar grupos"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "La importación inició pero su almacenamiento no será suficiente"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Importe sus datos a ${ BRAND_NAME }"
       ],
@@ -13477,9 +13320,6 @@
       ],
       "Name": [
         "Nombre"
-      ],
-      "Need more aliases?": [
-        "¿Necesita más alias?"
       ],
       "Need to share more files with edit access?": [
         "¿Necesita compartir más archivos con acceso de edición?"
@@ -13707,6 +13547,9 @@
       "Set up your organization": [
         "Configure su organización"
       ],
+      "Setting up your import": [
+        "Configurando su importación"
+      ],
       "Settings": [
         "Ajustes"
       ],
@@ -13736,6 +13579,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
+      ],
+      "Sign in to Google": [
+        "Iniciar sesión en Google"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -13884,6 +13730,9 @@
       "Warning: suspected fake website": [
         "Advertencia: presunto sitio web falso"
       ],
+      "We could not find anything to import": [
+        "No pudimos encontrar nada para importar"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "No pudimos verificar que ${ author } haya creado este archivo."
       ],
@@ -13967,6 +13816,15 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
+      ],
+      "Your import is finished!": [
+        "¡Su importación finalizó!"
+      ],
+      "Your import is in progress": [
+        "Su importación está en progreso"
+      ],
+      "Your import is starting": [
+        "La importación está empezando"
       ],
       "Your plan": [
         "El plan"
@@ -14280,9 +14138,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tanta información posible, comenzando con los mensajes más recientes."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } brinda un control potente, pero un solo error puede provocar que la función de autocompletar coincida con datos de sitios web fraudulentos o de suplantación y los complete automáticamente."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "¿Está seguro de que quiere eliminar permanentemente ${ count } contacto?",

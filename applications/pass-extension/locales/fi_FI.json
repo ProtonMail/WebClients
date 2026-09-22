@@ -163,6 +163,9 @@
       "Close navigation": [
         "Sulje navigaatio"
       ],
+      "Collapse": [
+        "Pienennä"
+      ],
       "Configure": [
         "Määritä"
       ],
@@ -244,6 +247,9 @@
       "Create contact": [
         "Luo yhteystieto"
       ],
+      "Create folder": [
+        "Luo kansio"
+      ],
       "Create identity": [
         "Luo identiteetti"
       ],
@@ -252,6 +258,9 @@
       ],
       "Create login": [
         "Luo kirjautumistieto"
+      ],
+      "Create new folder": [
+        "Luo uusi kansio"
       ],
       "Create new login": [
         "Luo uusi kirjautumistieto"
@@ -351,6 +360,9 @@
       ],
       "Exclude from monitoring": [
         "Poissulje valvonnasta"
+      ],
+      "Expand": [
+        "Laajenna"
       ],
       "Export": [
         "Vie"
@@ -493,8 +505,8 @@
       "Move all items": [
         "Siirrä kaikki kohteet"
       ],
-      "Move to another vault": [
-        "Siirrä toiseen holviin"
+      "Move to": [
+        "Siirrä kohteeseen"
       ],
       "Move to trash": [
         "Siirrä roskakoriin"
@@ -579,6 +591,9 @@
       ],
       "Remove member": [
         "Poista jäsen"
+      ],
+      "Rename": [
+        "Nimeä uudelleen"
       ],
       "Request a feature": [
         "Pyydä ominaisuutta"
@@ -1119,6 +1134,9 @@
       ],
       "Failed to create domain": [
         "Verkkotunnuksen luominen epäonnistui"
+      ],
+      "Failed to create folder": [
+        "Kansion luominen epäonnistui"
       ],
       "Failed to create new mailbox": [
         "Uuden postilaatikon luominen epäonnistui"
@@ -1890,9 +1908,6 @@
       ],
       "Creating alias...": [
         "Luodaan aliasta..."
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV on kätevä tiedostomuoto tietojesi tarkasteluun. Sen yksinkertaisuuden vuoksi joitakin tietoja ei kuitenkaan voida sisällyttää siihen (mukautetut kentät, avainkoodit, jne.). Täydellistä vientiä varten suosittelemme eri tiedostomuotoa."
       ],
       "Current version": [
         "Nykyinen versio"
@@ -3459,6 +3474,9 @@
       "Floor, apartment, building": [
         "Kerros, asunto, rakennus"
       ],
+      "Folder": [
+        "Kansio"
+      ],
       "For a one-off sharing": [
         "Kertaluonteista jakamista varten"
       ],
@@ -4499,9 +4517,6 @@
       "Please describe the problem and include any error messages": [
         "Kuvaile ongelmaa ja sisällytä mahdolliset virheilmoitukset"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Vahvista poisto kirjoittamalla \"${ vaultName }\""
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Etsi ${ pluralItemType } holvista ${ vaultName }"
       ],
@@ -4854,9 +4869,6 @@
       "Delete this item?": [
         "Poistetaanko tämä kohde?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Poistetaanko holvi \"${ vaultName }\"?"
-      ],
       "Did you know?": [
         "Tiesitkö?"
       ],
@@ -4910,6 +4922,9 @@
       ],
       "Fill password": [
         "Täytä salasana"
+      ],
+      "Folder options": [
+        "Kansion valinnat"
       ],
       "Get Started": [
         "Aloita"
@@ -4998,19 +5013,12 @@
       "Modified": [
         "Muokattu"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Siirrä ${ count } kohde holviin ${ vaultName }",
-        "Siirrä ${ count } kohdetta holviin ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Siirretäänkö ${ trashedItemsCount } kohde roskakoriin?",
         "Siirretäänkö ${ trashedItemsCount } kohdetta roskakoriin?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Siirrä kaikki kohteet holviin \"${ vaultName }\"?"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "Siirrä kohde holviin \"${ vaultName }\""
       ],
       "MX record": [
         "MX-tietue"
@@ -5549,9 +5557,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }iin kirjautuminen ei onnistu. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Holvi \"${ vaultName }\" ja kaikki sen kohteet poistetaan pysyvästi. Et voi kumota toimintoa."
       ],
       "Vault name is required": [
         "Holvin nimi vaaditaan"
