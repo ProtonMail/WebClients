@@ -240,7 +240,10 @@ export const MediaManagementProvider = ({
         reapplyBackgroundEffect,
     });
 
-    const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(switchActiveDevice);
+    const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(
+        switchActiveDevice,
+        meetAudioContext
+    );
 
     const { permissionsLoading } = useDeviceManagement({ toggleAudio, toggleVideo, switchActiveDevice });
 
