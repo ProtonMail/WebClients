@@ -1095,6 +1095,9 @@
       "I like this response": [
         "Mir gefällt diese Antwort"
       ],
+      "Keep going": [
+        "Fortfahren"
+      ],
       "Let ${ LUMO_SHORT_APP_NAME } out": [
         "Aus ${ LUMO_SHORT_APP_NAME } herauslassen"
       ],
@@ -1163,6 +1166,9 @@
       ],
       "Stop generating": [
         "Generierung stoppen"
+      ],
+      "Stop here": [
+        "Hier beenden"
       ],
       "Submit": [
         "Absenden"
@@ -1576,6 +1582,12 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not export this artifact as PDF.": [
+        "Dieses Artefakt konnte nicht als PDF exportiert werden."
+      ],
+      "Could not export this artifact as PPTX.": [
+        "Dieses Artefakt konnte nicht als PPTX exportiert werden."
+      ],
       "Could not generate a workflow. Try again.": [
         "Workflow konnte nicht generiert werden. Versuche es erneut."
       ],
@@ -1677,6 +1689,9 @@
       ],
       "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
         "Deine Chats können derzeit nicht gespeichert werden. Alles, was du schreibst, geht verloren, wenn du die Seite neu lädst."
+      ],
+      "Your existing ${ LUMO_SHORT_APP_NAME } data could not be decrypted with your available account keys. Recover your account keys, then retry.": [
+        "Deine vorhandenen ${ LUMO_SHORT_APP_NAME }-Daten konnten mit deinen verfügbaren Kontoschlüsseln nicht entschlüsselt werden. Stelle deine Kontoschlüssel wieder her und versuche es dann erneut."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -2173,11 +2188,32 @@
       "Partial content": [
         "Teilinhalt"
       ],
+      "PDF": [
+        "PDF"
+      ],
+      "PDF downloaded.": [
+        "PDF heruntergeladen."
+      ],
+      "PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.": [
+        "Der PDF-Export ist fehlgeschlagen – stattdessen wurde die Druckansicht geöffnet. Wähle im Druckdialog «Als PDF speichern» aus."
+      ],
       "Please share what you expected": [
         "Bitte teile deine Erwartungen"
       ],
       "Please wait for files to finish processing": [
         "Bitte warte, bis die Dateien fertig verarbeitet sind"
+      ],
+      "PPTX": [
+        "PPTX"
+      ],
+      "PPTX downloaded.": [
+        "PPTX heruntergeladen."
+      ],
+      "Preparing ${ formatLabel }…": [
+        "${ formatLabel } wird vorbereitet…"
+      ],
+      "Preparing ${ formatLabel }… (${ current } of ${ total })": [
+        "${ formatLabel } wird vorbereitet… (${ current } von ${ total })"
       ],
       "Private video calls for the conversations that matter.": [
         "Private Videoanrufe für die Unterhaltungen, die wichtig sind."
@@ -2305,6 +2341,9 @@
       "This folder is empty": [
         "Dieser Ordner ist leer."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Das sind ziemlich viele Schritte. Soll es so weitergehen?"
+      ],
       "This shares your general sentiment and response metadata with ${ BRAND_NAME }. Your prompt and the response are not included.": [
         "Dadurch werden deine allgemeine Empfindung und die Metadaten der Antwort mit ${ BRAND_NAME } geteilt. Deine Eingabe und die Antwort werden dabei nicht übermittelt."
       ],
@@ -2337,6 +2376,12 @@
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "${ uploadProgress.fileName } wird hochgeladen"
+      ],
+      "Uploading to ${ DRIVE_SHORT_APP_NAME }…": [
+        "Wird auf ${ DRIVE_SHORT_APP_NAME } hochgeladen…"
+      ],
+      "Uploading to ${ DRIVE_SHORT_APP_NAME }… ${ progressPercent }%": [
+        "Wird zu ${ DRIVE_SHORT_APP_NAME } hochgeladen…${ progressPercent } %"
       ],
       "used": [
         "benutzt"
@@ -2748,6 +2793,14 @@
         "Personalisierung"
       ]
     },
+    "collider_2025: Spotlight": {
+      "Create artifacts with ${ LUMO_SHORT_APP_NAME }": [
+        "Artefakt mit ${ LUMO_SHORT_APP_NAME } erstellen"
+      ],
+      "Turn ideas into documents, code, and more. Open Tools to get started.": [
+        "Verwandle Ideen in Dokumente, Code und vieles mehr. Öffne «Tools», um loszulegen."
+      ]
+    },
     "collider_2025: Status": {
       "Active": [
         "Aktiv"
@@ -2954,7 +3007,7 @@
         "Deine Favoriten speichern"
       ],
       "Saved memories": [
-        "Gespeicherte Erinnerungen"
+        "Erinnerungen speichern"
       ],
       "Search Index": [
         "Suchindex"
@@ -3035,6 +3088,9 @@
       ],
       "For Business": [
         "Für Unternehmen"
+      ],
+      "New": [
+        "Neu"
       ]
     },
     "collider_2025: Trait": {
@@ -3377,6 +3433,24 @@
       "Download image": [
         "Bild herunterladen"
       ],
+      "Download PDF": [
+        "PDF herunterladen"
+      ],
+      "Download plain text": [
+        "Klartext herunterladen"
+      ],
+      "Download PPTX": [
+        "PPTX herunterladen"
+      ],
+      "Download source (HTML)": [
+        "Quelle herunterladen (HTML)"
+      ],
+      "Download source (Markdown)": [
+        "Quelle herunterladen (Markdown)"
+      ],
+      "Download source file": [
+        "Quelldatei herunterladen"
+      ],
       "Edit": [
         "Bearbeiten"
       ],
@@ -3458,6 +3532,15 @@
       "Open conversation": [
         "Unterhaltung öffnen"
       ],
+      "PDF": [
+        "PDF"
+      ],
+      "Plain text (.txt)": [
+        "Klartext (.txt)"
+      ],
+      "PowerPoint (.pptx)": [
+        "PowerPoint (.pptx)"
+      ],
       "Preview": [
         "Vorschau"
       ],
@@ -3532,6 +3615,9 @@
       ],
       "Show sidebar": [
         "Seitenleiste anzeigen"
+      ],
+      "Source (Markdown)": [
+        "Quelle (Markdown)"
       ],
       "Start a chat": [
         "Chat beginnen"
@@ -3610,6 +3696,20 @@
       ],
       "Writing Assistant": [
         "Schreibassistent"
+      ]
+    },
+    "collider_2025:Artifact placeholder": {
+      "Create a 5-slide deck on password managers with a bar chart": [
+        "Erstelle eine Präsentation mit 5 Folien zum Thema Passwortmanager mit einem Balkendiagramm"
+      ],
+      "Create a self-contained HTML pomodoro timer": [
+        "Erstelle einen eigenständigen HTML-Pomodoro-Timer"
+      ],
+      "Write a professional email declining a meeting": [
+        "Verfasse eine professionelle E-Mail, in der du ein Meeting ablehnst"
+      ],
+      "Write a Python script to dedupe a CSV by email": [
+        "Schreibe ein Python-Skript, um eine CSV-Datei basierend auf E-Mail-Adressen zu bereinigen"
       ]
     },
     "collider_2025:Badge": {
@@ -3867,6 +3967,9 @@
       "All messages and chat history": [
         "Alle Nachrichten und Chatverläufe"
       ],
+      "Almost ready…": [
+        "Fast bereit…"
+      ],
       "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
         "Eine beiläufige Erwähnung von Stress, einer Diagnose oder eines Medikaments kann in Risikomodelle einfließen, die still und leise Einfluss darauf nehmen, welcher Versicherungsschutz dir angeboten wird und wie viel du bezahlst."
       ],
@@ -3875,6 +3978,9 @@
       ],
       "Any images generated in this conversation will also be deleted.": [
         "Alle in dieser Unterhaltung erstellten Bilder werden ebenfalls gelöscht."
+      ],
+      "Applying your changes…": [
+        "Deine Änderungen werden angewendet…"
       ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Möchtest du \"${ project.name }\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
@@ -3893,9 +3999,6 @@
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navigiere zu dem ${ DRIVE_SHORT_APP_NAME }-Ordner, den du mit diesem Projekt verknüpfen möchtest, und klicke dann auf \"Diesen Ordner verknüpfen\"."
-      ],
-      "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to save this document to, then click \"Save here\".": [
-        "Navigiere zum Ordner ${ DRIVE_SHORT_APP_NAME }, in dem du dieses Dokument speichern möchtest, und klicke dann auf «Hier speichern»."
       ],
       "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
         "Von ${ BRAND_NAME } entwickelt, der Datenschutzmarke, der über 100 Millionen Menschen vertrauen, und dem Team hinter ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } und ${ PASS_APP_NAME }."
@@ -3942,6 +4045,12 @@
       "Create visuals from a prompt, edit photos, analyze charts, or turn rough sketches into polished graphics.": [
         "Erstelle Grafiken aus einer Eingabeaufforderung, bearbeite Fotos, analysiere Diagramme oder verwandle grobe Skizzen in ausgearbeitete Grafiken."
       ],
+      "Creating artifact": [
+        "Artefakt wird erstellt"
+      ],
+      "Creating artifact…": [
+        "Artefakt wird erstellt…"
+      ],
       "Current chat:": [
         "Aktueller Chat:"
       ],
@@ -3953,6 +4062,9 @@
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Finde heraus, was die KI von Big Tech aus deinem Chatverlauf über dich zusammensetzen könnte – und erhalte einen Privatsphäre-Score, den du teilen kannst."
+      ],
+      "Drafting content…": [
+        "Inhalt wird entworfen…"
       ],
       "Drag and drop or click to browse": [
         "Per Drag-and-Drop oder per Klick auswählen"
@@ -4056,6 +4168,12 @@
       "Please upload your AI export before continuing.": [
         "Bitte lade deinen KI-Export hoch, bevor du fortfährst."
       ],
+      "Preparing your side panel…": [
+        "Seitenleiste wird vorbereitet…"
+      ],
+      "Preparing…": [
+        "Wird vorbereitet…"
+      ],
       "Processing file...": [
         "Datei wird verarbeitet..."
       ],
@@ -4071,6 +4189,12 @@
       "red flags": [
         "Warnsignale"
       ],
+      "Revising your artifact…": [
+        "Dein Artefakt wird überarbeitet…"
+      ],
+      "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
+        "Als ${ formatLabel } speichern. Gehe zum Ordner ${ DRIVE_SHORT_APP_NAME }, den du verwenden möchtest, und klicke dann auf «Hier speichern»."
+      ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Sieh dir an, was die KI der Tech-Riesen über dich weiß. Erstellt mit ${ LUMO_SHORT_APP_NAME }."
       ],
@@ -4079,9 +4203,6 @@
       ],
       "Sign in to your Claude account at claude.ai": [
         "Melde dich unter claude.ai bei deinem Claude-Konto an"
-      ],
-      "Slides": [
-        "Folien"
       ],
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
         "Ein Teil dessen, was du eingefügt hast, könnte gegen arbeitsrechtliche, rechtliche oder datenschutzrechtliche Vorschriften verstoßen. Dies soll dir helfen, solche Verstöße zu erkennen, und dient nicht dazu, dich zu beurteilen."
@@ -4139,6 +4260,9 @@
       ],
       "Under your data, click Export data": [
         "Klicke unter deinen Daten auf \"Daten exportieren\""
+      ],
+      "Updating content…": [
+        "Inhalt wird aktualisiert…"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus, um unbegrenzt benutzerdefinierte ${ LUMO_SHORT_APP_NAME }s zu erstellen, fortschrittliche KI-Modelle freizuschalten und mehr."
@@ -4665,8 +4789,14 @@
       "Created an image": [
         "Bild erstellt"
       ],
+      "Created artifact": [
+        "Artefakt erstellt"
+      ],
       "Creating an image": [
         "Bild wird erstellt"
+      ],
+      "Creating artifact": [
+        "Artefakt wird erstellt"
       ],
       "Dividend Yield": [
         "Dividendenrendite"
@@ -4757,6 +4887,12 @@
       ],
       "Performance comparison": [
         "Leistungsvergleich"
+      ],
+      "Prepared your side panel": [
+        "Seitenleiste vorbereitet"
+      ],
+      "Preparing your side panel": [
+        "Seitenleiste wird vorbereitet"
       ],
       "Price": [
         "Preis"
@@ -9215,6 +9351,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besuche ${ helpCenterLink } oder ${ contactSupportLink }"
       ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen,"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Jederzeit vor dem ${ cancelDate } kündigen."
       ],
@@ -9230,11 +9369,20 @@
       "help center": [
         "Hilfezentrum"
       ],
+      "If you continue after your trial,": [
+        "Wenn du nach Ablauf der Testversion fortfährst,"
+      ],
       "If you need help,": [
         "Wenn du Hilfe benötigst,"
       ],
       "Once your full subscription starts...": [
         "Sobald dein vollständiges Abonnement beginnt ..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Du kannst immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
@@ -9811,78 +9959,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Deal sichern"
-      ],
-      "Summer Sale": [
-        "Sommer Sale"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/Monat"
-      ],
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "2 TB data storage": [
-        "2 TB Datenspeicher"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB Datenspeicher"
-      ],
-      "500 GB storage": [
-        "500 GB Speicher"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Voller Zugriff auf ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Eigene Konten für 6 Benutzer"
-      ],
-      "Individual accounts for you and a partner": [
-        "Eigene Konten für dich und einen Partner"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online-Dokumenten- und Tabelleneditor"
-      ],
-      "Recover previous file versions": [
-        "Stelle frühere Dateiversionen wieder her"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyber-Bedrohungen"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "für 12 Monate"
-      ],
-      "SUMMER SALE": [
-        "SOMMER SALE"
       ]
     },
     "q3campaign2026: Action": {

@@ -1107,6 +1107,9 @@
       "Manage files": [
         "Gestionar archivos"
       ],
+      "Manage Subscription": [
+        "Gestionar suscripción"
+      ],
       "More options": [
         "Más opciones"
       ],
@@ -1335,6 +1338,52 @@
     "collider_2025: Compaction": {
       "${ removed } freed": [
         "Se ha liberado ${ removed }"
+      ],
+      "${ stats.summarizedMessageCount } earlier message summarized for new replies": [
+        "${ stats.summarizedMessageCount } mensaje anterior resumido para respuestas nuevas",
+        "${ stats.summarizedMessageCount } mensajes anteriores resumidos para respuestas nuevas"
+      ],
+      "Earlier messages summarized to make room": [
+        "Mensajes anteriores resumidos para hacer espacio"
+      ],
+      "Excluded from new replies only": [
+        "Excluido solo de respuestas nuevas"
+      ],
+      "Files not included in new replies": [
+        "Archivos no incluidos en las respuestas nuevas"
+      ],
+      "Making room to keep going — summarizing earlier messages for the next reply…": [
+        "Haciendo espacio para continuar: resumiendo los mensajes anteriores para la siguiente respuesta…"
+      ],
+      "Nothing is removed from your chat. Scroll up anytime to read the full history.": [
+        "Nada es eliminado de su chat. Desplace hacia arriba en cualquier momento para leer el historial completo."
+      ],
+      "summarized older messages": [
+        "resumí mensajes anteriores"
+      ],
+      "Summary ${ LUMO_SHORT_APP_NAME } uses for new replies": [
+        "Resumen que ${ LUMO_SHORT_APP_NAME } usa para las respuestas nuevas"
+      ],
+      "Tool calls trimmed": [
+        "Llamadas a herramientas recortadas"
+      ],
+      "Tool output trimmed": [
+        "Salida de la herramienta recortada"
+      ],
+      "trimmed file context": [
+        "recorté el contexto del archivo"
+      ],
+      "trimmed old tool calls": [
+        "recorté llamadas a herramientas anteriores"
+      ],
+      "trimmed old tool output": [
+        "recorté llamadas a herramientas de salida"
+      ],
+      "wrote a conversation summary": [
+        "escribí un resumen de conversación"
+      ],
+      "Your chat history above is unchanged. ${ LUMO_SHORT_APP_NAME } uses the summary below when replying — scroll up anytime to read the original messages.": [
+        "Su historial de chat anterior no ha cambiado. ${ LUMO_SHORT_APP_NAME } usa el resumen que aparece a continuación al responder; puede desplazarse hacia arriba en cualquier momento para leer los mensajes originales."
       ]
     },
     "collider_2025: Context": {
@@ -1410,6 +1459,9 @@
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Agregue sus propios recuerdos, edite cualquier entrada autogenerada o borre todo en cualquier momento. Los recuerdos generados que editó se consideran como propios."
+      ],
+      "Adjust the size of text across the app": [
+        "Ajuste el tamaño del texto en la aplicación"
       ],
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "Después de continuar, Apertus aparecerá como el modelo seleccionado en el menú de modelos. Puede usar ese menú para cambiar a otro modelo en cualquier momento."
@@ -1625,6 +1677,9 @@
       ],
       "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
         "No se pueden guardar sus chats por ahora. Cualquier cosa que escriba se perderá si actualiza la página."
+      ],
+      "Your existing ${ LUMO_SHORT_APP_NAME } data could not be decrypted with your available account keys. Recover your account keys, then retry.": [
+        "No se pudieron descifrar los datos existentes de ${ LUMO_SHORT_APP_NAME } con las claves de cuenta disponibles. Recupere las claves de su cuenta e intente de nuevo."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -1825,6 +1880,10 @@
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "El almacenamiento de ${ DRIVE_SHORT_APP_NAME } aún no está configurado"
       ],
+      "${ droppedForBudget.length } least relevant file was left out of this reply so the rest fits.": [
+        "${ droppedForBudget.length } archivo menos relevante se omitió de esta respuesta para que el resto encaje.",
+        "${ droppedForBudget.length } archivos menos relevantes se omitieron de esta respuesta para que el resto encaje."
+      ],
       "${ expiringInOneDay } chat will expire in 1 day": [
         "${ expiringInOneDay } chat expirará en 1 día",
         "${ expiringInOneDay } chats expirarán en 1 día"
@@ -1839,6 +1898,9 @@
       ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA que prioriza la privacidad y le ayuda a hacer más, a la vez que mantiene sus datos seguros. Desbloquee todo su potencial y disfrute del acceso anticipado a nuevas funciones a medida que se introduzcan."
+      ],
+      "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space. When it fills up, older messages are summarized — not deleted — so you can keep chatting. Your full chat history stays in the conversation.": [
+        "${ LUMO_SHORT_APP_NAME } puede procesar una cantidad limitada de información por conversación. Esto muestra qué está usando ese espacio actualmente. Cuando se llena, los mensajes más antiguos se resumen (no se eliminan) para que pueda seguir chateando. Su historial de chat completo permanece en la conversación."
       ],
       "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
         "El acceso a la API y las claves de ${ LUMO_SHORT_APP_NAME }+ están incluidos con una suscripción a ${ LUMO_SHORT_APP_NAME }+ (inicie sesión o gestione las claves)"
@@ -1961,6 +2023,9 @@
       "Drag and drop your files here to add them to the chat.": [
         "Arrastre y suelte sus archivos aquí para agregarlos al chat."
       ],
+      "Earlier messages were summarized to free space. They are still in your chat above — only the summary counts toward usage here.": [
+        "Los mensajes anteriores se resumieron para liberar espacio. Todavía se encuentran en el chat de arriba; solo el resumen cuenta para el uso aquí."
+      ],
       "Enabled": [
         "Activado"
       ],
@@ -1996,6 +2061,9 @@
       ],
       "Files": [
         "Archivos"
+      ],
+      "Files account for most of this usage.": [
+        "Los archivos representan la mayor parte de este uso."
       ],
       "files are not supported for content extraction.": [
         "los archivos no son compatibles para la extracción de contenido."
@@ -2071,6 +2139,9 @@
       ],
       "Manage keys after you sign in": [
         "Gestionar claves luego de iniciar sesión"
+      ],
+      "Matching files": [
+        "Archivos coincidentes"
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Nunca incluya claves de API en paquetes del lado del cliente. Use variables de entorno y un proxy del lado del servidor en producción."
@@ -3324,6 +3395,9 @@
       "Edit project": [
         "Editar proyecto"
       ],
+      "Exit full screen": [
+        "Salir de la pantalla completa"
+      ],
       "Expand": [
         "Expandir"
       ],
@@ -3332,6 +3406,9 @@
       ],
       "Favorite": [
         "Favorito"
+      ],
+      "Full screen": [
+        "Pantalla completa"
       ],
       "Generate my report": [
         "Generar mi reporte"
@@ -3494,6 +3571,9 @@
       ],
       "Upload your AI export": [
         "Cargue su exportación de IA"
+      ],
+      "View mode": [
+        "Modo de vista"
       ],
       "View v${ versionNumber }": [
         "Ver v${ versionNumber }"
@@ -3679,6 +3759,11 @@
         "Proyecto no encontrado"
       ]
     },
+    "collider_2025:Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Formato de archivo no soportado: ${ file.name }"
+      ]
+    },
     "collider_2025:Feature": {
       "Advanced AI models": [
         "Modelos avanzados de IA"
@@ -3811,9 +3896,6 @@
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navegue hasta la carpeta de ${ DRIVE_SHORT_APP_NAME } que desea enlazar a este proyecto y luego haga clic en «Enlazar esta carpeta»."
-      ],
-      "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to save this document to, then click \"Save here\".": [
-        "Navegue hasta la carpeta de ${ DRIVE_SHORT_APP_NAME } en la que desea guardar este documento y luego haga clic en «Guardar aquí»."
       ],
       "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
         "Creado por ${ BRAND_NAME }, la marca de privacidad confiada por más de 100 millones de personas y del equipo detrás de ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } y ${ PASS_APP_NAME }."
@@ -4022,6 +4104,9 @@
       "These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.": [
         "Estas son las categorías más delicadas que la IA de las grandes empresas tecnológicas podría inferir sobre usted a partir de sus chats, incluso cuando nunca los haya escrito explícitamente."
       ],
+      "This conversation is nearly full. ${ LUMO_SHORT_APP_NAME } may summarize earlier messages to keep replying — nothing is removed from your chat history.": [
+        "Esta conversación está casi llena. ${ LUMO_SHORT_APP_NAME } puede resumir los mensajes anteriores para seguir respondiendo, nada es eliminado de su historial de chat."
+      ],
       "This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.": [
         "Por eso es importante: una vez inferidos, estos detalles pueden servir de base para la segmentación, la elaboración de perfiles y las decisiones sobre usted, a menudo, sin transparencia ni consentimiento."
       ],
@@ -4081,6 +4166,9 @@
       ],
       "Your export is encrypted in transit and processed without being stored on ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Su exportación está cifrada en tránsito y procesada sin almacenarse en los servidores de ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Your files are large. ${ LUMO_SHORT_APP_NAME } may summarize earlier messages to make room — your chat history will stay in this conversation.": [
+        "Sus archivos son grandes. ${ LUMO_SHORT_APP_NAME } puede resumir mensajes anteriores para hacer espacio, su historial de chat permanecerá en esta conversación."
       ],
       "Your information is zero-access encrypted": [
         "Su información está cifrada con acceso cero"
@@ -4184,6 +4272,9 @@
       ],
       "AI platform": [
         "Plataforma IA"
+      ],
+      "Artifact full screen view": [
+        "Vista de pantalla completa del artefacto"
       ],
       "Artifact view": [
         "Vista de artefacto"
@@ -9124,6 +9215,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite nuestro ${ helpCenterLink } o contacte a nuestro ${ contactSupportLink }."
       ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancele en cualquier momento antes del ${ cancelDate }."
       ],
@@ -9139,11 +9233,20 @@
       "help center": [
         "centro de ayuda"
       ],
+      "If you continue after your trial,": [
+        "Si continúa después de la prueba,"
+      ],
       "If you need help,": [
         "Si necesita ayuda,"
       ],
       "Once your full subscription starts...": [
         "Una vez que comience su suscripción completa..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "para seguir usando todas las funciones después de finalizar el periodo de prueba."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Todavía puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
@@ -9720,78 +9823,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aproveche la oferta"
-      ],
-      "Summer Sale": [
-        "Ofertas de verano"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mes"
-      ],
-      "15 GB storage": [
-        "15 GB de almacenamiento"
-      ],
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de almacenamiento: 40 veces su plan actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "500 GB storage": [
-        "500 GB de almacenamiento"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acceso completo a ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para usted y su pareja"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor en línea de documentos y hojas de cálculo"
-      ],
-      "Recover previous file versions": [
-        "Recupere versiones anteriores de archivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra ciberamenazas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Use your own email domain": [
-        "Use su propio dominio de correo electrónico"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "SUMMER SALE": [
-        "OFERTAS DE VERANO"
       ]
     },
     "q3campaign2026: Action": {
