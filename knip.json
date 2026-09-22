@@ -274,8 +274,7 @@
         },
         "packages/docs-proto": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/docs-shared": {
             "entry": [],
