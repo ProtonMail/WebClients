@@ -797,6 +797,9 @@
       ],
       "Rename": [
         "Ändra namn"
+      ],
+      "Go back": [
+        "Gå tillbaka"
       ]
     },
     "Activity": {
@@ -2144,8 +2147,7 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"

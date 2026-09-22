@@ -797,6 +797,9 @@
       ],
       "Rename": [
         "Hernoem"
+      ],
+      "Go back": [
+        "Ga terug"
       ]
     },
     "Activity": {
@@ -2135,8 +2138,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2824,6 +2826,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Voltooi het inloggen in het browservenster dat zojuist is geopend. ${ PASS_APP_NAME } wordt automatisch opgehaald zodra u klaar bent."
       ]
     },
     "Keyboard key": {
@@ -5147,6 +5152,9 @@
       ],
       "Folder options": [
         "Mapopties"
+      ],
+      "Continue in your browser": [
+        "Ga verder in uw browser"
       ]
     },
     "Title_cloned_item": {

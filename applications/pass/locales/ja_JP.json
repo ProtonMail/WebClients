@@ -780,6 +780,9 @@
       ],
       "Rename": [
         "名前を変更"
+      ],
+      "Go back": [
+        "もどる"
       ]
     },
     "Activity": {
@@ -2076,7 +2079,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
+        "アイテムを別の保管庫に移動すると、そのセキュアリンクは消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"

@@ -797,6 +797,9 @@
       ],
       "Rename": [
         "Nimeä uudelleen"
+      ],
+      "Go back": [
+        "Takaisin"
       ]
     },
     "Activity": {
@@ -2126,8 +2129,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
