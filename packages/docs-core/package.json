@@ -10,7 +10,6 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@lexical/yjs": "0.31.2",
     "@proton/account": "workspace:^",
     "@proton/components": "workspace:^",
     "@proton/docs-proto": "workspace:^",
@@ -22,18 +21,12 @@
     "@proton/unleash": "workspace:^",
     "@proton/utils": "workspace:^",
     "@protontech/crypto": "*",
-    "@testing-library/react": "^14.3.1",
-    "@testing-library/react-hooks": "^8.0.1",
     "fflate": "^0.8.3",
     "jszip": "^3.10.2",
     "jwt-decode": "^4.0.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^5.3.4",
-    "react-test-renderer": "^18.3.1",
     "ttag": "^1.8.12",
     "uuid": "^14.0.2",
-    "y-protocols": "^1.0.6",
     "yjs": "^13.6.15",
     "zod": "^3.25.76"
   },
@@ -41,12 +34,8 @@
     "@babel/plugin-transform-class-properties": "^7.29.7",
     "@proton/eslint-config-proton": "workspace:^",
     "@proton/jest-env": "workspace:^",
-    "@proton/unleash": "workspace:^",
     "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^14.3.1",
-    "@testing-library/react-hooks": "^8.0.1",
     "@types/jest": "^30.0.0",
-    "@types/mime-types": "^2.1.4",
     "babel-jest": "^30.4.1",
     "browserslist": "^4.29.0",
     "core-js": "^3.50.0",
@@ -54,9 +43,7 @@
     "fake-indexeddb": "^6.2.5",
     "jest": "^30.5.2",
     "jest-junit": "^16.0.0",
-    "jest-when": "3.7.0",
     "prettier": "^3.9.8",
-    "pretty-format": "^30.5.1",
     "typescript": "^6.0.3"
   }
 }

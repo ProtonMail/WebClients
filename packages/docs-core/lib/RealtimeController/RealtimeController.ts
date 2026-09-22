@@ -38,7 +38,7 @@ import { SquashErrorEvent } from '../UseCase/SquashDocument'
  * in a timely manner. However, due to DRVDOC-802, this event is not currently received, so we have lowered this value to something
  * nominal as a temporary workaround.
  */
-export const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1000
+const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1000
 
 export class RealtimeController implements InternalEventHandlerInterface, RealtimeControllerInterface {
   initialSyncTimer: ReturnType<typeof setTimeout> | null = null
