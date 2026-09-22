@@ -198,7 +198,11 @@ export const ToolMenuDropdown = ({
                                     </span>
                                 </div>
                             </div>
-                            <Toggle checked={isArtifactCreationEnabled} onChange={handleArtifactCreationToggleChange} />
+                            <Toggle
+                                id="artifact-creation-toggle"
+                                checked={isArtifactCreationEnabled}
+                                onChange={handleArtifactCreationToggleChange}
+                            />
                         </div>
                     )}
 
@@ -215,7 +219,11 @@ export const ToolMenuDropdown = ({
                                         .t`Web search`}</span>
                                 </div>
                             </div>
-                            <Toggle checked={isWebSearchButtonToggled} onChange={handleWebSearchToggleChange} />
+                            <Toggle
+                                id="web-search-toggle"
+                                checked={isWebSearchButtonToggled}
+                                onChange={handleWebSearchToggleChange}
+                            />
                         </div>
                     )}
 
