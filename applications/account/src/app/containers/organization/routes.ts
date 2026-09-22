@@ -53,10 +53,6 @@ import type { OrganizationRouterParams } from '../../content/router-params';
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
 const scribeValidApplications = new Set<string>([APPS.PROTONMAIL]);
 
-// Apps where VPN-specific organization settings (gateways, shared servers, always-on VPN) are shown.
-// Pass is included because VPN+Pass bundle business orgs manage these settings from within Pass.
-const vpnOrganizationSettingsApps = new Set<string>([APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS]);
-
 export const getOrganizationAppRoutes = ({
     app,
     user,
@@ -333,7 +329,6 @@ export const getOrganizationAppRoutes = ({
             to: '/gateways',
             icon: IcServers,
             available:
-                vpnOrganizationSettingsApps.has(app) &&
                 permissions['account.gateway.read'] &&
                 (entitlements.orgHasMaxDedicatedIps || getHasVpnGatewaysUpsellPlan(subscription)),
             subsections: [
@@ -353,7 +348,6 @@ export const getOrganizationAppRoutes = ({
             to: '/shared-servers',
             icon: IcEarth,
             available:
-                vpnOrganizationSettingsApps.has(app) &&
                 isSharedServerFeatureEnabled &&
                 permissions['account.shared_server.read'] &&
                 entitlements.orgHasVpnLocationFilter,
@@ -376,7 +370,6 @@ export const getOrganizationAppRoutes = ({
             to: '/always-on-vpn',
             icon: IcVault,
             available:
-                vpnOrganizationSettingsApps.has(app) &&
                 isAlwaysOnVpnEnabled &&
                 permissions['account.always_on.read'] &&
                 (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
