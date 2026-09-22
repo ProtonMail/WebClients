@@ -12,7 +12,7 @@ type Props = {
   renderCustomFooter?: (handleClose: () => void) => ReactNode
 }
 
-export default function GenericAlertModal({
+function GenericAlertModal({
   title,
   translatedMessage,
   onClose,
