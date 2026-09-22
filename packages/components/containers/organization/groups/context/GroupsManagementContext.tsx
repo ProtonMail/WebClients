@@ -18,7 +18,7 @@ import { provideOrgKeyAccessToMember } from '@proton/account/members/actions';
 import { useGetMembers, useMembers } from '@proton/account/members/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { isOrgKeyRequired, isOwnerRole } from '@proton/account/organizationRoles/helpers';
-import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
+import { useGetOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { useApi } from '@proton/app-context/useApi';
@@ -67,7 +67,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const [user, loadingUser] = useUser();
     const api = useApi();
     const dispatch = useDispatch();
-    const [organizationRoles] = useOrganizationRoles();
+    const getOrganizationRoles = useGetOrganizationRoles();
     const [adminRolesUIState] = useAdminRolesUI();
     const { createNotification } = useNotifications();
     const [selectedGroupId, setSelectedGroupId] = useState<string | undefined>(undefined);
@@ -269,9 +269,11 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
             return;
         }
 
-        const ownerRoleIds = new Set(
-            (organizationRoles ?? []).filter(isOwnerRole).map((role) => role.OrganizationRoleID)
-        );
+        // Fetched lazily: group owners without `account.user.read` may open this page, and the API rejects
+        // GET permissions/v1/roles for them. Only this branch needs the roles, and it is admin-only.
+        // Falling back to an empty list keeps group creation/edition working instead of failing the whole save.
+        const organizationRoles = await getOrganizationRoles().catch(() => []);
+        const ownerRoleIds = new Set(organizationRoles.filter(isOwnerRole).map((role) => role.OrganizationRoleID));
 
         const currentRoles = await dispatch(getGroupRoles({ group }));
         const currentRoleIds = new Set(currentRoles.map(({ Role }) => Role.OrganizationRoleID));
@@ -281,7 +283,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         }
 
         const addedRoleIds = [...desiredRoleIds].filter((id) => !currentRoleIds.has(id));
-        const addedRolesRequireOrgKey = (organizationRoles ?? []).some(
+        const addedRolesRequireOrgKey = organizationRoles.some(
             (role) => addedRoleIds.includes(role.OrganizationRoleID) && isOrgKeyRequired(role)
         );
 
