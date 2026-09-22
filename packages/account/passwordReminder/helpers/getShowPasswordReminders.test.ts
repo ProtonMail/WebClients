@@ -5,15 +5,11 @@ import {
     type UserModel,
     type UserSettings,
 } from '@proton/shared/lib/interfaces';
-import type { UnleashClient } from '@proton/unleash/UnleashClient';
 
 import { getShowPasswordReminders } from './getShowPasswordReminders';
 
 const now = new Date('2005-05-25');
 jest.useFakeTimers().setSystemTime(now);
-
-const makeUnleash = (flags: Record<string, boolean> = {}) =>
-    ({ isEnabled: jest.fn((flag: string) => flags[flag] || false) }) as unknown as UnleashClient;
 
 const makeUser = (overrides: Partial<UserModel> = {}): UserModel =>
     ({ isPrivate: true, Flags: { sso: false }, ...overrides }) as UserModel;
@@ -70,7 +66,6 @@ describe('getShowPasswordReminders', () => {
             const user = makeUser({ isPrivate: false });
 
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(),
                 user,
                 userSettings: makeUserSettings(),
             });
@@ -87,7 +82,6 @@ describe('getShowPasswordReminders', () => {
 
             // A timestamp equal to `now` is also "not before now" — isBefore is strict.
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(),
                 user: makeUser(),
                 userSettings,
             });
@@ -101,7 +95,6 @@ describe('getShowPasswordReminders', () => {
 
         // A timestamp equal to `now` is also "not before now" — isBefore is strict.
         const result = getShowPasswordReminders({
-            unleashClient: makeUnleash(),
             user: makeUser(),
             userSettings,
         });
@@ -111,7 +104,6 @@ describe('getShowPasswordReminders', () => {
 
     it('returns true when the user is private and the reminder time is in the past', () => {
         const result = getShowPasswordReminders({
-            unleashClient: makeUnleash(),
             user: makeUser(),
             userSettings: makeUserSettings(),
         });
@@ -126,7 +118,6 @@ describe('getShowPasswordReminders', () => {
         const userSettings = makeUserSettings({ nextPasswordReminderTime: value });
 
         const result = getShowPasswordReminders({
-            unleashClient: makeUnleash(),
             user: makeUser(),
             userSettings,
         });
@@ -135,22 +126,8 @@ describe('getShowPasswordReminders', () => {
     });
 
     describe('organization members', () => {
-        const orgFlag = { PasswordRemindersOrg: true };
-
-        it('returns false when the PasswordRemindersOrg flag is disabled', () => {
+        it('returns true for a member operating their own session', () => {
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(),
-                user: makeUser({ isMember: true, isSelf: true }),
-                userSettings: makeUserSettings(),
-                organization: configuredOrganization,
-            });
-
-            expect(result).toBe(false);
-        });
-
-        it('returns true when the PasswordRemindersOrg flag is enabled', () => {
-            const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(orgFlag),
                 user: makeUser({ isMember: true, isSelf: true }),
                 userSettings: makeUserSettings(),
                 organization: configuredOrganization,
@@ -161,7 +138,6 @@ describe('getShowPasswordReminders', () => {
 
         it('treats a non-private member the same as a private one', () => {
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(orgFlag),
                 user: makeUser({ isMember: true, isSelf: true, isPrivate: false }),
                 userSettings: makeUserSettings(),
                 organization: configuredOrganization,
@@ -172,7 +148,6 @@ describe('getShowPasswordReminders', () => {
 
         it('returns false when an admin is signed in to the account via the organization key', () => {
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(orgFlag),
                 user: makeUser({ isMember: true, isSelf: false, isPrivate: false }),
                 userSettings: makeUserSettings(),
                 organization: configuredOrganization,
@@ -183,20 +158,8 @@ describe('getShowPasswordReminders', () => {
     });
 
     describe('organization admins', () => {
-        it('returns false when the PasswordRemindersOrg flag is disabled', () => {
+        it('returns true for an admin operating their own session', () => {
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(),
-                user: makeUser({ isAdmin: true, isSelf: true }),
-                userSettings: makeUserSettings(),
-                organization: configuredOrganization,
-            });
-
-            expect(result).toBe(false);
-        });
-
-        it('returns true when the PasswordRemindersOrg flag is enabled', () => {
-            const result = getShowPasswordReminders({
-                unleashClient: makeUnleash({ PasswordRemindersOrg: true }),
                 user: makeUser({ isAdmin: true, isSelf: true }),
                 userSettings: makeUserSettings(),
                 organization: configuredOrganization,
@@ -205,11 +168,10 @@ describe('getShowPasswordReminders', () => {
             expect(result).toBe(true);
         });
 
-        // `isAdmin` is true for any paying account, so this guards against gating
-        // individuals on a paid plan behind the organization flag.
+        // `isAdmin` is true for any paying account, so this guards against applying the
+        // organization rule to individuals on a paid plan.
         it('returns true for a paying individual whose organization was never set up', () => {
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(),
                 user: makeUser({ isAdmin: true, isSelf: true }),
                 userSettings: makeUserSettings(),
                 organization: unconfiguredOrganization,
@@ -223,9 +185,8 @@ describe('getShowPasswordReminders', () => {
         it.each([
             ['member', { isMember: true }],
             ['admin', { isAdmin: true }],
-        ])('returns true for a family %s without the organization flag', (_label, role) => {
+        ])('returns true for a family %s', (_label, role) => {
             const result = getShowPasswordReminders({
-                unleashClient: makeUnleash(),
                 user: makeUser({ ...role, isSelf: true }),
                 userSettings: makeUserSettings(),
                 organization: familyOrganization,
