@@ -1446,6 +1446,16 @@
       ],
       "Failed to create folder": [
         "Falha ao criar a pasta"
+      ],
+      "Failed to delete folder": [
+        "Falha ao excluir pasta",
+        "Falha ao excluir pastas"
+      ],
+      "Failed to update folder": [
+        "Falha ao atualizar pasta"
+      ],
+      "Folder name does not match": [
+        "O nome da pasta não corresponde"
       ]
     },
     "Error message": {
@@ -2824,6 +2834,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Pasta \"${ payload.folder.name }\" criada"
+      ],
+      "Folder deleted": [
+        "Pasta excluída"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Pasta renomeada para \"${ payload.folder.name }\""
       ]
     },
     "Keyboard key": {
@@ -4069,6 +4088,15 @@
       ],
       "Folder": [
         "Pasta"
+      ],
+      "Confirm folder name": [
+        "Confirmar o nome da pasta"
+      ],
+      "Create a folder": [
+        "Criar uma pasta"
+      ],
+      "Folders": [
+        "Pastas"
       ]
     },
     "Link": {
@@ -4412,6 +4440,9 @@
       ],
       "Used on ${ url }": [
         "Usado no ${ url }"
+      ],
+      "Folder name": [
+        "Nome da pasta"
       ]
     },
     "Result": {
@@ -5141,6 +5172,30 @@
       ],
       "Folder options": [
         "Opções da pasta"
+      ],
+      "Create folder in \"${ vaultName }\"": [
+        "Criar pasta em \"${ vaultName }\""
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Criar subpasta em \"${ folderName }\""
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Excluir pasta \"${ name }\"?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Excluir cofre \"${ name }\"?"
+      ],
+      "Move all items?": [
+        "Mover todos os itens?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Mover item para \"${ target }\""
+      ],
+      "Rename folder": [
+        "Renomear pasta"
+      ],
+      "Your folder is empty": [
+        "Sua pasta está vazia"
       ]
     },
     "Title_cloned_item": {
@@ -5498,6 +5553,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."
+      ],
+      "Folder name is required": [
+        "O nome da pasta é obrigatório"
       ]
     }
   }
