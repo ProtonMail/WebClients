@@ -72,12 +72,36 @@ describe('EditorController', () => {
       expect(sharedState.getProperty('editorReady')).toBe(true)
       expect(logger.info).toHaveBeenCalledWith('Editor is ready to receive invocations')
     })
+
+    it('should signal that initial sync is complete when realtime is disabled', () => {
+      sharedState.setProperty('realtimeEnabled', false)
+
+      controller.receiveEditor(editorInvoker)
+
+      expect(editorInvoker.receiveMessage).toHaveBeenCalledWith({
+        type: {
+          wrapper: 'events',
+          eventType: EventType.create(EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas).value,
+        },
+        content: new Uint8Array(),
+      })
+    })
   })
 
   describe('showEditorForTheFirstTime', () => {
     beforeEach(() => {
       controller.receiveEditor(editorInvoker)
     })
+
+    const expectInitialSyncCompleteMessage = () => {
+      expect(editorInvoker.receiveMessage).toHaveBeenCalledWith({
+        type: {
+          wrapper: 'events',
+          eventType: EventType.create(EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas).value,
+        },
+        content: new Uint8Array(),
+      })
+    }
 
     it('should throw error if editor invoker is not initialized', () => {
       const controller = new EditorController(logger, sharedState, eventBus)
@@ -92,6 +116,7 @@ describe('EditorController', () => {
       controller.showEditorForTheFirstTime()
 
       expect(editorInvoker.showEditor).toHaveBeenCalled()
+      expectInitialSyncCompleteMessage()
     })
 
     it('should show editor when realtime is ready to broadcast', () => {
@@ -102,6 +127,16 @@ describe('EditorController', () => {
       controller.showEditorForTheFirstTime()
 
       expect(editorInvoker.showEditor).toHaveBeenCalled()
+      expectInitialSyncCompleteMessage()
+    })
+
+    it('should signal that initial sync is complete when showing the editor in read-only mode', () => {
+      sharedState.setProperty('realtimeShouldBeShownInReadonlyMode', true)
+
+      controller.showEditorForTheFirstTime()
+
+      expect(editorInvoker.showEditor).toHaveBeenCalled()
+      expectInitialSyncCompleteMessage()
     })
 
     it('should show editor when realtime connection has timed out', () => {
@@ -112,6 +147,7 @@ describe('EditorController', () => {
       controller.showEditorForTheFirstTime()
 
       expect(editorInvoker.showEditor).toHaveBeenCalled()
+      expectInitialSyncCompleteMessage()
     })
 
     it('should not show editor when realtime is enabled but not ready and not timed out', () => {
@@ -122,6 +158,16 @@ describe('EditorController', () => {
       controller.showEditorForTheFirstTime()
 
       expect(editorInvoker.showEditor).not.toHaveBeenCalled()
+      expect(editorInvoker.receiveMessage).not.toHaveBeenCalled()
+    })
+
+    it('should signal that initial sync is complete only once', () => {
+      sharedState.setProperty('realtimeReadyToBroadcast', true)
+      sharedState.emitEvent({ name: 'RealtimeReceivedEverythingFromRTS', payload: undefined })
+
+      controller.showEditorForTheFirstTime()
+
+      expect(editorInvoker.receiveMessage).toHaveBeenCalledTimes(1)
     })
 
     it('should emit EditorIsReadyToBeShown event when editor is shown', () => {

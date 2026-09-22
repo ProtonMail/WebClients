@@ -8,6 +8,9 @@ import { ClientToEditorBridge } from '@proton/docs-core'
 import { useApplication } from '~/utils/application-context'
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
 import { useIsDarkThemeEnabled } from '~/utils/flags'
+import { EventTypeEnum } from '@proton/docs-proto'
+import type { FeatureFlag } from '@proton/unleash/Flags'
+import { useFlag } from '@proton/unleash/useFlag'
 
 export type SingleRevisionViewerProps = {
   state: YjsState
@@ -22,6 +25,7 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
   const { information } = useTheme()
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker | null>(null)
   const isDarkMode = isDarkThemeEnabled && information.dark
+  const isSheetsMountAfterInitialLoadDisabled = useFlag('SheetsMountAfterInitialLoadDisabled')
 
   useEffect(() => {
     if (editorInvoker) {
@@ -32,6 +36,8 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
     async (frame: HTMLIFrameElement) => {
       const orchestrator = {
         provideEditorInvoker: () => {},
+        checkIfFeatureFlagIsEnabled: async (featureFlag: FeatureFlag) =>
+          featureFlag === 'SheetsMountAfterInitialLoadDisabled' && isSheetsMountAfterInitialLoadDisabled,
       } as unknown as EditorOrchestratorInterface
 
       const bridge = new ClientToEditorBridge(frame, orchestrator, new InternalEventBus(), new SyncedEditorState())
@@ -54,11 +60,21 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
         })
         .catch(console.error)
 
+      newEditorInvoker
+        .receiveMessage({
+          type: {
+            wrapper: 'events',
+            eventType: EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas,
+          },
+          content: new Uint8Array(),
+        })
+        .catch(console.error)
+
       newEditorInvoker.showEditor().catch(console.error)
 
       onEditorInvokerRef(newEditorInvoker)
     },
-    [APP_VERSION, onEditorInvokerRef, state],
+    [APP_VERSION, isSheetsMountAfterInitialLoadDisabled, onEditorInvokerRef, state],
   )
 
   return (
