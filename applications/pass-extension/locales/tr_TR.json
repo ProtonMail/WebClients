@@ -166,6 +166,9 @@
       "Close navigation": [
         "Gezinmeyi kapat"
       ],
+      "Collapse": [
+        "Daralt"
+      ],
       "Configure": [
         "Yapılandır"
       ],
@@ -247,6 +250,9 @@
       "Create contact": [
         "Kişi ekle"
       ],
+      "Create folder": [
+        "Klasör oluştur"
+      ],
       "Create identity": [
         "Kimlik oluştur"
       ],
@@ -255,6 +261,9 @@
       ],
       "Create login": [
         "Oturum açma kaydı oluştur"
+      ],
+      "Create new folder": [
+        "Yeni klasör ekle"
       ],
       "Create new login": [
         "Yeni oturum açma kaydı oluştur"
@@ -354,6 +363,9 @@
       ],
       "Exclude from monitoring": [
         "İzlemeye katma"
+      ],
+      "Expand": [
+        "Genişlet"
       ],
       "Export": [
         "Dışa aktar"
@@ -496,8 +508,8 @@
       "Move all items": [
         "Tüm ögeleri taşı"
       ],
-      "Move to another vault": [
-        "Başka bir kasaya taşı"
+      "Move to": [
+        "Taşı"
       ],
       "Move to trash": [
         "Çöpe at"
@@ -585,6 +597,9 @@
       ],
       "Remove member": [
         "Üyeyi kaldır"
+      ],
+      "Rename": [
+        "Yeniden adlandır"
       ],
       "Request a feature": [
         "Bir özellik istiyorum"
@@ -1138,6 +1153,9 @@
       "Failed to create domain": [
         "Etki alanı oluşturulamadı"
       ],
+      "Failed to create folder": [
+        "Klasör oluşturulamadı."
+      ],
       "Failed to create new mailbox": [
         "Yeni e-posta kutusu oluşturulamadı"
       ],
@@ -1152,6 +1170,10 @@
       ],
       "Failed to delete email address from monitoring": [
         "E-posta adresi izlemeden çıkarılamadı"
+      ],
+      "Failed to delete folder": [
+        "Klasör silinemedi",
+        "Klasörler silinemedi"
       ],
       "Failed to delete selected items": [
         "Seçilmiş ögeler silinemedi"
@@ -1234,6 +1256,9 @@
       "Failed to update domain name.": [
         "Etki alanı adı güncellenemedi."
       ],
+      "Failed to update folder": [
+        "Klasör güncellenemedi"
+      ],
       "Failed to update monitoring settings": [
         "İzleme ayarları güncellenemedi"
       ],
@@ -1263,6 +1288,9 @@
       ],
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
+      ],
+      "Folder name does not match": [
+        "Klasör adı eşleşmiyor"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "\"${ vaultData.name }\" kasası içe aktarılamadı: ${ errorMessage }"
@@ -1915,8 +1943,8 @@
       "Creating alias...": [
         "Takma ad oluşturuluyor..."
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV, verilerinizi görüntülemek için pratik bir biçim sunar. Ancak basit yapısı nedeniyle bazı veriler katılmaz (özel alanlar, geçiş anahtarları...). Eksiksiz bir dışa aktarım için farklı bir biçim kullanmanızı öneririz."
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV biçimi verilerinizi görüntülemek için kullanışlıdır. Ancak basit yapısı nedeniyle bazı veriler (özel alanlar, klasör yapısı gibi) katılmaz. Tam bir dışa aktarma için farklı bir biçim kullanmanızı öneririz."
       ],
       "Current version": [
         "Güncel sürüm"
@@ -2071,6 +2099,15 @@
       "finance": [
         "finans"
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "\"${ payload.folder.name }\" klasörü oluşturuldu"
+      ],
+      "Folder deleted": [
+        "Klasör silindi"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Klasörün adı \"${ payload.folder.name }\" olarak değiştirildi"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Verilerinizi sıradan bir CSV dosyası ile içe aktarmak için şu adımları izleyin:"
       ],
@@ -2089,6 +2126,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "İletme adresi panoya kopyalandı. Bu adrese gönderilen e-postaları ${ Email } adresi alır."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Uygulamanın başarımını artırmak için tüm verileriniz eşitleniyor. Sabrınız için teşekkür ederiz."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanır.",
@@ -2318,6 +2358,14 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "\"${ folderName }\" içindeki yalnızca ${ count } öge taşınacak. Alt klasörlerdeki ögeler taşınmayacak.",
+        "\"${ folderName }\" içindeki yalnızca ${ count } öge taşınacak. Alt klasörlerdeki ögeler taşınmayacak."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Yalnızca ${ count } öge taşınacak. Klasörlerdeki ögeler taşınmayacak.",
+        "Yalnızca ${ count } öge taşınacak. Klasörlerdeki ögeler taşınmayacak."
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Yalnızca son 30 gün içinde süresi dolan kodlar görüntülenir. Daha eski kodlar otomatik olarak silinir."
@@ -2652,6 +2700,9 @@
       ],
       "Suggested": [
         "Önerilir"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Başka bir klasöre geçin veya bu klasörde bir öge oluşturun"
       ],
       "Switch to another vault or create an item in this vault": [
         "Başka bir kasaya geçin ya da bu kasa içine bir öge ekleyin"
@@ -3297,6 +3348,9 @@
       "Company": [
         "Kuruluş"
       ],
+      "Confirm folder name": [
+        "Klasör adı onayı"
+      ],
       "Confirm vault name": [
         "Kasa adı onayı"
       ],
@@ -3329,6 +3383,9 @@
       ],
       "Create a custom item": [
         "Özel öge oluştur"
+      ],
+      "Create a folder": [
+        "Bir klasör oluştur"
       ],
       "Create a hide-my-email alias": [
         "Bir hide-my-email takma adı oluştur"
@@ -3488,6 +3545,12 @@
       ],
       "Floor, apartment, building": [
         "Site, bina, kat"
+      ],
+      "Folder": [
+        "Klasör"
+      ],
+      "Folders": [
+        "Klasörler"
       ],
       "For a one-off sharing": [
         "Bir kerelik paylaşım için"
@@ -4508,6 +4571,9 @@
       "Enter username": [
         "Kullanıcı adını yazın"
       ],
+      "Folder name": [
+        "Klasör adı"
+      ],
       "Full Name": [
         "Ad Soyad"
       ],
@@ -4535,8 +4601,8 @@
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Silinmesini onaylamak için yeniden \"${ vaultName }\" yazın"
+      "Retype \"${ name }\" to confirm deletion": [
+        "Silme işlemini onaylamak için yeniden \"${ name }\" yazın"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ vaultName } içinde ${ pluralItemType } ara"
@@ -4862,11 +4928,17 @@
       "Create contact": [
         "Kişi ekle"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "\"${ vaultName }\" içinde klasör oluştur"
+      ],
       "Create new access token": [
         "Yeni erişim kodu oluştur"
       ],
       "Create PIN code": [
         "PIN kodu oluştur"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "\"${ folderName }\" içinde alt klasör oluştur"
       ],
       "Created": [
         "Oluşturulma"
@@ -4902,14 +4974,17 @@
       "Delete domain": [
         "Etki alanını sil"
       ],
+      "Delete folder \"${ name }\"?": [
+        "\"${ name }\" klasörü silinsin mi??"
+      ],
       "Delete mailbox": [
         "E-posta kutusunu sil"
       ],
       "Delete this item?": [
         "Bu öge silinsin mi?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "\"${ vaultName }\" kasası silinsin mi?"
+      "Delete vault \"${ name }\"?": [
+        "\"${ name }\" kasası silinsin mi?"
       ],
       "Did you know?": [
         "Biliyor muydunuz?"
@@ -4967,6 +5042,9 @@
       ],
       "Fill password": [
         "Parolayı doldur"
+      ],
+      "Folder options": [
+        "Klasör ayarları"
       ],
       "Get Started": [
         "Başlayalım"
@@ -5055,9 +5133,9 @@
       "Modified": [
         "Değiştirilme"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count } ögeyi ${ vaultName } kasasına taşı",
-        "${ count } ögeyi ${ vaultName } kasasına taşı"
+      "Move ${ count } item to ${ target }": [
+        "${ count } ögeyi ${ target } konumuna taşı",
+        "${ count } ögeyi ${ target } konumuna taşı"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount } öge çöpe atılsın mı?",
@@ -5066,8 +5144,11 @@
       "Move all items to \"${ vaultName }\"?": [
         "Tüm ögeler \"${ vaultName }\" kasasına taşınsın mı?"
       ],
-      "Move item to \"${ vaultName }\"": [
-        "Ögeyi \"${ vaultName }\" kasasına taşı"
+      "Move all items?": [
+        "Tüm ögeler taşınsın mı?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Ögeyi \"${ target }\" konumuna taşı"
       ],
       "MX record": [
         "MX kaydı"
@@ -5162,6 +5243,9 @@
       ],
       "Remove secure link?": [
         "Güvenli bağlantı kaldırılsın mı?"
+      ],
+      "Rename folder": [
+        "Klasörü yeniden adlandır"
       ],
       "Reset history for this item?": [
         "Bu ögenin geçmişini silmek istiyor musunuz?"
@@ -5311,6 +5395,9 @@
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
       ],
+      "Your folder is empty": [
+        "Klasörünüz boş"
+      ],
       "Your new access token": [
         "Yeni erişim kodunuz"
       ],
@@ -5397,6 +5484,9 @@
       "Aliases in trash will continue forwarding emails.": [
         "Çöp kutusundaki takma adlar e-postaları iletmeyi sürdürür."
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Bu klasördeki tüm ögeler alt klasörleri ile silinecek. Bu işlem geri alınamaz."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Çöpe attığınız tüm ögeler kalıcı olarak silinecek. Bu işlem geri alınamaz."
       ],
@@ -5482,6 +5572,9 @@
       ],
       "Failed to load breaches.": [
         "Veri sızıntıları yüklenemedi."
+      ],
+      "Folder name is required": [
+        "Klasör adının yazılması zorunludur"
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Kopyalanan parola ve verilerin otomatik olarak temizlenmesi için panoya erişme izni verin."
@@ -5613,8 +5706,8 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME } oturumu açılamadı. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "\"${ vaultName }\" kasası ve içindeki tüm ögeler kalıcı olarak silinecek. Bu işlem geri alınamaz."
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "\"${ name }\" kasası ve içindeki tüm ögeler kalıcı olarak silinecek. Bu işlem geri alınamaz."
       ],
       "Vault name is required": [
         "Kasa adının yazılması zorunludur"
@@ -5648,6 +5741,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Bu kasaya artık erişemeyeceksiniz. Yeniden katılabilmek için yeni bir davet almanız gerekecek."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Alt alta açılabilecek en fazla klasör düzeyine ulaştınız"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Bu düzey için en fazla klasör sayısına ulaştınız"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Bu kasada olabilecek en fazla klasör sayısına ulaştınız"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Ögeler ekleyebilmeniz için önce yöneticiniz sizin için bir kasa oluşturmalıdır"
