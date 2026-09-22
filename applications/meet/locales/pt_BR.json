@@ -537,6 +537,9 @@
       "Refresh the page": [
         "Atualizar a página"
       ],
+      "refresh the page": [
+        "atualizar a página"
+      ],
       "Rejoin meeting": [
         "Entrar novamente na reunião"
       ],
@@ -1918,6 +1921,9 @@
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Falha na inicialização do desfoque de fundo. Por favor, ative/desative a câmera ou o desfoque de fundo novamente"
       ],
+      "Bookmark password is not available": [
+        "A senha do marcador não está disponível"
+      ],
       "Cannot download a folder": [
         "Não é possível baixar uma pasta"
       ],
@@ -1941,6 +1947,9 @@
       ],
       "Could not load sharing details": [
         "Não foi possível carregar os detalhes do compartilhamento"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Não foi possível carregar a pré-visualização da imagem: ${ message }"
       ],
       "Could not remove this background. Please try again.": [
         "Não foi possível remover este plano de fundo. Tente novamente."
@@ -1981,6 +1990,9 @@
       "Event deleted": [
         "Evento excluído"
       ],
+      "Expiration date cannot be in the past": [
+        "A data de expiração não pode ser anterior ao passado"
+      ],
       "Failed to admit the participant. Please try again.": [
         "Falha ao admitir o participante. Por favor, tente novamente."
       ],
@@ -2010,6 +2022,9 @@
       ],
       "Failed to decrypt item name: ${ message }": [
         "Falha ao descriptografar o nome do item: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Falha ao descriptografar a chave de nó: ${ message }"
       ],
       "Failed to decrypt revision metadata": [
         "Falha ao descriptografar os metadados da revisão"
@@ -2119,6 +2134,9 @@
       "Missing signature": [
         "Assinatura ausente"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Falta a assinatura para ${ signatureType }"
+      ],
       "Moving item to a non-folder is not allowed": [
         "Não é permitido mover o item para um local que não seja uma pasta"
       ],
@@ -2198,6 +2216,9 @@
       "Something went wrong": [
         "Algo deu errado"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
+      ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente."
       ],
@@ -2239,6 +2260,9 @@
       ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Esta reunião está em uma versão mais antiga. O anfitrião precisa encerrá-la e atualizar o Meet para reiniciar com a versão mais recente."
+      ],
+      "Too many server errors, please try again later": [
+        "Muitos erros ao servidor, tente novamente mais tarde"
       ],
       "Too many server requests, please try again later": [
         "Muitas solicitações ao servidor, tente novamente mais tarde"
@@ -3079,6 +3103,9 @@
       ],
       "Successfully deleted meeting": [
         "Reunião excluída com sucesso"
+      ],
+      "support team": [
+        "equipe de suporte"
       ],
       "Thank you for hosting a premium meeting.": [
         "Obrigado por organizar uma reunião premium."
