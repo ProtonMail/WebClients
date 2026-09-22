@@ -1,3 +1,5 @@
+import { isEditorFrame, isVisible } from '@protontech/autofill';
+
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import type { FrameId } from '@proton/pass/types/worker/runtime';
@@ -12,7 +14,6 @@ import { getFrameScore } from '../../../lib/utils/frames';
 import type { FrameAttributes } from '../../../types/frames';
 import { WorkerMessageType } from '../../../types/messages';
 import { withContext } from '../context/context';
-import { isEditorFrame, isVisible } from '../services/detector/detector.api';
 
 export const getFrameID = withContext<() => FrameId>((ctx) => {
     const frameId = ctx?.getExtensionContext()?.frameId;
