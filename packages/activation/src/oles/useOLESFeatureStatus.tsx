@@ -1,6 +1,7 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ImportProvider } from '../interface';
@@ -11,13 +12,19 @@ const useOLESFeatureStatus = () => {
     const [user, userLoading] = useUser();
     const [organization, organizationLoading] = useOrganization();
     const [subscription, subscriptionLoading] = useSubscription();
+    const [{ permissions }, permissionsLoading] = useUserPermissions();
     const clientFlag: boolean = useFlag('OrganizationLevelEasySwitch');
     const microsoftFlag: boolean = useFlag('Oles365');
 
     const featureSupported = isOrganizationOLESEligible({ organization });
     const creatingEnabled = featureSupported && Boolean(clientFlag);
-    const allowedForUser = isUserOLESEligible({ user, organization, subscription });
-    const loading = userLoading || organizationLoading || subscriptionLoading;
+    const allowedForUser = isUserOLESEligible({
+        user,
+        organization,
+        subscription,
+        hasOrgMigrationPermission: Boolean(permissions?.['account.easy_switch.update']),
+    });
+    const loading = userLoading || organizationLoading || subscriptionLoading || permissionsLoading;
 
     const isProviderEnabled = (provider: string | ImportProvider): provider is SupportedProvider => {
         if (!isProviderSupported(provider)) {
