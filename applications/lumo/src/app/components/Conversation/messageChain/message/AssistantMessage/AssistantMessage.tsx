@@ -29,7 +29,6 @@ import { ArtifactChip } from '../../../artifact/ArtifactChip';
 import { ArtifactChipLoading } from '../../../artifact/ArtifactChipLoading';
 import { useArtifactContext } from '../../../artifact/ArtifactContext';
 import { getToolCallNameFromBlock, isArtifactGenerationLoading } from '../../../artifact/artifactGenerationState';
-import { getArtifactVersionIndexForMessage } from '../../../artifact/artifactRegistry';
 import {
     CREATE_ARTIFACT_TOOL_NAME,
     extractCompleteArtifactsFromBlocks,
@@ -223,7 +222,7 @@ const AssistantMessageArtifactSection = ({
     messageId,
     showArtifactGenerationLoading,
 }: AssistantMessageArtifactSectionProps) => {
-    const { selectedId, openArtifact, registry, panelUserClosed, resetPanelUserClosed } = useArtifactContext();
+    const { resetPanelUserClosed } = useArtifactContext();
     const hasArtifacts = completeArtifacts.length > 0;
 
     const wasGeneratingRef = useRef(isGenerating);
@@ -235,34 +234,6 @@ const AssistantMessageArtifactSection = ({
             resetPanelUserClosed();
         }
     }, [isLastMessage, isGenerating, resetPanelUserClosed]);
-
-    const hasAutoOpenedRef = useRef(false);
-    useEffect(() => {
-        hasAutoOpenedRef.current = false;
-    }, [messageId]);
-
-    useEffect(() => {
-        if (!isLastMessage || completeArtifacts.length === 0 || !completeArtifacts[0] || hasAutoOpenedRef.current) {
-            return;
-        }
-
-        const artifact = completeArtifacts[0];
-        const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, messageId);
-        if (versionIndex === null) {
-            return;
-        }
-
-        if (panelUserClosed) {
-            return;
-        }
-
-        if (selectedId !== null) {
-            return;
-        }
-
-        hasAutoOpenedRef.current = true;
-        openArtifact(artifact.id, versionIndex);
-    }, [isLastMessage, completeArtifacts, registry, messageId, panelUserClosed, selectedId, openArtifact]);
 
     if (!showArtifactGenerationLoading && !hasArtifacts) {
         return null;
