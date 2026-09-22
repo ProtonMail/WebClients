@@ -157,6 +157,9 @@
       "Close navigation": [
         "Stäng navigering"
       ],
+      "Collapse": [
+        "Mimimera"
+      ],
       "Confirm": [
         "Bekräfta"
       ],
@@ -235,6 +238,9 @@
       "Create contact": [
         "Skapa kontakt"
       ],
+      "Create folder": [
+        "Skapa mapp"
+      ],
       "Create identity": [
         "Skapa identitet"
       ],
@@ -243,6 +249,9 @@
       ],
       "Create login": [
         "Skapa inloggning"
+      ],
+      "Create new folder": [
+        "Skapa ny mapp"
       ],
       "Create new items": [
         "Skapa nya objekt"
@@ -336,6 +345,9 @@
       ],
       "Exclude from monitoring": [
         "Exkludera från övervakning"
+      ],
+      "Expand": [
+        "Expandera"
       ],
       "Export": [
         "Exportera"
@@ -478,8 +490,8 @@
       "Move all items": [
         "Flytta alla objekt"
       ],
-      "Move to another vault": [
-        "Flytta till annat valv"
+      "Move to": [
+        "Flytta till"
       ],
       "Move to trash": [
         "Flytta till papperskorg"
@@ -570,6 +582,9 @@
       ],
       "Remove member": [
         "Ta bort medlem"
+      ],
+      "Rename": [
+        "Ändra namn"
       ],
       "Request a feature": [
         "Begär en funktion"
@@ -1101,6 +1116,9 @@
       ],
       "Failed to create domain": [
         "Misslyckades att skapa domän"
+      ],
+      "Failed to create folder": [
+        "Misslyckades att skapa mapp"
       ],
       "Failed to create new mailbox": [
         "Misslyckades att skapa ny brevlåda"
@@ -1800,9 +1818,6 @@
       "Created item": [
         "Skapade objekt"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV erbjuder ett bekvämt format för att visa din data. Men på grund av dess enkelhet kommer vissa data inte att inkluderas (anpassade fält, passkeys …). För en fullständig export rekommenderar vi att du använder ett annat format."
-      ],
       "Current version": [
         "Nuvarande version"
       ],
@@ -1949,6 +1964,9 @@
       ],
       "finance": [
         "finans"
+      ],
+      "Folder deleted": [
+        "Mapp borttagen"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Följ dessa steg för att importera dina data med en generisk CSV:"
@@ -3112,6 +3130,9 @@
       "Create a custom item": [
         "Skapa ett anpassat objekt"
       ],
+      "Create a folder": [
+        "Skapa en mapp"
+      ],
       "Create a hide-my-email alias": [
         "Skapa ett hide-my-email-alias"
       ],
@@ -3273,6 +3294,12 @@
       ],
       "Floor, apartment, building": [
         "Våning, lägenhet, byggnad"
+      ],
+      "Folder": [
+        "Mapp"
+      ],
+      "Folders": [
+        "Mappar"
       ],
       "For a one-off sharing": [
         "För en engångsdelning"
@@ -4364,9 +4391,6 @@
       "Please describe the problem and include any error messages": [
         "Beskriv problemet och inkludera eventuella felmeddelanden"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Skriv ”${ vaultName }” igen för att bekräfta borttagning"
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Sök ${ pluralItemType } i ${ vaultName }"
       ],
@@ -4691,11 +4715,17 @@
       "Create contact": [
         "Skapa kontakt"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Skapa mapp i ”${ vaultName }”"
+      ],
       "Create new access token": [
         "Skapa ny åtkomsttoken"
       ],
       "Create PIN code": [
         "Skapa PIN-kod"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Skapa undermapp i ”${ folderName }”"
       ],
       "Created": [
         "Skapad"
@@ -4737,8 +4767,8 @@
       "Delete this item?": [
         "Ta bort detta objekt?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Ta bort valv ”${ vaultName }”?"
+      "Delete vault \"${ name }\"?": [
+        "Ta bort valv ”${ name }”?"
       ],
       "Did you know?": [
         "Visste du att?"
@@ -4787,6 +4817,9 @@
       ],
       "Excluded items": [
         "Exkluderade objekt"
+      ],
+      "Folder options": [
+        "Mappalternativ"
       ],
       "Get Started": [
         "Kom igång"
@@ -4866,9 +4899,9 @@
       "Modified": [
         "Ändrad"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Flytta ${ count } objekt till ${ vaultName }",
-        "Flytta ${ count } objekt till ${ vaultName }"
+      "Move ${ count } item to ${ target }": [
+        "Flytta ${ count } objekt till ${ target }",
+        "Flytta ${ count } objekt till ${ target }"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Flytta ${ trashedItemsCount } objekt till papperskorg?",
@@ -4877,8 +4910,11 @@
       "Move all items to \"${ vaultName }\"?": [
         "Flytta alla objekt till ”${ vaultName }”?"
       ],
-      "Move item to \"${ vaultName }\"": [
-        "Flytta objekt till ”${ vaultName }”?"
+      "Move all items?": [
+        "Flytta alla objekt?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Flytta objekt till ”${ target }”"
       ],
       "MX record": [
         "MX-post"
@@ -4973,6 +5009,9 @@
       ],
       "Remove secure link?": [
         "Tar bort säker länk?"
+      ],
+      "Rename folder": [
+        "Byt namn på mapp"
       ],
       "Reset history for this item?": [
         "Återställ historik för detta objekt?"
@@ -5118,6 +5157,9 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "Your folder is empty": [
+        "Denna mapp är tom"
       ],
       "Your new access token": [
         "Din nya åtkomsttoken"
@@ -5425,9 +5467,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Kan inte logga in på ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Valv ”${ vaultName }” och alla dess objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
       ],
       "Vault name is required": [
         "Valvnamn är obligatoriskt"

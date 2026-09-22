@@ -151,6 +151,9 @@
       "Close navigation": [
         "ナビゲーションを閉じる"
       ],
+      "Collapse": [
+        "閉じる"
+      ],
       "Confirm": [
         "確認"
       ],
@@ -229,6 +232,9 @@
       "Create contact": [
         "連絡先を作成"
       ],
+      "Create folder": [
+        "フォルダを作成"
+      ],
       "Create identity": [
         "ユーザー情報を作成"
       ],
@@ -237,6 +243,9 @@
       ],
       "Create login": [
         "ログインを作成"
+      ],
+      "Create new folder": [
+        "新規フォルダーを作成"
       ],
       "Create new items": [
         "新規アイテムの作成"
@@ -330,6 +339,9 @@
       ],
       "Exclude from monitoring": [
         "モニタリング対象から除外する"
+      ],
+      "Expand": [
+        "展開"
       ],
       "Export": [
         "エクスポート"
@@ -472,8 +484,8 @@
       "Move all items": [
         "すべてのアイテムを移動する"
       ],
-      "Move to another vault": [
-        "別の保管庫に移動"
+      "Move to": [
+        "移動先"
       ],
       "Move to trash": [
         "ごみ箱に移動"
@@ -561,6 +573,9 @@
       ],
       "Remove member": [
         "メンバーを削除する"
+      ],
+      "Rename": [
+        "名前を変更"
       ],
       "Request a feature": [
         "機能を提案"
@@ -1069,6 +1084,9 @@
       ],
       "Failed to create domain": [
         "ドメインの作成に失敗しました"
+      ],
+      "Failed to create folder": [
+        "フォルダーの作成に失敗しました"
       ],
       "Failed to create new mailbox": [
         "新しいメールボックスの作成に失敗しました"
@@ -1735,9 +1753,6 @@
       ],
       "Created item": [
         "作成されたアイテム"
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV は、データを表示するための便利な形式を提供します。ただし、その単純さのため、一部のデータは含まれません (カスタム フィールド、パスキーなど)。完全にエクスポートするには、別の形式を使用することをお勧めします。"
       ],
       "Current version": [
         "現在のバージョン"
@@ -3183,6 +3198,9 @@
       "Floor, apartment, building": [
         "階、アパート・建物名"
       ],
+      "Folder": [
+        "フォルダー"
+      ],
       "For a one-off sharing": [
         "一度限りの共有のために"
       ],
@@ -4270,9 +4288,6 @@
       "Please describe the problem and include any error messages": [
         "問題について、エラーメッセージ等も含めてご記入ください。"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "削除を確認するには、「${ vaultName }」を再入力します。"
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ vaultName } の ${ pluralItemType } を検索"
       ],
@@ -4625,9 +4640,6 @@
       "Delete this item?": [
         "このアイテムを削除しますか？"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "デフォルトの保管庫は\"${ vaultName }\"ですか？"
-      ],
       "Did you know?": [
         "ご存知ですか？"
       ],
@@ -4672,6 +4684,9 @@
       ],
       "Excluded items": [
         "除外されたアイテム"
+      ],
+      "Folder options": [
+        "フォルダー設定"
       ],
       "Get Started": [
         "利用開始"
@@ -4751,17 +4766,11 @@
       "Modified": [
         "更新日時"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count }個のアイテムを${ vaultName }に移動"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount }個のアイテムをゴミ箱に移動しますか？"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "すべてのアイテムを \"${ vaultName }\" に移動しますか？"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "\"${ vaultName }\"にアイテムを移動"
       ],
       "MX record": [
         "MX レコード"
@@ -5295,9 +5304,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME } にサインインできません。 ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "保管庫「${ vaultName }」とそのすべてのアイテムは完全に削除されます。 この操作を元に戻すことはできません。"
       ],
       "Vault name is required": [
         "保管庫名は必須です"
