@@ -1,3 +1,4 @@
+import { isBtnCandidate, kButtonSubmitSelector } from '@protontech/autofill';
 import { FieldType } from '@protontech/autofill/types';
 
 import type { MaybeNull } from '@proton/pass/types/utils/index';
@@ -15,7 +16,6 @@ import { stage, stash, validateFormCredentials } from '../../../../lib/utils/for
 import { WorkerMessageType } from '../../../../types/messages';
 import { withContext } from '../../context/context';
 import type { FrameMessageHandler } from '../client/client.channel';
-import { isBtnCandidate, kButtonSubmitSelector } from '../detector/detector.api';
 import type { FieldHandle } from './field';
 import type { FormHandle } from './form';
 

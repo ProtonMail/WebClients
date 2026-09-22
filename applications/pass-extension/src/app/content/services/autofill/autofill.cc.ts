@@ -1,3 +1,11 @@
+import {
+    formatExpirationDate,
+    getExpirationFormat,
+    getInputExpirationMonthFormat,
+    getInputExpirationYearFormat,
+    getSelectExpirationMonthFormat,
+    getSelectExpirationYearFormat,
+} from '@protontech/autofill';
 import { CCFieldType, FieldType } from '@protontech/autofill/types';
 
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
@@ -10,14 +18,6 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 
 import type { AutofillRequest } from '../../../../types/autofill';
-import {
-    formatExpirationDate,
-    getExpirationFormat,
-    getInputExpirationMonthFormat,
-    getInputExpirationYearFormat,
-    getSelectExpirationMonthFormat,
-    getSelectExpirationYearFormat,
-} from '../detector/detector.api';
 import type { FieldElement, FieldHandle } from '../form/field';
 import { splitFullName } from './autofill.identity';
 

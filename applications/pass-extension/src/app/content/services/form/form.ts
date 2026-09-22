@@ -1,3 +1,13 @@
+import {
+    getCCFieldType,
+    getIdentityFieldType,
+    isIFrameField,
+    isIgnored,
+    isVisibleForm,
+    kButtonSelector,
+    removeClassifierFlags,
+    shadowPiercingContains,
+} from '@protontech/autofill';
 import type { FormType } from '@protontech/autofill/types';
 import { FieldType, IdentityFieldType } from '@protontech/autofill/types';
 import debounce from 'lodash/debounce';
@@ -20,16 +30,6 @@ import { FORM_TRACKER_CONFIG, NotificationAction } from '../../constants.runtime
 import { withContext } from '../../context/context';
 import { getFrameAttributesFromElement, isNegligableFrameRect } from '../../utils/frame';
 import { canAutosave } from '../autosave/autosave.utils';
-import {
-    getCCFieldType,
-    getIdentityFieldType,
-    isIFrameField,
-    isIgnored,
-    isVisibleForm,
-    kButtonSelector,
-    removeClassifierFlags,
-    shadowPiercingContains,
-} from '../detector/detector.api';
 import type { DetectedField, DetectedForm } from '../detector/detector.service';
 import { hasProcessableFields } from '../detector/detector.utils';
 import type { FieldElement, FieldHandle } from './field';
