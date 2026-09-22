@@ -346,9 +346,6 @@
       "Copy alias “${ name }”": [
         "“${ name }” takma adını kopyala"
       ],
-      "Copy debug transcript": [
-        "Hata ayıklama çıktısını kopyala"
-      ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
@@ -7340,6 +7337,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "E-posta kutunuzda eski e-postaları bulmaktan yanıt taslakları hazırlamaya kadar size nasıl yardımcı olabileceğim ve neleri yapamayacağım ile ilgili kısa bir özet."
+      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Duyurunun göndericisine, bu e-posta listesinden ayrılma isteği gönderilecek ve bu işlem otomatik olarak yapılacak."
       ],
@@ -7774,9 +7774,6 @@
       "Daily": [
         "Günlük"
       ],
-      "Debug transcript copied": [
-        "Hata ayıklama çıktısı kopyalandı"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
       ],
@@ -7865,11 +7862,29 @@
       "Draft": [
         "Taslak"
       ],
+      "Draft a ${ kind }": [
+        "Bir ${ kind } taslağı hazırla"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "${ recipient } için bir ${ kind } taslağı hazırla"
+      ],
+      "Draft an ${ kind }": [
+        "${ kind } taslağı hazırla"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "${ recipient } için bir ${ kind } taslağı hazırla"
+      ],
       "Draft discarded": [
         "Taslak silindi"
       ],
       "Draft saved.": [
         "Taslak kaydedildi."
+      ],
+      "Drafted a ${ kind }": [
+        "Bir ${ kind } taslağı hazırlandı"
+      ],
+      "Drafted an ${ kind }": [
+        "Bir ${ kind } taslağı hazırlandı"
       ],
       "Drop file here to upload": [
         "Yüklenecek dosyayı buraya bırakın"
@@ -7891,6 +7906,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Duyuru ve e-posta listelerini kolayca yönetin ve aboneliklerini sonlandırın."
+      ],
+      "Edit ${ contact }": [
+        "${ contact } kişisini düzenle"
+      ],
+      "Edit a contact": [
+        "Bir kişiyi düzenle"
+      ],
+      "Edit contact": [
+        "Kişiyi düzenle"
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
@@ -8053,6 +8077,9 @@
       "Forgot password?": [
         "Parolamı unuttum"
       ],
+      "forward": [
+        "ilet"
+      ],
       "Found ${ count } contact": [
         "${ count } kişi bulundu",
         "${ count } kişi bulundu"
@@ -8099,6 +8126,18 @@
       "here": [
         "buraya"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Selam Lumo, gelen kutuma en çok ne tür e-postalar geldiğine ve var olan klasörlerim ile süzgeçlerime bir göz at. Ardından bunları nasıl düzenli tutabileceğim ile ilgili önerilerde bulun: Var olanlarda neleri değiştirmem gerektiğini ve eklenmesi gereken yeni şeyler varsa bunları da belirt. Önce planı bana ayrıntılı olarak anlat ve ben onay verene kadar hiçbir şeyi değiştirme."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Selam Lumo, bir süreliğine yokum ve “iş yeri dışında” yanıtını ayarlamak istiyorum. Tarihleri ve iletinin içeriğini bana sor sonra da kullanıma almadan önce iletiyi bana göster."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Selam Lumo, son 7 gün içindeki e-postalarımı ara ve gerçekten yanıtlamam gerekenleri söyle. Her birinde ne istendiği ile ilgili kısa bir özet ver ve göz ardı edebileceğim şeyleri katma."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Selam Lumo, e-posta kutumla ilgili bana nasıl yardımcı olabileceğini anlatır mısın? Senden ne tür şeyler isteyebilirim ve hangi konularda yardımcı olamazsın?"
+      ],
       "Hide original message": [
         "Özgün iletiyi gizle"
       ],
@@ -8110,6 +8149,12 @@
       ],
       "I have not finished this one yet.": [
         "Bunu henüz bitirmedim."
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Geçen haftanın e-postalarını gözden geçirip gerçekten yanıtlanması gerekenleri ayıracağım. Böylece sen de tümünü tek seferde halledebilirsin."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "En çok ulaştığınız içeriklere ve var olan klasörleriniz ile süzgeçlerinize bakacağım. Ardından nelerin iyileştirilebileceğini önerip ve nelerin eksik olduğunu söyleyeceğim. Siz onay verene kadar herhangi bir değişiklik yapılmayacak."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Bu iletiyi ${ MAIL_APP_NAME } kullanmayan bir alıcıya gönderiyorum."
@@ -8548,6 +8593,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
+      "open draft": [
+        "taslağı aç"
+      ],
       "Open shortcut cheat sheet": [
         "Kısayol rehberini aç"
       ],
@@ -8781,6 +8829,9 @@
       "Read your signature": [
         "İmzanızı okuyun"
       ],
+      "Readdressed": [
+        "Gözden geçirildi"
+      ],
       "Readdressed the draft": [
         "Taslak yeniden ele alındı"
       ],
@@ -8826,6 +8877,12 @@
       "Rename this label": [
         "Bu etiketi yeniden adlandır"
       ],
+      "reply": [
+        "yanıtla"
+      ],
+      "reply all": [
+        "tümünü yanıtla"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Bir iletiyi kimlik avı girişimi olarak bildirdiğinizde, ileti bize gönderilir. Böylece onu inceleyebilir ve süzgeçlerimizi geliştirebiliriz. Bu durum iletinin tüm içeriğini görebileceğimiz anlamına gelir."
       ],
@@ -8840,6 +8897,12 @@
       ],
       "Results came from the server.": [
         "Sonuçlar sunucudan geliyor."
+      ],
+      "Revise the ${ draft }": [
+        "${ draft } taslağını düzelt"
+      ],
+      "Rewrote and readdressed": [
+        "Yeniden yazıldı ve gözden geçirildi"
       ],
       "Rewrote and readdressed the draft": [
         "Taslak yeniden yazıldı ve yeniden ele alındı"
@@ -8965,6 +9028,9 @@
       "Set auto-reply": [
         "Otomatik yanıtı ayarla"
       ],
+      "Set my out of office": [
+        "\"İş yeri dışında\" ayarımı yap"
+      ],
       "Set signature": [
         "İmza ayarla"
       ],
@@ -9085,6 +9151,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Dosyalarınızı ${ DRIVE_APP_NAME } uygulamasıyla eşitleyin ve yönetin. ${ DOCS_APP_NAME } ile belgeler oluşturun, paylaşın ve güvenle saklayın. Tüm bunları ${ ios }, ${ android } ve ${ desktop } üzerinde yapın."
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Ne zaman uzakta olacağını ve ne yazılmasını istediğini bana söyle. Kaydetmeden önce tümünü görebileceksin."
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
@@ -9319,6 +9388,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
+      ],
+      "Tidy up my inbox": [
+        "Gelen kutumu düzenle"
       ],
       "to ${ destinationElement } folder.": [
         "${ destinationElement } klasörüne."
@@ -9613,6 +9685,12 @@
       ],
       "Week": [
         "Hafta"
+      ],
+      "What can you do?": [
+        "Neler yapabilirsiniz?"
+      ],
+      "What needs handling?": [
+        "Nelerin işlenmesi gerekiyor?"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "İletiniz alıcının gelen kutusundan ve gönderilmiş kutunuzdan ne zaman otomatik olarak silinsin?"
@@ -10076,6 +10154,9 @@
       "Cancel / close": [
         "İptal et / kapat"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasını kapat"
+      ],
       "Close draft": [
         "Taslağı kapat"
       ],
@@ -10175,6 +10256,9 @@
       "New message": [
         "Yeni ileti"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasını aç / girişe odaklan"
+      ],
       "Open command panel": [
         "Komut panosunu aç"
       ],
@@ -10232,6 +10316,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } kısayolları"
+      ],
       "Action shortcuts": [
         "İşlem kısayollları"
       ],
@@ -10445,6 +10532,9 @@
         "Kategori"
       ],
       "CC": [
+        "Kopya"
+      ],
+      "Cc": [
         "Kopya"
       ],
       "Choose what to do instead": [
@@ -11166,6 +11256,9 @@
       ],
       "Time": [
         "Saat"
+      ],
+      "To": [
+        "Alıcı"
       ],
       "To:": [
         "Kime:"
@@ -13145,6 +13238,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "${ plan } aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "${ plan } tarifesinin ilk ayını bu fiyat ile alabilmek için son şansınız."
+      ],
       "Last day to save": [
         "İndirim kazanmak için son gün"
       ],
@@ -13226,6 +13322,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Short @pm.me address": [
+        "Kısa @pm.me adresi"
       ],
       "Storage": [
         "Depolama alanı"
@@ -13418,11 +13517,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " ${ helpCenterLink } veya ${ contactSupportLink } adresine gidin."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "Deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için **bir ödeme yöntemi ekleyin**."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Ondan önce istediğiniz zaman iptal edebilirsiniz.** Deneme süresi sona erene kadar ${ planTitle } tarifesini ücretsiz olarak kullanabileceksiniz."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Deneme süreniz bittikten sonra kullanmayı sürdürürseniz** 30 gün içinde iptal edebilir ve ödediğiniz kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Tam aboneliğiniz başladığında...** 30 gün içinde aboneliğinizi iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "${ cancelDate } tarihinden önce istediğiniz zaman iptal edebilirsiniz."
-      ],
-      "Cancel anytime before then.": [
-        "O tarihe kadar istediğiniz zaman iptal edebilirsiniz."
       ],
       "contact our support team": [
         "destek ekibimizle görüşün"
@@ -13436,16 +13547,22 @@
       "help center": [
         "yardım merkezi"
       ],
+      "If you continue after your trial,": [
+        "Deneme süreniz bittikten sonra kullanmayı sürdürürseniz,"
+      ],
       "If you need help,": [
         "Yardıma gerek duyarsanız,"
       ],
       "Once your full subscription starts...": [
         "Tam aboneliğiniz başladığında..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
+      "to keep using all of the features after your trial ends.": [
+        "deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
         "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -13456,9 +13573,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
       ]
     },
     "Option": {
@@ -14382,78 +14496,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "Summer Sale": [
-        "Yaz İndirimi"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/ay"
-      ],
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "2 TB data storage": [
-        "2 TB veri depolama alanı"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
-      ],
-      "3 TB data storage": [
-        "3 TB veri depolama alanı"
-      ],
-      "500 GB storage": [
-        "500 GB depolama alanı"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } uygulamasına tam erişim"
-      ],
-      "Individual accounts for 6 users": [
-        "6 kullanıcı için bireysel hesaplar"
-      ],
-      "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
-      ],
-      "Online document and spreadsheet editor": [
-        "Çevrim içi belge ve hesap tablosu düzenleyici"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleyin"
-      ],
-      "Stronger protection against cyber threats": [
-        "Siber tehditlere karşı daha güçlü koruma"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket ve filtre"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12 aylığına"
-      ],
-      "SUMMER SALE": [
-        "YAZ İNDİRİMİ"
       ]
     },
     "q3campaign2026: Action": {

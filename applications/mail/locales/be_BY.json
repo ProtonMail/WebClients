@@ -348,9 +348,6 @@
       "Copy alias “${ name }”": [
         "Капіяваць псеўданім “${ name }”"
       ],
-      "Copy debug transcript": [
-        "Скапіяваць расшыфроўку адладкі"
-      ],
       "Copy email to clipboard": [
         "Скапіяваць ліст у буфер абмену"
       ],
@@ -1771,6 +1768,16 @@
     "action": {
       "Search messages": [
         "Пошук паведамленняў"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Перайменаваць ${ folder } на…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Перайменаваць ${ label } на…"
       ]
     },
     "Action: Sheets": {
@@ -8017,9 +8024,6 @@
       "Daily": [
         "Штодзень"
       ],
-      "Debug transcript copied": [
-        "Расшыфроўка адладкі скапіявана"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
       ],
@@ -8107,11 +8111,23 @@
       "Draft": [
         "Чарнавік"
       ],
+      "Draft a ${ kind }": [
+        "Чарнавік ${ kind }"
+      ],
+      "Draft an ${ kind }": [
+        "Чарнавік ${ kind }"
+      ],
       "Draft discarded": [
         "Чарнавік адхілены"
       ],
       "Draft saved.": [
         "Чарнавік захаваны."
+      ],
+      "Drafted a ${ kind }": [
+        "Чарнавы ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Чарнавы ${ kind }"
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -8133,6 +8149,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Без намаганняў кіруйце і скасоўвайце падпіску ад інфармацыйнай рассылкі, а таксама на спіс рассылкі."
+      ],
+      "Edit ${ contact }": [
+        "Рэдагаваць ${ contact }"
+      ],
+      "Edit a contact": [
+        "Рэдагаваць кантакт"
+      ],
+      "Edit contact": [
+        "Рэдагаваць кантакт"
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
@@ -8304,6 +8329,9 @@
       ],
       "Forgot password?": [
         "Забылі пароль?"
+      ],
+      "forward": [
+        "перасылка"
       ],
       "Found ${ count } contact": [
         "Знойдзены ${ count } кантакт",
@@ -8806,6 +8834,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як \"скампраметаваныя\". Рэкамендуецца не давяраць гэтым ключам."
       ],
+      "open draft": [
+        "адкрыць чарнавік"
+      ],
       "Open shortcut cheat sheet": [
         "Адкрыць спіс спалучэнняў клавіш"
       ],
@@ -9013,8 +9044,14 @@
         "Прачытаць ${ count } паведамленняў у гэтай гутарцы",
         "Прачытаць ${ count } паведамленняў у гэтай гутарцы"
       ],
+      "Read draft \"${ subject }\"": [
+        "Прачытаць чарнавік \"${ subject }\""
+      ],
       "Read open email “${ subject }”": [
         "Прачытаць адкрыты ліст “${ subject }”"
+      ],
+      "Read the open draft": [
+        "Прачытаць адкрыты чарнавік"
       ],
       "Read your ${ count } filter": [
         "Прачытайце свой ${ count } фільтр",
@@ -9043,6 +9080,12 @@
       "Read your signature": [
         "Чытанне вашага подпісу"
       ],
+      "Readdressed": [
+        "Пераадрасавана"
+      ],
+      "Readdressed the draft": [
+        "Пераадрасаваць чарнавік"
+      ],
       "Recipient: ": [
         "Атрымальнік: "
       ],
@@ -9064,6 +9107,9 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Не забудзьцеся абнавіць яго ў менеджары пароляў або ў тым месцы, дзе вы захоўваеце ўліковы запіс і звесткі для яго ўваходу."
       ],
+      "Remove signature": [
+        "Выдаліць подпіс"
+      ],
       "Remove the star from ${ emails }": [
         "Выдаліць пазнаку зорачкі з ${ emails }"
       ],
@@ -9073,8 +9119,20 @@
       "Rename folder": [
         "Перайменаваць папку"
       ],
+      "Rename label": [
+        "Перайменаваць метку"
+      ],
       "Rename this folder": [
         "Перайменаваць гэту папку"
+      ],
+      "Rename this label": [
+        "Перайменаваць гэту метку"
+      ],
+      "reply": [
+        "адказ"
+      ],
+      "reply all": [
+        "адказаць усім"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Адпраўляючы скаргу пра спробу фішынгу, вы адправіце гэта паведамленне нам, каб мы маглі прааналізаваць яго і палепшыць нашы фільтры. Гэта азначае, што мы зможам цалкам убачыць змесціва гэтага паведамлення."
@@ -9090,6 +9148,12 @@
       ],
       "Results came from the server.": [
         "Вынікі былі атрыманы з сервера."
+      ],
+      "Revise the ${ draft }": [
+        "Перагдзець ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Перапісаць і пераадрасаваць"
       ],
       "Rewrote the draft": [
         "Перапісаць чарнавік"
@@ -9213,6 +9277,9 @@
       ],
       "Set auto-reply": [
         "Задаць аўтаматычны адказ"
+      ],
+      "Set my out of office": [
+        "Задаць, што я не на месцы"
       ],
       "Set signature": [
         "Задаць подпіс"
@@ -9574,6 +9641,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
+      "Tidy up my inbox": [
+        "Навядзенне парадку ў маёй паштовай скрыні"
+      ],
       "to ${ destinationElement } folder.": [
         "у папку ${ destinationElement }."
       ],
@@ -9867,6 +9937,12 @@
       ],
       "Week": [
         "Тыдзень"
+      ],
+      "What can you do?": [
+        "Што можна зрабіць?"
+      ],
+      "What needs handling?": [
+        "Што неабходна апрацаваць?"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Калі вы хочаце, каб ваша паведамленне аўтаматычна выдалялася з паштовай скрыні атрымальніка і вашай папкі з адпраўленымі лістамі?"
@@ -10752,6 +10828,9 @@
       "CC": [
         "Копія"
       ],
+      "Cc": [
+        "Копія"
+      ],
       "Choose what to do instead": [
         "Выберыце, што зрабіць замест гэтага"
       ],
@@ -11471,6 +11550,9 @@
       ],
       "Time": [
         "Час"
+      ],
+      "To": [
+        "Да"
       ],
       "To:": [
         "Каму:"
@@ -13622,6 +13704,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Кароткі адрас @pm.me"
+      ],
       "Storage": [
         "Сховішча"
       ],
@@ -13813,11 +13898,11 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " наведайце наш ${ helpCenterLink } або ${ contactSupportLink }."
       ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Ад падпіскі можна адмовіцца ў любы час да ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Ад падпіскі можна адмовіцца ў любы час да заканчэння дзеяння яе перыяду."
       ],
       "contact our support team": [
         "звязацца з нашай службай падтрымкі"
@@ -13840,9 +13925,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Вы можаце карыстацца ${ planTitle } да канца пробнага перыяду. Плата за гэта спаганяцца не будзе."
       ],
@@ -13851,9 +13933,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ваша поўная падпіска на тарыфны план ${ planTitle } пачнецца ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "У вас будзе магчымасць карыстацца ${ planTitle } бясплатна да канца пробнага перыяду."
       ]
     },
     "Option": {
@@ -14796,78 +14875,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Атрымаць прапанову"
-      ],
-      "Summer Sale": [
-        "Летні распродаж"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/месяц"
-      ],
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "2 TB data storage": [
-        "Сховішча даных на 2 ТБ"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 ГБ сховішча: у 40 разоў больш за ваш бягучы тарыфны план"
-      ],
-      "3 TB data storage": [
-        "Сховішча даных на 3 ТБ"
-      ],
-      "500 GB storage": [
-        "500 ГБ сховішча"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Скідкі разлічваюцца на аснове стандартнага штомесячнага кошту. Ваша падпіска будзе падоўжана па стандартным гадавым тарыфе, калі скончыцца перыяд аплаты."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Поўны доступ да ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Асобныя ўліковыя запісы для 6 карыстальнікаў"
-      ],
-      "Individual accounts for you and a partner": [
-        "Асобныя ўліковыя запісы для вас і партнёра"
-      ],
-      "Online document and spreadsheet editor": [
-        "Рэдактар дакументаў і электронных табліц у сетцы"
-      ],
-      "Recover previous file versions": [
-        "Аднаўленне папярэдніх версій файла"
-      ],
-      "Stronger protection against cyber threats": [
-        "Больш надзейная абарона ад кіберпагроз"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Перайдзіце на наш гадавы тарыфны план і зэканомце ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Неабмежаваная колькасць папак, метак і фільтраў"
-      ],
-      "Use your own email domain": [
-        "Выкарыстоўвайце ўласны дамен электроннай пошты"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "за 12 месяцаў"
-      ],
-      "SUMMER SALE": [
-        "ЛЕТНІ РАСПРОДАЖ"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Скарыстацца прапановай"
@@ -15079,6 +15086,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Адміністратар арганізацыі"
+      ],
       "Security Admin": [
         "Адміністратар бяспекі"
       ],

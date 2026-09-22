@@ -7305,6 +7305,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "Lägg till ${ contact } till dina kontakter"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Lägg till ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
@@ -7797,6 +7800,15 @@
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Smidigt hantera och avsluta prenumerationer på nyhetsbrev och e-postlistor."
       ],
+      "Edit ${ contact }": [
+        "Redigera ${ contact }"
+      ],
+      "Edit a contact": [
+        "Redigera en kontakt"
+      ],
+      "Edit contact": [
+        "Redigera kontakt"
+      ],
       "Edit email address": [
         "Redigera e-postadress"
       ],
@@ -8004,6 +8016,15 @@
       "here": [
         "här"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Hej Lumo, ta en titt på vad jag får mest av i min inkorg, på de mappar och filter jag redan har, och föreslå sen hur jag kan hålla det organiserat: vad som kan ändras på de jag redan har, och något nytt värt att lägga till. Gå igenom planen med mig först, och flytta ingenting innan jag säger ja."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hej Lumo, jag kommer att vara borta och vill konfigurera ett autosvar. Fråga mig om vilka datum det gäller och vad det ska stå, visa mig sen meddelandet innan du aktiverar det."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hej Lumo, gå igenom med mig om hur du kan hjälpa mig med min e-post. Vilka saker kan jag be dig att göra, och vad kan du inte hjälpa mig med?"
+      ],
       "Hide original message": [
         "Dölj originalmeddelande"
       ],
@@ -8015,6 +8036,9 @@
       ],
       "I have not finished this one yet.": [
         "Jag har inte slutförd denna än."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Jag tittar på vad du får mest av och de mappar och filter du redan har, och kommer därefter med förslag på vad som kan förbättras och vad som saknas. Ingenting flyttas utan din tillåtelse."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Jag skickar detta meddelande till en användare som inte använder ${ MAIL_APP_NAME }."
@@ -8219,6 +8243,9 @@
       "Manage your labels": [
         "Hantera dina etiketter"
       ],
+      "Mark ${ emails } as unread": [
+        "Markera ${ emails } som olästa"
+      ],
       "Mark all as read": [
         "Markera alla som lästa"
       ],
@@ -8404,6 +8431,9 @@
       ],
       "Not connected": [
         "Inte ansluten"
+      ],
+      "Not found in the foundation-search index.": [
+        "Hittades inte i foundation-search-indexet."
       ],
       "Not supported by this browser": [
         "Stöds inte av denna webbläsare"
@@ -8622,6 +8652,10 @@
         "Läs ${ count } meddelande i denna tråd",
         "Läs ${ count } meddelanden i denna tråd"
       ],
+      "Read ${ count } open draft": [
+        "Läst ${ count } öppet utkast",
+        "Läst ${ count } öppna utkast"
+      ],
       "Read the open draft": [
         "Läs det öppnade utkastet"
       ],
@@ -8664,14 +8698,26 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Kom ihåg att uppdatera detta i din lösenordshanterare eller var du än förvarar ditt konto och inloggningsinformation."
       ],
+      "Remove signature": [
+        "Ta bort signatur"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Tar bort all data associerad med denna app (inklusive nedladdade meddelanden …)"
       ],
       "Rename folder": [
         "Byt namn på mapp"
       ],
+      "Rename label": [
+        "Byt namn på etikett"
+      ],
       "Rename this folder": [
         "Byt namn på denna mapp"
+      ],
+      "reply": [
+        "svara"
+      ],
+      "reply all": [
+        "svara alla"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Att rapportera ett meddelande som ett nätfiskeförsök kommer skicka meddelandet till oss så att vi kan analysera det och förbättra våra filter. Detta innebär att vi kommer kunna se innehållet i meddelandet i sin helhet."
@@ -8681,6 +8727,12 @@
       ],
       "Restore": [
         "Återställ"
+      ],
+      "Results came from the local search.": [
+        "Resultaten kom från den lokala sökningen."
+      ],
+      "Results came from the server.": [
+        "Resultaten kom från servern."
       ],
       "Rewrote the draft": [
         "Skrev om utkastet"
@@ -8797,6 +8849,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
       ],
+      "Set auto-reply": [
+        "Ställ in automatiskt svar"
+      ],
       "Set signature": [
         "Ställ in signatur"
       ],
@@ -8853,6 +8908,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Detta meddelande finns inte eller har redan löpt ut."
+      ],
+      "Source document in encrypted search index": [
+        "Källdokument i krypterat sökindex"
       ],
       "Star emails": [
         "Stjärnmärk e-post"
@@ -9236,6 +9294,9 @@
       "Turn on to search the content of your messages": [
         "Slå på för att söka efter innehållet i dina meddelanden"
       ],
+      "Turn on your away message": [
+        "Aktivera ditt frånvaromeddelande"
+      ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Kunde inte komma åt lagringsmöjligheter i den här webbläsaren och vi behöver åtkomst för att aktivera sökning av meddelandeinnehåll."
       ],
@@ -9421,6 +9482,9 @@
       ],
       "Week": [
         "Vecka"
+      ],
+      "What can you do?": [
+        "Vad kan du göra?"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "När vill du att ditt meddelande ska tas bort automatiskt från mottagarens inkorg och din mapp “Skickat“?"
@@ -9877,6 +9941,9 @@
       ],
       "Cancel / close": [
         "Avbryt/stäng"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Stäng ${ LUMO_SHORT_APP_NAME }"
       ],
       "Close draft": [
         "Stäng utkast"
@@ -10837,6 +10904,9 @@
       "Remove Zoom video conference": [
         "Ta bort Zoom-videokonferens"
       ],
+      "Return on": [
+        "Tillbaka den"
+      ],
       "Reveal password": [
         "Visa lösenord"
       ],
@@ -10947,6 +11017,9 @@
       ],
       "Time": [
         "Tid"
+      ],
+      "To": [
+        "Till"
       ],
       "To:": [
         "Till:"
@@ -13184,11 +13257,14 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besök vårt ${ helpCenterLink } eller ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Lägg till en betalningsmetod** för kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Avbryt när som helst före ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Avbryt när som helst innan dess."
       ],
       "contact our support team": [
         "kontakta vårt supportteam"
@@ -13202,6 +13278,9 @@
       "help center": [
         "hjälpcenter"
       ],
+      "If you continue after your trial,": [
+        "Om du fortsätter efter din provperiod,"
+      ],
       "If you need help,": [
         "Om du behöver hjälp,"
       ],
@@ -13209,9 +13288,6 @@
         "När din fullständiga prenumeration startar …"
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
-      ],
-      "You can still cancel within 30 days and get a prorated refund.": [
         "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -13222,9 +13298,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
       ]
     },
     "Option": {
@@ -13735,6 +13808,9 @@
       ],
       "Bank transfer - ${ iban }": [
         "Banköverföring - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort slutar på ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14138,78 +14214,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
-      "Summer Sale": [
-        "Sommarrea"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/månad"
-      ],
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "2 TB data storage": [
-        "2 TB lagringsutrymme"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
-      ],
-      "3 TB data storage": [
-        "3 TB lagringsutrymme"
-      ],
-      "500 GB storage": [
-        "500 GB lagringsutrymme"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Full åtkomst till ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuella konton för 6 användare"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuella konton för dig och en partner"
-      ],
-      "Online document and spreadsheet editor": [
-        "Dokument- och kalkylbladsredigerare online"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Starkare skydd mot cyberhot"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Obegränsade mappar, etiketter och filter"
-      ],
-      "Use your own email domain": [
-        "Använd din egen e-postdomän"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "för 12 månader"
-      ],
-      "SUMMER SALE": [
-        "SOMMARREA"
       ]
     },
     "q3campaign2026: Action": {
@@ -14867,6 +14871,10 @@
       ]
     },
     "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-post → ${ wakeTime }",
+        "${ count } e-post → ${ wakeTime }"
+      ],
       "Snooze ${ emails }": [
         "Snooza ${ emails }"
       ]

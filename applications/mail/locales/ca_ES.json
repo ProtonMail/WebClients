@@ -346,9 +346,6 @@
       "Copy alias “${ name }”": [
         "Copia l'àlies «${ name }»"
       ],
-      "Copy debug transcript": [
-        "Copia la transcripció de depuració"
-      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
@@ -2347,7 +2344,7 @@
         "Problema de pagament"
       ],
       "Sheets problem": [
-        "Hi ha hagut un problema amb els fulls de càlcul"
+        "Problema amb els fulls de càlcul"
       ],
       "Sign in problem": [
         "Problema d'inici de sessió"
@@ -7340,6 +7337,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
       ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Una explicació ràpida de com us puc ajudar amb la vostra bústia de correu, des de trobar correus antics fins a redactar respostes, i del que no puc fer."
+      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "S'enviarà una sol·licitud per cancel·lar la subscripció al remitent de la llista de correu i es processarà automàticament."
       ],
@@ -7774,9 +7774,6 @@
       "Daily": [
         "Cada dia"
       ],
-      "Debug transcript copied": [
-        "S'ha copiat la transcripció de depuració"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
       ],
@@ -7865,11 +7862,29 @@
       "Draft": [
         "Esborrany"
       ],
+      "Draft a ${ kind }": [
+        "Redactar un esborrany de ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Redactar un esborrany de ${ kind } per a ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Redactar un esborrany de ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Redactar un esborrany de ${ kind } per a ${ recipient }"
+      ],
       "Draft discarded": [
         "L'esborrany s'ha descartat"
       ],
       "Draft saved.": [
         "S\"ha desat l\"esborrany."
+      ],
+      "Drafted a ${ kind }": [
+        "S'ha redactat un esborrany de ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "S'ha redactat un esborrany de ${ kind }"
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
@@ -7891,6 +7906,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gestioneu i doneu-vos de baixa fàcilment de butlletins i llistes de correu."
+      ],
+      "Edit ${ contact }": [
+        "Editar «${ contact }»"
+      ],
+      "Edit a contact": [
+        "Editar un contacte"
+      ],
+      "Edit contact": [
+        "Editar el contacte"
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -8053,6 +8077,9 @@
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
       ],
+      "forward": [
+        "reenviar"
+      ],
       "Found ${ count } contact": [
         "S'ha trobat ${ count } contacte",
         "S'han trobat ${ count } contactes"
@@ -8099,6 +8126,18 @@
       "here": [
         "aquí"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Ei Lumo, mira què és el que més rebo a la meva bústia d'entrada, i quines carpetes i filtres ja tinc, i després suggereix-me com mantenir-ho organitzat: què canviar del que tinc i qualsevol cosa nova que valgui la pena afegir. Explica'm el pla primer, i no moguis res fins que digui que sí."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Ei Lumo, me'n vaig fora i vull configurar una resposta d'absència de l'oficina. Demana'm les dates i què hi hauria de dir, i després mostra'm el missatge abans d'activar-lo."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Ei Lumo, busca'm els correus dels últims 7 dies i digues quins necessiten realment la meva resposta. Afegeix-m'hi una línia sobre què demana cadascun i deixa fora tot el que pugui ignorar."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Ei Lumo, guia'm per saber com em pots ajudar amb la meva bústia d'entrada. Quines coses et puc demanar que facis, i amb què no em pots ajudar."
+      ],
       "Hide original message": [
         "Amaga el missatge original"
       ],
@@ -8110,6 +8149,12 @@
       ],
       "I have not finished this one yet.": [
         "Encara no he acabat aquesta."
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Revisaré el correu de la setmana passada i n'extrauré el que realment necessiti resposta, així ho podreu gestionar tot de cop."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Miraré de què rebeu més quantitat i les carpetes i filtres que ja teniu, i després us suggeriré què es pot millorar i què hi falta. No es mourà res fins que ho digueu."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "S'està enviant aquest missatge a un usuari que no és de ${ MAIL_APP_NAME }."
@@ -8548,6 +8593,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
+      "open draft": [
+        "obrir l'esborrany"
+      ],
       "Open shortcut cheat sheet": [
         "Obre el resum de dreceres"
       ],
@@ -8781,6 +8829,9 @@
       "Read your signature": [
         "Llegiu la vostra signatura"
       ],
+      "Readdressed": [
+        "S'ha canviat l'adreça"
+      ],
       "Readdressed the draft": [
         "S'ha canviat el destinatari de l'esborrany"
       ],
@@ -8826,6 +8877,12 @@
       "Rename this label": [
         "Canvia el nom d'aquesta etiqueta"
       ],
+      "reply": [
+        "respondre"
+      ],
+      "reply all": [
+        "respondre a tothom"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Informar d'un missatge com a intent de suplantació d'identitat ens l'enviarà a nosaltres per a poder analitzar-lo i millorar els nostres filtres. Això vol dir que podrem veure el contingut complet del missatge."
       ],
@@ -8840,6 +8897,12 @@
       ],
       "Results came from the server.": [
         "Els resultats han provingut del servidor."
+      ],
+      "Revise the ${ draft }": [
+        "Revisar el ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "S'ha tornat a escriure i s'ha canviat l'adreça"
       ],
       "Rewrote and readdressed the draft": [
         "S'ha reescrit i canviat el destinatari de l'esborrany"
@@ -8965,6 +9028,9 @@
       "Set auto-reply": [
         "Configurar la resposta automàtica"
       ],
+      "Set my out of office": [
+        "Configura el meu missatge d'absència de l'oficina"
+      ],
       "Set signature": [
         "Establir la signatura"
       ],
@@ -9085,6 +9151,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronitzeu i gestioneu fitxers amb l'aplicació ${ DRIVE_APP_NAME }. Creeu i compartiu documents a ${ DOCS_APP_NAME } i deseu-los de manera segura. Tot disponible a ${ ios }, ${ android } i ${ desktop }."
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Digueu-me quan sereu fora i què voleu que hi digui, i ho veureu tot abans que es desi."
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporalment no disponible a causa de l'alta demanda. Torneu-ho a provar més tard."
@@ -9319,6 +9388,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
+      ],
+      "Tidy up my inbox": [
+        "Ordena'm la safata d'entrada"
       ],
       "to ${ destinationElement } folder.": [
         "a la carpeta ${ destinationElement }."
@@ -9613,6 +9685,12 @@
       ],
       "Week": [
         "Setmana"
+      ],
+      "What can you do?": [
+        "Què podeu fer?"
+      ],
+      "What needs handling?": [
+        "Què cal gestionar?"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Quan voleu que el missatge s'elimini automàticament de la safata d'entrada del destinatari i de la carpeta de missatges enviats?"
@@ -10076,6 +10154,9 @@
       "Cancel / close": [
         "Cancel·la / tanca"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Tanca ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Tanca l'esborrany"
       ],
@@ -10175,6 +10256,9 @@
       "New message": [
         "Missatge nou"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Obre ${ LUMO_SHORT_APP_NAME } / focus d'entrada"
+      ],
       "Open command panel": [
         "Obre el panell d'ordres"
       ],
@@ -10232,6 +10316,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Dreceres de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Dreceres d'acció"
       ],
@@ -10446,6 +10533,9 @@
       ],
       "CC": [
         "Còpia"
+      ],
+      "Cc": [
+        "Amb còpia"
       ],
       "Choose what to do instead": [
         "Trieu què voleu fer en comptes d'això"
@@ -11166,6 +11256,9 @@
       ],
       "Time": [
         "Hora"
+      ],
+      "To": [
+        "Per a"
       ],
       "To:": [
         "Per a:"
@@ -13145,6 +13238,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunitat per obtenir el primer mes de ${ plan } a aquest preu."
+      ],
       "Last day to save": [
         "Últim dia per estalviar"
       ],
@@ -13226,6 +13322,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Short @pm.me address": [
+        "Adreça curta de @pm.me"
       ],
       "Storage": [
         "Emmagatzematge"
@@ -13418,11 +13517,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visiteu el nostre ${ helpCenterLink } o ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Afegiu un mètode de pagament** per continuar utilitzant totes les funcions quan acabi el període de prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continueu després del període de prova,** podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
+      ],
+      "Add a payment method": [
+        "Afegir un mètode de pagament"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancel·leu en qualsevol moment abans del ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Cancel·leu en qualsevol moment abans d'aquesta data."
       ],
       "contact our support team": [
         "contacteu amb el nostre equip de suport"
@@ -13436,16 +13547,22 @@
       "help center": [
         "centre d'ajuda"
       ],
+      "If you continue after your trial,": [
+        "Si continueu després del període de prova,"
+      ],
       "If you need help,": [
         "Si necessiteu ajuda,"
       ],
       "Once your full subscription starts...": [
         "Un cop iniciada la subscripció completa..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Encara podeu cancel·lar-la en un termini de 30 dies i obtenir un reemborsament prorratejat."
+      "to keep using all of the features after your trial ends.": [
+        "per continuar utilitzant totes les funcions quan acabi el vostre període de prova."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Encara podeu cancel·lar-la en un termini de 30 dies i obtenir un reemborsament prorratejat."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -13456,9 +13573,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Podreu utilitzar ${ planTitle } de manera gratuïta fins que finalitzi el període de prova."
       ]
     },
     "Option": {
@@ -14382,78 +14496,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aconseguiu l'oferta"
-      ],
-      "Summer Sale": [
-        "Rebaixes d'estiu"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mesos"
-      ],
-      "15 GB storage": [
-        "15 GB d'emmagatzemament"
-      ],
-      "2 TB data storage": [
-        "2 TB d'emmagatzematge de dades"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB d'emmagatzematge: 40 vegades el vostre pla actual"
-      ],
-      "3 TB data storage": [
-        "3 TB d'emmagatzematge de dades"
-      ],
-      "500 GB storage": [
-        "500 GB d'emmagatzematge"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Els descomptes es basen en els preus mensuals estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan acabi el cicle de facturació."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Accés complet a ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Comptes individuals per a 6 usuaris"
-      ],
-      "Individual accounts for you and a partner": [
-        "Comptes individuals per a vós i la vostra parella"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor de documents i fulls de càlcul en línia"
-      ],
-      "Recover previous file versions": [
-        "Recupereu versions anteriors dels fitxers"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protecció més robusta contra les ciberamenaces"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Canvieu al nostre pla anual i estalvieu ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Nombre il·limitat de carpetes, etiquetes i filtres"
-      ],
-      "Use your own email domain": [
-        "Utilitzeu el vostre propi domini de correu electrònic"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "durant 12 mesos"
-      ],
-      "SUMMER SALE": [
-        "REBAIXES D'ESTIU"
       ]
     },
     "q3campaign2026: Action": {
