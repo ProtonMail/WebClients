@@ -1,5 +1,5 @@
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../types-api';
-import type { LumoStreamUsage, UsageMessage } from '../types-api';
+import type { LumoStreamUsage } from '../types-api';
 import { mapStreamErrorCode } from './generation-terminal';
 import type {
     GenerationResponseMessage,
@@ -258,36 +258,23 @@ export class StreamProcessor {
     }
 
     private processOpenAiChunk(chunk: OpenAiChunk): GenerationResponseMessage[] {
-        if (typeof chunk.model === 'string' && chunk.model.length > 0) {
-            this.servingModel = chunk.model;
-        }
+        const messages = this.recordServingModel(chunk.model);
 
         if (chunk.error) {
             console.warn('[STREAM] Stream error:', chunk.error);
-            if (chunk.error.code === CONTEXT_LENGTH_EXCEEDED_CODE) {
-                return [
-                    {
-                        type: 'tool-error',
-                        error: {
-                            code: CONTEXT_LENGTH_EXCEEDED_CODE,
-                            message: chunk.error.message,
-                        },
-                    },
-                ];
-            }
-            return [{ type: mapStreamErrorCode(chunk.error.code) }];
+            messages.push(
+                chunk.error.code === CONTEXT_LENGTH_EXCEEDED_CODE
+                    ? {
+                          type: 'tool-error',
+                          error: { code: CONTEXT_LENGTH_EXCEEDED_CODE, message: chunk.error.message },
+                      }
+                    : { type: mapStreamErrorCode(chunk.error.code) }
+            );
+            return messages;
         }
 
-        // const messages: GenerationResponseMessage[] = [];
-
-        // if (chunk.usage) {
-        //     messages.push(this.createUsageMessage(chunk.usage));
-        // }
-
-        const messages: GenerationResponseMessage[] = [];
-
         if (chunk.usage) {
-            messages.push(this.createUsageMessage(chunk.usage, chunk.model ?? this.servingModel));
+            messages.push({ type: 'usage', usage: chunk.usage });
         }
 
         if (!chunk.choices?.length) {
@@ -314,14 +301,21 @@ export class StreamProcessor {
         return messages;
     }
 
-    private createUsageMessage(usage: LumoStreamUsage, model?: string): UsageMessage {
-        return {
-            type: 'usage',
-            usage: {
-                ...usage,
-                ...(model ? { model } : {}),
-            },
-        };
+    /**
+     * Emits a `model` event the first time a model is seen, and whenever it changes.
+     *
+     * this.default target contains the target in the request that was sent:
+     * 'title', 'message', 'suggested_questions', etc.
+     * The target field on the received chunk can also have values such as 'reasoning'
+     * and 'tool_result', but here we want the target that was sent in the request.
+     */
+    private recordServingModel(model: string | undefined): GenerationResponseMessage[] {
+        if (!model || model === this.servingModel) {
+            return [];
+        }
+
+        this.servingModel = model;
+        return [{ type: 'model', target: this.defaultTarget, model }];
     }
 
     private processDelta(delta: OpenAiDelta, defaultTarget: GenerationTarget): GenerationResponseMessage[] {

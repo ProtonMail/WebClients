@@ -48,11 +48,6 @@ export type SetMessageUsageAction = {
     usage: MessageUsage;
 };
 
-export type SetMessageModelIDAction = {
-    messageId: MessageId;
-    modelID: string;
-};
-
 export type SetToolResultAction = ChunkAction & {
     callId?: string;
     meta?: {
@@ -68,7 +63,6 @@ export const setToolCall = createAction<ChunkAction>('lumo/message/setToolCall')
 export const setToolResult = createAction<SetToolResultAction>('lumo/message/setToolResult');
 export const setSuggestedQuestions = createAction<SetSuggestedQuestionsAction>('lumo/message/setSuggestedQuestions');
 export const setMessageUsage = createAction<SetMessageUsageAction>('lumo/message/setUsage');
-export const setMessageModelID = createAction<SetMessageModelIDAction>('lumo/message/setModelID');
 export const addImageAttachment = createAction<AddImageAttachmentAction>('lumo/message/addImageAttachment');
 export const finishMessage = createAction<FinishMessageAction>('lumo/message/finish');
 export const deleteMessage = createAction<MessageId>('lumo/message/delete');
@@ -204,15 +198,6 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
             // Merge so partial updates don't clobber previously stored fields.
             message.usage = { ...message.usage, ...usage };
         })
-        .addCase(setMessageModelID, (state, action) => {
-            const { messageId, modelID } = action.payload;
-            const message = state[messageId];
-            if (!message) {
-                console.warn(`setMessageModelID: message ${messageId} not found`);
-                return;
-            }
-            message.modelID = modelID;
-        })
         .addCase(addImageAttachment, (state, action) => {
             const { messageId, attachment } = action.payload;
             const message = state[messageId];
@@ -283,12 +268,11 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
 /**
  * Persist backend-reported usage onto an assistant message.
  *
- * Reads the raw SSE `usage` payload and stores `model` on `message.modelID` (for
- * feedback) when present. Token counts are mapped to `message.usage`; using the
- * message's `contextFiles`, computes `ctxFilesTokenEstimate` (our estimate of the
- * file attachments that were active in that request) so a file-independent baseline
- * can be reconstructed later. Stores nothing when usage is absent or carries neither
- * token counts nor a model id, and never throws on missing/partial data.
+ * Token counts are mapped to `message.usage`; using the message's `contextFiles`,
+ * computes `ctxFilesTokenEstimate` (our estimate of the file attachments that were
+ * active in that request) so a file-independent baseline can be reconstructed later.
+ * Stores nothing when usage is absent or carries no token counts, and never throws
+ * on missing/partial data.
  */
 export function recordMessageUsage(messageId: MessageId, usage: LumoStreamUsage | undefined) {
     return (dispatch: LumoDispatch, getState: () => LumoState): void => {
@@ -296,16 +280,7 @@ export function recordMessageUsage(messageId: MessageId, usage: LumoStreamUsage 
             return;
         }
 
-        const {
-            prompt_tokens: promptTokens,
-            completion_tokens: completionTokens,
-            total_tokens: totalTokens,
-            model,
-        } = usage;
-
-        if (model) {
-            dispatch(setMessageModelID({ messageId, modelID: model }));
-        }
+        const { prompt_tokens: promptTokens, completion_tokens: completionTokens, total_tokens: totalTokens } = usage;
 
         const hasTokenCounts =
             promptTokens !== undefined || completionTokens !== undefined || totalTokens !== undefined;
