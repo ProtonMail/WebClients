@@ -9,7 +9,6 @@ import type { ArtifactType } from '../components/Conversation/artifact/parseArti
 import {
     formatPersonalization,
     regenerateMessage,
-    resolveArtifactToolMode,
     retrySendMessage,
     sendMessage,
 } from '../components/Conversation/helper';
@@ -289,13 +288,6 @@ export const useLumoActions = ({
 
         const allConversationAttachments = [...historyAttachments, ...filledAttachments];
 
-        const artifactToolMode = resolveArtifactToolMode(
-            false,
-            messagesWithContext,
-            ffArtifactsView,
-            resolvedArtifactCreationEnabled
-        );
-
         await dispatch(
             sendMessage({
                 applicationContext: {
@@ -306,7 +298,6 @@ export const useLumoActions = ({
                     content: newMessageContent ?? '',
                     attachments: filledAttachments,
                     ...(artifactAction && { artifactAction }),
-                    ...(artifactToolMode === 'create' && { artifactCreateModeActive: true }),
                     ...(artifactRevisionTargetId && { artifactRevisionTargetId }),
                 },
                 conversationContext: {

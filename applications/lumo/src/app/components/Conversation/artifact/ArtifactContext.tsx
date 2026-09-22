@@ -1,11 +1,25 @@
-import { type ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import {
+    type ReactNode,
+    createContext,
+    useCallback,
+    useContext,
+    useEffect,
+    useLayoutEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 
 import { getMessageBlocks } from '../../../messageHelpers';
 import type { Message } from '../../../types';
 import { Role } from '../../../types-api';
-import { isArtifactGenerationLoading, isArtifactRevisionLoading } from './artifactGenerationState';
+import {
+    isArtifactGenerationLoading,
+    isArtifactPanelGenerationLoading,
+    isArtifactRevisionLoading,
+} from './artifactGenerationState';
 import type { ArtifactRegistry } from './artifactRegistry';
-import { isArtifactVersionProvisional } from './artifactRegistry';
+import { getArtifactVersionIndexForMessage, isArtifactVersionProvisional } from './artifactRegistry';
 import { extractCompleteArtifactsFromBlocks } from './createArtifactTool';
 import type { ParsedArtifact } from './parseArtifacts';
 import { useArtifactRegistry } from './useArtifactRegistry';
@@ -57,11 +71,13 @@ export const ArtifactProvider = ({
     const [selectedVersionIndex, setSelectedVersionIndex] = useState(0);
     const [panelUserClosed, setPanelUserClosed] = useState(false);
     const [isFullscreen, setIsFullscreen] = useState(false);
-    const [isLoadingPanelOpen, setIsLoadingPanelOpen] = useState(false);
     const [seenVersionKeys, setSeenVersionKeys] = useState<Set<string>>(new Set());
     const prevVersionCountsRef = useRef<Record<string, number>>({});
     const selectedVersionIndexRef = useRef(selectedVersionIndex);
     selectedVersionIndexRef.current = selectedVersionIndex;
+    // Tracks the in-flight assistant message so we can keep the loading shell through generation
+    // and auto-open only after the turn finishes (avoids a brief flash when content parses early).
+    const inFlightAssistantMessageIdRef = useRef<string | null>(null);
 
     const lastMessage = linearChain.at(-1);
     const parentUserMessage = useMemo(() => {
@@ -80,21 +96,71 @@ export const ArtifactProvider = ({
         return parent;
     }, [lastMessage?.parentId, linearChain]);
 
+    const lastAssistantBlocks = useMemo(() => {
+        if (!lastMessage || lastMessage.role !== Role.Assistant) {
+            return [];
+        }
+
+        return getMessageBlocks(lastMessage);
+    }, [lastMessage]);
+
     const artifactGenerationLoading = useMemo(() => {
         if (!lastMessage || lastMessage.role !== Role.Assistant) {
             return false;
         }
 
-        const blocks = getMessageBlocks(lastMessage);
-
         return isArtifactGenerationLoading({
             isGenerating,
             isLastMessage: true,
-            completeArtifacts: extractCompleteArtifactsFromBlocks(blocks),
-            blocks,
+            completeArtifacts: extractCompleteArtifactsFromBlocks(lastAssistantBlocks),
+            blocks: lastAssistantBlocks,
             parentUserMessage,
         });
-    }, [lastMessage, isGenerating, parentUserMessage]);
+    }, [lastMessage, isGenerating, parentUserMessage, lastAssistantBlocks]);
+
+    const artifactPanelGenerationLoading = useMemo(() => {
+        if (!lastMessage || lastMessage.role !== Role.Assistant) {
+            return false;
+        }
+
+        return isArtifactPanelGenerationLoading({
+            isGenerating,
+            isLastMessage: true,
+            blocks: lastAssistantBlocks,
+            parentUserMessage,
+        });
+    }, [lastMessage, isGenerating, parentUserMessage, lastAssistantBlocks]);
+
+    useEffect(() => {
+        if (isGenerating && lastMessage?.role === Role.Assistant) {
+            inFlightAssistantMessageIdRef.current = lastMessage.id;
+        }
+    }, [isGenerating, lastMessage]);
+
+    const pendingArtifactPanelOpen = useMemo(() => {
+        if (
+            isGenerating ||
+            panelUserClosed ||
+            selectedId !== null ||
+            !lastMessage ||
+            lastMessage.role !== Role.Assistant
+        ) {
+            return false;
+        }
+
+        if (inFlightAssistantMessageIdRef.current !== lastMessage.id) {
+            return false;
+        }
+
+        const completeArtifacts = extractCompleteArtifactsFromBlocks(lastAssistantBlocks);
+        const artifact = completeArtifacts[0];
+        if (!artifact) {
+            return false;
+        }
+
+        const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, lastMessage.id);
+        return versionIndex !== null;
+    }, [isGenerating, panelUserClosed, selectedId, lastMessage, lastAssistantBlocks, registry]);
 
     const artifactRevisionLoading = useMemo(() => {
         if (!lastMessage || lastMessage.role !== Role.Assistant) {
@@ -107,6 +173,7 @@ export const ArtifactProvider = ({
             isGenerating,
             isLastMessage: true,
             completeArtifacts: extractCompleteArtifactsFromBlocks(blocks),
+            blocks,
             parentUserMessage,
             selectedId,
             selectedVersionIndex,
@@ -131,7 +198,6 @@ export const ArtifactProvider = ({
         setSelectedVersionIndex(0);
         setPanelUserClosed(true);
         setIsFullscreen(false);
-        setIsLoadingPanelOpen(false);
     }, []);
 
     const enterFullscreen = useCallback(() => {
@@ -152,24 +218,13 @@ export const ArtifactProvider = ({
         setSelectedVersionIndex(0);
         setPanelUserClosed(false);
         setIsFullscreen(false);
-        setIsLoadingPanelOpen(false);
         setSeenVersionKeys(new Set());
         prevVersionCountsRef.current = {};
+        inFlightAssistantMessageIdRef.current = null;
     }, [conversationId]);
 
-    useEffect(() => {
-        if (!artifactGenerationLoading) {
-            setIsLoadingPanelOpen(false);
-            return;
-        }
-
-        if (panelUserClosed || selectedId !== null) {
-            setIsLoadingPanelOpen(false);
-            return;
-        }
-
-        setIsLoadingPanelOpen(true);
-    }, [artifactGenerationLoading, panelUserClosed, selectedId]);
+    const isLoadingPanelOpen =
+        !panelUserClosed && selectedId === null && (artifactPanelGenerationLoading || pendingArtifactPanelOpen);
 
     const openArtifact = useCallback(
         (id: string, versionIndex?: number) => {
@@ -182,11 +237,30 @@ export const ArtifactProvider = ({
             setSelectedId(id);
             setSelectedVersionIndex(index);
             setPanelUserClosed(false);
-            setIsLoadingPanelOpen(false);
             markSeen(id, index);
         },
         [registry, markSeen]
     );
+
+    useLayoutEffect(() => {
+        if (!pendingArtifactPanelOpen || !lastMessage || lastMessage.role !== Role.Assistant) {
+            return;
+        }
+
+        const completeArtifacts = extractCompleteArtifactsFromBlocks(lastAssistantBlocks);
+        const artifact = completeArtifacts[0];
+        if (!artifact) {
+            return;
+        }
+
+        const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, lastMessage.id);
+        if (versionIndex === null) {
+            return;
+        }
+
+        inFlightAssistantMessageIdRef.current = null;
+        openArtifact(artifact.id, versionIndex);
+    }, [pendingArtifactPanelOpen, lastMessage, lastAssistantBlocks, registry, openArtifact]);
 
     const goToVersion = useCallback(
         (index: number) => {
