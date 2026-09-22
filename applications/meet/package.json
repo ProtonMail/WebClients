@@ -87,8 +87,8 @@
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.6.7",
         "@vitejs/plugin-react": "^6.1.1",
-        "@vitest/coverage-v8": "^4.1.11",
-        "@vitest/ui": "3.2.7",
+        "@vitest/coverage-v8": "^5.0.1",
+        "@vitest/ui": "5.0.1",
         "dotenv": "^17.4.2",
         "eslint": "^10.10.0",
         "happy-dom": "^20.14.3",
@@ -96,7 +96,6 @@
         "path-browserify": "^1.0.1",
         "prettier": "^3.9.6",
         "typescript": "^6.0.3",
-        "vite-plugin-wasm": "^3.6.0",
-        "vitest": "^4.1.11"
+        "vitest": "^5.0.1"
     }
 }

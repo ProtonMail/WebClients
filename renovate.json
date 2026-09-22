@@ -31,7 +31,7 @@
     "packageRules": [
         {
             "groupName": "Playwright",
-            "matchPackageNames": ["/playwright/"]
+            "matchPackageNames": ["/playwright/", "!@vitest/**"]
         },
         {
             "groupName": "msw",
