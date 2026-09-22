@@ -65,9 +65,11 @@ type AppProps = {
   bridgeState: ReturnType<typeof useBridge>
 }
 
+type SheetsInitializationMode = 'resolving' | 'legacy' | 'after-initial-load'
+
 export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const { application, bridge, docState, docMap, editorConfig, setEditorConfig, didSetInitialConfig } = bridgeState
-  const { suggestionsEnabled } = useSyncedState()
+  const { suggestionsEnabled, receivedEverythingFromRTS } = useSyncedState()
   const { userMode, setUserMode, editorHidden, setEditorHidden, editingLocked, setEditingLocked } =
     useStore(useEditorState())
   const setMigrationEditingLocked = useMigrationEditingLockCallback()
@@ -98,6 +100,32 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const [isEditorRefReady, setIsEditorRefReady] = useState(false)
   const scrollPositionBeforePreview = useRef<number | null>(null)
   const [tableOfContentsVisibleState, setTableOfContentsVisibleState] = useState(false)
+
+  const [sheetsInitializationMode, setSheetsInitializationMode] =
+    useState<SheetsInitializationMode>('resolving')
+  useEffect(() => {
+    if (!didSetInitialConfig) {
+      return
+    }
+    bridge
+      .getClientInvoker()
+      .checkIfFeatureFlagIsEnabled('SheetsMountAfterInitialLoadDisabled')
+      .then((isDisabled) => {
+        setSheetsInitializationMode(isDisabled ? 'legacy' : 'after-initial-load')
+      })
+      .catch((error) => {
+        console.error(error)
+        setSheetsInitializationMode('legacy')
+      })
+  }, [bridge, didSetInitialConfig])
+  useEffect(() => {
+    if (!docState) {
+      return
+    }
+    if (documentType === 'sheet' && sheetsInitializationMode === 'after-initial-load') {
+      docState.onEditorReadyToReceiveUpdates()
+    }
+  }, [documentType, sheetsInitializationMode, docState])
 
   useEffect(() => {
     if (userMode !== EditorUserMode.Preview) {
@@ -616,11 +644,12 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         throw new Error('docState is not set')
       }
 
-      docState.onEditorReadyToReceiveUpdates()
-
-      application.logger.info('Editor is ready to receive updates')
+      if (documentType !== 'sheet' || sheetsInitializationMode === 'legacy') {
+        docState.onEditorReadyToReceiveUpdates()
+        application.logger.info('Editor is ready to receive updates')
+      }
     },
-    [docState, bridge, application.logger],
+    [docState, bridge, application.logger, documentType, sheetsInitializationMode],
   )
 
   const onEditorError = useCallback(
@@ -642,11 +671,14 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     [application.logger, bridge],
   )
 
-  if (!didSetInitialConfig || !editorConfig.current || !docState) {
+  const isResolvingSheetsInitializationMode = documentType === 'sheet' && sheetsInitializationMode === 'resolving'
+
+  if (!didSetInitialConfig || !editorConfig.current || !docState || isResolvingSheetsInitializationMode) {
     application.logger.debug('Attempting to render editor before it is ready', {
       didSetInitialConfig,
       editorConfig: editorConfig.current,
       docState,
+      isResolvingSheetsInitializationMode,
     })
 
     return (
@@ -708,6 +740,19 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   if (documentType === 'sheet') {
     const editorInitializationConfig = editorConfig.current.editorInitializationConfig
 
+    if (sheetsInitializationMode === 'after-initial-load' && !receivedEverythingFromRTS) {
+      application.logger.info('Waiting for initial updates to be applied before mounting Sheets editor')
+
+      return (
+        <SheetsLayout>
+          <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
+            <CircleLoader size="large" />
+            <p className="text-neutral text-sm">{c('Info').t`Loading spreadsheet content...`}</p>
+          </div>
+        </SheetsLayout>
+      )
+    }
+
     return (
       <SheetsLayout>
         <ErrorBoundary
@@ -729,6 +774,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
                 latestSpreadsheetStateToLogRef.current = state
               }}
               isPublicMode={isPublicMode}
+              shouldUseCustomYjsInitialization={sheetsInitializationMode === 'legacy'}
             />
           </SheetsAdapter>
         </ErrorBoundary>
