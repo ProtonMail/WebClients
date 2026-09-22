@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Full MSIX manifest, consumed verbatim by MakerMSIX via the `appManifest`
+  option. Replaces (rather than augments) the maker's built-in template
+  because that template hardcodes the <Application> block and exposes no
+  hook for adding a windows.protocol Extension. {{Version}} and
+  {{Publisher}} are substituted by forge.config.ts at build time.
+-->
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
+  IgnorableNamespaces="uap uap3 desktop2">
+  <Identity Name="ProtonPass"
+          ProcessorArchitecture="x64"
+          Version="{{Version}}"
+          Publisher="{{Publisher}}"/>
+  <Properties>
+    <DisplayName>Proton Pass</DisplayName>
+    <PublisherDisplayName>Proton AG</PublisherDisplayName>
+    <Logo>assets\icon.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="en-US" />
+  </Resources>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+    <Capability Name="internetClient" />
+  </Capabilities>
+  <Applications>
+    <Application Id="App" Executable="app\ProtonPass.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+          DisplayName="Proton Pass"
+          Description="Open-source and secure identity manager."
+          Square44x44Logo="assets\Square44x44Logo.png"
+          Square150x150Logo="assets\Square150x150Logo.png"
+          BackgroundColor="#FFFFFF">
+      </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.protocol">
+          <uap:Protocol Name="protonpass">
+            <uap:DisplayName>Proton Pass Login</uap:DisplayName>
+          </uap:Protocol>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>

@@ -9,7 +9,9 @@ import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { WebpackPlugin } from '@electron-forge/plugin-webpack';
 import type { ForgeConfig } from '@electron-forge/shared-types';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
+import { readFileSync, writeFileSync } from 'node:fs';
 import fs from 'node:fs/promises';
+import os from 'node:os';
 import path from 'path';
 
 import pkg from './package.json';
@@ -40,6 +42,20 @@ const windowsSignOptions =
         : undefined;
 const windowsPublisher = process.env.WINDOWS_SIGN_PUBLISHER ?? 'CN=Proton AG';
 
+// MSIX requires a 4-part numeric version (Major.Minor.Build.Revision).
+const toWindowsVersion = (semver: string): string =>
+    /^\d+\.\d+\.\d+\.\d+$/.test(semver) ? semver : `${semver.replace(/[-+].*/, '')}.0`;
+
+const buildAppxManifest = (): string => {
+    const template = readFileSync(path.join(__dirname, 'AppxManifest.xml.in'), 'utf-8');
+    const resolved = template
+        .replace(/{{Version}}/g, toWindowsVersion(pkg.version))
+        .replace(/{{Publisher}}/g, windowsPublisher);
+    const outPath = path.join(os.tmpdir(), `proton-pass-AppxManifest-${process.pid}.xml`);
+    writeFileSync(outPath, resolved);
+    return outPath;
+};
+
 const config: ForgeConfig = {
     packagerConfig: {
         asar: true,
@@ -59,6 +75,13 @@ const config: ForgeConfig = {
             x64ArchFiles:
                 '{Contents/Resources/assets/proton_pass_nm_host,Contents/Resources/app.asar.unpacked/.webpack/main/native_modules/*.node}',
         },
+        // Protocol handler for external login flow
+        protocols: [
+            {
+                name: 'Proton Pass Login',
+                schemes: ['protonpass'],
+            },
+        ],
     },
     rebuildConfig: {},
     makers: [
@@ -66,16 +89,18 @@ const config: ForgeConfig = {
         new MakerMSIX({
             packageName: `ProtonPass_Setup_${pkg.version}.msix`,
             packageAssets: `${__dirname}/assets`,
-            manifestVariables: {
-                packageIdentity: 'ProtonPass',
-                packageDisplayName: 'Proton Pass',
-                packageDescription: 'Open-source and secure identity manager.',
-                packageBackgroundColor: 'transparent',
-                appDisplayName: 'Proton Pass',
-                appExecutable: 'ProtonPass.exe',
-                publisher: windowsPublisher,
-                publisherDisplayName: 'Proton AG',
-            },
+            // Use a custom manifest rather than `manifestVariables` because we
+            // need a windows.protocol Extension block to register the
+            // `protonpass://` scheme for external-login deep links — the
+            // built-in template doesn't expose that.
+            appManifest: buildAppxManifest(),
+            // When appManifest is set, electron-windows-msix derives the
+            // build-time Windows Kit version from the manifest's MinVersion
+            // (10.0.14393.0 = Windows 1607, our runtime floor). That SDK
+            // isn't on the CI runner, which only has 10.0.26100.0 installed.
+            // Pin explicitly so the runtime floor stays decoupled from the
+            // SDK used to package the MSIX.
+            windowsKitVersion: '10.0.26100.0',
             sign: !!windowsSignOptions,
             windowsSignOptions,
         }),
@@ -122,6 +147,7 @@ const config: ForgeConfig = {
                 homepage: 'https://proton.me/pass',
                 icon: path.join(__dirname, 'assets', 'logo.svg'),
                 maintainer: 'Proton',
+                mimeType: ['x-scheme-handler/protonpass'],
             },
         }),
         // Linux Fedora
@@ -135,6 +161,7 @@ const config: ForgeConfig = {
                 productDescription: 'Open-source and secure identity manager.',
                 homepage: 'https://proton.me/pass',
                 icon: path.join(__dirname, 'assets', 'logo.svg'),
+                mimeType: ['x-scheme-handler/protonpass'],
             },
         }),
     ],
@@ -186,7 +213,9 @@ const config: ForgeConfig = {
             // Disables ELECTRON_RUN_AS_NODE
             [FuseV1Options.RunAsNode]: false,
             // Enables cookie encryption
-            [FuseV1Options.EnableCookieEncryption]: true,
+            // Enabling only on CI when the app is signed
+            // Unless we can't decrypt cookies between two execution of the app
+            [FuseV1Options.EnableCookieEncryption]: !!process.env.CI,
             // Disables the NODE_OPTIONS environment variable
             [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
             // Disables the --inspect and --inspect-brk family of CLI options

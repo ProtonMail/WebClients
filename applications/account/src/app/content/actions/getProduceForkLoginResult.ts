@@ -15,6 +15,7 @@ import {
     produceFork,
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
+import { getValidatedProtonProtocol } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
 import { getIsLocalhostRedirectUrl } from '@proton/shared/lib/authentication/fork/getValidatedRedirectUrl';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
@@ -29,6 +30,7 @@ import { getReAuthState } from '../../public/reauthContainerState';
 import type { Paths } from '../helper';
 import { hasInterruption } from '../interruptions';
 import { type ProduceForkData, SSOType } from './forkInterface';
+import { getDeepLinkLoginResult } from './getDeepLinkLoginResult';
 import { getProductDisabledLoginResult } from './getProductDisabledResult';
 import { getSetupAddressLoginResult } from './getSetupAddressLoginResult';
 import type { LoginResult } from './interface';
@@ -191,6 +193,11 @@ export const getProduceForkLoginResult = async ({
                 forkParameters,
             });
             const url = getProduceForkUrl(produceForkPayload, forkParameters, searchParameters);
+
+            if (getValidatedProtonProtocol(app, url.href)) {
+                return getDeepLinkLoginResult(app, url.href, forkParameters.childClientID || getClientID(app));
+            }
+
             return {
                 type: 'done',
                 payload: {
