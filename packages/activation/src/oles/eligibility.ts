@@ -24,10 +24,14 @@ export const isUserOLESEligible = ({
     user,
     organization,
     subscription,
+    hasOrgMigrationPermission,
 }: {
     user: UserModel | undefined;
     organization: Organization | undefined;
     subscription: MaybeFreeSubscription;
+    hasOrgMigrationPermission: boolean;
 }) => {
-    return Boolean(isOrganizationOLESEligible({ organization }) && !!subscription && user?.isSelf && user?.isAdmin);
+    return Boolean(
+        isOrganizationOLESEligible({ organization }) && !!subscription && user?.isSelf && hasOrgMigrationPermission
+    );
 };
