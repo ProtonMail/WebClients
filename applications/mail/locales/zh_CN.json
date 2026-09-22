@@ -345,9 +345,6 @@
       "Copy alias “${ name }”": [
         "复制别名“${ name }”"
       ],
-      "Copy debug transcript": [
-        "复制调试副本"
-      ],
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
@@ -1756,6 +1753,16 @@
     "action": {
       "Search messages": [
         "搜索邮件"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "将 ${ folder } 重命名为…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "将 ${ label } 重命名为…"
       ]
     },
     "Action: Sheets": {
@@ -7207,6 +7214,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "快速介绍我能在您的邮箱里帮上什么忙，从查找旧邮件到起草回复，以及我做不到的事。"
+      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "此操作将向邮件发送方请求退订，并由其自动处理退订请求。"
       ],
@@ -7633,9 +7643,6 @@
       "Daily": [
         "每天"
       ],
-      "Debug transcript copied": [
-        "调试副本已复制"
-      ],
       "Dedicated servers": [
         "专用服务器"
       ],
@@ -7723,11 +7730,29 @@
       "Draft": [
         "草稿"
       ],
+      "Draft a ${ kind }": [
+        "起草一封${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "起草一封发给 ${ recipient } 的${ kind }"
+      ],
+      "Draft an ${ kind }": [
+        "起草一封${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "起草一封发给 ${ recipient } 的${ kind }"
+      ],
       "Draft discarded": [
         "草稿已删除"
       ],
       "Draft saved.": [
         "草稿已保存"
+      ],
+      "Drafted a ${ kind }": [
+        "已起草一封${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "已起草一封${ kind }"
       ],
       "Drop file here to upload": [
         "拖至此处上传文件"
@@ -7749,6 +7774,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "轻松管理和退订新闻通讯和邮件列表"
+      ],
+      "Edit ${ contact }": [
+        "编辑${ contact }"
+      ],
+      "Edit a contact": [
+        "编辑联系人"
+      ],
+      "Edit contact": [
+        "编辑联系人"
       ],
       "Edit email address": [
         "编辑邮箱地址"
@@ -7906,6 +7940,9 @@
       "Forgot password?": [
         "忘记密码？"
       ],
+      "forward": [
+        "转发"
+      ],
       "Found ${ count } contact": [
         "找到 ${ count } 联系人"
       ],
@@ -7948,6 +7985,18 @@
       "here": [
         "此处"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "嗨 Lumo，看看我收件箱里最常收到什么，以及我已有的文件夹和筛选器，然后建议如何保持井然有序：已有的该改什么，有什么值得新增的。先给我讲讲方案，我说可以之前不要动任何东西。"
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "嗨 Lumo，我要出门了，想设置一个自动回复。先问我要日期和内容，然后在开启之前把消息给我看看。"
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "嗨 Lumo，搜索我最近 7 天的邮件，告诉我哪些确实需要我回复。每封用一句话说明它在要什么，可以忽略的就不要列出来。"
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "嗨 Lumo，给我讲讲你能怎么帮我处理邮箱。我可以让你做哪些事，哪些事你帮不了？"
+      ],
       "Hide original message": [
         "隐藏原始邮件"
       ],
@@ -7959,6 +8008,12 @@
       ],
       "I have not finished this one yet.": [
         "该项尚未完成"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "我会翻一遍上周的邮件，挑出确实需要回复的，让你一次性处理完。"
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "我会看看你最常收到什么，以及你已有的文件夹和过滤器，然后建议哪些可以改进、还缺什么。在你确认之前不会改动任何东西。"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "我需要将此邮件发给非 ${ MAIL_APP_NAME } 邮箱用户"
@@ -8302,6 +8357,9 @@
       "No conversation to read": [
         "没有已读会话"
       ],
+      "No draft open": [
+        "没有打开的草稿"
+      ],
       "No email address": [
         "无邮箱地址"
       ],
@@ -8392,6 +8450,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
       ],
+      "open draft": [
+        "打开草稿"
+      ],
       "Open shortcut cheat sheet": [
         "打开快捷键列表"
       ],
@@ -8400,6 +8461,9 @@
       ],
       "Opened ${ location }": [
         "已打开 ${ location }"
+      ],
+      "Opened a draft": [
+        "已打开一份草稿"
       ],
       "Opened a problem report": [
         "已打开问题报告"
@@ -8584,8 +8648,17 @@
       "Read ${ count } message in this thread": [
         "读取话题中的 ${ count } 条消息"
       ],
+      "Read ${ count } open draft": [
+        "读取 ${ count } 封打开的草稿"
+      ],
+      "Read draft \"${ subject }\"": [
+        "读取草稿“${ subject }”"
+      ],
       "Read open email “${ subject }”": [
         "阅读已打开的邮件“${ subject }”"
+      ],
+      "Read the open draft": [
+        "读取打开的草稿"
       ],
       "Read your ${ count } filter": [
         "读取您的 ${ count } 筛选"
@@ -8604,6 +8677,12 @@
       ],
       "Read your signature": [
         "查看您的签名"
+      ],
+      "Readdressed": [
+        "已重新填写收件人"
+      ],
+      "Readdressed the draft": [
+        "已重新填写草稿收件人"
       ],
       "Recipient: ": [
         "收件人："
@@ -8626,6 +8705,9 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "请记得在密码管理器或保存账户与登录信息的地方更新这些内容！"
       ],
+      "Remove signature": [
+        "移除签名"
+      ],
       "Remove the star from ${ emails }": [
         "移除 ${ emails } 的星标"
       ],
@@ -8635,8 +8717,20 @@
       "Rename folder": [
         "重命名文件夹"
       ],
+      "Rename label": [
+        "重命名标签"
+      ],
       "Rename this folder": [
         "重命名文件夹"
+      ],
+      "Rename this label": [
+        "重命名此标签"
+      ],
+      "reply": [
+        "回复"
+      ],
+      "reply all": [
+        "全部回复"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "您举报的邮件会被上传，以便我们分析并改进过滤机制。这意味着我们将能够查看邮件的完整内容。"
@@ -8652,6 +8746,18 @@
       ],
       "Results came from the server.": [
         "结果来自服务器"
+      ],
+      "Revise the ${ draft }": [
+        "修改${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "已重写并重新填写收件人"
+      ],
+      "Rewrote and readdressed the draft": [
+        "已重写并重新填写草稿收件人"
+      ],
+      "Rewrote the draft": [
+        "已重写草稿"
       ],
       "Right to Left": [
         "从右到左"
@@ -8769,6 +8875,9 @@
       ],
       "Set auto-reply": [
         "设置自动回复"
+      ],
+      "Set my out of office": [
+        "设置我的自动回复"
       ],
       "Set signature": [
         "设置签名"
@@ -8889,6 +8998,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "通过 ${ DRIVE_APP_NAME } 应用同步和管理文件。在 ${ DOCS_APP_NAME } 中创建和共享文档，并安全存储。全部支持 ${ ios }、${ android } 和 ${ desktop }。"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "告诉我你何时外出以及想让它说什么，保存前你会看到完整内容。"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "由于需求过高暂时不可用，请稍后重试。"
@@ -9120,6 +9232,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "此操作将退出当前登录的所有账户。"
+      ],
+      "Tidy up my inbox": [
+        "整理我的收件箱"
       ],
       "to ${ destinationElement } folder.": [
         "移至 ${ destinationElement } 文件夹"
@@ -9414,6 +9529,12 @@
       ],
       "Week": [
         "周"
+      ],
+      "What can you do?": [
+        "你能做什么？"
+      ],
+      "What needs handling?": [
+        "有什么需要处理的？"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "您想何时将此邮件从对方的收件箱和您的已发送列表中删除？"
@@ -9850,6 +9971,9 @@
       "Cancel / close": [
         "取消 / 关闭"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "关闭 ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "关闭草稿"
       ],
@@ -9949,6 +10073,9 @@
       "New message": [
         "撰写邮件"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "打开 ${ LUMO_SHORT_APP_NAME } / 聚焦输入框"
+      ],
       "Open command panel": [
         "打开命令面板"
       ],
@@ -10006,6 +10133,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } 快捷键"
+      ],
       "Action shortcuts": [
         "操作快捷键"
       ],
@@ -10216,6 +10346,9 @@
         "类别"
       ],
       "CC": [
+        "抄送"
+      ],
+      "Cc": [
         "抄送"
       ],
       "Choose what to do instead": [
@@ -10937,6 +11070,9 @@
       ],
       "Time": [
         "时间"
+      ],
+      "To": [
+        "收件人"
       ],
       "To:": [
         "收件人："
@@ -13144,11 +13280,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**添加支付方式**，以便在试用期结束后继续使用所有功能。"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**如果您在试用期结束后继续使用，** 可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "在 ${ cancelDate } 之前随时取消。"
-      ],
-      "Cancel anytime before then.": [
-        "在此之前随时取消。"
       ],
       "contact our support team": [
         "联系我们的客服"
@@ -13162,16 +13310,22 @@
       "help center": [
         "帮助中心"
       ],
+      "If you continue after your trial,": [
+        "如果您在试用期结束后继续使用，"
+      ],
       "If you need help,": [
         "如果您需要帮助，"
       ],
       "Once your full subscription starts...": [
         "您的正式订阅一旦开始..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      "to keep using all of the features after your trial ends.": [
+        "以便在试用期结束后继续使用所有功能。"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "您可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "您仍然可以在 30 天内取消并获得按比例的退款。"
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -13182,9 +13336,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "您将能够免费使用 ${ planTitle } 直到试用期结束。"
       ]
     },
     "Option": {
@@ -14097,78 +14248,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "立即享受优惠"
-      ],
-      "Summer Sale": [
-        "夏季大促"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/每月"
-      ],
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "2 TB data storage": [
-        "2 TB 数据存储空间"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 存储空间：您当前套餐的 40 倍"
-      ],
-      "3 TB data storage": [
-        "3 TB 数据存储空间"
-      ],
-      "500 GB storage": [
-        "500 GB 存储空间"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级版功能"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级版功能"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "优惠基于标准月度定价。您的订阅将在计费周期结束时按标准年度费率续订。"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "获取 ${ VPN_APP_NAME } 的完整访问权限"
-      ],
-      "Individual accounts for 6 users": [
-        "为 6 名用户提供的独立帐户"
-      ],
-      "Individual accounts for you and a partner": [
-        "为您和伴侣提供的独立帐户"
-      ],
-      "Online document and spreadsheet editor": [
-        "在线文档和电子表格编辑器"
-      ],
-      "Recover previous file versions": [
-        "恢复先前的文件版本"
-      ],
-      "Stronger protection against cyber threats": [
-        "针对网络威胁的更强防护"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "切换到我们的年度套餐，立省 ${ toYearlyDiscountAmount }！"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "不限量文件夹、标签和筛选规则"
-      ],
-      "Use your own email domain": [
-        "个性化邮箱域名"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "年费"
-      ],
-      "SUMMER SALE": [
-        "夏季大促"
       ]
     },
     "q3campaign2026: Action": {

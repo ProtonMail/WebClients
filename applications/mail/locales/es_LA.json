@@ -346,9 +346,6 @@
       "Copy alias “${ name }”": [
         "Copiar el alias «${ name }»"
       ],
-      "Copy debug transcript": [
-        "Copiar transcripción de depuración"
-      ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
@@ -1761,6 +1758,16 @@
     "action": {
       "Search messages": [
         "Buscar mensajes"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Renombrar ${ folder } a…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Renombrar ${ label } a…"
       ]
     },
     "Action: Sheets": {
@@ -7330,6 +7337,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
       ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Un breve repaso a lo que puedo hacer para ayudarle con su correo electrónico, desde encontrar correo antiguo hasta redactar respuestas y lo que no puedo hacer."
+      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Se enviará una solicitud para darse de baja de esta lista de correo y se procesará automáticamente."
       ],
@@ -7764,9 +7774,6 @@
       "Daily": [
         "Cada día"
       ],
-      "Debug transcript copied": [
-        "Transcripción de depuración copiada"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
       ],
@@ -7855,11 +7862,29 @@
       "Draft": [
         "Borrador"
       ],
+      "Draft a ${ kind }": [
+        "Borrador de ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Borrador de ${ kind } para ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Borrador de ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Borrador de ${ kind } para ${ recipient }"
+      ],
       "Draft discarded": [
         "Borrador descartado"
       ],
       "Draft saved.": [
         "Borrador guardado."
+      ],
+      "Drafted a ${ kind }": [
+        "Redacté un(a) ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Redacté un(a) ${ kind }"
       ],
       "Drop file here to upload": [
         "Suelte los archivos aquí para cargarlos"
@@ -7881,6 +7906,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Administre y cancele fácilmente la suscripción a boletines y lista de correo."
+      ],
+      "Edit ${ contact }": [
+        "Editar ${ contact }"
+      ],
+      "Edit a contact": [
+        "Editar un contacto"
+      ],
+      "Edit contact": [
+        "Editar contacto"
       ],
       "Edit email address": [
         "Editar dirección de correo"
@@ -8043,6 +8077,9 @@
       "Forgot password?": [
         "¿Contraseña olvidada?"
       ],
+      "forward": [
+        "reenviar"
+      ],
       "Found ${ count } contact": [
         "Encontrado ${ count } contacto",
         "Encontrados ${ count } contactos"
@@ -8089,6 +8126,18 @@
       "here": [
         "aquí"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Hola Lumo, eche un vistazo a lo que más recibo en mi bandeja de entrada, así como a las carpetas y filtros que ya tengo. Luego, sugiérame cómo mantenerlo organizado: qué cambiar de los que ya tengo y qué novedades merece la pena añadir. Explíqueme el plan primero y no mueva nada hasta que le dé mi aprobación."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hola Lumo, me voy de viaje y quiero configurar una respuesta automática de ausencia. Pregúnteme las fechas y qué mensaje debería aparecer y luego muéstreme el mensaje antes de activarlo."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Hola Lumo, busque mis correos de los últimos 7 días y dígame cuáles requieren respuesta. Describa brevemente qué pide cada uno y omita los que pueda ignorar."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hola Lumo, explíqueme cómo puede ayudarme con mi buzón. ¿Qué tipo de cosas puedo pedirle que haga y en qué no puede ayudarme?"
+      ],
       "Hide original message": [
         "Ocultar mensaje original"
       ],
@@ -8100,6 +8149,12 @@
       ],
       "I have not finished this one yet.": [
         "Aún no he finalizado esto."
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Revisaré el correo de la semana pasada y sacaré lo que realmente necesita respuesta, para que pueda gestionarlo de una sola vez."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Analizaré lo que más le interesa y las carpetas y filtros que ya tiene y luego le sugeriré qué mejorar y qué falta. Nada se modificará hasta que usted lo indique."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estoy enviando este mensaje a un usuario que no usa ${ MAIL_APP_NAME }."
@@ -8445,6 +8500,9 @@
       "No conversation to read": [
         "No hay conversaciones que leer"
       ],
+      "No draft open": [
+        "No hay un borrador abierto"
+      ],
       "No email address": [
         "No hay dirección de correo"
       ],
@@ -8535,6 +8593,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de las claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Le recomendamos que \"desconfíe\" de estas claves."
       ],
+      "open draft": [
+        "abrir borrador"
+      ],
       "Open shortcut cheat sheet": [
         "Abrir lista de trucos de atajos"
       ],
@@ -8543,6 +8604,9 @@
       ],
       "Opened ${ location }": [
         "Abierto ${ location }"
+      ],
+      "Opened a draft": [
+        "Abrí un borrador"
       ],
       "Opened a problem report": [
         "Abrí un reporte de problema"
@@ -8731,8 +8795,18 @@
         "Leer ${ count } mensaje en este hilo",
         "Leer ${ count } mensajes en este hilo"
       ],
+      "Read ${ count } open draft": [
+        "Leer ${ count } un borrador abierto",
+        "Leer ${ count } borradores abiertos"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Leí el borrador «${ subject }»"
+      ],
       "Read open email “${ subject }”": [
         "Leer correo abierto «${ subject }»"
+      ],
+      "Read the open draft": [
+        "Leer el borrador abierto"
       ],
       "Read your ${ count } filter": [
         "Leer ${ count } filtro",
@@ -8755,6 +8829,12 @@
       "Read your signature": [
         "Lea su firma"
       ],
+      "Readdressed": [
+        "Revisado"
+      ],
+      "Readdressed the draft": [
+        "Borrador revisado"
+      ],
       "Recipient: ": [
         "Destinatario: "
       ],
@@ -8776,6 +8856,9 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Recuerde actualizarlo en su gestor de contraseñas o donde guarde su información de inicio de sesión."
       ],
+      "Remove signature": [
+        "Quitar firma"
+      ],
       "Remove the star from ${ emails }": [
         "Eliminar destacado de ${ emails }"
       ],
@@ -8785,8 +8868,20 @@
       "Rename folder": [
         "Renombrar carpeta"
       ],
+      "Rename label": [
+        "Renombrar etiqueta"
+      ],
       "Rename this folder": [
         "Renombrar esta carpeta"
+      ],
+      "Rename this label": [
+        "Renombrar esta etiqueta"
+      ],
+      "reply": [
+        "responder"
+      ],
+      "reply all": [
+        "responder a todos"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Al reportar un mensaje como suplantación de identidad, enviará una alerta a nosotros para analizarlo y mejorar nuestros filtros. Significa que podremos ver todo el contenido del mensaje."
@@ -8802,6 +8897,18 @@
       ],
       "Results came from the server.": [
         "Los resultados vinieron del servidor."
+      ],
+      "Revise the ${ draft }": [
+        "Revisar el ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Reescrito y revisado"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Borrador reescrito y revisado"
+      ],
+      "Rewrote the draft": [
+        "Reescribí el borrador"
       ],
       "Right to Left": [
         "Derecha a izquierda"
@@ -8920,6 +9027,9 @@
       ],
       "Set auto-reply": [
         "Configurar respuesta automática"
+      ],
+      "Set my out of office": [
+        "Configurar mi respuesta automática de fuera de la oficina"
       ],
       "Set signature": [
         "Configurar una firma"
@@ -9041,6 +9151,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronice y gestione archivos con la aplicación ${ DRIVE_APP_NAME }. Cree y comparta documentos en ${ DOCS_APP_NAME } y guárdelos de forma segura. Todo en ${ ios }, ${ android } y ${ desktop }."
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Dígam cuándo está fuera y qué le gustaría que dijera y verá todo antes de que se guarde."
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporalmente no disponible por alta demanda. Intente más tarde."
@@ -9275,6 +9388,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas con la sesión activa."
+      ],
+      "Tidy up my inbox": [
+        "Ordenar mi buzón"
       ],
       "to ${ destinationElement } folder.": [
         "a la carpeta ${ destinationElement }."
@@ -9569,6 +9685,12 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "What can you do?": [
+        "¿Qué puede hacer?"
+      ],
+      "What needs handling?": [
+        "¿Qué necesita ser atendido?"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "¿Cuándo desea que el mensaje se elimine automáticamente del buzón del destinatario y de la carpeta de enviados?"
@@ -10032,6 +10154,9 @@
       "Cancel / close": [
         "Cancelar/cerrar"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Cerrar ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Cerrar borrador"
       ],
@@ -10131,6 +10256,9 @@
       "New message": [
         "Mensaje nuevo"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Abrir ${ LUMO_SHORT_APP_NAME } / entrada de enfoque"
+      ],
       "Open command panel": [
         "Abrir el panel de comandos"
       ],
@@ -10188,6 +10316,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Atajos de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Atajos de acciones"
       ],
@@ -10401,6 +10532,9 @@
         "Categoría"
       ],
       "CC": [
+        "CC"
+      ],
+      "Cc": [
         "CC"
       ],
       "Choose what to do instead": [
@@ -11122,6 +11256,9 @@
       ],
       "Time": [
         "Hora"
+      ],
+      "To": [
+        "Para"
       ],
       "To:": [
         "Para:"
@@ -13374,11 +13511,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite nuestro ${ helpCenterLink } o contacte a nuestro ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Añada un método de pago** para seguir usando todas las funciones después de finalizar el periodo de prueba."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancele en cualquier momento antes de esa fecha.** Podrá usar ${ planTitle } hasta que la prueba finalice, libre de cargos."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continúa después de la prueba**, podrá cancelar dentro de 30 días y obtener un reembolso proporcional."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una vez que su suscripción completa inicie**, aún podrá cancelar dentro de 30 días y obtener un reembolso ponderado."
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancele en cualquier momento antes del ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Cancele en cualquier momento antes de esa fecha."
       ],
       "contact our support team": [
         "póngase en contacto con nuestro equipo de soporte"
@@ -13392,16 +13541,22 @@
       "help center": [
         "centro de ayuda"
       ],
+      "If you continue after your trial,": [
+        "Si continúa después de la prueba,"
+      ],
       "If you need help,": [
         "Si necesita ayuda,"
       ],
       "Once your full subscription starts...": [
         "Una vez que comience su suscripción completa..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Todavía puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
+      "to keep using all of the features after your trial ends.": [
+        "para seguir usando todas las funciones después de finalizar el periodo de prueba."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Todavía puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -13412,9 +13567,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Su suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Podrá usar ${ planTitle } hasta que termine la prueba, gratuitamente."
       ]
     },
     "Option": {
@@ -14338,78 +14490,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aproveche la oferta"
-      ],
-      "Summer Sale": [
-        "Ofertas de verano"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mes"
-      ],
-      "15 GB storage": [
-        "15 GB de almacenamiento"
-      ],
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de almacenamiento: 40 veces su plan actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "500 GB storage": [
-        "500 GB de almacenamiento"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acceso completo a ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para usted y su pareja"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor en línea de documentos y hojas de cálculo"
-      ],
-      "Recover previous file versions": [
-        "Recupere versiones anteriores de archivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra ciberamenazas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Use your own email domain": [
-        "Use su propio dominio de correo electrónico"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "SUMMER SALE": [
-        "OFERTAS DE VERANO"
       ]
     },
     "q3campaign2026: Action": {

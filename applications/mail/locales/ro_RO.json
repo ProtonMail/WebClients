@@ -347,9 +347,6 @@
       "Copy alias “${ name }”": [
         "Copiază aliasul „${ name }”"
       ],
-      "Copy debug transcript": [
-        "Copiere transcriere depanare"
-      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
@@ -7463,6 +7460,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "O scurtă trecere în revistă a modului în care te pot ajuta cu contul de e-mail – de la găsirea mesajelor vechi până la redactarea răspunsurilor – și a lucrurilor pe care nu le pot face."
+      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "O cerere de dezabonare de la această listă de corespondență va fi trimisă expeditorului buletinului de știri și procesată automat."
       ],
@@ -7905,9 +7905,6 @@
       "Daily": [
         "Zilnic"
       ],
-      "Debug transcript copied": [
-        "Transcrierea depanării a fost copiată."
-      ],
       "Dedicated servers": [
         "Servere dedicate"
       ],
@@ -7997,11 +7994,29 @@
       "Draft": [
         "Ciornă"
       ],
+      "Draft a ${ kind }": [
+        "Schițează un ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Schițează un ${ kind } către ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Schițează un ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Schițează un ${ kind } către ${ recipient }"
+      ],
       "Draft discarded": [
         "Ciornă aruncată"
       ],
       "Draft saved.": [
         "Ciornă salvată."
+      ],
+      "Drafted a ${ kind }": [
+        "Am schițat un ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Am schițat un ${ kind }"
       ],
       "Drop file here to upload": [
         "Plasați fișiere aici pentru încărcare"
@@ -8023,6 +8038,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gestionați cu ușurință și efectuați dezabonarea de la buletine informative și liste de adrese."
+      ],
+      "Edit ${ contact }": [
+        "Editează ${ contact }"
+      ],
+      "Edit a contact": [
+        "Editează un contact"
+      ],
+      "Edit contact": [
+        "Editare contact"
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -8190,6 +8214,9 @@
       "Forgot password?": [
         "Ați uitat parola?"
       ],
+      "forward": [
+        "transferă"
+      ],
       "Found ${ count } contact": [
         "Contacte găsite: ${ count }",
         "Contacte găsite: ${ count }",
@@ -8240,6 +8267,18 @@
       "here": [
         "aici"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Hei, Lumo, aruncă o privire peste mesajele pe care le primesc cel mai des în cont, precum și peste folderele și filtrele pe care le am deja, apoi propune-mi o modalitate de a le organiza: ce ar trebui schimbat la cele existente și ce elemente noi ar merita adăugate. Explică-mi mai întâi planul și nu muta nimic până nu îmi dau acordul."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hei, Lumo, plec și vreau să setez un răspuns automat de tip „nu sunt disponibil”. Întreabă-mă care sunt datele calendaristice și ce ar trebui să conțină, apoi arată-mi mesajul înainte de a-l activa."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Hei Lumo, caută mesajele din ultimele 7 zile și spune-mi care dintre ele necesită într-adevăr un răspuns din partea mea. Spune-mi pe scurt ce se cere în fiecare dintre ele și exclude tot ce pot ignora."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hei, Lumo! Explică-mi cum mă poți ajuta cu contul de e-mail. Ce fel de lucruri îți pot cere să faci și cu ce nu mă poți ajuta?"
+      ],
       "Hide original message": [
         "Ascundere mesaj original"
       ],
@@ -8251,6 +8290,12 @@
       ],
       "I have not finished this one yet.": [
         "Pe acesta încă nu l-am terminat încă."
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Voi trece prin corespondența de săptămâna trecută și voi selecta ceea ce necesită într-adevăr un răspuns, ca să te poți ocupa de tot deodată."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Voi analiza ce primești cel mai des, precum și folderele și filtrele pe care le ai deja, apoi îți voi sugera ce poate fi îmbunătățit și ce lipsește. Nu se schimbă nimic fără acordul tău."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Trimit acest mesaj unui destinatar care nu este utilizator al ${ MAIL_APP_NAME }."
@@ -8691,6 +8736,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
+      "open draft": [
+        "deschidere ciornă"
+      ],
       "Open shortcut cheat sheet": [
         "Deschidere listă combinații de taste"
       ],
@@ -8932,6 +8980,9 @@
       "Read your signature": [
         "Citește semnătura"
       ],
+      "Readdressed": [
+        "Revizuit"
+      ],
       "Readdressed the draft": [
         "Am revizuit ciorna"
       ],
@@ -8977,6 +9028,12 @@
       "Rename this label": [
         "Redenumește această etichetă"
       ],
+      "reply": [
+        "răspunde"
+      ],
+      "reply all": [
+        "răspuns tuturor"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Raportarea unui mesaj ca fiind o încercare de înșelăciune ne va trimite și nouă mesajul pentru a-l analiza și a îmbunătăți filtrele noastre. Aceasta înseamnă că vom putea vedea conținutul complet al mesajului."
       ],
@@ -8991,6 +9048,12 @@
       ],
       "Results came from the server.": [
         "Rezultatele au venit de la server."
+      ],
+      "Revise the ${ draft }": [
+        "Revizuiește ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Rescris și revizuit"
       ],
       "Rewrote and readdressed the draft": [
         "Am rescris și am revizuit ciorna"
@@ -9117,6 +9180,9 @@
       "Set auto-reply": [
         "Setare răspuns automat"
       ],
+      "Set my out of office": [
+        "Setează-mi mesajul „nu sunt la birou”"
+      ],
       "Set signature": [
         "Setare semnătură"
       ],
@@ -9238,6 +9304,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronizați și gestionați mesajele cu aplicația ${ DRIVE_APP_NAME }. Creați și partajați documente în ${ DOCS_APP_NAME } și stocați-le în siguranță. Disponibile pe ${ ios }, ${ android } și ${ desktop }."
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Spune-mi când vei pleca și ce ai vrea să scrie, iar eu îți voi arăta totul înainte de a se salva."
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporar indisponibil din cauza solicitărilor mari. Reîncercați mai târziu."
@@ -9475,6 +9544,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
+      ],
+      "Tidy up my inbox": [
+        "Organizează-mi mesajele"
       ],
       "to ${ destinationElement } folder.": [
         "în folderul „${ destinationElement }”."
@@ -9769,6 +9841,12 @@
       ],
       "Week": [
         "Săptămâna"
+      ],
+      "What can you do?": [
+        "Ce poți să faci?"
+      ],
+      "What needs handling?": [
+        "Ce trebuie rezolvat?"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Când doriți să fie șters automat mesajul de la destinatar și din mesajele trimise?"
@@ -10259,6 +10337,9 @@
       "Cancel / close": [
         "Anulare/Închidere"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Închidere ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Închidere ciornă"
       ],
@@ -10358,6 +10439,9 @@
       "New message": [
         "Mesaj nou"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Deschidere ${ LUMO_SHORT_APP_NAME } / focalizare pe câmpul de introducere"
+      ],
       "Open command panel": [
         "Deschidere panou de comandă"
       ],
@@ -10415,6 +10499,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Scurtături ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Combinații de taste acțiuni"
       ],
@@ -10631,6 +10718,9 @@
         "Categoria"
       ],
       "CC": [
+        "C"
+      ],
+      "Cc": [
         "C"
       ],
       "Choose what to do instead": [
@@ -11352,6 +11442,9 @@
       ],
       "Time": [
         "Ora"
+      ],
+      "To": [
+        "Către"
       ],
       "To:": [
         "Către:"
@@ -13376,6 +13469,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Ultima șansă pentru a obține 80% reducere în prima lună pentru ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Ultima șansă de a obține prima lună de ${ plan } la acest preț."
+      ],
       "Last day to save": [
         "Ultima zi de economisire"
       ],
@@ -13457,6 +13553,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Short @pm.me address": [
+        "Adresă scurtă @pm.me"
       ],
       "Storage": [
         "Spațiu"
@@ -13649,11 +13748,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " vizitați ${ helpCenterLink } sau contactați ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adăugați o metodă de plată** pentru a continua să utilizați toate funcțiile după expirarea perioadei de probare."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puteți anula oricând înainte de acel moment.** Veți putea utiliza ${ planTitle } gratuit până la expirarea perioadei de probare."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Dacă alegeți să continuați după perioada de probare,** puteți anula în termen de 30 de zile și puteți primi o rambursare proporțională."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**După ce începe abonamentul complet,** încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Anulați oricând înainte de ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Anulați oricând înainte de această dată."
       ],
       "contact our support team": [
         "contactați asistența noastră"
@@ -13667,17 +13778,23 @@
       "help center": [
         "centru de ajutor"
       ],
+      "If you continue after your trial,": [
+        "Dacă mai continuați după perioada de probare,"
+      ],
       "If you need help,": [
         "Dacă aveți nevoie de ajutor,"
       ],
       "Once your full subscription starts...": [
         "După ce începe abonamentul complet..."
       ],
+      "to keep using all of the features after your trial ends.": [
+        "pentru a continua să utilizații toate funcțiile după expirarea perioadei de probare."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Puteți încă anula în termen de 30 de zile și puteți obține o rambursare proporțională."
-      ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Puteți folosi ${ planTitle } până la terminarea perioadei de evaluare fără a vi se aplica vreo taxă."
@@ -13687,9 +13804,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de evaluare."
       ]
     },
     "Option": {
@@ -14624,78 +14738,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Valorificați oferta"
-      ],
-      "Summer Sale": [
-        "Reduceri de vară"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/lună"
-      ],
-      "15 GB storage": [
-        "15 GB de spațiu de stocare"
-      ],
-      "2 TB data storage": [
-        "2 TB de spațiu de stocare pentru date"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de spațiu de stocare: de 40 de ori planul actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de spațiu de stocare pentru date"
-      ],
-      "500 GB storage": [
-        "500 GB de spațiu de stocare"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acces complet la ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Conturi individuale pentru 6 utilizatori"
-      ],
-      "Individual accounts for you and a partner": [
-        "Conturi individuale pentru dvs. și un partener"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor conectat de documente și foi de calcul"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierelor"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protecție mai puternică împotriva amenințărilor cibernetice"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Număr nelimitat de foldere, etichete și filtre"
-      ],
-      "Use your own email domain": [
-        "Utilizați propriul domeniu de e-mail"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "pentru 12 luni"
-      ],
-      "SUMMER SALE": [
-        "REDUCERI DE VARĂ"
       ]
     },
     "q3campaign2026: Action": {

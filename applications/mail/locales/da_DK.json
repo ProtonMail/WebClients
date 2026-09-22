@@ -346,9 +346,6 @@
       "Copy alias “${ name }”": [
         "Kopier alias \"${ name }\""
       ],
-      "Copy debug transcript": [
-        "Kopiér fejlfindingstranskibering"
-      ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
@@ -7340,6 +7337,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
       ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "En hurtig gennemgang af hvad jeg kan hjælpe dig med i dine e-mails, fra at finde gamle mails til at skrive udkast, og hvad jeg ikke kan."
+      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "En anmodning om at afmelde fra denne mailingliste vil blive sendt til afsenderen af nyhedsbrevet og automatisk behandlet."
       ],
@@ -7774,9 +7774,6 @@
       "Daily": [
         "Daglig"
       ],
-      "Debug transcript copied": [
-        "Fejlfindingstranskibering kopieret"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
       ],
@@ -7865,11 +7862,29 @@
       "Draft": [
         "Kladde"
       ],
+      "Draft a ${ kind }": [
+        "Skriv udkast af ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Skriv udkast af ${ kind } til ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Skriv udkast af ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Skriv udkast af ${ kind } til ${ recipient }"
+      ],
       "Draft discarded": [
         "Udkast kasseret"
       ],
       "Draft saved.": [
         "Udkast gemt."
+      ],
+      "Drafted a ${ kind }": [
+        "Skrev udkast af ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Skrev udkast af ${ kind }"
       ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
@@ -7891,6 +7906,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Administrer og afmeld nemt nyhedsbreve og mailinglister."
+      ],
+      "Edit ${ contact }": [
+        "Rediger ${ contact }"
+      ],
+      "Edit a contact": [
+        "Rediger en kontakt"
+      ],
+      "Edit contact": [
+        "Rediger kontakt"
       ],
       "Edit email address": [
         "Rediger e-mailadresse"
@@ -8053,6 +8077,9 @@
       "Forgot password?": [
         "Glemt din adgangskode?"
       ],
+      "forward": [
+        "videresend"
+      ],
       "Found ${ count } contact": [
         "Fandt ${ count } kontakt",
         "Fandt ${ count } kontakter"
@@ -8099,6 +8126,18 @@
       "here": [
         "her"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Hej Lumo, tag et kig på hvad jeg får mest af i min indbakke, og de mapper og filtre jeg allerede har. Kom med nogle anbefalinger til at holde tingene organiseret: hvad der kan ændres af det jeg allerede har, og hvad der er værd at tilføje. Fortæl mig planen først, og lad være med at flytte noget medmindre jeg siger det."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hej Lumo, jeg kommer til at være væk og vil gerne indstille et automatisk svar. Bed mig om datoerne og hvad der skal stå, og vis mig så beskeden før du slår den til."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Hej Lumo, søg efter mine e-mails de seneste 7 dage, og fortæl mig hvilke rent faktisk kræver at jeg svarer. Giv mig én sætning om hvad hver enkelt spørger om, og udelad alt der kan ignoreres."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hej Lumo, vis mig hvordan du kan hjælpe mig med mine e-mails. Hvilke ting kan jeg bede dig om at gøre, og hvad kan du ikke hjælpe mig med?"
+      ],
       "Hide original message": [
         "Skjul oprindelig besked"
       ],
@@ -8110,6 +8149,12 @@
       ],
       "I have not finished this one yet.": [
         "Denne er endnu ikke afsluttet."
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Jeg gennemgår e-mails indenfor den sidste uge, og henter dem der rent faktisk kræver et svar, så du kan tage dig af det i ét hug."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Jeg kigger på hvad du får mest af, hvilke mapper og filtre du allerede har, og derefter anbefaler jeg hvad der kan forbedres og mangler. Intet bliver flyttet medmindre du siger det."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Jeg sender denne besked til en, som ikke bruger ${ MAIL_APP_NAME }."
@@ -8548,6 +8593,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
+      "open draft": [
+        "åbn udkast"
+      ],
       "Open shortcut cheat sheet": [
         "Åbn snydeark med genveje"
       ],
@@ -8781,6 +8829,9 @@
       "Read your signature": [
         "Læs din signatur"
       ],
+      "Readdressed": [
+        "Rettede adressen"
+      ],
       "Readdressed the draft": [
         "Rettede adressen på udkastet"
       ],
@@ -8826,6 +8877,12 @@
       "Rename this label": [
         "Omdøb denne etiket"
       ],
+      "reply": [
+        "svar"
+      ],
+      "reply all": [
+        "svar alle"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Rapporteres en besked som et phishing-forsøg videresendes beskeden til os, så vi kan analysere den og forbedre vores filtre. Det betyder, at vi vil kunne se hele beskedindholdet."
       ],
@@ -8840,6 +8897,12 @@
       ],
       "Results came from the server.": [
         "Resultaterne kom fra serveren."
+      ],
+      "Revise the ${ draft }": [
+        "Omskriv ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Omskrev og rettede adressen"
       ],
       "Rewrote and readdressed the draft": [
         "Omskrev og rettede adressen på udkastet"
@@ -8965,6 +9028,9 @@
       "Set auto-reply": [
         "Indstil autosvar"
       ],
+      "Set my out of office": [
+        "Indstil automatisk svar"
+      ],
       "Set signature": [
         "Indstil signatur"
       ],
@@ -9085,6 +9151,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opret og del dokumenter i ${ DOCS_APP_NAME } og opbevar dem sikkert. Alt sammen på ${ ios }, ${ android } og ${ desktop }."
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Fortæl mig hvornår du er væk og hvad der skal stå. Du får hele svaret at se før det bliver gemt."
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Midlertidigt utilgængelig på grund af høj efterspørgsel. Prøv igen senere."
@@ -9319,6 +9388,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
+      ],
+      "Tidy up my inbox": [
+        "Ryd op i min indbakke"
       ],
       "to ${ destinationElement } folder.": [
         "til ${ destinationElement } mappe."
@@ -9613,6 +9685,12 @@
       ],
       "Week": [
         "Uge"
+      ],
+      "What can you do?": [
+        "Hvad kan du?"
+      ],
+      "What needs handling?": [
+        "Hvad skal håndteres?"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Hvornår ønsker du, at din besked automatisk skal slettes fra modtagerens indbakke og din sendt-mappe?"
@@ -10076,6 +10154,9 @@
       "Cancel / close": [
         "Annuller / luk"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Luk ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Luk udkast"
       ],
@@ -10175,6 +10256,9 @@
       "New message": [
         "Ny besked"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Åbn ${ LUMO_SHORT_APP_NAME } / fokuser input"
+      ],
       "Open command panel": [
         "Åbn kommandopanel"
       ],
@@ -10232,6 +10316,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME }-genveje"
+      ],
       "Action shortcuts": [
         "Genveje til handling"
       ],
@@ -10446,6 +10533,9 @@
       ],
       "CC": [
         "CC"
+      ],
+      "Cc": [
+        "Cc"
       ],
       "Choose what to do instead": [
         "Vælg, hvad der skal gøres i stedet"
@@ -11166,6 +11256,9 @@
       ],
       "Time": [
         "Tid"
+      ],
+      "To": [
+        "Til"
       ],
       "To:": [
         "Til:"
@@ -13418,11 +13511,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besøg vores ${ helpCenterLink } eller ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Tilføj en betalingsmetode** for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Annuller når som helst før da**. Du vil kunne bruge ${ planTitle } indtil prøveperioden slutter, uden beregning."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Hvis du forsætter efter din prøveperiode,** så kan du stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Så snart dit abonnement starter...** kan du stadig annullere indenfor 30 dage og få en forholdsmæssig refusion."
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Annullér til enhver tid inden ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Annullér til enhver tid inden da."
       ],
       "contact our support team": [
         "kontakt vores supportteam"
@@ -13436,16 +13541,22 @@
       "help center": [
         "hjælp-center"
       ],
+      "If you continue after your trial,": [
+        "Hvis du forsætter efter din prøveperiode,"
+      ],
       "If you need help,": [
         "Hvis du har brug for hjælp,"
       ],
       "Once your full subscription starts...": [
         "Når dit fulde abonnement starter..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Du kan stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      "to keep using all of the features after your trial ends.": [
+        "for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "så kan du annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Du kan stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -13456,9 +13567,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Dit fulde ${ planTitle }-abonnement starter ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du vil kunne bruge ${ planTitle } indtil prøveversionen udløber, uden beregning."
       ]
     },
     "Option": {
@@ -14382,78 +14490,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Tag imod tilbuddet"
-      ],
-      "Summer Sale": [
-        "Sommerudsalg"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/måned"
-      ],
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "2 TB data storage": [
-        "2 TB datalagerplads"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagerplads: 40x dit nuværende abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB datalagerplads"
-      ],
-      "500 GB storage": [
-        "500 GB lagerplads"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Fuld adgang til ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuelle konti til 6 brugere"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuelle konti til dig og en partner"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online-editor til dokumenter og regneark"
-      ],
-      "Recover previous file versions": [
-        "Gendan tidligere filversioner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stærkere beskyttelse mod cybertrusler"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrænset antal mapper, etiketter og filtre"
-      ],
-      "Use your own email domain": [
-        "Brug dit eget e-mail-domæne"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "i 12 måneder"
-      ],
-      "SUMMER SALE": [
-        "SOMMERUDSALG"
       ]
     },
     "q3campaign2026: Action": {
