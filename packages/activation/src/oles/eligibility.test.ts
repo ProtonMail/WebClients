@@ -25,6 +25,7 @@ const eligibleArgs = () => ({
     user: baseUser as UserModel,
     organization: baseOrganization as Organization,
     subscription: baseSubscription as MaybeFreeSubscription,
+    hasOrgMigrationPermission: true,
 });
 
 describe('isOLESEligible', () => {
@@ -44,8 +45,8 @@ describe('isOLESEligible', () => {
         expect(isOLESEligible({ ...eligibleArgs(), subscription: undefined })).toBe(false);
     });
 
-    it('returns false when user is not an admin', () => {
-        expect(isOLESEligible({ ...eligibleArgs(), user: { ...baseUser, isAdmin: false } as UserModel })).toBe(false);
+    it('returns false when user lacks the organization migration permission', () => {
+        expect(isOLESEligible({ ...eligibleArgs(), hasOrgMigrationPermission: false })).toBe(false);
     });
 
     it('returns false when user is not self', () => {
