@@ -19,13 +19,11 @@ import type { OrganizationRouterParams } from '../../content/router-params';
 
 export const getPassAppRoutes = ({
     app,
-    user,
     organization,
     subscription,
     permissions,
     entitlements,
 }: OrganizationRouterParams) => {
-    const isAdmin = user.isAdmin && user.isSelf;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
 
@@ -79,7 +77,9 @@ export const getPassAppRoutes = ({
                 to: '/policies',
                 icon: IcCheckmarkTriple,
                 available:
-                    (hasOrganizationKey || hasOrganization) && isAdmin && (hasPassOrBundleB2B || isPassEssentials),
+                    (hasOrganizationKey || hasOrganization) &&
+                    permissions['pass.policy.read'] &&
+                    (hasPassOrBundleB2B || isPassEssentials),
                 upgradeRequired: isPassEssentials,
                 subsections: [
                     {
@@ -93,7 +93,9 @@ export const getPassAppRoutes = ({
                 to: '/reports',
                 icon: IcChartLine,
                 available:
-                    (hasOrganizationKey || hasOrganization) && isAdmin && (hasPassOrBundleB2B || isPassEssentials),
+                    (hasOrganizationKey || hasOrganization) &&
+                    permissions['pass.report.read'] &&
+                    (hasPassOrBundleB2B || isPassEssentials),
                 upgradeRequired: isPassEssentials,
                 subsections: [
                     {

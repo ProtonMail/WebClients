@@ -7,6 +7,9 @@ const FE_PERMISSION_ONLY = [
     'account.access_control.read',
     'account.organization_filter.read',
     'account.always_on.read',
+    'account.easy_switch.update',
+    'pass.policy.read',
+    'pass.report.read',
 ] as const;
 
 // These permissions was added to BE, do not modify this unless you also update it on BE
