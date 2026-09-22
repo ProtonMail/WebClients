@@ -166,6 +166,9 @@
       "Close navigation": [
         "Navigation schließen"
       ],
+      "Collapse": [
+        "Einklappen"
+      ],
       "Configure": [
         "Konfigurieren"
       ],
@@ -247,6 +250,9 @@
       "Create contact": [
         "Kontakt erstellen"
       ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
       "Create identity": [
         "Identität erstellen"
       ],
@@ -255,6 +261,9 @@
       ],
       "Create login": [
         "Login erstellen"
+      ],
+      "Create new folder": [
+        "Neuen Ordner erstellen"
       ],
       "Create new login": [
         "Neuen Login erstellen"
@@ -354,6 +363,9 @@
       ],
       "Exclude from monitoring": [
         "Von der Überwachung ausschließen"
+      ],
+      "Expand": [
+        "Erweitern"
       ],
       "Export": [
         "Exportieren"
@@ -496,8 +508,8 @@
       "Move all items": [
         "Alle Einträge verschieben"
       ],
-      "Move to another vault": [
-        "In einen anderen Tresor verschieben"
+      "Move to": [
+        "Verschieben nach"
       ],
       "Move to trash": [
         "In den Papierkorb verschieben"
@@ -585,6 +597,9 @@
       ],
       "Remove member": [
         "Mitglied entfernen"
+      ],
+      "Rename": [
+        "Umbenennen"
       ],
       "Request a feature": [
         "Funktion vorschlagen"
@@ -1138,6 +1153,9 @@
       "Failed to create domain": [
         "Fehler beim Erstellen der Domain."
       ],
+      "Failed to create folder": [
+        "Ordner konnte nicht erstellt werden."
+      ],
       "Failed to create new mailbox": [
         "Fehler beim Erstellen des neuen Postfachs."
       ],
@@ -1152,6 +1170,10 @@
       ],
       "Failed to delete email address from monitoring": [
         "Fehler beim Löschen der E-Mail-Adresse aus der Überwachung."
+      ],
+      "Failed to delete folder": [
+        "Ordner konnte nicht gelöscht werden",
+        "Ordner konnten nicht gelöscht werden"
       ],
       "Failed to delete selected items": [
         "Fehler beim Löschen der ausgewählten Einträge."
@@ -1234,6 +1256,9 @@
       "Failed to update domain name.": [
         "Fehler beim Aktualisieren des Domainnamens."
       ],
+      "Failed to update folder": [
+        "Ordner konnte nicht aktualisiert werden"
+      ],
       "Failed to update monitoring settings": [
         "Fehler beim Aktualisieren der Überwachungseinstellungen."
       ],
@@ -1263,6 +1288,9 @@
       ],
       "File does not match expected format": [
         "Die Datei entspricht nicht dem erwarteten Format."
+      ],
+      "Folder name does not match": [
+        "Ordnername stimmt nicht überein"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Import für Tresor \"${ vaultData.name }\" fehlgeschlagen: ${ errorMessage }"
@@ -1915,8 +1943,8 @@
       "Creating alias...": [
         "Alias wird erstellt..."
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV bietet ein praktisches Format zur Anzeige deiner Daten. Aufgrund seiner Einfachheit werden jedoch einige Daten nicht berücksichtigt (benutzerdefinierte Felder, Passkeys...). Für einen vollständigen Export empfehlen wir die Verwendung eines anderen Formats."
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV bietet ein praktisches Format zur Anzeige deiner Daten. Aufgrund seiner Einfachheit werden jedoch einige Daten nicht berücksichtigt (benutzerdefinierte Felder, Ordnerstruktur usw.). Für einen vollständigen Export empfehlen wir die Verwendung eines anderen Formats."
       ],
       "Current version": [
         "Aktuelle Version"
@@ -2071,6 +2099,15 @@
       "finance": [
         "Finanzen"
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Ordner \"${ payload.folder.name }\" erstellt"
+      ],
+      "Folder deleted": [
+        "Ordner gelöscht"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Ordner in \"${ payload.folder.name }\" umbenannt"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Befolge diese Schritte, um deine Daten mit einer generischen CSV zu importieren:"
       ],
@@ -2089,6 +2126,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Weiterleitungsadresse in die Zwischenablage kopiert. Sende eine E-Mail an diese Adresse und ${ Email } wird sie erhalten."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Vollständige Datensynchronisation zur Verbesserung der App-Leistung. Danke für deine Geduld."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Generierte Passwörter werden für ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche gespeichert.",
@@ -2318,6 +2358,14 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-Zugang zu ${ PASS_APP_NAME } wird einen PIN-Code benötigen. Du wirst nach 3 falschen Versuchen abgemeldet werden."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Es wird nur ${ count } Eintrag aus «${ folderName }» verschoben. Einträge in Unterordnern werden nicht verschoben.",
+        "Es werden nur ${ count } Einträge aus «${ folderName }» verschoben. Einträge in Unterordnern werden nicht verschoben."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Es wird nur ${ count } Eintrag verschoben. Einträge in Ordnern werden nicht verschoben.",
+        "Es werden nur ${ count } Einträge verschoben. Einträge in Ordnern werden nicht verschoben."
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Nur Token, die in den letzten 30 Tagen abgelaufen sind, werden angezeigt. Ältere Token wurden automatisch gelöscht."
@@ -2652,6 +2700,9 @@
       ],
       "Suggested": [
         "Vorgeschlagen"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Wechsle zu einem anderen Ordner oder erstelle einen Eintrag in diesem Ordner."
       ],
       "Switch to another vault or create an item in this vault": [
         "Wechsle zu einem anderen Tresor oder erstelle einen Eintrag in diesem Tresor."
@@ -3297,6 +3348,9 @@
       "Company": [
         "Unternehmen"
       ],
+      "Confirm folder name": [
+        "Ordnername bestätigen"
+      ],
       "Confirm vault name": [
         "Tresorname bestätigen"
       ],
@@ -3329,6 +3383,9 @@
       ],
       "Create a custom item": [
         "Benutzerdefinierten Eintrag erstellen"
+      ],
+      "Create a folder": [
+        "Ordner erstellen"
       ],
       "Create a hide-my-email alias": [
         "Einen hide-my-email-Alias erstellen"
@@ -3488,6 +3545,12 @@
       ],
       "Floor, apartment, building": [
         "Etage, Wohnung, Gebäude"
+      ],
+      "Folder": [
+        "Ordner"
+      ],
+      "Folders": [
+        "Ordner"
       ],
       "For a one-off sharing": [
         "Für einmaliges Teilen"
@@ -4508,6 +4571,9 @@
       "Enter username": [
         "Benutzername eingeben"
       ],
+      "Folder name": [
+        "Ordnername"
+      ],
       "Full Name": [
         "Vollständiger Name"
       ],
@@ -4535,8 +4601,8 @@
       "Please describe the problem and include any error messages": [
         "Bitte beschreibe das Problem und füge alle Fehlermeldungen hinzu"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Gib \"${ vaultName }\" erneut ein, um die Löschung zu bestätigen."
+      "Retype \"${ name }\" to confirm deletion": [
+        "Gib \"${ name }\" erneut ein, um die Löschung zu bestätigen."
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ pluralItemType } in ${ vaultName } suchen"
@@ -4862,11 +4928,17 @@
       "Create contact": [
         "Kontakt erstellen"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Ordner in \"${ vaultName }\" erstellen"
+      ],
       "Create new access token": [
         "Neuer Zugangstoken erstellen"
       ],
       "Create PIN code": [
         "PIN-Code erstellen"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Unterordner in \"${ folderName }\" erstellen"
       ],
       "Created": [
         "Erstellt"
@@ -4902,14 +4974,17 @@
       "Delete domain": [
         "Domain löschen"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Ordner \"${ name }\" löschen?"
+      ],
       "Delete mailbox": [
         "Postfach löschen"
       ],
       "Delete this item?": [
         "Diesen Eintrag löschen?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Tresor \"${ vaultName }\" löschen?"
+      "Delete vault \"${ name }\"?": [
+        "Tresor \"${ name }\" löschen?"
       ],
       "Did you know?": [
         "Schon gewusst?"
@@ -4967,6 +5042,9 @@
       ],
       "Fill password": [
         "Passwort ausfüllen"
+      ],
+      "Folder options": [
+        "Ordneroptionen"
       ],
       "Get Started": [
         "Erste Schritte"
@@ -5055,9 +5133,9 @@
       "Modified": [
         "Geändert"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count } Element nach ${ vaultName } verschieben",
-        "${ count } Elemente nach ${ vaultName } verschieben"
+      "Move ${ count } item to ${ target }": [
+        "${ count } Eintrag nach ${ target } verschieben",
+        "${ count } Einträge nach ${ target } verschieben"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount } Eintrag in den Papierkorb verschieben?",
@@ -5066,8 +5144,11 @@
       "Move all items to \"${ vaultName }\"?": [
         "Alle Einträge zu \"${ vaultName }\" verschieben?"
       ],
-      "Move item to \"${ vaultName }\"": [
-        "Eintrag zu „${ vaultName }“ verschieben"
+      "Move all items?": [
+        "Alle Einträge verschieben?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Eintrag nach \"${ target }\" verschieben"
       ],
       "MX record": [
         "MX-Eintrag"
@@ -5162,6 +5243,9 @@
       ],
       "Remove secure link?": [
         "Sicheren Link entfernen?"
+      ],
+      "Rename folder": [
+        "Ordner umbenennen"
       ],
       "Reset history for this item?": [
         "Verlauf für dieses Element löschen?"
@@ -5311,6 +5395,9 @@
       "Your exposed information": [
         "Deine exponierten Informationen"
       ],
+      "Your folder is empty": [
+        "Dein Ordner ist leer"
+      ],
       "Your new access token": [
         "Deine neuer Zugangstoken"
       ],
@@ -5397,6 +5484,9 @@
       "Aliases in trash will continue forwarding emails.": [
         "Aliasse im Papierkorb werden E-Mails weiterhin weiterleiten."
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Alle Einträge in diesem Ordner, einschließlich seiner Unterordner, werden gelöscht. Diese Aktion kann nicht rückgängig gemacht werden."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle deine im Papierkorb befindlichen Einträge werden dauerhaft gelöscht. Du kannst diese Aktion nicht rückgängig machen."
       ],
@@ -5482,6 +5572,9 @@
       ],
       "Failed to load breaches.": [
         "Fehler beim Laden der Datenlecks."
+      ],
+      "Folder name is required": [
+        "Ordnername ist erforderlich"
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Gewähre Zugriff auf die Zwischenablage, um das automatische Leeren von kopierten Passwörtern und Daten zu aktivieren."
@@ -5613,8 +5706,8 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Anmeldung bei ${ PASS_APP_NAME } nicht möglich. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Der Tresor \"${ vaultName }\" und alle seine Einträge werden dauerhaft gelöscht. Du kannst diese Aktion nicht rückgängig machen."
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Der Tresor \"${ name }\" und alle seine Einträge werden dauerhaft gelöscht. Du kannst diese Aktion nicht rückgängig machen."
       ],
       "Vault name is required": [
         "Tresorname ist erforderlich"
@@ -5648,6 +5741,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du hast dann keinen Zugang mehr zu diesem Tresor. Um ihm wieder beizutreten, benötigst du eine neue Einladung."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Du hast die maximale Verschachtelungstiefe für Ordner erreicht"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Du hast die maximale Anzahl an Ordnern auf dieser Ebene erreicht"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Du hast die maximale Anzahl an Ordnern für diesen Tresor erreicht."
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Dein Administrator muss einen Tresor für dich anlegen, bevor du Einträge erstellen kannst"

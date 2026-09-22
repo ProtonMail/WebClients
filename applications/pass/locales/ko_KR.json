@@ -157,6 +157,9 @@
       "Close navigation": [
         "탐색 종료"
       ],
+      "Collapse": [
+        "접기"
+      ],
       "Confirm": [
         "확인"
       ],
@@ -235,6 +238,9 @@
       "Create contact": [
         "연락처 생성"
       ],
+      "Create folder": [
+        "폴더 생성"
+      ],
       "Create identity": [
         "신원 추가"
       ],
@@ -243,6 +249,9 @@
       ],
       "Create login": [
         "로그인 생성"
+      ],
+      "Create new folder": [
+        "새 폴더 만들기"
       ],
       "Create new items": [
         "새 항목 생성"
@@ -336,6 +345,9 @@
       ],
       "Exclude from monitoring": [
         "모니터링에서 제외"
+      ],
+      "Expand": [
+        "펼치기"
       ],
       "Export": [
         "내보내기"
@@ -478,8 +490,8 @@
       "Move all items": [
         "모든 항목 이동"
       ],
-      "Move to another vault": [
-        "다른 금고로 이동"
+      "Move to": [
+        "다음으로 이동"
       ],
       "Move to trash": [
         "휴지통으로 이동"
@@ -570,6 +582,9 @@
       ],
       "Remove member": [
         "구성원 추방"
+      ],
+      "Rename": [
+        "이름 바꾸기"
       ],
       "Request a feature": [
         "기능 요청"
@@ -1097,6 +1112,9 @@
       "Failed to create domain": [
         "도메인 생성에 오류가 발생했습니다"
       ],
+      "Failed to create folder": [
+        "폴더 생성 실패"
+      ],
       "Failed to create new mailbox": [
         "새 메일함 생성에 오류가 발생했습니다"
       ],
@@ -1111,6 +1129,9 @@
       ],
       "Failed to delete email address from monitoring": [
         "모니터링에서 이메일 주소를 삭제하지 못했습니다"
+      ],
+      "Failed to delete folder": [
+        "폴더를 삭제하지 못했습니다"
       ],
       "Failed to delete selected items": [
         "선택한 항목을 지우기 실패했습니다."
@@ -1199,6 +1220,9 @@
       "Failed to update domain name.": [
         "도메인 이름 업데이트에 오류가 발생했습니다."
       ],
+      "Failed to update folder": [
+        "폴더를 업데이트하지 못했습니다"
+      ],
       "Failed to update monitoring settings": [
         "모니터링 설정을 업데이트하지 못했습니다"
       ],
@@ -1228,6 +1252,9 @@
       ],
       "File does not match expected format": [
         "파일이 형식과 일치되지 않습니다."
+      ],
+      "Folder name does not match": [
+        "폴더 이름이 일치하지 않습니다."
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "금고 \"${ vaultData.name }\"(으)로 불러오기 실패: ${ errorMessage }"
@@ -1778,8 +1805,8 @@
       "Created item": [
         "생성된 항목"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV는 데이터를 볼 수 있는 편리한 형식을 제공합니다. 그러나 단순성으로 인해 일부 데이터는 포함되지 않게 됩니다(사용자 지정 필드, 금고 등...). 완전한 내보내기를 위해, 다른 형식을 사용하는 것이 좋습니다."
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV는 데이터를 볼 수 있는 편리한 형식을 제공합니다. 그러나 단순성으로 인해 일부 데이터는 포함되지 않게 됩니다(사용자 지정 필드, 폴더 구조 등...). 완전한 내보내기를 위해, 다른 형식을 사용하는 것이 좋습니다."
       ],
       "Current version": [
         "현재 버전"
@@ -1928,6 +1955,15 @@
       "finance": [
         "금융정보"
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "폴더 \"${ payload.folder.name }\" 생성됨"
+      ],
+      "Folder deleted": [
+        "폴더 삭제됨"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "폴더가 \"${ payload.folder.name }\"(으)로 이름이 변경되었습니다"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "생성된 CSV로 데이터를 불러오려면 다음 단계를 따르세요:"
       ],
@@ -1942,6 +1978,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "포워딩 주소를 클립보드에 복사했습니다. 이 주소로 이메일을 전송하면 ${ Email } 주소가 수신받습니다."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "앱의 성능을 향상시키기 위해 전체 데이터를 동기화하는 중입니다. 깊은 이해에 감사드립니다."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "생성된 비밀번호가 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주의 기간 동안 저장됩니다."
@@ -2155,6 +2194,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }이 온라인에 접근하려면 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "\"${ folderName }\"내의 ${ count }개 항목만 이동합니다. 하위 폴더 내의 항목들은 이동되지 않습니다."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "${ count }개 항목만 이동합니다. 폴더 내 항목은 이동되지 않습니다."
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "지난 30일 동안 만료된 토큰만 표시됩니다. 이전 토큰은 자동으로 삭제됩니다."
@@ -2450,8 +2495,11 @@
       "Suggested": [
         "추천"
       ],
+      "Switch to another folder or create an item in this folder": [
+        "다른 폴더로 전환하거나 이 폴더 내에 항목을 생성하세요."
+      ],
       "Switch to another vault or create an item in this vault": [
-        "다른 큼고로 전환하거나 이 금고 내에 항목을 생성하세요."
+        "다른 금고로 전환하거나 이 금고 내에 항목을 생성하세요."
       ],
       "Syncing your vaults…": [
         "금고를 동기화 하는 중..."
@@ -3039,6 +3087,9 @@
       "Company": [
         "회사"
       ],
+      "Confirm folder name": [
+        "폴더 이름 확인"
+      ],
       "Confirm vault name": [
         "금고 이름 확인"
       ],
@@ -3068,6 +3119,9 @@
       ],
       "Create a custom item": [
         "사용자 지정 항목 추가"
+      ],
+      "Create a folder": [
+        "폴더 생성"
       ],
       "Create a hide-my-email alias": [
         "Hide-my-email 별칭 생성"
@@ -3230,6 +3284,12 @@
       ],
       "Floor, apartment, building": [
         "층, 아파트, 빌딩"
+      ],
+      "Folder": [
+        "폴더"
+      ],
+      "Folders": [
+        "폴더"
       ],
       "For a one-off sharing": [
         "일회성 공유에 유용합니다"
@@ -4291,6 +4351,9 @@
       "Enter username": [
         "사용자명 입력"
       ],
+      "Folder name": [
+        "폴더 이름"
+      ],
       "Full Name": [
         "성명"
       ],
@@ -4318,8 +4381,8 @@
       "Please describe the problem and include any error messages": [
         "문제를 설명해 주시고 오류 메시지를 포함해 주십시오"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "삭제를 계속하려면 \"${ vaultName }\" 을(를) 재입력 해주세요."
+      "Retype \"${ name }\" to confirm deletion": [
+        "삭제를 계속하려면 \"${ name }\"을(를) 다시 입력 해주세요."
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ vaultName } 에서 ${ pluralItemType } 검색"
@@ -4643,11 +4706,17 @@
       "Create contact": [
         "연락처 추가"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "\"${ vaultName }\" 내에 폴더 생성"
+      ],
       "Create new access token": [
         "새로운 액세스 토큰 생성"
       ],
       "Create PIN code": [
         "PIN 코드 생성"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "\"${ folderName }\"내에서 하위 폴더 생성"
       ],
       "Created": [
         "생성함"
@@ -4682,14 +4751,17 @@
       "Delete domain": [
         "도메인 삭제"
       ],
+      "Delete folder \"${ name }\"?": [
+        "폴더 \"${ name }\"을(를) 삭제할까요?"
+      ],
       "Delete mailbox": [
         "메일함 삭제"
       ],
       "Delete this item?": [
         "이 항목을 삭제하시겠습니까?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "금고 \"${ vaultName }\"을(를) 삭제할까요?"
+      "Delete vault \"${ name }\"?": [
+        "금고 \"${ name }\"을(를) 삭제할까요?"
       ],
       "Did you know?": [
         "알고 계셨나요?"
@@ -4738,6 +4810,9 @@
       ],
       "Excluded items": [
         "제외된 항목"
+      ],
+      "Folder options": [
+        "폴더 옵션"
       ],
       "Get Started": [
         "시작하기"
@@ -4817,8 +4892,8 @@
       "Modified": [
         "수정됨"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count }개의 항목을 ${ vaultName }(으)로 이동"
+      "Move ${ count } item to ${ target }": [
+        "${ count }개의 항목을 ${ target }(으)로 이동"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount }개의 항목을 휴지통으로 이동시키시겠습니까?"
@@ -4826,8 +4901,11 @@
       "Move all items to \"${ vaultName }\"?": [
         "\"${ vaultName }\"(으)로 모든 항목을 이동할까요?"
       ],
-      "Move item to \"${ vaultName }\"": [
-        "\"${ vaultName }\"(으)로 항목 이동"
+      "Move all items?": [
+        "모든 항목 이동을 이동하시겠습니까?"
+      ],
+      "Move item to \"${ target }\"": [
+        "\"${ target }\"(으)로 항목 이동"
       ],
       "MX record": [
         "MX 레코드"
@@ -4921,6 +4999,9 @@
       ],
       "Remove secure link?": [
         "안전한 링크를 지울까요?"
+      ],
+      "Rename folder": [
+        "폴더 이름 변경"
       ],
       "Reset history for this item?": [
         "이 항목에 대한 기록을 재설정하시겠어요?"
@@ -5066,6 +5147,9 @@
       "Your exposed information": [
         "사용자의 노출된 정보"
       ],
+      "Your folder is empty": [
+        "폴더가 비어있어요"
+      ],
       "Your new access token": [
         "새로운 액세스 토큰"
       ],
@@ -5155,6 +5239,9 @@
       "Aliases in trash will continue forwarding emails.": [
         "휴지통 내 별칭이 계속 이메일 가져오기를 진행합니다."
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "폴더 내의 모든 항목과 하위 폴더가 삭제됩니다. 이 작업은 되돌릴 수 없습니다."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "모든 휴지통에 있는 항목이 완전히 삭제됩니다. 이 동작을 취소할 수 없습니다."
       ],
@@ -5235,6 +5322,9 @@
       ],
       "Failed to load breaches.": [
         "침해를 불러오지 못했습니다."
+      ],
+      "Folder name is required": [
+        "폴더 이름이 필요합니다"
       ],
       "Identity could not be confirmed": [
         "신원을 확인하지 못했습니다"
@@ -5368,8 +5458,8 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }에 로그인할 수 없습니다. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "금고 \"${ vaultName }\" 및 포함된 모든 항목이 완전히 삭제됩니다. 이 동작을 취소할 수 없습니다."
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "금고 \"${ name }\" 및 포함된 모든 항목이 완전히 삭제됩니다. 이 동작을 취소할 수 없습니다."
       ],
       "Vault name is required": [
         "금고 이름이 필요합니다."
@@ -5403,6 +5493,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "이 금고에 대한 접근 권한이 더 이상 없습니다. 다시 확인하려면, 새 초대가 필요합니다."
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "이 금고에 저장 가능한 최대 폴더 개수를 초과했습니다."
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "사용자의 관리자가 항목을 추가하기 전에 금고를 우선 생성해야 합니다."

@@ -1689,6 +1689,9 @@
       "Why not?": [
         "何不呢？"
       ],
+      "Write ${ count } logs": [
+        "寫入 ${ count } 日誌"
+      ],
       "Write for me": [
         "為我撰寫"
       ],
@@ -1726,6 +1729,11 @@
     "action": {
       "Search messages": [
         "搜尋訊息"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "重新命名 ${ folder } 至…"
       ]
     },
     "Action: Sheets": {
@@ -4863,6 +4871,9 @@
       "Failed to decrypt content key: ${ message }": [
         "解密內容金鑰失敗: ${ message }"
       ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密失敗的項目名稱: ${ message }"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗。請再試一次。"
       ],
@@ -4985,6 +4996,9 @@
       ],
       "Name is required": [
         "名稱為必填"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名稱長度最多為 ${ MAX_NODE_NAME_LENGTH } 個字元"
       ],
       "Name must not be empty": [
         "名稱不得留空"
@@ -5171,6 +5185,9 @@
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "已移除重複的收件者：${ recipents }"
+      ],
+      "Request aborted": [
+        "請求已中止"
       ],
       "Request timed out": [
         "需求逾時"
@@ -7342,6 +7359,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "創建 ${ calendarsToBeCreatedCount } 個新行事曆"
       ],
+      "Create a filter": [
+        "建立過濾器"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "創建資料夾像是${ suggestedFolderName }以保持回條於一地。"
       ],
@@ -7513,6 +7533,12 @@
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "輕鬆管理及取消訂閱的電子報和郵寄清單。"
       ],
+      "Edit ${ contact }": [
+        "編輯 ${ contact } 聯絡人"
+      ],
+      "Edit contact": [
+        "編輯連絡人"
+      ],
       "Edit email address": [
         "編輯電子郵件位址"
       ],
@@ -7662,6 +7688,9 @@
       ],
       "Forgot password?": [
         "忘記密碼?"
+      ],
+      "forward": [
+        "轉寄"
       ],
       "Found ${ count } contact": [
         "找到 ${ count } 位聯絡人"
@@ -7843,6 +7872,9 @@
       "Key fingerprint": [
         "金鑰指紋"
       ],
+      "Label ${ emails }": [
+        "標籤 ${ emails }"
+      ],
       "Label all imported messages as": [
         "將所有匯入的郵件標記為"
       ],
@@ -7911,6 +7943,9 @@
       ],
       "Mark as read": [
         "標記為已讀"
+      ],
+      "Mark as unread": [
+        "標記為未讀"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 標誌"
@@ -7983,6 +8018,9 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多數公共 WiFi 網路是安全的，但有些缺乏安全性，讓您暴露於網路威脅之下。VPN 會加密您的流量，保護您的安全。"
+      ],
+      "Move ${ emails }": [
+        "移動至 ${ emails }"
       ],
       "Move ${ emails } to ${ destination }": [
         "移動 ${ emails } 至 ${ destination }"
@@ -8281,6 +8319,15 @@
       "Read ${ count } email": [
         "已讀 ${ count } 封電子郵件"
       ],
+      "Read your ${ count } folder": [
+        "已讀您的 ${ count } 資料夾"
+      ],
+      "Read your ${ count } label": [
+        "已讀您的 ${ count } 標籤"
+      ],
+      "Read your auto-reply": [
+        "閱讀您的自動回覆"
+      ],
       "Read your display settings": [
         "已讀您的顯示設定"
       ],
@@ -8308,6 +8355,12 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "請記得更新您此次修改至密碼管理器或是另外保存好您的登入資訊"
       ],
+      "Remove signature": [
+        "移除簽名"
+      ],
+      "Remove the star from ${ emails }": [
+        "從 ${ emails } 電子郵件移除星號"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "刪除與此應用程式相關的所有資料（包括已下載的訊息等）"
       ],
@@ -8316,6 +8369,12 @@
       ],
       "Rename this folder": [
         "重新命名此資料夾"
+      ],
+      "reply": [
+        "回覆"
+      ],
+      "reply all": [
+        "全部回覆"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "檢舉一封郵件帶有網路釣魚的企圖，將會把郵件傳送給我們，讓我們可以分析郵件並改進我們的篩選。這意味我們將能夠完全飽覽郵件的內容。"
@@ -8367,6 +8426,9 @@
       ],
       "Searched ${ targetName }": [
         "搜尋 ${ targetName } 名稱"
+      ],
+      "Searched for mail from ${ sender }": [
+        "搜尋來自於 ${ sender } 的電子郵件"
       ],
       "Searched the web": [
         "搜尋此網頁"
@@ -8428,6 +8490,9 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "將 ${ MAIL_APP_NAME } 設為您預設郵件應用程式。當您點擊電郵位址連結時，${ MAIL_APP_NAME } 將會自動開啟。"
       ],
+      "Set auto-reply": [
+        "設置自動回覆"
+      ],
       "Set signature": [
         "設定簽名"
       ],
@@ -8484,6 +8549,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "抱歉，此郵件不存在或已過期。"
+      ],
+      "Star ${ emails }": [
+        "加星號 ${ emails }"
       ],
       "Star emails": [
         "加星電子郵件"
@@ -8761,6 +8829,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "這麼做會把您所有已登入的帳號登出。"
       ],
+      "Tidy up my inbox": [
+        "整理我的收件匣"
+      ],
       "to ${ destinationElement } folder.": [
         "至${ destinationElement }資料夾。"
       ],
@@ -8838,6 +8909,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
+      ],
+      "Turn off auto-reply": [
+        "關閉自動回復"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "關閉「搜尋郵件內容」後，僅搜尋日期、名稱、電子郵件地址或主旨。若要停用郵件內容搜尋功能(以及刪除已為了此功能而下載的郵件內容)，請至設定。"
@@ -9024,6 +9098,9 @@
       ],
       "Week": [
         "週"
+      ],
+      "What can you do?": [
+        "您可以做什麼？"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "您希望您的郵件何時從收件人的收件匣與您的寄件匣中自動刪除？"
@@ -9607,6 +9684,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } 捷徑"
+      ],
       "Action shortcuts": [
         "動作快捷鍵"
       ],
@@ -9983,6 +10063,9 @@
       ],
       "Encrypt emails": [
         "加密電郵"
+      ],
+      "Entries": [
+        "條目"
       ],
       "Exact host matching": [
         "精確的主機比對"
@@ -10473,6 +10556,9 @@
       "Time": [
         "時間"
       ],
+      "To": [
+        "至"
+      ],
       "To:": [
         "收件者："
       ],
@@ -10499,6 +10585,9 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "已取消訂閱 ${ truncatedName }。"
+      ],
+      "Until date": [
+        "直到日期"
       ],
       "Updates": [
         "更新"
@@ -10699,6 +10788,9 @@
     "Link": {
       "Add a gift code": [
         "加入禮品代碼"
+      ],
+      "Add formatting, links or images": [
+        "添加格式，連結或照片"
       ],
       "All mail": [
         "所有郵件"
@@ -12656,11 +12748,11 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " 參閱我們的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
       ],
+      "Add a payment method": [
+        "添加付款方式"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "於 ${ cancelDate } 前隨時取消。"
-      ],
-      "Cancel anytime before then.": [
-        "於之前隨時取消。"
       ],
       "contact our support team": [
         "聯絡我們的客戶支援團隊"
@@ -12683,9 +12775,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "您仍然可以在 30 天內取消並獲得按比例的退款。"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "您仍然可以在 30 天內取消並獲得按比例的退款。"
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "您可使用 ${ planTitle } 直到試用結束，您將不會被收費。"
       ],
@@ -12694,9 +12783,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "您可以免費使用 ${ planTitle }，直到試用結束為止。"
       ]
     },
     "Option": {
@@ -13589,81 +13675,12 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "取得優惠"
-      ],
-      "Summer Sale": [
-        "夏季特賣"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/每月"
-      ],
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "2 TB data storage": [
-        "2 TB 資料儲存空間"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 儲存空間：您目前方案的 40 倍"
-      ],
-      "3 TB data storage": [
-        "3 TB 資料儲存空間"
-      ],
-      "500 GB storage": [
-        "500 GB 儲存空間"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "完整存取 ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "6 位使用者的個人帳號"
-      ],
-      "Individual accounts for you and a partner": [
-        "供您與夥伴使用的個人帳號"
-      ],
-      "Online document and spreadsheet editor": [
-        "線上文件和試算表編輯器"
-      ],
-      "Recover previous file versions": [
-        "復原先前的檔案版本"
-      ],
-      "Stronger protection against cyber threats": [
-        "針對網路威脅的更強大保護"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "資料夾、標籤與篩選器無上限"
-      ],
-      "Use your own email domain": [
-        "使用您自己的電子郵件網域"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12 個月"
-      ],
-      "SUMMER SALE": [
-        "夏季特賣"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "取得優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
       ]
     },
     "q3campaign2026: Info": {
@@ -13678,6 +13695,11 @@
       ],
       "500 GB of secure storage": [
         "500 GB 安全儲存空間"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ CALENDAR_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 和 ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -14268,6 +14290,9 @@
       ],
       "Snooze ${ emails }": [
         "延後 ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "延後 ${ emails } 直到 ${ wakeTime }"
       ]
     },
     "Snooze message": {

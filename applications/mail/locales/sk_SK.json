@@ -348,9 +348,6 @@
       "Copy alias “${ name }”": [
         "Kopírovať alias \"${ name }\""
       ],
-      "Copy debug transcript": [
-        "Kopírovať prepis ladenia"
-      ],
       "Copy email to clipboard": [
         "Skopírovať email do schránky"
       ],
@@ -1771,6 +1768,16 @@
     "action": {
       "Search messages": [
         "Vyhľadať správy"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Premenovať ${ folder } na…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Premenovať ${ label } na…"
       ]
     },
     "Action: Sheets": {
@@ -7576,6 +7583,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefónne číslo možno použiť iba na overenie jedného účtu ${ BRAND_NAME }"
       ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Stručný prehľad toho, s čím vám môžem pomôcť vo vašej emailovej schránke – od vyhľadávania starých správ až po prípravu odpovedí a s čím vám pomôcť nemôžem."
+      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Žiadosť o odhlásenie z tohto mailingového zoznamu bude odoslaná odosielateľovi noviniek a automaticky spracovaná."
       ],
@@ -8026,9 +8036,6 @@
       "Daily": [
         "Denne"
       ],
-      "Debug transcript copied": [
-        "Prepis ladenia skopírovaný"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
       ],
@@ -8119,11 +8126,29 @@
       "Draft": [
         "Koncept"
       ],
+      "Draft a ${ kind }": [
+        "Navrhni ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Koncept ${ kind } pre ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Navrhni ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Navrhni ${ kind } pre ${ recipient }"
+      ],
       "Draft discarded": [
         "Koncept zmazaný"
       ],
       "Draft saved.": [
         "Koncept bol uložený."
+      ],
+      "Drafted a ${ kind }": [
+        "Navrhnuté: ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Navrhol ${ kind }"
       ],
       "Drop file here to upload": [
         "Sem presuňte súbor na nahranie"
@@ -8145,6 +8170,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Jednoduchá správa a odhlásenie sa z odberu informačných bulletinov a emailových zoznamov."
+      ],
+      "Edit ${ contact }": [
+        "Upraviť ${ contact }"
+      ],
+      "Edit a contact": [
+        "Upraviť kontakt"
+      ],
+      "Edit contact": [
+        "Upraviť kontakt"
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -8317,6 +8351,9 @@
       "Forgot password?": [
         "Zabudli ste heslo?"
       ],
+      "forward": [
+        "preposlanie"
+      ],
       "Found ${ count } contact": [
         "Nájdený ${ count } kontakt",
         "Nájdené ${ count } kontakty",
@@ -8371,6 +8408,18 @@
       "here": [
         "tu"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Ahoj Lumo, pozri sa, aké správy mi najčastejšie prichádzajú do doručenej pošty a tiež na zložky a filtre, ktoré už mám. Potom mi navrhni, ako to udržať v poriadku: čo by som mal zmeniť na tých, ktoré už mám a či by stálo za to pridať niečo nové. Najprv mi ten plán podrobne vysvetli a nič nemeň, kým ti nedám súhlas."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Ahoj, Lumo, odchádzam a chcem si nastaviť automatickú odpoveď v neprítomnosti. Opýtaj sa ma na termíny a na to, čo by sa v nej malo odznieť a potom mi tú správu ukáž, kým ju aktivuješ."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Ahoj Lumo, prezri moje emaily za posledných 7 dní a povedz mi, na ktoré z nich musím odpovedať. Stručne mi zhrň, o čo v každom z nich ide a vynechaj všetko, čo môžem ignorovať."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Ahoj, Lumo, vysvetli mi, ako mi môžeš pomôcť s mojou schránkou. O čo ťa môžem požiadať a s čím mi nemôžeš pomôcť?"
+      ],
       "Hide original message": [
         "Skryť pôvodnú správu"
       ],
@@ -8382,6 +8431,12 @@
       ],
       "I have not finished this one yet.": [
         "Ešte som to nedokončil."
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Prejdem emaily z minulého týždňa a vyberiem z nich tie, na ktoré je skutočne potrebné odpovedať, aby ste to mohli vybaviť naraz."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Pozriem sa, čo sa u vás najčastejšie objavuje a na priečinky a filtre, ktoré už máte a potom vám navrhne, čo by sa dalo vylepšiť a čo chýba. Nič sa nezmení, kým to neschválite."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Túto správu posielam príjemcovi, ktorý nie je používateľom služby ${ MAIL_APP_NAME }."
@@ -8824,6 +8879,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden alebo viac dôveryhodných kľúčov bol vlastníkom označený ako \"kompromitovaný\". Odporúčame, aby ste u takýchto kľúčov vybrali voľbu \"Nedôverovať\"."
       ],
+      "open draft": [
+        "otvoriť návrh"
+      ],
       "Open shortcut cheat sheet": [
         "Otvoriť zoznam skratiek"
       ],
@@ -9073,6 +9131,9 @@
       "Read your signature": [
         "Prečítajte si svoj podpis"
       ],
+      "Readdressed": [
+        "Spresnené"
+      ],
       "Readdressed the draft": [
         "Koncept bol prepracovaný"
       ],
@@ -9097,6 +9158,9 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Nezabudnite ho aktualizovať v správcovi hesiel alebo kdekoľvek, kde máte uložené údaje o svojom účte a prihlasovacie údaje."
       ],
+      "Remove signature": [
+        "Odstrániť podpis"
+      ],
       "Remove the star from ${ emails }": [
         "Odstrániť hviezdičku z ${ emails }"
       ],
@@ -9106,8 +9170,20 @@
       "Rename folder": [
         "Premenovať priečinok"
       ],
+      "Rename label": [
+        "Premenovať štítok"
+      ],
       "Rename this folder": [
         "Premenovať tento priečinok"
+      ],
+      "Rename this label": [
+        "Premenovať tento štítok"
+      ],
+      "reply": [
+        "odpovedať"
+      ],
+      "reply all": [
+        "odpovedať všetkým"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Nahlásenie tejto správy ako pokusu o phishing odošle túto správu Nám, aby sme ju mohli analyzovať a zlepšiť tým Naše filtre. To znamená, že uvidíme kompletne celý obsah tejto správy."
@@ -9123,6 +9199,12 @@
       ],
       "Results came from the server.": [
         "Výsledky pochádzajú zo servera."
+      ],
+      "Revise the ${ draft }": [
+        "Prepravuj ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Prepracované a spresnené"
       ],
       "Rewrote and readdressed the draft": [
         "Koncept bol prepísaný a prepracovaný"
@@ -9250,6 +9332,9 @@
       "Set auto-reply": [
         "Nastaviť automatickú odpoveď"
       ],
+      "Set my out of office": [
+        "Nastav automatickú odpoveď „Mimo kancelárie“"
+      ],
       "Set signature": [
         "Nastaviť podpis"
       ],
@@ -9372,6 +9457,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synchronizujte a spravujte súbory pomocou aplikácie ${ DRIVE_APP_NAME }. Vytvárajte a zdieľajte dokumenty v aplikácii ${ DOCS_APP_NAME } a bezpečne ich ukladajte. Všetko v aplikáciách pre ${ ios }, ${ android } a ${ desktop }."
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Povedzte mi, kedy budede preč a čo by ste tam chceli napísať. Výsledok uvidíte ešte pred jeho uložením."
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
@@ -9612,6 +9700,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
+      ],
+      "Tidy up my inbox": [
+        "Uprac moju doručenú poštu"
       ],
       "to ${ destinationElement } folder.": [
         "do priečinka ${ destinationElement }."
@@ -9906,6 +9997,12 @@
       ],
       "Week": [
         "Týždeň"
+      ],
+      "What can you do?": [
+        "Čo môžete urobiť?"
+      ],
+      "What needs handling?": [
+        "Čo je potrebné vybaviť?"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Kedy chcete, aby sa vaša správa automaticky vymazala z doručenej pošty príjemcu a vašej odoslanej pošty?"
@@ -10423,6 +10520,9 @@
       "Cancel / close": [
         "Zrušiť / zatvoriť"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Zavrieť ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Zavrieť koncept"
       ],
@@ -10522,6 +10622,9 @@
       "New message": [
         "Nová správa"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Otvoriť ${ LUMO_SHORT_APP_NAME } / zameranie na vstup"
+      ],
       "Open command panel": [
         "Otvoriť príkazový panel"
       ],
@@ -10579,6 +10682,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Skratky ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Skratky činností"
       ],
@@ -10799,6 +10905,9 @@
       ],
       "CC": [
         "Kópia (CC)"
+      ],
+      "Cc": [
+        "Kópia (Cc)"
       ],
       "Choose what to do instead": [
         "Vyberte, čo urobiť namiesto toho"
@@ -11519,6 +11628,9 @@
       ],
       "Time": [
         "Čas"
+      ],
+      "To": [
+        "Pre"
       ],
       "To:": [
         "Komu:"
@@ -13861,11 +13973,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " navštívte naše ${ helpCenterLink } alebo ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Pridajte spôsob platby**, aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Zrušiť môžete kedykoľvek pred týmto termínom.** ${ planTitle } budete môcť bezplatne využívať až do konca skúšobného obdobia."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Ak budete pokračovať aj po skončení skúšobnej doby,** môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Po začatí platnosti predplatného...** môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
+      ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Zrušiť môžete kedykoľvek pred ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Zrušiť môžete kedykoľvek predtým."
       ],
       "contact our support team": [
         "kontaktujte náš tím podpory"
@@ -13879,17 +14003,23 @@
       "help center": [
         "centrum pomoci"
       ],
+      "If you continue after your trial,": [
+        "Ak budete pokračovať aj po skončení skúšobnej doby,"
+      ],
       "If you need help,": [
         "Ak potrebujete pomoc,"
       ],
       "Once your full subscription starts...": [
         "Akonáhle začne vaše plné predplatné..."
       ],
+      "to keep using all of the features after your trial ends.": [
+        "aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Stále môžete zrušiť do 30 dní a získať pomernú náhradu späť."
-      ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Stále môžete do 30 dní zrušiť a získať späť pomernú náhradu."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
@@ -13899,9 +14029,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaše plné ${ planTitle } predplatné začína dňa ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Budete môcť používať ${ planTitle } až do konca skúšobného obdobia, bez poplatku."
       ]
     },
     "Option": {
@@ -14847,78 +14974,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Využite ponuku"
-      ],
-      "Summer Sale": [
-        "Letný výpredaj"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mesačným"
-      ],
-      "15 GB storage": [
-        "15 GB úložisko"
-      ],
-      "2 TB data storage": [
-        "2 TB dátové úložisko"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB úložisko: 40x váš súčasný plán"
-      ],
-      "3 TB data storage": [
-        "3 TB dátové úložisko"
-      ],
-      "500 GB storage": [
-        "500 GB úložisko"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Zľavy vychádzajú zo štandardných mesačných cien. Po skončení fakturačného obdobia sa vaše predplatné obnoví za štandardnú ročnú sadzbu."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Plný prístup k službe ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Samostatné účty pre 6 používateľov"
-      ],
-      "Individual accounts for you and a partner": [
-        "Samostatné účty pre vás a partnera"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online editor dokumentov a tabuliek"
-      ],
-      "Recover previous file versions": [
-        "Obnovte predchádzajúce verzie súborov"
-      ],
-      "Stronger protection against cyber threats": [
-        "Silnejšia ochrana pred kybernetickými hrozbami"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Prejdite na náš ročný plán a ušetrite ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Neobmedzený počet priečinkov, štítkov a filtrov"
-      ],
-      "Use your own email domain": [
-        "Používajte vlastnú emailovú doménu"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "na 12 mesiacov"
-      ],
-      "SUMMER SALE": [
-        "LETNÝ VÝPREDAJ"
       ]
     },
     "q3campaign2026: Action": {

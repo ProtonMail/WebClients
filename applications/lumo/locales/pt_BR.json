@@ -1107,6 +1107,9 @@
       "Manage files": [
         "Gerenciar arquivos"
       ],
+      "Manage Subscription": [
+        "Gerenciar assinatura"
+      ],
       "More options": [
         "Mais opções"
       ],
@@ -1408,6 +1411,9 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Adicione suas próprias memórias, edite qualquer entrada gerada automaticamente ou limpe tudo a qualquer momento. As memórias geradas que você editar serão promovidas a memórias criadas por você."
       ],
+      "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
+        "Após você prosseguir, o Apertus aparecerá como o modelo selecionado no menu de modelos. Você poderá usar este menu para alternar para outro modelo a qualquer momento."
+      ],
       "Always enable web search for new conversations": [
         "Sempre ativar a pesquisa na web para novas conversas"
       ],
@@ -1426,8 +1432,14 @@
       "High-performance model for complex tasks": [
         "Modelo de alto desempenho para tarefas complexas"
       ],
+      "If Apertus gives you a poor response, use the thumbs down button to send feedback. The related prompt and response will be shared with university research teams at ETH Zurich and EPFL to help improve the model. This feedback loop is especially valuable for fully open models, helping them improve faster and remain competitive.": [
+        "Se o Apertus fornecer uma resposta inadequada, use o botão de polegar para baixo para enviar feedback. A pergunta original e a resposta serão compartilhadas com as equipes de pesquisa da universidade em ETH Zurique e EPFL, a fim de ajudar a melhorar o modelo. Esse ciclo de feedback é especialmente valioso para modelos totalmente abertos, auxiliando-os a melhorar mais rapidamente e a manter a competitividade."
+      ],
       "Include project conversations in the main chat history": [
         "Inclua conversas sobre projetos no histórico principal do bate-papo"
+      ],
+      "Its model weights, training data, values, and development details are open for inspection. The ${ apertusCharterLink } provides strong ethical guardrails for privacy, responsible data use, transparency, and human agency.": [
+        "Os pesos do modelo, dados de treinamento, valores e detalhes de desenvolvimento estão disponíveis para inspeção. O ${ apertusCharterLink } oferece fortes salvaguardas éticas para privacidade, uso responsável de dados, transparência e autonomia humana."
       ],
       "Keep it safe — it won't be shown again": [
         "Guarde em segurança - não será exibido novamente"
@@ -1482,6 +1494,9 @@
       ],
       "This will permanently remove all saved memories. ${ LUMO_SHORT_APP_NAME } will no longer use them in future chats.": [
         "Isso removerá permanentemente todas as memórias salvas. O ${ LUMO_SHORT_APP_NAME } não as usará mais em chats futuros."
+      ],
+      "Try the new fully open, Swiss-made AI model developed with leading Swiss research institutions.": [
+        "Experimente o novo modelo de IA, totalmente aberto e desenvolvido com instituições de pesquisa suíças de ponta."
       ],
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Desativar a memória excluirá permanentemente todas as ${ memories.length } memórias salvas. Você poderá ativar a memória mais tarde, mas as memórias excluídas não poderão ser recuperadas."
@@ -2036,6 +2051,9 @@
       "Manage keys after you sign in": [
         "Gerenciar chaves após o início de sessão"
       ],
+      "Matching files": [
+        "Arquivos correspodentes"
+      ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Nunca inclua chaves de API em pacotes do lado do cliente. Em produção, utilize variáveis ​​de ambiente e um proxy do lado do servidor."
       ],
@@ -2074,6 +2092,12 @@
       ],
       "Please wait for files to finish processing": [
         "Aguarde o processamento dos arquivos"
+      ],
+      "PPTX": [
+        "PPTX"
+      ],
+      "Preparing ${ formatLabel }…": [
+        "Preparando ${ formatLabel }…"
       ],
       "Private video calls for the conversations that matter.": [
         "Videochamadas privadas para as conversas importantes."
@@ -2237,6 +2261,9 @@
       "We can help you get started with using the ${ LUMO_SHORT_APP_NAME } API. Describe what you want to automate. ${ LUMO_SHORT_APP_NAME } returns a workflow graph and sample code that calls the ${ LUMO_SHORT_APP_NAME } API.": [
         "Podemos ajudar você a começar a usar a API ${ LUMO_SHORT_APP_NAME }. Descreva o que você quer automatizar. ${ LUMO_SHORT_APP_NAME } retorna um gráfico do fluxo de trabalho e um código de exemplo que chama a API ${ LUMO_SHORT_APP_NAME }."
       ],
+      "When you submit feedback, your prompt and this response are sent to ${ BRAND_NAME } for analysis and improvement. Feedback about Apertus may also be shared with the Apertus team.": [
+        "Ao enviar seu feedback, sua pergunta e esta resposta são encaminhadas para a ${ BRAND_NAME } para análise e aprimoramento. O feedback sobre a Apertus também pode ser compartilhado com a equipe da Apertus."
+      ],
       "You are about to visit an external website:": [
         "Você está prestes a visitar um site externo:"
       ],
@@ -2251,6 +2278,9 @@
       ],
       "Your memories are already well organized.": [
         "Suas memórias já estão bem organizadas."
+      ],
+      "Your prompt and this response will be sent to ${ BRAND_NAME } for analysis and improvement. Images and other attachments are not included.": [
+        "Sua solicitação e esta resposta serão enviadas para a ${ BRAND_NAME } para análise e aprimoramento. Imagens e outros anexos não estão incluídos."
       ]
     },
     "collider_2025: Job": {
@@ -2913,6 +2943,9 @@
       ],
       "For Business": [
         "Para empresas"
+      ],
+      "New": [
+        "Novo"
       ]
     },
     "collider_2025: Trait": {
@@ -3255,6 +3288,9 @@
       "Download image": [
         "Baixar imagem"
       ],
+      "Download PPTX": [
+        "Baixar PPTX"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -3270,6 +3306,9 @@
       "Edit project": [
         "Editar projeto"
       ],
+      "Exit full screen": [
+        "Sair da tela cheia"
+      ],
       "Expand": [
         "Expandir"
       ],
@@ -3278,6 +3317,9 @@
       ],
       "Favorite": [
         "Favorito"
+      ],
+      "Full screen": [
+        "Tela cheia"
       ],
       "Generate my report": [
         "Gerar meu relatório"
@@ -3440,6 +3482,9 @@
       ],
       "Upload your AI export": [
         "Envie sua exportação de IA"
+      ],
+      "View mode": [
+        "Modo de visualização"
       ],
       "View v${ versionNumber }": [
         "Ver v${ versionNumber }"
@@ -4080,6 +4125,9 @@
       "AI platform": [
         "Plataforma de IA"
       ],
+      "Artifact view": [
+        "Visualização de artefato"
+      ],
       "Card theme": [
         "Tema do cartão"
       ],
@@ -4450,6 +4498,9 @@
       ],
       "Created an image": [
         "Criou uma imagem"
+      ],
+      "Created artifact": [
+        "Artefato criado"
       ],
       "Creating an image": [
         "Criando uma imagem"
@@ -6061,6 +6112,9 @@
       "An error occurred": [
         "Ocorreu um erro"
       ],
+      "Bookmark password is not available": [
+        "A senha do marcador não está disponível"
+      ],
       "Cannot download a folder": [
         "Não é possível baixar uma pasta"
       ],
@@ -6087,6 +6141,9 @@
       ],
       "Could not load sharing details": [
         "Não foi possível carregar os detalhes do compartilhamento"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Não foi possível carregar a pré-visualização da imagem: ${ message }"
       ],
       "Could not unlock the parent folder": [
         "Não foi possível desbloquear a pasta pai"
@@ -6124,6 +6181,9 @@
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
       ],
+      "Expiration date cannot be in the past": [
+        "A data de expiração não pode ser anterior ao passado"
+      ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Falha ao descriptografar a chave de marcador: ${ message }"
       ],
@@ -6138,6 +6198,9 @@
       ],
       "Failed to decrypt item name: ${ message }": [
         "Falha ao descriptografar o nome do item: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Falha ao descriptografar a chave de nó: ${ message }"
       ],
       "Failed to decrypt revision metadata": [
         "Falha ao descriptografar os metadados da revisão"
@@ -6189,6 +6252,9 @@
       ],
       "Missing signature": [
         "Assinatura ausente"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta a assinatura para ${ signatureType }"
       ],
       "Moving item to a non-folder is not allowed": [
         "Não é permitido mover o item para um local que não seja uma pasta"
@@ -6355,6 +6421,9 @@
       ],
       "This item is not shared": [
         "Este item não está compartilhado"
+      ],
+      "Too many server errors, please try again later": [
+        "Muitos erros ao servidor, tente novamente mais tarde"
       ],
       "Too many server requests, please try again later": [
         "Muitas solicitações ao servidor, tente novamente mais tarde"
@@ -8902,6 +8971,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite nossa ${ helpCenterLink } ou ${ contactSupportLink }."
       ],
+      "Add a payment method": [
+        "Adicionar método de pagamento"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancele a qualquer momento antes do ${ cancelDate }."
       ],
@@ -9223,6 +9295,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Falha ao inicializar o ${ IDEAL_WERO_BRAND_NAME }. Tente novamente mais tarde."
+      ],
       "Invalid card number": [
         "O número do cartão não é válido."
       ],
@@ -9245,6 +9320,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Ocorreu um erro. A verificação do Google Pay falhou."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, você autoriza a ${ BRAND_NAME } e a Stripe, nossa provedora de serviços de pagamento, a realizar cobranças futuras da sua assinatura nesta conta bancária via Débito Direto, e autoriza seu banco a debitar esses valores. Seu primeiro pagamento é realizado agora via ${ IDEAL_WERO_BRAND_NAME }. Seu plano é renovado automaticamente até que você o cancele; notificaremos você antes de cada cobrança. Para cobranças via débito direto, você pode solicitar um reembolso ao seu banco em até 8 semanas após a data do débito, conforme os termos do seu contrato com o banco. Isso não se aplica ao pagamento via ${ IDEAL_WERO_BRAND_NAME } que você está realizando agora."
       ]
     },
     "Payments.info": {
@@ -9485,78 +9565,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aproveitar a oferta"
-      ],
-      "Summer Sale": [
-        "Oferta Especial"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mês"
-      ],
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "2 TB data storage": [
-        "2 TB de armazenamento de dados"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de armazenamento: 40x o seu plano atual"
-      ],
-      "3 TB data storage": [
-        "3 TB de armazenamento de dados"
-      ],
-      "500 GB storage": [
-        "500 GB de armazenamento"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acesso total ao ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Contas individuais para 6 usuários"
-      ],
-      "Individual accounts for you and a partner": [
-        "Contas individuais para você e um parceiro"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor on-line de documentos e planilhas"
-      ],
-      "Recover previous file versions": [
-        "Recupere versões anteriores de arquivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Proteção mais forte contra ameaças cibernéticas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, marcadores e filtros ilimitados"
-      ],
-      "Use your own email domain": [
-        "Use seu próprio domínio de e-mail"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "por 12 meses"
-      ],
-      "SUMMER SALE": [
-        "OFERTA ESPECIAL"
       ]
     },
     "q3campaign2026: Action": {

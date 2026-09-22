@@ -154,6 +154,9 @@
       "Close navigation": [
         "Закрити панель навігації"
       ],
+      "Collapse": [
+        "Згорнути"
+      ],
       "Configure": [
         "Налаштувати"
       ],
@@ -235,6 +238,9 @@
       "Create contact": [
         "Створити контакт"
       ],
+      "Create folder": [
+        "Створити теку"
+      ],
       "Create identity": [
         "Створити ідентичність"
       ],
@@ -243,6 +249,9 @@
       ],
       "Create login": [
         "Створити запис входу"
+      ],
+      "Create new folder": [
+        "Створити нову теку"
       ],
       "Create new login": [
         "Створити новий вхід"
@@ -342,6 +351,9 @@
       ],
       "Exclude from monitoring": [
         "Виключити з моніторингу"
+      ],
+      "Expand": [
+        "Розгорнути"
       ],
       "Export": [
         "Експортувати"
@@ -484,8 +496,8 @@
       "Move all items": [
         "Перемістити всі елементи"
       ],
-      "Move to another vault": [
-        "Перемістити в інше сховище"
+      "Move to": [
+        "Перемістити до"
       ],
       "Move to trash": [
         "Перемістити до смітника"
@@ -570,6 +582,9 @@
       ],
       "Remove member": [
         "Вилучити учасника"
+      ],
+      "Rename": [
+        "Перейменувати"
       ],
       "Request a feature": [
         "Запит нової функції"
@@ -1114,6 +1129,9 @@
       ],
       "Failed to create domain": [
         "Не вдалося створити домен"
+      ],
+      "Failed to create folder": [
+        "Не вдалося створити папку"
       ],
       "Failed to create new mailbox": [
         "Не вдалося створити нову поштову скриньку"
@@ -1912,9 +1930,6 @@
       ],
       "Creating alias...": [
         "Створення псевдоніма..."
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV пропонує зручний формат для перегляду ваших даних. However due to its simplicity, some data will not be included (custom fields, passkeys...). Для повного експорту ми рекомендуємо використовувати інший формат."
       ],
       "Current version": [
         "Поточна версія"
@@ -3531,6 +3546,9 @@
       "Floor, apartment, building": [
         "Поверх, квартира, будівля"
       ],
+      "Folder": [
+        "Тека"
+      ],
       "For a one-off sharing": [
         "Для одноразового поширення"
       ],
@@ -4577,9 +4595,6 @@
       "Please describe the problem and include any error messages": [
         "Опишіть проблему та додайте повідомлення про помилку"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Повторно введіть \"${ vaultName }\", щоб підтвердити видалення"
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Шукати ${ pluralItemType } в ${ vaultName }"
       ],
@@ -4938,9 +4953,6 @@
       "Delete this item?": [
         "Видалити цей елемент?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Видалити сховище \"${ vaultName }\"?"
-      ],
       "Did you know?": [
         "Чи знаєте ви?"
       ],
@@ -4994,6 +5006,9 @@
       ],
       "Fill password": [
         "Заповнити пароль"
+      ],
+      "Folder options": [
+        "Опції теки"
       ],
       "Get Started": [
         "Розпочати"
@@ -5082,12 +5097,6 @@
       "Modified": [
         "Змінено"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Перемістити ${ count } елемент до ${ vaultName }",
-        "Перемістити ${ count } елементи до ${ vaultName }",
-        "Перемістити ${ count } елементів до ${ vaultName }",
-        "Перемістити ${ count } елементи до ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Перемістити елемент ${ trashedItemsCount } до смітника?",
         "Перемістити елементи ${ trashedItemsCount } до смітника?",
@@ -5096,9 +5105,6 @@
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Перемістити всі елементи до «${ vaultName }»?"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "Перемістити елемент до \"${ vaultName }\""
       ],
       "MX record": [
         "MX запис"
@@ -5651,9 +5657,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Неможливо увійти в ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Vault \"${ vaultName }\" і всі його елементи будуть остаточно видалені. Ви не зможете скасувати цю дію."
       ],
       "Vault name is required": [
         "Потрібно вказати назву сховища"

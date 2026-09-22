@@ -169,6 +169,9 @@
       "Close navigation": [
         "Navigatie sluiten"
       ],
+      "Collapse": [
+        "Inklappen"
+      ],
       "Confirm": [
         "Bevestigen"
       ],
@@ -247,6 +250,9 @@
       "Create contact": [
         "Contact aanmaken"
       ],
+      "Create folder": [
+        "Maak map"
+      ],
       "Create identity": [
         "Identiteit aanmaken"
       ],
@@ -255,6 +261,9 @@
       ],
       "Create login": [
         "Login aanmaken"
+      ],
+      "Create new folder": [
+        "Nieuwe map aanmaken"
       ],
       "Create new items": [
         "Nieuwe items aanmaken"
@@ -357,6 +366,9 @@
       ],
       "Exclude from monitoring": [
         "Uitsluiten van controle"
+      ],
+      "Expand": [
+        "Uitklappen"
       ],
       "Export": [
         "Exporteren"
@@ -502,8 +514,8 @@
       "Move all items": [
         "Alle items verplaatsen"
       ],
-      "Move to another vault": [
-        "Verplaatsen naar andere kluis"
+      "Move to": [
+        "Verplaatsen naar"
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
@@ -600,6 +612,9 @@
       ],
       "Remove member": [
         "Lid verwijderen"
+      ],
+      "Rename": [
+        "Hernoem"
       ],
       "Request a feature": [
         "Vraag een functie aan"
@@ -1151,6 +1166,9 @@
       ],
       "Failed to create domain": [
         "Maken van domein is mislukt"
+      ],
+      "Failed to create folder": [
+        "Mislukt om map aan te maken"
       ],
       "Failed to create new mailbox": [
         "Het maken van een nieuwe mailbox is mislukt"
@@ -1869,9 +1887,6 @@
       "Created item": [
         "Item aangemaakt"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV-bestand biedt een handig formaat om je gegevens te bekijken. Echter, door de eenvoud ervan worden sommige gegevens niet opgenomen (aangepaste velden, toegangssleutels. .). Voor een volledige export, raden we een ander formaat aan."
-      ],
       "Current version": [
         "Huidige versie"
       ],
@@ -2207,8 +2222,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -3404,6 +3418,9 @@
       "Floor, apartment, building": [
         "Vloer, appartement, gebouw"
       ],
+      "Folder": [
+        "Map"
+      ],
       "For a one-off sharing": [
         "Voor eenmalig delen"
       ],
@@ -4547,9 +4564,6 @@
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Typ nogmaals \"${ vaultName }\" om de verwijdering te bevestigen"
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Zoek ${ pluralItemType } in ${ vaultName }"
       ],
@@ -4920,9 +4934,6 @@
       "Delete this item?": [
         "Dit item verwijderen?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Kluis \"${ vaultName }\" verwijderen?"
-      ],
       "Did you know?": [
         "Wist u dat?"
       ],
@@ -4967,6 +4978,9 @@
       ],
       "Excluded items": [
         "Uitgesloten items"
+      ],
+      "Folder options": [
+        "Mapopties"
       ],
       "Get Started": [
         "Aan de slag"
@@ -5046,19 +5060,12 @@
       "Modified": [
         "Gewijzigd"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Verplaats ${ count } item naar ${ vaultName }",
-        "Verplaats ${ count } items naar ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount } item naar prullenbak verplaatsen?",
         "${ trashedItemsCount } items naar prullenbak verplaatsen?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Alle items verplaatsen naar \"${ vaultName }\"?"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "Item verplaatsen naar \"${ vaultName }\""
       ],
       "MX record": [
         "MX-record"
@@ -5614,9 +5621,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Kan niet inloggen bij ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Vault \"${ vaultName }\" en alle bijbehorende items worden permanent verwijderd. U kunt deze actie niet ongedaan maken."
       ],
       "Vault name is required": [
         "Kluisnaam is vereist"

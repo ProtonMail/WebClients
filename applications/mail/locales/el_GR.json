@@ -346,9 +346,6 @@
       "Copy alias “${ name }”": [
         "Αντιγραφή ψευδώνυμου “${ name }”"
       ],
-      "Copy debug transcript": [
-        "Αντιγραφή μεταγραφής εντοπισμού σφαλμάτων"
-      ],
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
       ],
@@ -7340,6 +7337,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
       ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Μια σύντομη επισκόπηση του τι μπορώ να κάνω για τα μηνύματά σας, από την εύρεση παλιών μηνυμάτων έως τη σύνταξη απαντήσεων, καθώς και του τι δεν μπορώ να κάνω."
+      ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Μια αίτηση διαγραφής από αυτή τη λίστα θα σταλεί στον αποστολέα του ενημερωτικού δελτίου και θα επεξεργαστεί αυτόματα."
       ],
@@ -7774,9 +7774,6 @@
       "Daily": [
         "Καθημερινά"
       ],
-      "Debug transcript copied": [
-        "Η μεταγραφή εντοπισμού σφαλμάτων αντιγράφηκε"
-      ],
       "Dedicated servers": [
         "Αποκλειστικοί διακομιστές"
       ],
@@ -7865,11 +7862,29 @@
       "Draft": [
         "Πρόχειρο"
       ],
+      "Draft a ${ kind }": [
+        "Συντάξτε ένα ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Συντάξτε ένα ${ kind } προς τον ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Συντάξτε ένα ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Συντάξτε ένα ${ kind } προς τον ${ recipient }"
+      ],
       "Draft discarded": [
         "Το πρόχειρο απορρίφθηκε"
       ],
       "Draft saved.": [
         "Το πρόχειρο αποθηκεύτηκε."
+      ],
+      "Drafted a ${ kind }": [
+        "Συντάχθηκε ένα ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Συντάχθηκε ένα ${ kind }"
       ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
@@ -7891,6 +7906,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Διαχειριστείτε εύκολα και καταργήστε την εγγραφή σας από ενημερωτικά δελτία και λίστες αλληλογραφίας."
+      ],
+      "Edit ${ contact }": [
+        "Επεξεργασία ${ contact }"
+      ],
+      "Edit a contact": [
+        "Επεξεργασία μιας επαφής"
+      ],
+      "Edit contact": [
+        "Επεξεργασία επαφής"
       ],
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
@@ -8053,6 +8077,9 @@
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
+      "forward": [
+        "προώθηση"
+      ],
       "Found ${ count } contact": [
         "Βρέθηκε ${ count } επαφή",
         "Βρέθηκαν ${ count } επαφές"
@@ -8099,6 +8126,18 @@
       "here": [
         "εδώ"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Γεια σου Lumo, ρίξε μια ματιά στα μηνύματα που λαμβάνω συχνότερα στα εισερχόμενά μου, καθώς και στους φακέλους και τα φίλτρα που έχω ήδη. Στη συνέχεια, πρότεινέ μου πώς να τα οργανώσω καλύτερα: τι να αλλάξω στα υπάρχοντα και τι καινούργιο αξίζει να προσθέσω. Πρώτα εξήγησέ μου το σχέδιο και μην μετακινήσεις τίποτα μέχρι να δώσω τη συγκατάθεσή μου."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Γεια σου Lumo, θα λείπω και θέλω να ρυθμίσεις μια αυτόματη απάντηση για την απουσία μου. Ρώτησέ με για τις ημερομηνίες και το περιεχόμενο του μηνύματος, και στη συνέχεια δείξε μου το μήνυμα πριν το ενεργοποιήσεις."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Γεια σου Lumo, ψάξε στα ηλεκτρονικά μηνύματά μου των τελευταίων 7 ημερών και πες μου ποια απαιτούν όντως απάντηση από εμένα. Γράψε μου με λίγα λόγια τι ζητάει το καθένα και παράλειψε όσα μπορώ να αγνοήσω."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Γεια σου Lumo, εξήγησέ μου πώς μπορείς να με βοηθήσεις με το γραμματοκιβώτιό μου. Τι είδους εργασίες μπορώ να σου ζητήσω να κάνεις και σε τι δεν μπορείς να βοηθήσεις;"
+      ],
       "Hide original message": [
         "Απόκρυψη αρχικού μηνύματος"
       ],
@@ -8110,6 +8149,12 @@
       ],
       "I have not finished this one yet.": [
         "Δεν το έχω τελειώσει ακόμα αυτό."
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Θα ελέγξω την αλληλογραφία της περασμένης εβδομάδας και θα ξεχωρίσω ό,τι όντως απαιτεί απάντηση, ώστε να μπορέσετε να το διεκπεραιώσετε με τη μία."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Θα εξετάσω τι λαμβάνετε συχνότερα, καθώς και τους φακέλους και τα φίλτρα που ήδη διαθέτετε, και στη συνέχεια θα σας προτείνω τι μπορεί να βελτιωθεί και τι λείπει. Δε θα αλλάξει τίποτα αν δε δώσετε εσείς τη σχετική έγκριση."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Στέλνω αυτό το μήνυμα σε έναν χρήστη εκτός ${ MAIL_APP_NAME }."
@@ -8548,6 +8593,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
       ],
+      "open draft": [
+        "άνοιγμα προσχέδιου"
+      ],
       "Open shortcut cheat sheet": [
         "Άνοιγμα λίστας συντομεύσεων"
       ],
@@ -8781,6 +8829,9 @@
       "Read your signature": [
         "Διαβάστε την υπογραφή σας"
       ],
+      "Readdressed": [
+        "Ανακατεύθυνση"
+      ],
       "Readdressed the draft": [
         "Αναδιαμόρφωσα το προσχέδιο"
       ],
@@ -8826,6 +8877,12 @@
       "Rename this label": [
         "Μετονομασία αυτής της ετικέτας"
       ],
+      "reply": [
+        "απάντηση"
+      ],
+      "reply all": [
+        "απάντηση σε όλους"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Η αναφορά ενός μηνύματος ως προσπάθεια ηλεκτρονικού \"ψαρέματος\" (phising) θα το αποστείλει σε εμάς, ώστε να το αναλύσουμε και να βελτιώσουμε τα φίλτρα μας. Αυτό σημαίνει ότι θα μπορέσουμε να δούμε το περιεχόμενο ολόκληρου του μηνύματος."
       ],
@@ -8840,6 +8897,12 @@
       ],
       "Results came from the server.": [
         "Τα αποτελέσματα προήλθαν από τον διακομιστή."
+      ],
+      "Revise the ${ draft }": [
+        "Αναθεωρήστε το ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Ξαναγράφτηκε και απευθύνθηκε εκ νέου"
       ],
       "Rewrote and readdressed the draft": [
         "Ξαναέγραψα και αναδιαμόρφωσα το προσχέδιο."
@@ -8964,6 +9027,9 @@
       ],
       "Set auto-reply": [
         "Ορισμός αυτόματης απάντησης"
+      ],
+      "Set my out of office": [
+        "Ρύθμιση κατάστασης εκτός γραφείου"
       ],
       "Set signature": [
         "Ορισμός υπογραφής"
@@ -9320,6 +9386,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
       ],
+      "Tidy up my inbox": [
+        "Τακτοποίηση των εισερχομένων μου"
+      ],
       "to ${ destinationElement } folder.": [
         "στον φάκελο ${ destinationElement }."
       ],
@@ -9613,6 +9682,12 @@
       ],
       "Week": [
         "Εβδομάδα"
+      ],
+      "What can you do?": [
+        "Τι μπορείτε να κάνετε;"
+      ],
+      "What needs handling?": [
+        "Τι χρειάζεται διευθέτηση;"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Πότε θέλετε να διαγραφεί αυτόματα το μήνυμά σας από τα εισερχόμενα του παραλήπτη και από τον φάκελο των απεσταλμένων σας;"
@@ -10076,6 +10151,9 @@
       "Cancel / close": [
         "Ακύρωση / κλείσιμο"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Κλείσιμο ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Κλείσιμο προχείρου"
       ],
@@ -10175,6 +10253,9 @@
       "New message": [
         "Νέο μήνυμα"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Άνοιγμα ${ LUMO_SHORT_APP_NAME } / εστίαση εισαγωγής"
+      ],
       "Open command panel": [
         "Άνοιγμα πίνακα εντολών"
       ],
@@ -10232,6 +10313,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } συντομεύσεις"
+      ],
       "Action shortcuts": [
         "Συντομεύσεις ενεργειών"
       ],
@@ -10445,6 +10529,9 @@
         "Κατηγορία"
       ],
       "CC": [
+        "Κοιν."
+      ],
+      "Cc": [
         "Κοιν."
       ],
       "Choose what to do instead": [
@@ -11166,6 +11253,9 @@
       ],
       "Time": [
         "Ώρα"
+      ],
+      "To": [
+        "Προς"
       ],
       "To:": [
         "Προς:"
@@ -13418,11 +13508,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " επισκεφθείτε το ${ helpCenterLink } ή ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Προσθέστε έναν τρόπο πληρωμής** για να συνεχίσετε να χρησιμοποιείτε όλες τις λειτουργίες μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή πριν από τότε.** Θα μπορείτε να χρησιμοποιείτε το ${ planTitle } δωρεάν μέχρι τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Αν συνεχίσετε μετά τη δοκιμαστική περίοδο,** μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Μόλις ξεκινήσει η πλήρης συνδρομή σας...** Μπορείτε ακόμα να την ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Ακυρώστε οποιαδήποτε στιγμή πριν από τις ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Ακυρώστε οποιαδήποτε στιγμή πριν από τότε."
       ],
       "contact our support team": [
         "επικοινωνήστε με την ομάδα υποστήριξής μας"
@@ -13436,16 +13538,22 @@
       "help center": [
         "κέντρο βοήθειας"
       ],
+      "If you continue after your trial,": [
+        "Αν συνεχίσετε μετά τη δοκιμή σας,"
+      ],
       "If you need help,": [
         "Εάν χρειάζεστε βοήθεια,"
       ],
       "Once your full subscription starts...": [
         "Μόλις ξεκινήσει η πλήρης συνδρομή σας..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Μπορείτε ακόμα να ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
+      "to keep using all of the features after your trial ends.": [
+        "για να συνεχίσετε να χρησιμοποιείτε όλες τις λειτουργίες μετά τη λήξη της δοκιμαστικής περιόδου."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Μπορείτε ακόμα να ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -13456,9 +13564,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Η πλήρης συνδρομή σας ${ planTitle } ξεκινά στις ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Θα μπορείτε να χρησιμοποιήσετε ${ planTitle } δωρεάν μέχρι το τέλος της δοκιμαστικής περιόδου."
       ]
     },
     "Option": {
@@ -14382,78 +14487,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Αποκτήστε την προσφορά"
-      ],
-      "Summer Sale": [
-        "Καλοκαιρινές εκπτώσεις"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/μήνας"
-      ],
-      "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
-      ],
-      "2 TB data storage": [
-        "Χώρος αποθήκευσης δεδομένων 2 TB"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
-      ],
-      "3 TB data storage": [
-        "Χώρος αποθήκευσης δεδομένων 3 TB"
-      ],
-      "500 GB storage": [
-        "500 GB αποθηκευτικός χώρος"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια τιμή όταν λήξει ο κύκλος χρέωσης."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Πλήρης πρόσβαση στο ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Ατομικοί λογαριασμοί για 6 χρήστες"
-      ],
-      "Individual accounts for you and a partner": [
-        "Ατομικοί λογαριασμοί για εσάς και έναν σύντροφο"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online πρόγραμμα επεξεργασίας εγγράφων και υπολογιστικών φύλλων"
-      ],
-      "Recover previous file versions": [
-        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
-      ],
-      "Stronger protection against cyber threats": [
-        "Ισχυρότερη προστασία από κυβερνοαπειλές"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Μεταβείτε στο ετήσιο πρόγραμμά μας και εξοικονομήστε ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
-      ],
-      "Use your own email domain": [
-        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "για 12 μήνες"
-      ],
-      "SUMMER SALE": [
-        "ΚΑΛΟΚΑΙΡΙΝΕΣ ΕΚΠΤΩΣΕΙΣ"
       ]
     },
     "q3campaign2026: Action": {

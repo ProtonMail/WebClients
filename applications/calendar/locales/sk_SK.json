@@ -236,9 +236,6 @@
       "Copy address": [
         "Kopírovať adresu"
       ],
-      "Copy alias “${ name }”": [
-        "Kopírovať alias \"${ name }\""
-      ],
       "Copy booking page link": [
         "Kopírovať odkaz na stránku rezervácie"
       ],
@@ -277,9 +274,6 @@
       ],
       "Create an event": [
         "Vytvoriť udalosť"
-      ],
-      "Create and copy alias": [
-        "Vytvoriť a kopírovať alias"
       ],
       "Create booking page": [
         "Vytvoriť stránku rezervácií"
@@ -733,6 +727,9 @@
       ],
       "Refresh the page": [
         "Obnoviť stránku"
+      ],
+      "refresh the page": [
+        "obnoviť stránku"
       ],
       "Remove": [
         "Vymazať"
@@ -3335,9 +3332,6 @@
       ],
       "You’ll get a secure email with the details shortly.": [
         "V krátkej dobe dostanete zabezpečený email s podrobnosťami."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3682,18 +3676,6 @@
       "Address primary private key not found": [
         "Primárny súkromný kľúč adresy nenájdený"
       ],
-      "Alias is not valid": [
-        "Alias nie je platný"
-      ],
-      "Alias is required": [
-        "Alias je povinný"
-      ],
-      "Alias options could not be resolved": [
-        "Možnosti aliasu sa nepodarilo vyriešiť"
-      ],
-      "Aliases could not be loaded": [
-        "Aliasy sa nepodarilo načítať"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Všetok úložný priestor bol pridelený. Zmenšite prosím úložný priestor pridelený iným používateľom."
       ],
@@ -3705,12 +3687,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Suma nižšia ako minimum (${ minimumAmount })."
-      ],
-      "An error occurred while loading alias options": [
-        "Došlo k chybe pri načítaní možností aliasu"
-      ],
-      "An error occurred while saving your alias": [
-        "Pri ukladaní vášho aliasu došlo k chybe."
       ],
       "Answer failed to be sent": [
         "Odpoveď sa nepodarilo odoslať"
@@ -3796,12 +3772,6 @@
       "Could not load the image preview: ${ message }": [
         "Nepodarilo sa načítať náhľad obrázku: ${ message }"
       ],
-      "Could not open created vault": [
-        "Nepodarilo sa otvoriť vytvorený trezor"
-      ],
-      "Could not open updated vault": [
-        "Nepodarilo sa otvoriť aktualizovaný trezor"
-      ],
       "Could not read part of this file: ${ message }": [
         "Nepodarilo sa prečítať časť tohto súboru: ${ message }"
       ],
@@ -3880,9 +3850,6 @@
       "Expiration date cannot be in the past": [
         "Dátum ukončenia platnosti nemôže byť v minulosti"
       ],
-      "Failed loading group members": [
-        "Chyba pri načítavaní členov skupiny"
-      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "Nepodarilo sa pridať existujúcu ${ MEET_APP_NAME } videokonferenciu."
       ],
@@ -3952,9 +3919,6 @@
       "Folder name cannot be empty.": [
         "Názov priečinka nesmie byť prázdny."
       ],
-      "Forward address is required": [
-        "Adresa preposielania je povinná"
-      ],
       "Image preview not found": [
         "Náhľad obrázka nebol nájdený"
       ],
@@ -4015,9 +3979,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Udalosť je možné presunúť iba medzi ${ minDateString } - ${ maxDateString }"
       ],
-      "Item content cannot exceed 40KB": [
-        "Obsah položky nesmie presiahnuť 40KB"
-      ],
       "Item not found": [
         "Položka nebola nájdená"
       ],
@@ -4069,9 +4030,6 @@
       "Moving root item is not allowed": [
         "Presun koreňovej položky nie je povolený"
       ],
-      "Name is required": [
-        "Názov je povinný"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znak",
         "Meno môže obsahovať maximálne ${ MAX_NODE_NAME_LENGTH } znaky",
@@ -4083,9 +4041,6 @@
       ],
       "Name required": [
         "Názov je povinný"
-      ],
-      "Network error": [
-        "Chyba siete"
       ],
       "No booking page data received": [
         "Neboli prijaté žiadne údaje zo stránky rezervácie"
@@ -4332,6 +4287,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Pri načítavaní dostupných domén sa vyskytla chyba"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Došlo k chybe, vykonajte ${ refresh } stránky. Ak stále vidíte túto chybu, kontaktujte náš ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Niečo sa pokazilo. Skúste to znova, prosím."
@@ -4702,9 +4660,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Keď je povolené extra heslo, správa aliasov sa môže vykonávať len v ${ PASS_APP_NAME }."
       ],
       "You need an active personal calendar to import events": [
         "Na import udalostí potrebujete aktívny osobný kalendár"
@@ -6734,6 +6689,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Predplatné sa končí: Ak si chcete ponechať výhody predplatného ${ planName }, reštartujte si predplatné v Obchode Google Play do ${ byDate }. ${ reactivateLink }"
       ],
+      "support team": [
+        "tím podpory"
+      ],
       "Surveillance": [
         "Monitorovanie"
       ],
@@ -7516,9 +7474,6 @@
       "Address": [
         "Adresa"
       ],
-      "Alias title": [
-        "Názov aliasu"
-      ],
       "All day": [
         "Celý deň"
       ],
@@ -7660,9 +7615,6 @@
       "Drive": [
         "Drive"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "napr. Amazon, eBay, Etsy"
-      ],
       "Email": [
         "Email"
       ],
@@ -7708,12 +7660,6 @@
       "Every": [
         "Každý"
       ],
-      "Exact host matching": [
-        "Presná zhoda hostiteľa"
-      ],
-      "Exact URL matching": [
-        "Presná zhoda URL"
-      ],
       "Expires": [
         "Exspiruje"
       ],
@@ -7728,9 +7674,6 @@
       ],
       "Folder location": [
         "Umiestnenie priečinka"
-      ],
-      "Forwards to": [
-        "Preposielať na"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -7828,14 +7771,8 @@
       "Navigation": [
         "Navigácia"
       ],
-      "Never fill on this exact URL": [
-        "Nikdy nevypĺňať túto presnú URL adresu"
-      ],
       "New password": [
         "Nové heslo"
-      ],
-      "Note": [
-        "Poznámka"
       ],
       "Notification": [
         "Notifikácia"
@@ -7860,9 +7797,6 @@
       ],
       "Organizer": [
         "Organizátor"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Nadradená doména a subdomény (predvolené nastavenie)"
       ],
       "participant": [
         "účastník",
@@ -7903,26 +7837,17 @@
       "Postal code": [
         "PSČ"
       ],
-      "Premium domain": [
-        "Prémiová doména"
-      ],
       "Primary": [
         "Primárne"
       ],
       "Proration": [
         "Pomerná časť"
       ],
-      "Public domain": [
-        "Verejná doména"
-      ],
       "Public keys": [
         "Verejné kľúče"
       ],
       "Region": [
         "Kraj"
-      ],
-      "Regular expression": [
-        "Regulárny výraz"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Odstrániť videokonferenciu ${ MEET_APP_NAME }"
@@ -7962,9 +7887,6 @@
       ],
       "Start date": [
         "Dátum začiatku"
-      ],
-      "Starts with": [
-        "Začína s"
       ],
       "State": [
         "Štát"
@@ -8014,9 +7936,6 @@
       "URL": [
         "Odkaz"
       ],
-      "URL wildcard pattern": [
-        "Vzor so zástupnými znakmi v URL"
-      ],
       "Username": [
         "Používateľské meno"
       ],
@@ -8047,14 +7966,8 @@
       "What happened?": [
         "Čo sa stalo?"
       ],
-      "Your alias": [
-        "Váš alias"
-      ],
       "Your calendar URL": [
         "URL adresa vášho kalendára"
-      ],
-      "Your domain": [
-        "Vaša doména"
       ],
       "Your IP": [
         "Vaša IP"
@@ -8481,29 +8394,11 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Pravidlo porovnávania „začína na“"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Pravidlo presnej zhody (pod)domén"
-      ],
-      "Exact URL matching rule": [
-        "Pravidlo presnej zhody URL"
-      ],
       "Fw:": [
         "Fw:"
       ],
-      "Never fill with this exact URL": [
-        "Nikdy nevypĺňať presne túto URL adresu"
-      ],
       "Re:": [
         "Re:"
-      ],
-      "Regular expression rule": [
-        "Pravidlo regulárneho výrazu"
-      ],
-      "Wildcard pattern matching rule": [
-        "Pravidlo porovnávania vzorov so zástupnými znakmi"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaša bezplatná skúšobná verzia skončila. ${ nonAutoRenewalAction }"
@@ -10158,11 +10053,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " navštívte naše ${ helpCenterLink } alebo ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Pridajte spôsob platby**, aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Zrušiť môžete kedykoľvek pred týmto termínom.** ${ planTitle } budete môcť bezplatne využívať až do konca skúšobného obdobia."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Ak budete pokračovať aj po skončení skúšobnej doby,** môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Po začatí platnosti predplatného...** môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
+      ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Zrušiť môžete kedykoľvek pred ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Zrušiť môžete kedykoľvek predtým."
       ],
       "contact our support team": [
         "kontaktujte náš tím podpory"
@@ -10176,17 +10083,23 @@
       "help center": [
         "centrum pomoci"
       ],
+      "If you continue after your trial,": [
+        "Ak budete pokračovať aj po skončení skúšobnej doby,"
+      ],
       "If you need help,": [
         "Ak potrebujete pomoc,"
       ],
       "Once your full subscription starts...": [
         "Akonáhle začne vaše plné predplatné..."
       ],
+      "to keep using all of the features after your trial ends.": [
+        "aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Stále môžete zrušiť do 30 dní a získať pomernú náhradu späť."
-      ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Stále môžete do 30 dní zrušiť a získať späť pomernú náhradu."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Môžete používať ${ planTitle } až do konca skúšobného obdobia bez spoplatnenia."
@@ -10196,9 +10109,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaše plné ${ planTitle } predplatné začína dňa ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Budete môcť používať ${ planTitle } až do konca skúšobného obdobia, bez poplatku."
       ]
     },
     "Option": {
@@ -11051,78 +10961,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Využite ponuku"
-      ],
-      "Summer Sale": [
-        "Letný výpredaj"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mesačným"
-      ],
-      "15 GB storage": [
-        "15 GB úložisko"
-      ],
-      "2 TB data storage": [
-        "2 TB dátové úložisko"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB úložisko: 40x váš súčasný plán"
-      ],
-      "3 TB data storage": [
-        "3 TB dátové úložisko"
-      ],
-      "500 GB storage": [
-        "500 GB úložisko"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všetky prémiové funkcie služieb ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Zľavy vychádzajú zo štandardných mesačných cien. Po skončení fakturačného obdobia sa vaše predplatné obnoví za štandardnú ročnú sadzbu."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Plný prístup k službe ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Samostatné účty pre 6 používateľov"
-      ],
-      "Individual accounts for you and a partner": [
-        "Samostatné účty pre vás a partnera"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online editor dokumentov a tabuliek"
-      ],
-      "Recover previous file versions": [
-        "Obnovte predchádzajúce verzie súborov"
-      ],
-      "Stronger protection against cyber threats": [
-        "Silnejšia ochrana pred kybernetickými hrozbami"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Prejdite na náš ročný plán a ušetrite ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Neobmedzený počet priečinkov, štítkov a filtrov"
-      ],
-      "Use your own email domain": [
-        "Používajte vlastnú emailovú doménu"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "na 12 mesiacov"
-      ],
-      "SUMMER SALE": [
-        "LETNÝ VÝPREDAJ"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Využiť ponuku"
@@ -11304,49 +11142,6 @@
     "Section": {
       "Org setup and account security": [
         "Nastavenie organizácie a zabezpečenie účtu"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Všetky aliasy"
-      ],
-      "Create alias": [
-        "Vytvoriť alias"
-      ],
-      "Create an alias": [
-        "Vytvoriť alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Vytvárajte aliasy za chodu a jednoducho spravujte aliasy a heslá."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email aliasy"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliasy Hide-my-email vám umožnia zaregistrovať sa do online služieb bez toho, aby ste museli zdieľať svoju emailovú adresu. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nový alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Otvoriť ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Chráňte svoju digitálnu identitu"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Vyskúšať ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Používa sa v službe Amazon na nakupovanie atď."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Keď budete požiadaní o uvedenie vašej emailovej adresy, uveďte namiesto nej tento alias. Aliasy sú poskytované pomocou ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(otvorí ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -12499,12 +12294,6 @@
       "Address copied to clipboard": [
         "Adresa bola skopírovaná do schránky"
       ],
-      "Alias copied to clipboard": [
-        "Alias ​​bol skopírovaný do schránky"
-      ],
-      "Alias saved and copied": [
-        "Alias ​​uložený a skopírovaný"
-      ],
       "All events deleted": [
         "Všetky udalosti boli vymazané"
       ],
@@ -12636,9 +12425,6 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "Nastavenie klávesových skratiek upravené"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Naposledy zmenené aliasy uložené v najstaršom trezore"
       ],
       "Participants notified and all events updated": [
         "Účastníci boli upozornení a všetky udalosti aktualizované"
@@ -13326,9 +13112,6 @@
       "Mobile": [
         "Mobil"
       ],
-      "Need more aliases?": [
-        "Potrebujete viac aliasov?"
-      ],
       "Network error": [
         "Chyba siete"
       ],
@@ -14009,9 +13792,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Naozaj chcete natrvalo vymazať ${ count } kontakt?",

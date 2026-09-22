@@ -273,12 +273,6 @@
       "Copy address": [
         "复制邮箱地址"
       ],
-      "Copy alias “${ name }”": [
-        "复制别名“${ name }”"
-      ],
-      "Copy debug transcript": [
-        "复制调试副本"
-      ],
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
@@ -302,9 +296,6 @@
       ],
       "Create album": [
         "创建相册"
-      ],
-      "Create and copy alias": [
-        "创建并复制别名"
       ],
       "Create business account": [
         "创建企业账户"
@@ -605,6 +596,9 @@
       ],
       "Import from Outlook": [
         "从 Outlook 导入"
+      ],
+      "Importing from Google": [
+        "正在从 Google 导入"
       ],
       "Increase": [
         "增加"
@@ -963,6 +957,9 @@
       "Search is unavailable": [
         "搜索不可用"
       ],
+      "Search recent items": [
+        "搜索最近项目"
+      ],
       "See how": [
         "详细了解"
       ],
@@ -1064,6 +1061,9 @@
       ],
       "Show side panel": [
         "显示侧边栏"
+      ],
+      "Sign in with Google": [
+        "使用 Google 登录"
       ],
       "Sign out": [
         "登出"
@@ -3115,9 +3115,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入您最近的 Gmail 邮件"
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
       ]
     },
     "description": {
@@ -3393,18 +3390,6 @@
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
-      "Alias is not valid": [
-        "别名无效"
-      ],
-      "Alias is required": [
-        "别名为必填项"
-      ],
-      "Alias options could not be resolved": [
-        "无法解决别名选项问题"
-      ],
-      "Aliases could not be loaded": [
-        "别名无法加载"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "已分配所有存储空间。请减少分配给其他用户的存储空间。"
       ],
@@ -3419,12 +3404,6 @@
       ],
       "An error occurred": [
         "发生错误"
-      ],
-      "An error occurred while loading alias options": [
-        "加载别名选项时发生错误"
-      ],
-      "An error occurred while saving your alias": [
-        "保存别名时发生错误"
       ],
       "Authentication canceled.": [
         "验证已取消。"
@@ -3510,12 +3489,6 @@
       "Could not load the image preview: ${ message }": [
         "无法加载图片预览：${ message }"
       ],
-      "Could not open created vault": [
-        "无法打开创建的保险库"
-      ],
-      "Could not open updated vault": [
-        "无法打开已更新的保险库"
-      ],
       "Could not read part of this file: ${ message }": [
         "无法读取此文件的部分内容：${ message }"
       ],
@@ -3596,9 +3569,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "外部邀请暂时禁用。请稍后重试"
-      ],
-      "Failed loading group members": [
-        "加载群组成员失败"
       ],
       "Failed to change permissions settings": [
         "更改权限设置失败"
@@ -3690,9 +3660,6 @@
       "Folder not found": [
         "未找到文件夹"
       ],
-      "Forward address is required": [
-        "转发邮箱为必填项"
-      ],
       "Image preview not found": [
         "未找到图片预览"
       ],
@@ -3741,9 +3708,6 @@
       "Invitation not found": [
         "未找到邀请"
       ],
-      "Item content cannot exceed 40KB": [
-        "项目内容不能超过 40KB"
-      ],
       "Item not found": [
         "未找到项目"
       ],
@@ -3789,17 +3753,11 @@
       "Moving root item is not allowed": [
         "不允许移动根项目"
       ],
-      "Name is required": [
-        "名称为必填项"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
       ],
       "Name must not be empty": [
         "名称不能为空"
-      ],
-      "Network error": [
-        "网络错误"
       ],
       "No calendars found to import": [
         "未找到可导入的日历"
@@ -4436,9 +4394,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "页面加载失败，请刷新或检查网络连接。"
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "启用额外密码后，别名管理只能在 ${ PASS_APP_NAME } 中进行。"
       ],
       "You may also refresh the page or try again later.": [
         "您也可以刷新页面或稍后重试。"
@@ -5273,6 +5228,9 @@
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME } 标记"
       ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor }（未验证的发送者）"
+      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } 待定邀请"
       ],
@@ -5495,6 +5453,9 @@
       "An issue occurred during the restore process.": [
         "恢复过程中出现问题。"
       ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "导入您的数据时发生意外错误，请稍后重试。"
+      ],
       "and": [
         "并"
       ],
@@ -5639,6 +5600,9 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "连接到 ${ VPN_APP_NAME } 实现隐私浏览"
       ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "正在关联 Google Drive，以设置到 ${ DRIVE_APP_NAME } 的安全导入。"
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "联系人已加入 ${ contactGroupName } 群组"
       ],
@@ -5698,9 +5662,6 @@
       ],
       "Data integrity check failed": [
         "数据完整性检查失败"
-      ],
-      "Debug transcript copied": [
-        "调试副本已复制"
       ],
       "Dec": [
         "12 月"
@@ -5797,6 +5758,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
+      ],
+      "Email you once import is finished": [
+        "导入完成后通过邮件通知您"
       ],
       "Emails are automatically signed": [
         "自动对邮件进行数字签名"
@@ -5905,6 +5869,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "仅需 ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "为顺利完成导入，您需要如上图所示勾选所有权限。"
       ],
       "Forgot password?": [
         "忘记密码？"
@@ -6233,6 +6200,9 @@
       "New": [
         "新"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "接下来，您需要登录您的 Google 账户，并授予 ${ BRAND_NAME } 访问您数据的权限。"
+      ],
       "No": [
         "否"
       ],
@@ -6422,6 +6392,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "请尝试用其他方式支付，或联系您的发卡银行。"
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "请升级以确保导入顺利完成。"
+      ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
       ],
@@ -6488,6 +6461,9 @@
       "Read folder context": [
         "读取文件夹内容"
       ],
+      "Read once and encrypted on arrival": [
+        "读取一次，到达时即加密"
+      ],
       "Read this file": [
         "读取文件"
       ],
@@ -6547,6 +6523,9 @@
       ],
       "Search cannot be enabled in this browser": [
         "浏览器无法启用搜索"
+      ],
+      "Search covers your recent items": [
+        "搜索涵盖您最近的项目"
       ],
       "Search data can't be read": [
         "无法读取搜索数据"
@@ -6653,6 +6632,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
+      "Sit back and we will let you know.": [
+        "请您稍等，我们会通知您。"
+      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "某些国家/地区会屏蔽或限制访问某些网站。Proton VPN 能够帮助您突破网络审查，同时保护您的网络活动和身份隐私。"
       ],
@@ -6661,6 +6643,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您的某些文件已无法访问，请恢复对文件的访问权限。${ StartRecoveryButton }"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "部分较早的文件未建立索引，因为您的云端硬盘过大，无法完整建立索引。"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "本相册中的部分照片未保存到您的时间线。删除此相册将永久删除这些照片。"
@@ -6983,6 +6968,9 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用这张表单通知我们有不合适、非法或恶意分享的文件，您将要举报以下行为："
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "仅用于将其复制到 ${ DRIVE_APP_NAME }。"
+      ],
       "username": [
         "用户名"
       ],
@@ -7031,17 +7019,26 @@
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "我们不支持导入照片、Google 文档、表格和幻灯片。请确保您的 Google Drive 不为空。"
+      ],
       "We need to authenticate your payment method with your bank.": [
         "我们需要向您的发卡银行核实支付方式是否有效。"
       ],
       "We need to authenticate your payment with your bank.": [
         "我们需要与您的发卡银行确认支付。"
       ],
+      "We support most files": [
+        "我们支持大多数文件"
+      ],
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
       ],
       "We were not able to add this photo to your album": [
         "部分照片无法添加到您的相册"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "导入完成后我们会通过邮件通知您。完成后，您会在某个文件夹中找到导入的内容。"
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新的浏览器标签页中重定向至 ${ IDEAL_WERO_BRAND_NAME } 以完成此交易。如果您使用了任何弹窗拦截器，请将其禁用后继续。"
@@ -7060,6 +7057,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
+      ],
+      "We're importing your files from Google Drive. We'll let you know once it's done.": [
+        "我们正在从 Google Drive 导入您的文件，完成后我们会通知您。"
       ],
       "Week": [
         "周"
@@ -7090,6 +7090,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "将恢复至 ${ formattedRevisionDate } 的版本，其他版本仍将保留。"
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "不会导入照片、Google 文档和表格"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
@@ -7247,6 +7250,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
       ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "您的云端硬盘过大，无法在此浏览器中完整建立索引，因此搜索仅涵盖您最近的项目。较早的文件可能不会出现在结果中。"
+      ],
       "Your email address and password were leaked:": [
         "您的邮箱地址和密码已泄露："
       ],
@@ -7261,6 +7267,9 @@
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "由于密码重置，无法再访问您的文件。请重新上传旧加密密钥以恢复访问权限。${ KeyReactivationButton }"
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "您的文件已成功从 Google Drive 导入并加密至 ${ DRIVE_APP_NAME }。"
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
@@ -7464,9 +7473,6 @@
       ],
       "Address": [
         "地址"
-      ],
-      "Alias title": [
-        "别名标题"
       ],
       "All": [
         "全部"
@@ -7675,9 +7681,6 @@
       "Duplicate found": [
         "发现重复"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "例如：Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "编辑者"
       ],
@@ -7717,15 +7720,6 @@
       "Environment compatible": [
         "环境兼容"
       ],
-      "Exact host matching": [
-        "精确主机匹配"
-      ],
-      "Exact URL matching": [
-        "精确 URL 匹配"
-      ],
-      "Expired": [
-        "已失效"
-      ],
       "Expired on ${ formatted }": [
         "过期时间 ${ formatted }"
       ],
@@ -7764,9 +7758,6 @@
       ],
       "Folder name": [
         "文件夹名称"
-      ],
-      "Forwards to": [
-        "转发至"
       ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
@@ -7888,9 +7879,6 @@
       "Never expires": [
         "永不过期"
       ],
-      "Never fill on this exact URL": [
-        "绝不在此精确 URL 上填充"
-      ],
       "New password": [
         "新密码"
       ],
@@ -7902,9 +7890,6 @@
       ],
       "Not selected": [
         "未选中"
-      ],
-      "Note": [
-        "笔记"
       ],
       "Notification": [
         "通知"
@@ -7923,9 +7908,6 @@
       ],
       "Outdated version": [
         "过时版本"
-      ],
-      "Parent domain and subdomains (default)": [
-        "父域名及子域名（默认）"
       ],
       "Password": [
         "密码"
@@ -7966,23 +7948,14 @@
       "Postal code": [
         "邮编"
       ],
-      "Premium domain": [
-        "高级域名"
-      ],
       "Proration": [
         "当前等级结余"
-      ],
-      "Public domain": [
-        "公共域名"
       ],
       "Public keys": [
         "公钥"
       ],
       "Region": [
         "区域"
-      ],
-      "Regular expression": [
-        "正则表达式"
       ],
       "Replace existing folder or file": [
         "替换现有文件夹或文件"
@@ -8059,9 +8032,6 @@
       "Start date": [
         "起始日期"
       ],
-      "Starts with": [
-        "开头为"
-      ],
       "State": [
         "省份/地区"
       ],
@@ -8128,9 +8098,6 @@
       "Uploaded by": [
         "上传者"
       ],
-      "URL wildcard pattern": [
-        "URL 通配符模式"
-      ],
       "User opted in": [
         "用户选择加入"
       ],
@@ -8166,12 +8133,6 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "是的，我想永久删除我的旧文件"
-      ],
-      "Your alias": [
-        "您的别名"
-      ],
-      "Your domain": [
-        "您的域名"
       ],
       "Your IP": [
         "您的 IP 地址"
@@ -8532,24 +8493,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "“开头为”匹配规则"
-      ],
-      "Exact (sub) domain matching rule": [
-        "精确（子）域名匹配规则"
-      ],
-      "Exact URL matching rule": [
-        "精确 URL 匹配规则"
-      ],
-      "Never fill with this exact URL": [
-        "绝不在此精确 URL 上填充"
-      ],
-      "Regular expression rule": [
-        "正则表达式规则"
-      ],
-      "Wildcard pattern matching rule": [
-        "通配符模式匹配规则"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "您的免费试用已结束。${ nonAutoRenewalAction }"
       ],
@@ -9843,9 +9786,6 @@
       "Access updated": [
         "访问权限已更新"
       ],
-      "Album renamed successfully": [
-        "相册重命名成功"
-      ],
       "All items deleted permanently from trash": [
         "所有项目已从回收站永久删除"
       ],
@@ -10293,11 +10233,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**添加支付方式**，以便在试用期结束后继续使用所有功能。"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**如果您在试用期结束后继续使用，** 可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "在 ${ cancelDate } 之前随时取消。"
-      ],
-      "Cancel anytime before then.": [
-        "在此之前随时取消。"
       ],
       "contact our support team": [
         "联系我们的客服"
@@ -10311,16 +10263,22 @@
       "help center": [
         "帮助中心"
       ],
+      "If you continue after your trial,": [
+        "如果您在试用期结束后继续使用，"
+      ],
       "If you need help,": [
         "如果您需要帮助，"
       ],
       "Once your full subscription starts...": [
         "您的正式订阅一旦开始..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      "to keep using all of the features after your trial ends.": [
+        "以便在试用期结束后继续使用所有功能。"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "您可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "您仍然可以在 30 天内取消并获得按比例的退款。"
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -10331,9 +10289,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "您将能够免费使用 ${ planTitle } 直到试用期结束。"
       ]
     },
     "Option": {
@@ -11081,78 +11036,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "立即享受优惠"
-      ],
-      "Summer Sale": [
-        "夏季大促"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/每月"
-      ],
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "2 TB data storage": [
-        "2 TB 数据存储空间"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 存储空间：您当前套餐的 40 倍"
-      ],
-      "3 TB data storage": [
-        "3 TB 数据存储空间"
-      ],
-      "500 GB storage": [
-        "500 GB 存储空间"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级版功能"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级版功能"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "优惠基于标准月度定价。您的订阅将在计费周期结束时按标准年度费率续订。"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "获取 ${ VPN_APP_NAME } 的完整访问权限"
-      ],
-      "Individual accounts for 6 users": [
-        "为 6 名用户提供的独立帐户"
-      ],
-      "Individual accounts for you and a partner": [
-        "为您和伴侣提供的独立帐户"
-      ],
-      "Online document and spreadsheet editor": [
-        "在线文档和电子表格编辑器"
-      ],
-      "Recover previous file versions": [
-        "恢复先前的文件版本"
-      ],
-      "Stronger protection against cyber threats": [
-        "针对网络威胁的更强防护"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "切换到我们的年度套餐，立省 ${ toYearlyDiscountAmount }！"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "不限量文件夹、标签和筛选规则"
-      ],
-      "Use your own email domain": [
-        "个性化邮箱域名"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "年费"
-      ],
-      "SUMMER SALE": [
-        "夏季大促"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "获取优惠"
@@ -11312,49 +11195,6 @@
     "Section": {
       "Org setup and account security": [
         "组织设置和账户安全"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "所有别名"
-      ],
-      "Create alias": [
-        "创建别名"
-      ],
-      "Create an alias": [
-        "创建别名"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "随时生成邮箱别名，轻松管理您的别名和密码。"
-      ],
-      "Hide-my-email aliases": [
-        "个 Hide-my-email 别名"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "您可以使用 Hide-my-email 邮箱别名注册各类网络账户，避免暴露真实邮箱。${ learnMoreLink }"
-      ],
-      "New alias": [
-        "新增别名"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "打开 ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "保护您的网络身份"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "体验 ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "用于 Amazon 购物等等"
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "当网站要求您输入邮箱地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(将会打开 ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -12364,6 +12204,9 @@
       "Shared by ${ sharedBy }": [
         "由 ${ sharedBy } 共享"
       ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "我们会读取一次您的文件以进行复制，然后使用您的 ${ BRAND_NAME } 密钥逐一加密。"
+      ],
       "Your favorited photos will appear here": [
         "您收藏的照片将在此处显示"
       ],
@@ -12405,12 +12248,6 @@
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
       ],
-      "Alias copied to clipboard": [
-        "已复制别名到剪贴板"
-      ],
-      "Alias saved and copied": [
-        "别名已保存并复制"
-      ],
       "Billing details updated": [
         "账单详细信息已更新"
       ],
@@ -12446,9 +12283,6 @@
       ],
       "Invitation rejected": [
         "邀请已被拒绝"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "最后修改的别名存储在您最早的库中"
       ],
       "Payment method added": [
         "支付方式已添加"
@@ -12810,6 +12644,9 @@
       "Connect your custom domain": [
         "连接您的自定义域名"
       ],
+      "Connect your Google account": [
+        "关联您的 Google 账户"
+      ],
       "Contact Details": [
         "联系人详情"
       ],
@@ -12969,6 +12806,9 @@
       "Drop to upload": [
         "拖拽文件并上传"
       ],
+      "Easy switch": [
+        "轻松切换"
+      ],
       "Edit billing address": [
         "编辑账单地址"
       ],
@@ -13104,6 +12944,9 @@
       "Import groups": [
         "导入群组"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "导入已开始，但您的存储空间不足以完成此次导入"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "将您的数据导入到 ${ BRAND_NAME }"
       ],
@@ -13175,9 +13018,6 @@
       ],
       "Name": [
         "名称"
-      ],
-      "Need more aliases?": [
-        "需要更多别名？"
       ],
       "Need to share more files with edit access?": [
         "需要共享更多具有编辑访问权限的文件？"
@@ -13404,6 +13244,9 @@
       "Set up your organization": [
         "设置您的组织"
       ],
+      "Setting up your import": [
+        "正在设置您的导入"
+      ],
       "Settings": [
         "设置"
       ],
@@ -13433,6 +13276,9 @@
       ],
       "Sign in and grant access": [
         "登录并授予权限"
+      ],
+      "Sign in to Google": [
+        "登录 Google"
       ],
       "Sign out": [
         "登出"
@@ -13581,6 +13427,9 @@
       "Warning: suspected fake website": [
         "警告：疑似虚假网站"
       ],
+      "We could not find anything to import": [
+        "我们找不到可导入的内容"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "我们无法验证 ${ author } 创建了此文件！"
       ],
@@ -13664,6 +13513,15 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
+      ],
+      "Your import is finished!": [
+        "您的导入已完成！"
+      ],
+      "Your import is in progress": [
+        "您的导入正在进行"
+      ],
+      "Your import is starting": [
+        "正在启动导入"
       ],
       "Your plan": [
         "您的账户等级"
@@ -13963,9 +13821,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } 提供了强大的控制能力，但单个错误可能导致自动填充在欺诈或钓鱼网站上匹配并填充数据。"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您确定要永久删除 ${ count } 联系人吗？"

@@ -257,9 +257,6 @@
       "Copy address": [
         "Kopioi osoite"
       ],
-      "Copy alias “${ name }”": [
-        "Kopioi alias \"${ name }\""
-      ],
       "Copy email to clipboard": [
         "Kopioi sähköpostiosoite leikepöydälle"
       ],
@@ -280,9 +277,6 @@
       ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
-      ],
-      "Create and copy alias": [
-        "Tallenna ja kopioi alias"
       ],
       "Create folder": [
         "Luo kansio"
@@ -2900,9 +2894,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Maksuttomaan ${ MAIL_APP_NAME }-tiliinne kuuluu rajoitetusti tallennustilaa, joten tuomme vain viimeisimmät Gmail-sähköpostinne."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
       ]
     },
     "description": {
@@ -3162,18 +3153,6 @@
       "Address primary private key not found": [
         "Osoitteen ensisijaista yksityistä avainta ei löytynyt"
       ],
-      "Alias is not valid": [
-        "Alias ei kelpaa"
-      ],
-      "Alias is required": [
-        "Alias vaaditaan"
-      ],
-      "Alias options could not be resolved": [
-        "Aliasvaihtoehtoja ei voitu selvittää"
-      ],
-      "Aliases could not be loaded": [
-        "Aliaksia ei voitu ladata"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Kaikki tallennustila on varattu. Vähennä muille käyttäjille varattua tallennustilaa."
       ],
@@ -3188,12 +3167,6 @@
       ],
       "An error occurred": [
         "Tapahtui virhe"
-      ],
-      "An error occurred while loading alias options": [
-        "Virhe ladattaessa aliasvalintoja"
-      ],
-      "An error occurred while saving your alias": [
-        "Virhe tallennettaessa aliastasi"
       ],
       "Authentication canceled.": [
         "Todennus peruttiin."
@@ -3230,12 +3203,6 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Sisältöhakua ei voida ottaa käyttöön. Käynnistä sovellus uudelleen tai tyhjennä sen tiedot."
-      ],
-      "Could not open created vault": [
-        "Luotua holvia ei voitu avata"
-      ],
-      "Could not open updated vault": [
-        "Muuttunutta holvia ei voitu avata"
       ],
       "Data integrity check failed": [
         "Tietojen eheyden tarkistus epäonnistui"
@@ -3277,9 +3244,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Ulkoiset kutsut on tilapäisesti poistettu käytöstä. Yritä myöhemmin uudelleen."
-      ],
-      "Failed loading group members": [
-        "Ryhmän jäsenten lataaminen epäonnistui"
       ],
       "Failed to change permissions settings": [
         "Käyttöoikeuksien muuttaminen epäonnistui"
@@ -3335,9 +3299,6 @@
       "Folder name cannot be empty.": [
         "Kansion nimi ei voi olla tyhjä."
       ],
-      "Forward address is required": [
-        "Välitysosoite vaaditaan"
-      ],
       "Image upload failed": [
         "Kuvan lataus epäonnistui"
       ],
@@ -3380,9 +3341,6 @@
       "Invitation not found": [
         "Kutsua ei löytynyt"
       ],
-      "Item content cannot exceed 40KB": [
-        "Kohteen sisällön koko ei saa ylittää 40 kt"
-      ],
       "Item not found": [
         "Kohdetta ei löytynyt"
       ],
@@ -3402,14 +3360,8 @@
       "Missing signature": [
         "Allekirjoitus puuttuu"
       ],
-      "Name is required": [
-        "Nimi vaaditaan"
-      ],
       "Name must not be empty": [
         "Nimi ei voi olla tyhjä"
-      ],
-      "Network error": [
-        "Verkkovirhe"
       ],
       "No calendars found to import": [
         "Tuotavia kalentereita ei löytynyt"
@@ -3899,9 +3851,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Lisäsalasanan ollessa käytössä, voidaan aliaksia hallita vain ${ PASS_APP_NAME }issa."
       ]
     },
     "Error notification": {
@@ -6296,9 +6245,6 @@
       "Address": [
         "Osoite"
       ],
-      "Alias title": [
-        "Aliaksen otsikko"
-      ],
       "All": [
         "Kaikki"
       ],
@@ -6476,9 +6422,6 @@
       "Duplicate found": [
         "Löydettiin kaksoiskappale"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "esim. Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Muokkaus"
       ],
@@ -6512,15 +6455,6 @@
       "Encrypt emails": [
         "Salaa viestit"
       ],
-      "Exact host matching": [
-        "Tarkka isäntänimien vastaavuus"
-      ],
-      "Exact URL matching": [
-        "Tarkka URL-vastaavuus"
-      ],
-      "Expired": [
-        "Erääntynyt"
-      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -6553,9 +6487,6 @@
       ],
       "Folder name": [
         "Kansion nimi"
-      ],
-      "Forwards to": [
-        "Ohjaa osoitteeseen"
       ],
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
@@ -6659,9 +6590,6 @@
       "Never": [
         "Ei koskaan"
       ],
-      "Never fill on this exact URL": [
-        "Älä koskaan täytä juuri tätä URL-osoitetta"
-      ],
       "New password": [
         "Uusi salasana"
       ],
@@ -6673,9 +6601,6 @@
       ],
       "Not selected": [
         "Ei valittuna"
-      ],
-      "Note": [
-        "Muistiinpano"
       ],
       "Notification": [
         "Ilmoitus"
@@ -6691,9 +6616,6 @@
       ],
       "Other": [
         "Muu"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Pääverkkotunnus ja aliverkkotunnukset (oletus)"
       ],
       "Password": [
         "Salasana"
@@ -6728,23 +6650,14 @@
       "Postal code": [
         "Postinumero"
       ],
-      "Premium domain": [
-        "Premium-verkkotunnus"
-      ],
       "Proration": [
         "Hyvitys"
-      ],
-      "Public domain": [
-        "Julkinen verkkotunnus"
       ],
       "Public keys": [
         "Julkiset avaimet"
       ],
       "Region": [
         "Alue"
-      ],
-      "Regular expression": [
-        "Säännöllinen lauseke"
       ],
       "Replace existing folder or file": [
         "Korvaa olemassa oleva kansio tai tiedosto"
@@ -6793,9 +6706,6 @@
       ],
       "Start date": [
         "Aloituspäivä"
-      ],
-      "Starts with": [
-        "Alkaa"
       ],
       "State": [
         "Osavaltio"
@@ -6848,9 +6758,6 @@
       "Uploaded by": [
         "Lähettänyt"
       ],
-      "URL wildcard pattern": [
-        "URL-jokerimerkkimalli"
-      ],
       "Username": [
         "Käyttäjätunnus"
       ],
@@ -6877,12 +6784,6 @@
       ],
       "What happened?": [
         "Mitä tapahtui?"
-      ],
-      "Your alias": [
-        "Sinun aliaksesi"
-      ],
-      "Your domain": [
-        "Sinun verkkotunnuksesi"
       ],
       "Your IP": [
         "IP-osoitteesi"
@@ -7238,24 +7139,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "”Alkaa” -vastaavuussääntö"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Tarkka (ala)verkkotunnuksen vastaavuussääntö"
-      ],
-      "Exact URL matching rule": [
-        "Tarkka URL-vastaavuussääntö"
-      ],
-      "Never fill with this exact URL": [
-        "Älä koskaan syötä juuri tätä URL-osoitetta"
-      ],
-      "Regular expression rule": [
-        "Säännöllisen lausekkeen sääntö"
-      ],
-      "Wildcard pattern matching rule": [
-        "Jokerimerkkien vastaavuussääntö"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ilmainen kokeilusi on päättynyt. ${ nonAutoRenewalAction }"
       ],
@@ -8775,9 +8658,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Peru koska tahansa ennen ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "Peruuta koska vain ennen sitä."
-      ],
       "contact our support team": [
         "ota yhteyttä tukeen"
       ],
@@ -8799,9 +8679,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Voitte silti peruuttaa 30 päivän kuluessa ja saada suhteellisen hyvityksen."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Voitte edelleen peruuttaa tilauksen 30 päivän kuluessa ja saada suhteutetun hyvityksen."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Voitte käyttää ${ planTitle }-tilausta kokeilujakson päättymiseen saakka, eikä teitä veloiteta."
       ],
@@ -8810,9 +8687,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Täysi ${ planTitle } -tilauksenne alkaa ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Voitte käyttää tilausta ${ planTitle } kokeilun päättymiseen saakka veloituksetta."
       ]
     },
     "Option": {
@@ -9505,78 +9379,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Hyödynnä tarjous"
-      ],
-      "Summer Sale": [
-        "Kesäale"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/kk"
-      ],
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "2 TB data storage": [
-        "2 Tt:n tiedontallennus"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 Gt tallennustilaa: 40x nykyinen tilauksesi"
-      ],
-      "3 TB data storage": [
-        "3 Tt:n tiedontallennus"
-      ],
-      "500 GB storage": [
-        "500 Gt tallennustilaa"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
-      ],
-      "Individual accounts for 6 users": [
-        "Henkilökohtaiset tilit 6 käyttäjälle"
-      ],
-      "Individual accounts for you and a partner": [
-        "Henkilökohtaiset tilit sinulle ja kumppanille"
-      ],
-      "Online document and spreadsheet editor": [
-        "Yhdistetty asiakirjojen ja laskentataulukoiden muokkausohjelma"
-      ],
-      "Recover previous file versions": [
-        "Palauta aiempia tiedostoversioita"
-      ],
-      "Stronger protection against cyber threats": [
-        "Vahvempi suoja kyberuhkia vastaan"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Rajattomasti kansioita, tunnisteita ja suodattimia"
-      ],
-      "Use your own email domain": [
-        "Käytä omaa sähköpostin verkkotunnusta"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12 kuukaudeksi"
-      ],
-      "SUMMER SALE": [
-        "KESÄALE"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Hanki tarjous"
@@ -9711,49 +9513,6 @@
     "Section": {
       "Org setup and account security": [
         "Organisaation määritys ja tiliturvallisuus"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Kaikki aliakset"
-      ],
-      "Create alias": [
-        "Luo alias"
-      ],
-      "Create an alias": [
-        "Luo alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Luo uusia aliaksia lennossa, ja hallitse niitä sekä salasanojasi helposti."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliakset"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email-aliasten avulla voit rekisteröityä verkkopalveluihin jakamatta todellista sähköpostiosoitettasi. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Uusi alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Avaa ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Suojaa verkkoidentiteettisi"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Kokeile ${ PASS_APP_NAME }ia"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Käytetään Amazonissa ostoksiin jne."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Kun sähköpostiosoitettasi pyydetään, anna osoitteesi sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(avaa ${ PASS_APP_NAME }in)"
       ]
     },
     "Security Center - Action": {
@@ -10790,12 +10549,6 @@
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
       ],
-      "Alias copied to clipboard": [
-        "Alias kopioitiin leikepöydälle"
-      ],
-      "Alias saved and copied": [
-        "Alias tallennettiin ja kopioitiin"
-      ],
       "Billing details updated": [
         "Laskutustiedot päivitetty"
       ],
@@ -10833,9 +10586,6 @@
       ],
       "Invitation rejected": [
         "Kutsusta kieltäydyttiin"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Viimeksi muokatut vanhimmassa holvissasi olevat aliakset"
       ],
       "Payment method added": [
         "Maksutapa lisättiin"
@@ -11479,9 +11229,6 @@
       ],
       "Name": [
         "Nimi"
-      ],
-      "Need more aliases?": [
-        "Tarvitsetko lisää aliaksia?"
       ],
       "Need to share more files with edit access?": [
         "Haluatteko jakaa useampia tiedostoja muokkausoikeudella?"
@@ -12165,9 +11912,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } tarjoaa tehokkaat hallintamahdollisuudet, mutta yksikin virhe voi johtaa siihen, että automaattinen täyttö toistaa ja täyttää tietoja petos- tai tietojenkalastelusivustoilla."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Haluatko varmasti poistaa ${ count } yhteystiedon pysyvästi?",

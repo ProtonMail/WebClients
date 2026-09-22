@@ -88,6 +88,9 @@
       "Automatic renewal": [
         "Аўтаматычнае падаўжэнне"
       ],
+      "Automatically delete data": [
+        "Аўтаматычна выдаляць даныя"
+      ],
       "Back up emails": [
         "Рэзервовае капіяванне электроннай пошты"
       ],
@@ -174,6 +177,9 @@
       ],
       "Group members": [
         "Удзельнікі групы"
+      ],
+      "Group plan invitation": [
+        "Запрашэнне ў групавы тарыфны план"
       ],
       "Hide my email": [
         "Схаваць маю электронную пошту"
@@ -268,6 +274,9 @@
       "Recovery score": [
         "Ацэнка аднаўлення"
       ],
+      "Redeem discount code": [
+        "Пагасіць код скідкі"
+      ],
       "Redirect incoming emails": [
         "Перанакіроўваць уваходныя лісты"
       ],
@@ -288,6 +297,9 @@
       ],
       "Server access policy": [
         "Палітыка доступу да сервера"
+      ],
+      "Shared server access": [
+        "Абагулены доступ да сервера"
       ],
       "Sign out other devices": [
         "Выйсці на іншых прыладах"
@@ -1502,6 +1514,9 @@
       "No, thanks": [
         "Не, дзякуй"
       ],
+      "Not now": [
+        "Не цяпер"
+      ],
       "OK": [
         "OK"
       ],
@@ -1943,6 +1958,9 @@
       "Sign in with ${ BRAND_NAME }": [
         "Увайсці з ${ BRAND_NAME }"
       ],
+      "Sign in with Google": [
+        "Увайсці праз Google"
+      ],
       "Sign in with password": [
         "Увайсці з паролем"
       ],
@@ -2188,6 +2206,9 @@
       ],
       "Verify domain": [
         "Спраўдзіць дамен"
+      ],
+      "Verify installation": [
+        "Спраўдзіць усталяванне"
       ],
       "Verify now": [
         "Спраўдзіць"
@@ -7045,6 +7066,9 @@
       ],
       "Unable to recover data": [
         "Немагчыма аднавіць даныя"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Разблакіраваць ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Палепшыць"
@@ -13905,6 +13929,9 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Вельмі рэкамендуецца, каб у кожнага карыстальніка быў уключаны спосаб аднаўлення доступу па фразе"
       ],
+      "We support most files": [
+        "Сістэма распазнае большасць файлаў"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
@@ -17828,6 +17855,9 @@
       ],
       "Yesterday": [
         "Учора"
+      ],
+      "Yesterday, ${ time }": [
+        "Учора ў ${ time }"
       ]
     },
     "Message": {
@@ -19781,6 +19811,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Кароткі адрас @pm.me"
+      ],
       "Storage": [
         "Сховішча"
       ],
@@ -19811,11 +19844,11 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " наведайце наш ${ helpCenterLink } або ${ contactSupportLink }."
       ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Ад падпіскі можна адмовіцца ў любы час да ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Ад падпіскі можна адмовіцца ў любы час да заканчэння дзеяння яе перыяду."
       ],
       "contact our support team": [
         "звязацца з нашай службай падтрымкі"
@@ -19838,9 +19871,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Вы можаце карыстацца ${ planTitle } да канца пробнага перыяду. Плата за гэта спаганяцца не будзе."
       ],
@@ -19849,9 +19879,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ваша поўная падпіска на тарыфны план ${ planTitle } пачнецца ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "У вас будзе магчымасць карыстацца ${ planTitle } бясплатна да канца пробнага перыяду."
       ]
     },
     "Option": {
@@ -21288,6 +21315,9 @@
       "Anytown": [
         "Полацк"
       ],
+      "billing@company.com": [
+        "rahunak@kampanija.eu"
+      ],
       "Choose a name": [
         "Выберыце назву"
       ],
@@ -21705,78 +21735,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Атрымаць прапанову"
-      ],
-      "Summer Sale": [
-        "Летні распродаж"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/месяц"
-      ],
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "2 TB data storage": [
-        "Сховішча даных на 2 ТБ"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 ГБ сховішча: у 40 разоў больш за ваш бягучы тарыфны план"
-      ],
-      "3 TB data storage": [
-        "Сховішча даных на 3 ТБ"
-      ],
-      "500 GB storage": [
-        "500 ГБ сховішча"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Усе прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Скідкі разлічваюцца на аснове стандартнага штомесячнага кошту. Ваша падпіска будзе падоўжана па стандартным гадавым тарыфе, калі скончыцца перыяд аплаты."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Поўны доступ да ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Асобныя ўліковыя запісы для 6 карыстальнікаў"
-      ],
-      "Individual accounts for you and a partner": [
-        "Асобныя ўліковыя запісы для вас і партнёра"
-      ],
-      "Online document and spreadsheet editor": [
-        "Рэдактар дакументаў і электронных табліц у сетцы"
-      ],
-      "Recover previous file versions": [
-        "Аднаўленне папярэдніх версій файла"
-      ],
-      "Stronger protection against cyber threats": [
-        "Больш надзейная абарона ад кіберпагроз"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Перайдзіце на наш гадавы тарыфны план і зэканомце ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Неабмежаваная колькасць папак, метак і фільтраў"
-      ],
-      "Use your own email domain": [
-        "Выкарыстоўвайце ўласны дамен электроннай пошты"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "за 12 месяцаў"
-      ],
-      "SUMMER SALE": [
-        "ЛЕТНІ РАСПРОДАЖ"
       ]
     },
     "q3campaign2026: Action": {
@@ -22472,6 +22430,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Адміністратар арганізацыі"
+      ],
       "Security Admin": [
         "Адміністратар бяспекі"
       ],
@@ -24780,6 +24741,9 @@
       ],
       "Configure domain": [
         "Сканіфігурыраваць дамен"
+      ],
+      "Configure migration": [
+        "Сканфігурыраваць перанос"
       ],
       "Configure users": [
         "Канфігурацыя карыстальнікаў"
@@ -27347,6 +27311,9 @@
       "Install it manually": [
         "Усталяваць яго ўручную"
       ],
+      "Install migration app": [
+        "Усталяваць праграму пераносу"
+      ],
       "Integrations": [
         "Інтэграцыі"
       ],
@@ -27884,6 +27851,9 @@
       "Set your password": [
         "Задаць пароль"
       ],
+      "Setting up your import": [
+        "Наладжванне вашага імпарту"
+      ],
       "Settings": [
         "Налады"
       ],
@@ -28294,6 +28264,9 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "Your import is starting": [
+        "Пачалося імпартаванне"
       ],
       "Your plan": [
         "Ваш тарыфны план"

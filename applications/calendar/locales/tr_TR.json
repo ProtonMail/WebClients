@@ -234,9 +234,6 @@
       "Copy address": [
         "Adresi kopyala"
       ],
-      "Copy alias “${ name }”": [
-        "“${ name }” takma adını kopyala"
-      ],
       "Copy booking page link": [
         "Rezervasyon sayfası bağlantısını kopyala"
       ],
@@ -275,9 +272,6 @@
       ],
       "Create an event": [
         "Etkinlik oluştur"
-      ],
-      "Create and copy alias": [
-        "Takma ad ekle ve kopyala"
       ],
       "Create booking page": [
         "Yeni bir rezervasyon sayfası oluştur"
@@ -727,6 +721,9 @@
       ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Remove": [
         "Kaldır"
@@ -3269,9 +3266,6 @@
       ],
       "You’ll get a secure email with the details shortly.": [
         "Kısa bir süre sonra ayrıntıların bulunduğu bir güvenli e-posta alacaksınız."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Unlimited tarifesine geçin."
       ]
     },
     "description": {
@@ -3608,18 +3602,6 @@
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
       ],
-      "Alias is not valid": [
-        "Takma ad geçersiz"
-      ],
-      "Alias is required": [
-        "Takma adın yazılması zorunludur"
-      ],
-      "Alias options could not be resolved": [
-        "Takma ad seçenekleri çözümlenemedi"
-      ],
-      "Aliases could not be loaded": [
-        "Takma adlar yüklenemedi"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tüm depolama alanı dağıtıldı. Lütfen diğer kullanıcılara ayrılmış depolama alanlarını azaltın."
       ],
@@ -3631,12 +3613,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Tutar en az miktarın altında (${ minimumAmount })."
-      ],
-      "An error occurred while loading alias options": [
-        "Takma ad seçenekleri yüklenirken bir sorun çıktı"
-      ],
-      "An error occurred while saving your alias": [
-        "Takma adınız kaydedilirken bir sorun çıktı"
       ],
       "Answer failed to be sent": [
         "Yanıt gönderilemedi"
@@ -3722,12 +3698,6 @@
       "Could not load the image preview: ${ message }": [
         "Görsel ön izlemesi yüklenemedi: ${ message }"
       ],
-      "Could not open created vault": [
-        "Oluşturulan kasa açılamadı"
-      ],
-      "Could not open updated vault": [
-        "Güncellenen kasa açılamadı"
-      ],
       "Could not read part of this file: ${ message }": [
         "Bu dosyanın bir parçası okunamadı: ${ message }"
       ],
@@ -3802,9 +3772,6 @@
       "Expiration date cannot be in the past": [
         "Geçerlilik sonu tarihi geçmişte olamaz"
       ],
-      "Failed loading group members": [
-        "Grup üyeleri yüklenemedi"
-      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "Var olan ${ MEET_APP_NAME } görüntülü görüşmesi eklenemedi"
       ],
@@ -3874,9 +3841,6 @@
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
       ],
-      "Forward address is required": [
-        "İletilecek adresin yazılması zorunludur"
-      ],
       "Image preview not found": [
         "Görsel ön izlemesi bulunamadı"
       ],
@@ -3937,9 +3901,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Yalnızca ${ minDateString } - ${ maxDateString } arasında etkinlikler taşınabilir"
       ],
-      "Item content cannot exceed 40KB": [
-        "Öge içeriği 40KB boyutundan büyük olamaz"
-      ],
       "Item not found": [
         "Öge bulunamadı"
       ],
@@ -3989,9 +3950,6 @@
       "Moving root item is not allowed": [
         "Kök öge taşınamaz"
       ],
-      "Name is required": [
-        "Adın yazılması zorunludur"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir",
         "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir"
@@ -4001,9 +3959,6 @@
       ],
       "Name required": [
         "Ad zorunludur"
-      ],
-      "Network error": [
-        "Ağ sorunu"
       ],
       "No booking page data received": [
         "Herhangi bir rezervasyon sayfası verisi alınamadı."
@@ -4242,6 +4197,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Kullanılabilecek etki alanları alınırken bir sorun çıktı"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
       ],
       "Something went wrong. Please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
@@ -4608,9 +4566,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Bu sayfa yüklenemedi. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Ek parola kullanıldığında, takma ad yönetimi yalnızca ${ PASS_APP_NAME } içinden yapılabilir."
       ],
       "You need an active personal calendar to import events": [
         "Etkinlikleri içe aktarabilmek için etkin bir takviminiz olmalı"
@@ -6546,6 +6501,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } avantajlarınızı sürdürmek için, aboneliğinizi Google Play Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
       ],
+      "support team": [
+        "destek ekibi"
+      ],
       "Surveillance": [
         "Gözetim"
       ],
@@ -7310,9 +7268,6 @@
       "Address": [
         "Adres"
       ],
-      "Alias title": [
-        "Takma ad başlığı"
-      ],
       "All day": [
         "Tüm gün"
       ],
@@ -7454,9 +7409,6 @@
       "Drive": [
         "Drive"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "örneğin, Amazon, eBay, Etsy"
-      ],
       "Email": [
         "E-posta"
       ],
@@ -7502,12 +7454,6 @@
       "Every": [
         "Her"
       ],
-      "Exact host matching": [
-        "Tam sunucu eşleşmesi"
-      ],
-      "Exact URL matching": [
-        "Tam adres eşleşmesi"
-      ],
       "Expires": [
         "Geçerlilik süresi sonu"
       ],
@@ -7522,9 +7468,6 @@
       ],
       "Folder location": [
         "Klasör konumu"
-      ],
-      "Forwards to": [
-        "Şuraya iletiyor"
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
@@ -7622,14 +7565,8 @@
       "Navigation": [
         "Gezinme"
       ],
-      "Never fill on this exact URL": [
-        "Bu tam adres asla doldurulmasın"
-      ],
       "New password": [
         "Yeni parola"
-      ],
-      "Note": [
-        "Not"
       ],
       "Notification": [
         "Bildirim"
@@ -7654,9 +7591,6 @@
       ],
       "Organizer": [
         "Düzenleyici"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Ana etki alanı ve alt etki alanları (varsayılan)"
       ],
       "participant": [
         "katılımcı",
@@ -7695,26 +7629,17 @@
       "Postal code": [
         "Posta kodu"
       ],
-      "Premium domain": [
-        "Ücretli etki alanı"
-      ],
       "Primary": [
         "Birincil saat dilimi"
       ],
       "Proration": [
         "Hesap bakiyesi"
       ],
-      "Public domain": [
-        "Herkese açık etki alanı"
-      ],
       "Public keys": [
         "Herkese açık anahtarlar"
       ],
       "Region": [
         "Bölge"
-      ],
-      "Regular expression": [
-        "Kurallı ifade"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } görüntülü görüşmesini kaldır"
@@ -7754,9 +7679,6 @@
       ],
       "Start date": [
         "Başlangıç tarihi"
-      ],
-      "Starts with": [
-        "Şununla başlayan"
       ],
       "State": [
         "İl"
@@ -7806,9 +7728,6 @@
       "URL": [
         "İnternet adresi"
       ],
-      "URL wildcard pattern": [
-        "Adres genel arama karakteri modeli"
-      ],
       "Username": [
         "Kullanıcı adı"
       ],
@@ -7839,14 +7758,8 @@
       "What happened?": [
         "Ne oldu?"
       ],
-      "Your alias": [
-        "Takma adınız"
-      ],
       "Your calendar URL": [
         "Takvim adresiniz"
-      ],
-      "Your domain": [
-        "Etki alanınız"
       ],
       "Your IP": [
         "IP adresiniz"
@@ -8247,29 +8160,11 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "'Şununla başlayan' eşleştirme kuralı"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Tam (alt) etki alanı eşleştirme kuralı"
-      ],
-      "Exact URL matching rule": [
-        "Tam adres eşleştirme kuralı"
-      ],
       "Fw:": [
         "İlt:"
       ],
-      "Never fill with this exact URL": [
-        "Bu tam adres asla doldurulmasın"
-      ],
       "Re:": [
         "Ynt:"
-      ],
-      "Regular expression rule": [
-        "Kurallı ifade kuralı"
-      ],
-      "Wildcard pattern matching rule": [
-        "Genel arama karakter modeli eşleştirme kuralı"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ücretsiz deneme süreniz sona erdi. ${ nonAutoRenewalAction }"
@@ -9686,6 +9581,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "${ plan } aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "${ plan } tarifesinin ilk ayını bu fiyat ile alabilmek için son şansınız."
+      ],
       "Last day to save": [
         "İndirim kazanmak için son gün"
       ],
@@ -9768,6 +9666,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Kısa @pm.me adresi"
+      ],
       "Storage": [
         "Depolama alanı"
       ],
@@ -9818,11 +9719,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " ${ helpCenterLink } veya ${ contactSupportLink } adresine gidin."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "Deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için **bir ödeme yöntemi ekleyin**."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Ondan önce istediğiniz zaman iptal edebilirsiniz.** Deneme süresi sona erene kadar ${ planTitle } tarifesini ücretsiz olarak kullanabileceksiniz."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Deneme süreniz bittikten sonra kullanmayı sürdürürseniz** 30 gün içinde iptal edebilir ve ödediğiniz kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Tam aboneliğiniz başladığında...** 30 gün içinde aboneliğinizi iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "${ cancelDate } tarihinden önce istediğiniz zaman iptal edebilirsiniz."
-      ],
-      "Cancel anytime before then.": [
-        "O tarihe kadar istediğiniz zaman iptal edebilirsiniz."
       ],
       "contact our support team": [
         "destek ekibimizle görüşün"
@@ -9836,16 +9749,22 @@
       "help center": [
         "yardım merkezi"
       ],
+      "If you continue after your trial,": [
+        "Deneme süreniz bittikten sonra kullanmayı sürdürürseniz,"
+      ],
       "If you need help,": [
         "Yardıma gerek duyarsanız,"
       ],
       "Once your full subscription starts...": [
         "Tam aboneliğiniz başladığında..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
+      "to keep using all of the features after your trial ends.": [
+        "deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
         "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -9856,9 +9775,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
       ]
     },
     "Option": {
@@ -10681,78 +10597,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "Summer Sale": [
-        "Yaz İndirimi"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/ay"
-      ],
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "2 TB data storage": [
-        "2 TB veri depolama alanı"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
-      ],
-      "3 TB data storage": [
-        "3 TB veri depolama alanı"
-      ],
-      "500 GB storage": [
-        "500 GB depolama alanı"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } uygulamasına tam erişim"
-      ],
-      "Individual accounts for 6 users": [
-        "6 kullanıcı için bireysel hesaplar"
-      ],
-      "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
-      ],
-      "Online document and spreadsheet editor": [
-        "Çevrim içi belge ve hesap tablosu düzenleyici"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleyin"
-      ],
-      "Stronger protection against cyber threats": [
-        "Siber tehditlere karşı daha güçlü koruma"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket ve filtre"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12 aylığına"
-      ],
-      "SUMMER SALE": [
-        "YAZ İNDİRİMİ"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Fırsatı değerlendirin"
@@ -10928,49 +10772,6 @@
     "Section": {
       "Org setup and account security": [
         "Kuruluş ayarları ve hesap güvenliği"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Tüm takma adlar"
-      ],
-      "Create alias": [
-        "Takma ad oluştur"
-      ],
-      "Create an alias": [
-        "Takma ad oluştur"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Anında takma adlar oluşturun ve takma adlarınız ile parolalarınızı kolayca yönetin."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email takma adları"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email takma adları, e-posta adresinizi paylaşmadan çevrim içi hesaplar açmanızı sağlar. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Yeni takma ad"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını aç"
-      ],
-      "Protect your online identity": [
-        "Çevrim içi kimliğinizi koruyun"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını deneyin"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Amazon alışverişleri için kullanıldı gibi."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME } açılacak)"
       ]
     },
     "Security Center - Action": {
@@ -12059,12 +11860,6 @@
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
       ],
-      "Alias copied to clipboard": [
-        "Takma ad panoya kopyalandı"
-      ],
-      "Alias saved and copied": [
-        "Takma ad kaydedildi ve kopyalandı"
-      ],
       "All events deleted": [
         "Tüm etkinlikler silindi"
       ],
@@ -12192,9 +11987,6 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "Klavye kısayol ayarları güncellendi"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "En eski kasanızda bulunan son değiştirilmiş takma adlar"
       ],
       "Participants notified and all events updated": [
         "Katılımcılara bildirim gönderildi ve değişiklikler kaydedildi"
@@ -12852,9 +12644,6 @@
       "Mobile": [
         "Mobil"
       ],
-      "Need more aliases?": [
-        "Daha fazla takma ad mı gerekiyor?"
-      ],
       "Network error": [
         "Ağ sorunu"
       ],
@@ -13509,9 +13298,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } güçlü bir denetim sağlar, ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı siteler ile eşleşmesine ve bu verilerin doldurulmasına neden olabilir."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",

@@ -172,6 +172,9 @@
       "Close navigation": [
         "关闭导航栏"
       ],
+      "Collapse": [
+        "收起"
+      ],
       "Confirm": [
         "确定"
       ],
@@ -250,6 +253,9 @@
       "Create contact": [
         "创建联系人"
       ],
+      "Create folder": [
+        "新建文件夹"
+      ],
       "Create identity": [
         "创建身份"
       ],
@@ -258,6 +264,9 @@
       ],
       "Create login": [
         "创建登录"
+      ],
+      "Create new folder": [
+        "创建文件夹"
       ],
       "Create new items": [
         "创建新项目"
@@ -360,6 +369,9 @@
       ],
       "Exclude from monitoring": [
         "从监测中移除"
+      ],
+      "Expand": [
+        "展开"
       ],
       "Export": [
         "导出"
@@ -505,8 +517,8 @@
       "Move all items": [
         "移动所有项目"
       ],
-      "Move to another vault": [
-        "移至另一个保险库"
+      "Move to": [
+        "移至"
       ],
       "Move to trash": [
         "移至回收站"
@@ -606,6 +618,9 @@
       ],
       "Remove member": [
         "移除成员"
+      ],
+      "Rename": [
+        "重命名"
       ],
       "Request a feature": [
         "功能建议"
@@ -1156,6 +1171,9 @@
       "Failed to create domain": [
         "创建域失败"
       ],
+      "Failed to create folder": [
+        "创建文件夹失败"
+      ],
       "Failed to create new mailbox": [
         "创建新邮箱失败"
       ],
@@ -1170,6 +1188,9 @@
       ],
       "Failed to delete email address from monitoring": [
         "从监测中删除邮箱地址失败"
+      ],
+      "Failed to delete folder": [
+        "删除文件夹失败"
       ],
       "Failed to delete selected items": [
         "删除失败"
@@ -1258,6 +1279,9 @@
       "Failed to update domain name.": [
         "更新域名失败。"
       ],
+      "Failed to update folder": [
+        "更新文件夹失败"
+      ],
       "Failed to update monitoring settings": [
         "监测设置更新失败"
       ],
@@ -1287,6 +1311,9 @@
       ],
       "File does not match expected format": [
         "文件与预期格式不匹配"
+      ],
+      "Folder name does not match": [
+        "文件夹名称不匹配"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "保险库 “${ vaultData.name }” 导入失败：${ errorMessage }"
@@ -1862,8 +1889,8 @@
       "Created item": [
         "已创建项目"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV 为查看数据提供了一种方便的格式。但由于其简单性，某些数据将不包括在内（自定义字段、密码等）。如需完整导出，建议使用其他格式。"
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV 提供了一种便捷的数据查看格式。但由于其格式简单，部分数据将不会被包含（自定义字段、文件夹结构等）。如需完整导出，我们建议使用其他格式。"
       ],
       "Current version": [
         "当前版本"
@@ -2012,6 +2039,15 @@
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "找到“OpenSSH 身份验证代理”，右键点击选择“属性”。"
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "文件夹“${ payload.folder.name }”已创建"
+      ],
+      "Folder deleted": [
+        "文件夹已删除"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "文件夹已重命名为“${ payload.folder.name }”"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "按照这些步骤使用通用 CSV 导入数据："
       ],
@@ -2026,6 +2062,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "转发地址已复制到剪贴板。向该地址发送电子邮件，${ Email } 就会收到。"
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "全量数据同步以提升应用性能，感谢您的耐心等待。"
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "生成的密码将会保留${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }周。"
@@ -2196,7 +2235,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接！"
       ],
       "Moving items": [
         "正在移动"
@@ -2257,6 +2296,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "在线访问 ${ PASS_APP_NAME } 将需要 PIN 码。您将在 3 次尝试失败后注销。"
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "仅“${ folderName }”中的 ${ count } 项将被移动，子文件夹中的项目不会被移动。"
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "仅 ${ count } 项将被移动，文件夹中的项目不会被移动。"
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "仅显示过去 30 天内过期的令牌，更早的令牌将被自动删除。"
@@ -2566,6 +2611,9 @@
       ],
       "Suggested": [
         "建议"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "切换到其他文件夹或在此文件夹中创建项目"
       ],
       "Switch to another vault or create an item in this vault": [
         "切换到另一个保险库或在此保险库中创建一个项目"
@@ -3174,6 +3222,9 @@
       "Company": [
         "公司"
       ],
+      "Confirm folder name": [
+        "确认文件夹名称"
+      ],
       "Confirm vault name": [
         "确认保险库名称"
       ],
@@ -3203,6 +3254,9 @@
       ],
       "Create a custom item": [
         "创建自定义项目"
+      ],
+      "Create a folder": [
+        "新建文件夹"
       ],
       "Create a hide-my-email alias": [
         "创建一个 Hide-my-email 别名"
@@ -3371,6 +3425,12 @@
       ],
       "Floor, apartment, building": [
         "楼层、公寓、楼宇"
+      ],
+      "Folder": [
+        "文件夹"
+      ],
+      "Folders": [
+        "文件夹"
       ],
       "For a one-off sharing": [
         "用于一次性共享"
@@ -4485,6 +4545,9 @@
       "Enter username": [
         "请输入用户名"
       ],
+      "Folder name": [
+        "文件夹名称"
+      ],
       "Full Name": [
         "全名"
       ],
@@ -4512,8 +4575,8 @@
       "Please describe the problem and include any error messages": [
         "请说明您的问题，并附上看到的所有错误提示"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "重新输入 \"${ vaultName }\" 以确认删除"
+      "Retype \"${ name }\" to confirm deletion": [
+        "重新输入“${ name }”以确认删除"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "在 ${ vaultName } 中搜索 ${ pluralItemType }"
@@ -4837,11 +4900,17 @@
       "Create contact": [
         "创建联系人"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "在“${ vaultName }”中创建文件夹"
+      ],
       "Create new access token": [
         "新建访问令牌"
       ],
       "Create PIN code": [
         "创建 PIN 码"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "在“${ folderName }”中创建子文件夹"
       ],
       "Created": [
         "创建时间"
@@ -4876,14 +4945,17 @@
       "Delete domain": [
         "删除域名"
       ],
+      "Delete folder \"${ name }\"?": [
+        "删除文件夹“${ name }”？"
+      ],
       "Delete mailbox": [
         "删除邮箱"
       ],
       "Delete this item?": [
         "删除这个项目？"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "是否删除保险库 “${ vaultName }”？"
+      "Delete vault \"${ name }\"?": [
+        "删除保险库“${ name }”？"
       ],
       "Did you know?": [
         "您知道吗？"
@@ -4932,6 +5004,9 @@
       ],
       "Excluded items": [
         "不包括的项目"
+      ],
+      "Folder options": [
+        "文件夹选项"
       ],
       "Get Started": [
         "立即体验"
@@ -5011,8 +5086,8 @@
       "Modified": [
         "修改时间"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "将 ${ count } 项移动到 ${ vaultName }"
+      "Move ${ count } item to ${ target }": [
+        "将 ${ count } 项移至 ${ target }"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "将 ${ trashedItemsCount } 项移动到回收站？"
@@ -5020,8 +5095,11 @@
       "Move all items to \"${ vaultName }\"?": [
         "将所有项目移动到 \"${ vaultName }\"？"
       ],
-      "Move item to \"${ vaultName }\"": [
-        "将项目移动到 \"${ vaultName }\""
+      "Move all items?": [
+        "移动所有项目？"
+      ],
+      "Move item to \"${ target }\"": [
+        "将项目移至“${ target }”"
       ],
       "MX record": [
         "MX 记录"
@@ -5115,6 +5193,9 @@
       ],
       "Remove secure link?": [
         "移除安全链接？"
+      ],
+      "Rename folder": [
+        "重命名文件夹"
       ],
       "Reset history for this item?": [
         "重置此项目的历史记录？"
@@ -5266,6 +5347,9 @@
       "Your exposed information": [
         "您的泄露信息"
       ],
+      "Your folder is empty": [
+        "您的文件夹为空"
+      ],
       "Your new access token": [
         "您的新访问令牌"
       ],
@@ -5355,6 +5439,9 @@
       "Aliases in trash will continue forwarding emails.": [
         "回收站中的别名将继续转发电子邮件。"
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "此文件夹中的所有项目（包括其子文件夹）将被删除，此操作无法撤销！"
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "回收站中的项目会被永久删除。您将无法撤销这一操作。"
       ],
@@ -5435,6 +5522,9 @@
       ],
       "Failed to load breaches.": [
         "加载泄露信息失败"
+      ],
+      "Folder name is required": [
+        "文件夹名称为必填项"
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "授予剪贴板访问权限以启用自动清除已复制的密码和数据"
@@ -5571,8 +5661,8 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "无法登录至 ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "保管库 “${ vaultName }” 及其包含的所有项目会被永久删除。您将无法撤销这一操作。"
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "保险库“${ name }”及其所有项目将被永久删除，此操作无法撤销！"
       ],
       "Vault name is required": [
         "需要提供保险库名称"
@@ -5606,6 +5696,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "您将不再拥有该保险库的访问权。若要重新加入，您需要获得新的邀请。"
+      ],
+      "You've reached the maximum folder nesting level": [
+        "您已达到文件夹嵌套层级上限"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "您已达到此层级的文件夹数量上限"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "您已达到此保险库的文件夹数量上限"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "在创建项目之前，您的管理员需要为您创建一个保险库"

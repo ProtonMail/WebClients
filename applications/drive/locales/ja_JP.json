@@ -249,9 +249,6 @@
       "Copy address": [
         "アドレスをコピー"
       ],
-      "Copy alias “${ name }”": [
-        "エイリアス「${ name }」をコピー"
-      ],
       "Copy email to clipboard": [
         "メールをコピー"
       ],
@@ -272,9 +269,6 @@
       ],
       "Create a new contact group": [
         "新規連絡先グループを作成"
-      ],
-      "Create and copy alias": [
-        "エイリアスを作成してコピー"
       ],
       "Create folder": [
         "フォルダを作成"
@@ -2862,9 +2856,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "お客様の無料の${ MAIL_APP_NAME }アカウントはストレージ容量が限られているため、直近のGmailメールのみがインポートされます。"
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
       ]
     },
     "description": {
@@ -3123,18 +3114,6 @@
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
-      "Alias is not valid": [
-        "エイリアスが無効です"
-      ],
-      "Alias is required": [
-        "エイリアスは必須です"
-      ],
-      "Alias options could not be resolved": [
-        "エイリアス オプションを解決できませんでした"
-      ],
-      "Aliases could not be loaded": [
-        "エイリアスを読み込めませんでした"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
       ],
@@ -3149,12 +3128,6 @@
       ],
       "An error occurred": [
         "エラーが発生しました"
-      ],
-      "An error occurred while loading alias options": [
-        "エイリアス設定の読み込み中にエラーが発生しました"
-      ],
-      "An error occurred while saving your alias": [
-        "エイリアスの保存中にエラーが発生しました"
       ],
       "Authentication canceled.": [
         "認証がキャンセルされました。"
@@ -3200,12 +3173,6 @@
       ],
       "Could not load sharing details": [
         "共有の詳細を読み込めませんでした"
-      ],
-      "Could not open created vault": [
-        "作成された保管庫を開けませんでした"
-      ],
-      "Could not open updated vault": [
-        "更新された保管庫を開けませんでした"
       ],
       "Could not unlock the parent folder": [
         "親フォルダをアンロックできませんでした"
@@ -3254,9 +3221,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "外部の招待は一時的に無効です。後ほど再度お試しください。"
-      ],
-      "Failed loading group members": [
-        "グループメンバーの読み込みに失敗しました"
       ],
       "Failed to change permissions settings": [
         "権限設定の変更に失敗しました"
@@ -3315,9 +3279,6 @@
       "Folder name cannot be empty.": [
         "フォルダー名は空欄にできません。"
       ],
-      "Forward address is required": [
-        "転送先アドレスは必須です"
-      ],
       "Image upload failed": [
         "画像のアップロードに失敗しました"
       ],
@@ -3357,9 +3318,6 @@
       "Invalid verification code": [
         "無効な検証コード"
       ],
-      "Item content cannot exceed 40KB": [
-        "アイテムの内容が40KBを超えることはできません"
-      ],
       "Label name cannot be empty.": [
         "ラベル名は空欄にできません。"
       ],
@@ -3381,14 +3339,8 @@
       "Missing signature": [
         "署名がありません"
       ],
-      "Name is required": [
-        "名前は必須です"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "名前は${ MAX_NODE_NAME_LENGTH }文字以内で入力してください"
-      ],
-      "Network error": [
-        "ネットワークエラーが発生しました"
       ],
       "No calendars found to import": [
         "インポートするカレンダーが見つかりません"
@@ -3887,9 +3839,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "このページを読み込めませんでした。ページを更新するか、インターネット接続を確認してください。"
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "追加のパスワードが有効になっている場合、エイリアスの管理は ${ PASS_APP_NAME } でのみ行うことができます。"
       ]
     },
     "Error notification": {
@@ -6213,9 +6162,6 @@
       "Address": [
         "メールアドレス"
       ],
-      "Alias title": [
-        "エイリアスのタイトル"
-      ],
       "All": [
         "すべて"
       ],
@@ -6384,9 +6330,6 @@
       "Duplicate found": [
         "重複が見つかりました"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "Amazon、eBay、Etsyなど"
-      ],
       "Editor": [
         "編集者"
       ],
@@ -6420,15 +6363,6 @@
       "Encrypt emails": [
         "メールを暗号化"
       ],
-      "Exact host matching": [
-        "正確なホスト一致"
-      ],
-      "Exact URL matching": [
-        "正確なURL一致"
-      ],
-      "Expired": [
-        "有効期限切れ"
-      ],
       "Expires": [
         "有効期限"
       ],
@@ -6461,9 +6395,6 @@
       ],
       "Folder name": [
         "フォルダー名"
-      ],
-      "Forwards to": [
-        "転送先"
       ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
@@ -6567,9 +6498,6 @@
       "Never": [
         "なし"
       ],
-      "Never fill on this exact URL": [
-        "この正確なURLには絶対に入力しない"
-      ],
       "New password": [
         "新しいパスワード"
       ],
@@ -6581,9 +6509,6 @@
       ],
       "Not selected": [
         "選択されていません"
-      ],
-      "Note": [
-        "メモ"
       ],
       "Notification": [
         "通知"
@@ -6599,9 +6524,6 @@
       ],
       "Other": [
         "その他"
-      ],
-      "Parent domain and subdomains (default)": [
-        "親ドメインとサブドメイン（デフォルト）"
       ],
       "Password": [
         "パスワード"
@@ -6636,23 +6558,14 @@
       "Postal code": [
         "郵便番号"
       ],
-      "Premium domain": [
-        "プレミアムドメイン"
-      ],
       "Proration": [
         "日割り計算"
-      ],
-      "Public domain": [
-        "公開ドメイン"
       ],
       "Public keys": [
         "公開鍵"
       ],
       "Region": [
         "都道府県"
-      ],
-      "Regular expression": [
-        "正規表現"
       ],
       "Replace existing folder or file": [
         "既存のフォルダまたはファイルを置き換え"
@@ -6701,9 +6614,6 @@
       ],
       "Start date": [
         "開始日"
-      ],
-      "Starts with": [
-        "前方一致"
       ],
       "State": [
         "州"
@@ -6756,9 +6666,6 @@
       "Uploaded by": [
         "アップロード元"
       ],
-      "URL wildcard pattern": [
-        "URLワイルドカードパターン"
-      ],
       "Username": [
         "ユーザー名"
       ],
@@ -6785,12 +6692,6 @@
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
-      ],
-      "Your alias": [
-        "あなたのエイリアス"
-      ],
-      "Your domain": [
-        "あなたのドメイン"
       ],
       "Your IP": [
         "お客様のIP"
@@ -7136,24 +7037,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "「前方一致」の一致ルール"
-      ],
-      "Exact (sub) domain matching rule": [
-        "正確な（サブ）ドメイン一致ルール"
-      ],
-      "Exact URL matching rule": [
-        "正確なURL一致ルール"
-      ],
-      "Never fill with this exact URL": [
-        "この正確なURLには絶対に入力しない"
-      ],
-      "Regular expression rule": [
-        "正規表現ルール"
-      ],
-      "Wildcard pattern matching rule": [
-        "ワイルドカードパターン一致ルール"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "お客様の無料トライアルは終了しました。${ nonAutoRenewalAction }"
       ],
@@ -8620,9 +8503,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "${ cancelDate }までにいつでもキャンセルできます。"
       ],
-      "Cancel anytime before then.": [
-        "それまでにいつでもキャンセルできます。"
-      ],
       "contact our support team": [
         "サポートチームにお問い合わせください"
       ],
@@ -8644,9 +8524,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ],
@@ -8655,9 +8532,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "あなたのフル ${ planTitle } サブスクリプションは ${ boldEndDate } に開始します。"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ]
     },
     "Option": {
@@ -9330,78 +9204,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "特典を利用する"
-      ],
-      "Summer Sale": [
-        "サマーセール"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/月"
-      ],
-      "15 GB storage": [
-        "15 GB ストレージ"
-      ],
-      "2 TB data storage": [
-        "2 TB データストレージ"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB ストレージで現在のプランの40倍に"
-      ],
-      "3 TB data storage": [
-        "3 TB データストレージ"
-      ],
-      "500 GB storage": [
-        "500 GB ストレージ"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "割引は通常の月額料金を基準に適用されています。サブスクリプションは、請求期間終了後に通常の年額料金で更新されます。"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }へのフルアクセス"
-      ],
-      "Individual accounts for 6 users": [
-        "6ユーザー分の個別アカウント"
-      ],
-      "Individual accounts for you and a partner": [
-        "お客様用とパートナー様用の個別アカウント"
-      ],
-      "Online document and spreadsheet editor": [
-        "オンラインのドキュメントおよびスプレッドシートエディター"
-      ],
-      "Recover previous file versions": [
-        "ファイルの以前のバージョンを復元"
-      ],
-      "Stronger protection against cyber threats": [
-        "サイバー脅威に対するより強力な保護"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "年間プランに切り替えて、${ toYearlyDiscountAmount }お得に！"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "無制限のフォルダー、ラベル、フィルター"
-      ],
-      "Use your own email domain": [
-        "独自のメールドメインを使用"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12か月プラン"
-      ],
-      "SUMMER SALE": [
-        "サマーセール"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "お得な割引をゲット"
@@ -9538,49 +9340,6 @@
     "Section": {
       "Org setup and account security": [
         "組織のセットアップとアカウントのセキュリティ"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "すべてのエイリアス"
-      ],
-      "Create alias": [
-        "エイリアスを作成"
-      ],
-      "Create an alias": [
-        "エイリアスを作成"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "フライでエイリアスを生成し、エイリアスとパスワードを簡単に管理します。"
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email エイリアス"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email エイリアスで、メールアドレスを共有することなくアカウントを作成できます。${ learnMoreLink }"
-      ],
-      "New alias": [
-        "新しいエイリアス"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } を開く"
-      ],
-      "Protect your online identity": [
-        "あなたをオンラインで守る"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } をお試しください"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "「Amazonでの買い物用」など"
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME } を開きます)"
       ]
     },
     "Security Center - Action": {
@@ -10580,12 +10339,6 @@
       "Address copied to clipboard": [
         "アドレスをコピーしました"
       ],
-      "Alias copied to clipboard": [
-        "エイリアスがクリップボードにコピーされました"
-      ],
-      "Alias saved and copied": [
-        "エイリアスを保存してコピーしました"
-      ],
       "Billing details updated": [
         "請求の詳細が更新されました"
       ],
@@ -10621,9 +10374,6 @@
       ],
       "Invitation rejected": [
         "招待が拒否されました"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "最も古い保管庫に保存されている、最後に変更されたエイリアス"
       ],
       "Payment method added": [
         "支払い方法が追加されました"
@@ -11240,9 +10990,6 @@
       ],
       "Name": [
         "名前"
-      ],
-      "Need more aliases?": [
-        "もっとエイリアスが必要ですか？"
       ],
       "Need to share more files with edit access?": [
         "編集権限でさらにファイルを共有する必要がありますか？"
@@ -11912,9 +11659,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong }は強力な制御を提供しますが、誤りが1つあるだけで自動入力が一致し、詐欺サイトやフィッシングサイトにデータが入力されてしまう可能性があります。"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } 件の連絡先を完全に削除してよろしいですか？"

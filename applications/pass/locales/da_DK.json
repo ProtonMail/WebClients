@@ -163,6 +163,9 @@
       "Close navigation": [
         "Luk navigation"
       ],
+      "Collapse": [
+        "Fold sammen"
+      ],
       "Confirm": [
         "Bekræft"
       ],
@@ -241,6 +244,9 @@
       "Create contact": [
         "Opret kontakt"
       ],
+      "Create folder": [
+        "Opret mappe"
+      ],
       "Create identity": [
         "Opret identitet"
       ],
@@ -249,6 +255,9 @@
       ],
       "Create login": [
         "Opret login"
+      ],
+      "Create new folder": [
+        "Opret ny mappe"
       ],
       "Create new items": [
         "Opret nye elementer"
@@ -342,6 +351,9 @@
       ],
       "Exclude from monitoring": [
         "Undtag fra monitorering"
+      ],
+      "Expand": [
+        "Udvid"
       ],
       "Export": [
         "Eksportér"
@@ -484,8 +496,8 @@
       "Move all items": [
         "Flyt alle elementer"
       ],
-      "Move to another vault": [
-        "Flyt til en anden boks"
+      "Move to": [
+        "Flyt til"
       ],
       "Move to trash": [
         "Flyt til papirkurv"
@@ -576,6 +588,9 @@
       ],
       "Remove member": [
         "Fjern medlem"
+      ],
+      "Rename": [
+        "Omdøb"
       ],
       "Request a feature": [
         "Anmod om en funktion"
@@ -1108,6 +1123,9 @@
       "Failed to create domain": [
         "Kunne ikke oprette domæne"
       ],
+      "Failed to create folder": [
+        "Kunne ikke oprette mappe"
+      ],
       "Failed to create new mailbox": [
         "Kunne ikke oprette ny postkasse"
       ],
@@ -1122,6 +1140,10 @@
       ],
       "Failed to delete email address from monitoring": [
         "Kunne ikke slette e-mailadresse fra monitorering"
+      ],
+      "Failed to delete folder": [
+        "Kunne ikke slette mappe",
+        "Kunne ikke slette mapper"
       ],
       "Failed to delete selected items": [
         "Kunne ikke slette de valgte elementer"
@@ -1210,6 +1232,9 @@
       "Failed to update domain name.": [
         "Det lykkedes ikke at opdatere domænenavnet."
       ],
+      "Failed to update folder": [
+        "Mappen kunne ikke opdateres"
+      ],
       "Failed to update monitoring settings": [
         "Kunne ikke opdatere monitoreringens indstillinger"
       ],
@@ -1239,6 +1264,9 @@
       ],
       "File does not match expected format": [
         "Fil svarer ikke til det forventede format"
+      ],
+      "Folder name does not match": [
+        "Mappenavn matcher ikke"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Import mislykkedes for boks \"${ vaultData.name }\": ${ errorMessage }"
@@ -1806,8 +1834,8 @@
       "Created item": [
         "Oprettede element"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV er et praktisk format til visning af dine data. Men på grund af dets enkelhed vil nogle data ikke blive inkluderet (brugerdefinerede felter, adgangsnøgler...). For en fuldstændig eksport anbefaler vi, at du bruger et andet format."
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV er et praktisk format til visning af dine data. Men på grund af dets enkelhed vil nogle data ikke blive inkluderet. (brugerdefinerede felter, mappestruktur...). For en komplet eksport anbefaler vi, at du bruger et andet format."
       ],
       "Current version": [
         "Aktuel version"
@@ -1956,6 +1984,15 @@
       "finance": [
         "finans"
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Mappen \"${ payload.folder.name }\" blev oprettet"
+      ],
+      "Folder deleted": [
+        "Mappe slettet"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Mappe omdøbt til \"${ payload.folder.name }\""
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Følg de trin for at importere dine data med en generisk CSV:"
       ],
@@ -1971,6 +2008,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Videresendelsesadresse kopieret til udklipsholder. Sender du en e-mail til denne adresse, vil ${ Email } modtage den."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Fuld datasynkronisering for at forbedre appens ydeevne. Tak for din tålmodighed."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Genererede adgangskoder gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge.",
@@ -2187,6 +2227,14 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online adgang til ${ PASS_APP_NAME } kræver en pinkode. Du bliver logget ud efter 3 mislykkede forsøg."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Kun ${ count } element i \"${ folderName }\" flyttes. Elementer i undermapper flyttes ikke.",
+        "Kun ${ count } elementer i \"${ folderName }\" flyttes. Elementer i undermapper flyttes ikke."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Kun ${ count } element flyttes. Elementer i mapper flyttes ikke.",
+        "Kun ${ count } elementer flyttes. Elementer i mapper flyttes ikke."
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Kun tokens som udløb i de seneste 30 dage er vist. Ældre tokens slettes automatisk."
@@ -2482,6 +2530,9 @@
       ],
       "Suggested": [
         "Foreslået"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Skift til en anden mappe, eller opret et element i denne mappe"
       ],
       "Switch to another vault or create an item in this vault": [
         "Skift til en anden boks, eller opret et element i denne boks"
@@ -3091,6 +3142,9 @@
       "Company": [
         "Selskab"
       ],
+      "Confirm folder name": [
+        "Bekræft mappenavn"
+      ],
       "Confirm vault name": [
         "Bekræft boks-navn"
       ],
@@ -3120,6 +3174,9 @@
       ],
       "Create a custom item": [
         "Opret et brugerdefineret element"
+      ],
+      "Create a folder": [
+        "Opret en mappe"
       ],
       "Create a hide-my-email alias": [
         "Opret et hide-my-email-alias"
@@ -3282,6 +3339,12 @@
       ],
       "Floor, apartment, building": [
         "Etage, lejlighed, bygning"
+      ],
+      "Folder": [
+        "Mappe"
+      ],
+      "Folders": [
+        "Mapper"
       ],
       "For a one-off sharing": [
         "Til éngangsdeling"
@@ -4346,6 +4409,9 @@
       "Enter username": [
         "Indtast brugernavn"
       ],
+      "Folder name": [
+        "Mappenavn"
+      ],
       "Full Name": [
         "Fuldt navn"
       ],
@@ -4373,8 +4439,8 @@
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og medtag evt. fejlmeddelelser"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Indtast \"${ vaultName }\" igen for at bekræfte sletning"
+      "Retype \"${ name }\" to confirm deletion": [
+        "Indtast \"${ name }\" igen for at bekræfte sletning"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Søg ${ pluralItemType } i ${ vaultName }"
@@ -4700,11 +4766,17 @@
       "Create contact": [
         "Opret kontakt"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Opret mappe i \"${ vaultName }\""
+      ],
       "Create new access token": [
         "Opret ny adgangstoken"
       ],
       "Create PIN code": [
         "Opret pinkode"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Opret undermappe i \"${ folderName }\""
       ],
       "Created": [
         "Oprettet"
@@ -4740,14 +4812,17 @@
       "Delete domain": [
         "Slet domæne"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Slet mappen “${ name }\"?"
+      ],
       "Delete mailbox": [
         "Slet postkasse"
       ],
       "Delete this item?": [
         "Slet dette element?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Slet boksen \"${ vaultName }\"?"
+      "Delete vault \"${ name }\"?": [
+        "Slet boksen \"${ name }\"?"
       ],
       "Did you know?": [
         "Vidste du?"
@@ -4796,6 +4871,9 @@
       ],
       "Excluded items": [
         "Ekskluderede elementer"
+      ],
+      "Folder options": [
+        "Mappeindstillinger"
       ],
       "Get Started": [
         "Kom i gang"
@@ -4875,9 +4953,9 @@
       "Modified": [
         "Ændret"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Flyt ${ count } element til ${ vaultName }",
-        "Flyt ${ count } elementer til ${ vaultName }"
+      "Move ${ count } item to ${ target }": [
+        "Flyt ${ count } element til ${ target }",
+        "Flyt ${ count } elementer til ${ target }"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Flyt ${ trashedItemsCount } element til papirkurven?",
@@ -4886,8 +4964,11 @@
       "Move all items to \"${ vaultName }\"?": [
         "Flyt alle elementer til \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"": [
-        "Flyt element til \"${ vaultName }\""
+      "Move all items?": [
+        "Flyt alle elementer?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Flyt element til \"${ target }\""
       ],
       "MX record": [
         "MX-record"
@@ -4982,6 +5063,9 @@
       ],
       "Remove secure link?": [
         "Fjern sikkert link?"
+      ],
+      "Rename folder": [
+        "Omdøb mappe"
       ],
       "Reset history for this item?": [
         "Nulstil historik for dette element?"
@@ -5128,6 +5212,9 @@
       "Your exposed information": [
         "Dine blotlagte oplysninger"
       ],
+      "Your folder is empty": [
+        "Din mappe er tom"
+      ],
       "Your new access token": [
         "Din nye adgangstoken"
       ],
@@ -5219,6 +5306,9 @@
       "Aliases in trash will continue forwarding emails.": [
         "Aliasser i papirkurven fortsætter med at videresende e-mails."
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Alle elementer i denne mappe, inklusiv dens undermapper, vil blive slettet. Du kan ikke fortryde."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle dine elementer i papirkurven vil blive slettet permanent. Du kan ikke fortryde denne handling."
       ],
@@ -5301,6 +5391,9 @@
       ],
       "Failed to load breaches.": [
         "Kunne ikke indlæse databrud."
+      ],
+      "Folder name is required": [
+        "Mappenavn er påkrævet"
       ],
       "Identity could not be confirmed": [
         "Identitet kunne ikke bekræftes"
@@ -5435,8 +5528,8 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Kunne ikke logge ind på ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Boksen \"${ vaultName }\" og alle dens elementer vil blive slettet permanent. Du kan ikke fortryde denne handling."
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Boksen \"${ name }\" og alle dens elementer vil blive slettet permanent. Du kan ikke fortryde denne handling."
       ],
       "Vault name is required": [
         "Navn på boks er påkrævet"
@@ -5470,6 +5563,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke længere have adgang til denne boks. Hvis du vil være med igen, skal du have en ny invitation."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Du har nået det dybeste niveau for undermapper"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Du har nået det maksimale antal mapper for dette niveau"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Du har nået det maksimale antal mapper for denne boks"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Din administrator skal oprette en boks til dig, før du kan oprette elementer."

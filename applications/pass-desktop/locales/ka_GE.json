@@ -160,6 +160,9 @@
       "Close navigation": [
         "ნავიგაციის დახურვა"
       ],
+      "Collapse": [
+        "ჩაკეცვა"
+      ],
       "Confirm": [
         "დასტური"
       ],
@@ -238,6 +241,9 @@
       "Create contact": [
         "კონტაქტის შექმნა"
       ],
+      "Create folder": [
+        "საქაღალდის შექმნა"
+      ],
       "Create identity": [
         "იდენტიფიკატორის შექმნა"
       ],
@@ -246,6 +252,9 @@
       ],
       "Create login": [
         "შესვლის ჩანაწერის შექმნა"
+      ],
+      "Create new folder": [
+        "ახალი საქაღალდის შექმნა"
       ],
       "Create new items": [
         "ახალი ელემენტების შექმნა"
@@ -348,6 +357,9 @@
       ],
       "Exclude from monitoring": [
         "მონიტორინგიდან ამოღება"
+      ],
+      "Expand": [
+        "ამოკეცვა"
       ],
       "Export": [
         "გატანა"
@@ -493,8 +505,8 @@
       "Move all items": [
         "ყველა ელემენტის გადატანა"
       ],
-      "Move to another vault": [
-        "სხვა საცავში გადატანა"
+      "Move to": [
+        "გადატანა სად"
       ],
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
@@ -591,6 +603,9 @@
       ],
       "Remove member": [
         "წევრის წაშლა"
+      ],
+      "Rename": [
+        "სახელის გადარქმევა"
       ],
       "Request a feature": [
         "თვისების მოთხოვნა"
@@ -1127,6 +1142,9 @@
       ],
       "Failed to create domain": [
         "დომენის შექმნა ჩავარდა"
+      ],
+      "Failed to create folder": [
+        "საქაღალდის შექმნა ჩავარდა"
       ],
       "Failed to create new mailbox": [
         "ახალი საფოსტო ყუთის შექმნა ჩავარდა"
@@ -1836,9 +1854,6 @@
       "Created item": [
         "შექმნა ელემენტი"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV გთავაზობთ მოხერხებულ ფორმატს თქვენი მონაცემების სანახავად. მაგრამ, მისი სიმარტივის გამო, ზოგიერთი მონაცემები (დამატებითი ველები, საკვანძო გასაღებები და ა.შ.) ჩასმული არ იქნება. მონაცემების სრული გატანისთვის, გირჩევთ, სხვა ფორმატი გამოიყენოთ."
-      ],
       "Current version": [
         "მიმდინარე ვერსია"
       ],
@@ -2171,8 +2186,7 @@
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+        "ელემენტის გადატანა სხვა სეიფში წაშლის მის უსაფრთხო ბმულებს."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -3362,6 +3376,9 @@
       "Floor, apartment, building": [
         "სართული, ბინა, შენობა"
       ],
+      "Folder": [
+        "საქაღალდე"
+      ],
       "For a one-off sharing": [
         "ერთჯერადი გაზიარებისთვის"
       ],
@@ -4505,9 +4522,6 @@
       "Please describe the problem and include any error messages": [
         "აღწერეთ პრობლემა და დაურთეთ შეცდომის ნებისმიერი შეტყობინება"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "წასაშლელად თავიდან აკრიფეთ \"${ vaultName }\""
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "${ pluralItemType }-ის ძებნა ${ vaultName }-ში"
       ],
@@ -4863,9 +4877,6 @@
       "Delete this item?": [
         "წავშალო ეს ელემენტი?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "წავშალო საცავი \"${ vaultName }\"?"
-      ],
       "Did you know?": [
         "იცოდით?"
       ],
@@ -4910,6 +4921,9 @@
       ],
       "Excluded items": [
         "ამოღებული ელემენტები"
+      ],
+      "Folder options": [
+        "საქაღალდის მორგება"
       ],
       "Get Started": [
         "დაიწყეთ"
@@ -4989,19 +5003,12 @@
       "Modified": [
         "შეცვლილია"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count } ელემენტის გადატანა ${ vaultName }-ში",
-        "${ count } ელემენტის გადატანა ${ vaultName }-ში"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "გადავიტანო სანაგვე ყუთში ${ trashedItemsCount } ელემენტი?",
         "გადავიტანო სანაგვე ყუთში ${ trashedItemsCount } ელემენტი?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "გადავიტანო ყველა ელემენტი საცავში \"${ vaultName }\"?"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "გადავიტანო ელემენტი საცავში \"${ vaultName }\""
       ],
       "MX record": [
         "MX ჩანაწერი"
@@ -5551,9 +5558,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }-ში შესვლა შეუძლებელია. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "წაიშლება საცავი '${ vaultName }' და ყველა მისი ჩანაწერი. ეს ქმედება შეუქცევადია."
       ],
       "Vault name is required": [
         "საცავის სახელი აუცილებელია"

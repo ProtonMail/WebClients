@@ -1155,6 +1155,9 @@
       "No, thanks": [
         "いいえ"
       ],
+      "Not now": [
+        "後で"
+      ],
       "OK": [
         "OK"
       ],
@@ -17939,9 +17942,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "${ cancelDate }までにいつでもキャンセルできます。"
       ],
-      "Cancel anytime before then.": [
-        "それまでにいつでもキャンセルできます。"
-      ],
       "contact our support team": [
         "サポートチームにお問い合わせください"
       ],
@@ -17963,9 +17963,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ],
@@ -17974,9 +17971,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "あなたのフル ${ planTitle } サブスクリプションは ${ boldEndDate } に開始します。"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ]
     },
     "Option": {
@@ -19654,78 +19648,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "特典を利用する"
-      ],
-      "Summer Sale": [
-        "サマーセール"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/月"
-      ],
-      "15 GB storage": [
-        "15 GB ストレージ"
-      ],
-      "2 TB data storage": [
-        "2 TB データストレージ"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB ストレージで現在のプランの40倍に"
-      ],
-      "3 TB data storage": [
-        "3 TB データストレージ"
-      ],
-      "500 GB storage": [
-        "500 GB ストレージ"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "割引は通常の月額料金を基準に適用されています。サブスクリプションは、請求期間終了後に通常の年額料金で更新されます。"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }へのフルアクセス"
-      ],
-      "Individual accounts for 6 users": [
-        "6ユーザー分の個別アカウント"
-      ],
-      "Individual accounts for you and a partner": [
-        "お客様用とパートナー様用の個別アカウント"
-      ],
-      "Online document and spreadsheet editor": [
-        "オンラインのドキュメントおよびスプレッドシートエディター"
-      ],
-      "Recover previous file versions": [
-        "ファイルの以前のバージョンを復元"
-      ],
-      "Stronger protection against cyber threats": [
-        "サイバー脅威に対するより強力な保護"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "年間プランに切り替えて、${ toYearlyDiscountAmount }お得に！"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "無制限のフォルダー、ラベル、フィルター"
-      ],
-      "Use your own email domain": [
-        "独自のメールドメインを使用"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12か月プラン"
-      ],
-      "SUMMER SALE": [
-        "サマーセール"
       ]
     },
     "q3campaign2026: Action": {

@@ -163,6 +163,9 @@
       "Close navigation": [
         "Закрыць панэль навігацыі"
       ],
+      "Collapse": [
+        "Згарнуць"
+      ],
       "Confirm": [
         "Пацвердзіць"
       ],
@@ -241,6 +244,9 @@
       "Create contact": [
         "Стварыць кантакт"
       ],
+      "Create folder": [
+        "Стварыць папку"
+      ],
       "Create identity": [
         "Стварыць ідэнтычнасць"
       ],
@@ -249,6 +255,9 @@
       ],
       "Create login": [
         "Стварыць запіс уваходу"
+      ],
+      "Create new folder": [
+        "Стварыць новую папку"
       ],
       "Create new items": [
         "Стварыць новыя элементы"
@@ -342,6 +351,9 @@
       ],
       "Exclude from monitoring": [
         "Выключыць з назірання"
+      ],
+      "Expand": [
+        "Разгарнуць"
       ],
       "Export": [
         "Экспартаваць"
@@ -484,8 +496,8 @@
       "Move all items": [
         "Перамяшчэнне ўсіх элементаў"
       ],
-      "Move to another vault": [
-        "Перамясціць у іншае сховішча"
+      "Move to": [
+        "Перамясціць у"
       ],
       "Move to trash": [
         "Перамясціць у сметніцу"
@@ -576,6 +588,9 @@
       ],
       "Remove member": [
         "Выдаліць удзельніка"
+      ],
+      "Rename": [
+        "Перайменаваць"
       ],
       "Request a feature": [
         "Запытаць функцыю"
@@ -1106,6 +1121,9 @@
       "Failed to create domain": [
         "Не ўдалося стварыць дамен"
       ],
+      "Failed to create folder": [
+        "Не ўдалося стварыць папку"
+      ],
       "Failed to create new mailbox": [
         "Не ўдалося стварыць новую паштовую скрыню"
       ],
@@ -1120,6 +1138,12 @@
       ],
       "Failed to delete email address from monitoring": [
         "Не ўдалося выдаліць адрас электроннай пошты з назірання"
+      ],
+      "Failed to delete folder": [
+        "Не ўдалося выдаліць папку",
+        "Не ўдалося выдаліць папкі",
+        "Не ўдалося выдаліць папкі",
+        "Не ўдалося выдаліць папкі"
       ],
       "Failed to delete selected items": [
         "Не ўдалося выдаліць выбраныя элементы"
@@ -1207,6 +1231,9 @@
       ],
       "Failed to update domain name.": [
         "Не ўдалося абнавіць назву дамена."
+      ],
+      "Failed to update folder": [
+        "Не ўдалося абнавіць папку"
       ],
       "Failed to update monitoring settings": [
         "Не ўдалося абнавіць налады назірання."
@@ -1832,9 +1859,6 @@
       "Created item": [
         "Створаны элемент"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV прапануе зручны фармат прагляду вашых даных. Аднак некаторыя даныя не будуць уключаны (карыстальніцкія палі, ключы доступу і г.д.) з прычыны таго, што фармат мае спрошчаную рэалізацыю. Мы рэкамендуем скарыстацца іншым фарматам для поўнага экспартавання."
-      ],
       "Current version": [
         "Бягучая версія"
       ],
@@ -1981,6 +2005,9 @@
       ],
       "finance": [
         "фінансы"
+      ],
+      "Folder deleted": [
+        "Папка выдалена"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
@@ -3159,6 +3186,9 @@
       "Company": [
         "Кампанія"
       ],
+      "Confirm folder name": [
+        "Пацвердзіце назву папкі"
+      ],
       "Confirm vault name": [
         "Пацвердзіце назву сховішча"
       ],
@@ -3188,6 +3218,9 @@
       ],
       "Create a custom item": [
         "Стварыць карыстальніцкі элемент"
+      ],
+      "Create a folder": [
+        "Стварыць папку"
       ],
       "Create a hide-my-email alias": [
         "Стварыць псеўданім Hide-my-email"
@@ -3350,6 +3383,12 @@
       ],
       "Floor, apartment, building": [
         "Паверх, кватэра, будынак"
+      ],
+      "Folder": [
+        "Папка"
+      ],
+      "Folders": [
+        "Папкі"
       ],
       "For a one-off sharing": [
         "Для аднаразовага абагульвання"
@@ -4420,6 +4459,9 @@
       "Enter username": [
         "Увядзіце імя карыстальніка"
       ],
+      "Folder name": [
+        "Назва папкі"
+      ],
       "Full Name": [
         "Поўнае імя"
       ],
@@ -4446,9 +4488,6 @@
       ],
       "Please describe the problem and include any error messages": [
         "Апішыце праблему і далучыце ўсе паведамленні з памылкамі"
-      ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Увядзіце паўторна \"${ vaultName }\", каб пацвердзіць выдаленне"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Пошук ${ pluralItemType } у ${ vaultName }"
@@ -4487,6 +4526,9 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Гэты URL-адрас НЕ будзе заблакіраваны для аўтазапаўнення"
+      ],
+      "URL matches the rule": [
+        "URL-адрас адправядае правілу"
       ]
     },
     "Security Center - Info": {
@@ -4742,6 +4784,9 @@
       "Clear clipboard": [
         "Ачыстка буфера абмену"
       ],
+      "Compromised password": [
+        "Скампраметаваны пароль"
+      ],
       "Compromised passwords": [
         "Скампраметаваныя паролі"
       ],
@@ -4814,8 +4859,8 @@
       "Delete this item?": [
         "Выдаліць гэты элемент?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Выдаліць сховішча \"${ vaultName }\"?"
+      "Delete vault \"${ name }\"?": [
+        "Выдаліць сховішча \"${ name }\"?"
       ],
       "Did you know?": [
         "Ці ведалі вы што?"
@@ -4834,6 +4879,9 @@
       ],
       "Domain ownership verification": [
         "Праверка ўладальніка дамена"
+      ],
+      "Enable offline mode": [
+        "Уключэнне рэжыму па-за сеткай"
       ],
       "Encrypted import": [
         "Зашыфраванае імпартаванне"
@@ -4861,6 +4909,9 @@
       ],
       "Excluded items": [
         "Выключаныя элементы"
+      ],
+      "Folder options": [
+        "Параметры папкі"
       ],
       "Get Started": [
         "Пачаць працу"
@@ -4940,12 +4991,6 @@
       "Modified": [
         "Зменена"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Перамясціць ${ count } элемент у ${ vaultName }",
-        "Перамясціць ${ count } элементы ў ${ vaultName }",
-        "Перамясціць ${ count } элементаў у ${ vaultName }",
-        "Перамясціць ${ count } элементаў у ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Перамясціць ${ trashedItemsCount } элемент у сметніцу?",
         "Перамясціць ${ trashedItemsCount } элементы ў сметніцу?",
@@ -4955,8 +5000,8 @@
       "Move all items to \"${ vaultName }\"?": [
         "Перамясціць усе элементы ў \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"": [
-        "Перамясціць элемент у \"${ vaultName }\""
+      "Move all items?": [
+        "Перамясціць усе элементы?"
       ],
       "MX record": [
         "Запіс MX"
@@ -5053,6 +5098,9 @@
       ],
       "Remove secure link?": [
         "Выдаліць бяспечную спасылку?"
+      ],
+      "Rename folder": [
+        "Перайменаваць папку"
       ],
       "Reset history for this item?": [
         "Скінуць гісторыю для гэтага элемента?"
@@ -5197,6 +5245,9 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "Your folder is empty": [
+        "Ваша папка нічога не змяшчае"
       ],
       "Your new access token": [
         "Ваш новы токен доступу"
@@ -5380,6 +5431,9 @@
       "Failed to load breaches.": [
         "Не ўдалося загрузіць парушэнні."
       ],
+      "Folder name is required": [
+        "Патрабуецца назва папкі"
+      ],
       "Identity could not be confirmed": [
         "Не ўдалося пацвердзіць ідэнтычнасць"
       ],
@@ -5514,9 +5568,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Немагчыма ўвайсці ў ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Сховішча \"${ vaultName }\" і ўсе яго элементы будуць незваротна выдалены. Вы не зможаце адрабіць гэта дзеянне."
       ],
       "Vault name is required": [
         "Неабходна ўвесці назву сховішча"

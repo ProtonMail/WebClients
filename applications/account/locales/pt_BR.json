@@ -1493,6 +1493,9 @@
       "No, thanks": [
         "Não, obrigado"
       ],
+      "Not now": [
+        "Agora não"
+      ],
       "OK": [
         "OK"
       ],
@@ -7125,6 +7128,9 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Respostas automáticas é um recurso pago. Atualize para uma conta paga para usar este recurso."
       ],
+      "Bookmark password is not available": [
+        "A senha do marcador não está disponível"
+      ],
       "Calendar cannot be found": [
         "Não é possível encontrar o calendário."
       ],
@@ -7175,6 +7181,9 @@
       ],
       "Could not load sharing details": [
         "Não foi possível carregar os detalhes do compartilhamento"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Não foi possível carregar a pré-visualização da imagem: ${ message }"
       ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
@@ -7256,6 +7265,9 @@
       "Error publishing changes": [
         "Erro ao publicar as alterações"
       ],
+      "Expiration date cannot be in the past": [
+        "A data de expiração não pode ser anterior ao passado"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -7282,6 +7294,9 @@
       ],
       "Failed to decrypt item name: ${ message }": [
         "Falha ao descriptografar o nome do item: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Falha ao descriptografar a chave de nó: ${ message }"
       ],
       "Failed to decrypt revision metadata": [
         "Falha ao descriptografar os metadados da revisão"
@@ -7451,6 +7466,9 @@
       ],
       "Missing signature": [
         "Assinatura ausente"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta a assinatura para ${ signatureType }"
       ],
       "Moving item to a non-folder is not allowed": [
         "Não é permitido mover o item para um local que não seja uma pasta"
@@ -7868,6 +7886,9 @@
       ],
       "Too many requests. Please try again later": [
         "Muitas solicitações. Tente novamente mais tarde"
+      ],
+      "Too many server errors, please try again later": [
+        "Muitos erros ao servidor, tente novamente mais tarde"
       ],
       "Too many server requests, please try again later": [
         "Muitas solicitações ao servidor, tente novamente mais tarde"
@@ -8517,6 +8538,9 @@
       ],
       "You're invited to join ${ invite.OrganizationName }": [
         "Você foi convidado a participar de ${ invite.OrganizationName }"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Você está convidado a vincular sua conta da ${ BRAND_NAME } a este grupo familiar e aproveitar todos os seus recursos premium."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Sua conta tem mais endereços de e-mail do que a quantidade que está disponível para você neste plano. ${ addressSettingsLink }"
@@ -13086,6 +13110,9 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Este link de cancelamento de inscrição expirou. Abra um e-mail mais recente desta lista de discussão."
       ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuário não pode ser migrado devido a incompatibilidades de plataforma."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
       ],
@@ -14405,6 +14432,9 @@
       "Cancel / close": [
         "Cancelar / fechar"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Fechar ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Fechar rascunho"
       ],
@@ -14588,6 +14618,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Atalhos do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Atalhos de ação"
       ],
@@ -19307,11 +19340,14 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite nossa ${ helpCenterLink } ou ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adicione uma forma de pagamento** para continuar usando todos os recursos após o término do período de teste."
+      ],
+      "Add a payment method": [
+        "Adicionar método de pagamento"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancele a qualquer momento antes do ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Cancele a qualquer momento antes disso."
       ],
       "contact our support team": [
         "Contate nossa equipe de suporte"
@@ -19334,9 +19370,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Você pode usar ${ planTitle } até o fim da avaliação e não será cobrado."
       ],
@@ -19345,9 +19378,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Sua assinatura completa do ${ planTitle } começa em ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Você poderá usar ${ planTitle } até o fim da avaliação, gratuitamente."
       ]
     },
     "Option": {
@@ -20533,6 +20563,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Falha ao inicializar o ${ IDEAL_WERO_BRAND_NAME }. Tente novamente mais tarde."
+      ],
       "Invalid card number": [
         "O número do cartão não é válido."
       ],
@@ -20555,6 +20588,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Ocorreu um erro. A verificação do Google Pay falhou."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, você autoriza a ${ BRAND_NAME } e a Stripe, nossa provedora de serviços de pagamento, a realizar cobranças futuras da sua assinatura nesta conta bancária via Débito Direto, e autoriza seu banco a debitar esses valores. Seu primeiro pagamento é realizado agora via ${ IDEAL_WERO_BRAND_NAME }. Seu plano é renovado automaticamente até que você o cancele; notificaremos você antes de cada cobrança. Para cobranças via débito direto, você pode solicitar um reembolso ao seu banco em até 8 semanas após a data do débito, conforme os termos do seu contrato com o banco. Isso não se aplica ao pagamento via ${ IDEAL_WERO_BRAND_NAME } que você está realizando agora."
       ]
     },
     "Payments.info": {
@@ -21133,78 +21171,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aproveitar a oferta"
-      ],
-      "Summer Sale": [
-        "Oferta Especial"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mês"
-      ],
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "2 TB data storage": [
-        "2 TB de armazenamento de dados"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de armazenamento: 40x o seu plano atual"
-      ],
-      "3 TB data storage": [
-        "3 TB de armazenamento de dados"
-      ],
-      "500 GB storage": [
-        "500 GB de armazenamento"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todos os recursos premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acesso total ao ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Contas individuais para 6 usuários"
-      ],
-      "Individual accounts for you and a partner": [
-        "Contas individuais para você e um parceiro"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor on-line de documentos e planilhas"
-      ],
-      "Recover previous file versions": [
-        "Recupere versões anteriores de arquivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Proteção mais forte contra ameaças cibernéticas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, marcadores e filtros ilimitados"
-      ],
-      "Use your own email domain": [
-        "Use seu próprio domínio de e-mail"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "por 12 meses"
-      ],
-      "SUMMER SALE": [
-        "OFERTA ESPECIAL"
       ]
     },
     "q3campaign2026: Action": {
