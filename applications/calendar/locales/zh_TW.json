@@ -230,9 +230,6 @@
       "Copy address": [
         "複製電子郵件地址"
       ],
-      "Copy alias “${ name }”": [
-        "複製別名 \"${ name }\""
-      ],
       "Copy booking page link": [
         "複製預定頁面的連結"
       ],
@@ -271,9 +268,6 @@
       ],
       "Create an event": [
         "建立新活動"
-      ],
-      "Create and copy alias": [
-        "建立及複製別名"
       ],
       "Create booking page": [
         "建立預約頁面"
@@ -717,6 +711,9 @@
         "推薦好友"
       ],
       "Refresh the page": [
+        "重新整理此頁面"
+      ],
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Remove": [
@@ -3212,9 +3209,6 @@
       ],
       "You’ll get a secure email with the details shortly.": [
         "您即將取得安全電子郵件附帶詳細資料。"
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
       ]
     },
     "description": {
@@ -3541,18 +3535,6 @@
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
       ],
-      "Alias is not valid": [
-        "別名無效"
-      ],
-      "Alias is required": [
-        "別名為必填"
-      ],
-      "Alias options could not be resolved": [
-        "別名選項無法解析處理"
-      ],
-      "Aliases could not be loaded": [
-        "無法載入別名"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
       ],
@@ -3564,12 +3546,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "金額不得低於 (${ minimumAmount })。"
-      ],
-      "An error occurred while loading alias options": [
-        "載入別名選項時發生錯誤"
-      ],
-      "An error occurred while saving your alias": [
-        "儲存別名時發生錯誤。"
       ],
       "Answer failed to be sent": [
         "回答傳送失敗"
@@ -3637,12 +3613,6 @@
       "Could not load the image preview: ${ message }": [
         "無法載入照片預覽: ${ message }"
       ],
-      "Could not open created vault": [
-        "無法開啟被新增的保管庫"
-      ],
-      "Could not open updated vault": [
-        "無法開啟已更新的保管庫"
-      ],
       "Could not unlock this item": [
         "無法解鎖此項目"
       ],
@@ -3703,9 +3673,6 @@
       "Event not found": [
         "未找到活動行程"
       ],
-      "Failed loading group members": [
-        "無法再入群組成員"
-      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "新增現有的 ${ MEET_APP_NAME } 視訊會議失敗"
       ],
@@ -3723,6 +3690,9 @@
       ],
       "Failed to decrypt content key: ${ message }": [
         "解密內容金鑰失敗: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密失敗的項目名稱: ${ message }"
       ],
       "Failed to decrypt session key": [
         "解密工作階段金鑰失敗"
@@ -3750,9 +3720,6 @@
       ],
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
-      ],
-      "Forward address is required": [
-        "轉寄電郵地址為必填"
       ],
       "Image preview not found": [
         "查無照片預覽"
@@ -3814,9 +3781,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "僅可在 ${ minDateString } - ${ maxDateString } 之間移動事件"
       ],
-      "Item content cannot exceed 40KB": [
-        "項目無法超越40KB"
-      ],
       "Item not found": [
         "找不到項目"
       ],
@@ -3856,17 +3820,14 @@
       "Moving item to a non-folder is not allowed": [
         "不允許將項目移動到非資料夾"
       ],
-      "Name is required": [
-        "名稱為必填"
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名稱長度最多為 ${ MAX_NODE_NAME_LENGTH } 個字元"
       ],
       "Name must not be empty": [
         "名稱不得留空"
       ],
       "Name required": [
         "名稱為必填"
-      ],
-      "Network error": [
-        "網路連線錯誤"
       ],
       "No booking page data received": [
         "尚無接受到預定頁面的資料"
@@ -4018,6 +3979,9 @@
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "已移除重複的收件者：${ joinedRecipients }"
       ],
+      "Request aborted": [
+        "請求已中止"
+      ],
       "Request timed out": [
         "需求逾時"
       ],
@@ -4074,6 +4038,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "擷取可用網域時發生錯誤"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
       ],
       "Something went wrong. Please try again.": [
         "發生錯誤，請稍後再試。"
@@ -4420,9 +4387,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "啟用額外密碼時，別名管理只能在 ${ PASS_APP_NAME } 中進行。"
       ],
       "You need an active personal calendar to import events": [
         "您需要一個使用中的個人行事曆以便匯入事件"
@@ -6275,6 +6239,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "訂購授權即將到期，請於${ byDate }前至Play 商店重新訂購以保留您的${ planName }權益。${ reactivateLink }"
       ],
+      "support team": [
+        "支援團隊"
+      ],
       "Surveillance": [
         "監視"
       ],
@@ -7003,9 +6970,6 @@
       "Address": [
         "電郵位址"
       ],
-      "Alias title": [
-        "別名標題"
-      ],
       "All day": [
         "整天"
       ],
@@ -7141,9 +7105,6 @@
       "Drive": [
         "磁碟"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "如 Amazon, eBay, Etsy"
-      ],
       "Email": [
         "電郵"
       ],
@@ -7189,12 +7150,6 @@
       "Every": [
         "每"
       ],
-      "Exact host matching": [
-        "精確的主機比對"
-      ],
-      "Exact URL matching": [
-        "精確的 URL 比對"
-      ],
       "Expires": [
         "有效期限"
       ],
@@ -7209,9 +7164,6 @@
       ],
       "Folder location": [
         "資料夾位置"
-      ],
-      "Forwards to": [
-        "轉寄至"
       ],
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
@@ -7309,14 +7261,8 @@
       "Navigation": [
         "巡覽"
       ],
-      "Never fill on this exact URL": [
-        "絕不在此精確的 URL 填入"
-      ],
       "New password": [
         "新密碼"
-      ],
-      "Note": [
-        "備註"
       ],
       "Notification": [
         "通知"
@@ -7341,9 +7287,6 @@
       ],
       "Organizer": [
         "召集人"
-      ],
-      "Parent domain and subdomains (default)": [
-        "上層網域和子網域 (預設)"
       ],
       "participant": [
         "位參與者"
@@ -7381,26 +7324,17 @@
       "Postal code": [
         "郵遞區號"
       ],
-      "Premium domain": [
-        "頂級質子版網域"
-      ],
       "Primary": [
         "主要"
       ],
       "Proration": [
         "按比例分配後"
       ],
-      "Public domain": [
-        "公開網域"
-      ],
       "Public keys": [
         "公開金鑰"
       ],
       "Region": [
         "地區"
-      ],
-      "Regular expression": [
-        "正規表示式"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "移除 ${ MEET_APP_NAME } 視訊會議"
@@ -7440,9 +7374,6 @@
       ],
       "Start date": [
         "開始日期"
-      ],
-      "Starts with": [
-        "開頭為"
       ],
       "State": [
         "州"
@@ -7492,9 +7423,6 @@
       "URL": [
         "網址"
       ],
-      "URL wildcard pattern": [
-        "URL 萬用字元模式"
-      ],
       "Username": [
         "使用者名稱"
       ],
@@ -7525,14 +7453,8 @@
       "What happened?": [
         "發生了甚麼問題？"
       ],
-      "Your alias": [
-        "你的別名"
-      ],
       "Your calendar URL": [
         "您的行事曆網址"
-      ],
-      "Your domain": [
-        "您的網域"
       ],
       "Your IP": [
         "您的 IP"
@@ -7920,29 +7842,11 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "「開頭為」相符規則"
-      ],
-      "Exact (sub) domain matching rule": [
-        "精確的 (子) 網域比對規則"
-      ],
-      "Exact URL matching rule": [
-        "精確的 URL 比對規則"
-      ],
       "Fw:": [
         "轉寄:"
       ],
-      "Never fill with this exact URL": [
-        "絕不填入此精確的 URL"
-      ],
       "Re:": [
         "回复："
-      ],
-      "Regular expression rule": [
-        "正規表示式規則"
-      ],
-      "Wildcard pattern matching rule": [
-        "萬用字元模式比對規則"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "您的免費試用已結束。 ${ nonAutoRenewalAction }"
@@ -9433,11 +9337,11 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " 參閱我們的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
       ],
+      "Add a payment method": [
+        "添加付款方式"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "於 ${ cancelDate } 前隨時取消。"
-      ],
-      "Cancel anytime before then.": [
-        "於之前隨時取消。"
       ],
       "contact our support team": [
         "聯絡我們的客戶支援團隊"
@@ -9460,9 +9364,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "您仍然可以在 30 天內取消並獲得按比例的退款。"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "您仍然可以在 30 天內取消並獲得按比例的退款。"
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "您可使用 ${ planTitle } 直到試用結束，您將不會被收費。"
       ],
@@ -9471,9 +9372,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "您可以免費使用 ${ planTitle }，直到試用結束為止。"
       ]
     },
     "Option": {
@@ -10259,81 +10157,12 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "取得優惠"
-      ],
-      "Summer Sale": [
-        "夏季特賣"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/每月"
-      ],
-      "15 GB storage": [
-        "15 GB 儲存空間"
-      ],
-      "2 TB data storage": [
-        "2 TB 資料儲存空間"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 儲存空間：您目前方案的 40 倍"
-      ],
-      "3 TB data storage": [
-        "3 TB 資料儲存空間"
-      ],
-      "500 GB storage": [
-        "500 GB 儲存空間"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 及 ${ CALENDAR_SHORT_APP_NAME } 的所有頂級質子版功能"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "完整存取 ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "6 位使用者的個人帳號"
-      ],
-      "Individual accounts for you and a partner": [
-        "供您與夥伴使用的個人帳號"
-      ],
-      "Online document and spreadsheet editor": [
-        "線上文件和試算表編輯器"
-      ],
-      "Recover previous file versions": [
-        "復原先前的檔案版本"
-      ],
-      "Stronger protection against cyber threats": [
-        "針對網路威脅的更強大保護"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "切換至我們的年度方案並節省 ${ toYearlyDiscountAmount }！"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "資料夾、標籤與篩選器無上限"
-      ],
-      "Use your own email domain": [
-        "使用您自己的電子郵件網域"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12 個月"
-      ],
-      "SUMMER SALE": [
-        "夏季特賣"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "取得優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
       ]
     },
     "q3campaign2026: Info": {
@@ -10348,6 +10177,11 @@
       ],
       "500 GB of secure storage": [
         "500 GB 安全儲存空間"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ CALENDAR_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 和 ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "q3campaign2026: Info, Drive first": {
@@ -10467,49 +10301,6 @@
     "Section": {
       "Org setup and account security": [
         "組織設定和帳號安全"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "全部別名"
-      ],
-      "Create alias": [
-        "創建別名"
-      ],
-      "Create an alias": [
-        "建立一個別名"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "隨時生成信箱別名，輕鬆管理別名與密碼。"
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email 別名"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email 別名可以讓您在註冊帳號時不再需要分享您真實的電子郵件地址。 ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "新增别名"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "開啟 ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "保護你的線上身分"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "嘗試${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "於Amazon購物時等…"
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(轉開 ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -11566,12 +11357,6 @@
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
       ],
-      "Alias copied to clipboard": [
-        "已複製別名到剪貼簿"
-      ],
-      "Alias saved and copied": [
-        "已成功儲存及複製別名"
-      ],
       "All events deleted": [
         "所有活動已刪除"
       ],
@@ -11697,9 +11482,6 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "鍵盤快捷鍵喜好設定已更新"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "最後修改的別名已儲存到您最舊的保險庫"
       ],
       "Participants notified and all events updated": [
         "參與者已通知，並且已更新全部事件"
@@ -12342,9 +12124,6 @@
       "Mobile": [
         "手機"
       ],
-      "Need more aliases?": [
-        "需要更多別名?"
-      ],
       "Network error": [
         "網路錯誤"
       ],
@@ -12974,9 +12753,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } 提供了強大的控制，但單個錯誤可能會導致自動填入在欺詐性或網路釣魚網站上比對並填入資料。"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您確定要永久刪除 ${ count } 位聯絡人嗎？"

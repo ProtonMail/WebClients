@@ -230,9 +230,6 @@
       "Copy address": [
         "アドレスをコピー"
       ],
-      "Copy alias “${ name }”": [
-        "エイリアス「${ name }」をコピー"
-      ],
       "Copy booking page link": [
         "予約ページリンクをコピー"
       ],
@@ -271,9 +268,6 @@
       ],
       "Create an event": [
         "予定を作成する"
-      ],
-      "Create and copy alias": [
-        "エイリアスを作成してコピー"
       ],
       "Create booking page": [
         "予約ページを作成"
@@ -714,6 +708,9 @@
         "友達を招待"
       ],
       "Refresh the page": [
+        "ページを更新"
+      ],
+      "refresh the page": [
         "ページを更新"
       ],
       "Remove": [
@@ -3200,9 +3197,6 @@
       ],
       "You’ll get a secure email with the details shortly.": [
         "まもなく、詳細が記載された安全なメールをお客様にお届けします。"
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
       ]
     },
     "description": {
@@ -3526,18 +3520,6 @@
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
-      "Alias is not valid": [
-        "エイリアスが無効です"
-      ],
-      "Alias is required": [
-        "エイリアスは必須です"
-      ],
-      "Alias options could not be resolved": [
-        "エイリアス オプションを解決できませんでした"
-      ],
-      "Aliases could not be loaded": [
-        "エイリアスを読み込めませんでした"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
       ],
@@ -3549,12 +3531,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "最低金額 (${ minimumAmount }) を下回っています。"
-      ],
-      "An error occurred while loading alias options": [
-        "エイリアス設定の読み込み中にエラーが発生しました"
-      ],
-      "An error occurred while saving your alias": [
-        "エイリアスの保存中にエラーが発生しました"
       ],
       "Answer failed to be sent": [
         "回答の送信に失敗しました"
@@ -3609,12 +3585,6 @@
       ],
       "Could not load sharing details": [
         "共有の詳細を読み込めませんでした"
-      ],
-      "Could not open created vault": [
-        "作成された保管庫を開けませんでした"
-      ],
-      "Could not open updated vault": [
-        "更新された保管庫を開けませんでした"
       ],
       "Could not unlock the parent folder": [
         "親フォルダをアンロックできませんでした"
@@ -3673,9 +3643,6 @@
       "Event not found": [
         "イベントが見つかりません"
       ],
-      "Failed loading group members": [
-        "グループメンバーの読み込みに失敗しました"
-      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } ビデオ会議の追加に失敗しました"
       ],
@@ -3714,9 +3681,6 @@
       ],
       "Folder name cannot be empty.": [
         "フォルダー名は空欄にできません。"
-      ],
-      "Forward address is required": [
-        "転送先アドレスは必須です"
       ],
       "Image upload failed": [
         "画像のアップロードに失敗しました"
@@ -3772,9 +3736,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "予定は${ minDateString }から${ maxDateString }まで移動可能です"
       ],
-      "Item content cannot exceed 40KB": [
-        "アイテムの内容が40KBを超えることはできません"
-      ],
       "Label name cannot be empty.": [
         "ラベル名は空欄にできません。"
       ],
@@ -3799,17 +3760,11 @@
       "Missing signature": [
         "署名がありません"
       ],
-      "Name is required": [
-        "名前は必須です"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "名前は${ MAX_NODE_NAME_LENGTH }文字以内で入力してください"
       ],
       "Name required": [
         "名前は必須です"
-      ],
-      "Network error": [
-        "ネットワークエラーが発生しました"
       ],
       "No booking page data received": [
         "予約ページのデータを受信できませんでした"
@@ -3999,6 +3954,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "利用可能なドメインのフェッチ中にエラーが発生しました"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
       ],
       "Something went wrong. Please try again.": [
         "何か問題が発生しました。もう一度お試しください。"
@@ -4324,9 +4282,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "このページを読み込めませんでした。ページを更新するか、インターネット接続を確認してください。"
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "追加のパスワードが有効になっている場合、エイリアスの管理は ${ PASS_APP_NAME } でのみ行うことができます。"
       ],
       "You need an active personal calendar to import events": [
         "予定をインポートするためにはアクティブな個人カレンダーが必要です"
@@ -6152,6 +6107,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "サブスクリプションの終了: ${ planName } の特典を維持するには、${ byDate } までに Google Play ストアでサブスクリプションを再開してください。${ reactivateLink }"
       ],
+      "support team": [
+        "サポートチーム"
+      ],
       "Surveillance": [
         "監視について"
       ],
@@ -6880,9 +6838,6 @@
       "Address": [
         "メールアドレス"
       ],
-      "Alias title": [
-        "エイリアスのタイトル"
-      ],
       "All day": [
         "終日"
       ],
@@ -7018,9 +6973,6 @@
       "Drive": [
         "ドライブ"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "Amazon、eBay、Etsyなど"
-      ],
       "Email": [
         "メールアドレス"
       ],
@@ -7066,12 +7018,6 @@
       "Every": [
         "毎"
       ],
-      "Exact host matching": [
-        "正確なホスト一致"
-      ],
-      "Exact URL matching": [
-        "正確なURL一致"
-      ],
       "Expires": [
         "有効期限"
       ],
@@ -7086,9 +7032,6 @@
       ],
       "Folder location": [
         "フォルダーの場所"
-      ],
-      "Forwards to": [
-        "転送先"
       ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
@@ -7186,14 +7129,8 @@
       "Navigation": [
         "ナビゲーション"
       ],
-      "Never fill on this exact URL": [
-        "この正確なURLには絶対に入力しない"
-      ],
       "New password": [
         "新しいパスワード"
-      ],
-      "Note": [
-        "メモ"
       ],
       "Notification": [
         "通知"
@@ -7218,9 +7155,6 @@
       ],
       "Organizer": [
         "主催者"
-      ],
-      "Parent domain and subdomains (default)": [
-        "親ドメインとサブドメイン（デフォルト）"
       ],
       "participant": [
         "参加者"
@@ -7258,26 +7192,17 @@
       "Postal code": [
         "郵便番号"
       ],
-      "Premium domain": [
-        "プレミアムドメイン"
-      ],
       "Primary": [
         "プライマリー"
       ],
       "Proration": [
         "日割り計算"
       ],
-      "Public domain": [
-        "公開ドメイン"
-      ],
       "Public keys": [
         "公開鍵"
       ],
       "Region": [
         "都道府県"
-      ],
-      "Regular expression": [
-        "正規表現"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME } ビデオ会議を削除"
@@ -7317,9 +7242,6 @@
       ],
       "Start date": [
         "開始日"
-      ],
-      "Starts with": [
-        "前方一致"
       ],
       "State": [
         "州"
@@ -7369,9 +7291,6 @@
       "URL": [
         "URL"
       ],
-      "URL wildcard pattern": [
-        "URLワイルドカードパターン"
-      ],
       "Username": [
         "ユーザー名"
       ],
@@ -7402,14 +7321,8 @@
       "What happened?": [
         "どのような問題が発生しましたか?"
       ],
-      "Your alias": [
-        "あなたのエイリアス"
-      ],
       "Your calendar URL": [
         "カレンダーのURL"
-      ],
-      "Your domain": [
-        "あなたのドメイン"
       ],
       "Your IP": [
         "お客様のIP"
@@ -7794,29 +7707,11 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "「前方一致」の一致ルール"
-      ],
-      "Exact (sub) domain matching rule": [
-        "正確な（サブ）ドメイン一致ルール"
-      ],
-      "Exact URL matching rule": [
-        "正確なURL一致ルール"
-      ],
       "Fw:": [
         "Fw:"
       ],
-      "Never fill with this exact URL": [
-        "この正確なURLには絶対に入力しない"
-      ],
       "Re:": [
         "Re:"
-      ],
-      "Regular expression rule": [
-        "正規表現ルール"
-      ],
-      "Wildcard pattern matching rule": [
-        "ワイルドカードパターン一致ルール"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "お客様の無料トライアルは終了しました。${ nonAutoRenewalAction }"
@@ -9296,9 +9191,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "${ cancelDate }までにいつでもキャンセルできます。"
       ],
-      "Cancel anytime before then.": [
-        "それまでにいつでもキャンセルできます。"
-      ],
       "contact our support team": [
         "サポートチームにお問い合わせください"
       ],
@@ -9320,9 +9212,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ],
@@ -9331,9 +9220,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "あなたのフル ${ planTitle } サブスクリプションは ${ boldEndDate } に開始します。"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ]
     },
     "Option": {
@@ -10093,78 +9979,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "特典を利用する"
-      ],
-      "Summer Sale": [
-        "サマーセール"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/月"
-      ],
-      "15 GB storage": [
-        "15 GB ストレージ"
-      ],
-      "2 TB data storage": [
-        "2 TB データストレージ"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB ストレージで現在のプランの40倍に"
-      ],
-      "3 TB data storage": [
-        "3 TB データストレージ"
-      ],
-      "500 GB storage": [
-        "500 GB ストレージ"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、および${ CALENDAR_SHORT_APP_NAME }のすべてのプレミアム機能"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "割引は通常の月額料金を基準に適用されています。サブスクリプションは、請求期間終了後に通常の年額料金で更新されます。"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }へのフルアクセス"
-      ],
-      "Individual accounts for 6 users": [
-        "6ユーザー分の個別アカウント"
-      ],
-      "Individual accounts for you and a partner": [
-        "お客様用とパートナー様用の個別アカウント"
-      ],
-      "Online document and spreadsheet editor": [
-        "オンラインのドキュメントおよびスプレッドシートエディター"
-      ],
-      "Recover previous file versions": [
-        "ファイルの以前のバージョンを復元"
-      ],
-      "Stronger protection against cyber threats": [
-        "サイバー脅威に対するより強力な保護"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "年間プランに切り替えて、${ toYearlyDiscountAmount }お得に！"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "無制限のフォルダー、ラベル、フィルター"
-      ],
-      "Use your own email domain": [
-        "独自のメールドメインを使用"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12か月プラン"
-      ],
-      "SUMMER SALE": [
-        "サマーセール"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "お得な割引をゲット"
@@ -10314,49 +10128,6 @@
     "Section": {
       "Org setup and account security": [
         "組織のセットアップとアカウントのセキュリティ"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "すべてのエイリアス"
-      ],
-      "Create alias": [
-        "エイリアスを作成"
-      ],
-      "Create an alias": [
-        "エイリアスを作成"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "フライでエイリアスを生成し、エイリアスとパスワードを簡単に管理します。"
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email エイリアス"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email エイリアスで、メールアドレスを共有することなくアカウントを作成できます。${ learnMoreLink }"
-      ],
-      "New alias": [
-        "新しいエイリアス"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } を開く"
-      ],
-      "Protect your online identity": [
-        "あなたをオンラインで守る"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } をお試しください"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "「Amazonでの買い物用」など"
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME } を開きます)"
       ]
     },
     "Security Center - Action": {
@@ -11413,12 +11184,6 @@
       "Address copied to clipboard": [
         "アドレスをコピーしました"
       ],
-      "Alias copied to clipboard": [
-        "エイリアスがクリップボードにコピーされました"
-      ],
-      "Alias saved and copied": [
-        "エイリアスを保存してコピーしました"
-      ],
       "All events deleted": [
         "すべての予定が削除されました"
       ],
@@ -11544,9 +11309,6 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "キーボードショートカットの設定が更新されました"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "最も古い保管庫に保存されている、最後に変更されたエイリアス"
       ],
       "Participants notified and all events updated": [
         "参加者に通知され、すべての予定が更新されました"
@@ -12174,9 +11936,6 @@
       "Mobile": [
         "モバイル"
       ],
-      "Need more aliases?": [
-        "もっとエイリアスが必要ですか？"
-      ],
       "Network error": [
         "ネットワークエラー"
       ],
@@ -12800,9 +12559,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong }は強力な制御を提供しますが、誤りが1つあるだけで自動入力が一致し、詐欺サイトやフィッシングサイトにデータが入力されてしまう可能性があります。"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } 件の連絡先を完全に削除してよろしいですか？"
