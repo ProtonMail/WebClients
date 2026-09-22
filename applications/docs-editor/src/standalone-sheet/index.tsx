@@ -137,6 +137,7 @@ function StandaloneSheet() {
             editorInitializationConfig={undefined}
             onEditorLoadResult={onEditorLoadResult}
             updateLocalStateToLog={updateLocalStateToLog}
+            shouldUseCustomYjsInitialization
           />
         </SheetsDependenciesProvider>
       </main>
