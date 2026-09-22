@@ -358,12 +358,7 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/mail-renderer": {
-            "entry": [
-                "constants.ts",
-                "components/MessageBodyIframe.tsx",
-                "helpers/transforms/transforms.ts",
-                "helpers/transforms/transformEscape.ts"
-            ],
+            "entry": [],
             "project": ["**/*.{ts,tsx}"],
             "ignoreDependencies": ["@proton/styles"]
         },
