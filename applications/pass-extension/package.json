@@ -70,13 +70,13 @@
         "babel-loader": "^10.1.1",
         "babel-plugin-transform-require-context": "^0.1.1",
         "cross-env": "^10.1.0",
-        "eslint": "^10.10.0",
-        "jest": "^30.5.1",
-        "prettier": "^3.9.6",
+        "eslint": "^10.11.0",
+        "jest": "^30.5.2",
+        "prettier": "^3.9.8",
         "socketcluster-server": "^19.2.2",
         "string-replace-loader": "^3.3.0",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
-        "webpack": "^5.110.3",
+        "webpack": "^5.111.1",
         "webpack-dev-server": "^6.0.0"
     },
     "peerDependencies": {

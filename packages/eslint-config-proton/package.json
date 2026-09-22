@@ -31,14 +31,14 @@
         "@eslint/json": "^2.1.0",
         "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "^3.0.2",
         "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-        "eslint": "^10.10.0",
+        "eslint": "^10.11.0",
         "eslint-import-resolver-typescript": "4.4.5",
         "eslint-plugin-compat": "^7.0.2",
         "eslint-plugin-custom-rules": "workspace:^",
         "eslint-plugin-import": "^2.32.0",
         "eslint-plugin-import-x": "^4.17.1",
         "eslint-plugin-jsx-a11y": "^6.10.2",
-        "eslint-plugin-lodash": "^8.0.0",
+        "eslint-plugin-lodash": "^8.1.0",
         "eslint-plugin-monorepo-cop": "patch:eslint-plugin-monorepo-cop@npm%3A1.0.2#~/.yarn/patches/eslint-plugin-monorepo-cop-npm-1.0.2-380956e77a.patch",
         "eslint-plugin-no-only-tests": "^3.4.0",
         "eslint-plugin-react": "^7.37.5",
@@ -47,7 +47,7 @@
         "typescript-eslint": "^8.70.0"
     },
     "peerDependencies": {
-        "prettier": "3.9.6",
+        "prettier": "3.9.8",
         "typescript": "^6.0.3"
     }
 }
