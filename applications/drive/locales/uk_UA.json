@@ -261,9 +261,6 @@
       "Copy address": [
         "Копіювати адресу"
       ],
-      "Copy alias “${ name }”": [
-        "Копіювати псевдонім «${ name }»"
-      ],
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
@@ -284,9 +281,6 @@
       ],
       "Create a new contact group": [
         "Створити нову групу контактів"
-      ],
-      "Create and copy alias": [
-        "Створити й копіювати псевдонім"
       ],
       "Create folder": [
         "Створити теку"
@@ -2988,9 +2982,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ваші найновіші електронні листи з Gmail."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3258,18 +3249,6 @@
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
-      "Alias is not valid": [
-        "Псевдонім недійсний"
-      ],
-      "Alias is required": [
-        "Необхідно вказати псевдонім"
-      ],
-      "Alias options could not be resolved": [
-        "Не вдалося розв'язати параметри псевдоніма"
-      ],
-      "Aliases could not be loaded": [
-        "Не вдалося завантажити псевдоніми"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Увесь обсяг сховища розподілено. Зменште простір, наданий іншим користувачам."
       ],
@@ -3284,12 +3263,6 @@
       ],
       "An error occurred": [
         "Сталася помилка"
-      ],
-      "An error occurred while loading alias options": [
-        "Під час завантаження параметрів псевдоніма сталася помилка"
-      ],
-      "An error occurred while saving your alias": [
-        "Під час збереження вашого псевдоніма сталася помилка"
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -3366,12 +3339,6 @@
       "Could not load the image preview: ${ message }": [
         "Не вдалося завантажити попередній перегляд зображення: ${ message }"
       ],
-      "Could not open created vault": [
-        "Не вдалося відкрити створене сховище"
-      ],
-      "Could not open updated vault": [
-        "Не вдалося відкрити оновлене сховище"
-      ],
       "Could not read part of this file: ${ message }": [
         "Не вдалося прочитати частину цього файлу: ${ message }"
       ],
@@ -3440,9 +3407,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Зовнішні запрошення тимчасово вимкнені. Спробуйте ще раз пізніше"
-      ],
-      "Failed loading group members": [
-        "Не вдалося завантажити учасників групи"
       ],
       "Failed to change permissions settings": [
         "Не вдалося змінити дозволи налаштувань"
@@ -3528,9 +3492,6 @@
       "Folder name cannot be empty.": [
         "Тека не може бути без назви."
       ],
-      "Forward address is required": [
-        "Необхідно вказати адресу пересилання"
-      ],
       "Image preview not found": [
         "Попередній перегляд зображення не знайдено"
       ],
@@ -3572,9 +3533,6 @@
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
-      ],
-      "Item content cannot exceed 40KB": [
-        "Вміст елемента не може перевищувати 40 кБ"
       ],
       "Item not found": [
         "Елемент не знайдено"
@@ -3621,14 +3579,8 @@
       "Moving root item is not allowed": [
         "Переміщення кореневого елемента заборонено"
       ],
-      "Name is required": [
-        "Назва обовʼязкова"
-      ],
       "Name must not be empty": [
         "Поле «Ім’я» не може бути порожнім"
-      ],
-      "Network error": [
-        "Помилка мережі"
       ],
       "No calendars found to import": [
         "Не знайдено календарів для імпортування"
@@ -4244,9 +4196,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Коли увімкнено додатковий пароль, керування псевдонімами може бути здійснено лише в ${ PASS_APP_NAME }."
       ],
       "You may also refresh the page or try again later.": [
         "Ви також можете оновити сторінку або спробувати ще раз пізніше."
@@ -5490,9 +5439,6 @@
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"
-      ],
-      "Debug transcript copied": [
-        "Журнал налагодження скопійовано"
       ],
       "Decrypting files": [
         "Розшифрування файлів"
@@ -6912,9 +6858,6 @@
       "Address": [
         "Адреса"
       ],
-      "Alias title": [
-        "Назва псевдоніма"
-      ],
       "All": [
         "Усі"
       ],
@@ -7101,9 +7044,6 @@
       "Duplicate found": [
         "Знайдено дублікат"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "наприклад, Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Редактор"
       ],
@@ -7136,15 +7076,6 @@
       ],
       "Encrypt emails": [
         "Шифрувати листи"
-      ],
-      "Exact host matching": [
-        "Точна відповідність хоста"
-      ],
-      "Exact URL matching": [
-        "Точна відповідність URL-адреси"
-      ],
-      "Expired": [
-        "Термін дії завершився"
       ],
       "Expires": [
         "Термін дії"
@@ -7181,9 +7112,6 @@
       ],
       "Folder name": [
         "Назва теки"
-      ],
-      "Forwards to": [
-        "Пересилається на"
       ],
       "From: ${ fromEmail }": [
         "Від: ${ fromEmail }"
@@ -7293,9 +7221,6 @@
       "Never": [
         "Ніколи"
       ],
-      "Never fill on this exact URL": [
-        "Ніколи не заповнювати на цій точній URL-адресі"
-      ],
       "New password": [
         "Новий пароль"
       ],
@@ -7307,9 +7232,6 @@
       ],
       "Not selected": [
         "Не вибрано"
-      ],
-      "Note": [
-        "Нотатка"
       ],
       "Notification": [
         "Сповіщення"
@@ -7325,9 +7247,6 @@
       ],
       "Other": [
         "Інше"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Основний домен і піддомени (типовий)"
       ],
       "Password": [
         "Пароль"
@@ -7365,23 +7284,14 @@
       "Postal code": [
         "Поштовий індекс"
       ],
-      "Premium domain": [
-        "Преміум домен"
-      ],
       "Proration": [
         "Розподілення"
-      ],
-      "Public domain": [
-        "Публічний домен"
       ],
       "Public keys": [
         "Відкриті ключі"
       ],
       "Region": [
         "Область"
-      ],
-      "Regular expression": [
-        "Регулярний вираз"
       ],
       "Replace existing folder or file": [
         "Замінити наявну папку або файл"
@@ -7437,9 +7347,6 @@
       "Start date": [
         "Дата початку"
       ],
-      "Starts with": [
-        "Починається з"
-      ],
       "State": [
         "Стан"
       ],
@@ -7494,9 +7401,6 @@
       "Uploaded by": [
         "Вивантажено"
       ],
-      "URL wildcard pattern": [
-        "Шаблон URL-адреси із символом підставлення"
-      ],
       "User opted in": [
         "Користувач дав згоду"
       ],
@@ -7529,12 +7433,6 @@
       ],
       "What happened?": [
         "Що сталося?"
-      ],
-      "Your alias": [
-        "Ваш псевдонім"
-      ],
-      "Your domain": [
-        "Ваш домен"
       ],
       "Your IP": [
         "Ваш IP"
@@ -7913,24 +7811,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Правило відповідності 'Починається з'"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Правило точної відповідності (під) домену"
-      ],
-      "Exact URL matching rule": [
-        "Правило точної відповідності URL-адреси"
-      ],
-      "Never fill with this exact URL": [
-        "Ніколи не заповнювати з цією точковою URL-адресою"
-      ],
-      "Regular expression rule": [
-        "Правило регулярного виразу"
-      ],
-      "Wildcard pattern matching rule": [
-        "Правило відповідності шаблону із символом підставлення"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш безплатний пробний період закінчився. ${ nonAutoRenewalAction }"
       ],
@@ -9587,9 +9467,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Скасуйте будь-коли до ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "Скасуйте передплату в будь-який час до цього моменту."
-      ],
       "contact our support team": [
         "зв'яжіться з нашою службою підтримки"
       ],
@@ -9611,9 +9488,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Ви все одно можете скасувати передплату протягом 30 днів і отримати пропорційне відшкодування."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Ви все ще можете скасувати передплату протягом 30 днів і отримати пропорційне відшкодування."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Ви можете користуватися тарифом ${ planTitle } до завершення пробного періоду без додаткової плати."
       ],
@@ -9622,9 +9496,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ваша повна передплата на ${ planTitle } розпочнеться ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Ви зможете користуватися ${ planTitle } безкоштовно до закінчення пробного періоду."
       ]
     },
     "Option": {
@@ -10351,78 +10222,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Скористатися пропозицією"
-      ],
-      "Summer Sale": [
-        "Літній розпродаж"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/місячний"
-      ],
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "2 TB data storage": [
-        "Сховище даних на 2 ТБ"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "Сховище на 200 ГБ: у 40 разів більше за ваш поточний тарифний план"
-      ],
-      "3 TB data storage": [
-        "Сховище даних на 3 ТБ"
-      ],
-      "500 GB storage": [
-        "500 ГБ сховища"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Усі преміумфункції ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Знижки розраховуються на основі стандартної щомісячної ціни. Вашу передплату буде подовжено за стандартним річним тарифом після закінчення платіжного циклу."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Повний доступ до ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Окремі облікові записи для 6 користувачів"
-      ],
-      "Individual accounts for you and a partner": [
-        "Окремі облікові записи для вас і вашого партнера"
-      ],
-      "Online document and spreadsheet editor": [
-        "Онлайн-редактор документів та електронних таблиць"
-      ],
-      "Recover previous file versions": [
-        "Відновити попередні версії файлів"
-      ],
-      "Stronger protection against cyber threats": [
-        "Надійніший захист від кіберзагроз"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Перейдіть на наш річний тарифний план і заощадьте ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Use your own email domain": [
-        "Використовуйте свій власний домен електронної пошти"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "за 12 місяців"
-      ],
-      "SUMMER SALE": [
-        "ЛІТНІЙ РОЗПРОДАЖ"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } за реферала"
@@ -10515,49 +10314,6 @@
     "Section": {
       "Org setup and account security": [
         "Налаштування організації та безпека облікового запису"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Усі псевдоніми"
-      ],
-      "Create alias": [
-        "Створити псевдонім"
-      ],
-      "Create an alias": [
-        "Створити псевдонім"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Миттєво створюйте псевдоніми, а також легко керуйте ними й паролями."
-      ],
-      "Hide-my-email aliases": [
-        "Псевдоніми Hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Псевдоніми Hide-my-email дають змогу реєструватися в Інтернеті без поширення своєї адреси електронної пошти. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Новий псевдонім"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Відкрити ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Захистіть свої особисті дані в мережі"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Спробуйте ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Використовується на Amazon для покупок та ін."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Коли потрібно вказати адресу електронної пошти, скористайтеся натомість цим псевдонімом. Псевдоніми надаються ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(відкриє ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -11656,12 +11412,6 @@
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
       ],
-      "Alias copied to clipboard": [
-        "Псевдонім скопійовано в буфер обміну"
-      ],
-      "Alias saved and copied": [
-        "Псевдонім збережено та скопійовано"
-      ],
       "Billing details updated": [
         "Платіжні подробиці оновлено"
       ],
@@ -11703,9 +11453,6 @@
       ],
       "Invitation rejected": [
         "Запрошення відхилено"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Останні змінені псевдоніми зберігаються у вашому найстарішому сховищі"
       ],
       "Payment method added": [
         "Спосіб оплати додано"
@@ -12390,9 +12137,6 @@
       ],
       "Name": [
         "Назва"
-      ],
-      "Need more aliases?": [
-        "Потрібно більше псевдонімів?"
       ],
       "Need to share more files with edit access?": [
         "Потрібно поділитись більшою кількістю файлів із доступом до змінення?"
@@ -13146,9 +12890,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } надає потужний контроль, але одна помилка може призвести до того, що автозаповнення збігатиметься і заповнюватиме дані на шахрайських або фішингових вебсайтах."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Ви дійсно хочете остаточно видалити ${ count } контакт?",

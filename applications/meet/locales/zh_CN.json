@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } 放下了手"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } 提到了您：${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } 举起了手"
       ],
@@ -45,6 +48,9 @@
       ],
       "${ name }: ${ message }": [
         "${ name }：${ message }"
+      ],
+      "${ suggestionCount } mention suggestion available": [
+        "${ suggestionCount } 条提及建议可用"
       ],
       "A participant joined the meeting": [
         "一名参与者加入了会议"
@@ -157,6 +163,9 @@
       "You have been muted by the host": [
         "您已被主持人静音"
       ],
+      "You were mentioned: ${ message }": [
+        "有人提到了您：${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "您已被主持人关闭摄像头"
       ],
@@ -167,6 +176,9 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } 条新提及"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } 条新消息"
@@ -311,6 +323,9 @@
       ],
       "Dismiss": [
         "忽略"
+      ],
+      "Dismiss new mentions": [
+        "忽略新提及"
       ],
       "Dismiss new messages": [
         "忽略新消息"
@@ -471,6 +486,9 @@
       "Open link": [
         "打开链接"
       ],
+      "Open mention from ${ senderName } in chat": [
+        "在聊天中打开来自 ${ senderName } 的提及"
+      ],
       "Participants join after you approve them": [
         "参与者需经您批准后方可加入"
       ],
@@ -526,6 +544,9 @@
         "刷新屏幕共享画面"
       ],
       "Refresh the page": [
+        "刷新页面"
+      ],
+      "refresh the page": [
         "刷新页面"
       ],
       "Rejoin meeting": [
@@ -2169,6 +2190,9 @@
       "Live captions have stopped.": [
         "已停用实时字幕。"
       ],
+      "Message is too long to send": [
+        "消息过长，无法发送"
+      ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "麦克风访问被阻止，请在浏览器设置中允许访问。"
       ],
@@ -2277,6 +2301,9 @@
       "Something went wrong": [
         "出了些问题"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
+      ],
       "Something went wrong. Please try again.": [
         "出错了，请再试一次。"
       ],
@@ -2288,6 +2315,12 @@
       ],
       "The meeting password is invalid": [
         "会议密码无效"
+      ],
+      "The mention could not be added because the message is at its character limit": [
+        "无法添加提及，因为消息已达到字符数上限"
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "消息输入框不可用，请重新加载页面。"
       ],
       "The selected microphone is no longer available.": [
         "所选麦克风已不再可用。"
@@ -2613,6 +2646,9 @@
       "${ replyCount } reply": [
         "${ replyCount } 条回复"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } 提到了您"
+      ],
       "${ spotlightParticipantName } is the active speaker": [
         "${ spotlightParticipantName } 是当前发言者"
       ],
@@ -2802,6 +2838,9 @@
       "End-to-end encryption is active for this chat.": [
         "此聊天已启用端到端加密"
       ],
+      "enter": [
+        "输入"
+      ],
       "Enter code": [
         "输入代码"
       ],
@@ -2876,6 +2915,9 @@
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "如果您正在使用 Firefox，请确保已启用 PeerConnection。"
+      ],
+      "Incoming video off": [
+        "关闭传入视频"
       ],
       "Internet connection lost": [
         "网络连接已断开"
@@ -2976,6 +3018,9 @@
       "Member": [
         "成员"
       ],
+      "Mention from ${ senderName }": [
+        "来自 ${ senderName } 的提及"
+      ],
       "Message actions": [
         "消息操作"
       ],
@@ -3044,6 +3089,9 @@
       ],
       "Not sent, check your connection.": [
         "未发送，请检查您的网络连接。"
+      ],
+      "notify everyone here": [
+        "通知此处所有人"
       ],
       "Only meetings you created appear here": [
         "此处仅显示您创建的会议"
@@ -3197,6 +3245,9 @@
       ],
       "Successfully deleted meeting": [
         "会议已成功删除"
+      ],
+      "support team": [
+        "客服团队"
       ],
       "Thank you for hosting a premium meeting.": [
         "感谢主持高级会议！"
@@ -3557,6 +3608,9 @@
       "Every year": [
         "每年"
       ],
+      "everyone": [
+        "所有人"
+      ],
       "Google Calendar": [
         "Google 日历"
       ],
@@ -3598,6 +3652,9 @@
       ],
       "Meeting link": [
         "会议链接"
+      ],
+      "Mention a participant": [
+        "提及参与者"
       ],
       "Message": [
         "消息"
@@ -3685,6 +3742,9 @@
       ],
       "Track SID": [
         "跟踪 SID"
+      ],
+      "unknown": [
+        "未知"
       ],
       "Uploaded image": [
         "已上传的图像"
@@ -3792,6 +3852,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "已成功轮换您的个人会议"
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "感谢！您的反馈已提交。"
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "您无法为未参加的会议发送反馈"

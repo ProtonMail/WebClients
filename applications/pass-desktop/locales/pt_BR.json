@@ -169,6 +169,9 @@
       "Close navigation": [
         "Fechar navegação"
       ],
+      "Collapse": [
+        "Recolher"
+      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -247,6 +250,9 @@
       "Create contact": [
         "Criar contato"
       ],
+      "Create folder": [
+        "Criar pasta"
+      ],
       "Create identity": [
         "Criar identidade"
       ],
@@ -255,6 +261,9 @@
       ],
       "Create login": [
         "Criar login"
+      ],
+      "Create new folder": [
+        "Criar uma pasta"
       ],
       "Create new items": [
         "Crie itens"
@@ -357,6 +366,9 @@
       ],
       "Exclude from monitoring": [
         "Excluir do monitoramento"
+      ],
+      "Expand": [
+        "Expandir"
       ],
       "Export": [
         "Exportar"
@@ -502,8 +514,8 @@
       "Move all items": [
         "Mover todos os itens"
       ],
-      "Move to another vault": [
-        "Mover para outro cofre"
+      "Move to": [
+        "Mover para"
       ],
       "Move to trash": [
         "Mover para a lixeira"
@@ -603,6 +615,9 @@
       ],
       "Remove member": [
         "Remover membro"
+      ],
+      "Rename": [
+        "Renomear"
       ],
       "Request a feature": [
         "Solicitar um recurso"
@@ -1152,6 +1167,9 @@
       "Failed to create domain": [
         "Não foi possível criar um domínio"
       ],
+      "Failed to create folder": [
+        "Falha ao criar a pasta"
+      ],
       "Failed to create new mailbox": [
         "Não foi possível criar uma caixa de correio"
       ],
@@ -1166,6 +1184,10 @@
       ],
       "Failed to delete email address from monitoring": [
         "Falha ao excluir o endereço de e-mail do monitoramento"
+      ],
+      "Failed to delete folder": [
+        "Falha ao excluir pasta",
+        "Falha ao excluir pastas"
       ],
       "Failed to delete selected items": [
         "Falha ao excluir itens selecionados"
@@ -1254,6 +1276,9 @@
       "Failed to update domain name.": [
         "Não foi possível atualizar o nome do domínio."
       ],
+      "Failed to update folder": [
+        "Falha ao atualizar pasta"
+      ],
       "Failed to update monitoring settings": [
         "Falha ao atualizar as configurações de monitoramento"
       ],
@@ -1283,6 +1308,9 @@
       ],
       "File does not match expected format": [
         "O arquivo não corresponde ao formato esperado"
+      ],
+      "Folder name does not match": [
+        "O nome da pasta não corresponde"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Falha na importação para o cofre \"${ vaultData.name }\" : ${ errorMessage }"
@@ -1872,9 +1900,6 @@
       "Created item": [
         "Item criado"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "O formato CSV oferece uma maneira conveniente de visualizar seus dados. No entanto, devido à sua simplicidade, alguns dados não serão incluídos (campos personalizados, chaves de acesso...). Para uma exportação completa, recomendamos usar um formato diferente."
-      ],
       "Current version": [
         "Versão atual"
       ],
@@ -2021,6 +2046,15 @@
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Encontre \"Agente de autenticação OpenSSH\", clique com o botão direito e selecione Propriedades."
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Pasta \"${ payload.folder.name }\" criada"
+      ],
+      "Folder deleted": [
+        "Pasta excluída"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Pasta renomeada para \"${ payload.folder.name }\""
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Siga estas etapas para importar seus dados com um CSV genérico:"
@@ -2207,8 +2241,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -3197,6 +3230,9 @@
       "Company": [
         "Empresa"
       ],
+      "Confirm folder name": [
+        "Confirmar o nome da pasta"
+      ],
       "Confirm vault name": [
         "Confirmar nome do cofre"
       ],
@@ -3226,6 +3262,9 @@
       ],
       "Create a custom item": [
         "Criar um item personalizado"
+      ],
+      "Create a folder": [
+        "Criar uma pasta"
       ],
       "Create a hide-my-email alias": [
         "Criar um alias para ocultar meu e-mail"
@@ -3397,6 +3436,12 @@
       ],
       "Floor, apartment, building": [
         "Andar, apartamento, prédio"
+      ],
+      "Folder": [
+        "Pasta"
+      ],
+      "Folders": [
+        "Pastas"
       ],
       "For a one-off sharing": [
         "Para uso único"
@@ -4514,6 +4559,9 @@
       "Enter username": [
         "Digitar nome de usuário"
       ],
+      "Folder name": [
+        "Nome da pasta"
+      ],
       "Full Name": [
         "Nome completo"
       ],
@@ -4540,9 +4588,6 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descreva o problema e inclua quaisquer mensagens de erro"
-      ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Digite novamente \"${ vaultName }\" para confirmar a exclusão"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Procurar ${ pluralItemType } em ${ vaultName }"
@@ -4859,11 +4904,17 @@
       "Create contact": [
         "Criar contato"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Criar pasta em \"${ vaultName }\""
+      ],
       "Create new access token": [
         "Criar novo token de acesso"
       ],
       "Create PIN code": [
         "Criar código PIN"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Criar subpasta em \"${ folderName }\""
       ],
       "Created": [
         "Criado"
@@ -4899,14 +4950,17 @@
       "Delete domain": [
         "Excluir domínio"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Excluir pasta \"${ name }\"?"
+      ],
       "Delete mailbox": [
         "Excluir caixa de correio"
       ],
       "Delete this item?": [
         "Excluir este item?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Excluir cofre \"${ vaultName }\"?"
+      "Delete vault \"${ name }\"?": [
+        "Excluir cofre \"${ name }\"?"
       ],
       "Did you know?": [
         "Você sabia?"
@@ -4955,6 +5009,9 @@
       ],
       "Excluded items": [
         "Itens excluídos"
+      ],
+      "Folder options": [
+        "Opções da pasta"
       ],
       "Get Started": [
         "Começar"
@@ -5034,10 +5091,6 @@
       "Modified": [
         "Modificado"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Mover ${ count } item para o ${ vaultName }",
-        "Mover ${ count } itens para o ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Mover ${ trashedItemsCount } item para a lixeira?",
         "Mover ${ trashedItemsCount } itens para a lixeira?"
@@ -5045,8 +5098,11 @@
       "Move all items to \"${ vaultName }\"?": [
         "Mover todos os itens para \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"": [
-        "Mover item para \"${ vaultName }\""
+      "Move all items?": [
+        "Mover todos os itens?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Mover item para \"${ target }\""
       ],
       "MX record": [
         "Registro MX"
@@ -5141,6 +5197,9 @@
       ],
       "Remove secure link?": [
         "Remover link seguro?"
+      ],
+      "Rename folder": [
+        "Renomear pasta"
       ],
       "Reset history for this item?": [
         "Redefinir o histórico deste item?"
@@ -5292,6 +5351,9 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
+      ],
+      "Your folder is empty": [
+        "Sua pasta está vazia"
       ],
       "Your new access token": [
         "Seu novo token de acesso"
@@ -5467,6 +5529,9 @@
       "Failed to load breaches.": [
         "Falha ao carregar violações."
       ],
+      "Folder name is required": [
+        "O nome da pasta é obrigatório"
+      ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Permita acesso à área de transferência para ativar a limpeza automática de senhas e dados copiados."
       ],
@@ -5602,9 +5667,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Não foi possível fazer login no ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "O cofre \"${ vaultName }\" e todos os seus itens serão excluídos permanentemente. Não é possível desfazer esta ação."
       ],
       "Vault name is required": [
         "O nome do cofre é obrigatório"

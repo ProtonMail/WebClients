@@ -13723,6 +13723,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Letzte Chance: 80 % Rabatt auf deinen ersten Monat mit ${ plan }"
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Das ist deine letzte Chance, den ersten Monat von ${ plan } zu diesem Preis zu erhalten."
+      ],
       "Last day to save": [
         "Letzter Tag zum Sparen"
       ],
@@ -13805,6 +13808,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Kurze @pm.me E-Mail-Adresse"
+      ],
       "Storage": [
         "Speicherplatz"
       ],
@@ -13824,11 +13830,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besuche ${ helpCenterLink } oder ${ contactSupportLink }"
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Zahlungsmethode hinzufügen**, um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Jederzeit vorher kündigen.** Du kannst ${ planTitle } bis zum Ende der Testversion kostenlos nutzen."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Wenn du nach Ablauf der Testversion fortfährst,** kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Sobald dein volles Abonnement beginnt,** kannst du immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen,"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Jederzeit vor dem ${ cancelDate } kündigen."
-      ],
-      "Cancel anytime before then.": [
-        "Du kannst jederzeit vorher kündigen."
       ],
       "contact our support team": [
         "Kontaktiere unser Support-Team"
@@ -13842,16 +13860,22 @@
       "help center": [
         "Hilfezentrum"
       ],
+      "If you continue after your trial,": [
+        "Wenn du nach Ablauf der Testversion fortfährst,"
+      ],
       "If you need help,": [
         "Wenn du Hilfe benötigst,"
       ],
       "Once your full subscription starts...": [
         "Sobald dein vollständiges Abonnement beginnt ..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Du kannst immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      "to keep using all of the features after your trial ends.": [
+        "um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Du kannst immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -13862,9 +13886,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Dein vollständiges ${ planTitle }-Abonnement beginnt am ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du kannst ${ planTitle } kostenlos nutzen, bis die Testversion ausläuft."
       ]
     },
     "Option": {
@@ -15030,78 +15051,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Deal sichern"
-      ],
-      "Summer Sale": [
-        "Sommer Sale"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/Monat"
-      ],
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "2 TB data storage": [
-        "2 TB Datenspeicher"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB Datenspeicher"
-      ],
-      "500 GB storage": [
-        "500 GB Speicher"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle Premium-Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Voller Zugriff auf ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Eigene Konten für 6 Benutzer"
-      ],
-      "Individual accounts for you and a partner": [
-        "Eigene Konten für dich und einen Partner"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online-Dokumenten- und Tabelleneditor"
-      ],
-      "Recover previous file versions": [
-        "Stelle frühere Dateiversionen wieder her"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stärkerer Schutz vor Cyber-Bedrohungen"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "für 12 Monate"
-      ],
-      "SUMMER SALE": [
-        "SOMMER SALE"
       ]
     },
     "q3campaign2026: Action": {

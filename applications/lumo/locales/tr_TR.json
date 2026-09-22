@@ -1095,6 +1095,9 @@
       "I like this response": [
         "Bu yanıtı beğendim"
       ],
+      "Keep going": [
+        "İlerle"
+      ],
       "Let ${ LUMO_SHORT_APP_NAME } out": [
         "${ LUMO_SHORT_APP_NAME } kedisini dışarı çıkar"
       ],
@@ -1163,6 +1166,9 @@
       ],
       "Stop generating": [
         "Üretmeyi durdur"
+      ],
+      "Stop here": [
+        "Burada dur"
       ],
       "Submit": [
         "Gönder"
@@ -1576,6 +1582,12 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not export this artifact as PDF.": [
+        "Bu yapıt PDF olarak dışa aktarılamadı."
+      ],
+      "Could not export this artifact as PPTX.": [
+        "Bu yapıt PPTX olarak dışa aktarılamadı."
+      ],
       "Could not generate a workflow. Try again.": [
         "Bir iş akışı oluşturulamadı. Lütfen yeniden deneyin."
       ],
@@ -1677,6 +1689,9 @@
       ],
       "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
         "Sohbetleriniz şu anda kaydedilemiyor. Sayfayı yeniden yüklediğinizde yazdığınız her şey kaybolacak."
+      ],
+      "Your existing ${ LUMO_SHORT_APP_NAME } data could not be decrypted with your available account keys. Recover your account keys, then retry.": [
+        "Var olan ${ LUMO_SHORT_APP_NAME } verilerinizin şifresi kulanılabilecek hesap anahtarları ile çözülemedi. Hesap anahtarlarınızı kullanıma alıp yeniden deneyin."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -2173,11 +2188,32 @@
       "Partial content": [
         "İçeriği bir bölümü"
       ],
+      "PDF": [
+        "PDF"
+      ],
+      "PDF downloaded.": [
+        "PDF indirildi."
+      ],
+      "PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.": [
+        "PDF olarak dışa aktarılamadı. Bunun yerine yazdırma görünümü açıldı. Yazdırma iletişim kutusunda “PDF olarak kaydet” seçeneğini seçin."
+      ],
       "Please share what you expected": [
         "Lütfen ne beklediğinizi paylaşın"
       ],
       "Please wait for files to finish processing": [
         "Dosyaların işlenmesi bitene kadar lütfen bekleyin"
+      ],
+      "PPTX": [
+        "PPTX"
+      ],
+      "PPTX downloaded.": [
+        "PPTX indirildi."
+      ],
+      "Preparing ${ formatLabel }…": [
+        "${ formatLabel } hazırlanıyor…"
+      ],
+      "Preparing ${ formatLabel }… (${ current } of ${ total })": [
+        "${ formatLabel } hazırlanıyor… (${ current } / ${ total })"
       ],
       "Private video calls for the conversations that matter.": [
         "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar."
@@ -2305,6 +2341,9 @@
       "This folder is empty": [
         "Bu klasör boş"
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Bu işlem için çok fazla adım gerekiyor. İlerlensin mi?"
+      ],
       "This shares your general sentiment and response metadata with ${ BRAND_NAME }. Your prompt and the response are not included.": [
         "Bu işlem, genel duyarlılığınızı ve yanıt üst verilerinizi ${ BRAND_NAME } ile paylaşır. İsteminiz ve yanıtınız katılmaz."
       ],
@@ -2337,6 +2376,12 @@
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Yükleniyor ${ uploadProgress.fileName }"
+      ],
+      "Uploading to ${ DRIVE_SHORT_APP_NAME }…": [
+        "${ DRIVE_SHORT_APP_NAME } üzerine yükleniyor…"
+      ],
+      "Uploading to ${ DRIVE_SHORT_APP_NAME }… ${ progressPercent }%": [
+        "${ DRIVE_SHORT_APP_NAME } yükleniyor… %${ progressPercent }"
       ],
       "used": [
         "kullanılmış"
@@ -2748,6 +2793,14 @@
         "Kişiselleştirme"
       ]
     },
+    "collider_2025: Spotlight": {
+      "Create artifacts with ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } ile yapıtlar oluşturun"
+      ],
+      "Turn ideas into documents, code, and more. Open Tools to get started.": [
+        "Fikirlerinizi belgelere, kodlara ve diğer şeylere dönüştürün. Başlamak için araçlar bölümünü açın."
+      ]
+    },
     "collider_2025: Status": {
       "Active": [
         "Kullanıma alınmış"
@@ -3035,6 +3088,9 @@
       ],
       "For Business": [
         "Kuruluşlar için"
+      ],
+      "New": [
+        "Yeni"
       ]
     },
     "collider_2025: Trait": {
@@ -3377,6 +3433,24 @@
       "Download image": [
         "Görseli indir"
       ],
+      "Download PDF": [
+        "PDF indir"
+      ],
+      "Download plain text": [
+        "Düz yazı olarak indir"
+      ],
+      "Download PPTX": [
+        "PPTX indir"
+      ],
+      "Download source (HTML)": [
+        "Kaynağı indir (HTML)"
+      ],
+      "Download source (Markdown)": [
+        "Kaynağı indir (Markdown)"
+      ],
+      "Download source file": [
+        "Kaynak dosyasını indir"
+      ],
       "Edit": [
         "Düzenle"
       ],
@@ -3458,6 +3532,15 @@
       "Open conversation": [
         "Yazışmayı aç"
       ],
+      "PDF": [
+        "PDF"
+      ],
+      "Plain text (.txt)": [
+        "Düz yazı (.txt)"
+      ],
+      "PowerPoint (.pptx)": [
+        "PowerPoint (.pptx)"
+      ],
       "Preview": [
         "Ön izleme"
       ],
@@ -3532,6 +3615,9 @@
       ],
       "Show sidebar": [
         "Kenar çubuğunu görüntüle"
+      ],
+      "Source (Markdown)": [
+        "Kaynak (Markdown)"
       ],
       "Start a chat": [
         "Bir sohbet başlat"
@@ -3610,6 +3696,20 @@
       ],
       "Writing Assistant": [
         "Yazma yardımcısı"
+      ]
+    },
+    "collider_2025:Artifact placeholder": {
+      "Create a 5-slide deck on password managers with a bar chart": [
+        "Parola yöneticileri ile ilgili bir çubuk çizelgenin bulunduğu 5 slaytlık bir sunum hazırla"
+      ],
+      "Create a self-contained HTML pomodoro timer": [
+        "Bağımsız bir HTML Pomodoro zamanlayıcısı oluştur"
+      ],
+      "Write a professional email declining a meeting": [
+        "Toplantı davetini profesyonelce reddetmek için bir e-posta yaz"
+      ],
+      "Write a Python script to dedupe a CSV by email": [
+        "CSV dosyasını e-posta ile tekilleştirmek için bir Python betiği yaz"
       ]
     },
     "collider_2025:Badge": {
@@ -3867,6 +3967,9 @@
       "All messages and chat history": [
         "Tüm iletiler ve sohbet geçmişi"
       ],
+      "Almost ready…": [
+        "Neredeyse hazır…"
+      ],
       "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
         "Stresten, bir teşhisten veya bir ilaçtan bahsetmek bile size sunulan sigortanın kapsamını ve ödeyeceğiniz tutarı sessizce etkileyen risk modellerini besleyebilir."
       ],
@@ -3875,6 +3978,9 @@
       ],
       "Any images generated in this conversation will also be deleted.": [
         "Bu yazışmada oluşturulan tüm görseller de silinecek."
+      ],
+      "Applying your changes…": [
+        "Değişiklikleriniz uygulanıyor…"
       ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "“${ project.name }” dosyasını silmek istediğinize emin misiniz? Bu işlem geri alınamaz."
@@ -3893,9 +3999,6 @@
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Bu projeye bağlamak istediğiniz ${ DRIVE_SHORT_APP_NAME } klasörüne gidin ve ardından “Bu klasörü bağla” seçeneğine tıklayın."
-      ],
-      "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to save this document to, then click \"Save here\".": [
-        "Bu belgeyi kaydetmek istediğiniz ${ DRIVE_SHORT_APP_NAME } klasörüne gidin. Ardından \"Buraya kaydet\" üzerine tıklayın."
       ],
       "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
         "100 milyondan fazla kişinin güvendiği ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } ürünlerinin arkasındaki gizlilik markası ${ BRAND_NAME } ekibi tarafından geliştirilmiştir."
@@ -3942,6 +4045,12 @@
       "Create visuals from a prompt, edit photos, analyze charts, or turn rough sketches into polished graphics.": [
         "Bir istemden görseller oluşturun, fotoğrafları düzenleyin, çizelgeleri değerlendirin veya basit taslakları profesyonel grafiklere dönüştürün."
       ],
+      "Creating artifact": [
+        "Yapıt oluşturuluyor"
+      ],
+      "Creating artifact…": [
+        "Yapıt oluşturuluyor…"
+      ],
       "Current chat:": [
         "Geçerli sohbet:"
       ],
@@ -3953,6 +4062,9 @@
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Sohbet geçmişinizden yola çıkarak Big Tech yapay zekasının sizinle ilgili neler öğrenebileceğini görün ve paylaşabileceğiniz bir gizlilik notu alın."
+      ],
+      "Drafting content…": [
+        "İçerik taslağı hazırlanıyor…"
       ],
       "Drag and drop or click to browse": [
         "Dosyayı sürükleyip bırakın ya da göz atmak için tıklayın"
@@ -4056,6 +4168,12 @@
       "Please upload your AI export before continuing.": [
         "İlerlemeden önce lütfen AI dışa aktarma dosyanızı yükleyin."
       ],
+      "Preparing your side panel…": [
+        "Kenar panonuz hazırlanıyor…"
+      ],
+      "Preparing…": [
+        "Hazırlanıyor…"
+      ],
       "Processing file...": [
         "Dosya işleniyor..."
       ],
@@ -4071,6 +4189,12 @@
       "red flags": [
         "kırmızı bayrak"
       ],
+      "Revising your artifact…": [
+        "Yapıtınız gözden geçiriliyor…"
+      ],
+      "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
+        "${ formatLabel } olarak kaydediliyor. Kullanmak istediğiniz ${ DRIVE_SHORT_APP_NAME } klasörüne gidin ve ardından \"Buraya kaydet\" üzerine tıklayın."
+      ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Big Tech şirketlerinin yapay zekalarının sizinle ilgili neler bildiğini görün. ${ LUMO_SHORT_APP_NAME } ile hazırlanmıştır."
       ],
@@ -4079,9 +4203,6 @@
       ],
       "Sign in to your Claude account at claude.ai": [
         "claude.ai adresinden Claude hesabınızda oturum açın"
-      ],
-      "Slides": [
-        "Slaytlar"
       ],
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
         "Yapıştırdığınız içeriklerin bazıları iş yeri, yasal veya veri koruma sınırlarını aşıyor olabilir. Bu bilgi, sizi yargılamak için değil, bunu fark etmenize yardımcı olmak için verilmiştir."
@@ -4139,6 +4260,9 @@
       ],
       "Under your data, click Export data": [
         "Verilerinizin altında verileri dışa aktar üzerine tıklayın"
+      ],
+      "Updating content…": [
+        "İçerik güncelleniyor…"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Sınırsız özel ${ LUMO_SHORT_APP_NAME } oluşturmak, gelişmiş yapay zeka modellerine erişmek ve diğer şeyler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
@@ -4665,8 +4789,14 @@
       "Created an image": [
         "Bir görsel oluşturuldu"
       ],
+      "Created artifact": [
+        "Oluşturulan yapıt"
+      ],
       "Creating an image": [
         "Görsel oluşturuluyor"
+      ],
+      "Creating artifact": [
+        "Yapıt oluşturuluyor"
       ],
       "Dividend Yield": [
         "Temettü getirisi"
@@ -4757,6 +4887,12 @@
       ],
       "Performance comparison": [
         "Başarım"
+      ],
+      "Prepared your side panel": [
+        "Kenar panonuz hazırlandı"
+      ],
+      "Preparing your side panel": [
+        "Kenar panonuz hazırlanıyor"
       ],
       "Price": [
         "Ücret"
@@ -9218,6 +9354,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " ${ helpCenterLink } veya ${ contactSupportLink } adresine gidin."
       ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "${ cancelDate } tarihinden önce istediğiniz zaman iptal edebilirsiniz."
       ],
@@ -9233,11 +9372,20 @@
       "help center": [
         "yardım merkezi"
       ],
+      "If you continue after your trial,": [
+        "Deneme süreniz bittikten sonra kullanmayı sürdürürseniz,"
+      ],
       "If you need help,": [
         "Yardıma gerek duyarsanız,"
       ],
       "Once your full subscription starts...": [
         "Tam aboneliğiniz başladığında..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
@@ -9814,78 +9962,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
-      "Summer Sale": [
-        "Yaz İndirimi"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/ay"
-      ],
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "2 TB data storage": [
-        "2 TB veri depolama alanı"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
-      ],
-      "3 TB data storage": [
-        "3 TB veri depolama alanı"
-      ],
-      "500 GB storage": [
-        "500 GB depolama alanı"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } ürünlerinin tüm ücretli özellikleri"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } uygulamasına tam erişim"
-      ],
-      "Individual accounts for 6 users": [
-        "6 kullanıcı için bireysel hesaplar"
-      ],
-      "Individual accounts for you and a partner": [
-        "Siz ve bir partneriniz için bireysel hesaplar"
-      ],
-      "Online document and spreadsheet editor": [
-        "Çevrim içi belge ve hesap tablosu düzenleyici"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleyin"
-      ],
-      "Stronger protection against cyber threats": [
-        "Siber tehditlere karşı daha güçlü koruma"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket ve filtre"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12 aylığına"
-      ],
-      "SUMMER SALE": [
-        "YAZ İNDİRİMİ"
       ]
     },
     "q3campaign2026: Action": {

@@ -1523,6 +1523,9 @@
       "No, thanks": [
         "No, gracias"
       ],
+      "Not now": [
+        "Ahora no"
+      ],
       "OK": [
         "OK"
       ],
@@ -1969,6 +1972,9 @@
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sesión con ${ BRAND_NAME }"
+      ],
+      "Sign in with Google": [
+        "Iniciar sesión con Google"
       ],
       "Sign in with password": [
         "Iniciar sesión con contraseña"
@@ -10685,6 +10691,9 @@
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
       ],
+      "All admins": [
+        "Todos los administradores"
+      ],
       "All data and settings are preserved": [
         "Se preservan todos los datos y ajustes"
       ],
@@ -10775,6 +10784,9 @@
       ],
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "Se acaba de enviar un SMS con un código de verificación a ${ phoneNumber }."
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Ocurrió un error inesperado mientras se importaban sus datos. Intente de nuevo más tarde."
       ],
       "and": [
         "y"
@@ -11094,6 +11106,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Conecte y gestione sus buzones externos en ${ MAIL_APP_NAME }."
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "Conectándose a Google Drive para configurar su importación segura a ${ DRIVE_APP_NAME }."
       ],
       "Connection data will be available in around 1 hour.": [
         "Los datos de conexión estarán disponible en aproximadamente 1 hora."
@@ -11452,6 +11467,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para los dominios que ya posee. El registro de dominio no está disponible actualmente a través de ${ BRAND_NAME }. Puede alojar correo electrónico para dominios registrados en cualquier registrador de dominios."
       ],
+      "Email you once import is finished": [
+        "Recibirá un correo una vez que finalice la importación"
+      ],
       "Emailing preference saved": [
         "Preferencia de correo guardada"
       ],
@@ -11691,6 +11709,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Por solo ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF a continuación."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para los usuarios que cambian a ${ MAIL_APP_NAME } desde otro servicio de correo electrónico, seleccione la pestaña ${ boldAddresses } y agregue todas las direcciones de correo activas antes de cambiar el registro MX para garantizar una transición sin problemas."
@@ -12340,6 +12361,9 @@
       "Next billing date": [
         "Próxima fecha de facturación"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Luego necesitará iniciar sesión en la cuenta de Google y otorgar acceso a ${ BRAND_NAME } a los datos."
+      ],
       "No account keys exist": [
         "No existen claves de la cuenta"
       ],
@@ -12641,6 +12665,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Intente de nuevo usando un método de pago diferente o contacte con el banco."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Actualice para asegurarse de que la importación finalice con éxito."
+      ],
       "Please use another browser or download the file.": [
         "Use otro navegador o descargue el archivo."
       ],
@@ -12715,6 +12742,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contáctenos para obtener ayuda con cualquier cosa de ${ BRAND_NAME }."
+      ],
+      "Read once and encrypted on arrival": [
+        "Leer una vez y cifrado al llegar"
       ],
       "Receive notifications for ${ categoryLabel }": [
         "Recibir notificaciones para ${ categoryLabel }"
@@ -12974,6 +13004,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
+      ],
+      "Sit back and we will let you know.": [
+        "Relájese y le avisaremos."
       ],
       "Smart Routed through a different country.": [
         "Enrutado inteligente a través de otro país."
@@ -13653,6 +13686,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Use su MDM para eliminar el archivo o ejecute ${ removeScriptLink } mediante la ejecución de scripts de su MDM. Cualquier MDM que admita la implementación de archivos o la ejecución de scripts funcionará."
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "Se usa solo para copiarlos en ${ DRIVE_APP_NAME }."
+      ],
       "User activated": [
         "El usuario fue activado."
       ],
@@ -13773,6 +13809,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Hemos detectado que ya ha iniciado sesión en una aplicación web de ${ BRAND_NAME } en **otro navegador**. Es posible que pueda restablecer la contraseña desde su sesión activa."
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "No soportamos importaciones de fotos, Google Docs, Sheets y Slides. Asegúrese que su Google Drive no está vacío."
+      ],
       "We generated a strong password for you": [
         "Le hemos generado una contraseña fuerte"
       ],
@@ -13803,8 +13842,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Recomendamos encarecidamente que todos activen la recuperación mediante frase de recuperación."
       ],
+      "We support most files": [
+        "Soportamos la mayoría de archivos"
+      ],
       "We use 3-D Secure to protect your payments": [
         "Se usa 3-D Secure para proteger sus pagos."
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "Le enviaremos un correo cuando la importación termine. Una vez finalizada encontrará la importación en una carpeta."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Le redirigiremos a ${ IDEAL_WERO_BRAND_NAME } en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
@@ -13931,6 +13976,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sin activación, no podrá crear usuarios nuevos, agregar direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "No se importarán fotos, Google Docs y Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -14672,6 +14720,9 @@
       "Cancel / close": [
         "Cancelar/cerrar"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Cerrar ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Cerrar borrador"
       ],
@@ -14783,6 +14834,9 @@
       "Next period": [
         "Siguiente periodo"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Abrir ${ LUMO_SHORT_APP_NAME } / entrada de enfoque"
+      ],
       "Open command panel": [
         "Abrir el panel de comandos"
       ],
@@ -14855,6 +14909,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Atajos de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Atajos de acciones"
       ],
@@ -19592,11 +19649,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite nuestro ${ helpCenterLink } o contacte a nuestro ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Añada un método de pago** para seguir usando todas las funciones después de finalizar el periodo de prueba."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancele en cualquier momento antes de esa fecha.** Podrá usar ${ planTitle } hasta que la prueba finalice, libre de cargos."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continúa después de la prueba**, podrá cancelar dentro de 30 días y obtener un reembolso proporcional."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una vez que su suscripción completa inicie**, aún podrá cancelar dentro de 30 días y obtener un reembolso ponderado."
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancele en cualquier momento antes del ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Cancele en cualquier momento antes de esa fecha."
       ],
       "contact our support team": [
         "póngase en contacto con nuestro equipo de soporte"
@@ -19610,16 +19679,22 @@
       "help center": [
         "centro de ayuda"
       ],
+      "If you continue after your trial,": [
+        "Si continúa después de la prueba,"
+      ],
       "If you need help,": [
         "Si necesita ayuda,"
       ],
       "Once your full subscription starts...": [
         "Una vez que comience su suscripción completa..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Todavía puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
+      "to keep using all of the features after your trial ends.": [
+        "para seguir usando todas las funciones después de finalizar el periodo de prueba."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Todavía puede cancelar en un plazo de 30 días y obtener un reembolso proporcional."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -19630,9 +19705,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Su suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Podrá usar ${ planTitle } hasta que termine la prueba, gratuitamente."
       ]
     },
     "Option": {
@@ -21498,78 +21570,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aproveche la oferta"
-      ],
-      "Summer Sale": [
-        "Ofertas de verano"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mes"
-      ],
-      "15 GB storage": [
-        "15 GB de almacenamiento"
-      ],
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de almacenamiento: 40 veces su plan actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "500 GB storage": [
-        "500 GB de almacenamiento"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acceso completo a ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para usted y su pareja"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor en línea de documentos y hojas de cálculo"
-      ],
-      "Recover previous file versions": [
-        "Recupere versiones anteriores de archivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra ciberamenazas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Use your own email domain": [
-        "Use su propio dominio de correo electrónico"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "SUMMER SALE": [
-        "OFERTAS DE VERANO"
       ]
     },
     "q3campaign2026: Action": {
@@ -25254,6 +25254,9 @@
       ],
       "View VPN session details for your organization.": [
         "Ver los detalles de la sesión VPN de su organización"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "Leemos sus archivos una vez para copiarlos y luego ciframos cada uno con sus claves de ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -26295,6 +26298,9 @@
       "Connect your custom domain": [
         "Conecte su dominio personalizado"
       ],
+      "Connect your Google account": [
+        "Conecte su cuenta de Google"
+      ],
       "Connected emails": [
         "Correos conectados"
       ],
@@ -26947,6 +26953,9 @@
       "Import key": [
         "Importar clave"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "La importación inició pero su almacenamiento no será suficiente"
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importar con ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27508,6 +27517,9 @@
       "Set your password": [
         "Establezca la contraseña"
       ],
+      "Setting up your import": [
+        "Configurando su importación"
+      ],
       "Settings": [
         "Ajustes"
       ],
@@ -27534,6 +27546,9 @@
       ],
       "Sign in on TV?": [
         "¿Iniciar sesión en TV?"
+      ],
+      "Sign in to Google": [
+        "Iniciar sesión en Google"
       ],
       "Sign in to join the Beta program": [
         "Iniciar sesión para unirse al programa Beta"
@@ -27839,6 +27854,9 @@
       "Warning: suspected fake website": [
         "Advertencia: presunto sitio web falso"
       ],
+      "We could not find anything to import": [
+        "No pudimos encontrar nada para importar"
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Le enviamos un código a su correo electrónico para asegurarnos de que es usted. Este código es válido por 10 minutos. Ingréselo debajo."
       ],
@@ -27919,6 +27937,9 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
+      ],
+      "Your import is starting": [
+        "La importación está empezando"
       ],
       "Your plan": [
         "El plan"
@@ -28075,6 +28096,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Añadido a su plan: ${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Los administradores pueden gestionar cuentas de usuario y dar privilegios de administrador a otros usuarios."
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
@@ -29262,6 +29286,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Esta importación podría exceder la capacidad de almacenamiento actual disponible en la cuenta de ${ BRAND_NAME }. Considere personalizar su importación."
+      ],
+      "This organization has more users than we can currently migrate. Please contact customer support for assistance.": [
+        "Esta organización tiene más usuarios de los que podemos migrar actualmente. Contáctese con el servicio de atención al cliente para obtener ayuda."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
         "Esto eliminará todos los mensajes, carpetas y etiquetas creados durante la importación."

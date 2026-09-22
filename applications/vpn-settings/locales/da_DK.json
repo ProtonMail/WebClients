@@ -13831,11 +13831,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besøg vores ${ helpCenterLink } eller ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Tilføj en betalingsmetode** for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Annuller når som helst før da**. Du vil kunne bruge ${ planTitle } indtil prøveperioden slutter, uden beregning."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Hvis du forsætter efter din prøveperiode,** så kan du stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Så snart dit abonnement starter...** kan du stadig annullere indenfor 30 dage og få en forholdsmæssig refusion."
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Annullér til enhver tid inden ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Annullér til enhver tid inden da."
       ],
       "contact our support team": [
         "kontakt vores supportteam"
@@ -13849,16 +13861,22 @@
       "help center": [
         "hjælp-center"
       ],
+      "If you continue after your trial,": [
+        "Hvis du forsætter efter din prøveperiode,"
+      ],
       "If you need help,": [
         "Hvis du har brug for hjælp,"
       ],
       "Once your full subscription starts...": [
         "Når dit fulde abonnement starter..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Du kan stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      "to keep using all of the features after your trial ends.": [
+        "for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "så kan du annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Du kan stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -13869,9 +13887,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Dit fulde ${ planTitle }-abonnement starter ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du vil kunne bruge ${ planTitle } indtil prøveversionen udløber, uden beregning."
       ]
     },
     "Option": {
@@ -15037,78 +15052,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Tag imod tilbuddet"
-      ],
-      "Summer Sale": [
-        "Sommerudsalg"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/måned"
-      ],
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "2 TB data storage": [
-        "2 TB datalagerplads"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagerplads: 40x dit nuværende abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB datalagerplads"
-      ],
-      "500 GB storage": [
-        "500 GB lagerplads"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-funktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Fuld adgang til ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuelle konti til 6 brugere"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuelle konti til dig og en partner"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online-editor til dokumenter og regneark"
-      ],
-      "Recover previous file versions": [
-        "Gendan tidligere filversioner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Stærkere beskyttelse mod cybertrusler"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrænset antal mapper, etiketter og filtre"
-      ],
-      "Use your own email domain": [
-        "Brug dit eget e-mail-domæne"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "i 12 måneder"
-      ],
-      "SUMMER SALE": [
-        "SOMMERUDSALG"
       ]
     },
     "q3campaign2026: Action": {

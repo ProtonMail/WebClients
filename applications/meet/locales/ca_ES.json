@@ -35,7 +35,7 @@
         "${ name } ha baixat la mà"
       ],
       "${ name } mentioned you: ${ message }": [
-        "${ name } us ha anomenat: ${ message }"
+        "${ name } us ha esmentat: ${ message }"
       ],
       "${ name } raised their hand": [
         "${ name } ha aixecat la mà"
@@ -50,14 +50,14 @@
         "${ name }: ${ message }"
       ],
       "${ suggestionCount } mention suggestion available": [
-        "Hi ha ${ suggestionCount } suggeriment disponible",
-        "Hi ha ${ suggestionCount } suggeriments disponibles"
+        "Hi ha ${ suggestionCount } suggeriment de menció disponible",
+        "Hi ha ${ suggestionCount } suggeriments de menció disponibles"
       ],
       "A participant joined the meeting": [
         "Un assistent s'ha afegit a la reunió"
       ],
       "A participant left the meeting": [
-        "Un assistent ha marxat"
+        "Un participant ha abandonat la reunió"
       ],
       "A participant lowered their hand": [
         "Un participant ha baixat la mà"
@@ -162,10 +162,10 @@
         "Se us ha desconnectat de la reunió."
       ],
       "You have been muted by the host": [
-        "El moderador us ha silenciat"
+        "L'amfitrió us ha silenciat"
       ],
       "You were mentioned: ${ message }": [
-        "Us han anomenat: ${ message }"
+        "Us han esmentat: ${ message }"
       ],
       "Your camera has been turned off by the host": [
         "El moderador us ha desconnectat la càmera"
@@ -179,8 +179,8 @@
         "Botiga de ${ BRAND_NAME }"
       ],
       "${ newMentionCount } new mention": [
-        "Hi ha ${ newMentionCount } nova menció",
-        "Hi ha ${ newMentionCount } noves mencions"
+        "Hi ha ${ newMentionCount } menció nova",
+        "Hi ha ${ newMentionCount } mencions noves"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } nou",
@@ -289,7 +289,7 @@
         "Copieu l'enllaç de la reunió"
       ],
       "Copy room link": [
-        "Copiar l'enllaç de la sala"
+        "Copia l'enllaç de la sala"
       ],
       "Create a free account": [
         "Creeu un compte gratuït"
@@ -340,7 +340,7 @@
         "Baixa"
       ],
       "Download app": [
-        "Descarregueu l'aplicació"
+        "Descarrega l'aplicació"
       ],
       "Download local participant report": [
         "Descarregueu l'informe del participant local"
@@ -394,7 +394,7 @@
         "Galeria"
       ],
       "Generate a new meeting link.": [
-        "Generar un nou enllaç de reunió."
+        "Genera un enllaç de reunió."
       ],
       "Get Meet Professional": [
         "Obtingueu Meet Professional"
@@ -412,7 +412,7 @@
         "Ajuda i recursos"
       ],
       "Hide options": [
-        "Amagar les opcions"
+        "Amaga les opcions"
       ],
       "Hide participants": [
         "Amagueu els participants"
@@ -433,7 +433,7 @@
         "Afegiu-vos a la reunió"
       ],
       "Join with a link": [
-        "Uniu-vos-hi amb un enllaç"
+        "Uneix-te amb un enllaç"
       ],
       "Kick out": [
         "Expulseu"
@@ -454,7 +454,7 @@
         "Bloquegeu la reunió"
       ],
       "Lower hand": [
-        "Abaixar la mà"
+        "Abaixa la mà"
       ],
       "Meeting timer": [
         "Temporitzador de la reunió"
@@ -550,6 +550,9 @@
       "Refresh the page": [
         "Refresca la pàgina"
       ],
+      "refresh the page": [
+        "refresca la pàgina"
+      ],
       "Rejoin meeting": [
         "Torneu a unir-vos a la reunió"
       ],
@@ -588,13 +591,13 @@
         "Reintenta"
       ],
       "Return to dashboard": [
-        "Tornar al tauler de control"
+        "Torna al tauler de control"
       ],
       "Room": [
         "Sala"
       ],
       "Rotate personal meeting link": [
-        "Roteu l'enllaç personal de la reunió"
+        "Renoveu l'enllaç personal de la reunió"
       ],
       "Save": [
         "Desa"
@@ -705,7 +708,7 @@
         "Toqueu per desbloquejar la reproducció d'àudio"
       ],
       "Test microphone": [
-        "Comprovar el micròfon"
+        "Comprova el micròfon"
       ],
       "Test speakers": [
         "Comprovar els altaveus"
@@ -726,7 +729,7 @@
         "Millora el pla ara"
       ],
       "Upload another image": [
-        "Carregar una altra imatge"
+        "Carrega una altra imatge"
       ],
       "Upload another video": [
         "Carregueu un altre vídeo"
@@ -1040,7 +1043,7 @@
         "Problema de pagament"
       ],
       "Sheets problem": [
-        "Hi ha hagut un problema amb els fulls de càlcul"
+        "Problema amb els fulls de càlcul"
       ],
       "Sign in problem": [
         "Problema d'inici de sessió"
@@ -2049,7 +2052,7 @@
         "No s'ha pogut admetre els participants. Torneu-ho a provar."
       ],
       "Failed to assign host": [
-        "No s'ha pogut assignar amfitrió"
+        "No s'ha pogut assignar l'amfitrió"
       ],
       "Failed to create meeting": [
         "No s'ha pogut crear la reunió."
@@ -2106,7 +2109,7 @@
         "No s'han pogut obtenir les claus de qui convida"
       ],
       "Failed to join meeting. Please try again later.": [
-        "No us heu pogut afegir a la reunió. Torneu-ho a provar més tard."
+        "No us heu pogut unir a la reunió. Torneu-ho a provar més tard."
       ],
       "Failed to join meeting. Please try again.": [
         "No us heu pogut unir a la reunió. Torneu-ho a provar."
@@ -2193,10 +2196,10 @@
         "S'han aturat els subtítols en directe."
       ],
       "Message is too long to send": [
-        "El missatge és massa gran per ser enviat"
+        "El missatge és massa llarg per a enviar-lo"
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
-        "L'accés al micròfon està bloquejat. Permeteu-ho a les preferències del navegador."
+        "L'accés al micròfon està bloquejat. Permeteu-lo a les preferències del navegador."
       ],
       "Missing inviter email": [
         "Falta l'adreça electrònica de qui convida"
@@ -2272,7 +2275,7 @@
         "S'ha eliminat la sala"
       ],
       "Screen share is not supported on mobile browsers": [
-        "La compartició de pantalla no és compatible amb els navegadors de mòbil"
+        "La compartició de pantalla no és compatible amb els navegadors mòbils"
       ],
       "Screen share is not supported on your device": [
         "La compartició de pantalla no és compatible amb el vostre dispositiu"
@@ -2303,6 +2306,9 @@
       ],
       "Something went wrong": [
         "S'ha produït un error."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Alguna cosa ha anat malament. Torneu a provar-ho."
@@ -2620,7 +2626,7 @@
         "S'ha arribat al límit de ${ maxParticipants } participants"
       ],
       "${ MEET_APP_NAME } needs access so others can see and hear you during the call. You can turn your camera or microphone off at any time.": [
-        "${ MEET_APP_NAME } necessita accés perquè els altres us puguin veure i sentir durant la trucada. Podreu apagar la càmera o el micròfon en qualsevol moment."
+        "${ MEET_APP_NAME } necessita accés perquè els altres us puguin veure i sentir durant la trucada. Podeu apagar la càmera o el micròfon en qualsevol moment."
       ],
       "${ MEET_APP_NAME } needs camera access so others can see you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } necessita accés a la càmera perquè els altres us puguin veure durant la trucada. La podreu apagar en qualsevol moment."
@@ -2654,13 +2660,13 @@
         "${ replyCount } respostes"
       ],
       "${ senderNameNode } mentioned you": [
-        "${ senderNameNode } us ha anomenat"
+        "${ senderNameNode } us ha esmentat"
       ],
       "${ spotlightParticipantName } is the active speaker": [
         "${ spotlightParticipantName } és qui parla"
       ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
-        "${ totalParticipantCount } d'un màxim de ${ maxParticipants } participants"
+        "${ totalParticipantCount } de fins a ${ maxParticipants } participants"
       ],
       "${ totalParticipantCount } participant": [
         "${ totalParticipantCount } participant",
@@ -2692,7 +2698,7 @@
         "Admetent"
       ],
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Mode avançat: ajusteu cada constant de desenfocament i després apliqueu-ho per tornar a generar la previsualització. Les superposicions tenen prioritat sobre els valors del fitxer i d'Unleash."
+        "Mode avançat: ajusteu cada constant de desenfocament i, a continuació, apliqueu per tornar a generar la previsualització. Les superposicions tenen prioritat sobre els valors del fitxer i d'Unleash."
       ],
       "Allow camera access to preview your background": [
         "Permeteu l'accés a la càmera per veure la vista prèvia del vostre fons"
@@ -2755,7 +2761,7 @@
         "Xategeu amb tothom"
       ],
       "Check your system settings to make sure that a camera is available.": [
-        "Comproveu la configuració del sistema per assegurar-vos que hi ha una càmera disponible."
+        "Comproveu les preferències del sistema per a assegurar-vos que hi ha una càmera disponible."
       ],
       "Check your system settings to make sure that a microphone is available.": [
         "Comproveu les preferències del sistema per assegurar-vos que hi ha un micròfon disponible."
@@ -2770,7 +2776,7 @@
         "La connexió ha fallat"
       ],
       "Connection interrupted. Reconnecting...": [
-        "Connexió interrompuda. Tornant a connectar..."
+        "La connexió s'ha interromput. S'està tornant a connectar..."
       ],
       "Connection issue detected. Attempting to recover…": [
         "S'ha detectat un problema de connexió. S'està intentant recuperar..."
@@ -2794,7 +2800,7 @@
         "Creeu un compte"
       ],
       "Create an account to host meetings with up to 50 participants.": [
-        "Creeu un compte per organitzar reunions amb fins a 50 participants."
+        "Creeu un compte per a organitzar reunions amb fins a 50 participants."
       ],
       "Created on ${ formattedDate }": [
         "Creat el ${ formattedDate }"
@@ -2842,13 +2848,13 @@
         "El xifratge d'extrem a extrem està actiu per a l'àudio i el vídeo."
       ],
       "End-to-end encryption is active for screen share": [
-        "El xifratge d'extrem a extrem està actiu per la compartició de pantalla."
+        "El xifratge d'extrem a extrem està actiu per a la compartició de pantalla."
       ],
       "End-to-end encryption is active for this chat.": [
         "El xifratge d'extrem a extrem està actiu per a aquest xat."
       ],
       "enter": [
-        "entrar"
+        "introduir"
       ],
       "Enter code": [
         "Introduir el codi"
@@ -2872,7 +2878,7 @@
         "S'ha desconnectat tothom de la trucada."
       ],
       "Expires in ${ formattedCountdown }": [
-        "Caducarà el ${ formattedCountdown }"
+        "Caduca el ${ formattedCountdown }"
       ],
       "Failed to apply background blur": [
         "No s'ha pogut aplicar el difuminat de fons"
@@ -2908,7 +2914,7 @@
         "Amfitrió"
       ],
       "Host has disabled live captions for this meeting.": [
-        "L'amfitrió ha desactivat els subtítols en directe per aquesta reunió."
+        "L'amfitrió ha desactivat els subtítols en directe per a aquesta reunió."
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Organitzeu la vostra pròpia reunió segura. Inicieu una trucada a ${ MEET_APP_NAME } i compartiu l'enllaç per convidar qui vulgueu. Senzill, segur i gratuït."
@@ -2941,7 +2947,7 @@
         "Més informació"
       ],
       "Leave meeting and stop sharing?": [
-        "Voleu sortir de la reunió i deixar de compartir-la?"
+        "Voleu sortir de la reunió i deixar de compartir?"
       ],
       "Leaving the meeting will stop your screen sharing.": [
         "Si sortiu de la reunió, es deixarà de compartir la vostra pantalla."
@@ -3013,7 +3019,7 @@
         "La reunió està bloquejada. No s'hi poden afegir nous participants."
       ],
       "Meeting recordings aren’t supported in Firefox.": [
-        "Firefox no permet fer gravacions de les reunions.."
+        "Les gravacions de les reunions no són compatibles amb Firefox."
       ],
       "Meeting time is up": [
         "S'ha esgotat el temps de la reunió"
@@ -3163,13 +3169,13 @@
         "S'ha reconnectat correctament"
       ],
       "Reconnecting to meeting...": [
-        "Tornant a connectar amb la reunió..."
+        "S'està tornant a connectar amb la reunió..."
       ],
       "Record your meetings": [
         "Graveu les vostres reunions"
       ],
       "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
-        "Enregistra el flux de càmera en brut i amb l'aplicació del difuminat de fons al costat. En aturar-ho es descarregaran els dos resultats."
+        "Enregistreu la transmissió de la càmera sense processar i el difuminat de fons de producció l'un al costat de l'altre. Si atureu l'enregistrament, es descarregaran tots dos clips."
       ],
       "Recording": [
         "S'està enregistrant"
@@ -3199,10 +3205,10 @@
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Rejecting": [
-        "Rebutjant"
+        "S'està rebutjant"
       ],
       "Run your live camera through the custom background processor. Upload an image to use as the background.": [
-        "Utilitzeu la càmera en directe mitjançant el processador de fons personalitzat. Carregueu una imatge per utilitzar-la com a fons."
+        "Passeu la càmera en directe pel processador de fons personalitzat. Carregueu una imatge per a fer-la servir de fons."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Programeu la vostra pròxima reunió. Creeu un compte per a programar reunions amb el vostre calendari."
@@ -3255,6 +3261,9 @@
       "Successfully deleted meeting": [
         "La reunió s'ha eliminat correctament"
       ],
+      "support team": [
+        "equip de suport"
+      ],
       "Thank you for hosting a premium meeting.": [
         "Gràcies per organitzar una reunió prèmium."
       ],
@@ -3262,7 +3271,7 @@
         "Gràcies per unir-vos-hi."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
-        "L'amfitrió us ha eliminat d'aquesta reunió. Si ha estat un error, demaneu-li que us torni a convidar."
+        "L'amfitrió us ha tret d'aquesta reunió. Si ha estat un error, demaneu-li que us torni a convidar."
       ],
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
         "L'enllaç de la reunió que heu intentat obrir no existeix o pot haver caducat. Assegureu-vos que l'enllaç sigui correcte o inicieu una nova reunió segura."
@@ -3331,7 +3340,7 @@
         "Voleu activar els subtítols en directe?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "No s'ha pogut tornar a connectar a la reunió. Entreu-hi de nou o marxeu."
+        "No s'ha pogut tornar a connectar a la reunió. Torneu-vos-hi a unir o sortiu-ne."
       ],
       "unlimited meeting": [
         "reunió il·limitada"
@@ -3361,7 +3370,7 @@
         "S'està esperant que l'amfitrió us admeti. Se l'ha notificat que esteu esperant."
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
-        "S'està esperant que l'amfitrió comenci. Us hi afegireu quan l'amfitrió obri la reunió i us hi admeti."
+        "S'està esperant que l'amfitrió comenci. Us unireu quan l'amfitrió comenci la reunió i us admeti."
       ],
       "Waiting since ${ receivedTime }": [
         "S'està esperant des de ${ receivedTime }"
@@ -3412,7 +3421,7 @@
         "Necessiteu un pla de pagament de ${ MEET_SHORT_APP_NAME } o Workspace per aquesta funció. Poseu-vos en contacte amb l'administrador de la vostra organització per millorar-lo."
       ],
       "You were removed from the meeting": [
-        "Us han eliminat de la reunió"
+        "Us han tret de la reunió"
       ],
       "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
         "No se us ha admès a aquesta reunió. Podeu provar de tornar-vos-hi a unir si creieu que es tracta d'un error."
@@ -3439,7 +3448,7 @@
         "El navegador us ha bloquejat l'accés a la càmera. Per activar-lo, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
       ],
       "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "El navegador us ha bloquejat l'accés al micròfon. Per activar-lo, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
+        "El navegador ha bloquejat l'accés al micròfon. Per a activar-lo, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
       ],
       "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
         "El navegador us ha bloquejat l'accés a la compartició de pantalla. Per activar-lo, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
@@ -3562,7 +3571,7 @@
         "Copieu l'enllaç d'invitació"
       ],
       "Create meeting options": [
-        "Opcions per crear la reunió"
+        "Opcions per a crear la reunió"
       ],
       "Created": [
         "Creat"
@@ -3592,7 +3601,7 @@
         "Selector d'emoticones"
       ],
       "Emoji reactions": [
-        "Reaccions amb emoticones"
+        "Reaccions amb emojis"
       ],
       "Enabled": [
         "Habilitat"
@@ -3652,7 +3661,7 @@
         "Agent de subtítols en directe"
       ],
       "Manage recordings": [
-        "Gestionar els enregistraments"
+        "Gestiona els enregistraments"
       ],
       "Meeting ID": [
         "Identificador de la reunió"
@@ -3724,7 +3733,7 @@
         "Desa el meu nom en aquest dispositiu"
       ],
       "Schedule meeting": [
-        "Programeu una reunió"
+        "Programa una reunió"
       ],
       "Screen share": [
         "Compartir pantalla"
@@ -3748,7 +3757,7 @@
         "Informació del sistema"
       ],
       "Track SID": [
-        "Track SID"
+        "Rastreja el SID"
       ],
       "unknown": [
         "desconegut"
@@ -3760,7 +3769,7 @@
         "Utilitzeu la transmissió de la càmera en directe"
       ],
       "Use simple selfie segmentation": [
-        "Utilitza una segmentació d'autoretrat senzilla"
+        "Utilitza la segmentació senzilla d'autofotos"
       ],
       "Use waiting room with a paid plan": [
         "Utilitzeu la sala d'espera amb un pla de pagament"
@@ -3825,7 +3834,7 @@
     },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
-        "Com que en sou l'únic participant, aquesta reunió es tancarà automàticament. Voleu continuar-hi de totes maneres?"
+        "Com que sou l'únic participant en aquesta reunió, es tancarà automàticament. Voleu continuar-hi?"
       ]
     },
     "meet_2025 Action": {
@@ -3843,7 +3852,7 @@
     },
     "Notification": {
       "Coming soon": [
-        "Disponible properament"
+        "Pròximament"
       ],
       "Copied to clipboard": [
         "S'ha copiat al porta-retalls."
@@ -4153,7 +4162,7 @@
         "N'esteu segur?"
       ],
       "Assign a new host": [
-        "Assigneu un nou amfitrió"
+        "Assigna un nou amfitrió"
       ],
       "Available Cameras": [
         "Càmeres disponibles"
@@ -4168,7 +4177,7 @@
         "Fons"
       ],
       "Background blur preview": [
-        "Vista prèvia del desenfocament de fons"
+        "Previsualització del difuminat de fons"
       ],
       "Backgrounds": [
         "Fons"
@@ -4249,7 +4258,7 @@
         "Afegiu-vos a la reunió"
       ],
       "Join meeting": [
-        "Afegiu-vos a la reunió"
+        "Uniu-vos a la reunió"
       ],
       "Join request expired": [
         "La sol·licitud d'unió ha caducat"
@@ -4301,7 +4310,7 @@
         "Participants ${ filteredParticipants.length }"
       ],
       "People": [
-        "Gent"
+        "Persones"
       ],
       "Personal meeting room": [
         "Sala de reunions personals"
@@ -4454,7 +4463,7 @@
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
       ],
       "STUN UDP connection failed, trying with TURN relay…": [
-        "La connexió UDP de STUN ha fallat, s'està provant amb l'alternativa TURN…"
+        "La connexió UDP de STUN ha fallat. S'està provant amb el repetidor de TURN…"
       ],
       "STUN UDP connection timeout, trying with TURN relay": [
         "La connexió UDP de STUN ha superat el temps d'espera, s'està provant amb l'alternativa TURN"

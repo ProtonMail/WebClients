@@ -1337,6 +1337,9 @@
       "No, thanks": [
         "Non merci"
       ],
+      "Not now": [
+        "Plus tard"
+      ],
       "OK": [
         "OK"
       ],
@@ -14222,6 +14225,9 @@
       "Cancel / close": [
         "Annuler/Fermer"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Fermer ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Fermer le brouillon"
       ],
@@ -14333,6 +14339,9 @@
       "Next period": [
         "Période suivante"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Ouvrir ${ LUMO_SHORT_APP_NAME } / Activer le champ de saisie"
+      ],
       "Open command panel": [
         "Ouvrir le panneau de commandes"
       ],
@@ -14405,6 +14414,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Raccourcis ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Raccourcis des actions"
       ],
@@ -18988,6 +19000,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Dernière chance pour profiter de 80 % de réduction sur le premier mois pour ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Dernière chance pour bénéficier du premier mois de ${ plan } à ce prix."
+      ],
       "Last day to save": [
         "Dernier jour pour réaliser des économies"
       ],
@@ -19070,6 +19085,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Adresse courte @pm.me"
+      ],
       "Storage": [
         "Espace de stockage"
       ],
@@ -19100,11 +19118,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " consultez notre ${ helpCenterLink } ou ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Ajoutez un moyen de paiement** pour continuer à utiliser toutes les fonctionnalités après votre période d'essai."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Résiliez à tout moment avant l'échéance.** Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la période d'essai, gratuitement."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si vous continuez après votre période d'essai, ** vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Une fois que votre abonnement complet débuté... ** Vous pouvez toujours annuler dans les 30 jours et recevoir un remboursement au prorata."
+      ],
+      "Add a payment method": [
+        "Ajouter un moyen de paiement"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Annulez à tout moment avant le ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Annulez à tout moment avant cette date."
       ],
       "contact our support team": [
         "contactez notre équipe de support"
@@ -19118,16 +19148,22 @@
       "help center": [
         "Aide & Support"
       ],
+      "If you continue after your trial,": [
+        "Si vous poursuivez après votre période d'essai,"
+      ],
       "If you need help,": [
         "Si vous avez besoin d'aide,"
       ],
       "Once your full subscription starts...": [
         "Une fois que votre abonnement complet commence..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Vous pouvez toujours annuler dans les 30 jours et obtenir un remboursement proportionnel."
+      "to keep using all of the features after your trial ends.": [
+        "Pour continuer d'utiliser toutes les fonctionnalités après la fin de votre période d'essai."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Vous pouvez toujours annuler dans les 30 jours et obtenir un remboursement proportionnel."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -19138,9 +19174,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Votre abonnement complet ${ planTitle } commence le ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la version d'essai, et ce, gratuitement."
       ]
     },
     "Option": {
@@ -20924,78 +20957,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "Summer Sale": [
-        "Offre estivale"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mois"
-      ],
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "2 TB data storage": [
-        "2 To d'espace de stockage de données"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 Go d'espace de stockage : 40x votre abonnement actuel"
-      ],
-      "3 TB data storage": [
-        "3 To d'espace de stockage de données"
-      ],
-      "500 GB storage": [
-        "500 Go d'espace de stockage"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Accès complet à ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Comptes individuels pour 6 utilisateurs"
-      ],
-      "Individual accounts for you and a partner": [
-        "Comptes individuels pour vous et un partenaire"
-      ],
-      "Online document and spreadsheet editor": [
-        "Éditeur de documents et de feuilles de calcul en ligne"
-      ],
-      "Recover previous file versions": [
-        "Récupérez les versions précédentes des fichiers"
-      ],
-      "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Des dossiers, labels et filtres illimités"
-      ],
-      "Use your own email domain": [
-        "Utilisez votre propre domaine de messagerie"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "pendant 12 mois"
-      ],
-      "SUMMER SALE": [
-        "OFFRE ESTIVALE"
       ]
     },
     "q3campaign2026: Action": {
@@ -28566,6 +28527,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Cette importation peut dépasser la capacité de stockage actuellement disponible sur votre compte ${ BRAND_NAME }. Nous vous invitons à personnaliser votre importation."
+      ],
+      "This organization has more users than we can currently migrate. Please contact customer support for assistance.": [
+        "Cette organisation compte plus d'utilisateurs que nous ne pouvons en migrer pour le moment. Veuillez contacter le service client pour obtenir de l'aide."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
         "Cela retirera tous les messages, dossiers et labels créés pendant l'importation."

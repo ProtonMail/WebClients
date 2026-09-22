@@ -1523,6 +1523,9 @@
       "No, thanks": [
         "不，谢谢"
       ],
+      "Not now": [
+        "以后再说"
+      ],
       "OK": [
         "确定"
       ],
@@ -1969,6 +1972,9 @@
       ],
       "Sign in with ${ BRAND_NAME }": [
         "使用${ BRAND_NAME }登录"
+      ],
+      "Sign in with Google": [
+        "使用 Google 登录"
       ],
       "Sign in with password": [
         "使用密码登录"
@@ -10563,6 +10569,9 @@
       "All (${ totalFoldersCount } label)": [
         "全部（${ totalFoldersCount } 个标签）"
       ],
+      "All admins": [
+        "所有管理员"
+      ],
       "All data and settings are preserved": [
         "所有数据和设置将予以保留"
       ],
@@ -10652,6 +10661,9 @@
       ],
       "An SMS with a verification code was just sent to ${ phoneNumber }.": [
         "包含验证码的短信已发送至 ${ phoneNumber }！"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "导入您的数据时发生意外错误，请稍后重试。"
       ],
       "and": [
         "并"
@@ -10970,6 +10982,9 @@
       ],
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "在 ${ MAIL_APP_NAME } 中关联和管理您的外部邮箱。"
+      ],
+      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
+        "正在关联 Google Drive，以设置到 ${ DRIVE_APP_NAME } 的安全导入。"
       ],
       "Connection data will be available in around 1 hour.": [
         "连接数据将在 1 小时左右可用。"
@@ -11322,6 +11337,9 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
       ],
+      "Email you once import is finished": [
+        "导入完成后通过邮件通知您"
+      ],
       "Emailing preference saved": [
         "邮件设置已保存"
       ],
@@ -11561,6 +11579,9 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "仅需 ${ bundlePlanPriceInline }"
+      ],
+      "For the import to work, you must select all requested items as shown in the GIF above.": [
+        "为顺利完成导入，您需要如上图所示勾选所有权限。"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果您正在将另一款邮箱服务更换为 ${ MAIL_APP_NAME }，更改 MX 记录前请先在${ boldAddresses }设置中添加所有已在使用的邮箱地址，确保邮件投递路径能够无缝切换。"
@@ -12207,6 +12228,9 @@
       "Next billing date": [
         "下一个账单日期"
       ],
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "接下来，您需要登录您的 Google 账户，并授予 ${ BRAND_NAME } 访问您数据的权限。"
+      ],
       "No account keys exist": [
         "账户密钥不存在"
       ],
@@ -12504,6 +12528,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "请尝试用其他方式支付，或联系您的发卡银行。"
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "请升级以确保导入顺利完成。"
+      ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
       ],
@@ -12578,6 +12605,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "如需任何帮助，请联系我们 ${ BRAND_NAME }"
+      ],
+      "Read once and encrypted on arrival": [
+        "读取一次，到达时即加密"
       ],
       "Receive notifications for ${ categoryLabel }": [
         "接收关于 ${ categoryLabel } 的通知"
@@ -12836,6 +12866,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
+      ],
+      "Sit back and we will let you know.": [
+        "请您稍等，我们会通知您。"
       ],
       "Smart Routed through a different country.": [
         "通过其他国家/地区进行智能路由。"
@@ -13509,6 +13542,9 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "使用您的 MDM 删除该文件，或通过您的 MDM 脚本执行功能运行 ${ removeScriptLink }。任何支持部署文件或执行脚本的 MDM 均可使用。"
       ],
+      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
+        "仅用于将其复制到 ${ DRIVE_APP_NAME }。"
+      ],
       "User activated": [
         "用户已激活"
       ],
@@ -13629,6 +13665,9 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "我们检测到您已在**其他浏览器**中登录了 ${ BRAND_NAME } 网页应用，您可以通过当前活动会话重置密码！"
       ],
+      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
+        "我们不支持导入照片、Google 文档、表格和幻灯片。请确保您的 Google Drive 不为空。"
+      ],
       "We generated a strong password for you": [
         "我们为您生成了一个强密码"
       ],
@@ -13659,8 +13698,14 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "我们强烈建议所有人启用通过恢复短语恢复。"
       ],
+      "We support most files": [
+        "我们支持大多数文件"
+      ],
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
+      ],
+      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
+        "导入完成后我们会通过邮件通知您。完成后，您会在某个文件夹中找到导入的内容。"
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新的浏览器标签页中重定向至 ${ IDEAL_WERO_BRAND_NAME } 以完成此交易。如果您使用了任何弹窗拦截器，请将其禁用后继续。"
@@ -13787,6 +13832,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "若不激活，您将无法添加用户、地址或登录非私密的成员账户。"
+      ],
+      "Won’t import photos, Google Docs and Sheets": [
+        "不会导入照片、Google 文档和表格"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
@@ -14514,6 +14562,9 @@
       "Cancel / close": [
         "取消 / 关闭"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "关闭 ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "关闭草稿"
       ],
@@ -14625,6 +14676,9 @@
       "Next period": [
         "下个周期"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "打开 ${ LUMO_SHORT_APP_NAME } / 聚焦输入框"
+      ],
       "Open command panel": [
         "打开命令面板"
       ],
@@ -14697,6 +14751,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } 快捷键"
+      ],
       "Action shortcuts": [
         "操作快捷键"
       ],
@@ -19373,11 +19430,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**添加支付方式**，以便在试用期结束后继续使用所有功能。"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**如果您在试用期结束后继续使用，** 可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "在 ${ cancelDate } 之前随时取消。"
-      ],
-      "Cancel anytime before then.": [
-        "在此之前随时取消。"
       ],
       "contact our support team": [
         "联系我们的客服"
@@ -19391,16 +19460,22 @@
       "help center": [
         "帮助中心"
       ],
+      "If you continue after your trial,": [
+        "如果您在试用期结束后继续使用，"
+      ],
       "If you need help,": [
         "如果您需要帮助，"
       ],
       "Once your full subscription starts...": [
         "您的正式订阅一旦开始..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      "to keep using all of the features after your trial ends.": [
+        "以便在试用期结束后继续使用所有功能。"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "您可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "您仍然可以在 30 天内取消并获得按比例的退款。"
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -19411,9 +19486,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "您将能够免费使用 ${ planTitle } 直到试用期结束。"
       ]
     },
     "Option": {
@@ -21260,78 +21332,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "立即享受优惠"
-      ],
-      "Summer Sale": [
-        "夏季大促"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/每月"
-      ],
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "2 TB data storage": [
-        "2 TB 数据存储空间"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 存储空间：您当前套餐的 40 倍"
-      ],
-      "3 TB data storage": [
-        "3 TB 数据存储空间"
-      ],
-      "500 GB storage": [
-        "500 GB 存储空间"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级版功能"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级版功能"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "优惠基于标准月度定价。您的订阅将在计费周期结束时按标准年度费率续订。"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "获取 ${ VPN_APP_NAME } 的完整访问权限"
-      ],
-      "Individual accounts for 6 users": [
-        "为 6 名用户提供的独立帐户"
-      ],
-      "Individual accounts for you and a partner": [
-        "为您和伴侣提供的独立帐户"
-      ],
-      "Online document and spreadsheet editor": [
-        "在线文档和电子表格编辑器"
-      ],
-      "Recover previous file versions": [
-        "恢复先前的文件版本"
-      ],
-      "Stronger protection against cyber threats": [
-        "针对网络威胁的更强防护"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "切换到我们的年度套餐，立省 ${ toYearlyDiscountAmount }！"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "不限量文件夹、标签和筛选规则"
-      ],
-      "Use your own email domain": [
-        "个性化邮箱域名"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "年费"
-      ],
-      "SUMMER SALE": [
-        "夏季大促"
       ]
     },
     "q3campaign2026: Action": {
@@ -24936,6 +24936,9 @@
       ],
       "View VPN session details for your organization.": [
         "查看您组织的 VPN 会话详情。"
+      ],
+      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
+        "我们会读取一次您的文件以进行复制，然后使用您的 ${ BRAND_NAME } 密钥逐一加密。"
       ]
     },
     "Success": {
@@ -25963,6 +25966,9 @@
       "Connect your custom domain": [
         "连接您的自定义域名"
       ],
+      "Connect your Google account": [
+        "关联您的 Google 账户"
+      ],
       "Connected emails": [
         "已关联的邮箱"
       ],
@@ -26611,6 +26617,9 @@
       "Import key": [
         "导入密钥"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "导入已开始，但您的存储空间不足以完成此次导入"
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "通过 ${ PRODUCT_NAMES.EASY_SWITCH } 导入"
       ],
@@ -27172,6 +27181,9 @@
       "Set your password": [
         "设置您的密码"
       ],
+      "Setting up your import": [
+        "正在设置您的导入"
+      ],
       "Settings": [
         "设置"
       ],
@@ -27198,6 +27210,9 @@
       ],
       "Sign in on TV?": [
         "在电视上登录？"
+      ],
+      "Sign in to Google": [
+        "登录 Google"
       ],
       "Sign in to join the Beta program": [
         "登录以加入 Beta 计划"
@@ -27502,6 +27517,9 @@
       "Warning: suspected fake website": [
         "警告：疑似虚假网站"
       ],
+      "We could not find anything to import": [
+        "我们找不到可导入的内容"
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "我们已向您的邮箱发送了验证码，以确认您的身份。此验证码有效期为 10 分钟。请在下方输入验证码。"
       ],
@@ -27582,6 +27600,9 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
+      ],
+      "Your import is starting": [
+        "正在启动导入"
       ],
       "Your plan": [
         "您的账户等级"
@@ -27738,6 +27759,9 @@
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "已添加到您的套餐：${ mergedAddonTitles }"
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "管理员可以管理用户账户，并授予其他用户管理员权限。"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理员可以管理用户账户并将管理员权限授予其他用户。只有主管理员可以编辑组织的套餐。"
@@ -28905,6 +28929,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "此次导入可能会耗尽您的 ${ BRAND_NAME } 账户存储空间，请考虑缩减导入内容。"
+      ],
+      "This organization has more users than we can currently migrate. Please contact customer support for assistance.": [
+        "组织的用户数超出我们目前可迁移的上限，请联系客户支持以获取帮助。"
       ],
       "This will remove all messages, folders, and labels created during the import.": [
         "此次导入的所有邮件、文件夹和标签都将被删除。"

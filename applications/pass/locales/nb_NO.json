@@ -163,6 +163,9 @@
       "Close navigation": [
         "Lukk navigasjonsmeny"
       ],
+      "Collapse": [
+        "Skjul"
+      ],
       "Confirm": [
         "Bekreft"
       ],
@@ -241,6 +244,9 @@
       "Create contact": [
         "Opprett kontakt"
       ],
+      "Create folder": [
+        "Opprett mappe"
+      ],
       "Create identity": [
         "Opprett identitet"
       ],
@@ -249,6 +255,9 @@
       ],
       "Create login": [
         "Opprett pålogging"
+      ],
+      "Create new folder": [
+        "Opprett ny mappe"
       ],
       "Create new items": [
         "Opprett nye elementer"
@@ -342,6 +351,9 @@
       ],
       "Exclude from monitoring": [
         "Ekskluder fra overvåking"
+      ],
+      "Expand": [
+        "Utvid"
       ],
       "Export": [
         "Eksport"
@@ -484,8 +496,8 @@
       "Move all items": [
         "Flytt alle elementer"
       ],
-      "Move to another vault": [
-        "Flytt til annet hvelv"
+      "Move to": [
+        "Flytt til"
       ],
       "Move to trash": [
         "Flytt til papirkurven"
@@ -576,6 +588,9 @@
       ],
       "Remove member": [
         "Fjern medlem"
+      ],
+      "Rename": [
+        "Gi nytt navn"
       ],
       "Request a feature": [
         "Be om en funksjon"
@@ -1107,6 +1122,9 @@
       ],
       "Failed to create domain": [
         "Kunne ikke opprette domenet"
+      ],
+      "Failed to create folder": [
+        "Kunne ikke opprette mappe"
       ],
       "Failed to create new mailbox": [
         "Kan ikke opprette ny postboks"
@@ -1805,9 +1823,6 @@
       ],
       "Created item": [
         "Opprettet element"
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV tilbyr et praktisk format for å se dataene dine. På grunn av sin enkelhet vil imidlertid noen data ikke bli inkludert (egendefinerte felt, tilgangsnøkler...). For en fullstendig eksport anbefaler vi at du bruker et annet format."
       ],
       "Current version": [
         "Gjeldende versjon"
@@ -3283,6 +3298,9 @@
       "Floor, apartment, building": [
         "Etasje, leilighet, bygning"
       ],
+      "Folder": [
+        "Mappe"
+      ],
       "For a one-off sharing": [
         "For en engangsdeling"
       ],
@@ -4373,9 +4391,6 @@
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og inkluder eventuelle feilmeldinger"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Skriv inn \"${ vaultName }\" for å bekrefte sletting"
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Søk ${ pluralItemType } i ${ vaultName }"
       ],
@@ -4746,9 +4761,6 @@
       "Delete this item?": [
         "Slette dette elementet?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Slette hvelv \"${ vaultName }\"?"
-      ],
       "Did you know?": [
         "Visste du at?"
       ],
@@ -4796,6 +4808,9 @@
       ],
       "Excluded items": [
         "Ekskluderte elementer"
+      ],
+      "Folder options": [
+        "Alternativer for mapper"
       ],
       "Get Started": [
         "Kom i gang"
@@ -4875,19 +4890,12 @@
       "Modified": [
         "Endret"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Flytt ${ count } element til ${ vaultName }",
-        "Flytt ${ count } elementer til ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Flytte ${ trashedItemsCount } element til papirkurven?",
         "Flytte ${ trashedItemsCount } elementer til papirkurven?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Flytte alle elementer til \"${ vaultName }\"?"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "Flytte element til \"${ vaultName }\"?"
       ],
       "MX record": [
         "MX-post"
@@ -5434,9 +5442,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Ikke i stand til å logge på ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Hvelv \"${ vaultName }\" og alle dets elementer vil slettes permanent. Du kan ikke angre denne handlingen."
       ],
       "Vault name is required": [
         "Hvelvnavn kreves"

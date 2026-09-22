@@ -231,9 +231,6 @@
       "Copy address": [
         "მისამართის კოპირება"
       ],
-      "Copy alias “${ name }”": [
-        "ფსევდონიმის \"${ name }\" კოპირება"
-      ],
       "Copy booking page link": [
         "დაჯავშნის გვერდის ბმულის კოპირება"
       ],
@@ -272,9 +269,6 @@
       ],
       "Create an event": [
         "მოვლენის შექმნა"
-      ],
-      "Create and copy alias": [
-        "ფსევდონიმის შექმნა და კოპირება"
       ],
       "Create booking page": [
         "დაჯავშნის გვერდის შექმნა"
@@ -717,6 +711,9 @@
         "მიმართეთ მეგობარს"
       ],
       "Refresh the page": [
+        "გვერდის განახლება"
+      ],
+      "refresh the page": [
         "გვერდის განახლება"
       ],
       "Remove": [
@@ -3230,9 +3227,6 @@
       ],
       "You’ll get a secure email with the details shortly.": [
         "თქვენ მალე მიიღებთ დაცულ ელფოსტას დეტალებით."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
       ]
     },
     "description": {
@@ -3560,18 +3554,6 @@
       "Address primary private key not found": [
         "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
       ],
-      "Alias is not valid": [
-        "ფსევდონიმი არასწორია"
-      ],
-      "Alias is required": [
-        "ფსევდონიმი აუცილებელია"
-      ],
-      "Alias options could not be resolved": [
-        "ფსევდონიმის პარამეტრების ამოხსნა შეუძლებელია"
-      ],
-      "Aliases could not be loaded": [
-        "ფსევდონიმების ჩატვირთვა შეუძლებელია"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
       ],
@@ -3583,12 +3565,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "თანხა მინიმუმზე ნაკლებია (${ minimumAmount })."
-      ],
-      "An error occurred while loading alias options": [
-        "შეცდომა ფსევდონიმის პარამეტრების ჩატვირთვისას"
-      ],
-      "An error occurred while saving your alias": [
-        "შეცდომა თქვენი ფსევდონიმის შენახვისას"
       ],
       "Answer failed to be sent": [
         "ანგარიშის გაგზავნის შეცდომა"
@@ -3634,12 +3610,6 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "შემცველობაში ძებნის ჩართვა შეუძლებელია. მონაცემების გასასუფთავებლად, გთხოვთ, გადატვირთეთ აპლიკაცია."
-      ],
-      "Could not open created vault": [
-        "შექმნილი საცავის გახსნა შეუძლებელია"
-      ],
-      "Could not open updated vault": [
-        "განახლებული საცავის გახსნა შეუძლებელია"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "გაშიფვრის შეცდომა: ამ მოვლენის შინაარსის გაშიფვრა ვერ მოხერხდა."
@@ -3691,9 +3661,6 @@
       "Event not found": [
         "მოვლენა ნაპოვნი არაა"
       ],
-      "Failed loading group members": [
-        "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
-      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME }-ის ვიდეოკონფერენციის დამატება ჩავარდა"
       ],
@@ -3729,9 +3696,6 @@
       ],
       "Folder name cannot be empty.": [
         "საქაღალდის სახელი ცარიელი არ შეიძლება იყოს."
-      ],
-      "Forward address is required": [
-        "გადამისამართების მისამართი აუცილებელია"
       ],
       "Image upload failed": [
         "გამოსახულების ატვირთვის შეცდომა"
@@ -3787,9 +3751,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "მოვლენის გადატანა, მხოლოდ, ${ minDateString }-დან ${ maxDateString }-მდე შუალედშია შესაძლებელი"
       ],
-      "Item content cannot exceed 40KB": [
-        "ელემენტის შემცველობა 40კბ-ზე მეტი ვერ იქნება"
-      ],
       "Label name cannot be empty.": [
         "ჭდის სახელი ცარიელი არ შეიძლება იყოს."
       ],
@@ -3809,14 +3770,8 @@
       "Missing signature": [
         "ხელმოწერა აკლია"
       ],
-      "Name is required": [
-        "სახელი აუცილებელია"
-      ],
       "Name required": [
         "სახელი აუცილებელია"
-      ],
-      "Network error": [
-        "ქსელის შეცდომა"
       ],
       "No booking page data received": [
         "ჯავშნის გვერდის მონაცემები მიღებული არაა"
@@ -4001,6 +3956,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "ხელმისაწვდომი დომენების მიღებისას შეცდომა მოხდა"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "რაღაც არასწორად მუშაობს. გასაგრძელებლად ${ refresh }. თუ ჯერ კიდევ ხედავთ შეცდომის შეტყობინებას, დაუკავშირდით ჩვენს ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "რაღაც არასწორად წავიდა. თავიდან სცადეთ."
@@ -4316,9 +4274,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "როცა დამატებითი პაროლი ჩართულია, ფსევდონიმების მართვა, მხოლოდ, ${ PASS_APP_NAME }-ში შეგიძლიათ."
       ],
       "You need an active personal calendar to import events": [
         "მოვლენების შემოსატანად პირადი კალენდრების ქონაა საჭირო"
@@ -6162,6 +6117,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "გამოწერა მთავრდება: ${ planName }-ის უპირატესობების შესანარჩუნებლად, გადატვირთეთ თქვენი გამოწერა Google Play Store-ში ${ byDate }-მდე. ${ reactivateLink }"
       ],
+      "support team": [
+        "მხარდაჭერის გუნდი"
+      ],
       "Surveillance": [
         "დაზვერვა"
       ],
@@ -6887,9 +6845,6 @@
       "Address": [
         "მისამართი"
       ],
-      "Alias title": [
-        "ფსევდონიმის სათაური"
-      ],
       "All day": [
         "მთელი დღე"
       ],
@@ -7025,9 +6980,6 @@
       "Drive": [
         "Drive"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "მაგ Amazon, eBay, Etsy"
-      ],
       "Email": [
         "ელფოსტა"
       ],
@@ -7073,12 +7025,6 @@
       "Every": [
         "ყოველი"
       ],
-      "Exact host matching": [
-        "ზუსტი ჰოსტის შესაბამისობა"
-      ],
-      "Exact URL matching": [
-        "ზუსტი URL შესაბამისობა"
-      ],
       "Expires": [
         "ვადა"
       ],
@@ -7093,9 +7039,6 @@
       ],
       "Folder location": [
         "საქაღალდის მდებარეობა"
-      ],
-      "Forwards to": [
-        "გადაგზავნა"
       ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
@@ -7193,14 +7136,8 @@
       "Navigation": [
         "ნავიგაცია"
       ],
-      "Never fill on this exact URL": [
-        "არასოდეს შეავსო ამ ზუსტ URL-ზე"
-      ],
       "New password": [
         "ახალი პაროლი"
-      ],
-      "Note": [
-        "შენიშვნა"
       ],
       "Notification": [
         "შეტყობინება"
@@ -7225,9 +7162,6 @@
       ],
       "Organizer": [
         "ორგანიზატორი"
-      ],
-      "Parent domain and subdomains (default)": [
-        "მშობელი დომენი და ქვედომენები (ნაგულისხმევი)"
       ],
       "participant": [
         "მონაწილე",
@@ -7266,26 +7200,17 @@
       "Postal code": [
         "საფოსტო კოდი"
       ],
-      "Premium domain": [
-        "ფასიანი დომენი"
-      ],
       "Primary": [
         "ძირითადი"
       ],
       "Proration": [
         "პროპორცია"
       ],
-      "Public domain": [
-        "საჯარო დომენი"
-      ],
       "Public keys": [
         "საჯარო გასაღებები"
       ],
       "Region": [
         "რაიონი"
-      ],
-      "Regular expression": [
-        "რეგულარული გამოსახულება"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "${ MEET_APP_NAME }-ის ვიდეოკონფერენციის წაშლა"
@@ -7325,9 +7250,6 @@
       ],
       "Start date": [
         "საწყისი თარიღი"
-      ],
-      "Starts with": [
-        "იწყება"
       ],
       "State": [
         "მდგომარეობა"
@@ -7377,9 +7299,6 @@
       "URL": [
         "URL"
       ],
-      "URL wildcard pattern": [
-        "URL wildcard შაბლონი"
-      ],
       "Username": [
         "მომხმარებლის სახელი"
       ],
@@ -7410,14 +7329,8 @@
       "What happened?": [
         "რა მოხდა?"
       ],
-      "Your alias": [
-        "თქვენი ფსევდონიმი"
-      ],
       "Your calendar URL": [
         "თქვენი კალენდრის ბმული"
-      ],
-      "Your domain": [
-        "თქვენი დომენი"
       ],
       "Your IP": [
         "თქვენი IP"
@@ -7809,29 +7722,11 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "\"იწყება\" შესაბამისობის წესი"
-      ],
-      "Exact (sub) domain matching rule": [
-        "ზუსტი (ქვე) დომენის შესაბამისობის წესი"
-      ],
-      "Exact URL matching rule": [
-        "ზუსტი URL შესაბამისობის წესი"
-      ],
       "Fw:": [
         "გადა:"
       ],
-      "Never fill with this exact URL": [
-        "არასოდეს შეავსო ამ ზუსტი URL-ით"
-      ],
       "Re:": [
         "პას:"
-      ],
-      "Regular expression rule": [
-        "რეგულარული გამოსახულების წესი"
-      ],
-      "Wildcard pattern matching rule": [
-        "Wildcard შაბლონის შესაბამისობის წესი"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "თქვენი უფასო სატესტო ვერსია დასრულდა. ${ nonAutoRenewalAction }"
@@ -9361,9 +9256,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "გააუქმეთ ნებისმიერ დროს ${ cancelDate }-მდე."
       ],
-      "Cancel anytime before then.": [
-        "გააუქმეთ იქამდე ნებისმიერ დროს."
-      ],
       "contact our support team": [
         "დაუკავშირდით ჩვენს მხარდაჭერის გუნდს"
       ],
@@ -9385,9 +9277,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "გაუქმება შემდეგ 30 დღეში ჯერ კიდევ შეგიძლიათ. თანხა დაგიბრუნდებათ"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "გაუქმება შემდეგ 30 დღეში ჯერ კიდევ შეგიძლიათ. თანხა დაგიბრუნდებათ"
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "შეგიძლიათ გამოიყენოთ ${ planTitle } საცდელი პერიოდის ამოწურვამდე და საფასური არ დაგერიცხებათ."
       ],
@@ -9396,9 +9285,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "თქვენი სრული ${ planTitle } გამოწერის დაწყების თარიღია ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "${ planTitle }-ის გამოყენებას შეძლებთ საცდელი პერიოდის დასრულებამდე, უფასოდ."
       ]
     },
     "Option": {
@@ -10168,78 +10054,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "ფასდაკლების მიღება"
-      ],
-      "Summer Sale": [
-        "ზაფხულის ფასდაკლება"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/თვე"
-      ],
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "2 TB data storage": [
-        "2 ტბ მონაცემთა საცავი"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 გბ საცავი: 40-ჯერ მეტი მიმდინარე სატარიფო გეგმაზე"
-      ],
-      "3 TB data storage": [
-        "3 ტბ მონაცემთა საცავი"
-      ],
-      "500 GB storage": [
-        "500 გბ საცავი"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "ფასდაკლებები ეფუძნება სტანდარტულ ყოველთვიურ ტარიფს. თქვენი გამოწერა განახლდება სტანდარტული წლიური ტარიფით, როდესაც გადახდის ციკლი დასრულდება."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "სრული წვდომა ${ VPN_APP_NAME }-ზე"
-      ],
-      "Individual accounts for 6 users": [
-        "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
-      ],
-      "Individual accounts for you and a partner": [
-        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
-      ],
-      "Online document and spreadsheet editor": [
-        "დოკუმენტებისა და ელექტრონული ცხრილების ონლაინ რედაქტორი"
-      ],
-      "Recover previous file versions": [
-        "წინა ფაილის ვერსიების აღდგენა"
-      ],
-      "Stronger protection against cyber threats": [
-        "უფრო ძლიერი დაცვა კიბერსაფრთხეებისგან"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "გადადით ჩვენს წლიურ პაკეტზე და დაზოგეთ ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
-      ],
-      "Use your own email domain": [
-        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12 თვით"
-      ],
-      "SUMMER SALE": [
-        "ზაფხულის ფასდაკლება"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } თითო რეფერალისთვის"
@@ -10339,49 +10153,6 @@
     "Section": {
       "Org setup and account security": [
         "ორგ.-ის მორგებ და ანგარისის უსაფრთხოება"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "ყველა ფსევდონიმი"
-      ],
-      "Create alias": [
-        "ფსევდონიმის შექმნა"
-      ],
-      "Create an alias": [
-        "ფსევდონიმის შექმნა"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "დააგენერირეთ ფსევდონიმები მუშაობისას და ადვილად მართეთ თქვენი ფსევდონიმები და პაროლები."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-ის ფსევდონიმები"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email ფსევდონიმები საშუალებას გაძლევთ, დარეგისტრირდეთ ინტერნეტ-რესურსებზე თქვენი ნამდვილი ელფოსტის მისამართის გაზიარების გარეშე. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "ახალი ფსევდონიმი"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME }-ის გახსნა"
-      ],
-      "Protect your online identity": [
-        "დაცავით თქვენი იდენტობა ინტერნეტში"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "სცადეთ ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "გამოიყენება Amazon-ზე შოპინგისთვის და ა.შ."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "როცა გკითხავენ ელფოსტის მისამართს, ეს ფსევდონიმი მიეცით. ფსევდონიმები უზრუნველყოფილია პროგრამით ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(გახსნის ${ PASS_APP_NAME }-ს)"
       ]
     },
     "Security Center - Action": {
@@ -11470,12 +11241,6 @@
       "Address copied to clipboard": [
         "მისამართი დაკოპირდა გაცვლის ბაფერში"
       ],
-      "Alias copied to clipboard": [
-        "ფსევდონიმი კოპირებულია ბუფერში"
-      ],
-      "Alias saved and copied": [
-        "ფსევდონიმი შენახული და კოპირებულია"
-      ],
       "All events deleted": [
         "ყველა მოვლენა წაიშალა"
       ],
@@ -11603,9 +11368,6 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "კლავიატურის მალსახმობების პარამეტრები განახლებულია"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "ბოლოს შეცვლილი ფსევდონიმები თქვენს უძველეს საცავშია შენახული"
       ],
       "Participants notified and all events updated": [
         "მონაწილეები გაფრთხილებულები არიან და ყველა მოვლენა განახლებულია"
@@ -12248,9 +12010,6 @@
       "Mobile": [
         "მობილური"
       ],
-      "Need more aliases?": [
-        "მეტი ფსევდონიმი გჭირდებათ?"
-      ],
       "Network error": [
         "ქსელის შეცდომა"
       ],
@@ -12884,9 +12643,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }-ი გადაიტანს იმდენ მონაცემს, უკანასკნელი შეტყობინებებით დაწყებული, რამდენიც ეს შესაძლებელი იქნება."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } უზრუნველყოფს ძლიერ კონტროლს, მაგრამ ერთმა შეცდომამაც კი შეიძლება გამოიწვიოს ავტოშევსების ამოქმედება და მონაცემების შევსება თაღლითურ ან ფიშინგის ვებსაიტებზე."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "დარწმუნებული ბრძანდებთ, რომ გნებავთ, სამუდამოდ წაშალოთ ${ count } კონტაქტი?",

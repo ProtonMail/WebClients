@@ -233,9 +233,6 @@
       "Copy address": [
         "复制邮箱地址"
       ],
-      "Copy alias “${ name }”": [
-        "复制别名“${ name }”"
-      ],
       "Copy booking page link": [
         "复制预约页面链接"
       ],
@@ -274,9 +271,6 @@
       ],
       "Create an event": [
         "创建事件"
-      ],
-      "Create and copy alias": [
-        "创建并复制别名"
       ],
       "Create booking page": [
         "创建预订页面"
@@ -723,6 +717,9 @@
         "邀请好友"
       ],
       "Refresh the page": [
+        "刷新页面"
+      ],
+      "refresh the page": [
         "刷新页面"
       ],
       "Remove": [
@@ -3236,9 +3233,6 @@
       ],
       "You’ll get a secure email with the details shortly.": [
         "您将很快收到一封包含详细信息的加密电子邮件"
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
       ]
     },
     "description": {
@@ -3571,18 +3565,6 @@
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
-      "Alias is not valid": [
-        "别名无效"
-      ],
-      "Alias is required": [
-        "别名为必填项"
-      ],
-      "Alias options could not be resolved": [
-        "无法解决别名选项问题"
-      ],
-      "Aliases could not be loaded": [
-        "别名无法加载"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "已分配所有存储空间。请减少分配给其他用户的存储空间。"
       ],
@@ -3594,12 +3576,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "金额 (${ minimumAmount }) 过小。"
-      ],
-      "An error occurred while loading alias options": [
-        "加载别名选项时发生错误"
-      ],
-      "An error occurred while saving your alias": [
-        "保存别名时发生错误"
       ],
       "Answer failed to be sent": [
         "答复发送失败"
@@ -3685,12 +3661,6 @@
       "Could not load the image preview: ${ message }": [
         "无法加载图片预览：${ message }"
       ],
-      "Could not open created vault": [
-        "无法打开创建的保险库"
-      ],
-      "Could not open updated vault": [
-        "无法打开已更新的保险库"
-      ],
       "Could not read part of this file: ${ message }": [
         "无法读取此文件的部分内容：${ message }"
       ],
@@ -3763,9 +3733,6 @@
       "Expiration date cannot be in the past": [
         "过期日期不能是过去的时间"
       ],
-      "Failed loading group members": [
-        "加载群组成员失败"
-      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "添加现有 ${ MEET_APP_NAME } 视频会议失败"
       ],
@@ -3835,9 +3802,6 @@
       "Folder name cannot be empty.": [
         "文件夹名称不能为空。"
       ],
-      "Forward address is required": [
-        "转发邮箱为必填项"
-      ],
       "Image preview not found": [
         "未找到图片预览"
       ],
@@ -3898,9 +3862,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "只能在${ minDateString }到${ maxDateString }之间移动日程"
       ],
-      "Item content cannot exceed 40KB": [
-        "项目内容不能超过 40KB"
-      ],
       "Item not found": [
         "未找到项目"
       ],
@@ -3949,9 +3910,6 @@
       "Moving root item is not allowed": [
         "不允许移动根项目"
       ],
-      "Name is required": [
-        "名称为必填项"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
       ],
@@ -3960,9 +3918,6 @@
       ],
       "Name required": [
         "名称（必填）"
-      ],
-      "Network error": [
-        "网络错误"
       ],
       "No booking page data received": [
         "未收到预约页面数据"
@@ -4197,6 +4152,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "获取可用域名时出错"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
       "Something went wrong. Please try again.": [
         "出错了，请再试一次。"
@@ -4561,9 +4519,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "页面加载失败，请刷新或检查网络连接。"
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "启用额外密码后，别名管理只能在 ${ PASS_APP_NAME } 中进行。"
       ],
       "You need an active personal calendar to import events": [
         "导入您的日程之前您需要有一个启用的个人日历。"
@@ -6452,6 +6407,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "订阅即将结束：为保留您的 ${ planName } 权益，请在 ${ byDate } 前通过 Google Play 商店重新开启您的订阅。${ reactivateLink }"
       ],
+      "support team": [
+        "客服团队"
+      ],
       "Surveillance": [
         "监控"
       ],
@@ -7207,9 +7165,6 @@
       "Address": [
         "地址"
       ],
-      "Alias title": [
-        "别名标题"
-      ],
       "All day": [
         "全天事件"
       ],
@@ -7351,9 +7306,6 @@
       "Drive": [
         "云盘"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "例如：Amazon, eBay, Etsy"
-      ],
       "Email": [
         "邮箱"
       ],
@@ -7399,12 +7351,6 @@
       "Every": [
         "每个"
       ],
-      "Exact host matching": [
-        "精确主机匹配"
-      ],
-      "Exact URL matching": [
-        "精确 URL 匹配"
-      ],
       "Expires": [
         "有效期至"
       ],
@@ -7419,9 +7365,6 @@
       ],
       "Folder location": [
         "文件夹位置"
-      ],
-      "Forwards to": [
-        "转发至"
       ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
@@ -7519,14 +7462,8 @@
       "Navigation": [
         "导航栏"
       ],
-      "Never fill on this exact URL": [
-        "绝不在此精确 URL 上填充"
-      ],
       "New password": [
         "新密码"
-      ],
-      "Note": [
-        "笔记"
       ],
       "Notification": [
         "通知"
@@ -7551,9 +7488,6 @@
       ],
       "Organizer": [
         "组织者"
-      ],
-      "Parent domain and subdomains (default)": [
-        "父域名及子域名（默认）"
       ],
       "participant": [
         "参与者"
@@ -7591,26 +7525,17 @@
       "Postal code": [
         "邮编"
       ],
-      "Premium domain": [
-        "高级域名"
-      ],
       "Primary": [
         "主要"
       ],
       "Proration": [
         "当前等级结余"
       ],
-      "Public domain": [
-        "公共域名"
-      ],
       "Public keys": [
         "公钥"
       ],
       "Region": [
         "区域"
-      ],
-      "Regular expression": [
-        "正则表达式"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "移除 ${ MEET_APP_NAME } 视频会议"
@@ -7650,9 +7575,6 @@
       ],
       "Start date": [
         "起始日期"
-      ],
-      "Starts with": [
-        "开头为"
       ],
       "State": [
         "省份/地区"
@@ -7702,9 +7624,6 @@
       "URL": [
         "网址"
       ],
-      "URL wildcard pattern": [
-        "URL 通配符模式"
-      ],
       "Username": [
         "用户名"
       ],
@@ -7735,14 +7654,8 @@
       "What happened?": [
         "发生了什么？"
       ],
-      "Your alias": [
-        "您的别名"
-      ],
       "Your calendar URL": [
         "您的日历链接"
-      ],
-      "Your domain": [
-        "您的域名"
       ],
       "Your IP": [
         "您的 IP 地址"
@@ -8130,29 +8043,11 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "“开头为”匹配规则"
-      ],
-      "Exact (sub) domain matching rule": [
-        "精确（子）域名匹配规则"
-      ],
-      "Exact URL matching rule": [
-        "精确 URL 匹配规则"
-      ],
       "Fw:": [
         "转发："
       ],
-      "Never fill with this exact URL": [
-        "绝不在此精确 URL 上填充"
-      ],
       "Re:": [
         "回复："
-      ],
-      "Regular expression rule": [
-        "正则表达式规则"
-      ],
-      "Wildcard pattern matching rule": [
-        "通配符模式匹配规则"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "您的免费试用已结束。${ nonAutoRenewalAction }"
@@ -9648,11 +9543,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         "请访问我们的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**添加支付方式**，以便在试用期结束后继续使用所有功能。"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**如果您在试用期结束后继续使用，** 可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "在 ${ cancelDate } 之前随时取消。"
-      ],
-      "Cancel anytime before then.": [
-        "在此之前随时取消。"
       ],
       "contact our support team": [
         "联系我们的客服"
@@ -9666,16 +9573,22 @@
       "help center": [
         "帮助中心"
       ],
+      "If you continue after your trial,": [
+        "如果您在试用期结束后继续使用，"
+      ],
       "If you need help,": [
         "如果您需要帮助，"
       ],
       "Once your full subscription starts...": [
         "您的正式订阅一旦开始..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "您仍然可以在 30 天内取消并获得按比例的退款。"
+      "to keep using all of the features after your trial ends.": [
+        "以便在试用期结束后继续使用所有功能。"
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "您可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "您仍然可以在 30 天内取消并获得按比例的退款。"
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -9686,9 +9599,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "您将能够免费使用 ${ planTitle } 直到试用期结束。"
       ]
     },
     "Option": {
@@ -10496,78 +10406,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "立即享受优惠"
-      ],
-      "Summer Sale": [
-        "夏季大促"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/每月"
-      ],
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "2 TB data storage": [
-        "2 TB 数据存储空间"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 存储空间：您当前套餐的 40 倍"
-      ],
-      "3 TB data storage": [
-        "3 TB 数据存储空间"
-      ],
-      "500 GB storage": [
-        "500 GB 存储空间"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级版功能"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级版功能"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "优惠基于标准月度定价。您的订阅将在计费周期结束时按标准年度费率续订。"
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "获取 ${ VPN_APP_NAME } 的完整访问权限"
-      ],
-      "Individual accounts for 6 users": [
-        "为 6 名用户提供的独立帐户"
-      ],
-      "Individual accounts for you and a partner": [
-        "为您和伴侣提供的独立帐户"
-      ],
-      "Online document and spreadsheet editor": [
-        "在线文档和电子表格编辑器"
-      ],
-      "Recover previous file versions": [
-        "恢复先前的文件版本"
-      ],
-      "Stronger protection against cyber threats": [
-        "针对网络威胁的更强防护"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "切换到我们的年度套餐，立省 ${ toYearlyDiscountAmount }！"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "不限量文件夹、标签和筛选规则"
-      ],
-      "Use your own email domain": [
-        "个性化邮箱域名"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "年费"
-      ],
-      "SUMMER SALE": [
-        "夏季大促"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "获取优惠"
@@ -10740,49 +10578,6 @@
     "Section": {
       "Org setup and account security": [
         "组织设置和账户安全"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "所有别名"
-      ],
-      "Create alias": [
-        "创建别名"
-      ],
-      "Create an alias": [
-        "创建别名"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "随时生成邮箱别名，轻松管理您的别名和密码。"
-      ],
-      "Hide-my-email aliases": [
-        "个 Hide-my-email 别名"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "您可以使用 Hide-my-email 邮箱别名注册各类网络账户，避免暴露真实邮箱。${ learnMoreLink }"
-      ],
-      "New alias": [
-        "新增别名"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "打开 ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "保护您的网络身份"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "体验 ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "用于 Amazon 购物等等"
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "当网站要求您输入邮箱地址时，请用这个别名代替。别名由 ${ passLink } 提供。"
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(将会打开 ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -11839,12 +11634,6 @@
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
       ],
-      "Alias copied to clipboard": [
-        "已复制别名到剪贴板"
-      ],
-      "Alias saved and copied": [
-        "别名已保存并复制"
-      ],
       "All events deleted": [
         "已删除所有事件"
       ],
@@ -11970,9 +11759,6 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "快捷键设置已更改"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "最后修改的别名存储在您最早的库中"
       ],
       "Participants notified and all events updated": [
         "已向参与者发送通知，所有日程已更新"
@@ -12615,9 +12401,6 @@
       "Mobile": [
         "移动版"
       ],
-      "Need more aliases?": [
-        "需要更多别名？"
-      ],
       "Network error": [
         "网络错误"
       ],
@@ -13259,9 +13042,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } 提供了强大的控制能力，但单个错误可能导致自动填充在欺诈或钓鱼网站上匹配并填充数据。"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您确定要永久删除 ${ count } 联系人吗？"
