@@ -243,6 +243,7 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
         /Unexpected EOF/i,
         // React DOM throwing this error, however it seems it has no impact on user experience.
         'Permission denied to access property "type"',
+        "Can't find variable: FileReader", // Ignore FileReader error as it is thrown by bots crawling our apps
     ];
 };
 
