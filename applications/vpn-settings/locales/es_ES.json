@@ -3570,6 +3570,9 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "La mayoría de los problemas se resuelven en cuestión de minutos con nuestras guías paso a paso."
       ],
+      "No ads. No trackers": [
+        "Sin anuncios. Sin rastreadores"
+      ],
       "No one in your organization can connect to shared servers.": [
         "Nadie en tu organización puede conectarse a servidores compartidos."
       ],
@@ -4628,6 +4631,9 @@
       "Company name or personal name is required": [
         "Se requiere el nombre de la empresa o el nombre personal"
       ],
+      "Could not grant access to the organization key": [
+        "No se ha podido conceder acceso a la clave de la organización"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "No se han podido cargar las facturas. Intenta más tarde."
       ],
@@ -4953,6 +4959,14 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "No se ha podido completar la asignación de roles para ${ errors.length } miembro",
         "No se ha podido completar la asignación de roles para ${ errors.length } miembros"
+      ],
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "No se ha podido completar la asignación de roles para ${ failedCount } grupo",
+        "No se ha podido completar la asignación de roles para ${ failedCount } grupos"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "No se ha podido completar la asignación de roles para ${ failedCount } usuario",
+        "No se ha podido completar la asignación de roles para ${ failedCount } usuarios"
       ],
       "Server not found": [
         "Servidor no encontrado"
@@ -8665,6 +8679,10 @@
       "The name will be visible to your users while they are signed in.": [
         "Tus usuarios verán el nombre mientras estén conectados."
       ],
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "Se ha interrumpido el proceso para ${ pausedCount } ${ roleAssignmentSource }. Haz clic en Continuar para reanudar la asignación de roles.",
+        "Se ha interrumpido el proceso para ${ pausedCount } ${ roleAssignmentSource }s. Haz clic en Continuar para reanudar la asignación de roles."
+      ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "El crédito por recomendación se puede conceder hasta 2 meses después de que el periodo de prueba de tu amigo haya terminado, solo si tu amigo se ha suscrito a un plan."
       ],
@@ -8973,6 +8991,9 @@
       ],
       "User activated": [
         "Se ha activado el usuario."
+      ],
+      "User roles assigned": [
+        "Se han asignado los roles de usuario"
       ],
       "Username": [
         "Nombre de usuario"
@@ -9718,6 +9739,9 @@
       ],
       "Account holder": [
         "Titular de la cuenta"
+      ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
       ],
       "Account storage": [
         "Almacenamiento de la cuenta"
@@ -11306,6 +11330,9 @@
       "Resend invite link": [
         "Enviar de nuevo el enlace de invitación"
       ],
+      "Resume role assignment": [
+        "Reanudar la asignación de roles"
+      ],
       "Revoke sessions": [
         "Revocar sesiones"
       ],
@@ -12817,9 +12844,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Cancela en cualquier momento antes del ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "Cancela en cualquier momento antes de esa fecha."
-      ],
       "contact our support team": [
         "pónte en contacto con nuestro equipo de soporte"
       ],
@@ -12841,9 +12865,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Todavía puedes cancelar en un plazo de 30 días y obtener un reembolso proporcional."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Todavía puedes cancelar en un plazo de 30 días y obtener un reembolso proporcional."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Podrás usar ${ planTitle } hasta que termine la prueba y no se te hará ningún cargo."
       ],
@@ -12852,9 +12873,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tu suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Podrás usar ${ planTitle } hasta que termine la prueba, gratuitamente."
       ]
     },
     "Option": {
@@ -13259,6 +13277,11 @@
         "Necesitas acceso a la clave de la organización para realizar esta acción."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Cuenta bancaria"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -13454,6 +13477,9 @@
       ],
       "Invalid security code": [
         "El código de seguridad no es válido."
+      ],
+      "Please enter the account holder name": [
+        "Introduce el nombre del titular de la cuenta"
       ],
       "Something went wrong. Please try again later.": [
         "Se ha producido un error. Inténtalo de nuevo más tarde."
@@ -13846,78 +13872,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aprovecha la oferta"
-      ],
-      "Summer Sale": [
-        "Descuento de verano"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/meses"
-      ],
-      "15 GB storage": [
-        "15 GB de almacenamiento"
-      ],
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de almacenamiento: 40 veces tu plan actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "500 GB storage": [
-        "500 GB de almacenamiento"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones prémium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acceso completo a ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para ti y otra persona"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor online de documentos y hojas de cálculo"
-      ],
-      "Recover previous file versions": [
-        "Recupera las versiones previas de los archivos"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mayor protección contra las ciberamenazas"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cámbiate a nuestro plan anual y ahorra ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Use your own email domain": [
-        "Usa tu propio dominio de correo electrónico"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "durante 12 meses"
-      ],
-      "SUMMER SALE": [
-        "DESCUENTO DE VERANO"
       ]
     },
     "q3campaign2026: Action": {
@@ -15763,6 +15717,9 @@
       "Backup password": [
         "Contraseña de respaldo"
       ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Como tu organización te ha pasado al inicio de sesión único (SSO), **tu contraseña anterior se ha guardado como contraseña de respaldo**. Puedes usarla para autorizar el SSO en un nuevo dispositivo."
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -15806,6 +15763,9 @@
       ],
       "Do you want to remove all other devices than the current one?": [
         "¿Quieres eliminar todas las demás sesiones y mantener la actual?"
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Introdúcela para iniciar sesión. Es la misma que tu contraseña anterior."
       ],
       "Enter the confirmation code we sent on your other device.": [
         "Ingresa el código de confirmación que te enviamos a tu otro dispositivo."
@@ -17116,6 +17076,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "${ capitalizedSource }: asignación de roles en pausa"
+      ],
       "${ feature } is now active": [
         "La funcionalidad ${ feature } ya está activada."
       ],
@@ -18208,6 +18171,9 @@
       ],
       "Single sign-on": [
         "Inicio de sesión único"
+      ],
+      "Single sign-on (SSO)": [
+        "Inicio de sesión único (SSO)"
       ],
       "SMS verification": [
         "Verificación por SMS"
