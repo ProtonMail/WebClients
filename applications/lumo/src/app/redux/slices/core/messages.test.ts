@@ -2,12 +2,7 @@ import type { Attachment, Message } from '../../../types';
 import { Role } from '../../../types';
 import type { LumoStreamUsage } from '../../../types-api';
 import type { LumoState } from '../../store';
-import messagesReducer, {
-    type MessageMap,
-    recordMessageUsage,
-    setMessageModelID,
-    setMessageUsage,
-} from './messages';
+import messagesReducer, { type MessageMap, recordMessageUsage, setMessageUsage } from './messages';
 
 const assistantMessage = (overrides: Partial<Message> = {}): Message => ({
     id: 'm1',
@@ -64,20 +59,12 @@ describe('recordMessageUsage thunk', () => {
         expect(dispatched).toHaveLength(0);
     });
 
-    it('does nothing when usage carries no token counts or model id', () => {
+    it('does nothing when usage carries no token counts', () => {
         const dispatched = runThunk(
             { remaining_limits: { lite: 5 } },
             { messages: { m1: assistantMessage() }, attachments: {} }
         );
         expect(dispatched).toHaveLength(0);
-    });
-
-    it('stores model id even when usage carries no token counts', () => {
-        const dispatched = runThunk(
-            { model: '3b6be88a', remaining_limits: { lite: 5 } },
-            { messages: { m1: assistantMessage() }, attachments: {} }
-        );
-        expect(dispatched).toEqual([setMessageModelID({ messageId: 'm1', modelID: '3b6be88a' })]);
     });
 
     it('maps backend token fields and omits absent ones', () => {
@@ -94,13 +81,12 @@ describe('recordMessageUsage thunk', () => {
         );
     });
 
-    it('stores model id alongside token counts', () => {
+    it('maps token counts', () => {
         const dispatched = runThunk(
-            { prompt_tokens: 696, completion_tokens: 7, total_tokens: 703, model: '3b6be88a' },
+            { prompt_tokens: 696, completion_tokens: 7, total_tokens: 703 },
             { messages: { m1: assistantMessage() }, attachments: {} }
         );
         expect(dispatched).toEqual([
-            setMessageModelID({ messageId: 'm1', modelID: '3b6be88a' }),
             setMessageUsage({
                 messageId: 'm1',
                 usage: { promptTokens: 696, completionTokens: 7, totalTokens: 703, tokenEstimateVersion: 1 },
@@ -144,13 +130,5 @@ describe('recordMessageUsage thunk', () => {
             ctxFilesTokenEstimate: 300,
             tokenEstimateVersion: 1,
         });
-    });
-});
-
-describe('setMessageModelID reducer', () => {
-    it('stores model id on the target message', () => {
-        const state: MessageMap = { m1: assistantMessage() };
-        const next = messagesReducer(state, setMessageModelID({ messageId: 'm1', modelID: '3b6be88a' }));
-        expect(next.m1.modelID).toBe('3b6be88a');
     });
 });
