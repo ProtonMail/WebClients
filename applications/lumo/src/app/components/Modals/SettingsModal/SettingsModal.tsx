@@ -176,13 +176,17 @@ const AppearanceSettingsPanel = () => {
 
 /** General settings panel for authenticated users */
 const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
-    const { externalTools: isLumoToolingEnabled, visualizationInstructions: isVisualizationInstructionsEnabled } =
-        useLumoFlags();
+    const {
+        externalTools: isLumoToolingEnabled,
+        artifactsView: isArtifactsViewEnabled,
+        visualizationInstructions: isVisualizationInstructionsEnabled,
+    } = useLumoFlags();
     const [user] = useUser();
     const userId = user?.ID;
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
     const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
+    const automaticArtifactCreation = lumoUserSettings.automaticArtifactCreation ?? true;
     const visualizationInstructionsEnabled = lumoUserSettings.isVisualizationInstructionsEnabled ?? true;
 
     // Index management state
@@ -296,6 +300,27 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                             onChange={() => {
                                 updateSettings({
                                     automaticWebSearch: !automaticWebSearch,
+                                    _autoSave: true,
+                                });
+                            }}
+                        />
+                    }
+                />
+            )}
+
+            {isArtifactsViewEnabled && (
+                <SettingsSectionItem
+                    icon="FileText"
+                    text={c('collider_2025: Title').t`Automatic Create Artifact`}
+                    subtext={c('collider_2025: Description')
+                        .t`Allow ${LUMO_SHORT_APP_NAME} to create artifacts in the side panel when appropriate`}
+                    button={
+                        <Toggle
+                            id="automatic-artifact-creation-toggle"
+                            checked={automaticArtifactCreation}
+                            onChange={() => {
+                                updateSettings({
+                                    automaticArtifactCreation: !automaticArtifactCreation,
                                     _autoSave: true,
                                 });
                             }}
