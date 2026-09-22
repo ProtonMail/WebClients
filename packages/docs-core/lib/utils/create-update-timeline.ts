@@ -18,7 +18,7 @@ type Update = {
   content: Uint8Array<ArrayBuffer>
 }
 
-export async function createUpdateTimelineEntry(update: Update): Promise<UpdateTimelineEntry> {
+async function createUpdateTimelineEntry(update: Update): Promise<UpdateTimelineEntry> {
   let content = update.content
   if (isCompressedDocumentUpdate(content)) {
     content = decompressDocumentUpdate(content)
