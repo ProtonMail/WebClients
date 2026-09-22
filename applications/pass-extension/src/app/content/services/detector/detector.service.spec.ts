@@ -1,3 +1,4 @@
+import type * as Autofill from '@protontech/autofill';
 import type { ModelProvider } from '@protontech/autofill/types';
 
 import { createModelProvider } from '@proton/pass/lib/extension/model-artifact/model-artifact';
@@ -6,23 +7,11 @@ import type { MaybeNull } from '@proton/pass/types/utils/index';
 
 import { sendMessage } from '../../../../lib/message/send-message';
 import { BUNDLED_MODEL_ID } from '../../../../lib/utils/version';
-import type * as DetectorApi from './detector.api';
 import type * as DetectorService from './detector.service';
 
-let mockSupportsRuntimeModel = true;
-
-jest.mock('./detector.api', () => ({
-    clearDetectionCache: jest.fn(),
-    flagOverride: jest.fn(),
-    flagSubtreeAsIgnored: jest.fn(),
-    getTypeScore: jest.fn(),
-    prepass: jest.fn(),
-    rulesetMaker: jest.fn((runtime) => ({ against: jest.fn(), runtime })),
-    shadowPiercingContains: jest.fn(),
-    shouldRunClassifier: jest.fn(),
-    get supportsRuntimeModel() {
-        return mockSupportsRuntimeModel;
-    },
+jest.mock('@protontech/autofill', () => ({
+    ...jest.requireActual('@protontech/autofill'),
+    createRulesetRegistry: jest.fn(() => ({ make: jest.fn(() => ({ against: jest.fn() })) })),
 }));
 
 jest.mock('../../../../lib/message/send-message', () => ({
@@ -46,17 +35,19 @@ describe('DetectorService: runtime model resolution', () => {
     /** Each test needs a fresh module instance : `ruleset`/`modelId` are locked-once module state. */
     const load = async () => {
         let service: typeof DetectorService;
-        let api: typeof DetectorApi;
+        let autofill: typeof Autofill;
         await jest.isolateModulesAsync(async () => {
             service = await import('./detector.service');
-            api = await import('./detector.api');
+            autofill = await import('@protontech/autofill');
         });
-        return { createDetectorService: service!.createDetectorService, rulesetMaker: jest.mocked(api!.rulesetMaker) };
+        return {
+            createDetectorService: service!.createDetectorService,
+            createRulesetRegistry: jest.mocked(autofill!.createRulesetRegistry),
+        };
     };
 
     beforeEach(() => {
         jest.clearAllMocks();
-        mockSupportsRuntimeModel = true;
         workerResponse = { type: 'error', error: 'not configured' };
         (sendMessage.on as jest.Mock).mockImplementation((_message, onResponse) => onResponse(workerResponse));
         (sendMessage.onSuccess as jest.Mock).mockResolvedValue(undefined);
@@ -64,14 +55,14 @@ describe('DetectorService: runtime model resolution', () => {
 
     test('Falls back to the bundled model when the worker has no cached artifact', async () => {
         workerResponse = { type: 'success', artifact: null };
-        const { createDetectorService, rulesetMaker } = await load();
+        const { createDetectorService, createRulesetRegistry } = await load();
 
         const detector = createDetectorService({ root: document });
         await detector.init();
 
         expect(detector.getModelId()).toBe(BUNDLED_MODEL_ID);
         // Bundled ruleset construction is lazy now, deferred to first detection : not built here.
-        expect(rulesetMaker).not.toHaveBeenCalled();
+        expect(createRulesetRegistry).not.toHaveBeenCalled();
     });
 
     test('Falls back to the bundled model when the worker message itself fails', async () => {
@@ -87,40 +78,26 @@ describe('DetectorService: runtime model resolution', () => {
     test('Falls back to the bundled model when the artifact fails feature-store validation', async () => {
         workerResponse = { type: 'success', artifact: artifact('2026.8.2475-lr') };
         jest.mocked(createModelProvider).mockReturnValue({ ok: false, error: 'unknown feature "foo"' });
-        const { createDetectorService, rulesetMaker } = await load();
+        const { createDetectorService, createRulesetRegistry } = await load();
 
         const detector = createDetectorService({ root: document });
         await detector.init();
 
         expect(detector.getModelId()).toBe(BUNDLED_MODEL_ID);
-        expect(rulesetMaker).not.toHaveBeenCalled();
+        expect(createRulesetRegistry).not.toHaveBeenCalled();
     });
 
     test('Uses the runtime model once resolved and validated, without ever building the bundled ruleset', async () => {
         workerResponse = { type: 'success', artifact: artifact('2026.8.2475-lr') };
         jest.mocked(createModelProvider).mockReturnValue({ ok: true, provider });
-        const { createDetectorService, rulesetMaker } = await load();
+        const { createDetectorService, createRulesetRegistry } = await load();
 
         const detector = createDetectorService({ root: document });
         await detector.init();
 
         expect(detector.getModelId()).toBe('2026.8.2475-lr');
-        expect(rulesetMaker).toHaveBeenCalledWith(provider);
-        expect(rulesetMaker).toHaveBeenCalledTimes(1);
-    });
-
-    test('Never resolves a runtime model on a build that does not support it', async () => {
-        mockSupportsRuntimeModel = false;
-        workerResponse = { type: 'success', artifact: artifact('2026.8.2475-lr') };
-        jest.mocked(createModelProvider).mockReturnValue({ ok: true, provider });
-        const { createDetectorService, rulesetMaker } = await load();
-
-        const detector = createDetectorService({ root: document });
-        await detector.init();
-
-        expect(detector.getModelId()).toBe(BUNDLED_MODEL_ID);
-        expect(sendMessage.on).not.toHaveBeenCalled();
-        expect(rulesetMaker).not.toHaveBeenCalled();
+        expect(createRulesetRegistry).toHaveBeenCalledWith({ runtime: provider });
+        expect(createRulesetRegistry).toHaveBeenCalledTimes(1);
     });
 
     test('A detector recreated while the first resolution is still in flight awaits the same resolution', async () => {
@@ -153,7 +130,7 @@ describe('DetectorService: runtime model resolution', () => {
     test('A detector recreated within the same JS realm keeps the first-resolved model', async () => {
         workerResponse = { type: 'success', artifact: artifact('2026.8.2475-lr') };
         jest.mocked(createModelProvider).mockReturnValue({ ok: true, provider });
-        const { createDetectorService, rulesetMaker } = await load();
+        const { createDetectorService, createRulesetRegistry } = await load();
 
         const first = createDetectorService({ root: document });
         await first.init();
@@ -164,6 +141,6 @@ describe('DetectorService: runtime model resolution', () => {
         await second.init();
 
         expect(second.getModelId()).toBe('2026.8.2475-lr');
-        expect(rulesetMaker).toHaveBeenCalledTimes(1);
+        expect(createRulesetRegistry).toHaveBeenCalledTimes(1);
     });
 });

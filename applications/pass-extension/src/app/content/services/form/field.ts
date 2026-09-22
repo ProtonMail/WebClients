@@ -1,3 +1,4 @@
+import { isVisible } from '@protontech/autofill';
 import type { FieldType, FormType } from '@protontech/autofill/types';
 
 import type { MaybeNull } from '@proton/pass/types/utils/index';
@@ -14,7 +15,6 @@ import { withContext } from '../../context/context';
 import { getFrameID, getFrameParentVisibility } from '../../utils/frame';
 import type { AutofillOptions } from '../autofill/autofill.utils';
 import { createAutofill } from '../autofill/autofill.utils';
-import { isVisible } from '../detector/detector.api';
 import type { IconController } from '../inline/icon/icon.controller';
 import { type FieldAnchor, createFieldAnchor } from './field.anchor';
 import type { InteractivityController } from './field.interactivity';

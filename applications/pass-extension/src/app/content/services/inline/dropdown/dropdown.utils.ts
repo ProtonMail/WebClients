@@ -1,3 +1,5 @@
+import { isShadowRoot } from '@protontech/autofill';
+
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { clientStatusResolved } from '@proton/pass/lib/client';
 import type { ParsedUrl } from '@proton/pass/lib/urls/types';
@@ -18,7 +20,6 @@ import { DropdownAction } from '../../../constants.runtime';
 import { DROPDOWN_WIDTH } from '../../../constants.static';
 import { withContext } from '../../../context/context';
 import { getAutofillPageTelemetryDimensions } from '../../../utils/autofill-telemetry';
-import { isShadowRoot } from '../../detector/detector.api';
 import type { FieldHandle } from '../../form/field';
 import type { InlineCloseOptions } from '../inline.messages';
 import type { DropdownHandler } from './dropdown.abstract';

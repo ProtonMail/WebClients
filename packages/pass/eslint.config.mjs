@@ -12,5 +12,5 @@ export default defineConfig([
             curly: ['error', 'multi-line'],
         },
     },
-    globalIgnores(['fathom/', 'asm/', 'docs/starlight/']),
+    globalIgnores(['asm/', 'docs/starlight/']),
 ]);
