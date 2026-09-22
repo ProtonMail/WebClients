@@ -3,6 +3,15 @@ import type { ArtifactRegistry } from './artifactRegistry';
 import { CREATE_ARTIFACT_TOOL_NAME } from './createArtifactTool';
 import type { ParsedArtifact } from './parseArtifacts';
 
+function readToolCallNameFromPartialContent(content: string): string | undefined {
+    const match = content.match(/"name"\s*:\s*"([^"\\]+)"/);
+    if (typeof match?.[1] === 'string') {
+        return match[1];
+    }
+
+    return undefined;
+}
+
 export function getToolCallNameFromBlock(block: ContentBlock): string | undefined {
     if (block.type !== 'tool_call') {
         return undefined;
@@ -19,7 +28,8 @@ export function getToolCallNameFromBlock(block: ContentBlock): string | undefine
             return raw.name;
         }
     } catch {
-        // Malformed or partial JSON — fall through.
+        // Malformed or partial JSON — try to read the name field from the stream.
+        return readToolCallNameFromPartialContent(block.content);
     }
 
     return undefined;
@@ -31,18 +41,23 @@ function hasCreateArtifactToolCallBlock(blocks: ContentBlock[]): boolean {
     });
 }
 
-function parentUserRequestedArtifact(parentUserMessage?: Message): boolean {
+function parentUserSentArtifactAction(parentUserMessage?: Message): boolean {
     if (!parentUserMessage) {
         return false;
     }
 
-    return parentUserMessage.artifactCreateModeActive === true || parentUserMessage.artifactAction !== undefined;
+    // Panel inline-edit only — not artifactCreateModeActive / preference-on sends, which would
+    // flash loading for ordinary chat turns before the model decides to call create_artifact.
+    return parentUserMessage.artifactAction !== undefined;
+}
+
+function isCreateArtifactToolInProgress(blocks: ContentBlock[], parentUserMessage?: Message): boolean {
+    return hasCreateArtifactToolCallBlock(blocks) || parentUserSentArtifactAction(parentUserMessage);
 }
 
 /**
- * True while the assistant is generating an artifact that is not yet parseable from blocks.
- * Covers the gap before the create_artifact tool call lands (explicit create / inline-edit turns)
- * and while a tool call block exists but arguments are still incomplete.
+ * True while the in-chat artifact chip should show a loading state — only before the tool call
+ * has produced parseable artifact content.
  */
 export function isArtifactGenerationLoading(input: {
     isGenerating: boolean;
@@ -59,7 +74,25 @@ export function isArtifactGenerationLoading(input: {
         return false;
     }
 
-    return parentUserRequestedArtifact(input.parentUserMessage) || hasCreateArtifactToolCallBlock(input.blocks);
+    return isCreateArtifactToolInProgress(input.blocks, input.parentUserMessage);
+}
+
+/**
+ * True while the side panel should show its loading shell — from the first create_artifact
+ * tool_call chunk through until an artifact is opened in the panel (even if arguments already
+ * parsed before the panel selection catches up).
+ */
+export function isArtifactPanelGenerationLoading(input: {
+    isGenerating: boolean;
+    isLastMessage: boolean;
+    blocks: ContentBlock[];
+    parentUserMessage?: Message;
+}): boolean {
+    if (!input.isGenerating || !input.isLastMessage) {
+        return false;
+    }
+
+    return isCreateArtifactToolInProgress(input.blocks, input.parentUserMessage);
 }
 
 function parentUserTargetedArtifactRevision(parentUserMessage: Message | undefined, artifactId: string): boolean {
@@ -74,15 +107,42 @@ function parentUserTargetedArtifactRevision(parentUserMessage: Message | undefin
     return parentUserMessage.artifactAction?.artifactId === artifactId;
 }
 
+function isRevisingOpenArtifact(input: {
+    blocks: ContentBlock[];
+    completeArtifacts: ParsedArtifact[];
+    parentUserMessage?: Message;
+    selectedId: string;
+}): boolean {
+    if (parentUserTargetedArtifactRevision(input.parentUserMessage, input.selectedId)) {
+        return true;
+    }
+
+    if (!hasCreateArtifactToolCallBlock(input.blocks)) {
+        return false;
+    }
+
+    // Chat follow-up revisions (revise tool mode) do not set artifactRevisionTargetId on the
+    // user message — once create_artifact starts, treat it as a revision while the panel is open.
+    const streamingArtifactIds = input.completeArtifacts.map((artifact) => {
+        return artifact.id;
+    });
+    if (streamingArtifactIds.length > 0) {
+        return streamingArtifactIds.includes(input.selectedId);
+    }
+
+    return true;
+}
+
 /**
  * True while a follow-up revision is being generated for an artifact the user was already
  * viewing in the panel (latest version). Keeps the current version visible with a lightweight
- * loading overlay until the in-flight message produces a parseable new version.
+ * loading overlay for the full assistant turn — even after parseable content arrives early.
  */
 export function isArtifactRevisionLoading(input: {
     isGenerating: boolean;
     isLastMessage: boolean;
     completeArtifacts: ParsedArtifact[];
+    blocks: ContentBlock[];
     parentUserMessage?: Message;
     selectedId: string | null;
     selectedVersionIndex: number;
@@ -102,9 +162,10 @@ export function isArtifactRevisionLoading(input: {
         return false;
     }
 
-    if (input.completeArtifacts.some((artifact) => artifact.id === input.selectedId)) {
-        return false;
-    }
-
-    return parentUserTargetedArtifactRevision(input.parentUserMessage, input.selectedId);
+    return isRevisingOpenArtifact({
+        blocks: input.blocks,
+        completeArtifacts: input.completeArtifacts,
+        parentUserMessage: input.parentUserMessage,
+        selectedId: input.selectedId,
+    });
 }

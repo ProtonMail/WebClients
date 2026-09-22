@@ -490,7 +490,7 @@ export type MessagePriv = {
     /** When set, the user message was sent from the artifact panel selection UI. */
     artifactAction?: ArtifactActionMeta;
 
-    /** True when this send expected artifact creation (explicit mode or persisted preference). */
+    /** Reserved for explicit create-artifact mode (phase 2). Not used for loading state. */
     artifactCreateModeActive?: boolean;
 
     /** Artifact id the user was viewing (latest version) in the panel when this message was sent. */

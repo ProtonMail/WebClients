@@ -3,6 +3,7 @@ import { Role } from '../../../types-api';
 import {
     getToolCallNameFromBlock,
     isArtifactGenerationLoading,
+    isArtifactPanelGenerationLoading,
     isArtifactRevisionLoading,
 } from './artifactGenerationState';
 import type { ArtifactRegistry } from './artifactRegistry';
@@ -44,6 +45,14 @@ describe('getToolCallNameFromBlock', () => {
         };
         expect(getToolCallNameFromBlock(block)).toBe(CREATE_ARTIFACT_TOOL_NAME);
     });
+
+    it('reads the tool name from partial JSON while arguments are still streaming', () => {
+        const block: ContentBlock = {
+            type: 'tool_call',
+            content: '{"id":"call_1","name":"create_artifact","arguments":"{\\"id\\":\\"x\\""}',
+        };
+        expect(getToolCallNameFromBlock(block)).toBe(CREATE_ARTIFACT_TOOL_NAME);
+    });
 });
 
 describe('isArtifactGenerationLoading', () => {
@@ -66,7 +75,7 @@ describe('isArtifactGenerationLoading', () => {
         ).toBe(false);
     });
 
-    it('is true when the user explicitly entered create-artifact mode', () => {
+    it('is false when only artifactCreateModeActive is set but no tool call has started', () => {
         expect(
             isArtifactGenerationLoading({
                 isGenerating: true,
@@ -75,7 +84,7 @@ describe('isArtifactGenerationLoading', () => {
                 blocks: [],
                 parentUserMessage: makeUserMessage({ artifactCreateModeActive: true }),
             })
-        ).toBe(true);
+        ).toBe(false);
     });
 
     it('is true for artifact inline-edit follow-ups', () => {
@@ -121,6 +130,60 @@ describe('isArtifactGenerationLoading', () => {
             })
         ).toBe(false);
     });
+
+    it('is false once parseable artifact content exists even if generation continues', () => {
+        expect(
+            isArtifactGenerationLoading({
+                isGenerating: true,
+                isLastMessage: true,
+                completeArtifacts: [
+                    {
+                        id: 'letter-1',
+                        type: 'document',
+                        title: 'Letter',
+                        content: 'Hello',
+                    },
+                ],
+                blocks: makeAssistantBlocks({ id: 'letter-1', type: 'document', title: 'Letter', content: 'Hello' }),
+                parentUserMessage: makeUserMessage(),
+            })
+        ).toBe(false);
+    });
+});
+
+describe('isArtifactPanelGenerationLoading', () => {
+    it('is true while a create_artifact tool call is in progress', () => {
+        expect(
+            isArtifactPanelGenerationLoading({
+                isGenerating: true,
+                isLastMessage: true,
+                blocks: makeAssistantBlocks('{"id":"x"'),
+                parentUserMessage: makeUserMessage(),
+            })
+        ).toBe(true);
+    });
+
+    it('stays true after parseable content exists until generation finishes', () => {
+        expect(
+            isArtifactPanelGenerationLoading({
+                isGenerating: true,
+                isLastMessage: true,
+                blocks: makeAssistantBlocks({ id: 'letter-1', type: 'document', title: 'Letter', content: 'Hello' }),
+                parentUserMessage: makeUserMessage(),
+            })
+        ).toBe(true);
+    });
+
+    it('is false for ordinary chat turns', () => {
+        expect(
+            isArtifactPanelGenerationLoading({
+                isGenerating: true,
+                isLastMessage: true,
+                blocks: [{ type: 'text', content: 'Hi there.' }],
+                parentUserMessage: makeUserMessage(),
+            })
+        ).toBe(false);
+    });
 });
 
 describe('isArtifactRevisionLoading', () => {
@@ -150,6 +213,7 @@ describe('isArtifactRevisionLoading', () => {
                 isGenerating: true,
                 isLastMessage: true,
                 completeArtifacts: [],
+                blocks: [],
                 parentUserMessage: makeUserMessage({
                     artifactRevisionTargetId: 'letter-1',
                 }),
@@ -160,7 +224,7 @@ describe('isArtifactRevisionLoading', () => {
         ).toBe(true);
     });
 
-    it('is false when the new version is already parseable', () => {
+    it('stays true after parseable content exists until generation finishes', () => {
         expect(
             isArtifactRevisionLoading({
                 isGenerating: true,
@@ -173,6 +237,56 @@ describe('isArtifactRevisionLoading', () => {
                         content: 'Version 3',
                     },
                 ],
+                blocks: makeAssistantBlocks({
+                    id: 'letter-1',
+                    type: 'document',
+                    title: 'Letter',
+                    content: 'Version 3',
+                }),
+                parentUserMessage: makeUserMessage({
+                    artifactRevisionTargetId: 'letter-1',
+                }),
+                selectedId: 'letter-1',
+                selectedVersionIndex: 1,
+                registry,
+            })
+        ).toBe(true);
+    });
+
+    it('is true for chat follow-up revisions once create_artifact starts', () => {
+        expect(
+            isArtifactRevisionLoading({
+                isGenerating: true,
+                isLastMessage: true,
+                completeArtifacts: [],
+                blocks: makeAssistantBlocks('{"id":"letter-1"'),
+                parentUserMessage: makeUserMessage({ content: 'Make it shorter' }),
+                selectedId: 'letter-1',
+                selectedVersionIndex: 1,
+                registry,
+            })
+        ).toBe(true);
+    });
+
+    it('is false once generation finishes', () => {
+        expect(
+            isArtifactRevisionLoading({
+                isGenerating: false,
+                isLastMessage: true,
+                completeArtifacts: [
+                    {
+                        id: 'letter-1',
+                        type: 'document',
+                        title: 'Letter',
+                        content: 'Version 3',
+                    },
+                ],
+                blocks: makeAssistantBlocks({
+                    id: 'letter-1',
+                    type: 'document',
+                    title: 'Letter',
+                    content: 'Version 3',
+                }),
                 parentUserMessage: makeUserMessage({
                     artifactRevisionTargetId: 'letter-1',
                 }),
@@ -189,6 +303,7 @@ describe('isArtifactRevisionLoading', () => {
                 isGenerating: true,
                 isLastMessage: true,
                 completeArtifacts: [],
+                blocks: [],
                 parentUserMessage: makeUserMessage({
                     artifactRevisionTargetId: 'letter-1',
                 }),
