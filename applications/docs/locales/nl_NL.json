@@ -211,9 +211,6 @@
       "Copy address": [
         "Adres kopiëren"
       ],
-      "Copy alias “${ name }”": [
-        "Kopieer alias \"${ name }\""
-      ],
       "Copy as markdown": [
         "Kopiëren als markdown"
       ],
@@ -240,9 +237,6 @@
       ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
-      ],
-      "Create and copy alias": [
-        "Maak en kopieer alias"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Nieuwe ${ SHEETS_APP_NAME } aanmaken"
@@ -563,9 +557,6 @@
       ],
       "No, thanks": [
         "Nee, bedankt"
-      ],
-      "Not now": [
-        "Niet nu"
       ],
       "OK": [
         "OK"
@@ -2667,9 +2658,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Uw gratis ${ MAIL_APP_NAME }-account wordt geleverd met beperkte opslagruimte, dus we importeren alleen uw meest recente Gmail-e-mails."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2933,18 +2921,6 @@
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
-      "Alias is not valid": [
-        "Alias is ongeldig."
-      ],
-      "Alias is required": [
-        "Alias is vereist."
-      ],
-      "Alias options could not be resolved": [
-        "Alias-opties konden niet worden opgevraagd"
-      ],
-      "Aliases could not be loaded": [
-        "Aliassen konden niet worden geladen."
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
       ],
@@ -2968,12 +2944,6 @@
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Er is een fout opgetreden tijdens het aanmaken van een nieuw document. Probeer het opnieuw."
-      ],
-      "An error occurred while loading alias options": [
-        "Er is een fout opgetreden tijdens het laden van de alias opties"
-      ],
-      "An error occurred while saving your alias": [
-        "Er is een fout opgetreden tijdens het opslaan van uw alias"
       ],
       "Authentication canceled.": [
         "Authenticatie geannuleerd."
@@ -3038,12 +3008,6 @@
       "Could not load the image preview: ${ message }": [
         "Kan het afbeeldingsvoorbeeld niet laden: ${ message }"
       ],
-      "Could not open created vault": [
-        "Kon aangemaakte kluis niet openen"
-      ],
-      "Could not open updated vault": [
-        "Kon bijgewerkte kluis niet openen"
-      ],
       "Could not read part of this file: ${ message }": [
         "Kon een deel van dit bestand niet lezen: ${ message }"
       ],
@@ -3105,9 +3069,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Externe uitnodigingen zijn tijdelijk uitgeschakeld. Probeer het later opnieuw"
-      ],
-      "Failed loading group members": [
-        "Kon geen groepslid toevoegen."
       ],
       "Failed to change permissions settings": [
         "Het wijzigen van instellingen voor toelatingen is mislukt"
@@ -3199,9 +3160,6 @@
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
       ],
-      "Forward address is required": [
-        "Doorstuuradres is vereist"
-      ],
       "Image preview not found": [
         "Afbeeldingsvoorbeeld niet gevonden"
       ],
@@ -3234,9 +3192,6 @@
       ],
       "Invitation not found": [
         "Uitnodiging niet gevonden"
-      ],
-      "Item content cannot exceed 40KB": [
-        "Item mag niet groter zijn dan 40KB"
       ],
       "Item not found": [
         "Item niet gevonden"
@@ -3284,18 +3239,12 @@
       "Moving root item is not allowed": [
         "Het verplaatsen van het hoofditem is niet toegestaan"
       ],
-      "Name is required": [
-        "Naam is verplicht"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn",
         "De naam mag maximaal ${ MAX_NODE_NAME_LENGTH } tekens lang zijn"
       ],
       "Name must not be empty": [
         "Naam mag niet leeg zijn"
-      ],
-      "Network error": [
-        "Netwerkfout"
       ],
       "No calendars found to import": [
         "Geen agenda's gevonden om te importeren"
@@ -3866,9 +3815,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Wanneer extra wachtwoord is ingeschakeld, kan aliasbeheer alleen worden gedaan in ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -6044,9 +5990,6 @@
       "Additional comments": [
         "Aanvullende opmerkingen"
       ],
-      "Alias title": [
-        "Alias titel"
-      ],
       "Allow editors to change permissions and share": [
         "Sta bewerkers toe om toelatingen te wijzigen en te delen"
       ],
@@ -6164,9 +6107,6 @@
       "Drive": [
         "Drive"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "bv. Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Bewerker"
       ],
@@ -6203,12 +6143,6 @@
       "Erase this link and remove everyone with access": [
         "Wis deze link en verwijder iedereen met toegang"
       ],
-      "Exact host matching": [
-        "Exacte hostovereenkomst"
-      ],
-      "Exact URL matching": [
-        "Exacte URL-overeenkomst"
-      ],
       "Expiry": [
         "Vervaldatum"
       ],
@@ -6223,9 +6157,6 @@
       ],
       "Folder name": [
         "Mapnaam"
-      ],
-      "Forwards to": [
-        "Stuurt door na"
       ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
@@ -6314,17 +6245,11 @@
       "Navigation": [
         "Navigatie"
       ],
-      "Never fill on this exact URL": [
-        "Nooit invullen op deze exacte URL"
-      ],
       "New password": [
         "Nieuw wachtwoord"
       ],
       "Not active": [
         "Niet actief"
-      ],
-      "Note": [
-        "Notitie"
       ],
       "Notification": [
         "Notificatie"
@@ -6337,9 +6262,6 @@
       ],
       "Optional": [
         "Optioneel"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Bovenliggende domein en subdomeinen (standaard)"
       ],
       "Password": [
         "Wachtwoord"
@@ -6362,12 +6284,6 @@
       "Postal code": [
         "Postcode"
       ],
-      "Premium domain": [
-        "Premium domein"
-      ],
-      "Public domain": [
-        "Publiek domein"
-      ],
       "Public keys": [
         "Openbare sleutels"
       ],
@@ -6379,9 +6295,6 @@
       ],
       "Region": [
         "Regio/Provincie"
-      ],
-      "Regular expression": [
-        "Reguliere expressie"
       ],
       "Require password": [
         "Wachtwoord vereist"
@@ -6406,9 +6319,6 @@
       ],
       "Skip feedback": [
         "Feedback overslaan"
-      ],
-      "Starts with": [
-        "Begint met"
       ],
       "Stop sharing": [
         "Delen stoppen"
@@ -6443,9 +6353,6 @@
       "Upload picture": [
         "Afbeelding uploaden"
       ],
-      "URL wildcard pattern": [
-        "URL-jokertekenpatroon"
-      ],
       "Username": [
         "Gebruikersnaam"
       ],
@@ -6469,12 +6376,6 @@
       ],
       "What happened?": [
         "Wat is er gebeurd?"
-      ],
-      "Your alias": [
-        "Uw alias"
-      ],
-      "Your domain": [
-        "Uw domein"
       ],
       "Your IP": [
         "Uw IP-adres"
@@ -6798,24 +6699,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "'Begint met'-matchregel"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Exacte (sub)domein matchregel"
-      ],
-      "Exact URL matching rule": [
-        "Exacte URL-matchregel"
-      ],
-      "Never fill with this exact URL": [
-        "Nooit invullen met deze exacte URL"
-      ],
-      "Regular expression rule": [
-        "Reguliere expressieregel"
-      ],
-      "Wildcard pattern matching rule": [
-        "Matchregel met jokertekenpatroon"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Uw gratis proefversie is beëindigd. ${ nonAutoRenewalAction }"
       ],
@@ -8217,9 +8100,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "U kunt op elk moment annuleren vóór ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "U kunt op elk moment ervoor annuleren."
-      ],
       "contact our support team": [
         "neem contact op met ons support team"
       ],
@@ -8241,9 +8121,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Kunt u nog steeds annuleren binnen 30 dagen en pro-rata terugbetaling krijgen."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "U kunt nog steeds annuleren binnen 30 dagen en een pro-rata restitutie krijgen."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "U kunt ${ planTitle } gebruiken totdat de proefversie eindigt en u wordt niets in rekening gebracht."
       ],
@@ -8252,9 +8129,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Uw volledige ${ planTitle } abonnement begint op ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "U kunt kosteloos gebruikmaken van ${ planTitle } totdat de proefversie eindigt."
       ]
     },
     "Option": {
@@ -8670,78 +8544,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Pak de aanbieding"
-      ],
-      "Summer Sale": [
-        "Zomer Sale"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/maandelijks"
-      ],
-      "15 GB storage": [
-        "15 GB opslag"
-      ],
-      "2 TB data storage": [
-        "2 TB dataopslag"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB opslag: 40x uw huidige abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB dataopslag"
-      ],
-      "500 GB storage": [
-        "500 GB opslag"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Volledige toegang tot ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Afzonderlijke accounts voor 6 gebruikers"
-      ],
-      "Individual accounts for you and a partner": [
-        "Afzonderlijke accounts voor u en een partner"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online document- en spreadsheetbewerker"
-      ],
-      "Recover previous file versions": [
-        "Herstel vorige bestandsversies"
-      ],
-      "Stronger protection against cyber threats": [
-        "Krachtigere bescherming tegen cyberdreigingen"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Onbeperkte mappen, labels en filters"
-      ],
-      "Use your own email domain": [
-        "Gebruik uw eigen e-maildomein"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "gedurende 12 maanden"
-      ],
-      "SUMMER SALE": [
-        "ZOMER SALE"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Pak deze deal"
@@ -8939,49 +8741,6 @@
     "Section": {
       "Org setup and account security": [
         "Org configuratie en accountbeveiliging"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Alle aliassen"
-      ],
-      "Create alias": [
-        "Alias aanmaken"
-      ],
-      "Create an alias": [
-        "Alias aanmaken"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Genereer aliassen in een handomdraai en beheer gemakkelijk uw aliassen en wachtwoorden."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliassen"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Met Hide-my-email aliassen kunt u zich online aanmelden voor zaken zonder uw e-mailadres te delen. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nieuwe alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Open ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Bescherm uw online-identiteit"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Probeer ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Gebruikt in Amazon voor winkelen enz."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Wanneer uw e-mailadres gevraagd wordt, geef dan deze alias op. Aliassen worden geleverd door ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(${ PASS_APP_NAME } zal openen)"
       ]
     },
     "Security Center - Action": {
@@ -9780,12 +9539,6 @@
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
       ],
-      "Alias copied to clipboard": [
-        "Alias gekopieerd naar klembord"
-      ],
-      "Alias saved and copied": [
-        "Alias opgeslagen en gekopieerd"
-      ],
       "Canceling import": [
         "Importeren annuleren"
       ],
@@ -9817,9 +9570,6 @@
       ],
       "Invitation rejected": [
         "Uitnodiging afgewezen"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Laatst gewijzigde aliassen opgeslagen in uw oudste kluis"
       ],
       "Phone number copied to clipboard": [
         "Telefoonnummer gekopieerd naar het klembord"
@@ -10337,9 +10087,6 @@
       ],
       "My files": [
         "Mijn bestanden"
-      ],
-      "Need more aliases?": [
-        "Meer aliassen nodig?"
       ],
       "Need to share more files with edit access?": [
         "Wilt u meer bestanden met bewerkingstoegang delen?"
@@ -10877,9 +10624,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",

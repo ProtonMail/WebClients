@@ -217,9 +217,6 @@
       "Copy address": [
         "Copia l'adreça"
       ],
-      "Copy alias “${ name }”": [
-        "Copia l'àlies «${ name }»"
-      ],
       "Copy as markdown": [
         "Copia com a markdown"
       ],
@@ -246,9 +243,6 @@
       ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
-      ],
-      "Create and copy alias": [
-        "Crea i copia un àlies"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Creeu un full de càlcul nou de ${ SHEETS_APP_NAME }"
@@ -575,9 +569,6 @@
       ],
       "No, thanks": [
         "No, gràcies"
-      ],
-      "Not now": [
-        "Ara no"
       ],
       "OK": [
         "D'acord"
@@ -1357,7 +1348,7 @@
         "Problema de pagament"
       ],
       "Sheets problem": [
-        "Hi ha hagut un problema amb els fulls de càlcul"
+        "Problema amb els fulls de càlcul"
       ],
       "Sign in problem": [
         "Problema d'inici de sessió"
@@ -2688,9 +2679,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2957,18 +2945,6 @@
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
-      "Alias is not valid": [
-        "L'àlies no és vàlid."
-      ],
-      "Alias is required": [
-        "Es requereix un àlies"
-      ],
-      "Alias options could not be resolved": [
-        "Les opcions d'àlies no s'han pogut resoldre."
-      ],
-      "Aliases could not be loaded": [
-        "No s'han pogut carregar els àlies."
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "S'ha assignat tot l'espai d'emmagatzematge. Reduïu l'emmagatzematge assignat a altres usuaris."
       ],
@@ -2992,12 +2968,6 @@
       ],
       "An error occurred while creating a new document. Please try again.": [
         "S'ha produït un error en crear un document nou. Torneu-ho a provar"
-      ],
-      "An error occurred while loading alias options": [
-        "S'ha produït un error en carregar les opcions de l'àlies"
-      ],
-      "An error occurred while saving your alias": [
-        "S'ha produït un error en desar l'àlies"
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -3065,12 +3035,6 @@
       "Could not load the image preview: ${ message }": [
         "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
       ],
-      "Could not open created vault": [
-        "No s'ha pogut obrir la caixa forta creada"
-      ],
-      "Could not open updated vault": [
-        "No s'ha pogut obrir la caixa forta actualitzada"
-      ],
       "Could not read part of this file: ${ message }": [
         "No s'ha pogut llegir una part d'aquest fitxer: ${ message }"
       ],
@@ -3132,9 +3096,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Les invitacions externes estan desactivades temporalment. Torneu a intentar-ho més tard"
-      ],
-      "Failed loading group members": [
-        "No s'han pogut carregar els membres del grup"
       ],
       "Failed to change permissions settings": [
         "No s'han pogut canviar les preferències de permisos"
@@ -3229,9 +3190,6 @@
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
       ],
-      "Forward address is required": [
-        "L'adreça de reenviament és obligatòria."
-      ],
       "Image preview not found": [
         "No s’ha trobat la vista prèvia de la imatge"
       ],
@@ -3264,9 +3222,6 @@
       ],
       "Invitation not found": [
         "No s'ha trobat la invitació"
-      ],
-      "Item content cannot exceed 40KB": [
-        "El contingut de l'element no pot excedir 40 kB."
       ],
       "Item not found": [
         "No s'ha trobat l'element"
@@ -3314,18 +3269,12 @@
       "Moving root item is not allowed": [
         "No es permet moure l'element arrel"
       ],
-      "Name is required": [
-        "Es requereix un nom."
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcter",
         "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcters"
       ],
       "Name must not be empty": [
         "El nom no pot estar buit"
-      ],
-      "Network error": [
-        "Error de xarxa"
       ],
       "No calendars found to import": [
         "No s'ha trobat cap calendari per importar"
@@ -3896,9 +3845,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Quan s'ha activat la contrasenya addicional, la gestió d'àlies només es pot fer a ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -6119,9 +6065,6 @@
       "Additional comments": [
         "Comentaris addicionals"
       ],
-      "Alias title": [
-        "Títol de l'àlies"
-      ],
       "Allow editors to change permissions and share": [
         "Permet als editors canviar els permisos i compartir"
       ],
@@ -6239,9 +6182,6 @@
       "Drive": [
         "Unitat"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "per exemple, Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Editor"
       ],
@@ -6281,12 +6221,6 @@
       "Erase this link and remove everyone with access": [
         "Esborreu aquest enllaç i elimineu a tothom amb accés"
       ],
-      "Exact host matching": [
-        "Coincidència exacta d'amfitrió"
-      ],
-      "Exact URL matching": [
-        "Coincidència exacta d'URL"
-      ],
       "Expiry": [
         "Caducitat"
       ],
@@ -6301,9 +6235,6 @@
       ],
       "Folder name": [
         "Nom de carpeta"
-      ],
-      "Forwards to": [
-        "Reenvia a"
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
@@ -6398,17 +6329,11 @@
       "Navigation": [
         "Navegació"
       ],
-      "Never fill on this exact URL": [
-        "No empleneu mai en aquest URL exacte"
-      ],
       "New password": [
         "Contrasenya nova"
       ],
       "Not active": [
         "No està actiu"
-      ],
-      "Note": [
-        "Nota"
       ],
       "Notification": [
         "Notificació"
@@ -6421,9 +6346,6 @@
       ],
       "Optional": [
         "Opcional"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Domini principal i subdominis (per defecte)"
       ],
       "Password": [
         "Contrasenya"
@@ -6446,12 +6368,6 @@
       "Postal code": [
         "Codi postal"
       ],
-      "Premium domain": [
-        "Domini prèmium"
-      ],
-      "Public domain": [
-        "Domini públic"
-      ],
       "Public keys": [
         "Claus públiques"
       ],
@@ -6463,9 +6379,6 @@
       ],
       "Region": [
         "Regió"
-      ],
-      "Regular expression": [
-        "Expressió regular"
       ],
       "Require password": [
         "Es requereix contrasenya"
@@ -6490,9 +6403,6 @@
       ],
       "Skip feedback": [
         "Ometre els comentaris"
-      ],
-      "Starts with": [
-        "Comença amb"
       ],
       "Stop sharing": [
         "Deixa de compartir"
@@ -6527,9 +6437,6 @@
       "Upload picture": [
         "Carrega la imatge"
       ],
-      "URL wildcard pattern": [
-        "Patró de comodí d'URL"
-      ],
       "Username": [
         "Nom d'usuari"
       ],
@@ -6553,12 +6460,6 @@
       ],
       "What happened?": [
         "Què ha passat?"
-      ],
-      "Your alias": [
-        "El vostre àlies"
-      ],
-      "Your domain": [
-        "El vostre domini"
       ],
       "Your IP": [
         "La vostra IP"
@@ -6882,24 +6783,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Regla de coincidència «Comença amb»"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Regla de coincidència exacta de (sub)domini"
-      ],
-      "Exact URL matching rule": [
-        "Regla de coincidència exacta d'URL"
-      ],
-      "Never fill with this exact URL": [
-        "No ho emplenis mai amb aquest URL exacte"
-      ],
-      "Regular expression rule": [
-        "Regla d'expressió regular"
-      ],
-      "Wildcard pattern matching rule": [
-        "Regla de coincidència de patró de comodí"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
       ],
@@ -8216,6 +8099,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunitat per obtenir el primer mes de ${ plan } a aquest preu."
+      ],
       "Last day to save": [
         "Últim dia per estalviar"
       ],
@@ -8298,6 +8184,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Adreça curta de @pm.me"
+      ],
       "Storage": [
         "Emmagatzematge"
       ],
@@ -8312,11 +8201,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visiteu el nostre ${ helpCenterLink } o ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Afegiu un mètode de pagament** per continuar utilitzant totes les funcions quan acabi el període de prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continueu després del període de prova,** podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
+      ],
+      "Add a payment method": [
+        "Afegir un mètode de pagament"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancel·leu en qualsevol moment abans del ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Cancel·leu en qualsevol moment abans d'aquesta data."
       ],
       "contact our support team": [
         "contacteu amb el nostre equip de suport"
@@ -8330,16 +8231,22 @@
       "help center": [
         "centre d'ajuda"
       ],
+      "If you continue after your trial,": [
+        "Si continueu després del període de prova,"
+      ],
       "If you need help,": [
         "Si necessiteu ajuda,"
       ],
       "Once your full subscription starts...": [
         "Un cop iniciada la subscripció completa..."
       ],
-      "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Encara podeu cancel·lar-la en un termini de 30 dies i obtenir un reemborsament prorratejat."
+      "to keep using all of the features after your trial ends.": [
+        "per continuar utilitzant totes les funcions quan acabi el vostre període de prova."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat"
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
         "Encara podeu cancel·lar-la en un termini de 30 dies i obtenir un reemborsament prorratejat."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -8350,9 +8257,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Podreu utilitzar ${ planTitle } de manera gratuïta fins que finalitzi el període de prova."
       ]
     },
     "Option": {
@@ -8768,78 +8672,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Aconseguiu l'oferta"
-      ],
-      "Summer Sale": [
-        "Rebaixes d'estiu"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mesos"
-      ],
-      "15 GB storage": [
-        "15 GB d'emmagatzemament"
-      ],
-      "2 TB data storage": [
-        "2 TB d'emmagatzematge de dades"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB d'emmagatzematge: 40 vegades el vostre pla actual"
-      ],
-      "3 TB data storage": [
-        "3 TB d'emmagatzematge de dades"
-      ],
-      "500 GB storage": [
-        "500 GB d'emmagatzematge"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Totes les característiques prèmium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Els descomptes es basen en els preus mensuals estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan acabi el cicle de facturació."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Accés complet a ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Comptes individuals per a 6 usuaris"
-      ],
-      "Individual accounts for you and a partner": [
-        "Comptes individuals per a vós i la vostra parella"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor de documents i fulls de càlcul en línia"
-      ],
-      "Recover previous file versions": [
-        "Recupereu versions anteriors dels fitxers"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protecció més robusta contra les ciberamenaces"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Canvieu al nostre pla anual i estalvieu ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Nombre il·limitat de carpetes, etiquetes i filtres"
-      ],
-      "Use your own email domain": [
-        "Utilitzeu el vostre propi domini de correu electrònic"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "durant 12 mesos"
-      ],
-      "SUMMER SALE": [
-        "REBAIXES D'ESTIU"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Obtingueu l’oferta"
@@ -9040,49 +8872,6 @@
     "Section": {
       "Org setup and account security": [
         "Configuració de l'organització i seguretat del compte"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Tots els àlies"
-      ],
-      "Create alias": [
-        "Crea un àlies"
-      ],
-      "Create an alias": [
-        "Crea un àlies"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Genereu àlies sobre la marxa i gestioneu fàcilment els àlies i contrasenyes."
-      ],
-      "Hide-my-email aliases": [
-        "Àlies hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Els àlies de Hide-my-email us permeten registrar-vos per a llocs en línia sense compartir l'adreça de correu electrònic. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nou àlies"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Obri ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Protegiu la vostra identitat en línia"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Proveu ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "S'utilitza a l'Amazon per a fer compres, etc."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Quan se us demani l'adreça de correu electrònic, doneu aquest àlies en el seu lloc. ${ passLink } proporciona els àlies."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(obrirà ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -9884,12 +9673,6 @@
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
       ],
-      "Alias copied to clipboard": [
-        "L'àlies s'ha copiat al porta-retalls."
-      ],
-      "Alias saved and copied": [
-        "S'ha desat i copiat l'àlies."
-      ],
       "Canceling import": [
         "S'està cancel·lant la importació"
       ],
@@ -9921,9 +9704,6 @@
       ],
       "Invitation rejected": [
         "S'ha rebutjat la invitació."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Últims àlies modificats emmagatzemats a la vostra caixa forta més antiga"
       ],
       "Phone number copied to clipboard": [
         "Número de telèfon copiat al porta-retalls"
@@ -10441,9 +10221,6 @@
       ],
       "My files": [
         "Els meus fitxers"
-      ],
-      "Need more aliases?": [
-        "Necessiteu més àlies?"
       ],
       "Need to share more files with edit access?": [
         "Necessiteu compartir més arxius amb accés per editar?"
@@ -10987,9 +10764,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
