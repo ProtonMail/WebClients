@@ -3,6 +3,7 @@ export { useFlagsDriveDocsPublicSharing } from './internal/sharingModal/useFlags
 export { useFlagsDrivePublicSharing } from './internal/sharingModal/useFlagsDrivePublicSharing';
 export { useFlagsDriveSharingAdminPermissions } from './internal/sharingModal/useFlagsDriveSharingAdminPermissions';
 export { unleashVanillaStore as featureFlagStore } from './internal/unleash.store';
+export { useFlagsDriveEasySwitch } from './internal/useFlagsDriveEasySwitch';
 export { useFlagsDriveFoundationSearch } from './internal/useFlagsDriveFoundationSearch';
 export { useFlagsDriveLumo } from './internal/useFlagsDriveLumo';
 export { useFlagsDriveSheet } from './internal/useFlagsDriveSheet';

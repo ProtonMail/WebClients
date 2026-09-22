@@ -1,8 +1,6 @@
-import { providerMap } from '../../../../constants';
 import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../../interface';
 import { useDriveSdk } from '../../../../logic/driveContext';
-import ProviderButton from '../../../SettingsArea/ProviderCards/ProviderButton';
-import { useProductSelectionSubmit } from '../../ProductSelectionModal/useProductSelectionSubmit';
+import EasySwitchOauthImportButton from '../../../OAuthImportButton/EasySwitchOAuthImportButton';
 
 interface Props {
     source: EASY_SWITCH_SOURCES;
@@ -10,16 +8,15 @@ interface Props {
 
 /** Drive-only entry point: skips the provider/product selector since Drive only imports Google Drive files. */
 const DriveConnectEntry = ({ source }: Props) => {
-    const { handleSubmit } = useProductSelectionSubmit();
     const drive = useDriveSdk();
 
     return (
         <div className="flex flex-nowrap gap-2">
-            <ProviderButton
-                provider={providerMap[ImportProvider.GOOGLE]}
-                onClick={() => handleSubmit(ImportProvider.GOOGLE, [ImportType.DRIVE], source)}
-                className="mb-2 inline-flex items-center justify-center rounded-lg"
-                data-testid="ProviderButton:googleCard"
+            <EasySwitchOauthImportButton
+                provider={ImportProvider.GOOGLE}
+                products={[ImportType.DRIVE]}
+                source={source}
+                className="mb-2"
                 // Disabled without the SDK client, since the import needs it to move files.
                 disabled={!drive}
             />
