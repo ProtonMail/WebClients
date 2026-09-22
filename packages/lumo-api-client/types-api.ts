@@ -220,8 +220,6 @@ export type LumoStreamUsage = {
     remaining_limits?: LumoRemainingLimits;
     applied_limit_category?: string;
     image_limit_applied?: boolean;
-    /** Model id/hash that served the response (from SSE chunk `model` field). */
-    model?: string;
 };
 
 export type ChatCompletionsRequest = {
@@ -262,6 +260,8 @@ export type Decrypted<T extends { encrypted?: boolean }> = Omit<T, 'encrypted'> 
 
 export type QueuedMessage = { type: 'queued'; target?: GenerationTarget };
 export type IngestingMessage = { type: 'ingesting'; target: GenerationTarget };
+/** Exact serving model reported by the SSE stream for a generation target. */
+export type ModelMessage = { type: 'model'; target: GenerationTarget; model: string };
 export type TokenDataMessage = {
     type: 'token_data';
     target: GenerationTarget;
@@ -336,6 +336,7 @@ export type DecryptedServerToolResultMessage = Decrypted<ServerToolResultMessage
 export type GenerationResponseMessage =
     | QueuedMessage
     | IngestingMessage
+    | ModelMessage
     | TokenDataMessage
     | ImageDataMessage
     | ServerToolCallMessage
@@ -351,6 +352,7 @@ export type GenerationResponseMessage =
 export type GenerationResponseMessageDecrypted =
     | QueuedMessage
     | IngestingMessage
+    | ModelMessage
     | DecryptedTokenDataMessage
     | DecryptedImageDataMessage
     | DecryptedServerToolCallMessage
@@ -382,6 +384,17 @@ export function isIngestingMessage(obj: any): obj is IngestingMessage {
         obj.type === 'ingesting' &&
         'target' in obj &&
         isGenerationTarget(obj.target)
+    );
+}
+
+export function isModelMessage(obj: any): obj is ModelMessage {
+    return (
+        typeof obj === 'object' &&
+        obj !== null &&
+        obj.type === 'model' &&
+        'target' in obj &&
+        isGenerationTarget(obj.target) &&
+        typeof obj.model === 'string'
     );
 }
 
@@ -533,6 +546,7 @@ export function isGenerationResponseMessage(obj: any): obj is GenerationResponse
     return (
         isQueuedMessage(obj) ||
         isIngestingMessage(obj) ||
+        isModelMessage(obj) ||
         isTokenDataMessage(obj) ||
         isImageDataMessage(obj) ||
         isServerToolCallMessage(obj) ||
