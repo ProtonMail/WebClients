@@ -172,6 +172,9 @@
       "Close navigation": [
         "Tanca la navegació"
       ],
+      "Collapse": [
+        "Replega"
+      ],
       "Confirm": [
         "Confirma"
       ],
@@ -250,6 +253,9 @@
       "Create contact": [
         "Crea un contacte"
       ],
+      "Create folder": [
+        "Crea una carpeta"
+      ],
       "Create identity": [
         "Crea una identitat"
       ],
@@ -258,6 +264,9 @@
       ],
       "Create login": [
         "Crea un inici de sessió"
+      ],
+      "Create new folder": [
+        "Crea una carpeta"
       ],
       "Create new items": [
         "Crea elements nous"
@@ -360,6 +369,9 @@
       ],
       "Exclude from monitoring": [
         "Exclou del monitoratge"
+      ],
+      "Expand": [
+        "Amplia"
       ],
       "Export": [
         "Exporta"
@@ -505,8 +517,8 @@
       "Move all items": [
         "Mou tots els elements"
       ],
-      "Move to another vault": [
-        "Mou a una altra caixa forta"
+      "Move to": [
+        "Mou a"
       ],
       "Move to trash": [
         "Mou a la paperera"
@@ -606,6 +618,9 @@
       ],
       "Remove member": [
         "Esborra el membre"
+      ],
+      "Rename": [
+        "Canvia el nom"
       ],
       "Request a feature": [
         "Demaneu una nova característica"
@@ -1161,6 +1176,9 @@
       "Failed to create domain": [
         "No s'ha pogut crear el domini."
       ],
+      "Failed to create folder": [
+        "No s'ha pogut crear la carpeta"
+      ],
       "Failed to create new mailbox": [
         "No s'ha pogut crear la bústia de correu."
       ],
@@ -1175,6 +1193,10 @@
       ],
       "Failed to delete email address from monitoring": [
         "No s'ha pogut suprimir l'adreça de correu electrònic del monitoratge"
+      ],
+      "Failed to delete folder": [
+        "No s'ha pogut eliminar la carpeta",
+        "No s'han pogut eliminar les carpetes"
       ],
       "Failed to delete selected items": [
         "No s'han pogut suprimir els elements seleccionats"
@@ -1263,6 +1285,9 @@
       "Failed to update domain name.": [
         "No s'ha pogut actualitzar el nom del domini."
       ],
+      "Failed to update folder": [
+        "No s'ha pogut actualitzar la carpeta"
+      ],
       "Failed to update monitoring settings": [
         "No s'han pogut actualitzar les preferències de monitoratge"
       ],
@@ -1292,6 +1317,9 @@
       ],
       "File does not match expected format": [
         "El fitxer no coincideix amb el format esperat"
+      ],
+      "Folder name does not match": [
+        "El nom de la carpeta no coincideix"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "No s'ha pogut importar la caixa forta «${ vaultData.name }»: ${ errorMessage }"
@@ -1884,8 +1912,8 @@
       "Created item": [
         "S'ha creat l'element"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV ofereix un format còmode per visualitzar les vostres dades. Tanmateix, per la seva senzillesa, algunes dades no s'inclouran (camps personalitzats, claus d'accés...). Per a una exportació completa, us recomanem que utilitzeu un format diferent."
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "El format CSV ofereix una manera pràctica de visualitzar les vostres dades. Tanmateix, a causa de la seva simplicitat, algunes dades no s'hi inclouran (camps personalitzats, estructura de carpetes, etc.). Per a una exportació completa, us recomanem que utilitzeu un format diferent."
       ],
       "Current version": [
         "Versió actual"
@@ -2034,6 +2062,15 @@
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Cerqueu \"Agent d'Autenticació d'OpenSSH\", feu clic amb el botó dret a Propietats."
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "S'ha creat la carpeta «${ payload.folder.name }»"
+      ],
+      "Folder deleted": [
+        "S'ha eliminat la carpeta"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "S'ha canviat el nom de la carpeta a «${ payload.folder.name }»"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Seguiu aquests passos per a importar les dades amb un fitxer CSV genèric:"
       ],
@@ -2049,6 +2086,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "L'adreça de reenviament s'ha copiat al porta-retalls. Envieu un correu electrònic a aquesta adreça i ${ Email } el rebrà."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "S'ha completat la sincronització de dades per millorar el rendiment de l'aplicació. Gràcies per la vostra paciència."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Les contrasenyes generades s'emmagatzemaran durant un període d'${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana.",
@@ -2222,8 +2262,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2284,6 +2323,14 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN. Se us tancarà la sessió després de 3 intents que no han funcionat."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Només es mourà ${ count } element de «${ folderName }». Els elements de les subcarpetes no es mouran.",
+        "Només es mouran ${ count } elements de «${ folderName }». Els elements de les subcarpetes no es mouran."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Només es mourà ${ count } element. Els elements de les carpetes no es mouran.",
+        "Només es mouran ${ count } elements. Els elements de les carpetes no es mouran."
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Només es mostren els testimonis que han caducat en els darrers 30 dies. Els més antics s'eliminen automàticament."
@@ -2594,6 +2641,9 @@
       ],
       "Suggested": [
         "Suggeriment"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Canvieu a una altra carpeta o creeu un element en aquesta carpeta"
       ],
       "Switch to another vault or create an item in this vault": [
         "Canvieu a una altra caixa forta o creeu un element en aquesta"
@@ -3221,6 +3271,9 @@
       "Company": [
         "Empresa"
       ],
+      "Confirm folder name": [
+        "Confirmeu el nom de la carpeta"
+      ],
       "Confirm vault name": [
         "Confirma el nom de la caixa forta"
       ],
@@ -3250,6 +3303,9 @@
       ],
       "Create a custom item": [
         "Crea un element personalitzat"
+      ],
+      "Create a folder": [
+        "Crear una carpeta"
       ],
       "Create a hide-my-email alias": [
         "Crea un àlies hide-my-email"
@@ -3421,6 +3477,12 @@
       ],
       "Floor, apartment, building": [
         "Planta, apartament, edifici"
+      ],
+      "Folder": [
+        "Carpeta"
+      ],
+      "Folders": [
+        "Carpetes"
       ],
       "For a one-off sharing": [
         "Per a una compartició puntual"
@@ -4538,6 +4600,9 @@
       "Enter username": [
         "Introduïu el nom d'usuari"
       ],
+      "Folder name": [
+        "Nom de la carpeta"
+      ],
       "Full Name": [
         "Nom complert"
       ],
@@ -4565,8 +4630,8 @@
       "Please describe the problem and include any error messages": [
         "Descriviu el problema i incloeu qualsevol missatge d'error"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Torneu a escriure \"${ vaultName }\" per confirmar l'eliminació"
+      "Retype \"${ name }\" to confirm deletion": [
+        "Torneu a escriure «${ name }» per confirmar-ne l'eliminació"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Cerca ${ pluralItemType } a ${ vaultName }"
@@ -4892,11 +4957,17 @@
       "Create contact": [
         "Crea un contacte"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Crear la carpeta a «${ vaultName }»"
+      ],
       "Create new access token": [
         "Crear un nou identificador d'accés"
       ],
       "Create PIN code": [
         "Creeu un codi PIN"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Crear una subcarpeta a «${ folderName }»"
       ],
       "Created": [
         "Creat"
@@ -4932,14 +5003,17 @@
       "Delete domain": [
         "Elimina el domini"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Voleu eliminar la carpeta \"${ name }\"?"
+      ],
       "Delete mailbox": [
         "Elimina la bústia de correu"
       ],
       "Delete this item?": [
         "Voleu eliminar aquest element?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Voleu eliminar la caixa forta «${ vaultName }»?"
+      "Delete vault \"${ name }\"?": [
+        "Voleu eliminar la caixa forta \"${ name }\"?"
       ],
       "Did you know?": [
         "Ho sabíeu?"
@@ -4988,6 +5062,9 @@
       ],
       "Excluded items": [
         "Elements exclosos"
+      ],
+      "Folder options": [
+        "Opcions de carpeta"
       ],
       "Get Started": [
         "Comenceu"
@@ -5067,9 +5144,9 @@
       "Modified": [
         "Modificació"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Mou ${ count } element a ${ vaultName }",
-        "Mou ${ count } elements a ${ vaultName }"
+      "Move ${ count } item to ${ target }": [
+        "Moure ${ count } element a ${ target }",
+        "Moure ${ count } elements a ${ target }"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Voleu moure ${ trashedItemsCount } element a la paperera?",
@@ -5078,8 +5155,11 @@
       "Move all items to \"${ vaultName }\"?": [
         "Voleu moure tots els elements a «${ vaultName }»?"
       ],
-      "Move item to \"${ vaultName }\"": [
-        "Mou l'element a «${ vaultName }»"
+      "Move all items?": [
+        "Voleu moure tots els elements?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Moure l'element a «${ target }»"
       ],
       "MX record": [
         "Registre MX"
@@ -5174,6 +5254,9 @@
       ],
       "Remove secure link?": [
         "Voleu esborrar l'enllaç segur?"
+      ],
+      "Rename folder": [
+        "Canviar el nom de la carpeta"
       ],
       "Reset history for this item?": [
         "Voleu restablir l'historial d'aquest element?"
@@ -5326,6 +5409,9 @@
       "Your exposed information": [
         "La vostra informació exposada"
       ],
+      "Your folder is empty": [
+        "La carpeta és buida"
+      ],
       "Your new access token": [
         "El vostre nou identificador d'accés"
       ],
@@ -5417,6 +5503,9 @@
       "Aliases in trash will continue forwarding emails.": [
         "Els àlies a la paperera continuaran redirigint els correus electrònics."
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Tots els elements d'aquesta carpeta, incloses les subcarpetes, s'eliminaran. No podreu desfer aquesta acció."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tots els elements de la paperera s'eliminaran permanentment. No podeu desfer aquesta acció."
       ],
@@ -5499,6 +5588,9 @@
       ],
       "Failed to load breaches.": [
         "No s'han pogut carregar les infraccions."
+      ],
+      "Folder name is required": [
+        "El nom de la carpeta és obligatori"
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Concediu accés al porta-retalls per habilitar la neteja automàtica de les contrasenyes i dades copiades."
@@ -5636,8 +5728,8 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No s'ha pogut iniciar la sessió a ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "La caixa forta \"${ vaultName }\" i tots els seus elements s'eliminaran permanentment. No podeu desfer aquesta acció."
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "La caixa forta «${ name }» i tots els seus elements s'eliminaran permanentment. No podreu desfer aquesta acció."
       ],
       "Vault name is required": [
         "Es requereix el nom de la caixa forta"
@@ -5671,6 +5763,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ja no tindreu accés a aquesta caixa forta. Per tornar-hi a entrar, necessitareu una nova invitació."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Heu assolit el nivell màxim de subcarpetes"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Heu assolit el nombre màxim de carpetes en aquest nivell"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Heu assolit el nombre màxim de carpetes per aquesta caixa forta"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "El vostre administrador ha de crear una caixa forta per a vosaltres abans que pugueu crear elements."
