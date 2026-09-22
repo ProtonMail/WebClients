@@ -57,13 +57,13 @@
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
         "@reduxjs/toolkit": "^2.12.0",
-        "@tanstack/react-virtual": "^3.14.11",
+        "@tanstack/react-virtual": "^3.14.13",
         "@xmldom/xmldom": "^0.9.12",
-        "client-zip": "^2.5.0",
+        "client-zip": "^2.5.1",
         "comlink": "^4.4.2",
         "core-js": "^3.50.0",
         "date-fns": "^2.30.0",
-        "exifreader": "^4.45.0",
+        "exifreader": "^4.45.1",
         "history": "^4.10.1",
         "idb": "^8.0.3",
         "idb-keyval": "^6.3.0",
@@ -79,7 +79,7 @@
         "zustand": "^4.5.7"
     },
     "devDependencies": {
-        "@jest/globals": "^30.5.1",
+        "@jest/globals": "^30.5.2",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/jest-env": "workspace:^",
@@ -96,15 +96,15 @@
         "@typescript/native": "npm:typescript@^7.0.2",
         "copy-webpack-plugin": "^14.0.0",
         "cross-env": "^10.1.0",
-        "eslint": "^10.10.0",
+        "eslint": "^10.11.0",
         "fake-indexeddb": "^6.2.5",
         "html-webpack-plugin": "^5.6.8",
-        "jest": "^30.5.1",
+        "jest": "^30.5.2",
         "jest-junit": "^16.0.0",
         "jest-when": "3.7.0",
         "path-browserify": "^1.0.1",
-        "prettier": "^3.9.6",
+        "prettier": "^3.9.8",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
-        "webpack": "^5.110.3"
+        "webpack": "^5.111.1"
     }
 }

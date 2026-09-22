@@ -42,11 +42,11 @@
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
         "@xmldom/xmldom": "^0.9.12",
-        "client-zip": "^2.5.0",
+        "client-zip": "^2.5.1",
         "comlink": "^4.4.2",
         "core-js": "^3.50.0",
         "date-fns": "^2.30.0",
-        "exifreader": "^4.45.0",
+        "exifreader": "^4.45.1",
         "heic-to": "^1.5.2",
         "idb-keyval": "^6.3.0",
         "mime-types": "^2.1.35",
@@ -73,15 +73,15 @@
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^10.1.0",
-        "eslint": "^10.10.0",
-        "jest": "^30.5.1",
+        "eslint": "^10.11.0",
+        "jest": "^30.5.2",
         "jest-junit": "^16.0.0",
         "jest-when": "3.7.0",
         "path-browserify": "^1.0.1",
-        "prettier": "^3.9.6",
+        "prettier": "^3.9.8",
         "pretty-format": "^30.5.1",
         "typescript": "^6.0.3",
-        "webpack": "^5.110.3"
+        "webpack": "^5.111.1"
     },
     "peerDependencies": {
         "@openpgp/web-stream-tools": "^0.3.1"
