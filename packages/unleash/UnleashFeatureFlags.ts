@@ -218,6 +218,7 @@ enum DocsFeatureFlag {
     SheetsDriftDetectionEnabled = 'SheetsDriftDetectionEnabled',
     SheetsPatchesStorageEnabled = 'SheetsPatchesStorageEnabled',
     SheetsStatusBarEnabled = 'SheetsStatusBarEnabled',
+    SheetsMountAfterInitialLoadDisabled = 'SheetsMountAfterInitialLoadDisabled',
     SheetsCustomNumberFormatEnabled = 'SheetsCustomNumberFormatEnabled',
     SheetsCustomDateTimeFormatEnabled = 'SheetsCustomDateTimeFormatEnabled',
     SheetsActionsStorageEnabled = 'SheetsActionsStorageEnabled',

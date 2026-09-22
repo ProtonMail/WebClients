@@ -73,6 +73,7 @@ export interface EditorControllerInterface {
 /** Allows the UI to invoke methods on the editor. */
 export class EditorController implements EditorControllerInterface {
   editorInvoker?: ClientRequiresEditorMethods
+  private hasSentInitialSyncCompleteToEditor = false
 
   constructor(
     private readonly logger: LoggerInterface,
@@ -128,15 +129,7 @@ export class EditorController implements EditorControllerInterface {
     })
 
     this.documentState.subscribeToEvent('RealtimeReceivedEverythingFromRTS', () => {
-      if (this.editorInvoker) {
-        void this.editorInvoker.receiveMessage({
-          type: {
-            wrapper: 'events',
-            eventType: EventType.create(EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas).value,
-          },
-          content: new Uint8Array(),
-        })
-      }
+      this.sendInitialSyncCompleteToEditor()
     })
 
     this.documentState.subscribeToEvent('RealtimeRequestingClientToBroadcastItsState', () => {
@@ -179,6 +172,22 @@ export class EditorController implements EditorControllerInterface {
 
     this.documentState.subscribeToEvent('ImportUpdateSuccessful', (payload) => {
       void this.editorInvoker?.markImportUpdateAsSuccessful(payload.uuid)
+    })
+  }
+
+  private sendInitialSyncCompleteToEditor(): void {
+    if (!this.editorInvoker || this.hasSentInitialSyncCompleteToEditor) {
+      return
+    }
+
+    this.hasSentInitialSyncCompleteToEditor = true
+
+    void this.editorInvoker.receiveMessage({
+      type: {
+        wrapper: 'events',
+        eventType: EventType.create(EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas).value,
+      },
+      content: new Uint8Array(),
     })
   }
 
@@ -271,6 +280,8 @@ export class EditorController implements EditorControllerInterface {
       })
       return
     }
+
+    this.sendInitialSyncCompleteToEditor()
 
     this.logger.info('Showing editor for the first time')
 
