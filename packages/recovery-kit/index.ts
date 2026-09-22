@@ -164,7 +164,7 @@ export async function generatePDFKit({
         await import('@formatjs/intl-segmenter/polyfill-force.js');
     }
 
-    const { generate } = await import('@pdfme/generator');
+    const { generate } = await import(/* webpackChunkName: "recovery-kit" */ '@pdfme/generator');
 
     /**
      * There is an issue where links are stripped from the pdf
