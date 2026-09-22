@@ -75,26 +75,31 @@ export const AuthServiceProvider: FC<PropsWithChildren<{ connectivity: Connectiv
 
         const run = async () => {
             if (matchPath(history.location.pathname, SSO_PATHS.FORK)) {
-                const { key, selector, state, payloadVersion, persistent } = getConsumeForkParameters();
-                const stateKey = getStateKey(state);
-                const localState = sessionStorage.getItem(stateKey);
-                sessionStorage.removeItem(stateKey);
+                try {
+                    const params = getConsumeForkParameters();
+                    const stateKey = getStateKey(params.state);
+                    const localState = sessionStorage.getItem(stateKey);
 
-                if (!localState) {
-                    logger.info('[AuthServiceProvider] Invalid fork path');
-                    history.replace('/');
-                    return window.location.reload();
+                    sessionStorage.removeItem(stateKey);
+
+                    if (!localState) {
+                        logger.error('[AuthServiceProvider] Invalid fork path - no local state');
+                        history.replace('/');
+                        return window.location.reload();
+                    }
+
+                    return await authService.consumeFork({
+                        mode: 'web',
+                        key: params.key,
+                        localState,
+                        state: params.state,
+                        selector: params.selector,
+                        payloadVersion: params.payloadVersion,
+                        persistent: params.persistent,
+                    });
+                } catch (error) {
+                    logger.error('[AuthServiceProvider] Error consuming fork:', error);
                 }
-
-                return authService.consumeFork({
-                    mode: 'web',
-                    key,
-                    localState,
-                    state,
-                    selector,
-                    payloadVersion,
-                    persistent,
-                });
             } else {
                 await connectivity.check();
                 await authService.init({ forcePersist: true });

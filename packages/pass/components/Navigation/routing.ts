@@ -18,6 +18,7 @@ export type PremiumRoute = Unpack<typeof PremiumRoutes>;
 
 export enum PublicRoutes {
     SecureLink = '/secure-link/:token',
+    ExternalLogin = '/auth/external',
 }
 
 /** URL prefixes that define different item scopes.
