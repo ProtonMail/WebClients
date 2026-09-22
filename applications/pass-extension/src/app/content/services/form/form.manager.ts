@@ -1,3 +1,4 @@
+import { clearDetectionCache } from '@protontech/autofill';
 import { FieldType, fieldTypes } from '@protontech/autofill/types';
 import throttle from 'lodash/throttle';
 
@@ -11,7 +12,6 @@ import { withContext } from '../../context/context';
 import { getAutofillPageTelemetryDimensions } from '../../utils/autofill-telemetry';
 import { getFrameAttributes } from '../../utils/frame';
 import type { FrameMessageBroker, FrameMessageHandler } from '../client/client.channel';
-import { clearDetectionCache } from '../detector/detector.api';
 import { DROPDOWN_FOCUS_TIMEOUT, isFocusableElement } from '../inline/dropdown/dropdown.focus';
 import { createFocusGuard } from './field.interactivity';
 import type { FormHandle } from './form';
