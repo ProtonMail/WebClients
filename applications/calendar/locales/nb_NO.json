@@ -234,9 +234,6 @@
       "Copy address": [
         "Kopier adresse"
       ],
-      "Copy alias “${ name }”": [
-        "Kopier alias \"${ name }\""
-      ],
       "Copy booking page link": [
         "Kopier bestillingssidekobling"
       ],
@@ -275,9 +272,6 @@
       ],
       "Create an event": [
         "Opprett en hendelse"
-      ],
-      "Create and copy alias": [
-        "Opprett og kopier alias"
       ],
       "Create booking page": [
         "Opprett bestillingsside"
@@ -727,6 +721,9 @@
       ],
       "Refresh the page": [
         "Oppdater siden"
+      ],
+      "refresh the page": [
+        "oppdater siden"
       ],
       "Remove": [
         "Fjern"
@@ -3269,9 +3266,6 @@
       ],
       "You’ll get a secure email with the details shortly.": [
         "Du vil motta en sikker e-post med detaljene snart."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3608,18 +3602,6 @@
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
       ],
-      "Alias is not valid": [
-        "Alias er ikke gyldig"
-      ],
-      "Alias is required": [
-        "Alias kreves"
-      ],
-      "Alias options could not be resolved": [
-        "Aliasalternativene kunne ikke løses"
-      ],
-      "Aliases could not be loaded": [
-        "Aliaser kan ikke lastes inn"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "All lagringsplass er tildelt. Reduser lagringsplass tildelt andre brukere."
       ],
@@ -3631,12 +3613,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Beløp under minimum (${ minimumAmount })."
-      ],
-      "An error occurred while loading alias options": [
-        "Det oppstod en feil under lasting av aliasalternativer"
-      ],
-      "An error occurred while saving your alias": [
-        "Det oppstod en feil under lagring av aliaset ditt"
       ],
       "Answer failed to be sent": [
         "Svar kunne ikke sendes"
@@ -3722,12 +3698,6 @@
       "Could not load the image preview: ${ message }": [
         "Kunne ikke laste inn forhåndsvisningen av bildet: ${ message }"
       ],
-      "Could not open created vault": [
-        "Kunne ikke åpne opprettet hvelv"
-      ],
-      "Could not open updated vault": [
-        "Kunne ikke åpne oppdatert hvelv"
-      ],
       "Could not read part of this file: ${ message }": [
         "Kunne ikke lese deler av denne filen: ${ message }"
       ],
@@ -3802,9 +3772,6 @@
       "Expiration date cannot be in the past": [
         "Utløpsdatoen kan ikke være i fortiden"
       ],
-      "Failed loading group members": [
-        "Kunne ikke laste inn gruppemedlemmer"
-      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "Kunne ikke legge til eksisterende ${ MEET_APP_NAME }-videokonferanse"
       ],
@@ -3874,9 +3841,6 @@
       "Folder name cannot be empty.": [
         "Mappenavn kan ikke være tomt."
       ],
-      "Forward address is required": [
-        "Videresendingsadresse kreves"
-      ],
       "Image preview not found": [
         "Forhåndsvisning av bilde ikke funnet"
       ],
@@ -3937,9 +3901,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Det er kun mulig å flytte hendelser mellom ${ minDateString } - ${ maxDateString }"
       ],
-      "Item content cannot exceed 40KB": [
-        "Elementinnhold kan ikke overskride 40KB"
-      ],
       "Item not found": [
         "Element ikke funnet"
       ],
@@ -3989,9 +3950,6 @@
       "Moving root item is not allowed": [
         "Det er ikke tillatt å flytte rotelement"
       ],
-      "Name is required": [
-        "Navn kreves"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn",
         "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn"
@@ -4001,9 +3959,6 @@
       ],
       "Name required": [
         "Navn kreves"
-      ],
-      "Network error": [
-        "Nettverksfeil"
       ],
       "No booking page data received": [
         "Ingen bestillingssidedata mottatt"
@@ -4242,6 +4197,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Noe gikk galt under henting av tilgjengelige domener"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noe gikk galt, ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Noe gikk galt. Forsøk igjen."
@@ -4608,9 +4566,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke laste denne siden. Oppdater siden eller undersøk internettforbindelsen din."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Når ekstra passord er aktivert, kan aliasadministrasjon bare gjøres i ${ PASS_APP_NAME }."
       ],
       "You need an active personal calendar to import events": [
         "Du trenger en aktiv personlig kalender for å importere hendelser"
@@ -6546,6 +6501,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnementet avsluttes: For å beholde fordelene med ${ planName }, start abonnementet på nytt i Google Play Store innen ${ byDate }. ${ reactivateLink }"
       ],
+      "support team": [
+        "støtteapparat"
+      ],
       "Surveillance": [
         "Overvåking"
       ],
@@ -7310,9 +7268,6 @@
       "Address": [
         "Adresse"
       ],
-      "Alias title": [
-        "Aliastittel"
-      ],
       "All day": [
         "Hele dagen"
       ],
@@ -7454,9 +7409,6 @@
       "Drive": [
         "Drive"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "f.eks. Amazon, eBay, Etsy"
-      ],
       "Email": [
         "E-post"
       ],
@@ -7502,12 +7454,6 @@
       "Every": [
         "Hver"
       ],
-      "Exact host matching": [
-        "Nøyaktig vertsmatching"
-      ],
-      "Exact URL matching": [
-        "Nøyaktig URL-samsvar"
-      ],
       "Expires": [
         "Utløper"
       ],
@@ -7522,9 +7468,6 @@
       ],
       "Folder location": [
         "Mappeplassering"
-      ],
-      "Forwards to": [
-        "Videresendes til"
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
@@ -7622,14 +7565,8 @@
       "Navigation": [
         "Navigasjon"
       ],
-      "Never fill on this exact URL": [
-        "Fyll aldri på denne nøyaktige nettadressen"
-      ],
       "New password": [
         "Nytt passord"
-      ],
-      "Note": [
-        "Notat"
       ],
       "Notification": [
         "Varsel"
@@ -7654,9 +7591,6 @@
       ],
       "Organizer": [
         "Arrangør"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Overordnet domene og underdomener (standard)"
       ],
       "participant": [
         "deltaker",
@@ -7695,26 +7629,17 @@
       "Postal code": [
         "Postnummer"
       ],
-      "Premium domain": [
-        "Premium-domene"
-      ],
       "Primary": [
         "Primær"
       ],
       "Proration": [
         "Proporsjonal fakturering"
       ],
-      "Public domain": [
-        "Offentlig domene"
-      ],
       "Public keys": [
         "Offentlige nøkler"
       ],
       "Region": [
         "Region"
-      ],
-      "Regular expression": [
-        "Regulært uttrykk"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Fjern ${ MEET_APP_NAME }-videokonferanse"
@@ -7754,9 +7679,6 @@
       ],
       "Start date": [
         "Startdato"
-      ],
-      "Starts with": [
-        "Begynner med"
       ],
       "State": [
         "Stat"
@@ -7806,9 +7728,6 @@
       "URL": [
         "Nettadresse"
       ],
-      "URL wildcard pattern": [
-        "URL-jokertegnmønster"
-      ],
       "Username": [
         "Brukernavn"
       ],
@@ -7839,14 +7758,8 @@
       "What happened?": [
         "Hva skjedde?"
       ],
-      "Your alias": [
-        "Aliaset ditt"
-      ],
       "Your calendar URL": [
         "Nettadressen til kalenderen"
-      ],
-      "Your domain": [
-        "Ditt domene"
       ],
       "Your IP": [
         "IP-en din"
@@ -8247,29 +8160,11 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "\"Begynner med\"-samsvarsregel"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Regel for nøyaktig (under)domenesamsvar"
-      ],
-      "Exact URL matching rule": [
-        "Regel for nøyaktig URL-samsvar"
-      ],
       "Fw:": [
         "Vs:"
       ],
-      "Never fill with this exact URL": [
-        "Fyll aldri med denne nøyaktige nettadressen"
-      ],
       "Re:": [
         "Sv:"
-      ],
-      "Regular expression rule": [
-        "Regel for regulært uttrykk"
-      ],
-      "Wildcard pattern matching rule": [
-        "Regel for samsvar med jokertegnmønster"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis prøveperiode er over. ${ nonAutoRenewalAction }"
@@ -9821,9 +9716,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Avbryt når som helst før ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "Avbryt når som helst før da."
-      ],
       "contact our support team": [
         "kontakt vår brukerstøtte"
       ],
@@ -9845,9 +9737,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Du kan bruke ${ planTitle } til prøveperioden avsluttes, og du blir ikke belastet."
       ],
@@ -9856,9 +9745,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du vil kunne bruke ${ planTitle } til prøveperioden avsluttes, gratis."
       ]
     },
     "Option": {
@@ -10681,78 +10567,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Benytt deg av tilbudet"
-      ],
-      "Summer Sale": [
-        "Sommersalg"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/måned"
-      ],
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "2 TB data storage": [
-        "2 TB datalagring"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagring: 40 ganger ditt nåværende abonnement"
-      ],
-      "3 TB data storage": [
-        "3 TB datalagring"
-      ],
-      "500 GB storage": [
-        "500 GB lagringsplass"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Full tilgang til ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuelle kontoer for 6 brukere"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuelle kontoer for deg og en partner"
-      ],
-      "Online document and spreadsheet editor": [
-        "Pålogget redigeringsprogram for dokumenter og regneark"
-      ],
-      "Recover previous file versions": [
-        "Gjenopprett tidligere filversjoner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Sterkere beskyttelse mot cybertrusler"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Bytt til vårt årlige abonnement og spar ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrensede mapper, etiketter og filtre"
-      ],
-      "Use your own email domain": [
-        "Bruk ditt eget e-postdomene"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "i 12 måneder"
-      ],
-      "SUMMER SALE": [
-        "SOMMERSALG"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Benytt deg av tilbudet"
@@ -10928,49 +10742,6 @@
     "Section": {
       "Org setup and account security": [
         "Konfigurasjon av organisasjon og kontosikkerhet"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Alle aliaser"
-      ],
-      "Create alias": [
-        "Opprett alias"
-      ],
-      "Create an alias": [
-        "Opprett et alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generer aliaser på farten, og administrer enkelt aliaser og passord."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email aliaser"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email aliaser tillater å registrere deg for ting på nettet uten å dele e-postadressen din. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nytt alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Åpne ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Beskytt din identitet på nettet"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Prøv ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Brukt på Amazon for shopping, og så videre."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Aliaser leveres av ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(vil åpne ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -12059,12 +11830,6 @@
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
       ],
-      "Alias copied to clipboard": [
-        "Alias kopiert til utklippstavlen"
-      ],
-      "Alias saved and copied": [
-        "Alias lagret og kopiert"
-      ],
       "All events deleted": [
         "Alle hendelser slettet"
       ],
@@ -12192,9 +11957,6 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "Innstillinger for hurtigtaster oppdatert"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Sist endrede aliaser lagret i ditt eldste hvelv"
       ],
       "Participants notified and all events updated": [
         "Deltakere varslet og alle hendelser oppdatert"
@@ -12852,9 +12614,6 @@
       "Mobile": [
         "Mobil"
       ],
-      "Need more aliases?": [
-        "Trenger du flere aliaser?"
-      ],
       "Network error": [
         "Nettverksfeil"
       ],
@@ -13509,9 +13268,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",

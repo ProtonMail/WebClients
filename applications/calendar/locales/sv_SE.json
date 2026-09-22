@@ -234,9 +234,6 @@
       "Copy address": [
         "Kopiera adress"
       ],
-      "Copy alias “${ name }”": [
-        "Kopiera alias “${ name }“"
-      ],
       "Copy booking page link": [
         "Kopiera länk till bokningssida"
       ],
@@ -275,9 +272,6 @@
       ],
       "Create an event": [
         "Skapa en händelse"
-      ],
-      "Create and copy alias": [
-        "Skapa och kopiera alias"
       ],
       "Create booking page": [
         "Skapa bokningssida"
@@ -727,6 +721,9 @@
       ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Remove": [
         "Ta bort"
@@ -3262,9 +3259,6 @@
       ],
       "You’ll get a secure email with the details shortly.": [
         "Du kommer få en säker e-post med detaljerna inom kort."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3595,18 +3589,6 @@
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
       ],
-      "Alias is not valid": [
-        "Alias är inte giltigt"
-      ],
-      "Alias is required": [
-        "Alias är obligatoriskt"
-      ],
-      "Alias options could not be resolved": [
-        "Alternativ för alias kunde inte lösas"
-      ],
-      "Aliases could not be loaded": [
-        "Alias kunde inte läsas in"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Allt lagringsutrymme har allokerats. Minska lagringsutrymmet som tilldelas andra användare."
       ],
@@ -3618,12 +3600,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Belopp under minimum (${ minimumAmount })."
-      ],
-      "An error occurred while loading alias options": [
-        "Ett fel uppstod när alternativen för alias skulle laddas"
-      ],
-      "An error occurred while saving your alias": [
-        "Ett fel uppstod när ditt alias skulle sparas"
       ],
       "Answer failed to be sent": [
         "Misslyckades att skicka svar"
@@ -3703,12 +3679,6 @@
       "Could not load sharing details": [
         "Kunde inte ladda delningsdetaljer"
       ],
-      "Could not open created vault": [
-        "Kunde inte öppna skapat valv"
-      ],
-      "Could not open updated vault": [
-        "Kunde inte öppna uppdaterat valv"
-      ],
       "Could not read part of this file: ${ message }": [
         "Kunde inte läsa del av denna fil: ${ message }"
       ],
@@ -3780,9 +3750,6 @@
       "Expiration date cannot be in the past": [
         "Utgångsdatum kan inte vara i det förflutna"
       ],
-      "Failed loading group members": [
-        "Misslyckades att ladda gruppmedlemmar"
-      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "Misslyckades att lägga till befintlig ${ MEET_APP_NAME }-videokonferens"
       ],
@@ -3842,9 +3809,6 @@
       ],
       "Folder name cannot be empty.": [
         "Mappnamn kan inte vara tomt."
-      ],
-      "Forward address is required": [
-        "Adress för vidarebefordran är obligatoriskt"
       ],
       "Image preview not found": [
         "Förhandsvisning av bild hittades inte"
@@ -3906,9 +3870,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Det är endast möjligt att flytta händelser mellan ${ minDateString } - ${ maxDateString }"
       ],
-      "Item content cannot exceed 40KB": [
-        "Objektinnehåll får inte överstiga 40 kB"
-      ],
       "Item not found": [
         "Objekt hittades inte"
       ],
@@ -3955,9 +3916,6 @@
       "Moving root item is not allowed": [
         "Att flytta rotobjekt är inte tillåtet"
       ],
-      "Name is required": [
-        "Namn är obligatoriskt"
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest",
         "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest"
@@ -3967,9 +3925,6 @@
       ],
       "Name required": [
         "Namn krävs"
-      ],
-      "Network error": [
-        "Nätverksfel"
       ],
       "No booking page data received": [
         "Ingen information om bokningssida har mottagits"
@@ -4205,6 +4160,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Något gick fel vid hämtning av tillgängliga domäner"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Något gick fel. Försök igen."
@@ -4568,9 +4526,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din internetanslutning."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "När extralösenord är aktiverat kan hantering av alias endast göras i ${ PASS_APP_NAME }."
       ],
       "You need an active personal calendar to import events": [
         "Du behöver en aktiv personlig kalender för att importera händelser"
@@ -6488,6 +6443,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Prenumeration slutar: För att behålla dina ${ planName }-förmåner, starta om din prenumeration i Google Play Butik senast ${ byDate }. ${ reactivateLink }"
       ],
+      "support team": [
+        "supportteam"
+      ],
       "Surveillance": [
         "Övervakning"
       ],
@@ -7243,9 +7201,6 @@
       "Address": [
         "Adress"
       ],
-      "Alias title": [
-        "Alias-rubrik"
-      ],
       "All day": [
         "Heldag"
       ],
@@ -7387,9 +7342,6 @@
       "Drive": [
         "Drive"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "t.ex. Amazon, eBay, Etsy"
-      ],
       "Email": [
         "E-post"
       ],
@@ -7435,12 +7387,6 @@
       "Every": [
         "Varje"
       ],
-      "Exact host matching": [
-        "Exakt värdmatchning"
-      ],
-      "Exact URL matching": [
-        "Exakt URL-matchning"
-      ],
       "Expires": [
         "Löper ut"
       ],
@@ -7455,9 +7401,6 @@
       ],
       "Folder location": [
         "Mappens plats"
-      ],
-      "Forwards to": [
-        "Vidarebefordras till"
       ],
       "From: ${ fromEmail }": [
         "Från: ${ fromEmail }"
@@ -7555,14 +7498,8 @@
       "Navigation": [
         "Navigering"
       ],
-      "Never fill on this exact URL": [
-        "Fyll aldrig på denna exakta URL"
-      ],
       "New password": [
         "Nytt lösenord"
-      ],
-      "Note": [
-        "Anteckning"
       ],
       "Notification": [
         "Avisering"
@@ -7587,9 +7524,6 @@
       ],
       "Organizer": [
         "Organisatör"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Överordnad domän och underdomäner (standard)"
       ],
       "participant": [
         "deltagare",
@@ -7628,26 +7562,17 @@
       "Postal code": [
         "Postnummer"
       ],
-      "Premium domain": [
-        "Premiumdomän"
-      ],
       "Primary": [
         "Primär"
       ],
       "Proration": [
         "Proportionell beräkning"
       ],
-      "Public domain": [
-        "Offentlig domän"
-      ],
       "Public keys": [
         "Offentliga nycklar"
       ],
       "Region": [
         "Region"
-      ],
-      "Regular expression": [
-        "Vanligt uttryck"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Ta bort ${ MEET_APP_NAME }-videokonferens"
@@ -7687,9 +7612,6 @@
       ],
       "Start date": [
         "Startdatum"
-      ],
-      "Starts with": [
-        "Börjar med"
       ],
       "State": [
         "Delstat"
@@ -7739,9 +7661,6 @@
       "URL": [
         "URL"
       ],
-      "URL wildcard pattern": [
-        "Jokerteckenmönster för URL"
-      ],
       "Username": [
         "Användarnamn"
       ],
@@ -7772,14 +7691,8 @@
       "What happened?": [
         "Vad hände?"
       ],
-      "Your alias": [
-        "Ditt alias"
-      ],
       "Your calendar URL": [
         "Din kalender-URL"
-      ],
-      "Your domain": [
-        "Din domän"
       ],
       "Your IP": [
         "Din IP"
@@ -8180,29 +8093,11 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Matchningsregel för \"Börjar med\""
-      ],
-      "Exact (sub) domain matching rule": [
-        "Matchningsregel för exakt (under)domän"
-      ],
-      "Exact URL matching rule": [
-        "Matchningsregel för exakt URL"
-      ],
       "Fw:": [
         "Vb:"
       ],
-      "Never fill with this exact URL": [
-        "Fyll aldrig med denna exakta URL"
-      ],
       "Re:": [
         "Svar:"
-      ],
-      "Regular expression rule": [
-        "Regel för reguljärt uttryck"
-      ],
-      "Wildcard pattern matching rule": [
-        "Matchningsregel för jokerteckenmönster"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Din gratis provperiod har slutat. ${ nonAutoRenewalAction }"
@@ -9751,11 +9646,14 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besök vårt ${ helpCenterLink } eller ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Lägg till en betalningsmetod** för kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Avbryt när som helst före ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Avbryt när som helst innan dess."
       ],
       "contact our support team": [
         "kontakta vårt supportteam"
@@ -9769,6 +9667,9 @@
       "help center": [
         "hjälpcenter"
       ],
+      "If you continue after your trial,": [
+        "Om du fortsätter efter din provperiod,"
+      ],
       "If you need help,": [
         "Om du behöver hjälp,"
       ],
@@ -9776,9 +9677,6 @@
         "När din fullständiga prenumeration startar …"
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
-      ],
-      "You can still cancel within 30 days and get a prorated refund.": [
         "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -9789,9 +9687,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
       ]
     },
     "Option": {
@@ -10236,6 +10131,9 @@
       ],
       "Bank transfer - ${ iban }": [
         "Banköverföring - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort slutar på ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -10604,78 +10502,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
-      "Summer Sale": [
-        "Sommarrea"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/månad"
-      ],
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "2 TB data storage": [
-        "2 TB lagringsutrymme"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
-      ],
-      "3 TB data storage": [
-        "3 TB lagringsutrymme"
-      ],
-      "500 GB storage": [
-        "500 GB lagringsutrymme"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Full åtkomst till ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuella konton för 6 användare"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuella konton för dig och en partner"
-      ],
-      "Online document and spreadsheet editor": [
-        "Dokument- och kalkylbladsredigerare online"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Starkare skydd mot cyberhot"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Obegränsade mappar, etiketter och filter"
-      ],
-      "Use your own email domain": [
-        "Använd din egen e-postdomän"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "för 12 månader"
-      ],
-      "SUMMER SALE": [
-        "SOMMARREA"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Ta del av erbjudandet"
@@ -10848,49 +10674,6 @@
     "Section": {
       "Org setup and account security": [
         "Organisationsinställning och kontosäkerhet"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Alla alias"
-      ],
-      "Create alias": [
-        "Skapa alias"
-      ],
-      "Create an alias": [
-        "Skapa ett alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generera alias i farten och hantera enkelt dina alias och lösenord."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-alias"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email-alias låter dig registrera dig för saker online utan att dela din e-postadress. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nytt alias"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Öppna ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Skydda din identitet online"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Prova ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Används på Amazon för shopping etc."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "När du tillfrågas om din e-postadress, ge detta alias istället. Alias ​​tillhandahålls av ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(kommer öppna ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -11979,12 +11762,6 @@
       "Address copied to clipboard": [
         "Adress kopierad till urklipp"
       ],
-      "Alias copied to clipboard": [
-        "Alias kopierat till urklipp"
-      ],
-      "Alias saved and copied": [
-        "Alias sparat och kopierat"
-      ],
       "All events deleted": [
         "Alla händelser borttagna"
       ],
@@ -12112,9 +11889,6 @@
       ],
       "Keyboard shortcuts preferences updated": [
         "Inställningar för tangentbordsgenvägar uppdaterade"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Senast ändrade alias lagrade i ditt äldsta valv"
       ],
       "Participants notified and all events updated": [
         "Deltagare aviserade och alla händelser uppdaterade"
@@ -12772,9 +12546,6 @@
       "Mobile": [
         "Mobil"
       ],
-      "Need more aliases?": [
-        "Behöver du fler alias?"
-      ],
       "Network error": [
         "Nätverksfel"
       ],
@@ -13426,9 +13197,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } ger kraftfull kontroll, men ett enda fel kan göra att autofyll matchar och fyller i data på bedrägliga webbplatser eller nätfiske-webbplatser."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Är du säker på att du vill ta bort ${ count } kontakt?",
