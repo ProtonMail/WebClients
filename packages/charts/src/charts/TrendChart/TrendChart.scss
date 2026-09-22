@@ -1,0 +1,31 @@
+@use '~@proton/styles/scss/lib/easing' as *;
+
+.trend-chart {
+	/* The shimmer is laid over the plot, so the plot is what it is measured against. */
+	position: relative;
+
+	&--loading {
+		pointer-events: none;
+
+		canvas {
+			opacity: 0.35;
+		}
+	}
+
+	&-shimmer {
+		position: absolute;
+		inset: 0;
+		opacity: 0.4;
+		background-image: linear-gradient(100deg, transparent 44%, var(--background-strong) 50%, transparent 56%);
+		background-repeat: no-repeat;
+		background-size: 400% 100%;
+		background-position: 100% 0;
+		animation: trend-chart-shimmer-animation 1.75s easing(ease-in-out-sine) infinite;
+	}
+}
+
+@keyframes trend-chart-shimmer-animation {
+	to {
+		background-position: 0 0;
+	}
+}
