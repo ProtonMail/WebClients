@@ -31,28 +31,35 @@ describe('resolveArtifactToolMode', () => {
         const chainWithArtifact: Message[] = [makeArtifactMessage('')];
 
         expect(resolveArtifactToolMode(true, chainWithArtifact, false)).toBe('off');
-        expect(resolveArtifactToolMode(false, chainWithArtifact, false)).toBe('off');
-        expect(resolveArtifactToolMode(undefined, chainWithArtifact, false)).toBe('off');
+        expect(resolveArtifactToolMode(false, chainWithArtifact, false, true)).toBe('off');
     });
 
-    it('returns "off" when mode is inactive and the conversation has no artifact', () => {
+    it('returns "create" by default when no artifact exists and preference is unset', () => {
         const chain: Message[] = [makeMessage({ content: 'just a plain reply' })];
 
-        expect(resolveArtifactToolMode(false, chain, true)).toBe('off');
-        expect(resolveArtifactToolMode(undefined, chain, true)).toBe('off');
+        expect(resolveArtifactToolMode(false, chain, true)).toBe('create');
+        expect(resolveArtifactToolMode(undefined, chain, true)).toBe('create');
     });
 
-    it('returns "create" whenever canvas mode is active, regardless of existing artifacts', () => {
-        expect(resolveArtifactToolMode(true, [], true)).toBe('create');
+    it('returns "off" when no artifact exists and creation preference is disabled', () => {
+        const chain: Message[] = [makeMessage({ content: 'just a plain reply' })];
+
+        expect(resolveArtifactToolMode(false, chain, true, false)).toBe('off');
+        expect(resolveArtifactToolMode(undefined, chain, true, false)).toBe('off');
+    });
+
+    it('returns "create" whenever explicit canvas mode is active, regardless of existing artifacts', () => {
+        expect(resolveArtifactToolMode(true, [], true, false)).toBe('create');
 
         const chainWithArtifact: Message[] = [makeArtifactMessage('')];
-        expect(resolveArtifactToolMode(true, chainWithArtifact, true)).toBe('create');
+        expect(resolveArtifactToolMode(true, chainWithArtifact, true, false)).toBe('create');
     });
 
-    it('returns "revise" when mode is inactive but the conversation already has an artifact', () => {
+    it('returns "revise" when an artifact exists, regardless of creation preference', () => {
         const chain: Message[] = [makeArtifactMessage('')];
 
-        expect(resolveArtifactToolMode(false, chain, true)).toBe('revise');
-        expect(resolveArtifactToolMode(undefined, chain, true)).toBe('revise');
+        expect(resolveArtifactToolMode(false, chain, true, true)).toBe('revise');
+        expect(resolveArtifactToolMode(false, chain, true, false)).toBe('revise');
+        expect(resolveArtifactToolMode(undefined, chain, true, false)).toBe('revise');
     });
 });
