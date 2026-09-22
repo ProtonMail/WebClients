@@ -1,4 +1,4 @@
-export type CommentType = 1 | 2
+type CommentType = 1 | 2
 
 export type CommonPrivateCommentData = {
   Content: string

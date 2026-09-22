@@ -7,9 +7,6 @@ const MemberHierarchy = {
   [MemberRole.Admin]: 3,
 }
 
-// An explicit role, never Inherited
-export type EffectiveRole = Exclude<MemberRole, MemberRole.Inherited>
-
 /**
  *
  * @param hierarchy current node first, root last

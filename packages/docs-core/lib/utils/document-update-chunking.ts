@@ -30,7 +30,7 @@ export type DocumentUpdateChunk = {
   content: Uint8Array<ArrayBuffer>
 }
 
-export function serializeDocumentUpdateChunk({
+function serializeDocumentUpdateChunk({
   id,
   total,
   index,
@@ -59,7 +59,7 @@ export function serializeDocumentUpdateChunk({
   return serializedChunk
 }
 
-export function deserializeDocumentUpdateChunk(data: Uint8Array<ArrayBuffer>): DocumentUpdateChunk {
+function deserializeDocumentUpdateChunk(data: Uint8Array<ArrayBuffer>): DocumentUpdateChunk {
   const dataView = new DataView(data.buffer, data.byteOffset, data.byteLength)
 
   let offset = HEADER_SIGNAL.length
@@ -118,7 +118,7 @@ export function splitDocumentUpdateIntoChunks(
   return chunks
 }
 
-export type DocumentUpdateChunkStateEntry = {
+type DocumentUpdateChunkStateEntry = {
   total: number
   received: number
   chunks: Map<number, Uint8Array<ArrayBuffer>>
