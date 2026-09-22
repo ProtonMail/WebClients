@@ -13,14 +13,6 @@ export default mergeConfig(sharedVitestConfig, {
                 inline: ['@protontech/crypto'],
             },
         },
-        reporters: [
-            [
-                'default',
-                {
-                    summary: false,
-                },
-            ],
-        ],
     },
     resolve: {
         conditions: ['browser'],
