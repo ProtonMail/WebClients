@@ -264,9 +264,6 @@
       "Copy address": [
         "Kopiraj naslov"
       ],
-      "Copy alias “${ name }”": [
-        "Kopiraj vzdevek \"${ name }\""
-      ],
       "Copy email to clipboard": [
         "Kopiraj e-poštni naslov v odložišče"
       ],
@@ -290,9 +287,6 @@
       ],
       "Create album": [
         "Ustvari album"
-      ],
-      "Create and copy alias": [
-        "Ustvari in kopiraj vzdevek"
       ],
       "Create folder": [
         "Ustvari mapo"
@@ -2949,9 +2943,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3210,18 +3201,6 @@
       "Address primary private key not found": [
         "Primarni zasebni ključ naslova ni najden"
       ],
-      "Alias is not valid": [
-        "Vzdevek ni veljaven"
-      ],
-      "Alias is required": [
-        "Zahtevan je vzdevek"
-      ],
-      "Alias options could not be resolved": [
-        "Možnosti vzdevka ni bilo mogoče razrešiti"
-      ],
-      "Aliases could not be loaded": [
-        "Vzdevkov ni bilo mogoče naložiti"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Ves prostor na disku je že dodeljen. Zmanjšajte dodelitev prostora drugim uporabnikom."
       ],
@@ -3233,12 +3212,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Znesek je manjši od minimalnega (${ minimumAmount })."
-      ],
-      "An error occurred while loading alias options": [
-        "Pri nalaganju možnosti vzdevkov je prišlo do napake"
-      ],
-      "An error occurred while saving your alias": [
-        "Pri shranjevanju vzdevka je prišlo do napake"
       ],
       "Authentication canceled.": [
         "Preverjanje pristnosti preklicano."
@@ -3308,12 +3281,6 @@
       ],
       "Could not load the image preview: ${ message }": [
         "Predogleda slike ni mogoče naložiti: ${ message }"
-      ],
-      "Could not open created vault": [
-        "Ni bilo mogoče odpreti ustvarjenega trezorja"
-      ],
-      "Could not open updated vault": [
-        "Ni bilo mogoče odpreti posodobljenega trezorja"
       ],
       "Could not read part of this file: ${ message }": [
         "Dela naslednje datoteke ni bilo mogoče prebrati: ${ message }"
@@ -3399,9 +3366,6 @@
       "External invitations are temporarily disabled. Please try again later": [
         "Zunanja povabila so začasno onemogočena. Poskusite znova pozneje."
       ],
-      "Failed loading group members": [
-        "Napaka pri nalaganju članov skupine"
-      ],
       "Failed to change permissions settings": [
         "Ni uspelo spremeniti nastavitev dovoljenj"
       ],
@@ -3459,9 +3423,6 @@
       "Folder not found": [
         "Mape ni mogoče najti"
       ],
-      "Forward address is required": [
-        "Zahtevan je naslov za posredovanje"
-      ],
       "Image preview not found": [
         "Predogleda slike ni bilo mogoče najti"
       ],
@@ -3507,9 +3468,6 @@
       "Invitation not found": [
         "Povabila ni bilo mogoče najti"
       ],
-      "Item content cannot exceed 40KB": [
-        "Vsebina predmeta ne sme presegati 40 KB"
-      ],
       "Item not found": [
         "Predmeta ni bilo mogoče najti"
       ],
@@ -3537,14 +3495,8 @@
       "Moving item to a non-folder is not allowed": [
         "Premikanje predmetov v mapo, ki to ni, ni dovoljeno"
       ],
-      "Name is required": [
-        "Zahtevano je ime"
-      ],
       "Name must not be empty": [
         "Ime ne sme biti prazno"
-      ],
-      "Network error": [
-        "Omrežna napaka"
       ],
       "No calendars found to import": [
         "Ni najdenih koledarjev za uvoz."
@@ -4121,9 +4073,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Ko je omogočeno dodatno geslo, je upravljanje vzdevkov mogoče samo v ${ PASS_APP_NAME }."
       ],
       "You may also refresh the page or try again later.": [
         "Lahko tudi osvežite stran ali poskusite znova pozneje."
@@ -7195,9 +7144,6 @@
       "Duplicate found": [
         "Najden dvojnik"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "npr. Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Urejevalnik"
       ],
@@ -7237,9 +7183,6 @@
       "Environment compatible": [
         "Združljivo z okoljem"
       ],
-      "Expired": [
-        "Poteklo"
-      ],
       "Expired on ${ formatted }": [
         "Poteklo dne ${ formatted }"
       ],
@@ -7278,9 +7221,6 @@
       ],
       "Folder name": [
         "Ime mape"
-      ],
-      "Forwards to": [
-        "Posreduje na"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -7402,9 +7342,6 @@
       "Not selected": [
         "Ni izbrano"
       ],
-      "Note": [
-        "Opomba"
-      ],
       "Notification": [
         "Obvestilo"
       ],
@@ -7456,23 +7393,14 @@
       "Postal code": [
         "Poštna številka"
       ],
-      "Premium domain": [
-        "Premium domena"
-      ],
       "Proration": [
         "Sorazmerna delitev"
-      ],
-      "Public domain": [
-        "Javna domena"
       ],
       "Public keys": [
         "Javni ključi"
       ],
       "Region": [
         "Regija"
-      ],
-      "Regular expression": [
-        "Regularni izraz"
       ],
       "Replace existing folder or file": [
         "Zamenjaj obstoječo mapo ali datoteko"
@@ -7542,9 +7470,6 @@
       ],
       "Start date": [
         "Začetni datum"
-      ],
-      "Starts with": [
-        "Se začne z"
       ],
       "State": [
         "Država"
@@ -7644,12 +7569,6 @@
       ],
       "What happened?": [
         "Kaj se je zgodilo?"
-      ],
-      "Your alias": [
-        "Vaš vzdevek"
-      ],
-      "Your domain": [
-        "Vaša domena"
       ],
       "Your IP": [
         "Vaš IP"
@@ -8010,9 +7929,6 @@
       ]
     },
     "Message": {
-      "Regular expression rule": [
-        "Pravilo regularnega izraza"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaše brezplačno preizkusno obdobje se je izteklo. ${ nonAutoRenewalAction }"
       ],
@@ -9794,9 +9710,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Prekličite kadarkoli pred ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "Prekličite kadar koli pred tem."
-      ],
       "contact our support team": [
         "kontaktirajte našo podporo"
       ],
@@ -9818,9 +9731,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Še vedno lahko prekličete v 30 dneh in prejmete sorazmerno vračilo denarja."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Še vedno lahko prekličete v 30 dneh in prejmete sorazmerno vračilo denarja."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Uporabljate lahko ${ planTitle } do konca preskusnega obdobja, česar vam ne bomo zaračunali."
       ],
@@ -9829,9 +9739,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaša polna ${ planTitle } naročnina se začne dne ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Do konca preskusnega obdobja boste lahko uporabljali ${ planTitle } brezplačno."
       ]
     },
     "Option": {
@@ -10482,78 +10389,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Izkoristite posebno ponudbo"
-      ],
-      "Summer Sale": [
-        "Poletna razprodaja"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mesec"
-      ],
-      "15 GB storage": [
-        "15 GB prostora za shranjevanje"
-      ],
-      "2 TB data storage": [
-        "2 TB shrambe podatkov"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB shrambe: 40-kratnik vašega trenutnega paketa"
-      ],
-      "3 TB data storage": [
-        "3 TB shrambe podatkov"
-      ],
-      "500 GB storage": [
-        "500 GB prostora"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Vse premijske funkcije storitev ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Vse premijske funkcije storitev ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Popusti temeljijo na standardnih mesečnih cenah. Vaša naročnina se bo ob koncu obračunskega obdobja podaljšala po standardni letni tarifi."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Poln dostop do ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Posamezni računi za 6 uporabnikov"
-      ],
-      "Individual accounts for you and a partner": [
-        "Posamezni računi za vas in partnerja"
-      ],
-      "Online document and spreadsheet editor": [
-        "Urejevalnik dokumentov in preglednic s povezavo"
-      ],
-      "Recover previous file versions": [
-        "Obnovi prejšnje različice datoteke"
-      ],
-      "Stronger protection against cyber threats": [
-        "Močnejša zaščita pred kibernetskimi grožnjami"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Preklopite na naš letni paket in prihranite ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Neomejeno število map, oznak in filtrov"
-      ],
-      "Use your own email domain": [
-        "Uporabite svojo e-poštno domeno"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "za 12 mesecev"
-      ],
-      "SUMMER SALE": [
-        "POLETNA RAZPRODAJA"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } na priporočilo"
@@ -10606,49 +10441,6 @@
     "Section": {
       "Org setup and account security": [
         "Nastavitev organizacije in varnost računa"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Vsi vzdevki"
-      ],
-      "Create alias": [
-        "Ustvari vzdevek"
-      ],
-      "Create an alias": [
-        "Ustvari vzdevek"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Ustvarite vzdevke sproti in preprosto upravljajte svoje vzdevke in gesla."
-      ],
-      "Hide-my-email aliases": [
-        "Vzdevki hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email vzdevki vam omogočajo, da se prijavite na straneh v spletu, ne da bi razkrili svoj e-poštni naslov. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Nov vzdevek"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Odpri ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Zaščitite svojo spletno identiteto"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Poizkusite ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Uporablja se v spletnih trgovinah, kot je Amazon, itd."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Ko vas vprašajo za vaš e-poštni naslov, namesto tega navedite ta vzdevek. Vzdevke ponuja ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(bo odprlo ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -11711,12 +11503,6 @@
       "Address copied to clipboard": [
         "Naslov kopiran v odložišče"
       ],
-      "Alias copied to clipboard": [
-        "Vzdevek kopiran v odložišče"
-      ],
-      "Alias saved and copied": [
-        "Vzdevek shranjen in kopiran"
-      ],
       "Canceling import": [
         "Preklicevanje uvoza"
       ],
@@ -11755,9 +11541,6 @@
       ],
       "Invitation rejected": [
         "Povabilo zavrnjeno."
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Zadnji spremenjeni vzdevki, shranjeni v vašem najstarejšem trezorju"
       ],
       "Payment method added": [
         "Način plačila je bil dodan."
@@ -12463,9 +12246,6 @@
       ],
       "Name": [
         "Ime"
-      ],
-      "Need more aliases?": [
-        "Potrebujete več vzdevkov?"
       ],
       "Need to share more files with edit access?": [
         "Želite datoteke deliti z možnostjo urejanja?"

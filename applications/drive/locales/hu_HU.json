@@ -229,9 +229,6 @@
       "Copy address": [
         "Cím másolása"
       ],
-      "Copy alias “${ name }”": [
-        "„${ name }” e-mail álnév másolása"
-      ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
@@ -252,9 +249,6 @@
       ],
       "Create a new contact group": [
         "Új névjegy csoport létrehozása"
-      ],
-      "Create and copy alias": [
-        "E-mail álnév létrehozása és másolása"
       ],
       "Create folder": [
         "Mappa létrehozása"
@@ -2633,9 +2627,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Az ingyenes ${ MAIL_APP_NAME }-fiókja korlátozott tárhellyel rendelkezik, ezért csak a legutóbbi Gmail e-mailjeit importáljuk."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Már létrehozott 10 e-mail álnevet. Szerezzen korlátlan e-mail álnevet és 500 GB tárhelyet a ${ BRAND_NAME } Unlimited szolgáltatással."
       ]
     },
     "description": {
@@ -2891,18 +2882,6 @@
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
-      "Alias is not valid": [
-        "Érvénytelen e-mail álnév"
-      ],
-      "Alias is required": [
-        "E-mail álnév szükséges"
-      ],
-      "Alias options could not be resolved": [
-        "Az e-mail álnév adatainak betöltése nem sikerült"
-      ],
-      "Aliases could not be loaded": [
-        "Az e-mail álnevek betöltése nem sikerült"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
       ],
@@ -2914,12 +2893,6 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Az összeg a minimum alatt (${ minimumAmount })."
-      ],
-      "An error occurred while loading alias options": [
-        "Hiba történt az e-mail álnév opciók betöltése közben"
-      ],
-      "An error occurred while saving your alias": [
-        "Hiba történt az e-mail álnév mentése közben"
       ],
       "Authentication canceled.": [
         "Hitelesítés megszakítva."
@@ -2950,12 +2923,6 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "A tartalomkeresés nem engedélyezhető. Kérjük, indítsa újra az alkalmazást, vagy törölje az adatokat."
-      ],
-      "Could not open created vault": [
-        "A létrehozott tároló megnyitása nem sikerült"
-      ],
-      "Could not open updated vault": [
-        "A frissített tároló megnyitása nem sikerült"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál",
@@ -3034,9 +3001,6 @@
       "Folder name cannot be empty.": [
         "A mappa nevének megadása szükséges."
       ],
-      "Forward address is required": [
-        "Továbbító cím szükséges"
-      ],
       "Image upload failed": [
         "Képfeltöltés sikertelen"
       ],
@@ -3073,9 +3037,6 @@
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
-      "Item content cannot exceed 40KB": [
-        "Az elem tartalma nem lehet több 40KB-nál"
-      ],
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
       ],
@@ -3091,12 +3052,6 @@
       ],
       "Missing signature": [
         "Hiányzó aláírás"
-      ],
-      "Name is required": [
-        "Név megadása kötelező"
-      ],
-      "Network error": [
-        "Hálózati hiba"
       ],
       "No calendars found to import": [
         "Nincs importálandó naptár"
@@ -3520,9 +3475,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nem sikerült az oldal betöltése. Frissítse az oldalt vagy ellenőrizze az internetkapcsolatát."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Ha az extra jelszó engedélyezve van, az e-mail álnév kezelése csak a ${ PASS_APP_NAME } alkalmazásban végezhető el."
       ]
     },
     "Error notification": {
@@ -5578,9 +5530,6 @@
       "Address": [
         "Cím"
       ],
-      "Alias title": [
-        "E-mail álnév cím"
-      ],
       "All": [
         "Mind"
       ],
@@ -5719,9 +5668,6 @@
       "Duplicate found": [
         "Duplikált elem található"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "pl. Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Szerkesztő"
       ],
@@ -5752,9 +5698,6 @@
       "Encrypt emails": [
         "Üzenetek titkosítása"
       ],
-      "Expired": [
-        "Lejárt"
-      ],
       "Expires": [
         "Lejárat"
       ],
@@ -5778,9 +5721,6 @@
       ],
       "Folder name": [
         "Mappa neve"
-      ],
-      "Forwards to": [
-        "Továbbít:"
       ],
       "From: ${ fromEmail }": [
         "Feladó: ${ fromEmail }"
@@ -5881,9 +5821,6 @@
       "Not selected": [
         "Nincs kijelölve"
       ],
-      "Note": [
-        "Megjegyzés"
-      ],
       "Notification": [
         "Értesítés"
       ],
@@ -5932,14 +5869,8 @@
       "Postal code": [
         "Irányítószám"
       ],
-      "Premium domain": [
-        "Prémium domain név"
-      ],
       "Proration": [
         "Arányosítás"
-      ],
-      "Public domain": [
-        "Nyilvános domain név"
       ],
       "Public keys": [
         "Nyilvános kulcsok"
@@ -6060,12 +5991,6 @@
       ],
       "What happened?": [
         "Mi történt?"
-      ],
-      "Your alias": [
-        "Az e-mail álneve"
-      ],
-      "Your domain": [
-        "Az Ön domain neve"
       ],
       "Your IP": [
         "Az Ön IP-címe"
@@ -7765,9 +7690,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Bármikor lemondhatja ${ cancelDate } előtt."
       ],
-      "Cancel anytime before then.": [
-        "Addig bármikor lemondhatja."
-      ],
       "contact our support team": [
         "lépjen kapcsolatba támogatási csapatunkkal"
       ],
@@ -7789,9 +7711,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "30 napon belül még mindig lemondhatja a szerződést, és időarányos visszatérítést kaphat."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "30 napon belül még mindig lemondhatja a szerződést, és időarányos visszatérítést kaphat."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Használhatja a ${ planTitle } csomagot, amíg a próbaverzió le nem jár, és nem számítunk fel díjat."
       ],
@@ -7800,9 +7719,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Az Ön teljes ${ planTitle } előfizetése ekkor kezdődik: ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Használhatja ingyenesen a ${ planTitle } csomagot, amíg a próbaverzió le nem jár."
       ]
     },
     "Option": {
@@ -8360,78 +8276,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Szerezze meg az ajánlatot"
-      ],
-      "Summer Sale": [
-        "Nyári akció"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/hónap"
-      ],
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "2 TB data storage": [
-        "2 TB adattárhely"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB tárhely: a jelenlegi csomag negyvenszerese"
-      ],
-      "3 TB data storage": [
-        "3 TB adattárhely"
-      ],
-      "500 GB storage": [
-        "500 GB tárhely"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "A ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME } összes prémium funkciója"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "A ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME } összes prémium funkciója"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "A kedvezmények a standard havi árakon alapulnak. Az előfizetése a standard éves díjjal fog megújulni, amikor a számlázási ciklus véget ér."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Teljes hozzáférés a ${ VPN_APP_NAME } szolgáltatáshoz"
-      ],
-      "Individual accounts for 6 users": [
-        "Egyéni fiókok 6 felhasználó számára"
-      ],
-      "Individual accounts for you and a partner": [
-        "Egyéni fiókok Önnek és partnerének"
-      ],
-      "Online document and spreadsheet editor": [
-        "Online dokumentum- és táblázatszerkesztő"
-      ],
-      "Recover previous file versions": [
-        "Régebbi fájlverziók helyreállítása"
-      ],
-      "Stronger protection against cyber threats": [
-        "Erősebb védelem a kiberfenyegetésekkel szemben"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Váltson éves csomagunkra, és takarítson meg ${ toYearlyDiscountAmount } összeget!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Korlátlan számú mappa, címke és szűrő"
-      ],
-      "Use your own email domain": [
-        "Saját e-mail domain használata"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "12 hónapra"
-      ],
-      "SUMMER SALE": [
-        "NYÁRI AKCIÓ"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } ajánlásonként"
@@ -8485,49 +8329,6 @@
     "Section": {
       "Org setup and account security": [
         "Szervezetbeállítás és fiókbiztonság"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Minden e-mail álnév"
-      ],
-      "Create alias": [
-        "E-mail álnév létrehozása"
-      ],
-      "Create an alias": [
-        "E-mail álnév létrehozása"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Készítsen álneveket menet közben, és könnyen kezelje álneveit és jelszavait."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email álnevek"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email álnevek lehetővé teszik, hogy online feliratkozzon dolgokra anélkül, hogy megosztaná az e-mail címét. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Új e-mail álnév"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } megnyitása"
-      ],
-      "Protect your online identity": [
-        "Védje meg az online személyazonosságát"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Próbálja ki ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Amazonon vásárláshoz használatos, stb."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Ha megkérdezik az e-mail címét, adja meg helyette ezt az álnevet. Az álneveket a ${ passLink } biztosítja."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(meg fogja nyitni ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -9515,12 +9316,6 @@
       "Address copied to clipboard": [
         "Cím a vágólapra másolva"
       ],
-      "Alias copied to clipboard": [
-        "Az e-mail álnév a vágólapra lett másolva"
-      ],
-      "Alias saved and copied": [
-        "Az e-mail álnév mentve és másolva"
-      ],
       "Billing details updated": [
         "Számlázási adatok frissítve"
       ],
@@ -9558,9 +9353,6 @@
       ],
       "Invitation rejected": [
         "Meghívás elutasítva"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Az utoljára módosított e-mail álnevek a legrégebbi tárolóban találhatók."
       ],
       "Payment method added": [
         "Fizetési mód hozzáadva"
@@ -10142,9 +9934,6 @@
       ],
       "Name": [
         "Név"
-      ],
-      "Need more aliases?": [
-        "Több e-mail álnévre van szüksége?"
       ],
       "Need to share more files with edit access?": [
         "Még több fájlt szeretne megosztani szerkesztési hozzáféréssel?"
