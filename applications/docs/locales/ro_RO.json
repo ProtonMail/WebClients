@@ -218,9 +218,6 @@
       "Copy address": [
         "Copiere adresă"
       ],
-      "Copy alias “${ name }”": [
-        "Copiază aliasul „${ name }”"
-      ],
       "Copy as markdown": [
         "Copiere în format markdown"
       ],
@@ -247,9 +244,6 @@
       ],
       "Create a new contact group": [
         "Creare grup de contacte"
-      ],
-      "Create and copy alias": [
-        "Creare și copiere alias"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Creare ${ SHEETS_APP_NAME }"
@@ -575,9 +569,6 @@
       ],
       "No, thanks": [
         "Nu, mulțumesc"
-      ],
-      "Not now": [
-        "Nu acum"
       ],
       "OK": [
         "OK"
@@ -2707,9 +2698,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Contul gratuit ${ MAIL_APP_NAME } are un spațiu de stocare limitat, așa că se vor importa doar cele mai recente mesaje din Gmail."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2977,18 +2965,6 @@
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
-      "Alias is not valid": [
-        "Aliasul nu este valid."
-      ],
-      "Alias is required": [
-        "Aliasul este obligatoriu."
-      ],
-      "Alias options could not be resolved": [
-        "Opțiunile pentru alias nu au putu fi rezolvate."
-      ],
-      "Aliases could not be loaded": [
-        "Aliasurile nu au putut fi salvate."
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
       ],
@@ -3012,12 +2988,6 @@
       ],
       "An error occurred while creating a new document. Please try again.": [
         "A apărut o eroare la crearea documentului. Mai încercați."
-      ],
-      "An error occurred while loading alias options": [
-        "A apărut o eroare în timpul încărcării opțiunilor aliasurilor."
-      ],
-      "An error occurred while saving your alias": [
-        "A apărut o eroare în timpul salvării aliasului."
       ],
       "Authentication canceled.": [
         "Autentificare anulată."
@@ -3085,12 +3055,6 @@
       "Could not load the image preview: ${ message }": [
         "Nu s-a putut încărca previzualizarea imaginii: ${ message }"
       ],
-      "Could not open created vault": [
-        "Nu s-a putut deschide seiful creat."
-      ],
-      "Could not open updated vault": [
-        "Nu s-a putut deschide seiful actualizat."
-      ],
       "Could not read part of this file: ${ message }": [
         "Nu s-a putut citi o parte din acest fișier: ${ message }"
       ],
@@ -3154,9 +3118,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Invitațiile externe sunt dezactivate temporar. Reîncercați mai târziu."
-      ],
-      "Failed loading group members": [
-        "Eroare la încărcarea membrilor grupului."
       ],
       "Failed to change permissions settings": [
         "Nu s-au putut modifica setările de permisiuni."
@@ -3251,9 +3212,6 @@
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
       ],
-      "Forward address is required": [
-        "Adresa de transferare este obligatorie."
-      ],
       "Image preview not found": [
         "Previzualizarea imaginii nu a fost găsită."
       ],
@@ -3286,9 +3244,6 @@
       ],
       "Invitation not found": [
         "Invitația nu a fost găsită."
-      ],
-      "Item content cannot exceed 40KB": [
-        "Conținutul articolului nu poate depăși 40 KiB."
       ],
       "Item not found": [
         "Articol negăsit."
@@ -3337,9 +3292,6 @@
       "Moving root item is not allowed": [
         "Mutarea articolului rădăcină nu este permisă."
       ],
-      "Name is required": [
-        "Numele este obligatoriu."
-      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } caracter.",
         "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } caractere.",
@@ -3347,9 +3299,6 @@
       ],
       "Name must not be empty": [
         "Numele nu poate fi gol."
-      ],
-      "Network error": [
-        "Eroare de rețea."
       ],
       "No calendars found to import": [
         "Nu s-au găsit calendare de importat."
@@ -3926,9 +3875,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Această pagină nu s-a putut încărca. Reîmprospătați-o sau verificați conexiunea la internet."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Când este activată o parolă suplimentară, gestionarea alias-ului se poate face numai în ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -6198,9 +6144,6 @@
       "Additional comments": [
         "Comentarii adiționale"
       ],
-      "Alias title": [
-        "Titlu alias"
-      ],
       "Allow editors to change permissions and share": [
         "Permitere ca editorii să modifice permisiunile și să partajeze"
       ],
@@ -6318,9 +6261,6 @@
       "Drive": [
         "Drive"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "ex. Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Editor"
       ],
@@ -6360,12 +6300,6 @@
       "Erase this link and remove everyone with access": [
         "Ștergere legătură și eliminare toate persoanele cu acces"
       ],
-      "Exact host matching": [
-        "Potrivire exactă gazdă"
-      ],
-      "Exact URL matching": [
-        "Potrivire exactă URL"
-      ],
       "Expiry": [
         "Expirare"
       ],
@@ -6380,9 +6314,6 @@
       ],
       "Folder name": [
         "Nume folder"
-      ],
-      "Forwards to": [
-        "Transferare către"
       ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
@@ -6477,17 +6408,11 @@
       "Navigation": [
         "Navigare"
       ],
-      "Never fill on this exact URL": [
-        "La exact acest URL nu se completează"
-      ],
       "New password": [
         "Parola nouă"
       ],
       "Not active": [
         "Inactiv"
-      ],
-      "Note": [
-        "Notiță"
       ],
       "Notification": [
         "Notificare"
@@ -6500,9 +6425,6 @@
       ],
       "Optional": [
         "Opțional"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Domeniu părinte și subdomeniu (implicit)"
       ],
       "Password": [
         "Parola"
@@ -6525,12 +6447,6 @@
       "Postal code": [
         "Cod poștal"
       ],
-      "Premium domain": [
-        "Domeniu premium"
-      ],
-      "Public domain": [
-        "Domeniu public"
-      ],
       "Public keys": [
         "Chei publice"
       ],
@@ -6542,9 +6458,6 @@
       ],
       "Region": [
         "Județ"
-      ],
-      "Regular expression": [
-        "Expresie regulată"
       ],
       "Require password": [
         "Necesită parolă"
@@ -6569,9 +6482,6 @@
       ],
       "Skip feedback": [
         "Omitere feedback"
-      ],
-      "Starts with": [
-        "Începe cu"
       ],
       "Stop sharing": [
         "Oprire partajare"
@@ -6606,9 +6516,6 @@
       "Upload picture": [
         "Încărcare imagine"
       ],
-      "URL wildcard pattern": [
-        "Model URL cu caractere generice"
-      ],
       "Username": [
         "Nume de utilizator"
       ],
@@ -6632,12 +6539,6 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
-      ],
-      "Your alias": [
-        "Aliasuri personale"
-      ],
-      "Your domain": [
-        "Domeniul personal"
       ],
       "Your IP": [
         "IP dispozitiv"
@@ -6973,24 +6874,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Regulă de potrivire „Începe cu”"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Regulă de potrivire exactă (sub) domeniu"
-      ],
-      "Exact URL matching rule": [
-        "Regulă de potrivire exactă URL"
-      ],
-      "Never fill with this exact URL": [
-        "La exact acest URL nu se completează"
-      ],
-      "Regular expression rule": [
-        "Regulă expresie regulată"
-      ],
-      "Wildcard pattern matching rule": [
-        "Regulă de potrivire model caractere generice"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Perioada de evaluare gratuită s-a încheiat. ${ nonAutoRenewalAction }"
       ],
@@ -8351,6 +8234,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Ultima șansă pentru a obține 80% reducere în prima lună pentru ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Ultima șansă de a obține prima lună de ${ plan } la acest preț."
+      ],
       "Last day to save": [
         "Ultima zi de economisire"
       ],
@@ -8433,6 +8319,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Adresă scurtă @pm.me"
+      ],
       "Storage": [
         "Spațiu"
       ],
@@ -8447,11 +8336,23 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " vizitați ${ helpCenterLink } sau contactați ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adăugați o metodă de plată** pentru a continua să utilizați toate funcțiile după expirarea perioadei de probare."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puteți anula oricând înainte de acel moment.** Veți putea utiliza ${ planTitle } gratuit până la expirarea perioadei de probare."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Dacă alegeți să continuați după perioada de probare,** puteți anula în termen de 30 de zile și puteți primi o rambursare proporțională."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**După ce începe abonamentul complet,** încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Anulați oricând înainte de ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Anulați oricând înainte de această dată."
       ],
       "contact our support team": [
         "contactați asistența noastră"
@@ -8465,17 +8366,23 @@
       "help center": [
         "centru de ajutor"
       ],
+      "If you continue after your trial,": [
+        "Dacă mai continuați după perioada de probare,"
+      ],
       "If you need help,": [
         "Dacă aveți nevoie de ajutor,"
       ],
       "Once your full subscription starts...": [
         "După ce începe abonamentul complet..."
       ],
+      "to keep using all of the features after your trial ends.": [
+        "pentru a continua să utilizații toate funcțiile după expirarea perioadei de probare."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Puteți încă anula în termen de 30 de zile și puteți obține o rambursare proporțională."
-      ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Puteți folosi ${ planTitle } până la terminarea perioadei de evaluare fără a vi se aplica vreo taxă."
@@ -8485,9 +8392,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de evaluare."
       ]
     },
     "Option": {
@@ -8913,78 +8817,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Valorificați oferta"
-      ],
-      "Summer Sale": [
-        "Reduceri de vară"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/lună"
-      ],
-      "15 GB storage": [
-        "15 GB de spațiu de stocare"
-      ],
-      "2 TB data storage": [
-        "2 TB de spațiu de stocare pentru date"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de spațiu de stocare: de 40 de ori planul actual"
-      ],
-      "3 TB data storage": [
-        "3 TB de spațiu de stocare pentru date"
-      ],
-      "500 GB storage": [
-        "500 GB de spațiu de stocare"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate caracteristicile premium ale ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Acces complet la ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Conturi individuale pentru 6 utilizatori"
-      ],
-      "Individual accounts for you and a partner": [
-        "Conturi individuale pentru dvs. și un partener"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor conectat de documente și foi de calcul"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierelor"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protecție mai puternică împotriva amenințărilor cibernetice"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Număr nelimitat de foldere, etichete și filtre"
-      ],
-      "Use your own email domain": [
-        "Utilizați propriul domeniu de e-mail"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "pentru 12 luni"
-      ],
-      "SUMMER SALE": [
-        "REDUCERI DE VARĂ"
-      ]
-    },
     "q3campaign2026: Action": {
       "Get the deal": [
         "Luați oferta"
@@ -9188,49 +9020,6 @@
     "Section": {
       "Org setup and account security": [
         "Setare organizație și securitate cont"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Toate aliasurile"
-      ],
-      "Create alias": [
-        "Creare alias"
-      ],
-      "Create an alias": [
-        "Creați un alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generați aliasuri din mers și gestionați-vă ușor aliasurile și parolele."
-      ],
-      "Hide-my-email aliases": [
-        "Aliasuri hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliasurile hide-my-email vă permit să vă înscrieți pe site-uri online fără a vă partaja adresa reală de e-mail. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Alias nou"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Deschidere ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Protejați-vă identitatea online"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Încercați ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Folosit pentru cumpărături pe Amazon etc."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(va deschide ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -10058,12 +9847,6 @@
       "Address copied to clipboard": [
         "Adresa a fost copiată în memorie"
       ],
-      "Alias copied to clipboard": [
-        "Alias copiat în memorie"
-      ],
-      "Alias saved and copied": [
-        "Alias salvat și copiat"
-      ],
       "Canceling import": [
         "Se anulează importarea"
       ],
@@ -10097,9 +9880,6 @@
       ],
       "Invitation rejected": [
         "Invitație refuzată"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Ultimele aliasuri modificate stocate în cel mai vechi seif"
       ],
       "Phone number copied to clipboard": [
         "Numărul de telefon a fost copiat în memorie"
@@ -10632,9 +10412,6 @@
       ],
       "My files": [
         "Fișierele mele"
-      ],
-      "Need more aliases?": [
-        "Doriți mai multe aliasuri?"
       ],
       "Need to share more files with edit access?": [
         "Doriți să partajați mai multe fișiere cu drept de editare?"
@@ -11192,9 +10969,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",

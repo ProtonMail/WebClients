@@ -210,9 +210,6 @@
       "Copy address": [
         "Salin alamat"
       ],
-      "Copy alias “${ name }”": [
-        "Salin alias “${ name }”"
-      ],
       "Copy as markdown": [
         "Salin sebagai markdown"
       ],
@@ -239,9 +236,6 @@
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
-      ],
-      "Create and copy alias": [
-        "Buat dan salin alias"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Buat ${ SHEETS_APP_NAME } baru"
@@ -557,9 +551,6 @@
       ],
       "No, thanks": [
         "Tidak, terima kasih"
-      ],
-      "Not now": [
-        "Tidak sekarang"
       ],
       "OK": [
         "OK"
@@ -2624,9 +2615,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Akun ${ MAIL_APP_NAME } gratis Anda memiliki penyimpanan terbatas, sehingga hanya email Gmail terbaru Anda yang akan diimpor."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2883,18 +2871,6 @@
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
-      "Alias is not valid": [
-        "Alias tidak valid"
-      ],
-      "Alias is required": [
-        "Alias wajib diisi"
-      ],
-      "Alias options could not be resolved": [
-        "Opsi alias tidak dapat diselesaikan"
-      ],
-      "Aliases could not be loaded": [
-        "Alias tidak dapat dimuat"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
       ],
@@ -2919,12 +2895,6 @@
       "An error occurred while creating a new document. Please try again.": [
         "Terjadi kesalahan saat membuat dokumen baru. Silakan coba lagi."
       ],
-      "An error occurred while loading alias options": [
-        "Terjadi kesalahan saat memuat opsi alias"
-      ],
-      "An error occurred while saving your alias": [
-        "Terjadi kesalahan saat menyimpan alias Anda"
-      ],
       "Authentication canceled.": [
         "Autentikasi dibatalkan."
       ],
@@ -2948,12 +2918,6 @@
       ],
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
-      ],
-      "Could not open created vault": [
-        "Tidak dapat membuka brankas yang dibuat"
-      ],
-      "Could not open updated vault": [
-        "Brankas yang diperbarui tidak dapat dibuka"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
@@ -2990,9 +2954,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Undangan eksternal untuk sementara dinonaktifkan. Silakan coba lagi nanti"
-      ],
-      "Failed loading group members": [
-        "Gagal memuat anggota grup"
       ],
       "Failed to change permissions settings": [
         "Gagal mengubah pengaturan izin"
@@ -3048,9 +3009,6 @@
       "Folder name cannot be empty.": [
         "Nama folder tidak boleh kosong."
       ],
-      "Forward address is required": [
-        "Alamat penerusan wajib diisi"
-      ],
       "Image upload failed": [
         "Pengunggahan gambar gagal"
       ],
@@ -3078,9 +3036,6 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
-      "Item content cannot exceed 40KB": [
-        "Konten item tidak boleh melebihi 40KB"
-      ],
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
       ],
@@ -3095,12 +3050,6 @@
       ],
       "Missing signature": [
         "Tanda tangan hilang"
-      ],
-      "Name is required": [
-        "Nama wajib diisi"
-      ],
-      "Network error": [
-        "Kesalahan jaringan"
       ],
       "No calendars found to import": [
         "Tidak ada kalender yang ditemukan untuk diimpor"
@@ -3557,9 +3506,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Kami tidak dapat memuat halaman ini. Silakan muat ulang halaman atau periksa koneksi internet Anda."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Saat kata sandi tambahan diaktifkan, pengelolaan alias hanya dapat dilakukan di ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -5573,9 +5519,6 @@
       "Additional comments": [
         "Komentar tambahan"
       ],
-      "Alias title": [
-        "Judul alias"
-      ],
       "Allow editors to change permissions and share": [
         "Izinkan editor untuk mengubah izin dan membagikan"
       ],
@@ -5684,9 +5627,6 @@
       "Drive": [
         "Drive"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "mis., Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Editor"
       ],
@@ -5723,12 +5663,6 @@
       "Erase this link and remove everyone with access": [
         "Hapus tautan ini dan hapus semua orang yang dapat mengakses"
       ],
-      "Exact host matching": [
-        "Pencocokan host persis"
-      ],
-      "Exact URL matching": [
-        "Pencocokan URL persis"
-      ],
       "Expiry": [
         "Kedaluwarsa"
       ],
@@ -5743,9 +5677,6 @@
       ],
       "Folder name": [
         "Nama folder"
-      ],
-      "Forwards to": [
-        "Teruskan ke"
       ],
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
@@ -5834,17 +5765,11 @@
       "Navigation": [
         "Navigasi"
       ],
-      "Never fill on this exact URL": [
-        "Jangan pernah isi pada URL persis ini"
-      ],
       "New password": [
         "Kata sandi baru"
       ],
       "Not active": [
         "Tidak aktif"
-      ],
-      "Note": [
-        "Catatan"
       ],
       "Notification": [
         "Notifikasi"
@@ -5857,9 +5782,6 @@
       ],
       "Optional": [
         "Opsional"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Domain induk dan subdomain (bawaan)"
       ],
       "Password": [
         "Kata sandi"
@@ -5882,12 +5804,6 @@
       "Postal code": [
         "Kode pos"
       ],
-      "Premium domain": [
-        "Domain premium"
-      ],
-      "Public domain": [
-        "Domain publik"
-      ],
       "Public keys": [
         "Kunci publik"
       ],
@@ -5899,9 +5815,6 @@
       ],
       "Region": [
         "Provinsi"
-      ],
-      "Regular expression": [
-        "Ekspresi reguler"
       ],
       "Require password": [
         "Wajibkan kata sandi"
@@ -5926,9 +5839,6 @@
       ],
       "Skip feedback": [
         "Lewati masukan"
-      ],
-      "Starts with": [
-        "Mulai dengan"
       ],
       "Stop sharing": [
         "Berhenti berbagi"
@@ -5963,9 +5873,6 @@
       "Upload picture": [
         "Unggah gambar"
       ],
-      "URL wildcard pattern": [
-        "Pola wildcard URL"
-      ],
       "Username": [
         "Nama pengguna"
       ],
@@ -5989,12 +5896,6 @@
       ],
       "What happened?": [
         "Apa yang terjadi?"
-      ],
-      "Your alias": [
-        "Alias Anda"
-      ],
-      "Your domain": [
-        "Domain Anda"
       ],
       "Your IP": [
         "IP Anda"
@@ -6297,24 +6198,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Aturan pencocokan 'Mulai dengan'"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Aturan pencocokan domain (sub) persis"
-      ],
-      "Exact URL matching rule": [
-        "Aturan pencocokan URL persis"
-      ],
-      "Never fill with this exact URL": [
-        "Jangan pernah isi dengan URL persis ini"
-      ],
-      "Regular expression rule": [
-        "Aturan ekspresi reguler"
-      ],
-      "Wildcard pattern matching rule": [
-        "Aturan pencocokan pola wildcard"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Uji coba gratis Anda telah berakhir. ${ nonAutoRenewalAction }"
       ],
@@ -7640,9 +7523,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Batalkan kapan saja sebelum ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "Batalkan kapan saja sebelum tenggat waktu ini."
-      ],
       "contact our support team": [
         "hubungi layanan pelanggan kami"
       ],
@@ -7664,9 +7544,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Anda masih bisa membatalkan dalam 30 hari dan mendapatkan refund pro-rata."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "Anda masih akan dapat membatalkan langganan dalam 30 hari dan memperoleh uang kembali secara proratif."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Anda dapat menggunakan ${ planTitle } hingga masa uji coba Anda berakhir tanpa dikenai biaya sepeser pun."
       ],
@@ -7675,9 +7552,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Langganan penuh ${ planTitle } Anda akan dimulai pada ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Anda dapat menggunakan ${ planTitle } secara gratis hingga masa uji coba Anda berakhir."
       ]
     },
     "Option": {
@@ -8063,78 +7937,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Dapatkan penawaran ini"
-      ],
-      "Summer Sale": [
-        "Promo Musim Panas"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/bulan"
-      ],
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "2 TB data storage": [
-        "Penyimpanan data 2 TB"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "Ruang penyimpanan 200 GB: 40x lebih besar dari paket Anda saat ini"
-      ],
-      "3 TB data storage": [
-        "Penyimpanan data 3 TB"
-      ],
-      "500 GB storage": [
-        "Penyimpanan 500 GB"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Semua fitur premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Semua fitur premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Diskon didasarkan pada harga bulanan standar. Langganan Anda akan diperpanjang dengan tarif tahunan standar setelah siklus tagihan berakhir."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Akses penuh ke ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Akun individu untuk 6 pengguna"
-      ],
-      "Individual accounts for you and a partner": [
-        "Akun individu untuk Anda dan pasangan"
-      ],
-      "Online document and spreadsheet editor": [
-        "Editor dokumen dan spreadsheet daring"
-      ],
-      "Recover previous file versions": [
-        "Pulihkan versi file sebelumnya"
-      ],
-      "Stronger protection against cyber threats": [
-        "Perlindungan lebih kuat terhadap ancaman siber"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Beralih ke paket tahunan dan hemat ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan saringan"
-      ],
-      "Use your own email domain": [
-        "Gunakan domain email milik Anda sendiri"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "untuk 12 bulan"
-      ],
-      "SUMMER SALE": [
-        "PROMO MUSIM PANAS"
-      ]
-    },
     "Recent documents table header": {
       "Created by": [
         "Dibuat oleh"
@@ -8256,49 +8058,6 @@
     "Section": {
       "Org setup and account security": [
         "Pengaturan organisasi dan keamanan akun"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Semua alias"
-      ],
-      "Create alias": [
-        "Buat alias"
-      ],
-      "Create an alias": [
-        "Buat alias"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Buat alias di mana saja, dan kelola alias serta kata sandi Anda dengan mudah."
-      ],
-      "Hide-my-email aliases": [
-        "Alias hide-my-email"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Alias hide-my-email memungkinkan Anda untuk mendaftar ke berbagai layanan daring tanpa membagikan alamat email asli Anda. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Alias ​​baru"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Buka ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Lindungi identitas daring Anda"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Coba ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Digunakan pada Amazon untuk berbegai keperluan (mis. untuk berjualan)"
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Pada saat Anda diminta untuk memberikan alamat email, gunakan alias ini sebagai gantinya. Seluruh alias disediakan oleh ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(akan membuka ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -9065,12 +8824,6 @@
       "Address copied to clipboard": [
         "Alamat disalin ke clipboard"
       ],
-      "Alias copied to clipboard": [
-        "Alias disalin ke papan klip"
-      ],
-      "Alias saved and copied": [
-        "Alias disimpan dan disalin"
-      ],
       "Canceling import": [
         "Membatalkan impor"
       ],
@@ -9100,9 +8853,6 @@
       ],
       "Invitation rejected": [
         "Undangan ditolak"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Alias yang terakhir digunakan tersimpan dalam brankas terlawas Anda"
       ],
       "Phone number copied to clipboard": [
         "Nomor telepon disalin ke clipboard"
@@ -9590,9 +9340,6 @@
       ],
       "My files": [
         "File saya"
-      ],
-      "Need more aliases?": [
-        "Butuh lebih banyak alias?"
       ],
       "Need to share more files with edit access?": [
         "Butuh untuk membagikan lebih banyak file dengan akses pengeditan?"
@@ -10095,9 +9842,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } memberikan kendali yang kuat, tetapi satu kesalahan saja dapat menyebabkan isi otomatis mencocokkan dan mengisi data pada situs web penipuan atau phishing."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Yakin ingin mengapus ${ count } kontak secara permanen?"
