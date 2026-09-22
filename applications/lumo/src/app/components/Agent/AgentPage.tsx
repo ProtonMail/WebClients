@@ -14,6 +14,7 @@ import { useQueryParam, useSkillParam, useThemeParam } from '../../hooks';
 import { useConversationAgent } from '../../hooks/useConversationAgent';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
+import { ArtifactCreationProvider } from '../../providers/ArtifactCreationProvider';
 import { ConversationActionsProvider } from '../../providers/ConversationActionsProvider';
 import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
@@ -176,9 +177,11 @@ export const AgentPage = () => {
     return (
         <DragAreaProvider>
             <WebSearchProvider>
-                <ModelTierProvider>
-                    <AgentPageInner />
-                </ModelTierProvider>
+                <ArtifactCreationProvider>
+                    <ModelTierProvider>
+                        <AgentPageInner />
+                    </ModelTierProvider>
+                </ArtifactCreationProvider>
             </WebSearchProvider>
         </DragAreaProvider>
     );
