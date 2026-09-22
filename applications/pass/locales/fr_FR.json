@@ -800,6 +800,9 @@
       ],
       "Rename": [
         "Renommer"
+      ],
+      "Go back": [
+        "Retour"
       ]
     },
     "Activity": {
@@ -2157,8 +2160,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2875,6 +2877,9 @@
       ],
       "Switch to another folder or create an item in this folder": [
         "Sélectionnez un autre dossier ou créez un élément dans ce dossier"
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Terminez la connexion dans la fenêtre du navigateur qui vient de s'ouvrir. ${ PASS_APP_NAME } reprendra automatiquement une fois que vous aurez terminé."
       ]
     },
     "Keyboard key": {
@@ -5244,6 +5249,9 @@
       ],
       "Your folder is empty": [
         "Votre dossier est vide"
+      ],
+      "Continue in your browser": [
+        "Continuez dans votre navigateur"
       ]
     },
     "Title_cloned_item": {
