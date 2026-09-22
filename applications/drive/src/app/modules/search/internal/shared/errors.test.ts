@@ -170,6 +170,19 @@ describe('classifyError', () => {
             const e = Object.assign(new Error('timeout'), { name: 'TimeoutError' });
             expect(classifyError(e)).toEqual({ kind: 'transient', reason: 'network' });
         });
+
+        it.each([
+            ['Chrome/Edge', 'Failed to fetch'],
+            ['Safari', 'Load failed'],
+            ['Firefox', 'NetworkError when attempting to fetch resource.'],
+        ])('native fetch failure (%s) is classified as "network"', (_browser, message) => {
+            expect(classifyError(new TypeError(message))).toEqual({ kind: 'transient', reason: 'network' });
+        });
+
+        it('an unrelated TypeError is NOT treated as a "unknown"', () => {
+            const e = new TypeError("Cannot read properties of undefined (reading 'foo')");
+            expect(classifyError(e)).toEqual({ kind: 'transient', reason: 'unknown' });
+        });
     });
 
     describe('unknown fallback', () => {
