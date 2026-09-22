@@ -21,16 +21,16 @@
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
-        "prettier": "^3.9.6",
+        "prettier": "^3.9.8",
         "typescript": "^6.0.3",
         "web-vitals": "^4.2.4"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
-        "@types/node": "^24.13.4",
-        "eslint": "^10.10.0",
-        "jest": "^30.5.1",
+        "@types/node": "^24.13.6",
+        "eslint": "^10.11.0",
+        "jest": "^30.5.2",
         "jest-fetch-mock": "^3.2.0",
         "json-schema-to-typescript": "^13.1.2",
         "rimraf": "^5.0.10",

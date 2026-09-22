@@ -68,7 +68,7 @@
         "react-router-dom": "^5.3.4",
         "recharts": "^3.10.1",
         "ttag": "^1.8.12",
-        "xstate": "^5.32.6"
+        "xstate": "^5.33.2"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
@@ -82,11 +82,11 @@
         "@types/jest": "^30.0.0",
         "@typescript/native": "npm:typescript@^7.0.2",
         "cross-env": "^10.1.0",
-        "eslint": "^10.10.0",
+        "eslint": "^10.11.0",
         "html-webpack-plugin": "^5.6.8",
-        "jest": "^30.5.1",
+        "jest": "^30.5.2",
         "jest-junit": "^16.0.0",
-        "prettier": "^3.9.6",
+        "prettier": "^3.9.8",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
         "webpack-dev-server": "^6.0.0"
     }

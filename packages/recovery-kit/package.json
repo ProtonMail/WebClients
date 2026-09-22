@@ -9,7 +9,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@formatjs/intl-segmenter": "^12.2.13",
+        "@formatjs/intl-segmenter": "^12.2.15",
         "@pdfme/common": "^6.1.12",
         "@pdfme/generator": "^6.1.12",
         "@pdfme/schemas": "^6.1.12",
@@ -19,8 +19,8 @@
         "@pdf-lib/standard-fonts": "^1.0.0",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
-        "eslint": "^10.10.0",
-        "jest": "^30.5.1",
+        "eslint": "^10.11.0",
+        "jest": "^30.5.2",
         "typescript": "^6.0.3"
     },
     "installConfig": {
