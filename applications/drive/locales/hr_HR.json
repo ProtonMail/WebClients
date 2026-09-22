@@ -251,9 +251,6 @@
       "Copy address": [
         "Kopiraj adresu"
       ],
-      "Copy alias “${ name }”": [
-        "Kopiraj pseudonim „${ name }”"
-      ],
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
@@ -274,9 +271,6 @@
       ],
       "Create a new contact group": [
         "Kreiraj novu grupu kontakata"
-      ],
-      "Create and copy alias": [
-        "Stvori i kopiraj pseudonim"
       ],
       "Create folder": [
         "Stvori mapu"
@@ -2903,9 +2897,6 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš besplatni korisnički račun za ${ MAIL_APP_NAME } dolazi s ograničenom pohranom pa ćemo uvesti samo Vašu najnoviju Gmail e-poštu."
-      ],
-      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Već ste izradili 10 pseudonima. Nabavite neograničene pseudonime i 500 GB pohrane uz ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -3166,18 +3157,6 @@
       "Address primary private key not found": [
         "Primarni privatni ključ adrese nije pronađen"
       ],
-      "Alias is not valid": [
-        "Pseudonim nije valjan"
-      ],
-      "Alias is required": [
-        "Pseudonim je obavezan"
-      ],
-      "Alias options could not be resolved": [
-        "Nije moguće razriješiti opcije pseudonima"
-      ],
-      "Aliases could not be loaded": [
-        "Nije moguće učitati pseudonime"
-      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
       ],
@@ -3192,12 +3171,6 @@
       ],
       "An error occurred": [
         "Došlo je do pogreške"
-      ],
-      "An error occurred while loading alias options": [
-        "Dogodila se pogreška prilikom učitavanja opcija pseudonima"
-      ],
-      "An error occurred while saving your alias": [
-        "Dogodila se pogreška prilikom spremanja vašeg pseudonima"
       ],
       "Authentication canceled.": [
         "Otkazana autentikacija."
@@ -3234,12 +3207,6 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Pretraga sadržaja ne može se omogućiti. Ponovno pokrenite aplikaciju ili očistite podatke."
-      ],
-      "Could not open created vault": [
-        "Nije moguće otvoriti stvoreni trezor"
-      ],
-      "Could not open updated vault": [
-        "Nije moguće otvoriti ažurirani trezor"
       ],
       "Data integrity check failed": [
         "Provjera integriteta podataka nije uspjela"
@@ -3283,9 +3250,6 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Vanjske pozivnice privremeno su onemogućene. Pokušajte ponovno kasnije"
-      ],
-      "Failed loading group members": [
-        "Neuspjelo učitavanje članova grupe"
       ],
       "Failed to change permissions settings": [
         "Promjena postavki dozvola nije uspjela"
@@ -3341,9 +3305,6 @@
       "Folder name cannot be empty.": [
         "Naziv mape ne može biti prazan."
       ],
-      "Forward address is required": [
-        "Adresa za prosljeđivanje je obavezna"
-      ],
       "Image upload failed": [
         "Neuspješno učitavanje slike"
       ],
@@ -3383,9 +3344,6 @@
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
       ],
-      "Item content cannot exceed 40KB": [
-        "Sadržaj stavke ne može prelaziti 40KB"
-      ],
       "Label name cannot be empty.": [
         "Naziv oznake ne može biti prazan."
       ],
@@ -3402,12 +3360,6 @@
       ],
       "Missing signature": [
         "Nedostaje potpis"
-      ],
-      "Name is required": [
-        "Ime je obavezno"
-      ],
-      "Network error": [
-        "Pogreška mreže"
       ],
       "No calendars found to import": [
         "Nisu pronađeni kalendari za uvoz"
@@ -3897,9 +3849,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nismo uspjeli učitati ovu stranicu. Osvježite stranicu ili provjerite svoju internetsku vezu."
-      ],
-      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Kada je omogućena dodatna lozinka, upravljanje pseudonimima može se obavljati samo u aplikaciji ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -6294,9 +6243,6 @@
       "Address": [
         "Adresa"
       ],
-      "Alias title": [
-        "Naslov pseudonima"
-      ],
       "All": [
         "Sve"
       ],
@@ -6465,9 +6411,6 @@
       "Duplicate found": [
         "Pronađen je duplikat"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "npr., Amazon, eBay, Etsy"
-      ],
       "Editor": [
         "Urednik"
       ],
@@ -6501,15 +6444,6 @@
       "Encrypt emails": [
         "Šifriraj e-poštu"
       ],
-      "Exact host matching": [
-        "Podudaranje točnog poslužitelja"
-      ],
-      "Exact URL matching": [
-        "Podudaranje točnog URL-a"
-      ],
-      "Expired": [
-        "Isteklo"
-      ],
       "Expires": [
         "Ističe"
       ],
@@ -6542,9 +6476,6 @@
       ],
       "Folder name": [
         "Naziv mape"
-      ],
-      "Forwards to": [
-        "Prosljeđuje se na"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -6648,9 +6579,6 @@
       "Never": [
         "Nikad"
       ],
-      "Never fill on this exact URL": [
-        "Nikada nemoj ispuniti na ovom točnom URL-u"
-      ],
       "New password": [
         "Nova lozinka"
       ],
@@ -6662,9 +6590,6 @@
       ],
       "Not selected": [
         "Nije odabrano"
-      ],
-      "Note": [
-        "Bilješka"
       ],
       "Notification": [
         "Obavijest"
@@ -6680,9 +6605,6 @@
       ],
       "Other": [
         "Ostalo"
-      ],
-      "Parent domain and subdomains (default)": [
-        "Nadređena domena i poddomene (zadano)"
       ],
       "Password": [
         "Lozinka"
@@ -6717,23 +6639,14 @@
       "Postal code": [
         "Poštanski broj"
       ],
-      "Premium domain": [
-        "Premium domena"
-      ],
       "Proration": [
         "Proration"
-      ],
-      "Public domain": [
-        "Javna domena"
       ],
       "Public keys": [
         "Javni ključevi"
       ],
       "Region": [
         "Regija"
-      ],
-      "Regular expression": [
-        "Regularni izraz"
       ],
       "Replace existing folder or file": [
         "Zamijeni postojeću mapu ili datoteku"
@@ -6782,9 +6695,6 @@
       ],
       "Start date": [
         "Početni datum"
-      ],
-      "Starts with": [
-        "Počinje s"
       ],
       "State": [
         "Država"
@@ -6837,9 +6747,6 @@
       "Uploaded by": [
         "Prenio"
       ],
-      "URL wildcard pattern": [
-        "Uzorak URL-a sa zamjenskim znakovima"
-      ],
       "Username": [
         "Korisničko ime"
       ],
@@ -6866,12 +6773,6 @@
       ],
       "What happened?": [
         "Što se dogodilo?"
-      ],
-      "Your alias": [
-        "Vaš pseudonim"
-      ],
-      "Your domain": [
-        "Tvoja domena"
       ],
       "Your IP": [
         "Vaš IP"
@@ -7237,24 +7138,6 @@
       ]
     },
     "Message": {
-      "'Starts with' matching rule": [
-        "Pravilo podudaranja 'Počinje s'"
-      ],
-      "Exact (sub) domain matching rule": [
-        "Pravilo podudaranja točne (pod)domene"
-      ],
-      "Exact URL matching rule": [
-        "Pravilo podudaranja točnog URL-a"
-      ],
-      "Never fill with this exact URL": [
-        "Nikada nemoj ispuniti s ovim točnim URL-om"
-      ],
-      "Regular expression rule": [
-        "Pravilo regularnog izraza"
-      ],
-      "Wildcard pattern matching rule": [
-        "Pravilo podudaranja s uzorkom zamjenskih znakova"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaš besplatni probni period je završio. ${ nonAutoRenewalAction }"
       ],
@@ -8806,9 +8689,6 @@
       "Cancel anytime before ${ cancelDate }.": [
         "Poništite bilo kada prije ${ cancelDate }."
       ],
-      "Cancel anytime before then.": [
-        "Poništite bilo kada prije tog trenutka."
-      ],
       "contact our support team": [
         "kontaktirajte naš tim za podršku"
       ],
@@ -8830,9 +8710,6 @@
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Još uvijek možete poništiti unutar 30 dana i dobiti povrat sredstava proporcionalno vremenu korištenja."
       ],
-      "You can still cancel within 30 days and get a prorated refund.": [
-        "I dalje možete otkazati unutar 30 dana i dobiti razmjerni povrat novca."
-      ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Možete koristiti ${ planTitle } dok probna verzija ne završi i nećete biti terećeni."
       ],
@@ -8841,9 +8718,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaša puna pretplata na ${ planTitle } započinje ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Moći ćete besplatno koristiti ${ planTitle } dok ne završi probni period."
       ]
     },
     "Option": {
@@ -9533,78 +9407,6 @@
         "Yahoo"
       ]
     },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Ugrabite ponudu"
-      ],
-      "Summer Sale": [
-        "Ljetna rasprodaja"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mjesec"
-      ],
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "2 TB data storage": [
-        "2 TB pohrane podataka"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB pohrane: 40x više od vašeg trenutnog plana"
-      ],
-      "3 TB data storage": [
-        "3 TB pohrane podataka"
-      ],
-      "500 GB storage": [
-        "500 GB prostora za pohranu"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Sve premium značajke za ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Popusti se temelje na standardnim mjesečnim cijenama. Vaša će se pretplata obnoviti po standardnoj godišnjoj cijeni nakon završetka ciklusa naplate."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Potpuni pristup usluzi ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Pojedinačni korisnički računi za 6 korisnika"
-      ],
-      "Individual accounts for you and a partner": [
-        "Pojedinačni korisnički računi za vas i partnera"
-      ],
-      "Online document and spreadsheet editor": [
-        "Uređivač dokumenata i proračunskih tablica na mreži"
-      ],
-      "Recover previous file versions": [
-        "Oporavite prethodne verzije datoteka"
-      ],
-      "Stronger protection against cyber threats": [
-        "Snažnija zaštita od kibernetičkih prijetnji"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Pređite na naš godišnji plan i uštedite ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Neograničen broj mapa, oznaka i filtara"
-      ],
-      "Use your own email domain": [
-        "Upotrijebite vlastitu domenu e-pošte"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "na 12 mjeseci"
-      ],
-      "SUMMER SALE": [
-        "LJETNA RASPRODAJA"
-      ]
-    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } po preporuci"
@@ -9694,49 +9496,6 @@
     "Section": {
       "Org setup and account security": [
         "Postavljanje organizacije i sigurnost korisničkog računa"
-      ]
-    },
-    "Security Center": {
-      "All aliases": [
-        "Svi pseudonimi"
-      ],
-      "Create alias": [
-        "Stvori pseudonim"
-      ],
-      "Create an alias": [
-        "Stvori pseudonim"
-      ],
-      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generirajte pseudonime u hodu i jednostavno upravljajte svojim pseudonimima i lozinkama."
-      ],
-      "Hide-my-email aliases": [
-        "Hide-my-email pseudonimi"
-      ],
-      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email pseudonimi omogućuju Vam registraciju na mrežnim servisima bez dijeljenja Vaše adrese e-pošte. ${ learnMoreLink }"
-      ],
-      "New alias": [
-        "Novi pseudonim"
-      ],
-      "Open ${ PASS_APP_NAME }": [
-        "Otvori ${ PASS_APP_NAME }"
-      ],
-      "Protect your online identity": [
-        "Zaštitite svoj mrežni identitet"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Isprobajte ${ PASS_APP_NAME }"
-      ],
-      "Used on Amazon for shopping, etc.": [
-        "Koristi se na Amazonu za kupnju itd."
-      ],
-      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
-        "Kada vas zatraže adresu e-pošte, dajte ovaj pseudonim umjesto toga. Pseudonime pruža ${ passLink }."
-      ]
-    },
-    "Security Center (link to Pass App)": {
-      "(will open ${ PASS_APP_NAME })": [
-        "(otvorit će ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -10798,12 +10557,6 @@
       "Address copied to clipboard": [
         "Adresa je kopirana u međuspremnik"
       ],
-      "Alias copied to clipboard": [
-        "Pseudonim kopiran u međuspremnik"
-      ],
-      "Alias saved and copied": [
-        "Pseudonim je spremljen i kopiran"
-      ],
       "Billing details updated": [
         "Pojedinosti o naplati ažurirane"
       ],
@@ -10843,9 +10596,6 @@
       ],
       "Invitation rejected": [
         "Pozivnica je odbijena"
-      ],
-      "Last modified aliases stored in your oldest vault": [
-        "Zadnji modificirani pseudonimi spremljeni u vašem najstarijem trezoru"
       ],
       "Payment method added": [
         "Način plaćanja dodan"
@@ -11482,9 +11232,6 @@
       ],
       "Name": [
         "Naziv"
-      ],
-      "Need more aliases?": [
-        "Trebate više pseudonima?"
       ],
       "Need to share more files with edit access?": [
         "Trebate podijeliti više datoteka s pristupom za uređivanje?"
@@ -12179,9 +11926,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } će prenijeti što više podataka, počevši od vaših najnovijih poruka."
-      ],
-      "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "Pravilo ${ modeLabelStong } pruža moćnu kontrolu, ali jedna pogreška može uzrokovati da automatsko ispunjavanje podudara i ispunjava podatke na lažnim web stranicama ili stranicama za krađu identiteta."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Jeste li sigurni da želite trajno izbrisati ${ count } kontakt?",
