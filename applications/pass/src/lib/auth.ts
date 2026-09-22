@@ -330,7 +330,16 @@ export const createAuthService = ({
             history.replace('/');
         },
 
-        onForkConsumeStart: () => auth.config.onLoginStart?.(),
+        onForkConsumeStart: () => {
+            /** Clear any previously-persisted session that survived the renderer
+             * reload via secureSessionStorage. Otherwise the api wrapper auto-
+             * injects the prior account's UID, overriding the explicit UID set
+             * by consumeFork and breaking the new fork's /auth/refresh.
+             * Scoped to the non-reauth path: reauth must preserve the live
+             * authStore so SSO / two-password flows can resume against it. */
+            authStore.clear();
+            return auth.config.onLoginStart?.();
+        },
 
         onForkConsumeComplete: async (session, { state }) => {
             const { offlineConfig, offlineKD, offlineVerifier, UserID, LocalID } = session;
