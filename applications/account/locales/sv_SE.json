@@ -1475,6 +1475,9 @@
       "No, thanks": [
         "Nej tack"
       ],
+      "Not now": [
+        "Inte nu"
+      ],
       "OK": [
         "OK"
       ],
@@ -14368,6 +14371,9 @@
       "Cancel / close": [
         "Avbryt/stäng"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Stäng ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Stäng utkast"
       ],
@@ -19261,11 +19267,14 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besök vårt ${ helpCenterLink } eller ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Lägg till en betalningsmetod** för kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Avbryt när som helst före ${ cancelDate }."
-      ],
-      "Cancel anytime before then.": [
-        "Avbryt när som helst innan dess."
       ],
       "contact our support team": [
         "kontakta vårt supportteam"
@@ -19279,6 +19288,9 @@
       "help center": [
         "hjälpcenter"
       ],
+      "If you continue after your trial,": [
+        "Om du fortsätter efter din provperiod,"
+      ],
       "If you need help,": [
         "Om du behöver hjälp,"
       ],
@@ -19286,9 +19298,6 @@
         "När din fullständiga prenumeration startar …"
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
-      ],
-      "You can still cancel within 30 days and get a prorated refund.": [
         "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
@@ -19299,9 +19308,6 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
-      ],
-      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
       ]
     },
     "Option": {
@@ -20586,6 +20592,9 @@
       ],
       "Bank transfer - ${ iban }": [
         "Banköverföring - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort slutar på ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -21093,78 +21102,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ],
-      "Summer Sale": [
-        "Sommarrea"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/månad"
-      ],
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "2 TB data storage": [
-        "2 TB lagringsutrymme"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
-      ],
-      "3 TB data storage": [
-        "3 TB lagringsutrymme"
-      ],
-      "500 GB storage": [
-        "500 GB lagringsutrymme"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Full åtkomst till ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuella konton för 6 användare"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuella konton för dig och en partner"
-      ],
-      "Online document and spreadsheet editor": [
-        "Dokument- och kalkylbladsredigerare online"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Starkare skydd mot cyberhot"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Obegränsade mappar, etiketter och filter"
-      ],
-      "Use your own email domain": [
-        "Använd din egen e-postdomän"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "för 12 månader"
-      ],
-      "SUMMER SALE": [
-        "SOMMARREA"
       ]
     },
     "q3campaign2026: Action": {
