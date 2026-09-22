@@ -295,7 +295,7 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
                   ) : (
                     <Input
                       placeholder={s('Enter value')}
-                      value={fromValue}
+                      value={fromValue ?? ''}
                       onChange={(e) => form.setValue(`condition.values.${0}.userEnteredValue`, e.target.value)}
                     />
                   )
@@ -304,7 +304,7 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
                 {showToValue ? (
                   <Input
                     placeholder={s('Enter value')}
-                    value={toValue}
+                    value={toValue ?? ''}
                     onChange={(event) => form.setValue(`condition.values.${1}.userEnteredValue`, event.target.value)}
                   />
                 ) : null}
