@@ -6,7 +6,7 @@ export interface CustomCollaborationContextType extends CollaborationContextType
   undoManager: UndoManager | null
 }
 
-export const CustomCollaborationContext = createContext<CustomCollaborationContextType>({
+const CustomCollaborationContext = createContext<CustomCollaborationContextType>({
   clientID: 0,
   color: '',
   isCollabActive: false,

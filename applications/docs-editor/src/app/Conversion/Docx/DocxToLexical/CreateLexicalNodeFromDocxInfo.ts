@@ -1,17 +1,17 @@
 import { $createLinkNode } from '@lexical/link'
-import { $createListNode, $createListItemNode } from '@lexical/list'
+import { $createListItemNode, $createListNode } from '@lexical/list'
 import { $createHeadingNode } from '@lexical/rich-text'
-import { $createTableCellNode, TableCellHeaderStates, $createTableRowNode, $createTableNode } from '@lexical/table'
+import { $createTableCellNode, $createTableNode, $createTableRowNode, TableCellHeaderStates } from '@lexical/table'
 import { type LexicalNode, $createParagraphNode, $createTextNode } from 'lexical'
-import { $createImageNode } from '../../../Plugins/Image/ImageNode'
 import { isAllowedImageSrc } from '../../../Conversion/ImageSrcUtils'
+import { $createImageNode } from '../../../Plugins/Image/ImageNode'
 import type { DocxToLexicalInfo } from './Parsing/DocxToLexicalInfo'
 
 export function mapDocxChildren(children: DocxToLexicalInfo[]): LexicalNode[] {
   return children.map(CreateLexicalNodeFromDocxInfo).filter((child): child is LexicalNode => child !== null)
 }
 
-export function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalNode | null {
+function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalNode | null {
   if (node.type === 'table-cell') {
     const cell = $createTableCellNode(TableCellHeaderStates.NO_STATUS)
     if (node.children) {

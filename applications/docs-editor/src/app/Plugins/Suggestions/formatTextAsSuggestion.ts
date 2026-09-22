@@ -1,4 +1,6 @@
 import { $wrapNodeInElement } from '@lexical/utils'
+import { GenerateUUID } from '@proton/docs-shared'
+import type { Logger } from '@proton/shared/lib/logs'
 import type { TextFormatType, TextNode } from 'lexical'
 import {
   $createRangeSelection,
@@ -8,13 +10,11 @@ import {
   $isTokenOrSegmented,
   $setSelection,
 } from 'lexical'
-import { GenerateUUID } from '@proton/docs-shared'
-import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
+import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import type { PropertyChangeSuggestionProperties } from './Types'
 import { $unwrapSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
-import type { Logger } from '@proton/shared/lib/logs'
 
-export function $setTextNodeFormatAsSuggestion(
+function $setTextNodeFormatAsSuggestion(
   node: TextNode,
   format: number,
   suggestionID: string,

@@ -1,5 +1,5 @@
 import { DocState } from '@proton/docs-shared/lib/Doc/DocState'
-import { Array as YArray, Doc, Map as YMap, encodeStateAsUpdate } from 'yjs'
+import { Doc, Array as YArray, Map as YMap, encodeStateAsUpdate } from 'yjs'
 
 const docStateLogger = {
   debug: console.debug.bind(console),
@@ -13,7 +13,7 @@ const docStateLogger = {
 }
 
 /** A persisted-format fixture, applied only after the editor installs its observers. */
-export function createFixtureUpdate() {
+function createFixtureUpdate() {
   const fixture = new Doc()
   fixture.getArray('sheets').push([{ sheetId: 1, title: 'Standalone fixture', rowCount: 100, columnCount: 26 }])
   const rows = new YArray()
@@ -62,8 +62,7 @@ export function createStandaloneSession(onReady: () => void, onError: (error: un
   // Outbound transport terminates locally; no websocket or server is created.
   const docState = new DocState(
     {
-      docStateRequestsPropagationOfUpdate: (message) =>
-        docStateLogger.debug('Standalone update', message.type.wrapper),
+      docStateRequestsPropagationOfUpdate: (message) => docStateLogger.debug('Standalone update', message.type.wrapper),
       handleAwarenessStateUpdate: (states) => docStateLogger.debug('Standalone awareness', states.length),
       handleErrorWhenReceivingDocumentUpdate: onError,
       handleReceivedEverythingFromRTS: onReady,

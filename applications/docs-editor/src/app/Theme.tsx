@@ -2,7 +2,7 @@ import { getThemeStyle } from '@proton/components/containers/themes/ThemeProvide
 import { ThemeTypes } from '@proton/shared/lib/themes/constants'
 import { useEditorTheme } from './Theme/EditorThemeProvider'
 
-export const THEME_ID = 'theme-root'
+const THEME_ID = 'theme-root'
 
 const defaultThemeStyles = getThemeStyle()
 const darkThemeStyles = getThemeStyle(ThemeTypes.Carbon)

@@ -1,9 +1,7 @@
-import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
-import { c } from 'ttag'
-import clsx from '@proton/utils/clsx'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
+import clsx from '@proton/utils/clsx'
 import type { BaseSelection, LexicalCommand, LexicalEditor, NodeKey } from 'lexical'
 import {
   $getNodeByKey,
@@ -21,18 +19,20 @@ import {
   SELECTION_CHANGE_COMMAND,
   createCommand,
 } from 'lexical'
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
+import { c } from 'ttag'
 
-import { getRemoteImageUrl, isAllowedImageSrc } from '../../Conversion/ImageSrcUtils'
-import { useDocsDependencies } from '../../Containers/Docs/DocsDependenciesProvider'
-import { useCombinedRefs } from '@proton/hooks'
-import ImageResizer from './ImageResizer'
-import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
+import { useCombinedRefs } from '@proton/hooks'
+import { useDocsDependencies } from '../../Containers/Docs/DocsDependenciesProvider'
+import { getRemoteImageUrl, isAllowedImageSrc } from '../../Conversion/ImageSrcUtils'
+import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 import { SET_IMAGE_SIZE_COMMAND } from './ImageCommands'
+import ImageResizer from './ImageResizer'
 
 const imageCache = new Set()
 
-export const RIGHT_CLICK_IMAGE_COMMAND: LexicalCommand<MouseEvent> = createCommand('RIGHT_CLICK_IMAGE_COMMAND')
+const RIGHT_CLICK_IMAGE_COMMAND: LexicalCommand<MouseEvent> = createCommand('RIGHT_CLICK_IMAGE_COMMAND')
 
 function ensureImageLoaded(src: string) {
   if (!isAllowedImageSrc(src)) {
