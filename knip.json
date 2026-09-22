@@ -205,8 +205,7 @@
         },
         "applications/verify": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}", "src/app/Verify.scss"],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@proton/styles"]
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/vpn-settings": {
             "entry": ["src/app/index.{ts,tsx}", "src/pages/**/*.{ts,tsx}", "webpack.config.{js,ts}"],

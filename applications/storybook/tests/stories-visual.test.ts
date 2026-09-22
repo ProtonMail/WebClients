@@ -13,6 +13,7 @@ test.describe('visual tests', () => {
 
         test(testName, async ({ page }) => {
             await page.clock.setFixedTime(fixedDateTime);
+            await page.emulateMedia({ reducedMotion: 'reduce' });
             await page.goto(`/iframe.html?id=${id}`);
             await page.waitForLoadState('load');
             await page.addStyleTag({
@@ -30,6 +31,15 @@ test.describe('visual tests', () => {
 
             // Wait for SB to fully render the components
             await page.waitForTimeout(300);
+
+            await page.waitForFunction(() => {
+                const canvases = [...document.querySelectorAll('canvas')];
+
+                return (
+                    canvases.length === 0 ||
+                    canvases.every((canvas) => canvas.getAttribute('data-chart-rendered') === 'true')
+                );
+            });
 
             await expect(
                 page.locator('.sb-errordisplay'),
