@@ -160,6 +160,9 @@
       "Close navigation": [
         "Zavřít menu"
       ],
+      "Collapse": [
+        "Sbalit"
+      ],
       "Confirm": [
         "Potvrdit"
       ],
@@ -238,6 +241,9 @@
       "Create contact": [
         "Vytvořit kontakt"
       ],
+      "Create folder": [
+        "Vytvořit složku"
+      ],
       "Create identity": [
         "Vytvořit identitu"
       ],
@@ -246,6 +252,9 @@
       ],
       "Create login": [
         "Vytvořit přihlášení"
+      ],
+      "Create new folder": [
+        "Vytvořit novou složku"
       ],
       "Create new items": [
         "Vytvořit nové položky"
@@ -348,6 +357,9 @@
       ],
       "Exclude from monitoring": [
         "Vyloučit ze sledování"
+      ],
+      "Expand": [
+        "Rozbalit"
       ],
       "Export": [
         "Exportovat"
@@ -493,8 +505,8 @@
       "Move all items": [
         "Přesunout všechny položky"
       ],
-      "Move to another vault": [
-        "Přesunout do jiného trezoru"
+      "Move to": [
+        "Přesunout do"
       ],
       "Move to trash": [
         "Přesunout do koše"
@@ -591,6 +603,9 @@
       ],
       "Remove member": [
         "Odebrat člena"
+      ],
+      "Rename": [
+        "Přejmenovat"
       ],
       "Request a feature": [
         "Požádejte o funkci"
@@ -1137,6 +1152,9 @@
       ],
       "Failed to create domain": [
         "Vytvoření domény selhalo"
+      ],
+      "Failed to create folder": [
+        "Vytvoření složky selhalo"
       ],
       "Failed to create new mailbox": [
         "Vytvoření nové e-mailové schránky selhalo"
@@ -1880,9 +1898,6 @@
       "Created item": [
         "Vytvořená položka"
       ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV nabízí pohodlný formát pro zobrazení údajů. Vzhledem k jeho jednoduchosti však některé údaje nebudou zahrnuty (vlastní pole, přístupové klíče...). Pro úplný export doporučujeme použít jiný formát."
-      ],
       "Current version": [
         "Současná verze"
       ],
@@ -2223,10 +2238,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -3456,6 +3468,9 @@
       "Floor, apartment, building": [
         "Podlaží, byt, budova"
       ],
+      "Folder": [
+        "Složka"
+      ],
       "For a one-off sharing": [
         "Pro jednorázové sdílení"
       ],
@@ -4605,9 +4620,6 @@
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a uveďte jakékoli chybové zprávy"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Znovu napište \"${ vaultName }\" pro potvrzení smazání"
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Hledat ${ pluralItemType } v ${ vaultName }"
       ],
@@ -4969,9 +4981,6 @@
       "Delete this item?": [
         "Smazat tuto položku?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Smazat trezor \"${ vaultName }\"?"
-      ],
       "Did you know?": [
         "Věděli jste?"
       ],
@@ -5016,6 +5025,9 @@
       ],
       "Excluded items": [
         "Vyloučené položky"
+      ],
+      "Folder options": [
+        "Nastavení složky"
       ],
       "Get Started": [
         "Začínáme"
@@ -5095,12 +5107,6 @@
       "Modified": [
         "Upraveno"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Přesunout ${ count } položku do ${ vaultName }",
-        "Přesunout ${ count } položky do ${ vaultName }",
-        "Přesunout ${ count } položek do ${ vaultName }",
-        "Přesunout ${ count } položek do ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Přesunout do koše ${ trashedItemsCount } položku?",
         "Přesunout do koše ${ trashedItemsCount } položky?",
@@ -5109,9 +5115,6 @@
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Přesunout všechny položky do \"${ vaultName }\"?"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "Přesunout položku do \"${ vaultName }\""
       ],
       "MX record": [
         "MX záznam"
@@ -5675,9 +5678,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Nelze se přihlásit do ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Trezor \"${ vaultName }\" a všechny jeho položky budou trvale smazány. Tuto akci nelze vrátit zpět."
       ],
       "Vault name is required": [
         "Název trezoru je povinný"
