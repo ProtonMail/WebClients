@@ -11,6 +11,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { UpsellRef } from '../../../constants';
+import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
 import { useItemDrop } from '../../../hooks/useItemDrag';
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { isMemberLimitReached } from '../../../lib/access/access.predicates';
@@ -19,6 +20,7 @@ import { isWritableVault } from '../../../lib/vaults/vault.predicates';
 import type { VaultShareItem } from '../../../store/reducers';
 import { selectAccess, selectFolder, selectPassPlan, selectTopLevelFolders } from '../../../store/selectors';
 import type { UniqueItem } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
 import { UserPassPlan } from '../../../types/api/plan';
 import { pipe } from '../../../utils/fp/pipe';
 import { truthy } from '../../../utils/fp/predicates';
@@ -64,6 +66,7 @@ export const VaultMenuItem = memo(
     ({ canDelete, canInvite, canLeave, canManage, canMove, count, label, selected, vault, onAction = noop }: Props) => {
         const [isExpanded, setIsExpanded] = useState(false);
 
+        const foldersEnabled = useFeatureFlag(PassFeature.PassFolder);
         const vaultActions = useVaultActions();
         const folderCreate = useFolderCreate(vault.shareId, null);
         const inviteActions = useInviteActions();
@@ -73,7 +76,7 @@ export const VaultMenuItem = memo(
         const plan = useSelector(selectPassPlan);
         const access = useSelector(selectAccess(vault.shareId));
         const topLevelFolders = useMemoSelector(selectTopLevelFolders, [vault.shareId]);
-        const showFolders = topLevelFolders.length > 0;
+        const showFolders = foldersEnabled && topLevelFolders.length > 0;
 
         const { filters } = useNavigationFilters();
         const hasSelectedFolder = Boolean(useSelector(selectFolder(vault.shareId, filters.selectedFolderId)));
