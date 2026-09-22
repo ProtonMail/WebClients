@@ -1083,6 +1083,9 @@
       "I like this response": [
         "Cette réponse me convient."
       ],
+      "Keep going": [
+        "Continuer"
+      ],
       "Let ${ LUMO_SHORT_APP_NAME } out": [
         "Libérer ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -1151,6 +1154,9 @@
       ],
       "Stop generating": [
         "Arrêter la génération"
+      ],
+      "Stop here": [
+        "Arrêter ici"
       ],
       "Submit": [
         "Envoyer"
@@ -1513,6 +1519,12 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not export this artifact as PDF.": [
+        "Cet artefact n'a pas pu être exporté en PDF."
+      ],
+      "Could not export this artifact as PPTX.": [
+        "Cet artefact n'a pas pu être exporté en PPTX."
+      ],
       "Could not generate a workflow. Try again.": [
         "Impossible de générer un workflow. Réessayez."
       ],
@@ -1614,6 +1626,9 @@
       ],
       "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
         "Pour l'instant, vos conversations ne peuvent pas être enregistrées. Tout ce que vous écrivez sera perdu si vous actualisez la page."
+      ],
+      "Your existing ${ LUMO_SHORT_APP_NAME } data could not be decrypted with your available account keys. Recover your account keys, then retry.": [
+        "Vos données ${ LUMO_SHORT_APP_NAME } existantes n'ont pas pu être déchiffrées avec vos clés de compte disponibles. Récupérez les clés de votre compte, puis réessayez."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -2092,11 +2107,32 @@
       "Partial content": [
         "Contenu partiel"
       ],
+      "PDF": [
+        "PDF"
+      ],
+      "PDF downloaded.": [
+        "PDF téléchargé."
+      ],
+      "PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.": [
+        "L'exportation du PDF n'a pas abouti, l'aperçu d'impression a été ouvert à la place. Choisissez « Sauvegarder en PDF » dans la boite de dialogue d'impression."
+      ],
       "Please share what you expected": [
         "Veuillez partager ce à quoi vous vous attendiez."
       ],
       "Please wait for files to finish processing": [
         "Veuillez patienter pendant le traitement des fichiers."
+      ],
+      "PPTX": [
+        "PPTX"
+      ],
+      "PPTX downloaded.": [
+        "PPTX téléchargé."
+      ],
+      "Preparing ${ formatLabel }…": [
+        "En cours de préparation ${ formatLabel }…"
+      ],
+      "Preparing ${ formatLabel }… (${ current } of ${ total })": [
+        "En cours de préparation ${ formatLabel }… (${ current } sur ${ total })"
       ],
       "Private video calls for the conversations that matter.": [
         "Appels vidéo privés pour les conversations qui comptent."
@@ -2218,6 +2254,9 @@
       "This folder is empty": [
         "Ce dossier est vide"
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
+      ],
       "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
         "Pour commencer, veuillez ouvrir ${ DRIVE_APP_NAME } pour configurer votre espace de stockage sécurisé."
       ],
@@ -2247,6 +2286,12 @@
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Importation de ${ uploadProgress.fileName }"
+      ],
+      "Uploading to ${ DRIVE_SHORT_APP_NAME }…": [
+        "En cours d'importation dans ${ DRIVE_SHORT_APP_NAME }…"
+      ],
+      "Uploading to ${ DRIVE_SHORT_APP_NAME }… ${ progressPercent }%": [
+        "Importation vers ${ DRIVE_SHORT_APP_NAME }… ${ progressPercent } %"
       ],
       "used": [
         "utilisée"
@@ -2646,6 +2691,14 @@
         "Personnalisation"
       ]
     },
+    "collider_2025: Spotlight": {
+      "Create artifacts with ${ LUMO_SHORT_APP_NAME }": [
+        "Créez des artefacts avec ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Turn ideas into documents, code, and more. Open Tools to get started.": [
+        "Transformer les idées en documents, code, et plus. Ouvrir Outils pour commencer."
+      ]
+    },
     "collider_2025: Status": {
       "Active": [
         "Actif"
@@ -2927,6 +2980,9 @@
       ],
       "For Business": [
         "Pour les entreprises"
+      ],
+      "New": [
+        "Nouveau"
       ]
     },
     "collider_2025: Trait": {
@@ -3257,6 +3313,24 @@
       "Download image": [
         "Télécharger l'image"
       ],
+      "Download PDF": [
+        "Télécharger PDF"
+      ],
+      "Download plain text": [
+        "Télécharger le texte brut"
+      ],
+      "Download PPTX": [
+        "Télécharger PPTX"
+      ],
+      "Download source (HTML)": [
+        "Télécharger la source (HTML)"
+      ],
+      "Download source (Markdown)": [
+        "Télécharger la source (Markdown)"
+      ],
+      "Download source file": [
+        "Télécharger le fichier source"
+      ],
       "Edit": [
         "Modifier"
       ],
@@ -3335,6 +3409,15 @@
       "Open conversation": [
         "Ouvrir la conversation"
       ],
+      "PDF": [
+        "PDF"
+      ],
+      "Plain text (.txt)": [
+        "Texte brut (.txt)"
+      ],
+      "PowerPoint (.pptx)": [
+        "PowerPoint (.pptx)"
+      ],
       "Preview": [
         "Aperçu"
       ],
@@ -3403,6 +3486,9 @@
       ],
       "Show sidebar": [
         "Afficher la barre latérale"
+      ],
+      "Source (Markdown)": [
+        "Source (Markdown)"
       ],
       "Start a chat": [
         "Démarrer un chat"
@@ -3475,6 +3561,20 @@
       ],
       "Writing Assistant": [
         "Assistant d'écriture"
+      ]
+    },
+    "collider_2025:Artifact placeholder": {
+      "Create a 5-slide deck on password managers with a bar chart": [
+        "Créer une présentation en 5 slides sur les gestionnaires de mots de passe en incluant un graphique à barres"
+      ],
+      "Create a self-contained HTML pomodoro timer": [
+        "Créer un minuteur pomodoro autonome en HTML"
+      ],
+      "Write a professional email declining a meeting": [
+        "Écrire un message professionnel déclinant une réunion"
+      ],
+      "Write a Python script to dedupe a CSV by email": [
+        "Écrire un script en Python pour dédupliquer un CSV par message"
       ]
     },
     "collider_2025:Badge": {
@@ -3704,11 +3804,17 @@
       "All messages and chat history": [
         "Tous les messages et l'historique des discussions"
       ],
+      "Almost ready…": [
+        "Presque prêt…"
+      ],
       "Any images generated in these conversations will also be deleted.": [
         "Les images générées dans ces conversations seront également supprimées."
       ],
       "Any images generated in this conversation will also be deleted.": [
         "Les images générées dans cette conversation seront également supprimées."
+      ],
+      "Applying your changes…": [
+        "Application de vos modifications…"
       ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Voulez-vous vraiment supprimer « ${ project.name } » ? Cette action est irréversible."
@@ -3746,6 +3852,12 @@
       "Create visuals from a prompt, edit photos, analyze charts, or turn rough sketches into polished graphics.": [
         "Créez des visuels à partir d'un prompt, modifier des photos, analysez des graphiques ou transformez des croquis rudimentaires en graphismes aboutis."
       ],
+      "Creating artifact": [
+        "Artefact en cours de création"
+      ],
+      "Creating artifact…": [
+        "Artefact en cours de création…"
+      ],
       "Current chat:": [
         "Chat en cours :"
       ],
@@ -3757,6 +3869,9 @@
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Découvrez ce que l'IA des géants de la tech pourrait déduire de votre historique de conversations — et obtenez un score de confidentialité que vous pouvez partager."
+      ],
+      "Drafting content…": [
+        "Contenu en cours de création…"
       ],
       "Drive files are not available for guest users": [
         "Les fichiers Drive ne sont pas disponibles pour les utilisateurs invités."
@@ -3812,6 +3927,12 @@
       "PASTED": [
         "COLLÉ"
       ],
+      "Preparing your side panel…": [
+        "Panneau latéral en cours de préparation…"
+      ],
+      "Preparing…": [
+        "Préparation en cours…"
+      ],
       "Processing file...": [
         "Traitement du fichier..."
       ],
@@ -3827,11 +3948,14 @@
       "red flags": [
         "drapeaux rouges"
       ],
+      "Revising your artifact…": [
+        "Révision de votre artefact…"
+      ],
+      "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
+        "Enregistrement sous ${ formatLabel }. Parcourez le dossier ${ DRIVE_SHORT_APP_NAME } que vous souhaitez utiliser, puis cliquez « Sauvegarder ici »."
+      ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Découvrez ce que l'IA des géants du numérique sait sur vous. Réalisé avec ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Slides": [
-        "Diapositives"
       ],
       "Something went wrong analysing this export. Please try again.": [
         "Une erreur est survenue lors de l'analyse de cette exportation. Veuillez réessayer."
@@ -3856,6 +3980,9 @@
       ],
       "Type @filename to ask questions about a specific file": [
         "Tapez @fichier pour poser des questions sur un fichier spécifique"
+      ],
+      "Updating content…": [
+        "Mise à jour du contenu…"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Passez à ${ LUMO_SHORT_APP_NAME } Plus pour créer un nombre illimité de ${ LUMO_SHORT_APP_NAME }s personnalisés, déverrouiller des modèles d'IA avancés, et plus encore."
@@ -4322,8 +4449,14 @@
       "Created an image": [
         "Créé une image"
       ],
+      "Created artifact": [
+        "Artefact créé"
+      ],
       "Creating an image": [
         "Créer une image"
+      ],
+      "Creating artifact": [
+        "Artefact en cours de création"
       ],
       "Dividend Yield": [
         "Rendement des dividendes"
@@ -4414,6 +4547,12 @@
       ],
       "Performance comparison": [
         "Comparaison des performances"
+      ],
+      "Prepared your side panel": [
+        "Votre panneau latéral est prêt"
+      ],
+      "Preparing your side panel": [
+        "Panneau latéral en cours de préparation"
       ],
       "Price": [
         "Prix"
@@ -8675,6 +8814,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " consultez notre ${ helpCenterLink } ou ${ contactSupportLink }."
       ],
+      "Add a payment method": [
+        "Ajouter un moyen de paiement"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Annulez à tout moment avant le ${ cancelDate }."
       ],
@@ -8690,11 +8832,20 @@
       "help center": [
         "Aide & Support"
       ],
+      "If you continue after your trial,": [
+        "Si vous poursuivez après votre période d'essai,"
+      ],
       "If you need help,": [
         "Si vous avez besoin d'aide,"
       ],
       "Once your full subscription starts...": [
         "Une fois que votre abonnement complet commence..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "Pour continuer d'utiliser toutes les fonctionnalités après la fin de votre période d'essai."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Vous pouvez toujours annuler dans les 30 jours et obtenir un remboursement proportionnel."
@@ -9268,78 +9419,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "q2campaign2026: Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "Summer Sale": [
-        "Offre estivale"
-      ]
-    },
-    "q2campaign2026: Info": {
-      "/month": [
-        "/mois"
-      ],
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "2 TB data storage": [
-        "2 To d'espace de stockage de données"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 Go d'espace de stockage : 40x votre abonnement actuel"
-      ],
-      "3 TB data storage": [
-        "3 To d'espace de stockage de données"
-      ],
-      "500 GB storage": [
-        "500 Go d'espace de stockage"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
-      ],
-      "Full access to ${ VPN_APP_NAME }": [
-        "Accès complet à ${ VPN_APP_NAME }"
-      ],
-      "Individual accounts for 6 users": [
-        "Comptes individuels pour 6 utilisateurs"
-      ],
-      "Individual accounts for you and a partner": [
-        "Comptes individuels pour vous et un partenaire"
-      ],
-      "Online document and spreadsheet editor": [
-        "Éditeur de documents et de feuilles de calcul en ligne"
-      ],
-      "Recover previous file versions": [
-        "Récupérez les versions précédentes des fichiers"
-      ],
-      "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
-      ],
-      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Des dossiers, labels et filtres illimités"
-      ],
-      "Use your own email domain": [
-        "Utilisez votre propre domaine de messagerie"
-      ]
-    },
-    "q2campaign2026: Title": {
-      "for 12 months": [
-        "pendant 12 mois"
-      ],
-      "SUMMER SALE": [
-        "OFFRE ESTIVALE"
       ]
     },
     "q3campaign2026: Action": {
