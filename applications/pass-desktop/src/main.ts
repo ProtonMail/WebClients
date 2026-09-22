@@ -1,26 +1,15 @@
-import {
-    BrowserWindow,
-    Menu,
-    type Session,
-    Tray,
-    app,
-    autoUpdater,
-    nativeImage,
-    nativeTheme,
-    session,
-    shell,
-} from 'electron';
+import { BrowserWindow, Menu, type Session, Tray, app, autoUpdater, nativeImage, nativeTheme, session } from 'electron';
 import { join } from 'path';
 
-import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
-import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
-import { getAppUrlFromApiUrl, getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import noop from '@proton/utils/noop';
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
 import config from './app/config';
 import { WINDOWS_APP_ID } from './constants';
+import { handleDeepLink, pickDeepLinkFromArgv, testDeepLinkSupport } from './lib/auth/deep-link';
+import { authInterceptors } from './lib/auth/interceptors';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
+import { PLATFORM_CLIENT_ID } from './lib/env';
 import { fixSSOUrl } from './lib/sso';
 import { getTheme } from './lib/theming';
 import { setTagCookie } from './lib/updater/helpers';
@@ -43,8 +32,6 @@ const DOMAIN = getSecondLevelDomain(new URL(config.API_URL).hostname);
 const createSession = () => {
     const partitionKey = ENV !== 'production' ? 'app-dev' : 'app';
     const secureSession = session.fromPartition(`persist:${partitionKey}`, { cache: false });
-
-    const filter = { urls: [`${getAppUrlFromApiUrl(config.API_URL, APPS.PROTONPASS)}*`] };
 
     secureSession.setPermissionRequestHandler((_webContents, _permission, callback) => callback(false));
 
@@ -74,41 +61,14 @@ const createSession = () => {
         callback({ cancel: false, responseHeaders: details.responseHeaders });
     });
 
-    const clientId = ((): string => {
-        const config = APPS_CONFIGURATION[APPS.PROTONPASS];
-
-        switch (process.platform) {
-            case 'win32':
-                return config.windowsClientID || config.clientID;
-            case 'darwin':
-                return config.macosClientID || config.clientID;
-            case 'linux':
-                return config.linuxClientID || config.clientID;
-            default:
-                return config.clientID;
-        }
-    })();
-
     secureSession.webRequest.onBeforeSendHeaders(({ requestHeaders }, callback) =>
         callback({
             requestHeaders: {
                 ...requestHeaders,
-                ...getAppVersionHeaders(clientId, config.APP_VERSION),
+                ...getAppVersionHeaders(PLATFORM_CLIENT_ID, config.APP_VERSION),
             },
         })
     );
-
-    // Intercept SSO login redirect to the Pass web app
-    secureSession.webRequest.onBeforeRequest(filter, async (details, callback) => {
-        if (!ctx.window) return;
-
-        const url = new URL(details.url);
-        if (url.pathname !== '/login') return callback({ cancel: false });
-
-        callback({ cancel: true });
-        const nextUrl = `${MAIN_WINDOW_WEBPACK_ENTRY}#/login${url.hash}`;
-        await ctx.window.loadURL(nextUrl);
-    });
 
     secureSession.setUserAgent(userAgent());
 
@@ -228,73 +188,13 @@ const onActivate = (secureSession: Session) => () => {
     if (BrowserWindow.getAllWindows().length === 0) return createWindow(secureSession);
 };
 
-if (!app.requestSingleInstanceLock()) app.quit();
-
-app.addListener('web-contents-created', (_, contents) => {
-    contents.addListener('will-attach-webview', (evt) => evt.preventDefault());
-
-    const allowedHosts: string[] = [
-        new URL(config.API_URL).host,
-        new URL(config.SSO_URL).host,
-        getAppUrlFromApiUrl(config.API_URL, APPS.PROTONPASS).host,
-    ];
-
-    contents.addListener('will-navigate', (evt) => {
-        // Do nothing if navigating to the bundled web app
-        if (evt.url.startsWith(MAIN_WINDOW_WEBPACK_ENTRY)) return;
-
-        const url = new URL(evt.url);
-
-        // Open 'Create account' externally
-        if (
-            url.origin === config.SSO_URL &&
-            url.pathname === '/authorize' &&
-            url.searchParams.get('t') === ForkType.SIGNUP
-        ) {
-            evt.preventDefault();
-            logger.debug(`[will-navigate] allow (external): ${url.toString()}`);
-            return shell.openExternal(url.href).catch(noop);
-        }
-
-        // Allow account URLs
-        if (allowedHosts.includes(url.host) && ['/authorize', '/login'].includes(url.pathname)) {
-            logger.debug(`[will-navigate] allow (main frame): ${url.href}`);
-            return;
-        }
-
-        // Allow SSO flows (happens in a dedicated window)
-        if (
-            evt.initiator?.url?.startsWith(config.SSO_URL) ||
-            ctx.window?.webContents.getURL().startsWith(config.SSO_URL)
-        ) {
-            logger.debug(`[will-navigate] allow (external frame): ${url.href}`);
-            return;
-        }
-
-        // Let OS handle anything else
-        evt.preventDefault();
-        logger.debug(`[will-navigate] allow (external): ${url.href}`);
-        return shell.openExternal(evt.url).catch(noop);
-    });
-
-    contents.setWindowOpenHandler(({ url: href }) => {
-        const url = new URL(href);
-
-        // Open a new window for SSO
-        if (url.origin === config.SSO_URL && url.pathname.match(/(\/api)?\/auth\/sso/)) {
-            logger.debug(`[setWindowOpenHandler] opening url in window: ${href}`);
-            return { action: 'allow' };
-        }
-
-        // Shell out to the OS handler for http(s) and mailto
-        if (['http:', 'https:', 'mailto:'].includes(url.protocol)) {
-            shell.openExternal(href).catch(noop);
-        }
-
-        // Always deny opening extra windows
-        return { action: 'deny' };
-    });
-});
+if (!app.requestSingleInstanceLock()) {
+    // Hard-exit: app.quit() is async and would let the rest of this module
+    // keep running — including testDeepLinkSupport(), which would fire
+    // another protonpass://test and spawn yet another instance. Fork-bomb.
+    // Nothing has been initialised yet at this point so no cleanup is owed.
+    process.exit(0);
+}
 
 // Startup all Pass handlers
 const cleanup = await startup(app, ctx);
@@ -312,6 +212,10 @@ app.configureHostResolver({
 
 ctx.session = createSession();
 
+authInterceptors(app, ctx);
+
+testDeepLinkSupport();
+
 // Match title bar with the saved (or default) theme
 nativeTheme.themeSource = getTheme();
 
@@ -324,9 +228,14 @@ createTrayIcon(ctx.session);
 // dock icon is clicked and there are no other windows open.
 app.addListener('activate', handleActivate);
 
-// On Windows, launching Pass while it's already running shold focus
-// or create the main window of the existing process
-app.addListener('second-instance', handleActivate);
+// On Windows, launching Pass while it's already running should focus
+// or create the main window of the existing process. The second instance
+// argv is also where Windows delivers a protonpass:// deep link.
+app.addListener('second-instance', async (_, argv) => {
+    await handleActivate();
+    const url = pickDeepLinkFromArgv(argv);
+    if (url) handleDeepLink(url, ctx);
+});
 
 // Prevent hiding windows when explicitly quitting. `quitAndInstall()` does not emit `before-quit`
 // before closing windows, so `before-quit-for-update` must be handled too — otherwise the
@@ -335,6 +244,11 @@ app.addListener('before-quit', () => (ctx.quitting = true));
 autoUpdater.addListener('before-quit-for-update', () => (ctx.quitting = true));
 
 await createWindow(ctx.session);
+
+// Windows cold-launch via deep link: the OS spawns the app with the URL
+// in process.argv. Has no effect on macOS (open-url fires instead).
+const coldLaunchDeepLink = pickDeepLinkFromArgv(process.argv);
+if (coldLaunchDeepLink) handleDeepLink(coldLaunchDeepLink, ctx);
 
 startUpdater(ctx.session);
 
