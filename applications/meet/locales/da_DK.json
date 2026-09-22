@@ -550,6 +550,9 @@
       "Refresh the page": [
         "Opdater siden"
       ],
+      "refresh the page": [
+        "opdatér siden"
+      ],
       "Rejoin meeting": [
         "Deltag i mødet igen"
       ],
@@ -2304,6 +2307,9 @@
       "Something went wrong": [
         "Noget gik galt"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
+      ],
       "Something went wrong. Please try again.": [
         "Et eller andet gik galt. Prøv igen."
       ],
@@ -3254,6 +3260,9 @@
       ],
       "Successfully deleted meeting": [
         "Møde slettet"
+      ],
+      "support team": [
+        "supportteam"
       ],
       "Thank you for hosting a premium meeting.": [
         "Tak for at afholde et premium-møde."

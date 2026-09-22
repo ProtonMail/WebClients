@@ -558,6 +558,9 @@
       "Refresh the page": [
         "Obnoviť stránku"
       ],
+      "refresh the page": [
+        "obnoviť stránku"
+      ],
       "Rejoin meeting": [
         "Znova sa pripojiť k stretnutiu"
       ],
@@ -2316,6 +2319,9 @@
       "Something went wrong": [
         "Niečo sa pokazilo"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Došlo k chybe, vykonajte ${ refresh } stránky. Ak stále vidíte túto chybu, kontaktujte náš ${ supportTeam }."
+      ],
       "Something went wrong. Please try again.": [
         "Niečo sa pokazilo. Skúste to znova, prosím."
       ],
@@ -2955,6 +2961,9 @@
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Ak používate Firefox, uistite sa, že je povolená PeerConnection."
       ],
+      "Incoming video off": [
+        "Prichádzajúce video vypnuté"
+      ],
       "Internet connection lost": [
         "Strata internetového pripojenia"
       ],
@@ -3281,6 +3290,9 @@
       ],
       "Successfully deleted meeting": [
         "Úspešne vymazaná schôdza"
+      ],
+      "support team": [
+        "tím podpory"
       ],
       "Thank you for hosting a premium meeting.": [
         "Ďakujeme za hosťovanie prémiovej schôdze."

@@ -449,6 +449,9 @@
       "Refresh the page": [
         "Actualizar la página"
       ],
+      "refresh the page": [
+        "actualizar la página"
+      ],
       "Rejoin meeting": [
         "Volver a unirse a la reunión"
       ],
@@ -1878,6 +1881,9 @@
       "Something went wrong": [
         "Se ha producido un error."
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
+      ],
       "Something went wrong. Please try again.": [
         "Se ha producido un error. Inténtalo de nuevo."
       ],
@@ -2629,6 +2635,9 @@
       ],
       "Successfully deleted meeting": [
         "Reunión eliminada"
+      ],
+      "support team": [
+        "equipo de soporte"
       ],
       "Thank you for hosting a premium meeting.": [
         "Gracias por organizar una reunión prémium."

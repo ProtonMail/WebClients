@@ -61,6 +61,9 @@
       "A participant reacted with ${ emoji }": [
         "Удзельнік адрэагаваў са ${ emoji }"
       ],
+      "Background removed": [
+        "Фон выдалены"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Падключана праз рэжым рэтрансляцыі TURN з прычыны абмежаванняў сеткі. Гэта можа павялічыць затрымку і паўплываць на якасць сувязі."
       ],
@@ -163,7 +166,7 @@
         "Дазволіць доступ"
       ],
       "Allow live captions": [
-        "Дазволіць дынамічныя субцітры"
+        "Дазволіць дынамічныя цітры"
       ],
       "Anyone with the link can join immediately": [
         "Любы карыстальнік з гэтай спасылкай зможа неадкладна далучыцца да сустрэчы"
@@ -285,6 +288,9 @@
       "Dismiss": [
         "Адхіліць"
       ],
+      "Dismiss new mentions": [
+        "Адхіліць новае ўзгадванне"
+      ],
       "Dismiss new messages": [
         "Адхіліць новае паведамленне"
       ],
@@ -403,7 +409,7 @@
         "Выйсці з сустрэчы"
       ],
       "Live captions": [
-        "Дынамічныя субцітры"
+        "Дынамічныя цітры"
       ],
       "Lock meeting": [
         "Заблакіраваць сустрэчу"
@@ -497,6 +503,9 @@
       ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Rejoin meeting": [
         "Паўторна далучыцца да сустрэчы"
@@ -675,6 +684,9 @@
       "Upgrade now": [
         "Палепшыць зараз"
       ],
+      "Upload another image": [
+        "Запампаваць іншы відарыс"
+      ],
       "Upload another video": [
         "Запампаваць іншае відэа"
       ],
@@ -711,6 +723,9 @@
       "View invoice": [
         "Паглядзець рахунак"
       ],
+      "Virtual backgrounds": [
+        "Віртуальныя фоны"
+      ],
       "Waiting room": [
         "Пакой чакання"
       ],
@@ -722,6 +737,9 @@
       ]
     },
     "Alt": {
+      "Allow live captions": [
+        "Дазволіць дынамічныя цітры"
+      ],
       "Audio settings": [
         "Налады аўдыя"
       ],
@@ -765,7 +783,7 @@
         "Выйсці з сустрэчы"
       ],
       "Live captions": [
-        "Дынамічныя субцітры"
+        "Дынамічныя цітры"
       ],
       "Lock meeting": [
         "Заблакіраваць сустрэчу"
@@ -896,6 +914,9 @@
       ],
       "Video settings": [
         "Налады відэа"
+      ],
+      "Virtual backgrounds": [
+        "Віртуальныя фоны"
       ]
     },
     "Badge": {
@@ -2019,6 +2040,9 @@
       "Failed to lock meeting": [
         "Не ўдалося заблакіраваць сустрэчу"
       ],
+      "Failed to request live captions": [
+        "Не ўдалося запытаць дынамічныя цітры"
+      ],
       "Failed to rotate personal meeting link": [
         "Не ўдалося зрабіць ратацыю асабістай спасылкі на сустрэчу"
       ],
@@ -2044,7 +2068,10 @@
         "Не ўдалося разблакіраваць сустрэчу"
       ],
       "Failed to update live captions availability": [
-        "Не ўдалося абнавіць даступнасць дынамічных субцітраў"
+        "Не ўдалося абнавіць даступнасць дынамічных цітраў"
+      ],
+      "Failed to update live captions. Please try again.": [
+        "Не ўдалося абнавіць дынамічныя цітры. Паўтарыце спробу."
       ],
       "Failed to verify invitation": [
         "Не ўдалося спраўдзіць запрашэнне"
@@ -2075,6 +2102,15 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Састарэлая публічная спасылка не можа быць абноўлена. Паўторна стварыце новую публічную спасылку."
+      ],
+      "Live captions aren't working. Try turning them off and on again.": [
+        "Дынамічныя цітры не працуюць. Паспрабуйце спачатку выключыць іх, а потым зноў уключыць."
+      ],
+      "Live captions couldn't be started.": [
+        "Немагчыма запусціць дынамічныя цітры."
+      ],
+      "Live captions have stopped.": [
+        "Дынамічныя цітры спынены."
       ],
       "Missing inviter email": [
         "Электронная пошта запрошанай асобы адсутнічае"
@@ -2177,6 +2213,9 @@
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Нешта пайшло не так. Паўтарыце спробу."
@@ -2718,6 +2757,9 @@
       "Host": [
         "Арганізатар"
       ],
+      "Host has disabled live captions for this meeting.": [
+        "Арганізатар адключыў дынамічныя цітры для гэтай сустрэчы."
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Арганізуйце сваю ўласную сустрэчу з акцэнтам на бяспеку. Пачніце выклік у ${ MEET_APP_NAME } і абагуліце спасылку, каб запрасіць каго заўгодна далучыцца да сустрэчы. Проста, бяспечна і бясплатна."
       ],
@@ -2732,6 +2774,9 @@
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Пераканайцеся, што PeerConnection уключаны пры выкарыстанні браўзера Firefox."
+      ],
+      "Incoming video off": [
+        "Уваходнае відэа выключана"
       ],
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
@@ -2889,6 +2934,9 @@
       "Not sent, check your connection.": [
         "Не адпраўлена. Праверце сваё падключэнне."
       ],
+      "notify everyone here": [
+        "апавясціць усіх тут"
+      ],
       "Only meetings you created appear here": [
         "У гэтым месцы будуць толькі сустрэчы, створаныя вамі"
       ],
@@ -2906,6 +2954,12 @@
       ],
       "Participant": [
         "Удзельнік"
+      ],
+      "Participants can turn live captions on. Turn on your own under Display.": [
+        "Удзельнікі могуць уключыць дынамічныя цітры. Уключыце свае цітры ў раздзеле \"Адлюстраванне\""
+      ],
+      "Participants can’t use live captions": [
+        "Удзельнікі не могуць выкарыстоўваць дынамічныя цітры"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Устаўце сваю спасылку ${ MEET_APP_NAME }, каб далучыцца да бяспечнай сустрэчы"
@@ -2927,6 +2981,9 @@
       ],
       "Presenting": [
         "Прадстаўляем"
+      ],
+      "Preview unavailable": [
+        "Папярэдні прагляд недаступны"
       ],
       "privacy": [
         "прыватнасць"
@@ -3030,6 +3087,9 @@
       "Successfully deleted meeting": [
         "Сустрэча паспяхова выдалена"
       ],
+      "support team": [
+        "каманда падтрымкі"
+      ],
       "Thank you for hosting a premium meeting.": [
         "Дзякуем за правядзенне прэміяльнай сустрэчы."
       ],
@@ -3075,6 +3135,9 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Вам спатрэбіцца **бясплатны ўліковы запіс ${ BRAND_NAME }**, каб стварыць і захаваць пакой. Гэта не зойме шмат часу."
       ],
+      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
+        "Сэрвіс цітраў патрабуе доступу да аўдыя сустрэчы для стварэння дынамічных цітраў. Цітры бачныя толькі вам і яны не будуць захоўвацца."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
@@ -3095,6 +3158,9 @@
       ],
       "Turn on camera": [
         "Уключыць камеру"
+      ],
+      "Turn on live captions?": [
+        "Уключыць дынамічныя цітры?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Немагчыма перападключыцца да сустрэчы. Далучыцеся да сустрэчы паўторна або выйдзіце з яе."
@@ -3349,6 +3415,12 @@
       ],
       "Leave meeting options": [
         "Выйсці з параметраў сустрэчы"
+      ],
+      "Library background": [
+        "Фон бібліятэкі"
+      ],
+      "Live caption agent": [
+        "Агент інтэрактыўных субтытраў"
       ],
       "Manage recordings": [
         "Кіраванне запісамі"
@@ -3676,6 +3748,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Адміністратар арганізацыі"
+      ],
       "Security Admin": [
         "Адміністратар бяспекі"
       ],
@@ -3778,6 +3853,11 @@
       ],
       "Yes": [
         "Так"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "Гэты сістэмны агент стварае дынамічныя цітры. Ён не з'яўляецца ўдзельнікам і не можа адпраўляць паведамленні."
       ]
     },
     "Success": {
@@ -3932,6 +4012,9 @@
       "Join meeting": [
         "Далучыцца да сустрэчы"
       ],
+      "Join request expired": [
+        "Запыт на далучэнне пратэрмінваны"
+      ],
       "Joined at epoch ${ log.epoch }": [
         "Далучана ў эпоху ${ log.epoch }"
       ],
@@ -4057,6 +4140,9 @@
       ],
       "Video and audio": [
         "Відэа і аўдыя"
+      ],
+      "Virtual backgrounds": [
+        "Віртуальныя фоны"
       ],
       "Waiting for the host": [
         "Чаканне арганізатара"

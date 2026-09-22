@@ -550,6 +550,9 @@
       "Refresh the page": [
         "Sayfayı yenile"
       ],
+      "refresh the page": [
+        "sayfayı yenile"
+      ],
       "Rejoin meeting": [
         "Görüşmeye yeniden katıl"
       ],
@@ -2304,6 +2307,9 @@
       "Something went wrong": [
         "Bir sorun çıktı"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
+      ],
       "Something went wrong. Please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
@@ -3254,6 +3260,9 @@
       ],
       "Successfully deleted meeting": [
         "Görüşme silindi"
+      ],
+      "support team": [
+        "destek ekibi"
       ],
       "Thank you for hosting a premium meeting.": [
         "Ücretli bir görüşmeye ev sahipliği yaptığınız için teşekkür ederiz."
