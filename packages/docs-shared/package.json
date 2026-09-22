@@ -21,7 +21,6 @@
     "@proton/utils": "workspace:^",
     "@protontech/crypto": "*",
     "date-fns": "^2.30.0",
-    "google-protobuf": "^3.21.4",
     "idb": "^8.0.3",
     "lib0": "^0.2.117",
     "react": "^18.3.1",
@@ -36,7 +35,6 @@
     "@proton/jest-env": "workspace:^",
     "@proton/unleash": "workspace:^",
     "@testing-library/jest-dom": "^6.9.1",
-    "@types/google-protobuf": "^3.15.12",
     "@types/jest": "^30.0.0",
     "babel-jest": "^30.4.1",
     "browserslist": "^4.29.0",
@@ -44,7 +42,6 @@
     "eslint": "^10.11.0",
     "jest": "^30.5.2",
     "jest-junit": "^16.0.0",
-    "jest-when": "3.7.0",
     "typescript": "^6.0.3"
   }
 }
