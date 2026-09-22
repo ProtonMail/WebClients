@@ -30,6 +30,21 @@ type WorkerErrorMessage = { kind: 'error'; error: Error; context: Partial<ScopeC
 type WorkerMessageReport = { kind: 'message'; message: string; context: Partial<ScopeContext> };
 type WorkerReportMessage = WorkerErrorMessage | WorkerMessageReport;
 
+// Browsers throw a plain TypeError (not a dedicated error class) when fetch() cannot complete
+// a request at all (offline, DNS failure, connection reset, CORS block...). The message is a
+// hardcoded, non-localized engine string that differs per browser, so getIsNetworkError (which
+// only matches a deliberately-named 'NetworkError') never catches it and it falls through to
+// classifyError's 'unknown' catch-all instead of 'network'.
+const FETCH_FAILURE_MESSAGES = new Set([
+    'failed to fetch', // Chrome, Edge
+    'load failed', // Safari
+    'networkerror when attempting to fetch resource.', // Firefox
+]);
+
+function getIsFetchFailure(e: unknown): boolean {
+    return e instanceof Error && e.name === 'TypeError' && FETCH_FAILURE_MESSAGES.has(e.message.toLowerCase());
+}
+
 /**
  * Reports a search error to Sentry with search metadata.
  *
@@ -370,9 +385,12 @@ export function classifyError(e: unknown): ErrorDecision {
         return { kind: 'transient', reason: 'server' };
     }
 
-    // THROWING SIDE (main thread). Legacy fetch shapes again, matched on `name`, so likewise only
-    // reachable before a crossing.
-    if (getIsNetworkError(e) || getIsTimeoutError(e)) {
+    // THROWING SIDE (main thread) for getIsNetworkError/getIsTimeoutError: legacy fetch shapes
+    // matched on `name`, only reachable before a crossing. getIsFetchFailure is EITHER SIDE: 'name'
+    // and 'message' are two of the properties the structured clone algorithm preserves for the
+    // built-in error types it recognizes, and TypeError is one of them, so a native "Failed to
+    // fetch"-style error keeps its identity across a Comlink/postMessage boundary too.
+    if (getIsNetworkError(e) || getIsTimeoutError(e) || getIsFetchFailure(e)) {
         return { kind: 'transient', reason: 'network' };
     }
 
