@@ -1,8 +1,8 @@
 import { isMac } from '@proton/shared/lib/helpers/browser'
 import { CustomKeyboardShortcuts } from './CustomKeyboardShortcuts'
-import type { KeyboardShortcutMatcher, KeyboardShortcutID } from './Types'
+import type { KeyboardShortcutID, KeyboardShortcutMatcher } from './Types'
 
-export const doesShortcutMatchEvent = (
+const doesShortcutMatchEvent = (
   event: KeyboardEvent,
   hasModifier: boolean,
   shortcut: KeyboardShortcutMatcher,

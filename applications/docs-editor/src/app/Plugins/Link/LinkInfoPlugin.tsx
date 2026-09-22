@@ -1,5 +1,8 @@
 import type { LinkNode } from '@lexical/link'
 import { $isLinkNode } from '@lexical/link'
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
+import { $findMatchingParent, mergeRegister } from '@lexical/utils'
 import type { RangeSelection, TextNode } from 'lexical'
 import {
   $getSelection,
@@ -12,16 +15,10 @@ import {
 } from 'lexical'
 import { useCallback, useEffect, useState } from 'react'
 import { getSelectedNode } from '../../Utils/getSelectedNode'
-import { LinkInfoViewer } from './LinkInfoViewer'
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { $findMatchingParent, mergeRegister } from '@lexical/utils'
 import { LinkInfoEditor } from './LinkInfoEditor'
-import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
+import { LinkInfoViewer } from './LinkInfoViewer'
 
-export const $isLinkTextNode = (
-  node: ReturnType<typeof getSelectedNode>,
-  selection: RangeSelection,
-): node is TextNode => {
+const $isLinkTextNode = (node: ReturnType<typeof getSelectedNode>, selection: RangeSelection): node is TextNode => {
   const parent = node.getParent()
   return (
     $isLinkNode(parent) &&
