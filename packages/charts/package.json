@@ -1,0 +1,47 @@
+{
+    "name": "@proton/charts",
+    "description": "Shared chart components: owns chart.js, its registration and theme colour resolution",
+    "license": "GPL-3.0",
+    "author": "",
+    "sideEffects": [
+        "./src/register.ts",
+        "./src/primitives/*.tsx"
+    ],
+    "type": "module",
+    "exports": {
+        "./ChartCard": "./src/presentation/ChartCard.tsx",
+        "./TrendChart": "./src/charts/TrendChart/TrendChart.tsx",
+        "./TrendChart.types": "./src/charts/TrendChart/TrendChart.types.ts"
+    },
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint --quiet",
+        "test": "TZ=UTC vitest",
+        "test:ci": "yarn test --coverage --run",
+        "test:ui": "yarn test --ui",
+        "test:watch": "yarn test --watch"
+    },
+    "dependencies": {
+        "@proton/atoms": "workspace:^",
+        "@proton/components": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "chart.js": "^4.5.1",
+        "react": "^18.3.1",
+        "react-chartjs-2": "^5.3.1"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^15.0.7",
+        "@types/react": "^18.3.31",
+        "@vitejs/plugin-react": "^6.0.5",
+        "@vitest/coverage-v8": "^4.1.10",
+        "@vitest/ui": "^4.1.10",
+        "eslint": "^9.39.5",
+        "happy-dom": "^20.11.1",
+        "react-dom": "^18.3.1",
+        "typescript": "^6.0.3",
+        "vitest": "^4.1.10"
+    }
+}
