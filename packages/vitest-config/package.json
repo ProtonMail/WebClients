@@ -14,9 +14,9 @@
         "@proton/eslint-config-proton": "workspace:^",
         "eslint": "^10.10.0",
         "typescript": "^6.0.3",
-        "vitest": "^4.1.11"
+        "vitest": "^5.0.1"
     },
     "peerDependencies": {
-        "vitest": "^4.1.11"
+        "vitest": "^5.0.1"
     }
 }
