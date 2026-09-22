@@ -72,6 +72,12 @@ export const sendWebSearchButtonToggledEvent = (isToggled: boolean) => {
     });
 };
 
+export const sendArtifactCreationToggledEvent = (isToggled: boolean) => {
+    sendLumoComposerEvent('artifact-creation', {
+        action: isToggled ? 'disable' : 'enable',
+    });
+};
+
 export const sendFileUploadEvent = () => {
     sendLumoComposerEvent('file-upload');
 };

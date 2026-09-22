@@ -490,7 +490,7 @@ export type MessagePriv = {
     /** When set, the user message was sent from the artifact panel selection UI. */
     artifactAction?: ArtifactActionMeta;
 
-    /** True when the user sent this message with Create Artifact mode active in the composer. */
+    /** True when this send expected artifact creation (explicit mode or persisted preference). */
     artifactCreateModeActive?: boolean;
 
     /** Artifact id the user was viewing (latest version) in the panel when this message was sent. */
@@ -1302,7 +1302,7 @@ export interface ActionParams {
     retryStrategy?: RetryStrategy;
     customRetryInstructions?: string;
     imageOptions?: ImageGenerationOptions;
-    artifactModeActive?: boolean;
+    artifactCreationEnabled?: boolean;
     artifactAction?: ArtifactActionMeta;
     artifactRevisionTargetId?: string;
     /** True when the message was auto-sent from a ?q= URL parameter. */

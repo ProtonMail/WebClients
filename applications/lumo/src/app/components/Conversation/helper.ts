@@ -188,33 +188,46 @@ export type UiContext = {
     /** Set only on the auto-send from a ?q= URL; see ?q= deep-link security comment above. */
     isFromQueryParam?: boolean;
     // True only on the turn where the user explicitly entered Create Artifact mode in the
-    // composer. See `resolveArtifactToolMode` for how this combines with existing-artifact
-    // state to decide whether/how the `create_artifact` tool is made available.
+    // composer (phase 2). See `resolveArtifactToolMode` for how this combines with the
+    // persisted preference and existing-artifact state.
     canvasModeActive?: boolean;
+    /** Persisted user preference — allow artifact creation when no artifact exists yet. */
+    artifactCreationEnabled?: boolean;
 };
 
 // Whether/how the `create_artifact` client tool is made available on this turn:
-// - 'off': not registered at all — no artifact exists yet and the user hasn't opted in.
-// - 'create': the user just entered Create Artifact mode — may create a new artifact or
-//   revise an existing one.
-// - 'revise': mode isn't active, but the conversation already has an artifact — may only
-//   revise it, not spawn an unrelated new one. Covers follow-ups (including the artifact
-//   panel's selection-based inline-edit flow) without requiring the user to re-enter the mode.
+// - 'off': not registered — no artifact exists yet and creation is disabled.
+// - 'create': explicit mode is active, or the persisted preference is on and no artifact
+//   exists yet.
+// - 'revise': the conversation already has an artifact — may only revise it, not spawn an
+//   unrelated new one. Covers follow-ups (including the artifact panel's inline-edit flow).
 export type ArtifactToolMode = 'off' | 'create' | 'revise';
 
 export function resolveArtifactToolMode(
     canvasModeActive: boolean | undefined,
     messageChain: Message[],
-    isArtifactsViewFeatureEnabled?: boolean
+    isArtifactsViewFeatureEnabled?: boolean,
+    artifactCreationEnabled?: boolean
 ): ArtifactToolMode {
     if (!isArtifactsViewFeatureEnabled) {
         return 'off';
     }
+
+    const hasArtifact = Object.keys(buildArtifactRegistry(messageChain)).length > 0;
+
     if (canvasModeActive) {
         return 'create';
     }
-    const hasArtifact = Object.keys(buildArtifactRegistry(messageChain)).length > 0;
-    return hasArtifact ? 'revise' : 'off';
+
+    if (hasArtifact) {
+        return 'revise';
+    }
+
+    if (artifactCreationEnabled ?? true) {
+        return 'create';
+    }
+
+    return 'off';
 }
 
 export type SettingsContext = {
@@ -579,10 +592,14 @@ export function sendMessage({
                     ? formatMemories(state.lumoUserSettings?.memories)
                     : '';
 
+            const artifactCreationEnabled =
+                ui.artifactCreationEnabled ?? state.lumoUserSettings?.automaticArtifactCreation ?? true;
+
             const artifactToolMode = resolveArtifactToolMode(
                 ui.canvasModeActive,
                 updatedLinearChain,
-                s.isArtifactsViewFeatureEnabled
+                s.isArtifactsViewFeatureEnabled,
+                artifactCreationEnabled
             );
 
             const buildTurns = (chain: Message[]) =>
@@ -774,10 +791,14 @@ export function regenerateMessage({
 
             const agentInstructions = dispatch(resolveAgentInstructions(c.conversationId));
 
+            const artifactCreationEnabled =
+                ui.artifactCreationEnabled ?? state.lumoUserSettings?.automaticArtifactCreation ?? true;
+
             const artifactToolMode = resolveArtifactToolMode(
                 ui.canvasModeActive,
                 c.messageChain,
-                s.isArtifactsViewFeatureEnabled
+                s.isArtifactsViewFeatureEnabled,
+                artifactCreationEnabled
             );
 
             const buildTurns = (chain: Message[]) => {
@@ -996,10 +1017,14 @@ export function retrySendMessage({
 
         const agentInstructions = c.conversationId ? dispatch(resolveAgentInstructions(c.conversationId)) : undefined;
 
+        const artifactCreationEnabled =
+            ui.artifactCreationEnabled ?? state.lumoUserSettings?.automaticArtifactCreation ?? true;
+
         const artifactToolMode = resolveArtifactToolMode(
             ui.canvasModeActive,
             updatedLinearChain,
-            s.isArtifactsViewFeatureEnabled
+            s.isArtifactsViewFeatureEnabled,
+            artifactCreationEnabled
         );
 
         const buildTurns = (chain: Message[]) =>
