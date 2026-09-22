@@ -17,7 +17,8 @@ export * from './update';
 
 export type ContextBridgeApi = {
     windowShow: () => Promise<void>;
-    onWindowHide: (callback: () => void) => void;
+
+    onWindowHide: (callback: () => void) => () => void;
 
     onSystemWake: (callback: () => void) => () => void;
 
@@ -52,7 +53,7 @@ export type ContextBridgeApi = {
     restartToUpdate: () => Promise<void>;
     onUpdateStoreChange: (callback: (store: UpdateStore) => void) => () => void;
 
-    onNmRequest: (callback: (request: NativeMessagePayload<NativeMessageRequest>) => void) => void;
+    onNmRequest: (callback: (request: NativeMessagePayload<NativeMessageRequest>) => void) => () => void;
     nmResponse: (response: NativeMessagePayload<NativeMessageResponse>) => Promise<void>;
 
     sshAgent: {
