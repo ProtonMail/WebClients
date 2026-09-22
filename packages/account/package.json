@@ -148,7 +148,7 @@
         "ttag": "^1.8.12"
     },
     "devDependencies": {
-        "@jest/globals": "^30.5.1",
+        "@jest/globals": "^30.5.2",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
@@ -157,9 +157,9 @@
         "@types/deep-freeze": "^0.1.5",
         "@types/react": "^18.3.31",
         "@typescript/native": "npm:typescript@^7.0.2",
-        "eslint": "^10.10.0",
-        "jest": "^30.5.1",
-        "prettier": "^3.9.6",
+        "eslint": "^10.11.0",
+        "jest": "^30.5.2",
+        "prettier": "^3.9.8",
         "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "peerDependencies": {
