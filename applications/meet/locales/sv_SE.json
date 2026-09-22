@@ -506,6 +506,9 @@
       "Refresh the page": [
         "Uppdatera sidan"
       ],
+      "refresh the page": [
+        "uppdatera sidan"
+      ],
       "Rejoin meeting": [
         "Gå med i möte igen"
       ],
@@ -2179,6 +2182,9 @@
       "Something went wrong": [
         "Något gick fel"
       ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
+      ],
       "Something went wrong. Please try again.": [
         "Något gick fel. Försök igen."
       ],
@@ -3051,6 +3057,9 @@
       ],
       "Successfully deleted meeting": [
         "Möte togs bort"
+      ],
+      "support team": [
+        "supportteam"
       ],
       "Thank you for hosting a premium meeting.": [
         "Tack för att du var värd för ett premiummöte."
