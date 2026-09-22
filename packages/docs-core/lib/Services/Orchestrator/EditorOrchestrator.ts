@@ -23,6 +23,7 @@ import type { DocumentState, PublicDocumentState } from '../../State/DocumentSta
 import { DocParticipantTracker } from '../../ParticipantTracker/DocParticipantTracker'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { FeatureFlag } from '@proton/unleash/Flags'
+import { getUnleashReadyPromise } from '@proton/unleash/getUnleashReadyPromise'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
 import metrics from '@proton/metrics'
@@ -267,7 +268,8 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
   }
 
   async checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean> {
-    return this.unleashClient.isReady() && this.unleashClient.isEnabled(featureFlag)
+    await getUnleashReadyPromise(this.unleashClient)
+    return this.unleashClient.isEnabled(featureFlag)
   }
 
   async storeSpreadsheetPatches(
