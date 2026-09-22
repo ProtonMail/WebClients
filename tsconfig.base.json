@@ -42,7 +42,7 @@
             "@proton/logger/*": ["./packages/logger/*"],
             "@proton/lumo-api-client/*": ["./packages/lumo-api-client/*"],
             "@proton/lumo-ui/*": ["./packages/lumo-ui/*"],
-            "@proton/mail-renderer/*": ["./packages/mail-renderer/*"],
+            "@proton/mail-renderer/*": ["./packages/mail-renderer/src/*"],
             "@proton/mail/*": ["./packages/mail/*"],
             "@proton/metrics/*": ["./packages/metrics/*"],
             "@proton/pack/*": ["./packages/pack/*"],
