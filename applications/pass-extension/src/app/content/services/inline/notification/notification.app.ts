@@ -1,3 +1,4 @@
+import { flagAsIgnored, removeClassifierFlags } from '@protontech/autofill';
 import { FieldType } from '@protontech/autofill/types';
 
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
@@ -10,7 +11,6 @@ import { WorkerMessageType } from '../../../../../types/messages';
 import { NOTIFICATION_IFRAME_SRC, NotificationAction } from '../../../constants.runtime';
 import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from '../../../constants.static';
 import { withContext } from '../../../context/context';
-import { flagAsIgnored, removeClassifierFlags } from '../../detector/detector.api';
 import type { InlineAppHandler, InlineEvent } from '../inline.app';
 import { createInlineApp } from '../inline.app';
 import { InlinePortMessageType } from '../inline.messages';

@@ -1,3 +1,4 @@
+import type { HTMLFieldElement } from '@protontech/autofill';
 import type { FieldType } from '@protontech/autofill/types';
 
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
@@ -7,7 +8,6 @@ import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-import type { HTMLFieldElement } from '../detector/detector.api';
 import type { FieldElement } from '../form/field';
 
 export type AutofillOptions = {

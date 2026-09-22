@@ -1,7 +1,3 @@
-import type { MaybeNull } from '@proton/pass/types/utils/index';
-import { isFormElement, isHTMLElement, isInputElement, isValidInputElement } from '@proton/pass/utils/dom/predicates';
-import { and, not, or } from '@proton/pass/utils/fp/predicates';
-
 import {
     isHidden,
     isIgnored,
@@ -9,7 +5,11 @@ import {
     selectFormCandidates,
     selectInputCandidates,
     shallowShadowQuerySelector,
-} from './detector.api';
+} from '@protontech/autofill';
+
+import type { MaybeNull } from '@proton/pass/types/utils/index';
+import { isFormElement, isHTMLElement, isInputElement, isValidInputElement } from '@proton/pass/utils/dom/predicates';
+import { and, not, or } from '@proton/pass/utils/fp/predicates';
 
 /** Elements excluded from form/field container checks.
  * Use with `childElementCount` to also skip leaf nodes. */

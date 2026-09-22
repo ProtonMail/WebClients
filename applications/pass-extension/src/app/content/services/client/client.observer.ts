@@ -1,3 +1,11 @@
+import {
+    getIgnoredParent,
+    getParentFormPrediction,
+    isCustomElementWithShadowRoot,
+    isPrediction,
+    removeClassifierFlags,
+    removeProcessedFlag,
+} from '@protontech/autofill';
 import debounce from 'lodash/debounce';
 
 import type { MaybeNull } from '@proton/pass/types/utils/index';
@@ -10,14 +18,6 @@ import { logger } from '@proton/pass/utils/logger';
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 
-import {
-    getIgnoredParent,
-    getParentFormPrediction,
-    isCustomElementWithShadowRoot,
-    isPrediction,
-    removeClassifierFlags,
-    removeProcessedFlag,
-} from '../detector/detector.api';
 import {
     hasProcessableFields,
     hasProcessableNodes,

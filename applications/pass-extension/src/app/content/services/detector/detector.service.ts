@@ -1,5 +1,17 @@
+import {
+    clearDetectionCache,
+    createRulesetRegistry,
+    flagOverride,
+    flagSubtreeAsIgnored,
+    getTypeScore,
+    prepass,
+    shadowPiercingContains,
+    shouldRunClassifier,
+} from '@protontech/autofill';
+import { perceptronModelProvider } from '@protontech/autofill/models/perceptron';
 import type { FieldType, ModelProvider } from '@protontech/autofill/types';
 import { FormType, fieldTypes, formTypes } from '@protontech/autofill/types';
+import type { Fnode } from '@protontech/fathom';
 
 import { createModelProvider } from '@proton/pass/lib/extension/model-artifact/model-artifact';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
@@ -18,19 +30,12 @@ import { contentScriptMessage, sendMessage } from '../../../../lib/message/send-
 import { BUNDLED_MODEL_ID } from '../../../../lib/utils/version';
 import { WorkerMessageType } from '../../../../types/messages';
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from '../../constants.static';
-import type { Fnode } from './detector.api';
-import {
-    clearDetectionCache,
-    flagOverride,
-    flagSubtreeAsIgnored,
-    getTypeScore,
-    prepass,
-    rulesetMaker,
-    shadowPiercingContains,
-    shouldRunClassifier,
-    supportsRuntimeModel,
-} from './detector.api';
 import { selectNodeFromPath } from './detector.utils';
+
+const rulesetMaker = (runtime?: ModelProvider) =>
+    runtime
+        ? createRulesetRegistry({ runtime }).make('runtime')
+        : createRulesetRegistry({ perceptron: perceptronModelProvider }).make('perceptron');
 
 type Ruleset = ReturnType<typeof rulesetMaker>;
 
@@ -62,7 +67,6 @@ const resolveModelProvider = async (): Promise<Maybe<{ modelId: string; provider
 
 /** Caches the in-flight promise so a recreated detector awaits the same resolution instead of racing it. */
 const resolveModelRuleset = (): Promise<void> => {
-    if (!supportsRuntimeModel) return Promise.resolve();
     return (modelRuleset ??= resolveModelProvider().then((resolved) => {
         if (resolved) {
             ruleset = rulesetMaker(resolved.provider);
