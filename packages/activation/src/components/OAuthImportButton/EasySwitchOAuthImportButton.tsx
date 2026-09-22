@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import type { EASY_SWITCH_SOURCES, ImportType } from '../../interface';
-import { ImportProvider } from '../../interface';
+import type { EASY_SWITCH_SOURCES } from '../../interface';
+import { ImportProvider, ImportType } from '../../interface';
 import { useProductSelectionSubmit } from '../Modals/ProductSelectionModal/useProductSelectionSubmit';
 import GoogleButton from './GoogleButton';
+import GoogleDriveButton from './GoogleDriveButton';
 import OutlookButton from './OutlookButton';
 
 type AllowedImporter = ImportProvider.GOOGLE | ImportProvider.OUTLOOK;
@@ -14,9 +15,18 @@ interface Props {
     onClick?: () => void;
     provider: AllowedImporter;
     isDropdownButton?: boolean;
+    disabled?: boolean;
 }
 
-const EasySwitchOauthImportButton = ({ className, provider, products, source, onClick, isDropdownButton }: Props) => {
+const EasySwitchOauthImportButton = ({
+    className,
+    provider,
+    products,
+    source,
+    onClick,
+    isDropdownButton,
+    disabled,
+}: Props) => {
     const { handleSubmit } = useProductSelectionSubmit();
 
     const handleClick = () => {
@@ -25,6 +35,10 @@ const EasySwitchOauthImportButton = ({ className, provider, products, source, on
     };
 
     if (provider === ImportProvider.GOOGLE) {
+        if (products.length === 1 && products[0] === ImportType.DRIVE) {
+            return <GoogleDriveButton className={className} onClick={handleClick} disabled={disabled} />;
+        }
+
         return (
             <GoogleButton
                 className={className}

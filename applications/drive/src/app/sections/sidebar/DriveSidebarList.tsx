@@ -6,11 +6,11 @@ import { useShallow } from 'zustand/react/shallow';
 import { Loader, SidebarList } from '@proton/components';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { DirectoryTreeRootType, type directoryTreeFactory } from '@proton/drive/modules/directoryTree';
+import { useFlagsDriveEasySwitch } from '@proton/drive/modules/flags';
 import { IcImage } from '@proton/icons/icons/IcImage';
 import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcLink } from '@proton/icons/icons/IcLink';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useDriveSharingFlags } from '../../legacy/store';
@@ -52,8 +52,7 @@ export const DriveSidebarList = ({ shareId, store }: DriveSidebarListProps) => {
 
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const showSharedWithMeSection = !isDirectSharingDisabled;
-    const isDriveEasySwitchEnabled = useFlag('EasySwitchB2CForDriveWeb');
-    const isEasySwitchNewUIEnabled = useFlag('EasySwitchB2CForDriveWebNewUI') && isDriveEasySwitchEnabled;
+    const { isEasySwitchNewUIEnabled } = useFlagsDriveEasySwitch();
 
     return (
         <SidebarList style={{ width: sidebarWidth, maxWidth: sidebarWidth }}>
