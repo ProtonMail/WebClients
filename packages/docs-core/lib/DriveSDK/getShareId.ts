@@ -7,11 +7,14 @@ export async function getShareId(nodeMeta: NodeMeta): Promise<string> {
 
   try {
     const nodeUid = generateNodeUid(nodeMeta.volumeId, nodeMeta.linkId)
-    const node = await drive.getNode(nodeUid)
-    if (!node.deprecatedShareId) {
+    const hierarchy = await drive.getNodeHierarchy(nodeUid)
+    const [root] = hierarchy
+
+    if (!root.deprecatedShareId) {
       throw new Error('SDK did not return share ID')
     }
-    return node.deprecatedShareId
+
+    return root.deprecatedShareId
   } catch (error) {
     traceError(error, {
       tags: {
