@@ -5,10 +5,6 @@ import type { MaybeNull, MaybePromise, Result } from '@proton/pass/types';
 export type IPCChannel<P extends any[], R extends any> = { args: P; result: R };
 export type IPCChannelResult<T> = Result<{ result: T }>;
 
-export interface IPCChannels {
-    'window:show': IPCChannel<[void], void>;
-}
-
 /** Wraps `ipcMain.handle` to avoid handler errors from bubbling up
  * to the handle() call, which will in turn serialize them into a string
  * prepended with "Error occurred in handler for HANDLER_NAME: Error message".
