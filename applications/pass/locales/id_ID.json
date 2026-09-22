@@ -151,6 +151,9 @@
       "Close navigation": [
         "Tutup navigasi"
       ],
+      "Collapse": [
+        "Ciutkan"
+      ],
       "Confirm": [
         "Konfirmasi"
       ],
@@ -229,6 +232,9 @@
       "Create contact": [
         "Buat kontak"
       ],
+      "Create folder": [
+        "Buat folder"
+      ],
       "Create identity": [
         "Buat identitas"
       ],
@@ -237,6 +243,9 @@
       ],
       "Create login": [
         "Buat login"
+      ],
+      "Create new folder": [
+        "Buat folder baru"
       ],
       "Create new items": [
         "Buat item baru"
@@ -330,6 +339,9 @@
       ],
       "Exclude from monitoring": [
         "Kecualikan dari monitoring"
+      ],
+      "Expand": [
+        "Lebarkan"
       ],
       "Export": [
         "Ekspor"
@@ -472,8 +484,8 @@
       "Move all items": [
         "Pindahkan semua item"
       ],
-      "Move to another vault": [
-        "Pindahkan ke brankas lain"
+      "Move to": [
+        "Pindahkan ke"
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
@@ -561,6 +573,9 @@
       ],
       "Remove member": [
         "Hapus anggota"
+      ],
+      "Rename": [
+        "Ubah nama"
       ],
       "Request a feature": [
         "Minta fitur"
@@ -1069,6 +1084,9 @@
       ],
       "Failed to create domain": [
         "Domain gagal dibuat"
+      ],
+      "Failed to create folder": [
+        "Folder gagal dibuat"
       ],
       "Failed to create new mailbox": [
         "Gagal membuat kotak surat baru"
@@ -1735,9 +1753,6 @@
       ],
       "Created item": [
         "Item yang dibuat"
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "CSV menyediakan format yang praktis untuk melihat data Anda. Namun, karena kesederhanaannya, sebagian data tidak akan disertakan (kolom kustom, kunci sandi...). Untuk ekspor lengkap, kami menyarankan menggunakan format lain."
       ],
       "Current version": [
         "Versi saat ini"
@@ -3183,6 +3198,9 @@
       "Floor, apartment, building": [
         "Lantai, apartemen, gedung"
       ],
+      "Folder": [
+        "Folder"
+      ],
       "For a one-off sharing": [
         "Untuk pembagian yang hanya satu kali"
       ],
@@ -4270,9 +4288,6 @@
       "Please describe the problem and include any error messages": [
         "Mohon uraikan masalah Anda dan sertakan pesan kesalahan yang Anda temui"
       ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Ketik ulang \"${ vaultName }\" untuk mengonfirmasi penghapusan"
-      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Cari ${ pluralItemType } di ${ vaultName }"
       ],
@@ -4625,9 +4640,6 @@
       "Delete this item?": [
         "Hapus item ini?"
       ],
-      "Delete vault \"${ vaultName }\"?": [
-        "Hapus brankas \"${ vaultName }\"?"
-      ],
       "Did you know?": [
         "Tahukah Anda?"
       ],
@@ -4672,6 +4684,9 @@
       ],
       "Excluded items": [
         "Item yang dikecualikan"
+      ],
+      "Folder options": [
+        "Pengaturan folder"
       ],
       "Get Started": [
         "Mulai"
@@ -4751,17 +4766,11 @@
       "Modified": [
         "Diubah"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Pindahkan ${ count } item ke ${ vaultName }"
-      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Pindahkan ${ trashedItemsCount } item ke sampah?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Pindahkan semua item ke \"${ vaultName }\"?"
-      ],
-      "Move item to \"${ vaultName }\"": [
-        "Pindahkan item ke \"${ vaultName }\""
       ],
       "MX record": [
         "Rekaman MX"
@@ -5295,9 +5304,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Tidak dapat masuk ke ${ PASS_APP_NAME }. ${ additionalMessage }."
-      ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Brankas \"${ vaultName }\" dan seluruh item di dalamnya akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan."
       ],
       "Vault name is required": [
         "Nama brankas wajib diisi"
