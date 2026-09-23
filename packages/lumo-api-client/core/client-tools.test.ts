@@ -1,6 +1,7 @@
 import {
     type ClientToolExecutor,
     type PendingClientToolCall,
+    composeClientToolExecutors,
     filterClientToolCalls,
     mergePendingClientToolCalls,
 } from './client-tools';
@@ -43,6 +44,67 @@ describe('mergePendingClientToolCalls', () => {
     it('ignores tool calls with no name', () => {
         const nameless: PendingClientToolCall = { id: 'call_1', name: '', arguments: '{}' };
         expect(mergePendingClientToolCalls([nameless])).toEqual([]);
+    });
+});
+
+describe('composeClientToolExecutors', () => {
+    const artifactExecutor: ClientToolExecutor = {
+        getClientTools: async () => [
+            {
+                type: 'function',
+                function: { name: 'create_artifact', description: 'Create artifact', parameters: {} },
+            },
+        ],
+        canExecute: (name) => name === 'create_artifact',
+        execute: async (calls) => {
+            return calls.map(() => {
+                return { content: 'artifact-ok' };
+            });
+        },
+    };
+
+    const desktopExecutor: ClientToolExecutor = {
+        getClientTools: async () => [
+            {
+                type: 'function',
+                function: { name: 'filesystem__fs_search', description: 'Search files', parameters: {} },
+            },
+        ],
+        canExecute: (name) => name.startsWith('filesystem__'),
+        execute: async (calls) => {
+            return calls.map(() => {
+                return { content: 'desktop-ok' };
+            });
+        },
+    };
+
+    it('merges advertised tools from every executor', async () => {
+        const composed = composeClientToolExecutors(artifactExecutor, desktopExecutor);
+        const tools = (await composed.getClientTools?.()) ?? [];
+        expect(tools.map((tool) => tool.function.name)).toEqual(['create_artifact', 'filesystem__fs_search']);
+    });
+
+    it('routes execution to the executor that owns each tool', async () => {
+        const composed = composeClientToolExecutors(artifactExecutor, desktopExecutor);
+        const calls: PendingClientToolCall[] = [
+            { id: '1', name: 'filesystem__fs_search', arguments: '{}' },
+            { id: '2', name: 'create_artifact', arguments: '{}' },
+            { id: '3', name: 'filesystem__fs_read', arguments: '{}' },
+        ];
+
+        const results = await composed.execute(calls);
+        expect(results).toEqual([{ content: 'desktop-ok' }, { content: 'artifact-ok' }, { content: 'desktop-ok' }]);
+    });
+
+    it('keeps filterClientToolCalls working for both tool families', () => {
+        const composed = composeClientToolExecutors(artifactExecutor, desktopExecutor);
+        const calls: PendingClientToolCall[] = [
+            { id: '1', name: 'filesystem__fs_search', arguments: '{}' },
+            { id: '2', name: 'create_artifact', arguments: '{}' },
+            { id: '3', name: 'web_search', arguments: '{}' },
+        ];
+
+        expect(filterClientToolCalls(calls, composed)).toEqual([calls[0], calls[1]]);
     });
 });
 
