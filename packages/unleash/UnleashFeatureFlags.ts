@@ -76,6 +76,7 @@ export enum CommonFeatureFlag {
     EasySwitchB2CForDriveWeb = 'EasySwitchB2CForDriveWeb',
     CentralisedOffersDelivery = 'CentralisedOffersDelivery',
     EasySwitchB2CForDriveWebNewUI = 'EasySwitchB2CForDriveWebNewUI',
+    EasySwitchB2CForDriveWebSidebarRollout = 'EasySwitchB2CForDriveWebSidebarRollout',
     Oles365 = 'Oles365',
 }
 
