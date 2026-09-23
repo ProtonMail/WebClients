@@ -10,6 +10,7 @@ import { parseResource } from 'webpack/lib/util/identifier';
 import getAssetsLoaders from '@proton/pack/webpack/assets.loader';
 import getCssLoaders from '@proton/pack/webpack/css.loader';
 import { getJsLoaders } from '@proton/pack/webpack/js.loader.swc';
+import { getReadinessSetupMiddlewares } from '@proton/pack/webpack/readiness';
 
 import { webpackOptions } from './webpack.options';
 
@@ -32,6 +33,7 @@ const config: Configuration = {
         allowedHosts: 'all',
         compress: true,
         client: { overlay: false },
+        setupMiddlewares: getReadinessSetupMiddlewares(),
     },
     watchOptions: {
         ignored: /dist|node_modules|locales|\.(gif|jpeg|jpg|ico|png|svg)/,

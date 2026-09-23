@@ -8,6 +8,7 @@ import { parseResource } from 'webpack/lib/util/identifier';
 
 import type { WebpackOptions } from './lib/interface';
 import { getEntries } from './webpack/entries';
+import { getReadinessSetupMiddlewares } from './webpack/readiness';
 
 const jsBabelLoader = require('./webpack/js.loader');
 const jsSwcLoader = require('./webpack/js.loader.swc');
@@ -52,6 +53,7 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
                 index: webpackOptions.publicPath,
             },
             hot: !webpackOptions.isProduction,
+            setupMiddlewares: getReadinessSetupMiddlewares(),
             webSocketServer: 'ws',
             ...(webpackOptions.api && {
                 proxy: [
