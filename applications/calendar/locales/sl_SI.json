@@ -970,6 +970,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "Osvežite stran"
       ]
     },
     "action": {
@@ -4183,6 +4186,9 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Nekaj je šlo narobe; pred nadaljevanjem ${ refresh }. Če se napaka še naprej prikazuje, se obrnite na našo ${ supportTeam }."
       ]
     },
     "error": {
@@ -6687,6 +6693,9 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "support team": [
+        "podporni servis"
       ]
     },
     "info": {

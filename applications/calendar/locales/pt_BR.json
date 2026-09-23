@@ -1037,6 +1037,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ]
     },
     "action": {
@@ -4354,6 +4357,30 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Sua conexão do Zoom expirou. Reconecte-se para continuar."
+      ],
+      "A contact with this email address already exists": [
+        "Já existe um contato com este endereço de e-mail"
+      ],
+      "Bookmark password is not available": [
+        "A senha do marcador não está disponível"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Não foi possível carregar a pré-visualização da imagem: ${ message }"
+      ],
+      "Expiration date cannot be in the past": [
+        "A data de expiração não pode ser anterior ao passado"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Falha ao descriptografar a chave de nó: ${ message }"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta a assinatura para ${ signatureType }"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
+      ],
+      "Too many server errors, please try again later": [
+        "Muitos erros ao servidor, tente novamente mais tarde"
       ]
     },
     "error": {
@@ -4746,6 +4773,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Sua conta está usando ${ usedSpace } de armazenamento, o que excede o espaço de ${ inviteSpace } que você recebeu. Apague alguns dados ou peça ao administrador do plano para aumentar seu armazenamento."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Você está convidado a vincular sua conta da ${ BRAND_NAME } a este grupo familiar e aproveitar todos os seus recursos premium."
       ]
     },
     "familyOffer_2023:Label": {
@@ -6966,6 +6996,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "equipe de suporte"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Este usuário não pode ser migrado devido a incompatibilidades de plataforma."
       ]
     },
     "info": {
@@ -9751,6 +9787,12 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Você poderá usar ${ planTitle } até o fim da avaliação, gratuitamente."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adicione uma forma de pagamento** para continuar usando todos os recursos após o término do período de teste."
+      ],
+      "Add a payment method": [
+        "Adicionar método de pagamento"
       ]
     },
     "Option": {
@@ -10129,6 +10171,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Falha ao inicializar o ${ IDEAL_WERO_BRAND_NAME }. Tente novamente mais tarde."
       ]
     },
     "Payments.error": {
@@ -13721,6 +13766,11 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, você autoriza a ${ BRAND_NAME } e a Stripe, nossa provedora de serviços de pagamento, a realizar cobranças futuras da sua assinatura nesta conta bancária via Débito Direto, e autoriza seu banco a debitar esses valores. Seu primeiro pagamento é realizado agora via ${ IDEAL_WERO_BRAND_NAME }. Seu plano é renovado automaticamente até que você o cancele; notificaremos você antes de cada cobrança. Para cobranças via débito direto, você pode solicitar um reembolso ao seu banco em até 8 semanas após a data do débito, conforme os termos do seu contrato com o banco. Isso não se aplica ao pagamento via ${ IDEAL_WERO_BRAND_NAME } que você está realizando agora."
       ]
     }
   }

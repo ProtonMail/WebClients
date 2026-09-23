@@ -1036,6 +1036,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "刷新页面"
       ]
     },
     "action": {
@@ -4389,6 +4392,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您的 Zoom 连接已过期，请重新连接以继续。"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ]
     },
     "error": {
@@ -6976,6 +6982,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "客服团队"
       ]
     },
     "info": {
@@ -9689,6 +9698,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "您将能够免费使用 ${ planTitle } 直到试用期结束。"
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**添加支付方式**，以便在试用期结束后继续使用所有功能。"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**如果您在试用期结束后继续使用，** 可以在 30 天内取消，并获得按比例退款。"
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
+      ],
+      "Add a payment method": [
+        "添加支付方式"
+      ],
+      "If you continue after your trial,": [
+        "如果您在试用期结束后继续使用，"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "以便在试用期结束后继续使用所有功能。"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "您可以在 30 天内取消，并获得按比例退款。"
       ]
     },
     "Option": {

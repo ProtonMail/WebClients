@@ -1048,6 +1048,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "obnoviť stránku"
       ]
     },
     "action": {
@@ -4527,6 +4533,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Vaše pripojenie k Zoom vypršalo. Pripojte sa znova pre pokračovanie, prosím."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Došlo k chybe, vykonajte ${ refresh } stránky. Ak stále vidíte túto chybu, kontaktujte náš ${ supportTeam }."
       ]
     },
     "error": {
@@ -7270,6 +7279,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "tím podpory"
       ]
     },
     "info": {
@@ -10070,6 +10082,9 @@
       ],
       "Your subscription renews soon": [
         "Vaše predplatné sa čoskoro obnoví"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Posledná šanca získať prvý mesiac v rámci ${ plan } za túto cenu."
       ]
     },
     "Offer fearue": {
@@ -10116,6 +10131,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Neobmedzené aliasy na ochranu vašej identity"
+      ],
+      "Short @pm.me address": [
+        "Skrátená adresa @pm.me"
       ]
     },
     "Onboarding": {
@@ -10202,6 +10220,27 @@
       ],
       "Add a payment method": [
         "Pridať spôsob platby"
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Pridajte spôsob platby**, aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Zrušiť môžete kedykoľvek pred týmto termínom.** ${ planTitle } budete môcť bezplatne využívať až do konca skúšobného obdobia."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Ak budete pokračovať aj po skončení skúšobnej doby,** môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Po začatí platnosti predplatného...** môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
+      ],
+      "If you continue after your trial,": [
+        "Ak budete pokračovať aj po skončení skúšobnej doby,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
       ]
     },
     "Option": {

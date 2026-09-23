@@ -1039,6 +1039,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ]
     },
     "action": {
@@ -4224,6 +4227,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Platnost vašeho připojení k Zoomu vypršela. Pro pokračování se prosím znovu připojte."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
       ]
     },
     "error": {
@@ -6842,6 +6848,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosáhli jste limitu rezervačních termínů (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "tým podpory"
       ]
     },
     "info": {

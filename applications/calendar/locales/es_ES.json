@@ -1031,6 +1031,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "actualizar la página"
       ]
     },
     "action": {
@@ -4143,6 +4146,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Tu conexión de Zoom ha expirado. Vuelve a conectarte para continuar."
+      ],
+      "Could not grant access to the organization key": [
+        "No se ha podido conceder acceso a la clave de la organización"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
       ]
     },
     "error": {
@@ -6680,6 +6689,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Has alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "equipo de soporte"
       ]
     },
     "info": {
@@ -7462,6 +7474,9 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
       ]
     },
     "label": {
@@ -9791,6 +9806,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
+      ],
+      "Please enter the account holder name": [
+        "Introduce el nombre del titular de la cuenta"
       ]
     },
     "Payments.error": {

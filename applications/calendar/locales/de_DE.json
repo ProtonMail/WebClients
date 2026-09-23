@@ -1040,6 +1040,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ]
     },
     "action": {
@@ -4435,6 +4441,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Deine Zoom-Verbindung ist abgelaufen. Bitte verbinde dich erneut, um fortzufahren."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
       ]
     },
     "error": {
@@ -7074,6 +7083,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "Support-Team"
       ]
     },
     "info": {
@@ -9730,6 +9742,9 @@
       ],
       "Your subscription renews soon": [
         "Dein Abonnement verlängert sich bald"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Das ist deine letzte Chance, den ersten Monat von ${ plan } zu diesem Preis zu erhalten."
       ]
     },
     "Offer fearue": {
@@ -9776,6 +9791,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Unbegrenzte Aliase, um deine Identität zu schützen"
+      ],
+      "Short @pm.me address": [
+        "Kurze @pm.me E-Mail-Adresse"
       ]
     },
     "Onboarding": {
@@ -9859,6 +9877,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du kannst ${ planTitle } kostenlos nutzen, bis die Testversion ausläuft."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Zahlungsmethode hinzufügen**, um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Jederzeit vorher kündigen.** Du kannst ${ planTitle } bis zum Ende der Testversion kostenlos nutzen."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Wenn du nach Ablauf der Testversion fortfährst,** kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Sobald dein volles Abonnement beginnt,** kannst du immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
+      ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen,"
+      ],
+      "If you continue after your trial,": [
+        "Wenn du nach Ablauf der Testversion fortfährst,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "um nach Ablauf deiner Testversion weiterhin alle Funktionen nutzen zu können."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
       ]
     },
     "Option": {
