@@ -9,8 +9,6 @@ export const MAX_UPDATE_SIZE = RTSConfig.MAX_DU_SIZE
 
 export const MAX_UPDATE_CHUNKS = RTSConfig.MAX_UPDATE_CHUNKS
 
-export const UPDATE_CHUNK_HEADER_SIGNAL = new TextEncoder().encode('update-chunk-header')
-
 /**
  * When we chunk an update, we chunk the content itself and not the protobuf
  * message. The protobuf adds some overhead which we need to account for when

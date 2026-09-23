@@ -1,10 +1,10 @@
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { Result } from '@proton/docs-shared'
 
-export enum IndexedDBError {
+enum IndexedDBError {
   QUOTA_EXCEEDED = 'QUOTA_EXCEEDED',
   DB_BLOCKED = 'DB_BLOCKED',
-  DB_DELETED = 'DB_DELETED',
+  // DB_DELETED = 'DB_DELETED',
   DB_VERSION_CHANGE = 'DB_VERSION_CHANGE',
   OPEN_FAILED = 'OPEN_FAILED',
   TRANSACTION_FAILED = 'TRANSACTION_FAILED',
