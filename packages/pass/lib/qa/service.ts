@@ -10,6 +10,9 @@ export const QA_STATE_KEY = 'pass::qa';
 export type QAState = {
     login_without_offline_components: boolean;
     api_downtime: boolean;
+    /** Fakes a B2B trial without a payment method to surface the nudge
+     * spotlight. Requires an admin account on a paid plan. */
+    payment_method_nudge: boolean;
     /** HTTP status forced on `auth/refresh`, `false` to disable */
     refresh_status: number | false;
     sync_strategy_v2: boolean;
@@ -18,6 +21,7 @@ export type QAState = {
 const QA_DEFAULT_STATE: QAState = {
     login_without_offline_components: false,
     api_downtime: false,
+    payment_method_nudge: false,
     refresh_status: false,
     sync_strategy_v2: true,
 };

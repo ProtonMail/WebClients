@@ -39,6 +39,8 @@ import { getOrganizationPauseList, getOrganizationSettings } from '../../actions
 import { resolvePrivateDomains } from '../../actions/creators/private-domains';
 import { resolveWebsiteRules } from '../../actions/creators/rules';
 import { getAuthDevices } from '../../actions/creators/sso';
+import { getPaymentNudgePaymentMethods } from '../../payment-nudge/actions';
+import { selectCanQueryPaymentNudge } from '../../payment-nudge/selectors';
 import type { ProxiedSettings } from '../../reducers/settings';
 import { withRevalidate } from '../../request/enhancers';
 import { selectFeatureFlag, selectProxiedSettings, selectSyncStrategy } from '../../selectors';
@@ -117,6 +119,11 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
             yield put(withRevalidate(secureLinksGet.intent()));
             yield put(withRevalidate(getInAppNotifications.intent()));
             yield put(getAuthDevices.intent());
+
+            /** Only B2B trial plans the user can pay for reach the payment
+             * method lookup: everyone else is filtered out without an API call. */
+            const canQueryPaymentNudge: boolean = yield select(selectCanQueryPaymentNudge);
+            if (canQueryPaymentNudge) yield put(getPaymentNudgePaymentMethods.intent());
 
             if (EXTENSION_BUILD) {
                 yield put(resolveWebsiteRules.intent());

@@ -11,6 +11,7 @@ import {
     createFileAttachmentsDiscoveryRule,
     createItemSharingRule,
     createMonitorLearnMoreRule,
+    createPaymentMethodNudgeRule,
     createPendingShareAccessRule,
     createProtonAnniversary2025Rule,
     createSSOChangeLockRule,
@@ -49,6 +50,7 @@ export const spotlight = createSpotlightService({
          * Rules displayed as spotlight should be defined above the "invisible" rules
          * otherwise they may never be displayed, as an "invisible" rule may return `true` first */
         createPendingShareAccessRule(store),
+        createPaymentMethodNudgeRule(store),
         createTrialRule(store),
         createSecurityRule(store),
         createAliasSyncEnableRule(store),
@@ -69,6 +71,10 @@ export const spotlight = createSpotlightService({
         ...(DESKTOP_BUILD ? [createSshAgentInstructionsRules()] : []),
     ],
 });
+
+/** Acknowledgments are held in memory and re-prompt on their own cadence, so a
+ * message cannot be seen twice in a session. Clears both for QA purposes. */
+if (ENV === 'development') (globalThis as any)['qa::spotlight_reset'] = () => spotlight.reset();
 
 export const spotlightProxy: SpotlightProxy = {
     check: pipe(spotlight.checkMessage, prop('enabled')),
