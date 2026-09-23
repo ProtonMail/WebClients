@@ -14,6 +14,10 @@ import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
+import useListTelemetry, {
+    ACTION_TYPE,
+    numberSelectionElements,
+} from '../../../components/list/list-telemetry/useListTelemetry';
 import UndoActionNotification from '../../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
 import { useMailGlobalModals } from '../../../containers/globalModals/globalModalContext';
@@ -57,6 +61,7 @@ export const useApplyLocation = () => {
     const api = useApi();
 
     const { createNotification, removeNotification } = useNotifications();
+    const { sendSimpleActionReport } = useListTelemetry();
     const { call } = useEventManager();
     const handleOnBackMoveAction = useMoveBackAction();
 
@@ -463,6 +468,16 @@ export const useApplyLocation = () => {
                     elements: params.elements,
                     removeLabel: params.removeLabel || false,
                 });
+
+                // Only user-initiated stars carry a sourceAction, so automated callers
+                // (the Lumo agent) are excluded from the metric by construction.
+                if (params.sourceAction) {
+                    sendSimpleActionReport({
+                        actionType: params.removeLabel ? ACTION_TYPE.UNSTAR : ACTION_TYPE.STAR,
+                        actionLocation: params.sourceAction,
+                        numberMessage: numberSelectionElements(params.elements.length),
+                    });
+                }
 
                 logger.info(`Starring ${params.elements.length} element(s)`);
                 return moveToFolder({

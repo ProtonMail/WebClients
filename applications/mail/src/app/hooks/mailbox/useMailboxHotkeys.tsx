@@ -15,19 +15,18 @@ import type { Filter } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
-import { MoveAllType, useMoveAllToFolder } from '../actions/move/useMoveAllToFolder';
-import { useSelectAll } from '../useSelectAll';
-import { selectElementID } from '../../store/elements/elementsSelectors';
-import { useMailSelector } from '../../store/hooks';
-
 import { isStarred } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setFilterInUrl, setParamsInLocation } from '../../helpers/mailboxUrl';
 import type { Element } from '../../models/element';
+import { selectElementID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 import { APPLY_LOCATION_TYPES } from '../actions/applyLocation/interface';
 import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from '../actions/delete/usePermanentDelete';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
+import { MoveAllType, useMoveAllToFolder } from '../actions/move/useMoveAllToFolder';
+import { useSelectAll } from '../useSelectAll';
 import { useGetElementsFromIDs } from './useElements';
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 
@@ -382,6 +381,7 @@ export const useMailboxHotkeys = (
 
                     await applyLocation({
                         type: APPLY_LOCATION_TYPES.STAR,
+                        sourceAction: SOURCE_ACTION.SHORTCUTS,
                         removeLabel: isAllStarred,
                         elements,
                         destinationLabelID: MAILBOX_LABEL_IDS.STARRED,

@@ -10,6 +10,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
+import { ACTION_TYPE, SELECTED_RANGE, SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
 import { GlobalModalContext } from '../../../containers/globalModals/globalModalContext';
 import { ModalType } from '../../../containers/globalModals/inteface';
@@ -107,6 +108,14 @@ jest.mock('@proton/components/hooks/useEventManager', () => ({
 jest.mock('@proton/hooks/useLoading', () => {
     return jest.fn(() => [false, jest.fn()]);
 });
+
+const mockSendSimpleActionReport = jest.fn();
+jest.mock('../../../components/list/list-telemetry/useListTelemetry', () => ({
+    __esModule: true,
+    // Keep the real enums and range helper; only the reporting hook is stubbed.
+    ...jest.requireActual('../../../components/list/list-telemetry/useListTelemetry'),
+    default: () => ({ sendSimpleActionReport: mockSendSimpleActionReport }),
+}));
 
 const notifyMock = jest.fn();
 const subscribeMock = jest.fn();
@@ -979,6 +988,96 @@ describe('useApplyLocation', () => {
             expect(mockedRemoveNotification).toHaveBeenCalled();
 
             jest.useRealTimers();
+        });
+    });
+
+    describe('star telemetry', () => {
+        const element = { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.INBOX] };
+
+        it('should report a STAR action when starring', async () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            await result.current.applyLocation({
+                type: APPLY_LOCATION_TYPES.STAR,
+                elements: [element],
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                sourceAction: SOURCE_ACTION.ITEM_STAR,
+            });
+
+            expect(mockSendSimpleActionReport).toHaveBeenCalledWith({
+                actionType: ACTION_TYPE.STAR,
+                actionLocation: SOURCE_ACTION.ITEM_STAR,
+                numberMessage: SELECTED_RANGE.ONE,
+            });
+        });
+
+        it('should report an UNSTAR action when unstarring', async () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            await result.current.applyLocation({
+                type: APPLY_LOCATION_TYPES.STAR,
+                elements: [element],
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                removeLabel: true,
+                sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
+            });
+
+            expect(mockSendSimpleActionReport).toHaveBeenCalledWith({
+                actionType: ACTION_TYPE.UNSTAR,
+                actionLocation: SOURCE_ACTION.HOVER_BUTTONS,
+                numberMessage: SELECTED_RANGE.ONE,
+            });
+        });
+
+        it('should bucket the number of starred elements', async () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            await result.current.applyLocation({
+                type: APPLY_LOCATION_TYPES.STAR,
+                elements: [element, element, element],
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                sourceAction: SOURCE_ACTION.SHORTCUTS,
+            });
+
+            expect(mockSendSimpleActionReport).toHaveBeenCalledWith(
+                expect.objectContaining({ numberMessage: SELECTED_RANGE.TWO_TO_FIVE })
+            );
+        });
+
+        it('should report nothing when no sourceAction is given (automated callers)', async () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            await result.current.applyLocation({
+                type: APPLY_LOCATION_TYPES.STAR,
+                elements: [element],
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+            });
+
+            expect(mockSendSimpleActionReport).not.toHaveBeenCalled();
+        });
+
+        it('should still perform the star action when reporting is skipped', async () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            await result.current.applyLocation({
+                type: APPLY_LOCATION_TYPES.STAR,
+                elements: [element],
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+            });
+
+            expect(mockedLabelMessages).toHaveBeenCalled();
+        });
+
+        it('should not report for move or label actions', async () => {
+            const { result } = renderHook(() => useApplyLocation(), { wrapper });
+
+            await result.current.applyLocation({
+                type: APPLY_LOCATION_TYPES.MOVE,
+                elements: [element],
+                destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+            });
+
+            expect(mockSendSimpleActionReport).not.toHaveBeenCalled();
         });
     });
 });
