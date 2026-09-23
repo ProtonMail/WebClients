@@ -1,9 +1,5 @@
-import type {
-  DataTypesThatDocumentCanBeExportedAs,
-  EditorInitializationConfig,
-  SheetImportData,
-} from '@proton/docs-shared'
-import { EditorSystemMode, SheetImportDestination, TranslatedResult } from '@proton/docs-shared'
+import type { DataTypesThatDocumentCanBeExportedAs, EditorInitializationConfig } from '@proton/docs-shared'
+import { EditorSystemMode, TranslatedResult } from '@proton/docs-shared'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
@@ -29,6 +25,7 @@ import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-au
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
 import { getSheetNameFromFilename } from './sheet-import-name'
 import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
+import type { SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
 import { canSheetsConvertType, getSheetsImportMimeType } from './supported-sheets-import-types'
 
 export type SpreadsheetRef = {
@@ -287,21 +284,21 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const sheetsRef = useRef(sheets)
   sheetsRef.current = sheets
   useEffect(() => {
-    return subscribeToSheetImport((data: SheetImportData) => {
-      const isExcelFile = data.file.type === getSheetsImportMimeType('xlsx')
-      const isODSFile = data.file.type === getSheetsImportMimeType('ods')
+    return subscribeToSheetImport((request: SpreadsheetImportRequest) => {
+      const isExcelFile = request.file.type === getSheetsImportMimeType('xlsx')
+      const isODSFile = request.file.type === getSheetsImportMimeType('ods')
       if (isExcelFile || isODSFile) {
-        void handleExcelFileImport(data.file, isExcelFile ? 'excel' : 'ods')
+        void handleExcelFileImport(request.file, isExcelFile ? 'excel' : 'ods')
         return
       }
       let sheetId = undefined
       let cellCoords = undefined
-      if (data.destination === SheetImportDestination.InsertAsNewSheet) {
+      if (request.destination === 'insert-as-new-sheet') {
         const newSheet = onCreateNewSheet()
         if (!newSheet) {
           return
         }
-        const name = getSheetNameFromFilename(data.file.name)
+        const name = getSheetNameFromFilename(request.file.name)
         if (name) {
           const sheetNames = sheetsRef.current.map((sheet) => ({ id: sheet.sheetId, name: sheet.title }))
           const importedSheetName = getUniqueSheetName(newSheet.sheetId, name, sheetNames)
@@ -312,12 +309,12 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         sheetId = newSheet.sheetId
         cellCoords = { rowIndex: 1, columnIndex: 1 }
       }
-      if (data.destination === SheetImportDestination.ReplaceCurrentSheet) {
+      if (request.destination === 'replace-current-sheet') {
         cellCoords = { rowIndex: 1, columnIndex: 1 }
       }
-      onInsertFile(data.file, sheetId, cellCoords, {
-        preserveFormatting: data.shouldConvertCellContents,
-        replaceSheetData: data.destination === SheetImportDestination.ReplaceCurrentSheet,
+      onInsertFile(request.file, sheetId, cellCoords, {
+        preserveFormatting: request.shouldConvertCellContents,
+        replaceSheetData: request.destination === 'replace-current-sheet',
         enabledSharedStrings: true,
         enableCellXfsRegistry: true,
       })

@@ -1,4 +1,5 @@
 export type { SheetsLogger } from './contract/SheetsLogger'
+export type { SpreadsheetImportDestination, SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
 export { SheetsDependenciesProvider } from './SheetsDependenciesProvider'
 export type {
   CollaboratorCursorNavigationDestination,
