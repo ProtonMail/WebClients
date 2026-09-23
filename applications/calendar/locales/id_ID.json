@@ -1030,6 +1030,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Masa uji coba aplikasi desktop Anda akan berakhir pada ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ]
     },
     "action": {
@@ -4130,6 +4133,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Koneksi Zoom Anda telah kedaluwarsa. Silakan hubungkan ulang untuk melanjutkan."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
       ]
     },
     "error": {
@@ -6595,6 +6601,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Anda telah mencapai batas slot pemesanan (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "tim dukungan"
       ]
     },
     "info": {

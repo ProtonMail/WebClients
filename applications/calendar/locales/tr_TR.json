@@ -1058,6 +1058,12 @@
       ],
       "Add a payment method": [
         "Bir ödeme yöntemi ekleyin"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ]
     },
     "action": {
@@ -4482,6 +4488,9 @@
       ],
       "A contact with this email address already exists": [
         "Bu e-posta adresiyle bir kişi kaydı zaten var"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
       ]
     },
     "error": {
@@ -7133,6 +7142,9 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
+      ],
+      "support team": [
+        "destek ekibi"
       ]
     },
     "info": {
@@ -9789,6 +9801,9 @@
       ],
       "Your subscription renews soon": [
         "Aboneliğiniz yakında yenilenecek"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "${ plan } tarifesinin ilk ayını bu fiyat ile alabilmek için son şansınız."
       ]
     },
     "Offer fearue": {
@@ -9835,6 +9850,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Kimliğinizi korumak için sınırsız sayıda takma ad"
+      ],
+      "Short @pm.me address": [
+        "Kısa @pm.me adresi"
       ]
     },
     "Onboarding": {
@@ -9918,6 +9936,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "Deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için **bir ödeme yöntemi ekleyin**."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Ondan önce istediğiniz zaman iptal edebilirsiniz.** Deneme süresi sona erene kadar ${ planTitle } tarifesini ücretsiz olarak kullanabileceksiniz."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Deneme süreniz bittikten sonra kullanmayı sürdürürseniz** 30 gün içinde iptal edebilir ve ödediğiniz kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Tam aboneliğiniz başladığında...** 30 gün içinde aboneliğinizi iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
+      ],
+      "If you continue after your trial,": [
+        "Deneme süreniz bittikten sonra kullanmayı sürdürürseniz,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "deneme süreniz sona erdikten sonra tüm özellikleri kullanmayı sürdürmek için."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30 gün içinde iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
       ]
     },
     "Option": {

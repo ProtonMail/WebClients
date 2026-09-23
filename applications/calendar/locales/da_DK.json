@@ -1058,6 +1058,12 @@
       ],
       "Add a payment method": [
         "Tilføj en betalingsmetode"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "opdatér siden"
       ]
     },
     "action": {
@@ -4482,6 +4488,9 @@
       ],
       "A contact with this email address already exists": [
         "En kontakt med denne e-mailadresse eksisterer allerede"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ]
     },
     "error": {
@@ -7133,6 +7142,9 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
+      ],
+      "support team": [
+        "supportteam"
       ]
     },
     "info": {
@@ -9789,6 +9801,9 @@
       ],
       "Your subscription renews soon": [
         "Dit abonnement fornyes snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sidste chance for at få første måned af ${ plan } til denne pris."
       ]
     },
     "Offer fearue": {
@@ -9835,6 +9850,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Ubegrænsede aliasser til at beskytte din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me-adresse"
       ]
     },
     "Onboarding": {
@@ -9918,6 +9936,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du vil kunne bruge ${ planTitle } indtil prøveversionen udløber, uden beregning."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Tilføj en betalingsmetode** for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Annuller når som helst før da**. Du vil kunne bruge ${ planTitle } indtil prøveperioden slutter, uden beregning."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Hvis du forsætter efter din prøveperiode,** så kan du stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Så snart dit abonnement starter...** kan du stadig annullere indenfor 30 dage og få en forholdsmæssig refusion."
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
+      ],
+      "If you continue after your trial,": [
+        "Hvis du forsætter efter din prøveperiode,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "så kan du annullere inden for 30 dage og få en forholdsmæssig refusion."
       ]
     },
     "Option": {

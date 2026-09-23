@@ -1049,6 +1049,9 @@
       ],
       "Preview logs": [
         "Forhåndsvis logger"
+      ],
+      "refresh the page": [
+        "oppdater siden"
       ]
     },
     "action": {
@@ -4473,6 +4476,9 @@
       ],
       "Could not grant access to the organization key": [
         "Kunne ikke gi tilgang til organisasjonsnøkkelen"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noe gikk galt, ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
       ]
     },
     "error": {
@@ -7121,6 +7127,9 @@
       ],
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Logger hjelper oss å forstå hva som skjedde før problemet oppstod. De inkluderer apphandlinger og feilmeldinger, men ikke noe meldingsinnhold."
+      ],
+      "support team": [
+        "støtteapparat"
       ]
     },
     "info": {
