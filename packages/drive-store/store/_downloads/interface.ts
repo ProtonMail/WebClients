@@ -129,11 +129,3 @@ export type DecryptFileKeys = {
     sessionKeys?: SessionKey;
     addressPublicKeys?: PublicKeyReference[];
 };
-
-// Kept for reference: strategy to apply when a signature issue is met during a transfer.
-// Not used yet.
-// export enum TransferSignatureIssueStrategy {
-//     Abort = 'abort',
-//     Continue = 'continue',
-//     // Following strategies are not used yet.
-// }

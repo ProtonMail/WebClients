@@ -25,7 +25,6 @@ export enum ShareType {
 
 export enum ShareState {
     active = 1,
-    // deleted = 2, // unused in the store, kept for reference: API state for a deleted share
     restored = 3,
 }
 
@@ -52,25 +51,6 @@ export interface ShareWithKey extends Share {
     rootLinkRecoveryPassphrase?: string;
     memberships: ShareMembership[];
 }
-
-// Unused legacy shape of ShareURL, kept for reference
-// export type ShareURLLEGACY = WithSRPPayload<{
-//     shareId: string;
-//     shareUrlId: string;
-//     expirationTime: number | null;
-//     creatorEmail: string;
-//     password: string;
-//     flags: number;
-//     token: string;
-//     publicUrl: string;
-//     sharePassphraseKeyPacket: string;
-//     sharePasswordSalt: string;
-//     hasCustomPassword: boolean;
-//     hasGeneratedPasswordIncluded: boolean;
-//     numAccesses: number;
-//     maxAccesses: number;
-//     permissions: number;
-// }>;
 
 export type ShareURL = WithSRPPayload<{
     shareId: string;
