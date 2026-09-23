@@ -45,6 +45,7 @@ export enum FeatureCode {
     ComposerAssistantTrialStartDate = 'ComposerAssistantTrialStartDate',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
     DriveSearchSpotlight = 'DriveSearchSpotlight',
+    DriveEasySwitchSidebarDismissed = 'DriveEasySwitchSidebarDismissed',
     EarlyAccessScope = 'EarlyAccess',
     ElectronESInboxThreshold = 'ElectronESInboxThreshold',
     ElectronConvPreloadAmount = 'ElectronConvPreloadAmount',
