@@ -18,7 +18,7 @@ import useVolume from './useVolume';
 /**
  * useDefaultShare provides access to main default user's share.
  */
-export function useDefaultShare() {
+function useDefaultShare() {
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
 

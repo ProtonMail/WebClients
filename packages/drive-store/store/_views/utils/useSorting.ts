@@ -57,7 +57,7 @@ export function useSortingWithDefault<T extends SortField, Item extends LinkSort
  * which can be changed by returned `setSorting` callback. Whenever
  * the sort changes, `changeSort` callback is called.
  */
-export function useControlledSorting<T extends SortField, Item extends LinkSortFields>(
+function useControlledSorting<T extends SortField, Item extends LinkSortFields>(
     list: Item[],
     sortParams: SortParams<T>,
     changeSort: (sortParams: SortParams<T>) => Promise<void>
