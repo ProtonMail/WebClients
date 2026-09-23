@@ -17,8 +17,7 @@ import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
 import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
 import type { DownloadErrorCategoryType, MetricShareTypeWithPublic } from '../../../utils/type/MetricTypes';
-import { MetricSharePublicType } from '../../../utils/type/MetricTypes';
-import { DownloadErrorCategory } from '../../../utils/type/MetricTypes';
+import { DownloadErrorCategory, MetricSharePublicType } from '../../../utils/type/MetricTypes';
 import { useSharesStore } from '../../../zustand/share/shares.store';
 import { getShareType } from '../../_uploads/UploadProvider/useUploadMetrics';
 import { getMetricsUserPlan } from '../../_user/getMetricsUserPlan';
@@ -27,7 +26,7 @@ import type { Download } from './interface';
 
 const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes
 
-export function getErrorCategory(state: TransferState, error: any): DownloadErrorCategoryType {
+function getErrorCategory(state: TransferState, error: any): DownloadErrorCategoryType {
     if (getIsUnreachableError(error) || getIsTimeoutError(error)) {
         return DownloadErrorCategory.ServerError;
     } else if (getIsOfflineError(error) || getIsNetworkError(error) || state === TransferState.NetworkError) {

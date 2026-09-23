@@ -1,4 +1,5 @@
 import { toPublicKeyReference } from '@protontech/crypto';
+
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -7,7 +8,7 @@ import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 // Special case for drive to allow users with just an external address
-export const getActiveAddresses = (addresses: Address[]): Address[] => {
+const getActiveAddresses = (addresses: Address[]): Address[] => {
     return addresses.filter(({ Status }) => Status === ADDRESS_STATUS.STATUS_ENABLED);
 };
 

@@ -182,7 +182,7 @@ export const shareMemberPayloadToShareMember = (shareMember: ShareMemberPayload)
     };
 };
 
-export const shareMembershipPayloadToShareMembership = (shareMembership: ShareMembershipPayload): ShareMembership => {
+const shareMembershipPayloadToShareMembership = (shareMembership: ShareMembershipPayload): ShareMembership => {
     return {
         memberId: shareMembership.MemberID,
         shareId: shareMembership.ShareID,
