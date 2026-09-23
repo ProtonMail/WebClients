@@ -21,13 +21,16 @@ export const useDriveImportStatus = () => {
     const { isLoaded, isImporting, hasCompletedImport } = useEasySwitchSelector(selectDriveImportStatus);
     const [outcome, setOutcome] = useState<DriveImportOutcome>();
 
-    useEffect(() => {
-        const request = dispatch(loadImporters());
-        return () => request.abort();
-    }, [dispatch]);
+    useEffect(
+        function loadEasySwitchImporters() {
+            const request = dispatch(loadImporters());
+            return () => request.abort();
+        },
+        [dispatch]
+    );
 
     useEffect(
-        () =>
+        function checkImportsStatus() {
             subscribe((event) => {
                 const { Imports, ImportReports }: ApiEvent = event;
 
@@ -55,7 +58,8 @@ export const useDriveImportStatus = () => {
                 if (isOutcomeFromReport) {
                     void dispatch(loadImporters());
                 }
-            }),
+            });
+        },
         [subscribe, dispatch]
     );
 
