@@ -15,14 +15,14 @@ import type { WireImage } from '@proton/lumo-api-client/types-api';
 import { lumoImageMarker } from '@proton/lumo-api-client/utils';
 import type { ServerToolSource } from '@proton/lumo-ui';
 
-import type { ToolDefinition, ToolImage } from '../contracts/types';
+import type { ToolDefinition, ToolImage, ToolName } from '../contracts/types';
 import type { ConfirmDecision, ToolChip } from '../engine/engine';
 import { ConfirmOutcome, createClientToolExecutor } from '../engine/engine';
 import { LOAD_GUIDE_TOOL_NAME } from '../engine/loadGuide';
 import { createReferenceRegistry } from '../engine/referenceRegistry';
 import { buildSystemPrompt } from '../prompt/buildSystemPrompt';
 import type { LumoAgentConfig, LumoAgentItem, ToolLimit } from './types';
-import { ConfirmStatus } from './types';
+import { ConfirmStatus, LumoChainEnd, LumoConfirmAnswer } from './types';
 
 /** The engine reports how a change went; the tile is a UI state. Neither vocabulary owns the other. */
 const OUTCOME_STATUS: Record<ConfirmOutcome, ConfirmStatus> = {
@@ -166,7 +166,9 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
     const idRef = useRef(0);
     const controllerRef = useRef<AbortController | null>(null);
-    const confirmResolveRef = useRef<((decision: ConfirmDecision) => void) | null>(null);
+    // The card the user is being asked about, and the promise its answer settles. One ref, because the
+    // tool it proposes and the answer it awaits have exactly the same lifetime.
+    const confirmResolveRef = useRef<{ tool: ToolName; resolve: (decision: ConfirmDecision) => void } | null>(null);
     const historyRef = useRef<Turn[]>([]);
     // What the debug transcript copies: every turn verbatim, including read payloads history elides.
     const transcriptRef = useRef<Turn[]>([]);
@@ -181,6 +183,10 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     // Every bubble of prose the current chain has written, carried across a resume so history keeps the
     // half of the answer the user already read. `replyTextRef` only ever holds the live bubble.
     const chainReplyRef = useRef('');
+    // Read through a ref so no reporting call site has to depend on `config`. The cleanup effect below
+    // would otherwise abort the chain and abandon its card on every render a caller changed config on.
+    const telemetryRef = useRef(config.telemetry);
+    telemetryRef.current = config.telemetry;
 
     const nextId = useCallback(() => (idRef.current += 1), []);
     const pushItem = useCallback((item: LumoAgentItem) => setItems((prev) => [...prev, item]), []);
@@ -264,56 +270,76 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         []
     );
 
-    const confirm = useCallback(
-        (params: Record<string, any>) => {
-            const resolve = confirmResolveRef.current;
-            if (!resolve) {
-                return;
-            }
-            confirmResolveRef.current = null;
-            // Not `applied` — the handler has not run yet, and it may still refuse the change.
-            advanceLastConfirm(ConfirmStatus.PENDING, ConfirmStatus.APPLYING, params);
-            resolve({ action: 'apply', params });
-        },
-        [advanceLastConfirm]
-    );
-
-    const cancel = useCallback(() => {
-        const resolve = confirmResolveRef.current;
-        if (!resolve) {
-            return;
+    /** Take the pending card, leaving none behind, and report how the user answered it. */
+    const takePendingConfirm = useCallback((answer: LumoConfirmAnswer) => {
+        const pending = confirmResolveRef.current;
+        confirmResolveRef.current = null;
+        if (pending) {
+            telemetryRef.current?.confirmAnswered(pending.tool, answer);
         }
-        confirmResolveRef.current = null;
-        advanceLastConfirm(ConfirmStatus.PENDING, ConfirmStatus.CANCELLED);
-        resolve({ action: 'cancel' });
-    }, [advanceLastConfirm]);
-
-    /** Release a card the user can no longer answer; without it the executor awaits it forever. */
-    const abandonPendingConfirm = useCallback(() => {
-        confirmResolveRef.current?.({ action: 'cancel' });
-        confirmResolveRef.current = null;
+        return pending;
     }, []);
 
-    const abortChain = useCallback(() => {
+    const confirm = useCallback(
+        (params: Record<string, any>) => {
+            const pending = takePendingConfirm(LumoConfirmAnswer.APPLIED);
+            if (!pending) {
+                return;
+            }
+            // Not `applied` — the handler has not run yet, and it may still refuse the change.
+            advanceLastConfirm(ConfirmStatus.PENDING, ConfirmStatus.APPLYING, params);
+            pending.resolve({ action: 'apply', params });
+        },
+        [advanceLastConfirm, takePendingConfirm]
+    );
+
+    /**
+     * Settle the pending card; without this the executor awaits it forever. The tile reads cancelled
+     * however it was settled, since the change is not going to run, but `answer` keeps the two apart:
+     * the user refused it, or they never answered it at all.
+     */
+    const releasePendingConfirm = useCallback(
+        (answer: LumoConfirmAnswer) => {
+            const pending = takePendingConfirm(answer);
+            if (!pending) {
+                return;
+            }
+            advanceLastConfirm(ConfirmStatus.PENDING, ConfirmStatus.CANCELLED);
+            pending.resolve({ action: 'cancel' });
+        },
+        [advanceLastConfirm, takePendingConfirm]
+    );
+
+    const cancel = useCallback(() => releasePendingConfirm(LumoConfirmAnswer.CANCELLED), [releasePendingConfirm]);
+
+    // Every abort reaches the chain as the same `AbortError`, so the caller says which one it was. An
+    // `AbortError` from anywhere else is the user's own stop as far as the chain can tell.
+    const abortEndRef = useRef(LumoChainEnd.STOPPED);
+
+    const abortChain = useCallback((end: LumoChainEnd) => {
+        abortEndRef.current = end;
         controllerRef.current?.abort();
         controllerRef.current = null;
     }, []);
 
-    // The mobile breakpoint unmounts the drawer outright, taking any parked card with it. Aborting
-    // first stops the released card from buying the chain another round nobody is rendering.
-    useEffect(
-        () => () => {
-            abortChain();
-            abandonPendingConfirm();
+    /**
+     * End the chain over the head of whoever was answering its card. Nobody answered, so the card is
+     * abandoned rather than cancelled, and `end` says which of the four ways it was that took it.
+     */
+    const abandonChain = useCallback(
+        (end: LumoChainEnd) => {
+            abortChain(end);
+            releasePendingConfirm(LumoConfirmAnswer.ABANDONED);
+            setIsBusy(false);
         },
-        [abortChain, abandonPendingConfirm]
+        [abortChain, releasePendingConfirm]
     );
 
-    const stop = useCallback(() => {
-        abortChain();
-        cancel();
-        setIsBusy(false);
-    }, [abortChain, cancel]);
+    // The mobile breakpoint unmounts the drawer outright, taking any parked card with it. Aborting
+    // first stops the released card from buying the chain another round nobody is rendering.
+    useEffect(() => () => abandonChain(LumoChainEnd.DISCARDED), [abandonChain]);
+
+    const stop = useCallback(() => abandonChain(LumoChainEnd.STOPPED), [abandonChain]);
 
     // Built once per session (per `sessionKey`); holds the reference registry + loaded-guide set so
     // they persist across messages. Confirmations resolve the executor's `ConfirmController` promise.
@@ -329,7 +355,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     new Promise<ConfirmDecision>((resolve) => {
                         finalizeReply();
                         pushItem({ id: nextId(), kind: 'confirm', action, labels, status: ConfirmStatus.PENDING });
-                        confirmResolveRef.current = resolve;
+                        confirmResolveRef.current = { tool: action.type, resolve };
                     }),
                 reportOutcome: (outcome) => advanceLastConfirm(ConfirmStatus.APPLYING, OUTCOME_STATUS[outcome]),
             },
@@ -385,12 +411,25 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     );
 
     const runChain = useCallback(
-        async (turns: Turn[], userText: string, carriedReply = '') => {
+        async (turns: Turn[], userText: string, resumed?: { reply: string }) => {
             setIsBusy(true);
+            const carriedReply = resumed?.reply ?? '';
             chainReplyRef.current = carriedReply;
 
             const controller = new AbortController();
             controllerRef.current = controller;
+
+            const startedAt = performance.now();
+            // Counted here rather than off the returned turns, because a chain that throws or is aborted
+            // never returns any. A resumed chain is handed the whole exchange, so it starts from what
+            // its earlier rounds already spent.
+            let toolCalls = countToolCallsSinceQuestion(turns);
+            const reportChainEnd = (end: LumoChainEnd) =>
+                telemetryRef.current?.chainEnded(end, {
+                    durationMs: performance.now() - startedAt,
+                    toolCalls,
+                    isResume: !!resumed,
+                });
 
             // A tool can hand over an image mid-chain (the file on screen, say) — a tool result is text
             // only. The chain re-sends its turns every round, so attaching it to the message the user
@@ -411,6 +450,10 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             };
 
             const serverSources = new Map<string, number>();
+            // A refusal or a timeout arrives as a chunk and the stream then finishes cleanly, so the
+            // chain returns as though it answered while the user reads an error. Latched here because
+            // that is the only place the two are distinguishable.
+            let streamFailed = false;
 
             const chunkCallback = (chunk: GenerationResponseMessage) => {
                 if (chunk.type === 'token_data' && chunk.target === 'message') {
@@ -442,6 +485,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     chunk.type === 'harmful' ||
                     chunk.type === 'timeout'
                 ) {
+                    streamFailed = true;
                     pushError();
                 }
             };
@@ -454,7 +498,10 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 const { stoppedOnBudget, turns: chainTurns } = await client.callAssistant(api, turns, {
                     clientToolExecutor: {
                         ...executor,
-                        execute: (calls) => executor.execute(calls, { signal: controller.signal, showImage }),
+                        execute: (calls) => {
+                            toolCalls += calls.length;
+                            return executor.execute(calls, { signal: controller.signal, showImage });
+                        },
                     },
                     clientTools,
                     serverTools: config.serverTools,
@@ -465,6 +512,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 // aborted budget stop as a plain finish — so nothing past this point may land on the turn
                 // that replaced it.
                 if (controllerRef.current !== controller) {
+                    reportChainEnd(LumoChainEnd.REPLACED);
                     return;
                 }
                 const sentCount = withoutBlankAssistantTurns(turns).length;
@@ -486,14 +534,18 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     };
                     pendingResumeRef.current = { turns: chainTurns, userText, reply: chainReplyRef.current, limit };
                     setToolLimit(limit);
+                    reportChainEnd(LumoChainEnd.BUDGET);
                     return;
                 }
                 clearPendingResume();
                 commitHistory(userText);
+                reportChainEnd(streamFailed ? LumoChainEnd.FAILED : LumoChainEnd.SUCCEEDED);
             } catch (error: any) {
-                if (error?.name !== 'AbortError') {
+                const isAbort = error?.name === 'AbortError';
+                if (!isAbort) {
                     pushError();
                 }
+                reportChainEnd(isAbort ? abortEndRef.current : LumoChainEnd.FAILED);
                 // Known gap: a failed chain's turns stay inside the transport, so the tool exchanges of
                 // the run most worth reporting never reach the transcript.
                 // The stash outlives a failed resume, so the offer to carry on comes back rather than
@@ -540,13 +592,14 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             if (!text) {
                 return;
             }
-            // Typing instead of answering the card rejects it; its chain is parked inside `execute()` and
-            // cannot take another message, so it is abandoned.
+            // Typing instead of answering the card leaves it unanswered; its chain is parked inside
+            // `execute()` and cannot take another message, so this one replaces it.
             if (confirmResolveRef.current) {
-                stop();
+                abandonChain(LumoChainEnd.REPLACED);
             } else if (isBusy || controllerRef.current) {
                 return;
             }
+            telemetryRef.current?.promptSent();
 
             discardPendingResume();
             // Anything the last exchange left unbanked (an abandoned or failed chain) is not this one's,
@@ -559,7 +612,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
             await runChain([buildSystemTurn(), ...historyRef.current, { role: USER, content: text }], text);
         },
-        [buildSystemTurn, isBusy, discardPendingResume, finalizeReply, nextId, pushItem, runChain, stop]
+        [buildSystemTurn, isBusy, discardPendingResume, finalizeReply, nextId, pushItem, runChain, abandonChain]
     );
 
     const resume = useCallback(async () => {
@@ -572,7 +625,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         setToolLimit(null);
         finalizeReply();
 
-        await runChain(pending.turns, pending.userText, pending.reply);
+        await runChain(pending.turns, pending.userText, { reply: pending.reply });
     }, [isBusy, finalizeReply, runChain]);
 
     /**
@@ -589,8 +642,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     );
 
     const clear = useCallback(() => {
-        abortChain();
-        abandonPendingConfirm();
+        abandonChain(LumoChainEnd.DISCARDED);
         historyRef.current = [];
         transcriptRef.current = [];
         projectedChainRef.current = [];
@@ -600,9 +652,8 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         lastActivityRef.current = '';
         clearPendingResume();
         setItems([]);
-        setIsBusy(false);
         setSessionKey((key) => key + 1);
-    }, [abortChain, abandonPendingConfirm, clearPendingResume]);
+    }, [abandonChain, clearPendingResume]);
 
     return {
         items,
