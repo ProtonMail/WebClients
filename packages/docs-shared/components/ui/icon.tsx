@@ -8,9 +8,9 @@ import { type ComponentPropsWithoutRef, forwardRef, isValidElement } from 'react
  * - A string representing the SVG path data.
  * - A React element containing SVG contents. It can be a React fragment to include multiple SVG child elements.
  */
-export type IconData = string | ReactElement
+type IconData = string | ReactElement
 /** `Icon` options. */
-export type IconOptions = {
+type IconOptions = {
   /**
    * The icon's data, which can be one of the following:
    * - A string representing the SVG path data.
