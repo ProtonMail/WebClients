@@ -270,7 +270,7 @@
         "packages/docs-core": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["@babel/plugin-transform-class-properties"]
         },
         "packages/docs-proto": {
             "entry": [],
