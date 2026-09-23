@@ -1,3 +1,4 @@
+export type { SheetsPatchCategory } from './contract/SheetsPatch'
 export type { SheetsLogger } from './contract/SheetsLogger'
 export type { SpreadsheetImportDestination, SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
 export { SheetsDependenciesProvider } from './SheetsDependenciesProvider'
