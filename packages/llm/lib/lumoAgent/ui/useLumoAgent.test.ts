@@ -10,7 +10,7 @@ import type {
 import type { ToolDefinition } from '../contracts/types';
 import { createLoadGuideDefinition } from '../engine/loadGuide';
 import type { LumoAgentConfig } from './types';
-import { ConfirmStatus } from './types';
+import { ConfirmStatus, LumoChainEnd, LumoConfirmAnswer } from './types';
 import useLumoAgent from './useLumoAgent';
 
 // The transport is driven, not reimplemented: each test sets a `script` that the mocked callAssistant
@@ -92,7 +92,14 @@ const definitions: ToolDefinition[] = [
     },
 ];
 
+const telemetry = {
+    promptSent: jest.fn(),
+    chainEnded: jest.fn(),
+    confirmAnswered: jest.fn(),
+};
+
 const config: LumoAgentConfig = {
+    telemetry,
     definitions: [...definitions, createLoadGuideDefinition(definitions)!],
     handlers: {
         view_items: async () => {
@@ -112,6 +119,7 @@ beforeEach(() => {
     readCalls.length = 0;
     sentTurns.length = 0;
     script = async () => {};
+    jest.clearAllMocks();
 });
 
 type AgentResult = { current: ReturnType<typeof useLumoAgent> };
@@ -364,8 +372,8 @@ describe('useLumoAgent', () => {
         expect(confirmTile(result)).toMatchObject({ status: ConfirmStatus.FAILED });
     });
 
-    // `stop()` routes through `cancel()`, which only settles a card the user has yet to answer. An
-    // approved one is already inside the handler, and that call is not abortable.
+    // `stop()` only settles a card the user has yet to answer. An approved one is already inside the
+    // handler, and that call is not abortable.
     it('lets a change the user already approved finish and report, even once the chain is stopped', async () => {
         script = runOneMutation;
         const move = blockingMove();
@@ -1209,5 +1217,249 @@ describe('useLumoAgent', () => {
         });
 
         expect(result.current.getDebugTranscript().match(/Now Trash\./g)).toHaveLength(1);
+    });
+
+    describe('the lifecycle it reports to its host', () => {
+        const abortError = () => Object.assign(new Error('stopped'), { name: 'AbortError' });
+
+        const lastChainEnd = () => telemetry.chainEnded.mock.calls[telemetry.chainEnded.mock.calls.length - 1];
+
+        it('reports a chain that answered as succeeded, with what it spent getting there', async () => {
+            script = async ({ executor, chunk }) => {
+                await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+                chunk(message('Two in the Inbox.'));
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('how many are in my inbox');
+            });
+
+            expect(lastChainEnd()).toEqual([
+                LumoChainEnd.SUCCEEDED,
+                { durationMs: expect.any(Number), toolCalls: 1, isResume: false },
+            ]);
+        });
+
+        it('reports a chain that threw as failed', async () => {
+            script = async () => {
+                throw new Error('the transport gave up');
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('find my tickets');
+            });
+
+            expect(lastChainEnd()[0]).toBe(LumoChainEnd.FAILED);
+        });
+
+        // The two arms of the same catch: a transport that gave up and a user who did are opposite
+        // problems, and only `error.name` separates them.
+        it('reports an aborted chain as stopped rather than failed', async () => {
+            script = async () => {
+                throw abortError();
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('find my tickets');
+            });
+
+            expect(lastChainEnd()[0]).toBe(LumoChainEnd.STOPPED);
+        });
+
+        // The stream reports these as chunks and then finishes cleanly, so nothing throws and the
+        // chain would otherwise report the error bubble the user is reading as an answer.
+        it.each(['error', 'rejected', 'harmful', 'timeout'])(
+            'reports a chain the stream ended with %s as failed',
+            async (type) => {
+                script = async ({ chunk }) => {
+                    chunk({ type } as GenerationResponseMessage);
+                };
+
+                const { result } = renderHook(() => useLumoAgent(config));
+                await act(async () => {
+                    await result.current.send('find my tickets');
+                });
+
+                expect(lastChainEnd()[0]).toBe(LumoChainEnd.FAILED);
+            }
+        );
+
+        // Both abort the chain exactly as `stop()` does, and only the reason tells the alpha whether
+        // anyone was still waiting on the answer.
+        it.each([
+            ['the user cleared the conversation', (result: AgentResult) => result.current.clear()],
+            ['the panel unmounted under it', (_result: AgentResult, unmount: () => void) => unmount()],
+        ])('reports a chain discarded because %s as discarded, not stopped', async (_name, discard) => {
+            let releaseChain = () => {};
+            const chainMayFinish = new Promise<void>((resolve) => {
+                releaseChain = resolve;
+            });
+            script = async () => {
+                await chainMayFinish;
+                throw abortError();
+            };
+
+            const { result, unmount } = renderHook(() => useLumoAgent(config));
+            let sendPromise!: Promise<void>;
+            act(() => {
+                sendPromise = result.current.send('find my tickets');
+            });
+
+            act(() => discard(result, unmount));
+            await act(async () => {
+                releaseChain();
+                await sendPromise;
+            });
+
+            expect(lastChainEnd()[0]).toBe(LumoChainEnd.DISCARDED);
+        });
+
+        it('reports a chain parked on its round budget as budget, not as an answer', async () => {
+            script = async ({ chunk }) => {
+                chunk(message('Still looking.'));
+                return { stoppedOnBudget: true, turns: sentTurns[0] };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('find my tickets');
+            });
+
+            expect(lastChainEnd()[0]).toBe(LumoChainEnd.BUDGET);
+        });
+
+        // Without this the chain that a new message replaced never reports at all, and an abandoned
+        // chain is indistinguishable from one still running.
+        it('reports a chain whose successor owns the turn as replaced', async () => {
+            let releaseAbandoned = () => {};
+            const abandonedMayFinish = new Promise<void>((resolve) => {
+                releaseAbandoned = resolve;
+            });
+            let sendPromise: Promise<void>;
+            script = async ({ executor }) => {
+                await executor.execute([{ id: '1', name: 'move_items', arguments: '{"target":"Archive"}' }]);
+                await abandonedMayFinish;
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            act(() => {
+                sendPromise = result.current.send('archive them');
+            });
+            await pinConfirm(result);
+
+            script = async ({ chunk }) => chunk(message('Looking.'));
+            await act(async () => {
+                await result.current.send('actually, where are my tickets');
+            });
+
+            await act(async () => {
+                releaseAbandoned();
+                await sendPromise;
+            });
+
+            expect(telemetry.chainEnded.mock.calls.map(([end]) => end)).toContain(LumoChainEnd.REPLACED);
+        });
+
+        it('counts a resumed chain as a resume, and carries the rounds it already spent', async () => {
+            script = async ({ executor, chunk }) => {
+                await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+                chunk(message('Still looking.'));
+                return {
+                    stoppedOnBudget: true,
+                    turns: afterToolRound(
+                        [{ role: 'user' as any, content: 'find my tickets' }],
+                        { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
+                        { role: 'tool_result', content: '2 items' }
+                    ),
+                };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('find my tickets');
+            });
+
+            script = async ({ executor, chunk }) => {
+                await executor.execute([{ id: '2', name: 'view_items', arguments: '{}' }]);
+                chunk(message('In Trash.'));
+            };
+            await act(async () => {
+                await result.current.resume();
+            });
+
+            expect(lastChainEnd()).toEqual([
+                LumoChainEnd.SUCCEEDED,
+                { durationMs: expect.any(Number), toolCalls: 2, isResume: true },
+            ]);
+        });
+
+        it('names the tool on the card the user answered', async () => {
+            script = runOneMutation;
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            const { chain } = await sendAndPinConfirm(result);
+            await act(async () => {
+                result.current.confirm({ target: 'Inbox' });
+                await chain;
+            });
+
+            expect(telemetry.confirmAnswered).toHaveBeenCalledWith('move_items', LumoConfirmAnswer.APPLIED);
+        });
+
+        it('reports a card the user refused as cancelled', async () => {
+            script = runOneMutation;
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            const { chain } = await sendAndPinConfirm(result);
+            act(() => result.current.cancel());
+            await act(async () => {
+                await chain;
+            });
+
+            expect(telemetry.confirmAnswered).toHaveBeenCalledWith('move_items', LumoConfirmAnswer.CANCELLED);
+        });
+
+        /**
+         * Only the card's own cancel button is a refusal. Everything else takes the card off someone who
+         * never answered it, and counting those as refusals would read as a cancel rate they never chose.
+         */
+        it.each([
+            ['stopped the chain', async (result: AgentResult) => act(() => result.current.stop())],
+            ['cleared the conversation', async (result: AgentResult) => act(() => result.current.clear())],
+            ['closed the panel', async (_result: AgentResult, unmount: () => void) => act(() => unmount())],
+            [
+                'typed a new message instead of answering',
+                async (result: AgentResult) => {
+                    script = async ({ chunk }) => chunk(message('Looking.'));
+                    await act(async () => {
+                        await result.current.send('actually, where are my tickets');
+                    });
+                },
+            ],
+        ])('reports a card abandoned because the user %s as abandoned, not cancelled', async (_name, abandon) => {
+            script = runOneMutation;
+
+            const { result, unmount } = renderHook(() => useLumoAgent(config));
+            const { chain } = await sendAndPinConfirm(result);
+            await abandon(result, unmount);
+            await act(async () => {
+                await chain;
+            });
+
+            expect(telemetry.confirmAnswered).toHaveBeenCalledWith('move_items', LumoConfirmAnswer.ABANDONED);
+            expect(telemetry.confirmAnswered).not.toHaveBeenCalledWith('move_items', LumoConfirmAnswer.CANCELLED);
+        });
+
+        it('does not report a prompt it refuses to send', async () => {
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('   ');
+            });
+
+            expect(telemetry.promptSent).not.toHaveBeenCalled();
+        });
     });
 });

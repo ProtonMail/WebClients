@@ -55,6 +55,8 @@ import { buildDebugReportDraft } from '../helpers/debugReport';
 import type { SieveIssue } from '../helpers/sieve';
 import { assertSieveValid } from '../helpers/sieve';
 import { buildLumoMailConfig } from '../registry';
+import type { LumoMailConfigTelemetry } from '../telemetry/useLumoMailTelemetry';
+import { useLumoMailTelemetry } from '../telemetry/useLumoMailTelemetry';
 import type { MailToolDeps } from '../toolModule';
 
 interface Props {
@@ -110,6 +112,7 @@ const LumoMailProvider = ({ children }: Props) => {
     const { APP_VERSION } = useConfig();
     const onCompose = useOnCompose();
     const draftBodyWriters = useDraftBodyWriters();
+    const telemetry = useLumoMailTelemetry();
 
     // Latest values, refreshed every render, so the once-built handlers always read the current
     // snapshot (mirrors the POC's ref pattern; keeps the config referentially stable).
@@ -139,6 +142,7 @@ const LumoMailProvider = ({ children }: Props) => {
         addresses,
         onCompose,
         draftBodyWriters,
+        telemetry,
     };
     const latest = useRef(current);
     latest.current = current;
@@ -245,12 +249,23 @@ const LumoMailProvider = ({ children }: Props) => {
                 );
             },
         };
-        return buildLumoMailConfig(deps);
+        // Read through `latest` like every other dep: a telemetry bundle rebuilt per render would change
+        // config identity, and the session would reset on every render.
+        const configTelemetry: LumoMailConfigTelemetry = {
+            promptSent: () => latest.current.telemetry.promptSent(),
+            chainEnded: (end, stats) => latest.current.telemetry.chainEnded(end, stats),
+            confirmAnswered: (tool, answer) => latest.current.telemetry.confirmAnswered(tool, answer),
+            toolSucceeded: (toolName, toolKind) => latest.current.telemetry.toolSucceeded(toolName, toolKind),
+            toolFailed: (toolName, toolKind) => latest.current.telemetry.toolFailed(toolName, toolKind),
+        };
+
+        return buildLumoMailConfig(deps, configTelemetry);
     }, []);
 
     const conversation = useLumoAgent(config);
 
     const openDebugReport = () => {
+        telemetry.debugReportOpened();
         const { referenceMessage, bodyBeforeQuote } = buildDebugReportDraft({
             transcript: conversation.getDebugTranscript(),
             reportInfo: getReportInfo(),
@@ -270,6 +285,7 @@ const LumoMailProvider = ({ children }: Props) => {
             value={{
                 ...conversation,
                 openDebugReport,
+                onSuggestionPicked: telemetry.suggestionPicked,
                 cardRenderers: config.cardRenderers,
                 serverToolMeta: config.serverToolMeta,
                 suggestions: config.suggestions,
