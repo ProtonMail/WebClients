@@ -279,8 +279,7 @@
         },
         "packages/docs-shared": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/drive": {
             "entry": ["public/**/index.ts"],

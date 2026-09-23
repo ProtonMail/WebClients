@@ -25,14 +25,6 @@ export const DROPDOWN_POPOVER_DEFAULTS = {
   gutter: 4,
 }
 
-/**
- * Expected to be applied on top of `DROPDOWN_POPOVER_DEFAULTS`.
- */
-export const DROPDOWN_SUB_POPOVER_DEFAULTS = {
-  gutter: 0,
-  shift: -9,
-}
-
 const DROPDOWN_ITEM_SELECTED_INDICATOR_ICON = 'checkmark'
 const DROPDOWN_ITEM_SUBMENU_INDICATOR_ICON = 'chevron-right-filled'
 export type DropdownItemOptions = {
@@ -129,43 +121,6 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
   )
 })
 
-interface DropdownSeparatorProps extends Ariakit.RoleProps {}
-export const DropdownSeparator = forwardRef<HTMLHRElement, DropdownSeparatorProps>(
-  function DropdownSeparator(props, ref) {
-    return (
-      <Ariakit.Role ref={ref} {...props} className={clsx('border-weak my-[.4375rem] h-px border-t', props.className)} />
-    )
-  },
-)
-
-export type DropdownGroupOptions = {
-  /**
-   * If `true`, a separator will be rendered at the bottom of the group.
-   */
-  bottomSeparator?: boolean
-}
-
-export interface DropdownGroupProps extends Ariakit.RoleProps, DropdownGroupOptions {}
-export const DropdownGroup = forwardRef<HTMLDivElement, DropdownGroupProps>(function DropdownGroup(
-  { bottomSeparator, ...props },
-  ref,
-) {
-  return (
-    <Ariakit.Role
-      ref={ref}
-      {...props}
-      className={clsx(bottomSeparator && 'border-weak mb-[.4375rem] border-b pb-[.4375rem]', props.className)}
-    />
-  )
-})
-
-export type DropdownGroupLabelProps = Ariakit.RoleProps
-export const DropdownGroupLabel = forwardRef<HTMLDivElement, DropdownGroupLabelProps>(
-  function DropdownGroupLabel(props, ref) {
-    return <Ariakit.Role ref={ref} {...props} className={clsx('mb-2 mt-3 px-4 text-sm font-bold', props.className)} />
-  },
-)
-
 // tooltip
 // -------
 
@@ -189,32 +144,5 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(function Tooltip
       <span className="grow leading-none">{props.children}</span>
       {trailingSlot && <span className="flex shrink-0 items-center">{trailingSlot}</span>}
     </Ariakit.Role>
-  )
-})
-
-// kbd (keyboard keys and shortcuts)
-// ---------------------------------
-
-export interface KbdProps extends Ariakit.RoleProps<'kbd'> {}
-export const Kbd = forwardRef<HTMLDivElement, KbdProps>(function Kbd(props, ref) {
-  return (
-    <Ariakit.Role
-      ref={ref}
-      render={<kbd />}
-      {...props}
-      className={clsx(
-        "flex h-[1.125rem] shrink-0 justify-center rounded-[.25rem] bg-[#25283A] px-1 py-[.0625rem] font-['Monaco',monospace] text-[.75rem] leading-[1rem] text-[white]",
-        props.className,
-      )}
-    >
-      <span className="shrink-0">{props.children}</span>
-    </Ariakit.Role>
-  )
-})
-
-export interface KbdShortcutProps extends Ariakit.RoleProps {}
-export const KbdShortcut = forwardRef<HTMLDivElement, KbdShortcutProps>(function KbdShortcut(props, ref) {
-  return (
-    <Ariakit.Role ref={ref} {...props} className={clsx('flex shrink-0 items-center gap-[.125rem]', props.className)} />
   )
 })
