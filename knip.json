@@ -106,7 +106,8 @@
             "entry": [
                 "src/app/index.{ts,tsx}",
                 "src/app/services/workers/fileProcessingWorker.ts",
-                "src/app/workers/search/searchWorker.ts"
+                "src/app/workers/search/searchWorker.ts",
+                "webpack.config.{js,ts}"
             ],
             "project": ["src/**/*.{ts,tsx,scss,sass}"]
         },
