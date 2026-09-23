@@ -8092,8 +8092,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9864,6 +9863,27 @@
       ],
       "What needs handling?": [
         "O que precisa ser resolvido?"
+      ],
+      "Mark ${ emails } as read": [
+        "Marca ${ emails } como lidos"
+      ],
+      "Read the open draft": [
+        "Ler o rascunho aberto"
+      ],
+      "Readdressed": [
+        "Revisado"
+      ],
+      "Remove the star from ${ emails }": [
+        "Remover favorito de ${ emails }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Pesquisado por “${ keyword }”"
+      ],
+      "Set my out of office": [
+        "Configurar minha mensagem de ausência do escritório"
+      ],
+      "Tidy up my inbox": [
+        "Organizar minha caixa de entrada"
       ]
     },
     "info": {
@@ -18181,6 +18201,11 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Ao confirmar, você autoriza a ${ BRAND_NAME } e a Stripe, nossa provedora de serviços de pagamento, a realizar cobranças futuras da sua assinatura nesta conta bancária via Débito Direto, e autoriza seu banco a debitar esses valores. Seu primeiro pagamento é realizado agora via ${ IDEAL_WERO_BRAND_NAME }. Seu plano é renovado automaticamente até que você o cancele; notificaremos você antes de cada cobrança. Para cobranças via débito direto, você pode solicitar um reembolso ao seu banco em até 8 semanas após a data do débito, conforme os termos do seu contrato com o banco. Isso não se aplica ao pagamento via ${ IDEAL_WERO_BRAND_NAME } que você está realizando agora."
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Renomear ${ folder } para…"
       ]
     }
   }
