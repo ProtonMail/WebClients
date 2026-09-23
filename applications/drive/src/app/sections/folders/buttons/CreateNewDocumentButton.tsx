@@ -23,7 +23,7 @@ export const CreateNewDocumentButton = ({ type, close, onClick }: ActionButtonPr
         return (
             <ContextMenuButton
                 testId="context-menu-new-document"
-                icon={<MimeIcon name="proton-doc" className="mr-2" />}
+                icon={<MimeIcon name="proton-doc" />}
                 name={title}
                 action={onClick}
                 close={close}
