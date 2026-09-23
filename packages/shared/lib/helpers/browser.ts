@@ -120,6 +120,11 @@ export const isStandaloneApp = () => window.matchMedia('(display-mode: standalon
 export const isDuckDuckGo = () => ua.browser.name === 'DuckDuckGo';
 export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name === 'Mobile Safari';
 export const isSafari11 = () => isSafari() && ua.browser.major === '11';
+/**
+ * True for any browser running on the WebKit engine, not only Safari: every iOS browser
+ * (Chrome, Firefox, Edge...), in-app webviews (Gmail, Outlook...), DuckDuckGo, Orion, GNOME Web...
+ */
+export const isWebKit = () => ua.engine.name === 'WebKit';
 
 export const isMinimumSafariVersion = (version: number) =>
     isSafari() && ua.browser.version && new Version(ua.browser.version).isGreaterThanOrEqual(version.toString());
