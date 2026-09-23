@@ -1511,8 +1511,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Clave de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -4351,6 +4350,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers": [
+        "Sin anuncios. Sin rastreadores"
       ]
     },
     "description": {
@@ -5333,6 +5335,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Tu búsqueda ha coincidido con muchos resultados. Limita tu búsqueda e inténtalo de nuevo."
+      ],
+      "Could not grant access to the organization key": [
+        "No se ha podido conceder acceso a la clave de la organización"
       ]
     },
     "error": {
@@ -9164,6 +9169,25 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } correo electrónico · ${ names }",
+        "${ count } correos electrónicos · ${ names }"
+      ],
+      "Apply labels": [
+        "Aplicar etiquetas"
+      ],
+      "Expand logs": [
+        "Expandir registros"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Establecer ${ MAIL_APP_NAME } como aplicación de correo predeterminada"
+      ],
+      "Mark as read": [
+        "Marcar como leído"
+      ],
+      "Mark as unread": [
+        "Marcar como no leído"
       ]
     },
     "info": {
@@ -10365,6 +10389,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12626,6 +12653,12 @@
       ],
       "Repeat weekly": [
         "Repetir semanalmente"
+      ],
+      "Remind me later": [
+        "Recordármelo más tarde"
+      ],
+      "Yes, don't show again": [
+        "Sí, no volver a mostrar"
       ]
     },
     "Option group": {
@@ -12927,6 +12960,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
+      ],
+      "Please enter the account holder name": [
+        "Introduce el nombre del titular de la cuenta"
       ]
     },
     "Payments.error": {
@@ -16521,6 +16557,9 @@
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "Keep this banner hidden?": [
+        "¿Mantener oculto este banner?"
       ]
     },
     "Title header for keys table": {
