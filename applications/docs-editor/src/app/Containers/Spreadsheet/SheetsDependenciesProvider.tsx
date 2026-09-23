@@ -1,9 +1,10 @@
 import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
-import type { AppPlatform, SheetImportData } from '@proton/docs-shared'
+import type { AppPlatform } from '@proton/docs-shared'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
 import type { SheetsLogger } from './contract/SheetsLogger'
+import type { SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
 
 export type SheetsExportFormat = 'xlsx' | 'ods' | 'csv' | 'tsv'
 
@@ -31,7 +32,7 @@ export type CollaboratorCursorNavigationDestination = {
 
 /** Shell→editor: the shell pushes work or events into the editor. */
 export type SheetsShellToEditorActions = {
-  subscribeToSheetImport: (callback: (data: SheetImportData) => void) => () => void
+  subscribeToSheetImport: (callback: (request: SpreadsheetImportRequest) => void) => () => void
   subscribeToCollaboratorCursorNavigation: (
     callback: (destination: CollaboratorCursorNavigationDestination) => void,
   ) => () => void
