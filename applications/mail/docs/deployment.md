@@ -26,9 +26,13 @@ ArgoCD takes care of orchestrating the deployment process, promoting a new Docke
 
 Each deployment is defined as an `Application` in ArgoCD, the UI helps understanding how many pods are running for a give env and which Docker image is used by the pods.
 
-- ArgoCD application for [Alpha](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-mail-alpha?view=tree&orphaned=false&resource=)
-- ArgoCD application for [Beta](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-mail-beta?view=tree&orphaned=false&resource=)
-- ArgoCD application for [Live](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-mail-live?view=tree&orphaned=false&resource=)
+The list of ArgoCD and Argo Rollout URLs for every cluster is maintained in the [inbox K8s stacks README](https://gitlab.protontech.ch/kubernetes/stacks/inbox/-/blob/main/README.md?ref_type=heads).
+
+| Environment | fra (`kapefra1a`) | osl (`kapeosl1a`) | zur (`kapezur1a`) |
+| --- | --- | --- | --- |
+| Alpha | [frontend-mail-alpha](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-mail-alpha?view=tree) | [frontend-mail-alpha](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-mail-alpha?view=tree) | [frontend-mail-alpha](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-mail-alpha?view=tree) |
+| Beta | [frontend-mail-beta](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-mail-beta?view=tree) | [frontend-mail-beta](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-mail-beta?view=tree) | [frontend-mail-beta](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-mail-beta?view=tree) |
+| Live | [frontend-mail-live](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-mail-live?view=tree) | [frontend-mail-live](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-mail-live?view=tree) | [frontend-mail-live](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-mail-live?view=tree) |
 
 ## Part 4 - Argo Rollout
 
@@ -36,9 +40,13 @@ As the name suggests, Argo Rollout focuses on the rollout process of a new deplo
 
 Argo rollout provides also the capability of rolling back to any previous version, without having to change any code.
 
-- Argo Rollout for [Alpha](https://rollouts-kapezur1a.protontech.ch/rollouts/rollout/inbox-frontend-mail-alpha/frontend-mail-alpha-apache)
-- Argo Rollout for [Beta](https://rollouts-kapezur1a.protontech.ch/rollouts/rollout/inbox-frontend-mail-beta/frontend-mail-beta-apache)
-- Argo Rollout for [Live](https://rollouts-kapezur1a.protontech.ch/rollouts/rollout/inbox-frontend-mail-live/frontend-mail-live-apache)
+| Environment | fra (`kapefra1a`) | osl (`kapeosl1a`) | zur (`kapezur1a`) |
+| --- | --- | --- | --- |
+| Alpha | [frontend-mail-alpha-apache](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-mail-alpha?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-mail-alpha%2Ffrontend-mail-alpha-apache%2F0&tab=extension-0) | [frontend-mail-alpha-apache](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-mail-alpha?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-mail-alpha%2Ffrontend-mail-alpha-apache%2F0&tab=extension-0) | [frontend-mail-alpha-apache](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-mail-alpha?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-mail-alpha%2Ffrontend-mail-alpha-apache%2F0&tab=extension-0) |
+| Beta | [frontend-mail-beta-apache](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-mail-beta?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-mail-beta%2Ffrontend-mail-beta-apache%2F0&tab=extension-0) | [frontend-mail-beta-apache](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-mail-beta?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-mail-beta%2Ffrontend-mail-beta-apache%2F0&tab=extension-0) | [frontend-mail-beta-apache](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-mail-beta?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-mail-beta%2Ffrontend-mail-beta-apache%2F0&tab=extension-0) |
+| Live | [frontend-mail-live-apache](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-mail-live?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-mail-live%2Ffrontend-mail-live-apache%2F0&tab=extension-0) | [frontend-mail-live-apache](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-mail-live?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-mail-live%2Ffrontend-mail-live-apache%2F0&tab=extension-0) | [frontend-mail-live-apache](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-mail-live?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-mail-live%2Ffrontend-mail-live-apache%2F0&tab=extension-0) |
+
+If you see `Not authorized` when opening an Argo Rollout page, delete the cookies and log in again.
 
 ## Part 5 - Grafana
 
