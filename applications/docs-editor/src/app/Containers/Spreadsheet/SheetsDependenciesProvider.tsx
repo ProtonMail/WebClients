@@ -1,9 +1,9 @@
-import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { AppPlatform } from '@proton/docs-shared'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
 import type { SheetsLogger } from './contract/SheetsLogger'
+import type { SheetsPatchCategory } from './contract/SheetsPatch'
 import type { SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
 
 export type SheetsExportFormat = 'xlsx' | 'ods' | 'csv' | 'tsv'
@@ -43,7 +43,7 @@ export type SheetsEditorToShellActions = {
   openLink: (url: string) => Promise<void>
   fileMenuActions: SheetsFileMenuActions
   storeSpreadsheetAction: (type: SheetsActionType, content: unknown) => void
-  storeSpreadsheetPatches: (patches: unknown, updateHash: string, type?: SheetsPatchesType) => void
+  storeSpreadsheetPatches: (patches: unknown, updateHash: string, type?: SheetsPatchCategory) => void
   hasBasePatchesStored: () => Promise<boolean>
   showNotification: (notification: { text: string; type?: 'error' | 'warning' | 'info' | 'success' }) => void
   showGenericInfoModal: (props: { title: string; translatedMessage: string }) => void
