@@ -1,5 +1,6 @@
 import { all } from 'redux-saga/effects';
 
+import paymentNudgeSagas from '../payment-nudge/sagas';
 import type { PassSaga, RootSagaOptions } from '../types';
 import accessTokenSagas from './access-token/access-token.sagas';
 import accessEditRole from './access/access-edit-role.saga';
@@ -107,6 +108,7 @@ const COMMON_SAGAS = [
     ...foldersSagas,
     ...itemDelete,
     ...notificationSagas,
+    ...paymentNudgeSagas,
     ...secureLinkSagas,
     ...ssoSagas,
     ...vaultVisibility,
