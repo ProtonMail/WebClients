@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
-import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
-import type { Location } from 'history';
 import { c } from 'ttag';
 
 import { EmergencyContactSection } from '@proton/account/delegatedAccess/emergencyContact/EmergencyContactSection';
@@ -20,7 +19,6 @@ import SettingsPageTitle from '@proton/components/containers/account/SettingsPag
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import UsernameSection from '@proton/components/containers/account/UsernameSection';
-import AccountDashboard from '@proton/components/containers/account/dashboard/dashboard';
 import GroupMembershipSection from '@proton/components/containers/account/groups/GroupMembershipSection';
 import CredentialLeakSection from '@proton/components/containers/credentialLeak/CredentialLeakSection';
 import LanguageAndTimeSection from '@proton/components/containers/general/LanguageAndTimeSection';
@@ -29,7 +27,6 @@ import PrivateMainArea from '@proton/components/containers/layout/PrivateMainAre
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
-import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import LogsSection from '@proton/components/containers/logs/LogsSection';
 import CreditsSection from '@proton/components/containers/payments/CreditsSection';
 import GiftCodeSection from '@proton/components/containers/payments/GiftCodeSection';
@@ -63,25 +60,9 @@ import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 
+import { DashboardRouter } from './dashboard/DashboardRouter';
 import RecoverySettingsRouter from './recovery/RecoverySettingsRouter';
 import type { getAccountAppRoutes } from './routes';
-
-const shouldRedirectToSubscriptions = (location: Location<unknown>, path: string, dashboard: SectionConfig) => {
-    /**
-     * Dashboard -> Subscription redirect to handle sections we moved from Dashboard to subscriptions page
-     */
-    if (location.hash && location.pathname === `${path}${dashboard.to}`) {
-        return [
-            '#your-subscriptions',
-            '#payment-methods',
-            '#credits',
-            '#gift-code',
-            '#invoices',
-            '#email-subscription',
-            '#cancel-subscription',
-        ].includes(location.hash);
-    }
-};
 
 const AccountSettingsRouter = ({
     redirect,
@@ -94,7 +75,6 @@ const AccountSettingsRouter = ({
     accountAppRoutes: ReturnType<typeof getAccountAppRoutes>;
     app: APP_NAMES;
 }) => {
-    const location = useLocation();
     const {
         routes: {
             vpnDashboardV2,
@@ -118,9 +98,6 @@ const AccountSettingsRouter = ({
 
     return (
         <Switch>
-            {getIsSectionAvailable(subscription) && shouldRedirectToSubscriptions(location, path, dashboard) ? (
-                <Redirect to={`${path}${subscription.to}${location.search}${location.hash}`} />
-            ) : null}
             {getIsSectionAvailable(vpnDashboardV2) && (
                 <Route path={getSectionPath(path, vpnDashboardV2)}>
                     <DashboardTelemetry app={app} />
@@ -142,9 +119,7 @@ const AccountSettingsRouter = ({
             )}
             {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboardV2' && (
                 <Route path={getSectionPath(path, dashboard)}>
-                    <DashboardTelemetry app={app} />
-                    <AutomaticSubscriptionModal />
-                    <AccountDashboard app={app} config={dashboard} />
+                    <DashboardRouter app={app} dashboard={dashboard} path={path} subscription={subscription} />
                 </Route>
             )}
             {getIsSectionAvailable(subscription) && (
