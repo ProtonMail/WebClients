@@ -101,8 +101,8 @@ export const Main: FC = () => {
             <OrganizationProvider>
                 <BulkSelectProvider>
                     <VaultActionsProvider>
-                        <FolderActionsProvider>
-                            <ItemActionsProvider>
+                        <ItemActionsProvider>
+                            <FolderActionsProvider>
                                 <InviteProvider>
                                     <PasswordProvider>
                                         <UpsellingProvider>
@@ -118,8 +118,8 @@ export const Main: FC = () => {
                                         </UpsellingProvider>
                                     </PasswordProvider>
                                 </InviteProvider>
-                            </ItemActionsProvider>
-                        </FolderActionsProvider>
+                            </FolderActionsProvider>
+                        </ItemActionsProvider>
                     </VaultActionsProvider>
                 </BulkSelectProvider>
             </OrganizationProvider>
