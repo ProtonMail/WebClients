@@ -16,7 +16,7 @@ import Input, { type Props as InputProps } from '../input/Input';
 interface Props extends Omit<InputProps, 'icon' | 'children' | 'onSubmit'> {
     onSubmit: (value: string) => void;
     onCancel?: () => void;
-    initialText?: string;
+    initialText?: string | null;
     readOnly?: boolean;
     children?: (props: { submit: (value: string) => void; toggleEditing: () => void }) => React.ReactNode;
     icon?: ReactElement;
@@ -34,13 +34,14 @@ const EditableText = ({
     formClassName = '',
     ...rest
 }: Props) => {
-    const [inputValue, setInputValue] = useState(initialText);
+    const [inputValue, setInputValue] = useState(initialText ?? '');
     const { state: editing, toggle: toggleEditing, set: setEditing } = useToggle();
 
+    // Entering or leaving edit mode starts from the stored text, so a draft that was closed instead
+    // of confirmed is discarded. Coalescing null keeps the input controlled: an uncontrolled input
+    // would keep displaying the discarded draft while submitting the stored value.
     useEffect(() => {
-        if (editing) {
-            setInputValue(initialText);
-        }
+        setInputValue(initialText ?? '');
     }, [editing, initialText]);
 
     const submit = (value: string) => {
