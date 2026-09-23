@@ -43,28 +43,8 @@ export enum Actions {
     SubmitSignUpFlowModal = 'submitSignUpFlowModal',
     SignUpFlowModal = 'signUpFlowModal',
     SignInFlowModal = 'signInFlowModal',
-    OpenPublicLinkFromSharedWithMe = 'openPublicLinkFromSharedWithMe',
-    PublicScanAndDownload = 'publicScanAndDownload',
     PublicDownload = 'publicDownload',
-    PublicLinkVisit = 'publicLinkVisit',
-    DeleteBookmarkFromSharedWithMe = 'DeleteBookmarkFromSharedWithMe',
     SignUpFlowAndRedirectCompleted = 'signUpFlowAndRedirectCompleted',
-    RedirectToCorrectContextShare = 'redirectToCorrectContextShare',
-    RedirectToCorrectAcceptInvitation = 'RedirectToCorrectAcceptInvitation',
-    AddToBookmarkTriggeredModal = 'addToBookmarkTriggeredModal',
-    DismissDocsSuggestionsOnboardingModal = 'dismissDocsSuggestionsOnboardingModal',
-    // onboarding actions
-    OnboardingV2Shown = 'onboardingV2Shown',
-    OnboardingV2InstallMacApp = 'onboardingV2InstallMacApp',
-    OnboardingV2InstallWindowsApp = 'onboardingV2InstallWindowsApp',
-    OnboardingV2InstallSkip = 'onboardingV2InstallSkip',
-    OnboardingV2B2BInvite = 'onboardingV2B2BInvite',
-    OnboardingV2B2BInviteSkip = 'onboardingV2B2BInviteSkip',
-    OnboardingV2UploadFile = 'onboardingV2UploadFile',
-    OnboardingV2UploadFolder = 'onboardingV2UploadFolder',
-    OnboardingV2UploadSkip = 'onboardingV2UploadSkip',
-    OnboardingAlbumShown = 'onboardingAlbumShown',
-    OnboardingAlbumPrimaryAction = 'onboardingAlbumPrimaryAction',
 
     // images
     ConvertedHEIC = 'convertedHEIC',
@@ -280,7 +260,7 @@ export const traceTelemetry = (action: Actions, duration: number = TEN_MINUTES) 
         end: async () => {
             const data = localStorageWithExpiry.getData(`telemetry-trace-${action}`);
             if (data && data === (await getTimeBasedHash(duration))) {
-                countActionWithTelemetry(action);
+                void countActionWithTelemetry(action);
             }
             localStorageWithExpiry.deleteData(`telemetry-trace-${action}`);
         },

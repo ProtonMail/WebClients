@@ -25,7 +25,6 @@ export enum ShareType {
 
 export enum ShareState {
     active = 1,
-    deleted = 2,
     restored = 3,
 }
 
@@ -52,24 +51,6 @@ export interface ShareWithKey extends Share {
     rootLinkRecoveryPassphrase?: string;
     memberships: ShareMembership[];
 }
-
-export type ShareURLLEGACY = WithSRPPayload<{
-    shareId: string;
-    shareUrlId: string;
-    expirationTime: number | null;
-    creatorEmail: string;
-    password: string;
-    flags: number;
-    token: string;
-    publicUrl: string;
-    sharePassphraseKeyPacket: string;
-    sharePasswordSalt: string;
-    hasCustomPassword: boolean;
-    hasGeneratedPasswordIncluded: boolean;
-    numAccesses: number;
-    maxAccesses: number;
-    permissions: number;
-}>;
 
 export type ShareURL = WithSRPPayload<{
     shareId: string;
@@ -106,16 +87,16 @@ export interface LockedVolumeForRestore {
     photos: LockedPhotosForRestore[];
 }
 
-export interface LockedShareForRestore {
+interface LockedShareForRestore {
     shareId: string;
     linkDecryptedPassphrase: string;
 }
 
-export interface LockedDeviceForRestore extends LockedShareForRestore {
+interface LockedDeviceForRestore extends LockedShareForRestore {
     shareDecryptedPassphrase: string;
     shareSessionKey: SessionKey;
 }
-export interface LockedPhotosForRestore extends LockedShareForRestore {
+interface LockedPhotosForRestore extends LockedShareForRestore {
     shareDecryptedPassphrase: string;
     shareSessionKey: SessionKey;
 }

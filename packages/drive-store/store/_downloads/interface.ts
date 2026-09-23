@@ -129,9 +129,3 @@ export type DecryptFileKeys = {
     sessionKeys?: SessionKey;
     addressPublicKeys?: PublicKeyReference[];
 };
-
-export enum TransferSignatureIssueStrategy {
-    Abort = 'abort',
-    Continue = 'continue',
-    // Following strategies are not used yet.
-}
