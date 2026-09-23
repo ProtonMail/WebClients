@@ -60,7 +60,7 @@ export interface OfferDealSaveSentenceType {
 
 export interface OfferTracking {
     onTopNavbarClick?: () => void;
-    onCloseModal?: () => void;
+    onClickCloseButton?: () => void;
     onSelectDeal?: () => void;
     onHideOffer?: () => void;
     onSubscribed?: () => void;

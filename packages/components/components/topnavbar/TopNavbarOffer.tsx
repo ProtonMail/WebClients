@@ -188,7 +188,6 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
                     modalProps={{
                         ...offerModalProps,
                         onClose: () => {
-                            offerConfig.tracking?.onCloseModal?.();
                             offerModalProps.onClose?.();
                             setFetchOffer(false);
                         },
