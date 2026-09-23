@@ -259,6 +259,7 @@ export const useMessageHotkeys = (
 
                     await applyLocation({
                         type: APPLY_LOCATION_TYPES.STAR,
+                        sourceAction: SOURCE_ACTION.SHORTCUTS,
                         removeLabel: isStarred(message.data),
                         elements: [message.data as Element],
                         destinationLabelID: MAILBOX_LABEL_IDS.STARRED,

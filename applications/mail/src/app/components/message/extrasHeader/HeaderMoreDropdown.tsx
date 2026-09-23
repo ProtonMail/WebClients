@@ -212,6 +212,7 @@ const HeaderMoreDropdown = ({
         void withLoading(
             applyLocation({
                 type: APPLY_LOCATION_TYPES.STAR,
+                sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
                 removeLabel: isStarred,
                 elements: [message.data || ({} as Element)],
                 destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
