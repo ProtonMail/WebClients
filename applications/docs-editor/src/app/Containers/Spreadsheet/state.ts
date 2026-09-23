@@ -37,7 +37,6 @@ import debounce from 'lodash/debounce'
 import type { Doc as YDoc, Transaction } from 'yjs'
 import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
 import { CURRENCY_SYMBOL } from './constants'
-import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
 import { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { SpreadsheetLocalYjsAuditKey, SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
 import { detectLocalYjsUpdateDrift, recordSpreadsheetLocalStateChange } from './yjs-local-update-audit'
@@ -47,6 +46,7 @@ import { getAccentColorForUsername } from './getAccentColorForUsername'
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
 import { SheetsActions, type SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import { sortSheetsByIndex } from '@rowsncolumns/utils'
+import { getBufferHash } from './spreadsheet-update-hash'
 
 // local state
 // -----------
