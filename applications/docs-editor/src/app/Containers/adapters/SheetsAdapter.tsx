@@ -1,4 +1,5 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
+import { SheetsPatchesType as StoredSheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { EditorRequiresClientMethods, SheetImportData } from '@proton/docs-shared'
 import { SheetImportDestination, SheetImportEvent } from '@proton/docs-shared'
 import { isDevOrBlack } from '@proton/shared/lib/env'
@@ -11,6 +12,7 @@ import { useApplication } from '../ApplicationProvider'
 import { useEditorTheme } from '../../Theme/EditorThemeProvider'
 import {
   SheetsDependenciesProvider,
+  type SheetsPatchCategory,
   type SheetsDependencies,
   type SheetsEditorToShellActions,
   type SheetsLogger,
@@ -27,6 +29,16 @@ import { useSheetsFeatureFlags } from './useSheetsFeatureFlags'
 type SheetsAdapterProps = PropsWithChildren<{
   clientInvoker: EditorRequiresClientMethods
 }>
+
+const storedSheetsPatchesTypes = {
+  Base: StoredSheetsPatchesType.Base,
+  Delta: StoredSheetsPatchesType.Delta,
+  Drifted: StoredSheetsPatchesType.Drifted,
+} satisfies Record<SheetsPatchCategory, StoredSheetsPatchesType>
+
+function toStoredSheetsPatchesType(type: SheetsPatchCategory | undefined): StoredSheetsPatchesType | undefined {
+  return type === undefined ? undefined : storedSheetsPatchesTypes[type]
+}
 
 /**
  * Docs host glue that collects SheetsDependencies and provides them to the sheets editor.
@@ -80,7 +92,9 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
         void clientInvoker.storeSpreadsheetAction(type, content).catch(console.error)
       },
       storeSpreadsheetPatches: (patches, updateHash, type) => {
-        void clientInvoker.storeSpreadsheetPatches(patches, updateHash, type).catch(console.error)
+        void clientInvoker
+          .storeSpreadsheetPatches(patches, updateHash, toStoredSheetsPatchesType(type))
+          .catch(console.error)
       },
       hasBasePatchesStored: () => clientInvoker.hasBasePatchesStored(),
       showGenericInfoModal: (props) => {
