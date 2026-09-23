@@ -13,12 +13,14 @@ import { UserRenewal } from '../components/Onboarding/UserRenewal';
 import type { SpotlightMessageDefinition } from '../components/Spotlight/SpotlightContent';
 import { FiveStarIcon, ShieldIcon } from '../components/Spotlight/SpotlightIcon';
 import { useUpselling } from '../components/Upsell/UpsellingProvider';
-import { UpsellRef } from '../constants';
+import { AccountPath, UpsellRef } from '../constants';
 import { SpotlightMessage } from '../types';
+import { useNavigateToAccount } from './useNavigateToAccount';
 
 export const useSpotlightMessages = (extra: SpotlightMessageDefinition[] = []) => {
     const { onLink, openSettings, getRatingURL, onForceUpdate } = usePassCore();
     const upsell = useUpselling();
+    const navigateToPaymentMethods = useNavigateToAccount(AccountPath.PAYMENT_METHODS);
 
     return useMemo<Partial<Record<SpotlightMessage, SpotlightMessageDefinition>>>(
         () =>
@@ -119,6 +121,19 @@ export const useSpotlightMessages = (extra: SpotlightMessageDefinition[] = []) =
                         id: 'user-renewal',
                         className: SubTheme.RED,
                         weak: true,
+                    },
+                    {
+                        type: SpotlightMessage.PAYMENT_METHOD_NUDGE,
+                        mode: 'default',
+                        id: 'payment-method-nudge',
+                        title: c('Title').t`Keep your subscription active`,
+                        message: c('Info').t`Add a payment method so your subscription continues when your trial ends.`,
+                        className: SubTheme.ORANGE,
+                        action: {
+                            label: c('Label').t`Add a payment method`,
+                            type: 'button',
+                            onClick: navigateToPaymentMethods,
+                        },
                     },
 
                     ...extra,
