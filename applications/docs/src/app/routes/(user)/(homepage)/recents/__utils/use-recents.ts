@@ -200,14 +200,6 @@ export function useRecents(drive: ProtonDriveClient) {
       removeDocument(event.nodeUid)
     }
 
-    if (event.type === 'node_created') {
-      const node = await drive.getNode(event.nodeUid)
-      if (mimeTypeToProtonDocumentType(node.mediaType)) {
-        // Adding a new document
-        setDocument(await loadDocument(drive, event.nodeUid, addresses))
-      }
-    }
-
     if (event.type === 'node_updated') {
       const node = await drive.getNode(event.nodeUid)
 
@@ -219,9 +211,12 @@ export function useRecents(drive: ProtonDriveClient) {
         }
       } else {
         if (mimeTypeToProtonDocumentType(node.mediaType)) {
-          // Existing document was updated
           const { recentDocuments } = useRecentsStore.getState()
           const document = recentDocuments[node.uid]
+          if (!document) {
+            // Updated document is not in recents list - ignore
+            return
+          }
           setDocument(await loadDocument(drive, event.nodeUid, addresses, document))
         } else if (node.type === NodeType.Folder) {
           const childrenOfUpdatedFolder: RecentDocumentsItemValue[] = []
@@ -229,8 +224,9 @@ export function useRecents(drive: ProtonDriveClient) {
           const { recentDocuments } = useRecentsStore.getState()
           // Which of already loaded documents are children of the updated folder?
           for (const documentNodeUid in recentDocuments) {
-            if (recentDocuments[documentNodeUid].ancestorsNodeUids?.includes(node.uid)) {
-              childrenOfUpdatedFolder.push(recentDocuments[documentNodeUid])
+            const recentDocument = recentDocuments[documentNodeUid]
+            if (recentDocument.ancestorsNodeUids?.includes(node.uid)) {
+              childrenOfUpdatedFolder.push(recentDocument)
             }
           }
 
