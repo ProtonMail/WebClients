@@ -16,7 +16,7 @@ import useLink from '../_links/useLink';
 import useLinksState from '../_links/useLinksState';
 import type { ShareURL, ShareWithKey } from '../_shares/interface';
 import { getSharedLink, splitGeneratedAndCustomPassword } from '../_shares/shareUrl';
-import { useDefaultShare } from '../_shares/useDefaultShare';
+import useDefaultShare from '../_shares/useDefaultShare';
 import useShareActions from '../_shares/useShareActions';
 import useShareUrl from '../_shares/useShareUrl';
 import type useShareMemberView from './useShareMemberView';

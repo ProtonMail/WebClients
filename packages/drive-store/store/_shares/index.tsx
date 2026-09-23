@@ -3,13 +3,8 @@ import { SharesKeysProvider } from './useSharesKeys';
 export * from './interface';
 export * from './shareUrl';
 export * from './utils';
-export { getShareTypeString } from './shareType';
 export { default as useDefaultShare } from './useDefaultShare';
-export { default as useShare } from './useShare';
-export { useShareMember } from './useShareMember';
-export { default as useShareActions } from './useShareActions';
 export { default as useShareUrl } from './useShareUrl';
-export { default as useVolume } from './useVolume';
 export { useDriveSharingFlags } from './useDriveSharingFlags';
 export { useDrivePublicSharingFlags } from './useDrivePublicSharingFlags';
 

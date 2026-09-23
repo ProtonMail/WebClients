@@ -46,7 +46,7 @@ import { useDriveSharingFlags } from '../_shares/useDriveSharingFlags';
 import useShare from '../_shares/useShare';
 import { useInvitationsState } from './useInvitationsState';
 
-export enum EXTERNAL_INVITATIONS_ERROR_NAMES {
+enum EXTERNAL_INVITATIONS_ERROR_NAMES {
     NOT_FOUND = 'ExternalInvitationsNotFound',
     DISABLED = 'ExternalInvitationsDisabled',
 }

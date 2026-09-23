@@ -3,8 +3,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { EncryptedLink } from './interface';
 
-export const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"|?*]/;
-export const WINDOWS_RESERVED_NAMES = [
+const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"|?*]/;
+const WINDOWS_RESERVED_NAMES = [
     'CON',
     'PRN',
     'AUX',

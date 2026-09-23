@@ -1,1 +1,1 @@
-export { default as useLinksListing, LinksListingProvider } from './useLinksListing';
+export { LinksListingProvider } from './useLinksListing';

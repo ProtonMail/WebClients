@@ -12,6 +12,7 @@
         "packages/shared/lib/interfaces/calendar/CalendarKey.ts": ["enumMembers"],
         "packages/shared/lib/interfaces/Address.ts": ["enumMembers"],
         "packages/shared/lib/interfaces/drive/file.ts": ["types"],
+        "packages/shared/lib/interfaces/drive/volume.ts": ["types"],
         "packages/shared/lib/api/drive/link.ts": ["exports"],
         "packages/shared/lib/calendar/sharing/shareUrl/shareUrl.ts": ["exports"],
         "packages/shared/lib/mnemonic/helpers.ts": ["types"],
@@ -285,9 +286,7 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/drive-store": {
-            "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/encrypted-search": {
             "entry": [],
