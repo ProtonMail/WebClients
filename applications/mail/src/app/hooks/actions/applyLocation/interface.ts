@@ -1,5 +1,6 @@
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
+import type { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
 import type { Element } from '../../../models/element';
 
 export interface ApplyLocationParams {
@@ -36,8 +37,13 @@ export interface ApplyLocationLabelProps extends ApplyLocationParams {
 
 export interface ApplyLocationStarProps extends ApplyLocationParams {
     type: APPLY_LOCATION_TYPES.STAR;
+    /**
+     * Where the user triggered the star from. Omitted by non-user callers (e.g. the Lumo
+     * agent), and telemetry is only reported when it is present — so an automated star is
+     * structurally excluded rather than filtered out downstream.
+     */
+    sourceAction?: SOURCE_ACTION;
 }
-
 
 export interface MoveParams {
     elements: Element[];
