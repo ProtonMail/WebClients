@@ -17,3 +17,14 @@
 .meeting-info-mls-wrapper {
 	margin-block-start: 0.5rem;
 }
+
+.meeting-count-mismatch-card {
+	border: 1px solid rgb(255 255 255 / 0.08);
+	border-radius: var(--border-radius-xxl);
+	background-color: rgb(255 255 255 / 0.04);
+
+	&--warning {
+		border-color: rgb(255 151 97 / 0.08);
+		background-color: rgb(255 151 97 / 0.14);
+	}
+}

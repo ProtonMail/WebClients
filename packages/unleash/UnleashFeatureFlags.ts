@@ -385,6 +385,7 @@ enum MeetFeatureFlag {
     MeetWaitingRoomJoin = 'MeetWaitingRoomJoin',
     MeetWebClientDebug = 'MeetWebClientDebug',
     PersonalMeetingRotation = 'PersonalMeetingRotation',
+    MeetParticipantCountMismatch = 'MeetParticipantCountMismatch',
 }
 
 enum PaymentsFeatureFlag {
