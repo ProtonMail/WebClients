@@ -1034,6 +1034,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "გვერდის განახლება"
       ]
     },
     "action": {
@@ -4175,6 +4178,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "თქვენი Zoom-ის კავშირის ვადა ამოიწურა. გასაგრძელებლად, დაუკავშირდით თავიდან."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "რაღაც არასწორად მუშაობს. გასაგრძელებლად ${ refresh }. თუ ჯერ კიდევ ხედავთ შეცდომის შეტყობინებას, დაუკავშირდით ჩვენს ${ supportTeam }."
       ]
     },
     "error": {
@@ -6692,6 +6698,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "თქვენ მიაღწიეთ დაჯავშნის სლოტების ლიმიტს (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "მხარდაჭერის გუნდი"
       ]
     },
     "info": {

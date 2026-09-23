@@ -1058,6 +1058,12 @@
       ],
       "Add a payment method": [
         "Afegiu un mètode de pagament"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ]
     },
     "action": {
@@ -1581,7 +1587,7 @@
         "Problema de pagament"
       ],
       "Sheets problem": [
-        "Hi ha hagut un problema amb els fulls de càlcul"
+        "Problema amb els fulls de càlcul"
       ],
       "Sign in problem": [
         "Problema d'inici de sessió"
@@ -4482,6 +4488,9 @@
       ],
       "A contact with this email address already exists": [
         "Ja existeix un contacte amb aquesta adreça de correu electrònic"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ]
     },
     "error": {
@@ -4972,7 +4981,7 @@
         "Encara esteu esperant?"
       ],
       "Touch your security key to continue.": [
-        "Toqueu la clau de seguretat per continuar."
+        "Toqueu la clau de seguretat per a continuar."
       ]
     },
     "fido2: Label": {
@@ -6013,7 +6022,7 @@
         "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
       ],
       "Enter code": [
-        "Introduir el codi"
+        "Introduïu el codi"
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació."
@@ -7133,6 +7142,9 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
+      ],
+      "support team": [
+        "equip de suport"
       ]
     },
     "info": {
@@ -9789,6 +9801,9 @@
       ],
       "Your subscription renews soon": [
         "La subscripció es renovarà aviat."
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunitat per obtenir el primer mes de ${ plan } a aquest preu."
       ]
     },
     "Offer fearue": {
@@ -9835,6 +9850,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Un nombre il·limitat d'àlies per protegir la vostra identitat"
+      ],
+      "Short @pm.me address": [
+        "Adreça curta de @pm.me"
       ]
     },
     "Onboarding": {
@@ -9918,6 +9936,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Podreu utilitzar ${ planTitle } de manera gratuïta fins que finalitzi el període de prova."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Afegiu un mètode de pagament** per continuar utilitzant totes les funcions quan acabi el període de prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continueu després del període de prova,** podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
+      ],
+      "Add a payment method": [
+        "Afegir un mètode de pagament"
+      ],
+      "If you continue after your trial,": [
+        "Si continueu després del període de prova,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "per continuar utilitzant totes les funcions quan acabi el vostre període de prova."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat"
       ]
     },
     "Option": {

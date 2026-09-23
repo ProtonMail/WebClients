@@ -1055,6 +1055,9 @@
       ],
       "Add a payment method": [
         "Lägg till en betalningsmetod"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ]
     },
     "action": {
@@ -4439,6 +4442,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Din Zoom-anslutning har löpt ut. Återanslut för att fortsätta."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
       ]
     },
     "error": {
@@ -7057,6 +7063,9 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
+      ],
+      "support team": [
+        "supportteam"
       ]
     },
     "info": {
@@ -9842,6 +9851,15 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Lägg till en betalningsmetod** för kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
+      ],
+      "If you continue after your trial,": [
+        "Om du fortsätter efter din provperiod,"
       ]
     },
     "Option": {
@@ -13812,6 +13830,9 @@
       ],
       "Bank transfer - ${ iban }": [
         "Banköverföring - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kort slutar på ${ Last4 }"
       ]
     }
   }
