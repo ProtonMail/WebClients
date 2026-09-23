@@ -151,7 +151,7 @@ export class IntegrityMetrics {
 
 export default new IntegrityMetrics();
 
-export function getFromBefore2024(timestamp?: number) {
+function getFromBefore2024(timestamp?: number) {
     // Both zero or undefined is considered unknown as zero is often used as unknown value.
     if (!timestamp) {
         return 'unknown';
@@ -163,7 +163,7 @@ export function getFromBefore2024(timestamp?: number) {
     return 'no';
 }
 
-export function getAddressMatchingDefaultShare(addressMatchingDefaultShare?: boolean) {
+function getAddressMatchingDefaultShare(addressMatchingDefaultShare?: boolean) {
     if (addressMatchingDefaultShare !== false && addressMatchingDefaultShare !== true) {
         return 'unknown';
     }
@@ -173,7 +173,7 @@ export function getAddressMatchingDefaultShare(addressMatchingDefaultShare?: boo
     return 'no';
 }
 
-export function getFileSize(realFileSize: number) {
+function getFileSize(realFileSize: number) {
     if (realFileSize < 2 ** 10) {
         return '2**10';
     } else if (realFileSize < 2 ** 20) {

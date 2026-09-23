@@ -74,17 +74,6 @@ interface Download {
 
 export type Transfer = Upload | Download;
 
-interface TransferHistoryStats {
-    active: boolean;
-    progress: number;
-    speed: number;
-}
-
-export interface TransfersHistoryStats {
-    timestamp: Date;
-    stats: { [id: string]: TransferHistoryStats };
-}
-
 interface TransferStats {
     progress: number;
     averageSpeed: number;

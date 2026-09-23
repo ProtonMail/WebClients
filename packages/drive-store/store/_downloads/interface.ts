@@ -130,8 +130,10 @@ export type DecryptFileKeys = {
     addressPublicKeys?: PublicKeyReference[];
 };
 
-export enum TransferSignatureIssueStrategy {
-    Abort = 'abort',
-    Continue = 'continue',
-    // Following strategies are not used yet.
-}
+// Kept for reference: strategy to apply when a signature issue is met during a transfer.
+// Not used yet.
+// export enum TransferSignatureIssueStrategy {
+//     Abort = 'abort',
+//     Continue = 'continue',
+//     // Following strategies are not used yet.
+// }

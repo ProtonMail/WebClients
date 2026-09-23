@@ -4,14 +4,7 @@ export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName } from './_links';
 export { UserSettingsProvider } from './_settings';
 export { useDefaultShare, useShareUrl, useDriveSharingFlags, useDrivePublicSharingFlags } from './_shares';
-export type {
-    DecryptedLink,
-    PhotoProperties,
-    AlbumProperties,
-    SignatureIssues,
-    SignatureIssueLocation,
-    EncryptedLink,
-} from './_links/interface';
+export type { DecryptedLink } from './_links/interface';
 export { ShareType, ShareState } from './_shares/interface';
 export type {
     Share,

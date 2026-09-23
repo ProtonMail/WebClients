@@ -1,8 +1,6 @@
 import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
-import type { Address, Key } from '@proton/shared/lib/interfaces';
-
 export async function generatePrivateKey(name = 'name', email = 'name@example.com'): Promise<PrivateKeyReference> {
     const { privateKeys } = await generateKeys(name, email);
     if (privateKeys.length !== 1) {
@@ -11,7 +9,7 @@ export async function generatePrivateKey(name = 'name', email = 'name@example.co
     return privateKeys[0];
 }
 
-export async function generateKeys(name = 'name', email = 'name@example.com') {
+async function generateKeys(name = 'name', email = 'name@example.com') {
     const privateKey = await CryptoProxy.generateKey({
         userIDs: [{ name, email }],
     });
@@ -36,13 +34,6 @@ export async function generateSessionKey(algorithm: SessionKeyAlgorithm = 'aes25
         algorithm,
     };
 }
-
-export const generateAddress = async (keys: Key[], email = 'test@pm.me'): Promise<Address> => {
-    return {
-        Email: email,
-        Keys: keys,
-    } as Address;
-};
 
 /**
  * Load Crypto API outside of web workers, for testing purposes.
