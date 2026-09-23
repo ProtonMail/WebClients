@@ -50,7 +50,12 @@ export {
 // Utility exports
 export { encryptString, encryptTurns } from './core/encryption';
 
-export { filterClientToolCalls, mergePendingClientToolCalls, resolveClientToolExecutor } from './core/client-tools';
+export {
+    composeClientToolExecutors,
+    filterClientToolCalls,
+    mergePendingClientToolCalls,
+    resolveClientToolExecutor,
+} from './core/client-tools';
 
 export {
     isDesktopEnvironment,
