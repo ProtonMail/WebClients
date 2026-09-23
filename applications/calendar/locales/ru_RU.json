@@ -1042,6 +1042,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Бесплатная пробная версия вашего приложения заканчивается на ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ]
     },
     "action": {
@@ -4256,6 +4259,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Срок действия подключения к Zoom истек. Пожалуйста, переподключитесь, чтобы продолжить."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
       ]
     },
     "error": {
@@ -6895,6 +6901,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы достигли лимита слотов бронирования (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "служба поддержки"
       ]
     },
     "info": {

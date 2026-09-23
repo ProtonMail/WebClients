@@ -1058,6 +1058,12 @@
       ],
       "Add a payment method": [
         "Προσθέστε μία μέθοδο πληρωμής"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ]
     },
     "action": {
@@ -4482,6 +4488,9 @@
       ],
       "A contact with this email address already exists": [
         "Υπάρχει ήδη επαφή με αυτή την ηλεκτρονική διεύθυνση."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
       ]
     },
     "error": {
@@ -7133,6 +7142,9 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να διατηρήσετε τη συνδρομή σας. ${ learnMoreLink }"
+      ],
+      "support team": [
+        "ομάδα υποστήριξης"
       ]
     },
     "info": {
@@ -9789,6 +9801,9 @@
       ],
       "Your subscription renews soon": [
         "Η συνδρομή σας ανανεωθεί σύντομα"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Η τελευταία ευκαιρία να αποκτήσετε τον πρώτο μήνα του ${ plan } σε αυτή την τιμή."
       ]
     },
     "Offer fearue": {
@@ -9835,6 +9850,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας"
+      ],
+      "Short @pm.me address": [
+        "Σύντομη διεύθυνση @pm.me"
       ]
     },
     "Onboarding": {
@@ -9918,6 +9936,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Θα μπορείτε να χρησιμοποιήσετε ${ planTitle } δωρεάν μέχρι το τέλος της δοκιμαστικής περιόδου."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Προσθέστε έναν τρόπο πληρωμής** για να συνεχίσετε να χρησιμοποιείτε όλες τις λειτουργίες μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή πριν από τότε.** Θα μπορείτε να χρησιμοποιείτε το ${ planTitle } δωρεάν μέχρι τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Αν συνεχίσετε μετά τη δοκιμαστική περίοδο,** μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Μόλις ξεκινήσει η πλήρης συνδρομή σας...** Μπορείτε ακόμα να την ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
+      "If you continue after your trial,": [
+        "Αν συνεχίσετε μετά τη δοκιμή σας,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "για να συνεχίσετε να χρησιμοποιείτε όλες τις λειτουργίες μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε αναλογική επιστροφή χρημάτων."
       ]
     },
     "Option": {

@@ -1062,6 +1062,12 @@
       ],
       "Add a payment method": [
         "Adăugați o metodă de plată"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ]
     },
     "action": {
@@ -4528,6 +4534,9 @@
       ],
       "A contact with this email address already exists": [
         "Deja există un contact cu această adresă de e-mail."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ]
     },
     "error": {
@@ -7231,6 +7240,9 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
+      ],
+      "support team": [
+        "echipa de asistență"
       ]
     },
     "info": {
@@ -9959,6 +9971,9 @@
       ],
       "Your subscription renews soon": [
         "Abonamentul se va reînnoi în curând"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Ultima șansă de a obține prima lună de ${ plan } la acest preț."
       ]
     },
     "Offer fearue": {
@@ -10005,6 +10020,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Aliasuri nelimitate pentru a vă proteja identitatea"
+      ],
+      "Short @pm.me address": [
+        "Adresă scurtă @pm.me"
       ]
     },
     "Onboarding": {
@@ -10088,6 +10106,30 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Veți putea utiliza ${ planTitle } gratuit până la sfârșitul perioadei de evaluare."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adăugați o metodă de plată** pentru a continua să utilizați toate funcțiile după expirarea perioadei de probare."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puteți anula oricând înainte de acel moment.** Veți putea utiliza ${ planTitle } gratuit până la expirarea perioadei de probare."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Dacă alegeți să continuați după perioada de probare,** puteți anula în termen de 30 de zile și puteți primi o rambursare proporțională."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**După ce începe abonamentul complet,** încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
+      ],
+      "If you continue after your trial,": [
+        "Dacă mai continuați după perioada de probare,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "pentru a continua să utilizații toate funcțiile după expirarea perioadei de probare."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
       ]
     },
     "Option": {

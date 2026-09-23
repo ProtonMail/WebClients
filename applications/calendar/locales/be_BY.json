@@ -1066,6 +1066,9 @@
       ],
       "Add a payment method": [
         "Дадаць спосаб аплаты"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ]
     },
     "action": {
@@ -4574,6 +4577,9 @@
       ],
       "A contact with this email address already exists": [
         "Кантакт з гэтым адрасам электроннай пошты ўжо існуе"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
       ]
     },
     "error": {
@@ -7317,6 +7323,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы дасягнулі абмежавання па прамежках браніравання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "каманда падтрымкі"
       ]
     },
     "info": {
@@ -10160,6 +10169,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Неабмежаваная колькасць псеўданімаў, каб абараніць вашу ідэнтычнасць"
+      ],
+      "Short @pm.me address": [
+        "Кароткі адрас @pm.me"
       ]
     },
     "Onboarding": {
@@ -10243,6 +10255,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "У вас будзе магчымасць карыстацца ${ planTitle } бясплатна да канца пробнага перыяду."
+      ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
       ]
     },
     "Option": {
@@ -11320,6 +11335,9 @@
       ],
       "User Admin": [
         "Адміністратар карыстальніка"
+      ],
+      "Organization Admin": [
+        "Адміністратар арганізацыі"
       ]
     },
     "RSVP Note": {

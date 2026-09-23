@@ -1046,6 +1046,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "Päivitä sivu"
       ]
     },
     "action": {
@@ -4199,6 +4202,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom-yhteytesi on vanhentunut. Ole hyvä ja yhdistä uudelleen jatkaaksesi."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
       ]
     },
     "error": {
@@ -6736,6 +6742,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "support team": [
+        "tukeemme"
       ]
     },
     "info": {
