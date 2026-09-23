@@ -23,7 +23,7 @@ export const CreateNewSheetButton = ({ type, close, onClick }: ActionButtonProps
         return (
             <ContextMenuButton
                 testId="context-menu-new-sheet"
-                icon={<MimeIcon name="proton-sheet" className="mr-2" />}
+                icon={<MimeIcon name="proton-sheet" />}
                 name={title}
                 action={onClick}
                 close={close}
