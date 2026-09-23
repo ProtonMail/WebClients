@@ -37,7 +37,6 @@ import debounce from 'lodash/debounce'
 import type { Doc as YDoc, Transaction } from 'yjs'
 import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
 import { CURRENCY_SYMBOL } from './constants'
-import { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { SpreadsheetLocalYjsAuditKey, SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
 import { detectLocalYjsUpdateDrift, recordSpreadsheetLocalStateChange } from './yjs-local-update-audit'
 import { formatSpreadsheetYjsDriftLogDetails } from './yjs-drift-log'
@@ -47,6 +46,7 @@ import { useSheetsDependencies } from './SheetsDependenciesProvider'
 import { SheetsActions, type SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import { sortSheetsByIndex } from '@rowsncolumns/utils'
 import { getBufferHash } from './spreadsheet-update-hash'
+import type { SheetsPatchCategory } from './contract/SheetsPatch'
 
 // local state
 // -----------
@@ -381,7 +381,7 @@ type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDeps
   Omit<YjsStateDependencies, OmitDepsKey> & {
     isReadonly: boolean
     isConversionFlow: boolean
-    pushPatches: (patches: unknown, updateHash: string, type?: SheetsPatchesType) => void
+    pushPatches: (patches: unknown, updateHash: string, type?: SheetsPatchCategory) => void
     hasBasePatchesStored: () => Promise<boolean>
     isPatchesStorageEnabled: boolean
     // Gates the Yjs drift detection (SheetsDriftDetectionEnabled feature flag). When false,
@@ -461,11 +461,11 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
               CellXfs | SharedStrings
           }
         }
-        pushPatches([[structuredClone(baseState), null]], '', SheetsPatchesType.Base)
+        pushPatches([[structuredClone(baseState), null]], '', 'Base')
       }
     }
   }, [hasBasePatchesStored, pushPatches])
-  const pushLatestPatches = useEvent(async (update?: Uint8Array<ArrayBuffer>, type?: SheetsPatchesType) => {
+  const pushLatestPatches = useEvent(async (update?: Uint8Array<ArrayBuffer>, type?: SheetsPatchCategory) => {
     if (!deps.isPatchesStorageEnabled) {
       return
     }
@@ -545,7 +545,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
         '[sheets-yjs-drift] blocked outgoing Yjs update because local state and the broadcast Yjs doc drifted',
       )
       deps.onYjsDriftDetected?.(driftResult, driftLogDetails)
-      pushLatestPatches(undefined, SheetsPatchesType.Drifted).catch(console.error)
+      pushLatestPatches(undefined, 'Drifted').catch(console.error)
       return false
     }
 
