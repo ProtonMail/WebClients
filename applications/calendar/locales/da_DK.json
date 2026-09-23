@@ -1040,6 +1040,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "opdatér siden"
       ]
     },
     "action": {
@@ -4435,6 +4441,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Din Zoom-forbindelse er udløbet. Tilslut igen for at fortsætte."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ]
     },
     "error": {
@@ -7074,6 +7083,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "supportteam"
       ]
     },
     "info": {
@@ -9730,6 +9742,9 @@
       ],
       "Your subscription renews soon": [
         "Dit abonnement fornyes snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sidste chance for at få første måned af ${ plan } til denne pris."
       ]
     },
     "Offer fearue": {
@@ -9776,6 +9791,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Ubegrænsede aliasser til at beskytte din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me-adresse"
       ]
     },
     "Onboarding": {
@@ -9882,7 +9900,7 @@
         "for at fortsætte med at bruge alle funktioner efter din prøveperiode slutter."
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
-        "så kan du stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+        "så kan du annullere inden for 30 dage og få en forholdsmæssig refusion."
       ]
     },
     "Option": {

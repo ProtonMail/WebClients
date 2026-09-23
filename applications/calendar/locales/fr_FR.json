@@ -1037,6 +1037,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ]
     },
     "action": {
@@ -4330,6 +4336,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Votre connexion Zoom a expiré. Veuillez vous reconnecter pour continuer."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
       ]
     },
     "error": {
@@ -6933,6 +6942,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "support team": [
+        "équipe support"
       ]
     },
     "info": {
@@ -9589,6 +9601,9 @@
       ],
       "Your subscription renews soon": [
         "Votre abonnement se renouvelle bientôt."
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Dernière chance pour bénéficier du premier mois de ${ plan } à ce prix."
       ]
     },
     "Offer fearue": {
@@ -9635,6 +9650,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Un nombre illimité d'alias pour protéger votre identité"
+      ],
+      "Short @pm.me address": [
+        "Adresse courte @pm.me"
       ]
     },
     "Onboarding": {

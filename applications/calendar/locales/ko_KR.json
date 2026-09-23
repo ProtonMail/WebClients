@@ -1036,6 +1036,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ]
     },
     "action": {
@@ -4389,6 +4395,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom 연결이 만료되었습니다. 계속하려면 재연결하십시오."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
       ]
     },
     "error": {
@@ -6976,6 +6985,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "지원 팀"
       ]
     },
     "info": {
@@ -9606,6 +9618,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "신원 보호를 위한 무제한 별칭"
+      ],
+      "Short @pm.me address": [
+        "짧은 @pm.me 주소"
       ]
     },
     "Onboarding": {
