@@ -1,6 +1,6 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { SheetImportEvent } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods, SheetImportData } from '@proton/docs-shared'
+import { SheetImportDestination, SheetImportEvent } from '@proton/docs-shared'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import type { PropsWithChildren } from 'react'
 import { useMemo } from 'react'
@@ -16,6 +16,8 @@ import {
   type SheetsLogger,
   type SheetsSession,
   type SheetsShellToEditorActions,
+  type SpreadsheetImportDestination,
+  type SpreadsheetImportRequest,
 } from '../Spreadsheet/public'
 import { useResolvedAppPlatform } from './useResolvedAppPlatform'
 import { createSheetsFileMenuActions } from './createSheetsFileMenuActions'
@@ -44,7 +46,21 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
 
   const shellToEditorActions = useMemo<SheetsShellToEditorActions>(
     () => ({
-      subscribeToSheetImport: (callback) => application.eventBus.addEventCallback(callback, SheetImportEvent),
+      subscribeToSheetImport: (callback) =>
+        application.eventBus.addEventCallback<SheetImportData>((data) => {
+          const destinations: Record<SheetImportDestination, SpreadsheetImportDestination> = {
+            [SheetImportDestination.InsertAsNewSheet]: 'insert-as-new-sheet',
+            [SheetImportDestination.ReplaceAtSelectedCell]: 'replace-at-selected-cell',
+            [SheetImportDestination.ReplaceCurrentSheet]: 'replace-current-sheet',
+            [SheetImportDestination.ReplaceSpreadsheet]: 'replace-spreadsheet',
+          }
+          const request: SpreadsheetImportRequest = {
+            file: data.file,
+            shouldConvertCellContents: data.shouldConvertCellContents,
+            destination: destinations[data.destination],
+          }
+          callback(request)
+        }, SheetImportEvent),
       subscribeToCollaboratorCursorNavigation: (callback) =>
         application.syncedState.subscribeToEvent('ScrollToUserCursorData', (data) => {
           const destination = toCollaboratorCursorNavigationDestination(data.state)
