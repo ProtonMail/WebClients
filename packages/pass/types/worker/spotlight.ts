@@ -66,6 +66,8 @@ export enum SpotlightMessage {
     SSH_AGENT_INSTRUCTIONS = 32,
     /** Welcome onboarding modal auto-open */
     WELCOME_MODAL = 33,
+    /** B2B trial without a payment method */
+    PAYMENT_METHOD_NUDGE = 34,
 }
 
 export type SpotlightAcknowledgment = {

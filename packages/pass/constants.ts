@@ -63,6 +63,7 @@ export enum AccountPath {
     USERS = 'pass/users-addresses',
     POLICIES = 'pass/policies',
     DASHBOARD = 'pass/dashboard',
+    PAYMENT_METHODS = 'pass/dashboard#payment-methods',
 }
 
 export enum UpsellRefPrefix {
