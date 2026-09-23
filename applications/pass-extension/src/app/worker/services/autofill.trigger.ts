@@ -1,9 +1,3 @@
-import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
-import { getFramesTopFirst, getTabFrames } from 'proton-pass-extension/lib/utils/frames';
-import type { AutofillTriggerResult } from 'proton-pass-extension/types/autofill';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { clientLocked } from '@proton/pass/lib/client';
@@ -11,6 +5,13 @@ import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import { backgroundMessage, sendTabMessage } from '../../../lib/message/send-message';
+import { getFramesTopFirst, getTabFrames } from '../../../lib/utils/frames';
+import type { AutofillTriggerResult } from '../../../types/autofill';
+import { WorkerMessageType } from '../../../types/messages';
+import { NotificationAction } from '../../content/constants.runtime';
+import { withContext } from '../context/inject';
 
 /** Opens a transient toast in the tab's top-frame. Content-scripts cannot open a
  * `TOAST` themselves — the worker's inbound `INLINE_NOTIFICATION_OPEN` handler only

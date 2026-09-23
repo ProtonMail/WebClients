@@ -1,7 +1,7 @@
-import { triggerTabAutofill } from 'proton-pass-extension/app/worker/services/autofill.trigger';
-import { PASS_COMMANDS } from 'proton-pass-extension/lib/extension/commands';
-
 import browser from '@proton/pass/lib/globals/browser';
+
+import { PASS_COMMANDS } from '../../../lib/extension/commands';
+import { triggerTabAutofill } from '../services/autofill.trigger';
 
 /** `browser.commands.onCommand` listener, registered from `worker/index.ts`. Lives
  * under `app/worker` so `lib/extension/commands` — imported by the settings shortcuts

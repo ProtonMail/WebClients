@@ -1,10 +1,9 @@
-import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import browser from '@proton/pass/lib/globals/browser';
 import { AppStatus } from '@proton/pass/types/worker/state';
 
+import { WorkerMessageType } from '../../../types/messages';
+import { NotificationAction } from '../../content/constants.runtime';
+import { WorkerContext } from '../context/inject';
 import { triggerTabAutofill } from './autofill.trigger';
 
 const tabsSendMessage = browser.tabs.sendMessage as jest.Mock;

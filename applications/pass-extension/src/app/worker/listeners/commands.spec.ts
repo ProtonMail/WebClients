@@ -1,11 +1,10 @@
-import { triggerTabAutofill } from 'proton-pass-extension/app/worker/services/autofill.trigger';
-import { PASS_COMMANDS } from 'proton-pass-extension/lib/extension/commands';
-
 import browser from '@proton/pass/lib/globals/browser';
 
+import { PASS_COMMANDS } from '../../../lib/extension/commands';
+import { triggerTabAutofill } from '../services/autofill.trigger';
 import { handleExtensionCommand } from './commands';
 
-jest.mock('proton-pass-extension/app/worker/services/autofill.trigger', () => ({
+jest.mock('../services/autofill.trigger', () => ({
     triggerTabAutofill: jest.fn().mockResolvedValue(true),
 }));
 
