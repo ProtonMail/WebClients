@@ -2382,10 +2382,10 @@ importers:
         version: link:../../packages/utils
       '@protontech/crypto':
         specifier: ^2.1.3
-        version: 2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
+        version: 2.1.3(@types/node@24.13.6)(typescript@6.0.3)
       '@protontech/drive-sdk':
         specifier: ^0.20.1
-        version: 0.20.1(@protontech/crypto@2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2))
+        version: 0.20.1(@protontech/crypto@2.1.3(@types/node@24.13.6)(typescript@6.0.3))
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(react@18.3.1))(react@18.3.1)
@@ -2407,12 +2407,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      d3-array:
-        specifier: ^3.2.4
-        version: 3.2.4
-      d3-scale:
-        specifier: ^4.0.2
-        version: 4.0.2
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -2427,10 +2421,7 @@ importers:
         version: 1.4.1
       jest:
         specifier: ^30.5.2
-        version: 30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@types/node@24.13.6)(@typescript/typescript6@6.0.2))
-      jest-environment-jsdom:
-        specifier: ^30.5.2
-        version: 30.5.2(supports-color@11.0.0)
+        version: 30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
       json-stable-stringify:
         specifier: ^1.3.0
         version: 1.3.0
@@ -2451,7 +2442,7 @@ importers:
         version: 1.47.0(react@18.3.1)
       msw:
         specifier: 2.12.14
-        version: 2.12.14(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
+        version: 2.12.14(@types/node@24.13.6)(typescript@6.0.3)
       pdfjs-dist:
         specifier: 5.4.530
         version: 5.4.530
@@ -2470,9 +2461,6 @@ importers:
       react-redux:
         specifier: ^9.3.0
         version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
-      react-router:
-        specifier: ^5.3.4
-        version: 5.3.4(react@18.3.1)
       react-router-dom:
         specifier: ^5.3.4
         version: 5.3.4(react@18.3.1)
@@ -2482,9 +2470,6 @@ importers:
       react-textarea-autosize:
         specifier: ^8.5.9
         version: 8.5.9(@types/react@18.3.31)(react@18.3.1)
-      react-virtuoso:
-        specifier: ^4.18.13
-        version: 4.18.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       recharts:
         specifier: ^3.10.1
         version: 3.10.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-is@19.2.8)(react@18.3.1)(redux@5.0.1)
@@ -2543,9 +2528,6 @@ importers:
       '@jest/globals':
         specifier: ^30.5.2
         version: 30.5.2(supports-color@11.0.0)
-      '@peculiar/webcrypto':
-        specifier: ^1.7.1
-        version: 1.7.1
       '@proton/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
@@ -2573,24 +2555,15 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
-      '@vitejs/plugin-react-swc':
-        specifier: ^3.11.0
-        version: 3.11.0(@swc/helpers@0.5.17)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.1))
       autoprefixer:
         specifier: ^10.6.1
         version: 10.6.1(postcss@8.5.28)
-      core-js:
-        specifier: ^3.50.0
-        version: 3.50.0
       cross-env:
         specifier: ^10.1.0
         version: 10.1.0
       eslint:
         specifier: ^10.11.0
         version: 10.11.0(jiti@2.7.0)(supports-color@11.0.0)
-      eslint-config-prettier:
-        specifier: ^10.1.8
-        version: 10.1.8(eslint@10.11.0(jiti@2.7.0)(supports-color@11.0.0))
       fake-indexeddb:
         specifier: ^6.2.5
         version: 6.2.5
@@ -2601,11 +2574,8 @@ importers:
         specifier: ^1.80.3
         version: 1.97.1
       typescript:
-        specifier: npm:@typescript/typescript6@^6.0.2
-        version: '@typescript/typescript6@6.0.2'
-      vite:
-        specifier: ^8.3.0
-        version: 8.3.0(@types/node@24.13.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.1)
+        specifier: ^6.0.3
+        version: 6.0.3
       webpack:
         specifier: ^5.111.1
         version: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.4(@types/node@24.13.6))(svgo@4.1.0)(webpack-cli@7.2.3)
@@ -16537,11 +16507,6 @@ packages:
   '@vercel/webpack-asset-relocator-loader@1.7.3':
     resolution: {integrity: sha512-vizrI18v8Lcb1PmNNUBz7yxPxxXoOeuaVEjTG9MjvDrphjiSxFZrRJ5tIghk+qdLFRCXI5HBCshgobftbmrC5g==}
 
-  '@vitejs/plugin-react-swc@3.11.0':
-    resolution: {integrity: sha512-YTJCGFdNMHCMfjODYtxRNVAYmTWQ1Lb8PulP/2/f/oEEtglw8oKxKIZmmRkyXrVrHfsKOaVkAc3NT9/dMutO5w==}
-    peerDependencies:
-      vite: ^4 || ^5 || ^6 || ^7
-
   '@vitejs/plugin-react@4.7.0':
     resolution: {integrity: sha512-gUu9hwfWvvEDBBmgtAowQCojwZmJ5mcLn3aufeCsitijs3+f2NsrPtlAWIR6OPiqljl96GVCUbLe0HyqIpVaoA==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -19331,12 +19296,6 @@ packages:
     resolution: {integrity: sha512-2NlIDTwUWJN0mRPQOdtQBzbUHvdGY2P1VXSyU83Q3xKxM7WHX2Ql8dKq782Q9TgQUNOLEzEYu9bzLNj1q88I5w==}
     engines: {node: '>=6.0'}
     hasBin: true
-
-  eslint-config-prettier@10.1.8:
-    resolution: {integrity: sha512-82GZUjRS0p/jganf6q1rEO25VSoHH0hKPCTrgillPjdI/3bgBhAE1QzHrHTizjpRvy6pGAvKjDJtk2pF9NDq8w==}
-    hasBin: true
-    peerDependencies:
-      eslint: '>=7.0.0'
 
   eslint-import-context@0.1.9:
     resolution: {integrity: sha512-K9Hb+yRaGAGUbwjhFNHvSmmkZs9+zbuoe3kFQ4V1wYjrepUFYM2dZAfNtjbbj3qsPfUfsA68Bx/ICWQMi+C8Eg==}
@@ -24476,12 +24435,6 @@ packages:
     peerDependencies:
       react: ^16.3.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
-  react-virtuoso@4.18.13:
-    resolution: {integrity: sha512-M4kP7zbV7JmLrnJYs0X2FBA8gnNlHisSYuKMyeJVYtWz31CAJeP57dgPJzfneUdKDKmL9SiqvcBQ32si8CfQSQ==}
-    peerDependencies:
-      react: '>=16 || >=17 || >= 18 || >= 19'
-      react-dom: '>=16 || >=17 || >= 18 || >=19'
 
   react-window@1.8.11:
     resolution: {integrity: sha512-+SRbUVT2scadgFSWx+R1P754xHPEqvcfSfVX10QYg6POOz+WNgkN48pS+BtZNIMGiL1HYrSEiCkwsMS15QogEQ==}
@@ -30740,6 +30693,42 @@ snapshots:
       jest-util: 30.5.1
       slash: 3.0.0
 
+  '@jest/core@30.5.2(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))':
+    dependencies:
+      '@jest/console': 30.5.2
+      '@jest/pattern': 30.5.0
+      '@jest/reporters': 30.5.2(supports-color@11.0.0)
+      '@jest/test-result': 30.5.2
+      '@jest/transform': 30.5.2(supports-color@11.0.0)
+      '@jest/types': 30.5.1
+      '@types/node': 24.13.6
+      ansi-escapes: 4.3.2
+      chalk: 4.1.2
+      ci-info: 4.4.0
+      exit-x: 0.2.2
+      fast-json-stable-stringify: 2.1.0
+      graceful-fs: 4.2.11
+      jest-changed-files: 30.5.1
+      jest-config: 30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
+      jest-haste-map: 30.5.1
+      jest-message-util: 30.5.1
+      jest-regex-util: 30.5.0
+      jest-resolve: 30.5.1
+      jest-resolve-dependencies: 30.5.2(supports-color@11.0.0)
+      jest-runner: 30.5.2(supports-color@11.0.0)
+      jest-runtime: 30.5.2(supports-color@11.0.0)
+      jest-snapshot: 30.5.2(supports-color@11.0.0)
+      jest-util: 30.5.1
+      jest-validate: 30.5.1
+      jest-watcher: 30.5.2
+      pretty-format: 30.5.1
+      slash: 3.0.0
+    transitivePeerDependencies:
+      - babel-plugin-macros
+      - esbuild-register
+      - supports-color
+      - ts-node
+
   '@jest/core@30.5.2(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2)(@types/node@26.0.0)(typescript@6.0.3))':
     dependencies:
       '@jest/console': 30.5.2
@@ -32529,6 +32518,11 @@ snapshots:
       '@types/node': 24.13.6
       typescript: '@typescript/typescript6@6.0.2'
 
+  '@openpgp/web-stream-tools@0.3.1(@types/node@24.13.6)(typescript@6.0.3)':
+    optionalDependencies:
+      '@types/node': 24.13.6
+      typescript: 6.0.3
+
   '@openpgp/web-stream-tools@0.3.1(@types/node@26.0.0)(@typescript/typescript6@6.0.2)':
     optionalDependencies:
       '@types/node': 26.0.0
@@ -33268,6 +33262,18 @@ snapshots:
       - '@types/node'
       - typescript
 
+  '@protontech/crypto@2.1.3(@types/node@24.13.6)(typescript@6.0.3)':
+    dependencies:
+      '@noble/hashes': 2.4.0
+      '@openpgp/web-stream-tools': 0.3.1(@types/node@24.13.6)(typescript@6.0.3)
+      bcryptjs: 3.0.3
+      comlink: 4.4.2
+      core-js: 3.50.0
+      openpgp: '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.13.6)(typescript@6.0.3))'
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
+
   '@protontech/crypto@2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2)':
     dependencies:
       '@noble/hashes': 2.4.0
@@ -33284,6 +33290,17 @@ snapshots:
     dependencies:
       '@noble/hashes': 1.8.0
       '@protontech/crypto': 2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
+      ttag: 1.8.12
+    optionalDependencies:
+      '@xmldom/xmldom': 0.9.12
+      exifreader: 4.45.1
+    transitivePeerDependencies:
+      - babel-plugin-macros
+
+  '@protontech/drive-sdk@0.20.1(@protontech/crypto@2.1.3(@types/node@24.13.6)(typescript@6.0.3))':
+    dependencies:
+      '@noble/hashes': 1.8.0
+      '@protontech/crypto': 2.1.3(@types/node@24.13.6)(typescript@6.0.3)
       ttag: 1.8.12
     optionalDependencies:
       '@xmldom/xmldom': 0.9.12
@@ -33336,6 +33353,10 @@ snapshots:
   '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.13.6)(@typescript/typescript6@6.0.2))':
     optionalDependencies:
       '@openpgp/web-stream-tools': 0.3.1(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
+
+  '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.13.6)(typescript@6.0.3))':
+    optionalDependencies:
+      '@openpgp/web-stream-tools': 0.3.1(@types/node@24.13.6)(typescript@6.0.3)
 
   '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@26.0.0)(@typescript/typescript6@6.0.2))':
     optionalDependencies:
@@ -36159,14 +36180,6 @@ snapshots:
   '@vercel/webpack-asset-relocator-loader@1.7.3':
     dependencies:
       resolve: 1.22.12
-
-  '@vitejs/plugin-react-swc@3.11.0(@swc/helpers@0.5.17)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.1))':
-    dependencies:
-      '@rolldown/pluginutils': 1.0.0-beta.27
-      '@swc/core': 1.16.2(@swc/helpers@0.5.17)
-      vite: 8.3.0(@types/node@24.13.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.1)
-    transitivePeerDependencies:
-      - '@swc/helpers'
 
   '@vitejs/plugin-react@4.7.0(supports-color@11.0.0)(vite@8.3.0(@types/node@26.0.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.1))':
     dependencies:
@@ -39585,10 +39598,6 @@ snapshots:
     optionalDependencies:
       source-map: 0.6.1
 
-  eslint-config-prettier@10.1.8(eslint@10.11.0(jiti@2.7.0)(supports-color@11.0.0)):
-    dependencies:
-      eslint: 10.11.0(jiti@2.7.0)(supports-color@11.0.0)
-
   eslint-import-context@0.1.9(unrs-resolver@1.12.2):
     dependencies:
       get-tsconfig: 4.14.3
@@ -42342,6 +42351,25 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
+  jest-cli@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3)):
+    dependencies:
+      '@jest/core': 30.5.2(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
+      '@jest/test-result': 30.5.2
+      '@jest/types': 30.5.1
+      chalk: 4.1.2
+      exit-x: 0.2.2
+      import-local: 3.2.0
+      jest-config: 30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
+      jest-util: 30.5.1
+      jest-validate: 30.5.1
+      yargs: 17.7.3
+    transitivePeerDependencies:
+      - '@types/node'
+      - babel-plugin-macros
+      - esbuild-register
+      - supports-color
+      - ts-node
+
   jest-cli@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@types/node@24.13.6)(@typescript/typescript6@6.0.2)):
     dependencies:
       '@jest/core': 30.5.2(supports-color@11.0.0)(ts-node@10.9.2(@types/node@24.13.6)(@typescript/typescript6@6.0.2))
@@ -42417,6 +42445,38 @@ snapshots:
       - esbuild-register
       - supports-color
       - ts-node
+
+  jest-config@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3)):
+    dependencies:
+      '@babel/core': 7.29.7(supports-color@11.0.0)
+      '@jest/get-type': 30.5.0
+      '@jest/pattern': 30.5.0
+      '@jest/test-sequencer': 30.5.2
+      '@jest/types': 30.5.1
+      babel-jest: 30.5.2(@babel/core@7.29.7(supports-color@11.0.0))(supports-color@11.0.0)
+      chalk: 4.1.2
+      ci-info: 4.4.0
+      deepmerge: 4.3.1
+      glob: 13.0.6
+      graceful-fs: 4.2.11
+      jest-circus: 30.5.2(supports-color@11.0.0)
+      jest-docblock: 30.5.0
+      jest-environment-node: 30.5.2
+      jest-regex-util: 30.5.0
+      jest-resolve: 30.5.1
+      jest-runner: 30.5.2(supports-color@11.0.0)
+      jest-util: 30.5.1
+      jest-validate: 30.5.1
+      parse-json: 5.2.0
+      pretty-format: 30.5.1
+      slash: 3.0.0
+      strip-json-comments: 3.1.1
+    optionalDependencies:
+      '@types/node': 24.13.6
+      ts-node: 10.9.2(@swc/core@1.16.2)(@types/node@24.13.6)(typescript@6.0.3)
+    transitivePeerDependencies:
+      - babel-plugin-macros
+      - supports-color
 
   jest-config@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2)(@types/node@26.0.0)(typescript@6.0.3)):
     dependencies:
@@ -42895,6 +42955,19 @@ snapshots:
       jest-util: 30.5.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
+
+  jest@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3)):
+    dependencies:
+      '@jest/core': 30.5.2(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
+      '@jest/types': 30.5.1
+      import-local: 3.2.0
+      jest-cli: 30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(typescript@6.0.3))
+    transitivePeerDependencies:
+      - '@types/node'
+      - babel-plugin-macros
+      - esbuild-register
+      - supports-color
+      - ts-node
 
   jest@30.5.2(@types/node@24.13.6)(supports-color@11.0.0)(ts-node@10.9.2(@types/node@24.13.6)(@typescript/typescript6@6.0.2)):
     dependencies:
@@ -44570,7 +44643,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  msw@2.12.14(@types/node@24.13.6)(@typescript/typescript6@6.0.2):
+  msw@2.12.14(@types/node@24.13.6)(typescript@6.0.3):
     dependencies:
       '@inquirer/confirm': 5.1.19(@types/node@24.13.6)
       '@mswjs/interceptors': 0.41.3
@@ -44591,7 +44664,7 @@ snapshots:
       until-async: 3.0.2
       yargs: 17.7.3
     optionalDependencies:
-      typescript: '@typescript/typescript6@6.0.2'
+      typescript: 6.0.3
     transitivePeerDependencies:
       - '@types/node'
 
@@ -46524,11 +46597,6 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-lifecycles-compat: 3.0.4
-
-  react-virtuoso@4.18.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   react-window@1.8.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -48550,26 +48618,6 @@ snapshots:
     dependencies:
       '@ts-morph/common': 0.27.0
       code-block-writer: 13.0.3
-
-  ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@24.13.6)(@typescript/typescript6@6.0.2):
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node10': 1.0.11
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.4
-      '@types/node': 24.13.6
-      acorn: 8.18.0
-      acorn-walk: 8.3.5
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      typescript: '@typescript/typescript6@6.0.2'
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    optionalDependencies:
-      '@swc/core': 1.16.2(@swc/helpers@0.5.17)
 
   ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.17))(@types/node@26.0.0)(@typescript/typescript6@6.0.2):
     dependencies:
