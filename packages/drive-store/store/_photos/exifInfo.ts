@@ -39,7 +39,7 @@ export const getExifInfo = async (file: File, mimeType: string): Promise<Expande
     return undefined;
 };
 
-export const getFormattedDateTime = (exif?: ExifTags) => {
+const getFormattedDateTime = (exif?: ExifTags) => {
     if (!exif) {
         return undefined;
     }
@@ -73,7 +73,7 @@ export const getPhotoDimensions = ({ exif, png }: ExpandedTags): { width?: numbe
     height: exif?.ImageLength?.value || exif?.PixelYDimension?.value || png?.['Image Height']?.value,
 });
 
-export const getCaptureDateTimeString = (exif?: ExifTags) => {
+const getCaptureDateTimeString = (exif?: ExifTags) => {
     try {
         const formattedDateTime = getFormattedDateTime(exif);
         return formattedDateTime ? new Date(formattedDateTime).toISOString() : undefined;

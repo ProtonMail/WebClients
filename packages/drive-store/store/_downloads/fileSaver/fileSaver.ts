@@ -65,7 +65,7 @@ const getRemovalTimeout = (size?: number): number => {
 // MEMORY_DOWNLOAD_LIMIT constant) are buffered in browser and then saved in
 // one go. Bigger files are streamed and user can see the progress almost like
 // it would be normal file. See saveViaDownload for more info.
-export class FileSaver {
+class FileSaver {
     useBlobFallback: boolean = false;
 
     useSWFallback: boolean = false;
