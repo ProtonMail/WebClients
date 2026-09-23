@@ -1,6 +1,8 @@
-import { useUserSettings } from '@proton/account/index';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
+import { useMemo } from 'react';
+
+import { useGetSubscription } from '@proton/account/subscription/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
+import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -15,45 +17,53 @@ import { getBaseTelemetryDimensions } from '@proton/shared/lib/helpers/metrics';
 
 export const useUnlimitedToDuoDiscountedTelemetry = () => {
     const api = useApi();
-    const [user] = useUser();
-    const [subscription] = useSubscription();
-    const [userSettings] = useUserSettings();
+    const getUser = useGetUser();
+    const getSubscription = useGetSubscription();
+    const getUserSettings = useGetUserSettings();
     const { APP_NAME } = useConfig();
 
-    const sendReport = (event: TelemetryEvents) => {
-        if (!userSettings?.Telemetry) {
-            return;
-        }
+    return useMemo(() => {
+        const sendReport = async (event: TelemetryEvents) => {
+            const [user, subscription, userSettings] = await Promise.all([
+                getUser(),
+                getSubscription(),
+                getUserSettings(),
+            ]);
 
-        const silentApi = getSilentApi(api);
+            if (!userSettings?.Telemetry) {
+                return;
+            }
 
-        void silentApi(
-            sendTelemetryData({
-                MeasurementGroup: TelemetryMeasurementGroups.unlimitedToDuoDiscountedOffer,
-                Event: event,
-                Dimensions: {
-                    product: normalizeProduct(APP_NAME),
-                    ...getBaseTelemetryDimensions({ user, subscription, userSettings }),
-                },
-            })
-        );
-    };
+            const silentApi = getSilentApi(api);
 
-    return {
-        sendReportClickTopNavbar: () => {
-            sendReport(TelemetryUnlimitedToDuoDiscountedOffer.clickTopNavbar);
-        },
-        sendReportClickUpsellButton: () => {
-            sendReport(TelemetryUnlimitedToDuoDiscountedOffer.clickUpsellButton);
-        },
-        sendReportCloseOffer: () => {
-            sendReport(TelemetryUnlimitedToDuoDiscountedOffer.closeOffer);
-        },
-        sendReportClickHideOffer: () => {
-            sendReport(TelemetryUnlimitedToDuoDiscountedOffer.clickHideOffer);
-        },
-        sendReportUserSubscribed: () => {
-            sendReport(TelemetryUnlimitedToDuoDiscountedOffer.userSubscribed);
-        },
-    };
+            void silentApi(
+                sendTelemetryData({
+                    MeasurementGroup: TelemetryMeasurementGroups.unlimitedToDuoDiscountedOffer,
+                    Event: event,
+                    Dimensions: {
+                        product: normalizeProduct(APP_NAME),
+                        ...getBaseTelemetryDimensions({ user, subscription, userSettings }),
+                    },
+                })
+            );
+        };
+
+        return {
+            sendReportClickTopNavbar: () => {
+                void sendReport(TelemetryUnlimitedToDuoDiscountedOffer.clickTopNavbar);
+            },
+            sendReportClickUpsellButton: () => {
+                void sendReport(TelemetryUnlimitedToDuoDiscountedOffer.clickUpsellButton);
+            },
+            sendReportCloseOffer: () => {
+                void sendReport(TelemetryUnlimitedToDuoDiscountedOffer.closeOffer);
+            },
+            sendReportClickHideOffer: () => {
+                void sendReport(TelemetryUnlimitedToDuoDiscountedOffer.clickHideOffer);
+            },
+            sendReportUserSubscribed: () => {
+                void sendReport(TelemetryUnlimitedToDuoDiscountedOffer.userSubscribed);
+            },
+        };
+    }, [api, getUser, getSubscription, getUserSettings, APP_NAME]);
 };
