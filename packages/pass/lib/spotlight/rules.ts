@@ -1,6 +1,7 @@
 import type { Store } from 'redux';
 
 import { ITEM_COUNT_RATING_PROMPT } from '../../constants';
+import { selectPaymentNudgeEligible } from '../../store/payment-nudge/selectors';
 import {
     selectAllAliasItems,
     selectAllItems,
@@ -154,6 +155,18 @@ export const createUserRenewalRule = (store: Store<State>) =>
             if (subscriptionEnd < now) return false;
 
             return subscriptionEnd - now < UNIX_MONTH;
+        },
+    });
+
+export const createPaymentMethodNudgeRule = (store: Store<State>) =>
+    createSpotlightRule({
+        message: SpotlightMessage.PAYMENT_METHOD_NUDGE,
+        when: (previous) => {
+            if (!selectPaymentNudgeEligible(store.getState())) return false;
+
+            // Re-prompt once a week: a trial is short enough that a single
+            // dismissal should not silence the nudge for its whole duration
+            return !previous || getEpoch() - previous.acknowledgedOn > UNIX_WEEK;
         },
     });
 
