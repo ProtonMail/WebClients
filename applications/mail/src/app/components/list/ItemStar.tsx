@@ -13,11 +13,11 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { isElementMessage, isInDeletedFolder, isStarred as testIsStarred } from '../../helpers/elements';
 import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
-
-import { isElementMessage, isInDeletedFolder, isStarred as testIsStarred } from '../../helpers/elements';
 import type { Element } from '../../models/element';
+import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
     element?: Element;
@@ -57,6 +57,7 @@ const ItemStar = ({ element, size, labelID }: Props) => {
                 elements: [element || ({} as Element)],
                 destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                 showSuccessNotification: false,
+                sourceAction: SOURCE_ACTION.ITEM_STAR,
             })
         );
     };
