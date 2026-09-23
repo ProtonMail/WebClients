@@ -30,4 +30,25 @@
 
 .meeting-top-banner {
 	background-color: var(--interaction-norm-minor-3);
+
+	&--warning {
+		background-color: var(--signal-warning);
+		color: var(--text-invert);
+
+		.link {
+			color: inherit;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: inherit;
+			}
+		}
+
+		.button {
+			--button-default-text-color: inherit;
+			--button-hover-text-color: inherit;
+			--button-active-text-color: inherit;
+		}
+	}
 }

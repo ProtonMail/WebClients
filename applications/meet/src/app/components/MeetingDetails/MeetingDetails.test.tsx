@@ -14,6 +14,7 @@ import {
     sortedParticipantsReducer,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
+import { initialState as initialMeetUserState, meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
@@ -47,6 +48,7 @@ const createMockStore = ({ sideBarOpen = false }) => {
             ...currentMeetingReducer,
             ...meetingInfoModelReducer,
             ...sortedParticipantsReducer,
+            ...meetUserReducer,
         },
         preloadedState: {
             uiState: {
@@ -86,6 +88,9 @@ const createMockStore = ({ sideBarOpen = false }) => {
             },
             sortedParticipants: {
                 ...initialSortedParticipantsState,
+            },
+            meetUser: {
+                ...initialMeetUserState,
             },
         },
     });
