@@ -1561,10 +1561,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1769,6 +1766,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "action": {
@@ -10344,6 +10344,57 @@
       ],
       "What needs handling?": [
         "Čo je potrebné vybaviť?"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Stručný prehľad toho, s čím vám môžem pomôcť vo vašej emailovej schránke – od vyhľadávania starých správ až po prípravu odpovedí a s čím vám pomôcť nemôžem."
+      ],
+      "Draft a ${ kind }": [
+        "Navrhni ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Koncept ${ kind } pre ${ recipient }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Navrhni ${ kind } pre ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "Navrhnuté: ${ kind }"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Ahoj Lumo, pozri sa, aké správy mi najčastejšie prichádzajú do doručenej pošty a tiež na zložky a filtre, ktoré už mám. Potom mi navrhni, ako to udržať v poriadku: čo by som mal zmeniť na tých, ktoré už mám a či by stálo za to pridať niečo nové. Najprv mi ten plán podrobne vysvetli a nič nemeň, kým ti nedám súhlas."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Ahoj, Lumo, odchádzam a chcem si nastaviť automatickú odpoveď v neprítomnosti. Opýtaj sa ma na termíny a na to, čo by sa v nej malo odznieť a potom mi tú správu ukáž, kým ju aktivuješ."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Ahoj Lumo, prezri moje emaily za posledných 7 dní a povedz mi, na ktoré z nich musím odpovedať. Stručne mi zhrň, o čo v každom z nich ide a vynechaj všetko, čo môžem ignorovať."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Ahoj, Lumo, vysvetli mi, ako mi môžeš pomôcť s mojou schránkou. O čo ťa môžem požiadať a s čím mi nemôžeš pomôcť?"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Prejdem emaily z minulého týždňa a vyberiem z nich tie, na ktoré je skutočne potrebné odpovedať, aby ste to mohli vybaviť naraz."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Pozriem sa, čo sa u vás najčastejšie objavuje a na priečinky a filtre, ktoré už máte a potom vám navrhne, čo by sa dalo vylepšiť a čo chýba. Nič sa nezmení, kým to neschválite."
+      ],
+      "Readdressed": [
+        "Spresnené"
+      ],
+      "Revise the ${ draft }": [
+        "Prepravuj ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Prepracované a spresnené"
+      ],
+      "Set my out of office": [
+        "Nastav automatickú odpoveď „Mimo kancelárie“"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Povedzte mi, kedy budede preč a čo by ste tam chceli napísať. Výsledok uvidíte ešte pred jeho uložením."
+      ],
+      "Tidy up my inbox": [
+        "Uprac moju doručenú poštu"
       ]
     },
     "info": {
@@ -10611,6 +10662,9 @@
       ],
       "Close ${ LUMO_SHORT_APP_NAME }": [
         "Zavrieť ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Otvoriť ${ LUMO_SHORT_APP_NAME } / zameranie na vstup"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -13686,6 +13740,9 @@
       ],
       "Your subscription renews soon": [
         "Vaše predplatné sa čoskoro obnoví"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Posledná šanca získať prvý mesiac v rámci ${ plan } za túto cenu."
       ]
     },
     "Offer fearue": {
@@ -13732,6 +13789,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Neobmedzené aliasy na ochranu vašej identity"
+      ],
+      "Short @pm.me address": [
+        "Skrátená adresa @pm.me"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13959,6 +14019,27 @@
       ],
       "Add a payment method": [
         "Pridať spôsob platby"
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Pridajte spôsob platby**, aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Zrušiť môžete kedykoľvek pred týmto termínom.** ${ planTitle } budete môcť bezplatne využívať až do konca skúšobného obdobia."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Ak budete pokračovať aj po skončení skúšobnej doby,** môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Po začatí platnosti predplatného...** môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
+      ],
+      "If you continue after your trial,": [
+        "Ak budete pokračovať aj po skončení skúšobnej doby,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "aby ste mohli naďalej využívať všetky funkcie aj po uplynutí skúšobnej doby."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
       ]
     },
     "Option": {

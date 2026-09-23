@@ -1561,10 +1561,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -10257,6 +10254,78 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Draft a ${ kind }": [
+        "Чарнавік ${ kind }"
+      ],
+      "Draft an ${ kind }": [
+        "Чарнавік ${ kind }"
+      ],
+      "Drafted a ${ kind }": [
+        "Чарнавы ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Чарнавы ${ kind }"
+      ],
+      "Edit ${ contact }": [
+        "Рэдагаваць ${ contact }"
+      ],
+      "Edit a contact": [
+        "Рэдагаваць кантакт"
+      ],
+      "Edit contact": [
+        "Рэдагаваць кантакт"
+      ],
+      "forward": [
+        "перасылка"
+      ],
+      "open draft": [
+        "адкрыць чарнавік"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Прачытаць чарнавік \"${ subject }\""
+      ],
+      "Read the open draft": [
+        "Прачытаць адкрыты чарнавік"
+      ],
+      "Readdressed": [
+        "Пераадрасавана"
+      ],
+      "Readdressed the draft": [
+        "Пераадрасаваць чарнавік"
+      ],
+      "Remove signature": [
+        "Выдаліць подпіс"
+      ],
+      "Rename label": [
+        "Перайменаваць метку"
+      ],
+      "Rename this label": [
+        "Перайменаваць гэту метку"
+      ],
+      "reply": [
+        "адказ"
+      ],
+      "reply all": [
+        "адказаць усім"
+      ],
+      "Revise the ${ draft }": [
+        "Перагдзець ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Перапісаць і пераадрасаваць"
+      ],
+      "Set my out of office": [
+        "Задаць, што я не на месцы"
+      ],
+      "Tidy up my inbox": [
+        "Навядзенне парадку ў маёй паштовай скрыні"
+      ],
+      "What can you do?": [
+        "Што можна зрабіць?"
+      ],
+      "What needs handling?": [
+        "Што неабходна апрацаваць?"
       ]
     },
     "info": {
@@ -11594,6 +11663,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Cc": [
+        "Копія"
+      ],
+      "To": [
+        "Да"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13630,6 +13705,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Неабмежаваная колькасць псеўданімаў, каб абараніць вашу ідэнтычнасць"
+      ],
+      "Short @pm.me address": [
+        "Кароткі адрас @pm.me"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13854,6 +13932,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "У вас будзе магчымасць карыстацца ${ planTitle } бясплатна да канца пробнага перыяду."
+      ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
       ]
     },
     "Option": {
@@ -15084,6 +15165,9 @@
       ],
       "User Admin": [
         "Адміністратар карыстальніка"
+      ],
+      "Organization Admin": [
+        "Адміністратар арганізацыі"
       ]
     },
     "Safety review": {
@@ -18927,6 +19011,16 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Перайменаваць ${ folder } на…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Перайменаваць ${ label } на…"
       ]
     }
   }

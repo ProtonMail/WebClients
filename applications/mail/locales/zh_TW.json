@@ -1721,6 +1721,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Write ${ count } logs": [
+        "寫入 ${ count } 日誌"
       ]
     },
     "action": {
@@ -5462,6 +5465,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密失敗的項目名稱: ${ message }"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名稱長度最多為 ${ MAX_NODE_NAME_LENGTH } 個字元"
+      ],
+      "Request aborted": [
+        "請求已中止"
       ]
     },
     "error": {
@@ -9345,6 +9357,66 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "Create a filter": [
+        "建立過濾器"
+      ],
+      "Edit ${ contact }": [
+        "編輯 ${ contact } 聯絡人"
+      ],
+      "Edit contact": [
+        "編輯連絡人"
+      ],
+      "forward": [
+        "轉寄"
+      ],
+      "Label ${ emails }": [
+        "標籤 ${ emails }"
+      ],
+      "Mark as unread": [
+        "標記為未讀"
+      ],
+      "Move ${ emails }": [
+        "移動至 ${ emails }"
+      ],
+      "Read your ${ count } folder": [
+        "已讀您的 ${ count } 資料夾"
+      ],
+      "Read your ${ count } label": [
+        "已讀您的 ${ count } 標籤"
+      ],
+      "Read your auto-reply": [
+        "閱讀您的自動回覆"
+      ],
+      "Remove signature": [
+        "移除簽名"
+      ],
+      "Remove the star from ${ emails }": [
+        "從 ${ emails } 電子郵件移除星號"
+      ],
+      "reply": [
+        "回覆"
+      ],
+      "reply all": [
+        "全部回覆"
+      ],
+      "Searched for mail from ${ sender }": [
+        "搜尋來自於 ${ sender } 的電子郵件"
+      ],
+      "Set auto-reply": [
+        "設置自動回覆"
+      ],
+      "Star ${ emails }": [
+        "加星號 ${ emails }"
+      ],
+      "Tidy up my inbox": [
+        "整理我的收件匣"
+      ],
+      "Turn off auto-reply": [
+        "關閉自動回復"
+      ],
+      "What can you do?": [
+        "您可以做什麼？"
       ]
     },
     "info": {
@@ -9630,6 +9702,9 @@
       ],
       "Message shortcuts": [
         "訊息快捷鍵"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } 捷徑"
       ]
     },
     "Label": {
@@ -10583,6 +10658,15 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Entries": [
+        "條目"
+      ],
+      "To": [
+        "至"
+      ],
+      "Until date": [
+        "直到日期"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10930,6 +11014,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要先重新啟用您的金鑰，才可查看已更新的邀請"
+      ],
+      "Add formatting, links or images": [
+        "添加格式，連結或照片"
       ]
     },
     "Link to calendar event": {
@@ -12697,6 +12784,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "您可以免費使用 ${ planTitle }，直到試用結束為止。"
+      ],
+      "Add a payment method": [
+        "添加付款方式"
       ]
     },
     "Option": {
@@ -13664,6 +13754,9 @@
     "q3campaign2026: Action": {
       "Get the deal": [
         "取得優惠"
+      ],
+      "Special Offer": [
+        "特別優惠"
       ]
     },
     "q3campaign2026: Info": {
@@ -14268,6 +14361,9 @@
       ],
       "Snooze ${ emails }": [
         "延後 ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "延後 ${ emails } 直到 ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -17261,6 +17357,16 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "重新命名 ${ folder } 至…"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "全部的頂級質子版 ${ CALENDAR_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 和 ${ VPN_SHORT_APP_NAME }"
       ]
     }
   }
