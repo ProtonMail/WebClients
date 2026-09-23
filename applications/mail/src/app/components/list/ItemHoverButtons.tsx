@@ -18,20 +18,19 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
-import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
-import { selectCategoryIDs, selectElementID } from '../../store/elements/elementsSelectors';
-import { useMailSelector } from '../../store/hooks';
-
 import {
     isElementMessage,
     isInDeletedFolder,
     isStarred as testIsStarred,
     isUnread as testIsUnread,
 } from '../../helpers/elements';
+import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
+import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from '../../hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import type { Element } from '../../models/element';
+import { selectCategoryIDs, selectElementID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import { MoveToPrimaryBadge } from '../categoryView/moveToPrimaryBadge/MoveToPrimaryBadge';
 import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
@@ -129,6 +128,7 @@ const ItemHoverButtons = ({
         void withLoadingStar(
             applyLocation({
                 type: APPLY_LOCATION_TYPES.STAR,
+                sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
                 removeLabel: isStarred,
                 elements: [element],
                 destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
