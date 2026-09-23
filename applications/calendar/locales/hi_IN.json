@@ -1040,6 +1040,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "आपका डेस्कटॉप ऐप मुफ्त ट्रायल ${ formattedEndDate } को समाप्त होता है ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "पृष्ठ रीफ्रेश करें"
       ]
     },
     "action": {
@@ -4435,6 +4438,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "आपका Zoom कनेक्शन समाप्त हो गया है। जारी रखने के लिए कृपया पुनः कनेक्ट करें।"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "कुछ गलत हुआ, आगे बढ़ने के लिए कृपया ${ refresh } करें। अगर फिर भी आपको यह एरर संदेश दिखता है तो ${ supportTeam } से संपर्क करें।"
       ]
     },
     "error": {
@@ -7074,6 +7080,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "आप बुकिंग स्लॉट की सीमा तक पहुँच चुके हैं (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "सहायता टीम"
       ]
     },
     "info": {

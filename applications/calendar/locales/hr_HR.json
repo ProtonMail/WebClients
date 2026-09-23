@@ -1035,6 +1035,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Vaš besplatni probni period za stolnu aplikaciju završava ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ]
     },
     "action": {
@@ -4182,6 +4185,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Vaša Zoom veza je istekla. Ponovno se povežite za nastavak."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
       ]
     },
     "error": {
@@ -6748,6 +6754,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosegnuli ste ograničenje mjesta za zakazivanje (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "tim za podršku"
       ]
     },
     "info": {

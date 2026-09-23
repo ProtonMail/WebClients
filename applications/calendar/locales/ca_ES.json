@@ -1040,6 +1040,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ]
     },
     "action": {
@@ -4435,6 +4441,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La vostra connexió de Zoom ha caducat. Torneu a connectar-vos per continuar."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ]
     },
     "error": {
@@ -4922,7 +4931,7 @@
         "Encara esteu esperant?"
       ],
       "Touch your security key to continue.": [
-        "Toqueu la clau de seguretat per continuar."
+        "Toqueu la clau de seguretat per a continuar."
       ]
     },
     "fido2: Label": {
@@ -5966,7 +5975,7 @@
         "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
       ],
       "Enter code": [
-        "Introduir el codi"
+        "Introduïu el codi"
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació."
@@ -7074,6 +7083,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "support team": [
+        "equip de suport"
       ]
     },
     "info": {
@@ -9730,6 +9742,9 @@
       ],
       "Your subscription renews soon": [
         "La subscripció es renovarà aviat."
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunitat per obtenir el primer mes de ${ plan } a aquest preu."
       ]
     },
     "Offer fearue": {
@@ -9776,6 +9791,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Un nombre il·limitat d'àlies per protegir la vostra identitat"
+      ],
+      "Short @pm.me address": [
+        "Adreça curta de @pm.me"
       ]
     },
     "Onboarding": {
