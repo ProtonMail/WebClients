@@ -4,9 +4,7 @@ export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL = 0,
     EXTERNAL_INVITE_DISABLED = 1,
     EXTERNAL_INVITE_NOT_AVAILABLE = 2,
-    // DOES_NOT_EXIST = 3, // unused, kept for reference: account does not exist
     EXISTING_MEMBER = 4,
-    // NOT_INTERNAL_ACCOUNT = 5, // unused, kept for reference: external accounts not supported yet
 }
 
 const { INVALID_EMAIL, EXTERNAL_INVITE_DISABLED, EXTERNAL_INVITE_NOT_AVAILABLE, EXISTING_MEMBER } =
@@ -22,15 +20,9 @@ const getValidationErrorMessage = (type: VALIDATION_ERROR_TYPES) => {
     if (type === EXTERNAL_INVITE_NOT_AVAILABLE) {
         return c('Error').t`External invitations are not available yet.`;
     }
-    // if (type === DOES_NOT_EXIST) {
-    //     return c('Error').t`Account does not exist`;
-    // }
     if (type === EXISTING_MEMBER) {
         return c('Error').t`Already a member of this share`;
     }
-    // if (type === NOT_INTERNAL_ACCOUNT) {
-    //     return c('Error').t`External accounts are not supported yet`;
-    // }
     return c('Error').t`Validation error`;
 };
 
