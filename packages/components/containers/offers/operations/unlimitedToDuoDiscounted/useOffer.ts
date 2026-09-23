@@ -61,7 +61,7 @@ export const useOffer = (): Operation => {
             onTopNavbarClick: () => {
                 sendReportClickTopNavbar();
             },
-            onCloseModal: () => {
+            onClickCloseButton: () => {
                 sendReportCloseOffer();
             },
             onSelectDeal: () => {
