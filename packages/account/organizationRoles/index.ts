@@ -8,6 +8,7 @@ import { getOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
 import type { OrganizationRole } from '@proton/shared/lib/interfaces';
 
 import type { UserState } from '../user';
+import { isOwnerRoleSyncEnabled } from './helpers';
 
 const name = 'organizationRoles' as const;
 
@@ -23,8 +24,7 @@ export const selectOrganizationRoles = (state: OrganizationRolesState) => state[
 const modelThunk = createAsyncModelThunk<Model, OrganizationRolesState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
         const unleashClient = extraArgument.unleashClient;
-        const isEnabled =
-            (unleashClient?.isEnabled('AdminRoleMVP') || unleashClient?.isEnabled('SyncOwnerRoleClient')) ?? false;
+        const isEnabled = isOwnerRoleSyncEnabled(unleashClient) || (unleashClient?.isEnabled('AdminRoleMVP') ?? false);
         if (!isEnabled) {
             return [];
         }
