@@ -4,7 +4,7 @@ import { AllNodes } from '../../AllNodes'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import type { DocxExportContext } from './DocxExport/LexicalToDocx/Context'
 import { removeCommentThreadMarks } from '../../Tools/removeCommentThreadMarks'
-import { rejectAllSuggestions } from '../../Plugins/Suggestions/rejectAllSuggestions'
+import { rejectAllSuggestions } from '../../Containers/Docs/Plugins/Suggestions/rejectAllSuggestions'
 
 export type ExporterRequiredCallbacks = {
   fetchExternalImageAsBase64: DocxExportContext['fetchExternalImageAsBase64']
