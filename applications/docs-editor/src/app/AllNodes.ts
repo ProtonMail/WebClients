@@ -6,11 +6,11 @@ import { OverflowNode } from '@lexical/overflow'
 import { HorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import { HeadingNode, QuoteNode } from '@lexical/rich-text'
 import { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
-import { ImageNode } from './Plugins/Image/ImageNode'
-import { CommentThreadMarkNode } from './Plugins/Comments/CommentThreadMarkNode'
-import { CustomListNode } from './Plugins/CustomList/CustomListNode'
-import { ProtonNode } from './Plugins/Suggestions/ProtonNode'
-import { PageBreakNode } from './Plugins/PageBreak/PageBreakNode'
+import { ImageNode } from './Containers/Docs/Plugins/Image/ImageNode'
+import { CommentThreadMarkNode } from './Containers/Docs/Plugins/Comments/CommentThreadMarkNode'
+import { CustomListNode } from './Containers/Docs/Plugins/CustomList/CustomListNode'
+import { ProtonNode } from './Containers/Docs/Plugins/Suggestions/ProtonNode'
+import { PageBreakNode } from './Containers/Docs/Plugins/PageBreak/PageBreakNode'
 
 const CommonNodes = [
   AutoLinkNode,

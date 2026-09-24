@@ -4,7 +4,7 @@ import { $createHeadingNode } from '@lexical/rich-text'
 import { $createTableCellNode, $createTableNode, $createTableRowNode, TableCellHeaderStates } from '@lexical/table'
 import { type LexicalNode, $createParagraphNode, $createTextNode } from 'lexical'
 import { isAllowedImageSrc } from '../../../Conversion/ImageSrcUtils'
-import { $createImageNode } from '../../../Plugins/Image/ImageNode'
+import { $createImageNode } from '../../../Containers/Docs/Plugins/Image/ImageNode'
 import type { DocxToLexicalInfo } from './Parsing/DocxToLexicalInfo'
 
 export function mapDocxChildren(children: DocxToLexicalInfo[]): LexicalNode[] {
