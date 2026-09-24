@@ -14,7 +14,7 @@ export interface WelcomeSuggestionCard {
 
 interface Props {
     cards: WelcomeSuggestionCard[];
-    onPick: (prompt: string) => void;
+    onPick: (prompt: string, cardId: string) => void;
 }
 
 /**
@@ -31,7 +31,7 @@ const WelcomeSuggestions = ({ cards, onPick }: Props) => (
                 color="weak"
                 fullWidth
                 className="lumo-welcome-card"
-                onClick={() => onPick(getPrompt())}
+                onClick={() => onPick(getPrompt(), id)}
             >
                 <span className="lumo-welcome-card__glyph shrink-0">
                     <Icon />

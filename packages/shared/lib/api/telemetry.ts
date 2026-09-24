@@ -34,6 +34,7 @@ export enum TelemetryMeasurementGroups {
     mailSnooze = 'mail.web.snooze',
     mailSignup = 'mail.web.signup',
     mailComposerAssistant = 'mail.web.composer_assistant',
+    mailLumo = 'mail.web.lumo',
     mailProtonTips = 'mail.web.proton_tips',
     postSubscriptionTourEvents = 'any.web.post_subscription_tour_events',
     mailDesktopDefaultMailto = 'mail.desktop.default_mailto',
@@ -339,6 +340,15 @@ export enum TelemetryMailComposerAssistantEvents {
     incompatible_assistant = 'incompatible_assistant',
 }
 
+export enum TelemetryMailLumoEvents {
+    assistant_opened = 'assistant_opened',
+    prompt_sent = 'prompt_sent',
+    chain_end = 'chain_end',
+    tool_end = 'tool_end',
+    confirm_answered = 'confirm_answered',
+    debug_report_opened = 'debug_report_opened',
+}
+
 export enum TelemetryCategoriesOnboardingEvents {
     onboarding_reply = 'onboarding_reply',
     category_nav = 'category_nav',
@@ -611,6 +621,7 @@ export type TelemetryEvents =
     | TelemetryMailListEvents
     | TelemetryMailSelectAllEvents
     | TelemetryMailComposerAssistantEvents
+    | TelemetryMailLumoEvents
     | TelemetryMailOnboardingEvents
     | TelemetryMailPagingControlsEvents
     | TelemetryMailBlockquotes

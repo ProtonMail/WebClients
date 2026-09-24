@@ -31,6 +31,6 @@ describe('WelcomeSuggestions', () => {
 
         fireEvent.click(screen.getByRole('button', { name: /What can you do\?/ }));
 
-        expect(onPick).toHaveBeenCalledWith('What can you help me with?');
+        expect(onPick).toHaveBeenCalledWith('What can you help me with?', 'capabilities');
     });
 });

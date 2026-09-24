@@ -33,6 +33,7 @@ const DrawerLumoView = () => {
         cancel,
         clear,
         openDebugReport,
+        onSuggestionPicked,
     } = useLumoAgentDrawer();
     const theme = useTheme();
     const { toggleDrawerApp } = useDrawer();
@@ -66,6 +67,7 @@ const DrawerLumoView = () => {
                 serverToolMeta={serverToolMeta}
                 suggestions={suggestions}
                 onSend={send}
+                onSuggestionPicked={onSuggestionPicked}
                 onStop={stop}
                 onClose={closeDrawer}
                 onConfirm={confirm}

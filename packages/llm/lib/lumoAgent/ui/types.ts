@@ -79,6 +79,34 @@ export interface ServerToolMeta {
     icon: ComponentType<{ className?: string }>;
 }
 
+/**
+ * How an assistant turn ended. Finer-grained than any one host's event vocabulary on purpose: the hook
+ * reports what happened, and how that maps onto reportable events is the host's business.
+ */
+export enum LumoChainEnd {
+    SUCCEEDED = 'succeeded',
+    FAILED = 'failed',
+    /** The user stopped it. Distinct from {@link DISCARDED}: they wanted the answer and gave up on it. */
+    STOPPED = 'stopped',
+    BUDGET = 'budget',
+    REPLACED = 'replaced',
+    /** The conversation it belonged to went away: cleared, or the panel unmounted under it. */
+    DISCARDED = 'discarded',
+}
+
+export enum LumoConfirmAnswer {
+    APPLIED = 'applied',
+    CANCELLED = 'cancelled',
+    ABANDONED = 'abandoned',
+}
+
+/** Lifecycle facts the hook alone can see. The host decides what, if anything, to report. */
+export interface LumoAgentTelemetry {
+    promptSent: () => void;
+    chainEnded: (end: LumoChainEnd, stats: { durationMs: number; toolCalls: number; isResume: boolean }) => void;
+    confirmAnswered: (tool: ToolName, answer: LumoConfirmAnswer) => void;
+}
+
 /** Everything a product supplies to stand up its assistant — no framework edit needed to add a product. */
 export interface LumoAgentConfig {
     definitions: ToolDefinition[];
@@ -90,4 +118,6 @@ export interface LumoAgentConfig {
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
     /** Empty-state cards. Omitted by a product that wants no empty state of its own. */
     suggestions?: WelcomeSuggestionCard[];
+    /** Absent for a host that reports nothing; every call site is then a no-op. */
+    telemetry?: LumoAgentTelemetry;
 }

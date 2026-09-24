@@ -37,6 +37,8 @@ interface Props {
     thinkingLabel?: string;
     placeholder?: string;
     onSend: (text: string) => void;
+    /** Runs before the card's prompt is sent, so the host can attribute that send to the card. */
+    onSuggestionPicked?: (cardId: string) => void;
     onStop: () => void;
     onClose?: () => void;
     onConfirm: (params: Record<string, any>) => void;
@@ -67,6 +69,7 @@ const LumoAgentPanel = ({
     thinkingLabel,
     placeholder,
     onSend,
+    onSuggestionPicked,
     onStop,
     onClose,
     onConfirm,
@@ -84,6 +87,11 @@ const LumoAgentPanel = ({
         }
         scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
     }, [items, isBusy]);
+
+    const pickSuggestion = (prompt: string, cardId: string) => {
+        onSuggestionPicked?.(cardId);
+        onSend(prompt);
+    };
 
     const pending = items.find((item) => item.kind === 'confirm' && item.status === ConfirmStatus.PENDING);
 
@@ -156,7 +164,9 @@ const LumoAgentPanel = ({
     return (
         <div className="lumo-agent-panel">
             <div ref={scrollRef} className="lumo-agent-transcript">
-                {suggestions && items.length === 0 && <WelcomeSuggestions cards={suggestions} onPick={onSend} />}
+                {suggestions && items.length === 0 && (
+                    <WelcomeSuggestions cards={suggestions} onPick={pickSuggestion} />
+                )}
                 {items.map(renderItem)}
                 {isGenerating && <LumoThinking label={thinkingLabel} />}
                 {/* Idle Lumo mark beneath the latest turn, once a conversation exists (like lumo.proton.me). */}

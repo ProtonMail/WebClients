@@ -12,6 +12,7 @@ import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { useLumoMailTelemetry } from '../../lumo/telemetry/useLumoMailTelemetry';
 import { ComposeTypes } from '../composer/useCompose';
 
 export interface PageHotkeysHandlers {
@@ -23,6 +24,7 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
     const onCompose = useOnCompose();
     const isLumoInMail = useLumoInMail();
     const { appInView, toggleDrawerApp } = useDrawer();
+    const { assistantOpened } = useLumoMailTelemetry();
 
     const documentRef = useRef(window.document);
 
@@ -83,6 +85,7 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
                 }
                 e.preventDefault();
                 if (appInView !== DRAWER_NATIVE_APPS.LUMO) {
+                    assistantOpened();
                     toggleDrawerApp({ app: DRAWER_NATIVE_APPS.LUMO })();
                     return;
                 }
