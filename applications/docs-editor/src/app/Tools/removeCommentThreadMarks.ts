@@ -1,5 +1,5 @@
 import { type LexicalEditor, $nodesOfType } from 'lexical'
-import { CommentThreadMarkNode, $unwrapCommentThreadMarkNode } from '../Plugins/Comments/CommentThreadMarkNode'
+import { CommentThreadMarkNode, $unwrapCommentThreadMarkNode } from '../Containers/Docs/Plugins/Comments/CommentThreadMarkNode'
 
 export function $unwrapAllCommentThreadMarks() {
   const commentMarkNodes = $nodesOfType(CommentThreadMarkNode)
