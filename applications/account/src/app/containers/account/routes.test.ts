@@ -36,6 +36,7 @@ const accountRecoveryRouterFlags: AccountRecoveryRouterFlags = {
 const defaultFlags: Flags = {
     isAlwaysOnVpnEnabled: false,
     isReferralProgramEnabled: false,
+    isDriveEasySwitchNewUIEnabled: false,
     canDisplayNonPrivateEmailPhone: false,
     isUserGroupsFeatureEnabled: false,
     isUserGroupsNoCustomDomainEnabled: false,
