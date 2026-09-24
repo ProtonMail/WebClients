@@ -406,6 +406,9 @@
       "Get Started": [
         "Kom igång"
       ],
+      "Go back": [
+        "Gå tillbaka"
+      ],
       "Hide": [
         "Dölj"
       ],
@@ -1188,6 +1191,10 @@
       "Failed to delete email address from monitoring": [
         "Misslyckades att ta bort e-postadress från övervakning"
       ],
+      "Failed to delete folder": [
+        "Misslyckades med att ta bort mapp",
+        "Misslyckades med att ta bort mappar"
+      ],
       "Failed to delete selected items": [
         "Misslyckades att ta bort markerade objekt"
       ],
@@ -1304,6 +1311,9 @@
       ],
       "File does not match expected format": [
         "Fil matchar inte förväntat format"
+      ],
+      "Folder name does not match": [
+        "Mappnamn matchar inte"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Import misslyckades för valv “${ vaultData.name }“: ${ errorMessage }"
@@ -3226,6 +3236,9 @@
       "Company": [
         "Företag"
       ],
+      "Confirm folder name": [
+        "Bekräfta mappnamn"
+      ],
       "Confirm vault name": [
         "Bekräfta valvnamn"
       ],
@@ -4552,6 +4565,9 @@
       "Enter username": [
         "Ange användarnamn"
       ],
+      "Folder name": [
+        "Mappnamn"
+      ],
       "Full Name": [
         "Fullständigt namn"
       ],
@@ -4897,6 +4913,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue in your browser": [
+        "Fortsätt i din webbläsare"
+      ],
       "Create a vault": [
         "Skapa ett valv"
       ],
@@ -4948,6 +4967,9 @@
       ],
       "Delete domain": [
         "Ta bort domän"
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Ta bort mapp “${ name }“?"
       ],
       "Delete mailbox": [
         "Ta bort brevlåda"
@@ -5044,6 +5066,9 @@
       ],
       "Item": [
         "Objekt"
+      ],
+      "Keep your subscription active": [
+        "Behåll din prenumeration aktiv"
       ],
       "Last autofill": [
         "Senast autofylld"
@@ -5529,6 +5554,9 @@
       "Failed to load breaches.": [
         "Misslyckades att ladda intrång."
       ],
+      "Folder name is required": [
+        "Mappnamn är obligatoriskt"
+      ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Bevilja åtkomst till urklipp för att aktivera automatisk rensning av kopierade lösenord och data."
       ],
@@ -5664,6 +5692,9 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Kan inte logga in på ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Valv ”${ name }” och alla dess objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
       ],
       "Vault name is required": [
         "Valvnamn är obligatoriskt"
