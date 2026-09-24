@@ -54,7 +54,7 @@ export function getIsEligible({
     }
 
     // A user with a scheduled change has already decided what happens at renewal; don't cut across it.
-    if (subscription.UpcomingSubscription || hasIntentionalScheduledModification(subscription)) {
+    if (hasIntentionalScheduledModification(subscription)) {
         return false;
     }
 
