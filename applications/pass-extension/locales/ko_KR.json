@@ -813,6 +813,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
+      ],
+      "Bulk select items": [
+        "대량의 선택된 항목"
       ]
     },
     "Activity": {
@@ -2253,7 +2256,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -3019,6 +3022,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "조직에서 ${ PASS_APP_NAME }에 대한 액세스 권한을 보호해야 합니다"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "무료 체험 종료 후에도 구독을 유지하려면 결제 방법을 추가하세요."
       ]
     },
     "Keyboard key": {
@@ -4232,6 +4238,9 @@
       ],
       "ZIP or Postal code": [
         "우편번호"
+      ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
       ]
     },
     "Link": {
@@ -5342,6 +5351,9 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ],
+      "Keep your subscription active": [
+        "구독을 활성화 상태로 유지하기"
       ]
     },
     "Title_cloned_item": {
@@ -5705,6 +5717,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "현재 단계에서 저장 가능한 최대 폴더 개수를 초과했습니다."
       ]
     }
   }

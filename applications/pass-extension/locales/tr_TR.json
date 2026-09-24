@@ -2287,8 +2287,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3062,6 +3061,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Deneme süreniz sona erdiğinde aboneliğinizin sürmesi için bir ödeme yöntemi ekleyin."
       ]
     },
     "Keyboard key": {
@@ -4289,6 +4291,9 @@
       ],
       "ZIP or Postal code": [
         "Posta kodu"
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
       ]
     },
     "Link": {
@@ -5410,6 +5415,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ],
+      "Keep your subscription active": [
+        "Aboneliğinizi etkin tutun"
       ]
     },
     "Title_cloned_item": {

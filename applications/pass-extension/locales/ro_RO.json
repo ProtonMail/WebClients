@@ -2315,9 +2315,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -3099,6 +3097,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Adăugați o metodă de plată pentru ca abonamentul să continue după expirarea perioadei de probare."
       ]
     },
     "Keyboard key": {
@@ -4340,6 +4341,9 @@
       ],
       "ZIP or Postal code": [
         "Cod poștal"
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
       ]
     },
     "Link": {
@@ -5472,6 +5476,9 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Keep your subscription active": [
+        "Păstrați-vă abonamentul activ"
       ]
     },
     "Title_cloned_item": {

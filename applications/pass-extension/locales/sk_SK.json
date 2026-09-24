@@ -2343,10 +2343,7 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -3136,6 +3133,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Pridajte spôsob platby, aby vaše predplatné pokračovalo aj po skončení skúšobnej doby."
       ]
     },
     "Keyboard key": {
@@ -4391,6 +4391,9 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "Add a payment method": [
+        "Pridať spôsob platby"
       ]
     },
     "Link": {
@@ -5534,6 +5537,9 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ],
+      "Keep your subscription active": [
+        "Udržte si svoje predplatné aktívne"
       ]
     },
     "Title_cloned_item": {
