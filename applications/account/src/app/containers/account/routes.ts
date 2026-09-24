@@ -92,7 +92,7 @@ function getV2DashboardSections(
         {
             text: c('Title').t`Downloads`,
             invisibleTitle: true,
-            available: app !== APPS.PROTONACCOUNT,
+            available: !([APPS.PROTONACCOUNT, APPS.PROTONSPACES] as APP_NAMES[]).includes(app),
             id: 'DownloadAndInfo',
             keywords: [
                 c('account_search_index').t`Download apps`,
@@ -114,7 +114,7 @@ function getV2DashboardSections(
             text: c('Title').t`Deep dive into email blog posts`,
             invisibleTitle: true,
             id: 'Blog',
-            available: app !== APPS.PROTONACCOUNT && app !== APPS.PROTONMEET,
+            available: !([APPS.PROTONACCOUNT, APPS.PROTONMEET, APPS.PROTONSPACES] as APP_NAMES[]).includes(app),
             keywords: [c('account_search_index').t`Blog articles`, c('account_search_index').t`Privacy guides`],
         },
     ];

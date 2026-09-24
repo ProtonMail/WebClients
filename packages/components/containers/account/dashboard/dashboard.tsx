@@ -148,6 +148,7 @@ const getProductDashboard = ({ app, config }: Props) => {
         case APPS.PROTONMEET:
             return <AccountMeetDashboard app={app} config={config} />;
         case APPS.PROTONACCOUNT:
+        case APPS.PROTONSPACES:
             return <AccountGenericDashboard app={app} config={config} />;
     }
 };
