@@ -17,7 +17,7 @@ import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
-import { FlagProvider } from '@proton/unleash/proxy';
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 
 import { bootstrapApp } from './bootstrap';
 import config from './config';
@@ -69,7 +69,7 @@ const App = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                            <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
                                 <Router history={extraThunkArguments.history}>
                                     <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                         <ApiProvider api={extraThunkArguments.api}>
@@ -89,7 +89,7 @@ const App = () => {
                                         </ApiProvider>
                                     </EventManagerProvider>
                                 </Router>
-                            </FlagProvider>
+                            </UnleashFlagProviderWithToolbar>
                         </AuthenticationProvider>
                     </ProtonStoreProvider>
                 );
