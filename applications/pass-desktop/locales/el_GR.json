@@ -412,6 +412,9 @@
       "Get Started": [
         "Ξεκινήστε"
       ],
+      "Go back": [
+        "Επιστροφή"
+      ],
       "Hide": [
         "Απόκρυψη"
       ],
@@ -1194,6 +1197,10 @@
       "Failed to delete email address from monitoring": [
         "Αποτυχία διαγραφής διεύθυνσης ηλεκτρονικού ταχυδρομείου από την παρακολούθηση"
       ],
+      "Failed to delete folder": [
+        "Αποτυχία διαγραφής φακέλου",
+        "Αποτυχία διαγραφής φακέλων"
+      ],
       "Failed to delete selected items": [
         "Αποτυχία διαγραφής επιλεγμένων στοιχείων."
       ],
@@ -1281,6 +1288,9 @@
       "Failed to update domain name.": [
         "Αποτυχία ενημέρωσης ονόματος τομέα."
       ],
+      "Failed to update folder": [
+        "Η ενημέρωση του φακέλου απέτυχε."
+      ],
       "Failed to update monitoring settings": [
         "Αποτυχία ενημέρωσης των ρυθμίσεων παρακολούθησης"
       ],
@@ -1310,6 +1320,9 @@
       ],
       "File does not match expected format": [
         "Το αρχείο δεν ταιριάζει με την αναμενόμενη μορφή"
+      ],
+      "Folder name does not match": [
+        "Το όνομα του φακέλου δεν ταιριάζει"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Η εισαγωγή απέτυχε για την κρύπτη \"${ vaultData.name }\": ${ errorMessage }"
@@ -1734,6 +1747,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Τα διακριτικά πρόσβασης, που χρησιμοποιούνται μαζί με το ${ passCliLink }, σας επιτρέπουν να αυτοματοποιήσετε CI/CD ή να δώσετε στον AI πράκτορά σας περιορισμένη πρόσβαση σε ότι χρειάζεται για να εκτελέσει την εργασία του."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Προσθέστε έναν τρόπο πληρωμής, ώστε η συνδρομή σας να συνεχιστεί μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
       "Add your custom email address to monitor:": [
         "Προσθέστε την προσαρμοσμένη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για παρακολούθηση:"
       ],
@@ -1902,6 +1918,9 @@
       "Created item": [
         "Δημιουργημένο στοιχείο"
       ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "Η μορφή CSV προσφέρει έναν βολικό τρόπο προβολής των δεδομένων σας. Ωστόσο, λόγω της απλότητάς της, ορισμένα δεδομένα δε θα συμπεριληφθούν (προσαρμοσμένα πεδία, δομή φακέλων κ.λπ.). Για μια πλήρη εξαγωγή, συνιστούμε τη χρήση διαφορετικής μορφής."
+      ],
       "Current version": [
         "Τρέχουσα έκδοση"
       ],
@@ -2049,6 +2068,18 @@
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Βρείτε το \"OpenSSH Authentication Agent\", κάντε δεξί κλικ στις Ιδιότητες."
       ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Ολοκληρώστε τη σύνδεση στο παράθυρο του προγράμματος περιήγησης που μόλις άνοιξε. Η εφαρμογή ${ PASS_APP_NAME } θα συνεχίσει αυτόματα μόλις ολοκληρώσετε τη διαδικασία."
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Ο φάκελος \"${ payload.folder.name }\" δημιουργήθηκε"
+      ],
+      "Folder deleted": [
+        "Ο φάκελος διεγράφη"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Ο φάκελος μετονομάστηκε σε \"${ payload.folder.name }\""
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Ακολουθήστε αυτά τα βήματα για να εισαγάγετε τα δεδομένα σας με ένα γενικό αρχείο CSV:"
       ],
@@ -2064,6 +2095,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Η διεύθυνση προώθησης αντιγράφηκε στο πρόχειρο. Στείλτε ένα μήνυμα σε αυτήν τη διεύθυνση και το ${ Email } θα το λάβει."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Πλήρης συγχρονισμός δεδομένων για τη βελτίωση της απόδοσης της εφαρμογής. Σας ευχαριστούμε για την υπομονή σας."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Οι κωδικοί πρόσβασης που δημιουργούνται αυτόματα θα αποθηκεύονται για περίοδο ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδας.",
@@ -2298,6 +2332,14 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Θα μετακινηθεί μόνο ${ count } στοιχείο στον φάκελο \"${ folderName }\". Τα στοιχεία στους υποφακέλους δε θα μετακινηθούν.",
+        "Θα μετακινηθούν μόνο ${ count } στοιχεία στον φάκελο \"${ folderName }\". Τα στοιχεία στους υποφακέλους δε θα μετακινηθούν."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Θα μετακινηθεί μόνο ${ count } στοιχείο. Τα στοιχεία που βρίσκονται σε φακέλους δε θα μετακινηθούν.",
+        "Θα μετακινηθούν μόνο ${ count } στοιχεία. Τα στοιχεία που βρίσκονται σε φακέλους δε θα μετακινηθούν."
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Εμφανίζονται μόνο τα διακριτικά που έληξαν τις τελευταίες 30 ημέρες. Τα παλαιότερα διακριτικά διαγράφονται αυτόματα."
@@ -2608,6 +2650,9 @@
       ],
       "Suggested": [
         "Προτεινόμενο"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Μεταβείτε σε άλλο φάκελο ή δημιουργήστε ένα στοιχείο σε αυτόν το φάκελο"
       ],
       "Switch to another vault or create an item in this vault": [
         "Μεταβείτε σε άλλη κρύπτη ή δημιουργήστε ένα στοιχείο σε αυτήν την κρύπτη"
@@ -3109,6 +3154,9 @@
       "Account Type": [
         "Τύπος Λογαριασμού"
       ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Προσθέστε ένα τυχαίο πρόθεμα για αυτόν τον τομέα κατά τη δημιουργία ενός νέου ψευδωνύμου."
       ],
@@ -3235,6 +3283,9 @@
       "Company": [
         "Εταιρεια"
       ],
+      "Confirm folder name": [
+        "Επιβεβαίωση ονόματος φακέλου"
+      ],
       "Confirm vault name": [
         "Επιβεβαίωση ονόματος κρύπτης"
       ],
@@ -3264,6 +3315,9 @@
       ],
       "Create a custom item": [
         "Δημιουργία προσαρμοσμένου στοιχείου"
+      ],
+      "Create a folder": [
+        "Δημιουργία φακέλου"
       ],
       "Create a hide-my-email alias": [
         "Δημιουργία hide-my-email ψευδώνυμου"
@@ -3438,6 +3492,9 @@
       ],
       "Folder": [
         "Φάκελος"
+      ],
+      "Folders": [
+        "Φάκελοι"
       ],
       "For a one-off sharing": [
         "Για εφάπαξ κοινή χρήση"
@@ -4555,6 +4612,9 @@
       "Enter username": [
         "Εισάγετε όνομα χρήστη"
       ],
+      "Folder name": [
+        "Όνομα φακέλου"
+      ],
       "Full Name": [
         "Ονοματεπώνυμο"
       ],
@@ -4581,6 +4641,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Περιγράψτε το πρόβλημα και συμπεριλάβετε τυχόν μηνύματα σφάλματος"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Επαναπληκτρολογήστε \"${ name }\" για να επιβεβαιώσετε τη διαγραφή"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Αναζήτηση ${ pluralItemType } στη ${ vaultName }"
@@ -4900,17 +4963,26 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Continue in your browser": [
+        "Συνεχίστε στο πρόγραμμα περιήγησης σας."
+      ],
       "Create a vault": [
         "Δημιουργία κρύπτης"
       ],
       "Create contact": [
         "Δημιουργία επαφής"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Δημιουργία φακέλου στη \"${ vaultName }\""
+      ],
       "Create new access token": [
         "Δημιουργία νέου διακριτικού πρόσβασης"
       ],
       "Create PIN code": [
         "Δημιουργία κωδικού PIN"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Δημιουργία υποφακέλου στο \"${ folderName }\""
       ],
       "Created": [
         "Δημιουργήθηκε"
@@ -4946,11 +5018,17 @@
       "Delete domain": [
         "Διαγραφή τομέα"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Διαγραφή φακέλου “${ name }\";"
+      ],
       "Delete mailbox": [
         "Διαγραφή γραμματοκιβωτίου"
       ],
       "Delete this item?": [
         "Διαγραφή αυτού του στοιχείου;"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Διαγραφή κρύπτης \"${ name }\";"
       ],
       "Did you know?": [
         "Γνωρίζατε;"
@@ -5039,6 +5117,9 @@
       "Item": [
         "Στοιχείο"
       ],
+      "Keep your subscription active": [
+        "Διατήρηση της συνδρομής σας ενεργή"
+      ],
       "Last autofill": [
         "Τελευταία αυτόματη συμπλήρωση"
       ],
@@ -5081,12 +5162,22 @@
       "Modified": [
         "Τροποποιήθηκε"
       ],
+      "Move ${ count } item to ${ target }": [
+        "Μετακίνηση ${ count } στοιχείου στο ${ target }",
+        "Μετακίνηση ${ count } στοιχείων στο ${ target }"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχείο;",
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχεία;"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Μετακίνηση όλων των στοιχείων σε \"${ vaultName }\";"
+      ],
+      "Move all items?": [
+        "Μετακίνηση όλων των στοιχείων;"
+      ],
+      "Move item to \"${ target }\"": [
+        "Μετακίνηση στοιχείου στο \"${ target }\""
       ],
       "MX record": [
         "Εγγραφή MX"
@@ -5181,6 +5272,9 @@
       ],
       "Remove secure link?": [
         "Αφαίρεση ασφαλούς συνδέσμου;"
+      ],
+      "Rename folder": [
+        "Μετονομασία φακέλου"
       ],
       "Reset history for this item?": [
         "Να γίνει επαναφορά ιστορικού για αυτό το στοιχείο;"
@@ -5333,6 +5427,9 @@
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
       ],
+      "Your folder is empty": [
+        "Ο φάκελος είναι κενός"
+      ],
       "Your new access token": [
         "Το νέο σας διακριτικό πρόσβασης σας"
       ],
@@ -5424,6 +5521,9 @@
       "Aliases in trash will continue forwarding emails.": [
         "Τα ψευδώνυμα στον κάδο απορριμμάτων θα συνεχίσουν να προωθούν μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Όλα τα στοιχεία σε αυτόν τον φάκελο, συμπεριλαμβανομένων των υποφακέλων του, θα διαγραφούν. Δεν είναι δυνατή η αναίρεση αυτής της ενέργειας."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Όλα τα απορριφθέντα στοιχεία σας θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
       ],
@@ -5506,6 +5606,9 @@
       ],
       "Failed to load breaches.": [
         "Αποτυχία φόρτωσης παραβιάσεων."
+      ],
+      "Folder name is required": [
+        "Απαιτείται όνομα φακέλου"
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Παραχωρήστε πρόσβαση στο πρόχειρο για την αυτόματη διαγραφή αντιγραμμένων κωδικών πρόσβασης και δεδομένων."
@@ -5643,6 +5746,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Δεν είναι δυνατή η είσοδος στο ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Η κρύπτη \"${ name }\" και όλα τα στοιχεία της θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      ],
       "Vault name is required": [
         "Απαιτείται όνομα κρύπτης"
       ],
@@ -5675,6 +5781,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Δε θα έχετε πλέον πρόσβαση σε αυτή την κρύπτη. Για να συμμετάσχετε ξανά, θα χρειαστείτε μια νέα πρόσκληση."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Φτάσατε στο μέγιστο επίπεδο ένθεσης φακέλων."
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Έχετε φτάσει τον μέγιστο αριθμό φακέλων σε αυτό το επίπεδο."
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Έχετε φτάσει τον μέγιστο αριθμό φακέλων για αυτή την κρύπτη"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Ο διαχειριστής σας πρέπει να δημιουργήσει μια κρύπτη για εσάς για να μπορέσετε να δημιουργήσετε στοιχεία"
