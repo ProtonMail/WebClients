@@ -1,3 +1,9 @@
+### Version 1.41.0
+
+- Support folders inside vaults (gradual rollout)
+- Fix sign-in screen flashing briefly when opening the extension popup
+- Fix vault and item sometimes not updated until clicking on manual sync
+
 ### Version 1.40.2
 
 - Fix being logged out during temporary server issues, keeping offline mode available
