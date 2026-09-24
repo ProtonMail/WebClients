@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { IcBrandProton } from '@proton/icons/icons/IcBrandProton';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
-import type { ToolDefinition, ToolHandlers } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { ToolDefinition, ToolHandler, ToolHandlers } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createLoadGuideDefinition } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 import type { CardRenderers, LumoAgentConfig } from '@proton/llm/lib/lumoAgent/ui/types';
 
@@ -37,6 +37,7 @@ import { readAutoReplyModule, setAutoReplyModule } from './skills/settings/autoR
 import { changeSettingsModule, readSettingsModule } from './skills/settings/cosmetic';
 import { changeSignatureModule, readSignatureModule, removeSignatureModule } from './skills/settings/signature';
 import { openSupportTicketModule } from './skills/support/openSupportTicket';
+import type { LumoMailConfigTelemetry } from './telemetry/useLumoMailTelemetry';
 import type { MailToolDeps, MailToolModule } from './toolModule';
 import { WELCOME_SUGGESTIONS } from './welcomeSuggestions';
 
@@ -91,12 +92,29 @@ const MODULES: MailToolModule[] = [
 ];
 
 /**
+ * Report how a tool run went, and leave the run itself alone. The rethrow is the point: the error is
+ * what the engine feeds back to the model, so swallowing it would cost more than the measurement is worth.
+ */
+const withToolTelemetry =
+    ({ name, kind }: ToolDefinition, handler: ToolHandler, telemetry: LumoMailConfigTelemetry): ToolHandler =>
+    async (params, toolDeps) => {
+        try {
+            const result = await handler(params, toolDeps);
+            telemetry.toolSucceeded(name, kind);
+            return result;
+        } catch (error) {
+            telemetry.toolFailed(name, kind);
+            throw error;
+        }
+    };
+
+/**
  * Assemble the {@link LumoAgentConfig} handed to `useLumoAgent`, binding every handler to the Mail
  * store via `deps`. Called ONCE from the provider (deps read current values through getters/methods, so
  * the built config stays referentially stable across renders — the hook rebuilds its executor only when
  * the config identity changes).
  */
-export const buildLumoMailConfig = (deps: MailToolDeps): LumoAgentConfig => {
+export const buildLumoMailConfig = (deps: MailToolDeps, telemetry: LumoMailConfigTelemetry): LumoAgentConfig => {
     const definitions: ToolDefinition[] = MODULES.map(({ definition, createGuide }) => {
         if (!createGuide) {
             return definition;
@@ -106,7 +124,10 @@ export const buildLumoMailConfig = (deps: MailToolDeps): LumoAgentConfig => {
     });
 
     const handlers: ToolHandlers = Object.fromEntries(
-        MODULES.map((module) => [module.definition.name, module.createHandler(deps)])
+        MODULES.map(({ definition, createHandler }) => [
+            definition.name,
+            withToolTelemetry(definition, createHandler(deps), telemetry),
+        ])
     );
 
     const cardRenderers: CardRenderers = Object.fromEntries(
@@ -122,6 +143,7 @@ export const buildLumoMailConfig = (deps: MailToolDeps): LumoAgentConfig => {
         cardRenderers,
         productRules: () => MAIL_RULES,
         suggestions: WELCOME_SUGGESTIONS,
+        telemetry,
         // Run backend-side, so unlike MODULES they contribute no handler and no card — opt-in plus wording.
         serverTools: ['web_search', 'proton_info'],
         serverToolMeta: {
