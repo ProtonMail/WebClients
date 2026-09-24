@@ -6,7 +6,7 @@ import { $unwrapSuggestionNode } from './unwrapSuggestionNode'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { $findMatchingParent } from '@lexical/utils'
 import { $deleteTableColumn, $isTableCellNode, $isTableNode, $isTableRowNode } from '@lexical/table'
-import { $isNonInlineLeafElement } from '../../../../Utils/isNonInlineLeafElement'
+import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 
 /**
  * Joins the closest non-inline leaf element parent of the given
