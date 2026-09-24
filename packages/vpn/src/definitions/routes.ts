@@ -259,7 +259,6 @@ const routesDefinition = {
                             label: () => c('Title').t`Shared servers`,
                             to: '/shared-servers',
                             isVisible: ({ context }) =>
-                                !!context.flags.SharedServerFeature &&
                                 context.permissions['account.shared_server.read'] &&
                                 context.entitlements.orgHasVpnLocationFilter,
                             sections: [{ id: 'organization.vpn.shared-servers.servers', to: 'servers' }],

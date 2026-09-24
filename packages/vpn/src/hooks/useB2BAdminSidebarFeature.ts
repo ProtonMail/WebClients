@@ -59,7 +59,6 @@ export const useB2BAdminSidebarFeature = ({
     const ZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
     const NewScheduleOption = useFlag('NewScheduleOption');
     const B2BAlwaysOnEnabled = useFlag('B2BAlwaysOnEnabled');
-    const SharedServerFeature = useFlag('SharedServerFeature');
 
     useEffectOnce(() => {
         removeItem(constants.AdminSidebarStorageKey);
@@ -88,7 +87,6 @@ export const useB2BAdminSidebarFeature = ({
             ZoomIntegrationDisabled,
             NewScheduleOption,
             B2BAlwaysOnEnabled,
-            SharedServerFeature,
         },
         context: { isDataRecoveryAvailable, isSessionRecoveryAvailable, appName: APP_NAME },
         permissions,
