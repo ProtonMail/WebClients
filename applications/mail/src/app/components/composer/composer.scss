@@ -336,11 +336,6 @@ im.$media-expressions: $media-expressions;
 			}
 		}
 
-		// new selectTwo without caret
-		&.select--inline-caret > svg {
-			display: none;
-		}
-
 		&.composer-meta-input-subject {
 			padding-inline-start: rem(8);
 
