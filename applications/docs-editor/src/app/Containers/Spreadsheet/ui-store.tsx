@@ -22,7 +22,6 @@ const ProtonSheetsUIStoreContext = createContext<ProtonSheetsUIStoreContextValue
 export type ProtonSheetsUIStoreProviderProps = {
   state: ProtonSheetsState
   isReadonly: boolean
-  isRevisionMode: boolean
   isViewOnlyMode: boolean
   storeAction: (type: SheetsActionType, content: unknown) => void
   children: ReactNode
@@ -34,12 +33,11 @@ export type ProtonSheetsUIStoreProviderProps = {
 export function ProtonSheetsUIStoreProvider({
   state,
   isReadonly,
-  isRevisionMode,
   isViewOnlyMode,
   storeAction,
   children,
 }: ProtonSheetsUIStoreProviderProps) {
-  const uiState = useProtonSheetsUIState(state, { isReadonly, isRevisionMode, isViewOnlyMode, storeAction })
+  const uiState = useProtonSheetsUIState(state, { isReadonly, isViewOnlyMode, storeAction })
 
   // keep a ref to the latest ui state for use in the setters getter
   const uiStateRef = useRef(uiState)
