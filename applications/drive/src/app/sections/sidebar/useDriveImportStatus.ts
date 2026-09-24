@@ -3,6 +3,8 @@ import { useCallback, useEffect, useState } from 'react';
 import type { ApiEvent } from '@proton/activation/src/api/api.interface';
 import { ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
+import { resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
+import { selectOauthImportStateStep } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { loadImporters } from '@proton/activation/src/logic/importers/importers.actions';
 import { selectDriveImportStatus } from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
@@ -19,6 +21,7 @@ export const useDriveImportStatus = () => {
     const dispatch = useEasySwitchDispatch();
     const { subscribe } = useEventManager();
     const { isLoaded, isImporting, hasCompletedImport } = useEasySwitchSelector(selectDriveImportStatus);
+    const oauthStep = useEasySwitchSelector(selectOauthImportStateStep);
     const [outcome, setOutcome] = useState<DriveImportOutcome>();
 
     useEffect(
@@ -61,6 +64,16 @@ export const useDriveImportStatus = () => {
             });
         },
         [subscribe, dispatch]
+    );
+
+    // Outcome arrives while the "Import started" OAuth modal is open --> close it so only the outcome modal shows.
+    useEffect(
+        function resetOauthDraftOnSuccess() {
+            if (outcome && oauthStep === 'success') {
+                dispatch(resetOauthDraft());
+            }
+        },
+        [dispatch, oauthStep, outcome]
     );
 
     return {

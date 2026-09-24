@@ -22,3 +22,6 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = jest.fn();
+
+// JSDOM does not implement the Web Animations API used by the illustrations
+Element.prototype.animate = jest.fn(() => ({ cancel: jest.fn() }));

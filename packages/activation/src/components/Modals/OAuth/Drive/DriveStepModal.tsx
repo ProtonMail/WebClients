@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Modal from '@proton/components/components/modalTwo/Modal';
+import Modal, { type ModalSize } from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
+import clsx from '@proton/utils/clsx';
 
 interface Action {
     label: string;
@@ -19,11 +20,20 @@ interface Props {
     children: ReactNode;
     secondaryAction?: Action & { color?: 'weak' };
     primaryAction: Action;
+    size?: ModalSize;
 }
 
 /** Shared shell for the Drive OAuth step modals: positioned close button, media, content, footer actions. */
-export const DriveStepModal = ({ onClose, closeDisabled, media, children, secondaryAction, primaryAction }: Props) => (
-    <Modal open={true} className="relative" onClose={onClose}>
+export const DriveStepModal = ({
+    onClose,
+    closeDisabled,
+    media,
+    children,
+    secondaryAction,
+    primaryAction,
+    size = 'xsmall',
+}: Props) => (
+    <Modal open={true} className="relative" onClose={onClose} size={size}>
         <ModalHeaderCloseButton
             buttonProps={{
                 className: 'absolute right-custom top-custom',
@@ -35,7 +45,7 @@ export const DriveStepModal = ({ onClose, closeDisabled, media, children, second
             }}
         />
         {media}
-        <ModalContent>{children}</ModalContent>
+        <ModalContent className={clsx(size === 'xsmall' ? 'px-2' : 'px-1', 'pt-4')}>{children}</ModalContent>
         <ModalFooter className={`flex justify-end m-4 ${secondaryAction ? 'gap-2' : ''}`}>
             {secondaryAction && (
                 <Button className="m-0" shape="ghost" color={secondaryAction.color} onClick={secondaryAction.onClick}>

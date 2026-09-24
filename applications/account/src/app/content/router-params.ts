@@ -58,6 +58,7 @@ export type Flags = {
     isAuthenticatorAvailable: boolean;
     isCategoryViewEnabled: boolean;
     isReferralProgramEnabled: boolean;
+    isDriveEasySwitchNewUIEnabled: boolean;
 };
 
 export type OrganizationSettingsRouterParams = {

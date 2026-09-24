@@ -224,6 +224,8 @@ const MainContainer = () => {
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
+    const isDriveEasySwitchEnabled = useFlag('EasySwitchB2CForDriveWeb');
+    const isDriveEasySwitchNewUIEnabled = useFlag('EasySwitchB2CForDriveWebNewUI') && isDriveEasySwitchEnabled;
 
     const { canUseCategoryView } = useCategoriesData();
 
@@ -317,6 +319,7 @@ const MainContainer = () => {
         isAuthenticatorAvailable,
         isCategoryViewEnabled: canUseCategoryView,
         isReferralProgramEnabled,
+        isDriveEasySwitchNewUIEnabled,
     };
 
     const routes = getRoutes({

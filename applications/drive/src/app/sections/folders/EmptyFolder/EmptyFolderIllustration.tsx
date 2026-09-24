@@ -1,8 +1,16 @@
-import type { CSSProperties } from 'react';
 import { useEffect, useId, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components';
 import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
+
+interface Gradient {
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
+    from: string;
+    to: string;
+}
 
 interface Palette {
     pageStroke: string;
@@ -10,11 +18,10 @@ interface Palette {
     lineColor: string;
     cornerFill: string;
     cornerStroke: string;
-    pgBackFrom: string;
-    pgBackTo: string;
-    pgFrontFrom: string;
-    pgFrontTo: string;
     shadowFill: string;
+    shadowOpacity: number;
+    pgBack: Gradient;
+    pgFront: Gradient;
 }
 
 const LIGHT_PALETTE: Palette = {
@@ -23,40 +30,29 @@ const LIGHT_PALETTE: Palette = {
     lineColor: '#DCDCDC',
     cornerFill: '#F6F6F6',
     cornerStroke: '#E9E9E9',
-    pgBackFrom: '#F6F6F7',
-    pgBackTo: '#E8E9EB',
-    pgFrontFrom: '#E8E9EB',
-    pgFrontTo: '#F6F6F7',
     shadowFill: '#808080',
+    shadowOpacity: 0.3,
+    pgBack: { x1: 297.255, y1: 88.4446, x2: 208.206, y2: 79.7597, from: '#F6F6F7', to: '#E8E9EB' },
+    pgFront: { x1: 126.002, y1: 96.9965, x2: 178.998, y2: 175.499, from: '#E8E9EB', to: '#F6F6F7' },
 };
 
 const DARK_PALETTE: Palette = {
-    pageStroke: '#3B3A45',
-    starFill: '#5B596A',
-    lineColor: '#4A4856',
-    cornerFill: '#2B2A33',
-    cornerStroke: '#3B3A45',
-    pgBackFrom: '#2C2B35',
-    pgBackTo: '#211F28',
-    pgFrontFrom: '#211F28',
-    pgFrontTo: '#2C2B35',
-    shadowFill: '#000000',
+    pageStroke: '#222A34',
+    starFill: '#4D5166',
+    lineColor: '#637181',
+    cornerFill: '#465263',
+    cornerStroke: '#222A34',
+    shadowFill: '#808080',
+
+    shadowOpacity: 0.5,
+    pgBack: { x1: 302.682, y1: 50.391, x2: 224.806, y2: 111.255, from: '#353F4D', to: '#1C2026' },
+    pgFront: { x1: 132.5, y1: 95.5, x2: 251.5, y2: 224.5, from: '#222A34', to: '#465263' },
 };
 
 const FRAME_W = 379;
 const FRAME_H = 267;
 const SETTLE = 'cubic-bezier(.22,.9,.24,1)';
 
-const containerStyle: CSSProperties = {
-    display: 'block',
-    width: '100%',
-    maxWidth: FRAME_W,
-    aspectRatio: `${FRAME_W} / ${FRAME_H}`,
-    position: 'relative',
-    flexShrink: 0,
-};
-
-/** The element's current rotation in degrees, 0–360, read off its transform. */
 function currentAngle(el: Element) {
     const t = getComputedStyle(el).transform;
     if (!t || t === 'none') {
@@ -75,8 +71,7 @@ export const EmptyFolderIllustration = () => {
     const starRef = useRef<SVGGElement>(null);
     const shimmerRef = useRef<SVGGElement>(null);
     const spinRef = useRef<Animation | null>(null);
-    // Stripped to alphanumerics so the value is safe inside `url(#…)`, which is
-    // parsed as CSS and would choke on the colons React 18's useId emits.
+
     const uid = useId().replace(/[^a-zA-Z0-9]/g, '');
 
     const areAnimationsEnabled =
@@ -89,8 +84,7 @@ export const EmptyFolderIllustration = () => {
         if (!el || !isOpen) {
             return;
         }
-        // Only the ends carry a transform, so the travel interpolates across the
-        // whole sweep while the two opacity stops hold it lit through the middle.
+
         const anim = el.animate(
             [
                 { offset: 0, transform: 'translate(-26px, -26px)', opacity: 0 },
@@ -123,9 +117,7 @@ export const EmptyFolderIllustration = () => {
         if (!el) {
             return;
         }
-        // Read the angle *before* cancelling. A settle still in flight is holding
-        // its pose with `fill: 'forwards'`, and that pose is where the new spin has
-        // to begin — cancel first and the sparkle snaps back to 0 on re-entry.
+
         const from = currentAngle(el);
         stopSpin();
         el.style.transform = 'none';
@@ -146,9 +138,7 @@ export const EmptyFolderIllustration = () => {
         }
         const from = currentAngle(el);
         stopSpin();
-        // The sparkle is 4-point symmetric, so the nearest quarter turn already
-        // *looks* like 0°. Settling there rather than unwinding all the way home
-        // keeps the stop under half a second from any angle.
+
         const to = Math.round(from / 90) * 90;
         const delta = Math.abs(to - from);
         const back = el.animate([{ transform: `rotate(${from}deg)` }, { transform: `rotate(${to}deg)` }], {
@@ -158,9 +148,6 @@ export const EmptyFolderIllustration = () => {
         });
         spinRef.current = back;
         back.onfinish = () => {
-            // Hand the pose back to the stylesheet before dropping the animation:
-            // cancelling discards the fill, and `none` is indistinguishable from a
-            // quarter-turn multiple on a symmetric shape.
             el.style.transform = 'none';
             if (spinRef.current === back) {
                 stopSpin();
@@ -182,17 +169,21 @@ export const EmptyFolderIllustration = () => {
     const backT = isOpen ? 'translate(17.55px, -3.16px) rotate(6.61deg)' : 'none';
 
     return (
-        <div onMouseEnter={enter} onMouseLeave={leave} style={containerStyle}>
+        <div
+            onMouseEnter={enter}
+            onMouseLeave={leave}
+            className="block w-full relative shrink-0"
+            style={{ maxWidth: FRAME_W, aspectRatio: `${FRAME_W} / ${FRAME_H}` }}
+        >
             <svg
                 viewBox={`0 0 ${FRAME_W} ${FRAME_H}`}
                 width="100%"
                 height="100%"
                 fill="none"
                 aria-hidden="true"
-                style={{ display: 'block', overflow: 'visible' }}
+                className="block"
+                style={{ overflow: 'visible' }}
             >
-                {/* The back stack. Rotated in place, so the origin is its own
-                    top-left corner rather than the drawing's. */}
                 <g
                     style={{
                         transformBox: 'view-box',
@@ -214,7 +205,6 @@ export const EmptyFolderIllustration = () => {
                     />
                 </g>
 
-                {/* The front stack — cover, ruled lines, and the turned corner. */}
                 <g
                     style={{
                         transformBox: 'view-box',
@@ -261,9 +251,6 @@ export const EmptyFolderIllustration = () => {
                     />
                 </g>
 
-                {/* Contact shadow. Drawn over the book, not under it — it is what
-                    makes the bottom edge sit on the surface instead of floating in
-                    front of it. Widens as the pages spread. */}
                 <g
                     opacity="0.8"
                     filter={`url(#groundBlur-${uid})`}
@@ -274,13 +261,16 @@ export const EmptyFolderIllustration = () => {
                         transform: isOpen ? 'scale(1.06, 1)' : 'none',
                     }}
                 >
-                    <ellipse cx="193" cy="220" rx="46" ry="4" fill={palette.shadowFill} fillOpacity="0.3" />
+                    <ellipse
+                        cx="193"
+                        cy="220"
+                        rx="46"
+                        ry="4"
+                        fill={palette.shadowFill}
+                        fillOpacity={palette.shadowOpacity}
+                    />
                 </g>
 
-                {/* The sparkle. Two nested groups on purpose: the outer one carries
-                    the hover scale through React, the inner one is handed to WAAPI
-                    for the rotation. One element doing both would have the spin
-                    overwrite the scale on its first frame. */}
                 <g
                     style={{
                         transformBox: 'view-box',
@@ -293,9 +283,7 @@ export const EmptyFolderIllustration = () => {
                     <g ref={starRef} style={{ transformBox: 'view-box', transformOrigin: '144px 59px' }}>
                         <path d={star} fill={palette.starFill} />
                         <g mask={`url(#starMask-${uid})`}>
-                            {/* Base opacity 0: with no sweep running the sparkle is simply
-                                unlit, which is also what reduced motion should look like. */}
-                            <g ref={shimmerRef} filter={`url(#shimmerBlur-${uid})`} style={{ opacity: 0 }}>
+                            <g ref={shimmerRef} filter={`url(#shimmerBlur-${uid})`} className="opacity-0">
                                 <rect
                                     x="152.186"
                                     y="48.0942"
@@ -372,25 +360,25 @@ export const EmptyFolderIllustration = () => {
                     </filter>
                     <linearGradient
                         id={`pgBack-${uid}`}
-                        x1="297.255"
-                        y1="88.4446"
-                        x2="208.206"
-                        y2="79.7597"
+                        x1={palette.pgBack.x1}
+                        y1={palette.pgBack.y1}
+                        x2={palette.pgBack.x2}
+                        y2={palette.pgBack.y2}
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop stopColor={palette.pgBackFrom} />
-                        <stop offset="1" stopColor={palette.pgBackTo} />
+                        <stop stopColor={palette.pgBack.from} />
+                        <stop offset="1" stopColor={palette.pgBack.to} />
                     </linearGradient>
                     <linearGradient
                         id={`pgFront-${uid}`}
-                        x1="126.002"
-                        y1="96.9965"
-                        x2="178.998"
-                        y2="175.499"
+                        x1={palette.pgFront.x1}
+                        y1={palette.pgFront.y1}
+                        x2={palette.pgFront.x2}
+                        y2={palette.pgFront.y2}
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop stopColor={palette.pgFrontFrom} />
-                        <stop offset="1" stopColor={palette.pgFrontTo} />
+                        <stop stopColor={palette.pgFront.from} />
+                        <stop offset="1" stopColor={palette.pgFront.to} />
                     </linearGradient>
                 </defs>
             </svg>
