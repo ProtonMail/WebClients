@@ -56,7 +56,7 @@ const getIconMarkup = (Icon: IconComponent) => {
 
 const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' } as Folder;
 const subfolder = { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2', ParentID: folder.ID } as Folder;
-const label = { ID: 'label1', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label1' } as Label;
+const label = { ID: 'label1', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label1', Color: '#ff0000' } as Label;
 const systemFolders = [
     {
         ID: MAILBOX_LABEL_IDS.INBOX,
@@ -319,6 +319,7 @@ describe('MailSidebar', () => {
 
         expect(labelElement.textContent).toContain(label.Name);
         expect(labelIcon?.innerHTML).toBe(getIconMarkup(IcCircleFilled));
+        expect(labelIcon?.style.color).toBe('rgb(255, 0, 0)');
     });
 
     it('should show unread counters', async () => {
