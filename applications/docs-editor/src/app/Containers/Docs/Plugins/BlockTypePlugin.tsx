@@ -8,7 +8,7 @@ import { $createCodeNode, $isCodeNode } from '@lexical/code'
 import type { ListType } from '@lexical/list'
 import { $createListNode, $isListItemNode, $isListNode } from '@lexical/list'
 import { $findMatchingParent } from '@lexical/utils'
-import { $isNonInlineLeafElement } from '../../../Utils/isNonInlineLeafElement'
+import { $isNonInlineLeafElement } from '../Utils/isNonInlineLeafElement'
 
 export type BlockType = 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'code' | 'quote' | ListType
 

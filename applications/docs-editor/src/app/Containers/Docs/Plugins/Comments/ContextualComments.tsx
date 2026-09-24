@@ -14,7 +14,7 @@ import { Positioner } from './Positioner'
 import { CommentInputBox } from './CommentInputBox'
 import type { RangeSelection } from 'lexical'
 import { $getNodeByKey, type LexicalNode } from 'lexical'
-import { getRangeSelectionRect } from '../../../../Utils/getSelectionRect'
+import { getRangeSelectionRect } from '../../Utils/getSelectionRect'
 import { useRightPanelContext, useViewportWidth } from '../../../DocsLayout'
 import { getContextualCommentsWidth, getDocsLayoutScrollContainer } from '../../../docsLayoutUtils'
 
