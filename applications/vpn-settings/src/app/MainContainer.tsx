@@ -186,6 +186,7 @@ const MainContainer: FunctionComponent = () => {
         isRetentionPoliciesEnabled,
         isAlwaysOnVpnEnabled,
         isReferralProgramEnabled,
+        isDriveEasySwitchNewUIEnabled: false,
     };
 
     const vpnRoutes = getRoutes({

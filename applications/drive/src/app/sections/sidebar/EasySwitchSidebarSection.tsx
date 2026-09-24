@@ -35,7 +35,9 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
     );
     const isDismissed = !!dismissedFeature?.Value;
 
-    const showEntry = isLoaded && !!userType && !isDismissed;
+    // Ongoing import --> always shown (ignores dismiss and rollout)
+    // Otherwise --> shown to eligible users who did not dismiss it
+    const showEntry = isLoaded && (isImporting || (!!userType && !isDismissed));
 
     const label = isImporting ? c('Action').t`Importing from Google` : c('Action').t`Import from Google`;
 
@@ -67,7 +69,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                             <span className={clsx('text-sm color-weak text-semibold', collapsed && 'sr-only')}>
                                 {c('Title').t`Easy switch`}
                             </span>
-                            {!collapsed && (
+                            {!collapsed && !isImporting && (
                                 <Button
                                     icon
                                     shape="ghost"

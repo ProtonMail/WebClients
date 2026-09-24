@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { DriveStepModal } from './DriveStepModal';
-import image from './illustrations/illustration-proton-failed.webp';
+import { TransferDestinationErrorIllustration } from './illustrations/TransferDestinationErrorIllustration';
 
 interface Props {
     message?: string;
@@ -11,7 +11,7 @@ interface Props {
 export const DriveImportGenericErrorStep = ({ message, onClose }: Props) => (
     <DriveStepModal
         onClose={onClose}
-        media={<img src={image} alt="" />}
+        media={<TransferDestinationErrorIllustration />}
         primaryAction={{ label: c('Action').t`Got it`, onClick: onClose }}
     >
         <h3 className="text-bold">{c('Title').t`Something went wrong`}</h3>
