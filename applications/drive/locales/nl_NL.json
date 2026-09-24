@@ -475,6 +475,9 @@
       "Go to settings": [
         "Ga naar instellingen"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -5033,6 +5036,10 @@
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } vermeldingen"
       ],
+      "${ steps } step": [
+        "${ steps } stap",
+        "${ steps } stappen"
+      ],
       "${ storage } storage": [
         "${ storage } opslag"
       ],
@@ -5402,6 +5409,9 @@
       ],
       "Downloading": [
         "Downloaden"
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Sleep uw bestanden en mappen hierheen of gebruik de knop \"Nieuw\" om te uploaden"
       ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
@@ -5790,6 +5800,9 @@
       ],
       "or discover other features:": [
         "of andere functies ontdekken:"
+      ],
+      "Or import your files from": [
+        "Of importeer uw bestanden van"
       ],
       "Organization size": [
         "Grootte van de organisatie"
@@ -12184,6 +12197,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Welkom bij ${ DRIVE_APP_NAME }"
       ],
       "What are you migrating?": [
         "Wat migreert u?"
