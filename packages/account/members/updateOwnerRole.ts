@@ -4,7 +4,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { Api, Member } from '@proton/shared/lib/interfaces';
 
 import { type OrganizationRolesState, organizationRolesThunk } from '../organizationRoles';
-import { isOwnerRole } from '../organizationRoles/helpers';
+import { isOwnerRole, isOwnerRoleSyncEnabled } from '../organizationRoles/helpers';
 import { type MembersState, updateMemberRoleByIds } from './index';
 
 export const getRequiredOwnerRoleId = (): ThunkAction<
@@ -36,7 +36,7 @@ export const updateOwnerRole = ({
     api: Api;
 }): ThunkAction<Promise<boolean>, MembersState & OrganizationRolesState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _getState, extra) => {
-        if (!extra.unleashClient?.isEnabled('SyncOwnerRoleClient')) {
+        if (!isOwnerRoleSyncEnabled(extra.unleashClient)) {
             return false;
         }
         const ownerRoleId = await dispatch(getRequiredOwnerRoleId());
