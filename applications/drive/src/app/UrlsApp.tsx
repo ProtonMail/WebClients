@@ -24,7 +24,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 // eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { FlagProvider } from '@proton/unleash/proxy';
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 import noop from '@proton/utils/noop';
 
 import config from './config';
@@ -106,7 +106,7 @@ const UrlsApp = () => {
                         <Router history={extraThunkArguments.history}>
                             <CompatRouter>
                                 <AuthenticationProvider store={extraThunkArguments.authentication}>
-                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                    <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
                                         <ApiProvider api={extraThunkArguments.api}>
                                             <ErrorBoundary
                                                 big
@@ -122,7 +122,7 @@ const UrlsApp = () => {
                                                 </div>
                                             </ErrorBoundary>
                                         </ApiProvider>
-                                    </FlagProvider>
+                                    </UnleashFlagProviderWithToolbar>
                                 </AuthenticationProvider>
                             </CompatRouter>
                         </Router>
