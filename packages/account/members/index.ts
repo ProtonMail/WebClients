@@ -17,6 +17,7 @@ import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, Api, EnhancedMember, Member, RoleAssignment } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
+import chunk from '@proton/utils/chunk';
 import noop from '@proton/utils/noop';
 
 import type { AddressesState } from '../addresses';
@@ -34,6 +35,17 @@ import { type UserPermissionsState, userPermissionsThunk } from '../userPermissi
 import { getMember } from './getMember';
 
 const name = 'members' as const;
+
+type MemberRolesResponse = {
+    RoleAssignments: RoleAssignment[];
+    RequiresOrgKeyPromotion: boolean;
+};
+
+/** One member's roles request as committed in bulk by {@link getMemberRolesBatch}; no response means it failed. */
+type MemberRolesResult = {
+    member: Member;
+    response: MemberRolesResponse | undefined;
+};
 
 enum ValueType {
     dummy = 0,
@@ -243,6 +255,29 @@ const slice = createSlice({
                 member.roleState = 'rejected';
             }
         },
+        memberRolesFetchPending: (state, action: PayloadAction<{ members: Member[] }>) => {
+            action.payload.members.forEach((target) => {
+                const member = getMemberFromState(state, target);
+                if (member) {
+                    member.roleState = 'pending';
+                }
+            });
+        },
+        memberRolesFetchSettled: (state, action: PayloadAction<MemberRolesResult[]>) => {
+            action.payload.forEach(({ member: target, response }) => {
+                const member = getMemberFromState(state, target);
+                if (!member) {
+                    return;
+                }
+                if (!response) {
+                    member.roleState = 'rejected';
+                    return;
+                }
+                member.roleState = 'full';
+                member.UserOrganizationRoles = response.RoleAssignments;
+                member.requiresOrgKeyPromotion = response.RequiresOrgKeyPromotion;
+            });
+        },
         invalidateMemberRoles: (state, action: PayloadAction<{ member: Member }>) => {
             const member = getMemberFromState(state, action.payload.member);
             if (member && member.roleState !== 'initial') {
@@ -437,6 +472,12 @@ export const getMemberAddresses = ({
     };
 };
 
+/**
+ * How many members' roles are requested (and then committed to the store) at a time by
+ * {@link getMemberRolesBatch}.
+ */
+const MEMBER_ROLES_CHUNK_SIZE = 50;
+
 const getTemporaryRolePromiseMap = (() => {
     let map: undefined | Map<string, Promise<RoleAssignment[]>>;
     return () => {
@@ -479,9 +520,7 @@ export const getMemberRoles = ({
         if (oldPromise) {
             return oldPromise;
         }
-        const responsePromise = extra.api<{ RoleAssignments: RoleAssignment[]; RequiresOrgKeyPromotion: boolean }>(
-            getMemberOrganizationRoles(member.ID)
-        );
+        const responsePromise = extra.api<MemberRolesResponse>(getMemberOrganizationRoles(member.ID));
         const promise = responsePromise.then(({ RoleAssignments }) => RoleAssignments);
         try {
             map.set(member.ID, promise);
@@ -500,6 +539,57 @@ export const getMemberRoles = ({
             throw e;
         } finally {
             map.delete(member.ID);
+        }
+    };
+};
+
+/**
+ * Loads the roles for a whole member list.
+ *
+ * One commit marks the batch pending, then one commit lands each chunk of results, so a 1,000-member
+ * org costs ~21 commits rather than the ~2,000 that dispatching {@link getMemberRoles} per member
+ * produced. That matters because every commit re-renders the (non-virtualised) members table, which
+ * made opening the user-management screen quadratic in member count.
+ *
+ * Marking the batch pending up front is also what stops the calling effect — which re-runs on every
+ * commit, since each one gives the members array a new identity — from starting an overlapping sweep.
+ *
+ * Use {@link getMemberRoles} for a single member.
+ */
+export const getMemberRolesBatch = ({
+    members,
+}: {
+    members: Member[];
+}): ThunkAction<Promise<void>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, getState, extra) => {
+        const isAdminRoleEnabled = extra.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
+        if (!isAdminRoleEnabled) {
+            return;
+        }
+        const state = selectMembers(getState());
+        const targets = members.filter((member) => {
+            const roleState = getMemberFromState(state, member)?.roleState;
+            return roleState === 'initial' || roleState === 'stale';
+        });
+        if (!targets.length) {
+            return;
+        }
+
+        dispatch(slice.actions.memberRolesFetchPending({ members: targets }));
+
+        for (const group of chunk(targets, MEMBER_ROLES_CHUNK_SIZE)) {
+            // Every request catches its own failure, so Promise.all never rejects and the rest of the
+            // chunk is processed. Otherwise members are left in 'pending'.
+            const results = await Promise.all(
+                group.map((member) =>
+                    extra
+                        .api<MemberRolesResponse>(getMemberOrganizationRoles(member.ID))
+                        .then((response) => ({ member, response }))
+                        .catch(() => ({ member, response: undefined }))
+                )
+            );
+
+            dispatch(slice.actions.memberRolesFetchSettled(results));
         }
     };
 };
@@ -533,10 +623,9 @@ export const updateMemberRoleByIds = ({
             return { roleAssignments: [], changed: false };
         }
 
-        const { RoleAssignments, RequiresOrgKeyPromotion } = await api<{
-            RoleAssignments: RoleAssignment[];
-            RequiresOrgKeyPromotion: boolean;
-        }>(updateMemberOrganizationRoles(member.ID, { add, remove }));
+        const { RoleAssignments, RequiresOrgKeyPromotion } = await api<MemberRolesResponse>(
+            updateMemberOrganizationRoles(member.ID, { add, remove })
+        );
         dispatch(
             slice.actions.memberRoleFetchFulfilled({
                 member,
