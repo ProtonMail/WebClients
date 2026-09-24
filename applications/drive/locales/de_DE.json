@@ -1368,6 +1368,9 @@
       ],
       "Stop here": [
         "Hier beenden"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "Action: Docs": {
@@ -4137,7 +4140,7 @@
         "Wir konnten einige deiner Lesezeichen nicht laden."
       ],
       "We were not able to load some of your invitation to shared items": [
-        "Wir konnten einige deiner Einladungen zu geteilten Einträgen nicht laden."
+        "Wir konnten einige deiner Einladungen zu geteilten Einträgen nicht laden"
       ],
       "We were not able to load some of your saved shared links": [
         "Wir konnten einige deiner gespeicherten geteilten Links nicht laden."
@@ -5763,7 +5766,7 @@
         "und"
       ],
       "And access it from anywhere": [
-        "Und greife von überall darauf zu"
+        "Und von überall darauf zugreifen"
       ],
       "Anonymous": [
         "Anonym"
@@ -5781,7 +5784,7 @@
         "Möchtest du den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete": [
-        "Bist du sicher, dass du die Datei "
+        "Bist du sicher, dass du dauerhaft löschen möchtest?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Möchtest du „${ itemName }“ dauerhaft aus dem Papierkorb löschen?"
@@ -5886,7 +5889,7 @@
         "Deinen Dienst zum Verbinden auswählen"
       ],
       "Clear all search data": [
-        "Alle Suchdaten löschen"
+        "Alle Suchdaten entfernen"
       ],
       "Clear data": [
         "Daten bereinigen"
@@ -6090,7 +6093,7 @@
         "E-Mails, die vor mehr als 30 Tagen in Papierkorb und Spam verschoben wurden, werden automatisch gelöscht."
       ],
       "Empty folder": [
-        "Leerer Ordner"
+        "Ordner leeren"
       ],
       "Enabling auto-deletion…": [
         "Automatisches Löschen wird aktiviert…"
@@ -7476,7 +7479,7 @@
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Deine Dateien sind aufgrund eines Zurücksetzens des Passworts nicht mehr zugänglich. Lade den alten Verschlüsselungsschlüssel erneut hoch. ${ KeyReactivationButton }"
+        "Deine Dateien sind aufgrund eines Zurücksetzens des Passworts nicht mehr zugänglich. Lade den alten Verschlüsselungsschlüssel erneut hoch um den Zugriff wieder zu erlangen. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
@@ -7579,7 +7582,7 @@
         "${ state.result.entries.length } Einträge"
       ],
       "Index is empty.": [
-        "Kein Index verfügbar."
+        "Index ist leer."
       ],
       "Search module is not available.": [
         "Suchmodul ist nicht verfügbar."
@@ -8006,6 +8009,12 @@
       ],
       "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
         "Deine Dateien wurden erfolgreich von Google Drive in ${ DRIVE_APP_NAME } importiert und verschlüsselt."
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Ziehen Sie Ihre Dateien und Ordner hierhin oder nutzen Sie die Schaltfläche „Neu“, um sie hochzuladen"
+      ],
+      "Or import your files from": [
+        "Oder importieren Sie Ihre Dateien von"
       ]
     },
     "info": {
@@ -10831,7 +10840,7 @@
         "Fehler beim Erstellen des Dokuments."
       ],
       "The item was not added to your drive": [
-        "Das Element wurde nicht zu deinem Laufwerk hinzugefügt"
+        "Der Eintrag wurde nicht zu deinem Drive hinzugefügt"
       ],
       "The item was successfully added to your drive": [
         "Der Eintrag wurde erfolgreich zu deinem Drive hinzugefügt"
@@ -11138,7 +11147,7 @@
         "Deine Fotos und Erinnerungen sichern"
       ],
       "Choose your favorite theme": [
-        "Wähle dein Lieblingslayout"
+        "Dein bevorzugtes Farbschema wählen"
       ],
       "Collaborate on documents": [
         "Gemeinsam an Dokumenten arbeiten"
@@ -11156,7 +11165,7 @@
         "Ende-zu-Ende verschlüsselter Speicher für deine Dateien"
       ],
       "Faster uploads for large or multiple files": [
-        "Schnellere Uploads für große oder mehrere Dateien"
+        "Schnelleres Hochladen großer oder mehrerer Dateien"
       ],
       "Files uploaded during this time won’t count towards your storage limit.": [
         "In dieser Zeit hochgeladene Dateien zählen nicht auf dein Speicherlimit."
@@ -14110,7 +14119,7 @@
         "Zuletzt hochgeladen von"
       ],
       "Level": [
-        "Stufe"
+        "Ebene"
       ],
       "Link confirmation": [
         "Linkbestätigung"
@@ -14119,7 +14128,7 @@
         "Speicherort"
       ],
       "Logger": [
-        "Quelle"
+        "Protokoll"
       ],
       "Logs": [
         "Protokolle"
@@ -14796,6 +14805,9 @@
       ],
       "Your import is in progress": [
         "Dein Import läuft gerade"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Willkommen bei ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

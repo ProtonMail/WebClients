@@ -1365,6 +1365,9 @@
       ],
       "Search recent items": [
         "Rechercher les éléments récents"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "Action: Docs": {
@@ -7871,6 +7874,22 @@
       ],
       "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
         "Votre drive est trop volumineux pour être indexé entièrement dans ce navigateur, donc la recherche inspecte vos éléments les plus récents. Les fichiers plus anciens peuvent ne pas apparaitre dans les résultats."
+      ],
+      "${ steps } step": [
+        "${ steps } étape",
+        "${ steps } étapes"
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Glissez vos fichiers et dossiers ici ou utilisez le bouton « Nouveau » pour les importer"
+      ],
+      "Or import your files from": [
+        "Ou importer vos fichiers depuis"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -14652,6 +14671,9 @@
       ],
       "Your import is in progress": [
         "Votre import est en cours."
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Bienvenue dans ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
