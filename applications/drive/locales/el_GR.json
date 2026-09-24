@@ -1365,6 +1365,12 @@
       ],
       "Importing from Google": [
         "Εισαγωγή από Google"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "Search recent items": [
+        "Αναζήτηση πρόσφατων στοιχείων"
       ]
     },
     "Action: Docs": {
@@ -8009,6 +8015,21 @@
       ],
       "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
         "Τα αρχεία σας εισήχθησαν και κρυπτογραφήθηκαν με επιτυχία από το Google Drive στο ${ DRIVE_APP_NAME }."
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Σύρετε τα αρχεία και τους φακέλους σας εδώ ή χρησιμοποιήστε το κουμπί \"Νέο\" για να τα ανεβάσετε."
+      ],
+      "Or import your files from": [
+        "Ή εισαγάγετε τα αρχεία σας από"
+      ],
+      "Search covers your recent items": [
+        "Η αναζήτηση καλύπτει τα πρόσφατα στοιχεία σας"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Ορισμένα παλαιότερα αρχεία δεν έχουν ευρετηριαστεί, επειδή το Drive σας είναι πολύ μεγάλο για πλήρη ευρετηρίαση."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Ο χώρος αποθήκευσής σας στο Drive είναι πολύ μεγάλος για να ευρετηριαστεί πλήρως σε αυτό το πρόγραμμα περιήγησης, επομένως η αναζήτηση καλύπτει μόνο τα πιο πρόσφατα στοιχεία σας. Ενδέχεται να μην εμφανίζονται παλαιότερα αρχεία στα αποτελέσματα."
       ]
     },
     "info": {
@@ -10964,6 +10985,9 @@
       ],
       "Your subscription renews soon": [
         "Η συνδρομή σας ανανεωθεί σύντομα"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Η τελευταία ευκαιρία να αποκτήσετε τον πρώτο μήνα του ${ plan } σε αυτή την τιμή."
       ]
     },
     "Offer fearue": {
@@ -11010,6 +11034,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας"
+      ],
+      "Short @pm.me address": [
+        "Σύντομη διεύθυνση @pm.me"
       ]
     },
     "Onboarding": {
@@ -14643,6 +14670,9 @@
       ],
       "Your import is in progress": [
         "Η εισαγωγή σας βρίσκεται σε εξέλιξη."
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Καλώς ήρθατε στο ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
