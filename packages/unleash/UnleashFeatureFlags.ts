@@ -110,7 +110,7 @@ enum AccountFlag {
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
     AdminRoleMVP = 'AdminRoleMVP',
     AdminRolesWithMSP = 'AdminRolesWithMSP',
-    SyncOwnerRoleClient = 'SyncOwnerRoleClient',
+    SyncOwnerRoleClientKillSwitch = 'SyncOwnerRoleClientKillSwitch',
     VpnB2bUserActivity = 'VpnB2bUserActivity',
     MSPStorageOptionEnabled = 'MSPStorageOptionEnabled',
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',

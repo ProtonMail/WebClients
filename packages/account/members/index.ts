@@ -23,7 +23,12 @@ import type { AddressesState } from '../addresses';
 import { addressesThunk } from '../addresses';
 import { bootstrapEvent } from '../bootstrap/action';
 import { serverEvent } from '../eventLoop';
-import { getGroupSourcedRoleIds, getUserSourcedRoleIds, isOrgKeyRequired } from '../organizationRoles/helpers';
+import {
+    getGroupSourcedRoleIds,
+    getUserSourcedRoleIds,
+    isOrgKeyRequired,
+    isOwnerRoleSyncEnabled,
+} from '../organizationRoles/helpers';
 import { type UserState, userThunk } from '../user';
 import { type UserPermissionsState, userPermissionsThunk } from '../userPermissions';
 import { getMember } from './getMember';
@@ -517,8 +522,7 @@ export const updateMemberRoleByIds = ({
 }): ThunkAction<Promise<RoleAssignmentsResult>, MembersState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _getState, extra) => {
         const isEnabled =
-            (extra.unleashClient?.isEnabled('AdminRoleMVP') || extra.unleashClient?.isEnabled('SyncOwnerRoleClient')) ??
-            false;
+            isOwnerRoleSyncEnabled(extra.unleashClient) || (extra.unleashClient?.isEnabled('AdminRoleMVP') ?? false);
         if (!isEnabled) {
             return { roleAssignments: [], changed: false };
         }
