@@ -31,6 +31,7 @@ import {
     getHasDriveB2BPlan,
     getHasPassB2BPlan,
     hasDuo,
+    hasLumoBusiness,
     hasMeet,
     hasMeetBusiness,
     hasVPNPassProfessional,
@@ -119,6 +120,9 @@ export const useMemberActions = ({
     const isSubsidiaryOrg = !!organization?.IsSubsidiary;
     const isMSPStorageOptionEnabled = useFlag('MSPStorageOptionEnabled');
     const hasDriveB2BPlan = getHasDriveB2BPlan(subscription);
+    const hasLumoB2BPlan = hasLumoBusiness(subscription);
+    const hasVPNPassProfessionalPlan = hasVPNPassProfessional(subscription);
+    const hasPassBusinessEntitlement = !!entitlements.quantityOrg(EntitlementName.PassBusiness);
     const hasMeetPlan = hasMeetBusiness(subscription) || hasMeet(subscription);
     const hasExternalMemberCapableB2BPlan = !!entitlements.quantityOrg(EntitlementName.ExternalManagedMembers);
 
@@ -129,15 +133,16 @@ export const useMemberActions = ({
     // Allow using custom domain if organization has meetbiz2025 and a verified custom domain
     const hasMeetB2BPlanAndVerifiedCustomDomain = hasMeetPlan && hasCustomDomains;
     const useEmail = hasExternalMemberCapableB2BPlan && !hasMeetB2BPlanAndVerifiedCustomDomain;
-    const allowStorageConfigurationForPlan =
+    const planSupportsMemberFeatures =
         !hasExternalMemberCapableB2BPlan ||
         hasDriveB2BPlan ||
-        !!entitlements.quantityOrg(EntitlementName.PassBusiness) ||
-        hasVPNPassProfessional(subscription);
-    const allowStorageConfiguration =
-        (!isSubsidiaryOrg || isMSPStorageOptionEnabled) && allowStorageConfigurationForPlan;
+        hasLumoB2BPlan ||
+        hasPassBusinessEntitlement ||
+        hasVPNPassProfessionalPlan;
+    const allowStorageConfiguration = planSupportsMemberFeatures && (!isSubsidiaryOrg || isMSPStorageOptionEnabled);
+    const showFeaturesColumn = planSupportsMemberFeatures;
     // VPN + Pass B2B bundle needs to disable VPN to be able to downgrade to Pass Professional
-    const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan || hasVPNPassProfessional(subscription);
+    const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan || hasVPNPassProfessionalPlan;
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
     // Allow to display a toggle in the UI
     const allowAIAssistantConfiguration = accessToAssistant.enabled && isB2bPlanSupportingScribe(organization, user);
@@ -170,12 +175,6 @@ export const useMemberActions = ({
 
     const hasPassB2BPlan = getHasPassB2BPlan(subscription);
     const hasDuoPlan = hasDuo(subscription);
-
-    const showFeaturesColumn =
-        !hasExternalMemberCapableB2BPlan ||
-        hasDriveB2BPlan ||
-        !!entitlements.quantityOrg(EntitlementName.PassBusiness) ||
-        hasVPNPassProfessional(subscription);
 
     const disableAddUserButton =
         loadingSubscription ||
