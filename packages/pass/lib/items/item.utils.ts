@@ -116,11 +116,13 @@ export const filterItemsByShareId =
     };
 
 /** Keeps only the items belonging to one of the scope's folder ids,
- * `null` matching the items that are in no folder, ie. the vault root. */
+ * `null` matching the items that are in no folder, ie. the vault root.
+ * Items cached before folders shipped have no `folderId`, so a missing
+ * value is treated as the root. */
 export const filterItemsByFolderIds =
     (folderIds: FolderScope) =>
     <T extends ItemRevision>(items: T[]) =>
-        items.filter((item) => folderIds.has(item.folderId));
+        items.filter((item) => folderIds.has(item.folderId ?? null));
 
 export const filterItemsByType =
     (itemType?: MaybeNull<ItemType>) =>
