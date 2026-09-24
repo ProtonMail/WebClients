@@ -13,31 +13,27 @@ enum AccountB2BFeatureFlag {
     SyncOwnerRoleClientKillSwitch = 'SyncOwnerRoleClientKillSwitch',
     UserGroupsGroupOwner = 'UserGroupsGroupOwner',
     UserGroupsNoCustomDomain = 'UserGroupsNoCustomDomain',
-    UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     UserGroupsScimGroups = 'UserGroupsScimGroups',
 }
 
 enum AccountCryptoFeatureFlag {
     CryptoPostQuantumOptIn = 'CryptoPostQuantumOptIn',
+    SocialRecoverySklDisabled = 'SocialRecoverySklDisabled',
 }
 
 enum AccountFeatureFlag {
-    CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
     DisableSsoBackupPassword = 'DisableSsoBackupPassword',
     DriveDashboard = 'DriveDashboard',
     DriveTrialOffer = 'DriveTrialOffer',
     EduGainSSO = 'EduGainSSO',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
     MailTrialOffer = 'MailTrialOffer',
-    NewCancellationFlow = 'NewCancellationFlow',
     PassTrialOffer = 'PassTrialOffer',
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
-    SocialRecoverySklDisabled = 'SocialRecoverySklDisabled',
     SpacesAvailable = 'SpacesAvailable',
     VisionarySignup = 'VisionarySignup',
     VPNDashboard = 'VPNDashboard',
     VPNReferralWithoutTrial = 'VPNReferralWithoutTrial',
-    WorldCupRetention = 'WorldCupRetention',
 }
 
 enum AccountMSAFeatureFlag {
@@ -48,7 +44,6 @@ enum AccountMSAFeatureFlag {
 
 enum AccountVPNFeatureFlag {
     B2BAlwaysOnWindowsRelease = 'B2BAlwaysOnWindowsRelease',
-    SharedServerFeature = 'SharedServerFeature',
     VpnB2bUserActivity = 'VpnB2bUserActivity',
     VpnOrganizationLogRelayGatewayCreationMultiIp = 'VpnOrganizationLogRelayGatewayCreationMultiIp',
     VpnOrganizationLogRelayGatewayUpdateMultiIp = 'VpnOrganizationLogRelayGatewayUpdateMultiIp',

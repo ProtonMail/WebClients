@@ -208,13 +208,11 @@ const MainContainer = () => {
     const { viewportWidth } = useActiveBreakpoint();
 
     const showThemeSelection = useShowThemeSelection();
-    const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
-    const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const isAlwaysOnVpnEnabled = useFlag('B2BAlwaysOnEnabled');
     const isCryptoPostQuantumOptInEnabled =
         (useFlag('CryptoPostQuantumOptIn') && user.isPrivate) || !!userSettings.Flags.SupportPgpV6Keys;
@@ -306,12 +304,10 @@ const MainContainer = () => {
 
     const flags: Flags = {
         canDisplayNonPrivateEmailPhone,
-        isUserGroupsFeatureEnabled,
         isUserGroupsNoCustomDomainEnabled,
         isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
         isZoomIntegrationEnabled: !isZoomIntegrationDisabled,
         isProtonMeetIntegrationEnabled,
-        isSharedServerFeatureEnabled,
         isAlwaysOnVpnEnabled,
         isCryptoPostQuantumOptInEnabled,
         isSsoForPbsEnabled,
