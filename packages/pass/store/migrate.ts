@@ -35,11 +35,16 @@ export const migrate = (state: State, snapshot: SerializedCryptoContext<PassCryp
     /** Sanity migration :
      * Sanitize the item state to ensure we have no invalid item
      * data - FIXME: remove when pin-pointing the faulty partial
-     * item update causing this edge-case error */
+     * item update causing this edge-case error.
+     * Also defaults `folderId` for items cached before folders shipped:
+     * the vault root is `null` and an undefined value would match nothing. */
     state.items.byShareId = {
         ...state.items.byShareId,
         ...objectMap(unwrapOptimisticState(state.items.byShareId), (_, items) =>
-            objectFilter(items, (_, item) => item && ['itemId', 'shareId', 'data'].every((key) => key in item))
+            objectMap(
+                objectFilter(items, (_, item) => item && ['itemId', 'shareId', 'data'].every((key) => key in item)),
+                (_, item) => (item.folderId === undefined ? { ...item, folderId: null } : item)
+            )
         ),
     };
 
