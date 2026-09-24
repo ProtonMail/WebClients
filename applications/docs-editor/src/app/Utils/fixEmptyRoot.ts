@@ -1,6 +1,6 @@
 import type { LexicalEditor } from 'lexical'
 import { $createParagraphNode, $getRoot } from 'lexical'
-import { CLEAR_HISTORY_COMMAND } from '../Plugins/Collaboration/useYjsHistory'
+import { CLEAR_HISTORY_COMMAND } from '../Containers/Docs/Plugins/Collaboration/useYjsHistory'
 
 export function fixEmptyRoot(editor: LexicalEditor) {
   let didAddParagraph = false

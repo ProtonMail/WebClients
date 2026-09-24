@@ -8,7 +8,7 @@ import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify'
 import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft'
 import { IcTextAlignRight } from '@proton/icons/icons/IcTextAlignRight'
 import clsx from '@proton/utils/clsx'
-import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
+import { ShortcutLabel } from '../Containers/Docs/Plugins/KeyboardShortcuts/ShortcutLabel'
 import ToolbarTooltip from './ToolbarTooltip'
 
 /**

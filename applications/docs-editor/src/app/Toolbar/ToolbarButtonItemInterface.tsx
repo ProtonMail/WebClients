@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import type { KeyboardShortcutID } from '../Plugins/KeyboardShortcuts/Types'
+import type { KeyboardShortcutID } from '../Containers/Docs/Plugins/KeyboardShortcuts/Types'
 
 export type ToolbarButtonItemInterface = {
   type: 'button'
