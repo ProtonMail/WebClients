@@ -391,6 +391,9 @@
       "Get Started": [
         "Aan de slag"
       ],
+      "Go back": [
+        "Ga terug"
+      ],
       "Hide": [
         "Verberg"
       ],
@@ -1956,6 +1959,9 @@
       "finance": [
         "financiën"
       ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Voltooi het inloggen in het browservenster dat zojuist is geopend. ${ PASS_APP_NAME } wordt automatisch opgehaald zodra u klaar bent."
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Volg deze stappen om uw gegevens te importeren met een algemeen CSV-bestand:"
       ],
@@ -2129,7 +2135,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -4690,6 +4697,9 @@
       ],
       "Contacts": [
         "Contacten"
+      ],
+      "Continue in your browser": [
+        "Ga verder in uw browser"
       ],
       "Create a vault": [
         "Kluis aanmaken"
