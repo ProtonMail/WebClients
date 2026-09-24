@@ -394,6 +394,9 @@
       "Get Started": [
         "Începeți"
       ],
+      "Go back": [
+        "Înapoi"
+      ],
       "Hide": [
         "Ascundere"
       ],
@@ -2007,6 +2010,9 @@
       "finance": [
         "finanțe"
       ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Finalizați autentificarea în fereastra navigatorului web care tocmai s-a deschis. ${ PASS_APP_NAME } va prelua automat procesul imediat ce ați terminat."
+      ],
       "Folder \"${ payload.folder.name }\" created": [
         "S-a creat folderul „${ payload.folder.name }”"
       ],
@@ -2196,7 +2202,9 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -4813,6 +4821,9 @@
       ],
       "Contacts": [
         "Contacte"
+      ],
+      "Continue in your browser": [
+        "Continuare în navigatorul web"
       ],
       "Create a vault": [
         "Creați un seif"

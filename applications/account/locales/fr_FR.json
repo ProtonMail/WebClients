@@ -1091,6 +1091,9 @@
       "Google": [
         "Google"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -13030,6 +13033,12 @@
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Pour prévenir les abus ou la fraude, nous demandons un don minimum de ${ minimumDonation }. Ceci soutient le travail de la ${ protonFoundationLink } pour défendre la confidentialité numérique à l'échelle mondiale et aide à protéger les générations futures."

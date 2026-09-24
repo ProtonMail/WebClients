@@ -678,6 +678,9 @@
       "Google": [
         "Google"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -1541,7 +1544,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -7206,6 +7210,10 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
+      "${ steps } step": [
+        "${ steps } stap",
+        "${ steps } stappen"
+      ],
       "${ storage } storage": [
         "${ storage } opslag"
       ],
@@ -8016,6 +8024,12 @@
       "here": [
         "hier"
       ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Hey Lumo, ik ga weg en wil een afwezigheidsbericht instellen. Vraag me naar de data en wat er op moet staan, en laat me dan het bericht zien voordat je het aanzet."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hey Lumo, laat me zien hoe u me kunt helpen met mijn mailbox. Wat voor dingen kan ik van u vragen, en waar kunt u niet mee helpen?"
+      ],
       "Hide original message": [
         "Verberg origineel bericht"
       ],
@@ -8123,8 +8137,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8616,6 +8629,10 @@
         "Lees ${ count } bericht in deze thread",
         "Lees ${ count } berichten in deze thread"
       ],
+      "Read ${ count } open draft": [
+        "Lees ${ count } open concept",
+        "Lees ${ count } open concepten"
+      ],
       "Read open email “${ subject }”": [
         "Open e-mail “${ subject }” lezen"
       ],
@@ -8657,6 +8674,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Verwijder alle gegevens geassocieerd met deze app (inclusief gedownloade berichten...)"
+      ],
+      "Rename this folder": [
+        "Hernoem deze map"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Door een bericht als phishing aan te merken, wordt het naar ProtonMail verzonden, zodat het mogelijk is de inhoud te analyseren en de spamfilters te verbeteren. Dit betekent dat we alle inhoud van dit betreffende bericht kunnen zien."
@@ -10176,6 +10196,9 @@
       ],
       "Automated confirmations and alerts": [
         "Geautomatiseerde bevestigingen en meldingen"
+      ],
+      "Away message": [
+        "Afwezigheidsbericht"
       ],
       "BCC": [
         "BCC"
