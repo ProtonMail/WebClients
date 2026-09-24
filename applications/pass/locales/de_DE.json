@@ -394,6 +394,9 @@
       "Get Started": [
         "Erste Schritte"
       ],
+      "Go back": [
+        "Zurück"
+      ],
       "Hide": [
         "Ausblenden"
       ],
@@ -1666,6 +1669,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Mit Zugangstoken, die zusammen mit ${ passCliLink } verwendet werden, kannst du CI/CD automatisieren oder deinem KI-Agenten einen begrenzten Zugriff auf die Ressourcen gewähren, die er zur Ausführung seiner Aufgabe benötigt."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Füge eine Zahlungsmethode hinzu, damit dein Abonnement nach Ablauf der Testphase automatisch verlängert werden kann."
+      ],
       "Add your custom email address to monitor:": [
         "Füge deine eigene E-Mail-Adresse zur Überwachung hinzu:"
       ],
@@ -1984,6 +1990,9 @@
       "finance": [
         "Finanzen"
       ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Schließe die Anmeldung im gerade geöffneten Browserfenster ab. ${ PASS_APP_NAME } wird automatisch übernommen, sobald du fertig bist."
+      ],
       "Folder \"${ payload.folder.name }\" created": [
         "Ordner \"${ payload.folder.name }\" erstellt"
       ],
@@ -2169,7 +2178,8 @@
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -3018,6 +3028,9 @@
       ],
       "Account Type": [
         "Kontotyp"
+      ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Füge bei der Erstellung eines neuen Alias einen zufälligen Präfix für diese Domäne hinzu."
@@ -4760,6 +4773,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Continue in your browser": [
+        "Weiter im Browser"
+      ],
       "Create a vault": [
         "Tresor erstellen"
       ],
@@ -4910,6 +4926,9 @@
       ],
       "Item": [
         "Element"
+      ],
+      "Keep your subscription active": [
+        "Halte dein Abonnement aufrecht"
       ],
       "Last autofill": [
         "Letztes Auto-Ausfüllen"
