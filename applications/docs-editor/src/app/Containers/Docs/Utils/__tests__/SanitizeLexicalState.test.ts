@@ -1,4 +1,4 @@
-import { sanitizeInlineStyle, sanitizeLexicalState } from './SanitizeLexicalState'
+import { sanitizeInlineStyle, sanitizeLexicalState } from '../SanitizeLexicalState'
 
 describe('sanitizeInlineStyle', () => {
   it('preserves the internal list marker color', () => {

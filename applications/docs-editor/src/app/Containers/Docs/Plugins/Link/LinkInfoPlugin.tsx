@@ -14,7 +14,7 @@ import {
   createCommand,
 } from 'lexical'
 import { useCallback, useEffect, useState } from 'react'
-import { getSelectedNode } from '../../../../Utils/getSelectedNode'
+import { getSelectedNode } from '../../Utils/getSelectedNode'
 import { LinkInfoEditor } from './LinkInfoEditor'
 import { LinkInfoViewer } from './LinkInfoViewer'
 

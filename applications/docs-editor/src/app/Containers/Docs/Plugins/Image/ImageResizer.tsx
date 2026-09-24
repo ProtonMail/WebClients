@@ -4,7 +4,7 @@ import { calculateZoomLevel } from '@lexical/utils'
 import { useRef } from 'react'
 
 import './ImageResizer.scss'
-import { getElementDimensionsWithoutPadding } from '../../../../Utils/getEditorWidthWithoutPadding'
+import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max)

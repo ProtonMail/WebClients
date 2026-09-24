@@ -7,7 +7,7 @@ import { CommentsComposer } from './CommentsComposer'
 import { c } from 'ttag'
 import { IcArrowUp } from '@proton/icons/icons/IcArrowUp'
 import { useCommentsContext } from './CommentsContext'
-import { createRectsFromDOMRange } from '../../../../Utils/createRectsFromDOMRange'
+import { createRectsFromDOMRange } from '../../Utils/createRectsFromDOMRange'
 
 export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalEditor; cancelAddComment: () => void }) {
   const textContentRef = useRef('')
