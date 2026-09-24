@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { VideoInstructions } from '@proton/components';
+import { Href } from '@proton/atoms/Href/Href';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { DriveStepModal } from './DriveStepModal';
-import transferringMp4 from './illustrations/transferring.mp4';
-import transferringWebm from './illustrations/transferring.webm';
+import { TransferringIllustration } from './illustrations/TransferringIllustration';
 
 interface Props {
     onClose: () => void;
@@ -13,16 +14,14 @@ interface Props {
 export const DriveImportInProgressStep = ({ onClose }: Props) => (
     <DriveStepModal
         onClose={onClose}
-        media={
-            <VideoInstructions loop>
-                <source src={transferringWebm} type="video/webm" />
-                <source src={transferringMp4} type="video/mp4" />
-            </VideoInstructions>
-        }
+        media={<TransferringIllustration />}
         primaryAction={{ label: c('Action').t`Got it`, onClick: onClose }}
     >
-        <h3 className="text-bold">{c('Title').t`Your import is in progress`}</h3>
+        <h3 className="text-bold">{c('Title').t`Import started`}</h3>
         <p className="color-weak mt-2 mb-0">{c('Info')
-            .t`We're importing your files from Google Drive. We'll let you know once it's done.`}</p>
+            .t`We'll email you when your import is complete. Your files will appear in a folder in ${DRIVE_APP_NAME}.`}</p>
+        <p className="mt-2 mb-0">
+            <Href href={getKnowledgeBaseUrl('/import-files-google-drive')}>{c('Link').t`Learn more`}</Href>
+        </p>
     </DriveStepModal>
 );

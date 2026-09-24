@@ -97,16 +97,28 @@ const createCalendars = async ({
     return tempCalendars;
 };
 
+const sanitizeFolderNamePart = (name: string) => name.replace(/[<>:"/\\|?*\x00-\x1F]/g, '-');
+
+// We only support google for now
+const getDriveImportFolderName = (importedEmail: string) => {
+    const timestamp = sanitizeFolderNamePart(new Date().toISOString());
+    const accountName = sanitizeFolderNamePart(importedEmail.split('@')[0]);
+    return `google-drive-${accountName}-${timestamp}`;
+};
+
 /**
  * Builds the Drive `ImportFolder` payload for the import start endpoint. The SDK
  * prepares the crypto material for an orphaned folder under My files (no folder is
  * created on the server); the volume and parent link come from the My files root.
  */
-const prepareDriveImportFolder = async (drive: ProtonDriveClient): Promise<DriveImportFolder> => {
+const prepareDriveImportFolder = async (
+    drive: ProtonDriveClient,
+    importedEmail: string
+): Promise<DriveImportFolder> => {
     // getMyFilesRootFolder creates the main volume if none exists yet (new accounts).
     const rootFolder = await drive.getMyFilesRootFolder();
     const [volumeId, nodeId] = rootFolder.uid.split('~');
-    const folder = await drive.experimental.prepareImportFolder();
+    const folder = await drive.experimental.prepareImportFolder(getDriveImportFolderName(importedEmail));
 
     return {
         VolumeID: volumeId,
@@ -260,7 +272,9 @@ export const createImporterTask = async ({
         setIsCreatingImportTask(true);
 
         if (driveClient && products.includes(ImportType.DRIVE)) {
-            importPayload.Drive = { ImportFolder: await prepareDriveImportFolder(driveClient) };
+            importPayload.Drive = {
+                ImportFolder: await prepareDriveImportFolder(driveClient, importerData.importedEmail),
+            };
         }
 
         await api(startImportTask(importPayload));

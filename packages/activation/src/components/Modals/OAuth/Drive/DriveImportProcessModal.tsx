@@ -4,9 +4,11 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
+import { Href } from '@proton/atoms/Href/Href';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { VideoInstructions, useErrorHandler, useEventManager } from '@proton/components';
+import { useErrorHandler, useEventManager } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import useAvailableAddresses from '../../../../hooks/useAvailableAddresses';
 import { IMPORT_ERROR, ImportProvider, ImportType } from '../../../../interface';
@@ -23,8 +25,7 @@ import { DriveImportEmptyStep } from './DriveImportEmptyStep';
 import { DriveImportGenericErrorStep } from './DriveImportGenericErrorStep';
 import { DriveImportStorageWarningStep } from './DriveImportStorageWarningStep';
 import { DriveStepModal } from './DriveStepModal';
-import transferringMp4 from './illustrations/transferring.mp4';
-import transferringWebm from './illustrations/transferring.webm';
+import { TransferringIllustration } from './illustrations/TransferringIllustration';
 
 /**
  * Drive only ever has one product, so this single modal covers gathering data, starting the
@@ -95,23 +96,21 @@ export const DriveImportProcessModal = () => {
         <DriveStepModal
             onClose={isDone ? handleClose : undefined}
             closeDisabled={!isDone}
-            media={
-                <VideoInstructions loop>
-                    <source src={transferringWebm} type="video/webm" />
-                    <source src={transferringMp4} type="video/mp4" />
-                </VideoInstructions>
-            }
+            media={<TransferringIllustration />}
             primaryAction={{ label: c('Action').t`Got it`, onClick: handleClose, disabled: !isDone }}
         >
-            <h3 className="text-bold">
-                {isDone ? c('Title').t`Your import is starting` : c('Title').t`Setting up your import`}
-            </h3>
+            <h3 className="text-bold">{isDone ? c('Title').t`Import started` : c('Title').t`Preparing your import`}</h3>
             <p className="color-weak mt-2 mb-0">
                 {isDone
                     ? c('Info')
-                          .t`We will email you when the import is done. Once finished you'll find your import in a folder.`
-                    : c('Info').t`Connecting to Google Drive to setup your secure import to ${DRIVE_APP_NAME}.`}
+                          .t`We'll email you when your import is complete. Your files will appear in a folder in ${DRIVE_APP_NAME}.`
+                    : c('Info').t`Connecting to Google Drive and preparing your import.`}
             </p>
+            {isDone && (
+                <p className="mt-2 mb-0">
+                    <Href href={getKnowledgeBaseUrl('/import-files-google-drive')}>{c('Link').t`Learn more`}</Href>
+                </p>
+            )}
         </DriveStepModal>
     );
 };
