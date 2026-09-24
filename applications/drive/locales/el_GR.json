@@ -551,6 +551,9 @@
       "Go to settings": [
         "Μετάβαση στις ρυθμίσεις"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -961,6 +964,9 @@
       ],
       "Search is unavailable": [
         "Η αναζήτηση δεν είναι διαθέσιμη"
+      ],
+      "Search recent items": [
+        "Αναζήτηση πρόσφατων στοιχείων"
       ],
       "See how": [
         "Δείτε πώς"
@@ -5819,6 +5825,9 @@
       "Downloading": [
         "Λήψη"
       ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Σύρετε τα αρχεία και τους φακέλους σας εδώ ή χρησιμοποιήστε το κουμπί \"Νέο\" για να τα ανεβάσετε."
+      ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
       ],
@@ -6383,6 +6392,9 @@
       "or discover other features:": [
         "ή ανακαλύψτε άλλες δυνατότητες:"
       ],
+      "Or import your files from": [
+        "Ή εισαγάγετε τα αρχεία σας από"
+      ],
       "Or use the \"+ New\" button": [
         "Ή χρησιμοποιήστε το \"+ Νέο\" κουμπί"
       ],
@@ -6619,6 +6631,9 @@
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
       ],
+      "Search covers your recent items": [
+        "Η αναζήτηση καλύπτει τα πρόσφατα στοιχεία σας"
+      ],
       "Search data can't be read": [
         "Δεν είναι δυνατή η ανάγνωση των δεδομένων αναζήτησης"
       ],
@@ -6735,6 +6750,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Κάποια από τα αρχεία σας δεν είναι πλέον προσβάσιμα. Αποκαταστήστε την πρόσβαση στα αρχεία σας. ${ StartRecoveryButton }"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Ορισμένα παλαιότερα αρχεία δεν έχουν ευρετηριαστεί, επειδή το Drive σας είναι πολύ μεγάλο για πλήρη ευρετηρίαση."
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Ορισμένες φωτογραφίες σε αυτό το άλμπουμ δεν αποθηκεύονται στο χρονολόγιό σας. Η διαγραφή αυτού του άλμπουμ θα διαγράψει οριστικά αυτές τις φωτογραφίες."
@@ -7349,6 +7367,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Ο χώρος αποθήκευσής σας στο Drive είναι πολύ μεγάλος για να ευρετηριαστεί πλήρως σε αυτό το πρόγραμμα περιήγησης, επομένως η αναζήτηση καλύπτει μόνο τα πιο πρόσφατα στοιχεία σας. Ενδέχεται να μην εμφανίζονται παλαιότερα αρχεία στα αποτελέσματα."
       ],
       "Your email address and password were leaked:": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασής σας διέρρευσαν:"
@@ -10139,6 +10160,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Η τελευταία ευκαιρία να αποκτήσετε τον πρώτο μήνα του ${ plan } σε αυτή την τιμή."
+      ],
       "Last day to save": [
         "Τελευταία ημέρα αποθήκευσης"
       ],
@@ -10220,6 +10244,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Short @pm.me address": [
+        "Σύντομη διεύθυνση @pm.me"
       ],
       "Storage": [
         "Αποθηκευτικός χώρος"
@@ -13702,6 +13729,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Καλώς ήρθατε στο ${ DRIVE_APP_NAME }"
       ],
       "What are you migrating?": [
         "Τι μετεγκαταστάτε;"
