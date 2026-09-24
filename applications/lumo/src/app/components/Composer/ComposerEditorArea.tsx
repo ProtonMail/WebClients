@@ -21,6 +21,7 @@ export interface ComposerEditorAreaProps {
     composerInput: ReturnType<typeof useComposerInput>;
     canShowSendButton: boolean;
     sendIsDisabled: boolean;
+    isDictating?: boolean;
     isGenerating: boolean;
     isProcessingAttachment: boolean;
     onAbort?: () => void;
@@ -39,6 +40,7 @@ export const ComposerEditorArea = ({
     composerInput,
     canShowSendButton,
     sendIsDisabled,
+    isDictating = false,
     isGenerating,
     isProcessingAttachment,
     onAbort,
@@ -131,6 +133,10 @@ export const ComposerEditorArea = ({
         if (e.key === 'Enter' && isImeComposing(e)) {
             return;
         }
+        if (isDictating && e.key === 'Enter' && !e.shiftKey && !mentionState.isActive && !isImeComposing(e)) {
+            e.preventDefault();
+            return;
+        }
         if (mentionState.isActive) {
             if (e.key === 'ArrowDown') {
                 e.preventDefault();
@@ -195,6 +201,7 @@ export const ComposerEditorArea = ({
                 autoComplete="on"
                 autoCapitalize="sentences"
                 spellCheck
+                readOnly={isDictating}
             />
 
             <FileMentionComponent
@@ -209,7 +216,6 @@ export const ComposerEditorArea = ({
                 <div className="flex flex-row self-end items-end gap-1 h-full shrink-0 composer-submit-button">
                     <Tooltip
                         title={
-                            //eslint-disable-next-line no-nested-ternary
                             isProcessingAttachment
                                 ? c('collider_2025: Info').t`Please wait for files to finish processing`
                                 : isGenerating

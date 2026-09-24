@@ -327,17 +327,21 @@ const ComposerComponentInner = ({
 
     const { isEmpty, clear, textareaRef, setValue, handleSubmit } = composerInput;
 
-    // Appends a dictation delta to the composer; the stream's first delta starts with a leading
-    // space, so strip it when the composer is still empty (later mid-sentence spaces are kept).
-    const appendTranscriptDelta = useCallback(
-        (current: string, delta: string) => (current === '' ? delta.replace(/^\s+/, '') : current + delta),
-        []
-    );
+    // The dictation transcript is mutable (segments are replace-in-place), so each update carries
+    // the full current transcript rather than an incremental delta. Combine it with whatever the
+    // user had typed before dictation started (the base), inserting a separating space when the
+    // base doesn't already end in whitespace. The transcript can start with a leading space, so
+    // strip it when there's no base text to attach to. While dictating, the textarea is read-only
+    // and send is disabled so the frozen base cannot diverge from what the user sees or get replayed
+    // after a successful send clears the composer.
+    const valueBeforeDictationRef = useRef('');
 
-    const handleTranscriptDelta = useCallback(
-        (delta: string) => {
-            if (!delta) return;
-            setValue((current) => appendTranscriptDelta(current, delta));
+    const handleTranscriptUpdate = useCallback(
+        (transcript: string) => {
+            const base = valueBeforeDictationRef.current;
+            const trimmed = transcript.replace(/^\s+/, '');
+            const needsSpace = base !== '' && !/\s$/.test(base);
+            setValue(trimmed === '' ? base : `${base}${needsSpace ? ' ' : ''}${trimmed}`);
             setTimeout(() => {
                 const textarea = textareaRef.current;
                 if (textarea) {
@@ -346,7 +350,7 @@ const ComposerComponentInner = ({
                 }
             }, 0);
         },
-        [setValue, textareaRef, appendTranscriptDelta]
+        [setValue, textareaRef]
     );
     const {
         isDictating,
@@ -355,9 +359,8 @@ const ComposerComponentInner = ({
         toggleDictation,
         getAudioLevel,
     } = useDictation({
-        onTranscriptDelta: handleTranscriptDelta,
+        onTranscriptUpdate: handleTranscriptUpdate,
     });
-    const valueBeforeDictationRef = useRef('');
 
     const handleStartDictation = useCallback(() => {
         valueBeforeDictationRef.current = textareaRef.current?.value ?? '';
@@ -382,7 +385,8 @@ const ComposerComponentInner = ({
     }, [setValue, textareaRef, toggleDictation]);
 
     const canSubmit = !isEmpty || hasAttachments;
-    const sendIsDisabled = !(isGenerating ?? false) && (!canSubmit || isProcessingAttachment || isChatLimitBlocked);
+    const sendIsDisabled =
+        !(isGenerating ?? false) && (!canSubmit || isProcessingAttachment || isChatLimitBlocked || isDictating);
     const canShowSendButton = (isGenerating ?? false) || canSubmit;
 
     // Update parent component when empty state changes
@@ -548,6 +552,7 @@ const ComposerComponentInner = ({
                                     composerInput={composerInput}
                                     canShowSendButton={canShowSendButton}
                                     sendIsDisabled={sendIsDisabled}
+                                    isDictating={isDictating}
                                     isGenerating={isGenerating ?? false}
                                     isProcessingAttachment={isProcessingAttachment}
                                     onAbort={onAbort}
