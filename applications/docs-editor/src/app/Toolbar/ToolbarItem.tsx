@@ -5,7 +5,7 @@ import type { ToolbarItemInterface } from './ToolbarItemInterface'
 import ToolbarTooltip from './ToolbarTooltip'
 import { ToolbarButton } from './ToolbarButton'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { fixEmptyRoot } from '../Utils/fixEmptyRoot'
+import { fixEmptyRoot } from '../Containers/Docs/Utils/fixEmptyRoot'
 
 export function ToolbarItem({ item }: { item: ToolbarItemInterface }) {
   const [editor] = useLexicalComposerContext()
