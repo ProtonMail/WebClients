@@ -2,9 +2,9 @@ import { isDevOrBlack } from '@proton/shared/lib/env'
 import type { PropsWithChildren } from 'react'
 import { useMemo, useCallback } from 'react'
 
-import { DocsDependenciesProvider, type DocsDependencies } from '../DocsDependenciesProvider'
+import { DocsDependenciesProvider, type DocsDependencies } from '../Docs/DocsDependenciesProvider'
 import type { EditorRequiresClientMethods, SuggestionSummaryType } from '@proton/docs-shared'
-import { reportErrorToSentry } from '../../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 
 /**
