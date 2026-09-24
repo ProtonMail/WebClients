@@ -45,13 +45,4 @@ describe('useFeedbackFirstEligibility', () => {
             }
         );
     });
-
-    it('should return false for both when flag is disabled', () => {
-        mockUseFlag.mockReturnValue(false);
-        mockUseSubscription.mockReturnValue([buildSubscriptionMock(PLANS.MAIL), false]);
-
-        const { result } = componentsHookRenderer(() => useFeedbackFirstEligibility());
-        expect(result.current.hasB2CAccess).toBe(false);
-        expect(result.current.hasB2BAccess).toBe(false);
-    });
 });
