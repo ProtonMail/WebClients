@@ -1353,6 +1353,9 @@
       ],
       "Ignore": [
         "Negeren"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "Action: Docs": {
@@ -7874,6 +7877,16 @@
       ],
       "Do you remember your password?": [
         "Weet u uw wachtwoord nog?"
+      ],
+      "${ steps } step": [
+        "${ steps } stap",
+        "${ steps } stappen"
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Sleep uw bestanden en mappen hierheen of gebruik de knop \"Nieuw\" om te uploaden"
+      ],
+      "Or import your files from": [
+        "Of importeer uw bestanden van"
       ]
     },
     "info": {
@@ -14535,6 +14548,9 @@
       ],
       "Something went wrong": [
         "Er is iets fout gegaan."
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Welkom bij ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
