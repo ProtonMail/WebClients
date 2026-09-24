@@ -414,6 +414,9 @@
       "Go to label": [
         "Afficher le label"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -2921,9 +2924,6 @@
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
       ],
-      "Account does not exist": [
-        "Ce compte n'existe pas."
-      ],
       "Address could not be added.": [
         "L'adresse n'a pas pu être ajoutée."
       ],
@@ -3039,9 +3039,6 @@
       ],
       "Error decrypting a computer": [
         "Une erreur s'est produite lors du déchiffrement d'un ordinateur."
-      ],
-      "External accounts are not supported yet": [
-        "Les comptes externes ne sont pas encore pris en charge."
       ],
       "External invitations are not available yet.": [
         "Les invitations externes ne sont pas encore disponibles."
@@ -5491,6 +5488,12 @@
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l’aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n’est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
