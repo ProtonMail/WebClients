@@ -394,6 +394,9 @@
       "Get Started": [
         "Comença"
       ],
+      "Go back": [
+        "Torna enrere"
+      ],
       "Hide": [
         "Amaga"
       ],
@@ -1666,6 +1669,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Els identificadors d'accés, utilitzats juntament amb ${ passCliLink }, permeten automatitzar el CI/CD o donar al vostre agent d'IA un accés amb abast a allò que necessita per dur a terme la seva tasca."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Afegiu un mètode de pagament perquè la vostra subscripció continuï vigent quan acabi el període de prova."
+      ],
       "Add your custom email address to monitor:": [
         "Afegiu la vostra adreça electrònica personalitzada per monitoritzar:"
       ],
@@ -1984,6 +1990,9 @@
       "finance": [
         "finances"
       ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Finalitzeu iniciant sessió a la finestra del navegador que s'acaba d'obrir. ${ PASS_APP_NAME } es completarà automàticament un cop hàgiu acabat."
+      ],
       "Folder \"${ payload.folder.name }\" created": [
         "S'ha creat la carpeta «${ payload.folder.name }»"
       ],
@@ -2169,7 +2178,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -3018,6 +3028,9 @@
       ],
       "Account Type": [
         "Tipus de compte"
+      ],
+      "Add a payment method": [
+        "Afegir un mètode de pagament"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Afegiu un prefix aleatori per a aquest domini en crear un àlies."
@@ -4760,6 +4773,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Continue in your browser": [
+        "Continueu al navegador"
+      ],
       "Create a vault": [
         "Crea una caixa forta"
       ],
@@ -4910,6 +4926,9 @@
       ],
       "Item": [
         "Element"
+      ],
+      "Keep your subscription active": [
+        "Mantingueu la vostra subscripció activa"
       ],
       "Last autofill": [
         "Darrer emplenament automàtic"
