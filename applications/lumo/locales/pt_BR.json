@@ -1164,6 +1164,9 @@
       "Stop generating": [
         "Parar de gerar"
       ],
+      "Stop here": [
+        "Parar aqui"
+      ],
       "Submit": [
         "Enviar"
       ],
@@ -2087,6 +2090,12 @@
       "Partial content": [
         "Conteúdo parcial"
       ],
+      "PDF": [
+        "PDF"
+      ],
+      "PDF downloaded.": [
+        "PDF baixado."
+      ],
       "Please share what you expected": [
         "Compartilhe o que você esperava"
       ],
@@ -2095,6 +2104,9 @@
       ],
       "PPTX": [
         "PPTX"
+      ],
+      "PPTX downloaded.": [
+        "PPTX baixado."
       ],
       "Preparing ${ formatLabel }…": [
         "Preparando ${ formatLabel }…"
@@ -2251,6 +2263,9 @@
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Enviando ${ uploadProgress.fileName }"
+      ],
+      "Uploading to ${ DRIVE_SHORT_APP_NAME }…": [
+        "Enviando para ${ DRIVE_SHORT_APP_NAME }…"
       ],
       "used": [
         "usado"
@@ -3288,8 +3303,14 @@
       "Download image": [
         "Baixar imagem"
       ],
+      "Download PDF": [
+        "Baixar PDF"
+      ],
       "Download PPTX": [
         "Baixar PPTX"
+      ],
+      "Download source file": [
+        "Baixar arquivo de origem"
       ],
       "Edit": [
         "Editar"
@@ -3371,6 +3392,15 @@
       ],
       "Open conversation": [
         "Abrir conversa"
+      ],
+      "PDF": [
+        "PDF"
+      ],
+      "Plain text (.txt)": [
+        "Texto sem formatação (.txt)"
+      ],
+      "PowerPoint (.pptx)": [
+        "PowerPoint (.pptx)"
       ],
       "Preview": [
         "Pré-visualização"
@@ -3938,6 +3968,9 @@
       "Please upload your AI export before continuing.": [
         "Envie seu arquivo de exportação de IA antes de continuar."
       ],
+      "Preparing…": [
+        "Preparando…"
+      ],
       "Processing file...": [
         "Processando arquivo..."
       ],
@@ -3997,6 +4030,9 @@
       ],
       "Under your data, click Export data": [
         "Em seus dados, clique em Exportar dados"
+      ],
+      "Updating content…": [
+        "Atualizando conteúdo…"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar ${ LUMO_SHORT_APP_NAME }s personalizados ilimitados, desbloquear modelos de IA avançados e muito mais."
@@ -4711,6 +4747,9 @@
       ],
       "Folder created successfully": [
         "Pasta criada com sucesso"
+      ],
+      "Saved to ${ DRIVE_SHORT_APP_NAME }": [
+        "Salvado no ${ DRIVE_SHORT_APP_NAME }"
       ]
     },
     "collider_2025:Tab": {

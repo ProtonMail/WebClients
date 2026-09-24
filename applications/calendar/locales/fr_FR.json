@@ -470,6 +470,9 @@
       "Go to the next available appointment": [
         "Aller au prochain rendez-vous disponible"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -6506,6 +6509,12 @@
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l’aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n’est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."

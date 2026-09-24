@@ -406,6 +406,9 @@
       "Get Started": [
         "시작하기"
       ],
+      "Go back": [
+        "뒤로 가기"
+      ],
       "Hide": [
         "숨기기"
       ],
@@ -2032,6 +2035,9 @@
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "\"OpenSSH Authentication Agent\"를 찾은 다음, 마우스 오른쪽 버튼으로 클릭하여 속성으로 이동합니다."
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "방금 전 열린 브라우저 창에서 로그인을 완료하세요. ${ PASS_APP_NAME }가 로그인 완료 후 자동으로 가져갑니다."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "폴더 \"${ payload.folder.name }\" 생성됨"
@@ -4890,6 +4896,9 @@
       ],
       "Contacts": [
         "연락처"
+      ],
+      "Continue in your browser": [
+        "브라우저에서 계속하기"
       ],
       "Create a vault": [
         "금고 생성"

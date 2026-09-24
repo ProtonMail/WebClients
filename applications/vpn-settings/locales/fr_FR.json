@@ -9424,6 +9424,12 @@
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
       ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pour continuer, sélectionnez une méthode de récupération de compte et nous pourrons vérifier la demande."
       ],
