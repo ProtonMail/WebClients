@@ -68,7 +68,12 @@ import {
 } from '../organizationKey/actions';
 import { classifyRoleChange } from '../organizationKey/classifyRoleChange';
 import { type OrganizationRolesState, organizationRolesThunk } from '../organizationRoles';
-import { hasUserSourcedOwnerRole, isOrgKeyRequired, isOwnerRole } from '../organizationRoles/helpers';
+import {
+    hasUserSourcedOwnerRole,
+    isOrgKeyRequired,
+    isOwnerRole,
+    isOwnerRoleSyncEnabled,
+} from '../organizationRoles/helpers';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import InvalidAddressesError from './errors/InvalidAddressesError';
@@ -743,7 +748,7 @@ export const createMember = ({
             throw new UnavailableAddressesError(unavailableAddresses, availableAddresses);
         }
 
-        if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN && extra.unleashClient?.isEnabled('SyncOwnerRoleClient')) {
+        if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN && isOwnerRoleSyncEnabled(extra.unleashClient)) {
             await dispatch(getRequiredOwnerRoleId());
         }
 
