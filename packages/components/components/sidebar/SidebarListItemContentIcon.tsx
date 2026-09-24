@@ -7,8 +7,15 @@ interface Props extends IconComponentProps {
     icon: IconComponent;
 }
 
-const SidebarListItemContentIcon = ({ icon: Icon, className, ...rest }: Props) => {
-    return <Icon className={clsx([navigationIconClassName, className])} {...rest} />;
+// Inline style, as an svg `color` attribute loses to `.navigation-icon`'s color
+const SidebarListItemContentIcon = ({ icon: Icon, className, color, style, ...rest }: Props) => {
+    return (
+        <Icon
+            className={clsx([navigationIconClassName, className])}
+            style={color ? { ...style, color } : style}
+            {...rest}
+        />
+    );
 };
 
 export default SidebarListItemContentIcon;
