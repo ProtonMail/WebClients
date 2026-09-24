@@ -2287,8 +2287,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -3062,6 +3061,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Afegiu un mètode de pagament perquè la vostra subscripció continuï vigent quan acabi el període de prova."
       ]
     },
     "Keyboard key": {
@@ -4289,6 +4291,9 @@
       ],
       "ZIP or Postal code": [
         "Codi postal"
+      ],
+      "Add a payment method": [
+        "Afegir un mètode de pagament"
       ]
     },
     "Link": {
@@ -5410,6 +5415,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Keep your subscription active": [
+        "Mantingueu la vostra subscripció activa"
       ]
     },
     "Title_cloned_item": {

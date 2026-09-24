@@ -2287,8 +2287,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -3062,6 +3061,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Tilføj en betalingsmetode for at sikre, at dit abonnement fortsætter når din prøveperiode slutter."
       ]
     },
     "Keyboard key": {
@@ -4289,6 +4291,9 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
       ]
     },
     "Link": {
@@ -5410,6 +5415,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ],
+      "Keep your subscription active": [
+        "Hold dit abonnement kørende"
       ]
     },
     "Title_cloned_item": {
