@@ -1,5 +1,5 @@
 import type { DataTypesThatDocumentCanBeExportedAs, EditorInitializationConfig } from '@proton/docs-shared'
-import { EditorSystemMode, TranslatedResult } from '@proton/docs-shared'
+import { TranslatedResult } from '@proton/docs-shared'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
@@ -41,7 +41,7 @@ export type SpreadsheetProps = {
   hidden: boolean
   onEditorLoadResult: (result: TranslatedResult<void>) => void
   editorInitializationConfig: EditorInitializationConfig | undefined
-  systemMode: EditorSystemMode
+  isVersionHistoryView: boolean
   editingLocked: boolean
   setMigrationEditingLocked: (inProgress: boolean) => void
   updateLocalStateToLog: (state: unknown) => void
@@ -55,7 +55,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     hidden,
     onEditorLoadResult,
     editorInitializationConfig,
-    systemMode,
+    isVersionHistoryView,
     editingLocked,
     setMigrationEditingLocked,
     updateLocalStateToLog,
@@ -84,12 +84,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const [importType, setImportType] = useState<'excel' | 'ods'>()
 
   // TODO: Consider refactoring these into a single derived mode "state"
-  const isRevisionMode = systemMode === EditorSystemMode.Revision
   const isViewOnlyMode = !canEdit || viewportWidth['<=small']
-  const isReadonly = editingLocked || isRevisionMode || isViewOnlyMode
+  const isReadonly = editingLocked || isVersionHistoryView || isViewOnlyMode
 
   const isCreationOrConversion = !!editorInitializationConfig
-  const canRunMigration = !isRevisionMode && canEdit && !isCreationOrConversion
+  const canRunMigration = !isVersionHistoryView && canEdit && !isCreationOrConversion
 
   const handleYjsDriftDetected = useCallback(
     (result: SpreadsheetLocalYjsUpdateAuditResult, driftLogDetails: Record<string, unknown>) => {
@@ -347,22 +346,21 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     <ProtonSheetsUIStoreProvider
       state={state}
       isReadonly={isReadonly}
-      isRevisionMode={isRevisionMode}
       isViewOnlyMode={isViewOnlyMode}
       storeAction={storeAction}
     >
-      <UI hidden={hidden} isRevisionMode={isRevisionMode} isPublicMode={isPublicMode} />
+      <UI hidden={hidden} isVersionHistoryView={isVersionHistoryView} isPublicMode={isPublicMode} />
     </ProtonSheetsUIStoreProvider>
   )
 })
 
 type UIProps = {
   hidden: boolean
-  isRevisionMode: boolean
+  isVersionHistoryView: boolean
   isPublicMode: boolean
 }
 
-function UI({ hidden, isRevisionMode, isPublicMode }: UIProps) {
+function UI({ hidden, isVersionHistoryView, isPublicMode }: UIProps) {
   return (
     <>
       {hidden && (
@@ -372,11 +370,13 @@ function UI({ hidden, isRevisionMode, isPublicMode }: UIProps) {
         />
       )}
       <div className="flex h-full min-h-0 w-full min-w-0 flex-col bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
-        {!isRevisionMode && <Menubar className="mx-[1.125rem] shrink-0 max-sm:hidden" isPublicMode={isPublicMode} />}
+        {!isVersionHistoryView && (
+          <Menubar className="mx-[1.125rem] shrink-0 max-sm:hidden" isPublicMode={isPublicMode} />
+        )}
 
         <div className="flex min-h-0 min-w-0 grow">
           <div className="isolate z-10 flex h-full min-h-0 grow flex-col">
-            {!isRevisionMode && <Toolbar className="m-2 max-sm:m-0" />}
+            {!isVersionHistoryView && <Toolbar className="m-2 max-sm:m-0" />}
             <Grid />
             <BottomBar />
             <Dialogs />
