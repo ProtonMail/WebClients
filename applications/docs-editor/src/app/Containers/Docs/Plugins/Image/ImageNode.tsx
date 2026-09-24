@@ -15,7 +15,7 @@ import type {
 } from 'lexical'
 import { $applyNodeReplacement, $getEditor, DecoratorNode, createEditor } from 'lexical'
 import { isAllowedImageSrc } from '../../../../Conversion/ImageSrcUtils'
-import { getElementDimensionsWithoutPadding } from '../../../../Utils/getEditorWidthWithoutPadding'
+import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 
 const ImageComponent = React.lazy(() => import('./ImageComponent'))
 

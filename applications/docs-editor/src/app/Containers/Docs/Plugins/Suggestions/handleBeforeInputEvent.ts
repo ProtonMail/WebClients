@@ -18,8 +18,8 @@ import {
   $createTabNode,
   $createParagraphNode,
 } from 'lexical'
-import { $isNonInlineLeafElement } from '../../../../Utils/isNonInlineLeafElement'
-import { $splitNodeAtPoint } from '../../../../Utils/splitNodeAtPoint'
+import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
+import { $splitNodeAtPoint } from '../../Utils/splitNodeAtPoint'
 import { DeleteInputTypes, InsertionInputTypes } from './InputTypes'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'

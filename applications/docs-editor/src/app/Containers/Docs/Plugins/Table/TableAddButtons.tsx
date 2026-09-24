@@ -7,7 +7,7 @@ import { IcPlus } from '@proton/icons/icons/IcPlus'
 import { c } from 'ttag'
 import { $addNewColumnAtEndOfTable } from './TableUtils/addNewColumnToTable'
 import { $addNewRowAtEndOfTable } from './TableUtils/addNewRowToTable'
-import { isHTMLElement } from '../../../../Utils/guard'
+import { isHTMLElement } from '../../Utils/guard'
 
 const OVERFLOWING_COLUMN_BUTTON_OFFSET = 11
 
