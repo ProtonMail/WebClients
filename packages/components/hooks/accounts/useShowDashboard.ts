@@ -32,6 +32,7 @@ const useShowDashboard = (appName: APP_NAMES) => {
             case APPS.PROTONCALENDAR:
             case APPS.PROTONPASS:
             case APPS.PROTONMEET:
+            case APPS.PROTONSPACES:
                 return true;
             default:
                 return false;
