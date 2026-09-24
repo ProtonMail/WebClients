@@ -89,7 +89,7 @@ describe('resolveNavigation', () => {
         ...org,
         permissions,
         subscription: FREE_SUBSCRIPTION,
-        flags: { SharedServerFeature: true, B2BAlwaysOnEnabled: true },
+        flags: { B2BAlwaysOnEnabled: true },
         context: {
             isDataRecoveryAvailable: true,
             isSessionRecoveryAvailable: true,

@@ -65,12 +65,10 @@ export const getOrganizationAppRoutes = ({
     permissions,
 }: OrganizationRouterParams): SidebarConfig => {
     const {
-        isUserGroupsFeatureEnabled = false,
         isUserGroupsNoCustomDomainEnabled = false,
         isScribeEnabled = false,
         isZoomIntegrationEnabled = false,
         isProtonMeetIntegrationEnabled = false,
-        isSharedServerFeatureEnabled = false,
         isAlwaysOnVpnEnabled = false,
         isSsoForPbsEnabled = false,
         isRetentionPoliciesEnabled = false,
@@ -114,7 +112,6 @@ export const getOrganizationAppRoutes = ({
 
     const hasGroups = (groups?.length ?? 0) > 0;
     const canShowGroupsSection =
-        isUserGroupsFeatureEnabled &&
         (permissions['account.group.read'] || !!isGroupOwner) &&
         !!organization &&
         (hasGroups ||
@@ -346,10 +343,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Shared servers`,
             to: '/shared-servers',
             icon: IcEarth,
-            available:
-                isSharedServerFeatureEnabled &&
-                permissions['account.shared_server.read'] &&
-                entitlements.orgHasVpnLocationFilter,
+            available: permissions['account.shared_server.read'] && entitlements.orgHasVpnLocationFilter,
             subsections: [
                 {
                     id: 'servers',
