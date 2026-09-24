@@ -824,6 +824,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Go back": [
+        "Gå tillbaka"
       ]
     },
     "Activity": {
@@ -1499,6 +1502,13 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+      ],
+      "Failed to delete folder": [
+        "Misslyckades med att ta bort mapp",
+        "Misslyckades med att ta bort mappar"
+      ],
+      "Folder name does not match": [
+        "Mappnamn matchar inte"
       ]
     },
     "Error message": {
@@ -4254,6 +4264,9 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Confirm folder name": [
+        "Bekräfta mappnamn"
       ]
     },
     "Link": {
@@ -4608,6 +4621,9 @@
       ],
       "Used on ${ url }": [
         "Används på ${ url }"
+      ],
+      "Folder name": [
+        "Mappnamn"
       ]
     },
     "Result": {
@@ -5367,6 +5383,15 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Continue in your browser": [
+        "Fortsätt i din webbläsare"
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Ta bort mapp “${ name }“?"
+      ],
+      "Keep your subscription active": [
+        "Behåll din prenumeration aktiv"
       ]
     },
     "Title_cloned_item": {
@@ -5724,6 +5749,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+      ],
+      "Folder name is required": [
+        "Mappnamn är obligatoriskt"
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Valv ”${ name }” och alla dess objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
       ]
     }
   }

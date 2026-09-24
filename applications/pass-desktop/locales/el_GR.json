@@ -830,6 +830,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Go back": [
+        "Επιστροφή"
       ]
     },
     "Activity": {
@@ -1505,6 +1508,16 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
+      ],
+      "Failed to delete folder": [
+        "Αποτυχία διαγραφής φακέλου",
+        "Αποτυχία διαγραφής φακέλων"
+      ],
+      "Failed to update folder": [
+        "Η ενημέρωση του φακέλου απέτυχε."
+      ],
+      "Folder name does not match": [
+        "Το όνομα του φακέλου δεν ταιριάζει"
       ]
     },
     "Error message": {
@@ -2952,6 +2965,38 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Προσθέστε έναν τρόπο πληρωμής, ώστε η συνδρομή σας να συνεχιστεί μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "Η μορφή CSV προσφέρει έναν βολικό τρόπο προβολής των δεδομένων σας. Ωστόσο, λόγω της απλότητάς της, ορισμένα δεδομένα δε θα συμπεριληφθούν (προσαρμοσμένα πεδία, δομή φακέλων κ.λπ.). Για μια πλήρη εξαγωγή, συνιστούμε τη χρήση διαφορετικής μορφής."
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Ολοκληρώστε τη σύνδεση στο παράθυρο του προγράμματος περιήγησης που μόλις άνοιξε. Η εφαρμογή ${ PASS_APP_NAME } θα συνεχίσει αυτόματα μόλις ολοκληρώσετε τη διαδικασία."
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Ο φάκελος \"${ payload.folder.name }\" δημιουργήθηκε"
+      ],
+      "Folder deleted": [
+        "Ο φάκελος διεγράφη"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Ο φάκελος μετονομάστηκε σε \"${ payload.folder.name }\""
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Πλήρης συγχρονισμός δεδομένων για τη βελτίωση της απόδοσης της εφαρμογής. Σας ευχαριστούμε για την υπομονή σας."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Θα μετακινηθεί μόνο ${ count } στοιχείο στον φάκελο \"${ folderName }\". Τα στοιχεία στους υποφακέλους δε θα μετακινηθούν.",
+        "Θα μετακινηθούν μόνο ${ count } στοιχεία στον φάκελο \"${ folderName }\". Τα στοιχεία στους υποφακέλους δε θα μετακινηθούν."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Θα μετακινηθεί μόνο ${ count } στοιχείο. Τα στοιχεία που βρίσκονται σε φακέλους δε θα μετακινηθούν.",
+        "Θα μετακινηθούν μόνο ${ count } στοιχεία. Τα στοιχεία που βρίσκονται σε φακέλους δε θα μετακινηθούν."
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Μεταβείτε σε άλλο φάκελο ή δημιουργήστε ένα στοιχείο σε αυτόν το φάκελο"
       ]
     },
     "Keyboard key": {
@@ -4257,6 +4302,18 @@
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
+      ],
+      "Add a payment method": [
+        "Προσθέστε μία μέθοδο πληρωμής"
+      ],
+      "Confirm folder name": [
+        "Επιβεβαίωση ονόματος φακέλου"
+      ],
+      "Create a folder": [
+        "Δημιουργία φακέλου"
+      ],
+      "Folders": [
+        "Φάκελοι"
       ]
     },
     "Link": {
@@ -4611,6 +4668,12 @@
       ],
       "Used on ${ url }": [
         "Χρησιμοποιείται στο ${ url }"
+      ],
+      "Folder name": [
+        "Όνομα φακέλου"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Επαναπληκτρολογήστε \"${ name }\" για να επιβεβαιώσετε τη διαγραφή"
       ]
     },
     "Result": {
@@ -5345,6 +5408,40 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Continue in your browser": [
+        "Συνεχίστε στο πρόγραμμα περιήγησης σας."
+      ],
+      "Create folder in \"${ vaultName }\"": [
+        "Δημιουργία φακέλου στη \"${ vaultName }\""
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Δημιουργία υποφακέλου στο \"${ folderName }\""
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Διαγραφή φακέλου “${ name }\";"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Διαγραφή κρύπτης \"${ name }\";"
+      ],
+      "Keep your subscription active": [
+        "Διατήρηση της συνδρομής σας ενεργή"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "Μετακίνηση ${ count } στοιχείου στο ${ target }",
+        "Μετακίνηση ${ count } στοιχείων στο ${ target }"
+      ],
+      "Move all items?": [
+        "Μετακίνηση όλων των στοιχείων;"
+      ],
+      "Move item to \"${ target }\"": [
+        "Μετακίνηση στοιχείου στο \"${ target }\""
+      ],
+      "Rename folder": [
+        "Μετονομασία φακέλου"
+      ],
+      "Your folder is empty": [
+        "Ο φάκελος είναι κενός"
       ]
     },
     "Title_cloned_item": {
@@ -5702,6 +5799,24 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Όλα τα στοιχεία σε αυτόν τον φάκελο, συμπεριλαμβανομένων των υποφακέλων του, θα διαγραφούν. Δεν είναι δυνατή η αναίρεση αυτής της ενέργειας."
+      ],
+      "Folder name is required": [
+        "Απαιτείται όνομα φακέλου"
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Η κρύπτη \"${ name }\" και όλα τα στοιχεία της θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Φτάσατε στο μέγιστο επίπεδο ένθεσης φακέλων."
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Έχετε φτάσει τον μέγιστο αριθμό φακέλων σε αυτό το επίπεδο."
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Έχετε φτάσει τον μέγιστο αριθμό φακέλων για αυτή την κρύπτη"
       ]
     }
   }
