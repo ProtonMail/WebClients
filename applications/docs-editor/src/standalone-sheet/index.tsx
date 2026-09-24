@@ -1,6 +1,5 @@
 import '../app/style'
 import './standalone-sheet.css'
-import { EditorSystemMode } from '@proton/docs-shared'
 import { createRoot } from 'react-dom/client'
 import { type ComponentProps, useCallback, useEffect, useMemo, useState } from 'react'
 import {
@@ -51,6 +50,7 @@ function StandaloneSheet() {
       isDevOrBlack: () => true,
       versionInfo: { environment: undefined, version: 'standalone' },
       logger: {
+        // eslint-disable-next-line no-console
         info: console.info.bind(console),
         warn: console.warn.bind(console),
         error: console.error.bind(console),
@@ -117,6 +117,7 @@ function StandaloneSheet() {
     [session, publishError],
   )
   const updateLocalStateToLog = useCallback((state: unknown) => {
+    // eslint-disable-next-line no-console
     console.info('Workbook state', state)
   }, [])
   return (
@@ -132,7 +133,7 @@ function StandaloneSheet() {
             hidden={!ready}
             editingLocked={!ready || migrationEditingLocked || errorLocked}
             setMigrationEditingLocked={setMigrationEditingLocked}
-            systemMode={EditorSystemMode.Edit}
+            isVersionHistoryView={false}
             isPublicMode={false}
             editorInitializationConfig={undefined}
             onEditorLoadResult={onEditorLoadResult}

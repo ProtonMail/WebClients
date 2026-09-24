@@ -766,7 +766,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               hidden={editorHidden}
               onEditorLoadResult={onEditorLoadResult}
               editorInitializationConfig={editorInitializationConfig}
-              systemMode={systemMode}
+              isVersionHistoryView={systemMode === EditorSystemMode.Revision}
               editingLocked={editingLocked || userMode === EditorUserMode.Preview}
               setMigrationEditingLocked={setMigrationEditingLocked}
               updateLocalStateToLog={(state) => {
