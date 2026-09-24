@@ -6,6 +6,7 @@ import {
     ROLE_NAMES_REQUIRING_ORG_KEY,
     ROLE_SOURCE,
 } from '@proton/shared/lib/interfaces/OrganizationRole';
+import type { UnleashClient } from '@proton/unleash/UnleashClient';
 
 const getRoleIdsBySource = (roles: RoleAssignment[], source: ROLE_SOURCE): Set<string> =>
     new Set(roles.filter(({ Source }) => Source === source).map(({ Role }) => Role.OrganizationRoleID));
@@ -32,6 +33,14 @@ export const canManageOwnerRole = ({
     isEditingSelf: boolean;
     hasOrgKeyAccess: boolean;
 }): boolean => (currentUserRoles?.some(isOwnerRole) ?? false) && !isEditingSelf && hasOrgKeyAccess;
+
+/**
+ * Syncing the owner role with the legacy `member.Role` is the default behaviour. `SyncOwnerRoleClientKillSwitch`
+ * is the kill switch that falls back to the legacy `PUT core/v4/members/{id}/role` path, so an unreachable
+ * Unleash (which reports every flag as disabled) keeps the default rather than silently reverting.
+ */
+export const isOwnerRoleSyncEnabled = (unleashClient: UnleashClient | undefined): boolean =>
+    !unleashClient?.isEnabled('SyncOwnerRoleClientKillSwitch');
 
 export const getTranslatedRoleName = (name: string): string => {
     switch (name) {
