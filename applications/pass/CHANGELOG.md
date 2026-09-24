@@ -1,3 +1,7 @@
+### Version 1.41.1
+
+- Fix items not appearing when selecting a vault after updating to 1.41.0
+
 ### Version 1.41.0
 
 - Support folders inside vaults (gradual rollout)
