@@ -22,7 +22,7 @@
 export type JSONSchema = Record<string, any>;
 
 /** Reads run automatically; mutations require an explicit review-edit-confirm from the user. */
-type ToolKind = 'read' | 'mutation';
+export type ToolKind = 'read' | 'mutation';
 
 /**
  * A tool identifier — an **open** string. The framework never enumerates any product's tools: a
