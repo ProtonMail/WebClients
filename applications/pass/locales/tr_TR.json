@@ -800,6 +800,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Go back": [
+        "Geri dön"
       ]
     },
     "Activity": {
@@ -2871,6 +2874,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Deneme süreniz sona erdiğinde aboneliğinizin sürmesi için bir ödeme yöntemi ekleyin."
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Az önce açılan tarayıcı penceresinde oturum açmayı tamamlayın. Oturumu açtığınızda ${ PASS_APP_NAME } kaldığı yerden ilerleyecek."
       ]
     },
     "Keyboard key": {
@@ -4125,6 +4134,9 @@
       ],
       "ZIP or Postal code": [
         "Posta kodu"
+      ],
+      "Add a payment method": [
+        "Bir ödeme yöntemi ekleyin"
       ]
     },
     "Link": {
@@ -5227,6 +5239,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ],
+      "Continue in your browser": [
+        "Tarayıcınızdan ilerleyin"
+      ],
+      "Keep your subscription active": [
+        "Aboneliğinizi etkin tutun"
       ]
     },
     "Title_cloned_item": {
