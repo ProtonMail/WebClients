@@ -56,7 +56,7 @@ import { SheetsAdapter } from './adapters/SheetsAdapter'
 import { StandaloneSheetsEditor, type SpreadsheetRef } from './Spreadsheet/public'
 import SheetsLayout from './SheetsLayout'
 import { useEditorTheme } from '../Theme/EditorThemeProvider'
-import { DocsAdapter } from './Docs/adapters/DocsAdapter'
+import { DocsAdapter } from './adapters/DocsAdapter'
 import { StandaloneDocsEditor } from './Docs/StandaloneDocsEditor'
 
 type AppProps = {
@@ -101,8 +101,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const scrollPositionBeforePreview = useRef<number | null>(null)
   const [tableOfContentsVisibleState, setTableOfContentsVisibleState] = useState(false)
 
-  const [sheetsInitializationMode, setSheetsInitializationMode] =
-    useState<SheetsInitializationMode>('resolving')
+  const [sheetsInitializationMode, setSheetsInitializationMode] = useState<SheetsInitializationMode>('resolving')
   useEffect(() => {
     if (!didSetInitialConfig) {
       return
