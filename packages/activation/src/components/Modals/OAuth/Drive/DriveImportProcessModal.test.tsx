@@ -44,7 +44,7 @@ describe('DriveImportProcessModal', () => {
 
         easySwitchRender(<DriveImportProcessModal />);
 
-        screen.getByText('Setting up your import');
+        screen.getByText('Preparing your import');
         expect(screen.getByText('Got it')).toBeDisabled();
         expect(screen.getByTestId('modal:close')).toBeDisabled();
     });
@@ -54,7 +54,7 @@ describe('DriveImportProcessModal', () => {
 
         easySwitchRender(<DriveImportProcessModal />);
 
-        screen.getByText('Your import is starting');
+        screen.getByText('Import started');
         expect(screen.getByText('Got it')).toBeEnabled();
         expect(screen.getByTestId('modal:close')).toBeEnabled();
     });
