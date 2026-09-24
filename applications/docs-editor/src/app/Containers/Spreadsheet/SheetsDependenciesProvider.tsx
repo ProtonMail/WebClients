@@ -1,4 +1,3 @@
-import type { AppPlatform } from '@proton/docs-shared'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
@@ -83,7 +82,7 @@ export type SheetsSession = {
     version: string
   }
   logger: SheetsLogger
-  appPlatform: AppPlatform | null
+  appPlatform: 'web' | 'nativeMobileWeb' | null
   theme: 'light' | 'dark'
   featureFlags: SheetsFeatureFlags
 }
