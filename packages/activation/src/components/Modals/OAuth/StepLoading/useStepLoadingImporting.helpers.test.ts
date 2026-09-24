@@ -104,10 +104,15 @@ describe('createImporterTask', () => {
     });
 
     it('builds the Drive ImportFolder payload from the SDK when Drive is selected', async () => {
-        const { props, api } = setup({ products: [ImportType.DRIVE], driveClient: makeDriveClient() });
+        const driveClient = makeDriveClient();
+        const { props, api } = setup({ products: [ImportType.DRIVE], driveClient });
 
         await createImporterTask(props);
 
+        // Windows-syncable, space-free folder name: `google-drive-<account>-<ISO timestamp without colons>`.
+        expect(driveClient.experimental.prepareImportFolder).toHaveBeenCalledWith(
+            expect.stringMatching(/^google-drive-me-\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}\.\d{3}Z$/)
+        );
         expect(getStartPayload(api)?.Drive).toEqual({
             ImportFolder: {
                 VolumeID: 'vol-1',

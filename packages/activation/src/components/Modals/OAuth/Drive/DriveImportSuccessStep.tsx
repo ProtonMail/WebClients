@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { DriveStepModal } from './DriveStepModal';
-import image from './illustrations/transfer-done.webp';
+import { TransferFinishIllustration } from './illustrations/TransferFinishIllustration';
 
 interface Props {
     onClose: () => void;
@@ -13,7 +13,7 @@ interface Props {
 export const DriveImportSuccessStep = ({ onClose }: Props) => (
     <DriveStepModal
         onClose={onClose}
-        media={<img src={image} alt="" />}
+        media={<TransferFinishIllustration />}
         // TODO: Go to folder action needs BE change and will be implemented later
         // secondaryAction={{ label: c('Action').t`Go to folder`, onClick: onGoToFolder }}
         primaryAction={{ label: c('Action').t`Got it`, onClick: onClose }}

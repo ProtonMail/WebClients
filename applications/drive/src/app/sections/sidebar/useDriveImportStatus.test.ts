@@ -3,6 +3,8 @@ import { act, renderHook } from '@testing-library/react';
 import type { ApiEvent } from '@proton/activation/src/api/api.interface';
 import { ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
+import { resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
+import type { MailImportState } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import type { EasySwitchState } from '@proton/activation/src/logic/store';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useEventManager } from '@proton/components';
@@ -30,10 +32,12 @@ const easySwitchState = ({
     importer,
     activeState,
     loading = 'success',
+    oauthStep,
 }: {
     importer?: boolean;
     activeState?: ApiImporterState;
     loading?: 'idle' | 'pending' | 'success' | 'failed';
+    oauthStep?: MailImportState['step'];
 }) =>
     ({
         importers: {
@@ -51,6 +55,7 @@ const easySwitchState = ({
                       },
             loading,
         },
+        oauthDraft: { mailImport: oauthStep ? { step: oauthStep } : undefined },
     }) as unknown as EasySwitchState;
 
 const renderWithState = (state: EasySwitchState) => {
@@ -185,6 +190,22 @@ describe('useDriveImportStatus', () => {
             act(() => emitEvent({ Imports: [{ ID: 'importer-id', Action: 2, Importer: { Active: {} } } as any] }));
 
             expect(result.current.outcome).toBeUndefined();
+        });
+
+        it('closes the "Import started" modal when the outcome arrives while it is open', () => {
+            renderWithState(easySwitchState({ importer: true, oauthStep: 'success' }));
+
+            act(() => emitEvent(importerEvent(ApiImporterState.DONE)));
+
+            expect(dispatch).toHaveBeenCalledWith(resetOauthDraft());
+        });
+
+        it('leaves the OAuth flow alone when the modal is not on the "Import started" step', () => {
+            renderWithState(easySwitchState({ importer: true, oauthStep: 'products' }));
+
+            act(() => emitEvent(importerEvent(ApiImporterState.DONE)));
+
+            expect(dispatch).not.toHaveBeenCalledWith(resetOauthDraft());
         });
     });
 });
