@@ -23,10 +23,15 @@ const SILENCE_RMS_THRESHOLD = 0.01;
 const SILENCE_HANGOVER_SEC = 2;
 
 interface UseDictationOptions {
-    onTranscriptDelta: (text: string) => void;
+    /**
+     * Called with the full current dictation transcript whenever it changes. Segments are
+     * mutable (replace-in-place), so this is not incremental — the consumer should overwrite the
+     * dictation region with this value rather than append to it.
+     */
+    onTranscriptUpdate: (transcript: string) => void;
 }
 
-export const useDictation = ({ onTranscriptDelta }: UseDictationOptions) => {
+export const useDictation = ({ onTranscriptUpdate }: UseDictationOptions) => {
     const [isDictating, setIsDictating] = useState(false);
     const [isConnected, setIsConnected] = useState(false);
     const [dictationError, setDictationError] = useState(false);
@@ -47,6 +52,13 @@ export const useDictation = ({ onTranscriptDelta }: UseDictationOptions) => {
     const intentionalCloseRef = useRef(false);
     // Guards against an async decrypt finishing after the user has cancelled the session.
     const dictationActiveRef = useRef(false);
+    // Mutable transcription segments keyed by segment_id. Each `transcription.segment` event
+    // carries that segment's full current text and replaces the previous entry for its id; the
+    // transcript we surface is the segments joined in id order.
+    const segmentsRef = useRef<Map<number, string>>(new Map());
+    // Decrypt is async; process WebSocket messages in order so a slow decrypt cannot overwrite a
+    // newer segment revision that already finished.
+    const wsMessageChainRef = useRef(Promise.resolve());
 
     // Imperative (no React state/re-render per audio frame) so callers can drive a rAF-based
     // animation off it — returns a 0..1 volume level from the live mic signal.
@@ -99,6 +111,8 @@ export const useDictation = ({ onTranscriptDelta }: UseDictationOptions) => {
         sessionReadyRef.current = false;
         encryptionRef.current = null;
         appendsSinceCommitRef.current = 0;
+        segmentsRef.current.clear();
+        wsMessageChainRef.current = Promise.resolve();
         cleanupAudioGraph();
         setIsDictating(false);
         setIsConnected(false);
@@ -165,6 +179,8 @@ export const useDictation = ({ onTranscriptDelta }: UseDictationOptions) => {
                 ws.send(JSON.stringify(sessionUpdate));
                 sessionReadyRef.current = true;
                 appendsSinceCommitRef.current = 0;
+                segmentsRef.current.clear();
+                wsMessageChainRef.current = Promise.resolve();
                 lastVoiceAtRef.current = performance.now();
                 wasSendingRef.current = true;
                 setIsConnected(true);
@@ -249,41 +265,59 @@ export const useDictation = ({ onTranscriptDelta }: UseDictationOptions) => {
             };
 
             ws.onmessage = (event) => {
-                void (async () => {
-                    let message: any;
-                    try {
-                        message = JSON.parse(event.data);
-                    } catch {
-                        console.error('[dictation] failed to parse WebSocket message');
-                        return;
-                    }
+                wsMessageChainRef.current = wsMessageChainRef.current
+                    .then(async () => {
+                        let message: any;
+                        try {
+                            message = JSON.parse(event.data);
+                        } catch {
+                            console.error('[dictation] failed to parse WebSocket message');
+                            return;
+                        }
 
-                    const decryptField = async (field: { text?: string; encrypted?: boolean } | undefined) => {
-                        if (!field) return '';
-                        if (field.encrypted && encryptionRef.current) {
-                            return encryptionRef.current.decryptString(field.text ?? '');
-                        }
-                        return field.text ?? '';
-                    };
+                        const decryptField = async (field: { text?: string; encrypted?: boolean } | undefined) => {
+                            if (!field) return '';
+                            if (field.encrypted && encryptionRef.current) {
+                                return encryptionRef.current.decryptString(field.text ?? '');
+                            }
+                            return field.text ?? '';
+                        };
 
-                    if (message.type === 'conversation.item.input_audio_transcription.delta') {
-                        const text = await decryptField(message.delta);
-                        if (dictationActiveRef.current) {
-                            onTranscriptDelta(text);
+                        if (message.type === 'transcription.segment') {
+                            // The segment's encrypted text is flattened onto the event itself
+                            // ({ text, encrypted }), alongside plaintext segment_id/is_final.
+                            if (typeof message.segment_id !== 'number') {
+                                console.error('[dictation] transcription.segment missing segment_id');
+                                return;
+                            }
+                            const segmentId = message.segment_id;
+                            const text = await decryptField(message);
+                            if (!dictationActiveRef.current) {
+                                return;
+                            }
+                            segmentsRef.current.set(segmentId, text);
+                            const transcript = [...segmentsRef.current.entries()]
+                                .sort(([a], [b]) => a - b)
+                                .map(([, segmentText]) => segmentText.trim())
+                                .filter((segmentText) => segmentText.length > 0)
+                                .join(' ');
+                            onTranscriptUpdate(transcript);
+                        } else if (message.type === 'error') {
+                            console.error('[dictation] server reported an error');
+                            if (typeof message.message === 'string' && message.message.includes('inactivity')) {
+                                // Not a real failure — the server closes idle sessions on its own.
+                                // Treat it the same as the user clicking stop, not a connection error.
+                                stopDictation();
+                            } else {
+                                setDictationError(true);
+                                setIsConnected(false);
+                                cleanupAudioGraph();
+                            }
                         }
-                    } else if (message.type === 'error') {
-                        console.error('[dictation] server reported an error');
-                        if (typeof message.message === 'string' && message.message.includes('inactivity')) {
-                            // Not a real failure — the server closes idle sessions on its own.
-                            // Treat it the same as the user clicking stop, not a connection error.
-                            stopDictation();
-                        } else {
-                            setDictationError(true);
-                            setIsConnected(false);
-                            cleanupAudioGraph();
-                        }
-                    }
-                })();
+                    })
+                    .catch((error) => {
+                        console.error('[dictation] failed to handle WebSocket message', error);
+                    });
             };
 
             ws.onerror = () => {
@@ -315,7 +349,7 @@ export const useDictation = ({ onTranscriptDelta }: UseDictationOptions) => {
             setIsConnected(false);
             setDictationError(true);
         }
-    }, [cleanupAudioGraph, onTranscriptDelta, stopDictation]);
+    }, [cleanupAudioGraph, onTranscriptUpdate, stopDictation]);
 
     const toggleDictation = useCallback(() => {
         if (isDictating) {
