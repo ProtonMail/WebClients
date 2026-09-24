@@ -46,6 +46,7 @@ import {
     removeSignatureDefinition,
 } from './skills/settings/signature';
 import { openSupportTicketDefinition } from './skills/support/openSupportTicket';
+import type { LumoMailConfigTelemetry } from './telemetry/useLumoMailTelemetry';
 import type { MailToolDeps } from './toolModule';
 
 const anyReferences = {} as any;
@@ -279,7 +280,7 @@ describe('a tool result describes what happened, and never directs the next step
     });
 
     it('covers every registered tool', () => {
-        const registered = buildLumoMailConfig({} as MailToolDeps)
+        const registered = buildLumoMailConfig({} as MailToolDeps, {} as LumoMailConfigTelemetry)
             .definitions.map(({ name }) => name)
             .filter((name) => name !== LOAD_GUIDE_TOOL_NAME);
 
