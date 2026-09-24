@@ -684,6 +684,9 @@
       "Google": [
         "Google"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -1252,6 +1255,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "Exécuter sur les serveurs ${ BRAND_NAME }"
       ],
+      "Run realistic session": [
+        "Effectuer une session réaliste"
+      ],
       "Save": [
         "Enregistrer"
       ],
@@ -1544,7 +1550,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7102,6 +7109,10 @@
         "${ selectedFoldersCountLocalized } label sélectionné",
         "${ selectedFoldersCountLocalized } labels sélectionnés"
       ],
+      "${ steps } step": [
+        "${ steps } étape",
+        "${ steps } étapes"
+      ],
       "${ storage } storage": [
         "${ storage } d'espace de stockage"
       ],
@@ -8094,8 +8105,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8196,6 +8206,9 @@
       "Manage your labels": [
         "Gérer vos labels"
       ],
+      "Mark ${ emails } as read": [
+        "Marquer ${ emails } comme lus"
+      ],
       "Mark ${ emails } as unread": [
         "Marquer ${ emails } comme non lus"
       ],
@@ -8285,6 +8298,9 @@
       ],
       "Move ${ emails }": [
         "Déplacer ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Déplacer ${ emails } vers ${ destination }"
       ],
       "Move emails": [
         "Déplacer les e-mails"
@@ -8378,6 +8394,12 @@
       ],
       "Not connected": [
         "Non connecté"
+      ],
+      "Not found in the encrypted search index.": [
+        "Introuvable dans l'index de recherche chiffré."
+      ],
+      "Not found in the foundation-search index.": [
+        "Introuvable dans l'index de recherche fondation."
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
@@ -8584,9 +8606,17 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contactez-nous pour toute aide concernant ${ BRAND_NAME }."
       ],
+      "Read ${ count } email": [
+        "Lire votre ${ count } e-mail",
+        "Lire vos ${ count } e-mails"
+      ],
       "Read ${ count } email on screen": [
         "Lire ${ count } e-mail sur l'écran",
         "Lire ${ count } e-mails sur l'écran"
+      ],
+      "Read ${ count } message in this thread": [
+        "Lire votre ${ count } message dans ce fil de discussion",
+        "Lire vos ${ count } messages dans ce fil de discussion"
       ],
       "Read ${ count } open draft": [
         "Lire ${ count } brouillon ouvert",
@@ -8598,8 +8628,23 @@
       "Read the open draft": [
         "Lire le brouillon ouvert"
       ],
+      "Read your ${ count } filter": [
+        "Lire votre ${ count } filtre",
+        "Lire vos ${ count } filtres"
+      ],
+      "Read your ${ count } folder": [
+        "Lire votre ${ count } dossier",
+        "Lire vos ${ count } dossiers"
+      ],
+      "Read your ${ count } label": [
+        "Lire votre ${ count } label",
+        "Lire vos ${ count } labels"
+      ],
       "Read your auto-reply": [
         "Lire votre message de réponse automatique"
+      ],
+      "Read your display settings": [
+        "Lire vos paramètres d'affichage"
       ],
       "Read your signature": [
         "Lire votre signature"
@@ -8663,6 +8708,9 @@
       ],
       "Restore": [
         "Restauration"
+      ],
+      "Results came from the local search.": [
+        "Les résultats sont issus de la recherche locale."
       ],
       "Revise the ${ draft }": [
         "Réviser le ${ draft }"
@@ -8853,6 +8901,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
+      ],
+      "Source document in encrypted search index": [
+        "Document source dans l'index de recherche chiffré"
       ],
       "Star emails": [
         "Mettre les e-mails en favoris"
@@ -9172,6 +9223,12 @@
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l’aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n’est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
@@ -10237,6 +10294,9 @@
       "BTC amount": [
         "Montant BTC"
       ],
+      "Burst write": [
+        "Écriture rafale"
+      ],
       "Calendar": [
         "Calendrier"
       ],
@@ -10291,8 +10351,14 @@
       "Colors": [
         "Couleurs"
       ],
+      "Column": [
+        "Colonne"
+      ],
       "Command line interface (CLI)": [
         "Interface de ligne de commande (CLI)"
+      ],
+      "Compact": [
+        "Compact"
       ],
       "Company": [
         "Entreprise"
@@ -10528,6 +10594,9 @@
       "Go to Updates": [
         "Accéder aux mises à jour"
       ],
+      "Grouped conversations": [
+        "Conversations groupées"
+      ],
       "Has attachments": [
         "Avec pièces jointes"
       ],
@@ -10611,6 +10680,9 @@
       ],
       "Location": [
         "Lieu"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Tâches longues (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "Informations de débogage d'e-mail"
@@ -10804,6 +10876,9 @@
       "Read": [
         "Lus"
       ],
+      "Read / export": [
+        "Lire / exporter"
+      ],
       "Recipient": [
         "Destinataire"
       ],
@@ -10837,6 +10912,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
+      "Row": [
+        "Ligne"
+      ],
       "Search in": [
         "Rechercher dans"
       ],
@@ -10860,6 +10938,9 @@
       ],
       "Signature": [
         "Signature"
+      ],
+      "Single messages": [
+        "Messages séparés"
       ],
       "Size:": [
         "Taille :"
@@ -11031,6 +11112,9 @@
       ],
       "Without attachment": [
         "Sans pièce jointe"
+      ],
+      "Write": [
+        "Écrire"
       ],
       "Writing assistant": [
         "Assistant d'écriture"
@@ -14835,6 +14919,9 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } message → ${ wakeTime }",
         "${ count } messages → ${ wakeTime }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Mettre en attente ${ emails } jusqu'à ${ wakeTime }"
       ]
     },
     "Snooze message": {
