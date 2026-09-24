@@ -8,4 +8,6 @@ export const tryDuo2026Metadata: CouponConfigMetadata = {
     availableCycles: [CYCLE.YEARLY],
     disableCurrencySelector: true,
     blockManualEntryOfCoupon: true,
+    hideLumoAddonBanner: true,
+    hideMeetAddonBanner: true,
 };
