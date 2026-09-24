@@ -1,6 +1,5 @@
 import * as Icons from '../../icons'
 import * as Ariakit from '@ariakit/react'
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { useCallback, useEffect, useRef, useState, type ComponentProps, type ReactElement } from 'react'
 import { c } from 'ttag'
 import { createStringifier } from '../../../stringifier'
@@ -361,7 +360,8 @@ function strings() {
     'Tab Separated Values (.tsv)': c('sheets_2025:Spreadsheet editor menubar file menu').t`Tab Separated Values (.tsv)`,
     Help: c('sheets_2025:Spreadsheet editor menubar file menu').t`Help`,
     'View recent spreadsheets': c('sheets_2025:Spreadsheet editor menubar file menu').t`View recent spreadsheets`,
-    'Open Proton Drive': c('sheets_2025:Spreadsheet editor menubar file menu').t`Open ${DRIVE_APP_NAME}`,
+    // eslint-disable-next-line no-restricted-syntax -- "Proton Drive" is stable copy, so hardcoding keeps standalone Sheets independent of @proton/shared.
+    'Open Proton Drive': c('sheets_2025:Spreadsheet editor menubar file menu').t`Open Proton Drive`,
     'Download logs': c('sheets_2025:Spreadsheet editor menubar file menu').t`Download logs`,
     'Toggle debug mode': c('sheets_2025:Spreadsheet editor menubar file menu').t`Toggle debug mode`,
     Settings: c('sheets_2025:Spreadsheet editor menubar file menu').t`Settings`,
