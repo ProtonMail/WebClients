@@ -45,12 +45,10 @@ export type AccountSettingsRouterParams = {
 // Define the feature flag that are used in the account app
 export type Flags = {
     canDisplayNonPrivateEmailPhone: boolean;
-    isUserGroupsFeatureEnabled: boolean;
     isUserGroupsNoCustomDomainEnabled: boolean;
     isScribeEnabled: boolean;
     isZoomIntegrationEnabled: boolean;
     isProtonMeetIntegrationEnabled: boolean;
-    isSharedServerFeatureEnabled: boolean;
     isAlwaysOnVpnEnabled: boolean;
     isCryptoPostQuantumOptInEnabled: boolean;
     isSsoForPbsEnabled: boolean;

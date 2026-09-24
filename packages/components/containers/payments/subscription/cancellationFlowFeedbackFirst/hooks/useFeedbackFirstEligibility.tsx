@@ -13,17 +13,11 @@ import {
     hasMailPro,
     hasVisionary,
 } from '@proton/payments/core/subscription/helpers';
-import { useFlag } from '@proton/unleash/useFlag';
 
 export const useFeedbackFirstEligibility = () => {
     const [subscription] = useSubscription();
-    const feedbackFirstCancellationEnabled = useFlag('CancellationFlowFeedbackFirst');
 
     const getHasB2BAccess = () => {
-        if (!feedbackFirstCancellationEnabled) {
-            return false;
-        }
-
         if (
             hasMailPro(subscription) ||
             hasMailBusiness(subscription) ||
@@ -38,10 +32,6 @@ export const useFeedbackFirstEligibility = () => {
     };
 
     const getHasB2CAccess = () => {
-        if (!feedbackFirstCancellationEnabled) {
-            return false;
-        }
-
         if (
             hasMail(subscription) ||
             hasBundle(subscription) ||
