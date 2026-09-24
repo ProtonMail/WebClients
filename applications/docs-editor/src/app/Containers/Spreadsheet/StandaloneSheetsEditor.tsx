@@ -14,7 +14,7 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
     hidden,
     onEditorLoadResult,
     editorInitializationConfig,
-    systemMode,
+    isVersionHistoryView,
     editingLocked,
     setMigrationEditingLocked,
     updateLocalStateToLog,
@@ -31,7 +31,7 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
         hidden={hidden}
         onEditorLoadResult={onEditorLoadResult}
         editorInitializationConfig={editorInitializationConfig}
-        systemMode={systemMode}
+        isVersionHistoryView={isVersionHistoryView}
         editingLocked={editingLocked}
         setMigrationEditingLocked={setMigrationEditingLocked}
         updateLocalStateToLog={updateLocalStateToLog}

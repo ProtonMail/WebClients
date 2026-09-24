@@ -51,12 +51,10 @@ export function useProtonSheetsUIState(
   state: ProtonSheetsState,
   {
     isReadonly,
-    isRevisionMode,
     isViewOnlyMode,
     storeAction,
   }: {
     isReadonly: boolean
-    isRevisionMode: boolean
     isViewOnlyMode: boolean
     storeAction: (type: SheetsActionType, content: unknown) => void
   },
@@ -126,7 +124,6 @@ export function useProtonSheetsUIState(
     selectedColumnCount: defaultSelection.range.endColumnIndex - defaultSelection.range.startColumnIndex + 1,
     selectedRowCount: defaultSelection.range.endRowIndex - defaultSelection.range.startRowIndex + 1,
     isReadonly,
-    isRevisionMode,
     isViewOnlyMode,
   }
 

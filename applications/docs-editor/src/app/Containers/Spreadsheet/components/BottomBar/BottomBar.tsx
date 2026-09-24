@@ -353,8 +353,7 @@ const SheetTabs = memo(function SheetTabs(props: SheetTabsProps) {
 
 const NewSheetButton = memo(function NewSheetButton() {
   const isReadonly = useUI((ui) => ui.info.isReadonly)
-  const isRevisionMode = useUI((ui) => ui.info.isRevisionMode)
-  if (isReadonly || isRevisionMode) {
+  if (isReadonly) {
     return null
   }
   return (
