@@ -1349,7 +1349,7 @@
         "Copia la transcripció de depuració"
       ],
       "Preview logs": [
-        "Vista prèvia dels registres"
+        "Previsualitza els registres"
       ],
       "Add a payment method": [
         "Afegiu un mètode de pagament"
@@ -1368,6 +1368,9 @@
       ],
       "Search recent items": [
         "Cercar-ho en els elements recents"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "Action: Docs": {
@@ -3658,7 +3661,7 @@
         "Introduïu 6 dígits"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Introduïu el vostre nom d'usuari sense el domini (@example.cat)"
+        "Introduïu el vostre nom d'usuari sense el domini (@exemple.cat)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
@@ -4957,7 +4960,7 @@
         "Encara esteu esperant?"
       ],
       "Touch your security key to continue.": [
-        "Toqueu la clau de seguretat per continuar."
+        "Toqueu la clau de seguretat per a continuar."
       ]
     },
     "fido2: Label": {
@@ -7588,7 +7591,7 @@
         "Tipus de fitxer no admès per a Fotos"
       ],
       "Enter code": [
-        "Introduir el codi"
+        "Introduïu el codi"
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
@@ -8021,6 +8024,12 @@
       ],
       "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
         "El vostre Drive és massa gran per indexar-lo completament en aquest navegador, de manera que la cerca només mostra els elements més recents. És possible que els fitxers més antics no apareguin en els resultats."
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Arrossegueu els vostres fitxers i carpetes aquí o utilitzeu el botó \"Nou\" per pujar-los."
+      ],
+      "Or import your files from": [
+        "O importeu els vostres fitxers de"
       ]
     },
     "info": {
@@ -14721,6 +14730,9 @@
       ],
       "Your import is in progress": [
         "La vostra importació està en curs"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Us donem la benvinguda a ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
