@@ -8,11 +8,10 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import generateUID from '@proton/utils/generateUID';
 
 import useGetSenderOptions from '../../../hooks/composer/useGetSenderOptions';
-import { useMailDispatch, useMailSelector } from '../../../store/hooks';
-
 import { selectComposer } from '../../../store/composers/composerSelectors';
 import type { ComposerID } from '../../../store/composers/composerTypes';
 import { composerActions } from '../../../store/composers/composersSlice';
+import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 
 interface Props {
     composerID: ComposerID;
@@ -37,13 +36,14 @@ const SelectSender = ({ composerID, message, disabled, addressesBlurRef }: Props
     return (
         <SelectTwo
             disabled={disabled}
-            className="composer-light-field select--inline-caret composer-meta-select-sender expand-click-area"
+            className="composer-light-field composer-meta-select-sender expand-click-area"
             id={`sender-${uid}`}
             value={composer?.senderEmailAddress}
             onChange={handleFromChange}
             onFocus={addressesBlurRef.current}
             originalPlacement="bottom-start"
             data-testid="composer:from"
+            noDropdownCaret
             size={{
                 width: DropdownSizeUnit.Dynamic,
             }}
