@@ -1750,6 +1750,9 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "Run realistic session": [
+        "Effectuer une session réaliste"
       ]
     },
     "action": {
@@ -8052,7 +8055,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9784,6 +9788,57 @@
       ],
       "What needs handling?": [
         "Que faut-il traiter ?"
+      ],
+      "${ steps } step": [
+        "${ steps } étape",
+        "${ steps } étapes"
+      ],
+      "Mark ${ emails } as read": [
+        "Marquer ${ emails } comme lus"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Déplacer ${ emails } vers ${ destination }"
+      ],
+      "Not found in the encrypted search index.": [
+        "Introuvable dans l'index de recherche chiffré."
+      ],
+      "Not found in the foundation-search index.": [
+        "Introuvable dans l'index de recherche fondation."
+      ],
+      "Read ${ count } email": [
+        "Lire votre ${ count } e-mail",
+        "Lire vos ${ count } e-mails"
+      ],
+      "Read ${ count } message in this thread": [
+        "Lire votre ${ count } message dans ce fil de discussion",
+        "Lire vos ${ count } messages dans ce fil de discussion"
+      ],
+      "Read your ${ count } filter": [
+        "Lire votre ${ count } filtre",
+        "Lire vos ${ count } filtres"
+      ],
+      "Read your ${ count } folder": [
+        "Lire votre ${ count } dossier",
+        "Lire vos ${ count } dossiers"
+      ],
+      "Read your ${ count } label": [
+        "Lire votre ${ count } label",
+        "Lire vos ${ count } labels"
+      ],
+      "Read your display settings": [
+        "Lire vos paramètres d'affichage"
+      ],
+      "Results came from the local search.": [
+        "Les résultats sont issus de la recherche locale."
+      ],
+      "Source document in encrypted search index": [
+        "Document source dans l'index de recherche chiffré"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -11066,6 +11121,33 @@
       ],
       "To": [
         "Pour"
+      ],
+      "Burst write": [
+        "Écriture rafale"
+      ],
+      "Column": [
+        "Colonne"
+      ],
+      "Compact": [
+        "Compact"
+      ],
+      "Grouped conversations": [
+        "Conversations groupées"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Tâches longues (≥ 50 ms)"
+      ],
+      "Read / export": [
+        "Lire / exporter"
+      ],
+      "Row": [
+        "Ligne"
+      ],
+      "Single messages": [
+        "Messages séparés"
+      ],
+      "Write": [
+        "Écrire"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14924,6 +15006,9 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } message → ${ wakeTime }",
         "${ count } messages → ${ wakeTime }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Mettre en attente ${ emails } jusqu'à ${ wakeTime }"
       ]
     },
     "Snooze message": {
