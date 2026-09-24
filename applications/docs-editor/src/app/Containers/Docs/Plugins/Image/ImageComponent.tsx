@@ -26,7 +26,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { useCombinedRefs } from '@proton/hooks'
 import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import { getRemoteImageUrl, isAllowedImageSrc } from '../../../../Conversion/ImageSrcUtils'
-import { getElementDimensionsWithoutPadding } from '../../../../Utils/getEditorWidthWithoutPadding'
+import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 import { SET_IMAGE_SIZE_COMMAND } from './ImageCommands'
 import ImageResizer from './ImageResizer'
 

@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import clsx from '@proton/utils/clsx'
 import ToolbarTooltip from './ToolbarTooltip'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { fixEmptyRoot } from '../Utils/fixEmptyRoot'
+import { fixEmptyRoot } from '../Containers/Docs/Utils/fixEmptyRoot'
 
 interface ToolbarButtonProps extends ComponentPropsWithoutRef<'button'> {
   label: React.ReactNode

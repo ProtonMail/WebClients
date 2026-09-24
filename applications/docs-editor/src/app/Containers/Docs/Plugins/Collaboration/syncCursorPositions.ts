@@ -3,8 +3,8 @@ import { getAnchorAndFocusCollabNodesForUserState } from '@lexical/yjs'
 import type { NodeKey, NodeMap } from 'lexical'
 import { $isLineBreakNode } from 'lexical'
 import { createDOMRange } from '@lexical/selection'
-import { isHTMLElement } from '../../../../Utils/guard'
-import { createRectsFromDOMRange } from '../../../../Utils/createRectsFromDOMRange'
+import { isHTMLElement } from '../../Utils/guard'
+import { createRectsFromDOMRange } from '../../Utils/createRectsFromDOMRange'
 
 // Forked and modified from https://github.com/facebook/lexical/blob/main/packages/lexical-yjs/src/SyncCursors.ts to have custom behavior.
 
