@@ -2284,8 +2284,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -3059,6 +3058,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Ajoutez un moyen de paiement afin que votre abonnement se poursuive à la fin de votre version d'essai."
       ]
     },
     "Keyboard key": {
@@ -4286,6 +4288,9 @@
       ],
       "ZIP or Postal code": [
         "Code postal"
+      ],
+      "Add a payment method": [
+        "Ajouter un moyen de paiement"
       ]
     },
     "Link": {
@@ -5407,6 +5412,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "Keep your subscription active": [
+        "Maintenez votre abonnement actif"
       ]
     },
     "Title_cloned_item": {

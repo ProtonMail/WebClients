@@ -2287,8 +2287,7 @@
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -3062,6 +3061,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Füge eine Zahlungsmethode hinzu, damit dein Abonnement nach Ablauf der Testphase automatisch verlängert werden kann."
       ]
     },
     "Keyboard key": {
@@ -4289,6 +4291,9 @@
       ],
       "ZIP or Postal code": [
         "Postleitzahl oder ZIP-Code"
+      ],
+      "Add a payment method": [
+        "Zahlungsmethode hinzufügen"
       ]
     },
     "Link": {
@@ -5410,6 +5415,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du bist dabei, ${ aliasCount } Alias dauerhaft zu löschen.",
         "Du bist dabei, ${ aliasCount } Aliasse dauerhaft zu löschen."
+      ],
+      "Keep your subscription active": [
+        "Halte dein Abonnement aufrecht"
       ]
     },
     "Title_cloned_item": {
