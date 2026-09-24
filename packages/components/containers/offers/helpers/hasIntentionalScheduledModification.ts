@@ -12,5 +12,5 @@ export function hasIntentionalScheduledModification(subscription: MaybeFreeSubsc
         return false;
     }
 
-    return !isUpcomingSubscriptionUnpaid(upcoming);
+    return !isUpcomingSubscriptionUnpaid(subscription);
 }
