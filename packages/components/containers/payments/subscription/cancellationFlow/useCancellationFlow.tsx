@@ -13,22 +13,16 @@ import {
     hasMailPro,
     hasVisionary,
 } from '@proton/payments/core/subscription/helpers';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';
 import { CANCEL_ROUTE } from './helper';
 
 const useCancellationFlow = () => {
     const [subscription] = useSubscription();
-    const isNewFlowEnabled = useFlag('NewCancellationFlow');
     const [startedCancellation, setStartedCancellation] = useState(false);
     const goToSettings = useSettingsLink();
 
     const getHasB2BAccess = () => {
-        if (!isNewFlowEnabled) {
-            return false;
-        }
-
         if (
             startedCancellation ||
             hasMailPro(subscription) ||
@@ -43,10 +37,6 @@ const useCancellationFlow = () => {
     };
 
     const getHasB2CAccess = () => {
-        if (!isNewFlowEnabled) {
-            return false;
-        }
-
         if (
             startedCancellation ||
             hasMail(subscription) ||

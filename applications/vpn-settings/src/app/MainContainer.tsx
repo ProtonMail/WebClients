@@ -125,11 +125,9 @@ const MainContainer: FunctionComponent = () => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();
     const location = useLocation();
-    const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
     const isZoomIntegrationEnabled = !isZoomIntegrationDisabled;
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
-    const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
@@ -177,11 +175,9 @@ const MainContainer: FunctionComponent = () => {
         isCategoryViewEnabled: false,
         isCryptoPostQuantumOptInEnabled: false,
         isScribeEnabled: false,
-        isUserGroupsFeatureEnabled,
         isUserGroupsNoCustomDomainEnabled,
         isZoomIntegrationEnabled,
         isProtonMeetIntegrationEnabled,
-        isSharedServerFeatureEnabled,
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
         isAlwaysOnVpnEnabled,
