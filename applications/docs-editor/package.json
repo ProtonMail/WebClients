@@ -3,7 +3,7 @@
   "description": "Editor for Proton Docs.",
   "scripts": {
     "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --babelLoader --noLogicalScss",
-    "check-types": "tsc",
+    "check-types": "tsc --checkers 1",
     "docs:scan-imports": "node scripts/scan-document-imports.mjs",
     "i18n:extract:web": "proton-i18n extract",
     "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
@@ -99,6 +99,7 @@
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@types/tinycolor2": "^1.4.6",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "babel-jest": "^30.4.1",
     "babel-plugin-transform-require-context": "^0.1.1",
     "browserslist": "^4.29.0",
@@ -112,7 +113,7 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "sass": "^1.80.3",
     "tailwindcss": "^3.4.19",
-    "typescript": "^6.0.3",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "webpack": "^5.111.1"
   }
 }

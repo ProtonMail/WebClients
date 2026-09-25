@@ -6,7 +6,7 @@
         "./*": "./src/*.ts"
     },
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "TZ=UTC vitest",
         "test:ci": "yarn test --run",
@@ -20,10 +20,11 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/vitest-config": "workspace:^",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "@vitest/coverage-v8": "^5.0.1",
         "@vitest/ui": "^5.0.1",
         "eslint": "^10.11.0",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "vitest": "^5.0.1"
     }
 }

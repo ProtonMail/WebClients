@@ -9,7 +9,7 @@
     },
     "main": "index.ts",
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "export": "./makeExport",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "eslint --quiet",
@@ -113,6 +113,7 @@
         "@testing-library/user-event": "^14.6.7",
         "@types/jest": "^30.0.0",
         "@types/three": "^0.186.0",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "@webgpu/types": "^0.1.74",
         "core-js": "^3.50.0",
         "cross-fetch": "^4.1.0",
@@ -122,7 +123,7 @@
         "msw": "2.12.14",
         "prettier": "^3.9.8",
         "react-redux": "^9.3.0",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "vitest": "^5.0.1"
     },
     "peerDependencies": {

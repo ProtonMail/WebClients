@@ -10027,6 +10027,7 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
+    "@typescript/native": "npm:typescript@^7.0.2"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.11.0"
     history: "npm:^4.10.1"
@@ -10042,7 +10043,7 @@ __metadata:
     react-router: "npm:^5.3.4"
     tldts: "npm:^7.4.13"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   peerDependencies:
     "@types/react-router-dom": ^5.3.3
     react-router-dom: ^5.3.4
@@ -10054,9 +10055,10 @@ __metadata:
   resolution: "@proton/ai-assistant@workspace:packages/ai-assistant"
   dependencies:
     "@proton/llm": "workspace:^"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vite: "npm:^8.3.0"
     vite-plugin-mkcert: "npm:^1.17.12"
     vite-plugin-singlefile: "npm:^2.3.3"
@@ -10080,13 +10082,14 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     dompurify: "npm:^3.4.15"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     jest-environment-jsdom: "npm:^30.5.2"
     react: "npm:^18.3.1"
     react-test-renderer: "npm:^18.3.1"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vitest: "npm:^5.0.1"
   languageName: unknown
   linkType: soft
@@ -10116,6 +10119,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/tinycolor2": "npm:^1.4.6"
+    "@typescript/native": "npm:typescript@^7.0.2"
     commander: "npm:^14.0.3"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
@@ -10127,7 +10131,7 @@ __metadata:
     tinycolor2: "npm:^1.6.0"
     ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -10214,12 +10218,13 @@ __metadata:
     "@testing-library/react": "npm:^15.0.7"
     "@types/jest": "npm:^30.0.0"
     "@types/react": "npm:^18.3.31"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     jest-junit: "npm:^16.0.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   peerDependencies:
     react: ^18.3.1
   languageName: unknown
@@ -10236,13 +10241,14 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@testing-library/dom": "npm:^10.4.2"
     "@testing-library/jest-dom": "npm:^6.9.1"
+    "@typescript/native": "npm:typescript@^7.0.2"
     concurrently: "npm:^8.2.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     jest-junit: "npm:^16.0.0"
     postcss: "npm:^8.5.28"
     serve: "npm:^14.2.6"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vite: "npm:^8.3.0"
     vite-plugin-mkcert: "npm:^1.17.12"
     vite-plugin-singlefile: "npm:^2.3.3"
@@ -10261,6 +10267,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@types/react": "npm:^18.3.31"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vitejs/plugin-react": "npm:^6.1.1"
     "@vitest/coverage-v8": "npm:^5.0.1"
     "@vitest/ui": "npm:5.0.1"
@@ -10270,7 +10277,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-chartjs-2: "npm:^5.3.1"
     react-dom: "npm:^18.3.1"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vitest: "npm:^5.0.1"
   languageName: unknown
   linkType: soft
@@ -10285,6 +10292,7 @@ __metadata:
     "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     "@types/semver": "npm:^7.8.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vercel/ncc": "npm:^0.45.0"
     commander: "npm:^14.0.3"
     dotenv: "npm:^16.6.1"
@@ -10293,7 +10301,7 @@ __metadata:
     semver: "npm:^7.8.5"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.13"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     undici: "npm:^7.29.1"
     yaml: "npm:^2.9.1"
   languageName: unknown
@@ -10311,6 +10319,7 @@ __metadata:
     "@types/async-retry": "npm:^1.4.9"
     "@types/jest": "npm:^30.0.0"
     "@types/semver": "npm:^7.8.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     async-retry: "npm:^1.3.3"
     commander: "npm:^14.0.3"
     eslint: "npm:^10.11.0"
@@ -10318,7 +10327,7 @@ __metadata:
     semver: "npm:^7.8.5"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.13"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     yaml: "npm:^2.9.1"
   languageName: unknown
   linkType: soft
@@ -10334,13 +10343,14 @@ __metadata:
     "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     "@types/lodash": "npm:^4.17.25"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     glob: "npm:^13.0.6"
     jest: "npm:^30.5.2"
     lodash: "npm:^4.18.1"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.13"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     undici: "npm:^7.29.1"
   languageName: unknown
   linkType: soft
@@ -10354,12 +10364,13 @@ __metadata:
     "@proton/gitlab": "workspace:^"
     "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     axios: "npm:^1.20.0"
     axios-retry: "npm:^4.5.0"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -10371,6 +10382,7 @@ __metadata:
     "@proton/ci-tools": "workspace:^"
     "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     bundlemon: "npm:^3.1.0"
     jest: "npm:^30.5.2"
     ts-node: "npm:^10.9.2"
@@ -10391,13 +10403,14 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^24.13.6"
     "@types/tinycolor2": "npm:^1.4.6"
+    "@typescript/native": "npm:typescript@^7.0.2"
     css-tree: "npm:^2.3.1"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     prettier: "npm:^3.9.8"
     tinycolor2: "npm:^1.6.0"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     webpack: "npm:^5.111.1"
     webpack-cli: "npm:^7.2.3"
   languageName: unknown
@@ -10465,6 +10478,7 @@ __metadata:
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/react-virtualized": "npm:^9.22.3"
     "@types/three": "npm:^0.186.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@webgpu/types": "npm:^0.1.74"
     card-validator: "npm:^10.0.4"
     codemirror: "npm:^5.65.21"
@@ -10508,7 +10522,7 @@ __metadata:
     three: "npm:^0.186.0"
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vitest: "npm:^5.0.1"
   peerDependencies:
     "@proton/activation": "*"
@@ -10522,8 +10536,9 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -10556,6 +10571,7 @@ __metadata:
     "@protontech/crypto": "npm:*"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     babel-jest: "npm:^30.4.1"
     browserslist: "npm:^4.29.0"
     core-js: "npm:^3.50.0"
@@ -10569,7 +10585,7 @@ __metadata:
     prettier: "npm:^3.9.8"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     uuid: "npm:^14.0.2"
     yjs: "npm:^13.6.15"
     zod: "npm:^3.25.76"
@@ -10607,6 +10623,7 @@ __metadata:
     "@protontech/crypto": "npm:*"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     babel-jest: "npm:^30.4.1"
     browserslist: "npm:^4.29.0"
     core-js: "npm:^3.50.0"
@@ -10618,7 +10635,7 @@ __metadata:
     lib0: "npm:^0.2.117"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     uuid: "npm:^14.0.2"
     y-protocols: "npm:^1.0.6"
     yjs: "npm:^13.6.15"
@@ -10658,6 +10675,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@xmldom/xmldom": "npm:^0.9.12"
     client-zip: "npm:^2.5.1"
     comlink: "npm:^4.4.2"
@@ -10677,7 +10695,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     react-router-dom-v5-compat: "npm:^6.30.6"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     uuid: "npm:^14.0.2"
     zustand: "npm:^4.5.7"
   peerDependencies:
@@ -10748,6 +10766,7 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@testing-library/react-hooks": "npm:^8.0.1"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     fake-indexeddb: "npm:^6.2.5"
     idb: "npm:^8.0.3"
@@ -10755,7 +10774,7 @@ __metadata:
     lodash: "npm:^4.18.1"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -10801,10 +10820,11 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.12.0"
     "@testing-library/jest-dom": "npm:^6.9.1"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     react: "npm:^18.3.1"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -10815,6 +10835,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     axios: "npm:^1.20.0"
     axios-retry: "npm:^4.5.0"
     eslint: "npm:^10.11.0"
@@ -10834,13 +10855,14 @@ __metadata:
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     react: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
     react-test-renderer: "npm:^18.3.1"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -10907,6 +10929,7 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@proton/vitest-config": "workspace:^"
     "@protontech/crypto": "npm:*"
+    "@typescript/native": "npm:typescript@^7.0.2"
     asn1js: "npm:^3.0.10"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.11.0"
@@ -10914,7 +10937,7 @@ __metadata:
     pkijs: "npm:^3.4.0"
     pvutils: "npm:^1.2.0"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vitest: "npm:^5.0.1"
   languageName: unknown
   linkType: soft
@@ -10942,6 +10965,7 @@ __metadata:
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/user-event": "npm:^14.6.7"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@webgpu/types": "npm:^0.1.74"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.11.0"
@@ -10949,7 +10973,7 @@ __metadata:
     lodash: "npm:^4.18.1"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -10962,6 +10986,7 @@ __metadata:
     "@proton/jest-swc-preset": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     comlink: "npm:^4.4.2"
     core-js: "npm:^3.50.0"
     eslint: "npm:^10.11.0"
@@ -10970,7 +10995,7 @@ __metadata:
     jest: "npm:^30.5.2"
     jest-junit: "npm:^16.0.0"
     prettier: "npm:^3.9.8"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -10982,9 +11007,10 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     uuid: "npm:^14.0.2"
   peerDependencies:
     react: ^18.3.1
@@ -11009,13 +11035,14 @@ __metadata:
     "@types/markdown-it": "npm:^13.0.9"
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     markdown-it: "npm:^14.3.2"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -11036,13 +11063,14 @@ __metadata:
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.9.1"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     jest-environment-jsdom: "npm:^30.5.2"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -11112,6 +11140,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@types/react": "npm:^18.3.31"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vitejs/plugin-react": "npm:^6.1.1"
     "@vitest/coverage-v8": "npm:^5.0.1"
     "@vitest/ui": "npm:5.0.1"
@@ -11122,7 +11151,7 @@ __metadata:
     prettier: "npm:^3.9.8"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vitest: "npm:^5.0.1"
   languageName: unknown
   linkType: soft
@@ -11135,6 +11164,7 @@ __metadata:
     "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@types/node": "npm:^24.13.6"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     jest-fetch-mock: "npm:^3.2.0"
@@ -11142,7 +11172,7 @@ __metadata:
     prettier: "npm:^3.9.8"
     rimraf: "npm:^5.0.10"
     ts-node: "npm:^10.9.2"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     web-vitals: "npm:^4.2.4"
   languageName: unknown
   linkType: soft
@@ -11155,10 +11185,11 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/vitest-config": "workspace:^"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vitest/coverage-v8": "npm:^5.0.1"
     "@vitest/ui": "npm:^5.0.1"
     eslint: "npm:^10.11.0"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vitest: "npm:^5.0.1"
   languageName: unknown
   linkType: soft
@@ -11181,12 +11212,13 @@ __metadata:
     "@reduxjs/toolkit": "npm:^2.12.0"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     jest-environment-jsdom: "npm:^30.5.2"
     react-redux: "npm:^9.3.0"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   peerDependencies:
     react: ^18.3.1
     react-dom: ^18.3.1
@@ -11207,6 +11239,7 @@ __metadata:
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.3"
     "@sentry/webpack-plugin": "npm:^1.21.0"
     "@swc/core": "npm:^1.16.2"
+    "@typescript/native": "npm:typescript@^7.0.2"
     autoprefixer: "npm:^10.6.1"
     babel-loader: "npm:^10.1.1"
     babel-plugin-transform-react-remove-prop-types: "npm:^0.4.24"
@@ -11236,7 +11269,7 @@ __metadata:
     svgo-loader: "npm:^5.0.0"
     swc-loader: "npm:^0.2.7"
     terser-webpack-plugin: "npm:^5.6.1"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     webpack: "npm:^5.111.1"
     webpack-bundle-analyzer: "npm:^5.4.0"
     webpack-cli: "npm:^7.2.3"
@@ -11375,6 +11408,7 @@ __metadata:
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@testing-library/user-event": "npm:^14.6.7"
+    "@typescript/native": "npm:typescript@^7.0.2"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.11.0"
     history: "npm:^4.10.1"
@@ -11387,7 +11421,7 @@ __metadata:
     react-router: "npm:^5.3.4"
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -11406,13 +11440,14 @@ __metadata:
     "@proton/test-api": "workspace:^"
     "@proton/utils": "workspace:^"
     "@sentry/browser": "npm:^7.120.4"
+    "@typescript/native": "npm:typescript@^7.0.2"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.11.0"
     ibantools: "npm:4.5.4"
     jest: "npm:^30.5.2"
     lodash: "npm:^4.18.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vat-validation: "npm:^3.0.0"
   languageName: unknown
   linkType: soft
@@ -11465,7 +11500,8 @@ __metadata:
   resolution: "@proton/react-polymorphic-types@workspace:packages/react-polymorphic-types"
   dependencies:
     "@types/react": "npm:^18.3.31"
-    typescript: "npm:^6.0.3"
+    "@typescript/native": "npm:typescript@^7.0.2"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   peerDependencies:
     "@types/react": ">=18.3.31"
   languageName: unknown
@@ -11492,9 +11528,10 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-swc-preset": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -11525,11 +11562,12 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.12.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.11.0"
     react: "npm:^18.3.1"
     react-redux: "npm:^9.3.0"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -11544,13 +11582,14 @@ __metadata:
     "@reduxjs/toolkit": "npm:^2.12.0"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     jest-environment-jsdom: "npm:^30.5.2"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.3.0"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -11559,11 +11598,12 @@ __metadata:
   resolution: "@proton/sanitize@workspace:packages/sanitize"
   dependencies:
     "@proton/jest-swc-preset": "workspace:^"
+    "@typescript/native": "npm:typescript@^7.0.2"
     dompurify: "npm:^3.4.15"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     jest-environment-jsdom: "npm:^30.5.2"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -11597,6 +11637,7 @@ __metadata:
     "@types/papaparse": "npm:^5.5.2"
     "@types/ua-parser-js": "npm:^0.7.39"
     "@types/webpack-env": "npm:^1.18.8"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vitest/browser-playwright": "npm:^5.0.1"
     "@webgpu/types": "npm:^0.1.74"
     date-fns: "npm:^2.30.0"
@@ -11614,7 +11655,7 @@ __metadata:
     react: "npm:^18.3.1"
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     ua-parser-js: "npm:^1.0.41"
     vitest: "npm:^5.0.1"
     zod: "npm:^3.25.76"
@@ -11631,11 +11672,12 @@ __metadata:
     "@proton/jest-env": "workspace:^"
     "@proton/jest-swc-preset": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     lodash: "npm:^4.18.1"
     prettier: "npm:^3.9.8"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -11667,8 +11709,9 @@ __metadata:
     "@jest/globals": "npm:^30.5.2"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   peerDependencies:
     "@jest/globals": ^30.5.2
   languageName: unknown
@@ -11683,6 +11726,7 @@ __metadata:
     "@proton/gitlab": "workspace:^"
     "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vercel/ncc": "npm:^0.45.0"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
@@ -11718,6 +11762,7 @@ __metadata:
     "@proton/jest-swc-preset": "workspace:^"
     "@proton/shared": "workspace:^"
     "@types/react": "npm:^18.3.31"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@unleash/proxy-client-react": "npm:^5.1.0"
     "@unleash/toolbar": "npm:^1.2.1"
     date-fns: "npm:^3.6.0"
@@ -11726,7 +11771,7 @@ __metadata:
     jest-environment-jsdom: "npm:^30.5.2"
     prettier: "npm:^3.9.8"
     react: "npm:^18.3.1"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     unleash-proxy-client: "npm:^3.8.0"
   languageName: unknown
   linkType: soft
@@ -11739,10 +11784,11 @@ __metadata:
     "@proton/jest-env": "workspace:^"
     "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
+    "@typescript/native": "npm:typescript@^7.0.2"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -11756,6 +11802,7 @@ __metadata:
     "@proton/jest-swc-preset": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     "@types/prompts": "npm:^2.4.9"
+    "@typescript/native": "npm:typescript@^7.0.2"
     commander: "npm:^14.0.3"
     execa: "npm:^5.1.1"
     jest: "npm:^30.5.2"
@@ -11770,8 +11817,9 @@ __metadata:
   resolution: "@proton/vitest-config@workspace:packages/vitest-config"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vitest: "npm:^5.0.1"
   peerDependencies:
     vitest: ^5.0.1
@@ -11801,6 +11849,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/user-event": "npm:^14.6.7"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vitejs/plugin-react": "npm:^6.1.1"
     "@vitest/coverage-v8": "npm:^5.0.1"
     "@vitest/ui": "npm:^5.0.1"
@@ -11811,7 +11860,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vitest: "npm:^5.0.1"
   languageName: unknown
   linkType: soft
@@ -11840,6 +11889,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vitejs/plugin-react": "npm:^6.1.1"
     "@vitest/coverage-v8": "npm:^5.0.1"
     "@vitest/ui": "npm:5.0.1"
@@ -11849,7 +11899,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.3.0"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vite-plugin-wasm: "npm:^3.6.0"
     vitest: "npm:^5.0.1"
   languageName: unknown
@@ -36407,9 +36457,10 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/recovery-kit": "workspace:^"
     "@types/toastify-js": "npm:^1.12.4"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     toastify-js: "npm:^1.12.0"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vite: "npm:^8.3.0"
   languageName: unknown
   linkType: soft
@@ -37595,6 +37646,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
+    "@typescript/native": "npm:typescript@^7.0.2"
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^10.11.0"
@@ -37610,7 +37662,7 @@ __metadata:
     react-router: "npm:^5.3.4"
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     zustand: "npm:^4.5.7"
   languageName: unknown
   linkType: soft
@@ -37658,6 +37710,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@zxing/browser": "npm:0.2.1"
     "@zxing/library": "npm:0.23.0"
     browserslist: "npm:^4.29.0"
@@ -37676,7 +37729,7 @@ __metadata:
     redux: "npm:^5.0.1"
     tsx: "npm:^4.23.13"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     webpack: "npm:^5.111.1"
     webpack-dev-server: "npm:^6.0.0"
   languageName: unknown
@@ -37770,6 +37823,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
+    "@typescript/native": "npm:typescript@^7.0.2"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^10.11.0"
     prettier: "npm:^3.9.8"
@@ -37778,7 +37832,7 @@ __metadata:
     react-redux: "npm:^9.3.0"
     react-router-dom: "npm:^5.3.4"
     redux: "npm:^5.0.1"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     webpack: "npm:^5.111.1"
   languageName: unknown
   linkType: soft
@@ -37848,6 +37902,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/tinycolor2": "npm:^1.4.6"
+    "@typescript/native": "npm:typescript@^7.0.2"
     babel-jest: "npm:^30.4.1"
     babel-plugin-transform-require-context: "npm:^0.1.1"
     browserslist: "npm:^4.29.0"
@@ -37875,7 +37930,7 @@ __metadata:
     tailwindcss: "npm:^3.4.19"
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     uuid: "npm:^14.0.2"
     webpack: "npm:^5.111.1"
     yjs: "npm:^13.6.15"
@@ -37929,6 +37984,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
+    "@typescript/native": "npm:typescript@^7.0.2"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^10.11.0"
     history: "npm:^4.10.1"
@@ -37947,7 +38003,7 @@ __metadata:
     sass: "npm:^1.80.3"
     tailwindcss: "npm:^3.4.19"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     webpack: "npm:^5.111.1"
     yjs: "npm:^13.6.15"
     zustand: "npm:^4.5.7"
@@ -38065,6 +38121,7 @@ __metadata:
     "@types/node": "npm:^24.13.6"
     "@types/pdf-parse": "npm:^1.1.5"
     "@types/tinycolor2": "npm:^1.4.6"
+    "@typescript/native": "npm:typescript@^7.0.2"
     adm-zip: "npm:^0.6.1"
     chance: "npm:^1.1.13"
     core-js: "npm:^3.50.0"
@@ -38088,7 +38145,7 @@ __metadata:
     rimraf: "npm:^6.1.3"
     tinycolor2: "npm:^1.6.0"
     totp-generator: "npm:^2.0.1"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     zod: "npm:^3.25.76"
   peerDependencies:
     openpgp: ^6.3.1
@@ -38118,6 +38175,7 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@types/lodash": "npm:^4.17.25"
     "@types/node": "npm:^24.13.6"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^10.1.0"
     css-loader: "npm:^7.1.5"
@@ -38138,7 +38196,7 @@ __metadata:
     ts-loader: "npm:^9.6.2"
     ttag: "npm:^1.8.12"
     ttag-cli: "npm:^1.12.0"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     typescript-eslint: "npm:^8.70.0"
     update-electron-app: "npm:^3.3.0"
     zod: "npm:^3.25.76"
@@ -38194,6 +38252,7 @@ __metadata:
     "@types/react-syntax-highlighter": "npm:^15.5.13"
     "@types/tinycolor2": "npm:^1.4.6"
     "@types/toposort": "npm:^2.0.7"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vitejs/plugin-react-swc": "npm:^3.11.0"
     "@xyflow/react": "npm:^12.11.6"
     autoprefixer: "npm:^10.6.1"
@@ -38243,7 +38302,7 @@ __metadata:
     toposort: "npm:^2.0.2"
     ttag: "npm:^1.8.12"
     turndown: "npm:^7.2.4"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     unist-util-visit: "npm:^5.1.0"
     uuid: "npm:^14.0.2"
     vega: "npm:^6.4.0"
@@ -38408,6 +38467,7 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@types/lodash": "npm:^4.17.25"
     "@types/node": "npm:^24.13.6"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^10.1.0"
     css-loader: "npm:^7.1.5"
@@ -38428,7 +38488,7 @@ __metadata:
     ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.12"
     ttag-cli: "npm:^1.12.0"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     typescript-eslint: "npm:^8.70.0"
     update-electron-app: "npm:^3.3.0"
     zod: "npm:^3.25.76"
@@ -38484,6 +38544,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/wicg-file-system-access": "npm:2023.10.7"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vitejs/plugin-react": "npm:^6.1.1"
     "@vitest/coverage-v8": "npm:^5.0.1"
     "@vitest/ui": "npm:5.0.1"
@@ -38511,7 +38572,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     react-window: "npm:^2.3.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vitest: "npm:^5.0.1"
     webpack: "npm:^5.111.1"
   languageName: unknown
@@ -38685,13 +38746,14 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
+    "@typescript/native": "npm:typescript@^7.0.2"
     browserslist-to-esbuild: "npm:^2.1.1"
     cross-env: "npm:^10.1.0"
     docx-preview: "npm:^0.4.0"
     esbuild: "npm:^0.28.2"
     eslint: "npm:^10.11.0"
     prettier: "npm:^3.9.8"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -38718,6 +38780,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
+    "@typescript/native": "npm:typescript@^7.0.2"
     eslint: "npm:^10.11.0"
     eslint-plugin-storybook: "npm:^10.6.0"
     http-server: "npm:^14.1.1"
@@ -38730,7 +38793,7 @@ __metadata:
     storybook: "npm:^10.6.0"
     terser-webpack-plugin: "npm:^5.6.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     wait-on: "npm:^9.1.0"
     webpack: "npm:^5.111.1"
   languageName: unknown
@@ -38759,6 +38822,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
+    "@typescript/native": "npm:typescript@^7.0.2"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
@@ -38768,7 +38832,7 @@ __metadata:
     react-router: "npm:^5.3.4"
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -38805,6 +38869,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vitejs/plugin-react": "npm:^6.1.1"
     "@vitest/coverage-v8": "npm:^5.0.1"
     cross-env: "npm:^10.1.0"
@@ -38822,7 +38887,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     redux: "npm:^5.0.1"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vite: "npm:^8.3.0"
     vitest: "npm:^5.0.1"
     webpack: "npm:^5.111.1"
@@ -38867,6 +38932,7 @@ __metadata:
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@vitejs/plugin-react": "npm:^6.1.1"
     chart.js: "npm:^4.5.1"
     cross-env: "npm:^10.1.0"
@@ -38883,7 +38949,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.12"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     vite-plugin-wasm: "npm:^3.6.0"
     vitest: "npm:^5.0.1"
     webpack: "npm:^5.111.1"

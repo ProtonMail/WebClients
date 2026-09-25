@@ -2,7 +2,7 @@
     "name": "@proton/recovery-kit",
     "description": "Recovery kit pdf generation",
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage",
@@ -19,9 +19,10 @@
         "@pdf-lib/standard-fonts": "^1.0.0",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "installConfig": {
         "hoistingLimits": "workspaces"
