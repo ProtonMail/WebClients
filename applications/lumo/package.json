@@ -6,7 +6,7 @@
     "main": "index.html",
     "scripts": {
         "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --prependAsyncCss",
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "i18n:extract:web": "proton-i18n extract",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
@@ -112,6 +112,7 @@
         "@types/react": "^18.3.31",
         "@types/react-dom": "^18.3.7",
         "@types/react-syntax-highlighter": "^15.5.13",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "@vitejs/plugin-react-swc": "^3.11.0",
         "autoprefixer": "^10.6.1",
         "core-js": "^3.50.0",
@@ -121,7 +122,7 @@
         "fake-indexeddb": "^6.2.5",
         "postcss": "^8.5.28",
         "sass": "^1.80.3",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "vite": "^8.3.0",
         "webpack": "^5.111.1"
     },

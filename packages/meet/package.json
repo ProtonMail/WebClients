@@ -5,7 +5,7 @@
     "author": "",
     "main": "index.ts",
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
@@ -41,13 +41,14 @@
         "@proton/vitest-config": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "@vitejs/plugin-react": "^6.1.1",
         "@vitest/coverage-v8": "^5.0.1",
         "@vitest/ui": "5.0.1",
         "eslint": "^10.11.0",
         "happy-dom": "^20.14.5",
         "prettier": "^3.9.8",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "vitest": "^5.0.1"
     }
 }

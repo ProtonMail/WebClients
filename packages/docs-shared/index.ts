@@ -1,7 +1,7 @@
 declare module 'csstype' {
   // @ts-ignore
   interface Properties<T> {
-    // allow css variables
+    // @ts-ignore allow css variables
     [index: string]: unknown
   }
 }
