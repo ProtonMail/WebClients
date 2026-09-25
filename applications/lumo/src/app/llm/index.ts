@@ -53,7 +53,10 @@ import {
 import { collapseCompactedChain } from './compaction';
 import { resolveRequestContextFiles } from './requestContextFiles';
 import { countTokens } from './tokenizer';
-import { calculateMessageContentTokens, computeFileTokenBudget } from './utils';
+import type { ContextLimits } from './contextLimits';
+import { DEFAULT_CONTEXT_LIMITS } from './contextLimits';
+import { computeFileTokenBudget } from './contextLimits';
+import { calculateMessageContentTokens } from './utils';
 import type { ContextFilter } from './contextFilter';
 import { formatPersonalization } from './formatPersonalization';
 import { VISUALIZATION_INSTRUCTIONS } from './visualizationPrompt';
@@ -153,7 +156,8 @@ export function prepareTurns(
     agentInstructions?: string,
     includeVisualizationInstructions = false,
     artifactToolMode: ArtifactToolMode = 'off',
-    isFromQueryParam = false
+    isFromQueryParam = false,
+    contextLimits: ContextLimits = DEFAULT_CONTEXT_LIMITS
 ): Turn[] {
     // Step 0: Apply any context-compaction boundary. Summarized messages are
     // replaced by a single summary turn and dropped from the chain, so the model
@@ -177,7 +181,7 @@ export function prepareTurns(
         c?.contextFilters ?? [],
         attachmentLookup,
         [],
-        computeFileTokenBudget(calculateMessageContentTokens(effectiveChain) + summaryTokens)
+        computeFileTokenBudget(calculateMessageContentTokens(effectiveChain) + summaryTokens, contextLimits)
     );
 
     // Step 1: Transform messages to turns by iterating over blocks
