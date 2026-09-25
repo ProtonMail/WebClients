@@ -34,6 +34,7 @@ describe('SharedServersSection', () => {
             ShowAdminRolesUI: false,
             permissions: getOrgPermissions(['account.shared_server.update'], false),
             role: 0,
+            isLegacyPermissionModel: false,
         }),
     };
     beforeEach(() => {
