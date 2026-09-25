@@ -1,7 +1,6 @@
 import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
 import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 
-import type { AuthFlows, AuthSession } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier, resetSelfAudit } from '@proton/key-transparency/shared';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
@@ -30,6 +29,8 @@ import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHe
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
+
+import type { AuthFlows, AuthSession } from '../content/authSession';
 
 export interface MnemonicData {
     api: Api;

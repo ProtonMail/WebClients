@@ -2,9 +2,15 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
-import { ExternalSSOFlow } from '@proton/components/containers/login/interface';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { wait } from '@proton/shared/lib/helpers/promise';
+
+/** How the identity provider sent the user back: SP- or IdP-initiated, or the redirect from another app. */
+export enum ExternalSSOFlow {
+    Sp = 0,
+    Idp = 1,
+    Redirect = 2,
+}
 
 interface Props {
     children: ReactNode;

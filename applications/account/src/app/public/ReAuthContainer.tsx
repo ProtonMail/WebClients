@@ -12,8 +12,6 @@ import { useModalTwoPromise } from '@proton/components/components/modalTwo/useMo
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import type { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components/containers/app/interface';
-import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
 import SSOAuthModal from '@proton/components/containers/password/SSOAuthModal';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
@@ -36,16 +34,18 @@ import { getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/li
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
+import SSOBackupPasswordForm from '../components/password-forms/SSOBackupPasswordForm';
+import UnlockForm from '../components/password-forms/UnlockForm';
+import type { OnLoginCallback, OnLoginCallbackArguments } from '../content/authSession';
 import type { Paths } from '../content/helper';
 import { withInterruption } from '../content/interruptions';
-import UnlockForm from '../login/UnlockForm';
-import SSOBackupPasswordForm from '../login/sso/SSOBackupPasswordForm';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
 import Main from './Main';
 import PublicUserItem from './PublicUserItem';
 import SupportDropdown from './SupportDropdown';
+import { handleReAuthKeyPassword } from './reAuthKeyPassword';
 import type { ReAuthState } from './reauthContainerState';
 
 interface SrpFormProps {
@@ -118,6 +118,8 @@ const ReAuthContainer = ({
     });
     const [ssoAuthModal, showSSOAuthModal] = useModalTwoPromise();
     const errorHandler = useErrorHandler();
+    const [submittingSSO, withSubmittingSSO] = useLoading();
+    const [submittingUnlock, withSubmittingUnlock] = useLoading();
     const idpButtonRef = useRef<HTMLButtonElement>(null);
     const normalApi = useApi();
 
@@ -240,10 +242,14 @@ const ReAuthContainer = ({
 
     const unlockForm = (
         <UnlockForm
-            onSubmit={async (keyPassword) => {
-                await onPreSubmit();
-                await wait(500);
-                await handleSubmitKeyPassword(keyPassword, data.salts).catch(errorHandler);
+            submitting={submittingUnlock}
+            onSubmit={(keyPassword) => {
+                const run = async () => {
+                    await onPreSubmit();
+                    await wait(500);
+                    await handleSubmitKeyPassword(keyPassword, data.salts).catch(errorHandler);
+                };
+                withSubmittingUnlock(run()).catch(noop);
             }}
         />
     );
@@ -272,10 +278,14 @@ const ReAuthContainer = ({
             </div>
         ) : (
             <SSOBackupPasswordForm
-                onSubmit={async (keyPassword) => {
-                    await onPreSubmit();
-                    await wait(500);
-                    await handleSubmitSSO(keyPassword).catch(errorHandler);
+                submitting={submittingSSO}
+                onSubmit={(keyPassword) => {
+                    const run = async () => {
+                        await onPreSubmit();
+                        await wait(500);
+                        await handleSubmitSSO(keyPassword).catch(errorHandler);
+                    };
+                    withSubmittingSSO(run()).catch(noop);
                 }}
             />
         );

@@ -6,11 +6,13 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import useLoading from '@proton/hooks/useLoading';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import noop from '@proton/utils/noop';
 
+import SetPasswordWithPolicyForm from '../../../components/password-forms/SetPasswordWithPolicyForm';
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
-import SetPasswordWithPolicyForm from '../../../login/SetPasswordWithPolicyForm';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { defaultPersistentKey } from '../../../public/helper';
@@ -43,6 +45,7 @@ export const ResetPassword = () => {
     const [persistent] = useLocalState(false, defaultPersistentKey);
     const getKtActivation = useGetAccountKTActivation();
     const errorHandler = useErrorHandler();
+    const [submitting, withSubmitting] = useLoading();
 
     useEffect(() => {
         sendResetPasswordStepLoad({
@@ -116,9 +119,10 @@ export const ResetPassword = () => {
             <Content>
                 <SetPasswordWithPolicyForm
                     passwordPolicies={resetResponse?.PasswordPolicies ?? []}
-                    onSubmit={async ({ password }) => {
-                        await handleSubmit(password);
+                    onSubmit={({ password }) => {
+                        withSubmitting(handleSubmit(password)).catch(noop);
                     }}
+                    submitting={submitting}
                     submitButtonColor={resetWithDataLoss ? 'danger' : 'norm'}
                 />
             </Content>

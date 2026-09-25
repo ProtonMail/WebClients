@@ -11,7 +11,6 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -23,6 +22,7 @@ import {
 } from '@proton/shared/lib/helpers/formValidators';
 import clsx from '@proton/utils/clsx';
 
+import type { OnLoginCallback } from '../../../../content/authSession';
 import { getOptimisticDomains } from '../../../../signup/helper';
 import { useGetAccountKTActivation } from '../../../../useGetAccountKTActivation';
 import BornPrivateHeader from '../components/BornPrivateHeader';

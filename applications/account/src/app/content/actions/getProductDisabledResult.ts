@@ -1,10 +1,10 @@
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import { getOrganization } from '../../public/organization';
+import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 import type { LoginResult } from './interface';
 

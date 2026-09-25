@@ -9,7 +9,6 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
@@ -36,6 +35,7 @@ import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import type { OnLoginCallback } from '../content/authSession';
 import type { MetaTags } from '../useMetaTags';
 import { useMetaTags } from '../useMetaTags';
 import type { ConfirmSignoutModalProps } from './ConfirmSignOutModal';

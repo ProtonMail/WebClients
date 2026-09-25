@@ -8,7 +8,6 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import Logo from '@proton/components/components/logo/Logo';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
-import type { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components/containers/app/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
@@ -27,6 +26,7 @@ import ExploreAppsListV2, {
     getForbiddenAppConfigs,
 } from '../components/ExploreAppsListV2/ExploreAppsListV2';
 import { useExploreAppsListTelemetry } from '../components/ExploreAppsListV2/exploreAppsListTelemetry';
+import type { OnLoginCallback, OnLoginCallbackArguments } from '../content/authSession';
 import Layout from './Layout';
 import PublicUserItem from './PublicUserItem';
 
