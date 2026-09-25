@@ -287,6 +287,14 @@ export class IndexerTaskQueue {
                     continue;
                 }
 
+                // stop() may have fired its one-shot wakeUp() while this drain was still in
+                // flight (it's all async work above), before waitForWork() created the promise
+                // it's meant to resolve. Without this check that promise would never resolve and
+                // stop() -> processLoopDone would hang forever.
+                if (this.stopped || signal.aborted) {
+                    break;
+                }
+
                 await this.waitForWork();
                 continue;
             }

@@ -115,6 +115,11 @@ describe('isWasmPanic', () => {
 });
 
 describe('a real Rust panic', () => {
+    // The panic capture forwards to whatever console.error is bound to at install time, so it must be
+    // silenced before setupRealSearchLibraryWasm() installs it: the panic text is expected here and
+    // asserted on directly below.
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     // The only deterministic WASM panic reachable from JS: the library panics when `next()` is called
     // again with a `Load` event still unserved.
     setupRealSearchLibraryWasm();
