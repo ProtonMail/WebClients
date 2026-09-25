@@ -3,8 +3,8 @@ import { waitFor } from '@testing-library/react';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
-import { USER_ROLES } from '@proton/shared/lib/constants';
-import type { EnhancedMember, UserModel } from '@proton/shared/lib/interfaces';
+import { EVENT_ACTIONS, USER_ROLES } from '@proton/shared/lib/constants';
+import type { EnhancedMember, Member, UserModel } from '@proton/shared/lib/interfaces';
 
 import { addressesReducer } from '../addresses';
 import { getModelState } from '../tests';
@@ -97,9 +97,44 @@ describe('members listener', () => {
 
         await waitFor(() => expect(selectMembers(store.getState()).value).toEqual([]));
         expect(selectMembers(store.getState()).meta.fetchedAt).toBe(0);
+        expect(selectMembers(store.getState()).meta.type).toBe(ValueType.dummy);
         // Proves the spy intercepts the listener's call path, so the negative assertion in
         // 'ignores user changes that do not change the role' is meaningful.
         expect(canFetchMembersSpy).toHaveBeenCalled();
+    });
+
+    // A role promotion on its own grants nothing now: the API reports Role 2 for a member invited
+    // to a group carrying a role, while the permission set stays empty until the invite is accepted.
+    it('does not invalidate the dummy cache when a promoted user has no permissions', async () => {
+        const { store } = setup({
+            user: getUser(USER_ROLES.MEMBER_ROLE),
+            members: getMembersState([], ValueType.dummy),
+            permissions: [],
+        });
+
+        store.dispatch(getServerEvent({ User: getUser(USER_ROLES.ADMIN_ROLE) }));
+
+        await waitFor(() => expect(canFetchMembersSpy).toHaveBeenCalled());
+        expect(selectMembers(store.getState()).meta.fetchedAt).toBe(1_700_000_000);
+    });
+
+    it('does not let event loop updates repopulate the list after access is lost', async () => {
+        const { store } = setup({
+            user: getUser(USER_ROLES.ADMIN_ROLE),
+            members: getMembersState(sampleMembers, ValueType.complete),
+            permissions: [],
+        });
+
+        store.dispatch(getServerEvent({ User: getUser(USER_ROLES.MEMBER_ROLE) }));
+        await waitFor(() => expect(selectMembers(store.getState()).value).toEqual([]));
+
+        // Without meta.type flipping to dummy, updateCollection would push this straight back in.
+        store.dispatch(
+            getServerEvent({
+                Members: [{ ID: '2', Member: { ID: '2' } as Member, Action: EVENT_ACTIONS.CREATE }],
+            })
+        );
+        expect(selectMembers(store.getState()).value).toEqual([]);
     });
 
     it('keeps the cached member list when a demoted user still has account.user.read', async () => {
@@ -117,10 +152,11 @@ describe('members listener', () => {
         expect(selectMembers(store.getState()).meta.fetchedAt).toBe(1_700_000_000);
     });
 
-    it('invalidates the dummy cache when a user gains access', async () => {
+    it('invalidates the dummy cache when a promoted user gains account.user.read', async () => {
         const { store } = setup({
             user: getUser(USER_ROLES.MEMBER_ROLE),
             members: getMembersState([], ValueType.dummy),
+            permissions: ['account.user.read'],
         });
 
         store.dispatch(getServerEvent({ User: getUser(USER_ROLES.ADMIN_ROLE) }));

@@ -16,7 +16,6 @@ import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, Api, EnhancedMember, Member, RoleAssignment } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
-import { isAdmin } from '@proton/shared/lib/user/helpers';
 import chunk from '@proton/utils/chunk';
 import noop from '@proton/utils/noop';
 
@@ -30,8 +29,8 @@ import {
     isOrgKeyRequired,
     isOwnerRoleSyncEnabled,
 } from '../organizationRoles/helpers';
-import { type UserState, userThunk } from '../user';
-import { type UserPermissionsState, userPermissionsThunk } from '../userPermissions';
+import type { UserState } from '../user';
+import { type UserPermissionsState, hasLegacyAdminAccess, userPermissionsThunk } from '../userPermissions';
 import { getMember } from './getMember';
 
 const name = 'members' as const;
@@ -90,12 +89,9 @@ export const selectMembers = (state: MembersState) => state.members;
 export const canFetchMembers = async (
     dispatch: ThunkDispatch<MembersState, ProtonThunkArguments, UnknownAction>
 ): Promise<boolean> => {
-    const user = await dispatch(userThunk());
-    if (isAdmin(user)) {
-        return true;
-    }
-    const { permissions } = await dispatch(userPermissionsThunk());
-    return !!permissions?.['account.user.read'];
+    const userPermission = await dispatch(userPermissionsThunk());
+    // `hasLegacyAdminAccess` needed to not break impersonation when the FF is off. Remove together with the flag.
+    return !!userPermission.permissions?.['account.user.read'] || hasLegacyAdminAccess(userPermission);
 };
 
 const getMemberFromState = (state: ModelState<EnhancedMember[]>, target: Member) => {
@@ -305,6 +301,7 @@ const slice = createSlice({
                 state.value = freeMembers;
                 state.unprivatization = initialState.unprivatization;
                 state.error = undefined;
+                state.meta.type = ValueType.dummy;
                 state.meta.fetchedEphemeral = undefined;
                 state.meta.fetchedAt = 0;
             }
