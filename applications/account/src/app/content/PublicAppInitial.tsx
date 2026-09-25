@@ -3,7 +3,6 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 
 import type * as H from 'history';
 
-import type { OnLoginCallback, OnLoginCallbackResult } from '@proton/components/containers/app/interface';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import {
     getEmailSessionForkSearchParameter,
@@ -24,6 +23,7 @@ import type { ProduceForkData } from './actions/forkInterface';
 import { getActiveSessionLoginResult } from './actions/getActiveSessionLoginResult';
 import { getLoginResult } from './actions/getLoginResult';
 import type { LoginLocationState, LoginResult } from './actions/interface';
+import type { OnLoginCallback, OnLoginCallbackResult } from './authSession';
 import { handleDesktopFork } from './fork/handleDesktopFork';
 import { handleOAuthFork } from './fork/handleOAuthFork';
 import { handleProtonFork } from './fork/handleProtonFork';

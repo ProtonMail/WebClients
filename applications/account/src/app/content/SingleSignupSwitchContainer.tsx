@@ -1,6 +1,5 @@
 import { useLocation } from 'react-router-dom';
 
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -10,6 +9,7 @@ import { isReferralSignup } from '../signup/helper';
 import SignupCtxRouter from '../signupCtx/SignupCtxRouter';
 import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
 import type { MetaTags } from '../useMetaTags';
+import type { OnLoginCallback } from './authSession';
 import type { Paths } from './helper';
 
 interface Props {

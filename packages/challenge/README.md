@@ -18,3 +18,5 @@ const challengeRef = useRef<ChallengeRef>();
 // On submit:
 const payload = await challengeRef.current?.getChallenge();
 ```
+
+`observeRef` is read each time `Challenge` renders. If the input can mount without re-rendering `Challenge` (it lives in a child that owns its own state), also give the input a callback ref that calls `challengeRef.current?.observe(el)`.

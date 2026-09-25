@@ -9,6 +9,7 @@ import { SCOPE_REAUTH_SSO, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
+import { ExternalSSOError, handleExternalSSOLogin } from '@proton/shared/lib/authentication/ssoExternalLogin';
 import { API_CODES, APPS } from '@proton/shared/lib/constants';
 import { getVpnAccountUrl } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -16,7 +17,6 @@ import noop from '@proton/utils/noop';
 
 import Prompt, { type PromptProps } from '../../components/prompt/Prompt';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import { ExternalSSOError, handleExternalSSOLogin } from '../login/ssoExternalLogin';
 import type { OwnAuthModalProps, SSOAuthModalResult } from './interface';
 
 type State =

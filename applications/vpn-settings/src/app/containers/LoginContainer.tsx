@@ -2,15 +2,13 @@ import { useLocation } from 'react-router-dom';
 
 import type * as H from 'history';
 import type { Paths } from 'proton-account/src/app/content/helper';
-import AccountLoginContainer, {
-    type LoginContainerState as AccountLoginContainerState,
-} from 'proton-account/src/app/login/LoginContainer';
+import AccountSignInContainer, { type SignInLocationState } from 'proton-account/src/app/sign-in/SignInContainer';
 import type { MetaTags } from 'proton-account/src/app/useMetaTags';
 
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import { APPS, VPN_TV_PATHS_MAP } from '@proton/shared/lib/constants';
 
-export type LoginContainerState = AccountLoginContainerState;
+export type LoginContainerState = SignInLocationState;
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -27,7 +25,7 @@ const LoginContainer = ({ metaTags, onLogin, paths, initialLocation, onPreSubmit
     const vpnTestflight = searchParams.get('redirect') === 'ios-beta';
 
     return (
-        <AccountLoginContainer
+        <AccountSignInContainer
             testflight={vpnTestflight ? 'vpn' : undefined}
             metaTags={metaTags}
             // Disable create account for /appletv because it has payments
@@ -38,6 +36,7 @@ const LoginContainer = ({ metaTags, onLogin, paths, initialLocation, onPreSubmit
             externalRedirect={initialLocation?.pathname || ''}
             onPreSubmit={onPreSubmit}
             onStartAuth={onStartAuth}
+            redirectsSSOToAccount
             onLogin={async (session) => {
                 if (vpnTestflight) {
                     document.location.assign('https://testflight.apple.com/join/3yl2MSbw');

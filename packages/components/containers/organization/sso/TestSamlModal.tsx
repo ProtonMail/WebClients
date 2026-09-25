@@ -13,6 +13,7 @@ import type {
     RefreshSessionResponse,
     SSOInfoResponse,
 } from '@proton/shared/lib/authentication/interface';
+import { ExternalSSOError, handleExternalSSOLogin } from '@proton/shared/lib/authentication/ssoExternalLogin';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -30,7 +31,6 @@ import useFormErrors from '../../../components/v2/useFormErrors';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import useErrorHandler from '../../../hooks/useErrorHandler';
 import { useSilentApi } from '../../../hooks/useSilentApi';
-import { ExternalSSOError, handleExternalSSOLogin } from '../../login/ssoExternalLogin';
 import successSvg from './cloud-lock-check.svg';
 import errorSvg from './cloud-lock-cross.svg';
 

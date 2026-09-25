@@ -1,7 +1,6 @@
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
+import type { ChallengeResult } from '@proton/challenge/interface';
 import type { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
-import type { ChallengeResult } from '@proton/components/containers/challenge/interface';
-import type { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
@@ -25,6 +24,9 @@ import type {
     Organization,
     User,
 } from '@proton/shared/lib/interfaces';
+
+import type { AppIntent, AuthSession } from '../content/authSession';
+import type { AddressGeneration } from '../setup-address/addressGeneration';
 
 export interface SessionData {
     resumedSessionResult: ResumedSessionResult;

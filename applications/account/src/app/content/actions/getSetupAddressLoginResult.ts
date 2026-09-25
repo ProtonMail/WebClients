@@ -1,7 +1,7 @@
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 
+import type { AuthSession } from '../authSession';
 import type { LoginResult } from './interface';
 
 export const getSetupAddressLoginResult = ({

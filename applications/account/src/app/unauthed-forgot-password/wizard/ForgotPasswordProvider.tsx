@@ -1,7 +1,8 @@
 import { type ReactNode, createContext, useContext } from 'react';
 
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+
+import type { OnLoginCallback } from '../../content/authSession';
 
 interface ForgotPasswordProps {
     onLogin: OnLoginCallback;

@@ -5,6 +5,11 @@ export type { ChallengeLog, ChallengeLogType, ChallengeResult } from '../shared/
 export interface ChallengeRef {
     getChallenge: () => Promise<ChallengeResult>;
     sendEvent: (event: ChallengeEvent) => void;
+    /**
+     * Watches this element instead of `observeRef`'s, for a callback ref: `observeRef` is only read when the frame
+     * renders, so it misses an element that mounts without re-rendering the frame.
+     */
+    observe: (el: HTMLElement | null | undefined) => void;
 }
 
 export type ChallengeEventType =
