@@ -678,6 +678,22 @@ describe('SignInStateMachine', () => {
             ).toBe(true);
             expect(errors()).toEqual([]);
         });
+
+        it('sends SSO accounts of other apps to account from the username step', async () => {
+            const { actor, spies, errors } = startWith(
+                { type: AuthType.Auto },
+                { fetchAccountType: () => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO)) },
+                { redirectsSSOToAccount: true }
+            );
+            await submitUsername(actor);
+            expect(
+                credentialsFlow(actor)
+                    .getSnapshot()
+                    .matches({ form: { auto: 'idle' } })
+            ).toBe(true);
+            expect(spies.redirectToAccountSSO).toHaveBeenCalledWith({ username: usernameForm.username });
+            expect(errors()).toEqual([]);
+        });
     });
 
     describe('external SSO', () => {
