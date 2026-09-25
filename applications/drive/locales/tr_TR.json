@@ -1371,6 +1371,9 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
       ]
     },
     "Action: Docs": {
@@ -8030,6 +8033,39 @@
       ],
       "Or import your files from": [
         "Ya da dosyalarınızı şuradan içe aktarın"
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } bu erişme iznini yalnızca içe aktarma işlemi için kullanır. Google, ${ BRAND_NAME } hesabınıza asla erişemez."
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Google Drive bağlantısı kuruluyor ve içe aktarma işlemi hazırlanıyor."
+      ],
+      "Import your files and folders": [
+        "Dosyalarınızı ve klasörlerinizi içe aktarın"
+      ],
+      "Know when it's done": [
+        "Ne zaman tamamlandığını bilin"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Ardından Google hesabınızda oturum açın ve ${ BRAND_NAME } tarafından Google Drive üzerine erişilmesine izin verin. Dosyalarınızı ve klasörlerinizi ${ DRIVE_APP_NAME } içine aktaracağız."
+      ],
+      "Private and encrypted": [
+        "Gizliliği koruyan ve şifrelenmiş"
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Bunları Google Drive üzerinden ${ DRIVE_APP_NAME } üzerine kopyalayacağız."
+      ],
+      "We'll email you when your import is complete.": [
+        "İçe aktarma işlemi tamamlandığında size e-posta göndereceğiz."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "İçe aktarma işlemi tamamlandığında size e-posta göndereceğiz. Dosyalarınız ${ DRIVE_APP_NAME } içindeki bir klasörde görünecek."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Dosyalarınız ${ DRIVE_APP_NAME } üzerinde şifrelenmiş ve güvenli olarak tutulur."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Drive depolama alanınız boş olabilir veya yalnızca desteklenmeyen dosyaları içeriyor olabilir."
       ]
     },
     "info": {
@@ -13310,6 +13346,9 @@
       ],
       "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
         "Dosyalarınızı kopyalamak için bir kez okuyoruz ve ardından her birini ${ BRAND_NAME } anahtarlarınızla şifreliyoruz."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Dosyalarınızı ve klasörlerinizi Google Drive üzerinden içe aktarın ve bunların gizliliğini ${ DRIVE_APP_NAME } ile koruyun."
       ]
     },
     "Success": {
@@ -14769,6 +14808,15 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasına hoş geldiniz"
+      ],
+      "Easy Switch from Google Drive": [
+        "Google Drive üzerinden Easy Switch"
+      ],
+      "Import started": [
+        "İçe aktarma başlatıldı"
+      ],
+      "Preparing your import": [
+        "İçe aktarma işleminiz hazırlanıyor"
       ]
     },
     "Today icon tooltip in mini calendar": {

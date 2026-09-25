@@ -1378,6 +1378,9 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
       ]
     },
     "Action: Docs": {
@@ -8154,6 +8157,39 @@
       ],
       "Or import your files from": [
         "Sau importați-vă fișierele din"
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } utilizează acest acces doar pentru importare. Google nu va obține niciodată acces la contul din ${ BRAND_NAME }."
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Se conectează la Google Drive și vi se pregătește importarea."
+      ],
+      "Import your files and folders": [
+        "Importați-vă folderele și fișierele"
+      ],
+      "Know when it's done": [
+        "Știți când este gata"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "În continuare, conectați-vă la Google Drive și permiteți ca ${ BRAND_NAME } să acceseze Google Drive. Folderele și fișierele vor fi importate în ${ DRIVE_APP_NAME }."
+      ],
+      "Private and encrypted": [
+        "Private și criptate"
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vor fi copiate din Google Drive în ${ DRIVE_APP_NAME }."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vă vom anunța pe e-mail după finalizarea importării."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Veți primi un e-mail când s-a finalizat importarea. Fișierele vor apărea într-un folder din ${ DRIVE_APP_NAME }."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Fișierele sunt criptate și stocate în siguranță în ${ DRIVE_APP_NAME }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Drive s-ar putea să fie gol sau să conțină fișiere nesuportate."
       ]
     },
     "info": {
@@ -13556,6 +13592,9 @@
       ],
       "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
         "Fișierele sunt citite o singură dată pentru a le copia, apoi sunt criptate fiecare în parte folosind cheile ${ BRAND_NAME } pe care le dețineți."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importați-vă folderele și fișierele din Google Drive și păstrați-le private în ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -15035,6 +15074,15 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Bun venit la ${ DRIVE_APP_NAME }"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch din Google Drive"
+      ],
+      "Import started": [
+        "Importare pornită"
+      ],
+      "Preparing your import": [
+        "Se pregătește importarea"
       ]
     },
     "Today icon tooltip in mini calendar": {
