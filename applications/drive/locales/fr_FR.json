@@ -1368,6 +1368,9 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "Maybe later": [
+        "Peut-être plus tard"
       ]
     },
     "Action: Docs": {
@@ -7890,6 +7893,39 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } utilise cet accès uniquement pour l'importation. Google n'a jamais accès à votre compte ${ BRAND_NAME }."
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Connexion à Google Drive et préparation de l'importation en cours."
+      ],
+      "Import your files and folders": [
+        "Importer vos fichiers et dossiers"
+      ],
+      "Know when it's done": [
+        "Savoir quand c'est prêt"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Ensuite, connectez-vous à votre compte Google et autorisez ${ BRAND_NAME } à accéder à Google Drive. Nous importerons vos fichiers et dossiers dans ${ DRIVE_APP_NAME }."
+      ],
+      "Private and encrypted": [
+        "Privé et chiffré"
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Nous allons les copier depuis Google Drive vers ${ DRIVE_APP_NAME }."
+      ],
+      "We'll email you when your import is complete.": [
+        "Nous vous enverrons un e-mail quand l'importation sera terminée."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Nous vous enverrons un e-mail quand l'importation sera terminée. Vos fichiers apparaîtront dans un dossier situé dans ${ DRIVE_APP_NAME }."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Vos fichiers sont chiffrés et stockés en toute sécurité dans ${ DRIVE_APP_NAME }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Il se peut que votre Google Drive soit vide ou ne contienne que des fichiers non pris en charge."
       ]
     },
     "info": {
@@ -13230,6 +13266,9 @@
       ],
       "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
         "Nous lisons vos fichiers une seule fois pour les copier, puis nous les chiffrons individuellement à l’aide de vos clés ${ BRAND_NAME }."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importez vos fichiers et dossiers depuis Google Drive et conservez-les en privé dans ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -14674,6 +14713,15 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Bienvenue dans ${ DRIVE_APP_NAME }"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch depuis Google Drive"
+      ],
+      "Import started": [
+        "L'importation a commencé"
+      ],
+      "Preparing your import": [
+        "Votre importation est en cours de préparation."
       ]
     },
     "Today icon tooltip in mini calendar": {
