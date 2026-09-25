@@ -3,7 +3,10 @@ import { collapseCompactedChain } from './compaction/collapse';
 import { getSummarizedMessageIds } from './compaction';
 import { resolveRequestContextFiles } from './requestContextFiles';
 import { countTokens } from './tokenizer';
-import { calculateAttachmentContextSize, calculateMessageContentTokens, computeFileTokenBudget } from './utils';
+import type { ContextLimits } from './contextLimits';
+import { DEFAULT_CONTEXT_LIMITS } from './contextLimits';
+import { computeFileTokenBudget } from './contextLimits';
+import { calculateAttachmentContextSize, calculateMessageTokenBreakdown } from './utils';
 import type { Attachment, Message, MessageId } from '../types';
 
 export type EffectiveContextUsageInput = {
@@ -14,11 +17,15 @@ export type EffectiveContextUsageInput = {
     allAttachments: Record<string, Attachment>;
     /** Conversation-scoped messages; enables shared-history compaction on edit forks. */
     messageMap?: Record<MessageId, Message>;
+    /** Model context window used for file budgeting on the next request. */
+    contextLimits?: ContextLimits;
 };
 
 export type EffectiveContextUsage = {
-    /** Message text plus the latest compaction summary (post-compaction view). */
+    /** Message text plus the latest compaction summary (post-compaction view). Excludes tool blocks. */
     conversationTokens: number;
+    /** tool_call and tool_result blocks that would be sent on the next request. */
+    toolCallTokens: number;
     /** Attachments that would be sent on the next request. */
     fileTokens: number;
     usedTokens: number;
@@ -41,11 +48,15 @@ export function estimateEffectiveContextUsage({
     currentAttachments = [],
     allAttachments,
     messageMap,
+    contextLimits = DEFAULT_CONTEXT_LIMITS,
 }: EffectiveContextUsageInput): EffectiveContextUsage {
     const summarizedIds = getSummarizedMessageIds(messageChain, messageMap);
     const { summaryTurn, chain: effectiveChain } = collapseCompactedChain(messageChain, messageMap);
     const summaryTokens = summaryTurn ? countTokens(summaryTurn.content ?? '') : 0;
-    const conversationTokens = calculateMessageContentTokens(effectiveChain) + summaryTokens;
+    const { textTokens, toolTokens } = calculateMessageTokenBreakdown(effectiveChain);
+    const conversationTokens = textTokens + summaryTokens;
+    const toolCallTokens = toolTokens;
+    const messageContentTokens = conversationTokens + toolCallTokens;
 
     const summarizedAttachmentIds = new Set<string>();
     for (const message of messageChain) {
@@ -64,15 +75,16 @@ export function estimateEffectiveContextUsage({
         contextFilters,
         allAttachments,
         unsummarizedCurrentAttachments,
-        computeFileTokenBudget(conversationTokens)
+        computeFileTokenBudget(messageContentTokens, contextLimits)
     );
 
     const fileTokens = calculateAttachmentContextSize(activeFiles);
 
     return {
         conversationTokens,
+        toolCallTokens,
         fileTokens,
-        usedTokens: conversationTokens + fileTokens,
+        usedTokens: messageContentTokens + fileTokens,
         hasCompaction: summarizedIds.size > 0,
         activeFiles,
         droppedForBudget,
