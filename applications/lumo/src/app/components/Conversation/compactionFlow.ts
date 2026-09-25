@@ -3,7 +3,8 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import type { ContextFilter } from '../../llm';
-import { PROACTIVE_COMPACTION_THRESHOLD_TOKENS, compactConversation, estimateTurnsTokens } from '../../llm/compaction';
+import { compactConversation, estimateTurnsTokens } from '../../llm/compaction';
+import { getContextWindowConfigForModelTier } from '../../llm/modelContextLimits';
 import { NotEnoughToCompactError } from '../../llm/compaction/partition';
 import { updateConversationStatus } from '../../redux/slices/core/conversations';
 import {
@@ -73,6 +74,8 @@ export type GenerationWithCompactionParams = {
     enableProactiveCompaction?: boolean;
     /** Estimated-token threshold that triggers proactive compaction. */
     proactiveThresholdTokens?: number;
+    /** Compaction engine target size for the summarized region. */
+    compactionTargetTokens?: number;
 };
 
 // One boundary per send. A second pass on the same request only re-summarizes an
@@ -115,8 +118,14 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             preferSibling,
             maxCompactions = DEFAULT_MAX_COMPACTIONS,
             enableProactiveCompaction = true,
-            proactiveThresholdTokens = PROACTIVE_COMPACTION_THRESHOLD_TOKENS,
+            proactiveThresholdTokens: proactiveThresholdTokensParam,
+            compactionTargetTokens: compactionTargetTokensParam,
         } = params;
+
+        const windowConfig = getContextWindowConfigForModelTier(sendOptions.modelTier ?? 'auto');
+        const proactiveThresholdTokens =
+            proactiveThresholdTokensParam ?? windowConfig.proactiveCompactionThresholdTokens;
+        const compactionTargetTokens = compactionTargetTokensParam ?? windowConfig.compactionTargetTokens;
 
         let currentChain = chain;
         let currentAssistantId = assistantMessageId;
@@ -140,6 +149,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                     messageMap,
                     signal: sendOptions.signal,
                     preferSibling,
+                    compactionTargetTokens,
                 })
             );
             preferSibling?.(branch.boundary);
@@ -302,6 +312,7 @@ type CompactAndBranchParams = {
     signal?: AbortSignal;
     /** Pins a sibling so the in-progress boundary is shown while compaction runs. */
     preferSibling?: (message: Message) => void;
+    compactionTargetTokens: number;
 };
 
 const EMPTY_COMPACTION_STATS = {
@@ -339,6 +350,7 @@ function compactAndBranch(params: CompactAndBranchParams) {
             messageMap,
             signal,
             preferSibling,
+            compactionTargetTokens,
         } = params;
 
         dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
@@ -371,7 +383,13 @@ function compactAndBranch(params: CompactAndBranchParams) {
 
         let result;
         try {
-            result = await compactConversation(chain, api, { signal, attachments, contextFilters, messageMap });
+            result = await compactConversation(chain, api, {
+                signal,
+                attachments,
+                contextFilters,
+                messageMap,
+                targetTokens: compactionTargetTokens,
+            });
         } catch (error) {
             // Revert: drop the placeholder boundary and restore the original attempt.
             dispatch(deleteMessage(boundaryId));

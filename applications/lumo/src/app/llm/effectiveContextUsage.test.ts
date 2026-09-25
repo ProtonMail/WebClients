@@ -2,7 +2,7 @@ import { type Message, Role } from '../types';
 import { estimateEffectiveContextUsage } from './effectiveContextUsage';
 import { SUMMARY_TURN_PREFIX } from './compaction/collapse';
 import { countTokens } from './tokenizer';
-import { CONTEXT_LIMITS } from './utils';
+import { DEFAULT_CONTEXT_LIMITS } from './contextLimits';
 import type { Attachment } from '../types';
 
 let seq = 0;
@@ -35,8 +35,32 @@ describe('estimateEffectiveContextUsage', () => {
         });
 
         expect(usage.conversationTokens).toBeGreaterThan(0);
+        expect(usage.toolCallTokens).toBe(0);
         expect(usage.fileTokens).toBe(0);
         expect(usage.hasCompaction).toBe(false);
+    });
+
+    it('splits tool_call and tool_result blocks from conversation text', () => {
+        const toolPayload = '{"name":"web_search","arguments":{}}';
+        const chain = [
+            textMsg(Role.User, 'question'),
+            textMsg(Role.Assistant, '', {
+                blocks: [
+                    { type: 'text', content: 'thinking' },
+                    { type: 'tool_call', content: toolPayload },
+                    { type: 'tool_result', content: 'search results here' },
+                ],
+            }),
+        ];
+        const usage = estimateEffectiveContextUsage({
+            messageChain: chain,
+            contextFilters: [],
+            allAttachments: {},
+        });
+
+        expect(usage.conversationTokens).toBe(countTokens('question') + countTokens('thinking'));
+        expect(usage.toolCallTokens).toBe(countTokens(toolPayload) + countTokens('search results here'));
+        expect(usage.usedTokens).toBe(usage.conversationTokens + usage.toolCallTokens);
     });
 
     it('excludes summarized messages and counts only the latest summary', () => {
@@ -372,7 +396,7 @@ describe('estimateEffectiveContextUsage', () => {
             allAttachments,
         });
 
-        expect(usage.usedTokens).toBeLessThan(CONTEXT_LIMITS.MAX_CONTEXT);
+        expect(usage.usedTokens).toBeLessThan(DEFAULT_CONTEXT_LIMITS.MAX_CONTEXT);
         expect(usage.activeFiles.map((f) => f.filename)).toEqual(['manual.pdf', 'strong.pdf']);
         expect(usage.droppedForBudget.map((f) => f.filename)).toEqual(['weak.pdf', 'weaker.pdf']);
     });

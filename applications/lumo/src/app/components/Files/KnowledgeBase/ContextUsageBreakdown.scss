@@ -1,5 +1,6 @@
 .context-usage {
     $conversation: var(--primary, #6d4aff);
+    $tool-calls: var(--signal-warning, #db7d00);
     $files: var(--signal-info, #239ECE);
     $buffer: var(--text-hint, #8a8a8a);
 
@@ -19,6 +20,10 @@
 
         &--conversation {
             background: $conversation;
+        }
+
+        &--tool_calls {
+            background: $tool-calls;
         }
 
         &--files {

@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
 
+import { usePrefetchModels } from '../hooks/usePrefetchModels';
 import { usePrefetchUsageLimits } from '../hooks/usePrefetchUsageLimits';
 import { useTierErrors } from '../hooks/useTierErrors';
 import { useLumoDispatch } from '../redux/hooks';
@@ -13,6 +14,7 @@ import { useLumoPlan } from './LumoPlanProvider';
  * Shows the upgrade upsell when a completion or blocked send exhausts a chat-model pool.
  */
 export const UsageLimitsTierSync = () => {
+    usePrefetchModels();
     usePrefetchUsageLimits();
     const remainingLimits = useRemainingLimits();
     const { hasLumoPlus, lumoUserType } = useLumoPlan();
