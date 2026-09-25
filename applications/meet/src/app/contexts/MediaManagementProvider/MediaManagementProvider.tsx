@@ -19,7 +19,6 @@ import {
     showPermissionsModal,
 } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
-    selectActiveAudioOutputId,
     selectActiveCameraId,
     selectActiveMicrophoneId,
     selectCameraPermission,
@@ -40,6 +39,7 @@ import {
     setNoDeviceDetected,
     setPermissionPromptStatus,
 } from '@proton/meet/store/slices/uiStateSlice';
+import { isDefaultDevice } from '@proton/meet/utils/deviceUtils';
 import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
@@ -88,7 +88,6 @@ export const MediaManagementProvider = ({
     const initialAudioState = useMeetSelector(selectInitialAudioState);
 
     const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
-    const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
     const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
 
     const selectedCameraId = useMeetSelector(selectSelectedCameraId);
@@ -119,17 +118,28 @@ export const MediaManagementProvider = ({
             }
 
             let selectedDeviceId = deviceId;
-            const targetDeviceId = deviceType === 'audiooutput' && isSystemDefaultDevice ? '' : deviceId;
+            // LiveKit normalises 'default' to '' internally, so the target has to match
+            const isOutputSystemDefault =
+                deviceType === 'audiooutput' && (isSystemDefaultDevice || isDefaultDevice(deviceId));
+            const targetDeviceId = isOutputSystemDefault ? '' : deviceId;
 
-            const activeDeviceIdByType: Record<'audioinput' | 'audiooutput' | 'videoinput', string | null> = {
+            const activeDeviceIdByType: Record<'audioinput' | 'videoinput', string | null> = {
                 audioinput: activeMicrophoneDeviceId,
-                audiooutput: activeAudioOutputDeviceId,
                 videoinput: activeCameraDeviceId,
             };
 
+            // getActiveDevice is set after LiveKit's switch resolves, so a timed out or failed one
+            // leaves the old value and the next attempt still runs. options.audioOutput is written
+            // before the await and only reverted on rejection, so a hang leaves it claiming a device
+            // that was never applied. Its map is seeded with 'default', which the collapse above
+            // keeps a target from ever matching.
+            // Inputs stay on the store: re-applying them restarts the capture.
+            const appliedDeviceId =
+                deviceType === 'audiooutput' ? room.getActiveDevice('audiooutput') : activeDeviceIdByType[deviceType];
+
             try {
                 try {
-                    if (activeDeviceIdByType[deviceType] !== targetDeviceId) {
+                    if (appliedDeviceId !== targetDeviceId) {
                         await withTimeout(
                             room.switchActiveDevice(deviceType, targetDeviceId),
                             'Switch active device',
@@ -214,15 +224,7 @@ export const MediaManagementProvider = ({
             const toSave = isSystemDefaultDevice ? null : selectedDeviceId;
             dispatch(setPreferredDeviceAndPersist({ kind: deviceType, deviceId: toSave }));
         },
-        [
-            activeMicrophoneDeviceId,
-            activeAudioOutputDeviceId,
-            activeCameraDeviceId,
-            dispatch,
-            room,
-            store,
-            reportMeetError,
-        ]
+        [activeMicrophoneDeviceId, activeCameraDeviceId, dispatch, room, store, reportMeetError]
     );
 
     const isBackgroundBlurSupported = useIsBackgroundEffectsSupported();
