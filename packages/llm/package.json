@@ -4,7 +4,7 @@
     "description": "Large Language Model shared library",
     "main": "lib/index.ts",
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage"
@@ -35,9 +35,10 @@
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.6.7",
         "@types/jest": "^30.0.0",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "@webgpu/types": "^0.1.74",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     }
 }

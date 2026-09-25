@@ -5,7 +5,7 @@
     "author": "ProtonMail",
     "sideEffects": false,
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "generate-date-fns-locales-map": "node lib/i18n/generateDateFnsLocaleMap.ts lib/i18n/dateFnsLocaleMap.ts && prettier --write lib/i18n/dateFnsLocaleMap.ts",
         "i18n:validate": "proton-i18n validate lint-functions lib",
         "lint": "eslint --quiet",
@@ -57,12 +57,13 @@
         "@proton/types": "workspace:^",
         "@proton/vitest-config": "workspace:^",
         "@types/file-saver": "^2.0.7",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "@vitest/browser-playwright": "^5.0.1",
         "@webgpu/types": "^0.1.74",
         "eslint": "^10.11.0",
         "playwright": "^1.63.0",
         "prettier": "^3.9.8",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "vitest": "^5.0.1"
     },
     "peerDependencies": {

@@ -5,7 +5,7 @@
   "author": "",
   "scripts": {
     "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --handleSupportAndErrors --optimizeAssets --babelLoader --noLogicalScss ",
-    "check-types": "tsc",
+    "check-types": "tsc --checkers 1",
     "i18n:extract:web": "proton-i18n extract",
     "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
     "i18n:validate": "proton-i18n validate lint-functions",
@@ -73,6 +73,7 @@
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@types/react-router-dom": "^5.3.3",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "cross-env": "^10.1.0",
     "eslint": "^10.11.0",
     "html-webpack-plugin": "^5.6.8",
@@ -83,7 +84,7 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "sass": "^1.80.3",
     "tailwindcss": "^3.4.19",
-    "typescript": "^6.0.3",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "webpack": "^5.111.1"
   }
 }

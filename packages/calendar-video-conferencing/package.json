@@ -24,7 +24,7 @@
         "./zoomIntegration/useZoomOAuth": "./zoomIntegration/useZoomOAuth.tsx"
     },
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --logHeapUsage",
