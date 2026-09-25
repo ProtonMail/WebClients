@@ -215,6 +215,28 @@ export type LumoUsageLimitsResponse = {
     limits: LumoRemainingLimits;
 };
 
+/** Single model entry from `GET ai/v1/models` (OpenAI-compatible list object). */
+export type LumoApiModel = {
+    object: 'model';
+    id: string;
+    created: number;
+    owned_by: string;
+    capabilities?: Record<string, boolean>;
+    name?: string;
+    description?: string;
+    max_context_length: number;
+    aliases?: string[];
+    deprecation?: string | null;
+    deprecation_replacement_model?: string | null;
+    default_model_temperature?: number;
+    archived?: boolean;
+};
+
+export type LumoModelsListResponse = {
+    object: 'list';
+    data: LumoApiModel[];
+};
+
 export type LumoStreamUsage = {
     completion_tokens?: number;
     remaining_limits?: LumoRemainingLimits;

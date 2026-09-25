@@ -34,6 +34,18 @@ describe('buildContextBreakdown', () => {
         expect(Math.round(files.percentage)).toBe(40);
     });
 
+    it('includes tool calls in measured usage and the stacked bar', () => {
+        const b = buildContextBreakdown({
+            conversationTokens: 10_000,
+            toolCallTokens: 5_000,
+            fileTokens: 5_000,
+            maxTokens: 100_000,
+        });
+
+        expect(b.usedTokens).toBe(20_000);
+        expect(tokensOf(b, 'tool_calls')).toBe(5_000);
+    });
+
     it('respects an explicit buffer override', () => {
         const b = buildContextBreakdown({
             conversationTokens: 10_000,
