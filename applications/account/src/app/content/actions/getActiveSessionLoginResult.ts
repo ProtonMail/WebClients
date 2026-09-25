@@ -1,6 +1,5 @@
 import { matchPath } from 'react-router-dom';
 
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType } from '@proton/shared/lib/authentication/fork';
 import {
@@ -11,6 +10,7 @@ import { type APP_NAMES, SSO_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
+import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { type ProduceForkData, SSOType } from './forkInterface';

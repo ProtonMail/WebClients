@@ -4,7 +4,6 @@ import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import metrics from '@proton/metrics';
@@ -36,6 +35,7 @@ import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
 import sendRecoveryPhrasePayloadHelper from '../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
+import type { OnLoginCallback } from '../../content/authSession';
 import type { AccountData, SignupHumanVerification, SignupType } from '../../signup/interfaces';
 import { handleSetupOrg } from '../../signup/signupActions';
 import {

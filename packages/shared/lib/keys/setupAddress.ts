@@ -1,18 +1,13 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { c } from 'ttag';
 
-import type { AddressGeneration } from '@proton/components/containers/login/interface';
-import noop from '@proton/utils/noop';
-
-import { getAllAddresses } from '../api/addresses';
-import { queryAvailableDomains } from '../api/domains';
 import { updateUsername } from '../api/settings';
 import { queryCheckUsernameAvailability } from '../api/user';
 import type { ProductParam } from '../apps/product';
 import { getRequiresAddress, getRequiresProtonAddress } from '../authentication/apps';
 import { getClientKey } from '../authentication/clientKey';
 import { getDecryptedBlob, getEncryptedBlob } from '../authentication/sessionBlobCryptoHelper';
-import { ADDRESS_TYPE, APPS, type APP_NAMES, KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
+import { APPS, type APP_NAMES, KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
 import { getEmailParts, removePlusAliasLocalPart } from '../helpers/email';
 import type { Address, Api, PreAuthKTVerify, User, User as tsUser } from '../interfaces';
 import { isPrivate } from '../user/helpers';
@@ -99,74 +94,6 @@ export interface AddressGenerationPayload {
     setup: AddressGenerationSetup;
     preAuthKTVerify: PreAuthKTVerify;
 }
-
-const getAddressSetupMode = ({
-    user,
-    keyPassword,
-    loginPassword,
-}: {
-    user: tsUser;
-    keyPassword: string | undefined;
-    loginPassword: string | undefined;
-}): AddressGenerationSetup => {
-    if (user.Keys.length > 0) {
-        if (!keyPassword) {
-            throw new Error('Missing key password, should never happen');
-        }
-        return {
-            mode: 'create',
-            keyPassword,
-        } as const;
-    }
-    if (!loginPassword) {
-        return {
-            mode: 'ask',
-        };
-    }
-    return {
-        mode: 'setup',
-        loginPassword,
-    };
-};
-
-export const getAddressGenerationSetup = async ({
-    user,
-    api,
-    addresses: maybeAddresses,
-    domains: maybeDomains,
-    loginPassword,
-    keyPassword,
-}: {
-    user: tsUser;
-    api: Api;
-    addresses?: Address[];
-    domains?: string[];
-    loginPassword: string | undefined;
-    keyPassword: string | undefined;
-}): Promise<AddressGeneration> => {
-    const [addresses, domains] = await Promise.all([
-        maybeAddresses || getAllAddresses(api),
-        maybeDomains || api<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains),
-    ]);
-    const externalEmailAddress = addresses.find((address) => address.Type === ADDRESS_TYPE.TYPE_EXTERNAL);
-    const claimableAddress = await getClaimableAddress({
-        user,
-        api,
-        email: externalEmailAddress?.Email,
-        domains,
-    }).catch(noop);
-
-    return {
-        externalEmailAddress,
-        availableDomains: domains,
-        claimableAddress,
-        setup: getAddressSetupMode({
-            user,
-            loginPassword,
-            keyPassword,
-        }),
-    };
-};
 
 const handleSetupUsernameAndAddress = async ({
     api,

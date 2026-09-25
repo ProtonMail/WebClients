@@ -1,8 +1,9 @@
 import type { APP_NAMES } from '../constants';
-import { APPS } from '../constants';
+import { APPS, PASSWORD_MODE } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { SETTINGS_2FA_ENABLED } from '../interfaces';
 import { getHasWebAuthnSupport } from '../webauthn/helper';
+import type { AuthResponse } from './interface';
 
 /**
  * If the application supports FIDO2 and the domain is not onion.
@@ -104,5 +105,30 @@ export const getTwoFactorTypes = ({
         // Filter the fido2 type again since the assertion will pass in case totp is enabled.
         // This ensures the fido2 method will get hidden in the UI.
         fido2: result.fido2 && twoFactorSupport.fido2.supported,
+    };
+};
+
+/** What a sign-in asks for after the password: which second factors, and whether a second password unlocks the keys. */
+export interface AuthTypes {
+    twoFactor: TwoFactorAuthTypes;
+    unlock: boolean;
+}
+
+/**
+ * Get two factor types and password mode for a user signing in.
+ */
+export const getAuthTypes = ({
+    info,
+    app,
+    location,
+}: {
+    info: AuthResponse;
+    app: APP_NAMES;
+    location: Pick<Location, 'hostname'>;
+}): AuthTypes => {
+    const Enabled = info?.['2FA']?.Enabled || 0;
+    return {
+        twoFactor: getTwoFactorTypes({ enabled: Enabled, app, hostname: location.hostname }),
+        unlock: info?.PasswordMode === PASSWORD_MODE.TWO_PASSWORD,
     };
 };

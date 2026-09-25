@@ -1,12 +1,11 @@
 import type { LocationDescriptor } from 'history';
 
-import type { AuthSession } from '@proton/components/containers/login/interface';
-
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
 import type { OAuthPartnersCallbackState, OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
 import type { ReAuthState } from '../../public/reauthContainerState';
+import type { AuthSession } from '../authSession';
 import type { ProduceForkData, SSOType } from './forkInterface';
 
 type LoginLocationStateData<Type, State> = {

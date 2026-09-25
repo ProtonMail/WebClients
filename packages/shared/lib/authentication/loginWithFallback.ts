@@ -1,8 +1,6 @@
 import { getAuthVersionWithFallback } from '@protontech/crypto/srp';
 
 import { PASSWORD_WRONG_ERROR, auth, getInfo } from '../api/auth';
-import { endOfTrialIPCCall } from '../desktop/endOfTrialHelpers';
-import { API_CUSTOM_ERROR_CODES } from '../errors';
 import type { Api } from '../interfaces';
 import { srpAuth } from '../srp';
 import type { AuthResponse, AuthVersion, ChallengePayload, InfoResponse } from './interface';
@@ -50,19 +48,15 @@ const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload, p
                 result,
             };
         } catch (e: any) {
-            if (e.data && e.data.Code === API_CUSTOM_ERROR_CODES.INBOX_DESKTOP_TRIAL_END) {
-                endOfTrialIPCCall();
-            }
-
             if (e.data && e.data.Code === PASSWORD_WRONG_ERROR && !done) {
                 state = {
                     lastAuthVersion: version,
                 };
-                continue; // eslint-disable-line
+                continue;
             }
             throw e;
         }
-    } while (true); // eslint-disable-line
+    } while (true);
 };
 
 export default loginWithFallback;

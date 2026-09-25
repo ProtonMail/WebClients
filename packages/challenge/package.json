@@ -5,6 +5,7 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
+        "./interface": "./src/shared/interface.ts",
         "./v4/Challenge": "./src/v4/Challenge.tsx",
         "./v4/getChallengeSrc": "./src/v4/getChallengeSrc.ts",
         "./v4/interface": "./src/v4/interface.ts",

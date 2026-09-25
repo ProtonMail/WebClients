@@ -1,6 +1,6 @@
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
+import type { OnLoginCallback } from '../content/authSession';
 import { forgotPasswordStepRegistry } from './forgotPasswordStepRegistry';
 import type { UnauthedForgotPasswordStateMachine } from './state-machine/UnauthedForgotPasswordStateMachine';
 import type { ForgotPasswordStatePath } from './state-machine/statePath';

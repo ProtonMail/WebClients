@@ -8,14 +8,12 @@ import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useLoading } from '@proton/hooks';
 import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { PasswordError, TOTPError } from '@proton/shared/lib/authentication/error';
 import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import type { AuthTypes } from '@proton/shared/lib/authentication/twoFactor';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -31,13 +29,16 @@ import useLocalState from '../../hooks/useLocalState';
 import AuthSecurityKeyContent from '../account/fido/AuthSecurityKeyContent';
 import { TotpInputField, TotpRecoveryCodeInputField } from '../account/totp/TotpInputs';
 import type { OnLoginCallback } from '../app/interface';
-import ChallengeError from '../challenge/ChallengeError';
-import ChallengeV4 from '../challenge/ChallengeV4';
-import type { ChallengeResult, ChallengeV4Ref } from '../challenge/interface';
-import AbuseModal from './AbuseModal';
-import type { AuthActionResponse, AuthCacheResult, AuthTypes } from './interface';
-import { AuthStep, AuthType } from './interface';
-import { handleFido2, handleLogin, handleNextLogin, handleTotp, handleUnlock } from './loginActions';
+import {
+    type AuthActionResponse,
+    type AuthCacheResult,
+    AuthStep,
+    handleFido2,
+    handleLogin,
+    handleNextLogin,
+    handleTotp,
+    handleUnlock,
+} from './loginActions';
 
 const UnlockForm = ({
     onSubmit,
@@ -265,146 +266,84 @@ const TwoFactorStep = ({ onSubmit, fido2, authTypes, cancelButton }: TwoFactorSt
 
 const LoginForm = ({
     onSubmit,
-    hasChallenge,
-    needHelp,
-    footer,
 }: {
-    onSubmit: (data: {
-        username: string;
-        password: string;
-        persistent: boolean;
-        payload: ChallengeResult;
-    }) => Promise<void>;
-    hasChallenge?: boolean;
-    needHelp?: ReactNode;
-    footer?: ReactNode;
+    onSubmit: (data: { username: string; password: string; persistent: boolean }) => Promise<void>;
 }) => {
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [persistent, setPersistent] = useLocalState(true, 'default-persistent');
-    const challengeRefLogin = useRef<ChallengeV4Ref>();
-    const usernameRef = useRef<HTMLInputElement>(null);
-    const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
-    const [challengeError, setChallengeError] = useState(false);
 
     const { validator, onFormSubmit } = useFormErrors();
 
-    useEffect(() => {
-        if (challengeLoading) {
-            return;
-        }
-        // Special focus management for challenge
-        usernameRef.current?.focus();
-    }, [challengeLoading]);
-
-    if (challengeError) {
-        return <ChallengeError />;
-    }
-
     return (
-        <>
-            {challengeLoading && (
-                <div className="text-center">
-                    <CircleLoader className="color-primary" size="large" />
-                </div>
-            )}
-            <form
-                name="loginForm"
-                className={challengeLoading ? 'hidden' : undefined}
-                onSubmit={(event) => {
-                    event.preventDefault();
-                    if (!onFormSubmit()) {
-                        return;
-                    }
-                    const run = async () => {
-                        const payload = await challengeRefLogin.current?.getChallenge().catch(noop);
-                        return onSubmit({ username, password, persistent, payload });
-                    };
-                    withLoading(run()).catch(noop);
-                }}
-                method="post"
+        <form
+            name="loginForm"
+            onSubmit={(event) => {
+                event.preventDefault();
+                if (!onFormSubmit()) {
+                    return;
+                }
+                withLoading(onSubmit({ username, password, persistent })).catch(noop);
+            }}
+            method="post"
+        >
+            <InputFieldTwo
+                id="username"
+                bigger
+                autoFocus
+                label={c('Label').t`Email or username`}
+                error={validator([requiredValidator(username)])}
+                autoComplete="username"
+                value={username}
+                onValue={setUsername}
+            />
+            <InputFieldTwo
+                id="password"
+                bigger
+                label={c('Label').t`Password`}
+                error={validator([requiredValidator(password)])}
+                as={PasswordInputTwo}
+                autoComplete="current-password"
+                value={password}
+                onValue={setPassword}
+                rootClassName="mt-2"
+            />
+            <div className="flex flex-row items-start align-center mb-2">
+                <Checkbox
+                    id="staySignedIn"
+                    className="mr-2"
+                    checked={persistent}
+                    onChange={() => setPersistent(!persistent)}
+                />
+                <Label htmlFor="staySignedIn" className="p-0 flex-1">
+                    {c('Label').t`Keep me signed in`}
+                </Label>
+            </div>
+            <Button
+                color="norm"
+                size="large"
+                type="submit"
+                fullWidth
+                loading={loading}
+                className="mt-4"
+                data-cy-login="submit"
             >
-                {hasChallenge && (
-                    <ChallengeV4
-                        empty
-                        tabIndex={-1}
-                        challengeRef={challengeRefLogin}
-                        name="login"
-                        type={0}
-                        onSuccess={() => {
-                            setChallengeLoading(false);
-                        }}
-                        onError={() => {
-                            setChallengeLoading(false);
-                            setChallengeError(true);
-                        }}
-                    />
-                )}
-                <InputFieldTwo
-                    id="username"
-                    bigger
-                    label={c('Label').t`Email or username`}
-                    error={validator([requiredValidator(username)])}
-                    autoComplete="username"
-                    value={username}
-                    onValue={setUsername}
-                    ref={usernameRef}
-                />
-                <InputFieldTwo
-                    id="password"
-                    bigger
-                    label={c('Label').t`Password`}
-                    error={validator([requiredValidator(password)])}
-                    as={PasswordInputTwo}
-                    autoComplete="current-password"
-                    value={password}
-                    onValue={setPassword}
-                    rootClassName="mt-2"
-                />
-                <div className="flex flex-row items-start align-center mb-2">
-                    <Checkbox
-                        id="staySignedIn"
-                        className="mr-2"
-                        checked={persistent}
-                        onChange={() => setPersistent(!persistent)}
-                    />
-                    <Label htmlFor="staySignedIn" className="p-0 flex-1">
-                        {c('Label').t`Keep me signed in`}
-                    </Label>
-                </div>
-                <div className="flex justify-space-between mt-4">
-                    {needHelp}
-                    <Button color="norm" size="large" type="submit" fullWidth loading={loading} data-cy-login="submit">
-                        {c('Action').t`Sign in`}
-                    </Button>
-                </div>
-                {footer}
-            </form>
-        </>
+                {c('Action').t`Sign in`}
+            </Button>
+        </form>
     );
 };
 
 interface Props {
     onLogin: OnLoginCallback;
-    needHelp?: ReactNode;
-    footer?: ReactNode;
-    hasChallenge?: boolean;
-    ignoreUnlock?: boolean;
     onStartAuth: () => Promise<void>;
 }
 
-const MinimalLoginContainer = ({
-    onLogin,
-    onStartAuth,
-    hasChallenge = false,
-    ignoreUnlock = false,
-    needHelp,
-    footer,
-}: Props) => {
+/** A bare password sign-in for the standalone dev app. */
+const MinimalLoginContainer = ({ onLogin, onStartAuth }: Props) => {
     const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
-    const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -428,19 +367,12 @@ const MinimalLoginContainer = ({
     };
 
     const handleError = (e: any) => {
-        if (e.data?.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
-            setAbuseModal({ apiErrorMessage: getApiErrorMessage(e) });
-            return;
-        }
-        if (e.name === 'TOTPError' || e.name === 'PasswordError') {
+        // A wrong code or password: stay on the step, so the user can try again
+        if (e instanceof TOTPError || e instanceof PasswordError) {
             createNotification({ type: 'error', text: e.message });
             return;
         }
-        if (
-            step === AuthStep.LOGIN ||
-            (step === AuthStep.UNLOCK && e.name !== 'PasswordError') ||
-            (step === AuthStep.TWO_FA && e.name !== 'TOTPError')
-        ) {
+        if (step === AuthStep.LOGIN || step === AuthStep.UNLOCK || step === AuthStep.TWO_FA) {
             handleCancel();
         }
         errorHandler(e);
@@ -456,41 +388,26 @@ const MinimalLoginContainer = ({
 
     return (
         <>
-            <AbuseModal
-                message={abuseModal?.apiErrorMessage}
-                open={!!abuseModal}
-                onClose={() => setAbuseModal(undefined)}
-            />
             {step === AuthStep.LOGIN && (
                 <LoginForm
-                    needHelp={needHelp}
-                    footer={footer}
-                    hasChallenge={hasChallenge}
-                    onSubmit={async ({ username, password, persistent, payload }) => {
+                    onSubmit={async ({ username, password, persistent }) => {
                         try {
                             await onStartAuth();
                             const loginResult = await handleLogin({
                                 username,
                                 persistent,
-                                payload,
                                 password,
                                 api: silentApi,
                             });
                             const result = await handleNextLogin({
-                                authType: AuthType.Srp,
                                 authResponse: loginResult.authResult.result,
                                 authVersion: loginResult.authResult.authVersion,
                                 appName: APP_NAME,
-                                toApp: APP_NAME,
                                 productParam: APP_NAME,
                                 username,
                                 password,
                                 api: silentApi,
-                                ignoreUnlock,
                                 persistent: false,
-                                setupVPN: false,
-                                ktActivation: KeyTransparencyActivation.DISABLED,
-                                challengeResult: payload,
                             });
                             return await handleResult(result);
                         } catch (e) {
@@ -538,7 +455,6 @@ const MinimalLoginContainer = ({
                         return handleUnlock({
                             cache,
                             clearKeyPassword: keyPassword,
-                            isOnePasswordMode: false,
                         })
                             .then(handleResult)
                             .catch(handleError);
