@@ -2,10 +2,13 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import DropdownMenu from '../../components/DropdownMenu';
+import { useModalStateObject } from '@proton/components';
+
 import type { DropdownOptions } from '../../components/DropdownMenu';
+import DropdownMenu from '../../components/DropdownMenu';
 import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import { ConversationExportModal } from '../../components/Modals/ConversationExportModal/ConversationExportModal';
 import { useConversationStar } from '../../hooks/useConversationStar';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import type { Conversation } from '../../types';
@@ -33,6 +36,9 @@ export const ConversationSidebarActions = ({
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
         conversation,
         location: 'sidebar',
+    });
+    const conversationExportModalState = useModalStateObject({
+        onClose: () => onOverlayActiveChange?.(false),
     });
 
     const options: DropdownOptions[] = useMemo(
@@ -65,6 +71,15 @@ export const ConversationSidebarActions = ({
                   ]
                 : []),
             {
+                // translator: Label for a dropdown option that opens a modal to export a conversation.
+                label: c('Option').t`Export`,
+                icon: <LumoIcon name="SquareArrowRightExit" size={16} />,
+                onClick: () => {
+                    onOverlayActiveChange?.(true);
+                    conversationExportModalState.openModal(true);
+                },
+            },
+            {
                 label: c('Option').t`Delete`,
                 icon: <LumoIcon name="Trash" size={16} />,
                 onClick: (e) => {
@@ -74,7 +89,15 @@ export const ConversationSidebarActions = ({
                 },
             },
         ],
-        [handleStarToggle, includeStarOption, isGuest, isStarred, onOverlayActiveChange, onRename]
+        [
+            conversationExportModalState.openModal,
+            handleStarToggle,
+            includeStarOption,
+            isGuest,
+            isStarred,
+            onOverlayActiveChange,
+            onRename,
+        ]
     );
 
     return (
@@ -88,6 +111,9 @@ export const ConversationSidebarActions = ({
                         onOverlayActiveChange?.(false);
                     }}
                 />
+            )}
+            {conversationExportModalState.render && (
+                <ConversationExportModal {...conversationExportModalState.modalProps} conversation={conversation} />
             )}
             {showFavoritesUpsellModal && (
                 <FavoritesUpsellPrompt
