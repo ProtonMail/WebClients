@@ -8,6 +8,7 @@ import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activat
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
+import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { EmptyFolderIllustration } from './EmptyFolderIllustration';
 
 interface Props {
@@ -37,6 +38,9 @@ export const EmptyRootFolder = forwardRef(({ onClick, dataTestId }: Props, ref: 
                         provider={ImportProvider.GOOGLE}
                         products={[ImportType.DRIVE]}
                         source={EASY_SWITCH_SOURCES.DRIVE_WEB_EMPTY_STATE}
+                        onClick={() => {
+                            void countActionWithTelemetry(Actions.EasySwitchGoogleEmptyViewClicked);
+                        }}
                     />
                 </div>
                 <div

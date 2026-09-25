@@ -10,6 +10,8 @@ import { selectDriveImportStatus } from '@proton/activation/src/logic/importers/
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useEventManager } from '@proton/components';
 
+import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
+
 export type DriveImportOutcome = 'success' | 'failed';
 
 /**
@@ -64,6 +66,27 @@ export const useDriveImportStatus = () => {
             });
         },
         [subscribe, dispatch]
+    );
+
+    useEffect(
+        function trackImportStarted() {
+            if (oauthStep === 'success') {
+                void countActionWithTelemetry(Actions.EasySwitchGoogleImportStarted);
+            }
+        },
+        [oauthStep]
+    );
+
+    // Tracked on outcome change, not in the event callback, since importer and report events can both carry the same outcome.
+    useEffect(
+        function trackImportOutcome() {
+            if (outcome === 'success') {
+                void countActionWithTelemetry(Actions.EasySwitchGoogleImportCompleted);
+            } else if (outcome === 'failed') {
+                void countActionWithTelemetry(Actions.EasySwitchGoogleImportFailed);
+            }
+        },
+        [outcome]
     );
 
     // Outcome arrives while the "Import started" OAuth modal is open --> close it so only the outcome modal shows.

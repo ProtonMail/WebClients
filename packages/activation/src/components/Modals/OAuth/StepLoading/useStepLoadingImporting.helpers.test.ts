@@ -1,6 +1,6 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk';
 
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Address, Api } from '@proton/shared/lib/interfaces';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
@@ -15,6 +15,7 @@ import { createImporterTask } from './useStepLoadingImporting.helpers';
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
     captureMessage: jest.fn(),
+    traceError: jest.fn(),
 }));
 
 const BASE64_PASSPHRASE = new TextEncoder().encode('clear-passphrase').toBase64();
@@ -157,9 +158,24 @@ describe('createImporterTask', () => {
 
         await createImporterTask(props);
 
-        expect(errorHandler).toHaveBeenCalledWith(error);
+        expect(errorHandler).toHaveBeenCalledWith(error, { trace: true });
         expect(dispatch).toHaveBeenCalledWith(resetOauthDraft());
         expect(dispatch).not.toHaveBeenCalledWith(changeOAuthStep('success'));
+    });
+
+    it('reports Drive folder errors to Sentry once, with context', async () => {
+        const error = new Error('sdk failed');
+        const driveClient = makeDriveClient();
+        (driveClient.getMyFilesRootFolder as jest.Mock).mockRejectedValue(error);
+        const { props, api, dispatch, errorHandler } = setup({ products: [ImportType.DRIVE], driveClient });
+
+        await createImporterTask(props);
+
+        expect(traceError).toHaveBeenCalledTimes(1);
+        expect(traceError).toHaveBeenCalledWith(error, expect.objectContaining({ tags: { component: 'drive-sdk' } }));
+        expect(errorHandler).toHaveBeenCalledWith(error, { trace: false });
+        expect(getStartPayload(api)).toBeUndefined();
+        expect(dispatch).toHaveBeenCalledWith(resetOauthDraft());
     });
 
     it('rolls back to the prepare step when calendar creation has no valid address', async () => {
