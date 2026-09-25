@@ -1,6 +1,7 @@
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { ProduceForkParameters } from '@proton/shared/lib/authentication/fork';
 import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
+
+import type { AuthSession } from '../content/authSession';
 
 export type ReAuthState = {
     session: AuthSession;

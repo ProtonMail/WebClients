@@ -14,7 +14,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics';
@@ -29,6 +28,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import type { OnLoginCallback } from '../../content/authSession';
 import type { Paths } from '../../content/helper';
 import userExclamation from '../../public/user-exclamation.svg';
 import { useGetAccountKTActivation } from '../../useGetAccountKTActivation';

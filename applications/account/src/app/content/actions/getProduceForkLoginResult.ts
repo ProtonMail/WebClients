@@ -1,5 +1,4 @@
 import { signInWithAnotherDevicePush } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePush';
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -27,6 +26,7 @@ import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
 import { getReAuthState } from '../../public/reauthContainerState';
+import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 import { hasInterruption } from '../interruptions';
 import { type ProduceForkData, SSOType } from './forkInterface';

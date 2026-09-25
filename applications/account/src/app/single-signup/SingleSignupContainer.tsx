@@ -6,7 +6,6 @@ import { useGetPlans } from '@proton/account/plans/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -48,6 +47,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
+import type { OnLoginCallback } from '../content/authSession';
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains } from '../signup/helper';
 import { type SignupCacheResult, SignupHumanVerification, SignupType } from '../signup/interfaces';

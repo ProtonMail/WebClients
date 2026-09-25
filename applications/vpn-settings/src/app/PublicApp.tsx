@@ -6,6 +6,7 @@ import ExternalSSOConsumer from 'proton-account/src/app/content/ExternalSSOConsu
 import type { Paths } from 'proton-account/src/app/content/helper';
 import { getLocaleMapping } from 'proton-account/src/app/locales';
 import AccountForgotUsernameContainer from 'proton-account/src/app/public/ForgotUsernameContainer';
+import { AuthType } from 'proton-account/src/app/sign-in/auth/interface';
 import AccountSignupInviteContainer from 'proton-account/src/app/signup/SignupInviteContainer';
 import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/SingleSignupContainer';
 import { ResetPasswordPage } from 'proton-account/src/app/unauthed-forgot-password/ResetPasswordPage';
@@ -20,7 +21,6 @@ import type {
 } from '@proton/components/containers/app/interface';
 import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
-import { AuthType } from '@proton/components/containers/login/interface';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';

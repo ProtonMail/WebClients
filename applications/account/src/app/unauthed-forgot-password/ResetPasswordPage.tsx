@@ -5,10 +5,10 @@ import { useMachine } from '@xstate/react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import type { OnLoginCallback } from '../content/authSession';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import { useResetPasswordTelemetry } from '../reset/resetPasswordTelemetry';

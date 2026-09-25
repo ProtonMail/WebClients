@@ -1,4 +1,4 @@
-import type { AuthInterruption, AuthSession } from '@proton/components/containers/login/interface';
+import type { AuthInterruption, AuthSession } from './authSession';
 
 export const hasInterruption = (session: AuthSession, interruption: AuthInterruption) => {
     return session.interruptions?.includes(interruption) ?? false;

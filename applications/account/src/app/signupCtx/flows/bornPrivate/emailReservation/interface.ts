@@ -1,4 +1,4 @@
-import type { ChallengeResult } from '@proton/components/containers/challenge/interface';
+import type { ChallengeResult } from '@proton/challenge/interface';
 
 export interface ReservedAccount {
     username: string;

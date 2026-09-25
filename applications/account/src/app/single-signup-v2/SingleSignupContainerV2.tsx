@@ -12,9 +12,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics';
@@ -63,6 +61,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import mailReferPage from '../../pages/refer-a-friend';
+import type { AuthSession, OnLoginCallback } from '../content/authSession';
 import type { Paths } from '../content/helper';
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains, isPorkbunSignup, isReferralSignup } from '../signup/helper';
