@@ -1,5 +1,5 @@
 import type { CanvasGridMethods } from '@rowsncolumns/spreadsheet'
-import { CanvasGrid } from '@rowsncolumns/spreadsheet'
+import { CanvasGrid, getExtendedValueError } from '@rowsncolumns/spreadsheet'
 import { GRID_SELECTION_THEME_PROPS, GRID_THEME_PROPS, FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ChartComponent } from '@rowsncolumns/charts'
 import { useEffect, useMemo, useRef } from 'react'
@@ -65,17 +65,29 @@ const exposeCanvasGrid = (
         try {
           const userEnteredValue = setters.getUserEnteredValue(activeSheetId, rowIndex, columnIndex)
           const effectiveValue = setters.getEffectiveValue(activeSheetId, rowIndex, columnIndex)
+          const effectiveExtendedValue = setters.getEffectiveExtendedValue(activeSheetId, rowIndex, columnIndex)
+          const errorValue = getExtendedValueError(effectiveExtendedValue)
           const formattedValue = setters.getFormattedValue(activeSheetId, rowIndex, columnIndex)
           const effectiveFormat = setters.getEffectiveFormat(activeSheetId, rowIndex, columnIndex)
+          const finalEffectiveFormat = instance?.getEffectiveCellFormat?.(activeSheetId, rowIndex, columnIndex)
           const hyperlink = setters.getHyperlink(activeSheetId, rowIndex, columnIndex)
+          const cellData = setters.getCellData(activeSheetId, rowIndex, columnIndex)
+          const dataValidation = setters.getDataValidation(activeSheetId, rowIndex, columnIndex)
 
           // Return a proper CellData object structure
           const result = {
             userEnteredValue,
             effectiveValue,
+            errorValue,
             formattedValue,
             effectiveFormat,
+            finalEffectiveFormat,
             hyperlink,
+            dataValidation,
+            dataValidationResult: cellData?.dataValidationResult,
+            conditionalFormattingResultById: cellData?.conditionalFormattingResultById,
+            note: cellData?.note,
+            commentThreadId: cellData?.commentThreadId,
           }
           return result
         } catch (e) {
