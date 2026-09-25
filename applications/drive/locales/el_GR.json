@@ -1371,6 +1371,9 @@
       ],
       "Search recent items": [
         "Αναζήτηση πρόσφατων στοιχείων"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
       ]
     },
     "Action: Docs": {
@@ -8030,6 +8033,39 @@
       ],
       "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
         "Ο χώρος αποθήκευσής σας στο Drive είναι πολύ μεγάλος για να ευρετηριαστεί πλήρως σε αυτό το πρόγραμμα περιήγησης, επομένως η αναζήτηση καλύπτει μόνο τα πιο πρόσφατα στοιχεία σας. Ενδέχεται να μην εμφανίζονται παλαιότερα αρχεία στα αποτελέσματα."
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "Το ${ BRAND_NAME } χρησιμοποιεί αυτήν την πρόσβαση μόνο για την εισαγωγή. Η Google δεν έχει ποτέ πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }."
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Σύνδεση στο Google Drive και προετοιμασία εισαγωγής."
+      ],
+      "Import your files and folders": [
+        "Εισαγάγετε τα αρχεία και τους φακέλους σας"
+      ],
+      "Know when it's done": [
+        "Μάθετε πότε έχει γίνει"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Στη συνέχεια, συνδεθείτε στον Λογαριασμό σας Google και επιτρέψτε στο ${ BRAND_NAME } να αποκτήσει πρόσβαση στο Google Drive. Θα εισαγάγουμε τα αρχεία και τους φακέλους σας στο ${ DRIVE_APP_NAME }."
+      ],
+      "Private and encrypted": [
+        "Ιδιωτικό και κρυπτογραφημένο"
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Θα τα αντιγράψουμε από το Google Drive στο ${ DRIVE_APP_NAME }."
+      ],
+      "We'll email you when your import is complete.": [
+        "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί η εισαγωγή σας."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου όταν ολοκληρωθεί η εισαγωγή σας. Τα αρχεία σας θα εμφανιστούν σε έναν φάκελο στο ${ DRIVE_APP_NAME }."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Τα αρχεία σας είναι κρυπτογραφημένα και αποθηκευμένα με ασφάλεια στο ${ DRIVE_APP_NAME }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Το Google Drive σας μπορεί να είναι κενό ή να περιέχει μόνο αρχεία που δεν υποστηρίζονται."
       ]
     },
     "info": {
@@ -13214,6 +13250,9 @@
       ],
       "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
         "Διαβάζουμε τα αρχεία σας μία φορά για να τα αντιγράψουμε και, στη συνέχεια, κρυπτογραφούμε το καθένα με τα κλειδιά σας για το ${ BRAND_NAME }."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Εισαγάγετε τα αρχεία και τους φακέλους σας από το Google Drive και διατηρήστε τα ιδιωτικά στο ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -14673,6 +14712,15 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Καλώς ήρθατε στο ${ DRIVE_APP_NAME }"
+      ],
+      "Easy Switch from Google Drive": [
+        "Εύκολη Εναλλαγή από το Google Drive"
+      ],
+      "Import started": [
+        "Η εισαγωγή ξεκίνησε"
+      ],
+      "Preparing your import": [
+        "Προετοιμασία της εισαγωγής σας"
       ]
     },
     "Today icon tooltip in mini calendar": {

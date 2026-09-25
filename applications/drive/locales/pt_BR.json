@@ -1356,6 +1356,15 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "Importing from Google": [
+        "Importando do Google"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
+      ],
+      "Search recent items": [
+        "Pesquisar itens recentes"
       ]
     },
     "Action: Docs": {
@@ -7687,7 +7696,7 @@
         "A indexação atingiu um estado inesperado e não pode continuar. Recompile o índice para recuperar."
       ],
       "No populator states found.": [
-        "Nenhum estado do populador foi encontrado."
+        "Não foram encontrados estados de indexagem."
       ],
       "Re-indexing in progress": [
         "Nova indexação em andamento"
@@ -7820,6 +7829,12 @@
       ],
       "This user can not be migrated due to platform incompatibilities.": [
         "Este usuário não pode ser migrado devido a incompatibilidades de plataforma."
+      ],
+      "Import your files and folders": [
+        "Importe seus arquivos e pastas"
+      ],
+      "Search covers your recent items": [
+        "A pesquisa inclui seus itens recentes"
       ]
     },
     "info": {
@@ -11096,6 +11111,12 @@
       ],
       "Add a payment method": [
         "Adicionar método de pagamento"
+      ],
+      "If you continue after your trial,": [
+        "Se você continuar depois da sua avaliação,"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "você pode cancelar em até 30 dias e receber um reembolso proporcional."
       ]
     },
     "Option": {
@@ -14562,6 +14583,12 @@
       ],
       "Your import is in progress": [
         "Sua importação está em progresso"
+      ],
+      "Preparing your import": [
+        "Preparando sua importação"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Boas-vindas ao ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14674,6 +14701,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Usuários que acessaram sua conta da ${ BRAND_NAME }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Este link expirou. Estenda a data de validade"
       ]
     },
     "tooltip": {

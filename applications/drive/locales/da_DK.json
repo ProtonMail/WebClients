@@ -1371,6 +1371,9 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "Maybe later": [
+        "Måske senere"
       ]
     },
     "Action: Docs": {
@@ -8008,6 +8011,39 @@
       ],
       "Or import your files from": [
         "Eller importér dine filer fra"
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } bruger kun adgangen til at importere. Google får aldrig adgang til din ${ BRAND_NAME }-konto."
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Forbinder til Google Drive og forbereder din import."
+      ],
+      "Import your files and folders": [
+        "Importér dine filer og mapper"
+      ],
+      "Know when it's done": [
+        "Få besked om hvornår det er færdigt"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Log derefter ind på din Google-konto og giv ${ BRAND_NAME } adgang til Google Drive. Vi importerer dine filer og mapper til ${ DRIVE_APP_NAME }."
+      ],
+      "Private and encrypted": [
+        "Privat og krypteret"
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vi kopierer dem fra Google Drive til ${ DRIVE_APP_NAME }."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vi sender dig en e-mail, når importen er færdig."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Vi sender dig en e-mail, når importen er færdig. Dine filer bliver gemt i en mappe i ${ DRIVE_APP_NAME }."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Dine filer bliver krypteret og opbevaret sikkert i ${ DRIVE_APP_NAME }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Din Google Drive er muligvis tom, eller indeholder kun filer, som ikke understøttes."
       ]
     },
     "info": {
@@ -13288,6 +13324,9 @@
       ],
       "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
         "Vi læser dine filer én gang for at kopiere dem, og krypterer dem derefter med dine ${ BRAND_NAME }-nøgler."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importér dine filer og mapper fra Google Drive, og hold dem privat i ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -14747,6 +14786,15 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Velkommen til ${ DRIVE_APP_NAME }"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch fra Google Drive"
+      ],
+      "Import started": [
+        "Import startet"
+      ],
+      "Preparing your import": [
+        "Forbereder din import"
       ]
     },
     "Today icon tooltip in mini calendar": {
