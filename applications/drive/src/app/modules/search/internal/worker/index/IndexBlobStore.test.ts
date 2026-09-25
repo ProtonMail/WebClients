@@ -565,6 +565,9 @@ describe('IndexBlobStore free() failures', () => {
         const cryptoKey = await generateAndImportKey();
         blobStore = new IndexBlobStore(IndexKind.MAIN, db, cryptoKey);
         writer = new IndexWriter(engine, blobStore, async () => {});
+        // Every test here makes free() throw on purpose; sendErrorReportForSearch warning about it
+        // is the expected behaviour under test, not noise to investigate.
+        jest.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     afterEach(() => {
