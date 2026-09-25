@@ -11,6 +11,7 @@ const AuthDeviceConfirmCodeInput = ({ value, onSubmit, onValue }: Props) => {
         <div className="flex justify-center relative">
             <div data-testid="confirm:item" className="w-2/3">
                 <TotpInput
+                    id="confirmation-code"
                     autoFocus={true}
                     centerDivider={false}
                     value={value}

@@ -6,7 +6,6 @@ import {
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
-import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
@@ -40,6 +39,7 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
+import type { AppIntent } from '../../content/authSession';
 import type {
     SignupActionDoneResponse,
     SignupActionResponse,

@@ -1,4 +1,3 @@
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
@@ -17,6 +16,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import { type ProtonForkData, SSOType } from '../actions/forkInterface';
 import { getProduceForkLoginResult } from '../actions/getProduceForkLoginResult';
 import type { LoginResult } from '../actions/interface';
+import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 
 type ProtonForkResult =

@@ -13,20 +13,21 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import GenericError from '@proton/components/containers/error/GenericError';
-import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
-import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useLoading from '@proton/hooks/useLoading';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
-import { authJwt } from '@proton/shared/lib/api/auth';
+import { authJwt, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 // eslint-disable-next-line no-restricted-imports
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getToAppFromSubscribed } from '@proton/shared/lib/authentication/apps';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
+import type { InfoResponse } from '@proton/shared/lib/authentication/interface';
+import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
+import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, type APP_NAMES, BRAND_NAME, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Address, Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
@@ -34,9 +35,11 @@ import { generateKeySaltAndPassphrase, getResetAddressesKeysV2 } from '@proton/s
 import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 import { getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
+import noop from '@proton/utils/noop';
 
+import SetPasswordWithPolicyForm from '../components/password-forms/SetPasswordWithPolicyForm';
+import type { OnLoginCallback } from '../content/authSession';
 import { getLocaleTermsURL } from '../content/helper';
-import SetPasswordWithPolicyForm from '../login/SetPasswordWithPolicyForm';
 import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
 import ExpiredError from './ExpiredError';
 import JoinOrganizationAdminItem from './JoinOrganizationAdminItem';
@@ -68,7 +71,6 @@ enum ErrorType {
 interface Props {
     onLogin: OnLoginCallback;
     onUsed: () => void;
-    productParam: ProductParam;
     toAppName?: string;
     toApp?: APP_NAMES;
     onPreSubmit?: () => Promise<void>;
@@ -77,19 +79,11 @@ interface Props {
     unauthenticatedApi: UnauthenticatedApi;
 }
 
-const JoinMagicLinkContainer = ({
-    api,
-    unauthenticatedApi,
-    onPreload,
-    onPreSubmit,
-    onLogin,
-    onUsed,
-    toApp,
-    productParam,
-}: Props) => {
+const JoinMagicLinkContainer = ({ api, unauthenticatedApi, onPreload, onPreSubmit, onLogin, onUsed, toApp }: Props) => {
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const { APP_NAME: appName } = useConfig();
     const handleError = useErrorHandler();
+    const [submittingPassword, withSubmittingPassword] = useLoading();
     const dataRef = useRef<{
         user: User;
         organizationData: OrganizationData;
@@ -214,44 +208,39 @@ const JoinMagicLinkContainer = ({
 
         await onSKLPublishSuccess();
 
-        const username = addresses?.[0]?.Email;
-        const data = {
-            username,
-            password,
-            persistent: false,
-        };
+        // A new member signs in right away: no second factor or second password yet, and the key password is
+        // the one just derived, so there is nothing to unlock
         await unauthenticatedApi.startUnAuthFlow();
         const api = getSilentApi(unauthenticatedApi.apiCallback);
-        const initialLoginResult = await handleLogin({
-            username: data.username,
-            persistent: data.persistent,
-            payload: undefined,
-            password: data.password,
+        const username = addresses?.[0]?.Email;
+        const persistent = false;
+        const { result: authResponse } = await loginWithFallback({
             api,
+            credentials: { username, password },
+            initialAuthInfo: await api<InfoResponse>(getInfo({ username })),
+            persistent,
         });
 
         await preAuthKTVerifier.preAuthKTCommit(user.ID, api);
 
-        const result = await handleNextLogin({
+        const session = await persistSession({
+            ...authResponse,
             api,
-            appName: APPS.PROTONACCOUNT,
-            toApp,
-            ignoreUnlock: false,
-            setupVPN: false,
-            ktActivation,
-            username: data.username,
-            password: data.password,
-            persistent: data.persistent,
-            authType: AuthType.Srp,
-            authResponse: initialLoginResult.authResult.result,
-            authVersion: initialLoginResult.authResult.authVersion,
-            productParam,
-            challengeResult: undefined,
+            keyPassword: passphrase,
+            clearKeyPassword: password,
+            persistent,
+            User: await getUser(api),
+            trusted: false,
+            source: SessionSource.Proton,
         });
-        if (result.to === AuthStep.DONE) {
-            const subscribedToApp = toApp || getToAppFromSubscribed(user);
-            await onLogin({ ...result.session, ...(subscribedToApp ? { appIntent: { app: subscribedToApp } } : {}) });
-        }
+
+        const subscribedToApp = toApp || getToAppFromSubscribed(user);
+        await onLogin({
+            data: session,
+            loginPassword: password,
+            flow: 'login',
+            ...(subscribedToApp ? { appIntent: { app: subscribedToApp } } : {}),
+        });
     };
     const handleSubmitPassword = async ({ password }: { password: string }) => {
         try {
@@ -341,7 +330,10 @@ const JoinMagicLinkContainer = ({
                 <hr className="my-6 border-bottom border-weak" />
                 <SetPasswordWithPolicyForm
                     passwordPolicies={data?.organizationData.passwordPolicies ?? []}
-                    onSubmit={handleSubmitPassword}
+                    onSubmit={(data) => {
+                        withSubmittingPassword(handleSubmitPassword(data)).catch(noop);
+                    }}
+                    submitting={submittingPassword}
                     type="create"
                 >
                     <InputFieldTwo

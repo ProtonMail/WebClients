@@ -1,25 +1,22 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useLoading from '@proton/hooks/useLoading';
-import noop from '@proton/utils/noop';
 
 import { getResendSMSVerificationCodeText } from '../../content/helper';
 
 interface Props {
-    onResend: () => Promise<void>;
+    onResend: () => void;
     onClose: () => void;
     open: boolean;
+    /** The new code is being sent; the dialog closes once it is. */
+    loading: boolean;
     value: string;
     method: 'email' | 'phone';
 }
 
-const RequestNewCodeModal = ({ value, method, open, onResend, onClose }: Props) => {
+const RequestNewCodeModal = ({ value, method, open, loading, onResend, onClose }: Props) => {
     const EmailOrPhoneNumber = <strong key="email-or-phone">{value}</strong>;
-    const [loading, withLoading] = useLoading();
-    const { createNotification } = useNotifications();
 
     return (
         <Prompt
@@ -30,20 +27,7 @@ const RequestNewCodeModal = ({ value, method, open, onResend, onClose }: Props) 
                 className: 'text-break',
             }}
             buttons={[
-                <Button
-                    color="norm"
-                    loading={loading}
-                    onClick={() => {
-                        withLoading(onResend())
-                            .then(() => {
-                                createNotification({
-                                    text: c('Info').t`Verification code sent.`,
-                                });
-                                onClose();
-                            })
-                            .catch(noop);
-                    }}
-                >
+                <Button color="norm" loading={loading} onClick={onResend}>
                     {c('Action').t`Send new code`}
                 </Button>,
                 <Button onClick={onClose} disabled={loading}>
