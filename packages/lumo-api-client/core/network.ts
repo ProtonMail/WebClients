@@ -1,9 +1,15 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import type { ChatCompletionsRequest, LumoRemainingLimits, LumoUsageLimitsResponse } from '../types-api';
+import type {
+    ChatCompletionsRequest,
+    LumoModelsListResponse,
+    LumoRemainingLimits,
+    LumoUsageLimitsResponse,
+} from '../types-api';
 
 export const LUMO_CHAT_ENDPOINT = 'ai/v1/chat/completions';
 export const LUMO_LIMITS_ENDPOINT = 'ai/v1/limits';
+export const LUMO_MODELS_ENDPOINT = 'ai/v1/models';
 
 /**
  * Call the chat completions endpoint.
@@ -51,4 +57,17 @@ export async function fetchUsageLimits(api: Api): Promise<LumoRemainingLimits> {
     });
 
     return response.limits;
+}
+
+/**
+ * Lists models exposed by the Lumo API, including each model's context window size.
+ */
+export async function fetchModels(api: Api): Promise<LumoModelsListResponse['data']> {
+    const response = await api<LumoModelsListResponse>({
+        url: LUMO_MODELS_ENDPOINT,
+        method: 'get',
+        silence: true,
+    });
+
+    return response.data;
 }

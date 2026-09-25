@@ -10,6 +10,7 @@ import {
     retrieveDocumentContextForProject,
 } from '../../lib/rag';
 import { prepareTurns } from '../../llm';
+import { getContextLimitsForModelTier } from '../../llm/modelContextLimits';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
 import { selectMessagesByConversationId } from '../../redux/selectors';
@@ -585,6 +586,7 @@ export function sendMessage({
                 s.isArtifactsViewFeatureEnabled
             );
 
+            const contextLimits = getContextLimitsForModelTier(ui.modelTier);
             const buildTurns = (chain: Message[]) =>
                 prepareTurns(
                     chain,
@@ -595,7 +597,8 @@ export function sendMessage({
                     agentInstructions,
                     shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
                     artifactToolMode,
-                    ui.isFromQueryParam
+                    ui.isFromQueryParam,
+                    contextLimits
                 );
 
             await dispatch(
@@ -780,6 +783,7 @@ export function regenerateMessage({
                 s.isArtifactsViewFeatureEnabled
             );
 
+            const contextLimits = getContextLimitsForModelTier(ui.modelTier);
             const buildTurns = (chain: Message[]) => {
                 const builtTurns = prepareTurns(
                     chain,
@@ -789,7 +793,9 @@ export function regenerateMessage({
                     memories,
                     agentInstructions,
                     shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
-                    artifactToolMode
+                    artifactToolMode,
+                    false,
+                    contextLimits
                 );
 
                 // Add retry instructions if provided
@@ -1002,6 +1008,7 @@ export function retrySendMessage({
             s.isArtifactsViewFeatureEnabled
         );
 
+        const contextLimits = getContextLimitsForModelTier(ui.modelTier);
         const buildTurns = (chain: Message[]) =>
             prepareTurns(
                 chain,
@@ -1011,7 +1018,9 @@ export function retrySendMessage({
                 memories,
                 agentInstructions,
                 shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
-                artifactToolMode
+                artifactToolMode,
+                false,
+                contextLimits
             );
 
         // Call the LLM
