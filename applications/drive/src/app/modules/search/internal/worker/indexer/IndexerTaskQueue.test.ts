@@ -267,6 +267,48 @@ describe('IndexerTaskQueue', () => {
         expect(stopResolved).toBe(true);
     });
 
+    // processLoop drains the queue through a stretch of async work (populator-done check,
+    // markSearchableIndex, updateState) and only then parks in waitForWork(). stop() fires its
+    // one-shot wakeUp() immediately, so a stop() landing inside that stretch used to wake nothing
+    // (no waiter yet) and the loop would then park on a promise nobody could ever resolve -
+    // hanging stop(), and with it disposeInternals()/reset()/rebuild(), forever.
+    it('stop() resolves when it lands in the queue-drain window, before waitForWork parks', async () => {
+        const queue = createQueue();
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+        await state.waitForSearchable();
+
+        // markSearchableIndex() is awaited from inside the drain block on every post-bootstrap
+        // drain, which is exactly the window between the loop's last `stopped` check and
+        // waitForWork(). (updateState() is no good here: post-bootstrap the state it writes is
+        // unchanged, so it returns before notifying any listener.)
+        let stopPromise: Promise<void> | undefined;
+        const realMarkSearchable = db.markSearchableIndex.bind(db);
+        jest.spyOn(db, 'markSearchableIndex').mockImplementation(async () => {
+            const key = await realMarkSearchable();
+            stopPromise ??= queue.stop();
+            return key;
+        });
+
+        // Wake the parked loop so it runs a task and drains again, tripping the spy above.
+        queue.enqueue({
+            getUid: () => 'drain-window-task',
+            getKind: () => 'cleanup-stale-blobs-task',
+            execute: async () => {},
+        });
+
+        await waitForCondition(() => stopPromise !== undefined);
+
+        // Before the fix this promise never settled, so the assertion could only be reached by
+        // waitForCondition's own timeout - hence the explicit race rather than a bare await.
+        await expect(
+            Promise.race([
+                stopPromise,
+                new Promise((_, reject) => setTimeout(() => reject(new Error('stop() never resolved')), 2_000)),
+            ])
+        ).resolves.toBeUndefined();
+    });
+
     it('PersistDataTask runs after bootstrap (cursors persisted to DB)', async () => {
         const queue = createQueue();
         const state = new IndexerStateStream(queue);
@@ -712,20 +754,26 @@ describe('IndexerTaskQueue', () => {
             treeSubRegistry,
             createBridgedSearchMetrics(bridge.asBridge())
         );
-        queue.start().catch(() => {});
+        // The retry waits on a real `setTimeout(computeBackoff(1))` (800-1200ms), which leaves no
+        // margin under a loaded CI run. Drive it off the fake clock instead.
+        jest.useFakeTimers();
+        try {
+            queue.start().catch(() => {});
 
-        // Wait until the populator has retried AND completed (state.done = true). callCount=2 only
-        // signals that the retry has *started*; the full flow (iterate -> persist) needs more time.
-        await waitForCondition(async () => {
-            const s = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
-            return callCount >= 2 && s?.done === true;
-        });
+            // Wait until the populator has retried AND completed (state.done = true). callCount=2
+            // only signals that the retry has *started*; the full flow (iterate -> persist) needs
+            // more microtask turns, which fakeAdvance(0) drains.
+            await fakeAdvance(0);
+            await fakeAdvance(1_200);
+            await fakeAdvance(0);
 
-        await queue.stop();
-
-        expect(callCount).toBe(2);
-        const populatorState = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
-        expect(populatorState?.done).toBe(true);
+            expect(callCount).toBe(2);
+            const populatorState = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+            expect(populatorState?.done).toBe(true);
+        } finally {
+            await queue.stop();
+            jest.useRealTimers();
+        }
     });
 
     describe('isInitialAttempt', () => {
@@ -787,16 +835,27 @@ describe('IndexerTaskQueue', () => {
             const counter = jest.spyOn(metrics.drive_search_initial_indexing_total, 'increment');
             const { queue, populator } = makeFailingQueue();
             const markSpy = jest.spyOn(populator, 'markInitialIndexingFailed');
-            queue.start().catch(() => {});
 
-            // Wait for a genuine retry, so "written once" is not trivially true. Two failures is
-            // enough to prove the guard (an unguarded write would already be at 2) and only costs
-            // one backoff step (~1s), keeping this well inside the default 5s test timeout.
-            await waitForCondition(() => counter.mock.calls.length >= 2, 120);
-            await queue.stop();
+            // The retry is driven by a real `setTimeout(computeBackoff(1))`, i.e. 800-1200ms of
+            // wall clock. Sleeping through it leaves no margin under a loaded CI run, so advance
+            // fake timers past the backoff instead and keep the whole test off the clock.
+            jest.useFakeTimers();
+            try {
+                queue.start().catch(() => {});
 
-            expect(counter.mock.calls.length).toBeGreaterThanOrEqual(2);
-            expect(markSpy).toHaveBeenCalledTimes(1);
+                // Wait for a genuine retry, so "written once" is not trivially true. Two failures
+                // is enough to prove the guard (an unguarded write would already be at 2).
+                await fakeAdvance(0);
+                // computeBackoff(1) is 1000ms ±20% jitter, so 1200ms clears any draw.
+                await fakeAdvance(1_200);
+                await fakeAdvance(0);
+
+                expect(counter.mock.calls.length).toBeGreaterThanOrEqual(2);
+                expect(markSpy).toHaveBeenCalledTimes(1);
+            } finally {
+                await queue.stop();
+                jest.useRealTimers();
+            }
 
             markSpy.mockRestore();
             counter.mockRestore();
@@ -1055,7 +1114,7 @@ describe('IndexerTaskQueue', () => {
         }
     });
 
-    it.skip('Sentry reports a burst of MAX_REPORTED_ATTEMPTS per task UID, then a fresh burst after the throttle window', async () => {
+    it('Sentry reports a burst of MAX_REPORTED_ATTEMPTS per task UID, then a fresh burst after the throttle window', async () => {
         const errorReportMock = sendErrorReportForSearch as jest.Mock;
         errorReportMock.mockClear();
 
@@ -1120,7 +1179,7 @@ describe('IndexerTaskQueue', () => {
         }
     }, 10_000);
 
-    it.skip('non-IndexPopulatorTask transient error is dropped, not retried', async () => {
+    it('non-IndexPopulatorTask transient error is dropped, not retried', async () => {
         let failingRunCount = 0;
         let followUpRan = false;
 
