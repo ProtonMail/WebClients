@@ -112,6 +112,14 @@ class SearchModuleStateStream {
     private pending: ((msg: StateMessage) => void)[] = [];
     private buffer: StateMessage[] = [];
     private lastCheckpoint = 0;
+    // Last message actually handed to a caller (via next()/waitUntil()), as opposed to `history`
+    // which also includes messages that already arrived but are still sitting unconsumed in
+    // `buffer`. The waitFor*/expect* guards below must reason about what's already been consumed,
+    // not about `history`: a fast task can broadcast both the start and end of a cycle within a
+    // single fake-timer advance, landing both messages in `buffer` before either is consumed. If
+    // the guard read `history`, the still-unconsumed "start" edge would look like it "already
+    // happened" as soon as its "end" edge arrives, even though nothing has driven it out yet.
+    private lastConsumed: StateMessage | undefined;
     // Broadcasts are partial patches; we merge them into the full state so every stored
     // entry is the real cumulative state (no synthetic fields).
     private merged: StateMessage = {};
@@ -124,6 +132,7 @@ class SearchModuleStateStream {
             this.history.push(msg);
             const waiter = this.pending.shift();
             if (waiter) {
+                this.lastConsumed = msg;
                 waiter(msg);
             } else {
                 this.buffer.push(msg);
@@ -141,26 +150,29 @@ class SearchModuleStateStream {
         return this.history.slice(this.lastCheckpoint);
     }
 
-    /** Most recent state observed since the last checkpoint (undefined if none yet). */
-    private latestSinceCheckpoint(): StateMessage | undefined {
-        const recent = this.sinceLastCheckpoint();
-        return recent[recent.length - 1];
+    /**
+     * Last state already consumed by a caller (via next()/waitUntil()) since the last checkpoint,
+     * or undefined if none yet. Used by the waitFor* guards to detect "this already happened and
+     * nothing will ever trigger it again" - deliberately ignores messages still sitting unconsumed
+     * in `buffer`, since those haven't been observed by the test yet and a following waitUntil()
+     * can still find them.
+     */
+    private lastConsumedSinceCheckpoint(): StateMessage | undefined {
+        if (!this.lastConsumed || this.history.indexOf(this.lastConsumed) < this.lastCheckpoint) {
+            return undefined;
+        }
+        return this.lastConsumed;
     }
 
     private lastValueOf(key: keyof StateMessage): boolean | undefined {
-        const recent = this.sinceLastCheckpoint();
-        for (let i = recent.length - 1; i >= 0; i--) {
-            if (recent[i][key] !== undefined) {
-                return recent[i][key] as boolean;
-            }
-        }
-        return undefined;
+        return this.lastConsumedSinceCheckpoint()?.[key] as boolean | undefined;
     }
 
     /** Wait for the next state update. */
     next(): Promise<StateMessage> {
         const buffered = this.buffer.shift();
         if (buffered) {
+            this.lastConsumed = buffered;
             return Promise.resolve(buffered);
         }
         return new Promise<StateMessage>((resolve) => {
@@ -180,6 +192,7 @@ class SearchModuleStateStream {
         if (idx !== -1) {
             const match = this.buffer[idx];
             this.buffer.splice(0, idx + 1);
+            this.lastConsumed = match;
             return match;
         }
 
@@ -189,6 +202,7 @@ class SearchModuleStateStream {
             if (found !== -1) {
                 const match = this.buffer[found];
                 this.buffer.splice(0, found + 1);
+                this.lastConsumed = match;
                 return match;
             }
         }
@@ -206,15 +220,15 @@ class SearchModuleStateStream {
     }
 
     async waitForInitialIndexingStart() {
-        const latest = this.latestSinceCheckpoint();
+        const latest = this.lastConsumedSinceCheckpoint();
         expect(latest ? isBuildingFromScratch(latest) : false).toBe(false);
         return this.waitUntil(isBuildingFromScratch);
     }
 
-    async waitForSearchable() {
-        const latest = this.latestSinceCheckpoint();
+    async waitForSearchable(maxIterations?: number) {
+        const latest = this.lastConsumedSinceCheckpoint();
         expect(latest ? isIndexReady(latest) : false).toBe(false);
-        return this.waitUntil(isIndexReady);
+        return this.waitUntil(isIndexReady, maxIterations);
     }
 
     async waitForReindexing() {
@@ -458,7 +472,7 @@ function createBridge(): FakeMainThreadBridge {
 
 // --- Tests ---
 
-describe.skip('SharedWorkerAPI integration', () => {
+describe('SharedWorkerAPI integration', () => {
     let api: SharedWorkerAPI;
     let bridge: FakeMainThreadBridge;
     let state: SearchModuleStateStream;
@@ -520,7 +534,7 @@ describe.skip('SharedWorkerAPI integration', () => {
 
             // Second boot: DB already has populator state (done=true), so no initial indexing
             await api.registerClient(USER_ID, CLIENT_A, freshBridge.asBridge());
-            await state.waitForSearchable();
+            await state.waitForSearchable(5_000);
 
             // Initial indexing should NOT have occurred
             state.expectNeverInitialIndexingSinceCheckpoint();
@@ -1038,7 +1052,7 @@ describe.skip('SharedWorkerAPI integration', () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
 
             await state.waitForInitialIndexingStart();
-            await state.waitForSearchable();
+            await state.waitForSearchable(5_000);
 
             await verifyThatUserCanSearchIndexProperly(api);
         });

@@ -9,6 +9,12 @@ export class FakeBroadcastChannel implements BroadcastChannel {
     onmessage: ((ev: MessageEvent) => void) | null = null;
     onmessageerror: ((ev: MessageEvent) => void) | null = null;
     private listeners = new Map<string, Set<EventListener>>();
+    // Set on reset()/close() so a channel that outlives its test (e.g. a SharedWorkerAPI whose
+    // disposeInternals() is still in flight when the next test's beforeEach runs) can't deliver
+    // into - or receive from - the next test's channels of the same name: postMessage looks up
+    // `channels` by name at call time, so without this a stale instance would simply re-find and
+    // rejoin whatever new Set got registered under that name after reset().
+    private closed = false;
 
     constructor(public readonly name: string) {
         const set = channels.get(name) ?? new Set<FakeBroadcastChannel>();
@@ -17,9 +23,12 @@ export class FakeBroadcastChannel implements BroadcastChannel {
     }
 
     postMessage(data: unknown) {
+        if (this.closed) {
+            return;
+        }
         const event = { data } as MessageEvent;
         for (const ch of channels.get(this.name) ?? []) {
-            if (ch !== this) {
+            if (ch !== this && !ch.closed) {
                 ch.onmessage?.(event);
                 ch.listeners.get('message')?.forEach((cb) => cb(event));
             }
@@ -27,6 +36,7 @@ export class FakeBroadcastChannel implements BroadcastChannel {
     }
 
     close() {
+        this.closed = true;
         channels.get(this.name)?.delete(this);
     }
 
@@ -45,6 +55,11 @@ export class FakeBroadcastChannel implements BroadcastChannel {
     }
 
     static reset() {
+        for (const set of channels.values()) {
+            for (const ch of set) {
+                ch.closed = true;
+            }
+        }
         channels.clear();
     }
 }

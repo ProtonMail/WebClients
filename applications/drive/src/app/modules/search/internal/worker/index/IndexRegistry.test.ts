@@ -90,6 +90,9 @@ describe('IndexRegistry integration', () => {
             realFree.call(this);
             throw new Error('null pointer passed to rust');
         });
+        // The failure is reported through sendErrorReportForSearch, which warns on purpose; that's
+        // the expected behaviour under test, not noise to investigate.
+        jest.spyOn(console, 'warn').mockImplementation(() => {});
 
         // rebuild() and reset() call disposeAll() *before* clearing the index, and
         // disposeInternals() calls it while re-initialising the worker for a new client. A throw
