@@ -15,12 +15,15 @@ import { Toggle } from '@proton/components/index';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectKrispDebug, toggleKrispDebug } from '@proton/meet/store/slices/devToolsSlice';
+import { setActiveDevice } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
+    selectActiveAudioOutputId,
     selectCameras,
     selectMicrophones,
     selectSelectedAudioOutputId,
     selectSelectedCameraId,
     selectSelectedMicrophoneId,
+    selectSpeakerState,
     selectSpeakers,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
@@ -30,6 +33,13 @@ import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import {
+    MISSING_OUTPUT_DEVICE_ID,
+    desyncAudioOutput,
+    readAudioOutputState,
+    simulateOutputDeviceLoss,
+} from '../../utils/audioOutputDebug';
 import { BackgroundBlurComparison } from './BackgroundBlurComparison/BackgroundBlurComparison';
 import { CustomBackgroundTester } from './CustomBackground/CustomBackgroundTester';
 
@@ -478,6 +488,10 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
     const selectedCameraId = useMeetSelector(selectSelectedCameraId);
     const selectedMicrophoneId = useMeetSelector(selectSelectedMicrophoneId);
     const selectedAudioOutputDeviceId = useMeetSelector(selectSelectedAudioOutputId);
+    // The resolved selector drops ids outside the enumeration, so only the raw value shows the pin
+    const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
+    const speakerState = useMeetSelector(selectSpeakerState);
+    const { switchActiveDevice } = useMediaManagementContext();
 
     const isKrispDebugEnabled = useMeetSelector(selectKrispDebug);
 
@@ -822,6 +836,64 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
                         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                             <Button size="small" shape="outline" onClick={onSimulateReconnection}>
                                 {c('Action').t`Simulate reconnection`}
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Audio Output Testing Section */}
+                    <div className="debug-section">
+                        <h3>{c('Title').t`Audio Output Testing`}</h3>
+                        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                            <Button
+                                size="small"
+                                shape="outline"
+                                onClick={() => {
+                                    desyncAudioOutput(room).catch(() => {});
+                                }}
+                            >
+                                {c('Action').t`Desync audio output`}
+                            </Button>
+                            <Button
+                                size="small"
+                                shape="outline"
+                                onClick={() =>
+                                    dispatch(
+                                        setActiveDevice({ kind: 'audiooutput', deviceId: MISSING_OUTPUT_DEVICE_ID })
+                                    )
+                                }
+                            >
+                                {c('Action').t`Fail audio output pin`}
+                            </Button>
+                            {/* The speaker list will not re-select an already selected device */}
+                            <Button
+                                size="small"
+                                shape="outline"
+                                onClick={() => {
+                                    switchActiveDevice({
+                                        deviceType: 'audiooutput',
+                                        deviceId: selectedAudioOutputDeviceId,
+                                        isSystemDefaultDevice: speakerState.useSystemDefault,
+                                    }).catch(() => {});
+                                }}
+                            >
+                                {c('Action').t`Re-apply audio output`}
+                            </Button>
+                            <Button size="small" shape="outline" onClick={() => simulateOutputDeviceLoss(room)}>
+                                {c('Action').t`Simulate output device loss`}
+                            </Button>
+                            <Button
+                                size="small"
+                                shape="outline"
+                                onClick={() => {
+                                    // eslint-disable-next-line no-console
+                                    console.log('[audioOutputDebug] state', {
+                                        storeActiveAudioOutputId: activeAudioOutputDeviceId,
+                                        storeSelectedAudioOutputId: selectedAudioOutputDeviceId,
+                                        ...readAudioOutputState(room),
+                                    });
+                                }}
+                            >
+                                {c('Action').t`Log audio output state`}
                             </Button>
                         </div>
                     </div>
