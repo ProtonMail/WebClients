@@ -16,6 +16,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import googleDriveLogo from '@proton/styles/assets/img/import/providers/google-drive.svg';
 import clsx from '@proton/utils/clsx';
 
+import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import { useDriveImportStatus } from './useDriveImportStatus';
 import { useEasySwitchSidebarUserType } from './useEasySwitchSidebarUserType';
 
@@ -46,6 +47,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
             setShowInProgressModal(true);
             return;
         }
+        void countActionWithTelemetry(Actions.EasySwitchGoogleSidebarClicked);
         handleSubmit(ImportProvider.GOOGLE, [ImportType.DRIVE], EASY_SWITCH_SOURCES.DRIVE_WEB_SIDEBAR);
     };
 

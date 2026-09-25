@@ -6,7 +6,7 @@ import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/a
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Address, Api } from '@proton/shared/lib/interfaces';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
@@ -31,7 +31,7 @@ interface StartImporterProps {
     driveClient: ProtonDriveClient | undefined;
     call: () => Promise<void>;
     dispatch: (val: any) => void;
-    errorHandler: (data: any) => void;
+    errorHandler: (error: unknown, options?: { trace?: boolean }) => void;
     setIsCreatingCalendar: (val: boolean) => void;
     setIsCreatingImportTask: (val: boolean) => void;
     setCalendarsToBeCreated: (val: number) => void;
@@ -268,13 +268,26 @@ export const createImporterTask = async ({
         importPayload.Contacts = {};
     }
 
+    let isErrorReported = false;
     try {
         setIsCreatingImportTask(true);
 
         if (driveClient && products.includes(ImportType.DRIVE)) {
-            importPayload.Drive = {
-                ImportFolder: await prepareDriveImportFolder(driveClient, importerData.importedEmail),
-            };
+            try {
+                importPayload.Drive = {
+                    ImportFolder: await prepareDriveImportFolder(driveClient, importerData.importedEmail),
+                };
+            } catch (e) {
+                traceError(e, {
+                    tags: { component: 'drive-sdk' },
+                    extra: {
+                        context: 'Error while preparing Drive import folder',
+                        importerID: importerData.importerId,
+                    },
+                });
+                isErrorReported = true;
+                throw e;
+            }
         }
 
         await api(startImportTask(importPayload));
@@ -286,7 +299,8 @@ export const createImporterTask = async ({
         if (createdCalendars) {
             await call();
         }
-        errorHandler(error);
+        // Already reported to Sentry with context --> only notify the user
+        errorHandler(error, { trace: !isErrorReported });
         dispatch(resetOauthDraft());
     }
 };
