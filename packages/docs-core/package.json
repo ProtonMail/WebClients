@@ -3,7 +3,7 @@
   "description": "Library for Proton Docs",
   "main": "index.ts",
   "scripts": {
-    "check-types": "tsc",
+    "check-types": "tsc --checkers 1",
     "lint": "eslint --quiet",
     "test": "jest",
     "test:ci": "jest --runInBand --ci --logHeapUsage",
@@ -36,6 +36,7 @@
     "@proton/jest-env": "workspace:^",
     "@testing-library/jest-dom": "^6.9.1",
     "@types/jest": "^30.0.0",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "babel-jest": "^30.4.1",
     "browserslist": "^4.29.0",
     "core-js": "^3.50.0",
@@ -44,6 +45,6 @@
     "jest": "^30.5.2",
     "jest-junit": "^16.0.0",
     "prettier": "^3.9.8",
-    "typescript": "^6.0.3"
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
   }
 }

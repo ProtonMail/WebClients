@@ -23,7 +23,7 @@
         "./routes/organization": "./src/routes/organization/index.tsx"
     },
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "TZ=UTC vitest",
         "test:ci": "yarn test --run",
@@ -56,13 +56,14 @@
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.6.7",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "@vitejs/plugin-react": "^6.1.1",
         "@vitest/coverage-v8": "^5.0.1",
         "@vitest/ui": "^5.0.1",
         "eslint": "^10.11.0",
         "happy-dom": "^20.14.5",
         "react-dom": "^18.3.1",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "vitest": "^5.0.1"
     }
 }

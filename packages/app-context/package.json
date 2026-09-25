@@ -24,7 +24,7 @@
         "./testing/vitest/mockUseNotifications": "./testing/vitest/mockUseNotifications.ts"
     },
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage",
@@ -42,11 +42,12 @@
         "@proton/utils": "workspace:^",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/jest": "^30.0.0",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
         "jest-environment-jsdom": "^30.5.2",
         "react-test-renderer": "^18.3.1",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "vitest": "^5.0.1"
     }
 }

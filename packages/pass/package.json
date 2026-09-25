@@ -4,7 +4,7 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "cherry": "scripts/cherry.sh",
         "docs:build": "yarn workspace @proton/pass-docs build",
         "docs:dev": "yarn workspace @proton/pass-docs dev",

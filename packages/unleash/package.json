@@ -23,7 +23,7 @@
         "./testing/vitest/mockUnleash": "./testing/vitest/mockUnleash.ts"
     },
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "jest",
@@ -42,10 +42,11 @@
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
         "@types/react": "^18.3.31",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
         "jest-environment-jsdom": "^30.5.2",
         "prettier": "^3.9.8",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     }
 }
