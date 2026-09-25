@@ -8,7 +8,13 @@ import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 import { getModelState } from '../tests';
 import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer, userThunk } from '../user';
-import { getOrgPermissions, selectUserPermissions, userPermissionsReducer, userPermissionsThunk } from './index';
+import {
+    getOrgPermissions,
+    hasLegacyAdminAccess,
+    selectUserPermissions,
+    userPermissionsReducer,
+    userPermissionsThunk,
+} from './index';
 
 describe('getOrgPermissions', () => {
     it('grants all permissions to a legacy admin (isLegacyAdmin)', () => {
@@ -31,6 +37,61 @@ describe('getOrgPermissions', () => {
     it('grants all permissions to a legacy admin regardless of assigned permissions', () => {
         const record = getOrgPermissions(['account.user.read'], true);
         PERMISSIONS.forEach((p) => expect(record[p]).toBe(true));
+    });
+});
+
+describe('hasLegacyAdminAccess', () => {
+    it('grants access to an admin only while the legacy permission model is in use', () => {
+        expect(hasLegacyAdminAccess({ isLegacyPermissionModel: true, role: USER_ROLES.ADMIN_ROLE })).toBe(true);
+        // AdminRoleMVP on: the API's permissions are authoritative, no role fallback.
+        expect(hasLegacyAdminAccess({ isLegacyPermissionModel: false, role: USER_ROLES.ADMIN_ROLE })).toBe(false);
+    });
+
+    it('does not grant access to a non-admin', () => {
+        expect(hasLegacyAdminAccess({ isLegacyPermissionModel: true, role: USER_ROLES.MEMBER_ROLE })).toBe(false);
+        expect(hasLegacyAdminAccess({ isLegacyPermissionModel: true, role: USER_ROLES.FREE_ROLE })).toBe(false);
+    });
+});
+
+describe('userPermissionsThunk with AdminRoleMVP off', () => {
+    const setup = ({ user }: { user: UserModel }) => {
+        const api = jest.fn(async () => ({ Roles: [], Permissions: [] }));
+        const extraThunkArguments = {
+            api,
+            unleashClient: { isEnabled: () => false },
+        } as unknown as ProtonThunkArguments;
+        const { store } = getTestStore({
+            reducer: { ...userReducer, ...userPermissionsReducer },
+            preloadedState: { user: getModelState(user) },
+            extraThunkArguments,
+        });
+        return { store, api };
+    };
+
+    it('synthesises the map from the legacy admin role without calling the API', async () => {
+        const { store, api } = setup({
+            user: { isAdmin: true, isSelf: true, Role: USER_ROLES.ADMIN_ROLE } as UserModel,
+        });
+
+        const result = await store.dispatch(userPermissionsThunk());
+
+        expect(api).not.toHaveBeenCalled();
+        expect(result.isLegacyPermissionModel).toBe(true);
+        PERMISSIONS.forEach((p) => expect(result.permissions?.[p]).toBe(true));
+    });
+
+    // An impersonating admin is excluded from the synthesised map (isSelf is false), which is why
+    // gates fall back to hasLegacyAdminAccess rather than reading `permissions` alone.
+    it('denies the synthesised map to an impersonating admin but flags the legacy model', async () => {
+        const { store } = setup({
+            user: { isAdmin: true, isSelf: false, Role: USER_ROLES.ADMIN_ROLE } as UserModel,
+        });
+
+        const result = await store.dispatch(userPermissionsThunk());
+
+        expect(result.permissions?.['account.user.read']).toBe(false);
+        expect(result.isLegacyPermissionModel).toBe(true);
+        expect(hasLegacyAdminAccess(result)).toBe(true);
     });
 });
 
@@ -69,10 +130,13 @@ describe('userPermissionsThunk', () => {
             user: { isAdmin: true, isSelf: false, Role: USER_ROLES.ADMIN_ROLE } as UserModel,
             permissions: ['account.user.read'],
         });
-        const { permissions } = await store.dispatch(userPermissionsThunk());
+        const result = await store.dispatch(userPermissionsThunk());
         // Only the API-granted permission is present, not blanket admin access.
-        expect(permissions?.['account.user.read']).toBe(true);
-        expect(permissions?.['account.user.create']).toBe(false);
+        expect(result.permissions?.['account.user.read']).toBe(true);
+        expect(result.permissions?.['account.user.create']).toBe(false);
+        // And with the flag on there is no legacy role fallback to widen it.
+        expect(result.isLegacyPermissionModel).toBe(false);
+        expect(hasLegacyAdminAccess(result)).toBe(false);
     });
 
     it('invalidates the cached permissions without blanking them when the user role changes', async () => {
