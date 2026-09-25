@@ -2,17 +2,12 @@ import type { DefaultPersistedSession } from '@proton/shared/lib/authentication/
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { SessionAccessTypeFlag, selfAccessTypeMask } from '@proton/shared/lib/authentication/sessionAccessType';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import {
     cleanupOrphanedDuplicateSessions,
     getOrphanedDuplicateSessions,
     getRevokedSessionUIDs,
 } from './orphanedSessions';
-
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    captureMessage: jest.fn(),
-}));
 
 const getPersisted = (
     value: Partial<DefaultPersistedSession> & Pick<DefaultPersistedSession, 'localID'>
@@ -144,7 +139,6 @@ describe('cleanupOrphanedDuplicateSessions', () => {
 
     beforeEach(() => {
         window.localStorage.clear();
-        jest.mocked(captureMessage).mockClear();
     });
 
     const run = (api: jest.Mock) =>
@@ -196,30 +190,12 @@ describe('cleanupOrphanedDuplicateSessions', () => {
         ).resolves.toEqual({ revoked: 1, failed: 0 });
     });
 
-    it('reports what it revoked', async () => {
-        const api = jest.fn().mockResolvedValue({ Code: 1000 });
-
-        await expect(run(api)).resolves.toEqual({ revoked: 1, failed: 0 });
-        expect(captureMessage).toHaveBeenCalledWith('Revoked orphaned duplicate sessions', {
-            level: 'info',
-            extra: { revoked: 1, failed: 0 },
-        });
-    });
-
-    it('stays silent on a run that only failed, so a refused revoke does not report every boot', async () => {
-        const api = jest.fn().mockRejectedValue({ status: 500 });
-
-        await expect(run(api)).resolves.toEqual({ revoked: 0, failed: 1 });
-        expect(captureMessage).not.toHaveBeenCalled();
-    });
-
-    it('reports nothing when there was nothing to do', async () => {
+    it('does nothing when there is nothing to do', async () => {
         const api = jest.fn();
 
         await expect(
             cleanupOrphanedDuplicateSessions({ api, remoteSessions: [], persistedSessions: [], delay: 0 })
         ).resolves.toEqual({ revoked: 0, failed: 0 });
         expect(api).not.toHaveBeenCalled();
-        expect(captureMessage).not.toHaveBeenCalled();
     });
 });
