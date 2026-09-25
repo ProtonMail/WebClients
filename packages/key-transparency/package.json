@@ -13,7 +13,7 @@
         "./verification": "./lib/verification/index.ts"
     },
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find lib tests -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
@@ -38,9 +38,10 @@
         "@proton/i18n": "workspace:^",
         "@proton/polyfill": "workspace:^",
         "@proton/vitest-config": "workspace:^",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "happy-dom": "^20.14.5",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "vitest": "^5.0.1"
     }
 }

@@ -42,7 +42,7 @@
     "types": "index.ts",
     "scripts": {
         "build": "tsc",
-        "check-types": "tsc --noEmit",
+        "check-types": "tsc --noEmit --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage"
@@ -55,9 +55,10 @@
     "devDependencies": {
         "@proton/jest-swc-preset": "workspace:^",
         "@types/jest": "^30.0.0",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "peerDependencies": {
         "react": "^18.3.1"

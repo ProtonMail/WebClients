@@ -3,7 +3,7 @@
     "description": "Duplication of the Drive Store",
     "main": "index.ts",
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "prettier": "prettier",
         "test": "jest",
@@ -61,12 +61,13 @@
         "@types/react": "^18.3.31",
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
         "jest-junit": "^16.0.0",
         "jest-when": "3.7.0",
         "prettier": "^3.9.8",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "peerDependencies": {
         "@openpgp/web-stream-tools": "^0.3.1"

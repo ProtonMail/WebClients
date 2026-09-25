@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "build": "tsc && vite build",
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "preview": "vite preview",
         "start": "vite"
@@ -20,7 +20,8 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@types/toastify-js": "^1.12.4",
-        "typescript": "^6.0.3",
+        "@typescript/native": "npm:typescript@^7.0.2",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "vite": "^8.3.0"
     },
     "installConfig": {

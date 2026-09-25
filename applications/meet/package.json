@@ -5,7 +5,7 @@
     "author": "",
     "scripts": {
         "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "i18n:extract:web": "proton-i18n extract",
         "i18n:getlatest": "proton-i18n upgrade",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
@@ -86,6 +86,7 @@
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "^14.6.7",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "@vitejs/plugin-react": "^6.1.1",
         "@vitest/coverage-v8": "^5.0.1",
         "@vitest/ui": "5.0.1",
@@ -95,7 +96,7 @@
         "html-webpack-plugin": "^5.6.8",
         "path-browserify": "^1.0.1",
         "prettier": "^3.9.8",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "vitest": "^5.0.1"
     }
 }
