@@ -74,6 +74,12 @@ export enum Actions {
     OnboardingV2UploadSkip = 'onboardingV2UploadSkip',
     // OnboardingAlbumShown = 'onboardingAlbumShown',
     // OnboardingAlbumPrimaryAction = 'onboardingAlbumPrimaryAction',
+    // easy switch actions
+    EasySwitchGoogleSidebarClicked = 'easySwitchGoogleSidebarClicked',
+    EasySwitchGoogleEmptyViewClicked = 'easySwitchGoogleEmptyViewClicked',
+    EasySwitchGoogleImportStarted = 'easySwitchGoogleImportStarted',
+    EasySwitchGoogleImportCompleted = 'easySwitchGoogleImportCompleted',
+    EasySwitchGoogleImportFailed = 'easySwitchGoogleImportFailed',
 
     // images
     // ConvertedHEIC = 'convertedHEIC',
