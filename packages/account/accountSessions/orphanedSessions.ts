@@ -4,7 +4,6 @@ import type { PersistedSession } from '@proton/shared/lib/authentication/Session
 import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { Api } from '@proton/shared/lib/interfaces';
 
@@ -119,15 +118,6 @@ export const cleanupOrphanedDuplicateSessions = async ({
         } else {
             failed++;
         }
-    }
-
-    /**
-     * Only a run that revoked something reports. A failure isn't recorded, so reporting those too
-     * would repeat on every boot for as long as the API keeps refusing one; a success is recorded,
-     * which bounds this to once per orphan.
-     */
-    if (revoked > 0) {
-        captureMessage('Revoked orphaned duplicate sessions', { level: 'info', extra: { revoked, failed } });
     }
 
     return { revoked, failed };
