@@ -5,6 +5,7 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getUserPermissions } from '@proton/shared/lib/api/userPermissions';
+import { USER_ROLES } from '@proton/shared/lib/constants';
 import { type OrgPermissions, PERMISSIONS, type User, type UserPermission } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
@@ -13,9 +14,15 @@ import { type UserState, userFulfilled, userThunk } from '../user';
 
 const name = 'userPermissions';
 
-interface ExtendedUserPermission extends UserPermission {
+export interface ExtendedUserPermission extends UserPermission {
     permissions: OrgPermissions | null;
     role: number;
+    /**
+     * True when `permissions` was synthesised from the legacy admin role rather than returned by the API.
+     * Either FF `AdminRoleMVP` is off, or the permissions endpoint failed.
+     * Use this to not break impersonation when the FF is off. Remove together with the flag.
+     */
+    isLegacyPermissionModel: boolean;
 }
 
 export interface UserPermissionsState extends UserState {
@@ -39,6 +46,13 @@ export const getOrgPermissions = (
 
 export const EMPTY_ORG_PERMISSIONS: OrgPermissions = getOrgPermissions([], false);
 
+// Use this to not break impersonation when the FF is off. Remove together with the flag.
+export const hasLegacyAdminAccess = ({
+    isLegacyPermissionModel,
+    role,
+}: Pick<ExtendedUserPermission, 'isLegacyPermissionModel' | 'role'>) =>
+    isLegacyPermissionModel && role === USER_ROLES.ADMIN_ROLE;
+
 const modelThunk = createAsyncModelThunk<Model, UserPermissionsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
         const user = await dispatch(userThunk());
@@ -46,7 +60,14 @@ const modelThunk = createAsyncModelThunk<Model, UserPermissionsState, ProtonThun
         const flag = extraArgument.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
         const isLegacyAdmin = user.isAdmin && user.isSelf;
         const permissions = getOrgPermissions([], isLegacyAdmin);
-        const defaultValue = { Roles: [], Permissions: [], ShowAdminRolesUI: false, permissions, role: user.Role };
+        const defaultValue = {
+            Roles: [],
+            Permissions: [],
+            ShowAdminRolesUI: false,
+            permissions,
+            role: user.Role,
+            isLegacyPermissionModel: true,
+        };
         if (!flag) {
             return defaultValue;
         }
@@ -54,7 +75,7 @@ const modelThunk = createAsyncModelThunk<Model, UserPermissionsState, ProtonThun
             const Permission = await extraArgument.api<UserPermission>(getUserPermissions());
             const isOwner = Permission.Roles.some(isOwnerRole);
             const permissions = getOrgPermissions(Permission.Permissions, isOwner);
-            return { ...Permission, permissions, role: user.Role };
+            return { ...Permission, permissions, role: user.Role, isLegacyPermissionModel: false };
         } catch {
             // If the endpoint fails, fall back to the safe legacy-admin default rather than leaving
             // `permissions` at null forever, which would make every `permissions === null` loading
@@ -71,6 +92,7 @@ const defaultUserPermissions: Model = {
     Roles: [],
     Permissions: [],
     ShowAdminRolesUI: false,
+    isLegacyPermissionModel: false,
 };
 
 const initialState = getInitialModelState<Model>(defaultUserPermissions);
