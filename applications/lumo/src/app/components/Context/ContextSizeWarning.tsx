@@ -6,8 +6,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useContextLimits } from '../../hooks/useContextLimits';
 import { useEffectiveContextUsage } from '../../hooks/useEffectiveContextUsage';
-import { CONTEXT_LIMITS } from '../../llm/utils';
+import { getContextSizeWarning } from '../../llm/contextLimits';
 import type { Attachment, Message } from '../../types';
 
 interface ContextSizeWarningProps {
@@ -18,8 +19,9 @@ interface ContextSizeWarningProps {
 
 export const ContextSizeWarning = ({ attachments, messageChain, onOpenFiles }: ContextSizeWarningProps) => {
     const { usedTokens, fileTokens } = useEffectiveContextUsage(messageChain, attachments);
+    const contextLimits = useContextLimits();
 
-    const warningLevel = usedTokens >= CONTEXT_LIMITS.MAX_CONTEXT ? 'critical' : 'none';
+    const warningLevel = getContextSizeWarning(usedTokens, contextLimits) === 'critical' ? 'critical' : 'none';
 
     if (warningLevel === 'none') {
         return null;

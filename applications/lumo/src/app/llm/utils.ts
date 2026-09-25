@@ -23,18 +23,42 @@ function calculateBlockTokens(block: ContentBlock): number {
  * Calculate tokens from message content only (excluding context)
  * Used for UI components that need to show message content tokens separately
  */
+function isToolContentBlock(block: ContentBlock): boolean {
+    return block.type === 'tool_call' || block.type === 'tool_result';
+}
+
+export type MessageTokenBreakdown = {
+    /** User/assistant text blocks (excludes tool_call and tool_result). */
+    textTokens: number;
+    /** tool_call and tool_result blocks. */
+    toolTokens: number;
+};
+
+export function calculateMessageTokenBreakdown(messageChain: Message[]): MessageTokenBreakdown {
+    return messageChain.reduce<MessageTokenBreakdown>(
+        (acc, message) => {
+            if (message.blocks && message.blocks.length > 0) {
+                for (const block of message.blocks) {
+                    const tokens = calculateBlockTokens(block);
+                    if (isToolContentBlock(block)) {
+                        acc.toolTokens += tokens;
+                    } else {
+                        acc.textTokens += tokens;
+                    }
+                }
+            } else {
+                acc.textTokens += countTokens(message.content);
+                acc.toolTokens += countTokens(message.toolCall) + countTokens(message.toolResult);
+            }
+            return acc;
+        },
+        { textTokens: 0, toolTokens: 0 }
+    );
+}
+
 export const calculateMessageContentTokens = (messageChain: Message[]): number => {
-    return messageChain.reduce((total, message) => {
-        if (message.blocks && message.blocks.length > 0) {
-            // New format: iterate through blocks and delegate to helper
-            return total + message.blocks.reduce((sum, block) => sum + calculateBlockTokens(block), 0);
-        } else {
-            // Legacy format
-            return (
-                total + countTokens(message.content) + countTokens(message.toolCall) + countTokens(message.toolResult)
-            );
-        }
-    }, 0);
+    const { textTokens, toolTokens } = calculateMessageTokenBreakdown(messageChain);
+    return textTokens + toolTokens;
 };
 
 // Calculate estimated tokn size for a single attachment
@@ -91,45 +115,6 @@ export const calculateAttachmentContextSize = (attachments: Attachment[]): numbe
     }, 0);
 };
 
-// Context window limits (approximate)
-export const CONTEXT_LIMITS = {
-    WARNING_THRESHOLD: 110000,
-    DANGER_THRESHOLD: 120000,
-    MAX_CONTEXT: 130000,
-} as const;
-
-/** Input tokens we allow a single request to occupy, leaving the rest of the window for the reply. */
-export const REQUEST_INPUT_TOKEN_BUDGET = Math.round(CONTEXT_LIMITS.MAX_CONTEXT * 0.78);
-
-/** Allowance for turns the chain does not account for: system prompt, personalization, memories, instructions. */
-export const REQUEST_OVERHEAD_TOKEN_ALLOWANCE = 4_000;
-
-/** Never starve the current question of file content, even when history is large. */
-export const MIN_FILE_TOKEN_BUDGET = 8_000;
-
-/**
- * Token allowance for expanded file content on the next request.
- *
- * Compaction can only shrink message text; a file-heavy tail (e.g. many auto-retrieved
- * PDFs on the current question) can still exceed the window on its own. Budgeting files
- * against the space history leaves is what keeps a request inside the model limit.
- */
-export const computeFileTokenBudget = (conversationTokens: number): number => {
-    const remaining = REQUEST_INPUT_TOKEN_BUDGET - REQUEST_OVERHEAD_TOKEN_ALLOWANCE - Math.max(0, conversationTokens);
-    return Math.max(MIN_FILE_TOKEN_BUDGET, remaining);
-};
-
-export const getContextSizeWarning = (tokenCount: number): 'none' | 'warning' | 'danger' | 'critical' => {
-    if (tokenCount >= CONTEXT_LIMITS.MAX_CONTEXT) {
-        return 'critical';
-    } else if (tokenCount >= CONTEXT_LIMITS.DANGER_THRESHOLD) {
-        return 'danger';
-    } else if (tokenCount >= CONTEXT_LIMITS.WARNING_THRESHOLD) {
-        return 'warning';
-    }
-    return 'none';
-};
-
 export const formatTokenCount = (tokenCount: number): string => {
     if (tokenCount < 1000) {
         return `${Math.round(tokenCount)} tokens`;
@@ -153,11 +138,6 @@ export const getFileSizeLevel = (tokenCount: number): 'small' | 'medium' | 'larg
     return 'small';
 };
 
-// Get context usage percentage (0-100)
-export const getContextUsagePercentage = (tokenCount: number): number => {
-    return Math.min(100, Math.round((tokenCount / CONTEXT_LIMITS.MAX_CONTEXT) * 100));
-};
-
 // Get progress bar state for visual indicators
 export const getContextProgressState = (percentage: number): 'low' | 'medium' | 'high' | 'critical' => {
     if (percentage >= 100) {
@@ -170,60 +150,3 @@ export const getContextProgressState = (percentage: number): 'low' | 'medium' | 
     return 'low';
 };
 
-// Calculate total context size including conversation history and current attachments
-export const calculateTotalContextSize = (messageChain: Message[], currentAttachments: Attachment[]): number => {
-    const conversationContext = calculateConversationContextSize(messageChain);
-    const currentAttachmentsContext = calculateAttachmentContextSize(currentAttachments);
-    return conversationContext + currentAttachmentsContext;
-};
-
-// Calculate context size for the conversation history (messages + their attachments)
-export const calculateConversationContextSize = (messageChain: Message[]): number => {
-    return messageChain.reduce((total, message) => {
-        // Calculate content tokens from blocks if available, otherwise use legacy fields
-        let contentTokens = 0;
-        if (message.blocks && message.blocks.length > 0) {
-            // New format: iterate through blocks and delegate to helper
-            contentTokens = message.blocks.reduce((sum, block) => sum + calculateBlockTokens(block), 0);
-        } else {
-            // Legacy format
-            contentTokens =
-                countTokens(message.content) + countTokens(message.toolCall) + countTokens(message.toolResult);
-        }
-
-        // Context from attachments in this message (already formatted by flattenAttachmentsForLlm)
-        const contextTokens = countTokens(message.context);
-
-        return total + contentTokens + contextTokens;
-    }, 0);
-};
-
-// Get context breakdown for display
-export const getContextBreakdown = (messageChain: Message[], currentAttachments: Attachment[]) => {
-    const conversationSize = calculateConversationContextSize(messageChain);
-    const currentAttachmentsSize = calculateAttachmentContextSize(currentAttachments);
-    const totalSize = conversationSize + currentAttachmentsSize;
-
-    return {
-        conversationSize,
-        currentAttachmentsSize,
-        totalSize,
-        conversationPercentage: totalSize > 0 ? Math.round((conversationSize / totalSize) * 100) : 0,
-        currentAttachmentsPercentage: totalSize > 0 ? Math.round((currentAttachmentsSize / totalSize) * 100) : 0,
-    };
-};
-
-// Get context usage percentage using total context
-export const getTotalContextUsagePercentage = (messageChain: Message[], currentAttachments: Attachment[]): number => {
-    const totalTokens = calculateTotalContextSize(messageChain, currentAttachments);
-    return Math.min(100, Math.round((totalTokens / CONTEXT_LIMITS.MAX_CONTEXT) * 100));
-};
-
-// Get context size warning level using total context
-export const getTotalContextSizeWarning = (
-    messageChain: Message[],
-    currentAttachments: Attachment[]
-): 'none' | 'warning' | 'danger' | 'critical' => {
-    const totalTokens = calculateTotalContextSize(messageChain, currentAttachments);
-    return getContextSizeWarning(totalTokens);
-};

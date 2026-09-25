@@ -1,11 +1,7 @@
-import { CONTEXT_LIMITS } from '../utils';
+import { DEFAULT_CONTEXT_WINDOW_CONFIG } from '../contextLimits';
 
-/**
- * Target context size (in estimated tokens) that compaction tries to get the
- * summarized region under. We aim well below the hard model limit so the
- * freshly compacted conversation has room to grow again before re-compacting.
- */
-export const COMPACTION_TARGET_TOKENS = Math.round(CONTEXT_LIMITS.MAX_CONTEXT * 0.5); // ~64K
+/** @deprecated Default-window only — production sends pass model-specific `targetTokens`. */
+export const COMPACTION_TARGET_TOKENS = DEFAULT_CONTEXT_WINDOW_CONFIG.compactionTargetTokens;
 
 /**
  * Recent conversation tail that is always preserved verbatim (never summarized),
@@ -38,7 +34,9 @@ export const IMAGE_TOKEN_ESTIMATE = 2_000;
  * waiting for the backend to reject an over-budget request. Set just below the
  * model window so we compact before hitting the wall.
  */
-export const PROACTIVE_COMPACTION_THRESHOLD_TOKENS = Math.round(CONTEXT_LIMITS.MAX_CONTEXT * 0.9); // ~115K
+/** @deprecated Default-window only — production sends use `getContextWindowConfigForModelTier`. */
+export const PROACTIVE_COMPACTION_THRESHOLD_TOKENS =
+    DEFAULT_CONTEXT_WINDOW_CONFIG.proactiveCompactionThresholdTokens;
 
 /** Refuse compaction that reclaims fewer than this many tokens — avoids duplicate boundary markers. */
 export const MIN_COMPACTION_TOKENS_RECLAIMED = 1_000;

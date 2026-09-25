@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import type { ContextFilter } from '../llm/contextFilter';
 import { estimateEffectiveContextUsage } from '../llm/effectiveContextUsage';
+import { useContextLimits } from './useContextLimits';
 import { useLumoMemoSelector, useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectContextFilters, selectMessagesByConversationId } from '../redux/selectors';
 import type { Attachment, Message } from '../types';
@@ -15,6 +16,7 @@ export function useEffectiveContextUsage(messageChain: Message[], currentAttachm
     const allAttachments = useLumoSelector(selectAttachments);
     const contextFilters = useLumoSelector(selectContextFilters);
     const messageMap = useConversationMessageMap(messageChain);
+    const contextLimits = useContextLimits();
 
     return useMemo(
         () =>
@@ -24,8 +26,9 @@ export function useEffectiveContextUsage(messageChain: Message[], currentAttachm
                 currentAttachments,
                 allAttachments,
                 messageMap,
+                contextLimits,
             }),
-        [messageChain, contextFilters, currentAttachments, allAttachments, messageMap]
+        [messageChain, contextFilters, currentAttachments, allAttachments, messageMap, contextLimits]
     );
 }
 
@@ -36,6 +39,7 @@ export function useEffectiveContextUsageWithFilters(
 ) {
     const allAttachments = useLumoSelector(selectAttachments);
     const messageMap = useConversationMessageMap(messageChain);
+    const contextLimits = useContextLimits();
 
     return useMemo(
         () =>
@@ -45,7 +49,8 @@ export function useEffectiveContextUsageWithFilters(
                 currentAttachments,
                 allAttachments,
                 messageMap,
+                contextLimits,
             }),
-        [messageChain, contextFilters, currentAttachments, allAttachments, messageMap]
+        [messageChain, contextFilters, currentAttachments, allAttachments, messageMap, contextLimits]
     );
 }

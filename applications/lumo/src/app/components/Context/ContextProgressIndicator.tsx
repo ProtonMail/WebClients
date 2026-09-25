@@ -3,8 +3,9 @@ import React from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useContextLimits } from '../../hooks/useContextLimits';
 import { useEffectiveContextUsage } from '../../hooks/useEffectiveContextUsage';
-import { CONTEXT_LIMITS } from '../../llm/utils';
+import { getContextSizeWarning, getContextUsagePercentage } from '../../llm/contextLimits';
 import type { Attachment, Message } from '../../types';
 
 interface ContextProgressIndicatorProps {
@@ -14,24 +15,14 @@ interface ContextProgressIndicatorProps {
 
 export const ContextProgressIndicator = ({ attachments, messageChain }: ContextProgressIndicatorProps) => {
     const { usedTokens, fileTokens } = useEffectiveContextUsage(messageChain, attachments);
+    const contextLimits = useContextLimits();
 
     const { totalPercentage, warningLevel } = React.useMemo(() => {
-        const percentage = Math.round((usedTokens / CONTEXT_LIMITS.MAX_CONTEXT) * 100);
-
-        let level: 'none' | 'warning' | 'danger' | 'critical' = 'none';
-        if (usedTokens >= CONTEXT_LIMITS.MAX_CONTEXT) {
-            level = 'critical';
-        } else if (usedTokens >= CONTEXT_LIMITS.DANGER_THRESHOLD) {
-            level = 'danger';
-        } else if (usedTokens >= CONTEXT_LIMITS.WARNING_THRESHOLD) {
-            level = 'warning';
-        }
-
         return {
-            totalPercentage: percentage,
-            warningLevel: level,
+            totalPercentage: getContextUsagePercentage(usedTokens, contextLimits),
+            warningLevel: getContextSizeWarning(usedTokens, contextLimits),
         };
-    }, [usedTokens]);
+    }, [usedTokens, contextLimits]);
 
     if (warningLevel === 'none') {
         return null;
