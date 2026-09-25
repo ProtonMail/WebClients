@@ -8,7 +8,7 @@
         "./purify": "./src/purify.ts"
     },
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "yarn test --ci --runInBand --logHeapUsage",
@@ -19,9 +19,10 @@
     },
     "devDependencies": {
         "@proton/jest-swc-preset": "workspace:^",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
         "jest-environment-jsdom": "^30.5.2",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     }
 }

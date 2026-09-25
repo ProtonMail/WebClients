@@ -4,7 +4,7 @@
     "license": "GPL-3.0",
     "scripts": {
         "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=standalone --noLogicalScss",
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "i18n:extract:web": "proton-i18n extract",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
@@ -41,10 +41,11 @@
         "@proton/jest-swc-preset": "workspace:^",
         "@proton/pack": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "cross-env": "^10.1.0",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
         "jest-junit": "^16.0.0",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     }
 }

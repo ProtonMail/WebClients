@@ -4,7 +4,7 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "eslint --quiet",
         "test": "jest",
@@ -30,10 +30,11 @@
         "@proton/jest-swc-preset": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
         "jest-environment-jsdom": "^30.5.2",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "peerDependencies": {
         "react": "^18.3.1",

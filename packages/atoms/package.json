@@ -50,7 +50,7 @@
         "./Vr/Vr": "./src/Vr/Vr.tsx"
     },
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "create-atom": "ts-node -P create-atom/tsconfig.create-atom.json create-atom/index",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "eslint --quiet",
@@ -88,12 +88,13 @@
         "@types/react": "^18.3.31",
         "@types/react-dom": "^18.3.7",
         "@types/tinycolor2": "^1.4.6",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "commander": "^14.0.3",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
         "mustache": "^4.2.0",
         "prettier": "^3.9.8",
         "ts-node": "^10.9.2",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     }
 }

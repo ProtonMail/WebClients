@@ -10,7 +10,7 @@
         "./webvitals": "./webvitals.ts"
     },
     "scripts": {
-        "check-types": "tsc",
+        "check-types": "tsc --checkers 1",
         "generate-metrics": "ts-node -P scripts/tsconfig.metrics-scripts.json ./scripts/generate-metrics.ts",
         "generate-schema-types": "bash scripts/generate-schema-types.sh",
         "lint": "eslint --quiet",
@@ -22,13 +22,14 @@
     "dependencies": {
         "@proton/shared": "workspace:^",
         "prettier": "^3.9.8",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "web-vitals": "^4.2.4"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
         "@types/node": "^24.13.6",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",
         "jest-fetch-mock": "^3.2.0",
