@@ -14,15 +14,18 @@ import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Api, Domain, Permission, User } from '@proton/shared/lib/interfaces';
-import { isAdmin } from '@proton/shared/lib/user/helpers';
+import type { Api, Domain, Permission } from '@proton/shared/lib/interfaces';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';
 
 import { serverEvent } from '../eventLoop';
-import { initEvent } from '../init';
-import { userFulfilled, userThunk } from '../user';
-import { type UserPermissionsState, userPermissionsFulfilled, userPermissionsThunk } from '../userPermissions';
+import {
+    type ExtendedUserPermission,
+    type UserPermissionsState,
+    hasLegacyAdminAccess,
+    userPermissionsFulfilled,
+    userPermissionsThunk,
+} from '../userPermissions';
 
 const name = 'domains' as const;
 
@@ -32,7 +35,7 @@ enum ValueType {
 }
 
 export interface DomainsState extends UserPermissionsState {
-    [name]: ModelState<Domain[]> & { meta: { type: ValueType; hasDomainReadPermission: boolean } };
+    [name]: ModelState<Domain[]> & { meta: { type: ValueType } };
 }
 
 type SliceState = DomainsState[typeof name];
@@ -40,13 +43,16 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectDomains = (state: DomainsState) => state.domains;
 
-const domainReadPermissions = new Set<Permission>(['account.sso_config.read', 'account.domain.read']);
+const domainReadPermissions: Permission[] = ['account.sso_config.read', 'account.domain.read'];
 
-const getHasDomainReadPermission = (permissions: Permission[]) =>
-    permissions.some((permission) => domainReadPermissions.has(permission));
-
-const canFetch = (user: User, hasDomainReadPermission: boolean) => {
-    return isAdmin(user) || hasDomainReadPermission;
+// Reads the resolved org permission map rather than the raw `Permissions` array, because the map is
+// the only representation carrying the two grant-all shortcuts: the org owner role (AdminRoleMVP on)
+// and the legacy self-admin (AdminRoleMVP off, where the raw array is always empty)
+const canFetch = (userPermission: ExtendedUserPermission) => {
+    return (
+        domainReadPermissions.some((permission) => userPermission.permissions?.[permission] === true) ||
+        hasLegacyAdminAccess(userPermission)
+    );
 };
 const freeDomains: Domain[] = [];
 
@@ -57,7 +63,6 @@ const initialState: SliceState = {
         fetchedEphemeral: undefined,
         fetchedAt: 0,
         type: ValueType.dummy,
-        hasDomainReadPermission: false,
     },
 };
 const slice = createSlice({
@@ -98,15 +103,14 @@ const slice = createSlice({
         },
     },
     extraReducers: (builder) => {
-        const handleUserUpdate = (state: DomainsState['domains'], user: User | undefined) => {
-            if (!state.value || !user) {
+        const handleAccessChange = (state: DomainsState['domains'], hasFetchAccess: boolean) => {
+            if (!state.value) {
                 return;
             }
 
             const isFreeDomains = original(state)?.meta?.type === ValueType.dummy;
-            const hasFetchAccess = canFetch(user, state.meta.hasDomainReadPermission);
 
-            if (!isFreeDomains && user && !hasFetchAccess) {
+            if (!isFreeDomains && !hasFetchAccess) {
                 // Do not get any domain update when user becomes unsubscribed.
                 state.value = freeDomains;
                 state.error = undefined;
@@ -115,7 +119,7 @@ const slice = createSlice({
                 state.meta.fetchedAt = 0;
             }
 
-            if (isFreeDomains && user && hasFetchAccess) {
+            if (isFreeDomains && hasFetchAccess) {
                 state.error = undefined;
                 state.meta.type = ValueType.complete;
                 state.meta.fetchedEphemeral = undefined;
@@ -123,14 +127,8 @@ const slice = createSlice({
             }
         };
 
-        builder.addCase(initEvent, (state, action) => {
-            handleUserUpdate(state, action.payload.User);
-        });
-        builder.addCase(userFulfilled, (state, action) => {
-            handleUserUpdate(state, action.payload);
-        });
         builder.addCase(userPermissionsFulfilled, (state, action) => {
-            state.meta.hasDomainReadPermission = getHasDomainReadPermission(action.payload.Permissions);
+            handleAccessChange(state, canFetch(action.payload));
         });
 
         builder.addCase(serverEvent, (state, action) => {
@@ -146,8 +144,6 @@ const slice = createSlice({
                 });
                 state.error = undefined;
                 state.meta.type = ValueType.complete;
-            } else {
-                handleUserUpdate(state, action.payload.User);
             }
         });
     },
@@ -165,14 +161,12 @@ const modelThunk = (options?: {
             return previous({ dispatch, getState, extraArgument, options });
         };
         const getPayload = async () => {
-            const user = await dispatch(userThunk());
             const userPermission = await dispatch(userPermissionsThunk());
-            const hasDomainReadPermission = getHasDomainReadPermission(userPermission.Permissions);
             const defaultValue = {
                 value: freeDomains,
                 type: ValueType.dummy,
             };
-            if (!canFetch(user, hasDomainReadPermission)) {
+            if (!canFetch(userPermission)) {
                 return defaultValue;
             }
             try {
@@ -229,10 +223,8 @@ export const domainsEventLoopV6Thunk = ({
     api: Api;
 }): ThunkAction<Promise<void>, DomainsState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
-        const user = await dispatch(userThunk());
         const userPermission = await dispatch(userPermissionsThunk());
-        const hasDomainReadPermission = getHasDomainReadPermission(userPermission.Permissions);
-        if (!canFetch(user, hasDomainReadPermission)) {
+        if (!canFetch(userPermission)) {
             return;
         }
         await updateCollectionAsyncV6({
