@@ -6,21 +6,12 @@ import type { View } from 'vega-typings';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 
+import { triggerFileDownload } from '../../../util/triggerFileDownload';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
 
 interface VegaChartDownloadButtonProps {
     getView: () => View | null | undefined;
     filename: string;
-}
-
-function triggerDownload(url: string, filename: string): void {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = filename;
-    link.rel = 'noopener';
-    document.body.append(link);
-    link.click();
-    link.remove();
 }
 
 export const VegaChartDownloadButton = ({ getView, filename }: VegaChartDownloadButtonProps) => {
@@ -36,7 +27,7 @@ export const VegaChartDownloadButton = ({ getView, filename }: VegaChartDownload
         setIsDownloading(true);
         try {
             const url = await view.toImageURL('png', 2);
-            triggerDownload(url, filename);
+            triggerFileDownload(url, filename);
         } catch (error) {
             if (process.env.NODE_ENV !== 'production') {
                 console.warn('[VegaChartDownloadButton] Failed to export chart:', error);
