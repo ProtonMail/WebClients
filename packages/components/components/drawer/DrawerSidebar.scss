@@ -55,6 +55,13 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
+	// Highlight the Calendar drawer button while a single Mail message is being
+	// dragged, signalling that it is a valid drop target to create an event.
+	.drawer-sidebar-button--drop-target .drawer-sidebar-button {
+		border-color: var(--primary);
+		background-color: var(--interaction-default-hover);
+	}
+
 	&--hide-on-tablet {
 		@include im.media('<=#{em($breakpoint-for-drawer, 16)}') {
 			display: none;

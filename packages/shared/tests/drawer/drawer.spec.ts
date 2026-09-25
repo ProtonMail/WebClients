@@ -141,6 +141,23 @@ describe('drawer helpers', () => {
 
             expect(getIsDrawerPostMessage(event, hostname)).toBeFalsy();
         });
+
+        it('should recognise the mail-to-calendar create-event messages', () => {
+            const mailCalendarCreateEventTypes = [
+                DRAWER_EVENTS.CALENDAR_MAIL_DRAG_STATE,
+                DRAWER_EVENTS.CALENDAR_MAIL_DROP,
+                DRAWER_EVENTS.CALENDAR_CREATE_EVENT_FROM_MAIL,
+            ];
+
+            mailCalendarCreateEventTypes.forEach((type) => {
+                const event = {
+                    origin: `https://${drawerAuthorizedApps[0]}.proton.me`,
+                    data: { type },
+                } as MessageEvent;
+
+                expect(getIsDrawerPostMessage(event, hostname)).toBeTruthy();
+            });
+        });
     });
 
     describe('postMessageFromIframe', () => {

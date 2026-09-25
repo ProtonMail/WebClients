@@ -20,9 +20,22 @@ interface Props {
     onChangeDate: (newDate: Date) => void;
     tzid: string;
     setEventTargetAction: Dispatch<SetStateAction<EventTargetAction | undefined>>;
+    onCreateEventFromMail?: (payload: {
+        messageID: string;
+        subject: string;
+        sender?: string;
+        start?: number;
+    }) => void;
 }
 
-export const useOpenEventsFromMail = ({ calendars, addresses, onChangeDate, tzid, setEventTargetAction }: Props) => {
+export const useOpenEventsFromMail = ({
+    calendars,
+    addresses,
+    onChangeDate,
+    tzid,
+    setEventTargetAction,
+    onCreateEventFromMail,
+}: Props) => {
     const { call } = useCalendarModelEventManager();
     const { createNotification } = useNotifications();
     const openEvent = useOpenEvent();
@@ -69,6 +82,12 @@ export const useOpenEventsFromMail = ({ calendars, addresses, onChangeDate, tzid
                         void call([event.data.payload.calendarID]);
                     }
                     break;
+                case DRAWER_EVENTS.CALENDAR_CREATE_EVENT_FROM_MAIL:
+                    {
+                        const { messageID, subject, sender, start } = event.data.payload;
+                        onCreateEventFromMail?.({ messageID, subject, sender, start });
+                    }
+                    break;
                 case DRAWER_EVENTS.SHOW:
                     {
                         // When showing again the cached calendar app, we need to call the event manager for all calendars to get all updates
@@ -81,7 +100,7 @@ export const useOpenEventsFromMail = ({ calendars, addresses, onChangeDate, tzid
             }
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F64852
-        [calendars, addresses, goToEvent, goToOccurrence]
+        [calendars, addresses, goToEvent, goToOccurrence, onCreateEventFromMail]
     );
 
     useEffect(() => {
