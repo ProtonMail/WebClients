@@ -1385,6 +1385,9 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "Maybe later": [
+        "Možno neskôr"
       ]
     },
     "Action: Docs": {
@@ -8260,6 +8263,39 @@
       ],
       "Or import your files from": [
         "alebo si súbory naimportujte z"
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } využíva tento prístup výlučne na účely importu. Google nikdy nezíska prístup k vášmu ${ BRAND_NAME } účtu."
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Pripájanie ku Google Drive a príprava importu."
+      ],
+      "Import your files and folders": [
+        "Importujte svoje súbory a priečinky"
+      ],
+      "Know when it's done": [
+        "Zistite, kedy je to hotové"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Následne sa prihláste do svojho Google účtu a povoľte ${ BRAND_NAME } prístup do Google Drive. Vaše súbory a zložky naimportujeme do ${ DRIVE_APP_NAME }."
+      ],
+      "Private and encrypted": [
+        "Súkromné a šifrované"
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Skopírujeme ich z Google Drive do ${ DRIVE_APP_NAME }."
+      ],
+      "We'll email you when your import is complete.": [
+        "Akonáhle bude import dokončený, pošleme vám email."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Akonáhle sa import dokončí, pošleme vám email. Vaše súbory sa zobrazia v priečinku v ${ DRIVE_APP_NAME }."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Vaše súbory sú zašifrované a bezpečne uložené v ${ DRIVE_APP_NAME }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Váš Google Drive môže byť prázdny alebo môže obsahovať iba súbory, ktoré nie sú podporované."
       ]
     },
     "info": {
@@ -13688,6 +13724,9 @@
       ],
       "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
         "Vaše súbory najprv prečítame, aby sme ich skopírovali, a potom každý z nich zašifrujeme pomocou vašich kľúčov ${ BRAND_NAME }."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Naimportujte si súbory a priečinky z Google Drive a uchovajte ich ako súkromné v aplikácii ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -15187,6 +15226,15 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Vitajte v ${ DRIVE_APP_NAME }"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch z Google Drive"
+      ],
+      "Import started": [
+        "Import sa začal"
+      ],
+      "Preparing your import": [
+        "Pripravujeme váš import"
       ]
     },
     "Today icon tooltip in mini calendar": {

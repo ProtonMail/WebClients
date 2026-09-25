@@ -1361,6 +1361,9 @@
       ],
       "Search recent items": [
         "최근 항목 검색"
+      ],
+      "Maybe later": [
+        "나중에"
       ]
     },
     "Action: Docs": {
@@ -7882,6 +7885,39 @@
       ],
       "Or import your files from": [
         "또는 다음 출처에서 파일을 가져오세요:"
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME }는 불러오기 작업을 진행할 때만 이 권한을 사용하며, Google이 ${ BRAND_NAME } 계정에 접근할 수는 없습니다."
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Google Drive에 연결하여 불러오기를 준비하고 있습니다."
+      ],
+      "Import your files and folders": [
+        "내 파일과 폴더 불러오기"
+      ],
+      "Know when it's done": [
+        "완료되면 알림 보내기"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "다음 단계로, Google 계정에 로그인하여 ${ BRAND_NAME }이(가) Google Drive에 접근하는 것을 허용해야 합니다. ${ DRIVE_APP_NAME }로 파일과 폴더를 불러옵니다."
+      ],
+      "Private and encrypted": [
+        "암호화로 안전하게 보호"
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Google Drive에서 ${ DRIVE_APP_NAME }로 파일을 복사합니다."
+      ],
+      "We'll email you when your import is complete.": [
+        "불러오기가 완료되면 이메일을 보내드립니다."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "불러오기가 완료되면 이메일로 알려드립니다. 불러온 파일은 ${ DRIVE_APP_NAME }의 폴더에서 찾을 수 있습니다."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "파일이 암호화되어 안전하게 ${ DRIVE_APP_NAME }에 저장되었습니다."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Drive 저장공간이 비어있거나 지원되지 않는 파일로 구성되어 있습니다."
       ]
     },
     "info": {
@@ -10759,6 +10795,9 @@
       ],
       "Your subscription renews soon": [
         "구독이 곧 끝나게 됩니다"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "${ plan }을(를) 첫 달 동안 이 가격으로 누릴 수 있는 마지막 기회."
       ]
     },
     "Offer fearue": {
@@ -14476,6 +14515,15 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }에 오신 것을 환영합니다"
+      ],
+      "Easy Switch from Google Drive": [
+        "Google Drive에서 Easy Switch하기"
+      ],
+      "Import started": [
+        "불러오기가 시작되었습니다."
+      ],
+      "Preparing your import": [
+        "불러오기를 준비하는 중"
       ]
     },
     "Today icon tooltip in mini calendar": {
