@@ -1706,6 +1706,9 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Stop": [
+        "Ustavi"
       ]
     },
     "action": {
@@ -4312,6 +4315,12 @@
     "Desktop notification body": {
       "From: ${ sender } - ${ message.Subject }": [
         "Od: ${ sender } – ${ message.Subject }"
+      ],
+      "${ messageCount } new message": [
+        "${ messageCount } novo sporočilo",
+        "${ messageCount } novi sporočili",
+        "${ messageCount } nova sporočila",
+        "${ messageCount } novih sporočil"
       ]
     },
     "Desktop notification title": {
@@ -5424,6 +5433,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
+      ],
+      "Part of the file appears to be corrupted": [
+        "Del datoteke se zdi poškodovan"
       ]
     },
     "error": {
@@ -5964,6 +5976,9 @@
       ],
       "Unread": [
         "Neprebrano"
+      ],
+      "All": [
+        "Vse"
       ]
     },
     "Filter Actions": {
@@ -9463,6 +9478,60 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } sporočilo → ${ dest }",
+        "${ count } sporočili → ${ dest }",
+        "${ count } sporočila → ${ dest }",
+        "${ count } sporočil → ${ dest }"
+      ],
+      "${ steps } step": [
+        "${ steps } korak",
+        "${ steps } koraka",
+        "${ steps } koraki",
+        "${ steps } korakov"
+      ],
+      "Add a contact": [
+        "Dodaj stik"
+      ],
+      "Change your theme": [
+        "Spremenite temo"
+      ],
+      "Create a filter": [
+        "Ustvari filter"
+      ],
+      "Create folder": [
+        "Ustvari mapo"
+      ],
+      "Edit ${ contact }": [
+        "Uredi ${ contact }"
+      ],
+      "Edit contact": [
+        "Uredi stik"
+      ],
+      "Mark as unread": [
+        "Označi kot neprebrano"
+      ],
+      "Move ${ emails }": [
+        "Premakni ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Premakni ${ emails } v ${ destination }"
+      ],
+      "No contacts found": [
+        "Ni najdenih stikov"
+      ],
+      "Rename this folder": [
+        "Preimenuj to mapo"
+      ],
+      "Set auto-reply": [
+        "Nastavi samodejni odgovor"
+      ],
+      "Set signature": [
+        "Nastavi podpis"
+      ],
+      "What can you do?": [
+        "Kaj lahko storite?"
       ]
     },
     "info": {
@@ -9721,6 +9790,9 @@
       ],
       "Star": [
         "Označi z zvezdico"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Zapri ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10635,6 +10707,24 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Cc": [
+        "Kp"
+      ],
+      "Column": [
+        "Stolpec"
+      ],
+      "Encrypt": [
+        "Šifriraj"
+      ],
+      "Label name": [
+        "Ime oznake"
+      ],
+      "No unread conversations": [
+        "Ni neprebranih pogovorov"
+      ],
+      "No unread messages": [
+        "Ni neprebranih sporočil"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12887,6 +12977,9 @@
       ],
       "No parent folder": [
         "Ni nadrejene mape"
+      ],
+      "Remind me later": [
+        "Opomni me pozneje"
       ]
     },
     "Option group": {
@@ -16666,6 +16759,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "September Sale": [
+        "Septembrska razprodaja"
       ]
     },
     "Title header for keys table": {
@@ -17342,6 +17438,11 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "500 GB of secure storage": [
+        "500 GB varne shrambe"
       ]
     }
   }
