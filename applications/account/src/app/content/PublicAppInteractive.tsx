@@ -6,10 +6,8 @@ import { c } from 'ttag';
 
 import { loadCrypto } from '@proton/account/bootstrap';
 import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
-import { AuthType } from '@proton/components/containers/login/interface';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsLumoApp, getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
@@ -30,8 +28,6 @@ import bornPrivateRecoveryPage from '../../pages/born-private.recovery';
 import forgotUsernamePage from '../../pages/forgot-username';
 import resetPasswordPage from '../../pages/reset-password';
 import locales from '../locales';
-import LoginContainer, { type LoginContainerState } from '../login/LoginContainer';
-import { getLoginMeta } from '../login/loginPagesJson';
 import AppSwitcherContainer from '../public/AppSwitcherContainer';
 import AuthDesktop from '../public/AuthDesktop';
 import AuthExtension from '../public/AuthExtension';
@@ -56,6 +52,9 @@ import VerifyEmailContainer from '../public/VerifyEmailContainer';
 import TokenRedemptionContainer from '../public/orgJoiningLink/TokenRedemptionContainer';
 import PassExtensionOnboarding from '../public/pass/PassExtensionOnboarding';
 import SignInWithAnotherDeviceContainer from '../public/signInWithAnotherDevice/SignInWithAnotherDeviceContainer';
+import SignInContainer, { type SignInLocationState } from '../sign-in/SignInContainer';
+import { AuthType } from '../sign-in/auth/interface';
+import { getLoginMeta } from '../sign-in/loginPagesJson';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import Activation from '../signupCtx/flows/bornPrivate/activation/Activation';
@@ -74,6 +73,7 @@ import { TvContainerNotSignedIn } from './TvContainerNotSignedIn';
 import { type ProduceForkData, SSOType } from './actions/forkInterface';
 import { getSanitizedLocationDescriptorObject } from './actions/getSanitizedLocationDescriptorObject';
 import type { LoginLocationState, LoginResult } from './actions/interface';
+import type { OnLoginCallback } from './authSession';
 import { type Paths, UNAUTHENTICATED_ROUTES } from './helper';
 import { withInterruption } from './interruptions';
 
@@ -218,7 +218,7 @@ const PublicAppInteractive = ({
                             } catch (error) {}
                         }}
                         onLogin={({ username, token, flow }) => {
-                            const state: LoginContainerState = {
+                            const state: SignInLocationState = {
                                 authTypeData: {
                                     type: AuthType.ExternalSSO,
                                 },
@@ -323,7 +323,7 @@ const PublicAppInteractive = ({
                                 if (sessions?.sessions) {
                                     setActiveSessions(sessions.sessions);
                                 }
-                                const state: LoginContainerState | undefined = email
+                                const state: SignInLocationState | undefined = email
                                     ? {
                                           username: email,
                                       }
@@ -383,7 +383,6 @@ const PublicAppInteractive = ({
                                                     onPreload={handlePreload}
                                                     onPreSubmit={handlePreSubmit}
                                                     onLogin={handleLogin}
-                                                    productParam={productParam}
                                                     toAppName={toAppName}
                                                     toApp={maybePreAppIntent}
                                                     onUsed={() => {
@@ -560,7 +559,7 @@ const PublicAppInteractive = ({
                                         </Route>
                                         <Route path={loginPaths} exact>
                                             <UnAuthenticated>
-                                                <LoginContainer
+                                                <SignInContainer
                                                     initialSearchParams={initialSearchParams}
                                                     metaTags={getLoginMeta(maybePreAppIntent)}
                                                     toAppName={toAppName}

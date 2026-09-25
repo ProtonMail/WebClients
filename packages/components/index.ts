@@ -253,8 +253,6 @@ export { default as CalendarOtherPreferencesSection } from './containers/calenda
 export { default as CalendarsSettingsSection } from './containers/calendar/settings/CalendarsSettingsSection';
 export { default as CalendarSubpage } from './containers/calendar/settings/CalendarSubpage';
 export { default as CalendarTimeSection } from './containers/calendar/settings/CalendarTimeSection';
-export { default as ChallengeV4 } from './containers/challenge/ChallengeV4';
-export type { ChallengeResult, ChallengeV4Ref } from './containers/challenge/interface';
 export { default as ConfigProvider } from './containers/config/Provider';
 export { default as ContactEmailsProvider, useContactEmailsCache } from './containers/contacts/ContactEmailsProvider';
 export { default as CredentialLeakSection } from './containers/credentialLeak/CredentialLeakSection';
@@ -313,7 +311,6 @@ export { default as PrivateMainSubSettingsArea } from './containers/layout/Priva
 export { default as SettingsNavGroup } from './containers/layout/SettingsNavGroup';
 export { default as LayoutsSection } from './containers/layouts/LayoutsSection';
 export { default as MessagesOtherSection } from './containers/layouts/MessagesOtherSection';
-export { default as AbuseModal } from './containers/login/AbuseModal';
 export { default as MinimalLoginContainer } from './containers/login/MinimalLoginContainer';
 export { default as LogsSection } from './containers/logs/LogsSection';
 export { default as MultiUserCreationSection } from './containers/members/multipleUserCreation/MultiUserCreationSection';

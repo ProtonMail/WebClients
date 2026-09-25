@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
-
+import type { OnLoginCallback } from '../../../../content/authSession';
 import { type MetaTags, useMetaTags } from '../../../../useMetaTags';
 import ActivationForm from './ActivationForm';
 import { decodeActivationParams } from './helpers/activationHelpers';

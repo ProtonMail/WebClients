@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
-import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import { auth, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 // eslint-disable-next-line no-restricted-imports
@@ -34,6 +33,7 @@ import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenti
 import noop from '@proton/utils/noop';
 
 import type { ProtonForkData } from '../content/actions/forkInterface';
+import type { OnLoginCallback } from '../content/authSession';
 import { clearForkState, saveForkState } from './persistedForkState';
 
 export interface OAuthPartnersInitiateState {

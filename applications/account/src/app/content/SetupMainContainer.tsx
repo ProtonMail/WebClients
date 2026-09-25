@@ -8,7 +8,7 @@ import KeyTransparencyManager from '@proton/components/containers/keyTransparenc
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 
 import PartnerClaimContainer from '../containers/PartnerClaimContainer';
-import SetupAddressContainer from '../containers/SetupAddressContainer';
+import SetupAddressContainer from '../setup-address/SetupAddressContainer';
 import AccountLoaderPage from './AccountLoaderPage';
 import MainContainer from './MainContainer';
 import { getRoutesWithoutSlug } from './routesWithoutSlug';

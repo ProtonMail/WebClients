@@ -1,4 +1,3 @@
-import type { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -15,6 +14,7 @@ import noop from '@proton/utils/noop';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import { getOrganization } from '../../public/organization';
+import type { AppIntent, AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { type ProduceForkData, SSOType } from './forkInterface';
