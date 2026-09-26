@@ -11,9 +11,13 @@ import CalendarEventDateHeader from '@proton/components/components/calendarEvent
 import Loader from '@proton/components/components/loader/Loader';
 import CalendarInviteButtons from '@proton/components/containers/calendar/CalendarInviteButtons';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { isBusy } from '@proton/shared/lib/shortcuts/calendar';
 import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import {
     getIsCalendarDisabled,
@@ -265,6 +269,24 @@ const EventPopover = ({
     const showDuplicateButton = !!canDuplicateEvent;
     const showViewEventButton = isSearchView || isDrawerApp;
     const mergedStyle = viewportWidth['<=small'] ? undefined : style;
+    
+    // Allow deleting the selected event straight from the keyboard while its popover is open
+    const documentRef = useRef<Document>(document);
+    const deleteHotkeys: HotkeyTuple[] = useMemo(() => {
+        const handleDeleteHotkey = (e: KeyboardEvent) => {
+            if (!mailSettings.Shortcuts || !showDeleteButton || loadingDelete || isBusy(e)) {
+                return;
+            }
+            e.preventDefault();
+            handleDelete();
+        };
+        return [
+            [[KeyboardKey.Delete], handleDeleteHotkey],
+            [[KeyboardKey.Backspace], handleDeleteHotkey],
+        ];
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [mailSettings.Shortcuts, showDeleteButton, loadingDelete]);
+    useHotkeys(documentRef, deleteHotkeys);
 
     const frequencyString = useMemo(() => {
         if (!veventComponent) {

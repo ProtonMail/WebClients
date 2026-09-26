@@ -22,6 +22,10 @@ export const getShortcuts = () => {
                 },
                 {
                     name: c('Keyboard shortcut name').t`Open this modal`,
+                                    {
+                    name: c('Keyboard shortcut name').t`Delete selected event`,
+                    keys: '⌫ / Del',
+                },
                     keys: '?',
                 },
             ],
