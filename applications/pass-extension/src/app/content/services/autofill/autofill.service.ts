@@ -10,6 +10,7 @@ import { first } from '@proton/pass/utils/array/first';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { serialize } from '@proton/pass/utils/object/serialize';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -380,7 +381,57 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         }
     );
 
+    /** Keyboard-shortcut entry point. The worker walks frames top-first and stops at the
+     * first `matched` reply. Detection itself is deferred to an idle callback, so a shortcut
+     * fired as the page appears can run before any field is tracked — answer only after that
+     * pass, otherwise a visible login form is reported as missing. Do not wait for the
+     * dropdown to render: focus is handed over by the worker through `INLINE_DROPDOWN_FOCUS`
+     * on the top-frame, where the dropdown always lives. */
+    const onAutofillTrigger: FrameMessageHandler<WorkerMessageType.AUTOFILL_TRIGGER> = withContext(
+        (ctx, _, sendResponse) => {
+            const findLoginField = () =>
+                ctx?.service.formManager
+                    .getFields()
+                    .find((field) => field.action?.type === DropdownAction.AUTOFILL_LOGIN);
+
+            void (async () => {
+                try {
+                    let loginField = findLoginField();
+
+                    /** `detect` only schedules the idle callback. Poll until it tracks a field. */
+                    if (!loginField) {
+                        await ctx?.service.formManager.detect({ reason: 'AutofillTrigger' });
+                        await waitUntil(() => Boolean(findLoginField()), 50, 2_000).catch(noop);
+                        loginField = findLoginField();
+                    }
+
+                    const dropdown = ctx?.service.inline.dropdown;
+
+                    if (!(dropdown && loginField)) {
+                        sendResponse({ matched: false });
+                        return;
+                    }
+
+                    dropdown.toggle({
+                        type: 'field',
+                        action: DropdownAction.AUTOFILL_LOGIN,
+                        autofocused: false,
+                        autofilled: loginField.autofilled !== null,
+                        field: loginField,
+                    });
+
+                    sendResponse({ matched: true });
+                } catch {
+                    sendResponse({ matched: false });
+                }
+            })();
+
+            return true;
+        }
+    );
+
     controller.channel.register(WorkerMessageType.AUTOFILL_SEQUENCE, onAutofillRequest);
+    controller.channel.register(WorkerMessageType.AUTOFILL_TRIGGER, onAutofillTrigger);
 
     return {
         get processing() {
@@ -399,6 +450,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         sync,
         destroy: () => {
             controller.channel.unregister(WorkerMessageType.AUTOFILL_SEQUENCE, onAutofillRequest);
+            controller.channel.unregister(WorkerMessageType.AUTOFILL_TRIGGER, onAutofillTrigger);
         },
     };
 };

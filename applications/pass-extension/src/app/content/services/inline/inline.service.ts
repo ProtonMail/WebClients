@@ -1,5 +1,6 @@
 import { clientLocked, clientNeedsSession } from '@proton/pass/lib/client';
 import { POPOVER_SUPPORTED } from '@proton/pass/utils/dom/popover';
+import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import noop from '@proton/utils/noop';
 
 import { WorkerMessageType } from '../../../../types/messages';
@@ -7,6 +8,7 @@ import { NotificationAction } from '../../constants.runtime';
 import { withContext } from '../../context/context';
 import type { ContentScriptContextFactoryOptions } from '../../context/factory';
 import type { FrameMessageHandler } from '../client/client.channel';
+import { DROPDOWN_AUTOFOCUS_TIMEOUT } from './dropdown/dropdown.focus';
 import { createDropdownHandler } from './dropdown/dropdown.handler';
 import { createIconRegistry } from './icon/icon.registry';
 import type { AbstractInlineService } from './inline.abstract';
@@ -81,6 +83,18 @@ export const createInlineService = ({
         notification.open(payload);
     };
 
+    /** Keyboard-shortcut focus hand-off. The worker sends this to the top-frame once a
+     * frame — possibly a sub-frame — has claimed an `AUTOFILL_TRIGGER`. The dropdown may
+     * still be attaching at that point, since the trigger replies synchronously so the
+     * frame walk isn't stalled : poll until it is visible before bypassing focus traps.
+     * `trapField: false` — this flow never focused the anchor field, so arming its
+     * action-trap would swallow the field's next genuine autofocus dropdown. */
+    const onDropdownFocus: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_FOCUS> = () => {
+        void waitUntil(() => Boolean(registry.dropdown?.getState().visible), 25, DROPDOWN_AUTOFOCUS_TIMEOUT)
+            .then(() => registry.dropdown?.requestFocus(false))
+            .catch(noop);
+    };
+
     return {
         init: () => {
             registry.init();
@@ -90,6 +104,7 @@ export const createInlineService = ({
             channel.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
             channel.register(WorkerMessageType.INLINE_NOTIFICATION_OPEN, onNotificationOpen);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_FOCUS, onDropdownFocus);
         },
 
         setTheme: registry.setTheme,
@@ -104,6 +119,7 @@ export const createInlineService = ({
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
             channel.unregister(WorkerMessageType.INLINE_NOTIFICATION_OPEN, onNotificationOpen);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_FOCUS, onDropdownFocus);
         },
 
         sync: withContext((ctx) => {

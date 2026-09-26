@@ -45,11 +45,19 @@ const browser = {
         get: jest.fn(),
         onAlarm: { addListener: jest.fn() },
     },
+    commands: {
+        getAll: jest.fn().mockResolvedValue([]),
+        onCommand: {
+            addListener: jest.fn(),
+            removeListener: jest.fn(),
+        },
+    },
     webNavigation: {
         getAllFrames: jest.fn().mockResolvedValue([]),
         getFrame: jest.fn().mockResolvedValue({}),
     },
     tabs: {
+        create: jest.fn().mockResolvedValue({}),
         sendMessage: jest.fn().mockResolvedValue({}),
         query: jest.fn().mockResolvedValue([]),
         get: jest.fn().mockResolvedValue({}),
@@ -79,8 +87,12 @@ export const clearBrowserMocks = () => {
     browser.alarms.clear.mockClear();
     browser.alarms.get.mockClear();
     browser.alarms.onAlarm.addListener.mockClear();
+    browser.commands.getAll.mockClear();
+    browser.commands.onCommand.addListener.mockClear();
+    browser.commands.onCommand.removeListener.mockClear();
     browser.webNavigation.getAllFrames.mockClear();
     browser.webNavigation.getFrame.mockClear();
+    browser.tabs.create.mockClear();
     browser.tabs.sendMessage.mockClear();
     browser.tabs.query.mockClear();
     browser.tabs.get.mockClear();

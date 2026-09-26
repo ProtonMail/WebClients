@@ -1,5 +1,14 @@
-import browser from '@proton/pass/lib/globals/browser';
-import noop from '@proton/utils/noop';
+import type browser from '@proton/pass/lib/globals/browser';
+
+/** Command names as declared under the `commands` key of `manifest-chrome.json` and
+ * `manifest-firefox.json`. Shared by the worker's `onCommand` listener and the settings
+ * shortcut list so neither can drift from the manifests. NOTE: Safari declares no
+ * `commands` key — see the `BUILD_TARGET` guard in `worker/index.ts`. */
+export const PASS_COMMANDS = {
+    EXECUTE_ACTION: '_execute_action',
+    LARGER_WINDOW: 'open-larger-window',
+    AUTOFILL: 'autofill',
+} as const;
 
 export type Shortcut = { name: string; description: string; shortcut: string };
 
@@ -9,13 +18,3 @@ export const resolveShortcuts = (commands: BrowserCommand[], supported: Record<s
     commands
         .filter((cmd): cmd is BrowserCommand & { name: string } => Boolean(cmd.name && cmd.name in supported))
         .map(({ name, shortcut }) => ({ name, shortcut: shortcut ?? '', description: supported[name] }));
-
-export const handleExtensionCommand = (command: string) => {
-    if (command === 'open-larger-window') {
-        browser.tabs
-            .create({
-                url: browser.runtime.getURL('popup.html#'),
-            })
-            .catch(noop);
-    }
-};

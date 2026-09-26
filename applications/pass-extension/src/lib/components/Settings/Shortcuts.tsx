@@ -9,7 +9,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
-import { type Shortcut, resolveShortcuts } from '../../extension/commands';
+import { PASS_COMMANDS, type Shortcut, resolveShortcuts } from '../../extension/commands';
 
 type ShortcutRowProps = {
     description: string;
@@ -60,8 +60,9 @@ export const Shortcuts: FC = () => {
             .then((commands) =>
                 setShortcuts(
                     resolveShortcuts(commands, {
-                        _execute_action: c('Info').t`Open the ${PASS_APP_NAME} popup`,
-                        'open-larger-window': c('Info').t`Open ${PASS_APP_NAME} in a larger window`,
+                        [PASS_COMMANDS.EXECUTE_ACTION]: c('Info').t`Open the ${PASS_APP_NAME} popup`,
+                        [PASS_COMMANDS.LARGER_WINDOW]: c('Info').t`Open ${PASS_APP_NAME} in a larger window`,
+                        [PASS_COMMANDS.AUTOFILL]: c('Info').t`Autofill a login on the current page`,
                     })
                 )
             )
