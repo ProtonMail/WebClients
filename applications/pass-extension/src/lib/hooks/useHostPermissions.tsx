@@ -13,7 +13,7 @@ import { useExtensionContext } from '../components/Extension/ExtensionSetup';
 import { matchExtensionMessage } from '../message/utils';
 import { hasHostPermissions, requestHostPermissions } from '../utils/permissions';
 
-export const formatOrigins = (origins: string[]): string => {
+const formatOrigins = (origins: string[]): string => {
     if (origins.length === 0) return '';
     if (origins.length === 1) return new URL(origins[0]).hostname;
 
@@ -25,7 +25,7 @@ export const formatOrigins = (origins: string[]): string => {
     }, '');
 };
 
-export const getHostPermissionInstructions = (): string => {
+const getHostPermissionInstructions = (): string => {
     switch (BUILD_TARGET) {
         case 'safari':
             // translator: safari specific steps
@@ -59,7 +59,7 @@ export const getHostPermissionsWarning = (origins: string[], action?: ReactNode)
     );
 };
 
-export const getHostPermissionsError = (origins?: string[]): ReactNode => {
+const getHostPermissionsError = (origins?: string[]): ReactNode => {
     const base = (() => {
         if (!origins) return c('Error').t`Permission denied for website access.`;
         const domainsJSX = formatOrigins(origins);

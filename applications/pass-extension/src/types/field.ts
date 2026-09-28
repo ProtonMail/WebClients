@@ -1,6 +1,6 @@
 import type { CCFieldType, FieldType, IdentityFieldType } from '@protontech/autofill/types';
 
-export type FieldSubTypes = {
+type FieldSubTypes = {
     [FieldType.CREDIT_CARD]: CCFieldType;
     [FieldType.IDENTITY]: IdentityFieldType;
     [FieldType.EMAIL]: IdentityFieldType.EMAIL;

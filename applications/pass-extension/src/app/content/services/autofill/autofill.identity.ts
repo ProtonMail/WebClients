@@ -9,12 +9,7 @@ import { seq } from '@proton/pass/utils/fp/promises';
 
 import type { FieldHandle } from '../form/field';
 
-export interface IdentityFieldConfig {
-    getValue: (data: ItemContent<'identity'>) => Maybe<string>;
-    subFields?: IdentityFieldType[];
-}
-
-export const sanitizeName = (value?: string) => value?.trim().replace(/\s+/g, ' ');
+const sanitizeName = (value?: string) => value?.trim().replace(/\s+/g, ' ');
 export const splitFullName = (fullName?: string) => fullName?.split(' ').filter(truthy) ?? [];
 
 /** Use `fullName` if available, otherwise derive from components */
@@ -44,7 +39,7 @@ export const getLastName = pipe((data: ItemContent<'identity'>): Maybe<string> =
     return parts.length > 1 ? last(parts) : undefined;
 }, sanitizeName);
 
-export const IDENTITY_FIELDS_CONFIG: Record<IdentityFieldType, (data: ItemContent<'identity'>) => Maybe<string>> = {
+const IDENTITY_FIELDS_CONFIG: Record<IdentityFieldType, (data: ItemContent<'identity'>) => Maybe<string>> = {
     [IdentityFieldType.FULLNAME]: getFullName,
     [IdentityFieldType.FIRSTNAME]: getFirstName,
     [IdentityFieldType.MIDDLENAME]: getMiddleName,

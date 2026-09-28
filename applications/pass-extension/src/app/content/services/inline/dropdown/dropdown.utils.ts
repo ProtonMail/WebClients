@@ -70,7 +70,7 @@ export const resolveOriginScope = (request: DropdownRequest, url: ParsedUrl) => 
     else return resolveSubdomain(url);
 };
 
-export const resolveAutofillOrigins = (
+const resolveAutofillOrigins = (
     request: DropdownRequest,
     url: ParsedUrl
 ): MaybeNull<[origin: string, frameOrigin: string]> => {

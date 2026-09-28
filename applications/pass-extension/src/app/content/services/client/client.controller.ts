@@ -60,7 +60,7 @@ type ClientControllerOptions = Omit<ContentScriptClientFactoryOptions, 'controll
 };
 
 export const CLIENT_START_TIMEOUT_MS = 350;
-export const CLIENT_ACTIVITY_PROBE_MS = 25_000;
+const CLIENT_ACTIVITY_PROBE_MS = 25_000;
 const ping = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.PING }));
 
 /** Validates frame visibility to prevent autofill in hidden iframes and ensure

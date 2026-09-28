@@ -30,13 +30,6 @@ import type { StoreService } from '../services/store';
 import type { TelemetryService } from '../services/telemetry';
 import type { VaultsService } from '../services/vaults';
 
-export type WorkerInitOptions = {
-    /** will clear local storage */
-    sync?: boolean;
-    /** will bypass busy state */
-    force?: boolean;
-};
-
 export interface WorkerContextInterface {
     status: AppStatus;
     booted: boolean;
