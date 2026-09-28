@@ -9,6 +9,8 @@ export type BaseItemValues = {
     note: string;
     shareId: string;
     folderId: MaybeNull<string>;
+    /** Custom item icon as a base64 data URI */
+    icon?: string;
 } & FileAttachmentValues &
     ExtraFieldGroupValues;
 

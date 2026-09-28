@@ -30,6 +30,7 @@ import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField
 import { ValueControl } from '../../Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '../../Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '../../Form/Field/Field';
+import { ItemIconField } from '../../Form/Field/ItemIconField';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { TextField } from '../../Form/Field/TextField';
 import { TextAreaField } from '../../Form/Field/TextareaField';
@@ -64,6 +65,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url
             aliasSuffix: undefined,
             extraFields: clone?.extraFields ?? [],
             files: filesFormInitializer(),
+            icon: clone?.metadata.icon,
             itemEmail: clone?.content.itemEmail ?? searchParams.get('email') ?? '',
             itemUsername: clone?.content.itemUsername ?? '',
             mailboxes: [],
@@ -87,6 +89,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url
         onSubmit: async ({
             name,
             note,
+            icon,
             itemEmail,
             itemUsername,
             password,
@@ -145,6 +148,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url
                     name,
                     note: obfuscate(note),
                     itemUuid: optimisticId,
+                    icon,
                 },
                 content: {
                     itemEmail: obfuscate(email),
@@ -200,15 +204,18 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url
                             <FieldsetCluster>
                                 {openPortal(<VaultFolderPickerField />)}
 
-                                <Field
-                                    name="name"
-                                    label={c('Label').t`Title`}
-                                    placeholder={c('Placeholder').t`Untitled`}
-                                    component={TitleField}
-                                    autoFocus={!draft && didEnter}
-                                    key={`login-name-${didEnter}`}
-                                    maxLength={MAX_ITEM_NAME_LENGTH}
-                                />
+                                <div className="flex items-center">
+                                    <Field name="icon" component={ItemIconField} icon="user" />
+                                    <Field
+                                        name="name"
+                                        label={c('Label').t`Title`}
+                                        placeholder={c('Placeholder').t`Untitled`}
+                                        component={TitleField}
+                                        autoFocus={!draft && didEnter}
+                                        key={`login-name-${didEnter}`}
+                                        maxLength={MAX_ITEM_NAME_LENGTH}
+                                    />
+                                </div>
                             </FieldsetCluster>
 
                             <FieldsetCluster>

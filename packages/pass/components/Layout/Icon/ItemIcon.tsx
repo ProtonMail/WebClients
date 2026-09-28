@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { type FC, useCallback, useState } from 'react';
+import { type FC, useCallback, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -11,6 +11,7 @@ import masterCard from '@proton/styles/assets/img/credit-card-icons/cc-mastercar
 import visa from '@proton/styles/assets/img/credit-card-icons/cc-visa.svg';
 import clsx from '@proton/utils/clsx';
 
+import { getItemIconSrc } from '../../../lib/items/item-icon';
 import { isDisabledAliasItem } from '../../../lib/items/item.predicates';
 import { getFirstUrl } from '../../../lib/urls/utils/autofill';
 import { selectCanLoadDomainImages } from '../../../store/selectors';
@@ -38,6 +39,8 @@ type BaseItemIconProps = {
     className?: string;
     icon: IconName;
     iconClassName?: string;
+    /** Use the image box style regardless of domain image status (ie: `customIcon` is an image) */
+    imageMode?: boolean;
     loadImage?: boolean;
     normColor?: boolean;
     customIcon?: ReactNode;
@@ -52,6 +55,7 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
     className,
     icon,
     iconClassName,
+    imageMode = false,
     loadImage = true,
     normColor = true,
     customIcon,
@@ -67,7 +71,7 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
     return (
         <IconBox
             className={className}
-            mode={url && ready ? 'image' : 'icon'}
+            mode={imageMode || (url && ready) ? 'image' : 'icon'}
             size={size}
             pill={pill}
             style={{
@@ -140,7 +144,12 @@ export const SafeItemIcon: FC<ItemIconProps> = ({ className, iconClassName, item
     const { data } = item;
     const loadDomainImages = useSelector(selectCanLoadDomainImages);
     const domainURL = data.type === 'login' ? getFirstUrl(data.content.autofillUrls) : null;
-    const customIcon = data.type === 'creditCard' ? getCreditCardIcon(data.content.cardType) : undefined;
+    const iconSrc = useMemo(() => getItemIconSrc(data.metadata.icon), [data.metadata.icon]);
+
+    const customIcon = (() => {
+        if (iconSrc) return <img src={iconSrc} alt="" className="w-full h-full object-cover" />;
+        if (data.type === 'creditCard') return getCreditCardIcon(data.content.cardType);
+    })();
 
     return (
         <ItemIcon
@@ -148,7 +157,8 @@ export const SafeItemIcon: FC<ItemIconProps> = ({ className, iconClassName, item
             className={className}
             icon={presentItemIcon(item)}
             iconClassName={iconClassName}
-            loadImage={loadDomainImages}
+            imageMode={Boolean(iconSrc)}
+            loadImage={loadDomainImages && !iconSrc}
             pill={pill}
             renderIndicators={(size) => renderIndicators?.(size)}
             size={size}
