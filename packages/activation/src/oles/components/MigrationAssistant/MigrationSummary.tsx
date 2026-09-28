@@ -22,7 +22,7 @@ import type { UserWithExtendedErrors } from './ImportJournalModal';
 import ImportJournalModal, { transferErrorUserFilter } from './ImportJournalModal';
 
 const MigrationSummary: FC<{ model: MigrationModel }> = ({ model }) => {
-    const [providerUsers] = useProviderUsers(model.domainName, true);
+    const [providerUsers] = useProviderUsers(model.domainName, model.provider.apiProvider, true);
     const [reportUser, setReportUser] = useState<UserWithExtendedErrors>();
     const [finishModalProps, setFinishModalOpen, renderFinishModal] = useModalState();
 

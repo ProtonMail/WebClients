@@ -55,7 +55,10 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
     const [organization] = useOrganization();
     const [members] = useMembers();
     const { value: memberAddressesMap } = useMemberAddresses({ members, partial: true });
-    const [providerUsers, , refreshProviderUsers, tooManyUsers] = useProviderUsers(model.domainName);
+    const [providerUsers, , refreshProviderUsers, tooManyUsers] = useProviderUsers(
+        model.domainName,
+        model.provider.apiProvider
+    );
     const dispatch = useDispatch();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [reportUser, setReportUser] = useState<UserWithExtendedErrors>();

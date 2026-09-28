@@ -231,7 +231,10 @@ export const convertToBYOEAddress = (addressID: string) => ({
     method: 'POST',
 });
 
-export const getOrganizationUsers = (params: { DomainName: string }, useCachedData: boolean = false) => ({
+export const getOrganizationUsers = (
+    params: { DomainName: string; Provider: ApiImportProvider },
+    useCachedData: boolean = false
+) => ({
     url: `importer/v1/organizations/users`,
     method: 'GET',
     params: {
