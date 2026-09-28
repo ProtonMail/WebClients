@@ -591,3 +591,18 @@ export const getSubscription = async (api: Api, user: User | undefined) => {
             : undefined
     );
 };
+
+export interface PaymentsInit {
+    User: null | {
+        PostedInvoices: {
+            ID: string;
+            CreateTime: EpochTimeStamp;
+            DueTime?: EpochTimeStamp;
+        }[];
+        Code: number;
+    };
+}
+export const getPaymentsInit = () => ({
+    url: `payments/v5/init`,
+    method: 'get',
+});
