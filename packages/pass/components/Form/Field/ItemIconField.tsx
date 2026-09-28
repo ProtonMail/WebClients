@@ -13,6 +13,7 @@ import type { IconName, IconSize } from '@proton/icons/types';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 
+import { maybeErrorMessage } from '../../../hooks/useFieldControl';
 import {
     ITEM_ICON_ACCEPTED_TYPES,
     ITEM_ICON_MAX_INPUT_SIZE,
@@ -51,15 +52,17 @@ const getItemIconErrorMessage = (reason: ItemIconErrorReason, file: File): strin
 };
 
 /** Binds a custom item icon (base64 data URI) to a string form field */
-export const ItemIconField: FC<Props> = ({ className, field, form, meta, icon, size = 5 }) => {
+export const ItemIconField: FC<Props> = ({ className, field, form, icon, size = 5 }) => {
     const { createNotification } = useNotifications();
     const inputRef = useRef<HTMLInputElement>(null);
     const [busy, setBusy] = useState(false);
 
     const iconSrc = getItemIconSrc(field.value);
     const iconSizePx = getIconSizePx(size);
-    /** ie: an invalid icon value coming from another client or an import */
-    const error = meta.error;
+    /** ie: an invalid icon value coming from another client or an import. Not gated on
+     * `touched` (unlike `useFieldControl`) as this field is never blurred. `meta` is
+     * not passed to `<Field component>` children, so read from `form.errors` */
+    const error = maybeErrorMessage(form.errors[field.name]) || undefined;
 
     const onFileSelect = async (file: File) => {
         setBusy(true);
