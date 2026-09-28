@@ -37,7 +37,7 @@ import {
 } from './Utils'
 import { $generateNodesFromDOM } from '@lexical/html'
 import type { Logger } from '@proton/shared/lib/logs'
-import { INSERT_FILE_COMMAND } from '../../../../Commands/Events'
+import { INSERT_FILE_COMMAND } from '../../Commands/Events'
 import type { BlockTypeChangeSuggestionProperties, IndentChangeSuggestionProperties } from './Types'
 import { SuggestionTypesThatCanBeEmpty, TextEditingSuggestionTypes } from './Types'
 import type { ListItemNode } from '@lexical/list'

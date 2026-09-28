@@ -1,5 +1,5 @@
 import { createHeadlessEditor } from '@lexical/headless'
-import { AllNodes } from '../../../../../AllNodes'
+import { AllNodes } from '../../../AllNodes'
 import { $createTableNodeWithDimensions } from '../CreateTableNodeWithDimensions'
 import { $createParagraphNode, $createTextNode, $getRoot, $setSelection } from 'lexical'
 import type { TableCellNode, TableRowNode } from '@lexical/table'

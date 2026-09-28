@@ -8,7 +8,7 @@ import {
   $isTextNode,
   $setSelection,
 } from 'lexical'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'

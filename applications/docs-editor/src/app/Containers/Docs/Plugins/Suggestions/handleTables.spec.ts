@@ -1,6 +1,6 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import { $createTextNode, $getRoot } from 'lexical'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import {
   $duplicateTableColumnAsSuggestion,
   $duplicateTableRowAsSuggestion,
@@ -12,9 +12,7 @@ import {
   $suggestTableRowDeletion,
 } from './handleTables'
 import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
-import { $isTableCellNode } from '@lexical/table'
-import { $isTableRowNode } from '@lexical/table'
-import { $isTableNode } from '@lexical/table'
+import { $isTableCellNode, $isTableRowNode, $isTableNode } from '@lexical/table'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'
 import { $createTableNodeWithDimensions } from '../Table/CreateTableNodeWithDimensions'

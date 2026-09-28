@@ -22,7 +22,7 @@ import type {
   LiveCommentsTypeStatusChangeData,
 } from '@proton/docs-shared'
 import { CommentThreadState, CommentsEvent, LiveCommentsEvent } from '@proton/docs-shared'
-import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../../../Commands'
+import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
 import { useApplication } from '../../../ApplicationProvider'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { reportErrorToSentry } from '../../../../Utils/errorMessage'

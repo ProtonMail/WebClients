@@ -1,7 +1,7 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import type { NodeKey } from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot, $nodesOfType } from 'lexical'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import { $createSuggestionNode, $isSuggestionNode, ProtonNode } from './ProtonNode'
 import { $createHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import type { SuggestionSummaryContent } from './generateSuggestionSummary'

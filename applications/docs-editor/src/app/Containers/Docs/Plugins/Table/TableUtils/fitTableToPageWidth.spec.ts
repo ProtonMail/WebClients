@@ -7,7 +7,7 @@ import {
   type TableCellNode,
   type TableRowNode,
 } from '@lexical/table'
-import { AllNodes } from '../../../../../AllNodes'
+import { AllNodes } from '../../../AllNodes'
 import { $fitTableToPageWidth, $getPastedTablesWithoutExplicitWidths } from './fitTableToPageWidth'
 
 describe('fitTableToPageWidth', () => {
@@ -24,9 +24,7 @@ describe('fitTableToPageWidth', () => {
     paddingRight: '10px',
   } as unknown as HTMLElement
 
-  jest
-    .spyOn(window, 'getComputedStyle')
-    .mockImplementation((element) => element as unknown as CSSStyleDeclaration)
+  jest.spyOn(window, 'getComputedStyle').mockImplementation((element) => element as unknown as CSSStyleDeclaration)
 
   function $createTable(rows: number, columns: number, width?: number) {
     const table = $createTableNode()

@@ -1,27 +1,27 @@
 import type { LexicalEditor, ParagraphNode } from 'lexical'
-import { $isTextNode } from 'lexical'
 import {
+  $isTextNode,
   $createTextNode,
   COMMAND_PRIORITY_CRITICAL,
   INDENT_CONTENT_COMMAND,
   INSERT_TAB_COMMAND,
   OUTDENT_CONTENT_COMMAND,
+  $createParagraphNode,
+  $getRoot,
 } from 'lexical'
-import { $createParagraphNode, $getRoot } from 'lexical'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import type { Root } from 'react-dom/client'
 import { createRoot } from 'react-dom/client'
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import React, { useEffect } from 'react'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
-import { ProtonContentEditable } from '../../../../ContentEditable/ProtonContentEditable'
+import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../../../Utils/react-test-utils'
 import type { Logger } from '@proton/shared/lib/logs'
 import type { ProtonNode } from './ProtonNode'
-import { $createSuggestionNode } from './ProtonNode'
-import { $isSuggestionNode } from './ProtonNode'
+import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
 import { mergeRegister } from '@lexical/utils'
 import { $handleIndentOutdentAsSuggestion } from './handleIndentOutdent'

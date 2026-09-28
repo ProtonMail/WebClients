@@ -35,7 +35,7 @@ import { downSize } from '@proton/shared/lib/helpers/image'
 import { reportErrorToSentry } from '../../../../Utils/errorMessage'
 import { isImage, isSupportedImage } from '@proton/shared/lib/helpers/mimetype'
 import { $canDropImage, $getImageNodeInSelection, getDragImageData, getDragSelection } from './ImageUtils'
-import { INSERT_FILE_COMMAND } from '../../../../Commands/Events'
+import { INSERT_FILE_COMMAND } from '../../Commands/Events'
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants'
 import { hasBlockedImageInClipboard } from './hasBlockedImageInClipboard'
 
