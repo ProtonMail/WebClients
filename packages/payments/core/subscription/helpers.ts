@@ -407,14 +407,18 @@ export function isSameCycle(
     return subscriptionLeft.Cycle === subscriptionRight?.Cycle;
 }
 
-export const isAddonDowngrade = (current: Subscription, upcoming: Subscription | undefined) => {
+export function isAddonDowngrade(current: Subscription, upcoming: Subscription | undefined): boolean {
     const upcomingAddons = getAddons(upcoming);
-    const currentAddons = getAddons(current);
 
-    return currentAddons.some(
-        ({ Name, Quantity }) => (upcomingAddons.find((a) => a.Name === Name)?.Quantity ?? 0) < Quantity
+    return getAddons(current).some(
+        ({ Name, Quantity }) => (upcomingAddons.find((addon) => addon.Name === Name)?.Quantity ?? 0) < Quantity
     );
-};
+}
+
+// A renew-disabled subscription cancels its upcoming term alongside it, so that upcoming term will never take effect.
+export function getEffectiveUpcomingSubscription(subscription: Subscription): Subscription | undefined {
+    return subscription.Renew === Renew.Disabled ? undefined : (subscription.UpcomingSubscription ?? undefined);
+}
 
 export function isUpcomingSubscriptionUnpaid(subscription: Subscription): boolean {
     return subscription.UpcomingSubscription?.IsPrepaid === false;
@@ -711,7 +715,7 @@ export function shouldHaveUpcomingSubscription(subscription: Subscription | Free
         return false;
     }
 
-    return subscription.RenewCycle !== subscription.Cycle;
+    return (subscription.RenewCycle ?? subscription.Cycle) !== subscription.Cycle;
 }
 
 export const getBundleProPlanToUse = ({ plansMap, planIDs }: { plansMap: PlansMap; planIDs: PlanIDs | undefined }) => {

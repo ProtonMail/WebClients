@@ -10,6 +10,7 @@ import {
     getAutoCoupon,
     getAvailableSubscriptionActions,
     getSubscriptionPlanTitle,
+    isAddonDowngrade,
     isDangerouslyAllowedSubscriptionEstimation,
     isSubscriptionCheckForbidden,
     isSubscriptionCheckForbiddenWithReason,
@@ -1242,5 +1243,23 @@ describe('getAutoCoupon', () => {
                 getAutoCoupon({ planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.YEARLY, currency, trial: true })
             ).toBeUndefined();
         });
+    });
+});
+
+describe('isAddonDowngrade', () => {
+    const withMembers = (quantity: number) =>
+        buildSubscription({ [PLANS.BUNDLE_PRO_2024]: 1, [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: quantity });
+
+    it('detects a lower addon quantity on the upcoming term', () => {
+        expect(isAddonDowngrade(withMembers(3), withMembers(1))).toBe(true);
+    });
+
+    it('detects an addon dropped entirely from the upcoming term', () => {
+        expect(isAddonDowngrade(withMembers(1), buildSubscription(PLANS.BUNDLE_PRO_2024))).toBe(true);
+    });
+
+    it('is false for an unchanged or increased addon quantity', () => {
+        expect(isAddonDowngrade(withMembers(2), withMembers(2))).toBe(false);
+        expect(isAddonDowngrade(withMembers(2), withMembers(5))).toBe(false);
     });
 });
