@@ -29,7 +29,7 @@ const PostedInvoiceTopBannerContent = () => {
         return null;
     }
 
-    const dueTime = invoice.dueTime ? new Date(invoice.dueTime) : undefined;
+    const dueDate = invoice.dueTime ? format(new Date(invoice.dueTime), 'PPP', { locale: dateLocale }) : undefined;
 
     const payInvoiceLink = (
         <SettingsLink key="pay-invoices" className="color-inherit" path={getInvoicesPathname()}>{c('Link')
@@ -38,9 +38,8 @@ const PostedInvoiceTopBannerContent = () => {
 
     return (
         <TopBanner className="bg-info" data-testid="posted-invoice" onClose={() => setDismissedFor(invoice.id)}>
-            {dueTime
-                ? c('Info')
-                      .jt`You have an open invoice on ${format(dueTime, 'PPP', { locale: dateLocale })} ${payInvoiceLink}`
+            {dueDate
+                ? c('Info').jt`You have an open invoice on ${dueDate} ${payInvoiceLink}`
                 : c('Info').jt`You have an open invoice ${payInvoiceLink}`}
         </TopBanner>
     );
