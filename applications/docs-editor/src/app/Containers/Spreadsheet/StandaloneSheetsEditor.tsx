@@ -12,7 +12,7 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
   {
     docState,
     hidden,
-    onEditorLoadResult,
+    onEditorReadyToReceiveUpdates,
     editorInitializationConfig,
     isVersionHistoryView,
     editingLocked,
@@ -29,7 +29,7 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
         ref={ref}
         docState={docState}
         hidden={hidden}
-        onEditorLoadResult={onEditorLoadResult}
+        onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
         editorInitializationConfig={editorInitializationConfig}
         isVersionHistoryView={isVersionHistoryView}
         editingLocked={editingLocked}
