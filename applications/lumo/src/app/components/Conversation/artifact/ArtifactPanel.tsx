@@ -642,7 +642,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                 type={artifact.type}
                 language={artifact.language}
                 title={artifact.title}
-                isStreaming={false}
+                isStreaming={isSelectedVersionProvisional}
                 onCopy={handleCopy}
                 copySuccess={copySuccess}
                 onDownload={handleDownload}

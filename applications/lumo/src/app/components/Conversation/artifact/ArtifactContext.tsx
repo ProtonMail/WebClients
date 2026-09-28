@@ -75,8 +75,7 @@ export const ArtifactProvider = ({
     const prevVersionCountsRef = useRef<Record<string, number>>({});
     const selectedVersionIndexRef = useRef(selectedVersionIndex);
     selectedVersionIndexRef.current = selectedVersionIndex;
-    // Tracks the in-flight assistant message so we can keep the loading shell through generation
-    // and auto-open only after the turn finishes (avoids a brief flash when content parses early).
+    // Tracks the in-flight assistant message so auto-open applies only to the current generation.
     const inFlightAssistantMessageIdRef = useRef<string | null>(null);
 
     const lastMessage = linearChain.at(-1);
@@ -102,7 +101,17 @@ export const ArtifactProvider = ({
         }
 
         return getMessageBlocks(lastMessage);
-    }, [lastMessage]);
+    }, [lastMessage?.id, lastMessage?.blocks, lastMessage?.toolCall, lastMessage?.content, lastMessage?.role]);
+
+    // Set synchronously during render (not in an effect) so auto-open logic below doesn't lag a
+    // tick behind the generation actually starting.
+    if (isGenerating && lastMessage?.role === Role.Assistant) {
+        inFlightAssistantMessageIdRef.current = lastMessage.id;
+    }
+
+    const lastAssistantCompleteArtifacts = useMemo(() => {
+        return extractCompleteArtifactsFromBlocks(lastAssistantBlocks);
+    }, [lastAssistantBlocks]);
 
     const artifactGenerationLoading = useMemo(() => {
         if (!lastMessage || lastMessage.role !== Role.Assistant) {
@@ -112,11 +121,11 @@ export const ArtifactProvider = ({
         return isArtifactGenerationLoading({
             isGenerating,
             isLastMessage: true,
-            completeArtifacts: extractCompleteArtifactsFromBlocks(lastAssistantBlocks),
+            completeArtifacts: lastAssistantCompleteArtifacts,
             blocks: lastAssistantBlocks,
             parentUserMessage,
         });
-    }, [lastMessage, isGenerating, parentUserMessage, lastAssistantBlocks]);
+    }, [lastMessage, isGenerating, parentUserMessage, lastAssistantBlocks, lastAssistantCompleteArtifacts]);
 
     const artifactPanelGenerationLoading = useMemo(() => {
         if (!lastMessage || lastMessage.role !== Role.Assistant) {
@@ -126,25 +135,16 @@ export const ArtifactProvider = ({
         return isArtifactPanelGenerationLoading({
             isGenerating,
             isLastMessage: true,
+            completeArtifacts: lastAssistantCompleteArtifacts,
             blocks: lastAssistantBlocks,
             parentUserMessage,
         });
-    }, [lastMessage, isGenerating, parentUserMessage, lastAssistantBlocks]);
+    }, [lastMessage, isGenerating, parentUserMessage, lastAssistantBlocks, lastAssistantCompleteArtifacts]);
 
-    useEffect(() => {
-        if (isGenerating && lastMessage?.role === Role.Assistant) {
-            inFlightAssistantMessageIdRef.current = lastMessage.id;
-        }
-    }, [isGenerating, lastMessage]);
-
+    // Not gated on `isGenerating` — a complete artifact should open (and be shown live) the
+    // moment its tool call resolves, without waiting for the rest of the assistant's turn.
     const pendingArtifactPanelOpen = useMemo(() => {
-        if (
-            isGenerating ||
-            panelUserClosed ||
-            selectedId !== null ||
-            !lastMessage ||
-            lastMessage.role !== Role.Assistant
-        ) {
+        if (panelUserClosed || selectedId !== null || !lastMessage || lastMessage.role !== Role.Assistant) {
             return false;
         }
 
@@ -152,34 +152,40 @@ export const ArtifactProvider = ({
             return false;
         }
 
-        const completeArtifacts = extractCompleteArtifactsFromBlocks(lastAssistantBlocks);
-        const artifact = completeArtifacts[0];
+        const artifact = lastAssistantCompleteArtifacts[0];
         if (!artifact) {
             return false;
         }
 
         const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, lastMessage.id);
         return versionIndex !== null;
-    }, [isGenerating, panelUserClosed, selectedId, lastMessage, lastAssistantBlocks, registry]);
+    }, [panelUserClosed, selectedId, lastMessage, lastAssistantCompleteArtifacts, registry]);
 
     const artifactRevisionLoading = useMemo(() => {
         if (!lastMessage || lastMessage.role !== Role.Assistant) {
             return false;
         }
 
-        const blocks = getMessageBlocks(lastMessage);
-
         return isArtifactRevisionLoading({
             isGenerating,
             isLastMessage: true,
-            completeArtifacts: extractCompleteArtifactsFromBlocks(blocks),
-            blocks,
+            completeArtifacts: lastAssistantCompleteArtifacts,
+            blocks: lastAssistantBlocks,
             parentUserMessage,
             selectedId,
             selectedVersionIndex,
             registry,
         });
-    }, [lastMessage, isGenerating, parentUserMessage, selectedId, selectedVersionIndex, registry]);
+    }, [
+        lastMessage,
+        isGenerating,
+        parentUserMessage,
+        lastAssistantBlocks,
+        lastAssistantCompleteArtifacts,
+        selectedId,
+        selectedVersionIndex,
+        registry,
+    ]);
 
     const markSeen = useCallback((id: string, versionIndex: number) => {
         const key = `${id}:${versionIndex}`;
@@ -223,8 +229,7 @@ export const ArtifactProvider = ({
         inFlightAssistantMessageIdRef.current = null;
     }, [conversationId]);
 
-    const isLoadingPanelOpen =
-        !panelUserClosed && selectedId === null && (artifactPanelGenerationLoading || pendingArtifactPanelOpen);
+    const isLoadingPanelOpen = !panelUserClosed && selectedId === null && artifactPanelGenerationLoading;
 
     const openArtifact = useCallback(
         (id: string, versionIndex?: number) => {
@@ -247,8 +252,7 @@ export const ArtifactProvider = ({
             return;
         }
 
-        const completeArtifacts = extractCompleteArtifactsFromBlocks(lastAssistantBlocks);
-        const artifact = completeArtifacts[0];
+        const artifact = lastAssistantCompleteArtifacts[0];
         if (!artifact) {
             return;
         }
@@ -260,7 +264,7 @@ export const ArtifactProvider = ({
 
         inFlightAssistantMessageIdRef.current = null;
         openArtifact(artifact.id, versionIndex);
-    }, [pendingArtifactPanelOpen, lastMessage, lastAssistantBlocks, registry, openArtifact]);
+    }, [pendingArtifactPanelOpen, lastMessage, lastAssistantCompleteArtifacts, registry, openArtifact]);
 
     const goToVersion = useCallback(
         (index: number) => {
@@ -318,42 +322,71 @@ export const ArtifactProvider = ({
         // are read from refs/closure to avoid re-running this sync on every navigation.
     }, [registry]);
 
-    const selectedEntry = selectedId ? registry[selectedId] : undefined;
-    const selectedVersion = selectedEntry?.versions[selectedVersionIndex];
-    const selectedArtifact = useMemo((): ParsedArtifact | null => {
-        if (!selectedEntry || !selectedVersion) {
+    // As soon as a complete artifact resolves mid-generation, show it immediately rather than
+    // waiting for the `openArtifact` effect above to run on the next commit.
+    const pendingAutoOpenTarget = useMemo(() => {
+        if (!pendingArtifactPanelOpen || !lastMessage || lastMessage.role !== Role.Assistant) {
             return null;
         }
 
-        return {
-            id: selectedEntry.id,
-            type: selectedEntry.type,
-            title: selectedEntry.title,
-            language: selectedVersion.language ?? selectedEntry.language,
-            content: selectedVersion.content,
-        };
-    }, [
-        selectedEntry?.id,
-        selectedEntry?.type,
-        selectedEntry?.title,
-        selectedEntry?.language,
-        selectedVersion?.language,
-        selectedVersion?.content,
-    ]);
+        const artifact = lastAssistantCompleteArtifacts[0];
+        if (!artifact) {
+            return null;
+        }
+
+        const versionIndex = getArtifactVersionIndexForMessage(registry, artifact.id, lastMessage.id);
+        if (versionIndex === null) {
+            return null;
+        }
+
+        return { artifactId: artifact.id, versionIndex };
+    }, [pendingArtifactPanelOpen, lastMessage, lastAssistantCompleteArtifacts, registry]);
+
+    const buildParsedArtifact = useCallback(
+        (artifactId: string, versionIndex: number): ParsedArtifact | null => {
+            const entry = registry[artifactId];
+            const version = entry?.versions[versionIndex];
+            if (!entry || !version) {
+                return null;
+            }
+
+            return {
+                id: entry.id,
+                type: entry.type,
+                title: entry.title,
+                language: version.language ?? entry.language,
+                content: version.content,
+            };
+        },
+        [registry]
+    );
+
+    const selectedEntry = selectedId ? registry[selectedId] : undefined;
+    const selectedVersion = selectedEntry?.versions[selectedVersionIndex];
+    const selectedArtifact: ParsedArtifact | null =
+        selectedEntry && selectedVersion ? buildParsedArtifact(selectedId!, selectedVersionIndex) : null;
+
+    const displayArtifact: ParsedArtifact | null =
+        selectedArtifact ??
+        (pendingAutoOpenTarget
+            ? buildParsedArtifact(pendingAutoOpenTarget.artifactId, pendingAutoOpenTarget.versionIndex)
+            : null);
 
     const isSelectedVersionProvisional =
-        selectedId !== null && isArtifactVersionProvisional(registry, selectedId, selectedVersionIndex);
+        selectedId !== null
+            ? isArtifactVersionProvisional(registry, selectedId, selectedVersionIndex)
+            : pendingAutoOpenTarget !== null;
 
     const value = useMemo(
         () => ({
             registry,
-            selectedArtifact,
+            selectedArtifact: displayArtifact,
             selectedId,
             selectedVersionIndex,
             openArtifact,
             goToVersion,
             hasUnseenRevision,
-            isPanelOpen: selectedArtifact !== null || isLoadingPanelOpen,
+            isPanelOpen: displayArtifact !== null || isLoadingPanelOpen,
             closePanel,
             isFullscreen,
             enterFullscreen,
@@ -367,7 +400,7 @@ export const ArtifactProvider = ({
         }),
         [
             registry,
-            selectedArtifact,
+            displayArtifact,
             selectedId,
             selectedVersionIndex,
             openArtifact,
