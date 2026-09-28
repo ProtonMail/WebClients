@@ -1,10 +1,11 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
 import { buyCredit, createToken } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/payments/testing/api-endpoints';
-import { APPS, IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock } from '@proton/test-api/api';
 

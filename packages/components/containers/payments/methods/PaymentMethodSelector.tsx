@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
 import type { IconComponent } from '@proton/icons/component';
 import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, PaymentMethodType } from '@proton/payments/core/interface';
-import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey-colored.svg';
 import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy-colored.svg';
 import googlePayMarkSvg from '@proton/styles/assets/img/bank-icons/google-pay-mark.svg';

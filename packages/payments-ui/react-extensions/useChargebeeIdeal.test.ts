@@ -114,6 +114,35 @@ describe('useChargebeeIdeal', () => {
         jest.useRealTimers();
     });
 
+    it('should re-arm the iframe button when only the label changes', async () => {
+        jest.useFakeTimers();
+
+        const handles = getMockedIframeHandles();
+        const { result } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
+
+        await initialize(result.current.initialize);
+        act(() => result.current.setAccountHolderName('Jan'));
+        await act(async () => {
+            jest.runOnlyPendingTimers();
+        });
+        expect(result.current.readyToPay).toBe(true);
+
+        act(() => result.current.setButtonLabel('Pay €9.99 now'));
+        expect(result.current.readyToPay).toBe(false);
+
+        await act(async () => {
+            jest.runOnlyPendingTimers();
+        });
+
+        expect(handles.setIdealPaymentIntent).toHaveBeenLastCalledWith(
+            expect.objectContaining({ userName: 'Jan', buttonLabel: 'Pay €9.99 now' }),
+            expect.anything()
+        );
+        expect(result.current.readyToPay).toBe(true);
+
+        jest.useRealTimers();
+    });
+
     it('should surface an initialization error when the debounced name update fails', async () => {
         jest.useFakeTimers();
 

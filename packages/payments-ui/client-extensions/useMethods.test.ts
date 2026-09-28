@@ -1,3 +1,4 @@
+import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
 import { IcBank } from '@proton/icons/icons/IcBank';
 import { IcBrandAmex } from '@proton/icons/icons/IcBrandAmex';
 import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
@@ -11,7 +12,6 @@ import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, SavedPaymentMethod } from '@proton/payments/core/interface';
-import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { MethodsHook } from '../react-extensions/useMethods';
 import { wrapMethods } from './useMethods';
