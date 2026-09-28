@@ -5,7 +5,8 @@ import { c } from 'ttag'
 import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
 import { CircleLoader } from '../../CircleLoader/CircleLoader'
-import { useSheetsDependencies, type SheetsExportFormat } from '../../../SheetsDependenciesProvider'
+import { useSheetsDependencies } from '../../../SheetsDependenciesProvider'
+import type { SheetsFileExportFormat } from '../../../contract/SpreadsheetExportFormat'
 import { useUI } from '../../../ui-store'
 import { VersionNumber } from '../../VersionNumber/VersionNumber'
 
@@ -279,11 +280,11 @@ function DownloadSubmenu({
   download,
   triggerMenuAction,
 }: {
-  download: (format: SheetsExportFormat) => Promise<void>
+  download: (format: SheetsFileExportFormat) => Promise<void>
   triggerMenuAction: (action: MenuAction) => Promise<void>
 }) {
   const { featureFlags } = useSheetsDependencies()
-  const triggerDownload = (format: SheetsExportFormat) => triggerMenuAction(() => download(format))
+  const triggerDownload = (format: SheetsFileExportFormat) => triggerMenuAction(() => download(format))
 
   return (
     <Ariakit.MenuProvider>

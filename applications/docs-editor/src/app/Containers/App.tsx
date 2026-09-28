@@ -393,7 +393,16 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             throw error
           }
         } else if (spreadsheetRef.current) {
-          return spreadsheetRef.current.exportData(format)
+          switch (format) {
+            case 'xlsx':
+            case 'ods':
+            case 'csv':
+            case 'tsv':
+            case 'yjs':
+              return spreadsheetRef.current.exportData(format)
+            default:
+              throw new Error(`Spreadsheet cannot be exported to format ${format}`)
+          }
         }
 
         throw new Error('Could not export data for current doc/sheet')

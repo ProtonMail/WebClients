@@ -1,4 +1,4 @@
-import type { DataTypesThatDocumentCanBeExportedAs, EditorInitializationConfig } from '@proton/docs-shared'
+import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { TranslatedResult } from '@proton/docs-shared'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
@@ -26,10 +26,11 @@ import { useSheetsDependencies } from './SheetsDependenciesProvider'
 import { getSheetNameFromFilename } from './sheet-import-name'
 import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
 import type { SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
+import type { SheetsExportFormat } from './contract/SpreadsheetExportFormat'
 import { canSheetsConvertType, getSheetsImportMimeType } from './supported-sheets-import-types'
 
 export type SpreadsheetRef = {
-  exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
+  exportData: (format: SheetsExportFormat) => Promise<Uint8Array<ArrayBuffer>>
   replaceLocalSpreadsheetState: (state: object, broadcastPatches: boolean) => void
   focusSheet: (() => void) | undefined
   generatePatches: () => Promise<unknown>
@@ -147,7 +148,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const { replaceLocalSpreadsheetState } = useLocalState(state, updateLocalStateToLog)
   const focusSheet = useFocusSheet()
 
-  const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
+  const exportData = async (format: SheetsExportFormat) => {
     if (format === 'yjs') {
       return docState.getDocState()
     }
