@@ -13,6 +13,9 @@ jest.mock('@proton/chargebee/lib/getCanMakePaymentsWithActiveCard');
 jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: jest.fn() }),
 }));
+const createModal = jest.fn(() => 'modal-id');
+const removeModal = jest.fn();
+jest.mock('@proton/components/hooks/useModals', () => () => ({ createModal, removeModal }));
 jest.mock('@proton/shared/lib/helpers/browser', () => ({
     ...jest.requireActual('@proton/shared/lib/helpers/browser'),
     isSafari: jest.fn(),
@@ -31,6 +34,7 @@ const modalHandles = {
     onPaymentFailure: jest.fn(),
     onVerificationCancelled: jest.fn(),
     onVerificationSuccess: jest.fn(),
+    onQrPendingModalClosed: jest.fn(),
 };
 
 const renderAndSettle = async () => {
@@ -133,5 +137,57 @@ describe('useApplePayDependencies', () => {
 
         expect(getOfferedApplePayFlow()).toBeNull();
         expect(result.current.canUseApplePay).toBe(false);
+    });
+
+    describe('pending validation modal', () => {
+        const clickApplePay = async () => {
+            const result = await renderAndSettle();
+            act(() => result.current.applePayModalHandles.onClick());
+            return result;
+        };
+
+        it('is not shown for the native flow', async () => {
+            mockedIsSafari.mockReturnValue(true);
+            mockedUseFlag.mockReturnValue(true);
+
+            await clickApplePay();
+
+            expect(createModal).not.toHaveBeenCalled();
+        });
+
+        describe('in the QR flow', () => {
+            beforeEach(() => {
+                mockedIsSafari.mockReturnValue(false);
+                mockedUseFlag.mockReturnValue(true);
+            });
+
+            it('is shown on click', async () => {
+                await clickApplePay();
+
+                expect(createModal).toHaveBeenCalledTimes(1);
+            });
+
+            it.each(['onAuthorize', 'onCancel', 'onFailure', 'onMountFailure'] as const)(
+                'is hidden on %s',
+                async (handle) => {
+                    const result = await clickApplePay();
+
+                    act(() => result.current.applePayModalHandles[handle](undefined));
+
+                    expect(removeModal).toHaveBeenCalledWith('modal-id');
+                }
+            );
+
+            it('reports a cancellation and asks for a retry when the user closes it', async () => {
+                await clickApplePay();
+                const [[modal]] = createModal.mock.calls as unknown as [[React.ReactElement<{ onClose: () => void }>]];
+
+                act(() => modal.props.onClose());
+
+                expect(removeModal).toHaveBeenCalledWith('modal-id');
+                expect(modalHandles.onVerificationCancelled).toHaveBeenCalledTimes(1);
+                expect(modalHandles.onQrPendingModalClosed).toHaveBeenCalledTimes(1);
+            });
+        });
     });
 });

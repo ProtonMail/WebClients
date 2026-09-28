@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -220,11 +220,13 @@ export const usePaymentFacade = ({
         onVerificationSuccess: () => reportPaymentEvent('verification_success', PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL),
     });
 
+    const [applePayAttempt, setApplePayAttempt] = useState(0);
     const { canUseApplePay, applePayModalHandles } = useApplePayDependencies(chargebeeHandles, {
         onPaymentFailure: () => reportPaymentEvent('payment_declined', PAYMENT_METHOD_TYPES.APPLE_PAY),
         onVerificationCancelled: () =>
             reportPaymentEvent('verification_rejected_by_user', PAYMENT_METHOD_TYPES.APPLE_PAY),
         onVerificationSuccess: () => reportPaymentEvent('verification_success', PAYMENT_METHOD_TYPES.APPLE_PAY),
+        onQrPendingModalClosed: () => setApplePayAttempt((attempt) => attempt + 1),
     });
 
     const { canUseGooglePay, googlePayModalHandles } = useGooglePayDependencies(chargebeeHandles, {
@@ -369,7 +371,7 @@ export const usePaymentFacade = ({
         void run();
 
         return abort;
-    }, [hook.methods.isNewApplePay, amount, currency]);
+    }, [hook.methods.isNewApplePay, amount, currency, applePayAttempt]);
 
     const googlePayAbortRef = useRef<AbortController | null>(null);
     useEffect(() => {
