@@ -22,7 +22,7 @@ type FormManagerOptions = {
     onDetection: (forms: FormHandle[]) => void;
 };
 
-export type FormManagerState = {
+type FormManagerState = {
     /** form manager state flag */
     active: boolean;
     /** last detection run */

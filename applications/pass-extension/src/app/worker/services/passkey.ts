@@ -11,7 +11,7 @@ import { WorkerMessageType } from '../../../types/messages';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context/inject';
 
-export class PasskeyRequestError extends Error {
+class PasskeyRequestError extends Error {
     name = 'PasskeyRequestError';
     constructor(message: string) {
         super(`Invalid request: ${message}`);

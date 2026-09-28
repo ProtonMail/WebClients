@@ -2,7 +2,7 @@ import type { FC, ReactElement } from 'react';
 
 type Props = { title: string; extra?: ReactElement };
 
-export const DROPDOWN_HEADER_HEIGHT = 2; /* rem */
+const DROPDOWN_HEADER_HEIGHT = 2; /* rem */
 
 export const DropdownHeader: FC<Props> = ({ title, extra }) => (
     <div

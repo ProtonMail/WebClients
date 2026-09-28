@@ -11,7 +11,7 @@ import { DROPDOWN_FOCUS_TIMEOUT } from '../../dropdown.focus';
 
 export type IFrameFocusControllerValue = { focusRef: RefObject<HTMLInputElement> };
 
-export const IFrameFocusControllerContext = createContext<MaybeNull<IFrameFocusControllerValue>>(null);
+const IFrameFocusControllerContext = createContext<MaybeNull<IFrameFocusControllerValue>>(null);
 export const useFocusController = createUseContext(IFrameFocusControllerContext);
 
 /** Maximum number of focus recovery attempts before giving up.

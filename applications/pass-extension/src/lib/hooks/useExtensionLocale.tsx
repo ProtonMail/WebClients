@@ -6,7 +6,7 @@ import { WorkerMessageType } from '../../types/messages';
 import { ExtensionContext } from '../context/extension-context';
 import { matchExtensionMessage } from '../message/utils';
 
-export const useExtensionLocale = () => {
+const useExtensionLocale = () => {
     const core = usePassCore();
     const context = ExtensionContext.read();
 

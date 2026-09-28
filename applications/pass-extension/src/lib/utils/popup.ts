@@ -39,7 +39,7 @@ export const setPopupIconBadge = safeCall((tabId: number, count: number): void =
 
 /** Adjusts the size of the popup element to account for inconsistent sizing behavior
  * when the user changes the default page zoom in their browser settings. */
-export const popupSizeSurgery = () => {
+const popupSizeSurgery = () => {
     if (BUILD_TARGET === 'chrome') {
         const onResize = debounce(() => {
             const { clientWidth, clientHeight } = document.documentElement;
@@ -66,7 +66,7 @@ export const popupSizeSurgery = () => {
     }
 };
 
-export const isExpandedPopup = async (): Promise<boolean> => {
+const isExpandedPopup = async (): Promise<boolean> => {
     try {
         let expanded: boolean;
 

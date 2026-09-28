@@ -12,11 +12,11 @@ export type WithAutofillOrigin<T> = T &
         origin: string;
     };
 
-export type AutofillActionType = 'creditCard' | 'login' | 'identity' | 'email' | 'password';
-export type AutofillItem = WithAutofillOrigin<SelectedItem & { notification?: string }>;
-export type AutofillValue = WithAutofillOrigin<{ value: string }>;
+type AutofillActionType = 'creditCard' | 'login' | 'identity' | 'email' | 'password';
+type AutofillItem = WithAutofillOrigin<SelectedItem & { notification?: string }>;
+type AutofillValue = WithAutofillOrigin<{ value: string }>;
 
-export type AbstractAutofillDTO<T extends Record<AutofillActionType, any>> = {
+type AbstractAutofillDTO<T extends Record<AutofillActionType, any>> = {
     [K in AutofillActionType]: { type: K } & T[K];
 }[AutofillActionType];
 
@@ -34,7 +34,7 @@ export type AutofillActionDTO<T extends AutofillActionType = AutofillActionType>
 export type AutofillSequence<T = {}> =
     { status: 'start' } | ({ status: 'fill' } & T) | { status: 'completed'; refocus: FrameField };
 
-export type AutofillStatus = AutofillSequence['status'];
+type AutofillStatus = AutofillSequence['status'];
 
 export type AutofillRequest<T extends AutofillStatus = AutofillStatus> = Extract<
     AutofillSequence<

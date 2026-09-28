@@ -33,7 +33,7 @@ const SUBMIT_DETACH_TIMEOUT = 250;
  * which might lead to premature stashing */
 const SUBMIT_TIMEOUT = 1_000;
 
-export type FormTrackerState = {
+type FormTrackerState = {
     detached: boolean;
     error: boolean;
     interactionAt?: number;
@@ -44,7 +44,7 @@ export type FormTrackerState = {
     timerSubmit?: NodeJS.Timeout;
 };
 
-export type FormTrackerSyncOptions = {
+type FormTrackerSyncOptions = {
     data?: FormCredentials;
     partial: boolean;
     reset?: boolean;

@@ -13,7 +13,7 @@ import { getBrowser } from '@proton/shared/lib/helpers/browser';
 
 import { reloadManager } from '../../utils/reload';
 
-export const getBrowserIcon = (): IconName => {
+const getBrowserIcon = (): IconName => {
     switch (getBrowser().name) {
         case 'Brave':
             return 'brand-brave';

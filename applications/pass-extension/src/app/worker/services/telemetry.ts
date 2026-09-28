@@ -23,7 +23,7 @@ import { WorkerMessageType } from '../../../types/messages';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context/inject';
 
-export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
+const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
 
 export const createTelemetryService = (storage: ExtensionStorage<Record<'telemetry', string>>) => {
     const service: CoreTelemetryService = createCoreTelemetryService({

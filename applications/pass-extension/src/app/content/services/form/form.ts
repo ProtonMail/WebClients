@@ -37,8 +37,6 @@ import { createFieldHandles } from './field';
 import type { FormTracker } from './form.tracker';
 import { createFormTracker } from './form.tracker';
 
-export type FormHandlesProps = { zIndex: number };
-
 export interface FormHandle {
     busy: boolean;
     canAutosave: boolean;

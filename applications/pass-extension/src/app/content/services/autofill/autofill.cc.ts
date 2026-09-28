@@ -57,7 +57,7 @@ const getExpirationMonth: CCFieldValueExtract = ({ expirationDate }, el) => {
     }
 };
 
-export const CC_FIELDS_CONFIG: Record<CCFieldType, CCFieldValueExtract> = {
+const CC_FIELDS_CONFIG: Record<CCFieldType, CCFieldValueExtract> = {
     [CCFieldType.CSC]: prop('verificationNumber'),
     [CCFieldType.EXP_MONTH]: getExpirationMonth,
     [CCFieldType.EXP_YEAR]: getExpirationYear,
