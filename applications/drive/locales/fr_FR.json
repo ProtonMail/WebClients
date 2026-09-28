@@ -4423,6 +4423,12 @@
       ],
       "A contact with this email address already exists": [
         "Un contact portant cette adresse e-mail existe déjà."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
       ]
     },
     "error": {
@@ -13358,7 +13364,7 @@
         "Le lien sécurisé a été copié."
       ],
       "Undo in progress": [
-        "Annulation en cours"
+        "Annulation de l'importation en cours"
       ],
       "Verification successful": [
         "La vérification a abouti."
