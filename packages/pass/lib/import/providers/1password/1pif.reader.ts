@@ -195,6 +195,7 @@ export const read1Password1PifData = async (
             {
                 name: getImportedVaultName(),
                 shareId: null,
+                folders: [],
                 items: items,
             },
         ];

@@ -115,7 +115,7 @@ export const readNordPassData = async (file: File): Promise<ImportReaderResult> 
                 }
             }
 
-            vaults.push({ name, items, shareId: null });
+            vaults.push({ name, items, shareId: null, folders: [] });
         }
 
         return { vaults, ignored, warnings };

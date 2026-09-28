@@ -38,7 +38,7 @@ export const readSafariData = async (file: File): Promise<ImportReaderResult> =>
         }
 
         return {
-            vaults: [{ name: getImportedVaultName(), shareId: null, items }],
+            vaults: [{ name: getImportedVaultName(), shareId: null, folders: [], items }],
             ignored,
             warnings,
         };

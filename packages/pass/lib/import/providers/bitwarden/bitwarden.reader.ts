@@ -114,7 +114,7 @@ export const readBitwardenData = async (
                 }
             }
 
-            vaults.push({ name, shareId: null, items });
+            vaults.push({ name, shareId: null, folders: [], items });
         }
 
         return { vaults, ignored, warnings: [] };

@@ -147,6 +147,7 @@ export const readLastPassData = async (file: File): Promise<ImportReaderResult> 
             vaults.push({
                 name: getImportedVaultName(vaultItems?.[0].grouping),
                 shareId: null,
+                folders: [],
                 items,
             });
         }

@@ -98,6 +98,7 @@ export const readDashlaneDataZIP = async (file: File): Promise<ImportReaderResul
             {
                 name: getImportedVaultName(),
                 shareId: null,
+                folders: [],
                 items: [...loginItems, ...noteItems, ...creditCards, ...ids, ...personalInfos],
             },
         ];
