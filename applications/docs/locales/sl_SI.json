@@ -3455,6 +3455,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Ime, ki ga ni mogoče dešifrirati"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Nepravilno varnostno geslo. Poskusite znova."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nepravilno drugo geslo. Poskusite znova."
+      ],
+      "Part of the file appears to be corrupted": [
+        "Del datoteke se zdi poškodovan"
       ]
     },
     "error": {
@@ -3915,6 +3924,9 @@
       ],
       "In progress": [
         "V teku"
+      ],
+      "All": [
+        "Vse"
       ]
     },
     "Filter notification": {
@@ -10299,6 +10311,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "500 GB of secure storage": [
+        "500 GB varne shrambe"
       ]
     }
   }

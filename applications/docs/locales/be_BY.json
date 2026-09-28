@@ -944,6 +944,15 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Экспартаваць гэту версію (у фармаце odt) (бэта-версія)"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "Тэкст OpenDocument (.ods) (бэта-версія)"
       ]
     },
     "Actions message": {
@@ -3172,7 +3181,7 @@
         "Не ўдалося атрымаць вузел"
       ],
       "Failed to fetch sharing info": [
-        "Не ўдалося атрымаць зветкі абагульвання"
+        "Не ўдалося атрымаць звесткі абагульвання"
       ],
       "Failed to get inviter keys": [
         "Не ўдалося атрымаць ключы запрашэння"
@@ -3731,6 +3740,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Failed to fetch sharing information": [
+        "Не ўдалося атрымаць абагуленую інфармацыю"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Няправільны рэзервовы пароль. Паўтарыце спробу."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Няправільны другі пароль. Паўтарыце спробу."
       ]
     },
     "error": {
@@ -6084,6 +6102,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Памылка пераўтварэння дакумента: ${ errorMessage }"
       ]
     },
     "info": {
@@ -6582,6 +6603,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Enable email notifications": [
+        "Уключыць апавяшчэнні па электроннай пошце"
       ]
     },
     "Label for contact group color": {
@@ -8250,6 +8274,9 @@
       ],
       "Your settings have been changed successfully": [
         "Вашы налады былі паспяхова зменены"
+      ],
+      "Failed to load invitations": [
+        "Не ўдалося загрузіць запрашэнні"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8437,6 +8464,18 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ваша поўная падпіска на тарыфны план ${ planTitle } пачнецца ${ boldEndDate }."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "If you continue after your trial,": [
+        "Калі вы працягніце пасля пробнага перыяду,"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ]
     },
     "Option": {
