@@ -1,38 +1,18 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
-import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
+import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useLoading } from '@proton/hooks';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import { changeRenewState } from '@proton/payments/core/api/api';
-import { hasLifetimeCoupon } from '@proton/payments/core/coupons';
-import { Renew } from '@proton/payments/core/subscription/constants';
-import {
-    getRenewalTime,
-    getSubscriptionPlanTitle,
-    isAddonDowngrade,
-    isManagedExternally,
-    isSameCycle,
-    isUpcomingSubscriptionUnpaid,
-    shouldHaveUpcomingSubscription,
-    subscriptionExpires,
-} from '@proton/payments/core/subscription/helpers';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
+import { PLAN_TYPES } from '@proton/payments/core/constants';
+import { getSubscriptionsArray } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import isTruthy from '@proton/utils/isTruthy';
-import noop from '@proton/utils/noop';
 
-import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
-import type { DropdownActionProps } from '../../components/dropdown/DropdownActions';
 import DropdownActions from '../../components/dropdown/DropdownActions';
-import Info from '../../components/link/Info';
 import Loader from '../../components/loader/Loader';
+import useModalState from '../../components/modalTwo/useModalState';
 import { getSimplePriceString } from '../../components/price/helper';
 import Table from '../../components/table/Table';
 import TableBody from '../../components/table/TableBody';
@@ -40,219 +20,74 @@ import TableCell from '../../components/table/TableCell';
 import TableHeader from '../../components/table/TableHeader';
 import TableRow from '../../components/table/TableRow';
 import Time from '../../components/time/Time';
-import useEventManager from '../../hooks/useEventManager';
-import SettingsSectionWide from '../account/SettingsSectionWide';
-import { getSubscriptionManagerName } from './subscription/InAppPurchaseModal';
-import useCancellationTelemetry from './subscription/cancellationFlow/useCancellationTelemetry';
-import { isSamePlan } from './subscription/helpers/isSamePlanCheckout';
+import SubscriptionBreakdownModal from './subscription/SubscriptionBreakdownModal';
+import type { SubscriptionRow as SubscriptionRowType } from './subscription/helpers/getSubscriptionRows';
+import { getSubscriptionRows } from './subscription/helpers/getSubscriptionRows';
+import { useReactivateAction } from './subscription/helpers/useReactivateAction';
 
-interface SubscriptionRowProps {
-    subscription: Subscription;
-}
+export const SubscriptionRow = ({ row }: { row: SubscriptionRowType }) => {
+    const {
+        subscription,
+        planTitle,
+        startDate,
+        endDate,
+        price,
+        renewCurrency,
+        isLifetime,
+        isExpiring,
+        showReactivate,
+        billingType,
+        hasCoupon,
+        status,
+        renewalText,
+        renewalTooltip,
+    } = row;
 
-const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
-    const [reactivating, withReactivating] = useLoading();
-    const api = useApi();
-    const { sendDashboardReactivateReport } = useCancellationTelemetry();
-    const eventManager = useEventManager();
-    const { createNotification } = useNotifications();
-    const upcoming = subscription?.UpcomingSubscription ?? undefined;
-    const [user] = useUser();
-    const getPaymentMethods = useGetPaymentMethods();
-
-    const { planTitle } = getSubscriptionPlanTitle(user, subscription);
-
-    const { renewDisabled, subscriptionExpiresSoon } = subscriptionExpires(subscription);
-
-    const trialInfo = getTrialInfoForSingleSubscription(subscription);
-
-    const status = (() => {
-        if (subscriptionExpiresSoon) {
-            return {
-                type: 'error' as BadgeType,
-                label: c('Subscription status').t`Expiring`,
-            };
-        }
-
-        if (trialInfo.isTrial) {
-            return {
-                type: 'success' as BadgeType,
-                label: c('Subscription status').t`Free Trial`,
-            };
-        }
-
-        return {
-            type: 'success' as BadgeType,
-            label: c('Subscription status').t`Active`,
-        };
-    })();
-
-    const showReactivateButton = renewDisabled && !isManagedExternally(subscription);
-    const reactivateAction: DropdownActionProps[] = [
-        showReactivateButton && {
-            text: c('Action subscription').t`Reactivate`,
-            loading: reactivating,
-            onClick: () => {
-                withReactivating(async () => {
-                    const paymentMethods = await getPaymentMethods();
-                    // In principle, there is no need to check if user has payment methods before they reactivate. We
-                    // want to let them reactivate even without saved payment mehtods, because some users pay only with
-                    // Bitcoin, or cash, or possibly with other payment methods that can't be saved. However, the case
-                    // when user has a trial subscription from the referral program is special. If user has referral
-                    // trial of mail, pass, or drive then they have a free trial that was created without a payment
-                    // method upfront (unlike Unlimited or VPN referrals that require buying a full subscription in
-                    // exchange for 20 credits). So the cohort of referral trial users is potentially dangerous: if they
-                    // cancel and then reactivate without providing a payment method first, then they will enter
-                    // delinquency state on renewal attempt, which we don't want. Hence, we make this check here and ask
-                    // this cohort to provide a payment method before reactivating.
-                    if (trialInfo.isReferralTrial && paymentMethods.length === 0) {
-                        createNotification({
-                            type: 'error',
-                            text: c('Error').t`Please add a payment method before reactivating your subscription`,
-                        });
-                        return;
-                    }
-
-                    const searchParams = new URLSearchParams(location.search);
-                    const reactivationSource = searchParams.get('source');
-                    sendDashboardReactivateReport(reactivationSource || 'default');
-
-                    await api(
-                        changeRenewState({
-                            RenewalState: Renew.Enabled,
-                        })
-                    );
-
-                    await eventManager.call();
-                }).catch(noop);
-            },
-        },
-    ].filter(isTruthy);
-
-    const { renewAmount, renewCurrency, renewCycle } = (() => {
-        const hasUpcomingUnpaidSubscription = upcoming && isUpcomingSubscriptionUnpaid(subscription);
-        if (hasUpcomingUnpaidSubscription) {
-            return {
-                // typically upcoming unpaid subscription have Amount == 0. This behavior might change in the future and
-                // take into account the actual amount that take into account coupons. But currently we need to fallback
-                // to BaseRenewAmount which is typically set to the full amount of the selected plan. And it doesn't make
-                // sense to use RenewAmount for unpaid upcoming subscription because we want to know what user will pay
-                // when we actually trigger the charge for this subscription term.
-                renewAmount: upcoming.Amount || upcoming.BaseRenewAmount,
-                renewCurrency: upcoming.Currency,
-                renewCycle: upcoming.Cycle,
-            };
-        }
-
-        // About some words: there is current subscription. Sometimes there is an upcoming subscription. In case of this
-        // code branch, we are considering an upcoming subscription that was created for the same plan and cycle
-        // (so-called retention offers). When the upcoming subscription ends, it will be renewed for the second upcoming
-        // subscription. Our system can represent at most one upcoming subscription, but we still need to display the
-        // price of the second upcoming subscription to the user.
-        //
-        // For a same plan same cycle renewal (which is enabled by a coupon) we want to display the BaseRenewAmount so
-        // the user does not expect to be charged the RenewAmount for the second upcoming subscription, which represents
-        // the discounted price. However if it is a full discount, we want to display a renewAmount of 0
-        const isUpcomingSubscriptionSameAsCurrentSubscription =
-            upcoming &&
-            isSamePlan(subscription, upcoming) &&
-            isSameCycle(subscription, upcoming) &&
-            !isAddonDowngrade(subscription, upcoming) &&
-            upcoming.RenewAmount !== 0;
-        if (isUpcomingSubscriptionSameAsCurrentSubscription) {
-            return {
-                renewAmount: upcoming.BaseRenewAmount,
-                renewCurrency: upcoming.Currency,
-                renewCycle: upcoming.RenewCycle,
-            };
-        }
-
-        const latestSubscription = upcoming ?? subscription;
-        return {
-            renewAmount: latestSubscription.RenewAmount,
-            renewCurrency: latestSubscription.Currency,
-            renewCycle: latestSubscription.RenewCycle,
-        };
-    })();
-
-    const renewalText = (() => {
-        if (hasLifetimeCoupon(subscription)) {
-            return c('Payments.Lifetime Subscription').t`Lifetime accounts can be transferred or sold`;
-        }
-
-        if (isManagedExternally(subscription)) {
-            const subscriptionManagerName = getSubscriptionManagerName(subscription.External);
-            // translator: possible values are "Google Play" or "Apple App Store". This sentence means "Subscription renews automatically on Google Play (or Apple App Store)"
-            return c('Billing cycle').t`Renews automatically on ${subscriptionManagerName}`;
-        }
-
-        // This condition handles transitional states: when subscription was already created, but we don't have the
-        // upcoming subscription yet. It typically takes up to 1 minute for upcoming subscription to be created in case
-        // of variable cycle offers. In an ideal world, we wouldn't need this condition, but because of limitations of
-        // backend-chargebee integration, we should avoid displaying potentially incorrect data.
-        // The only case that we handle here is:
-        //  - current subscription that must have a variable cycle offer (e.g. vpn2024 24m -> 12m)
-        //
-        // There are other situations with upcoming subscription that luckily don't require special handling and we
-        // simply can take RenewCycle and RenewAmount from the latest subscription.
-        // - upcoming subscription that must have a variable cycle offer. For example, user with current vpn2024 12m
-        //   creates vpn2024 24m upcoming. In this case it's assumed that the upcoming subscription will eventually have
-        //   its own upcoming subscription with 12m cycle.
-        // - users with 24m subscriptions before the cutoff date. For example, users with mail2022 24m subscription that
-        //   were created before Q1 2025. These users must have 24m renew cycle and the corresponding amount.
-        if (shouldHaveUpcomingSubscription(subscription) && !upcoming) {
-            return null;
-        }
-
-        const renewPrice = getSimplePriceString(renewCurrency, renewAmount);
-
-        return c('Billing cycle').ngettext(
-            msgid`Renews automatically at ${renewPrice}, for ${renewCycle} month`,
-            `Renews automatically at ${renewPrice}, for ${renewCycle} months`,
-            renewCycle
-        );
-    })();
-
-    const renewalTextElement = <span data-testid="renewalNotice">{renewalText}</span>;
-
-    const renewalTooltip = (() => {
-        if (hasLifetimeCoupon(subscription)) {
-            return (
-                <Info
-                    className="ml-2"
-                    title={c('Payments.Lifetime Subscription')
-                        .t`Reach out to Customer Support to confirm ownership change`}
-                />
-            );
-        }
-
-        if (!isManagedExternally(subscription)) {
-            <Info className="ml-2" title={c('Payments').t`Credits and discounts are reflected in your invoice`} />;
-        }
-
-        return null;
-    })();
+    const reactivateAction = useReactivateAction(row);
+    const [breakdownModalProps, setBreakdownModalOpen, renderBreakdownModal] = useModalState();
+    const hasAddons = subscription.Plans.some((plan) => plan.Type === PLAN_TYPES.ADDON);
 
     return (
         <TableRow>
             <TableCell label={c('Title subscription').t`Plan`}>
-                <span data-testid="planNameId">{planTitle}</span>
+                <div className="flex flex-column">
+                    <span data-testid="planNameId">{planTitle}</span>
+                    {hasAddons && (
+                        <Button
+                            shape="underline"
+                            size="small"
+                            className="p-0 text-left text-sm color-weak"
+                            onClick={() => setBreakdownModalOpen(true)}
+                            data-testid="viewBreakdown"
+                        >
+                            {c('Action subscription').t`View breakdown`}
+                        </Button>
+                    )}
+                </div>
+                {renderBreakdownModal && (
+                    <SubscriptionBreakdownModal subscription={subscription} {...breakdownModalProps} />
+                )}
             </TableCell>
             <TableCell data-testid="subscriptionStatusId">
                 <Badge type={status.type} className="text-nowrap">
                     {status.label}
                 </Badge>
             </TableCell>
+            <TableCell label={c('Title subscription').t`Start date`}>
+                <Time format="PPP" sameDayFormat={false} data-testid="planStartTimeId">
+                    {startDate}
+                </Time>
+            </TableCell>
             <TableCell label={c('Title subscription').t`End date`}>
                 <div className="flex items-center">
-                    {hasLifetimeCoupon(subscription) ? (
+                    {isLifetime ? (
                         c('Payments.Lifetime Subscription.Renewal time').t`Never`
                     ) : (
                         <Time format="PPP" sameDayFormat={false} data-testid="planEndTimeId">
-                            {getRenewalTime(subscription)}
+                            {endDate}
                         </Time>
                     )}
-                    {subscriptionExpiresSoon && (
+                    {isExpiring && (
                         <Tooltip
                             title={c('Info subscription').t`You can prevent expiry by reactivating the subscription`}
                             data-testid="periodEndWarning"
@@ -262,13 +97,34 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                     )}
                 </div>
             </TableCell>
+            <TableCell label={c('Title subscription').t`Price`} data-testid="planPriceId">
+                <div className="flex flex-column">
+                    <span>{getSimplePriceString(renewCurrency, price)}</span>
+
+                    {hasCoupon && <span className="color-weak text-sm">{c('Coupon').t`Coupon applied`}</span>}
+                </div>
+            </TableCell>
+            <TableCell label={c('Title subscription').t`Billing`} data-testid="billingTypeId">
+                <Badge type={billingType === 'prepaid' ? 'success' : 'info'} className="text-nowrap">
+                    {billingType === 'prepaid' ? c('Billing type').t`Prepaid` : c('Billing type').t`Billed at renewal`}
+                </Badge>
+            </TableCell>
             <TableCell data-testid="subscriptionActionsId">
-                {subscriptionExpiresSoon ? (
+                {showReactivate ? (
                     <DropdownActions size="small" list={reactivateAction} />
                 ) : (
-                    <div className="flex items-center">
-                        {renewalTextElement}
-                        {renewalTooltip}
+                    <div className="flex flex-column">
+                        {renewalText?.primary && (
+                            <div className="flex items-center">
+                                <span data-testid="renewalNotice">{renewalText?.primary}</span>
+                                {renewalTooltip}
+                            </div>
+                        )}
+                        {renewalText?.secondary && (
+                            <span data-testid="renewalNoticeSecondary" className="color-weak text-sm">
+                                {renewalText.secondary}
+                            </span>
+                        )}
                     </div>
                 )}
             </TableCell>
@@ -278,37 +134,41 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
 
 const SubscriptionsSection = () => {
     const [subscription, subscriptionLoading] = useSubscription();
+    const [user] = useUser();
+
     if (subscriptionLoading || !subscription) {
         return <Loader />;
     }
 
-    const subscriptions = [
-        subscription,
-        ...(isPaidSubscription(subscription) ? (subscription.SecondarySubscriptions ?? []) : []),
-    ];
+    // A free user has no paid subscriptions to list — render nothing rather than a perpetual loader.
+    if (!isPaidSubscription(subscription)) {
+        return null;
+    }
+
+    const allSubscriptions = getSubscriptionsArray(subscription);
+    const rows = getSubscriptionRows(user, allSubscriptions);
 
     return (
-        <SettingsSectionWide>
-            <div style={{ overflow: 'auto' }}>
-                <Table className="table-auto" responsive="cards">
-                    <TableHeader>
-                        <TableRow>
-                            <TableCell type="header">{c('Title subscription').t`Plan`}</TableCell>
-                            <TableCell type="header">{c('Title subscription').t`Status`}</TableCell>
-                            <TableCell type="header">{c('Title subscription').t`End date`}</TableCell>
-                            <TableCell type="header"> </TableCell>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody colSpan={4}>
-                        {subscriptions
-                            .filter((subscription) => isPaidSubscription(subscription))
-                            .map((subscription) => (
-                                <SubscriptionRow key={subscription.ID} subscription={subscription} />
-                            ))}
-                    </TableBody>
-                </Table>
-            </div>
-        </SettingsSectionWide>
+        <div style={{ overflow: 'auto' }}>
+            <Table className="table-auto" responsive="cards">
+                <TableHeader>
+                    <TableRow>
+                        <TableCell type="header">{c('Title subscription').t`Plan`}</TableCell>
+                        <TableCell type="header">{c('Title subscription').t`Status`}</TableCell>
+                        <TableCell type="header">{c('Title subscription').t`Start date`}</TableCell>
+                        <TableCell type="header">{c('Title subscription').t`End date`}</TableCell>
+                        <TableCell type="header">{c('Title subscription').t`Price`}</TableCell>
+                        <TableCell type="header">{c('Title subscription').t`Billing`}</TableCell>
+                        <TableCell type="header"> </TableCell>
+                    </TableRow>
+                </TableHeader>
+                <TableBody colSpan={7}>
+                    {rows.map((row) => (
+                        <SubscriptionRow key={row.id} row={row} />
+                    ))}
+                </TableBody>
+            </Table>
+        </div>
     );
 };
 export default SubscriptionsSection;

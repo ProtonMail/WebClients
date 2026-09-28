@@ -49,12 +49,17 @@ export interface Subscription {
     SecondarySubscriptions?: Subscription[];
     /**
      * The cycle of the next subscription term. It's introduced in P2-1435 to handle edge cases for users with variable
-     * cycle offers.
+     * cycle offers. Null on a trial, which has no next term priced yet — treat null as "same cycle as this term".
      */
-    RenewCycle: Cycle;
+    RenewCycle: Cycle | null;
 
     /**
-     * Relevant for upcoming subscriptions. They can be prepaid or unpaid.
+     * Only meaningful on an upcoming subscription. The active subscription always reports false, so never read this
+     * property off it — an active subscription always has an invoice.
+     *
+     * Prepaid means an invoice has been generated; the invoice itself doesn't need to be paid yet. Only two things
+     * have no invoice: an unpaid upcoming subscription (invoiced when it becomes active) and a trial (invoiced when
+     * it turns into a paid term).
      *
      * Example 1: user has 12m vpn2024 subscription and buys 24m vpn2024. User pays immediately. The created upcoming
      * subscription is prepaid.
