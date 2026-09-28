@@ -74,6 +74,7 @@ export const readProtonPassCSV = async (file: File, isGenericCSV: boolean = fals
             vaults: groupByVaults.map((items) => ({
                 name: getImportedVaultName(items[0].vault),
                 shareId: null,
+                folders: [],
                 items: items
                     .filter((item) => item.type !== 'alias')
                     .map((item) => {

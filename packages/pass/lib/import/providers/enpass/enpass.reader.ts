@@ -112,6 +112,7 @@ export const readEnpassData = async (file: File): Promise<ImportReaderResult> =>
             {
                 name: getImportedVaultName(),
                 shareId: null,
+                folders: [],
                 items: items
                     .flatMap<Maybe<ItemImportIntent>>((item) => {
                         const type = capitalize(item?.category ?? c('Label').t`Unknown`);
