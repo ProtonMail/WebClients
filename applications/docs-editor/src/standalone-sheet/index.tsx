@@ -13,6 +13,8 @@ import { createStandaloneSession } from './session'
 
 document.title = 'Standalone Sheet'
 
+const standaloneInitialization = { mode: 'existing' } as const
+
 function StandaloneSheet() {
   const { theme } = useEditorTheme()
   const [ready, setReady] = useState(false)
@@ -127,8 +129,8 @@ function StandaloneSheet() {
             setMigrationEditingLocked={setMigrationEditingLocked}
             isVersionHistoryView={false}
             isPublicMode={false}
-            editorInitializationConfig={undefined}
             onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
+            initialization={standaloneInitialization}
             updateLocalStateToLog={updateLocalStateToLog}
             shouldUseCustomYjsInitialization
           />

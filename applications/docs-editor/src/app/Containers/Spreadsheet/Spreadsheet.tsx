@@ -1,4 +1,3 @@
-import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
@@ -26,7 +25,14 @@ import { getSheetNameFromFilename } from './sheet-import-name'
 import type { SheetsDocumentAdapter } from './contract/SheetsDocumentAdapter'
 import type { SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
 import type { SheetsExportFormat } from './contract/SpreadsheetExportFormat'
-import { canSheetsConvertType, getSheetsImportMimeType } from './supported-sheets-import-types'
+import type { SheetsImportDataType, SheetsInitialization } from './contract/SheetsInitialization'
+
+const mimeTypesBySheetsImportDataType: Record<SheetsImportDataType, string> = {
+  csv: 'text/csv',
+  ods: 'application/vnd.oasis.opendocument.spreadsheet',
+  tsv: 'text/tab-separated-values',
+  xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+}
 
 export type SpreadsheetRef = {
   exportData: (format: SheetsExportFormat) => Promise<Uint8Array<ArrayBuffer>>
@@ -40,7 +46,7 @@ export type SpreadsheetProps = {
   docState: SheetsDocumentAdapter
   hidden: boolean
   onEditorReadyToReceiveUpdates: () => void
-  editorInitializationConfig: EditorInitializationConfig | undefined
+  initialization: SheetsInitialization
   isVersionHistoryView: boolean
   editingLocked: boolean
   setMigrationEditingLocked: (inProgress: boolean) => void
@@ -54,7 +60,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     docState,
     hidden,
     onEditorReadyToReceiveUpdates,
-    editorInitializationConfig,
+    initialization,
     isVersionHistoryView,
     editingLocked,
     setMigrationEditingLocked,
@@ -87,8 +93,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isViewOnlyMode = !canEdit || viewportWidth['<=small']
   const isReadonly = editingLocked || isVersionHistoryView || isViewOnlyMode
 
-  const isCreationOrConversion = !!editorInitializationConfig
-  const canRunMigration = !isVersionHistoryView && canEdit && !isCreationOrConversion
+  const canRunMigration = initialization.mode === 'existing' && !isVersionHistoryView && canEdit
 
   const handleYjsDriftDetected = useCallback(
     (result: SpreadsheetLocalYjsUpdateAuditResult, driftLogDetails: Record<string, unknown>) => {
@@ -132,7 +137,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     docState,
     functions,
     isReadonly,
-    isConversionFlow: editorInitializationConfig?.mode === 'conversion',
+    isConversionFlow: initialization.mode === 'conversion',
     pushPatches: storeSpreadsheetPatches,
     hasBasePatchesStored,
     isPatchesStorageEnabled: featureFlags.SheetsPatchesStorageEnabled,
@@ -235,7 +240,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     [calculateNow, docState, generateStatePatches, importExcelFile, state.yjsState, writeBasePatchIfNecessary],
   )
   useEffect(() => {
-    if (!editorInitializationConfig) {
+    if (initialization.mode === 'existing') {
       return
     }
     const setInitialVersionIfNotSet = () => {
@@ -244,16 +249,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         setInitialVersion()
       }
     }
-    if (
-      editorInitializationConfig.mode === 'conversion' &&
-      canSheetsConvertType(editorInitializationConfig.type.dataType) &&
-      !didConvertFromFile.current
-    ) {
+    if (initialization.mode === 'conversion' && !didConvertFromFile.current) {
       didConvertFromFile.current = true
-      const conversionDataType = editorInitializationConfig.type.dataType
-      const mimeType = getSheetsImportMimeType(conversionDataType)
-      const file = new File([editorInitializationConfig.data], `import.${conversionDataType}`, {
-        type: mimeType,
+      const conversionDataType = initialization.dataType
+      const file = new File([initialization.data], `import.${conversionDataType}`, {
+        type: mimeTypesBySheetsImportDataType[conversionDataType],
       })
       const isExcelFile = conversionDataType === 'xlsx'
       const isODSFile = conversionDataType === 'ods'
@@ -276,7 +276,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     } else {
       setInitialVersionIfNotSet()
     }
-  }, [docState, editorInitializationConfig, handleExcelFileImport, importCSVFile, setInitialVersion])
+  }, [docState, initialization, handleExcelFileImport, importCSVFile, setInitialVersion])
 
   // TODO: document this effect
   const { onCreateNewSheet, onRenameSheet, sheets } = state
@@ -284,8 +284,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   sheetsRef.current = sheets
   useEffect(() => {
     return subscribeToSheetImport((request: SpreadsheetImportRequest) => {
-      const isExcelFile = request.file.type === getSheetsImportMimeType('xlsx')
-      const isODSFile = request.file.type === getSheetsImportMimeType('ods')
+      const isExcelFile = request.file.type === mimeTypesBySheetsImportDataType.xlsx
+      const isODSFile = request.file.type === mimeTypesBySheetsImportDataType.ods
       if (isExcelFile || isODSFile) {
         void handleExcelFileImport(request.file, isExcelFile ? 'excel' : 'ods')
         return

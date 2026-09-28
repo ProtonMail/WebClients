@@ -35,7 +35,7 @@ import {
   type LexicalEditor,
   type SerializedEditorState,
 } from 'lexical'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useSyncedState } from '../Hooks/useSyncedState'
 import config from '../config'
 import debounce from 'lodash/debounce'
@@ -54,6 +54,7 @@ import DocsLayout from './DocsLayout'
 import { getDocsLayoutScrollContainer } from './docsLayoutUtils'
 import { SheetsAdapter } from './adapters/SheetsAdapter'
 import { StandaloneSheetsEditor, type SpreadsheetRef } from './Spreadsheet/public'
+import { toSheetsInitialization } from './adapters/sheetsInitializationAdapter'
 import SheetsLayout from './SheetsLayout'
 import { useEditorTheme } from '../Theme/EditorThemeProvider'
 import { DocsAdapter } from './adapters/DocsAdapter'
@@ -684,6 +685,11 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   )
 
   const isResolvingSheetsInitializationMode = documentType === 'sheet' && sheetsInitializationMode === 'resolving'
+  const hostEditorInitializationConfig = editorConfig.current?.editorInitializationConfig
+  const sheetsInitialization = useMemo(
+    () => toSheetsInitialization(hostEditorInitializationConfig),
+    [hostEditorInitializationConfig],
+  )
 
   if (!didSetInitialConfig || !editorConfig.current || !docState || isResolvingSheetsInitializationMode) {
     application.logger.debug('Attempting to render editor before it is ready', {
@@ -750,8 +756,6 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   }
 
   if (documentType === 'sheet') {
-    const editorInitializationConfig = editorConfig.current.editorInitializationConfig
-
     if (sheetsInitializationMode === 'after-initial-load' && !receivedEverythingFromRTS) {
       application.logger.info('Waiting for initial updates to be applied before mounting Sheets editor')
 
@@ -778,7 +782,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               docState={docState}
               hidden={editorHidden}
               onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
-              editorInitializationConfig={editorInitializationConfig}
+              initialization={sheetsInitialization}
               isVersionHistoryView={systemMode === EditorSystemMode.Revision}
               editingLocked={editingLocked || userMode === EditorUserMode.Preview}
               setMigrationEditingLocked={setMigrationEditingLocked}
