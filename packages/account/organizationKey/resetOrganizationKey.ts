@@ -4,11 +4,12 @@ import { createSelector } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import type { KeyReactivationRequest } from '@proton/shared/lib/keys';
 import {
     getIsMemberPendingOrgKeyResetUnprivatization,
+    getIsNonPrivateMemberSetup,
     getMemberHasOrgKeyResetPrivatization,
 } from '@proton/shared/lib/keys/memberHelper';
 import { getMemberHasAccessToOrgKey } from '@proton/shared/lib/organization/helper';
@@ -59,10 +60,12 @@ export interface RequestUnprivatizationResult {
  * Members that have to be converted to private before the organization key can be reset. This includes self: the
  * administrator running the flow is non-private just like anyone else, so their member token has to be re-encrypted
  * against the new organization key too. Privatizing self does not revoke the administrator's own session, so it does
- * not interrupt the reset.
+ * not interrupt the reset. Members who are not set up (e.g. VPN SSO users, or members who never finished setup) have
+ * no member token, so they are skipped because it won't be possible to request unprivatization for those users without
+ * first setting them up.
  */
 export const getMembersToPrivatizeForOrganizationKeyReset = (members: EnhancedMember[]) => {
-    return members.filter((member) => member.Private === MEMBER_PRIVATE.READABLE);
+    return members.filter(getIsNonPrivateMemberSetup);
 };
 
 export interface OrganizationKeyResetState {
