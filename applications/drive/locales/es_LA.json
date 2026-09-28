@@ -1371,6 +1371,9 @@
       ],
       "Maybe later": [
         "Más tarde"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "Action: Docs": {
@@ -4525,6 +4528,12 @@
       ],
       "A contact with this email address already exists": [
         "Ya existe un contacto con esta dirección de correo"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "La contraseña de respaldo no es correcta. Inténtelo de nuevo."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segunda contraseña no es correcta. Inténtelo de nuevo."
       ]
     },
     "error": {
@@ -8012,6 +8021,45 @@
       ],
       "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
         "Sus archivos fueron importados y cifrados con éxito desde Google Drive a ${ DRIVE_APP_NAME }."
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } solo usa este acceso para la importación. Google nunca tiene acceso a su cuenta de ${ BRAND_NAME }."
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Conectando a Google Drive y preparando la importación."
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Arrastre sus archivos y carpetas aquí o use el botón «Nuevo» para cargar"
+      ],
+      "Import your files and folders": [
+        "Importe sus archivos y carpetas"
+      ],
+      "Know when it's done": [
+        "Sepa cuándo está listo"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Luego, inicie sesión en su cuenta de Google y permita a ${ BRAND_NAME } acceder a Google Drive. Importaremos sus archivos y carpetas a ${ DRIVE_APP_NAME }."
+      ],
+      "Or import your files from": [
+        "O importe sus archivos desde"
+      ],
+      "Private and encrypted": [
+        "Privado y cifrado"
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Los copiaremos de Google Drive a ${ DRIVE_APP_NAME }."
+      ],
+      "We'll email you when your import is complete.": [
+        "Le enviaremos un correo electrónico cuando la importación se complete."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Le enviaremos un correo cuando la importación se complete. Sus archivos aparecerán en una carpeta en ${ DRIVE_APP_NAME }."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Sus archivos están cifrados y almacenados con seguridad en ${ DRIVE_APP_NAME }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Su Google Drive podría estar vacío o solo contiene archivos que no están soportados."
       ]
     },
     "info": {
@@ -11027,6 +11075,9 @@
       ],
       "Your subscription renews soon": [
         "Su suscripción se renueva pronto."
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunidad para obtener su primer mes de ${ plan } por este precio."
       ]
     },
     "Offer fearue": {
@@ -11073,6 +11124,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Alias ilimitados para proteger su identidad"
+      ],
+      "Short @pm.me address": [
+        "Dirección corta @pm.me"
       ]
     },
     "Onboarding": {
@@ -13346,6 +13400,9 @@
       ],
       "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
         "Leemos sus archivos una vez para copiarlos y luego ciframos cada uno con sus claves de ${ BRAND_NAME }."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importe sus archivos y carpetas de Google Drive y manténgalas privada en ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -14802,6 +14859,18 @@
       ],
       "Your import is starting": [
         "La importación está empezando"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch de Google Drive"
+      ],
+      "Import started": [
+        "Importación iniciada"
+      ],
+      "Preparing your import": [
+        "Preparando la importación"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Le damos la bienvenida a ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

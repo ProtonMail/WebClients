@@ -4261,6 +4261,12 @@
       ],
       "Something went wrong": [
         "Něco se pokazilo"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávné záložní heslo. Zkuste to prosím znovu."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávné druhé heslo. Zkuste to prosím znovu."
       ]
     },
     "error": {
@@ -7654,7 +7660,7 @@
         "Tyto soubory se zdají být prázdné:"
       ],
       "Upgrade to get more storage space": [
-        "Upgradujte tarif a získejte více úložného prostoru"
+        "Navyšte tarif a získejte více úložného prostoru"
       ],
       "Uploaded - file is empty": [
         "Nahráno – soubor je prázdný"
@@ -10665,7 +10671,7 @@
         "Z alba „${ albumName }“ bylo odebráno ${ removed } fotek"
       ],
       "Failed to load sharing details": [
-        "Nepodařilo se načíst podrobnosti o sdílení"
+        "Nepodařilo se načíst detaily sdílení"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
