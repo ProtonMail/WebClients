@@ -15,6 +15,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModals from '@proton/components/hooks/useModals';
 import {
     type ApplePayFlow,
+    getOfferedApplePayFlow,
     isApplePayQRFlowSupported,
     setOfferedApplePayFlow,
 } from '@proton/payments/core/apple-pay-support';
@@ -332,15 +333,20 @@ export const useApplePayDependencies = (
         onPaymentFailure,
         onVerificationCancelled,
         onVerificationSuccess,
+        onQrPendingModalClosed,
     }: {
         onPaymentFailure: () => void;
         onVerificationCancelled: () => void;
         onVerificationSuccess: () => void;
+        /** Closing the QR window emits no cancel event and leaves the Chargebee button blocked until re-initialized */
+        onQrPendingModalClosed: () => void;
     }
 ) => {
     const [isApplePayAvailable, setIsApplePayAvailable] = useState(false);
     const [hasApplePayFailedToMount, setHasApplePayFailedToMount] = useState(false);
     const { createNotification } = useNotifications();
+    const { createModal, removeModal } = useModals();
+    const modalIdRef = useRef<string | null>(null);
     const applePayCapabilitiesEnabled = useFlag('ApplePayCapabilities');
 
     /** Iframe-only: the check needs Apple's SDK, which the app's `script-src 'self'` forbids */
@@ -396,21 +402,54 @@ export const useApplePayDependencies = (
         return () => flagChanged.abort();
     }, [applePayCapabilitiesEnabled]);
 
+    const hideModal = () => {
+        if (!modalIdRef.current) {
+            return;
+        }
+
+        removeModal(modalIdRef.current);
+        modalIdRef.current = null;
+    };
+
+    const showQrPendingModal = () => {
+        hideModal();
+
+        modalIdRef.current = createModal(
+            <PendingValidationModal
+                type={PAYMENT_METHOD_TYPES.APPLE_PAY}
+                onClose={() => {
+                    hideModal();
+                    onVerificationCancelled();
+                    onQrPendingModalClosed();
+                }}
+            />
+        );
+    };
+
     const applePayModalHandles: ApplePayModalHandles = {
         onAuthorize: () => {
+            hideModal();
             onVerificationSuccess();
         },
-        onClick: () => {},
+        onClick: () => {
+            // the native Safari sheet is already modal
+            if (getOfferedApplePayFlow() === 'qr') {
+                showQrPendingModal();
+            }
+        },
         onFailure: (error?: any) => {
+            hideModal();
             onPaymentFailure();
             if (error) {
                 createNotification({ text: getChargebeeErrorMessage(error), type: 'error' });
             }
         },
         onCancel: () => {
+            hideModal();
             onVerificationCancelled();
         },
         onMountFailure: () => {
+            hideModal();
             setOfferedApplePayFlow(null);
             setHasApplePayFailedToMount(true);
         },
