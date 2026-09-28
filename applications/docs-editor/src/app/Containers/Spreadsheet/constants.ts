@@ -2,6 +2,7 @@ import { functionDescriptions } from '@rowsncolumns/functions'
 import FormulaParser from '@rowsncolumns/fast-formula-parser'
 import type { CanvasGridProps, CellFormat } from '@rowsncolumns/spreadsheet'
 import { getDefaultDateFormat, getLongDateFormat } from '@rowsncolumns/utils'
+import functionVisibility from './function-visibility.json'
 
 const CURRENCY_DEFAULT = 'USD'
 
@@ -163,13 +164,11 @@ export const DATE_PATTERN_EXAMPLE_VALUE = new Date('2008-09-26T15:59:00')
 export const DURATION_PATTERN_EXAMPLE_VALUE = 1.1458333
 
 const IMPLEMENTED_FUNCTION_NAMES = FormulaParser.getImplementedFunctionNames()
-const EXCLUDED_FUNCTION_DATATYPES = ['google']
-const EXCLUDED_FUNCTION_NAMES = ['webservice']
 export const FUNCTION_DESCRIPTIONS = functionDescriptions.filter(
   (fn) =>
     IMPLEMENTED_FUNCTION_NAMES.has(fn.title) &&
-    !EXCLUDED_FUNCTION_DATATYPES.includes(fn.datatype.toLowerCase()) &&
-    !EXCLUDED_FUNCTION_NAMES.includes(fn.title.toLowerCase()),
+    !functionVisibility.excludedDatatypes.includes(fn.datatype.toLowerCase()) &&
+    !functionVisibility.excludedNames.includes(fn.title.toLowerCase()),
 )
 
 export const GRID_SELECTION_THEME_PROPS = {
