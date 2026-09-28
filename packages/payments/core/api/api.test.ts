@@ -3,7 +3,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import { ADDON_NAMES, PLANS } from '../constants';
 import { SubscriptionPlatform } from '../subscription/constants';
 import type { Subscription } from '../subscription/interface';
-import { fetchPreviousSubscription, getSubscription } from './api';
+import { fetchPreviousSubscription, getPaymentsInit, getSubscription } from './api';
 
 describe('fetchPreviousSubscription', () => {
     const buildApi = (response: unknown) => jest.fn().mockResolvedValue(response) as unknown as Api;
@@ -226,5 +226,11 @@ describe('getSubscription', () => {
         const result = await getSubscription(api, undefined);
 
         expect(result.UpcomingSubscription?.ID).toBe('sub-upcoming');
+    });
+});
+
+describe('getPaymentsInit', () => {
+    it('builds GET payments/v5/init request', () => {
+        expect(getPaymentsInit()).toEqual({ url: 'payments/v5/init', method: 'get' });
     });
 });
