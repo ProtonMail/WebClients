@@ -111,7 +111,11 @@ const slice = createSlice({
         showPermissionsModal: (state, action: PayloadAction<{ modal: PermissionsModalType }>) => {
             state.uiModals.permissionsModal = action.payload.modal;
         },
-        resetDeviceManagement: () => deviceManagementInitialState,
+        resetActiveDevices: (state) => {
+            state.activeAudioOutputId = null;
+            state.activeCameraId = '';
+            state.activeMicrophoneId = '';
+        },
     },
 });
 
@@ -227,6 +231,7 @@ export const {
     setMediaInitializing,
     dismissPermissionsModal,
     showPermissionsModal,
+    resetActiveDevices,
 } = slice.actions;
 
 export const deviceManagementReducer = { deviceManagement: slice.reducer };
