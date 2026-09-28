@@ -9,7 +9,7 @@ import {
   $setSelection,
 } from 'lexical'
 import type { Logger } from '@proton/shared/lib/logs'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import { $insertListAsSuggestion } from './insertListAsSuggestion'
 import type { ListItemNode, ListNode } from '@lexical/list'
 import { $createListItemNode, $createListNode, $isListItemNode, $isListNode } from '@lexical/list'

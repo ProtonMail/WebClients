@@ -10,13 +10,13 @@ import {
   $isRangeSelection,
   SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
 } from 'lexical'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import { createRoot } from 'react-dom/client'
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import React from 'react'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
-import { ProtonContentEditable } from '../../../../ContentEditable/ProtonContentEditable'
+import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../../../Utils/react-test-utils'
 import { assertCondition } from '../Suggestions/TestUtils'
@@ -262,9 +262,7 @@ describe('TablePlugin', () => {
     rootElement.style.paddingLeft = '10px'
     rootElement.style.paddingRight = '10px'
 
-    await pasteTableHTML(
-      '<table><tr><td style="width: 40px">One</td><td style="width: 260px">Two</td></tr></table>',
-    )
+    await pasteTableHTML('<table><tr><td style="width: 40px">One</td><td style="width: 260px">Two</td></tr></table>')
 
     editor!.read(() => {
       const cells = $getTables()[0].getFirstChildOrThrow<TableRowNode>().getChildren<TableCellNode>()
