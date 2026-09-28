@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { InvoiceState } from '@proton/payments/core/constants';
 import type { Invoice } from '@proton/payments/core/interface';
 
-import Badge from '../../components/badge/Badge';
+import { Badge } from '../../components/badge/Badge';
 
 const TYPES = {
     [InvoiceState.Unpaid]: 'error',
@@ -11,6 +11,7 @@ const TYPES = {
     [InvoiceState.Void]: 'default',
     [InvoiceState.Billed]: 'origin',
     [InvoiceState.Writeoff]: 'default',
+    [InvoiceState.Posted]: 'info',
 } as const;
 
 const getStatesI18N = (invoiceState: InvoiceState) => {
@@ -25,6 +26,8 @@ const getStatesI18N = (invoiceState: InvoiceState) => {
             return c('Invoice state display as badge').t`Processing`;
         case InvoiceState.Writeoff:
             return c('Invoice state display as badge').t`Gifted`;
+        case InvoiceState.Posted:
+            return c('Invoice state display as badge').t`Open`;
         default:
             return '';
     }

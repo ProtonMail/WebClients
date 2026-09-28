@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useGetPaymentsInit } from '@proton/account/paymentsInit/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -13,6 +14,7 @@ import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, Invoice } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
+import { CacheType } from '@proton/redux-utilities/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import Field from '../../components/container/Field';
@@ -49,6 +51,7 @@ export interface Props {
 }
 
 const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
+    const getPaymentsInit = useGetPaymentsInit();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
@@ -75,6 +78,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
                 await Promise.all([
                     call(), // Update user.Delinquent to hide TopBanner
                     fetchInvoices(),
+                    getPaymentsInit({ cache: CacheType.None }),
                 ]);
                 rest.onClose?.();
                 createNotification({ text: c('Success').t`Invoice paid` });
