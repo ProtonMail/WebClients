@@ -4,7 +4,6 @@ import type { FieldProps } from 'formik';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Icon from '@proton/components/components/icon/Icon';
 import { IcCrossSmall } from '@proton/icons/icons/IcCrossSmall';
@@ -137,20 +136,22 @@ export const ItemIconField: FC<Props> = ({ className, field, form, icon, size = 
 
             {/* Also allow clearing a value which does not pass `getItemIconSrc` */}
             {field.value && !busy && (
-                <Button
-                    icon
-                    pill
-                    size="small"
-                    shape="solid"
-                    color="danger"
-                    className="absolute top-custom right-custom"
-                    style={{ '--top-custom': '-0.25rem', '--right-custom': '-0.25rem' }}
+                /** Small corner badge: a regular small `Button` would cover the whole icon */
+                <button
+                    type="button"
+                    className="absolute top-custom right-custom w-custom h-custom rounded-full bg-danger flex items-center justify-center"
+                    style={{
+                        '--top-custom': '-0.375rem',
+                        '--right-custom': '-0.375rem',
+                        '--w-custom': '1.125rem',
+                        '--h-custom': '1.125rem',
+                    }}
                     onClick={() => form.setFieldValue(field.name, undefined)}
                     title={c('Action').t`Remove custom icon`}
                     aria-label={c('Action').t`Remove custom icon`}
                 >
                     <IcCrossSmall size={3} />
-                </Button>
+                </button>
             )}
         </div>
     );
