@@ -1,6 +1,6 @@
-import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
+import type { SheetsActionType } from './contract/SheetsAction'
 import type { SheetsLogger } from './contract/SheetsLogger'
 import type { SheetsPatchCategory } from './contract/SheetsPatch'
 import type { SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
