@@ -369,7 +369,10 @@ export const BottomBar = memo(function BottomBar(props: BottomBarProps) {
   const { featureFlags } = useSheetsDependencies()
 
   return (
-    <div {...props} className="border-weak bg-weak flex items-center gap-2.5 border-t pl-3 pr-14 print:hidden">
+    <div
+      {...props}
+      className="flex items-center gap-2.5 border-t border-[--border-weak] bg-[--background-weak] pl-3 pr-14 print:hidden"
+    >
       <SheetSwitcher />
       <SheetTabs />
       <div className="shrink-0 py-0.5 pl-2.5 pr-[3.125rem]">
