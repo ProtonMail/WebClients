@@ -30,7 +30,7 @@ import { useMemo, useState } from 'react'
 import type { CellInterface } from '@rowsncolumns/grid'
 import { Direction, isCellWithinBounds, isEqualCells, selectionFromActiveCell } from '@rowsncolumns/grid'
 import * as Ariakit from '@ariakit/react'
-import { SheetsActions, type SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import { SheetsActions, type SheetsActionType } from './contract/SheetsAction'
 
 type PatternSpec = {
   type: NonNullable<CellFormat['numberFormat']>['type']
