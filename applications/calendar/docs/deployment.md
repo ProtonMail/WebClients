@@ -26,9 +26,13 @@ ArgoCD takes care of orchestrating the deployment process, promoting a new Docke
 
 Each deployment is defined as an `Application` in ArgoCD, the UI helps understanding how many pods are running for a give env and which Docker image is used by the pods.
 
-- ArgoCD application for [Alpha](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-alpha?view=tree&orphaned=false&resource=)
-- ArgoCD application for [Beta](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-beta?view=tree&orphaned=false&resource=)
-- ArgoCD application for [Live](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-live?view=tree&orphaned=false&resource=)
+The list of ArgoCD and Argo Rollout URLs for every cluster is maintained in the [inbox K8s stacks README](https://gitlab.protontech.ch/kubernetes/stacks/inbox/-/blob/main/README.md?ref_type=heads).
+
+| Environment | fra (`kapefra1a`) | osl (`kapeosl1a`) | zur (`kapezur1a`) |
+| --- | --- | --- | --- |
+| Alpha | [frontend-calendar-alpha](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-calendar-alpha?view=tree) | [frontend-calendar-alpha](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-calendar-alpha?view=tree) | [frontend-calendar-alpha](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-alpha?view=tree) |
+| Beta | [frontend-calendar-beta](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-calendar-beta?view=tree) | [frontend-calendar-beta](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-calendar-beta?view=tree) | [frontend-calendar-beta](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-beta?view=tree) |
+| Live | [frontend-calendar-live](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-calendar-live?view=tree) | [frontend-calendar-live](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-calendar-live?view=tree) | [frontend-calendar-live](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-live?view=tree) |
 
 ## Part 4 - Argo Rollout
 
@@ -36,9 +40,13 @@ As the name suggests, Argo Rollout focuses on the rollout process of a new deplo
 
 Argo rollout provides also the capability of rolling back to any previous version, without having to change any code.
 
-- Argo Rollout for [Alpha](https://rollouts-kapezur1a.protontech.ch/rollouts/rollout/inbox-frontend-calendar-alpha/frontend-calendar-alpha-apache)
-- Argo Rollout for [Beta](https://rollouts-kapezur1a.protontech.ch/rollouts/rollout/inbox-frontend-calendar-beta/frontend-calendar-beta-apache)
-- Argo Rollout for [Live](https://rollouts-kapezur1a.protontech.ch/rollouts/rollout/inbox-frontend-calendar-live/frontend-calendar-live-apache)
+| Environment | fra (`kapefra1a`) | osl (`kapeosl1a`) | zur (`kapezur1a`) |
+| --- | --- | --- | --- |
+| Alpha | [frontend-calendar-alpha-apache](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-calendar-alpha?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-calendar-alpha%2Ffrontend-calendar-alpha-apache%2F0&tab=extension-0) | [frontend-calendar-alpha-apache](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-calendar-alpha?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-calendar-alpha%2Ffrontend-calendar-alpha-apache%2F0&tab=extension-0) | [frontend-calendar-alpha-apache](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-alpha?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-calendar-alpha%2Ffrontend-calendar-alpha-apache%2F0&tab=extension-0) |
+| Beta | [frontend-calendar-beta-apache](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-calendar-beta?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-calendar-beta%2Ffrontend-calendar-beta-apache%2F0&tab=extension-0) | [frontend-calendar-beta-apache](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-calendar-beta?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-calendar-beta%2Ffrontend-calendar-beta-apache%2F0&tab=extension-0) | [frontend-calendar-beta-apache](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-beta?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-calendar-beta%2Ffrontend-calendar-beta-apache%2F0&tab=extension-0) |
+| Live | [frontend-calendar-live-apache](https://argocd-kapefra1a.protontech.ch/applications/argocd/frontend-calendar-live?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-calendar-live%2Ffrontend-calendar-live-apache%2F0&tab=extension-0) | [frontend-calendar-live-apache](https://argocd-kapeosl1a.protontech.ch/applications/argocd/frontend-calendar-live?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-calendar-live%2Ffrontend-calendar-live-apache%2F0&tab=extension-0) | [frontend-calendar-live-apache](https://argocd-kapezur1a.protontech.ch/applications/argocd/frontend-calendar-live?view=tree&node=argoproj.io%2FRollout%2Finbox-frontend-calendar-live%2Ffrontend-calendar-live-apache%2F0&tab=extension-0) |
+
+If you see `Not authorized` when opening an Argo Rollout page, delete the cookies and log in again.
 
 ## Part 5 - Grafana
 
