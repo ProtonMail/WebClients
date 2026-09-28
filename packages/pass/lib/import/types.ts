@@ -134,6 +134,15 @@ export type ImportReaderPayload = {
     onPassphrase: () => Promise<string>;
 };
 
+export type ImportFolder = {
+    /** Local folder id, unique within a single import payload.
+     * Resolved to a real Pass `FolderID` by the import saga. */
+    id: string;
+    name: string;
+    /** References another `ImportFolder.id`, `null` for a vault root folder */
+    parentId: MaybeNull<string>;
+};
+
 export type ImportVault = {
     shareId: MaybeNull<string> /* `shareId: null` => new vault */;
     name: string;

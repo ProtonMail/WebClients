@@ -76,3 +76,22 @@ export const getFolderScope = (
     if (!folderId) return search ? undefined : ROOT_SCOPE;
     return search ? getFolderAndDescendantIds(shareFolders, folderId) : new Set([folderId]);
 };
+
+export type FolderLimits = { maxCountPerVault: number; maxChildren: number; maxDepth: number };
+
+export type FolderLimitReason = 'count' | 'children' | 'depth';
+
+/** Placement of a folder about to be created: how many folders the vault already
+ * has, how many siblings the target parent already has, and the parent's own
+ * depth (e.g 0 for the vault root, 1 a top-level folder). */
+export type FolderPlacement = { total: number; siblings: number; parentDepth: number };
+
+export const getFolderLimitReason = (
+    { total, siblings, parentDepth }: FolderPlacement,
+    { maxCountPerVault, maxChildren, maxDepth }: FolderLimits
+): MaybeNull<FolderLimitReason> => {
+    if (total >= maxCountPerVault) return 'count';
+    if (siblings >= maxChildren) return 'children';
+    if (parentDepth >= maxDepth) return 'depth';
+    return null;
+};
