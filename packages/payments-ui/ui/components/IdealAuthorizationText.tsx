@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { BRAND_NAME, IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
+import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 const getIdealAuthorizationText = () =>
     c('Payments.iDEAL')

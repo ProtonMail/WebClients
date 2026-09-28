@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import {
     type PaymentIntent,
+    type SetIdealPaymentIntentPayload,
     chargebeeValidationErrorName,
     isMessageBusResponseFailure,
 } from '@proton/chargebee/lib/types';
@@ -23,6 +24,8 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 const ACCOUNT_HOLDER_NAME_DEBOUNCE_MS = 250;
+
+type SentIdealPaymentIntent = Omit<SetIdealPaymentIntentPayload, 'paymentIntent'>;
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
@@ -59,6 +62,7 @@ export type ChargebeeIdealProcessorHook = Omit<PaymentProcessorHook, keyof Overr
     accountHolderNameError: string;
     accountHolderNameMissing: boolean;
     touchAccountHolderName: () => void;
+    setButtonLabel: (buttonLabel: string) => void;
     readyToPay: boolean;
 } & Overrides;
 
@@ -85,7 +89,8 @@ export const useChargebeeIdeal = (
 
     const [accountHolderName, setAccountHolderName] = useState('');
     const [accountHolderNameTouched, setAccountHolderNameTouched] = useState(false);
-    const [nameSentToIframe, setNameSentToIframe] = useState<string | null>(null);
+    const [buttonLabel, setButtonLabel] = useState<string>();
+    const [sentToIframe, setSentToIframe] = useState<SentIdealPaymentIntent | null>(null);
     const [paymentIntentFetched, setPaymentIntentFetched] = useState(false);
 
     const trimmedAccountHolderName = accountHolderName.trim();
@@ -101,7 +106,7 @@ export const useChargebeeIdeal = (
         fetchedPaymentTokenRef.current = null;
         paymentIntentRef.current = null;
         removeEventListeners();
-        setNameSentToIframe(null);
+        setSentToIframe(null);
         setPaymentIntentFetched(false);
     };
 
@@ -133,26 +138,28 @@ export const useChargebeeIdeal = (
         });
     };
 
-    const sendIdealPaymentIntent = async (name: string, abortSignal: AbortSignal) => {
+    const sendIdealPaymentIntent = async (payload: SentIdealPaymentIntent, abortSignal: AbortSignal) => {
         const paymentIntent = paymentIntentRef.current;
         if (!paymentIntent) {
             throw new Error('CB ideal: payment token not fetched');
         }
 
-        const userName = name.trim();
         const resetCountBeforeSend = resetCountRef.current;
-        await handles.setIdealPaymentIntent({ paymentIntent, userName }, abortSignal);
+        await handles.setIdealPaymentIntent({ paymentIntent, ...payload }, abortSignal);
 
         if (abortSignal.aborted || resetCountBeforeSend !== resetCountRef.current) {
             return;
         }
 
         setInitializationError(false);
-        setNameSentToIframe(userName);
+        setSentToIframe(payload);
     };
 
+    const syncedToIframe =
+        sentToIframe?.userName === trimmedAccountHolderName && sentToIframe?.buttonLabel === buttonLabel;
+
     useEffect(() => {
-        if (!paymentIntentFetched || trimmedAccountHolderName === '' || nameSentToIframe === trimmedAccountHolderName) {
+        if (!paymentIntentFetched || trimmedAccountHolderName === '' || syncedToIframe) {
             return;
         }
 
@@ -162,7 +169,8 @@ export const useChargebeeIdeal = (
                 return;
             }
 
-            void sendIdealPaymentIntent(trimmedAccountHolderName, abortController.signal).catch(() => {
+            const payload = { userName: trimmedAccountHolderName, buttonLabel };
+            void sendIdealPaymentIntent(payload, abortController.signal).catch(() => {
                 if (!abortController.signal.aborted) {
                     setInitializationError(true);
                 }
@@ -173,7 +181,7 @@ export const useChargebeeIdeal = (
             clearTimeout(timeout);
             abortController.abort();
         };
-    }, [trimmedAccountHolderName, nameSentToIframe, paymentIntentFetched]);
+    }, [trimmedAccountHolderName, buttonLabel, syncedToIframe, paymentIntentFetched]);
 
     const subscribeToIdealEvents = (abortSignal: AbortSignal) => {
         const token = fetchedPaymentTokenRef.current;
@@ -258,7 +266,8 @@ export const useChargebeeIdeal = (
         accountHolderNameError: accountHolderNameTouched ? requiredValidator(trimmedAccountHolderName) : '',
         accountHolderNameMissing: trimmedAccountHolderName === '',
         touchAccountHolderName: () => setAccountHolderNameTouched(true),
-        readyToPay: trimmedAccountHolderName !== '' && nameSentToIframe === trimmedAccountHolderName,
+        setButtonLabel,
+        readyToPay: trimmedAccountHolderName !== '' && syncedToIframe,
         userInitiatedProcessing: false,
         meta: {
             type: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
