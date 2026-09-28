@@ -13,7 +13,7 @@ export const DropdownPopover = forwardRef<HTMLDivElement, Ariakit.RoleProps>(fun
       ref={ref}
       {...props}
       className={clsx(
-        'border-weak bg-norm z-10 max-h-[--popover-available-height] max-w-[--popover-available-width] overflow-auto overscroll-contain rounded-[.5rem] border py-2 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] focus:outline-none',
+        'z-10 max-h-[--popover-available-height] max-w-[--popover-available-width] overflow-auto overscroll-contain rounded-[.5rem] border border-[--border-weak] bg-[--background-norm] py-2 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] focus:outline-none',
         props.className,
       )}
     />
@@ -128,7 +128,11 @@ interface DropdownSeparatorProps extends Ariakit.RoleProps {}
 export const DropdownSeparator = forwardRef<HTMLHRElement, DropdownSeparatorProps>(
   function DropdownSeparator(props, ref) {
     return (
-      <Ariakit.Role ref={ref} {...props} className={clsx('border-weak my-[.4375rem] h-px border-t', props.className)} />
+      <Ariakit.Role
+        ref={ref}
+        {...props}
+        className={clsx('my-[.4375rem] h-px border-t border-[--border-weak]', props.className)}
+      />
     )
   },
 )
@@ -149,7 +153,10 @@ export const DropdownGroup = forwardRef<HTMLDivElement, DropdownGroupProps>(func
     <Ariakit.Role
       ref={ref}
       {...props}
-      className={clsx(bottomSeparator && 'border-weak mb-[.4375rem] border-b pb-[.4375rem]', props.className)}
+      className={clsx(
+        bottomSeparator && 'mb-[.4375rem] border-b border-[--border-weak] pb-[.4375rem]',
+        props.className,
+      )}
     />
   )
 })

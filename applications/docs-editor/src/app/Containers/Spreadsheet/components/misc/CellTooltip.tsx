@@ -121,7 +121,7 @@ export function CellTooltip({
         {(content || contentTitle) && (
           <div
             className={clsx(
-              'bg-norm grid grid-cols-[1rem_1fr] gap-x-1.5 gap-y-2.5 border-l-2 border-[#DC3251] p-2 pr-2.5',
+              'grid grid-cols-[1rem_1fr] gap-x-1.5 gap-y-2.5 border-l-2 border-[#DC3251] bg-[--background-norm] p-2 pr-2.5',
               content ? 'grid-rows-[auto_1fr]' : 'grid-rows-[auto]',
             )}
           >
@@ -131,10 +131,12 @@ export function CellTooltip({
           </div>
         )}
         {customContent && (
-          <div className="bg-norm flex items-center gap-4 border border-[#239ECE] p-2 pr-2.5">{customContent}</div>
+          <div className="flex items-center gap-4 border border-[#239ECE] bg-[--background-norm] p-2 pr-2.5">
+            {customContent}
+          </div>
         )}
         {(note || noteEditorCell) && (
-          <div className="bg-norm grid grid-cols-[1rem_1fr] grid-rows-[auto_1fr] gap-x-1.5 gap-y-2.5 border-l-2 border-[#F27D00] p-2 pb-1 pr-1">
+          <div className="grid grid-cols-[1rem_1fr] grid-rows-[auto_1fr] gap-x-1.5 gap-y-2.5 border-l-2 border-[#F27D00] bg-[--background-norm] p-2 pb-1 pr-1">
             <Icon data={Icons.note} className="self-center text-[#F27D00]" />
             <div className="text-xs font-semibold text-[#F27D00]">{s('Note')}</div>
             <NoteEditor
@@ -242,7 +244,7 @@ function LinkInfo({
   }, [cell, onRequestCloseNote, openInsertLinkDialog])
 
   return (
-    <div className="bg-norm grid grid-cols-[1rem_1fr] gap-1.5 border-l-2 border-[#239ECE] p-2.5 pl-2">
+    <div className="grid grid-cols-[1rem_1fr] gap-1.5 border-l-2 border-[#239ECE] bg-[--background-norm] p-2.5 pl-2">
       <Icon data={Icons.globe} className="place-self-center text-[#239ECE]" />
       <div className="flex items-center justify-between gap-4 text-[#239ECE]">
         <a
