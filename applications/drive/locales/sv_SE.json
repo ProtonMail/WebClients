@@ -4479,6 +4479,12 @@
       ],
       "Cannot move item without a valid name, please rename the item first": [
         "Kan inte, flytta objekt utan giltigt namn, byt namn på objektet först"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Felaktigt reservlösenord. Försök igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Felaktigt andra lösenord. Försök igen."
       ]
     },
     "error": {
@@ -14627,6 +14633,9 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Välkommen till ${ DRIVE_APP_NAME }"
+      ],
+      "Preparing your import": [
+        "Förbereder din import"
       ]
     },
     "Today icon tooltip in mini calendar": {
