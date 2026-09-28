@@ -1,9 +1,12 @@
+import type { ReactNode } from 'react';
 import { useMemo } from 'react';
 
 import { format } from 'date-fns';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
+import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Info from '@proton/components/components/link/Info';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -18,18 +21,28 @@ import {
     selectMlsGroupState,
     selectRoomName,
 } from '@proton/meet/store/slices/meetingInfo';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { KeyRotationLog } from '@proton/meet/types/types';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { parseMeetingLink } from '@proton/shared/lib/meet/parseMeetingLink';
 import { useFlag } from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
+import { MismatchStage, useMismatchStage } from '../../hooks/useMismatchStage';
 
 import './MeetingDetails.scss';
+
+const ValueWithInfo = ({ value, info }: { value: ReactNode; info: string }) => (
+    <span className="flex items-center justify-space-between gap-2">
+        <span className="text-ellipsis">{value}</span>
+        <Info title={info} className="shrink-0" />
+    </span>
+);
 
 export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting }) => {
     const dispatch = useMeetDispatch();
@@ -44,6 +57,24 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     const instantMeeting = useMeetSelector(selectInstantMeeting);
 
     const roomName = useMeetSelector(selectRoomName);
+
+    const participantCount = useMeetSelector(selectTotalParticipantCount);
+    const mlsMemberCount = mlsGroupState?.memberCount ?? 0;
+    const mismatchStage = useMismatchStage();
+    // translator: 8 members
+    const mlsMemberCountText = c('Info').ngettext(
+        msgid`${mlsMemberCount} member`,
+        `${mlsMemberCount} members`,
+        mlsMemberCount
+    );
+    // translator: 7 participants are connected, while the secure group has 8 members. This may happen temporarily after someone joins or leaves.
+    const mlsMismatchText = c('Info').ngettext(
+        msgid`${participantCount} participant is connected, while the secure group has ${mlsMemberCountText}. This may happen temporarily after someone joins or leaves.`,
+        `${participantCount} participants are connected, while the secure group has ${mlsMemberCountText}. This may happen temporarily after someone joins or leaves.`,
+        participantCount
+    );
+    const participantsCountMismatchWarning = c('Info')
+        .t`Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.`;
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
@@ -181,14 +212,30 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                         </button>
                                     </TableCell>
                                 </TableRow>
+                                <TableRow>
+                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
+                                        'Title'
+                                    ).t`Participants`}</TableCell>
+                                    <TableCell>
+                                        <ValueWithInfo
+                                            value={participantCount}
+                                            info={c('Tooltip').t`People currently connected to the meeting`}
+                                        />
+                                    </TableCell>
+                                </TableRow>
                                 {mlsGroupState.memberCount !== null && (
                                     <TableRow>
                                         <TableCell
                                             type="header"
                                             scope="row"
                                             className="align-top color-weak w-1/3 pl-0"
-                                        >{c('Title').t`Participants`}</TableCell>
-                                        <TableCell className="text-ellipsis">{mlsGroupState.memberCount}</TableCell>
+                                        >{c('Title').t`MLS members`}</TableCell>
+                                        <TableCell>
+                                            <ValueWithInfo
+                                                value={mlsGroupState.memberCount}
+                                                info={c('Tooltip').t`People included in meeting's MLS group`}
+                                            />
+                                        </TableCell>
                                     </TableRow>
                                 )}
                                 <TableRow>
@@ -199,6 +246,23 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                 </TableRow>
                             </TableBody>
                         </Table>
+                    )}
+                    {mismatchStage !== MismatchStage.Hidden && (
+                        <Card
+                            bordered={false}
+                            background={false}
+                            className={clsx(
+                                'meeting-count-mismatch-card mt-5',
+                                mismatchStage === MismatchStage.Warning && 'meeting-count-mismatch-card--warning'
+                            )}
+                        >
+                            <span className="color-norm">{c('Title').t`Participant counts don’t match`}</span>
+                            <p className="color-weak mb-0">
+                                {mismatchStage === MismatchStage.Warning
+                                    ? participantsCountMismatchWarning
+                                    : mlsMismatchText}
+                            </p>
+                        </Card>
                     )}
                 </div>
 
