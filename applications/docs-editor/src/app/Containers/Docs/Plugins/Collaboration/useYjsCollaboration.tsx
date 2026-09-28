@@ -7,9 +7,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Doc, Transaction, YEvent } from 'yjs'
 import { UndoManager } from 'yjs'
 
-import { TranslatedResult, type EditorInitializationConfig } from '@proton/docs-shared'
+import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { initializeEditorAccordingToConfigIfRootIsEmpty } from './initializeEditor'
-import type { EditorLoadResult } from '../../../../Lib/EditorLoadResult'
 import { syncCursorPositions } from './syncCursorPositions'
 
 /**
@@ -22,7 +21,8 @@ export function useYjsCollaboration(
   docMap: Map<string, Doc>,
   name: string,
   color: string,
-  onLoadResult: EditorLoadResult,
+  onEditorReadyToReceiveUpdates: () => void,
+  onEditorLoadError: (message: string) => void,
   cursorsContainer: HTMLElement | null,
   editorInitializationConfig?: EditorInitializationConfig,
   awarenessData = {},
@@ -105,11 +105,15 @@ export function useYjsCollaboration(
         void initializeEditorAccordingToConfigIfRootIsEmpty(editor, binding, editorInitializationConfig).then(
           (result) => {
             didInitializeEditor.current = true
-            onLoadResult(result)
+            if (result.isFailed()) {
+              onEditorLoadError(result.getTranslatedError())
+            } else {
+              onEditorReadyToReceiveUpdates()
+            }
           },
         )
       } else {
-        onLoadResult(TranslatedResult.ok())
+        onEditorReadyToReceiveUpdates()
       }
       didPostReadyEvent.current = true
     }
@@ -121,7 +125,19 @@ export function useYjsCollaboration(
       removeListener()
       window.removeEventListener('resize', onWindowResize)
     }
-  }, [binding, color, docMap, editor, id, editorInitializationConfig, name, provider, onLoadResult, awarenessData])
+  }, [
+    binding,
+    color,
+    docMap,
+    editor,
+    id,
+    editorInitializationConfig,
+    name,
+    provider,
+    onEditorReadyToReceiveUpdates,
+    onEditorLoadError,
+    awarenessData,
+  ])
 
   binding.cursorsContainer = cursorsContainer
 
