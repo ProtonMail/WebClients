@@ -96,6 +96,11 @@ const stringFeedbackSurveyOptions: RawFeedbackSurveyOptions[] = [
         disabled: false,
         category: 'friends_family',
     },
+    {
+        value: 'Twitch',
+        category: 'social_media',
+        content: { label: () => 'Twitch' },
+    },
 ] as const;
 
 export const getFeedbackSurveyOptions = (): RawFeedbackSurveyOptions[] => [
