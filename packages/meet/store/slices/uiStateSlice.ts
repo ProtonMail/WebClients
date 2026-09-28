@@ -49,6 +49,8 @@ interface UIState {
     noDeviceDetected: PermissionPromptStatus;
     participantListTab: ParticipantListTabs;
     chatFocusedMessageId: string | null;
+    participantCountMismatchSince: number | null;
+    participantCountMismatchBannerDismissed: boolean;
 }
 
 const initialState: UIState = {
@@ -75,6 +77,8 @@ const initialState: UIState = {
     noDeviceDetected: PermissionPromptStatus.CLOSED,
     participantListTab: ParticipantListTabs.AllParticipants,
     chatFocusedMessageId: null,
+    participantCountMismatchSince: null,
+    participantCountMismatchBannerDismissed: false,
 };
 
 const slice = createSlice({
@@ -112,6 +116,13 @@ const slice = createSlice({
         clearChatFocusedMessage: (state) => {
             state.chatFocusedMessageId = null;
         },
+        openSideBar: (state, action: PayloadAction<MeetingSideBars>) => {
+            Object.keys(state.sideBarState).forEach((key) => {
+                state.sideBarState[key as MeetingSideBars] = false;
+            });
+
+            state.sideBarState[action.payload] = true;
+        },
         closeSideBar: (state, action: PayloadAction<MeetingSideBars>) => {
             state.sideBarState[action.payload] = false;
         },
@@ -148,6 +159,14 @@ const slice = createSlice({
         setParticipantListTab: (state, action: PayloadAction<ParticipantListTabs>) => {
             state.participantListTab = action.payload;
         },
+        setParticipantCountMismatchSince: (state, action: PayloadAction<number | null>) => {
+            state.participantCountMismatchSince = action.payload;
+            // A dismissal only covers the mismatch it was made for, so a later one is surfaced again.
+            state.participantCountMismatchBannerDismissed = false;
+        },
+        dismissParticipantCountMismatchBanner: (state) => {
+            state.participantCountMismatchBannerDismissed = true;
+        },
         openWaitingRoomSideBar: (state) => {
             Object.keys(state.sideBarState).forEach((key) => {
                 state.sideBarState[key as MeetingSideBars] = false;
@@ -165,6 +184,8 @@ const slice = createSlice({
             state.noDeviceDetected = initialState.noDeviceDetected;
             state.participantListTab = initialState.participantListTab;
             state.chatFocusedMessageId = initialState.chatFocusedMessageId;
+            state.participantCountMismatchSince = initialState.participantCountMismatchSince;
+            state.participantCountMismatchBannerDismissed = initialState.participantCountMismatchBannerDismissed;
         },
     },
 });
@@ -177,11 +198,14 @@ export const {
     openChatAtMessage,
     clearChatFocusedMessage,
     setParticipantListTab,
+    openSideBar,
     openWaitingRoomSideBar,
     togglePopupState,
     setPopupStateValue,
     setPermissionPromptStatus,
     setNoDeviceDetected,
+    setParticipantCountMismatchSince,
+    dismissParticipantCountMismatchBanner,
     resetUiState,
 } = slice.actions;
 
@@ -195,6 +219,9 @@ export const selectNoDeviceDetected = (state: MeetState) => state.uiState.noDevi
 export const selectShowDuration = (state: MeetState) => state.uiState.showDuration;
 export const selectParticipantListTab = (state: MeetState) => state.uiState.participantListTab;
 export const selectChatFocusedMessageId = (state: MeetState) => state.uiState.chatFocusedMessageId;
+export const selectParticipantCountMismatchSince = (state: MeetState) => state.uiState.participantCountMismatchSince;
+export const selectParticipantCountMismatchBannerDismissed = (state: MeetState) =>
+    state.uiState.participantCountMismatchBannerDismissed;
 export const selectIsSideBarOpen = (state: MeetState) =>
     Object.values(state.uiState.sideBarState).some((value) => value);
 
