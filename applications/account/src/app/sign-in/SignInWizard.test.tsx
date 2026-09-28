@@ -2,7 +2,7 @@ import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import { fromCallback, fromPromise } from 'xstate';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
-import { TOTPError } from '@proton/shared/lib/authentication/error';
+import { SecondPasswordError, TOTPError } from '@proton/shared/lib/authentication/error';
 import type { KeySalt, User } from '@proton/shared/lib/interfaces';
 
 import type { AuthSession } from '../content/authSession';
@@ -167,10 +167,17 @@ const renderSignInOnSSO = ({
 
 type PasswordAccountActors = NonNullable<Parameters<typeof passwordAccountStateMachine.provide>[0]['actors']>;
 
-/** Signs in with a password account that has TOTP two-factor and the given recovery methods. */
-const renderSignInWithTwoFactor = (
+/** A password account with TOTP two-factor, the default for `renderPasswordSignIn`. */
+const TWO_FACTOR_AUTH_TYPES: CreatedAuth['authTypes'] = {
+    twoFactor: { enabled: true, totp: true, fido2: false },
+    unlock: false,
+};
+
+/** Signs in with a password account with these auth types (by default TOTP two-factor) and recovery methods. */
+const renderPasswordSignIn = (
     recoveryMethods: { email?: boolean; phone?: boolean; phrase?: boolean },
-    passwordAccountActors: PasswordAccountActors = {}
+    passwordAccountActors: PasswordAccountActors = {},
+    authTypes: CreatedAuth['authTypes'] = TWO_FACTOR_AUTH_TYPES
 ) => {
     const passwordAuth = {
         credentials: {
@@ -204,7 +211,7 @@ const renderSignInWithTwoFactor = (
             createAuthState: fromPromise(() =>
                 Promise.resolve<CreatedAuth>({
                     auth: passwordAuth,
-                    authTypes: { twoFactor: { enabled: true, totp: true, fido2: false }, unlock: false },
+                    authTypes,
                 })
             ),
         },
@@ -257,7 +264,7 @@ describe('SignInWizard', () => {
 
     it('shows a wrong two-factor code under the code field, without a notification', async () => {
         mockCreateNotification.mockClear();
-        renderSignInWithTwoFactor(
+        renderPasswordSignIn(
             {},
             { verifyTwoFactor: fromPromise(() => Promise.reject(new TOTPError('Incorrect code'))) }
         );
@@ -269,6 +276,30 @@ describe('SignInWizard', () => {
         // Typing a new code clears it
         fireEvent.change(screen.getAllByRole('textbox')[0], { target: { value: '9' } });
         expect(screen.queryByText('Incorrect code')).not.toBeInTheDocument();
+    });
+
+    it('shows a wrong second password under the field, without a notification', async () => {
+        mockCreateNotification.mockClear();
+        renderPasswordSignIn(
+            {},
+            {
+                loadAccount: fromPromise(async () => ({
+                    user: { Keys: [{}] } as unknown as User,
+                    salts: [] as KeySalt[],
+                })),
+                unlockKeys: fromPromise(() => Promise.reject(new SecondPasswordError())),
+            },
+            { twoFactor: { enabled: false, totp: false, fido2: false }, unlock: true }
+        );
+        fireEvent.change(await screen.findByLabelText('Second password'), { target: { value: 'wrong' } });
+        fireEvent.click(screen.getByRole('button', { name: 'Unlock' }));
+        expect(await screen.findByText('Incorrect second password. Please try again.')).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Unlock your data' })).toBeInTheDocument();
+        expect(mockCreateNotification).not.toHaveBeenCalled();
+
+        // Typing a new password clears it
+        fireEvent.change(screen.getByLabelText('Second password'), { target: { value: 'another' } });
+        expect(screen.queryByText('Incorrect second password. Please try again.')).not.toBeInTheDocument();
     });
 
     it('keeps the back button on the auto password step once the password is accepted, and ignores it', async () => {
@@ -322,7 +353,7 @@ describe('SignInWizard', () => {
 
     describe('lost two-factor', () => {
         it('opens the backup codes from the two-factor screen', async () => {
-            renderSignInWithTwoFactor({});
+            renderPasswordSignIn({});
             expect(await screen.findByText('Two-factor authentication')).toBeInTheDocument();
             await openLostTwoFactor();
             expectLost2FAFrame('Use backup recovery code');
@@ -330,7 +361,7 @@ describe('SignInWizard', () => {
         });
 
         it('verifies with the recovery email', async () => {
-            renderSignInWithTwoFactor({ email: true });
+            renderPasswordSignIn({ email: true });
             await openLostTwoFactor();
             skipBackupCodes();
             expect(await screen.findByText('Disable two-factor authentication?')).toBeInTheDocument();
@@ -340,7 +371,7 @@ describe('SignInWizard', () => {
         });
 
         it('verifies with the recovery phone', async () => {
-            renderSignInWithTwoFactor({ phone: true });
+            renderPasswordSignIn({ phone: true });
             await openLostTwoFactor();
             skipBackupCodes();
             expect(await screen.findByRole('button', { name: 'Send code' })).toBeInTheDocument();
@@ -348,7 +379,7 @@ describe('SignInWizard', () => {
         });
 
         it('verifies with the recovery phrase', async () => {
-            renderSignInWithTwoFactor({ phrase: true });
+            renderPasswordSignIn({ phrase: true });
             await openLostTwoFactor();
             skipBackupCodes();
             expect(await screen.findByText(/Enter your recovery phrase/)).toBeInTheDocument();
@@ -356,7 +387,7 @@ describe('SignInWizard', () => {
         });
 
         it('offers support when the account has no recovery method', async () => {
-            renderSignInWithTwoFactor({});
+            renderPasswordSignIn({});
             await openLostTwoFactor();
             skipBackupCodes();
             expect(await screen.findByText('Contact Support Center')).toBeInTheDocument();
@@ -377,7 +408,7 @@ describe('SignInWizard', () => {
                     .getAllByRole('textbox')
                     .map((box) => (box as HTMLInputElement).value)
                     .join('');
-            renderSignInWithTwoFactor({ email: true });
+            renderPasswordSignIn({ email: true });
             await openLostTwoFactor();
             skipBackupCodes();
             fireEvent.change((await screen.findAllByRole('textbox'))[0], { target: { value: '123456' } });
@@ -392,7 +423,7 @@ describe('SignInWizard', () => {
         it('keeps the backup code form up, loading, while a valid code signs in', async () => {
             mockLoaderPage.mockClear();
             const completeSignIn = jest.fn(() => new Promise<void>(() => {}));
-            renderSignInWithTwoFactor(
+            renderPasswordSignIn(
                 {},
                 {
                     // The lost-2FA flow checks the backup code itself
@@ -426,7 +457,7 @@ describe('SignInWizard', () => {
         beforeEach(() => mockLoaderPage.mockClear());
 
         it('goes back to the credentials form without the loader when leaving the password account flow', async () => {
-            renderSignInWithTwoFactor({});
+            renderPasswordSignIn({});
             expect(await screen.findByText('Two-factor authentication')).toBeInTheDocument();
             clickBack();
             expect(await screen.findByLabelText('Email')).toBeInTheDocument();
@@ -442,7 +473,7 @@ describe('SignInWizard', () => {
         });
 
         it('goes back to the credentials form without the loader when the password account flow fails', async () => {
-            renderSignInWithTwoFactor({}, { verifyTwoFactor: fromPromise(() => Promise.reject(new Error('Offline'))) });
+            renderPasswordSignIn({}, { verifyTwoFactor: fromPromise(() => Promise.reject(new Error('Offline'))) });
             await enterTotp();
             expect(await screen.findByLabelText('Email')).toBeInTheDocument();
             expect(mockLoaderPage).not.toHaveBeenCalled();
@@ -456,7 +487,7 @@ describe('SignInWizard', () => {
                         handOver = resolve;
                     })
             );
-            renderSignInWithTwoFactor(
+            renderPasswordSignIn(
                 {},
                 {
                     verifyTwoFactor: fromPromise(() => Promise.resolve()),

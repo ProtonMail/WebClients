@@ -11,6 +11,10 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 interface Props {
     onSubmit: (keyPassword: string) => void;
     submitting: boolean;
+    /** Why the last password was rejected, shown under the field. */
+    error?: string;
+    /** The user changed the password. */
+    onChange?: () => void;
 }
 
 const getPasswordData = () => {
@@ -22,7 +26,7 @@ const getPasswordData = () => {
     };
 };
 
-const UnlockForm = ({ onSubmit, submitting }: Props) => {
+const UnlockForm = ({ onSubmit, submitting, error, onChange }: Props) => {
     const [keyPassword, setKeyPassword] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -46,11 +50,14 @@ const UnlockForm = ({ onSubmit, submitting }: Props) => {
                 id={data.passwordId}
                 bigger
                 label={data.passwordLabel}
-                error={validator([requiredValidator(keyPassword)])}
+                error={validator([requiredValidator(keyPassword)]) || error}
                 disableChange={submitting}
                 autoFocus
                 value={keyPassword}
-                onValue={setKeyPassword}
+                onValue={(value: string) => {
+                    setKeyPassword(value);
+                    onChange?.();
+                }}
                 /**
                  * Mark this field as ignored for Pass extension, to avoid Pass
                  * prompting auto-save after submitting the form, which could make users
