@@ -32,7 +32,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit,
     const redirectToAccountApp = useRedirectToAccountApp();
 
     const list = [
-        invoice.State === InvoiceState.Unpaid && {
+        [InvoiceState.Unpaid, InvoiceState.Posted].includes(invoice.State) && {
             text: c('Action').t`Pay`,
             'data-testid': 'payInvoice',
             key: 'payInvoice',

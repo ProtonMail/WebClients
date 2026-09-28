@@ -10,6 +10,7 @@ import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
 import NGCAccessTopBanner from './NGCAccessTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
 import PendingInvitationTopBanner from './PendingInvitationTopBanner';
+import { PostedInvoiceTopBanner } from './PostedInvoiceTopBanner';
 import SessionRecoveryBanners from './SessionRecoveryBanners';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 import SubscriptionEndsBanner from './SubscriptionEndsBanner';
@@ -38,6 +39,7 @@ const TopBanners = ({ children, app }: Props) => {
             <SessionRecoveryBanners />
             <PasswordReminderTopBanner />
             <NGCAccessTopBanner />
+            <PostedInvoiceTopBanner />
             {children}
         </ErrorBoundary>
     );
