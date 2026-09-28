@@ -51,7 +51,7 @@ import {
     reencryptAddressKeyTokenUsingOrgKey,
     splitKeys,
 } from '@proton/shared/lib/keys';
-import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
+import { getIsMemberSetup, getIsNonPrivateMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import type { OrganizationKeyActivation, OrganizationKeyInvitation } from '@proton/shared/lib/keys/organizationKeyDto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -452,17 +452,15 @@ export const getPublicMembersToReEncryptPayload = (): ThunkAction<
         const organizationKey = await dispatch(organizationKeyThunk());
         const members = await dispatch(membersThunk());
 
-        const publicMembers = members.filter((member) => member.Private === MEMBER_PRIVATE.READABLE);
+        // Members who are not set up have no member token to re-encrypt.
+        const membersToReEncrypt = members.filter(getIsNonPrivateMemberSetup);
 
-        if (publicMembers.length >= 1) {
+        if (membersToReEncrypt.length >= 1) {
             if (!organizationKey?.privateKey) {
                 throw new Error(getPrivatizeError());
             }
-            const publicMembersToReEncrypt = await Promise.all(
-                publicMembers.map(async (member) => {
-                    if (!member.Keys?.length) {
-                        return null;
-                    }
+            return Promise.all(
+                membersToReEncrypt.map(async (member) => {
                     if (!organizationKey?.privateKey) {
                         throw new Error(getPrivatizeError());
                     }
@@ -479,7 +477,6 @@ export const getPublicMembersToReEncryptPayload = (): ThunkAction<
                     };
                 })
             );
-            return publicMembersToReEncrypt.filter(isTruthy);
         }
 
         return [];

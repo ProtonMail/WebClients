@@ -1,10 +1,14 @@
-import { ADDRESS_STATUS } from '../constants';
+import { ADDRESS_STATUS, MEMBER_PRIVATE } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { canonicalizeInternalEmail } from '../helpers/email';
 import { type EnhancedMember, MEMBER_FLAGS, MEMBER_STATE, type Member } from '../interfaces';
 
 export const getIsMemberSetup = (member?: Member) => {
     return Boolean(member?.PublicKey);
+};
+
+export const getIsNonPrivateMemberSetup = (member: Member) => {
+    return member.Private === MEMBER_PRIVATE.READABLE && getIsMemberSetup(member);
 };
 
 export const getIsMemberDisabled = (member?: Member): member is Member & { State: MEMBER_STATE.STATUS_DISABLED } => {
