@@ -153,6 +153,8 @@
             "entry": [
                 "src/main.ts",
                 "src/preload.ts",
+                "src/app/renderer.tsx",
+                "electron-builder.config.js",
                 "forge.config.ts",
                 "webpack.main.config.ts",
                 "webpack.renderer.config.ts",
@@ -161,7 +163,14 @@
                 "webpack.rules.ts"
             ],
             "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignore": ["src/uninstallers/macos/daemon/launcher.ts"],
+            "ignoreDependencies": [
+                "@vercel/webpack-asset-relocator-loader",
+                "electron-builder",
+                "node-loader",
+                "ts-loader",
+                "ts-node"
+            ]
         },
         "applications/pass-extension": {
             "entry": [

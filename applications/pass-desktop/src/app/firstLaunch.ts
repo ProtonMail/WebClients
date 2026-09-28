@@ -1,6 +1,6 @@
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
-export const FIRST_LAUNCH_KEY = 'pass::first_launch_complete';
+const FIRST_LAUNCH_KEY = 'pass::first_launch_complete';
 
 export const dismissFirstLaunch = () => localStorage.setItem(FIRST_LAUNCH_KEY, '1');
 
