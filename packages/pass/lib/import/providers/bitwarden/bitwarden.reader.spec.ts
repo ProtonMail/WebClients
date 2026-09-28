@@ -39,15 +39,57 @@ describe('Import bitwarden json', () => {
     });
 
     describe('Bitwarden import', () => {
-        test('should correctly parse vaults', () => {
+        test('should import into a single vault', () => {
             const { vaults } = getBitwardenData('bitwarden.json');
-            const [primary, secondary] = vaults;
+            const [vault] = vaults;
 
-            expect(vaults.length).toEqual(2);
-            expect(primary.items.length).toEqual(7);
-            expect(primary.name).not.toBeUndefined();
-            expect(secondary.items.length).toEqual(3);
-            expect(secondary.name).toEqual('custom folder');
+            expect(vaults.length).toEqual(1);
+            expect(vault.name).not.toBeUndefined();
+            expect(vault.items.length).toEqual(12);
+        });
+
+        test('should rebuild the folder hierarchy', () => {
+            const [vault] = getBitwardenData('bitwarden.json').vaults;
+            const byId = new Map(vault.folders.map((folder) => [folder.id, folder]));
+            const pathOf = (id: string): string => {
+                const folder = byId.get(id)!;
+                return folder.parentId ? `${pathOf(folder.parentId)}/${folder.name}` : folder.name;
+            };
+
+            expect(vault.folders.map(({ id }) => pathOf(id))).toEqual([
+                'custom folder',
+                'custom folder/nested',
+                'custom folder/nested/deep',
+                'Archive',
+                'Archive/2024',
+                'Empty folder',
+            ]);
+        });
+
+        test('should create folders holding no items', () => {
+            const [vault] = getBitwardenData('bitwarden.json').vaults;
+            const empty = vault.folders.find(({ name }) => name === 'Empty folder')!;
+            expect(vault.items.some((item) => item.folderId === empty.id)).toBe(false);
+        });
+
+        test('should place each item in its folder', () => {
+            const [vault] = getBitwardenData('bitwarden.json').vaults;
+            const byId = new Map(vault.folders.map(({ id, name }) => [id, name]));
+            const foldered = vault.items.filter(({ folderId }) => folderId !== null);
+
+            expect(foldered.map(({ metadata, folderId }) => [metadata.name, byId.get(folderId ?? '')])).toEqual([
+                ['Credit Card Y', 'custom folder'],
+                ['LoginItemMultipleWebsites', 'custom folder'],
+                ['LoginWithCustomFields', 'custom folder'],
+                ['DeepLogin', 'deep'],
+                ['ArchivedLogin', '2024'],
+            ]);
+        });
+
+        test('should leave items without a folder at the vault root', () => {
+            const [vault] = getBitwardenData('bitwarden.json').vaults;
+            const rootItems = vault.items.filter((item) => item.folderId === null);
+            expect(rootItems.length).toEqual(7);
         });
 
         test('should support login items', () => {
@@ -75,7 +117,7 @@ describe('Import bitwarden json', () => {
         });
 
         test('should support identity items', () => {
-            const item = getBitwardenItem<'identity'>('bitwarden.json', 0, 1);
+            const item = getBitwardenItem<'identity'>('bitwarden.json', 0, 2);
             expect(item.type).toBe('identity');
             expect(item.metadata.name).toBe('IdentityItem');
             expect(item.content.fullName).toStrictEqual('');
@@ -119,7 +161,7 @@ describe('Import bitwarden json', () => {
         });
 
         test('should support note items', () => {
-            const item = getBitwardenItem<'note'>('bitwarden.json', 0, 2);
+            const item = getBitwardenItem<'note'>('bitwarden.json', 0, 3);
             expect(item.type).toBe('note');
             expect(item.metadata.name).toBe('NoteItem');
             expect(item.metadata.note).toBe('note content');
@@ -127,7 +169,7 @@ describe('Import bitwarden json', () => {
         });
 
         test('should support empty login items', () => {
-            const item = getBitwardenItem<'login'>('bitwarden.json', 0, 3);
+            const item = getBitwardenItem<'login'>('bitwarden.json', 0, 4);
             expect(item.type).toBe('login');
             expect(item.metadata.name).toBe('LoginItemEmptyFields');
             expect(item.metadata.note).toBe('login note');
@@ -139,7 +181,7 @@ describe('Import bitwarden json', () => {
         });
 
         test('should support login with malformed URLs', () => {
-            const item = getBitwardenItem<'login'>('bitwarden.json', 0, 4);
+            const item = getBitwardenItem<'login'>('bitwarden.json', 0, 5);
             expect(item.type).toBe('login');
             expect(item.metadata.name).toBe('LoginItemBrokenUrl');
             expect(item.metadata.note).toBe('');
@@ -151,7 +193,7 @@ describe('Import bitwarden json', () => {
         });
 
         test('should support credit card items', () => {
-            const item = getBitwardenItem<'creditCard'>('bitwarden.json', 0, 5);
+            const item = getBitwardenItem<'creditCard'>('bitwarden.json', 0, 6);
             expect(item.type).toBe('creditCard');
             expect(item.metadata.name).toBe('Credit Card Y');
             expect(item.metadata.note).toBe('Credit Card Y AMEX note');
@@ -162,7 +204,7 @@ describe('Import bitwarden json', () => {
         });
 
         test('should support SSH key items', () => {
-            const item = getBitwardenItem<'sshKey'>('bitwarden.json', 0, 6);
+            const item = getBitwardenItem<'sshKey'>('bitwarden.json', 0, 9);
             expect(item.type).toBe('sshKey');
             expect(item.metadata.name).toBe('test ssh');
             expect(item.metadata.note).toBe('');
@@ -183,7 +225,7 @@ describe('Import bitwarden json', () => {
         });
 
         test('should support all bitwarden extra fields', () => {
-            const item = getBitwardenItem<'login'>('bitwarden.json', 1, 2);
+            const item = getBitwardenItem<'login'>('bitwarden.json', 0, 8);
             expect(item.extraFields).toEqual([
                 { fieldName: '[TEXT]', type: 'text', data: { content: 'hello' } },
                 { fieldName: '[HIDDEN]', type: 'hidden', data: { content: 'foobar' } },
@@ -198,20 +240,58 @@ describe('Import bitwarden json', () => {
     });
 
     describe('Bitwarden B2B import', () => {
-        test('correctly parses b2b exports', () => {
-            const { vaults } = getBitwardenData('bitwarden-b2b.json');
-            const [primary, secondary] = vaults;
+        const b2bVault = () => getBitwardenData('bitwarden-b2b.json').vaults[0];
 
-            expect(vaults.length).toBe(2);
-            expect(primary.name).toBe('Collection 2');
-            expect(secondary.name).toBe('collection 1');
+        test('turns collections into folders of a single vault', () => {
+            const { vaults } = getBitwardenData('bitwarden-b2b.json');
+            expect(vaults.length).toBe(1);
+        });
+
+        test('rebuilds the collection hierarchy', () => {
+            const vault = b2bVault();
+            const byId = new Map(vault.folders.map((folder) => [folder.id, folder]));
+            const pathOf = (id: string): string => {
+                const folder = byId.get(id)!;
+                return folder.parentId ? `${pathOf(folder.parentId)}/${folder.name}` : folder.name;
+            };
+
+            expect(vault.folders.map(({ id }) => pathOf(id))).toEqual([
+                'collection 1',
+                'Collection 2',
+                'Engineering',
+                'Engineering/Backend',
+                'Engineering/Backend/Secrets',
+                'Design',
+                'Design/Brand',
+            ]);
+        });
+
+        test('creates collections holding no items', () => {
+            const vault = b2bVault();
+            const engineering = vault.folders.find(({ name }) => name === 'Engineering')!;
+            expect(vault.items.some((item) => item.folderId === engineering.id)).toBe(false);
+        });
+
+        test('places each item in the folder of its collection', () => {
+            const vault = b2bVault();
+            const byId = new Map(vault.folders.map(({ id, name }) => [id, name]));
+
+            expect(vault.items.map((item) => [item.metadata.name, byId.get(item.folderId ?? '') ?? null])).toEqual([
+                ['item 2', 'Collection 2'],
+                ['so hard ', 'collection 1'],
+                ['DeployKey', 'Secrets'],
+                ['SharedAccount', 'Backend'],
+                ['NoCollection', null],
+            ]);
         });
     });
 
     describe('Bitwarden empty import', () => {
-        test('correctly parses b2b exports', () => {
+        test('yields an empty vault', () => {
             const { vaults } = getBitwardenData('bitwarden-empty.json');
-            expect(vaults.length).toBe(0);
+            expect(vaults.length).toBe(1);
+            expect(vaults[0].items).toEqual([]);
+            expect(vaults[0].folders).toEqual([]);
         });
     });
 

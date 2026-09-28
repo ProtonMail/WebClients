@@ -12,6 +12,30 @@
             "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
             "name": "Collection 2",
             "externalId": null
+        },
+        {
+            "id": "1a2b3c4d-5e6f-4a7b-8c9d-b0d100d40296",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "name": "Engineering",
+            "externalId": null
+        },
+        {
+            "id": "2b3c4d5e-6f7a-4b8c-9dae-b0d100d40297",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "name": "Engineering/Backend",
+            "externalId": null
+        },
+        {
+            "id": "3c4d5e6f-7a8b-4c9d-8eaf-b0d100d40298",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "name": "Engineering/Backend/Secrets",
+            "externalId": ""
+        },
+        {
+            "id": "4d5e6f7a-8b9c-4dae-9fb0-b0d100d40299",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "name": "Design/Brand",
+            "externalId": null
         }
     ],
     "items": [
@@ -58,6 +82,72 @@
                 "totp": null
             },
             "collectionIds": ["9bb98033-f669-446d-91e6-b0d100d40295"]
+        },
+        {
+            "passwordHistory": null,
+            "revisionDate": "2024-01-16T14:36:15.273Z",
+            "creationDate": "2024-01-16T14:36:15.273Z",
+            "deletedDate": null,
+            "id": "5e6f7a8b-9cad-4ebf-8ac1-b0f900f0abb8",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "folderId": null,
+            "type": 1,
+            "reprompt": 0,
+            "name": "DeployKey",
+            "notes": null,
+            "favorite": false,
+            "login": {
+                "fido2Credentials": [],
+                "uris": [],
+                "username": "deploy",
+                "password": null,
+                "totp": null
+            },
+            "collectionIds": ["3c4d5e6f-7a8b-4c9d-8eaf-b0d100d40298"]
+        },
+        {
+            "passwordHistory": null,
+            "revisionDate": "2024-01-16T14:36:15.273Z",
+            "creationDate": "2024-01-16T14:36:15.273Z",
+            "deletedDate": null,
+            "id": "6f7a8b9c-adbe-4fc0-9bd2-b0f900f0abc9",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "folderId": null,
+            "type": 1,
+            "reprompt": 0,
+            "name": "SharedAccount",
+            "notes": null,
+            "favorite": false,
+            "login": {
+                "fido2Credentials": [],
+                "uris": [],
+                "username": "shared",
+                "password": null,
+                "totp": null
+            },
+            "collectionIds": ["2b3c4d5e-6f7a-4b8c-9dae-b0d100d40297", "9bb98033-f669-446d-91e6-b0d100d40295"]
+        },
+        {
+            "passwordHistory": null,
+            "revisionDate": "2024-01-16T14:36:15.273Z",
+            "creationDate": "2024-01-16T14:36:15.273Z",
+            "deletedDate": null,
+            "id": "7a8b9cad-becf-4ad1-8ce3-b0f900f0abda",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "folderId": null,
+            "type": 1,
+            "reprompt": 0,
+            "name": "NoCollection",
+            "notes": null,
+            "favorite": false,
+            "login": {
+                "fido2Credentials": [],
+                "uris": [],
+                "username": "loose",
+                "password": null,
+                "totp": null
+            },
+            "collectionIds": []
         }
     ]
 }
