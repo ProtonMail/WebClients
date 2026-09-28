@@ -17,6 +17,7 @@ import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
 import { ConversationActionsProvider } from '../../providers/ConversationActionsProvider';
 import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
+import { useIsGuest } from '../../providers/IsGuestProvider';
 import { ModelTierProvider } from '../../providers/ModelTierProvider';
 import { WebSearchProvider } from '../../providers/WebSearchProvider';
 import { useLumoMemoSelector, useLumoSelector } from '../../redux/hooks';
@@ -67,7 +68,8 @@ const AgentPageInner = () => {
     const { setConversationId } = useConversation();
 
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
-    const initialQuery = useQueryParam('q');
+    const isGuest = useIsGuest();
+    const initialQuery = useQueryParam('q', true, 'both', isGuest);
 
     // Activate an agent from a `?skill=<agentId>` link.
     useSkillParam();

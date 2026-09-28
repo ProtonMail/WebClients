@@ -88,7 +88,7 @@ export type ComposerComponentProps = {
     onShowDriveBrowser?: () => void; // Optional for Drive browser functionality
     onOpenFilePreview?: (attachment: Attachment) => void;
     canShowLegalDisclaimer?: boolean;
-    initialQuery?: string; // Initial query to populate and auto-execute
+    initialQuery?: string; // Guest ?q= / #q= — populate and auto-execute (see ConversationPageComponent)
     prefillQuery?: string; // Query to prefill without auto-executing
     spaceId?: string; // Optional space ID to include space-level attachments
     autoOpenSketch?: boolean; // Auto-open the sketch canvas on mount
@@ -403,16 +403,9 @@ const ComposerComponentInner = ({
             return;
         }
         clear();
-        await handleSendMessage(currentValue, isWebSearchButtonToggled, undefined, isArtifactMode);
-    }, [
-        textareaRef,
-        clear,
-        handleSendMessage,
-        isWebSearchButtonToggled,
-        isArtifactMode,
-        isChatLimitBlocked,
-        ensureTierError,
-    ]);
+        // ?q= auto-send: 5th arg enables SECBTY-2015 external-tool restriction (see helper.ts).
+        await handleSendMessage(currentValue, isWebSearchButtonToggled, undefined, false, true);
+    }, [textareaRef, clear, handleSendMessage, isWebSearchButtonToggled, isChatLimitBlocked, ensureTierError]);
 
     useEditorQuery(initialQuery, textareaRef, setValue, isProcessingAttachment, handleInitialQueryReady);
     useEditorQuery(prefillQuery, textareaRef, setValue, isProcessingAttachment);
