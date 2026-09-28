@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
+import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentMethodType } from '@proton/payments/core/interface';
-import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 
 const getCurrencyOverrideBannerText = (selectedMethod: PaymentMethodType | undefined) => {
     if (selectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {

@@ -1,12 +1,12 @@
-import { type ReactNode, useMemo } from 'react';
+import { type ReactNode, useLayoutEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
 import { useStableLoading } from '@proton/hooks';
-import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import type { ChargebeeIdealProcessorHook } from '../../react-extensions/useChargebeeIdeal';
@@ -14,24 +14,22 @@ import { ChargebeeIframe } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
 import type { PayButtonOnClickPayload } from './PayButton';
 
+import './ChargebeeIdealButton.scss';
+
 const FakeChargebeeButton = ({
     className,
     loading,
     disabled,
     children,
+    onClick,
 }: {
     className?: string;
     loading?: boolean;
     disabled?: boolean;
     children?: ReactNode;
+    onClick?: () => void;
 }) => {
-    const idealButtonClassName = clsx([
-        'ideal-button',
-        disabled && 'ideal-button--disabled',
-        className,
-        'button-large',
-        'w-full',
-    ]);
+    const idealButtonClassName = clsx(['ideal-button', disabled && 'ideal-button--disabled', className, 'w-full']);
 
     return (
         <ButtonLike
@@ -40,6 +38,7 @@ const FakeChargebeeButton = ({
             color="norm"
             loading={loading}
             disabled={disabled}
+            onClick={onClick}
             data-testid="fake-ideal-button"
         >
             {children}
@@ -57,44 +56,52 @@ export interface ChargebeeIdealButtonProps extends ChargebeeWrapperProps {
     children?: ReactNode;
 }
 
+// The iframe can only be handed a string, so anything richer falls back rather than disagreeing with it.
+const getButtonLabel = (children: ReactNode) =>
+    typeof children === 'string' ? children : c('Payments').t`Pay with ${IDEAL_WERO_BRAND_NAME}`;
+
 export const ChargebeeIdealButton = ({
     formInvalid,
-    width: widthProp,
     loading,
     onClick,
     children,
     ...props
 }: ChargebeeIdealButtonProps) => {
+    const buttonLabel = getButtonLabel(children);
+    const { setButtonLabel } = props.chargebeeIdeal;
+
+    useLayoutEffect(() => {
+        setButtonLabel(buttonLabel);
+    }, [buttonLabel, setButtonLabel]);
+
     const initializing = props.chargebeeIdeal.initializing;
     const initializationError = props.chargebeeIdeal.initializationError;
     const disabled = props.disabled || props.chargebeeIdeal.accountHolderNameMissing;
 
     const syncingName = !disabled && !props.chargebeeIdeal.readyToPay;
+    const busy = initializing || !!loading;
 
-    const showLoading = useStableLoading(initializing || !!loading || syncingName, { initialState: false });
-    const renderFakeButton =
-        initializationError || disabled || formInvalid || initializing || !!loading || showLoading || syncingName;
+    const showSpinner = useStableLoading(busy, { initialState: false });
+    const renderFakeButton = initializationError || disabled || formInvalid || busy || showSpinner || syncingName;
 
-    const fakeIdealButton = useMemo(() => {
+    const fakeIdealButton = (() => {
         const fakeButtonProps = {
             className: '',
             ...props,
-            children: children ?? c('Payments').t`Pay with ${IDEAL_WERO_BRAND_NAME}`,
+            children: buttonLabel,
+            onClick: () => onClick?.({ source: 'fake-button', type: 'ideal' }),
         };
 
-        let button: ReactNode;
         if (disabled || initializationError) {
-            button = <FakeChargebeeButton {...fakeButtonProps} disabled={true} />;
-        } else if (showLoading) {
-            button = <FakeChargebeeButton {...fakeButtonProps} loading={true} />;
-        } else {
-            button = <FakeChargebeeButton {...fakeButtonProps} />;
+            return <FakeChargebeeButton {...fakeButtonProps} disabled={true} />;
         }
 
-        if (renderFakeButton) {
-            return <div className="w-full">{button}</div>;
+        if (showSpinner) {
+            return <FakeChargebeeButton {...fakeButtonProps} loading={true} />;
         }
-    }, [initializationError, disabled, renderFakeButton, showLoading, children]);
+
+        return <FakeChargebeeButton {...fakeButtonProps} />;
+    })();
 
     return (
         <div className="relative">
@@ -103,8 +110,8 @@ export const ChargebeeIdealButton = ({
                     {c('Payments.Error').t`Failed to initialize ${IDEAL_WERO_BRAND_NAME}. Please try again later.`}
                 </InfoBanner>
             )}
-            {fakeIdealButton}
-            <div className={clsx('flex flex-column', renderFakeButton && 'visibility-hidden absolute')}>
+            {renderFakeButton && <div className="flex flex-column w-full">{fakeIdealButton}</div>}
+            <div className={clsx('flex flex-column w-full', renderFakeButton && 'visibility-hidden absolute')}>
                 <ChargebeeIframe
                     {...props}
                     type="ideal"

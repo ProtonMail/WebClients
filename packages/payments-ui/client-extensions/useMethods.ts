@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
 import type { IconComponent } from '@proton/icons/component';
 import { IcBank } from '@proton/icons/icons/IcBank';
 import { IcBrandAmex } from '@proton/icons/icons/IcBrandAmex';
@@ -22,7 +23,6 @@ import type {
     SavedPaymentMethod,
     SepaDetails,
 } from '@proton/payments/core/interface';
-import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 

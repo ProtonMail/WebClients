@@ -1,3 +1,4 @@
+import { IDEAL_WERO_BRAND_NAME } from '../lib/constants';
 import {
     type ChargebeeCssVariable,
     type ChargebeeCssVariables,
@@ -658,7 +659,7 @@ async function renderIdeal() {
                 };
             }
 
-            button.innerText = event.buttonLabel ?? '';
+            button.innerText = event.buttonLabel ?? `Pay with ${IDEAL_WERO_BRAND_NAME}`;
             button.onclick = handleIdealPayment;
             button.disabled = false;
             addCheckpoint('ideal_set_payment_intent');
