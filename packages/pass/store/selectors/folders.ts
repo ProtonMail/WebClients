@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { FOLDER_MAX_CHILDREN, FOLDER_MAX_COUNT, FOLDER_MAX_DEPTH } from '../../constants';
-import type { FoldersById } from '../../lib/folders/folder.utils';
-import { getFolderChildren, resolveFolderPath } from '../../lib/folders/folder.utils';
+import type { FolderLimitReason, FolderLimits, FoldersById } from '../../lib/folders/folder.utils';
+import { getFolderChildren, getFolderLimitReason, resolveFolderPath } from '../../lib/folders/folder.utils';
 import type { FolderData, Maybe, MaybeNull } from '../../types';
 import type { State } from '../types';
 import { selectUserPlan } from './user';
@@ -31,31 +31,22 @@ export const selectTopLevelFolders = (shareId: string) => selectChildFolders(sha
 export const selectFolderPath = (shareId: string, folderId: MaybeNull<string>) =>
     createSelector([selectShareFolders(shareId)], (shareFolders): FolderData[] => resolveFolderPath(shareFolders, folderId));
 
-type FolderLimits = { maxCountPerVault: number; maxChildren: number; maxDepth: number };
-
 export const selectFolderLimits = createSelector([selectUserPlan], (plan): FolderLimits => ({
     maxCountPerVault: plan?.FolderMaxCount ?? FOLDER_MAX_COUNT,
     maxChildren: plan?.FolderMaxChildren ?? FOLDER_MAX_CHILDREN,
     maxDepth: plan?.FolderMaxDepth ?? FOLDER_MAX_DEPTH,
 }));
 
-export type FolderLimitReason = 'count' | 'children' | 'depth';
+export type { FolderLimitReason };
 
 export const selectFolderLimitReason = (shareId: string, parentFolderId: MaybeNull<string>) =>
-    createSelector(
-        [selectShareFolders(shareId), selectFolderLimits],
-        (shareFolders, { maxCountPerVault, maxChildren, maxDepth }): MaybeNull<FolderLimitReason> => {
-            const folders = Object.values(shareFolders);
-            if (folders.length >= maxCountPerVault) return 'count';
-
-            const siblingCount = getFolderChildren(shareFolders).get(parentFolderId)?.length ?? 0;
-            if (siblingCount >= maxChildren) return 'children';
-
-            if (parentFolderId) {
-                const parentDepth = resolveFolderPath(shareFolders, parentFolderId).length;
-                if (parentDepth >= maxDepth) return 'depth';
-            }
-
-            return null;
-        }
+    createSelector([selectShareFolders(shareId), selectFolderLimits], (shareFolders, limits): MaybeNull<FolderLimitReason> =>
+        getFolderLimitReason(
+            {
+                total: Object.keys(shareFolders).length,
+                siblings: getFolderChildren(shareFolders).get(parentFolderId)?.length ?? 0,
+                parentDepth: resolveFolderPath(shareFolders, parentFolderId).length,
+            },
+            limits
+        )
     );
