@@ -52,7 +52,7 @@ const MigrationFlow = ({ provider }: { provider: OlesProvider }) => {
     const [tokens] = useProviderTokens(provider.oauthProvider, [EASY_SWITCH_FEATURES.OLES]);
     const [connectionState] = useConnectionState(provider, tokens);
     const [migrationConfig, setMigrationConfig] = useState<MigrationConfiguration>();
-    const [providerUsers] = useProviderUsers(migrationConfig?.domainName);
+    const [providerUsers] = useProviderUsers(migrationConfig?.domainName, provider.apiProvider);
     const [finishModalProps, setFinishModalOpen, renderFinishModal] = useModalState();
     const loading = !customDomains || !importerOrganizations || !tokens || !connectionState || !providerUsers;
 

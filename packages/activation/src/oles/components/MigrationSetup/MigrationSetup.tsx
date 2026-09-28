@@ -189,7 +189,7 @@ const MigrationNavigationListStepButton = ({
 const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
     const api = useSilentApi();
     const STEPS = useMemo(() => buildSteps(model.provider), [model.provider]);
-    const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.domainName);
+    const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.domainName, model.provider.apiProvider);
     const [state, setState] = useState<MigrationSetupState>({
         currentStep: model.importerOrganizationId ? 'migrate-accounts' : 'configure-migration',
         expanded: model.importerOrganizationId ? ['configure-users'] : [],
