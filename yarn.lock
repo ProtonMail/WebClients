@@ -37812,6 +37812,7 @@ __metadata:
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/polyfill": "workspace:^"
@@ -37834,6 +37835,7 @@ __metadata:
     react-redux: "npm:^9.3.0"
     react-router-dom: "npm:^5.3.4"
     redux: "npm:^5.0.1"
+    ttag: "npm:^1.8.12"
     typescript: "npm:@typescript/typescript6@^6.0.2"
     webpack: "npm:^5.111.1"
   languageName: unknown
