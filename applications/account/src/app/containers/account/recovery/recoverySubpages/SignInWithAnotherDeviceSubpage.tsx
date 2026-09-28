@@ -74,7 +74,7 @@ const SignInWithAnotherDeviceSubpage = () => {
                     </SettingsDescription.Item>
                     <SettingsDescription.Item>
                         {c('Info')
-                            .t`This will let you quickly and safely access your ${BRAND_NAME} Account so you can change you password.`}{' '}
+                            .t`This will let you quickly and safely access your ${BRAND_NAME} Account so you can change your password.`}{' '}
                         <Href key="learn" href={getKnowledgeBaseUrl('/qr-code-sign-in')}>{c('Link')
                             .t`Learn more`}</Href>
                     </SettingsDescription.Item>
