@@ -37,6 +37,7 @@ import {
     welcomeFlagsReducer,
 } from '@proton/account';
 import { contactEmailsReducer } from '@proton/account/contactEmails';
+import { paymentsInitReducer } from '@proton/account/paymentsInit';
 import { sessionRecoverySlice } from '@proton/account/recovery/sessionRecovery';
 import { featuresReducer } from '@proton/features';
 import { contactsReducer } from '@proton/mail/store/contacts';
@@ -60,6 +61,7 @@ export const sharedReducers = {
     ...previousSubscriptionReducer,
     ...paymentMethodsReducer,
     ...paymentStatusReducer,
+    ...paymentsInitReducer,
     ...organizationReducer,
     ...organizationKeyReducer,
     ...organizationRolesReducer,
