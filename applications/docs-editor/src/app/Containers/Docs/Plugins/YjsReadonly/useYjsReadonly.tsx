@@ -6,8 +6,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { Doc, Transaction, YEvent } from 'yjs'
 import { UndoManager } from 'yjs'
 
-import { TranslatedResult } from '@proton/docs-shared'
-import type { EditorLoadResult } from '../../../../Lib/EditorLoadResult'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 /**
@@ -18,7 +16,7 @@ export function useYjsReadonly(
   id: string,
   provider: Provider,
   docMap: Map<string, Doc>,
-  onLoadResult: EditorLoadResult,
+  onEditorReadyToReceiveUpdates: () => void,
   logger: LoggerInterface,
   safeMode?: boolean,
   lexicalError?: Error,
@@ -146,7 +144,7 @@ export function useYjsReadonly(
     )
 
     if (!didPostReadyEvent.current) {
-      onLoadResult(TranslatedResult.ok())
+      onEditorReadyToReceiveUpdates()
       didPostReadyEvent.current = true
     }
 
@@ -155,7 +153,7 @@ export function useYjsReadonly(
       docMap.delete(id)
       removeListener()
     }
-  }, [applyEventsBasedOnCurrentIndices, binding, docMap, editor, id, onLoadResult, provider])
+  }, [applyEventsBasedOnCurrentIndices, binding, docMap, editor, id, onEditorReadyToReceiveUpdates, provider])
 
   return binding
 }

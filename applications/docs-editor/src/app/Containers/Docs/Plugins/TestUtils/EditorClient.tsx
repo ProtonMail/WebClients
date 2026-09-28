@@ -61,7 +61,7 @@ export class EditorClient {
 
   createTestBase() {
     const TestBase = () => {
-      const onLoadResult = jest.fn()
+      const onEditorReadyToReceiveUpdates = jest.fn()
       const lexicalError = undefined
 
       const TestPlugin = () => {
@@ -95,7 +95,7 @@ export class EditorClient {
             <YjsReadonlyPlugin
               id={this.docId}
               providerFactory={this.provider}
-              onLoadResult={onLoadResult}
+              onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
               lexicalError={lexicalError}
               logger={logger}
               safeMode={this.safeMode}
