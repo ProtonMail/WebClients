@@ -12,13 +12,18 @@ export const createArtifactToolExecutor: ClientToolExecutor = {
             function: {
                 name: CREATE_ARTIFACT_TOOL_NAME,
                 description:
-                    'Show a code snippet, document, web page, or slide deck to the user in a dedicated ' +
-                    'side panel, instead of inline in the chat. This does not change what you write, only ' +
-                    'where it is shown — it applies to ordinary writing tasks too, not just code: a drafted ' +
-                    'email, letter, cover letter, essay, or report is a "document" for this tool just as ' +
-                    'much as a script is. Do NOT use it for short code snippets (1-2 lines) used to ' +
-                    'illustrate a point, brief structured answers (a small table, a short list), or content ' +
-                    'that only makes sense as part of your explanation — write those inline instead. Use ' +
+                    'Show a substantial, standalone piece of content to the user in a dedicated side panel, ' +
+                    'instead of inline in the chat. Use it only for deliverables the user is likely to copy, ' +
+                    'edit, send, save, or run outside this chat: a drafted email, letter, cover letter, Slack ' +
+                    'message, essay, or report (`type: "document"`), a complete script or program (`code`), ' +
+                    'a web page, interactive demo, or small game (`webpage`), or a slide deck ' +
+                    '(`presentation`). Do NOT use it — regardless of how long the answer is — for answering ' +
+                    'questions, explanations, factual or real-time information (weather, news, stock prices, ' +
+                    'sports scores), summaries of search results, advice, recommendations, comparisons, or ' +
+                    'conversational replies; nor for short code snippets used to illustrate a point, a small table ' +
+                    'or short list, or anything that only makes sense as part of your explanation. Write those inline ' +
+                    'instead. When in doubt, do not use this tool. ' +
+                    'Formats: use ' +
                     '`type: "code"` (with `language: "html"`) when HTML is meant to be read as source, and ' +
                     '`type: "webpage"` when it is a complete, self-contained HTML document meant to be ' +
                     'rendered live in a sandboxed preview (interactive demos, small games, visualizations, ' +

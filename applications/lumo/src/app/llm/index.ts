@@ -51,6 +51,8 @@ import {
     separateAttachmentsByType,
 } from './attachments';
 import { collapseCompactedChain } from './compaction';
+import type { ContextFilter } from './contextFilter';
+import { formatPersonalization } from './formatPersonalization';
 import { resolveRequestContextFiles } from './requestContextFiles';
 import { countTokens } from './tokenizer';
 import type { ContextLimits } from './contextLimits';
@@ -114,12 +116,27 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
 // no need to convince the model the content "qualifies" — just tell it what to do.
 const ARTIFACT_TOOL_CREATE_NUDGE = `The user has activated Create Artifact mode for this message. Produce your response using the "${CREATE_ARTIFACT_TOOL_NAME}" tool (see its description for format and when it applies) — either creating a new artifact or revising one already in this conversation, whichever the request calls for.`;
 
-// Mode isn't active, but an artifact already exists in this conversation — the tool stays
+// Creation is enabled by default, so the tool is registered on ordinary turns. The model must
+// decide for itself whether the request qualifies — and the default answer is "no". Without an
+// explicit bias towards answering inline, factual questions answered from web search results
+// (weather, stock prices) were being routed into the side panel.
+const ARTIFACT_TOOL_AUTO_NUDGE = `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is available, but most messages should be answered normally in the chat, without it. Use it only when the user asks you to produce a substantial, standalone piece of content they are likely to copy, edit, send, or run outside this chat — for example a drafted email, letter, Slack message, essay, report, a complete script or program, a web page, or a slide deck. Do not use it for answering questions, explanations, factual or real-time information (weather, news, stock prices, sports scores), summaries of search results, advice, recommendations, or comparisons — even when the answer is long or contains a table or list. If you are unsure, answer in the chat. If an artifact already exists in this conversation and the user asks to change it, call the tool again with its exact "id" and the full updated content.`;
+
+// Creation is disabled, but an artifact already exists in this conversation — the tool stays
 // available so ordinary follow-ups (including the artifact panel's own selection-based inline-edit
-// requests) can revise it without the user re-entering the mode. Explicitly scoped to revision only:
-// without this, the model could reach for the tool to spawn a second, unrelated artifact on its own
-// initiative, which defeats the point of gating creation behind an explicit user action.
-const ARTIFACT_TOOL_REVISE_NUDGE = `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is available in this conversation only to revise an artifact already created earlier (reuse its exact "id"). Do not use it to create a new, unrelated artifact — if the user wants a genuinely new one, they need to activate Create Artifact mode again.`;
+// requests) can revise it. Explicitly scoped to revision only: the user turned creation off, so
+// the model must not spawn a second, unrelated artifact.
+const ARTIFACT_TOOL_REVISE_NUDGE = `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is available in this conversation only to revise an artifact already created earlier (reuse its exact "id"). Do not use it to create a new, unrelated artifact — the user has turned off artifact creation, so write any new content in the chat instead.`;
+
+function getArtifactToolNudge(mode: Exclude<ArtifactToolMode, 'off'>): string {
+    if (mode === 'create') {
+        return ARTIFACT_TOOL_CREATE_NUDGE;
+    }
+    if (mode === 'auto') {
+        return ARTIFACT_TOOL_AUTO_NUDGE;
+    }
+    return ARTIFACT_TOOL_REVISE_NUDGE;
+}
 
 /**
  * Determine which image attachments should be sent to the backend, keeping only the
@@ -266,7 +283,7 @@ export function prepareTurns(
     if (artifactToolMode !== 'off') {
         const artifactToolTurn: TurnInProgress = {
             role: Role.System,
-            content: artifactToolMode === 'create' ? ARTIFACT_TOOL_CREATE_NUDGE : ARTIFACT_TOOL_REVISE_NUDGE,
+            content: getArtifactToolNudge(artifactToolMode),
         };
         turns = [artifactToolTurn, ...turns];
     }

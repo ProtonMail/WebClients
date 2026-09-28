@@ -34,11 +34,18 @@ describe('resolveArtifactToolMode', () => {
         expect(resolveArtifactToolMode(false, chainWithArtifact, false, true)).toBe('off');
     });
 
-    it('returns "create" by default when no artifact exists and preference is unset', () => {
+    it('returns "auto" by default when the creation preference is unset', () => {
         const chain: Message[] = [makeMessage({ content: 'just a plain reply' })];
 
-        expect(resolveArtifactToolMode(false, chain, true)).toBe('create');
-        expect(resolveArtifactToolMode(undefined, chain, true)).toBe('create');
+        expect(resolveArtifactToolMode(false, chain, true)).toBe('auto');
+        expect(resolveArtifactToolMode(undefined, chain, true)).toBe('auto');
+    });
+
+    it('returns "auto" when creation is enabled, even if an artifact already exists', () => {
+        const chain: Message[] = [makeArtifactMessage('')];
+
+        expect(resolveArtifactToolMode(false, chain, true, true)).toBe('auto');
+        expect(resolveArtifactToolMode(undefined, chain, true)).toBe('auto');
     });
 
     it('returns "off" when no artifact exists and creation preference is disabled', () => {
@@ -55,10 +62,9 @@ describe('resolveArtifactToolMode', () => {
         expect(resolveArtifactToolMode(true, chainWithArtifact, true, false)).toBe('create');
     });
 
-    it('returns "revise" when an artifact exists, regardless of creation preference', () => {
+    it('returns "revise" when an artifact exists and creation is disabled', () => {
         const chain: Message[] = [makeArtifactMessage('')];
 
-        expect(resolveArtifactToolMode(false, chain, true, true)).toBe('revise');
         expect(resolveArtifactToolMode(false, chain, true, false)).toBe('revise');
         expect(resolveArtifactToolMode(undefined, chain, true, false)).toBe('revise');
     });
