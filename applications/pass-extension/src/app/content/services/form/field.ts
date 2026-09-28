@@ -33,7 +33,7 @@ type CreateFieldHandlesOptions = {
     getFormHandle: () => FormHandle;
 };
 
-export type FieldAction = { type: DropdownAction; filterable?: boolean };
+type FieldAction = { type: DropdownAction; filterable?: boolean };
 export type FieldElement = HTMLInputElement | HTMLSelectElement;
 
 interface FieldHandleBase extends FrameField {

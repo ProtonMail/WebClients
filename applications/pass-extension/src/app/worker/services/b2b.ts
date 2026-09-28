@@ -13,7 +13,7 @@ import { WorkerMessageType } from '../../../types/messages';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context/inject';
 
-export const B2B_EVENTS_ALARM_NAME = 'PassB2BEventsAlarm';
+const B2B_EVENTS_ALARM_NAME = 'PassB2BEventsAlarm';
 export const B2B_EVENTS_STORAGE_KEY = 'b2bEvents';
 
 export const createB2BEventsService = (

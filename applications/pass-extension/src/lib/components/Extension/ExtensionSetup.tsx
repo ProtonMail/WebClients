@@ -14,7 +14,7 @@ import { reloadManager } from '../../utils/reload';
 
 type Props = { children: ReactNode; recycle?: boolean };
 
-export const ExtensionReactContext = createContext<MaybeNull<ExtensionContextType>>(null);
+const ExtensionReactContext = createContext<MaybeNull<ExtensionContextType>>(null);
 export const useExtensionContext = createUseContext(ExtensionReactContext);
 
 /** Sets up the `ExtensionContext` for an extension react app. Prefer accessing the

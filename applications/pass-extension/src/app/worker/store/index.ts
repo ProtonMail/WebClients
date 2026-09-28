@@ -42,7 +42,7 @@ import WorkerMessageBroker from '../channel';
 import { withContext } from '../context/inject';
 import { broadcastMiddleware } from './broadcast.middleware';
 
-export const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer,
@@ -69,7 +69,7 @@ const store = configureStore({
     devTools: false,
 });
 
-export const options: RootSagaOptions = {
+const options: RootSagaOptions = {
     endpoint: 'background',
     extensionId: browser.runtime?.id?.split(' ')[0],
     publish: sagaEvents.publish,

@@ -47,8 +47,8 @@ export type IconStyles = {
 
 type FieldOverrides = { ['padding-right']?: string };
 
-export const ICON_FLICKER_TRESHOLD = 2;
-export const ICON_MAX_OVERLAY_CHECKS = 2;
+const ICON_FLICKER_TRESHOLD = 2;
+const ICON_MAX_OVERLAY_CHECKS = 2;
 export const ICON_MAX_SHIFT_RATIO = 0.5;
 
 /** An element can render visible content purely through its pseudo-elements.
@@ -216,7 +216,7 @@ export const resolveInjectionAnchor = (input: HTMLInputElement): Element => {
     return nextSibling?.tagName === 'LABEL' ? nextSibling : input;
 };
 
-export const getBaseStyles = (el: HTMLElement): FieldOverrides => {
+const getBaseStyles = (el: HTMLElement): FieldOverrides => {
     const initialStyles = el.getAttribute(OVERRIDE_STYLES_ATTR);
     return initialStyles ? JSON.parse(initialStyles) : {};
 };
