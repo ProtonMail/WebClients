@@ -3,9 +3,8 @@ import { createContext, useContext } from 'react'
 import type { SheetsActionType } from './contract/SheetsAction'
 import type { SheetsLogger } from './contract/SheetsLogger'
 import type { SheetsPatchCategory } from './contract/SheetsPatch'
+import type { SheetsFileExportFormat } from './contract/SpreadsheetExportFormat'
 import type { SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
-
-export type SheetsExportFormat = 'xlsx' | 'ods' | 'csv' | 'tsv'
 
 export type SheetsFileMenuActions = {
   createSpreadsheet: () => Promise<void>
@@ -16,7 +15,7 @@ export type SheetsFileMenuActions = {
   viewVersionHistory: () => Promise<void>
   moveToTrash: () => Promise<void>
   print: () => Promise<void>
-  download: (format: SheetsExportFormat) => Promise<void>
+  download: (format: SheetsFileExportFormat) => Promise<void>
   openHelp: () => Promise<void>
   viewRecentSpreadsheets: () => Promise<void>
   openProtonDrive: () => Promise<void>
