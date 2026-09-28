@@ -17,7 +17,7 @@ import {
   $getSelection,
   $isRangeSelection,
 } from 'lexical'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import { $handleBeforeInputEvent } from './handleBeforeInputEvent'
 import { ProtonNode, $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { polyfillSelectionRelatedThingsForTests, assertCondition } from './TestUtils'
@@ -27,7 +27,7 @@ import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import React from 'react'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
-import { ProtonContentEditable } from '../../../../ContentEditable/ProtonContentEditable'
+import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../../../Utils/react-test-utils'
 import type { ListItemNode, ListNode } from '@lexical/list'

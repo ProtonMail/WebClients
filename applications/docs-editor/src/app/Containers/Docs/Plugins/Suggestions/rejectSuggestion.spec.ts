@@ -1,16 +1,22 @@
 import { createHeadlessEditor } from '@lexical/headless'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import type { ElementNode, ParagraphNode, TextNode } from 'lexical'
-import { $createRangeSelection, $isParagraphNode, $isTextNode, $setSelection } from 'lexical'
-import { $createParagraphNode, $createTextNode, $getRoot } from 'lexical'
+import {
+  $createRangeSelection,
+  $isParagraphNode,
+  $isTextNode,
+  $setSelection,
+  $createParagraphNode,
+  $createTextNode,
+  $getRoot,
+} from 'lexical'
 import { $rejectSuggestion } from './rejectSuggestion'
 import type { HeadingNode } from '@lexical/rich-text'
 import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text'
 import type { ListNode, ListItemNode } from '@lexical/list'
-import { $isListItemNode } from '@lexical/list'
-import { $createListItemNode, $createListNode, $isListNode } from '@lexical/list'
+import { $isListItemNode, $createListItemNode, $createListNode, $isListNode } from '@lexical/list'
 import type { LinkNode } from '@lexical/link'
 import { $createLinkNode, $isLinkNode } from '@lexical/link'
 import { $patchStyleText, getStyleObjectFromCSS } from '@lexical/selection'

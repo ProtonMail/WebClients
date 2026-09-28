@@ -1,6 +1,6 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import type { Logger } from '@proton/shared/lib/logs'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import type { ParagraphNode, TextNode } from 'lexical'
 import { $createParagraphNode, $createRangeSelection, $createTextNode, $getRoot, $setSelection } from 'lexical'
 import type { HeadingNode } from '@lexical/rich-text'
