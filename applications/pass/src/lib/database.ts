@@ -7,7 +7,7 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-export interface PassDB extends DBSchema {
+interface PassDB extends DBSchema {
     cache:
         | { key: 'encryptedCacheKey'; value: Blob }
         | { key: 'salt'; value: Blob }
@@ -16,8 +16,8 @@ export interface PassDB extends DBSchema {
         | { key: 'version'; value: string };
 }
 
-export const CACHE_DB_VERSION = 1;
-export const CACHE_DB_PREFIX = 'pass:db::';
+const CACHE_DB_VERSION = 1;
+const CACHE_DB_PREFIX = 'pass:db::';
 
 /** `indexedDB.database` is not supported on Firefox <126
  * see: https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/databases#browser_compatibility */
@@ -40,7 +40,7 @@ export const deletePassDB = async (userID: Maybe<string>) => {
 /** Opens the database for a specific UserID. Will create the database
  * when called for the first time. If opening the database fails for any
  * reason, returns `undefined` (ie: IDB not supported). */
-export const openPassDB = async (userID: string): Promise<Maybe<IDBPDatabase<PassDB>>> =>
+const openPassDB = async (userID: string): Promise<Maybe<IDBPDatabase<PassDB>>> =>
     openDB<PassDB>(getPassDBName(userID), CACHE_DB_VERSION, {
         upgrade: (db) => {
             db.createObjectStore('cache', { keyPath: null });
@@ -95,11 +95,4 @@ export const getDBCache = async (userID: Maybe<string>): Promise<Partial<Encrypt
         logger.warn('[PassDB] Could not resolve cache', err);
         return {};
     }
-};
-
-export const getEncryptedCacheKey = async (userID: Maybe<string>): Promise<Maybe<string>> => {
-    try {
-        const cache = await getDBCache(userID);
-        return cache.encryptedCacheKey;
-    } catch {}
 };
