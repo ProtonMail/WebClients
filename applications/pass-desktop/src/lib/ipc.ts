@@ -1,6 +1,6 @@
-import { type BrowserWindow, ipcMain } from 'electron';
+import { ipcMain } from 'electron';
 
-import type { MaybeNull, MaybePromise, Result } from '@proton/pass/types';
+import type { MaybePromise, Result } from '@proton/pass/types';
 
 export type IPCChannel<P extends any[], R extends any> = { args: P; result: R };
 export type IPCChannelResult<T> = Result<{ result: T }>;
@@ -30,10 +30,3 @@ export const setupIpcHandler = <
             return { ok: false, error };
         }
     });
-
-export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
-    setupIpcHandler('window:show', async (_) => {
-        console.warn('window:show');
-        getWindow()?.show();
-    });
-};

@@ -24,7 +24,7 @@ export function setInstallSource(installSource: string) {
     });
 }
 
-export function getInstallSource() {
+function getInstallSource() {
     const installInfo = store.get('installInfo');
 
     if (installInfo?.reported === false) {
@@ -35,7 +35,7 @@ export function getInstallSource() {
     return null;
 }
 
-export function setInstallSourceReported() {
+function setInstallSourceReported() {
     const installInfo = store.get('installInfo');
 
     if (installInfo && installInfo.reported === false) {

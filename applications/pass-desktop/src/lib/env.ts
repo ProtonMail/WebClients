@@ -28,7 +28,7 @@ export const PLATFORM_CLIENT_ID = ((): string => {
 })();
 
 /* Overrides default sentry host which doesn't support file:// URLs */
-export const SENTRY_HOST = ((): string => {
+const SENTRY_HOST = ((): string => {
     if (typeof window !== 'undefined' && window.location.host.startsWith('localhost')) return window.location.host;
     return getAppUrlFromApiUrl(PASS_CONFIG.API_URL, APPS.PROTONPASS).host;
 })();

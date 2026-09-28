@@ -81,7 +81,7 @@ exposePassCrypto(createPassCrypto(core, store));
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
 connectivity.init();
 
-export const getPassCoreProps = (): PassCoreProviderProps => ({
+const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
     connectivity,
     core,
