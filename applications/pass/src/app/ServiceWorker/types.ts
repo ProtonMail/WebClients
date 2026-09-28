@@ -5,7 +5,7 @@ import type { AuthSession } from '@proton/pass/lib/auth/session';
 import type { SwitchableSession } from '@proton/pass/lib/auth/switch';
 import type { MaybePromise } from '@proton/pass/types';
 
-export type ServiceWorkerMessageBase = {
+type ServiceWorkerMessageBase = {
     /** set this flag when sending out messages from clients to
      * the service worker in order to broadcast the message back to
      * every claimed clients */
@@ -37,7 +37,7 @@ export type WithOrigin<T> = T & {
 };
 
 export type ServiceWorkerMessageType = ServiceWorkerMessage['type'];
-export type ServiceWorkerMessageResponseMap = {};
+type ServiceWorkerMessageResponseMap = {};
 
 export type ServiceWorkerResponse<T extends ServiceWorkerMessageType> = T extends keyof ServiceWorkerMessageResponseMap
     ? ServiceWorkerMessageResponseMap[T]

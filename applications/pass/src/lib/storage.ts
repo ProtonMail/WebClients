@@ -14,7 +14,7 @@ export const SETTINGS_STORAGE_KEY = 'settings';
 export const TELEMETRY_STORAGE_KEY = 'telemetry';
 export const SPOTLIGHT_STORAGE_KEY = 'onboarding';
 
-export const getStorageKey = (prefix: string) => (localID?: number) =>
+const getStorageKey = (prefix: string) => (localID?: number) =>
     localID !== undefined ? `${prefix}::${localID}` : prefix;
 
 export const getSessionKey = (localId?: number) => `${STORAGE_PREFIX}${localId ?? 0}`;
