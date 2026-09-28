@@ -1,5 +1,4 @@
 import type { EditorInitializationConfig } from '@proton/docs-shared'
-import { TranslatedResult } from '@proton/docs-shared'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
@@ -40,7 +39,7 @@ export type SpreadsheetRef = {
 export type SpreadsheetProps = {
   docState: SheetsDocumentAdapter
   hidden: boolean
-  onEditorLoadResult: (result: TranslatedResult<void>) => void
+  onEditorReadyToReceiveUpdates: () => void
   editorInitializationConfig: EditorInitializationConfig | undefined
   isVersionHistoryView: boolean
   editingLocked: boolean
@@ -54,7 +53,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   {
     docState,
     hidden,
-    onEditorLoadResult,
+    onEditorReadyToReceiveUpdates,
     editorInitializationConfig,
     isVersionHistoryView,
     editingLocked,
@@ -208,8 +207,8 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   }))
 
   useEffect(() => {
-    onEditorLoadResult(TranslatedResult.ok())
-  }, [onEditorLoadResult])
+    onEditorReadyToReceiveUpdates()
+  }, [onEditorReadyToReceiveUpdates])
 
   const { onInsertFile, importExcelFile, importCSVFile, calculateNow, writeBasePatchIfNecessary } = state
   const handleExcelFileImport = useCallback(
