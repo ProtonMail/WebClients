@@ -19,7 +19,7 @@ const FormGroup = createComponent(function (props: ComponentProps<'div'>) {
     <div
       {...props}
       className={clsx(
-        'border-weak flex min-w-0 flex-col items-start gap-3 border-b py-3 last:border-0',
+        'flex min-w-0 flex-col items-start gap-3 border-b border-[--border-weak] py-3 last:border-0',
         props.className,
       )}
     />
@@ -27,7 +27,12 @@ const FormGroup = createComponent(function (props: ComponentProps<'div'>) {
 })
 
 const SelectGroup = createComponent(function (props: Ariakit.SelectGroupProps) {
-  return <Ariakit.SelectGroup {...props} className={clsx('border-weak border-b last:border-0', props.className)} />
+  return (
+    <Ariakit.SelectGroup
+      {...props}
+      className={clsx('border-b border-[--border-weak] last:border-0', props.className)}
+    />
+  )
 })
 
 const FormLabel = createComponent(function (props: Ariakit.RoleProps<'label'>) {
@@ -43,7 +48,7 @@ const Select = createComponent(function ({ children, ...props }: Ariakit.SelectP
     <Ariakit.Select
       {...props}
       className={clsx(
-        'border-weak flex h-[36px] min-w-0 items-center gap-2 rounded-lg border pl-3 text-left text-sm !outline-none',
+        'flex h-[36px] min-w-0 items-center gap-2 rounded-lg border border-[--border-weak] pl-3 text-left text-sm !outline-none',
         'transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}
@@ -92,9 +97,9 @@ export function SpreadsheetSettingsDialog() {
         modal={false}
         unmountOnHide
         className={clsx(
-          'bg-norm fixed inset-4 z-10 m-auto h-fit w-full max-w-[32rem]',
+          'fixed inset-4 z-10 m-auto h-fit w-full max-w-[32rem] bg-[--background-norm]',
           'rounded-xl p-6',
-          'border-weak border shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] outline-none',
+          'border border-[--border-weak] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] outline-none',
         )}
       >
         <div className="flex flex-col gap-3">

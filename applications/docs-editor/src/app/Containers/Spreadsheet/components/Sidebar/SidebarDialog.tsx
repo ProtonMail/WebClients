@@ -25,7 +25,7 @@ export function SidebarDialogHeader({ title }: SidebarDialogHeaderProps) {
   const { sidebarDialog, titleId } = useSidebarDialogContext()
 
   return (
-    <div className="border-weak flex shrink-0 items-center justify-between gap-2 border-b-[0.5px] px-4 pb-2 pt-6">
+    <div className="flex shrink-0 items-center justify-between gap-2 border-b-[0.5px] border-[--border-weak] px-4 pb-2 pt-6">
       <h1 id={titleId} className="text-lg font-bold">
         {title}
       </h1>

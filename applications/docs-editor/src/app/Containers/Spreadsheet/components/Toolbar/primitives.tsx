@@ -45,7 +45,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
   const [toolbarContainerElement, setToolbarContainerElement] = useState<HTMLDivElement | null>(null)
   return (
     <div ref={ref} {...props} className={clsx('select-none print:hidden', props.className)}>
-      <div className="border-weak rounded-[1rem] border bg-[white] shadow-[0_4px_10px_0_rgba(0,0,0,0.06)] max-sm:rounded-none">
+      <div className="rounded-[1rem] border border-[--border-weak] bg-[white] shadow-[0_4px_10px_0_rgba(0,0,0,0.06)] max-sm:rounded-none">
         <GroupsProvider toolbarContainerElement={toolbarContainerElement}>
           <Ariakit.Toolbar className="flex grow gap-[.5rem] py-[.375rem]">
             <div
@@ -192,7 +192,7 @@ const Separator = forwardRef<HTMLHRElement, SeparatorProps>(function Separator(p
     <Ariakit.ToolbarSeparator
       ref={ref}
       {...props}
-      className={clsx('border-weak h-[1.25rem] w-[1px] flex-shrink-0 border-l', props.className)}
+      className={clsx('h-[1.25rem] w-[1px] flex-shrink-0 border-l border-[--border-weak]', props.className)}
     />
   )
 })

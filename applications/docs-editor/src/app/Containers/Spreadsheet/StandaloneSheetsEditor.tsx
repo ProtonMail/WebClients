@@ -2,6 +2,7 @@ import { SpreadsheetProvider } from '@rowsncolumns/spreadsheet'
 import type { ForwardedRef } from 'react'
 import { forwardRef } from 'react'
 
+import { SheetsStyleScope } from './SheetsStyleScope'
 import { Spreadsheet, type SpreadsheetProps, type SpreadsheetRef } from './Spreadsheet'
 
 /**
@@ -25,19 +26,21 @@ export const StandaloneSheetsEditor = forwardRef(function StandaloneSheetsEditor
 ) {
   return (
     <SpreadsheetProvider>
-      <Spreadsheet
-        ref={ref}
-        docState={docState}
-        hidden={hidden}
-        onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
-        initialization={initialization}
-        isVersionHistoryView={isVersionHistoryView}
-        editingLocked={editingLocked}
-        setMigrationEditingLocked={setMigrationEditingLocked}
-        updateLocalStateToLog={updateLocalStateToLog}
-        isPublicMode={isPublicMode}
-        shouldUseCustomYjsInitialization={shouldUseCustomYjsInitialization}
-      />
+      <SheetsStyleScope>
+        <Spreadsheet
+          ref={ref}
+          docState={docState}
+          hidden={hidden}
+          onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
+          initialization={initialization}
+          isVersionHistoryView={isVersionHistoryView}
+          editingLocked={editingLocked}
+          setMigrationEditingLocked={setMigrationEditingLocked}
+          updateLocalStateToLog={updateLocalStateToLog}
+          isPublicMode={isPublicMode}
+          shouldUseCustomYjsInitialization={shouldUseCustomYjsInitialization}
+        />
+      </SheetsStyleScope>
     </SpreadsheetProvider>
   )
 })
