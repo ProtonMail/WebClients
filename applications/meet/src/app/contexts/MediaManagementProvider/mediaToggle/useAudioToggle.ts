@@ -26,6 +26,7 @@ import { useNoiseCancellationModel } from '../../../processors/noise-cancellatio
 import { audioQuality } from '../../../qualityConstants';
 import type { AudioToggleParams, SwitchActiveDevice, ToggleAudioType } from '../../../types';
 import { outputlessAudioContextOptions } from '../../../utils/browser';
+import type { MeetAudioContext } from '../../../utils/meet-audio-context';
 import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
 
 const TOGGLE_TIMEOUT_MS = 8000;
@@ -57,14 +58,15 @@ const getErrorReason = (error: unknown) => {
  * means the browser's native noiseSuppression constraint is the fallback.
  *
  * Shared architecture:
- * - The AudioContext is created once and reused across device switches (needed for AudioWorkletNode).
+ * - Processors run in the shared playback AudioContext; sample rate pinned models get a dedicated
+ *   one, reused across device switches.
  * - A new processor is created per track (processors can't be reused across tracks because LiveKit
  *   calls processor.destroy() when a track is stopped).
  * - On device change, LiveKit internally calls processor.restart() on the existing track — we do NOT
  *   destroy the processor/AudioContext during device switches to avoid breaking that restart.
  * - On track ended (device unplug), we abandon the processor refs and auto-recover to the system
  */
-export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
+export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudioContext: MeetAudioContext) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
 
     const noiseCancellationModel = useNoiseCancellationModel();
@@ -84,7 +86,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
     const noiseFilterProcessor = useRef<AudioTrackProcessor | null>(null);
-    /** Persistent AudioContext reused across device switches — only closed on unmount */
+    /** Dedicated AudioContext for sample rate pinned models — only closed on unmount */
     const audioContext = useRef<AudioContext | null>(null);
     /** Track ID the processor is currently attached to, used to detect track replacement */
     const attachedTrackId = useRef<string | null>(null);
@@ -131,8 +133,14 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         }
     };
 
-    /** Returns the persistent AudioContext, creating one if needed (e.g. first attach or after unmount cleanup). */
-    const getOrCreateAudioContext = () => {
+    /** Chromium clocks an output-less context off a timer, which drifts against the mic. */
+    const getProcessorAudioContext = () => {
+        const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
+
+        if (!requiredSampleRate) {
+            return meetAudioContext.audioContext;
+        }
+
         if (audioContext.current && audioContext.current.state !== 'closed') {
             return audioContext.current;
         }
@@ -140,9 +148,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         // hence the readback in attachNoiseFilter below.
         // @ts-ignore - webkitAudioContext is not available in all browsers
         const Ctor = (window.AudioContext || window.webkitAudioContext) as typeof AudioContext;
-        const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
-        // This context only processes the mic, it never plays anything.
-        const options = outputlessAudioContextOptions(requiredSampleRate ? { sampleRate: requiredSampleRate } : {});
+        const options = outputlessAudioContextOptions({ sampleRate: requiredSampleRate });
         const ctx = new Ctor(options);
         audioContext.current = ctx;
         debugLog('noiseFilter:audio-context-created', {
@@ -261,7 +267,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         }
     };
 
-    /** Full cleanup: abandons processor refs AND closes the AudioContext. Only used on unmount. */
+    /** Full cleanup: abandons processor refs AND closes the dedicated AudioContext. Only used on unmount. */
     const destroyNoiseFilter = () => {
         abandonNoiseFilter();
 
@@ -276,8 +282,8 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
     /**
      * Creates a new noise filter processor (Krisp or DTLN) and attaches it to the current audio track.
-     * Reuses the persistent AudioContext. Guards against stale attach via generation counter —
-     * if abandonNoiseFilter() is called while setProcessor is in flight, the result is discarded.
+     * Guards against stale attach via generation counter — if abandonNoiseFilter() is called while
+     * setProcessor is in flight, the result is discarded.
      * On failure, detaches the AudioContext from the track so audio still flows directly.
      */
     const attachNoiseFilter = async () => {
@@ -312,7 +318,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         attachedTrackId.current = null;
 
         const gen = ++noiseFilterGeneration.current;
-        const ctx = getOrCreateAudioContext();
+        const ctx = getProcessorAudioContext();
 
         debugLog('noiseFilter:attach-start', { trackId: currentAudioTrack.id, generation: gen });
 
@@ -341,6 +347,11 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         }
 
         try {
+            if (ctx.state === 'suspended') {
+                await ctx.resume().catch(() => {});
+                debugLog('noiseFilter:audio-context-resume', { state: ctx.state });
+            }
+
             currentAudioTrack.setAudioContext(ctx);
             await withTimeout(
                 currentAudioTrack.setProcessor(processor),
