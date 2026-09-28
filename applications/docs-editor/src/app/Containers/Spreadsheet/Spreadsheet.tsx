@@ -4,7 +4,6 @@ import type { ForwardedRef } from 'react'
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { useLocalState, useProtonSheetsState, useVersioning } from './state'
 
-import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import { Menubar } from './components/Menubar/Menubar'
 import { Toolbar } from './components/Toolbar/Toolbar'
 import { BottomBar } from './components/BottomBar/BottomBar'

@@ -234,9 +234,9 @@ export function FormulaBar() {
 
 function FormulaBarContent() {
   return (
-    <div className="border-weak flex gap-[.125rem] border-t px-3">
+    <div className="flex gap-[.125rem] border-t border-[--border-weak] px-3">
       <RangeSelector />
-      <div className="border-weak flex items-center border-x px-1 text-sm font-normal italic">fx</div>
+      <div className="flex items-center border-x border-[--border-weak] px-1 text-sm font-normal italic">fx</div>
       <div className="flex max-h-8 flex-1 items-center overflow-auto py-1">
         <FormulaBarInput
           aria-label={s('Formula bar')}
