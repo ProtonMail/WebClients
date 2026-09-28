@@ -198,11 +198,14 @@ export type UiContext = {
 
 // Whether/how the `create_artifact` client tool is made available on this turn:
 // - 'off': not registered — no artifact exists yet and creation is disabled.
-// - 'create': explicit mode is active, or the persisted preference is on and no artifact
-//   exists yet.
-// - 'revise': the conversation already has an artifact — may only revise it, not spawn an
-//   unrelated new one. Covers follow-ups (including the artifact panel's inline-edit flow).
-export type ArtifactToolMode = 'off' | 'create' | 'revise';
+// - 'create': the user explicitly entered Create Artifact mode (phase 2) — the model is told
+//   to respond with the tool.
+// - 'auto': creation is enabled (the default) — the tool is available, but the model decides
+//   whether the request calls for an artifact. May also revise an existing artifact.
+// - 'revise': the conversation already has an artifact but creation is disabled — may only
+//   revise it, not spawn an unrelated new one. Covers follow-ups (including the artifact panel's
+//   inline-edit flow).
+export type ArtifactToolMode = 'off' | 'create' | 'auto' | 'revise';
 
 export function resolveArtifactToolMode(
     canvasModeActive: boolean | undefined,
@@ -214,18 +217,17 @@ export function resolveArtifactToolMode(
         return 'off';
     }
 
-    const hasArtifact = Object.keys(buildArtifactRegistry(messageChain)).length > 0;
-
     if (canvasModeActive) {
         return 'create';
     }
 
-    if (hasArtifact) {
-        return 'revise';
+    if (artifactCreationEnabled ?? true) {
+        return 'auto';
     }
 
-    if (artifactCreationEnabled ?? true) {
-        return 'create';
+    const hasArtifact = Object.keys(buildArtifactRegistry(messageChain)).length > 0;
+    if (hasArtifact) {
+        return 'revise';
     }
 
     return 'off';
