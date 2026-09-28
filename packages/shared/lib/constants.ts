@@ -61,10 +61,6 @@ export const ACCOUNT_APP_NAME = `${BRAND_NAME} ${ACCOUNT_SHORT_APP_NAME}`;
 const SPACES_SHORT_APP_NAME = 'Spaces';
 export const SPACES_APP_NAME = `${BRAND_NAME} ${SPACES_SHORT_APP_NAME}`;
 
-// Third-party payment method brand name.
-const IDEAL_BRAND_NAME = 'iDEAL';
-const WERO_BRAND_NAME = 'Wero';
-export const IDEAL_WERO_BRAND_NAME = `${IDEAL_BRAND_NAME} | ${WERO_BRAND_NAME}`;
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
     PROTONACCOUNTLITE: 'proton-account-lite',

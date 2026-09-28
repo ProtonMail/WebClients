@@ -342,10 +342,7 @@ export type ChargebeeIframeHandles = {
     setGooglePayPaymentIntent: (payload: SetGooglePayPaymentIntentPayload, abortSignal?: AbortSignal) => Promise<any>;
     initializeGooglePay: () => Promise<any>;
     initializeIdeal: () => Promise<any>;
-    setIdealPaymentIntent: (
-        payload: Omit<SetIdealPaymentIntentPayload, 'buttonLabel'>,
-        abortSignal: AbortSignal
-    ) => Promise<any>;
+    setIdealPaymentIntent: (payload: SetIdealPaymentIntentPayload, abortSignal: AbortSignal) => Promise<any>;
 };
 
 export type ChargebeeIframeEvents = {

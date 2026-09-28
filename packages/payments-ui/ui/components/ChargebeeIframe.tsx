@@ -65,7 +65,6 @@ import type {
     RemoveEventListener,
 } from '@proton/payments/core/interface';
 import { capturePaymentMessage } from '@proton/payments/sentry/capture';
-import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
@@ -588,17 +587,13 @@ function useChargebeeHandles(
 
             return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
         },
-        setIdealPaymentIntent: async (
-            payload: Omit<SetIdealPaymentIntentPayload, 'buttonLabel'>,
-            abortSignal: AbortSignal
-        ) => {
+        setIdealPaymentIntent: async (payload: SetIdealPaymentIntentPayload, abortSignal: AbortSignal) => {
             const setIdealPaymentIntentActionType = 'set-ideal-payment-intent';
-            const buttonLabel = c('Payments').t`Pay with ${IDEAL_WERO_BRAND_NAME}`;
 
             try {
                 return await iframeAction(
                     setIdealPaymentIntentActionType,
-                    { ...payload, buttonLabel },
+                    payload,
                     iframeRef,
                     targetOrigin,
                     abortSignal

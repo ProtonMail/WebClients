@@ -1,0 +1,23 @@
+@use 'sass:math';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+
+// Keep in sync with `.ideal-button` in packages/chargebee/src/style.scss, which swaps places with this one.
+// `.button` is only there to outrank ButtonLike's size class.
+.button.ideal-button {
+	--padding-block: #{em(7, 16)}; // 40px height
+	--padding-inline: #{em(16, 16)};
+
+	font-size: rem(16);
+	font-family: system-ui, sans-serif; // the iframe has no Inter
+	font-weight: normal;
+	line-height: #{math.div(24, 16)};
+
+	&--disabled:disabled:not([aria-busy='true']) {
+		border-color: transparent;
+		background-color: var(--interaction-norm);
+		color: var(--interaction-norm-contrast);
+		opacity: 0.5;
+	}
+}

@@ -227,15 +227,23 @@ $input-border-size: 1;
 	block-size: rem(16);
 }
 
-// Tries to mimic ButtonLike Style
+// Keep in sync with `.button.ideal-button` in @proton/payments-ui, which swaps places with this one.
 .ideal-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	inline-size: 100%;
-	padding-block: #{em(6)}; // 40px height
-	padding-inline: #{em(16)};
+	padding-block: #{em(7, 16)}; // 40px height
+	padding-inline: #{em(16, 16)};
 	font-size: rem(16);
+
+	// No reset in this bundle, so a bare button would use the UA font and render heavier.
+	font-family: system-ui, sans-serif;
+	font-weight: normal;
+	/* stylelint-disable */
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	/* stylelint-enable */
 	border: 1px solid transparent;
 	border-radius: var(--border-radius-md);
 	background-color: var(--interaction-norm);
@@ -261,12 +269,14 @@ $input-border-size: 1;
 
 // The styles below won't be minified by purgecss because we want to override the default styles of some third-party
 // scripts and elements. Mostly we want to prevent them displaying their loading states.
+
 /* purgecss start ignore */
 .paypal-checkout-sandbox {
 	display: none !important;
 }
 
-// heuristic to hide the overalay that asks user to confi
+// heuristic to hide the overlay that asks the user to confirm
+/* stylelint-disable-next-line selector-type-no-unknown -- custom element injected by Apple Pay */
 apple-pay-modal ~ div[data-testid='overlay'] {
 	display: none !important;
 }
