@@ -1,7 +1,7 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import { $generateHtmlFromNodes, $generateNodesFromDOM } from '@lexical/html'
 import { $getRoot } from 'lexical'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import { $createImageNode } from './ImageNode'
 import { $isImageNode } from './isImageNode'
 

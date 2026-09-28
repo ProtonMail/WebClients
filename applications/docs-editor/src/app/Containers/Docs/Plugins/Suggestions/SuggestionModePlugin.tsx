@@ -25,7 +25,7 @@ import {
 import { useEffect, useRef, useState } from 'react'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { SuggestionTypesThatCanBeEmpty, type SuggestionID } from './Types'
-import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INSERT_FILE_COMMAND } from '../../../../Commands/Events'
+import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INSERT_FILE_COMMAND } from '../../Commands/Events'
 import type { CommentThreadInterface, SuggestionSummaryType } from '@proton/docs-shared'
 import { reportErrorToSentry } from '../../../../Utils/errorMessage'
 import { useMarkNodesContext } from '../MarkNodesContext'
