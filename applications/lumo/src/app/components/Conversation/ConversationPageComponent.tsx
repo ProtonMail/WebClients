@@ -50,8 +50,8 @@ const ConversationPageComponentInner = () => {
     const messageAttachmentIdsRef = useRef(messageAttachmentIds);
     messageAttachmentIdsRef.current = messageAttachmentIds;
     const prevConversationIdRef = useRef<ConversationId | undefined>();
-    // Extract query parameters from URL (will be cleared after reading)
-    const initialQuery = useQueryParam('q');
+    // ?q= auto-send is guest-only; signed-in users ignore it (param is still stripped from the URL).
+    const initialQuery = useQueryParam('q', true, 'both', isGuest);
     const prefillQuery = useQueryParam('prefill');
 
     // Activate an agent from a `?skill=<agentId>` link.

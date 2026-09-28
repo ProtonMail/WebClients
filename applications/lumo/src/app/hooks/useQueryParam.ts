@@ -18,12 +18,14 @@ export type QueryParamSource = 'search' | 'hash' | 'both';
  * @param paramName - The name of the parameter to extract
  * @param clearAfterRead - Whether to remove the parameter from the URL after reading (default: true)
  * @param source - Where to read the parameter from: query string, hash fragment, or both (default: 'both')
+ * @param enabled - When false, ignore the value (return null) but still strip it from the URL if clearAfterRead
  * @returns The parameter value or null if not present
  */
 export const useQueryParam = (
     paramName: string,
     clearAfterRead: boolean = true,
-    source: QueryParamSource = 'both'
+    source: QueryParamSource = 'both',
+    enabled: boolean = true
 ): string | null => {
     const location = useLocation();
     const history = useHistory();
@@ -45,7 +47,9 @@ export const useQueryParam = (
             (readHash ? hashParams.get(paramName) : null) ?? (readSearch ? searchParams.get(paramName) : null);
 
         if (value) {
-            setParamValue(value);
+            if (enabled) {
+                setParamValue(value);
+            }
 
             if (clearAfterRead) {
                 clearedByUs.current = true;
@@ -78,7 +82,17 @@ export const useQueryParam = (
                 setParamValue(null);
             }
         }
-    }, [paramName, clearAfterRead, source, location.search, location.pathname, location.hash, history, paramValue]);
+    }, [
+        paramName,
+        clearAfterRead,
+        source,
+        enabled,
+        location.search,
+        location.pathname,
+        location.hash,
+        history,
+        paramValue,
+    ]);
 
     return paramValue;
 };

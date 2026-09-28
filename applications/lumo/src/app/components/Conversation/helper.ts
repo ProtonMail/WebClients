@@ -10,9 +10,9 @@ import {
     retrieveDocumentContextForProject,
 } from '../../lib/rag';
 import { prepareTurns } from '../../llm';
-import { getContextLimitsForModelTier } from '../../llm/modelContextLimits';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
+import { getContextLimitsForModelTier } from '../../llm/modelContextLimits';
 import { selectMessagesByConversationId } from '../../redux/selectors';
 import { clearPendingAgent } from '../../redux/slices/composerActions';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
@@ -132,9 +132,9 @@ export function mergeConversationAttachmentsForTurns(existing: Attachment[], res
     return [...updatedExisting, ...newOnly];
 }
 
-// ?q= deep-link security (first inference only)
+// ?q= deep-link security (guest auto-send, first inference only)
 //
-// Opening a link with ?q= auto-sends a prompt the user did not type and has not reviewed yet.
+// Guest chat only: opening a link with ?q= auto-sends a prompt the user did not type and has not reviewed yet.
 // An attacker could embed instructions to call web_extract with exfiltration URLs. We mitigate
 // the immediate auto-send by:
 //   1. Excluding web_extract from the external-tool allowlist (see below).
