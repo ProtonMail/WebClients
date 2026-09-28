@@ -227,7 +227,7 @@ export const read1Password1PuxData = async (file: File): Promise<ImportReaderRes
                 }
             }
 
-            vaults.push({ name, shareId: null, items });
+            vaults.push({ name, shareId: null, folders: [], items });
         }
 
         return { vaults, ignored, warnings: [], fileReader };

@@ -78,6 +78,9 @@ export type ItemImportIntent<T extends ItemType = ItemType> = Item<T, ItemImport
     createTime?: number;
     modifyTime?: number;
     files?: string[];
+    /** References a local `ImportFolder.id` of the same payload, not a real `FolderID`
+     * from the server. Resolved to a server `FolderID` by the import saga. */
+    folderId?: MaybeNull<string>;
 };
 
 export type ItemMoveDTO = { before: ItemRevision; after: ItemRevision };

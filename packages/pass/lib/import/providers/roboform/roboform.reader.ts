@@ -95,6 +95,7 @@ export const readRoboformData = async (file: File): Promise<ImportReaderResult> 
             vaults.push({
                 shareId: null,
                 name: getImportedVaultName(vaultName),
+                folders: [],
                 items,
             });
         }

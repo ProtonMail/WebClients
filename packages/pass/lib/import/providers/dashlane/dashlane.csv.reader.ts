@@ -65,7 +65,7 @@ export const readDashlaneDataCSV = async (file: File): Promise<ImportReaderResul
 
         const parser = getItemParser(items[0]);
         const vaultItems = await seq(items, parser);
-        const vaults: ImportVault[] = [{ name: getImportedVaultName(), shareId: null, items: vaultItems }];
+        const vaults: ImportVault[] = [{ name: getImportedVaultName(), shareId: null, folders: [], items: vaultItems }];
 
         return { vaults, ignored: [], warnings };
     } catch (e) {

@@ -389,11 +389,15 @@ export const importItemsBatch = async (options: {
         Items: (
             await Promise.all(
                 importIntents.map(async (importIntent): Promise<Maybe<ImportItemRequest>> => {
-                    const { trashed, createTime, modifyTime, ...item } = importIntent;
+                    const { trashed, createTime, modifyTime, folderId, ...item } = importIntent;
 
                     try {
                         return {
-                            Item: await PassCrypto.createItem({ shareId, content: serializeItemContent(item) }),
+                            Item: await PassCrypto.createItem({
+                                shareId,
+                                content: serializeItemContent(item),
+                                folderId,
+                            }),
                             AliasEmail: item.type === 'alias' ? item.extraData.aliasEmail : null,
                             Trashed: trashed,
                             CreateTime: createTime ?? null,

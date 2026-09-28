@@ -99,7 +99,7 @@ const groupToVault = async (group: KeePassGroup): Promise<MaybeNull<ImportVault>
         items.push(await entryToItem(entry));
     }
 
-    return { name, shareId: null, items };
+    return { name, shareId: null, folders: [], items };
 };
 
 const extractVaults = async (group: KeePassGroup): Promise<ImportVault[]> => {

@@ -1,17 +1,27 @@
 import type { Task } from 'redux-saga';
 import { call, fork, put, select, take, takeLeading } from 'redux-saga/effects';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import chunk from '@proton/utils/chunk';
 
 import { MAX_BATCH_PER_IMPORT_REQUEST } from '../../../constants';
+import type { FolderLimits, FoldersById } from '../../../lib/folders/folder.utils';
+import { planImportFolders } from '../../../lib/import/helpers/folders';
 import { type ImportReport, formatIgnoredItem } from '../../../lib/import/helpers/report';
-import type { ImportVault } from '../../../lib/import/types';
+import type { ImportFolder, ImportVault } from '../../../lib/import/types';
 import { importItemsBatch } from '../../../lib/items/item.requests';
 import { createTelemetryEvent } from '../../../lib/telemetry/utils';
 import { isAutofillModeDataOfTypeUrl, uniqueAutofillUrls } from '../../../lib/urls/utils/autofill';
 import { isPaidPlan } from '../../../lib/user/user.predicates';
-import type { IndexedByShareIdAndItemId, ItemImportIntent, ItemRevision, Maybe, MaybeNull, PassPlanResponse } from '../../../types';
+import type {
+    FolderData,
+    IndexedByShareIdAndItemId,
+    ItemImportIntent,
+    ItemRevision,
+    Maybe,
+    MaybeNull,
+    PassPlanResponse,
+} from '../../../types';
 import { PassFeature } from '../../../types/api/features';
 import type { UserPassPlan } from '../../../types/api/plan';
 import { TelemetryEventName } from '../../../types/data/telemetry';
@@ -21,11 +31,27 @@ import { getErrorMessage } from '../../../utils/errors/get-error-message';
 import { prop } from '../../../utils/fp/lens';
 import { logger } from '../../../utils/logger';
 import { getEpoch } from '../../../utils/time/epoch';
-import { importItems, importItemsProgress, notification, startEventPolling, stopEventPolling, vaultCreationIntent } from '../../actions';
+import {
+    foldersUpdated,
+    importItems,
+    importItemsProgress,
+    notification,
+    startEventPolling,
+    stopEventPolling,
+    vaultCreationIntent,
+} from '../../actions';
 import type { WithSenderAction } from '../../actions/enhancers/endpoint';
 import { matchCancel } from '../../request/actions';
-import { selectFeatureFlag, selectPassPlan, selectUserPlan } from '../../selectors';
+import {
+    selectFeatureFlag,
+    selectFolderLimits,
+    selectPassPlan,
+    selectShareFolders,
+    selectUserFolderAllowed,
+    selectUserPlan,
+} from '../../selectors';
 import type { RootSagaOptions } from '../../types';
+import { createFolderWorker } from '../folders/folders.saga';
 import { createVaultWorker } from '../vaults/vault-creation.saga';
 
 type ImportWorkerState = {
@@ -62,6 +88,64 @@ const assertNotAborted = (state: ImportWorkerState) => {
     if (state.aborted) throw new DOMException('Import aborted', 'AbortError');
 };
 
+const isAbortError = (err: unknown) => err instanceof DOMException && err.name === 'AbortError';
+
+/** Creates the payload's folders inside `shareId`, skipping ones that already
+ * exist or exceed the plan limits. Returns a map from the payload's folder ids (local)
+ * to real `FolderID`s (server) used to place the items.
+ * Folders are created one at a time, parents before children: a child's key
+ * is encrypted with its parent's key */
+function* importFoldersForVault(options: { state: ImportWorkerState; shareId: string; folders: ImportFolder[]; warnings: string[] }) {
+    const { state, shareId, folders, warnings } = options;
+
+    const existing: FoldersById = yield select(selectShareFolders(shareId));
+    const limits: FolderLimits = yield select(selectFolderLimits);
+
+    const plan = planImportFolders(folders, { existing, limits });
+    warnings.push(...plan.warnings);
+
+    const resolved = new Map<string, MaybeNull<string>>(Object.entries(plan.reuse));
+    const created: FolderData[] = [];
+    let failed = 0;
+
+    try {
+        for (const folder of plan.create) {
+            const parentFolderId = folder.parentId ? (resolved.get(folder.parentId) ?? null) : null;
+
+            try {
+                assertNotAborted(state);
+                const data: FolderData = yield call(createFolderWorker, { shareId, parentFolderId, name: folder.name });
+                resolved.set(folder.id, data.folderId);
+                created.push(data);
+            } catch (e) {
+                if (isAbortError(e)) throw e;
+                /* A folder failing must not abort the vault: fall its subtree back
+                 * onto the closest ancestor that did get created */
+                logger.warn(`[Saga::Import] Could not create folder (${getErrorMessage(e)})`);
+                resolved.set(folder.id, parentFolderId);
+                failed++;
+            }
+        }
+    } finally {
+        if (created.length > 0) yield put(foldersUpdated(created));
+    }
+
+    if (failed > 0) {
+        warnings.push(
+            c('Warning').ngettext(
+                msgid`${failed} folder could not be created. Its items were imported to the closest folder available.`,
+                `${failed} folders could not be created. Their items were imported to the closest folder available.`,
+                failed
+            )
+        );
+    }
+
+    return Object.entries(plan.redirect).reduce<Record<string, MaybeNull<string>>>((acc, [localId, target]) => {
+        acc[localId] = target ? (resolved.get(target) ?? null) : null;
+        return acc;
+    }, {});
+}
+
 function* importWorker(
     state: ImportWorkerState,
     { getTelemetry }: RootSagaOptions,
@@ -86,6 +170,13 @@ function* importWorker(
     const userPlan: MaybeNull<PassPlanResponse> = yield select(selectUserPlan);
     const canImportFiles = isPaidPlan(passPlan) && userPlan?.DisplayName !== 'Pass Essentials';
     const URLAdvancedModesEnabled: boolean = yield select(selectFeatureFlag(PassFeature.PassAutofillUrlAdvancedModes));
+
+    const foldersEnabled: boolean = yield select(selectFeatureFlag(PassFeature.PassFolder));
+    const folderAllowed: Maybe<boolean> = yield select(selectUserFolderAllowed);
+    const canImportFolders = foldersEnabled && Boolean(folderAllowed);
+    /** Folder warnings are raised by the saga rather than the reader, since they
+     * depend on the target share and the user's plan */
+    const folderWarnings: string[] = [];
 
     const sanitized = URLAdvancedModesEnabled
         ? data.vaults
@@ -134,23 +225,47 @@ function* importWorker(
             provider,
             total: counts.items,
             totalFiles: counts.files,
-            warnings: data.warnings,
+            warnings: data.warnings.concat(folderWarnings),
         };
     };
 
     const importVaults = groupByKey(sanitized, 'shareId', { splitEmpty: true }).map(([vault, ...vaults]): ImportVault => ({
         ...vault,
+        folders: vault.folders.concat(...vaults.map(prop('folders'))),
         items: vault.items.concat(...vaults.map(prop('items'))),
     }));
+
+    if (!canImportFolders && importVaults.some(({ folders }) => folders.length > 0)) {
+        folderWarnings.push(
+            c('Warning').t`Folders were not imported: your plan does not support them. Items were imported to the vault root.`
+        );
+    }
 
     try {
         yield put(stopEventPolling());
 
         for (const vaultData of importVaults) {
             try {
+                assertNotAborted(state);
                 const shareId: string = vaultData.shareId ?? (yield call(createVaultForImport, vaultData.name));
 
-                for (const importIntents of chunk(vaultData.items, MAX_BATCH_PER_IMPORT_REQUEST)) {
+                const realFolderIds: Record<string, MaybeNull<string>> = canImportFolders && vaultData.folders.length > 0
+                    ? yield call(importFoldersForVault, {
+                          state,
+                          shareId,
+                          folders: vaultData.folders,
+                          warnings: folderWarnings,
+                      })
+                    : {};
+
+                /* Resolve local folder ids from the payload to `FolderID` from
+                 * the server before the items reach the API */
+                const vaultItems = vaultData.items.map((item) => ({
+                    ...item,
+                    folderId: item.folderId ? (realFolderIds[item.folderId] ?? null) : null,
+                }));
+
+                for (const importIntents of chunk(vaultItems, MAX_BATCH_PER_IMPORT_REQUEST)) {
                     try {
                         assertNotAborted(state);
 
@@ -171,6 +286,8 @@ function* importWorker(
                         counts.items += items.length;
                         yield put(importItemsProgress(requestID, counts.items, { shareId, items }));
                     } catch (e) {
+                        if (isAbortError(e)) throw e;
+
                         const errorMessage = getErrorMessage(e);
                         logger.warn(`[Saga::Import] Import batch error (${errorMessage})`);
                         yield put(
@@ -184,6 +301,9 @@ function* importWorker(
                     }
                 }
             } catch (e) {
+                /* A cancellation must stop the whole import and not be reported as a vault failure */
+                if (isAbortError(e)) throw e;
+
                 logger.warn(`[Saga::Import] Import error when creating vault (${getErrorMessage(e)})`);
                 yield put(
                     notification({
