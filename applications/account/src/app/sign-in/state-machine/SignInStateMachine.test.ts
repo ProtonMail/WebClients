@@ -1173,7 +1173,7 @@ describe('SignInStateMachine', () => {
             expect(spies.unlockKeys).not.toHaveBeenCalled();
         });
 
-        it('asks for the second password in two-password mode, and lets the user retry', async () => {
+        it('asks for the second password in two-password mode, shows a wrong one in the form, and lets the user retry', async () => {
             let attempt = 0;
             const { actor, errors } = startActor({
                 created: makeCreatedAuth({ secondPassword: true }),
@@ -1185,7 +1185,12 @@ describe('SignInStateMachine', () => {
             passwordAccount(actor).send({ type: 'unlock.submitted', payload: { password: 'wrong' } });
             await waitUntilSettled(actor);
             expect(passwordAccount(actor).getSnapshot().matches({ unlock: 'idle' })).toBe(true);
-            expect(errors()).toHaveLength(1);
+            expect(passwordAccount(actor).getSnapshot().context.unlockError).toBe('Wrong password');
+            expect(errors()).toEqual([]);
+
+            // Typing a new password clears it
+            passwordAccount(actor).send({ type: 'unlock.passwordEdited' });
+            expect(passwordAccount(actor).getSnapshot().context.unlockError).toBeUndefined();
             passwordAccount(actor).send({ type: 'unlock.submitted', payload: { password: 'right' } });
             expect((await waitUntilSettled(actor)).status).toBe('done');
         });
