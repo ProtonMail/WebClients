@@ -57,6 +57,7 @@ export enum InvoiceState {
     Void = 2,
     Billed = 3,
     Writeoff = 4,
+    Posted = 5,
 }
 
 export enum InvoiceOwner {
