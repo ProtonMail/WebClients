@@ -9,9 +9,9 @@ import {
   useState,
 } from 'react'
 import { create, type StoreApi, type UseBoundStore } from 'zustand'
+import type { SheetsActionType } from './contract/SheetsAction'
 import type { ProtonSheetsState } from './state'
 import { type ProtonSheetsUIState, useProtonSheetsUIState } from './ui-state'
-import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 
 export type ProtonSheetsUIStore = UseBoundStore<StoreApi<ProtonSheetsUIState>>
 export type ProtonSheetsUIStoreSetters = FunctionsOnly<ProtonSheetsUIState>

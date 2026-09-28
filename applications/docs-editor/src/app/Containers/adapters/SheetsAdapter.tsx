@@ -24,6 +24,7 @@ import {
 import { useResolvedAppPlatform } from './useResolvedAppPlatform'
 import { createSheetsFileMenuActions } from './createSheetsFileMenuActions'
 import { toCollaboratorCursorNavigationDestination } from './collaboratorCursorNavigationAdapter'
+import { toStoredSheetsActionType } from './sheetsActionAdapter'
 import { useSheetsFeatureFlags } from './useSheetsFeatureFlags'
 
 type SheetsAdapterProps = PropsWithChildren<{
@@ -89,7 +90,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       openLink: (url) => clientInvoker.openLink(url),
       fileMenuActions: createSheetsFileMenuActions(clientInvoker),
       storeSpreadsheetAction: (type, content) => {
-        void clientInvoker.storeSpreadsheetAction(type, content).catch(console.error)
+        void clientInvoker.storeSpreadsheetAction(toStoredSheetsActionType(type), content).catch(console.error)
       },
       storeSpreadsheetPatches: (patches, updateHash, type) => {
         void clientInvoker
