@@ -1,6 +1,7 @@
 export type { SheetsPatchCategory } from './contract/SheetsPatch'
 export type { SheetsActionType } from './contract/SheetsAction'
 export type { SheetsLogger } from './contract/SheetsLogger'
+export type { SheetsImportDataType, SheetsInitialization } from './contract/SheetsInitialization'
 export type { SpreadsheetImportDestination, SpreadsheetImportRequest } from './contract/SpreadsheetImportRequest'
 export { SheetsDependenciesProvider } from './SheetsDependenciesProvider'
 export type {
