@@ -1,7 +1,7 @@
 import '../app/style'
 import './standalone-sheet.css'
 import { createRoot } from 'react-dom/client'
-import { type ComponentProps, useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
   SheetsDependenciesProvider,
   StandaloneSheetsEditor,
@@ -105,17 +105,9 @@ function StandaloneSheet() {
     }),
     [ready, publishError, reportUnavailableFileMenuAction, theme],
   )
-  const onEditorLoadResult = useCallback<ComponentProps<typeof StandaloneSheetsEditor>['onEditorLoadResult']>(
-    (result) => {
-      if (result.isFailed()) {
-        setErrorLocked(true)
-        publishError(result.getTranslatedError())
-        return
-      }
-      session.editorLoaded()
-    },
-    [session, publishError],
-  )
+  const onEditorReadyToReceiveUpdates = useCallback(() => {
+    session.editorLoaded()
+  }, [session])
   const updateLocalStateToLog = useCallback((state: unknown) => {
     // eslint-disable-next-line no-console
     console.info('Workbook state', state)
@@ -136,7 +128,7 @@ function StandaloneSheet() {
             isVersionHistoryView={false}
             isPublicMode={false}
             editorInitializationConfig={undefined}
-            onEditorLoadResult={onEditorLoadResult}
+            onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
             updateLocalStateToLog={updateLocalStateToLog}
             shouldUseCustomYjsInitialization
           />

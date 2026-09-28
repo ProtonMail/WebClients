@@ -636,6 +636,17 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     }
   }, [applyBeforePrintFixesForChrome, updateFrameSize])
 
+  const onEditorReadyToReceiveUpdates = useCallback(() => {
+    if (!docState) {
+      throw new Error('docState is not set')
+    }
+
+    if (documentType !== 'sheet' || sheetsInitializationMode === 'legacy') {
+      docState.onEditorReadyToReceiveUpdates()
+      application.logger.info('Editor is ready to receive updates')
+    }
+  }, [docState, application.logger, documentType, sheetsInitializationMode])
+
   const onEditorLoadResult = useCallback(
     (result: TranslatedResult<void>) => {
       if (result.isFailed()) {
@@ -648,16 +659,9 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         return
       }
 
-      if (!docState) {
-        throw new Error('docState is not set')
-      }
-
-      if (documentType !== 'sheet' || sheetsInitializationMode === 'legacy') {
-        docState.onEditorReadyToReceiveUpdates()
-        application.logger.info('Editor is ready to receive updates')
-      }
+      onEditorReadyToReceiveUpdates()
     },
-    [docState, bridge, application.logger, documentType, sheetsInitializationMode],
+    [bridge, onEditorReadyToReceiveUpdates],
   )
 
   const onEditorError = useCallback(
@@ -773,7 +777,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               ref={spreadsheetRef}
               docState={docState}
               hidden={editorHidden}
-              onEditorLoadResult={onEditorLoadResult}
+              onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
               editorInitializationConfig={editorInitializationConfig}
               isVersionHistoryView={systemMode === EditorSystemMode.Revision}
               editingLocked={editingLocked || userMode === EditorUserMode.Preview}
