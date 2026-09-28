@@ -19,7 +19,7 @@ import {
 } from 'xstate';
 
 import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
-import { TOTPError } from '@proton/shared/lib/authentication/error';
+import { PasswordError, TOTPError } from '@proton/shared/lib/authentication/error';
 import type { AuthTypes } from '@proton/shared/lib/authentication/twoFactor';
 import { getRequiresPasswordSetup } from '@proton/shared/lib/keys';
 import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
@@ -31,7 +31,6 @@ import {
     type AccountFlowResult,
     NO_PASSWORD_POLICIES,
     failAccountFlow,
-    retryOnWrongPassword,
 } from '../../../state-machine/accountFlow';
 import {
     type StepErrorEvent,
@@ -56,6 +55,8 @@ export type PasswordAccountEvent =
     | { type: 'twoFactor.codeEdited' }
     | { type: 'lostTwoFactor.opened' }
     | { type: 'unlock.submitted'; payload: { password: string } }
+    /** The user changed the second password; a rejected one's message goes. */
+    | { type: 'unlock.passwordEdited' }
     | { type: 'newPassword.submitted'; payload: { password: string } }
     /** From the lost-2FA flow (a child actor): a backup code signed in, or an error to show. */
     | Lost2FAParentEvent
@@ -86,6 +87,8 @@ interface PasswordAccountMachineContext {
     passwordPolicies: OrganizationData['passwordPolicies'];
     /** Why the last code was rejected; shown in the code form, like the backup code screen's. */
     twoFactorError: string | undefined;
+    /** Why the last second password was rejected; shown in the unlock form, like the code form's. */
+    unlockError: string | undefined;
     result: AccountFlowResult | undefined;
 }
 
@@ -156,6 +159,13 @@ export const passwordAccountStateMachine = setup({
                 c('Error').t`Incorrect login credentials. Please try again.`,
         })),
         clearTwoFactorError: assign({ twoFactorError: undefined }),
+        /** Shown in the unlock form, so the user can try again. */
+        setUnlockError: assign((_, params: { error: unknown }) => ({
+            unlockError:
+                (params.error instanceof PasswordError && params.error.message) ||
+                c('Error').t`Incorrect second password. Please try again.`,
+        })),
+        clearUnlockError: assign({ unlockError: undefined }),
         setPasswordPolicies: assign((_, params: { passwordPolicies: OrganizationData['passwordPolicies'] }) => ({
             passwordPolicies: params.passwordPolicies,
         })),
@@ -191,6 +201,7 @@ export const passwordAccountStateMachine = setup({
         session: undefined,
         passwordPolicies: NO_PASSWORD_POLICIES,
         twoFactorError: undefined,
+        unlockError: undefined,
         result: undefined,
     }),
     output: ({ context }) => context.result ?? { type: 'cancelled' },
@@ -371,15 +382,21 @@ export const passwordAccountStateMachine = setup({
 
         /** Two-password mode: unlock the keys with the second password. */
         unlock: {
-            entry: ['stopLostTwoFactor', { type: 'setScreen', params: { screen: 'unlock' } }],
+            entry: [
+                'stopLostTwoFactor',
+                { type: 'setScreen', params: { screen: 'unlock' } },
+                // A password rejected before leaving the screen doesn't show when coming back to it
+                'clearUnlockError',
+            ],
             initial: 'idle',
             on: {
+                'unlock.passwordEdited': { actions: 'clearUnlockError' },
                 'decision.back': { target: 'cancelled' },
             },
             states: {
                 idle: {
                     on: {
-                        'unlock.submitted': { target: 'submitting' },
+                        'unlock.submitted': { target: 'submitting', actions: 'clearUnlockError' },
                     },
                 },
                 submitting: {
@@ -397,7 +414,14 @@ export const passwordAccountStateMachine = setup({
                             };
                         },
                         onDone: completeWithSession,
-                        onError: [retryOnWrongPassword('idle'), failAccountFlow],
+                        onError: [
+                            {
+                                guard: errorOf(PasswordError),
+                                target: 'idle',
+                                actions: { type: 'setUnlockError', params: ({ event }) => ({ error: event.error }) },
+                            },
+                            failAccountFlow,
+                        ],
                     },
                 },
             },
@@ -463,6 +487,8 @@ export const passwordAccountStateMachine = setup({
 
 /** A request runs; the screen shows its loading state. */
 export const selectTwoFactorError = ({ context }: { context: PasswordAccountMachineContext }) => context.twoFactorError;
+
+export const selectUnlockError = ({ context }: { context: PasswordAccountMachineContext }) => context.unlockError;
 
 export const selectSubmitting = (snapshot: SnapshotFrom<typeof passwordAccountStateMachine>) =>
     snapshot.hasTag(PasswordAccountStateMachineTags.submitting);
