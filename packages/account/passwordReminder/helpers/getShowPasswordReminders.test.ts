@@ -12,7 +12,7 @@ const now = new Date('2005-05-25');
 jest.useFakeTimers().setSystemTime(now);
 
 const makeUser = (overrides: Partial<UserModel> = {}): UserModel =>
-    ({ isPrivate: true, Flags: { sso: false }, ...overrides }) as UserModel;
+    ({ isPrivate: true, isSelf: true, Flags: { sso: false }, ...overrides }) as UserModel;
 
 // A keyful B2B organization that has finished setup.
 const configuredOrganization = {
@@ -151,6 +151,26 @@ describe('getShowPasswordReminders', () => {
                 user: makeUser({ isMember: true, isSelf: false, isPrivate: false }),
                 userSettings: makeUserSettings(),
                 organization: configuredOrganization,
+            });
+
+            expect(result).toBe(false);
+        });
+    });
+
+    // Both an admin through the organization key and a trusted contact through emergency
+    // access hold a session that isn't the account holder's own, which is what `isSelf`
+    // reports. No account type is exempt: individuals can't have an admin, but they can
+    // have a trusted contact.
+    describe('sessions held by someone other than the account holder', () => {
+        it.each([
+            ['an individual', undefined],
+            ['an organization member', configuredOrganization],
+            ['a family member', familyOrganization],
+        ])('returns false when a trusted contact is signed in to %s account', (_label, organization) => {
+            const result = getShowPasswordReminders({
+                user: makeUser({ isSelf: false }),
+                userSettings: makeUserSettings(),
+                organization,
             });
 
             expect(result).toBe(false);
