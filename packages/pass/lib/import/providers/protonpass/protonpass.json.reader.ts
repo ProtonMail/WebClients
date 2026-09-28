@@ -48,6 +48,7 @@ export const readProtonPassJSON = (
                     vault: {
                         name: name,
                         shareId: null,
+                        folders: [],
                         items: itemsToImport.reduce<ItemImportIntent[]>((acc, item) => {
                             /* Don't import existing aliases */
                             if (
