@@ -3,15 +3,9 @@ import type { ArtifactRegistry } from './artifactRegistry';
 import { CREATE_ARTIFACT_TOOL_NAME } from './createArtifactTool';
 import type { ParsedArtifact } from './parseArtifacts';
 
-function readToolCallNameFromPartialContent(content: string): string | undefined {
-    const match = content.match(/"name"\s*:\s*"([^"\\]+)"/);
-    if (typeof match?.[1] === 'string') {
-        return match[1];
-    }
-
-    return undefined;
-}
-
+// The backend now sends a name-only `chat.tool_call` announce before a client tool's arguments
+// start streaming (the same mechanism already used for server tools like web_search), so the
+// name is always available as complete, valid JSON — no need to guess it out of partial content.
 export function getToolCallNameFromBlock(block: ContentBlock): string | undefined {
     if (block.type !== 'tool_call') {
         return undefined;
@@ -28,8 +22,7 @@ export function getToolCallNameFromBlock(block: ContentBlock): string | undefine
             return raw.name;
         }
     } catch {
-        // Malformed or partial JSON — try to read the name field from the stream.
-        return readToolCallNameFromPartialContent(block.content);
+        // Not yet valid JSON — this can only happen before the announce has arrived.
     }
 
     return undefined;
@@ -79,16 +72,20 @@ export function isArtifactGenerationLoading(input: {
 
 /**
  * True while the side panel should show its loading shell — from the first create_artifact
- * tool_call chunk through until an artifact is opened in the panel (even if arguments already
- * parsed before the panel selection catches up).
+ * tool_call announcement until parseable artifact content exists (aligned with the in-chat chip).
  */
 export function isArtifactPanelGenerationLoading(input: {
     isGenerating: boolean;
     isLastMessage: boolean;
+    completeArtifacts: ParsedArtifact[];
     blocks: ContentBlock[];
     parentUserMessage?: Message;
 }): boolean {
     if (!input.isGenerating || !input.isLastMessage) {
+        return false;
+    }
+
+    if (input.completeArtifacts.length > 0) {
         return false;
     }
 
@@ -135,8 +132,8 @@ function isRevisingOpenArtifact(input: {
 
 /**
  * True while a follow-up revision is being generated for an artifact the user was already
- * viewing in the panel (latest version). Keeps the current version visible with a lightweight
- * loading overlay for the full assistant turn — even after parseable content arrives early.
+ * viewing in the panel (latest version). Shows a loading overlay only until parseable
+ * revision content exists — then the new version is shown while follow-up prose may continue.
  */
 export function isArtifactRevisionLoading(input: {
     isGenerating: boolean;
@@ -159,6 +156,13 @@ export function isArtifactRevisionLoading(input: {
 
     const isViewingLatest = input.selectedVersionIndex === entry.versions.length - 1;
     if (!isViewingLatest) {
+        return false;
+    }
+
+    const hasParseableRevision = input.completeArtifacts.some((artifact) => {
+        return artifact.id === input.selectedId;
+    });
+    if (hasParseableRevision) {
         return false;
     }
 
