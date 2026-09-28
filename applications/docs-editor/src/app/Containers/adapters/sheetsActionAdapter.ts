@@ -1,0 +1,63 @@
+import {
+  SheetsActions as StoredSheetsActions,
+  type SheetsActionType as StoredSheetsActionType,
+} from '@proton/docs-shared/lib/SheetsActionType'
+
+import type { SheetsActionType } from '../Spreadsheet/public'
+
+const storedSheetsActionTypes = {
+  SetLocale: StoredSheetsActions.SetLocale,
+  FreezeRows: StoredSheetsActions.FreezeRows,
+  UnfreezeRows: StoredSheetsActions.UnfreezeRows,
+  FreezeColumns: StoredSheetsActions.FreezeColumns,
+  UnfreezeColumns: StoredSheetsActions.UnfreezeColumns,
+  RenameSheet: StoredSheetsActions.RenameSheet,
+  DeleteSheet: StoredSheetsActions.DeleteSheet,
+  DuplicateSheet: StoredSheetsActions.DuplicateSheet,
+  HideSheet: StoredSheetsActions.HideSheet,
+  ShowSheet: StoredSheetsActions.ShowSheet,
+  MoveSheet: StoredSheetsActions.MoveSheet,
+  MoveSheetInDirection: StoredSheetsActions.MoveSheetInDirection,
+  ChangeTabColor: StoredSheetsActions.ChangeTabColor,
+  Undo: StoredSheetsActions.Undo,
+  Redo: StoredSheetsActions.Redo,
+  ClearFormatting: StoredSheetsActions.ClearFormatting,
+  SetFormat: StoredSheetsActions.SetFormat,
+  Delete: StoredSheetsActions.Delete,
+  Cut: StoredSheetsActions.Cut,
+  Copy: StoredSheetsActions.Copy,
+  Paste: StoredSheetsActions.Paste,
+  PasteValue: StoredSheetsActions.PasteValue,
+  PasteFormatting: StoredSheetsActions.PasteFormatting,
+  PasteTransposed: StoredSheetsActions.PasteTransposed,
+  PasteFormula: StoredSheetsActions.PasteFormula,
+  PasteLink: StoredSheetsActions.PasteLink,
+  SetBorder: StoredSheetsActions.SetBorder,
+  DecreaseDecimalPlaces: StoredSheetsActions.DecreaseDecimalPlaces,
+  IncreaseDecimalPlaces: StoredSheetsActions.IncreaseDecimalPlaces,
+  MergeAll: StoredSheetsActions.MergeAll,
+  MergeHorizontally: StoredSheetsActions.MergeHorizontally,
+  MergeVertically: StoredSheetsActions.MergeVertically,
+  Unmerge: StoredSheetsActions.Unmerge,
+  SavePaintFormat: StoredSheetsActions.SavePaintFormat,
+  InsertCellsShiftRight: StoredSheetsActions.InsertCellsShiftRight,
+  InsertCellsShiftDown: StoredSheetsActions.InsertCellsShiftDown,
+  InsertRowsAbove: StoredSheetsActions.InsertRowsAbove,
+  InsertRowsBelow: StoredSheetsActions.InsertRowsBelow,
+  InsertColumnsLeft: StoredSheetsActions.InsertColumnsLeft,
+  InsertColumnsRight: StoredSheetsActions.InsertColumnsRight,
+  CreateNewSheet: StoredSheetsActions.CreateNewSheet,
+  CreateChart: StoredSheetsActions.CreateChart,
+  UpdateChart: StoredSheetsActions.UpdateChart,
+  SortColumnAscending: StoredSheetsActions.SortColumnAscending,
+  SortColumnDescending: StoredSheetsActions.SortColumnDescending,
+  ToggleFilter: StoredSheetsActions.ToggleFilter,
+  ProtectRange: StoredSheetsActions.ProtectRange,
+  UnprotectRange: StoredSheetsActions.UnprotectRange,
+  RequestDataValidation: StoredSheetsActions.RequestDataValidation,
+  InitialLoadComplete: StoredSheetsActions.InitialLoadComplete,
+} satisfies Record<SheetsActionType | keyof typeof StoredSheetsActions, StoredSheetsActionType>
+
+export function toStoredSheetsActionType(type: SheetsActionType): StoredSheetsActionType {
+  return storedSheetsActionTypes[type]
+}
