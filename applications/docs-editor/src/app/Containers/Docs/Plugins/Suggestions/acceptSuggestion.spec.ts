@@ -1,5 +1,5 @@
 import { createHeadlessEditor } from '@lexical/headless'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import { $createSuggestionNode } from './ProtonNode'
 import type { ParagraphNode, ElementNode, TextNode } from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot, $isParagraphNode, $isTextNode } from 'lexical'

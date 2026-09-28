@@ -1,9 +1,16 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import type { Logger } from '@proton/shared/lib/logs'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import type { ElementNode } from 'lexical'
-import { $isParagraphNode, $isTextNode } from 'lexical'
-import { $createParagraphNode, $createRangeSelection, $createTextNode, $getRoot, $setSelection } from 'lexical'
+import {
+  $isParagraphNode,
+  $isTextNode,
+  $createParagraphNode,
+  $createRangeSelection,
+  $createTextNode,
+  $getRoot,
+  $setSelection,
+} from 'lexical'
 import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
 import type { HeadingNode } from '@lexical/rich-text'
 import { $isHeadingNode } from '@lexical/rich-text'

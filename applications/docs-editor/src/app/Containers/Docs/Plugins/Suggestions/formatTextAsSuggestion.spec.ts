@@ -1,9 +1,17 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import type { ParagraphNode, TextNode } from 'lexical'
-import { $getSelection, $isRangeSelection, $setSelection } from 'lexical'
-import { $createParagraphNode, $createRangeSelection, $createTextNode, $getRoot, $isTextNode } from 'lexical'
+import {
+  $getSelection,
+  $isRangeSelection,
+  $setSelection,
+  $createParagraphNode,
+  $createRangeSelection,
+  $createTextNode,
+  $getRoot,
+  $isTextNode,
+} from 'lexical'
 import type { Logger } from '@proton/shared/lib/logs'
-import { AllNodes } from '../../../../AllNodes'
+import { AllNodes } from '../../AllNodes'
 import { $formatTextAsSuggestion } from './formatTextAsSuggestion'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'

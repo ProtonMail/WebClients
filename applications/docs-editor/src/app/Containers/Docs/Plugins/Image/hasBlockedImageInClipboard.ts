@@ -1,5 +1,5 @@
 import { content as sanitizeContent } from '@proton/sanitize/purify'
-import { isAllowedImageSrc } from '../../../../Conversion/ImageSrcUtils'
+import { isAllowedImageSrc } from '../../Conversion/ImageSrcUtils'
 
 export function hasBlockedImageInClipboard(clipboardData: DataTransfer | null, namespace: string): boolean {
   if (!clipboardData) {
