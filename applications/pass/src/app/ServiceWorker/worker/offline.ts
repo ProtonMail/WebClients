@@ -14,8 +14,7 @@ const EXCLUDED_OFFLINE_ASSETS_RE = /(offline|version)\.json/;
 const ASSET_ROUTE = globToRegExp('/assets/*');
 const ONLINE_ONLY_ROUTES = ['/secure-link'];
 
-export const getOfflineCache = async (): Promise<Maybe<Cache>> =>
-    getCacheStorage()?.open(OFFLINE_CACHE_KEY).catch(noop);
+const getOfflineCache = async (): Promise<Maybe<Cache>> => getCacheStorage()?.open(OFFLINE_CACHE_KEY).catch(noop);
 
 /** Excludes certain assets (offline.json and version.json) from being
  * cached, ensuring they are always served from the network. */
@@ -41,7 +40,7 @@ export const matchPrivateAppNavigate = (
 
 /** Clears the entire offline cache. This should be called whenever a new service
  * worker is installed to ensure that outdated cached assets are removed. */
-export const clearOfflineCache = async () => {
+const clearOfflineCache = async () => {
     const cache = await getOfflineCache();
     const keys = (await cache?.keys()) ?? [];
     await Promise.all(keys.map((key) => cache?.delete(key).catch(noop)));
@@ -49,7 +48,7 @@ export const clearOfflineCache = async () => {
 
 /** Fetches the critical offline assets with cache-busting to ensure the request
  * always retrieves the latest version of the offline.json file. */
-export const getCriticalOfflineAssets = async (): Promise<string[]> =>
+const getCriticalOfflineAssets = async (): Promise<string[]> =>
     fetch(`${OFFLINE_ASSET_MANIFEST}?cache-bust=${new Date().getTime()}`)
         .then(async (res) => Object.values<string>(await res.json()))
         .catch(() => []);
