@@ -46,12 +46,21 @@ describe('getToolCallNameFromBlock', () => {
         expect(getToolCallNameFromBlock(block)).toBe(CREATE_ARTIFACT_TOOL_NAME);
     });
 
-    it('reads the tool name from partial JSON while arguments are still streaming', () => {
+    it('reads the tool name from an announce-only block, before arguments exist', () => {
         const block: ContentBlock = {
             type: 'tool_call',
-            content: '{"id":"call_1","name":"create_artifact","arguments":"{\\"id\\":\\"x\\""}',
+            content: JSON.stringify({ id: 'call_1', name: CREATE_ARTIFACT_TOOL_NAME }),
+            toolCall: { id: 'call_1', name: CREATE_ARTIFACT_TOOL_NAME },
         };
         expect(getToolCallNameFromBlock(block)).toBe(CREATE_ARTIFACT_TOOL_NAME);
+    });
+
+    it('returns undefined for content that is not yet valid JSON', () => {
+        const block: ContentBlock = {
+            type: 'tool_call',
+            content: '{"id":"call_1","name":"crea',
+        };
+        expect(getToolCallNameFromBlock(block)).toBeUndefined();
     });
 });
 
@@ -157,21 +166,30 @@ describe('isArtifactPanelGenerationLoading', () => {
             isArtifactPanelGenerationLoading({
                 isGenerating: true,
                 isLastMessage: true,
+                completeArtifacts: [],
                 blocks: makeAssistantBlocks('{"id":"x"'),
                 parentUserMessage: makeUserMessage(),
             })
         ).toBe(true);
     });
 
-    it('stays true after parseable content exists until generation finishes', () => {
+    it('is false once parseable content exists, even while generation continues', () => {
         expect(
             isArtifactPanelGenerationLoading({
                 isGenerating: true,
                 isLastMessage: true,
+                completeArtifacts: [
+                    {
+                        id: 'letter-1',
+                        type: 'document',
+                        title: 'Letter',
+                        content: 'Hello',
+                    },
+                ],
                 blocks: makeAssistantBlocks({ id: 'letter-1', type: 'document', title: 'Letter', content: 'Hello' }),
                 parentUserMessage: makeUserMessage(),
             })
-        ).toBe(true);
+        ).toBe(false);
     });
 
     it('is false for ordinary chat turns', () => {
@@ -179,6 +197,7 @@ describe('isArtifactPanelGenerationLoading', () => {
             isArtifactPanelGenerationLoading({
                 isGenerating: true,
                 isLastMessage: true,
+                completeArtifacts: [],
                 blocks: [{ type: 'text', content: 'Hi there.' }],
                 parentUserMessage: makeUserMessage(),
             })
@@ -224,7 +243,7 @@ describe('isArtifactRevisionLoading', () => {
         ).toBe(true);
     });
 
-    it('stays true after parseable content exists until generation finishes', () => {
+    it('is false once parseable revision content exists, even while generation continues', () => {
         expect(
             isArtifactRevisionLoading({
                 isGenerating: true,
@@ -250,7 +269,7 @@ describe('isArtifactRevisionLoading', () => {
                 selectedVersionIndex: 1,
                 registry,
             })
-        ).toBe(true);
+        ).toBe(false);
     });
 
     it('is true for chat follow-up revisions once create_artifact starts', () => {
