@@ -6,8 +6,8 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import type { ContextFilter } from '../../llm';
 import { compactConversation, estimateTurnsTokens } from '../../llm/compaction';
-import { getContextWindowConfigForModelTier } from '../../llm/modelContextLimits';
 import { NotEnoughToCompactError } from '../../llm/compaction/partition';
+import { getContextWindowConfigForModelTier } from '../../llm/modelContextLimits';
 import { updateConversationStatus } from '../../redux/slices/core/conversations';
 import {
     addMessage,
@@ -33,6 +33,7 @@ import {
     type Turn,
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
+import { markArtifactTelemetryLiveMessage } from './artifact/artifactVersionTelemetry';
 import { createArtifactToolExecutor } from './artifact/createArtifactTool';
 import type { ArtifactToolMode } from './helper';
 
@@ -206,6 +207,12 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
 
         while (true) {
             throwIfAborted(sendOptions.signal);
+            // Marked per attempt: compaction retries stream into a fresh assistant message.
+            if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
+                markArtifactTelemetryLiveMessage(currentAssistantId, {
+                    artifactToolMode: sendOptions.artifactToolMode,
+                });
+            }
             try {
                 const turns = buildTurns(currentChain);
                 const result = await dispatch(

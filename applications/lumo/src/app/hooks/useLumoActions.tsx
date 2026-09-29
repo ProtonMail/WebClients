@@ -4,6 +4,7 @@ import { useApi } from '@proton/app-context/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
 
 import { buildArtifactActionLlmPrompt } from '../components/Conversation/artifact/artifactActionPrompts';
+import { markArtifactTelemetryLiveMessage } from '../components/Conversation/artifact/artifactVersionTelemetry';
 import { CREATE_ARTIFACT_TOOL_NAME } from '../components/Conversation/artifact/createArtifactTool';
 import type { ArtifactType } from '../components/Conversation/artifact/parseArtifacts';
 import {
@@ -805,6 +806,7 @@ export const useLumoActions = ({
             artifactManualEdit: { artifactId, artifactTitle, artifactType },
         };
 
+        markArtifactTelemetryLiveMessage(manualEdit.id);
         dispatch(addMessage(manualEdit));
         dispatch(pushMessageRequest({ id: manualEdit.id }));
     };

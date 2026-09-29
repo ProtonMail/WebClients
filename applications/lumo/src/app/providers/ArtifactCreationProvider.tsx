@@ -45,7 +45,8 @@ export const ArtifactCreationProvider = ({ children }: ArtifactCreationProviderP
     }, [conversationExists, hasPendingChoice, dispatch]);
 
     const handleArtifactCreationToggle = useCallback(() => {
-        sendArtifactCreationToggledEvent(isArtifactCreationEnabled);
+        const scope = conversationId && conversationExists ? 'conversation' : 'pending-new-chat';
+        sendArtifactCreationToggledEvent(isArtifactCreationEnabled, scope);
         const newValue = !isArtifactCreationEnabled;
         if (conversationId && conversationExists) {
             dispatch(setConversationArtifactCreation({ id: conversationId, artifactCreation: newValue }));

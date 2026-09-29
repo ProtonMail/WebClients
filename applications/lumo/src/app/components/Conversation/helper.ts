@@ -62,6 +62,7 @@ import {
     resolveReferencedFilesForSend,
     shouldSkipRagForExplicitFiles,
 } from '../../util/resolveProjectFiles';
+import { type ArtifactGenerationType, sendArtifactTurnContextEvent } from '../../util/telemetry';
 import { buildArtifactRegistry } from './artifact/artifactRegistry';
 import { runGenerationWithCompaction } from './compactionFlow';
 import type { ConversationContext } from './conversationContext';
@@ -277,6 +278,23 @@ function ensureConversation(c: ConversationContext, ui: UiContext, createdAt: st
  * setting, then on. A pending composer choice only applies before the conversation exists —
  * once it does, the choice has already been stamped onto it (see `initializeNewSpaceAndConversation`).
  */
+function sendArtifactTurnTelemetry(
+    generationType: ArtifactGenerationType,
+    artifactToolMode: ArtifactToolMode,
+    chain: Message[],
+    isArtifactsViewFeatureEnabled: boolean | undefined
+) {
+    if (!isArtifactsViewFeatureEnabled) {
+        return;
+    }
+
+    sendArtifactTurnContextEvent({
+        generationType,
+        artifactToolMode,
+        hasExistingArtifact: Object.keys(buildArtifactRegistry(chain)).length > 0,
+    });
+}
+
 export function resolveArtifactCreationEnabled(state: LumoState, conversationId: ConversationId | undefined): boolean {
     const globalDefault = state.lumoUserSettings?.automaticArtifactCreation ?? true;
     const conversation = conversationId ? state.conversations[conversationId] : undefined;
@@ -616,6 +634,7 @@ export function sendMessage({
                 // Fresh state: `state` predates the conversation this send may have just created.
                 resolveArtifactCreationEnabled(getState(), conversationId)
             );
+            sendArtifactTurnTelemetry('new', artifactToolMode, updatedLinearChain, s.isArtifactsViewFeatureEnabled);
 
             const contextLimits = getContextLimitsForModelTier(ui.modelTier);
             const buildTurns = (chain: Message[]) =>
@@ -814,6 +833,7 @@ export function regenerateMessage({
                 s.isArtifactsViewFeatureEnabled,
                 resolveArtifactCreationEnabled(state, c.conversationId)
             );
+            sendArtifactTurnTelemetry('regenerate', artifactToolMode, c.messageChain, s.isArtifactsViewFeatureEnabled);
 
             const contextLimits = getContextLimitsForModelTier(ui.modelTier);
             const buildTurns = (chain: Message[]) => {
@@ -1040,6 +1060,7 @@ export function retrySendMessage({
             s.isArtifactsViewFeatureEnabled,
             resolveArtifactCreationEnabled(state, c.conversationId)
         );
+        sendArtifactTurnTelemetry('retry', artifactToolMode, updatedLinearChain, s.isArtifactsViewFeatureEnabled);
 
         const contextLimits = getContextLimitsForModelTier(ui.modelTier);
         const buildTurns = (chain: Message[]) =>
