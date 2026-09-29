@@ -1003,9 +1003,6 @@
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
       ],
-      "Get 50% offer": [
-        "Få 50 % erbjudande"
-      ],
       "Remind me later": [
         "Påminn mig senare"
       ],
@@ -2325,6 +2322,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "En kontakt med denna e-postadress finns redan"
+      ],
       "Amount above the maximum.": [
         "Belopp över det maximala."
       ],
@@ -2366,6 +2366,12 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Felaktigt reservlösenord. Försök igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Felaktigt andra lösenord. Försök igen."
       ],
       "Input isn't a valid email or bitcoin address": [
         "Inmatning är inte en giltig e-postadress eller Bitcoin-adress"
@@ -2819,9 +2825,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "En användare är ett konto som är associerat till ett enda användarnamn, brevlåda och person"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Åtkomst till över 20 000 servrar i över 145 länder"
-      ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
@@ -2964,9 +2967,6 @@
       "Expired": [
         "Löpt ut"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Snabbaste VPN-hastigheter på upp till 10 Gbps"
-      ],
       "for ${ price }": [
         "för ${ price }"
       ],
@@ -2976,14 +2976,8 @@
       "Google Pay mark": [
         "Google Pay-märke"
       ],
-      "Have some more time to decide without interruption.": [
-        "Ha lite mer tid att bestämma utan avbrott."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Om du avbryter nu, kommer du att förlora åtkomst till ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive dessa funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
@@ -3110,9 +3104,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Börja dela den med kontakter och använd den för onlinetjänster."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Skicka in en insättning med följande adress eller skanna QR-koden. Din insättning kommer att återspeglas på ditt konto efter bekräftelse."
@@ -5866,9 +5857,6 @@
       ],
       "Simplify password management": [
         "Förenkla lösenordshantering"
-      ],
-      "Stay for 50% off your next month": [
-        "Stanna kvar för 50 % rabatt nästa månad"
       ],
       "Summary": [
         "Sammanfattning"
