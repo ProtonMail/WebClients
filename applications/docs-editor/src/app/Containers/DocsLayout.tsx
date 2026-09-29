@@ -190,7 +190,7 @@ function Container({ children, isSuggestionMode }: React.PropsWithChildren<Conta
       <div
         className={clsx(
           // Portal target for the full comments sidebar (CommentPluginContainer).
-          'docs-layout-container relative grid h-full w-full bg-[white]',
+          'docs-layout-container relative grid h-full w-full bg-[--background-norm]',
           isSuggestionMode && 'suggestion-mode',
         )}
         style={{
