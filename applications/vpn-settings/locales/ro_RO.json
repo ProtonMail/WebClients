@@ -1628,6 +1628,9 @@
     "Action subscription": {
       "Reactivate": [
         "Reactivare"
+      ],
+      "View breakdown": [
+        "Vizualizare defalcare"
       ]
     },
     "Action: Sheets": {
@@ -2235,6 +2238,37 @@
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "Reînnoire automată pe ${ subscriptionManagerName }"
+      ],
+      "Free renewal": [
+        "Reînnoire gratuită"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Reînnoire gratuită, pentru ${ nextCycle } lună, la ${ when }",
+        "Reînnoire gratuită, pentru ${ nextCycle } luni, la ${ when }",
+        "Reînnoire gratuită, pentru ${ nextCycle } de luni, la ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Se reînnoiește automat cu ${ introPrice }, pentru ${ nextCycle } lună, la ${ when }",
+        "Se reînnoiește automat cu ${ introPrice }, pentru ${ nextCycle } luni, la ${ when }",
+        "Se reînnoiește automat cu ${ introPrice }, pentru ${ nextCycle } de luni, la ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Se reînnoiește automat cu ${ price }, pentru ${ cycle } lună.",
+        "Se reînnoiește automat cu ${ price }, pentru ${ cycle } luni.",
+        "Se reînnoiește automat cu ${ price }, pentru ${ cycle } de luni."
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Trece la ${ nextCycle } lună la ${ when } (${ paidPrice } deja plătit)",
+        "Trece la ${ nextCycle } luni la ${ when } (${ paidPrice } deja plătit)",
+        "Trece la ${ nextCycle } de luni la ${ when } (${ paidPrice } deja plătit)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Apoi ${ price }, pentru ${ cycle } lună",
+        "Apoi ${ price }, pentru ${ cycle } luni",
+        "Apoi ${ price }, pentru ${ cycle } de luni"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Va fi înlocuit de viitorul abonament la ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -10508,6 +10542,15 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Acest lucru vă va permite să vă accesați rapid și în siguranță contul ${ BRAND_NAME }, astfel încât să vă puteți schimba parola."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Aveți o factură neachitată. ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Aveți o factură neachitată cu scadența la ${ dueDate }. ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -10630,6 +10673,9 @@
       ],
       "Void": [
         "Nulă"
+      ],
+      "Open": [
+        "Deschisă"
       ]
     },
     "Invoice type display as badge": {
@@ -12019,6 +12065,9 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "Pay it": [
+        "Plătiți-o"
       ]
     },
     "Link (Scribe)": {
@@ -18094,6 +18143,9 @@
       ],
       "Free Trial": [
         "Evaluare gratuită"
+      ],
+      "Upcoming": [
+        "Viitoare"
       ]
     },
     "Subtitle": {
@@ -20030,6 +20082,12 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "${ planTitle } breakdown": [
+        "Detaliere plan ${ planTitle }"
+      ],
+      "Subscription breakdown": [
+        "Detaliere abonament"
       ]
     },
     "Title for payment methods table": {
@@ -20099,6 +20157,15 @@
       ],
       "Status": [
         "Stare"
+      ],
+      "Billing": [
+        "Facturare"
+      ],
+      "Price": [
+        "Preț"
+      ],
+      "Start date": [
+        "Dată începere"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -21036,6 +21103,19 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "După reușirea verificării, nu eliminați această înregistrare TXT deoarece este necesară pentru a confirma că dețineți domeniul în continuare."
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Facturat la reînnoire"
+      ],
+      "Prepaid": [
+        "Preplătit"
+      ]
+    },
+    "Coupon": {
+      "Coupon applied": [
+        "Cupon aplicat"
       ]
     }
   }

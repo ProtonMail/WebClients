@@ -151,13 +151,13 @@
         "Aplicacions incloses"
       ],
       "Join organization": [
-        "Uniu-vos a l'organització"
+        "Uneix-te a l'organització"
       ],
       "Leaked password": [
         "Contrasenya filtrada"
       ],
       "Leave group": [
-        "Sortir del grup"
+        "Abandona el grup"
       ],
       "Leave organization": [
         "Abandonar l'organització"
@@ -512,7 +512,7 @@
         "Continua amb ${ planOrAppName }"
       ],
       "Continue to sign in": [
-        "Continueu iniciant sessió"
+        "Continua a l'inici de sessió"
       ],
       "Continue with Free": [
         "Continuar amb el pla gratuït"
@@ -1457,7 +1457,7 @@
         "Desbloqueja les dades"
       ],
       "Update email": [
-        "Actualitza el correu"
+        "Actualitza el correu electrònic"
       ],
       "Update recovery file": [
         "Actualitza el fitxer de recuperació"
@@ -2228,12 +2228,12 @@
         "Renovació gratuïta, per a ${ nextCycle } mesos, el ${ when }"
       ],
       "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
-        "Es renovarà automàticament a ${ introPrice }, per a ${ nextCycle } mes, el ${ when }",
-        "Es renovarà automàticament a ${ introPrice }, per a ${ nextCycle } mesos, el ${ when }"
+        "Es renova automàticament a ${ introPrice }, per a ${ nextCycle } mes, el ${ when }",
+        "Es renova automàticament a ${ introPrice }, per a ${ nextCycle } mesos, el ${ when }"
       ],
       "Renews automatically at ${ price }, for ${ cycle } month": [
-        "Es renovarà automàticament a ${ price } per ${ cycle } mes",
-        "Es renovarà automàticament a ${ price }, per ${ cycle } mesos"
+        "Es renova automàticament a ${ price } durant ${ cycle } mes",
+        "Es renova automàticament a ${ price }, durant ${ cycle } mesos"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Es renova automàticament el ${ subscriptionManagerName }"
@@ -7683,7 +7683,7 @@
         "afegir un mètode de recuperació"
       ],
       "Add an email address in case we need to contact you": [
-        "Afegiu una adreça de correu electrònic en cas d'haver de contactar amb vosaltres"
+        "Afegiu una adreça de correu electrònic per si ens hem de posar en contacte"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Afegiu una capa de seguretat addicional al vostre compte. Haureu de verificar-vos amb 2FA cada vegada que inicieu la sessió."
@@ -7777,7 +7777,7 @@
         "Permeteu als usuaris connectar-se a servidors compartits segurs des de la secció **Països** de l'aplicació ${ VPN_APP_NAME }."
       ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
-        "Si permeteu l'inici de sessió amb codi QR la podreu iniciar escanejant-ne un si oblideu la contrasenya. Només cal que tingueu la sessió iniciada en un servei de ${ BRAND_NAME } en un altre dispositiu."
+        "Permetre l'inici de sessió amb codi QR us permetrà iniciar la sessió escanejant un codi QR si oblideu la contrasenya. Només cal que tingueu la sessió iniciada en un servei de ${ BRAND_NAME } en un altre dispositiu."
       ],
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Permetre el restabliment de contrasenya des de les preferències us facilita canviar-la si l'heu perdut, mentre tingueu la sessió iniciada a ${ BRAND_NAME }."
@@ -7894,7 +7894,7 @@
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
       "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
-        "Abans d'enviar un nou codi de verificació, comproveu la carpeta de correu brossa de ${ EmailOrPhoneNumber }."
+        "Abans d'enviar un codi de verificació nou, comproveu la carpeta de correu brossa de ${ EmailOrPhoneNumber }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Abans de poder rebre correus electrònics per a les vostres adreces de domini personalitzat a ${ MAIL_APP_NAME }, heu d'afegir els dos registres MX següents a la vostra consola DNS (ubicada a la plataforma on heu adquirit el domini personalitzat). Podeu trobar un exemple i alguns consells útils ${ kbLink }."
@@ -8386,7 +8386,7 @@
         "Introduïu la frase de recuperació per a canviar la contrasenya ara."
       ],
       "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
-        "Introduïu la vostra frase de recuperació per verificar la vostra identitat i desactiveu l'autenticació de doble factor."
+        "Introduïu la frase de recuperació per a verificar la vostra identitat i desactivar l'autenticació de doble factor."
       ],
       "Everything in ${ planOrAppName }": [
         "Tot a ${ planOrAppName }"
@@ -9676,7 +9676,7 @@
         "Per confirmar-ho, introduïu el nom de l'usuari que vulgueu suprimir."
       ],
       "To continue to ${ product }": [
-        "Per continuar a ${ product }"
+        "Per a continuar a ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Per tal de millorar contínuament els nostres serveis, de vegades recopilem dades per controlar el bon funcionament de les nostres aplicacions. Aquesta informació no es comparteix amb serveis de tercers."
@@ -12330,7 +12330,7 @@
     },
     "Message": {
       "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
-        "Connecteu el vostre domini personalitzat (per exemple, lavostraempresa.com) per crear adreces de correu electrònic per a d'altres persones i gestioneu ${ MAIL_APP_NAME } per a una empresa, escola o grup."
+        "Connecteu el vostre domini personalitzat (per exemple, lavostraempresa.com) per crear adreces de correu electrònic per a altres persones i gestioneu ${ MAIL_APP_NAME } per a una empresa, escola o grup."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Connecteu el vostre domini personalitzat a ${ BRAND_NAME } per a configurar adreces de correu electrònic personalitzades (p. ex., vos@lavostraempresa.com). El nostre assistent us guiarà a través del procés."
@@ -15254,7 +15254,7 @@
         "Puntuació de recuperació: ${ score }"
       ],
       "Require verified password reset option (email or SMS)": [
-        "Cal una opció de restabliment de contrasenya verificada (correu electrònic o SMS)"
+        "Requeriu una opció verificada de restabliment de la contrasenya (correu electrònic o SMS)"
       ],
       "Score: ${ score } / ${ maxScore }": [
         "Puntuació: ${ score } / ${ maxScore }"
@@ -15272,7 +15272,7 @@
         "Esteu totalment protegits. Una revisió periòdica fa que tot continuï funcionant a mesura que els vostres dispositius i contactes canvien amb el temps."
       ],
       "You're partly there, but not safe yet. A forgotten password could still mean losing your emails, files, and passwords.": [
-        "Ja hi sou en part, però encara no esteu segurs. Si oblideu la contrasenya, podríeu perdre els vostres correus electrònics, fitxers i contrasenyes."
+        "Encara no esteu totalment protegit: si oblideu la contrasenya, podríeu perdre els correus electrònics, els fitxers i les contrasenyes."
       ],
       "You're still at high risk. If you forget your password, you could permanently lose your emails, files, and passwords.": [
         "Encara esteu en alt risc. Si oblideu la contrasenya, podríeu perdre per sempre els vostres correus electrònics, fitxers i contrasenyes."
@@ -15386,7 +15386,7 @@
     },
     "RecoveryPhrase: Info": {
       "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
-        "**Assegureu-vos de mantenir la vostra frase de recuperació accessible després de crear-la**. Per motius de seguretat, no la guardem un cop hàgiu desat els canvis i no la podreu tornar a veure a l'aplicació ${ BRAND_NAME }."
+        "**Assegureu-vos de tenir accés a la frase de recuperació després de crear-la.** Per motius de seguretat, no emmagatzemem la frase després de desar els canvis i no la podreu tornar a veure a l'aplicació de ${ BRAND_NAME }."
       ],
       "copy recovery phrase": [
         "copia la frase de recuperació"
@@ -15864,7 +15864,7 @@
         "Si oblideu la contrasenya, podeu iniciar sessió mitjançant un codi QR. Només cal que hàgiu iniciat sessió en un servei de ${ BRAND_NAME } en un altre dispositiu."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
-        "Si perdeu l'accés al vostre compte de ${ BRAND_NAME }, això us permetrà iniciar sessió i recuperar les dades. És l'única manera de restaurar-ho tot a l'instant, així que assegureu-vos de desar-ho en un lloc segur."
+        "Si perdeu l'accés al vostre compte de ${ BRAND_NAME }, això us permetrà iniciar la sessió i recuperar les vostres dades. És l'única manera de restaurar-ho tot a l'instant, així que assegureu-vos de desar-lo en un lloc segur."
       ],
       "If your recovery email has changed, ${ updateEmailLink }.": [
         "Si el vostre correu electrònic de recuperació ha canviat, ${ updateEmailLink }."
@@ -18397,7 +18397,7 @@
         "Detall del ${ planTitle }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
-        "${ PROTON_SENTINEL_NAME } per organitzacions"
+        "${ PROTON_SENTINEL_NAME } per a organitzacions"
       ],
       "${ VPN_APP_NAME } clients": [
         "Clients de ${ VPN_APP_NAME }"
@@ -19365,7 +19365,7 @@
         "Esborreu l'adreça de reenviament"
       ],
       "Remove recovery phone number": [
-        "Elimineu el número de telèfon de recuperació"
+        "Esborra el número de telèfon de recuperació"
       ],
       "Remove server?": [
         "Voleu esborrar el servidor?"
@@ -19582,7 +19582,7 @@
         "Resum"
       ],
       "Support your compliance objectives": [
-        "Faciliteu els vostres objectius de compliment normatiu"
+        "Cobriu els vostres objectius de compliment normatiu"
       ],
       "Switch to one-password mode": [
         "Canviar al mode d'una sola contrasenya"
@@ -19922,7 +19922,7 @@
         "Permeteu la recuperació del vostre compte amb un codi d'un sol ús enviat al telèfon de recuperació"
       ],
       "Allow resetting your password from the account settings": [
-        "Permeteu el restabliment de contrasenya des de les preferències del compte"
+        "Permeteu el restabliment de la contrasenya des de les preferències del compte"
       ],
       "Allow scanning a QR code from a ${ BRAND_NAME } mobile app to sign in": [
         "Permeteu l'escaneig d'un codi QR des d'una aplicació mòbil de ${ BRAND_NAME } per iniciar sessió"
@@ -20144,6 +20144,12 @@
       ],
       "Waiting for user to accept the invitation": [
         "S'està esperant que l'usuari accepti la invitació."
+      ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Adreça externa: no se li poden atorgar els rols i permisos assignats a aquest grup."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Adreça externa: sense xifratge d'extrem a extrem ni compartició de recursos, i no es poden assignar rols ni permisos."
       ]
     },
     "Tooltip for members table": {
