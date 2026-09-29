@@ -1628,6 +1628,9 @@
     "Action subscription": {
       "Reactivate": [
         "Yenile"
+      ],
+      "View breakdown": [
+        "Kırılımı görüntüle"
       ]
     },
     "Action: Sheets": {
@@ -2217,12 +2220,34 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "${ renewPrice } tutar ile ${ renewCycle } ay için otomatik olarak yenilenir",
-        "${ renewPrice } tutar ile ${ renewCycle } ay için otomatik olarak yenilenir"
+      "Free renewal": [
+        "Ücretsiz yenileme"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "${ when } tarihinden başlayarak ${ nextCycle } ay boyunca ücretsiz yenileme",
+        "${ when } tarihinden başlayarak ${ nextCycle } ay boyunca ücretsiz yenileme"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "${ when } tarihinden başlayarak ${ nextCycle } ay süreyle ${ introPrice } tutar ile otomatik olarak yenilenir",
+        "${ when } tarihinden başlayarak ${ nextCycle } ay süreyle ${ introPrice } tutar ile otomatik olarak yenilenir"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "${ price } tutar ile ${ cycle } ay için otomatik olarak yenilenir",
+        "${ price } tutar ile ${ cycle } ay için otomatik olarak yenilenir"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName } tarihinde otomatik olarak yenilenir"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "${ when } tarihinde ${ nextCycle } ayına geçer (${ paidPrice } zaten ödendi)",
+        "${ when } tarihinde ${ nextCycle } ayına geçer (${ paidPrice } zaten ödendi)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Ardından ${ cycle } ay için ${ price }",
+        "Ardından ${ cycle } ay için ${ price }"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "${ replacementDate } tarihinde yeni aboneliğinizle değiştirilir"
       ]
     },
     "Billing cycle option": {
@@ -2260,6 +2285,14 @@
       ],
       "Yearly": [
         "Yıllık"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Yenileme sırasında faturalanır"
+      ],
+      "Prepaid": [
+        "Ön ödemeli"
       ]
     },
     "Blog": {
@@ -2448,9 +2481,6 @@
       ],
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
-      ],
-      "Get 50% offer": [
-        "%50 indirimden yararlanın"
       ],
       "Maybe later": [
         "Belki sonra"
@@ -3635,6 +3665,11 @@
         "(${ entryCountryName } üzerinden)"
       ]
     },
+    "Coupon": {
+      "Coupon applied": [
+        "Kupon uygulandı"
+      ]
+    },
     "Create user accounts empty state": {
       "No search results found": [
         "Herhangi bir sonuç bulunamadı"
@@ -3805,6 +3840,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Başka bir hizmet sağlayıcıdaki e-postalarınızı, takvim etkinliklerinizi ve kişilerinizi aktarın."
+      ],
+      "Bring over your files from another provider.": [
+        "Başka bir hizmet sağlayıcıdaki dosyalarınızı aktarın."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Kendi etki alanınızı kullanan profesyonel e-posta adresleriyle güven ve marka bilinirliği sağlayın."
@@ -7614,9 +7652,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "145 ülkede 20.000 üzerinde sunucuya erişim"
-      ],
       "Account monitor": [
         "Hesap izleyici"
       ],
@@ -8380,9 +8415,6 @@
       "Failed to fetch logs.": [
         "Günlük kayıtları alınamadı."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "10 Gb/sn olabilen en yüksek VPN hızı"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
@@ -8476,9 +8508,6 @@
       "Groups": [
         "Gruplar"
       ],
-      "Have some more time to decide without interruption.": [
-        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
-      ],
       "here": [
         "buraya"
       ],
@@ -8514,9 +8543,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Bir yanlışlık olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
@@ -9112,9 +9138,6 @@
       "Preference saved": [
         "Ayar kaydedildi"
       ],
-      "Premium privacy protection across all your devices": [
-        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
-      ],
       "Preview": [
         "Ön izleme"
       ],
@@ -9166,8 +9189,8 @@
       "RECOMMENDED": [
         "ÖNERİLEN"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Güvenilen aygıtlar üzerinde önerilir. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Güvenilir aygıtlarda önerilir. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "${ PROTON_SENTINEL_NAME } açıkken e-posta adresi ile kurtarma kullanılamaz."
@@ -9379,9 +9402,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
       ],
       "Storage allocated to other users in this organisation": [
         "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
@@ -9598,8 +9618,8 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için onu kapatın."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Böylece ${ BRAND_NAME } hesabınıza hızlı ve güvenli bir şekilde erişebilir ve parolanızı değiştirebilirsiniz."
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Böylece ${ BRAND_NAME } hesabınıza hızlı ve güvenli olarak erişebilir ve parolanızı değiştirebilirsiniz."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Bu işlem bu kullanıcılarla ilişkili tüm e-postaları ve verileri kalıcı olarak silecek."
@@ -10198,6 +10218,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "${ planTitle } deneme aboneliğiniz var. Şu anda herhangi bir ödeme yapmanıza gerek yok. Deneme süresi sonunda aboneliğiniz otomatik olarak yenilenecek."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Ödenmemiş bir faturanız var ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "${ dueDate } tarihli ödenmemiş bir faturanız var ${ payInvoiceLink }"
+      ],
       "You have no invoices.": [
         "Herhangi bir faturanız yok."
       ],
@@ -10509,6 +10535,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Hediye"
+      ],
+      "Open": [
+        "Aç"
       ],
       "Paid": [
         "Ödenmiş"
@@ -11849,6 +11878,9 @@
       ],
       "Pay invoice": [
         "Faturayı öde"
+      ],
+      "Pay it": [
+        "Ödeyin"
       ],
       "Privacy policy": [
         "Gizlilik ilkesi"
@@ -14455,9 +14487,6 @@
       ],
       "Card number": [
         "Kart numarası"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Krediler ve indirimler faturanızda yansıtılır."
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Şu anda otomatik abonelik yenilemesi kapalı. Aboneliği değiştirirseniz, otomatik yenileme yeniden açılır."
@@ -17855,6 +17884,9 @@
       ],
       "Free Trial": [
         "Ücretsiz deneme"
+      ],
+      "Upcoming": [
+        "Yaklaşan"
       ]
     },
     "Subtitle": {
@@ -18360,6 +18392,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ planTitle } breakdown": [
+        "${ planTitle } kırılımı"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "Kuruluşlar için ${ PROTON_SENTINEL_NAME }"
@@ -19527,14 +19562,14 @@
       "Status": [
         "Durum"
       ],
-      "Stay for 50% off your next month": [
-        "Sonraki ay %50 indirimden yararlanın"
-      ],
       "Stay secure and connected anywhere": [
         "Her yerde güvende ve bağlı kalın"
       ],
       "Subscription": [
         "Abonelik"
+      ],
+      "Subscription breakdown": [
+        "Abonelik kırılımı"
       ],
       "Subscription canceled": [
         "Abonelik iptal edildi"
@@ -19843,11 +19878,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Faturalama"
+      ],
       "End date": [
         "Bitiş tarihi"
       ],
       "Plan": [
         "Tarife"
+      ],
+      "Price": [
+        "Fiyat"
+      ],
+      "Start date": [
+        "Başlangıç tarihi"
       ],
       "Status": [
         "Durum"

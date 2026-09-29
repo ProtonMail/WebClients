@@ -2217,10 +2217,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "${ renewCycle } महीने के लिए, ${ renewPrice } पर स्वचालित रूप से नवीनीकृत होता है।",
-        "${ renewCycle } महीनों के लिए, ${ renewPrice } पर स्वचालित रूप से नवीनीकृत होता है"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName } पर अपनेआप रिन्यू होगा।"
       ]
@@ -2448,9 +2444,6 @@
       ],
       "Discover and set up features": [
         "सुविधाएँ खोजें और सेटअप करें"
-      ],
-      "Get 50% offer": [
-        "50% ऑफर पाएं"
       ],
       "Maybe later": [
         "शायद बाद में"
@@ -7617,9 +7610,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "सिर्फ एक यूज़रनेम, मेलबॉक्स, और इंसान से जुड़े खाते को उपयोगकर्ता कहते हैं।"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "145 देशों में 20,000+ सर्वर तक एक्सेस"
-      ],
       "Account monitor": [
         "खाता मॉनिटर"
       ],
@@ -8383,9 +8373,6 @@
       "Failed to fetch logs.": [
         "लॉग लाने में असफल।"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "10Gbps तक की सबसे तेज़ VPN स्पीड"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "केवल फ़ाइलें (कोई फोटो नहीं, ${ DOCS_APP_NAME } या ${ SHEETS_APP_NAME } नहीं) - कुल 100 जीबी तक, 1,00,000 फ़ाइलें, और प्रति फ़ाइल 50 जीबी"
       ],
@@ -8479,9 +8466,6 @@
       "Groups": [
         "ग्रुप"
       ],
-      "Have some more time to decide without interruption.": [
-        "बिना किसी रुकावट के फैसला लेने के लिए थोड़ा और समय पाएं।"
-      ],
       "here": [
         "यहां"
       ],
@@ -8517,9 +8501,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "अगर आपको लगता है कि यह गलती से हुआ है, तो कृपया हमसे ${ contactLink } से संपर्क करें।"
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "अगर आप अभी रद्द करते हैं, तो आप ${ expiryDate } को ${ BRAND_NAME } ${ planTitle } का एक्सेस खो देंगे, जिनमें ये खासियतें शामिल हैं:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "यदि आप रद्द करते हैं, तो आपकी ${ planTitle } सदस्यता ${ expiryDate } को समाप्त होने पर नवीनीकृत नहीं की जाएगी।"
@@ -9115,9 +9096,6 @@
       "Preference saved": [
         "पसंद सेव किया गया"
       ],
-      "Premium privacy protection across all your devices": [
-        "आपके सभी डिवाइस पे प्रीमियम निजता सुरक्षा"
-      ],
       "Preview": [
         "प्रीव्यू करें"
       ],
@@ -9168,9 +9146,6 @@
       ],
       "RECOMMENDED": [
         "सुझाव"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "विश्वसनीय डिवाइसों पे इस्तेमाल करने की सलाह। ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "${ PROTON_SENTINEL_NAME } सक्षम होने के दौरान ईमेल द्वारा रिकवरी उपलब्ध नहीं है।"
@@ -9382,9 +9357,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "इसे संपर्कों के साथ साझा करना शुरू करें और इसे ऑनलाइन सेवाओं के लिए उपयोग करें।"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "अपने प्लैन पे बने रहें और अगले महीने 50% छूट पाएं"
       ],
       "Storage allocated to other users in this organisation": [
         "इस संगठन में अन्य उपयोगकर्ताओं को आवंटित स्टोरेज"
@@ -9600,9 +9572,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "ये PayPal को ${ BRAND_NAME } सदस्यता के भुगतान के इस्तेमाल के लिए सक्षम कर देगा। हम आपको एक नए ब्राउज़र टैब में PayPal को रिडाइरेक्ट कर देंगे। अगर आप कोई पॉप-अप ब्लॉकर इस्तेमाल करते हैं, तो जारी रखने के लिए कृपया उसे अक्षम कर दें।"
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "यह आपको अपने ${ BRAND_NAME } खाते तक तुरंत और सुरक्षित रूप से एक्सेस करने देगा ताकि आप अपना पासवर्ड बदल सकें।"
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "यह डेटा और इन उपयोगकर्ताओं से जुड़े सभी ईमेल पतों को स्थायी रूप से मिटा देगा।"
@@ -14428,9 +14397,6 @@
       ],
       "Card number": [
         "कार्ड नंबर"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "क्रेडिट और छूट आपके इनवॉइस में दिखाई देती हैं"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "वर्तमान में सदस्यता का स्वतः नवीनीकरण अक्षम है। यदि आप अभी सदस्यता बदलते हैं, तो स्वतः नवीनीकरण फिर से सक्षम हो जाएगा।"
@@ -19499,9 +19465,6 @@
       ],
       "Status": [
         "स्थिति"
-      ],
-      "Stay for 50% off your next month": [
-        "बने रहें और अगले महीने 50% छूट पाएं"
       ],
       "Stay secure and connected anywhere": [
         "कहीं भी सुरक्षित और कनेक्टेड रहें"
