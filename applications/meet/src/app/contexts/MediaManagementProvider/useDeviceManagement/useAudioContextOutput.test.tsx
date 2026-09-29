@@ -1,11 +1,14 @@
 import { act, renderHook } from '@testing-library/react';
 import { ConnectionState, type Room } from 'livekit-client';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { type Mock, afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { useAudioContextOutput } from './useAudioContextOutput';
 
 const storeMocks = vi.hoisted(() => ({ useMeetSelector: vi.fn((_selector: unknown): unknown => undefined) }));
 vi.mock('@proton/meet/store/hooks', () => storeMocks);
+
+const browserMocks = vi.hoisted(() => ({ supportsSetSinkId: vi.fn(() => true) }));
+vi.mock('../../../utils/browser', () => browserMocks);
 
 type FakeState = 'suspended' | 'running' | 'closed' | 'interrupted';
 
@@ -13,25 +16,34 @@ type FakeState = 'suspended' | 'running' | 'closed' | 'interrupted';
 const DELAYS_MS = [250, 500, 1_000, 2_000];
 
 const createFakeAudioContext = (initialState: FakeState) => {
-    const listeners = new Set<() => void>();
+    const listeners = new Map<string, Set<() => void>>();
 
     const fake = {
         state: initialState as FakeState,
-        addEventListener: (_type: string, listener: () => void) => {
-            listeners.add(listener);
+        addEventListener: (type: string, listener: () => void) => {
+            const forType = listeners.get(type) ?? new Set<() => void>();
+            forType.add(listener);
+            listeners.set(type, forType);
         },
-        removeEventListener: (_type: string, listener: () => void) => {
-            listeners.delete(listener);
+        removeEventListener: (type: string, listener: () => void) => {
+            listeners.get(type)?.delete(listener);
+        },
+        emit: (type: string) => {
+            listeners.get(type)?.forEach((listener) => listener());
         },
         goTo: (state: FakeState) => {
             fake.state = state;
-            listeners.forEach((listener) => listener());
+            fake.emit('statechange');
         },
-        listenerCount: () => listeners.size,
+        listenerCount: () => [...listeners.values()].reduce((total, forType) => total + forType.size, 0),
     };
 
     return fake;
 };
+
+type SetSinkIdMock = Mock<(deviceId: string) => Promise<boolean>>;
+
+const createSetSinkIdMock = () => vi.fn<(deviceId: string) => Promise<boolean>>();
 
 const setup = ({
     initialState = 'suspended' as FakeState,
@@ -39,16 +51,20 @@ const setup = ({
     roomState = ConnectionState.Connected,
     activeAudioOutputId = null as string | null,
     isPlaybackContext = true,
+    sinkIdApplied = true,
+    setSinkId = null as SetSinkIdMock | null,
 } = {}) => {
     const audioContext = createFakeAudioContext(initialState);
-    const setSinkId = vi.fn();
+    const setSinkIdMock = setSinkId ?? createSetSinkIdMock().mockResolvedValue(sinkIdApplied);
     const meetAudioContext = {
         audioContext: audioContext as unknown as AudioContext,
-        setSinkId,
+        setSinkId: setSinkIdMock,
         cleanup: vi.fn(),
     };
+    const switchActiveDevice = vi.fn().mockResolvedValue(true);
     const room = {
         startAudio,
+        switchActiveDevice,
         state: roomState,
         options: { webAudioMix: isPlaybackContext ? { audioContext } : false },
     } as unknown as Room;
@@ -56,7 +72,7 @@ const setup = ({
 
     storeMocks.useMeetSelector.mockReturnValue(activeAudioOutputId);
 
-    const { unmount } = renderHook(() => useAudioContextOutput({ meetAudioContext, room, reportMeetError }));
+    const { unmount, rerender } = renderHook(() => useAudioContextOutput({ meetAudioContext, room, reportMeetError }));
 
     const advance = async (ms: number) => {
         await act(async () => {
@@ -64,7 +80,16 @@ const setup = ({
         });
     };
 
-    return { audioContext, startAudio, setSinkId, reportMeetError, unmount, advance };
+    return {
+        audioContext,
+        startAudio,
+        setSinkId: setSinkIdMock,
+        switchActiveDevice,
+        reportMeetError,
+        unmount,
+        rerender,
+        advance,
+    };
 };
 
 describe('useAudioContextOutput', () => {
@@ -95,6 +120,81 @@ describe('useAudioContextOutput', () => {
         const { setSinkId } = setup({ activeAudioOutputId: '' });
 
         expect(setSinkId).toHaveBeenCalledWith('');
+    });
+
+    // Chrome takes its reference from the remote audio elements, so a fallback that only re-points
+    // this context would leave the reference on a device that is no longer playing
+    it('falls back through LiveKit when the pin fails, so the remote elements follow', async () => {
+        const { switchActiveDevice, advance } = setup({ activeAudioOutputId: 'jabra', sinkIdApplied: false });
+
+        await advance(0);
+
+        expect(switchActiveDevice).toHaveBeenCalledWith('audiooutput', '');
+    });
+
+    // Chrome fires 'error' when the device this context renders to goes away, and the remote
+    // elements are still pinned to it, so the whole output has to move
+    it('moves the whole output to the default when the pinned device goes away', async () => {
+        const { audioContext, switchActiveDevice, advance } = setup({ activeAudioOutputId: 'jabra' });
+
+        await advance(0);
+        audioContext.emit('error');
+        await advance(0);
+
+        expect(switchActiveDevice).toHaveBeenCalledWith('audiooutput', '');
+    });
+
+    // A pin that resolves after the user picked another device would otherwise drop the output to
+    // the system default and discard that choice
+    it('ignores a stale pin failure after the active device changed', async () => {
+        let failFirstPin = () => {};
+        const setSinkId = createSetSinkIdMock()
+            .mockImplementationOnce(
+                () =>
+                    new Promise<boolean>((resolve) => {
+                        failFirstPin = () => resolve(false);
+                    })
+            )
+            .mockResolvedValue(true);
+
+        const { switchActiveDevice, rerender, advance } = setup({ activeAudioOutputId: 'jabra', setSinkId });
+
+        storeMocks.useMeetSelector.mockReturnValue('airpods');
+        rerender();
+
+        failFirstPin();
+        await advance(0);
+
+        expect(setSinkId).toHaveBeenLastCalledWith('airpods');
+        expect(switchActiveDevice).not.toHaveBeenCalled();
+    });
+
+    it('recovers a lost device before any output has been applied', async () => {
+        const { audioContext, switchActiveDevice, advance } = setup({ activeAudioOutputId: null });
+
+        audioContext.emit('error');
+        await advance(0);
+
+        expect(switchActiveDevice).toHaveBeenCalledWith('audiooutput', '');
+    });
+
+    it('does not stack recoveries while one is in flight', async () => {
+        const { audioContext, switchActiveDevice, advance } = setup({ activeAudioOutputId: 'jabra' });
+
+        await advance(0);
+        audioContext.emit('error');
+        audioContext.emit('error');
+        await advance(0);
+
+        expect(switchActiveDevice).toHaveBeenCalledTimes(1);
+    });
+
+    it('leaves the output alone when the pin succeeds', async () => {
+        const { switchActiveDevice, advance } = setup({ activeAudioOutputId: 'jabra' });
+
+        await advance(0);
+
+        expect(switchActiveDevice).not.toHaveBeenCalled();
     });
 
     // Pinning a sink on an idle context hands Chrome a silent echo cancellation reference
