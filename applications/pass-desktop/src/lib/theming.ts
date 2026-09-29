@@ -12,7 +12,7 @@ declare module './ipc' {
     }
 }
 
-export const setTheme = (theme: DesktopTheme) => {
+const setTheme = (theme: DesktopTheme) => {
     store.set('theme', theme);
     nativeTheme.themeSource = theme;
 };
