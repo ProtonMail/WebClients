@@ -225,9 +225,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potrdite odpiranje povezave ${ linkToShow }"
       ],
-      "Connect": [
-        "Poveži"
-      ],
       "Connect apps and devices": [
         "Povežite aplikacije in naprave"
       ],
@@ -559,7 +556,7 @@
         "Pridružite se albumu"
       ],
       "Keep going": [
-        "Nadaljuj …"
+        "Nadaljuj"
       ],
       "Keep my subscription": [
         "Ohrani mojo naročnino"
@@ -620,6 +617,9 @@
       ],
       "Maximize transfers": [
         "Povečaj seznam prenosov"
+      ],
+      "Maybe later": [
+        "Mogoče kasneje"
       ],
       "Merge": [
         "Združi"
@@ -986,6 +986,9 @@
       ],
       "Stay": [
         "Ostani"
+      ],
+      "Stop": [
+        "Ustavi"
       ],
       "Stop here": [
         "Tukaj se ustavi"
@@ -1634,9 +1637,6 @@
       ],
       "Discover and set up features": [
         "Odkrijte in nastavite funkcije"
-      ],
-      "Get 50% offer": [
-        "Izkoristite ponudbo s 50 % popustom"
       ],
       "Maybe later": [
         "Morda kasneje"
@@ -3432,8 +3432,14 @@
       "IMAP server is required": [
         "Zahtevan je strežnik IMAP"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nepravilno varnostno geslo. Poskusite znova."
+      ],
       "Incorrect password. Please try again.": [
         "Napačno geslo. Prosimo, poskusite ponovno."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nepravilno drugo geslo. Poskusite znova."
       ],
       "Invalid code": [
         "Neveljavna koda"
@@ -3548,6 +3554,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran."
+      ],
+      "Part of the file appears to be corrupted": [
+        "Del datoteke se zdi poškodovan"
       ],
       "Password is required": [
         "Zahtevano je geslo"
@@ -4383,6 +4392,9 @@
       ]
     },
     "Filter": {
+      "All": [
+        "Vse"
+      ],
       "Errors": [
         "Napake"
       ],
@@ -5036,6 +5048,12 @@
       "${ state.result.entries.length } entries": [
         "${ state.result.entries.length } vnosov"
       ],
+      "${ steps } step": [
+        "${ steps } korak",
+        "${ steps } koraka",
+        "${ steps } koraki",
+        "${ steps } korakov"
+      ],
       "${ storage } storage": [
         "${ storage } shrambe"
       ],
@@ -5119,9 +5137,6 @@
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN je varen tunel med vašo napravo in internetom. Skrije vašo lokacijo in dejavnost pred vašim ponudnikom internetnih storitev (ISP) in spletnimi stranmi, ki jih obiskujete."
-      ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Dostop do več kot 20.000 strežnikov v več kot 145 državah"
       ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
@@ -5495,9 +5510,6 @@
       "Expired": [
         "Poteklo"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Največja hitrost VPN s hitrostjo do 10 Gbps"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5555,9 +5567,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlade in ponudniki internetnih storitev lahko spremljajo vašo spletno dejavnost. S skrivanjem vašega resničnega IP-ja in šifriranjem vaše dejavnosti postane vaše brskanje zasebno."
       ],
-      "Have some more time to decide without interruption.": [
-        "Imate še nekaj časa, da se odločite, ne da bi vas pri tem kaj motilo."
-      ],
       "here": [
         "tukaj"
       ],
@@ -5572,9 +5581,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Če imate težave z ustvarjanjem računa, lahko zahtevate povabilo in odzvali se bomo v enem delovnem dnevu."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Če naročnino prekinete zdaj, boste dne ${ expiryDate } izgubili dostop do ${ BRAND_NAME } ${ planTitle }, vključno z naslednjimi funkcijami:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Če prekličete, se vaša naročnina na ${ planTitle } ne bo podaljšala, ko poteče dne ${ expiryDate }."
@@ -6008,9 +6014,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Počakajte, poteka iskanje stikov, ki vsebujejo podatke, šifrirane z neaktivnim ključem."
       ],
-      "Premium privacy protection across all your devices": [
-        "Premijska zaščita zasebnosti na vseh vaših napravah"
-      ],
       "Preparing": [
         "Priprava"
       ],
@@ -6202,9 +6205,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50 % popust"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Predložite polog s pomočjo naslednjega naslova ali skenirajte QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
@@ -10389,6 +10389,11 @@
         "Yahoo"
       ]
     },
+    "q3campaign2026: Info": {
+      "500 GB of secure storage": [
+        "500 GB varne shrambe"
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } na priporočilo"
@@ -12430,6 +12435,9 @@
       "Select link expiration date": [
         "Izberite datum poteka povezave"
       ],
+      "September Sale": [
+        "Septembrska razprodaja"
+      ],
       "Set recovery methods": [
         "Nastavite načine obnovitve"
       ],
@@ -12489,9 +12497,6 @@
       ],
       "Start import process": [
         "Začni uvažati"
-      ],
-      "Stay for 50% off your next month": [
-        "V naslednjem mesecu izkoristite 50 % popust"
       ],
       "Stop sharing": [
         "Ustavi skupno rabo"

@@ -237,9 +237,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Öffnen des Links ${ linkToShow } bestätigen"
       ],
-      "Connect": [
-        "Verbinden"
-      ],
       "Connect apps and devices": [
         "Apps und Geräte verbinden"
       ],
@@ -682,6 +679,9 @@
       ],
       "Maximize transfers": [
         "Übertragungsfenster maximieren"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
       ],
       "Merge": [
         "Zusammenführen"
@@ -1793,9 +1793,6 @@
       ],
       "Discover and set up features": [
         "Entdecken und Funktionen einrichten"
-      ],
-      "Get 50% offer": [
-        "50 % Rabatt sichern"
       ],
       "Maybe later": [
         "Vielleicht später"
@@ -3702,8 +3699,14 @@
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
+      ],
       "Incorrect password. Please try again.": [
         "Ungültiges Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
       ],
       "Invalid code": [
         "Ungültiger Code"
@@ -5214,6 +5217,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } nutzt diesen Zugriff ausschließlich für den Import. Google erhält zu keinem Zeitpunkt Zugriff auf dein ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
@@ -5473,9 +5479,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ein VPN ist ein sicherer Tunnel zwischen deinem Gerät und dem Internet. Er verbirgt deinen Standort und deine Aktivitäten vor deinem Internetdienstanbieter (ISP) und den von dir besuchten Websites."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Zugriff auf über 20.000 Server in 145 Ländern"
-      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
@@ -5689,8 +5692,8 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Verbinde dich mit ${ VPN_APP_NAME } um privat zu surfen"
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Verbindung zu Google Drive herstellen, um den sicheren Import nach ${ DRIVE_APP_NAME } einzurichten."
+      "Connecting to Google Drive and preparing your import.": [
+        "Verbindung zu Google Drive wird hergestellt und der Import vorbereitet."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt der Gruppe ${ contactGroupName } zugewiesen."
@@ -5855,9 +5858,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
       ],
-      "Email you once import is finished": [
-        "Wir senden dir eine E-Mail, sobald der Import abgeschlossen ist."
-      ],
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
       ],
@@ -5928,9 +5928,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportiere Diagnoseprotokolle für den technischen Support und die Fehlerbehebung"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5967,9 +5964,6 @@
       "For just ${ bundlePlanPriceInline }": [
         "Für nur ${ bundlePlanPriceInline }"
       ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "Damit der Import funktioniert, musst du alle gewünschten Einträge auswählen, wie im obigen GIF gezeigt."
-      ],
       "Forgot password?": [
         "Passwort vergessen?"
       ],
@@ -6000,9 +5994,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
       ],
-      "Have some more time to decide without interruption.": [
-        "Gewinne etwas Zeit, um ungestört zu entscheiden."
-      ],
       "here": [
         "hier"
       ],
@@ -6023,9 +6014,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Wenn du jetzt kündigst, verlierst du am ${ expiryDate } den Zugang zu ${ BRAND_NAME } ${ planTitle }, inklusive dieser Funktionen:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
@@ -6066,6 +6054,9 @@
       ],
       "Import mailbox": [
         "Postfach importieren"
+      ],
+      "Import your files and folders": [
+        "Importiere deine Dateien und Ordner"
       ],
       "Important note": [
         "Wichtiger Hinweis"
@@ -6177,6 +6168,9 @@
       ],
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
+      ],
+      "Know when it's done": [
+        "Erkennen, wenn es abgeschlossen ist"
       ],
       "Label all imported messages as": [
         "Alle importierten Nachrichten kennzeichnen als"
@@ -6302,8 +6296,8 @@
       "New": [
         "Neu"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Als Nächstes musst du dich bei deinem Google-Konto anmelden und ${ BRAND_NAME } Zugriff auf deine Daten gewähren."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Melde dich anschließend bei deinem Google-Konto an und erteile ${ BRAND_NAME } Zugriff auf Google Drive. Deine Dateien und Ordner werden anschließend in ${ DRIVE_APP_NAME } importiert."
       ],
       "No": [
         "Nein"
@@ -6514,9 +6508,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die Daten enthalten, die mit dem inaktiven Schlüssel verschlüsselt sind."
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium-Schutz deiner Privatsphäre auf all deinen Geräten"
-      ],
       "Preparing": [
         "Vorbereitung"
       ],
@@ -6550,6 +6541,9 @@
       "Primary": [
         "Primär"
       ],
+      "Private and encrypted": [
+        "Vertraulich und verschlüsselt"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Der Modus „Privates Surfen“ (oder „Inkognito“-Modus) ist nur nützlich, um deine Aktivitäten auf deinem Gerät verborgen zu halten. Er verhindert, dass dein Browser den Verlauf und die Cookies speichert, aber er macht dich nicht unsichtbar. Dein Internetdienstanbieter, dein Netzwerkadministrator und die von dir besuchten Websites können immer noch sehen, was du online tust."
       ],
@@ -6567,9 +6561,6 @@
       ],
       "Read folder context": [
         "Ordnerkontext lesen"
-      ],
-      "Read once and encrypted on arrival": [
-        "Einmal gelesen und bei Erhalt verschlüsselt"
       ],
       "Read this file": [
         "Diese Datei lesen"
@@ -6739,9 +6730,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
-      "Sit back and we will let you know.": [
-        "Lehne dich zurück, wir halten dich auf dem Laufenden."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Einige Regierungen blockieren oder beschränken den Zugang zu bestimmten Websites. Ein VPN hilft, die Zensur zu umgehen und gleichzeitig deine Aktivitäten und deine Identität geheim zu halten."
       ],
@@ -6765,9 +6753,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Bleibe mühelos verbunden, indem du die folgenden VPN-Einstellungen aktivierst:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
@@ -7078,9 +7063,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Benutze dieses Formular, um uns unangebrachte, illegale, oder anderweitig schädliche geteilte Dateien zu melden. Du bist dabei, Folgendes zu melden:"
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Wird ausschließlich dazu verwendet, sie nach ${ DRIVE_APP_NAME } zu kopieren."
-      ],
       "username": [
         "Benutzername"
       ],
@@ -7130,17 +7112,11 @@
       "We couldn’t process your payment.": [
         "Wir konnten deine Zahlung nicht abschließen."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Wir unterstützen das Importieren von Fotos, Google Docs, Sheets und Slides nicht. Bitte stell sicher, dass dein Google Drive nicht leer ist."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Wir müssen deine Zahlungsmethode bei deiner Bank authentifizieren."
       ],
       "We need to authenticate your payment with your bank.": [
         "Wir müssen deine Zahlung bei deiner Bank authentifizieren."
-      ],
-      "We support most files": [
-        "Wir unterstützen die meisten Dateiformate"
       ],
       "We use 3-D Secure to protect your payments": [
         "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
@@ -7149,17 +7125,23 @@
         "Dieses Foto konnte nicht zu deinem Album hinzugefügt werden.",
         "Einige Fotos konnte nicht zu deinem Album hinzugefügt werden."
       ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Wir benachrichtigen dich per E-Mail, sobald der Import abgeschlossen ist. Nach Abschluss des Vorgangs findest du deinen Import in einem Ordner."
-      ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_WERO_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Sie werden von Google Drive in ${ DRIVE_APP_NAME } kopiert."
+      ],
       "We'll email you once import is complete.": [
         "Wir senden dir eine Nachricht, sobald der Import abgeschlossen ist."
+      ],
+      "We'll email you when your import is complete.": [
+        "Du wirst per E-Mail benachrichtigt, sobald der Import abgeschlossen ist."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Du wirst per E-Mail benachrichtigt, sobald der Import abgeschlossen ist. Deine Dateien werden in einem Ordner in ${ DRIVE_APP_NAME } angezeigt."
       ],
       "We'll notify you when the import is done.": [
         "Du wirst benachrichtigt, sobald der Datenimport abgeschlossen ist."
@@ -7169,9 +7151,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
-      ],
-      "We're importing your files from Google Drive. We'll let you know once it's done.": [
-        "Deine Dateien aus Google Drive werden durch uns importiert. Wir geben dir Bescheid, sobald es abgeschlossen ist."
       ],
       "Week": [
         "Woche"
@@ -7202,9 +7181,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "wird auf die Version vom ${ formattedRevisionDate } zurückgesetzt. Alle anderen Versionen bleiben weiterhin gespeichert."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Fotos, Google Docs und Sheets lassen sich nicht importieren"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -7303,6 +7279,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du hast ein ${ planTitle }-Probeabonnement. Derzeit ist keine Zahlung erforderlich. Dein Abonnement wird am Ende des Testzeitraums automatisch verlängert."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung vom ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You may be redirected to your bank’s website.": [
         "Du wirst möglicherweise zur Website deiner Bank weitergeleitet."
       ],
@@ -7383,6 +7365,9 @@
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Deine Dateien werden gerade neu indiziert. Du kannst weiterhin suchen – die Ergebnisse sind möglicherweise unvollständig, bis der Vorgang abgeschlossen ist. Wir informieren dich, sobald der Vorgang abgeschlossen ist."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Deine Dateien sind verschlüsselt und werden sicher in ${ DRIVE_APP_NAME } gespeichert."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Deine Dateien sind aufgrund eines Zurücksetzens des Passworts nicht mehr zugänglich. Lade den alten Verschlüsselungsschlüssel erneut hoch um den Zugriff wieder zu erlangen. ${ KeyReactivationButton }"
       ],
@@ -7400,6 +7385,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Deine kostenlose Testversion wurde erfolgreich in ein monatliches Abonnement umgewandelt. Dein Verlängerungsdatum ist der ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Möglicherweise ist dein Google Drive leer oder enthält nur Dateien, die nicht unterstützt werden."
       ],
       "Your information was found on ${ displayedDate }": [
         "Deine Informationen wurden am ${ displayedDate } gefunden."
@@ -8405,6 +8393,9 @@
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
+      ],
+      "Pay it": [
+        "Bezahlen"
       ],
       "Photos": [
         "Fotos"
@@ -12499,11 +12490,11 @@
       "Albums you've shared will appear here": [
         "Alben, die du geteilt hast, werden hier angezeigt"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importiere deine Dateien und Ordner aus Google Drive und speichere sie privat in ${ DRIVE_APP_NAME }."
+      ],
       "Shared by ${ sharedBy }": [
         "Geteilt von ${ sharedBy }"
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Wir lesen deine Dateien einmal, um sie zu kopieren, und verschlüsseln sie anschließend jeweils mit deinen ${ BRAND_NAME }-Schlüsseln."
       ],
       "Your favorited photos will appear here": [
         "Deine Favoriten werden hier angezeigt"
@@ -12953,9 +12944,6 @@
       "Connect your custom domain": [
         "Verbinde deine eigene Domain"
       ],
-      "Connect your Google account": [
-        "Dein Google-Konto verbinden"
-      ],
       "Contact Details": [
         "Kontaktinformationen"
       ],
@@ -13121,6 +13109,9 @@
       "Easy switch": [
         "Easy Switch"
       ],
+      "Easy Switch from Google Drive": [
+        "Einfacher Wechsel von Google Drive"
+      ],
       "Edit billing address": [
         "Rechnungsadresse bearbeiten"
       ],
@@ -13257,6 +13248,9 @@
       ],
       "Import groups": [
         "Gruppen importieren"
+      ],
+      "Import started": [
+        "Import gestartet"
       ],
       "Import started, but your storage won't be enough for this import": [
         "Der Import wurde gestartet, aber dein Speicherplatz reicht für diesen Import nicht aus."
@@ -13438,6 +13432,9 @@
       "Photos": [
         "Fotos"
       ],
+      "Preparing your import": [
+        "Import wird vorbereitet …"
+      ],
       "Preview": [
         "Vorschau"
       ],
@@ -13559,9 +13556,6 @@
       "Set up your organization": [
         "Organisation einrichten"
       ],
-      "Setting up your import": [
-        "Dein Import wird eingerichtet"
-      ],
       "Settings": [
         "Einstellungen"
       ],
@@ -13592,9 +13586,6 @@
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
       ],
-      "Sign in to Google": [
-        "Bei Google anmelden"
-      ],
       "Sign out": [
         "Abmelden"
       ],
@@ -13621,9 +13612,6 @@
       ],
       "Start import process": [
         "Importvorgang starten"
-      ],
-      "Stay for 50% off your next month": [
-        "Bleibe und sichere dir 50 % Rabatt auf deinen nächsten Monat"
       ],
       "Stop sharing": [
         "Teilen beenden"
@@ -13834,12 +13822,6 @@
       ],
       "Your import is finished!": [
         "Dein Import ist abgeschlossen."
-      ],
-      "Your import is in progress": [
-        "Dein Import läuft gerade"
-      ],
-      "Your import is starting": [
-        "Dein Datenimport wird gestartet"
       ],
       "Your plan": [
         "Dein Abonnement"

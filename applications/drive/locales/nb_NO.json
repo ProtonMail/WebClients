@@ -237,9 +237,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Bekreft åpning av kobling ${ linkToShow }"
       ],
-      "Connect": [
-        "Koble til"
-      ],
       "Connect apps and devices": [
         "Koble til apper og enheter"
       ],
@@ -676,6 +673,9 @@
       ],
       "Maximize transfers": [
         "Maksimer overføringer"
+      ],
+      "Maybe later": [
+        "Kanskje senere"
       ],
       "Merge": [
         "Slå sammen"
@@ -1784,9 +1784,6 @@
       ],
       "Discover and set up features": [
         "Oppdag og konfigurer funksjoner"
-      ],
-      "Get 50% offer": [
-        "Få 50 % tilbud"
       ],
       "Maybe later": [
         "Kanskje senere"
@@ -3693,8 +3690,14 @@
       "IMAP server is required": [
         "IMAP-server kreves"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Feil reservepassord. Forsøk igjen."
+      ],
       "Incorrect password. Please try again.": [
         "Feil passord. Prøv igjen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Feil andre passord. Prøv på nytt."
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -5461,9 +5464,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Et VPN er en sikker tunnel mellom enheten din og internett. Den skjuler posisjonen og aktiviteten din for internettleverandøren din (ISP) og nettstedene du besøker."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Tilgang til over 20 000 servere i 145 land"
-      ],
       "Account successfully updated": [
         "Konto oppdatert"
       ],
@@ -5677,9 +5677,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Koble til ${ VPN_APP_NAME } for å surfe privat"
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Kobler til Google Drive for å konfigurere sikker import til ${ DRIVE_APP_NAME }."
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
       ],
@@ -5840,9 +5837,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
       ],
-      "Email you once import is finished": [
-        "Sender deg en e-post når importen er fullført."
-      ],
       "Emails are automatically signed": [
         "E-post signeres automatisk"
       ],
@@ -5913,9 +5907,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Eksporter diagnoselogger for teknisk støtte og feilsøking"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Raskeste VPN-hastigheter på opptil 10 Gbps"
-      ],
       "Feb": [
         "feb."
       ],
@@ -5952,9 +5943,6 @@
       "For just ${ bundlePlanPriceInline }": [
         "For kun ${ bundlePlanPriceInline }"
       ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "For at importen skal fungere, må du velge alle forespurte elementer som vist i GIF-en ovenfor."
-      ],
       "Forgot password?": [
         "Glemt passord?"
       ],
@@ -5985,9 +5973,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
       ],
-      "Have some more time to decide without interruption.": [
-        "Ha litt mer tid til å bestemme deg uten avbrudd."
-      ],
       "here": [
         "her"
       ],
@@ -6008,9 +5993,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Hvis du kansellerer nå, mister du tilgangen til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inkludert disse funksjonene:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
@@ -6287,9 +6269,6 @@
       "New": [
         "Ny"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Deretter må du logge på Google-kontoen din og gi ${ BRAND_NAME } tilgang til dataene."
-      ],
       "No": [
         "Nei"
       ],
@@ -6496,9 +6475,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
       ],
-      "Premium privacy protection across all your devices": [
-        "Førsteklasses personvernbeskyttelse på tvers av alle enhetene dine"
-      ],
       "Preparing": [
         "Forbereder"
       ],
@@ -6549,9 +6525,6 @@
       ],
       "Read folder context": [
         "Lese mappekontekst"
-      ],
-      "Read once and encrypted on arrival": [
-        "Leses én gang og krypteres ved mottak"
       ],
       "Read this file": [
         "Les denne filen"
@@ -6718,9 +6691,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
-      "Sit back and we will let you know.": [
-        "Len deg tilbake, så gir vi deg beskjed."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Noen myndigheter blokkerer eller begrenser tilgangen til visse nettsteder. Et VPN hjelper til med å omgå sensur samtidig som aktiviteten og identiteten din holdes privat."
       ],
@@ -6741,9 +6711,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Hold deg til planen din og få 50 % rabatt neste måned"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
@@ -7054,9 +7021,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bruk dette skjemaet til å varsle oss om upassende, ulovlige,\neller på annen måte ondsinnede delte filer. Du er i ferd med å rapportere:"
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Brukes kun til å kopiere dem inn i ${ DRIVE_APP_NAME }"
-      ],
       "username": [
         "brukernavn"
       ],
@@ -7106,17 +7070,11 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Vi støtter ikke import av bilder, Google Docs, Sheets og Slides. Sørg for at Google Drive-kontoen din ikke er tom."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi trenger å autentisere betalingsmåten med banken din."
       ],
       "We need to authenticate your payment with your bank.": [
         "Vi trenger å autentisere betalingen med banken din."
-      ],
-      "We support most files": [
-        "Vi støtter de fleste filtyper"
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
@@ -7124,9 +7082,6 @@
       "We were not able to add this photo to your album": [
         "Vi kunne ikke legge til dette bildet i albumet ditt",
         "Vi kunne ikke legge til enkelte bilder i albumet ditt"
-      ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Vi sender deg en e-post når importen er fullført. Når den er ferdig, finner du importen i en mappe."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til ${ IDEAL_WERO_BRAND_NAME } i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
@@ -7175,9 +7130,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "vil bli gjenopprettet til versjonen fra ${ formattedRevisionDate }. Alle andre versjoner lagres fortsatt."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Importerer ikke bilder, Google Docs og Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -12439,9 +12391,6 @@
       "Shared by ${ sharedBy }": [
         "Delt av ${ sharedBy }"
       ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Vi leser filene dine én gang for å kopiere dem, og krypterer deretter hver enkelt med dine ${ BRAND_NAME }-nøkler."
-      ],
       "Your favorited photos will appear here": [
         "Favorittbildene vil vises her"
       ],
@@ -12889,9 +12838,6 @@
       ],
       "Connect your custom domain": [
         "Koble til ditt egendefinerte domene"
-      ],
-      "Connect your Google account": [
-        "Koble til Google-kontoen din"
       ],
       "Contact Details": [
         "KontaktInformasjon"
@@ -13496,9 +13442,6 @@
       "Set up your organization": [
         "Konfigurer organisasjonen din"
       ],
-      "Setting up your import": [
-        "Konfigurerer importen"
-      ],
       "Settings": [
         "Innstillinger"
       ],
@@ -13529,9 +13472,6 @@
       "Sign in and grant access": [
         "Logg på og gi tilgang"
       ],
-      "Sign in to Google": [
-        "Logg på Google"
-      ],
       "Sign out": [
         "Logg av"
       ],
@@ -13558,9 +13498,6 @@
       ],
       "Start import process": [
         "Start importprosessen"
-      ],
-      "Stay for 50% off your next month": [
-        "Bli og få 50 % rabatt neste måned"
       ],
       "Stop sharing": [
         "Avslutt deling"
@@ -13765,9 +13702,6 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
-      ],
-      "Your import is starting": [
-        "Importen starter"
       ],
       "Your plan": [
         "Din plan"

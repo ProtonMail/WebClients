@@ -190,9 +190,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Hivatkozás megnyitásának jóváhagyása: ${ linkToShow }"
       ],
-      "Connect": [
-        "Csatlakozás"
-      ],
       "Connect apps and devices": [
         "Alkalmazások és eszközök összekapcsolása"
       ],
@@ -530,6 +527,9 @@
       ],
       "Maximize transfers": [
         "Le- és feltöltések megnyitása"
+      ],
+      "Maybe later": [
+        "Talán később"
       ],
       "Merge": [
         "Egyesítés"
@@ -3007,8 +3007,14 @@
       "IMAP server is required": [
         "IMAP szerver megadása szükséges"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Hibás biztonsági mentés jelszó. Próbálja meg újra."
+      ],
       "Incorrect password. Please try again.": [
         "Hibás jelszó. Próbálja meg újra."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Hibás második jelszó. Próbálja meg újra."
       ],
       "Invalid code": [
         "Érvénytelen kód"
