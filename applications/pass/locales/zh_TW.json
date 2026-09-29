@@ -1232,6 +1232,12 @@
       "Inactive secure links could not be removed.": [
         "無法移除未活動的安全連結。"
       ],
+      "Incorrect backup password. Please try again.": [
+        "備份密碼錯誤。請重新再試。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "第二密碼錯誤。請重新再試。"
+      ],
       "Invalid password manager": [
         "錯誤密碼管理器"
       ],
@@ -2071,6 +2077,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "移動全部於\"${ payload.content.name }\"的項目"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "將項目移至另一個保管庫將會清除其安全連結。"
       ],
       "Moving items": [
         "正在移動檔案"

@@ -1591,9 +1591,6 @@
       "Discover and set up features": [
         "기능 알아보고 설정하기"
       ],
-      "Get 50% offer": [
-        "50% 할인 받기"
-      ],
       "Maybe later": [
         "나중에"
       ],
@@ -3814,6 +3811,12 @@
       "IMAP server is required": [
         "IMAP 서버가 필요함"
       ],
+      "Incorrect backup password. Please try again.": [
+        "백업 비밀번호가 틀렸습니다. 다시 시도해 주세요."
+      ],
+      "Incorrect second password. Please try again.": [
+        "2차 비밀번호가 틀렸습니다. 다시 시도해 주세요."
+      ],
       "Intended recipient does not support calendar sharing": [
         "지정한 수신자가 캘린더 공유를 지원하지 않습니다."
       ],
@@ -5513,9 +5516,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN은 기기와 인터넷 사이의 안전한 터널입니다. 인터넷 서비스 공급자(ISP)와 방문하는 웹사이트로부터 사용자의 위치와 활동을 숨기죠."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "145개국의 20,000개 이상 서버에 접근"
-      ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
       ],
@@ -5888,9 +5888,6 @@
       "Failed to update meeting schedule": [
         "회의 일정 업데이트 실패"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "최대 10 Gbps의 빠른 VPN 속도"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "파일 전용 (사진 불가, ${ DOCS_APP_NAME } 또는 ${ SHEETS_APP_NAME }) - 최대 총 100 GB, 100,000개 파일 및 파일 당 50 GB)"
       ],
@@ -5921,9 +5918,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
       ],
-      "Have some more time to decide without interruption.": [
-        "방해받지 않고 결정할 수 있는 시간이 더 있으니 천천히 결정하세요."
-      ],
       "here": [
         "여기"
       ],
@@ -5944,9 +5938,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "지금 취소하면 ${ expiryDate }부로 ${ BRAND_NAME } ${ planTitle }에 접근할 수 없으며, 다음 기능이 제한됩니다:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
@@ -6284,9 +6275,6 @@
       "Powered by ${ protonButton }": [
         "Powered by ${ protonButton }"
       ],
-      "Premium privacy protection across all your devices": [
-        "모든 기기에 걸친 프리미엄 프라이버시 보호"
-      ],
       "Previous modifications on this series will be lost.": [
         "이 시리즈에 대한 이전 수정 사항은 손실됩니다."
       ],
@@ -6388,9 +6376,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "다음 VPN 설정을 활성화하여 손쉽게 연결 상태를 유지해 보세요:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "현재 플랜을 유지허고 다음 달에는 50% 할인 받으세요"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
@@ -9413,6 +9398,9 @@
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "${ plan }의 첫 달 80% 할인을 받을 수 있는 마지막 기회입니다."
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "${ plan }을(를) 첫 달 동안 이 가격으로 누릴 수 있는 마지막 기회."
       ],
       "Last day to save": [
         "매월에서 매년 구독으로 변경하여"
@@ -12622,9 +12610,6 @@
       ],
       "Start import process": [
         "불러오기 과정 시작"
-      ],
-      "Stay for 50% off your next month": [
-        "첫 달은 50% 할인으로 누리기"
       ],
       "Subscription canceled": [
         "구독이 취소되었습니다"

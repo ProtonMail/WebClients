@@ -888,9 +888,6 @@
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
       ],
-      "Get 50% offer": [
-        "%50 indirimden yararlanın"
-      ],
       "Remind me later": [
         "Daha sonra anımsat"
       ],
@@ -2359,6 +2356,9 @@
       "tokens / 30d": [
         "kod / 30 gün"
       ],
+      "Tool calls": [
+        "Araç çağrıları"
+      ],
       "Trying...": [
         "Deneniyor..."
       ],
@@ -3475,6 +3475,9 @@
       "Explain": [
         "Açıkla"
       ],
+      "Export": [
+        "Dışa aktar"
+      ],
       "Favorite": [
         "Sık kullanılanlara ekle"
       ],
@@ -4012,6 +4015,9 @@
       "Check what your AIs store about you and delete what you no longer need.": [
         "Yapay zeka sistemlerinizin sizinle ilgili hangi bilgileri tuttuğunu kontrol edin ve gerek duymadıklarınızı silin."
       ],
+      "Choose a format to export \"${ conversation.title }\":": [
+        "\"${ conversation.title }\" dosyasının dışa aktarılacağı bir biçim seçin:"
+      ],
       "Choose or drop your .zip or conversations.json file. We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
         ".zip ya da conversations.json dosyanızı seçin veya sürükleyip bırakın. ${ PAPER_TRAIL_LIMITS.maxPrompts } son istemlerinizi inceliyoruz."
       ],
@@ -4204,6 +4210,9 @@
       "Sign in to your Claude account at claude.ai": [
         "claude.ai adresinden Claude hesabınızda oturum açın"
       ],
+      "Some content, such as images and attachments, may not be included in the exported file.": [
+        "Görseller ve ek dosyaları gibi bazı içerikler dışa aktarılan dosyaya eklenmeyebilir."
+      ],
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
         "Yapıştırdığınız içeriklerin bazıları iş yeri, yasal veya veri koruma sınırlarını aşıyor olabilir. Bu bilgi, sizi yargılamak için değil, bunu fark etmenize yardımcı olmak için verilmiştir."
       ],
@@ -4215,6 +4224,12 @@
       ],
       "Start a new chat to see it here.": [
         "Burada görünmesi için yeni bir sohbet başlatın."
+      ],
+      "Structured data, aiming for compatibility with the ChatGPT export format": [
+        "ChatGPT dışa aktarma biçimi ile uyumluluğu amaçlanan yapılandırılmış veriler"
+      ],
+      "Text formatted with markdown, easy to read or share": [
+        "Markdown ile biçimlendirilmiş okunması ve paylaşılması kolay yazı"
       ],
       "The fuller the bar, the more of that area Big Tech could reconstruct. Lower is better.": [
         "Çubuk ne kadar doluysa Big Tech şirketlerinin yeniden oluşturabileceği alan o kadar büyür. Düşük değerler daha iyidir."
@@ -4472,11 +4487,17 @@
       "It doesn't expire": [
         "Geçerlilik süresi dolmaz"
       ],
+      "JSON": [
+        "JSON"
+      ],
       "Lending & hiring": [
         "Kredi ve işe alım"
       ],
       "Low": [
         "Düşük"
+      ],
+      "Markdown": [
+        "Markdown"
       ],
       "Medium": [
         "Orta"
@@ -4990,6 +5011,9 @@
       "All files removed from project": [
         "Tüm dosyalar projeden kaldırıldı"
       ],
+      "Conversation exported": [
+        "Yazışma dışa aktarıldı"
+      ],
       "Database connection restored.": [
         "Veri tabanı bağlantısı yeniden kuruldu."
       ],
@@ -5100,6 +5124,9 @@
       ],
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } ile oluşturulan görselleri keşfedin"
+      ],
+      "Export conversation": [
+        "Yazışmayı dışa aktar"
       ],
       "Favorites": [
         "Beğenilenler"
@@ -5256,6 +5283,9 @@
       ],
       "Two models, two modes": [
         "İki model, iki kip"
+      ],
+      "Untitled conversation": [
+        "Başlıksız yazışma"
       ],
       "Upload your data export": [
         "Verileri dışa aktarma dosyanızı yükleyin"
@@ -6546,6 +6576,12 @@
       "Image preview not found": [
         "Görsel ön izlemesi bulunamadı"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Yedek parola yanlış. Lütfen yeniden deneyin."
+      ],
+      "Incorrect second password. Please try again.": [
+        "İkinci parola yanlış. Lütfen yeniden deneyin."
+      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
@@ -7124,9 +7160,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "145 ülkede 20.000 üzerinde sunucuya erişim"
-      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
@@ -7290,9 +7323,6 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "10 Gb/sn olabilen en yüksek VPN hızı"
-      ],
       "Folder:": [
         "Klasör:"
       ],
@@ -7305,14 +7335,8 @@
       "Google Pay mark": [
         "Google Pay işareti"
       ],
-      "Have some more time to decide without interruption.": [
-        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
@@ -7440,9 +7464,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
-      "Premium privacy protection across all your devices": [
-        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
@@ -7496,9 +7517,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
@@ -9404,6 +9422,9 @@
       "Delete": [
         "Sil"
       ],
+      "Export": [
+        "Dışa aktar"
+      ],
       "Go to all projects": [
         "Tüm projelere git"
       ],
@@ -10789,9 +10810,6 @@
       ],
       "Simplify password management": [
         "Parola yönetimini kolaylaştırın"
-      ],
-      "Stay for 50% off your next month": [
-        "Sonraki ay %50 indirimden yararlanın"
       ],
       "Summary": [
         "Özet"

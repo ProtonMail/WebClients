@@ -1628,6 +1628,9 @@
     "Action subscription": {
       "Reactivate": [
         "Reaktivieren"
+      ],
+      "View breakdown": [
+        "Einzelheiten anzeigen"
       ]
     },
     "Action: Sheets": {
@@ -2217,12 +2220,34 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Wird automatisch für ${ renewPrice } für ${ renewCycle } Monat verlängert.",
-        "Wird automatisch für ${ renewPrice } für ${ renewCycle } Monate verlängert."
+      "Free renewal": [
+        "Kostenlose Verlängerung"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Kostenlose Verlängerung für ${ nextCycle } Monat ab dem ${ when }",
+        "Kostenlose Verlängerung für ${ nextCycle } Monate ab dem ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Verlängert sich automatisch zu einem Preis von ${ introPrice } für ${ nextCycle } Monat ab ${ when }",
+        "Verlängert sich automatisch zu einem Preis von ${ introPrice } für ${ nextCycle } Monate ab ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Verlängert sich automatisch für ${ price }, für ${ cycle } Monat",
+        "Verlängert sich automatisch für ${ price }, für ${ cycle } Monate"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Verlängert sich automatisch auf ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Wechselt am ${ when } auf ${ nextCycle } Monat (${ paidPrice } bereits bezahlt)",
+        "Wechselt am ${ when } auf ${ nextCycle } Monate (${ paidPrice } bereits bezahlt)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Danach ${ price } für ${ cycle } Monat",
+        "Danach ${ price } für ${ cycle } Monate"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Wird am ${ replacementDate } durch Ihr neues Abonnement ersetzt."
       ]
     },
     "Billing cycle option": {
@@ -2260,6 +2285,14 @@
       ],
       "Yearly": [
         "Jährlich"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Wird bei Verlängerung in Rechnung gestellt"
+      ],
+      "Prepaid": [
+        "Prepaid"
       ]
     },
     "Blog": {
@@ -2448,9 +2481,6 @@
       ],
       "Discover and set up features": [
         "Entdecken und Funktionen einrichten"
-      ],
-      "Get 50% offer": [
-        "50 % Rabatt sichern"
       ],
       "Maybe later": [
         "Vielleicht später"
@@ -3635,6 +3665,11 @@
         "(über ${ entryCountryName })"
       ]
     },
+    "Coupon": {
+      "Coupon applied": [
+        "Gutschein eingelöst"
+      ]
+    },
     "Create user accounts empty state": {
       "No search results found": [
         "Keine Suchergebnisse gefunden"
@@ -3805,6 +3840,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Bring E-Mail, Kalendertermine und Kontakte von einem anderen Anbieter mit."
+      ],
+      "Bring over your files from another provider.": [
+        "Übertrage deine Dateien von einem anderen Anbieter."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Schaffe Vertrauen und Wiedererkennungswert für deine Marke mit professionellen E-Mail-Adressen auf deiner eigenen Domain."
@@ -7614,9 +7652,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Ein Benutzer ist ein Konto, das mit einem einzigen Benutzernamen, einem Postfach und einer Person verbunden ist."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Zugriff auf über 20.000 Server in 145 Ländern"
-      ],
       "Account monitor": [
         "Kontoüberwachung"
       ],
@@ -8380,9 +8415,6 @@
       "Failed to fetch logs.": [
         "Protokolle konnten nicht abgerufen werden."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
       ],
@@ -8476,9 +8508,6 @@
       "Groups": [
         "Gruppen"
       ],
-      "Have some more time to decide without interruption.": [
-        "Gewinne etwas Zeit, um ungestört zu entscheiden."
-      ],
       "here": [
         "hier"
       ],
@@ -8514,9 +8543,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Wenn du jetzt kündigst, verlierst du am ${ expiryDate } den Zugang zu ${ BRAND_NAME } ${ planTitle }, inklusive dieser Funktionen:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
@@ -8950,7 +8976,7 @@
         "Hier können nur Groß- und Kleinschreibung sowie Zeichensetzung (Punkte, Bindestriche und Unterstriche) geändert werden. Um eine andere E-Mail-Adresse zu verwenden, füge eine neue hinzu."
       ],
       "Open source": [
-        "Quelloffen"
+        "Open Source"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Öffne die Anleitung für empfohlene Aktionen und hilfreiche Links."
@@ -9112,9 +9138,6 @@
       "Preference saved": [
         "Einstellung gespeichert"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium-Schutz deiner Privatsphäre auf all deinen Geräten"
-      ],
       "Preview": [
         "Vorschau"
       ],
@@ -9166,8 +9189,8 @@
       "RECOMMENDED": [
         "EMPFOHLEN"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Auf vertrauenswürdigen Geräten empfohlen. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Empfohlen auf vertrauenswürdigen Geräten. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Die Wiederherstellung per E-Mail ist nicht verfügbar, solange ${ PROTON_SENTINEL_NAME } aktiviert ist."
@@ -9380,9 +9403,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
       ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
-      ],
       "Storage allocated to other users in this organisation": [
         "Speicherplatz, der anderen Benutzern in dieser Organisation zugewiesen ist"
       ],
@@ -9594,8 +9614,8 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dadurch kann PayPal zur Bezahlung deines ${ BRAND_NAME }-Abonnements verwendet werden. Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn du Pop-up-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Damit kannst du schnell und sicher auf dein ${ BRAND_NAME }-Konto zugreifen, um dein Passwort zu ändern."
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "So kannst du schnell und sicher auf dein ${ BRAND_NAME }-Konto zugreifen, um dein Passwort zu ändern."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Dadurch werden die Daten und alle mit diesem Benutzer verbundenen E-Mail-Adressen dauerhaft gelöscht."
@@ -10194,6 +10214,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du hast ein ${ planTitle }-Probeabonnement. Derzeit ist keine Zahlung erforderlich. Dein Abonnement wird am Ende des Testzeitraums automatisch verlängert."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung vom ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no invoices.": [
         "Keine Rechnungen vorhanden."
       ],
@@ -10505,6 +10531,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Geschenkt"
+      ],
+      "Open": [
+        "Offen"
       ],
       "Paid": [
         "Bezahlt"
@@ -11845,6 +11874,9 @@
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
+      ],
+      "Pay it": [
+        "Bezahlen"
       ],
       "Privacy policy": [
         "Datenschutzerklärung"
@@ -14451,9 +14483,6 @@
       ],
       "Card number": [
         "Kartennummer"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Guthaben und Rabatte findest du auf deiner Rechnung"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Aktuell ist die automatische Abonnement-Verlängerung deaktiviert. Falls du dein Abonnement jetzt änderst, wird die automatische Verlängerung wieder aktiviert."
@@ -17851,6 +17880,9 @@
       ],
       "Free Trial": [
         "Kostenlose Testversion"
+      ],
+      "Upcoming": [
+        "Demnächst"
       ]
     },
     "Subtitle": {
@@ -18356,6 +18388,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "${ planTitle } breakdown": [
+        "Einzelheiten von ${ planTitle }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } für Organisationen"
@@ -19523,14 +19558,14 @@
       "Status": [
         "Status"
       ],
-      "Stay for 50% off your next month": [
-        "Bleibe und sichere dir 50 % Rabatt auf deinen nächsten Monat"
-      ],
       "Stay secure and connected anywhere": [
         "Bleibe überall sicher und verbunden"
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Subscription breakdown": [
+        "Einzelheiten des Abonnements"
       ],
       "Subscription canceled": [
         "Abonnement beendet"
@@ -19839,11 +19874,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Abrechnung"
+      ],
       "End date": [
         "Enddatum"
       ],
       "Plan": [
         "Abonnement"
+      ],
+      "Price": [
+        "Preis"
+      ],
+      "Start date": [
+        "Startdatum"
       ],
       "Status": [
         "Status"

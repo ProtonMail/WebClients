@@ -2624,12 +2624,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Odnawia się automatycznie za kwotę ${ renewPrice } co ${ renewCycle } miesiąc",
-        "Odnawia się automatycznie za kwotę ${ renewPrice } co ${ renewCycle } miesiące",
-        "Odnawia się automatycznie za kwotę ${ renewPrice } co ${ renewCycle } miesięcy",
-        "Odnawia się automatycznie za kwotę ${ renewPrice } co ${ renewCycle } miesięcy"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automatyczne odnowienie w ${ subscriptionManagerName }"
       ]
@@ -3063,9 +3057,6 @@
       ],
       "Discover and set up features": [
         "Odkryj i skonfiguruj funkcje"
-      ],
-      "Get 50% offer": [
-        "Uzyskaj 50% zniżki"
       ],
       "Got it": [
         "OK"
@@ -9813,9 +9804,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Uzyskaj dostęp do ponad 6500 szybkich serwerów na maksymalnie 10 urządzeniach, aby bezpiecznie przeglądać Internet. Usługa dostępna na urządzeniach: ${ ios }, ${ android }, ${ appleTV } i ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Dostęp do ponad 20 000 serwerów w 145 krajach"
-      ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Uzyskaj dostęp do swoich haseł i chroń swoje tożsamości online bez przeszkód na wszystkich urządzeniach. Pobierz i zainstaluj odpowiednie aplikacje i rozszerzenia ${ PASS_APP_NAME }."
       ],
@@ -10773,9 +10761,6 @@
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Najwyższe prędkości VPN do 10 Gb/s"
-      ],
       "Featured in": [
         "Wyróżniony w"
       ],
@@ -10917,9 +10902,6 @@
       "Groups": [
         "Grupy"
       ],
-      "Have some more time to decide without interruption.": [
-        "Podejmij decyzję bez żadnych zakłóceń, mając na to więcej czasu."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Pomóż innym rodzinom zapewnić ich dzieciom bezpieczny start online. Udostępnij ten kamień milowy i podziel się tą informacją."
       ],
@@ -10991,9 +10973,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jeśli uważasz, że nastąpiła pomyłka, skontaktuj się z nami ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "W przypadku anulowania teraz subskrypcji utracisz dostęp do ${ BRAND_NAME } ${ planTitle } w dniu ${ expiryDate }, w tym do następujących funkcji:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Jeśli anulujesz subskrypcję ${ planTitle }, nie zostanie ona odnowiona po terminie wygaśnięcia ${ expiryDate }."
@@ -11733,9 +11712,6 @@
       "Preference saved": [
         "Ustawienia zostały zapisane"
       ],
-      "Premium privacy protection across all your devices": [
-        "Najwyższej klasy ochrona prywatności na wszystkich Twoich urządzeniach"
-      ],
       "Preview": [
         "Podgląd"
       ],
@@ -11798,9 +11774,6 @@
       ],
       "RECOMMENDED": [
         "ZALECANY"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Zalecane na zaufanych urządzeniach. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Odzyskiwanie za pomocą poczty e-mail nie jest dostępne, gdy usługa ${ PROTON_SENTINEL_NAME } jest włączona."
@@ -12068,9 +12041,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Używaj krótszej i bardziej chwytliwej wersji swojego adresu e-mail."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Pozostań przy swoim planie i otrzymaj 50% zniżki na kolejny miesiąc"
       ],
       "Step ${ step }": [
         "Krok ${ step }",
@@ -12377,9 +12347,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję ${ BRAND_NAME }. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Umożliwi to szybki i bezpieczny dostęp do Twojego konta ${ BRAND_NAME }, dzięki czemu będzie można zmienić hasło."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Spowoduje to trwałe usunięcie danych i wszystkich adresów skojarzonych z użytkownikami."
@@ -19483,9 +19450,6 @@
       "Card number": [
         "Numer karty"
       ],
-      "Credits and discounts are reflected in your invoice": [
-        "Środki i zniżki są uwzględnione na fakturze"
-      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Obecnie automatyczne odnowienie subskrypcji jest wyłączone. Jeśli zmienisz subskrypcję, automatyczne odnowienie zostanie włączone."
       ],
@@ -24779,7 +24743,7 @@
         "Aplikacja Bridge na ${ platform }"
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
-        "Prnieś swój Gmail do ${ MAIL_APP_NAME }"
+        "Przenieś swój Gmail do ${ MAIL_APP_NAME }"
       ],
       "Browser extensions": [
         "Rozszerzenia przeglądarki"
@@ -26106,9 +26070,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Stay for 50% off your next month": [
-        "Zostań z nami, aby uzyskać 50% zniżki w następnym miesiącu"
       ],
       "Stay secure and connected anywhere": [
         "Dbaj o bezpieczeństwo i łączność w dowolnym miejscu"

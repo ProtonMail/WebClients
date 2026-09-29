@@ -2988,10 +2988,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Förnyas automatiskt med ${ renewPrice }, för ${ renewCycle } månad",
-        "Förnyas automatiskt med ${ renewPrice }, för ${ renewCycle } månader"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Förnyas automatiskt med ${ subscriptionManagerName }"
       ]
@@ -3031,6 +3027,11 @@
       ],
       "Yearly": [
         "Årsvis"
+      ]
+    },
+    "Billing type": {
+      "Prepaid": [
+        "Förbetalt"
       ]
     },
     "Blog": {
@@ -3421,9 +3422,6 @@
       ],
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
-      ],
-      "Get 50% offer": [
-        "Få 50 % erbjudande"
       ],
       "Got it": [
         "Jag förstår"
@@ -5032,6 +5030,11 @@
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
+      ]
+    },
+    "Coupon": {
+      "Coupon applied": [
+        "Kupong tillämpad"
       ]
     },
     "Create user accounts empty state": {
@@ -10414,9 +10417,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Få åtkomst till 6 500+ höghastighetsservrar på upp till 10 enheter för att hålla din webbläsardata säker. Tillgängligt på ${ ios }, ${ android }, ${ appleTV } och ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Åtkomst till över 20 000 servrar i över 145 länder"
-      ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Kom åt dina lösenord och skydda dina identiteter online sömlöst på alla dina enheter. Ladda ner och installera relevanta ${ PASS_APP_NAME }-appar och utökningar."
       ],
@@ -10935,6 +10935,9 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Anslut och hantera dina externa brevlådor i ${ MAIL_APP_NAME }."
       ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Ansluter till Google Drive och förbereder din import."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Anslutningsdata kommer vara tillgänglig om cirka 1 timme."
       ],
@@ -11451,9 +11454,6 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Snabb och fokuserad. E-post och kalender, direkt på din stationära dator."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Snabbaste VPN-hastigheter på upp till 10 Gbps"
-      ],
       "Featured in": [
         "Som sett i"
       ],
@@ -11607,9 +11607,6 @@
       "Groups": [
         "Grupper"
       ],
-      "Have some more time to decide without interruption.": [
-        "Ha lite mer tid att bestämma utan avbrott."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Hjälp andra familjer att ge sina barn en trygg start online. Dela denna milstolpe och sprid budskapet."
       ],
@@ -11681,9 +11678,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Om du tror att detta är felaktigt, kontakta oss ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Om du avbryter nu, kommer du att förlora åtkomst till ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive dessa funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
@@ -11758,6 +11752,9 @@
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Visa engångsöverföringar av e-post, kalendrar eller kontakter för att importera till ditt ${ BRAND_NAME }-konto."
+      ],
+      "Import your files and folders": [
+        "Importera dina filer och mappar"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "VIKTIGT: Om din DNS-konsol inte tillåter att CNAME-värden slutar med en punkt kan du ta bort den sista punkten i CNAME-värdena."
@@ -12463,6 +12460,9 @@
       "Private AI assistant": [
         "Privat AI-assistent"
       ],
+      "Private and encrypted": [
+        "Privat och krypterad"
+      ],
       "Product reviews, rankings, or guides": [
         "Produktrecensioner, rankingar eller guider"
       ],
@@ -12501,9 +12501,6 @@
       ],
       "RECOMMENDED": [
         "REKOMMENDERAT"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Rekommenderas på betrodda enheter. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Återställning med e-post är inte tillgängligt medan ${ PROTON_SENTINEL_NAME } är aktiverat."
@@ -12784,9 +12781,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Börja använda den kortare, klatschigare versionen av din e-postadress."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
       ],
       "Step ${ step }": [
         "Steg ${ step }",
@@ -13095,9 +13089,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Detta gör att PayPal kan användas för att betala för din ${ BRAND_NAME }-prenumeration. Vi kommer omdirigera dig till PayPal i en ny webbläsarflik. Om du använder popup-blockerare, inaktivera dem för att fortsätta."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Detta ger dig snabb och säker åtkomst till ditt ${ BRAND_NAME }-konto så du kan ändra ditt lösenord."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Detta kommer ta bort data och alla e-postadresser permanent som är associerade med dessa användare."
@@ -13530,9 +13521,6 @@
       ],
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Vi rekommenderar starkt att alla aktiverar återställning med återställningsfras."
-      ],
-      "We support most files": [
-        "Vi stöder de flesta filerna"
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
@@ -14762,6 +14750,9 @@
       ],
       "Account holder name": [
         "Kontoinnehavarens namn"
+      ],
+      "Account holder: ${ details.AccountName }": [
+        "Kontoinnehavare: ${ details.AccountName }"
       ],
       "Account storage": [
         "Kontolagring"
@@ -20347,9 +20338,6 @@
       "Card number": [
         "Kortnummer"
       ],
-      "Credits and discounts are reflected in your invoice": [
-        "Krediter och rabatter återspeglas på din faktura"
-      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "För närvarande är den automatiska förnyelsen av prenumerationen inaktiverad. Om du ändrar prenumerationen nu kommer den automatiska förnyelsen att återaktiveras."
       ],
@@ -24703,6 +24691,9 @@
       ],
       "Free Trial": [
         "Gratis provperiod"
+      ],
+      "Upcoming": [
+        "Kommande"
       ]
     },
     "Subtitle": {
@@ -25794,9 +25785,6 @@
       "Connect your custom domain": [
         "Anslut din anpassad domän"
       ],
-      "Connect your Google account": [
-        "Anslut ditt Google-konto"
-      ],
       "Connected emails": [
         "Ansluten e-post"
       ],
@@ -26452,6 +26440,9 @@
       "Import key": [
         "Importera nyckel"
       ],
+      "Import started": [
+        "Import startad"
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importera via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -26740,6 +26731,9 @@
       "Post-quantum protection": [
         "Post-kvantumskydd"
       ],
+      "Preparing your import": [
+        "Förbereder din import"
+      ],
       "Preview": [
         "Förhandsgranska"
       ],
@@ -26998,9 +26992,6 @@
       "Set your password": [
         "Välj ditt lösenord"
       ],
-      "Setting up your import": [
-        "Ställer in din import"
-      ],
       "Settings": [
         "Inställningar"
       ],
@@ -27027,9 +27018,6 @@
       ],
       "Sign in on TV?": [
         "Logga in på TV?"
-      ],
-      "Sign in to Google": [
-        "Logga in till Google"
       ],
       "Sign in to join the Beta program": [
         "Logga in för att gå med i Beta-programmet"
@@ -27102,9 +27090,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Stay for 50% off your next month": [
-        "Stanna kvar för 50 % rabatt nästa månad"
       ],
       "Stay secure and connected anywhere": [
         "Håll dig säker och ansluten var som helst"
@@ -27326,6 +27311,9 @@
       "Warning: suspected fake website": [
         "Varning: misstänkt falsk webbplats"
       ],
+      "We could not find anything to import": [
+        "Vi kunde inte hitta något att importera"
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Vi skickade en kod till din e-post för att bekräfta din identitet. Koden är giltig i 10 minuter. Ange den nedan."
       ],
@@ -27409,9 +27397,6 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
-      ],
-      "Your import is starting": [
-        "Din import startar"
       ],
       "Your plan": [
         "Ditt paket"
@@ -27534,11 +27519,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Fakturering"
+      ],
       "End date": [
         "Slutdatum"
       ],
       "Plan": [
         "Paket"
+      ],
+      "Price": [
+        "Pris"
+      ],
+      "Start date": [
+        "Startdatum"
       ],
       "Status": [
         "Status"

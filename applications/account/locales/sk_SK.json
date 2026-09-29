@@ -2321,6 +2321,9 @@
     "Action subscription": {
       "Reactivate": [
         "Znovu aktivovať"
+      ],
+      "View breakdown": [
+        "Zobraziť rozpis"
       ]
     },
     "Action: Sheets": {
@@ -3081,14 +3084,44 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiac",
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiace",
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiacov",
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiacov"
+      "Free renewal": [
+        "Bezplatná obnova"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Obnova zdarma na ${ nextCycle } mesiac, dňa ${ when }",
+        "Obnova zdarma na ${ nextCycle } mesiace, dňa ${ when }",
+        "Obnova zdarma na ${ nextCycle } mesiacov, dňa ${ when }",
+        "Obnova zdarma na ${ nextCycle } mesiacov, dňa ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Bude automaticky obnovené za ${ introPrice } na ${ nextCycle } mesiac, dňa ${ when }",
+        "Bude automaticky obnovené za ${ introPrice } na ${ nextCycle } mesiace, dňa ${ when }",
+        "Bude automaticky obnovené za ${ introPrice } na ${ nextCycle } mesiacov, dňa ${ when }",
+        "Bude automaticky obnovené za ${ introPrice } na ${ nextCycle } mesiacov, dňa ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Bude automaticky obnovené za ${ price } na ${ cycle } mesiac",
+        "Bude automaticky obnovené za ${ price } na ${ cycle } mesiace",
+        "Bude automaticky obnovené za ${ price } na ${ cycle } mesiacov",
+        "Bude automaticky obnovené za ${ price } na ${ cycle } mesiacov"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automaticky sa obnovuje ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Prejde na ${ nextCycle } mesiac dňa ${ when } (už zaplatená suma ${ paidPrice })",
+        "Prejde na ${ nextCycle } mesiace dňa ${ when } (už zaplatená suma ${ paidPrice })",
+        "Prejde na ${ nextCycle } mesiacov dňa ${ when } (už zaplatená suma ${ paidPrice })",
+        "Prejde na ${ nextCycle } mesiacov dňa ${ when } (už zaplatená suma ${ paidPrice })"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Potom ${ price } za ${ cycle } mesiac",
+        "Potom ${ price } za ${ cycle } mesiace",
+        "Potom ${ price } za ${ cycle } mesiacov",
+        "Potom ${ price } za ${ cycle } mesiacov"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Bude nahradené vaším nadchádzajúcim predplatným dňa ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -3130,6 +3163,14 @@
       ],
       "Yearly": [
         "Ročne"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Fakturácia pri obnovení"
+      ],
+      "Prepaid": [
+        "Predplatené"
       ]
     },
     "Blog": {
@@ -3520,9 +3561,6 @@
       ],
       "Discover and set up features": [
         "Objaviť a nastaviť funkcie"
-      ],
-      "Get 50% offer": [
-        "Využite 50 % zľavu"
       ],
       "Got it": [
         "Rozumiem"
@@ -5154,6 +5192,11 @@
         "(prostredníctvom ${ entryCountryName })"
       ]
     },
+    "Coupon": {
+      "Coupon applied": [
+        "Kupón použitý"
+      ]
+    },
     "Create user accounts empty state": {
       "No search results found": [
         "Nenašli sa žiadne výsledky vyhľadávania"
@@ -5443,6 +5486,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Preneste si vaše emaily, udalosti kalendára a kontakty od iného poskytovateľa."
+      ],
+      "Bring over your files from another provider.": [
+        "Preneste si svoje súbory od iného poskytovateľa."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Vytvorte si dôveryhodnú a rozpoznateľnú značku pomocou profesionálnych emailových adries vo vašej vlastnej doméne."
@@ -10353,6 +10399,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nikdy nezdieľa vaše informácie s tretími stranami. Údaje pochádzajú z vlastných analýz spoločnosti ${ BRAND_NAME } a spoločnosti Constella Intelligence."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } využíva tento prístup výlučne na účely importu. Google nikdy nezíska prístup k vášmu ${ BRAND_NAME } účtu."
+      ],
       "${ BRAND_NAME } Pass Professional": [
         "${ BRAND_NAME } Pass Professional"
       ],
@@ -10796,9 +10845,6 @@
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Pristupujte k viac ako 6500 vysokorýchlostným serverom až na 10 zariadeniach, aby boli vaše údaje pri prehliadaní v bezpečí. K dispozícii na ${ ios }, ${ android }, ${ appleTV } a ${ desktop }."
-      ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Získajte prístup k svojim heslám a chráňte svoju online identitu bez problémov na všetkých svojich zariadeniach. Stiahnite si a nainštalujte príslušné aplikácie a rozšírenie ${ PASS_APP_NAME }."
@@ -11349,8 +11395,8 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Pripojte a spravujte svoje externé poštové schránky v aplikácii ${ MAIL_APP_NAME }."
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Pripájanie ku Google Drive na nastavenie bezpečného importu do aplikácie ${ DRIVE_APP_NAME }."
+      "Connecting to Google Drive and preparing your import.": [
+        "Pripájanie ku Google Drive a príprava importu."
       ],
       "Connection data will be available in around 1 hour.": [
         "Údaje o pripojení budú k dispozícii približne o 1 hodinu."
@@ -11721,9 +11767,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
       ],
-      "Email you once import is finished": [
-        "Po dokončení importu vám pošleme email"
-      ],
       "Emailing preference saved": [
         "Nastavenie emailu uložené"
       ],
@@ -11910,9 +11953,6 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rýchle a cielené. Email a kalendár, priamo na vašej pracovnej ploche."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Najvyššia rýchlosť VPN až 10 Gbps"
-      ],
       "Featured in": [
         "Odporúčané v"
       ],
@@ -11963,9 +12003,6 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Len za ${ bundlePlanPriceInline }"
-      ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "Aby import fungoval, musíte vybrať všetky požadované položky, ako je znázornené na GIF obrázku vyššie."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
@@ -12072,9 +12109,6 @@
       "Groups": [
         "Skupiny"
       ],
-      "Have some more time to decide without interruption.": [
-        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Pomôžte iným rodinám poskytnúť ich deťom bezpečný štart na internete. Zdieľajte tento míľnik a šírte informácie ďalej."
       ],
@@ -12146,9 +12180,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokiaľ si myslíte, že ide o chybu, kontaktujte nás ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
@@ -12230,6 +12261,9 @@
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Importujte jednorazové prenesenie emailov, kalendárov alebo kontaktov do vášho účtu ${ BRAND_NAME }."
+      ],
+      "Import your files and folders": [
+        "Importujte svoje súbory a priečinky"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "DÔLEŽITÉ: Ak vaša DNS konzola neumožňuje, aby hodnoty CNAME končili bodkou, môžete poslednú bodku v hodnotách CNAME odstrániť."
@@ -12416,6 +12450,9 @@
       ],
       "Keys created": [
         "Kľúče vytvorené"
+      ],
+      "Know when it's done": [
+        "Zistite, kedy je to hotové"
       ],
       "Label all imported messages as": [
         "Označiť všetky importované správy ako"
@@ -12621,8 +12658,8 @@
       "Next billing date": [
         "Dátum ďalšej fakturácie"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Ďalej sa potrebujete prihlásiť k svojmu účtu Google a udeliť ${ BRAND_NAME } prístup k vašim dátam."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Následne sa prihláste do svojho Google účtu a povoľte ${ BRAND_NAME } prístup do Google Drive. Vaše súbory a zložky naimportujeme do ${ DRIVE_APP_NAME }."
       ],
       "No account keys exist": [
         "Neexistujú žiadne kľúče k účtu"
@@ -12954,9 +12991,6 @@
       "Preference saved": [
         "Nastavenie uložené"
       ],
-      "Premium privacy protection across all your devices": [
-        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
-      ],
       "Preview": [
         "Ukážka"
       ],
@@ -12980,6 +13014,9 @@
       ],
       "Private AI assistant": [
         "Súkromný AI asistent"
+      ],
+      "Private and encrypted": [
+        "Súkromné a šifrované"
       ],
       "Product reviews, rankings, or guides": [
         "Recenzie produktov, hodnotenia alebo sprievodcovia"
@@ -13011,9 +13048,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obráťte sa na nás, ak potrebujete pomoc s čímkoľvek od ${ BRAND_NAME }."
       ],
-      "Read once and encrypted on arrival": [
-        "Prečíta sa raz a pri doručení sa zašifruje"
-      ],
       "Receive notifications for ${ categoryLabel }": [
         "Prijímať upozornenia pre kategóriu ${ categoryLabel }"
       ],
@@ -13026,8 +13060,8 @@
       "RECOMMENDED": [
         "ODPORÚČANÉ"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Odporúčané na dôveryhodných zariadeniach. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Odporúčané na dôveryhodných zariadeniach. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Pri povolenom ${ PROTON_SENTINEL_NAME } nie je obnovenie prostredníctvom emailu k dispozícii."
@@ -13275,9 +13309,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
       ],
-      "Sit back and we will let you know.": [
-        "Len si pohodlne sadnite a my vám dáme vedieť."
-      ],
       "Smart Routed through a different country.": [
         "Inteligentné smerovanie cez inú krajinu."
       ],
@@ -13322,9 +13353,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Začnite používať kratšiu verziu vašej emailovej adresy."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Step ${ step }": [
         "Krok ${ step }",
@@ -13656,8 +13684,8 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní, aby sa PayPal použil na zaplatenie vášho predplatného ${ BRAND_NAME }. Na novej karte prehliadača vás presmerujeme na PayPal. Ak používate nejaké blokovanie automaticky otváraných okien, deaktivujte ho, aby ste mohli pokračovať."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Vďaka tomu získate rýchly a bezpečný prístup k vášmu účtu ${ BRAND_NAME }, kde si budete môcť zmeniť heslo."
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Vďaka tomu získate rýchly a bezpečný prístup k vášmu účtu ${ BRAND_NAME }, kde si budete môcť zmeniť vaše heslo."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Týmto natrvalo vymažete dáta a všetky emailové adresy spojené s týmito používateľmi."
@@ -13968,9 +13996,6 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Na odstránenie súboru použite svoj MDM alebo spustite príkaz ${ removeScriptLink } prostredníctvom funkcie na spúšťanie skriptov vo vašom MDM. Vhodný je akýkoľvek MDM, ktorý podporuje nasadzovanie súborov alebo spúšťanie skriptov."
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Používa sa výlučne na ich skopírovanie do ${ DRIVE_APP_NAME }."
-      ],
       "User activated": [
         "Používateľ aktivovaný"
       ],
@@ -14091,9 +14116,6 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Detekovali sme, že ste už prihlásený do webovej aplikácie ${ BRAND_NAME } v **inom prehliadači**. Reset hesla môžete vykonať zo svojej aktívnej relácie."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Nepodporujeme import fotografií, Google Docs, Sheets a Slides. Uistite sa, prosím, že váš Google Drive nie je prázdny."
-      ],
       "We generated a strong password for you": [
         "Vygenerovali sme pre vás silné heslo"
       ],
@@ -14124,14 +14146,8 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Dôrazne odporúčame, aby si každý aktivoval obnovenie pomocou obnovovacej frázy."
       ],
-      "We support most files": [
-        "Podporujeme väčšinu súborov"
-      ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
-      ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Akonáhle bude import dokončený, pošleme vám email. Po dokončení nájdete svoj import v priečinku."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_WERO_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
@@ -14139,8 +14155,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Skopírujeme ich z Google Drive do ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Po dokončení importu vám pošleme email."
+      ],
+      "We'll email you when your import is complete.": [
+        "Akonáhle bude import dokončený, pošleme vám email."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Akonáhle sa import dokončí, pošleme vám email. Vaše súbory sa zobrazia v priečinku v ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "O chvíľu sa vám ozveme."
@@ -14258,9 +14283,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom, alebo pristupovať k verejným používateľským účtom."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Neimportujú sa fotografie, dokumenty z Google Docs a Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -14454,6 +14476,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Máte skúšobné predplatné ${ planTitle }. V tejto chvíli sa nevyžaduje žiadna platba. Vaše predplatné sa automaticky obnoví na konci skúšobného obdobia."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no calendars to export.": [
         "Nemáte žiadne kalendáre na export."
       ],
@@ -14628,6 +14656,9 @@
       "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
         "Váš súbor obsahuje heslo pre každého používateľa, takže tieto účty budú vytvorené s heslom namiesto pozývacieho odkazu."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Vaše súbory sú zašifrované a bezpečne uložené v ${ DRIVE_APP_NAME }."
+      ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
       ],
@@ -14639,6 +14670,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaša bezplatná skúšobná verzia bola úspešne konvertovaná na mesačné predplatné. Váš dátum obnovenia je ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Váš Google Drive môže byť prázdny alebo môže obsahovať iba súbory, ktoré nie sú podporované."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informácie sú u nás v bezpečí. Budeme vás kontaktovať len vtedy, keď to bude potrebné na poskytovanie našich služieb."
@@ -14872,6 +14906,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Darované"
+      ],
+      "Open": [
+        "Otvoriť"
       ],
       "Paid": [
         "Zaplatené"
@@ -17473,6 +17510,9 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
+      ],
+      "Pay it": [
+        "Zaplatiť"
       ],
       "Privacy policy": [
         "Ochrana osobných údajov"
@@ -21258,9 +21298,6 @@
       ],
       "Card number": [
         "Číslo karty"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Kredity a zľavy sú zohľadnené na vašej faktúre"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "V súčasnosti je automatické obnovenie predplatného vypnuté. Ak teraz zmeníte predplatné, automatické obnovenie bude opäť povolené."
@@ -25834,6 +25871,9 @@
       ],
       "Free Trial": [
         "Bezplatné skúšobné obdobie"
+      ],
+      "Upcoming": [
+        "Nadchádzajúce"
       ]
     },
     "Subtitle": {
@@ -25876,6 +25916,9 @@
       "Free forever": [
         "Navždy zadarmo"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Naimportujte si súbory a priečinky z Google Drive a uchovajte ich ako súkromné v aplikácii ${ DRIVE_APP_NAME }."
+      ],
       "per month, billed annually": [
         "mesačne, účtované každý rok"
       ],
@@ -25890,9 +25933,6 @@
       ],
       "View VPN session details for your organization.": [
         "Zobraziť podrobnosti o VPN relácii pre vašu organizáciu."
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Vaše súbory najprv prečítame, aby sme ich skopírovali, a potom každý z nich zašifrujeme pomocou vašich kľúčov ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -26545,6 +26585,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Správa o monitorovaní ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ planTitle } breakdown": [
+        "Rozpis plánu ${ planTitle }"
+      ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } pre organizácie"
       ],
@@ -26962,9 +27005,6 @@
       "Connect your custom domain": [
         "Pripojte si vlastnú doménu"
       ],
-      "Connect your Google account": [
-        "Pripojte váš Google účet"
-      ],
       "Connected emails": [
         "Prepojené emaily"
       ],
@@ -27279,6 +27319,9 @@
       ],
       "Downloads": [
         "Na stiahnutie"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch z Google Drive"
       ],
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
@@ -27625,6 +27668,9 @@
       "Import key": [
         "Importovať kľúč"
       ],
+      "Import started": [
+        "Import sa začal"
+      ],
       "Import started, but your storage won't be enough for this import": [
         "Import sa začal, ale váš úložný priestor na tento import nebude stačiť"
       ],
@@ -27928,6 +27974,9 @@
       "Post-quantum protection": [
         "Postkvantová ochrana"
       ],
+      "Preparing your import": [
+        "Pripravujeme váš import"
+      ],
       "Preview": [
         "Náhľad"
       ],
@@ -28189,9 +28238,6 @@
       "Set your password": [
         "Nastavte si heslo"
       ],
-      "Setting up your import": [
-        "Nastavujeme váš import"
-      ],
       "Settings": [
         "Nastavenia"
       ],
@@ -28218,9 +28264,6 @@
       ],
       "Sign in on TV?": [
         "Prihlásiť sa na TV?"
-      ],
-      "Sign in to Google": [
-        "Prihlásiť sa do Google"
       ],
       "Sign in to join the Beta program": [
         "Prihláste sa a pripojte k beta programu"
@@ -28300,9 +28343,6 @@
       "Status": [
         "Stav"
       ],
-      "Stay for 50% off your next month": [
-        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
-      ],
       "Stay secure and connected anywhere": [
         "Buďte v bezpečí a pripojení kdekoľvek"
       ],
@@ -28311,6 +28351,9 @@
       ],
       "Subscription": [
         "Predplatné"
+      ],
+      "Subscription breakdown": [
+        "Rozpis predplatného"
       ],
       "Subscription canceled": [
         "Predplatné bolo zrušené"
@@ -28612,9 +28655,6 @@
       "Your exposed information": [
         "Vaše odhalené informácie"
       ],
-      "Your import is starting": [
-        "Váš import sa začal"
-      ],
       "Your plan": [
         "Váš plán"
       ],
@@ -28736,11 +28776,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Fakturácia"
+      ],
       "End date": [
         "Dátum ukončenia"
       ],
       "Plan": [
         "Plán"
+      ],
+      "Price": [
+        "Cena"
+      ],
+      "Start date": [
+        "Dátum začiatku"
       ],
       "Status": [
         "Stav"

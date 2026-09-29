@@ -234,9 +234,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "링크를 열어 확인하시기 바랍니다 ${ linkToShow }"
       ],
-      "Connect": [
-        "연결"
-      ],
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
       ],
@@ -677,6 +674,9 @@
       ],
       "Maximize transfers": [
         "최대 이동"
+      ],
+      "Maybe later": [
+        "나중에"
       ],
       "Merge": [
         "합치기"
@@ -1770,9 +1770,6 @@
       ],
       "Discover and set up features": [
         "기능 알아보고 설정하기"
-      ],
-      "Get 50% offer": [
-        "50% 할인 받기"
       ],
       "Maybe later": [
         "나중에"
@@ -3672,8 +3669,14 @@
       "IMAP server is required": [
         "IMAP 서버가 필요함"
       ],
+      "Incorrect backup password. Please try again.": [
+        "백업 비밀번호가 틀렸습니다. 다시 시도해 주세요."
+      ],
       "Incorrect password. Please try again.": [
         "잘못된 비밀번호입니다. 다시 시도해 주세요."
+      ],
+      "Incorrect second password. Please try again.": [
+        "2차 비밀번호가 틀렸습니다. 다시 시도해 주세요."
       ],
       "Invalid code": [
         "잘못된 코드입니다."
@@ -5156,6 +5159,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME }는 불러오기 작업을 진행할 때만 이 권한을 사용하며, Google이 ${ BRAND_NAME } 계정에 접근할 수는 없습니다."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
@@ -5390,9 +5396,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN은 기기와 인터넷 사이의 안전한 터널입니다. 인터넷 서비스 공급자(ISP)와 방문하는 웹사이트로부터 사용자의 위치와 활동을 숨기죠."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "145개국의 20,000개 이상 서버에 접근"
-      ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
       ],
@@ -5603,8 +5606,8 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "${ VPN_APP_NAME }으로 연결하여 비공개로 방문하기"
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "${ DRIVE_APP_NAME }에 안전하게 데이터를 볼러오기 위해 Google Drive와 연결 중입니다."
+      "Connecting to Google Drive and preparing your import.": [
+        "Google Drive에 연결하여 불러오기를 준비하고 있습니다."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "연락처가 ${ contactGroupName } 그룹에 할당되었습니다"
@@ -5765,9 +5768,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
       ],
-      "Email you once import is finished": [
-        "불러오기가 완료되면 이메일 알림 보내기"
-      ],
       "Emails are automatically signed": [
         "이메일들이 자동적으로 서명됨"
       ],
@@ -5837,9 +5837,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "기술 지원 문제 로그를 내보내기"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "최대 10 Gbps의 빠른 VPN 속도"
-      ],
       "Feb": [
         "2월"
       ],
@@ -5876,9 +5873,6 @@
       "For just ${ bundlePlanPriceInline }": [
         "${ bundlePlanPriceInline }에 이용 가능"
       ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "가져오기가 작동하려면, GIF에 표시된 대로 상기 요청된 모든 항목을 선택해야 합니다."
-      ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
       ],
@@ -5909,9 +5903,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "정부와 ISP가 사용자의 온라인 활동을 모니터링할 수 있습니다. 실제 IP를 숨기고 활동을 암호화함으로서 브라우징이 비공개화 됩니다."
       ],
-      "Have some more time to decide without interruption.": [
-        "방해받지 않고 결정할 수 있는 시간이 더 있으니 천천히 결정하세요."
-      ],
       "here": [
         "여기"
       ],
@@ -5932,9 +5923,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "지금 취소하면 ${ expiryDate }부로 ${ BRAND_NAME } ${ planTitle }에 접근할 수 없으며, 다음 기능이 제한됩니다:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
@@ -5974,6 +5962,9 @@
       ],
       "Import mailbox": [
         "메일함 불러오기"
+      ],
+      "Import your files and folders": [
+        "내 파일과 폴더 불러오기"
       ],
       "Important note": [
         "중요 사항"
@@ -6085,6 +6076,9 @@
       ],
       "Key fingerprint": [
         "지문 키"
+      ],
+      "Know when it's done": [
+        "완료되면 알림 보내기"
       ],
       "Label all imported messages as": [
         "가져온 모든 메시지에 라벨 지정:"
@@ -6206,8 +6200,8 @@
       "New": [
         "신규"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "다음으로, Google 계정에 로그인한 다음 ${ BRAND_NAME }에 회원님의 데이터에 접근할 수 있는 권한을 부여해야 합니다."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "다음 단계로, Google 계정에 로그인하여 ${ BRAND_NAME }이(가) Google Drive에 접근하는 것을 허용해야 합니다. ${ DRIVE_APP_NAME }로 파일과 폴더를 불러옵니다."
       ],
       "No": [
         "아니오"
@@ -6416,9 +6410,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "비활성 키로 암호화된 데이터가 포함된 연락처를 찾는 동안 기다려 주세요."
       ],
-      "Premium privacy protection across all your devices": [
-        "모든 기기에 걸친 프리미엄 프라이버시 보호"
-      ],
       "Preparing": [
         "준비 중"
       ],
@@ -6451,6 +6442,9 @@
       ],
       "Primary": [
         "우선 순위"
+      ],
+      "Private and encrypted": [
+        "암호화로 안전하게 보호"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "비공개 브라우징 모드(일명 \"시크릿\" 모드)는 기기에서의 온라인 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 사용자가 온라인에서 수행하는 작업을 확인할 수 있습니다."
@@ -6638,9 +6632,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
-      "Sit back and we will let you know.": [
-        "잠시 기다려주세요. 완료되면 알려드릴게요."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "일부 정부는 특정 웹사이트에 대한 접근을 차단하거나 제한합니다. VPN이 사용자의 활동과 신원을 비공개로 유지하면서 검열을 우회하는 데 도움을 드립니다."
       ],
@@ -6664,9 +6655,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "다음 VPN 설정을 활성화하여 손쉽게 연결 상태를 유지해 보세요:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "현재 플랜을 유지허고 다음 달에는 50% 할인 받으세요"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
@@ -6971,9 +6959,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "이 양식을 사용하여 부적절하고 불법적이거나 \n악의적인 공유 파일을 알려주세요. 이를 보고하려 합니다:"
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "${ DRIVE_APP_NAME }로 복사할 때만 쓰입니다."
-      ],
       "username": [
         "사용자 이름"
       ],
@@ -7022,17 +7007,11 @@
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "사진, Google Docs, 시트 및 슬라이드는 불러올 수 없습니다. Google Drive 공간이 비어있는지 여부를 확인해 주세요."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
       ],
       "We need to authenticate your payment with your bank.": [
         "은행의 결제 수단 인증이 필요합니다."
-      ],
-      "We support most files": [
-        "대부분의 파일 지원"
       ],
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
@@ -7040,17 +7019,23 @@
       "We were not able to add this photo to your album": [
         "이 사진을 앨범에 추가하지 못했습니다"
       ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "불러오기가 완료되면 알림 이메일을 보내드립니다. 폴더에서 불러온 파일을 찾으실 수 있습니다."
-      ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_WERO_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Google Drive에서 ${ DRIVE_APP_NAME }로 파일을 복사합니다."
+      ],
       "We'll email you once import is complete.": [
         "불러오기가 완료되면 이메일로 보내드리겠습니다."
+      ],
+      "We'll email you when your import is complete.": [
+        "불러오기가 완료되면 이메일을 보내드립니다."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "불러오기가 완료되면 이메일로 알려드립니다. 불러온 파일은 ${ DRIVE_APP_NAME }의 폴더에서 찾을 수 있습니다."
       ],
       "We'll notify you when the import is done.": [
         "처리가 완료되면 알려드리겠습니다."
@@ -7060,9 +7045,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
-      ],
-      "We're importing your files from Google Drive. We'll let you know once it's done.": [
-        "Google Drive에서 파일을 불러오는 중입니다. 작업이 완료되면 알려드립니다."
       ],
       "Week": [
         "주"
@@ -7093,9 +7075,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "이(가) ${ formattedRevisionDate }의 버전으로 복구됩니다. 타 버전들이 여전히 저장됩니다."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "사진, Google Docs 및 시트를 불러올 수 없습니다"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
@@ -7268,6 +7247,9 @@
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "파일이 재색인 중입니다. 계속 검색할 수 있으나 색인 완료 전까지는 검색 결과가 완전하지 않을 수 있습니다. 색인 완료 후 알려드립니다."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "파일이 암호화되어 안전하게 ${ DRIVE_APP_NAME }에 저장되었습니다."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "비밀번호 재설정으로 인해 파일에 더 이상 접근할 수 없습니다. 다시 접근하기 위해 이전 암호화 키를 다시 업로드하세요. ${ KeyReactivationButton }"
       ],
@@ -7285,6 +7267,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "무료 체험이 월간 구독으로 성공적으로 전환되었습니다. 회원님의 구독 갱신일은 ${ nextBillingDate }입니다."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Drive 저장공간이 비어있거나 지원되지 않는 파일로 구성되어 있습니다."
       ],
       "Your information was found on ${ displayedDate }": [
         "${ displayedDate }에 사용자의 정보가 발견되었습니다."
@@ -9972,6 +9957,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "${ plan }의 첫 달 80% 할인을 받을 수 있는 마지막 기회입니다."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "${ plan }을(를) 첫 달 동안 이 가격으로 누릴 수 있는 마지막 기회."
+      ],
       "Last day to save": [
         "매월에서 매년 구독으로 변경하여"
       ],
@@ -12210,9 +12198,6 @@
       "Shared by ${ sharedBy }": [
         "${ sharedBy }님에 의해 공유됨"
       ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "파일을 복사하기 위해 Proton Drive가 파일을 읽은 다음 회원님의 개인 ${ BRAND_NAME } 키로 암호화 작업을 수행합니다."
-      ],
       "Your favorited photos will appear here": [
         "즐겨찾는 사진이 여기에 표시됩니다"
       ],
@@ -12650,9 +12635,6 @@
       "Connect your custom domain": [
         "커스텀 도메인 연결하기"
       ],
-      "Connect your Google account": [
-        "Google 계정 연결"
-      ],
       "Contact Details": [
         "연락처 정보"
       ],
@@ -12815,6 +12797,9 @@
       "Easy switch": [
         "Easy switch"
       ],
+      "Easy Switch from Google Drive": [
+        "Google Drive에서 Easy Switch하기"
+      ],
       "Edit billing address": [
         "청구 주소 수정"
       ],
@@ -12949,6 +12934,9 @@
       ],
       "Import groups": [
         "그룹 가져오기"
+      ],
+      "Import started": [
+        "불러오기가 시작되었습니다."
       ],
       "Import started, but your storage won't be enough for this import": [
         "불러오기가 시작되었습니다. 저장공간이 부족하여 모든 파일을 불러올 수 없습니다."
@@ -13130,6 +13118,9 @@
       "Photos": [
         "사진"
       ],
+      "Preparing your import": [
+        "불러오기를 준비하는 중"
+      ],
       "Preview": [
         "미리 보기"
       ],
@@ -13250,9 +13241,6 @@
       "Set up your organization": [
         "내 조직 설정하기"
       ],
-      "Setting up your import": [
-        "불러오기를 설정하는 중"
-      ],
       "Settings": [
         "설정"
       ],
@@ -13283,9 +13271,6 @@
       "Sign in and grant access": [
         "로그인 및 엑세스 권한 부여"
       ],
-      "Sign in to Google": [
-        "Google 계정에 로그인"
-      ],
       "Sign out": [
         "로그아웃"
       ],
@@ -13312,9 +13297,6 @@
       ],
       "Start import process": [
         "불러오기 과정 시작"
-      ],
-      "Stay for 50% off your next month": [
-        "첫 달은 50% 할인으로 누리기"
       ],
       "Stop sharing": [
         "공유 중지"
@@ -13525,12 +13507,6 @@
       ],
       "Your import is finished!": [
         "불러오기 완료"
-      ],
-      "Your import is in progress": [
-        "불러오기 진행 중"
-      ],
-      "Your import is starting": [
-        "불러오기 작업이 시작되었어요"
       ],
       "Your plan": [
         "내 플랜"

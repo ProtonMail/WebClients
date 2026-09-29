@@ -2582,9 +2582,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Diperbarui secara otomatis pada harga ${ renewPrice }, untuk ${ renewCycle } bulan"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Diperbarui secara otomatis pada ${ subscriptionManagerName }"
       ]
@@ -11412,9 +11409,6 @@
       "RECOMMENDED": [
         "DIREKOMENDASIKAN"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Direkomendasikan pada perangkat yang Anda percayai. ${ keepMeSignedInLearnMoreLink }"
-      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Pemulihan dengan email tidak tersedia saat ${ PROTON_SENTINEL_NAME } diaktifkan."
       ],
@@ -11969,9 +11963,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tindakan ini akan memungkinkan Anda untuk membayar langganan ${ BRAND_NAME } Anda melalui PayPal. Kami akan membuka PayPal di tab baru dalam peramban. Apabila Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Ini akan memungkinkan Anda mengakses Akun ${ BRAND_NAME } dengan cepat dan aman sehingga dapat mengubah kata sandi."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Tindakan ini akan menghapus seluruh data dan alamat email yang terhubung dengan pengguna ini secara permanen."
@@ -18834,9 +18825,6 @@
       ],
       "Card number": [
         "Nomor kartu"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Kredit dan diskon tercantum di faktur Anda"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Pembaruan langganan otomatis saat ini sedang dinonaktifkan. Apabila Anda mengubah langganan sekarang, maka pembaruan otomatis ini akan kembali diaktifkan."

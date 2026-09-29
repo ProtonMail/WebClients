@@ -1612,9 +1612,6 @@
       "Discover and set up features": [
         "Ανακαλύψτε και ρυθμίστε δυνατότητες"
       ],
-      "Get 50% offer": [
-        "Επωφεληθείτε από προσφορά 50%"
-      ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
@@ -3853,6 +3850,12 @@
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Εσφαλμένος εφεδρικός κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "Intended recipient does not support calendar sharing": [
         "Ο προβλεπόμενος παραλήπτης δεν υποστηρίζει την κοινή χρήση ημερολογίου"
       ],
@@ -5596,9 +5599,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ένα VPN είναι μια ασφαλής σήραγγα μεταξύ της συσκευής σας και του διαδικτύου. Αποκρύπτει την τοποθεσία και τη δραστηριότητά σας από τον πάροχο υπηρεσιών διαδικτύου (ISP) και τους ιστότοπους που επισκέπτεστε."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Πρόσβαση σε 20.000+ διακομιστές σε 145 χώρες"
-      ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
@@ -5978,9 +5978,6 @@
       "Failed to update meeting schedule": [
         "Αποτυχία ενημέρωσης του προγράμματος σύσκεψης"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Οι ταχύτερες ταχύτητες VPN έως και 10Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Μόνο αρχεία (όχι φωτογραφίες, ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }) - έως 100 GB συνολικά, 100.000 αρχεία και 50 GB ανά αρχείο"
       ],
@@ -6011,9 +6008,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Οι κυβερνήσεις και οι ISP μπορούν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο. Κρύβοντας την πραγματική σας IP και κρυπτογραφώντας τη δραστηριότητά σας, η περιήγησή σας γίνεται ιδιωτική."
       ],
-      "Have some more time to decide without interruption.": [
-        "Έχετε λίγο περισσότερο χρόνο να αποφασίσετε χωρίς διακοπή."
-      ],
       "here": [
         "εδώ"
       ],
@@ -6034,9 +6028,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Αν ακυρώσετε τώρα, θα χάσετε την πρόσβαση στο ${ BRAND_NAME } ${ planTitle } στις ${ expiryDate }, συμπεριλαμβανομένων αυτών των λειτουργιών:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Εάν ακυρώσετε, η συνδρομή σας ${ planTitle } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
@@ -6376,9 +6367,6 @@
       "Powered by ${ protonButton }": [
         "Με την υποστήριξη της ${ protonButton }"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium προστασία απορρήτου σε όλες τις συσκευές σας"
-      ],
       "Previous modifications on this series will be lost.": [
         "Οι προηγούμενες τροποποιήσεις αυτής της σειράς θα χαθούν."
       ],
@@ -6481,9 +6469,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Μείνετε συνδεδεμένοι χωρίς κόπο ενεργοποιώντας τις ακόλουθες ρυθμίσεις VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Μείνετε στο πλάνο σας και κερδίστε έκπτωση 50% τον επόμενο μήνα"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
@@ -6877,6 +6862,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Δεν απαιτείται πληρωμή αυτήν τη στιγμή. Η συνδρομή σας θα ανανεωθεί αυτόματα στο τέλος της δοκιμαστικής περιόδου."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο με ημερομηνία λήξης ${ dueDate } ${ payInvoiceLink }"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Έχετε επανενεργοποιήσει τα κλειδιά σας και οι εκδηλώσεις που συνδέονται με τα ακόλουθα ημερολόγια μπορούν τώρα να αποκρυπτογραφηθούν."
@@ -7939,6 +7930,9 @@
       ],
       "Pay invoice": [
         "Εξόφληση τιμολογίου"
+      ],
+      "Pay it": [
+        "Πλήρωσέ το"
       ],
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
@@ -12862,9 +12856,6 @@
       ],
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
-      ],
-      "Stay for 50% off your next month": [
-        "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
       ],
       "Subscription canceled": [
         "Η συνδρομή ακυρώθηκε"

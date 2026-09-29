@@ -1271,6 +1271,9 @@
       "Google": [
         "Google"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -3046,10 +3049,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Se renueva automáticamente por ${ renewPrice } durante ${ renewCycle } mes",
-        "Se renueva automáticamente por ${ renewPrice } durante ${ renewCycle } meses"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Se renueva automáticamente en ${ subscriptionManagerName }"
       ]
@@ -3479,9 +3478,6 @@
       ],
       "Discover and set up features": [
         "Descubra y configure las funcionalidades"
-      ],
-      "Get 50% offer": [
-        "Obtener oferta del 50%"
       ],
       "Got it": [
         "Entendido"
@@ -5376,6 +5372,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Traiga su correo electrónico, eventos de calendario y contactos desde otro proveedor."
+      ],
+      "Bring over your files from another provider.": [
+        "Traiga sus archivos de cualquier otro proveedor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Genere confianza y reconocimiento de marca con direcciones de correo profesionales en su propio dominio."
@@ -10185,6 +10184,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nunca comparte su información con terceros. Los datos provienen de los propios análisis de ${ BRAND_NAME } y Constella Intelligence."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } solo usa este acceso para la importación. Google nunca tiene acceso a su cuenta de ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Pass Professional": [
         "${ BRAND_NAME } Pass Professional"
       ],
@@ -10570,9 +10572,6 @@
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Acceda a más de 6,500 servidores de alta velocidad en hasta 10 dispositivos para mantener sus datos de navegación seguros. Disponible en ${ ios }, ${ android }, ${ appleTV } y ${ desktop }."
-      ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Acceda a más de 20 000 servidores en 145 países"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Acceda a sus contraseñas y proteja sus identidades en línea sin problemas en todos sus dispositivos. Descargue e instale las aplicaciones y extensiones de ${ PASS_APP_NAME } relevantes."
@@ -11107,8 +11106,8 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Conecte y gestione sus buzones externos en ${ MAIL_APP_NAME }."
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Conectándose a Google Drive para configurar su importación segura a ${ DRIVE_APP_NAME }."
+      "Connecting to Google Drive and preparing your import.": [
+        "Conectando a Google Drive y preparando la importación."
       ],
       "Connection data will be available in around 1 hour.": [
         "Los datos de conexión estarán disponible en aproximadamente 1 hora."
@@ -11467,9 +11466,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para los dominios que ya posee. El registro de dominio no está disponible actualmente a través de ${ BRAND_NAME }. Puede alojar correo electrónico para dominios registrados en cualquier registrador de dominios."
       ],
-      "Email you once import is finished": [
-        "Recibirá un correo una vez que finalice la importación"
-      ],
       "Emailing preference saved": [
         "Preferencia de correo guardada"
       ],
@@ -11656,9 +11652,6 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rápido y enfocado: su correo electrónico y calendario directamente en su escritorio."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Velocidades VPN más rápidas de hasta 10 Gbps"
-      ],
       "Featured in": [
         "Destacados"
       ],
@@ -11709,9 +11702,6 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Por solo ${ bundlePlanPriceInline }"
-      ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF a continuación."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para los usuarios que cambian a ${ MAIL_APP_NAME } desde otro servicio de correo electrónico, seleccione la pestaña ${ boldAddresses } y agregue todas las direcciones de correo activas antes de cambiar el registro MX para garantizar una transición sin problemas."
@@ -11818,9 +11808,6 @@
       "Groups": [
         "Grupos"
       ],
-      "Have some more time to decide without interruption.": [
-        "Tenga más tiempo para decidir sin interrupciones."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Ayude a otras familias a dar a sus hijos un inicio seguro en línea. Comparta este hito y corra la voz."
       ],
@@ -11892,9 +11879,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si cree que esto es un error, contáctenos ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Si cancela ahora, perderá acceso a ${ BRAND_NAME }${ planTitle } el ${ expiryDate }, incluyendo estas funciones:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si cancela, la suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
@@ -11972,6 +11956,9 @@
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Las importaciones muestran transferencias únicas de correos, calendarios o contactos a su cuenta de ${ BRAND_NAME }."
+      ],
+      "Import your files and folders": [
+        "Importe sus archivos y carpetas"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "IMPORTANTE: Si su panel de DNS no permite que los valores CNAME terminen con un punto, puede eliminar el último punto de los valores CNAME."
@@ -12156,6 +12143,9 @@
       ],
       "Keys created": [
         "Las claves fueron creadas."
+      ],
+      "Know when it's done": [
+        "Sepa cuándo está listo"
       ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
@@ -12361,8 +12351,8 @@
       "Next billing date": [
         "Próxima fecha de facturación"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Luego necesitará iniciar sesión en la cuenta de Google y otorgar acceso a ${ BRAND_NAME } a los datos."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Luego, inicie sesión en su cuenta de Google y permita a ${ BRAND_NAME } acceder a Google Drive. Importaremos sus archivos y carpetas a ${ DRIVE_APP_NAME }."
       ],
       "No account keys exist": [
         "No existen claves de la cuenta"
@@ -12686,9 +12676,6 @@
       "Preference saved": [
         "Preferencia guardada"
       ],
-      "Premium privacy protection across all your devices": [
-        "Protección de privacidad premium en todos sus dispositivos"
-      ],
       "Preview": [
         "Vista previa"
       ],
@@ -12712,6 +12699,9 @@
       ],
       "Private AI assistant": [
         "Asistente de IA privado"
+      ],
+      "Private and encrypted": [
+        "Privado y cifrado"
       ],
       "Product reviews, rankings, or guides": [
         "Reseñas de productos, clasificaciones o guías"
@@ -12743,9 +12733,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contáctenos para obtener ayuda con cualquier cosa de ${ BRAND_NAME }."
       ],
-      "Read once and encrypted on arrival": [
-        "Leer una vez y cifrado al llegar"
-      ],
       "Receive notifications for ${ categoryLabel }": [
         "Recibir notificaciones para ${ categoryLabel }"
       ],
@@ -12758,8 +12745,8 @@
       "RECOMMENDED": [
         "RECOMENDADO"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Recomendado en dispositivos de confianza. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "La recuperación por correo no está disponible mientras ${ PROTON_SENTINEL_NAME } está activado."
@@ -13005,9 +12992,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
       ],
-      "Sit back and we will let you know.": [
-        "Relájese y le avisaremos."
-      ],
       "Smart Routed through a different country.": [
         "Enrutado inteligente a través de otro país."
       ],
@@ -13052,9 +13036,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Use la versión más corta y atractiva de su dirección de correo."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Quédese en su plan y obtenga un 50% de descuento en su próximo mes"
       ],
       "Step ${ step }": [
         "Paso ${ step }",
@@ -13374,9 +13355,6 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Esto permitirá que PayPal se use para pagar la suscripción a ${ BRAND_NAME }. Le redirigiremos a PayPal en una pestaña nueva de navegador. Si usa cualquier bloqueador emergente, desactívelo para continuar."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Esto le permitirá acceder de forma rápida y segura a su cuenta de ${ BRAND_NAME } para que pueda cambiar la contraseña."
-      ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Esto eliminará permanentemente los datos y todas las direcciones asociadas a estos usuarios."
       ],
@@ -13686,9 +13664,6 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Use su MDM para eliminar el archivo o ejecute ${ removeScriptLink } mediante la ejecución de scripts de su MDM. Cualquier MDM que admita la implementación de archivos o la ejecución de scripts funcionará."
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Se usa solo para copiarlos en ${ DRIVE_APP_NAME }."
-      ],
       "User activated": [
         "El usuario fue activado."
       ],
@@ -13809,9 +13784,6 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Hemos detectado que ya ha iniciado sesión en una aplicación web de ${ BRAND_NAME } en **otro navegador**. Es posible que pueda restablecer la contraseña desde su sesión activa."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "No soportamos importaciones de fotos, Google Docs, Sheets y Slides. Asegúrese que su Google Drive no está vacío."
-      ],
       "We generated a strong password for you": [
         "Le hemos generado una contraseña fuerte"
       ],
@@ -13842,14 +13814,8 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Recomendamos encarecidamente que todos activen la recuperación mediante frase de recuperación."
       ],
-      "We support most files": [
-        "Soportamos la mayoría de archivos"
-      ],
       "We use 3-D Secure to protect your payments": [
         "Se usa 3-D Secure para proteger sus pagos."
-      ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Le enviaremos un correo cuando la importación termine. Una vez finalizada encontrará la importación en una carpeta."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Le redirigiremos a ${ IDEAL_WERO_BRAND_NAME } en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
@@ -13857,8 +13823,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Le redirigiremos a PayPal en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Los copiaremos de Google Drive a ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Le enviaremos un correo electrónico cuando la importación se complete."
+      ],
+      "We'll email you when your import is complete.": [
+        "Le enviaremos un correo electrónico cuando la importación se complete."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Le enviaremos un correo cuando la importación se complete. Sus archivos aparecerán en una carpeta en ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Le contactaremos en breve."
@@ -13976,9 +13951,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sin activación, no podrá crear usuarios nuevos, agregar direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "No se importarán fotos, Google Docs y Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -14324,6 +14296,9 @@
       "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
         "Su archivo incluye una contraseña para cada usuario, así estas cuentas se crearán con una contraseña en lugar de un enlace de invitación."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Sus archivos están cifrados y almacenados con seguridad en ${ DRIVE_APP_NAME }."
+      ],
       "Your files will be encrypted and then saved": [
         "Los archivos serán cifrados y luego guardados."
       ],
@@ -14335,6 +14310,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Su prueba gratuita se convirtió en una suscripción mensual. Su fecha de renovación es ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Su Google Drive podría estar vacío o solo contiene archivos que no están soportados."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Sus datos están a salvo con nosotros. Solo le contactaremos cuando sea necesario para prestar nuestros servicios."
@@ -19537,6 +19515,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Última oportunidad para obtener un 80 % de descuento en su primer mes de ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunidad para obtener su primer mes de ${ plan } por este precio."
+      ],
       "Last day to save": [
         "Último día para ahorrar"
       ],
@@ -19618,6 +19599,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Short @pm.me address": [
+        "Dirección corta @pm.me"
       ],
       "Storage": [
         "Almacenamiento"
@@ -20798,9 +20782,6 @@
       ],
       "Card number": [
         "Número de tarjeta"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Los créditos y descuentos se reflejan en su factura"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Actualmente la renovación automática de la suscripción está desactivada. Si desea cambiar la suscripción ahora, la renovación automática volverá a activarse."
@@ -25240,6 +25221,9 @@
       "Free forever": [
         "Gratis para siempre"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importe sus archivos y carpetas de Google Drive y manténgalas privada en ${ DRIVE_APP_NAME }."
+      ],
       "per month, billed annually": [
         "al mes con facturación anual"
       ],
@@ -25254,9 +25238,6 @@
       ],
       "View VPN session details for your organization.": [
         "Ver los detalles de la sesión VPN de su organización"
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Leemos sus archivos una vez para copiarlos y luego ciframos cada uno con sus claves de ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -26298,9 +26279,6 @@
       "Connect your custom domain": [
         "Conecte su dominio personalizado"
       ],
-      "Connect your Google account": [
-        "Conecte su cuenta de Google"
-      ],
       "Connected emails": [
         "Correos conectados"
       ],
@@ -26611,6 +26589,9 @@
       ],
       "Downloads": [
         "Descargas"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch de Google Drive"
       ],
       "Edit billing address": [
         "Editar la dirección de la factura"
@@ -26953,6 +26934,9 @@
       "Import key": [
         "Importar clave"
       ],
+      "Import started": [
+        "Importación iniciada"
+      ],
       "Import started, but your storage won't be enough for this import": [
         "La importación inició pero su almacenamiento no será suficiente"
       ],
@@ -27256,6 +27240,9 @@
       "Post-quantum protection": [
         "Protección post-cuántica"
       ],
+      "Preparing your import": [
+        "Preparando la importación"
+      ],
       "Preview": [
         "Vista previa"
       ],
@@ -27517,9 +27504,6 @@
       "Set your password": [
         "Establezca la contraseña"
       ],
-      "Setting up your import": [
-        "Configurando su importación"
-      ],
       "Settings": [
         "Ajustes"
       ],
@@ -27546,9 +27530,6 @@
       ],
       "Sign in on TV?": [
         "¿Iniciar sesión en TV?"
-      ],
-      "Sign in to Google": [
-        "Iniciar sesión en Google"
       ],
       "Sign in to join the Beta program": [
         "Iniciar sesión para unirse al programa Beta"
@@ -27627,9 +27608,6 @@
       ],
       "Status": [
         "Estado"
-      ],
-      "Stay for 50% off your next month": [
-        "Quédese y obtenga un 50% de descuento en su próximo mes"
       ],
       "Stay secure and connected anywhere": [
         "Manténgase seguro y conectado en cualquier lugar"
@@ -27937,9 +27915,6 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
-      ],
-      "Your import is starting": [
-        "La importación está empezando"
       ],
       "Your plan": [
         "El plan"

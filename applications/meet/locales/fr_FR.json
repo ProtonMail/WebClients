@@ -2013,6 +2013,12 @@
       "Image preview not found": [
         "L'aperçu de l'image n'a pas été trouvé."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
+      ],
       "Invalid meeting link": [
         "Le lien de réunion n'est pas valide."
       ],
@@ -2024,6 +2030,9 @@
       ],
       "Invitation not found": [
         "L'invitation est introuvable"
+      ],
+      "Item not found": [
+        "L'élément n'a pas été trouvé"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Ce lien public obsolète ne peut pas être mis à jour. Veuillez en recréer un nouveau."
@@ -2110,6 +2119,9 @@
       "Some file parts failed to upload. Please try again.": [
         "Des parties de fichier n'ont pas pu être importées. Veuillez réessayer."
       ],
+      "Some items could not be loaded": [
+        "Certains éléments n'ont pas pu être chargés"
+      ],
       "Something went wrong": [
         "Une erreur s'est produite."
       ],
@@ -2152,6 +2164,9 @@
       "This file version could not be uploaded": [
         "Cette version de fichier n'a pas pu être importée."
       ],
+      "This item has no image preview": [
+        "Cet élément n'a pas d'aperçu"
+      ],
       "This item is no longer shared": [
         "Cet élément n’est plus partagé"
       ],
@@ -2193,6 +2208,9 @@
       ],
       "You do not have access to this item": [
         "Vous n'avez pas accès à cet élément."
+      ],
+      "You do not have access to this shared item": [
+        "Vous n'avez pas accès à cet élément partagé"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Votre navigateur n'a plus d'espace de stockage disponible. Nous avons enregistré la vidéo jusqu'à ce moment-là."
@@ -2388,6 +2406,10 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } requiert WebRTC pour fonctionner. Veuillez mettre à jour votre navigateur ou appareil vers une version prenant en charge WebRTC, essayer un autre navigateur, ou désactiver toute extension susceptible de le bloquer."
+      ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } membre",
+        "${ mlsMemberCount } membres"
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } et ${ otherParticipantsCount } autres sont en cours d'enregistrement"

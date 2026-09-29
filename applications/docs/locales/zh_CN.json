@@ -1365,9 +1365,6 @@
       "Continue your subscription": [
         "继续您的订阅"
       ],
-      "Get 50% offer": [
-        "享受 50% 折扣"
-      ],
       "Maybe later": [
         "以后再说"
       ]
@@ -3165,8 +3162,14 @@
       "IMAP server is required": [
         "IMAP 服务器必须填写"
       ],
+      "Incorrect backup password. Please try again.": [
+        "备份密码不正确，请重试。"
+      ],
       "Incorrect password. Please try again.": [
         "密码错误，请重试。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "二级密码错误，请重试。"
       ],
       "Invalid coupon": [
         "无效优惠券"
@@ -4654,9 +4657,6 @@
       "Accept/decline": [
         "接受/拒绝"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "访问遍布 145 多个国家/地区的 20,000+ 台服务器"
-      ],
       "Ad targeting": [
         "广告定位"
       ],
@@ -4960,9 +4960,6 @@
       "Failing signatures will be re-signed by you": [
         "未通过的签名将由您重新签署"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "最快达 10 Gbps 的 VPN 速度"
-      ],
       "File \"${ name }\" was deleted during download": [
         "文件“${ name }”在下载过程中被删除"
       ],
@@ -4999,9 +4996,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府和网络供应商可以监视您的在线活动。Proton 通过隐藏您的真实 IP 地址并加密网络活动，让您的浏览私密无忧。"
       ],
-      "Have some more time to decide without interruption.": [
-        "不受打扰地多些时间做决定"
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "通过报告问题来帮助我们改善体验。如果您愿意分享电子表格内容，请将下方的调试信息附加到您的报告中。"
       ],
@@ -5019,9 +5013,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "如果现在取消，您将在 ${ expiryDate } 失去对 ${ BRAND_NAME } ${ planTitle } 的访问权限，包括以下功能："
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
@@ -5329,9 +5320,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人。"
       ],
-      "Premium privacy protection across all your devices": [
-        "所有设备上的高级隐私保护"
-      ],
       "Preparing link to file": [
         "正在准备文件链接"
       ],
@@ -5448,9 +5436,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "请启用以下 VPN 设置，即可轻松保持网络连接："
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "保留当前套餐，下月享受 5 折优惠"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "订阅服务每 ${ cycle } 个月自动续费。"
@@ -10180,9 +10165,6 @@
       ],
       "Start import process": [
         "开始导入过程"
-      ],
-      "Stay for 50% off your next month": [
-        "下月继续享受 5 折优惠"
       ],
       "Stop sharing": [
         "停止分享"

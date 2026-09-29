@@ -767,6 +767,9 @@
       "View invoice": [
         "Rechnung anzeigen"
       ],
+      "View security details": [
+        "Sicherheitsdetails anzeigen"
+      ],
       "Virtual backgrounds": [
         "Virtueller Hintergrund"
       ],
@@ -2168,6 +2171,12 @@
       "Image preview not found": [
         "Bildvorschau nicht gefunden"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
+      ],
       "Invalid meeting link": [
         "Ungültiger Meeting-Link"
       ],
@@ -2636,6 +2645,14 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } benötigt WebRTC, um zu funktionieren. Bitte aktualisiere deinen Browser oder dein Gerät auf eine Version, die WebRTC unterstützt, versuche es mit einem anderen Browser oder deaktiviere alle Erweiterungen, die es möglicherweise blockieren."
+      ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } Mitglied",
+        "${ mlsMemberCount } Mitglieder"
+      ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "Es sind ${ participantCount } Teilnehmer verbunden, während die sichere Gruppe ${ mlsMemberCountText } Mitglieder umfasst. Dies kann gelegentlich vorkommen, wenn jemand beitritt oder die Gruppe verlässt.",
+        "Es sind ${ participantCount } Teilnehmer verbunden, während die sichere Gruppe ${ mlsMemberCountText } Mitglieder umfasst. Dies kann gelegentlich vorkommen, wenn jemand beitritt oder die Gruppe verlässt."
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } und ${ otherParticipantsCount } weitere nehmen auf"
@@ -3126,11 +3143,17 @@
       "Participant": [
         "Teilnehmer"
       ],
+      "Participant counts don’t match": [
+        "Anzahl der Teilnehmer stimmt nicht überein"
+      ],
       "Participants can turn live captions on. Turn on your own under Display.": [
         "Teilnehmer können Live-Untertitel einschalten. Schalte deine eigenen unter «Anzeige» ein."
       ],
       "Participants can’t use live captions": [
         "Teilnehmer können Live-Untertitel nicht nutzen"
+      ],
+      "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
+        "Unter „Teilnehmer“ wird angezeigt, wer derzeit verbunden ist. Unter „MLS-Mitglieder“ wird angezeigt, wer zur Sicherheitsgruppe der Besprechung gehört. Diese Zahlen können kurzzeitig voneinander abweichen, doch diese Abweichung dauert länger als erwartet an."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Deinen ${ MEET_APP_NAME }-Link einfügen, um einem sicheren Meeting beizutreten."
@@ -4297,11 +4320,17 @@
       "Minicalendar": [
         "Minikalender"
       ],
+      "MLS members": [
+        "MLS-Mitglieder"
+      ],
       "No one is waiting": [
         "Niemand wartet"
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
+      ],
+      "Participant counts don’t match": [
+        "Anzahl der Teilnehmer stimmt nicht überein"
       ],
       "Participants": [
         "Teilnehmer"
@@ -4420,6 +4449,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
+      ],
+      "People currently connected to the meeting": [
+        "Personen, die derzeit am Meeting teilnehmen"
+      ],
+      "People included in meeting's MLS group": [
+        "Personen, die zur MLS-Gruppe der Sitzung gehören"
       ],
       "Recurring meeting": [
         "Wiederkehrendes Meeting"

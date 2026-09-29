@@ -1252,6 +1252,12 @@
       "Inactive secure links could not be removed.": [
         "Käytöstä poistuneita suojattuja linkkejä ei voitu poistaa."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Väärä varasalasana. Yritä uudelleen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Väärä toine salasana. Yritä uudelleen."
+      ],
       "Invalid password manager": [
         "Virheellinen salasanahallinta"
       ],
@@ -2123,8 +2129,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"

@@ -2582,9 +2582,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "ต่ออายุอัตโนมัติในราคา ${ renewPrice } เป็นเวลา ${ renewCycle } เดือน"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "ต่ออายุอัตโนมัติบน ${ subscriptionManagerName }"
       ]
@@ -11412,9 +11409,6 @@
       "RECOMMENDED": [
         "แนะนำ"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "แนะนำบนอุปกรณ์ที่เชื่อถือได้ ${ keepMeSignedInLearnMoreLink }"
-      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "ไม่สามารถกู้คืนทางอีเมลได้ในขณะที่เปิดใช้งาน ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11969,9 +11963,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "การดำเนินการนี้จะเปิดใช้งาน PayPal เพื่อใช้ชำระค่าการสมัครสมาชิก ${ BRAND_NAME } ของคุณ เราจะนำคุณไปยัง PayPal ในแท็บเบราว์เซอร์ใหม่ หากคุณใช้ตัวบล็อกป๊อปอัป โปรดปิดใช้งานเพื่อดำเนินการต่อ"
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "การดำเนินการนี้ช่วยให้เข้าถึงบัญชี ${ BRAND_NAME } ได้อย่างรวดเร็วและปลอดภัย เพื่อที่จะสามารถเปลี่ยนรหัสผ่านได้"
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "การดำเนินการนี้จะลบข้อมูลและที่อยู่อีเมลทั้งหมดที่เกี่ยวข้องกับผู้ใช้เหล่านี้อย่างถาวร"
@@ -18834,9 +18825,6 @@
       ],
       "Card number": [
         "หมายเลขบัตร"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "เครดิตและส่วนลดจะแสดงในใบแจ้งหนี้ของคุณ"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "ขณะนี้การต่ออายุการสมัครสมาชิกอัตโนมัติถูกปิดใช้งาน หากเปลี่ยนแปลงการสมัครสมาชิกตอนนี้ การต่ออายุอัตโนมัติจะถูกเปิดใช้งานอีกครั้ง"

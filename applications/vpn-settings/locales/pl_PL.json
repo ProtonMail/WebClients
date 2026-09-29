@@ -1929,12 +1929,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Odnawia się automatycznie za kwotę ${ renewPrice } co ${ renewCycle } miesiąc",
-        "Odnawia się automatycznie za kwotę ${ renewPrice } co ${ renewCycle } miesiące",
-        "Odnawia się automatycznie za kwotę ${ renewPrice } co ${ renewCycle } miesięcy",
-        "Odnawia się automatycznie za kwotę ${ renewPrice } co ${ renewCycle } miesięcy"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automatyczne odnowienie w ${ subscriptionManagerName }"
       ]
@@ -2166,9 +2160,6 @@
       ],
       "Discover and set up features": [
         "Odkryj i skonfiguruj funkcje"
-      ],
-      "Get 50% offer": [
-        "Uzyskaj 50% zniżki"
       ],
       "Maybe later": [
         "Może później"
@@ -7087,9 +7078,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Dostęp do ponad 20 000 serwerów w 145 krajach"
-      ],
       "Account monitor": [
         "Monitoring konta"
       ],
@@ -7792,9 +7780,6 @@
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Najwyższe prędkości VPN do 10 Gb/s"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Tylko pliki (bez zdjęć, ${ DOCS_APP_NAME } lub ${ SHEETS_APP_NAME }) – łącznie do 100 GB, 100 000 plików i 50 GB na plik"
       ],
@@ -7882,9 +7867,6 @@
       "Groups": [
         "Grupy"
       ],
-      "Have some more time to decide without interruption.": [
-        "Podejmij decyzję bez żadnych zakłóceń, mając na to więcej czasu."
-      ],
       "here": [
         "tutaj"
       ],
@@ -7920,9 +7902,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jeśli uważasz, że nastąpiła pomyłka, skontaktuj się z nami ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "W przypadku anulowania teraz subskrypcji utracisz dostęp do ${ BRAND_NAME } ${ planTitle } w dniu ${ expiryDate }, w tym do następujących funkcji:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Jeśli anulujesz subskrypcję ${ planTitle }, nie zostanie ona odnowiona po terminie wygaśnięcia ${ expiryDate }."
@@ -8494,9 +8473,6 @@
       "Preference saved": [
         "Ustawienia zostały zapisane"
       ],
-      "Premium privacy protection across all your devices": [
-        "Najwyższej klasy ochrona prywatności na wszystkich Twoich urządzeniach"
-      ],
       "Preview": [
         "Podgląd"
       ],
@@ -8544,9 +8520,6 @@
       ],
       "RECOMMENDED": [
         "ZALECANY"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Zalecane na zaufanych urządzeniach. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Odzyskiwanie za pomocą poczty e-mail nie jest dostępne, gdy usługa ${ PROTON_SENTINEL_NAME } jest włączona."
@@ -8745,9 +8718,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Pozostań przy swoim planie i otrzymaj 50% zniżki na kolejny miesiąc"
       ],
       "Storage allocated to other users in this organisation": [
         "Przestrzeń dyskowa przydzielona do innych użytkowników organizacji"
@@ -8955,9 +8925,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję ${ BRAND_NAME }. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Umożliwi to szybki i bezpieczny dostęp do Twojego konta ${ BRAND_NAME }, dzięki czemu będzie można zmienić hasło."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Spowoduje to trwałe usunięcie danych i wszystkich adresów skojarzonych z użytkownikami."
@@ -13628,9 +13595,6 @@
       "Card number": [
         "Numer karty"
       ],
-      "Credits and discounts are reflected in your invoice": [
-        "Środki i zniżki są uwzględnione na fakturze"
-      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Obecnie automatyczne odnowienie subskrypcji jest wyłączone. Jeśli zmienisz subskrypcję, automatyczne odnowienie zostanie włączone."
       ],
@@ -17738,7 +17702,7 @@
         "Zablokuj elementy śledzące i złośliwe oprogramowanie"
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
-        "Prnieś swój Gmail do ${ MAIL_APP_NAME }"
+        "Przenieś swój Gmail do ${ MAIL_APP_NAME }"
       ],
       "Can you access your session in the browser?": [
         "Czy masz dostęp do swojej sesji w przeglądarce?"
@@ -18645,9 +18609,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Stay for 50% off your next month": [
-        "Zostań z nami, aby uzyskać 50% zniżki w następnym miesiącu"
       ],
       "Stay secure and connected anywhere": [
         "Dbaj o bezpieczeństwo i łączność w dowolnym miejscu"

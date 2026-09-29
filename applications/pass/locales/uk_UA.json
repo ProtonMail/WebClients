@@ -1247,6 +1247,12 @@
       "Inactive secure links could not be removed.": [
         "Неактивні безпечні посилання не можуть бути вилучені."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Неправильний резервний пароль. Будь ласка, спробуйте ще раз."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Неправильний другий пароль. Спробуйте ще раз."
+      ],
       "Invalid password manager": [
         "Недійсний менеджер паролів"
       ],
@@ -2149,6 +2155,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Переміщення елемента до іншого сховища призведе до стирання його безпечних посилань."
       ],
       "Moving items": [
         "Переміщення елементів"

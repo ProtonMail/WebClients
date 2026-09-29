@@ -4870,6 +4870,12 @@
       "IMAP server is required": [
         "IMAP-palvelin vaaditaan"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Väärä varasalasana. Yritä uudelleen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Väärä toine salasana. Yritä uudelleen."
+      ],
       "Invalid code": [
         "Virheellinen koodi"
       ],
@@ -5907,7 +5913,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Pakattu"
+        "Arkistoi"
       ],
       "Do not move": [
         "Älä siirrä"
@@ -10567,7 +10573,7 @@
         "Kaikki viestit"
       ],
       "Archive": [
-        "Pakattu"
+        "Arkisto"
       ],
       "clearing your browser cache": [
         "selaimen välimuistin tyhjennys"
@@ -10897,7 +10903,7 @@
     },
     "Mailbox": {
       "Archive": [
-        "Pakattu"
+        "Arkisto"
       ],
       "Inbox": [
         "Saapuneet"

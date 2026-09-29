@@ -237,9 +237,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Bekräfta öppnande av länken ${ linkToShow }"
       ],
-      "Connect": [
-        "Anslut"
-      ],
       "Connect apps and devices": [
         "Anslut appar och enheter"
       ],
@@ -679,6 +676,9 @@
       ],
       "Maximize transfers": [
         "Maximera överföringar"
+      ],
+      "Maybe later": [
+        "Kanske senare"
       ],
       "Merge": [
         "Slå ihop"
@@ -1780,9 +1780,6 @@
       ],
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
-      ],
-      "Get 50% offer": [
-        "Få 50 % erbjudande"
       ],
       "Maybe later": [
         "Kanske senare"
@@ -3387,6 +3384,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "En kontakt med denna e-postadress finns redan"
+      ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
       ],
@@ -3665,8 +3665,14 @@
       "IMAP server is required": [
         "IMAP-server är obligatoriskt"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Felaktigt reservlösenord. Försök igen."
+      ],
       "Incorrect password. Please try again.": [
         "Felaktigt lösenord. Försök igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Felaktigt andra lösenord. Försök igen."
       ],
       "Invalid code": [
         "Ogiltig kod"
@@ -5394,9 +5400,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "En VPN är en säker tunnel mellan din enhet och internet. Det döljer din plats och aktivitet från din internetleverantör (ISP) och de webbplatser du besöker."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Åtkomst till över 20 000 servrar i över 145 länder"
-      ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
@@ -5603,6 +5606,9 @@
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Anslut till ${ VPN_APP_NAME } för att surfa privat"
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Ansluter till Google Drive och förbereder din import."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
@@ -5824,9 +5830,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportera diagnostikloggar för teknisk support och felsökning"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Snabbaste VPN-hastigheter på upp till 10 Gbps"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5893,9 +5896,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter och internetleverantörer kan övervaka din aktivitet på nätet. Genom att dölja din riktiga IP och kryptera din aktivitet blir din surfning privat."
       ],
-      "Have some more time to decide without interruption.": [
-        "Ha lite mer tid att bestämma utan avbrott."
-      ],
       "here": [
         "här"
       ],
@@ -5916,9 +5916,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Om du avbryter nu, kommer du att förlora åtkomst till ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive dessa funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
@@ -5956,6 +5953,9 @@
       ],
       "Import mailbox": [
         "Importera brevlåda"
+      ],
+      "Import your files and folders": [
+        "Importera dina filer och mappar"
       ],
       "Important note": [
         "Viktigt meddelande"
@@ -6413,6 +6413,9 @@
       "Primary": [
         "Primär"
       ],
+      "Private and encrypted": [
+        "Privat och krypterad"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfning (eller ”inkognitoläge”) är endast användbart för att hålla din aktivitet dold på din enhet. Det hindrar din webbläsare från att spara historik och cookies, men det gör dig inte osynlig. Din internetleverantör, nätverksadministratör och de webbplatser du besöker kan fortfarande se vad du gör på nätet."
       ],
@@ -6616,9 +6619,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Håll dig ansluten utan ansträngning genom att aktivera följande VPN-inställningar:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Skicka in en insättning med följande adress eller skanna QR-koden. Din insättning kommer att återspeglas på ditt konto efter bekräftelse."
@@ -6968,9 +6968,6 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Vi måste autentisera din betalning med din bank."
-      ],
-      "We support most files": [
-        "Vi stöder de flesta filerna"
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
@@ -12685,9 +12682,6 @@
       "Connect your custom domain": [
         "Anslut din anpassad domän"
       ],
-      "Connect your Google account": [
-        "Anslut ditt Google-konto"
-      ],
       "Contact Details": [
         "Kontaktdetaljer"
       ],
@@ -12984,6 +12978,9 @@
       "Import groups": [
         "Importera grupper"
       ],
+      "Import started": [
+        "Import startad"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Importera din data till ${ BRAND_NAME }"
       ],
@@ -13155,6 +13152,9 @@
       "Photos": [
         "Foton"
       ],
+      "Preparing your import": [
+        "Förbereder din import"
+      ],
       "Preview": [
         "Förhandsgranska"
       ],
@@ -13276,9 +13276,6 @@
       "Set up your organization": [
         "Ställ in din organisation"
       ],
-      "Setting up your import": [
-        "Ställer in din import"
-      ],
       "Settings": [
         "Inställningar"
       ],
@@ -13309,9 +13306,6 @@
       "Sign in and grant access": [
         "Logga in och bevilja åtkomst"
       ],
-      "Sign in to Google": [
-        "Logga in till Google"
-      ],
       "Sign out": [
         "Logga ut"
       ],
@@ -13338,9 +13332,6 @@
       ],
       "Start import process": [
         "Starta importprocessen"
-      ],
-      "Stay for 50% off your next month": [
-        "Stanna kvar för 50 % rabatt nästa månad"
       ],
       "Stop sharing": [
         "Sluta dela"
@@ -13459,6 +13450,9 @@
       "Warning: suspected fake website": [
         "Varning: misstänkt falsk webbplats"
       ],
+      "We could not find anything to import": [
+        "Vi kunde inte hitta något att importera"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Vi kunde inte verifiera att ${ author } skapade denna fil."
       ],
@@ -13500,6 +13494,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Välkommen till ${ DRIVE_APP_NAME }"
       ],
       "What are you migrating?": [
         "Vad migrerar du?"
@@ -13545,12 +13542,6 @@
       ],
       "Your import is finished!": [
         "Din import är klar!"
-      ],
-      "Your import is in progress": [
-        "Din import pågår"
-      ],
-      "Your import is starting": [
-        "Din import startar"
       ],
       "Your plan": [
         "Ditt paket"

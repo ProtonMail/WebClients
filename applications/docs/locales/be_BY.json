@@ -378,6 +378,9 @@
       "Export this version (as docx)": [
         "Экспартаваць гэту версію (у фармаце docx)"
       ],
+      "Export this version (as odt) (Beta)": [
+        "Экспартаваць гэту версію (у фармаце odt) (бэта-версія)"
+      ],
       "Export this version (as xlsx)": [
         "Экспартаваць гэту версію (у фармаце xlsx)"
       ],
@@ -419,6 +422,9 @@
       ],
       "Go to label": [
         "Перайсці ў меткі"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ],
       "Got it": [
         "Зразумела"
@@ -593,6 +599,9 @@
       ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "Тэкст OpenDocument (.ods) (бэта-версія)"
       ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
@@ -1421,9 +1430,6 @@
       ],
       "Continue your subscription": [
         "Працягнуць падпіску"
-      ],
-      "Get 50% offer": [
-        "Скарыстайцеся скідкай у памеры 50%"
       ],
       "Maybe later": [
         "Магчыма, пазней"
@@ -3172,7 +3178,10 @@
         "Не ўдалося атрымаць вузел"
       ],
       "Failed to fetch sharing info": [
-        "Не ўдалося атрымаць зветкі абагульвання"
+        "Не ўдалося атрымаць звесткі абагульвання"
+      ],
+      "Failed to fetch sharing information": [
+        "Не ўдалося атрымаць абагуленую інфармацыю"
       ],
       "Failed to get inviter keys": [
         "Не ўдалося атрымаць ключы запрашэння"
@@ -3231,8 +3240,14 @@
       "IMAP server is required": [
         "Патрабуецца сервер IMAP"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Няправільны рэзервовы пароль. Паўтарыце спробу."
+      ],
       "Incorrect password. Please try again.": [
         "Няправільны пароль. Паўтарыце спробу."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Няправільны другі пароль. Паўтарыце спробу."
       ],
       "Invalid coupon": [
         "Памылковы купон"
@@ -4837,9 +4852,6 @@
       "Accept/decline": [
         "Прыняць/адхіліць"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Доступ да больш чым 20 000 сервераў у больш чым 145 краінах"
-      ],
       "Ad targeting": [
         "Мэтавая рэклама"
       ],
@@ -5128,6 +5140,12 @@
       "Enter your own password (as trusted contact).": [
         "Увядзіце свой пароль (як давераны кантакт)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Памылка пераўтварэння дакумента: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Памылка загрузкі дакумента: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Памылка сінхранізацыі"
       ],
@@ -5151,9 +5169,6 @@
       ],
       "Failing signatures will be re-signed by you": [
         "Няўдалыя подпісы будуць паўторна падпісаны вамі"
-      ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
       ],
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" быў выдалены падчас спампоўвання"
@@ -5182,11 +5197,11 @@
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Атрымайце прафесійную электронную пошту @vasha-kampaniya.com, 1 ТБ у бяспечным сховішчы на карыстальніка, пашыраны час для відэазванкоў і іншыя функцыі з ${ BRAND_NAME } Workspace."
       ],
+      "Get Notified About Comments": [
+        "Атрымлівайце апавяшчэнні аб каментарыях"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
-      ],
-      "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
       ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Дапамажыце нам палепшыць гэты сэрвіс, паведаміўшы пра праблему. Далучыце прыведзеную ніжэй адладачную інфармацыю да вашага паведамлення, калі электронная табліца не змяшчае канфідэнцыяльных даных."
@@ -5205,9 +5220,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Вы страціце доступ да ${ BRAND_NAME } з тарыфным планам ${ planTitle } (дзейнічае да ${ expiryDate }), які ўключае наступныя функцыі:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
@@ -5518,9 +5530,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль адбываецца пошук кантактаў, якія змяшчаюць зашыфраваныя даныя з дапамогай неактыўнага ключа."
       ],
-      "Premium privacy protection across all your devices": [
-        "Прэміяльная абарона прыватнасці паміж усімі вашымі прыладамі"
-      ],
       "Preparing link to file": [
         "Падрыхтоўка спасылкі на файл"
       ],
@@ -5637,9 +5646,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Застаньцеся на сваім тарыфным плане і атрымайце скідку ў памеры 50% у наступным месяцы"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Падпіска аўтаматычна падаўжаецца кожны ${ cycle } месяц.",
@@ -5946,6 +5952,12 @@
       ],
       "You don't have access": [
         "У вас адсутнічае доступ"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ dueDate } ${ payInvoiceLink }"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Магчыма, што ў вас адсутнічаюць неабходныя правы, каб прагледзець яго з дапамогай выбранага ўліковага запісу. Паспрабуйце іншы ўліковы запіс або звярніцеся да ўладальніка для атрымання доступу."
@@ -6322,6 +6334,9 @@
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
       ],
+      "Enable email notifications": [
+        "Уключыць апавяшчэнні па электроннай пошце"
+      ],
       "Encrypt emails": [
         "Шыфраваць лісты"
       ],
@@ -6689,6 +6704,9 @@
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
+      ],
+      "Pay it": [
+        "Заплаціць"
       ],
       "Reactivate now": [
         "Актываваць паўторна"
@@ -8149,8 +8167,14 @@
       "Failed to load invitation details": [
         "Не ўдалося загрузіць падрабязнасці запрашэння"
       ],
+      "Failed to load invitations": [
+        "Не ўдалося загрузіць запрашэнні"
+      ],
       "Failed to load sharing details": [
         "Не ўдалося загрузіць абагуленыя падрабязнасці"
+      ],
+      "Failed to reject invitation": [
+        "Не ўдалося адхіліць запрашэнне"
       ],
       "Failed to reject share invitation": [
         "Не ўдалося адхіліць абагуленае запрашэнне"
@@ -8303,6 +8327,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Апошні шанс атрымаць першы месяц тарыфнага плана ${ plan } па гэтай цане."
+      ],
       "Last day to save": [
         "Апошні дзень, калі можна сэканоміць"
       ],
@@ -8402,6 +8429,18 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " наведайце наш ${ helpCenterLink } або ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Дадайце спосаб аплаты**, каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
       "Add a payment method": [
         "Дадаць спосаб аплаты"
       ],
@@ -8420,11 +8459,17 @@
       "help center": [
         "даведачны цэнтр"
       ],
+      "If you continue after your trial,": [
+        "Калі вы працягніце пасля пробнага перыяду,"
+      ],
       "If you need help,": [
         "Калі вам патрэбна дапамога,"
       ],
       "Once your full subscription starts...": [
         "Як толькі пачнецца ваша поўная падпіска..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
@@ -9343,6 +9388,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Стварэнне новай электроннай табліцы..."
+      ],
       "Detect automatically": [
         "Вызначаць аўтаматычна"
       ],
@@ -10675,9 +10723,6 @@
       ],
       "Start import process": [
         "Пачаць працэс імпартавання"
-      ],
-      "Stay for 50% off your next month": [
-        "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
       ],
       "Stop sharing": [
         "Спыніць абагульванне"

@@ -1628,6 +1628,9 @@
     "Action subscription": {
       "Reactivate": [
         "Genaktiver"
+      ],
+      "View breakdown": [
+        "Se oversigt"
       ]
     },
     "Action: Sheets": {
@@ -2217,12 +2220,34 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Fornyes automatisk til ${ renewPrice }, for ${ renewCycle } måned",
-        "Fornyes automatisk til ${ renewPrice } for ${ renewCycle } måneder"
+      "Free renewal": [
+        "Gratis fornyelse"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Gratis fornyelse, for ${ nextCycle } måned, den ${ when }",
+        "Gratis fornyelse, for ${ nextCycle } måneder, den ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Fornyes automatisk til ${ introPrice }, for ${ nextCycle } måned, den ${ when }",
+        "Fornyes automatisk til ${ introPrice }, for ${ nextCycle } måneder, den ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Fornyes automatisk til ${ price }, for ${ cycle } måned",
+        "Fornyes automatisk til ${ price } for ${ cycle } måneder"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Fornyes automatisk i ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Ændres til ${ nextCycle } måned den ${ when } (${ paidPrice } er allerede betalt)",
+        "Ændres til ${ nextCycle } måneder den ${ when } (${ paidPrice } er allerede betalt)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Derefter ${ price }, for ${ cycle } måned",
+        "Derefter ${ price }, for ${ cycle } måneder"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Erstattes af dit kommende abonnement den ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -2260,6 +2285,14 @@
       ],
       "Yearly": [
         "Årligt"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Faktureret ved fornyelse"
+      ],
+      "Prepaid": [
+        "Forudbetalt"
       ]
     },
     "Blog": {
@@ -2448,9 +2481,6 @@
       ],
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
-      ],
-      "Get 50% offer": [
-        "Få et 50%-tilbud"
       ],
       "Maybe later": [
         "Måske senere"
@@ -3635,6 +3665,11 @@
         "(via ${ entryCountryName })"
       ]
     },
+    "Coupon": {
+      "Coupon applied": [
+        "Kupon anvendt"
+      ]
+    },
     "Create user accounts empty state": {
       "No search results found": [
         "Ingen søgeresultater fundet"
@@ -3805,6 +3840,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Overfør din e-mail, kalenderbegivenheder og kontakter fra en anden udbyder."
+      ],
+      "Bring over your files from another provider.": [
+        "Overfør dine filer fra en anden udbyder."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Opbyg tillid og brandgenkendelse med professionelle e-mailadresser på dit eget domæne."
@@ -7617,9 +7655,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Adgang til mere end 20.000 servere i 145 lande"
-      ],
       "Account monitor": [
         "Kontoovervågning"
       ],
@@ -8383,9 +8418,6 @@
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Hurtigste VPN-hastigheder – op til 10Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Kun filer (ingen fotos, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
       ],
@@ -8479,9 +8511,6 @@
       "Groups": [
         "Grupper"
       ],
-      "Have some more time to decide without interruption.": [
-        "Få lidt mere tid til overvejelse – uden afbrydelse."
-      ],
       "here": [
         "her"
       ],
@@ -8517,9 +8546,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -9115,9 +9141,6 @@
       "Preference saved": [
         "Præference gemt"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium privatlivsbeskyttelse på alle dine enheder"
-      ],
       "Preview": [
         "Forhåndsvisning"
       ],
@@ -9169,8 +9192,8 @@
       "RECOMMENDED": [
         "FORSLÅET"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Anbefales på betroede enheder. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Anbefales på betroede enheder. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Gendannelse via e-mail er ikke tilgængeligt mens ${ PROTON_SENTINEL_NAME } er aktiveret."
@@ -9382,9 +9405,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Bliv på dit abonnement og få 50% rabat næste måned"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"
@@ -9601,7 +9621,7 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit ${ BRAND_NAME }-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, bedes du deaktivere disse for at fortsætte."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
         "Dette giver dig mulighed for hurtigt og sikkert at tilgå din ${ BRAND_NAME }-konto, så du kan ændre din adgangskode."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
@@ -10201,6 +10221,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en åben faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en åben faktura til ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no invoices.": [
         "Du har ingen fakturaer."
       ],
@@ -10512,6 +10538,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Gave"
+      ],
+      "Open": [
+        "Åbn"
       ],
       "Paid": [
         "Betalt"
@@ -11852,6 +11881,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Pay it": [
+        "Betal"
       ],
       "Privacy policy": [
         "Privatlivspolitik"
@@ -14458,9 +14490,6 @@
       ],
       "Card number": [
         "Kortnummer"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Kreditter og rabatter fremgår af din faktura"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "I øjeblikket er abonnementets automatiske fornyelse deaktiveret. Ændrer du abonnementet nu, genaktiveres den automatiske fornyelse."
@@ -17858,6 +17887,9 @@
       ],
       "Free Trial": [
         "Gratis prøve"
+      ],
+      "Upcoming": [
+        "Kommende"
       ]
     },
     "Subtitle": {
@@ -18363,6 +18395,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
+      ],
+      "${ planTitle } breakdown": [
+        "Oversigt over ${ planTitle }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } til organisationer"
@@ -19530,14 +19565,14 @@
       "Status": [
         "Status"
       ],
-      "Stay for 50% off your next month": [
-        "Bliv hængende for 50% rabat i den næste måned"
-      ],
       "Stay secure and connected anywhere": [
         "Vær sikker og forbundet overalt"
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Subscription breakdown": [
+        "Oversigt over abonnement"
       ],
       "Subscription canceled": [
         "Abonnement annulleret"
@@ -19846,11 +19881,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Fakturering"
+      ],
       "End date": [
         "Slutdato"
       ],
       "Plan": [
         "Abonnement"
+      ],
+      "Price": [
+        "Pris"
+      ],
+      "Start date": [
+        "Startdato"
       ],
       "Status": [
         "Status"

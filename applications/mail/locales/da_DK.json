@@ -2397,9 +2397,6 @@
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
       ],
-      "Get 50% offer": [
-        "Få et 50%-tilbud"
-      ],
       "Got it": [
         "Forstået"
       ],
@@ -5060,6 +5057,12 @@
       "IMAP server is required": [
         "IMAP-server er påkrævet."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Forkert backupadgangskode. Prøv igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Forkert anden adgangskode. Prøv igen."
+      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -7365,9 +7368,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Få adgang til 6.500+ højhastighedsservere på op til 10 enheder for at holde dine browserdata sikre. Tilgængelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Adgang til mere end 20.000 servere i 145 lande"
-      ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
@@ -8038,9 +8038,6 @@
         "Udløber om mindre end ${ hoursDiff } time",
         "Udløber om mindre end ${ hoursDiff } timer"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Hurtigste VPN-hastigheder – op til 10Gbps"
-      ],
       "file attached": [
         "fil vedhæftet",
         "filer vedhæftet"
@@ -8124,9 +8121,6 @@
         "Har ${ numAttachments } vedhæftet fil (${ numAttachmentsSize })",
         "Har ${ numAttachments } vedhæftede filer (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "Få lidt mere tid til overvejelse – uden afbrydelse."
-      ],
       "here": [
         "her"
       ],
@@ -8168,9 +8162,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Hvis du mener, vi har begået en fejl, bedes du ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -8738,9 +8729,6 @@
       "Preferences updated": [
         "Præferencer opdateret"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium privatlivsbeskyttelse på alle dine enheder"
-      ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
       ],
@@ -9108,9 +9096,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Bliv på dit abonnement og få 50% rabat næste måned"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsfunktioner understøttes ikke i denne browser, vi har brug for denne understøttelse for at kunne søge efter beskedindhold."
@@ -9849,6 +9834,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en åben faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en åben faktura til ${ dueDate } ${ payInvoiceLink }"
       ],
       "You have no conversations in this category": [
         "Du har ingen samtaler i denne kategori"
@@ -11645,6 +11636,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Pay it": [
+        "Betal"
       ],
       "Privacy policy": [
         "Privatlivspolitik"
@@ -17483,9 +17477,6 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
-      ],
-      "Stay for 50% off your next month": [
-        "Bliv hængende for 50% rabat i den næste måned"
       ],
       "Storage capacity warning": [
         "Advarsel om lagerkapacitet"

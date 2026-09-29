@@ -1382,9 +1382,6 @@
       "Continue your subscription": [
         "Poursuivre votre abonnement"
       ],
-      "Get 50% offer": [
-        "Profitez d'une réduction de 50 %"
-      ],
       "Maybe later": [
         "Peut-être plus tard"
       ]
@@ -3133,8 +3130,14 @@
       "IMAP server is required": [
         "Le serveur IMAP est nécessaire."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
       "Incorrect password. Please try again.": [
         "Le mot de passe n'est pas correct. Réessayez."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
       ],
       "Invalid coupon": [
         "Le code cadeau n'est pas valide."
@@ -3156,6 +3159,9 @@
       ],
       "Invitation not found": [
         "L'invitation est introuvable"
+      ],
+      "Item not found": [
+        "L'élément n'a pas été trouvé"
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
@@ -3349,6 +3355,9 @@
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés."
       ],
+      "Some items could not be loaded": [
+        "Certains éléments n'ont pas pu être chargés"
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers ne sont pas disponibles. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
@@ -3466,6 +3475,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
       ],
+      "This item has no image preview": [
+        "Cet élément n'a pas d'aperçu"
+      ],
       "This item is no longer shared": [
         "Cet élément n’est plus partagé"
       ],
@@ -3547,6 +3559,9 @@
       ],
       "You do not have access to this item": [
         "Vous n'avez pas accès à cet élément."
+      ],
+      "You do not have access to this shared item": [
+        "Vous n'avez pas accès à cet élément partagé"
       ],
       "You have reached the maximum number of calendars.": [
         "Vous avez atteint le nombre maximum de calendriers."
@@ -4025,11 +4040,17 @@
       "All": [
         "Tout"
       ],
+      "Errors": [
+        "Erreurs"
+      ],
       "In progress": [
         "En cours"
       ],
       "Migrated": [
         "Migré"
+      ],
+      "Not activated": [
+        "Non activé"
       ],
       "Pending": [
         "En attente"
@@ -4598,9 +4619,6 @@
       "Accept/decline": [
         "Accepter/refuser"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Accédez à plus de 20 000 serveurs dans plus de 145 pays"
-      ],
       "Ad targeting": [
         "Ciblage publicitaire"
       ],
@@ -4897,9 +4915,6 @@
       "Failing signatures will be re-signed by you": [
         "Vous signerez à nouveau les signatures avec des erreurs."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Des vitesses VPN ultra-rapides pouvant atteindre 10 Gbps"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Le fichier « ${ name } » a été supprimé pendant le téléchargement."
       ],
@@ -4930,9 +4945,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
       ],
-      "Have some more time to decide without interruption.": [
-        "Prenez encore un peu de temps pour vous décider, sans être dérangé."
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Aidez-nous à améliorer cette expérience en signalant le problème. Si vous souhaitez partager le contenu de votre feuille de calcul, veuillez joindre les informations de débogage ci-dessous à votre rapport."
       ],
@@ -4950,9 +4962,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Si vous résiliez votre abonnement maintenant, vous perdrez l'accès à ${ BRAND_NAME } ${ planTitle } à compter du ${ expiryDate }, y compris les fonctionnalités suivantes :"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
@@ -5254,9 +5263,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Veuillez patienter pendant que nous cherchons les contacts qui contiennent des données chiffrées avec la clé inactive."
       ],
-      "Premium privacy protection across all your devices": [
-        "Une protection optimale de la vie privée sur tous vos appareils"
-      ],
       "Preparing link to file": [
         "Préparation du lien vers le fichier"
       ],
@@ -5373,9 +5379,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Restez connecté facilement en activant les paramètres VPN suivants :"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Continuez à souscrire à votre forfait et bénéficiez de 50 % de réduction sur votre abonnement du mois prochain"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "L'abonnement est renouvelé automatiquement tous les ${ cycle } mois.",
@@ -9526,7 +9529,7 @@
         "Le lien sécurisé a été copié."
       ],
       "Undo in progress": [
-        "Annulation en cours"
+        "Annulation de l'importation en cours"
       ],
       "Verification successful": [
         "La vérification a abouti."
@@ -9566,6 +9569,9 @@
       ],
       "Actions": [
         "Actions"
+      ],
+      "Activated": [
+        "Activé"
       ],
       "Address": [
         "Adresse"
@@ -10126,6 +10132,9 @@
       "Select link expiration time": [
         "Sélectionner le délai d'expiration du lien"
       ],
+      "Select users to migrate": [
+        "Sélectionnez les utilisateurs à migrer"
+      ],
       "Set recovery methods": [
         "Définir les méthodes de récupération"
       ],
@@ -10179,9 +10188,6 @@
       ],
       "Start import process": [
         "Démarrer l'importation"
-      ],
-      "Stay for 50% off your next month": [
-        "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
       ],
       "Stop sharing": [
         "Arrêter le partage"

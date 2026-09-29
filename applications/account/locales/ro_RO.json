@@ -3065,11 +3065,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewCycle } lună.",
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewCycle } luni.",
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewCycle } de luni."
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Reînnoire automată pe ${ subscriptionManagerName }"
       ]
@@ -3501,9 +3496,6 @@
       ],
       "Discover and set up features": [
         "Descoperiți și setați funcțiile"
-      ],
-      "Get 50% offer": [
-        "Profitați de oferta de 50%"
       ],
       "Got it": [
         "Am înțeles"
@@ -5411,6 +5403,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Aduceți-vă mesajele, evenimentele din calendar și contactele de la un alt furnizor."
+      ],
+      "Bring over your files from another provider.": [
+        "Aduceți-vă fișierele de la alt furnizor de stocare."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Creați încredere și recunoaștere a mărcii cu adrese de e-mail profesionale de pe propriul domeniu."
@@ -10269,6 +10264,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nu vă partajează niciodată informațiile cu terțe părți. Datele provin din propriile analize ale ${ BRAND_NAME } și din Constella Intelligence."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } utilizează acest acces doar pentru importare. Google nu va obține niciodată acces la contul din ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Pass Professional": [
         "${ BRAND_NAME } Pass Professional"
       ],
@@ -10683,9 +10681,6 @@
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Accesați peste 8.500 de servere de mare viteză pe maxim 10 dispozitive simultan pentru a vă păstra datele de navigare în siguranță. Disponibilă pentru ${ ios }, ${ android }, ${ appleTV } și ${ desktop }."
-      ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Accesați peste 20.000 de servere din peste 145 de țări"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Accesați-vă parolele și protejați-vă identitățile online fără probleme pe toate dispozitivele. Descărcați și instalați aplicațiile și extensiile relevante ale ${ PASS_APP_NAME }."
@@ -11228,8 +11223,8 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Conectați-vă și gestionați-vă conturile externe de e-mail în ${ MAIL_APP_NAME }."
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Se conectează la Google Drive pentru configurarea importării securizate în ${ DRIVE_APP_NAME }."
+      "Connecting to Google Drive and preparing your import.": [
+        "Se conectează la Google Drive și vi se pregătește importarea."
       ],
       "Connection data will be available in around 1 hour.": [
         "Datele de conectare vor fi disponibile peste aproximativ o oră."
@@ -11594,9 +11589,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
       ],
-      "Email you once import is finished": [
-        "Veți primi un mesaj la finalizarea importării."
-      ],
       "Emailing preference saved": [
         "Preferințe e-mail salvate"
       ],
@@ -11783,9 +11775,6 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rapid și eficient. E-mail și calendar chiar pe desktop."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Cele mai rapide viteze VPN de până la 10 Gbps"
-      ],
       "Featured in": [
         "Menționat în"
       ],
@@ -11836,9 +11825,6 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Pentru doar ${ bundlePlanPriceInline }"
-      ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "Pentru ca importarea să funcționeze, trebuie să selectați toate articolele solicitate așa cum e arătat în imaginea GIF de deasupra."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
@@ -11945,9 +11931,6 @@
       "Groups": [
         "Grupuri"
       ],
-      "Have some more time to decide without interruption.": [
-        "Mai aveți timp să vă decideți fără întrerupere."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Ajutați alte familii să ofere copiilor lor un start sigur online. Distribuiți această știre importantă și răspândiți vestea."
       ],
@@ -12019,9 +12002,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, contactați-ne la ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Dacă anulați acum, veți pierde accesul la ${ BRAND_NAME } ${ planTitle } la ${ expiryDate }, inclusiv la aceste funcții:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Dacă anulați, abonamentul la ${ planTitle } nu va fi reînnoit când va expira la ${ expiryDate }."
@@ -12101,6 +12081,9 @@
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Importarea afișează transferurile unice de mesaje, calendare sau contacte în contul ${ BRAND_NAME } personal."
+      ],
+      "Import your files and folders": [
+        "Importați-vă folderele și fișierele"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "IMPORTANT: dacă în consola DNS nu se permite câmpurilor CNAME să se termine cu un punct, puteți elimina ultimul punct din valorile CNAME."
@@ -12286,6 +12269,9 @@
       ],
       "Keys created": [
         "Cheile au fost create."
+      ],
+      "Know when it's done": [
+        "Știți când este gata"
       ],
       "Label all imported messages as": [
         "Etichetare toate mesajele importate cu"
@@ -12491,8 +12477,8 @@
       "Next billing date": [
         "Data facturii următoare"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "În continuare, va trebui să vă conectați la contul Google și să permiteți ca ${ BRAND_NAME } să vă acceseze datele."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "În continuare, conectați-vă la Google Drive și permiteți ca ${ BRAND_NAME } să acceseze Google Drive. Folderele și fișierele vor fi importate în ${ DRIVE_APP_NAME }."
       ],
       "No account keys exist": [
         "Nu există chei pentru cont."
@@ -12820,9 +12806,6 @@
       "Preference saved": [
         "Preferință salvată"
       ],
-      "Premium privacy protection across all your devices": [
-        "Protecție premium a confidențialității pe toate dispozitivele personale"
-      ],
       "Preview": [
         "Examinare"
       ],
@@ -12846,6 +12829,9 @@
       ],
       "Private AI assistant": [
         "Asistent de IA privat"
+      ],
+      "Private and encrypted": [
+        "Private și criptate"
       ],
       "Product reviews, rankings, or guides": [
         "Recenzii de produse, clasamente sau ghiduri"
@@ -12877,9 +12863,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contactați-ne pentru ajutor despre orice din ${ BRAND_NAME }."
       ],
-      "Read once and encrypted on arrival": [
-        "Citire o singură dată și criptare la sosire"
-      ],
       "Receive notifications for ${ categoryLabel }": [
         "Primire notificări pentru ${ categoryLabel }"
       ],
@@ -12892,8 +12875,8 @@
       "RECOMMENDED": [
         "RECOMANDAT"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Recomandat pe dispozitivele de încredere. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Recomandat pe dispozitivele de încredere. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Recuperarea prin e-mail nu este disponibilă dacă ${ PROTON_SENTINEL_NAME } este activat."
@@ -13140,9 +13123,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
-      "Sit back and we will let you know.": [
-        "Așteptați până vă vom anunța."
-      ],
       "Smart Routed through a different country.": [
         "Direcționare inteligentă printr-o altă țară."
       ],
@@ -13187,9 +13167,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Utilizați versiunea mai scurtă și mai atractivă a adresei de e-mail."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Păstrați-vă abonamentul și primiți o reducere de 50% luna următoare"
       ],
       "Step ${ step }": [
         "Pasul ${ step }",
@@ -13510,9 +13487,6 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Aceasta va activa PayPal ca metodă de plată pentru abonarea la ${ BRAND_NAME }. Se va deschide o fereastră nouă spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Acest lucru vă va permite să vă accesați rapid și în siguranță contul ${ BRAND_NAME }, astfel încât să vă puteți schimba parola."
-      ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Acest lucru va șterge definitiv datele și toate adresele de e-mail asociate cu acești utilizatori."
       ],
@@ -13822,9 +13796,6 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Folosiți propriul MDM pentru a șterge fișierul sau rulați ${ removeScriptLink } prin execuția scriptului MDM. Va funcționa orice MDM care acceptă implementarea fișierelor sau rularea scripturilor."
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Folosit doar pentru a le copia în ${ DRIVE_APP_NAME }."
-      ],
       "User activated": [
         "Utilizator activat"
       ],
@@ -13945,9 +13916,6 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Am detectat că deja v-ați conectat la o aplicație web ${ BRAND_NAME } într-un **alt navigator web**. Este posibil să puteți reseta parola din sesiunea activă."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Nu este suportată importarea fotografiilor, documentelor,și foilor de calcul și prezentărilor Google. Asigurați-vă că Google Drive nu este gol."
-      ],
       "We generated a strong password for you": [
         "Vi s-a generat o parolă puternică"
       ],
@@ -13978,14 +13946,8 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Recomandăm insistent ca toți să-și activeze recuperarea prin fraza de recuperare."
       ],
-      "We support most files": [
-        "Sunt suportate majoritatea fișierelor"
-      ],
       "We use 3-D Secure to protect your payments": [
         "Folosim 3-D Secure pentru a proteja plățile"
-      ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Veți primi un mesaj pe e-mail la finalizarea importării. După finalizare, veți găsi datele importate într-un folder."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin ${ IDEAL_WERO_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
@@ -13993,8 +13955,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vor fi copiate din Google Drive în ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Vă vom anunța pe e-mail după finalizarea importării."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vă vom anunța pe e-mail după finalizarea importării."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Veți primi un e-mail când s-a finalizat importarea. Fișierele vor apărea într-un folder din ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Vom reveni în curând."
@@ -14112,9 +14083,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Nu se importă fotografii, documente și foi de calcul Google"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -14471,6 +14439,9 @@
       "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
         "Fișierul include o parolă pentru fiecare utilizator, așadar aceste conturi vor fi create cu o parolă în loc de o legătură web de invitație."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Fișierele sunt criptate și stocate în siguranță în ${ DRIVE_APP_NAME }."
+      ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
@@ -14482,6 +14453,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Probarea gratuită a fost convertită cu un abonament lunar. Data lui de reînnoire este ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Drive s-ar putea să fie gol sau să conțină fișiere nesuportate."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
@@ -21027,9 +21001,6 @@
       "Card number": [
         "Număr card"
       ],
-      "Credits and discounts are reflected in your invoice": [
-        "Creditele și reducerile se regăsesc în factură"
-      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "În prezent, reînnoirea automată a abonamentului este dezactivată. Dacă schimbați abonamentul acum, atunci reînnoirea automată va fi reactivată."
       ],
@@ -25556,6 +25527,9 @@
       "Free forever": [
         "Gratuit întotdeauna"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importați-vă folderele și fișierele din Google Drive și păstrați-le private în ${ DRIVE_APP_NAME }."
+      ],
       "per month, billed annually": [
         "pe lună, facturat anual"
       ],
@@ -25570,9 +25544,6 @@
       ],
       "View VPN session details for your organization.": [
         "Vizualizați detaliile sesiunii VPN pentru organizație."
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Fișierele sunt citite o singură dată pentru a le copia, apoi sunt criptate fiecare în parte folosind cheile ${ BRAND_NAME } pe care le dețineți."
       ]
     },
     "Success": {
@@ -26628,9 +26599,6 @@
       "Connect your custom domain": [
         "Conectați-vă domeniul personal"
       ],
-      "Connect your Google account": [
-        "Conectați-vă contul Google"
-      ],
       "Connected emails": [
         "Adrese conectate"
       ],
@@ -26943,6 +26911,9 @@
       ],
       "Downloads": [
         "Descărcări"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch din Google Drive"
       ],
       "Edit billing address": [
         "Editare adresă de facturare"
@@ -27287,6 +27258,9 @@
       "Import key": [
         "Importare cheie"
       ],
+      "Import started": [
+        "Importare pornită"
+      ],
       "Import started, but your storage won't be enough for this import": [
         "Importarea a început, dar spațiul de stocare nu va fi suficient"
       ],
@@ -27590,6 +27564,9 @@
       "Post-quantum protection": [
         "Protecție post-cuantică"
       ],
+      "Preparing your import": [
+        "Se pregătește importarea"
+      ],
       "Preview": [
         "Examinare"
       ],
@@ -27851,9 +27828,6 @@
       "Set your password": [
         "Setare parolă"
       ],
-      "Setting up your import": [
-        "Vi se setează importarea"
-      ],
       "Settings": [
         "Setări"
       ],
@@ -27880,9 +27854,6 @@
       ],
       "Sign in on TV?": [
         "Conectare pe TV?"
-      ],
-      "Sign in to Google": [
-        "Conectare în Google"
       ],
       "Sign in to join the Beta program": [
         "Autentificați-vă pentru a vă alătura programului beta"
@@ -27961,9 +27932,6 @@
       ],
       "Status": [
         "Stare"
-      ],
-      "Stay for 50% off your next month": [
-        "Rămâneți cu o reducere de 50% luna următoare"
       ],
       "Stay secure and connected anywhere": [
         "Rămâneți în siguranță și vă conectați oriunde"
@@ -28272,9 +28240,6 @@
       ],
       "Your exposed information": [
         "Informații expuse"
-      ],
-      "Your import is starting": [
-        "Începe importarea"
       ],
       "Your plan": [
         "Plan actual"

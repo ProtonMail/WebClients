@@ -1335,9 +1335,6 @@
       "Continue your subscription": [
         "繼續您的訂閱"
       ],
-      "Get 50% offer": [
-        "取得 50% 折扣"
-      ],
       "Maybe later": [
         "稍後再說"
       ]
@@ -3069,8 +3066,14 @@
       "IMAP server is required": [
         "IMAP 伺服器為必填"
       ],
+      "Incorrect backup password. Please try again.": [
+        "備份密碼錯誤。請重新再試。"
+      ],
       "Incorrect password. Please try again.": [
         "密碼不正確。請再試一次。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "第二密碼錯誤。請重新再試。"
       ],
       "Invalid coupon": [
         "無效優待券"
@@ -4486,9 +4489,6 @@
       "Accept/decline": [
         "接受/拒絕"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "存取 20,000+ 臺伺服器，分布於 145 個國家"
-      ],
       "Ad targeting": [
         "廣告目標鎖定"
       ],
@@ -4777,9 +4777,6 @@
       "Failing signatures will be re-signed by you": [
         "驗證失敗的簽名將由您重新簽名"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "更快速的 VPN 速度至多 10Gbps"
-      ],
       "File \"${ name }\" was deleted during download": [
         "檔案 \"${ name }\" 在下載過程中被刪除"
       ],
@@ -4807,9 +4804,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府和 ISP 可以監控您的線上活動。透過隱藏您的真實 IP 並加密您的活動，您的瀏覽將變得私密。"
       ],
-      "Have some more time to decide without interruption.": [
-        "在未被干擾下有更充分的時間決定。"
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "回報此問題以協助我們改進此體驗。如果您不介意分享試算表內容，請在您的報告中附加下方的偵錯資訊。"
       ],
@@ -4824,9 +4818,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "如果您現在取消，您將於 ${ expiryDate } 失去存取 ${ BRAND_NAME } ${ planTitle }，包含這些功能:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您還是決定取消，現有 ${ planTitle } 授權將不再自動續購，到期日為 ${ expiryDate }"
@@ -5122,9 +5113,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
       ],
-      "Premium privacy protection across all your devices": [
-        "頂級質子版隱私保護於您全部的裝置"
-      ],
       "Preparing link to file": [
         "檔案連結準備中"
       ],
@@ -5238,9 +5226,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "啟用以下 VPN 設定，輕鬆保持連線："
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "維持您的方案並於下個月取得 50% 折扣的優惠"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "每${ cycle }個月自動續訂。"

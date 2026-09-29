@@ -217,9 +217,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmer l'ouverture du lien ${ linkToShow }"
       ],
-      "Connect": [
-        "Se connecter"
-      ],
       "Connect apps and devices": [
         "Connecter les applications et les appareils"
       ],
@@ -590,6 +587,9 @@
       ],
       "Maximize transfers": [
         "Agrandir les transferts"
+      ],
+      "Maybe later": [
+        "Peut-être plus tard"
       ],
       "Merge": [
         "Fusionner"
@@ -1589,9 +1589,6 @@
       ],
       "Discover and set up features": [
         "Découvrez et configurez les fonctionnalités"
-      ],
-      "Get 50% offer": [
-        "Profitez d'une réduction de 50 %"
       ],
       "Maybe later": [
         "Peut-être plus tard"
@@ -3406,8 +3403,14 @@
       "IMAP server is required": [
         "Le serveur IMAP est nécessaire."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
       "Incorrect password. Please try again.": [
         "Le mot de passe n'est pas correct. Réessayez."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
       ],
       "Invalid code": [
         "Le code n'est pas valide."
@@ -3441,6 +3444,9 @@
       ],
       "Invitation not found": [
         "L'invitation est introuvable"
+      ],
+      "Item not found": [
+        "L'élément n'a pas été trouvé"
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
@@ -3664,6 +3670,9 @@
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés."
       ],
+      "Some items could not be loaded": [
+        "Certains éléments n'ont pas pu être chargés"
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers ne sont pas disponibles. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
@@ -3766,6 +3775,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
       ],
+      "This item has no image preview": [
+        "Cet élément n'a pas d'aperçu"
+      ],
       "This item is no longer shared": [
         "Cet élément n’est plus partagé"
       ],
@@ -3850,6 +3862,9 @@
       ],
       "You do not have access to this item": [
         "Vous n'avez pas accès à cet élément."
+      ],
+      "You do not have access to this shared item": [
+        "Vous n'avez pas accès à cet élément partagé"
       ],
       "You have reached the maximum number of calendars.": [
         "Vous avez atteint le nombre maximum de calendriers."
@@ -4328,11 +4343,17 @@
       "All": [
         "Tout"
       ],
+      "Errors": [
+        "Erreurs"
+      ],
       "In progress": [
         "En cours"
       ],
       "Migrated": [
         "Migré"
+      ],
+      "Not activated": [
+        "Non activé"
       ],
       "Pending": [
         "En attente"
@@ -4751,6 +4772,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } utilise cet accès uniquement pour l'importation. Google n'a jamais accès à votre compte ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
@@ -4966,9 +4990,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Un VPN est un tunnel sécurisé entre votre appareil et internet. Il masque votre emplacement et vos activités à votre fournisseur d'accès à internet (FAI) et aux sites internet que vous consultez."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Accédez à plus de 20 000 serveurs dans plus de 145 pays"
-      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
@@ -5137,8 +5158,8 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connectez-vous à ${ VPN_APP_NAME } pour surfer en privé."
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Connexion à Google Drive en cours pour configurer votre importation sécurisée vers ${ DRIVE_APP_NAME }."
+      "Connecting to Google Drive and preparing your import.": [
+        "Connexion à Google Drive et préparation de l'importation en cours."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Le contact a été ajouté au groupe ${ contactGroupName }."
@@ -5284,9 +5305,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
       ],
-      "Email you once import is finished": [
-        "Vous envoyer un e-mail une fois l'importation terminée"
-      ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
       ],
@@ -5345,9 +5363,6 @@
       "Expired": [
         "Expiré"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Des vitesses VPN ultra-rapides pouvant atteindre 10 Gbps"
-      ],
       "File could not be scanned": [
         "Le fichier n'a pas pu être scanné."
       ],
@@ -5375,9 +5390,6 @@
       "For just ${ bundlePlanPriceInline }": [
         "Pour seulement ${ bundlePlanPriceInline }"
       ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "Pour que l'importation fonctionne, vous devez sélectionner tous les éléments demandés, comme indiqué dans le GIF ci-dessus."
-      ],
       "Forgot password?": [
         "Mot de passe oublié ?"
       ],
@@ -5393,9 +5405,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
       ],
-      "Have some more time to decide without interruption.": [
-        "Prenez encore un peu de temps pour vous décider, sans être dérangé."
-      ],
       "here": [
         "ici"
       ],
@@ -5410,9 +5419,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Si vous résiliez votre abonnement maintenant, vous perdrez l'accès à ${ BRAND_NAME } ${ planTitle } à compter du ${ expiryDate }, y compris les fonctionnalités suivantes :"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
@@ -5450,6 +5456,9 @@
       ],
       "Import mailbox": [
         "Importer une messagerie"
+      ],
+      "Import your files and folders": [
+        "Importer vos fichiers et dossiers"
       ],
       "Important note": [
         "Remarque importante"
@@ -5504,6 +5513,9 @@
       ],
       "Key fingerprint": [
         "Empreinte de la clé"
+      ],
+      "Know when it's done": [
+        "Savoir quand c'est prêt"
       ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
@@ -5590,8 +5602,8 @@
       "New": [
         "Nouveau"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Ensuite, vous devrez vous connecter à votre compte Google et autoriser ${ BRAND_NAME } à accéder à vos données."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Ensuite, connectez-vous à votre compte Google et autorisez ${ BRAND_NAME } à accéder à Google Drive. Nous importerons vos fichiers et dossiers dans ${ DRIVE_APP_NAME }."
       ],
       "No": [
         "Non"
@@ -5750,9 +5762,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Veuillez patienter pendant que nous cherchons les contacts qui contiennent des données chiffrées avec la clé inactive."
       ],
-      "Premium privacy protection across all your devices": [
-        "Une protection optimale de la vie privée sur tous vos appareils"
-      ],
       "Preparing": [
         "Préparation en cours"
       ],
@@ -5780,6 +5789,9 @@
       "Primary": [
         "Principale"
       ],
+      "Private and encrypted": [
+        "Privé et chiffré"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navigation privée (ou mode « incognito ») sert uniquement à masquer vos activités sur votre appareil. Elle empêche votre navigateur d'enregistrer l'historique et les cookies, mais ne vous rend pas invisible. Votre FAI, votre administrateur réseau et les sites internet que vous consultez peuvent toujours voir ce que vous faites en ligne."
       ],
@@ -5788,9 +5800,6 @@
       ],
       "Read folder context": [
         "Lire le contexte du dossier"
-      ],
-      "Read once and encrypted on arrival": [
-        "Lecture unique et chiffrement à la réception"
       ],
       "Read this file": [
         "Lire ce fichier"
@@ -5879,9 +5888,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
-      "Sit back and we will let you know.": [
-        "Détendez-vous, nous vous tiendrons au courant."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Certains gouvernements bloquent ou restreignent l'accès à certains sites internet. Un VPN permet de contourner la censure tout en préservant la confidentialité de vos activités et de votre identité."
       ],
@@ -5899,9 +5905,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Restez connecté facilement en activant les paramètres VPN suivants :"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Continuez à souscrire à votre forfait et bénéficiez de 50 % de réduction sur votre abonnement du mois prochain"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
@@ -6145,9 +6148,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilisez ce formulaire pour nous signaler des fichiers partagés inappropriés, illégaux\nou tout autre fichier partagé malveillant. Vous êtes sur le point de signaler :"
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Sert uniquement à les copier dans ${ DRIVE_APP_NAME }."
-      ],
       "username": [
         "nom d'utilisateur"
       ],
@@ -6181,23 +6181,14 @@
       "We couldn’t process your payment.": [
         "Nous n'avons pas pu traiter votre paiement."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Nous ne prenons pas en charge l’importation de photos, de documents Google Docs, de feuilles de calcul Google Sheets et de présentations Google Slides. Veuillez vous assurer que votre Google Drive n’est pas vide."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Nous devons authentifier votre moyen de paiement auprès de votre banque."
       ],
       "We need to authenticate your payment with your bank.": [
         "Nous devons authentifier votre paiement auprès de votre banque."
       ],
-      "We support most files": [
-        "La plupart des fichiers sont pris en charge"
-      ],
       "We use 3-D Secure to protect your payments": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
-      ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Nous vous enverrons un e-mail dès que l’importation sera terminée. Une fois l’opération terminée, vous trouverez vos fichiers importés dans un dossier."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers ${ IDEAL_WERO_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
@@ -6205,8 +6196,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Nous allons les copier depuis Google Drive vers ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Nous vous enverrons un e-mail une fois l'importation terminée."
+      ],
+      "We'll email you when your import is complete.": [
+        "Nous vous enverrons un e-mail quand l'importation sera terminée."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Nous vous enverrons un e-mail quand l'importation sera terminée. Vos fichiers apparaîtront dans un dossier situé dans ${ DRIVE_APP_NAME }."
       ],
       "We'll notify you when the import is done.": [
         "Nous vous informerons dès que l'importation sera terminée."
@@ -6216,9 +6216,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
-      ],
-      "We're importing your files from Google Drive. We'll let you know once it's done.": [
-        "Nous importons actuellement vos fichiers depuis Google Drive. Nous vous préviendrons dès que l'opération sera terminée."
       ],
       "Week": [
         "Semaine"
@@ -6237,9 +6234,6 @@
       ],
       "Who has access": [
         "Qui a accès"
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Impossible d’importer des photos, des documents Google Docs et des feuilles de calcul Google Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -6379,6 +6373,9 @@
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Vos fichiers sont chiffrés et stockés en toute sécurité dans ${ DRIVE_APP_NAME }."
+      ],
       "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
         "Vos fichiers ont été importés et chiffrés avec succès depuis Google Drive vers ${ DRIVE_APP_NAME }."
       ],
@@ -6393,6 +6390,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Votre période d'essai a été convertie en abonnement mensuel. Votre date de renouvellement est le ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Il se peut que votre Google Drive soit vide ou ne contienne que des fichiers non pris en charge."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
@@ -11041,11 +11041,11 @@
       ]
     },
     "Subtitle": {
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importez vos fichiers et dossiers depuis Google Drive et conservez-les en privé dans ${ DRIVE_APP_NAME }."
+      ],
       "Shared by ${ sharedBy }": [
         "Partagé par ${ sharedBy }"
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Nous lisons vos fichiers une seule fois pour les copier, puis nous les chiffrons individuellement à l’aide de vos clés ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -11116,7 +11116,7 @@
         "Le lien sécurisé a été copié."
       ],
       "Undo in progress": [
-        "Annulation en cours"
+        "Annulation de l'importation en cours"
       ],
       "Verification successful": [
         "La vérification a abouti."
@@ -11175,6 +11175,9 @@
       ],
       "Actions": [
         "Actions"
+      ],
+      "Activated": [
+        "Activé"
       ],
       "Address": [
         "Adresse"
@@ -11407,9 +11410,6 @@
       "Connect your custom domain": [
         "Connectez votre domaine personnalisé"
       ],
-      "Connect your Google account": [
-        "Connectez-vous à votre compte Google"
-      ],
       "Contact Details": [
         "Informations du contact"
       ],
@@ -11566,6 +11566,9 @@
       "Easy switch": [
         "Basculement facile"
       ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch depuis Google Drive"
+      ],
       "Edit billing address": [
         "Modifier l'adresse de facturation"
       ],
@@ -11680,6 +11683,9 @@
       ],
       "Import groups": [
         "Importer des groupes"
+      ],
+      "Import started": [
+        "L'importation a commencé"
       ],
       "Import started, but your storage won't be enough for this import": [
         "L'importation a commencé, mais votre espace de stockage ne sera pas suffisant pour cette importation"
@@ -11804,6 +11810,9 @@
       "Photos": [
         "Photos"
       ],
+      "Preparing your import": [
+        "Votre importation est en cours de préparation."
+      ],
       "Preview": [
         "Aperçu"
       ],
@@ -11885,6 +11894,9 @@
       "Select link expiration date": [
         "Sélectionner la date d'expiration du lien"
       ],
+      "Select users to migrate": [
+        "Sélectionnez les utilisateurs à migrer"
+      ],
       "September Sale": [
         "Soldes de septembre"
       ],
@@ -11899,9 +11911,6 @@
       ],
       "Set up your organization": [
         "Configurez votre organisation"
-      ],
-      "Setting up your import": [
-        "Configuration de votre importation"
       ],
       "Settings": [
         "Paramètres"
@@ -11930,9 +11939,6 @@
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
-      "Sign in to Google": [
-        "Se connecter avec Google"
-      ],
       "Sign out": [
         "Se déconnecter"
       ],
@@ -11959,9 +11965,6 @@
       ],
       "Start import process": [
         "Démarrer l'importation"
-      ],
-      "Stay for 50% off your next month": [
-        "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
       ],
       "Stop sharing": [
         "Arrêter le partage"
@@ -12154,12 +12157,6 @@
       ],
       "Your import is finished!": [
         "L'importation est terminée !"
-      ],
-      "Your import is in progress": [
-        "Votre import est en cours."
-      ],
-      "Your import is starting": [
-        "Votre importation commence."
       ],
       "Your plan": [
         "Votre abonnement"

@@ -1926,12 +1926,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Автоматическое продление по цене ${ renewPrice } на ${ renewCycle } месяц",
-        "Автоматическое продление по цене ${ renewPrice } на ${ renewCycle } месяца",
-        "Автоматическое продление по цене ${ renewPrice } на ${ renewCycle } месяцев",
-        "Автоматическое продление по цене ${ renewPrice } на ${ renewCycle } месяцев"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Обновляется автоматически в ${ subscriptionManagerName }"
       ]
@@ -2163,9 +2157,6 @@
       ],
       "Discover and set up features": [
         "Настройте функции"
-      ],
-      "Get 50% offer": [
-        "Получить 50% скидку"
       ],
       "Maybe later": [
         "Может быть позже"
@@ -7084,9 +7075,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Доступ к 20 000+ серверов в 145 странах"
-      ],
       "Account monitor": [
         "Монитор аккаунта"
       ],
@@ -7789,9 +7777,6 @@
       "Failed to fetch logs.": [
         "Не удалось загрузить журналы."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Самые быстрые VPN-подключения — до 10 Гбит/с"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Только файлы (без фото, ${ DOCS_APP_NAME } или ${ SHEETS_APP_NAME }) — в общей сложности до 100 ГБ, 100 000 файлов и 50 ГБ на один файл"
       ],
@@ -7879,9 +7864,6 @@
       "Groups": [
         "Группы"
       ],
-      "Have some more time to decide without interruption.": [
-        "Обдумайте решение без спешки и перебоев."
-      ],
       "here": [
         "здесь"
       ],
@@ -7917,9 +7899,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Отменив подписку сейчас, ${ expiryDate } вы потеряете доступ к ${ BRAND_NAME } ${ planTitle }, в том числе к следующим функциям:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Если вы отмените, ваша подписка ${ planTitle } не будет продлена после истечения её срока действия ${ expiryDate }."
@@ -8491,9 +8470,6 @@
       "Preference saved": [
         "Настройка сохранена"
       ],
-      "Premium privacy protection across all your devices": [
-        "Премиальная защита конфиденциальности всех ваших устройств"
-      ],
       "Preview": [
         "Предпросмотр"
       ],
@@ -8541,9 +8517,6 @@
       ],
       "RECOMMENDED": [
         "РЕКОМЕНДУЕМЫЙ"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Рекомендуется на доверенных устройствах. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Восстановление по электронной почте недоступно, пока включена служба ${ PROTON_SENTINEL_NAME }."
@@ -8742,9 +8715,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Сохраните подписку и получите скидку 50% на следующий месяц"
       ],
       "Storage allocated to other users in this organisation": [
         "Хранилище, выделенное другим пользователям в этой организации"
@@ -8952,9 +8922,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Это позволит использовать PayPal для оплаты подписки на ${ BRAND_NAME }. Мы перенаправим вас на PayPal в новой вкладке браузера. Если вы используете какие-либо блокировщики всплывающих окон, пожалуйста, отключите их, чтобы продолжить."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Это позволит вам быстро и безопасно получить доступ к своему аккаунту ${ BRAND_NAME }, чтобы вы могли изменить свой пароль."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Это навсегда удалит данные и все адреса электронной почты, связанные с этим пользователем."
@@ -13621,9 +13588,6 @@
       ],
       "Card number": [
         "Номер карты"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Баланс на счете и скидки отражаются в счете на оплату"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "В настоящее время автоматическое продление подписки отключено. Если вы измените подписку сейчас, то автоматическое продление будет снова включено."
@@ -18639,9 +18603,6 @@
       ],
       "Status": [
         "Состояние"
-      ],
-      "Stay for 50% off your next month": [
-        "Оставайтесь и получите скидку 50% на следующий месяц"
       ],
       "Stay secure and connected anywhere": [
         "Оставайтесь в безопасности и на связи в любом месте"

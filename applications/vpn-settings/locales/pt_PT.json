@@ -1908,10 +1908,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Renova automaticamente por ${ renewPrice }, durante ${ renewCycle } mês",
-        "Renova automaticamente por ${ renewPrice }, durante ${ renewCycle } meses"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Renova automaticamente em ${ subscriptionManagerName }"
       ]
@@ -2139,9 +2135,6 @@
       ],
       "Discover and set up features": [
         "Descubra e configure as funcionalidades"
-      ],
-      "Get 50% offer": [
-        "Obtenha uma oferta de 50%"
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -8378,9 +8371,6 @@
       "RECOMMENDED": [
         "RECOMENDADO"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Recomendado em dispositivos confiáveis. ${ keepMeSignedInLearnMoreLink }"
-      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "A recuperação por e-mail não está disponível enquanto o ${ PROTON_SENTINEL_NAME } estiver ativado."
       ],
@@ -8775,9 +8765,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isto permitirá que o PayPal seja utilizado para pagar a sua subscrição da ${ BRAND_NAME }. Será redirecionado para o PayPal num novo separador do navegador. Se utiliza algum bloqueador de pop-ups, desative-o para continuar."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Isto permitir-lhe-á aceder de forma rápida e segura à sua Conta da ${ BRAND_NAME } para que possa alterar a sua palavra-passe."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Isto eliminará permanentemente os dados e todos os endereços de email associados a estes utilizadores."
@@ -13320,9 +13307,6 @@
       ],
       "Card number": [
         "Número do cartão"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Os créditos e descontos estão refletidos na sua fatura"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Atualmente, a renovação automática da subscrição está desativada. Se alterar a subscrição agora, a renovação automática será ativada novamente."

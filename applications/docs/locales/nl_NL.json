@@ -1370,9 +1370,6 @@
       "Continue your subscription": [
         "Uw abonnement voortzetten"
       ],
-      "Get 50% offer": [
-        "Neem de 50% deal"
-      ],
       "Maybe later": [
         "Misschien later"
       ]
@@ -3166,8 +3163,14 @@
       "IMAP server is required": [
         "IMAP-server is vereist"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Onjuist back-up wachtwoord. Probeer het opnieuw."
+      ],
       "Incorrect password. Please try again.": [
         "Onjuist wachtwoord. Probeer het opnieuw."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Onjuist tweede wachtwoord. Probeer het opnieuw."
       ],
       "Invalid coupon": [
         "Ongeldige kortingscode"
@@ -4691,9 +4694,6 @@
       "Accept/decline": [
         "Accepteren/weigeren"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Toegang tot meer dan 20.000 servers in 145 landen"
-      ],
       "Ad targeting": [
         "Advertentie doelwit"
       ],
@@ -4990,9 +4990,6 @@
       "Failing signatures will be re-signed by you": [
         "Mislukte handtekeningen zullen opnieuw worden ondertekend door u."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "De hoogste VPN-snelheden tot 10 Gbps"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
       ],
@@ -5023,9 +5020,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
       ],
-      "Have some more time to decide without interruption.": [
-        "Neem nog even de tijd om in alle rust een beslissing te nemen."
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Help ons deze ervaring te verbeteren door het probleem te melden. Als u er geen problemen mee heeft om de inhoud van de spreadsheet te delen, voeg dan de onderstaande foutopsporingsinformatie toe aan uw melding."
       ],
@@ -5043,9 +5037,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Als u nu annuleert, hebt u vanaf ${ expiryDate }geen toegang meer tot ${ BRAND_NAME } ${ planTitle }, waaronder deze functies:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
@@ -5347,9 +5338,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
       ],
-      "Premium privacy protection across all your devices": [
-        "Eersteklas privacybescherming op al uw apparaten"
-      ],
       "Preparing link to file": [
         "Link naar bestand wordt voorbereid"
       ],
@@ -5466,9 +5454,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Blijf moeiteloos verbonden door de volgende VPN-instellingen in te schakelen:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behoud uw abonnement aan en u ontvangt 50% korting op uw volgende maand"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Abonnement vernieuwt automatisch elke ${ cycle } maand.",
@@ -7998,6 +7983,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Laatste kans om aan deze prijs uw eerste maand ${ plan } te krijgen."
+      ],
       "Last day to save": [
         "Laatste dag om op te besparen"
       ],
@@ -8093,6 +8081,9 @@
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
+      ],
+      "Add a payment method": [
+        "Voeg een betaalmethode toe"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "U kunt op elk moment annuleren vóór ${ cancelDate }."
@@ -10249,9 +10240,6 @@
       ],
       "Start import process": [
         "Importproces starten"
-      ],
-      "Stay for 50% off your next month": [
-        "Blijf en ontvang 50% korting op uw volgende maand"
       ],
       "Stop sharing": [
         "Delen stoppen"

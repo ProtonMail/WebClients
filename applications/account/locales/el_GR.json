@@ -2321,6 +2321,9 @@
     "Action subscription": {
       "Reactivate": [
         "Επανενεργοποίηση"
+      ],
+      "View breakdown": [
+        "Δείτε την ανάλυση"
       ]
     },
     "Action: Sheets": {
@@ -3049,12 +3052,34 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewCycle } μήνα",
-        "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewCycle } μήνες"
+      "Free renewal": [
+        "Δωρεάν ανανέωση"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Δωρεάν ανανέωση, για ${ nextCycle } μήνα, στις ${ when }",
+        "Δωρεάν ανανέωση, για ${ nextCycle } μήνες, στις ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Ανανεώνεται αυτόματα με ${ introPrice }, για ${ nextCycle } μήνα, στις ${ when }",
+        "Ανανεώνεται αυτόματα με ${ introPrice }, για ${ nextCycle } μήνες, στις ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Ανανεώνεται αυτόματα σε ${ price }, για ${ cycle } μήνα",
+        "Ανανεώνεται αυτόματα σε ${ price }, για ${ cycle } μήνες"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Ανανεώνεται αυτόματα στο ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Μετάβαση σε ${ nextCycle } μήνα στις ${ when } (${ paidPrice } έχουν ήδη πληρωθεί)",
+        "Μετάβαση σε ${ nextCycle } μήνες στις ${ when } (${ paidPrice } έχουν ήδη πληρωθεί)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Μετά ${ price }, για ${ cycle } μήνα",
+        "Μετά ${ price }, για ${ cycle } μήνες"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Θα αντικατασταθεί από την επερχόμενη συνδρομή σας στις ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -3092,6 +3117,14 @@
       ],
       "Yearly": [
         "Ετησίως"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Χρέωση κατά την ανανέωση"
+      ],
+      "Prepaid": [
+        "Προπληρωμένο"
       ]
     },
     "Blog": {
@@ -3482,9 +3515,6 @@
       ],
       "Discover and set up features": [
         "Ανακαλύψτε και ρυθμίστε δυνατότητες"
-      ],
-      "Get 50% offer": [
-        "Επωφεληθείτε από προσφορά 50%"
       ],
       "Got it": [
         "Το κατάλαβα"
@@ -5098,6 +5128,11 @@
         "(μέσω ${ entryCountryName })"
       ]
     },
+    "Coupon": {
+      "Coupon applied": [
+        "Το κουπόνι εφαρμόστηκε"
+      ]
+    },
     "Create user accounts empty state": {
       "No search results found": [
         "Δεν βρέθηκαν αποτελέσματα αναζήτησης"
@@ -5379,6 +5414,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Μεταφέρετε τα μηνύματα, τις εκδηλώσεις ημερολογίου και τις επαφές σας από έναν άλλο πάροχο."
+      ],
+      "Bring over your files from another provider.": [
+        "Μεταφέρετε τα αρχεία σας από άλλο πάροχο."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Δημιουργήστε εμπιστοσύνη και αναγνώριση επωνυμίας με επαγγελματικές διευθύνσεις ηλεκτρονικού ταχυδρομείου στον δικό σας τομέα."
@@ -10185,6 +10223,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "Το ${ BRAND_NAME } δε μοιράζεται ποτέ τις πληροφορίες σας με τρίτους. Τα δεδομένα προέρχονται από τις αναλύσεις του ίδιου του ${ BRAND_NAME } και της Constella Intelligence."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "Το ${ BRAND_NAME } χρησιμοποιεί αυτήν την πρόσβαση μόνο για την εισαγωγή. Η Google δεν έχει ποτέ πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Pass Professional": [
         "${ BRAND_NAME } Pass Professional"
       ],
@@ -10570,9 +10611,6 @@
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Αποκτήστε πρόσβαση σε 6.500+ διακομιστές υψηλής ταχύτητας σε έως και 10 συσκευές για να διατηρήσετε ασφαλή τα δεδομένα περιήγησής σας. Διατίθεται σε ${ ios }, ${ android }, ${ appleTV } και ${ desktop }."
-      ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Πρόσβαση σε 20.000+ διακομιστές σε 145 χώρες"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Αποκτήστε πρόσβαση στους κωδικούς πρόσβασής σας και προστατέψτε τις ηλεκτρονικές σας ταυτότητες απρόσκοπτα σε όλες τις συσκευές σας. Κατεβάστε και εγκαταστήστε τις σχετικές ${ PASS_APP_NAME } εφαρμογές και προεκτάσεις."
@@ -11107,8 +11145,8 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Συνδέστε και διαχειριστείτε τα εξωτερικά σας γραμματοκιβώτια στο ${ MAIL_APP_NAME }."
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Σύνδεση στο Google Drive για τη ρύθμιση της ασφαλούς εισαγωγής στο ${ DRIVE_APP_NAME }."
+      "Connecting to Google Drive and preparing your import.": [
+        "Σύνδεση στο Google Drive και προετοιμασία εισαγωγής."
       ],
       "Connection data will be available in around 1 hour.": [
         "Τα δεδομένα σύνδεσης θα είναι διαθέσιμα σε περίπου 1 ώρα."
@@ -11467,9 +11505,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
       ],
-      "Email you once import is finished": [
-        "Θα σας στείλουμε ηλεκτρονικό μήνυμα μόλις ολοκληρωθεί η εισαγωγή."
-      ],
       "Emailing preference saved": [
         "Η προτίμηση email αποθηκεύτηκε"
       ],
@@ -11656,9 +11691,6 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Γρήγορη και συγκεντρωμένη. Ηλεκτρονικό ταχυδρομείο και ημερολόγιο, απευθείας στην επιφάνεια εργασίας σας."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Οι ταχύτερες ταχύτητες VPN έως και 10Gbps"
-      ],
       "Featured in": [
         "Όπως εμφανίζεται στο"
       ],
@@ -11709,9 +11741,6 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "Μόνο για ${ bundlePlanPriceInline }"
-      ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "Για να λειτουργήσει η εισαγωγή, πρέπει να επιλέξετε όλα τα ζητούμενα στοιχεία, όπως φαίνεται στο παραπάνω GIF."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
@@ -11818,9 +11847,6 @@
       "Groups": [
         "Ομάδες"
       ],
-      "Have some more time to decide without interruption.": [
-        "Έχετε λίγο περισσότερο χρόνο να αποφασίσετε χωρίς διακοπή."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Βοηθήστε άλλες οικογένειες να προσφέρουν στα παιδιά τους μια ασφαλή αρχή στο διαδίκτυο. Μοιραστείτε αυτό το ορόσημο και διαδώστε το μήνυμα."
       ],
@@ -11892,9 +11918,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Αν ακυρώσετε τώρα, θα χάσετε την πρόσβαση στο ${ BRAND_NAME } ${ planTitle } στις ${ expiryDate }, συμπεριλαμβανομένων αυτών των λειτουργιών:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Εάν ακυρώσετε, η συνδρομή σας ${ planTitle } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
@@ -11972,6 +11995,9 @@
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Εισαγάγετε μεταφορές μίας φοράς των email, ημερολογίων ή επαφών στον λογαριασμό σας στο ${ BRAND_NAME }."
+      ],
+      "Import your files and folders": [
+        "Εισαγάγετε τα αρχεία και τους φακέλους σας"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "ΣΗΜΑΝΤΙΚΟ: Εάν η κονσόλα DNS δεν επιτρέπει στις τιμές CNAME να τελειώνουν με τελεία, μπορείτε να καταργήσετε την τελευταία κουκκίδα στις τιμές CNAME."
@@ -12156,6 +12182,9 @@
       ],
       "Keys created": [
         "Τα κλειδιά δημιουργήθηκαν"
+      ],
+      "Know when it's done": [
+        "Μάθετε πότε έχει γίνει"
       ],
       "Label all imported messages as": [
         "Επισήμανση όλων των εισαγόμενων μηνυμάτων ως"
@@ -12361,8 +12390,8 @@
       "Next billing date": [
         "Επόμενη ημερομηνία χρέωσης"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να παραχωρήσετε στο ${ BRAND_NAME } πρόσβαση στα δεδομένα σας."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Στη συνέχεια, συνδεθείτε στον Λογαριασμό σας Google και επιτρέψτε στο ${ BRAND_NAME } να αποκτήσει πρόσβαση στο Google Drive. Θα εισαγάγουμε τα αρχεία και τους φακέλους σας στο ${ DRIVE_APP_NAME }."
       ],
       "No account keys exist": [
         "Δεν υπάρχουν κλειδιά λογαριασμού"
@@ -12686,9 +12715,6 @@
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium προστασία απορρήτου σε όλες τις συσκευές σας"
-      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -12712,6 +12738,9 @@
       ],
       "Private AI assistant": [
         "Ιδιωτικός βοηθός AI"
+      ],
+      "Private and encrypted": [
+        "Ιδιωτικό και κρυπτογραφημένο"
       ],
       "Product reviews, rankings, or guides": [
         "Κριτικές προϊόντων, κατατάξεις ή οδηγοί"
@@ -12743,9 +12772,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Επικοινωνήστε μαζί μας για βοήθεια σε οτιδήποτε ${ BRAND_NAME }."
       ],
-      "Read once and encrypted on arrival": [
-        "Ανάγνωση μίας φοράς και κρυπτογράφηση κατά την άφιξη"
-      ],
       "Receive notifications for ${ categoryLabel }": [
         "Λάβετε ειδοποιήσεις για ${ categoryLabel }"
       ],
@@ -12758,8 +12784,8 @@
       "RECOMMENDED": [
         "ΠΡΟΤΕΙΝΟΜΕΝΑ"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Συνιστάται σε αξιόπιστες συσκευές. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Συνιστάται σε αξιόπιστες συσκευές. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Η ανάκτηση μέσω μηνύματος ηλεκτρονικού ταχυδρομείου δεν είναι διαθέσιμη ενώ το ${ PROTON_SENTINEL_NAME } είναι ενεργοποιημένο."
@@ -13005,9 +13031,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
-      "Sit back and we will let you know.": [
-        "Καθίστε αναπαυτικά και θα σας ενημερώσουμε."
-      ],
       "Smart Routed through a different country.": [
         "Έξυπνη δρομολόγηση μέσω διαφορετικής χώρας."
       ],
@@ -13052,9 +13075,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Ξεκινήστε να χρησιμοποιείτε τη συντομότερη, πιο πιασάρικη έκδοση της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Μείνετε στο πλάνο σας και κερδίστε έκπτωση 50% τον επόμενο μήνα"
       ],
       "Step ${ step }": [
         "Βήμα ${ step }",
@@ -13374,7 +13394,7 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο ${ BRAND_NAME }. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
         "Αυτό θα σας επιτρέψει να αποκτήσετε γρήγορη και ασφαλή πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }, ώστε να μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
@@ -13686,9 +13706,6 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Χρησιμοποιήστε το MDM σας για να διαγράψετε το αρχείο ή εκτελέστε την εντολή ${ removeScriptLink } μέσω της εκτέλεσης σεναρίου του MDM σας. Οποιοδήποτε MDM που υποστηρίζει την ανάπτυξη αρχείων ή την εκτέλεση σεναρίων θα λειτουργήσει."
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Χρησιμοποιείται μόνο για την αντιγραφή τους στο ${ DRIVE_APP_NAME }."
-      ],
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
@@ -13809,9 +13826,6 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Εντοπίσαμε ότι έχετε ήδη συνδεθεί σε μια εφαρμογή ιστού ${ BRAND_NAME } σε **άλλο πρόγραμμα περιήγησης**. Ενδέχεται να μπορείτε να πραγματοποιήσετε επαναφορά κωδικού πρόσβασης από την ενεργή σας περίοδο λειτουργίας."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Δεν υποστηρίζουμε την εισαγωγή φωτογραφιών, καθώς και αρχείων Google Docs, Sheets και Slides. Βεβαιωθείτε ότι το Google Drive σας δεν είναι άδειο."
-      ],
       "We generated a strong password for you": [
         "Δημιουργήσαμε έναν ισχυρό κωδικό πρόσβασης για εσάς"
       ],
@@ -13842,14 +13856,8 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Συστήνουμε έντονα σε όλους να ενεργοποιήσουν την επαναφορά μέσω φράσης ανάκτησης."
       ],
-      "We support most files": [
-        "Υποστηρίζουμε τα περισσότερα αρχεία."
-      ],
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
-      ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Θα σας στείλουμε ηλεκτρονικό μήνυμα όταν ολοκληρωθεί η εισαγωγή. Μόλις ολοκληρωθεί, θα βρείτε τα δεδομένα της εισαγωγής σε έναν φάκελο."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο ${ IDEAL_WERO_BRAND_NAME }, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
@@ -13857,8 +13865,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Θα τα αντιγράψουμε από το Google Drive στο ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί η εισαγωγή."
+      ],
+      "We'll email you when your import is complete.": [
+        "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί η εισαγωγή σας."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου όταν ολοκληρωθεί η εισαγωγή σας. Τα αρχεία σας θα εμφανιστούν σε έναν φάκελο στο ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Θα επικοινωνήσουμε μαζί σας σύντομα."
@@ -13976,9 +13993,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Δεν γίνεται εισαγωγή φωτογραφιών, Google Docs και Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -14154,6 +14168,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Δεν απαιτείται πληρωμή αυτήν τη στιγμή. Η συνδρομή σας θα ανανεωθεί αυτόματα στο τέλος της δοκιμαστικής περιόδου."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο με ημερομηνία λήξης ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no calendars to export.": [
         "Δεν έχετε ημερολόγια για εξαγωγή."
       ],
@@ -14324,6 +14344,9 @@
       "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
         "Το αρχείο σας περιλαμβάνει έναν κωδικό πρόσβασης για κάθε χρήστη, επομένως αυτοί οι λογαριασμοί θα δημιουργηθούν με κωδικό πρόσβασης αντί για σύνδεσμο πρόσκλησης."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Τα αρχεία σας είναι κρυπτογραφημένα και αποθηκευμένα με ασφάλεια στο ${ DRIVE_APP_NAME }."
+      ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
@@ -14335,6 +14358,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Η δωρεάν δοκιμή σας μετατράπηκε επιτυχώς σε μηνιαία συνδρομή. Η ημερομηνία ανανέωσής σας είναι ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Το Google Drive σας μπορεί να είναι κενό ή να περιέχει μόνο αρχεία που δεν υποστηρίζονται."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Οι πληροφορίες σας είναι ασφαλείς μαζί μας. Θα επικοινωνήσουμε μαζί σας μόνο όταν απαιτείται για την παροχή των υπηρεσιών μας."
@@ -14562,6 +14588,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Δωρίστηκε"
+      ],
+      "Open": [
+        "Ανοικτό"
       ],
       "Paid": [
         "Πληρωμένο"
@@ -17147,6 +17176,9 @@
       ],
       "Pay invoice": [
         "Εξόφληση τιμολογίου"
+      ],
+      "Pay it": [
+        "Πλήρωσέ το"
       ],
       "Privacy policy": [
         "Πολιτική απορρήτου"
@@ -20804,9 +20836,6 @@
       ],
       "Card number": [
         "Αριθμός κάρτας"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Οι πιστώσεις και οι εκπτώσεις αντικατοπτρίζονται στην τιμολόγησή σας."
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Προς το παρόν, η αυτόματη ανανέωση της συνδρομής είναι απενεργοποιημένη. Εάν αλλάξετε τη συνδρομή τώρα, τότε η αυτόματη ανανέωση θα ενεργοποιηθεί ξανά."
@@ -25204,6 +25233,9 @@
       ],
       "Free Trial": [
         "Δωρεάν δοκιμαστική έκδοση"
+      ],
+      "Upcoming": [
+        "Προσεχή"
       ]
     },
     "Subtitle": {
@@ -25246,6 +25278,9 @@
       "Free forever": [
         "Δωρεάν για πάντα"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Εισαγάγετε τα αρχεία και τους φακέλους σας από το Google Drive και διατηρήστε τα ιδιωτικά στο ${ DRIVE_APP_NAME }."
+      ],
       "per month, billed annually": [
         "ανά μήνα, χρεώνεται ετησίως"
       ],
@@ -25260,9 +25295,6 @@
       ],
       "View VPN session details for your organization.": [
         "Δείτε τις λεπτομέρειες της περιόδου λειτουργίας VPN για τον οργανισμό σας."
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Διαβάζουμε τα αρχεία σας μία φορά για να τα αντιγράψουμε και, στη συνέχεια, κρυπτογραφούμε το καθένα με τα κλειδιά σας για το ${ BRAND_NAME }."
       ]
     },
     "Success": {
@@ -25889,6 +25921,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Αναφορά Παρακολούθησης"
       ],
+      "${ planTitle } breakdown": [
+        "Ανάλυση του ${ planTitle }"
+      ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } για οργανισμούς"
       ],
@@ -26304,9 +26339,6 @@
       "Connect your custom domain": [
         "Συνδέστε τον προσαρμοσμένο τομέα σας"
       ],
-      "Connect your Google account": [
-        "Συνδέστε τον Google λογαριασμό σας"
-      ],
       "Connected emails": [
         "Συνδεδεμένα email"
       ],
@@ -26617,6 +26649,9 @@
       ],
       "Downloads": [
         "Λήψεις"
+      ],
+      "Easy Switch from Google Drive": [
+        "Εύκολη Εναλλαγή από το Google Drive"
       ],
       "Edit billing address": [
         "Επεξεργασία διεύθυνσης χρέωσης"
@@ -26959,6 +26994,9 @@
       "Import key": [
         "Εισαγωγή κλειδιού"
       ],
+      "Import started": [
+        "Η εισαγωγή ξεκίνησε"
+      ],
       "Import started, but your storage won't be enough for this import": [
         "Η εισαγωγή ξεκίνησε, αλλά ο αποθηκευτικός σας χώρος δεν θα επαρκεί για αυτή την εισαγωγή."
       ],
@@ -27262,6 +27300,9 @@
       "Post-quantum protection": [
         "Μετα-κβαντική προστασία"
       ],
+      "Preparing your import": [
+        "Προετοιμασία της εισαγωγής σας"
+      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -27523,9 +27564,6 @@
       "Set your password": [
         "Ορίστε τον κωδικό πρόσβασης"
       ],
-      "Setting up your import": [
-        "Ρύθμιση της εισαγωγής σας"
-      ],
       "Settings": [
         "Ρυθμίσεις"
       ],
@@ -27552,9 +27590,6 @@
       ],
       "Sign in on TV?": [
         "Σύνδεση στην τηλεόραση;"
-      ],
-      "Sign in to Google": [
-        "Σύνδεση στο Google"
       ],
       "Sign in to join the Beta program": [
         "Συνδεθείτε για να συμμετάσχετε στο πρόγραμμα Beta"
@@ -27634,9 +27669,6 @@
       "Status": [
         "Κατάσταση"
       ],
-      "Stay for 50% off your next month": [
-        "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
-      ],
       "Stay secure and connected anywhere": [
         "Παραμείνετε ασφαλείς και συνδεδεμένοι οπουδήποτε"
       ],
@@ -27645,6 +27677,9 @@
       ],
       "Subscription": [
         "Συνδρομή"
+      ],
+      "Subscription breakdown": [
+        "Ανάλυση συνδρομής"
       ],
       "Subscription canceled": [
         "Η συνδρομή ακυρώθηκε"
@@ -27944,9 +27979,6 @@
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
       ],
-      "Your import is starting": [
-        "Η εισαγωγή σας εκκινεί"
-      ],
       "Your plan": [
         "Το πακέτο σας"
       ],
@@ -28068,11 +28100,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Χρεώσεις"
+      ],
       "End date": [
         "Ημερομηνία Λήξης"
       ],
       "Plan": [
         "Πρόγραμμα"
+      ],
+      "Price": [
+        "Τιμή"
+      ],
+      "Start date": [
+        "Ημερομηνία έναρξης"
       ],
       "Status": [
         "Κατάσταση"
