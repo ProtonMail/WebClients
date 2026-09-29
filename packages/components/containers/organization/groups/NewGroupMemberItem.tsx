@@ -12,9 +12,16 @@ interface Props {
     handleRemoveNewMember: (memberToRemove: NewGroupMember) => void;
     submitting?: boolean;
     showMailFeatures: boolean;
+    showCannotPromoteWarning: boolean;
 }
 
-export const NewGroupMemberItem = ({ member, handleRemoveNewMember, submitting, showMailFeatures }: Props) => {
+export const NewGroupMemberItem = ({
+    member,
+    handleRemoveNewMember,
+    submitting,
+    showMailFeatures,
+    showCannotPromoteWarning,
+}: Props) => {
     const { Name, Address, GroupMemberType } = member;
 
     return (
@@ -24,6 +31,7 @@ export const NewGroupMemberItem = ({ member, handleRemoveNewMember, submitting, 
                 memberName={Name}
                 groupMemberType={GroupMemberType}
                 showMailFeatures={showMailFeatures}
+                showCannotPromoteWarning={showCannotPromoteWarning}
             >
                 {!submitting ? (
                     <Button
