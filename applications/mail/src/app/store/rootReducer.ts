@@ -13,6 +13,7 @@ import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
 import { conversationCountsReducer } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsReducer } from '@proton/mail/store/counts/messageCountsSlice';
 import { filtersReducer } from '@proton/mail/store/filters';
+import { offersDeliveryReducer } from '@proton/offers-delivery/store/slice';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 
 import { attachmentsReducer } from './attachments/attachmentsSlice';
@@ -28,6 +29,7 @@ import { snoozeReducer } from './snooze/snoozeSlice';
 
 export const rootReducer = combineReducers({
     ...sharedReducers,
+    ...offersDeliveryReducer,
     ...filtersReducer,
     ...messageCountsReducer,
     ...conversationCountsReducer,

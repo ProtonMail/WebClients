@@ -4,8 +4,10 @@ import {
     startListeningToPlanNameChange,
     startPersistListener,
 } from '@proton/account';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
 import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';
+import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';
 import { mailSettingsHeartbeatListener } from '@proton/redux-shared-store/mailSettingsHeartbeatListener';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
@@ -29,4 +31,5 @@ export const start = ({ startListening }: { startListening: AppStartListening })
     startElementsListener(startListening);
     startCategoriesUnseenListener(startListening);
     startSearchChangeListener(startListening);
+    startOffersDeliveryListener(startListening, { appReady: bootstrapEvent });
 };
