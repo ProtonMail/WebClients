@@ -10,13 +10,11 @@ import {
 import DefaultQuickSettings from '@proton/components/components/drawer/views/quickSettings/DefaultQuickSettings';
 import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
 import { useDrive } from '@proton/drive';
-import { useFlagsDriveFoundationSearch } from '@proton/drive/modules/flags';
 
 import { useDebug } from '../../../legacy/hooks/drive/useDebug';
 import { useDiagnosticsModal } from '../../../modals/DiagnosticsModal';
 import { ClearSearchDataButton } from '../../../sections/search/clearSearchDataButton';
 import { downloadLogs } from '../../../utils/downloadLogs';
-import LegacyClearSearchDataButton from '../layout/search/ClearSearchDataButton';
 
 const DriveQuickSettings = () => {
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
@@ -24,12 +22,7 @@ const DriveQuickSettings = () => {
     const debug = useDebug();
     const [showDiagnosticsModal, openDiagnosticsModal] = useDiagnosticsModal();
 
-    const isSearchFoundationEnabled = useFlagsDriveFoundationSearch();
-    const clearSearchButton = isSearchFoundationEnabled ? (
-        <ClearSearchDataButton showConfirmModal={showConfirmModal} />
-    ) : (
-        <LegacyClearSearchDataButton showConfirmModal={showConfirmModal} />
-    );
+    const clearSearchButton = <ClearSearchDataButton showConfirmModal={showConfirmModal} />;
 
     return (
         <DrawerAppScrollContainer>

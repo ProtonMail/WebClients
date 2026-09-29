@@ -8443,7 +8443,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openpgp/web-stream-tools@npm:^0.3.1, @openpgp/web-stream-tools@npm:~0.3.1":
+"@openpgp/web-stream-tools@npm:~0.3.1":
   version: 0.3.1
   resolution: "@openpgp/web-stream-tools@npm:0.3.1"
   peerDependencies:
@@ -38021,7 +38021,6 @@ __metadata:
     "@jest/globals": "npm:^30.5.2"
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@noble/hashes": "npm:^1.8.0"
-    "@openpgp/web-stream-tools": "npm:^0.3.1"
     "@proton/account": "workspace:^"
     "@proton/activation": "workspace:^"
     "@proton/app-context": "workspace:^"
@@ -38030,7 +38029,6 @@ __metadata:
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
     "@proton/drive": "workspace:^"
-    "@proton/encrypted-search": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/features": "workspace:^"
     "@proton/hooks": "workspace:^"

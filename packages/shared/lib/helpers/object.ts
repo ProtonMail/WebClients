@@ -38,28 +38,6 @@ export const pick = <T extends object, K extends keyof T>(model: T, properties: 
 };
 
 /**
- * Compare two objects but not deeply
- */
-export const isEquivalent = (a: { [key: string]: any }, b: { [key: string]: any }) => {
-    const aProps = Object.getOwnPropertyNames(a);
-    const bProps = Object.getOwnPropertyNames(b);
-
-    if (aProps.length !== bProps.length) {
-        return false;
-    }
-
-    for (let i = 0; i < aProps.length; i++) {
-        const propName = aProps[i];
-
-        if (a[propName] !== b[propName]) {
-            return false;
-        }
-    }
-
-    return true;
-};
-
-/**
  * Create a map from a collection
  */
 export const toMap = <T extends { [key: string]: any }, K extends keyof T>(
