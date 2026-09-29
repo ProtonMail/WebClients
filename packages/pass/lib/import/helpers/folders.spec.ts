@@ -1,7 +1,8 @@
-import type { FolderData, Maybe, MaybeNull } from '../../../types';
+import type { FolderData, ItemImportIntent, Maybe, MaybeNull } from '../../../types';
 import type { FolderLimits, FoldersById } from '../../folders/folder.utils';
-import type { ImportFolder } from '../types';
-import { createImportFolderTree, planImportFolders } from './folders';
+import type { ImportFolder, ImportVault } from '../types';
+import { createImportFolderTree, planImportFolders, splitFoldersIntoVaults } from './folders';
+import { importNoteItem } from './transformers';
 
 const LIMITS: FolderLimits = { maxCountPerVault: 100, maxChildren: 10, maxDepth: 5 };
 
@@ -252,5 +253,65 @@ describe('planImportFolders', () => {
             expect(plan.create).toEqual([]);
             expect(plan.redirect[dropped!]).toBeNull();
         });
+    });
+});
+
+describe('splitFoldersIntoVaults', () => {
+    const item = (name: string, folderId: MaybeNull<string> = null): ItemImportIntent => ({
+        ...importNoteItem({ name }),
+        folderId,
+    });
+
+    const summary = (vaults: ImportVault[]) =>
+        vaults.map(({ name, folders, items }) => ({
+            name,
+            folders,
+            items: items.map(({ metadata, folderId }) => [metadata.name, folderId]),
+        }));
+
+    test('keeps a vault without folders as is', () => {
+        const vault: ImportVault = { name: 'vault', shareId: null, folders: [], items: [item('a')] };
+        expect(splitFoldersIntoVaults([vault])).toEqual([vault]);
+    });
+
+    test('turns each folder with items into a vault named after its path', () => {
+        const tree = createImportFolderTree({ separator: '/' });
+        const work = tree.add('work');
+        const deep = tree.add('work/deep');
+        tree.add('empty');
+
+        const vaults = splitFoldersIntoVaults([
+            {
+                name: 'vault',
+                shareId: null,
+                folders: tree.folders,
+                items: [item('root'), item('in work', work), item('in deep', deep), item('unknown', 'missing')],
+            },
+        ]);
+
+        expect(summary(vaults)).toEqual([
+            {
+                name: 'vault',
+                folders: [],
+                items: [
+                    ['root', null],
+                    ['unknown', null],
+                ],
+            },
+            { name: 'work', folders: [], items: [['in work', null]] },
+            { name: 'work/deep', folders: [], items: [['in deep', null]] },
+        ]);
+        expect(vaults.every(({ shareId }) => shareId === null)).toBe(true);
+    });
+
+    test('drops the original vault when every item is in a folder', () => {
+        const tree = createImportFolderTree();
+        const work = tree.add('work');
+
+        const vaults = splitFoldersIntoVaults([
+            { name: 'vault', shareId: null, folders: tree.folders, items: [item('in work', work)] },
+        ]);
+
+        expect(vaults.map(({ name }) => name)).toEqual(['work']);
     });
 });
