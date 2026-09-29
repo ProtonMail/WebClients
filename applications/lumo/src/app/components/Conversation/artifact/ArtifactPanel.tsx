@@ -10,6 +10,7 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
+import { useArtifactPanelSpotlight } from '../../../hooks/useArtifactPanelSpotlight';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
@@ -26,6 +27,7 @@ import { ArtifactExportOverlay } from './ArtifactExportOverlay';
 import { ArtifactInlineEdit } from './ArtifactInlineEdit';
 import { ArtifactPanelLoading } from './ArtifactPanelLoading';
 import { ArtifactPanelRevisionOverlay } from './ArtifactPanelRevisionOverlay';
+import { ArtifactPanelSpotlight } from './ArtifactPanelSpotlight';
 import { ArtifactSaveToDriveDropdown } from './ArtifactSaveToDriveDropdown';
 import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
 import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
@@ -455,6 +457,17 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     const { artifactsView: isArtifactsViewFlagEnabled } = useLumoFlags();
     const [saveToDriveModal, setSaveToDriveModal, renderSaveToDriveModal] = useModalState();
     const [saveToDriveFormat, setSaveToDriveFormat] = useState<ArtifactSaveFormat>('md');
+    const headerRef = useRef<HTMLDivElement>(null);
+    // Docked only: the fullscreen overlay stacks above spotlights, and the mobile layout has no room.
+    // Waits for generation to finish so it never covers content that is still streaming in.
+    const { shouldShowSpotlight, markSpotlightSeen, handleSpotlightDisplayed } = useArtifactPanelSpotlight(
+        layout === 'docked' &&
+            Boolean(selectedArtifact) &&
+            !isGenerating &&
+            !isSelectedVersionProvisional &&
+            !manualEditActive &&
+            exportingDownloadKind === null
+    );
 
     // Reset to the live preview whenever the user switches to a different artifact (or version) —
     // a user manually inspecting the source of one webpage shouldn't land back on the source of
@@ -638,48 +651,60 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
 
     return (
         <div className="flex flex-column h-full min-h-0 min-w-0 overflow-hidden w-full bg-norm">
-            <PanelHeader
-                type={artifact.type}
-                language={artifact.language}
-                title={artifact.title}
-                isStreaming={isSelectedVersionProvisional}
-                onCopy={handleCopy}
-                copySuccess={copySuccess}
-                onDownload={handleDownload}
-                onDownloadTxt={handleDownloadTxt}
-                onDownloadPdf={handleDownloadPdf}
-                onDownloadPptx={handleDownloadPptx}
-                canDownloadTxt={canDownloadTxt}
-                canDownloadPdf={canDownloadPdf}
-                canDownloadPptx={canDownloadPptx}
-                exportingDownload={exportingDownload}
-                exportHeaderStatusLabel={exportHeaderStatusLabel}
-                onClose={closePanel}
-                layout={layout}
-                onBack={isMobileView ? closePanel : undefined}
-                onEnterFullscreen={layout === 'docked' ? enterFullscreen : undefined}
-                onExitFullscreen={isFullscreen ? exitFullscreen : undefined}
-                versionIndex={selectedVersionIndex}
-                versionCount={versionCount}
-                onPrevVersion={() => {
-                    goToVersion(selectedVersionIndex - 1);
+            <ArtifactPanelSpotlight
+                anchorRef={headerRef}
+                show={shouldShowSpotlight}
+                onClose={() => {
+                    markSpotlightSeen();
                 }}
-                onNextVersion={() => {
-                    goToVersion(selectedVersionIndex + 1);
-                }}
-                switcherEntries={switcherEntries}
-                onSelectArtifact={openArtifact}
-                webpageViewMode={webpageViewMode}
-                onWebpageViewModeChange={setWebpageViewMode}
-                canManuallyEdit={canManuallyEdit}
-                manualEditActive={manualEditActive}
-                manualEditDirty={manualEditDirty}
-                onStartManualEdit={handleStartManualEdit}
-                onSaveManualEdit={handleSaveManualEdit}
-                onCancelManualEdit={handleCancelManualEdit}
-                artifactSaveFormats={artifactSaveFormats}
-                onSaveToDrive={handleSaveToDrive}
-            />
+                onDisplayed={handleSpotlightDisplayed}
+                isGuest={isGuest}
+            >
+                <div ref={headerRef} className="shrink-0 w-full min-w-0">
+                    <PanelHeader
+                        type={artifact.type}
+                        language={artifact.language}
+                        title={artifact.title}
+                        isStreaming={isSelectedVersionProvisional}
+                        onCopy={handleCopy}
+                        copySuccess={copySuccess}
+                        onDownload={handleDownload}
+                        onDownloadTxt={handleDownloadTxt}
+                        onDownloadPdf={handleDownloadPdf}
+                        onDownloadPptx={handleDownloadPptx}
+                        canDownloadTxt={canDownloadTxt}
+                        canDownloadPdf={canDownloadPdf}
+                        canDownloadPptx={canDownloadPptx}
+                        exportingDownload={exportingDownload}
+                        exportHeaderStatusLabel={exportHeaderStatusLabel}
+                        onClose={closePanel}
+                        layout={layout}
+                        onBack={isMobileView ? closePanel : undefined}
+                        onEnterFullscreen={layout === 'docked' ? enterFullscreen : undefined}
+                        onExitFullscreen={isFullscreen ? exitFullscreen : undefined}
+                        versionIndex={selectedVersionIndex}
+                        versionCount={versionCount}
+                        onPrevVersion={() => {
+                            goToVersion(selectedVersionIndex - 1);
+                        }}
+                        onNextVersion={() => {
+                            goToVersion(selectedVersionIndex + 1);
+                        }}
+                        switcherEntries={switcherEntries}
+                        onSelectArtifact={openArtifact}
+                        webpageViewMode={webpageViewMode}
+                        onWebpageViewModeChange={setWebpageViewMode}
+                        canManuallyEdit={canManuallyEdit}
+                        manualEditActive={manualEditActive}
+                        manualEditDirty={manualEditDirty}
+                        onStartManualEdit={handleStartManualEdit}
+                        onSaveManualEdit={handleSaveManualEdit}
+                        onCancelManualEdit={handleCancelManualEdit}
+                        artifactSaveFormats={artifactSaveFormats}
+                        onSaveToDrive={handleSaveToDrive}
+                    />
+                </div>
+            </ArtifactPanelSpotlight>
             <div
                 ref={contentRef}
                 className="artifact-content-area relative flex flex-column flex-1 min-h-0 min-w-0 overflow-hidden w-full"
