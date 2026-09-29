@@ -34,8 +34,15 @@ function hasCreateArtifactToolCallBlock(blocks: ContentBlock[]): boolean {
     });
 }
 
+// Explain only asks for a chat answer about the selection — it never revises the artifact, so it
+// must not trigger any artifact loading state. If the model calls create_artifact anyway, the
+// tool-call block check picks it up.
+function isExplainArtifactAction(parentUserMessage?: Message): boolean {
+    return parentUserMessage?.artifactAction?.kind === 'explain';
+}
+
 function parentUserSentArtifactAction(parentUserMessage?: Message): boolean {
-    if (!parentUserMessage) {
+    if (!parentUserMessage || isExplainArtifactAction(parentUserMessage)) {
         return false;
     }
 
@@ -93,7 +100,9 @@ export function isArtifactPanelGenerationLoading(input: {
 }
 
 function parentUserTargetedArtifactRevision(parentUserMessage: Message | undefined, artifactId: string): boolean {
-    if (!parentUserMessage) {
+    // Checked before artifactRevisionTargetId: Explain messages saved before it stopped being
+    // stamped still carry it, and regenerating one reuses that user message.
+    if (!parentUserMessage || isExplainArtifactAction(parentUserMessage)) {
         return false;
     }
 
