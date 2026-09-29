@@ -6,7 +6,6 @@ import type { Provider } from '@lexical/yjs'
 import { useMemo } from 'react'
 
 import { useYjsReadonly } from './useYjsReadonly'
-import type { EditorLoadResult } from '../../../../Lib/EditorLoadResult'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 type Props = {
@@ -14,11 +13,18 @@ type Props = {
   providerFactory: (id: string, yjsDocMap: Map<string, Doc>) => Provider
   lexicalError?: Error
   logger: LoggerInterface
-  onLoadResult: EditorLoadResult
+  onEditorReadyToReceiveUpdates: () => void
   safeMode: boolean
 }
 
-export function YjsReadonlyPlugin({ id, providerFactory, onLoadResult, safeMode, lexicalError, logger }: Props): null {
+export function YjsReadonlyPlugin({
+  id,
+  providerFactory,
+  onEditorReadyToReceiveUpdates,
+  safeMode,
+  lexicalError,
+  logger,
+}: Props): null {
   const collabContext = useCollaborationContext()
 
   const { yjsDocMap } = collabContext
@@ -27,7 +33,16 @@ export function YjsReadonlyPlugin({ id, providerFactory, onLoadResult, safeMode,
 
   const provider = useMemo(() => providerFactory(id, yjsDocMap), [id, providerFactory, yjsDocMap])
 
-  const binding = useYjsReadonly(editor, id, provider, yjsDocMap, onLoadResult, logger, safeMode, lexicalError)
+  const binding = useYjsReadonly(
+    editor,
+    id,
+    provider,
+    yjsDocMap,
+    onEditorReadyToReceiveUpdates,
+    logger,
+    safeMode,
+    lexicalError,
+  )
 
   collabContext.clientID = binding.clientID
 

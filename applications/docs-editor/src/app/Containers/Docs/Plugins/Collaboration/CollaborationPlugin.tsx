@@ -9,19 +9,15 @@ import { useYjsCollaboration } from './useYjsCollaboration'
 import { useYjsHistory } from './useYjsHistory'
 import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { useYjsFocusTracking } from './useYjsFocusTracking'
-import type { EditorLoadResult } from '../../../../Lib/EditorLoadResult'
 import { useScrollToUserCursorOnEvent } from './ScrollToUserCursorPlugin'
 import { useCustomCollaborationContext } from './CustomCollaborationContext'
 
 type Props = {
   id: string
-  providerFactory: (
-    // eslint-disable-next-line no-shadow
-    id: string,
-    yjsDocMap: Map<string, Doc>,
-  ) => Provider
+  providerFactory: (id: string, yjsDocMap: Map<string, Doc>) => Provider
   shouldBootstrap: boolean
-  onLoadResult: EditorLoadResult
+  onEditorReadyToReceiveUpdates: () => void
+  onEditorLoadError: (message: string) => void
   cursorsContainer: HTMLElement | null
   editorInitializationConfig: EditorInitializationConfig | undefined
   additionalAwarenessData: object
@@ -30,7 +26,8 @@ type Props = {
 export function CollaborationPlugin({
   id,
   providerFactory,
-  onLoadResult,
+  onEditorReadyToReceiveUpdates,
+  onEditorLoadError,
   cursorsContainer,
   editorInitializationConfig,
   additionalAwarenessData,
@@ -62,7 +59,8 @@ export function CollaborationPlugin({
     yjsDocMap,
     name,
     color,
-    onLoadResult,
+    onEditorReadyToReceiveUpdates,
+    onEditorLoadError,
     cursorsContainer,
     editorInitializationConfig,
     additionalAwarenessData,

@@ -34,7 +34,6 @@ import { TablePlugin } from './Plugins/Table/TablePlugin'
 import { SafeLexicalComposer } from './Utils/SafeLexicalComposer'
 import { CheckListPlugin } from './Plugins/CheckListPlugin'
 import { AutoFocusPlugin } from './Plugins/AutoFocusPlugin'
-import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { KeyboardShortcutsPlugin } from './Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
 import { PasteLimitPlugin } from './Plugins/PasteLimitPlugin'
 import { CombiningMarkPasteGuardPlugin } from './Plugins/CombiningMarkPasteGuardPlugin'
@@ -80,7 +79,8 @@ export type EditorProps = {
   editorInitializationConfig?: EditorInitializationConfig
   systemMode: EditorSystemMode
   userMode: EditorUserMode
-  onEditorLoadResult: EditorLoadResult
+  onEditorReadyToReceiveUpdates: () => void
+  onEditorLoadError: (message: string) => void
   onUserModeChange: (mode: EditorUserMode) => void
   setEditorRef: (instance: LexicalEditor | null) => void
   userAddress: string
@@ -101,7 +101,8 @@ export function Editor({
   role,
   hidden,
   onEditorError,
-  onEditorLoadResult,
+  onEditorReadyToReceiveUpdates,
+  onEditorLoadError,
   userMode,
   systemMode,
   onUserModeChange,
@@ -300,7 +301,8 @@ export function Editor({
             id={documentId}
             providerFactory={yjsWebsockProvider!}
             shouldBootstrap={ShouldBootstrap}
-            onLoadResult={onEditorLoadResult}
+            onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
+            onEditorLoadError={onEditorLoadError}
             cursorsContainer={collabCursorsContainer}
             editorInitializationConfig={editorInitializationConfig}
             additionalAwarenessData={awarenessData}
@@ -310,7 +312,7 @@ export function Editor({
           <YjsReadonlyPlugin
             id={documentId}
             providerFactory={yjsWebsockProvider!}
-            onLoadResult={onEditorLoadResult}
+            onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
             lexicalError={lexicalError}
             logger={logger}
             safeMode={safeMode}
