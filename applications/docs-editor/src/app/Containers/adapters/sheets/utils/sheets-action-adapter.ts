@@ -3,7 +3,7 @@ import {
   type SheetsActionType as StoredSheetsActionType,
 } from '@proton/docs-shared/lib/SheetsActionType'
 
-import type { SheetsActionType } from '../Spreadsheet/public'
+import type { SheetsActionType } from '../../../Spreadsheet/public'
 
 const storedSheetsActionTypes = {
   SetLocale: StoredSheetsActions.SetLocale,

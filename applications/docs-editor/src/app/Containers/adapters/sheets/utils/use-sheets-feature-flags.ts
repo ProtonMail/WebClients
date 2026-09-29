@@ -2,7 +2,7 @@ import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import { useEffect, useMemo, useState } from 'react'
 
-import type { SheetsFeatureFlags } from '../Spreadsheet/public'
+import type { SheetsFeatureFlags } from '../../../Spreadsheet/public'
 
 type FeatureFlagName = Parameters<EditorRequiresClientMethods['checkIfFeatureFlagIsEnabled']>[0]
 const areFeatureFlagsEnabledByEnvironment = isDevOrBlack()
