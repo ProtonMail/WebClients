@@ -30,23 +30,27 @@ const start = c('Info').ngettext(
     cycle
 )
 
-// ❌ Wrong - React elements in jt templates need key prop
-const price = <Price currency={currency}>{amount}</Price>;
-const text = c('Addon').jt`${price} per domain`; // Error: React element variable 'price' used in jt template must have a key prop
+// ❌ Wrong - ttag can only extract variables, member paths and literals
+c('Info').t`Due on ${format(date, 'PPP')}`; // Error: You can not use CallExpression
 
-// ❌ Wrong - Direct React elements in jt templates need key prop
-const text = c('Addon').jt`${<Price currency={currency}>{amount}</Price>} per domain`; // Error: React elements used in jt templates must have a key prop
+// ❌ Wrong - ttag needs text other than variables, digits and punctuation
+c('Placeholder').t`123.12`;
+
+// ❌ Wrong - English has exactly 2 plural forms
+c('Context').ngettext(msgid`${n} item`, `${n} items`, `${n} many items`, n)
+
+// ❌ Wrong - the counter must be a variable, a member path or a number
+c('Context').ngettext(msgid`${n} item`, `${n} items`, getCount())
 
 // ✅ Correct
+const dueDate = format(date, 'PPP');
+c('Info').t`Due on ${dueDate}`;
+
 c('Context').ngettext(
     msgid`Hello ${n}`,
     `Hello ${n}`,
     n
 )
-
-// ✅ Correct - React element with key prop
-const price = <Price key="price" currency={currency}>{amount}</Price>;
-const text = c('Addon').jt`${price} per domain`;
 
 */
 
@@ -66,23 +70,16 @@ const isMsgidTaggedTemplate = (node) => {
 };
 
 const getTemplateExpressions = (node, context) => {
-    if (node.type === 'TemplateLiteral') {
-        return node.expressions.map((exp) => {
-            if (exp.type === 'MemberExpression') {
-                return context.sourceCode.getText(exp);
-            }
-            return exp.name || exp.value;
-        });
+    const templateLiteral = node.type === 'TaggedTemplateExpression' ? node.quasi : node;
+    if (templateLiteral.type !== 'TemplateLiteral') {
+        return [];
     }
-    if (node.type === 'TaggedTemplateExpression' && node.quasi) {
-        return node.quasi.expressions.map((exp) => {
-            if (exp.type === 'MemberExpression') {
-                return context.sourceCode.getText(exp);
-            }
-            return exp.name || exp.value;
-        });
-    }
-    return [];
+    return templateLiteral.expressions.map((exp) => {
+        if (exp.type === 'MemberExpression') {
+            return context.sourceCode.getText(exp);
+        }
+        return exp.name || exp.value;
+    });
 };
 
 /**
@@ -156,17 +153,92 @@ const ensureVariablesAreNotUsedTwiceNgettext = (node, context, singularArg, plur
     });
 };
 
+const isTtagTemplateTag = (tag) => {
+    if (tag.type === 'Identifier') {
+        return ['t', 'jt', 'msgid'].includes(tag.name);
+    }
+    return (
+        tag.type === 'MemberExpression' &&
+        !tag.computed &&
+        ['t', 'jt'].includes(tag.property.name) &&
+        tag.object.type === 'CallExpression' &&
+        tag.object.callee.type === 'Identifier' &&
+        tag.object.callee.name === 'c'
+    );
+};
+
+/**
+ * Mirrors babel-plugin-ttag's expr2str: only these expressions can be extracted.
+ */
+const isExtractableExpression = (exp) => {
+    switch (exp.type) {
+        case 'Identifier':
+        case 'ThisExpression':
+            return true;
+        case 'Literal':
+            return typeof exp.value === 'number' || typeof exp.value === 'string';
+        case 'MemberExpression':
+            return isExtractableExpression(exp.object) && (!exp.computed || isExtractableExpression(exp.property));
+        default:
+            return false;
+    }
+};
+
+const ensureExpressionsAreExtractable = (context, templateLiteral) => {
+    templateLiteral.expressions.forEach((exp) => {
+        if (!isExtractableExpression(exp)) {
+            context.report({
+                node: exp,
+                message: `You can not use ${exp.type} '\${${context.sourceCode.getText(exp)}}' in localized strings. Assign it to a variable first.`,
+            });
+        }
+    });
+};
+
+// Same as babel-plugin-ttag's nonTextRegexp, without the ${} part since quasis never contain it
+const NON_TEXT_REGEXP = /\d|\s|[.,/#!$%^&*;{}=\-_`~()]/g;
+
+/**
+ * Mirrors babel-plugin-ttag's hasUsefulInfo: a string made only of variables, digits or punctuation can not be translated.
+ */
+const ensureHasText = (context, node, templateLiteral) => {
+    const text = templateLiteral.quasis.map((quasi) => quasi.value.raw).join('');
+    if (!text.replace(NON_TEXT_REGEXP, '')) {
+        context.report({
+            node,
+            message: `Can not translate '${context.sourceCode.getText(templateLiteral)}': it has no text outside variables, digits and punctuation.`,
+        });
+    }
+};
+
+/**
+ * Mirrors babel-plugin-ttag's validateNPlural.
+ */
+const isValidCounter = (node) =>
+    node.type === 'Identifier' ||
+    node.type === 'MemberExpression' ||
+    (node.type === 'Literal' && typeof node.value === 'number');
+
+// English has 2 plural forms, extraction fails for any other count
+const PLURAL_FORMS_COUNT = 2;
+
 export default {
     meta: {
         docs: {
             description:
-                'Ensure proper usage of msgid template tag and counter variable in ngettext calls, and key props on React elements in jt templates',
+                'Ensure proper usage of msgid template tag and counter variable in ngettext calls, and that ttag can extract every translation',
             category: 'Possible Errors',
             recommended: true,
         },
     },
     create: (context) => {
         return {
+            TaggedTemplateExpression(node) {
+                if (isTtagTemplateTag(node.tag)) {
+                    ensureExpressionsAreExtractable(context, node.quasi);
+                    ensureHasText(context, node, node.quasi);
+                }
+            },
             CallExpression(node) {
                 // First check regular translation calls
                 if (isNgettextCall(node)) {
@@ -192,6 +264,24 @@ export default {
                             });
                         }
                     });
+
+                    if (pluralArgs.length + 1 !== PLURAL_FORMS_COUNT) {
+                        context.report({
+                            node,
+                            message: `ngettext must have exactly ${PLURAL_FORMS_COUNT} forms (singular and plural) but has ${pluralArgs.length + 1}`,
+                        });
+                    }
+
+                    if (!isValidCounter(counterArg)) {
+                        context.report({
+                            node: counterArg,
+                            message: `${counterArg.type} '${context.sourceCode.getText(counterArg)}' can not be used as plural argument. Assign it to a variable first.`,
+                        });
+                    }
+
+                    pluralArgs
+                        .filter((arg) => arg.type === 'TemplateLiteral')
+                        .forEach((arg) => ensureExpressionsAreExtractable(context, arg));
 
                     ensureLastArgumentIsUsed(node, context, singularArg, pluralArgs, counterArg);
                     ensureVariablesAreNotUsedTwiceNgettext(node, context, singularArg, pluralArgs);
