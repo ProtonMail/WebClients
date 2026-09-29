@@ -147,7 +147,7 @@
         "applications/pass": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
             "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignoreDependencies": ["@proton/styles"]
         },
         "applications/pass-desktop": {
             "entry": [
