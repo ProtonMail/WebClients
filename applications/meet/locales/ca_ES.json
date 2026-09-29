@@ -84,7 +84,7 @@
         "S'ha aplicat el fons d'oficina difuminat"
       ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
-        "S'ha connectat a través del mode de relleu TURN a causa de restriccions de xarxa. Això pot augmentar la latència i afectar la qualitat de la trucada."
+        "S'ha connectat mitjançant el mode de reenviament de TURN a causa de restriccions de la xarxa. Això pot augmentar la latència i afectar la qualitat de la trucada."
       ],
       "Connection lost. Reconnecting…": [
         "S'ha perdut la connexió. S'està tornant a connectar…"
@@ -217,10 +217,10 @@
         "Aplica els canvis"
       ],
       "Assign ${ selectedParticipantName } as host": [
-        "Assigneu ${ selectedParticipantName } com a amfitrió"
+        "Assigna ${ selectedParticipantName } com a amfitrió"
       ],
       "Assign new host": [
-        "Assigneu un nou amfitrió"
+        "Assigna un amfitrió nou"
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
@@ -286,7 +286,7 @@
         "Copieu l'enllaç i tanqueu"
       ],
       "Copy meeting link": [
-        "Copieu l'enllaç de la reunió"
+        "Copia l'enllaç de la reunió"
       ],
       "Copy room link": [
         "Copia l'enllaç de la sala"
@@ -313,10 +313,10 @@
         "Refusa ${ participantName }"
       ],
       "Disable ${ participantName }'s video": [
-        "Desactiveu el vídeo de ${ participantName }"
+        "Desactiva el vídeo de ${ participantName }"
       ],
       "Disable camera": [
-        "Desactiveu la càmera"
+        "Desactiva la càmera"
       ],
       "Disable waiting room": [
         "Deshabilita la sala d'espera"
@@ -331,7 +331,7 @@
         "Ignora les mencions noves"
       ],
       "Dismiss new messages": [
-        "Descarteu els missatges nous"
+        "Descarta els missatges nous"
       ],
       "Done": [
         "Fet"
@@ -343,7 +343,7 @@
         "Descarrega l'aplicació"
       ],
       "Download local participant report": [
-        "Descarregueu l'informe del participant local"
+        "Descarrega l'informe de participants locals"
       ],
       "Download logs": [
         "Descarrega els registres"
@@ -352,7 +352,7 @@
         "Descarrega l'informe de participants"
       ],
       "Download recording": [
-        "Descarregueu l'enregistrament"
+        "Descarrega l'enregistrament"
       ],
       "Download room level report": [
         "Descarrega l'informe del nivell de la sala"
@@ -379,10 +379,10 @@
         "Habilita la sala d'espera"
       ],
       "End meeting": [
-        "Finalitzeu la reunió"
+        "Finalitza la reunió"
       ],
       "End meeting for all": [
-        "Finalitzeu la reunió per a tothom"
+        "Finalitza la reunió per a tothom"
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
@@ -415,10 +415,10 @@
         "Amaga les opcions"
       ],
       "Hide participants": [
-        "Amagueu els participants"
+        "Amaga els participants"
       ],
       "Hide timezones": [
-        "Amagueu els fusos horaris"
+        "Amaga els fusos horaris"
       ],
       "Incoming video": [
         "Vídeo entrant"
@@ -436,10 +436,10 @@
         "Uneix-te amb un enllaç"
       ],
       "Kick out": [
-        "Expulseu"
+        "Expulsa"
       ],
       "Kick out ${ participantName }": [
-        "Expulseu ${ participantName }"
+        "Expulsa ${ participantName }"
       ],
       "Leave": [
         "Surt"
@@ -460,7 +460,7 @@
         "Temporitzador de la reunió"
       ],
       "Minimize preview": [
-        "Minimitzeu la previsualització"
+        "Minimitza la previsualització"
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
@@ -469,7 +469,7 @@
         "Més opcions per als comptes"
       ],
       "Mute ${ participantName }": [
-        "Silencieu ${ participantName }"
+        "Silencia ${ participantName }"
       ],
       "Next month": [
         "Mes següent"
@@ -484,10 +484,10 @@
         "Cancel·lació de soroll"
       ],
       "Open app": [
-        "Obriu l'aplicació"
+        "Obre l'aplicació"
       ],
       "Open link": [
-        "Obriu l'enllaç"
+        "Obre l'enllaç"
       ],
       "Open mention from ${ senderName } in chat": [
         "Obre la menció de ${ senderName } al xat"
@@ -520,14 +520,14 @@
         "Pàgina anterior"
       ],
       "Raise hand": [
-        "Aixecar la mà"
+        "Alça la mà"
       ],
       "React with ${ emoji }": [
         "Reacciona amb ${ emoji }"
       ],
       "React with ${ emoji }, ${ identities.length } reaction": [
-        "Reaccioneu amb ${ emoji }, ${ identities.length } reacció",
-        "Reaccioneu amb ${ emoji }, ${ identities.length } reaccions"
+        "Reacciona amb ${ emoji }, ${ identities.length } reacció",
+        "Reacciona amb ${ emoji }, ${ identities.length } reaccions"
       ],
       "Receive video": [
         "Rep vídeo"
@@ -536,7 +536,7 @@
         "Enregistra"
       ],
       "Recording your microphone...": [
-        "S'està enregistrant el vostre micròfon..."
+        "S'està enregistrant el micròfon..."
       ],
       "Refer a friend": [
         "Recomana una amistat"
@@ -560,8 +560,8 @@
         "Esborra ${ name }"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
-        "Esborreu la reacció ${ emoji }, ${ identities.length } reacció",
-        "Esborreu la reacció ${ emoji }, ${ identities.length } reaccions"
+        "Esborra la reacció ${ emoji }, ${ identities.length } reacció",
+        "Esborra la reacció ${ emoji }, ${ identities.length } reaccions"
       ],
       "Reply": [
         "Respon"
@@ -612,7 +612,7 @@
         "Programa-la a ${ CALENDAR_APP_NAME }"
       ],
       "Screen share": [
-        "Compartir pantalla"
+        "Compartició de pantalla"
       ],
       "Search countries": [
         "Cerca països"
@@ -621,7 +621,7 @@
         "Vista pròpia"
       ],
       "Send an encrypted message": [
-        "Envieu un missatge xifrat"
+        "Envia un missatge xifrat"
       ],
       "Send reply": [
         "Envia la resposta"
@@ -669,10 +669,10 @@
         "Inicia una reunió"
       ],
       "Start recording": [
-        "Inicieu l'enregistrament"
+        "Inicia l'enregistrament"
       ],
       "Start Recording Track Stats": [
-        "Inicieu les estadístiques de gravació de pistes"
+        "Inicia l'enregistrament de les estadístiques de pista"
       ],
       "Start your own meeting": [
         "Comenceu la vostra pròpia reunió"
@@ -681,7 +681,7 @@
         "S'està iniciant…"
       ],
       "Stay in meeting": [
-        "Romaneu a la reunió"
+        "Roman a la reunió"
       ],
       "Stop opening meetings in the desktop app": [
         "Deixa d'obrir reunions a l'aplicació d'escriptori"
@@ -750,7 +750,7 @@
         "Utilitza'l"
       ],
       "Use microphone": [
-        "Utilitzeu el micròfon"
+        "Utilitza el micròfon"
       ],
       "Use recovery code": [
         "Utilitza un codi de recuperació"
@@ -766,6 +766,9 @@
       ],
       "View invoice": [
         "Mostra la factura"
+      ],
+      "View security details": [
+        "Veure els detalls de seguretat"
       ],
       "Virtual backgrounds": [
         "Fons virtuals"
@@ -797,16 +800,16 @@
         "Xat"
       ],
       "Close": [
-        "Tanqueu"
+        "Tanca"
       ],
       "Close search": [
         "Tanca cerca"
       ],
       "Copy link": [
-        "Copieu l'enllaç"
+        "Copia l'enllaç"
       ],
       "Copy meeting link": [
-        "Copieu l'enllaç de la reunió"
+        "Copia l'enllaç de la reunió"
       ],
       "Debug devices": [
         "Dispositius de depuració"
@@ -818,16 +821,16 @@
         "Depurador de dispositiu"
       ],
       "Go to dashboard": [
-        "Aneu al tauler de control"
+        "Ves al tauler de control"
       ],
       "Incoming video": [
         "Vídeo entrant"
       ],
       "Layout: ${ selectedLabel }": [
-        "Disseny: ${ selectedLabel }"
+        "Disposició: ${ selectedLabel }"
       ],
       "Leave Meeting": [
-        "Sortiu de la reunió"
+        "Surt de la reunió"
       ],
       "Live captions": [
         "Subtítols en directe"
@@ -851,7 +854,7 @@
         "Cancel·lació de soroll"
       ],
       "Open chat message search": [
-        "Obriu la cerca de missatges del xat"
+        "Obre la cerca de missatges del xat"
       ],
       "Open participants search": [
         "Obre la cerca de participants"
@@ -866,7 +869,7 @@
         "Imatge sobre imatge durant la compartició"
       ],
       "Raise hand": [
-        "Aixecar la mà"
+        "Alça la mà"
       ],
       "Rotate camera": [
         "Gira la càmera"
@@ -899,7 +902,7 @@
         "Commuta els participants"
       ],
       "Toggle screen share": [
-        "Alterneu la compartició de pantalla"
+        "Commuta la compartició de pantalla"
       ],
       "Toggle settings": [
         "Commuta les preferències"
@@ -936,7 +939,7 @@
         "Missatges de xat"
       ],
       "Device settings": [
-        "Configuració del dispositiu"
+        "Preferències del dispositiu"
       ],
       "Layouts": [
         "Disposicions"
@@ -945,7 +948,7 @@
         "Detalls de la reunió"
       ],
       "Meeting rooms": [
-        "Sales de reunions"
+        "Sales de reunió"
       ],
       "Microphone input level": [
         "Nivell d'entrada del micròfon"
@@ -2121,7 +2124,7 @@
         "No s'han pogut sol·licitar els subtítols en directe"
       ],
       "Failed to rotate personal meeting link": [
-        "No s'ha pogut rotar l'enllaç personal de la reunió"
+        "No s'ha pogut renovar l'enllaç de la reunió personal"
       ],
       "Failed to send chat message. Please try again.": [
         "No s'ha pogut enviar el missatge de xat. Torneu-ho a provar."
@@ -2167,6 +2170,12 @@
       ],
       "Image preview not found": [
         "No s’ha trobat la vista prèvia de la imatge"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segona contrasenya no és correcta. Torneu-ho a intentar."
       ],
       "Invalid meeting link": [
         "L'enllaç de la reunió no és vàlid"
@@ -2335,7 +2344,7 @@
         "El fitxer carregat no coincideix amb l'original. Torneu-ho a provar."
       ],
       "This background could not be saved in this browser.": [
-        "No s'ha pogut desar aquest fons en aquest navegador."
+        "No s'ha pogut desar el fons en aquest navegador."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
@@ -2592,7 +2601,7 @@
         "${ createAnActionAction } o ${ signInAction } per a accedir a la vostra sala personal i crear sales noves"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
-        "${ createAnActionAction } o ${ signInAction } per programar reunions"
+        "${ createAnActionAction } o ${ signInAction } per a programar reunions"
       ],
       "Talk in total ${ privacyWord }": [
         "Parleu amb una ${ privacyWord } total"
@@ -2637,6 +2646,14 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necessita WebRTC per funcionar. Actualitzeu el navegador o el dispositiu a una versió que sigui compatible amb WebRTC, proveu un altre navegador o desactiveu qualsevol extensió que l'estigui bloquejant."
       ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } membre",
+        "${ mlsMemberCount } membres"
+      ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "${ participantCount } participant està connectat, mentre que el grup segur en té ${ mlsMemberCountText }. Això pot passar temporalment quan algú s'hi afegeix o en surt.",
+        "${ participantCount } participants estan connectats, mentre que el grup segur en té ${ mlsMemberCountText }. Això pot passar temporalment quan algú s'hi afegeix o en surt."
+      ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } i ${ otherParticipantsCount } persones més estan enregistrant"
       ],
@@ -2644,7 +2661,7 @@
         "${ participantName } està enregistrant"
       ],
       "${ presenterName } (you) is presenting": [
-        "${ presenterName } (vós) esteu presentant"
+        "${ presenterName } (vós) està presentant"
       ],
       "${ presenterName } is presenting": [
         "${ presenterName } està presentant"
@@ -2673,14 +2690,14 @@
         "${ totalParticipantCount } participants"
       ],
       "${ waitingRoomParticipantsCount } person is waiting": [
-        "Hi ha ${ waitingRoomParticipantsCount } persona esperant",
-        "Hi ha ${ waitingRoomParticipantsCount } persones esperant"
+        "${ waitingRoomParticipantsCount } persona està esperant",
+        "${ waitingRoomParticipantsCount } persones estan esperant"
       ],
       "(You)": [
         "(Vós)"
       ],
       "-Removed dangerous URL-": [
-        "-S'ha eliminat un URL perillós-"
+        "-S'ha esborrat un URL perillós-"
       ],
       "1 reply draft": [
         "1 esborrany de resposta"
@@ -2692,7 +2709,7 @@
         "S'està afegint ${ name }"
       ],
       "Admit": [
-        "Admetre"
+        "Admet"
       ],
       "Admitting": [
         "S'està admetent"
@@ -2704,7 +2721,7 @@
         "Permeteu l'accés a la càmera per a previsualitzar el fons"
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
-        "Anònim ${ particle } ${ participantNumber }"
+        "${ particle } anònim ${ participantNumber }"
       ],
       "Anyone with the link can join immediately": [
         "Qualsevol persona amb l'enllaç s'hi pot unir immediatament"
@@ -2821,7 +2838,7 @@
         "Elimina l'esdeveniment"
       ],
       "Delete room": [
-        "Elimineu la sala"
+        "Elimina la sala"
       ],
       "Do you want people to ${ deviceContentType } you in the meeting?": [
         "Voleu que la gent us ${ deviceContentType } a la reunió?"
@@ -2875,7 +2892,7 @@
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
       "Everyone has been disconnected from the call.": [
-        "S'ha desconnectat tothom de la trucada."
+        "Tothom ha estat desconnectat de la trucada."
       ],
       "Expires in ${ formattedCountdown }": [
         "Caduca el ${ formattedCountdown }"
@@ -2950,7 +2967,7 @@
         "Voleu sortir de la reunió i deixar de compartir?"
       ],
       "Leaving the meeting will stop your screen sharing.": [
-        "Si sortiu de la reunió, es deixarà de compartir la vostra pantalla."
+        "Si sortiu de la reunió, es deixarà de compartir la pantalla."
       ],
       "Left ${ roomNameLabel }": [
         "Heu sortit de ${ roomNameLabel }"
@@ -3040,7 +3057,7 @@
         "Accions del missatge"
       ],
       "Message from ${ participantName }": [
-        "Missatge de ${ participantName }"
+        "Hi ha un missatge de ${ participantName }"
       ],
       "microphone": [
         "micròfon"
@@ -3064,13 +3081,13 @@
         "Nova"
       ],
       "New host": [
-        "Nou amfitrió"
+        "Amfitrió nou"
       ],
       "New reply": [
-        "Nova resposta"
+        "Resposta nova"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
-        "No s'ha detectat cap ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
+        "No s'han detectat ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
       ],
       "No camera detected": [
         "No s'ha detectat cap càmera"
@@ -3097,13 +3114,13 @@
         "No s'ha trobat cap resultat."
       ],
       "No search results": [
-        "No s'ha trobat cap resultat de la cerca"
+        "No hi ha resultats de la cerca"
       ],
       "No speaker detected": [
         "No s'ha detectat cap altaveu"
       ],
       "Not sent, check your connection.": [
-        "No s'ha enviat, comproveu la vostra connexió."
+        "No s'ha enviat. Comproveu la connexió."
       ],
       "notify everyone here": [
         "notificar-ho a tothom aquí"
@@ -3118,7 +3135,7 @@
         "Altres comptes"
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
-        "Les nostres reunions xifrades d’extrem a extrem protegeixen la privacitat i fomenten la llibertat d'expressió real."
+        "Les nostres reunions xifrades d'extrem a extrem protegeixen la privacitat i fomenten una expressió realment lliure."
       ],
       "Page ${ displayPage } of ${ totalPages }": [
         "Pàgina ${ displayPage } de ${ totalPages }"
@@ -3126,11 +3143,17 @@
       "Participant": [
         "Participant"
       ],
+      "Participant counts don’t match": [
+        "El nombre de participants no coincideix"
+      ],
       "Participants can turn live captions on. Turn on your own under Display.": [
         "Els participants poden activar els subtítols en directe. Activeu els vostres a Visualització."
       ],
       "Participants can’t use live captions": [
         "Els participants no poden fer servir els subtítols en directe"
+      ],
+      "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
+        "Participants mostra qui està connectat en aquest moment. Els membres d'MLS mostra qui està inclòs en el grup de seguretat de la reunió. Aquests números poden diferir breument, però la diferència ha durat més de l'esperat."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Enganxeu l'enllaç de ${ MEET_APP_NAME } per unir-vos a una reunió segura"
@@ -3154,7 +3177,7 @@
         "Us presentem"
       ],
       "Preview unavailable": [
-        "Previsualització no disponible"
+        "La previsualització no està disponible"
       ],
       "privacy": [
         "privacitat"
@@ -3172,7 +3195,7 @@
         "S'està tornant a connectar amb la reunió..."
       ],
       "Record your meetings": [
-        "Graveu les vostres reunions"
+        "Enregistreu les vostres reunions"
       ],
       "Record your raw camera feed and the production background blur side by side. Stopping downloads both clips.": [
         "Enregistreu la transmissió de la càmera sense processar i la difuminació de fons de producció l'un al costat de l'altre. Si atureu l'enregistrament, es descarregaran tots dos clips."
@@ -3214,16 +3237,16 @@
         "Programeu la pròxima reunió. Creeu un compte per a programar reunions amb el calendari."
       ],
       "Select a camera": [
-        "Seleccioneu una càmera"
+        "Selecciona una càmera"
       ],
       "Select a microphone": [
-        "Seleccioneu un micròfon"
+        "Selecciona un micròfon"
       ],
       "Select a participant to assign as the new host before you go: ": [
         "Abans de marxar seleccioneu un participant per assignar com a nou amfitrió: "
       ],
       "Select a speaker": [
-        "Seleccioneu un altaveu"
+        "Selecciona un altaveu"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -3235,7 +3258,7 @@
         "Configureu una sala de reunions permanent per al vostre equip o per als vostres clients"
       ],
       "Share screen": [
-        "Compartiu la pantalla"
+        "Comparteix la pantalla"
       ],
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
         "Compartiu aquest enllaç per convidar altres persones. També el podeu trobar en qualsevol moment fent clic a la icona d'informació de la barra d'eines."
@@ -3274,7 +3297,7 @@
         "L'amfitrió us ha tret d'aquesta reunió. Si ha estat un error, demaneu-li que us torni a convidar."
       ],
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "L'enllaç de la reunió que heu intentat obrir no existeix o pot haver caducat. Assegureu-vos que l'enllaç sigui correcte o inicieu una nova reunió segura."
+        "L'enllaç de la reunió que heu intentat obrir no existeix o pot haver caducat. Assegureu-vos que l'enllaç és correcte o inicieu una reunió segura nova ."
       ],
       "This conversation started before you joined.": [
         "Aquesta conversa ha començat abans que us hi uníssiu."
@@ -3331,7 +3354,7 @@
         "Demà — ${ absoluteDate }"
       ],
       "Turn off camera": [
-        "Desactiveu la càmera"
+        "Desactiva la càmera"
       ],
       "Turn on camera": [
         "Activa la càmera"
@@ -3430,7 +3453,7 @@
         "Deixareu la reunió. Els altres continuaran."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
-        "Se us ha convidat a unir-vos a una reunió segura. Confirmeu el vostre nom i feu clic a continuació per introduir."
+        "Us han convidat a unir-vos a una reunió segura. Confirmeu el vostre nom i feu clic a continuació per entrar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els enllaços compartits de Drive es bloquejaran i no podreu carregar-hi fitxers nous. Per a restablir el servei normal, pagueu les factures vençudes."
@@ -3517,7 +3540,7 @@
         "Agent"
       ],
       "Anyone with the link can join": [
-        "Qualsevol persona amb aquest enllaç podrà accedir-hi"
+        "Qualsevol persona amb l'enllaç s'hi podrà unir"
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
@@ -3547,7 +3570,7 @@
         "Versió del navegador"
       ],
       "Camera Active": [
-        "Càmera activa"
+        "La càmera és activa"
       ],
       "Category": [
         "Categoria"
@@ -3592,7 +3615,7 @@
         "No es repeteix"
       ],
       "Download .ics": [
-        "Descarregueu .ics"
+        "Descarrega .ics"
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -3736,7 +3759,7 @@
         "Programa una reunió"
       ],
       "Screen share": [
-        "Compartir pantalla"
+        "Compartició de pantalla"
       ],
       "Selected Camera": [
         "Càmera seleccionada"
@@ -3751,7 +3774,7 @@
         "Idioma parlat"
       ],
       "Subscribed": [
-        "Subscrits"
+        "Subscrit"
       ],
       "System information": [
         "Informació del sistema"
@@ -3818,7 +3841,7 @@
         "Crea i copia l'enllaç"
       ],
       "Create new room": [
-        "Creeu una sala nova"
+        "Crea una sala"
       ],
       "Meeting rooms can be used at any time": [
         "Les sales de reunions es poden utilitzar en qualsevol moment"
@@ -3839,7 +3862,7 @@
     },
     "meet_2025 Action": {
       "Leave meeting": [
-        "Sortiu de la reunió"
+        "Abandona la reunió"
       ],
       "Stay in the meeting": [
         "Roman a la reunió"
@@ -3898,7 +3921,7 @@
         "No podia veure la presentació"
       ],
       "Others couldn't hear me": [
-        "Els altres no m'han pogut sentir"
+        "Els altres no em podien sentir"
       ],
       "Others couldn't see my video": [
         "Els altres no podien veure el meu vídeo"
@@ -4107,7 +4130,7 @@
     },
     "Success": {
       "Assigned new host": [
-        "S'ha assignat un nou amfitrió"
+        "S'ha assignat un amfitrió nou"
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
@@ -4201,7 +4224,7 @@
         "No s'ha pogut preparar l'enregistrament"
       ],
       "Create new room": [
-        "Creeu una sala nova"
+        "Crea una sala"
       ],
       "Custom background tester": [
         "Provador de fons personalitzats"
@@ -4255,7 +4278,7 @@
         "Enllaç d'invitació"
       ],
       "Join a meeting": [
-        "Afegiu-vos a la reunió"
+        "Unió a una reunió"
       ],
       "Join meeting": [
         "Uniu-vos a la reunió"
@@ -4297,11 +4320,17 @@
       "Minicalendar": [
         "Minicalendari"
       ],
+      "MLS members": [
+        "Membres d'MLS"
+      ],
       "No one is waiting": [
         "No hi ha ningú en espera"
       ],
       "No results found": [
         "No s'ha trobat cap resultat."
+      ],
+      "Participant counts don’t match": [
+        "El nombre de participants no coincideix"
       ],
       "Participants": [
         "Participants"
@@ -4316,7 +4345,7 @@
         "Sala de reunions personal"
       ],
       "Preparing your recording…": [
-        "S'està preparant el vostre enregistrament..."
+        "S'està preparant l'enregistrament..."
       ],
       "Publications": [
         "Publicacions"
@@ -4400,7 +4429,7 @@
         "Què ha anat malament?"
       ],
       "Your recording is ready": [
-        "El vostre enregistrament està a punt"
+        "L'enregistrament està a punt"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4416,10 +4445,16 @@
         "El vostre navegador no admet els efectes de fons"
       ],
       "Generate a new meeting link. The current link will stop working.": [
-        "Genereu un enllaç de reunió nou. L'enllaç actual deixarà de funcionar."
+        "Genera un enllaç de reunió nou. L'enllaç actual deixarà de funcionar."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
+        "Assistència d'IA instantània, amb una persona experta a la vostra disposició!"
+      ],
+      "People currently connected to the meeting": [
+        "Persones connectades actualment a la reunió"
+      ],
+      "People included in meeting's MLS group": [
+        "Persones incloses en el grup MLS de la reunió"
       ],
       "Recurring meeting": [
         "Reunió periòdica"
@@ -4466,7 +4501,7 @@
         "La connexió UDP de STUN ha fallat. S'està provant amb el reenviament de TURN…"
       ],
       "STUN UDP connection timeout, trying with TURN relay": [
-        "La connexió UDP de STUN ha superat el temps d'espera,. S'està provant amb el reenviament de TURN"
+        "La connexió UDP de STUN ha superat el temps d'espera. S'està provant amb el reenviament de TURN"
       ],
       "Trying another route…": [
         "S'està provant una altra ruta…"

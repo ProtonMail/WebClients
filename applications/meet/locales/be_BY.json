@@ -64,11 +64,29 @@
       "Background removed": [
         "Фон выдалены"
       ],
+      "Beach landscape background applied": [
+        "Фон пляжнага пейзажу прыменены"
+      ],
+      "Blurred background applied": [
+        "Прыменена размыццё фону"
+      ],
+      "Blurred office background applied": [
+        "Прыменена размыццё фону офіса"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Падключана праз рэжым рэтрансляцыі TURN з прычыны абмежаванняў сеткі. Гэта можа павялічыць затрымку і паўплываць на якасць сувязі."
       ],
       "Connection lost. Reconnecting…": [
         "Падключэнне страчана. Адбываецца перападключэнне..."
+      ],
+      "Dark ${ BRAND_NAME } background applied": [
+        "Цёмны фон ${ BRAND_NAME } прыменены"
+      ],
+      "Library background applied": [
+        "Прыменены фон бібліятэкі"
+      ],
+      "Light ${ BRAND_NAME } background applied": [
+        "Светлы фон ${ BRAND_NAME } прыменены"
       ],
       "New chat message: ${ message }": [
         "Новае паведамленне чата: ${ message }"
@@ -133,13 +151,25 @@
       "You have been muted by the host": [
         "Арганізатар сустрэчы адключыў вам гук"
       ],
+      "You were mentioned: ${ message }": [
+        "Вы былі згаданы: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "Ваша камера была выключана арганізатарам сустрэчы"
+      ],
+      "Your own background applied": [
+        "Ваш уласны фон прыменены"
       ]
     },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } новае згадванне",
+        "${ newMentionCount } новыя згадванні",
+        "${ newMentionCount } новых згадванняў",
+        "${ newMentionCount } новых згадванняў"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } новы",
@@ -450,6 +480,9 @@
       "Open link": [
         "Адкрыць спасылку"
       ],
+      "Open mention from ${ senderName } in chat": [
+        "Адкрыць згадванне ад ${ senderName } у чаце"
+      ],
       "Participants join after you approve them": [
         "Удзельнікі далучаюцца пасля таго, як вы іх ухваліце"
       ],
@@ -458,6 +491,9 @@
       ],
       "Pause": [
         "Прыпыніць"
+      ],
+      "Picture-in-picture while sharing": [
+        "Відарыс у відарысе (PiP) пры абагульванні"
       ],
       "Playing back...": [
         "Узнаўленне..."
@@ -491,6 +527,9 @@
       ],
       "Record": [
         "Запісаць"
+      ],
+      "Recording your microphone...": [
+        "Запіс вашага мікрафона..."
       ],
       "Refer a friend": [
         "Запрасіць сябра"
@@ -723,6 +762,9 @@
       "View invoice": [
         "Паглядзець рахунак"
       ],
+      "View security details": [
+        "Паглядзець падрабязнасці бяспекі"
+      ],
       "Virtual backgrounds": [
         "Віртуальныя фоны"
       ],
@@ -779,6 +821,9 @@
       "Incoming video": [
         "Уваходнае відэа"
       ],
+      "Layout: ${ selectedLabel }": [
+        "Макет: ${ selectedLabel }"
+      ],
       "Leave Meeting": [
         "Выйсці з сустрэчы"
       ],
@@ -814,6 +859,9 @@
       ],
       "Participants": [
         "Удзельнікі"
+      ],
+      "Picture-in-picture while sharing": [
+        "Відарыс у відарысе (PiP) пры абагульванні"
       ],
       "Raise hand": [
         "Падняць руку"
@@ -1941,6 +1989,15 @@
       "Could not unlock this item": [
         "Немагчыма разблакіраваць гэты элемент"
       ],
+      "Couldn’t play the recording on this speaker.": [
+        "Немагчыма прайграць запіс на гэтым дынаміку."
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "Немагчыма прайграць тэставы гук на гэтым дынаміку."
+      ],
+      "Couldn’t start the microphone test.": [
+        "Немагчыма запусціць тэст мікрафона."
+      ],
       "Creating documents in non-folders is not allowed": [
         "Стварэнне дакументаў па-за іх межамі забаронена"
       ],
@@ -2085,6 +2142,12 @@
       "Image preview not found": [
         "Папярэдні прагляд відарыса не знойдзены"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Няправільны рэзервовы пароль. Паўтарыце спробу."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Няправільны другі пароль. Паўтарыце спробу."
+      ],
       "Invalid meeting link": [
         "Памылковая спасылка на сустрэчу"
       ],
@@ -2111,6 +2174,9 @@
       ],
       "Live captions have stopped.": [
         "Дынамічныя цітры спынены."
+      ],
+      "Message is too long to send": [
+        "Занадта доўгае паведамленне для адпраўкі"
       ],
       "Missing inviter email": [
         "Электронная пошта запрошанай асобы адсутнічае"
@@ -2169,6 +2235,9 @@
       "Photo not found": [
         "Фатаграфія не знойдзена"
       ],
+      "Pick a JPEG, PNG or WebP image.": [
+        "Выберыце відарыс JPEG, PNG або WebP"
+      ],
       "Please allow screen sharing in your system permissions, then try again": [
         "Дазвольце абагульванне экрана ў сістэмных дазволах, а потым паўтарыце спробу"
       ],
@@ -2186,6 +2255,9 @@
       ],
       "Screen share is not supported on mobile browsers": [
         "Абагульванне экрана не падтрымліваецца ў мабільных браўзерах"
+      ],
+      "Screen share is not supported on your device": [
+        "Абагульванне экрана не падтрымліваецца на вашай прыладзе"
       ],
       "Signature is missing": [
         "Подпіс адсутнічае"
@@ -2502,6 +2574,9 @@
       " and ": [
         " і "
       ],
+      "${ deviceLabel } is available again": [
+        "${ deviceLabel } зноў даступна"
+      ],
       "${ maxParticipants } participant limit reached": [
         "Дасягнута абмежаванне па колькасці ўдзельнікаў (максімум: ${ maxParticipants })"
       ],
@@ -2516,6 +2591,12 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "Для працы ${ MEET_APP_NAME } патрэбны WebRTC. Абнавіце свой браўзер або прыладу да версіі, якую падтрымлівае WebRTC, паспрабуйце іншы браўзер, або адключыце любыя пашырэнні, якія могуць блакіраваць яго."
+      ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } удзельнік",
+        "${ mlsMemberCount } удзельнікі",
+        "${ mlsMemberCount } удзельнікаў",
+        "${ mlsMemberCount } удзельнікаў"
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } і яшчэ ${ otherParticipantsCount } удзельнік запісваюць"
@@ -2540,6 +2621,9 @@
         "${ replyCount } адказы",
         "${ replyCount } адказаў",
         "${ replyCount } адказаў"
+      ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } згадаў вас"
       ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } з ${ maxParticipants } максімальных удзельнікаў"
@@ -2571,8 +2655,17 @@
       "Admitting": [
         "Прыняцце"
       ],
+      "Allow camera access to preview your background": [
+        "Дазвольце камеры атрымаць доступ да папярэдняга прагляду фону"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Ананімны ${ particle } ${ participantNumber }"
+      ],
+      "Anyone with the link can join immediately": [
+        "Любы карыстальнік з гэтай спасылкай зможа неадкладна далучыцца да сустрэчы"
+      ],
+      "Approve participants before they can join": [
+        "Ухваліце ўдзельнікаў, перад іх далучэннем"
       ],
       "Are you sure you want to leave?": [
         "Вы ўпэўнены, што хочаце выйсці?"
@@ -2585,6 +2678,12 @@
       ],
       "Author is not provided on public link": [
         "Аўтар не пазначаны ў публічнай спасылцы"
+      ],
+      "Available with a paid plan": [
+        "Даступна з платным тарыфным планам"
+      ],
+      "Background blur initializing": [
+        "Ініцыялізацыя размыцця фону"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага кода спраўджання праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
@@ -2727,8 +2826,14 @@
       "Everyone has been disconnected from the call.": [
         "Усе ўдзельнікі былі адключаны ад званка."
       ],
+      "Expires in ${ formattedCountdown }": [
+        "Тэрмін дзеяння міне праз ${ formattedCountdown }"
+      ],
       "Failed to apply background blur": [
         "Не ўдалося прымяніць размыты фон"
+      ],
+      "Failed to apply custom background": [
+        "Не ўдалося прымяніць карыстальніцкі фон"
       ],
       "Failed to update meeting name": [
         "Не ўдалося абнавіць назву сустрэчы"
@@ -2811,6 +2916,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
+      "Loading meeting details...": [
+        "Загрузка падрабязнасцяў сустрэчы"
+      ],
       "Loading meetings...": [
         "Загрузка сустрэч..."
       ],
@@ -2864,6 +2972,9 @@
       ],
       "Member": [
         "Удзельнік"
+      ],
+      "Mention from ${ senderName }": [
+        "Згадванне ад ${ senderName }"
       ],
       "Message actions": [
         "Дзеянні з паведамленнямі"
@@ -3108,6 +3219,9 @@
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Гэты чат зашыфраваны скразным метадам з часовымі паведамленнямі, якія знікаюць у канцы званка."
       ],
+      "This meeting has a waiting room": [
+        "У гэтай сустрэчы ёсць пакой чакання"
+      ],
       "This meeting is being recorded": [
         "Гэта сустрэча запісваецца"
       ],
@@ -3182,6 +3296,12 @@
       ],
       "View ": [
         "Выгляд "
+      ],
+      "Virtual background initializing": [
+        "Ініцыялізацыя віртуальнага фону"
+      ],
+      "Waiting since ${ receivedTime }": [
+        "Чаканне ад ${ receivedTime }"
       ],
       "Warning": [
         "Папярэджанне"
@@ -3305,8 +3425,14 @@
       "Auto-detect": [
         "Аўтаматычнае вызначэнне"
       ],
+      "Beach landscape background": [
+        "Фон пляжнага пейзажу"
+      ],
       "Blurred (next)": [
         "Размыта (далей)"
+      ],
+      "Blurred office background": [
+        "Размыты фон офіса"
       ],
       "Browser": [
         "Браўзер"
@@ -3343,6 +3469,9 @@
       ],
       "Created": [
         "Створана"
+      ],
+      "Dark ${ BRAND_NAME } background": [
+        "Цёмны фон ${ BRAND_NAME }"
       ],
       "Delete": [
         "Выдаліць"
@@ -3418,6 +3547,9 @@
       ],
       "Library background": [
         "Фон бібліятэкі"
+      ],
+      "Light ${ BRAND_NAME } background": [
+        "Светлы фон ${ BRAND_NAME }"
       ],
       "Live caption agent": [
         "Агент інтэрактыўных субтытраў"
@@ -3530,6 +3662,9 @@
       "Use simple selfie segmentation": [
         "Выкарыстанне простай сегментацыі сэлфі"
       ],
+      "Use waiting room with a paid plan": [
+        "Выкарыстаць пакой чакання з платным тарыфным планам"
+      ],
       "Verification code": [
         "Код спраўджання"
       ],
@@ -3624,6 +3759,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Паспяхова зроблена ратацыя вашай асабістай сустрэчы"
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Дзякуй! Ваш водгук быў адпраўлены."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "У вас няма магчымасці пакінуць водгук аб сустрэчы, на якой вы не былі"
@@ -3958,6 +4096,9 @@
       "Create new room": [
         "Стварыць новы пакой"
       ],
+      "Custom background tester": [
+        "Тэсціраванне карыстальніцкага фону"
+      ],
       "Date": [
         "Дата"
       ],
@@ -4050,6 +4191,9 @@
       ],
       "Minicalendar": [
         "Мінікаляндар"
+      ],
+      "MLS members": [
+        "Удзельнікі MLS"
       ],
       "No one is waiting": [
         "Ніхто не чакае"
@@ -4171,6 +4315,9 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Імгненная дапамога ШІ, спецыяліст заўсёды на сувязі!"
+      ],
+      "People currently connected to the meeting": [
+        "Людзі, якія ў цяперашні час падключаны да сустрэчы"
       ],
       "Recurring meeting": [
         "Перыядычная сустрэча"

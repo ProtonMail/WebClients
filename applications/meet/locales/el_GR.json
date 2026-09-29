@@ -767,6 +767,9 @@
       "View invoice": [
         "Προβολή τιμολογίου"
       ],
+      "View security details": [
+        "Προβολή λεπτομερειών ασφαλείας"
+      ],
       "Virtual backgrounds": [
         "Εικονικά φόντα"
       ],
@@ -2168,6 +2171,12 @@
       "Image preview not found": [
         "Δεν βρέθηκε προεπισκόπηση εικόνας"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Εσφαλμένος εφεδρικός κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "Invalid meeting link": [
         "Μη έγκυρος σύνδεσμος σύσκεψης"
       ],
@@ -2636,6 +2645,14 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "Το ${ MEET_APP_NAME } χρειάζεται το WebRTC για να λειτουργήσει. Παρακαλούμε ενημερώστε το πρόγραμμα περιήγησης ή τη συσκευή σας σε μια έκδοση που υποστηρίζει το WebRTC, δοκιμάστε ένα διαφορετικό πρόγραμμα περιήγησης ή απενεργοποιήστε τυχόν προεκτάσεις που ενδέχεται να το εμποδίζουν."
+      ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } μέλος",
+        "${ mlsMemberCount } μέλη"
+      ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "${ participantCount } συμμετέχων είναι συνδεδεμένος, ενώ η ασφαλής ομάδα περιλαμβάνει ${ mlsMemberCountText }. Αυτό ενδέχεται να συμβεί προσωρινά αφού κάποιος εισέλθει ή αποχωρήσει.",
+        "${ participantCount } συμμετέχοντες είναι συνδεδεμένοι, ενώ η ασφαλής ομάδα περιλαμβάνει ${ mlsMemberCountText }. Αυτό ενδέχεται να συμβεί προσωρινά αφού κάποιος εισέλθει ή αποχωρήσει."
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } και ${ otherParticipantsCount } άλλοι βιντεογραφούν"
@@ -3126,11 +3143,17 @@
       "Participant": [
         "Συμμετέχων"
       ],
+      "Participant counts don’t match": [
+        "Οι αριθμοί των συμμετεχόντων δεν συμπίπτουν."
+      ],
       "Participants can turn live captions on. Turn on your own under Display.": [
         "Οι συμμετέχοντες μπορούν να ενεργοποιήσουν τους ζωντανούς υπότιτλους. Ενεργοποιήστε τους δικούς σας στην ενότητα \"Προβολή\"."
       ],
       "Participants can’t use live captions": [
         "Οι συμμετέχοντες δεν μπορούν να χρησιμοποιήσουν ζωντανούς υπότιτλους"
+      ],
+      "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
+        "Η ένδειξη Συμμετέχοντες δείχνει ποιοι είναι συνδεδεμένοι αυτή τη στιγμή. Η ένδειξη Μέλη MLS δείχνει ποιοι περιλαμβάνονται στην ομάδα ασφαλείας της σύσκεψης. Οι αριθμοί αυτοί ενδέχεται να διαφέρουν προσωρινά, ωστόσο η διαφορά αυτή διαρκεί περισσότερο από το αναμενόμενο."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Επικολλήστε τον σύνδεσμο ${ MEET_APP_NAME } για να συμμετάσχετε σε μια ασφαλή σύσκεψη"
@@ -4297,11 +4320,17 @@
       "Minicalendar": [
         "Μίνι ημερολόγιο"
       ],
+      "MLS members": [
+        "Μέλη MLS"
+      ],
       "No one is waiting": [
         "Κανείς δεν περιμένει"
       ],
       "No results found": [
         "Κανένα αποτέλεσμα"
+      ],
+      "Participant counts don’t match": [
+        "Οι αριθμοί των συμμετεχόντων δεν συμπίπτουν."
       ],
       "Participants": [
         "Συμμετέχοντες"
@@ -4420,6 +4449,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
+      ],
+      "People currently connected to the meeting": [
+        "Άτομα που είναι συνδεδεμένα στη σύσκεψη αυτή τη στιγμή"
+      ],
+      "People included in meeting's MLS group": [
+        "Άτομα που περιλαμβάνονται στην ομάδα MLS της σύσκεψης"
       ],
       "Recurring meeting": [
         "Επαναλαμβανόμενη σύσκεψη"
