@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { createContext, useContext } from 'react';
+import { createContext } from 'react';
 
 import type { SelectionState } from '../hooks/useSelectionControls';
 import { useSelectionControls } from '../hooks/useSelectionControls';
@@ -27,12 +27,4 @@ export function SelectionProvider({ itemIds, children }: Props) {
     const selectionFunction = useSelectionControls({ itemIds });
 
     return <SelectionContext.Provider value={selectionFunction}>{children}</SelectionContext.Provider>;
-}
-
-export function useSelection() {
-    const state = useContext(SelectionContext);
-    if (!state) {
-        return null;
-    }
-    return state;
 }

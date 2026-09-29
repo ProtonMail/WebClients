@@ -74,16 +74,6 @@ jest.mock('@proton/shared/lib/api/drive/volume', () => ({
     queryLatestVolumeEvent: jest.fn(),
 }));
 
-jest.mock('@proton/drive/modules/flags', () => ({
-    useFlagsDriveFoundationSearch: jest.fn(),
-}));
-
-const { useFlagsDriveFoundationSearch } = require('@proton/drive/modules/flags');
-
-function setFeatureFlag(enabled: boolean) {
-    (useFlagsDriveFoundationSearch as jest.Mock).mockReturnValue(enabled);
-}
-
 function resetSingleton() {
     SearchModule.resetForTesting();
 }
@@ -104,17 +94,10 @@ beforeEach(() => {
     FakeBroadcastChannel.reset();
     resetSingleton();
     jest.spyOn(SearchModule, 'isEnvironmentCompatible').mockResolvedValue(true);
-    setFeatureFlag(true);
 });
 
 describe('useSearchModule', () => {
     describe('availability', () => {
-        it('returns isAvailable: false when feature flag is disabled', () => {
-            setFeatureFlag(false);
-            const { result } = renderHook(() => useSearchModule());
-            expect(result.current.isAvailable).toBe(false);
-        });
-
         it('returns isAvailable: false when environment is incompatible', () => {
             (SearchModule.isEnvironmentCompatible as jest.Mock).mockResolvedValue(false);
             const { result } = renderHook(() => useSearchModule());

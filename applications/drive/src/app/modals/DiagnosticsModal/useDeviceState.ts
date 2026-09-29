@@ -7,7 +7,6 @@ import { useDriveDiagnostics } from '@proton/drive/diagnostic';
 import { queryUserSettings } from '@proton/shared/lib/api/drive/user';
 
 import config from '../../config';
-import { useSearchLibrary } from '../../legacy/store';
 
 export type DeviceState = {
     versions: {
@@ -31,7 +30,6 @@ export type DeviceState = {
         quota?: number;
         usage?: number;
     };
-    search: string;
     api: {
         drive: string;
     };
@@ -40,7 +38,6 @@ export type DeviceState = {
 export const useDeviceState = (): DeviceState => {
     const api = useApi();
     const { sdkVersion } = useDriveDiagnostics();
-    const { esStatus } = useSearchLibrary();
 
     const [opfs, setOpfs] = useState<
         | {
@@ -92,7 +89,6 @@ export const useDeviceState = (): DeviceState => {
             quota: opfs?.quota,
             usage: opfs?.usage,
         },
-        search: esStatus.esEnabled ? 'Enabled' : 'Disabled',
         api: {
             drive: apiStatusDrive ? apiStatusDrive : '...',
         },

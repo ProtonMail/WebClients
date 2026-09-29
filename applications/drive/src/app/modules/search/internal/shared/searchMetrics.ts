@@ -20,12 +20,10 @@ import type { IndexerTaskKind } from './types';
  * Each `mark*` method describes what happened and the metric module decides what to do
  * (counter, histogram, Sentry with feature label, throttling).
  *
- * `searchMetrics` emits with `searchVersion: 'v1'`. The sibling `legacySearchMetrics`
- * exposes the same histograms tagged `searchVersion: 'legacy'` for the legacy ES (encrypted-search) path.
+ * `searchMetrics` emits with `searchVersion: 'v1'`.
  */
 
 const SEARCH_VERSION_V1 = 'v1';
-const SEARCH_VERSION_LEGACY = 'legacy';
 
 /** Storage/index snapshot attached to an error report for debugging context. */
 export type SearchDiagnostics = {
@@ -450,31 +448,3 @@ export function resetTransientReportBurstsForTests(): void {
     transientReportBursts.clear();
     quarantineReportBursts.clear();
 }
-
-/**
- * Mirror of the histograms exposed by `searchMetrics`, tagged with
- * `searchVersion: 'legacy'` for emission from the legacy ES path.
- * Same units as `searchMetrics` (seconds, megabytes).
- */
-export const legacySearchMetrics = {
-    observeInitialIndexingDuration(durationInSeconds: number): void {
-        metrics.drive_search_index_build_time_histogram.observe({
-            Labels: { searchVersion: SEARCH_VERSION_LEGACY },
-            Value: durationInSeconds,
-        });
-    },
-
-    observeSearchQueryDuration(durationInSeconds: number): void {
-        metrics.drive_search_query_time_histogram.observe({
-            Labels: { searchVersion: SEARCH_VERSION_LEGACY },
-            Value: durationInSeconds,
-        });
-    },
-
-    observeIndexSizeOnInit(sizeMb: number): void {
-        metrics.drive_search_index_size_histogram.observe({
-            Labels: { searchVersion: SEARCH_VERSION_LEGACY },
-            Value: sizeMb,
-        });
-    },
-};

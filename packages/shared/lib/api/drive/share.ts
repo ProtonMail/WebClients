@@ -1,5 +1,4 @@
 import { HTTP_STATUS_CODE } from '../../constants';
-import { EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import type { MoveLink } from '../../interfaces/drive/link';
 import type { CreateDrivePhotosShare, CreateDriveShare } from '../../interfaces/drive/share';
@@ -42,17 +41,6 @@ export const queryMoveLink = (shareID: string, linkID: string, data: MoveLink) =
     method: 'put',
     url: `drive/shares/${shareID}/links/${linkID}/move`,
     data,
-});
-
-export const queryEvents = (shareID: string, eventID: string) => ({
-    timeout: EXPENSIVE_REQUEST_TIMEOUT,
-    url: `drive/shares/${shareID}/events/${eventID}`,
-    method: 'get',
-});
-
-export const queryLatestEvents = (shareID: string) => ({
-    url: `drive/shares/${shareID}/events/latest`,
-    method: 'get',
 });
 
 export const queryDeleteShare = (

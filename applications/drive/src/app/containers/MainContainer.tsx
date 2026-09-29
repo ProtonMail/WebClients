@@ -35,7 +35,7 @@ import GiftFloatingButton from '../legacy/components/onboarding/GiftFloatingButt
 import { ActiveShareProvider } from '../legacy/hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../legacy/hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../legacy/hooks/util/useRedirectToPublicPage';
-import { DriveProvider, useActivePing, useDriveEventManager, useSearchControl } from '../legacy/store';
+import { DriveProvider, useActivePing, useDriveEventManager } from '../legacy/store';
 import { useSanitization } from '../legacy/store/_sanitization/useSanitization';
 import { useDriveSharingFlags, useShareActions } from '../legacy/store/_shares';
 import { useShareBackgroundActions } from '../legacy/store/_views/useShareBackgroundActions';
@@ -45,6 +45,7 @@ import { useSearchModule } from '../modules/search';
 import { PhotosWithAlbumsContainer } from '../photos/PhotosWithAlbumsContainer';
 import { useBookmarksActions } from '../sections/sharedWith/hooks/useBookmarksActions';
 import { TransferManager } from '../sections/transferManager/TransferManager';
+import isSearchFeatureEnabled from '../utils/isSearchFeatureEnabled';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { dateToLegacyTimestamp } from '../utils/sdk/legacyTime';
 import { Features, measureFeaturePerformance } from '../utils/telemetry';
@@ -82,7 +83,7 @@ function InitContainer() {
     const [error, setError] = useState<Error>();
     const [defaultShareRoot, setDefaultShareRoot] =
         useState<typeof DEFAULT_VOLUME_INITIAL_STATE>(DEFAULT_VOLUME_INITIAL_STATE);
-    const { searchEnabled } = useSearchControl();
+    const searchEnabled = isSearchFeatureEnabled();
     const driveEventManager = useDriveEventManager();
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { convertExternalInvitationsFromEvents } = useShareBackgroundActions();
