@@ -31,6 +31,7 @@ import {
     type Turn,
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
+import { markArtifactTelemetryLiveMessage } from './artifact/artifactVersionTelemetry';
 import { createArtifactToolExecutor } from './artifact/createArtifactTool';
 import type { ArtifactToolMode } from './helper';
 
@@ -201,6 +202,12 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
 
         while (true) {
             throwIfAborted(sendOptions.signal);
+            // Marked per attempt: compaction retries stream into a fresh assistant message.
+            if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
+                markArtifactTelemetryLiveMessage(currentAssistantId, {
+                    artifactToolMode: sendOptions.artifactToolMode,
+                });
+            }
             try {
                 const turns = buildTurns(currentChain);
                 await dispatch(
