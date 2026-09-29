@@ -1,4 +1,3 @@
-import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { useNotifications } from '@proton/app-context/useNotifications'
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import { getDrive, type ProtonDriveClient, type ProtonInvitationWithNode } from '@proton/drive'
@@ -8,9 +7,6 @@ import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/li
 import { useCallback, useEffect, useState } from 'react'
 import type { DocInvitesHook } from '@proton/drive-store'
 import { c } from 'ttag'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { APPS } from '@proton/shared/lib/constants'
-import { getNewWindow } from '@proton/shared/lib/helpers/window'
 import { useDocInvitationsStore } from './use-doc-invitations-store'
 import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
@@ -25,7 +21,6 @@ export const useDocInvites: DocInvitesHook = () => {
 
   const [isLoading, setIsLoading] = useState(true) // Consistent with legacy
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
-  const openInvitedDocument = useOpenInvitedDocument()
 
   const convertedInvitations = useDocInvitationsStore((state) => state.convertedInvitations)
   const [recentlyAcceptedInvites, setRecentlyAcceptedInvites] = useState<ExtendedInvitationDetails[]>([])
@@ -152,7 +147,6 @@ export const useDocInvites: DocInvitesHook = () => {
     recentlyAcceptedInvites,
     acceptInvite,
     rejectInvite,
-    openInvitedDocument,
     inviteForNodeMeta,
   }
 }
@@ -168,23 +162,4 @@ async function fetchInvitations(drive: ProtonDriveClient, abort: AbortSignal) {
   }
 
   return result
-}
-
-function useOpenInvitedDocument() {
-  const { getLocalID } = useAuthentication()
-
-  return function openInvitedDocument(invitation: ExtendedInvitationDetails) {
-    const window = getNewWindow().handle
-    const type = isProtonDocsSpreadsheet(invitation.link.mimeType) ? 'sheet' : 'doc'
-    const volumeId = invitation.share.volumeId
-    const linkId = invitation.link.linkId
-
-    const href = getAppHref(`/${type}`, APPS.PROTONDOCS, getLocalID())
-    const url = new URL(href)
-    url.searchParams.append('mode', 'open')
-    url.searchParams.append('volumeId', volumeId)
-    url.searchParams.append('linkId', linkId)
-
-    window.location.assign(url)
-  }
 }

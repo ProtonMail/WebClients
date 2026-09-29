@@ -11,8 +11,8 @@ import {
   drivePublicRedirectionReasonKey,
 } from '@proton/drive-store/hooks/util/useRedirectToPublicPage'
 import { saveUrlPasswordForRedirection } from '@proton/drive-store/utils/url/password'
-import type { DocumentType } from '@proton/docs-shared'
-import { useOpenDocument, type RedirectAction } from '@proton/drive-store/store/_documents/useOpenDocument'
+import type { DocumentType, RedirectAction } from '@proton/docs-shared'
+import { useDocumentWindowAction } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
 import type { PublicContextValue } from '../context'
 import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
 import { useCallback } from 'react'
@@ -174,7 +174,7 @@ export function usePublicDocumentCopying({
   documentState,
   documentType,
 }: PublicDocumentCopyingOptions) {
-  const { openDocumentWindow } = useOpenDocument()
+  const openDocumentWindow = useDocumentWindowAction()
   const { user } = context
 
   const handleCopierReady = useCallback(

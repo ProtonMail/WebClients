@@ -5,7 +5,6 @@ import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAuthentication } from '@proton/components';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
-import { getNewWindow } from '@proton/shared/lib/helpers/window';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 import { useMoveToFolderModal } from '../components/modals/MoveToFolderModal/MoveToFolderModal';
@@ -13,8 +12,7 @@ import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLi
 import type { ShareURL } from '../store';
 import { useDefaultShare, useShareUrl } from '../store';
 import useDriveCrypto from '../store/_crypto/useDriveCrypto';
-import type { DocumentAction, DocumentType } from '../store/_documents/useOpenDocument';
-import { useOpenDocument } from '../store/_documents/useOpenDocument';
+import type { DocumentType } from '../store/_documents/useOpenDocument';
 import useLink from '../store/_links/useLink';
 import { getSharedLink } from '../store/_shares/shareUrl';
 import type { PathItem } from '../store/_views/useLinkPath';
@@ -107,16 +105,6 @@ export interface DriveCompat {
     openMoveToFolderModal: (props: { linkId: string; volumeId: string }) => Promise<void>;
 
     /**
-     * Opens a document in a new window.
-     */
-    openDocument: (meta: NodeMeta, type?: DocumentType) => void;
-    openDocumentWindow: (
-        action: DocumentAction & {
-            window: Window;
-        }
-    ) => void;
-
-    /**
      * Gets the key used to verify signatures.
      */
     getVerificationKey: (email: string) => Promise<PublicKeyReference[]>;
@@ -167,16 +155,12 @@ export const useDriveCompat = (): DriveCompat => {
     const { getNode, getLatestNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
     const { getNodes, getNodePaths, getNodesAreShared } = useNodes();
     const { getMyFilesNodeMeta } = useMyFiles();
-    const { openDocumentWindow } = useOpenDocument();
     const { getVerificationKey } = useDriveCrypto();
 
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { loadShareUrl } = useShareUrl();
     const { getDefaultShare, getDefaultShareAddressEmail } = useDefaultShare();
-
-    const openDocument = (meta: NodeMeta, type: DocumentType = 'doc') =>
-        openDocumentWindow({ ...meta, type, mode: 'open', window: getNewWindow().handle });
 
     const getPrimaryAddressKeys = async () => {
         const share = await getDefaultShare();
@@ -223,11 +207,6 @@ export const useDriveCompat = (): DriveCompat => {
     return {
         getVerificationKey,
         getKeysForLocalStorageEncryption,
-        getPrimaryAddressKeys,
-
-        // ? probably does not need SDK or any BE at all
-        openDocument,
-        openDocumentWindow,
 
         // No feature parity in Drive SDK - has to be done in Realtime SDK
         createDocumentNode: withResolveShareId(createDocumentNode),
@@ -240,6 +219,7 @@ export const useDriveCompat = (): DriveCompat => {
         getMyFilesNodeMeta,
         findAvailableNodeName: withResolveShareId(findAvailableNodeName),
         getDocumentKeys: withResolveShareId(getDocumentKeys),
+        getPrimaryAddressKeys,
         // DocumentViewer calls DocLoader calls LoadDocument calls GetNodePermissions calls this
         getNodePermissions: withResolveShareId(getNodePermissions),
         // Used only in RecentDocumentsService - remove after rollout of DocsLoadRecentsWithDriveSDK

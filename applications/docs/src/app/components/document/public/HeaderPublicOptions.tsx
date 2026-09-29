@@ -11,12 +11,10 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import Spotlight from '@proton/components/components/spotlight/Spotlight'
 import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
-import { TooltipKey, useTooltipOnce } from '@proton/docs-shared'
+import { TooltipKey, useTooltipOnce, type DocumentType, RedirectAction } from '@proton/docs-shared'
 import { useDocsUrlPublicToken } from '@proton/drive-store'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
 import { usePublicSessionUser } from '@proton/drive-store/store'
-import type { DocumentType } from '@proton/docs-shared'
-import { RedirectAction } from '@proton/drive-store/store/_documents'
 import {
   needPublicRedirectSpotlight,
   publicRedirectSpotlightWasShown,

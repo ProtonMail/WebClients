@@ -35,6 +35,7 @@ import { downloadExport } from '@proton/docs-core/lib/UseCase/ExportAndDownload'
 import { downloadJSONFile } from '~/utils/download-json-file'
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 import { useIsODTEnabled } from '~/utils/flags'
+import { useOpenDocument } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
 
 type RestoreType = 'replace' | 'as-copy'
 
@@ -147,6 +148,8 @@ function HistoryViewerModalContent({
     ],
   )
 
+  const openDocument = useOpenDocument()
+
   const onRestore = useCallback(
     async (restoreType: RestoreType) => {
       if (!editorInvoker) {
@@ -199,17 +202,23 @@ function HistoryViewerModalContent({
         if (!yjsState) {
           return
         }
-        await docController.restoreRevisionAsCopy(yjsState)
+        try {
+          const { nodeMeta, documentType } = await docController.restoreRevisionAsCopy(yjsState)
+          openDocument(nodeMeta, documentType)
+        } catch {
+          // [REALTIME-269] Error ignored in legacy implementation, keeping this behaviour
+        }
       }
     },
     [
       editorInvoker,
       showConfirmModal,
-      editorController,
-      docController,
       documentType,
+      editorController,
       onClose,
       showSuccessfullRestoreNotification,
+      docController,
+      openDocument,
     ],
   )
 
