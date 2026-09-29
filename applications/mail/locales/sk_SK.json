@@ -2443,9 +2443,6 @@
       "Discover and set up features": [
         "Objaviť a nastaviť funkcie"
       ],
-      "Get 50% offer": [
-        "Využite 50 % zľavu"
-      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -5146,6 +5143,12 @@
       "IMAP server is required": [
         "IMAP server je požadovaný"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávne záložné heslo. Skúste to znova, prosím."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávne druhé heslo. Skúste to znova, prosím."
+      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -7613,9 +7616,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Pristupujte k viac ako 6500 vysokorýchlostným serverom až na 10 zariadeniach, aby boli vaše údaje pri prehliadaní v bezpečí. K dispozícii na ${ ios }, ${ android }, ${ appleTV } a ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
-      ],
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
@@ -8312,9 +8312,6 @@
         "Vyprší o menej ako ${ hoursDiff } hodín",
         "Vyprší o menej ako ${ hoursDiff } hodín"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Najvyššia rýchlosť VPN až 10 Gbps"
-      ],
       "file attached": [
         "pripojený súbor",
         "pripojené súbory",
@@ -8408,9 +8405,6 @@
         "Obsahuje ${ numAttachments } príloh (${ numAttachmentsSize })",
         "Obsahuje ${ numAttachments } príloh (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
-      ],
       "here": [
         "tu"
       ],
@@ -8452,9 +8446,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Ak sa domnievate, že sa stala chyba, kontaktujte nás, prosím, ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
@@ -9026,9 +9017,6 @@
       "Preferences updated": [
         "Preferencie boli aktualizované"
       ],
-      "Premium privacy protection across all your devices": [
-        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
-      ],
       "Preview failed to be loaded": [
         "Náhľad sa nepodarilo načítať"
       ],
@@ -9412,9 +9400,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Zostaňte ľahko pripojení povolením nasledujúcich nastavení VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Možnosti úložiska nie sú v tomto prehliadači podporované, potrebujeme túto podporu, aby sme mohli prehľadávať obsah správ."
@@ -10177,6 +10162,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Máte skúšobné predplatné ${ planTitle }. V tejto chvíli sa nevyžaduje žiadna platba. Vaše predplatné sa automaticky obnoví na konci skúšobného obdobia."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
       ],
       "You have no conversations in this category": [
         "V tejto kategórii nemáte žiadne konverzácie"
@@ -12017,6 +12008,9 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
+      ],
+      "Pay it": [
+        "Zaplatiť"
       ],
       "Privacy policy": [
         "Ochrana osobných údajov"
@@ -16583,10 +16577,10 @@
     },
     "Success": {
       "${ count } conversation deleted": [
-        "${ count } konverzácia bola odstránená",
-        "${ count } konverzácie boli odstránené",
-        "${ count } konverzácii bolo odstránených",
-        "${ count } konverzácii bolo odstránených"
+        "${ count } konverzácia bola vymazaná",
+        "${ count } konverzácie boli vymazané",
+        "${ count } konverzácii bolo vymazaných",
+        "${ count } konverzácii bolo vymazaných"
       ],
       "${ count } draft deleted": [
         "${ count } koncept bol odstránený",
@@ -18145,9 +18139,6 @@
       ],
       "Start import process": [
         "Zahájiť proces importu"
-      ],
-      "Stay for 50% off your next month": [
-        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Storage capacity warning": [
         "Upozornenie na kapacitu úložiska"

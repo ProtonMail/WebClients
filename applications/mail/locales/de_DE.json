@@ -872,7 +872,7 @@
         "Kategorien verwalten"
       ],
       "Manage Snooze": [
-        "Zurüchgestellte verwalten"
+        "Zurückgestellte verwalten"
       ],
       "Manage users/addresses": [
         "Benutzer/Adressen verwalten"
@@ -2396,9 +2396,6 @@
       ],
       "Discover and set up features": [
         "Entdecken und Funktionen einrichten"
-      ],
-      "Get 50% offer": [
-        "50 % Rabatt sichern"
       ],
       "Got it": [
         "Verstanden"
@@ -5060,6 +5057,12 @@
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
+      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
@@ -7365,9 +7368,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Greife auf mehr als 6.500 Hochgeschwindigkeitsserver auf bis zu 10 Geräten zu, um deine Browsing-Daten zu schützen. Verfügbar für ${ ios }, ${ android }, ${ appleTV } und ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Zugriff auf über 20.000 Server in 145 Ländern"
-      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
@@ -8038,9 +8038,6 @@
         "Verfällt in weniger als ${ hoursDiff } Stunde",
         "Verfällt in weniger als ${ hoursDiff } Stunden"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
-      ],
       "file attached": [
         "Datei angehängt",
         "Dateien angehängt"
@@ -8124,9 +8121,6 @@
         "Hat ${ numAttachments } Anhang (${ numAttachmentsSize })",
         "Hat ${ numAttachments } Anhänge (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "Gewinne etwas Zeit, um ungestört zu entscheiden."
-      ],
       "here": [
         "hier"
       ],
@@ -8168,9 +8162,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Wenn du glaubst, dass wir einen Fehler gemacht haben, wende dich bitte an ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Wenn du jetzt kündigst, verlierst du am ${ expiryDate } den Zugang zu ${ BRAND_NAME } ${ planTitle }, inklusive dieser Funktionen:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
@@ -8738,9 +8729,6 @@
       "Preferences updated": [
         "Einstellungen aktualisiert"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium-Schutz deiner Privatsphäre auf all deinen Geräten"
-      ],
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
       ],
@@ -9108,9 +9096,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Bleibe mühelos verbunden, indem du die folgenden VPN-Einstellungen aktivierst:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Speichermöglichkeiten werden von deinem Browser nicht unterstützt. Wir brauchen diese Unterstützung um die Suche nach Nachrichteninhalten zu aktivieren."
@@ -9849,6 +9834,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du hast ein ${ planTitle }-Probeabonnement. Derzeit ist keine Zahlung erforderlich. Dein Abonnement wird am Ende des Testzeitraums automatisch verlängert."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung vom ${ dueDate } ${ payInvoiceLink }"
       ],
       "You have no conversations in this category": [
         "Du hast keine Unterhaltungen in dieser Kategorie"
@@ -11084,7 +11075,7 @@
         "Premium-Domain"
       ],
       "Primary": [
-        "Primäre"
+        "Primär"
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
         "„Wichtig“ – Alles, was deine Aufmerksamkeit erfordert, sowie E-Mails aus deaktivierten Kategorien"
@@ -11645,6 +11636,9 @@
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
+      ],
+      "Pay it": [
+        "Bezahlen"
       ],
       "Privacy policy": [
         "Datenschutzerklärung"
@@ -17483,9 +17477,6 @@
       ],
       "Start import process": [
         "Importvorgang starten"
-      ],
-      "Stay for 50% off your next month": [
-        "Bleibe und sichere dir 50 % Rabatt auf deinen nächsten Monat"
       ],
       "Storage capacity warning": [
         "Speicherkapazitätswarnung"
