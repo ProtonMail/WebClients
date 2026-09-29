@@ -19,7 +19,7 @@ export const staticExperimentsConfig = {
      * everyone else uses v4.
      */
     ChallengeV5: {
-        enabled: false,
+        enabled: true,
         owner: 'anti-abuse',
         schedule: [
             {
