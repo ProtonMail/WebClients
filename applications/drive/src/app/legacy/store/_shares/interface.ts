@@ -5,12 +5,6 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
-type WithSRPPayload<T extends any> = T & {
-    srpModulusID: string;
-    srpVerifier: string;
-    urlPasswordSalt: string;
-};
-
 // Share type string used in metrics context, do not confuse with ShareType enum.
 export type ShareTypeString = 'main' | 'device' | 'photo' | 'shared';
 export type ShareTypeStringWithPublic = ShareTypeString | 'shared_public';
@@ -54,34 +48,6 @@ export interface ShareWithKey extends Share {
     rootLinkRecoveryPassphrase?: string;
     memberships: ShareMembership[];
 }
-
-export type ShareURL = WithSRPPayload<{
-    shareId: string;
-    shareUrlId: string;
-    expirationTime: number | null;
-    creatorEmail: string;
-    password: string;
-    flags: number;
-    token: string;
-    publicUrl: string;
-    sharePassphraseKeyPacket: string;
-    sharePasswordSalt: string;
-    hasGeneratedPasswordIncluded: boolean;
-    numAccesses: number;
-    maxAccesses: number;
-    permissions: number;
-}>;
-
-export type UpdateSharedURL = WithSRPPayload<{
-    expirationDuration: number | null;
-    expirationTime: number | null;
-    flags: number;
-    maxAccesses: number;
-    password: string;
-    permissions: number;
-    sharePassphraseKeyPacket: string;
-    sharePasswordSalt: string;
-}>;
 
 export interface LockedVolumeForRestore {
     lockedVolumeId: string;

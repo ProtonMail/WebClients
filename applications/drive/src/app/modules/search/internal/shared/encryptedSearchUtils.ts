@@ -1,11 +1,11 @@
-// Utilities for manipulating the legacy encrypted-search IndexedDB.
-// Duplicated from the legacy package so we can remove that dependency.
+// The search implementation using @proton/encrypted-search was removed from the Drive web
+// codebase in October 2026. However, we still need these utilities to detect and delete the
+// persistent storage left behind for users who used the legacy implementation at some point.
 
 const legacyDbName = (userId: string) => `ES:${userId}:DB`;
 
 /**
- * Check whether a legacy encrypted-search IndexedDB exists for the user.
- *
+ * Check whether a legacy encrypted-search (using @proton/encrypted-search) IndexedDB exists for the user.
  */
 export async function hasLegacyEncryptedSearchDb(userId: string): Promise<boolean> {
     try {

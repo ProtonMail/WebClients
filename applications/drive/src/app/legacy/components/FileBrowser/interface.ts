@@ -1,24 +1,6 @@
 import type React from 'react';
 
-import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
-
 import type { AlbumProperties, PhotoProperties } from '../../../legacy/store';
-
-export interface DragMoveControls {
-    handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
-    handleDrop: (e: React.DragEvent<HTMLTableRowElement>) => void;
-    handleDragLeave: () => void;
-    handleDragEnter: (e: React.DragEvent<HTMLTableRowElement>) => void;
-    dragging: boolean;
-    setDragging: (value: boolean) => void;
-    isActiveDropTarget: boolean;
-    selectedItems: FileBrowserBaseItem[];
-}
-
-export interface SortParams<T> {
-    sortField: T;
-    sortOrder: SORT_DIRECTION;
-}
 
 export interface ContextMenuProps {
     anchorRef: React.RefObject<HTMLElement>;
@@ -46,18 +28,6 @@ export interface FileBrowserBaseItem {
     photoProperties?: PhotoProperties;
     // Added to adapt to sdk view
     isAlbum?: boolean;
-}
-
-export enum HeaderCellsPresets {
-    Checkbox = 0,
-    Placeholder = 1,
-}
-
-export interface ListViewHeaderItem {
-    type: string | HeaderCellsPresets;
-    text?: string;
-    props?: React.HTMLProps<HTMLDivElement>;
-    sorting?: boolean;
 }
 
 export type BrowserItemId = string;

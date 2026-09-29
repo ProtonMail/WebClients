@@ -4,6 +4,5 @@ export { useFlagsDrivePublicSharing } from './internal/sharingModal/useFlagsDriv
 export { useFlagsDriveSharingAdminPermissions } from './internal/sharingModal/useFlagsDriveSharingAdminPermissions';
 export { unleashVanillaStore as featureFlagStore } from './internal/unleash.store';
 export { useFlagsDriveEasySwitch } from './internal/useFlagsDriveEasySwitch';
-export { useFlagsDriveFoundationSearch } from './internal/useFlagsDriveFoundationSearch';
 export { useFlagsDriveLumo } from './internal/useFlagsDriveLumo';
 export { useFlagsDriveSheet } from './internal/useFlagsDriveSheet';
