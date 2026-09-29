@@ -40,7 +40,6 @@ function DeviceView(deviceState: DeviceState) {
                 label="OPFS usage"
                 value={deviceState.opfs.usage ? humanSize({ bytes: deviceState.opfs.usage }) : 'N/A'}
             />
-            <InfoRow label="Search" value={deviceState.search} />
             <InfoRow label="Drive API" value={deviceState.api.drive} />
         </>
     );

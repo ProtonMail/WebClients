@@ -2,24 +2,6 @@ import { c } from 'ttag';
 
 import { DOCS_APP_NAME } from '@proton/shared/lib/constants';
 import { LinkURLType, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
-import isTruthy from '@proton/utils/isTruthy';
-
-import type { DecryptedLink } from '../../../legacy/store';
-
-export const selectMessageForItemList = (
-    isFiles: boolean[],
-    messages: {
-        allFiles: string;
-        allFolders: string;
-        mixed: string;
-    }
-) => {
-    const allFiles = isFiles.every((isFile) => isFile);
-    const allFolders = isFiles.every((isFile) => !isFile);
-    const message = (allFiles && messages.allFiles) || (allFolders && messages.allFolders) || messages.mixed;
-
-    return message;
-};
 
 export const toLinkURLType = (isFile: boolean) => {
     return isFile ? LinkURLType.FILE : LinkURLType.FOLDER;
@@ -231,18 +213,4 @@ export const getMimeTypeDescription = (mimeType: string) => {
     }
 
     return c('Mimetype').t`Unknown file`;
-};
-
-export const getSelectedItems = (
-    items: DecryptedLink[],
-    selectedItemIds: string[],
-    key: 'linkId' | 'rootShareId' = 'linkId'
-): DecryptedLink[] => {
-    if (items) {
-        return selectedItemIds
-            .map((selectedItemId) => items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item[key]))
-            .filter(isTruthy) as DecryptedLink[];
-    }
-
-    return [];
 };

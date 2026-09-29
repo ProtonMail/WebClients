@@ -12,7 +12,7 @@ const isLinkRoot = (link: DecryptedLink) => {
     return !link.parentLinkId;
 };
 
-export const isLinkReadOnly = (link: DecryptedLink, shareType: ShareType) => {
+const isLinkReadOnly = (link: DecryptedLink, shareType: ShareType) => {
     return shareType === ShareType.device && isLinkRoot(link);
 };
 

@@ -156,20 +156,3 @@ export interface DecryptedLink extends Link {
     sharedBy?: string;
     isAnonymous?: boolean;
 }
-
-export interface LinkDownload {
-    isFile: boolean;
-    shareId: string;
-    linkId: string;
-    name: string;
-    mimeType: string;
-    size: number;
-    createTime?: number;
-    revisionId?: string;
-    signatureEmail?: string;
-    signatureIssues?: SignatureIssues;
-    buffer?: Uint8Array<ArrayBuffer>[];
-    isAnonymous?: boolean;
-    parentLinkId?: string;
-    volumeId: string;
-}

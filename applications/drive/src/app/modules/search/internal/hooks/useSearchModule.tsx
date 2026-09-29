@@ -7,7 +7,6 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useDrive } from '@proton/drive';
-import { useFlagsDriveFoundationSearch } from '@proton/drive/modules/flags';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 
@@ -84,7 +83,6 @@ export type UseSearchModuleReturn =
 
 export const useSearchModule = (): UseSearchModuleReturn => {
     const { APP_VERSION } = useConfig();
-    const isFeatureFlagEnabled = useFlagsDriveFoundationSearch();
     const {
         drive,
         internal: { createSearchDriveInstance },
@@ -103,8 +101,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
 
         async function init() {
             try {
-                const isSupported = await SearchModule.isEnvironmentCompatible();
-                const isAvailable = isSupported && isFeatureFlagEnabled;
+                const isAvailable = await SearchModule.isEnvironmentCompatible();
                 if (!isAvailable || cancelled) {
                     return;
                 }

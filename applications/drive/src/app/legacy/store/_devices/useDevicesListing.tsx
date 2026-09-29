@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -141,12 +141,4 @@ export function DevicesListingProvider({ children }: { children: React.ReactNode
             {children}
         </LinksListingContext.Provider>
     );
-}
-
-export default function useDevicesListing() {
-    const state = useContext(LinksListingContext);
-    if (!state) {
-        throw new Error('Trying to use uninitialized LinksListingProvider');
-    }
-    return state;
 }

@@ -2,9 +2,6 @@ import { createStore, del, get as getStore, set as setStore } from 'idb-keyval';
 import { create } from 'zustand';
 
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
-import { isDevOrBlack } from '@proton/shared/lib/env';
-
-import { getLastActivePersistedUserSession } from '../../../utils/lastActivePersistedUserSession';
 
 interface ThumbnailMetadata {
     queue: string[];
@@ -91,14 +88,6 @@ const enforceStorageLimits = async (metadata: ThumbnailMetadata): Promise<void> 
     }
 
     await saveMetadata(meta);
-};
-
-// For devs who go on fresh environments
-// this avoids collision between users with same linkIds
-const devOrBlack = isDevOrBlack();
-export const getCacheKey = (linkId: string, shareId: string, revisionId: string = '') => {
-    const prefix = devOrBlack ? getLastActivePersistedUserSession()?.UID || '' : '';
-    return prefix + linkId + shareId + revisionId;
 };
 
 export const useThumbnailCacheStore = create<ThumbnailCacheState>()((set) => ({
