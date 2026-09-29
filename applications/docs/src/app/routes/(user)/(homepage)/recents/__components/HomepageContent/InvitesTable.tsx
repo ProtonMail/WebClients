@@ -24,6 +24,7 @@ import type { DocInvitesHook } from '@proton/drive-store'
 import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
 import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store'
 import { useInvitationsSdkEnabled } from '~/utils/flags'
+import { useOpenInvitedDocument } from '@proton/docs-core/lib/Util/useOpenInvitedDocument'
 
 const MAX_INVITES_WHEN_COLLAPSED = 3
 const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
@@ -46,8 +47,8 @@ export function InvitesTable(props: InvitesTableProps) {
 function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocInvitesHook }) {
   const { useDocInvites, ...props } = allProps
 
-  const { confirmModal, invitations, recentlyAcceptedInvites, rejectInvite, openInvitedDocument, acceptInvite } =
-    useDocInvites()
+  const { confirmModal, invitations, recentlyAcceptedInvites, rejectInvite, acceptInvite } = useDocInvites()
+  const openInvitedDocument = useOpenInvitedDocument()
   const [collapsed, setCollapsed] = useState(true)
 
   const allInvites = [...invitations, ...recentlyAcceptedInvites]
@@ -205,7 +206,7 @@ interface InviteActionsProps {
   invite: ExtendedInvitationDetails
   onRejectInvite: (invite: ExtendedInvitationDetails) => void
   acceptInvite: ReturnType<DocInvitesHook>['acceptInvite']
-  openInvitedDocument: ReturnType<DocInvitesHook>['openInvitedDocument']
+  openInvitedDocument: ReturnType<typeof useOpenInvitedDocument>
 }
 
 function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocument }: InviteActionsProps) {

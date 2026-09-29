@@ -1,4 +1,4 @@
-import type { YjsState, Result, DocumentType } from '@proton/docs-shared'
+import type { YjsState, Result, DocumentType, NodeMeta } from '@proton/docs-shared'
 import type { NativeVersionHistory } from '../VersionHistory'
 import type { DocumentUpdate } from '@proton/docs-proto'
 
@@ -7,15 +7,17 @@ export interface AuthenticatedDocControllerInterface {
 
   createInitialCommit(content: DocumentUpdate): Promise<Result<unknown>>
   createInitialCommitFromEditorState(state: YjsState): Promise<Result<unknown>>
-  createNewDocument(documentType: DocumentType): Promise<void>
+  createNewDocument(documentType: DocumentType): Promise<NodeMeta>
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
   destroy(): void
-  duplicateDocument(editorYjsState: Uint8Array<ArrayBuffer>): Promise<void>
+  duplicateDocument(
+    editorYjsState: Uint8Array<ArrayBuffer>,
+  ): Promise<{ nodeMeta: NodeMeta; documentType: DocumentType }>
   getVersionHistory(): NativeVersionHistory | undefined
   openDocumentSharingModal(): void
   openMoveToFolderModal(): void
-  restoreRevisionAsCopy(yjsContent: YjsState): Promise<void>
+  restoreRevisionAsCopy(yjsContent: YjsState): Promise<{ nodeMeta: NodeMeta; documentType: DocumentType }>
   restoreDocument(useSDK?: boolean): Promise<void>
   squashDocument(): Promise<void>
   squashEverythingInBaseCommit(): Promise<Result<boolean>>
