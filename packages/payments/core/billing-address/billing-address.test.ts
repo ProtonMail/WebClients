@@ -1,6 +1,11 @@
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
 import { countriesWithStates, getDefaultState, getStateList, isCountryWithStates } from '../countries';
-import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, getBillingAddressStatus } from './billing-address';
+import {
+    type BillingAddress,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    getBillingAddressPayload,
+    getBillingAddressStatus,
+} from './billing-address';
 import { getBillingAddressFromPaymentStatus } from './billing-address-from-payments-status';
 
 describe('isBillingAddressValid', () => {
@@ -427,5 +432,25 @@ describe('getBillingAddressFromPaymentStatus', () => {
             expect(result.State).toEqual(getDefaultState('CA'));
             expect(result.ZipCode).toBeNull();
         });
+    });
+});
+
+describe('getBillingAddressPayload', () => {
+    it('sends an empty zip code as null', () => {
+        const payload = getBillingAddressPayload({
+            billingAddress: { CountryCode: 'FR', State: null, ZipCode: '' },
+            vatId: undefined,
+        });
+
+        expect(payload.ZipCode).toBeNull();
+    });
+
+    it('does not add a zip code when it is missing', () => {
+        const payload = getBillingAddressPayload({
+            billingAddress: { CountryCode: 'FR', State: null },
+            vatId: undefined,
+        });
+
+        expect(payload).not.toHaveProperty('ZipCode');
     });
 });
