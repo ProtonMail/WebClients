@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { getIsScimGroup, getIsScimGroupPendingKeys } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { getTranslatedRoleName } from '@proton/account/organizationRoles/helpers';
+import { getTranslatedRoleName, isOrgKeyRequired } from '@proton/account/organizationRoles/helpers';
 import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -89,9 +89,9 @@ const ViewGroup = () => {
     const primaryGroupAddressKey = Address.Keys[0];
     const isE2eeEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
 
-    const roleNames = groupRolesMap[group.ID]
-        ?.map((assignment) => getTranslatedRoleName(assignment.Role.Name))
-        .join(', ');
+    const groupRoles = groupRolesMap[group.ID] ?? [];
+    const roleNames = groupRoles.map((assignment) => getTranslatedRoleName(assignment.Role.Name)).join(', ');
+    const groupHasOrgKeyRole = groupRoles.some(({ Role }) => isOrgKeyRequired(Role));
 
     const isScimGroup = getIsScimGroup(group);
     const isScimGroupPendingKeys = getIsScimGroupPendingKeys(group);
@@ -270,6 +270,7 @@ const ViewGroup = () => {
                     members={members}
                     isE2eeEnabled={isE2eeEnabled}
                     showMailFeatures={showMailFeatures}
+                    groupHasOrgKeyRole={groupHasOrgKeyRole}
                     addressEmailToMemberMap={addressEmailToMemberMap}
                     onAddMembers={handleAddMembers}
                 />
