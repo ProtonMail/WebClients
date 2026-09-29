@@ -1,10 +1,11 @@
 import { c, msgid } from 'ttag';
 
-import type { Maybe, MaybeNull } from '../../../types';
+import type { ItemImportIntent, Maybe, MaybeNull } from '../../../types';
 import { uniqueId } from '../../../utils/string/unique-id';
 import type { FolderLimitReason, FolderLimits, FoldersById } from '../../folders/folder.utils';
 import { getFolderChildren, getFolderLimitReason, resolveFolderPath } from '../../folders/folder.utils';
-import type { ImportFolder } from '../types';
+import type { ImportFolder, ImportVault } from '../types';
+import { getImportedVaultName } from './transformers';
 
 type ImportFolderTreeOptions = {
     /** Omit it to treat the whole string as one folder name. Only pass one for
@@ -178,3 +179,37 @@ export const planImportFolders = (
 
     return { create, reuse, redirect, warnings };
 };
+
+/** Used when folders are unavailable: each folder with items becomes its own
+ * vault named after its path, to keep old behavior before folder support. */
+export const splitFoldersIntoVaults = (vaults: ImportVault[]): ImportVault[] =>
+    vaults.flatMap((vault) => {
+        if (vault.folders.length === 0) return [vault];
+
+        const byId = new Map(vault.folders.map((folder) => [folder.id, folder]));
+        const pathOf = (folder: ImportFolder): string => {
+            const parent = folder.parentId ? byId.get(folder.parentId) : undefined;
+            return parent ? `${pathOf(parent)}/${folder.name}` : folder.name;
+        };
+
+        const rootItems: ItemImportIntent[] = [];
+        const folderItems = new Map<string, ItemImportIntent[]>();
+
+        for (const item of vault.items) {
+            const folderId = item.folderId && byId.has(item.folderId) ? item.folderId : null;
+            if (folderId) {
+                const items = folderItems.get(folderId) ?? [];
+                items.push({ ...item, folderId: null });
+                folderItems.set(folderId, items);
+            } else {
+                rootItems.push({ ...item, folderId: null });
+            }
+        }
+
+        const folderVaults = vault.folders.flatMap((folder): ImportVault[] => {
+            const items = folderItems.get(folder.id);
+            return items ? [{ name: getImportedVaultName(pathOf(folder)), shareId: null, folders: [], items }] : [];
+        });
+
+        return rootItems.length > 0 ? [{ ...vault, folders: [], items: rootItems }, ...folderVaults] : folderVaults;
+    });
