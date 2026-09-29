@@ -52,15 +52,12 @@ import {
 } from './attachments';
 import { collapseCompactedChain } from './compaction';
 import type { ContextFilter } from './contextFilter';
+import type { ContextLimits } from './contextLimits';
+import { DEFAULT_CONTEXT_LIMITS, computeFileTokenBudget } from './contextLimits';
 import { formatPersonalization } from './formatPersonalization';
 import { resolveRequestContextFiles } from './requestContextFiles';
 import { countTokens } from './tokenizer';
-import type { ContextLimits } from './contextLimits';
-import { DEFAULT_CONTEXT_LIMITS } from './contextLimits';
-import { computeFileTokenBudget } from './contextLimits';
 import { calculateMessageContentTokens } from './utils';
-import type { ContextFilter } from './contextFilter';
-import { formatPersonalization } from './formatPersonalization';
 import { VISUALIZATION_INSTRUCTIONS } from './visualizationPrompt';
 
 export type { ContextFilter } from './contextFilter';
