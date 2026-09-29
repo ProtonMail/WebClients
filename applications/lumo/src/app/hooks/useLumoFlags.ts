@@ -24,7 +24,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - visualizationInstructions: Enable chart and KPI card formatting instructions in the system prompt
  * - customAgents: Enable the custom agents option in the composer tools dropdown
  * - artifactsView: Enable the create-artifact composer tool and artifact panel interactions
- * - artifactsViewSpotlight: Enable the create-artifact onboarding spotlight and New label
+ * - artifactsViewSpotlight: Enable the artifact panel onboarding spotlight and the New label on the Create artifact toggle
  * - aiPaperTrailRoute: Enable the AI Paper Trail route (/aitrail)
  * - aiPaperTrailPopup: Show the AI Paper Trail popup panel on the home screen
  * - maxAvailableFree: When enabled, free users can select Lumo Max (default off during high load)

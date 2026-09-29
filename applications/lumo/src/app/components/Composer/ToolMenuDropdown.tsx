@@ -30,7 +30,6 @@ interface ToolMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anch
     onClickCreateImageOption: () => void;
     canUseAgents?: boolean;
     showArtifactNewLabel?: boolean;
-    onArtifactCreationToggle?: () => void;
 }
 
 export const ToolMenuDropdown = ({
@@ -40,7 +39,6 @@ export const ToolMenuDropdown = ({
     onClickCreateImageOption,
     canUseAgents = false,
     showArtifactNewLabel = false,
-    onArtifactCreationToggle,
 }: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const { isArtifactCreationEnabled, handleArtifactCreationToggle } = useArtifactCreation();
@@ -76,10 +74,9 @@ export const ToolMenuDropdown = ({
     const handleArtifactCreationToggleChange = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
             e.stopPropagation();
-            onArtifactCreationToggle?.();
             handleArtifactCreationToggle();
         },
-        [handleArtifactCreationToggle, onArtifactCreationToggle]
+        [handleArtifactCreationToggle]
     );
 
     const handleCreateImageClick = useCallback(() => {

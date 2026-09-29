@@ -95,7 +95,6 @@ export type ComposerComponentProps = {
     optionalElementBelowComposer?: React.ReactNode;
     /** Minimal agent surface: hides image creation, sketch and Drive upload from the composer. */
     isAgent?: boolean;
-    canDisplayArtifactSpotlight?: boolean;
 };
 
 /**
@@ -126,7 +125,6 @@ const ComposerComponentInner = ({
     canShowGuestNotificationCard = false,
     optionalElementBelowComposer,
     isAgent = false,
-    canDisplayArtifactSpotlight = false,
     driveContext,
 }: ComposerComponentInnerProps) => {
     const { registerFileDropHandler } = useDragArea();
@@ -549,7 +547,6 @@ const ComposerComponentInner = ({
                                     onCancelDictation={handleCancelDictation}
                                     onAcceptDictation={handleAcceptDictation}
                                     getDictationAudioLevel={getAudioLevel}
-                                    canDisplayArtifactSpotlight={canDisplayArtifactSpotlight}
                                 />
                             </div>
                         </div>
