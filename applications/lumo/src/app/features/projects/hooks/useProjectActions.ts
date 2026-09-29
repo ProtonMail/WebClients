@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { generateSpaceKeyBase64 } from '../../../crypto';
-import { useLumoDispatch } from '../../../redux/hooks';
+import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
+import { clearPendingArtifactCreation } from '../../../redux/slices/composerActions';
 import { addConversation, newConversationId, pushConversationRequest } from '../../../redux/slices/core/conversations';
 import {
     addSpace,
@@ -18,6 +19,9 @@ import { sendProjectCreateEvent, sendProjectDeleteEvent } from '../../../util/te
 export const useProjectActions = () => {
     const dispatch = useLumoDispatch();
     const history = useHistory();
+    const pendingArtifactCreation = useLumoSelector((state) => {
+        return state.composerActions.pendingArtifactCreation;
+    });
     const createProject = useCallback(
         async (projectName: string, projectInstructions?: string, files?: File[], projectIcon?: string) => {
             const now = new Date().toISOString();
@@ -61,13 +65,18 @@ export const useProjectActions = () => {
                     createdAt: now,
                     updatedAt: now,
                     status: ConversationStatus.COMPLETED,
+                    // Part of the first push so a remote refresh can't drop it (see initializeNewSpaceAndConversation).
+                    ...(pendingArtifactCreation !== null && { artifactCreation: pendingArtifactCreation }),
                 })
             );
             dispatch(pushConversationRequest({ id: conversationId }));
+            if (pendingArtifactCreation !== null) {
+                dispatch(clearPendingArtifactCreation());
+            }
 
             return conversationId;
         },
-        [dispatch]
+        [dispatch, pendingArtifactCreation]
     );
 
     // const updateProjectInstructions = useCallback(

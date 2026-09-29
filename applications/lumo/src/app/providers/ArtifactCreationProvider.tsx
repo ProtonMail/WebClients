@@ -1,7 +1,11 @@
-import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { type ReactNode, createContext, useCallback, useContext, useEffect } from 'react';
 
-import { useLumoUserSettings } from '../hooks';
+import { resolveArtifactCreationEnabled } from '../components/Conversation/helper';
+import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
+import { clearPendingArtifactCreation, setPendingArtifactCreation } from '../redux/slices/composerActions';
+import { pushConversationRequest, setConversationArtifactCreation } from '../redux/slices/core/conversations';
 import { sendArtifactCreationToggledEvent } from '../util/telemetry';
+import { useConversation } from './ConversationProvider';
 
 interface ArtifactCreationContextType {
     isArtifactCreationEnabled: boolean;
@@ -14,25 +18,42 @@ interface ArtifactCreationProviderProps {
     children: ReactNode;
 }
 
+/**
+ * Per-conversation artifact-creation toggle for the composer tool menu. The global default lives in
+ * `LumoUserSettings.automaticArtifactCreation` (Settings modal); toggling here only affects the
+ * current conversation — or, on the new-chat page, the conversation about to be created.
+ */
 export const ArtifactCreationProvider = ({ children }: ArtifactCreationProviderProps) => {
-    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
-    const automaticArtifactCreation = lumoUserSettings.automaticArtifactCreation ?? true;
+    const dispatch = useLumoDispatch();
+    const { conversationId } = useConversation();
+    const conversationExists = useLumoSelector((state) => {
+        return conversationId !== undefined && state.conversations[conversationId] !== undefined;
+    });
+    const isArtifactCreationEnabled = useLumoSelector((state) => {
+        return resolveArtifactCreationEnabled(state, conversationId);
+    });
+    const hasPendingChoice = useLumoSelector((state) => {
+        return state.composerActions.pendingArtifactCreation !== null;
+    });
 
-    const [isArtifactCreationEnabled, setIsArtifactCreationEnabled] = useState<boolean>(automaticArtifactCreation);
-
+    // A choice made on the new-chat page belongs to that new chat only. If the user opens an
+    // existing conversation instead, drop it so it doesn't leak into a later new chat.
     useEffect(() => {
-        setIsArtifactCreationEnabled(automaticArtifactCreation);
-    }, [automaticArtifactCreation]);
+        if (conversationExists && hasPendingChoice) {
+            dispatch(clearPendingArtifactCreation());
+        }
+    }, [conversationExists, hasPendingChoice, dispatch]);
 
     const handleArtifactCreationToggle = useCallback(() => {
         sendArtifactCreationToggledEvent(isArtifactCreationEnabled);
         const newValue = !isArtifactCreationEnabled;
-        setIsArtifactCreationEnabled(newValue);
-        updateSettings({
-            automaticArtifactCreation: newValue,
-            _autoSave: true,
-        });
-    }, [isArtifactCreationEnabled, updateSettings]);
+        if (conversationId && conversationExists) {
+            dispatch(setConversationArtifactCreation({ id: conversationId, artifactCreation: newValue }));
+            dispatch(pushConversationRequest({ id: conversationId }));
+        } else {
+            dispatch(setPendingArtifactCreation(newValue));
+        }
+    }, [isArtifactCreationEnabled, conversationId, conversationExists, dispatch]);
 
     const value = {
         isArtifactCreationEnabled,
