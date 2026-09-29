@@ -1,4 +1,4 @@
-import { IpcMainEvent, ipcMain } from "electron";
+import { IpcMainEvent, IpcMainInvokeEvent, ipcMain } from "electron";
 import { performance } from "node:perf_hooks";
 import { setReleaseCategory } from "../store/settingsStore";
 import { cachedLatestVersion } from "../update/update";
@@ -45,6 +45,7 @@ import { openExternalIPC } from "../utils/openExternal/openExternal";
 import { externalProtocolManager } from "../utils/openExternal/manager";
 import { urlRedirectManager } from "../utils/urlRedirects/manager";
 import { authStatusPoller } from "../utils/auth/authPoller";
+import { getAppURL } from "../store/urlStore";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -65,10 +66,20 @@ export const handleIPCCalls = () => {
     let appLocaleCache: string | undefined;
 
     ipcMain.on("hasFeature", (event: IpcMainEvent, message: keyof typeof DESKTOP_FEATURES) => {
+        if (!fromSafeOrigin(event, "hasFeature")) {
+            event.returnValue = false;
+            return;
+        }
+
         event.returnValue = !!DESKTOP_FEATURES[message];
     });
 
     ipcMain.on("getUserInfo", (event: IpcMainEvent, message: IPCInboxGetUserInfoMessage["type"], userID: string) => {
+        if (!fromSafeOrigin(event, "getUserInfo")) {
+            event.returnValue = null;
+            return;
+        }
+
         const _t = performance.now();
         try {
             switch (message) {
@@ -90,6 +101,11 @@ export const handleIPCCalls = () => {
     });
 
     ipcMain.on("getInfo", (event: IpcMainEvent, message: IPCInboxGetInfoMessage["type"]) => {
+        if (!fromSafeOrigin(event, "getInfo")) {
+            event.returnValue = null;
+            return;
+        }
+
         const _t = performance.now();
         try {
             switch (message) {
@@ -142,7 +158,9 @@ export const handleIPCCalls = () => {
         profiler.ipcMessage("getInfo", message, performance.now() - _t);
     });
 
-    ipcMain.on("clientUpdate", (_e, message: unknown) => {
+    ipcMain.on("clientUpdate", (event: IpcMainEvent, message: unknown) => {
+        if (!fromSafeOrigin(event, "clientUpdate")) return;
+
         if (!isValidClientUpdateMessage(message)) {
             ipcLogger.error(`Invalid clientUpdate message: ${message}`);
             return;
@@ -310,7 +328,9 @@ export const handleIPCCalls = () => {
 
     ipcMain.handle(
         "getAsyncData",
-        async (_event, message: IPCInboxClientGetAsyncDataMessage["type"], ...args: unknown[]) => {
+        async (event: IpcMainInvokeEvent, message: IPCInboxClientGetAsyncDataMessage["type"], ...args: unknown[]) => {
+            if (!fromSafeOrigin(event, "getAsyncData")) return null;
+
             try {
                 switch (message) {
                     case "getElectronLogs": {
@@ -333,3 +353,14 @@ export const handleIPCCalls = () => {
         },
     );
 };
+
+function fromSafeOrigin(event: IpcMainEvent | IpcMainInvokeEvent, channel: string): boolean {
+    const origin = event.senderFrame?.origin;
+
+    if (origin && Object.values(getAppURL()).includes(origin)) {
+        return true;
+    }
+
+    ipcLogger.warn(`Rejected ${channel} IPC from origin: ${origin}`);
+    return false;
+}
