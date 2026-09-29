@@ -20,7 +20,7 @@ import { type AuthSwitchService, type SwitchableSession, createAuthSwitchService
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-export const AuthSwitchContext = createContext<MaybeNull<AuthSwitchService>>(null);
+const AuthSwitchContext = createContext<MaybeNull<AuthSwitchService>>(null);
 
 export const useAuthSwitch = createUseContext(AuthSwitchContext);
 

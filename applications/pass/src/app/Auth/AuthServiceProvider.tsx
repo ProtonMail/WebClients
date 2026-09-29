@@ -30,7 +30,7 @@ import noop from '@proton/utils/noop';
 
 import { useAuthSwitch } from './AuthSwitchProvider';
 
-export const AuthServiceContext = createContext<MaybeNull<AuthService>>(null);
+const AuthServiceContext = createContext<MaybeNull<AuthService>>(null);
 export const useAuthService = createUseContext(AuthServiceContext);
 
 /** The only reason we have to wrap the AuthenticationService to a react context is
