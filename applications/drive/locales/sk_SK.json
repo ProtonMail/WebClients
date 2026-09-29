@@ -8302,6 +8302,12 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Váš Google Drive môže byť prázdny alebo môže obsahovať iba súbory, ktoré nie sú podporované."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -9389,6 +9395,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Pay it": [
+        "Zaplatiť"
       ]
     },
     "List title": {

@@ -8072,6 +8072,12 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "És possible que el vostre Google Drive estigui buit o que només contingui fitxers no compatibles."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Teniu una factura pendent de pagament ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Teniu una factura pendent de pagament el ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -9150,6 +9156,9 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ],
+      "Pay it": [
+        "Pagueu-ho"
       ]
     },
     "List title": {
