@@ -1946,6 +1946,9 @@
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com ${ BRAND_NAME }"
       ],
+      "Sign in with Google": [
+        "Iniciar sessão com Google"
+      ],
       "Sign in with password": [
         "Iniciar sessão com sua senha"
       ],
@@ -2740,6 +2743,9 @@
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Grátis por ${ TRIAL_DURATION_DAYS } dias"
       ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Ao cancelar, sua avaliação gratuita não será convertida em uma assinatura paga, mas você ainda pode aproveitar os benefícios do plano até o final do período de avaliação."
+      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua avaliação gratuita não será convertida em uma assinatura paga, mas você ainda pode aproveitar os benefícios do plano até o final do período de avaliação. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
       ],
@@ -3013,10 +3019,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Renovação automática por ${ renewPrice }, durante ${ renewCycle } mês",
-        "Renovação automática por ${ renewPrice }, durante ${ renewCycle } meses"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Renova automaticamente em ${ subscriptionManagerName }"
       ]
@@ -3446,9 +3448,6 @@
       ],
       "Discover and set up features": [
         "Descubra e configure os recursos"
-      ],
-      "Get 50% offer": [
-        "Aproveite a oferta de 50% de desconto"
       ],
       "Got it": [
         "Entendi"
@@ -5512,6 +5511,9 @@
       ],
       "To start, give your organization a name.": [
         "Para começar, dê um nome à sua organização."
+      ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "Para permanecer iniciada sessão em todos os dispositivos, faça upgrade seu plano."
       ],
       "Track the status and activity of your referrals": [
         "Acompanhe o status e a atividade de suas referências"
@@ -8897,6 +8899,9 @@
       "This will delete all security keys linked to your account.": [
         "Isso excluirá todas as chaves de seguranças vinculadas a sua conta."
       ],
+      "Touch your security key to continue.": [
+        "Toque na sua chave de segurança para continuar"
+      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique a sua identidade com chave de segurança física U2F ou FIDO2"
       ],
@@ -10424,9 +10429,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Acesse mais de 6.500 servidores de alta velocidade em até 10 dispositivos para manter seus dados de navegação seguros. Disponível em ${ ios }, ${ android }, ${ appleTV } e ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Acesse 20.000+ servidores em 145 países"
-      ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Acesse suas senhas e proteja suas identidades online de forma integrada em seus dispositivos. Baixe e instale os aplicativos e extensões relevantes do ${ PASS_APP_NAME }."
       ],
@@ -11479,9 +11481,6 @@
       "Failed to fetch logs.": [
         "Erro ao buscar os registros."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Velocidades de VPN mais rápidas, até 10 Gbps"
-      ],
       "Featured in": [
         "Destaque em"
       ],
@@ -11635,9 +11634,6 @@
       "Groups": [
         "Grupos"
       ],
-      "Have some more time to decide without interruption.": [
-        "Ganhe mais tempo para decidir sem interrupções."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Ajude outras famílias a dar às crianças um início seguro on-line. Compartilhe esse marco e divulgue."
       ],
@@ -11709,9 +11705,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se você acredita que seja um erro, entre em contato conosco ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Se cancelar agora, perderá o acesso a ${ BRAND_NAME } ${ planTitle } em ${ expiryDate }, incluindo estes recursos:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se você cancelar sua assinatura do ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
@@ -11789,6 +11782,9 @@
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Importe transferências únicas de e-mail, calendários ou contatos para sua conta da ${ BRAND_NAME }."
+      ],
+      "Import your files and folders": [
+        "Importe seus arquivos e pastas"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "IMPORTANTE: Se o seu console DNS não permitir que os valores CNAME terminem com um ponto, você poderá remover o último ponto dos valores CNAME."
@@ -12073,6 +12069,9 @@
       "Manage groups in your identity provider": [
         "Gerencie grupos em seu provedor de identidade"
       ],
+      "Manage the companies you're responsible for.": [
+        "Gerencie as empresas pelas quais você é responsável."
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gerencie quais aplicativos da ${ BRAND_NAME } os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
       ],
@@ -12096,6 +12095,9 @@
       ],
       "Member": [
         "Membro"
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Os membros são solicitados periodicamente a verificar sua senha da ${ BRAND_NAME } para garantir que não a esqueçam. A exigência de verificações impede que os membros as desativem."
       ],
       "Members are signed out and can't sign back in": [
         "Os membros têm a sessão encerrada e não conseguem iniciar sessão novamente"
@@ -12476,9 +12478,6 @@
       "Preference saved": [
         "Preferências salvas"
       ],
-      "Premium privacy protection across all your devices": [
-        "Proteção de privacidade premium em todos os seus dispositivos"
-      ],
       "Preview": [
         "Pré-visualização"
       ],
@@ -12544,9 +12543,6 @@
       ],
       "RECOMMENDED": [
         "RECOMENDADO"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Recomendado em dispositivos de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "A recuperação por e-mail não está disponível enquanto o ${ PROTON_SENTINEL_NAME } estiver ativado."
@@ -12830,9 +12826,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Comece a usar versão mais curta e atraente do seu endereço de e-mail."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Mantenha o seu plano e obtenha 50% de desconto no próximo mês"
       ],
       "Step ${ step }": [
         "Etapa ${ step }",
@@ -13145,9 +13138,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isso permitirá que o PayPal seja usado para pagar sua assinatura da ${ BRAND_NAME }. Iremos redirecioná-lo para o PayPal em uma nova guia do navegador. Se você usar bloqueadores de pop-up, desative-os para continuar."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Isso permitirá que você acesse sua conta da ${ BRAND_NAME } de forma rápida e segura para alterar sua senha."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Isto irá excluir permanentemente os dados e todos os endereços de e-mail associados a estes usuários."
@@ -13640,6 +13630,9 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Quando desativado, isso impede que imagens remoras sejam carregados sem seu conhecimento."
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Quando essa opção estiver ativada, os membros não poderão desativar o início de sessão por senha em suas próprias configurações."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "Quando ativado, verificaremos se o ${ MAIL_APP_NAME } é o seu aplicativo padrão de e-mail e o notificaremos se não for."
@@ -14926,6 +14919,9 @@
       "Allow sharing outside the organization": [
         "Permitir compartilhamento fora da organização"
       ],
+      "Allow users to set a backup password": [
+        "Permitir que os usuários definam uma senha de backup"
+      ],
       "Allowed Domain": [
         "Domínio permitido"
       ],
@@ -15405,7 +15401,7 @@
         "Ativar ${ DARK_WEB_MONITORING_NAME } para ${ domain.DomainName }"
       ],
       "Enable categories": [
-        "Aativar categorias"
+        "Ativar categorias"
       ],
       "Enabled": [
         "Ativado"
@@ -16054,6 +16050,9 @@
       ],
       "Require 2FA for everyone": [
         "Requer A2F para todos"
+      ],
+      "Require password check-ins": [
+        "Exigir a verificação da senha"
       ],
       "Reserved address": [
         "Endereço reservado"
@@ -19074,7 +19073,10 @@
         "Credenciais OpenVPN regeneradas"
       ],
       "Password check-ins are not required anymore": [
-        "Não é mais necessário verificar com senha"
+        "A verificação de senha não é mais necessário"
+      ],
+      "Password check-ins are now required for all members": [
+        "A verificação de senha agora é obrigatório para todos os membros"
       ],
       "Reminder has been sent": [
         "O lembrete foi enviado"
@@ -19364,11 +19366,17 @@
       "help center": [
         "centro de ajuda"
       ],
+      "If you continue after your trial,": [
+        "Se você continuar depois da sua avaliação,"
+      ],
       "If you need help,": [
         "Se precisar de ajuda,"
       ],
       "Once your full subscription starts...": [
         "Quando sua assinatura completa começar..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "você pode cancelar em até 30 dias e receber um reembolso proporcional."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
@@ -20413,9 +20421,6 @@
       ],
       "Card number": [
         "Número do cartão"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Créditos e descontos são mostrados na sua fatura."
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Atualmente a renovação automática da assinatura está desativada. Se você alterar a assinatura agora, a renovação automática será ativada novamente."
@@ -24755,6 +24760,9 @@
       ],
       "Free Trial": [
         "Avaliação gratuita"
+      ],
+      "Upcoming": [
+        "Em breve"
       ]
     },
     "Subtitle": {
@@ -25825,6 +25833,9 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar a perda dos benefícios da ${ BRAND_NAME }"
       ],
+      "Confirm where to sign in": [
+        "Confirmar onde iniciar sessão"
+      ],
       "Connect ${ name }": [
         "Conectar ${ name }"
       ],
@@ -26798,6 +26809,9 @@
       "Post-quantum protection": [
         "Proteção pós-quântica"
       ],
+      "Preparing your import": [
+        "Preparando sua importação"
+      ],
       "Preview": [
         "Pré-visualização"
       ],
@@ -27086,9 +27100,6 @@
       "Sign in on TV?": [
         "Iniciar sessão na TV?"
       ],
-      "Sign in to Google": [
-        "Iniciar sessão no Google"
-      ],
       "Sign in to join the Beta program": [
         "Inicie sessão para participar do programa Beta"
       ],
@@ -27166,9 +27177,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Stay for 50% off your next month": [
-        "Fique por mais um mês com 50% de desconto"
       ],
       "Stay secure and connected anywhere": [
         "Fique seguro e conectado em qualquer lugar"
@@ -27476,9 +27484,6 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
-      ],
-      "Your import is starting": [
-        "Sua importação está começando"
       ],
       "Your plan": [
         "O seu plano"

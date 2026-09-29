@@ -2599,10 +2599,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "განახლდება ${ renewPrice }-ით, ${ renewCycle } თვის განმავლობაში",
-        "განახლდება ${ renewPrice }-ით, ${ renewCycle } თვის განმავლობაში"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "ავტომატური განახლების დრო ${ subscriptionManagerName }"
       ]
@@ -3032,9 +3028,6 @@
       ],
       "Discover and set up features": [
         "აღმოაჩინეთ და მოირგეთ ფუნქციები"
-      ],
-      "Get 50% offer": [
-        "50% ფასდაკლების მიღება"
       ],
       "Got it": [
         "გავიგე"
@@ -11544,9 +11537,6 @@
       "RECOMMENDED": [
         "რეკომენდებულია"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "რეკომენდებულია სანდო მოწყობილობებზე. ${ keepMeSignedInLearnMoreLink }"
-      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "ელფოსტით აღდგენა მიუწვდომელია, როდესაც ${ PROTON_SENTINEL_NAME } ჩართულია."
       ],
@@ -12107,9 +12097,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "მოგცემთ ${ BRAND_NAME }-ის გამოწერის გადასახდელად PayPal-ის გამოყენების საშუალებას. მოხდება თქვენი გადამისამართება PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "ეს საშუალებას მოგცემთ სწრაფად და უსაფრთხოდ შეხვიდეთ თქვენს ${ BRAND_NAME } ანგარიშში, რათა შეცვალოთ თქვენი პაროლი."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "ამ მომხმარებლის მონაცემები და ყველა ელფოსტის მისამართი სამუდამოდ წაიშლება."
@@ -19055,9 +19042,6 @@
       ],
       "Card number": [
         "ბარათის ნომერი"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "კრედიტები და ფასდაკლებები ასახულია თქვენს ინვოისში"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "ამჟამად გამოწერის ავტომატური განახლება გათიშულია. თუ გამოწერას ახლა შეცვლით, ავტომატური განახლება თავიდან ჩაირთვება."

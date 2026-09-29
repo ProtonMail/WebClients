@@ -983,7 +983,7 @@
         "Pridobite nov šifriran e-poštni naslov"
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
-        "Poiščite pomoč pri ${ LUMO_SHORT_APP_NAME }"
+        "${ LUMO_SHORT_APP_NAME } vam lahko pomaga pri prijavi."
       ],
       "Get in touch": [
         "Oglasite se nam!"
@@ -2374,12 +2374,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewCycle } mesec",
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewCycle } meseca",
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewCycle } mesece",
-        "Se podaljša samodejno za ${ renewPrice } za ${ renewCycle } mesecev"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Se podaljša samodejno na ${ subscriptionManagerName }"
       ]
@@ -2616,9 +2610,6 @@
       ],
       "Discover and set up features": [
         "Odkrijte in nastavite funkcije"
-      ],
-      "Get 50% offer": [
-        "Izkoristite ponudbo s 50 % popustom"
       ],
       "Got it": [
         "Razumem"
@@ -5759,6 +5750,9 @@
       "Organization key must be activated to create non-private users": [
         "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran."
       ],
+      "Part of the file appears to be corrupted": [
+        "Del datoteke se zdi poškodovan"
+      ],
       "Password is required": [
         "Zahtevano je geslo"
       ],
@@ -6971,6 +6965,9 @@
       ]
     },
     "Filter": {
+      "All": [
+        "Vse"
+      ],
       "Errors": [
         "Napake"
       ],
@@ -8153,9 +8150,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Zagotovite si dostop do več kot 6.500 hitrih strežnikov na do 10 napravah, da bodo vaši podatki brskanja varni. Na voljo na ${ ios }, ${ android }, ${ appleTV } in ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Dostop do več kot 20.000 strežnikov v več kot 145 državah"
-      ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
       ],
@@ -8822,9 +8816,6 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Hitro in osredotočeno. E-pošta in koledar na vašem namizju."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Največja hitrost VPN s hitrostjo do 10 Gbps"
-      ],
       "Featured in": [
         "Predstavljeno v"
       ],
@@ -8939,9 +8930,6 @@
       "Groups": [
         "Skupine"
       ],
-      "Have some more time to decide without interruption.": [
-        "Imate še nekaj časa, da se odločite, ne da bi vas pri tem kaj motilo."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Pomagajte drugim družinam zagotoviti svojim otrokom varen začetek na spletu. Delite ta mejnik in razširite novico."
       ],
@@ -8983,9 +8971,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Če menite, da je prišlo do pomote, se obrnite na nas ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Če naročnino prekinete zdaj, boste dne ${ expiryDate } izgubili dostop do ${ BRAND_NAME } ${ planTitle }, vključno z naslednjimi funkcijami:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Če prekličete, se vaša naročnina na ${ planTitle } ne bo podaljšala, ko poteče dne ${ expiryDate }."
@@ -9548,9 +9533,6 @@
       "Preference saved": [
         "Nastavitev shranjena"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premijska zaščita zasebnosti na vseh vaših napravah"
-      ],
       "Preview": [
         "Predogled"
       ],
@@ -9601,9 +9583,6 @@
       ],
       "RECOMMENDED": [
         "PRIPOROČENO"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Priporočeno na zaupanja vrednih napravah. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery file downloaded": [
         "Prenos datoteke za obnovitev je opravljen."
@@ -9796,9 +9775,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Uporabite krajšo in lažjo različico svojega e-poštnega naslova."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50 % popust"
       ],
       "Step ${ step }": [
         "${ step }. korak",
@@ -10939,6 +10915,9 @@
       ],
       "Cancel / close": [
         "Prekliči/Zapri"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Zapri ${ LUMO_SHORT_APP_NAME }"
       ],
       "Close draft": [
         "Zapri osnutek"
@@ -12647,7 +12626,7 @@
         "Pridobi ${ VPN_APP_NAME }."
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
-        "Poiščite pomoč pri ${ LUMO_SHORT_APP_NAME }"
+        "${ LUMO_SHORT_APP_NAME } vam lahko pomaga pri prijavi."
       ],
       "Groups": [
         "Skupine"
@@ -16247,6 +16226,11 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "500 GB of secure storage": [
+        "500 GB varne shrambe"
       ]
     },
     "Recovery Email": {
@@ -20163,6 +20147,9 @@
       "Send new invite?": [
         "Pošlji novo povabilo?"
       ],
+      "September Sale": [
+        "Septembrska razprodaja"
+      ],
       "Service": [
         "Storitev"
       ],
@@ -20279,9 +20266,6 @@
       ],
       "Status": [
         "Stanje"
-      ],
-      "Stay for 50% off your next month": [
-        "V naslednjem mesecu izkoristite 50 % popust"
       ],
       "Subscription": [
         "Naročnina"
