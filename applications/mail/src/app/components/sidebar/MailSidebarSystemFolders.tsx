@@ -5,12 +5,9 @@ import { c } from 'ttag';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
-import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
-import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import type { MoveParams } from '../../hooks/actions/applyLocation/interface';
@@ -18,7 +15,6 @@ import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
 import type { SystemFolder } from '../../hooks/useMoveSystemFolders';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
-import { getCategorySystemFolder } from '../categoryView/categoriesHelpers';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import SidebarItem from './SidebarItem';
 
@@ -71,11 +67,8 @@ const MailSidebarSystemFolders = ({
         showSoftDeletedFolder,
     });
 
-    const { isCategoryViewEnabled, activeCategoriesTabs } = useCategoriesView();
-    const { sendReportCategoriesNav } = useCategoriesTelemetry();
+    const { isCategoryViewEnabled } = useCategoriesView();
     const { getLocationCount } = useMailboxCounter();
-
-    const showCategoriesAgain = useFlag('DisplayCategoriesInSidebarAgain');
 
     const dispatch = useDispatch();
 
@@ -227,12 +220,8 @@ const MailSidebarSystemFolders = ({
     const mainElements: SystemFolder[] = [];
     const moreElements: SystemFolder[] = [];
 
-    const moreClickCallback = (labelID: string) => {
-        if (isCategoryLabel(labelID)) {
-            void sendReportCategoriesNav('sidebar', labelID);
-        }
-
-        // Mark the labelID as seen to remove unseen badge
+    // Mark the labelID as seen to remove unseen badge
+    const handleItemClick = (labelID: string) => {
         void dispatch(updateLastSeenEventId({ labelID }));
     };
 
@@ -245,16 +234,6 @@ const MailSidebarSystemFolders = ({
             mainElements.push(item);
         } else {
             moreElements.push(item);
-        }
-    });
-
-    activeCategoriesTabs.forEach((category) => {
-        if (category.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-            return;
-        }
-
-        if (showCategoriesAgain) {
-            moreElements.push(getCategorySystemFolder(category));
         }
     });
 
@@ -294,7 +273,7 @@ const MailSidebarSystemFolders = ({
                             collapsed={collapsed}
                             moveToFolder={moveToFolder}
                             applyLabels={applyLabels}
-                            onClickCallback={() => dispatch(updateLastSeenEventId({ labelID }))}
+                            onClickCallback={() => handleItemClick(labelID)}
                         />
                     </DnDElementWrapper>
                 );
@@ -347,7 +326,7 @@ const MailSidebarSystemFolders = ({
                                   collapsed={collapsed}
                                   moveToFolder={moveToFolder}
                                   applyLabels={applyLabels}
-                                  onClickCallback={() => moreClickCallback(element.labelID)}
+                                  onClickCallback={() => handleItemClick(element.labelID)}
                               />
                           </DnDElementWrapper>
                       );

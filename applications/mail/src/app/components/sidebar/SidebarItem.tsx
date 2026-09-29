@@ -13,7 +13,6 @@ import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useLoading } from '@proton/hooks';
 import type { IconComponent } from '@proton/icons/component';
 import type { IconSize } from '@proton/icons/types';
-import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -24,7 +23,7 @@ import noop from '@proton/utils/noop';
 
 import { useCheckAllRef } from '../../containers/CheckAllRefProvider';
 import { shouldDisplayTotal } from '../../helpers/labels';
-import { categoryIDFromUrl, setCategoryInUrl } from '../../helpers/mailboxUrl';
+import { setCategoryInUrl } from '../../helpers/mailboxUrl';
 import type { MoveParams } from '../../hooks/actions/applyLocation/interface';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
@@ -115,15 +114,10 @@ const SidebarItem = ({
 
     const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] ?? labelID;
 
-    let link: string;
-    if (isCategoryLabel(labelID)) {
-        // Category labels view redirect to /inbox#category=CATEGORY
-        link = setCategoryInUrl(labelID);
-    } else if (labelID === MAILBOX_LABEL_IDS.INBOX && isCategoryViewEnabled) {
+    let link = `/${humanID}`;
+    if (labelID === MAILBOX_LABEL_IDS.INBOX && isCategoryViewEnabled) {
         // We want to redirect to /inbox#category=primary when categories are enabled
         link = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
-    } else {
-        link = `/${humanID}`;
     }
 
     const needsTotalDisplay = shouldDisplayTotal(labelID);
@@ -150,13 +144,8 @@ const SidebarItem = ({
         const customViewLabelIDs = Object.entries(CUSTOM_VIEWS).map(([, view]) => {
             return view.label.toString();
         });
-        return (
-            !(labelID === paramsLabelID) &&
-            !NO_DROP_SET.has(labelID) &&
-            !customViewLabelIDs.includes(labelID) &&
-            !(isCategoryLabel(labelID) && selectAll)
-        );
-    }, [paramsLabelID, labelID, selectAll]);
+        return !(labelID === paramsLabelID) && !NO_DROP_SET.has(labelID) && !customViewLabelIDs.includes(labelID);
+    }, [paramsLabelID, labelID]);
 
     const dropCallback = useCallback(
         (itemIDs: string[]) => {
@@ -209,12 +198,6 @@ const SidebarItem = ({
                 to={link}
                 onClick={handleClick}
                 isActive={(match, location) => {
-                    // Categories are displayed on the sidebar, this highlights the active category
-                    if (isCategoryLabel(labelID)) {
-                        const categoryID = categoryIDFromUrl(location);
-                        return !!(labelID === categoryID);
-                    }
-
                     if (labelID === MAILBOX_LABEL_IDS.ALL_MAIL || labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
                         return (
                             location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL]}`) ||
