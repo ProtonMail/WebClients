@@ -31,7 +31,7 @@
         "메일 전달 중단됨"
       ],
       "You will stop the mail forwarding.": [
-        "메일 가져오기가 중단됩니다."
+        "메일 전달이 중단됩니다."
       ]
     },
     "Account Settings - Info": {
@@ -3027,9 +3027,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "${ renewCycle }개월간 자동으로 ${ renewPrice }에 갱신됩니다"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName }에 자동으로 갱신합니다."
       ]
@@ -3457,9 +3454,6 @@
       ],
       "Discover and set up features": [
         "기능 알아보고 설정하기"
-      ],
-      "Get 50% offer": [
-        "50% 할인 받기"
       ],
       "Got it": [
         "확인했습니다"
@@ -5342,6 +5336,9 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "다른 서비스 제공자로부터 회원님의 이매일, 캘린더 이벤트 및 연락처를 가져올 수 있습니다."
       ],
+      "Bring over your files from another provider.": [
+        "다른 서비스 제공업체에서 파일을 손쉽게 가져오세요."
+      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "자신의 도메인에서 전문 이메일 주소로 신뢰와 브랜드 인지도를 구축하세요."
       ],
@@ -6332,7 +6329,7 @@
         "조건 추가"
       ],
       "Add forwarding rule": [
-        "가져오기 규칙 추가"
+        "전달하기 규칙 추가"
       ],
       "Back": [
         "뒤로"
@@ -6409,7 +6406,7 @@
         "작업"
       ],
       "Forward from": [
-        "전달한 사람:"
+        "전달할 사람:"
       ],
       "Forward to": [
         "다음으로 전달:"
@@ -6434,7 +6431,7 @@
         "확인 이메일이 ${ boldForwardeeEmail }(으)로 전송됩니다."
       ],
       "Automatically forward emails to another email address.": [
-        "다른 이메일 주소로 이메일을 자동으로 가져오세요."
+        "다른 이메일 주소로 이메일을 자동으로 전달하세요."
       ],
       "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "${ boldForwarderEmail } 주소에 대해 종단 간 암호화가 비활성화되어 있으나 제로 액세스 활성화는 계속 활성화된 상태로 유지됩니다. ${ learnMoreLink }"
@@ -6467,7 +6464,7 @@
         "${ boldForwardeeEmail }(으)로의 전달은 수신자가 요청을 수락한 후에 활성화됩니다."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "종단 간 암호화 없는 주소 포워딩은 ${ boldForwarderEmail } 주소에 대한 종단 간 암호화 비활성화를 의미 합니다. 다만, 제로 엑세스 암호화는 여전히 활성화 상태로 유지됩니다. ${ learnMoreLink }"
+        "종단간 암호화 없는 주소 전달은 ${ boldForwarderEmail } 주소에 대한 종단간 암호화 비활성화를 의미 합니다. 다만, 제로 엑세스 암호화는 여전히 활성화 상태로 유지됩니다. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "수신자가 전달을 수락하면 이 주소로의 전달이 활성화됩니다."
@@ -6499,7 +6496,7 @@
         "및"
       ],
       "Forward from": [
-        "전달한 사람:"
+        "전달할 사람:"
       ],
       "Forward to": [
         "다음으로 전달:"
@@ -6554,7 +6551,7 @@
         "보낸 사람 주소에 대한 종단간 암호화가 재활성화 됩니다."
       ],
       "Forwarding to the destination address will end.": [
-        "해당 경로 주소의 가져오기가 중단됩니다."
+        "해당 경로 주소의 전달이 중단됩니다."
       ]
     },
     "email_forwarding_2023: Status": {
@@ -6599,7 +6596,7 @@
     },
     "email_forwarding_2023: Title": {
       "Delete forwarding?": [
-        "가져오기를 중단합니까?"
+        "전달하기를 중단합니까?"
       ],
       "Email forwarding deactivated": [
         "이메일 가져오기를 비활성화 했습니다."
@@ -6617,7 +6614,7 @@
         "확인 다시 요청 중"
       ],
       "Set up forwarding": [
-        "자동으로 가져오기 설정"
+        "자동으로 전달하기 설정"
       ]
     },
     "email_forwarding_2023: Warning": {
@@ -10095,6 +10092,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME }은 제3자와 절대 사용자의 정보를 공유하지 않습니다. ${ BRAND_NAME }의 자체 분석 및 Constella Intelligence사로 부터 데이터가 수집됩니다."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME }는 불러오기 작업을 진행할 때만 이 권한을 사용하며, Google이 ${ BRAND_NAME } 계정에 접근할 수는 없습니다."
+      ],
       "${ BRAND_NAME } Pass Professional": [
         "${ BRAND_NAME } Pass Professional"
       ],
@@ -10451,9 +10451,6 @@
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "최대 10개의 기기에서 6,500개 이상의 고속 서버에 접근하여 브라우징 데이터를 안전하게 보호하세요. ${ ios }, ${ android }, ${ appleTV }, 그리고 ${ desktop }에서 사용할 수 있습니다."
-      ],
-      "Access to 20,000+ servers in 145 countries": [
-        "145개국의 20,000개 이상 서버에 접근"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "사용자의 비밀번호에 접근하고 온라인 신원을 기기를 넘나들며 원활하게 보호하세요. ${ PASS_APP_NAME } 앱과 확장을 다운로드하고 설치하세요."
@@ -10980,8 +10977,8 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }에 연결된 외부 메일함을 연결하고 관리하세요."
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "${ DRIVE_APP_NAME }에 안전하게 데이터를 볼러오기 위해 Google Drive와 연결 중입니다."
+      "Connecting to Google Drive and preparing your import.": [
+        "Google Drive에 연결하여 불러오기를 준비하고 있습니다."
       ],
       "Connection data will be available in around 1 hour.": [
         "연결 데이터가 한 시간 내에 사용 가능합니다."
@@ -11334,9 +11331,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
       ],
-      "Email you once import is finished": [
-        "불러오기가 완료되면 이메일 알림 보내기"
-      ],
       "Emailing preference saved": [
         "이메일 환경 설정이 저장됨"
       ],
@@ -11523,9 +11517,6 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "신속하고 충실하도록. 당신의 데스크톱으로 찾아온 이메일과 캘린더."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "최대 10 Gbps의 빠른 VPN 속도"
-      ],
       "Featured in": [
         "소개된 주요 미디어"
       ],
@@ -11576,9 +11567,6 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "${ bundlePlanPriceInline }에 이용 가능"
-      ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "가져오기가 작동하려면, GIF에 표시된 대로 상기 요청된 모든 항목을 선택해야 합니다."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "${ MAIL_APP_NAME }에서 타 이메일 서비스로 전환하는 사용자라면, 매끄러운 전환을 위해 ${ boldAddresses } 탭을 선택한 뒤 활성화된 모든 이메일 주소를 추가하세요."
@@ -11685,9 +11673,6 @@
       "Groups": [
         "그룹"
       ],
-      "Have some more time to decide without interruption.": [
-        "방해받지 않고 결정할 수 있는 시간이 더 있으니 천천히 결정하세요."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "다른 가족들도 자녀에게 안전한 온라인 시작을 제공할 수 있도록 도와주세요. 이 마일스톤을 공유하고 널리 알려주세요."
       ],
@@ -11759,9 +11744,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "지금 취소하면 ${ expiryDate }부로 ${ BRAND_NAME } ${ planTitle }에 접근할 수 없으며, 다음 기능이 제한됩니다:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
@@ -11837,6 +11819,9 @@
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "이메일, 캘린더 또는 연락처의 일회성 전송을 ${ BRAND_NAME } 계정으로 불러옵니다."
+      ],
+      "Import your files and folders": [
+        "내 파일과 폴더 불러오기"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "중요 사항: 만일 사용자의 DNS 콘솔이 온 점으로 끝나는 것을 허용하지 않을시, 뒷 편의 CNAME 값에서 온 점 (.) 제거가 가능합니다."
@@ -12020,6 +12005,9 @@
       ],
       "Keys created": [
         "키 생성됨"
+      ],
+      "Know when it's done": [
+        "완료되면 알림 보내기"
       ],
       "Label all imported messages as": [
         "가져온 모든 메시지에 라벨 지정:"
@@ -12225,8 +12213,8 @@
       "Next billing date": [
         "다음 청구일"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "다음으로, Google 계정에 로그인한 다음 ${ BRAND_NAME }에 회원님의 데이터에 접근할 수 있는 권한을 부여해야 합니다."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "다음 단계로, Google 계정에 로그인하여 ${ BRAND_NAME }이(가) Google Drive에 접근하는 것을 허용해야 합니다. ${ DRIVE_APP_NAME }로 파일과 폴더를 불러옵니다."
       ],
       "No account keys exist": [
         "계정 키가 존재하지 않음"
@@ -12546,9 +12534,6 @@
       "Preference saved": [
         "설정이 저장되었습니다."
       ],
-      "Premium privacy protection across all your devices": [
-        "모든 기기에 걸친 프리미엄 프라이버시 보호"
-      ],
       "Preview": [
         "미리보기"
       ],
@@ -12572,6 +12557,9 @@
       ],
       "Private AI assistant": [
         "개인정보가 보호되는 AI 어시스턴트"
+      ],
+      "Private and encrypted": [
+        "암호화로 안전하게 보호"
       ],
       "Product reviews, rankings, or guides": [
         "제품 리뷰, 순위 또는 가이드"
@@ -12614,9 +12602,6 @@
       ],
       "RECOMMENDED": [
         "권장됨"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "신뢰하는 기기에서 권장됩니다. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "${ PROTON_SENTINEL_NAME }이 활성화된 경우 이메일으로 복구를 사용할 수 없습니다."
@@ -12861,9 +12846,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
-      "Sit back and we will let you know.": [
-        "잠시 기다려주세요. 완료되면 알려드릴게요."
-      ],
       "Smart Routed through a different country.": [
         "다른 국가를 통해 자동 경유됨."
       ],
@@ -12908,9 +12890,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "더 짧고 매력있는 이메일 주소를 사용하세요."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "현재 플랜을 유지허고 다음 달에는 50% 할인 받으세요"
       ],
       "Step ${ step }": [
         "${ step } 단계"
@@ -13224,9 +13203,6 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "PayPal을 사용하여 Proton 구독 비용을 지불할 수 있습니다. 새 브라우저 탭에서 ${ BRAND_NAME }으로 리디렉션합니다. 팝업 차단기를 사용하는 경우 계속 진행하기 위해 팝업 차단기를 비활성화하세요."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "QR코드로 로그인은 비밀번호를 변경할 수 있도록 ${ BRAND_NAME } 계정에 가장 빠르고 안전하게 접근할 수 있는 방법입니다."
-      ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "이 사용자와 관련된 데이터와 모든 이메일 주소가 영구적으로 삭제됩니다."
       ],
@@ -13533,9 +13509,6 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "MDM 스크립트 구성을 통해 ${ removeScriptLink }을(를) 실행하거나 MDM을 통해 파일을 지우십시오. 파일 배포나 스크립트 실행을 지원하는 MDM 환경에서만 지원합니다."
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "${ DRIVE_APP_NAME }로 복사할 때만 쓰입니다."
-      ],
       "User activated": [
         "사용자 활성화됨"
       ],
@@ -13656,9 +13629,6 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "이미 **다른 브라우저**로 ${ BRAND_NAME } 웹 앱을 로그인한 것이 감지되었습니다.\n현재 활성 세션에서 비밀번호 재설정을 진행할 수 없습니다."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "사진, Google Docs, 시트 및 슬라이드는 불러올 수 없습니다. Google Drive 공간이 비어있는지 여부를 확인해 주세요."
-      ],
       "We generated a strong password for you": [
         "강력한 비밀번호를 생성했습니다."
       ],
@@ -13689,14 +13659,8 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "복구 키로 복구를 활성화하는 것을 강력하게 권장합니다."
       ],
-      "We support most files": [
-        "대부분의 파일 지원"
-      ],
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
-      ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "불러오기가 완료되면 알림 이메일을 보내드립니다. 폴더에서 불러온 파일을 찾으실 수 있습니다."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_WERO_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
@@ -13704,8 +13668,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Google Drive에서 ${ DRIVE_APP_NAME }로 파일을 복사합니다."
+      ],
       "We'll email you once import is complete.": [
         "불러오기가 완료되면 이메일로 보내드리겠습니다."
+      ],
+      "We'll email you when your import is complete.": [
+        "불러오기가 완료되면 이메일을 보내드립니다."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "불러오기가 완료되면 이메일로 알려드립니다. 불러온 파일은 ${ DRIVE_APP_NAME }의 폴더에서 찾을 수 있습니다."
       ],
       "We'll get back to you shortly.": [
         "곧 돌아오겠습니다."
@@ -13823,9 +13796,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "활성화하지 않으면 새 사용자를 만들거나 기존 사용자에게 주소를 추가하거나 개인이 아닌 사용자 계정에 액세스할 수 없습니다."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "사진, Google Docs 및 시트를 불러올 수 없습니다"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
@@ -14160,6 +14130,9 @@
       "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
         "파일에 각 사용자에 대한 비밀번호가 포함되어 있습니다. 초대 링크 대신 각자의 계정에 비밀번호가 생성됩니다."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "파일이 암호화되어 안전하게 ${ DRIVE_APP_NAME }에 저장되었습니다."
+      ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
       ],
@@ -14171,6 +14144,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "무료 체험이 월간 구독으로 성공적으로 전환되었습니다. 회원님의 구독 갱신일은 ${ nextBillingDate }입니다."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Drive 저장공간이 비어있거나 지원되지 않는 파일로 구성되어 있습니다."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "회원님의 정보는 Proton에서 안전하게 보호되고 있습니다. 서비스 제공에 필요한 상황에만 연락해 드립니다."
@@ -19306,6 +19282,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "${ plan }의 첫 달 80% 할인을 받을 수 있는 마지막 기회입니다."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "${ plan }을(를) 첫 달 동안 이 가격으로 누릴 수 있는 마지막 기회."
+      ],
       "Last day to save": [
         "매월에서 매년 구독으로 변경하여"
       ],
@@ -20556,9 +20535,6 @@
       ],
       "Card number": [
         "카드 번호"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "크레딧 및 할인이 청구서에 반영됩니다"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "현재 자동 구독 갱신이 비활성화되었습니다. 구독을 지금 변경하면, 자동 갱신이 다시 활성화됩니다."
@@ -24915,9 +24891,6 @@
       ],
       "View VPN session details for your organization.": [
         "내 조직의 VPN 세션 상세 사항을 확인하세요."
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "파일을 복사하기 위해 Proton Drive가 파일을 읽은 다음 회원님의 개인 ${ BRAND_NAME } 키로 암호화 작업을 수행합니다."
       ]
     },
     "Success": {
@@ -25945,9 +25918,6 @@
       "Connect your custom domain": [
         "커스텀 도메인 연결하기"
       ],
-      "Connect your Google account": [
-        "Google 계정 연결"
-      ],
       "Connected emails": [
         "연결된 이메일"
       ],
@@ -26256,6 +26226,9 @@
       ],
       "Downloads": [
         "다운로드"
+      ],
+      "Easy Switch from Google Drive": [
+        "Google Drive에서 Easy Switch하기"
       ],
       "Edit billing address": [
         "청구 주소 수정"
@@ -26596,6 +26569,9 @@
       "Import key": [
         "키 가져오기"
       ],
+      "Import started": [
+        "불러오기가 시작되었습니다."
+      ],
       "Import started, but your storage won't be enough for this import": [
         "불러오기가 시작되었습니다. 저장공간이 부족하여 모든 파일을 불러올 수 없습니다."
       ],
@@ -26899,6 +26875,9 @@
       "Post-quantum protection": [
         "양자 내성 암호화"
       ],
+      "Preparing your import": [
+        "불러오기를 준비하는 중"
+      ],
       "Preview": [
         "미리 보기"
       ],
@@ -27160,9 +27139,6 @@
       "Set your password": [
         "비밀번호를 설정하세요"
       ],
-      "Setting up your import": [
-        "불러오기를 설정하는 중"
-      ],
       "Settings": [
         "설정"
       ],
@@ -27189,9 +27165,6 @@
       ],
       "Sign in on TV?": [
         "TV에서 로그인하시나요?"
-      ],
-      "Sign in to Google": [
-        "Google 계정에 로그인"
       ],
       "Sign in to join the Beta program": [
         "베타 프로그램에 참여하려면 로그인"
@@ -27270,9 +27243,6 @@
       ],
       "Status": [
         "상태"
-      ],
-      "Stay for 50% off your next month": [
-        "첫 달은 50% 할인으로 누리기"
       ],
       "Stay secure and connected anywhere": [
         "언제 어디서나 안전하게 연결하세요"
@@ -27579,9 +27549,6 @@
       ],
       "Your exposed information": [
         "사용자의 노출된 정보"
-      ],
-      "Your import is starting": [
-        "불러오기 작업이 시작되었어요"
       ],
       "Your plan": [
         "내 플랜"

@@ -2652,10 +2652,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewCycle } maand",
-        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewCycle } maanden"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Vernieuwt automatisch op ${ subscriptionManagerName }"
       ]
@@ -3085,9 +3081,6 @@
       ],
       "Discover and set up features": [
         "Ontdek en configureer functies"
-      ],
-      "Get 50% offer": [
-        "Neem de 50% deal"
       ],
       "Got it": [
         "Begrepen"
@@ -5976,7 +5969,7 @@
         "Opslaan"
       ],
       "Send confirmation email": [
-        "Bevestigingse-mail verzenden"
+        "Bevestigingsmail verzenden"
       ],
       "Set up email forwarding": [
         "E-mail doorsturen instellen"
@@ -10015,9 +10008,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Toegang tot 6 500+ hoge snelheid servers op maximaal 10 apparaten om uw surfgegevens veilig te houden. Beschikbaar op ${ ios }, ${ android }, ${ appleTV }en ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Toegang tot meer dan 20.000 servers in 145 landen"
-      ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Krijg toegang tot uw wachtwoorden en bescherm uw online-identiteiten naadloos tussen uw apparaten. Download en installeer de relevante ${ PASS_APP_NAME }-apps en extensies."
       ],
@@ -11015,9 +11005,6 @@
       "Failed to fetch logs.": [
         "Fout bij het ophalen van logboeken."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "De hoogste VPN-snelheden tot 10 Gbps"
-      ],
       "Featured in": [
         "Uitgelicht in"
       ],
@@ -11168,9 +11155,6 @@
       "Groups": [
         "Groepen"
       ],
-      "Have some more time to decide without interruption.": [
-        "Neem nog even de tijd om in alle rust een beslissing te nemen."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Help andere gezinnen om hun kinderen een veilige start online te geven. Deel deze mijlpaal en zeg het voort."
       ],
@@ -11242,9 +11226,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Als u nu annuleert, hebt u vanaf ${ expiryDate }geen toegang meer tot ${ BRAND_NAME } ${ planTitle }, waaronder deze functies:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
@@ -12000,9 +11981,6 @@
       "Preference saved": [
         "Voorkeur opgeslagen"
       ],
-      "Premium privacy protection across all your devices": [
-        "Eersteklas privacybescherming op al uw apparaten"
-      ],
       "Preview": [
         "Voorbeeld"
       ],
@@ -12068,9 +12046,6 @@
       ],
       "RECOMMENDED": [
         "AANBEVOLEN"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Aanbevolen op vertrouwde apparaten. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Herstel via e-mail is niet beschikbaar zolang ${ PROTON_SENTINEL_NAME } is ingeschakeld."
@@ -12342,9 +12317,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Gebruik de kortere, meer catchy versie van uw e-mailadres."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behoud uw abonnement aan en u ontvangt 50% korting op uw volgende maand"
       ],
       "Step ${ step }": [
         "Stap ${ step }",
@@ -12659,9 +12631,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dit zal PayPal inschakelen om te betalen voor uw ${ BRAND_NAME } abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Hiermee krijgt u snel en veilig toegang tot uw ${ BRAND_NAME } account, zodat u uw wachtwoord kunt wijzigen."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Dit verwijdert permanent de gegevens en alle e-mailadressen die aan deze gebruikers zijn gekoppeld."
@@ -13928,6 +13897,9 @@
       ],
       "Cancel / close": [
         "Annuleren / sluiten"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Sluit ${ LUMO_SHORT_APP_NAME }"
       ],
       "Close draft": [
         "Concept sluiten"
@@ -18625,6 +18597,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Laatste kans om aan deze prijs uw eerste maand ${ plan } te krijgen."
+      ],
       "Last day to save": [
         "Laatste dag om op te besparen"
       ],
@@ -18736,6 +18711,9 @@
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
+      ],
+      "Add a payment method": [
+        "Voeg een betaalmethode toe"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "U kunt op elk moment annuleren vóór ${ cancelDate }."
@@ -19741,9 +19719,6 @@
       ],
       "Card number": [
         "Kaartnummer"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Tegoeden en kortingen worden weergegeven op uw factuur"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Momenteel is de automatische verlenging van het abonnement uitgeschakeld. Als u het abonnement nu wijzigt, wordt de automatische verlenging opnieuw ingeschakeld."
@@ -26347,9 +26322,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Stay for 50% off your next month": [
-        "Blijf en ontvang 50% korting op uw volgende maand"
       ],
       "Stay secure and connected anywhere": [
         "Blijf overal veilig en verbonden"
