@@ -1,4 +1,6 @@
 import { startAccountSessionsListener, startPersistListener } from '@proton/account';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
 import { getDrivePersistedState } from './persistReducer';
@@ -23,4 +25,5 @@ export const start = ({
     if (features?.accountSessions) {
         startAccountSessionsListener(startListening);
     }
+    startOffersDeliveryListener(startListening, { appReady: bootstrapEvent });
 };
