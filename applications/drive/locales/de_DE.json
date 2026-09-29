@@ -8057,6 +8057,12 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Möglicherweise ist dein Google Drive leer oder enthält nur Dateien, die nicht unterstützt werden."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung vom ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -9132,6 +9138,9 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "Pay it": [
+        "Bezahlen"
       ]
     },
     "List title": {
