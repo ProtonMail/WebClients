@@ -200,7 +200,7 @@ export const EditBillingAddressModal = (props: Props) => {
                         onValue={(value: string) =>
                             updateBillingAddress((model) => ({
                                 ...model,
-                                BillingAddress: { ...model.BillingAddress, ZipCode: value },
+                                BillingAddress: { ...model.BillingAddress, ZipCode: value || null },
                             }))
                         }
                         error={
