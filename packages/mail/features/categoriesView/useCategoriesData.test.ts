@@ -1,6 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import useFeature from '@proton/features/useFeature';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
@@ -18,7 +17,6 @@ import type { CategoryTab } from './categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from './categoriesConstants';
 import { useCategoriesData } from './useCategoriesData';
 
-jest.mock('@proton/features/useFeature');
 jest.mock('@proton/unleash/proxy');
 jest.mock('@proton/react-redux-store');
 jest.mock('@proton/unleash/useFlag');
@@ -45,10 +43,6 @@ const mockFlags = ({ categoryView = false }: FlagOptions = {}) => {
         }
         return false;
     });
-};
-
-const mockBetaAccess = (hasBetaAccess: boolean) => {
-    jest.mocked(useFeature).mockReturnValue({ feature: { Value: hasBetaAccess }, loading: false } as any);
 };
 
 const mockVariant = (name: CategoryViewVariantVariant | 'disabled' | undefined) => {
@@ -102,7 +96,6 @@ const mockSelectors = ({
 describe('useCategoriesData', () => {
     beforeEach(() => {
         mockFlags();
-        mockBetaAccess(false);
         mockVariant('disabled');
         jest.mocked(useFlagsStatus).mockReturnValue({ flagsReady: true } as any);
         mockSelectors();
@@ -122,7 +115,6 @@ describe('useCategoriesData', () => {
             'GradualRollout',
         ])('grants access when the variant is %s', (variant) => {
             mockFlags({ categoryView: false });
-            mockBetaAccess(false);
             mockVariant(variant);
 
             const { result } = renderHook(() => useCategoriesData());
@@ -133,7 +125,6 @@ describe('useCategoriesData', () => {
             'does not grant access for the %s variant',
             (variant) => {
                 mockFlags({ categoryView: false });
-                mockBetaAccess(false);
                 mockVariant(variant);
 
                 const { result } = renderHook(() => useCategoriesData());
@@ -143,7 +134,6 @@ describe('useCategoriesData', () => {
 
         it('does not grant access when the variant has no name', () => {
             mockFlags({ categoryView: false });
-            mockBetaAccess(false);
             mockVariant(undefined);
 
             const { result } = renderHook(() => useCategoriesData());
@@ -152,7 +142,6 @@ describe('useCategoriesData', () => {
 
         it('does not grant access when the flag is disabled', () => {
             mockFlags({ categoryView: false });
-            mockBetaAccess(false);
             mockVariant('disabled');
 
             const { result } = renderHook(() => useCategoriesData());
@@ -163,25 +152,13 @@ describe('useCategoriesData', () => {
     /**
      * Users who already had category view before the experiment must keep it, whatever
      * bucket the experiment later puts them in. A no-access variant is therefore never
-     * allowed to revoke access granted by the CategoryView flag or by beta access.
+     * allowed to revoke access granted by the CategoryView flag
      */
     describe('variant does not revoke access granted elsewhere', () => {
         const NO_ACCESS_VARIANTS: CategoryViewVariantVariant[] = ['BackBucket', 'NoAccess'];
 
         it.each(NO_ACCESS_VARIANTS)('keeps CategoryView flag access on the %s variant', (variant) => {
             mockFlags({ categoryView: true });
-            mockBetaAccess(false);
-            mockVariant(variant);
-            mockSelectors({ settingAccess: true });
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.canUseCategoryView).toBe(true);
-            expect(result.current.isCategoryViewEnabled).toBe(true);
-        });
-
-        it.each(NO_ACCESS_VARIANTS)('keeps beta access on the %s variant', (variant) => {
-            mockFlags({ categoryView: false });
-            mockBetaAccess(true);
             mockVariant(variant);
             mockSelectors({ settingAccess: true });
 
@@ -194,7 +171,6 @@ describe('useCategoriesData', () => {
     describe('isCategoryViewEnabled', () => {
         it('enables the view when access comes from the variant and the setting allows it', () => {
             mockFlags({ categoryView: false });
-            mockBetaAccess(false);
             mockVariant('RecategorizationButton');
             mockSelectors({ settingAccess: true });
 
@@ -205,7 +181,6 @@ describe('useCategoriesData', () => {
 
         it('keeps the view disabled when the variant grants access but the setting does not', () => {
             mockFlags({ categoryView: false });
-            mockBetaAccess(false);
             mockVariant('RecategorizationButton');
             mockSelectors({ settingAccess: false });
 
@@ -216,7 +191,6 @@ describe('useCategoriesData', () => {
 
         it('keeps the view disabled when the setting allows it but no access path grants it', () => {
             mockFlags({ categoryView: false });
-            mockBetaAccess(false);
             mockVariant('NoAccess');
             mockSelectors({ settingAccess: true });
 
@@ -227,18 +201,6 @@ describe('useCategoriesData', () => {
 
         it('enables the view when access comes from the CategoryView flag and the setting allows it', () => {
             mockFlags({ categoryView: true });
-            mockBetaAccess(false);
-            mockVariant('disabled');
-            mockSelectors({ settingAccess: true });
-
-            const { result } = renderHook(() => useCategoriesData());
-            expect(result.current.isCategoryViewEnabled).toBe(true);
-            expect(result.current.activeCategoriesTabs).toEqual([PRIMARY_TAB, SOCIAL_TAB]);
-        });
-
-        it('enables the view when access comes from beta access and the setting allows it', () => {
-            mockFlags({ categoryView: false });
-            mockBetaAccess(true);
             mockVariant('disabled');
             mockSelectors({ settingAccess: true });
 
