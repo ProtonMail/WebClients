@@ -127,7 +127,6 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                                 onOpenFilePreview={handleOpenFilePreview}
                                 canShowLegalDisclaimer={isGuest && isSmallScreen}
                                 canShowLumoUpsellToggle={true}
-                                canDisplayArtifactSpotlight={!shouldShowApertusAnnouncement}
                                 initialQuery={promptSuggestion || initialQuery}
                                 prefillQuery={prefillQuery}
                                 optionalElementBelowComposer={
