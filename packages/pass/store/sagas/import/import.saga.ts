@@ -235,12 +235,6 @@ function* importWorker(
         items: vault.items.concat(...vaults.map(prop('items'))),
     }));
 
-    if (!canImportFolders && importVaults.some(({ folders }) => folders.length > 0)) {
-        folderWarnings.push(
-            c('Warning').t`Folders were not imported: your plan does not support them. Items were imported to the vault root.`
-        );
-    }
-
     try {
         yield put(stopEventPolling());
 
