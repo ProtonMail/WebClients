@@ -2321,6 +2321,9 @@
     "Action subscription": {
       "Reactivate": [
         "Genaktiver"
+      ],
+      "View breakdown": [
+        "Se oversigt"
       ]
     },
     "Action: Sheets": {
@@ -3049,12 +3052,34 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Fornyes automatisk til ${ renewPrice }, for ${ renewCycle } måned",
-        "Fornyes automatisk til ${ renewPrice } for ${ renewCycle } måneder"
+      "Free renewal": [
+        "Gratis fornyelse"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Gratis fornyelse, for ${ nextCycle } måned, den ${ when }",
+        "Gratis fornyelse, for ${ nextCycle } måneder, den ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Fornyes automatisk til ${ introPrice }, for ${ nextCycle } måned, den ${ when }",
+        "Fornyes automatisk til ${ introPrice }, for ${ nextCycle } måneder, den ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Fornyes automatisk til ${ price }, for ${ cycle } måned",
+        "Fornyes automatisk til ${ price } for ${ cycle } måneder"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Fornyes automatisk i ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Ændres til ${ nextCycle } måned den ${ when } (${ paidPrice } er allerede betalt)",
+        "Ændres til ${ nextCycle } måneder den ${ when } (${ paidPrice } er allerede betalt)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Derefter ${ price }, for ${ cycle } måned",
+        "Derefter ${ price }, for ${ cycle } måneder"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Erstattes af dit kommende abonnement den ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -3092,6 +3117,14 @@
       ],
       "Yearly": [
         "Årligt"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Faktureret ved fornyelse"
+      ],
+      "Prepaid": [
+        "Forudbetalt"
       ]
     },
     "Blog": {
@@ -3482,9 +3515,6 @@
       ],
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
-      ],
-      "Get 50% offer": [
-        "Få et 50%-tilbud"
       ],
       "Got it": [
         "Forstået"
@@ -5098,6 +5128,11 @@
         "(via ${ entryCountryName })"
       ]
     },
+    "Coupon": {
+      "Coupon applied": [
+        "Kupon anvendt"
+      ]
+    },
     "Create user accounts empty state": {
       "No search results found": [
         "Ingen søgeresultater fundet"
@@ -5379,6 +5414,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Overfør din e-mail, kalenderbegivenheder og kontakter fra en anden udbyder."
+      ],
+      "Bring over your files from another provider.": [
+        "Overfør dine filer fra en anden udbyder."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Opbyg tillid og brandgenkendelse med professionelle e-mailadresser på dit eget domæne."
@@ -10188,6 +10226,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } deler aldrig dine oplysninger med tredjeparter. Data kommer fra ${ BRAND_NAME }'s egne analyser og Constella Intelligence."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } bruger kun adgangen til at importere. Google får aldrig adgang til din ${ BRAND_NAME }-konto."
+      ],
       "${ BRAND_NAME } Pass Professional": [
         "${ BRAND_NAME } Pass Professional"
       ],
@@ -10573,9 +10614,6 @@
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Få adgang til 6.500+ højhastighedsservere på op til 10 enheder for at holde dine browserdata sikre. Tilgængelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
-      ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Adgang til mere end 20.000 servere i 145 lande"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Tilgå dine adgangskoder og beskyt din online identitet på tværs af dine enheder. Download og installer de relevante ${ PASS_APP_NAME } apps og udvidelser."
@@ -11110,8 +11148,8 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Forbind og administrer dine eksterne e-mails i ${ MAIL_APP_NAME }."
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Tilslutter til Google Drive for at konfigurere din sikre import til ${ DRIVE_APP_NAME }."
+      "Connecting to Google Drive and preparing your import.": [
+        "Forbinder til Google Drive og forbereder din import."
       ],
       "Connection data will be available in around 1 hour.": [
         "Forbindelsesdata vil være tilgængelige inden for cirka 1 time."
@@ -11470,9 +11508,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting er kun tilgængelig for domæner, du allerede ejer. Domæneregistrering er ikke tilgængelig i øjeblikket via ${ BRAND_NAME }. Du kan hoste e-mail for domæner, der er registreret hos en hvilken som helst domæneregistrator."
       ],
-      "Email you once import is finished": [
-        "Sender dig en e-mail når importen er færdig"
-      ],
       "Emailing preference saved": [
         "E-mail-afsendelsespræference gemt"
       ],
@@ -11659,9 +11694,6 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Hurtigt og fokuseret. E-mail og kalender, lige på skrivebordet."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Hurtigste VPN-hastigheder – op til 10Gbps"
-      ],
       "Featured in": [
         "Fremhævet i"
       ],
@@ -11712,9 +11744,6 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "For kun ${ bundlePlanPriceInline }"
-      ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen ovenfor."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brugere, som skifter til ${ MAIL_APP_NAME } fra en anden e-mailtjeneste, skal du vælge fanen ${ boldAddresses } og tilføje alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en problemfri overgang."
@@ -11821,9 +11850,6 @@
       "Groups": [
         "Grupper"
       ],
-      "Have some more time to decide without interruption.": [
-        "Få lidt mere tid til overvejelse – uden afbrydelse."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Hjælp andre familier med at give deres børn en sikker start online. Del denne milepæl og spred budskabet."
       ],
@@ -11895,9 +11921,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -11975,6 +11998,9 @@
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Importér engangsoverførelser af e-mails, kalendere eller kontakter til din ${ BRAND_NAME }-konto."
+      ],
+      "Import your files and folders": [
+        "Importér dine filer og mapper"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "VIGTIGT: Hvis din DNS-konsol forbyder, at CNAME-værdier slutter med et punktum, kan du fjerne det sidste punktum i CNAME-værdien."
@@ -12159,6 +12185,9 @@
       ],
       "Keys created": [
         "Nøgler oprettet"
+      ],
+      "Know when it's done": [
+        "Få besked om hvornår det er færdigt"
       ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
@@ -12364,8 +12393,8 @@
       "Next billing date": [
         "Næste faktureringsdato"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Derefter skal du logge ind på din Google-konto og give ${ BRAND_NAME } adgang til dine data."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Log derefter ind på din Google-konto og giv ${ BRAND_NAME } adgang til Google Drive. Vi importerer dine filer og mapper til ${ DRIVE_APP_NAME }."
       ],
       "No account keys exist": [
         "Der findes ingen kontonøgler"
@@ -12689,9 +12718,6 @@
       "Preference saved": [
         "Præference gemt"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium privatlivsbeskyttelse på alle dine enheder"
-      ],
       "Preview": [
         "Forhåndsvisning"
       ],
@@ -12715,6 +12741,9 @@
       ],
       "Private AI assistant": [
         "Privat AI-assistent"
+      ],
+      "Private and encrypted": [
+        "Privat og krypteret"
       ],
       "Product reviews, rankings, or guides": [
         "Produktanmeldelser, rangeringer eller vejledninger"
@@ -12746,9 +12775,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakt os for at få hjælp til hvad som helst ${ BRAND_NAME }."
       ],
-      "Read once and encrypted on arrival": [
-        "Læst én gang og krypteret så snart den modtages"
-      ],
       "Receive notifications for ${ categoryLabel }": [
         "Modtag notifikationer for ${ categoryLabel }"
       ],
@@ -12761,8 +12787,8 @@
       "RECOMMENDED": [
         "FORSLÅET"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Anbefales på betroede enheder. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Anbefales på betroede enheder. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Gendannelse via e-mail er ikke tilgængeligt mens ${ PROTON_SENTINEL_NAME } er aktiveret."
@@ -13008,9 +13034,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
-      "Sit back and we will let you know.": [
-        "Læn dig tilbage – vi giver dig besked."
-      ],
       "Smart Routed through a different country.": [
         "Smart Routet gennem et andet land."
       ],
@@ -13055,9 +13078,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Begynd at bruge den kortere, mere catchy version af din e-mailadresse."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Bliv på dit abonnement og få 50% rabat næste måned"
       ],
       "Step ${ step }": [
         "Trin ${ step }",
@@ -13377,7 +13397,7 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit ${ BRAND_NAME }-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, bedes du deaktivere disse for at fortsætte."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
         "Dette giver dig mulighed for hurtigt og sikkert at tilgå din ${ BRAND_NAME }-konto, så du kan ændre din adgangskode."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
@@ -13689,9 +13709,6 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "Brug din MDM til at slette filen, eller kør ${ removeScriptLink } via din MDM's scriptkørsel. Enhver MDM, der understøtter udrulning af filer eller at køre scripts, fungerer."
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Kun brugt til at kopiere dem til ${ DRIVE_APP_NAME }."
-      ],
       "User activated": [
         "Bruger aktiveret"
       ],
@@ -13812,9 +13829,6 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "Vi har registreret at du allerede er logget ind på en ${ BRAND_NAME } web-app i en **anden browser**. Du kan muligvis nulstille adgangskoden fra din aktive session."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Vi understøtter ikke importer af billeder, Google Docs, Sheets og Slides. Sørg for at din Google Drive ikke er tom."
-      ],
       "We generated a strong password for you": [
         "Vi har genereret en stærk adgangskode til dig"
       ],
@@ -13845,14 +13859,8 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Vi anbefaler kraftigt at alle aktiverer gendannelse med en gendannelsessætning."
       ],
-      "We support most files": [
-        "Vi understøtter de fleste filer"
-      ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruger 3-D Secure til at sikre dine betalinger"
-      ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Vi sender dig en e-mail når importen er færdig. Du kan finde din import i en mappe når den er færdig."
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til ${ IDEAL_WERO_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
@@ -13860,8 +13868,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vi kopierer dem fra Google Drive til ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Vi sender dig en e-mail, når importen er færdig."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vi sender dig en e-mail, når importen er færdig."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Vi sender dig en e-mail, når importen er færdig. Dine filer bliver gemt i en mappe i ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Tak! Vi vender tilbage til dig inden længe."
@@ -13979,9 +13996,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Importerer ikke fotos, Google Docs og Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
@@ -14157,6 +14171,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en åben faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en åben faktura til ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no calendars to export.": [
         "Du har ingen kalendere at eksportere."
       ],
@@ -14327,6 +14347,9 @@
       "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
         "Din fil inkluderer en adgangskode for hver bruger, så disse konti vil blive oprettet med en adgangskode i stedet for et invitationslink."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Dine filer bliver krypteret og opbevaret sikkert i ${ DRIVE_APP_NAME }."
+      ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
       ],
@@ -14338,6 +14361,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveperiode blev konverteret til et månedligt abonnement. Din fornyelsesdato er ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Din Google Drive er muligvis tom, eller indeholder kun filer, som ikke understøttes."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information er sikker hos os. Vi kontakter dig kun når det er nødvendigt for at levere vores tjenester."
@@ -14565,6 +14591,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Gave"
+      ],
+      "Open": [
+        "Åbn"
       ],
       "Paid": [
         "Betalt"
@@ -17150,6 +17179,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Pay it": [
+        "Betal"
       ],
       "Privacy policy": [
         "Privatlivspolitik"
@@ -20807,9 +20839,6 @@
       ],
       "Card number": [
         "Kortnummer"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Kreditter og rabatter fremgår af din faktura"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "I øjeblikket er abonnementets automatiske fornyelse deaktiveret. Ændrer du abonnementet nu, genaktiveres den automatiske fornyelse."
@@ -25207,6 +25236,9 @@
       ],
       "Free Trial": [
         "Gratis prøve"
+      ],
+      "Upcoming": [
+        "Kommende"
       ]
     },
     "Subtitle": {
@@ -25249,6 +25281,9 @@
       "Free forever": [
         "Gratis for altid"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importér dine filer og mapper fra Google Drive, og hold dem privat i ${ DRIVE_APP_NAME }."
+      ],
       "per month, billed annually": [
         "pr. måned, faktureret årligt"
       ],
@@ -25263,9 +25298,6 @@
       ],
       "View VPN session details for your organization.": [
         "Se VPN-sessionsdetaljer for din organisation."
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Vi læser dine filer én gang for at kopiere dem, og krypterer dem derefter med dine ${ BRAND_NAME }-nøgler."
       ]
     },
     "Success": {
@@ -25892,6 +25924,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
       ],
+      "${ planTitle } breakdown": [
+        "Oversigt over ${ planTitle }"
+      ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } til organisationer"
       ],
@@ -26307,9 +26342,6 @@
       "Connect your custom domain": [
         "Forbind dit brugerdefinerede domæne"
       ],
-      "Connect your Google account": [
-        "Forbind din Google-konto"
-      ],
       "Connected emails": [
         "Forbundne e-mails"
       ],
@@ -26620,6 +26652,9 @@
       ],
       "Downloads": [
         "Downloads"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch fra Google Drive"
       ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
@@ -26962,6 +26997,9 @@
       "Import key": [
         "Importér nøgle"
       ],
+      "Import started": [
+        "Import startet"
+      ],
       "Import started, but your storage won't be enough for this import": [
         "Importen er startet, men du har ikke nok lagerplads til hele importen"
       ],
@@ -27265,6 +27303,9 @@
       "Post-quantum protection": [
         "Post-quantum beskyttelse"
       ],
+      "Preparing your import": [
+        "Forbereder din import"
+      ],
       "Preview": [
         "Forhåndsvisning"
       ],
@@ -27526,9 +27567,6 @@
       "Set your password": [
         "Indstil din adgangskode"
       ],
-      "Setting up your import": [
-        "Konfigurerer din import"
-      ],
       "Settings": [
         "Indstillinger"
       ],
@@ -27555,9 +27593,6 @@
       ],
       "Sign in on TV?": [
         "Log ind på TV?"
-      ],
-      "Sign in to Google": [
-        "Log in på Google"
       ],
       "Sign in to join the Beta program": [
         "Log ind for tilmelding til Beta programmet"
@@ -27637,9 +27672,6 @@
       "Status": [
         "Status"
       ],
-      "Stay for 50% off your next month": [
-        "Bliv hængende for 50% rabat i den næste måned"
-      ],
       "Stay secure and connected anywhere": [
         "Vær sikker og forbundet overalt"
       ],
@@ -27648,6 +27680,9 @@
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Subscription breakdown": [
+        "Oversigt over abonnement"
       ],
       "Subscription canceled": [
         "Abonnement annulleret"
@@ -27947,9 +27982,6 @@
       "Your exposed information": [
         "Dine blotlagte oplysninger"
       ],
-      "Your import is starting": [
-        "Din import startes"
-      ],
       "Your plan": [
         "Dit abonnement"
       ],
@@ -28071,11 +28103,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Fakturering"
+      ],
       "End date": [
         "Slutdato"
       ],
       "Plan": [
         "Abonnement"
+      ],
+      "Price": [
+        "Pris"
+      ],
+      "Start date": [
+        "Startdato"
       ],
       "Status": [
         "Status"

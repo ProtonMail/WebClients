@@ -2629,10 +2629,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Uusiutuu automaattisesti ${ renewCycle } kuukaudeksi hintaan ${ renewPrice }",
-        "Uusiutuu automaattisesti ${ renewCycle } kuukaudeksi hintaan ${ renewPrice }"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Uudistuu automaattisesti palvelussa ${ subscriptionManagerName }"
       ]
@@ -8347,7 +8343,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Pakattu"
+        "Arkistoi"
       ],
       "Do not move": [
         "Älä siirrä"
@@ -11663,9 +11659,6 @@
       "RECOMMENDED": [
         "SUOSITELTU"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Suositeltavaa luotettavilla laitteilla. ${ keepMeSignedInLearnMoreLink }"
-      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Palautus sähköpostitse ei ole käytettävissä, kun ${ PROTON_SENTINEL_NAME } on käytössä."
       ],
@@ -12229,9 +12222,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tämän avulla voit maksaa ${ BRAND_NAME }-tilauksesi PayPalilla. Ohjaamme sinut PayPaliin uudessa selaimen välilehdessä. Jos käytät jotakin ponnahdusestoa, poista se käytöstä jatkaaksesi."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Tämän avulla voitte käyttää ${ BRAND_NAME }-tiliänne nopeasti ja turvallisesti vaihtaaksenne salasananne."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Tämä poistaa kaikki näihin käyttäjiin liitettyvät tiedot ja sähköpostiosoitteet pysyvästi."
@@ -19253,9 +19243,6 @@
       ],
       "Card number": [
         "Kortin numero"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Krediitit ja alennukset näkyvät laskussasi"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Tilauksen automaattinen uusiminen on tällä hetkellä poistettu käytöstä. Jos muutat tilausta nyt, automaattinen uusiminen otetaan uudelleen käyttöön."

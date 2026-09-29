@@ -85,6 +85,9 @@
       "Authentication logs": [
         "Журнал аўтарызацыі"
       ],
+      "Auto-add invitations to calendar": [
+        "Аўтаматычнае дадаванне запрашэнняў у каляндар"
+      ],
       "Automatic renewal": [
         "Аўтаматычнае падаўжэнне"
       ],
@@ -156,6 +159,9 @@
       ],
       "Email aliases": [
         "Псеўданімы электроннай пошты"
+      ],
+      "Enable or disable apps for members": [
+        "Уключыць або адключыць праграмы для ўдзельнікаў"
       ],
       "Encryption backup file": [
         "Зашыфраваная рэзервовая копія файла"
@@ -1262,6 +1268,9 @@
       "Google": [
         "Google"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -1955,6 +1964,9 @@
       "Sign in": [
         "Увайсці"
       ],
+      "Sign in to ${ providerName }": [
+        "Увайсці ў ${ providerName }"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Увайсці з ${ BRAND_NAME }"
       ],
@@ -2047,6 +2059,9 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
+      ],
+      "Template with invite links": [
+        "Шаблон са спасылкамі запрашэння"
       ],
       "Template with passwords": [
         "Шаблон з паролямі"
@@ -2300,6 +2315,9 @@
     "Action subscription": {
       "Reactivate": [
         "Актываваць паўторна"
+      ],
+      "View breakdown": [
+        "Паглядзець разбіўку"
       ]
     },
     "Action: Sheets": {
@@ -2602,6 +2620,9 @@
       ]
     },
     "Alt": {
+      "Collapse invitation message": [
+        "Згарнуць запрашальныя паведамленні"
+      ],
       "Expand invitation message": [
         "Разгарнуць запрашальнае паведамленне"
       ]
@@ -2652,6 +2673,9 @@
       ],
       "Private scheduling": [
         "Прыватнае планаванне"
+      ],
+      "Secure and end-to-end encrypted": [
+        "Бяспека і шыфраванне скразным метадам"
       ],
       "Secure cloud storage": [
         "Бяспечнае воблачнае сховішча"
@@ -3054,11 +3078,8 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewCycle } месяц",
-        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewCycle } месяцы",
-        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewCycle } месяцаў",
-        "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewCycle } месяцаў"
+      "Free renewal": [
+        "Бясплатнае падаўжэнне"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Падаўжаецца аўтаматычна ў ${ subscriptionManagerName }"
@@ -3103,6 +3124,14 @@
       ],
       "Yearly": [
         "Штогод"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Аплата пры падаўжэнні"
+      ],
+      "Prepaid": [
+        "Прадаплачаны"
       ]
     },
     "Blog": {
@@ -3493,9 +3522,6 @@
       ],
       "Discover and set up features": [
         "Пазнаёміцца і наладзіць функцыі"
-      ],
-      "Get 50% offer": [
-        "Скарыстайцеся скідкай у памеры 50%"
       ],
       "Got it": [
         "Зразумела"
@@ -5127,6 +5153,11 @@
         "(праз ${ entryCountryName })"
       ]
     },
+    "Coupon": {
+      "Coupon applied": [
+        "Купон прыменены"
+      ]
+    },
     "Create user accounts empty state": {
       "No search results found": [
         "Больш нічога не знойдзена"
@@ -5416,6 +5447,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Перанясіце свае лісты, падзеі календара і кантакты ад іншага пастаўшчыка."
+      ],
+      "Bring over your files from another provider.": [
+        "Перанясіце свае файлы ад іншага пастаўшчыка."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты са сваім уласным даменам."
@@ -9073,8 +9107,14 @@
       "Insert your security key into your device.": [
         "Устаўце ключ бяспекі ў сваю прыладу."
       ],
+      "PIN requirement for security keys disabled": [
+        "Патрабаванне PIN для ключоў бяспекі адключана"
+      ],
       "PIN requirement for security keys enabled": [
         "Патрабаванне PIN для ключоў бяспекі ўключана"
+      ],
+      "Require PIN for security key": [
+        "Патрабаваць PIN для ключа бяспекі"
       ],
       "Security key": [
         "Ключ бяспекі"
@@ -9442,6 +9482,9 @@
     "Get started checklist instructions": {
       "${ appName } on App Store": [
         "${ appName } у App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } у Play Store"
       ]
     },
     "Gmail forwarding": {
@@ -10707,9 +10750,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Атрымайце доступ да больш чым 6500 высакахуткасных сервераў з магчымасцю падключэння да 10 прылад, каб захаваць свае даныя прыгляду ў бяспецы. Праграмы даступны для ${ ios }, ${ android }, ${ appleTV } і ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Доступ да больш чым 20 000 сервераў у больш чым 145 краінах"
-      ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Атрымайце доступ да сваіх пароляў і абараніце сваю ідэнтычнасць у інтэрнэце на ўсіх прыладах, якімі валодаеце. Спампуйце і ўсталюйце адпаведныя праграмы ${ PASS_APP_NAME } і пашырэнні."
       ],
@@ -11784,9 +11824,6 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Хуткасць і канцэнтрацыя. Пошта і каляндар на вашым працоўным стале."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
-      ],
       "Featured in": [
         "Рэкамендаваны ў"
       ],
@@ -11937,9 +11974,6 @@
       "Groups": [
         "Групы"
       ],
-      "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Дапамажыце іншым сем'ям, каб іх дзеці зрабілі першыя крокі ў інтэрнэце бяспечна. Абагуліце гэты этап і распаўсюдзьце інфармацыю."
       ],
@@ -12011,9 +12045,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, звяжыцеся з намі ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Вы страціце доступ да ${ BRAND_NAME } з тарыфным планам ${ planTitle } (дзейнічае да ${ expiryDate }), які ўключае наступныя функцыі:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
@@ -12281,6 +12312,9 @@
       ],
       "Keys created": [
         "Ключы створаны"
+      ],
+      "Know when it's done": [
+        "Даведацца, калі будзе гатова"
       ],
       "Label all imported messages as": [
         "Пазначыць усе імпартаваныя паведамленні як"
@@ -12798,9 +12832,6 @@
       "Preference saved": [
         "Параметр захаваны"
       ],
-      "Premium privacy protection across all your devices": [
-        "Прэміяльная абарона прыватнасці паміж усімі вашымі прыладамі"
-      ],
       "Preview": [
         "Папярэдні прагляд"
       ],
@@ -12824,6 +12855,9 @@
       ],
       "Private AI assistant": [
         "Прыватны памочнік ШІ"
+      ],
+      "Private and encrypted": [
+        "Прыватны і зашыфраваны"
       ],
       "Product reviews, rankings, or guides": [
         "Агляды прадуктаў, рэйтынгі або дапаможнікі"
@@ -12866,9 +12900,6 @@
       ],
       "RECOMMENDED": [
         "РЭКАМЕНДАВАНЫ"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Рэкамендавана на давераных прыладах. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Аднаўленне па адрасе электроннай пошты недаступна, калі ${ PROTON_SENTINEL_NAME } уключаны."
@@ -13154,9 +13185,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Выбірайце кароткі і запамінальны адрас электроннай пошты."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Застаньцеся на сваім тарыфным плане і атрымайце скідку ў памеры 50% у наступным месяцы"
       ],
       "Step ${ step }": [
         "Крок ${ step }",
@@ -13484,9 +13512,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Гэта дазволіць вам аплачваць падпіску ${ BRAND_NAME } праз PayPal. Мы перанакіруем вас на сайт PayPal, які адкрыецца ў новай укладцы браўзера. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Гэта функцыя дазволіць вам хутка бяспечна атрымаць доступ да свайго ўліковага запісу ${ BRAND_NAME }, каб вы маглі змяніць свой пароль."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Гэта дзеянне незваротна выдаліць даныя і ўсе адрасы электроннай пошты, якія звязаны з гэтымі карыстальнікамі."
@@ -13929,9 +13954,6 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "Вельмі рэкамендуецца, каб у кожнага карыстальніка быў уключаны спосаб аднаўлення доступу па фразе"
       ],
-      "We support most files": [
-        "Сістэма распазнае большасць файлаў"
-      ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
@@ -13941,8 +13963,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Яны будуць скапіяваны з Google Drive у ${ DRIVE_APP_NAME }"
+      ],
       "We'll email you once import is complete.": [
         "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
+      ],
+      "We'll email you when your import is complete.": [
+        "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана. Вашы файлы з'явяцца ў папцы ў ${ DRIVE_APP_NAME }"
       ],
       "We'll get back to you shortly.": [
         "Мы звяжамся з вамі ў самы бліжэйшы час."
@@ -14246,6 +14277,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. У дадзены момант аплата не патрабуецца. Ваша падпіска будзе аўтаматычна падоўжана ў канцы пробнага перыяду."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ dueDate } ${ payInvoiceLink }"
       ],
       "You have no calendars to export.": [
         "У вас няма календароў для экспартавання."
@@ -14660,6 +14697,9 @@
       "Gifted": [
         "Падаравана"
       ],
+      "Open": [
+        "Адкрыць"
+      ],
       "Paid": [
         "Аплачана"
       ],
@@ -14817,6 +14857,9 @@
       "Cancel / close": [
         "Скасаваць / закрыць"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Закрыць ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Закрыць чарнавік"
       ],
@@ -14928,6 +14971,9 @@
       "Next period": [
         "Наступны перыяд"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Адкрыць ${ LUMO_SHORT_APP_NAME } / сканцэнтравацца на ўводзе"
+      ],
       "Open command panel": [
         "Адкрыць камандную панэль"
       ],
@@ -15000,6 +15046,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Спалучэнні клавіш ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Спалучэнні клавіш для дзеянняў"
       ],
@@ -15098,6 +15147,9 @@
       ],
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
         "Праграма для камп'ютара ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ BRAND_NAME } Easy Switch": [
+        "${ BRAND_NAME } Easy Switch"
       ],
       "${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business"
@@ -16446,6 +16498,9 @@
       "Require 2FA for everyone": [
         "Патрабаваць 2ФА для ўсіх удзельнікаў"
       ],
+      "Require password check-ins": [
+        "Патрабуе рэгістрацыі пароля"
+      ],
       "Reserved address": [
         "Зарезерваваны адрас"
       ],
@@ -16478,6 +16533,9 @@
       ],
       "Select an identity provider to start": [
         "Выберыце пастаўшчыка пасведчанняў, каб пачаць"
+      ],
+      "Select Linux package format": [
+        "Выберыце фармат пакета Linux"
       ],
       "Select Linux platform": [
         "Выберыце платформу Linux"
@@ -17240,6 +17298,9 @@
       "Pay invoice": [
         "Аплаціць рахунак"
       ],
+      "Pay it": [
+        "Заплаціць"
+      ],
       "Privacy policy": [
         "Палітыка прыватнасці"
       ],
@@ -17843,6 +17904,9 @@
     "Members table usage": {
       "Gateway Monitor is off": [
         "Назіранне за шлюзом выключана"
+      ],
+      "Monitor gateways connections": [
+        "Назіранне за падключэннямі шлюзоў"
       ],
       "Setup your own private gateways to monitor VPN connection activity within your organization.": [
         "Наладзьце свае прыватныя шлюзы, каб назіраць за актыўнасцю падключэння па VPN у вашай арганізацыі."
@@ -19729,6 +19793,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Апошні шанс атрымаць першы месяц тарыфнага плана ${ plan } па гэтай цане."
+      ],
       "Last day to save": [
         "Апошні дзень, калі можна сэканоміць"
       ],
@@ -19844,6 +19911,18 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " наведайце наш ${ helpCenterLink } або ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Дадайце спосаб аплаты**, каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
       "Add a payment method": [
         "Дадаць спосаб аплаты"
       ],
@@ -19862,11 +19941,17 @@
       "help center": [
         "даведачны цэнтр"
       ],
+      "If you continue after your trial,": [
+        "Калі вы працягніце пасля пробнага перыяду,"
+      ],
       "If you need help,": [
         "Калі вам патрэбна дапамога,"
       ],
       "Once your full subscription starts...": [
         "Як толькі пачнецца ваша поўная падпіска..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
@@ -20246,6 +20331,12 @@
       "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
         "Вы згубілі некаторыя правы адміністратара, бо ключ вашай арганізацыі быў зменены: у вас больш няма магчымасці ствараць непрыватных карыстальнікаў і атрымліваць доступ да іх уліковых запісаў."
       ],
+      "Can you reach out to other administrators?": [
+        "Вы звярнуцца да іншага адміністратара?"
+      ],
+      "Converting users to private": [
+        "Пераўтварыць карыстальнікаў у прыватных"
+      ],
       "Copy email list": [
         "Капіяваць спіс рассылкі"
       ],
@@ -20290,6 +20381,9 @@
       ],
       "Send unprivatization requests": [
         "Адправіць непрыватызаваныя запыты"
+      ],
+      "The non-private users are converted to private": [
+        "Непрыватныя карыстальнікі будуць пераўтвораны ў прыватных"
       ],
       "The organization key is reset": [
         "Ключ арганізацыі скінуты"
@@ -20956,9 +21050,6 @@
       "Card number": [
         "Нумар карткі"
       ],
-      "Credits and discounts are reflected in your invoice": [
-        "Крэдыты і скідкі адлюстроўваюцца ў вашым рахунку"
-      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "У цяперашні час аўтаматычнае падаўжэнне падпіскі адключана. Аўтаматычнае падаўжэнне будзе ўключана паўторна, калі змяніць падпіску цяпер."
       ],
@@ -21362,6 +21453,9 @@
       ],
       "Enter company name": [
         "Увядзіце назву кампаніі"
+      ],
+      "Enter name or email address": [
+        "Увядзіце імя або адрас электроннай пошты"
       ],
       "example@domain.com": [
         "pryklad@domain.com"
@@ -23399,6 +23493,9 @@
     "Setting": {
       "Get updates about comments via email": [
         "Атрымлівайце абнаўленні аб каментарыях праз электронную пошту"
+      ],
+      "Include document name in email notifications": [
+        "Уключаць назву дакумента ў апавяшчэнні па электроннай пошце"
       ]
     },
     "Settings description": {
@@ -25508,6 +25605,9 @@
       ],
       "Free Trial": [
         "Бясплатная пробная версія"
+      ],
+      "Upcoming": [
+        "Надыходзячыя"
       ]
     },
     "Subtitle": {
@@ -26215,6 +26315,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Report"
+      ],
+      "${ planTitle } breakdown": [
+        "Разбіўка тарыфнаага плана ${ planTitle }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } для арганізацый"
@@ -27293,6 +27396,9 @@
       "Import key": [
         "Імпартаваць ключ"
       ],
+      "Import started": [
+        "Пачаты імпарт"
+      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Імпарт праз ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27593,6 +27699,9 @@
       "Post-quantum protection": [
         "Постквантавая абарона"
       ],
+      "Preparing your import": [
+        "Падрыхтоўка вашага імпарту"
+      ],
       "Preview": [
         "Папярэдні прагляд"
       ],
@@ -27842,6 +27951,9 @@
       "Set up secure sending (DMARC)": [
         "Наладзьце бяспечную адпраўку (DMARC)"
       ],
+      "Set up secure sending (SPF)": [
+        "Наладзьце бяспечную адпраўку (SPF)"
+      ],
       "Set up your family account": [
         "Наладзіць сямейны ўліковы запіс"
       ],
@@ -27850,9 +27962,6 @@
       ],
       "Set your password": [
         "Задаць пароль"
-      ],
-      "Setting up your import": [
-        "Наладжванне вашага імпарту"
       ],
       "Settings": [
         "Налады"
@@ -27880,9 +27989,6 @@
       ],
       "Sign in on TV?": [
         "Увайсці на тэлевізары?"
-      ],
-      "Sign in to Google": [
-        "Увайсці ў Google"
       ],
       "Sign in to join the Beta program": [
         "Увайдзіце, каб далучыцца да бэта-праграмы"
@@ -27959,9 +28065,6 @@
       "Status": [
         "Статус"
       ],
-      "Stay for 50% off your next month": [
-        "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
-      ],
       "Stay secure and connected anywhere": [
         "Заставайцеся ў бяспецы і на сувязі ў любым месцы"
       ],
@@ -27970,6 +28073,9 @@
       ],
       "Subscription": [
         "Падпіска"
+      ],
+      "Subscription breakdown": [
+        "Разбіўка падпіскі"
       ],
       "Subscription canceled": [
         "Падпіска скасавана"
@@ -28082,6 +28188,9 @@
       "Upgrade to ${ planName }": [
         "Палепшыць да ${ planName }"
       ],
+      "Upgrade to enable Always-on": [
+        "Паляпшэнне, каб уключыць пастаянны VPN"
+      ],
       "Upgrade to keep your premium benefits.": [
         "Палепшыць падпіску, каб захаваць перавагі прэміум-класа."
       ],
@@ -28184,6 +28293,9 @@
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
       ],
+      "We could not find anything to import": [
+        "Элементы для імпартавання адсутнічаюць"
+      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Код адпраўлены на вашу электронную пошту для пацвярджэння вашай асобы. Код сапраўдны на працягу 10 хвілін. Увядзіце яго ніжэй."
       ],
@@ -28264,9 +28376,6 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
-      ],
-      "Your import is starting": [
-        "Пачалося імпартаванне"
       ],
       "Your plan": [
         "Ваш тарыфны план"
@@ -28389,11 +28498,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Аплата"
+      ],
       "End date": [
         "Дата завяршэння"
       ],
       "Plan": [
         "Тарыфны план"
+      ],
+      "Price": [
+        "Цана"
+      ],
+      "Start date": [
+        "Дата пачатку"
       ],
       "Status": [
         "Статус"
