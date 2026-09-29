@@ -1237,6 +1237,12 @@
       "Inactive secure links could not be removed.": [
         "As ligações seguras inativas não puderam ser removidas."
       ],
+      "Incorrect backup password. Please try again.": [
+        "A palavra-passe de backup não é correta. Tente novamente."
+      ],
+      "Incorrect second password. Please try again.": [
+        "A secunda palavra-passe não é correta. Tente novamente."
+      ],
       "Invalid password manager": [
         "Gestor de palavras-passe inválido"
       ],
@@ -2099,8 +2105,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"

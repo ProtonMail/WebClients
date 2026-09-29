@@ -1237,6 +1237,12 @@
       "Inactive secure links could not be removed.": [
         "არააქტიური დაცული ბმულების წაშლა შეუძლებელია."
       ],
+      "Incorrect backup password. Please try again.": [
+        "არასწორი მარქაფი პაროლი. თავიდან სცადეთ."
+      ],
+      "Incorrect second password. Please try again.": [
+        "არასწორი მეორე პაროლი. თავიდან სცადეთ."
+      ],
       "Invalid password manager": [
         "არასწორი პაროლების მმართველი"
       ],
@@ -2099,8 +2105,7 @@
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+        "ელემენტის გადატანა სხვა სეიფში წაშლის მის უსაფრთხო ბმულებს."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
