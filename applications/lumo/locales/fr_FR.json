@@ -879,9 +879,6 @@
       "Discover and set up features": [
         "Découvrez et configurez les fonctionnalités"
       ],
-      "Get 50% offer": [
-        "Profitez d'une réduction de 50 %"
-      ],
       "Remind me later": [
         "Me le rappeler plus tard"
       ],
@@ -2269,6 +2266,9 @@
       "tokens / 30d": [
         "jetons / 30j"
       ],
+      "Tool calls": [
+        "Appels d'outils"
+      ],
       "Trying...": [
         "Tentative..."
       ],
@@ -3355,6 +3355,9 @@
       "Explain": [
         "Expliquer"
       ],
+      "Export": [
+        "Exporter"
+      ],
       "Full screen": [
         "Plein écran"
       ],
@@ -3834,6 +3837,9 @@
       "Built-in ${ BRAND_NAME } agent": [
         "Agent ${ BRAND_NAME } intégré"
       ],
+      "Choose a format to export \"${ conversation.title }\":": [
+        "Sélectionner un format pour exporter « ${ conversation.title } » :"
+      ],
       "Conversation encrypted": [
         "Conversation chiffrée"
       ],
@@ -3957,8 +3963,17 @@
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Découvrez ce que l'IA des géants du numérique sait sur vous. Réalisé avec ${ LUMO_SHORT_APP_NAME }."
       ],
+      "Some content, such as images and attachments, may not be included in the exported file.": [
+        "Certains contenus, tels que les images et les pièces jointes, peuvent ne pas être inclus dans le fichier exporté."
+      ],
       "Something went wrong analysing this export. Please try again.": [
         "Une erreur est survenue lors de l'analyse de cette exportation. Veuillez réessayer."
+      ],
+      "Structured data, aiming for compatibility with the ChatGPT export format": [
+        "Données structurées, dans un objectif de compatibilité avec le format d'export de ChatGPT"
+      ],
+      "Text formatted with markdown, easy to read or share": [
+        "Texte formaté avec Markdown, facile à lire ou à partager"
       ],
       "This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.": [
         "Voici pourquoi c'est important : une fois dévoilées, ces informations peuvent servir à cibler, établir un profil et prendre des décisions sur vous - le plus souvent sans transparence ni consentement."
@@ -4165,11 +4180,17 @@
       "It doesn't expire": [
         "Il n'expire pas"
       ],
+      "JSON": [
+        "JSON"
+      ],
       "Lending & hiring": [
         "Prêts et embauches"
       ],
       "Low": [
         "Faible"
+      ],
+      "Markdown": [
+        "Markdown"
       ],
       "Medium": [
         "Moyen"
@@ -4650,6 +4671,9 @@
       "All files removed from project": [
         "Tous les fichiers ont été retirés du projet."
       ],
+      "Conversation exported": [
+        "La conversation a été exportée"
+      ],
       "Database connection restored.": [
         "La connexion à la base de données a été rétablie."
       ],
@@ -4731,6 +4755,9 @@
       ],
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "Explorez les images créées avec ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Export conversation": [
+        "Exporter la conversation"
       ],
       "Favorites": [
         "Favoris"
@@ -4845,6 +4872,9 @@
       ],
       "Two models, two modes": [
         "Deux modèles, deux modes"
+      ],
+      "Untitled conversation": [
+        "Conversation sans titre"
       ],
       "We couldn't read your paper trail": [
         "Nous n'avons pas pu déchiffrer vos documents."
@@ -6063,6 +6093,12 @@
       "Image preview not found": [
         "L'aperçu de l'image n'a pas été trouvé."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
+      ],
       "Invalid code": [
         "Le code n'est pas valide."
       ],
@@ -6086,6 +6122,9 @@
       ],
       "Invitation not found": [
         "L'invitation est introuvable"
+      ],
+      "Item not found": [
+        "L'élément n'a pas été trouvé"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Ce lien public obsolète ne peut pas être mis à jour. Veuillez en recréer un nouveau."
@@ -6211,6 +6250,9 @@
       "Some file parts failed to upload. Please try again.": [
         "Des parties de fichier n'ont pas pu être importées. Veuillez réessayer."
       ],
+      "Some items could not be loaded": [
+        "Certains éléments n'ont pas pu être chargés"
+      ],
       "Something went wrong": [
         "Une erreur s'est produite."
       ],
@@ -6256,6 +6298,9 @@
       "This file version could not be uploaded": [
         "Cette version de fichier n'a pas pu être importée."
       ],
+      "This item has no image preview": [
+        "Cet élément n'a pas d'aperçu"
+      ],
       "This item is no longer shared": [
         "Cet élément n’est plus partagé"
       ],
@@ -6300,6 +6345,9 @@
       ],
       "You do not have access to this item": [
         "Vous n'avez pas accès à cet élément."
+      ],
+      "You do not have access to this shared item": [
+        "Vous n'avez pas accès à cet élément partagé"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
@@ -6593,9 +6641,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boite aux lettres et une seule personne."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Accédez à plus de 20 000 serveurs dans plus de 145 pays"
-      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
@@ -6759,9 +6804,6 @@
       "Expired": [
         "Expiré"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Des vitesses VPN ultra-rapides pouvant atteindre 10 Gbps"
-      ],
       "Folder:": [
         "Dossier :"
       ],
@@ -6774,14 +6816,8 @@
       "Google Pay mark": [
         "Marquer Google Pay"
       ],
-      "Have some more time to decide without interruption.": [
-        "Prenez encore un peu de temps pour vous décider, sans être dérangé."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Si vous résiliez votre abonnement maintenant, vous perdrez l'accès à ${ BRAND_NAME } ${ planTitle } à compter du ${ expiryDate }, y compris les fonctionnalités suivantes :"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
@@ -6906,9 +6942,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
       ],
-      "Premium privacy protection across all your devices": [
-        "Une protection optimale de la vie privée sur tous vos appareils"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
       ],
@@ -6959,9 +6992,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Continuez à souscrire à votre forfait et bénéficiez de 50 % de réduction sur votre abonnement du mois prochain"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
@@ -8864,6 +8894,9 @@
       "Delete": [
         "Supprimer"
       ],
+      "Export": [
+        "Exporter"
+      ],
       "Go to all projects": [
         "Accéder à tous les projets"
       ],
@@ -10243,9 +10276,6 @@
       ],
       "Simplify password management": [
         "Simplifiez la gestion des mots de passe"
-      ],
-      "Stay for 50% off your next month": [
-        "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
       ],
       "Summary": [
         "Résumé"
