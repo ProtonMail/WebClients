@@ -16,7 +16,7 @@ import { useUnleashClient } from '@proton/unleash/proxy'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { Route, Routes } from 'react-router-dom-v5-compat'
 import type { ProviderType } from '../../../provider-type'
-import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
+import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
 
 export function PublicApplicationContent({
   publicDriveCompat,

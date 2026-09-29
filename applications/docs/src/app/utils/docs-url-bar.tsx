@@ -1,7 +1,6 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import type { DocumentAction, DocumentType } from '@proton/docs-shared'
+import type { DocumentAction, DocumentType, RedirectAction } from '@proton/docs-shared'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
-import type { RedirectAction } from '@proton/drive-store/store/_documents'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
