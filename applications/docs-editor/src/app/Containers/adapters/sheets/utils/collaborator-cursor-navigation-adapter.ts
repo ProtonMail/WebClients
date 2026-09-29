@@ -1,4 +1,4 @@
-import type { CollaboratorCursorNavigationDestination } from '../Spreadsheet/public'
+import type { CollaboratorCursorNavigationDestination } from '../../../Spreadsheet/public'
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null

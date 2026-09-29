@@ -1,6 +1,6 @@
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 
-import type { SheetsFileMenuActions } from '../Spreadsheet/public'
+import type { SheetsFileMenuActions } from '../../../Spreadsheet/public'
 
 type FileMenuClient = Pick<EditorRequiresClientMethods, 'handleFileMenuAction'>
 
