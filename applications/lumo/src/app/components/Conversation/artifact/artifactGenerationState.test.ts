@@ -20,6 +20,14 @@ const makeUserMessage = (overrides: Partial<Message> = {}): Message => ({
     ...overrides,
 });
 
+const explainAction = {
+    kind: 'explain' as const,
+    artifactId: 'letter-1',
+    artifactTitle: 'Letter',
+    artifactType: 'code' as const,
+    selection: 'const x = 1;',
+};
+
 const makeAssistantBlocks = (args: Record<string, unknown> | string): ContentBlock[] => [
     {
         type: 'tool_call',
@@ -114,6 +122,18 @@ describe('isArtifactGenerationLoading', () => {
                 }),
             })
         ).toBe(true);
+    });
+
+    it('is false for Explain actions, which only answer in chat', () => {
+        expect(
+            isArtifactGenerationLoading({
+                isGenerating: true,
+                isLastMessage: true,
+                completeArtifacts: [],
+                blocks: [{ type: 'text', content: 'This line declares a constant.' }],
+                parentUserMessage: makeUserMessage({ artifactAction: explainAction }),
+            })
+        ).toBe(false);
     });
 
     it('is true while a create_artifact tool call is in progress', () => {
@@ -280,6 +300,54 @@ describe('isArtifactRevisionLoading', () => {
                 completeArtifacts: [],
                 blocks: makeAssistantBlocks('{"id":"letter-1"'),
                 parentUserMessage: makeUserMessage({ content: 'Make it shorter' }),
+                selectedId: 'letter-1',
+                selectedVersionIndex: 1,
+                registry,
+            })
+        ).toBe(true);
+    });
+
+    it('is false for Explain actions on the open artifact', () => {
+        expect(
+            isArtifactRevisionLoading({
+                isGenerating: true,
+                isLastMessage: true,
+                completeArtifacts: [],
+                blocks: [{ type: 'text', content: 'This line declares a constant.' }],
+                parentUserMessage: makeUserMessage({ artifactAction: explainAction }),
+                selectedId: 'letter-1',
+                selectedVersionIndex: 1,
+                registry,
+            })
+        ).toBe(false);
+    });
+
+    it('is false for legacy Explain messages that still carry artifactRevisionTargetId', () => {
+        expect(
+            isArtifactRevisionLoading({
+                isGenerating: true,
+                isLastMessage: true,
+                completeArtifacts: [],
+                blocks: [],
+                parentUserMessage: makeUserMessage({
+                    artifactAction: explainAction,
+                    artifactRevisionTargetId: 'letter-1',
+                }),
+                selectedId: 'letter-1',
+                selectedVersionIndex: 1,
+                registry,
+            })
+        ).toBe(false);
+    });
+
+    it('is true for Explain actions if the model starts create_artifact anyway', () => {
+        expect(
+            isArtifactRevisionLoading({
+                isGenerating: true,
+                isLastMessage: true,
+                completeArtifacts: [],
+                blocks: makeAssistantBlocks('{"id":"letter-1"'),
+                parentUserMessage: makeUserMessage({ artifactAction: explainAction }),
                 selectedId: 'letter-1',
                 selectedVersionIndex: 1,
                 registry,
