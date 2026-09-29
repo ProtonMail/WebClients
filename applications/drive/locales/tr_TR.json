@@ -237,9 +237,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "${ linkToShow } bağlantısını açmayı onaylayın"
       ],
-      "Connect": [
-        "Bağlan"
-      ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
       ],
@@ -682,6 +679,9 @@
       ],
       "Maximize transfers": [
         "Aktarımları büyüt"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
       ],
       "Merge": [
         "Birleştir"
@@ -1793,9 +1793,6 @@
       ],
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
-      ],
-      "Get 50% offer": [
-        "%50 indirimden yararlanın"
       ],
       "Maybe later": [
         "Belki sonra"
@@ -3702,8 +3699,14 @@
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Yedek parola yanlış. Lütfen yeniden deneyin."
+      ],
       "Incorrect password. Please try again.": [
         "Parola yanlış. Lütfen yeniden deneyin."
+      ],
+      "Incorrect second password. Please try again.": [
+        "İkinci parola yanlış. Lütfen yeniden deneyin."
       ],
       "Invalid code": [
         "Kod geçersiz"
@@ -5214,6 +5217,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } bu erişme iznini yalnızca içe aktarma işlemi için kullanır. Google, ${ BRAND_NAME } hesabınıza asla erişemez."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
@@ -5473,9 +5479,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Bir VPN, aygıtınız ile internet arasında güvenli bir tüneldir. Konumunuzu ve etkinliklerinizi İnternet hizmeti sağlayıcınızdan (İSS) ve ziyaret ettiğiniz sitelerden gizler."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "145 ülkede 20.000 üzerinde sunucuya erişim"
-      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
@@ -5689,8 +5692,8 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Gizliliğinizi koruyarak gezinmek için ${ VPN_APP_NAME } bağlantısı kurun"
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "${ DRIVE_APP_NAME } güvenli içe aktarma işlemini kurmak için Google Drive bağlantısı kuruluyor."
+      "Connecting to Google Drive and preparing your import.": [
+        "Google Drive bağlantısı kuruluyor ve içe aktarma işlemi hazırlanıyor."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubuna eklendi"
@@ -5855,9 +5858,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
-      "Email you once import is finished": [
-        "İçe aktarma işlemi tamamlandığında size e-posta gönderilecek"
-      ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
       ],
@@ -5928,9 +5928,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Teknik destek almak ve sorunları gidermek için tanılama günlüklerini dışa aktarın"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "10 Gb/sn olabilen en yüksek VPN hızı"
-      ],
       "Feb": [
         "Şub"
       ],
@@ -5967,9 +5964,6 @@
       "For just ${ bundlePlanPriceInline }": [
         "Yalnızca ${ bundlePlanPriceInline }"
       ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "İçe aktarma işleminin tamamlanması için yukarıdaki GIF görselinde belirtilen tüm ögeleri seçmelisiniz."
-      ],
       "Forgot password?": [
         "Parolamı unuttum"
       ],
@@ -6000,9 +5994,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
       ],
-      "Have some more time to decide without interruption.": [
-        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
-      ],
       "here": [
         "buraya"
       ],
@@ -6023,9 +6014,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
@@ -6066,6 +6054,9 @@
       ],
       "Import mailbox": [
         "E-posta kutusunu içe aktar"
+      ],
+      "Import your files and folders": [
+        "Dosyalarınızı ve klasörlerinizi içe aktarın"
       ],
       "Important note": [
         "Önemli not"
@@ -6177,6 +6168,9 @@
       ],
       "Key fingerprint": [
         "Anahtar parmak izi"
+      ],
+      "Know when it's done": [
+        "Ne zaman tamamlandığını bilin"
       ],
       "Label all imported messages as": [
         "İçe aktarılan iletiler şu şekilde etiketlensin"
@@ -6302,8 +6296,8 @@
       "New": [
         "Yeni"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Ardından Google hesabınızda oturum açmanız ve ${ BRAND_NAME } verilerinize erişme izni vermeniz gerekecek."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Ardından Google hesabınızda oturum açın ve ${ BRAND_NAME } tarafından Google Drive üzerine erişilmesine izin verin. Dosyalarınızı ve klasörlerinizi ${ DRIVE_APP_NAME } içine aktaracağız."
       ],
       "No": [
         "Hayır"
@@ -6514,9 +6508,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Lütfen kullanıma alınmamış anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
       ],
-      "Premium privacy protection across all your devices": [
-        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
-      ],
       "Preparing": [
         "Hazırlanıyor"
       ],
@@ -6550,6 +6541,9 @@
       "Primary": [
         "Birincil"
       ],
+      "Private and encrypted": [
+        "Gizliliği koruyan ve şifrelenmiş"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Gizli gezinme (veya “gizli” kip) yalnızca aygıtınızda etkinliğinizin gizliliğini korumak için kullanışlıdır. Tarayıcınızın gezinme geçmişinizi ve tanımlama bilgilerini kaydetmesini engeller, ancak sizi görünmez yapmaz. İnternet hizmeti sağlayıcınız, ağ yöneticiniz ve ziyaret ettiğiniz siteler çevrim içi ortamda ne yaptığınızı görmeyi sürdürebilir."
       ],
@@ -6567,9 +6561,6 @@
       ],
       "Read folder context": [
         "Klasör bağlamını oku"
-      ],
-      "Read once and encrypted on arrival": [
-        "Bir kez okunur ve vardığında şifrelenir"
       ],
       "Read this file": [
         "Bu dosyayı oku"
@@ -6739,9 +6730,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
-      "Sit back and we will let you know.": [
-        "Arkanıza yaslanın, size bilgi vereceğiz."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Bazı devletler belirli sitelere erişimi engeller veya kısıtlar. VPN, etkinliğinizi ve kimliğinizi güvenli tutarken engellemeyi aşmanıza yardımcı olur."
       ],
@@ -6765,9 +6753,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Aşağıdaki VPN ayarlarını etkinleştirerek kolayca bağlı kalın:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
@@ -7078,9 +7063,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bu formu kullanarak bize uygunsuz, yasadışı\nya da başka türlü kötü amaçla paylaşılmış dosyaları bildirin. Şunu şikayet ediyorsunuz:"
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Yalnızca bunları ${ DRIVE_APP_NAME } içine kopyalamak için kullanılır."
-      ],
       "username": [
         "kullanıcı adı"
       ],
@@ -7130,17 +7112,11 @@
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Fotoğrafların, Google Dokümanlarının, E-Tablolarının ve Slaytlarının içe aktarılmasını desteklemiyoruz. Lütfen Google Drive depolama alanınızın boş olmadığından emin olun."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Ödeme yönteminizi bankanızla doğrulamamız gerekiyor."
       ],
       "We need to authenticate your payment with your bank.": [
         "Ödemenizi bankanızla doğrulamamız gerekiyor."
-      ],
-      "We support most files": [
-        "Çoğu dosya türünü destekliyoruz"
       ],
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
@@ -7149,17 +7125,23 @@
         "Bu fotoğraf albümünüze eklenemedi",
         "Bazı fotoğraflar albümünüze eklenemedi"
       ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "İçe aktarma işlemi tamamlandığında size e-posta göndereceğiz. İşlem bittiğinde içe aktarılan dosyaları bir klasörde bulabilirsiniz."
-      ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_WERO_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Bunları Google Drive üzerinden ${ DRIVE_APP_NAME } üzerine kopyalayacağız."
+      ],
       "We'll email you once import is complete.": [
         "İçe aktarma işlemi tamamlanınca size e-posta göndereceğiz."
+      ],
+      "We'll email you when your import is complete.": [
+        "İçe aktarma işlemi tamamlandığında size e-posta göndereceğiz."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "İçe aktarma işlemi tamamlandığında size e-posta göndereceğiz. Dosyalarınız ${ DRIVE_APP_NAME } içindeki bir klasörde görünecek."
       ],
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
@@ -7169,9 +7151,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
-      ],
-      "We're importing your files from Google Drive. We'll let you know once it's done.": [
-        "Dosyalarınızı Google Drive üzerinden aktarıyoruz. İşlem tamamlandığında size bildireceğiz."
       ],
       "Week": [
         "Hafta"
@@ -7202,9 +7181,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate } sürümünden geri yüklenecek. Diğer tüm sürümler bulunmayı sürdürecek."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Fotoğraflar, Google Dokümanlar ve E-tablolar içe aktarılmayacak"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -7303,6 +7279,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "${ planTitle } deneme aboneliğiniz var. Şu anda herhangi bir ödeme yapmanıza gerek yok. Deneme süresi sonunda aboneliğiniz otomatik olarak yenilenecek."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Ödenmemiş bir faturanız var ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "${ dueDate } tarihli ödenmemiş bir faturanız var ${ payInvoiceLink }"
+      ],
       "You may be redirected to your bank’s website.": [
         "Bankanızın sitesine yönlendirilebilirsiniz."
       ],
@@ -7383,6 +7365,9 @@
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Dosyalarınızın dizini yeniden oluşturuluyor. Arama yapmaya sürdürebilirsiniz. İşlem tamamlanana kadar sonuçlar eksik olabilir. İşlem tamamlandığında size haber vereceğiz."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Dosyalarınız ${ DRIVE_APP_NAME } üzerinde şifrelenmiş ve güvenli olarak tutulur."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Bir parola sıfırlama işlemi nedeniyle dosyalarınız erişilebilir değil. Erişimi yeniden sağlamak için eski şifreleme anahtarını yeniden yükleyin. ${ KeyReactivationButton }"
       ],
@@ -7400,6 +7385,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ücretsiz deneme süreniz aylık aboneliğe dönüştürüldü. Yenilenme tarihi ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Drive depolama alanınız boş olabilir veya yalnızca desteklenmeyen dosyaları içeriyor olabilir."
       ],
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
@@ -8405,6 +8393,9 @@
       ],
       "Pay invoice": [
         "Faturayı öde"
+      ],
+      "Pay it": [
+        "Ödeyin"
       ],
       "Photos": [
         "Fotoğraflar"
@@ -12442,11 +12433,11 @@
       "Albums you've shared will appear here": [
         "Paylaştığınız albümler burada görünecek"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Dosyalarınızı ve klasörlerinizi Google Drive üzerinden içe aktarın ve bunların gizliliğini ${ DRIVE_APP_NAME } ile koruyun."
+      ],
       "Shared by ${ sharedBy }": [
         "${ sharedBy } tarafından paylaşıldı"
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Dosyalarınızı kopyalamak için bir kez okuyoruz ve ardından her birini ${ BRAND_NAME } anahtarlarınızla şifreliyoruz."
       ],
       "Your favorited photos will appear here": [
         "Beğendiğiniz fotoğraflar burada görünecek"
@@ -12896,9 +12887,6 @@
       "Connect your custom domain": [
         "Özel etki alanınızı bağlayın"
       ],
-      "Connect your Google account": [
-        "Google hesabınızı bağlayın"
-      ],
       "Contact Details": [
         "Kişi bilgileri"
       ],
@@ -13064,6 +13052,9 @@
       "Easy switch": [
         "Easy switch"
       ],
+      "Easy Switch from Google Drive": [
+        "Google Drive üzerinden Easy Switch"
+      ],
       "Edit billing address": [
         "Fatura adresini düzenle"
       ],
@@ -13200,6 +13191,9 @@
       ],
       "Import groups": [
         "Grupları içe aktar"
+      ],
+      "Import started": [
+        "İçe aktarma başlatıldı"
       ],
       "Import started, but your storage won't be enough for this import": [
         "İçe aktarma işlemi başladı ancak depolama alanınız bu içe aktarma işlemi için yeterli olmayacak"
@@ -13381,6 +13375,9 @@
       "Photos": [
         "Fotoğraflar"
       ],
+      "Preparing your import": [
+        "İçe aktarma işleminiz hazırlanıyor"
+      ],
       "Preview": [
         "Ön izleme"
       ],
@@ -13502,9 +13499,6 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
-      "Setting up your import": [
-        "İçe aktarma işleminiz ayarlanıyor"
-      ],
       "Settings": [
         "Ayarlar"
       ],
@@ -13535,9 +13529,6 @@
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
-      "Sign in to Google": [
-        "Google oturumu açın"
-      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -13564,9 +13555,6 @@
       ],
       "Start import process": [
         "İçe aktarma işlemini başlatın"
-      ],
-      "Stay for 50% off your next month": [
-        "Sonraki ay %50 indirimden yararlanın"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
@@ -13777,12 +13765,6 @@
       ],
       "Your import is finished!": [
         "İçe aktarma işleminiz tamamlandı!"
-      ],
-      "Your import is in progress": [
-        "İçe aktarma işleminiz sürüyor"
-      ],
-      "Your import is starting": [
-        "İçe aktarma işleminiz başlıyor"
       ],
       "Your plan": [
         "Tarifeniz"

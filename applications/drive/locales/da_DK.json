@@ -237,9 +237,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Bekræft åbning af link ${ linkToShow }"
       ],
-      "Connect": [
-        "Forbind"
-      ],
       "Connect apps and devices": [
         "Forbind apps og enheder"
       ],
@@ -682,6 +679,9 @@
       ],
       "Maximize transfers": [
         "Maksimér overførsler"
+      ],
+      "Maybe later": [
+        "Måske senere"
       ],
       "Merge": [
         "Flet"
@@ -1793,9 +1793,6 @@
       ],
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
-      ],
-      "Get 50% offer": [
-        "Få et 50%-tilbud"
       ],
       "Maybe later": [
         "Måske senere"
@@ -3702,8 +3699,14 @@
       "IMAP server is required": [
         "IMAP-server er påkrævet."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Forkert backupadgangskode. Prøv igen."
+      ],
       "Incorrect password. Please try again.": [
         "Forkert adgangskode. Prøv venligst igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Forkert anden adgangskode. Prøv igen."
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -5214,6 +5217,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } bruger kun adgangen til at importere. Google får aldrig adgang til din ${ BRAND_NAME }-konto."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
@@ -5473,9 +5479,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "En VPN er en sikker tunnel mellem din enhed og internettet. Den skjuler din placering og aktivitet for din internetudbyder (ISP) og de websteder, du besøger."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Adgang til mere end 20.000 servere i 145 lande"
-      ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
@@ -5689,8 +5692,8 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Forbind til ${ VPN_APP_NAME } for at browse privat"
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Tilslutter til Google Drive for at konfigurere din sikre import til ${ DRIVE_APP_NAME }."
+      "Connecting to Google Drive and preparing your import.": [
+        "Forbinder til Google Drive og forbereder din import."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilføjet til gruppen ${ contactGroupName }"
@@ -5855,9 +5858,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting er kun tilgængelig for domæner, du allerede ejer. Domæneregistrering er ikke tilgængelig i øjeblikket via ${ BRAND_NAME }. Du kan hoste e-mail for domæner, der er registreret hos en hvilken som helst domæneregistrator."
       ],
-      "Email you once import is finished": [
-        "Sender dig en e-mail når importen er færdig"
-      ],
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
       ],
@@ -5928,9 +5928,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Eksportér diagnoselogfiler til teknisk support og fejlfinding"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Hurtigste VPN-hastigheder – op til 10Gbps"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5967,9 +5964,6 @@
       "For just ${ bundlePlanPriceInline }": [
         "For kun ${ bundlePlanPriceInline }"
       ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen ovenfor."
-      ],
       "Forgot password?": [
         "Glemt din adgangskode?"
       ],
@@ -6000,9 +5994,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
       ],
-      "Have some more time to decide without interruption.": [
-        "Få lidt mere tid til overvejelse – uden afbrydelse."
-      ],
       "here": [
         "her"
       ],
@@ -6023,9 +6014,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -6066,6 +6054,9 @@
       ],
       "Import mailbox": [
         "Importér postkasse"
+      ],
+      "Import your files and folders": [
+        "Importér dine filer og mapper"
       ],
       "Important note": [
         "Vigtig note"
@@ -6177,6 +6168,9 @@
       ],
       "Key fingerprint": [
         "Nøglefingeraftryk"
+      ],
+      "Know when it's done": [
+        "Få besked om hvornår det er færdigt"
       ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
@@ -6302,8 +6296,8 @@
       "New": [
         "Ny"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Derefter skal du logge ind på din Google-konto og give ${ BRAND_NAME } adgang til dine data."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Log derefter ind på din Google-konto og giv ${ BRAND_NAME } adgang til Google Drive. Vi importerer dine filer og mapper til ${ DRIVE_APP_NAME }."
       ],
       "No": [
         "Nej"
@@ -6514,9 +6508,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium privatlivsbeskyttelse på alle dine enheder"
-      ],
       "Preparing": [
         "Forbereder"
       ],
@@ -6550,6 +6541,9 @@
       "Primary": [
         "Primær"
       ],
+      "Private and encrypted": [
+        "Privat og krypteret"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat browsing (eller \"inkognito\"-tilstand) er kun nyttig til at holde din aktivitet skjult på din enhed. Den forhindrer din browser i at gemme historik og cookies, men den gør dig ikke usynlig. Din internetudbyder, netværksadministrator og de websteder, du besøger, kan stadig se, hvad du foretager dig online."
       ],
@@ -6567,9 +6561,6 @@
       ],
       "Read folder context": [
         "Læste mappekontekst"
-      ],
-      "Read once and encrypted on arrival": [
-        "Læst én gang og krypteret så snart den modtages"
       ],
       "Read this file": [
         "Læste denne fil"
@@ -6739,9 +6730,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
-      "Sit back and we will let you know.": [
-        "Læn dig tilbage – vi giver dig besked."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Nogle regeringer blokerer eller begrænser adgangen til visse websteder. En VPN hjælper med at omgå censur, samtidig med at din aktivitet og identitet holdes privat."
       ],
@@ -6765,9 +6753,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Bliv på dit abonnement og få 50% rabat næste måned"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
@@ -7078,9 +7063,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Brug denne formular til at give os besked om upassende, ulovlige,\neller på anden måde skadelige delte filer. Du er ved at anmelde:"
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Kun brugt til at kopiere dem til ${ DRIVE_APP_NAME }."
-      ],
       "username": [
         "brugernavn"
       ],
@@ -7130,17 +7112,11 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Vi understøtter ikke importer af billeder, Google Docs, Sheets og Slides. Sørg for at din Google Drive ikke er tom."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi skal have bekræftet din betalingsmetode hos din bank."
       ],
       "We need to authenticate your payment with your bank.": [
         "Vi skal have bekræftet din betaling hos din bank."
-      ],
-      "We support most files": [
-        "Vi understøtter de fleste filer"
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi bruger 3-D Secure til at sikre dine betalinger"
@@ -7149,17 +7125,23 @@
         "Vi kunne ikke tilføje dette foto til dit album",
         "Vi kunne ikke tilføje nogle billeder til dit album"
       ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Vi sender dig en e-mail når importen er færdig. Du kan finde din import i en mappe når den er færdig."
-      ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til ${ IDEAL_WERO_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vi kopierer dem fra Google Drive til ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Vi sender dig en e-mail, når importen er færdig."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vi sender dig en e-mail, når importen er færdig."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Vi sender dig en e-mail, når importen er færdig. Dine filer bliver gemt i en mappe i ${ DRIVE_APP_NAME }."
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
@@ -7169,9 +7151,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
-      ],
-      "We're importing your files from Google Drive. We'll let you know once it's done.": [
-        "Vi importerer dine filer fra Google Drive. Vi giver dig besked når det er afsluttet."
       ],
       "Week": [
         "Uge"
@@ -7202,9 +7181,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "vil blive gendannet til versionen fra ${ formattedRevisionDate }. Alle andre versioner vil stadig blive gemt."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Importerer ikke fotos, Google Docs og Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
@@ -7303,6 +7279,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en åben faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en åben faktura til ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You may be redirected to your bank’s website.": [
         "Du vil muligvis blive omdirigeret til din banks hjemmeside."
       ],
@@ -7383,6 +7365,9 @@
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Dine filer bliver gen-indekseret. Du kan fortsætte søgningen - resultaterne kan dog være ufuldstændige indtil søgningen er færdig. Vi giver dig besked når den er færdig."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Dine filer bliver krypteret og opbevaret sikkert i ${ DRIVE_APP_NAME }."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Dine filer er ikke længere tilgængelige på grund af en nulstilling af adgangskoden. Gen-upload den gamle krypteringsnøgle for at få adgang igen. ${ KeyReactivationButton }"
       ],
@@ -7400,6 +7385,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveperiode blev konverteret til et månedligt abonnement. Din fornyelsesdato er ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Din Google Drive er muligvis tom, eller indeholder kun filer, som ikke understøttes."
       ],
       "Your information was found on ${ displayedDate }": [
         "Dine oplysninger blev fundet ${ displayedDate }"
@@ -8405,6 +8393,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Pay it": [
+        "Betal"
       ],
       "Photos": [
         "Fotos"
@@ -12442,11 +12433,11 @@
       "Albums you've shared will appear here": [
         "Albummer, du har delt, vises her"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importér dine filer og mapper fra Google Drive, og hold dem privat i ${ DRIVE_APP_NAME }."
+      ],
       "Shared by ${ sharedBy }": [
         "Delt af ${ sharedBy }"
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Vi læser dine filer én gang for at kopiere dem, og krypterer dem derefter med dine ${ BRAND_NAME }-nøgler."
       ],
       "Your favorited photos will appear here": [
         "Dine favoritfotos vises her"
@@ -12896,9 +12887,6 @@
       "Connect your custom domain": [
         "Forbind dit brugerdefinerede domæne"
       ],
-      "Connect your Google account": [
-        "Forbind din Google-konto"
-      ],
       "Contact Details": [
         "Kundeoplysninger"
       ],
@@ -13064,6 +13052,9 @@
       "Easy switch": [
         "Easy switch"
       ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch fra Google Drive"
+      ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
       ],
@@ -13200,6 +13191,9 @@
       ],
       "Import groups": [
         "Importer grupper"
+      ],
+      "Import started": [
+        "Import startet"
       ],
       "Import started, but your storage won't be enough for this import": [
         "Importen er startet, men du har ikke nok lagerplads til hele importen"
@@ -13381,6 +13375,9 @@
       "Photos": [
         "Fotos"
       ],
+      "Preparing your import": [
+        "Forbereder din import"
+      ],
       "Preview": [
         "Forhåndsvisning"
       ],
@@ -13502,9 +13499,6 @@
       "Set up your organization": [
         "Konfigurer din organisation"
       ],
-      "Setting up your import": [
-        "Konfigurerer din import"
-      ],
       "Settings": [
         "Indstillinger"
       ],
@@ -13535,9 +13529,6 @@
       "Sign in and grant access": [
         "Log ind og giv adgang"
       ],
-      "Sign in to Google": [
-        "Log in på Google"
-      ],
       "Sign out": [
         "Log ud"
       ],
@@ -13564,9 +13555,6 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
-      ],
-      "Stay for 50% off your next month": [
-        "Bliv hængende for 50% rabat i den næste måned"
       ],
       "Stop sharing": [
         "Stop deling"
@@ -13777,12 +13765,6 @@
       ],
       "Your import is finished!": [
         "Din import er afsluttet."
-      ],
-      "Your import is in progress": [
-        "Din import er i gang"
-      ],
-      "Your import is starting": [
-        "Din import startes"
       ],
       "Your plan": [
         "Dit abonnement"

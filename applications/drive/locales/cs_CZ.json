@@ -213,9 +213,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potvrďte otevření odkazu ${ linkToShow }"
       ],
-      "Connect": [
-        "Připojit"
-      ],
       "Connect apps and devices": [
         "Připojit aplikace a zařízení"
       ],
@@ -581,6 +578,9 @@
       ],
       "Maximize transfers": [
         "Maximalizovat přenosy"
+      ],
+      "Maybe later": [
+        "Možná později"
       ],
       "Merge": [
         "Sloučit"
@@ -3336,8 +3336,14 @@
       "IMAP server is required": [
         "Je vyžadován IMAP server"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávné záložní heslo. Zkuste to prosím znovu."
+      ],
       "Incorrect password. Please try again.": [
         "Nesprávné heslo. Zkuste to znovu."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávné druhé heslo. Zkuste to prosím znovu."
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -5898,7 +5904,7 @@
         "Navyšte účet nebo uvolněte místo, abyste přenesli i zbytek"
       ],
       "Upgrade to get more storage space": [
-        "Upgradujte tarif a získejte více úložného prostoru"
+        "Navyšte tarif a získejte více úložného prostoru"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Navyšte tarif a zachovejte si své výhody ${ planTitle }."
@@ -8613,7 +8619,7 @@
         "Přijetí pozvánky ke sdílení selhalo"
       ],
       "Failed to load sharing details": [
-        "Nepodařilo se načíst podrobnosti o sdílení"
+        "Nepodařilo se načíst detaily sdílení"
       ],
       "Failed to move, please try again": [
         "Přesun selhal, zkuste to prosím znovu"
@@ -9602,7 +9608,7 @@
         "na 12 měsíců"
       ],
       "One plan, full power": [
-        "Jeden plán, plný výkon"
+        "Jeden tarif, plný výkon"
       ],
       "One plan, max savings": [
         "Jeden plán, maximální úspory"

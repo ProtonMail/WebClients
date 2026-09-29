@@ -237,9 +237,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "${ linkToShow } लिंक पक्का खोलें?"
       ],
-      "Connect": [
-        "कनेक्ट करें"
-      ],
       "Connect apps and devices": [
         "ऐप्स और डिवाइस कनेक्ट करें"
       ],
@@ -676,6 +673,9 @@
       ],
       "Maximize transfers": [
         "स्थानांतरण दिखाएं"
+      ],
+      "Maybe later": [
+        "शायद बाद में"
       ],
       "Merge": [
         "मर्ज करें"
@@ -1781,9 +1781,6 @@
       ],
       "Discover and set up features": [
         "सुविधाएँ खोजें और सेटअप करें"
-      ],
-      "Get 50% offer": [
-        "50% ऑफर पाएं"
       ],
       "Maybe later": [
         "शायद बाद में"
@@ -3690,8 +3687,14 @@
       "IMAP server is required": [
         "IMAP सर्वर चाहिए"
       ],
+      "Incorrect backup password. Please try again.": [
+        "गलत बैकअप पासवर्ड। कृपया फिर से प्रयास करें।"
+      ],
       "Incorrect password. Please try again.": [
         "गलत पासवर्ड। कृपया वापिस कोशिश करें।"
+      ],
+      "Incorrect second password. Please try again.": [
+        "गलत दूसरा पासवर्ड। कृपया फिर से प्रयास करें।"
       ],
       "Invalid code": [
         "अवैध कोड"
@@ -5458,9 +5461,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "एक VPN आपके डिवाइस और इंटरनेट के बीच एक सुरक्षित टनल है। यह आपके इंटरनेट सेवा प्रदाता (ISP) और आपके द्वारा देखी जाने वाली वेबसाइटों से आपके स्थान और गतिविधि को छिपाता है।"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "145 देशों में 20,000+ सर्वर तक एक्सेस"
-      ],
       "Account successfully updated": [
         "खाता सफलतापूर्वक अपडेट हो गया है"
       ],
@@ -5901,9 +5901,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "तकनीकी सहायता और समस्या निवारण के लिए डायग्नोस्टिक लॉग निर्यात करें"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "10Gbps तक की सबसे तेज़ VPN स्पीड"
-      ],
       "Feb": [
         "फर"
       ],
@@ -5970,9 +5967,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "सरकारें और ISPs आपकी ऑनलाइन गतिविधि की निगरानी कर सकते हैं। आपके वास्तविक IP को छिपाकर और आपकी गतिविधि को एन्क्रिप्ट करके आपकी ब्राउज़िंग निजी हो जाती है।"
       ],
-      "Have some more time to decide without interruption.": [
-        "बिना किसी रुकावट के फैसला लेने के लिए थोड़ा और समय पाएं।"
-      ],
       "here": [
         "यहां"
       ],
@@ -5993,9 +5987,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "यदि आपको अपना खाता बनाने में परेशानी हो रही है, तो कृपया एक न्योते का अनुरोध करें और हम एक व्यावसायिक दिन के भीतर जवाब देंगे।"
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "अगर आप अभी रद्द करते हैं, तो आप ${ expiryDate } को ${ BRAND_NAME } ${ planTitle } का एक्सेस खो देंगे, जिनमें ये खासियतें शामिल हैं:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "यदि आप रद्द करते हैं, तो आपकी ${ planTitle } सदस्यता ${ expiryDate } को समाप्त होने पर नवीनीकृत नहीं की जाएगी।"
@@ -6475,9 +6466,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "कृपया प्रतीक्षा करें जब हम उन संपर्कों की तलाश करते हैं जिनमें निष्क्रिय कुंजी के साथ एन्क्रिप्ट किया गया डेटा होता है।"
       ],
-      "Premium privacy protection across all your devices": [
-        "आपके सभी डिवाइस पे प्रीमियम निजता सुरक्षा"
-      ],
       "Preparing": [
         "तैयार किया जा रहा है"
       ],
@@ -6714,9 +6702,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "निम्नलिखित VPN सेटिंग्स को सक्षम करके आसानी से कनेक्टेड रहें:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "अपने प्लैन पे बने रहें और अगले महीने 50% छूट पाएं"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या QR कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
@@ -13441,9 +13426,6 @@
       ],
       "Start import process": [
         "आयात प्रक्रिया शुरू करें"
-      ],
-      "Stay for 50% off your next month": [
-        "बने रहें और अगले महीने 50% छूट पाएं"
       ],
       "Stop sharing": [
         "सांझा करना बंद करे"
