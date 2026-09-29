@@ -76,7 +76,7 @@ export const getSwitchableSessions = (): SwitchableSession[] =>
 export const getDefaultLocalID = (sessions: EncryptedAuthSession[]): Maybe<number> =>
     first(sessions.sort(sortOn('lastUsedAt')))?.LocalID;
 
-export const PENDING_REVOKE_KEY = `rs`;
+const PENDING_REVOKE_KEY = `rs`;
 
 export const getPendingRevocations = (): string[] => {
     const UIDs = safeCall(() => {

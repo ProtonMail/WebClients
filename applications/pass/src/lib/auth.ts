@@ -98,7 +98,7 @@ type AuthServiceBindings = {
     onNotification: (notification: CreateNotificationOptions) => void;
 };
 
-export type WebAuthService = AuthService & {
+type WebAuthService = AuthService & {
     listen: () => () => void;
     scheduler: AuthScheduler;
 };
