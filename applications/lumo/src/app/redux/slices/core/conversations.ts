@@ -33,9 +33,18 @@ export type SetConversationAgentAction = {
     agentId: string | undefined;
 };
 
+export type SetConversationArtifactCreationAction = {
+    id: ConversationId;
+    // Once set, a conversation keeps its own choice; there is no "back to the global default".
+    artifactCreation: boolean;
+};
+
 export const addConversation = createAction<Conversation>('lumo/conversation/add');
 export const changeConversationTitle = createAction<EditConversation>('lumo/conversation/changeTitle');
 export const setConversationAgent = createAction<SetConversationAgentAction>('lumo/conversation/setAgent');
+export const setConversationArtifactCreation = createAction<SetConversationArtifactCreationAction>(
+    'lumo/conversation/setArtifactCreation'
+);
 export const toggleConversationStarred = createAction<ConversationId>('lumo/conversation/toggleStarred');
 export const deleteConversation = createAction<ConversationId>('lumo/conversation/delete');
 export const deleteAllConversations = createAction('lumo/conversation/deleteAll');
@@ -97,6 +106,14 @@ const conversationsReducer = createReducer<ConversationMap>(EMPTY_CONVERSATION_M
             const conversation = state[id];
             if (conversation) {
                 conversation.agentId = agentId;
+            }
+        })
+        .addCase(setConversationArtifactCreation, (state, action) => {
+            console.log('Action triggered: setConversationArtifactCreation', action.payload);
+            const { id, artifactCreation } = action.payload;
+            const conversation = state[id];
+            if (conversation) {
+                conversation.artifactCreation = artifactCreation;
             }
         })
         .addCase(toggleConversationStarred, (state, action) => {
