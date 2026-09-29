@@ -1,17 +1,21 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { ConnectionState, type Room } from 'livekit-client';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { withTimeout } from '@proton/meet/utils/withTimeout';
 
+import { supportsSetSinkId } from '../../../utils/browser';
 import type { MeetAudioContext } from '../../../utils/meet-audio-context';
 import { retry } from '../../../utils/retry';
 
 // statechange fires before the OS finishes removing the device, so an immediate attempt has no output
 // to acquire. Later attempts are spaced out because Bluetooth renegotiation could takes over a second.
 const RECOVERY_DELAYS_MS = [250, 500, 1_000, 2_000];
+
+const FALLBACK_TIMEOUT_MS = 5_000;
 
 const isSilent = (state: AudioContextState) => state === 'suspended' || state === 'interrupted';
 
@@ -34,13 +38,79 @@ export const useAudioContextOutput = ({
     const hasBeenRunningRef = useRef(false);
     const isRecoveringRef = useRef(false);
 
+    // Without webAudioMix this context renders nothing: LiveKit plays through audio elements
+    // instead, so pinning this sink would point at a device that is not the one playing.
+    const { webAudioMix } = room.options;
+    const isPlaybackContext =
+        typeof webAudioMix === 'object' && webAudioMix.audioContext === meetAudioContext.audioContext;
+
+    // Going through LiveKit moves the remote audio elements too, not just this context's sink
+    const fallBackToDefault = useCallback(async () => {
+        if (!supportsSetSinkId()) {
+            return;
+        }
+
+        try {
+            await withTimeout(
+                room.switchActiveDevice('audiooutput', ''),
+                'Fall back to the default audio output',
+                FALLBACK_TIMEOUT_MS
+            );
+        } catch (error) {
+            reportMeetError('Error falling back to the default audio output', { context: { error } });
+        }
+    }, [room, reportMeetError]);
+
     useEffect(() => {
         // '' is the system default, which still has to be pinned: leaving the sink untouched keeps
         // whatever device the context resolved at construction, before the room had an output.
-        if (activeAudioOutputDeviceId !== null) {
-            meetAudioContext.setSinkId(activeAudioOutputDeviceId);
+        if (!isPlaybackContext || activeAudioOutputDeviceId === null) {
+            return;
         }
-    }, [activeAudioOutputDeviceId, meetAudioContext]);
+
+        // A pending setSinkId can resolve after the effect re-ran for a newer device
+        let isStale = false;
+
+        const applyOutput = async () => {
+            if (!(await meetAudioContext.setSinkId(activeAudioOutputDeviceId)) && !isStale) {
+                await fallBackToDefault();
+            }
+        };
+
+        void applyOutput();
+
+        return () => {
+            isStale = true;
+        };
+    }, [activeAudioOutputDeviceId, isPlaybackContext, meetAudioContext, fallBackToDefault]);
+
+    // Chrome fires 'error' when the device this context renders to goes away. Attached whether or
+    // not an output was applied, because recovery cannot wait for the store to be populated.
+    useEffect(() => {
+        if (!isPlaybackContext) {
+            return;
+        }
+
+        const { audioContext } = meetAudioContext;
+        let isRecovering = false;
+
+        const handleOutputDeviceLost = () => {
+            if (isRecovering) {
+                return;
+            }
+
+            isRecovering = true;
+            void fallBackToDefault().finally(() => {
+                isRecovering = false;
+            });
+        };
+
+        audioContext.addEventListener('error', handleOutputDeviceLost);
+
+        return () => {
+            audioContext.removeEventListener('error', handleOutputDeviceLost);
+        };
+    }, [isPlaybackContext, meetAudioContext, fallBackToDefault]);
 
     useEffect(() => {
         const { audioContext } = meetAudioContext;
