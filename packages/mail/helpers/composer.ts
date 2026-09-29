@@ -1,6 +1,6 @@
-import { isDuckDuckGo, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isWebKit } from '@proton/shared/lib/helpers/browser';
 
-const getIframeSandboxAttributes = (isPrint: boolean) => {
+export const getIframeSandboxAttributes = (isPrint: boolean) => {
     const sandboxAttributes: string = [
         /**
          * Because iframe origin is set to protonmail.com we need
@@ -31,7 +31,7 @@ const getIframeSandboxAttributes = (isPrint: boolean) => {
          * If this becomes a problem in the future we should consider `allow-scripts`
          * on all engines
          */
-        ...(isSafari() || isDuckDuckGo() ? ['allow-scripts'] : []),
+        ...(isWebKit() ? ['allow-scripts'] : []),
     ].join(' ');
 
     /**
@@ -42,5 +42,3 @@ const getIframeSandboxAttributes = (isPrint: boolean) => {
      */
     return sandboxAttributes;
 };
-
-export default getIframeSandboxAttributes;
