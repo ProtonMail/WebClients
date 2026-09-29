@@ -6,10 +6,10 @@ import { isDevOrBlack } from '@proton/shared/lib/env'
 import type { PropsWithChildren } from 'react'
 import { useMemo } from 'react'
 
-import { useSyncedState } from '../../Hooks/useSyncedState'
-import { reportErrorToSentry } from '../../Utils/errorMessage'
-import { useApplication } from '../ApplicationProvider'
-import { useEditorTheme } from '../../Theme/EditorThemeProvider'
+import { useSyncedState } from '../../../Hooks/useSyncedState'
+import { reportErrorToSentry } from '../../../Utils/errorMessage'
+import { useApplication } from '../../ApplicationProvider'
+import { useEditorTheme } from '../../../Theme/EditorThemeProvider'
 import {
   SheetsDependenciesProvider,
   type SheetsPatchCategory,
@@ -20,12 +20,12 @@ import {
   type SheetsShellToEditorActions,
   type SpreadsheetImportDestination,
   type SpreadsheetImportRequest,
-} from '../Spreadsheet/public'
-import { useResolvedAppPlatform } from './useResolvedAppPlatform'
-import { createSheetsFileMenuActions } from './createSheetsFileMenuActions'
-import { toCollaboratorCursorNavigationDestination } from './collaboratorCursorNavigationAdapter'
-import { toStoredSheetsActionType } from './sheetsActionAdapter'
-import { useSheetsFeatureFlags } from './useSheetsFeatureFlags'
+} from '../../Spreadsheet/public'
+import { useResolvedAppPlatform } from './utils/use-resolved-app-platform'
+import { createSheetsFileMenuActions } from './utils/create-sheets-file-menu-actions'
+import { toCollaboratorCursorNavigationDestination } from './utils/collaborator-cursor-navigation-adapter'
+import { toStoredSheetsActionType } from './utils/sheets-action-adapter'
+import { useSheetsFeatureFlags } from './utils/use-sheets-feature-flags'
 
 type SheetsAdapterProps = PropsWithChildren<{
   clientInvoker: EditorRequiresClientMethods
