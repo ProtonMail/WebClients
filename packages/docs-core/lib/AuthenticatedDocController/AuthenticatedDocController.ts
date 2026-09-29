@@ -3,7 +3,7 @@ import type { SquashDocument } from '../UseCase/SquashDocument'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { CreateNewDocument } from '../UseCase/CreateNewDocument'
 import type { DriveCompat } from '@proton/drive-store'
-import type { InternalEventBusInterface, YjsState, DocumentType } from '@proton/docs-shared'
+import type { InternalEventBusInterface, YjsState, DocumentType, NodeMeta } from '@proton/docs-shared'
 import { Result } from '@proton/docs-shared'
 import type { AuthenticatedDocControllerInterface } from './AuthenticatedDocControllerInterface'
 import type { SeedInitialCommit } from '../UseCase/SeedInitialCommit'
@@ -339,7 +339,9 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     return result
   }
 
-  public async duplicateDocument(editorYjsState: Uint8Array<ArrayBuffer>): Promise<void> {
+  public async duplicateDocument(
+    editorYjsState: Uint8Array<ArrayBuffer>,
+  ): Promise<{ nodeMeta: NodeMeta; documentType: DocumentType }> {
     const node = this.documentState.getProperty('decryptedNode')
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
@@ -347,21 +349,21 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     )
 
     if (result.isFailed()) {
-      this.logger.error('Failed to duplicate document', result.getError())
-
+      const error = 'Failed to duplicate document'
+      this.logger.error(error, result.getError())
       PostApplicationError(this.eventBus, {
         translatedError: c('Error').t`An error occurred while attempting to duplicate the document. Please try again.`,
       })
-
-      return
+      throw new Error(error, { cause: result.getError() })
     }
 
-    const shell = result.getValue()
-
-    void this.driveCompat.openDocument(shell, isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc')
+    const nodeMeta = result.getValue()
+    return { nodeMeta, documentType: isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc' }
   }
 
-  public async restoreRevisionAsCopy(yjsContent: YjsState): Promise<void> {
+  public async restoreRevisionAsCopy(
+    yjsContent: YjsState,
+  ): Promise<{ nodeMeta: NodeMeta; documentType: DocumentType }> {
     const node = this.documentState.getProperty('decryptedNode')
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
@@ -369,21 +371,19 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     )
 
     if (result.isFailed()) {
+      const error = result.getError()
       this.logger.error('Failed to restore document as copy', result.getError())
-
       PostApplicationError(this.eventBus, {
         translatedError: c('Error').t`An error occurred while attempting to restore the document. Please try again.`,
       })
-
-      return
+      throw new Error(error, { cause: result.getError() })
     }
 
-    const shell = result.getValue()
-
-    void this.driveCompat.openDocument(shell, isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc')
+    const nodeMeta = result.getValue()
+    return { nodeMeta, documentType: isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc' }
   }
 
-  public async createNewDocument(documentType: DocumentType): Promise<void> {
+  public async createNewDocument(documentType: DocumentType): Promise<NodeMeta> {
     const date = getPlatformFriendlyDateForFileName()
     const newName = getDefaultDocumentName(documentType, date)
 
@@ -395,18 +395,15 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     )
 
     if (result.isFailed()) {
-      this.logger.error('Failed to create new document', result.getError())
-
+      const error = 'Failed to create new document'
+      this.logger.error(error, result.getError())
       PostApplicationError(this.eventBus, {
         translatedError: c('Error').t`An error occurred while creating a new document. Please try again.`,
       })
-
-      return
+      throw new Error(error, { cause: result.getError() })
     }
 
-    const shell = result.getValue()
-
-    void this.driveCompat.openDocument(shell, documentType)
+    return result.getValue()
   }
 
   public async trashDocument(useSDK = false): Promise<void> {

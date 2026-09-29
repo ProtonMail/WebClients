@@ -7,7 +7,6 @@ import { useInvitationsActions } from '../../store/_actions/useInvitationsAction
 import type { ExtendedInvitationDetails } from '../../store/_invitations/interface';
 import { useInvitationsView } from '../../store/_views/useInvitationsView';
 import type { NodeMeta, PublicNodeMeta } from '../NodeMeta';
-import { useDriveCompat } from '../useDriveCompat';
 
 export type DocInvitesHook = () => {
     invitations: ExtendedInvitationDetails[];
@@ -17,7 +16,6 @@ export type DocInvitesHook = () => {
     rejectInvite: (invitation: ExtendedInvitationDetails) => Promise<void>;
     confirmModal: JSX.Element | null;
     recentlyAcceptedInvites: ExtendedInvitationDetails[];
-    openInvitedDocument: (invitation: ExtendedInvitationDetails) => void;
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     inviteForNodeMeta: (nodeMeta: NodeMeta | PublicNodeMeta) => ExtendedInvitationDetails | undefined;
     isLoading: boolean;
@@ -27,7 +25,6 @@ export const useDocInvites: DocInvitesHook = () => {
     const { invitations, isLoading } = useInvitationsView();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const [recentlyAcceptedInvites, setRecentlyAcceptedInvites] = useState<ExtendedInvitationDetails[]>([]);
-    const driveCompat = useDriveCompat();
 
     const docsInvites = useMemo(
         () =>
@@ -66,23 +63,12 @@ export const useDocInvites: DocInvitesHook = () => {
         [rejectInvitation, showConfirmModal]
     );
 
-    const openInvitedDocument = useCallback(
-        (invitation: ExtendedInvitationDetails) => {
-            void driveCompat.openDocument({
-                volumeId: invitation.share.volumeId,
-                linkId: invitation.link.linkId,
-            });
-        },
-        [driveCompat]
-    );
-
     return {
         invitations: docsInvites,
         acceptInvite,
         rejectInvite,
         confirmModal,
         recentlyAcceptedInvites,
-        openInvitedDocument,
         showConfirmModal,
         inviteForNodeMeta,
         isLoading,
