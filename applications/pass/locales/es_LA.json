@@ -1280,6 +1280,12 @@
       "Inactive secure links could not be removed.": [
         "No se pudieron eliminar los enlaces seguros inactivos."
       ],
+      "Incorrect backup password. Please try again.": [
+        "La contraseña de respaldo no es correcta. Inténtelo de nuevo."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segunda contraseña no es correcta. Inténtelo de nuevo."
+      ],
       "Invalid password manager": [
         "Contraseña del gestor inválida"
       ],
@@ -1669,6 +1675,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Los tokens de acceso, usados junto con ${ passCliLink }, permiten automatizar CI/CD o proporcionar a su agente de IA acceso restringido a lo que necesita para ejecutar su tarea."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Añada un método de pago para que su suscripción continúe cuando finalice la prueba."
+      ],
       "Add your custom email address to monitor:": [
         "Agregue su dirección de correo personalizado para monitorear:"
       ],
@@ -1987,6 +1996,9 @@
       "finance": [
         "finanzas"
       ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Finalice el inicio de sesión en la ventana del navegador que acaba de abrir. ${ PASS_APP_NAME } se cargará automáticamente una vez que lo haga."
+      ],
       "Folder \"${ payload.folder.name }\" created": [
         "Carpeta «${ payload.folder.name }» creada"
       ],
@@ -2172,8 +2184,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -3022,6 +3033,9 @@
       ],
       "Account Type": [
         "Tipo de cuenta"
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Agregue un prefijo aleatorio para este dominio al crear un nuevo alias."
@@ -4764,6 +4778,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue in your browser": [
+        "Continuar en su navegador"
+      ],
       "Create a vault": [
         "Crear una bóveda"
       ],
@@ -4914,6 +4931,9 @@
       ],
       "Item": [
         "Elemento"
+      ],
+      "Keep your subscription active": [
+        "Mantenga su suscripción activa"
       ],
       "Last autofill": [
         "Último completado automático"
