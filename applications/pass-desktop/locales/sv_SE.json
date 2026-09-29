@@ -1282,6 +1282,9 @@
       "Failed to update domain name.": [
         "Misslyckades att uppdatera domännamn."
       ],
+      "Failed to update folder": [
+        "Misslyckades med att uppdatera mapp"
+      ],
       "Failed to update monitoring settings": [
         "Misslyckades att uppdatera övervakningsinställningar"
       ],
@@ -1323,6 +1326,12 @@
       ],
       "Inactive secure links could not be removed.": [
         "Inaktiva säkra länkar kunde inte tas bort."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Felaktigt reservlösenord. Försök igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Felaktigt andra lösenord. Försök igen."
       ],
       "Invalid password manager": [
         "Ogiltig lösenordshanterare"
@@ -3109,6 +3118,9 @@
       ],
       "Account Type": [
         "Kontotyp"
+      ],
+      "Add a payment method": [
+        "Lägg till en betalningsmetod"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Lägg till ett slumpmässigt prefix för denna domän när du skapar ett nytt alias."
