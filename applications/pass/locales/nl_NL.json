@@ -248,7 +248,7 @@
         "Identiteit aanmaken"
       ],
       "Create item": [
-        "Artikel aanmaken"
+        "Item aanmaken"
       ],
       "Create login": [
         "Login aanmaken"
@@ -1261,6 +1261,12 @@
       "Inactive secure links could not be removed.": [
         "Inactieve beveiligde links konden niet worden verwijderd."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Onjuist back-up wachtwoord. Probeer het opnieuw."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Onjuist tweede wachtwoord. Probeer het opnieuw."
+      ],
       "Invalid password manager": [
         "Ongeldige wachtwoordbeheerder"
       ],
@@ -2135,8 +2141,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -3297,7 +3302,7 @@
         "Om veiligheidsredenen vergrendelt ${ PASS_SHORT_APP_NAME } zichzelf automatisch na 10 minuten inactiviteit."
       ],
       "Forwards to": [
-        "Stuurt door na"
+        "Stuurt door naar"
       ],
       "Free": [
         "Gratis"
@@ -4234,7 +4239,7 @@
         "Niet genoeg opslagruimte beschikbaar voor de geselecteerde bestanden."
       ],
       "Once deleted, this file can still be recovered from the item's history.": [
-        "Eenmaal verwijderd, kan dit bestand nog steeds worden hersteld uit de artikelgeschiedenis."
+        "Eenmaal verwijderd, kan dit bestand nog steeds worden hersteld uit de itemgeschiedenis."
       ],
       "Open new window to upload files": [
         "Open een nieuw venster om bestanden te uploaden"

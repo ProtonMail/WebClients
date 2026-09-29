@@ -1280,6 +1280,12 @@
       "Inactive secure links could not be removed.": [
         "Inaktive sikre links kunne ikke fjernes."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Forkert backupadgangskode. Prøv igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Forkert anden adgangskode. Prøv igen."
+      ],
       "Invalid password manager": [
         "Ugyldig adgangskodeadministrator"
       ],
@@ -1668,6 +1674,9 @@
       ],
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Adgangstokens, sammen med ${ passCliLink }, giver dig mulighed for at automatisere CI/CD eller give din AI-agent begrænset adgang til det den skal bruge for at køre sit job."
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Tilføj en betalingsmetode for at sikre, at dit abonnement fortsætter når din prøveperiode slutter."
       ],
       "Add your custom email address to monitor:": [
         "Tilføj din brugerdefinerede e-mailadresse, som skal monitoreres:"
@@ -2175,8 +2184,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Hvis du flytter et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -3025,6 +3033,9 @@
       ],
       "Account Type": [
         "Kontotype"
+      ],
+      "Add a payment method": [
+        "Tilføj en betalingsmetode"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Tilføj et tilfældigt præfiks til dette domæne, når du opretter et nyt alias."
@@ -4920,6 +4931,9 @@
       ],
       "Item": [
         "Element"
+      ],
+      "Keep your subscription active": [
+        "Hold dit abonnement kørende"
       ],
       "Last autofill": [
         "Seneste autofyld"
