@@ -29,6 +29,7 @@ import { selectSpaceMap } from '../../../redux/slices/core/spaces';
 import { SearchService } from '../../../services/search/searchService';
 import type { Conversation, Message, SpaceId } from '../../../types';
 import { LumoSettingsUpsellSection } from '../../../upsells/composed/LumoSettingsUpsellSection';
+import { sendArtifactCreationDefaultChangedEvent } from '../../../util/telemetry';
 import { getInitials } from '../../../util/username';
 import LumoThemeButton from '../../Buttons/LumoThemeButton';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
@@ -319,8 +320,10 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                             id="automatic-artifact-creation-toggle"
                             checked={automaticArtifactCreation}
                             onChange={() => {
+                                const enabled = !automaticArtifactCreation;
+                                sendArtifactCreationDefaultChangedEvent(enabled);
                                 updateSettings({
-                                    automaticArtifactCreation: !automaticArtifactCreation,
+                                    automaticArtifactCreation: enabled,
                                     _autoSave: true,
                                 });
                             }}
