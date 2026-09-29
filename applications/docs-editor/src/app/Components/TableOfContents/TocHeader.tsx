@@ -20,7 +20,12 @@ export function TocHeader({ isActive, onToggle }: TocHeaderProps) {
   }
 
   return (
-    <div className={clsx('toc-header relative flex items-center gap-2 p-2.5 pl-0 pt-9', isActive && 'ml-[-22px]')}>
+    <div
+      className={clsx(
+        'toc-header relative flex flex-nowrap items-center gap-2 p-2.5 pl-0 pt-9',
+        isActive && 'ml-[-22px]',
+      )}
+    >
       {isActive ? (
         <TocCloseButton onClick={handleToggle} />
       ) : (
