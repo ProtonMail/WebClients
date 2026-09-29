@@ -218,9 +218,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Vahvista linkin ${ linkToShow } avaus"
       ],
-      "Connect": [
-        "Yhdistä"
-      ],
       "Connect apps and devices": [
         "Yhdistä sovelluksia ja laitteita"
       ],
@@ -585,6 +582,9 @@
       ],
       "Maximize transfers": [
         "Suurenna siirrot"
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
       ],
       "Merge": [
         "Yhdistä"
@@ -3305,8 +3305,14 @@
       "IMAP server is required": [
         "IMAP-palvelin vaaditaan"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Väärä varasalasana. Yritä uudelleen."
+      ],
       "Incorrect password. Please try again.": [
         "Virheellinen salasana. Yritä uudelleen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Väärä toine salasana. Yritä uudelleen."
       ],
       "Invalid code": [
         "Virheellinen koodi"

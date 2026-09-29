@@ -1945,10 +1945,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewCycle } maand",
-        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewCycle } maanden"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Vernieuwt automatisch op ${ subscriptionManagerName }"
       ]
@@ -2176,9 +2172,6 @@
       ],
       "Discover and set up features": [
         "Ontdek en configureer functies"
-      ],
-      "Get 50% offer": [
-        "Neem de 50% deal"
       ],
       "Maybe later": [
         "Misschien later"
@@ -7280,9 +7273,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Toegang tot meer dan 20.000 servers in 145 landen"
-      ],
       "Account monitor": [
         "Accountactiviteitenmonitor"
       ],
@@ -8025,9 +8015,6 @@
       "Failed to fetch logs.": [
         "Fout bij het ophalen van logboeken."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "De hoogste VPN-snelheden tot 10 Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
       ],
@@ -8121,9 +8108,6 @@
       "Groups": [
         "Groepen"
       ],
-      "Have some more time to decide without interruption.": [
-        "Neem nog even de tijd om in alle rust een beslissing te nemen."
-      ],
       "here": [
         "hier"
       ],
@@ -8159,9 +8143,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Als u nu annuleert, hebt u vanaf ${ expiryDate }geen toegang meer tot ${ BRAND_NAME } ${ planTitle }, waaronder deze functies:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
@@ -8745,9 +8726,6 @@
       "Preference saved": [
         "Voorkeur opgeslagen"
       ],
-      "Premium privacy protection across all your devices": [
-        "Eersteklas privacybescherming op al uw apparaten"
-      ],
       "Preview": [
         "Voorbeeld"
       ],
@@ -8798,9 +8776,6 @@
       ],
       "RECOMMENDED": [
         "AANBEVOLEN"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Aanbevolen op vertrouwde apparaten. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Herstel via e-mail is niet beschikbaar zolang ${ PROTON_SENTINEL_NAME } is ingeschakeld."
@@ -9003,9 +8978,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behoud uw abonnement aan en u ontvangt 50% korting op uw volgende maand"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -9217,9 +9189,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dit zal PayPal inschakelen om te betalen voor uw ${ BRAND_NAME } abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Hiermee krijgt u snel en veilig toegang tot uw ${ BRAND_NAME } account, zodat u uw wachtwoord kunt wijzigen."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Dit verwijdert permanent de gegevens en alle e-mailadressen die aan deze gebruikers zijn gekoppeld."
@@ -13274,6 +13243,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Laatste kans om aan deze prijs uw eerste maand ${ plan } te krijgen."
+      ],
       "Last day to save": [
         "Laatste dag om op te besparen"
       ],
@@ -13374,6 +13346,9 @@
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
+      ],
+      "Add a payment method": [
+        "Voeg een betaalmethode toe"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "U kunt op elk moment annuleren vóór ${ cancelDate }."
@@ -13854,9 +13829,6 @@
       ],
       "Card number": [
         "Kaartnummer"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Tegoeden en kortingen worden weergegeven op uw factuur"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Momenteel is de automatische verlenging van het abonnement uitgeschakeld. Als u het abonnement nu wijzigt, wordt de automatische verlenging opnieuw ingeschakeld."
@@ -18867,9 +18839,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Stay for 50% off your next month": [
-        "Blijf en ontvang 50% korting op uw volgende maand"
       ],
       "Stay secure and connected anywhere": [
         "Blijf overal veilig en verbonden"

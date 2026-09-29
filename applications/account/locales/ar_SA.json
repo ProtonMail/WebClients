@@ -2693,14 +2693,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } months": [
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لمدة ${ renewCycle } شهر",
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لشهر واحد (${ renewCycle })",
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لشهرين (${ renewCycle })",
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لـ ${ renewCycle } أشهر",
-        "يُجدد تلقائيًا بسعر ${ renewPrice }، لـ ${ renewCycle } شهرًا",
-        "يُجدَّد تلقائيًا بسعر ${ renewPrice } لمدة ${ renewCycle } شهر."
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "يُجدد تلقائيًا على ${ subscriptionManagerName }"
       ]
@@ -12132,9 +12124,6 @@
       "RECOMMENDED": [
         "موصى به"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "موصى به على الأجهزة الموثوقة ${ keepMeSignedInLearnMoreLink }"
-      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "الاسترداد عن طريق البريد الإلكتروني غير متاح أثناء تفعيل ${ PROTON_SENTINEL_NAME }."
       ],
@@ -12737,9 +12726,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "سوف تكون قادر على استخدام PayPal للدفع مقابل اشتراكك في ${ BRAND_NAME }. سنعيد توجيهك إلى PayPal في علامة تبويب جديدة. إذا كنت تستخدم أي أدوات لحظر النوافذ المنبثقة، قم تعطيلها للمتابعة."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "يتيح هذا الوصول بسرعة وأمان إلى حساب ${ BRAND_NAME } لتغيير كلمة المرور."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "سيؤدي هذا إلى حذف البيانات وجميع عناوين البريد الإلكتروني المرتبطة بهؤلاء المستخدمين بشكل دائم."
@@ -20053,9 +20039,6 @@
       ],
       "Card number": [
         "رقم البطاقة"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "ستظهر الأرصدة والخصومات في فاتورتك"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "التجديد التلقائي للاشتراك معطّل حاليًا. إذا غيرت الاشتراك الآن، فسيُعاد تفعيل التجديد التلقائي."

@@ -1428,9 +1428,6 @@
       "Continue your subscription": [
         "Pokračovať v predplatnom"
       ],
-      "Get 50% offer": [
-        "Využite 50 % zľavu"
-      ],
       "Maybe later": [
         "Možno neskôr"
       ]
@@ -3243,8 +3240,14 @@
       "IMAP server is required": [
         "IMAP server je požadovaný"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávne záložné heslo. Skúste to znova, prosím."
+      ],
       "Incorrect password. Please try again.": [
         "Nesprávne heslo. Skúste to prosím, znovu."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávne druhé heslo. Skúste to znova, prosím."
       ],
       "Invalid coupon": [
         "Neplatná poukážka"
@@ -4858,9 +4861,6 @@
       "Accept/decline": [
         "Prijať/Odmietnuť"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
-      ],
       "Ad targeting": [
         "Cielená reklama"
       ],
@@ -5179,9 +5179,6 @@
       "Failing signatures will be re-signed by you": [
         "Neúspešné podpisy budú opätovne podpísané vami."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Najvyššia rýchlosť VPN až 10 Gbps"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Súbor „${ name }“ bol vymazaný počas sťahovania"
       ],
@@ -5218,9 +5215,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelia internetových služieb môžu monitorovať vašu online aktivitu. Skrytím vašej skutočnej IP adresy a šifrovaním vašej aktivity sa vaše prehliadanie stane súkromným."
       ],
-      "Have some more time to decide without interruption.": [
-        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Pomôžte nám vylepšiť túto funkciu tým, že nahlásite tento problém. Ak vám nevadí zdieľať obsah tabuľky, priložte k hláseniu nižšie uvedené informácie na účely ladenia."
       ],
@@ -5238,9 +5232,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
@@ -5557,9 +5548,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, počkajte kým zistíme kontakty, ktoré zahŕňajú šifrované dáta s neaktívnym kľúčom."
       ],
-      "Premium privacy protection across all your devices": [
-        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
-      ],
       "Preparing link to file": [
         "Príprava odkazu na súbor"
       ],
@@ -5676,9 +5664,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Zostaňte ľahko pripojení povolením nasledujúcich nastavení VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Predplatné sa obnovuje automaticky každý ${ cycle } mesiac.",
@@ -5991,6 +5976,12 @@
       ],
       "You don't have access": [
         "Nemáte prístup"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Je možné, že nemáte potrebné oprávnenia na zobrazenie s vybraným účtom. Skúste použiť iný účet alebo sa obráťte na vlastníka, aby vám poskytol prístup."
@@ -6743,6 +6734,9 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
+      ],
+      "Pay it": [
+        "Zaplatiť"
       ],
       "Reactivate now": [
         "Znovu aktivovať"
@@ -10771,9 +10765,6 @@
       ],
       "Start import process": [
         "Zahájiť proces importu"
-      ],
-      "Stay for 50% off your next month": [
-        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Stop sharing": [
         "Ukončiť zdieľanie"

@@ -1564,9 +1564,6 @@
       "Discover and set up features": [
         "機能の発見と設定"
       ],
-      "Get 50% offer": [
-        "50％割引オファーを獲得"
-      ],
       "Maybe later": [
         "たぶんあとで"
       ],
@@ -3688,6 +3685,12 @@
       "IMAP server is required": [
         "IMAP サーバーは必須です"
       ],
+      "Incorrect backup password. Please try again.": [
+        "間違ったバックアップパスワードです。再度お試しください。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "セカンドパスワードが正しくありません。もう一度お試しください。"
+      ],
       "Intended recipient does not support calendar sharing": [
         "対象の受信者はカレンダーの共有をサポートしていません"
       ],
@@ -5228,9 +5231,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPNは、あなたのデバイスとインターネットを繋ぐ安全なトンネルのようなものです。インターネットサービスプロバイダ(ISP)及び利用したウェブサイトから、位置情報と活動情報を隠します。"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "148か国にある20,000台以上のサーバーにアクセス"
-      ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
@@ -5597,9 +5597,6 @@
       "Failed to update meeting schedule": [
         "ミーティングスケジュールの更新に失敗しました"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "最大10 Gbpsの高速VPN接続"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "ファイルのみ（写真、${ DOCS_APP_NAME }、${ SHEETS_APP_NAME }を除く） - 合計最大 100 GB、100,000 ファイルまで、1 ファイルあたり 50 GB まで"
       ],
@@ -5627,9 +5624,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府とISPも、あなたのオンライン上の活動を監視することができます。IPアドレスを隠し、活動内容を暗号化することで、お客様のブラウジングはプライベートになります。"
       ],
-      "Have some more time to decide without interruption.": [
-        "利用を中断せず、もう少し時間をかけて検討できます。"
-      ],
       "here": [
         "こちら"
       ],
@@ -5650,9 +5644,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "今キャンセルすると、${ expiryDate } に${ BRAND_NAME } ${ planTitle } へのアクセス権を失います（以下の機能を含む）："
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "キャンセルすると、${ planTitle } サブスクリプションは ${ expiryDate } に期限切れになっても更新されません。"
@@ -5981,9 +5972,6 @@
       "Powered by ${ protonButton }": [
         "${ protonButton } によって提供されています"
       ],
-      "Premium privacy protection across all your devices": [
-        "すべてのデバイスで高度なプライバシー保護"
-      ],
       "Previous modifications on this series will be lost.": [
         "一連の予定に対する過去の変更は失われます。"
       ],
@@ -6085,9 +6073,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "こちらのVPNの設定を有効にすることで、簡単に接続を維持します。"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "現在のプランを継続すると、翌月が50%オフ"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
@@ -12145,9 +12130,6 @@
       ],
       "Start import process": [
         "インポートを開始"
-      ],
-      "Stay for 50% off your next month": [
-        "継続すると、翌月が50%オフ"
       ],
       "Subscription canceled": [
         "サブスクリプションがキャンセルされました"

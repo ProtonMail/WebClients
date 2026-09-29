@@ -2233,11 +2233,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewCycle } lună.",
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewCycle } luni.",
-        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewCycle } de luni."
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Reînnoire automată pe ${ subscriptionManagerName }"
       ]
@@ -2467,9 +2462,6 @@
       ],
       "Discover and set up features": [
         "Descoperiți și setați funcțiile"
-      ],
-      "Get 50% offer": [
-        "Profitați de oferta de 50%"
       ],
       "Maybe later": [
         "Poate mai târziu"
@@ -3830,6 +3822,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Aduceți-vă mesajele, evenimentele din calendar și contactele de la un alt furnizor."
+      ],
+      "Bring over your files from another provider.": [
+        "Aduceți-vă fișierele de la alt furnizor de stocare."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Creați încredere și recunoaștere a mărcii cu adrese de e-mail profesionale de pe propriul domeniu."
@@ -7715,9 +7710,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilizator este un cont asociat cu un singur nume de utilizator, căsuță poștală și persoană."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Accesați peste 20.000 de servere din peste 145 de țări"
-      ],
       "Account monitor": [
         "Monitorizare cont"
       ],
@@ -8494,9 +8486,6 @@
       "Failed to fetch logs.": [
         "Eșuare preluare jurnale."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Cele mai rapide viteze VPN de până la 10 Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Doar fișiere (fără fotografii, ${ DOCS_APP_NAME } sau ${ SHEETS_APP_NAME }) - până la 100 GiB total, 100.000 de fișiere și 50 GiB per fișier."
       ],
@@ -8590,9 +8579,6 @@
       "Groups": [
         "Grupuri"
       ],
-      "Have some more time to decide without interruption.": [
-        "Mai aveți timp să vă decideți fără întrerupere."
-      ],
       "here": [
         "aici"
       ],
@@ -8628,9 +8614,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, contactați-ne la ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Dacă anulați acum, veți pierde accesul la ${ BRAND_NAME } ${ planTitle } la ${ expiryDate }, inclusiv la aceste funcții:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Dacă anulați, abonamentul la ${ planTitle } nu va fi reînnoit când va expira la ${ expiryDate }."
@@ -9232,9 +9215,6 @@
       "Preference saved": [
         "Preferință salvată"
       ],
-      "Premium privacy protection across all your devices": [
-        "Protecție premium a confidențialității pe toate dispozitivele personale"
-      ],
       "Preview": [
         "Examinare"
       ],
@@ -9286,8 +9266,8 @@
       "RECOMMENDED": [
         "RECOMANDAT"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Recomandat pe dispozitivele de încredere. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Recomandat pe dispozitivele de încredere. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Recuperarea prin e-mail nu este disponibilă dacă ${ PROTON_SENTINEL_NAME } este activat."
@@ -9500,9 +9480,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Începeți să o partajați contactelor personale și folosiți-l pentru serviciile online."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Păstrați-vă abonamentul și primiți o reducere de 50% luna următoare"
       ],
       "Storage allocated to other users in this organisation": [
         "Spațiu alocat altor utilizatori din această organizație"
@@ -9718,9 +9695,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Aceasta va activa PayPal ca metodă de plată pentru abonarea la ${ BRAND_NAME }. Se va deschide o fereastră nouă spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Acest lucru vă va permite să vă accesați rapid și în siguranță contul ${ BRAND_NAME }, astfel încât să vă puteți schimba parola."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Acest lucru va șterge definitiv datele și toate adresele de e-mail asociate cu acești utilizatori."
@@ -14650,9 +14624,6 @@
       ],
       "Card number": [
         "Număr card"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Creditele și reducerile se regăsesc în factură"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "În prezent, reînnoirea automată a abonamentului este dezactivată. Dacă schimbați abonamentul acum, atunci reînnoirea automată va fi reactivată."
@@ -19805,9 +19776,6 @@
       ],
       "Status": [
         "Stare"
-      ],
-      "Stay for 50% off your next month": [
-        "Rămâneți cu o reducere de 50% luna următoare"
       ],
       "Stay secure and connected anywhere": [
         "Rămâneți în siguranță și vă conectați oriunde"

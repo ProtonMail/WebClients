@@ -1612,9 +1612,6 @@
       "Discover and set up features": [
         "Entdecken und Funktionen einrichten"
       ],
-      "Get 50% offer": [
-        "50 % Rabatt sichern"
-      ],
       "Maybe later": [
         "Vielleicht später"
       ],
@@ -3853,6 +3850,12 @@
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
+      ],
       "Intended recipient does not support calendar sharing": [
         "Der vorgesehene Empfänger unterstützt freigegebene Kalendern nicht."
       ],
@@ -5596,9 +5599,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Ein VPN ist ein sicherer Tunnel zwischen deinem Gerät und dem Internet. Er verbirgt deinen Standort und deine Aktivitäten vor deinem Internetdienstanbieter (ISP) und den von dir besuchten Websites."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Zugriff auf über 20.000 Server in 145 Ländern"
-      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
@@ -5978,9 +5978,6 @@
       "Failed to update meeting schedule": [
         "Fehler beim Aktualisieren des Meeting-Zeitplans"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Nur Dateien (keine Fotos, ${ DOCS_APP_NAME } oder ${ SHEETS_APP_NAME }) – insgesamt bis zu 100 GB, 100.000 Dateien und 50 GB pro Datei"
       ],
@@ -6011,9 +6008,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
       ],
-      "Have some more time to decide without interruption.": [
-        "Gewinne etwas Zeit, um ungestört zu entscheiden."
-      ],
       "here": [
         "hier"
       ],
@@ -6034,9 +6028,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Wenn du jetzt kündigst, verlierst du am ${ expiryDate } den Zugang zu ${ BRAND_NAME } ${ planTitle }, inklusive dieser Funktionen:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
@@ -6376,9 +6367,6 @@
       "Powered by ${ protonButton }": [
         "Unterstützt durch ${ protonButton }"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium-Schutz deiner Privatsphäre auf all deinen Geräten"
-      ],
       "Previous modifications on this series will be lost.": [
         "Frühere Änderungen dieser Terminserie gehen verloren."
       ],
@@ -6481,9 +6469,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Bleibe mühelos verbunden, indem du die folgenden VPN-Einstellungen aktivierst:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
@@ -6877,6 +6862,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du hast ein ${ planTitle }-Probeabonnement. Derzeit ist keine Zahlung erforderlich. Dein Abonnement wird am Ende des Testzeitraums automatisch verlängert."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung vom ${ dueDate } ${ payInvoiceLink }"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Du hast deinen Schlüssel reaktiviert und Termine, die mit den folgenden Kalendern verknüpft sind, können nun entschlüsselt werden."
@@ -7633,7 +7624,7 @@
         "Postleitzahl"
       ],
       "Primary": [
-        "Primäre"
+        "Primär"
       ],
       "Proration": [
         "Anteilsmäßige Verrechnung"
@@ -7939,6 +7930,9 @@
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
+      ],
+      "Pay it": [
+        "Bezahlen"
       ],
       "Reactivate now": [
         "Jetzt reaktivieren"
@@ -12862,9 +12856,6 @@
       ],
       "Start import process": [
         "Importvorgang starten"
-      ],
-      "Stay for 50% off your next month": [
-        "Bleibe und sichere dir 50 % Rabatt auf deinen nächsten Monat"
       ],
       "Subscription canceled": [
         "Abonnement beendet"

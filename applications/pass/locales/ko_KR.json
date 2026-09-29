@@ -115,6 +115,9 @@
       "Bulk restore items from trash": [
         "휴지통에서 대량 복원"
       ],
+      "Bulk select items": [
+        "대량의 선택된 항목"
+      ],
       "Cancel": [
         "취소"
       ],
@@ -527,7 +530,7 @@
         "탐색 열기"
       ],
       "Organize vaults": [
-        "조직 보관함"
+        "금고 정리"
       ],
       "Pass Monitor": [
         "Pass Monitor"
@@ -1268,6 +1271,12 @@
       "Inactive secure links could not be removed.": [
         "비활성된 안전한 링크를 삭제할 수 없습니다."
       ],
+      "Incorrect backup password. Please try again.": [
+        "백업 비밀번호가 틀렸습니다. 다시 시도해 주세요."
+      ],
+      "Incorrect second password. Please try again.": [
+        "2차 비밀번호가 틀렸습니다. 다시 시도해 주세요."
+      ],
       "Invalid password manager": [
         "유효하지 않은 비밀번호 관리자"
       ],
@@ -1640,6 +1649,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "${ passCliLink }와 함께 사용되는 액세스 토큰을 통해 CI/CD를 자동화하거나 AI 에이전트가 작업을 실행하는 데 필요한 접근 권한을 부여할 수 있습니다."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "무료 체험 종료 후에도 구독을 유지하려면 결제 방법을 추가하세요."
+      ],
       "Add your custom email address to monitor:": [
         "모니터랑할 커스텀 이메일 주소를 추가하세요:"
       ],
@@ -1662,7 +1674,7 @@
         "${ BRAND_NAME }과 SimpleLogin 계정간의 별칭 동기화가 활성 상태입니다."
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
-        "휴지통 내 별칭이 계속 이메일 가져오기를 진행합니다. 이 주소에 대한 수신을 중단하려면 별칭을 비활성화하십시오."
+        "휴지통 내 별칭이 계속 이메일 전달을 진행합니다. 이 주소에 대한 수신을 중단하려면 별칭을 비활성화하십시오."
       ],
       "Aliases out of sync (${ aliasCount })": [
         "동기화되지 않은 별칭 (${ aliasCount })"
@@ -2142,7 +2154,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시키면 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2969,6 +2981,9 @@
       ],
       "Account Type": [
         "계좌 유형"
+      ],
+      "Add a payment method": [
+        "결제 방법 추가하기"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "새로운 별칭을 만들 때 이 도메인에 임의의 접두사를 추가하세요."
@@ -4859,6 +4874,9 @@
       "Item": [
         "항목"
       ],
+      "Keep your subscription active": [
+        "구독을 활성화 상태로 유지하기"
+      ],
       "Last autofill": [
         "마지막 자동 완성"
       ],
@@ -5502,6 +5520,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "이 금고에 대한 접근 권한이 더 이상 없습니다. 다시 확인하려면, 새 초대가 필요합니다."
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "현재 단계에서 저장 가능한 최대 폴더 개수를 초과했습니다."
       ],
       "You've reached the maximum number of folders for this vault": [
         "이 금고에 저장 가능한 최대 폴더 개수를 초과했습니다."

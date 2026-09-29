@@ -888,9 +888,6 @@
       "Discover and set up features": [
         "Entdecken und Funktionen einrichten"
       ],
-      "Get 50% offer": [
-        "50 % Rabatt sichern"
-      ],
       "Remind me later": [
         "Später erneut fragen"
       ],
@@ -2359,6 +2356,9 @@
       "tokens / 30d": [
         "Token / 30 Tage"
       ],
+      "Tool calls": [
+        "Tool-Aufrufe"
+      ],
       "Trying...": [
         "Wird versucht..."
       ],
@@ -3475,6 +3475,9 @@
       "Explain": [
         "Erklären"
       ],
+      "Export": [
+        "Exportieren"
+      ],
       "Favorite": [
         "Favorit"
       ],
@@ -4012,6 +4015,9 @@
       "Check what your AIs store about you and delete what you no longer need.": [
         "Überprüfe, welche Daten deine KI-Systeme über dich speichern, und lösche diejenigen, die du nicht mehr benötigst."
       ],
+      "Choose a format to export \"${ conversation.title }\":": [
+        "Wähle ein Format für den Export von „${ conversation.title }“ aus:"
+      ],
       "Choose or drop your .zip or conversations.json file. We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
         "Deine Dateien .zip oder .json der Unterhaltung auswählen oder hierhin ziehen. Wir analysieren deine neusten ${ PAPER_TRAIL_LIMITS.maxPrompts } Eingabeaufforderungen."
       ],
@@ -4204,6 +4210,9 @@
       "Sign in to your Claude account at claude.ai": [
         "Melde dich unter claude.ai bei deinem Claude-Konto an"
       ],
+      "Some content, such as images and attachments, may not be included in the exported file.": [
+        "Bestimmte Inhalte, wie beispielsweise Bilder und Anhänge, werden möglicherweise nicht in die exportierte Datei übernommen."
+      ],
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
         "Ein Teil dessen, was du eingefügt hast, könnte gegen arbeitsrechtliche, rechtliche oder datenschutzrechtliche Vorschriften verstoßen. Dies soll dir helfen, solche Verstöße zu erkennen, und dient nicht dazu, dich zu beurteilen."
       ],
@@ -4215,6 +4224,12 @@
       ],
       "Start a new chat to see it here.": [
         "Starte einen neuen Chat, um ihn hier zu sehen."
+      ],
+      "Structured data, aiming for compatibility with the ChatGPT export format": [
+        "Strukturierte Daten, die auf Kompatibilität mit dem ChatGPT-Exportformat abzielen"
+      ],
+      "Text formatted with markdown, easy to read or share": [
+        "Mit Markdown formatierter Text, der sich leicht lesen und teilen lässt"
       ],
       "The fuller the bar, the more of that area Big Tech could reconstruct. Lower is better.": [
         "Je voller der Balken ist, desto mehr von diesem Bereich könnte die großen Tech-Konzerne rekonstruieren. Je niedriger, desto besser."
@@ -4472,11 +4487,17 @@
       "It doesn't expire": [
         "Läuft nicht ab"
       ],
+      "JSON": [
+        "JSON"
+      ],
       "Lending & hiring": [
         "Kreditvergabe & Einstellungen"
       ],
       "Low": [
         "Niedrig"
+      ],
+      "Markdown": [
+        "Markdown"
       ],
       "Medium": [
         "Mittel"
@@ -4990,6 +5011,9 @@
       "All files removed from project": [
         "Alle Dateien aus dem Projekt entfernt"
       ],
+      "Conversation exported": [
+        "Unterhaltung exportiert"
+      ],
       "Database connection restored.": [
         "Datenbankverbindung wiederhergestellt."
       ],
@@ -5100,6 +5124,9 @@
       ],
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "Entdecke Bilder, die mit ${ LUMO_SHORT_APP_NAME } erstellt wurden"
+      ],
+      "Export conversation": [
+        "Unterhaltung exportieren"
       ],
       "Favorites": [
         "Favoriten"
@@ -5256,6 +5283,9 @@
       ],
       "Two models, two modes": [
         "Zwei Modelle, zwei Modi"
+      ],
+      "Untitled conversation": [
+        "Unterhaltung ohne Titel"
       ],
       "Upload your data export": [
         "Deinen Daten-Export hochladen"
@@ -6546,6 +6576,12 @@
       "Image preview not found": [
         "Bildvorschau nicht gefunden"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
+      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
@@ -7124,9 +7160,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Ein Benutzer ist ein Konto, das mit einem einzigen Benutzernamen, einem Postfach und einer Person verbunden ist."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Zugriff auf über 20.000 Server in 145 Ländern"
-      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
@@ -7290,9 +7323,6 @@
       "Expired": [
         "Abgelaufen"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
-      ],
       "Folder:": [
         "Ordner:"
       ],
@@ -7305,14 +7335,8 @@
       "Google Pay mark": [
         "Google Pay markieren"
       ],
-      "Have some more time to decide without interruption.": [
-        "Gewinne etwas Zeit, um ungestört zu entscheiden."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Wenn du jetzt kündigst, verlierst du am ${ expiryDate } den Zugang zu ${ BRAND_NAME } ${ planTitle }, inklusive dieser Funktionen:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
@@ -7437,9 +7461,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium-Schutz deiner Privatsphäre auf all deinen Geräten"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
@@ -7493,9 +7514,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
@@ -9401,6 +9419,9 @@
       "Delete": [
         "Löschen"
       ],
+      "Export": [
+        "Exportieren"
+      ],
       "Go to all projects": [
         "Zu allen Projekten"
       ],
@@ -10786,9 +10807,6 @@
       ],
       "Simplify password management": [
         "Vereinfache die Passwortverwaltung"
-      ],
-      "Stay for 50% off your next month": [
-        "Bleibe und sichere dir 50 % Rabatt auf deinen nächsten Monat"
       ],
       "Summary": [
         "Zusammenfassung"

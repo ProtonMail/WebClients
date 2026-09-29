@@ -1609,9 +1609,6 @@
       "Discover and set up features": [
         "Découvrez et configurez les fonctionnalités"
       ],
-      "Get 50% offer": [
-        "Profitez d'une réduction de 50 %"
-      ],
       "Maybe later": [
         "Peut-être plus tard"
       ],
@@ -3796,6 +3793,12 @@
       "IMAP server is required": [
         "Le serveur IMAP est nécessaire."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
+      ],
       "Intended recipient does not support calendar sharing": [
         "Votre destinataire ne prend pas en charge le partage de calendrier."
       ],
@@ -3846,6 +3849,9 @@
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Seuls les événements situés entre ${ minDateString } et ${ maxDateString } peuvent être déplacés."
+      ],
+      "Item not found": [
+        "L'élément n'a pas été trouvé"
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
@@ -4093,6 +4099,9 @@
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés."
       ],
+      "Some items could not be loaded": [
+        "Certains éléments n'ont pas pu être chargés"
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers ne sont pas disponibles. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
@@ -4192,6 +4201,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
       ],
+      "This item has no image preview": [
+        "Cet élément n'a pas d'aperçu"
+      ],
       "This item is no longer shared": [
         "Cet élément n’est plus partagé"
       ],
@@ -4270,6 +4282,9 @@
       ],
       "You do not have access to this item": [
         "Vous n'avez pas accès à cet élément."
+      ],
+      "You do not have access to this shared item": [
+        "Vous n'avez pas accès à cet élément partagé"
       ],
       "You have reached the maximum number of calendars.": [
         "Vous avez atteint le nombre maximum de calendriers."
@@ -4824,11 +4839,17 @@
       "All": [
         "Tout"
       ],
+      "Errors": [
+        "Erreurs"
+      ],
       "In progress": [
         "En cours"
       ],
       "Migrated": [
         "Migré"
+      ],
+      "Not activated": [
+        "Non activé"
       ],
       "Pending": [
         "En attente"
@@ -5473,9 +5494,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Un VPN est un tunnel sécurisé entre votre appareil et internet. Il masque votre emplacement et vos activités à votre fournisseur d'accès à internet (FAI) et aux sites internet que vous consultez."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Accédez à plus de 20 000 serveurs dans plus de 145 pays"
-      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
@@ -5855,9 +5873,6 @@
       "Failed to update meeting schedule": [
         "La mise à jour de la réunion n'a pas abouti."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Des vitesses VPN ultra-rapides pouvant atteindre 10 Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ],
@@ -5888,9 +5903,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Les gouvernements et les FAI peuvent surveiller vos activités en ligne. En masquant votre véritable IP et en chiffrant vos activités, votre navigation devient privée."
       ],
-      "Have some more time to decide without interruption.": [
-        "Prenez encore un peu de temps pour vous décider, sans être dérangé."
-      ],
       "here": [
         "ici"
       ],
@@ -5911,9 +5923,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Si vous résiliez votre abonnement maintenant, vous perdrez l'accès à ${ BRAND_NAME } ${ planTitle } à compter du ${ expiryDate }, y compris les fonctionnalités suivantes :"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
@@ -6250,9 +6259,6 @@
       "Powered by ${ protonButton }": [
         "Propulsé par ${ protonButton }"
       ],
-      "Premium privacy protection across all your devices": [
-        "Une protection optimale de la vie privée sur tous vos appareils"
-      ],
       "Previous modifications on this series will be lost.": [
         "Les modifications précédentes de cette série seront perdues."
       ],
@@ -6355,9 +6361,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Restez connecté facilement en activant les paramètres VPN suivants :"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Continuez à souscrire à votre forfait et bénéficiez de 50 % de réduction sur votre abonnement du mois prochain"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
@@ -11890,7 +11893,7 @@
         "Le problème a été signalé."
       ],
       "Undo in progress": [
-        "Annulation en cours"
+        "Annulation de l'importation en cours"
       ],
       "Verification successful": [
         "La vérification a abouti."
@@ -11949,6 +11952,9 @@
       ],
       "Actions": [
         "Actions"
+      ],
+      "Activated": [
+        "Activé"
       ],
       "Address": [
         "Adresse"
@@ -12662,6 +12668,9 @@
       "Select the way to send this notification": [
         "Sélectionnez le mode d’envoi de cette notification."
       ],
+      "Select users to migrate": [
+        "Sélectionnez les utilisateurs à migrer"
+      ],
       "Select when you want this notification to be sent": [
         "Sélectionnez le moment où cette notification doit être envoyée."
       ],
@@ -12715,9 +12724,6 @@
       ],
       "Start import process": [
         "Démarrer l'importation"
-      ],
-      "Stay for 50% off your next month": [
-        "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
       ],
       "Subscription canceled": [
         "L'abonnement a été annulé."

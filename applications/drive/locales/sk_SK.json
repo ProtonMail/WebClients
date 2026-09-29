@@ -243,9 +243,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potvrďte otvorenie odkazu ${ linkToShow }"
       ],
-      "Connect": [
-        "Pripojiť"
-      ],
       "Connect apps and devices": [
         "Pripojenie aplikácií a zariadení"
       ],
@@ -692,6 +689,9 @@
       ],
       "Maximize transfers": [
         "Maximalizovať prenosy"
+      ],
+      "Maybe later": [
+        "Možno neskôr"
       ],
       "Merge": [
         "Zlúčiť"
@@ -1839,9 +1839,6 @@
       ],
       "Discover and set up features": [
         "Objaviť a nastaviť funkcie"
-      ],
-      "Get 50% offer": [
-        "Využite 50 % zľavu"
       ],
       "Maybe later": [
         "Možno neskôr"
@@ -3762,8 +3759,14 @@
       "IMAP server is required": [
         "IMAP server je požadovaný"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávne záložné heslo. Skúste to znova, prosím."
+      ],
       "Incorrect password. Please try again.": [
         "Nesprávne heslo. Skúste to prosím, znovu."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávne druhé heslo. Skúste to znova, prosím."
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -5330,6 +5333,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } využíva tento prístup výlučne na účely importu. Google nikdy nezíska prístup k vášmu ${ BRAND_NAME } účtu."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe, asistent písania"
       ],
@@ -5639,9 +5645,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN je bezpečný tunel medzi vaším zariadením a internetom. Skrýva vašu polohu a aktivity pred poskytovateľom internetových služieb (ISP) a navštívenými webovými stránkami."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
-      ],
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
@@ -5861,8 +5864,8 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Pripojte sa k ${ VPN_APP_NAME } a surfujte v súkromí"
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Pripájanie ku Google Drive na nastavenie bezpečného importu do aplikácie ${ DRIVE_APP_NAME }."
+      "Connecting to Google Drive and preparing your import.": [
+        "Pripájanie ku Google Drive a príprava importu."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt priradený k skupine ${ contactGroupName }"
@@ -6035,9 +6038,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
       ],
-      "Email you once import is finished": [
-        "Po dokončení importu vám pošleme email"
-      ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
       ],
@@ -6110,9 +6110,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportovať diagnostické záznamy pre technickú podporu a riešenie problémov"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Najvyššia rýchlosť VPN až 10 Gbps"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -6149,9 +6146,6 @@
       "For just ${ bundlePlanPriceInline }": [
         "Len za ${ bundlePlanPriceInline }"
       ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "Aby import fungoval, musíte vybrať všetky požadované položky, ako je znázornené na GIF obrázku vyššie."
-      ],
       "Forgot password?": [
         "Zabudli ste heslo?"
       ],
@@ -6182,9 +6176,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelia internetových služieb môžu monitorovať vašu online aktivitu. Skrytím vašej skutočnej IP adresy a šifrovaním vašej aktivity sa vaše prehliadanie stane súkromným."
       ],
-      "Have some more time to decide without interruption.": [
-        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
-      ],
       "here": [
         "tu"
       ],
@@ -6205,9 +6196,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
@@ -6250,6 +6238,9 @@
       ],
       "Import mailbox": [
         "Importovať poštovú schránku"
+      ],
+      "Import your files and folders": [
+        "Importujte svoje súbory a priečinky"
       ],
       "Important note": [
         "Dôležitá poznámka"
@@ -6361,6 +6352,9 @@
       ],
       "Key fingerprint": [
         "Identifikátor kľúča"
+      ],
+      "Know when it's done": [
+        "Zistite, kedy je to hotové"
       ],
       "Label all imported messages as": [
         "Označiť všetky importované správy ako"
@@ -6494,8 +6488,8 @@
       "New": [
         "Nový"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Ďalej sa potrebujete prihlásiť k svojmu účtu Google a udeliť ${ BRAND_NAME } prístup k vašim dátam."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Následne sa prihláste do svojho Google účtu a povoľte ${ BRAND_NAME } prístup do Google Drive. Vaše súbory a zložky naimportujeme do ${ DRIVE_APP_NAME }."
       ],
       "No": [
         "Nie"
@@ -6710,9 +6704,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, počkajte kým zistíme kontakty, ktoré zahŕňajú šifrované dáta s neaktívnym kľúčom."
       ],
-      "Premium privacy protection across all your devices": [
-        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
-      ],
       "Preparing": [
         "Príprava"
       ],
@@ -6746,6 +6737,9 @@
       "Primary": [
         "Hlavný"
       ],
+      "Private and encrypted": [
+        "Súkromné a šifrované"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Súkromné surfovanie (alebo režim „inkognito“) je užitočné len na to, aby vaša aktivita v zariadení zostala skrytá. Zabráni prehliadaču ukladať históriu a súbory cookie, ale neurobí vás neviditeľnými. Váš poskytovateľ internetových služieb, správca siete a webové stránky, ktoré navštevujete, môžu stále vidieť, čo robíte online."
       ],
@@ -6763,9 +6757,6 @@
       ],
       "Read folder context": [
         "Načítať kontext z priečinka"
-      ],
-      "Read once and encrypted on arrival": [
-        "Prečíta sa raz a pri doručení sa zašifruje"
       ],
       "Read this file": [
         "Prečítať tento súbor"
@@ -6935,9 +6926,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
       ],
-      "Sit back and we will let you know.": [
-        "Len si pohodlne sadnite a my vám dáme vedieť."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Niektoré vlády blokujú alebo obmedzujú prístup na určité webové stránky. VPN pomáha obísť cenzúru a zároveň zachováva súkromie vašich aktivít a identity."
       ],
@@ -6961,9 +6949,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Zostaňte ľahko pripojení povolením nasledujúcich nastavení VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Odošlite zálohu pomocou nasledujúcej adresy, alebo naskenujte QR kód. Váš vklad sa po potvrdení prejaví na vašom účte."
@@ -7280,9 +7265,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Použite tento formulár, aby ste nás informovali o nevhodných, nelegálnych\nalebo inak škodlivých zdieľaných súboroch. Chystáte sa nahlásiť:"
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Používa sa výlučne na ich skopírovanie do ${ DRIVE_APP_NAME }."
-      ],
       "username": [
         "používateľské meno"
       ],
@@ -7334,17 +7316,11 @@
       "We couldn’t process your payment.": [
         "Vašu platbu sa nám nepodarilo spracovať."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Nepodporujeme import fotografií, Google Docs, Sheets a Slides. Uistite sa, prosím, že váš Google Drive nie je prázdny."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Potrebujeme overiť spôsob platby vo vašej banke."
       ],
       "We need to authenticate your payment with your bank.": [
         "Potrebujeme overiť platbu vo vašej banke."
-      ],
-      "We support most files": [
-        "Podporujeme väčšinu súborov"
       ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
@@ -7355,17 +7331,23 @@
         "Tieto fotografie sme nemohli uložiť do vášho albumu",
         "Tieto fotografie sme nemohli uložiť do vášho albumu"
       ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Akonáhle bude import dokončený, pošleme vám email. Po dokončení nájdete svoj import v priečinku."
-      ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_WERO_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Skopírujeme ich z Google Drive do ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Po dokončení importu vám pošleme email."
+      ],
+      "We'll email you when your import is complete.": [
+        "Akonáhle bude import dokončený, pošleme vám email."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Akonáhle sa import dokončí, pošleme vám email. Vaše súbory sa zobrazia v priečinku v ${ DRIVE_APP_NAME }."
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovať."
@@ -7375,9 +7357,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Na adresu ${ strong } pošleme nový overovací kód"
-      ],
-      "We're importing your files from Google Drive. We'll let you know once it's done.": [
-        "Importujeme vaše súbory z Google Drive. Akonáhle bude import dokončený, dáme vám vedieť."
       ],
       "Week": [
         "Týždeň"
@@ -7408,9 +7387,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "bude obnovený na verziu z ${ formattedRevisionDate }. Všetky ostatné verzie budú uložené."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Neimportujú sa fotografie, dokumenty z Google Docs a Sheets"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -7517,6 +7493,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Máte skúšobné predplatné ${ planTitle }. V tejto chvíli sa nevyžaduje žiadna platba. Vaše predplatné sa automaticky obnoví na konci skúšobného obdobia."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You may be redirected to your bank’s website.": [
         "Môžete byť presmerovaní na webovú stránku vašej banky."
       ],
@@ -7601,6 +7583,9 @@
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Vaše súbory sa práve znovu indexujú. Môžete pokračovať vo vyhľadávaní – výsledky môžu byť neúplné, kým sa proces nedokončí. Dáme vám vedieť, keď bude hotový."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Vaše súbory sú zašifrované a bezpečne uložené v ${ DRIVE_APP_NAME }."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Vaše súbory už nie sú prístupné z dôvodu resetovania hesla. Pre opätovné obnovenie prístupu znovu nahrajte starý šifrovací kľúč. ${ KeyReactivationButton }"
       ],
@@ -7618,6 +7603,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaša bezplatná skúšobná verzia bola úspešne konvertovaná na mesačné predplatné. Váš dátum obnovenia je ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Váš Google Drive môže byť prázdny alebo môže obsahovať iba súbory, ktoré nie sú podporované."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
@@ -8637,6 +8625,9 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
+      ],
+      "Pay it": [
+        "Zaplatiť"
       ],
       "Photos": [
         "Fotografie"
@@ -12894,11 +12885,11 @@
       "Albums you've shared will appear here": [
         "Tu sa zobrazia albumy, ktoré zdieľate"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Naimportujte si súbory a priečinky z Google Drive a uchovajte ich ako súkromné v aplikácii ${ DRIVE_APP_NAME }."
+      ],
       "Shared by ${ sharedBy }": [
         "Zdieľané vlastníkom ${ sharedBy }"
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Vaše súbory najprv prečítame, aby sme ich skopírovali, a potom každý z nich zašifrujeme pomocou vašich kľúčov ${ BRAND_NAME }."
       ],
       "Your favorited photos will appear here": [
         "Tu sa zobrazia vaše obľúbené fotografie"
@@ -13370,9 +13361,6 @@
       "Connect your custom domain": [
         "Pripojte si vlastnú doménu"
       ],
-      "Connect your Google account": [
-        "Pripojte váš Google účet"
-      ],
       "Contact Details": [
         "Kontaktné údaje"
       ],
@@ -13544,6 +13532,9 @@
       "Easy switch": [
         "Easy switch"
       ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch z Google Drive"
+      ],
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
       ],
@@ -13684,6 +13675,9 @@
       ],
       "Import groups": [
         "Importovať skupiny"
+      ],
+      "Import started": [
+        "Import sa začal"
       ],
       "Import started, but your storage won't be enough for this import": [
         "Import sa začal, ale váš úložný priestor na tento import nebude stačiť"
@@ -13865,6 +13859,9 @@
       "Photos": [
         "Fotografie"
       ],
+      "Preparing your import": [
+        "Pripravujeme váš import"
+      ],
       "Preview": [
         "Náhľad"
       ],
@@ -13988,9 +13985,6 @@
       "Set up your organization": [
         "Nastaviť svoju organizáciu"
       ],
-      "Setting up your import": [
-        "Nastavujeme váš import"
-      ],
       "Settings": [
         "Nastavenia"
       ],
@@ -14021,9 +14015,6 @@
       "Sign in and grant access": [
         "Prihláste sa a povoľte prístup"
       ],
-      "Sign in to Google": [
-        "Prihlásiť sa do Google"
-      ],
       "Sign out": [
         "Odhlásiť sa"
       ],
@@ -14050,9 +14041,6 @@
       ],
       "Start import process": [
         "Zahájiť proces importu"
-      ],
-      "Stay for 50% off your next month": [
-        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Stop sharing": [
         "Ukončiť zdieľanie"
@@ -14263,12 +14251,6 @@
       ],
       "Your import is finished!": [
         "Váš import bol dokončený!"
-      ],
-      "Your import is in progress": [
-        "Váš import práve prebieha"
-      ],
-      "Your import is starting": [
-        "Váš import sa začal"
       ],
       "Your plan": [
         "Váš plán"

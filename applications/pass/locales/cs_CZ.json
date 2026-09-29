@@ -1247,6 +1247,12 @@
       "Inactive secure links could not be removed.": [
         "Neaktivní bezpečné odkazy nemohly být odebrány."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávné záložní heslo. Zkuste to prosím znovu."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávné druhé heslo. Zkuste to prosím znovu."
+      ],
       "Invalid password manager": [
         "Neplatný správce hesel"
       ],
@@ -2151,10 +2157,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"

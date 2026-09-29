@@ -767,6 +767,9 @@
       "View invoice": [
         "Faturayı görüntüle"
       ],
+      "View security details": [
+        "Güvenlik ayrıntılarını görüntüle"
+      ],
       "Virtual backgrounds": [
         "Sanal arka planlar"
       ],
@@ -2168,6 +2171,12 @@
       "Image preview not found": [
         "Görsel ön izlemesi bulunamadı"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Yedek parola yanlış. Lütfen yeniden deneyin."
+      ],
+      "Incorrect second password. Please try again.": [
+        "İkinci parola yanlış. Lütfen yeniden deneyin."
+      ],
       "Invalid meeting link": [
         "Görüşme bağlantısı geçersiz"
       ],
@@ -2636,6 +2645,14 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } uygulamasının çalışması için WebRTC gereklidir. Lütfen tarayıcınızı veya aygıtınızı WebRTC hizmetini destekleyen bir sürüme güncelleyin, farklı bir tarayıcı kullanmayı deneyin veya hizmeti engelleyebilecek tüm eklentileri kapatın."
+      ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } üye",
+        "${ mlsMemberCount } üye"
+      ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "${ participantCount } katılımcı bağlı. Oysa güvenli grupta ${ mlsMemberCountText } kişi bulunuyor. Bu durum, birinin gruba katılması veya gruptan ayrılması sonrasında geçici olarak ortaya çıkabilir.",
+        "${ participantCount } katılımcı bağlı. Oysa güvenli grupta ${ mlsMemberCountText } kişi bulunuyor. Bu durum, birinin gruba katılması veya gruptan ayrılması sonrasında geçici olarak ortaya çıkabilir."
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } ve ${ otherParticipantsCount } katılımcı kaydediyor"
@@ -3126,11 +3143,17 @@
       "Participant": [
         "Katılımcı"
       ],
+      "Participant counts don’t match": [
+        "Katılımcı sayıları uyuşmuyor"
+      ],
       "Participants can turn live captions on. Turn on your own under Display.": [
         "Katılımcılar canlı alt yazıyı açabilir. Ekran altından kendiniz için açabilirsiniz."
       ],
       "Participants can’t use live captions": [
         "Katılımcılar canlı alt yazıyı kullanamaz"
+      ],
+      "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
+        "“Katılımcılar” bölümünde şu anda çevrim içi olan kullanıcılar görüntülenir. “İleti katmanı güvenliği üyeleri” bölümünde ise görüşmenin güvenlik grubuna katılan kullanıcılar görüntülenir. Bu sayılar kısa süreli farklılıklar gösterebilir, ancak bu fark beklenenden daha uzun sürdü."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Güvenli bir görüşmeye katılmak için ${ MEET_APP_NAME } bağlantınızı yapıştırın."
@@ -4297,11 +4320,17 @@
       "Minicalendar": [
         "Mini takvim"
       ],
+      "MLS members": [
+        "İleti katmanı güvenliği üyeleri"
+      ],
       "No one is waiting": [
         "Bekleyen kimse yok"
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
+      ],
+      "Participant counts don’t match": [
+        "Katılımcı sayıları uyuşmuyor"
       ],
       "Participants": [
         "Katılımcılar"
@@ -4420,6 +4449,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
+      ],
+      "People currently connected to the meeting": [
+        "Şu anda görüşmeye bağlanmış kişiler"
+      ],
+      "People included in meeting's MLS group": [
+        "Görüşmenin ileti katmanı güvenliği grubuna katılan kişiler"
       ],
       "Recurring meeting": [
         "Yinelenen görüşme"

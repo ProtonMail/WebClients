@@ -213,9 +213,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Подтвердите открытие ссылки ${ linkToShow }"
       ],
-      "Connect": [
-        "Подключить"
-      ],
       "Connect apps and devices": [
         "Подключить приложения и устройства"
       ],
@@ -581,6 +578,9 @@
       ],
       "Maximize transfers": [
         "Развернуть окно скачиваний"
+      ],
+      "Maybe later": [
+        "Может быть, позже"
       ],
       "Merge": [
         "Объединить"
@@ -1574,9 +1574,6 @@
       ],
       "Discover and set up features": [
         "Настройте функции"
-      ],
-      "Get 50% offer": [
-        "Получить 50% скидку"
       ],
       "Maybe later": [
         "Может быть позже"
@@ -3336,8 +3333,14 @@
       "IMAP server is required": [
         "Нужно укзать сервер IMAP"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Неверный пароль резервной копии. Попробуйте еще раз."
+      ],
       "Incorrect password. Please try again.": [
         "Неверный пароль. Пожалуйста, попробуйте снова."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Неверный второй пароль. Попробуйте еще раз."
       ],
       "Invalid code": [
         "Недействительный код"
@@ -4838,9 +4841,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN - это защищенный туннель между вашим устройством и Интернетом. Он скрывает ваше местоположение и активность от вашего интернет-провайдера (ISP) и посещаемых вами сайтов."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Доступ к 20 000+ серверов в 145 странах"
-      ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
@@ -5207,9 +5207,6 @@
       "Expired": [
         "Истёкший"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Самые быстрые VPN-подключения — до 10 Гбит/с"
-      ],
       "File could not be scanned": [
         "Не удалось просканировать файл"
       ],
@@ -5249,9 +5246,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Правительства и интернет-провайдеры могут отслеживать ваши действия в Интернете. Скрывая свой реальный адрес IP и шифруя свои действия, ваш просмотр веб-страниц становится приватным."
       ],
-      "Have some more time to decide without interruption.": [
-        "Обдумайте решение без спешки и перебоев."
-      ],
       "here": [
         "здесь"
       ],
@@ -5263,9 +5257,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Отменив подписку сейчас, ${ expiryDate } вы потеряете доступ к ${ BRAND_NAME } ${ planTitle }, в том числе к следующим функциям:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Если вы отмените, ваша подписка ${ planTitle } не будет продлена после истечения её срока действия ${ expiryDate }."
@@ -5585,9 +5576,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пожалуйста, подождите, пока мы ищем контакты с данными, зашифрованными неактивным ключом."
       ],
-      "Premium privacy protection across all your devices": [
-        "Премиальная защита конфиденциальности всех ваших устройств"
-      ],
       "Preparing": [
         "Подготовка"
       ],
@@ -5710,9 +5698,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Оставайтесь на связи без усилий, включив следующие настройки VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Сохраните подписку и получите скидку 50% на следующий месяц"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
@@ -11710,9 +11695,6 @@
       ],
       "Start import process": [
         "Начать процесс импорта"
-      ],
-      "Stay for 50% off your next month": [
-        "Оставайтесь и получите скидку 50% на следующий месяц"
       ],
       "Stop sharing": [
         "Закрыть доступ"
