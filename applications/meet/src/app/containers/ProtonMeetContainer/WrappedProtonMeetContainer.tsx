@@ -4,6 +4,8 @@ import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogLevel } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { resetActiveDevices } from '@proton/meet/store/slices/deviceManagementSlice';
 import { isDevOrBlack } from '@proton/shared/lib/env';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -37,6 +39,7 @@ export const WrappedProtonMeetContainer = () => {
     const isCpuOptimizations = useFlag('MeetCpuOptimizations');
 
     const { reportMeetError } = useMeetErrorReporting();
+    const dispatch = useMeetDispatch();
 
     const primaryCodec = isMeetH264 ? 'h264' : 'vp8';
 
@@ -108,8 +111,9 @@ export const WrappedProtonMeetContainer = () => {
                 worker.terminate();
             }
             meetAudioContext?.cleanup();
+            dispatch(resetActiveDevices());
         };
-    }, [meetAudioContext, worker]);
+    }, [dispatch, meetAudioContext, worker]);
 
     return (
         <MeetingAnalyticsProvider sampleRate={meetAudioContext.audioContext.sampleRate}>
