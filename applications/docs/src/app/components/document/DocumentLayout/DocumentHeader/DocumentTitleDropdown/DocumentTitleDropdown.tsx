@@ -86,6 +86,7 @@ import { generateNodeUid } from '@proton/drive'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
 import type { UserModel } from '@proton/shared/lib/interfaces'
 import { getShareId } from '@proton/docs-core/lib/DriveSDK/getShareId'
+import { useOpenDocument } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -209,6 +210,8 @@ export function DocumentTitleDropdown({
     }
   })
 
+  const openDocument = useOpenDocument()
+
   const onDuplicate = useCallback(async () => {
     if (!authenticatedController) {
       throw new Error('Attempting to duplicate document in a public context')
@@ -219,12 +222,15 @@ export function DocumentTitleDropdown({
     try {
       const editorState = await editorController?.exportData('yjs')
       if (editorState) {
-        await authenticatedController.duplicateDocument(editorState)
+        const { nodeMeta, documentType } = await authenticatedController.duplicateDocument(editorState)
+        openDocument(nodeMeta, documentType)
       }
+    } catch {
+      // [REALTIME-269] Error ignored in legacy implementation, keeping this behaviour
     } finally {
       setIsDuplicating(false)
     }
-  }, [authenticatedController, editorController])
+  }, [authenticatedController, editorController, openDocument])
 
   const printAsPDF = useCallback(() => {
     editorController.printAsPDF().catch(console.error)
@@ -258,12 +264,17 @@ export function DocumentTitleDropdown({
       const setIsLoading = docType === 'doc' ? setIsMakingNewDocument : setIsMakingNewSheetDocument
       setIsLoading(true)
       try {
-        await authenticatedController?.createNewDocument(docType)
+        if (authenticatedController) {
+          const nodeMeta = await authenticatedController.createNewDocument(docType)
+          openDocument(nodeMeta, docType)
+        }
+      } catch {
+        // [REALTIME-269] Error ignored in legacy implementation, keeping this behaviour
       } finally {
         setIsLoading(false)
       }
     },
-    [authenticatedController, documentType],
+    [authenticatedController, documentType, openDocument],
   )
 
   useEffect(() => {

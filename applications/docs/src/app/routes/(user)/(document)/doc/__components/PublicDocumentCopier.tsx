@@ -9,7 +9,7 @@ import type {
   PublicDocumentPostMessageDataForCopying,
   PublicDocumentPostMessageEvent,
 } from '~/components/document/public/utils'
-import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents/useOpenDocument'
+import { tmpConvertNewDocTypeToOld, useDocumentWindowAction } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
 import type { DocumentAction } from '@proton/docs-shared'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
@@ -19,6 +19,7 @@ import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
  */
 export function PublicDocumentCopier({ openAction }: { openAction: DocumentAction | null }) {
   const application = useApplication()
+  const openDocumentWindow = useDocumentWindowAction()
 
   const performCopy = useCallback(
     async (name: string, yjsData: Uint8Array<ArrayBuffer>) => {
@@ -36,7 +37,7 @@ export function PublicDocumentCopier({ openAction }: { openAction: DocumentActio
       } else {
         const shell = result.getValue()
         void OpenTracer.trace('boot_public_document_copier_open_document_window', { mode: openAction?.mode })
-        void application.compatWrapper.getUserCompat().openDocumentWindow({
+        void openDocumentWindow({
           ...shell,
           type: openAction?.type ?? 'doc',
           mode: 'open',
@@ -45,11 +46,11 @@ export function PublicDocumentCopier({ openAction }: { openAction: DocumentActio
       }
     },
     [
-      application.compatWrapper,
       application.duplicateDocumentUseCase,
       application.eventBus,
       openAction?.mode,
       openAction?.type,
+      openDocumentWindow,
     ],
   )
 
