@@ -2094,12 +2094,27 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Renouvellement automatique au prix de ${ renewPrice } pour ${ renewCycle } mois",
-        "Renouvellement automatique au prix de ${ renewPrice } pour ${ renewCycle } mois"
+      "Free renewal": [
+        "Renouvellement gratuit"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Renouvellement gratuit pour ${ nextCycle } mois, le ${ when }",
+        "Renouvellement gratuit pour ${ nextCycle } mois, le ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Renouvellement automatique au prix de ${ introPrice } pour ${ nextCycle } mois, le ${ when }",
+        "Renouvellement automatique au prix de ${ introPrice } pour ${ nextCycle } mois, le ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Renouvellement automatique au prix de ${ price } pour ${ cycle } mois",
+        "Renouvellement automatique au prix de ${ price } pour ${ cycle } mois"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Se renouvelle automatiquement le ${ subscriptionManagerName }"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Puis ${ price } pour ${ cycle } mois",
+        "Puis ${ price } pour ${ cycle } mois"
       ]
     },
     "Billing cycle option": {
@@ -2137,6 +2152,11 @@
       ],
       "Yearly": [
         "Annuel"
+      ]
+    },
+    "Billing type": {
+      "Prepaid": [
+        "Prépayé"
       ]
     },
     "Blog": {
@@ -2325,9 +2345,6 @@
       ],
       "Discover and set up features": [
         "Découvrez et configurez les fonctionnalités"
-      ],
-      "Get 50% offer": [
-        "Profitez d'une réduction de 50 %"
       ],
       "Maybe later": [
         "Peut-être plus tard"
@@ -3512,6 +3529,11 @@
         "(via ${ entryCountryName })"
       ]
     },
+    "Coupon": {
+      "Coupon applied": [
+        "Coupon appliqué"
+      ]
+    },
     "Create user accounts empty state": {
       "No search results found": [
         "Aucun résultat de recherche n'a été trouvé."
@@ -3682,6 +3704,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Importez vos messages, calendriers et contacts depuis un autre fournisseur."
+      ],
+      "Bring over your files from another provider.": [
+        "Transférez vos fichiers depuis un autre fournisseur."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Renforcez la confiance et la reconnaissance de votre marque avec des adresses e-mail professionnelles avec votre propre domaine."
@@ -5055,6 +5080,9 @@
       "Invitation not found": [
         "L'invitation est introuvable"
       ],
+      "Item not found": [
+        "L'élément n'a pas été trouvé"
+      ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
       ],
@@ -5310,6 +5338,9 @@
       "Some file parts failed to upload. Please try again.": [
         "Des parties de fichier n'ont pas pu être importées. Veuillez réessayer."
       ],
+      "Some items could not be loaded": [
+        "Certains éléments n'ont pas pu être chargés"
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers ne sont pas disponibles. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
@@ -5421,6 +5452,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
       ],
+      "This item has no image preview": [
+        "Cet élément n'a pas d'aperçu"
+      ],
       "This item is no longer shared": [
         "Cet élément n’est plus partagé"
       ],
@@ -5510,6 +5544,9 @@
       ],
       "You do not have access to this item": [
         "Vous n'avez pas accès à cet élément."
+      ],
+      "You do not have access to this shared item": [
+        "Vous n'avez pas accès à cet élément partagé"
       ],
       "You have reached the maximum number of calendars.": [
         "Vous avez atteint le nombre maximum de calendriers."
@@ -6377,11 +6414,17 @@
       "All": [
         "Tout"
       ],
+      "Errors": [
+        "Erreurs"
+      ],
       "In progress": [
         "En cours"
       ],
       "Migrated": [
         "Migré"
+      ],
+      "Not activated": [
+        "Non activé"
       ],
       "Pending": [
         "En attente"
@@ -7353,9 +7396,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boite aux lettres et une seule personne."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Accédez à plus de 20 000 serveurs dans plus de 145 pays"
-      ],
       "Account monitor": [
         "Surveillance des comptes"
       ],
@@ -8110,9 +8150,6 @@
       "Failed to fetch logs.": [
         "Les journaux n'ont pas pu être récupérés."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Des vitesses VPN ultra-rapides pouvant atteindre 10 Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Fichiers uniquement (pas de photos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }), jusqu'à 100 Go au total, 100 000 fichiers et 50 Go par fichier"
       ],
@@ -8206,9 +8243,6 @@
       "Groups": [
         "Groupes"
       ],
-      "Have some more time to decide without interruption.": [
-        "Prenez encore un peu de temps pour vous décider, sans être dérangé."
-      ],
       "here": [
         "ici"
       ],
@@ -8244,9 +8278,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si vous pensez qu'il s'agit d'une erreur, nous vous invitons à nous contacter ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Si vous résiliez votre abonnement maintenant, vous perdrez l'accès à ${ BRAND_NAME } ${ planTitle } à compter du ${ expiryDate }, y compris les fonctionnalités suivantes :"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
@@ -8836,9 +8867,6 @@
       "Preference saved": [
         "Préférence enregistrée"
       ],
-      "Premium privacy protection across all your devices": [
-        "Une protection optimale de la vie privée sur tous vos appareils"
-      ],
       "Preview": [
         "Aperçu"
       ],
@@ -8890,8 +8918,8 @@
       "RECOMMENDED": [
         "RECOMMANDÉ"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Recommandé sur les appareils de confiance. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Recommandé sur les appareils de confiance. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "La récupération par e-mail n'est pas disponible tant que ${ PROTON_SENTINEL_NAME } est activé."
@@ -9104,9 +9132,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
-      "Stay on your plan and get 50% off your next month": [
-        "Continuez à souscrire à votre forfait et bénéficiez de 50 % de réduction sur votre abonnement du mois prochain"
-      ],
       "Storage allocated to other users in this organisation": [
         "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
       ],
@@ -9318,9 +9343,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ceci vous permettra d'utiliser PayPal pour payer votre abonnement ${ BRAND_NAME }. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Ceci vous permettra d'accéder rapidement et de manière sécurisée à votre compte ${ BRAND_NAME } afin que vous puissiez modifier votre mot de passe."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Ceci supprimera définitivement les données et toutes les adresses électroniques associées à ces utilisateurs."
@@ -10215,6 +10237,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Offert"
+      ],
+      "Open": [
+        "Ouvrir"
       ],
       "Paid": [
         "Payée"
@@ -14059,9 +14084,6 @@
       "Card number": [
         "Numéro de la carte"
       ],
-      "Credits and discounts are reflected in your invoice": [
-        "Les crédits et les réductions figurent sur votre facture"
-      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Le renouvellement automatique de l'abonnement est actuellement désactivé. Si vous modifiez l'abonnement maintenant, le renouvellement automatique sera réactivé."
       ],
@@ -17440,6 +17462,9 @@
       ],
       "Free Trial": [
         "Essai gratuit"
+      ],
+      "Upcoming": [
+        "À venir"
       ]
     },
     "Subtitle": {
@@ -17638,7 +17663,7 @@
         "La valeur du SPF a été copiée dans le presse-papiers."
       ],
       "Undo in progress": [
-        "Annulation en cours"
+        "Annulation de l'importation en cours"
       ],
       "User updated": [
         "L'utilisateur a été mis à jour."
@@ -17784,6 +17809,9 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "Activé"
+      ],
       "Estimated size": [
         "Taille estimée"
       ],
@@ -18986,6 +19014,9 @@
       "Select data to import": [
         "Sélectionner les données à importer"
       ],
+      "Select users to migrate": [
+        "Sélectionnez les utilisateurs à migrer"
+      ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Envoyez et recevez des e-mails Gmail en utilisant ${ MAIL_APP_NAME }"
       ],
@@ -19100,14 +19131,14 @@
       "Status": [
         "État"
       ],
-      "Stay for 50% off your next month": [
-        "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
-      ],
       "Stay secure and connected anywhere": [
         "Restez en sécurité et connecté partout"
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Subscription breakdown": [
+        "Détails de l'abonnement"
       ],
       "Subscription canceled": [
         "L'abonnement a été annulé."
@@ -19410,11 +19441,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Facturation"
+      ],
       "End date": [
         "Date de fin"
       ],
       "Plan": [
         "Abonnement"
+      ],
+      "Price": [
+        "Prix"
+      ],
+      "Start date": [
+        "Date de début "
       ],
       "Status": [
         "Statut"

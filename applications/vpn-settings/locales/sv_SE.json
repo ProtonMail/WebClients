@@ -2177,10 +2177,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Förnyas automatiskt med ${ renewPrice }, för ${ renewCycle } månad",
-        "Förnyas automatiskt med ${ renewPrice }, för ${ renewCycle } månader"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Förnyas automatiskt med ${ subscriptionManagerName }"
       ]
@@ -2220,6 +2216,11 @@
       ],
       "Yearly": [
         "Årsvis"
+      ]
+    },
+    "Billing type": {
+      "Prepaid": [
+        "Förbetalt"
       ]
     },
     "Blog": {
@@ -2408,9 +2409,6 @@
       ],
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
-      ],
-      "Get 50% offer": [
-        "Få 50 % erbjudande"
       ],
       "Maybe later": [
         "Kanske senare"
@@ -3593,6 +3591,11 @@
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
+      ]
+    },
+    "Coupon": {
+      "Coupon applied": [
+        "Kupong tillämpad"
       ]
     },
     "Create user accounts empty state": {
@@ -7507,9 +7510,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "En användare är ett konto som är associerat till ett enda användarnamn, brevlåda och person"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Åtkomst till över 20 000 servrar i över 145 länder"
-      ],
       "Account monitor": [
         "Kontoövervakning"
       ],
@@ -8261,9 +8261,6 @@
       "Failed to fetch logs.": [
         "Misslyckades att hämta loggar."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Snabbaste VPN-hastigheter på upp till 10 Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Endast filer (inga foton, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – totalt upp till 100 GB, 100 000 filer och 50 GB per fil"
       ],
@@ -8357,9 +8354,6 @@
       "Groups": [
         "Grupper"
       ],
-      "Have some more time to decide without interruption.": [
-        "Ha lite mer tid att bestämma utan avbrott."
-      ],
       "here": [
         "här"
       ],
@@ -8395,9 +8389,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Om du tror att detta är felaktigt, kontakta oss ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Om du avbryter nu, kommer du att förlora åtkomst till ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive dessa funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
@@ -9020,9 +9011,6 @@
       "RECOMMENDED": [
         "REKOMMENDERAT"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Rekommenderas på betrodda enheter. ${ keepMeSignedInLearnMoreLink }"
-      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Återställning med e-post är inte tillgängligt medan ${ PROTON_SENTINEL_NAME } är aktiverat."
       ],
@@ -9228,9 +9216,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Börja dela den med kontakter och använd den för onlinetjänster."
       ],
-      "Stay on your plan and get 50% off your next month": [
-        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
-      ],
       "Storage allocated to other users in this organisation": [
         "Lagringsutrymme tilldelad andra användare i denna organisation"
       ],
@@ -9435,9 +9420,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Detta gör att PayPal kan användas för att betala för din ${ BRAND_NAME }-prenumeration. Vi kommer omdirigera dig till PayPal i en ny webbläsarflik. Om du använder popup-blockerare, inaktivera dem för att fortsätta."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Detta ger dig snabb och säker åtkomst till ditt ${ BRAND_NAME }-konto så du kan ändra ditt lösenord."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Detta kommer ta bort data och alla e-postadresser permanent som är associerade med dessa användare."
@@ -14164,9 +14146,6 @@
       "Card number": [
         "Kortnummer"
       ],
-      "Credits and discounts are reflected in your invoice": [
-        "Krediter och rabatter återspeglas på din faktura"
-      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "För närvarande är den automatiska förnyelsen av prenumerationen inaktiverad. Om du ändrar prenumerationen nu kommer den automatiska förnyelsen att återaktiveras."
       ],
@@ -17532,6 +17511,9 @@
       ],
       "Free Trial": [
         "Gratis provperiod"
+      ],
+      "Upcoming": [
+        "Kommande"
       ]
     },
     "Subtitle": {
@@ -19186,9 +19168,6 @@
       "Status": [
         "Status"
       ],
-      "Stay for 50% off your next month": [
-        "Stanna kvar för 50 % rabatt nästa månad"
-      ],
       "Stay secure and connected anywhere": [
         "Håll dig säker och ansluten var som helst"
       ],
@@ -19502,11 +19481,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Fakturering"
+      ],
       "End date": [
         "Slutdatum"
       ],
       "Plan": [
         "Paket"
+      ],
+      "Price": [
+        "Pris"
+      ],
+      "Start date": [
+        "Startdatum"
       ],
       "Status": [
         "Status"

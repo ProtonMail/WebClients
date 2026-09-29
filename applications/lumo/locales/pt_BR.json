@@ -888,9 +888,6 @@
       "Discover and set up features": [
         "Descubra e configure os recursos"
       ],
-      "Get 50% offer": [
-        "Aproveite a oferta de 50% de desconto"
-      ],
       "Remind me later": [
         "Lembre-me mais tarde"
       ],
@@ -2111,6 +2108,9 @@
       "Preparing ${ formatLabel }…": [
         "Preparando ${ formatLabel }…"
       ],
+      "Preparing ${ formatLabel }… (${ current } of ${ total })": [
+        "Preparando ${ formatLabel }… (${ current } de ${ total })"
+      ],
       "Private video calls for the conversations that matter.": [
         "Videochamadas privadas para as conversas importantes."
       ],
@@ -2245,6 +2245,9 @@
       ],
       "tokens / 30d": [
         "tokens / 30d"
+      ],
+      "Tool calls": [
+        "Chamadas de ferramenta"
       ],
       "Trying...": [
         "Tentando..."
@@ -2551,6 +2554,9 @@
       ],
       "Create an account or sign in to save your chats and increase limits.": [
         "Crie uma conta ou inicie a sessão para salvar suas conversas e aumentar os limites."
+      ],
+      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
+        "Você está no ${ selectedModelLabel }. Mude para o Max para obter respostas mais completas."
       ]
     },
     "collider_2025: Option": {
@@ -3306,8 +3312,14 @@
       "Download PDF": [
         "Baixar PDF"
       ],
+      "Download plain text": [
+        "Baixar texto sem formatação"
+      ],
       "Download PPTX": [
         "Baixar PPTX"
+      ],
+      "Download source (HTML)": [
+        "Baixar origem (HTML)"
       ],
       "Download source file": [
         "Baixar arquivo de origem"
@@ -3335,6 +3347,9 @@
       ],
       "Explain": [
         "Explicar"
+      ],
+      "Export": [
+        "Exportar"
       ],
       "Favorite": [
         "Favorito"
@@ -3476,6 +3491,9 @@
       ],
       "Show sidebar": [
         "Mostrar barra lateral"
+      ],
+      "Source (Markdown)": [
+        "Origem (Markdown)"
       ],
       "Start a chat": [
         "Iniciar um bate-papo"
@@ -3700,6 +3718,11 @@
         "Projeto não encontrado"
       ]
     },
+    "collider_2025:Error (validation)": {
+      "File format not supported: ${ file.name }": [
+        "Formato de arquivo não suportado: ${ file.name }"
+      ]
+    },
     "collider_2025:Feature": {
       "Advanced AI models": [
         "Modelos avançados de IA"
@@ -3806,6 +3829,9 @@
       "All messages and chat history": [
         "Todo o histórico de mensagens e chats"
       ],
+      "Almost ready…": [
+        "Quase pronto…"
+      ],
       "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
         "Uma menção casual a estresse, um diagnóstico ou um medicamento pode alimentar modelos de risco que, silenciosamente, influenciam a cobertura oferecida a você e o valor que você paga."
       ],
@@ -3814,6 +3840,9 @@
       ],
       "Any images generated in this conversation will also be deleted.": [
         "Toda imagem geradas nesta conversa também serão excluídas."
+      ],
+      "Applying your changes…": [
+        "Aplicando suas alterações…"
       ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "Você tem certeza de que deseja excluir \"${ project.name }\"? Esta ação não pode ser desfeita."
@@ -3871,6 +3900,12 @@
       ],
       "Create visuals from a prompt, edit photos, analyze charts, or turn rough sketches into polished graphics.": [
         "Crie recursos visuais a partir de um prompt, edite fotos, analise gráficos ou transforme esboços em gráficos polidos."
+      ],
+      "Creating artifact": [
+        "Criando artefato"
+      ],
+      "Creating artifact…": [
+        "Criando artefato…"
       ],
       "Current chat:": [
         "Bate-papo atual:"
@@ -3985,6 +4020,9 @@
       ],
       "red flags": [
         "sinais de alerta"
+      ],
+      "Revising your artifact…": [
+        "Revisando seu artefato…"
       ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Veja o que a IA da Big Tech sabe sobre você. Feito com o ${ LUMO_SHORT_APP_NAME }."
@@ -4235,6 +4273,9 @@
       ],
       "Low": [
         "Baixo"
+      ],
+      "Markdown": [
+        "Markdown"
       ],
       "Medium": [
         "Medio"
@@ -4541,6 +4582,9 @@
       "Creating an image": [
         "Criando uma imagem"
       ],
+      "Creating artifact": [
+        "Criando artefato"
+      ],
       "Dividend Yield": [
         "Rendimento de dividendos"
       ],
@@ -4727,6 +4771,9 @@
       "All files removed from project": [
         "Todos os arquivos foram removidos do projeto"
       ],
+      "Conversation exported": [
+        "Conversa exportada"
+      ],
       "Database connection restored.": [
         "Conexão do banco de dados restaurada."
       ],
@@ -4837,6 +4884,9 @@
       ],
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "Explore imagens criadas com o ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Export conversation": [
+        "Exportar conversa"
       ],
       "Favorites": [
         "Favoritos"
@@ -6256,6 +6306,12 @@
       "Image preview not found": [
         "Pré-visualização da imagem não encontrada"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Senha de backup incorreta. Tente novamente."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Segunda senha incorreta. Tente novamente."
+      ],
       "Invalid code": [
         "O código não é válido."
       ],
@@ -6623,6 +6679,9 @@
       ],
       "Still waiting?": [
         "Ainda esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque na sua chave de segurança para continuar"
       ]
     },
     "fido2: Label": {
@@ -6801,9 +6860,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Um usuário é uma conta associada com um único nome de usuário, caixa de correio e pessoa"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Acesse 20.000+ servidores em 145 países"
-      ],
       "Account successfully updated": [
         "Conta atualizada"
       ],
@@ -6967,9 +7023,6 @@
       "Expired": [
         "Expirado"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Velocidades de VPN mais rápidas, até 10 Gbps"
-      ],
       "Folder:": [
         "Pasta:"
       ],
@@ -6982,14 +7035,8 @@
       "Google Pay mark": [
         "Marca Google Pay"
       ],
-      "Have some more time to decide without interruption.": [
-        "Ganhe mais tempo para decidir sem interrupções."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Se cancelar agora, perderá o acesso a ${ BRAND_NAME } ${ planTitle } em ${ expiryDate }, incluindo estes recursos:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se você cancelar sua assinatura do ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
@@ -7114,9 +7161,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
       ],
-      "Premium privacy protection across all your devices": [
-        "Proteção de privacidade premium em todos os seus dispositivos"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
       ],
@@ -7170,9 +7214,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Mantenha o seu plano e obtenha 50% de desconto no próximo mês"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
@@ -9028,11 +9069,17 @@
       "help center": [
         "centro de ajuda"
       ],
+      "If you continue after your trial,": [
+        "Se você continuar depois da sua avaliação,"
+      ],
       "If you need help,": [
         "Se precisar de ajuda,"
       ],
       "Once your full subscription starts...": [
         "Quando sua assinatura completa começar..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "você pode cancelar em até 30 dias e receber um reembolso proporcional."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
@@ -9050,6 +9097,9 @@
       ],
       "Delete": [
         "Excluir"
+      ],
+      "Export": [
+        "Exportar"
       ],
       "Go to all projects": [
         "Ir para todos os projetos"
@@ -10431,9 +10481,6 @@
       ],
       "Simplify password management": [
         "Facilite o gerenciamento de senhas"
-      ],
-      "Stay for 50% off your next month": [
-        "Fique por mais um mês com 50% de desconto"
       ],
       "Summary": [
         "Resumo"

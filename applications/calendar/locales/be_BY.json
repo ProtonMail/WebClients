@@ -476,6 +476,9 @@
       "Go to the next available appointment": [
         "Перайсці да наступнай даступнай сустрэчы"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -1650,9 +1653,6 @@
       ],
       "Discover and set up features": [
         "Пазнаёміцца і наладзіць функцыі"
-      ],
-      "Get 50% offer": [
-        "Скарыстайцеся скідкай у памеры 50%"
       ],
       "Maybe later": [
         "Магчыма, пазней"
@@ -3928,6 +3928,12 @@
       "IMAP server is required": [
         "Патрабуецца сервер IMAP"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Няправільны рэзервовы пароль. Паўтарыце спробу."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Няправільны другі пароль. Паўтарыце спробу."
+      ],
       "Intended recipient does not support calendar sharing": [
         "У прызначанага атрымальніка функцыя абагульвання календара не падтрымліваецца"
       ],
@@ -5750,9 +5756,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN - гэта бяспечны тунэль паміж вашай прыладай і інтэрнэтам. Ён хавае ваша месцазнаходжанне і актыўнасць ад вашага пастаўшчыка паслуг інтэрнэту (ISP) і вэб-сайтаў, якія вы наведваеце."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Доступ да больш чым 20 000 сервераў у больш чым 145 краінах"
-      ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
@@ -6146,9 +6149,6 @@
       "Failed to update meeting schedule": [
         "Не ўдалося абнавіць расклад сустрэчы"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Толькі файлы (без фатаграфій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }). Абмежаванні: агульны аб'ём не больш за 100 ГБ, 100 000 файлаў і 50 ГБ на файл."
       ],
@@ -6179,9 +6179,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
-      "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
-      ],
       "here": [
         "тут"
       ],
@@ -6202,9 +6199,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Вы страціце доступ да ${ BRAND_NAME } з тарыфным планам ${ planTitle } (дзейнічае да ${ expiryDate }), які ўключае наступныя функцыі:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
@@ -6545,9 +6539,6 @@
       "Powered by ${ protonButton }": [
         "Працуе на базе ${ protonButton }"
       ],
-      "Premium privacy protection across all your devices": [
-        "Прэміяльная абарона прыватнасці паміж усімі вашымі прыладамі"
-      ],
       "Previous modifications on this series will be lost.": [
         "Папярэднія змяненні ў гэтай серыі будуць страчаны."
       ],
@@ -6652,9 +6643,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Застаньцеся на сваім тарыфным плане і атрымайце скідку ў памеры 50% у наступным месяцы"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
@@ -7054,6 +7042,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. У дадзены момант аплата не патрабуецца. Ваша падпіска будзе аўтаматычна падоўжана ў канцы пробнага перыяду."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ dueDate } ${ payInvoiceLink }"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Вы паўторна актывавалі свае ключы і цяпер можаце расшыфраваць падзеі, якія былі звязаны з наступнымі календарамі."
@@ -8129,6 +8123,9 @@
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
+      ],
+      "Pay it": [
+        "Заплаціць"
       ],
       "Reactivate now": [
         "Актываваць паўторна"
@@ -9906,6 +9903,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Апошні шанс атрымаць першы месяц тарыфнага плана ${ plan } па гэтай цане."
+      ],
       "Last day to save": [
         "Апошні дзень, калі можна сэканоміць"
       ],
@@ -10041,6 +10041,18 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " наведайце наш ${ helpCenterLink } або ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Дадайце спосаб аплаты**, каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
       "Add a payment method": [
         "Дадаць спосаб аплаты"
       ],
@@ -10059,11 +10071,17 @@
       "help center": [
         "даведачны цэнтр"
       ],
+      "If you continue after your trial,": [
+        "Калі вы працягніце пасля пробнага перыяду,"
+      ],
       "If you need help,": [
         "Калі вам патрэбна дапамога,"
       ],
       "Once your full subscription starts...": [
         "Як толькі пачнецца ваша поўная падпіска..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
@@ -13289,9 +13307,6 @@
       ],
       "Start import process": [
         "Пачаць працэс імпартавання"
-      ],
-      "Stay for 50% off your next month": [
-        "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
       ],
       "Subscription canceled": [
         "Падпіска скасавана"

@@ -2375,9 +2375,6 @@
       "Discover and set up features": [
         "Ontdek en configureer functies"
       ],
-      "Get 50% offer": [
-        "Neem de 50% deal"
-      ],
       "Got it": [
         "Begrepen"
       ],
@@ -5035,6 +5032,12 @@
       "IMAP server is required": [
         "IMAP-server is vereist"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Onjuist back-up wachtwoord. Probeer het opnieuw."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Onjuist tweede wachtwoord. Probeer het opnieuw."
+      ],
       "Invalid code": [
         "Ongeldige code"
       ],
@@ -7328,9 +7331,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Toegang tot 6 500+ hoge snelheid servers op maximaal 10 apparaten om uw surfgegevens veilig te houden. Beschikbaar op ${ ios }, ${ android }, ${ appleTV }en ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Toegang tot meer dan 20.000 servers in 145 landen"
-      ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
       ],
@@ -7348,6 +7348,9 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
+      ],
+      "Add contact": [
+        "Contact toevoegen"
       ],
       "Add image URL": [
         "Afbeeldings-URL toevoegen"
@@ -7574,6 +7577,9 @@
       "Change your password": [
         "Wijzig uw wachtwoord"
       ],
+      "Change your theme": [
+        "Wijzig uw thema"
+      ],
       "Checked Proton support": [
         "Protonondersteuning gecontroleerd"
       ],
@@ -7646,6 +7652,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
         "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
+      ],
+      "Create a folder": [
+        "Map aanmaken"
       ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Maak een map aan zoals \"${ suggestedFolderName }\" om al uw online ontvangstbevestigingen op één plaats te houden."
@@ -7817,6 +7826,12 @@
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Beheer en meld u eenvoudig af voor nieuwsbrieven en adressenlijsten."
       ],
+      "Edit a contact": [
+        "Contactgegevens bewerken"
+      ],
+      "Edit contact": [
+        "Contactgegevens bewerken"
+      ],
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
@@ -7935,9 +7950,6 @@
         "Verloopt over minder dan ${ hoursDiff } uur",
         "Verloopt over minder dan ${ hoursDiff } uur"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "De hoogste VPN-snelheden tot 10 Gbps"
-      ],
       "file attached": [
         "bestandsbijlage",
         "bestandsbijlagen"
@@ -8018,14 +8030,11 @@
         "Heeft ${ numAttachments } bijlage (${ numAttachmentsSize })",
         "Heeft ${ numAttachments } bijlagen (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "Neem nog even de tijd om in alle rust een beslissing te nemen."
-      ],
       "here": [
         "hier"
       ],
       "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
-        "Hey Lumo, ik ga weg en wil een afwezigheidsbericht instellen. Vraag me naar de data en wat er op moet staan, en laat me dan het bericht zien voordat je het aanzet."
+        "Hey Lumo, ik ga weg en wil een afwezigheidsbericht instellen. Vraag me naar de data en wat er op moet staan, en laat me dan het bericht zien voordat u het aanzet."
       ],
       "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
         "Hey Lumo, laat me zien hoe u me kunt helpen met mijn mailbox. Wat voor dingen kan ik van u vragen, en waar kunt u niet mee helpen?"
@@ -8050,9 +8059,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Als u denkt dat we een fout hebben gemaakt, gelieve ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Als u nu annuleert, hebt u vanaf ${ expiryDate }geen toegang meer tot ${ BRAND_NAME } ${ planTitle }, waaronder deze functies:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
@@ -8241,6 +8247,9 @@
       "Manage your labels": [
         "Labels beheren"
       ],
+      "Mark ${ emails } as unread": [
+        "Markeer ${ emails } als ongelezen"
+      ],
       "Mark all as read": [
         "Alles markeren als gelezen"
       ],
@@ -8269,7 +8278,7 @@
         "Samengevoegd"
       ],
       "Message actions in progress. This may take a while.": [
-        "Bezig met verzenden van berichten. Dit kan een tijdje duren."
+        "Berichtacties worden uitgevoerd. Dit kan even duren."
       ],
       "Message download status:": [
         "Bericht download status:"
@@ -8354,6 +8363,9 @@
       ],
       "No conversation to read": [
         "Geen gesprek om te lezen"
+      ],
+      "No draft open": [
+        "Geen concept open"
       ],
       "No email address": [
         "Geen e-mailadres"
@@ -8569,9 +8581,6 @@
       "Preferences updated": [
         "Voorkeuren bijgewerkt"
       ],
-      "Premium privacy protection across all your devices": [
-        "Eersteklas privacybescherming op al uw apparaten"
-      ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
       ],
@@ -8648,6 +8657,9 @@
         "Lees uw ${ count } label",
         "Lees uw ${ count } labels"
       ],
+      "Read your auto-reply": [
+        "Lees uw automatisch antwoord"
+      ],
       "Read your display settings": [
         "Lees uw weergave-instellingen"
       ],
@@ -8675,8 +8687,14 @@
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Verwijder alle gegevens geassocieerd met deze app (inclusief gedownloade berichten...)"
       ],
+      "Rename folder": [
+        "Map hernoemen"
+      ],
       "Rename this folder": [
         "Hernoem deze map"
+      ],
+      "reply all": [
+        "antwoord allen"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Door een bericht als phishing aan te merken, wordt het naar ProtonMail verzonden, zodat het mogelijk is de inhoud te analyseren en de spamfilters te verbeteren. Dit betekent dat we alle inhoud van dit betreffende bericht kunnen zien."
@@ -8873,9 +8891,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Blijf moeiteloos verbonden door de volgende VPN-instellingen in te schakelen:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behoud uw abonnement aan en u ontvangt 50% korting op uw volgende maand"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Opslagmogelijkheden worden niet ondersteund in deze browser, we hebben deze ondersteuning nodig om het zoeken naar berichten mogelijk te maken."
@@ -9244,11 +9259,20 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
+      "Turn off auto-reply": [
+        "Zet automatisch antwoorden uit"
+      ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Uitschakelen om alleen te zoeken op datum, naam, e-mailadres of onderwerpregel. Ga naar Instellingen om de inhoud van zoekberichten uit te schakelen (en berichten te verwijderen die zijn gedownload om deze functie in te schakelen)."
       ],
+      "Turn off your away message": [
+        "Zet uw afwezigheidsbericht uit"
+      ],
       "Turn on to search the content of your messages": [
         "Zet aan om de inhoud van uw berichten te doorzoeken"
+      ],
+      "Turn on your away message": [
+        "Zet uw afwezigheidsbericht aan"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Kan geen toegang krijgen tot opslagmogelijkheden in deze browser, we hebben deze toegang nodig om het zoeken naar berichteninhoud te activeren."
@@ -9892,6 +9916,9 @@
       "Cancel / close": [
         "Annuleren / sluiten"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Sluit ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Concept sluiten"
       ],
@@ -10495,7 +10522,7 @@
         "Mapnaam"
       ],
       "Forwards to": [
-        "Stuurt door na"
+        "Stuurt door naar"
       ],
       "Frequency": [
         "Frequentie"
@@ -10682,6 +10709,9 @@
       ],
       "Never fill on this exact URL": [
         "Nooit invullen op deze exacte URL"
+      ],
+      "New name": [
+        "Nieuwe naam"
       ],
       "New password": [
         "Nieuw wachtwoord"
@@ -10955,6 +10985,9 @@
       ],
       "Time": [
         "Tijd"
+      ],
+      "To": [
+        "Aan"
       ],
       "To:": [
         "Aan:"
@@ -12908,6 +12941,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Laatste kans om aan deze prijs uw eerste maand ${ plan } te krijgen."
+      ],
       "Last day to save": [
         "Laatste dag om op te besparen"
       ],
@@ -13180,6 +13216,9 @@
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
+      ],
+      "Add a payment method": [
+        "Voeg een betaalmethode toe"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "U kunt op elk moment annuleren vóór ${ cancelDate }."
@@ -17097,9 +17136,6 @@
       ],
       "Start import process": [
         "Importproces starten"
-      ],
-      "Stay for 50% off your next month": [
-        "Blijf en ontvang 50% korting op uw volgende maand"
       ],
       "Storage capacity warning": [
         "Waarschuwing voor opslagruimte"

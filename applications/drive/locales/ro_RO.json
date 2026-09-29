@@ -240,9 +240,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmați deschiderea legăturii web ${ linkToShow }"
       ],
-      "Connect": [
-        "Conectare"
-      ],
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
       ],
@@ -687,6 +684,9 @@
       ],
       "Maximize transfers": [
         "Maximizare transferuri"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
       ],
       "Merge": [
         "Îmbinare"
@@ -1816,9 +1816,6 @@
       ],
       "Discover and set up features": [
         "Descoperiți și setați funcțiile"
-      ],
-      "Get 50% offer": [
-        "Profitați de oferta de 50%"
       ],
       "Maybe later": [
         "Poate mai târziu"
@@ -3732,8 +3729,14 @@
       "IMAP server is required": [
         "Serverul IMAP este obligatoriu"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Parolă de rezervă incorectă. Reîncercați."
+      ],
       "Incorrect password. Please try again.": [
         "Parolă incorectă. Reîncercați."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Parolă secundară incorectă. Încercați din nou."
       ],
       "Invalid code": [
         "Cod nevalid"
@@ -5272,6 +5275,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } utilizează acest acces doar pentru importare. Google nu va obține niciodată acces la contul din ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
@@ -5556,9 +5562,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Un VPN este un tunel securizat între dispozitivul utilizat și internet. Acesta vă ascunde locul și activitatea față de furnizorul de servicii de internet (ISP) și față de site-urile web pe care le vizitați."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Accesați peste 20.000 de servere din peste 145 de țări"
-      ],
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
@@ -5775,8 +5778,8 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conectați-vă la ${ VPN_APP_NAME } pentru a naviga privat"
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "Se conectează la Google Drive pentru configurarea importării securizate în ${ DRIVE_APP_NAME }."
+      "Connecting to Google Drive and preparing your import.": [
+        "Se conectează la Google Drive și vi se pregătește importarea."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contactul a fost adăugat la grupul ${ contactGroupName }."
@@ -5945,9 +5948,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
       ],
-      "Email you once import is finished": [
-        "Veți primi un mesaj la finalizarea importării."
-      ],
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
       ],
@@ -6019,9 +6019,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportare jurnal de diagnosticare pentru asistență tehnică și depanare."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Cele mai rapide viteze VPN de până la 10 Gbps"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -6058,9 +6055,6 @@
       "For just ${ bundlePlanPriceInline }": [
         "Pentru doar ${ bundlePlanPriceInline }"
       ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "Pentru ca importarea să funcționeze, trebuie să selectați toate articolele solicitate așa cum e arătat în imaginea GIF de deasupra."
-      ],
       "Forgot password?": [
         "Ați uitat parola?"
       ],
@@ -6091,9 +6085,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
       ],
-      "Have some more time to decide without interruption.": [
-        "Mai aveți timp să vă decideți fără întrerupere."
-      ],
       "here": [
         "aici"
       ],
@@ -6114,9 +6105,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Dacă anulați acum, veți pierde accesul la ${ BRAND_NAME } ${ planTitle } la ${ expiryDate }, inclusiv la aceste funcții:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Dacă anulați, abonamentul la ${ planTitle } nu va fi reînnoit când va expira la ${ expiryDate }."
@@ -6158,6 +6146,9 @@
       ],
       "Import mailbox": [
         "Importare mesaje"
+      ],
+      "Import your files and folders": [
+        "Importați-vă folderele și fișierele"
       ],
       "Important note": [
         "Notă importantă"
@@ -6269,6 +6260,9 @@
       ],
       "Key fingerprint": [
         "Amprentă cheie"
+      ],
+      "Know when it's done": [
+        "Știți când este gata"
       ],
       "Label all imported messages as": [
         "Etichetare toate mesajele importate cu"
@@ -6398,8 +6392,8 @@
       "New": [
         "Nou"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "În continuare, va trebui să vă conectați la contul Google și să permiteți ca ${ BRAND_NAME } să vă acceseze datele."
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "În continuare, conectați-vă la Google Drive și permiteți ca ${ BRAND_NAME } să acceseze Google Drive. Folderele și fișierele vor fi importate în ${ DRIVE_APP_NAME }."
       ],
       "No": [
         "Nu"
@@ -6612,9 +6606,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
       ],
-      "Premium privacy protection across all your devices": [
-        "Protecție premium a confidențialității pe toate dispozitivele personale"
-      ],
       "Preparing": [
         "Se pregătește"
       ],
@@ -6648,6 +6639,9 @@
       "Primary": [
         "Principal"
       ],
+      "Private and encrypted": [
+        "Private și criptate"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Navigarea privată (sau modul „incognito”) este utilă doar pentru a vă păstra activitatea ascunsă pe dispozitiv. Îți oprește browserul să salveze istoricul și cookie-urile, dar nu te face invizibil. ISP-ul dvs., administratorul de rețea și site-urile web pe care le vizitați pot vedea în continuare ceea ce faceți online."
       ],
@@ -6665,9 +6659,6 @@
       ],
       "Read folder context": [
         "Citire context folder"
-      ],
-      "Read once and encrypted on arrival": [
-        "Citire o singură dată și criptare la sosire"
       ],
       "Read this file": [
         "Am citit acest fișier"
@@ -6837,9 +6828,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
-      "Sit back and we will let you know.": [
-        "Așteptați până vă vom anunța."
-      ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Unele guverne blochează sau restricționează accesul la anumite site-uri web. Un VPN vă ajută să ocoliți cenzura, păstrându-vă în același timp activitatea și identitatea privată."
       ],
@@ -6863,9 +6851,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Păstrați-vă conexiunea fără efort, activând următoarele setări VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Păstrați-vă abonamentul și primiți o reducere de 50% luna următoare"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
@@ -7179,9 +7164,6 @@
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "Folosit doar pentru a le copia în ${ DRIVE_APP_NAME }."
-      ],
       "username": [
         "nume de utilizator"
       ],
@@ -7232,17 +7214,11 @@
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "Nu este suportată importarea fotografiilor, documentelor,și foilor de calcul și prezentărilor Google. Asigurați-vă că Google Drive nu este gol."
-      ],
       "We need to authenticate your payment method with your bank.": [
         "Trebuie să autentificăm metoda de plată cu banca dvs."
       ],
       "We need to authenticate your payment with your bank.": [
         "Trebuie să autentificăm plata cu banca dvs."
-      ],
-      "We support most files": [
-        "Sunt suportate majoritatea fișierelor"
       ],
       "We use 3-D Secure to protect your payments": [
         "Folosim 3-D Secure pentru a proteja plățile"
@@ -7252,17 +7228,23 @@
         "Câteva fotografii nu au putut fi adăugate în album.",
         "Câteva fotografii nu au putut fi adăugate în album."
       ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "Veți primi un mesaj pe e-mail la finalizarea importării. După finalizare, veți găsi datele importate într-un folder."
-      ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin ${ IDEAL_WERO_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vor fi copiate din Google Drive în ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Vă vom anunța pe e-mail după finalizarea importării."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vă vom anunța pe e-mail după finalizarea importării."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Veți primi un e-mail când s-a finalizat importarea. Fișierele vor apărea într-un folder din ${ DRIVE_APP_NAME }."
       ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
@@ -7272,9 +7254,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
-      ],
-      "We're importing your files from Google Drive. We'll let you know once it's done.": [
-        "Vi se importă fișierele din Google Drive. Vă vom anunța când procesul va fi finalizat."
       ],
       "Week": [
         "Săptămâna"
@@ -7305,9 +7284,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "va fi restaurat de la versiunea din ${ formattedRevisionDate }. Toate celelalte versiuni vor fi salvate în continuare."
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "Nu se importă fotografii, documente și foi de calcul Google"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -7492,6 +7468,9 @@
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Fișierele sunt reindexate. Puteți căuta, dar rezultatele s-ar putea să fie incomplete până la finalizarea indexării. Vă vom anunța când s-a finalizat."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Fișierele sunt criptate și stocate în siguranță în ${ DRIVE_APP_NAME }."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Fișierele nu mai sunt accesibile datorită resetării parolei. Reîncărcați vechea cheie de criptare pentru a redobândi accesul. ${ KeyReactivationButton }"
       ],
@@ -7509,6 +7488,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Probarea gratuită a fost convertită cu un abonament lunar. Data lui de reînnoire este ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Drive s-ar putea să fie gol sau să conțină fișiere nesuportate."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
@@ -12668,11 +12650,11 @@
       "Albums you've shared will appear here": [
         "Albumele pe care le-ați partajat vor apărea aici"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importați-vă folderele și fișierele din Google Drive și păstrați-le private în ${ DRIVE_APP_NAME }."
+      ],
       "Shared by ${ sharedBy }": [
         "Partajat de ${ sharedBy }"
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "Fișierele sunt citite o singură dată pentru a le copia, apoi sunt criptate fiecare în parte folosind cheile ${ BRAND_NAME } pe care le dețineți."
       ],
       "Your favorited photos will appear here": [
         "Fotografiile favorite vor apărea aici"
@@ -13133,9 +13115,6 @@
       "Connect your custom domain": [
         "Conectați-vă domeniul personal"
       ],
-      "Connect your Google account": [
-        "Conectați-vă contul Google"
-      ],
       "Contact Details": [
         "Detalii contact"
       ],
@@ -13304,6 +13283,9 @@
       "Easy switch": [
         "Easy switch"
       ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch din Google Drive"
+      ],
       "Edit billing address": [
         "Editare adresă de facturare"
       ],
@@ -13442,6 +13424,9 @@
       ],
       "Import groups": [
         "Importare grupuri"
+      ],
+      "Import started": [
+        "Importare pornită"
       ],
       "Import started, but your storage won't be enough for this import": [
         "Importarea a început, dar spațiul de stocare nu va fi suficient"
@@ -13623,6 +13608,9 @@
       "Photos": [
         "Fotografii"
       ],
+      "Preparing your import": [
+        "Se pregătește importarea"
+      ],
       "Preview": [
         "Examinare"
       ],
@@ -13745,9 +13733,6 @@
       "Set up your organization": [
         "Setați organizația"
       ],
-      "Setting up your import": [
-        "Vi se setează importarea"
-      ],
       "Settings": [
         "Setări"
       ],
@@ -13778,9 +13763,6 @@
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
       ],
-      "Sign in to Google": [
-        "Conectare în Google"
-      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -13807,9 +13789,6 @@
       ],
       "Start import process": [
         "Începere proces de importare"
-      ],
-      "Stay for 50% off your next month": [
-        "Rămâneți cu o reducere de 50% luna următoare"
       ],
       "Stop sharing": [
         "Oprire partajare"
@@ -14020,12 +13999,6 @@
       ],
       "Your import is finished!": [
         "Importarea s-a finalizat!"
-      ],
-      "Your import is in progress": [
-        "Importarea este în desfășurare"
-      ],
-      "Your import is starting": [
-        "Începe importarea"
       ],
       "Your plan": [
         "Plan actual"

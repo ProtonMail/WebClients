@@ -1915,11 +1915,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Automatski se obnavlja po cijeni od ${ renewPrice }, za ${ renewCycle } mjesec",
-        "Automatski se obnavlja po cijeni od ${ renewPrice }, za ${ renewCycle } mjeseca",
-        "Automatski se obnavlja po cijeni od ${ renewPrice }, za ${ renewCycle } mjeseci"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automatski se obnavlja na ${ subscriptionManagerName }"
       ]
@@ -8414,9 +8409,6 @@
       "RECOMMENDED": [
         "PREPORUČENO"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Preporučeno na pouzdanim uređajima. ${ keepMeSignedInLearnMoreLink }"
-      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Oporavak putem e-pošte nije dostupan dok je omogućen ${ PROTON_SENTINEL_NAME }."
       ],
@@ -8816,9 +8808,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ovo će omogućiti PayPalu da se koristi za plaćanje vaše ${ BRAND_NAME } pretplate. Preusmjerit ćemo vas na PayPal u novoj kartici preglednika. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Ovo će vam omogućiti da brzo i sigurno pristupite svom korisničkom računu ${ BRAND_NAME } kako biste mogli promijeniti svoju lozinku."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Ovo će trajno izbrisati podatke i sve adrese e-pošte povezane s ovim korisnicima."
@@ -13420,9 +13409,6 @@
       ],
       "Card number": [
         "Broj kartice"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Krediti i popusti su prikazani na vašem računu"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Trenutačno je automatska obnova pretplate onemogućena. Ako sada promijenite pretplatu, automatska obnova ponovno će se omogućiti."

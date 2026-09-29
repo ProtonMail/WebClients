@@ -1628,6 +1628,9 @@
     "Action subscription": {
       "Reactivate": [
         "Επανενεργοποίηση"
+      ],
+      "View breakdown": [
+        "Δείτε την ανάλυση"
       ]
     },
     "Action: Sheets": {
@@ -2217,12 +2220,34 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewCycle } μήνα",
-        "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewCycle } μήνες"
+      "Free renewal": [
+        "Δωρεάν ανανέωση"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Δωρεάν ανανέωση, για ${ nextCycle } μήνα, στις ${ when }",
+        "Δωρεάν ανανέωση, για ${ nextCycle } μήνες, στις ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Ανανεώνεται αυτόματα με ${ introPrice }, για ${ nextCycle } μήνα, στις ${ when }",
+        "Ανανεώνεται αυτόματα με ${ introPrice }, για ${ nextCycle } μήνες, στις ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Ανανεώνεται αυτόματα σε ${ price }, για ${ cycle } μήνα",
+        "Ανανεώνεται αυτόματα σε ${ price }, για ${ cycle } μήνες"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Ανανεώνεται αυτόματα στο ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Μετάβαση σε ${ nextCycle } μήνα στις ${ when } (${ paidPrice } έχουν ήδη πληρωθεί)",
+        "Μετάβαση σε ${ nextCycle } μήνες στις ${ when } (${ paidPrice } έχουν ήδη πληρωθεί)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Μετά ${ price }, για ${ cycle } μήνα",
+        "Μετά ${ price }, για ${ cycle } μήνες"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Θα αντικατασταθεί από την επερχόμενη συνδρομή σας στις ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -2260,6 +2285,14 @@
       ],
       "Yearly": [
         "Ετησίως"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Χρέωση κατά την ανανέωση"
+      ],
+      "Prepaid": [
+        "Προπληρωμένο"
       ]
     },
     "Blog": {
@@ -2448,9 +2481,6 @@
       ],
       "Discover and set up features": [
         "Ανακαλύψτε και ρυθμίστε δυνατότητες"
-      ],
-      "Get 50% offer": [
-        "Επωφεληθείτε από προσφορά 50%"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
@@ -3635,6 +3665,11 @@
         "(μέσω ${ entryCountryName })"
       ]
     },
+    "Coupon": {
+      "Coupon applied": [
+        "Το κουπόνι εφαρμόστηκε"
+      ]
+    },
     "Create user accounts empty state": {
       "No search results found": [
         "Δεν βρέθηκαν αποτελέσματα αναζήτησης"
@@ -3805,6 +3840,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Μεταφέρετε τα μηνύματα, τις εκδηλώσεις ημερολογίου και τις επαφές σας από έναν άλλο πάροχο."
+      ],
+      "Bring over your files from another provider.": [
+        "Μεταφέρετε τα αρχεία σας από άλλο πάροχο."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Δημιουργήστε εμπιστοσύνη και αναγνώριση επωνυμίας με επαγγελματικές διευθύνσεις ηλεκτρονικού ταχυδρομείου στον δικό σας τομέα."
@@ -7614,9 +7652,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Χρήστης νοείται ένας λογαριασμός συσχετισμένος με μοναδικό όνομα χρήστη, θυρίδα και πρόσωπο"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Πρόσβαση σε 20.000+ διακομιστές σε 145 χώρες"
-      ],
       "Account monitor": [
         "Παρακολούθηση λογαριασμού"
       ],
@@ -8380,9 +8415,6 @@
       "Failed to fetch logs.": [
         "Αποτυχία ανάκτησης αρχείων καταγραφής."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Οι ταχύτερες ταχύτητες VPN έως και 10Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Μόνο αρχεία (όχι φωτογραφίες, ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }) - έως 100 GB συνολικά, 100.000 αρχεία και 50 GB ανά αρχείο"
       ],
@@ -8476,9 +8508,6 @@
       "Groups": [
         "Ομάδες"
       ],
-      "Have some more time to decide without interruption.": [
-        "Έχετε λίγο περισσότερο χρόνο να αποφασίσετε χωρίς διακοπή."
-      ],
       "here": [
         "εδώ"
       ],
@@ -8514,9 +8543,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Αν ακυρώσετε τώρα, θα χάσετε την πρόσβαση στο ${ BRAND_NAME } ${ planTitle } στις ${ expiryDate }, συμπεριλαμβανομένων αυτών των λειτουργιών:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Εάν ακυρώσετε, η συνδρομή σας ${ planTitle } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
@@ -9112,9 +9138,6 @@
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium προστασία απορρήτου σε όλες τις συσκευές σας"
-      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -9166,8 +9189,8 @@
       "RECOMMENDED": [
         "ΠΡΟΤΕΙΝΟΜΕΝΑ"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Συνιστάται σε αξιόπιστες συσκευές. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Συνιστάται σε αξιόπιστες συσκευές. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Η ανάκτηση μέσω μηνύματος ηλεκτρονικού ταχυδρομείου δεν είναι διαθέσιμη ενώ το ${ PROTON_SENTINEL_NAME } είναι ενεργοποιημένο."
@@ -9379,9 +9402,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Μείνετε στο πλάνο σας και κερδίστε έκπτωση 50% τον επόμενο μήνα"
       ],
       "Storage allocated to other users in this organisation": [
         "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
@@ -9598,7 +9618,7 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο ${ BRAND_NAME }. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
         "Αυτό θα σας επιτρέψει να αποκτήσετε γρήγορη και ασφαλή πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }, ώστε να μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
@@ -10198,6 +10218,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Έχετε μια δοκιμαστική συνδρομή ${ planTitle }. Δεν απαιτείται πληρωμή αυτήν τη στιγμή. Η συνδρομή σας θα ανανεωθεί αυτόματα στο τέλος της δοκιμαστικής περιόδου."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο με ημερομηνία λήξης ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no invoices.": [
         "Δεν έχετε τιμολόγια."
       ],
@@ -10509,6 +10535,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Δωρίστηκε"
+      ],
+      "Open": [
+        "Ανοικτό"
       ],
       "Paid": [
         "Πληρωμένο"
@@ -11849,6 +11878,9 @@
       ],
       "Pay invoice": [
         "Εξόφληση τιμολογίου"
+      ],
+      "Pay it": [
+        "Πλήρωσέ το"
       ],
       "Privacy policy": [
         "Πολιτική απορρήτου"
@@ -14455,9 +14487,6 @@
       ],
       "Card number": [
         "Αριθμός κάρτας"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Οι πιστώσεις και οι εκπτώσεις αντικατοπτρίζονται στην τιμολόγησή σας."
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Προς το παρόν, η αυτόματη ανανέωση της συνδρομής είναι απενεργοποιημένη. Εάν αλλάξετε τη συνδρομή τώρα, τότε η αυτόματη ανανέωση θα ενεργοποιηθεί ξανά."
@@ -17855,6 +17884,9 @@
       ],
       "Free Trial": [
         "Δωρεάν δοκιμαστική έκδοση"
+      ],
+      "Upcoming": [
+        "Προσεχή"
       ]
     },
     "Subtitle": {
@@ -18360,6 +18392,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
+      "${ planTitle } breakdown": [
+        "Ανάλυση του ${ planTitle }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } για οργανισμούς"
@@ -19527,14 +19562,14 @@
       "Status": [
         "Κατάσταση"
       ],
-      "Stay for 50% off your next month": [
-        "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
-      ],
       "Stay secure and connected anywhere": [
         "Παραμείνετε ασφαλείς και συνδεδεμένοι οπουδήποτε"
       ],
       "Subscription": [
         "Συνδρομή"
+      ],
+      "Subscription breakdown": [
+        "Ανάλυση συνδρομής"
       ],
       "Subscription canceled": [
         "Η συνδρομή ακυρώθηκε"
@@ -19843,11 +19878,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Χρεώσεις"
+      ],
       "End date": [
         "Ημερομηνία Λήξης"
       ],
       "Plan": [
         "Πρόγραμμα"
+      ],
+      "Price": [
+        "Τιμή"
+      ],
+      "Start date": [
+        "Ημερομηνία έναρξης"
       ],
       "Status": [
         "Κατάσταση"

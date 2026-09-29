@@ -784,7 +784,7 @@
         "Pridruži se z ${ MEET_APP_NAME }"
       ],
       "Keep going": [
-        "Nadaljuj …"
+        "Nadaljuj"
       ],
       "Keep inbox as before": [
         "Ohrani predal pošte kot prej"
@@ -1439,6 +1439,9 @@
       ],
       "Stay": [
         "Ostani"
+      ],
+      "Stop": [
+        "Ustavi"
       ],
       "Stop downloading assistant": [
         "Ustavi prenašanje pomočnika"
@@ -2325,9 +2328,6 @@
       ],
       "Discover and set up features": [
         "Odkrijte in nastavite funkcije"
-      ],
-      "Get 50% offer": [
-        "Izkoristite ponudbo s 50 % popustom"
       ],
       "Got it": [
         "Razumem"
@@ -4310,6 +4310,12 @@
       ]
     },
     "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } novo sporočilo",
+        "${ messageCount } novi sporočili",
+        "${ messageCount } nova sporočila",
+        "${ messageCount } novih sporočil"
+      ],
       "From: ${ sender } - ${ message.Subject }": [
         "Od: ${ sender } – ${ message.Subject }"
       ]
@@ -4864,6 +4870,12 @@
       "IMAP server is required": [
         "Zahtevan je strežnik IMAP"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nepravilno varnostno geslo. Poskusite znova."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nepravilno drugo geslo. Poskusite znova."
+      ],
       "Invalid code": [
         "Neveljavna koda"
       ],
@@ -5010,6 +5022,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran."
+      ],
+      "Part of the file appears to be corrupted": [
+        "Del datoteke se zdi poškodovan"
       ],
       "Password is required": [
         "Zahtevano je geslo"
@@ -5941,6 +5956,9 @@
       ]
     },
     "Filter": {
+      "All": [
+        "Vse"
+      ],
       "Errors": [
         "Napake"
       ],
@@ -6785,6 +6803,12 @@
         "${ contactsLength } stiki",
         "${ contactsLength } stikov"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } sporočilo → ${ dest }",
+        "${ count } sporočili → ${ dest }",
+        "${ count } sporočila → ${ dest }",
+        "${ count } sporočil → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } od ${ totalProgress }",
         "${ currentProgress } od ${ totalProgress }",
@@ -6995,6 +7019,12 @@
         "${ selectedFoldersCountLocalized } izbrane oznake",
         "${ selectedFoldersCountLocalized } izbranih oznak"
       ],
+      "${ steps } step": [
+        "${ steps } korak",
+        "${ steps } koraka",
+        "${ steps } koraki",
+        "${ steps } korakov"
+      ],
       "${ storage } storage": [
         "${ storage } shrambe"
       ],
@@ -7130,9 +7160,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Zagotovite si dostop do več kot 6.500 hitrih strežnikov na do 10 napravah, da bodo vaši podatki brskanja varni. Na voljo na ${ ios }, ${ android }, ${ appleTV } in ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Dostop do več kot 20.000 strežnikov v več kot 145 državah"
-      ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
       ],
@@ -7150,6 +7177,9 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Dodaj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Dodaj stik"
       ],
       "Add image URL": [
         "Dodaj URL slike"
@@ -7367,6 +7397,9 @@
       "Change your password": [
         "Spremenite vaše geslo"
       ],
+      "Change your theme": [
+        "Spremenite temo"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Preverjanje stika ${ progress } od ${ max } ..."
       ],
@@ -7439,6 +7472,9 @@
         "Ustvari ${ calendarsToBeCreatedCount } nove koledarje",
         "Ustvari ${ calendarsToBeCreatedCount } novih koledarjev"
       ],
+      "Create a filter": [
+        "Ustvari filter"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Ustvarite mapo, kot je »${ suggestedFolderName }«, da boste hranili vse svoje spletne račune na enem mestu."
       ],
@@ -7450,6 +7486,9 @@
       ],
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
+      ],
+      "Create folder": [
+        "Ustvari mapo"
       ],
       "Create in": [
         "Ustvari v"
@@ -7589,6 +7628,12 @@
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Enostavno upravljajte in se odjavite od glasil in poštnih seznamov."
       ],
+      "Edit ${ contact }": [
+        "Uredi ${ contact }"
+      ],
+      "Edit contact": [
+        "Uredi stik"
+      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
@@ -7703,9 +7748,6 @@
         "Poteče čez manj kot ${ hoursDiff } ure",
         "Poteče čez manj kot ${ hoursDiff } ur"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Največja hitrost VPN s hitrostjo do 10 Gbps"
-      ],
       "file attached": [
         "pripeta datoteka",
         "pripeti datoteki",
@@ -7790,9 +7832,6 @@
         "Vsebuje ${ numAttachments } priponke (${ numAttachmentsSize })",
         "Vsebuje ${ numAttachments } priponke (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "Imate še nekaj časa, da se odločite, ne da bi vas pri tem kaj motilo."
-      ],
       "here": [
         "tukaj"
       ],
@@ -7816,9 +7855,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Če menite, da smo se zmotili, se obrnite na nas ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Če naročnino prekinete zdaj, boste dne ${ expiryDate } izgubili dostop do ${ BRAND_NAME } ${ planTitle }, vključno z naslednjimi funkcijami:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Če prekličete, se vaša naročnina na ${ planTitle } ne bo podaljšala, ko poteče dne ${ expiryDate }."
@@ -8003,6 +8039,9 @@
       "Mark all as read": [
         "Označi vse kot prebrano"
       ],
+      "Mark as unread": [
+        "Označi kot neprebrano"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logotip"
       ],
@@ -8072,6 +8111,12 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Večina javnih omrežij WiFi je varnih, vendar nekatera nimajo ustrezne varnosti, zato ste izpostavljeni kibernetskim grožnjam. VPN šifrira vaš promet in vas ohranja zaščitene."
       ],
+      "Move ${ emails }": [
+        "Premakni ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Premakni ${ emails } v ${ destination }"
+      ],
       "Move emails": [
         "Premakni sporočila"
       ],
@@ -8098,6 +8143,9 @@
       ],
       "No contacts added yet": [
         "Ni stikov"
+      ],
+      "No contacts found": [
+        "Ni najdenih stikov"
       ],
       "No draft open": [
         "Ni odprtih osnutkov"
@@ -8297,9 +8345,6 @@
       "Preferences updated": [
         "Nastavitve posodobljene"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premijska zaščita zasebnosti na vseh vaših napravah"
-      ],
       "Preview failed to be loaded": [
         "Predogleda ni bilo mogoče naložiti"
       ],
@@ -8386,6 +8431,9 @@
       ],
       "Rename label": [
         "Preimenuj oznako"
+      ],
+      "Rename this folder": [
+        "Preimenuj to mapo"
       ],
       "Rename this label": [
         "Preimenuj to oznako"
@@ -8510,6 +8558,12 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Nastavite ${ MAIL_APP_NAME } kot privzeto aplikacijo za e-pošto. ${ MAIL_APP_NAME } se bo samodejno odprl, ko boste kliknili povezavo e-pošte."
       ],
+      "Set auto-reply": [
+        "Nastavi samodejni odgovor"
+      ],
+      "Set signature": [
+        "Nastavi podpis"
+      ],
       "Set up your organization": [
         "Nastavite svojo organizacijo"
       ],
@@ -8566,9 +8620,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50 % popust"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Zmogljivosti shrambe niso podprte v tem brskalniku. Potrebujemo to podporo, da omogočimo iskanje po vsebini sporočil."
@@ -9098,6 +9149,9 @@
       "Week": [
         "Teden"
       ],
+      "What can you do?": [
+        "Kaj lahko storite?"
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Kdaj naj se sporočilo samodejno izbriše iz prejemnikovega e-poštnega predala in iz vaše mape Poslano?"
       ],
@@ -9578,6 +9632,9 @@
       "Cancel / close": [
         "Prekliči/Zapri"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Zapri ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Zapri osnutek"
       ],
@@ -9934,6 +9991,9 @@
       "CC": [
         "KP"
       ],
+      "Cc": [
+        "Kp"
+      ],
       "Choose what to do instead": [
         "Izberite, kaj storiti namesto tega"
       ],
@@ -9957,6 +10017,9 @@
       ],
       "Colors": [
         "Barve"
+      ],
+      "Column": [
+        "Stolpec"
       ],
       "Command line interface (CLI)": [
         "Ukazna vrstica (CLI)"
@@ -10093,6 +10156,9 @@
       "Enable filter": [
         "Omogoči filter"
       ],
+      "Encrypt": [
+        "Šifriraj"
+      ],
       "Encrypt emails": [
         "Šifriraj sporočila"
       ],
@@ -10216,6 +10282,9 @@
       "Label messages as": [
         "Dodaj sporočilom oznako"
       ],
+      "Label name": [
+        "Ime oznake"
+      ],
       "Last 12 months only": [
         "Samo zadnjih 12 mesecev"
       ],
@@ -10312,6 +10381,12 @@
       "No label found": [
         "Ni najdenih oznak"
       ],
+      "No unread conversations": [
+        "Ni neprebranih pogovorov"
+      ],
+      "No unread messages": [
+        "Ni neprebranih sporočil"
+      ],
       "Non-promotional content and news": [
         "Nereklamirana vsebina in novice"
       ],
@@ -10391,7 +10466,7 @@
         "Glavni"
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
-        "Primarno – vse, kar zahteva vašo pozornost, in e-pošta iz onemogočenih kategorij"
+        "Glavno – vse, kar zahteva vašo pozornost, in e-pošta iz onemogočenih kategorij"
       ],
       "Promotions": [
         "Reklame"
@@ -12887,6 +12962,9 @@
       ],
       "No parent folder": [
         "Ni nadrejene mape"
+      ],
+      "Remind me later": [
+        "Opomni me pozneje"
       ]
     },
     "Option group": {
@@ -13568,6 +13646,11 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "500 GB of secure storage": [
+        "500 GB varne shrambe"
       ]
     },
     "Received email icon": {
@@ -16433,6 +16516,9 @@
       "Sending original message": [
         "Pošiljanje izvirnega sporočila"
       ],
+      "September Sale": [
+        "Septembrska razprodaja"
+      ],
       "Set recovery methods": [
         "Nastavite načine obnovitve"
       ],
@@ -16486,9 +16572,6 @@
       ],
       "Start import process": [
         "Začni uvažati"
-      ],
-      "Stay for 50% off your next month": [
-        "V naslednjem mesecu izkoristite 50 % popust"
       ],
       "Storage capacity warning": [
         "Opozorilo o zmogljivosti shranjevanja"

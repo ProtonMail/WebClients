@@ -3030,9 +3030,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "将以 ${ renewPrice } 的价格自动续订，续订时长为 ${ renewCycle } 个月"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "将以 ${ subscriptionManagerName } 的价格自动续期"
       ]
@@ -3460,9 +3457,6 @@
       ],
       "Discover and set up features": [
         "发现并设置功能"
-      ],
-      "Get 50% offer": [
-        "享受 50% 折扣"
       ],
       "Got it": [
         "好的"
@@ -10455,9 +10449,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "在最多10个设备上访问6,500多个高速服务器以保持您浏览数据的安全。 可在 ${ ios }、 ${ android }、 ${ appleTV }和 ${ desktop } 上获得。"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "访问遍布 145 多个国家/地区的 20,000+ 台服务器"
-      ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "跨设备无缝访问您的密码并保护您的在线身份。下载并安装相关的 ${ PASS_APP_NAME } 应用和扩展程序。"
       ],
@@ -10983,9 +10974,6 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "在 ${ MAIL_APP_NAME } 中关联和管理您的外部邮箱。"
       ],
-      "Connecting to Google Drive to setup your secure import to ${ DRIVE_APP_NAME }.": [
-        "正在关联 Google Drive，以设置到 ${ DRIVE_APP_NAME } 的安全导入。"
-      ],
       "Connection data will be available in around 1 hour.": [
         "连接数据将在 1 小时左右可用。"
       ],
@@ -11337,9 +11325,6 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
       ],
-      "Email you once import is finished": [
-        "导入完成后通过邮件通知您"
-      ],
       "Emailing preference saved": [
         "邮件设置已保存"
       ],
@@ -11526,9 +11511,6 @@
       "Fast and focused. Email and calendar, right on your desktop.": [
         "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "最快达 10 Gbps 的 VPN 速度"
-      ],
       "Featured in": [
         "推荐"
       ],
@@ -11579,9 +11561,6 @@
       ],
       "For just ${ bundlePlanPriceInline }": [
         "仅需 ${ bundlePlanPriceInline }"
-      ],
-      "For the import to work, you must select all requested items as shown in the GIF above.": [
-        "为顺利完成导入，您需要如上图所示勾选所有权限。"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果您正在将另一款邮箱服务更换为 ${ MAIL_APP_NAME }，更改 MX 记录前请先在${ boldAddresses }设置中添加所有已在使用的邮箱地址，确保邮件投递路径能够无缝切换。"
@@ -11688,9 +11667,6 @@
       "Groups": [
         "群组"
       ],
-      "Have some more time to decide without interruption.": [
-        "不受打扰地多些时间做决定"
-      ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "帮助其他家庭为他们的孩子提供一个安全的在线起点。分享这一里程碑并广为传播。"
       ],
@@ -11762,9 +11738,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如有异议，请点击${ contactLink }联系我们。"
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "如果现在取消，您将在 ${ expiryDate } 失去对 ${ BRAND_NAME } ${ planTitle } 的访问权限，包括以下功能："
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
@@ -12228,9 +12201,6 @@
       "Next billing date": [
         "下一个账单日期"
       ],
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "接下来，您需要登录您的 Google 账户，并授予 ${ BRAND_NAME } 访问您数据的权限。"
-      ],
       "No account keys exist": [
         "账户密钥不存在"
       ],
@@ -12549,9 +12519,6 @@
       "Preference saved": [
         "设置已保存"
       ],
-      "Premium privacy protection across all your devices": [
-        "所有设备上的高级隐私保护"
-      ],
       "Preview": [
         "预览"
       ],
@@ -12606,9 +12573,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "如需任何帮助，请联系我们 ${ BRAND_NAME }"
       ],
-      "Read once and encrypted on arrival": [
-        "读取一次，到达时即加密"
-      ],
       "Receive notifications for ${ categoryLabel }": [
         "接收关于 ${ categoryLabel } 的通知"
       ],
@@ -12620,9 +12584,6 @@
       ],
       "RECOMMENDED": [
         "推荐"
-      ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "建议仅在可信设备上勾选。${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "启用 ${ PROTON_SENTINEL_NAME } 时，无法使用通过密保邮箱恢复选项。"
@@ -12867,9 +12828,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
-      "Sit back and we will let you know.": [
-        "请您稍等，我们会通知您。"
-      ],
       "Smart Routed through a different country.": [
         "通过其他国家/地区进行智能路由。"
       ],
@@ -12914,9 +12872,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "开始使用更简短且更朗朗上口的邮箱地址。"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "保留当前套餐，下月享受 5 折优惠"
       ],
       "Step ${ step }": [
         "步骤 ${ step }"
@@ -13230,9 +13185,6 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "完成此操作后您就可以在 ${ BRAND_NAME } 中使用 PayPal 支付了。我们将在新标签页中为您打开 PayPal，如果您使用了弹窗屏蔽插件，请关闭后再继续。"
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "这将让您快速安全地访问您的 ${ BRAND_NAME } 账户，以便更改密码。"
-      ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "此操作将永久删除这些用户的相关数据和所有的邮箱地址。"
       ],
@@ -13542,9 +13494,6 @@
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
         "使用您的 MDM 删除该文件，或通过您的 MDM 脚本执行功能运行 ${ removeScriptLink }。任何支持部署文件或执行脚本的 MDM 均可使用。"
       ],
-      "Used only to copy them into ${ DRIVE_APP_NAME }.": [
-        "仅用于将其复制到 ${ DRIVE_APP_NAME }。"
-      ],
       "User activated": [
         "用户已激活"
       ],
@@ -13665,9 +13614,6 @@
       "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
         "我们检测到您已在**其他浏览器**中登录了 ${ BRAND_NAME } 网页应用，您可以通过当前活动会话重置密码！"
       ],
-      "We do not support importing photos, Google Docs, Sheets and Slides. Please make sure that your Google Drive is not empty.": [
-        "我们不支持导入照片、Google 文档、表格和幻灯片。请确保您的 Google Drive 不为空。"
-      ],
       "We generated a strong password for you": [
         "我们为您生成了一个强密码"
       ],
@@ -13698,14 +13644,8 @@
       "We strongly recommend that everyone enable recovery by recovery phrase.": [
         "我们强烈建议所有人启用通过恢复短语恢复。"
       ],
-      "We support most files": [
-        "我们支持大多数文件"
-      ],
       "We use 3-D Secure to protect your payments": [
         "我们使用 3-D Secure 来保护您的付款"
-      ],
-      "We will email you when the import is done. Once finished you'll find your import in a folder.": [
-        "导入完成后我们会通过邮件通知您。完成后，您会在某个文件夹中找到导入的内容。"
       ],
       "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "我们将在新的浏览器标签页中重定向至 ${ IDEAL_WERO_BRAND_NAME } 以完成此交易。如果您使用了任何弹窗拦截器，请将其禁用后继续。"
@@ -13832,9 +13772,6 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "若不激活，您将无法添加用户、地址或登录非私密的成员账户。"
-      ],
-      "Won’t import photos, Google Docs and Sheets": [
-        "不会导入照片、Google 文档和表格"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
@@ -20569,9 +20506,6 @@
       "Card number": [
         "卡号"
       ],
-      "Credits and discounts are reflected in your invoice": [
-        "积分和折扣将体现在您的发票中"
-      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "当前自动续订已禁用。如果您现在更改订阅，则自动续订将被重新开启。"
       ],
@@ -24936,9 +24870,6 @@
       ],
       "View VPN session details for your organization.": [
         "查看您组织的 VPN 会话详情。"
-      ],
-      "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
-        "我们会读取一次您的文件以进行复制，然后使用您的 ${ BRAND_NAME } 密钥逐一加密。"
       ]
     },
     "Success": {
@@ -25965,9 +25896,6 @@
       ],
       "Connect your custom domain": [
         "连接您的自定义域名"
-      ],
-      "Connect your Google account": [
-        "关联您的 Google 账户"
       ],
       "Connected emails": [
         "已关联的邮箱"
@@ -27181,9 +27109,6 @@
       "Set your password": [
         "设置您的密码"
       ],
-      "Setting up your import": [
-        "正在设置您的导入"
-      ],
       "Settings": [
         "设置"
       ],
@@ -27210,9 +27135,6 @@
       ],
       "Sign in on TV?": [
         "在电视上登录？"
-      ],
-      "Sign in to Google": [
-        "登录 Google"
       ],
       "Sign in to join the Beta program": [
         "登录以加入 Beta 计划"
@@ -27291,9 +27213,6 @@
       ],
       "Status": [
         "状态"
-      ],
-      "Stay for 50% off your next month": [
-        "下月继续享受 5 折优惠"
       ],
       "Stay secure and connected anywhere": [
         "随时随地保持安全和连接"
@@ -27600,9 +27519,6 @@
       ],
       "Your exposed information": [
         "您的泄露信息"
-      ],
-      "Your import is starting": [
-        "正在启动导入"
       ],
       "Your plan": [
         "您的账户等级"

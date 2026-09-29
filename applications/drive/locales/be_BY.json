@@ -243,9 +243,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Пацвердзіць адкрыццё спасылкі ${ linkToShow }"
       ],
-      "Connect": [
-        "Падключыць"
-      ],
       "Connect apps and devices": [
         "Падключыць праграмы і прылады"
       ],
@@ -561,6 +558,9 @@
       "Go to settings": [
         "Перайсці ў налады"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -689,6 +689,9 @@
       ],
       "Maximize transfers": [
         "Разгарнуць перадачы"
+      ],
+      "Maybe later": [
+        "Магчыма, пазней"
       ],
       "Merge": [
         "Аб'яднаць"
@@ -1836,9 +1839,6 @@
       ],
       "Discover and set up features": [
         "Пазнаёміцца і наладзіць функцыі"
-      ],
-      "Get 50% offer": [
-        "Скарыстайцеся скідкай у памеры 50%"
       ],
       "Maybe later": [
         "Магчыма, пазней"
@@ -3700,7 +3700,7 @@
         "Не ўдалося атрымаць вузел"
       ],
       "Failed to fetch sharing info": [
-        "Не ўдалося атрымаць зветкі абагульвання"
+        "Не ўдалося атрымаць звесткі абагульвання"
       ],
       "Failed to get details, please try again later": [
         "Не ўдалося атрымаць падрабязнасці. Паўтарыце спробу пазней"
@@ -3759,8 +3759,14 @@
       "IMAP server is required": [
         "Патрабуецца сервер IMAP"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Няправільны рэзервовы пароль. Паўтарыце спробу."
+      ],
       "Incorrect password. Please try again.": [
         "Няправільны пароль. Паўтарыце спробу."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Няправільны другі пароль. Паўтарыце спробу."
       ],
       "Invalid code": [
         "Памылковы код"
@@ -5624,9 +5630,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "VPN - гэта бяспечны тунэль паміж вашай прыладай і інтэрнэтам. Ён хавае ваша месцазнаходжанне і актыўнасць ад вашага пастаўшчыка паслуг інтэрнэту (ISP) і вэб-сайтаў, якія вы наведваеце."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Доступ да больш чым 20 000 сервераў у больш чым 145 краінах"
-      ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
@@ -6083,9 +6086,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Экспартаваць дыягнастычныя журналы для тэхнічнай падтрымкі і выпраўлення непаладак"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
-      ],
       "Feb": [
         "Лют"
       ],
@@ -6152,9 +6152,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
-      "Have some more time to decide without interruption.": [
-        "У вас яшчэ ёсць час прыняць рашэнне без прыпынення працы сэрвісу."
-      ],
       "here": [
         "тут"
       ],
@@ -6175,9 +6172,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Вы страціце доступ да ${ BRAND_NAME } з тарыфным планам ${ planTitle } (дзейнічае да ${ expiryDate }), які ўключае наступныя функцыі:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
@@ -6331,6 +6325,9 @@
       ],
       "Key fingerprint": [
         "Адбітак ключа"
+      ],
+      "Know when it's done": [
+        "Даведацца, калі будзе гатова"
       ],
       "Label all imported messages as": [
         "Пазначыць усе імпартаваныя паведамленні як"
@@ -6548,6 +6545,9 @@
       "or discover other features:": [
         "або пазнаёмцеся з іншымі функцыямі:"
       ],
+      "Or import your files from": [
+        "Або імпартуйце свае файлы з"
+      ],
       "Or use the \"+ New\" button": [
         "Або скарыстайцеся кнопкай \"+ Новы\""
       ],
@@ -6668,9 +6668,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль адбываецца пошук кантактаў, якія змяшчаюць зашыфраваныя даныя з дапамогай неактыўнага ключа."
       ],
-      "Premium privacy protection across all your devices": [
-        "Прэміяльная абарона прыватнасці паміж усімі вашымі прыладамі"
-      ],
       "Preparing": [
         "Падрыхтоўка"
       ],
@@ -6703,6 +6700,9 @@
       ],
       "Primary": [
         "Асноўны"
+      ],
+      "Private and encrypted": [
+        "Прыватны і зашыфраваны"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Прыватны прагляд вэб-старонак (або рэжым \"інкогніта\") карысны толькі для хавання актыўнасці на вашай прыладзе. Браўзер не будзе захоўваць гісторыю і файлы cookie, але гэта не робіць вас нябачным. Ваш пастаўшчык паслуг інтэрнэту, сеткавы адміністратар і вэб-сайты ўсё яшчэ могуць бачыць, што вы робіце ў інтэрнэце."
@@ -6907,9 +6907,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Застаньцеся на сваім тарыфным плане і атрымайце скідку ў памеры 50% у наступным месяцы"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
@@ -7283,9 +7280,6 @@
       "We need to authenticate your payment with your bank.": [
         "Неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
-      "We support most files": [
-        "Сістэма распазнае большасць файлаў"
-      ],
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
@@ -7301,8 +7295,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Яны будуць скапіяваны з Google Drive у ${ DRIVE_APP_NAME }"
+      ],
       "We'll email you once import is complete.": [
         "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
+      ],
+      "We'll email you when your import is complete.": [
+        "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана. Вашы файлы з'явяцца ў папцы ў ${ DRIVE_APP_NAME }"
       ],
       "We'll notify you when the import is done.": [
         "Вы атрымаеце апавяшчэнне, калі імпартаванне будзе завершана."
@@ -7447,6 +7450,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "У вас ёсць падпіска ${ planTitle } з пробным перыядам. У дадзены момант аплата не патрабуецца. Ваша падпіска будзе аўтаматычна падоўжана ў канцы пробнага перыяду."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ dueDate } ${ payInvoiceLink }"
       ],
       "You may be redirected to your bank’s website.": [
         "Вы будзеце перанакіраваны на вэб-сайт вашага банка."
@@ -8559,6 +8568,9 @@
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
+      ],
+      "Pay it": [
+        "Заплаціць"
       ],
       "Photos": [
         "Фатаграфіі"
@@ -10497,6 +10509,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Апошні шанс атрымаць першы месяц тарыфнага плана ${ plan } па гэтай цане."
+      ],
       "Last day to save": [
         "Апошні дзень, калі можна сэканоміць"
       ],
@@ -10764,6 +10779,18 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " наведайце наш ${ helpCenterLink } або ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Дадайце спосаб аплаты**, каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
       "Add a payment method": [
         "Дадаць спосаб аплаты"
       ],
@@ -10782,11 +10809,17 @@
       "help center": [
         "даведачны цэнтр"
       ],
+      "If you continue after your trial,": [
+        "Калі вы працягніце пасля пробнага перыяду,"
+      ],
       "If you need help,": [
         "Калі вам патрэбна дапамога,"
       ],
       "Once your full subscription starts...": [
         "Як толькі пачнецца ваша поўная падпіска..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
@@ -13620,6 +13653,9 @@
       "Import groups": [
         "Імпарт груп"
       ],
+      "Import started": [
+        "Пачаты імпарт"
+      ],
       "Import your data to ${ BRAND_NAME }": [
         "Імпартуйце свае даныя ў ${ BRAND_NAME }"
       ],
@@ -13797,6 +13833,9 @@
       "Photos": [
         "Фатаграфіі"
       ],
+      "Preparing your import": [
+        "Падрыхтоўка вашага імпарту"
+      ],
       "Preview": [
         "Папярэдні прагляд"
       ],
@@ -13920,9 +13959,6 @@
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
       ],
-      "Setting up your import": [
-        "Наладжванне вашага імпарту"
-      ],
       "Settings": [
         "Налады"
       ],
@@ -13953,9 +13989,6 @@
       "Sign in and grant access": [
         "Увайсці і даць доступ"
       ],
-      "Sign in to Google": [
-        "Увайсці ў Google"
-      ],
       "Sign out": [
         "Выйсці"
       ],
@@ -13982,9 +14015,6 @@
       ],
       "Start import process": [
         "Пачаць працэс імпартавання"
-      ],
-      "Stay for 50% off your next month": [
-        "У наступным месяцы скарыстайцеся скідкай у памеры 50%"
       ],
       "Stop sharing": [
         "Спыніць абагульванне"
@@ -14103,6 +14133,9 @@
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
       ],
+      "We could not find anything to import": [
+        "Элементы для імпартавання адсутнічаюць"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Немагчыма спраўдзіць, што ${ author } стварыў гэты файл."
       ],
@@ -14144,6 +14177,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Вітаем у ${ DRIVE_APP_NAME }"
       ],
       "What are you migrating?": [
         "Што вы плануеце перанесці?"
@@ -14189,9 +14225,6 @@
       ],
       "Your import is finished!": [
         "Ваш імпарт завершаны!"
-      ],
-      "Your import is starting": [
-        "Пачалося імпартаванне"
       ],
       "Your plan": [
         "Ваш тарыфны план"

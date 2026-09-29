@@ -380,7 +380,7 @@
         "Biometrie"
       ],
       "Boxed": [
-        "Eingerahmt"
+        "Mit Rahmen"
       ],
       "Dark": [
         "Dunkel"
@@ -428,7 +428,7 @@
         "Passwort"
       ],
       "Plain": [
-        "Einfach"
+        "Ohne Rahmen"
       ],
       "Secret": [
         "Geheimnis"
@@ -555,6 +555,12 @@
       "Authentication error": [
         "Authentifizierungsfehler"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
+      ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
@@ -636,7 +642,7 @@
         "Passwort ausblenden"
       ],
       "Next": [
-        "Weiter"
+        "Nächster"
       ],
       "No entries matching your search": [
         "Keine Einträge entsprechen deiner Suche."

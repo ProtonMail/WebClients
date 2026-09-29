@@ -898,8 +898,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псеўданімы электроннай пошты працуюць аналагічна адрасам электроннай пошты, але змяншаюць колькасць спама і захоўваюць ваш фактычны адрас электроннай пошты і ідэнтычнасць схаванымі."
       ],
+      "Change these passwords immediately": [
+        "Неадкладна змяніце гэтыя паролі"
+      ],
       "Change your passwords": [
         "Змяненне вашага пароля"
+      ],
+      "Check if your passwords have been exposed": [
+        "Праверце, ці быў скампраментаваны ваш пароль"
       ],
       "Create unique passwords": [
         "Стварэнне ўнікальнага пароля"
@@ -1289,6 +1295,9 @@
       "File does not match expected format": [
         "Файл не адпавядае фармату, які чакаўся"
       ],
+      "Folder name does not match": [
+        "Назва папкі не супадае"
+      ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Збой імпартавання для сховішча \"${ vaultData.name }\": ${ errorMessage }"
       ],
@@ -1300,6 +1309,12 @@
       ],
       "Inactive secure links could not be removed.": [
         "Не ўдалося выдаліць неактыўныя бяспечныя спасылкі."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Няправільны рэзервовы пароль. Паўтарыце спробу."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Няправільны другі пароль. Паўтарыце спробу."
       ],
       "Invalid password manager": [
         "Памылковы менеджар пароляў"
@@ -1423,6 +1438,9 @@
       ],
       "This domain is already managed by your organization": [
         "Гэты дамен ужо кіруецца вашай арганізацыяй"
+      ],
+      "This invite is no longer available": [
+        "Гэта запрашэнне больш недаступна"
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Прычынай можа быць тое, што вы доўгі час не карысталіся ${ PASS_SHORT_APP_NAME } або ачысцілі гісторыю Safari."
@@ -2123,8 +2141,14 @@
       "finance": [
         "фінансы"
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Папка \"${ payload.folder.name }\" створана"
+      ],
       "Folder deleted": [
         "Папка выдалена"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Папка перайменавана на \"${ payload.folder.name }\""
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
@@ -3260,6 +3284,9 @@
       ],
       "Account Type": [
         "Тып рахунка"
+      ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Дадайце выпадковы прэфікс для дамена пры стварэнні новага псеўданіма."
@@ -4690,6 +4717,9 @@
       "This URL will NOT be blocked from autofill": [
         "Гэты URL-адрас НЕ будзе заблакіраваны для аўтазапаўнення"
       ],
+      "URL doesn't match the rule": [
+        "URL-адрас не адпавядае правілу"
+      ],
       "URL matches the rule": [
         "URL-адрас адправядае правілу"
       ]
@@ -4974,6 +5004,9 @@
       "Create contact": [
         "Стварэнне кантакту"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Стварыць папку ў \"${ vaultName }\""
+      ],
       "Create new access token": [
         "Стварыць новы токен доступу"
       ],
@@ -5015,6 +5048,9 @@
       ],
       "Delete domain": [
         "Выдаліць дамен"
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Выдаліць папку “${ name }\"?"
       ],
       "Delete mailbox": [
         "Выдаліць паштовую скрыню"
@@ -5172,6 +5208,12 @@
       "Modified": [
         "Зменена"
       ],
+      "Move ${ count } item to ${ target }": [
+        "Перамясціць ${ count } элемент у ${ target }",
+        "Перамясціць ${ count } элементы ў ${ target }",
+        "Перамясціць ${ count } элементаў у ${ target }",
+        "Перамясціць ${ count } элементаў у ${ target }"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Перамясціць ${ trashedItemsCount } элемент у сметніцу?",
         "Перамясціць ${ trashedItemsCount } элементы ў сметніцу?",
@@ -5183,6 +5225,9 @@
       ],
       "Move all items?": [
         "Перамясціць усе элементы?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Перамясціць элемент у \"${ target }\""
       ],
       "MX record": [
         "Запіс MX"
@@ -5381,6 +5426,9 @@
       ],
       "Update available": [
         "Даступна абнаўленне"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Палепшыце, каб праверыць скампраметаваныя паролі"
       ],
       "URL matching": [
         "Супадзенне URL-адраса"
@@ -5780,6 +5828,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "У вас больш не будзе доступу да гэтага сховішча. Каб паўторна далучыцца да яго, вам неабходна будзе атрымаць новае запрашэнне."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Дасягнуты максімальны ўзровень укладзеных папак"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Ваш адміністратар павінен стварыць для вас сховішча, перш чым вы зможаце ствараць элементы"

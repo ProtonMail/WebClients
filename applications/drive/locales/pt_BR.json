@@ -234,9 +234,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar a abertura do link ${ linkToShow }"
       ],
-      "Connect": [
-        "Conectar"
-      ],
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
       ],
@@ -602,6 +599,9 @@
       "Import from Outlook": [
         "Importar do Outlook"
       ],
+      "Importing from Google": [
+        "Importando do Google"
+      ],
       "Increase": [
         "Aumentar"
       ],
@@ -676,6 +676,9 @@
       ],
       "Maximize transfers": [
         "Maximizar transferências"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
       ],
       "Merge": [
         "Mesclar"
@@ -959,6 +962,9 @@
       "Search is unavailable": [
         "Pesquisa indisponível"
       ],
+      "Search recent items": [
+        "Pesquisar itens recentes"
+      ],
       "See how": [
         "Veja como"
       ],
@@ -1060,6 +1066,9 @@
       ],
       "Show side panel": [
         "Mostrar o painel lateral"
+      ],
+      "Sign in with Google": [
+        "Iniciar sessão com Google"
       ],
       "Sign out": [
         "Encerrar sessão"
@@ -1781,9 +1790,6 @@
       ],
       "Discover and set up features": [
         "Descubra e configure os recursos"
-      ],
-      "Get 50% offer": [
-        "Aproveite a oferta de 50% de desconto"
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -3663,8 +3669,14 @@
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Senha de backup incorreta. Tente novamente."
+      ],
       "Incorrect password. Please try again.": [
         "A senha não é válida. Tente novamente."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Segunda senha incorreta. Tente novamente."
       ],
       "Invalid code": [
         "O código não é válido."
@@ -4618,6 +4630,9 @@
       ],
       "Still waiting?": [
         "Ainda esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque na sua chave de segurança para continuar"
       ]
     },
     "fido2: Label": {
@@ -5386,9 +5401,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Uma VPN é um túnel seguro entre seu dispositivo e a internet. Ela oculta sua localização e atividade do seu provedor de serviços de internet (ISP) e dos sites que você visita."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Acesse 20.000+ servidores em 145 países"
-      ],
       "Account successfully updated": [
         "Conta atualizada"
       ],
@@ -5829,9 +5841,6 @@
       "Export diagnostic logs for technical support and troubleshooting": [
         "Exportar os registros de diagnóstico para suporte técnico e solução de problemas"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Velocidades de VPN mais rápidas, até 10 Gbps"
-      ],
       "Feb": [
         "Fev."
       ],
@@ -5898,9 +5907,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Governos e provedores de internet (ISPs) podem monitorar sua atividade on-line. Ao ocultar seu IP real e criptografar sua atividade, sua navegação se torna privada."
       ],
-      "Have some more time to decide without interruption.": [
-        "Ganhe mais tempo para decidir sem interrupções."
-      ],
       "here": [
         "aqui"
       ],
@@ -5918,9 +5924,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Se cancelar agora, perderá o acesso a ${ BRAND_NAME } ${ planTitle } em ${ expiryDate }, incluindo estes recursos:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se você cancelar sua assinatura do ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
@@ -5961,6 +5964,9 @@
       ],
       "Import mailbox": [
         "Importar Caixa de Entrada"
+      ],
+      "Import your files and folders": [
+        "Importe seus arquivos e pastas"
       ],
       "Important note": [
         "Nota importante"
@@ -6209,6 +6215,9 @@
       "No payment is required at this time.": [
         "Neste momento, não é necessário pagamento."
       ],
+      "No populator states found.": [
+        "Não foram encontrados estados de indexagem."
+      ],
       "No results found": [
         "Nenhum resultado encontrado"
       ],
@@ -6388,9 +6397,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
       ],
-      "Premium privacy protection across all your devices": [
-        "Proteção de privacidade premium em todos os seus dispositivos"
-      ],
       "Preparing": [
         "Preparando"
       ],
@@ -6501,6 +6507,9 @@
       ],
       "Search cannot be enabled in this browser": [
         "A pesquisa não pode ser ativada nesse navegador"
+      ],
+      "Search covers your recent items": [
+        "A pesquisa inclui seus itens recentes"
       ],
       "Search data is corrupted": [
         "Os dados de pesquisa estão corrompidos"
@@ -6621,9 +6630,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantenha-se conectado de forma simples ativando as seguintes configurações de VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Mantenha o seu plano e obtenha 50% de desconto no próximo mês"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
@@ -7433,7 +7439,7 @@
         "Aplicativos em um ambiente de empresa"
       ],
       "Apply to all duplicated files": [
-        "Aplicar a todas as pastas duplicadas"
+        "Aplicar a todos os arquivos duplicados"
       ],
       "Apply to all duplicated folders": [
         "Aplicar a todas as pastas duplicadas"
@@ -10303,11 +10309,17 @@
       "help center": [
         "centro de ajuda"
       ],
+      "If you continue after your trial,": [
+        "Se você continuar depois da sua avaliação,"
+      ],
       "If you need help,": [
         "Se precisar de ajuda,"
       ],
       "Once your full subscription starts...": [
         "Quando sua assinatura completa começar..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "você pode cancelar em até 30 dias e receber um reembolso proporcional."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
@@ -13201,6 +13213,9 @@
       "Photos": [
         "Fotos"
       ],
+      "Preparing your import": [
+        "Preparando sua importação"
+      ],
       "Preview": [
         "Pré-visualização"
       ],
@@ -13352,9 +13367,6 @@
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
       ],
-      "Sign in to Google": [
-        "Iniciar sessão no Google"
-      ],
       "Sign out": [
         "Encerrar sessão"
       ],
@@ -13381,9 +13393,6 @@
       ],
       "Start import process": [
         "Iniciar processo de importação"
-      ],
-      "Stay for 50% off your next month": [
-        "Fique por mais um mês com 50% de desconto"
       ],
       "Stop sharing": [
         "Parar compartilhamento"
@@ -13544,6 +13553,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Boas-vindas ao ${ DRIVE_APP_NAME }"
+      ],
       "What are you migrating?": [
         "O que você está migrando?"
       ],
@@ -13585,12 +13597,6 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
-      ],
-      "Your import is in progress": [
-        "Sua importação está em progresso"
-      ],
-      "Your import is starting": [
-        "Sua importação está começando"
       ],
       "Your plan": [
         "O seu plano"
@@ -13720,6 +13726,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de assinatura começa em ${ formattedTime }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Este link expirou. Estenda a data de validade"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que sejam decifradas, as senhas criptografadas permanecem seguras mesmo se forem expostas."

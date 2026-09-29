@@ -1177,7 +1177,7 @@
         "Error al editar el acceso del usuario."
       ],
       "Failed to load access tokens": [
-        "No se pudieron cargar las instrucciones de configuración del agente. Copia el token que verás a continuación, no se mostrará de nuevo."
+        "No se pudieron cargar los tokens de acceso"
       ],
       "Failed to load breaches for this address": [
         "Error al cargar vulneraciones para esta dirección"
@@ -1289,6 +1289,12 @@
       ],
       "Inactive secure links could not be removed.": [
         "No se han podido eliminar los enlaces seguros inactivos."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "La contraseña de respaldo no es correcta. Inténtalo de nuevo."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segunda contraseña no es correcta. Inténtalo de nuevo."
       ],
       "Invalid password manager": [
         "Contraseña del gestor no válida"
@@ -3932,7 +3938,7 @@
         "Servidor"
       ],
       "Settings": [
-        "Configuración"
+        "Ajustes"
       ],
       "Share": [
         "Compartir"
@@ -5160,7 +5166,7 @@
         "Configura 2FA para más seguridad"
       ],
       "Settings": [
-        "Configuración"
+        "Ajustes"
       ],
       "Setup ${ PASS_APP_NAME } SSH Agent": [
         "Configuración del Agente SSH de ${ PASS_APP_NAME }"

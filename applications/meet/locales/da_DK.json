@@ -767,6 +767,9 @@
       "View invoice": [
         "Vis faktura"
       ],
+      "View security details": [
+        "Vis sikkerhedsoplysninger"
+      ],
       "Virtual backgrounds": [
         "Virtuelle baggrunde"
       ],
@@ -2168,6 +2171,12 @@
       "Image preview not found": [
         "Forhåndsvisning ikke fundet"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Forkert backupadgangskode. Prøv igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Forkert anden adgangskode. Prøv igen."
+      ],
       "Invalid meeting link": [
         "Ugyldigt mødelink"
       ],
@@ -2636,6 +2645,14 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } kræver WebRTC for at køre. Opdatér din browser eller enhed til en version, der understøtter WebRTC, prøv en anden browser, eller deaktivér eventuelle udvidelser, der måtte blokere det."
+      ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } medlem",
+        "${ mlsMemberCount } medlemmer"
+      ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "${ participantCount } deltager er forbundet, mens den sikre gruppe har ${ mlsMemberCountText }. Dette kan ske kortvarigt efter nogen tilslutter sig eller forlader mødet.",
+        "${ participantCount } deltagere er forbundet, mens den sikre gruppe har ${ mlsMemberCountText }. Dette kan ske kortvarigt efter nogen tilslutter sig eller forlader mødet."
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } og ${ otherParticipantsCount } andre optager"
@@ -3126,11 +3143,17 @@
       "Participant": [
         "Deltager"
       ],
+      "Participant counts don’t match": [
+        "Antallet af deltagere matcher ikke"
+      ],
       "Participants can turn live captions on. Turn on your own under Display.": [
         "Deltagere kan slå live undertekster til. Slå dine egne til under Visning."
       ],
       "Participants can’t use live captions": [
         "Deltagere kan ikke have live undertekster"
+      ],
+      "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
+        "Deltagere viser hvem der er forbundet lige nu. MLS-medlemmer viser hvem der er inkluderet i mødets sikkerhedsgruppe. Disse tal kan variere kortvarigt, men forskellen har varet i længere tid end forventet."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Indsæt dit ${ MEET_APP_NAME }-link for at deltage i et sikkert møde"
@@ -4297,11 +4320,17 @@
       "Minicalendar": [
         "Minikalender"
       ],
+      "MLS members": [
+        "MLS-medlemmer"
+      ],
       "No one is waiting": [
         "Der er ingen der venter"
       ],
       "No results found": [
         "Ingen resultater fundet"
+      ],
+      "Participant counts don’t match": [
+        "Antallet af deltagere matcher ikke"
       ],
       "Participants": [
         "Deltagere"
@@ -4420,6 +4449,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Lynhurtig AI-assistance med en menneskelig ekspert, der sidder klar!"
+      ],
+      "People currently connected to the meeting": [
+        "Personer forbundet til mødet lige nu"
+      ],
+      "People included in meeting's MLS group": [
+        "Personer inkluderet i mødets MLS-gruppe"
       ],
       "Recurring meeting": [
         "Tilbagevendende møde"

@@ -442,8 +442,8 @@
     },
     "Addon": {
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
-        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuari)",
-        "Assistent d'escriptura ${ BRAND_NAME } (per a ${ quantity } usuaris)"
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe (per a ${ quantity } usuari)",
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe (per a ${ quantity } usuaris)"
       ],
       "${ domains } additional custom domain": [
         "${ domains } domini personalitzat addicional",
@@ -487,8 +487,8 @@
         "${ quantity } dominis personalitzats"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
-        "${ seats } llicència d'IA ${ LUMO_APP_NAME }",
-        "${ seats } llicències d'IA ${ LUMO_APP_NAME }"
+        "${ seats } llicència d'IA de ${ LUMO_APP_NAME }",
+        "${ seats } llicències d'IA de ${ LUMO_APP_NAME }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } llicència ${ LUMO_APP_NAME }",
@@ -1005,9 +1005,6 @@
       ],
       "Discover and set up features": [
         "Descobriu i configureu les característiques"
-      ],
-      "Get 50% offer": [
-        "Aconseguiu una oferta del 50%"
       ],
       "Remind me later": [
         "Recorda-m'ho més tard"
@@ -2373,6 +2370,12 @@
       "Failed to load subscription data. Please try again later.": [
         "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
       ],
+      "Incorrect backup password. Please try again.": [
+        "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segona contrasenya no és correcta. Torneu-ho a intentar."
+      ],
       "Input isn't a valid email or bitcoin address": [
         "L'entrada no és un correu electrònic o una adreça de Bitcoin vàlida."
       ],
@@ -2834,9 +2837,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Accediu a més de 20.000 servidors en 145 països"
-      ],
       "Account successfully updated": [
         "El compte s'ha actualitzat."
       ],
@@ -2979,9 +2979,6 @@
       "Expired": [
         "Caducat"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Velocitats de VPN més ràpides de fins a 10 Gbps"
-      ],
       "for ${ price }": [
         "per ${ price }"
       ],
@@ -2991,14 +2988,8 @@
       "Google Pay mark": [
         "Marca de Google Pay"
       ],
-      "Have some more time to decide without interruption.": [
-        "Tingueu més temps per decidir sense interrupcions."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Si ho cancel·leu ara, perdreu l'accés a ${ BRAND_NAME } ${ planTitle } el ${ expiryDate }, incloent-hi aquestes característiques:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
@@ -3093,9 +3084,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
       ],
-      "Premium privacy protection across all your devices": [
-        "Protecció de privacitat prèmium a tots els vostres dispositius"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El preu inclou tots els descomptes basats en cicles aplicables i els cupons no caducats desats al vostre compte."
       ],
@@ -3131,9 +3119,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Mantingueu el vostre pla i gaudiu d'un 50% de descompte el mes vinent."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
@@ -5901,9 +5886,6 @@
       "Simplify password management": [
         "Simplifiqueu la gestió de contrasenyes"
       ],
-      "Stay for 50% off your next month": [
-        "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
-      ],
       "Summary": [
         "Resum"
       ],
@@ -5965,7 +5947,7 @@
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
       "Instant AI assistance, human expert on hand!": [
-        "Assistència immediata de la IA, amb una persona experta a la vostra disposició!"
+        "Assistència d'IA instantània, amb una persona experta a la vostra disposició!"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nou cicle de subscripció comença el ${ formattedTime }"
