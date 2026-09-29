@@ -196,6 +196,8 @@ export const ToolMenuDropdown = ({
                                         {c('collider_2025: Action').t`Create artifact`}
                                         {showArtifactNewLabel ? <NewLabel /> : null}
                                     </span>
+                                    <span className="text-xs color-weak">{c('collider_2025: Info')
+                                        .t`For this chat`}</span>
                                 </div>
                             </div>
                             <Toggle

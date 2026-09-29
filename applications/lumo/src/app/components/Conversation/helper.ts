@@ -14,7 +14,7 @@ import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
 import { getContextLimitsForModelTier } from '../../llm/modelContextLimits';
 import { selectMessagesByConversationId } from '../../redux/selectors';
-import { clearPendingAgent } from '../../redux/slices/composerActions';
+import { clearPendingAgent, clearPendingArtifactCreation } from '../../redux/slices/composerActions';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
 import {
@@ -192,8 +192,6 @@ export type UiContext = {
     // composer (phase 2). See `resolveArtifactToolMode` for how this combines with the
     // persisted preference and existing-artifact state.
     canvasModeActive?: boolean;
-    /** Persisted user preference — allow artifact creation when no artifact exists yet. */
-    artifactCreationEnabled?: boolean;
 };
 
 // Whether/how the `create_artifact` client tool is made available on this turn:
@@ -270,6 +268,22 @@ function ensureConversation(c: ConversationContext, ui: UiContext, createdAt: st
         dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
         return { spaceId, conversationId };
     };
+}
+
+/**
+ * Whether the model may create new artifacts in this conversation.
+ *
+ * The conversation's own choice (set from the composer tool menu) wins, then the global
+ * setting, then on. A pending composer choice only applies before the conversation exists —
+ * once it does, the choice has already been stamped onto it (see `initializeNewSpaceAndConversation`).
+ */
+export function resolveArtifactCreationEnabled(state: LumoState, conversationId: ConversationId | undefined): boolean {
+    const globalDefault = state.lumoUserSettings?.automaticArtifactCreation ?? true;
+    const conversation = conversationId ? state.conversations[conversationId] : undefined;
+    if (conversation) {
+        return conversation.artifactCreation ?? globalDefault;
+    }
+    return state.composerActions?.pendingArtifactCreation ?? globalDefault;
 }
 
 /**
@@ -595,14 +609,12 @@ export function sendMessage({
                     ? formatMemories(state.lumoUserSettings?.memories)
                     : '';
 
-            const artifactCreationEnabled =
-                ui.artifactCreationEnabled ?? state.lumoUserSettings?.automaticArtifactCreation ?? true;
-
             const artifactToolMode = resolveArtifactToolMode(
                 ui.canvasModeActive,
                 updatedLinearChain,
                 s.isArtifactsViewFeatureEnabled,
-                artifactCreationEnabled
+                // Fresh state: `state` predates the conversation this send may have just created.
+                resolveArtifactCreationEnabled(getState(), conversationId)
             );
 
             const contextLimits = getContextLimitsForModelTier(ui.modelTier);
@@ -796,14 +808,11 @@ export function regenerateMessage({
 
             const agentInstructions = dispatch(resolveAgentInstructions(c.conversationId));
 
-            const artifactCreationEnabled =
-                ui.artifactCreationEnabled ?? state.lumoUserSettings?.automaticArtifactCreation ?? true;
-
             const artifactToolMode = resolveArtifactToolMode(
                 ui.canvasModeActive,
                 c.messageChain,
                 s.isArtifactsViewFeatureEnabled,
-                artifactCreationEnabled
+                resolveArtifactCreationEnabled(state, c.conversationId)
             );
 
             const contextLimits = getContextLimitsForModelTier(ui.modelTier);
@@ -1025,14 +1034,11 @@ export function retrySendMessage({
 
         const agentInstructions = c.conversationId ? dispatch(resolveAgentInstructions(c.conversationId)) : undefined;
 
-        const artifactCreationEnabled =
-            ui.artifactCreationEnabled ?? state.lumoUserSettings?.automaticArtifactCreation ?? true;
-
         const artifactToolMode = resolveArtifactToolMode(
             ui.canvasModeActive,
             updatedLinearChain,
             s.isArtifactsViewFeatureEnabled,
-            artifactCreationEnabled
+            resolveArtifactCreationEnabled(state, c.conversationId)
         );
 
         const contextLimits = getContextLimitsForModelTier(ui.modelTier);
@@ -1092,7 +1098,12 @@ export function retrySendMessage({
 }
 
 export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode: boolean = false) {
-    return (dispatch: LumoDispatch): { conversationId: ConversationId; spaceId: SpaceId } => {
+    return (
+        dispatch: LumoDispatch,
+        getState: () => LumoState
+    ): { conversationId: ConversationId; spaceId: SpaceId } => {
+        const pendingArtifactCreation = getState().composerActions?.pendingArtifactCreation ?? null;
+
         const spaceId = newSpaceId();
         dispatch(addSpace({ id: spaceId, createdAt, updatedAt: createdAt, spaceKey: generateSpaceKeyBase64() }));
         dispatch(pushSpaceRequest({ id: spaceId }));
@@ -1107,9 +1118,14 @@ export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode
                 updatedAt: createdAt,
                 status: ConversationStatus.GENERATING,
                 ...(isGhostMode && { ghost: true }),
+                // Part of the first push, so the server never holds a version without it.
+                ...(pendingArtifactCreation !== null && { artifactCreation: pendingArtifactCreation }),
             })
         );
         dispatch(pushConversationRequest({ id: conversationId }));
+        if (pendingArtifactCreation !== null) {
+            dispatch(clearPendingArtifactCreation());
+        }
 
         return { conversationId, spaceId };
     };
