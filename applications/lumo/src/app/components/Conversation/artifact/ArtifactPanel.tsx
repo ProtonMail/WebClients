@@ -15,6 +15,11 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { createThrottledProgressCallback, yieldToMainThreadPaint } from '../../../util/export/exportUiHelpers';
+import {
+    sendArtifactContentCopiedEvent,
+    sendArtifactDownloadedEvent,
+    sendArtifactWebpageViewToggledEvent,
+} from '../../../util/telemetry';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import DropdownMenu from '../../DropdownMenu';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
@@ -551,6 +556,10 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
 
     const handleCopy = () => {
         void navigator.clipboard.writeText(artifact.content).then(() => {
+            sendArtifactContentCopiedEvent({
+                artifactType: artifact.type,
+                layout,
+            });
             setCopySuccess(true);
             setTimeout(() => {
                 setCopySuccess(false);
@@ -573,6 +582,12 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         a.download = filename;
         a.click();
         URL.revokeObjectURL(url);
+        sendArtifactDownloadedEvent({
+            format: 'source',
+            artifactType: artifact.type,
+            layout,
+            result: 'success',
+        });
     };
 
     const handleDownloadTxt = () => {
@@ -585,6 +600,12 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         a.download = filename;
         a.click();
         URL.revokeObjectURL(url);
+        sendArtifactDownloadedEvent({
+            format: 'txt',
+            artifactType: artifact.type,
+            layout,
+            result: 'success',
+        });
     };
 
     const handleDownloadPdf = async () => {
@@ -595,23 +616,47 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                 onProgress: throttledExportProgress,
             });
             if (result === 'success') {
+                sendArtifactDownloadedEvent({
+                    format: 'pdf',
+                    artifactType: artifact.type,
+                    layout,
+                    result: 'success',
+                });
                 createNotification({
                     type: 'success',
                     text: c('collider_2025: Info').t`PDF downloaded.`,
                 });
             } else if (result === 'print_fallback') {
+                sendArtifactDownloadedEvent({
+                    format: 'pdf',
+                    artifactType: artifact.type,
+                    layout,
+                    result: 'print_fallback',
+                });
                 createNotification({
                     type: 'warning',
                     text: c('collider_2025: Info')
                         .t`PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.`,
                 });
             } else {
+                sendArtifactDownloadedEvent({
+                    format: 'pdf',
+                    artifactType: artifact.type,
+                    layout,
+                    result: 'error',
+                });
                 createNotification({
                     type: 'error',
                     text: c('collider_2025: Error').t`Could not export this artifact as PDF.`,
                 });
             }
         } catch {
+            sendArtifactDownloadedEvent({
+                format: 'pdf',
+                artifactType: artifact.type,
+                layout,
+                result: 'error',
+            });
             createNotification({
                 type: 'error',
                 text: c('collider_2025: Error').t`Could not export this artifact as PDF.`,
@@ -629,17 +674,35 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                 onProgress: throttledExportProgress,
             });
             if (result === 'success') {
+                sendArtifactDownloadedEvent({
+                    format: 'pptx',
+                    artifactType: artifact.type,
+                    layout,
+                    result: 'success',
+                });
                 createNotification({
                     type: 'success',
                     text: c('collider_2025: Info').t`PPTX downloaded.`,
                 });
             } else {
+                sendArtifactDownloadedEvent({
+                    format: 'pptx',
+                    artifactType: artifact.type,
+                    layout,
+                    result: 'error',
+                });
                 createNotification({
                     type: 'error',
                     text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
                 });
             }
         } catch {
+            sendArtifactDownloadedEvent({
+                format: 'pptx',
+                artifactType: artifact.type,
+                layout,
+                result: 'error',
+            });
             createNotification({
                 type: 'error',
                 text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
@@ -647,6 +710,14 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         } finally {
             setExportingDownloadKind(null);
         }
+    };
+
+    const handleWebpageViewModeChange = (mode: WebpageViewMode) => {
+        sendArtifactWebpageViewToggledEvent({
+            mode,
+            layout,
+        });
+        setWebpageViewMode(mode);
     };
 
     return (
@@ -691,9 +762,11 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                             goToVersion(selectedVersionIndex + 1);
                         }}
                         switcherEntries={switcherEntries}
-                        onSelectArtifact={openArtifact}
+                        onSelectArtifact={(id) => {
+                            openArtifact(id, undefined, 'switcher');
+                        }}
                         webpageViewMode={webpageViewMode}
-                        onWebpageViewModeChange={setWebpageViewMode}
+                        onWebpageViewModeChange={handleWebpageViewModeChange}
                         canManuallyEdit={canManuallyEdit}
                         manualEditActive={manualEditActive}
                         manualEditDirty={manualEditDirty}
@@ -736,6 +809,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                                 title={artifact.title}
                                 artifactType={artifact.type}
                                 isGenerating={isGenerating || isSelectedVersionProvisional}
+                                layout={layout}
                             />
                         )}
                     </div>
