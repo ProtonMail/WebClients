@@ -26,11 +26,9 @@ import type {
     ShareInvitation,
     ShareInvitationDetails,
     ShareMembership,
-    ShareURL,
     ShareWithKey,
 } from '../_shares/interface';
 import { ShareType } from '../_shares/interface';
-import { hasGeneratedPasswordIncluded } from '../_shares/shareUrl';
 
 enum ThumbnailType {
     PREVIEW = 1,
@@ -252,28 +250,6 @@ export const deviceInfoToDevices = (info: DevicePayload): Device => {
         modificationTime: info.Device.ModifyTime,
         linkId: info.Share.LinkID,
         haveLegacyName: !!info.Share.Name,
-    };
-};
-
-export const shareUrlPayloadToShareUrl = (shareUrl: ShareURLPayload): ShareURL => {
-    return {
-        shareId: shareUrl.ShareID,
-        shareUrlId: shareUrl.ShareURLID,
-        expirationTime: shareUrl.ExpirationTime,
-        creatorEmail: shareUrl.CreatorEmail,
-        password: shareUrl.Password,
-        flags: shareUrl.Flags,
-        token: shareUrl.Token,
-        publicUrl: shareUrl.PublicUrl,
-        sharePassphraseKeyPacket: shareUrl.SharePassphraseKeyPacket,
-        sharePasswordSalt: shareUrl.SharePasswordSalt,
-        hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded({ flags: shareUrl.Flags }),
-        numAccesses: shareUrl.NumAccesses,
-        urlPasswordSalt: shareUrl.UrlPasswordSalt,
-        srpVerifier: shareUrl.SRPVerifier,
-        srpModulusID: shareUrl.SRPModulusID,
-        maxAccesses: shareUrl.MaxAccesses,
-        permissions: shareUrl.Permissions,
     };
 };
 

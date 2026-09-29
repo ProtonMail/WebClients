@@ -4,9 +4,7 @@ import { LinksStateProvider } from './useLinksState';
 
 export * from './interface';
 export * from './link';
-export * from './validation';
 export { default as useLink } from './useLink';
-export { default as useLinkActions } from './useLinkActions';
 export { default as useLinksActions } from './useLinksActions';
 export { useLinksListing } from './useLinksListing';
 

@@ -1,5 +1,4 @@
 import type { PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@protontech/crypto';
-import { CryptoProxy } from '@protontech/crypto';
 
 import { EnrichedError } from '@proton/drive/legacy/errorHandling';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
@@ -70,15 +69,6 @@ export interface ParsedExtendedAttributes {
 }
 
 type MaybeExtendedAttributes = DeepPartial<ExtendedAttributes>;
-
-export async function encryptFolderExtendedAttributes(
-    modificationTime: Date,
-    nodePrivateKey: PrivateKeyReference,
-    addressPrivateKey: PrivateKeyReference
-) {
-    const xattr = createFolderExtendedAttributes(modificationTime);
-    return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
-}
 
 export function createFolderExtendedAttributes(modificationTime: Date): ExtendedAttributes {
     return {
@@ -166,35 +156,6 @@ export function createFileExtendedAttributes({
               }
             : undefined,
     };
-}
-
-/** NOTE: Keep export as required by Docs */
-async function encryptExtendedAttributes(
-    xattr: ExtendedAttributes,
-    nodePrivateKey: PrivateKeyReference,
-    addressPrivateKey: PrivateKeyReference
-) {
-    try {
-        const xattrString = JSON.stringify(xattr);
-
-        const { message } = await CryptoProxy.encryptMessage({
-            textData: xattrString,
-            encryptionKeys: nodePrivateKey,
-            signingKeys: addressPrivateKey,
-            compress: true,
-        });
-
-        return message;
-    } catch (e) {
-        throw new EnrichedError('Failed to encrypt extended attributes', {
-            tags: {
-                addressKeyId: addressPrivateKey.getKeyID(),
-            },
-            extra: {
-                e,
-            },
-        });
-    }
 }
 
 export async function decryptExtendedAttributes(

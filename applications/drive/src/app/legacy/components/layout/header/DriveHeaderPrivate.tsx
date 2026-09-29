@@ -3,12 +3,10 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
-import { useFlagsDriveFoundationSearch } from '@proton/drive/modules/flags';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { SearchField } from '../../../../sections/search/searchField';
 import isSearchFeatureEnabled from '../../../../utils/isSearchFeatureEnabled';
-import { SearchField as LegacySearchField } from '../search/SearchField';
 import { DownloadAppButton } from './DownloadAppButton';
 import { SuggestBusinessButton } from './SuggestBusinessButton';
 
@@ -22,14 +20,13 @@ interface Props {
 }
 
 const OptionalSearchField = () => {
-    const isSearchFoundationEnabled = useFlagsDriveFoundationSearch();
     const isSearchSupported = isSearchFeatureEnabled();
 
     if (!isSearchSupported) {
         return null;
     }
 
-    return isSearchFoundationEnabled ? <SearchField /> : <LegacySearchField />;
+    return <SearchField />;
 };
 
 export const DriveHeaderPrivate = ({
