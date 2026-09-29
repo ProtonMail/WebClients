@@ -1385,9 +1385,6 @@
       "Continue your subscription": [
         "Fortsett abonnementet"
       ],
-      "Get 50% offer": [
-        "Få 50 % tilbud"
-      ],
       "Maybe later": [
         "Kanskje senere"
       ]
@@ -3190,8 +3187,14 @@
       "IMAP server is required": [
         "IMAP-server kreves"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Feil reservepassord. Forsøk igjen."
+      ],
       "Incorrect password. Please try again.": [
         "Feil passord. Prøv igjen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Feil andre passord. Prøv på nytt."
       ],
       "Invalid coupon": [
         "Ugyldig kupong"
@@ -4721,9 +4724,6 @@
       "Accept/decline": [
         "Godta/avslå"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Tilgang til over 20 000 servere i 145 land"
-      ],
       "Ad targeting": [
         "Annonsemålretting"
       ],
@@ -5032,9 +5032,6 @@
       "Failing signatures will be re-signed by you": [
         "Sviktende signaturer vil bli signert på nytt av deg"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Raskeste VPN-hastigheter på opptil 10 Gbps"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Fil \"${ name }\" ble slettet under nedlasting"
       ],
@@ -5071,9 +5068,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
       ],
-      "Have some more time to decide without interruption.": [
-        "Ha litt mer tid til å bestemme deg uten avbrudd."
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Hjelp oss med å forbedre denne opplevelsen ved å rapportere problemet. Hvis du føler deg komfortabel med å dele regnearkinnhold, kan du legge ved feilsøkingsinformasjonen nedenfor i rapporten din."
       ],
@@ -5091,9 +5085,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Hvis du kansellerer nå, mister du tilgangen til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inkludert disse funksjonene:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
@@ -5404,9 +5395,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
       ],
-      "Premium privacy protection across all your devices": [
-        "Førsteklasses personvernbeskyttelse på tvers av alle enhetene dine"
-      ],
       "Preparing link to file": [
         "Forbereder kobling til fil"
       ],
@@ -5523,9 +5511,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Hold deg til planen din og få 50 % rabatt neste måned"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Abonnementet fornyes automatisk hver ${ cycle } måned.",
@@ -10350,9 +10335,6 @@
       ],
       "Start import process": [
         "Start importprosessen"
-      ],
-      "Stay for 50% off your next month": [
-        "Bli og få 50 % rabatt neste måned"
       ],
       "Stop sharing": [
         "Avslutt deling"

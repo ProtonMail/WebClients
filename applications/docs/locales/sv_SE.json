@@ -1375,9 +1375,6 @@
       "Continue your subscription": [
         "Fortsätt din prenumeration"
       ],
-      "Get 50% offer": [
-        "Få 50 % erbjudande"
-      ],
       "Maybe later": [
         "Kanske senare"
       ]
@@ -2911,6 +2908,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "En kontakt med denna e-postadress finns redan"
+      ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
       ],
@@ -3156,8 +3156,14 @@
       "IMAP server is required": [
         "IMAP-server är obligatoriskt"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Felaktigt reservlösenord. Försök igen."
+      ],
       "Incorrect password. Please try again.": [
         "Felaktigt lösenord. Försök igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Felaktigt andra lösenord. Försök igen."
       ],
       "Invalid coupon": [
         "Ogiltig rabattkod"
@@ -4669,9 +4675,6 @@
       "Accept/decline": [
         "Acceptera/avböj"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Åtkomst till över 20 000 servrar i över 145 länder"
-      ],
       "Ad targeting": [
         "Målgruppsanpassning av annonser"
       ],
@@ -4980,9 +4983,6 @@
       "Failing signatures will be re-signed by you": [
         "Misslyckade signaturer kommer att signeras igen till dig"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Snabbaste VPN-hastigheter på upp till 10 Gbps"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Fil “${ name }“ togs bort under nedladdningen"
       ],
@@ -5019,9 +5019,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter och internetleverantörer kan övervaka din aktivitet på nätet. Genom att dölja din riktiga IP och kryptera din aktivitet blir din surfning privat."
       ],
-      "Have some more time to decide without interruption.": [
-        "Ha lite mer tid att bestämma utan avbrott."
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Hjälp oss att förbättra denna upplevelse genom att rapportera problemet. Om du känner dig bekväm med att dela kalkylbladets innehåll kan du bifoga felsökningsinformationen nedan till din rapport."
       ],
@@ -5039,9 +5036,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Om du avbryter nu, kommer du att förlora åtkomst till ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive dessa funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
@@ -5465,9 +5459,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Håll dig ansluten utan ansträngning genom att aktivera följande VPN-inställningar:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Prenumeration förnyas automatiskt varje ${ cycle } månad.",
@@ -10280,9 +10271,6 @@
       ],
       "Start import process": [
         "Starta importprocessen"
-      ],
-      "Stay for 50% off your next month": [
-        "Stanna kvar för 50 % rabatt nästa månad"
       ],
       "Stop sharing": [
         "Sluta dela"
