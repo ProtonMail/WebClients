@@ -1391,9 +1391,6 @@
       "Continue your subscription": [
         "Fortsæt dit abonnement"
       ],
-      "Get 50% offer": [
-        "Få et 50%-tilbud"
-      ],
       "Maybe later": [
         "Måske senere"
       ]
@@ -3196,8 +3193,14 @@
       "IMAP server is required": [
         "IMAP-server er påkrævet."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Forkert backupadgangskode. Prøv igen."
+      ],
       "Incorrect password. Please try again.": [
         "Forkert adgangskode. Prøv venligst igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Forkert anden adgangskode. Prøv igen."
       ],
       "Invalid coupon": [
         "Ugyldig kupon"
@@ -4727,9 +4730,6 @@
       "Accept/decline": [
         "Accepter/afvis"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Adgang til mere end 20.000 servere i 145 lande"
-      ],
       "Ad targeting": [
         "Annoncemålretning"
       ],
@@ -5038,9 +5038,6 @@
       "Failing signatures will be re-signed by you": [
         "Manglende signaturer vil blive genunderskrevet af dig."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Hurtigste VPN-hastigheder – op til 10Gbps"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Filen \"${ name }\" blev slettet under download"
       ],
@@ -5077,9 +5074,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
       ],
-      "Have some more time to decide without interruption.": [
-        "Få lidt mere tid til overvejelse – uden afbrydelse."
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Hjælp os med at forbedre denne situation ved at rapportere problemet. Hvis du er tryg med at dele regnearksindhold skal du vedhæfte nedenstående fejlfindingsoplysninger til din rapport."
       ],
@@ -5097,9 +5091,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -5410,9 +5401,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium privatlivsbeskyttelse på alle dine enheder"
-      ],
       "Preparing link to file": [
         "Forbereder link til fil"
       ],
@@ -5529,9 +5517,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Bliv på dit abonnement og få 50% rabat næste måned"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Abonnement fornyes automatisk hver ${ cycle } måned.",
@@ -5838,6 +5823,12 @@
       ],
       "You don't have access": [
         "Du har ikke adgang"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en åben faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en åben faktura til ${ dueDate } ${ payInvoiceLink }"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Du har muligvis ikke de nødvendige tilladelser til at se det med din valgte konto. Prøv en anden konto, eller kontakt ejeren for at få adgang."
@@ -6582,6 +6573,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Pay it": [
+        "Betal"
       ],
       "Reactivate now": [
         "Genaktiver nu"
@@ -10386,9 +10380,6 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
-      ],
-      "Stay for 50% off your next month": [
-        "Bliv hængende for 50% rabat i den næste måned"
       ],
       "Stop sharing": [
         "Stop deling"
