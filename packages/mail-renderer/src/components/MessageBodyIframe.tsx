@@ -8,11 +8,11 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
+import { getIframeSandboxAttributes } from '@proton/mail/helpers/composer';
 import type { MessageState, OnMessageImageLoadError } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
 import { getIframeDocument } from '../helpers/getIframeDocument';
-import getIframeSandboxAttributes from '../helpers/getIframeSandboxAttributes';
 import useIframeAfterBlockquote from '../hooks/useIframeAfterBlockquote';
 import useIframeDispatchEvents from '../hooks/useIframeDispatchEvents';
 import useIframeShowBlockquote from '../hooks/useIframeShowBlockquote';
