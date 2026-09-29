@@ -1901,10 +1901,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Awtomatikong magre-renew sa ${ renewPrice }, para sa ${ renewCycle } buwan",
-        "Awtomatikong magre-renew sa ${ renewPrice }, para sa ${ renewCycle } na buwan"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Awtomatikong nagre-renew sa ${ subscriptionManagerName }"
       ]
@@ -8301,9 +8297,6 @@
       "RECOMMENDED": [
         "INIREREKOMENDA"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Inirerekomenda sa mga pinagkakatiwalaang device. ${ keepMeSignedInLearnMoreLink }"
-      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Hindi available ang recovery gamit ang email habang pinagana ang ${ PROTON_SENTINEL_NAME }."
       ],
@@ -8698,9 +8691,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Papaganahin nito ang PayPal na magamit pambayad para sa ${ BRAND_NAME } subscription. Ire-redirect ka sa PayPal sa bagong tab ng browser. Kung gumagamit ng anumang pop-up blocker, mangyaring huwag paganahin ang mga ito upang magpatuloy."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Papayagan ka nito na mabilis at ligtas na ma-access ang iyong ${ BRAND_NAME } Account para mapalitan mo ang iyong password."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Permanenteng ide-delete nito ang data at lahat ng email address na nauugnay sa mga user na ito."
@@ -13234,9 +13224,6 @@
       ],
       "Card number": [
         "Numero ng card"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Ang mga credit at diskwento ay makikita sa iyong invoice"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Kasalukuyang naka-disable ang automatic renewal ng subscription. Kung babaguhin ang subscription ngayon, muling ie-enable ang automatic renewal."

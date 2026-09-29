@@ -1929,12 +1929,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Obnovuje se automaticky za ${ renewPrice } na ${ renewCycle } měsíc",
-        "Obnovuje se automaticky za ${ renewPrice } na ${ renewCycle } měsíce",
-        "Obnovuje se automaticky za ${ renewPrice } na ${ renewCycle } měsíců",
-        "Obnovuje se automaticky za ${ renewPrice } na ${ renewCycle } měsíců"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Obnoví se automaticky v ${ subscriptionManagerName }"
       ]
@@ -8527,9 +8521,6 @@
       "RECOMMENDED": [
         "DOPORUČENO"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Doporučeno na důvěryhodných zařízeních. ${ keepMeSignedInLearnMoreLink }"
-      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Obnova pomocí e-mailu není k dispozici, pokud je zapnuta služba ${ PROTON_SENTINEL_NAME }."
       ],
@@ -8934,9 +8925,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní použít Paypal pro platby ${ BRAND_NAME } předplatného. Přesměrujeme vás na váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím než budete pokračovat."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Díky tomu se budete moci rychle a bezpečně přihlásit ke svému účtu ${ BRAND_NAME } a změnit si heslo."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Tímto trvale smažete data a všechny e-mailové adresy spojené s těmito uživateli."
@@ -10263,7 +10251,7 @@
         "Zadejte kód"
       ],
       "Enter current password": [
-        "Zadejte současné heslo"
+        "Zadejte aktuální heslo"
       ],
       "Enter name or email address": [
         "Zadejte jméno nebo e-mailovou adresu"
@@ -13607,9 +13595,6 @@
       "Card number": [
         "Číslo karty"
       ],
-      "Credits and discounts are reflected in your invoice": [
-        "Kredity a slevy jsou zohledněny na vaší faktuře"
-      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "V současné době je automatické obnovení předplatného deaktivováno. Pokud nyní předplatné změníte, bude automatické obnovení opět povoleno."
       ],
@@ -14207,7 +14192,7 @@
         "na 12 měsíců"
       ],
       "One plan, full power": [
-        "Jeden plán, plný výkon"
+        "Jeden tarif, plný výkon"
       ],
       "One plan, max savings": [
         "Jeden plán, maximální úspory"
