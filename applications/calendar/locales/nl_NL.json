@@ -1606,9 +1606,6 @@
       "Discover and set up features": [
         "Ontdek en configureer functies"
       ],
-      "Get 50% offer": [
-        "Neem de 50% deal"
-      ],
       "Maybe later": [
         "Misschien later"
       ],
@@ -3844,6 +3841,12 @@
       "IMAP server is required": [
         "IMAP-server is vereist"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Onjuist back-up wachtwoord. Probeer het opnieuw."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Onjuist tweede wachtwoord. Probeer het opnieuw."
+      ],
       "Intended recipient does not support calendar sharing": [
         "De bedoelde ontvangen heeft geen ondersteuning voor het delen van een agenda."
       ],
@@ -5581,9 +5584,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "Een VPN is een veilige tunnel tussen uw apparaat en het internet. Het verbergt uw locatie en activiteit van uw internetserviceprovider (ISP) en de websites die u bezoekt."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Toegang tot meer dan 20.000 servers in 145 landen"
-      ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
       ],
@@ -5963,9 +5963,6 @@
       "Failed to update meeting schedule": [
         "Bijwerken vergaderingsschema mislukt"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "De hoogste VPN-snelheden tot 10 Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
       ],
@@ -5996,9 +5993,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
       ],
-      "Have some more time to decide without interruption.": [
-        "Neem nog even de tijd om in alle rust een beslissing te nemen."
-      ],
       "here": [
         "hier"
       ],
@@ -6019,9 +6013,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Als u nu annuleert, hebt u vanaf ${ expiryDate }geen toegang meer tot ${ BRAND_NAME } ${ planTitle }, waaronder deze functies:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
@@ -6358,9 +6349,6 @@
       "Powered by ${ protonButton }": [
         "Mogelijk gemaakt door ${ protonButton }"
       ],
-      "Premium privacy protection across all your devices": [
-        "Eersteklas privacybescherming op al uw apparaten"
-      ],
       "Previous modifications on this series will be lost.": [
         "Eerdere wijzigingen in deze serie zullen verloren gaan."
       ],
@@ -6463,9 +6451,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Blijf moeiteloos verbonden door de volgende VPN-instellingen in te schakelen:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behoud uw abonnement aan en u ontvangt 50% korting op uw volgende maand"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
@@ -9555,6 +9540,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Laatste kans om aan deze prijs uw eerste maand ${ plan } te krijgen."
+      ],
       "Last day to save": [
         "Laatste dag om op te besparen"
       ],
@@ -9686,6 +9674,9 @@
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
+      ],
+      "Add a payment method": [
+        "Voeg een betaalmethode toe"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "U kunt op elk moment annuleren vóór ${ cancelDate }."
@@ -12789,9 +12780,6 @@
       ],
       "Start import process": [
         "Importproces starten"
-      ],
-      "Stay for 50% off your next month": [
-        "Blijf en ontvang 50% korting op uw volgende maand"
       ],
       "Subscription canceled": [
         "Abonnement opgezegd"
