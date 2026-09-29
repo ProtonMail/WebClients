@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } sänkte sin hand"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } nämnde dig: ${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } räckte upp sin hand"
       ],
@@ -141,6 +144,9 @@
       ],
       "You have been muted by the host": [
         "Du har tystats av värden"
+      ],
+      "You were mentioned: ${ message }": [
+        "Du blev omnämnd: ${ message }"
       ],
       "Your camera has been turned off by the host": [
         "Din kamera har stängts av av värden"
@@ -695,6 +701,9 @@
       ],
       "Use camera": [
         "Använd kamera"
+      ],
+      "Use it": [
+        "Använd den"
       ],
       "Use microphone": [
         "Använd mikrofon"
@@ -2061,6 +2070,12 @@
       "Image preview not found": [
         "Förhandsvisning av bild hittades inte"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Felaktigt reservlösenord. Försök igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Felaktigt andra lösenord. Försök igen."
+      ],
       "Invalid meeting link": [
         "Ogiltig möteslänk"
       ],
@@ -2078,6 +2093,9 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Äldre publik länk kan inte uppdateras. Vänligen återskapa en ny publik länk."
+      ],
+      "Message is too long to send": [
+        "Meddelandet är för långt för att skickas"
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Mikrofonåtkomst är blockerad. Tillåt det i dina webbläsarinställningar."
@@ -2154,6 +2172,9 @@
       ],
       "Screen share is not supported on mobile browsers": [
         "Skärmdelning stöds inte på mobila webbläsare"
+      ],
+      "Screen share is not supported on your device": [
+        "Skärmdelning stöds inte på din enhet"
       ],
       "Signature is missing": [
         "Signatur saknas"
@@ -2283,6 +2304,9 @@
       ],
       "You do not have access to this shared item": [
         "Du har inte åtkomst till detta delade objekt"
+      ],
+      "You have reached the maximum number of custom backgrounds.": [
+        "Du har nått det maximala antalet anpassade bakgrunder."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Din webbläsare har slut på lagringsutrymme. Vi har sparat inspelningen fram till denna punkt."
@@ -2506,6 +2530,12 @@
       "${ replyCount } reply": [
         "${ replyCount } svar",
         "${ replyCount } svar"
+      ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } nämnde dig"
+      ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } är den aktiva talaren"
       ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } av upp till ${ maxParticipants } deltagare"
@@ -2749,6 +2779,9 @@
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Om du använder Firefox, se till att PeerConnection är aktiverat."
       ],
+      "Incoming video off": [
+        "Inkommande video av"
+      ],
       "Internet connection lost": [
         "Internetanslutning förlorades"
       ],
@@ -2845,6 +2878,9 @@
       "Member": [
         "Medlem"
       ],
+      "Mention from ${ senderName }": [
+        "Omnämnande från ${ senderName }"
+      ],
       "Message actions": [
         "Meddelandeåtgärder"
       ],
@@ -2913,6 +2949,9 @@
       ],
       "Not sent, check your connection.": [
         "Inte skickat, kontrollera din anslutning."
+      ],
+      "notify everyone here": [
+        "avisera alla här"
       ],
       "Only meetings you created appear here": [
         "Endast möten du skapat visas här"
@@ -3154,6 +3193,9 @@
       "View ": [
         "Visa "
       ],
+      "Virtual background initializing": [
+        "Virtuell bakgrund initieras"
+      ],
       "Waiting since ${ receivedTime }": [
         "Väntar sedan ${ receivedTime }"
       ],
@@ -3238,14 +3280,38 @@
       "Your browser or device isn’t supported": [
         "Din webbläsare eller enhet stöds inte"
       ],
+      "Your camera was disconnected. Now using ${ deviceLabel }.": [
+        "Din kamera kopplades från. Använder nu ${ deviceLabel }."
+      ],
+      "Your device was disconnected. Now using ${ deviceLabel }.": [
+        "Din enhet kopplades från. Använder nu ${ deviceLabel }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
       ],
       "Your meeting is ready": [
         "Ditt möte är redo"
       ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "Din mikrofon och kamera kopplades från. Andra enheter används nu."
+      ],
+      "Your microphone and speaker were disconnected. Now using other devices.": [
+        "Din mikrofon och högtalare kopplades från. Andra enheter används nu."
+      ],
+      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
+        "Din mikrofon kopplades från. Använder nu ${ deviceLabel }."
+      ],
+      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
+        "Din mikrofon, högtalare och kamera kopplades från. Andra enheter används nu."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "Your speaker and camera were disconnected. Now using other devices.": [
+        "Din högtalare och kamera kopplades från. Andra enheter används nu."
+      ],
+      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
+        "Din högtalare kopplades från. Använder nu ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Du är på väg att öppna en länk i en ny flik. Se till att du litar på webbplatsen innan du fortsätter."
@@ -3376,6 +3442,9 @@
       "Every year": [
         "Varje år"
       ],
+      "everyone": [
+        "alla"
+      ],
       "Google Calendar": [
         "Google Kalender"
       ],
@@ -3411,6 +3480,9 @@
       ],
       "Meeting link": [
         "Möteslänk"
+      ],
+      "Mention a participant": [
+        "Nämn en deltagare"
       ],
       "Message": [
         "Meddelande"
@@ -3605,6 +3677,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Ditt personliga möte har roterats"
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Tack! Din feedback har skickats."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Du kan inte skicka feedback för ett möte du inte har varit på"
