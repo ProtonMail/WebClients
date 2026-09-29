@@ -22,7 +22,7 @@ import { selectCategoryUnreadCount } from '../../store/categoriesView/categories
 import { useGetMailSettings } from '../../store/mailSettings/hooks';
 
 type RecategorizeSource = 'drag_and_drop' | 'context_menu' | 'move_to_folder' | 'recategorize_experiment';
-type CategoriesClickSource = 'tab' | 'sidebar' | 'commander' | 'shortcuts';
+type CategoriesClickSource = 'tab' | 'commander' | 'shortcuts';
 
 export const useCategoriesTelemetry = () => {
     const api = useApi();
@@ -82,7 +82,7 @@ export const useCategoriesTelemetry = () => {
         /**
          * `isCategoryUnseen` tells whether the category was showing the unseen badge
          * at the time of the navigation. Only the tabs display that badge, so callers that
-         * navigate from elsewhere (sidebar, commander, shortcuts) omit it and we report 'n/a'.
+         * navigate from elsewhere (commander, shortcuts) omit it and we report 'n/a'.
          */
         const sendReportCategoriesNav = async (
             navSource: CategoriesClickSource,
