@@ -1,4 +1,4 @@
-import { toCollaboratorCursorNavigationDestination } from './collaboratorCursorNavigationAdapter'
+import { toCollaboratorCursorNavigationDestination } from './collaborator-cursor-navigation-adapter'
 
 describe('toCollaboratorCursorNavigationDestination', () => {
   it('keeps only the fields the editor needs to navigate', () => {
