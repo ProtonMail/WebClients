@@ -2301,9 +2301,6 @@
       "Discover and set up features": [
         "機能の発見と設定"
       ],
-      "Get 50% offer": [
-        "50％割引オファーを獲得"
-      ],
       "Got it": [
         "分かりました"
       ],
@@ -4836,6 +4833,12 @@
       "IMAP server is required": [
         "IMAP サーバーは必須です"
       ],
+      "Incorrect backup password. Please try again.": [
+        "間違ったバックアップパスワードです。再度お試しください。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "セカンドパスワードが正しくありません。もう一度お試しください。"
+      ],
       "Invalid code": [
         "無効なコードです"
       ],
@@ -6880,9 +6883,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "最大 10 台のデバイスで 6,500 台以上の高速サーバーにアクセスし、ブラウジングデータを安全に保ちます。 ${ ios }、 ${ android }、 ${ appleTV }、 ${ desktop }で利用できます。"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "148か国にある20,000台以上のサーバーにアクセス"
-      ],
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
@@ -7447,9 +7447,6 @@
       "Expires in less than ${ hoursDiff } hour": [
         "有効期限は ${ hoursDiff } 時間未満です。"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "最大10 Gbpsの高速VPN接続"
-      ],
       "file attached": [
         "個のファイル添付"
       ],
@@ -7519,9 +7516,6 @@
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments } 件の添付ファイル (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "利用を中断せず、もう少し時間をかけて検討できます。"
-      ],
       "here": [
         "こちら"
       ],
@@ -7542,9 +7536,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "誤りであると思われる場合は${ contactLink }までお問い合せください。"
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "今キャンセルすると、${ expiryDate } に${ BRAND_NAME } ${ planTitle } へのアクセス権を失います（以下の機能を含む）："
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "キャンセルすると、${ planTitle } サブスクリプションは ${ expiryDate } に期限切れになっても更新されません。"
@@ -8017,9 +8008,6 @@
       "Preferences updated": [
         "設定が更新されました"
       ],
-      "Premium privacy protection across all your devices": [
-        "すべてのデバイスで高度なプライバシー保護"
-      ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
       ],
@@ -8274,9 +8262,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "こちらのVPNの設定を有効にすることで、簡単に接続を維持します。"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "現在のプランを継続すると、翌月が50%オフ"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "ストレージ機能はこのブラウザではサポートされていません。コンテンツの検索を有効にするためには、このサポートが必要です。"
@@ -16087,9 +16072,6 @@
       ],
       "Start import process": [
         "インポートを開始"
-      ],
-      "Stay for 50% off your next month": [
-        "継続すると、翌月が50%オフ"
       ],
       "Storage capacity warning": [
         "ストレージ容量の警告"

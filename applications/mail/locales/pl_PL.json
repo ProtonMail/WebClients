@@ -2361,9 +2361,6 @@
       "Discover and set up features": [
         "Odkryj i skonfiguruj funkcje"
       ],
-      "Get 50% offer": [
-        "Uzyskaj 50% zniżki"
-      ],
       "Got it": [
         "OK"
       ],
@@ -4924,6 +4921,12 @@
       "IMAP server is required": [
         "Serwer IMAP jest wymagany"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Hasło zapasowe jest nieprawidłowe. Spróbuj ponownie."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Drugie hasło jest nieprawidłowe. Spróbuj ponownie."
+      ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
       ],
@@ -7145,9 +7148,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Uzyskaj dostęp do ponad 6500 szybkich serwerów na maksymalnie 10 urządzeniach, aby bezpiecznie przeglądać Internet. Usługa dostępna na urządzeniach: ${ ios }, ${ android }, ${ appleTV } i ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Dostęp do ponad 20 000 serwerów w 145 krajach"
-      ],
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
       ],
@@ -7751,9 +7751,6 @@
         "Wygasa za mniej niż ${ hoursDiff } godzin",
         "Wygasa za mniej niż ${ hoursDiff } godziny"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Najwyższe prędkości VPN do 10 Gb/s"
-      ],
       "file attached": [
         "załącznik",
         "załączniki",
@@ -7829,9 +7826,6 @@
         "Posiada ${ numAttachments } załączników (${ numAttachmentsSize })",
         "Posiada ${ numAttachments } załączników (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "Podejmij decyzję bez żadnych zakłóceń, mając na to więcej czasu."
-      ],
       "here": [
         "tutaj"
       ],
@@ -7852,9 +7846,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Jeśli uważasz, że popełniliśmy błąd, ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "W przypadku anulowania teraz subskrypcji utracisz dostęp do ${ BRAND_NAME } ${ planTitle } w dniu ${ expiryDate }, w tym do następujących funkcji:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Jeśli anulujesz subskrypcję ${ planTitle }, nie zostanie ona odnowiona po terminie wygaśnięcia ${ expiryDate }."
@@ -8327,9 +8318,6 @@
       "Preferences updated": [
         "Ustawienia zostały zaktualizowane"
       ],
-      "Premium privacy protection across all your devices": [
-        "Najwyższej klasy ochrona prywatności na wszystkich Twoich urządzeniach"
-      ],
       "Preview failed to be loaded": [
         "Załadowanie podglądu nie powiodło się"
       ],
@@ -8560,9 +8548,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Bądź połączony bez trudu, włączając następujące ustawienia VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Pozostań przy swoim planie i otrzymaj 50% zniżki na kolejny miesiąc"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Funkcje przechowywania nie są obsługiwane w tej przeglądarce. Potrzebujemy tej obsługi, aby umożliwić wyszukiwanie zawartości wiadomości."
@@ -16074,7 +16059,7 @@
         "Zablokuj nadawcę"
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
-        "Prnieś swój Gmail do ${ MAIL_APP_NAME }"
+        "Przenieś swój Gmail do ${ MAIL_APP_NAME }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anuluj subskrypcję ${ MAIL_SHORT_APP_NAME }"
@@ -16867,9 +16852,6 @@
       ],
       "Start import process": [
         "Rozpocznij proces importowania"
-      ],
-      "Stay for 50% off your next month": [
-        "Zostań z nami, aby uzyskać 50% zniżki w następnym miesiącu"
       ],
       "Storage capacity warning": [
         "Ostrzeżenie o przestrzeni dyskowej"

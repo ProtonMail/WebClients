@@ -2397,9 +2397,6 @@
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
       ],
-      "Get 50% offer": [
-        "%50 indirimden yararlanın"
-      ],
       "Got it": [
         "Tamam"
       ],
@@ -5060,6 +5057,12 @@
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Yedek parola yanlış. Lütfen yeniden deneyin."
+      ],
+      "Incorrect second password. Please try again.": [
+        "İkinci parola yanlış. Lütfen yeniden deneyin."
+      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
@@ -7365,9 +7368,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "6.500 üzerinde yüksek hızlı sunucuya, en fazla 10 aygıttan erişim sağlayarak tarama verilerinizi güvende tutun. ${ ios }, ${ android }, ${ appleTV } ve ${ desktop } üzerinde kullanılabilir."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "145 ülkede 20.000 üzerinde sunucuya erişim"
-      ],
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
@@ -8038,9 +8038,6 @@
         "Geçerlilik süresi ${ hoursDiff } saat içinde dolacak",
         "Geçerlilik süresi ${ hoursDiff } saat içinde dolacak"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "10 Gb/sn olabilen en yüksek VPN hızı"
-      ],
       "file attached": [
         "dosya eklendi",
         "dosya eklendi"
@@ -8124,9 +8121,6 @@
         "${ numAttachments } ek dosya var (${ numAttachmentsSize })",
         "${ numAttachments } ek dosya var (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
-      ],
       "here": [
         "buraya"
       ],
@@ -8168,9 +8162,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Bir yanlışlık olduğunu düşünüyorsanız lütfen ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
@@ -8738,9 +8729,6 @@
       "Preferences updated": [
         "Ayarlar güncellendi"
       ],
-      "Premium privacy protection across all your devices": [
-        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
-      ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
       ],
@@ -9108,9 +9096,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Aşağıdaki VPN ayarlarını etkinleştirerek kolayca bağlı kalın:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Bu tarayıcıda depolama alanı özelliği desteklenmiyor. İletilerin içeriklerinde arama yapabilmek için bu özellik desteklenmelidir."
@@ -9849,6 +9834,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "${ planTitle } deneme aboneliğiniz var. Şu anda herhangi bir ödeme yapmanıza gerek yok. Deneme süresi sonunda aboneliğiniz otomatik olarak yenilenecek."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Ödenmemiş bir faturanız var ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "${ dueDate } tarihli ödenmemiş bir faturanız var ${ payInvoiceLink }"
       ],
       "You have no conversations in this category": [
         "Bu kategoride herhangi bir sohbetiniz yok"
@@ -11084,13 +11075,13 @@
         "Ücretli etki alanı"
       ],
       "Primary": [
-        "Birincil saat dilimi"
+        "Birincil"
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
         "Birincil - Dikkatinizi gerektiren her şey ve kapatılmış kategorilerden gelen e-postalar"
       ],
       "Promotions": [
-        "Kazançlar"
+        "Promosyonlar"
       ],
       "Promotions - Deals, offers, and marketing emails": [
         "Tanıtımlar - Fırsatlar, teklifler ve pazarlama e-postaları"
@@ -11183,7 +11174,7 @@
         "Geri bildirimi atla"
       ],
       "Social": [
-        "Sosyal ağ"
+        "Sosyal"
       ],
       "Social - Social media updates, activity, and messages": [
         "Sosyal - Sosyal medya güncellemeleri, etkinlikler ve iletiler"
@@ -11512,7 +11503,7 @@
         "Tüm e-postalar"
       ],
       "Archive": [
-        "Arşivle"
+        "Arşiv"
       ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
@@ -11645,6 +11636,9 @@
       ],
       "Pay invoice": [
         "Faturayı öde"
+      ],
+      "Pay it": [
+        "Ödeyin"
       ],
       "Privacy policy": [
         "Gizlilik ilkesi"
@@ -17483,9 +17477,6 @@
       ],
       "Start import process": [
         "İçe aktarma işlemini başlatın"
-      ],
-      "Stay for 50% off your next month": [
-        "Sonraki ay %50 indirimden yararlanın"
       ],
       "Storage capacity warning": [
         "Depolama alanı uyarısı"

@@ -2391,9 +2391,6 @@
       "Discover and set up features": [
         "Découvrez et configurez les fonctionnalités"
       ],
-      "Get 50% offer": [
-        "Profitez d'une réduction de 50 %"
-      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -5000,6 +4997,12 @@
       "IMAP server is required": [
         "Le serveur IMAP est nécessaire."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
+      ],
       "Invalid code": [
         "Le code n'est pas valide."
       ],
@@ -5038,6 +5041,9 @@
       ],
       "Item content cannot exceed 40KB": [
         "Le contenu de l'élément ne peut pas dépasser 40 Ko."
+      ],
+      "Item not found": [
+        "L'élément n'a pas été trouvé"
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
@@ -5333,6 +5339,9 @@
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés."
       ],
+      "Some items could not be loaded": [
+        "Certains éléments n'ont pas pu être chargés"
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers ne sont pas disponibles. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
@@ -5469,6 +5478,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
       ],
+      "This item has no image preview": [
+        "Cet élément n'a pas d'aperçu"
+      ],
       "This item is no longer shared": [
         "Cet élément n’est plus partagé"
       ],
@@ -5554,6 +5566,9 @@
       ],
       "You do not have access to this item": [
         "Vous n'avez pas accès à cet élément."
+      ],
+      "You do not have access to this shared item": [
+        "Vous n'avez pas accès à cet élément partagé"
       ],
       "You have reached the maximum number of calendars.": [
         "Vous avez atteint le nombre maximum de calendriers."
@@ -6101,6 +6116,9 @@
       "All": [
         "Tout"
       ],
+      "Errors": [
+        "Erreurs"
+      ],
       "Filter": [
         "Filtre"
       ],
@@ -6118,6 +6136,9 @@
       ],
       "Migrated": [
         "Migré"
+      ],
+      "Not activated": [
+        "Non activé"
       ],
       "Pending": [
         "En attente"
@@ -7236,9 +7257,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Accédez à plus de 6 500 serveurs haut débit sur jusqu’à 10 appareils pour protéger vos données de navigation. Disponible sur ${ ios }, ${ android }, ${ appleTV } et ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Accédez à plus de 20 000 serveurs dans plus de 145 pays"
-      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
@@ -7484,6 +7502,9 @@
       ],
       "Center": [
         "Centrer"
+      ],
+      "Change a display setting": [
+        "Change un paramètre d'affichage"
       ],
       "Change your password": [
         "Modifier votre mot de passe"
@@ -7888,9 +7909,6 @@
         "Expire dans moins d'une ${ hoursDiff } heure",
         "Expire dans moins de ${ hoursDiff } heures"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Des vitesses VPN ultra-rapides pouvant atteindre 10 Gbps"
-      ],
       "file attached": [
         "fichier joint",
         "fichiers joints"
@@ -7974,9 +7992,6 @@
         "Contient ${ numAttachments } pièce jointe (${ numAttachmentsSize })",
         "Contiennent ${ numAttachments } pièces jointes (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "Prenez encore un peu de temps pour vous décider, sans être dérangé."
-      ],
       "here": [
         "ici"
       ],
@@ -7984,13 +7999,13 @@
         "Salut Lumo, regardes ce que je reçois le plus dans la messagerie, ainsi que dans les dossiers et les filtres. Puis suggère-moi comment la garder organisée : lesquels changer et quoi de nouveau à ajouter. Expliques moi l'idée avant, et ne changes rien avant mon accord."
       ],
       "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
-        "Salut Lumo, je vais être indisponible et je veux configurer une réponse automatique d'absence. Demandes moi les dates et le contenu, puis montres moi le message avant de l'activer."
+        "Salut Lumo, je vais être indisponible et je veux configurer une réponse automatique d'absence. Demande-moi les dates et le contenu, puis montre-moi le message avant de l'activer."
       ],
       "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
-        "Salut Lumo, recherches mes messages des 7 derniers jours et dis-moi lesquels ont vraiment besoin d'une réponse de ma part. Résume-les en une ligne chacun, et exclus ce qui n'est pas essentiel."
+        "Salut Lumo, recherche mes messages des 7 derniers jours et dis-moi lesquels ont vraiment besoin d'une réponse de ma part. Résume-les en une ligne chacun, et exclus ce qui n'est pas essentiel."
       ],
       "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
-        "Salut Lumo, expliques moi comment tu peux m'aider avec ma messagerie. Quels types de tâches puis-je te demander, et quelles sont les limites de ton aide ?"
+        "Salut Lumo, explique-moi comment tu peux m'aider avec ma messagerie. Quels types de tâches puis-je te demander, et quelles sont les limites de ton aide ?"
       ],
       "Hide original message": [
         "Masquer le message d'origine"
@@ -8005,7 +8020,7 @@
         "Je n'ai pas encore fini celui-là."
       ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
-        "Je vais passer en revue les messages de la semaine dernière et identifier ceux qui nécessitent vraiment une réponse, pour que tu puisses les traiter d'un coup."
+        "Je vais passer en revue les messages de la semaine dernière et identifier ceux qui nécessitent vraiment une réponse, pour que vous puissiez les traiter d'un coup."
       ],
       "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
         "Je regarderai les messages les plus fréquents, ainsi que les dossiers et filtres existants, puis je proposerai des améliorations et identifierai ce qui manque. Rien ne sera déplacé avant votre accord."
@@ -8018,9 +8033,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Si vous pensez que nous avons commis une erreur, ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Si vous résiliez votre abonnement maintenant, vous perdrez l'accès à ${ BRAND_NAME } ${ planTitle } à compter du ${ expiryDate }, y compris les fonctionnalités suivantes :"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
@@ -8332,6 +8344,9 @@
       "No contacts found": [
         "Aucun contact trouvé"
       ],
+      "No conversation to read": [
+        "Aucune conversation à lire"
+      ],
       "No draft open": [
         "Pas de brouillon ouvert."
       ],
@@ -8558,9 +8573,6 @@
       "Preferences updated": [
         "Les préférences ont été mises à jour."
       ],
-      "Premium privacy protection across all your devices": [
-        "Une protection optimale de la vie privée sur tous vos appareils"
-      ],
       "Preview failed to be loaded": [
         "L'aperçu n'a pas pu être chargé."
       ],
@@ -8712,6 +8724,9 @@
       "Results came from the local search.": [
         "Les résultats sont issus de la recherche locale."
       ],
+      "Results came from the server.": [
+        "Les résultats sont issus du serveur."
+      ],
       "Revise the ${ draft }": [
         "Réviser le ${ draft }"
       ],
@@ -8843,7 +8858,7 @@
         "Définir une réponse automatique"
       ],
       "Set my out of office": [
-        "Configures mon message d'absence"
+        "Configure mon message d'absence"
       ],
       "Set signature": [
         "Définir une signature"
@@ -8916,9 +8931,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Restez connecté facilement en activant les paramètres VPN suivants :"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Continuez à souscrire à votre forfait et bénéficiez de 50 % de réduction sur votre abonnement du mois prochain"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "L'accès aux capacités de stockage dans ce navigateur n'est pas possible. Nous en avons besoin pour activer la recherche de contenu dans les messages."
@@ -9198,7 +9210,7 @@
         "Ceci vous déconnectera de tous les comptes actuellement connectés."
       ],
       "Tidy up my inbox": [
-        "Organises ma boite de réception"
+        "Organise ma boîte de réception"
       ],
       "to ${ destinationElement } folder.": [
         "vers le dossier ${ destinationElement }."
@@ -10354,6 +10366,9 @@
       "Column": [
         "Colonne"
       ],
+      "Comfortable": [
+        "Confortable"
+      ],
       "Command line interface (CLI)": [
         "Interface de ligne de commande (CLI)"
       ],
@@ -10512,6 +10527,9 @@
       ],
       "Encrypt emails": [
         "Chiffrer les messages"
+      ],
+      "Entries": [
+        "Entrées"
       ],
       "Exact host matching": [
         "Correspondance exacte de l'hôte"
@@ -11605,7 +11623,7 @@
     },
     "Mailbox": {
       "Archive": [
-        "Déplacer vers les archives"
+        "Archives"
       ],
       "Inbox": [
         "Boite de réception"
@@ -16071,7 +16089,7 @@
         "Merci pour les commentaires."
       ],
       "Undo in progress": [
-        "Annulation en cours"
+        "Annulation de l'importation en cours"
       ],
       "Verification successful": [
         "La vérification a abouti."
@@ -16156,6 +16174,9 @@
       ],
       "Actions": [
         "Actions"
+      ],
+      "Activated": [
+        "Activé"
       ],
       "Address": [
         "Adresse"
@@ -17136,6 +17157,9 @@
       "Select data to import": [
         "Sélectionner les données à importer"
       ],
+      "Select users to migrate": [
+        "Sélectionnez les utilisateurs à migrer"
+      ],
       "Self-destruct message": [
         "Confirmer l'autodestruction du message"
       ],
@@ -17225,9 +17249,6 @@
       ],
       "Start import process": [
         "Démarrer l'importation"
-      ],
-      "Stay for 50% off your next month": [
-        "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
       ],
       "Storage capacity warning": [
         "Avertissement de capacité de stockage"
