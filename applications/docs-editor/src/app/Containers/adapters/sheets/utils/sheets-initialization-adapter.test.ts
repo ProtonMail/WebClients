@@ -1,4 +1,4 @@
-import { toSheetsInitialization } from './sheetsInitializationAdapter'
+import { toSheetsInitialization } from './sheets-initialization-adapter'
 
 describe('toSheetsInitialization', () => {
   it('maps an existing spreadsheet and a newly created spreadsheet', () => {
