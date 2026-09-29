@@ -855,6 +855,9 @@
       "Screen share": [
         "Compartilhamento de tela"
       ],
+      "Self view": [
+        "Minha visualização"
+      ],
       "Settings": [
         "Configurações"
       ],
@@ -1963,6 +1966,9 @@
       "Couldn’t play the recording on this speaker.": [
         "Não consegui reproduzir a gravação neste alto-falante."
       ],
+      "Couldn’t start the microphone test.": [
+        "Não foi possível iniciar o teste do microfone."
+      ],
       "Creating documents in non-folders is not allowed": [
         "Não é permitido criar documentos dentro de itens que não sejam pastas"
       ],
@@ -2101,6 +2107,12 @@
       "Image preview not found": [
         "Pré-visualização da imagem não encontrada"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Senha de backup incorreta. Tente novamente."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Segunda senha incorreta. Tente novamente."
+      ],
       "Invalid meeting link": [
         "Link da reunião inválido"
       ],
@@ -2119,11 +2131,17 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "O link público antigo não pode ser atualizado. Crie um novo link público."
       ],
+      "Live captions aren't working. Try turning them off and on again.": [
+        "As legendas ao vivo não estão funcionando. Tente desativar e ativar de novo."
+      ],
       "Live captions couldn't be started.": [
         "Não foi possível iniciar as legendas ao vivo"
       ],
       "Live captions have stopped.": [
         "As legendas ao vivo pararam."
+      ],
+      "Message is too long to send": [
+        "Mensagem é muito longa para ser enviada"
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "O acesso ao microfone está bloqueado. Permita-o nas configurações do seu navegador."
@@ -2230,6 +2248,9 @@
       ],
       "The meeting password is invalid": [
         "A senha da reunião está inválida"
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "O campo de mensagem não está disponível. Recarregue a página."
       ],
       "The selected microphone is no longer available.": [
         "O microfone selecionado não está mais disponível."
@@ -2352,6 +2373,9 @@
       ],
       "Still waiting?": [
         "Ainda esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque na sua chave de segurança para continuar"
       ]
     },
     "fido2: Label": {
@@ -2500,6 +2524,10 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "O ${ MEET_APP_NAME } precisa do WebRTC para funcionar. Atualize seu navegador ou dispositivo para uma versão que tenha suporte para WebRTC, tente usar outro navegador ou desative todas as extensões que possam estar bloqueando-o."
+      ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } membro",
+        "${ mlsMemberCount } membros"
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } e outras ${ otherParticipantsCount } pessoas estão gravando"
@@ -2792,6 +2820,9 @@
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Se você estiver usando o Firefox, certifique-se de que o PeerConnection esteja ativado."
       ],
+      "Incoming video off": [
+        "Vídeo recebido desativado"
+      ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
       ],
@@ -2956,6 +2987,9 @@
       ],
       "Not sent, check your connection.": [
         "Não enviado, verifique sua conexão."
+      ],
+      "notify everyone here": [
+        "notificar todos aqui"
       ],
       "Only meetings you created appear here": [
         "Somente reuniões que você criou aparecem aqui"
@@ -3301,6 +3335,9 @@
       ],
       "Your meeting is ready": [
         "Sua reunião está pronta"
+      ],
+      "Your microphone and camera were disconnected. Now using other devices.": [
+        "Seu microfone e câmera foram desconectados. Agora, outros dispositivos estão sendo usados."
       ],
       "Your microphone and speaker were disconnected. Now using other devices.": [
         "Seu microfone e alto-falante foram desconectados. Agora, outros dispositivos estão sendo usados."
@@ -4246,6 +4283,9 @@
       ],
       "Recurring meeting": [
         "Reunião recorrente"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Parar de compartilhar sua tela para alterar esta configuração"
       ],
       "You can generate a new meeting link once per day.": [
         "Você pode gerar um novo link de reunião uma vez por dia."

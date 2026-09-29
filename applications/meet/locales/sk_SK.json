@@ -777,6 +777,9 @@
       "View invoice": [
         "Zobraziť faktúru"
       ],
+      "View security details": [
+        "Zobraziť podrobnosti o zabezpečení"
+      ],
       "Virtual backgrounds": [
         "Virtuálne pozadia"
       ],
@@ -2178,6 +2181,12 @@
       "Image preview not found": [
         "Náhľad obrázka nebol nájdený"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávne záložné heslo. Skúste to znova, prosím."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávne druhé heslo. Skúste to znova, prosím."
+      ],
       "Invalid meeting link": [
         "Neplatný odkaz na schôdzu"
       ],
@@ -2660,6 +2669,18 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } potrebuje na spustenie WebRTC. Aktualizujte, prosím, svoj prehliadač alebo zariadenie na verziu, ktorá podporuje WebRTC, vyskúšajte iný prehliadač alebo deaktivujte všetky rozšírenia, ktoré by mohli blokovať jeho fungovanie."
+      ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } člen",
+        "${ mlsMemberCount } členovia",
+        "${ mlsMemberCount } členov",
+        "${ mlsMemberCount } členov"
+      ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "Je pripojený ${ participantCount } účastník, zatiaľ čo bezpečná skupina má ${ mlsMemberCountText } členov. K tejto situácii môže dôjsť dočasne po tom, čo sa niekto pripojí alebo odpojí.",
+        "Sú pripojení ${ participantCount } účastníci, zatiaľ čo bezpečná skupina má ${ mlsMemberCountText } členov. K tejto situácii môže dôjsť dočasne po tom, čo sa niekto pripojí alebo odpojí.",
+        "Je pripojených ${ participantCount } účastníkov, zatiaľ čo bezpečná skupina má ${ mlsMemberCountText } členov. K tejto situácii môže dôjsť dočasne po tom, čo sa niekto pripojí alebo odpojí.",
+        "Je pripojených ${ participantCount } účastníkov, zatiaľ čo bezpečná skupina má ${ mlsMemberCountText } členov. K tejto situácii môže dôjsť dočasne po tom, čo sa niekto pripojí alebo odpojí."
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } a ${ otherParticipantsCount } ďalších nahráva"
@@ -3156,11 +3177,17 @@
       "Participant": [
         "Účastník"
       ],
+      "Participant counts don’t match": [
+        "Počty účastníkov sa nezhodujú"
+      ],
       "Participants can turn live captions on. Turn on your own under Display.": [
         "Účastníci si môžu zapnúť titulky v reálnom čase. Zapnite si ich sami v nastaveniach v časti Zobrazenie."
       ],
       "Participants can’t use live captions": [
         "Účastníci nemôžu používať titulky v reálnom čase"
+      ],
+      "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
+        "V položke „Účastníci“ sa zobrazujú osoby, ktoré sú momentálne pripojené. V položke „Členovia MLS“ sa zobrazujú osoby zaradené do bezpečnostnej skupiny stretnutia. Tieto počty sa môžu krátkodobo líšiť, avšak tento rozdiel trvá dlhšie, než sa očakávalo."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Vložte váš ${ MEET_APP_NAME } odkaz, aby ste sa pripojili k zabezpečenému stretnutiu."
@@ -4333,11 +4360,17 @@
       "Minicalendar": [
         "Minikalendár"
       ],
+      "MLS members": [
+        "MLS členovia"
+      ],
       "No one is waiting": [
         "Nikto nečaká"
       ],
       "No results found": [
         "Žiadne nájdené výsledky"
+      ],
+      "Participant counts don’t match": [
+        "Počty účastníkov sa nezhodujú"
       ],
       "Participants": [
         "Účastníci"
@@ -4456,6 +4489,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Okamžitá pomoc AI, k dispozícii je aj ľudský odborník!"
+      ],
+      "People currently connected to the meeting": [
+        "Osoby momentálne pripojené k stretnutiu"
+      ],
+      "People included in meeting's MLS group": [
+        "Účastníci zaradení do skupiny MLS stretnutia"
       ],
       "Recurring meeting": [
         "Opakované stretnutie"
