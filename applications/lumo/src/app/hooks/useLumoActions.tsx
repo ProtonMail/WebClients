@@ -720,7 +720,8 @@ export const useLumoActions = ({
             newMessageContent: buildArtifactActionLlmPrompt(meta),
             isWebSearchButtonToggled,
             artifactAction: meta,
-            artifactRevisionTargetId: meta.artifactId,
+            // Explain only answers in chat — it doesn't revise the artifact.
+            artifactRevisionTargetId: meta.kind === 'explain' ? undefined : meta.artifactId,
         });
     };
 
