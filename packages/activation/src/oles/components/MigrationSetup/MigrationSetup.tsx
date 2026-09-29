@@ -1,4 +1,4 @@
-import React, { type FC, useEffect, useMemo, useState } from 'react';
+import React, { type FC, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -236,6 +236,17 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
         refreshAfter(30 * SECOND);
         return () => clearTimeout(timer);
     }, [hasIncompleteUsers, hasInactiveUsers, refreshProviderUsers]);
+
+    // User eligibility depends on the domain verification (`domain_not_owned_by_organization`),
+    // and users are first fetched before the domain is verified. Refetch when it changes.
+    const domainVerifyState = model.domain?.VerifyState;
+    const previousDomainVerifyStateRef = useRef(domainVerifyState);
+    useEffect(() => {
+        if (domainVerifyState !== previousDomainVerifyStateRef.current) {
+            previousDomainVerifyStateRef.current = domainVerifyState;
+            refreshProviderUsers().catch(noop);
+        }
+    }, [domainVerifyState, refreshProviderUsers]);
 
     useEffect(() => {
         void (async () => {
