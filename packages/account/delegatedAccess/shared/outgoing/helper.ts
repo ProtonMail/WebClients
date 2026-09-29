@@ -29,6 +29,7 @@ const getParsedOutgoingDelegatedAccess = (
     const email = value.TargetEmail || '';
     const isEnabled = value.State === DelegatedAccessStateEnum.Enabled;
     const isDisabled = value.State === DelegatedAccessStateEnum.Disabled;
+    const isAccessible = value.State === DelegatedAccessStateEnum.Accessible;
     const recoverableAtDate = getParsedDateTime(value.RecoverableTime);
 
     return {
@@ -39,6 +40,7 @@ const getParsedOutgoingDelegatedAccess = (
         recoverableAtDate,
         isDisabled,
         isEnabled,
+        isAccessible,
         isRecoveryContact: getIsRecoveryContact(value),
         isEmergencyContact: getIsEmergencyContact(value),
     };
@@ -82,7 +84,7 @@ export const getMetaOutgoingDelegatedAccess = ({
     now,
     value,
     value: {
-        parsedOutgoingDelegatedAccess: { isDisabled, accessibleAtDate },
+        parsedOutgoingDelegatedAccess: { isDisabled, isAccessible, accessibleAtDate },
     },
     hasKeysToReactivate,
 }: {
@@ -106,7 +108,7 @@ export const getMetaOutgoingDelegatedAccess = ({
         canRecoverStep1: getCanOutgoingDelegatedAccessRecoverStep1(value) && hasKeysToReactivate === true,
         canRecoverStep2: getCanOutgoingDelegatedAccessRecoverStep2(value) && hasKeysToReactivate === true,
         canDelete: true,
-        canChangeWaitTime: true,
+        canChangeWaitTime: !isAccessible,
         canGrantAccess: hasRequestedAccess,
         canRefuseAccess: !isDisabled && hasRequestedAccess,
         canRevokeAccess: !isDisabled && canLogin,
