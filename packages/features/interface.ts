@@ -84,7 +84,6 @@ export enum FeatureCode {
     CategoryViewB2COnboardingViewFlags = 'CategoryViewB2COnboardingViewFlags',
     CategoryViewB2BOnboardingViewFlags = 'CategoryViewB2BOnboardingViewFlags',
     CategoryViewOnboardingAccountDateThreshold = 'CategoryViewOnboardingAccountDateThreshold',
-    CategoryViewBeta = 'CategoryViewBeta',
 
     OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',

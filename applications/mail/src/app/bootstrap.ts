@@ -128,7 +128,6 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
                         FeatureCode.EarlyAccessScope,
                         FeatureCode.MailActionsChunkSize,
                         FeatureCode.AccountSecurityDismissed2FACard,
-                        FeatureCode.CategoryViewBeta,
                     ])
                 ),
             ]);
