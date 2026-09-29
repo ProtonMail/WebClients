@@ -1612,9 +1612,6 @@
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
       ],
-      "Get 50% offer": [
-        "Få et 50%-tilbud"
-      ],
       "Maybe later": [
         "Måske senere"
       ],
@@ -3853,6 +3850,12 @@
       "IMAP server is required": [
         "IMAP-server er påkrævet."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Forkert backupadgangskode. Prøv igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Forkert anden adgangskode. Prøv igen."
+      ],
       "Intended recipient does not support calendar sharing": [
         "Den tiltænkte modtager understøtter ikke kalenderdeling"
       ],
@@ -5596,9 +5599,6 @@
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
         "En VPN er en sikker tunnel mellem din enhed og internettet. Den skjuler din placering og aktivitet for din internetudbyder (ISP) og de websteder, du besøger."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Adgang til mere end 20.000 servere i 145 lande"
-      ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
@@ -5978,9 +5978,6 @@
       "Failed to update meeting schedule": [
         "Kunne ikke opdatere mødeplanen"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Hurtigste VPN-hastigheder – op til 10Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Kun filer (ingen fotos, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
       ],
@@ -6011,9 +6008,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
       ],
-      "Have some more time to decide without interruption.": [
-        "Få lidt mere tid til overvejelse – uden afbrydelse."
-      ],
       "here": [
         "her"
       ],
@@ -6034,9 +6028,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Hvis du annullerer nu, mister du adgang til ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive disse funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
@@ -6376,9 +6367,6 @@
       "Powered by ${ protonButton }": [
         "Drevet af ${ protonButton }"
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium privatlivsbeskyttelse på alle dine enheder"
-      ],
       "Previous modifications on this series will be lost.": [
         "Tidligere ændringer på denne serie vil gå tabt."
       ],
@@ -6481,9 +6469,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Bliv på dit abonnement og få 50% rabat næste måned"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
@@ -6877,6 +6862,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du har et ${ planTitle }-prøveabonnement. Der kræves ingen betaling på dette tidspunkt. Dit abonnement vil automatisk blive fornyet ved prøveperiodens udløb."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en åben faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en åben faktura til ${ dueDate } ${ payInvoiceLink }"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Du har genaktiveret dine nøgler, og begivenheder tilknyttet flg. kalendere kan nu dekrypteres."
@@ -7939,6 +7930,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Pay it": [
+        "Betal"
       ],
       "Reactivate now": [
         "Genaktiver nu"
@@ -12862,9 +12856,6 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
-      ],
-      "Stay for 50% off your next month": [
-        "Bliv hængende for 50% rabat i den næste måned"
       ],
       "Subscription canceled": [
         "Abonnement annulleret"
