@@ -888,9 +888,6 @@
       "Discover and set up features": [
         "Descubra y configure las funcionalidades"
       ],
-      "Get 50% offer": [
-        "Obtener oferta del 50%"
-      ],
       "Remind me later": [
         "Recordarme más tarde"
       ],
@@ -1095,6 +1092,9 @@
       "I like this response": [
         "Me gusta esta respuesta."
       ],
+      "Keep going": [
+        "Continuar"
+      ],
       "Let ${ LUMO_SHORT_APP_NAME } out": [
         "Dejar salir a ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -1163,6 +1163,9 @@
       ],
       "Stop generating": [
         "Detener generación"
+      ],
+      "Stop here": [
+        "Detenerse aquí"
       ],
       "Submit": [
         "Enviar"
@@ -1576,6 +1579,12 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not export this artifact as PDF.": [
+        "No se pudo exportar este artefacto como PDF."
+      ],
+      "Could not export this artifact as PPTX.": [
+        "No se pudo exportar este artefacto como PPTX."
+      ],
       "Could not generate a workflow. Try again.": [
         "No se pudo generar un flujo de trabajo. Intente de nuevo."
       ],
@@ -2176,11 +2185,32 @@
       "Partial content": [
         "Contenido parcial"
       ],
+      "PDF": [
+        "PDF"
+      ],
+      "PDF downloaded.": [
+        "PDF descargado."
+      ],
+      "PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.": [
+        "Error al exportar el PDF. Abra la vista de impresión en su lugar y elija «Guardar como PDF» en la ventana de imprimir."
+      ],
       "Please share what you expected": [
         "Comparta lo que esperaba."
       ],
       "Please wait for files to finish processing": [
         "Espere a que los archivos terminen de procesarse."
+      ],
+      "PPTX": [
+        "PPTX"
+      ],
+      "PPTX downloaded.": [
+        "PPTX descargado."
+      ],
+      "Preparing ${ formatLabel }…": [
+        "Preparando ${ formatLabel }…"
+      ],
+      "Preparing ${ formatLabel }… (${ current } of ${ total })": [
+        "Preparando ${ formatLabel }… (${ current } de ${ total })"
       ],
       "Private video calls for the conversations that matter.": [
         "Videollamadas privadas para las conversaciones que importan."
@@ -2308,6 +2338,9 @@
       "This folder is empty": [
         "Esta carpeta está vacía"
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Esto implica muchos pasos. ¿Debería continuar?"
+      ],
       "This shares your general sentiment and response metadata with ${ BRAND_NAME }. Your prompt and the response are not included.": [
         "Esto comparte su opinión general y los metadatos de la respuesta con ${ BRAND_NAME }. Su prompt y la respuesta no se incluyen."
       ],
@@ -2322,6 +2355,9 @@
       ],
       "tokens / 30d": [
         "tokens / 30d"
+      ],
+      "Tool calls": [
+        "Llamadas de herramientas"
       ],
       "Trying...": [
         "Intentando..."
@@ -2340,6 +2376,12 @@
       ],
       "Uploading ${ uploadProgress.fileName }": [
         "Cargando ${ uploadProgress.fileName }"
+      ],
+      "Uploading to ${ DRIVE_SHORT_APP_NAME }…": [
+        "Cargando a ${ DRIVE_SHORT_APP_NAME }…"
+      ],
+      "Uploading to ${ DRIVE_SHORT_APP_NAME }… ${ progressPercent }%": [
+        "Cargando a ${ DRIVE_SHORT_APP_NAME }… ${ progressPercent }%"
       ],
       "used": [
         "usada"
@@ -2751,6 +2793,14 @@
         "Personalización"
       ]
     },
+    "collider_2025: Spotlight": {
+      "Create artifacts with ${ LUMO_SHORT_APP_NAME }": [
+        "Cree artefactos con ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Turn ideas into documents, code, and more. Open Tools to get started.": [
+        "Convierta ideas en documentos, código y más. Abra Herramientas para comenzar."
+      ]
+    },
     "collider_2025: Status": {
       "Active": [
         "Activa"
@@ -3038,6 +3088,9 @@
       ],
       "For Business": [
         "Para Negocios"
+      ],
+      "New": [
+        "Nuevo"
       ]
     },
     "collider_2025: Trait": {
@@ -3380,6 +3433,24 @@
       "Download image": [
         "Descargar imagen"
       ],
+      "Download PDF": [
+        "Descargar PDF"
+      ],
+      "Download plain text": [
+        "Descargar texto plano"
+      ],
+      "Download PPTX": [
+        "Descargar PPTX"
+      ],
+      "Download source (HTML)": [
+        "Descargar fuente (HMTL)"
+      ],
+      "Download source (Markdown)": [
+        "Descargar fuente (Markdown)"
+      ],
+      "Download source file": [
+        "Descargar archivo fuente"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -3403,6 +3474,9 @@
       ],
       "Explain": [
         "Explicar"
+      ],
+      "Export": [
+        "Exportar"
       ],
       "Favorite": [
         "Favorito"
@@ -3460,6 +3534,15 @@
       ],
       "Open conversation": [
         "Abrir conversación"
+      ],
+      "PDF": [
+        "PDF"
+      ],
+      "Plain text (.txt)": [
+        "Texto plano (.txt)"
+      ],
+      "PowerPoint (.pptx)": [
+        "PowerPoint (.pptx)"
       ],
       "Preview": [
         "Vista previa"
@@ -3535,6 +3618,9 @@
       ],
       "Show sidebar": [
         "Mostrar la barra lateral"
+      ],
+      "Source (Markdown)": [
+        "Fuente (Markdown)"
       ],
       "Start a chat": [
         "Iniciar un chat"
@@ -3613,6 +3699,20 @@
       ],
       "Writing Assistant": [
         "Asistente de Escritura"
+      ]
+    },
+    "collider_2025:Artifact placeholder": {
+      "Create a 5-slide deck on password managers with a bar chart": [
+        "Cree una presentación de 5 diapositivas sobre gestores de contraseñas con un gráfico de barras"
+      ],
+      "Create a self-contained HTML pomodoro timer": [
+        "Cree un temporizador pomodoro HTML autónomo"
+      ],
+      "Write a professional email declining a meeting": [
+        "Escriba un correo profesional rechazando una reunión"
+      ],
+      "Write a Python script to dedupe a CSV by email": [
+        "Escriba un script de Python para eliminar duplicados de un archivo CSV por correo electrónico"
       ]
     },
     "collider_2025:Badge": {
@@ -3870,6 +3970,9 @@
       "All messages and chat history": [
         "Todos los mensajes y el historial de chat"
       ],
+      "Almost ready…": [
+        "Casi listo…"
+      ],
       "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
         "Una mención casual del estrés, un diagnóstico o un medicamento puede alimentar modelos de riesgo que afectan silenciosamente la cobertura que se le ofrece y lo que paga."
       ],
@@ -3878,6 +3981,9 @@
       ],
       "Any images generated in this conversation will also be deleted.": [
         "Toda imagen generada en esta conversación también se eliminará."
+      ],
+      "Applying your changes…": [
+        "Aplicando sus cambios…"
       ],
       "Are you sure you want to delete \"${ project.name }\"? This action cannot be undone.": [
         "¿En verdad desea eliminar «${ project.name }»? Esta acción no se puede deshacer."
@@ -3908,6 +4014,9 @@
       ],
       "Check what your AIs store about you and delete what you no longer need.": [
         "Compruebe qué información almacenan los sistemas de IA sobre usted y elimine lo que ya no necesite."
+      ],
+      "Choose a format to export \"${ conversation.title }\":": [
+        "Elija un formato para exportar «${ conversation.title }»:"
       ],
       "Choose or drop your .zip or conversations.json file. We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
         "Seleccione o suelte su archivo .zip o conversations.json. Analizaremos sus ${ PAPER_TRAIL_LIMITS.maxPrompts } prompts más recientes."
@@ -3942,6 +4051,12 @@
       "Create visuals from a prompt, edit photos, analyze charts, or turn rough sketches into polished graphics.": [
         "Cree elementos visuales a partir de un aviso, editar fotos, analizar gráficos o convertir bocetos burdos en gráficos pulidos."
       ],
+      "Creating artifact": [
+        "Creando el artefacto"
+      ],
+      "Creating artifact…": [
+        "Creando el artefacto…"
+      ],
       "Current chat:": [
         "Chat actual:"
       ],
@@ -3953,6 +4068,9 @@
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Descubra qué información sobre usted podría obtener la IA de las grandes tecnológicas a partir de su historial de chat y obtenga una puntuación de privacidad que podrá compartir."
+      ],
+      "Drafting content…": [
+        "Redactando el contenido…"
       ],
       "Drag and drop or click to browse": [
         "Arrastre y suelte o pulse para navegar"
@@ -4056,6 +4174,12 @@
       "Please upload your AI export before continuing.": [
         "Cargue su exportación de IA antes de continuar."
       ],
+      "Preparing your side panel…": [
+        "Preparando su panel lateral…"
+      ],
+      "Preparing…": [
+        "Preparando…"
+      ],
       "Processing file...": [
         "Procesando archivo..."
       ],
@@ -4071,6 +4195,12 @@
       "red flags": [
         "banderas rojas"
       ],
+      "Revising your artifact…": [
+        "Revisando su artefacto…"
+      ],
+      "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
+        "Guardando como ${ formatLabel }. Navegue a la carpeta de ${ DRIVE_SHORT_APP_NAME } que desea usar, luego pulse «Guardar aquí»."
+      ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Mire lo que las Big Tech de IA saben de usted. Hecho con ${ LUMO_SHORT_APP_NAME }."
       ],
@@ -4079,6 +4209,9 @@
       ],
       "Sign in to your Claude account at claude.ai": [
         "Inicie sesión en su cuenta de Claude en claude.ai"
+      ],
+      "Some content, such as images and attachments, may not be included in the exported file.": [
+        "Es posible que algunos contenidos, como imágenes y archivos adjuntos, no se incluyan en el archivo exportado."
       ],
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
         "Parte del contenido que ha pegado podría traspasar límites en el ámbito laboral, legal o de protección de datos. Esto está aquí para ayudarle a detectarlo, no para juzgarle."
@@ -4091,6 +4224,12 @@
       ],
       "Start a new chat to see it here.": [
         "Comience un chat para verlo aquí."
+      ],
+      "Structured data, aiming for compatibility with the ChatGPT export format": [
+        "Datos estructurados con el objetivo de que sean compatibles con el formato de exportación de ChatGPT"
+      ],
+      "Text formatted with markdown, easy to read or share": [
+        "Texto formateado con markdown, fácil de leer o compartir"
       ],
       "The fuller the bar, the more of that area Big Tech could reconstruct. Lower is better.": [
         "Cuanto más llena esté la barra, mayor será la superficie que las grandes tecnológicas podrán reconstruir. Cuanto más baja, mejor."
@@ -4136,6 +4275,9 @@
       ],
       "Under your data, click Export data": [
         "Debajo de sus datos, pulse en Exportar datos"
+      ],
+      "Updating content…": [
+        "Actualizando el contenido…"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Actualice a ${ LUMO_SHORT_APP_NAME } Plus para crear ${ LUMO_SHORT_APP_NAME }s personalizados, desbloquear modelos avanzados de IA y más."
@@ -4345,11 +4487,17 @@
       "It doesn't expire": [
         "No expira"
       ],
+      "JSON": [
+        "JSON"
+      ],
       "Lending & hiring": [
         "Préstamos y contratación"
       ],
       "Low": [
         "Baja"
+      ],
+      "Markdown": [
+        "Markdown"
       ],
       "Medium": [
         "Media"
@@ -4662,8 +4810,14 @@
       "Created an image": [
         "Creé una imagen"
       ],
+      "Created artifact": [
+        "Creé el artefacto"
+      ],
       "Creating an image": [
         "Creando una imagen"
+      ],
+      "Creating artifact": [
+        "Creando el artefacto"
       ],
       "Dividend Yield": [
         "Rendimiento de dividendos"
@@ -4754,6 +4908,12 @@
       ],
       "Performance comparison": [
         "Comparación de rendimiento"
+      ],
+      "Prepared your side panel": [
+        "Preparé su panel lateral"
+      ],
+      "Preparing your side panel": [
+        "Preparando su panel lateral"
       ],
       "Price": [
         "Precio"
@@ -4850,6 +5010,9 @@
     "collider_2025:Success": {
       "All files removed from project": [
         "Todos los archivos se eliminaron del proyecto"
+      ],
+      "Conversation exported": [
+        "Conversación exportada"
       ],
       "Database connection restored.": [
         "Conexión de base de datos restaurada."
@@ -4961,6 +5124,9 @@
       ],
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "Explore imágenes creadas con ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Export conversation": [
+        "Exportar conversación"
       ],
       "Favorites": [
         "Favoritos"
@@ -5117,6 +5283,9 @@
       ],
       "Two models, two modes": [
         "Dos modelos, dos modos"
+      ],
+      "Untitled conversation": [
+        "Conversación sin título"
       ],
       "Upload your data export": [
         "Cargue su exportación de datos"
@@ -6407,6 +6576,12 @@
       "Image preview not found": [
         "Vista previa de imagen no encontrada"
       ],
+      "Incorrect backup password. Please try again.": [
+        "La contraseña de respaldo no es correcta. Inténtelo de nuevo."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segunda contraseña no es correcta. Inténtelo de nuevo."
+      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -6985,9 +7160,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada con un único nombre de usuario, buzón y persona"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Acceda a más de 20 000 servidores en 145 países"
-      ],
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
@@ -7151,9 +7323,6 @@
       "Expired": [
         "Expirado"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Velocidades VPN más rápidas de hasta 10 Gbps"
-      ],
       "Folder:": [
         "Carpeta:"
       ],
@@ -7166,14 +7335,8 @@
       "Google Pay mark": [
         "Marca de Google Pay"
       ],
-      "Have some more time to decide without interruption.": [
-        "Tenga más tiempo para decidir sin interrupciones."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear la cuenta, solicite una invitación y responderemos dentro de un día hábil."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Si cancela ahora, perderá acceso a ${ BRAND_NAME }${ planTitle } el ${ expiryDate }, incluyendo estas funciones:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si cancela, la suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
@@ -7301,9 +7464,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Intente de nuevo usando un método de pago diferente o contacte con el banco."
       ],
-      "Premium privacy protection across all your devices": [
-        "Protección de privacidad premium en todos sus dispositivos"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables basados en ciclos y los cupones vigentes guardados en la cuenta."
       ],
@@ -7357,9 +7517,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comience a compartirla con sus contactos y úsela para servicios en línea."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Quédese en su plan y obtenga un 50% de descuento en su próximo mes"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envíe un depósito usando la siguiente dirección o escanee el código QR. El depósito aparecerá en la cuenta después de la confirmación."
@@ -9265,6 +9422,9 @@
       "Delete": [
         "Eliminar"
       ],
+      "Export": [
+        "Exportar"
+      ],
       "Go to all projects": [
         "Ir a todos los proyectos"
       ],
@@ -10650,9 +10810,6 @@
       ],
       "Simplify password management": [
         "Simplifique la gestión de contraseñas"
-      ],
-      "Stay for 50% off your next month": [
-        "Quédese y obtenga un 50% de descuento en su próximo mes"
       ],
       "Summary": [
         "Resumen"
