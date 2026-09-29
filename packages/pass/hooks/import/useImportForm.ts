@@ -13,8 +13,10 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import identity from '@proton/utils/identity';
 
 import { useCurrentTabID } from '../../components/Core/PassCoreProvider';
+import { useFoldersAccess } from '../../components/Folders/useFoldersAccess';
 import { isAbortError } from '../../lib/api/errors';
 import { ImportReaderError } from '../../lib/import/helpers/error';
+import { splitFoldersIntoVaults } from '../../lib/import/helpers/folders';
 import type { ImportProgress, ImportReport } from '../../lib/import/helpers/report';
 import { computeProgress, getImportCounts } from '../../lib/import/helpers/report';
 import { importReader } from '../../lib/import/reader';
@@ -29,6 +31,7 @@ import { orThrow, pipe } from '../../utils/fp/pipe';
 import { useDebouncedValue } from '../useDebouncedValue';
 import { useMemoSelector } from '../useMemoSelector';
 import { useRequestDispatch } from '../useRequest';
+import { useStatefulRef } from '../useStatefulRef';
 import { useFileImporter } from './useFileImporter';
 
 type DropzoneProps = ComponentProps<typeof Dropzone>;
@@ -102,6 +105,7 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
 
     const user = useSelector(selectUser);
     const aliases = useSelector(selectAllAliasItems);
+    const foldersAccess = useStatefulRef(useFoldersAccess());
 
     const dispatch = useDispatch();
     const doImportItems = useRequestDispatch(importItems);
@@ -153,7 +157,9 @@ export const useImportForm = ({ onPassphrase, onWillSubmit }: UseImportFormOptio
             }
 
             const { provider } = values;
-            const { fileReader, ...data } = result;
+            const { fileReader, ...payload } = result;
+            const { canUseFolders } = foldersAccess.current;
+            const data = canUseFolders ? payload : { ...payload, vaults: splitFoldersIntoVaults(payload.vaults) };
             reader = fileReader ?? null;
 
             /** 2. Prompt the user for vault selection. This
