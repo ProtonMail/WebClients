@@ -2217,10 +2217,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Se renueva automáticamente por ${ renewPrice } durante ${ renewCycle } mes",
-        "Se renueva automáticamente por ${ renewPrice } durante ${ renewCycle } meses"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Se renueva automáticamente en ${ subscriptionManagerName }"
       ]
@@ -2448,9 +2444,6 @@
       ],
       "Discover and set up features": [
         "Descubra y configure las funcionalidades"
-      ],
-      "Get 50% offer": [
-        "Obtener oferta del 50%"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -3805,6 +3798,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Traiga su correo electrónico, eventos de calendario y contactos desde otro proveedor."
+      ],
+      "Bring over your files from another provider.": [
+        "Traiga sus archivos de cualquier otro proveedor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Genere confianza y reconocimiento de marca con direcciones de correo profesionales en su propio dominio."
@@ -7617,9 +7613,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada con un único nombre de usuario, buzón y persona"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Acceda a más de 20 000 servidores en 145 países"
-      ],
       "Account monitor": [
         "Monitoreo de la cuenta"
       ],
@@ -8383,9 +8376,6 @@
       "Failed to fetch logs.": [
         "Error el obtener los registros."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Velocidades VPN más rápidas de hasta 10 Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) hasta 100 GB en total, 100 000 archivos y 50 GB por archivo"
       ],
@@ -8479,9 +8469,6 @@
       "Groups": [
         "Grupos"
       ],
-      "Have some more time to decide without interruption.": [
-        "Tenga más tiempo para decidir sin interrupciones."
-      ],
       "here": [
         "aquí"
       ],
@@ -8517,9 +8504,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si cree que esto es un error, contáctenos ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Si cancela ahora, perderá acceso a ${ BRAND_NAME }${ planTitle } el ${ expiryDate }, incluyendo estas funciones:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si cancela, la suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
@@ -9115,9 +9099,6 @@
       "Preference saved": [
         "Preferencia guardada"
       ],
-      "Premium privacy protection across all your devices": [
-        "Protección de privacidad premium en todos sus dispositivos"
-      ],
       "Preview": [
         "Vista previa"
       ],
@@ -9169,8 +9150,8 @@
       "RECOMMENDED": [
         "RECOMENDADO"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Recomendado en dispositivos de confianza. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "La recuperación por correo no está disponible mientras ${ PROTON_SENTINEL_NAME } está activado."
@@ -9382,9 +9363,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comience a compartirla con sus contactos y úsela para servicios en línea."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Quédese en su plan y obtenga un 50% de descuento en su próximo mes"
       ],
       "Storage allocated to other users in this organisation": [
         "Almacenamiento asignado a otros usuarios en esta organización"
@@ -9600,9 +9578,6 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Esto permitirá que PayPal se use para pagar la suscripción a ${ BRAND_NAME }. Le redirigiremos a PayPal en una pestaña nueva de navegador. Si usa cualquier bloqueador emergente, desactívelo para continuar."
-      ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Esto le permitirá acceder de forma rápida y segura a su cuenta de ${ BRAND_NAME } para que pueda cambiar la contraseña."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Esto eliminará permanentemente los datos y todas las direcciones asociadas a estos usuarios."
@@ -13730,6 +13705,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Última oportunidad para obtener un 80 % de descuento en su primer mes de ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunidad para obtener su primer mes de ${ plan } por este precio."
+      ],
       "Last day to save": [
         "Último día para ahorrar"
       ],
@@ -13811,6 +13789,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Short @pm.me address": [
+        "Dirección corta @pm.me"
       ],
       "Storage": [
         "Almacenamiento"
@@ -14452,9 +14433,6 @@
       ],
       "Card number": [
         "Número de tarjeta"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Los créditos y descuentos se reflejan en su factura"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Actualmente la renovación automática de la suscripción está desactivada. Si desea cambiar la suscripción ahora, la renovación automática volverá a activarse."
@@ -19523,9 +19501,6 @@
       ],
       "Status": [
         "Estado"
-      ],
-      "Stay for 50% off your next month": [
-        "Quédese y obtenga un 50% de descuento en su próximo mes"
       ],
       "Stay secure and connected anywhere": [
         "Manténgase seguro y conectado en cualquier lugar"

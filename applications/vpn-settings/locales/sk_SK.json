@@ -1628,6 +1628,9 @@
     "Action subscription": {
       "Reactivate": [
         "Znovu aktivovať"
+      ],
+      "View breakdown": [
+        "Zobraziť rozpis"
       ]
     },
     "Action: Sheets": {
@@ -2249,14 +2252,44 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewCycle } month": [
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiac",
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiace",
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiacov",
-        "Bude automaticky obnovené za ${ renewPrice } na ${ renewCycle } mesiacov"
+      "Free renewal": [
+        "Bezplatná obnova"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Obnova zdarma na ${ nextCycle } mesiac, dňa ${ when }",
+        "Obnova zdarma na ${ nextCycle } mesiace, dňa ${ when }",
+        "Obnova zdarma na ${ nextCycle } mesiacov, dňa ${ when }",
+        "Obnova zdarma na ${ nextCycle } mesiacov, dňa ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Bude automaticky obnovené za ${ introPrice } na ${ nextCycle } mesiac, dňa ${ when }",
+        "Bude automaticky obnovené za ${ introPrice } na ${ nextCycle } mesiace, dňa ${ when }",
+        "Bude automaticky obnovené za ${ introPrice } na ${ nextCycle } mesiacov, dňa ${ when }",
+        "Bude automaticky obnovené za ${ introPrice } na ${ nextCycle } mesiacov, dňa ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Bude automaticky obnovené za ${ price } na ${ cycle } mesiac",
+        "Bude automaticky obnovené za ${ price } na ${ cycle } mesiace",
+        "Bude automaticky obnovené za ${ price } na ${ cycle } mesiacov",
+        "Bude automaticky obnovené za ${ price } na ${ cycle } mesiacov"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automaticky sa obnovuje ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Prejde na ${ nextCycle } mesiac dňa ${ when } (už zaplatená suma ${ paidPrice })",
+        "Prejde na ${ nextCycle } mesiace dňa ${ when } (už zaplatená suma ${ paidPrice })",
+        "Prejde na ${ nextCycle } mesiacov dňa ${ when } (už zaplatená suma ${ paidPrice })",
+        "Prejde na ${ nextCycle } mesiacov dňa ${ when } (už zaplatená suma ${ paidPrice })"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Potom ${ price } za ${ cycle } mesiac",
+        "Potom ${ price } za ${ cycle } mesiace",
+        "Potom ${ price } za ${ cycle } mesiacov",
+        "Potom ${ price } za ${ cycle } mesiacov"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Bude nahradené vaším nadchádzajúcim predplatným dňa ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -2298,6 +2331,14 @@
       ],
       "Yearly": [
         "Ročne"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Fakturácia pri obnovení"
+      ],
+      "Prepaid": [
+        "Predplatené"
       ]
     },
     "Blog": {
@@ -2486,9 +2527,6 @@
       ],
       "Discover and set up features": [
         "Objaviť a nastaviť funkcie"
-      ],
-      "Get 50% offer": [
-        "Využite 50 % zľavu"
       ],
       "Maybe later": [
         "Možno neskôr"
@@ -3685,6 +3723,11 @@
         "(prostredníctvom ${ entryCountryName })"
       ]
     },
+    "Coupon": {
+      "Coupon applied": [
+        "Kupón použitý"
+      ]
+    },
     "Create user accounts empty state": {
       "No search results found": [
         "Nenašli sa žiadne výsledky vyhľadávania"
@@ -3855,6 +3898,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Preneste si vaše emaily, udalosti kalendára a kontakty od iného poskytovateľa."
+      ],
+      "Bring over your files from another provider.": [
+        "Preneste si svoje súbory od iného poskytovateľa."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Vytvorte si dôveryhodnú a rozpoznateľnú značku pomocou profesionálnych emailových adries vo vašej vlastnej doméne."
@@ -7816,9 +7862,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Používateľ je účet spojený s jedným používateľským menom, poštovou schránkou a osobou"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Pristupujte k 20 000+ serverom vo viac ako 145 krajinách"
-      ],
       "Account monitor": [
         "Monitor účtu"
       ],
@@ -8608,9 +8651,6 @@
       "Failed to fetch logs.": [
         "Načítanie záznamov zlyhalo."
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Najvyššia rýchlosť VPN až 10 Gbps"
-      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
       ],
@@ -8704,9 +8744,6 @@
       "Groups": [
         "Skupiny"
       ],
-      "Have some more time to decide without interruption.": [
-        "Máte ešte trochu času na rozhodnutie bez toho, aby vás niekto rušil."
-      ],
       "here": [
         "tu"
       ],
@@ -8742,9 +8779,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokiaľ si myslíte, že ide o chybu, kontaktujte nás ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Ak zrušíte predplatné teraz, stratíte prístup k službe ${ BRAND_NAME } ${ planTitle } dňa ${ expiryDate }, vrátane týchto funkcií:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
@@ -9352,9 +9386,6 @@
       "Preference saved": [
         "Nastavenie uložené"
       ],
-      "Premium privacy protection across all your devices": [
-        "Prémiová ochrana súkromia na všetkých vašich zariadeniach"
-      ],
       "Preview": [
         "Ukážka"
       ],
@@ -9406,8 +9437,8 @@
       "RECOMMENDED": [
         "ODPORÚČANÉ"
       ],
-      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Odporúčané na dôveryhodných zariadeniach. ${ keepMeSignedInLearnMoreLink }"
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Odporúčané na dôveryhodných zariadeniach. ${ learnMoreLink }"
       ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "Pri povolenom ${ PROTON_SENTINEL_NAME } nie je obnovenie prostredníctvom emailu k dispozícii."
@@ -9621,9 +9652,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Držte sa svojho plánu a získajte 50 % zľavu na nasledujúci mesiac"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložisko pridelené iným používateľom v tejto organizácii"
@@ -9850,8 +9878,8 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní, aby sa PayPal použil na zaplatenie vášho predplatného ${ BRAND_NAME }. Na novej karte prehliadača vás presmerujeme na PayPal. Ak používate nejaké blokovanie automaticky otváraných okien, deaktivujte ho, aby ste mohli pokračovať."
       ],
-      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change you password.": [
-        "Vďaka tomu získate rýchly a bezpečný prístup k vášmu účtu ${ BRAND_NAME }, kde si budete môcť zmeniť heslo."
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Vďaka tomu získate rýchly a bezpečný prístup k vášmu účtu ${ BRAND_NAME }, kde si budete môcť zmeniť vaše heslo."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Týmto natrvalo vymažete dáta a všetky emailové adresy spojené s týmito používateľmi."
@@ -10468,6 +10496,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Máte skúšobné predplatné ${ planTitle }. V tejto chvíli sa nevyžaduje žiadna platba. Vaše predplatné sa automaticky obnoví na konci skúšobného obdobia."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no invoices.": [
         "Nemáte žiadne faktúry."
       ],
@@ -10789,6 +10823,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Darované"
+      ],
+      "Open": [
+        "Otvoriť"
       ],
       "Paid": [
         "Zaplatené"
@@ -12143,6 +12180,9 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
+      ],
+      "Pay it": [
+        "Zaplatiť"
       ],
       "Privacy policy": [
         "Ochrana osobných údajov"
@@ -14855,9 +14895,6 @@
       ],
       "Card number": [
         "Číslo karty"
-      ],
-      "Credits and discounts are reflected in your invoice": [
-        "Kredity a zľavy sú zohľadnené na vašej faktúre"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "V súčasnosti je automatické obnovenie predplatného vypnuté. Ak teraz zmeníte predplatné, automatické obnovenie bude opäť povolené."
@@ -18401,6 +18438,9 @@
       ],
       "Free Trial": [
         "Bezplatné skúšobné obdobie"
+      ],
+      "Upcoming": [
+        "Nadchádzajúce"
       ]
     },
     "Subtitle": {
@@ -18918,6 +18958,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } asistenta písania"
+      ],
+      "${ planTitle } breakdown": [
+        "Rozpis plánu ${ planTitle }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } pre organizácie"
@@ -20095,14 +20138,14 @@
       "Status": [
         "Stav"
       ],
-      "Stay for 50% off your next month": [
-        "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
-      ],
       "Stay secure and connected anywhere": [
         "Buďte v bezpečí a pripojení kdekoľvek"
       ],
       "Subscription": [
         "Predplatné"
+      ],
+      "Subscription breakdown": [
+        "Rozpis predplatného"
       ],
       "Subscription canceled": [
         "Predplatné bolo zrušené"
@@ -20413,11 +20456,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Fakturácia"
+      ],
       "End date": [
         "Dátum ukončenia"
       ],
       "Plan": [
         "Plán"
+      ],
+      "Price": [
+        "Cena"
+      ],
+      "Start date": [
+        "Dátum začiatku"
       ],
       "Status": [
         "Stav"
