@@ -8212,6 +8212,18 @@
       ],
       "We'll email you when your import is complete.": [
         "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Яны будуць скапіяваны з Google Drive у ${ DRIVE_APP_NAME }"
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана. Вашы файлы з'явяцца ў папцы ў ${ DRIVE_APP_NAME }"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -9296,6 +9308,9 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "Pay it": [
+        "Заплаціць"
       ]
     },
     "List title": {
@@ -11371,6 +11386,9 @@
       ],
       "Your subscription renews soon": [
         "Ваша падпіска неўзабаве падоўжыцца"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Апошні шанс атрымаць першы месяц тарыфнага плана ${ plan } па гэтай цане."
       ]
     },
     "Offer fearue": {
@@ -11650,6 +11668,12 @@
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Дадайце спосаб аплаты**, каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
       ]
     },
     "Option": {
@@ -15163,6 +15187,9 @@
       ],
       "We could not find anything to import": [
         "Элементы для імпартавання адсутнічаюць"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Вітаем у ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

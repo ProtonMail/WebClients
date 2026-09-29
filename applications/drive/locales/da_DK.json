@@ -8050,6 +8050,12 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Din Google Drive er muligvis tom, eller indeholder kun filer, som ikke understøttes."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en åben faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en åben faktura til ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -9125,6 +9131,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Pay it": [
+        "Betal"
       ]
     },
     "List title": {
