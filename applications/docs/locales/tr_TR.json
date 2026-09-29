@@ -1388,9 +1388,6 @@
       "Continue your subscription": [
         "Aboneliğinizi kullanmayı sürdürün"
       ],
-      "Get 50% offer": [
-        "%50 indirimden yararlanın"
-      ],
       "Maybe later": [
         "Belki sonra"
       ]
@@ -3193,8 +3190,14 @@
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Yedek parola yanlış. Lütfen yeniden deneyin."
+      ],
       "Incorrect password. Please try again.": [
         "Parola yanlış. Lütfen yeniden deneyin."
+      ],
+      "Incorrect second password. Please try again.": [
+        "İkinci parola yanlış. Lütfen yeniden deneyin."
       ],
       "Invalid coupon": [
         "Kupon geçersiz"
@@ -4724,9 +4727,6 @@
       "Accept/decline": [
         "Kabul et/reddet"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "145 ülkede 20.000 üzerinde sunucuya erişim"
-      ],
       "Ad targeting": [
         "Hedeflenmiş reklam"
       ],
@@ -5035,9 +5035,6 @@
       "Failing signatures will be re-signed by you": [
         "İmzalanmamış değişiklikler sizin tarafınızdan yeniden imzalanacak"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "10 Gb/sn olabilen en yüksek VPN hızı"
-      ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" dosyası indirme sırasında silindi"
       ],
@@ -5074,9 +5071,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
       ],
-      "Have some more time to decide without interruption.": [
-        "Kesintiye uğramadan karar vermek için biraz daha zamanınız var."
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Sorunu bildirerek bu deneyimi iyileştirmemize yardımcı olun. Elektronik tablo içeriğini paylaşmakta bir sakınca görmüyorsanız, aşağıdaki hata ayıklama bilgilerini bildiriminize ekleyin."
       ],
@@ -5094,9 +5088,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Aboneliğinizi şimdi iptal ederseniz aşağıdaki özellikleri bulunan ${ BRAND_NAME } ${ planTitle } aboneliğinize erişiminizi ${ expiryDate } tarihinde kaybedeceksiniz:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
@@ -5407,9 +5398,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Lütfen kullanıma alınmamış anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
       ],
-      "Premium privacy protection across all your devices": [
-        "Tüm aygıtlarınızda birinci sınıf gizlilik koruması"
-      ],
       "Preparing link to file": [
         "Dosya bağlantısı hazırlanıyor"
       ],
@@ -5526,9 +5514,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Aşağıdaki VPN ayarlarını etkinleştirerek kolayca bağlı kalın:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Tarifenizde kalın ve sonraki ay %50 indirimden yararlanın"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Abonelik her ${ cycle } ayda bir otomatik olarak yenilenir.",
@@ -5835,6 +5820,12 @@
       ],
       "You don't have access": [
         "Erişim izniniz yok"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Ödenmemiş bir faturanız var ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "${ dueDate } tarihli ödenmemiş bir faturanız var ${ payInvoiceLink }"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Seçtiğiniz hesap ile görüntüleme izinleriniz olmayabilir. Farklı bir hesap deneyin veya erişim izni vermesi için sahibiyle görüşün."
@@ -6579,6 +6570,9 @@
       ],
       "Pay invoice": [
         "Faturayı öde"
+      ],
+      "Pay it": [
+        "Ödeyin"
       ],
       "Reactivate now": [
         "Yeniden kullanıma al"
@@ -10383,9 +10377,6 @@
       ],
       "Start import process": [
         "İçe aktarma işlemini başlatın"
-      ],
-      "Stay for 50% off your next month": [
-        "Sonraki ay %50 indirimden yararlanın"
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"

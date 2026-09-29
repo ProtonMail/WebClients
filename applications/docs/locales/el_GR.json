@@ -1388,9 +1388,6 @@
       "Continue your subscription": [
         "Συνεχίστε τη συνδρομή σας"
       ],
-      "Get 50% offer": [
-        "Επωφεληθείτε από προσφορά 50%"
-      ],
       "Maybe later": [
         "Ίσως αργότερα"
       ]
@@ -3193,8 +3190,14 @@
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Εσφαλμένος εφεδρικός κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "Incorrect password. Please try again.": [
         "Λανθασμένος κωδικός. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ],
       "Invalid coupon": [
         "Μη έγκυρο κουπόνι"
@@ -4724,9 +4727,6 @@
       "Accept/decline": [
         "Αποδοχή/απόρριψη"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Πρόσβαση σε 20.000+ διακομιστές σε 145 χώρες"
-      ],
       "Ad targeting": [
         "Στόχευση διαφημίσεων"
       ],
@@ -5035,9 +5035,6 @@
       "Failing signatures will be re-signed by you": [
         "Οι υπογραφές που δε λείπουν θα υπογράφονται εκ νέου από εσάς"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Οι ταχύτερες ταχύτητες VPN έως και 10Gbps"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Το αρχείο \"${ name }\" διαγράφηκε κατά τη λήψη"
       ],
@@ -5074,9 +5071,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Οι κυβερνήσεις και οι ISP μπορούν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο. Κρύβοντας την πραγματική σας IP και κρυπτογραφώντας τη δραστηριότητά σας, η περιήγησή σας γίνεται ιδιωτική."
       ],
-      "Have some more time to decide without interruption.": [
-        "Έχετε λίγο περισσότερο χρόνο να αποφασίσετε χωρίς διακοπή."
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Βοηθήστε μας να βελτιώσουμε αυτήν την εμπειρία αναφέροντας το πρόβλημα. Εάν αισθάνεστε άνετα να κοινοποιείτε περιεχόμενο υπολογιστικού φύλλου, επισυνάψτε τις παρακάτω πληροφορίες εντοπισμού σφαλμάτων στην αναφορά σας."
       ],
@@ -5094,9 +5088,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Αν ακυρώσετε τώρα, θα χάσετε την πρόσβαση στο ${ BRAND_NAME } ${ planTitle } στις ${ expiryDate }, συμπεριλαμβανομένων αυτών των λειτουργιών:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Εάν ακυρώσετε, η συνδρομή σας ${ planTitle } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
@@ -5407,9 +5398,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium προστασία απορρήτου σε όλες τις συσκευές σας"
-      ],
       "Preparing link to file": [
         "Προετοιμασία συνδέσμου προς το αρχείο"
       ],
@@ -5526,9 +5514,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Μείνετε συνδεδεμένοι χωρίς κόπο ενεργοποιώντας τις ακόλουθες ρυθμίσεις VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Μείνετε στο πλάνο σας και κερδίστε έκπτωση 50% τον επόμενο μήνα"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Η συνδρομή ανανεώνεται αυτόματα κάθε ${ cycle } μήνα.",
@@ -5835,6 +5820,12 @@
       ],
       "You don't have access": [
         "Δεν έχετε πρόσβαση"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο με ημερομηνία λήξης ${ dueDate } ${ payInvoiceLink }"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Ενδέχεται να μην έχετε τα απαραίτητα δικαιώματα για να το προβάλετε με τον επιλεγμένο λογαριασμό σας. Δοκιμάστε έναν άλλο λογαριασμό ή επικοινωνήστε με τον κάτοχο για πρόσβαση."
@@ -6579,6 +6570,9 @@
       ],
       "Pay invoice": [
         "Εξόφληση τιμολογίου"
+      ],
+      "Pay it": [
+        "Πλήρωσέ το"
       ],
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
@@ -10383,9 +10377,6 @@
       ],
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
-      ],
-      "Stay for 50% off your next month": [
-        "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"

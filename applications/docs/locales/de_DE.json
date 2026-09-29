@@ -1388,9 +1388,6 @@
       "Continue your subscription": [
         "Abonnement fortsetzen"
       ],
-      "Get 50% offer": [
-        "50 % Rabatt sichern"
-      ],
       "Maybe later": [
         "Vielleicht später"
       ]
@@ -3193,8 +3190,14 @@
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
+      ],
       "Incorrect password. Please try again.": [
         "Ungültiges Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
       ],
       "Invalid coupon": [
         "Ungültiger Gutschein"
@@ -4724,9 +4727,6 @@
       "Accept/decline": [
         "Annehmen/Ablehnen"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Zugriff auf über 20.000 Server in 145 Ländern"
-      ],
       "Ad targeting": [
         "Zielgruppenorientierte Werbung"
       ],
@@ -5035,9 +5035,6 @@
       "Failing signatures will be re-signed by you": [
         "Fehlerhafte Signaturen werden von dir Resigniert"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Die Datei „${ name }“ wurde während des Downloads gelöscht."
       ],
@@ -5074,9 +5071,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
       ],
-      "Have some more time to decide without interruption.": [
-        "Gewinne etwas Zeit, um ungestört zu entscheiden."
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Hilf uns, diese Funktion zu verbessern, indem du das Problem meldest. Wenn du keine Bedenken hast, Inhalte der Tabelle weiterzugeben, füge deinem Bericht bitte die unten aufgeführten Fehlerbehebungsinformationen als Anhang bei."
       ],
@@ -5094,9 +5088,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Wenn du jetzt kündigst, verlierst du am ${ expiryDate } den Zugang zu ${ BRAND_NAME } ${ planTitle }, inklusive dieser Funktionen:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
@@ -5407,9 +5398,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die Daten enthalten, die mit dem inaktiven Schlüssel verschlüsselt sind."
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium-Schutz deiner Privatsphäre auf all deinen Geräten"
-      ],
       "Preparing link to file": [
         "Link zur Datei wird vorbereitet"
       ],
@@ -5526,9 +5514,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Bleibe mühelos verbunden, indem du die folgenden VPN-Einstellungen aktivierst:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Abonnement wird automatisch nach ${ cycle } Monat verlängert.",
@@ -5835,6 +5820,12 @@
       ],
       "You don't have access": [
         "Du hast keinen Zugriff"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung vom ${ dueDate } ${ payInvoiceLink }"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Möglicherweise verfügst du nicht über die erforderlichen Berechtigungen, um es mit deinem ausgewählten Konto anzuzeigen. Versuche es mit einem anderen Konto oder kontaktiere den Besitzer, um Zugang zu erhalten."
@@ -6579,6 +6570,9 @@
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
+      ],
+      "Pay it": [
+        "Bezahlen"
       ],
       "Reactivate now": [
         "Jetzt reaktivieren"
@@ -9166,7 +9160,7 @@
         "Erstellt von"
       ],
       "Last viewed first": [
-        "Letzte Anzeigen zuerst"
+        "Zuletzt angesehen zuerst"
       ],
       "Location": [
         "Standort"
@@ -10383,9 +10377,6 @@
       ],
       "Start import process": [
         "Importvorgang starten"
-      ],
-      "Stay for 50% off your next month": [
-        "Bleibe und sichere dir 50 % Rabatt auf deinen nächsten Monat"
       ],
       "Stop sharing": [
         "Teilen beenden"

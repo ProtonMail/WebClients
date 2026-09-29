@@ -1388,9 +1388,6 @@
       "Continue your subscription": [
         "Continuar sua assinatura"
       ],
-      "Get 50% offer": [
-        "Aproveite a oferta de 50% de desconto"
-      ],
       "Maybe later": [
         "Talvez mais tarde"
       ]
@@ -3109,6 +3106,9 @@
       "Failed to fetch sharing info": [
         "Erro ao obter as informações para compartilhar"
       ],
+      "Failed to fetch sharing information": [
+        "Erro ao obter as informações para compartilhar"
+      ],
       "Failed to load 'My files' folder": [
         "Falha ao carregar a pasta 'Meus arquivos'"
       ],
@@ -3160,8 +3160,14 @@
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Senha de backup incorreta. Tente novamente."
+      ],
       "Incorrect password. Please try again.": [
         "A senha não é válida. Tente novamente."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Segunda senha incorreta. Tente novamente."
       ],
       "Invalid coupon": [
         "Cupom inválido"
@@ -4019,6 +4025,9 @@
       ],
       "Still waiting?": [
         "Ainda esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque na sua chave de segurança para continuar"
       ]
     },
     "fido2: Label": {
@@ -4652,9 +4661,6 @@
       "Accept/decline": [
         "Aceitar/recusar"
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Acesse 20.000+ servidores em 145 países"
-      ],
       "Ad targeting": [
         "Segmentação de anúncios"
       ],
@@ -4963,9 +4969,6 @@
       "Failing signatures will be re-signed by you": [
         "As assinaturas que não forem aceitas serão assinadas novamente por você"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Velocidades de VPN mais rápidas, até 10 Gbps"
-      ],
       "File \"${ name }\" was deleted during download": [
         "Arquivo \"${ name }\" foi deletado durante o download"
       ],
@@ -5002,9 +5005,6 @@
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Governos e provedores de internet (ISPs) podem monitorar sua atividade on-line. Ao ocultar seu IP real e criptografar sua atividade, sua navegação se torna privada."
       ],
-      "Have some more time to decide without interruption.": [
-        "Ganhe mais tempo para decidir sem interrupções."
-      ],
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Ajude-nos a melhorar esta experiência relatando o problema. Se você se sentir confortável em compartilhar o conteúdo da planilha, anexe as informações de depuração abaixo ao seu relatório."
       ],
@@ -5022,9 +5022,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Se cancelar agora, perderá o acesso a ${ BRAND_NAME } ${ planTitle } em ${ expiryDate }, incluindo estes recursos:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se você cancelar sua assinatura do ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
@@ -5332,9 +5329,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
       ],
-      "Premium privacy protection across all your devices": [
-        "Proteção de privacidade premium em todos os seus dispositivos"
-      ],
       "Preparing link to file": [
         "Preparando link para o arquivo"
       ],
@@ -5451,9 +5445,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantenha-se conectado de forma simples ativando as seguintes configurações de VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Mantenha o seu plano e obtenha 50% de desconto no próximo mês"
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "A assinatura é renovada automaticamente a cada ${ cycle } mês.",
@@ -7906,6 +7897,9 @@
       "Recent documents updated": [
         "Documentos recentes foram atualizados"
       ],
+      "Report submitted successfully": [
+        "Relatório enviado com sucesso"
+      ],
       "Root folder failed to be loaded": [
         "Erro ao carregar a pasta raiz"
       ],
@@ -8117,11 +8111,17 @@
       "help center": [
         "centro de ajuda"
       ],
+      "If you continue after your trial,": [
+        "Se você continuar depois da sua avaliação,"
+      ],
       "If you need help,": [
         "Se precisar de ajuda,"
       ],
       "Once your full subscription starts...": [
         "Quando sua assinatura completa começar..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "você pode cancelar em até 30 dias e receber um reembolso proporcional."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
@@ -10267,9 +10267,6 @@
       "Start import process": [
         "Iniciar processo de importação"
       ],
-      "Stay for 50% off your next month": [
-        "Fique por mais um mês com 50% de desconto"
-      ],
       "Stop sharing": [
         "Parar compartilhamento"
       ],
@@ -10467,6 +10464,9 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Este link expirou. Estenda a data de validade"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que sejam decifradas, as senhas criptografadas permanecem seguras mesmo se forem expostas."
