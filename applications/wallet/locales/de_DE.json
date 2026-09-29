@@ -1006,9 +1006,6 @@
       "Discover and set up features": [
         "Entdecken und Funktionen einrichten"
       ],
-      "Get 50% offer": [
-        "50 % Rabatt sichern"
-      ],
       "Remind me later": [
         "Später erneut fragen"
       ],
@@ -2373,6 +2370,12 @@
       "Failed to load subscription data. Please try again later.": [
         "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
       ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
+      ],
       "Input isn't a valid email or bitcoin address": [
         "Die Eingabe ist keine gültige E-Mail-Adresse oder Bitcoin-Adresse"
       ],
@@ -2834,9 +2837,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Ein Benutzer ist ein Konto, das mit einem einzigen Benutzernamen, einem Postfach und einer Person verbunden ist."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Zugriff auf über 20.000 Server in 145 Ländern"
-      ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
@@ -2979,9 +2979,6 @@
       "Expired": [
         "Abgelaufen"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
-      ],
       "for ${ price }": [
         "für ${ price }"
       ],
@@ -2991,14 +2988,8 @@
       "Google Pay mark": [
         "Google Pay markieren"
       ],
-      "Have some more time to decide without interruption.": [
-        "Gewinne etwas Zeit, um ungestört zu entscheiden."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Wenn du jetzt kündigst, verlierst du am ${ expiryDate } den Zugang zu ${ BRAND_NAME } ${ planTitle }, inklusive dieser Funktionen:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
@@ -3093,9 +3084,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
-      "Premium privacy protection across all your devices": [
-        "Premium-Schutz deiner Privatsphäre auf all deinen Geräten"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
@@ -3131,9 +3119,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Behalte dein Abonnement und hol dir 50 % Rabatt für deinen nächsten Monat."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
@@ -5901,9 +5886,6 @@
       "Simplify password management": [
         "Vereinfache die Passwortverwaltung"
       ],
-      "Stay for 50% off your next month": [
-        "Bleibe und sichere dir 50 % Rabatt auf deinen nächsten Monat"
-      ],
       "Summary": [
         "Zusammenfassung"
       ],
@@ -6318,10 +6300,10 @@
         "Vielen Dank, dass du ${ WALLET_APP_NAME } unterstützt!"
       ],
       "This email can receive Bitcoin via Email": [
-        "Diese E-Mail-Adresse kann Bitcoins per E-Mail empfangen."
+        "Diese E-Mail-Adresse kann Bitcoin per E-Mail empfangen."
       ],
       "Warning: the recipient will not be able to send Bitcoin via Email to this email.": [
-        "Warnung: Der Empfänger kann an diese E-Mail-Adresse keine Bitcoins per E-Mail senden."
+        "Warnung: Der Empfänger kann an diese E-Mail-Adresse keine Bitcoin per E-Mail senden."
       ],
       "You need to select an email to send from": [
         "Du musst eine E-Mail-Adresse auswählen, von der du senden möchtest."
@@ -6443,7 +6425,7 @@
         "Standardwährung"
       ],
       "For better privacy, we recommend ${ walletAccountCreation } for receiving Bitcoin via Email. ${ learnMore }.": [
-        "Für bessere Privatsphäre empfehlen wir, ${ walletAccountCreation }, um Bitcoins via E-Mail zu empfangen. ${ learnMore }."
+        "Für bessere Privatsphäre empfehlen wir, ${ walletAccountCreation }, um Bitcoin via E-Mail zu empfangen. ${ learnMore }."
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -6824,7 +6806,7 @@
         "Wähle eine Standardwährung, damit wir den Wert deiner Bitcoin-Transaktionen anhand der neuesten Marktdaten zum Zeitpunkt der Transaktion anzeigen können."
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
-        "Bitte übertrage deine Bitcoins auf ein anderes Wallet, bevor du es löschst. Beim Löschen dieses Wallets werden alle zugehörigen Daten von den Servern von ${ BRAND_NAME } entfernt. Du kannst dieses Wallet später mit der Seed-Phrase wiederherstellen."
+        "Bitte übertrage deine Bitcoin auf ein anderes Wallet, bevor du es löschst. Beim Löschen dieses Wallets werden alle zugehörigen Daten von den Servern von ${ BRAND_NAME } entfernt. Du kannst dieses Wallet später mit der Seed-Phrase wiederherstellen."
       ],
       "Primary account": [
         "Primäres Konto"
@@ -6960,7 +6942,7 @@
         "+ Hinzufügen"
       ],
       "Add bitcoins to your wallet": [
-        "Füge Bitcoins zu deiner Wallet hinzu"
+        "Füge Bitcoin zu deiner Wallet hinzu"
       ],
       "Add note": [
         "Notiz hinzufügen"
