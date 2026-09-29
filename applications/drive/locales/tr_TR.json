@@ -8072,6 +8072,12 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Google Drive depolama alanınız boş olabilir veya yalnızca desteklenmeyen dosyaları içeriyor olabilir."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Ödenmemiş bir faturanız var ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "${ dueDate } tarihli ödenmemiş bir faturanız var ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -9147,6 +9153,9 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ],
+      "Pay it": [
+        "Ödeyin"
       ]
     },
     "List title": {

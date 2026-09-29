@@ -8072,6 +8072,12 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Το Google Drive σας μπορεί να είναι κενό ή να περιέχει μόνο αρχεία που δεν υποστηρίζονται."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο με ημερομηνία λήξης ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -9147,6 +9153,9 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "Pay it": [
+        "Πλήρωσέ το"
       ]
     },
     "List title": {
