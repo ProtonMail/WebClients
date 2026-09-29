@@ -59,7 +59,7 @@ function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
 
   return (
     <li
-      className="group flex min-h-0 w-full min-w-0 shrink-0 cursor-pointer items-center justify-between pr-2"
+      className="group flex min-h-0 w-full min-w-0 shrink-0 cursor-pointer flex-nowrap items-center justify-between pr-2"
       data-testid="table-of-contents-item-group"
     >
       <button
@@ -256,7 +256,7 @@ function TableOfContentsRenderer({ tableOfContents, reportTelemetry }: TableOfCo
 
       <div
         className={clsx(
-          'table-of-contents flex w-0 min-w-0 flex-col p-0',
+          'table-of-contents flex w-0 min-w-0 flex-col flex-nowrap p-0',
           isExpanded && 'is-expanded h-full w-full p-5 pr-1.5 pt-0',
         )}
         data-testid="table-of-contents"
