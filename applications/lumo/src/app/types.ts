@@ -729,6 +729,9 @@ export type ConversationPub = {
 export type ConversationPriv = {
     title: string;
     agentId?: string; // id of an active custom agent (see LumoUserSettings.customAgents)
+    // Per-conversation override of LumoUserSettings.automaticArtifactCreation, set from the composer
+    // tool menu. Undefined means the conversation follows the global default.
+    artifactCreation?: boolean;
 };
 
 export type LocalFlags = {
@@ -755,9 +758,14 @@ export function getConversationPub(c: ConversationPub): ConversationPub {
     return { id, spaceId, createdAt, updatedAt, starred };
 }
 
-function getConversationPriv(c: ConversationPriv): ConversationPriv {
-    const { title, agentId } = c;
-    return { title, ...(agentId && { agentId }) };
+export function getConversationPriv(c: ConversationPriv): ConversationPriv {
+    const { title, agentId, artifactCreation } = c;
+    return {
+        title,
+        ...(agentId && { agentId }),
+        // Explicit `false` is meaningful (the user turned creation off for this chat), so don't drop it.
+        ...(artifactCreation !== undefined && { artifactCreation }),
+    };
 }
 
 export function splitConversation(c: Conversation): {
@@ -771,7 +779,8 @@ export function splitConversation(c: Conversation): {
 }
 
 export function cleanConversation(conversation: Conversation): Conversation {
-    const { id, spaceId, createdAt, updatedAt, title, agentId, starred, status, ghost } = conversation;
+    const { id, spaceId, createdAt, updatedAt, title, agentId, artifactCreation, starred, status, ghost } =
+        conversation;
     return {
         id,
         spaceId,
@@ -779,6 +788,7 @@ export function cleanConversation(conversation: Conversation): Conversation {
         updatedAt,
         title,
         ...(agentId && { agentId }),
+        ...(artifactCreation !== undefined && { artifactCreation }),
         ...(starred && { starred: true }),
         // `status` is local-only, so a conversation coming back from the server never carries one.
         // Defaulting it to COMPLETED invented a "generation finished" that never happened.
@@ -1177,7 +1187,6 @@ export interface ActionParams {
     retryStrategy?: RetryStrategy;
     customRetryInstructions?: string;
     imageOptions?: ImageGenerationOptions;
-    artifactCreationEnabled?: boolean;
     artifactAction?: ArtifactActionMeta;
     artifactRevisionTargetId?: string;
     /** True when the message was auto-sent from a ?q= URL parameter. */
