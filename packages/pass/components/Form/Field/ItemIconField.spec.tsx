@@ -7,7 +7,9 @@ import { ItemIconField } from './ItemIconField';
 jest.mock('webextension-polyfill', () => ({}));
 jest.mock('imask/esm/masked/range', () => ({}));
 
-const PNG_ICON = 'data:image/png;base64,iVBORw0KGgo=';
+/** 1x1 PNG: raster icons are validated from their header bytes */
+const PNG_ICON =
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';
 
 type Values = { icon?: string };
 

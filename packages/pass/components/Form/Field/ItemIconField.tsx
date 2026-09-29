@@ -1,4 +1,4 @@
-import { type FC, useRef, useState } from 'react';
+import { type FC, useMemo, useRef, useState } from 'react';
 
 import type { FieldProps } from 'formik';
 import { c } from 'ttag';
@@ -15,6 +15,7 @@ import clsx from '@proton/utils/clsx';
 import { maybeErrorMessage } from '../../../hooks/useFieldControl';
 import {
     ITEM_ICON_ACCEPTED_TYPES,
+    ITEM_ICON_MAX_INPUT_DIMENSION,
     ITEM_ICON_MAX_INPUT_SIZE,
     ITEM_ICON_MAX_LENGTH,
     ItemIconError,
@@ -45,6 +46,10 @@ const getItemIconErrorMessage = (reason: ItemIconErrorReason, file: File): strin
             const maxSize = humanSize({ bytes: getMaxInputSize(file), unit: 'KB', fraction: 0 });
             return c('Error').t`Image is too large. Maximum size is ${maxSize}.`;
         }
+        case 'dimensions': {
+            const maxDimensions = `${ITEM_ICON_MAX_INPUT_DIMENSION}×${ITEM_ICON_MAX_INPUT_DIMENSION}`;
+            return c('Error').t`Image is too large. Maximum dimensions are ${maxDimensions} pixels.`;
+        }
         case 'decode':
             return c('Error').t`Could not read this image.`;
     }
@@ -56,7 +61,8 @@ export const ItemIconField: FC<Props> = ({ className, field, form, icon, size = 
     const inputRef = useRef<HTMLInputElement>(null);
     const [busy, setBusy] = useState(false);
 
-    const iconSrc = getItemIconSrc(field.value);
+    /** Validation decodes the icon header: avoid re-running it on every form render */
+    const iconSrc = useMemo(() => getItemIconSrc(field.value), [field.value]);
     const iconSizePx = getIconSizePx(size);
     /** ie: an invalid icon value coming from another client or an import. Not gated on
      * `touched` (unlike `useFieldControl`) as this field is never blurred. `meta` is
