@@ -4,9 +4,9 @@ import { changeBillingAddress } from '@proton/account';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentsApi } from '@proton/payments/core/interface';
-import { renderWithProviders } from '../../../testing/renderWithProviders';
 
 import { usePaymentsApi } from '../../../react-extensions/usePaymentsApi';
+import { renderWithProviders } from '../../../testing/renderWithProviders';
 import { EditBillingAddressModal } from './EditBillingAddress';
 
 jest.mock('@proton/app-context/useNotifications', () => ({
@@ -142,5 +142,24 @@ describe('EditBillingAddressModal', () => {
                 expect.objectContaining({ text: 'Billing details updated' })
             );
         });
+    });
+
+    it('stores a cleared postal code as null', async () => {
+        const { updateFullBillingAddress, onResolve } = renderEditBillingAddressModal({
+            initialFullBillingAddress: { BillingAddress: { CountryCode: 'FR', State: null, ZipCode: '75001' } },
+        });
+
+        fireEvent.change(screen.getByTestId('billing-address-zipcode'), { target: { value: '' } });
+        clickSave();
+
+        await waitFor(() => {
+            expect(updateFullBillingAddress).toHaveBeenCalledWith(
+                expect.objectContaining({ BillingAddress: expect.objectContaining({ ZipCode: null }) })
+            );
+        });
+        expect(onResolve).toHaveBeenCalledWith(
+            expect.objectContaining({ BillingAddress: expect.objectContaining({ ZipCode: null }) })
+        );
+        expect(changeBillingAddress).toHaveBeenCalledWith(expect.objectContaining({ ZipCode: null }));
     });
 });

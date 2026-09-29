@@ -123,6 +123,10 @@ type PayloadBillingAddress = BillingAddressExtended & {
 };
 
 function normalizeZipCodeInBillingAddress({ billingAddress }: { billingAddress: BillingAddress }): BillingAddress {
+    if (billingAddress.ZipCode === '') {
+        return { ...billingAddress, ZipCode: null };
+    }
+
     if (!billingAddress.ZipCode) {
         return billingAddress;
     }
