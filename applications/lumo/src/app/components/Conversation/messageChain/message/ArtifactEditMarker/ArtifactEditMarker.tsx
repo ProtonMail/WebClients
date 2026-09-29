@@ -25,7 +25,7 @@ const ArtifactEditMarkerComponent = ({ message }: ArtifactEditMarkerProps) => {
 
     const handleClick = () => {
         const versionIndex = getArtifactVersionIndexForMessage(registry, meta.artifactId, message.id) ?? undefined;
-        openArtifact(meta.artifactId, versionIndex);
+        openArtifact(meta.artifactId, versionIndex, 'edit-marker');
     };
 
     return (

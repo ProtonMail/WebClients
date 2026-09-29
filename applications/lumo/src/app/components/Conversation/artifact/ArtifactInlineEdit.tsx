@@ -9,6 +9,8 @@ import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useWebSearch } from '../../../providers/WebSearchProvider';
 import type { ArtifactActionMeta } from '../../../types';
+import { sendArtifactInlineActionSentEvent } from '../../../util/telemetry';
+import type { ArtifactPanelLayout } from './ArtifactPanel';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
 import type { ArtifactType } from './parseArtifacts';
 import { useArtifactSelection } from './useArtifactSelection';
@@ -19,6 +21,7 @@ interface ArtifactInlineEditProps {
     title: string;
     artifactType: ArtifactType;
     isGenerating: boolean;
+    layout: ArtifactPanelLayout;
 }
 
 export const ArtifactInlineEdit = ({
@@ -27,6 +30,7 @@ export const ArtifactInlineEdit = ({
     title,
     artifactType,
     isGenerating,
+    layout,
 }: ArtifactInlineEditProps) => {
     const { handleSendArtifactAction } = useConversationActions();
     const { isWebSearchButtonToggled } = useWebSearch();
@@ -103,6 +107,11 @@ export const ArtifactInlineEdit = ({
     }
 
     const sendArtifactAction = (meta: ArtifactActionMeta) => {
+        sendArtifactInlineActionSentEvent({
+            kind: meta.kind,
+            artifactType,
+            layout,
+        });
         void handleSendArtifactAction(meta, isWebSearchButtonToggled);
         clearSelection();
     };

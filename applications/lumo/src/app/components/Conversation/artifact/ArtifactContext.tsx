@@ -14,12 +14,26 @@ import { getMessageBlocks } from '../../../messageHelpers';
 import type { Message } from '../../../types';
 import { Role } from '../../../types-api';
 import {
+    type ArtifactPanelOpenSource,
+    bucketArtifactPanelOpenDuration,
+    capArtifactPosition,
+    sendArtifactCreatedEvent,
+    sendArtifactPanelClosedEvent,
+    sendArtifactPanelOpenedEvent,
+    sendArtifactRevisedEvent,
+} from '../../../util/telemetry';
+import {
     isArtifactGenerationLoading,
     isArtifactPanelGenerationLoading,
     isArtifactRevisionLoading,
 } from './artifactGenerationState';
 import type { ArtifactRegistry } from './artifactRegistry';
 import { getArtifactVersionIndexForMessage, isArtifactVersionProvisional } from './artifactRegistry';
+import {
+    collectArtifactVersionTelemetry,
+    consumeArtifactTelemetryLiveMessages,
+    getArtifactTelemetryLiveMessages,
+} from './artifactVersionTelemetry';
 import { extractCompleteArtifactsFromBlocks } from './createArtifactTool';
 import type { ParsedArtifact } from './parseArtifacts';
 import { useArtifactRegistry } from './useArtifactRegistry';
@@ -32,8 +46,8 @@ interface ArtifactContextValue {
     selectedArtifact: ParsedArtifact | null;
     selectedId: string | null;
     selectedVersionIndex: number;
-    // Opens an artifact by id, defaulting to its latest version.
-    openArtifact: (id: string, versionIndex?: number) => void;
+    // Opens an artifact by id; `versionIndex` undefined means its latest version.
+    openArtifact: (id: string, versionIndex: number | undefined, source: ArtifactPanelOpenSource) => void;
     goToVersion: (index: number) => void;
     hasUnseenRevision: (id: string) => boolean;
     // True when any artifact is present (controls panel visibility)
@@ -75,6 +89,13 @@ export const ArtifactProvider = ({
     const prevVersionCountsRef = useRef<Record<string, number>>({});
     const selectedVersionIndexRef = useRef(selectedVersionIndex);
     selectedVersionIndexRef.current = selectedVersionIndex;
+    // Telemetry only: read from the open/close callbacks without re-creating them.
+    const selectedIdRef = useRef(selectedId);
+    selectedIdRef.current = selectedId;
+    const registryRef = useRef(registry);
+    registryRef.current = registry;
+    const isLoadingPanelOpenRef = useRef(false);
+    const panelOpenedAtRef = useRef<number | null>(null);
     // Tracks the in-flight assistant message so auto-open applies only to the current generation.
     const inFlightAssistantMessageIdRef = useRef<string | null>(null);
 
@@ -200,6 +221,19 @@ export const ArtifactProvider = ({
     }, []);
 
     const closePanel = useCallback(() => {
+        const closedEntry = selectedIdRef.current ? registryRef.current[selectedIdRef.current] : undefined;
+        if (closedEntry) {
+            sendArtifactPanelClosedEvent({
+                closedDuringLoading: false,
+                artifactType: closedEntry.type,
+                openDurationBucket: bucketArtifactPanelOpenDuration(
+                    panelOpenedAtRef.current === null ? 0 : Date.now() - panelOpenedAtRef.current
+                ),
+            });
+        } else if (isLoadingPanelOpenRef.current) {
+            sendArtifactPanelClosedEvent({ closedDuringLoading: true });
+        }
+        panelOpenedAtRef.current = null;
         setSelectedId(null);
         setSelectedVersionIndex(0);
         setPanelUserClosed(true);
@@ -227,18 +261,51 @@ export const ArtifactProvider = ({
         setSeenVersionKeys(new Set());
         prevVersionCountsRef.current = {};
         inFlightAssistantMessageIdRef.current = null;
+        panelOpenedAtRef.current = null;
     }, [conversationId]);
 
     const isLoadingPanelOpen = !panelUserClosed && selectedId === null && artifactPanelGenerationLoading;
+    isLoadingPanelOpenRef.current = isLoadingPanelOpen;
+
+    // Creation/revision telemetry: only versions produced by a generation or manual edit started in
+    // this tab are reported (see `artifactVersionTelemetry.ts`), never history re-derived on load.
+    useEffect(() => {
+        const { events, consumedMessageIds } = collectArtifactVersionTelemetry(
+            registry,
+            linearChain,
+            getArtifactTelemetryLiveMessages()
+        );
+
+        consumeArtifactTelemetryLiveMessages(consumedMessageIds);
+
+        for (const event of events) {
+            if (event.kind === 'created') {
+                sendArtifactCreatedEvent(event.payload);
+            } else {
+                sendArtifactRevisedEvent(event.payload);
+            }
+        }
+    }, [registry, linearChain]);
 
     const openArtifact = useCallback(
-        (id: string, versionIndex?: number) => {
+        (id: string, versionIndex: number | undefined, source: ArtifactPanelOpenSource) => {
             const entry = registry[id];
             if (!entry) {
                 return;
             }
             const latestIndex = entry.versions.length - 1;
             const index = versionIndex === undefined ? latestIndex : Math.min(Math.max(versionIndex, 0), latestIndex);
+            // Re-selecting the artifact already shown (e.g. a chip for another of its versions) isn't an open.
+            if (selectedIdRef.current !== id) {
+                if (selectedIdRef.current === null) {
+                    panelOpenedAtRef.current = Date.now();
+                }
+                sendArtifactPanelOpenedEvent({
+                    source,
+                    artifactType: entry.type,
+                    artifactPosition: capArtifactPosition(Object.keys(registry).indexOf(id) + 1),
+                });
+            }
             setSelectedId(id);
             setSelectedVersionIndex(index);
             setPanelUserClosed(false);
@@ -263,7 +330,7 @@ export const ArtifactProvider = ({
         }
 
         inFlightAssistantMessageIdRef.current = null;
-        openArtifact(artifact.id, versionIndex);
+        openArtifact(artifact.id, versionIndex, 'auto');
     }, [pendingArtifactPanelOpen, lastMessage, lastAssistantCompleteArtifacts, registry, openArtifact]);
 
     const goToVersion = useCallback(
