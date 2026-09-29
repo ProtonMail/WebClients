@@ -4,7 +4,6 @@ import type {
   CommentMarkNodeChangeData,
   RtsMessagePayload,
   DocumentRoleType,
-  TranslatedResult,
   SheetImportData,
   DocumentType,
 } from '@proton/docs-shared'
@@ -648,21 +647,15 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     }
   }, [docState, application.logger, documentType, sheetsInitializationMode])
 
-  const onEditorLoadResult = useCallback(
-    (result: TranslatedResult<void>) => {
-      if (result.isFailed()) {
-        const error = new Error(result.getTranslatedError())
+  const onEditorLoadError = useCallback(
+    (message: string) => {
+      const error = new Error(message)
 
-        void bridge.getClientInvoker().reportUserInterfaceError(error, { irrecoverable: true })
+      void bridge.getClientInvoker().reportUserInterfaceError(error, { irrecoverable: true })
 
-        reportErrorToSentry(error)
-
-        return
-      }
-
-      onEditorReadyToReceiveUpdates()
+      reportErrorToSentry(error)
     },
-    [bridge, onEditorReadyToReceiveUpdates],
+    [bridge],
   )
 
   const onEditorError = useCallback(
@@ -739,7 +732,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               lexicalError={editorError}
               logger={application.logger}
               onEditorError={onEditorError}
-              onEditorLoadResult={onEditorLoadResult}
+              onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
+              onEditorLoadError={onEditorLoadError}
               onUserModeChange={onUserModeChange}
               role={application.getRole()}
               setEditorRef={setEditorRef}
