@@ -8,7 +8,7 @@ import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
  * by pressing Bookmark or Make Copy button. The `action` param in the URL will tell us where to pick back up once
  * we're back in Docs.
  */
-export enum RedirectAction {
+enum RedirectAction {
     Bookmark = 'bookmark',
     MakeCopy = 'make-copy',
 }
@@ -17,7 +17,7 @@ export type DocumentType = 'doc' | 'sheet';
 
 // TODO: we will rename the values in `DocumentType` to 'document' and 'spreadsheet' soon, but for now
 // we just convert the new names to the old ones to support both naming patterns to keep changes small.
-export function tmpConvertNewDocTypeToOld(type: DocumentType | ProtonDocumentType): DocumentType {
+function tmpConvertNewDocTypeToOld(type: DocumentType | ProtonDocumentType): DocumentType {
     switch (type) {
         case 'document':
             return 'doc';

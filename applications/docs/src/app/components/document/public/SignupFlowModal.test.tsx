@@ -10,7 +10,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser'
 
 import { useDocsUrlPublicToken } from '@proton/drive-store'
 import { SignupFlowModal } from './SignupFlowModal'
-import { RedirectAction } from '@proton/drive-store/store/_documents'
+import { RedirectAction } from '@proton/docs-shared'
 
 jest.mock('@proton/app-context/useApi')
 const mockedUseApi = jest.mocked(useApi)

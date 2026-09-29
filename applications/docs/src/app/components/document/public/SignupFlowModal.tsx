@@ -21,7 +21,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators'
 
 import { useDocsUrlPublicToken } from '@proton/drive-store'
-import { RedirectAction } from '@proton/drive-store/store/_documents'
+import { RedirectAction } from '@proton/docs-shared'
 import { Actions, countActionWithTelemetry } from '@proton/drive-store/utils/telemetry'
 import { redirectToSignIn, redirectToSignUp } from './utils'
 
