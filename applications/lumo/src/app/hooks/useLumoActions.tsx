@@ -17,7 +17,6 @@ import { useLumoPlan } from '../hooks/useLumoPlan';
 import { addContextToMessages, fillAttachmentData } from '../llm/attachments';
 import { addToolCallBlock, addToolResultBlock } from '../messageHelpers';
 import { buildLinearChain } from '../messageTree';
-import { useArtifactCreation } from '../providers/ArtifactCreationProvider';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useModelTier } from '../providers/ModelTierProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
@@ -142,7 +141,6 @@ export const useLumoActions = ({
     const attachmentMap = useLumoSelector(selectAttachmentsBySpaceId(space?.id));
 
     // Custom hooks
-    const { isArtifactCreationEnabled } = useArtifactCreation();
     const { isGhostChatMode: isGhostMode } = useGhostChat();
     const { hasLumoPlus } = useLumoPlan();
     const { isThinkingEnabled, modelTier } = useModelTier();
@@ -231,13 +229,11 @@ export const useLumoActions = ({
             newMessageContent,
             isWebSearchButtonToggled,
             imageOptions,
-            artifactCreationEnabled,
             artifactAction,
             artifactRevisionTargetId,
             isFromQueryParam,
         } = actionParams;
 
-        const resolvedArtifactCreationEnabled = artifactCreationEnabled ?? isArtifactCreationEnabled;
         if (!newMessageContent?.trim() && provisionalAttachments.length === 0) return;
 
         const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
@@ -317,7 +313,6 @@ export const useLumoActions = ({
                     isGhostMode,
                     imageAspectRatio: imageOptions?.aspectRatio,
                     canvasModeActive: false,
-                    artifactCreationEnabled: resolvedArtifactCreationEnabled,
                     isFromQueryParam,
                 },
                 settingsContext: {
@@ -482,7 +477,6 @@ export const useLumoActions = ({
                     navigateCallback,
                     enableSmoothing: ffSmoothRendering,
                     isGhostMode,
-                    artifactCreationEnabled: isArtifactCreationEnabled,
                 },
                 settingsContext: {
                     personalization,
@@ -583,7 +577,6 @@ export const useLumoActions = ({
                     navigateCallback,
                     isGhostMode,
                     enableSmoothing: ffSmoothRendering,
-                    artifactCreationEnabled: isArtifactCreationEnabled,
                 },
                 settingsContext: {
                     personalization,
@@ -707,7 +700,6 @@ export const useLumoActions = ({
             newMessageContent: messageContent,
             isWebSearchButtonToggled,
             imageOptions,
-            artifactCreationEnabled: isArtifactCreationEnabled,
             isFromQueryParam,
             artifactRevisionTargetId,
         });

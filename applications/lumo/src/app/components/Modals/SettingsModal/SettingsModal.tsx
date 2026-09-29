@@ -313,7 +313,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                     icon="FileText"
                     text={c('collider_2025: Title').t`Automatic Create Artifact`}
                     subtext={c('collider_2025: Description')
-                        .t`Allow ${LUMO_SHORT_APP_NAME} to create artifacts in the side panel when appropriate`}
+                        .t`Allow ${LUMO_SHORT_APP_NAME} to create artifacts in the side panel when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.`}
                     button={
                         <Toggle
                             id="automatic-artifact-creation-toggle"

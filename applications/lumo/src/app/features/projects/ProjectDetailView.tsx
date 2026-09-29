@@ -23,7 +23,7 @@ import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { applyRetentionPolicy, groupConversationsByDate } from '../../layouts/sidepanel/helpers';
-import { ArtifactCreationProvider, useArtifactCreation } from '../../providers/ArtifactCreationProvider';
+import { ArtifactCreationProvider } from '../../providers/ArtifactCreationProvider';
 import { ModelTierProvider } from '../../providers/ModelTierProvider';
 import { WebSearchProvider } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
@@ -111,7 +111,6 @@ const ProjectDetailViewInner = () => {
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
 
     const { createConversationInProject, deleteProject } = useProjectActions();
-    const { isArtifactCreationEnabled } = useArtifactCreation();
 
     // Sync space data when navigating to a project to ensure we have the latest state
     // This ensures project-level data (files, settings, linked folders) stays in sync across browsers
@@ -185,7 +184,6 @@ const ProjectDetailViewInner = () => {
                             enableSmoothing: ffSmoothRendering,
                             imageAspectRatio: imageOptions?.aspectRatio,
                             canvasModeActive: false,
-                            artifactCreationEnabled: isArtifactCreationEnabled,
                         },
                         settingsContext: {
                             personalization,
@@ -218,7 +216,6 @@ const ProjectDetailViewInner = () => {
             ffArtifactsView,
             ffVisualizationInstructions,
             personalization,
-            isArtifactCreationEnabled,
         ]
     );
 
