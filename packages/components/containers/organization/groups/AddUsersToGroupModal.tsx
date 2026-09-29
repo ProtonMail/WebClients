@@ -41,6 +41,7 @@ interface Props {
     members: EnhancedMember[];
     isE2eeEnabled: boolean;
     showMailFeatures: boolean;
+    groupHasOrgKeyRole: boolean;
     addressEmailToMemberMap: GroupsManagementReturn['addressEmailToMemberMap'];
     onAddMembers: (group: Group, emails: string[]) => void;
 }
@@ -52,6 +53,7 @@ const AddUsersToGroupModal = ({
     members,
     isE2eeEnabled,
     showMailFeatures,
+    groupHasOrgKeyRole,
     addressEmailToMemberMap,
     onAddMembers,
 }: Props) => {
@@ -192,6 +194,9 @@ const AddUsersToGroupModal = ({
                                 handleRemoveNewMember={handleRemoveNewGroupMember}
                                 submitting={false}
                                 showMailFeatures={showMailFeatures}
+                                showCannotPromoteWarning={
+                                    groupHasOrgKeyRole && member.GroupMemberType === GROUP_MEMBER_TYPE.EXTERNAL
+                                }
                             />
                         ))}
                     </div>

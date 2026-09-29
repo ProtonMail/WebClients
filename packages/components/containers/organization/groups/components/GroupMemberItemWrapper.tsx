@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
+import type { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import UserIsExternalIcon from '../../UserIsExternalIcon';
@@ -14,6 +14,7 @@ interface Props {
     showMailFeatures: boolean;
     children?: ReactNode;
     isMemberDisabled?: boolean;
+    showCannotPromoteWarning: boolean;
 }
 
 export const GroupMemberItemWrapper = ({
@@ -23,8 +24,8 @@ export const GroupMemberItemWrapper = ({
     showMailFeatures,
     children,
     isMemberDisabled,
+    showCannotPromoteWarning,
 }: Props) => {
-    const mailE2EEDisabled = groupMemberType !== GROUP_MEMBER_TYPE.INTERNAL;
     return (
         <>
             <div className="flex shrink-0 gap-3 items-center">
@@ -51,7 +52,11 @@ export const GroupMemberItemWrapper = ({
                             </span>
                         )}
                     </span>
-                    {showMailFeatures && mailE2EEDisabled && <UserIsExternalIcon groupMemberType={groupMemberType} />}
+                    <UserIsExternalIcon
+                        groupMemberType={groupMemberType}
+                        showMailWarning={showMailFeatures}
+                        showCannotPromoteWarning={showCannotPromoteWarning}
+                    />
                 </span>
                 {children}
             </div>
