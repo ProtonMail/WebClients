@@ -2388,9 +2388,6 @@
       "Discover and set up features": [
         "Descubra e configure os recursos"
       ],
-      "Get 50% offer": [
-        "Aproveite a oferta de 50% de desconto"
-      ],
       "Got it": [
         "Entendi"
       ],
@@ -5024,6 +5021,12 @@
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Senha de backup incorreta. Tente novamente."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Segunda senha incorreta. Tente novamente."
+      ],
       "Invalid code": [
         "O código não é válido."
       ],
@@ -6092,6 +6095,9 @@
       ],
       "Still waiting?": [
         "Ainda esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toque na sua chave de segurança para continuar"
       ]
     },
     "fido2: Label": {
@@ -7284,9 +7290,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Acesse mais de 6.500 servidores de alta velocidade em até 10 dispositivos para manter seus dados de navegação seguros. Disponível em ${ ios }, ${ android }, ${ appleTV } e ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Acesse 20.000+ servidores em 145 países"
-      ],
       "Account successfully updated": [
         "Conta atualizada"
       ],
@@ -7933,9 +7936,6 @@
         "Expira em menos de ${ hoursDiff } hora",
         "Expira em menos de ${ hoursDiff } horas"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Velocidades de VPN mais rápidas, até 10 Gbps"
-      ],
       "file attached": [
         "arquivo anexado",
         "arquivos anexados"
@@ -8019,9 +8019,6 @@
         "Contém ${ numAttachments } anexo (${ numAttachmentsSize })",
         "Contém ${ numAttachments } anexos (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "Ganhe mais tempo para decidir sem interrupções."
-      ],
       "here": [
         "aqui"
       ],
@@ -8054,9 +8051,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Se você acredita que cometemos um erro, ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Se cancelar agora, perderá o acesso a ${ BRAND_NAME } ${ planTitle } em ${ expiryDate }, incluindo estes recursos:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se você cancelar sua assinatura do ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
@@ -8597,9 +8591,6 @@
       "Preferences updated": [
         "Preferências atualizadas"
       ],
-      "Premium privacy protection across all your devices": [
-        "Proteção de privacidade premium em todos os seus dispositivos"
-      ],
       "Preview failed to be loaded": [
         "Não foi possível carregar a pré-visualização."
       ],
@@ -8952,9 +8943,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantenha-se conectado de forma simples ativando as seguintes configurações de VPN:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Mantenha o seu plano e obtenha 50% de desconto no próximo mês"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Os recursos de armazenamento não são suportados neste navegador. Precisamos desse suporte para habilitar a pesquisa de conteúdo de mensagens."
@@ -13334,11 +13322,17 @@
       "help center": [
         "centro de ajuda"
       ],
+      "If you continue after your trial,": [
+        "Se você continuar depois da sua avaliação,"
+      ],
       "If you need help,": [
         "Se precisar de ajuda,"
       ],
       "Once your full subscription starts...": [
         "Quando sua assinatura completa começar..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "você pode cancelar em até 30 dias e receber um reembolso proporcional."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Você ainda pode cancelar em até 30 dias e receber um reembolso proporcional."
@@ -17250,9 +17244,6 @@
       ],
       "Start import process": [
         "Iniciar processo de importação"
-      ],
-      "Stay for 50% off your next month": [
-        "Fique por mais um mês com 50% de desconto"
       ],
       "Storage capacity warning": [
         "Aviso de capacidade de armazenamento"

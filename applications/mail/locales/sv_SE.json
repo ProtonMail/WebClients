@@ -2374,9 +2374,6 @@
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
       ],
-      "Get 50% offer": [
-        "Få 50 % erbjudande"
-      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -4725,6 +4722,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "En kontakt med denna e-postadress finns redan"
+      ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
       ],
@@ -5012,6 +5012,12 @@
       ],
       "IMAP server is required": [
         "IMAP-server är obligatoriskt"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Felaktigt reservlösenord. Försök igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Felaktigt andra lösenord. Försök igen."
       ],
       "Invalid code": [
         "Ogiltig kod"
@@ -7291,9 +7297,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Få åtkomst till 6 500+ höghastighetsservrar på upp till 10 enheter för att hålla din webbläsardata säker. Tillgängligt på ${ ios }, ${ android }, ${ appleTV } och ${ desktop }."
       ],
-      "Access to 20,000+ servers in 145 countries": [
-        "Åtkomst till över 20 000 servrar i över 145 länder"
-      ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
@@ -7931,9 +7934,6 @@
         "Löper ut om mindre än ${ hoursDiff } timme",
         "Löper ut om mindre än ${ hoursDiff } timmar"
       ],
-      "Fastest VPN speeds of up to 10Gbps": [
-        "Snabbaste VPN-hastigheter på upp till 10 Gbps"
-      ],
       "file attached": [
         "fil bifogad",
         "filer bifogade"
@@ -8014,9 +8014,6 @@
         "Har ${ numAttachments } bilaga (${ numAttachmentsSize })",
         "Har ${ numAttachments } bilagor (${ numAttachmentsSize })"
       ],
-      "Have some more time to decide without interruption.": [
-        "Ha lite mer tid att bestämma utan avbrott."
-      ],
       "here": [
         "här"
       ],
@@ -8052,9 +8049,6 @@
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
         "Om du tror att vi har gjort ett misstag, ${ contactLink }."
-      ],
-      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
-        "Om du avbryter nu, kommer du att förlora åtkomst till ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive dessa funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
@@ -8929,9 +8923,6 @@
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Håll dig ansluten utan ansträngning genom att aktivera följande VPN-inställningar:"
-      ],
-      "Stay on your plan and get 50% off your next month": [
-        "Stanna kvar på ditt paket och få 50 % rabatt för din nästa månad"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsmöjligheter stöds inte av den där webbläsaren och vi behöver stöd för det för att aktivera sökning av meddelandeinnehåll."
@@ -11261,7 +11252,7 @@
         "All e-post"
       ],
       "Archive": [
-        "Arkivera"
+        "Arkiv"
       ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
@@ -11712,7 +11703,7 @@
         "Fyll aldrig med denna exakta URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
-        "Den ${ date }, ${ senderString } skrev:"
+        "Den ${ date } skrev ${ senderString }:"
       ],
       "Re:": [
         "Svar:"
@@ -17198,9 +17189,6 @@
       ],
       "Start import process": [
         "Starta importprocessen"
-      ],
-      "Stay for 50% off your next month": [
-        "Stanna kvar för 50 % rabatt nästa månad"
       ],
       "Storage capacity warning": [
         "Varning för lagringskapacitet"
