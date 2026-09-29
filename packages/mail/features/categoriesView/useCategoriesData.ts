@@ -1,5 +1,3 @@
-import { FeatureCode } from '@proton/features/interface';
-import useFeature from '@proton/features/useFeature';
 import { baseUseSelector } from '@proton/react-redux-store';
 import type { CategoryViewVariantVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import { useFlagsStatus } from '@proton/unleash/proxy';
@@ -29,8 +27,6 @@ const variantWithAccess = new Set<CategoryViewVariantName>([
 export const useCategoriesData = () => {
     const { flagsReady } = useFlagsStatus();
     const categoryViewFlag = useFlag('CategoryView');
-    const betaFlag = useFeature<boolean>(FeatureCode.CategoryViewBeta);
-    const hasBetaAccess = betaFlag.feature?.Value ?? false;
 
     const flagVariant = useVariant('CategoryViewVariant');
     const variantWithCategoryViewAccess = flagVariant.name ? variantWithAccess.has(flagVariant.name) : false;
@@ -40,11 +36,11 @@ export const useCategoriesData = () => {
     const categoriesStore = baseUseSelector(selectCategoriesLabel);
     const activeCategoriesTabs = baseUseSelector(selectActiveCategoriesTabs);
 
-    const canUseCategoryView = categoryViewFlag || hasBetaAccess || variantWithCategoryViewAccess;
+    const canUseCategoryView = categoryViewFlag || variantWithCategoryViewAccess;
     const isCategoryViewEnabled = canUseCategoryView && settingAccess;
 
     // Redirect decisions must wait until every input behind `categoryViewAccess` has loaded.
-    const isCategoryViewEnabledSettled = !isLoading && !betaFlag.loading && flagsReady;
+    const isCategoryViewEnabledSettled = !isLoading && flagsReady;
 
     return {
         canUseCategoryView,
