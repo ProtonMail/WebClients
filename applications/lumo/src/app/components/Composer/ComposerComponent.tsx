@@ -375,8 +375,8 @@ const ComposerComponentInner = ({
             return;
         }
         clear();
-        // ?q= auto-send: 5th arg enables SECBTY-2015 external-tool restriction (see helper.ts).
-        await handleSendMessage(currentValue, isWebSearchButtonToggled, undefined, false, true);
+        // ?q= auto-send: 4th arg enables SECBTY-2015 external-tool restriction (see helper.ts).
+        await handleSendMessage(currentValue, isWebSearchButtonToggled, undefined, true);
     }, [textareaRef, clear, handleSendMessage, isWebSearchButtonToggled, isChatLimitBlocked, ensureTierError]);
 
     useEditorQuery(initialQuery, textareaRef, setValue, isProcessingAttachment, handleInitialQueryReady);
