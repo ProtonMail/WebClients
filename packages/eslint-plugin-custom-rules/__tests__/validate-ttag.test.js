@@ -20,13 +20,6 @@ ruleTester.run('validate-ttag', rule, {
         `c('Context').ngettext(msgid\`\${n} item\`, \`\${n} items\`, n)`,
         // Multiple variables with counter
         `c('Context').ngettext(msgid\`\${count} item for \${price}\`, \`\${count} items for \${price}\`, count)`,
-        // Multiple plural forms
-        `c('Context').ngettext(
-            msgid\`\${n} item\`,
-            \`\${n} items\`,
-            \`\${n} items (many)\`,
-            n
-        )`,
         // Multiple different variables in t translation (valid)
         "c('Context').t`Hello ${firstName} ${lastName}`",
         // Multiple different variables in jt translation (valid)
@@ -49,8 +42,81 @@ ruleTester.run('validate-ttag', rule, {
             \`\${twoFAMembers.length}/\${members.length} of your family members use two-factor authentication.\`,
             members.length
         )`,
+        // Extractable expressions in t/jt templates
+        "c('Info').jt`Due ${invoice.dueDate} ${items[0]} ${items[index]} ${this.name} ${link}`",
+        // Plain template literals are not checked
+        '`Due ${format(dueTime)}`',
+        // Counter as member expression or number
+        "c('Info').ngettext(msgid`${list.length} item`, `${list.length} items`, list.length)",
+        "c('Info').ngettext(msgid`One item`, `Many items`, 2)",
     ],
     invalid: [
+        // More than 2 plural forms
+        {
+            code: "c('Context').ngettext(msgid`${n} item`, `${n} items`, `${n} items (many)`, n)",
+            errors: [{ message: 'ngettext must have exactly 2 forms (singular and plural) but has 3' }],
+        },
+        // Counter is a call expression
+        {
+            code: "c('Info').ngettext(msgid`One item`, `Many items`, getCount())",
+            errors: [
+                {
+                    message:
+                        "CallExpression 'getCount()' can not be used as plural argument. Assign it to a variable first.",
+                },
+            ],
+        },
+        // String with only variables
+        {
+            code: "c('Info').jt`${link}`",
+            errors: [
+                { message: "Can not translate '`${link}`': it has no text outside variables, digits and punctuation." },
+            ],
+        },
+        // Only digits and punctuation
+        {
+            code: "c('Placeholder').t`123.12`",
+            errors: [
+                { message: "Can not translate '`123.12`': it has no text outside variables, digits and punctuation." },
+            ],
+        },
+        // Empty msgid
+        {
+            code: "c('Info').ngettext(msgid` ${n} `, `${n} items`, n)",
+            errors: [
+                { message: "Can not translate '` ${n} `': it has no text outside variables, digits and punctuation." },
+            ],
+        },
+        // Call expression in jt template
+        {
+            code: "c('Info').jt`You have an open invoice on ${format(dueTime, 'PPP')} ${link}`",
+            errors: [
+                {
+                    message:
+                        "You can not use CallExpression '${format(dueTime, 'PPP')}' in localized strings. Assign it to a variable first.",
+                },
+            ],
+        },
+        // Conditional expression in t template
+        {
+            code: "c('Info').t`Hello ${name || 'you'}`",
+            errors: [
+                {
+                    message:
+                        "You can not use LogicalExpression '${name || 'you'}' in localized strings. Assign it to a variable first.",
+                },
+            ],
+        },
+        // Call expression in ngettext plural form
+        {
+            code: "c('Info').ngettext(msgid`${n} item`, `${n} items in ${getName()}`, n)",
+            errors: [
+                {
+                    message:
+                        "You can not use CallExpression '${getName()}' in localized strings. Assign it to a variable first.",
+                },
+            ],
+        },
         // msgid in second argument
         {
             code: `c('Context').ngettext(msgid\`Hello \${n}\`, msgid\`Hello \${n}\`, n)`,
@@ -84,80 +150,6 @@ ruleTester.run('validate-ttag', rule, {
             errors: [
                 {
                     message: "Counter variable 'cycle' must be used in plural form 1",
-                },
-            ],
-        },
-        {
-            code: `c('Context').ngettext(msgid\`One item\`, \`\${n} items\`, \`extra arg\`, n)`,
-            errors: [
-                {
-                    message: "Counter variable 'n' must be used in singular form",
-                },
-                {
-                    message: "Counter variable 'n' must be used in plural form 2",
-                },
-            ],
-        },
-        {
-            code: `c('Context').ngettext(msgid\`One item\`, \`\${n} items\`, 'extra arg', n)`,
-            errors: [
-                {
-                    message: "Counter variable 'n' must be used in singular form",
-                },
-                {
-                    message: "Counter variable 'n' must be used in plural form 2",
-                },
-            ],
-        },
-        // Missing counter in second plural form
-        {
-            code: `c('Context').ngettext(
-                msgid\`\${n} item\`,
-                \`\${n} items\`,
-                \`many items\`,
-                n
-            )`,
-            errors: [
-                {
-                    message: "Counter variable 'n' must be used in plural form 2",
-                },
-            ],
-        },
-        // Missing counter in all plural forms
-        {
-            code: `c('Context').ngettext(
-                msgid\`\${n} item\`,
-                \`items\`,
-                \`many items\`,
-                \`lots of items\`,
-                n
-            )`,
-            errors: [
-                {
-                    message: "Counter variable 'n' must be used in plural form 1",
-                },
-                {
-                    message: "Counter variable 'n' must be used in plural form 2",
-                },
-                {
-                    message: "Counter variable 'n' must be used in plural form 3",
-                },
-            ],
-        },
-        // Missing counter in singular and some plural forms
-        {
-            code: `c('Context').ngettext(
-                msgid\`item\`,
-                \`\${n} items\`,
-                \`many items\`,
-                n
-            )`,
-            errors: [
-                {
-                    message: "Counter variable 'n' must be used in singular form",
-                },
-                {
-                    message: "Counter variable 'n' must be used in plural form 2",
                 },
             ],
         },
