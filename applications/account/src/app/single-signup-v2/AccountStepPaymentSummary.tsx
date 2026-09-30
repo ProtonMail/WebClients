@@ -25,6 +25,7 @@ import RightSummary from './RightSummary';
 import SaveLabel from './SaveLabel';
 import { getSummaryPlan } from './configuration';
 import type { OptimisticOptions, SignupModelV2 } from './interface';
+import { getPaymentlessTrialRenewalNotice } from './paymentlessTrial';
 
 const decorePlanTitle = (selectedPlan: Plan, planIDs: PlanIDs) => {
     const hasLumo = hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, planIDs ?? {});
@@ -100,6 +101,7 @@ interface Props {
     showRenewalNotice: boolean;
     app: APP_NAMES | undefined;
     couponConfig: CouponConfigMetadata | undefined;
+    isPaymentlessTrial?: boolean;
 }
 
 const AccountStepPaymentSummary = ({
@@ -110,6 +112,7 @@ const AccountStepPaymentSummary = ({
     couponConfig,
     showRenewalNotice,
     loadingPaymentDetails,
+    isPaymentlessTrial,
 }: Props) => {
     const hasCouponCode = !!model.subscriptionData?.checkResult.Coupon?.Code;
     const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
@@ -306,7 +309,10 @@ const AccountStepPaymentSummary = ({
                         <CheckoutRow loading={loading} data-testid="tax" small label={taxRateAndAmountElement} />
                     ),
                 renewalNotice: ({ content }) => {
-                    return <CheckoutRow loading={loading} data-testid="renewal-notice" label={content} small />;
+                    const label = isPaymentlessTrial
+                        ? getPaymentlessTrialRenewalNotice({ planTitle: selectedPlan.Title })
+                        : content;
+                    return <CheckoutRow loading={loading} data-testid="renewal-notice" label={label} small />;
                 },
                 coupon: ({ currency, discountAmount }) => (
                     <CheckoutRow
