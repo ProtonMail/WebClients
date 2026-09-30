@@ -4396,6 +4396,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom bağlantınızın geçerlilik süresi dolmuş. İlerlemek için lütfen yeniden bağlantı kurun."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Yedek parola yanlış. Lütfen yeniden deneyin."
+      ],
+      "Incorrect second password. Please try again.": [
+        "İkinci parola yanlış. Lütfen yeniden deneyin."
       ]
     },
     "error": {
@@ -7035,6 +7041,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Ödenmemiş bir faturanız var ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "${ dueDate } tarihli ödenmemiş bir faturanız var ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -7633,7 +7645,7 @@
         "Posta kodu"
       ],
       "Primary": [
-        "Birincil saat dilimi"
+        "Birincil"
       ],
       "Proration": [
         "Hesap bakiyesi"
@@ -7963,6 +7975,9 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ],
+      "Pay it": [
+        "Ödeyin"
       ]
     },
     "Link label (optional)": {

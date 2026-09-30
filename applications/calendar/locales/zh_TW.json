@@ -4215,6 +4215,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您 Zoom 連接階段已逾期，請重新連接以繼續。"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "備份密碼錯誤。請重新再試。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "第二密碼錯誤。請重新再試。"
       ]
     },
     "error": {
@@ -7846,7 +7852,7 @@
         "轉寄:"
       ],
       "Re:": [
-        "回复："
+        "回覆："
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "您的免費試用已結束。 ${ nonAutoRenewalAction }"
