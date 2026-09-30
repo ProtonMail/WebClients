@@ -5474,6 +5474,12 @@
       ],
       "Request aborted": [
         "請求已中止"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "備份密碼錯誤。請重新再試。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "第二密碼錯誤。請重新再試。"
       ]
     },
     "error": {
@@ -11232,7 +11238,7 @@
         "在 ${ date }，${ senderString } 寫道："
       ],
       "Re:": [
-        "回复："
+        "回覆："
       ],
       "Regular expression rule": [
         "正規表示式規則"

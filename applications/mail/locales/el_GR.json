@@ -5698,6 +5698,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Εσφαλμένος εφεδρικός κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ]
     },
     "error": {
@@ -10052,6 +10058,12 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Πείτε μου πότε θα λείπετε και τι θα θέλατε να λέει, και θα δείτε το αποτέλεσμα πριν αποθηκευτεί."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο με ημερομηνία λήξης ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -11744,6 +11756,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη πρόσκληση"
+      ],
+      "Pay it": [
+        "Πλήρωσέ το"
       ]
     },
     "Link to calendar event": {

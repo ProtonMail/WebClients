@@ -4029,7 +4029,7 @@
         "다음"
       ],
       "Recipient": [
-        "입금처"
+        "받는 사람"
       ],
       "Sender": [
         "보낸 사람"
@@ -5308,7 +5308,7 @@
         "기존 키 재활성화"
       ],
       "re-importing": [
-        "다시 가져오기"
+        "다시 불러오기"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "중복된 수신자를 삭제했습니다: ${ recipents }"
@@ -5636,6 +5636,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "백업 비밀번호가 틀렸습니다. 다시 시도해 주세요."
+      ],
+      "Incorrect second password. Please try again.": [
+        "2차 비밀번호가 틀렸습니다. 다시 시도해 주세요."
       ]
     },
     "error": {
@@ -10882,7 +10888,7 @@
         "실제 환경 세션"
       ],
       "Recipient": [
-        "입금처"
+        "받는 사람"
       ],
       "Refresh logs": [
         "로그 새로고침"
@@ -11503,6 +11509,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "업데이트된 초대장을 보려면 키를 다시 활성화하셔야 합니다"
+      ],
+      "Pay it": [
+        "결제"
       ]
     },
     "Link to calendar event": {
@@ -11715,7 +11724,7 @@
         "이 정확한 URL에서는 자동완성 안 함"
       ],
       "On ${ date }, ${ senderString } wrote:": [
-        "에 ${ date } ${ senderString } 님이 작성함:"
+        "${ date }에 ${ senderString } 님이 작성함:"
       ],
       "Re:": [
         "회신:"
