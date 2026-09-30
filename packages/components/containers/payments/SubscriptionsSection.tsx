@@ -25,7 +25,7 @@ import type { SubscriptionRow as SubscriptionRowType } from './subscription/help
 import { getSubscriptionRows } from './subscription/helpers/getSubscriptionRows';
 import { useReactivateAction } from './subscription/helpers/useReactivateAction';
 
-export const SubscriptionRow = ({ row }: { row: SubscriptionRowType }) => {
+const SubscriptionRow = ({ row }: { row: SubscriptionRowType }) => {
     const {
         subscription,
         planTitle,

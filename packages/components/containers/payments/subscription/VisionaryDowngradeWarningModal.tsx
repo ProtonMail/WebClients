@@ -40,7 +40,7 @@ interface VisionaryModalProps extends ModalStateProps {
     subscription: Subscription | FreeSubscription;
 }
 
-export const VisionaryDowngradeWarningModal = ({ onConfirm, subscription, ...rest }: VisionaryModalProps) => {
+const VisionaryDowngradeWarningModal = ({ onConfirm, subscription, ...rest }: VisionaryModalProps) => {
     const planTitle = getPlanTitle(subscription);
 
     return (

@@ -36,14 +36,6 @@ export const getPassAppFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getCustomDomains = (): PlanCardFeatureDefinition => {
-    return {
-        id: 'custom-domains',
-        text: c('new_plans: feature').t`Custom domains for email aliases`,
-        included: true,
-    };
-};
-
 export const getProtonPassFeature = (n: 'unlimited' | number = 'unlimited'): PlanCardFeatureDefinition => {
     return {
         id: 'proton-pass',
@@ -88,7 +80,7 @@ export const getPassUsers = (n: Parameters<typeof getPassUsersText>[0]): PlanCar
     };
 };
 
-export const getPassAdminPanelText = () => {
+const getPassAdminPanelText = () => {
     return c('pass_signup_2024: Info').t`Admin panel to manage users and subscription`;
 };
 
@@ -132,20 +124,11 @@ export const getItems = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getCreditCards = (): PlanCardFeatureDefinition => {
-    return {
-        id: 'credit-cards',
-        text: c('new_plans: feature').t`Autofill credit cards (coming soon)`,
-        included: true,
-        status: 'coming-soon',
-    };
-};
-
-export const getDevicesText = () => {
+const getDevicesText = () => {
     return c('new_plans: feature').t`Unlimited devices`;
 };
 
-export const getDevicesAndAliasesText = () => {
+const getDevicesAndAliasesText = () => {
     return c('new_plans: feature').t`Unlimited devices and aliases`;
 };
 
@@ -273,10 +256,6 @@ export const getPasswordHealth = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getUnlimitedVaultSharingText = () => {
-    return c('new_plans: feature').t`Unlimited shared vaults with access permissions`;
-};
-
 export const getVaultSharingWithNPeopleText = (n: number) => {
     return c('new_plans: feature').ngettext(
         msgid`Vault sharing with up to ${n} person`,
@@ -285,7 +264,7 @@ export const getVaultSharingWithNPeopleText = (n: number) => {
     );
 };
 
-export const getVaultSharingText = (n: number | 'unlimited') => {
+const getVaultSharingText = (n: number | 'unlimited') => {
     return n === 'unlimited'
         ? c('new_plans: feature').t`Unlimited vault sharing`
         : c('new_plans: feature').ngettext(
@@ -304,7 +283,7 @@ export const getVaultSharing = (n: number | 'unlimited'): PlanCardFeatureDefinit
     };
 };
 
-export const getVaultSharingB2BText = (n: number | 'unlimited') => {
+const getVaultSharingB2BText = (n: number | 'unlimited') => {
     return n === 'unlimited'
         ? c('new_plans: feature').t`Unlimited shared ${PASS_SHORT_APP_NAME} vaults per user`
         : c('new_plans: feature').ngettext(
@@ -387,10 +366,6 @@ export const getTeamPoliciesText = () => {
     return c('pass_signup_2024: Info').t`Team policies`;
 };
 
-export const getUnlimitedLoginsAndNotesText = () => {
-    return c('pass_signup_2023: Info').t`Unlimited logins, notes, credit cards and more`;
-};
-
 export const getSecureVaultSharingText = () => {
     return c('pass_signup_2023: Info').t`Secure vault, item and link sharing`;
 };
@@ -416,7 +391,6 @@ export const getPassCli = (): PlanCardFeatureDefinition => {
 
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 2;
-export const PAID_VAULTS = 10;
 export const FREE_VAULT_SHARING = 2;
 
 export const PASS_PLUS_VAULTS = 50;
@@ -428,8 +402,8 @@ export const PASS_PRO_VAULT_SHARING = 'unlimited';
 export const PASS_BIZ_VAULTS = 'unlimited';
 export const PASS_BIZ_VAULT_SHARING = 'unlimited';
 
-export const PASS_VISIONARY_VAULTS = 'unlimited';
-export const PASS_VISIONARY_VAULT_SHARING = 'unlimited';
+const PASS_VISIONARY_VAULTS = 'unlimited';
+const PASS_VISIONARY_VAULT_SHARING = 'unlimited';
 
 export const getPassFeatures = (): PlanCardFeature[] => {
     return [
@@ -786,14 +760,4 @@ export const getPassFeatures = (): PlanCardFeature[] => {
             },
         },
     ];
-};
-
-export const getPassIdentityFeature = (): PlanCardFeatureDefinition => {
-    return {
-        id: 'pass-identity',
-        text: PASS_APP_NAME,
-        tooltip: c('new_plans: tooltip').t`Password management and identity protection`,
-        included: true,
-        icon: IcBrandProtonPass,
-    };
 };

@@ -22,7 +22,7 @@ interface UseGroupAvailableAddressDomainsReturn {
     hasUsableDomain: boolean;
 }
 
-export const getPrimarySuggestion = (
+const getPrimarySuggestion = (
     showMailFeatures: boolean,
     customDomains: Domain[] | undefined,
     organization: Organization | undefined,
@@ -53,7 +53,7 @@ export const getPrimarySuggestion = (
     return { domain: `${organizationName}${pmMeDomain}`, source: 'pm.me' };
 };
 
-export const getAllSuggestions = (
+const getAllSuggestions = (
     showMailFeatures: boolean,
     customDomains: Domain[] | undefined,
     primarySuggestion: DomainSuggestion,

@@ -81,7 +81,7 @@ const ContactSelector = ({
 
 export const RecoveryContactFormId = 'recovery-contact-form';
 
-export const RecoveryContactFormStep1 = ({
+const RecoveryContactFormStep1 = ({
     onLoading,
     onClose,
     recoveryContacts,
@@ -164,7 +164,7 @@ export const RecoveryContactFormStep1 = ({
     );
 };
 
-export const RecoveryContactFormStep2 = ({
+const RecoveryContactFormStep2 = ({
     onClose,
     recoveryContact,
 }: ReactivateKeysContentProps & { recoveryContact: EnrichedOutgoingDelegatedAccess }) => {

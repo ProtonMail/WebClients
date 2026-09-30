@@ -1,6 +1,6 @@
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 
-export const isFeatureOn =
+const isFeatureOn =
     (feature: number) =>
     (features = 0) =>
         !!(features & feature);

@@ -8,7 +8,7 @@ import type { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/
  * Get public keys valid in the context of Inbox apps.
  * In particular, internal address keys from external accounts are not returned.
  */
-export const useGetPublicKeysForInbox = () => {
+const useGetPublicKeysForInbox = () => {
     const dispatch = useDispatch();
     return useCallback<GetPublicKeysForInbox>(async (args) => dispatch(getPublicKeysForInboxThunk(args)), [dispatch]);
 };

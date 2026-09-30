@@ -37,7 +37,7 @@ const getStatusText = (status: MEMBER_INVITATION_STATUS) => {
     return '';
 };
 
-export const MemberStatus = ({ status }: { status: MEMBER_INVITATION_STATUS }) => {
+const MemberStatus = ({ status }: { status: MEMBER_INVITATION_STATUS }) => {
     if (status === MEMBER_INVITATION_STATUS.ACCEPTED) {
         return null;
     }

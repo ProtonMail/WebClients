@@ -22,7 +22,7 @@ interface Props {
     className?: string;
 }
 
-export const InboxDesktopDefaultAppTopBanner = ({ className }: Props) => {
+const InboxDesktopDefaultAppTopBanner = ({ className }: Props) => {
     const { enabled, isDefault, shouldCheck, triggerPrompt, Prompt } = useElectronDefaultApp();
     const [showBanner, setShowBanner] = useState(false);
     const [dismissOption, setDismissOption] = useState<'dismiss' | 'remind'>('remind');

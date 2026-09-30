@@ -67,5 +67,3 @@ export const VideoStreamingPreview: React.FC<VideoStreamingPreviewProps> = ({
         </div>
     );
 };
-
-export default VideoStreamingPreview;

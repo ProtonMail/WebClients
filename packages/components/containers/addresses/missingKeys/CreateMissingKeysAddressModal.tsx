@@ -57,7 +57,7 @@ export interface Status {
 
 type AddressState = { [key: string]: Status };
 
-export const updateAddress = (oldAddresses: AddressState, ID: string, diff: Status) => {
+const updateAddress = (oldAddresses: AddressState, ID: string, diff: Status) => {
     return {
         ...oldAddresses,
         [ID]: diff,

@@ -4,7 +4,7 @@ import { FeatureCode } from '@proton/features';
 
 import { NPSApplication } from './interface';
 
-export const NPS_FEATURE_CODE_MAP: Record<NPSApplication, FeatureCode> = {
+const NPS_FEATURE_CODE_MAP: Record<NPSApplication, FeatureCode> = {
     [NPSApplication.WebMail]: FeatureCode.NPSFeedbackWebMail,
     [NPSApplication.WebCalendar]: FeatureCode.NPSFeedbackWebCalendar,
     [NPSApplication.WebDrive]: FeatureCode.NPSFeedbackWebDrive,

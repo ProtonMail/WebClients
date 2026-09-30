@@ -1,7 +1,7 @@
 import type { RefObject } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-export const isDragFile = (event: DragEvent) => event.dataTransfer?.types.includes('Files');
+const isDragFile = (event: DragEvent) => event.dataTransfer?.types.includes('Files');
 
 const useComposerDrag = (iframeRef: RefObject<HTMLIFrameElement>, onAddAttachments?: (files: File[]) => void) => {
     const counter = useRef(0);
