@@ -5698,6 +5698,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Yedek parola yanlış. Lütfen yeniden deneyin."
+      ],
+      "Incorrect second password. Please try again.": [
+        "İkinci parola yanlış. Lütfen yeniden deneyin."
       ]
     },
     "error": {
@@ -10052,6 +10058,12 @@
       ],
       "What needs handling?": [
         "Nelerin işlenmesi gerekiyor?"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Ödenmemiş bir faturanız var ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "${ dueDate } tarihli ödenmemiş bir faturanız var ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -11087,13 +11099,13 @@
         "Ücretli etki alanı"
       ],
       "Primary": [
-        "Birincil saat dilimi"
+        "Birincil"
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
         "Birincil - Dikkatinizi gerektiren her şey ve kapatılmış kategorilerden gelen e-postalar"
       ],
       "Promotions": [
-        "Kazançlar"
+        "Promosyonlar"
       ],
       "Promotions - Deals, offers, and marketing emails": [
         "Tanıtımlar - Fırsatlar, teklifler ve pazarlama e-postaları"
@@ -11186,7 +11198,7 @@
         "Geri bildirimi atla"
       ],
       "Social": [
-        "Sosyal ağ"
+        "Sosyal"
       ],
       "Social - Social media updates, activity, and messages": [
         "Sosyal - Sosyal medya güncellemeleri, etkinlikler ve iletiler"
@@ -11518,7 +11530,7 @@
         "Tüm e-postalar"
       ],
       "Archive": [
-        "Arşivle"
+        "Arşiv"
       ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
@@ -11744,6 +11756,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Güncellenen daveti görmek için anahtarlarınızı yeniden kullanıma almalısınız"
+      ],
+      "Pay it": [
+        "Ödeyin"
       ]
     },
     "Link to calendar event": {
