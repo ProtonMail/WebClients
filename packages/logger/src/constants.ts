@@ -5,14 +5,6 @@ export const DAY = 24 * 60 * 60 * 1000;
 /** Prefix for every logger IndexedDB database. */
 export const LOGGER_DB_PREFIX = 'proton-logs-';
 
-/**
- * Prefix used by the alpha logger, for both IndexedDB databases and localStorage keys.
- *
- * Nothing reads it any more: the alpha stored one ciphertext per log argument, which this
- * schema cannot decode. Those databases will be deleted rather than migrated.
- */
-export const LEGACY_LOGGER_DB_PREFIX = 'proton-logger-';
-
 export const DEFAULT_LOGGER_NAME = 'default';
 export const DEFAULT_MAX_ENTRIES = 10_000;
 export const DEFAULT_RETENTION_DAYS = 7;
