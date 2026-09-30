@@ -407,14 +407,20 @@
             "ignoreDependencies": ["@proton/collect-metrics"]
         },
         "packages/pass": {
-            "entry": ["lib/globals/webextension-polyfill.stub.ts", "utils/logger/loglevel.mock.ts"],
-            "project": ["**/*.{ts,tsx}"],
+            "entry": [
+                "lib/globals/webextension-polyfill.stub.ts",
+                "utils/logger/loglevel.mock.ts",
+                "store/prettier.config.mjs",
+                "types/prettier.config.mjs"
+            ],
+            "project": ["**/*.{js,mjs,ts,tsx}"],
             "ignore": [
                 "types/api/pass.ts",
                 "types/protobuf/*-v1.ts",
                 "types/protobuf/google/**",
                 "lib/extension/rules/v*/types.ts"
-            ]
+            ],
+            "ignoreDependencies": ["@protobuf-ts/plugin", "core-js", "json-schema-to-typescript", "tsx"]
         },
         "packages/payments": {
             "entry": [],
