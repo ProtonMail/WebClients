@@ -41,7 +41,6 @@ export const isTransferPending = ({ state }: { state: TransferState }) => state 
 export const isTransferFinalizing = ({ state }: { state: TransferState }) => state === TransferState.Finalizing;
 
 export const isTransferCancelError = (error: Error) => error.name === 'TransferCancel' || error.name === 'AbortError';
-export const isPhotosDisabledUploadError = (error: Error) => error.name === 'PhotosUploadDisabled';
 export const isTransferRetry = (error: Error) => error.name === 'TransferRetry';
 
 export const getProgressBarStatus = (transferState: TransferState): ProgressBarStatus => {

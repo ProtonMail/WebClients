@@ -47,7 +47,6 @@ export const useDocsBookmarks = ({ token, urlPassword, customPassword }: Props) 
 
     return {
         isLoading,
-        customPassword, // We return customPassword to be able to access it easily in the public page
         addBookmark: handleAddBookmark,
         isAlreadyBookmarked,
     };

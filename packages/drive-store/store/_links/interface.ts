@@ -1,4 +1,5 @@
 import type { VERIFICATION_STATUS } from '@protontech/crypto';
+
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
@@ -103,14 +104,7 @@ export type SignatureIssues = {
 };
 
 export type SignatureIssueLocation =
-    | 'passphrase'
-    | 'hash'
-    | 'name'
-    | 'xattrs'
-    | 'contentKeyPacket'
-    | 'blocks'
-    | 'thumbnail'
-    | 'manifest';
+    'passphrase' | 'hash' | 'name' | 'xattrs' | 'contentKeyPacket' | 'blocks' | 'thumbnail' | 'manifest';
 
 export interface EncryptedLink extends Link {
     nodeKey: string;
@@ -139,8 +133,7 @@ export interface DecryptedLink extends Link {
     // time link should be displayed.
     isStale?: boolean;
     // cachedThumbnailUrl is computed URL to cached image. This is not part
-    // of any request and not filled automatically. To get this value, use
-    // `loadLinkThumbnail` from `useDrive`.
+    // of any request and not filled automatically.
     cachedThumbnailUrl?: string;
     originalSize?: number;
     // In case of image it might contain dimensions stored in XAttributes.

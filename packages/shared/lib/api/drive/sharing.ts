@@ -1,5 +1,5 @@
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
-import type { AbuseReportPayload, CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
+import type { CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
 
 export const queryInitSRPHandshake = (token: string) => {
     return {
@@ -116,14 +116,6 @@ export const queryDeleteMultipleSharedLinks = (shareId: string, shareUrlIds: str
         data: {
             ShareURLIDs: shareUrlIds,
         },
-    };
-};
-
-export const querySubmitAbuseReport = (data: AbuseReportPayload) => {
-    return {
-        method: 'post',
-        url: 'drive/report/url',
-        data,
     };
 };
 

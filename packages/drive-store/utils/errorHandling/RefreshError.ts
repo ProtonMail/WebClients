@@ -22,7 +22,7 @@ const REFRESH_MESSAGE = 'Please refresh the page.';
  * If you are in a context where ttag is not available (i.e. worker), you can use this
  * constructor directly and rebuild it on the main thread for localization.
  */
-export class RefreshError extends Error {
+class RefreshError extends Error {
     sentryMessage: string = REFRESH_MESSAGE;
 
     constructor(message?: string) {

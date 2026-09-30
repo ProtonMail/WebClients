@@ -16,7 +16,6 @@ export type DocInvitesHook = () => {
     rejectInvite: (invitation: ExtendedInvitationDetails) => Promise<void>;
     confirmModal: JSX.Element | null;
     recentlyAcceptedInvites: ExtendedInvitationDetails[];
-    showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     inviteForNodeMeta: (nodeMeta: NodeMeta | PublicNodeMeta) => ExtendedInvitationDetails | undefined;
     isLoading: boolean;
 };
@@ -69,7 +68,6 @@ export const useDocInvites: DocInvitesHook = () => {
         rejectInvite,
         confirmModal,
         recentlyAcceptedInvites,
-        showConfirmModal,
         inviteForNodeMeta,
         isLoading,
     };

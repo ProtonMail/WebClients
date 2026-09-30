@@ -1,10 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import {
-    queryCreateShareURLBookmark,
-    queryDeleteShareURLBookmark,
-    queryListShareURLBookmark,
-} from '@proton/shared/lib/api/drive/bookmark';
+import { queryCreateShareURLBookmark, queryListShareURLBookmark } from '@proton/shared/lib/api/drive/bookmark';
 import type { BookmarkPayload } from '@proton/shared/lib/interfaces/drive/bookmark';
 
 import { sharedUrlInfoPayloadToSharedUrlInfo } from '../_api/transformers';
@@ -64,13 +60,8 @@ export const useBookmarks = () => {
         ).then(({ BookmarkShareURL }) => BookmarkShareURL.Token);
     };
 
-    const deleteBookmark = async (abortSignal: AbortSignal, token: string) => {
-        await debouncedRequest(queryDeleteShareURLBookmark(token), abortSignal);
-    };
-
     return {
         listBookmarks,
         addBookmark,
-        deleteBookmark,
     };
 };

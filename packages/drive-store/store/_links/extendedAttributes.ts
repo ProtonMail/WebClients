@@ -115,15 +115,6 @@ export type XAttrCreateParams = {
     };
 };
 
-export async function encryptFileExtendedAttributes(
-    params: XAttrCreateParams,
-    nodePrivateKey: PrivateKeyReference,
-    addressPrivateKey: PrivateKeyReference
-) {
-    const xattr = createFileExtendedAttributes(params);
-    return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
-}
-
 export function createFileExtendedAttributes({
     file,
     digests,

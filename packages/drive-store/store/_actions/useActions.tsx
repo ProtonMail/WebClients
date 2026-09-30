@@ -2,19 +2,10 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useConfirmActionModal } from '@proton/components';
-import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { sendErrorReport } from '../../utils/errorHandling';
-import { ValidationError } from '../../utils/errorHandling/ValidationError';
-import useDevicesActions from '../_devices/useDevicesActions';
 import { useLinksActions } from '../_links';
 import useLinkActions from '../_links/useLinkActions';
-import useShareActions from '../_shares/useShareActions';
-import useShareUrl from '../_shares/useShareUrl';
-import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
-import { TransferConflictStrategy } from '../_uploads/interface';
 import { useErrorHandler } from '../_utils';
 import type { LinkInfo } from './interface';
 import useListNotifications from './useListNotifications';
@@ -37,12 +28,8 @@ export default function useActions() {
         createRestoredItemsNotifications,
         createDeletedItemsNotifications,
     } = useListNotifications();
-    const { initFileUpload } = useUploadFile();
     const link = useLinkActions();
     const links = useLinksActions();
-    const shareUrl = useShareUrl();
-    const shareActions = useShareActions();
-    const devicesActions = useDevicesActions();
 
     const createFolder = async (
         abortSignal: AbortSignal,
@@ -68,80 +55,6 @@ export default function useActions() {
                     e,
                     <span className="text-pre-wrap">{c('Notification')
                         .jt`"${ellipsedName}" failed to be created`}</span>
-                );
-                throw e;
-            });
-    };
-
-    const createFile = async (shareId: string, parentLinkId: string, newName: string) => {
-        const file = new File([], newName, { type: 'text/plain' });
-        const controls = initFileUpload(
-            shareId,
-            parentLinkId,
-            file,
-            async () => {
-                const sanitizedName = rtlSanitize(newName);
-                throw new ValidationError(c('Error').t`"${sanitizedName}" already exists`);
-            },
-            // Logging is not useful for single file creation.
-            () => {}
-        );
-
-        const ellipsedName = safeName(newName);
-        await controls
-            .start()
-            .then(() => {
-                createNotification({
-                    text: (
-                        <span className="text-pre-wrap">{c('Notification')
-                            .jt`"${ellipsedName}" created successfully`}</span>
-                    ),
-                });
-            })
-            .catch((e) => {
-                showErrorNotification(
-                    e,
-                    <span className="text-pre-wrap">{c('Notification')
-                        .jt`"${ellipsedName}" failed to be created`}</span>
-                );
-                throw e;
-            });
-    };
-
-    const saveFile = async (
-        shareId: string,
-        parentLinkId: string,
-        newName: string,
-        mimeType: string,
-        content: Uint8Array<ArrayBuffer>[]
-    ) => {
-        // saveFile is using file upload using name with replace strategy as
-        // default. That's not the best way - better would be to use link ID
-        // and also verify revision ID that file was not touched in meantime
-        // by other client. But this is enough for first version to play with
-        // the feature and see what all needs to be changed and implemented.
-        const file = new File(content, newName, { type: mimeType });
-        const controls = initFileUpload(
-            shareId,
-            parentLinkId,
-            file,
-            async () => TransferConflictStrategy.Replace,
-            // Logging is not useful for single file updates.
-            () => {}
-        );
-
-        const name = safeName(newName);
-        await controls
-            .start()
-            .then(() => {
-                createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').jt`"${name}" saved successfully`}</span>,
-                });
-            })
-            .catch((e) => {
-                showErrorNotification(
-                    e,
-                    <span className="text-pre-wrap">{c('Notification').jt`"${name}" failed to be saved`}</span>
                 );
                 throw e;
             });
@@ -317,120 +230,13 @@ export default function useActions() {
         });
     };
 
-    const emptyTrash = async (abortSignal: AbortSignal) => {
-        const title = c('Title').t`Empty trash`;
-        const confirm = c('Action').t`Empty trash`;
-        const message = c('Info').t`Are you sure you want to empty trash and permanently delete all the items?`;
-
-        void showConfirmModal({
-            title,
-            submitText: confirm,
-            message,
-            onSubmit: async () => {
-                await links
-                    .emptyTrash(abortSignal)
-                    .then(() => {
-                        const notificationText = c('Notification')
-                            .t`All items will soon be permanently deleted from trash`;
-                        createNotification({ text: notificationText });
-                    })
-                    .catch((err: any) => {
-                        showErrorNotification(err, c('Notification').t`Trash failed to be emptied`);
-                    });
-            },
-        });
-    };
-
-    // TODO: This can support multiple links in the future
-    const stopSharing = (shareId: string) => {
-        void showConfirmModal({
-            title: c('Title').t`Stop sharing?`,
-            submitText: c('Title').t`Stop sharing`,
-            message: c('Info').t`This action will delete the link and revoke access for all users.`,
-            onSubmit: () =>
-                shareActions
-                    .deleteShare(shareId, { force: true })
-                    .then(() => {
-                        createNotification({
-                            text: c('Notification').t`You stopped sharing this item`,
-                        });
-                    })
-                    .catch(() => {
-                        createNotification({
-                            type: 'error',
-                            text: c('Notification').t`Stopping the sharing of this item has failed`,
-                        });
-                    }),
-        });
-    };
-
-    // Safari does not allow copy to clipboard outside of the event
-    // (e.g., click). No await or anything does not do the trick.
-    // Clipboard API also doesn't work. Therefore we cannot have this
-    // feature on Safari at this moment.
-    const copyShareLinkToClipboard = isSafari()
-        ? undefined
-        : async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
-              return shareUrl
-                  .loadShareUrlLink(abortSignal, shareId, linkId)
-                  .then((url) => {
-                      if (url) {
-                          textToClipboard(url);
-                          createNotification({
-                              text: c('Info').t`Link copied to clipboard`,
-                          });
-                      }
-                  })
-                  .catch((err: any) => {
-                      showErrorNotification(err, c('Notification').t`Cannot load link`);
-                  });
-          };
-
-    const removeDevice = (deviceId: string, abortSignal: AbortSignal) => {
-        return devicesActions
-            .remove(deviceId, abortSignal)
-            .then(() => {
-                const notificationText = c('Notification').t`Device removed`;
-                createNotification({ text: notificationText });
-            })
-            .catch((err) => {
-                showErrorNotification(err, c('Notification').t`Device failed to be removed`);
-                sendErrorReport(err);
-            });
-    };
-
-    const renameDevice = async (
-        params: { shareId: string; linkId: string; deviceId: string; newName: string; haveLegacyName: boolean },
-        abortSignal?: AbortSignal
-    ) => {
-        await Promise.all([
-            await link.renameLink(new AbortController().signal, params.shareId, params.linkId, params.newName),
-            await devicesActions.rename(params, abortSignal),
-        ])
-            .then(() => {
-                const notificationText = c('Notification').t`Device renamed`;
-                createNotification({ text: notificationText });
-            })
-            .catch((err) => {
-                showErrorNotification(err, c('Notification').t`Device failed to be renamed`);
-                sendErrorReport(err);
-            });
-    };
-
     return {
         createFolder,
-        createFile,
-        saveFile,
         renameLink,
         moveLinks,
         trashLinks,
         restoreLinks,
         deletePermanently,
-        emptyTrash,
-        stopSharing,
-        copyShareLinkToClipboard,
-        removeDevice,
-        renameDevice,
         confirmModal,
     };
 }

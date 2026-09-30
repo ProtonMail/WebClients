@@ -49,12 +49,18 @@ export class GetDocumentKeys implements UseCaseInterface<GetDocumentKeysResult> 
 
     try {
       const useSDK = isDriveCompatSDKEnabled(this.unleashClient)
-      const documentContentKey = useSDK
-        ? await getDocumentKeys(nodeMeta)
-        : await this.compatWrapper.getCompat<DriveCompat>().getDocumentKeys(nodeMeta)
 
-      const addressWithKeys =
-        primaryAddressKeys ?? (await this.compatWrapper.getCompat<DriveCompat>().getPrimaryAddressKeys())
+      const documentContentKeyPromise = useSDK
+        ? getDocumentKeys(nodeMeta)
+        : this.compatWrapper.getCompat<DriveCompat>().getDocumentKeys(nodeMeta)
+      const addressWithKeysPromise = primaryAddressKeys
+        ? Promise.resolve(primaryAddressKeys)
+        : this.compatWrapper.getCompat<DriveCompat>().getPrimaryAddressKeys()
+      const [documentContentKey, addressWithKeys] = await Promise.all([
+        documentContentKeyPromise,
+        addressWithKeysPromise,
+      ])
+
       if (!addressWithKeys) {
         return Result.fail('No primary address keys found')
       }
@@ -96,13 +102,13 @@ export class GetDocumentKeys implements UseCaseInterface<GetDocumentKeysResult> 
       return Result.ok(undefined)
     }
 
-    const resolvedAddrKeys =
+    const addressWithKeys =
       primaryAddressKeys ?? (await this.compatWrapper.getCompat<DriveCompat>().getPrimaryAddressKeys())
-    if (!resolvedAddrKeys) {
+    if (!addressWithKeys) {
       return Result.fail('No primary address keys found')
     }
 
-    const { keys, address } = resolvedAddrKeys
+    const { keys, address } = addressWithKeys
     const restoredKeys: DocumentKeys = {
       userAddressPrivateKey: keys[0].privateKey,
       userOwnAddress: address,

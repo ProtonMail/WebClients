@@ -36,7 +36,7 @@ function useDefaultShare() {
         setIsLoadingShares: state.setIsLoadingShares,
     }));
 
-    const { getShare, getShareWithKey } = useShare();
+    const { getShareWithKey } = useShare();
     const { createVolume, listVolumes } = useVolume();
     const volumesState = useVolumesState();
     const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
@@ -212,25 +212,10 @@ function useDefaultShare() {
         [sharesState.getDefaultPhotosShareId, getShareWithKey, loadUserShares]
     );
 
-    const isShareAvailable = useCallback(
-        (abortSignal: AbortSignal, shareId: string): Promise<boolean> => {
-            return debouncedFunction(
-                async (abortSignal: AbortSignal) => {
-                    const share = await getShare(abortSignal, shareId);
-                    return !share.isLocked;
-                },
-                ['isShareAvailable', shareId],
-                abortSignal
-            );
-        },
-        [getShare]
-    );
-
     return {
         getDefaultShare,
         getDefaultShareAddressEmail,
         getDefaultPhotosShare,
-        isShareAvailable,
     };
 }
 
