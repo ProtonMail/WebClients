@@ -9,8 +9,6 @@ import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useAuthentication } from '@proton/components';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import type { Address } from '@proton/shared/lib/interfaces/Address';
-import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 import { type VerificationKeysCallback, decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
 import type { ShareWithKey } from '../_shares/interface';
@@ -146,18 +144,6 @@ function useDriveCrypto() {
         [getVerificationKeysCallbackList]
     );
 
-    const sign = useCallback(
-        async (
-            payload: string | Uint8Array<ArrayBuffer>,
-            keys?: { privateKey: PrivateKeyReference; address: Address }
-        ) => {
-            const { privateKey, address } = keys || (await getPrimaryAddressKey());
-            const signature = await signMessage(payload, [privateKey]);
-            return { signature, address };
-        },
-        [getPrimaryAddressKey]
-    );
-
     const decryptSharePassphraseAsync = async (meta: ShareWithKey, privateKeys: PrivateKeyReference[]) => {
         const publicKeysCallbackList = await getVerificationKeysCallbackList(meta.creator);
         const passphrase = await decryptPassphrase({
@@ -194,9 +180,6 @@ function useDriveCrypto() {
         getOwnAddressAndPrimaryKeys,
         getPrivateAddressKeys,
         getVerificationKey,
-        getVerificationKeysCallbackList,
-        getPrimaryAddress,
-        sign,
         decryptSharePassphrase,
     };
 }

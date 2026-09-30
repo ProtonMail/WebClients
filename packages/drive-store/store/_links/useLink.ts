@@ -5,13 +5,10 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
+import { queryFileRevision } from '@proton/shared/lib/api/drive/files';
 import { queryGetLink } from '@proton/shared/lib/api/drive/link';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
-import type {
-    DriveFileRevisionResult,
-    DriveFileRevisionThumbnailResult,
-} from '@proton/shared/lib/interfaces/drive/file';
+import type { DriveFileRevisionResult } from '@proton/shared/lib/interfaces/drive/file';
 import type { LinkMetaResult } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import type { VerificationKeysCallback } from '@proton/shared/lib/keys/drivePassphrase';
@@ -885,87 +882,6 @@ export function useLinkInner(
         }
     };
 
-    /**
-     * loadLinkThumbnail gets thumbnail URL either from cached link or fetches
-     * it from API, then downloads the thumbnail block and decrypts it using
-     * `downloadCallback`, and finally creates local URL to it which is set to
-     * the cached link.
-     */
-    const loadLinkThumbnail = async (
-        abortSignal: AbortSignal,
-        shareId: string,
-        linkId: string,
-        downloadCallback: (
-            downloadUrl: string,
-            downloadToken: string
-        ) => Promise<{
-            contents: Promise<Uint8Array<ArrayBuffer>[]>;
-            verificationStatusPromise: Promise<VERIFICATION_STATUS>;
-        }>
-    ): Promise<string | undefined> => {
-        const link = await getLink(abortSignal, shareId, linkId);
-        if (link.cachedThumbnailUrl || !link.hasThumbnail || !link.activeRevision) {
-            return link.cachedThumbnailUrl;
-        }
-
-        let downloadInfo = {
-            isFresh: false,
-            downloadUrl: link.activeRevision.thumbnail?.bareUrl,
-            downloadToken: link.activeRevision.thumbnail?.token,
-        };
-        const loadDownloadUrl = async (activeRevisionId: string) => {
-            const res = (await debouncedRequest(
-                queryFileRevisionThumbnail(shareId, linkId, activeRevisionId)
-            )) as DriveFileRevisionThumbnailResult;
-
-            return {
-                isFresh: true,
-                downloadUrl: res.ThumbnailBareURL,
-                downloadToken: res.ThumbnailToken,
-            };
-        };
-
-        const loadThumbnailUrl = async (downloadUrl: string, downloadToken: string): Promise<string> => {
-            const { contents, verificationStatusPromise } = await downloadCallback(downloadUrl, downloadToken);
-            const data = await contents;
-            const url = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
-            linksState.setCachedThumbnail(shareId, linkId, url);
-
-            const cachedLink = linksState.getLink(shareId, linkId);
-            if (cachedLink) {
-                const verificationStatus = await verificationStatusPromise;
-                handleSignatureCheck(shareId, cachedLink.encrypted, 'thumbnail', verificationStatus);
-            }
-
-            return url;
-        };
-
-        if (!downloadInfo.downloadUrl || !downloadInfo.downloadToken) {
-            downloadInfo = await loadDownloadUrl(link.activeRevision.id);
-        }
-
-        if (!downloadInfo.downloadUrl || !downloadInfo.downloadToken) {
-            return;
-        }
-
-        try {
-            return await loadThumbnailUrl(downloadInfo.downloadUrl, downloadInfo.downloadToken);
-        } catch (err) {
-            // Download URL and token can be expired if we used cached version.
-            // We get thumbnail info with the link, but if user don't scroll
-            // to the item before cached version expires, we need to try again
-            // with a loading the new URL and token.
-            if (downloadInfo.isFresh) {
-                throw err;
-            }
-            downloadInfo = await loadDownloadUrl(link.activeRevision.id);
-            if (!downloadInfo.downloadUrl || !downloadInfo.downloadToken) {
-                return;
-            }
-            return loadThumbnailUrl(downloadInfo.downloadUrl, downloadInfo.downloadToken);
-        }
-    };
-
     const setSignatureIssues = async (
         abortSignal: AbortSignal,
         shareId: string,
@@ -1005,10 +921,8 @@ export function useLinkInner(
         getLinkSessionKey,
         getLinkHashKey,
         decryptLink,
-        getEncryptedLink,
         getLink,
         loadFreshLink,
-        loadLinkThumbnail,
         setSignatureIssues,
     };
 }

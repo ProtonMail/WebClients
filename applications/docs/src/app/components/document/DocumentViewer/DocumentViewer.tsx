@@ -26,7 +26,7 @@ import {
 } from '@proton/docs-core'
 import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { useGetPrimaryAddressKeys } from '@proton/docs-core/lib/DriveSDK/getDocumentKeys'
+import { useGetPrimaryAddressKeys } from '@proton/docs-core/lib/Crypto/useGetPrimaryAddressKeys'
 import type {
   CommentMarkNodeChangeData,
   DocumentAction,

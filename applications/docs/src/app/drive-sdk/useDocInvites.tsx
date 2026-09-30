@@ -142,7 +142,6 @@ export const useDocInvites: DocInvitesHook = () => {
   return {
     isLoading,
     confirmModal,
-    showConfirmModal,
     invitations: convertedInvitations,
     recentlyAcceptedInvites,
     acceptInvite,

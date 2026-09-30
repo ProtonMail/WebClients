@@ -21,23 +21,6 @@ export const MAX_ENCRYPTED_BLOCKS = 15;
 export const MAX_UPLOADING_BLOCKS = 10;
 
 /**
- * MAX_BLOCKS_PER_UPLOAD is how many blocks can one upload job have buffered
- * in memory. Used to count the current load for the total limit of ongoing
- * upload files by MAX_UPLOAD_BLOCKS_LOAD.
- */
-export const MAX_BLOCKS_PER_UPLOAD = MAX_ENCRYPTED_BLOCKS + MAX_UPLOADING_BLOCKS;
-
-/**
- * MAX_UPLOAD_BLOCKS_LOAD limits the number of total blocks being uploaded
- * at one time. If the queue contains only big files, only few of them at
- * a time is allowed to limit the memory requirements. If the queue contains
- * small files, more can be uploaded in parallel. But each upload mean extra
- * worker. Even though browsers support up to hunderds of web workers, still
- * it spawns threads.
- */
-export const MAX_UPLOAD_BLOCKS_LOAD = 4;
-
-/**
  * How many ongoing uploads there can be. Without http2, we cannot do more
  * than six parallel requests to one host. With http2 (which we use), there
  * is theretically no limit, but still we should make a reasonable limit
@@ -74,25 +57,3 @@ export const MAX_TOO_MANY_REQUESTS_WAIT = 60 * 60; // Seconds.
  * entirely. The main utility is to mitigate bitflip issues.
  */
 export const MAX_BLOCK_VERIFICATION_RETRIES = 1;
-
-/**
- * Amount of time between heartbeats. These are used to ensure the worker
- * is still alive, and not stuck in a bad state.
- */
-export const HEARTBEAT_INTERVAL = 30 * 1000; // ms
-
-/**
- * Amount of time to wait for a new heartbeat. If no heartbeat is received
- * during this interval, we cancel and restart the worker.
- *
- * This should be greater than HEARTBEAT_INTERVAL;
- */
-export const HEARTBEAT_WAIT_TIME = HEARTBEAT_INTERVAL * 2; // ms
-
-/**
- * Amout of time to wait for messages after initialization before considering
- * the worker is dead and asking the user to refresh the page.
- *
- * On Chrome, we have no way to know if a worker fetch was successful.
- */
-export const WORKER_INIT_WAIT_TIME = 5 * 1000; // ms

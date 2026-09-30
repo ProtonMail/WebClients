@@ -1,5 +1,5 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
@@ -19,7 +19,7 @@ import {
     queryUpdateExternalInvitationPermissions,
     queryUpdateInvitationPermissions,
 } from '@proton/shared/lib/api/drive/invitation';
-import { DRIVE_SIGNATURE_CONTEXT, SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
+import { DRIVE_SIGNATURE_CONTEXT } from '@proton/shared/lib/drive/constants';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import type {
@@ -39,10 +39,8 @@ import {
 } from '../_api/transformers';
 import useDebouncedRequest from '../_api/useDebouncedRequest';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
-import useDriveCrypto from '../_crypto/useDriveCrypto';
 import useLink from '../_links/useLink';
 import type { ShareInvitationDetails, ShareInvitationEmailDetails } from '../_shares/interface';
-import { useDriveSharingFlags } from '../_shares/useDriveSharingFlags';
 import useShare from '../_shares/useShare';
 import { useInvitationsState } from './useInvitationsState';
 
@@ -55,9 +53,7 @@ export const useInvitations = () => {
     const debouncedRequest = useDebouncedRequest();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
-    const driveCrypto = useDriveCrypto();
-    const { isSharingExternalInviteDisabled } = useDriveSharingFlags();
-    const { getShareCreatorKeys, getShareSessionKey } = useShare();
+    const { getShareSessionKey } = useShare();
     const { getLink, getLinkPrivateKey } = useLink();
     const invitationsState = useInvitationsState();
 
@@ -321,30 +317,6 @@ export const useInvitations = () => {
         );
     };
 
-    const getInvitationDetails = async (
-        abortSignal: AbortSignal,
-        params: {
-            invitationId: string;
-            volumeId: string;
-            linkId: string;
-        }
-    ) => {
-        const invitationDetails = await debouncedRequest<
-            {
-                Code: number;
-            } & ShareInvitationDetailsPayload
-        >(queryInvitationDetails(params.invitationId), abortSignal).then(({ Invitation, Share, Link }) =>
-            shareInvitationDetailsPayloadToShareInvitationDetails({
-                Invitation,
-                Share,
-                Link,
-            })
-        );
-
-        invitationsState.setInvitations([invitationDetails]);
-        return invitationDetails;
-    };
-
     const acceptInvitation = async (abortSignal: AbortSignal, { invitation, share, link }: ShareInvitationDetails) => {
         const keys = await getOwnAddressKeysWithEmailAsync(invitation.inviteeEmail, getAddresses, getAddressKeys);
 
@@ -384,111 +356,6 @@ export const useInvitations = () => {
         return debouncedRequest<{ Code: number }>(queryRejectShareInvite(invitationId), abortSignal);
     };
 
-    const convertExternalInvitation = async (
-        abortSignal: AbortSignal,
-        {
-            linkId,
-            contextShareId,
-            volumeId,
-            externalInvitationId,
-        }: {
-            linkId: string;
-            contextShareId: string;
-            volumeId: string;
-            externalInvitationId: string;
-        }
-    ) => {
-        if (isSharingExternalInviteDisabled) {
-            const error = new EnrichedError(
-                c('Error').t`External invitations are temporarily disabled. Please try again later`
-            );
-            error.name = EXTERNAL_INVITATIONS_ERROR_NAMES.DISABLED;
-            throw error;
-        }
-
-        // TODO: Using default share will not work for invitations to items
-        // from other shares (Photos / Devices).
-        // https://jira.protontech.ch/browse/DRVWEB-4257
-        const link = await getLink(abortSignal, contextShareId, linkId);
-        if (!link.shareId) {
-            throw new EnrichedError('Cannot load the share', {
-                tags: {
-                    linkId: linkId,
-                    volumeId,
-                    shareId: link.shareId,
-                    externalInvitationId,
-                },
-            });
-        }
-
-        const externalInvitations = await listExternalInvitations(abortSignal, link.shareId);
-        const currentExternalInvitation = externalInvitations.find(
-            (externalInvitation) => externalInvitation.externalInvitationId === externalInvitationId
-        );
-
-        if (!currentExternalInvitation) {
-            const error = new EnrichedError(c('Error').t`The invitation doesn't exist anymore`);
-            error.name = EXTERNAL_INVITATIONS_ERROR_NAMES.NOT_FOUND;
-            throw error;
-        }
-
-        if (currentExternalInvitation.state !== SHARE_EXTERNAL_INVITATION_STATE.USER_REGISTERED) {
-            throw new Error(c('Error').t`The invitation cannot be completed yet. Please try again later.`);
-        }
-        const inviterAddressKey = await getShareCreatorKeys(abortSignal, contextShareId);
-        const inviteePublicKey = await driveCrypto.getVerificationKey(currentExternalInvitation.inviteeEmail);
-
-        if (!inviteePublicKey.length) {
-            throw new EnrichedError("Can't retrieve invitee's public key", {
-                tags: {
-                    linkId: linkId,
-                    shareId: link.shareId,
-                    volumeId,
-                    externalInvitationId,
-                },
-            });
-        }
-
-        const linkPrivateKey = await getLinkPrivateKey(abortSignal, contextShareId, linkId);
-        const sessionKey = await getShareSessionKey(abortSignal, link.shareId, linkPrivateKey);
-        const { verificationStatus, errors } = await CryptoProxy.verifyMessage({
-            textData: currentExternalInvitation.inviteeEmail.concat('|', sessionKey.data.toBase64()),
-            verificationKeys: inviterAddressKey.publicKey,
-            binarySignature: Uint8Array.fromBase64(currentExternalInvitation.externalInvitationSignature),
-            signatureContext: { required: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_EXTERNAL_INVITATION },
-        });
-
-        if (verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-            throw new EnrichedError('Failed to validate the signature', {
-                tags: {
-                    linkId: linkId,
-                    shareId: link.shareId,
-                    volumeId,
-                    externalInvitationId,
-                },
-                extra: {
-                    e: errors,
-                },
-            });
-        }
-        return inviteProtonUser(abortSignal, {
-            share: {
-                shareId: link.shareId,
-                sessionKey,
-            },
-            invitee: {
-                inviteeEmail: currentExternalInvitation.inviteeEmail,
-                publicKey: inviteePublicKey[0],
-            },
-            inviter: {
-                inviterEmail: inviterAddressKey.address.Email,
-                addressKey: inviterAddressKey.privateKey,
-            },
-            permissions: currentExternalInvitation.permissions,
-            externalInvitationId: currentExternalInvitation.externalInvitationId,
-        });
-    };
-
     const updateInvitationPermissions = (
         abortSignal: AbortSignal,
         {
@@ -513,8 +380,6 @@ export const useInvitations = () => {
 
     return {
         decryptInvitationLinkName,
-        getInvitationDetails,
-        convertExternalInvitation,
         getInvitation,
         inviteProtonUser,
         inviteExternalUser,
