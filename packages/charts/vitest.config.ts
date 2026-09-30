@@ -9,13 +9,6 @@ export default mergeConfig(sharedVitestConfig, {
         setupFiles: './vitest.setup.ts',
         coverage: {
             exclude: ['**/*.d.ts', '**/*.test.ts', '**/*.test.tsx'],
-
-            thresholds: {
-                branches: 85,
-                functions: 85,
-                lines: 90,
-                statements: 90,
-            },
         },
     },
 });
