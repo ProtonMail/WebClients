@@ -251,201 +251,218 @@ export const createMigrationBatch = createAsyncThunk<
             return rejectWithValue(getApiError(err));
         }
 
-        const errors: CreateMigrationBatchResult['errors'] = [];
+        extra.eventManager.stop();
 
-        const [organization, members, orgKey] = await Promise.all([
-            dispatch(organizationThunk()),
-            dispatch(membersThunk()),
-            dispatch(organizationKeyThunk()),
-        ]);
+        try {
+            const errors: CreateMigrationBatchResult['errors'] = [];
 
-        if (!orgKey.privateKey) {
-            throw new Error(c('Error').t`Missing organization private key`);
-        }
+            const [organization, members, orgKey] = await Promise.all([
+                dispatch(organizationThunk()),
+                dispatch(membersThunk()),
+                dispatch(organizationKeyThunk()),
+            ]);
 
-        if (!orgKey.publicKey) {
-            throw new Error(c('Error').t`Missing organization public key`);
-        }
-
-        const membersAddresses: Record<string, Address[]> = {};
-        for (const member of members) {
-            const addresses = await dispatch(getMemberAddresses({ member, cache: CacheType.None }));
-            membersAddresses[member.ID] = addresses;
-        }
-
-        const getKnownAddresses = () => Object.values(membersAddresses).flat().filter(isRelevantAddress);
-        const isSelf = (email: string) => areEquivalentEmails(email, oauthToken.Account);
-
-        const users = providerUsers.filter((u) => selectedUsers.includes(u.ID));
-        const shouldCreateUser = shouldCreateUserPredicate(
-            oauthToken.Account,
-            getKnownAddresses().map((a) => a.Email)
-        );
-
-        const usersToCreate = users.filter(shouldCreateUser);
-        const availableSeats = organization.MaxMembers - organization.UsedMembers;
-        if (usersToCreate.length > availableSeats) {
-            throw { name: 'SeatsError', message: c('Error').t`Organization does not have enough seats available` };
-        }
-
-        const selfMember = members.find((m) => m.Self)!;
-        let allocatableStorage = organization.MaxSpace - organization.AssignedSpace;
-
-        // Drop some quota from the admin if safe to do so
-        if (selfMember.MaxSpace === organization.MaxSpace && organization.MaxMembers > 1 && usersToCreate.length) {
-            const newQuota = Math.floor(organization.MaxSpace / organization.MaxMembers);
-            try {
-                await api(updateQuota(selfMember.ID, newQuota));
-            } catch (err) {
-                return rejectWithValue(getApiError(err));
+            if (!orgKey.privateKey) {
+                throw new Error(c('Error').t`Missing organization private key`);
             }
-            allocatableStorage = organization.MaxSpace - newQuota;
-        }
 
-        const existingUsers = providerUsers.filter((u) => !shouldCreateUser(u));
-        const userQuota = Math.floor(allocatableStorage / (providerUsers.length - existingUsers.length));
-        const totalStorageRequired = usersToCreate.length * userQuota;
-        if ((usersToCreate.length > 1 && userQuota < 1) || totalStorageRequired > allocatableStorage) {
-            throw { name: 'QuotaError', message: c('Error').t`Organization does not have enough storage available` };
-        }
+            if (!orgKey.publicKey) {
+                throw new Error(c('Error').t`Missing organization public key`);
+            }
 
-        const migratingSelf = users.find((u) => isSelf(u.Email));
-        if (migratingSelf) {
-            try {
-                const selfMember = members.find((m) => !!m.Self)!;
+            const membersAddresses: Record<string, Address[]> = {};
+            for (const member of members) {
+                const addresses = await dispatch(getMemberAddresses({ member, cache: CacheType.None }));
+                membersAddresses[member.ID] = addresses;
+            }
 
-                let selfAddress = membersAddresses[selfMember.ID].find((a) => isRelevantAddress(a) && isSelf(a.Email));
-                if (!selfAddress) {
-                    const addressKeyCreationPayload = await dispatch(
-                        getCreateAddressKeysPayload({ member: selfMember })
+            const getKnownAddresses = () => Object.values(membersAddresses).flat().filter(isRelevantAddress);
+            const isSelf = (email: string) => areEquivalentEmails(email, oauthToken.Account);
+
+            const users = providerUsers.filter((u) => selectedUsers.includes(u.ID));
+            const shouldCreateUser = shouldCreateUserPredicate(
+                oauthToken.Account,
+                getKnownAddresses().map((a) => a.Email)
+            );
+
+            const usersToCreate = users.filter(shouldCreateUser);
+            const availableSeats = organization.MaxMembers - organization.UsedMembers;
+            if (usersToCreate.length > availableSeats) {
+                throw { name: 'SeatsError', message: c('Error').t`Organization does not have enough seats available` };
+            }
+
+            const selfMember = members.find((m) => m.Self)!;
+            let allocatableStorage = organization.MaxSpace - organization.AssignedSpace;
+
+            // Drop some quota from the admin if safe to do so
+            if (selfMember.MaxSpace === organization.MaxSpace && organization.MaxMembers > 1 && usersToCreate.length) {
+                const newQuota = Math.floor(organization.MaxSpace / organization.MaxMembers);
+                try {
+                    await api(updateQuota(selfMember.ID, newQuota));
+                } catch (err) {
+                    return rejectWithValue(getApiError(err));
+                }
+                allocatableStorage = organization.MaxSpace - newQuota;
+            }
+
+            const existingUsers = providerUsers.filter((u) => !shouldCreateUser(u));
+            const userQuota = Math.floor(allocatableStorage / (providerUsers.length - existingUsers.length));
+            const totalStorageRequired = usersToCreate.length * userQuota;
+            if ((usersToCreate.length > 1 && userQuota < 1) || totalStorageRequired > allocatableStorage) {
+                throw {
+                    name: 'QuotaError',
+                    message: c('Error').t`Organization does not have enough storage available`,
+                };
+            }
+
+            const migratingSelf = users.find((u) => isSelf(u.Email));
+            if (migratingSelf) {
+                try {
+                    const selfMember = members.find((m) => !!m.Self)!;
+
+                    let selfAddress = membersAddresses[selfMember.ID].find(
+                        (a) => isRelevantAddress(a) && isSelf(a.Email)
+                    );
+                    if (!selfAddress) {
+                        const addressKeyCreationPayload = await dispatch(
+                            getCreateAddressKeysPayload({ member: selfMember })
+                        );
+
+                        const [Local, Domain] = getEmailParts(oauthToken.Account);
+                        const { Address: address } = await api<{ Address: Address }>(
+                            createMemberAddress(selfMember.ID, {
+                                Local,
+                                Domain,
+                                DisableE2EE: true,
+                            })
+                        );
+
+                        await dispatch(
+                            createAddressKeysThunk({ addressKeyCreationPayload, addressesToGenerate: [address] })
+                        );
+
+                        await dispatch(
+                            orderAddresses({
+                                member: selfMember,
+                                addresses: [address, ...membersAddresses[selfMember.ID]],
+                            })
+                        );
+
+                        await dispatch(getMemberAddresses({ member: selfMember, cache: CacheType.None, retry: true }));
+
+                        selfAddress = address;
+                        membersAddresses[selfMember.ID] = [address];
+                    }
+
+                    const calendars = (await dispatch(calendarsThunk())).filter(
+                        (calendar) =>
+                            getIsOwnedCalendar(calendar) &&
+                            areEquivalentEmails(calendar.Owner.Email, oauthToken.Account)
                     );
 
-                    const [Local, Domain] = getEmailParts(oauthToken.Account);
-                    const { Address: address } = await api<{ Address: Address }>(
-                        createMemberAddress(selfMember.ID, {
-                            Local,
-                            Domain,
-                            DisableE2EE: true,
+                    if (!calendars.length) {
+                        const getAddressKeys = (addressID: string) =>
+                            dispatch(addressKeysThunk({ addressID, cache: CacheType.None }));
+                        await createDefaultCalendar(api, getAddressKeys, selfAddress.ID);
+                    }
+                } catch (err: any) {
+                    errors.push(toSerializableUserError(migratingSelf, err));
+                }
+            }
+
+            for (const user of usersToCreate) {
+                try {
+                    const [Local, Domain] = getEmailParts(user.Email);
+                    const member = await dispatch(
+                        createMember({
+                            api,
+                            single: false,
+                            member: {
+                                name: user.AdminSetName,
+                                addresses: [
+                                    {
+                                        Domain,
+                                        Local,
+                                        DisableE2EE: true,
+                                    } as { Domain: string; Local: string }, // DisableE2EE not exposed in the createMember API
+                                ],
+                                invitationEmail: '',
+                                private: MEMBER_PRIVATE.READABLE,
+                                password,
+                                role: MEMBER_ROLE.ORGANIZATION_MEMBER,
+                                numAI: false,
+                                lumo: false,
+                                storage: userQuota,
+                                mode: CreateMemberMode.LoginLink,
+                            },
+                            verifiedDomains: [domain],
+                            // Disabled because we're doing bulk member creation,
+                            // and will handle these errors on an entire-migration basis
+                            validationOptions: {
+                                disableAddressValidation: true,
+                                disableDomainValidation: true,
+                                disableStorageValidation: true,
+                            },
                         })
                     );
 
-                    await dispatch(
-                        createAddressKeysThunk({ addressKeyCreationPayload, addressesToGenerate: [address] })
-                    );
+                    // Allow a bit of time for addresses to catch up
+                    await new Promise((resolve) => setTimeout(resolve, 250));
 
-                    await dispatch(
-                        orderAddresses({ member: selfMember, addresses: [address, ...membersAddresses[selfMember.ID]] })
-                    );
+                    const [address] = await dispatch(getMemberAddresses({ member, cache: CacheType.None }));
+                    if (!address) {
+                        throw new Error(
+                            c('Error').t`Member address not found. Please contact customer support to resolve this`
+                        );
+                    }
 
-                    await dispatch(getMemberAddresses({ member: selfMember, cache: CacheType.None, retry: true }));
+                    const memberApi = await getMemberApi(api, member);
+                    const getAddressKeys = () =>
+                        getMemberAddressKeys(memberApi, address, {
+                            publicKey: orgKey.publicKey,
+                            privateKey: orgKey.privateKey,
+                        });
 
-                    selfAddress = address;
-                    membersAddresses[selfMember.ID] = [address];
+                    await createDefaultCalendar(memberApi, getAddressKeys, address.ID);
+                    await memberApi(revoke()).catch(noop);
+
+                    membersAddresses[member.ID] = [address];
+                } catch (err: any) {
+                    errors.push(toSerializableUserError(user, err));
                 }
-
-                const calendars = (await dispatch(calendarsThunk())).filter(
-                    (calendar) =>
-                        getIsOwnedCalendar(calendar) && areEquivalentEmails(calendar.Owner.Email, oauthToken.Account)
-                );
-
-                if (!calendars.length) {
-                    const getAddressKeys = (addressID: string) =>
-                        dispatch(addressKeysThunk({ addressID, cache: CacheType.None }));
-                    await createDefaultCalendar(api, getAddressKeys, selfAddress.ID);
-                }
-            } catch (err: any) {
-                errors.push(toSerializableUserError(migratingSelf, err));
             }
-        }
 
-        for (const user of usersToCreate) {
-            try {
-                const [Local, Domain] = getEmailParts(user.Email);
-                const member = await dispatch(
-                    createMember({
-                        api,
-                        single: false,
-                        member: {
-                            name: user.AdminSetName,
-                            addresses: [
-                                {
-                                    Domain,
-                                    Local,
-                                    DisableE2EE: true,
-                                } as { Domain: string; Local: string }, // DisableE2EE not exposed in the createMember API
-                            ],
-                            invitationEmail: '',
-                            private: MEMBER_PRIVATE.READABLE,
-                            password,
-                            role: MEMBER_ROLE.ORGANIZATION_MEMBER,
-                            numAI: false,
-                            lumo: false,
-                            storage: userQuota,
-                            mode: CreateMemberMode.LoginLink,
-                        },
-                        verifiedDomains: [domain],
-                        // Disabled because we're doing bulk member creation,
-                        // and will handle these errors on an entire-migration basis
-                        validationOptions: {
-                            disableAddressValidation: true,
-                            disableDomainValidation: true,
-                            disableStorageValidation: true,
-                        },
+            if (usersToCreate.length) {
+                // Creating users affects organization storage and members, so they need to be refetched
+                void Promise.all([
+                    dispatch(organizationThunk({ cache: CacheType.None })).catch(noop),
+                    dispatch(membersThunk({ cache: CacheType.None })).catch(noop),
+                ]);
+            }
+
+            const addressesToMigrate = (() => {
+                const knownAddresses = getKnownAddresses();
+                return users
+                    .map((u) => knownAddresses.find((a) => areEquivalentEmails(a.Email, u.Email)))
+                    .filter(isTruthy);
+            })();
+
+            if (addressesToMigrate.length) {
+                await api(
+                    createOrganizationImporterMigration({
+                        ImporterOrganizationId: importerOrganizationId,
+                        AddressIds: addressesToMigrate.map((a) => a.ID),
                     })
                 );
-
-                // Allow a bit of time for addresses to catch up
-                await new Promise((resolve) => setTimeout(resolve, 250));
-
-                const [address] = await dispatch(getMemberAddresses({ member, cache: CacheType.None }));
-                if (!address) {
-                    throw new Error(
-                        c('Error').t`Member address not found. Please contact customer support to resolve this`
-                    );
-                }
-
-                const memberApi = await getMemberApi(api, member);
-                const getAddressKeys = () =>
-                    getMemberAddressKeys(memberApi, address, {
-                        publicKey: orgKey.publicKey,
-                        privateKey: orgKey.privateKey,
-                    });
-
-                await createDefaultCalendar(memberApi, getAddressKeys, address.ID);
-                await memberApi(revoke()).catch(noop);
-
-                membersAddresses[member.ID] = [address];
-            } catch (err: any) {
-                errors.push(toSerializableUserError(user, err));
             }
+
+            return {
+                errors,
+                results: addressesToMigrate,
+            };
+        } finally {
+            extra.eventManager.start();
         }
-
-        if (usersToCreate.length) {
-            // Creating users affects organization storage and members, so they need to be refetched
-            void Promise.all([
-                dispatch(organizationThunk({ cache: CacheType.None })).catch(noop),
-                dispatch(membersThunk({ cache: CacheType.None })).catch(noop),
-            ]);
-        }
-
-        const addressesToMigrate = (() => {
-            const knownAddresses = getKnownAddresses();
-            return users.map((u) => knownAddresses.find((a) => areEquivalentEmails(a.Email, u.Email))).filter(isTruthy);
-        })();
-
-        if (addressesToMigrate.length) {
-            await api(
-                createOrganizationImporterMigration({
-                    ImporterOrganizationId: importerOrganizationId,
-                    AddressIds: addressesToMigrate.map((a) => a.ID),
-                })
-            );
-        }
-
-        return {
-            errors,
-            results: addressesToMigrate,
-        };
     }
 );
 
