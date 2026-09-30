@@ -28,6 +28,8 @@ const useSelectDeal = (callback?: () => void) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useOptionalSubscriptionModal();
 
     const handleOnSelectDeal = (offer: Offer, deal: Deal, currency: Currency) => {
+        offer.tracking?.onSelectDeal?.();
+
         // Open the in-app purchase modal if available
         const hasInAppPayment =
             APPS_WITH_IN_APP_PAYMENTS.has(APP_NAME) && (!isElectronMail || hasInboxDesktopInAppPayments);
@@ -43,6 +45,7 @@ const useSelectDeal = (callback?: () => void) => {
                 minimumCycle: deal.cycle,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 upsellRef: deal.ref,
+                onSubscribed: offer.tracking?.onSubscribed,
             };
 
             // Generate a mocked request to track upsell activity
@@ -50,7 +53,7 @@ const useSelectDeal = (callback?: () => void) => {
             const url = formatURLForAjaxRequest(window.location.href, urlParameters);
             fetch(url).catch(noop);
 
-            openSubscriptionModal(subscriptionParams);
+            void openSubscriptionModal(subscriptionParams);
             callback?.();
             return;
         }
