@@ -127,8 +127,10 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
     if (hasEstimationError || (shouldPrefetch && !initialized)) {
         return null;
     }
+    const CTAText =
+        offerConfig.topButton?.getCTAContent?.(offerConfig.topButtonDiscount) ||
+        c('specialoffer: Action').t`Special offer`;
 
-    const CTAText = offerConfig.topButton?.getCTAContent?.() || c('specialoffer: Action').t`Special offer`;
     const IconContent = offerConfig.topButton?.iconContent;
     const defaultIcon = IconContent ? undefined : IcBagPercent;
     const upgradeIcon =
@@ -157,6 +159,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
                     iconComponent={upgradeIcon}
                     iconContent={upgradeIconContent}
                     onClick={() => {
+                        offerConfig.tracking?.onTopNavbarClick?.();
                         setOfferModalOpen(true);
                         setFetchOffer(true);
                     }}
