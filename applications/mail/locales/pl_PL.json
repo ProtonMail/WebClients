@@ -5427,6 +5427,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Hasło zapasowe jest nieprawidłowe. Spróbuj ponownie."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Drugie hasło jest nieprawidłowe. Spróbuj ponownie."
       ]
     },
     "error": {
@@ -16074,7 +16080,7 @@
         "Zablokuj nadawcę"
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
-        "Prnieś swój Gmail do ${ MAIL_APP_NAME }"
+        "Przenieś swój Gmail do ${ MAIL_APP_NAME }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anuluj subskrypcję ${ MAIL_SHORT_APP_NAME }"
