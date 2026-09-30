@@ -1,6 +1,7 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import type { CommentThreadInterface } from '@proton/docs-shared'
-import { IcCross } from '@proton/icons/icons/IcCross'
+import { Icon } from '../../Components/Icon'
+import * as Icons from '../../Components/icons'
 import { CommentThreadState } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
 import { memo, useMemo } from 'react'
@@ -44,7 +45,7 @@ function CommentsPanel({
           }}
           data-testid="close-comments-section"
         >
-          <IcCross className="h-6 w-6 fill-current" />
+          <Icon data={Icons.cross} className="h-6 w-6 fill-current" />
         </button>
       </div>
       {isEmpty ? (

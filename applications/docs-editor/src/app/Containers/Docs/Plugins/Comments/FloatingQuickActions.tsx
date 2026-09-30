@@ -2,10 +2,10 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
 import type { LexicalEditor, NodeKey } from 'lexical'
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
 import { c } from 'ttag'
-import AddCommentIcon from '../../../../Icons/AddCommentIcon'
+import { Icon } from '../../Components/Icon'
+import * as Icons from '../../Components/icons'
 import ToolbarTooltip from '../../Toolbar/ToolbarTooltip'
 import { ShortcutLabel } from '../KeyboardShortcuts/ShortcutLabel'
-import SpeechBubblePenIcon from '../../../../Icons/SpeechBubblePenIcon'
 import { TOGGLE_SUGGESTION_MODE_COMMAND } from '../Suggestions/Commands'
 import clsx from '@proton/utils/clsx'
 import { useEditorState } from '../../../EditorStateProvider'
@@ -86,7 +86,7 @@ export function FloatingQuickActions({
           onClick={onAddComment}
           data-testid="floating-add-comment-button"
         >
-          <AddCommentIcon className="h-4 w-4 fill-current" />
+          <Icon data={Icons.addComment} className="h-4 w-4 fill-current" />
         </button>
       </ToolbarTooltip>
       {suggestionsEnabled && !isSuggestionMode && (
@@ -107,7 +107,7 @@ export function FloatingQuickActions({
               }}
               data-testid="floating-toggle-suggestion-mode-button"
             >
-              <SpeechBubblePenIcon className="h-4 w-4 fill-current" />
+              <Icon data={Icons.speechBubblePen} className="h-4 w-4 fill-current" />
             </button>
           </ToolbarTooltip>
         </>
