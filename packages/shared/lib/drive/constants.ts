@@ -36,7 +36,6 @@ export const DEFAULT_USER_SETTINGS: UserSettings = {
     PhotoTags: [],
 };
 
-export const UPLOAD_TIMEOUT = 90000;
 export const DOWNLOAD_TIMEOUT = 90000;
 export const DOWNLOAD_RETRIES_ON_TIMEOUT = 3;
 export const EXPENSIVE_REQUEST_TIMEOUT = 60000;
