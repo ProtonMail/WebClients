@@ -5639,6 +5639,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "A contact with this email address already exists": [
+        "En kontakt med denna e-postadress finns redan"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Felaktigt reservlösenord. Försök igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Felaktigt andra lösenord. Försök igen."
       ]
     },
     "error": {
@@ -11261,7 +11270,7 @@
         "All e-post"
       ],
       "Archive": [
-        "Arkivera"
+        "Arkiv"
       ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
@@ -11712,7 +11721,7 @@
         "Fyll aldrig med denna exakta URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
-        "Den ${ date }, ${ senderString } skrev:"
+        "Den ${ date } skrev ${ senderString }:"
       ],
       "Re:": [
         "Svar:"

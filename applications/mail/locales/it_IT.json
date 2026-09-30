@@ -5471,6 +5471,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Password di backup errata. Riprova."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Password secondaria errata. Riprova."
       ]
     },
     "error": {
@@ -6798,8 +6804,8 @@
         "${ contactEmailsLength } membri"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
-        "${ contactGroupName }${ numberOfSelectedContacts }${ numberOfContactsInGroup } membri)",
-        "${ contactGroupName }${ numberOfSelectedContacts }${ numberOfContactsInGroup } membri)"
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } membro)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } membri)"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } contiene più indirizzi email."
@@ -10782,7 +10788,7 @@
     },
     "Label Recipient": {
       "From": [
-        "Dal"
+        "Da"
       ],
       "To": [
         "A"

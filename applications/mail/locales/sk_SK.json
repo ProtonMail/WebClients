@@ -5799,6 +5799,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávne záložné heslo. Skúste to znova, prosím."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávne druhé heslo. Skúste to znova, prosím."
       ]
     },
     "error": {
@@ -10402,6 +10408,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -12110,6 +12122,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Pre zobrazenie upravenej pozvánky musíte znovu aktivovať svoje kľúče"
+      ],
+      "Pay it": [
+        "Zaplatiť"
       ]
     },
     "Link to calendar event": {
