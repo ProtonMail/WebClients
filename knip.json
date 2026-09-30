@@ -280,8 +280,8 @@
         },
         "packages/components": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["**/*.{js,jsx,ts,tsx}"],
+            "ignore": ["containers/filePreview/iwad/**"]
         },
         "packages/cross-storage": {
             "entry": [],
