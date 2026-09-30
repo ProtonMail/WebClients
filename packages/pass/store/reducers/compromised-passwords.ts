@@ -9,7 +9,7 @@ import {
     compromisedPasswordsSync,
 } from '../actions';
 
-export type CompromisedPasswordsState = {
+type CompromisedPasswordsState = {
     lastSyncedChange: EpochTimeStamp;
     items: Record<string, CompromisedPasswordEntry>;
     progress: { completed: number; total: number };

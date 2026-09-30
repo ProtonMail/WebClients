@@ -1,9 +1,9 @@
 import { BIOMETRICS_KEY } from '../../../../constants';
 import type { AuthStore } from '../../store';
 
-export const BIOMETRICS_KEY_VERSION = 2;
+const BIOMETRICS_KEY_VERSION = 2;
 export const BIOMETRICS_KEY_VERSION_PREFIX = `BIOMETRICS::V${BIOMETRICS_KEY_VERSION}::`;
-export const BIOMETRICS_VERSION_RE = /^BIOMETRICS::V(\d+)::/;
+const BIOMETRICS_VERSION_RE = /^BIOMETRICS::V(\d+)::/;
 
 type BiometricEncryptedOfflineKD = { key: string; version: number };
 

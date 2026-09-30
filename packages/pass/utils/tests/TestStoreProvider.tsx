@@ -18,9 +18,9 @@ import { rootSagaFactory } from '../../store/sagas';
 import { WEB_SAGAS } from '../../store/sagas/web';
 import { createMemoryStore } from '../store';
 
-export const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
-export const store = configureStore({
+const store = configureStore({
     reducer,
     middleware: (mw) =>
         mw({

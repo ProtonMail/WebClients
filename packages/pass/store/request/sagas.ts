@@ -17,7 +17,7 @@ type RequestFlowSaga<T extends RequestFlow<any, any, any>, P extends any[] = []>
     enhance?: <A extends Action>(resultAction: A, intent: ReturnType<T['intent']>) => A;
 };
 
-export function* cancelRequest(requestId: string) {
+function* cancelRequest(requestId: string) {
     yield take(matchCancel(requestId));
     throw new DOMException(`${requestId} aborted`, 'AbortError');
 }

@@ -6,8 +6,7 @@ import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent } from 
 import { uniqueId } from '../../../../utils/string/unique-id';
 import { itemBuilder } from '../../../items/item.builder';
 import type { ImportFileReader } from '../../types';
-import type { EnpassCategory, EnpassItem } from './enpass.types';
-import type { EnpassField } from './enpass.types';
+import type { EnpassCategory, EnpassField, EnpassItem } from './enpass.types';
 
 const ENPASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     130: 'firstName',
@@ -36,7 +35,7 @@ const ENPASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     165: 'email',
 };
 
-export const ENPASS_FIELD_TYPES = {
+const ENPASS_FIELD_TYPES = {
     login: ['username', 'email', 'totp', 'password', 'url'],
     creditCard: ['ccName', 'ccType', 'ccNumber', 'ccCvc', 'ccPin', 'ccExpiry'],
     custom: [],
@@ -45,7 +44,7 @@ export const ENPASS_FIELD_TYPES = {
 
 export const isTrashedEnpassItem = (item: EnpassItem<any>) => item.archived !== 0 || item.trashed !== 0;
 
-export const extractEnpassFactory = <K extends string>(keys: readonly K[]) => {
+const extractEnpassFactory = <K extends string>(keys: readonly K[]) => {
     const isSupportedKey = (type: any): type is K => keys.includes(type);
 
     return (fields: EnpassField[]) =>

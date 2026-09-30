@@ -66,7 +66,7 @@ type Props = RouteChildrenProps & {
     exportTab: ReactNode;
 };
 
-export const SettingsTabs: FC<Props> = ({ exportTab, ...props }) => {
+const SettingsTabs: FC<Props> = ({ exportTab, ...props }) => {
     const navigate = useNavigate();
     const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
@@ -120,5 +120,3 @@ export const Settings: FC<Props> = (props) => {
         </div>
     );
 };
-
-export default Settings;

@@ -6,7 +6,7 @@ import { objectMap } from '../../utils/object/map';
 import { merge } from '../../utils/object/merge';
 import { fileRestore, fileUpdateMetadata, filesResolve, itemDeleteRevisions } from '../actions';
 
-export type FilesState = Record<ShareId, Maybe<Record<ItemId, FileDescriptor[]>>>;
+type FilesState = Record<ShareId, Maybe<Record<ItemId, FileDescriptor[]>>>;
 
 const reducer: Reducer<FilesState> = (state = {}, action) => {
     if (filesResolve.success.match(action)) {

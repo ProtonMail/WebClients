@@ -16,13 +16,13 @@ export const CACHED_IMAGE_FALLBACK_MAX_AGE = 86_400; /* 1 day */
  * - Browsers without Cache API support */
 export const getCacheStorage = (): Maybe<CacheStorage> => globalThis?.caches;
 
-export const getResponseMaxAge = (response: Response): MaybeNull<number> => {
+const getResponseMaxAge = (response: Response): MaybeNull<number> => {
     const cacheControlHeader = response.headers.get('Cache-Control');
     const maxAge = cacheControlHeader?.match(/max-age=(\d+)/)?.[1];
     return maxAge ? parseInt(maxAge, 10) : null;
 };
 
-export const getResponseDate = (response: Response): MaybeNull<Date> => {
+const getResponseDate = (response: Response): MaybeNull<Date> => {
     const dateHeader = response.headers.get('Date');
     return dateHeader ? new Date(dateHeader) : null;
 };

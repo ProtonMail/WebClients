@@ -146,7 +146,7 @@ function* onCoreEvent(
     }
 }
 
-export const createCoreChannel = (api: Api, eventID: string) =>
+const createCoreChannel = (api: Api, eventID: string) =>
     eventChannelFactory<CoreEvent>({
         api,
         channelId: 'user',

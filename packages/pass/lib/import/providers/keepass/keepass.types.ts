@@ -4,7 +4,7 @@ export type KeePassEntryValue = { _ProtectInMemory: string; __text: string } | s
 
 type KeePassField = Maybe<{ Key: string; Value: KeePassEntryValue }>;
 
-export type KeePassCustomFields = KeePassField[];
+type KeePassCustomFields = KeePassField[];
 
 export type KeePassEntry = {
     String:

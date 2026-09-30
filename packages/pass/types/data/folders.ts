@@ -9,10 +9,6 @@ export type FolderData = {
     keyRotation: number;
 };
 
-export type FolderContent = {
-    name: string;
-};
-
 export type FolderCreateDTO = {
     shareId: string;
     parentFolderId: MaybeNull<string>;

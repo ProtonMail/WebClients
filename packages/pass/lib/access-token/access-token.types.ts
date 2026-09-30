@@ -6,7 +6,7 @@ import type { MaybeNull, PatMonitorListEntryOutput, PersonalAccessTokenShareResp
  * ======================================
  */
 
-export type PersonalAccessTokenFlags = { PassAgent: boolean };
+type PersonalAccessTokenFlags = { PassAgent: boolean };
 
 export type PersonalAccessToken = {
     PersonalAccessTokenID: string;

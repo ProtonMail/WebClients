@@ -13,7 +13,7 @@ import { ItemUrlMatch, getItemPriorityForUrl } from '../search/match-url';
 import { parseUrl } from './parser';
 
 /** List of modes where the url field is an actual url and can be used as such */
-export const autofillWithUrls = [
+const autofillWithUrls = [
     AutofillMode.Default,
     AutofillMode.Exact,
     AutofillMode.Never,
@@ -132,6 +132,6 @@ export const testUrl = (url: string, autofillUrl: AutofillUrl, regexEnabled: boo
     return result !== ItemUrlMatch.NO_MATCH;
 };
 
-export const autofillKey = (url: AutofillUrl) => `${url.mode}${url.url}`;
+const autofillKey = (url: AutofillUrl) => `${url.mode}${url.url}`;
 
 export const uniqueAutofillUrls = (urls: AutofillUrl[]) => uniqueBy(urls, autofillKey);

@@ -2,8 +2,8 @@ import type { MaybeNull } from '..';
 import type { UniqueItem } from './items';
 
 export type AliasMailbox = { email: string; id: number };
-export type AliasStats = { forwardedEmails: number; repliedEmails: number; blockedEmails: number };
-export type AliasSuffix = {
+type AliasStats = { forwardedEmails: number; repliedEmails: number; blockedEmails: number };
+type AliasSuffix = {
     suffix: string;
     signedSuffix: string;
     isPremium: boolean;

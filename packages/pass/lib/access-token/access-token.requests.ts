@@ -62,7 +62,7 @@ export const deletePersonalAccessToken = async (tokenId: string): Promise<void> 
 };
 
 /** Grants the PAT access to the provided payload  */
-export const grantPersonalAccessTokenAccess = async (tokenId: string, payload: GrantAccessRequest): Promise<void> => {
+const grantPersonalAccessTokenAccess = async (tokenId: string, payload: GrantAccessRequest): Promise<void> => {
     await api({
         url: `${PASS_PAT_BASE_URL}/${tokenId}/access`,
         method: 'post',

@@ -15,7 +15,7 @@ type State = {
     disabledIncrement?: boolean;
 };
 
-export enum Actions {
+enum Actions {
     Increment = 'INCREMENT',
     Decrement = 'DECREMENT',
     SetValue = 'SET_VALUE',

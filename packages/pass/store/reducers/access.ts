@@ -86,5 +86,3 @@ export const access: Reducer<AccessState> = (state = {}, action: Action) => {
 
     return state;
 };
-
-export default access;

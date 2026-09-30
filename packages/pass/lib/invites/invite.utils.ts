@@ -6,10 +6,9 @@ import type {
     GroupOwnerInvite,
     InviteVaultDataForUser,
     MaybeNull,
-    NewUserPendingInvite,
     Share,
 } from '../../types';
-import { type InviteBase, InviteType, NewUserInviteState, type Result, ShareType } from '../../types';
+import { type InviteBase, InviteType, type Result, ShareType } from '../../types';
 import { partition } from '../../utils/array/partition';
 import { and } from '../../utils/fp/predicates';
 import { isItemTarget } from '../access/access.predicates';
@@ -17,9 +16,8 @@ import { AccessTarget } from '../access/types';
 
 export type InviteBatchResult = Result<{}, { failed: string[] }>;
 
-export const isTargetInvite = (targetId: string) => (invite: InviteBase) => invite.targetId === targetId;
+const isTargetInvite = (targetId: string) => (invite: InviteBase) => invite.targetId === targetId;
 export const isItemInviteForItem = (itemId: string) => and(isItemTarget, isTargetInvite(itemId));
-export const isInviteReady = (invite: NewUserPendingInvite) => invite.state === NewUserInviteState.READY;
 
 /** Guards that the invite targets a vault and has vault data */
 export const isVaultInviteResponse = <T extends AbstractInviteResponse>(

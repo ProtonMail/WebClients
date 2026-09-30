@@ -6,16 +6,15 @@ import { deobfuscate } from '../../utils/obfuscate/xor';
 import { isAutofillTargetMode } from '../urls/utils/autofill';
 
 export const isAliasItem = (item: Item): item is Item<'alias'> => item.type === 'alias';
-export const isCCItem = (item: Item): item is Item<'creditCard'> => item.type === 'creditCard';
-export const isLoginItem = (item: Item): item is Item<'login'> => item.type === 'login';
-export const isNoteItem = (item: Item): item is Item<'note'> => item.type === 'note';
+
+const isLoginItem = (item: Item): item is Item<'login'> => item.type === 'login';
 
 export const isItemType =
     <T extends ItemType>(type: T) =>
     <R extends ItemRevision>(item: R): item is R & ItemRevision<T> =>
         item.data.type === type;
 
-export const matchItemTypes =
+const matchItemTypes =
     (types: ItemType[]) =>
     <R extends ItemRevision>(item: R) =>
         oneOf(...types)(item.data.type);
@@ -38,11 +37,6 @@ export const itemAny =
     <T extends UniqueItem>(a: T[]) =>
     <T extends UniqueItem>(b: T): boolean =>
         a.some(itemEq(b));
-
-export const belongsToShare =
-    (shareId: string) =>
-    <T extends UniqueItem>(item: T): boolean =>
-        item.shareId === shareId;
 
 export const belongsToShares =
     (shareIds?: string[]) =>
@@ -83,7 +77,7 @@ export const isExcluded = and(isActive, not(isMonitored));
 export const hasEmail = (email: string) => (item: LoginItem) =>
     Boolean(item.data.content.itemEmail.v.length && deobfuscate(item.data.content.itemEmail) === email);
 
-export const hasUsername = (username: string) => (item: LoginItem) =>
+const hasUsername = (username: string) => (item: LoginItem) =>
     Boolean(item.data.content.itemUsername.v.length && deobfuscate(item.data.content.itemUsername) === username);
 
 export const hasUserIdentifier = (userIdentifier: string) => (item: LoginItem) =>

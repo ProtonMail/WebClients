@@ -3,7 +3,7 @@ import type { ParsedUrl } from '../urls/types';
 import { intoCleanHostname } from '../urls/utils/utils';
 
 export type PauseListEntry = { hostname: string; criteria: CriteriaMasks };
-export type CriteriaMask = number;
+type CriteriaMask = number;
 export type CriteriaMasks = keyof typeof CRITERIA_MASKS;
 export type DomainCriterias = Record<string, CriteriaMask>;
 

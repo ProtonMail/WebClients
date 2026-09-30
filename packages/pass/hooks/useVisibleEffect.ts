@@ -6,7 +6,7 @@ import { useStatefulRef } from './useStatefulRef';
 const FOCUS_CHECK_DELAY = 10;
 
 export const isDocumentVisible = () => document.visibilityState === 'visible';
-export const isDocumentFocused = () => document.hasFocus();
+const isDocumentFocused = () => document.hasFocus();
 
 export const useVisibleEffect = (effect: (visible: boolean) => void, deps: any[] = []) => {
     const timer = useRef<Maybe<NodeJS.Timeout>>();

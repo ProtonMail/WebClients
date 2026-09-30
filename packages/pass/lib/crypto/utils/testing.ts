@@ -24,7 +24,7 @@ export function releaseCryptoProxy() {
     return CryptoProxy.releaseEndpoint();
 }
 
-export function randomKey(): Promise<PrivateKeyReference> {
+function randomKey(): Promise<PrivateKeyReference> {
     return CryptoProxy.generateKey({ userIDs: [{ name: 'TestKey', email: 'test@proton.ch' }] });
 }
 

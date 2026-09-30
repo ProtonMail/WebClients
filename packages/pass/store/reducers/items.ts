@@ -53,10 +53,8 @@ import {
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
 } from '../actions';
-import type { WrappedOptimisticState } from '../optimistic/types';
 import { combineOptimisticReducers } from '../optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '../optimistic/with-optimistic';
-import type { Draft } from './drafts';
 import { draftsReducer } from './drafts';
 import { secureLinksReducer } from './secure-links';
 
@@ -88,7 +86,7 @@ export const updateItems = (data: ItemRevisionUpdate[]) => (state: ItemsByShareI
     );
 };
 
-export const addItems = (data: ItemRevision[]) => (state: ItemsByShareId) =>
+const addItems = (data: ItemRevision[]) => (state: ItemsByShareId) =>
     fullMerge(
         state,
         data.reduce<IndexedByShareIdAndItemId<ItemRevision>>((acc, item) => {
@@ -344,7 +342,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     }
 );
 
-export type ItemsByOptimisticId = { [optimisticId: string]: UniqueItem };
+type ItemsByOptimisticId = { [optimisticId: string]: UniqueItem };
 
 const itemsByOptimisticId: Reducer<ItemsByOptimisticId> = (state = {}, action) => {
     if (itemCreate.success.match(action)) {
@@ -354,12 +352,6 @@ const itemsByOptimisticId: Reducer<ItemsByOptimisticId> = (state = {}, action) =
     }
 
     return state;
-};
-
-export type ItemsState = {
-    byShareId: WrappedOptimisticState<ItemsByShareId>;
-    byOptimisticId: ItemsByOptimisticId;
-    drafts: Draft[];
 };
 
 export default combineOptimisticReducers({

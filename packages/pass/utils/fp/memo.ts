@@ -1,6 +1,6 @@
 import type { Callback, Maybe } from '../../types';
 
-export type MaxAgeMemoCacheEntry<F extends Callback> = { validUntil: number; result: ReturnType<F> };
+type MaxAgeMemoCacheEntry<F extends Callback> = { validUntil: number; result: ReturnType<F> };
 export type MaxAgeMemoizedFn<F extends Callback> = F & { flush: F; clear: () => void };
 
 export interface MaxAgeMemoCache<K, F extends Callback> {
@@ -22,7 +22,7 @@ export type MaxAgeMemoizeOptions<F extends Callback, K> = {
 
 /** Creates a cache that serializes function arguments to JSON strings.
  * Use this when function arguments are serializable primitives/objects */
-export const createSerializedArgsCache = <F extends Callback>(): MaxAgeMemoCache<string, F> => {
+const createSerializedArgsCache = <F extends Callback>(): MaxAgeMemoCache<string, F> => {
     const cache: Map<string, MaxAgeMemoCacheEntry<F>> = new Map();
 
     return {

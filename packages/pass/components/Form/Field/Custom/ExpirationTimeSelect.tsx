@@ -19,7 +19,7 @@ export enum ExpireTime {
 type Props = { disabled: boolean; value: ExpireTime; onChange: (value: ExpireTime) => void };
 type ExpireTimeOption = { value: ExpireTime; title: string };
 
-export const getExpireTimeOptions = (): ExpireTimeOption[] => [
+const getExpireTimeOptions = (): ExpireTimeOption[] => [
     { value: ExpireTime.OneHour, title: c('Label').t`1 hour` },
     { value: ExpireTime.OneDay, title: c('Label').t`24 hours` },
     { value: ExpireTime.OneWeek, title: c('Label').t`7 days` },

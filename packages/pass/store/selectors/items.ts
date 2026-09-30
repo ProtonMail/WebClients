@@ -23,8 +23,8 @@ export const selectOptimisticIds = (state: State) => state.items.byOptimisticId;
 export const selectIsOptimisticId = (id: string) => createSelector(selectOptimisticIds, (ids) => id in ids);
 export const selectItemDrafts = (state: State) => state.items.drafts;
 
-export const selectNonFailedItems = createSelector(selectItemsState, asIfNotFailed);
-export const selectNonOptimisticItems = createSelector(selectItemsState, asIfNotOptimistic);
+const selectNonFailedItems = createSelector(selectItemsState, asIfNotFailed);
+const selectNonOptimisticItems = createSelector(selectItemsState, asIfNotOptimistic);
 export const selectItems = createSelector(selectItemsState, unwrapOptimisticState);
 export const selectAllItems = createSelector(selectItems, flattenItemsByShareId);
 export const selectVisibleItems = createVisibilityFilterSelector(selectAllItems);

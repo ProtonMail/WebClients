@@ -23,7 +23,7 @@ export type MemorablePasswordOptions = {
     extraNumbers: boolean;
 };
 
-export type RandomPasswordOptions = {
+type RandomPasswordOptions = {
     length: number;
     useSpecialChars: boolean;
     useDigits: boolean;
