@@ -1,6 +1,6 @@
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
 import type { ToolbarItemInterface } from './ToolbarItemInterface'
 import ToolbarTooltip from './ToolbarTooltip'
