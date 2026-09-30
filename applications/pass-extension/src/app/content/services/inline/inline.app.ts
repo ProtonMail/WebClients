@@ -87,7 +87,7 @@ export interface InlineApp<Request extends InlineRequest, Action = InlineAction<
     setPosition: (getPosition: (iframeRoot: HTMLElement) => Partial<Rect>) => void;
 }
 
-export type InlineState<Action> = {
+type InlineState<Action> = {
     /** Active action for inline app */
     action: MaybeNull<Action>;
     /** Port identifier for message forwarding */

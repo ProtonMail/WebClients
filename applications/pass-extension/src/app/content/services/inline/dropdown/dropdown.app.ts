@@ -25,7 +25,6 @@ import { getDropdownPosition, intoDropdownAction, matchesDropdownAnchor, onClose
 
 export type DropdownAnchor = InlineFieldTarget | InlineFrameTarget;
 export type DropdownAnchorRef = { current: MaybeNull<DropdownAnchor> };
-export type AbortControllerRef = { current: MaybeNull<AbortController> };
 
 export type DropdownActions = WithAutofillOrigin<
     | { action: DropdownAction.AUTOFILL_CC }

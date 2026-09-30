@@ -190,10 +190,13 @@
                 "src/app/worker/offscreen/offscreen.ts",
                 "src/lib/utils/disable-browser-trap.ts",
                 "src/lib/utils/safari-patch.ts",
-                "src/lib/utils/web-accessible-resource.ts"
+                "src/lib/utils/web-accessible-resource.ts",
+                "vendor/argon2id.loader.ts",
+                "webpack.config.{js,ts}",
+                "webpack.options.{js,ts}"
             ],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx}", "tools/**/*.ts", "vendor/**/*.ts"],
+            "ignoreDependencies": ["string-replace-loader"]
         },
         "applications/pdf-ui": {
             "entry": [],

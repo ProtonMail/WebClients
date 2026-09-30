@@ -32,7 +32,7 @@ export interface ExtensionClientContextValue {
     sync: () => void;
 }
 
-export const ExtensionClientContext = createContext<MaybeNull<ExtensionClientContextValue>>(null);
+const ExtensionClientContext = createContext<MaybeNull<ExtensionClientContextValue>>(null);
 export const useExtensionClient = createUseContext(ExtensionClientContext);
 
 type Props = {
