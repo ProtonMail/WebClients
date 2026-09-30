@@ -7,6 +7,7 @@ import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
 import { calendarSettingsReducer } from '@proton/calendar/calendarUserSettings';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
+import { offersDeliveryReducer } from '@proton/offers-delivery/store/slice';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 
 import { busySlotsReducer } from './busySlots/busySlotsSlice';
@@ -14,6 +15,7 @@ import { eventsReducer } from './events/eventsSlice';
 
 export const rootReducer = combineReducers({
     ...sharedReducers,
+    ...offersDeliveryReducer,
     ...calendarsReducer,
     ...calendarsBootstrapReducer,
     ...calendarSettingsReducer,
