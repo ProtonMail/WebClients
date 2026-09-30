@@ -4,10 +4,11 @@ import { useState, useEffect, Fragment } from 'react'
 import debounce from 'lodash/debounce'
 import { useMarkNodesContext } from '../MarkNodesContext'
 import { type SuggestionSummaryContent, generateSuggestionSummary } from '../Suggestions/generateSuggestionSummary'
-import SpeechBubblePenIcon from '../../../../Icons/SpeechBubblePenIcon'
+import { Icon } from '../../Components/Icon'
+import * as Icons from '../../Components/icons'
 import { c } from 'ttag'
 
-const icon = <SpeechBubblePenIcon className="inline h-4 w-4 align-middle" />
+const icon = <Icon data={Icons.speechBubblePen} className="inline h-4 w-4 align-middle" />
 
 /**
  * This hook creates the UI nodes from a summary generated from the editor.

@@ -6,7 +6,8 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useCommentsContext } from './CommentsContext'
 import debounce from 'lodash/debounce'
-import SpeechBubbleDotsIcon from '../../../../Icons/SpeechBubbleDotsIcon'
+import { Icon } from '../../Components/Icon'
+import * as Icons from '../../Components/icons'
 import { c } from 'ttag'
 import useCombinedRefs from '@proton/hooks/useCombinedRefs'
 import type { PositionedItem } from './Positioner'
@@ -56,7 +57,7 @@ function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
     <>
       <button className="bg-norm border-weak rounded border p-2" ref={anchorRef} onClick={toggle}>
         <div className="sr-only">{c('Action').t`Show thread`}</div>
-        <SpeechBubbleDotsIcon className="min-h-4 min-w-4" />
+        <Icon data={Icons.speechBubbleDots} viewBox="0 0 33 33" className="min-h-4 min-w-4" />
       </button>
       {isOpen && (
         <div

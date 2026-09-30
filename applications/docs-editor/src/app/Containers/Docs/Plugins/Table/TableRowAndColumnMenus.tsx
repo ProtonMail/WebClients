@@ -7,16 +7,8 @@ import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import type { TableNode } from '@lexical/table'
 import { $isTableCellNode, $isTableRowNode } from '@lexical/table'
-import { IcArrowDown } from '@proton/icons/icons/IcArrowDown'
-import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft'
-import { IcArrowRight } from '@proton/icons/icons/IcArrowRight'
-import { IcArrowUp } from '@proton/icons/icons/IcArrowUp'
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight'
-import { IcCross } from '@proton/icons/icons/IcCross'
-import { IcDots } from '@proton/icons/icons/IcDots'
-import { IcPalette } from '@proton/icons/icons/IcPalette'
-import { IcSquares } from '@proton/icons/icons/IcSquares'
-import { IcTrash } from '@proton/icons/icons/IcTrash'
+import { Icon } from '../../Components/Icon'
+import * as Icons from '../../Components/icons'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { c } from 'ttag'
 import debounce from 'lodash/debounce'
@@ -254,7 +246,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         onClick={toggleRowMenu}
         hasCaret={false}
       >
-        <IcDots />
+        <Icon data={Icons.dots} />
         <div className="sr-only">{c('Action').t`Click to open row menu`}</div>
       </DropdownButton>
       <Dropdown
@@ -272,9 +264,9 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               className={menuButtonClassName}
               content={
                 <>
-                  <IcPalette />
+                  <Icon data={Icons.palette} />
                   {c('Action').t`Color`}
-                  <IcChevronRight className="ml-auto" />
+                  <Icon data={Icons.chevronRight} className="ml-auto" />
                 </>
               }
               contentProps={{
@@ -308,7 +300,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeRowMenu()
             }}
           >
-            <IcArrowUp />
+            <Icon data={Icons.arrowUp} />
             {c('Action').t`Insert above`}
           </DropdownMenuButton>
           <DropdownMenuButton
@@ -321,7 +313,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeRowMenu()
             }}
           >
-            <IcArrowDown />
+            <Icon data={Icons.arrowDown} />
             {c('Action').t`Insert below`}
           </DropdownMenuButton>
           <DropdownMenuButton
@@ -334,7 +326,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeRowMenu()
             }}
           >
-            <IcSquares />
+            <Icon data={Icons.squares} />
             {c('Action').t`Duplicate`}
           </DropdownMenuButton>
           {!isSuggestionMode && (
@@ -350,7 +342,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
                 closeRowMenu()
               }}
             >
-              <IcCross />
+              <Icon data={Icons.cross} />
               {c('Action').t`Clear contents`}
             </DropdownMenuButton>
           )}
@@ -364,7 +356,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeRowMenu()
             }}
           >
-            <IcTrash />
+            <Icon data={Icons.trash} />
             {c('Action').t`Delete row`}
           </DropdownMenuButton>
         </DropdownMenu>
@@ -383,7 +375,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         }}
         hasCaret={false}
       >
-        <IcDots />
+        <Icon data={Icons.dots} />
         <div className="sr-only">{c('Action').t`Click to open column menu`}</div>
       </DropdownButton>
       <Dropdown
@@ -409,9 +401,9 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               }}
               content={
                 <>
-                  <IcPalette />
+                  <Icon data={Icons.palette} />
                   {c('Action').t`Color`}
-                  <IcChevronRight className="ml-auto" />
+                  <Icon data={Icons.chevronRight} className="ml-auto" />
                 </>
               }
               hasCaret={false}
@@ -438,7 +430,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeColumnMenu()
             }}
           >
-            <IcArrowLeft />
+            <Icon data={Icons.arrowLeft} />
             {c('Action').t`Insert left`}
           </DropdownMenuButton>
           <DropdownMenuButton
@@ -451,7 +443,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeColumnMenu()
             }}
           >
-            <IcArrowRight />
+            <Icon data={Icons.arrowRight} />
             {c('Action').t`Insert right`}
           </DropdownMenuButton>
           <DropdownMenuButton
@@ -465,7 +457,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeColumnMenu()
             }}
           >
-            <IcSquares />
+            <Icon data={Icons.squares} />
             {c('Action').t`Duplicate`}
           </DropdownMenuButton>
           {!isSuggestionMode && (
@@ -481,7 +473,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
                 closeColumnMenu()
               }}
             >
-              <IcCross size={4.5} />
+              <Icon data={Icons.cross} size={4.5} />
               {c('Action').t`Clear contents`}
             </DropdownMenuButton>
           )}
@@ -495,7 +487,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               closeColumnMenu()
             }}
           >
-            <IcTrash />
+            <Icon data={Icons.trash} />
             {c('Action').t`Delete column`}
           </DropdownMenuButton>
         </DropdownMenu>
