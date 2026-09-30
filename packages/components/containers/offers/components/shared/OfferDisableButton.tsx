@@ -20,6 +20,7 @@ const OfferDisableButton = ({ offer, onCloseModal }: Pick<OfferProps, 'offer' | 
             data-testid="cta:hide-offer"
             className="offer-disable-button color-weak text-sm hover:color-weak"
             onClick={async () => {
+                offer.tracking?.onHideOffer?.();
                 await withLoading(handleHide());
                 onCloseModal?.();
             }}

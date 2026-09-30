@@ -10,11 +10,14 @@ import { useMailTrial2023 } from '../operations/mailTrial2023/useOffer';
 import { passFamilyPlan2024YearlyConfig } from '../operations/passFamilyPlan2024Yearly/configuration';
 import { usePassFamilyPlan2024Yearly } from '../operations/passFamilyPlan2024Yearly/useOffer';
 import { q3Sale2026Configs, useQ3Sale2026 } from '../operations/q3Sale2026configs';
+import { configuration as unlimitedToDuoDiscountedConfig } from '../operations/unlimitedToDuoDiscounted/configuration';
+import { useOffer as useUnlimitedToDuoDiscounted } from '../operations/unlimitedToDuoDiscounted/useOffer';
 
 const configs: Record<OfferId, OfferConfig> = {
     'pass-family-plan-2024-yearly': passFamilyPlan2024YearlyConfig,
     'mail-trial-2023': mailTrial2023Config,
     'go-unlimited-2022': goUnlimited2022Config,
+    'unlimited-to-duo-discounted': unlimitedToDuoDiscountedConfig,
     ...q3Sale2026Configs,
 };
 
@@ -31,9 +34,18 @@ const useOfferConfig = () => {
     const passFamilyPlan2024Yearly = usePassFamilyPlan2024Yearly();
     const mailTrial2023 = useMailTrial2023();
     const goUnlimited2022 = useGoUnlimited2022();
+    const unlimitedToDuoDiscounted = useUnlimitedToDuoDiscounted();
 
-    // Offer order matters — Q3 sale takes priority over permanent offers
-    const allOffers: Operation[] = [...q3Sale2026Operations, passFamilyPlan2024Yearly, mailTrial2023, goUnlimited2022];
+    // Offer order matters — Q3 sale takes priority over permanent offers. The discounted
+    // Unlimited-to-Duo offer targets the same audience as the Q3 Unlimited-to-Duo deal, so it sits
+    // after the campaign: while a seasonal sale is running, that wins.
+    const allOffers: Operation[] = [
+        ...q3Sale2026Operations,
+        unlimitedToDuoDiscounted,
+        passFamilyPlan2024Yearly,
+        mailTrial2023,
+        goUnlimited2022,
+    ];
 
     const validOffers: Operation[] = allOffers.filter((offer) => !offer.isLoading && offer.isValid);
     const isLoading = allOffers.some((offer) => offer.isLoading) || loadingSubscription;

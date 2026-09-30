@@ -92,6 +92,9 @@ export enum FeatureCode {
     OfferQ3Sale2026DuoToFamily = 'OfferQ3Sale2026DuoToFamily',
     OfferQ3Sale2026FamilyMonthlyToYearly = 'OfferQ3Sale2026FamilyMonthlyToYearly',
 
+    // Unlimited to Duo discounted pre-renewal offer
+    OfferUnlimitedToDuoDiscounted = 'OfferUnlimitedToDuoDiscounted',
+
     // Bookings spotlights
     SpotlightIntroduceBookings = 'SpotlightIntroduceBookings',
     BookingPageLocationSpotlight = 'BookingPageLocationSpotlight',
