@@ -307,7 +307,6 @@ export enum MailFeatureFlag {
 enum MailKillSwitchFlag {
     CategoryViewConversationPrefetchDisabled = 'CategoryViewConversationPrefetchDisabled',
     ComposerInlineImageReuploadDisabled = 'ComposerInlineImageReuploadDisabled',
-    DisplayCategoriesInSidebarAgain = 'DisplayCategoriesInSidebarAgain',
     EncryptedSearchMigrationSystemDisabled = 'EncryptedSearchMigrationSystemDisabled',
     MailInfitiniteLoopRateLimiterDisabled = 'MailInfitiniteLoopRateLimiterDisabled',
     MailPostSignupOneDollarPromoDisabled = 'MailPostSignupOneDollarPromoDisabled',
