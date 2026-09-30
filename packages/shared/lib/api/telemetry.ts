@@ -52,6 +52,7 @@ export enum TelemetryMeasurementGroups {
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
     unlimitedOffer2025 = 'any.web.unlimited_offer_2025',
     unlimitedToDuoOffer = 'any.web.unlimited_to_duo_offer',
+    unlimitedToDuoDiscountedOffer = 'any.web.unlimited_to_duo_discounted_offer',
     esMigrationTool = 'mail.es_migration_tool',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
@@ -541,6 +542,14 @@ export enum TelemetryUnlimitedToDuoOffer {
     clickHideOffer = 'click_hide_offer',
 }
 
+export enum TelemetryUnlimitedToDuoDiscountedOffer {
+    clickUpsellButton = 'click_upsell_button',
+    clickTopNavbar = 'click_top_navbar',
+    userSubscribed = 'user_subscribed',
+    closeOffer = 'close_offer',
+    clickHideOffer = 'click_hide_offer',
+}
+
 export enum TelemetryAppSwitcher {
     dropdown_app_click = 'dropdown_app_click',
 }
@@ -636,6 +645,7 @@ export type TelemetryEvents =
     | TelemetryUnlimitedOffer2025
     | TelemetryAlwaysOnUpsellEvents
     | TelemetryUnlimitedToDuoOffer
+    | TelemetryUnlimitedToDuoDiscountedOffer
     | TelemetryListSetting
     | TelemetryAppSwitcher
     | TelemetryExploreAppsEvents
