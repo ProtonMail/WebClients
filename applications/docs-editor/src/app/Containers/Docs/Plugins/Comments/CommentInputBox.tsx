@@ -5,7 +5,8 @@ import { $getSelection, $isRangeSelection } from 'lexical'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { CommentsComposer } from './CommentsComposer'
 import { c } from 'ttag'
-import { IcArrowUp } from '@proton/icons/icons/IcArrowUp'
+import { Icon } from '../../Components/Icon'
+import * as Icons from '../../Components/icons'
 import { useCommentsContext } from './CommentsContext'
 import { createRectsFromDOMRange } from '../../Utils/createRectsFromDOMRange'
 
@@ -156,7 +157,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
           <ToolbarButton
             className="bg-primary rounded-full p-1"
             title={c('Action').t`Add comment`}
-            icon={<IcArrowUp size={3.5} />}
+            icon={<Icon data={Icons.arrowUp} size={3.5} />}
             disabled={!canSubmit}
             onClick={submitComment}
             data-testid="comments-floating-send-button"

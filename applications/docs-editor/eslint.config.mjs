@@ -77,4 +77,21 @@ export default defineConfig([
       ],
     },
   },
+  {
+    files: ['src/app/Containers/Docs/**/*.{ts,tsx}'],
+    rules: {
+      '@typescript-eslint/no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@proton/icons', '@proton/icons/**', '@proton/components/components/icon/Icon'],
+              message:
+                'Use Docs/Components/Icon with data from Docs/Components/icons so the Docs editor does not depend on the Proton icon registry.',
+            },
+          ],
+        },
+      ],
+    },
+  },
 ])
