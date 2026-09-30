@@ -11,7 +11,7 @@ import type { AliasDetailsState } from '../reducers';
 import type { State } from '../types';
 import { selectVisibleAliasItems, selectVisibleLoginItems } from './items';
 
-export const selectAliasState = ({ alias }: State) => alias;
+const selectAliasState = ({ alias }: State) => alias;
 export const selectAliasOptions = ({ alias }: State) => alias.aliasOptions;
 export const selectAliasMailboxes = ({ alias }: State) => alias.mailboxes;
 

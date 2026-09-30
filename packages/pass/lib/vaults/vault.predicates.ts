@@ -12,7 +12,7 @@ export const isWritableVault = <T extends Share>(share: T): share is T & Share<S
 export const isOwnVault = <T extends Share>(share: T): share is T & Share<ShareType.Vault> =>
     share.targetType === ShareType.Vault && share.owner;
 
-export const isSharedVault = <T extends Share>(share: T): share is T & Share<ShareType.Vault> =>
+const isSharedVault = <T extends Share>(share: T): share is T & Share<ShareType.Vault> =>
     share.targetType === ShareType.Vault && share.shared;
 
 export const hasNewUserInvitesReady = (vault: ShareItem<ShareType.Vault>) => vault.newUserInvitesReady > 0;

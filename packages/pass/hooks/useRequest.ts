@@ -12,7 +12,7 @@ import { pipe } from '../utils/fp/pipe';
 import { useEnsureMounted } from './useEnsureMounted';
 import { useStatefulRef } from './useStatefulRef';
 
-export const useActionRequestDispatch = <
+const useActionRequestDispatch = <
     IntentActionPA extends ActionCreatorWithPreparedPayload<any[], any, string, never, RequestMeta<'start', any>>,
     SuccessActionPA extends ActionCreatorWithPreparedPayload<any[], any, string, never, RequestMeta<'success', any>>,
     FailureActionPA extends ActionCreatorWithPreparedPayload<any[], any, string, never, RequestMeta<'failure', any>>,

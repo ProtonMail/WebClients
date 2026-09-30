@@ -10,9 +10,9 @@ import type { PassConfig } from './usePassConfig';
 
 /** Prefer navigating to signup from extension/desktop
  * as we cannot guarantee the session exists */
-export const PASS_UPGRADE_PATH = EXTENSION_BUILD || DESKTOP_BUILD ? 'pass/signup' : 'pass/dashboard';
+const PASS_UPGRADE_PATH = EXTENSION_BUILD || DESKTOP_BUILD ? 'pass/signup' : 'pass/dashboard';
 /** Note: `pass/upgrade` route is only available to free Proton users, not paid users (e.g Pass Plus, Mail Plus...) */
-export const PASS_UPGRADE_PATH_PROTON_FREE = EXTENSION_BUILD || DESKTOP_BUILD ? 'pass/signup' : 'pass/upgrade';
+const PASS_UPGRADE_PATH_PROTON_FREE = EXTENSION_BUILD || DESKTOP_BUILD ? 'pass/signup' : 'pass/upgrade';
 
 type UpgradeOptions = {
     coupon?: MaybeNull<string>;

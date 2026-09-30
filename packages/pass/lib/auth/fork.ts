@@ -72,7 +72,7 @@ type BaseSessionKeys = 'keyPassword' | 'payloadVersion' | 'offlineConfig' | 'off
 type BaseSession = Pick<AuthSession, BaseSessionKeys>;
 
 export const getStateKey = (state: string) => `f${state}`;
-export const generateForkState = () =>
+const generateForkState = () =>
     crypto.getRandomValues(new Uint8Array(32)).toBase64({ alphabet: 'base64url', omitPadding: true });
 
 /** Will compute offline params by default. Only allows by-pass for web.
@@ -119,7 +119,6 @@ export const requestFork = ({
 
 export type PullForkCall = (payload: ConsumeForkPayload) => Promise<PullForkResponse>;
 export type ConsumedFork = { session: AuthSession; Scopes: string[] };
-export type ConsumeForkParameters = ReturnType<typeof getConsumeForkParameters>;
 
 export type ConsumeForkOptions = {
     apiUrl?: string;

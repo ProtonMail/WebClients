@@ -7,12 +7,11 @@ import { and, not } from '../../utils/fp/predicates';
 import type { NotificationReducerState } from '../reducers/notification';
 import type { State } from '../types';
 
-export const selectNotificationState = ({ notification }: State): NotificationReducerState => notification;
-export const selectNotificationNextDisplayTime = ({ notification }: State) => notification.nextDisplayTime;
+const selectNotificationState = ({ notification }: State): NotificationReducerState => notification;
 
 /** `now` should be greater than startTime and less than endTime (if defined)
  * for a notification to be considered as active */
-export const matchActiveNotification =
+const matchActiveNotification =
     (match: (notification: InAppNotification) => boolean) =>
     (now: number, throttle: boolean = true) =>
         createSelector(selectNotificationState, ({ notifications, nextDisplayTime }): Maybe<InAppNotification> => {

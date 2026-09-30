@@ -19,7 +19,7 @@ export type ContextMenuItem = {
     lock?: boolean;
 };
 
-export type ContextMenuSeparator = { type: 'separator' };
+type ContextMenuSeparator = { type: 'separator' };
 export type ContextMenuElement = ContextMenuItem | ContextMenuSeparator;
 
 type Props = { elements: ContextMenuElement[] };

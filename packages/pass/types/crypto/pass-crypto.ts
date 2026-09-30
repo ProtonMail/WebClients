@@ -274,7 +274,7 @@ export interface ShareManager<T extends ShareType = ShareType> extends Serializa
     addItemShareKey: (itemShareKey: ItemShareKey) => void;
 }
 
-export interface SerializableCryptoContext<S> {
+interface SerializableCryptoContext<S> {
     serialize: () => SerializedCryptoContext<S>;
 }
 

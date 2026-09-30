@@ -16,7 +16,7 @@ import { TextField } from '../../../Form/Field/TextField';
 import { PassModal } from '../../../Layout/Modal/PassModal';
 import { useAliasDomains } from './AliasDomainsContext';
 
-export const FORM_ID = 'custom-domain-add';
+const FORM_ID = 'custom-domain-add';
 
 export const CustomDomainCreateModal = () => {
     const { onCreate, setAction } = useAliasDomains();

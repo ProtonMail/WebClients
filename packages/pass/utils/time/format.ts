@@ -8,12 +8,12 @@ import identity from '@proton/utils/identity';
 import type { Maybe } from '../../types';
 import { epochToMs } from './epoch';
 
-export const formatRelative = (date: Date | number) =>
+const formatRelative = (date: Date | number) =>
     capitalize(dateFnsFormatRelative(date, new Date(), { locale: dateLocale }));
-export const formatDateTime = (date: Date | number) => format(date, "PP 'at' p", { locale: dateLocale });
-export const formatDate = (date: Date | number) => format(date, 'PP', { locale: dateLocale });
+const formatDateTime = (date: Date | number) => format(date, "PP 'at' p", { locale: dateLocale });
+const formatDate = (date: Date | number) => format(date, 'PP', { locale: dateLocale });
 
-export const formatEpoch = (format: (date: Date | number) => string) => (epoch: number) => format(epochToMs(epoch));
+const formatEpoch = (format: (date: Date | number) => string) => (epoch: number) => format(epochToMs(epoch));
 export const epochToDateTime = formatEpoch(formatDateTime);
 export const epochToDate = formatEpoch(formatDate);
 

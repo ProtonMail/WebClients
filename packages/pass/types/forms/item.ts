@@ -33,7 +33,6 @@ export type AliasFormValues = {
 
 export type DomainFormValues = { domain: string };
 
-export type AliasContactValues = { name: string };
 export type AliasCreateContactValues = { email: string };
 export type NewAliasFormValues = BaseItemValues & AliasFormValues;
 export type EditAliasFormValues = BaseItemValues &

@@ -11,7 +11,7 @@ export type InviteContextState =
     | ({ view: 'manage-vault' } & SelectedShare)
     | ({ view: 'manage-item' } & SelectedItem);
 
-export type InviteResponseDTO = Result<AccessKeys, {}>;
+type InviteResponseDTO = Result<AccessKeys, {}>;
 
 type InviteActionsContextValue = {
     close: () => void;

@@ -61,7 +61,7 @@ type ConnectivityServiceOptions = {
 };
 type ConnectivityRetryHandler = { start: () => void; cancel: () => void; reset: () => void };
 
-export type ConnectivityState = {
+type ConnectivityState = {
     status: ConnectivityStatus;
     navigatorOnline: boolean;
     retryHandler: MaybeNull<ConnectivityRetryHandler>;
@@ -70,7 +70,7 @@ export type ConnectivityState = {
 export type ConnectivityEvent = { type: 'status'; status: ConnectivityStatus } | { type: 'navigator-online' };
 
 export const CONNECTIVITY_PROBE_DELAY = 50; /** ms */
-export const CONNECTIVITY_PROBE_TIMEOUT = 5_000; /** ms */
+const CONNECTIVITY_PROBE_TIMEOUT = 5_000; /** ms */
 
 /** Determines effective online state for retry handler transition detection:
  * requires both API reachability and navigator online. This is intentionally

@@ -3,7 +3,7 @@ import { type FC, type PropsWithChildren, useState } from 'react';
 import { BulkSelectActions } from './BulkSelectionActions';
 import { BulkSelectionState } from './BulkSelectionState';
 
-export type BulkSelection = Map<string, Set<string>>;
+type BulkSelection = Map<string, Set<string>>;
 
 /** Splits `BulkSelection` contexts into State/Actions contexts :
  * - Components using only bulk actions won't re-render on selection changes

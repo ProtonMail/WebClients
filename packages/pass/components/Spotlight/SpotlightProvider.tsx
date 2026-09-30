@@ -19,7 +19,6 @@ type SpotlightState = SpotlightContextValue['state'];
 
 const INITIAL_STATE: SpotlightState = { open: false, message: null, pendingShareAccess: false };
 
-export type { SpotlightContextValue } from './SpotlightContext';
 export { useSpotlight } from './SpotlightContext';
 
 export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {

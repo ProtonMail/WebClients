@@ -19,7 +19,7 @@ import type { OrganizationSettings } from '../../types/data/organization';
 import type { MaxAgeMemoizedFn } from '../../utils/fp/memo';
 import type { OrganizationReportDTO, PauseListEntryAddDTO, PauseListEntryUpdateDTO } from '../organization/types';
 
-export type PassBridgeInitOptions = {
+type PassBridgeInitOptions = {
     addresses: Address[];
     authStore: AuthenticationStore;
     user: User;
@@ -91,7 +91,7 @@ export type PassBridgeAliasItem = {
     item: ItemRevision<'alias'>;
 };
 
-export type PassBridgeAliasCreate = {
+type PassBridgeAliasCreate = {
     /** vault shareId to create the alias in */
     shareId: string;
     /** Name of the underlying item  */

@@ -7,7 +7,7 @@ import type { Browser } from '../../../types/browser';
 const global = globalThis as any;
 
 /* Based on https://github.com/mozilla/webextension-polyfill Chrome check */
-export const detectBrowser = (): Browser =>
+const detectBrowser = (): Browser =>
     typeof global.browser === 'undefined' || Object.getPrototypeOf(global.browser) !== Object.prototype
         ? 'chrome'
         : 'firefox';

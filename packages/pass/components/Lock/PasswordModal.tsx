@@ -20,7 +20,7 @@ import type { XorObfuscation } from '../../utils/obfuscate/xor';
 import { Card } from '../Layout/Card/Card';
 import type { OnReauthFn } from './PasswordUnlockProvider';
 
-export type PasswordReauthOptions = ReauthActionPayload & {
+type PasswordReauthOptions = ReauthActionPayload & {
     /** Fork request options for re-authentication */
     fork: Partial<RequestForkOptions>;
     /** If `true`, allows two-password users to verify using their primary

@@ -15,7 +15,7 @@ import { truthy } from '../../utils/fp/predicates';
 import { api } from '../api/api';
 import { parseShareResponse } from './share.parser';
 
-export { getAllShareKeys, getShareLatestEventId } from './share.keys';
+export { getShareLatestEventId } from './share.keys';
 
 export const getSharesQuery = () => ({ url: 'pass/v1/share', method: 'get' }) as const;
 export const getShares = async () => {

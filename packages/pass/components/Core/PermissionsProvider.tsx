@@ -8,8 +8,8 @@ import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
 import type { MaybeNull, Unpack } from '../../types/utils';
 import { ConfirmationPrompt } from '../Confirmation/ConfirmationPrompt';
 
-export type Permission = Unpack<Permissions.Permissions['permissions']>;
-export type PermissionPrompt = { title: string; message: string };
+type Permission = Unpack<Permissions.Permissions['permissions']>;
+type PermissionPrompt = { title: string; message: string };
 
 type PermissionService = {
     hasPermission: (permissions: Permission[]) => Promise<boolean>;

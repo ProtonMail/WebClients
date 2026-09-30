@@ -1,6 +1,6 @@
 import type { MaybeNull } from '../../types';
 
-export const getZIndex = (el: HTMLElement, styles?: CSSStyleDeclaration): number => {
+const getZIndex = (el: HTMLElement, styles?: CSSStyleDeclaration): number => {
     const { zIndex } = styles ?? getComputedStyle(el);
     const parsedZIndex = parseInt(zIndex, 10);
     return isNaN(parsedZIndex) ? 0 : parsedZIndex;
@@ -9,7 +9,7 @@ export const getZIndex = (el: HTMLElement, styles?: CSSStyleDeclaration): number
 /* This function provides a minimal version of stacking context detection.
  * check MDN documentation for missing cases in case they become relevant :
  * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context */
-export const isStackingContext = (el: HTMLElement, styles?: CSSStyleDeclaration): boolean => {
+const isStackingContext = (el: HTMLElement, styles?: CSSStyleDeclaration): boolean => {
     const parent = el.parentElement;
     const { zIndex, position, containerType } = styles ?? getComputedStyle(el);
     const hasZIndex = zIndex !== '' && zIndex !== 'auto';

@@ -82,7 +82,7 @@ export const fetchIfModified = async (url: string, lastRequestedAt: number): Pro
 /** Routes required to bridge the offline-booted state back to a fully
  * authenticated online session. Anything outside this list is a UI-driven
  * side-effect that must not fire when offline-booted & session is unresumed. */
-export const SESSION_RESUME_ROUTES = [
+const SESSION_RESUME_ROUTES = [
     'tests/ping', // connectivity check route
     'pass/v1/user/session/lock', // post-resume login (checkSessionLock/forceLock)
     'core/v4/users', // resumeSession (getUser)

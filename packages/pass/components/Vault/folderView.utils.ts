@@ -4,7 +4,7 @@ import { getFolderKey } from '../../lib/items/item.utils';
 import type { FoldersByShareId } from '../../store/reducers';
 import type { FolderData, MaybeNull } from '../../types';
 
-export type FolderRow = {
+type FolderRow = {
     type: 'folder';
     key: string;
     folder: FolderData;
@@ -13,12 +13,12 @@ export type FolderRow = {
     expanded: boolean;
 };
 
-export type VaultRow<V> = { type: 'vault'; key: string; vault: V; hasFolders: boolean; expanded: boolean };
+type VaultRow<V> = { type: 'vault'; key: string; vault: V; hasFolders: boolean; expanded: boolean };
 export type VaultFolderRow<V> = VaultRow<V> | FolderRow;
 
 /** Recursively build alphabetically sorted folder rows with depth count.
  * Only expanded folders contribute their children to the flat row list. */
-export const buildFolderRows = (
+const buildFolderRows = (
     children: FolderChildren,
     parentFolderId: MaybeNull<string>,
     depth: number,

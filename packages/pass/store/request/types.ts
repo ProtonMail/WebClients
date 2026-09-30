@@ -1,5 +1,4 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Action } from 'redux';
 
 import type { IsNever } from '../../types';
 import type { WithMeta } from '../actions/enhancers/meta';
@@ -59,13 +58,6 @@ export type RequestEntry<T extends RequestStatus = RequestStatus, D = any> = {
 export type RequestProgress<T, D = T> =
     { type: 'progress'; progress: number; data: D } | { type: 'done'; result: T } | { type: 'error'; error: unknown };
 
-export type ActionRequestEntry<T extends Action> =
-    T extends WithRequest<{ payload: infer P }, infer U, infer D>
-        ? U extends RequestStatus
-            ? RequestEntry<U, D extends true ? P : undefined>
-            : never
-        : never;
-
 /** Controls the return value when a request succeeds:
  * - If request config has an explicit `data` field, returns that value
  * - Otherwise defaults to returning the action's `payload` */
@@ -73,7 +65,7 @@ type RequestResultDTO<T extends WithRequest<any, any, any>, Type extends Request
     T extends WithRequest<PayloadAction<unknown>, Type, infer U> ? (IsNever<U> extends true ? T['payload'] : U) : never;
 
 export type RequestSuccessDTO<T extends WithRequest<any, any, any>> = RequestResultDTO<T, 'success'>;
-export type RequestFailureDTO<T extends WithRequest<any, any, any>> = RequestResultDTO<T, 'failure'>;
+type RequestFailureDTO<T extends WithRequest<any, any, any>> = RequestResultDTO<T, 'failure'>;
 
 export type RequestAsyncResult<TSuccess extends PayloadAction = any, TFailure extends PayloadAction = any> =
     | { type: 'success'; data: RequestSuccessDTO<TSuccess> }

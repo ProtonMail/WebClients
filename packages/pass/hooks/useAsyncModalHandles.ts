@@ -5,7 +5,7 @@ import noop from '@proton/utils/noop';
 import type { MaybePromise } from '../types';
 import { useRerender } from './useRerender';
 
-export class AsyncModalAbortedError extends Error {}
+class AsyncModalAbortedError extends Error {}
 export type AsyncModalState<T> = T & { open: boolean; loading: boolean };
 export type AsyncModalOptions<T> = { getInitialModalState: () => T };
 export type UseAsyncModalHandle<V, T> = (options: UseAsyncModalHandlerOptions<V, T>) => Promise<void>;

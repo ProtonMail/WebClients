@@ -15,7 +15,7 @@ import { first } from '../utils/array/first';
 const SAVE_DRAFT_TIMEOUT = 500;
 const DRAFT_HASH = '#draft';
 
-export const useMatchDraftHash = (): boolean => {
+const useMatchDraftHash = (): boolean => {
     const { location } = useHistory();
     return useMemo(() => location.hash === DRAFT_HASH, []);
 };

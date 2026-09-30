@@ -1,8 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import { type Address, SETTINGS_PASSWORD_MODE, UserType } from '@proton/shared/lib/interfaces';
 import { AuthDeviceState } from '@proton/shared/lib/keys/device';
 
@@ -45,8 +43,8 @@ export const selectFeatureFlags = ({ user: { features } }: State) => features;
 
 /** `features` is `null` until the first successful fetch. */
 export const selectFeatureFlagsReady = ({ user: { features } }: State): boolean => Boolean(features);
-export const selectAddresses = ({ user }: State) => user.addresses;
-export const selectAuthDevices = (state: State) => state.user.devices;
+const selectAddresses = ({ user }: State) => user.addresses;
+const selectAuthDevices = (state: State) => state.user.devices;
 export const selectUserStorageUsed = ({ user }: State) => user.plan?.StorageUsed ?? 0;
 export const selectUserStorageQuota = ({ user }: State) => user.plan?.StorageQuota ?? 0;
 export const selectUserStorageMaxFileSize = ({ user }: State) => user.plan?.StorageMaxFileSize ?? 0;
@@ -98,7 +96,7 @@ export const selectAutofillModelExperimentGroup = (state: State): AutofillModelE
 
 /** Resolves the user's default vault share, ensuring it exists
  * and is writable to guard against BE discrepancies. */
-export const selectDefaultShare = createSelector([selectUserData, selectShareState], (userData, shares): Maybe<VaultShareItem> => {
+const selectDefaultShare = createSelector([selectUserData, selectShareState], (userData, shares): Maybe<VaultShareItem> => {
     if (!userData.defaultShareId) return;
     const share: Maybe<Share> = shares[userData.defaultShareId];
     if (share && isWritableVault(share)) return share;
@@ -121,15 +119,6 @@ export const selectPendingAuthDevices = createSelector([selectAuthDevices, selec
             )
         )
         .sort(sortOn('CreateTime'))
-);
-
-export const selectInAppNotificationsEnabled = createSelector(selectUserSettings, (userSettings): boolean =>
-    hasBit(userSettings?.News, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS)
-);
-
-export const selectIsPassEssentials = createSelector(
-    selectUserPlan,
-    (plan): boolean => plan?.Type === 'business' && plan.DisplayName === 'Pass Essentials'
 );
 
 export const selectHasTwoPasswordMode = ({ user }: State) => user.userSettings?.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;

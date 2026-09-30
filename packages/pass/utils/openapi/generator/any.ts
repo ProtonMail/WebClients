@@ -38,7 +38,7 @@ export const anyTypeParser: SchemaTypeParser = (schema) => {
 
 const generateTSType = (typeKey: string, schema: Schema) => `export type ${typeKey} = ${anyTypeParser(schema)};`;
 
-export const generateType = ([typeKey, schema]: SchemaEntry): string => {
+const generateType = ([typeKey, schema]: SchemaEntry): string => {
     if ('enum' in schema) return generateTSEnum(typeKey, schema);
     else return generateTSType(typeKey, schema);
 };

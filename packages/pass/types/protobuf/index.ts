@@ -1,7 +1,6 @@
 import type { FileMetadata } from './file-v1';
-import type { CustomSection, ExtraField, PlatformSpecific } from './item-v1';
+import type { Content, ExtraField, PlatformSpecific } from './item-v1';
 import {
-    Content,
     Metadata,
     Item as ProtobufItem,
     ItemAlias as ProtobufItemAlias,
@@ -28,8 +27,6 @@ import { Vault } from './vault-v1';
 export { AutofillUrl_Mode as AutofillMode, CardType, WifiSecurity } from './item-v1.static';
 
 export {
-    Content,
-    CustomSection,
     ExtraField,
     FileMetadata,
     Metadata,
@@ -60,12 +57,12 @@ type OneOfKindMap<U extends { oneofKind: string }> = {
  * all possible key/type pairs for the underlying content types
  */
 type ItemContentUnion = OneOfKindKeys<Content>;
-export type ItemContentMap = OneOfKindMap<ItemContentUnion>;
+type ItemContentMap = OneOfKindMap<ItemContentUnion>;
 export type ItemType = keyof ItemContentMap;
 export type ItemCustomType = Extract<ItemType, 'wifi' | 'sshKey' | 'custom'>;
 
 type ExtraFieldContentUnion = OneOfKindKeys<ExtraField>;
-export type ExtraFieldContentMap = OneOfKindMap<ExtraFieldContentUnion>;
+type ExtraFieldContentMap = OneOfKindMap<ExtraFieldContentUnion>;
 export type ExtraFieldType = keyof ExtraFieldContentMap;
 export type CustomExtraFieldType = Extract<ExtraFieldType, 'text' | 'hidden' | 'timestamp'>;
 

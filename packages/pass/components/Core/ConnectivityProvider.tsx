@@ -43,7 +43,7 @@ export const useOffline = () => !useOnline();
 export const useConnectivity = () => useContext(ConnectivityContext)?.status ?? ConnectivityStatus.ONLINE;
 export const useOnlineRef = () => useStatefulRef(useOnline());
 
-export const useConnectivityBar = (propsFactory: (status: ConnectivityStatus) => BottomBarProps) => {
+const useConnectivityBar = (propsFactory: (status: ConnectivityStatus) => BottomBarProps) => {
     const connectivity = useConnectivity();
     const props = propsFactory(connectivity);
     return <BottomBar {...props} text={props.text ?? getConnectivityWarning(connectivity)} />;

@@ -13,7 +13,7 @@ import { selectOrganizationState, selectPassPlan, selectUser, selectUserPlan } f
 import type { MaybeNull } from '../../types';
 import type { OrganizationSettings } from '../../types/data/organization';
 
-export type OrganizationContextValue = {
+type OrganizationContextValue = {
     organization: Organization;
     b2bAdmin: boolean;
     settings: OrganizationSettings & { enabled: boolean };

@@ -16,7 +16,7 @@ import type { GeneratePasswordConfig, GeneratePasswordMode } from '../lib/passwo
 import type { MaybeNull, OrganizationUpdatePasswordPolicyInput } from '../types';
 import { merge } from '../utils/object/merge';
 
-export enum CharType {
+enum CharType {
     Alphabetic = 0,
     Digit = 1,
     Special = 2,
@@ -24,13 +24,13 @@ export enum CharType {
 
 /* Designers mixed the colors of different ui-${type}
  * sub-themes for the character colors.. */
-export const charTypeToClassName = {
+const charTypeToClassName = {
     [CharType.Alphabetic]: '',
     [CharType.Digit]: 'ui-violet pass-password-generator--char-digit',
     [CharType.Special]: 'ui-teal pass-password-generator--char-special',
 };
 
-export const getTypeFromChar = (char: string) => {
+const getTypeFromChar = (char: string) => {
     if (alphabeticChars.includes(char)) return CharType.Alphabetic;
     if (digitChars.includes(char)) return CharType.Digit;
 

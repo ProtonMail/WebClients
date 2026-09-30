@@ -13,7 +13,7 @@ import passDarkTheme from '@proton/colors/themes/dist/pass-dark.theme.css';
 // @ts-ignore
 import passLightTheme from '@proton/colors/themes/dist/pass-light.theme.css';
 
-export const THEME_ID = 'pass-theme';
+const THEME_ID = 'pass-theme';
 
 type ThemeConfig = { className: string; styles: string };
 
@@ -28,7 +28,7 @@ const getThemeConfig = (theme: PassThemeOption): ThemeConfig => {
     }
 };
 
-export const PassThemeContext = createContext<PassThemeOption>(PASS_DEFAULT_THEME);
+const PassThemeContext = createContext<PassThemeOption>(PASS_DEFAULT_THEME);
 
 export const PassThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     const core = usePassCore();

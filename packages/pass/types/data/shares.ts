@@ -25,14 +25,14 @@ export type VaultShareContent = {
     name: string;
 };
 
-export type ItemShareContent = {};
+type ItemShareContent = {};
 
 export type ShareContent<T extends ShareType = ShareType> =
     T extends ShareType.Vault ? VaultShareContent
     : T extends ShareType.Item ? ItemShareContent
     : never;
 
-export type ShareBase<T extends ShareType = ShareType> = {
+type ShareBase<T extends ShareType = ShareType> = {
     addressId: Maybe<string>;
     content: ShareContent<T>;
     createTime: number;
@@ -52,7 +52,7 @@ export type ShareBase<T extends ShareType = ShareType> = {
     groupId: MaybeNull<string>;
 };
 
-export type WithEventId<T> = T & {
+type WithEventId<T> = T & {
     /** In Sync V1: used to track current share event
      *  In Sync V2: global event token is sufficient */
     eventId?: string;

@@ -5,7 +5,7 @@ import type { ShareRole, ShareType, VaultShareContent } from './shares';
 export type AbstractInviteResponse = InviteDataForUser | GroupInviteListItemResponse;
 
 export enum NewUserInviteState {
-    WAITING = 1,
+    // WAITING = 1,
     READY = 2,
 }
 
@@ -42,7 +42,7 @@ export type InviteVaultData = {
     memberCount: number;
 };
 
-export type InviteContent =
+type InviteContent =
     { targetType: ShareType.Vault; vault: InviteVaultData } | { targetType: ShareType.Item; vault: null };
 
 export type Invite<T extends InviteType = InviteType> = InviteBase & {
@@ -56,7 +56,7 @@ export type Invite<T extends InviteType = InviteType> = InviteBase & {
 
 export type UserInvite = Invite<InviteType.User>;
 export type GroupOwnerInvite = Invite<InviteType.GroupOwner>;
-export type GroupOrgInvite = Invite<InviteType.GroupOrg>;
+type GroupOrgInvite = Invite<InviteType.GroupOrg>;
 export type GroupInvite = GroupOwnerInvite | GroupOrgInvite;
 
 export type VaultInvite<T extends InviteType = InviteType> = Invite<T> & { targetType: ShareType.Vault };

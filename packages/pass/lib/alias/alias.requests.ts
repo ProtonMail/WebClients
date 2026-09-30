@@ -139,9 +139,6 @@ export const aliasBlockContactApi = async ({ shareId, itemId, contactId, blocked
         })
     )?.Contact!;
 
-export const getAliasCount = async (): Promise<number> =>
-    (await api({ url: `pass/v1/user/alias/count`, method: 'get' }))?.AliasCount?.Total ?? 0;
-
 export const getAliasSyncStatus = async (): Promise<SlSyncStatusOutput> => {
     const result = (await api({ url: `pass/v1/alias_sync/status`, method: 'get' }))?.SyncStatus;
     return result ?? { PendingAliasCount: 0, Enabled: false };

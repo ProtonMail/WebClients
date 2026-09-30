@@ -66,7 +66,7 @@ function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<
  * the actual target share ID. This prevents coupling pending files to specific
  * shares, allowing users to change the destination share during the upload
  * process before the item is created. */
-export const intoFileUniqueID = (fileIdentifier: FileIdentifier) => {
+const intoFileUniqueID = (fileIdentifier: FileIdentifier) => {
     const shareId = fileIdentifier.pending ? FILE_PENDING_SHARE : fileIdentifier.shareId;
     return `${shareId}::${fileIdentifier.fileID}` + (fileIdentifier.pending ? '::pending' : '');
 };

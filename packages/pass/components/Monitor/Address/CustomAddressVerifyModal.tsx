@@ -11,8 +11,6 @@ import type { AddressType, MonitorAddress } from '../../../lib/monitor/types';
 import { resendVerificationCode, verifyCustomAddress } from '../../../store/actions';
 import { EmailVerifyModal, SECONDS_BEFORE_RESEND, getInitialCountdown } from '../../Layout/Modal/EmailVerifyModal';
 
-export const FORM_ID = 'custom-address-verify';
-
 type Props = { onClose: () => void; sentAt?: number } & MonitorAddress<AddressType.CUSTOM>;
 
 export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId, sentAt }) => {

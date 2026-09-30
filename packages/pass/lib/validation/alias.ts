@@ -3,7 +3,6 @@ import { c } from 'ttag';
 
 import type { SanitizedAliasOptions } from '../../hooks/useAliasOptions';
 import type {
-    AliasContactValues,
     AliasFormValues,
     EditAliasFormValues,
     LoginItemFormValues,
@@ -14,7 +13,7 @@ import type {
 import PassUI from '../core/ui.proxy';
 import { validateItemErrors } from './item';
 
-export const validateAliasPrefix = async (prefix: string = ''): Promise<Maybe<string>> => {
+const validateAliasPrefix = async (prefix: string = ''): Promise<Maybe<string>> => {
     try {
         await PassUI.validate_alias_prefix(prefix);
     } catch (err) {
@@ -58,13 +57,6 @@ export const validateNewAliasForm = async (values: NewAliasFormValues): Promise<
     ...validateItemErrors(values),
     ...(await validateAliasForm(values)),
 });
-
-export const validateAliasContactSenderName = ({ name }: AliasContactValues): FormikErrors<AliasContactValues> => {
-    const errors: FormikErrors<AliasContactValues> = {};
-    if (!name) errors.name = c('Warning').t`Name is required`;
-
-    return errors;
-};
 
 export const createEditAliasFormValidator =
     (aliasOwner: boolean) =>

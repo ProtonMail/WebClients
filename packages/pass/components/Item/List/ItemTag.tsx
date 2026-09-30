@@ -7,7 +7,7 @@ import type { ItemRevision } from '../../../types';
 import { SafeItemIcon } from '../../Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '../../Layout/Theme/types';
 
-export const ITEM_TAG_MAX_WIDTH = 150;
+const ITEM_TAG_MAX_WIDTH = 150;
 
 export const ItemTag: FC<ItemRevision> = (item) => (
     <div

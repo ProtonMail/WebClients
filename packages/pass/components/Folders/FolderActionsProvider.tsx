@@ -23,7 +23,7 @@ type FolderActionState =
     | { view: 'delete'; shareId: string; folderId: string; folderName: string }
     | { view: 'move-items'; shareId: string; folderId: string; folderName: string };
 
-export const FolderActionsContext = createContext<MaybeNull<FolderActionsContextValue>>(null);
+const FolderActionsContext = createContext<MaybeNull<FolderActionsContextValue>>(null);
 export const useFolderActions = createUseContext(FolderActionsContext);
 
 export const FolderActionsProvider: FC<PropsWithChildren> = ({ children }) => {

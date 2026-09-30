@@ -1,7 +1,7 @@
 import type { DeobfuscatedItemContent, UniqueItem } from '../data';
 import type { CardType } from '../protobuf';
 
-export type ItemPreview = UniqueItem & { name: string };
+type ItemPreview = UniqueItem & { name: string };
 export type LoginItemPreview = ItemPreview & { userIdentifier: string; url?: string };
 export type IdentityItemPreview = ItemPreview & { fullName?: string };
 

@@ -22,5 +22,5 @@ export type PassCoreMethodMap = {
     };
 };
 
-export type PassCoreWorkerService = WasmWorkerService<PassCoreMethodMap>;
+type PassCoreWorkerService = WasmWorkerService<PassCoreMethodMap>;
 export type PassCoreService = Pick<PassCoreWorkerService, 'exec'>;

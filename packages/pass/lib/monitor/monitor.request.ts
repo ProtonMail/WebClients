@@ -5,7 +5,6 @@ import type {
     BreachEmailCreateRequest,
     BreachEmailValidateRequest,
     BreachUpdateCustomEmailRequest,
-    BreachUpdateMonitorAddressRequest,
     BreachesGetResponse,
     BreachesResponse,
     UpdateUserMonitorStateRequest,
@@ -37,8 +36,6 @@ export const getAliasBreaches = async (shareId: string, itemId: string): Promise
     (await api({ url: `pass/v1/share/${shareId}/alias/${itemId}/breaches`, method: 'get' })).Breaches!;
 
 /* Update the monitor status for a Proton Address */
-export const setMonitorForProtonAddress = (AddressID: string, monitor: BreachUpdateMonitorAddressRequest) =>
-    api({ url: `pass/v1/breach/address/${AddressID}/monitor`, method: 'put', data: monitor });
 
 /** Add a custom email to breaches monitoring */
 export const monitorCustomEmail = async (data: BreachEmailCreateRequest): Promise<BreachCustomEmailGetResponse> =>

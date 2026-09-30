@@ -3,7 +3,6 @@ export const UNIX_HOUR = 60 * UNIX_MINUTE;
 export const UNIX_DAY = 24 * UNIX_HOUR;
 export const UNIX_WEEK = 7 * UNIX_DAY;
 export const UNIX_MONTH = 4 * UNIX_WEEK;
-export const UNIX_YEAR = 365 * UNIX_DAY;
 
 export const HOUR_IN_MINUTES = 60;
 export const DAY_IN_MINUTES = 24 * HOUR_IN_MINUTES;

@@ -17,16 +17,16 @@ import { usePassCore } from '../../Core/PassCoreProvider';
 import { getClipboardTTLOptions } from './ClipboardSettings.utils';
 import { ClipboardSettingsModal } from './ClipboardSettingsModal';
 
-export type ClipboardAction = 'settings';
+type ClipboardAction = 'settings';
 
 export type ClipboardContextValue = {
     copyToClipboard: (content: string) => Promise<void>;
     setClipboardTTL: (timeoutMs: ClipboardTTL, silent?: boolean) => void;
 };
 
-export const ClipboardContext = createContext<MaybeNull<ClipboardContextValue>>(null);
+const ClipboardContext = createContext<MaybeNull<ClipboardContextValue>>(null);
 
-export const useClipboardContext = createUseContext(ClipboardContext);
+const useClipboardContext = createUseContext(ClipboardContext);
 export const useCopyToClipboard = () => useClipboardContext().copyToClipboard;
 export const useSetClipboardTTL = () => useClipboardContext().setClipboardTTL;
 

@@ -14,8 +14,8 @@ const selectSecureLinkedItems = createSelector(selectSecureLinksState, (state) =
     objectEntries(state).flatMap(([shareId, byItemId]) => objectEntries(byItemId).map(([itemId, links]) => ({ shareId, itemId, links })))
 );
 
-export const selectAllSecureLinks = createSelector(selectSecureLinkedItems, (entries) => entries.flatMap(({ links }) => links));
-export const selectVisibleSecureLinks = createVisibilityFilterSelector(selectAllSecureLinks);
+const selectAllSecureLinks = createSelector(selectSecureLinkedItems, (entries) => entries.flatMap(({ links }) => links));
+const selectVisibleSecureLinks = createVisibilityFilterSelector(selectAllSecureLinks);
 export const selectVisibleSecureLinkedItems = createVisibilityFilterSelector(selectSecureLinkedItems);
 export const selectVisibleSecureLinksCount = createSelector([selectVisibleSecureLinks], prop('length'));
 export const selectActiveSecureLinksCount = createSelector(selectVisibleSecureLinks, (links) => links.filter(prop('active')).length);

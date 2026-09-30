@@ -20,7 +20,7 @@ type Props = {
  * equals the size in pixels. To obtain the outer size, we multiply the icon size
  * by `1.8 * 4`, resulting in a factor of `7.2`. */
 export const getIconSizePx = (size: number) => size * CSS_BASE_UNIT_SIZE;
-export const getOuterIconSize = (size: IconSize) => Math.round(getIconSizePx(size) * 1.8);
+const getOuterIconSize = (size: IconSize) => Math.round(getIconSizePx(size) * 1.8);
 
 export const IconBox: FC<Props> = ({ className, children, mode, pill = true, size, style }) => {
     const outerSize = getOuterIconSize(size);

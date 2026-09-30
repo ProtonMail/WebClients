@@ -13,7 +13,7 @@ import {
     updateAccessTokenAccess,
 } from '../actions';
 
-export type AccessTokenActionsState = {
+type AccessTokenActionsState = {
     records: DecodedPatMonitorRecord[];
     nextSince: MaybeNull<string>;
 };

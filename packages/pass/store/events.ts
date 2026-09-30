@@ -14,6 +14,8 @@ import { createPubSub } from '../utils/pubsub/factory';
  *   }
  * }
  * ```
+ *
+ * @public
  */
 export interface SagaEvents {}
 

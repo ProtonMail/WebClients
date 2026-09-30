@@ -37,7 +37,7 @@ import { useFileImporter } from './useFileImporter';
 type DropzoneProps = ComponentProps<typeof Dropzone>;
 type FileInputProps = ComponentProps<typeof FileInput>;
 
-export type ImportFormValues = {
+type ImportFormValues = {
     file: MaybeNull<File>;
     provider: MaybeNull<ImportProvider>;
 };
@@ -58,7 +58,7 @@ export type ImportFormContext = {
 export type OnWillSubmitImportResult = Result<{ payload: ImportPayload }>;
 export type OnPassphraseImportResult = Result<{ passphrase: string }>;
 
-export type OnPassphraseImport = () => Promise<OnPassphraseImportResult>;
+type OnPassphraseImport = () => Promise<OnPassphraseImportResult>;
 export type OnWillSubmitImport = (payload: ImportPayload) => Promise<OnWillSubmitImportResult>;
 
 type UseImportFormOptions = {
@@ -66,15 +66,15 @@ type UseImportFormOptions = {
     onWillSubmit: OnWillSubmitImport;
 };
 
-export const getInitialFormValues = (): ImportFormValues => ({ file: null, provider: null });
+const getInitialFormValues = (): ImportFormValues => ({ file: null, provider: null });
 
-export const createFileValidator = (allow: string[]) =>
+const createFileValidator = (allow: string[]) =>
     pipe(
         (files: File[]) => first(files)!,
         orThrow(c('Error').t`Unsupported file type`, (file) => allow.includes(splitExtension(file?.name)[1]), identity)
     );
 
-export const validateImportForm = ({ provider, file }: ImportFormValues): FormikErrors<ImportFormValues> => {
+const validateImportForm = ({ provider, file }: ImportFormValues): FormikErrors<ImportFormValues> => {
     const errors: FormikErrors<ImportFormValues> = {};
     if (provider === null) errors.provider = c('Warning').t`No password manager selected`;
     if (!file) errors.file = '';

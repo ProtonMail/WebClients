@@ -72,7 +72,7 @@ const onShareDeleted = (shareId: string, tasks: () => Task) =>
 /* We need to lift the response to the correct data
  * structure by leveraging ApiOptions::mapResponse
  * (see type definition and create-api.ts for specs) */
-export const createShareChannel = (api: Api, { shareId, eventId }: Share, tasks: () => Task) =>
+const createShareChannel = (api: Api, { shareId, eventId }: Share, tasks: () => Task) =>
     eventChannelFactory<ShareEventResponse>({
         api,
         channelId: `share::${shareId}`,

@@ -15,7 +15,7 @@ type OTPOptions = {
     label?: MaybeNull<string>;
 };
 
-export const OTP_DEFAULTS = {
+const OTP_DEFAULTS = {
     issuer: '',
     label: 'Proton Pass',
     algorithm: 'SHA1',
@@ -23,11 +23,11 @@ export const OTP_DEFAULTS = {
     period: 30,
 };
 
-export const INVALID_SECRET_CHARS = /\s|-|_/g;
+const INVALID_SECRET_CHARS = /\s|-|_/g;
 
 /** Validates a `totpUri`. If the default parser fails, will attempt to re-build
  * the totp options by parsing the supplied `totpUri` search parameters.  */
-export const parseOTPFromURI = (totpUri: string, options: OTPOptions): TOTP => {
+const parseOTPFromURI = (totpUri: string, options: OTPOptions): TOTP => {
     try {
         return URI.parse(totpUri) as TOTP;
     } catch (err) {
@@ -58,7 +58,7 @@ export const parseOTPFromURI = (totpUri: string, options: OTPOptions): TOTP => {
     }
 };
 
-export const parseOTPFromSecret = (rawSecret: string, { issuer, label }: OTPOptions): TOTP => {
+const parseOTPFromSecret = (rawSecret: string, { issuer, label }: OTPOptions): TOTP => {
     const base32Secret = decodeURIComponent(rawSecret).replace(INVALID_SECRET_CHARS, '');
     const secret = PatchedSecret.fromBase32(base32Secret);
     const totpOptions = merge(OTP_DEFAULTS, { label, issuer, secret }, { excludeEmpty: true });
