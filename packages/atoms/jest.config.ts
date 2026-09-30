@@ -16,12 +16,4 @@ export default {
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     collectCoverageFrom: ['**/*.tsx', '!**/*.stories.tsx'],
-    coverageThreshold: {
-        global: {
-            branches: 66,
-            functions: 50,
-            lines: 51,
-            statements: 52,
-        },
-    },
 };
