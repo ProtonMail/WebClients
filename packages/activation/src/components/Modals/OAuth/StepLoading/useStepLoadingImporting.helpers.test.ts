@@ -6,7 +6,7 @@ import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 
 import type { LaunchImportPayload } from '../../../../interface';
-import { ImportType } from '../../../../interface';
+import { IMPORT_ERROR, ImportType } from '../../../../interface';
 import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import type { ImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.interface';
 import { createImporterTask } from './useStepLoadingImporting.helpers';
@@ -18,25 +18,12 @@ jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     traceError: jest.fn(),
 }));
 
-const BASE64_PASSPHRASE = new TextEncoder().encode('clear-passphrase').toBase64();
-
-// The SDK prepares the crypto material for an orphaned import folder; we fake it.
-const makeDriveClient = (folderOverrides: Record<string, unknown> = {}) =>
+// The ImportFolder payload itself is covered in driveImportTask.test.ts.
+const makeDriveClient = () =>
     ({
         getMyFilesRootFolder: jest.fn().mockResolvedValue({ uid: 'vol-1~node-1' }),
         experimental: {
-            prepareImportFolder: jest.fn().mockResolvedValue({
-                encryptedName: 'enc-name',
-                hash: 'folder-hash',
-                armoredNodePassphrase: 'passphrase',
-                armoredNodePassphraseSignature: 'passphrase-sig',
-                armoredKey: 'node-key',
-                armoredHashKey: 'hash-key',
-                signatureEmail: 'sig@proton.me',
-                base64Passphrase: BASE64_PASSPHRASE,
-                armoredExtendedAttributes: 'xattr',
-                ...folderOverrides,
-            }),
+            prepareImportFolder: jest.fn().mockResolvedValue({ encryptedName: 'enc-name' }),
         },
     }) as unknown as ProtonDriveClient;
 
@@ -79,13 +66,15 @@ const setup = (overrides: Overrides = {}) => {
     return { props, api, dispatch, call, errorHandler, setIsCreatingImportTask };
 };
 
+const getStartCalls = (api: jest.Mock) =>
+    api.mock.calls
+        .map(([req]) => req)
+        .filter((req) => typeof req?.url === 'string' && req.url.includes('importers/start'));
+
 // The only api call in the non-calendar paths is the start-import request.
-const getStartPayload = (api: jest.Mock): LaunchImportPayload | undefined => {
-    const startCall = api.mock.calls.find(
-        ([req]) => typeof req?.url === 'string' && req.url.includes('importers/start')
-    );
-    return startCall?.[0]?.data;
-};
+const getStartPayload = (api: jest.Mock): LaunchImportPayload | undefined => getStartCalls(api)[0]?.data;
+
+const alreadyExistsError = { status: 422, data: { Code: IMPORT_ERROR.ALREADY_EXISTS, Error: 'Already exists' } };
 
 afterEach(() => {
     jest.clearAllMocks();
@@ -104,40 +93,24 @@ describe('createImporterTask', () => {
         expect(setIsCreatingImportTask).toHaveBeenLastCalledWith(false);
     });
 
-    it('builds the Drive ImportFolder payload from the SDK when Drive is selected', async () => {
-        const driveClient = makeDriveClient();
-        const { props, api } = setup({ products: [ImportType.DRIVE], driveClient });
+    it('starts the Drive import task when Drive is selected and advances to the success step', async () => {
+        const { props, api, dispatch } = setup({ products: [ImportType.DRIVE], driveClient: makeDriveClient() });
 
         await createImporterTask(props);
 
-        // Windows-syncable, space-free folder name: `google-drive-<account>-<ISO timestamp without colons>`.
-        expect(driveClient.experimental.prepareImportFolder).toHaveBeenCalledWith(
-            expect.stringMatching(/^google-drive-me-\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}\.\d{3}Z$/)
-        );
-        expect(getStartPayload(api)?.Drive).toEqual({
-            ImportFolder: {
-                VolumeID: 'vol-1',
-                ParentLinkID: 'node-1',
-                Name: 'enc-name',
-                Hash: 'folder-hash',
-                NodePassphrase: 'passphrase',
-                NodePassphraseSignature: 'passphrase-sig',
-                NodeKey: 'node-key',
-                NodeHashKey: 'hash-key',
-                SignatureAddress: 'sig@proton.me',
-                NodePassphraseClearText: BASE64_PASSPHRASE,
-                XAttr: 'xattr',
-            },
-        });
+        expect(getStartCalls(api)).toHaveLength(1);
+        expect(getStartPayload(api)?.Drive?.ImportFolder).toBeDefined();
+        expect(dispatch).toHaveBeenCalledWith(changeOAuthStep('success'));
     });
 
-    it('omits XAttr when the SDK returns no extended attributes', async () => {
-        const driveClient = makeDriveClient({ armoredExtendedAttributes: undefined });
-        const { props, api } = setup({ products: [ImportType.DRIVE], driveClient });
+    it('does not retry on an already-exists error when Drive is not imported', async () => {
+        const api = jest.fn().mockRejectedValue(alreadyExistsError);
+        const { props, errorHandler } = setup({ products: [ImportType.CONTACTS], api });
 
         await createImporterTask(props);
 
-        expect(getStartPayload(api)?.Drive?.ImportFolder).not.toHaveProperty('XAttr');
+        expect(getStartCalls(api)).toHaveLength(1);
+        expect(errorHandler).toHaveBeenCalledWith(alreadyExistsError, { trace: true });
     });
 
     it('skips the Drive payload when no Drive client is available', async () => {
