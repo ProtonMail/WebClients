@@ -224,7 +224,6 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
     }, [deepestOpenedLevel]);
 
     return {
-        deepestOpenedLevel,
         rootFolder,
         expand,
         toggleExpand,

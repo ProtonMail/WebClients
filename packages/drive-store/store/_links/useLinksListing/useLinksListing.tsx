@@ -13,7 +13,6 @@ import { waitFor } from '../../_utils';
 import type { DecryptedLink, EncryptedLink } from './../interface';
 import useLinksState, { isLinkDecrypted } from './../useLinksState';
 import type { FetchLoadLinksMeta, FetchLoadLinksMetaByVolume } from './interface';
-import { useBookmarksLinksListing } from './useBookmarksLinksListing';
 import type { FetchMeta, FetchResponse, SortParams } from './useLinksListingHelpers';
 import { PAGE_SIZE, sortParamsToServerSortArgs, useLinksListingHelpers } from './useLinksListingHelpers';
 import { useSharedLinksListing } from './useSharedLinksListing';
@@ -68,7 +67,6 @@ export function useLinksListingProvider() {
     const linksState = useLinksState();
     const trashedLinksListing = useTrashedLinksListing();
     const sharedLinksListing = useSharedLinksListing();
-    const bookmarksLinksListing = useBookmarksLinksListing();
     const sharedWithMeLinksListingByVolume = useSharedWithMeLinksListingByVolume();
 
     const { cacheLoadedLinks, fetchNextPageWithSortingHelper, loadFullListing, getDecryptedLinksAndDecryptRest } =
@@ -433,9 +431,6 @@ export function useLinksListingProvider() {
         loadTrashedLinks: (signal: AbortSignal, volumeId: string) => {
             return trashedLinksListing.loadTrashedLinks(signal, volumeId, loadLinksMeta);
         },
-        loadLinksSharedByLinkLEGACY: (signal: AbortSignal, volumeId: string) => {
-            return sharedLinksListing.loadSharedLinksLEGACY(signal, volumeId, loadLinksMeta);
-        },
         // This include direct sharing shares
         loadLinksSharedByMeLink: (signal: AbortSignal, volumeId: string) => {
             return sharedLinksListing.loadSharedByMeLinks(signal, volumeId, loadLinksMeta);
@@ -443,24 +438,17 @@ export function useLinksListingProvider() {
         loadLinksSharedWithMeLink: async (signal: AbortSignal) => {
             return sharedWithMeLinksListingByVolume.loadSharedWithMeLinks(signal, loadLinksMetaByVolume);
         },
-        loadLinksBookmarks: async (signal: AbortSignal, shareId: string) => {
-            return bookmarksLinksListing.loadLinksBookmarks(signal, shareId);
-        },
         loadLinksMeta,
         getCachedChildren,
         getCachedChildrenCount,
         getCachedTrashed: trashedLinksListing.getCachedTrashed,
         getCachedSharedByLink: sharedLinksListing.getCachedSharedLinks,
         getCachedSharedWithMeLink: sharedWithMeLinksListingByVolume.getCachedSharedWithMeLinks,
-        getCachedBookmarksLinks: bookmarksLinksListing.getCachedBookmarksLinks,
-        getCachedBookmarkDetails: bookmarksLinksListing.getCachedBookmarkDetails,
         getCachedLinks,
         getCachedLinksWithoutMeta,
 
         // TODO: Remove this with Invitation section refactor
         setShareIdsState: sharedWithMeLinksListingByVolume.setShareIdsState,
-        // TODO: remove when we will have events for bookmarks
-        removeCachedBookmarkLink: bookmarksLinksListing.removeCachedBookmarkLink,
     };
 }
 
