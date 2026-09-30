@@ -268,7 +268,15 @@ export type ArtifactRevisionSource = 'prompt' | 'inline-edit' | 'manual-edit';
 
 export type ArtifactDownloadFormat = 'source' | 'txt' | 'pdf' | 'pptx';
 
-export type ArtifactDownloadResult = 'success' | 'print_fallback' | 'error';
+/**
+ * - `success`: a file was generated and downloaded.
+ * - `print_dialog`: document PDF: the print dialog opened for "Save as PDF". Browsers don't report
+ *   whether the user then saved or cancelled, so this is the furthest the funnel can be measured.
+ * - `print_fallback`: presentation PDF generation failed, so the print dialog opened instead.
+ * - `image_fallback`: document PDF: the print dialog couldn't open, so an image-page PDF was downloaded.
+ * - `error`: nothing was produced.
+ */
+export type ArtifactDownloadResult = 'success' | 'print_dialog' | 'print_fallback' | 'image_fallback' | 'error';
 
 export type ArtifactContentLengthBucket = '0-1k' | '1k-10k' | '10k+';
 
@@ -493,22 +501,29 @@ export const sendArtifactContentCopiedEvent = ({
     });
 };
 
+/**
+ * `contentLengthBucket` shows whether export reliability (and the choice of format) depends on
+ * artifact size, e.g. long documents falling back or failing more often.
+ */
 export const sendArtifactDownloadedEvent = ({
     format,
     artifactType,
     layout,
     result,
+    contentLengthBucket,
 }: {
     format: ArtifactDownloadFormat;
     artifactType: ArtifactType;
     layout: ArtifactPanelLayout;
     result: ArtifactDownloadResult;
+    contentLengthBucket: ArtifactContentLengthBucket;
 }) => {
     sendLumoArtifactEvent('downloaded', {
         format,
         artifactType,
         layout,
         result,
+        contentLengthBucket,
     });
 };
 

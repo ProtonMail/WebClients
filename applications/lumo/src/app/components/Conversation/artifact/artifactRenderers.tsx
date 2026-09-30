@@ -8,12 +8,13 @@ import type { ParsedArtifact } from './parseArtifacts';
 // Lazy-load the syntax highlighter to keep the initial bundle small
 const LumoMarkdownCodeBlockHighlighter = lazy(() => import('../../LumoMarkdown/LumoMarkdownCodeBlockHighlighter'));
 
-// Lazy-load react-markdown for document rendering
+// Lazy-load react-markdown for document rendering. remark-gfm (tables, strikethrough, task lists) is
+// the same plugin set export uses (artifactMarkdownHtml.ts), so the preview shows what PDF/Drive get.
 const MarkdownRenderer = lazy(() =>
-    import('react-markdown').then((mod) => ({
+    Promise.all([import('react-markdown'), import('remark-gfm')]).then(([markdownModule, gfmModule]) => ({
         default: (props: { children: string }) => {
-            const Markdown = mod.default;
-            return <Markdown>{props.children}</Markdown>;
+            const Markdown = markdownModule.default;
+            return <Markdown remarkPlugins={[gfmModule.default]}>{props.children}</Markdown>;
         },
     }))
 );

@@ -37,4 +37,9 @@ describe('artifactSaveFormats', () => {
         expect(getArtifactDownloadLabel('txt')).toContain('plain text');
         expect(getArtifactDownloadLabel('pdf')).toContain('PDF');
     });
+
+    it('labels document PDF as a dialog-backed save and presentation PDF as a download', () => {
+        expect(getArtifactDownloadLabel('pdf', 'document')).toBe('Save as PDF…');
+        expect(getArtifactDownloadLabel('pdf', 'presentation')).toBe('Download PDF');
+    });
 });
