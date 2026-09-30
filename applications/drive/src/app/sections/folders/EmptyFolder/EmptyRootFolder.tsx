@@ -20,12 +20,19 @@ export const EmptyRootFolder = forwardRef(({ onClick, dataTestId }: Props, ref: 
     return (
         // onClick is used for context menu, so we don't need to care about keyboard events
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-        <div ref={ref} onClick={onClick} className="flex w-full flex-1 overflow-auto relative" data-testid={dataTestId}>
+        <div
+            ref={ref}
+            onClick={onClick}
+            className="flex flex-column flex-nowrap w-full flex-1 overflow-auto"
+            data-testid={dataTestId}
+        >
             <div
-                className="m-auto flex flex-column items-center gap-4 text-center max-w-custom px-2"
+                className="m-auto flex flex-column flex-nowrap shrink-0 items-center gap-4 text-center max-w-custom px-2"
                 style={{ '--max-w-custom': '28rem' }}
             >
-                <EmptyFolderIllustration />
+                <div className="w-full max-w-custom" style={{ '--max-w-custom': 'min(379px, 45vh)' }}>
+                    <EmptyFolderIllustration />
+                </div>
                 <div className="flex flex-column gap-3">
                     <h3 className="text-bold">{c('Title').t`Welcome to ${DRIVE_APP_NAME}`}</h3>
                     <p className="color-weak m-0">
@@ -43,15 +50,10 @@ export const EmptyRootFolder = forwardRef(({ onClick, dataTestId }: Props, ref: 
                         }}
                     />
                 </div>
-                <div
-                    className="flex items-center gap-2 color-weak text-sm absolute bottom-custom"
-                    style={{
-                        '--bottom-custom': '1.5rem',
-                    }}
-                >
-                    <IcLock size={4} />
-                    <span>{c('Info').t`End-to-end encrypted`}</span>
-                </div>
+            </div>
+            <div className="shrink-0 flex items-center gap-2 color-weak text-sm mx-auto my-6">
+                <IcLock size={4} />
+                <span>{c('Info').t`End-to-end encrypted`}</span>
             </div>
         </div>
     );
