@@ -29,5 +29,3 @@ export class PassAliasesError extends Error {
         this.stack = error.stack;
     }
 }
-
-export default PassAliasesError;

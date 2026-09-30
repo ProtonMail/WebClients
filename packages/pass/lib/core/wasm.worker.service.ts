@@ -6,8 +6,8 @@ import { WASM_PROCEDURE_TIMEOUT, WASM_WORKER_READY_EVENT } from './constants';
 
 export type WasmMethods = Record<string, { args: any[]; return: any }>;
 export type WasmWorkerOptions = { id: string; spawn: () => Worker };
-export type WasmWorkerRPC<T extends WasmMethods, M extends keyof T> = { method: M; args: T[M]['args'] };
-export type WasmWorkerMessageEvent<T extends WasmMethods, M extends keyof T> = Result<{ value: T[M]['return'] }>;
+type WasmWorkerRPC<T extends WasmMethods, M extends keyof T> = { method: M; args: T[M]['args'] };
+type WasmWorkerMessageEvent<T extends WasmMethods, M extends keyof T> = Result<{ value: T[M]['return'] }>;
 
 type WasmMessageChannel = { port1: MessagePort; port2: MessagePort };
 

@@ -13,7 +13,7 @@ import { HistoryFlag } from './types';
 import { getActionFromHistoryItem, unwrapOptimisticState } from './utils/transformers';
 import { withHistoryAction } from './utils/with-history-action';
 
-export const withInitialOptimisticState = <T extends object>(state: T): WrappedOptimisticState<T> => {
+const withInitialOptimisticState = <T extends object>(state: T): WrappedOptimisticState<T> => {
     const initialOptimistic: { optimistic: OptimisticState<T> } = {
         optimistic: {
             checkpoint: undefined,

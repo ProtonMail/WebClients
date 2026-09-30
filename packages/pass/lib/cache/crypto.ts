@@ -58,7 +58,7 @@ export const getCacheEncryptionKey = async (
     return cacheEncryptionKey;
 };
 
-export const OFFLINE_ARGON2_PARAMS = ARGON2_PARAMS.RECOMMENDED;
+const OFFLINE_ARGON2_PARAMS = ARGON2_PARAMS.RECOMMENDED;
 
 /** Computes the raw bytes of the offline key by deriving it using an Argon2 algorithm
  * from the encryption password and a randomly generated salt. The encryption password

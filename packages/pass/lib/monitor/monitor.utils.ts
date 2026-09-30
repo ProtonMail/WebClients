@@ -55,7 +55,7 @@ export const getAddressId = (address: AddressBreachDTO): string => {
     }
 };
 
-export const isBreachedMonitored = ({ Flags }: BreachCustomEmailGetResponse | BreachAddressGetResponse): boolean =>
+const isBreachedMonitored = ({ Flags }: BreachCustomEmailGetResponse | BreachAddressGetResponse): boolean =>
     (Flags & BreachFlag.MonitorDisabled) !== BreachFlag.MonitorDisabled;
 
 export const intoCustomMonitorAddress = (breach: BreachCustomEmailGetResponse): MonitorAddress<AddressType.CUSTOM> => ({

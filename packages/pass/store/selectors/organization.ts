@@ -13,8 +13,6 @@ export const selectOrganization = ({ organization }: State): MaybeNull<Organizat
 
 export const selectOrganizationSettings = ({ organization }: State): MaybeNull<OrganizationSettings> => organization?.settings ?? null;
 
-export const selectCanUpdateOrganization = ({ organization }: State): boolean => organization?.canUpdate ?? false;
-
 export const selectOrganizationPasswordGeneratorPolicy = ({ organization }: State): MaybeNull<OrganizationUpdatePasswordPolicyInput> =>
     organization?.settings?.PasswordPolicy ?? null;
 

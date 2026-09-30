@@ -17,7 +17,7 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
     yield call(processUserInvitePollingEvent, event);
 }
 
-export const createInvitesChannel = (api: Api) =>
+const createInvitesChannel = (api: Api) =>
     eventChannelFactory<InvitesGetResponse>({
         api,
         channelId: 'invites',

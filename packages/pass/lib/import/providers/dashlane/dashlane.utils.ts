@@ -156,9 +156,7 @@ const resolveFieldForType = (key: string, type?: string): Maybe<DashlaneIdentity
     if (fieldName) return { type: 'field', fieldName };
 };
 
-export const extractDashlaneIdentity = (
-    importItem: DashlanePersonalInfoItem | DashlaneIdItem
-): ItemContent<'identity'> => {
+const extractDashlaneIdentity = (importItem: DashlanePersonalInfoItem | DashlaneIdItem): ItemContent<'identity'> => {
     const item = itemBuilder('identity');
 
     Object.entries(importItem).forEach(([key, value]) => {

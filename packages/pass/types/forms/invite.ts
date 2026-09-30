@@ -3,10 +3,10 @@ import type { ListFieldValue } from '../../components/Form/Field/ListField';
 import type { AccessTarget } from '../../lib/access/types';
 
 export type InviteFormStep = 'members' | 'permissions' | 'review';
-export type InviteFormMemberValue = { email: string; role: ShareRole; isGroup: boolean };
+type InviteFormMemberValue = { email: string; role: ShareRole; isGroup: boolean };
 export type InviteFormMemberItem = ListFieldValue<InviteFormMemberValue>;
 
-export type InviteFormValuesBase<T extends AccessTarget = AccessTarget, V = {}> = {
+type InviteFormValuesBase<T extends AccessTarget = AccessTarget, V = {}> = {
     target: T;
     step: InviteFormStep;
     members: InviteFormMemberItem[];

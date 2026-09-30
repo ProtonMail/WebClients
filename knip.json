@@ -16,7 +16,8 @@
         "packages/shared/lib/api/drive/link.ts": ["exports"],
         "packages/shared/lib/calendar/sharing/shareUrl/shareUrl.ts": ["exports"],
         "packages/shared/lib/mnemonic/helpers.ts": ["types"],
-        "applications/admin/src/app/constants/appConstants.ts": ["enumMembers"]
+        "applications/admin/src/app/constants/appConstants.ts": ["enumMembers"],
+        "packages/pass/lib/sync/global.ts": ["duplicates"]
     },
     "ignore": ["**/*.d.ts", "**/vendor/**"],
     "ignoreWorkspaces": ["packages/wasm/andromeda"],
@@ -406,9 +407,14 @@
             "ignoreDependencies": ["@proton/collect-metrics"]
         },
         "packages/pass": {
-            "entry": [],
+            "entry": ["lib/globals/webextension-polyfill.stub.ts", "utils/logger/loglevel.mock.ts"],
             "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "ignore": [
+                "types/api/pass.ts",
+                "types/protobuf/*-v1.ts",
+                "types/protobuf/google/**",
+                "lib/extension/rules/v*/types.ts"
+            ]
         },
         "packages/payments": {
             "entry": [],

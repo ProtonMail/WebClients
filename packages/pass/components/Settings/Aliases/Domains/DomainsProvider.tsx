@@ -17,8 +17,7 @@ import { CustomDomainCreateModal } from './CustomDomainCreateModal';
 import { CustomDomainDeleteModal } from './CustomDomainDeleteModal';
 import { CustomDomainDetailsModal } from './CustomDomainDetailsModal';
 
-export type { CustomDomain, DomainAction } from './AliasDomainsContext';
-export { useAliasDomains, useCustomDomain } from './AliasDomainsContext';
+export { useAliasDomains } from './AliasDomainsContext';
 
 export const AliasDomainsProvider: FC<PropsWithChildren> = ({ children }) => {
     const upsell = useUpselling();

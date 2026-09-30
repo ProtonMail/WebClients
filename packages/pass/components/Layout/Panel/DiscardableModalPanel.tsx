@@ -7,7 +7,7 @@ import type { Callback } from '../../../types';
 import { ConfirmationModal } from '../../Confirmation/ConfirmationModal';
 import { SidebarModal } from '../Modal/SidebarModal';
 
-export type DiscardableModalRenderProps = { confirm: (effect?: Callback) => void; didEnter: boolean };
+type DiscardableModalRenderProps = { confirm: (effect?: Callback) => void; didEnter: boolean };
 export type DiscardableModalProps = {
     discardable: boolean;
     onDiscard: () => void;

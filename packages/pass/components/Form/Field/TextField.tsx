@@ -82,7 +82,7 @@ export const BaseTextField = forwardRef(BaseTextFieldRender);
 
 export type TextFieldProps = FieldBoxProps & BaseTextFieldProps;
 
-export const TextFieldRender: ForwardRefRenderFunction<HTMLInputElement, TextFieldProps> = (
+const TextFieldRender: ForwardRefRenderFunction<HTMLInputElement, TextFieldProps> = (
     { actions, actionsContainerClassName, className, icon, ...rest },
     ref
 ) => {

@@ -40,7 +40,7 @@ export enum PassFeature {
 export const PassFeaturesValues = Object.values(PassFeature);
 
 /* Unleash response types */
-export type FeatureFlagPayload = {
+type FeatureFlagPayload = {
     type: string;
     value: string;
 };
@@ -51,7 +51,7 @@ export type FeatureFlagVariant = {
     payload: MaybeNull<FeatureFlagPayload>;
 };
 
-export type FeatureFlagToggle = {
+type FeatureFlagToggle = {
     name: string;
     variant: FeatureFlagVariant;
 };

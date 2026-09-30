@@ -27,7 +27,7 @@ import { readSafariData } from './providers/safari/safari.reader';
 import type { ImportReaderResult } from './types';
 import { ImportProvider, type ImportReaderPayload } from './types';
 
-export const extractFileExtension = (fileName: string): string => {
+const extractFileExtension = (fileName: string): string => {
     const parts = fileName.split('.');
     return parts[parts.length - 1];
 };

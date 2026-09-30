@@ -36,7 +36,7 @@ type SharePendingMemberProps = {
     className?: string;
 };
 
-export const SharePendingMember: FC<SharePendingMemberProps> = ({
+const SharePendingMember: FC<SharePendingMemberProps> = ({
     actions,
     email,
     isGroup: isGroupInput,

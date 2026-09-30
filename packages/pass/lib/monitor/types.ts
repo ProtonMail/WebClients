@@ -24,7 +24,7 @@ export type MonitorToggleDTO<T extends AddressType = AddressType> = AddressBreac
 
 export type MonitorDomain = { domain: string; breachedAt: number };
 
-export type MonitorAddressBase = {
+type MonitorAddressBase = {
     breachedAt?: MaybeNull<number>;
     breachCount?: number;
     breached: boolean;

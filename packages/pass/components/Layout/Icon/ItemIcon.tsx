@@ -30,7 +30,7 @@ export const itemTypeToIconName: ItemMap<IconName> = {
     custom: 'wrench',
 };
 
-export const presentItemIcon = (item: ItemRevision): IconName =>
+const presentItemIcon = (item: ItemRevision): IconName =>
     isDisabledAliasItem(item) ? 'alias-slash' : itemTypeToIconName[item.data.type];
 
 type BaseItemIconProps = {
