@@ -5587,6 +5587,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
+      ],
+      "Item not found": [
+        "L'élément n'a pas été trouvé"
+      ],
+      "Some items could not be loaded": [
+        "Certains éléments n'ont pas pu être chargés"
+      ],
+      "This item has no image preview": [
+        "Cet élément n'a pas d'aperçu"
+      ],
+      "You do not have access to this shared item": [
+        "Vous n'avez pas accès à cet élément partagé"
       ]
     },
     "error": {
@@ -6130,6 +6148,12 @@
       ],
       "Unread": [
         "Non lus"
+      ],
+      "Errors": [
+        "Erreurs"
+      ],
+      "Not activated": [
+        "Non activé"
       ]
     },
     "Filter Actions": {
@@ -7984,13 +8008,13 @@
         "Salut Lumo, regardes ce que je reçois le plus dans la messagerie, ainsi que dans les dossiers et les filtres. Puis suggère-moi comment la garder organisée : lesquels changer et quoi de nouveau à ajouter. Expliques moi l'idée avant, et ne changes rien avant mon accord."
       ],
       "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
-        "Salut Lumo, je vais être indisponible et je veux configurer une réponse automatique d'absence. Demandes moi les dates et le contenu, puis montres moi le message avant de l'activer."
+        "Salut Lumo, je vais être indisponible et je veux configurer une réponse automatique d'absence. Demande-moi les dates et le contenu, puis montre-moi le message avant de l'activer."
       ],
       "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
-        "Salut Lumo, recherches mes messages des 7 derniers jours et dis-moi lesquels ont vraiment besoin d'une réponse de ma part. Résume-les en une ligne chacun, et exclus ce qui n'est pas essentiel."
+        "Salut Lumo, recherche mes messages des 7 derniers jours et dis-moi lesquels ont vraiment besoin d'une réponse de ma part. Résume-les en une ligne chacun, et exclus ce qui n'est pas essentiel."
       ],
       "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
-        "Salut Lumo, expliques moi comment tu peux m'aider avec ma messagerie. Quels types de tâches puis-je te demander, et quelles sont les limites de ton aide ?"
+        "Salut Lumo, explique-moi comment tu peux m'aider avec ma messagerie. Quels types de tâches puis-je te demander, et quelles sont les limites de ton aide ?"
       ],
       "Hide original message": [
         "Masquer le message d'origine"
@@ -8005,7 +8029,7 @@
         "Je n'ai pas encore fini celui-là."
       ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
-        "Je vais passer en revue les messages de la semaine dernière et identifier ceux qui nécessitent vraiment une réponse, pour que tu puisses les traiter d'un coup."
+        "Je vais passer en revue les messages de la semaine dernière et identifier ceux qui nécessitent vraiment une réponse, pour que vous puissiez les traiter d'un coup."
       ],
       "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
         "Je regarderai les messages les plus fréquents, ainsi que les dossiers et filtres existants, puis je proposerai des améliorations et identifierai ce qui manque. Rien ne sera déplacé avant votre accord."
@@ -8843,7 +8867,7 @@
         "Définir une réponse automatique"
       ],
       "Set my out of office": [
-        "Configures mon message d'absence"
+        "Configure mon message d'absence"
       ],
       "Set signature": [
         "Définir une signature"
@@ -9198,7 +9222,7 @@
         "Ceci vous déconnectera de tous les comptes actuellement connectés."
       ],
       "Tidy up my inbox": [
-        "Organises ma boite de réception"
+        "Organise ma boîte de réception"
       ],
       "to ${ destinationElement } folder.": [
         "vers le dossier ${ destinationElement }."
@@ -9833,6 +9857,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "Change a display setting": [
+        "Change un paramètre d'affichage"
+      ],
+      "No conversation to read": [
+        "Aucune conversation à lire"
+      ],
+      "Results came from the server.": [
+        "Les résultats sont issus du serveur."
       ]
     },
     "info": {
@@ -11142,6 +11175,12 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Comfortable": [
+        "Confortable"
+      ],
+      "Entries": [
+        "Entrées"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11605,7 +11644,7 @@
     },
     "Mailbox": {
       "Archive": [
-        "Déplacer vers les archives"
+        "Archives"
       ],
       "Inbox": [
         "Boite de réception"
@@ -16071,7 +16110,7 @@
         "Merci pour les commentaires."
       ],
       "Undo in progress": [
-        "Annulation en cours"
+        "Annulation de l'importation en cours"
       ],
       "Verification successful": [
         "La vérification a abouti."
@@ -16186,6 +16225,9 @@
       ],
       "User": [
         "Utilisateur"
+      ],
+      "Activated": [
+        "Activé"
       ]
     },
     "TableHeader": {
@@ -17401,6 +17443,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Select users to migrate": [
+        "Sélectionnez les utilisateurs à migrer"
       ]
     },
     "Title header for keys table": {

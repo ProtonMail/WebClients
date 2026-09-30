@@ -5695,6 +5695,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segona contrasenya no és correcta. Torneu-ho a intentar."
       ]
     },
     "error": {
@@ -10046,6 +10052,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Teniu una factura pendent de pagament ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Teniu una factura pendent de pagament el ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -11738,6 +11750,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Cal que reactiveu les vostres claus per veure la invitació actualitzada"
+      ],
+      "Pay it": [
+        "Pagueu-ho"
       ]
     },
     "Link to calendar event": {
@@ -13595,7 +13610,7 @@
         "el dia 14 del mes"
       ],
       "15th of the month": [
-        "el dia 15 del mes"
+        "15 del mes"
       ],
       "16th of the month": [
         "el dia 16 del mes"
@@ -13607,10 +13622,10 @@
         "el dia 18 del mes"
       ],
       "19th of the month": [
-        "el dia 19 del mes"
+        "19 del mes"
       ],
       "1st of the month": [
-        "el dia 1 del mes"
+        "1 del mes"
       ],
       "20th of the month": [
         "el dia 20 del mes"
@@ -13622,7 +13637,7 @@
         "el dia 22 del mes"
       ],
       "23rd of the month": [
-        "el dia 23 del mes"
+        "23 del mes"
       ],
       "24th of the month": [
         "el dia 24 del mes"
@@ -13703,7 +13718,7 @@
         "Repetiu-ho diàriament"
       ],
       "Repeat monthly": [
-        "Repetiu-ho mensualment"
+        "Repeteix-ho mensualment"
       ],
       "Repeat weekly": [
         "Repetiu-ho setmanalment"
