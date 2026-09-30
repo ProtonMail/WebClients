@@ -671,6 +671,7 @@ const SubUserEditModal = ({
                                               userRoles={member.UserOrganizationRoles}
                                               isEditingSelf={isSelf}
                                               disabled={
+                                                  isSelf ||
                                                   isPendingMagicLinkInvite ||
                                                   adminRolesUIState !== AdminRolesUIState.Enabled
                                               }
@@ -679,6 +680,7 @@ const SubUserEditModal = ({
                                                       adminRolesUIState === AdminRolesUIState.Disabled &&
                                                       !loadingAdminRolesUI,
                                                   pendingInvitation: isPendingMagicLinkInvite,
+                                                  isEditingSelf: isSelf,
                                               })}
                                           />
                                       ),

@@ -95,18 +95,27 @@ export const getUpgradeForAdminRolesText = () => {
     return c('user_modal').t`Upgrade to a supported plan to use admin roles.`;
 };
 
+export const getEditOwnRolesText = () => {
+    return c('user_modal').t`You can't change your own roles. Ask another admin to change them.`;
+};
+
 export const getRolesTabBanner = ({
     showUpgrade,
     pendingInvitation,
+    isEditingSelf = false,
 }: {
     showUpgrade: boolean;
     pendingInvitation: boolean;
+    isEditingSelf?: boolean;
 }): string | undefined => {
     if (showUpgrade) {
         return getUpgradeForAdminRolesText();
     }
     if (pendingInvitation) {
         return getAssignRolesInvitationText();
+    }
+    if (isEditingSelf) {
+        return getEditOwnRolesText();
     }
     return undefined;
 };
