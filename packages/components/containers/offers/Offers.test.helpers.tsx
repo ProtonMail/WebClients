@@ -8,7 +8,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import ConfigProvider from '../config/Provider';
 
-export const DEFAULT_CONFIG = {
+const DEFAULT_CONFIG = {
     APP_NAME: APPS.PROTONMAIL,
     APP_VERSION: 'test-version',
     DATE_VERSION: 'test-date-version',

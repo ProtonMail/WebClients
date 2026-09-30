@@ -79,48 +79,6 @@ export const getStyle = (severity: number): { colorClass: string; iconAltText: s
     }
 };
 
-export const getFillerBreachData = () => {
-    return {
-        publishedAt: '2023-10-17T00:00:00+00:00',
-        source: {
-            category: {
-                name: c('Info').t`finance`,
-            },
-            country: {
-                name: null,
-            },
-        },
-        size: 5389441,
-        exposedData: [
-            {
-                code: 'email',
-                name: c('Info').t`email`,
-            },
-            {
-                code: 'username',
-                name: c('Info').t`username`,
-            },
-            {
-                code: 'password',
-                name: c('Info').t`password`,
-            },
-        ],
-        passwordLastChars: null,
-        actions: [
-            {
-                code: 'password',
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-                name: c('Info').t`Change your password`,
-            },
-            {
-                code: 'accounts',
-                desc: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
-                name: c('Info').t`Monitor accounts`,
-            },
-        ],
-    };
-};
-
 export function toCamelCase(obj: any): any {
     if (obj === null || typeof obj !== 'object') {
         return obj;

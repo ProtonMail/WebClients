@@ -10,13 +10,6 @@ import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
 import type { EditInvoiceModalInputs } from './EditInvoiceModal';
 import { EditInvoiceModal } from './EditInvoiceModal';
 
-export class FetchBillingAddressError extends Error {
-    constructor(message: string) {
-        super(message);
-        this.name = 'FetchBillingAddressError';
-    }
-}
-
 export const useEditInvoiceModal = () => {
     const [editInvoiceModal, showEditBillingAddressModal] = useModalTwoPromise<EditInvoiceModalInputs>(() => ({
         // Technically type casting isn't safe here, but practically speaking openBillingAddressModal ensures that these

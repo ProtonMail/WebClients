@@ -55,7 +55,7 @@ const getDowngradedPlanFn = (planName: PLANS) => {
     }
 };
 
-export const getDowngradedShortPlan = (planName: PLANS, freePlan: FreePlanDefault) => {
+const getDowngradedShortPlan = (planName: PLANS, freePlan: FreePlanDefault) => {
     const getter = getDowngradedPlanFn(planName);
     return getter ? getter(freePlan) : getFreePlan(freePlan);
 };

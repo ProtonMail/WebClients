@@ -112,15 +112,6 @@ export const getStorageFeature = (
     };
 };
 
-export const getStorageBoostFeature = (bundleStorage: string): PlanCardFeatureDefinition => {
-    return {
-        id: 'storage-boost',
-        icon: IcStorage,
-        text: c('new_plans: Upsell attribute').t`Boost your storage space to ${bundleStorage} total`,
-        included: true,
-    };
-};
-
 export const getStorageBoostFeatureB2B = (bundleStorage: string): PlanCardFeatureDefinition => {
     return {
         id: 'storage-boost-b2b',
@@ -162,7 +153,7 @@ export const getShortStorageFeatureB2B = (bytes: number): PlanCardFeatureDefinit
     };
 };
 
-export const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
+const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     return {
         id: 'drive-end-to-end-encryption',
         text: c('new_plans: feature').t`End-to-end encryption`,
@@ -198,15 +189,6 @@ export const getVersionHistory = (options?: 'generic' | 365 | '10y'): PlanCardFe
         text: c('new_plans: feature').t`Recover previous file versions`,
         included: true,
         icon: IcClockRotateLeft,
-    };
-};
-
-export const getPremiumFeatures = (): PlanCardFeatureDefinition => {
-    return {
-        id: 'premium-features',
-        text: c('Plan description')
-            .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
-        included: true,
     };
 };
 

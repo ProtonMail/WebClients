@@ -47,7 +47,7 @@ export const getDefaultTestimonial = (): PlanConfigTestimonial => ({
     ],
 });
 
-export const ExpirationTime = ({
+const ExpirationTime = ({
     subscription,
     cancellablePlan,
 }: {

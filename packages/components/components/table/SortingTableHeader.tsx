@@ -14,7 +14,7 @@ interface SortingTableCellHeaderProps {
     direction?: SORT_DIRECTION;
 }
 
-export const SortingTableCellHeader = ({ content, onClick = noop, direction }: SortingTableCellHeaderProps) => {
+const SortingTableCellHeader = ({ content, onClick = noop, direction }: SortingTableCellHeaderProps) => {
     return (
         <div className="flex-nowrap inline-flex *:self-center">
             <button type="button" className="link mr-2" onClick={onClick}>

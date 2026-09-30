@@ -7,7 +7,7 @@ import noop from '@proton/utils/noop';
 import BasePasswordStrengthIndicator from './BasePasswordStrengthIndicator';
 import type { PasswordPenalties, PasswordScore, PasswordStrengthIndicatorVariant } from './interface';
 
-export const loadWasm = () => {
+const loadWasm = () => {
     return import(/* webpackChunkName: "pass-rust-core/password" */ '@protontech/pass-rust-core/password');
 };
 

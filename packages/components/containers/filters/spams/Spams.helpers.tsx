@@ -4,9 +4,6 @@ import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 
 import type { SpamItem, SpamListAction, SpamListActionName, SpamLocation } from './Spams.interfaces';
 
-export const isSpamDomain = (item: SpamItem) => 'domain' in item;
-export const isSpamEmail = (item: SpamItem) => 'email' in item;
-
 type ApiCallState = 'success' | 'fail';
 export const getNotificationByAction = (action: SpamListActionName, apiCallstate: ApiCallState, item: SpamItem) => {
     const isDomain = 'domain' in item;

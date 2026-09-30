@@ -29,7 +29,7 @@ export interface ConfirmActionModalProps {
     size?: ModalSize;
 }
 
-export const ConfirmActionModal = ({
+const ConfirmActionModal = ({
     cancelText = c('Action').t`Cancel`,
     submitText = c('Action').t`Submit`,
     loading,

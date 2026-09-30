@@ -13,7 +13,7 @@ export interface SceneRef {
 /**
  * Configuration constants for the STL preview
  */
-export const STL_PREVIEW_CONFIG = {
+const STL_PREVIEW_CONFIG = {
     backgroundColor: 0xffffff,
     fov: 45,
     zoomFactor: 1.5,
@@ -29,7 +29,7 @@ export const STL_PREVIEW_CONFIG = {
  * Creates and configures a Three.js scene with the appropriate background
  * @returns {THREE.Scene} The configured Three.js scene
  */
-export function setupScene(): THREE.Scene {
+function setupScene(): THREE.Scene {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(STL_PREVIEW_CONFIG.backgroundColor);
     return scene;
@@ -41,7 +41,7 @@ export function setupScene(): THREE.Scene {
  * @param {number} height - The viewport height
  * @returns {THREE.PerspectiveCamera} The configured camera
  */
-export function setupCamera(width: number, height: number): THREE.PerspectiveCamera {
+function setupCamera(width: number, height: number): THREE.PerspectiveCamera {
     const camera = new THREE.PerspectiveCamera(STL_PREVIEW_CONFIG.fov, width / height, 0.1, 1000);
     camera.position.set(0, 0, 5);
     return camera;
@@ -52,7 +52,7 @@ export function setupCamera(width: number, height: number): THREE.PerspectiveCam
  * @param {HTMLDivElement} container - The DOM element to render into
  * @returns {THREE.WebGLRenderer} The configured renderer
  */
-export function setupRenderer(container: HTMLDivElement): THREE.WebGLRenderer {
+function setupRenderer(container: HTMLDivElement): THREE.WebGLRenderer {
     const width = container.clientWidth;
     const height = container.clientHeight;
 
@@ -79,7 +79,7 @@ export function setupRenderer(container: HTMLDivElement): THREE.WebGLRenderer {
  * Creates a basic material for the STL model
  * @returns {THREE.MeshBasicMaterial} The configured material
  */
-export function createMaterial(): THREE.MeshBasicMaterial {
+function createMaterial(): THREE.MeshBasicMaterial {
     return new THREE.MeshBasicMaterial({
         color: STL_PREVIEW_CONFIG.objectColor,
         side: THREE.DoubleSide,
@@ -90,7 +90,7 @@ export function createMaterial(): THREE.MeshBasicMaterial {
  * Creates a material for the wireframe edges of the STL model
  * @returns {THREE.LineBasicMaterial} The configured edge material
  */
-export function createEdgeMaterial(): THREE.LineBasicMaterial {
+function createEdgeMaterial(): THREE.LineBasicMaterial {
     return new THREE.LineBasicMaterial({
         color: STL_PREVIEW_CONFIG.edgeColor,
         transparent: true,
@@ -104,7 +104,7 @@ export function createEdgeMaterial(): THREE.LineBasicMaterial {
  * @param {HTMLElement} domElement - The DOM element to attach controls to
  * @returns {TrackballControls} The configured controls
  */
-export function setupControls(camera: THREE.PerspectiveCamera, domElement: HTMLElement): TrackballControls {
+function setupControls(camera: THREE.PerspectiveCamera, domElement: HTMLElement): TrackballControls {
     const controls = new TrackballControls(camera, domElement);
 
     controls.rotateSpeed = STL_PREVIEW_CONFIG.rotateSpeed;
@@ -126,7 +126,7 @@ export function setupControls(camera: THREE.PerspectiveCamera, domElement: HTMLE
  * @param {TrackballControls} controls - The controls to configure
  * @returns {{ group: THREE.Group }} An object containing the model group
  */
-export function loadSTLModel(
+function loadSTLModel(
     stlData: ArrayBuffer,
     scene: THREE.Scene,
     camera: THREE.PerspectiveCamera,
@@ -181,7 +181,7 @@ export function loadSTLModel(
  * @param {THREE.PerspectiveCamera} camera - The camera to render from
  * @param {TrackballControls} controls - The controls to update each frame
  */
-export function setupAnimation(
+function setupAnimation(
     renderer: THREE.WebGLRenderer,
     scene: THREE.Scene,
     camera: THREE.PerspectiveCamera,
@@ -202,7 +202,7 @@ export function setupAnimation(
  * @param {THREE.WebGLRenderer} renderer - The renderer to resize
  * @returns {() => void} The resize handler function
  */
-export function setupResizeHandler(
+function setupResizeHandler(
     container: HTMLDivElement,
     camera: THREE.PerspectiveCamera,
     renderer: THREE.WebGLRenderer

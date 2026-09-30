@@ -21,7 +21,7 @@ export const getTargetEnvironment = (
     return earlyAccessScope.Value ?? earlyAccessScope.DefaultValue;
 };
 
-export const updateVersionCookieHelper = (
+const updateVersionCookieHelper = (
     cookieName: string,
     environment: Environment | undefined,
     earlyAccessScopeFeature: Feature<Environment> | undefined

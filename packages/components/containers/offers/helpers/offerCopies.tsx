@@ -8,47 +8,22 @@ import { IcLifeRing } from '@proton/icons/icons/IcLifeRing';
 import { IcPassShieldOk } from '@proton/icons/icons/IcPassShieldOk';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUsersPlus } from '@proton/icons/icons/IcUsersPlus';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { PlanIDs } from '@proton/payments/core/interface';
-import { getRenewCycle } from '@proton/payments/core/renewals';
+import { CYCLE } from '@proton/payments/core/constants';
 import {
     BRAND_NAME,
-    CALENDAR_APP_NAME,
     CALENDAR_SHORT_APP_NAME,
     DARK_WEB_MONITORING_NAME,
-    DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,
-    LUMO_SHORT_APP_NAME,
-    MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
-    PASS_SHORT_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
-import { MailFeatureFlag } from '@proton/unleash/Flags';
-import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 import type { PlanCardFeatureIcon } from '../../payments/features/interface';
 import { getOwnDomainText } from '../../payments/features/mail';
-import {
-    get2FAAuthenticatorText,
-    getProtonPassFeatureTooltipText,
-    getSecureVaultSharingText,
-    getUnlimitedHideMyEmailAliasesText,
-    getUnlimitedLoginsAndNotesText,
-} from '../../payments/features/pass';
-
-export const getMonthsFree = (cycle: CYCLE) => {
-    if (cycle === CYCLE.THIRTY) {
-        return 6;
-    }
-    if (cycle === CYCLE.FIFTEEN) {
-        return 3;
-    }
-    return 0;
-};
+import { getSecureVaultSharingText, getUnlimitedHideMyEmailAliasesText } from '../../payments/features/pass';
 
 const getStorageSizeFeature = (storageSize: string, vpn?: boolean) => {
     return {
@@ -74,17 +49,6 @@ export const getUnlimitedFeatures = () => {
             name: c('specialoffer: Deal details').t`Secure cloud storage`,
             tooltip: c('specialoffer: Tooltip')
                 .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`,
-        },
-    ];
-};
-
-export const getMailDealFeatures = () => {
-    return [
-        getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 })),
-        {
-            name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME),
-            tooltip: c('summer2023: Tooltip')
-                .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
         },
     ];
 };
@@ -115,136 +79,11 @@ export const getUnlimitedDealFeatures = () => {
     ];
 };
 
-const getPremiumVPNFeature = () => ({
-    name: PLAN_NAMES[PLANS.VPN2024],
-    tooltip: c('BF2024: Tooltip')
-        .t`Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.`,
-});
-
-const getPremiumPasswordManagerFeature = () => ({
-    name: PLAN_NAMES[PLANS.PASS],
-    tooltip: c('BF2024: Tooltip')
-        .t`Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${DARK_WEB_MONITORING_NAME} and more.`,
-});
-
-const getPremiumDriveFeature = () => ({
-    name: PLAN_NAMES[PLANS.DRIVE],
-    tooltip: c('BF2024: Tooltip')
-        .t`Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.`,
-});
-
-const getPremiumInboxFeature = (domains?: number, addresses?: number, scribe?: boolean) => {
-    const plan = PLAN_NAMES[PLANS.MAIL];
-    const name = c('BF2024: Deal details').t`${plan} and ${CALENDAR_SHORT_APP_NAME}`;
-    const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
-
-    if (addresses) {
-        if (domains === 1) {
-            return {
-                name,
-                tooltip: c('bf2023: Tooltip')
-                    .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
-            };
-        }
-
-        if (scribe === false) {
-            return {
-                name,
-                tooltip: c('BF2024: Tooltip').ngettext(
-                    msgid`Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email address, support for custom email domains, unlimited hide-my-email aliases and more.`,
-                    `Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email addresses, support for custom email domains, unlimited hide-my-email aliases and more.`,
-                    addresses
-                ),
-            };
-        }
-
-        return {
-            name,
-            tooltip: scribeToLumo
-                ? c('BF2024: Tooltip').ngettext(
-                      msgid`Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email address, support for custom email domains, ${LUMO_SHORT_APP_NAME} writing assistant, unlimited hide-my-email aliases and more.`,
-                      `Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email addresses, support for custom email domains, ${LUMO_SHORT_APP_NAME} writing assistant, unlimited hide-my-email aliases and more.`,
-                      addresses
-                  )
-                : c('BF2024: Tooltip').ngettext(
-                      msgid`Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email address, support for custom email domains, ${BRAND_NAME} Scribe writing assistant, unlimited hide-my-email aliases and more.`,
-                      `Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email addresses, support for custom email domains, ${BRAND_NAME} Scribe writing assistant, unlimited hide-my-email aliases and more.`,
-                      addresses
-                  ),
-        };
-    }
-
-    if (scribe === false) {
-        return {
-            name,
-            tooltip: c('BF2024: Tooltip')
-                .t`Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.`,
-        };
-    }
-
-    return {
-        name,
-        tooltip: scribeToLumo
-            ? c('BF2024: Tooltip')
-                  .t`Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${LUMO_SHORT_APP_NAME} writing assistant, unlimited hide-my-email aliases and more.`
-            : c('BF2024: Tooltip')
-                  .t`Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${BRAND_NAME} Scribe writing assistant, unlimited hide-my-email aliases and more.`,
-    };
-};
-
 export const getMailPlusInboxFeatures = (): { name: string }[] => {
     return [
         { ...getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 }), true) }, // true remove the tooltip
         { name: c('BF2024: Deal details').t`Unlimited folders, labels and filters` },
         { name: getOwnDomainText() },
-    ];
-};
-
-export const getLumoPlusFeatures = () => {
-    return [
-        { name: c('BF2025: Deal details').t`Unlimited daily chats` },
-        { name: c('BF2025: Deal details').t`Access advanced AI models` },
-        { name: c('BF2025: Deal details').t`Full chat history with easy search and favorites` },
-    ];
-};
-
-export const getPassPlusFeatures = () => {
-    return [
-        { name: getUnlimitedHideMyEmailAliasesText() },
-        { name: c('BF2025: Deal details').t`Built-in 2FA authenticator` },
-        { name: DARK_WEB_MONITORING_NAME },
-    ];
-};
-
-export const getLifetimePassFeatures = () => {
-    return [
-        { name: c('BF2024: Deal details').t`1 user account` },
-        {
-            name: c('BF2024: Deal details').t`One-time payment, lifetime deal`,
-            tooltip: getProtonPassFeatureTooltipText(),
-        },
-        { name: c('BF2024: Deal details').t`Unlimited logins, credit cards, hide-my-email aliases and more` },
-        { name: getSecureVaultSharingText() },
-        { name: getUnlimitedHideMyEmailAliasesText() },
-        { name: get2FAAuthenticatorText() },
-        { name: c('BF2024: Deal details').t`Password health alerts` },
-        { name: DARK_WEB_MONITORING_NAME },
-        { name: c('BF2024: Deal details').t`Advanced account protection` },
-    ];
-};
-
-export const getFamilyPassFeatures = () => {
-    return [
-        { name: c('BF2024: Deal details').t`6 user accounts` },
-        { name: getUnlimitedLoginsAndNotesText() },
-        { name: getSecureVaultSharingText() },
-        { name: getUnlimitedHideMyEmailAliasesText() },
-        { name: get2FAAuthenticatorText() },
-        { name: c('BF2024: Deal details').t`Password health alerts` },
-        { name: DARK_WEB_MONITORING_NAME },
-        { name: c('BF2024: Deal details').t`Advanced account protection` },
-        { name: c('BF2024: Deal details').t`Admin panel to manage your family` },
-        { name: c('BF2024: Deal details').t`Easily add or remove users` },
     ];
 };
 
@@ -267,133 +106,6 @@ export const getTryPassPlus2024Features = (): { name: string; icon: PlanCardFeat
     { name: DARK_WEB_MONITORING_NAME, icon: IcPassShieldOk },
 ];
 
-export const getUnlimitedVPNFeatures = () => [
-    getPremiumVPNFeature(),
-    getPremiumPasswordManagerFeature(),
-    getPremiumDriveFeature(),
-    getPremiumInboxFeature(),
-];
-
-export const getUnlimitedInboxFeatures = () => [
-    {
-        name: c('BF2025: Deal details')
-            .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
-    },
-    getStorageSizeFeature(humanSize({ bytes: 500 * 1024 ** 3, fraction: 0 })),
-    { name: c('BF2025: Deal details').t`Stronger protection against cyber threats` },
-];
-
-export const getUnlimitedInboxFeaturesForPass = () => [
-    { name: c('BF2024: Deal details').t`1 user account` },
-    getPremiumPasswordManagerFeature(),
-    getPremiumInboxFeature(3, 15, false),
-    getPremiumVPNFeature(),
-    getPremiumDriveFeature(),
-    //...getPremiumNonInboxFeature(),
-];
-
-export const getDuoFeatures = () => [
-    {
-        name: c('BF2025: Deal details')
-            .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
-    },
-    { name: c('BF2025: Deal details').t`Individual accounts for you and a partner` },
-    { name: c('BF2025: Deal details').t`2 TB data storage` },
-];
-
-export const getFamilyFeaturesforUnlimited = () => [
-    {
-        name: c('BF2025: Deal details')
-            .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
-    },
-    { name: c('BF2025: Deal details').t`Individual accounts for 6 users` },
-    { name: c('BF2025: Deal details').t`3 TB data storage` },
-];
-
-export const getFamilyFeaturesforDuoOrFamily = () => [
-    { name: c('BF2025: Deal details').t`Individual accounts for 6 users` },
-    { name: c('BF2025: Deal details').t`3 TB data storage` },
-    {
-        name: c('BF2025: Deal details')
-            .t`All premium features of ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
-    },
-];
-
-export const getDriveFeatures = () => [
-    { name: c('BF2024: Deal details').t`200 GB storage: 40x your current plan` },
-    { name: c('BF2024: Deal details').t`Online document editor` },
-    { name: c('BF2024: Deal details').t`Recover previous file versions` },
-];
-
-export const getVPNFeatures = () => [
-    { name: c('BF2025: Deal details').t`Connect 10 devices at once` },
-    { name: c('BF2025: Deal details').t`Access 15,000+ servers in 120+ countries` },
-    {
-        name: c('BF2025: Deal details').t`Block ads, trackers, and malware`,
-        tooltip: c('BF2025: Tooltip')
-            .t`Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.`,
-    },
-];
-
-export const getVisionaryFeatures = () => [
-    // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
-    getStorageSizeFeature(c('specialoffer: Deal details').t`3 TB`),
-    {
-        name: c('specialoffer: Deal details').t`6 users`,
-        tooltip: c('specialoffer: Tooltip')
-            .t`Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.`,
-    },
-    {
-        name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME, DRIVE_SHORT_APP_NAME),
-        tooltip: c('specialoffer: Tooltip')
-            .t`All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.`,
-    },
-    {
-        name: getPremium(VPN_SHORT_APP_NAME),
-        tooltip: c('specialoffer: Tooltip')
-            .t`Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.`,
-    },
-    {
-        name: c('specialoffer: Deal details').t`Premium early access`,
-        tooltip: c('specialoffer: Tooltip')
-            .t`Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.`,
-    },
-    {
-        name: c('specialoffer: Deal details').t`Support online privacy`,
-    },
-];
-
-export const getFamilyFeatures = () => [
-    {
-        name: c('familyOffer_2023:Deal details').t`Up to 6 users`,
-    },
-    {
-        name: c('familyOffer_2023: Deal details').t`3 TB total storage`,
-        tooltip: c('familyOffer_2023: Tooltip')
-            .t`Storage space is shared between family members across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}.`,
-    },
-    {
-        name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME),
-        tooltip: c('familyOffer_2023:Tooltip')
-            .t`Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.`,
-    },
-    {
-        name: getPremium(DRIVE_SHORT_APP_NAME),
-        tooltip: c('familyOffer_2023:Tooltip')
-            .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`,
-    },
-    {
-        name: getPremium(VPN_SHORT_APP_NAME),
-        tooltip: c('familyOffer_2023:Tooltip')
-            .t`Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
-    },
-    {
-        name: getPremiumPasswordManagerText(),
-        tooltip: c('summer2023: Tooltip')
-            .t`Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.`,
-    },
-];
-
 export const getDealBilledDescription = (
     cycle: CYCLE,
     amount: ReactElement,
@@ -413,23 +125,6 @@ export const getDealBilledDescription = (
             return c('specialoffer: Offers').jt`Billed at ${amount} for 15 months`;
         case CYCLE.THIRTY:
             return c('specialoffer: Offers').jt`Billed at ${amount} for 30 months`;
-        default:
-            return null;
-    }
-};
-
-export const getStandardPriceDescription = (cycle: CYCLE, amount: ReactElement): string | string[] | null => {
-    switch (cycle) {
-        case CYCLE.MONTHLY:
-            return c('specialoffer: Offers').jt`Standard price ${amount} for 1 month`;
-        case CYCLE.YEARLY:
-            return c('specialoffer: Offers').jt`Standard price ${amount} for 12 months`;
-        case CYCLE.TWO_YEARS:
-            return c('specialoffer: Offers').jt`Standard price ${amount} for 24 months`;
-        case CYCLE.FIFTEEN:
-            return c('specialoffer: Offers').jt`Standard price ${amount} for 15 months`;
-        case CYCLE.THIRTY:
-            return c('specialoffer: Offers').jt`Standard price ${amount} for 30 months`;
         default:
             return null;
     }
@@ -459,33 +154,4 @@ export const getDealDurationText = (cycle: CYCLE | undefined) => {
 
 export const getDealDuration = (cycle: CYCLE): ReactElement | null => {
     return <Fragment key={`deal-duration-${cycle}`}>{getDealDurationText(cycle)}</Fragment>;
-};
-
-export const getRenewDescription = (
-    cycle: CYCLE,
-    discountedAmount: ReactElement,
-    regularAmount: ReactElement,
-    discount: number,
-    planIDs: PlanIDs
-): string | string[] | null => {
-    switch (cycle) {
-        case CYCLE.MONTHLY:
-            return c('BF2024: Offers').jt`Renews after 1 month at ${regularAmount}.`;
-        case CYCLE.YEARLY:
-            return c('specialoffer: Offers')
-                .jt`Renews after 1 year at a discounted price of ${discountedAmount} instead of ${regularAmount} (${discount}% discount)`;
-        case CYCLE.TWO_YEARS:
-            // using getRenewCycle is a placeholder. Ideally this part should be reworked if this component is ever used
-            // again during black friday or otherwise. Please contact the payments team for the help with implementation
-            // of the correct renewal noticed. I couldn't do it properly here because the component was unused at the
-            // time when I applied this change. I still did this change to have some sort of fallback - just in case.
-            if (getRenewCycle(planIDs, cycle) === CYCLE.TWO_YEARS) {
-                return c('specialoffer: Offers')
-                    .jt`Renews after 2 years at a discounted price of ${discountedAmount} instead of ${regularAmount} (${discount}% discount)`;
-            }
-
-            return c('specialoffer: Offers').jt`The special offer is valid for the first 2 years`;
-        default:
-            return null;
-    }
 };

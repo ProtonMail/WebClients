@@ -1,39 +1,10 @@
 import { format } from 'date-fns';
-import startCase from 'lodash/startCase';
 import { c } from 'ttag';
 
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
-import type { PassEvent } from './interface';
-
 export const PAGINATION_LIMIT = 50;
 export const ALL_EVENTS_DEFAULT = 'All Events';
-
-enum Event {
-    InviteCreated = 'InviteCreated',
-    InviteAccepted = 'InviteAccepted',
-    InviteDeleted = 'InviteDeleted',
-    InviteRejected = 'InviteRejected',
-    NewUserInviteCreated = 'NewUserInviteCreated',
-    NewUserInviteDeleted = 'NewUserInviteDeleted',
-    ItemCreated = 'ItemCreated',
-    ItemUpdated = 'ItemUpdated',
-    ItemUsed = 'ItemUsed',
-    ItemRead = 'ItemRead',
-    ItemDeleted = 'ItemDeleted',
-    ItemTrashed = 'ItemTrashed',
-    ItemUntrashed = 'ItemUntrashed',
-    ItemChangedFlags = 'ItemChangedFlags',
-    ShareCreated = 'ShareCreated',
-    ShareDeleted = 'ShareDeleted',
-    ShareUpdated = 'ShareUpdated',
-    VaultCreated = 'VaultCreated',
-    VaultDeleted = 'VaultDeleted',
-    VaultUpdated = 'VaultUpdated',
-    BreachCustomEmailCreated = 'BreachCustomEmailCreated',
-    BreachCustomEmailValidated = 'BreachCustomEmailValidated',
-    BreachCustomEmailDeleted = 'BreachCustomEmailDeleted',
-}
 
 export const getDesciptionText = (event: string): string => {
     switch (event) {
@@ -154,19 +125,16 @@ export const getConnectionEvents = (items: EventObject[]): EventObject[] => {
     return [defaultEvent, ...items];
 };
 
-const eventKeys = Object.keys(Event) as (keyof typeof Event)[];
-export const uniquePassEventsArray = [ALL_EVENTS_DEFAULT, ...eventKeys];
-
 export const getLocalTimeStringFromDate = (time: Date) => {
     return format(time, "yyyy-MM-dd'T'HH:mm:ssxxx");
 };
 
-export const isPartialIP = (input: string) => {
+const isPartialIP = (input: string) => {
     const ipPartialRegex = /^(\d{1,3}\.){0,3}\d{0,3}$/;
     return ipPartialRegex.test(input);
 };
 
-export const isPartialEmail = (input: string) => {
+const isPartialEmail = (input: string) => {
     if (input.includes('@')) {
         const [localPart, domainPart] = input.split('@');
         if (localPart && !domainPart.includes(' ')) {
@@ -180,7 +148,7 @@ export const isPartialEmail = (input: string) => {
     return false;
 };
 
-export const isEmail = (input: string) => {
+const isEmail = (input: string) => {
     if (input.includes('@')) {
         const [localPart, domainPart] = input.split('@');
         if (localPart && !domainPart.includes(' ')) {
@@ -216,10 +184,4 @@ export const downloadPassEvents = async (response: any) => {
 
     const blob = await response.blob();
     downloadFile(blob, match[1]);
-};
-
-export const getUniqueEventTypes = (eventLogs: PassEvent[]) => {
-    const events = eventLogs.map((log) => log.eventType);
-    const uniqueEvents = ['All Events', ...new Set(events)];
-    return uniqueEvents.map((event) => startCase(event));
 };

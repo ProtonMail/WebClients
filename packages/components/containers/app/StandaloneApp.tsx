@@ -46,7 +46,7 @@ const locales = {};
  * This store is both accessible on public and private apps.
  * Only basic reducers are meant to be added there.
  */
-export const setupStore = () => {
+const setupStore = () => {
     return configureStore({
         reducer: { ...apiStatusReducer },
         devTools: process.env.NODE_ENV !== 'production',

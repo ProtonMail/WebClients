@@ -33,7 +33,7 @@ export const getSafeCountryCallingCode = (country: string) => {
     }
 };
 
-export const getCountryFromCallingCode = (callingCode: string) => {
+const getCountryFromCallingCode = (callingCode: string) => {
     const countries = metadata.country_calling_codes[callingCode as keyof typeof metadata.country_calling_codes];
     if (!countries || countries.length === 0) {
         return;

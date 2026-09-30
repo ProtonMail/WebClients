@@ -5,7 +5,7 @@ import { jest } from '@jest/globals';
 import ModalsContext from '../containers/modals/modalsContext';
 import type useModals from '../hooks/useModals';
 
-export const mockModals: ReturnType<typeof useModals> = {
+const mockModals: ReturnType<typeof useModals> = {
     createModal: jest.fn<any>(),
     removeModal: jest.fn(),
     hideModal: jest.fn(),

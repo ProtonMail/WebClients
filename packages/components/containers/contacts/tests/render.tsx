@@ -71,13 +71,13 @@ export const notificationManager = {
     setOffset: jest.fn(),
 };
 
-export const config = {
+const config = {
     APP_NAME: APPS.PROTONMAIL,
     APP_VERSION: 'test-version',
     DATE_VERSION: 'test-date-version',
 } as ProtonConfig;
 
-export const eventManager = {
+const eventManager = {
     start: jest.fn(),
     stop: jest.fn(),
     call: jest.fn(),
@@ -183,7 +183,7 @@ export const getCard = (cards: any[], encrypted = false) => {
     ).Data;
 };
 
-export const componentsHookWrapper = ({ children }: { children: any }) => {
+const componentsHookWrapper = ({ children }: { children: any }) => {
     const { Wrapper } = getStoreWrapper();
     return (
         <Wrapper>

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { RecoveryItem, RecoveryItemIds } from '@proton/account/safetyReview/recoveryState/recoveryState';
 
-export const getEmailCopy = (item: Extract<RecoveryItem, { id: 'recoveryEmail' }>) => {
+const getEmailCopy = (item: Extract<RecoveryItem, { id: 'recoveryEmail' }>) => {
     if (!item.data.hasValue) {
         return c('Recovery score item').t`Add recovery email`;
     }
@@ -15,7 +15,7 @@ export const getEmailCopy = (item: Extract<RecoveryItem, { id: 'recoveryEmail' }
     return c('Recovery score item').t`Email recovery enabled`;
 };
 
-export const getPhoneCopy = (item: Extract<RecoveryItem, { id: 'recoveryPhone' }>) => {
+const getPhoneCopy = (item: Extract<RecoveryItem, { id: 'recoveryPhone' }>) => {
     if (!item.data.hasValue) {
         return c('Recovery score item').t`Add recovery phone`;
     }

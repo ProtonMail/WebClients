@@ -7,11 +7,11 @@ import { isSavablePaymentMethod } from '@proton/payments/core/payment-methods/he
 import { isExistingPaymentMethod } from '@proton/payments/core/type-guards';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-export function backendWillChangeDefaultPaymentMethod(selectedPaymentMethod: PaymentMethodType): boolean {
+function backendWillChangeDefaultPaymentMethod(selectedPaymentMethod: PaymentMethodType): boolean {
     return !isExistingPaymentMethod(selectedPaymentMethod) && isSavablePaymentMethod(selectedPaymentMethod);
 }
 
-export function frontendMustChangeDefaultPaymentMethod(
+function frontendMustChangeDefaultPaymentMethod(
     methods: SavedPaymentMethod[],
     selectedPaymentMethod: PaymentMethodType
 ): boolean {
@@ -28,7 +28,7 @@ export function frontendMustChangeDefaultPaymentMethod(
     return userSelectedNonDefaultSavedMethod;
 }
 
-export function showDefaultPaymentMethodMessage(
+function showDefaultPaymentMethodMessage(
     methods: SavedPaymentMethod[],
     selectedPaymentMethodTypeOrValue: PaymentMethodType | undefined
 ): boolean {

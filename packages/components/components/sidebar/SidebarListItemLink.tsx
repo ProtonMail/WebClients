@@ -39,14 +39,6 @@ const SidebarListItemLink = forwardRef<HTMLAnchorElement, Props>(
     }
 );
 
-export const SubSidebarListItemLink = ({ children, ...rest }: Props) => {
-    return (
-        <SidebarListItemLink itemClassName="navigation-sublink" {...rest}>
-            {children}
-        </SidebarListItemLink>
-    );
-};
-
 SidebarListItemLink.displayName = 'SidebarListItemLink';
 
 export default SidebarListItemLink;

@@ -147,7 +147,7 @@ export const getUpToNUsers = (numberOfUsers: number): PlanCardFeatureDefinition 
     };
 };
 
-export const getCTA = (planName: string) => {
+const getCTA = (planName: string) => {
     return c('new_plans: action').t`Get ${planName}`;
 };
 
@@ -294,7 +294,7 @@ export const getPassLifetimePlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getPassProPlan = (plan: Plan): ShortPlan => {
+const getPassProPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.PASS_PRO,
         title: plan.Title,
@@ -318,7 +318,7 @@ export const getPassProPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
+const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
     const title = plan?.Title || '';
     return {
         plan: PLANS.PASS_BUSINESS,
@@ -467,7 +467,7 @@ export const getVPNPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getVPNPassPlan = (plan: Plan): ShortPlan => {
+const getVPNPassPlan = (plan: Plan): ShortPlan => {
     const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
     return {
         plan: PLANS.VPN2024,
@@ -689,7 +689,7 @@ export const getDuoPlan = ({ freePlan, plan }: { freePlan: FreePlanDefault; plan
     };
 };
 
-export const getVPNProPlan = (plan: Plan): ShortPlan => {
+const getVPNProPlan = (plan: Plan): ShortPlan => {
     const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
     return {
         plan: PLANS.VPN_PRO,
@@ -732,7 +732,7 @@ const getVpnBusinessFeatures = () => {
     ];
 };
 
-export const getVPNBusinessPlan = (plan: Plan): ShortPlan => {
+const getVPNBusinessPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.VPN_BUSINESS,
         title: plan.Title,
@@ -782,7 +782,7 @@ export const getVPNPassProPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getMeetB2CPlan = (plan: Plan): ShortPlan => {
+const getMeetB2CPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.MEET,
         title: plan.Title,
