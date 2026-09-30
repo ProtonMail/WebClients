@@ -4490,6 +4490,12 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Parolă de rezervă incorectă. Reîncercați."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Parolă secundară incorectă. Încercați din nou."
       ]
     },
     "error": {
@@ -7184,6 +7190,12 @@
       ],
       "support team": [
         "echipa de asistență"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Aveți o factură neachitată. ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Aveți o factură neachitată cu scadența la ${ dueDate }. ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -8163,6 +8175,9 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "Pay it": [
+        "Plătiți-o"
       ]
     },
     "Link label (optional)": {

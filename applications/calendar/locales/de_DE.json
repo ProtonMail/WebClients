@@ -4444,6 +4444,12 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
       ]
     },
     "error": {
@@ -7086,6 +7092,12 @@
       ],
       "support team": [
         "Support-Team"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung vom ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -7711,7 +7723,7 @@
         "Premium-Domain"
       ],
       "Primary": [
-        "Primäre"
+        "Primär"
       ],
       "Proration": [
         "Anteilsmäßige Verrechnung"
@@ -8059,6 +8071,9 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "Pay it": [
+        "Bezahlen"
       ]
     },
     "Link label (optional)": {

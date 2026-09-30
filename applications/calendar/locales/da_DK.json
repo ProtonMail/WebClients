@@ -4444,6 +4444,12 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Forkert backupadgangskode. Prøv igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Forkert anden adgangskode. Prøv igen."
       ]
     },
     "error": {
@@ -7086,6 +7092,12 @@
       ],
       "support team": [
         "supportteam"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en åben faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en åben faktura til ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -8059,6 +8071,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Pay it": [
+        "Betal"
       ]
     },
     "Link label (optional)": {
