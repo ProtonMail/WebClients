@@ -18,14 +18,38 @@ describe('extractPresentationSlideFragments', () => {
         expect(fragments[1]).toContain('Two');
     });
 
-    it('keeps nested sections inside their parent slide', () => {
+    it('splits a vertical stack into one slide per nested section', () => {
         const fragments = extractPresentationSlideFragments(
-            '<section><h2>Stack</h2><section><p>Nested</p></section></section>'
+            '<section><section><h2>First</h2></section><section><h2>Second</h2></section></section><section><h2>Third</h2></section>'
         );
 
-        expect(fragments).toHaveLength(1);
-        expect(fragments[0]).toContain('Nested');
-        expect(fragments[0].match(/class="artifact-slide-page"/g)).toHaveLength(1);
+        expect(fragments).toHaveLength(3);
+        expect(fragments[0]).toContain('First');
+        expect(fragments[0]).not.toContain('Second');
+        expect(fragments[1]).toContain('Second');
+        expect(fragments[2]).toContain('Third');
+        fragments.forEach((fragment) => {
+            expect(fragment.match(/class="artifact-slide-page"/g)).toHaveLength(1);
+        });
+    });
+
+    it('keeps content placed directly in a vertical stack as a leading slide', () => {
+        const fragments = extractPresentationSlideFragments(
+            '<section><h2>Stack intro</h2><section><p>Nested</p></section></section>'
+        );
+
+        expect(fragments).toHaveLength(2);
+        expect(fragments[0]).toContain('Stack intro');
+        expect(fragments[0]).not.toContain('Nested');
+        expect(fragments[1]).toContain('Nested');
+    });
+
+    it('does not add an empty leading slide for a whitespace-only stack wrapper', () => {
+        const fragments = extractPresentationSlideFragments(
+            '<section>\n  <section><p>A</p></section>\n  <section><p>B</p></section>\n</section>'
+        );
+
+        expect(fragments).toHaveLength(2);
     });
 
     it('returns an empty array for blank content', () => {

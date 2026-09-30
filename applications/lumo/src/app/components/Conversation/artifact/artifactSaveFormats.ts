@@ -48,17 +48,22 @@ export function getArtifactSourceDownloadLabel(type: ArtifactType): string {
     }
 
     if (type === 'presentation') {
-        return c('collider_2025:Action').t`Download source (HTML)`;
+        return c('collider_2025:Action').t`Download web presentation (HTML)`;
     }
 
     return c('collider_2025:Action').t`Download source file`;
 }
 
-export function getArtifactDownloadLabel(format: ArtifactSaveFormat): string {
+export function getArtifactDownloadLabel(format: ArtifactSaveFormat, type?: ArtifactType): string {
     switch (format) {
         case 'txt':
             return c('collider_2025:Action').t`Download plain text`;
         case 'pdf':
+            // Documents open the print dialog to "Save as PDF" (see getArtifactPdfExportMode); the
+            // ellipsis signals that a dialog follows.
+            if (type === 'document') {
+                return c('collider_2025:Action').t`Save as PDF…`;
+            }
             return c('collider_2025:Action').t`Download PDF`;
         case 'pptx':
             return c('collider_2025:Action').t`Download PPTX`;
