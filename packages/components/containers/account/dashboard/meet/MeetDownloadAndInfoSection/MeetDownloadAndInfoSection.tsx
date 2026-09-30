@@ -16,8 +16,6 @@ import DashboardUpgradePlanButton from '../../shared/DashboardDownloadSection/Da
 import { getDownloadAppText } from '../../shared/DashboardMoreInfoSection/helpers';
 import MeetDownloadSection from './MeetDownloadSection/MeetDownloadSection';
 
-// import MeetGetMoreSection from './MeetGetMoreSection/MeetGetMoreSection';
-
 const MeetDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
@@ -46,12 +44,6 @@ const MeetDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
             <DashboardGridSection position="content-left">
                 <MeetDownloadSection />
             </DashboardGridSection>
-            {/* <DashboardGridSection position="header-right">
-                <DashboardGridSectionHeader title={c('Title').t`Get more from ${BRAND_NAME}’s video conferencing`} />
-            </DashboardGridSection>
-            <DashboardGridSection position="content-right">
-                <MeetGetMoreSection subscription={subscription} />
-            </DashboardGridSection> */}
         </DashboardGrid>
     );
 };
