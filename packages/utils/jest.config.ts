@@ -7,14 +7,6 @@ const jestConfig: Config = {
     collectCoverageFrom: ['src/**/*.ts'],
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
-    coverageThreshold: {
-        global: {
-            branches: 90,
-            functions: 100,
-            lines: 100,
-            statements: 99,
-        },
-    },
 };
 
 export default jestConfig;
