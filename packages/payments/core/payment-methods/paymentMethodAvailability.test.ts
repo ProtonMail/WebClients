@@ -1015,6 +1015,7 @@ describe('Apple Pay', () => {
         'signup-v2-upgrade',
         'signup-vpn',
         'subscription',
+        'invoice',
     ] as PaymentMethodFlow[])('should display Apple Pay for allowed flow %s', (flow) => {
         const methods = buildContext({
             paymentStatus: status,
@@ -1032,7 +1033,7 @@ describe('Apple Pay', () => {
         expect(getNewMethods(methods).some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(true);
     });
 
-    it.each(['credit', 'invoice', 'add-card', 'add-paypal'] as PaymentMethodFlow[])(
+    it.each(['credit', 'add-card', 'add-paypal'] as PaymentMethodFlow[])(
         'should not display Apple Pay for disallowed flow %s',
         (flow) => {
             const methods = buildContext({
@@ -1875,6 +1876,7 @@ describe('availability per flow', () => {
             'signup-v2-upgrade',
             'signup-vpn',
             'subscription',
+            'invoice',
         ],
         [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: [
             'signup',
@@ -1885,6 +1887,7 @@ describe('availability per flow', () => {
             'signup-v2-upgrade',
             'signup-vpn',
             'subscription',
+            'invoice',
             'reservation-donation',
         ],
     };
