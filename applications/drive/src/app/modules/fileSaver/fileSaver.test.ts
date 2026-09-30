@@ -285,6 +285,40 @@ describe('FileSaver', () => {
             expect(downloadFile).toHaveBeenCalledWith(mockFile, 'test.txt');
         });
 
+        it('should surface the write error instead of closing an errored OPFS writable', async () => {
+            const writeError = new DOMException('Quota exceeded', 'QuotaExceededError');
+            const mockStreamReader = {
+                read: jest.fn().mockResolvedValueOnce({ done: false, value: new Uint8Array([1]) }),
+                releaseLock: jest.fn(),
+            };
+            const mockWritable = {
+                write: jest.fn().mockRejectedValue(writeError),
+                close: jest.fn().mockRejectedValue(new TypeError('Cannot close a ERRORED writable stream')),
+                abort: jest.fn().mockResolvedValue(undefined),
+            };
+
+            const mockStream = new ReadableStream();
+            (mockStream as any).getReader = () => mockStreamReader;
+
+            getCookieMock.mockReturnValue('opfs');
+            const mockFileHandle = {
+                createWritable: jest.fn().mockResolvedValue(mockWritable),
+                getFile: jest.fn(),
+            };
+            const mockRoot = {
+                getFileHandle: jest.fn().mockResolvedValue(mockFileHandle),
+                removeEntry: jest.fn().mockResolvedValue(undefined),
+            };
+            mockGetDirectory.mockResolvedValue(mockRoot);
+
+            await expect(fileSaver.saveAsFile(mockStream, mockMeta)).rejects.toBe(writeError);
+
+            expect(mockWritable.close).not.toHaveBeenCalled();
+            expect(mockWritable.abort).toHaveBeenCalledWith(writeError);
+            expect(mockStreamReader.releaseLock).toHaveBeenCalled();
+            expect(mockRoot.removeEntry).toHaveBeenCalledWith('test.txt');
+        });
+
         it('should use saveViaDownload for SW mechanism', async () => {
             initDownloadSWMock.mockResolvedValue(undefined);
 

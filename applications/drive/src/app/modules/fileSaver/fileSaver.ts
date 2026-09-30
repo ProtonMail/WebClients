@@ -182,9 +182,17 @@ export class FileSaver {
                     }
                     await writable.write(value);
                 }
-            } finally {
-                // Make sure to close the writer and release the reader
                 await writable.close();
+            } catch (e) {
+                // A failed write leaves the writable errored, so closing it would throw
+                // "Cannot close a ERRORED writable stream" and hide the real error.
+                await writable.abort(e).catch((abortError) => {
+                    log(
+                        `Failed to abort OPFS writable: ${abortError instanceof Error ? abortError.message : String(abortError)}`
+                    );
+                });
+                throw e;
+            } finally {
                 reader.releaseLock();
             }
 
