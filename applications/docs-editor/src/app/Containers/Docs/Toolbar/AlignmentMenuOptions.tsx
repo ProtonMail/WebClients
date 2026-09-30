@@ -3,10 +3,8 @@ import type { LexicalEditor, ElementFormatType } from 'lexical'
 import { FORMAT_ELEMENT_COMMAND } from 'lexical'
 import { c } from 'ttag'
 import { memo } from 'react'
-import { IcTextAlignCenter } from '@proton/icons/icons/IcTextAlignCenter'
-import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify'
-import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft'
-import { IcTextAlignRight } from '@proton/icons/icons/IcTextAlignRight'
+import { Icon } from '../Components/Icon'
+import * as Icons from '../Components/icons'
 import clsx from '@proton/utils/clsx'
 import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
 import ToolbarTooltip from './ToolbarTooltip'
@@ -18,7 +16,7 @@ export const AlignmentOptions = [
   {
     align: 'left',
     name: () => c('Action').t`Left align`,
-    icon: <IcTextAlignLeft />,
+    icon: <Icon data={Icons.textAlignLeft} />,
     label: <ShortcutLabel shortcut="LEFT_ALIGN_SHORTCUT" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
@@ -27,7 +25,7 @@ export const AlignmentOptions = [
   {
     align: 'center',
     name: () => c('Action').t`Center align`,
-    icon: <IcTextAlignCenter />,
+    icon: <Icon data={Icons.textAlignCenter} />,
     label: <ShortcutLabel shortcut="CENTER_ALIGN_SHORTCUT" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
@@ -36,7 +34,7 @@ export const AlignmentOptions = [
   {
     align: 'right',
     name: () => c('Action').t`Right align`,
-    icon: <IcTextAlignRight />,
+    icon: <Icon data={Icons.textAlignRight} />,
     label: <ShortcutLabel shortcut="RIGHT_ALIGN_SHORTCUT" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
@@ -46,7 +44,7 @@ export const AlignmentOptions = [
     align: 'justify',
     name: () => c('Action').t`Justify align`,
     label: <ShortcutLabel shortcut="JUSTIFY_SHORTCUT" />,
-    icon: <IcTextAlignJustify />,
+    icon: <Icon data={Icons.textAlignJustify} />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
     },

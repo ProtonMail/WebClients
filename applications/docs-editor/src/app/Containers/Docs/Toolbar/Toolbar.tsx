@@ -44,34 +44,12 @@ import { $isLinkNode } from '@lexical/link'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { Button } from '@proton/atoms/Button/Button'
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
-import { IcChevronRightFilled } from '@proton/icons/icons/IcChevronRightFilled'
-import { IcCode } from '@proton/icons/icons/IcCode'
-import { IcEraser } from '@proton/icons/icons/IcEraser'
-import { IcEye } from '@proton/icons/icons/IcEye'
-import { IcFileLines } from '@proton/icons/icons/IcFileLines'
-import { IcImage } from '@proton/icons/icons/IcImage'
-import { IcLink } from '@proton/icons/icons/IcLink'
-import { IcListBullets } from '@proton/icons/icons/IcListBullets'
-import { IcListNumbers } from '@proton/icons/icons/IcListNumbers'
-import { IcPencil } from '@proton/icons/icons/IcPencil'
-import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft'
-import { IcTextBold } from '@proton/icons/icons/IcTextBold'
-import { IcTextItalic } from '@proton/icons/icons/IcTextItalic'
-import { IcTextQuote } from '@proton/icons/icons/IcTextQuote'
-import { IcTextStrikethrough } from '@proton/icons/icons/IcTextStrikethrough'
-import { IcTextUnderline } from '@proton/icons/icons/IcTextUnderline'
-import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
+import { Icon } from '../Components/Icon'
+import * as Icons from '../Components/icons'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
 import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
 import { FontColorMenu } from '../../../Components/ColorMenu'
-import AlphabeticalListIcon from '../../../Icons/AlphabeticalListIcon'
-import CheckListIcon from '../../../Icons/CheckListIcon'
-import IndentIcon from '../../../Icons/IndentIcon'
-import OutdentIcon from '../../../Icons/OutdentIcon'
-import RedoIcon from '../../../Icons/RedoIcon'
-import TableIcon from '../../../Icons/TableIcon'
-import UndoIcon from '../../../Icons/UndoIcon'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
 import { INSERT_PAGE_BREAK_COMMAND } from '../Plugins/PageBreak/PageBreakNode'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/Commands'
@@ -85,9 +63,6 @@ import { ToolbarSeparator } from './ToolbarSeparator'
 
 import { INSERT_HORIZONTAL_RULE_COMMAND } from '@lexical/react/LexicalHorizontalRuleNode'
 import { INSERT_INLINE_COMMENT_COMMAND } from '../Commands'
-import AddCommentIcon from '../../../Icons/AddCommentIcon'
-import DividerIcon from '../../../Icons/DividerIcon'
-import RomanListIcon from '../../../Icons/RomanListIcon'
 import { $isCustomListNode } from '../Plugins/CustomList/$isCustomListNode'
 import { INSERT_CUSTOM_ORDERED_LIST_COMMAND } from '../Plugins/CustomList/CustomListCommands'
 import type { CustomListMarker, CustomListStyleType } from '../Plugins/CustomList/CustomListTypes'
@@ -105,8 +80,6 @@ import type { BlockType } from '../Plugins/BlockTypePlugin'
 import { blockTypeToBlockName, SET_BLOCK_TYPE_COMMAND } from '../Plugins/BlockTypePlugin'
 import { EditorEvent, TooltipKey, useTooltipOnce, EditorSystemMode } from '@proton/docs-shared'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import SpeechBubblePenIcon from '../../../Icons/SpeechBubblePenIcon'
-import { SpotlightIllustration } from '../../../Icons/SpotlightIllustration'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
 import { isHTMLElement } from '../Utils/guard'
 import { stepFontSize } from './stepFontSize'
@@ -652,21 +625,21 @@ export default function DocumentEditorToolbar({
   const listTypes = [
     {
       type: 'check',
-      icon: <CheckListIcon className="h-4 w-4 fill-current" />,
+      icon: <Icon data={Icons.checkList} viewBox="0 0 33 33" className="h-4 w-4 fill-current" />,
       tooltip: <ShortcutLabel shortcut="CHECK_LIST_SHORTCUT" />,
       name: c('Action').t`Check List`,
       onClick: formatCheckList,
     },
     {
       type: 'bullet',
-      icon: <IcListBullets />,
+      icon: <Icon data={Icons.listBullets} />,
       tooltip: <ShortcutLabel shortcut="BULLET_LIST_SHORTCUT" />,
       name: c('Action').t`Bulleted List`,
       onClick: formatBulletList,
     },
     {
       type: 'number',
-      icon: <IcListNumbers />,
+      icon: <Icon data={Icons.listNumbers} />,
       tooltip: <ShortcutLabel shortcut="NUMBERED_LIST_SHORTCUT" />,
       name: c('Action').t`Numbered List`,
       onClick: formatNumberedList,
@@ -789,7 +762,7 @@ export default function DocumentEditorToolbar({
           shortcut: 'UNDO_SHORTCUT',
           onClick: undo,
           disabled: !isEditable || !canUndo,
-          icon: <UndoIcon className="h-4 w-4 fill-current" />,
+          icon: <Icon data={Icons.undo} className="h-4 w-4 fill-current" />,
         },
         {
           id: 'redo-button',
@@ -798,7 +771,7 @@ export default function DocumentEditorToolbar({
           shortcut: 'REDO_SHORTCUT',
           onClick: redo,
           disabled: !isEditable || !canRedo,
-          icon: <RedoIcon className="h-4 w-4 fill-current" />,
+          icon: <Icon data={Icons.redo} className="h-4 w-4 fill-current" />,
         },
       ],
     },
@@ -918,7 +891,7 @@ export default function DocumentEditorToolbar({
           id: 'indent-dropdown',
           type: 'button',
           label: c('Action').t`Indent`,
-          icon: <IndentIcon className="h-4 w-4 fill-current" />,
+          icon: <Icon data={Icons.indent} viewBox="0 0 33 33" className="h-4 w-4 fill-current" />,
           disabled: !isEditable,
           onClick: () => {
             activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
@@ -929,7 +902,7 @@ export default function DocumentEditorToolbar({
           id: 'outdent-dropdown',
           type: 'button',
           label: c('Action').t`Outdent`,
-          icon: <OutdentIcon className="h-4 w-4 fill-current" />,
+          icon: <Icon data={Icons.outdent} viewBox="0 0 33 33" className="h-4 w-4 fill-current" />,
           disabled: !isEditable,
           onClick: () => {
             activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
@@ -952,7 +925,7 @@ export default function DocumentEditorToolbar({
           onClick: formatBold,
           disabled: !isEditable,
           active: isBold,
-          icon: <IcTextBold />,
+          icon: <Icon data={Icons.textBold} />,
         },
         {
           id: 'italic-button',
@@ -962,7 +935,7 @@ export default function DocumentEditorToolbar({
           onClick: formatItalic,
           disabled: !isEditable,
           active: isItalic,
-          icon: <IcTextItalic />,
+          icon: <Icon data={Icons.textItalic} />,
         },
         {
           id: 'underline-button',
@@ -972,7 +945,7 @@ export default function DocumentEditorToolbar({
           onClick: formatUnderline,
           disabled: !isEditable,
           active: isUnderline,
-          icon: <IcTextUnderline />,
+          icon: <Icon data={Icons.textUnderline} />,
         },
         {
           id: 'strikethrough-button',
@@ -982,7 +955,7 @@ export default function DocumentEditorToolbar({
           onClick: formatStrikethrough,
           disabled: !isEditable,
           active: isStrikethrough,
-          icon: <IcTextStrikethrough />,
+          icon: <Icon data={Icons.textStrikethrough} />,
         },
         {
           id: 'font-color-dropdown',
@@ -1037,7 +1010,7 @@ export default function DocumentEditorToolbar({
           disabled: !isEditable,
           active: isLink,
           onClick: editLink,
-          icon: <IcLink className="h-4 w-4 fill-current" />,
+          icon: <Icon data={Icons.link} className="h-4 w-4 fill-current" />,
         },
         {
           id: 'image-insert-button',
@@ -1045,7 +1018,7 @@ export default function DocumentEditorToolbar({
           label: c('Action').t`Insert image`,
           disabled: !isEditable,
           onClick: insertImage,
-          icon: <IcImage className="h-4 w-4 fill-current" />,
+          icon: <Icon data={Icons.image} className="h-4 w-4 fill-current" />,
         },
         {
           id: 'table-button',
@@ -1054,7 +1027,7 @@ export default function DocumentEditorToolbar({
           shortcut: 'INSERT_TABLE_SHORTCUT',
           disabled: !isEditable,
           onClick: insertTable,
-          icon: <TableIcon className="h-4 w-4 fill-current" />,
+          icon: <Icon data={Icons.table} viewBox="0 0 33 33" className="h-4 w-4 fill-current" />,
         },
         {
           id: 'comment-button',
@@ -1063,7 +1036,7 @@ export default function DocumentEditorToolbar({
           shortcut: 'INSERT_COMMENT_SHORTCUT',
           disabled: !isEditable,
           onClick: insertComment,
-          icon: <AddCommentIcon className="h-4 w-4 fill-current" />,
+          icon: <Icon data={Icons.addComment} className="h-4 w-4 fill-current" />,
         },
       ],
     },
@@ -1076,7 +1049,7 @@ export default function DocumentEditorToolbar({
           label: c('Action').t`Divider`,
           disabled: !isEditable,
           onClick: insertHorizontalRule,
-          icon: <DividerIcon className="h-4 w-4 fill-current" />,
+          icon: <Icon data={Icons.divider} className="h-4 w-4 fill-current" />,
         },
       ],
       showInToolbar: false,
@@ -1088,7 +1061,8 @@ export default function DocumentEditorToolbar({
           id: 'alignment-button',
           type: 'dropdown',
           active: elementFormat !== 'left',
-          label: () => AlignmentOptions.find(({ align }) => align === elementFormat)?.icon || <IcTextAlignLeft />,
+          label: () =>
+            AlignmentOptions.find(({ align }) => align === elementFormat)?.icon || <Icon data={Icons.textAlignLeft} />,
           disabled: !isEditable,
           dropdownProps: DropdownContentProps,
           menu: (
@@ -1109,7 +1083,9 @@ export default function DocumentEditorToolbar({
           type: 'dropdown',
           active: listTypes.some(({ type }) => type === listType),
           label: () =>
-            listTypes.find(({ type }) => type === listType)?.icon || <CheckListIcon className="h-4 w-4 fill-current" />,
+            listTypes.find(({ type }) => type === listType)?.icon || (
+              <Icon data={Icons.checkList} viewBox="0 0 33 33" className="h-4 w-4 fill-current" />
+            ),
           disabled: !isEditable,
           dropdownProps: DropdownContentProps,
           menu: (
@@ -1139,9 +1115,9 @@ export default function DocumentEditorToolbar({
                 data-testid="dropdown-alphabetical-list"
                 content={
                   <>
-                    <AlphabeticalListIcon className="color-weak h-4 w-4" />
+                    <Icon data={Icons.alphabeticalList} className="color-weak h-4 w-4" />
                     {c('Action').t`Alphabetical`}
-                    <IcChevronRightFilled className="ml-auto" />
+                    <Icon data={Icons.chevronRightFilled} className="ml-auto" />
                   </>
                 }
                 hasCaret={false}
@@ -1210,7 +1186,7 @@ export default function DocumentEditorToolbar({
                 onClick={() => formatCustomList('upper-roman')}
                 disabled={!isEditable}
               >
-                <RomanListIcon className="color-weak h-4 w-4" />
+                <Icon data={Icons.romanList} className="color-weak h-4 w-4" />
                 {c('Action').t`Roman`}
               </DropdownMenuButton>
             </DropdownMenu>
@@ -1230,7 +1206,7 @@ export default function DocumentEditorToolbar({
           shortcut: 'CODE_BLOCK_TOGGLE_SHORTCUT',
           disabled: !isEditable || isSuggestionMode,
           onClick: formatCode,
-          icon: <IcCode />,
+          icon: <Icon data={Icons.code} />,
           active: isCodeBlock,
         },
         {
@@ -1240,7 +1216,7 @@ export default function DocumentEditorToolbar({
           shortcut: 'QUOTE_TOGGLE_SHORTCUT',
           disabled: !isEditable,
           onClick: formatQuote,
-          icon: <IcTextQuote />,
+          icon: <Icon data={Icons.textQuote} />,
           active: isQuote,
         },
       ],
@@ -1254,7 +1230,7 @@ export default function DocumentEditorToolbar({
           label: c('Action').t`Clear formatting`,
           disabled: !isEditable,
           onClick: clearFormatting,
-          icon: <IcEraser />,
+          icon: <Icon data={Icons.eraser} />,
         },
       ],
       showInToolbar: false,
@@ -1306,7 +1282,7 @@ export default function DocumentEditorToolbar({
           ),
           disabled: !isEditable,
           onClick: insertPageBreak,
-          icon: <IcFileLines className="h-4 w-4 fill-current" />,
+          icon: <Icon data={Icons.fileLines} className="h-4 w-4 fill-current" />,
         },
       ],
       showInToolbar: false,
@@ -1393,7 +1369,7 @@ export default function DocumentEditorToolbar({
           onClick={toggleOverflowMenu}
           ref={overflowMenuAnchorRef}
         >
-          <IcThreeDotsVertical />
+          <Icon data={Icons.threeDotsVertical} />
         </DropdownButton>
         <Dropdown
           isOpen={isOverflowMenuOpen}
@@ -1431,7 +1407,7 @@ export default function DocumentEditorToolbar({
             show={shouldShowSuggestionTooltip}
             content={
               <div className="flex items-center gap-4 md:flex-nowrap">
-                <SpotlightIllustration className="h-12 w-12 shrink-0" />
+                <Icon data={Icons.spotlightIllustration} viewBox="0 0 48 48" size={12} className="h-12 w-12 shrink-0" />
                 <div className="flex flex-col gap-1">
                   <div className="text-sm font-bold">{c('Title').t`Explore the New Suggestion Mode`}</div>
                   <div className="text-sm">{c('Description')
@@ -1456,19 +1432,19 @@ export default function DocumentEditorToolbar({
               content={
                 <>
                   <div className={clsx('contents *:[grid-row:1]', isEditMode ? '*:opacity-100' : '*:[opacity:0]')}>
-                    <IcPencil className="flex-shrink-0 [grid-column:1]" />
+                    <Icon data={Icons.pencil} className="flex-shrink-0 [grid-column:1]" />
                     <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
                       .t`Editing`}</span>
                   </div>
                   <div
                     className={clsx('contents *:[grid-row:1]', isSuggestionMode ? '*:opacity-100' : '*:[opacity:0]')}
                   >
-                    <SpeechBubblePenIcon className="h-4 w-4 flex-shrink-0 [grid-column:1]" />
+                    <Icon data={Icons.speechBubblePen} className="h-4 w-4 flex-shrink-0 [grid-column:1]" />
                     <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
                       .t`Suggesting`}</span>
                   </div>
                   <div className={clsx('contents *:[grid-row:1]', isPreviewMode ? '*:opacity-100' : '*:[opacity:0]')}>
-                    <IcEye className="flex-shrink-0 [grid-column:1]" />
+                    <Icon data={Icons.eye} className="flex-shrink-0 [grid-column:1]" />
                     <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
                       .t`Viewing`}</span>
                   </div>
@@ -1486,7 +1462,7 @@ export default function DocumentEditorToolbar({
                       onClick={() => {
                         onUserModeChange(EditorUserMode.Edit)
                       }}
-                      icon={<IcPencil size={4} />}
+                      icon={<Icon data={Icons.pencil} size={4} />}
                       label={c('Info').t`Editing`}
                       description={c('Description').t`Edit document directly`}
                       data-testid={`edit-dropdown-button${isPreviewModeToolbar ? '-preview' : ''}`}
@@ -1494,7 +1470,7 @@ export default function DocumentEditorToolbar({
                     {canShowSuggestionsButton && (
                       <InteractionDropdownButton
                         isActive={isSuggestionMode}
-                        icon={<SpeechBubblePenIcon className="h-4 w-4" />}
+                        icon={<Icon data={Icons.speechBubblePen} className="h-4 w-4" />}
                         label={c('Info').t`Suggesting`}
                         description={c('Description').t`Edits become suggestions`}
                         onClick={() => {
@@ -1509,7 +1485,7 @@ export default function DocumentEditorToolbar({
                 <InteractionDropdownButton
                   isActive={isPreviewMode}
                   label={c('Info').t`Viewing`}
-                  icon={<IcEye size={4} />}
+                  icon={<Icon data={Icons.eye} size={4} />}
                   description={c('Description').t`Read or print final document`}
                   onClick={() => {
                     onUserModeChange(EditorUserMode.Preview)
