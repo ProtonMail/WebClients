@@ -48,7 +48,7 @@ interface GooglePayButtonProps extends ChargebeeWrapperProps {
     onClick?: (payload: PayButtonOnClickPayload) => void;
 }
 
-export const GooglePayButton = ({ formInvalid, loading, onClick, ...props }: GooglePayButtonProps) => {
+export const GooglePayButton = ({ formInvalid, loading, onClick, width, ...props }: GooglePayButtonProps) => {
     const initializing = props.googlePay.initializing;
     const disabled = props.disabled;
 
@@ -74,7 +74,7 @@ export const GooglePayButton = ({ formInvalid, loading, onClick, ...props }: Goo
     }, [initializing, disabled, renderFakeButton]);
 
     return (
-        <div className="relative">
+        <div className="relative" style={{ width }}>
             {fakeGooglePayButton}
             <div className={clsx('flex flex-column', renderFakeButton && 'visibility-hidden absolute')}>
                 <ChargebeeIframe
