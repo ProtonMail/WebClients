@@ -1,6 +1,8 @@
 import { startAccountSessionsListener, startPersistListener } from '@proton/account';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
 import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';
+import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';
 import { calendarSettingsHeartbeatListener } from '@proton/redux-shared-store/calendarSettingsHeartbeatListener';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
@@ -31,4 +33,5 @@ export const start = ({
     if (features?.accountSessions) {
         startAccountSessionsListener(startListening);
     }
+    startOffersDeliveryListener(startListening, { appReady: bootstrapEvent });
 };
