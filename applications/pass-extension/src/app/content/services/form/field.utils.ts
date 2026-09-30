@@ -7,7 +7,7 @@ import { withContext } from '../../context/context';
 import { getFrameID } from '../../utils/frame';
 import type { FieldHandle } from './field';
 
-export const validateCCField = (field: FieldHandle): boolean => {
+const validateCCField = (field: FieldHandle): boolean => {
     switch (field.fieldSubType) {
         case CCFieldType.EXP:
         case CCFieldType.EXP_YEAR:

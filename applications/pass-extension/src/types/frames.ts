@@ -1,10 +1,8 @@
-import type { FieldType, FormType } from '@protontech/autofill/types';
+import type { FormType } from '@protontech/autofill/types';
 
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull, Result } from '@proton/pass/types/utils/index';
-import type { FrameId } from '@proton/pass/types/worker/runtime';
 
-import type { AbstractField } from './field';
 import type { Coords } from './inline';
 
 export type FrameAttributes = {
@@ -16,7 +14,7 @@ export type FrameAttributes = {
     ariaLabel?: string;
 };
 
-export type FrameQueryType = 'position' | 'form';
+type FrameQueryType = 'position' | 'form';
 
 /** Query payload sent to parent frame to get child iframe position */
 export type FrameQueryDTO = {
@@ -59,7 +57,4 @@ export type FrameField = {
  * types if data needs to be transformed before relaying */
 export type FrameRelay<T, Relayed = {}> = T & ({ type: 'initial' } | ({ type: 'relay' } & Relayed));
 
-export type FrameFormMatch = { formId: string; formType: FormType; fields: FrameFieldMatch[] };
-export type FrameFieldMatch<T extends FieldType = FieldType> = { fieldId: string } & AbstractField<T>;
 export type FrameFormsResult = { formTypes: FormType[]; telemetry: AutofillPageTelemetryDimensions };
-export type FrameForms = { frameId: FrameId } & FrameFormsResult;

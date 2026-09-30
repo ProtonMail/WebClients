@@ -23,8 +23,6 @@ export type MessageHandlerCallback<
     M extends WorkerMessageWithSender = Extract<WorkerMessageWithSender, { type: T }>,
 > = (message: M, sender: Runtime.MessageSender) => WorkerMessageResponse<T> | Promise<WorkerMessageResponse<T>>;
 
-export type ExtensionMessageBroker = ReturnType<typeof createMessageBroker>;
-
 type MessageBrokerOptions = {
     /** Allowed messages for externally connectable websites. */
     allowExternal: WorkerMessageType[];

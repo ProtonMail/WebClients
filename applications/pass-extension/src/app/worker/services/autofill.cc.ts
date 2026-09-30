@@ -13,7 +13,7 @@ import type { AbstractField } from '../../../types/field';
 import type { FrameAttributes, FrameField } from '../../../types/frames';
 import { WorkerMessageType } from '../../../types/messages';
 
-export type ClusterFrameForm = { fields: ClusterFrameFormItem[]; formId: string };
+type ClusterFrameForm = { fields: ClusterFrameFormItem[]; formId: string };
 export type ClusterFrame = { forms: ClusterFrameForm[]; frameAttributes: FrameAttributes };
 export type ClusterFrameFormItem =
     | ({ type: 'field'; fieldId: string } & AbstractField<FieldType>)
@@ -255,7 +255,7 @@ export const clusterCCFormFields = (
     return result;
 };
 
-export const resolveFormClusters = async (tabId: TabId, frames: FrameId[]): Promise<Map<FrameId, ClusterFrame>> => {
+const resolveFormClusters = async (tabId: TabId, frames: FrameId[]): Promise<Map<FrameId, ClusterFrame>> => {
     const clusters = new Map<FrameId, ClusterFrame>();
 
     await Promise.all(

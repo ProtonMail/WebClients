@@ -6,7 +6,7 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import noop from '@proton/utils/noop';
 
 export type PrivacyService = keyof (PrivacyServices.Static & typeof chromeAPI.privacy.services);
-export type PrivacyServiceKey = keyof PrivacyServices.Static;
+type PrivacyServiceKey = keyof PrivacyServices.Static;
 
 export const getBrowserAutofillSettings = (): PrivacyService[] => {
     switch (BUILD_TARGET) {
