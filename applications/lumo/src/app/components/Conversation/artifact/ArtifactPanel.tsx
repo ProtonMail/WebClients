@@ -15,11 +15,14 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { createThrottledProgressCallback, yieldToMainThreadPaint } from '../../../util/export/exportUiHelpers';
+import { downloadBlob } from '../../../util/pdf/downloadBlob';
 import {
+    bucketArtifactContentLength,
     sendArtifactContentCopiedEvent,
     sendArtifactDownloadedEvent,
     sendArtifactWebpageViewToggledEvent,
 } from '../../../util/telemetry';
+import type { ArtifactDownloadFormat, ArtifactDownloadResult } from '../../../util/telemetry';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import DropdownMenu from '../../DropdownMenu';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
@@ -37,8 +40,10 @@ import { ArtifactSaveToDriveDropdown } from './ArtifactSaveToDriveDropdown';
 import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
 import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
 import { markdownToPlainText } from './artifactMarkdownPlainText';
-import { artifactSupportsPdfExport, buildArtifactFileName, downloadArtifactPdf } from './artifactPdfExport';
+import { artifactSupportsPdfExport, buildArtifactFileName, exportArtifactPdf } from './artifactPdfExport';
+import type { ArtifactPdfExportResult } from './artifactPdfExport';
 import { artifactSupportsPptxExport, downloadArtifactPptx } from './artifactPptxExport';
+import { buildStandalonePresentationHtml } from './artifactPresentationStandalone';
 import type { ArtifactRegistry } from './artifactRegistry';
 import type { ArtifactSaveFormat } from './artifactSaveFormats';
 import { artifactSupportsSaveToDrive, getArtifactSaveFormats } from './artifactSaveFormats';
@@ -103,6 +108,23 @@ export type ArtifactPanelLayout = 'docked' | 'mobile' | 'fullscreen';
 
 const getVersionLabel = (versionNumber: number, totalVersions: number) => {
     return c('collider_2025:Info').t`v${versionNumber} of ${totalVersions}`;
+};
+
+const SOURCE_DOWNLOAD_MIME_TYPES: Record<string, string> = {
+    md: 'text/markdown;charset=utf-8',
+    html: 'text/html;charset=utf-8',
+};
+
+const getSourceDownloadMimeType = (extension: string): string => {
+    return SOURCE_DOWNLOAD_MIME_TYPES[extension] ?? 'text/plain;charset=utf-8';
+};
+
+const getPdfDownloadTelemetryResult = (result: ArtifactPdfExportResult): ArtifactDownloadResult => {
+    if (result === 'unavailable' || result === 'failed') {
+        return 'error';
+    }
+
+    return result;
 };
 
 const getArtifactHeaderTypeLabel = (type?: ArtifactType, language?: string): string | undefined => {
@@ -572,97 +594,86 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         setSaveToDriveModal(true);
     };
 
-    const handleDownload = () => {
-        const ext = ARTIFACT_TYPE_CONFIG[artifact.type].downloadExt(artifact);
-        const filename = buildArtifactFileName(artifact, ext);
-        const blob = new Blob([artifact.content], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        a.click();
-        URL.revokeObjectURL(url);
+    const contentLengthBucket = bucketArtifactContentLength(artifact.content.length);
+
+    const reportDownload = (format: ArtifactDownloadFormat, result: ArtifactDownloadResult) => {
         sendArtifactDownloadedEvent({
-            format: 'source',
+            format,
             artifactType: artifact.type,
             layout,
-            result: 'success',
+            result,
+            contentLengthBucket,
         });
+    };
+
+    const handleDownload = async () => {
+        const ext = ARTIFACT_TYPE_CONFIG[artifact.type].downloadExt(artifact);
+        const filename = buildArtifactFileName(artifact, ext);
+        try {
+            // A presentation's raw content is bare <section> fragments that don't open as a deck, so
+            // it is downloaded as a self-contained reveal.js page instead.
+            const content =
+                artifact.type === 'presentation' ? await buildStandalonePresentationHtml(artifact) : artifact.content;
+            downloadBlob(new Blob([content], { type: getSourceDownloadMimeType(ext) }), filename);
+            reportDownload('source', 'success');
+        } catch {
+            reportDownload('source', 'error');
+            createNotification({
+                type: 'error',
+                text: c('collider_2025: Error').t`Could not download this artifact.`,
+            });
+        }
     };
 
     const handleDownloadTxt = () => {
         const plainText = markdownToPlainText(artifact.content);
         const filename = buildArtifactFileName(artifact, 'txt');
-        const blob = new Blob([plainText], { type: 'text/plain;charset=utf-8' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        a.click();
-        URL.revokeObjectURL(url);
-        sendArtifactDownloadedEvent({
-            format: 'txt',
-            artifactType: artifact.type,
-            layout,
-            result: 'success',
-        });
+        downloadBlob(new Blob([plainText], { type: 'text/plain;charset=utf-8' }), filename);
+        reportDownload('txt', 'success');
     };
 
     const handleDownloadPdf = async () => {
         setExportingDownloadKind('pdf');
         await yieldToMainThreadPaint();
+
+        let result: ArtifactPdfExportResult = 'failed';
         try {
-            const result = await downloadArtifactPdf(artifact, {
+            result = await exportArtifactPdf(artifact, {
                 onProgress: throttledExportProgress,
             });
-            if (result === 'success') {
-                sendArtifactDownloadedEvent({
-                    format: 'pdf',
-                    artifactType: artifact.type,
-                    layout,
-                    result: 'success',
-                });
-                createNotification({
-                    type: 'success',
-                    text: c('collider_2025: Info').t`PDF downloaded.`,
-                });
-            } else if (result === 'print_fallback') {
-                sendArtifactDownloadedEvent({
-                    format: 'pdf',
-                    artifactType: artifact.type,
-                    layout,
-                    result: 'print_fallback',
-                });
-                createNotification({
-                    type: 'warning',
-                    text: c('collider_2025: Info')
-                        .t`PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.`,
-                });
-            } else {
-                sendArtifactDownloadedEvent({
-                    format: 'pdf',
-                    artifactType: artifact.type,
-                    layout,
-                    result: 'error',
-                });
-                createNotification({
-                    type: 'error',
-                    text: c('collider_2025: Error').t`Could not export this artifact as PDF.`,
-                });
-            }
         } catch {
-            sendArtifactDownloadedEvent({
-                format: 'pdf',
-                artifactType: artifact.type,
-                layout,
-                result: 'error',
+            result = 'failed';
+        } finally {
+            setExportingDownloadKind(null);
+        }
+
+        reportDownload('pdf', getPdfDownloadTelemetryResult(result));
+
+        if (result === 'success') {
+            createNotification({
+                type: 'success',
+                text: c('collider_2025: Info').t`PDF downloaded.`,
             });
+        } else if (result === 'print_dialog') {
+            // No toast: the print dialog is the feedback, and in Chrome it blocks until closed, so a
+            // toast would only appear after the user has already saved or cancelled.
+        } else if (result === 'print_fallback') {
+            createNotification({
+                type: 'warning',
+                text: c('collider_2025: Info')
+                    .t`PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.`,
+            });
+        } else if (result === 'image_fallback') {
+            createNotification({
+                type: 'warning',
+                text: c('collider_2025: Info')
+                    .t`Couldn't open the print dialog, so the PDF was downloaded with each page as an image.`,
+            });
+        } else {
             createNotification({
                 type: 'error',
                 text: c('collider_2025: Error').t`Could not export this artifact as PDF.`,
             });
-        } finally {
-            setExportingDownloadKind(null);
         }
     };
 
@@ -674,35 +685,20 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                 onProgress: throttledExportProgress,
             });
             if (result === 'success') {
-                sendArtifactDownloadedEvent({
-                    format: 'pptx',
-                    artifactType: artifact.type,
-                    layout,
-                    result: 'success',
-                });
+                reportDownload('pptx', 'success');
                 createNotification({
                     type: 'success',
                     text: c('collider_2025: Info').t`PPTX downloaded.`,
                 });
             } else {
-                sendArtifactDownloadedEvent({
-                    format: 'pptx',
-                    artifactType: artifact.type,
-                    layout,
-                    result: 'error',
-                });
+                reportDownload('pptx', 'error');
                 createNotification({
                     type: 'error',
                     text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
                 });
             }
         } catch {
-            sendArtifactDownloadedEvent({
-                format: 'pptx',
-                artifactType: artifact.type,
-                layout,
-                result: 'error',
-            });
+            reportDownload('pptx', 'error');
             createNotification({
                 type: 'error',
                 text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,

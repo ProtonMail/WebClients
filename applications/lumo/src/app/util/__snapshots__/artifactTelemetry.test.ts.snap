@@ -107,10 +107,22 @@ exports[`artifact event payloads matches the agreed payloads 1`] = `
     "lumo-artifact-event",
     {
       "artifactType": "presentation",
+      "contentLengthBucket": "1k-10k",
       "eventType": "downloaded",
       "format": "pptx",
       "layout": "docked",
       "result": "error",
+    },
+  ],
+  [
+    "lumo-artifact-event",
+    {
+      "artifactType": "document",
+      "contentLengthBucket": "10k+",
+      "eventType": "downloaded",
+      "format": "pdf",
+      "layout": "fullscreen",
+      "result": "print_dialog",
     },
   ],
   [

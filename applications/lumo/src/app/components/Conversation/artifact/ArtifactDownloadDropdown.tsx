@@ -74,7 +74,7 @@ export const ArtifactDownloadDropdown = ({
                             }}
                         >
                             <LumoIcon name="FileText" size={16} className="mr-2 shrink-0 color-weak" />
-                            {getArtifactDownloadLabel('pdf')}
+                            {getArtifactDownloadLabel('pdf', artifactType)}
                         </DropdownMenuButton>
                     )}
                     {onDownloadPptx && (

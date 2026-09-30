@@ -1,5 +1,9 @@
 import type * as HtmlDocumentCaptureModule from '../export/htmlDocumentCapture';
-import { htmlDocumentToPdfBytes, htmlSlideDocumentsToPdfBytes } from './htmlDocumentToPdfBytes';
+import {
+    computeDocumentPageStarts,
+    htmlDocumentToPdfBytes,
+    htmlSlideDocumentsToPdfBytes,
+} from './htmlDocumentToPdfBytes';
 
 const measureMocks = {
     captureTargetHeight: undefined as number | undefined,
@@ -46,14 +50,15 @@ const mockJsPDF = jest.fn(() => {
     };
 });
 
-const mockHtml2canvas = jest.fn(async (element: HTMLElement) => {
-    return {
-        width: element.offsetWidth || 794,
-        height: element.offsetHeight || 400,
-        toDataURL: () => {
-            return 'data:image/png;base64,abc';
-        },
-    };
+const createCanvas = (width: number, height: number): HTMLCanvasElement => {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    return canvas;
+};
+
+const mockHtml2canvas = jest.fn(async (element: HTMLElement, options?: { height?: number }) => {
+    return createCanvas(element.offsetWidth || 794, options?.height ?? (element.offsetHeight || 400));
 });
 
 jest.mock('jspdf', () => {
@@ -96,9 +101,9 @@ describe('htmlDocumentToPdfBytes', () => {
             Record<string, unknown> | undefined;
         expect(captureOptions).toEqual(
             expect.objectContaining({
+                y: 0,
                 height: expect.any(Number),
-                windowHeight: expect.any(Number),
-                scale: 1,
+                scale: 2,
             })
         );
         expect(mockJsPDF).toHaveBeenCalledWith({ unit: 'pt', format: 'a4', orientation: 'portrait' });
@@ -106,26 +111,34 @@ describe('htmlDocumentToPdfBytes', () => {
         expect(mockOutput).toHaveBeenCalledWith('arraybuffer');
     });
 
-    it('splits very tall documents into vertical html2canvas slices', async () => {
+    it('captures one page-sized slice per PDF page and keeps every slice inside the margins', async () => {
         measureMocks.captureTargetHeight = 10000;
 
-        mockHtml2canvas.mockImplementation(async (_element: HTMLElement, options?: { height?: number; y?: number }) => {
-            return {
-                width: 794,
-                height: options?.height ?? 400,
-                toDataURL: () => {
-                    return 'data:image/png;base64,abc';
-                },
-            };
-        });
-
         const html = `<!DOCTYPE html><html><head><style>.pdf-export-body { margin: 0; }</style></head><body><article class="artifact-markdown"><p>Tall document</p></article></body></html>`;
+        const onProgress = jest.fn();
 
-        await htmlDocumentToPdfBytes(html, { pageMarginPt: 54 });
+        await htmlDocumentToPdfBytes(html, { pageMarginPt: 54, onProgress });
 
-        expect(mockHtml2canvas.mock.calls.length).toBeGreaterThan(1);
-        expect(mockAddPage).toHaveBeenCalled();
-        expect(mockAddImage.mock.calls.length).toBeGreaterThan(1);
+        // 595 × 842pt page, 54pt margins → 487 × 734pt content box → 734 × 794 / 487 ≈ 1196.6 CSS px per page.
+        const pageHeightCss = ((842 - 108) * 794) / (595 - 108);
+        const expectedPages = Math.ceil(10000 / pageHeightCss);
+        expect(mockHtml2canvas).toHaveBeenCalledTimes(expectedPages);
+        expect(mockAddPage).toHaveBeenCalledTimes(expectedPages - 1);
+        expect(onProgress).toHaveBeenLastCalledWith(expectedPages, expectedPages);
+
+        const sliceOffsets = mockHtml2canvas.mock.calls.map((call) => {
+            return (call[1] as { y: number }).y;
+        });
+        expect(sliceOffsets[0]).toBe(0);
+        expect(sliceOffsets[1]).toBeCloseTo(pageHeightCss);
+
+        mockAddImage.mock.calls.forEach((call) => {
+            const [, , x, y, width, height] = call as [string, string, number, number, number, number];
+            expect(x).toBe(54);
+            expect(y).toBe(54);
+            expect(width).toBe(595 - 108);
+            expect(y + height).toBeLessThanOrEqual(842 - 54 + 0.001);
+        });
     });
 
     it('captures each matched page separately when pageSelector is provided', async () => {
@@ -193,9 +206,24 @@ describe('htmlSlideDocumentsToPdfBytes', () => {
         });
 
         expect(mockHtml2canvas).toHaveBeenCalledTimes(2);
-        expect(mockJsPDF).toHaveBeenCalledWith({ unit: 'pt', format: 'a4', orientation: 'landscape' });
+        expect(mockJsPDF).toHaveBeenCalledWith({ unit: 'pt', format: [960, 540], orientation: 'landscape' });
         expect(mockAddPage).toHaveBeenCalledTimes(1);
         expect(mockAddImage).toHaveBeenCalledTimes(2);
+    });
+
+    it('fits slides onto a full-bleed 16:9 page', async () => {
+        mockGetWidth.mockReturnValue(960);
+        mockGetHeight.mockReturnValue(540);
+        mockHtml2canvas.mockImplementation(async () => {
+            return createCanvas(1920, 1080);
+        });
+
+        await htmlSlideDocumentsToPdfBytes(
+            [`<!DOCTYPE html><html><body><section class="artifact-slide-page"><h2>One</h2></section></body></html>`],
+            { viewportWidth: 960, orientation: 'landscape' }
+        );
+
+        expect(mockAddImage).toHaveBeenCalledWith(expect.any(String), 'PNG', 0, 0, 960, 540);
     });
 
     it('throws when no slide documents are provided', async () => {
@@ -222,5 +250,25 @@ describe('htmlSlideDocumentsToPdfBytes', () => {
         expect(onProgress).toHaveBeenNthCalledWith(1, 1, 3);
         expect(onProgress).toHaveBeenNthCalledWith(2, 2, 3);
         expect(onProgress).toHaveBeenNthCalledWith(3, 3, 3);
+    });
+});
+
+describe('computeDocumentPageStarts', () => {
+    it('returns a single page when the content fits', () => {
+        expect(computeDocumentPageStarts([100, 200], 900, 1000)).toEqual([0]);
+    });
+
+    it('breaks at the last block boundary that fits instead of mid-line', () => {
+        // Blocks start at 0, 400, 950, 1300, 1800; page height 1000.
+        expect(computeDocumentPageStarts([400, 950, 1300, 1800], 2100, 1000)).toEqual([0, 950, 1800]);
+    });
+
+    it('cuts at the page limit when no boundary leaves the page at least 30% full', () => {
+        // Only boundary on page one is at 100 (10% full) — one oversized block follows it.
+        expect(computeDocumentPageStarts([100], 2500, 1000)).toEqual([0, 1000, 2000]);
+    });
+
+    it('ignores boundaries outside the content and tolerates unsorted input', () => {
+        expect(computeDocumentPageStarts([1500, -5, 0, 700, 5000], 1800, 1000)).toEqual([0, 700, 1500]);
     });
 });
