@@ -2,7 +2,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import type { TableNode } from '@lexical/table'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import debounce from 'lodash/debounce'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
 import { c } from 'ttag'

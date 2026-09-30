@@ -47,7 +47,7 @@ import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/componen
 import { Icon } from '../Components/Icon'
 import * as Icons from '../Components/icons'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { c } from 'ttag'
 import { FontColorMenu } from '../../../Components/ColorMenu'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'

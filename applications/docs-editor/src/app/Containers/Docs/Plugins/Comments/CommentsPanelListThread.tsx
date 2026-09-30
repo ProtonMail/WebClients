@@ -1,7 +1,7 @@
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
 import type { MouseEventHandler } from 'react'
 import { useEffect, useMemo, useState } from 'react'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
