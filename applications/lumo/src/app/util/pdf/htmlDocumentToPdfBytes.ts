@@ -3,6 +3,8 @@ import type { MountedExportDocument } from '../export/htmlDocumentCapture';
 import {
     DEFAULT_VIEWPORT_WIDTH,
     PRESENTATION_CAPTURE_SCALE,
+    SLIDE_FRAME_HEIGHT_CSS,
+    SLIDE_FRAME_WIDTH_CSS,
     captureElementToCanvas,
     captureSingleSlideDocument,
     getDocumentCaptureTarget,
@@ -10,6 +12,7 @@ import {
     measureCaptureTargetHeight,
     mountExportDocument,
     prepareMountedExport,
+    releaseCanvas,
 } from '../export/htmlDocumentCapture';
 
 export type PdfExportProgressCallback = (current: number, total: number) => void;
@@ -49,17 +52,25 @@ type JsPdfInstance = {
 
 type JsPdfConstructor = new (options: {
     unit: string;
-    format: string;
+    format: string | [number, number];
     orientation?: 'portrait' | 'landscape';
 }) => JsPdfInstance;
 
 const DEFAULT_CAPTURE_SCALE = 2;
-/** Use scale 1 for long-form documents to avoid canvas limits and keep text crisp. */
-const DOCUMENT_CAPTURE_SCALE = 1;
-/** Max CSS pixels captured in one html2canvas call before falling back to vertical slices. */
-const MAX_SINGLE_CAPTURE_HEIGHT_CSS = 8000;
-/** Vertical slice size for chunked document capture. */
-const DOCUMENT_CAPTURE_CHUNK_HEIGHT_CSS = 1200;
+/**
+ * Documents are captured one PDF page at a time, so each canvas stays around 1600 × 2400 device px
+ * at scale 2 — well inside browser canvas-area limits (Safari's is the tightest) for any document length.
+ */
+const DOCUMENT_CAPTURE_SCALE = 2;
+/** Elements whose top edge is an acceptable place to start a new page. */
+const PAGE_BREAK_CANDIDATE_SELECTOR =
+    'h1, h2, h3, h4, h5, h6, p, li, tr, pre, blockquote, table, hr, img, figure, dt, dd';
+const HEADING_SELECTOR = 'h1, h2, h3, h4, h5, h6';
+/**
+ * A page must be at least this full before we break early at a block boundary; below it we'd
+ * rather cut through the oversized block than leave a mostly-empty page.
+ */
+const MIN_PAGE_FILL_RATIO = 0.3;
 
 function computeFitDimensions(
     canvasWidth: number,
@@ -99,35 +110,80 @@ function addCanvasPageToPdf(
     const imgData = canvas.toDataURL('image/png');
     const fit = computeFitDimensions(canvas.width, canvas.height, pageWidth, pageHeight);
     doc.addImage(imgData, 'PNG', fit.x, fit.y, fit.width, fit.height);
+    releaseCanvas(canvas);
 }
 
-function appendCanvasToContinuousPdf(
-    doc: JsPdfInstance,
-    canvas: HTMLCanvasElement,
-    contentWidth: number,
-    printableHeight: number,
-    margin: number,
-    hasPdfContent: { value: boolean }
-): void {
-    const imgHeight = (canvas.height * contentWidth) / canvas.width;
-    if (imgHeight <= 0) {
-        return;
+/**
+ * Collect vertical offsets (CSS px, relative to `target`) where a new page may start: the top edge of
+ * each block-level element. Offsets that would leave a heading stranded at the bottom of a page —
+ * anything between a heading's top and the start of the content that follows it — are excluded.
+ */
+export function collectDocumentPageBreakCandidates(target: HTMLElement): number[] {
+    const originTop = target.getBoundingClientRect().top;
+
+    const keepWithNextRanges = Array.from(target.querySelectorAll(HEADING_SELECTOR)).map((heading) => {
+        const rect = heading.getBoundingClientRect();
+        const nextTop = heading.nextElementSibling?.getBoundingClientRect().top ?? rect.bottom;
+        return { start: rect.top - originTop, end: Math.max(rect.bottom, nextTop) - originTop };
+    });
+
+    const candidates: number[] = [];
+    target.querySelectorAll(PAGE_BREAK_CANDIDATE_SELECTOR).forEach((element) => {
+        const top = element.getBoundingClientRect().top - originTop;
+        const strandsHeading = keepWithNextRanges.some((range) => {
+            // +1px tolerance: the first child of the following block sits at (or a sub-pixel below) its top.
+            return top > range.start && top <= range.end + 1;
+        });
+
+        if (!strandsHeading) {
+            candidates.push(top);
+        }
+    });
+
+    return candidates;
+}
+
+/**
+ * Choose where each PDF page starts (CSS px from the top of the document). Each page ends at the
+ * last break candidate that fits, so pages break between blocks rather than through a line of text;
+ * a block taller than the remaining space is cut only when no candidate leaves the page at least
+ * MIN_PAGE_FILL_RATIO full.
+ */
+export function computeDocumentPageStarts(candidates: number[], totalHeight: number, pageHeight: number): number[] {
+    if (pageHeight <= 0 || totalHeight <= pageHeight) {
+        return [0];
     }
 
-    const imgData = canvas.toDataURL('image/png');
-    let heightLeft = imgHeight;
-    let position = 0;
+    const sortedCandidates = candidates
+        .filter((offset) => {
+            return offset > 0 && offset < totalHeight;
+        })
+        .sort((a, b) => {
+            return a - b;
+        });
 
-    while (heightLeft > 0) {
-        if (hasPdfContent.value) {
-            doc.addPage();
+    const pageStarts = [0];
+    let pageStart = 0;
+
+    while (totalHeight - pageStart > pageHeight) {
+        const pageLimit = pageStart + pageHeight;
+        const earliestBreak = pageStart + pageHeight * MIN_PAGE_FILL_RATIO;
+        let nextStart = pageLimit;
+
+        for (const offset of sortedCandidates) {
+            if (offset > pageLimit) {
+                break;
+            }
+            if (offset >= earliestBreak) {
+                nextStart = offset;
+            }
         }
 
-        doc.addImage(imgData, 'PNG', margin, margin + position, contentWidth, imgHeight);
-        hasPdfContent.value = true;
-        heightLeft -= printableHeight;
-        position = heightLeft - imgHeight;
+        pageStarts.push(nextStart);
+        pageStart = nextStart;
     }
+
+    return pageStarts;
 }
 
 async function captureContinuousPdf(
@@ -136,11 +192,11 @@ async function captureContinuousPdf(
     orientation: 'portrait' | 'landscape',
     pageMarginPt: number,
     html2canvas: Html2CanvasFn,
-    JsPDF: JsPdfConstructor
+    JsPDF: JsPdfConstructor,
+    onProgress?: PdfExportProgressCallback
 ): Promise<ArrayBuffer> {
     const captureTarget = getDocumentCaptureTarget(mounted);
     const totalHeight = measureCaptureTargetHeight(captureTarget);
-    const captureScale = DOCUMENT_CAPTURE_SCALE;
 
     if (totalHeight <= 0) {
         throw new Error('PDF export produced no content.');
@@ -152,26 +208,39 @@ async function captureContinuousPdf(
     const margin = pageMarginPt;
     const contentWidth = pageWidth - margin * 2;
     const printableHeight = pageHeight - margin * 2;
-    const hasPdfContent = { value: false };
 
-    if (totalHeight <= MAX_SINGLE_CAPTURE_HEIGHT_CSS) {
-        const canvas = await captureElementToCanvas(captureTarget, viewportWidth, captureScale, html2canvas, {
-            captureFullHeight: true,
-            captureHeight: totalHeight,
+    const captureWidth = Math.max(captureTarget.scrollWidth, captureTarget.offsetWidth, viewportWidth);
+    const pageHeightCss = (printableHeight * captureWidth) / contentWidth;
+    const pageStarts = computeDocumentPageStarts(
+        collectDocumentPageBreakCandidates(captureTarget),
+        totalHeight,
+        pageHeightCss
+    );
+
+    for (let index = 0; index < pageStarts.length; index++) {
+        const sliceStart = pageStarts[index];
+        const sliceHeight = (pageStarts[index + 1] ?? totalHeight) - sliceStart;
+
+        onProgress?.(index + 1, pageStarts.length);
+        await yieldToMainThread();
+
+        const canvas = await captureElementToCanvas(captureTarget, viewportWidth, DOCUMENT_CAPTURE_SCALE, html2canvas, {
+            captureSlice: { y: sliceStart, height: sliceHeight },
         });
-        appendCanvasToContinuousPdf(doc, canvas, contentWidth, printableHeight, margin, hasPdfContent);
-    } else {
-        for (let offsetY = 0; offsetY < totalHeight; offsetY += DOCUMENT_CAPTURE_CHUNK_HEIGHT_CSS) {
-            const chunkHeight = Math.min(DOCUMENT_CAPTURE_CHUNK_HEIGHT_CSS, totalHeight - offsetY);
-            const canvas = await captureElementToCanvas(captureTarget, viewportWidth, captureScale, html2canvas, {
-                captureSlice: { y: offsetY, height: chunkHeight },
-            });
-            appendCanvasToContinuousPdf(doc, canvas, contentWidth, printableHeight, margin, hasPdfContent);
-        }
-    }
 
-    if (!hasPdfContent.value) {
-        throw new Error('PDF export produced no content.');
+        if (canvas.width <= 0 || canvas.height <= 0) {
+            throw new Error('PDF export produced an empty canvas.');
+        }
+
+        if (index > 0) {
+            doc.addPage();
+        }
+
+        // Every slice fits the printable area by construction, so it is placed at the top margin
+        // and never drawn into the bottom margin or repeated on the next page.
+        const imageHeight = (canvas.height * contentWidth) / canvas.width;
+        doc.addImage(canvas.toDataURL('image/png'), 'PNG', margin, margin, contentWidth, imageHeight);
+        releaseCanvas(canvas);
     }
 
     return doc.output('arraybuffer');
@@ -208,7 +277,7 @@ async function capturePagedPdf(
 }
 
 /**
- * Render multiple standalone slide HTML documents to one PDF, one landscape page per document.
+ * Render multiple standalone slide HTML documents to one PDF, one 16:9 page per document.
  * Each slide is mounted off-screen in the current document and captured separately.
  */
 export async function htmlSlideDocumentsToPdfBytes(
@@ -231,7 +300,9 @@ export async function htmlSlideDocumentsToPdfBytes(
     const html2canvas = html2canvasModule.default as Html2CanvasFn;
     const JsPDF = jsPDF as unknown as JsPdfConstructor;
 
-    const doc = new JsPDF({ unit: 'pt', format: 'a4', orientation });
+    // A 16:9 page (960 × 540pt = 13.33 × 7.5in, PowerPoint's default slide size) so slides fill the
+    // page instead of being letterboxed on A4.
+    const doc = new JsPDF({ unit: 'pt', format: [SLIDE_FRAME_WIDTH_CSS, SLIDE_FRAME_HEIGHT_CSS], orientation });
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
 
@@ -272,9 +343,9 @@ export async function htmlDocumentToPdfBytes(
 
     try {
         await prepareMountedExport(mounted);
-        options.onProgress?.(1, 1);
 
         if (pageSelector) {
+            options.onProgress?.(1, 1);
             return await capturePagedPdf(
                 mounted.root,
                 pageSelector,
@@ -286,7 +357,15 @@ export async function htmlDocumentToPdfBytes(
             );
         }
 
-        return await captureContinuousPdf(mounted, viewportWidth, orientation, pageMarginPt, html2canvas, JsPDF);
+        return await captureContinuousPdf(
+            mounted,
+            viewportWidth,
+            orientation,
+            pageMarginPt,
+            html2canvas,
+            JsPDF,
+            options.onProgress
+        );
     } finally {
         mounted.container.remove();
     }

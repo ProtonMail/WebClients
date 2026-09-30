@@ -1,3 +1,8 @@
+import {
+    PDF_EXPORT_BODY_CLASS,
+    PRESENTATION_CAPTURE_SCALE,
+    SLIDE_FRAME_WIDTH_CSS,
+} from '../../../util/export/htmlDocumentCapture';
 import type { HtmlSlideCaptureOptions } from '../../../util/export/htmlDocumentCapture';
 import { sanitizeArtifactExportBodyHtml } from '../../../util/export/sanitizeArtifactExportBodyHtml';
 import type { HtmlDocumentToPdfOptions } from '../../../util/pdf/htmlDocumentToPdfBytes';
@@ -25,6 +30,22 @@ const DOCUMENT_EXPORT_STYLES = `
 .artifact-markdown table { width: 100%; border-collapse: collapse; margin: 0 0 1rem; }
 .artifact-markdown th, .artifact-markdown td { border: 1px solid #d1d5db; padding: 0.5rem 0.75rem; text-align: left; }
 .artifact-markdown th { font-weight: 600; }
+.artifact-markdown { display: flow-root; }
+.artifact-markdown > :first-child { margin-top: 0; }
+.artifact-markdown pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.artifact-markdown a { color: #6d4aff; }
+.artifact-markdown img { max-width: 100%; height: auto; }
+/* Print path (Save as PDF): no page size, so the user's paper default (A4 or Letter) applies. */
+@page { margin: 18mm 16mm; }
+@media print {
+  .pdf-export-body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .artifact-markdown h1, .artifact-markdown h2, .artifact-markdown h3,
+  .artifact-markdown h4, .artifact-markdown h5, .artifact-markdown h6 { break-after: avoid; }
+  .artifact-markdown pre, .artifact-markdown blockquote, .artifact-markdown tr,
+  .artifact-markdown img, .artifact-markdown figure { break-inside: avoid; }
+  .artifact-markdown p, .artifact-markdown li { orphans: 3; widows: 3; }
+  .artifact-markdown thead { display: table-header-group; }
+}
 `;
 
 const PRESENTATION_EXPORT_STYLES = `
@@ -37,6 +58,16 @@ const PRESENTATION_EXPORT_STYLES = `
   padding: 3rem 4rem;
   background: #fff;
   overflow: visible;
+  /* Matches the preview's reveal.js 'center: true'; slides taller than 540px are fitted into
+     the 16:9 frame after capture (see fitCanvasToFrame). */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.artifact-slide-page aside.notes { display: none; }
+@page { size: 960px 540px; margin: 0; }
+@media print {
+  .artifact-slide-page { height: 540px; overflow: hidden; break-after: page; }
 }
 .artifact-slide-page h1, .artifact-slide-page h2, .artifact-slide-page h3,
 .artifact-slide-page h4, .artifact-slide-page h5, .artifact-slide-page h6 {
@@ -97,14 +128,14 @@ export const DOCUMENT_PDF_EXPORT_OPTIONS: HtmlDocumentToPdfOptions = {
 };
 
 export const PRESENTATION_PDF_EXPORT_OPTIONS: Omit<HtmlDocumentToPdfOptions, 'pageSelector'> = {
-    viewportWidth: 960,
+    viewportWidth: SLIDE_FRAME_WIDTH_CSS,
     orientation: 'landscape',
-    scale: 1,
+    scale: PRESENTATION_CAPTURE_SCALE,
 };
 
 export const PRESENTATION_PPTX_EXPORT_OPTIONS: HtmlSlideCaptureOptions = {
-    viewportWidth: 960,
-    scale: 1,
+    viewportWidth: SLIDE_FRAME_WIDTH_CSS,
+    scale: PRESENTATION_CAPTURE_SCALE,
 };
 
 export function artifactSupportsPdfExport(type: ArtifactType): type is PdfExportableArtifactType {
@@ -125,14 +156,20 @@ export function artifactSupportsPptxExport(type: ArtifactType): type is 'present
     return type === 'presentation';
 }
 
-function buildArtifactFileStem(title: string): string {
-    return title
-        .trim()
-        .toLowerCase()
-        .replace(/[\\/:*?"<>|]+/g, '-')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-')
-        .slice(0, 120);
+/** File name stem that keeps the title as the user sees it, minus characters file systems reject. */
+export function buildArtifactFileStem(title: string): string {
+    return (
+        title
+            .normalize('NFC')
+            // Tabs/newlines become spaces before any remaining control characters are dropped.
+            .replace(/\s+/g, ' ')
+            .replace(/[\u0000-\u001f\u007f]+/g, '')
+            .replace(/\s*[\\/:*?"<>|][\\/:*?"<>|\s]*/g, ' - ')
+            .replace(/\s+/g, ' ')
+            .slice(0, 120)
+            // Leading/trailing dots and spaces are stripped or rejected by Windows and some sync clients.
+            .replace(/^(?:\s-\s|[\s.])+|(?:\s-\s|[\s.])+$/g, '')
+    );
 }
 
 export function buildArtifactFileName(artifact: ParsedArtifact, extension: string): string {
@@ -140,7 +177,7 @@ export function buildArtifactFileName(artifact: ParsedArtifact, extension: strin
     return `${buildArtifactFileStem(artifact.title) || 'artifact'}.${normalizedExtension}`;
 }
 
-function escapeHtml(value: string): string {
+export function escapeHtml(value: string): string {
     return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
@@ -154,7 +191,9 @@ export function wrapArtifactHtmlDocument(body: string, title: string, styles: st
 <style>${styles}</style>
 </head>
 <body>
+<div class="${PDF_EXPORT_BODY_CLASS}">
 ${body}
+</div>
 </body>
 </html>`;
 }

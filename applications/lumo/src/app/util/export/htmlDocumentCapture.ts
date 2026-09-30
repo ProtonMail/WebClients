@@ -2,8 +2,15 @@ import { yieldToMainThread } from './exportUiHelpers';
 
 const DEFAULT_VIEWPORT_WIDTH = 794;
 const DEFAULT_CAPTURE_SCALE = 2;
-/** Faster capture for multi-slide exports — scale 2 rarely improves slide PDF/PPTX quality. */
-export const PRESENTATION_CAPTURE_SCALE = 1;
+/**
+ * Slides are projected and viewed full-screen, so scale 1 (960px across a 13.33in slide ≈ 72 px/in)
+ * looks visibly soft. Scale 2 doubles that; canvases are released after each slide to bound memory.
+ */
+export const PRESENTATION_CAPTURE_SCALE = 2;
+
+/** Slide frame in CSS px — 16:9, the PowerPoint default and the aspect exported PDF/PPTX pages use. */
+export const SLIDE_FRAME_WIDTH_CSS = 960;
+export const SLIDE_FRAME_HEIGHT_CSS = 540;
 
 /** Class applied to the off-screen mount point that wraps export body content during capture. */
 export const PDF_EXPORT_BODY_CLASS = 'pdf-export-body';
@@ -215,6 +222,7 @@ export function measureExportContentHeight(root: HTMLElement): number {
 }
 
 export interface CaptureSliceOptions {
+    /** Offset from the top of the capture target, in CSS px. */
     y: number;
     height: number;
 }
@@ -256,7 +264,8 @@ export async function captureElementToCanvas(
         html2canvasOptions.y = slice.y;
         html2canvasOptions.width = captureWidth;
         html2canvasOptions.height = slice.height;
-        html2canvasOptions.windowHeight = slice.height;
+        // windowHeight is left at the iframe's full content height: shrinking it to the slice
+        // can leave content below the first window-height blank in html2canvas's clone.
     } else if (options.captureFullHeight) {
         html2canvasOptions.width = captureWidth;
         html2canvasOptions.height = captureHeight;
@@ -304,6 +313,53 @@ export async function captureExportViewportChunk(
     }
 }
 
+/** Free a canvas's backing store now instead of waiting for GC — matters across many slides/pages. */
+export function releaseCanvas(canvas: HTMLCanvasElement): void {
+    canvas.width = 0;
+    canvas.height = 0;
+}
+
+/**
+ * Letterbox a captured canvas into an exact frame (e.g. 16:9) without distorting it.
+ * Slides whose content runs taller than the frame are scaled down to fit instead of being
+ * stretched by the PPTX/PDF page. Returns the input untouched when it already has the frame's aspect.
+ */
+export function fitCanvasToFrame(
+    canvas: HTMLCanvasElement,
+    frameWidth: number,
+    frameHeight: number,
+    backgroundColor = '#ffffff'
+): HTMLCanvasElement {
+    if (canvas.width <= 0 || canvas.height <= 0) {
+        return canvas;
+    }
+
+    const aspectDelta = Math.abs(canvas.width / canvas.height - frameWidth / frameHeight);
+    if (aspectDelta < 0.01) {
+        return canvas;
+    }
+
+    const framed = document.createElement('canvas');
+    framed.width = frameWidth;
+    framed.height = frameHeight;
+    const context = framed.getContext('2d');
+    if (!context) {
+        return canvas;
+    }
+
+    const fitScale = Math.min(frameWidth / canvas.width, frameHeight / canvas.height);
+    const drawWidth = canvas.width * fitScale;
+    const drawHeight = canvas.height * fitScale;
+
+    context.fillStyle = backgroundColor;
+    context.fillRect(0, 0, frameWidth, frameHeight);
+    context.drawImage(canvas, (frameWidth - drawWidth) / 2, (frameHeight - drawHeight) / 2, drawWidth, drawHeight);
+    releaseCanvas(canvas);
+
+    return framed;
+}
+
+/** Capture one standalone slide document into an exact 16:9 canvas at `scale`. */
 export async function captureSingleSlideDocument(
     slideDocument: string,
     viewportWidth: number,
@@ -314,20 +370,23 @@ export async function captureSingleSlideDocument(
 
     try {
         await prepareMountedExport(mounted);
-        return await captureElementToCanvas(mounted.root, viewportWidth, scale, html2canvas);
+        const canvas = await captureElementToCanvas(mounted.root, viewportWidth, scale, html2canvas);
+        const frameWidth = Math.round(viewportWidth * scale);
+        const frameHeight = Math.round(((viewportWidth * SLIDE_FRAME_HEIGHT_CSS) / SLIDE_FRAME_WIDTH_CSS) * scale);
+        return fitCanvasToFrame(canvas, frameWidth, frameHeight);
     } finally {
         mounted.container.remove();
     }
 }
 
 /**
- * Mount and capture each standalone slide HTML document to a canvas.
- * Used by both PDF and PPTX presentation export paths.
+ * Mount and capture each standalone slide HTML document to a 16:9 PNG data URL.
+ * Each canvas is encoded and released before the next slide so memory stays flat for long decks.
  */
-export async function captureSlideDocumentsToCanvases(
+export async function captureSlideDocumentsToImages(
     slideDocuments: string[],
     options: HtmlSlideCaptureOptions = {}
-): Promise<HTMLCanvasElement[]> {
+): Promise<string[]> {
     if (typeof document === 'undefined') {
         throw new Error('HTML slide capture requires a browser environment.');
     }
@@ -342,17 +401,18 @@ export async function captureSlideDocumentsToCanvases(
     const html2canvasModule = await import('html2canvas');
     const html2canvas = html2canvasModule.default as Html2CanvasFn;
 
-    const canvases: HTMLCanvasElement[] = [];
+    const images: string[] = [];
 
     for (let index = 0; index < slideDocuments.length; index++) {
         options.onProgress?.(index + 1, slideDocuments.length);
         await yieldToMainThread();
 
         const canvas = await captureSingleSlideDocument(slideDocuments[index], viewportWidth, scale, html2canvas);
-        canvases.push(canvas);
+        images.push(canvas.toDataURL('image/png'));
+        releaseCanvas(canvas);
     }
 
-    return canvases;
+    return images;
 }
 
 export { DEFAULT_CAPTURE_SCALE, DEFAULT_VIEWPORT_WIDTH };
