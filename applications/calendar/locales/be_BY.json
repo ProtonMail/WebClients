@@ -1045,6 +1045,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "action": {
@@ -4485,6 +4488,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Ваша падключэнне па Zoom пратэрмінавана. Перападключыцеся, каб працягнуць."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Няправільны рэзервовы пароль. Паўтарыце спробу."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Няправільны другі пароль. Паўтарыце спробу."
       ]
     },
     "error": {
@@ -7216,6 +7225,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы дасягнулі абмежавання па прамежках браніравання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -8153,6 +8168,9 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "Pay it": [
+        "Заплаціць"
       ]
     },
     "Link label (optional)": {
@@ -9950,6 +9968,9 @@
       ],
       "Your subscription renews soon": [
         "Ваша падпіска неўзабаве падоўжыцца"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Апошні шанс атрымаць першы месяц тарыфнага плана ${ plan } па гэтай цане."
       ]
     },
     "Offer fearue": {
@@ -10076,6 +10097,24 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ваша поўная падпіска на тарыфны план ${ planTitle } пачнецца ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Дадайце спосаб аплаты**, каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "If you continue after your trial,": [
+        "Калі вы працягніце пасля пробнага перыяду,"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ]
     },
     "Option": {

@@ -4291,6 +4291,24 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Votre connexion Zoom a expiré. Veuillez vous reconnecter pour continuer."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
+      ],
+      "Item not found": [
+        "L'élément n'a pas été trouvé"
+      ],
+      "Some items could not be loaded": [
+        "Certains éléments n'ont pas pu être chargés"
+      ],
+      "This item has no image preview": [
+        "Cet élément n'a pas d'aperçu"
+      ],
+      "You do not have access to this shared item": [
+        "Vous n'avez pas accès à cet élément partagé"
       ]
     },
     "error": {
@@ -4832,6 +4850,12 @@
       ],
       "Pending": [
         "En attente"
+      ],
+      "Errors": [
+        "Erreurs"
+      ],
+      "Not activated": [
+        "Non activé"
       ]
     },
     "Filter notification": {
@@ -11890,7 +11914,7 @@
         "Le problème a été signalé."
       ],
       "Undo in progress": [
-        "Annulation en cours"
+        "Annulation de l'importation en cours"
       ],
       "Verification successful": [
         "La vérification a abouti."
@@ -11979,6 +12003,9 @@
       ],
       "User": [
         "Utilisateur"
+      ],
+      "Activated": [
+        "Activé"
       ]
     },
     "TableHeader": {
@@ -12859,6 +12886,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Select users to migrate": [
+        "Sélectionnez les utilisateurs à migrer"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
