@@ -67,7 +67,6 @@ enum AdminFeatureFlag {
 }
 
 export enum CalendarFeatureFlag {
-    AutoAddDisabledE2EEAttendees = 'AutoAddDisabledE2EEAttendees',
     CalendarEventsPrefetch = 'CalendarEventsPrefetch',
     CalendarMetrics = 'CalendarMetrics',
     EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
