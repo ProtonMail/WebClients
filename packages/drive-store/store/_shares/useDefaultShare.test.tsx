@@ -64,8 +64,6 @@ describe('useDefaultShare', () => {
 
     const defaultShareId = Symbol('shareId');
 
-    const ac = new AbortController();
-
     beforeEach(() => {
         jest.resetAllMocks();
 
@@ -184,27 +182,5 @@ describe('useDefaultShare', () => {
         expect(createVolumeCallCount).toBe(1);
         expect(mockGetShareWithKey).toHaveBeenCalledTimes(2);
         expect(mockGetShareWithKey).toHaveBeenCalledWith(expect.anything(), defaultShareId);
-    });
-
-    it('says share is available by default', async () => {
-        mockGetShare.mockImplementation(async () => ({}));
-
-        await act(async () => {
-            const isAvailable = await hook.current.isShareAvailable(ac.signal, 'shareId');
-            expect(isAvailable).toBeTruthy();
-        });
-    });
-
-    it('says share is not available if locked', async () => {
-        mockGetShare.mockImplementation(async () => {
-            return {
-                isLocked: true,
-            };
-        });
-
-        await act(async () => {
-            const isAvailable = await hook.current.isShareAvailable(ac.signal, 'shareId');
-            expect(isAvailable).toBeFalsy();
-        });
     });
 });

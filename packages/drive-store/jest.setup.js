@@ -53,12 +53,6 @@ jest.mock('./store/_downloads/fileSaver/download.ts', () => {
     };
 });
 
-jest.mock('./store/_uploads/initUploadFileWorker.ts', () => {
-    return {
-        initUploadFileWorker: jest.fn(),
-    };
-});
-
 jest.mock('./utils/metrics/userSuccessMetrics.ts', () => {
     return {
         userSuccessMetrics: {

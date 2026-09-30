@@ -145,15 +145,6 @@ enum ShareTargetType {
     ProtonVendor = 5,
 }
 
-export interface AbuseReportPayload {
-    ShareURL: string;
-    Password?: string;
-    AbuseCategory: string;
-    ReporterEmail?: string;
-    ReporterMessage?: string;
-    ResourcePassphrase: string;
-}
-
 export interface ListDriveSharedWithMeLinksPayload {
     Links: {
         VolumeID: string;
