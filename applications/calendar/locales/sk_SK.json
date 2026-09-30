@@ -4536,6 +4536,12 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybe, vykonajte ${ refresh } stránky. Ak stále vidíte túto chybu, kontaktujte náš ${ supportTeam }."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávne záložné heslo. Skúste to znova, prosím."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávne druhé heslo. Skúste to znova, prosím."
       ]
     },
     "error": {
@@ -7282,6 +7288,12 @@
       ],
       "support team": [
         "tím podpory"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -8267,6 +8279,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Pay it": [
+        "Zaplatiť"
       ]
     },
     "Link label (optional)": {

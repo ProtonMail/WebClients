@@ -4263,6 +4263,12 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "備份密碼錯誤。請重新再試。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "第二密碼錯誤。請重新再試。"
       ]
     },
     "error": {
@@ -7954,7 +7960,7 @@
         "絕不填入此精確的 URL"
       ],
       "Re:": [
-        "回复："
+        "回覆："
       ],
       "Regular expression rule": [
         "正規表示式規則"

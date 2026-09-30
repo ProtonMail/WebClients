@@ -4339,6 +4339,24 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
+      ],
+      "Item not found": [
+        "L'élément n'a pas été trouvé"
+      ],
+      "Some items could not be loaded": [
+        "Certains éléments n'ont pas pu être chargés"
+      ],
+      "This item has no image preview": [
+        "Cet élément n'a pas d'aperçu"
+      ],
+      "You do not have access to this shared item": [
+        "Vous n'avez pas accès à cet élément partagé"
       ]
     },
     "error": {
@@ -4883,6 +4901,12 @@
       ],
       "Pending": [
         "En attente"
+      ],
+      "Errors": [
+        "Erreurs"
+      ],
+      "Not activated": [
+        "Non activé"
       ]
     },
     "Filter notification": {
@@ -6945,6 +6969,12 @@
       ],
       "support team": [
         "équipe support"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, désarchivez-le dans votre ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -12131,7 +12161,7 @@
         "Le problème a été signalé."
       ],
       "Undo in progress": [
-        "Annulation en cours"
+        "Annulation de l'importation en cours"
       ],
       "Verification successful": [
         "La vérification a abouti."
@@ -12220,6 +12250,9 @@
       ],
       "User": [
         "Utilisateur"
+      ],
+      "Activated": [
+        "Activé"
       ]
     },
     "TableHeader": {
@@ -13103,6 +13136,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Select users to migrate": [
+        "Sélectionnez les utilisateurs à migrer"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
