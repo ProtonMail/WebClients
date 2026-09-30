@@ -9,7 +9,6 @@ export const DROPDOWN_MIN_HEIGHT = 60;
 
 export const NOTIFICATION_WIDTH = 320;
 export const NOTIFICATION_MIN_HEIGHT = 180;
-export const NOTIFICATION_HEIGHT = 350;
 
 export const IFRAME_APP_READY_EVENT = 'PassIFrameReady';
 export const CLIENT_SCRIPT_READY_EVENT = 'PassClientScriptReady';

@@ -20,7 +20,7 @@ export interface FieldTracker {
     detach: () => void;
 }
 
-export type FieldTrackerState = {
+type FieldTrackerState = {
     focused: boolean;
     timeout: MaybeNull<NodeJS.Timeout>;
 };

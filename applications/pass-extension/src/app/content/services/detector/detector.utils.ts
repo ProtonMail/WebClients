@@ -30,13 +30,13 @@ export const IGNORED_TAGS = new Set([
     'g',
 ]);
 
-export const IGNORED_ROLES = new Set(['button', 'link', 'menuitem', 'checkbox', 'radio', 'switch']);
+const IGNORED_ROLES = new Set(['button', 'link', 'menuitem', 'checkbox', 'radio', 'switch']);
 
-export const isUnprocessed = not(or(isProcessed, isIgnored));
-export const isUnprocessedInput = and(isValidInputElement, isUnprocessed);
+const isUnprocessed = not(or(isProcessed, isIgnored));
+const isUnprocessedInput = and(isValidInputElement, isUnprocessed);
 export const isProcessableInput = or(isUnprocessedInput, isHidden);
 
-export const hasProcessableForms = (target?: Document | HTMLElement) =>
+const hasProcessableForms = (target?: Document | HTMLElement) =>
     selectFormCandidates(target).some(or(isUnprocessed, isHidden));
 
 export const hasProcessableFields = (target?: Document | HTMLElement) =>

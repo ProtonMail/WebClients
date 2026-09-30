@@ -100,7 +100,6 @@ export const backgroundMessage = resolveMessageFactory('background');
 export const popupMessage = resolveMessageFactory('popup');
 export const pageMessage = resolveMessageFactory('page');
 export const contentScriptMessage = resolveMessageFactory('contentscript');
-export const offscreenMessage = resolveMessageFactory('offscreen');
 
 export const portForwardingMessage = <T extends { sender: ClientEndpoint }>(
     forwardTo: string,

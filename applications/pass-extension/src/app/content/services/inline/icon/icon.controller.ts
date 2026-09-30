@@ -52,7 +52,7 @@ export interface IconController {
     sync: () => void;
 }
 
-export type IconState = {
+type IconState = {
     abortCtrl: MaybeNull<AbortController>;
     containerObserver: MaybeNull<ResizeObserver>;
     inputObserver: MaybeNull<ResizeObserver>;

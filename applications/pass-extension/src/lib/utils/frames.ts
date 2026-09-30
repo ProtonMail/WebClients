@@ -1,5 +1,3 @@
-import type { WebNavigation } from 'webextension-polyfill';
-
 import browser from '@proton/pass/lib/globals/browser';
 import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import { resolveDomain } from '@proton/pass/lib/urls/utils/utils';
@@ -7,8 +5,6 @@ import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 
 import type { FrameAttributes } from '../../types/frames';
-import { WorkerMessageType } from '../../types/messages';
-import { backgroundMessage, sendTabMessage } from '../message/send-message';
 
 export type FrameData = {
     parent: MaybeNull<FrameId>;
@@ -18,7 +14,6 @@ export type FrameData = {
 };
 
 export type Frames = Map<FrameId, FrameData>;
-export type FrameMapper<R> = (frame: WebNavigation.GetAllFramesCallbackDetailsItemType) => R;
 
 /** Frame hierarchy tracker: Creates parent-child relationship map
  * for all frames in a tab. Used by `getFrameCoords` to walk up the
@@ -139,33 +134,6 @@ export const getAutofillableFrames = async (
     autofillableOrigins.clear();
     return autofillableFrames;
 };
-
-type ParentFormQueryParams = {
-    tabId: TabId;
-    parentFrameID: FrameId;
-    childFrameID: FrameId;
-    childFrameAttributes: FrameAttributes;
-};
-
-export const getFrameParentFormId = (options: ParentFormQueryParams): Promise<MaybeNull<string>> =>
-    sendTabMessage(
-        backgroundMessage({
-            type: WorkerMessageType.FRAME_QUERY,
-            payload: {
-                type: 'form',
-                frameId: options.childFrameID,
-                frameAttributes: options.childFrameAttributes,
-            },
-        }),
-        { tabId: options.tabId, frameId: options.parentFrameID }
-    )
-        .then((res) => (res?.ok && res.type === 'form' ? res.formId : null))
-        .catch(() => null);
-
-export const isFrameContainedInParentForm = (parentFormID: string, options: ParentFormQueryParams): Promise<boolean> =>
-    getFrameParentFormId(options)
-        .then((formId) => formId === parentFormID)
-        .catch(() => false);
 
 /** Iframes may get resized on focus if constrained
  * by a wrapper's element content-box with borders */

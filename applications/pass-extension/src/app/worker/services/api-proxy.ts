@@ -4,20 +4,12 @@ import { fetchControllerFactory } from '@proton/pass/lib/api/fetch-controller';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { authStore } from '@proton/pass/lib/auth/store';
 import browser from '@proton/pass/lib/globals/browser';
-import type { Api } from '@proton/pass/types/api/api';
 import { logger } from '@proton/pass/utils/logger';
 
 import { WorkerMessageType } from '../../../types/messages';
 import config from '../../config';
 import WorkerMessageBroker from '../channel';
 import { API_PROXY_IMAGE_ENDPOINT, API_PROXY_URL } from '../constants.runtime';
-
-export type APIProxyOptions = {
-    apiUrl: string;
-    apiProxyUrl: string;
-    api: Api;
-    fetch: (info: RequestInfo, init?: RequestInit) => Promise<Response>;
-};
 
 export const createApiProxyService = () => {
     if (BUILD_TARGET === 'chrome') {

@@ -190,110 +190,110 @@ export enum WorkerMessageType {
 }
 
 /* messages for communication with account */
-export type AccountAuthExtMessage = { type: WorkerMessageType.ACCOUNT_EXTENSION };
-export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ExtensionForkPayload>;
-export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
-export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
+type AccountAuthExtMessage = { type: WorkerMessageType.ACCOUNT_EXTENSION };
+type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ExtensionForkPayload>;
+type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
+type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 
-export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, AliasCreateRequest>;
-export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
+type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, AliasCreateRequest>;
+type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
 
-export type AuthChangedMessage = WithPayload<WorkerMessageType.AUTH_CHANGED, AuthSession>;
-export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
-export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
-export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
-export type AuthOfflineSwitchMessage = { type: WorkerMessageType.AUTH_OFFLINE_SWITCH };
+type AuthChangedMessage = WithPayload<WorkerMessageType.AUTH_CHANGED, AuthSession>;
+type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
+type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
+type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
+type AuthOfflineSwitchMessage = { type: WorkerMessageType.AUTH_OFFLINE_SWITCH };
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
-export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
+type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
 
-export type AutofillActionMessage = WithPayload<WorkerMessageType.AUTOFILL_ACTION, AutofillActionDTO>;
-export type AutofillCCQueryMessage = { type: WorkerMessageType.AUTOFILL_CC_QUERY };
-export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
-export type AutofillLoginQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN_QUERY, AutofillQueryFilter>;
-export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
-export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
-export type AutofillSequenceMessage = WithPayload<WorkerMessageType.AUTOFILL_SEQUENCE, AutofillRequest>;
+type AutofillActionMessage = WithPayload<WorkerMessageType.AUTOFILL_ACTION, AutofillActionDTO>;
+type AutofillCCQueryMessage = { type: WorkerMessageType.AUTOFILL_CC_QUERY };
+type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
+type AutofillLoginQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN_QUERY, AutofillQueryFilter>;
+type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
+type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
+type AutofillSequenceMessage = WithPayload<WorkerMessageType.AUTOFILL_SEQUENCE, AutofillRequest>;
 export type AutofillSyncMessage = { type: WorkerMessageType.AUTOFILL_SYNC };
 
-export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
-export type AutosuggestAliasMessage = { type: WorkerMessageType.AUTOSUGGEST_ALIAS };
-export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
+type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
+type AutosuggestAliasMessage = { type: WorkerMessageType.AUTOSUGGEST_ALIAS };
+type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 
 export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId; online: boolean }>;
-export type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ };
-export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
-export type ClipboardAutoClearMessage = WithPayload<WorkerMessageType.CLIPBOARD_AUTOCLEAR, ClipboardAutoClearDTO>;
-export type ConnectivityStatusMessage = WithPayload<WorkerMessageType.CONNECTIVITY, { status: ConnectivityStatus }>;
-export type ConnectivitySyncMessage = WithPayload<WorkerMessageType.CONNECTIVITY_SYNC, { online: boolean }>;
+type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ };
+type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
+type ClipboardAutoClearMessage = WithPayload<WorkerMessageType.CLIPBOARD_AUTOCLEAR, ClipboardAutoClearDTO>;
+type ConnectivityStatusMessage = WithPayload<WorkerMessageType.CONNECTIVITY, { status: ConnectivityStatus }>;
+type ConnectivitySyncMessage = WithPayload<WorkerMessageType.CONNECTIVITY_SYNC, { online: boolean }>;
 
-export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
-export type DesktopUnlockSecretMessage = { type: WorkerMessageType.DESKTOP_UNLOCK_SECRET };
-export type EndpointInitMessage = WithPayload<WorkerMessageType.ENDPOINT_INIT, { popup?: boolean }>;
+type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
+type DesktopUnlockSecretMessage = { type: WorkerMessageType.DESKTOP_UNLOCK_SECRET };
+type EndpointInitMessage = WithPayload<WorkerMessageType.ENDPOINT_INIT, { popup?: boolean }>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
-export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
-export type FetchDomainImageMessage = WithPayload<WorkerMessageType.FETCH_DOMAINIMAGE, { url: string }>;
+type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
+type FetchDomainImageMessage = WithPayload<WorkerMessageType.FETCH_DOMAINIMAGE, { url: string }>;
 
-export type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_COMMIT, { reason: string }>;
-export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUEST };
-export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, FormSubmitPayload>;
-export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
-export type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormStatusPayload>;
+type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_COMMIT, { reason: string }>;
+type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUEST };
+type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, FormSubmitPayload>;
+type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
+type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormStatusPayload>;
 
 export type FileTransferWriteMessage = WithPayload<WorkerMessageType.FS_WRITE, FileTransferWriteDTO>;
 export type FileTransferErrorMessage = WithPayload<WorkerMessageType.FS_ERROR, FileTransferErrorDTO>;
 
-export type FrameDeferredInitMessage = { type: WorkerMessageType.FRAME_DEFERRED_INIT };
-export type FrameFieldLockMessage = WithPayload<WorkerMessageType.FRAME_FIELD_LOCK, FrameField & { locked: boolean }>;
-export type FrameFormClusterMessage = { type: WorkerMessageType.FRAME_FORM_CLUSTER };
-export type FrameFormsQueryMessage = { type: WorkerMessageType.FRAME_FORMS_QUERY };
+type FrameDeferredInitMessage = { type: WorkerMessageType.FRAME_DEFERRED_INIT };
+type FrameFieldLockMessage = WithPayload<WorkerMessageType.FRAME_FIELD_LOCK, FrameField & { locked: boolean }>;
+type FrameFormClusterMessage = { type: WorkerMessageType.FRAME_FORM_CLUSTER };
+type FrameFormsQueryMessage = { type: WorkerMessageType.FRAME_FORMS_QUERY };
 export type FrameQueryMessage = WithPayload<WorkerMessageType.FRAME_QUERY, FrameQueryDTO>;
-export type FrameVisibilityMessage = WithPayload<WorkerMessageType.FRAME_VISIBILITY, FrameAttributes>;
+type FrameVisibilityMessage = WithPayload<WorkerMessageType.FRAME_VISIBILITY, FrameAttributes>;
 
-export type InlineDropdownAttachMessage = { type: WorkerMessageType.INLINE_DROPDOWN_ATTACH };
-export type InlineDropdownClosedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSED, DropdownClosedDTO>;
-export type InlineDropdownCloseMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSE, DropdownCloseDTO>;
-export type InlineDropdownOpenedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPENED, DropdownOpenedDTO>;
+type InlineDropdownAttachMessage = { type: WorkerMessageType.INLINE_DROPDOWN_ATTACH };
+type InlineDropdownClosedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSED, DropdownClosedDTO>;
+type InlineDropdownCloseMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSE, DropdownCloseDTO>;
+type InlineDropdownOpenedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPENED, DropdownOpenedDTO>;
 export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDOWN_STATE };
-export type InlineDropdownToggleMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_TOGGLE, DropdownOpenDTO>;
-export type InlineIconAttachedMessage = WithPayload<WorkerMessageType.INLINE_ICON_ATTACHED, FrameField>;
-export type InlineIconShiftMessage = WithPayload<WorkerMessageType.INLINE_ICON_SHIFT, IconShiftRequest>;
-export type InlineNotificationMessage = WithPayload<WorkerMessageType.INLINE_NOTIFICATION_OPEN, NotificationRequest>;
+type InlineDropdownToggleMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_TOGGLE, DropdownOpenDTO>;
+type InlineIconAttachedMessage = WithPayload<WorkerMessageType.INLINE_ICON_ATTACHED, FrameField>;
+type InlineIconShiftMessage = WithPayload<WorkerMessageType.INLINE_ICON_SHIFT, IconShiftRequest>;
+type InlineNotificationMessage = WithPayload<WorkerMessageType.INLINE_NOTIFICATION_OPEN, NotificationRequest>;
 
-export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
+type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
-export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
-export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
-export type ModelArtifactRequestMessage = { type: WorkerMessageType.MODEL_ARTIFACT_REQUEST };
-export type Monitor2FAsMessage = { type: WorkerMessageType.MONITOR_2FAS };
-export type MonitorWeakPasswordsMessage = { type: WorkerMessageType.MONITOR_WEAK_PASSWORDS };
-export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
-export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
-export type PassCoreRPCMessage = WithPayload<WorkerMessageType.PASS_CORE_RPC, PassCoreRPC<PassCoreMethod>>;
-export type PasskeyCreateMessage = WithPayload<WorkerMessageType.PASSKEY_CREATE, PasskeyCreatePayload>;
-export type PasskeyGetMessage = WithPayload<WorkerMessageType.PASSKEY_GET, PasskeyGetPayload>;
-export type PasskeyInterceptMessage = WithPayload<WorkerMessageType.PASSKEY_INTERCEPT, { reason: string }>;
-export type PasskeyQueryMessage = WithPayload<WorkerMessageType.PASSKEY_QUERY, PasskeyQueryPayload>;
-export type PauseWebsiteMessage = WithPayload<WorkerMessageType.PAUSE_WEBSITE, PauseListEntry>;
-export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { granted: boolean }>;
-export type PingMessage = { type: WorkerMessageType.PING };
-export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
+type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
+type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
+type ModelArtifactRequestMessage = { type: WorkerMessageType.MODEL_ARTIFACT_REQUEST };
+type Monitor2FAsMessage = { type: WorkerMessageType.MONITOR_2FAS };
+type MonitorWeakPasswordsMessage = { type: WorkerMessageType.MONITOR_WEAK_PASSWORDS };
+type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
+type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
+type PassCoreRPCMessage = WithPayload<WorkerMessageType.PASS_CORE_RPC, PassCoreRPC<PassCoreMethod>>;
+type PasskeyCreateMessage = WithPayload<WorkerMessageType.PASSKEY_CREATE, PasskeyCreatePayload>;
+type PasskeyGetMessage = WithPayload<WorkerMessageType.PASSKEY_GET, PasskeyGetPayload>;
+type PasskeyInterceptMessage = WithPayload<WorkerMessageType.PASSKEY_INTERCEPT, { reason: string }>;
+type PasskeyQueryMessage = WithPayload<WorkerMessageType.PASSKEY_QUERY, PasskeyQueryPayload>;
+type PauseWebsiteMessage = WithPayload<WorkerMessageType.PAUSE_WEBSITE, PauseListEntry>;
+type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { granted: boolean }>;
+type PingMessage = { type: WorkerMessageType.PING };
+type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
-export type RegisterElementsLegacyMessage = WithPayload<WorkerMessageType.REGISTER_ELEMENTS_FALLBACK, { hash: string }>;
-export type RegisterElementsMessage = { type: WorkerMessageType.REGISTER_ELEMENTS };
-export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
-export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
-export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
+type RegisterElementsLegacyMessage = WithPayload<WorkerMessageType.REGISTER_ELEMENTS_FALLBACK, { hash: string }>;
+type RegisterElementsMessage = { type: WorkerMessageType.REGISTER_ELEMENTS };
+type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
+type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
+type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
-export type SpotlightAckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_ACK, { message: SpotlightMessage }>;
-export type SpotlightCheckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_CHECK, { message: SpotlightMessage }>;
-export type SpotlightRequestMessage = { type: WorkerMessageType.SPOTLIGHT_REQUEST };
-export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: string }>;
-export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, TelemetryEventDTO>;
-export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
-export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
-export type VaultsQueryMessage = { type: WorkerMessageType.VAULTS_QUERY };
-export type WebsiteRulesMessage = { type: WorkerMessageType.WEBSITE_RULES_REQUEST };
-export type WorkerReloadMessage = { type: WorkerMessageType.WORKER_RELOAD };
+type SpotlightAckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_ACK, { message: SpotlightMessage }>;
+type SpotlightCheckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_CHECK, { message: SpotlightMessage }>;
+type SpotlightRequestMessage = { type: WorkerMessageType.SPOTLIGHT_REQUEST };
+type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: string }>;
+type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, TelemetryEventDTO>;
+type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
+type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
+type VaultsQueryMessage = { type: WorkerMessageType.VAULTS_QUERY };
+type WebsiteRulesMessage = { type: WorkerMessageType.WEBSITE_RULES_REQUEST };
+type WorkerReloadMessage = { type: WorkerMessageType.WORKER_RELOAD };
 export type WorkerStateChangeMessage = WithPayload<WorkerMessageType.WORKER_STATE_CHANGE, { state: AppState }>;
 
 export type WorkerMessage =
@@ -464,9 +464,5 @@ export type WorkerResponse<T extends Maybe<WorkerMessage | WorkerMessageWithSend
           ? MaybeMessage<WorkerMessageResponse<MessageType>>
           : never
       : never;
-
-export type WorkerSendResponse<T extends Maybe<WorkerMessage> = Maybe<WorkerMessage>> = (
-    response: WorkerResponse<T>
-) => void;
 
 export type SendTabResponse<T extends WorkerMessageType = WorkerMessageType> = (res: WorkerMessageResponse<T>) => void;

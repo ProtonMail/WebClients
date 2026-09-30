@@ -9,7 +9,7 @@ import { createTimeoutAlarm } from '@proton/pass/utils/time/alarm';
 import { MINUTE } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-export interface ExtensionAlarm {
+interface ExtensionAlarm {
     reset: () => Promise<boolean>;
     when: () => Promise<Maybe<number>>;
     set: (when: number) => Promise<void>;

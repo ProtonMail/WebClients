@@ -29,7 +29,7 @@ export interface PopupContextValue {
     interactive: boolean /* enable UI user actions */;
 }
 
-export const PopupContext = createContext<MaybeNull<PopupContextValue>>(null);
+const PopupContext = createContext<MaybeNull<PopupContextValue>>(null);
 export const usePopupContext = createUseContext(PopupContext);
 
 /* this cannot be included directly in `PopupContextProvider` because

@@ -12,7 +12,7 @@ import type { DropdownHandler } from '../dropdown/dropdown.abstract';
 import { type IconController, createIconController } from './icon.controller';
 import { computeIconShift } from './icon.utils';
 
-export type IconRef = { current: MaybeNull<IconController> };
+type IconRef = { current: MaybeNull<IconController> };
 
 export interface IconRegistry {
     attach: (field: FieldHandle) => void;

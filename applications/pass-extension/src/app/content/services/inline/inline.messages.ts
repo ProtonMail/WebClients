@@ -69,7 +69,7 @@ export type IFrameInitPayload = {
 
 /** Supported Worker messages that are broadcasted
  * to iframe app ports that may affect iframe state. */
-export type InlineWorkerMessages =
+type InlineWorkerMessages =
     | AutofillSyncMessage
     | FeatureFlagsUpdateMessage
     | LocaleUpdatedMessage

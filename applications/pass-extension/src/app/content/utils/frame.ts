@@ -124,7 +124,7 @@ export const getFrameVisibility = maxAgeMemoize(
 
 /** Quick-checks if the current frame has a null origin and
  * is likely sandboxed without `allow-same-origin` */
-export const isNullOriginFrame = (): boolean => {
+const isNullOriginFrame = (): boolean => {
     return String(globalThis.origin).toLowerCase() === 'null' || globalThis.location.hostname === '';
 };
 
