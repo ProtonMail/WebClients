@@ -4442,6 +4442,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Conexiunea la Zoom a expirat. Reconectați-vă pentru a continua."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Parolă de rezervă incorectă. Reîncercați."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Parolă secundară incorectă. Încercați din nou."
       ]
     },
     "error": {
@@ -7133,6 +7139,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Aveți o factură neachitată. ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Aveți o factură neachitată cu scadența la ${ dueDate }. ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -8067,6 +8079,9 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "Pay it": [
+        "Plătiți-o"
       ]
     },
     "Link label (optional)": {

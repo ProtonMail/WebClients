@@ -4396,6 +4396,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Din Zoom-forbindelse er udløbet. Tilslut igen for at fortsætte."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Forkert backupadgangskode. Prøv igen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Forkert anden adgangskode. Prøv igen."
       ]
     },
     "error": {
@@ -7035,6 +7041,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en åben faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en åben faktura til ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -7963,6 +7975,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Pay it": [
+        "Betal"
       ]
     },
     "Link label (optional)": {

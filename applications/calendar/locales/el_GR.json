@@ -4396,6 +4396,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Η σύνδεσή σας στο Zoom έχει λήξει. Παρακαλούμε επανασυνδεθείτε για να συνεχίσετε."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Εσφαλμένος εφεδρικός κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ]
     },
     "error": {
@@ -7035,6 +7041,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Έχετε ένα εκκρεμές τιμολόγιο με ημερομηνία λήξης ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -7963,6 +7975,9 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "Pay it": [
+        "Πλήρωσέ το"
       ]
     },
     "Link label (optional)": {

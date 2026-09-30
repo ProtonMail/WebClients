@@ -4488,6 +4488,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Vaše pripojenie k Zoom vypršalo. Pripojte sa znova pre pokračovanie, prosím."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Nesprávne záložné heslo. Skúste to znova, prosím."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávne druhé heslo. Skúste to znova, prosím."
       ]
     },
     "error": {
@@ -7231,6 +7237,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -8171,6 +8183,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Pay it": [
+        "Zaplatiť"
       ]
     },
     "Link label (optional)": {
