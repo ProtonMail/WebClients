@@ -10,7 +10,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import useShowDashboard, { useShowDriveDashboard } from '../../hooks/accounts/useShowDashboard';
 import useShowVPNDashboard from '../../hooks/useShowVPNDashboard';
 
-export const targetedPlans: (PLANS | ADDON_NAMES)[] = [PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS];
+const targetedPlans: (PLANS | ADDON_NAMES)[] = [PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS];
 
 function shouldHideBannerForDistantExpiration(
     subscriptionPlans: SubscriptionPlan[] | undefined,

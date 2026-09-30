@@ -62,7 +62,7 @@ export const getWalletEmailAddresses = (
     };
 };
 
-export const getBitcoinViaEmailText = () => {
+const getBitcoinViaEmailText = () => {
     return c('wallet_signup_2024: Info').t`Bitcoin via Email`;
 };
 

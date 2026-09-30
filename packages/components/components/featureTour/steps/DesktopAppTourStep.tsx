@@ -18,7 +18,7 @@ export const shouldDisplayDesktopAppTourStep: ShouldDisplayTourStep = async (dis
     };
 };
 
-export const DesktopAppTourStep = (props: FeatureTourStepProps) => {
+const DesktopAppTourStep = (props: FeatureTourStepProps) => {
     const { desktopAppLink, loading } = useInboxDesktopVersion();
 
     return (

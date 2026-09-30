@@ -24,7 +24,7 @@ import { HIDE_OFFER } from './helpers/interface';
 import { useGoUnlimited2025 } from './hooks/useGoUnlimited2025';
 import { useGoUnlimitedOfferTelemetry } from './hooks/useGoUnlimitedOfferTelemetry';
 
-export const defaultOfferUpsellConfig = {
+const defaultOfferUpsellConfig = {
     step: SUBSCRIPTION_STEPS.CHECKOUT,
     plan: PLANS.BUNDLE,
     cycle: CYCLE.YEARLY,

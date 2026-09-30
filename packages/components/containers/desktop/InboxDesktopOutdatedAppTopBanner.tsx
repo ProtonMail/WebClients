@@ -99,7 +99,7 @@ const DisplayTopBanner = ({
     );
 };
 
-export const InboxDesktopOutdatedAppTopBanner = ({ className }: { className?: string }) => {
+const InboxDesktopOutdatedAppTopBanner = ({ className }: { className?: string }) => {
     const version = electronAppVersion;
     const { windowsApp, macosApp, linuxApp, isSnapPackage, loading } = useInboxDesktopVersion();
     const isUpdateBannerDisabled = useFlag('InboxDesktopManualUpdateBannerDisabled');

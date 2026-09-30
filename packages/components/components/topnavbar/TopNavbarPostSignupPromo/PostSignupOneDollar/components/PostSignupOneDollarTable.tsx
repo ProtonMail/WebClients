@@ -12,7 +12,7 @@ interface Props {
     features: FeatureProps[];
 }
 
-export const TableCell = ({ content, className }: { content: ReactNode; className: string }) => {
+const TableCell = ({ content, className }: { content: ReactNode; className: string }) => {
     if (typeof content === 'string') {
         return <p className={className}>{content}</p>;
     }

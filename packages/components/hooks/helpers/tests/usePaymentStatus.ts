@@ -2,7 +2,7 @@ import { DEFAULT_PAYMENT_VENDOR_STATES } from '@proton/payments/core/constants';
 import type { PaymentStatus } from '@proton/payments/core/interface';
 import { addApiMock } from '@proton/test-api/api';
 
-export const statusDefaultResponse: PaymentStatus = {
+const statusDefaultResponse: PaymentStatus = {
     CountryCode: 'CH',
     State: null,
     VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,

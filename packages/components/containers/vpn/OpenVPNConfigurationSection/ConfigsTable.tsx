@@ -97,7 +97,7 @@ export const SmartRoutingIcon = ({ countries }: { countries: (string | undefined
     );
 };
 
-export const IPv6Icon = () => {
+const IPv6Icon = () => {
     return (
         <span className="mx-2 cursor-default">
             <Tooltip

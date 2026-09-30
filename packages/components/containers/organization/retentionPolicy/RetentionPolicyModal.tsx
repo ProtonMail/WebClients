@@ -46,7 +46,7 @@ const INITIAL_FORM_VALUES: RetentionRuleFormData = {
 };
 const MAX_TITLE_LENGTH = 191;
 
-export const getRuleNamePlaceholder = (product: RetentionRuleProduct) => {
+const getRuleNamePlaceholder = (product: RetentionRuleProduct) => {
     if (product === RetentionRuleProduct.Mail) {
         return c('retention_policy_2025_Placeholder').t`E.g. Cleanup unused mailboxes`;
     }

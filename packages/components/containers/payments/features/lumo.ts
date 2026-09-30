@@ -7,7 +7,6 @@ import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
-import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { IcStar } from '@proton/icons/icons/IcStar';
@@ -140,15 +139,6 @@ export const getNoLogsPolicy = (): PlanCardFeatureDefinition => {
         text: c('collider_2025: feature').t`Strict no-logs policy`,
         included: true,
         icon: IcEyeSlash,
-    };
-};
-
-export const getBuiltInEurope = (): PlanCardFeatureDefinition => {
-    return {
-        id: 'built-in-europe',
-        text: c('collider_2025: feature').t`Built and based in Europe`,
-        included: true,
-        icon: IcMapPin,
     };
 };
 
