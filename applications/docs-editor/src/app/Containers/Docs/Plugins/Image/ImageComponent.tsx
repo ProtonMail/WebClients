@@ -1,7 +1,7 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import type { BaseSelection, LexicalCommand, LexicalEditor, NodeKey } from 'lexical'
 import {
   $getNodeByKey,

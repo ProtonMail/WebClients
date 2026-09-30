@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ForwardedRef, ReactNode, RefObject } fro
 import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react'
 import debounce from 'lodash/debounce'
 import { mergeRefs } from '../../../../Shared/mergeRefs'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 
 export type PositionedItem = {
   id: string
