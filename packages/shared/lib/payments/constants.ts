@@ -456,6 +456,9 @@ export enum COUPON_CODES {
 
     // World cup retention offer
     VPNSAVEOFFER = 'VPNSAVEOFFER',
+
+    // Unlimited to Duo discounted offer
+    TRYDUO2026 = 'TRYDUO2026',
 }
 
 export const VPN_PASS_PROMOTION_COUPONS = [

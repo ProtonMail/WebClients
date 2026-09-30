@@ -785,6 +785,7 @@ export enum MAIL_UPSELL_PATHS {
     ONE_DOLLAR_LAST_REMINDER = 'one-dollar-last-reminder',
     GO_UNLIMITED_2025 = 'go-unlimited-2025',
     UNLIMITED_TO_DUO = 'unlimited-to-duo',
+    UNLIMITED_TO_DUO_DISCOUNTED = 'unlimited-to-duo-discounted',
     // Monthly subscriber upsell
     PLUS_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY = 'plus_monthly-subscriber-nudge-variant-money',
     BUNDLE_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY = 'bundle_monthly-subscriber-nudge-variant-money',
