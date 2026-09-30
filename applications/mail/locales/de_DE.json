@@ -869,7 +869,7 @@
         "Kategorien verwalten"
       ],
       "Manage Snooze": [
-        "Zurüchgestellte verwalten"
+        "Zurückgestellte verwalten"
       ],
       "Manage users/addresses": [
         "Benutzer/Adressen verwalten"
@@ -5698,6 +5698,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Falsches Backup-Passwort. Bitte versuche es erneut."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches zusätzliches Passwort. Bitte versuche es erneut."
       ]
     },
     "error": {
@@ -10052,6 +10058,12 @@
       ],
       "What needs handling?": [
         "Was muss erledigt werden?"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du hast eine offene Rechnung vom ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -11087,7 +11099,7 @@
         "Premium-Domain"
       ],
       "Primary": [
-        "Primäre"
+        "Primär"
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
         "„Wichtig“ – Alles, was deine Aufmerksamkeit erfordert, sowie E-Mails aus deaktivierten Kategorien"
@@ -11744,6 +11756,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du musst deine Schlüssel erneut aktivieren, um die aktualisierte Einladung anzeigen zu können."
+      ],
+      "Pay it": [
+        "Bezahlen"
       ]
     },
     "Link to calendar event": {

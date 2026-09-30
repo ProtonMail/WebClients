@@ -5750,6 +5750,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Parolă de rezervă incorectă. Reîncercați."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Parolă secundară incorectă. Încercați din nou."
       ]
     },
     "error": {
@@ -10230,6 +10236,12 @@
       ],
       "What needs handling?": [
         "Ce trebuie rezolvat?"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Aveți o factură neachitată. ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Aveți o factură neachitată cu scadența la ${ dueDate }. ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -11930,6 +11942,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Trebuie să activați cheile pentru a vedea invitația actualizată"
+      ],
+      "Pay it": [
+        "Plătiți-o"
       ]
     },
     "Link to calendar event": {

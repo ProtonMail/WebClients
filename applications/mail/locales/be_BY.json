@@ -1769,6 +1769,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "action": {
@@ -5789,6 +5792,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паўтарыце спробу."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Няправільны рэзервовы пароль. Паўтарыце спробу."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Няправільны другі пароль. Паўтарыце спробу."
       ]
     },
     "error": {
@@ -10329,6 +10338,27 @@
       ],
       "What needs handling?": [
         "Што неабходна апрацаваць?"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Чарнавік ${ kind } для ${ recipient }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Чарнавік ${ kind } для ${ recipient }"
+      ],
+      "Read ${ count } open draft": [
+        "Прачытаць ${ count } адкрыты чарнавік",
+        "Прачытаць ${ count } адкрытыя чарнавікі",
+        "Прачытаць ${ count } адкрытых чарнавікоў",
+        "Прачытаць ${ count } адкрытых чарнавікоў"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Перапісаць і пераадрасаваць чарнавік"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "У вас ёсць адкрыты рахунак ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -10593,6 +10623,12 @@
       ],
       "Star": [
         "Пазначыць зорачкай"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Закрыць ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Адкрыць ${ LUMO_SHORT_APP_NAME } / сканцэнтравацца на ўводзе"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10629,6 +10665,9 @@
       ],
       "Message shortcuts": [
         "Спалучэнні клавіш для паведамлення"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Спалучэнні клавіш ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label": {
@@ -12025,6 +12064,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Вам неабходна паўторна актываваць ключы, каб паглядзець абноўленае запрашэнне"
+      ],
+      "Pay it": [
+        "Заплаціць"
       ]
     },
     "Link to calendar event": {
@@ -13662,6 +13704,9 @@
       ],
       "Your subscription renews soon": [
         "Ваша падпіска неўзабаве падоўжыцца"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Апошні шанс атрымаць першы месяц тарыфнага плана ${ plan } па гэтай цане."
       ]
     },
     "Offer fearue": {
@@ -13938,6 +13983,24 @@
       ],
       "Add a payment method": [
         "Дадаць спосаб аплаты"
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Дадайце спосаб аплаты**, каб працягваць карыстацца ўсімі функцыямі пасля завяршэння пробнага перыяду."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      ],
+      "If you continue after your trial,": [
+        "Калі вы працягніце пасля пробнага перыяду,"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ]
     },
     "Option": {

@@ -5673,6 +5673,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Onjuist back-up wachtwoord. Probeer het opnieuw."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Onjuist tweede wachtwoord. Probeer het opnieuw."
       ]
     },
     "error": {
@@ -8265,7 +8271,7 @@
         "Samengevoegd"
       ],
       "Message actions in progress. This may take a while.": [
-        "Bezig met verzenden van berichten. Dit kan een tijdje duren."
+        "Berichtacties worden uitgevoerd. Dit kan even duren."
       ],
       "Message download status:": [
         "Bericht download status:"
@@ -9776,7 +9782,7 @@
         "${ steps } stappen"
       ],
       "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
-        "Hey Lumo, ik ga weg en wil een afwezigheidsbericht instellen. Vraag me naar de data en wat er op moet staan, en laat me dan het bericht zien voordat je het aanzet."
+        "Hey Lumo, ik ga weg en wil een afwezigheidsbericht instellen. Vraag me naar de data en wat er op moet staan, en laat me dan het bericht zien voordat u het aanzet."
       ],
       "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
         "Hey Lumo, laat me zien hoe u me kunt helpen met mijn mailbox. Wat voor dingen kan ik van u vragen, en waar kunt u niet mee helpen?"
@@ -9787,6 +9793,45 @@
       ],
       "Rename this folder": [
         "Hernoem deze map"
+      ],
+      "Add contact": [
+        "Contact toevoegen"
+      ],
+      "Change your theme": [
+        "Wijzig uw thema"
+      ],
+      "Create a folder": [
+        "Map aanmaken"
+      ],
+      "Edit a contact": [
+        "Contactgegevens bewerken"
+      ],
+      "Edit contact": [
+        "Contactgegevens bewerken"
+      ],
+      "Mark ${ emails } as unread": [
+        "Markeer ${ emails } als ongelezen"
+      ],
+      "No draft open": [
+        "Geen concept open"
+      ],
+      "Read your auto-reply": [
+        "Lees uw automatisch antwoord"
+      ],
+      "Rename folder": [
+        "Map hernoemen"
+      ],
+      "reply all": [
+        "antwoord allen"
+      ],
+      "Turn off auto-reply": [
+        "Zet automatisch antwoorden uit"
+      ],
+      "Turn off your away message": [
+        "Zet uw afwezigheidsbericht uit"
+      ],
+      "Turn on your away message": [
+        "Zet uw afwezigheidsbericht aan"
       ]
     },
     "info": {
@@ -10041,6 +10086,9 @@
       ],
       "Star": [
         "Ster"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Sluit ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10498,7 +10546,7 @@
         "Mapnaam"
       ],
       "Forwards to": [
-        "Stuurt door na"
+        "Stuurt door naar"
       ],
       "Frequency": [
         "Frequentie"
@@ -11072,6 +11120,12 @@
       ],
       "Away message": [
         "Afwezigheidsbericht"
+      ],
+      "New name": [
+        "Nieuwe naam"
+      ],
+      "To": [
+        "Aan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12958,6 +13012,9 @@
       ],
       "Your subscription renews soon": [
         "Uw abonnement vernieuwt binnenkort"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Laatste kans om aan deze prijs uw eerste maand ${ plan } te krijgen."
       ]
     },
     "Offer fearue": {
@@ -13228,6 +13285,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "U kunt kosteloos gebruikmaken van ${ planTitle } totdat de proefversie eindigt."
+      ],
+      "Add a payment method": [
+        "Voeg een betaalmethode toe"
       ]
     },
     "Option": {
