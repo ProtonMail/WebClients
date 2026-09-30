@@ -14,11 +14,12 @@ import { getPrimaryKey } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { startImportTask } from '../../../../api';
-import type { CalendarImportMapping, DriveImportFolder, LaunchImportPayload } from '../../../../interface';
+import type { CalendarImportMapping, LaunchImportPayload } from '../../../../interface';
 import { ImportType, IsCustomCalendarMapping } from '../../../../interface';
 import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import type { ImporterCalendar, ImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.interface';
 import { formatPrepareStepPayload } from '../../Imap/ImapMailModal/StepPrepareImap/StepPrepareImap.helpers';
+import { startDriveImportTask } from '../Drive/driveImportTask';
 
 interface StartImporterProps {
     api: Api;
@@ -95,44 +96,6 @@ const createCalendars = async ({
     }
 
     return tempCalendars;
-};
-
-const sanitizeFolderNamePart = (name: string) => name.replace(/[<>:"/\\|?*\x00-\x1F]/g, '-');
-
-// We only support google for now
-const getDriveImportFolderName = (importedEmail: string) => {
-    const timestamp = sanitizeFolderNamePart(new Date().toISOString());
-    const accountName = sanitizeFolderNamePart(importedEmail.split('@')[0]);
-    return `google-drive-${accountName}-${timestamp}`;
-};
-
-/**
- * Builds the Drive `ImportFolder` payload for the import start endpoint. The SDK
- * prepares the crypto material for an orphaned folder under My files (no folder is
- * created on the server); the volume and parent link come from the My files root.
- */
-const prepareDriveImportFolder = async (
-    drive: ProtonDriveClient,
-    importedEmail: string
-): Promise<DriveImportFolder> => {
-    // getMyFilesRootFolder creates the main volume if none exists yet (new accounts).
-    const rootFolder = await drive.getMyFilesRootFolder();
-    const [volumeId, nodeId] = rootFolder.uid.split('~');
-    const folder = await drive.experimental.prepareImportFolder(getDriveImportFolderName(importedEmail));
-
-    return {
-        VolumeID: volumeId,
-        ParentLinkID: nodeId,
-        Name: folder.encryptedName,
-        Hash: folder.hash,
-        NodePassphrase: folder.armoredNodePassphrase,
-        NodePassphraseSignature: folder.armoredNodePassphraseSignature,
-        NodeKey: folder.armoredKey,
-        NodeHashKey: folder.armoredHashKey,
-        SignatureAddress: folder.signatureEmail,
-        NodePassphraseClearText: folder.base64Passphrase,
-        ...(folder.armoredExtendedAttributes !== undefined && { XAttr: folder.armoredExtendedAttributes }),
-    };
 };
 
 export const createImporterTask = async ({
@@ -273,24 +236,25 @@ export const createImporterTask = async ({
         setIsCreatingImportTask(true);
 
         if (driveClient && products.includes(ImportType.DRIVE)) {
-            try {
-                importPayload.Drive = {
-                    ImportFolder: await prepareDriveImportFolder(driveClient, importerData.importedEmail),
-                };
-            } catch (e) {
-                traceError(e, {
-                    tags: { component: 'drive-sdk' },
-                    extra: {
-                        context: 'Error while preparing Drive import folder',
-                        importerID: importerData.importerId,
-                    },
-                });
-                isErrorReported = true;
-                throw e;
-            }
+            await startDriveImportTask({
+                api,
+                drive: driveClient,
+                importPayload,
+                importedEmail: importerData.importedEmail,
+                onPrepareFolderError: (e) => {
+                    traceError(e, {
+                        tags: { component: 'drive-sdk' },
+                        extra: {
+                            context: 'Error while preparing Drive import folder',
+                            importerID: importerData.importerId,
+                        },
+                    });
+                    isErrorReported = true;
+                },
+            });
+        } else {
+            await api(startImportTask(importPayload));
         }
-
-        await api(startImportTask(importPayload));
         await call();
         setIsCreatingImportTask(false);
 
