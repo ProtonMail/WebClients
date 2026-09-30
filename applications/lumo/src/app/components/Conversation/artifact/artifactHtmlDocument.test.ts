@@ -54,7 +54,8 @@ describe('artifactSupportsPptxExport', () => {
 
 describe('PRESENTATION_PPTX_EXPORT_OPTIONS', () => {
     it('uses the same slide viewport width as PDF export', () => {
-        expect(PRESENTATION_PPTX_EXPORT_OPTIONS).toEqual({ viewportWidth: 960, scale: 1 });
+        expect(PRESENTATION_PPTX_EXPORT_OPTIONS).toEqual({ viewportWidth: 960, scale: 2 });
+        expect(PRESENTATION_PDF_EXPORT_OPTIONS.viewportWidth).toBe(PRESENTATION_PPTX_EXPORT_OPTIONS.viewportWidth);
     });
 });
 
@@ -67,7 +68,19 @@ describe('buildArtifactFileName', () => {
             content: 'hello',
         };
 
-        expect(buildArtifactFileName(artifact, 'pdf')).toBe('q1-plan-draft.pdf');
+        expect(buildArtifactFileName(artifact, 'pdf')).toBe('Q1 Plan - Draft.pdf');
+    });
+
+    it.each([
+        ['Q3 Board Update', 'Q3 Board Update.pdf'],
+        ['  Trailing dots...  ', 'Trailing dots.pdf'],
+        ['/Report: final?', 'Report - final.pdf'],
+        ['Plan - v2', 'Plan - v2.pdf'],
+        ['Tab\tand\nnewline', 'Tab and newline.pdf'],
+        ['Résumé 日本語', 'Résumé 日本語.pdf'],
+        ['???', 'artifact.pdf'],
+    ])('keeps "%s" readable as "%s"', (title, expected) => {
+        expect(buildArtifactFileName({ id: 'a1', type: 'document', title, content: 'x' }, 'pdf')).toBe(expected);
     });
 });
 
