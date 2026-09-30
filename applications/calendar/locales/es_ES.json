@@ -4152,6 +4152,12 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "La contraseña de respaldo no es correcta. Inténtalo de nuevo."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segunda contraseña no es correcta. Inténtalo de nuevo."
       ]
     },
     "error": {
@@ -12521,7 +12527,7 @@
         "Configura tu organización"
       ],
       "Settings": [
-        "Configuración"
+        "Ajustes"
       ],
       "Share your calendar with your team": [
         "Comparte tu calendario con tu equipo"
