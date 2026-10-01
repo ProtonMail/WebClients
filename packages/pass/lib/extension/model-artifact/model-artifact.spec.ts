@@ -1,5 +1,4 @@
 import { detectionClasses } from '@protontech/autofill/types';
-import type { DetectionClass } from '@protontech/autofill/types';
 
 import {
     createModelProvider,
@@ -9,13 +8,6 @@ import {
     isModelArch,
 } from './model-artifact';
 import type { ModelArtifact } from './model-artifact';
-
-/** Empty `coeffs` trivially satisfies pass-ml's structural validation. */
-const validPerceptronWeights = () =>
-    Object.fromEntries(detectionClasses.map((klass) => [klass, { bias: 0, coeffs: [] }])) as Record<
-        DetectionClass,
-        { bias: number; coeffs: [] }
-    >;
 
 const validRandomForestWeights = () =>
     Object.fromEntries(
@@ -55,19 +47,21 @@ const makeArtifactZip = async (files: Record<string, unknown>, rawFiles: Record<
 };
 
 describe('`isModelArch`', () => {
-    test.each(['lr', 'rf'])('"%s" is a valid arch', (value) => {
+    test.each(['rf'])('"%s" is a valid arch', (value) => {
         expect(isModelArch(value)).toBe(true);
     });
 
-    test.each(['xx', ''])('"%s" is not a valid arch', (value) => {
+    // `lr` was retired with the perceptron model (IDTEAM-6575): artifacts advertising it must
+    // now be rejected outright rather than silently loaded.
+    test.each(['lr', 'xx', ''])('"%s" is not a valid arch', (value) => {
         expect(isModelArch(value)).toBe(false);
     });
 });
 
 describe('`getModelArch`', () => {
     test.each([
-        ['2026.8.2475-lr', 'lr'],
         ['2026.10.1-rf', 'rf'],
+        ['2026.10.2554-rf', 'rf'],
     ])('resolves the arch for "%s"', (modelId, arch) => {
         const result = getModelArch(modelId);
         expect(result.ok).toBe(true);
@@ -77,12 +71,13 @@ describe('`getModelArch`', () => {
     test.each([
         '1.40.2-bundled',
         'not-a-model-id',
-        '2026.8.2475-xx',
-        '2026.8.2475-lr-extra',
-        ' 2026.8.2475-lr',
-        '2026.8.-lr',
-        '2026.8.2475.1-lr',
-        '2026.8.2475-LR',
+        '2026.10.2554-xx',
+        '2026.10.2554-rf-extra',
+        ' 2026.10.2554-rf',
+        '2026.10.-rf',
+        '2026.10.2554.1-rf',
+        '2026.10.2554-RF',
+        '2026.8.2475-lr',
     ])('fails for "%s"', (modelId) => {
         const result = getModelArch(modelId);
         expect(result.ok).toBe(false);
@@ -92,8 +87,8 @@ describe('`getModelArch`', () => {
 
 describe('`getModelArtifactURL`', () => {
     test('builds the per-model artifact URL', () => {
-        expect(getModelArtifactURL('2026.8.2475-lr')).toBe(
-            'https://proton.me/download/pass/model-artifacts/2026.8.2475-lr/model-artifact.zip'
+        expect(getModelArtifactURL('2026.10.2554-rf')).toBe(
+            'https://proton.me/download/pass/model-artifacts/2026.10.2554-rf/model-artifact.zip'
         );
     });
 
@@ -114,19 +109,9 @@ describe('`getModelArtifactURL`', () => {
 });
 
 describe('`createModelProvider`', () => {
-    test('constructs a provider from valid perceptron weights', () => {
-        const result = createModelProvider({
-            modelId: '2026.8.2475-lr',
-            arch: 'lr',
-            weights: validPerceptronWeights(),
-        });
-        expect(result.ok).toBe(true);
-        if (result.ok) expect(result.provider.email).toHaveProperty('model');
-    });
-
     test('constructs a provider from valid random forest weights', () => {
         const result = createModelProvider({
-            modelId: '2026.8.2475-rf',
+            modelId: '2026.10.2554-rf',
             arch: 'rf',
             weights: validRandomForestWeights() as any,
         });
@@ -135,20 +120,20 @@ describe('`createModelProvider`', () => {
     });
 
     test('fails with a descriptive error on malformed weights', () => {
-        const weights = validPerceptronWeights();
+        const weights = validRandomForestWeights();
         delete (weights as any).email;
 
-        const result = createModelProvider({ modelId: '2026.8.2475-lr', arch: 'lr', weights });
+        const result = createModelProvider({ modelId: '2026.10.2554-rf', arch: 'rf', weights: weights as any });
         expect(result.ok).toBe(false);
         if (!result.ok) expect(result.error).toContain('email');
     });
 
     test('joins multiple validation problems into one error message', () => {
-        const weights = validPerceptronWeights();
+        const weights = validRandomForestWeights();
         delete (weights as any).email;
         delete (weights as any).otp;
 
-        const result = createModelProvider({ modelId: '2026.8.2475-lr', arch: 'lr', weights });
+        const result = createModelProvider({ modelId: '2026.10.2554-rf', arch: 'rf', weights: weights as any });
         expect(result.ok).toBe(false);
         if (!result.ok) expect(result.error!.split('; ')).toHaveLength(2);
     });
@@ -170,22 +155,22 @@ describe('`fetchModelArtifact`', () => {
 
     test('fetches, unzips and validates a real artifact', async () => {
         const files = Object.fromEntries(
-            detectionClasses.map((klass) => [`${klass}-model.json`, validPerceptronWeights()[klass]])
+            detectionClasses.map((klass) => [`${klass}-model.json`, validRandomForestWeights()[klass]])
         );
         const blob = await makeArtifactZip(files);
         fetchMock.mockResolvedValue({ ok: true, blob: () => Promise.resolve(blob) } as Response);
 
-        const result = await fetchModelArtifact('2026.8.2475-lr');
+        const result = await fetchModelArtifact('2026.10.2554-rf');
         expect(result.ok).toBe(true);
         if (result.ok) {
-            expect(result.artifact.modelId).toBe('2026.8.2475-lr');
-            expect(result.artifact.arch).toBe('lr');
+            expect(result.artifact.modelId).toBe('2026.10.2554-rf');
+            expect(result.artifact.arch).toBe('rf');
         }
-        expect(fetchMock).toHaveBeenCalledWith(getModelArtifactURL('2026.8.2475-lr'));
+        expect(fetchMock).toHaveBeenCalledWith(getModelArtifactURL('2026.10.2554-rf'));
     });
 
     test('fails when a class file is missing from the zip', async () => {
-        const weights = validPerceptronWeights();
+        const weights = validRandomForestWeights();
         const files = Object.fromEntries(
             detectionClasses
                 .filter((klass) => klass !== 'email')
@@ -194,13 +179,13 @@ describe('`fetchModelArtifact`', () => {
         const blob = await makeArtifactZip(files);
         fetchMock.mockResolvedValue({ ok: true, blob: () => Promise.resolve(blob) } as Response);
 
-        const result = await fetchModelArtifact('2026.8.2475-lr');
+        const result = await fetchModelArtifact('2026.10.2554-rf');
         expect(result.ok).toBe(false);
         if (!result.ok) expect(result.error).toContain('email-model.json');
     });
 
     test('propagates the real JSON.parse error instead of a generic message', async () => {
-        const weights = validPerceptronWeights();
+        const weights = validRandomForestWeights();
         const files = Object.fromEntries(
             detectionClasses
                 .filter((klass) => klass !== 'email')
@@ -209,11 +194,11 @@ describe('`fetchModelArtifact`', () => {
 
         const blobA = await makeArtifactZip(files, { 'email-model.json': '{not-json' });
         fetchMock.mockResolvedValueOnce({ ok: true, blob: () => Promise.resolve(blobA) } as Response);
-        const resultA = await fetchModelArtifact('2026.8.2475-lr');
+        const resultA = await fetchModelArtifact('2026.10.2554-rf');
 
         const blobB = await makeArtifactZip(files, { 'email-model.json': '[1, 2' });
         fetchMock.mockResolvedValueOnce({ ok: true, blob: () => Promise.resolve(blobB) } as Response);
-        const resultB = await fetchModelArtifact('2026.8.2475-lr');
+        const resultB = await fetchModelArtifact('2026.10.2554-rf');
 
         expect(resultA.ok).toBe(false);
         expect(resultB.ok).toBe(false);
@@ -232,14 +217,14 @@ describe('`fetchModelArtifact`', () => {
         const blob = await makeArtifactZip(files);
         fetchMock.mockResolvedValue({ ok: true, blob: () => Promise.resolve(blob) } as Response);
 
-        const result = await fetchModelArtifact('2026.8.2475-lr');
+        const result = await fetchModelArtifact('2026.10.2554-rf');
         expect(result.ok).toBe(false);
     });
 
     test('fails when the zip archive is corrupt', async () => {
         fetchMock.mockResolvedValue({ ok: true, blob: () => Promise.resolve(new Blob(['not a zip'])) } as Response);
 
-        const result = await fetchModelArtifact('2026.8.2475-lr');
+        const result = await fetchModelArtifact('2026.10.2554-rf');
         expect(result.ok).toBe(false);
         // Proves the real rejection reason propagates rather than falling back to the generic message.
         if (!result.ok) expect(result.error).not.toBe('model artifact is not a valid zip archive');
@@ -251,10 +236,16 @@ describe('`fetchModelArtifact`', () => {
         expect(fetchMock).not.toHaveBeenCalled();
     });
 
+    test('fails without fetching for a retired perceptron model ID', async () => {
+        const result = await fetchModelArtifact('2026.8.2475-lr');
+        expect(result.ok).toBe(false);
+        expect(fetchMock).not.toHaveBeenCalled();
+    });
+
     test('fails when the response is not ok', async () => {
         fetchMock.mockResolvedValue({ ok: false, status: 404 } as Response);
 
-        const result = await fetchModelArtifact('2026.8.2475-lr');
+        const result = await fetchModelArtifact('2026.10.2554-rf');
         expect(result.ok).toBe(false);
         if (!result.ok) expect(result.error).toContain('404');
     });
@@ -262,7 +253,7 @@ describe('`fetchModelArtifact`', () => {
     test('fails without throwing when the network request rejects', async () => {
         fetchMock.mockRejectedValue(new Error('network down'));
 
-        const result = await fetchModelArtifact('2026.8.2475-lr');
+        const result = await fetchModelArtifact('2026.10.2554-rf');
         expect(result.ok).toBe(false);
         if (!result.ok) expect(result.error).toContain('network down');
     });
