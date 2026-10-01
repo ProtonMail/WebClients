@@ -12,6 +12,7 @@ interface ArtifactDownloadDropdownProps {
     artifactType: ArtifactType;
     onDownloadSource: () => void;
     onDownloadTxt?: () => void;
+    onDownloadDocx?: () => void;
     onDownloadPdf?: () => void;
     onDownloadPptx?: () => void;
 }
@@ -20,6 +21,7 @@ export const ArtifactDownloadDropdown = ({
     artifactType,
     onDownloadSource,
     onDownloadTxt,
+    onDownloadDocx,
     onDownloadPdf,
     onDownloadPptx,
 }: ArtifactDownloadDropdownProps) => {
@@ -42,27 +44,18 @@ export const ArtifactDownloadDropdown = ({
                 <LumoIcon name="Download" size={16} />
             </Button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} className="chat-dropdown-menu">
+                {/* Editable and shareable formats first, then the raw source. */}
                 <DropdownMenu>
-                    <DropdownMenuButton
-                        className="text-left flex flex-nowrap items-center"
-                        onClick={() => {
-                            onDownloadSource();
-                            close();
-                        }}
-                    >
-                        <LumoIcon name="Download" size={16} className="mr-2 shrink-0 color-weak" />
-                        {getArtifactSourceDownloadLabel(artifactType)}
-                    </DropdownMenuButton>
-                    {onDownloadTxt && (
+                    {onDownloadDocx && (
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap items-center"
                             onClick={() => {
-                                onDownloadTxt();
+                                void onDownloadDocx();
                                 close();
                             }}
                         >
                             <LumoIcon name="FileText" size={16} className="mr-2 shrink-0 color-weak" />
-                            {getArtifactDownloadLabel('txt')}
+                            {getArtifactDownloadLabel('docx')}
                         </DropdownMenuButton>
                     )}
                     {onDownloadPdf && (
@@ -87,6 +80,28 @@ export const ArtifactDownloadDropdown = ({
                         >
                             <LumoIcon name="Presentation" size={16} className="mr-2 shrink-0 color-weak" />
                             {getArtifactDownloadLabel('pptx')}
+                        </DropdownMenuButton>
+                    )}
+                    <DropdownMenuButton
+                        className="text-left flex flex-nowrap items-center"
+                        onClick={() => {
+                            onDownloadSource();
+                            close();
+                        }}
+                    >
+                        <LumoIcon name="Download" size={16} className="mr-2 shrink-0 color-weak" />
+                        {getArtifactSourceDownloadLabel(artifactType)}
+                    </DropdownMenuButton>
+                    {onDownloadTxt && (
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap items-center"
+                            onClick={() => {
+                                onDownloadTxt();
+                                close();
+                            }}
+                        >
+                            <LumoIcon name="FileText" size={16} className="mr-2 shrink-0 color-weak" />
+                            {getArtifactDownloadLabel('txt')}
                         </DropdownMenuButton>
                     )}
                 </DropdownMenu>

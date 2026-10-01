@@ -2,9 +2,11 @@ import { c } from 'ttag';
 
 import type { ArtifactType } from './parseArtifacts';
 
-export type ArtifactSaveFormat = 'md' | 'txt' | 'pdf' | 'pptx';
+export const ARTIFACT_SAVE_FORMATS = ['docx', 'md', 'txt', 'pdf', 'pptx'] as const;
 
-const DOCUMENT_SAVE_FORMATS: ArtifactSaveFormat[] = ['md', 'txt', 'pdf'];
+export type ArtifactSaveFormat = (typeof ARTIFACT_SAVE_FORMATS)[number];
+
+const DOCUMENT_SAVE_FORMATS: ArtifactSaveFormat[] = ['docx', 'pdf', 'md', 'txt'];
 const PRESENTATION_SAVE_FORMATS: ArtifactSaveFormat[] = ['pdf', 'pptx'];
 
 export function getArtifactSaveFormats(type: ArtifactType): ArtifactSaveFormat[] {
@@ -29,6 +31,8 @@ export function isArtifactSaveFormatSupported(type: ArtifactType, format: Artifa
 
 export function getArtifactSaveFormatLabel(format: ArtifactSaveFormat): string {
     switch (format) {
+        case 'docx':
+            return c('collider_2025:Action').t`Word (.docx)`;
         case 'md':
             return c('collider_2025:Action').t`Source (Markdown)`;
         case 'txt':
@@ -56,6 +60,8 @@ export function getArtifactSourceDownloadLabel(type: ArtifactType): string {
 
 export function getArtifactDownloadLabel(format: ArtifactSaveFormat, type?: ArtifactType): string {
     switch (format) {
+        case 'docx':
+            return c('collider_2025:Action').t`Download Word (.docx)`;
         case 'txt':
             return c('collider_2025:Action').t`Download plain text`;
         case 'pdf':

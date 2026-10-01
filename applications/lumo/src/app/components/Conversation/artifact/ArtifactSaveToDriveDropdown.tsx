@@ -15,7 +15,7 @@ interface ArtifactSaveToDriveDropdownProps {
 }
 
 const getSaveFormatIcon = (format: ArtifactSaveFormat): 'Download' | 'FileText' | 'Presentation' => {
-    if (format === 'pdf') {
+    if (format === 'pdf' || format === 'docx') {
         return 'FileText';
     }
 

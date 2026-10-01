@@ -266,7 +266,7 @@ export type ArtifactPanelOpenSource = 'auto' | 'chip' | 'switcher' | 'edit-marke
 
 export type ArtifactRevisionSource = 'prompt' | 'inline-edit' | 'manual-edit';
 
-export type ArtifactDownloadFormat = 'source' | 'txt' | 'pdf' | 'pptx';
+export type ArtifactDownloadFormat = 'source' | 'txt' | 'docx' | 'pdf' | 'pptx';
 
 /**
  * - `success`: a file was generated and downloaded.
