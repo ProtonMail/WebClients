@@ -16,6 +16,7 @@ export interface AssistantFeedback {
     Body: string;
     Prompt?: string;
     ModelOutput?: string;
+    Conversation?: string;
 }
 
 export const sendAssistantFeedback = ({
@@ -36,6 +37,7 @@ export const sendAssistantFeedback = ({
     Prompt,
     ModelOutput,
     Component,
+    Conversation,
 }: AssistantFeedback) => ({
     url: `ai/v1/feedback`,
     method: 'post',
@@ -57,5 +59,6 @@ export const sendAssistantFeedback = ({
         Prompt,
         ModelOutput,
         Component,
+        Conversation,
     },
 });

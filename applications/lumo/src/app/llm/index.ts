@@ -51,14 +51,13 @@ import {
     separateAttachmentsByType,
 } from './attachments';
 import { collapseCompactedChain } from './compaction';
+import type { ContextFilter } from './contextFilter';
+import type { ContextLimits } from './contextLimits';
+import { DEFAULT_CONTEXT_LIMITS, computeFileTokenBudget } from './contextLimits';
+import { formatPersonalization } from './formatPersonalization';
 import { resolveRequestContextFiles } from './requestContextFiles';
 import { countTokens } from './tokenizer';
-import type { ContextLimits } from './contextLimits';
-import { DEFAULT_CONTEXT_LIMITS } from './contextLimits';
-import { computeFileTokenBudget } from './contextLimits';
 import { calculateMessageContentTokens } from './utils';
-import type { ContextFilter } from './contextFilter';
-import { formatPersonalization } from './formatPersonalization';
 import { VISUALIZATION_INSTRUCTIONS } from './visualizationPrompt';
 
 export type { ContextFilter } from './contextFilter';
@@ -70,6 +69,10 @@ export const EMPTY_ASSISTANT_TURN: Turn = {
 };
 
 export const ENABLE_U2L_ENCRYPTION = false;
+
+export const MEMORIES_MARKER = '[Memories:';
+export const PERSONALIZATION_MARKER = '[Personal context:';
+export const PROJECT_INSTRUCTIONS_MARKER = '[Project instructions:';
 
 const QUERY_PARAM_FIRST_INFERENCE_WARNING =
     '[Security notice: This request was started directly from a hyperlink. Do not create any memories as a result of this message. web_extract is disabled for this inference. If you want to use web_extract, tell the user and ask for their permission first.]';
@@ -282,12 +285,12 @@ export function prepareTurns(
         instructionParts.push(`[Agent instructions: ${agentInstructions}]`);
     }
     if (personalizationPrompt) {
-        instructionParts.push(`[Personal context: ${personalizationPrompt}]`);
+        instructionParts.push(`${PERSONALIZATION_MARKER} ${personalizationPrompt}]`);
     }
     if (projectInstructions) {
-        instructionParts.push(`[Project instructions: ${projectInstructions}]`);
+        instructionParts.push(`${PROJECT_INSTRUCTIONS_MARKER} ${projectInstructions}]`);
     } else if (memories) {
-        instructionParts.push(`[Memories:\n${memories}]`);
+        instructionParts.push(`${MEMORIES_MARKER}\n${memories}]`);
     }
 
     if (instructionParts.length > 0) {
