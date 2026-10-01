@@ -1,5 +1,3 @@
-import type { SessionKey } from '@protontech/crypto';
-
 import type { AuthVersion } from '../../authentication/interface';
 import type { SHARE_URL_PERMISSIONS } from '../../drive/permissions';
 import type { ScanResultItem } from './file';
@@ -10,20 +8,6 @@ type WithSRPPayload<T extends any> = T & {
     SRPVerifier: string;
     UrlPasswordSalt: string;
 };
-
-/**
- * drive/shares/{enc_shareID}/urls request payload
- */
-export type CreateSharedURL = WithSRPPayload<{
-    CreatorEmail: string;
-    ExpirationDuration: number | null;
-    Flags: number; // Unused in first iteration
-    MaxAccesses: number;
-    Password: string;
-    Permissions: number; // Only read (4) in first iteration
-    SharePassphraseKeyPacket: string;
-    SharePasswordSalt: string;
-}>;
 
 /**
  * drive/shares/{enc_shareID}/urls response payload
@@ -44,17 +28,6 @@ export type ShareURL = WithSRPPayload<{
     ShareURLID: string;
     Token: string;
     PublicUrl: string;
-}>;
-
-export type UpdateSharedURL = WithSRPPayload<{
-    ExpirationDuration: number | null;
-    ExpirationTime: number | null;
-    Flags: number; // Unused in first iteration
-    MaxAccesses: number;
-    Password: string;
-    Permissions: SHARE_URL_PERMISSIONS; // Only read (4) in first iteration
-    SharePassphraseKeyPacket: string;
-    SharePasswordSalt: string;
 }>;
 
 /**
@@ -116,11 +89,6 @@ export interface SRPHandshakeInfo {
 export interface ThumbnailURLInfo {
     BareURL: string;
     Token: string;
-}
-
-export interface SharedURLSessionKeyPayload {
-    sharePasswordSalt: string;
-    shareSessionKey: SessionKey;
 }
 
 export enum SharedURLFlags {

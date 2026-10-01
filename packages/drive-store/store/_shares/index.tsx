@@ -4,9 +4,6 @@ export * from './interface';
 export * from './shareUrl';
 export * from './utils';
 export { default as useDefaultShare } from './useDefaultShare';
-export { default as useShareUrl } from './useShareUrl';
-export { useDriveSharingFlags } from './useDriveSharingFlags';
-export { useDrivePublicSharingFlags } from './useDrivePublicSharingFlags';
 
 export function SharesProvider({ children }: { children: React.ReactNode }) {
     return <SharesKeysProvider>{children}</SharesKeysProvider>;

@@ -44,8 +44,6 @@ export const MAX_SHARED_URL_PASSWORD_LENGTH = 50;
 
 export const SHARE_GENERATED_PASSWORD_LENGTH = 12;
 
-export const DEFAULT_SHARE_MAX_ACCESSES = 0; // Zero means unlimited.
-
 export const CUSTOM_DATA_FORMAT = 'pd-custom';
 
 export const THUMBNAIL_MAX_SIDE = 512; // in pixels
