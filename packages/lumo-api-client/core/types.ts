@@ -173,6 +173,7 @@ export interface LumoApiClientConfig {
 // Callback types
 export type ChunkCallback = (message: GenerationResponseMessage) => Promise<void> | void;
 export type FinishCallback = (status: Status) => Promise<void> | void;
+export type RecordRequestCallback = (body: ChatCompletionsRequest) => void;
 
 // Options interface -
 export interface AssistantCallOptions {
@@ -215,6 +216,12 @@ export interface AssistantCallOptions {
      * human-in-the-loop approval inside `execute()` before running mutation handlers.
      */
     clientToolExecutor?: ClientToolExecutor;
+    /**
+     * Receives the main message's request body in plaintext, before U2L encryption, once per round (client-tool
+     * loops send several). It never carries `request_key`/`request_id`. Title and suggested-question requests
+     * don't trigger it.
+     */
+    recordRequestCallback?: RecordRequestCallback;
 }
 
 export interface AssistantCallResult {

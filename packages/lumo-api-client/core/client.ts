@@ -76,6 +76,14 @@ export const CLIENT_TOOL_ROUND_BUDGET = 10;
  */
 export const MAX_CLIENT_TOOL_ROUNDS = CLIENT_TOOL_ROUND_BUDGET * 2;
 
+type GenerationRequestFlags = {
+    enableExternalTools: boolean;
+    enableImageTools: boolean;
+    enableReasoning: boolean;
+    enableSuggestedQuestions: boolean;
+    clientToolExecutor?: ClientToolExecutor;
+};
+
 const missingResultFor = (call: PendingClientToolCall): ClientToolResult => ({
     content: JSON.stringify({ error: `The ${call.name} tool returned no result. Try again.` }),
     is_error: true,
@@ -104,6 +112,7 @@ export class LumoApiClient {
         const {
             chunkCallback,
             finishCallback,
+            recordRequestCallback,
             signal,
             enableExternalTools = false,
             enableImageTools = false,
@@ -210,9 +219,8 @@ export class LumoApiClient {
             let rounds = 0;
             let billableRounds = 0;
             while (true) {
-                let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(
+                const plaintextRequest = await this.preparePlaintextGenerationRequest(
                     currentTurns,
-                    encryption,
                     {
                         enableExternalTools,
                         enableImageTools,
@@ -222,6 +230,19 @@ export class LumoApiClient {
                     },
                     { imageAspectRatio }
                 );
+
+                recordRequestCallback?.(
+                    this.prepareChatEndpointPostData(plaintextRequest, {
+                        enableReasoning,
+                        modelTier,
+                        target: 'message',
+                        responseFormat,
+                        clientTools,
+                        serverTools,
+                    })
+                );
+
+                let request = await this.encryptGenerationRequest(plaintextRequest, encryption);
                 request = await this.notifyRequestInterceptors(request, requestContext);
 
                 const responseContext: ResponseContext = this.initializeResponseContext(requestContext);
@@ -399,26 +420,26 @@ export class LumoApiClient {
     private async prepareGenerationRequest(
         turns: Turn[],
         encryption: RequestEncryptionParams | null,
-        flags: {
-            enableExternalTools: boolean;
-            enableImageTools: boolean;
-            enableReasoning: boolean;
-            enableSuggestedQuestions: boolean;
-            clientToolExecutor?: ClientToolExecutor;
-        },
+        flags: GenerationRequestFlags,
         additionalOptions?: {
             imageAspectRatio?: ImageAspectRatio;
         }
     ): Promise<LumoApiGenerationRequest> {
-        const { lumoPubKey } = this.config;
+        const plaintextRequest = await this.preparePlaintextGenerationRequest(turns, flags, additionalOptions);
+        return this.encryptGenerationRequest(plaintextRequest, encryption);
+    }
+
+    private async preparePlaintextGenerationRequest(
+        turns: Turn[],
+        flags: GenerationRequestFlags,
+        additionalOptions?: {
+            imageAspectRatio?: ImageAspectRatio;
+        }
+    ): Promise<LumoApiGenerationRequest> {
         const { enableExternalTools, enableImageTools, enableReasoning, enableSuggestedQuestions, clientToolExecutor } =
             flags;
         const { imageAspectRatio } = additionalOptions || {};
 
-        // Encrypt request if needed
-        if (encryption) {
-            turns = await encryptTurns(turns, encryption);
-        }
         const tools = await this.getTools(enableExternalTools, enableImageTools, clientToolExecutor);
         return {
             type: 'generation_request',
@@ -429,8 +450,21 @@ export class LumoApiClient {
                 ...(enableImageTools && imageAspectRatio && { image_aspect_ratio: imageAspectRatio }),
                 suggested_questions: enableSuggestedQuestions,
             },
-            request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
-            request_id: encryption?.requestId,
+        };
+    }
+
+    private async encryptGenerationRequest(
+        request: LumoApiGenerationRequest,
+        encryption: RequestEncryptionParams | null
+    ): Promise<LumoApiGenerationRequest> {
+        if (!encryption) {
+            return request;
+        }
+        return {
+            ...request,
+            turns: await encryptTurns(request.turns, encryption),
+            request_key: (await encryption.encryptRequestKey(this.config.lumoPubKey)) || undefined,
+            request_id: encryption.requestId,
         };
     }
 
