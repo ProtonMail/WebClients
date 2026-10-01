@@ -2315,6 +2315,9 @@
     "Action subscription": {
       "Reactivate": [
         "재활성화"
+      ],
+      "View breakdown": [
+        "세부 내역 보기"
       ]
     },
     "Action: Sheets": {
@@ -3027,8 +3030,14 @@
       ]
     },
     "Billing cycle": {
+      "Free renewal": [
+        "무료 갱신"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName }에 자동으로 갱신합니다."
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "${ replacementDate }에 차후 변경될 구독 플랜으로 대체됩니다"
       ]
     },
     "Billing cycle option": {
@@ -12603,6 +12612,9 @@
       "RECOMMENDED": [
         "권장됨"
       ],
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "신뢰하는 기기에서 권장됩니다. ${ learnMoreLink }"
+      ],
       "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
         "${ PROTON_SENTINEL_NAME }이 활성화된 경우 이메일으로 복구를 사용할 수 없습니다."
       ],
@@ -14371,6 +14383,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "선물됨"
+      ],
+      "Open": [
+        "열기"
       ],
       "Paid": [
         "결제 완료"
@@ -16945,6 +16960,9 @@
       ],
       "Pay invoice": [
         "청구서 지불"
+      ],
+      "Pay it": [
+        "결제"
       ],
       "Privacy policy": [
         "개인 정보 정책"
@@ -27671,11 +27689,17 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "청구서"
+      ],
       "End date": [
         "종료일"
       ],
       "Plan": [
         "플랜"
+      ],
+      "Start date": [
+        "시작일"
       ],
       "Status": [
         "상태"
@@ -28037,6 +28061,9 @@
       ],
       "Disables end-to-end email encryption for this group": [
         "이 그룹의 종단간 이메일 암호화를 비활성화합니다"
+      ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "외부 주소 - 이 그룹에 할당된 규칙과 권한을 부여할 수 없습니다."
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "외부 주소 - 이 그룹의 모든 이메일 종단간 안호화를 비활성화 하고 해당 사용자와 모든 암호화된 자료를 공유하지 않습니다"
