@@ -6,27 +6,33 @@ import { act, renderHook } from '@testing-library/react';
 import { ConnectionState, DisconnectReason, RoomEvent } from 'livekit-client';
 import type { Mock } from 'vitest';
 
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetStore } from '@proton/meet/store/hooks';
 import { setIsReconnecting, setJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
-import { setUpsellModalType } from '@proton/meet/store/slices/meetAppStateSlice';
+import { setMeetingEndedReason, setUpsellModalType } from '@proton/meet/store/slices/meetAppStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
-import { useRoomEventHandlers } from './useRoomEventHandlers';
+import { ROOM_DELETED_TOPIC, useRoomEventHandlers } from './useRoomEventHandlers';
 
 vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn() }));
 vi.mock('react-router-dom', () => ({ useHistory: vi.fn() }));
-vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn() }));
+vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn(), useMeetStore: vi.fn() }));
 vi.mock('../../contexts/MeetCoreClientContext', () => ({ useMeetCoreClient: vi.fn() }));
 
 const useRoomContextMock = useRoomContext as unknown as Mock;
 const useHistoryMock = useHistory as unknown as Mock;
 const useMeetDispatchMock = useMeetDispatch as unknown as Mock;
+const useMeetStoreMock = useMeetStore as unknown as Mock;
 const useMeetCoreClientMock = useMeetCoreClient as unknown as Mock;
 
 const mockRoom = { on: vi.fn(), off: vi.fn() };
 const mockHistory = { push: vi.fn() };
 const mockDispatch = vi.fn();
+const mockStore = {
+    getState: () => ({
+        participants: { localParticipantIdentity: 'host', participantsMap: { host: { IsHost: true } } },
+    }),
+};
 const mockMeetCoreClient = { leaveMeeting: vi.fn().mockResolvedValue(undefined) };
 
 const createParams = (overrides: Record<string, any> = {}) => ({
@@ -46,7 +52,7 @@ const createParams = (overrides: Record<string, any> = {}) => ({
     ...overrides,
 });
 
-const getHandler = (event: RoomEvent): ((arg?: any) => void) => {
+const getHandler = (event: RoomEvent): ((...args: any[]) => void) => {
     const call = mockRoom.on.mock.calls.find(([registeredEvent]) => registeredEvent === event);
     return call?.[1];
 };
@@ -57,6 +63,7 @@ describe('useRoomEventHandlers', () => {
         useRoomContextMock.mockReturnValue(mockRoom);
         useHistoryMock.mockReturnValue(mockHistory);
         useMeetDispatchMock.mockReturnValue(mockDispatch);
+        useMeetStoreMock.mockReturnValue(mockStore);
         useMeetCoreClientMock.mockReturnValue(mockMeetCoreClient);
     });
 
@@ -146,6 +153,43 @@ describe('useRoomEventHandlers', () => {
             expect(mockDispatch).not.toHaveBeenCalledWith(setUpsellModalType(UpsellModalTypes.MeetingEnded));
             expect(params.isExpiringRef.current).toBe(false);
             expect(mockHistory.push).toHaveBeenCalledWith('/dashboard');
+        });
+    });
+
+    describe('DataReceived handler', () => {
+        const encode = (text: string) => new TextEncoder().encode(text);
+
+        it('stores the reason the server sends before deleting the room, with the host status', () => {
+            renderHook(() => useRoomEventHandlers(createParams()));
+
+            act(() =>
+                getHandler(RoomEvent.DataReceived)(
+                    encode('TimeLimitExceeded'),
+                    undefined,
+                    undefined,
+                    ROOM_DELETED_TOPIC
+                )
+            );
+
+            expect(mockDispatch).toHaveBeenCalledWith(
+                setMeetingEndedReason({ reason: 'TimeLimitExceeded', isLocalParticipantHost: true })
+            );
+        });
+
+        it('ignores a participant publishing on the room-deleted topic', () => {
+            renderHook(() => useRoomEventHandlers(createParams()));
+            mockDispatch.mockClear();
+
+            act(() =>
+                getHandler(RoomEvent.DataReceived)(
+                    encode('TimeLimitExceeded'),
+                    { identity: 'attacker' },
+                    undefined,
+                    ROOM_DELETED_TOPIC
+                )
+            );
+
+            expect(mockDispatch).not.toHaveBeenCalled();
         });
     });
 
