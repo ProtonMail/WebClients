@@ -271,9 +271,6 @@
       "Create folder": [
         "Criar uma pasta"
       ],
-      "Create new folder": [
-        "Criar uma pasta"
-      ],
       "Create new password": [
         "Criar uma palavra-passe"
       ],
@@ -3135,9 +3132,6 @@
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
       ],
-      "A problem occurred, please try again.": [
-        "Ocorreu um erro. Tente novamente."
-      ],
       "Address could not be added.": [
         "O endereço não pôde ser adicionado."
       ],
@@ -3191,12 +3185,6 @@
       ],
       "Contact signature not verified": [
         "Assinatura do contacto não verificada"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "A pesquisa de conteúdo não pode ser ativada neste navegador. Saia do modo de navegação privada ou utilize outro navegador."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "A pesquisa de conteúdo não pode ser ativada. Reinicie a aplicação, ou limpe os dados."
       ],
       "Copying item to a non-folder is not allowed": [
         "Não é permitido copiar um item para um local que não seja uma pasta"
@@ -3256,9 +3244,6 @@
       ],
       "Failed to change permissions settings": [
         "Falha ao alterar as definições de permissões"
-      ],
-      "Failed to copy photo to album": [
-        "Erro ao copiar a foto para o álbum"
       ],
       "Failed to create folder": [
         "Erro na criação da pasta"
@@ -3452,9 +3437,6 @@
       ],
       "Payment process not supported": [
         "Processo de pagamento não suportado"
-      ],
-      "Please activate your search again": [
-        "Ative a pesquisa novamente."
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Por favor, verifique se o seu ABN está registado para IVA transfronteiriço"
@@ -4931,12 +4913,6 @@
       "Clear data": [
         "Limpar dados"
       ],
-      "Clear encrypted search data": [
-        "Limpar os dados de pesquisa encriptada"
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Limpa os dados do navegador relacionados com a pesquisa encriptada."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
       ],
@@ -5119,16 +5095,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Introduza a sua própria palavra-passe (como contacto de confiança)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Tempo restante estimado: ${ estimatedMinutes } minuto",
-        "Tempo restante estimado: ${ estimatedMinutes } minutos"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Tempo restante estimado: menos de um minuto"
-      ],
-      "Estimating time remaining...": [
-        "A estimar o tempo restante..."
       ],
       "Everything in ${ planOrAppName }": [
         "Tudo no ${ planOrAppName }"
@@ -6733,9 +6699,6 @@
       "Toolbar": [
         "Barra de ferramentas"
       ],
-      "Type": [
-        "Tipo"
-      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -8309,9 +8272,6 @@
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" criado com sucesso"
       ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "Não foi possível criar \"${ ellipsedName }\""
-      ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" movido"
       ],
@@ -8341,10 +8301,6 @@
         "Não foi possível eliminar ${ errors.length } item",
         "Não foi possível eliminar ${ errors.length } itens"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } item eliminado",
-        "${ numberOfItems } itens eliminados"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } item eliminado permanentemente",
         "${ numberOfItems } itens eliminados permanentemente"
@@ -8353,21 +8309,9 @@
         "${ numberOfItems } item permanentemente eliminado do lixo",
         "${ numberOfItems } itens permanentemente eliminados do lixo"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Erro ao eliminar ${ numberOfItems } item permanentemente do lixo",
-        "Erro ao eliminar ${ numberOfItems } itens permanentemente do lixo"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "Erro ao mover ${ numberOfItems } item",
-        "Erro ao mover ${ numberOfItems } itens"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "Não foi possível mover o item ${ numberOfItems } para o lixo",
         "Não foi possível mover os itens ${ numberOfItems } para o lixo"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "Erro ao restaurar ${ numberOfItems } ficheiro do lixo",
-        "Erro ao restaurar ${ numberOfItems } ficheiros do lixo"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } item movido",
@@ -8393,9 +8337,6 @@
       "Access updated": [
         "O acesso foi atualizado."
       ],
-      "Cannot load link": [
-        "Não é possível carregar a ligação."
-      ],
       "Cannot load next page": [
         "Não é possível carregar a página seguinte."
       ],
@@ -8404,12 +8345,6 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
-      ],
-      "Device failed to be removed": [
-        "Erro ao remover o dispositivo"
-      ],
-      "Device failed to be renamed": [
-        "Erro ao mudar o nome do dispositivo"
       ],
       "Device removed": [
         "O dispositivo foi removido."
