@@ -10,7 +10,7 @@ import {
   $getRoot,
   $isTextNode,
 } from 'lexical'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { AllNodes } from '../../AllNodes'
 import { $formatTextAsSuggestion } from './formatTextAsSuggestion'
 import type { ProtonNode } from './ProtonNode'
@@ -21,7 +21,7 @@ import { assertCondition } from './TestUtils'
 const onSuggestionCreation = jest.fn()
 const logger = {
   info: jest.fn(),
-} as unknown as Logger
+} as unknown as DocsLogger
 
 describe('$formatTextAsSuggestion', () => {
   const editor = createHeadlessEditor({

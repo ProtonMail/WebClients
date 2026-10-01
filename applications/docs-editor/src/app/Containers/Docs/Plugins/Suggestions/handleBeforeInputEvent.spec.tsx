@@ -33,7 +33,7 @@ import * as ReactTestUtils from '../../../../Utils/react-test-utils'
 import type { ListItemNode, ListNode } from '@lexical/list'
 import { $isListItemNode, $createListItemNode, $createListNode, $isListNode } from '@lexical/list'
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { $createHorizontalRuleNode, $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import type { TableCellNode, TableRowNode } from '@lexical/table'
 import {
@@ -128,7 +128,7 @@ describe('$handleBeforeInputEvent', () => {
   const onSuggestionCreation = jest.fn()
   const logger = {
     info: jest.fn(),
-  } as unknown as Logger
+  } as unknown as DocsLogger
 
   describe('Insertion', () => {
     test('should insert basic text', async () => {

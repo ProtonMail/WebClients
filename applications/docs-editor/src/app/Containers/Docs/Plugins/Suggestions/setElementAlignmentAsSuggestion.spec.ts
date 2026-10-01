@@ -1,5 +1,5 @@
 import { createHeadlessEditor } from '@lexical/headless'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { AllNodes } from '../../AllNodes'
 import type { ParagraphNode, TextNode } from 'lexical'
 import { $createParagraphNode, $createRangeSelection, $createTextNode, $getRoot, $setSelection } from 'lexical'
@@ -17,7 +17,7 @@ import { $insertFirst } from '@lexical/utils'
 const onSuggestionCreation = jest.fn()
 const logger = {
   info: jest.fn(),
-} as unknown as Logger
+} as unknown as DocsLogger
 
 describe('$setElementAlignmentAsSuggestion', () => {
   const editor = createHeadlessEditor({

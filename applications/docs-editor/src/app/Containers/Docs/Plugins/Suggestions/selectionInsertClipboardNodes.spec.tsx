@@ -12,7 +12,7 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../../../Utils/react-test-utils'
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
 import { $createLinkNode } from '@lexical/link'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'
 import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text'
@@ -87,7 +87,7 @@ describe('$selectionInsertClipboardNodes', () => {
   const onSuggestionCreation = jest.fn()
   const logger = {
     info: jest.fn(),
-  } as unknown as Logger
+  } as unknown as DocsLogger
 
   describe('Inserting into empty paragraph', () => {
     beforeEach(async () => {

@@ -22,7 +22,7 @@ import {
   SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
   UNDO_COMMAND,
 } from 'lexical'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { SuggestionTypesThatCanBeEmpty, type SuggestionID } from './Types'
 import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INSERT_FILE_COMMAND } from '../../Commands/Events'
@@ -36,7 +36,7 @@ import { $acceptSuggestion } from './acceptSuggestion'
 import { $rejectSuggestion } from './rejectSuggestion'
 import { $handleBeforeInputEvent } from './handleBeforeInputEvent'
 import { $formatTextAsSuggestion } from './formatTextAsSuggestion'
-import { Logger } from '@proton/shared/lib/logs'
+import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { getShortcutFromKeyboardEvent } from '../KeyboardShortcuts/Utils'
@@ -113,7 +113,7 @@ export function SuggestionModePlugin({
 
   const { markNodeMap } = useMarkNodesContext()
 
-  const [suggestionModeLogger] = useState(() => new Logger('docs-suggestions-mode'))
+  const { logger: suggestionModeLogger } = useDocsDependencies()
 
   /**
    * Set of suggestion IDs created during the current session.
@@ -189,7 +189,7 @@ export function SuggestionModePlugin({
             continue
           }
 
-          suggestionModeLogger.info(`Creating new thread for suggestion ${id}`)
+          suggestionModeLogger.info(`suggestion-mode: Creating new thread for suggestion ${id}`)
 
           const summary = generateSuggestionSummary(editor, markNodeMap, id)
 
@@ -198,7 +198,7 @@ export function SuggestionModePlugin({
           createSuggestionThread(id, content, summary[0].type)
             .then(() => {
               createdSuggestionIDs.delete(id)
-              suggestionModeLogger.info(`Removed id ${id} from set ${[...createdSuggestionIDs]}`)
+              suggestionModeLogger.info(`suggestion-mode: Removed id ${id} from set ${[...createdSuggestionIDs]}`)
             })
             .catch(reportErrorToSentry)
         }
@@ -216,7 +216,9 @@ export function SuggestionModePlugin({
             if (!thread) {
               continue
             }
-            suggestionModeLogger.info(`Reopening thread ${thread.id} for suggestion ${suggestionID} after undo/redo`)
+            suggestionModeLogger.info(
+              `suggestion-mode: Reopening thread ${thread.id} for suggestion ${suggestionID} after undo/redo`,
+            )
             reopenSuggestion(thread.id).catch(reportErrorToSentry)
           }
           for (const removed of removedNodes) {
@@ -225,7 +227,9 @@ export function SuggestionModePlugin({
             if (!thread) {
               continue
             }
-            suggestionModeLogger.info(`Rejecting thread ${thread.id} for suggestion ${suggestionID} after undo/redo`)
+            suggestionModeLogger.info(
+              `suggestion-mode: Rejecting thread ${thread.id} for suggestion ${suggestionID} after undo/redo`,
+            )
             rejectSuggestion(thread.id).catch(reportErrorToSentry)
           }
         })
@@ -334,7 +338,7 @@ export function SuggestionModePlugin({
         }
         if (node.getChildrenSize() === 0) {
           const id = node.getSuggestionIdOrThrow()
-          suggestionModeLogger.info('Removing empty suggestion node', id, type)
+          suggestionModeLogger.info('suggestion-mode: Removing empty suggestion node', id, type)
           node.remove()
         }
       }),
@@ -356,7 +360,7 @@ export function SuggestionModePlugin({
 
     const addCreatedIDtoSet = (id: string) => {
       createdSuggestionIDsRef.current.add(id)
-      suggestionModeLogger.info('Created suggestion node with ID: ', id)
+      suggestionModeLogger.info('suggestion-mode: Created suggestion node with ID: ', id)
     }
 
     return mergeRegister(
@@ -597,7 +601,7 @@ export function SuggestionModePlugin({
          * the editor is composing and show an alert to the user.
          */
         function disableSuggestionModeIfComposing() {
-          suggestionModeLogger.info('Editor is composing, disabling suggestion mode')
+          suggestionModeLogger.info('suggestion-mode: Editor is composing, disabling suggestion mode')
           editor.setEditable(false)
           editor._compositionKey = null
           onUserModeChange(EditorUserMode.Preview)

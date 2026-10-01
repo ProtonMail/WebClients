@@ -10,7 +10,7 @@ import {
 import { GenerateUUID } from '@proton/docs-shared'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { $wrapSelectionInSuggestionNode, $isNodeNotInline } from './Utils'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 
 /**
  * This command is triggered by $insertDataTransferForRichText to allow
@@ -31,19 +31,24 @@ import type { Logger } from '@proton/shared/lib/logs'
 export function $selectionInsertClipboardNodes(
   nodes: LexicalNode[],
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
 ): boolean {
-  logger.info('Inserting nodes at current selection', nodes)
+  logger.info('suggestion-mode: Inserting nodes at current selection', nodes)
 
   const selection = $getSelection()
   if (!$isRangeSelection(selection)) {
-    logger.info('Current selection is not range selection')
+    logger.info('suggestion-mode: Current selection is not range selection')
     return true
   }
 
   const isInitialSelectionBackward = selection.isBackward()
 
-  logger.info('Is selection backward?', isInitialSelectionBackward, selection.anchor.offset, selection.focus.offset)
+  logger.info(
+    'suggestion-mode: Is selection backward?',
+    isInitialSelectionBackward,
+    selection.anchor.offset,
+    selection.focus.offset,
+  )
 
   const point = selection.focus
   const anchorBeforeInserting = {
@@ -64,12 +69,12 @@ export function $selectionInsertClipboardNodes(
   if (isInitialSelectionNotCollapsed) {
     $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete', logger)
     onSuggestionCreation(suggestionID)
-    logger.info('Wrapped non-collapsed selection as delete suggestion', suggestionID)
+    logger.info('suggestion-mode: Wrapped non-collapsed selection as delete suggestion', suggestionID)
   }
 
   const latestSelection = $getSelection()
   if (!$isRangeSelection(latestSelection) || !latestSelection.isCollapsed()) {
-    logger.info('Latest selection is not range selection or is not collapsed')
+    logger.info('suggestion-mode: Latest selection is not range selection or is not collapsed')
     return true
   }
 
@@ -85,12 +90,12 @@ export function $selectionInsertClipboardNodes(
     const suggestionNode = $createSuggestionNode(suggestionID, 'insert')
     suggestionNode.append(...nodes)
     latestSelection.insertNodes([suggestionNode])
-    logger.info('Appended all nodes as one suggestion node as all nodes were inline')
+    logger.info('suggestion-mode: Appended all nodes as one suggestion node as all nodes were inline')
     const prevSibling = suggestionNode.getPreviousSibling()
     const nextSibling = suggestionNode.getNextSibling()
     const sibling = $isSuggestionNode(prevSibling) ? prevSibling : nextSibling
     if ($isSuggestionNode(sibling) && sibling.getSuggestionTypeOrThrow() === 'delete') {
-      logger.info('Using same suggestion ID as sibling to create replace suggestion')
+      logger.info('suggestion-mode: Using same suggestion ID as sibling to create replace suggestion')
       suggestionNode.setSuggestionId(sibling.getSuggestionIdOrThrow())
     } else {
       onSuggestionCreation(suggestionID)
@@ -100,9 +105,9 @@ export function $selectionInsertClipboardNodes(
 
   const selectionBeforeInserting = latestSelection
 
-  logger.info('Anchor before inserting:', anchorBeforeInserting)
+  logger.info('suggestion-mode: Anchor before inserting:', anchorBeforeInserting)
 
-  logger.info('Inserting nodes into latest selection')
+  logger.info('suggestion-mode: Inserting nodes into latest selection')
   selectionBeforeInserting.insertNodes(nodes)
 
   const selectionAfterInserting = $getSelection()
@@ -112,7 +117,7 @@ export function $selectionInsertClipboardNodes(
 
   const anchorAfterInserting = selectionAfterInserting.anchor
 
-  logger.info('Anchor after inserting:', anchorAfterInserting)
+  logger.info('suggestion-mode: Anchor after inserting:', anchorAfterInserting)
 
   const doesBeforeAnchorExist = $getNodeByKey(anchorBeforeInserting.key)?.isAttached()
 
@@ -122,15 +127,15 @@ export function $selectionInsertClipboardNodes(
     // Lexical creates a new paragraph, moves the contents of the current block
     // into it and after inserting all the nodes removes the initial block,
     // so we need to use the first inserted node as the new anchor.
-    logger.info('Anchor before insertion doesnt exist, using first inserted node')
+    logger.info('suggestion-mode: Anchor before insertion doesnt exist, using first inserted node')
     const firstNode = nodes[0]
     selectionToMark.anchor.set(firstNode.getKey(), 0, $isTextNode(firstNode) ? 'text' : 'element')
   } else {
-    logger.info('Anchor before insertion still exists, using that.')
+    logger.info('suggestion-mode: Anchor before insertion still exists, using that.')
     selectionToMark.anchor.set(anchorBeforeInserting.key, anchorBeforeInserting.offset, anchorBeforeInserting.type)
   }
   selectionToMark.focus.set(anchorAfterInserting.key, anchorAfterInserting.offset, anchorAfterInserting.type)
-  logger.info('Selection to wrap:', selectionToMark)
+  logger.info('suggestion-mode: Selection to wrap:', selectionToMark)
 
   const suggestionNodes = $wrapSelectionInSuggestionNode(
     selectionToMark,
@@ -140,7 +145,7 @@ export function $selectionInsertClipboardNodes(
     logger,
   )
   if (!suggestionNodes.length) {
-    logger.info('Selection was not wrapped')
+    logger.info('suggestion-mode: Selection was not wrapped')
     return true
   }
 
@@ -158,12 +163,12 @@ export function $selectionInsertClipboardNodes(
   }
 
   if (suggestionIDtoUseForReplace) {
-    logger.info('Creating replace suggestion by using same suggestion ID as delete suggestion sibling')
+    logger.info('suggestion-mode: Creating replace suggestion by using same suggestion ID as delete suggestion sibling')
     for (const suggestion of suggestionNodes) {
       suggestion.setSuggestionId(suggestionIDtoUseForReplace)
     }
   } else {
-    logger.info('Wrapped selection in suggestion', suggestionID)
+    logger.info('suggestion-mode: Wrapped selection in suggestion', suggestionID)
     onSuggestionCreation(suggestionID)
   }
 
