@@ -1,6 +1,5 @@
 /*
  * This file is auto-generated. Do not modify it manually!
- * Run 'yarn workspace @proton/icons build' to update the icons react components.
  */
 
 export type IconSize =
