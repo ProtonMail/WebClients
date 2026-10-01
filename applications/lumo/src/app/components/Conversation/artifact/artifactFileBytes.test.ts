@@ -20,6 +20,15 @@ jest.mock('../../../util/pptx/htmlSlidesToPptxBytes', () => {
     };
 });
 
+jest.mock('../../../util/docx/markdownToDocx', () => {
+    return {
+        DOCX_MIME_TYPE: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        markdownToDocxBlob: jest.fn(async () => {
+            return new Blob(['docx']);
+        }),
+    };
+});
+
 jest.mock('./artifactMarkdownPlainText', () => {
     return {
         markdownToPlainText: jest.fn((markdown: string) => {
@@ -89,6 +98,19 @@ describe('buildArtifactFileForSave', () => {
         expect(htmlSlideDocumentsToPdfBytes).toHaveBeenCalledTimes(1);
     });
 
+    it('builds a Word document from document markdown', async () => {
+        const { markdownToDocxBlob } = jest.requireMock('../../../util/docx/markdownToDocx');
+
+        const prepared = await buildArtifactFileForSave(documentArtifact, 'docx');
+
+        expect(markdownToDocxBlob).toHaveBeenCalledWith(documentArtifact.content, {
+            title: 'Teen Vaping Essay',
+            creator: 'Lumo',
+        });
+        expect(prepared.fileName).toBe('teen-vaping-essay.docx');
+        expect(prepared.mimeType).toBe('application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+    });
+
     it('builds PPTX bytes for presentations', async () => {
         const { htmlSlidesToPptxBytes } = jest.requireMock('../../../util/pptx/htmlSlidesToPptxBytes');
 
@@ -102,6 +124,9 @@ describe('buildArtifactFileForSave', () => {
     it('rejects unsupported format and artifact type combinations', async () => {
         await expect(buildArtifactFileForSave(documentArtifact, 'pptx')).rejects.toThrow(
             'Format "pptx" is not supported for document artifacts.'
+        );
+        await expect(buildArtifactFileForSave(presentationArtifact, 'docx')).rejects.toThrow(
+            'Format "docx" is not supported for presentation artifacts.'
         );
         await expect(buildArtifactFileForSave(presentationArtifact, 'md')).rejects.toThrow(
             'Format "md" is not supported for presentation artifacts.'

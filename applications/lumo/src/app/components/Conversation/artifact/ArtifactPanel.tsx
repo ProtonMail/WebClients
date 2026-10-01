@@ -39,6 +39,7 @@ import { ArtifactPanelSpotlight } from './ArtifactPanelSpotlight';
 import { ArtifactSaveToDriveDropdown } from './ArtifactSaveToDriveDropdown';
 import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
 import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
+import { buildArtifactFileForSave } from './artifactFileBytes';
 import { markdownToPlainText } from './artifactMarkdownPlainText';
 import { artifactSupportsPdfExport, buildArtifactFileName, exportArtifactPdf } from './artifactPdfExport';
 import type { ArtifactPdfExportResult } from './artifactPdfExport';
@@ -46,7 +47,11 @@ import { artifactSupportsPptxExport, downloadArtifactPptx } from './artifactPptx
 import { buildStandalonePresentationHtml } from './artifactPresentationStandalone';
 import type { ArtifactRegistry } from './artifactRegistry';
 import type { ArtifactSaveFormat } from './artifactSaveFormats';
-import { artifactSupportsSaveToDrive, getArtifactSaveFormats } from './artifactSaveFormats';
+import {
+    artifactSupportsSaveToDrive,
+    getArtifactSaveFormats,
+    isArtifactSaveFormatSupported,
+} from './artifactSaveFormats';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
 import type { ArtifactType } from './parseArtifacts';
 
@@ -72,9 +77,11 @@ interface PanelHeaderProps {
     copySuccess?: boolean;
     onDownload?: () => void;
     onDownloadTxt?: () => void;
+    onDownloadDocx?: () => void;
     onDownloadPdf?: () => void;
     onDownloadPptx?: () => void;
     canDownloadTxt?: boolean;
+    canDownloadDocx?: boolean;
     canDownloadPdf?: boolean;
     canDownloadPptx?: boolean;
     exportingDownload?: boolean;
@@ -144,9 +151,11 @@ const PanelHeader = ({
     copySuccess,
     onDownload,
     onDownloadTxt,
+    onDownloadDocx,
     onDownloadPdf,
     onDownloadPptx,
     canDownloadTxt,
+    canDownloadDocx,
     canDownloadPdf,
     canDownloadPptx,
     exportingDownload,
@@ -309,6 +318,7 @@ const PanelHeader = ({
                                 <div className="artifact-export-spinner is-small" aria-hidden="true" />
                             </Button>
                         ) : (canDownloadTxt && onDownloadTxt) ||
+                          (canDownloadDocx && onDownloadDocx) ||
                           (canDownloadPdf && onDownloadPdf) ||
                           (canDownloadPptx && onDownloadPptx) ? (
                             <ArtifactDownloadDropdown
@@ -317,6 +327,7 @@ const PanelHeader = ({
                                     onDownload?.();
                                 }}
                                 onDownloadTxt={canDownloadTxt && onDownloadTxt ? onDownloadTxt : undefined}
+                                onDownloadDocx={canDownloadDocx && onDownloadDocx ? onDownloadDocx : undefined}
                                 onDownloadPdf={canDownloadPdf && onDownloadPdf ? onDownloadPdf : undefined}
                                 onDownloadPptx={canDownloadPptx && onDownloadPptx ? onDownloadPptx : undefined}
                             />
@@ -544,6 +555,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     const artifactSaveFormats =
         artifactSupportsSaveToDrive(artifact.type) && !isGuest ? getArtifactSaveFormats(artifact.type) : [];
     const canDownloadTxt = artifact.type === 'document' && !isGenerating && !manualEditActive;
+    const canDownloadDocx = isArtifactSaveFormatSupported(artifact.type, 'docx') && !isGenerating && !manualEditActive;
     const canDownloadPdf = artifactSupportsPdfExport(artifact.type) && !isGenerating && !manualEditActive;
     const canDownloadPptx = artifactSupportsPptxExport(artifact.type) && !isGenerating && !manualEditActive;
     const exportingDownload = exportingDownloadKind !== null;
@@ -630,6 +642,22 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         const filename = buildArtifactFileName(artifact, 'txt');
         downloadBlob(new Blob([plainText], { type: 'text/plain;charset=utf-8' }), filename);
         reportDownload('txt', 'success');
+    };
+
+    // No progress overlay: conversion takes well under a second for typical documents, and the
+    // overlay would only flash. The error toast covers the chunk failing to load.
+    const handleDownloadDocx = async () => {
+        try {
+            const file = await buildArtifactFileForSave(artifact, 'docx');
+            downloadBlob(new Blob([file.data], { type: file.mimeType }), file.fileName);
+            reportDownload('docx', 'success');
+        } catch {
+            reportDownload('docx', 'error');
+            createNotification({
+                type: 'error',
+                text: c('collider_2025: Error').t`Could not export this artifact as a Word document.`,
+            });
+        }
     };
 
     const handleDownloadPdf = async () => {
@@ -737,9 +765,11 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                         copySuccess={copySuccess}
                         onDownload={handleDownload}
                         onDownloadTxt={handleDownloadTxt}
+                        onDownloadDocx={handleDownloadDocx}
                         onDownloadPdf={handleDownloadPdf}
                         onDownloadPptx={handleDownloadPptx}
                         canDownloadTxt={canDownloadTxt}
+                        canDownloadDocx={canDownloadDocx}
                         canDownloadPdf={canDownloadPdf}
                         canDownloadPptx={canDownloadPptx}
                         exportingDownload={exportingDownload}
