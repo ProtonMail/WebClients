@@ -28,6 +28,7 @@ import { loadAlbumInvitations } from '../../loaders/loadAlbumInvitations';
 import { loadSharedWithMeAlbums } from '../../loaders/loadAlbums';
 import { useAlbumsStore } from '../../useAlbums.store';
 import { usePhotosStore } from '../../usePhotos.store';
+import { getCaptureDisplayDate } from '../../utils/getCaptureDisplayDate';
 import PhotosRecoveryBanner from '../components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { usePhotosSelection } from '../hooks/usePhotosSelection';
 import { subscribeToAlbumUploadEvents } from '../subscribeToAlbumUploadEvents';
@@ -231,7 +232,9 @@ export const PhotosLayout = () => {
             onNodeChange: (nodeUid: string) => setPreviewNodeUid(nodeUid),
             onClose: () => setPreviewNodeUid(undefined),
             photos: {
-                date: dateToLegacyTimestamp(photoItem.captureTime),
+                date: dateToLegacyTimestamp(
+                    getCaptureDisplayDate(photoItem.additionalInfo?.claimedCaptureTime, photoItem.captureTime)
+                ),
                 isFavorite: photoItem.tags.includes(PhotoTag.Favorites),
                 onFavorite: () => {
                     void toggleFavorite(photoItem.nodeUid);
