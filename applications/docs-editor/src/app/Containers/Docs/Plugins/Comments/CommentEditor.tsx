@@ -18,8 +18,8 @@ import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin'
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
 import { ClearEditorPlugin } from '@lexical/react/LexicalClearEditorPlugin'
-import clsx from 'clsx'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
+import { clsx } from 'clsx'
+import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import { SafeLexicalComposer } from '../../Utils/SafeLexicalComposer'
 import { EditorReadonlyPlugin } from '../EditorReadonlyPlugin'
 import { ProtonLinkPlugin } from '../Link/LinkPlugin'
@@ -49,6 +49,7 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
     { initialContent, className, autoFocus, onTextContentChange, onKeyDown, onEnter, onBlur, placeholder, disabled },
     ref,
   ) => {
+    const { reportError } = useDocsDependencies()
     const [editor, setEditor] = useState<LexicalEditor | null>(null)
 
     useEffect(() => {
@@ -96,7 +97,7 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
         initialConfig={{
           namespace: 'CommentEditor',
           nodes: CommentLexicalNodes,
-          onError: (e: Error) => reportErrorToSentry(e),
+          onError: (e: Error) => reportError(e),
           theme: DocumentEditorTheme,
           editorState: initialContent ? initialContent : undefined,
         }}

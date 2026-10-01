@@ -32,7 +32,7 @@ export type { SetImageSizePayload } from './ImageCommands'
 
 import { toBase64 } from '@proton/shared/lib/helpers/file'
 import { downSize } from '@proton/shared/lib/helpers/image'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
+import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import { isImage, isSupportedImage } from '@proton/shared/lib/helpers/mimetype'
 import { $canDropImage, $getImageNodeInSelection, getDragImageData, getDragSelection } from './ImageUtils'
 import { INSERT_FILE_COMMAND } from '../../Commands/Events'
@@ -54,6 +54,7 @@ export default function ImagesPlugin({
 }: {
   createWarningNotification: (message: string) => void
 }): JSX.Element | null {
+  const { reportError } = useDocsDependencies()
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
@@ -145,7 +146,7 @@ export default function ImagesPlugin({
             createAndInsertImageNode(downsizedImage)
           }
 
-          handleDownsizingAndInsert().catch(reportErrorToSentry)
+          handleDownsizingAndInsert().catch(reportError)
           return true
         },
         COMMAND_PRIORITY_EDITOR,
@@ -289,13 +290,13 @@ export default function ImagesPlugin({
               }
             })
           }
-          convertSourcesAndInsertNodes().catch(reportErrorToSentry)
+          convertSourcesAndInsertNodes().catch(reportError)
           return true
         },
         COMMAND_PRIORITY_LOW,
       ),
     )
-  }, [editor, createWarningNotification])
+  }, [editor, createWarningNotification, reportError])
 
   return null
 }

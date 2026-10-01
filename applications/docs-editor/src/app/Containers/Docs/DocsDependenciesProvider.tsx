@@ -5,6 +5,7 @@ import { createContext, useContext } from 'react'
 import type { DocsLogger } from './contract/DocsLogger'
 
 export type DocsDependencies = {
+  reportError: (error: unknown, extra?: Record<string, unknown>) => void
   logger: DocsLogger
   isDevOrBlack: () => boolean
   openLink: (url: string) => void
