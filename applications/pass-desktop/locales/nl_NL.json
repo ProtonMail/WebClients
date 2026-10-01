@@ -257,7 +257,7 @@
         "Identiteit aanmaken"
       ],
       "Create item": [
-        "Artikel aanmaken"
+        "Item aanmaken"
       ],
       "Create login": [
         "Login aanmaken"
@@ -824,6 +824,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
+      ],
+      "Go back": [
+        "Ga terug"
       ]
     },
     "Activity": {
@@ -1493,6 +1496,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Uw PIN-code is verwijderd door een andere ${ PASS_APP_NAME }-client"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Onjuist back-up wachtwoord. Probeer het opnieuw."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Onjuist tweede wachtwoord. Probeer het opnieuw."
       ]
     },
     "Error message": {
@@ -2934,6 +2943,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Voltooi het inloggen in het browservenster dat zojuist is geopend. ${ PASS_APP_NAME } wordt automatisch opgehaald zodra u klaar bent."
       ]
     },
     "Keyboard key": {
@@ -3428,7 +3440,7 @@
         "Om veiligheidsredenen vergrendelt ${ PASS_SHORT_APP_NAME } zichzelf automatisch na 10 minuten inactiviteit."
       ],
       "Forwards to": [
-        "Stuurt door na"
+        "Stuurt door naar"
       ],
       "Free": [
         "Gratis"
@@ -4418,7 +4430,7 @@
         "Niet genoeg opslagruimte beschikbaar voor de geselecteerde bestanden."
       ],
       "Once deleted, this file can still be recovered from the item's history.": [
-        "Eenmaal verwijderd, kan dit bestand nog steeds worden hersteld uit de artikelgeschiedenis."
+        "Eenmaal verwijderd, kan dit bestand nog steeds worden hersteld uit de itemgeschiedenis."
       ],
       "Open new window to upload files": [
         "Open een nieuw venster om bestanden te uploaden"
@@ -5324,6 +5336,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ],
+      "Continue in your browser": [
+        "Ga verder in uw browser"
       ]
     },
     "Title_cloned_item": {

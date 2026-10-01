@@ -807,6 +807,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
+      ],
+      "Go back": [
+        "もどる"
       ]
     },
     "Activity": {
@@ -1455,6 +1458,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "あなたのPIN コードは他のクライアント${ PASS_APP_NAME }にって削除されました"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "間違ったバックアップパスワードです。再度お試しください。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "セカンドパスワードが正しくありません。もう一度お試しください。"
       ]
     },
     "Error message": {
