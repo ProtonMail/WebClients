@@ -1,7 +1,7 @@
 import { lexicalToOdt } from 'odf-kit/lexical/to-odt'
 import type { LexicalSerializedEditorState, LexicalSerializedNode } from 'odf-kit/lexical/to-odt'
 import { strFromU8, strToU8, unzipSync, zipSync, type Zippable } from 'fflate'
-import { reportErrorToSentry } from '../../../../../Utils/errorMessage'
+import type { DocsDependencies } from '../../../DocsDependenciesProvider'
 import { EditorExporter } from '../EditorExporter'
 
 export class EditorOdtExporter extends EditorExporter {
@@ -22,14 +22,16 @@ export class EditorOdtExporter extends EditorExporter {
           const base64 = separatorIndex === -1 ? dataUrl : dataUrl.slice(separatorIndex + 1)
           return Uint8Array.fromBase64(base64)
         } catch (error) {
-          reportErrorToSentry(error)
+          this.callbacks.reportError(error)
           return undefined
         }
       },
     })
 
     const outputBytes = new Uint8Array(bytes)
-    return pageBreakMarkers.length > 0 ? restorePageBreaks(outputBytes, pageBreakMarkers) : outputBytes
+    return pageBreakMarkers.length > 0
+      ? restorePageBreaks(outputBytes, pageBreakMarkers, this.callbacks.reportError)
+      : outputBytes
   }
 }
 
@@ -110,7 +112,11 @@ function normalizeImageDimensions(node: LexicalSerializedNode): void {
   }
 }
 
-export function restorePageBreaks(bytes: Uint8Array<ArrayBuffer>, markers: string[]): Uint8Array<ArrayBuffer> {
+export function restorePageBreaks(
+  bytes: Uint8Array<ArrayBuffer>,
+  markers: string[],
+  reportError: DocsDependencies['reportError'],
+): Uint8Array<ArrayBuffer> {
   const files = unzipSync(bytes)
   let contentXml = strFromU8(files['content.xml'])
   let restoredPageBreak = false
@@ -122,7 +128,7 @@ export function restorePageBreaks(bytes: Uint8Array<ArrayBuffer>, markers: strin
 
     if (!result.foundMarker) {
       contentXml = contentXml.replaceAll(marker, '')
-      reportErrorToSentry(new Error('Failed to preserve page break in ODT export'), undefined, { markerIndex })
+      reportError(new Error('Failed to preserve page break in ODT export'), { markerIndex })
     }
   }
 
@@ -136,7 +142,7 @@ export function restorePageBreaks(bytes: Uint8Array<ArrayBuffer>, markers: strin
       `${pageBreakStyle}</office:automatic-styles>`,
     )
     if (contentWithPageBreakStyle === contentXml) {
-      reportErrorToSentry(new Error('Failed to add page break style to ODT export'))
+      reportError(new Error('Failed to add page break style to ODT export'))
     } else {
       contentXml = contentWithPageBreakStyle
     }

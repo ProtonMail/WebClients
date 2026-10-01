@@ -1,7 +1,7 @@
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
 import type { MouseEventHandler } from 'react'
 import { useEffect, useMemo, useState } from 'react'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
@@ -9,7 +9,7 @@ import { CommentThreadState, CommentThreadType, CommentType } from '@proton/docs
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
 import { c, msgid } from 'ttag'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
+import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $getNodeByKey, $getSelection, $isRangeSelection, COMMAND_PRIORITY_NORMAL, createCommand } from 'lexical'
@@ -19,6 +19,7 @@ export const TYPING_STATUS_CHANGE_EVENT_COMMAND = createCommand<{
 }>('TYPING_STATUS_CHANGE_EVENT_COMMAND')
 
 export function CommentsPanelListThread({ thread, className }: { thread: CommentThreadInterface; className?: string }) {
+  const { reportError } = useDocsDependencies()
   const [editor] = useLexicalComposerContext()
   const {
     getMarkNodes,
@@ -75,19 +76,19 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
   }, [element])
 
   useEffect(() => {
-    getTypersExcludingSelf(thread.id).then(setTypers).catch(reportErrorToSentry)
+    getTypersExcludingSelf(thread.id).then(setTypers).catch(reportError)
     return editor.registerCommand(
       TYPING_STATUS_CHANGE_EVENT_COMMAND,
       (data) => {
         const { threadId } = data
         if (threadId === thread.id) {
-          getTypersExcludingSelf(thread.id).then(setTypers).catch(reportErrorToSentry)
+          getTypersExcludingSelf(thread.id).then(setTypers).catch(reportError)
         }
         return false
       },
       COMMAND_PRIORITY_NORMAL,
     )
-  }, [editor, getTypersExcludingSelf, thread.id])
+  }, [editor, getTypersExcludingSelf, thread.id, reportError])
 
   const quote = useMemo(() => {
     if (isSuggestionThread) {
@@ -150,7 +151,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
   }
 
   const handleClickThread: MouseEventHandler = (event) => {
-    markThreadAsRead(thread.id).catch(reportErrorToSentry)
+    markThreadAsRead(thread.id).catch(reportError)
 
     const target = event.target
     if (!(target instanceof Element)) {
@@ -316,7 +317,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: Comment
           <button
             className="rounded border border-[--border-weak] px-2.5 py-1.5 text-sm hover:bg-[--background-weak] disabled:opacity-50"
             onClick={() => {
-              unresolveThread(thread.id).catch(reportErrorToSentry)
+              unresolveThread(thread.id).catch(reportError)
             }}
             data-testid="reopen-thread-button"
           >

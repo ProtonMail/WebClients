@@ -5,6 +5,10 @@ import { COMMAND_PRIORITY_HIGH, PASTE_COMMAND, type LexicalEditor } from 'lexica
 import ImagesPlugin from './ImagePlugin'
 import { ImageNode } from './ImageNode'
 
+jest.mock('../../DocsDependenciesProvider', () => ({
+  useDocsDependencies: () => ({ reportError: jest.fn() }),
+}))
+
 let editor: LexicalEditor
 function CaptureEditor() {
   ;[editor] = useLexicalComposerContext()

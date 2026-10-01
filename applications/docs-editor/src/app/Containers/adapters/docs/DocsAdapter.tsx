@@ -20,11 +20,14 @@ export function DocsAdapter({
 }>) {
   const { application } = useApplication()
   const logger: DocsLogger = application.logger
+  const reportError = useCallback<DocsDependencies['reportError']>((error, extra) => {
+    reportErrorToSentry(error, undefined, extra)
+  }, [])
   const openLink = useCallback(
     (url: string) => {
-      void clientInvoker.openLink(url).catch(reportErrorToSentry)
+      void clientInvoker.openLink(url).catch(reportError)
     },
-    [clientInvoker],
+    [clientInvoker, reportError],
   )
 
   const showGenericAlertModal = useCallback(
@@ -57,6 +60,7 @@ export function DocsAdapter({
 
   const dependencies = useMemo<DocsDependencies>(
     () => ({
+      reportError,
       logger,
       isDevOrBlack,
       openLink,
@@ -70,6 +74,7 @@ export function DocsAdapter({
       reportTelemetry,
     }),
     [
+      reportError,
       logger,
       openLink,
       showGenericAlertModal,

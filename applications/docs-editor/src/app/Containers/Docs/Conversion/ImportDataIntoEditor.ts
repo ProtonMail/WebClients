@@ -8,7 +8,7 @@ import { $createParagraphNode, $getRoot, $insertNodes } from 'lexical'
 import { odtToHtml } from 'odf-kit/odt/to-html'
 import { c } from 'ttag'
 import { MarkdownTransformers } from '../Utils/MarkdownTransformers'
-import { reportErrorToSentry } from '../../../Utils/errorMessage'
+import type { DocsDependencies } from '../DocsDependenciesProvider'
 import { $importNodesFromDocx } from './Docx/DocxToLexical/ImportNodesFromDocx'
 
 function isValidSuperString(editor: LexicalEditor, superString: string): boolean {
@@ -24,6 +24,7 @@ export async function $importDataIntoEditor(
   editor: LexicalEditor,
   data: Uint8Array<ArrayBuffer>,
   dataFormat: ConvertibleDataType,
+  reportError: DocsDependencies['reportError'],
   options?: {
     html?: {
       addLineBreaks?: boolean
@@ -58,7 +59,7 @@ export async function $importDataIntoEditor(
         },
       )
     }).catch((error) => {
-      reportErrorToSentry(error)
+      reportError(error)
       return TranslatedResult.failWithTranslatedError<void>(
         c('Error').t`Failed to import Word document due to unknown error.`,
       )
@@ -71,7 +72,7 @@ export async function $importDataIntoEditor(
     try {
       return importHtmlIntoEditor(editor, odtToHtml(data, { fragment: true }), options?.html, normalizeOdtImages)
     } catch (error) {
-      reportErrorToSentry(error)
+      reportError(error)
       return TranslatedResult.failWithTranslatedError<void>(
         c('Error').t`Failed to import OpenDocument file due to unknown error.`,
       )
@@ -88,7 +89,7 @@ export async function $importDataIntoEditor(
     try {
       return importHtmlIntoEditor(editor, otherFormatString, options?.html)
     } catch (error) {
-      reportErrorToSentry(error)
+      reportError(error)
       return TranslatedResult.failWithTranslatedError<void>(c('Error').t`Failed to import HTML due to unknown error.`)
     }
   } else {
@@ -102,7 +103,7 @@ export async function $importDataIntoEditor(
         },
       )
     } catch (error) {
-      reportErrorToSentry(error)
+      reportError(error)
       return TranslatedResult.failWithTranslatedError<void>(
         c('Error').t`Failed to import Markdown due to unknown error.`,
       )

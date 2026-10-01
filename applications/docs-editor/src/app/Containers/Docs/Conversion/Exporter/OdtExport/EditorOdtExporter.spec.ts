@@ -1,14 +1,11 @@
 import { $getRoot, $nodesOfType, createEditor, type SerializedEditorState } from 'lexical'
 import { odtToHtml } from 'odf-kit/odt/to-html'
 import { strFromU8, strToU8, unzipSync, zipSync } from 'fflate'
-import { reportErrorToSentry } from '../../../../../Utils/errorMessage'
 import { AllNodes } from '../../../AllNodes'
 import { ImageNode } from '../../../Plugins/Image/ImageNode'
 import { $importDataIntoEditor } from '../../ImportDataIntoEditor'
 import type { ExporterRequiredCallbacks } from '../EditorExporter'
 import { EditorOdtExporter, restorePageBreaks } from './EditorOdtExporter'
-
-jest.mock('../../../../../Utils/errorMessage', () => ({ reportErrorToSentry: jest.fn() }))
 
 const onePixelPng =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='
@@ -63,6 +60,7 @@ const editorState = {
 describe('EditorOdtExporter', () => {
   it('exports and imports formatted text and externally stored images', async () => {
     const callbacks: ExporterRequiredCallbacks = {
+      reportError: jest.fn(),
       fetchExternalImageAsBase64: jest.fn().mockResolvedValue(onePixelPng),
     }
     const exporter = new EditorOdtExporter(editorState as SerializedEditorState, callbacks)
@@ -92,7 +90,12 @@ describe('EditorOdtExporter', () => {
     const rootElement = document.createElement('div')
     document.body.append(rootElement)
     editor.setRootElement(rootElement)
-    const importResult = await $importDataIntoEditor(editor, result, { docType: 'doc', dataType: 'odt' })
+    const importResult = await $importDataIntoEditor(
+      editor,
+      result,
+      { docType: 'doc', dataType: 'odt' },
+      callbacks.reportError,
+    )
 
     expect(importResult.isFailed()).toBe(false)
     editor.getEditorState().read(() => {
@@ -108,6 +111,7 @@ describe('EditorOdtExporter', () => {
   it('exports the document without an image when fetching it fails', async () => {
     const fetchError = new Error('Failed to fetch image')
     const callbacks: ExporterRequiredCallbacks = {
+      reportError: jest.fn(),
       fetchExternalImageAsBase64: jest.fn().mockRejectedValue(fetchError),
     }
     const exporter = new EditorOdtExporter(editorState as SerializedEditorState, callbacks)
@@ -118,7 +122,7 @@ describe('EditorOdtExporter', () => {
     expect(html).toContain('Before image')
     expect(html).toContain('After image')
     expect(html).not.toContain('<img')
-    expect(reportErrorToSentry).toHaveBeenCalledWith(fetchError)
+    expect(callbacks.reportError).toHaveBeenCalledWith(fetchError)
   })
 
   it('restores page-break markers across markup changes without aborting export', () => {
@@ -137,13 +141,33 @@ describe('EditorOdtExporter', () => {
       }),
     )
 
-    const output = restorePageBreaks(input, [firstMarker, secondMarker, missingMarker])
+    const reportError = jest.fn()
+    const output = restorePageBreaks(input, [firstMarker, secondMarker, missingMarker], reportError)
     const contentXml = strFromU8(unzipSync(output)['content.xml'])
 
     expect(contentXml.match(/<text:p text:style-name="ProtonPageBreak"\/>/g)).toHaveLength(2)
     expect(contentXml).toContain('fo:break-before="page"')
     expect(contentXml).not.toContain(firstMarker)
     expect(contentXml).not.toContain(secondMarker)
-    expect(reportErrorToSentry).toHaveBeenCalledWith(expect.any(Error), undefined, { markerIndex: 2 })
+    expect(reportError).toHaveBeenCalledWith(expect.any(Error), { markerIndex: 2 })
+  })
+
+  it('reports a missing page-break style container without aborting export', () => {
+    const marker = '\uE000proton-odt-page-break-0\uE001'
+    const input = new Uint8Array(
+      zipSync({
+        mimetype: strToU8('application/vnd.oasis.opendocument.text'),
+        'content.xml': strToU8(
+          `<office:document-content><office:body><text:p>${marker}</text:p></office:body></office:document-content>`,
+        ),
+      }),
+    )
+    const reportError = jest.fn()
+
+    const output = restorePageBreaks(input, [marker], reportError)
+
+    expect(strFromU8(unzipSync(output)['content.xml'])).toContain('<text:p text:style-name="ProtonPageBreak"/>')
+    expect(reportError).toHaveBeenCalledTimes(1)
+    expect(reportError).toHaveBeenCalledWith(new Error('Failed to add page break style to ODT export'))
   })
 })
