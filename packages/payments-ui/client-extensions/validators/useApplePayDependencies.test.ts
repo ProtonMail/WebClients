@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react';
 import { getCanMakePaymentsWithActiveCard } from '@proton/chargebee/lib/getCanMakePaymentsWithActiveCard';
 import { getOfferedApplePayFlow, setOfferedApplePayFlow } from '@proton/payments/core/apple-pay-support';
 import type { ChargebeeIframeHandles } from '@proton/payments/core/interface';
-import { isDesktop, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isDesktop } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useApplePayDependencies } from './validators';
@@ -18,11 +18,9 @@ const removeModal = jest.fn();
 jest.mock('@proton/components/hooks/useModals', () => () => ({ createModal, removeModal }));
 jest.mock('@proton/shared/lib/helpers/browser', () => ({
     ...jest.requireActual('@proton/shared/lib/helpers/browser'),
-    isSafari: jest.fn(),
     isDesktop: jest.fn(),
 }));
 
-const mockedIsSafari = jest.mocked(isSafari);
 const mockedIsDesktop = jest.mocked(isDesktop);
 const mockedUseFlag = jest.mocked(useFlag);
 const mockedCanMakePaymentsOnCurrentDomain = jest.mocked(getCanMakePaymentsWithActiveCard);
@@ -53,6 +51,17 @@ const renderAndGetOfferedFlow = async () => {
     return { offeredFlow: getOfferedApplePayFlow(), canUseApplePay: result.current.canUseApplePay };
 };
 
+/** Present in Safari and every other WebKit browser on iOS; the app never loads Apple's SDK that would fake it */
+const setNativeApplePaySession = (isPresent: boolean) => {
+    if (isPresent) {
+        (window as any).ApplePaySession = {};
+    } else {
+        delete (window as any).ApplePaySession;
+    }
+};
+
+afterEach(() => setNativeApplePaySession(false));
+
 beforeEach(() => {
     jest.clearAllMocks();
     setOfferedApplePayFlow(null);
@@ -62,8 +71,8 @@ beforeEach(() => {
 });
 
 describe('useApplePayDependencies', () => {
-    describe('in Safari', () => {
-        beforeEach(() => mockedIsSafari.mockReturnValue(true));
+    describe('with a native ApplePaySession', () => {
+        beforeEach(() => setNativeApplePaySession(true));
 
         it('offers the native flow when Apple Pay is available', async () => {
             mockedUseFlag.mockReturnValue(true);
@@ -90,10 +99,36 @@ describe('useApplePayDependencies', () => {
                 canUseApplePay: false,
             });
         });
+
+        /** Brave iOS: ua-parser-js names it Brave, so isSafari() is false, yet the sheet is native WebKit */
+        describe('on a mobile browser that is not Safari', () => {
+            beforeEach(() => mockedIsDesktop.mockReturnValue(false));
+
+            it('offers the native flow once the capabilities flag is on', async () => {
+                mockedUseFlag.mockReturnValue(true);
+
+                await expect(renderAndGetOfferedFlow()).resolves.toEqual({
+                    offeredFlow: 'native',
+                    canUseApplePay: true,
+                });
+                expect(getApplePayCapabilities).toHaveBeenCalledWith({ applePayCapabilitiesEnabled: true });
+            });
+
+            it('offers the native flow while the capabilities flag is off, checking both origins', async () => {
+                mockedUseFlag.mockReturnValue(false);
+
+                await expect(renderAndGetOfferedFlow()).resolves.toEqual({
+                    offeredFlow: 'native',
+                    canUseApplePay: true,
+                });
+                expect(mockedCanMakePaymentsOnCurrentDomain).toHaveBeenCalledTimes(1);
+                expect(getApplePayCapabilities).toHaveBeenCalledWith({ applePayCapabilitiesEnabled: false });
+            });
+        });
     });
 
-    describe('outside Safari', () => {
-        beforeEach(() => mockedIsSafari.mockReturnValue(false));
+    describe('without a native ApplePaySession', () => {
+        beforeEach(() => setNativeApplePaySession(false));
 
         it('offers the QR flow on desktop once the capabilities flag is on', async () => {
             mockedUseFlag.mockReturnValue(true);
@@ -127,7 +162,7 @@ describe('useApplePayDependencies', () => {
     });
 
     it('withdraws the offered flow when the button fails to mount, so nothing is attributed to it', async () => {
-        mockedIsSafari.mockReturnValue(false);
+        setNativeApplePaySession(false);
         mockedUseFlag.mockReturnValue(true);
 
         const result = await renderAndSettle();
@@ -147,7 +182,7 @@ describe('useApplePayDependencies', () => {
         };
 
         it('is not shown for the native flow', async () => {
-            mockedIsSafari.mockReturnValue(true);
+            setNativeApplePaySession(true);
             mockedUseFlag.mockReturnValue(true);
 
             await clickApplePay();
@@ -157,7 +192,7 @@ describe('useApplePayDependencies', () => {
 
         describe('in the QR flow', () => {
             beforeEach(() => {
-                mockedIsSafari.mockReturnValue(false);
+                setNativeApplePaySession(false);
                 mockedUseFlag.mockReturnValue(true);
             });
 
