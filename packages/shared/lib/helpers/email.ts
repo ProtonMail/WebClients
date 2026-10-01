@@ -78,6 +78,23 @@ export const getEmailParts = (email: string): [localPart: string, domain: string
     return [email.slice(0, endIdx), email.slice(endIdx + 1)];
 };
 
+// RFC 5322 atext characters (\x60 is a backtick)
+const EMAIL_ATEXT_PATTERN = String.raw`[\w!#$%&'*+/=?^\x60{|}~-]`;
+// Quoted string ("a@b") or dot-atom (no leading, trailing or consecutive dots)
+const EMAIL_LOCAL_PART_PATTERN = String.raw`"(?:[^"\\]|\\.)+"|${EMAIL_ATEXT_PATTERN}+(?:\.${EMAIL_ATEXT_PATTERN}+)*`;
+// Unicode-aware DNS label, which cannot start or end with a hyphen
+const EMAIL_DOMAIN_LABEL_PATTERN = String.raw`[\p{L}\p{M}\p{N}_](?:[\p{L}\p{M}\p{N}_-]*[\p{L}\p{M}\p{N}_])?`;
+const EMAIL_IN_TEXT_REGEX = new RegExp(
+    `(${EMAIL_LOCAL_PART_PATTERN})@(${EMAIL_DOMAIN_LABEL_PATTERN}(?:\\.${EMAIL_DOMAIN_LABEL_PATTERN})+)`,
+    'gu'
+);
+
+export const lowercaseEmailDomain = (text: string) =>
+    text.replace(
+        EMAIL_IN_TEXT_REGEX,
+        (_match, localPart: string, domain: string) => `${localPart}@${domain.toLowerCase()}`
+    );
+
 /**
  * Validate an email string according to the RFC https://tools.ietf.org/html/rfc5322;
  * see also https://en.wikipedia.org/wiki/Email_address
