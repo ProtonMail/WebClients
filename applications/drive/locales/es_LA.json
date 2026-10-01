@@ -8060,6 +8060,12 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Su Google Drive podría estar vacío o solo contiene archivos que no están soportados."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Tiene una factura abierta ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Tiene una factura abierta el ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -9138,6 +9144,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Pay it": [
+        "Pagarla"
       ]
     },
     "List title": {
@@ -15488,6 +15497,9 @@
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Actualice a un plan que admita usar roles de administrador."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No puede cambiar sus propios roles. Pida a otro administrador que los cambie."
       ]
     },
     "Role": {
@@ -15666,6 +15678,36 @@
     "Payments.InfoBanner": {
       "Changing your billing address may affect taxes on future invoices.": [
         "Cambiar su dirección de facturación podría afectar los impuestos en facturas futuras."
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obtener ${ discount }% de descuento en ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
+      "2 user accounts": [
+        "2 cuentas de usuario"
+      ],
+      "All premium features from your current plan": [
+        "Todas las funciones premium de su plan actual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
       ]
     }
   }

@@ -15488,6 +15488,9 @@
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Zu einem unterstützten Abonnement upgraden, um Administratorrollen nutzen zu können."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kannst deine eigene Funktion nicht ändern. Bitte einen anderen Administrator, dies zu tun."
       ]
     },
     "Role": {
@@ -15666,6 +15669,36 @@
     "Payments.InfoBanner": {
       "Changing your billing address may affect taxes on future invoices.": [
         "Eine Änderung deiner Rechnungsadresse kann sich auf die Steuern bei zukünftigen Rechnungen auswirken."
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Hol dir ${ discount }% Rabatt auf ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Hol dir ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "2 TB of storage to share": [
+        "2 TB Speicherplatz zur gemeinsamen Nutzung"
+      ],
+      "2 user accounts": [
+        "2 Benutzerkonten"
+      ],
+      "All premium features from your current plan": [
+        "Alle Premium-Funktionen deines aktuellen Abonnements"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "für 12 Monate"
       ]
     }
   }
