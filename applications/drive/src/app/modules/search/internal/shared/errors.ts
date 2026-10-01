@@ -251,6 +251,9 @@ export const createQuotaExceededErrorMessage = async () => {
  * - VersionError: schema version mismatch (downgrade)
  * - DataError: invalid keys (tampered data)
  * - DataCloneError: unserializable values (tampered data)
+ * - UnknownError "Failed to read large IndexedDB value": Chrome stores large values as separate
+ *   files on disk; this is thrown when that file is missing or unreadable, and every later read of
+ *   the same record fails too. Other UnknownErrors are left transient.
  */
 function isCorruptedDBError(e: unknown): boolean {
     if (!(e instanceof DOMException)) {
@@ -260,7 +263,21 @@ function isCorruptedDBError(e: unknown): boolean {
         e.name === 'InvalidStateError' ||
         e.name === 'VersionError' ||
         e.name === 'DataError' ||
-        e.name === 'DataCloneError'
+        e.name === 'DataCloneError' ||
+        (e.name === 'UnknownError' && e.message.includes('Failed to read large IndexedDB value'))
+    );
+}
+
+/**
+ * Chrome force-closes every IndexedDB connection when the origin's storage is wiped (site data
+ * cleared, Clear-Site-Data on logout, eviction). Nothing is corrupted and the session is usually
+ * gone with it, so this is a shutdown, not a failure to report or offer a rebuild for.
+ */
+export function isConnectionForceClosedError(e: unknown): boolean {
+    return (
+        e instanceof DOMException &&
+        e.name === 'UnknownError' &&
+        e.message.includes('Connection is closing because of: Force close')
     );
 }
 

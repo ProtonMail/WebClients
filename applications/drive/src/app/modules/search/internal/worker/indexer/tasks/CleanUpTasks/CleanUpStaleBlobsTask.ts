@@ -2,7 +2,12 @@ import type { Cleanup } from '@proton/proton-foundation-search';
 import { CleanupEventKind } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../../shared/Logger';
-import { classifyError, isAbortError, sendErrorReportForSearch } from '../../../../shared/errors';
+import {
+    classifyError,
+    isAbortError,
+    isConnectionForceClosedError,
+    sendErrorReportForSearch,
+} from '../../../../shared/errors';
 import type { IndexBlobStore } from '../../../index/IndexBlobStore';
 import type { IndexInstance, IndexKind } from '../../../index/IndexRegistry';
 import { engineCall, maybeWrapAsSearchLibraryError } from '../../../index/engineCall';
@@ -51,7 +56,7 @@ export class CleanUpStaleBlobsTask extends BaseTask {
             try {
                 await this.cleanUpInstance(instance, ctx);
             } catch (e) {
-                if (isAbortError(e) || classifyError(e).kind === 'permanent') {
+                if (isAbortError(e) || isConnectionForceClosedError(e) || classifyError(e).kind === 'permanent') {
                     throw e;
                 }
                 // Non-critical: log and continue to the next engine.

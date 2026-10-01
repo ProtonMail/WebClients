@@ -125,8 +125,13 @@ const indexBlobsKeyRangeForKind = (indexKind: IndexKind): IDBKeyRange =>
 export class SearchDB {
     private constructor(private readonly db: RawSearchDB) {}
 
-    static async open(userId: string): Promise<SearchDB> {
+    /**
+     * `onTerminated` fires when the browser force-closes the connection (e.g. the origin's storage
+     * is wiped). The instance is dead from then on: every call throws `InvalidStateError`.
+     */
+    static async open(userId: string, onTerminated?: () => void): Promise<SearchDB> {
         const db = await openDB<SearchDBSchema>(dbName(userId), DB_VERSION, {
+            terminated: onTerminated,
             upgrade(database, oldVersion) {
                 if (oldVersion < 1) {
                     database.createObjectStore('indexBlobs');
