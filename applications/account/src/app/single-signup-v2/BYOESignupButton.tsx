@@ -13,6 +13,7 @@ import {
     type ImportProvider,
     OAUTH_PROVIDER,
     type OAuthProps,
+    type TIME_PERIOD,
 } from '@proton/activation/src/interface';
 import { useApi } from '@proton/app-context/useApi';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -27,7 +28,7 @@ import { SignupType } from '../signup/interfaces';
 interface Props {
     provider?: ImportProvider | OAUTH_PROVIDER;
     onEmailValue: (value: string) => void;
-    onImportEmailsValue: (importEmails: boolean) => void;
+    onImportEmailsValue: (importEmails: boolean, importPeriod: TIME_PERIOD) => void;
     signupType: SignupType;
     setSignupType: (signupType: SignupType) => void;
     onUseInternalAddress: () => void;
@@ -48,7 +49,7 @@ const BYOESignupButton = ({
     const [addBYOEModalProps, setAddBYOEModalOpen, renderAddBYOEModal] = useModalState();
     const [loading, withLoading] = useLoading();
 
-    const callback = async (oauthProps: OAuthProps, importEmails: boolean) => {
+    const callback = async (oauthProps: OAuthProps, importEmails: boolean, importPeriod: TIME_PERIOD) => {
         try {
             const result = await withLoading<CreateSignupOAuthTokenResponse>(
                 api(
@@ -62,7 +63,7 @@ const BYOESignupButton = ({
 
             if (result) {
                 onEmailValue(result.ValidatedOAuthTokenOutput.Account);
-                onImportEmailsValue(importEmails);
+                onImportEmailsValue(importEmails, importPeriod);
                 setSignupType(SignupType.BringYourOwnEmail);
             }
         } catch {}
@@ -72,7 +73,7 @@ const BYOESignupButton = ({
         setTimeout(() => passwordInputRef.current?.focus(), 200);
     };
 
-    const handleShowOauthPopup = async (importEmails: boolean) => {
+    const handleShowOauthPopup = async (importEmails: boolean, importPeriod: TIME_PERIOD) => {
         const redirectUri = getOAuthRedirectURL(provider);
         const authorizationUrl = generateGoogleOAuthUrl({
             redirectUri,
@@ -85,7 +86,7 @@ const BYOESignupButton = ({
             authorizationUrl,
             redirectUri,
             provider,
-            callback: (oauthProps: OAuthProps) => callback(oauthProps, importEmails),
+            callback: (oauthProps: OAuthProps) => callback(oauthProps, importEmails, importPeriod),
             errorMessage,
         });
     };

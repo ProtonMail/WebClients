@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks';
+import { getUnixTime } from 'date-fns';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
@@ -6,7 +7,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { startEasySwitchSignupImportTask } from '../api';
 import type { ImportToken } from '../interface';
-import { BYOE_ADDRESS_ERROR, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '../interface';
+import { BYOE_ADDRESS_ERROR, EASY_SWITCH_SOURCES, OAUTH_PROVIDER, TIME_PERIOD } from '../interface';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 import useSetupGmailBYOEAddress from './useSetupGmailBYOEAddress';
 
@@ -109,7 +110,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(true, true, mockToken);
+                await result.current.handleBYOEWithImportCallback(true, true, TIME_PERIOD.BIG_BANG, mockToken);
             });
 
             expect(mockDispatch).not.toHaveBeenCalled();
@@ -128,7 +129,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
             });
 
             expect(mockDispatch).not.toHaveBeenCalled();
@@ -146,13 +147,47 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
             });
 
             expect(mockDispatch).toHaveBeenCalled();
             expect(mockApi).toHaveBeenCalled();
             expect(mockStartImportTask).toHaveBeenCalledWith(expect.objectContaining({ AutomaticImport: true }));
             expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com', true);
+        });
+
+        it('should send no StartTime when importing all messages', async () => {
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: jest.fn(),
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
+
+            await act(async () => {
+                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
+            });
+
+            expect(mockStartImportTask).toHaveBeenCalledWith(expect.objectContaining({ StartTime: undefined }));
+        });
+
+        it('should send the StartTime matching the selected import period', async () => {
+            jest.useFakeTimers().setSystemTime(new Date('2026-10-01T12:00:00Z'));
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: jest.fn(),
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
+
+            await act(async () => {
+                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.LAST_3_MONTHS, mockToken);
+            });
+
+            expect(mockStartImportTask).toHaveBeenCalledWith(
+                expect.objectContaining({ StartTime: getUnixTime(new Date('2026-07-01T12:00:00Z')) })
+            );
+            jest.useRealTimers();
         });
 
         it('should create address but not start an automatic import when importEmails is false', async () => {
@@ -165,7 +200,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, false, TIME_PERIOD.BIG_BANG, mockToken);
             });
 
             expect(mockApi).toHaveBeenCalled();
@@ -185,7 +220,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
             });
 
             expect(mockCreateNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'error' }));
@@ -210,7 +245,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
             });
 
             expect(mockApi).toHaveBeenCalled();
@@ -311,7 +346,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
             });
 
             expect(mockApi).toHaveBeenCalled();
@@ -335,7 +370,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, false, TIME_PERIOD.BIG_BANG, mockToken);
             });
 
             expect(mockApi).toHaveBeenCalled();
@@ -357,7 +392,7 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, false, mockToken);
+                await result.current.handleBYOEWithImportCallback(false, false, TIME_PERIOD.BIG_BANG, mockToken);
             });
 
             expect(mockApi).toHaveBeenCalled();
