@@ -800,6 +800,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
+      ],
+      "Go back": [
+        "Regresar"
       ]
     },
     "Activity": {
@@ -1462,6 +1465,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se eliminó el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "La contraseña de respaldo no es correcta. Inténtelo de nuevo."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segunda contraseña no es correcta. Inténtelo de nuevo."
       ]
     },
     "Error message": {
@@ -2169,7 +2178,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2871,6 +2881,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Añada un método de pago para que su suscripción continúe cuando finalice la prueba."
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Finalice el inicio de sesión en la ventana del navegador que acaba de abrir. ${ PASS_APP_NAME } se cargará automáticamente una vez que lo haga."
       ]
     },
     "Keyboard key": {
@@ -4125,6 +4141,9 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
       ]
     },
     "Link": {
@@ -5227,6 +5246,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ],
+      "Continue in your browser": [
+        "Continuar en su navegador"
+      ],
+      "Keep your subscription active": [
+        "Mantenga su suscripción activa"
       ]
     },
     "Title_cloned_item": {

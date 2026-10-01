@@ -800,6 +800,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
+      ],
+      "Go back": [
+        "Gå tilbake"
       ]
     },
     "Activity": {
@@ -1452,6 +1455,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Feil reservepassord. Forsøk igjen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Feil andre passord. Prøv på nytt."
       ]
     },
     "Error message": {
@@ -2144,7 +2153,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"

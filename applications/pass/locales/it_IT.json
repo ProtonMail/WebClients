@@ -800,6 +800,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
+      ],
+      "Go back": [
+        "Torna indietro"
       ]
     },
     "Activity": {
@@ -1452,6 +1455,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Il tuo codice PIN è stato rimosso da un altro client ${ PASS_APP_NAME }"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Password di backup errata. Riprova."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Password secondaria errata. Riprova."
       ]
     },
     "Error message": {
@@ -2144,7 +2153,8 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
