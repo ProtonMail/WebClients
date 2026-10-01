@@ -1456,6 +1456,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 碼已被另一個 ${ PASS_APP_NAME } 用戶端移除"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "備份密碼錯誤。請重新再試。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "第二密碼錯誤。請重新再試。"
       ]
     },
     "Error message": {
@@ -2187,7 +2193,7 @@
         "移動全部於\"${ payload.content.name }\"的項目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "將項目移動到另一個保管庫會消除其安全連結。"
+        "將項目移至另一個保管庫將會清除其安全連結。"
       ],
       "Moving items": [
         "正在移動檔案"
