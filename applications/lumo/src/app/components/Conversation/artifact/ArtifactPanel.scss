@@ -287,3 +287,96 @@
 		transform: rotate(360deg);
 	}
 }
+
+// ---------------------------------------------------------------------------
+// Rich text editor (manual edit of document artifacts)
+// Shares `.artifact-document-content .artifact-markdown` with the read-only view so editing doesn't
+// shift the layout; only editor-specific states live here.
+// ---------------------------------------------------------------------------
+
+.artifact-editor-toolbar-btn.is-active {
+	background: var(--interaction-default-active);
+	color: var(--text-norm);
+}
+
+.artifact-rich-editor {
+	min-block-size: 100%;
+	outline: none;
+
+	> :first-child {
+		margin-block-start: 0;
+	}
+
+	ul[data-type='taskList'] {
+		list-style: none;
+		padding-inline-start: 0.25rem;
+
+		li {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.5rem;
+
+			> label {
+				flex-shrink: 0;
+				margin-block-start: 0.3em;
+				user-select: none;
+			}
+
+			> div {
+				flex: 1;
+				min-inline-size: 0;
+
+				> p {
+					margin-block-end: 0;
+				}
+			}
+		}
+	}
+
+	img {
+		max-inline-size: 100%;
+	}
+
+	table {
+		table-layout: fixed;
+
+		td,
+		th {
+			position: relative;
+			vertical-align: top;
+
+			> p {
+				margin: 0;
+			}
+		}
+
+		.selectedCell::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: var(--interaction-default-hover);
+			pointer-events: none;
+		}
+	}
+
+	.artifact-editor-raw {
+		color: var(--text-weak);
+		white-space: pre-wrap;
+		word-break: break-word;
+		cursor: default;
+	}
+
+	.artifact-editor-raw-inline {
+		background: var(--background-strong);
+		border-radius: 0.25rem;
+		padding-inline: 0.25em;
+		color: var(--text-weak);
+		font-family: monospace;
+		font-size: 0.875em;
+	}
+
+	.ProseMirror-selectednode {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 2px;
+	}
+}
