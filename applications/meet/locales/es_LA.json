@@ -312,6 +312,9 @@
       "Deny ${ participantName }": [
         "Denegar a ${ participantName }"
       ],
+      "Desync audio output": [
+        "Desincronizar salida de audio"
+      ],
       "Disable ${ participantName }'s video": [
         "Desactivar el vídeo de ${ participantName }"
       ],
@@ -384,6 +387,9 @@
       "End meeting for all": [
         "Finalizar reunión para todos"
       ],
+      "Fail audio output pin": [
+        "Error del pin de salida de audio"
+      ],
       "Forgot password?": [
         "¿Olvidó su contraseña?"
       ],
@@ -453,6 +459,9 @@
       "Lock meeting": [
         "Bloquear reunión"
       ],
+      "Log audio output state": [
+        "Registrar el estado de la salida de audio"
+      ],
       "Lower hand": [
         "Bajar la mano"
       ],
@@ -521,6 +530,9 @@
       ],
       "Raise hand": [
         "Levantar la mano"
+      ],
+      "Re-apply audio output": [
+        "Volver a aplicar salida de audio"
       ],
       "React with ${ emoji }": [
         "Reaccionar con ${ emoji }"
@@ -647,6 +659,9 @@
       "Sign out of all accounts": [
         "Cerrar la sesión de todas las cuentas"
       ],
+      "Simulate output device loss": [
+        "Simular pérdida del dispositivo de salida"
+      ],
       "Simulate reconnection": [
         "Reconexión simulada"
       ],
@@ -766,6 +781,9 @@
       ],
       "View invoice": [
         "Ver la factura"
+      ],
+      "View security details": [
+        "Ver detalles de seguridad"
       ],
       "Virtual backgrounds": [
         "Fondos virtuales"
@@ -2643,6 +2661,14 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualice su navegador o dispositivo a una versión que sea compatible con WebRTC, pruebe un navegador diferente o desactive cualquier extensión que pueda estar bloqueándolo."
       ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } miembro",
+        "${ mlsMemberCount } miembros"
+      ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "${ participantCount } participante conectado mientras el grupo seguro tiene ${ mlsMemberCountText }.\nEsto puede ocurrir temporalmente después de que alguien se une o abandona.",
+        "${ participantCount } participantes conectados mientras el grupo seguro tiene ${ mlsMemberCountText }.\nEsto puede ocurrir temporalmente después de que alguien se une o abandona."
+      ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } y ${ otherParticipantsCount } más están grabando"
       ],
@@ -3132,11 +3158,17 @@
       "Participant": [
         "Participante"
       ],
+      "Participant counts don’t match": [
+        "El conteo de participantes no coincide"
+      ],
       "Participants can turn live captions on. Turn on your own under Display.": [
         "Los participantes pueden activar los subtítulos en directo. Active los suyos en Pantalla."
       ],
       "Participants can’t use live captions": [
         "Los participantes no pueden usar subtítulos en directo"
+      ],
+      "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
+        "La sección Participantes muestra quién está conectado actualmente. La sección Miembros de MLS muestra quién está incluido en el grupo de seguridad de la reunión. Estas cifras pueden variar brevemente, pero esta diferencia ha durado más de lo previsto."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Pegue su enlace de ${ MEET_APP_NAME } para unirse a una reunión segura"
@@ -4170,6 +4202,9 @@
       "Assign a new host": [
         "Asignar un nuevo anfitrión"
       ],
+      "Audio Output Testing": [
+        "Prueba de salida de audio"
+      ],
       "Available Cameras": [
         "Cámaras disponibles"
       ],
@@ -4303,11 +4338,17 @@
       "Minicalendar": [
         "Minicalendario"
       ],
+      "MLS members": [
+        "Miembros de MLS"
+      ],
       "No one is waiting": [
         "Nadie está esperando"
       ],
       "No results found": [
         "No se encontraron resultados"
+      ],
+      "Participant counts don’t match": [
+        "El conteo de participantes no coincide"
       ],
       "Participants": [
         "Participantes"
@@ -4426,6 +4467,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "¡Asistencia IA inmediata, experto humano a su disposición!"
+      ],
+      "People currently connected to the meeting": [
+        "Personas actualmente conectadas a la reunión"
+      ],
+      "People included in meeting's MLS group": [
+        "Personas incluidas en el grupo de reunión de MLS"
       ],
       "Recurring meeting": [
         "Reunión recurrente"

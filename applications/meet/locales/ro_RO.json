@@ -315,6 +315,9 @@
       "Deny ${ participantName }": [
         "Refuzare ${ participantName }"
       ],
+      "Desync audio output": [
+        "Decalare ieșire audio"
+      ],
       "Disable ${ participantName }'s video": [
         "Dezactivare video pentru ${ participantName }"
       ],
@@ -387,6 +390,9 @@
       "End meeting for all": [
         "Încheiere întâlnire pentru toți"
       ],
+      "Fail audio output pin": [
+        "Conexiune ieșire audio eșuată"
+      ],
       "Forgot password?": [
         "Ați uitat parola?"
       ],
@@ -456,6 +462,9 @@
       "Lock meeting": [
         "Blocare întâlnire"
       ],
+      "Log audio output state": [
+        "Înregistrare stare ieșire audio"
+      ],
       "Lower hand": [
         "Mâna coborâtă"
       ],
@@ -524,6 +533,9 @@
       ],
       "Raise hand": [
         "Mână ridicată"
+      ],
+      "Re-apply audio output": [
+        "Reaplicare ieșire audio"
       ],
       "React with ${ emoji }": [
         "Reacționare cu ${ emoji }"
@@ -652,6 +664,9 @@
       "Sign out of all accounts": [
         "Deconectare din toate conturile"
       ],
+      "Simulate output device loss": [
+        "Simulare pierdere dispozitiv de ieșire"
+      ],
       "Simulate reconnection": [
         "Simulare reconectare"
       ],
@@ -771,6 +786,9 @@
       ],
       "View invoice": [
         "Afișare factură"
+      ],
+      "View security details": [
+        "Afișare detalii de securitate"
       ],
       "Virtual backgrounds": [
         "Fundaluri virtuale"
@@ -2655,6 +2673,16 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necesită WebRTC pentru a funcționa. Actualizați navigatorul web sau dispozitivul la o versiune care acceptă WebRTC, încercați un alt navigator web sau dezactivați orice extensii care ar putea să-l blocheze."
       ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } membru",
+        "${ mlsMemberCount } membri",
+        "${ mlsMemberCount } de membri"
+      ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "Este conectat ${ participantCount } participant, în timp ce grupul securizat are ${ mlsMemberCountText }. Acest lucru se poate întâmpla temporar după ce cineva se alătură grupului sau îl părăsește.",
+        "Sunt conectați ${ participantCount } participanți, în timp ce grupul securizat are ${ mlsMemberCountText }. Acest lucru se poate întâmpla temporar după ce cineva se alătură grupului sau îl părăsește.",
+        "Sunt conectați ${ participantCount } de participanți, în timp ce grupul securizat are ${ mlsMemberCountText }. Acest lucru se poate întâmpla temporar după ce cineva se alătură grupului sau îl părăsește."
+      ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } și încă ${ otherParticipantsCount } persoane înregistrează"
       ],
@@ -3147,11 +3175,17 @@
       "Participant": [
         "Participant"
       ],
+      "Participant counts don’t match": [
+        "Numărul de participanți nu corespunde."
+      ],
       "Participants can turn live captions on. Turn on your own under Display.": [
         "Participanții pot activa subtitrările live. Le puteți activa în secțiunea „Afișare”."
       ],
       "Participants can’t use live captions": [
         "Participanții nu pot folosi subtitrări live."
+      ],
+      "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
+        "„Participanții” indică persoanele conectate în prezent. „Membri MLS” indică persoanele incluse în grupul de securitate al reuniunii. Aceste cifre pot diferi pentru scurt timp, însă această discrepanță a persistat mai mult decât era de așteptat."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Inserați legătura web ${ MEET_APP_NAME } pentru a vă alătura unei întâlniri securizate."
@@ -4187,6 +4221,9 @@
       "Assign a new host": [
         "Desemnare o gazdă nouă"
       ],
+      "Audio Output Testing": [
+        "Testarea ieșirii audio"
+      ],
       "Available Cameras": [
         "Camere disponibile"
       ],
@@ -4321,11 +4358,17 @@
       "Minicalendar": [
         "Minicalendar"
       ],
+      "MLS members": [
+        "Membri MLS"
+      ],
       "No one is waiting": [
         "Nimeni nu așteaptă"
       ],
       "No results found": [
         "Nu s-au găsit rezultate."
+      ],
+      "Participant counts don’t match": [
+        "Numărul de participanți nu corespunde."
       ],
       "Participants": [
         "Participanți"
@@ -4444,6 +4487,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Asistență instantanee prin IA, expert uman la îndemână!"
+      ],
+      "People currently connected to the meeting": [
+        "Persoane conectate în prezent la conferință"
+      ],
+      "People included in meeting's MLS group": [
+        "Persoane incluse în grupul MLS al conferinței"
       ],
       "Recurring meeting": [
         "Întâlnire recurentă"

@@ -165,6 +165,9 @@
       ],
       "Your camera has been turned off by the host": [
         "Sua câmera foi desligada pelo organizador"
+      ],
+      "Your own background applied": [
+        "Seu plano de fundo próprio foi aplicado"
       ]
     },
     "Action": {
@@ -450,7 +453,7 @@
         "Baixar mão"
       ],
       "Meeting timer": [
-        "Temporizador de reuniões"
+        "Temporizador de reunião"
       ],
       "Minimize preview": [
         "Minimizar pré-visualização"
@@ -482,8 +485,11 @@
       "Open link": [
         "Abrir link"
       ],
+      "Open mention from ${ senderName } in chat": [
+        "Abrir menção de ${ senderName } no bate-papo"
+      ],
       "Participants join after you approve them": [
-        "Os participantes ponderam participar depois da aprovação"
+        "Os participantes entram depois de você aprová-los"
       ],
       "Paste": [
         "Colar"
@@ -748,6 +754,9 @@
       "View invoice": [
         "Visualizar fatura"
       ],
+      "View security details": [
+        "Ver detalhes de segurança"
+      ],
       "Virtual backgrounds": [
         "Planos de fundo virtuais"
       ],
@@ -823,7 +832,7 @@
         "Detalhes da reunião"
       ],
       "Meeting timer": [
-        "Temporizador de reuniões"
+        "Temporizador de reunião"
       ],
       "More options": [
         "Mais opções"
@@ -2068,6 +2077,9 @@
       "Failed to lock meeting": [
         "Falha ao bloquear reunião"
       ],
+      "Failed to request live captions": [
+        "Erro ao solicitar as legendas ao vivo"
+      ],
       "Failed to rotate personal meeting link": [
         "Não foi possível redefinir link de reunião pessoal"
       ],
@@ -2092,8 +2104,14 @@
       "Failed to unlock meeting": [
         "Falha ao desbloquear reunião"
       ],
+      "Failed to update caption language. Please try again.": [
+        "Falha ao atualizar o idioma da legenda. Tente novamente."
+      ],
       "Failed to update live captions availability": [
         "Erro ao atualizar a disponibilidade das legendas ao vivo"
+      ],
+      "Failed to update live captions. Please try again.": [
+        "Erro ao atualizar as legendas ao vivo. Tente novamente."
       ],
       "Failed to update waiting room setting. Please try again.": [
         "Falha ao atualizar a configuração da sala de espera. Tente novamente."
@@ -2269,6 +2287,9 @@
       ],
       "This file has no version available to download": [
         "O arquivo não possui uma versão para download"
+      ],
+      "This file name is too long. Rename the image and try again.": [
+        "O nome do arquivo é muito longo. Renomeie a imagem e tente novamente."
       ],
       "This file version could not be uploaded": [
         "Não foi possível fazer o envio desta versão do arquivo"
@@ -3008,6 +3029,9 @@
       ],
       "Participant": [
         "Participante"
+      ],
+      "Participant counts don’t match": [
+        "Os números de participantes não coincidem"
       ],
       "Participants can’t use live captions": [
         "Os participantes não podem usar legendas ao vivo"
@@ -4157,11 +4181,17 @@
       "Minicalendar": [
         "Mini calendário"
       ],
+      "MLS members": [
+        "Membros MLS"
+      ],
       "No one is waiting": [
         "Nada está esperado"
       ],
       "No results found": [
         "Nenhum resultado encontrado"
+      ],
+      "Participant counts don’t match": [
+        "Os números de participantes não coincidem"
       ],
       "Participants": [
         "Participantes"
