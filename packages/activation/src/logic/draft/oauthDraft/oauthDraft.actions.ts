@@ -12,6 +12,7 @@ export const startOauthDraft = createAction<{
     provider: ImportProvider;
     products: ImportType[];
     source: EASY_SWITCH_SOURCES;
+    hasReadInstructions?: boolean;
 }>(`${OAUTH_ACTION_PREFIX}/start`);
 
 export const initOauthMailImport = createAction(`${OAUTH_ACTION_PREFIX}/initOauthImport`);
