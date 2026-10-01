@@ -1,13 +1,16 @@
-import { SignInStepLayout } from '../../../components/SignInStepLayout';
-import { SSOContext } from '../SSOContext';
+import type { SignInScreen, SignInScreenProps } from '../../../routes/signInRoute';
+import { useSignInProps } from '../../../wizard/SignInProvider';
 import SSODeviceRejected from '../components/SSODeviceRejected';
 
-export const RejectedScreen = () => {
-    const actorRef = SSOContext.useActorRef();
-    const onBack = () => actorRef.send({ type: 'decision.back' });
+export const RejectedScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
+    const { layout } = useSignInProps();
     return (
-        <SignInStepLayout title="" onBack={onBack}>
-            <SSODeviceRejected onBack={onBack} />
-        </SignInStepLayout>
+        <>
+            {/* No title: the rejection brings its own */}
+            <layout.Header onBack={onBack} />
+            <layout.Body>
+                <SSODeviceRejected onBack={onBack} />
+            </layout.Body>
+        </>
     );
 };
