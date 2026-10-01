@@ -832,6 +832,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Go back": [
+        "Înapoi"
       ]
     },
     "Activity": {
@@ -1521,6 +1524,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Parolă de rezervă incorectă. Reîncercați."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Parolă secundară incorectă. Încercați din nou."
       ]
     },
     "Error message": {
@@ -3023,6 +3032,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Adăugați o metodă de plată pentru ca abonamentul să continue după expirarea perioadei de probare."
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Finalizați autentificarea în fereastra navigatorului web care tocmai s-a deschis. ${ PASS_APP_NAME } va prelua automat procesul imediat ce ați terminat."
       ]
     },
     "Keyboard key": {
@@ -4351,6 +4366,9 @@
       ],
       "ZIP or Postal code": [
         "Cod poștal"
+      ],
+      "Add a payment method": [
+        "Adăugați o metodă de plată"
       ]
     },
     "Link": {
@@ -5484,6 +5502,12 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Continue in your browser": [
+        "Continuare în navigatorul web"
+      ],
+      "Keep your subscription active": [
+        "Păstrați-vă abonamentul activ"
       ]
     },
     "Title_cloned_item": {

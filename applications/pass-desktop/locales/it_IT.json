@@ -830,6 +830,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
+      ],
+      "Go back": [
+        "Torna indietro"
       ]
     },
     "Activity": {
@@ -1505,6 +1508,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Il tuo codice PIN è stato rimosso da un altro client ${ PASS_APP_NAME }"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Password di backup errata. Riprova."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Password secondaria errata. Riprova."
       ]
     },
     "Error message": {

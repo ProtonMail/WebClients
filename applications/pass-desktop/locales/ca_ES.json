@@ -830,6 +830,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Go back": [
+        "Torna enrere"
       ]
     },
     "Activity": {
@@ -1515,6 +1518,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segona contrasenya no és correcta. Torneu-ho a intentar."
       ]
     },
     "Error message": {
@@ -2988,6 +2997,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Afegiu un mètode de pagament perquè la vostra subscripció continuï vigent quan acabi el període de prova."
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Finalitzeu iniciant sessió a la finestra del navegador que s'acaba d'obrir. ${ PASS_APP_NAME } es completarà automàticament un cop hàgiu acabat."
       ]
     },
     "Keyboard key": {
@@ -4302,6 +4317,9 @@
       ],
       "ZIP or Postal code": [
         "Codi postal"
+      ],
+      "Add a payment method": [
+        "Afegir un mètode de pagament"
       ]
     },
     "Link": {
@@ -5424,6 +5442,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Continue in your browser": [
+        "Continueu al navegador"
+      ],
+      "Keep your subscription active": [
+        "Mantingueu la vostra subscripció activa"
       ]
     },
     "Title_cloned_item": {
