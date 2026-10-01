@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
 import { c } from 'ttag';
@@ -36,6 +36,8 @@ import { ArtifactInlineEdit } from './ArtifactInlineEdit';
 import { ArtifactPanelLoading } from './ArtifactPanelLoading';
 import { ArtifactPanelRevisionOverlay } from './ArtifactPanelRevisionOverlay';
 import { ArtifactPanelSpotlight } from './ArtifactPanelSpotlight';
+import { ArtifactPreviewErrorBoundary } from './ArtifactPreviewErrorBoundary';
+import type { ArtifactRichTextEditorHandle } from './ArtifactRichTextEditor';
 import { ArtifactSaveToDriveDropdown } from './ArtifactSaveToDriveDropdown';
 import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
 import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
@@ -56,6 +58,21 @@ import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
 import type { ArtifactType } from './parseArtifacts';
 
 import './ArtifactPanel.scss';
+
+// Loaded only when the user starts a manual edit: tiptap/ProseMirror stay out of the read-only panel.
+const ArtifactRichTextEditor = lazy(() => {
+    return import(/* webpackChunkName: "artifact-rich-editor" */ './ArtifactRichTextEditor');
+});
+
+const loadNormalizeMarkdownForEditor = async () => {
+    const module = await import(
+        /* webpackChunkName: "artifact-rich-editor" */ '../../../util/markdown/markdownEditorDoc'
+    );
+    return module.normalizeMarkdownForEditor;
+};
+
+/** Rich text (WYSIWYG) by default; markdown source as an escape hatch and a fallback. */
+type ManualEditMode = 'rich' | 'source';
 
 // ---------------------------------------------------------------------------
 // Shared panel header
@@ -100,6 +117,8 @@ interface PanelHeaderProps {
     canManuallyEdit?: boolean;
     manualEditActive?: boolean;
     manualEditDirty?: boolean;
+    manualEditMode?: ManualEditMode;
+    onToggleManualEditMode?: () => void;
     onStartManualEdit?: () => void;
     onSaveManualEdit?: () => void;
     onCancelManualEdit?: () => void;
@@ -172,6 +191,8 @@ const PanelHeader = ({
     canManuallyEdit,
     manualEditActive,
     manualEditDirty,
+    manualEditMode,
+    onToggleManualEditMode,
     onStartManualEdit,
     onSaveManualEdit,
     onCancelManualEdit,
@@ -370,6 +391,28 @@ const PanelHeader = ({
                 )}
                 {!isStreaming && manualEditActive && (
                     <>
+                        {onToggleManualEditMode && (
+                            <Button
+                                icon
+                                shape="ghost"
+                                color="weak"
+                                size="small"
+                                onClick={onToggleManualEditMode}
+                                className="artifact-btn"
+                                title={
+                                    manualEditMode === 'source'
+                                        ? c('collider_2025:Action').t`Edit as rich text`
+                                        : c('collider_2025:Action').t`Edit as Markdown`
+                                }
+                                aria-label={
+                                    manualEditMode === 'source'
+                                        ? c('collider_2025:Action').t`Edit as rich text`
+                                        : c('collider_2025:Action').t`Edit as Markdown`
+                                }
+                            >
+                                <LumoIcon name={manualEditMode === 'source' ? 'Type' : 'FileCode'} size={16} />
+                            </Button>
+                        )}
                         <Button size="small" shape="ghost" color="weak" onClick={onCancelManualEdit}>
                             {c('collider_2025:Action').t`Cancel`}
                         </Button>
@@ -489,6 +532,11 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     const [webpageViewMode, setWebpageViewMode] = useState<WebpageViewMode>('preview');
     const [manualEditActive, setManualEditActive] = useState(false);
     const [draftContent, setDraftContent] = useState('');
+    const [manualEditMode, setManualEditMode] = useState<ManualEditMode>('rich');
+    // What the rich editor would save for an untouched document. Its serializer writes markdown in
+    // its own style, so a draft equal to this is "no change" even though it differs from the original.
+    const [normalizedOriginalContent, setNormalizedOriginalContent] = useState<string | null>(null);
+    const richEditorRef = useRef<ArtifactRichTextEditorHandle>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const { handleSaveManualArtifactEdit } = useConversationActions();
     const isGuest = useIsGuest();
@@ -518,8 +566,33 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     // never leaks onto a different artifact.
     useEffect(() => {
         setManualEditActive(false);
+        setManualEditMode('rich');
         setDraftContent(selectedArtifact?.content ?? '');
     }, [selectedArtifact?.id, selectedVersionIndex]);
+
+    const selectedContent = selectedArtifact?.content;
+    useEffect(() => {
+        setNormalizedOriginalContent(null);
+        if (!manualEditActive || selectedContent === undefined) {
+            return;
+        }
+        let cancelled = false;
+        void loadNormalizeMarkdownForEditor()
+            .then((normalize) => {
+                return normalize(selectedContent);
+            })
+            .then((normalized) => {
+                if (!cancelled) {
+                    setNormalizedOriginalContent(normalized);
+                }
+            })
+            .catch(() => {
+                // Without the baseline, only an exact match with the original counts as unchanged.
+            });
+        return () => {
+            cancelled = true;
+        };
+    }, [manualEditActive, selectedContent]);
 
     if (!selectedArtifact && !isLoadingPanelOpen) {
         return null;
@@ -551,7 +624,10 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         !isSelectedVersionProvisional &&
         versionCount !== undefined &&
         selectedVersionIndex === versionCount - 1;
-    const manualEditDirty = draftContent !== artifact.content && draftContent.trim().length > 0;
+    const isUnchangedDraft = (content: string) => {
+        return content === artifact.content || content === normalizedOriginalContent;
+    };
+    const manualEditDirty = !isUnchangedDraft(draftContent) && draftContent.trim().length > 0;
     const artifactSaveFormats =
         artifactSupportsSaveToDrive(artifact.type) && !isGuest ? getArtifactSaveFormats(artifact.type) : [];
     const canDownloadTxt = artifact.type === 'document' && !isGenerating && !manualEditActive;
@@ -565,8 +641,16 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         ? c('collider_2025: Info').t`Preparing ${formatLabel}…`
         : undefined;
 
+    const getLatestDraft = () => {
+        if (manualEditMode === 'rich' && richEditorRef.current) {
+            return richEditorRef.current.getMarkdown();
+        }
+        return draftContent;
+    };
+
     const handleStartManualEdit = () => {
         setDraftContent(artifact.content);
+        setManualEditMode('rich');
         setManualEditActive(true);
     };
 
@@ -576,16 +660,36 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     };
 
     const handleSaveManualEdit = () => {
-        if (!manualEditDirty) {
+        // Read the editor directly: its change callback is debounced and may lag the last keystroke.
+        const newContent = getLatestDraft();
+        if (isUnchangedDraft(newContent) || newContent.trim().length === 0) {
             return;
         }
         handleSaveManualArtifactEdit({
             artifactId: artifact.id,
             artifactType: artifact.type,
             artifactTitle: artifact.title,
-            newContent: draftContent,
+            newContent,
         });
         setManualEditActive(false);
+    };
+
+    const handleToggleManualEditMode = () => {
+        // Carry the draft across: the source editor shows what rich text would save, and the rich
+        // editor remounts from the (possibly hand-edited) markdown.
+        setDraftContent(getLatestDraft());
+        setManualEditMode((mode) => {
+            return mode === 'rich' ? 'source' : 'rich';
+        });
+    };
+
+    const handleRichEditorUnavailable = () => {
+        setManualEditMode('source');
+        createNotification({
+            type: 'warning',
+            text: c('collider_2025: Info')
+                .t`Couldn't open the rich text editor, so you're editing the Markdown source.`,
+        });
     };
 
     const handleCopy = () => {
@@ -796,6 +900,8 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                         canManuallyEdit={canManuallyEdit}
                         manualEditActive={manualEditActive}
                         manualEditDirty={manualEditDirty}
+                        manualEditMode={manualEditMode}
+                        onToggleManualEditMode={handleToggleManualEditMode}
                         onStartManualEdit={handleStartManualEdit}
                         onSaveManualEdit={handleSaveManualEdit}
                         onCancelManualEdit={handleCancelManualEdit}
@@ -808,7 +914,22 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                 ref={contentRef}
                 className="artifact-content-area relative flex flex-column flex-1 min-h-0 min-w-0 overflow-hidden w-full"
             >
-                {manualEditActive ? (
+                {manualEditActive && manualEditMode === 'rich' ? (
+                    <ArtifactPreviewErrorBoundary
+                        content={draftContent}
+                        resetKey={`${artifact.id}-${selectedVersionIndex}`}
+                        onError={handleRichEditorUnavailable}
+                    >
+                        <Suspense fallback={<ArtifactPanelLoading />}>
+                            <ArtifactRichTextEditor
+                                ref={richEditorRef}
+                                initialMarkdown={draftContent}
+                                onChange={setDraftContent}
+                                onUnavailable={handleRichEditorUnavailable}
+                            />
+                        </Suspense>
+                    </ArtifactPreviewErrorBoundary>
+                ) : manualEditActive ? (
                     <TextareaAutosize
                         value={draftContent}
                         onChange={(e) => {
