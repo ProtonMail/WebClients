@@ -41,10 +41,10 @@ function InsertLinkInputField({ label, className, ...props }: InsertLinkInputFie
       <div className="relative">
         <div
           className={clsx(
-            'relative flex flex-1 flex-nowrap items-stretch rounded-[--border-radius-md] border border-[--field-norm] bg-[--field-background-color] text-[--field-text-color]',
+            'relative flex flex-1 flex-nowrap items-stretch rounded-lg border border-[--field-norm] bg-[--background-norm] text-[--text-norm]',
             '[transition:0.15s_cubic-bezier(0.22,1,0.36,1),visibility_0s]',
-            'hover:border-[--field-hover] hover:bg-[--field-hover-background-color] hover:text-[--field-hover-text-color]',
-            'focus-within:border-[--focus-outline] focus-within:bg-[--field-focus-background-color] focus-within:text-[--field-focus-text-color] focus-within:shadow-[0_0_0_0.1875rem_var(--focus-ring)]',
+            'hover:border-[--field-hover]',
+            'focus-within:border-[--focus-outline] focus-within:shadow-[0_0_0_0.1875rem_var(--focus-ring)]',
             className,
           )}
         >
@@ -59,7 +59,7 @@ function InsertLinkInputField({ label, className, ...props }: InsertLinkInputFie
               autoCorrect="off"
               spellCheck="false"
               {...props}
-              className="bg-transparent min-h-[2.125rem] w-full appearance-none rounded-[--border-radius-md] !border-0 px-[0.75em] py-[0.4375em] ps-[0.5em] text-[inherit] !shadow-none ![outline:none] focus:!shadow-none focus:![outline:none] focus-visible:!shadow-none focus-visible:![outline:none]"
+              className="bg-transparent min-h-[2.125rem] w-full appearance-none rounded-lg !border-0 px-[0.75em] py-[0.4375em] ps-[0.5em] text-[inherit] !shadow-none ![outline:none] focus:!shadow-none focus:![outline:none] focus-visible:!shadow-none focus-visible:![outline:none]"
             />
           </div>
         </div>
@@ -138,7 +138,7 @@ function InsertLinkPopover() {
       portal={false}
       onClose={close}
       className={clsx(
-        'z-10 w-[320px] rounded-[8px] border border-[#D1CFCD] bg-[white] p-6 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] outline-none',
+        'z-10 w-[320px] rounded-[8px] border border-[--border-norm] bg-[--background-norm] p-6 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] outline-none',
         !isOpen && 'opacity-0', // without this, the popover briefly appears on whatever other cell you might have clicked
       )}
       getAnchorRect={getAnchorRect}

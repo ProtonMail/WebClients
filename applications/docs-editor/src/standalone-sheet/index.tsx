@@ -1,4 +1,4 @@
-import '../app/style'
+import './standalone-sheet.tailwind.scss'
 import './standalone-sheet.css'
 import { createRoot } from 'react-dom/client'
 import { useCallback, useEffect, useMemo, useState } from 'react'
@@ -7,7 +7,6 @@ import {
   StandaloneSheetsEditor,
   type SheetsDependencies,
 } from '../app/Containers/Spreadsheet/public'
-import { ThemeStyles } from '../app/Theme'
 import { EditorThemeProvider, useEditorTheme } from '../app/Theme/EditorThemeProvider'
 import { createStandaloneSession } from './session'
 
@@ -145,7 +144,6 @@ function StandaloneSheetRoot() {
 
   return (
     <EditorThemeProvider initialTheme={initialTheme}>
-      <ThemeStyles />
       <StandaloneSheet />
     </EditorThemeProvider>
   )

@@ -2,6 +2,60 @@
 
 .sheets-editor-root {
 	display: contents;
+	color: var(--text-norm);
+
+	/* Sheets owns these values. Hosts only select light or dark mode. */
+	--background-norm: white;
+	--background-weak: #f5f4f2;
+	--border-norm: #d1cfcd;
+	--border-weak: #eae7e4;
+	--field-hover: #8f8d8a;
+	--field-norm: #adaba8;
+	--focus-outline: #6d4aff;
+	--focus-ring: rgb(109 74 255 / 0.2);
+	--interaction-norm: #6d4aff;
+	--interaction-norm-major-1: #6243e6;
+	--interaction-norm-major-2: #573bcc;
+	--interaction-weak: #eae7e4;
+	--interaction-weak-major-1: #dedbd9;
+	--interaction-weak-major-2: #d3d0cd;
+	--interaction-weak-major-3: #c7c4c2;
+	--interaction-weak-minor-1: #f5f3f2;
+	--interaction-weak-minor-2: #f9f8f7;
+	--link-norm: var(--interaction-norm);
+	--rnc-border: 0 0% 94%;
+	--signal-danger: #dc3251;
+	--signal-danger-major-1: #c62d49;
+	--signal-danger-major-2: #b02841;
+	--text-hint: #8f8d8a;
+	--text-norm: #0c0c14;
+	--text-weak: #5c5958;
+}
+
+[data-theme-mode='dark'] .sheets-editor-root {
+	--background-norm: #16141c;
+	--background-weak: #292733;
+	--border-norm: #4a4658;
+	--border-weak: #343140;
+	--field-hover: #6d697d;
+	--field-norm: #5b576b;
+	--focus-ring: rgb(109 74 255 / 0.3);
+	--interaction-norm-major-1: #7c5cff;
+	--interaction-norm-major-2: #8a6eff;
+	--interaction-weak: #4a4658;
+	--interaction-weak-major-1: #5c5969;
+	--interaction-weak-major-2: #6e6b79;
+	--interaction-weak-major-3: #807e8a;
+	--interaction-weak-minor-1: #25232c;
+	--interaction-weak-minor-2: #16151a;
+	--link-norm: var(--interaction-norm-major-1);
+	--rnc-border: 0 0% 31.2%;
+	--signal-danger: #f5385a;
+	--signal-danger-major-1: #f64c6b;
+	--signal-danger-major-2: #f7607b;
+	--text-hint: #6d697d;
+	--text-norm: white;
+	--text-weak: #a7a4b5;
 }
 
 /* Keep Ariakit portals out of grid sizing and above the editor's z-10 content. */
@@ -15,8 +69,6 @@
 }
 
 .sheets-editor-root {
-	--rnc-border: 0 0% 94%;
-
 	input[type='number'] {
 		-moz-appearance: textfield;
 		appearance: textfield;
@@ -74,8 +126,6 @@
 }
 
 [data-theme-mode='dark'] .sheets-editor-root {
-	--rnc-border: 0 0% 31.2%;
-
 	// Sheets still has legacy neutral colors embedded in utility classes. Keep this temporary
 	// compatibility layer scoped to dark mode while the editor UI moves to design-system tokens.
 	.bg-\[white\],
