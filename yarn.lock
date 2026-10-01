@@ -10083,7 +10083,7 @@ __metadata:
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/jest": "npm:^30.0.0"
     "@typescript/native": "npm:typescript@^7.0.2"
-    dompurify: "npm:^3.4.15"
+    dompurify: "npm:^3.4.16"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     jest-environment-jsdom: "npm:^30.5.2"
@@ -10486,7 +10486,7 @@ __metadata:
     cross-fetch: "npm:^4.1.0"
     date-fns: "npm:^2.30.0"
     docx-preview: "npm:^0.4.0"
-    dompurify: "npm:^3.4.15"
+    dompurify: "npm:^3.4.16"
     emoji-mart: "npm:^5.1.0"
     eslint: "npm:^10.11.0"
     fast-xml-parser: "npm:^5.11.1"
@@ -11594,7 +11594,7 @@ __metadata:
   dependencies:
     "@proton/jest-swc-preset": "workspace:^"
     "@typescript/native": "npm:typescript@^7.0.2"
-    dompurify: "npm:^3.4.15"
+    dompurify: "npm:^3.4.16"
     eslint: "npm:^10.11.0"
     jest: "npm:^30.5.2"
     jest-environment-jsdom: "npm:^30.5.2"
@@ -11636,7 +11636,7 @@ __metadata:
     "@vitest/browser-playwright": "npm:^5.0.1"
     "@webgpu/types": "npm:^0.1.74"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.4.15"
+    dompurify: "npm:^3.4.16"
     electron-log: "npm:^5.4.4"
     eslint: "npm:^10.11.0"
     file-saver: "npm:^2.0.5"
@@ -23863,15 +23863,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^3.3.1, dompurify@npm:^3.3.3, dompurify@npm:^3.4.14, dompurify@npm:^3.4.15":
-  version: 3.4.15
-  resolution: "dompurify@npm:3.4.15"
+"dompurify@npm:^3.3.1, dompurify@npm:^3.3.3, dompurify@npm:^3.4.14, dompurify@npm:^3.4.16":
+  version: 3.4.16
+  resolution: "dompurify@npm:3.4.16"
   dependencies:
     "@types/trusted-types": "npm:^2.0.7"
   dependenciesMeta:
     "@types/trusted-types":
       optional: true
-  checksum: 10/159f592307578405c5217ba40ab467d4ac35f23eb20abc7f32b85698b8c1aff92f71b00c80779f891a8e463edafab05d9a4db53052d5c67005240ac4fff7fc72
+  checksum: 10/a571d0e2bede4f739666afd640398a86854abd27c71ce0724910249e2fd2ca7ddb8098a9ab579d3a5b39058419af694421f8fe859a81fd6d8acda16019a8ab9d
   languageName: node
   linkType: hard
 
@@ -37587,7 +37587,7 @@ __metadata:
     "@xstate/react": "npm:^6.1.0"
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.4.15"
+    dompurify: "npm:^3.4.16"
     eslint: "npm:^10.11.0"
     history: "npm:^4.10.1"
     html-webpack-plugin: "npm:^5.6.8"
@@ -38261,7 +38261,7 @@ __metadata:
     d3-array: "npm:^3.2.4"
     d3-scale: "npm:^4.0.2"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.4.15"
+    dompurify: "npm:^3.4.16"
     eslint: "npm:^10.11.0"
     eslint-config-prettier: "npm:^10.1.8"
     fake-indexeddb: "npm:^6.2.5"
