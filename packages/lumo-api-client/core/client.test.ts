@@ -3,12 +3,14 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { ChatCompletionsRequest } from '../types-api';
 import { CLIENT_TOOL_ROUND_BUDGET, LumoApiClient, MAX_CLIENT_TOOL_ROUNDS } from './client';
 import type { ClientToolExecutor, ClientToolResult, PendingClientToolCall } from './client-tools';
+import { encryptTurns } from './encryption';
+import { RequestEncryptionParams } from './encryptionParams';
 import { callChatEndpoint } from './network';
-import { type GenerationResponseMessage, Role } from './types';
+import { type EncryptedTurn, type GenerationResponseMessage, Role, type Turn } from './types';
 
 jest.mock('uuid', () => ({ v4: () => 'request-id' }));
-jest.mock('./encryption', () => ({ DEFAULT_LUMO_PUB_KEY: 'pub-key', encryptTurns: async (turns: unknown) => turns }));
-jest.mock('./encryptionParams', () => ({ RequestEncryptionParams: { create: async () => null } }));
+jest.mock('./encryption', () => ({ DEFAULT_LUMO_PUB_KEY: 'pub-key', encryptTurns: jest.fn() }));
+jest.mock('./encryptionParams', () => ({ RequestEncryptionParams: { create: jest.fn() } }));
 jest.mock('./transforms/decrypt', () => ({
     decryptToolCallArguments: async (calls: unknown) => calls,
     makeDecryptionTransformStream: () => new TransformStream(),
@@ -20,6 +22,20 @@ jest.mock('./network', () => ({
 }));
 
 const mockedCallChatEndpoint = callChatEndpoint as jest.MockedFunction<typeof callChatEndpoint>;
+const mockedEncryptTurns = encryptTurns as jest.MockedFunction<typeof encryptTurns>;
+const mockedCreateEncryption = RequestEncryptionParams.create as jest.MockedFunction<
+    typeof RequestEncryptionParams.create
+>;
+
+const enableFakeEncryption = () => {
+    mockedCreateEncryption.mockResolvedValue({
+        requestId: 'request-id',
+        encryptRequestKey: async () => 'wrapped-request-key',
+    } as unknown as RequestEncryptionParams);
+    mockedEncryptTurns.mockImplementation(async (turns: Turn[]) =>
+        turns.map((turn): EncryptedTurn => ({ ...turn, content: `enc:${turn.content}`, encrypted: true }))
+    );
+};
 
 const sse = (payload: object): string => `data: ${JSON.stringify(payload)}\n\n`;
 
@@ -69,6 +85,8 @@ const newClient = () => new LumoApiClient({ enableU2LEncryption: false, enableSm
 
 beforeEach(() => {
     mockedCallChatEndpoint.mockReset();
+    mockedCreateEncryption.mockResolvedValue(null);
+    mockedEncryptTurns.mockImplementation(async (turns) => turns as EncryptedTurn[]);
 });
 
 describe('callAssistant client tool rounds', () => {
@@ -212,5 +230,59 @@ describe('callAssistant client tool rounds', () => {
 
         expect(executions).toBe(CLIENT_TOOL_ROUND_BUDGET);
         expect(result.stoppedOnBudget).toBe(false);
+    });
+});
+
+describe('callAssistant recordRequestCallback', () => {
+    it('receives the request as it was before encryption, while the wire request stays encrypted', async () => {
+        enableFakeEncryption();
+        mockedCallChatEndpoint.mockImplementation(async () => proseResponse('Here it is.'));
+        const recordRequestCallback = jest.fn();
+
+        await newClient().callAssistant(api, userTurns, {
+            clientTools: [searchTool],
+            modelTier: 'lumo-max',
+            recordRequestCallback,
+        });
+
+        expect(recordRequestCallback).toHaveBeenCalledTimes(1);
+        const [plaintext] = recordRequestCallback.mock.calls[0] as [ChatCompletionsRequest];
+        expect(plaintext.messages[0]).toEqual({ role: 'user', content: 'find my festival tickets' });
+        expect(plaintext.model).toBe('lumo-max');
+        expect(plaintext.tools).toContainEqual(searchTool);
+        expect(plaintext.lumo?.request_key).toBeUndefined();
+        expect(plaintext.lumo?.request_id).toBeUndefined();
+
+        const [sent] = sentRequests();
+        expect(sent.messages[0]).toEqual({ role: 'user', content: 'enc:find my festival tickets', encrypted: true });
+        expect(sent.lumo?.request_key).toBe('wrapped-request-key');
+    });
+
+    it('fires once per round, the last one carrying the tool results', async () => {
+        alwaysCallsTools();
+        const recordRequestCallback = jest.fn();
+
+        await newClient().callAssistant(api, userTurns, {
+            clientToolExecutor: makeExecutor(() => true),
+            clientTools: [searchTool],
+            recordRequestCallback,
+        });
+
+        expect(recordRequestCallback).toHaveBeenCalledTimes(CLIENT_TOOL_ROUND_BUDGET);
+        const [last] = recordRequestCallback.mock.calls.at(-1) as [ChatCompletionsRequest];
+        expect(last.messages.filter((message) => message.content === 'ran search')).toHaveLength(
+            CLIENT_TOOL_ROUND_BUDGET - 1
+        );
+    });
+
+    it('fires before sending, so a failed generation is still recorded', async () => {
+        mockedCallChatEndpoint.mockRejectedValue(new Error('network down'));
+        const recordRequestCallback = jest.fn();
+
+        await expect(newClient().callAssistant(api, userTurns, { recordRequestCallback })).rejects.toThrow(
+            'network down'
+        );
+
+        expect(recordRequestCallback).toHaveBeenCalledTimes(1);
     });
 });

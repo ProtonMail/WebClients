@@ -41,6 +41,7 @@ import {
     isContextLengthExceededApiError,
     isContextLengthExceededError,
 } from '../services/errors/contextLengthError';
+import { recordLastRequest } from '../services/feedback/lastRequestStore';
 import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import { ConversationStatus, Role } from '../types';
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../types-api';
@@ -426,6 +427,14 @@ export function sendMessageWithRedux(
                     if (assistantOptions.finishCallback) {
                         await assistantOptions.finishCallback(status);
                     }
+                },
+                recordRequestCallback: (body) => {
+                    if (messageId && conversationId) {
+                        recordLastRequest(conversationId, messageId, body);
+                    }
+
+                    // Call the original callback if provided
+                    assistantOptions.recordRequestCallback?.(body);
                 },
             });
         } catch (error) {
