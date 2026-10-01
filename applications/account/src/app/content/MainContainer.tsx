@@ -200,7 +200,7 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
-    const [entitlements] = useEntitlementChecks();
+    const [entitlements, loadingEntitlements] = useEntitlementChecks();
     const [{ permissions }] = useUserPermissions();
     const location = useLocation();
 
@@ -437,6 +437,7 @@ const MainContainer = () => {
         if (
             loadingOrganization ||
             loadingSubscription ||
+            loadingEntitlements ||
             permissions === null ||
             loadingDataRecovery ||
             loadingIsSessionRecoveryAvailable ||

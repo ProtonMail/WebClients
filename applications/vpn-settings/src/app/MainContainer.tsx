@@ -141,7 +141,7 @@ const MainContainer: FunctionComponent = () => {
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false, false);
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
-    const [entitlements] = useEntitlementChecks();
+    const [entitlements, loadingEntitlements] = useEntitlementChecks();
 
     const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();
 
@@ -253,6 +253,7 @@ const MainContainer: FunctionComponent = () => {
             loadingSubscription ||
             loadingOrganization ||
             loadingGroups ||
+            loadingEntitlements ||
             permissions === null ||
             loadingDataRecovery ||
             loadingIsSessionRecoveryAvailable ||
