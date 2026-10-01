@@ -10048,6 +10048,12 @@
       ],
       "What needs handling?": [
         "¿Qué necesita ser atendido?"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Tiene una factura abierta ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Tiene una factura abierta el ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -11740,6 +11746,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Necesita reactivar las claves para ver la invitación actualizada"
+      ],
+      "Pay it": [
+        "Pagarla"
       ]
     },
     "Link to calendar event": {
@@ -17928,6 +17937,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No puede cambiar sus propios roles. Pida a otro administrador que los cambie."
       ]
     },
     "Validation": {
@@ -18384,6 +18396,36 @@
     "Action: rename label": {
       "Rename ${ label } to…": [
         "Renombrar ${ label } a…"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obtener ${ discount }% de descuento en ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
+      "2 user accounts": [
+        "2 cuentas de usuario"
+      ],
+      "All premium features from your current plan": [
+        "Todas las funciones premium de su plan actual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
       ]
     }
   }
