@@ -12,7 +12,7 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../../../Utils/react-test-utils'
 import type { LinkNode } from '@lexical/link'
 import { $createLinkNode, $isLinkNode } from '@lexical/link'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { $handleLinkChangeSuggestion } from './handleLinkChangeSuggestion'
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
@@ -85,7 +85,7 @@ describe('$handleLinkChangeSuggestion', () => {
   const onSuggestionCreation = jest.fn()
   const logger = {
     info: jest.fn(),
-  } as unknown as Logger
+  } as unknown as DocsLogger
 
   describe('New link & text', () => {
     beforeEach(async () => {

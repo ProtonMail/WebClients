@@ -1,6 +1,6 @@
 import { $wrapNodeInElement } from '@lexical/utils'
 import { GenerateUUID } from '@proton/docs-shared'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import type { TextFormatType, TextNode } from 'lexical'
 import {
   $createRangeSelection,
@@ -19,17 +19,17 @@ function $setTextNodeFormatAsSuggestion(
   format: number,
   suggestionID: string,
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
 ) {
   const parent = node.getParent()
 
   if ($isSuggestionNode(parent)) {
-    logger.info('Directly updating format as node is in suggestion')
+    logger.info('suggestion-mode: Directly updating format as node is in suggestion')
     node.setFormat(format)
 
     const isFormatChangeSuggestion = parent.getSuggestionTypeOrThrow() === 'property-change'
     if (isFormatChangeSuggestion) {
-      logger.info('Existing suggestion is format change suggestion')
+      logger.info('suggestion-mode: Existing suggestion is format change suggestion')
 
       const suggestionInitialProperties = parent.getSuggestionChangedProperties<PropertyChangeSuggestionProperties>()
       if (!suggestionInitialProperties) {
@@ -39,7 +39,7 @@ function $setTextNodeFormatAsSuggestion(
       const latestFormat = node.getFormat()
       const formatSuggestionInitialFormat = suggestionInitialProperties.__format
       if (latestFormat === formatSuggestionInitialFormat) {
-        logger.info('Unwrapping existing suggestion since format was reset to original')
+        logger.info('suggestion-mode: Unwrapping existing suggestion since format was reset to original')
         $unwrapSuggestionNodeAndResolveIfNeeded(parent)
       }
     }
@@ -47,7 +47,7 @@ function $setTextNodeFormatAsSuggestion(
     return
   }
 
-  logger.info('Updating format and wrapping node in suggestion node')
+  logger.info('suggestion-mode: Updating format and wrapping node in suggestion node')
   const initialNodeFormat = node.getFormat()
   node.setFormat(format)
   $wrapNodeInElement(node, () =>
@@ -66,18 +66,18 @@ function $setTextNodeFormatAsSuggestion(
 export function $formatTextAsSuggestion(
   format: TextFormatType,
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
 ): boolean {
-  logger.info('Formatting text as suggestion', format)
+  logger.info('suggestion-mode: Formatting text as suggestion', format)
 
   const selection = $getSelection()
   if (!$isRangeSelection(selection)) {
-    logger.info('Expected range selection')
+    logger.info('suggestion-mode: Expected range selection')
     return true
   }
 
   if (selection.isCollapsed()) {
-    logger.info('Directly setting selection format since it is collapsed')
+    logger.info('suggestion-mode: Directly setting selection format since it is collapsed')
     selection.formatText(format)
     return true
   }
@@ -95,7 +95,7 @@ export function $formatTextAsSuggestion(
 
   const selectedTextNodesLength = selectedTextNodes.length
   if (selectedTextNodesLength === 0) {
-    logger.info('Directly setting selection format since no text nodes selected')
+    logger.info('suggestion-mode: Directly setting selection format since no text nodes selected')
     selection.toggleFormat(format)
     return true
   }
@@ -118,7 +118,7 @@ export function $formatTextAsSuggestion(
   }
 
   if (firstNode == null) {
-    logger.info('No usable first node found')
+    logger.info('suggestion-mode: No usable first node found')
     return true
   }
 
@@ -144,32 +144,32 @@ export function $formatTextAsSuggestion(
 
   const isSingleNodeSelected = firstNode.is(lastNode)
   if (isSingleNodeSelected) {
-    logger.info('Only single node selected')
+    logger.info('suggestion-mode: Only single node selected')
 
     const noTextIsSelected = startOffset === endOffset
     if (noTextIsSelected) {
-      logger.info('No text selected, skipping')
+      logger.info('suggestion-mode: No text selected, skipping')
       return true
     }
 
     const isEntireTextSelected = startOffset === 0 && endOffset === firstNode.getTextContentSize()
 
     if ($isTokenOrSegmented(firstNode) || isEntireTextSelected) {
-      logger.info('Node is token or is fully selected')
+      logger.info('suggestion-mode: Node is token or is fully selected')
       $setTextNodeFormatAsSuggestion(firstNode, firstNextFormat, suggestionID, onSuggestionCreation, logger)
       updatePointersForLastSelection(firstNode, firstNextFormat)
     } else {
-      logger.info('Splitting partially selected node and setting format to the selected')
+      logger.info('suggestion-mode: Splitting partially selected node and setting format to the selected')
       const splitNodes = firstNode.splitText(startOffset, endOffset)
       const replacement = startOffset === 0 ? splitNodes[0] : splitNodes[1]
       $setTextNodeFormatAsSuggestion(replacement, firstNextFormat, suggestionID, onSuggestionCreation, logger)
       updatePointersForLastSelection(replacement, firstNextFormat)
     }
   } else {
-    logger.info('Multiple nodes are selected')
+    logger.info('suggestion-mode: Multiple nodes are selected')
 
     if (startOffset !== 0 && !$isTokenOrSegmented(firstNode)) {
-      logger.info('First node is partially selected and is not a token, splitting')
+      logger.info('suggestion-mode: First node is partially selected and is not a token, splitting')
       const [, splitNode] = firstNode.splitText(startOffset)
       firstNode = splitNode
       startOffset = 0
@@ -180,11 +180,11 @@ export function $formatTextAsSuggestion(
     const lastNextFormat = lastNode.getFormatFlags(format, firstNextFormat)
 
     if (endOffset > 0) {
-      logger.info('Last node has text selected')
+      logger.info('suggestion-mode: Last node has text selected')
 
       const isNotFullySelected = endOffset !== lastNode.getTextContentSize()
       if (isNotFullySelected && !$isTokenOrSegmented(lastNode)) {
-        logger.info('Last node is partially selected and not a token, splitting')
+        logger.info('suggestion-mode: Last node is partially selected and not a token, splitting')
         const [splitNode] = lastNode.splitText(endOffset)
         lastNode = splitNode
       }
@@ -202,7 +202,7 @@ export function $formatTextAsSuggestion(
   }
 
   if (latestAnchorNode && latestFocusNode) {
-    logger.info('Fixing selection')
+    logger.info('suggestion-mode: Fixing selection')
     const newSelection = $createRangeSelection()
     newSelection.setTextNodeRange(latestAnchorNode, latestAnchorOffset, latestFocusNode, latestFocusOffset)
     $setSelection(newSelection)

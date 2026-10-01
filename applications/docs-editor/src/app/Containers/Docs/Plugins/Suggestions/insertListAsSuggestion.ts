@@ -11,7 +11,7 @@ import {
   $isRootOrShadowRoot,
   type LexicalEditor,
 } from 'lexical'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import type { CustomListMarker, CustomListStyleType } from '../CustomList/CustomListTypes'
 import { $createCustomListNode } from '../CustomList/$createCustomListNode'
 import { $getListInfo } from '../CustomList/$getListInfo'
@@ -26,34 +26,34 @@ export function $insertListAsSuggestion(
   editor: LexicalEditor,
   listType: ListType,
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
   styleType?: CustomListStyleType,
   marker?: CustomListMarker,
 ): boolean {
-  logger.info('Inserting list as suggestion', listType, styleType, marker)
+  logger.info('suggestion-mode: Inserting list as suggestion', listType, styleType, marker)
 
   let selection = $getSelection()
   if (!selection) {
-    logger.info('No existing selection')
+    logger.info('suggestion-mode: No existing selection')
     return true
   }
 
   const startEndPoints = selection.getStartEndPoints()
   if (!startEndPoints) {
-    logger.info('No start/end points for selection')
+    logger.info('suggestion-mode: No start/end points for selection')
     return true
   }
 
   const [anchor] = startEndPoints
   if (anchor.key === 'root') {
-    logger.info('Resetting selection because it is at root')
+    logger.info('suggestion-mode: Resetting selection because it is at root')
     const root = $getRoot()
     const firstChild = root.getFirstChild()
     if (firstChild) {
-      logger.info('Selecting first existing child of root')
+      logger.info('suggestion-mode: Selecting first existing child of root')
       selection = firstChild.selectStart()
     } else {
-      logger.info('Creating new paragraph and selecting it')
+      logger.info('suggestion-mode: Creating new paragraph and selecting it')
       const paragraph = $createParagraphNode()
       root.append(paragraph)
       selection = paragraph.select()
@@ -68,11 +68,11 @@ export function $insertListAsSuggestion(
     const anchorNode = selection.anchor.getNode()
     const emptyListItem = $isSelectingEmptyListItem(anchorNode, nodes)
     if ($isListItemNode(emptyListItem)) {
-      logger.info('Handling empty list item')
+      logger.info('suggestion-mode: Handling empty list item')
 
       const parent = emptyListItem.getParent()
       if (!$isListNode(parent)) {
-        logger.info('Parent is not list node')
+        logger.info('suggestion-mode: Parent is not list node')
         return true
       }
 
@@ -91,10 +91,14 @@ export function $insertListAsSuggestion(
     const nodeHasBeenHandled = handled.has(node.getKey())
     const isSuggestionNode = $isSuggestionNode(node)
 
-    logger.info(`Node: ${node.__type} (${node.__key})`, { isEmptyElementNode, nodeHasBeenHandled, isSuggestionNode })
+    logger.info(`suggestion-mode: Node: ${node.__type} (${node.__key})`, {
+      isEmptyElementNode,
+      nodeHasBeenHandled,
+      isSuggestionNode,
+    })
 
     if (isEmptyElementNode && !$isListItemNode(node) && !nodeHasBeenHandled && !isSuggestionNode) {
-      logger.info('Is empty element node that has not been handled')
+      logger.info('suggestion-mode: Is empty element node that has not been handled')
       $changeBlockTypeToList(node, listType, suggestionID, logger, incrementSuggestionCounter, styleType, marker)
       continue
     }
@@ -107,7 +111,7 @@ export function $insertListAsSuggestion(
     while (parent != null) {
       const parentKey = parent.getKey()
       if ($isListNode(parent)) {
-        logger.info('Parent is list node')
+        logger.info('suggestion-mode: Parent is list node')
         if (!handled.has(parentKey)) {
           handled.add(parentKey)
           const list = $replaceList(
@@ -128,7 +132,7 @@ export function $insertListAsSuggestion(
         const parentIsTopLevelAndUnhandled = $isRootOrShadowRoot(grandParent) && !handled.has(parentKey)
         if (parentIsTopLevelAndUnhandled) {
           handled.add(parentKey)
-          logger.info('Changing leaf node non-list parent to list')
+          logger.info('suggestion-mode: Changing leaf node non-list parent to list')
           const list = $changeBlockTypeToList(
             parent,
             listType,
@@ -158,15 +162,15 @@ function $changeBlockTypeToList(
   node: ElementNode,
   listType: ListType,
   suggestionID: string,
-  logger: Logger,
+  logger: DocsLogger,
   onSuggestionCreation: (id: string) => void,
   styleType?: CustomListStyleType,
   marker?: CustomListMarker,
 ) {
-  logger.info('Change node block type to list')
+  logger.info('suggestion-mode: Change node block type to list')
 
   if ($isListNode(node)) {
-    logger.info('Node is already list node')
+    logger.info('suggestion-mode: Node is already list node')
     return node
   }
 
@@ -212,19 +216,19 @@ function $replaceList(
   node: ListNode,
   listType: ListType,
   suggestionID: string,
-  logger: Logger,
+  logger: DocsLogger,
   onSuggestionCreation: (id: string) => void,
   styleType?: CustomListStyleType,
   marker?: CustomListMarker,
 ): ListNode {
-  logger.info(`Replacing exist list (key: ${node.__key}) with list type ${listType}`)
+  logger.info(`suggestion-mode: Replacing exist list (key: ${node.__key}) with list type ${listType}`)
   const list = $createCustomListNode(listType, undefined, styleType, marker)
 
   const listInfo = $getListInfo(node)
   const children = node.getChildren()
   for (const child of children) {
     if (!$isElementNode(child)) {
-      logger.info('Child is not element')
+      logger.info('suggestion-mode: Child is not element')
       continue
     }
 
@@ -245,7 +249,7 @@ function $replaceList(
           listInfo,
         }),
       )
-      logger.info('Inserted block-type-change suggestion to child')
+      logger.info('suggestion-mode: Inserted block-type-change suggestion to child')
       onSuggestionCreation(suggestionID)
     }
   }

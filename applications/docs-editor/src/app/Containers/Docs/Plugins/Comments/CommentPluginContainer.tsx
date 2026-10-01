@@ -37,6 +37,7 @@ import { useSyncedState } from '../../../../Hooks/useSyncedState'
 import { useContactEmails } from '../../../../Hooks/useContactEmails'
 import { TYPING_STATUS_CHANGE_EVENT_COMMAND } from './CommentsPanelListThread'
 import { useRightPanelContext } from '../../../DocsLayout'
+import { useDocsDependencies } from '../../DocsDependenciesProvider'
 
 export default function CommentPlugin({
   controller,
@@ -46,6 +47,7 @@ export default function CommentPlugin({
   userAddress: string
 }): JSX.Element {
   const { application } = useApplication()
+  const { logger } = useDocsDependencies()
   const [editor] = useLexicalComposerContext()
   const { element: rightPanelElement } = useRightPanelContext()
   const isEditorEditable = useLexicalEditable()
@@ -391,7 +393,7 @@ export default function CommentPlugin({
         canEdit: application.getRole().canEdit(),
         canComment: application.getRole().canComment(),
         languageCode: application.languageCode,
-        logger: application.logger,
+        logger,
         userName,
         suggestionsEnabled,
         getDisplayNameForEmail: displayNameForEmail,

@@ -19,7 +19,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../../../Utils/react-test-utils'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
@@ -36,7 +36,7 @@ describe('$handleIndentOutdent', () => {
   const onSuggestionCreation = jest.fn()
   const logger = {
     info: jest.fn(),
-  } as unknown as Logger
+  } as unknown as DocsLogger
 
   async function update(fn: () => void) {
     await ReactTestUtils.act(async () => {

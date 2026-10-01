@@ -8,7 +8,7 @@ import {
   $isTextNode,
   $setSelection,
 } from 'lexical'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { AllNodes } from '../../AllNodes'
 import { $insertListAsSuggestion } from './insertListAsSuggestion'
 import type { ListItemNode, ListNode } from '@lexical/list'
@@ -24,7 +24,7 @@ import { assertCondition } from './TestUtils'
 const onSuggestionCreation = jest.fn()
 const logger = {
   info: jest.fn(),
-} as unknown as Logger
+} as unknown as DocsLogger
 
 describe('$insertListAsSuggestion', () => {
   const editor = createHeadlessEditor({

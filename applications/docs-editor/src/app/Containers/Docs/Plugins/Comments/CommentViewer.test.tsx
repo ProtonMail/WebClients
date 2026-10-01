@@ -16,6 +16,7 @@ describe('CommentViewer', () => {
       render(
         <DocsDependenciesProvider
           dependencies={{
+            logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
             getDocumentUrl: jest.fn(),
             replaceDocumentUrl: jest.fn(),
             reportTelemetry: jest.fn(),

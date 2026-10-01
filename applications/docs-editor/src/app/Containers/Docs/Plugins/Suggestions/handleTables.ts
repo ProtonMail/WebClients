@@ -1,13 +1,11 @@
-import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
-import { $isTableCellNode } from '@lexical/table'
-import { $isTableNode } from '@lexical/table'
+import { $isTableCellNode, $isTableNode, type TableCellNode, type TableNode, type TableRowNode } from '@lexical/table'
 import { $insertNodeToNearestRoot, $insertFirst, $findMatchingParent } from '@lexical/utils'
 import { GenerateUUID } from '@proton/docs-shared'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import type { NodeKey } from 'lexical'
 import { $getEditor, $getNodeByKey, $isParagraphNode } from 'lexical'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { $insertTableRowAtSelection } from '../Table/TableUtils/insertNewRowAtSelection'
 import { $insertTableColumnAtSelection } from '../Table/TableUtils/insertNewColumnAtSelection'
 import { $moveSelectionToCell } from '../Table/TableUtils/moveSelectionToCell'
@@ -52,11 +50,11 @@ export function $insertNewTableAsSuggestion(
 export function $suggestTableDeletion(
   key: NodeKey,
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
 ): boolean {
   const table = $getNodeByKey<TableNode>(key)
   if (!table) {
-    logger.info(`Could not find table with key ${key}`)
+    logger.info(`suggestion-mode: Could not find table with key ${key}`)
     return true
   }
 

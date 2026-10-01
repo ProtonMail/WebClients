@@ -1,5 +1,5 @@
 import { $forEachSelectedTextNode, $patchStyleText, getStyleObjectFromCSS } from '@lexical/selection'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { $getSelection, $isRangeSelection, $setSelection } from 'lexical'
 import { GenerateUUID } from '@proton/docs-shared'
 import type { ProtonNode } from './ProtonNode'
@@ -10,9 +10,9 @@ export function $patchStyleAsSuggestion(
   property: string,
   value: string | null,
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
 ): boolean {
-  logger.info(`Patching style as suggestion ${property} ${value}`)
+  logger.info(`suggestion-mode: Patching style as suggestion ${property} ${value}`)
   const selection = $getSelection()
 
   const patch = {
@@ -20,12 +20,12 @@ export function $patchStyleAsSuggestion(
   }
 
   if (!$isRangeSelection(selection)) {
-    logger.info('Selection is not range selection')
+    logger.info('suggestion-mode: Selection is not range selection')
     return true
   }
 
   if (selection.isCollapsed()) {
-    logger.info('Patching selection directly as it is collapsed')
+    logger.info('suggestion-mode: Patching selection directly as it is collapsed')
     $patchStyleText(selection, patch)
     return true
   }
