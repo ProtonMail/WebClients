@@ -345,9 +345,6 @@
       "Email settings": [
         "Setări e-mail"
       ],
-      "Empty trash": [
-        "Golire «Gunoi»"
-      ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
@@ -567,9 +564,6 @@
       "Next month": [
         "Luna viitoare"
       ],
-      "Next page": [
-        "Pagina următoare"
-      ],
       "No, thanks": [
         "Nu, mulțumesc"
       ],
@@ -611,9 +605,6 @@
       ],
       "Previous month": [
         "Luna trecută"
-      ],
-      "Previous page": [
-        "Pagina anterioară"
       ],
       "Print": [
         "Tipărire"
@@ -2924,9 +2915,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "„${ sanitizedName }” există deja"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } nu se poate conecta la contul extern."
       ],
@@ -3370,9 +3358,6 @@
       "Photo not found": [
         "Fotografie negăsită."
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Încărcarea fotografiilor este momentan dezactivată. Reîncercați mai târziu."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Configurația un domeniu personal înainte de a adăuga adrese."
       ],
@@ -3521,12 +3506,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Numele folderului este prea lung. Alegeți alt nume."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Invitația încă nu poate fi finalizată. Reîncercați mai târziu."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Invitația nu mai există."
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Numele etichetei nu este valid. Alegeți alt nume."
       ],
@@ -3538,21 +3517,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Legătura web către element nu a putut fi ștearsă."
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Noua revizie a fișierului original nu a fost încărcată încă,. Reîncercați mai târziu."
-      ],
-      "The original file has missing active revision": [
-        "Fișierul original nu are revizia activă."
-      ],
-      "The original file has missing hash key": [
-        "Fișierul original are cheia hash lipsă."
-      ],
-      "The original file has missing session key": [
-        "Fișierul original nu are cheia de sesiune."
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Fișierul original nu este încă încărcat. Reîncercați mai târziu."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Fișierul încărcat nu corespunde cu originalul. Reîncercați."
@@ -3634,9 +3598,6 @@
       ],
       "Update Too Large": [
         "Actualizare prea mare"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Încărcarea pentru acest folder este temporar dezactivată."
       ],
       "Username must begin with a letter or digit": [
         "Numele de utilizator trebuie să înceapă cu o literă sau cifră."
@@ -4836,9 +4797,6 @@
       "Are you sure you want to discard your import?": [
         "Anulați importarea?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Goliți gunoiul și ștergeți definitiv tot din el?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Confirmați ștergerea definitivă a „${ itemName }” din «Gunoi»?"
       ],
@@ -5268,9 +5226,6 @@
       "Link copied": [
         "Legătura web a fost copiată."
       ],
-      "Link copied to clipboard": [
-        "Legătura a fost copiată în memorie."
-      ],
       "Link expired": [
         "legătură web expirată."
       ],
@@ -5661,9 +5616,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Acesta este un nume sau o poreclă pentru organizație pe care o vor vedea utilizatorii acesteia. Se poate schimba oricând."
       ],
-      "This item already exists in your library": [
-        "Articolul există deja în librăria proprie."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
@@ -5735,12 +5687,6 @@
       ],
       "Tracking": [
         "Urmăritori"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Transfer anulat pentru fișierul „${ name }”."
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Transfer ignorat pentru fișierul „${ file.name }”."
       ],
       "Trash": [
         "Gunoi"
@@ -5898,6 +5844,12 @@
       ],
       "You don't have access": [
         "Nu aveți acces"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Aveți o factură neachitată. ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Aveți o factură neachitată cu scadența la ${ dueDate }. ${ payInvoiceLink }"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "S-ar putea să nu aveți permisiunile necesare pentru a-l vizualiza cu contul selectat. Încercați un alt cont sau contactați proprietarul pentru a-l accesa."
@@ -6646,6 +6598,9 @@
       ],
       "Pay invoice": [
         "Plată factură"
+      ],
+      "Pay it": [
+        "Plătiți-o"
       ],
       "Reactivate now": [
         "Reactivare acum"
@@ -7915,17 +7870,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "„${ name }” nu a putut fi restaurat din «Gunoi»."
       ],
-      "\"${ name }\" failed to be saved": [
-        "„${ name }” nu s-a putut salva."
-      ],
       "\"${ name }\" moved to trash": [
         "„${ name }” a fost mutat în «Gunoi»."
       ],
       "\"${ name }\" restored from trash": [
         "„${ name }” a fost restaurat din «Gunoi»."
-      ],
-      "\"${ name }\" saved successfully": [
-        "„${ name }” a fost salvat."
       ],
       "\"${ newName }\" failed to be renamed": [
         "„${ newName }” nu a reușit să fie redenumit."
@@ -8006,14 +7955,8 @@
       "Access updated and shared": [
         "Acces actualizat și partajat"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Toate articolele vor fi eliminate permanent din «Gunoi»."
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Deoarece acest document se afla într-un folder partajat, numai proprietarul folderului îl poate restaura."
-      ],
-      "Cannot load link": [
-        "Legătura nu s-a putut încărca."
       ],
       "Cannot load next page": [
         "Nu s-a putut încărca pagina următoare."
@@ -8023,18 +7966,6 @@
       ],
       "Contact group updated": [
         "Grup de contacte actualizat"
-      ],
-      "Device failed to be removed": [
-        "Dispozitivul nu a reușit să fie îndepărtat"
-      ],
-      "Device failed to be renamed": [
-        "Dispozitivul nu a putut fi redenumit."
-      ],
-      "Device removed": [
-        "Dispozitiv îndepărtat"
-      ],
-      "Device renamed": [
-        "Dispozitivul a fost redenumit."
       ],
       "Document moved to trash": [
         "Documentul a fost mutat în gunoi."
@@ -8080,14 +8011,6 @@
       ],
       "Failed to trash document": [
         "Documentul nu a putut fi mutat în gunoi."
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Fișierul sau folderul „${ filename }” și încă unul se încarcă deja.",
-        "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja.",
-        "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Fișierul sau folderul „${ filename }” se încarcă deja."
       ],
       "Invitation's email was sent again": [
         "Mesajul de invitare a fost retrimis."
@@ -8148,9 +8071,6 @@
       ],
       "The link to your item was deleted": [
         "Legătura către element a fost ștearsă."
-      ],
-      "Trash failed to be emptied": [
-        "Coșul de gunoi nu s-a putut goli"
       ],
       "You stopped sharing this item": [
         "Ați oprit partajarea acestui articol."
@@ -10276,9 +10196,6 @@
       "Email settings": [
         "Setări e-mail"
       ],
-      "Empty trash": [
-        "Golire gunoi"
-      ],
       "Enable 2FA": [
         "Activare A2F"
       ],
@@ -10562,9 +10479,6 @@
       ],
       "Start import process": [
         "Începere proces de importare"
-      ],
-      "Stop sharing": [
-        "Oprire partajare"
       ],
       "Stop sharing?": [
         "Opriți partajarea?"

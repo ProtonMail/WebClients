@@ -339,9 +339,6 @@
       "Email settings": [
         "Configurações do e-mail"
       ],
-      "Empty trash": [
-        "Esvaziar lixeira"
-      ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
       ],
@@ -564,9 +561,6 @@
       "Next month": [
         "Próximo mês"
       ],
-      "Next page": [
-        "Próxima página"
-      ],
       "No, thanks": [
         "Não, obrigado"
       ],
@@ -608,9 +602,6 @@
       ],
       "Previous month": [
         "Mês anterior"
-      ],
-      "Previous page": [
-        "Página anterior"
       ],
       "Print": [
         "Imprimir"
@@ -2902,9 +2893,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" já existe"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } não pode se conectar na sua conta externa"
       ],
@@ -3299,9 +3287,6 @@
       "Photo not found": [
         "Foto não encontrada"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "O envio de fotos está temporariamente desativado. Tente novamente mais tarde."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Configure um domínio personalizado antes de adicionar endereços."
       ],
@@ -3445,12 +3430,6 @@
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Escolha um nome diferente."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "O convite ainda não pode ser concluído. Tente novamente mais tarde."
-      ],
-      "The invitation doesn't exist anymore": [
-        "O convite não existe mais"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "O nome do marcador não é válido. Escolha um nome diferente."
       ],
@@ -3462,21 +3441,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Erro ao excluir o link do seu item"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "A nova revisão do arquivo original ainda não foi carregada. Tente novamente mais tarde."
-      ],
-      "The original file has missing active revision": [
-        "O arquivo original está faltando uma revisão ativa"
-      ],
-      "The original file has missing hash key": [
-        "O arquivo original falta uma chave hash"
-      ],
-      "The original file has missing session key": [
-        "O arquivo original está faltando uma chave de sessão"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "O arquivo original ainda não foi carregado. Tente novamente mais tarde."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "O arquivo enviado não corresponde ao original. Por favor, tente novamente."
@@ -3552,9 +3516,6 @@
       ],
       "Update Too Large": [
         "Atualização muito grande"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "O envio para essa pasta está temporariamente desativado"
       ],
       "Username must begin with a letter or digit": [
         "O nome de usuário deve começar com uma letra ou dígito"
@@ -4700,9 +4661,6 @@
       "Are you sure you want to discard your import?": [
         "Você tem certeza de que quer descartar sua importação?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Você tem certeza que deseja esvaziar a Lixeira e excluir permanentemente todos os itens?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Tem certeza de que deseja excluir permanentemente \"${ itemName }\" da lixeira?"
       ],
@@ -5129,9 +5087,6 @@
       "Link copied": [
         "Link copiado"
       ],
-      "Link copied to clipboard": [
-        "Link copiado para área de transferência"
-      ],
       "Link expired": [
         "Link expirado"
       ],
@@ -5516,9 +5471,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Este é um nome ou apelido para sua organização que seus usuários verão. Você pode alterá-lo a qualquer momento."
       ],
-      "This item already exists in your library": [
-        "Esse item já existe na sua biblioteca"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
       ],
@@ -5581,12 +5533,6 @@
       ],
       "Tracking": [
         "Rastreamento"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "A transferência do arquivo \"${ name }\" foi cancelado"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "A transferência do arquivo \"${ file.name }\" foi ignorada"
       ],
       "Trash": [
         "Lixeira"
@@ -7711,17 +7657,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "Erro ao restaurar \"${ name }\" da lixeira"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Não foi possível salvar \"${ name }\"."
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para a lixeira"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" restaurado da lixeira"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" salvo"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Não foi possível mudar o nome de \"${ newName }\"."
@@ -7791,12 +7731,6 @@
       "Access updated and shared": [
         "Acesso atualizado e compartilhado"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Todos os itens serão em breve excluídos permanentemente da lixeira"
-      ],
-      "Cannot load link": [
-        "Não foi possível carregar o link"
-      ],
       "Cannot load next page": [
         "Não foi possível carregar a próxima página"
       ],
@@ -7805,18 +7739,6 @@
       ],
       "Contact group updated": [
         "O grupo de contatos foi atualizado"
-      ],
-      "Device failed to be removed": [
-        "Erro ao remover o dispositivo"
-      ],
-      "Device failed to be renamed": [
-        "Erro ao renomear o dispositivo"
-      ],
-      "Device removed": [
-        "Dispositivo removido"
-      ],
-      "Device renamed": [
-        "Dispositivo renomeado"
       ],
       "Document moved to trash": [
         "Documento movido para a lixeira"
@@ -7862,13 +7784,6 @@
       ],
       "Failed to trash document": [
         "Falha ao enviar o documento para a lixeira"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "O arquivo ou a pasta \"${ filename }\" e ${ count } mais já estão sendo enviados.",
-        "O arquivo ou a pasta \"${ filename }\" e ${ count } mais já estão sendo enviados."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "O arquivo ou pasta \"${ filename }\" já está sendo enviado"
       ],
       "Invitation's email was sent again": [
         "O e-mail do convite foi enviado novamente"
@@ -7926,9 +7841,6 @@
       ],
       "The link to your item was deleted": [
         "O link para seu item foi excluído"
-      ],
-      "Trash failed to be emptied": [
-        "Erro ao esvaziar a lixeira"
       ],
       "You stopped sharing this item": [
         "Você parou de compartilhar esse item"
@@ -9981,9 +9893,6 @@
       "Email settings": [
         "Configurações do e-mail"
       ],
-      "Empty trash": [
-        "Esvaziar lixeira"
-      ],
       "Enable 2FA": [
         "Ativar A2F"
       ],
@@ -10266,9 +10175,6 @@
       ],
       "Start import process": [
         "Iniciar processo de importação"
-      ],
-      "Stop sharing": [
-        "Parar compartilhamento"
       ],
       "Stop sharing?": [
         "Parar de compartilhar?"
