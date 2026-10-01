@@ -3,7 +3,6 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import type { IEditor } from 'roosterjs-editor-types';
 
-import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { useTheme } from '../../../../containers/themes/ThemeProvider';
@@ -50,7 +49,6 @@ const useInitRooster = ({
     openEmojiPicker,
 }: Props) => {
     const editorRef = useRef<IEditor>();
-    const isMounted = useIsMounted();
     const theme = useTheme();
     const themeCSSVariables = theme.information.style;
 
@@ -110,7 +108,7 @@ const useInitRooster = ({
 
         const editorDiv = iframeDocument.getElementById(ROOSTER_EDITOR_ID) as HTMLDivElement;
 
-        const { editor, actions } = await initRoosterEditor(editorDiv, {
+        return initRoosterEditor(editorDiv, {
             onEditorEvent: onEditorChange,
             initialContent,
             showModalLink,
@@ -119,15 +117,6 @@ const useInitRooster = ({
             onPasteFiles,
             openEmojiPicker,
         });
-
-        // Prevent setState execution in case component is unmounted
-        if (!isMounted()) {
-            return;
-        }
-
-        onReady(actions);
-
-        return editor;
     }, []);
 
     useEffect(() => {
@@ -137,21 +126,32 @@ const useInitRooster = ({
             return;
         }
 
+        let hasCleanedUp = false;
+
         const onEditorClick = () => {
             editorRef.current?.focus();
             onFocus?.();
         };
 
-        void initRooster()
-            .then((editorInstance) => {
-                editorRef.current = editorInstance;
-            })
-            .then(() => {
-                const editorWrapper = iframeRef.current?.contentDocument?.getElementById(ROOSTER_EDITOR_WRAPPER_ID);
-                editorWrapper?.addEventListener('click', onEditorClick);
-            });
+        void initRooster().then(({ editor, actions }) => {
+            if (hasCleanedUp) {
+                editor.dispose();
+                return;
+            }
+
+            editorRef.current = editor;
+            onReady(actions);
+
+            if (hasCleanedUp) {
+                return;
+            }
+
+            const editorWrapper = iframeRef.current?.contentDocument?.getElementById(ROOSTER_EDITOR_WRAPPER_ID);
+            editorWrapper?.addEventListener('click', onEditorClick);
+        });
 
         return () => {
+            hasCleanedUp = true;
             editorRef.current?.dispose();
 
             const editorWrapper = iframeRef.current?.contentDocument?.getElementById(ROOSTER_EDITOR_WRAPPER_ID);
