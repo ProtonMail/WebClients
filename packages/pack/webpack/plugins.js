@@ -22,7 +22,8 @@ const defaultFaviconConfig = require('./favicon.config');
 const faviconConfig = require(path.resolve('./favicon.config.js'));
 const { getIndexChunks } = require('../webpack/entries');
 
-const { CI } = process.env;
+const { CI, CI_SERVER_HOST } = process.env;
+const isProtonCI = Boolean(CI) && (CI_SERVER_HOST || '').includes('protontech.ch');
 
 module.exports = ({
     isProduction,
@@ -44,7 +45,7 @@ module.exports = ({
 }) => {
     let WebpackCollectMetricsPlugin;
 
-    if (CI) {
+    if (isProtonCI) {
         WebpackCollectMetricsPlugin = require('@proton/collect-metrics').WebpackCollectMetricsPlugin;
     }
 
@@ -262,7 +263,7 @@ module.exports = ({
                 excludeAssets: `assets/static/locales`,
             }),
 
-        CI && new WebpackCollectMetricsPlugin(buildData),
+        isProtonCI && new WebpackCollectMetricsPlugin(buildData),
         benchmarkBuild && new WebpackInvalidationPlugin(),
     ].filter(Boolean);
 };
