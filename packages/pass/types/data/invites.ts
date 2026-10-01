@@ -5,7 +5,7 @@ import type { ShareRole, ShareType, VaultShareContent } from './shares';
 export type AbstractInviteResponse = InviteDataForUser | GroupInviteListItemResponse;
 
 export enum NewUserInviteState {
-    // WAITING = 1,
+    WAITING = 1,
     READY = 2,
 }
 

@@ -17,7 +17,11 @@
         "packages/shared/lib/calendar/sharing/shareUrl/shareUrl.ts": ["exports"],
         "packages/shared/lib/mnemonic/helpers.ts": ["types"],
         "applications/admin/src/app/constants/appConstants.ts": ["enumMembers"],
-        "packages/pass/lib/sync/global.ts": ["duplicates"]
+        "packages/pass/lib/sync/global.ts": ["duplicates"],
+        "packages/pass/lib/import/providers/1password/1pux.types.ts": ["enumMembers"],
+        "packages/pass/lib/import/providers/enpass/enpass.types.ts": ["enumMembers"],
+        "packages/pass/types/api/events.ts": ["enumMembers"],
+        "packages/pass/types/data/invites.ts": ["enumMembers"]
     },
     "ignore": ["**/*.d.ts", "**/vendor/**"],
     "ignoreWorkspaces": ["packages/wasm/andromeda"],

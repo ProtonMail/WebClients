@@ -17,8 +17,8 @@ import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 export enum EventActions {
     DELETE = 0,
-    // CREATE = 1,
-    // UPDATE = 2,
+    CREATE = 1,
+    UPDATE = 2,
 }
 
 export type CoreEvent = {

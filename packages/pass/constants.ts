@@ -160,7 +160,6 @@ export const FILE_ENCRYPTION_VERSION = 2;
 
 export const PASS_PLUS_LIFETIME_PRICE = 19900; // €199
 export const PASS_PLUS_PRICE = 299; // €2.99
-// €4.99
 export const PROTON_UNLIMITED_PRICE = 999; // €9.99
 
 /** Pass client platforms. Kept here rather than next to `clients` so that

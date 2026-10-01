@@ -43,11 +43,11 @@ export enum EnpassCategory {
     NOTE = 'note',
     PASSWORD = 'password',
     IDENTITY = 'identity',
-    // FINANCE = 'finance',
-    // LICENSE = 'license',
-    // TRAVEL = 'travel',
-    // COMPUTER = 'computer',
-    // MISC = 'misc',
+    FINANCE = 'finance',
+    LICENSE = 'license',
+    TRAVEL = 'travel',
+    COMPUTER = 'computer',
+    MISC = 'misc',
 }
 
 export type EnpassField = {

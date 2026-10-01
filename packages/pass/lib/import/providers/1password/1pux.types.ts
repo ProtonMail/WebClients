@@ -3,7 +3,7 @@ import type { Maybe } from '../../../../types';
 export enum OnePassState {
     ACTIVE = 'active',
     ARCHIVED = 'archived',
-    // TRASHED = 'trashed',
+    TRASHED = 'trashed',
 }
 
 export enum OnePassFieldType {
@@ -34,8 +34,8 @@ export enum OnePassCategory {
 
 export enum OnePassVaultType {
     PRIVATE = 'P',
-    // SHARED_WITH_EVERYONE = 'E',
-    // USER_CREATED = 'U',
+    SHARED_WITH_EVERYONE = 'E',
+    USER_CREATED = 'U',
 }
 
 export enum OnePassFieldKey {
