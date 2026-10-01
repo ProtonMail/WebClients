@@ -10,6 +10,7 @@ import { UndoManager } from 'yjs'
 import type { EditorInitializationConfig } from '@proton/docs-shared'
 import { initializeEditorAccordingToConfigIfRootIsEmpty } from './initializeEditor'
 import { syncCursorPositions } from './syncCursorPositions'
+import { useDocsDependencies } from '../../DocsDependenciesProvider'
 
 /**
  * Original: https://github.com/facebook/lexical/blob/main/packages/lexical-react/src/shared/useYjsCollaboration.tsx
@@ -27,6 +28,7 @@ export function useYjsCollaboration(
   editorInitializationConfig?: EditorInitializationConfig,
   awarenessData = {},
 ): Binding {
+  const { reportError } = useDocsDependencies()
   const [doc] = useState(() => docMap.get(id))
   const didPostReadyEvent = useRef(false)
   const didInitializeEditor = useRef(false)
@@ -102,16 +104,19 @@ export function useYjsCollaboration(
 
     if (!didPostReadyEvent.current) {
       if (editorInitializationConfig && !didInitializeEditor.current) {
-        void initializeEditorAccordingToConfigIfRootIsEmpty(editor, binding, editorInitializationConfig).then(
-          (result) => {
-            didInitializeEditor.current = true
-            if (result.isFailed()) {
-              onEditorLoadError(result.getTranslatedError())
-            } else {
-              onEditorReadyToReceiveUpdates()
-            }
-          },
-        )
+        void initializeEditorAccordingToConfigIfRootIsEmpty(
+          editor,
+          binding,
+          editorInitializationConfig,
+          reportError,
+        ).then((result) => {
+          didInitializeEditor.current = true
+          if (result.isFailed()) {
+            onEditorLoadError(result.getTranslatedError())
+          } else {
+            onEditorReadyToReceiveUpdates()
+          }
+        })
       } else {
         onEditorReadyToReceiveUpdates()
       }
@@ -137,6 +142,7 @@ export function useYjsCollaboration(
     onEditorReadyToReceiveUpdates,
     onEditorLoadError,
     awarenessData,
+    reportError,
   ])
 
   binding.cursorsContainer = cursorsContainer

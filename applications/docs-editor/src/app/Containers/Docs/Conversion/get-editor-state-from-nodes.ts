@@ -3,16 +3,19 @@ import { createHeadlessEditor } from '@lexical/headless'
 import type { SerializedLexicalNode } from 'lexical'
 import { $getRoot } from 'lexical'
 import { AllNodes } from '../AllNodes'
-import { reportErrorToSentry } from '../../../Utils/errorMessage'
+import type { DocsDependencies } from '../DocsDependenciesProvider'
 
-export function getEditorStateFromSerializedNodes(nodes: SerializedLexicalNode[]) {
+export function getEditorStateFromSerializedNodes(
+  nodes: SerializedLexicalNode[],
+  reportError: DocsDependencies['reportError'],
+) {
   const editor = createHeadlessEditor({
     editable: false,
     editorState: undefined,
     namespace: 'export-editor',
     nodes: AllNodes,
     onError: (error) => {
-      reportErrorToSentry(error)
+      reportError(error)
     },
   })
   editor.update(
