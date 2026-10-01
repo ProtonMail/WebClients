@@ -26,12 +26,17 @@ export const useProductSelectionSubmit = () => {
         errorMessage: c('Error').t`Your import will not be processed.`,
     });
 
-    const handleSubmit = (provider: ImportProvider, products: ImportType[], source: EASY_SWITCH_SOURCES) => {
+    const handleSubmit = (
+        provider: ImportProvider,
+        products: ImportType[],
+        source: EASY_SWITCH_SOURCES,
+        { hasReadInstructions }: { hasReadInstructions?: boolean } = {}
+    ) => {
         const isOAuth = provider === ImportProvider.GOOGLE || provider === ImportProvider.OUTLOOK;
 
         if (isOAuth) {
             const scopes = getScopeFromProvider(provider, products);
-            dispatch(startOauthDraft({ provider, products, source }));
+            dispatch(startOauthDraft({ provider, products, source, hasReadInstructions }));
             dispatch(initOauthMailImport());
             dispatch(submitProductProvider({ products, scopes }));
 

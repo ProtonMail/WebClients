@@ -13,6 +13,10 @@ export const selectOauthDraftStepConfirmModalDisplay = createSelector(
 const selectOauthImportState = createSelector(selectOauthDraft, (draft) => draft.mailImport);
 export const selectOauthImportStateStep = createSelector(selectOauthImportState, (draft) => draft?.step);
 export const selectOauthImportStateScopes = createSelector(selectOauthImportState, (draft) => draft?.scopes);
+export const selectOauthImportStateHasReadInstructions = createSelector(
+    selectOauthImportState,
+    (draft) => draft?.hasReadInstructions
+);
 export const selectOauthImportStateProducts = createSelector(selectOauthImportState, (draft) => draft?.products);
 export const selectOauthImportStateImporterData = createSelector(
     selectOauthImportState,
