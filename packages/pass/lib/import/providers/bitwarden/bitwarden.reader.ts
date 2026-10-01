@@ -1,11 +1,10 @@
-import groupBy from 'lodash/groupBy';
-import keyBy from 'lodash/keyBy';
 import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe } from '../../../../types';
 import { logger } from '../../../../utils/logger';
 import { ImportProviderError, ImportReaderError } from '../../helpers/error';
 import { attachFilesToItem } from '../../helpers/files';
+import { createImportFolderTree } from '../../helpers/folders';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -39,83 +38,84 @@ export const readBitwardenData = async (
             throw new ImportReaderError(c('Error').t`Importing items failed`);
         }
 
-        const vaults: ImportVault[] = [];
         const ignored: string[] = [];
+        const vaultItems: ItemImportIntent[] = [];
 
         // Collections and folders are mutually exclusive ** after exporting **,
         // ie. items beloging to an organization will have a null folderId (even
         // if they are also in a folder).
         const isB2B = Object.hasOwn(parsedData, 'collections');
-        const folderMap = keyBy(isB2B ? collections : folders, 'id');
         const mappedItems = isB2B ? items.map((i) => ({ ...i, folderId: i.collectionIds?.at(0) || null })) : items;
 
-        for (const [folderId, vaultItems] of Object.entries(groupBy(mappedItems, 'folderId'))) {
-            const name = getImportedVaultName(folderMap[folderId ?? '']?.name);
-            const items: ItemImportIntent[] = [];
+        const tree = createImportFolderTree({ separator: '/' });
+        const folderIds = new Map((isB2B ? collections : folders).map(({ id, name }) => [id, tree.add(name)]));
 
-            for (const item of vaultItems) {
-                try {
-                    const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
-                        switch (item.type) {
-                            case BitwardenType.LOGIN:
-                                const urls = extractBitwardenUrls(item);
-                                return importLoginItem({
-                                    name: item.name,
-                                    note: item.notes,
-                                    password: item.login.password,
-                                    autofillUrls: urls.web,
-                                    totp: item.login.totp,
-                                    appIds: urls.android,
-                                    extraFields: extractBitwardenExtraFields(item.fields),
-                                    ...(await getEmailOrUsername(item.login.username)),
-                                });
-                            case BitwardenType.NOTE:
-                                return importNoteItem({
-                                    name: item.name,
-                                    note: item.notes,
-                                    extraFields: extractBitwardenExtraFields(item.fields),
-                                });
-                            case BitwardenType.CREDIT_CARD:
-                                return importCreditCardItem({
-                                    name: item.name,
-                                    note: item.notes,
-                                    cardholderName: item.card.cardholderName,
-                                    number: item.card.number,
-                                    verificationNumber: item.card.code,
-                                    expirationDate: formatBitwardenCCExpirationDate(item),
-                                    extraFields: extractBitwardenExtraFields(item.fields),
-                                });
-                            case BitwardenType.IDENTITY:
-                                return importIdentityItem({
-                                    name: item.name,
-                                    note: item.notes,
-                                    ...extractBitwardenIdentity(item),
-                                });
-                            case BitwardenType.SSH_KEY:
-                                return importSshKeyItem({
-                                    name: item.name,
-                                    note: item.notes,
-                                    publicKey: item.sshKey.publicKey,
-                                    privateKey: item.sshKey.privateKey,
-                                    extraFields: extractBitwardenExtraFields(item.fields),
-                                    sections: extractBitwardenSSHSections(item),
-                                });
-                        }
-                    })();
+        for (const item of mappedItems) {
+            const folderId = folderIds.get(item.folderId ?? '') ?? null;
 
-                    if (!value) ignored.push(`[${item.type}] ${item.name}`);
-                    else {
-                        const files = attachments?.get(item.id) ?? [];
-                        items.push(attachFilesToItem(value, files));
+            try {
+                const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
+                    switch (item.type) {
+                        case BitwardenType.LOGIN:
+                            const urls = extractBitwardenUrls(item);
+                            return importLoginItem({
+                                name: item.name,
+                                note: item.notes,
+                                password: item.login.password,
+                                autofillUrls: urls.web,
+                                totp: item.login.totp,
+                                appIds: urls.android,
+                                extraFields: extractBitwardenExtraFields(item.fields),
+                                ...(await getEmailOrUsername(item.login.username)),
+                            });
+                        case BitwardenType.NOTE:
+                            return importNoteItem({
+                                name: item.name,
+                                note: item.notes,
+                                extraFields: extractBitwardenExtraFields(item.fields),
+                            });
+                        case BitwardenType.CREDIT_CARD:
+                            return importCreditCardItem({
+                                name: item.name,
+                                note: item.notes,
+                                cardholderName: item.card.cardholderName,
+                                number: item.card.number,
+                                verificationNumber: item.card.code,
+                                expirationDate: formatBitwardenCCExpirationDate(item),
+                                extraFields: extractBitwardenExtraFields(item.fields),
+                            });
+                        case BitwardenType.IDENTITY:
+                            return importIdentityItem({
+                                name: item.name,
+                                note: item.notes,
+                                ...extractBitwardenIdentity(item),
+                            });
+                        case BitwardenType.SSH_KEY:
+                            return importSshKeyItem({
+                                name: item.name,
+                                note: item.notes,
+                                publicKey: item.sshKey.publicKey,
+                                privateKey: item.sshKey.privateKey,
+                                extraFields: extractBitwardenExtraFields(item.fields),
+                                sections: extractBitwardenSSHSections(item),
+                            });
                     }
-                } catch (err) {
-                    ignored.push(`[${item.type}] ${item.name}`);
-                    logger.warn('[Importer::Bitwarden]', err);
-                }
-            }
+                })();
 
-            vaults.push({ name, shareId: null, folders: [], items });
+                if (!value) ignored.push(`[${item.type}] ${item.name}`);
+                else {
+                    const files = attachments?.get(item.id) ?? [];
+                    vaultItems.push({ ...attachFilesToItem(value, files), folderId });
+                }
+            } catch (err) {
+                ignored.push(`[${item.type}] ${item.name}`);
+                logger.warn('[Importer::Bitwarden]', err);
+            }
         }
+
+        const vaults: ImportVault[] = [
+            { name: getImportedVaultName(), shareId: null, folders: tree.folders, items: vaultItems },
+        ];
 
         return { vaults, ignored, warnings: [] };
     } catch (e) {

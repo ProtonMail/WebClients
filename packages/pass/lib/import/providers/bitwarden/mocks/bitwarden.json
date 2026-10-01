@@ -4,6 +4,22 @@
         {
             "id": "e3b5ab63-de3f-4cf2-b982-b0c900f950c5",
             "name": "custom folder"
+        },
+        {
+            "id": "a1c2f4d6-1b2e-4c3a-9d5f-b0c900f950d1",
+            "name": "custom folder/nested"
+        },
+        {
+            "id": "b2d3e5f7-2c3f-4d4b-8e6a-b0c900f950d2",
+            "name": "custom folder/nested/deep"
+        },
+        {
+            "id": "c3e4f608-3d4a-4e5c-9f7b-b0c900f950d3",
+            "name": "Archive/2024"
+        },
+        {
+            "id": "d4f50719-4e5b-4f6d-8a8c-b0c900f950d4",
+            "name": "Empty folder"
         }
     ],
     "items": [
@@ -264,6 +280,42 @@
                 "privateKey": "-----BEGIN TEST -----\n00000000000000\n-----END TEST-----\n",
                 "publicKey": "ssh-ed25519 000000000",
                 "keyFingerprint": "SHA256:000000000"
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "e5061a2b-5f6c-4a7e-9b9d-b0300098556c",
+            "organizationId": null,
+            "folderId": "b2d3e5f7-2c3f-4d4b-8e6a-b0c900f950d2",
+            "type": 1,
+            "reprompt": 0,
+            "name": "DeepLogin",
+            "notes": null,
+            "favorite": false,
+            "fields": [],
+            "login": {
+                "uris": [],
+                "username": "user",
+                "password": "pass",
+                "totp": null
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "f6172b3c-6a7d-4b8f-8cae-b0300098557d",
+            "organizationId": null,
+            "folderId": "c3e4f608-3d4a-4e5c-9f7b-b0c900f950d3",
+            "type": 1,
+            "reprompt": 0,
+            "name": "ArchivedLogin",
+            "notes": null,
+            "favorite": false,
+            "fields": [],
+            "login": {
+                "uris": [],
+                "username": "user",
+                "password": "pass",
+                "totp": null
             },
             "collectionIds": null
         }
