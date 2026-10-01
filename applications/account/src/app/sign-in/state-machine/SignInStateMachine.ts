@@ -8,13 +8,14 @@
  * It orchestrates the steps, which run as children with their own machines and screens:
  * the credentials step (`steps/credentials/state-machine`) for the whole page, then after the first authentication
  * the password account flow (`steps/password-account/state-machine`) or the SSO account flow
- * (`steps/sso/state-machine`), which complete the sign-in themselves. When an account flow ends without signing in,
- * the credentials form reopens.
+ * (`steps/sso/state-machine`), which hand the session to the app themselves. When an account flow ends, it didn't sign
+ * in, and the credentials form reopens.
  *
- * Flow: awaitingCredentials → authenticated → passwordAccount | sso → done (or back to awaitingCredentials).
+ * Flow: awaitingCredentials → authenticated → passwordAccount | sso (or back to awaitingCredentials).
  *
- * Every API call is an actor invoked by a work state, so leaving a state stops the call and its result can never
- * land in a later step. App services (API, config) stay out of context.
+ * Every API call is an actor invoked by a work state: leaving the state stops the actor, so the call's result can never
+ * land in a later step. The request itself isn't aborted; only the identity provider's window closes. App services
+ * (API, config) stay out of context.
  */
 import { type DoneActorEvent, assertEvent, assign, emit, sendTo, setup, spawnChild } from 'xstate';
 
@@ -36,6 +37,9 @@ import type { SignInAuthState } from './signInAuthState';
  * the flow has a screen, so the credentials form stays up (loading) until then.
  */
 export type SignInStep = 'credentials' | 'passwordAccount' | 'sso';
+
+/** The step that shows. */
+export const selectStep = ({ context }: { context: SignInMachineContext }) => context.step;
 
 export interface SignInMachineInput extends CredentialsMachineInput {
     /** Whether VPN-only accounts get keys set up on sign-in. */
@@ -72,12 +76,8 @@ const accountFlowEnded = (type: AccountFlowResult['type']) => ({
     params: ({ event }: AccountFlowDoneEvent) => ({ result: event.output, type }),
 });
 
-/**
- * How an account flow ends: signed in (it completed the sign-in), failed (report and go back to the form),
- * or cancelled (back to the form).
- */
+/** How an account flow ends: failed (report and go back to the form) or cancelled (back to the form). */
 const onAccountFlowDone = [
-    { guard: accountFlowEnded('signedIn'), target: '#signIn.done' },
     {
         guard: accountFlowEnded('failed'),
         target: '#signIn.awaitingCredentials',
@@ -163,7 +163,7 @@ export const SignInStateMachine = setup({
         credentials,
     }),
     invoke: [
-        // Starts with the page, like main's login; best-effort, so a failure must not block the sign-in
+        // Starts with the page, for the requests to wait on; best-effort, so a failure must not block the sign-in
         { src: 'prepareSignIn', onError: {} },
         // The credentials step lives as long as the page: the form keeps its state when it reopens
         {
@@ -238,10 +238,6 @@ export const SignInStateMachine = setup({
                 onDone: onAccountFlowDone,
                 onError: onAccountFlowError,
             },
-        },
-
-        done: {
-            type: 'final',
         },
     },
 });

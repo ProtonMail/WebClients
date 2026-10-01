@@ -17,10 +17,13 @@ import {
 } from '../../../../../../unauthed-forgot-password/hooks/useRequestNewVerificationCode';
 import { Lost2FAContext } from '../Lost2FAContext';
 import {
-    Lost2FAStateMachineTags,
     type VerificationMethod,
     selectEmailVerificationResult,
+    selectInvalidCode,
+    selectNewCodeDialogOpen,
     selectPhoneVerificationResult,
+    selectResending,
+    selectSubmitting,
 } from '../state-machine/lost2FAStateMachine';
 
 /** The code sent to the recovery email or phone; the flow checks it and disables two-factor authentication. */
@@ -31,13 +34,11 @@ export const VerifyCodeForm = ({ method }: { method: VerificationMethod }) => {
             (method === 'email' ? selectEmailVerificationResult : selectPhoneVerificationResult)(snapshot)
                 ?.verificationDataResult.ChallengeDestination ?? ''
     );
-    const invalidCode = Lost2FAContext.useSelector((snapshot) => snapshot.context.invalidCode);
-    const submitting = Lost2FAContext.useSelector((snapshot) => snapshot.hasTag(Lost2FAStateMachineTags.submitting));
+    const invalidCode = Lost2FAContext.useSelector(selectInvalidCode);
+    const submitting = Lost2FAContext.useSelector(selectSubmitting);
     const [code, setCode] = useState('');
-    const newCodeDialogOpen = Lost2FAContext.useSelector((snapshot) =>
-        snapshot.hasTag(Lost2FAStateMachineTags.newCodeDialog)
-    );
-    const resending = Lost2FAContext.useSelector((snapshot) => snapshot.hasTag(Lost2FAStateMachineTags.resending));
+    const newCodeDialogOpen = Lost2FAContext.useSelector(selectNewCodeDialogOpen);
+    const resending = Lost2FAContext.useSelector(selectResending);
     const { validator, onFormSubmit } = useFormErrors();
 
     const { InvalidCodeErrorMessage, AssistiveText } = useNewCodeLinks({
@@ -63,7 +64,7 @@ export const VerifyCodeForm = ({ method }: { method: VerificationMethod }) => {
         <Form
             onSubmit={() => {
                 if (!submitting && onFormSubmit()) {
-                    actorRef.send({ type: 'verification.codeSubmitted', code });
+                    actorRef.send({ type: 'verification.codeSubmitted', payload: { code } });
                 }
             }}
         >
