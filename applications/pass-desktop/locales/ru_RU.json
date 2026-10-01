@@ -813,6 +813,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
+      ],
+      "Go back": [
+        "Назад"
       ]
     },
     "Activity": {
@@ -1470,6 +1473,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Неверный пароль резервной копии. Попробуйте еще раз."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Неверный второй пароль. Попробуйте еще раз."
       ]
     },
     "Error message": {
