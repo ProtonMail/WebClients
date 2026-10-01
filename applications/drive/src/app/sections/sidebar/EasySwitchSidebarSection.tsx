@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -17,6 +17,8 @@ import googleDriveLogo from '@proton/styles/assets/img/import/providers/google-d
 import clsx from '@proton/utils/clsx';
 
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
+import { EasySwitchSpotlight } from './EasySwitchSpotlight';
+import { EasySwitchUserType } from './getEasySwitchSidebarUserType';
 import { useDriveImportStatus } from './useDriveImportStatus';
 import { useEasySwitchSidebarUserType } from './useEasySwitchSidebarUserType';
 
@@ -36,11 +38,45 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
     );
     const isDismissed = !!dismissedFeature?.Value;
 
+    const { feature: spotlightFeature, update: setSpotlightSeen } = useFeature<boolean>(
+        FeatureCode.DriveEasySwitchSpotlight
+    );
+
     // Ongoing import --> always shown (ignores dismiss and rollout)
     // Otherwise --> shown to eligible users who did not dismiss it
     const showEntry = isLoaded && (isImporting || (!!userType && !isDismissed));
 
+    const isSpotlightEligible =
+        showEntry &&
+        !isImporting &&
+        userType === EasySwitchUserType.LowUsageUser &&
+        !!spotlightFeature &&
+        !spotlightFeature.Value;
+
+    const markSpotlightSeen = () => setSpotlightSeen(true);
+
+    const [entryButton, setEntryButton] = useState<HTMLButtonElement | null>(null);
+    const [isEntryVisible, setIsEntryVisible] = useState(false);
+
+    // Spotlight waits for the entry to be fully on screen --> mobile: when the sidebar drawer is opened
+    useEffect(
+        function observeEntryVisibility() {
+            if (!entryButton || !isSpotlightEligible) {
+                return;
+            }
+            const observer = new IntersectionObserver(([entry]) => setIsEntryVisible(entry.isIntersecting), {
+                threshold: 1,
+            });
+            observer.observe(entryButton);
+            return () => observer.disconnect();
+        },
+        [entryButton, isSpotlightEligible]
+    );
+
     const label = isImporting ? c('Action').t`Importing from Google` : c('Action').t`Import from Google`;
+
+    const startGoogleImport = (options?: { hasReadInstructions?: boolean }) =>
+        handleSubmit(ImportProvider.GOOGLE, [ImportType.DRIVE], EASY_SWITCH_SOURCES.DRIVE_WEB_SIDEBAR, options);
 
     const handleClick = () => {
         if (isImporting) {
@@ -48,7 +84,19 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
             return;
         }
         void countActionWithTelemetry(Actions.EasySwitchGoogleSidebarClicked);
-        handleSubmit(ImportProvider.GOOGLE, [ImportType.DRIVE], EASY_SWITCH_SOURCES.DRIVE_WEB_SIDEBAR);
+        startGoogleImport();
+    };
+
+    // Spotlight replaces the Drive instructions step --> import flow opens straight on the OAuth tutorial
+    const handleSpotlightImport = () => {
+        void markSpotlightSeen();
+        void countActionWithTelemetry(Actions.EasySwitchGoogleSpotlightClicked);
+        startGoogleImport({ hasReadInstructions: true });
+    };
+
+    const handleSpotlightClose = () => {
+        void markSpotlightSeen();
+        void countActionWithTelemetry(Actions.EasySwitchGoogleSpotlightDismissed);
     };
 
     const icon = isImporting ? (
@@ -87,6 +135,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                     </SidebarListItem>
                     <SidebarListItem>
                         <button
+                            ref={setEntryButton}
                             type="button"
                             className="navigation-link w-full text-left"
                             aria-label={label}
@@ -107,6 +156,13 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                         </button>
                     </SidebarListItem>
                 </>
+            )}
+            {isSpotlightEligible && isEntryVisible && entryButton && (
+                <EasySwitchSpotlight
+                    target={entryButton}
+                    onClose={handleSpotlightClose}
+                    onImport={handleSpotlightImport}
+                />
             )}
             {showInProgressModal && !outcome && (
                 <DriveImportInProgressStep onClose={() => setShowInProgressModal(false)} />

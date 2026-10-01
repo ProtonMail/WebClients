@@ -13,8 +13,7 @@ interface Action {
     disabled?: boolean;
 }
 
-interface Props {
-    onClose?: () => void;
+interface ContentProps {
     closeDisabled?: boolean;
     media: ReactNode;
     children: ReactNode;
@@ -23,17 +22,20 @@ interface Props {
     size?: ModalSize;
 }
 
-/** Shared shell for the Drive OAuth step modals: positioned close button, media, content, footer actions. */
-export const DriveStepModal = ({
-    onClose,
+interface Props extends ContentProps {
+    onClose?: () => void;
+}
+
+/** Inside of the Drive step modals, to render in any container providing `ModalContext`. */
+export const DriveStepModalContent = ({
     closeDisabled,
     media,
     children,
     secondaryAction,
     primaryAction,
     size = 'xsmall',
-}: Props) => (
-    <Modal open={true} className="relative" onClose={onClose} size={size}>
+}: ContentProps) => (
+    <>
         <ModalHeaderCloseButton
             buttonProps={{
                 className: 'absolute right-custom top-custom',
@@ -62,5 +64,12 @@ export const DriveStepModal = ({
                 {primaryAction.label}
             </Button>
         </ModalFooter>
+    </>
+);
+
+/** Shared shell for the Drive OAuth step modals: positioned close button, media, content, footer actions. */
+export const DriveStepModal = ({ onClose, size = 'xsmall', ...contentProps }: Props) => (
+    <Modal open={true} className="relative" onClose={onClose} size={size}>
+        <DriveStepModalContent size={size} {...contentProps} />
     </Modal>
 );

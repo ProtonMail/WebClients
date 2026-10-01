@@ -1,0 +1,36 @@
+@use '~@proton/styles/scss/lib/config' as *;
+
+$padding-block: 0.125rem;
+$padding-inline: 0;
+$outline-width: 1px;
+$fill-radius: calc(var(--border-radius-xl) - #{$outline-width});
+
+.target-spotlight {
+	// Box = target, border --> padding around it (margin offsets the box by the padding)
+	// Shadows --> outline, translucent focus ring over a solid background, then backdrop over the rest of the page
+	&-hole {
+		box-sizing: content-box;
+		margin-block-start: -$padding-block;
+		margin-inline-start: -$padding-inline;
+		border: solid var(--background-norm);
+		border-width: $padding-block $padding-inline;
+		border-radius: $fill-radius;
+		box-shadow:
+			0 0 0 $outline-width var(--focus-outline),
+			0 0 0 calc(#{$outline-width} + #{$focus-ring-size}) var(--focus-ring),
+			0 0 0 calc(#{$outline-width} + #{$focus-ring-size}) var(--background-norm),
+			0 0 0 100vmax var(--backdrop-norm);
+	}
+
+	// Target clipped to the same rounded shape as the hole --> no square corners, no seam
+	&-target {
+		clip-path: inset(-$padding-block (-$padding-inline) round #{$fill-radius});
+	}
+
+	// Doubled selector --> wins over .modal-two-dialog position and margin
+	&-dialog#{&}-dialog {
+		position: fixed;
+		margin: 0;
+		max-block-size: var(--available-height);
+	}
+}
