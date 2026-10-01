@@ -1628,6 +1628,9 @@
     "Action subscription": {
       "Reactivate": [
         "Reactivar"
+      ],
+      "View breakdown": [
+        "Ver desglose"
       ]
     },
     "Action: Sheets": {
@@ -2217,8 +2220,34 @@
       ]
     },
     "Billing cycle": {
+      "Free renewal": [
+        "Renovación gratuita"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Renovación gratuita, por ${ nextCycle } mes, el ${ when }",
+        "Renovación gratuita, por ${ nextCycle } meses, el ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Se renueva automáticamente por ${ introPrice }, por ${ nextCycle } mes, el ${ when }",
+        "Se renueva automáticamente por ${ introPrice }, por ${ nextCycle } meses, el ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Se renueva automáticamente por ${ price } durante ${ cycle } mes",
+        "Se renueva automáticamente por ${ price } durante ${ cycle } meses"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Se renueva automáticamente en ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Cambia a ${ nextCycle } mes el ${ when } (${ paidPrice } ya pagado)",
+        "Cambia a ${ nextCycle } meses el ${ when } (${ paidPrice } ya pagado)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Luego ${ price } por ${ cycle } mes",
+        "Luego ${ price } por ${ cycle } meses"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Será reemplazado por su próxima suscripción el ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -2256,6 +2285,14 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Facturado al renovar"
+      ],
+      "Prepaid": [
+        "Prepagado"
       ]
     },
     "Blog": {
@@ -3626,6 +3663,11 @@
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(vía ${ entryCountryName })"
+      ]
+    },
+    "Coupon": {
+      "Coupon applied": [
+        "Cupón aplicado"
       ]
     },
     "Create user accounts empty state": {
@@ -9579,6 +9621,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Esto permitirá que PayPal se use para pagar la suscripción a ${ BRAND_NAME }. Le redirigiremos a PayPal en una pestaña nueva de navegador. Si usa cualquier bloqueador emergente, desactívelo para continuar."
       ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Esto le permitirá acceder de forma rápida y segura a su cuenta de ${ BRAND_NAME } para que pueda cambiar la contraseña."
+      ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Esto eliminará permanentemente los datos y todas las direcciones asociadas a estos usuarios."
       ],
@@ -10176,6 +10221,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Tiene una suscripción de prueba ${ planTitle }. No se requiere un pago en este momento. La suscripción será renovada automáticamente al finalizar el periodo de prueba."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Tiene una factura abierta ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Tiene una factura abierta el ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no invoices.": [
         "No tiene facturas."
       ],
@@ -10487,6 +10538,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Regalía"
+      ],
+      "Open": [
+        "Abrir"
       ],
       "Paid": [
         "Pagada"
@@ -11827,6 +11881,9 @@
       ],
       "Pay invoice": [
         "Pagar factura"
+      ],
+      "Pay it": [
+        "Pagarla"
       ],
       "Privacy policy": [
         "Política de privacidad"
@@ -17830,6 +17887,9 @@
       ],
       "Free Trial": [
         "Prueba gratuita"
+      ],
+      "Upcoming": [
+        "Próximamente"
       ]
     },
     "Subtitle": {
@@ -18335,6 +18395,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ planTitle } breakdown": [
+        "Desglose de ${ planTitle }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } para organizaciones"
@@ -19508,6 +19571,9 @@
       "Subscription": [
         "Suscripción"
       ],
+      "Subscription breakdown": [
+        "Desglose de la suscripción"
+      ],
       "Subscription canceled": [
         "Se canceló la suscripción."
       ],
@@ -19815,11 +19881,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Facturación"
+      ],
       "End date": [
         "Fecha final"
       ],
       "Plan": [
         "Plan"
+      ],
+      "Price": [
+        "Precio"
+      ],
+      "Start date": [
+        "Fecha inicial"
       ],
       "Status": [
         "Estado"
@@ -20040,8 +20115,14 @@
       "Disables end-to-end email encryption for this group": [
         "Desactiva el cifrado de correo electrónico de extremo a extremo para este grupo"
       ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Dirección externa: no se pueden otorgar roles y permisos asignados a este grupo."
+      ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Dirección externa - desactiva el cifrado de correo electrónico de extremo a extremo para este grupo y no se compartirá ningún recurso cifrado con este usuario."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Dirección externa: no tiene de cifrado de extremo a extremo ni uso compartido de recursos y no se pueden asignar roles ni permisos."
       ],
       "Group membership paused": [
         "Se suspendió la suscripción al grupo."
@@ -20161,6 +20242,36 @@
       ],
       "Test credit": [
         "Crédito de prueba"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obtener ${ discount }% de descuento en ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
+      "2 user accounts": [
+        "2 cuentas de usuario"
+      ],
+      "All premium features from your current plan": [
+        "Todas las funciones premium de su plan actual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
       ]
     },
     "Unlimited offer": {
@@ -20416,6 +20527,9 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No puede cambiar sus propios roles. Pida a otro administrador que los cambie."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrá asignar roles una vez que el usuario haya aceptado la invitación."

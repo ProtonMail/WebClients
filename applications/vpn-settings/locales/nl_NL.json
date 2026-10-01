@@ -19363,8 +19363,14 @@
       "Disables end-to-end email encryption for this group": [
         "Schakelt end-to-end e-mailversleuteling voor deze groep uit"
       ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Extern adres - de rollen en machtigingen die aan deze groep zijn toegewezen, kunnen niet worden toegekend."
+      ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Extern adres — er is geen end-to-end-versleuteling of het delen van bronnen, en er kunnen geen rollen en machtigingen worden toegewezen."
       ],
       "Group membership paused": [
         "Groepslidmaatschap gepauzeerd"
@@ -19476,6 +19482,36 @@
       ],
       "Test credit": [
         "Testtegoed"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Ontvang ${ discount }% korting op ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Neem ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/maand"
+      ],
+      "2 TB of storage to share": [
+        "2 TB opslagruimte om te delen"
+      ],
+      "2 user accounts": [
+        "2 gebruikersaccounts"
+      ],
+      "All premium features from your current plan": [
+        "Alle premium functies van uw huidige abonnement"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "voor 12 maanden"
       ]
     },
     "Unlimited offer": {
@@ -19731,6 +19767,9 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "U kunt uw eigen rollen niet veranderen. Vraag een andere beheerder om deze te wijzigen."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
