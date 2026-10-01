@@ -8196,6 +8196,12 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Google Drive s-ar putea să fie gol sau să conțină fișiere nesuportate."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Aveți o factură neachitată. ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Aveți o factură neachitată cu scadența la ${ dueDate }. ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -9277,6 +9283,9 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "Pay it": [
+        "Plătiți-o"
       ]
     },
     "List title": {
