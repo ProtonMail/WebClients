@@ -8,7 +8,7 @@ import {
 
 describe('artifactSaveFormats', () => {
     it('returns document save formats', () => {
-        expect(getArtifactSaveFormats('document')).toEqual(['md', 'txt', 'pdf']);
+        expect(getArtifactSaveFormats('document')).toEqual(['docx', 'pdf', 'md', 'txt']);
         expect(artifactSupportsSaveToDrive('document')).toBe(true);
     });
 
@@ -24,6 +24,7 @@ describe('artifactSaveFormats', () => {
     });
 
     it('provides human-readable labels', () => {
+        expect(getArtifactSaveFormatLabel('docx')).toBe('Word (.docx)');
         expect(getArtifactSaveFormatLabel('md')).toContain('Source');
         expect(getArtifactSaveFormatLabel('md')).toContain('Markdown');
         expect(getArtifactSaveFormatLabel('txt')).toContain('Plain text');
@@ -36,6 +37,7 @@ describe('artifactSaveFormats', () => {
         expect(getArtifactSourceDownloadLabel('presentation')).toContain('HTML');
         expect(getArtifactDownloadLabel('txt')).toContain('plain text');
         expect(getArtifactDownloadLabel('pdf')).toContain('PDF');
+        expect(getArtifactDownloadLabel('docx')).toBe('Download Word (.docx)');
     });
 
     it('labels document PDF as a dialog-backed save and presentation PDF as a download', () => {

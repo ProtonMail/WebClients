@@ -1,3 +1,6 @@
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { DOCX_MIME_TYPE, markdownToDocxBlob } from '../../../util/docx/markdownToDocx';
 import { yieldToMainThread } from '../../../util/export/exportUiHelpers';
 import { ensurePdfFileName } from '../../../util/pdf/downloadHtmlAsPdf';
 import { htmlDocumentToPdfBytes, htmlSlideDocumentsToPdfBytes } from '../../../util/pdf/htmlDocumentToPdfBytes';
@@ -25,6 +28,7 @@ export interface ArtifactPreparedFile {
 }
 
 const SAVE_FORMAT_MIME_TYPES: Record<ArtifactSaveFormat, string> = {
+    docx: DOCX_MIME_TYPE,
     md: 'text/markdown',
     txt: 'text/plain',
     pdf: 'application/pdf',
@@ -60,6 +64,14 @@ export async function buildArtifactFileForSave(
 
         return {
             data: plainText,
+            fileName: buildArtifactFileName(artifact, format),
+            mimeType,
+        };
+    }
+
+    if (format === 'docx') {
+        return {
+            data: await markdownToDocxBlob(artifact.content, { title: artifact.title, creator: LUMO_SHORT_APP_NAME }),
             fileName: buildArtifactFileName(artifact, format),
             mimeType,
         };
