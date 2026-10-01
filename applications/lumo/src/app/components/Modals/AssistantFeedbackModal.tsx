@@ -9,6 +9,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
+    Checkbox,
     InputFieldTwo,
     ModalTwo,
     ModalTwoContent,
@@ -25,10 +26,18 @@ import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { stripAttachmentMarkdown } from '../../lib/imageAttachment';
-import { useLumoSelector } from '../../redux/hooks';
-import { selectMessageById, selectMessageHasGeneratedImages } from '../../redux/selectors';
+import { MEMORIES_MARKER, PERSONALIZATION_MARKER, PROJECT_INSTRUCTIONS_MARKER } from '../../llm';
+import { buildLinearChain } from '../../messageTree';
+import { useLumoSelector, useLumoStore } from '../../redux/hooks';
+import {
+    selectMessageById,
+    selectMessageHasGeneratedImages,
+    selectMessagesByConversationId,
+} from '../../redux/selectors';
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
+import { getLastRequestForMessage } from '../../services/feedback/lastRequestStore';
 import type { Message } from '../../types';
+import type { ChatCompletionsRequest } from '../../types-api';
 import {
     hasSeenNegativeFeedbackIntro,
     hasSeenPositiveFeedbackIntro,
@@ -51,6 +60,7 @@ interface Props {
 
 const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedbackSubmitted }: Props) => {
     const api = useApi();
+    const store = useLumoStore();
     const { APP_VERSION } = useConfig();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -62,6 +72,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
     const [selectedOption, setSelectedOption] = useState<string | undefined>(undefined);
     const [body, setBody] = useState<string | undefined>(undefined);
     const [introType, setIntroType] = useState<FeedbackIntroType | undefined>(undefined);
+    const [includeHistory, setIncludeHistory] = useState<boolean>(true);
 
     // Apertus is only ever served when the user explicitly selects it (never via `auto`).
     const isApertusModel = message.requestedModel?.startsWith(APERTUS_15_MODEL) ?? false;
@@ -136,13 +147,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             });
             setFeedbackSubmitted(false);
         }
-    }, [
-        api,
-        createNotification,
-        feedbackMetadata,
-        isApertusModel,
-        setFeedbackSubmitted,
-    ]);
+    }, [api, createNotification, feedbackMetadata, isApertusModel, setFeedbackSubmitted]);
 
     const handleThumbUpClick = useCallback(() => {
         if (hasSeenPositiveFeedbackIntro()) {
@@ -226,6 +231,81 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             ModelOutput: stripAttachmentMarkdown(message.content ?? ''),
         };
 
+        if (includeHistory) {
+            const state = store.getState();
+            const messageMap = selectMessagesByConversationId(message.conversationId)(state);
+            const messageChain = buildLinearChain(messageMap, message.id, []).filter((m) => !m.placeholder);
+            const lastRequest = getLastRequestForMessage(message.conversationId, message.id);
+
+            let hasMemories: null | boolean = null;
+            let hasPersonalization: null | boolean = null;
+            let hasProjectInstructions: null | boolean = null;
+            let santinizedRequest: ChatCompletionsRequest | undefined = undefined;
+
+            if (lastRequest) {
+                hasMemories = false;
+                hasPersonalization = false;
+                hasProjectInstructions = false;
+                santinizedRequest = {
+                    ...lastRequest,
+                    messages: lastRequest.messages.map((message) => {
+                        if (message.role !== 'system') return message;
+                        if (typeof message.content === 'string') {
+                            const memoriesIndex = message.content.indexOf(MEMORIES_MARKER);
+                            const personalizationIndex = message.content.indexOf(PERSONALIZATION_MARKER);
+                            const projectInstructionsIndex = message.content.indexOf(PROJECT_INSTRUCTIONS_MARKER);
+
+                            // User context (memories, personalization, etc) sits at the end of the system prompt, so
+                            // drop everything from the earliest marker onward. We can't cut out just the `[...]` block
+                            // by matching brackets: it's not impossible content can contain `]` itself.
+                            const stripIndex = Math.min(
+                                memoriesIndex === -1 ? Infinity : memoriesIndex,
+                                personalizationIndex === -1 ? Infinity : personalizationIndex,
+                                projectInstructionsIndex === -1 ? Infinity : projectInstructionsIndex
+                            );
+
+                            if (memoriesIndex !== -1) {
+                                hasMemories = true;
+                            }
+
+                            if (personalizationIndex !== -1) {
+                                hasPersonalization = true;
+                            }
+
+                            if (projectInstructionsIndex !== -1) {
+                                hasProjectInstructions = true;
+                            }
+
+                            return {
+                                ...message,
+                                content: message.content.slice(0, stripIndex).trimEnd(),
+                            };
+                        }
+                        return message;
+                    }),
+                };
+            }
+
+            requestBody.Conversation = JSON.stringify({
+                messages: messageChain.map((message) => ({
+                    completionTokens: message.usage?.completionTokens,
+                    content: stripAttachmentMarkdown(message.content ?? ''),
+                    createdAt: message.createdAt,
+                    hasGeneratedImages: selectMessageHasGeneratedImages(message.id)(state),
+                    modelId: message.modelID,
+                    promptTokens: message.usage?.promptTokens,
+                    requestedModel: message.requestedModel,
+                    role: message.role,
+                    toolsUsed: getFeedbackTools(message),
+                    status: message.status,
+                })),
+                request: santinizedRequest,
+                hasMemories,
+                hasPersonalization,
+                hasProjectInstructions,
+            });
+        }
+
         await submitFeedback(requestBody);
     };
 
@@ -270,7 +350,6 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     size="small"
                     shape="ghost"
                     className="lumo-no-copy"
-                    // style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
                     disabled={disableButtons}
                     loading={loading}
                     onClick={handleThumbUpClick}
@@ -288,7 +367,6 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     size="small"
                     shape="ghost"
                     className="lumo-no-copy"
-                    // style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
                     disabled={disableButtons}
                     onClick={handleThumbDownClick}
                 >
@@ -298,13 +376,26 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             <ModalTwo {...introModal.modalProps}>
                 <ModalTwoHeader title={c('collider_2025: Header').t`Help us improve`} />
                 <ModalTwoContent>
-                    <p className="m-0 color-weak">
-                        {introType === 'positive'
-                            ? c('collider_2025: Info')
-                                  .t`This shares your general sentiment and response metadata with ${BRAND_NAME}. Your prompt and the response are not included.`
-                            : c('collider_2025: Info')
-                                  .t`When you submit feedback, your prompt and this response are sent to ${BRAND_NAME} for analysis and improvement. Feedback about Apertus may also be shared with the Apertus team.`}
-                    </p>
+                    {introType === 'positive' && (
+                        <p className="m-0 color-weak">{c('collider_2025: Info')
+                            .t`This shares your general sentiment and response metadata with ${BRAND_NAME}. Your prompt and the response are not included.`}</p>
+                    )}
+                    {introType === 'negative' && (
+                        <div className="color-weak">
+                            <p className="m-0">
+                                {c('collider_2025: Info')
+                                    .t`When you submit feedback, your prompt and this response are sent to ${BRAND_NAME} for analysis and improvement.`}
+                            </p>
+                            <p className="m-0 mt-2">
+                                {c('collider_2025: Info')
+                                    .t`This conversation's full history is also shared by default to help us improve even further. You can opt out on the next dialog.`}
+                            </p>
+                            <p className="m-0 mt-2">
+                                {c('collider_2025: Info')
+                                    .t`Feedback about Apertus may also be shared with the Apertus team.`}
+                            </p>
+                        </div>
+                    )}
                 </ModalTwoContent>
                 <ModalTwoFooter className="flex justify-end">
                     <Button type="button" color="norm" onClick={handleIntroContinue}>{c('collider_2025: Action')
@@ -318,7 +409,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
             >
                 <ModalTwoHeader title={c('collider_2025: Header').t`Tell us more`} />
                 <ModalTwoContent>
-                    <ul className="unstyled m-0 mb-1">
+                    <ul className="unstyled m-0 mb-2">
                         {feedbackOptions.map(({ label, value }) => {
                             const isSelected = selectedOption === value;
 
@@ -340,14 +431,32 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                     </ul>
                     <InputFieldTwo
                         as={TextAreaTwo}
+                        assistContainerClassName="h-0"
                         rows={3}
                         label={textareaPlaceholder}
                         maxLength={1000}
                         value={body ?? ''}
                         onChange={({ target }) => setBody(target.value)}
                     />
-                    <p className="m-0 text-sm color-weak">{c('collider_2025: Info')
-                        .t`Your prompt and this response will be sent to ${BRAND_NAME} for analysis and improvement. Images and other attachments are not included.`}</p>
+                    <Checkbox
+                        checked={includeHistory}
+                        className="mt-2 mb-4"
+                        onChange={(e) => setIncludeHistory(e.target.checked)}
+                    >
+                        {
+                            // translator: Checkbox label letting the user opt into sending the full conversation, not just the current message, along with their feedback.
+                            c('collider_2025:Label').t`Include full conversation`
+                        }
+                    </Checkbox>
+                    <p className="m-0 text-sm color-weak">
+                        {includeHistory
+                            ? // translator: Disclaimer shown at the bottom of the feedback form when user opts in to send feedback with the full conversation history.
+                              c('collider_2025:Info')
+                                  .t`Full history of this conversation, including images and attachments, will be sent to ${BRAND_NAME} for analysis and improvement.`
+                            : // translator: Disclaimer shown at the bottom of the feedback form.
+                              c('collider_2025:Info')
+                                  .t`Your prompt and this response will be sent to ${BRAND_NAME} for analysis and improvement. Images and other attachments are not included.`}
+                    </p>
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     <Button
