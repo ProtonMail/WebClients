@@ -7,7 +7,12 @@ import {
     SEARCH_EVICTION_TRIGGER_RATIO,
     SEARCH_MAX_INDEXED_DOCUMENTS,
 } from '../../../../shared/config';
-import { classifyError, isAbortError, sendErrorReportForSearch } from '../../../../shared/errors';
+import {
+    classifyError,
+    isAbortError,
+    isConnectionForceClosedError,
+    sendErrorReportForSearch,
+} from '../../../../shared/errors';
 import { yieldToEventLoop } from '../../../../shared/yieldToEventLoop';
 import type { IndexInstance, IndexKind } from '../../../index/IndexRegistry';
 import { engineCall } from '../../../index/engineCall';
@@ -114,7 +119,7 @@ export class EvictIndexEntriesTask extends BaseTask {
                 ctx.enqueueDelayed(new EvictIndexEntriesTask(this.indexKind), SEARCH_EVICTION_MIN_INTERVAL_MS);
             }
         } catch (e) {
-            if (isAbortError(e) || classifyError(e).kind === 'permanent') {
+            if (isAbortError(e) || isConnectionForceClosedError(e) || classifyError(e).kind === 'permanent') {
                 throw e;
             }
             sendErrorReportForSearch(`${this.getUid()}: failed for engine <${this.indexKind}>`, e, {

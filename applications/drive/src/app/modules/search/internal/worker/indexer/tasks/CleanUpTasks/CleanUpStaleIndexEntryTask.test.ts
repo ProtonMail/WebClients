@@ -295,6 +295,28 @@ describe('CleanUpStaleIndexEntryTask', () => {
         await expect(new CleanUpStaleIndexEntryTask().execute(ctx)).rejects.toBeInstanceOf(SearchLibraryError);
     });
 
+    it('surfaces a connection force-closed by the browser so the queue can stop', async () => {
+        const p = { populatorKind: 'myfiles', scopeId: 'vol-1', version: 1, generation: 1 };
+
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        await indexDocuments(instance.indexWriter, [entryWith('main-stale', { ...p, generation: 99 })]);
+
+        const forceClosed = new DOMException(
+            'Connection is closing because of: Force close delete origin',
+            'UnknownError'
+        );
+        jest.spyOn(instance.engine, 'export').mockImplementation(() => {
+            throw forceClosed;
+        });
+
+        const ctx = makeTaskContext({
+            indexRegistry,
+            db,
+            activeIndexPopulators: [{ indexPopulatorKind: 'myfiles', treeEventScopeId: 'vol-1' as TreeEventScopeId }],
+        });
+        await expect(new CleanUpStaleIndexEntryTask().execute(ctx)).rejects.toBe(forceClosed);
+    });
+
     it('removes stale entries in write-session batches of 50, after the export pass', async () => {
         const p = { populatorKind: 'myfiles', scopeId: 'vol-1', version: 1, generation: 2 };
         const instance = await indexRegistry.get(IndexKind.MAIN, db);
