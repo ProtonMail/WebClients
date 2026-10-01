@@ -27,7 +27,7 @@ jest.mock('@proton/pass/lib/extension/model-artifact/model-artifact', () => ({
 }));
 
 describe('DetectorService: runtime model resolution', () => {
-    const artifact = (modelId: string): ModelArtifact => ({ modelId, arch: 'lr', weights: {} }) as ModelArtifact;
+    const artifact = (modelId: string): ModelArtifact => ({ modelId, arch: 'rf', weights: {} }) as ModelArtifact;
     const provider = { email: {} } as unknown as ModelProvider;
 
     let workerResponse: { type: 'success'; artifact: MaybeNull<ModelArtifact> } | { type: 'error'; error: string };
