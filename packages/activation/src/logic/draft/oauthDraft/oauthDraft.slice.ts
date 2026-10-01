@@ -33,6 +33,7 @@ const oauthDraftSlice = createSlice({
             state.mailImport = {
                 ...state.mailImport,
                 products: action.payload.products,
+                hasReadInstructions: action.payload.hasReadInstructions,
             };
         });
 

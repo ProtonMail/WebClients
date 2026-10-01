@@ -74,6 +74,8 @@ export enum Actions {
     // easy switch actions
     EasySwitchGoogleSidebarClicked = 'easySwitchGoogleSidebarClicked',
     EasySwitchGoogleEmptyViewClicked = 'easySwitchGoogleEmptyViewClicked',
+    EasySwitchGoogleSpotlightClicked = 'easySwitchGoogleSpotlightClicked',
+    EasySwitchGoogleSpotlightDismissed = 'easySwitchGoogleSpotlightDismissed',
     EasySwitchGoogleImportStarted = 'easySwitchGoogleImportStarted',
     EasySwitchGoogleImportCompleted = 'easySwitchGoogleImportCompleted',
     EasySwitchGoogleImportFailed = 'easySwitchGoogleImportFailed',
