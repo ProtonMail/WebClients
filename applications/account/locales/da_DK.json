@@ -28479,8 +28479,14 @@
       "Disables end-to-end email encryption for this group": [
         "Deaktiverer end-to-end e-mailkryptering for denne gruppe"
       ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Ekstern adresse – der kan ikke gives rollerne og tilladelserne, der er tildelt denne gruppe."
+      ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Ekstern adresse - deaktiverer end-to-end e-mailkryptering for denne gruppe, og ingen krypterede ressourcer vil blive delt med denne bruger."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Ekstern adresse – ingen end-to-end kryptering eller resursedeling, og der kan ikke tildeles roller og tilladelser."
       ],
       "Group membership paused": [
         "Gruppemedlemskab sat på pause"
@@ -28633,6 +28639,36 @@
       ],
       "Test credit": [
         "Testkredit"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Få ${ discount }% rabat på ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Få ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 TB of storage to share": [
+        "2 TB lagerplads til deling"
+      ],
+      "2 user accounts": [
+        "2 brugerkonti"
+      ],
+      "All premium features from your current plan": [
+        "Alle premium-funktioner fra dit nuværende abonnement"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
       ]
     },
     "Unlimited offer": {
@@ -28949,6 +28985,9 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan ikke ændre dine egne roller. Bed en anden administrator om at ændre dem."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brugeren har accepteret invitationen."

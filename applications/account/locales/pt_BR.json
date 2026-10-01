@@ -268,6 +268,12 @@
       "Recovery score": [
         "Pontuação de recuperação"
       ],
+      "Redeem discount code": [
+        "Resgatar código de desconto"
+      ],
+      "Redirect incoming emails": [
+        "Redirecionar e-mails recebidos"
+      ],
       "Referral credits": [
         "Créditos por indicações"
       ],
@@ -318,6 +324,9 @@
       ],
       "Upgrade plan": [
         "Fazer upgrade de plano"
+      ],
+      "Vacation responder": [
+        "Resposta de férias"
       ],
       "Verify domain": [
         "Verificar domínio"
@@ -3019,6 +3028,10 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Renovação automática por ${ price }, durante ${ cycle } mês",
+        "Renovação automática por ${ price }, durante ${ cycle } meses"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Renova automaticamente em ${ subscriptionManagerName }"
       ]
@@ -3058,6 +3071,11 @@
       ],
       "Yearly": [
         "Anualmente"
+      ]
+    },
+    "Billing type": {
+      "Prepaid": [
+        "Pré-pago"
       ]
     },
     "Blog": {
@@ -5059,6 +5077,11 @@
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(via ${ entryCountryName })"
+      ]
+    },
+    "Coupon": {
+      "Coupon applied": [
+        "Cupom aplicado"
       ]
     },
     "Create user accounts empty state": {
@@ -10953,6 +10976,9 @@
       "Connection data will be available in around 1 hour.": [
         "Os dados de conexão estarão disponíveis em cerca de uma hora."
       ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Conecta você ao seu país de destino por meio de servidores fisicamente localizados em outros lugares."
+      ],
       "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
         "Entre em contato com nossa equipe de suporte ao cliente para desativar a autenticação de dois fatores da sua conta ou recupere sua conta de outra forma."
       ],
@@ -14271,6 +14297,9 @@
       "Gifted": [
         "Oferecido"
       ],
+      "Open": [
+        "Abrir"
+      ],
       "Paid": [
         "Pago"
       ],
@@ -15933,6 +15962,9 @@
       ],
       "Payment method": [
         "Forma de pagamento"
+      ],
+      "Peak allocated licenses": [
+        "Pico de licenças alocadas"
       ],
       "Pending": [
         "Pendente"
@@ -19778,11 +19810,17 @@
       "See users": [
         "Ver usuários"
       ],
+      "Send unprivatization requests": [
+        "Enviar solicitação de desprivatização"
+      ],
       "The organization key is reset": [
         "A chave de organização está redefinida"
       ],
       "This process is automated:": [
         "O processo é automatizado:"
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "Para restaurar seus privilégios, use um método de recuperação de dados."
       ],
       "Try another way": [
         "Tentar de outra forma"
@@ -27606,11 +27644,17 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Faturação"
+      ],
       "End date": [
         "Data de término"
       ],
       "Plan": [
         "Plano"
+      ],
+      "Price": [
+        "Preço"
       ],
       "Status": [
         "Status"

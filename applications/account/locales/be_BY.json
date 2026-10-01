@@ -244,6 +244,9 @@
       "Out of office": [
         "Па-за межамі офіса"
       ],
+      "Outlook, Apple Mail, and Thunderbird": [
+        "Outlook, Apple Mail і Thunderbird"
+      ],
       "Password reminder": [
         "Напамін пароля"
       ],
@@ -1537,6 +1540,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ company.name } manually": [
+        "Адкрыць ${ company.name } уручную"
       ],
       "Open ${ PASS_APP_NAME } in your browser": [
         "Адкрыць ${ PASS_APP_NAME } у вашым браўзеры"
@@ -3083,6 +3089,12 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Падаўжаецца аўтаматычна ў ${ subscriptionManagerName }"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Потым ${ price } за ${ cycle } месяц",
+        "Потым ${ price } за ${ cycle } месяцы",
+        "Потым ${ price } за ${ cycle } месяцаў",
+        "Потым ${ price } за ${ cycle } месяцаў"
       ]
     },
     "Billing cycle option": {
@@ -9131,6 +9143,9 @@
       "This will delete all security keys linked to your account.": [
         "Гэта выдаліць усе ключы, якія звязаны з вашым уліковым запісам."
       ],
+      "Touch your security key to continue.": [
+        "Дакраніцеся да свайго ключа бяспекі, каб працягнуць."
+      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Спраўдзіце сваю ідэнтычнасць пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
       ],
@@ -10205,6 +10220,9 @@
       "Has errors": [
         "З памылкамі"
       ],
+      "Import completed successfully": [
+        "Імпартаванне паспяхова завершана"
+      ],
       "Imported": [
         "Імпартавана"
       ],
@@ -10548,6 +10566,9 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: просіць платформы атрымальніка адхіляць неаўтарызаваныя лісты."
+      ],
+      "${ relevantCount } of ${ totalCount }": [
+        "${ relevantCount } з ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "яшчэ ${ remainingAddresses.length }",
@@ -12126,6 +12147,9 @@
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
         "Імпартуйце аднаразовыя перадачы электроннай пошты, календароў або кантактаў у ваш уліковы запіс ${ BRAND_NAME }."
+      ],
+      "Import your files and folders": [
+        "Імпарт вашых файлаў і папак"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "ВАЖНА: калі ваша кансоль DNS не дазваляе значэнням CNAME ставіць кропку апошнім сімвалам, вы можаце выдаліць апошні сімвал кропкі ў значэннях CNAME."
@@ -20358,6 +20382,9 @@
       "Organization key reset": [
         "Ключ арганізацыі скінуты"
       ],
+      "Ready to reset your organization key?": [
+        "Гатовы скінуць ключ у сваёй арганізацыі?"
+      ],
       "Reset key": [
         "Скінуць ключ"
       ],
@@ -24528,6 +24555,9 @@
       "Contact your administrator if the problem persists.": [
         "Звяжыце са сваім адміністратарам, калі праблема застанецца."
       ],
+      "Continue to join as **${ username }**": [
+        "Працягнуць далучэнне як **${ username }**"
+      ],
       "Current device": [
         "Бягучая прылада"
       ],
@@ -27051,6 +27081,9 @@
       "Downloads": [
         "Спампоўкі"
       ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch з Google Drive"
+      ],
       "Edit billing address": [
         "Рэдагаваць адрас аплаты"
       ],
@@ -28031,6 +28064,9 @@
       ],
       "Snooze:": [
         "Адкладанне:"
+      ],
+      "Some accounts are not claimed": [
+        "Некаторыя ўліковыя запісы не пацверджаны"
       ],
       "Some of your encrypted data is locked": [
         "Некаторыя вашы зашыфраваныя даныя заблакіраваны"
@@ -29016,6 +29052,30 @@
       ],
       "Test credit": [
         "Пратэсціраваць крэдыт"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Атрымаць ${ discount }% скідку на ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 TB of storage to share": [
+        "2 ТБ сховішча для абагульвання"
+      ],
+      "2 user accounts": [
+        "2 уліковыя запісы карыстальніка"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
       ]
     },
     "Unlimited offer": {
