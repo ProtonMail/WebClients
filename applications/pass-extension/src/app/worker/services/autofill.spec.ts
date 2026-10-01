@@ -34,7 +34,7 @@ describe('AutofillService', () => {
     const subFrameId = 7;
     const username = 'victim@proton.test';
     const password = uniqueId();
-    const artifact = (modelId: string): ModelArtifact => ({ modelId, arch: 'lr', weights: {} }) as ModelArtifact;
+    const artifact = (modelId: string): ModelArtifact => ({ modelId, arch: 'rf', weights: {} }) as ModelArtifact;
 
     let state: State;
     let authorized: boolean;
