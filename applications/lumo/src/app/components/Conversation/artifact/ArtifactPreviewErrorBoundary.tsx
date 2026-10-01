@@ -19,6 +19,8 @@ interface ArtifactPreviewErrorBoundaryProps {
     children: ReactNode;
     content: string;
     resetKey: string;
+    /** Called once the boundary catches, e.g. so the caller can switch to a working alternative. */
+    onError?: () => void;
 }
 
 interface ArtifactPreviewErrorBoundaryState {
@@ -52,6 +54,7 @@ export class ArtifactPreviewErrorBoundary extends Component<
 
     componentDidCatch(error: Error): void {
         console.warn('[ArtifactPreview] Renderer error:', error.message);
+        this.props.onError?.();
     }
 
     render(): ReactNode {
