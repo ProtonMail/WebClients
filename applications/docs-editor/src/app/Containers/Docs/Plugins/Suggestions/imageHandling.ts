@@ -1,6 +1,6 @@
 import { $findMatchingParent, $wrapNodeInElement } from '@lexical/utils'
 import { GenerateUUID } from '@proton/docs-shared'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { $createRangeSelection, $getNodeByKey, $setSelection } from 'lexical'
 import { $createImageNode } from '../Image/ImageNode'
 import type { SetImageSizePayload } from '../Image/ImagePlugin'
@@ -11,25 +11,25 @@ import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 export function $handleImageSizeChangeAsSuggestion(
   payload: SetImageSizePayload,
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
 ): boolean {
   const { nodeKey, width, height } = payload
-  logger.info('Handling image size change', payload)
+  logger.info('suggestion-mode: Handling image size change', payload)
   const node = $getNodeByKey(nodeKey)
   if (!$isImageNode(node)) {
-    logger.info('Node is not image node')
+    logger.info('suggestion-mode: Node is not image node')
     return true
   }
   const initialWidth = node.getWidth()
   const initialHeight = node.getHeight()
-  logger.info('Setting new width and height')
+  logger.info('suggestion-mode: Setting new width and height')
   node.setWidthAndHeight(width, height)
   const existingSuggestionParent = $findMatchingParent(node, $isSuggestionNode)
   const suggestionType = existingSuggestionParent?.getSuggestionTypeOrThrow()
   if (existingSuggestionParent || suggestionType === 'insert' || suggestionType === 'image-change') {
     return true
   }
-  logger.info('Wrapping node with new suggestion', initialWidth, initialHeight)
+  logger.info('suggestion-mode: Wrapping node with new suggestion', initialWidth, initialHeight)
   const suggestionID = GenerateUUID()
   $wrapNodeInElement(node, () =>
     $createSuggestionNode(suggestionID, 'image-change', {
@@ -44,26 +44,26 @@ export function $handleImageSizeChangeAsSuggestion(
 export function $handleImageDragAndDropAsSuggestion(
   event: DragEvent,
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
 ) {
   const draggedImageNode = $getImageNodeInSelection()
   if (!draggedImageNode) {
-    logger.info('No dragged image node')
+    logger.info('suggestion-mode: No dragged image node')
     return false
   }
   const data = getDragImageData(event)
   if (!data) {
-    logger.info('Could not get image data from event')
+    logger.info('suggestion-mode: Could not get image data from event')
     return true
   }
   event.preventDefault()
   if (!$canDropImage(event)) {
-    logger.info('Cannot drop image')
+    logger.info('suggestion-mode: Cannot drop image')
     return true
   }
   const suggestionID = GenerateUUID()
   const range = getDragSelection(event)
-  logger.info('Wrapping existing node with "delete" type')
+  logger.info('suggestion-mode: Wrapping existing node with "delete" type')
   $wrapNodeInElement(draggedImageNode, () => $createSuggestionNode(suggestionID, 'delete'))
   const rangeSelection = $createRangeSelection()
   if (range !== null && range !== undefined) {
@@ -77,7 +77,7 @@ export function $handleImageDragAndDropAsSuggestion(
     width: data.width,
     src: data.src,
   })
-  logger.info('Created and inserted "insert" type suggestion')
+  logger.info('suggestion-mode: Created and inserted "insert" type suggestion')
   const insertSuggestion = $createSuggestionNode(suggestionID, 'insert').append(imageNode)
   rangeSelection.insertNodes([insertSuggestion])
   onSuggestionCreation(suggestionID)

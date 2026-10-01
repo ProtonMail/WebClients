@@ -9,7 +9,6 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../../../Utils/react-test-utils'
-import type { Logger } from '@proton/shared/lib/logs'
 import { YjsReadonlyPlugin } from '../YjsReadonly/YjsReadonlyPlugin'
 import type { Provider } from '@lexical/yjs'
 import { DocProvider, DocState, DocWillInitializeWithEmptyNodeEvent } from '@proton/docs-shared'
@@ -19,8 +18,14 @@ import { CollaborationContext } from '@lexical/react/LexicalCollaborationContext
 
 const logger = {
   info: jest.fn(),
+  warn: jest.fn(),
+  error: jest.fn(),
   debug: jest.fn(),
-} as unknown as Logger
+  getLogs: jest.fn(() => ''),
+  downloadLogs: jest.fn(),
+  clearLogs: jest.fn(),
+  setEnabled: jest.fn(),
+}
 
 export class EditorClient {
   editor: LexicalEditor

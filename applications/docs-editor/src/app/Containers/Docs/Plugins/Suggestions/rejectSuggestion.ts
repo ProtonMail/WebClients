@@ -17,10 +17,10 @@ import type {
   BlockTypeChangeSuggestionProperties,
   IndentChangeSuggestionProperties,
 } from './Types'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 
-export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolean {
+export function $rejectSuggestion(suggestionID: string, logger?: DocsLogger): boolean {
   const nodes = $nodesOfType(ProtonNode)
   for (const node of nodes) {
     if (!$isSuggestionNode(node)) {

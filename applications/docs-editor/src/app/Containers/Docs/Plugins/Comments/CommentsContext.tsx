@@ -2,7 +2,7 @@ import type { CommentInterface, CommentThreadInterface, SafeDocsUserState } from
 import { createContext, useContext } from 'react'
 import type { LexicalNode, NodeKey, RangeSelection } from 'lexical'
 import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
-import type { LoggerInterface } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 
 type CommentsContextValue = {
   userName: string
@@ -11,7 +11,7 @@ type CommentsContextValue = {
   canComment: boolean
   suggestionsEnabled: boolean
   languageCode: Intl.LocalesArgument
-  logger: LoggerInterface
+  logger: DocsLogger
   getDisplayNameForEmail: (email: string | undefined) => string
 
   activeIDs: string[]

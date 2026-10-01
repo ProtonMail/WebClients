@@ -2,10 +2,11 @@ import { isDevOrBlack } from '@proton/shared/lib/env'
 import type { PropsWithChildren } from 'react'
 import { useMemo, useCallback } from 'react'
 
-import { DocsDependenciesProvider, type DocsDependencies } from '../../Docs/DocsDependenciesProvider'
+import { DocsDependenciesProvider, type DocsDependencies, type DocsLogger } from '../../Docs/public'
 import type { EditorRequiresClientMethods, SuggestionSummaryType } from '@proton/docs-shared'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
+import { useApplication } from '../../ApplicationProvider'
 
 /**
  * Collects the Docs dependencies supplied by the Docs shell and provides them
@@ -17,6 +18,8 @@ export function DocsAdapter({
 }: PropsWithChildren<{
   clientInvoker: EditorRequiresClientMethods
 }>) {
+  const { application } = useApplication()
+  const logger: DocsLogger = application.logger
   const openLink = useCallback(
     (url: string) => {
       void clientInvoker.openLink(url).catch(reportErrorToSentry)
@@ -54,6 +57,7 @@ export function DocsAdapter({
 
   const dependencies = useMemo<DocsDependencies>(
     () => ({
+      logger,
       isDevOrBlack,
       openLink,
       showGenericAlertModal,
@@ -66,6 +70,7 @@ export function DocsAdapter({
       reportTelemetry,
     }),
     [
+      logger,
       openLink,
       showGenericAlertModal,
       createSuggestionThread,

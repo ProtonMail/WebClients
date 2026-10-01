@@ -49,7 +49,6 @@ import { FormattingPlugin } from './Plugins/FormattingPlugin'
 import { EditorUserMode } from '../../Lib/EditorUserMode'
 import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import { BlockTypePlugin } from './Plugins/BlockTypePlugin'
-import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { YjsReadonlyPlugin } from './Plugins/YjsReadonly/YjsReadonlyPlugin'
 import { useSyncedState } from '../../Hooks/useSyncedState'
 import { FixBrokenListItemPlugin } from './Plugins/FixBrokenListItemPlugin'
@@ -87,7 +86,6 @@ export type EditorProps = {
   isSuggestionsFeatureEnabled: boolean
   showTreeView: boolean
   lexicalError?: Error
-  logger: LoggerInterface
   tableOfContentsVisible: boolean
 }
 
@@ -111,7 +109,6 @@ export function Editor({
   showTreeView,
   isSuggestionsFeatureEnabled,
   lexicalError,
-  logger,
   tableOfContentsVisible,
 }: EditorProps) {
   const { application } = useApplication()
@@ -123,6 +120,7 @@ export function Editor({
   const { userName } = useSyncedState()
 
   const {
+    logger,
     openLink,
     showGenericAlertModal,
     createSuggestionThread,
@@ -184,14 +182,14 @@ export function Editor({
     return application.syncedState.subscribeToEvent('ScrollToUserCursorData', (data) => {
       const editor = editorRef.current
       if (!editor) {
-        application.logger.error('Editor not found when trying to scroll to user cursor')
+        logger.error('Editor not found when trying to scroll to user cursor')
         return
       }
       editor.dispatchCommand(SCROLL_TO_USER_CURSOR_COMMAND, {
         state: data.state,
       })
     })
-  }, [application.logger, application.syncedState])
+  }, [logger, application.syncedState])
 
   const { createNotification } = useNotifications()
   const createWarningNotification = useCallback(

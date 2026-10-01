@@ -6,13 +6,13 @@ import type { Provider } from '@lexical/yjs'
 import { useMemo } from 'react'
 
 import { useYjsReadonly } from './useYjsReadonly'
-import type { LoggerInterface } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 
 type Props = {
   id: string
   providerFactory: (id: string, yjsDocMap: Map<string, Doc>) => Provider
   lexicalError?: Error
-  logger: LoggerInterface
+  logger: DocsLogger
   onEditorReadyToReceiveUpdates: () => void
   safeMode: boolean
 }

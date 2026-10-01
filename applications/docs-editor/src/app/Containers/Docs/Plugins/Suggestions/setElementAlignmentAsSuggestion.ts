@@ -5,20 +5,20 @@ import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { GenerateUUID } from '@proton/docs-shared'
 import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { $isListNode } from '@lexical/list'
 import type { AlignChangeSuggestionProperties } from './Types'
 
 export function $setElementAlignmentAsSuggestion(
   formatType: ElementFormatType,
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
 ): boolean {
-  logger.info('Setting element alignment', formatType)
+  logger.info('suggestion-mode: Setting element alignment', formatType)
 
   const selection = $getSelection()
   if (!$isRangeSelection(selection)) {
-    logger.info('Selection is not range selection')
+    logger.info('suggestion-mode: Selection is not range selection')
     return true
   }
 
@@ -31,7 +31,7 @@ export function $setElementAlignmentAsSuggestion(
   for (const node of nodes) {
     const key = node.getKey()
     if (alreadyHandled.has(key)) {
-      logger.info('Already handled node', key)
+      logger.info('suggestion-mode: Already handled node', key)
       continue
     }
 
@@ -45,13 +45,13 @@ export function $setElementAlignmentAsSuggestion(
       (parentNode): parentNode is ElementNode => $isElementNode(parentNode) && !parentNode.isInline(),
     )
     if (!element) {
-      logger.info('Could not find non-inline element parent')
+      logger.info('suggestion-mode: Could not find non-inline element parent')
       continue
     }
 
     const elementKey = element.getKey()
     if (alreadyHandled.has(elementKey)) {
-      logger.info('Already handled node', key)
+      logger.info('suggestion-mode: Already handled node', key)
       continue
     }
 
@@ -68,13 +68,16 @@ export function $setElementAlignmentAsSuggestion(
       if (originalFormatType === undefined) {
         throw new Error("Existing align-change suggestion doesn't have initialFormat")
       }
-      logger.info('Comparing existing suggestion format', { format: formatType, originalFormat: originalFormatType })
+      logger.info('suggestion-mode: Comparing existing suggestion format', {
+        format: formatType,
+        originalFormat: originalFormatType,
+      })
       if (originalFormatType === formatType) {
-        logger.info('Removing existing suggestion as format was reset')
+        logger.info('suggestion-mode: Removing existing suggestion as format was reset')
         $removeSuggestionNodeAndResolveIfNeeded(existingSuggestion)
       }
     } else {
-      logger.info('Creating new suggestion node', suggestionID)
+      logger.info('suggestion-mode: Creating new suggestion node', suggestionID)
       $insertFirst(
         element,
         $createSuggestionNode(suggestionID, 'align-change', {

@@ -3,19 +3,19 @@ import type { ElementNode } from 'lexical'
 import { $getSelection, $isRangeSelection, $isElementNode } from 'lexical'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { GenerateUUID } from '@proton/docs-shared'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import type { IndentChangeSuggestionProperties } from './Types'
 
 export function $handleIndentOutdentAsSuggestion(
   type: 'indent' | 'outdent',
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
 ): boolean {
-  logger.info(`Handling ${type}`)
+  logger.info(`suggestion-mode: Handling ${type}`)
 
   const selection = $getSelection()
   if (!$isRangeSelection(selection)) {
-    logger.info('Current selection is not range selection')
+    logger.info('suggestion-mode: Current selection is not range selection')
     return false
   }
 
@@ -28,7 +28,7 @@ export function $handleIndentOutdentAsSuggestion(
     const key = node.getKey()
 
     if (alreadyHandled.has(key)) {
-      logger.info('Already handled node', key)
+      logger.info('suggestion-mode: Already handled node', key)
       continue
     }
 
@@ -37,26 +37,26 @@ export function $handleIndentOutdentAsSuggestion(
       (parentNode): parentNode is ElementNode => $isElementNode(parentNode) && !parentNode.isInline(),
     )
     if (parentBlock === null) {
-      logger.info('Could not find non-inline parent element')
+      logger.info('suggestion-mode: Could not find non-inline parent element')
       continue
     }
 
     const parentKey = parentBlock.getKey()
 
     if (!parentBlock.canIndent()) {
-      logger.info('Cannot indent parent')
+      logger.info('suggestion-mode: Cannot indent parent')
       continue
     }
 
     if (alreadyHandled.has(parentKey)) {
-      logger.info('Already handled parent')
+      logger.info('suggestion-mode: Already handled parent')
       continue
     }
 
     alreadyHandled.add(parentKey)
 
     const currentIndent = parentBlock.getIndent()
-    logger.info('Current indent level', currentIndent)
+    logger.info('suggestion-mode: Current indent level', currentIndent)
 
     let newIndent = currentIndent
     if (type === 'indent') {
@@ -73,7 +73,7 @@ export function $handleIndentOutdentAsSuggestion(
     )
 
     if (!existingIndentChangeSuggestion && currentIndent !== newIndent) {
-      logger.info('Adding indent-change suggestion')
+      logger.info('suggestion-mode: Adding indent-change suggestion')
       const suggestionNode = $createSuggestionNode(suggestionID, 'indent-change', {
         indent: currentIndent,
       } satisfies IndentChangeSuggestionProperties)
@@ -82,7 +82,7 @@ export function $handleIndentOutdentAsSuggestion(
   }
 
   if (alreadyHandled.size > 0) {
-    logger.info('Created at least one suggestion', suggestionID)
+    logger.info('suggestion-mode: Created at least one suggestion', suggestionID)
     onSuggestionCreation(suggestionID)
   }
 
