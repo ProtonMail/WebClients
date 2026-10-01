@@ -90,11 +90,16 @@ pub fn run() {
         .plugin(tauri_plugin_window_state::Builder::new().build())
         .plugin(tauri_plugin_process::init())
         .plugin(tauri_plugin_updater::Builder::new().build())
-        .plugin(tauri_plugin_single_instance::init(|app, _args, _cwd| {
-            let _ = app
-                .get_webview_window("main")
-                .and_then(|window| window.set_focus().ok());
-        }))
+        .plugin(
+            tauri_plugin_single_instance::Builder::new()
+                .dbus_id("me.proton.Authenticator")
+                .callback(|app, _args, _cwd| {
+                    let _ = app
+                        .get_webview_window("main")
+                        .and_then(|window| window.set_focus().ok());
+                })
+                .build(),
+        )
         .plugin(tauri_plugin_store::Builder::new().build())
         .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_dialog::init())
