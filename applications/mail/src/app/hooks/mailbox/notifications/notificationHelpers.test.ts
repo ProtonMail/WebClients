@@ -61,6 +61,35 @@ describe('prepareNotificationData', () => {
         });
     });
 
+    it('should lowercase the domain of emails in the sender name', () => {
+        const result = prepareNotificationData({
+            message: {
+                ...MOCK_MESSAGE,
+                Sender: { Name: 'Security@PROTON.ME', Address: 'evil@example.com' },
+            } as Message,
+            history: MOCK_HISTORY,
+            mailSettings: MOCK_MAIL_SETTINGS,
+            notifier: [MAILBOX_LABEL_IDS.INBOX],
+            isCategoryViewEnabled: false,
+            disabledCategoriesIDs: [],
+        });
+
+        expect(result.body).toBe('From: Security@proton.me - Test Subject');
+    });
+
+    it('should lowercase the domain of the sender address when there is no sender name', () => {
+        const result = prepareNotificationData({
+            message: { ...MOCK_MESSAGE, Sender: { Name: '', Address: 'alice@gmaiI.COM' } } as Message,
+            history: MOCK_HISTORY,
+            mailSettings: MOCK_MAIL_SETTINGS,
+            notifier: [MAILBOX_LABEL_IDS.INBOX],
+            isCategoryViewEnabled: false,
+            disabledCategoriesIDs: [],
+        });
+
+        expect(result.body).toBe('From: alice@gmaii.com - Test Subject');
+    });
+
     it('should fallback to ALL_MAIL when message label does not match notifier labels', () => {
         const result = prepareNotificationData({
             message: MOCK_MESSAGE,
