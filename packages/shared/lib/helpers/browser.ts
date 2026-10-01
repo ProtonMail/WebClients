@@ -110,8 +110,6 @@ export const isAndroid = () => {
     return name.toLowerCase().includes('android');
 };
 
-
-export const isDuckDuckGo = () => ua.browser.name === 'DuckDuckGo';
 export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name === 'Mobile Safari';
 /**
  * True for any browser running on the WebKit engine, not only Safari: every iOS browser

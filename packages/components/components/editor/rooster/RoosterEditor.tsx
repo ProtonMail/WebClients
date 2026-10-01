@@ -3,16 +3,16 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
+import { getIframeSandboxAttributes } from '@proton/mail/helpers/composer';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import DropzoneContent from '../../dropzone/DropzoneContent';
 import type { DropzoneContentProps } from '../../dropzone/DropzoneContent';
+import DropzoneContent from '../../dropzone/DropzoneContent';
 import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID, EDITOR_DROPZONE } from '../constants';
 import type { ModalLinkProps } from '../hooks/interface';
 import type { EditorActions, SetEditorToolbarConfig } from '../interface';
 import BlockquoteToggle from './BlockquoteToggle';
-import { getComposerIframeSandbox } from './helpers/getComposerIframeSandbox';
 import useBubbleIframeEvents from './hooks/useBubbleIframeEvents';
 import useComposerDrag from './hooks/useComposerDrag';
 import useInitRooster from './hooks/useInitRooster';
@@ -98,7 +98,7 @@ const RoosterEditor = ({
                 <iframe
                     ref={iframeRef}
                     title={title}
-                    sandbox={getComposerIframeSandbox()}
+                    sandbox={getIframeSandboxAttributes(false)}
                     className="w-full h-full flex-1 border-none"
                     data-testid="rooster-iframe"
                 />
