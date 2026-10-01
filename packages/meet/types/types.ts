@@ -28,6 +28,13 @@ export enum UpsellModalTypes {
     RemovedFromMeeting = 'removedFromMeeting',
 }
 
+export enum MeetingEndedReasons {
+    // The host's account started another meeting
+    AnotherMeetingInProgress = 'AnotherMeetingInProgress',
+    // The meeting outlived its plan's time limit
+    TimeLimitExceeded = 'TimeLimitExceeded',
+}
+
 export type ChatMessageReactions = Record<string, string[]>;
 
 export type ChatMessageStatus = 'pending' | 'sent' | 'failed';
