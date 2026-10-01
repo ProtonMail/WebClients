@@ -18,7 +18,7 @@ describe('LumoConversationHeaderActions', () => {
         render(<LumoConversationHeaderActions hasConversation clear={jest.fn()} />);
 
         expect(reportButton()).toBeNull();
-        expect(screen.getByRole('button', { name: 'Clear conversation' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'New chat' })).toBeInTheDocument();
     });
 
     it('renders nothing before there is a conversation', () => {
