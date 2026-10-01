@@ -5,7 +5,7 @@ import { GenerateUUID } from '@proton/docs-shared'
 import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import { $isListItemNode } from '@lexical/list'
 import type { ListInfo } from '../CustomList/$getListInfo'
 import { $getListInfo } from '../CustomList/$getListInfo'
@@ -17,18 +17,18 @@ import { $isEmptyListItemExceptForSuggestions } from './Utils'
 export function $setBlocksTypeAsSuggestion(
   blockType: BlockType,
   onSuggestionCreation: (id: string) => void,
-  logger: Logger,
+  logger: DocsLogger,
 ): boolean {
-  logger.info('Setting block(s) type for selection', blockType)
+  logger.info('suggestion-mode: Setting block(s) type for selection', blockType)
 
   const selection = $getSelection()
   if (selection === null) {
-    logger.info('No selection found to set blocks type')
+    logger.info('suggestion-mode: No selection found to set blocks type')
     return true
   }
 
   if (blockType === 'code') {
-    logger.info('Bailing as code block suggestions are not supported')
+    logger.info('suggestion-mode: Bailing as code block suggestions are not supported')
     return true
   }
 
@@ -40,7 +40,7 @@ export function $setBlocksTypeAsSuggestion(
   const suggestionID = GenerateUUID()
 
   if (anchor !== null && anchor.key === 'root') {
-    logger.info('Anchor is root node')
+    logger.info('suggestion-mode: Anchor is root node')
 
     const element = createElement()
     const root = $getRoot()
@@ -74,13 +74,13 @@ export function $setBlocksTypeAsSuggestion(
 
   for (const node of nodes) {
     if (!$isNonInlineLeafElement(node)) {
-      logger.info(`Skipping node of type ${node.__type} as its not a block-level element`)
+      logger.info(`suggestion-mode: Skipping node of type ${node.__type} as its not a block-level element`)
       continue
     }
 
     const nodeBlockType = $getElementBlockType(node)
     if (!nodeBlockType) {
-      logger.info(`Skipping node because changing its block type is not yet supported`)
+      logger.info(`suggestion-mode: Skipping node because changing its block type is not yet supported`)
       continue
     }
 
