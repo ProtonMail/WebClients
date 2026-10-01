@@ -1,11 +1,7 @@
 import type { ContextBridgeApi, Maybe } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-/** Chromium flushes DOMStorage (where the persisted session blob, settings and
- * other reboot-sensitive data live) to disk asynchronously, so an abrupt
- * termination (OS reboot) can drop the latest write. Wrap the storage write
- * methods once so every `localStorage` mutation schedules a debounced disk
- * flush via the bridge — no per-call-site flushing required. No-op on web. */
+/** Every `localStorage` mutation schedules a disk flush (see `storage.flush.ts`). No-op on web. */
 export const installStorageFlush = (bridge: Maybe<ContextBridgeApi>) => {
     if (!bridge) return;
 
