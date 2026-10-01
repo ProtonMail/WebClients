@@ -2257,6 +2257,12 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Падаўжаецца аўтаматычна ў ${ subscriptionManagerName }"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Потым ${ price } за ${ cycle } месяц",
+        "Потым ${ price } за ${ cycle } месяцы",
+        "Потым ${ price } за ${ cycle } месяцаў",
+        "Потым ${ price } за ${ cycle } месяцаў"
       ]
     },
     "Billing cycle option": {
@@ -6635,6 +6641,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Гэта выдаліць усе ключы, якія звязаны з вашым уліковым запісам."
+      ],
+      "Touch your security key to continue.": [
+        "Дакраніцеся да свайго ключа бяспекі, каб працягнуць."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Спраўдзіце сваю ідэнтычнасць пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
@@ -14398,6 +14407,9 @@
       "Organization key reset": [
         "Ключ арганізацыі скінуты"
       ],
+      "Ready to reset your organization key?": [
+        "Гатовы скінуць ключ у сваёй арганізацыі?"
+      ],
       "Reset key": [
         "Скінуць ключ"
       ],
@@ -17352,6 +17364,9 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Звяжыце са сваім адміністратарам, калі праблема застанецца."
+      ],
+      "Continue to join as **${ username }**": [
+        "Працягнуць далучэнне як **${ username }**"
       ],
       "Current device": [
         "Бягучая прылада"
@@ -20659,6 +20674,30 @@
       ],
       "Test credit": [
         "Пратэсціраваць крэдыт"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Атрымаць ${ discount }% скідку на ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 TB of storage to share": [
+        "2 ТБ сховішча для абагульвання"
+      ],
+      "2 user accounts": [
+        "2 уліковыя запісы карыстальніка"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
       ]
     },
     "Unlimited offer": {

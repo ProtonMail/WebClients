@@ -2321,6 +2321,9 @@
     "Action subscription": {
       "Reactivate": [
         "Reactivare"
+      ],
+      "View breakdown": [
+        "Vizualizare defalcare"
       ]
     },
     "Action: Sheets": {
@@ -3065,8 +3068,39 @@
       ]
     },
     "Billing cycle": {
+      "Free renewal": [
+        "Reînnoire gratuită"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Reînnoire gratuită, pentru ${ nextCycle } lună, la ${ when }",
+        "Reînnoire gratuită, pentru ${ nextCycle } luni, la ${ when }",
+        "Reînnoire gratuită, pentru ${ nextCycle } de luni, la ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Se reînnoiește automat cu ${ introPrice }, pentru ${ nextCycle } lună, la ${ when }",
+        "Se reînnoiește automat cu ${ introPrice }, pentru ${ nextCycle } luni, la ${ when }",
+        "Se reînnoiește automat cu ${ introPrice }, pentru ${ nextCycle } de luni, la ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Se reînnoiește automat cu ${ price }, pentru ${ cycle } lună.",
+        "Se reînnoiește automat cu ${ price }, pentru ${ cycle } luni.",
+        "Se reînnoiește automat cu ${ price }, pentru ${ cycle } de luni."
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Reînnoire automată pe ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Trece la ${ nextCycle } lună la ${ when } (${ paidPrice } deja plătit)",
+        "Trece la ${ nextCycle } luni la ${ when } (${ paidPrice } deja plătit)",
+        "Trece la ${ nextCycle } de luni la ${ when } (${ paidPrice } deja plătit)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Apoi ${ price }, pentru ${ cycle } lună",
+        "Apoi ${ price }, pentru ${ cycle } luni",
+        "Apoi ${ price }, pentru ${ cycle } de luni"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Va fi înlocuit de viitorul abonament la ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -3106,6 +3140,14 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Facturat la reînnoire"
+      ],
+      "Prepaid": [
+        "Preplătit"
       ]
     },
     "Blog": {
@@ -5116,6 +5158,11 @@
     "CountryInfo": {
       "(via ${ entryCountryName })": [
         "(prin ${ entryCountryName })"
+      ]
+    },
+    "Coupon": {
+      "Coupon applied": [
+        "Cupon aplicat"
       ]
     },
     "Create user accounts empty state": {
@@ -13487,6 +13534,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Aceasta va activa PayPal ca metodă de plată pentru abonarea la ${ BRAND_NAME }. Se va deschide o fereastră nouă spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
       ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Acest lucru vă va permite să vă accesați rapid și în siguranță contul ${ BRAND_NAME }, astfel încât să vă puteți schimba parola."
+      ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Acest lucru va șterge definitiv datele și toate adresele de e-mail asociate cu acești utilizatori."
       ],
@@ -14267,6 +14317,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Aveți un abonament ${ planTitle } de evaluare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de evaluare."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Aveți o factură neachitată. ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Aveți o factură neachitată cu scadența la ${ dueDate }. ${ payInvoiceLink }"
+      ],
       "You have no calendars to export.": [
         "Nu aveți calendare de exportat."
       ],
@@ -14686,6 +14742,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Dăruit"
+      ],
+      "Open": [
+        "Deschisă"
       ],
       "Paid": [
         "Plătită"
@@ -17279,6 +17338,9 @@
       ],
       "Pay invoice": [
         "Plată factură"
+      ],
+      "Pay it": [
+        "Plătiți-o"
       ],
       "Privacy policy": [
         "Politica de confidențialitate"
@@ -25485,6 +25547,9 @@
       ],
       "Free Trial": [
         "Evaluare gratuită"
+      ],
+      "Upcoming": [
+        "Viitoare"
       ]
     },
     "Subtitle": {
@@ -26182,6 +26247,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Raport monitorizare ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ planTitle } breakdown": [
+        "Detaliere plan ${ planTitle }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } pentru organizații"
@@ -27942,6 +28010,9 @@
       "Subscription": [
         "Abonament"
       ],
+      "Subscription breakdown": [
+        "Detaliere abonament"
+      ],
       "Subscription canceled": [
         "Abonament anulat"
       ],
@@ -28362,11 +28433,20 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Facturare"
+      ],
       "End date": [
         "Data sfârșit"
       ],
       "Plan": [
         "Plan"
+      ],
+      "Price": [
+        "Preț"
+      ],
+      "Start date": [
+        "Dată începere"
       ],
       "Status": [
         "Stare"
@@ -28729,8 +28809,14 @@
       "Disables end-to-end email encryption for this group": [
         "Dezactivează criptarea bilaterală a mesajelor pentru acest grup."
       ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Adresă externă – nu i se pot acorda rolurile și permisiunile atribuite acestui grup."
+      ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Adresă externă - dezactivează criptarea bilaterală a mesajelor pentru acest grup și nici o resursă criptată nu va fi partajată cu acest utilizator."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Adresă externă — fără criptare bilaterală sau partajare de resurse; nu se pot atribui roluri și permisiuni."
       ],
       "Group membership paused": [
         "Apartenența la grup a fost suspendată"

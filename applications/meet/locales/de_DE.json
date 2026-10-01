@@ -312,6 +312,9 @@
       "Deny ${ participantName }": [
         "${ participantName } ablehnen"
       ],
+      "Desync audio output": [
+        "Asynchrone Audioausgabe"
+      ],
       "Disable ${ participantName }'s video": [
         "${ participantName }s Kamera deaktivieren"
       ],
@@ -384,6 +387,9 @@
       "End meeting for all": [
         "Meeting für alle beenden"
       ],
+      "Fail audio output pin": [
+        "Audioausgabeanschluss fehlschlagen lassen"
+      ],
       "Forgot password?": [
         "Passwort vergessen?"
       ],
@@ -453,6 +459,9 @@
       "Lock meeting": [
         "Meeting sperren"
       ],
+      "Log audio output state": [
+        "Status der Audioausgabe protokollieren"
+      ],
       "Lower hand": [
         "Hand senken"
       ],
@@ -521,6 +530,9 @@
       ],
       "Raise hand": [
         "Hand heben"
+      ],
+      "Re-apply audio output": [
+        "Audioausgabe erneut anwenden"
       ],
       "React with ${ emoji }": [
         "Mit ${ emoji } reagieren"
@@ -646,6 +658,9 @@
       ],
       "Sign out of all accounts": [
         "Von allen Konten abmelden"
+      ],
+      "Simulate output device loss": [
+        "Ausfall eines Ausgabegeräts simulieren"
       ],
       "Simulate reconnection": [
         "Wiederherstellung der Verbindung simulieren"
@@ -4186,6 +4201,9 @@
       ],
       "Assign a new host": [
         "Neuen Organisator zuweisen"
+      ],
+      "Audio Output Testing": [
+        "Prüfung der Audioausgabe"
       ],
       "Available Cameras": [
         "Verfügbare Kameras"

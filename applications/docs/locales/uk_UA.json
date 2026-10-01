@@ -342,9 +342,6 @@
       "Email settings": [
         "Налаштування е-пошти"
       ],
-      "Empty trash": [
-        "Спорожнити смітник"
-      ],
       "enable desktop notifications": [
         "увімкнути сповіщення на робочому столі"
       ],
@@ -558,9 +555,6 @@
       "Next month": [
         "Наступний місяць"
       ],
-      "Next page": [
-        "Наступна сторінка"
-      ],
       "No, thanks": [
         "Ні, дякую"
       ],
@@ -596,9 +590,6 @@
       ],
       "Previous month": [
         "Минулий місяць"
-      ],
-      "Previous page": [
-        "Попередня сторінка"
       ],
       "Print": [
         "Друкувати"
@@ -2907,9 +2898,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" вже існує"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не може під'єднатися до вашого зовнішнього облікового запису"
       ],
@@ -3327,9 +3315,6 @@
       "Photo not found": [
         "Фотографію не знайдено"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Вивантаження фотографій тимчасово вимкнено. Повторіть спробу пізніше"
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Налаштуйте власний домен, щоб мати можливість додавати адреси."
       ],
@@ -3471,12 +3456,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Назва теки надто довга. Будь ласка, скоротіть назву."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Запрошення ще не може бути завершене. Спробуйте пізніше."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Запрошення більше не існує"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Назва мітки неправильна. Оберіть іншу назву."
       ],
@@ -3488,21 +3467,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Не вдалося видалити посилання на ваш елемент"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Нову версію оригінального файлу ще не вивантажено. Спробуйте знову пізніше"
-      ],
-      "The original file has missing active revision": [
-        "Оригінальний файл не має активної редакції"
-      ],
-      "The original file has missing hash key": [
-        "Оригінальний файл не має ключа хешу"
-      ],
-      "The original file has missing session key": [
-        "Оригінальний файл не має ключа сеансу"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Оригінальний файл ще не вивантажено. Спробуйте знову пізніше"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Вивантажений файл не відповідає оригіналу. Будь ласка, спробуйте ще раз."
@@ -3584,9 +3548,6 @@
       ],
       "Update Too Large": [
         "Оновлення занадто велике"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Вивантаження для цієї теки тимчасово вимкнено"
       ],
       "Username must begin with a letter or digit": [
         "Ім'я користувача повинно починатися з літери або цифри"
@@ -4807,9 +4768,6 @@
       "Are you sure you want to discard your import?": [
         "Ви дійсно хочете відхилити імпортування?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Ви впевнені, що хочете спорожнити смітник та остаточно видалити всі елементи?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Ви дійсно хочете остаточно видалити ${ itemName } зі смітника?"
       ],
@@ -5215,9 +5173,6 @@
       "Link copied": [
         "Посилання скопійовано"
       ],
-      "Link copied to clipboard": [
-        "Посилання скопійовано в буфер обміну"
-      ],
       "Link expired": [
         "Посилання протерміноване"
       ],
@@ -5599,9 +5554,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Це назва або псевдонім вашої організації, які бачитимуть ваші користувачі. Ви можете змінити її будь-коли."
       ],
-      "This item already exists in your library": [
-        "Цей елемент вже існує у вашій бібліотеці"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
       ],
@@ -5670,12 +5622,6 @@
       ],
       "Tracking": [
         "Відстеження"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Передавання скасовано для файлу \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Пропущено передавання для файлу \"${ file.name }\""
       ],
       "Trash": [
         "Смітник"
@@ -7848,17 +7794,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" не вдалося відновити зі смітника"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Не вдалося зберегти \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" переміщено до смітника"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" відновлено зі смітника"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" успішно збережено"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" не вдалося перейменувати"
@@ -7947,12 +7887,6 @@
       "Access updated and shared": [
         "Доступ оновлено і поширено"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Усі елементи невдовзі будуть остаточно видалені зі смітника"
-      ],
-      "Cannot load link": [
-        "Не вдалося завантажити посилання"
-      ],
       "Cannot load next page": [
         "Не вдалося завантажити наступну сторінку"
       ],
@@ -7961,18 +7895,6 @@
       ],
       "Contact group updated": [
         "Групу контактів оновлено"
-      ],
-      "Device failed to be removed": [
-        "Не вдалося вилучити пристрій"
-      ],
-      "Device failed to be renamed": [
-        "Не вдалося перейменувати пристрій"
-      ],
-      "Device removed": [
-        "Пристрій вилучено"
-      ],
-      "Device renamed": [
-        "Пристрій перейменовано"
       ],
       "Document moved to trash": [
         "Документ переміщено до Смітника"
@@ -8000,15 +7922,6 @@
       ],
       "Failed to rename document": [
         "Не вдалося перейменувати документ"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Файл чи тека \"${ filename }\" вже вивантажується"
       ],
       "Invitation's email was sent again": [
         "Лист із запрошенням надіслано знову"
@@ -8069,9 +7982,6 @@
       ],
       "The link to your item was deleted": [
         "Посилання на ваш елемент було видалено"
-      ],
-      "Trash failed to be emptied": [
-        "Не вдалося спорожнити смітник"
       ],
       "You stopped sharing this item": [
         "Ви припинили спільний доступ для цього елемента"
@@ -10137,9 +10047,6 @@
       "Email settings": [
         "Налаштування е-пошти"
       ],
-      "Empty trash": [
-        "Спорожнити смітник"
-      ],
       "Enable 2FA": [
         "Увімкнути двоетапну автентифікацію"
       ],
@@ -10418,9 +10325,6 @@
       ],
       "Start import process": [
         "Початок процесу імпортування"
-      ],
-      "Stop sharing": [
-        "Припинити спільний доступ"
       ],
       "Stop sharing?": [
         "Припинити спільний доступ?"

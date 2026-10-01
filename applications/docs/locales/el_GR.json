@@ -342,9 +342,6 @@
       "Email settings": [
         "Ρυθμίσεις Email"
       ],
-      "Empty trash": [
-        "Εκκαθάριση Διαγραμμένων"
-      ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
@@ -564,9 +561,6 @@
       "Next month": [
         "Επόμενος μήνας"
       ],
-      "Next page": [
-        "Επόμενη σελίδα"
-      ],
       "No, thanks": [
         "Όχι, ευχαριστώ"
       ],
@@ -608,9 +602,6 @@
       ],
       "Previous month": [
         "Προηγούμενος μήνας"
-      ],
-      "Previous page": [
-        "Προηγούμενη σελίδα"
       ],
       "Print": [
         "Εκτύπωση"
@@ -2902,9 +2893,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "Το όνομα \"${ sanitizedName }\" υπάρχει ήδη"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "Το ${ BRAND_NAME } δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας"
       ],
@@ -3341,9 +3329,6 @@
       "Photo not found": [
         "Η Φωτογραφία δε βρέθηκε"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Η μεταφόρτωση φωτογραφιών είναι προσωρινά απενεργοποιημένη. Προσπαθήστε ξανά αργότερα"
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
       ],
@@ -3490,12 +3475,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Υπερβολικό μήκος ονόματος φακέλου. Παρακαλούμε δοκιμάστε ένα συντομότερο."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Η πρόσκληση δεν μπορεί να ολοκληρωθεί ακόμα. Παρακαλούμε προσπαθήστε ξανά αργότερα."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Η πρόσκληση δεν υπάρχει πια"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Μη έγκυρο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
@@ -3507,21 +3486,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Αποτυχία διαγραφής του συνδέσμου για το στοιχείο σας"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Η νέα αναθεώρηση του πρωτότυπου αρχείου δεν έχει μεταφορτωθεί ακόμα, παρακαλούμε δοκιμάστε αργότερα"
-      ],
-      "The original file has missing active revision": [
-        "Το πρωτότυπο αρχείο δεν διαθέτει ενεργή αναθεώρηση"
-      ],
-      "The original file has missing hash key": [
-        "Το πρωτότυπο αρχείο δεν έχει κλειδί hash"
-      ],
-      "The original file has missing session key": [
-        "Το πρωτότυπο αρχείο δεν έχει κλειδί συνεδρίας"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Το πρωτότυπο αρχείο δεν έχει ανέβει ακόμα, παρακαλούμε δοκιμάστε ξανά αργότερα"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Το μεταφορτωμένο αρχείο δεν ταιριάζει με το πρωτότυπο. Παρακαλούμε δοκιμάστε ξανά."
@@ -3603,9 +3567,6 @@
       ],
       "Update Too Large": [
         "Η ενημέρωση είναι πολύ μεγάλη"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Η μεταφόρτωση για αυτόν τον φάκελο είναι προσωρινά απενεργοποιημένη"
       ],
       "Username must begin with a letter or digit": [
         "Το όνομα χρήστη πρέπει να ξεκινά με ένα γράμμα ή ένα ψηφίο"
@@ -4766,9 +4727,6 @@
       "Are you sure you want to discard your import?": [
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Θέλετε σίγουρα να διαγράψετε οριστικά όλα τα στοιχεία από τα Διαγραμμένα;"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά το \"${ itemName }\" από τα Διαγραμμένα;"
       ],
@@ -5195,9 +5153,6 @@
       "Link copied": [
         "Ο σύνδεσμος αντιγράφηκε"
       ],
-      "Link copied to clipboard": [
-        "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
-      ],
       "Link expired": [
         "Ο σύνδεσμος έληξε"
       ],
@@ -5585,9 +5540,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Αυτό είναι ένα όνομα ή παρατσούκλι για τον οργανισμό σας, το οποίο θα βλέπουν οι χρήστες σας. Μπορείτε να το αλλάξετε ανά πάσα στιγμή."
       ],
-      "This item already exists in your library": [
-        "Αυτό το στοιχείο υπάρχει ήδη στη βιβλιοθήκη σας"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
       ],
@@ -5659,12 +5611,6 @@
       ],
       "Tracking": [
         "Παρακολούθηση"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Ακυρώθηκε η μεταφορά του αρχείου \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Η μεταφορά του αρχείου \"${ file.name }\" παραλείφθηκε"
       ],
       "Trash": [
         "Διαγραμμένα"
@@ -7801,17 +7747,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "Αποτυχία επαναφοράς του \"${ name }\" από τα Διαγραμμένα"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Το \"${ name }\" απέτυχε να αποθηκευτεί"
-      ],
       "\"${ name }\" moved to trash": [
         "Το \"${ name }\" μετακινήθηκε στα Διαγραμμένα"
       ],
       "\"${ name }\" restored from trash": [
         "Το \"${ name }\" επαναφέρθηκε από τα Διαγραμμένα"
-      ],
-      "\"${ name }\" saved successfully": [
-        "Το \"${ name }\" αποθηκεύτηκε με επιτυχία"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Αποτυχία μετονομασίας σε \"${ newName }\""
@@ -7881,14 +7821,8 @@
       "Access updated and shared": [
         "Η πρόσβαση ενημερώθηκε και κοινοποιήθηκε"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Όλα τα διαγραμμένα στοιχεία σύντομα θα εξαλειφθούν οριστικά"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Επειδή αυτό το έγγραφο βρισκόταν σε έναν κοινόχρηστο φάκελο, μόνο ο κάτοχος του φακέλου μπορεί να το επαναφέρει"
-      ],
-      "Cannot load link": [
-        "Αποτυχία φόρτωσης συνδέσμου"
       ],
       "Cannot load next page": [
         "Η επόμενη σελίδα απέτυχε να φορτωθεί"
@@ -7898,18 +7832,6 @@
       ],
       "Contact group updated": [
         "Η ομάδα επαφών ενημερώθηκε"
-      ],
-      "Device failed to be removed": [
-        "Αποτυχία αφαίρεσης συσκευής"
-      ],
-      "Device failed to be renamed": [
-        "Αποτυχία μετονομασίας συσκευής"
-      ],
-      "Device removed": [
-        "Η συσκευή αφαιρέθηκε"
-      ],
-      "Device renamed": [
-        "Η συσκευή μετονομάστηκε"
       ],
       "Document moved to trash": [
         "Το έγγραφο μετακινήθηκε στα διαγραμμένα"
@@ -7955,13 +7877,6 @@
       ],
       "Failed to trash document": [
         "Αποτυχία διαγραφής εγγράφου"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλο ήδη μεταφορτώνονται",
-        "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλα ήδη μεταφορτώνονται"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Το αρχείο ή ο φάκελος \"${ filename }\" ήδη μεταφορτώνεται"
       ],
       "Invitation's email was sent again": [
         "Το μήνυμα ηλεκτρονικού ταχυδρομείου πρόσκλησης στάλθηκε ξανά"
@@ -8019,9 +7934,6 @@
       ],
       "The link to your item was deleted": [
         "Ο σύνδεσμος προς το στοιχείο σας διαγράφηκε"
-      ],
-      "Trash failed to be emptied": [
-        "Αποτυχία εκκαθάρισης Διαγραμμένων"
       ],
       "You stopped sharing this item": [
         "Διακόψατε την κοινή χρήση αυτού του στοιχείου"
@@ -10092,9 +10004,6 @@
       "Email settings": [
         "Ρυθμίσεις Email"
       ],
-      "Empty trash": [
-        "Εκκαθάριση Διαγραμμένων"
-      ],
       "Enable 2FA": [
         "Ενεργοποίηση 2FA"
       ],
@@ -10378,9 +10287,6 @@
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
       ],
-      "Stop sharing": [
-        "Διακοπή κοινής χρήσης"
-      ],
       "Stop sharing?": [
         "Διακοπή κοινής χρήσης;"
       ],
@@ -10603,6 +10509,36 @@
         "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Κερδίστε ${ discount }% στο ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Αποκτήστε το ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/μήνα"
+      ],
+      "2 TB of storage to share": [
+        "2 TB αποθηκευτικού χώρου για κοινή χρήση"
+      ],
+      "2 user accounts": [
+        "2 λογαριασμοί χρηστών"
+      ],
+      "All premium features from your current plan": [
+        "Όλες οι premium λειτουργίες του τρέχοντος πλάνου σας"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "για 12 μήνες"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/μήνα"
@@ -10628,6 +10564,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Αναβαθμίστε σε ένα υποστηριζόμενο πρόγραμμα για να χρησιμοποιήσετε ρόλους διαχειριστή."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Δεν μπορείς να αλλάξεις τους δικούς σου ρόλους. Ζήτησε από έναν άλλον διαχειριστή να τους αλλάξει."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."

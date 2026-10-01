@@ -288,9 +288,6 @@
       "Create folder": [
         "Ustvari mapo"
       ],
-      "Create new folder": [
-        "Ustvari novo mapo"
-      ],
       "Create new password": [
         "Ustvari novo geslo"
       ],
@@ -3192,9 +3189,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "Pri prijavi kršitve avtorskih pravic ali kraje podatkov je obvezno sporočilo"
       ],
-      "A problem occurred, please try again.": [
-        "Prišlo je do težave, poskusite znova."
-      ],
       "Address could not be added.": [
         "Naslova ni bilo mogoče dodati."
       ],
@@ -3263,12 +3257,6 @@
       ],
       "Contact signature not verified": [
         "Podpis stika ni potrjen"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Iskanje vsebine ni mogoče omogočiti v tem brskalniku. Izklopite način zasebnega brskanja ali uporabite drug brskalnik."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Iskanje po vsebini ni mogoče omogočiti. Znova zaženite aplikacijo ali počistite podatke."
       ],
       "Copying item to a non-folder is not allowed": [
         "Kopiranje predmetov v mapo, ki to ni, ni dovoljeno"
@@ -3368,9 +3356,6 @@
       ],
       "Failed to change permissions settings": [
         "Ni uspelo spremeniti nastavitev dovoljenj"
-      ],
-      "Failed to copy photo to album": [
-        "Ni mogoče kopirati fotografije v album"
       ],
       "Failed to create public share node": [
         "Ni uspelo ustvariti vozlišča javne povezave"
@@ -3581,9 +3566,6 @@
       ],
       "Photo not found": [
         "Fotografije ni bilo mogoče najti"
-      ],
-      "Please activate your search again": [
-        "Prosimo, ponovno aktivirajte iskanje."
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Preverite, če je vaš ABN registriran za čezmejni DDV."
@@ -5294,14 +5276,8 @@
       "Clear data": [
         "Počisti podatke"
       ],
-      "Clear encrypted search data": [
-        "Počisti šifrirane iskalne podatke"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Če izbrišete podatke brskalnika, boste izbrisali iskalni indeks v tej napravi. Med uporabo funkcije iskanja bi bilo treba vse datoteke ponovno indeksirati."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Počisti podatke brskalnika, povezane s šifriranim iskanjem."
       ],
       "Clears browser data related to the search.": [
         "Počisti podatke brskalnika, povezane z iskanjem."
@@ -5405,6 +5381,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logotip"
       ],
+      "Do you remember your password?": [
+        "Se še spomnite svojega gesla?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ne vidite ničesar? Ne pozabite izklopiti prepovedi pojavnih oken."
       ],
@@ -5465,9 +5444,6 @@
       "Enabling auto-deletion…": [
         "Omogočanje samodejnega brisanja …"
       ],
-      "Encrypted search is here": [
-        "Šifrirano iskanje je tukaj"
-      ],
       "End-to-end encrypted": [
         "Popolnoma šifrirano"
       ],
@@ -5491,18 +5467,6 @@
       ],
       "Enter your own password (as organization admin).": [
         "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Predvideni preostali čas: ${ estimatedMinutes } minuta",
-        "Predvideni preostali čas: ${ estimatedMinutes } minuti",
-        "Predvideni preostali čas: ${ estimatedMinutes } minute",
-        "Predvideni preostali čas: ${ estimatedMinutes } minut"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Predvideni preostali čas: manj kot minuta"
-      ],
-      "Estimating time remaining...": [
-        "Ocena preostalega časa ..."
       ],
       "Everything in ${ planOrAppName }": [
         "Vse v ${ planOrAppName }"
@@ -5647,12 +5611,6 @@
       ],
       "Indexing in progress": [
         "Indeksiranje je v teku"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Indeksiranje ${ esProgress } predmetov od ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Indeksiranje rezultatov iskanja …"
       ],
       "Inherited from parent folder": [
         "Podedovano od nadrejene mape"
@@ -5812,9 +5770,6 @@
         "Premakni ${ folderCount } mapi",
         "Premakni ${ folderCount } mape",
         "Premakni ${ folderCount } map"
-      ],
-      "Moving files": [
-        "Premikanje datotek"
       ],
       "My Links": [
         "Moje povezave"
@@ -6038,9 +5993,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Zasebno brskanje (ali »način brez beleženja zgodovine«) je uporabno samo za ohranjanje zasebnosti vaše dejavnosti znotraj vaše naprave. Preprečuje, da bi vaš brskalnik shranjeval zgodovino in piškotke, vendar vas ne naredi nevidne. Vaš internetni ponudnik, skrbnik omrežja in spletne strani, ki jih obiskujete, lahko še vedno vidijo, kaj počnete v spletu."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Omogočeno je zasebno iskanje. To pogovorno okno lahko zaprete in poiščete datoteke in mape."
-      ],
       "Public sharing of documents is not yet supported.": [
         "Javna souporaba dokumentov še ni podprta."
       ],
@@ -6094,9 +6046,6 @@
       ],
       "Scan the QR code with your mobile device": [
         "Skenirajte kodo QR z mobilno napravo."
-      ],
-      "Search cannot be enabled in this browser": [
-        "Iskanja ni mogoče omogočiti v tem brskalniku"
       ],
       "Search data can't be read": [
         "Podatkov za iskanje ni mogoče prebrati"
@@ -6365,9 +6314,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Če želite omogočiti resnično zasebno iskanje, mora ${ DRIVE_APP_NAME } lokalno indeksirati vaše datoteke."
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Da omogočimo resnično zasebno iskanje, je potrebno datoteke indeksirati lokalno. Še vedno lahko uporabljate ${ DRIVE_APP_NAME } kot običajno in obvestili vas bomo, ko bo indeksiranje končano."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Zaradi boja proti neželeni vsebini in zlorabam najprej potrdite, da ste človek."
       ],
@@ -6436,9 +6382,6 @@
       ],
       "Unsupported file type for Photos": [
         "Nepodprta vrsta datoteke za fotografije"
-      ],
-      "Updating drive search...": [
-        "Posodabljanje pogona za iskanje ..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Nadgradite kadar koli, da prenesete preostalo"
@@ -7515,9 +7458,6 @@
       ],
       "Toolbar": [
         "Orodna vrstica"
-      ],
-      "Type": [
-        "Vrsta"
       ],
       "Unlock drive": [
         "Odkleni pogon"
@@ -9158,23 +9098,8 @@
       "\"${ ellipsedName }\" copied": [
         "\"${ ellipsedName }\" kopiran"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" izbrisan"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "\"${ ellipsedName } je trajno izbrisan iz smetnjaka"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "${ ellipsedName } ni bilo mogoče izbrisati"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "\"${ ellipsedName }\" ni bilo mogoče premakniti"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName } ni bilo mogoče obnoviti iz smetnjaka"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" je bil uspešno premaknjen"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" trajno izbrisan"
@@ -9227,41 +9152,17 @@
         "${ numberOfItems } predmeti kopirani",
         "${ numberOfItems } predmetov kopiranih"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } predmet izbrisan",
-        "${ numberOfItems } predmeta izbrisana",
-        "${ numberOfItems } predmeti izbrisani",
-        "${ numberOfItems } predmetov izbrisanih"
-      ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } predmet je trajno izbrisan iz smetnjaka",
         "${ numberOfItems } predmeta sta trajno izbrisana iz smetnjaka",
         "${ numberOfItems } predmeti so trajno izbrisani iz smetnjaka",
         "${ numberOfItems } predmeti so trajno izbrisani iz smetnjaka"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } predmeta ni bilo mogoče trajno izbrisati iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče trajno izbrisati iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče trajno izbrisati iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče trajno izbrisati iz smetnjaka"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } predmeta ni bilo mogoče premakniti",
-        "${ numberOfItems } predmetov ni bilo mogoče premakniti",
-        "${ numberOfItems } predmetov ni bilo mogoče premakniti",
-        "${ numberOfItems } predmetov ni bilo mogoče premakniti"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } predmeta ni bilo mogoče premakniti v smetnjak",
         "${ numberOfItems } predmetov ni bilo mogoče premakniti v smetnjak",
         "${ numberOfItems } predmetov ni bilo mogoče premakniti v smetnjak",
         "${ numberOfItems } predmetov ni bilo mogoče premakniti v smetnjak"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } predmeta ni bilo mogoče obnoviti iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče obnoviti iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče obnoviti iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče obnoviti iz smetnjaka"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } predmet premaknjen v smetnjak",
@@ -9274,12 +9175,6 @@
         "${ numberOfItems } predmeta obnovljena iz smetnjaka",
         "${ numberOfItems } predmeti obnovljeni iz smetnjaka",
         "${ numberOfItems } predmetov obnovljenih iz smetnjaka"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } predmet je bil uspešno premaknjen",
-        "${ numberOfItems } predmeta sta bila uspešno premaknjena",
-        "${ numberOfItems } predmeti so bili uspešno premaknjeni",
-        "${ numberOfItems } predmetov je bilo uspešno premaknjenih"
       ],
       "${ reason } has been disabled": [
         "${ reason } je bil onemogočen."
@@ -9302,9 +9197,6 @@
       "All items deleted permanently from trash": [
         "Vsi predmeti so trajno izbrisani iz smetnjaka"
       ],
-      "Cannot load link": [
-        "Povezave ni bilo mogoče naložiti"
-      ],
       "Cannot load next page": [
         "Naslednje strani ni mogoče naložiti"
       ],
@@ -9317,20 +9209,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopija \"${ ellipsedName }\" je bila premaknjena v smetnjak"
       ],
-      "Device failed to be removed": [
-        "Naprave ni bilo mogoče odstraniti"
-      ],
-      "Device failed to be renamed": [
-        "Naprave ni bilo mogoče preimenovati"
-      ],
       "Device removed": [
         "Naprava je odstranjena"
       ],
       "Device renamed": [
         "Naprava je preimenovana"
-      ],
-      "Encrypted search activated": [
-        "Aktivirano šifrirano iskanje"
       ],
       "Error while listing devices": [
         "Napaka pri prikazovanju seznama naprav"
@@ -10919,9 +10802,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Urejevalci lahko zdaj upravljajo z deljenjem in vabijo druge. To lahko kadarkoli izklopite v nastavitvah deljenja."
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Zdaj lahko preprosto iščete po datotekah v storitvi Drive, hkrati pa ohranjate varnost svojih podatkov."
       ]
     },
     "sso": {

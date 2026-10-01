@@ -273,9 +273,6 @@
       "Create folder": [
         "新建資料夾"
       ],
-      "Create new folder": [
-        "創建新資料夾"
-      ],
       "Create new password": [
         "建立新密碼"
       ],
@@ -3123,9 +3120,6 @@
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
-      "A problem occurred, please try again.": [
-        "發生問題，請再試一次。"
-      ],
       "Address could not be added.": [
         "位址無法被添加。"
       ],
@@ -3192,12 +3186,6 @@
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "內容搜尋無法在此瀏覽器中啟用。請退出無痕模式或使用其它瀏覽器。"
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
-      ],
       "Copy operation aborted": [
         "以放棄移動操作"
       ],
@@ -3260,9 +3248,6 @@
       ],
       "Failed to change permissions settings": [
         "變更權限設定失敗"
-      ],
-      "Failed to copy photo to album": [
-        "複製照片至相簿失敗"
       ],
       "Failed to create folder": [
         "建立資料夾失敗"
@@ -3482,9 +3467,6 @@
       ],
       "Photo not found": [
         "找不到照片"
-      ],
-      "Please activate your search again": [
-        "請再次啟用搜尋"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "請檢查您的 ABN 是否已註冊跨境增值稅"
@@ -5000,12 +4982,6 @@
       "Clear data": [
         "清除資料"
       ],
-      "Clear encrypted search data": [
-        "清除加密搜索的資料"
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "清除與加密搜索相關的瀏覽器數據。"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
@@ -5194,15 +5170,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "輸入您自己的密碼（作為受信任聯絡人）。"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "預計尚餘時間：${ estimatedMinutes } 分鐘"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "預計尚餘時間：少於一分鐘"
-      ],
-      "Estimating time remaining...": [
-        "正在估計尚餘時間..."
       ],
       "Everything in ${ planOrAppName }": [
         "全部都在 ${ planOrAppName }"
@@ -6814,9 +6781,6 @@
       "Toolbar": [
         "工具列"
       ],
-      "Type": [
-        "類型"
-      ],
       "Upload picture": [
         "上載圖像"
       ],
@@ -8365,9 +8329,6 @@
       "\"${ ellipsedName }\" created successfully": [
         "「${ ellipsedName }」已成功創建"
       ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "「${ ellipsedName }」創建失敗"
-      ],
       "\"${ ellipsedName }\" moved": [
         "「${ ellipsedName }」已移動"
       ],
@@ -8407,26 +8368,14 @@
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } 個複製項目已移動到垃圾桶"
       ],
-      "${ numberOfItems } item deleted": [
-        "已刪除${ numberOfItems }項目"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } 個項目已永久刪除"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } 個項目已從垃圾桶被永久刪除"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } 個項目未能從垃圾桶中被永久刪除"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } 個項目移動失敗"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } 個項目無法移動到垃圾桶"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } 個項目未能從垃圾中被復原"
       ],
       "${ numberOfItems } item moved": [
         "已移動 ${ numberOfItems } 個項目"
@@ -8436,9 +8385,6 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } 個項目已從垃圾桶中還原"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } 個項目已成功移動"
       ],
       "${ reason } has been disabled": [
         "${ reason } 已停用。"
@@ -8452,9 +8398,6 @@
       "Access updated": [
         "權限已更新"
       ],
-      "Cannot load link": [
-        "無法載入連結"
-      ],
       "Cannot load next page": [
         "無法載入下一頁"
       ],
@@ -8463,12 +8406,6 @@
       ],
       "Contact group updated": [
         "聯絡人群組已更新"
-      ],
-      "Device failed to be removed": [
-        "無法移除裝置"
-      ],
-      "Device failed to be renamed": [
-        "無法重新命名裝置"
       ],
       "Device removed": [
         "已移除裝置"
