@@ -10,7 +10,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../../../Utils/react-test-utils'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
@@ -85,7 +85,7 @@ describe('$wrapSelectionInSuggestionNode', () => {
 
   const logger = {
     info: jest.fn(),
-  } as unknown as Logger
+  } as unknown as DocsLogger
 
   describe('Should split and wrap text node', () => {
     let paragraph!: ParagraphNode

@@ -2,8 +2,10 @@ import type { CommentThreadInterface, SuggestionSummaryType } from '@proton/docs
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
+import type { DocsLogger } from './contract/DocsLogger'
 
 export type DocsDependencies = {
+  logger: DocsLogger
   isDevOrBlack: () => boolean
   openLink: (url: string) => void
   showGenericAlertModal: (message: string) => void

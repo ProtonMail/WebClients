@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { Doc, Transaction, YEvent } from 'yjs'
 import { UndoManager } from 'yjs'
 
-import type { LoggerInterface } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 
 /**
  * Based on useYjsCollaboration, but without awareness and cursors, and the addition of Safe Mode.
@@ -17,7 +17,7 @@ export function useYjsReadonly(
   provider: Provider,
   docMap: Map<string, Doc>,
   onEditorReadyToReceiveUpdates: () => void,
-  logger: LoggerInterface,
+  logger: DocsLogger,
   safeMode?: boolean,
   lexicalError?: Error,
 ): Binding {
