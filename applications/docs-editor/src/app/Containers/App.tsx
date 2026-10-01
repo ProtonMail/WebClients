@@ -57,7 +57,7 @@ import { toSheetsInitialization } from './adapters/sheets/utils/sheets-initializ
 import SheetsLayout from './SheetsLayout'
 import { useEditorTheme } from '../Theme/EditorThemeProvider'
 import { DocsAdapter } from './adapters/docs/DocsAdapter'
-import { StandaloneDocsEditor } from './Docs/StandaloneDocsEditor'
+import { StandaloneDocsEditor } from './Docs/public'
 
 type AppProps = {
   documentType: DocumentType
@@ -730,7 +730,6 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               hidden={editorHidden}
               isSuggestionsFeatureEnabled={suggestionsEnabled}
               lexicalError={editorError}
-              logger={application.logger}
               onEditorError={onEditorError}
               onEditorReadyToReceiveUpdates={onEditorReadyToReceiveUpdates}
               onEditorLoadError={onEditorLoadError}

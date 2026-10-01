@@ -16,12 +16,12 @@ import { $isTableCellNode, $isTableRowNode, $isTableNode } from '@lexical/table'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'
 import { $createTableNodeWithDimensions } from '../Table/CreateTableNodeWithDimensions'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 
 const onSuggestionCreation = jest.fn()
 const logger = {
   info: jest.fn(),
-} as unknown as Logger
+} as unknown as DocsLogger
 
 describe('$insertNewTableAsSuggestion', () => {
   const editor = createHeadlessEditor({

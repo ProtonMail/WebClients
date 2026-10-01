@@ -7,13 +7,13 @@ import { sanitizeUrl } from '../../../../Utils/sanitizeUrl'
 import type { LinkChangePayload } from '../Link/LinkPlugin'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { $wrapSelectionInSuggestionNode } from './Utils'
-import type { Logger } from '@proton/shared/lib/logs'
+import type { DocsLogger } from '../../contract/DocsLogger'
 import type { LinkChangeSuggestionProperties } from './Types'
 
 export function $handleLinkChangeSuggestion(
   editor: LexicalEditor,
   { linkNode, url, linkTextNode, text }: LinkChangePayload,
-  logger: Logger,
+  logger: DocsLogger,
   onSuggestionCreation: (id: string) => void,
 ): boolean {
   const selection = $getSelection()
@@ -34,7 +34,7 @@ export function $handleLinkChangeSuggestion(
     const linkNode = $createLinkNode(sanitizedURL.getValue())
     linkNode.append($createTextNode(text || url))
     const suggestion = $createSuggestionNode(suggestionID, 'insert').append(linkNode)
-    logger.info(`Inserting new link node as suggestion ${url}`)
+    logger.info(`suggestion-mode: Inserting new link node as suggestion ${url}`)
     selection.insertNodes([suggestion])
     onSuggestionCreation(suggestionID)
     linkNode.selectEnd()
