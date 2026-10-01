@@ -146,6 +146,8 @@ export type ImportFolder = {
 export type ImportVault = {
     shareId: MaybeNull<string> /* `shareId: null` => new vault */;
     name: string;
+    /** Parent-first, so folders can be created in order */
+    folders: ImportFolder[];
     items: ItemImportIntent[];
 };
 

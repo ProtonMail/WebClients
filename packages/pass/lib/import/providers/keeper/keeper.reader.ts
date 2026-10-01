@@ -130,7 +130,7 @@ export const readKeeperData = async (file: File): Promise<ImportReaderResult> =>
                 }
             }
 
-            vaults.push({ name, shareId: null, items });
+            vaults.push({ name, shareId: null, folders: [], items });
         }
 
         return { vaults, ignored, warnings };
