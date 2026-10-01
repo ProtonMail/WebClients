@@ -25,7 +25,6 @@ import { CommentThreadState, CommentsEvent, LiveCommentsEvent } from '@proton/do
 import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../Commands'
 import { useApplication } from '../../../ApplicationProvider'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
 import { CommentsProvider } from './CommentsContext'
 import { ContextualComments } from './ContextualComments'
 import { useLatestAwarenessStates } from '../../../../Utils/useLatestAwarenessStates'
@@ -47,7 +46,7 @@ export default function CommentPlugin({
   userAddress: string
 }): JSX.Element {
   const { application } = useApplication()
-  const { logger } = useDocsDependencies()
+  const { logger, reportError } = useDocsDependencies()
   const [editor] = useLexicalComposerContext()
   const { element: rightPanelElement } = useRightPanelContext()
   const isEditorEditable = useLexicalEditable()
@@ -65,8 +64,8 @@ export default function CommentPlugin({
   }, [threads])
 
   useEffect(() => {
-    controller.getAllThreads().then(setThreads).catch(reportErrorToSentry)
-  }, [controller])
+    controller.getAllThreads().then(setThreads).catch(reportError)
+  }, [controller, reportError])
 
   const awarenessStates = useLatestAwarenessStates(application)
 
@@ -334,7 +333,7 @@ export default function CommentPlugin({
   useEffect(() => {
     return mergeRegister(
       application.eventBus.addEventCallback(() => {
-        controller.getAllThreads().then(setThreads).catch(reportErrorToSentry)
+        controller.getAllThreads().then(setThreads).catch(reportError)
       }, CommentsEvent.CommentsChanged),
       application.eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
         const { markID } = data
@@ -359,6 +358,7 @@ export default function CommentPlugin({
     )
   }, [
     controller,
+    reportError,
     application,
     createMarkNodeForCurrentSelection,
     removeMarkNode,

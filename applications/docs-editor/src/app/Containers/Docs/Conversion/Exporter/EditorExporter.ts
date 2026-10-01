@@ -1,12 +1,13 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import type { LexicalEditor, SerializedEditorState } from 'lexical'
 import { AllNodes } from '../../AllNodes'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
+import type { DocsDependencies } from '../../DocsDependenciesProvider'
 import type { DocxExportContext } from './DocxExport/LexicalToDocx/Context'
 import { removeCommentThreadMarks } from '../../Utils/removeCommentThreadMarks'
 import { rejectAllSuggestions } from '../../Plugins/Suggestions/rejectAllSuggestions'
 
 export type ExporterRequiredCallbacks = {
+  reportError: DocsDependencies['reportError']
   fetchExternalImageAsBase64: DocxExportContext['fetchExternalImageAsBase64']
 }
 
@@ -28,7 +29,7 @@ export abstract class EditorExporter {
       namespace: 'export-editor',
       nodes: AllNodes,
       onError: (error) => {
-        reportErrorToSentry(error)
+        this.callbacks.reportError(error)
       },
     })
 

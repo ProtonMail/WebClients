@@ -5,7 +5,7 @@ import { TranslatedResult, DocWillInitializeWithEmptyNodeEvent } from '@proton/d
 import { $importDataIntoEditor } from '../../Conversion/ImportDataIntoEditor'
 import type { Binding } from '@lexical/yjs'
 import { CLEAR_HISTORY_COMMAND } from './useYjsHistory'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
+import type { DocsDependencies } from '../../DocsDependenciesProvider'
 import { c } from 'ttag'
 
 /**
@@ -22,6 +22,7 @@ export async function initializeEditorAccordingToConfigIfRootIsEmpty(
   editor: LexicalEditor,
   binding: Binding,
   editorInitializationConfig: EditorInitializationConfig,
+  reportError: DocsDependencies['reportError'],
 ): Promise<TranslatedResult<void>> {
   const yjsRoot = binding.root
   const isYjsRootEmpty = yjsRoot.isEmpty() && yjsRoot._xmlText.length === 0
@@ -62,13 +63,18 @@ export async function initializeEditorAccordingToConfigIfRootIsEmpty(
         },
       )
     } catch (error) {
-      reportErrorToSentry(error)
+      reportError(error)
       return TranslatedResult.failWithTranslatedError<void>(
         c('Error').t`Failed to initialize editor due to unknown error.`,
       )
     }
   } else if (editorInitializationConfig.mode === 'conversion' && editorInitializationConfig.type.docType === 'doc') {
-    result = await $importDataIntoEditor(editor, editorInitializationConfig.data, editorInitializationConfig.type)
+    result = await $importDataIntoEditor(
+      editor,
+      editorInitializationConfig.data,
+      editorInitializationConfig.type,
+      reportError,
+    )
   }
 
   editor.dispatchCommand(CLEAR_HISTORY_COMMAND, undefined)

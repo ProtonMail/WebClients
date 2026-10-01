@@ -6,13 +6,13 @@ import { Button } from '@proton/atoms/Button/Button'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import type { LexicalEditor } from 'lexical'
 import { COMMAND_PRIORITY_EDITOR, COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND } from 'lexical'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { c } from 'ttag'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
+import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
 import { sanitizeUrl } from '../../../../Utils/sanitizeUrl'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
@@ -26,6 +26,7 @@ type Props = {
 }
 
 export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }: Props) {
+  const { reportError } = useDocsDependencies()
   const isEditorEditable = useLexicalEditable()
 
   const [position, setPosition] = useState<{
@@ -142,7 +143,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
             size="small"
             shape="ghost"
             onClick={() => {
-              navigator.clipboard.writeText(linkUrl).catch(reportErrorToSentry)
+              navigator.clipboard.writeText(linkUrl).catch(reportError)
             }}
             data-testid="hyperlink-copy-link-button"
           >
