@@ -11,7 +11,7 @@ import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shar
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
 import { AnonymousUserEmail, CommentThreadState } from '@proton/docs-shared'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { c } from 'ttag'
 import { reportErrorToSentry } from '../../../../Utils/errorMessage'
 import { CommentsComposer } from './CommentsComposer'

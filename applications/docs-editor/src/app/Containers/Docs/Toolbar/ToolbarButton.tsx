@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ForwardedRef } from 'react'
 import { forwardRef } from 'react'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import ToolbarTooltip from './ToolbarTooltip'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { fixEmptyRoot } from '../Utils/fixEmptyRoot'
