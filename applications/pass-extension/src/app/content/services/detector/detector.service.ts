@@ -8,7 +8,7 @@ import {
     shadowPiercingContains,
     shouldRunClassifier,
 } from '@protontech/autofill';
-import { perceptronModelProvider } from '@protontech/autofill/models/perceptron';
+import { randomForestModelProvider } from '@protontech/autofill/models/random_forest';
 import type { FieldType, ModelProvider } from '@protontech/autofill/types';
 import { FormType, fieldTypes, formTypes } from '@protontech/autofill/types';
 import type { Fnode } from '@protontech/fathom';
@@ -35,7 +35,7 @@ import { selectNodeFromPath } from './detector.utils';
 const rulesetMaker = (runtime?: ModelProvider) =>
     runtime
         ? createRulesetRegistry({ runtime }).make('runtime')
-        : createRulesetRegistry({ perceptron: perceptronModelProvider }).make('perceptron');
+        : createRulesetRegistry({ randomForest: randomForestModelProvider }).make('randomForest');
 
 type Ruleset = ReturnType<typeof rulesetMaker>;
 
