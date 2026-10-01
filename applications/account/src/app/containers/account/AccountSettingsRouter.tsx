@@ -19,6 +19,7 @@ import SettingsPageTitle from '@proton/components/containers/account/SettingsPag
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import UsernameSection from '@proton/components/containers/account/UsernameSection';
+import AccountDashboard from '@proton/components/containers/account/dashboard/dashboard';
 import GroupMembershipSection from '@proton/components/containers/account/groups/GroupMembershipSection';
 import CredentialLeakSection from '@proton/components/containers/credentialLeak/CredentialLeakSection';
 import LanguageAndTimeSection from '@proton/components/containers/general/LanguageAndTimeSection';
@@ -60,7 +61,7 @@ import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 
-import { DashboardRouter } from './dashboard/DashboardRouter';
+import { DashboardLinkRedirect } from './dashboard/DashboardLinkRedirect';
 import RecoverySettingsRouter from './recovery/RecoverySettingsRouter';
 import type { getAccountAppRoutes } from './routes';
 
@@ -117,9 +118,22 @@ const AccountSettingsRouter = ({
                     </UpsellModalTelemetryProvider>
                 </Route>
             )}
+            {/* VPN's new dashboard lives at /dashboardV2, but old /dashboard links (like "Pay invoice") still come here. */}
+            {/* Send them to the right page once the user's plan has loaded. */}
+            {getIsSectionAvailable(vpnDashboardV2) && (
+                <Route path={getSectionPath(path, dashboard)}>
+                    <DashboardLinkRedirect path={path} subscription={subscription}>
+                        {redirect}
+                    </DashboardLinkRedirect>
+                </Route>
+            )}
             {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboardV2' && (
                 <Route path={getSectionPath(path, dashboard)}>
-                    <DashboardRouter app={app} dashboard={dashboard} path={path} subscription={subscription} />
+                    <DashboardLinkRedirect path={path} subscription={subscription}>
+                        <DashboardTelemetry app={app} />
+                        <AutomaticSubscriptionModal />
+                        <AccountDashboard app={app} config={dashboard} />
+                    </DashboardLinkRedirect>
                 </Route>
             )}
             {getIsSectionAvailable(subscription) && (
