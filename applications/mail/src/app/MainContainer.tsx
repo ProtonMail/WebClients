@@ -41,9 +41,6 @@ const EVENT_NOTIFIER_LOOP_TYPES: EventNotifierLoopType[] = [
     EventNotifierLoopType.Legacy,
 ];
 
-// Bound once at module scope so `this` is preserved and the reference stays stable across renders.
-const debugEventNotifier = logger.debug.bind(logger);
-
 const MainContainer: FunctionComponent = () => {
     const { APP_NAME } = useConfig();
     const mailContentRef = useRef<HTMLDivElement>(null);
@@ -60,7 +57,7 @@ const MainContainer: FunctionComponent = () => {
         logger.debug(`API Status`, apiStatus);
     }, [apiStatus]);
 
-    useEventNotifier({ types: EVENT_NOTIFIER_LOOP_TYPES, debug: debugEventNotifier });
+    useEventNotifier({ types: EVENT_NOTIFIER_LOOP_TYPES, debug: logger.debug });
 
     useInboxDesktopHeartbeat();
     useInboxDesktopMetrics();

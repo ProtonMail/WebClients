@@ -149,6 +149,27 @@ describe('Logger', () => {
             expect(await logger.getLogs()).toContain('circular');
         });
 
+        it('keeps logging when methods are detached from the instance', async () => {
+            jest.spyOn(console, 'error').mockImplementation(() => {});
+            const logger = await createLogger();
+            const { trace, debug, info, warn, error, log } = logger;
+
+            trace('detached trace');
+            debug('detached debug');
+            info('detached info');
+            warn('detached warn');
+            error('detached error');
+            log('detached log');
+
+            const logs = await logger.getLogs();
+            expect(logs).toContain('detached trace');
+            expect(logs).toContain('detached debug');
+            expect(logs).toContain('detached info');
+            expect(logs).toContain('detached warn');
+            expect(logs).toContain('detached error');
+            expect(logs).toContain('detached log');
+        });
+
         it('encrypts entries at rest', async () => {
             const id = uniqueId();
             const logger = await createLogger({ id });
