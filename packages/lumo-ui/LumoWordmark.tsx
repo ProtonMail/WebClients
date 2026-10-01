@@ -1,5 +1,5 @@
-import lumoWordmarkDark from '@proton/styles/assets/img/lumo/lumo-logo-v4-dark.svg';
-import lumoWordmark from '@proton/styles/assets/img/lumo/lumo-logo-v4.svg';
+import lumoWordmarkDark from '@proton/styles/assets/img/lumo/lumo-logo-wordmark-dark.svg';
+import lumoWordmark from '@proton/styles/assets/img/lumo/lumo-logo-wordmark.svg';
 
 interface Props {
     /** Resolved by the caller — this package is product-agnostic and has no theme provider. */
