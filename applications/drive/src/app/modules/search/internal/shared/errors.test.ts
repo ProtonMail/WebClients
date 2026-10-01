@@ -53,6 +53,16 @@ describe('classifyError', () => {
             expect(classifyError(e)).toEqual({ kind: 'permanent', reason: 'corrupted_db' });
         });
 
+        it('Chrome unreadable large value UnknownError → permanent corrupted_db', () => {
+            const e = new DOMException('Failed to read large IndexedDB value', 'UnknownError');
+            expect(classifyError(e)).toEqual({ kind: 'permanent', reason: 'corrupted_db' });
+        });
+
+        it('other UnknownError → transient unknown', () => {
+            const e = new DOMException('Internal error', 'UnknownError');
+            expect(classifyError(e)).toEqual({ kind: 'transient', reason: 'unknown' });
+        });
+
         it('InvalidIndexerState → permanent invalid_indexer_state', () => {
             expect(classifyError(new InvalidIndexerState('bad state'))).toEqual({
                 kind: 'permanent',

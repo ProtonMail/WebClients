@@ -58,6 +58,11 @@ describe('maybeWrapAsSearchLibraryError', () => {
     });
 
     describe('passes through errors that already carry a meaning', () => {
+        it('passes through an unreadable large IndexedDB value so it surfaces as corrupted_db', () => {
+            const e = new DOMException('Failed to read large IndexedDB value', 'UnknownError');
+            expect(maybeWrapAsSearchLibraryError('load blob', e)).toBe(e);
+        });
+
         it('quota exceeded (raised by IndexedDB inside a blob save)', () => {
             const e = new DOMException('', 'QuotaExceededError');
             expect(maybeWrapAsSearchLibraryError('save blob', e)).toBe(e);

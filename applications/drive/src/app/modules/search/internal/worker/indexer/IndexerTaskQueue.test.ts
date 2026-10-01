@@ -1014,6 +1014,25 @@ describe('IndexerTaskQueue', () => {
         await queue.stop();
     });
 
+    it('connection force-closed by the browser stops the queue without reporting or a permanent error', async () => {
+        jest.mocked(sendErrorReportForSearch).mockClear();
+        const queue = makeQueueWithFailingPopulator(
+            new DOMException('Connection is closing because of: Force close delete origin', 'UnknownError')
+        );
+        const stop = jest.spyOn(queue, 'stop');
+        let lastState: IndexerState | undefined;
+        queue.onStateChange((s) => {
+            lastState = s;
+        });
+        queue.start().catch(() => {});
+
+        await waitForCondition(() => stop.mock.calls.length > 0);
+        await queue.stop();
+
+        expect(lastState?.permanentError ?? null).toBeNull();
+        expect(sendErrorReportForSearch).not.toHaveBeenCalled();
+    });
+
     it('permanent error: invalid_indexer_state', async () => {
         const queue = makeQueueWithFailingPopulator(new InvalidIndexerState('bad state'));
         const state = new IndexerStateStream(queue);
