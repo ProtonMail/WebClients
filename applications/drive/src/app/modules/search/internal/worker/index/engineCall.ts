@@ -1,4 +1,4 @@
-import { SearchLibraryError, classifyError, isAbortError } from '../../shared/errors';
+import { SearchLibraryError, classifyError, isAbortError, isConnectionForceClosedError } from '../../shared/errors';
 import { takeLastWasmPanic } from './wasmPanic';
 
 /**
@@ -12,7 +12,7 @@ import { takeLastWasmPanic } from './wasmPanic';
  * `InvalidIndexerState`, so an already-wrapped error is never wrapped twice.
  */
 function isPassThrough(e: unknown): boolean {
-    return isAbortError(e) || classifyError(e).kind === 'permanent';
+    return isAbortError(e) || isConnectionForceClosedError(e) || classifyError(e).kind === 'permanent';
 }
 
 /**

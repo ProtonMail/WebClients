@@ -1,4 +1,4 @@
-import { IDBFactory } from 'fake-indexeddb';
+import { IDBFactory, forceCloseDatabase } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
 import type { IndexPopulatorState, RepairNodeEntry } from './SearchDB';
@@ -571,5 +571,29 @@ describe('SearchDB', () => {
             expect(await db2.getAllSubscriptions()).toHaveLength(0);
             expect(await db2.getAllPopulatorStates()).toHaveLength(0);
         });
+    });
+
+    it('calls onTerminated when the browser force-closes the connection', async () => {
+        const factory = new IDBFactory();
+        const realOpen = factory.open.bind(factory);
+        const connections: IDBDatabase[] = [];
+        factory.open = (name, version) => {
+            const request = realOpen(name, version);
+            request.addEventListener('success', () => connections.push(request.result));
+            return request;
+        };
+        indexedDB = factory;
+
+        let terminated = false;
+        await SearchDB.open('force-closed-user', () => {
+            terminated = true;
+        });
+
+        // fake-indexeddb 6.2.5 types `forceCloseDatabase` as taking the class rather than an
+        // instance; Reflect.apply calls it with the connection it actually expects.
+        expect(connections).toHaveLength(1);
+        connections.forEach((connection) => Reflect.apply(forceCloseDatabase, undefined, [connection]));
+
+        expect(terminated).toBe(true);
     });
 });

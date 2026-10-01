@@ -95,9 +95,19 @@ export class SharedWorkerAPI {
             }
             return this.db;
         }
-        this.db = await SearchDB.open(userId);
+        // Forget a force-closed connection so the next start (e.g. a rebuild) opens a fresh one
+        // instead of failing forever on the dead instance.
+        const db = await SearchDB.open(userId, () => {
+            Logger.info('SharedWorkerAPI: IndexedDB connection closed');
+            if (this.db === db) {
+                // Releasing the db handle to allow rebuilding a new one if the user clicks "Rebuild index".
+                this.db = null;
+                this.dbUserId = null;
+            }
+        });
+        this.db = db;
         this.dbUserId = userId;
-        return this.db;
+        return db;
     }
 
     async registerClient(userId: UserId, clientId: ClientId, bridge: MainThreadBridge): Promise<void> {

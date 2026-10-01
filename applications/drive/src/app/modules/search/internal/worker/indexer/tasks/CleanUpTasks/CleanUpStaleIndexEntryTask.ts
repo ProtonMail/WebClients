@@ -2,7 +2,12 @@ import type { Entry } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../../../shared/Logger';
 import type { IndexPopulatorState } from '../../../../shared/SearchDB';
-import { classifyError, isAbortError, sendErrorReportForSearch } from '../../../../shared/errors';
+import {
+    classifyError,
+    isAbortError,
+    isConnectionForceClosedError,
+    sendErrorReportForSearch,
+} from '../../../../shared/errors';
 import { yieldToEventLoop } from '../../../../shared/yieldToEventLoop';
 import type { IndexInstance } from '../../../index/IndexRegistry';
 import { engineCall } from '../../../index/engineCall';
@@ -58,7 +63,7 @@ export class CleanUpStaleIndexEntryTask extends BaseTask {
                     ctx.signal
                 );
             } catch (e) {
-                if (isAbortError(e) || classifyError(e).kind === 'permanent') {
+                if (isAbortError(e) || isConnectionForceClosedError(e) || classifyError(e).kind === 'permanent') {
                     throw e;
                 }
                 sendErrorReportForSearch(`${this.getUid()}: failed for engine <${instance.indexKind}>`, e, {
