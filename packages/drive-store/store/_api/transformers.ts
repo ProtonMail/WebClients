@@ -12,7 +12,7 @@ import type {
 } from '@proton/shared/lib/interfaces/drive/invitation';
 import type { LinkMeta, LinkSharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-import type { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
+import type { ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
@@ -25,14 +25,11 @@ import type {
     ShareExternalInvitation,
     ShareInvitation,
     ShareInvitationDetails,
-    ShareMember,
     ShareMembership,
-    ShareURL,
     ShareWithKey,
     SharedUrlInfo,
 } from '../_shares/interface';
 import { ShareType } from '../_shares/interface';
-import { hasGeneratedPasswordIncluded } from '../_shares/shareUrl';
 import { ThumbnailType } from '../_uploads/media';
 
 // LinkMetaWithShareURL is used when loading shared links.
@@ -168,20 +165,6 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
     };
 }
 
-export const shareMemberPayloadToShareMember = (shareMember: ShareMemberPayload): ShareMember => {
-    return {
-        memberId: shareMember.MemberID,
-        email: shareMember.Email,
-        inviterEmail: shareMember.InviterEmail,
-        addressId: shareMember.AddressID,
-        createTime: shareMember.CreateTime,
-        modifyTime: shareMember.ModifyTime,
-        permissions: shareMember.Permissions,
-        keyPacketSignature: shareMember.KeyPacketSignature,
-        sessionKeySignature: shareMember.SessionKeySignature,
-    };
-};
-
 const shareMembershipPayloadToShareMembership = (shareMembership: ShareMembershipPayload): ShareMembership => {
     return {
         memberId: shareMembership.MemberID,
@@ -264,28 +247,6 @@ export const deviceInfoToDevices = (info: DevicePayload): Device => {
         modificationTime: info.Device.ModifyTime,
         linkId: info.Share.LinkID,
         haveLegacyName: !!info.Share.Name,
-    };
-};
-
-export const shareUrlPayloadToShareUrl = (shareUrl: ShareURLPayload): ShareURL => {
-    return {
-        shareId: shareUrl.ShareID,
-        shareUrlId: shareUrl.ShareURLID,
-        expirationTime: shareUrl.ExpirationTime,
-        creatorEmail: shareUrl.CreatorEmail,
-        password: shareUrl.Password,
-        flags: shareUrl.Flags,
-        token: shareUrl.Token,
-        publicUrl: shareUrl.PublicUrl,
-        sharePassphraseKeyPacket: shareUrl.SharePassphraseKeyPacket,
-        sharePasswordSalt: shareUrl.SharePasswordSalt,
-        hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded({ flags: shareUrl.Flags }),
-        numAccesses: shareUrl.NumAccesses,
-        urlPasswordSalt: shareUrl.UrlPasswordSalt,
-        srpVerifier: shareUrl.SRPVerifier,
-        srpModulusID: shareUrl.SRPModulusID,
-        maxAccesses: shareUrl.MaxAccesses,
-        permissions: shareUrl.Permissions,
     };
 };
 

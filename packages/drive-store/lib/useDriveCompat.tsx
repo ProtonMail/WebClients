@@ -8,13 +8,10 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 import { useMoveToFolderModal } from '../components/modals/MoveToFolderModal/MoveToFolderModal';
-import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
-import type { ShareURL } from '../store';
-import { useDefaultShare, useShareUrl } from '../store';
+import { useDefaultShare } from '../store';
 import useDriveCrypto from '../store/_crypto/useDriveCrypto';
 import type { DocumentType } from '../store/_documents/useOpenDocument';
 import useLink from '../store/_links/useLink';
-import { getSharedLink } from '../store/_shares/shareUrl';
 import type { PathItem } from '../store/_views/useLinkPath';
 import { useAbortSignal } from '../store/_views/utils';
 import type { CacheConfig } from './CacheConfig';
@@ -36,18 +33,6 @@ export interface DriveCompat {
     getNodes: (ids: { linkId: string; shareId: string }[]) => Promise<DecryptedNode[]>;
 
     getShareId: (meta: NodeMeta) => Promise<string>;
-
-    getPublicShareUrlInfo: (signal: AbortSignal) => (id: NodeMeta) => Promise<
-        | {
-              shareUrl: ShareURL;
-              keyInfo: {
-                  shareSessionKey: SessionKey;
-                  sharePasswordSalt: string;
-              };
-          }
-        | undefined
-    >;
-    getSharedLinkFromShareUrl: (shareUrl: ShareURL | undefined) => string | undefined;
 
     /**
      * Gets the contents of a node.
@@ -89,15 +74,6 @@ export interface DriveCompat {
 
     getNodePaths: (ids: { linkId: string; shareId: string }[]) => Promise<PathItem[][]>;
     getNodesAreShared: (ids: { linkId: string; shareId: string }[]) => Promise<boolean[]>;
-    /**
-     * Opens a document's sharing modal.
-     */
-    openDocumentSharingModal: (props: {
-        linkId: string;
-        volumeId: string;
-        onPublicLinkToggle?: (enabled: boolean) => void;
-        registerOverriddenNameListener?: (listener: (name: string) => void) => void;
-    }) => void;
 
     /**
      * Opens the "Move to folder" modal for the given link & volume id.
@@ -158,8 +134,6 @@ export const useDriveCompat = (): DriveCompat => {
     const { getVerificationKey } = useDriveCrypto();
 
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const { loadShareUrl } = useShareUrl();
     const { getDefaultShare, getDefaultShareAddressEmail } = useDefaultShare();
 
     const getPrimaryAddressKeys = async () => {
@@ -169,25 +143,6 @@ export const useDriveCompat = (): DriveCompat => {
         const keys = await getAddressKeys(share.addressId);
 
         return { keys, address: email };
-    };
-
-    const openShareModal = async (props: {
-        linkId: string;
-        volumeId: string;
-        onPublicLinkToggle?: (enabled: boolean) => void;
-        registerOverriddenNameListener?: (listener: (name: string) => void) => void;
-    }) => {
-        const fnToWrap = ({ shareId, linkId }: { shareId: string; linkId: string }) =>
-            showLinkSharingModal({
-                shareId,
-                linkId,
-                onPublicLinkToggle: props.onPublicLinkToggle,
-                registerOverriddenNameListener: props.registerOverriddenNameListener,
-            });
-
-        const wrappedFn = withResolveShareId(fnToWrap);
-
-        void wrappedFn(props);
     };
 
     const openMoveToFolderModal = async (props: { linkId: string; volumeId: string }) => {
@@ -226,11 +181,6 @@ export const useDriveCompat = (): DriveCompat => {
         getNodesAreShared,
         getNodePaths,
         getNodes,
-        // DocsSharingModalDriveSDK
-        openDocumentSharingModal: openShareModal,
-        getSharedLinkFromShareUrl: getSharedLink,
-        getPublicShareUrlInfo: (signal: AbortSignal) =>
-            withResolveShareId(({ shareId, linkId }) => loadShareUrl(signal, shareId, linkId)),
         // DocsTrashWithDriveSDK
         trashDocument: withResolveShareId(trashDocument),
         restoreDocument: withResolveShareId(restoreDocument),
@@ -243,7 +193,6 @@ export const useDriveCompat = (): DriveCompat => {
         modals: (
             <>
                 {moveToFolderModal}
-                {linkSharingModal}
                 {confirmModal}
             </>
         ),

@@ -7,16 +7,13 @@ SDK switch flags:
 - DocsLoadRecentsWithDriveSDK - no dependencies
 - DocsDocumentViewerEventsSDK - no dependencies
 - DocsTrashWithDriveSDK - no dependencies
-- DocsRenameWithDriveSDK - needs DocsLoadRecentsWithDriveSDK and DocsDocumentViewerEventsSDK for the events
-- DocsSharingModalDriveSDK - needs DocsRenameWithDriveSDK for document title cache
+- DocsRenameWithDriveSDK
+   - careful: used by sharing modal for document title cache
+   - needs DocsLoadRecentsWithDriveSDK and DocsDocumentViewerEventsSDK for the events
 - DocsMoveModalDriveSDK - needs DocsRenameWithDriveSDK because SDK rename updates cache (+ events)
 - DocsInvitationsDriveSDK - no dependencies
 - DocsDriveCompatSDK - no dependencies
 */
-
-export function useSharingModalDriveSdkEnabled() {
-  return useFlag('DocsSharingModalDriveSDK')
-}
 
 export function useLoadRecentsWithSdkEnabled() {
   return useFlag('DocsLoadRecentsWithDriveSDK')

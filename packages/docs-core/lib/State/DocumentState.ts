@@ -72,12 +72,6 @@ export type DocumentEvent =
       payload: undefined
     }
   | {
-      name: 'PublicLinkToggleStateChanged'
-      payload: {
-        enabled: boolean
-      }
-    }
-  | {
       name: 'ImportUpdateSuccessful'
       payload: {
         uuid: string

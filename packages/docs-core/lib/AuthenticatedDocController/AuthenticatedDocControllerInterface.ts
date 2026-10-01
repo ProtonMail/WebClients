@@ -15,7 +15,6 @@ export interface AuthenticatedDocControllerInterface {
     editorYjsState: Uint8Array<ArrayBuffer>,
   ): Promise<{ nodeMeta: NodeMeta; documentType: DocumentType }>
   getVersionHistory(): NativeVersionHistory | undefined
-  openDocumentSharingModal(): void
   openMoveToFolderModal(): void
   restoreRevisionAsCopy(yjsContent: YjsState): Promise<{ nodeMeta: NodeMeta; documentType: DocumentType }>
   restoreDocument(useSDK?: boolean): Promise<void>
