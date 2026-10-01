@@ -336,9 +336,6 @@
       "Email settings": [
         "E-mailinstellingen"
       ],
-      "Empty trash": [
-        "Prullenbak leegmaken"
-      ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
@@ -555,9 +552,6 @@
       "Next month": [
         "Volgende maand"
       ],
-      "Next page": [
-        "Volgende pagina"
-      ],
       "No, thanks": [
         "Nee, bedankt"
       ],
@@ -593,9 +587,6 @@
       ],
       "Previous month": [
         "Vorige maand"
-      ],
-      "Previous page": [
-        "Vorige pagina"
       ],
       "Print": [
         "Afdrukken"
@@ -2884,9 +2875,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" bestaat al"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kan geen verbinding maken met uw externe account"
       ],
@@ -3314,9 +3302,6 @@
       "Photo not found": [
         "Foto niet gevonden"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Foto-upload is tijdelijk uitgeschakeld. Probeer het later opnieuw"
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Configureer eerst een eigen domein voordat u adressen toevoegt."
       ],
@@ -3463,12 +3448,6 @@
       "The folder name is too long. Please choose a different name.": [
         "De mapnaam is te lang. Kies een andere naam."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "De uitnodiging kan nog niet worden voltooid. Probeer het later opnieuw."
-      ],
-      "The invitation doesn't exist anymore": [
-        "De uitnodiging bestaat niet meer"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "De naam van het label is ongeldig. Kies een andere naam."
       ],
@@ -3480,21 +3459,6 @@
       ],
       "The link to your item failed to be deleted": [
         "De link naar uw item kon niet worden verwijderd"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "De nieuwe revisie van het originele bestand is nog niet geüpload, probeer het later nog eens"
-      ],
-      "The original file has missing active revision": [
-        "Het originele bestand heeft geen actieve revisie"
-      ],
-      "The original file has missing hash key": [
-        "Het originele bestand heeft geen hash sleutel"
-      ],
-      "The original file has missing session key": [
-        "In het originele bestand ontbreekt de sessiesleutel"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Het originele bestand is nog niet geüpload, probeer het later nog eens"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Het geüploade bestand komt niet overeen met het origineel. Probeer het opnieuw."
@@ -3576,9 +3540,6 @@
       ],
       "Update Too Large": [
         "Update te groot"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Uploaden voor deze map is tijdelijk uitgeschakeld"
       ],
       "Username must begin with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer beginnen"
@@ -4733,9 +4694,6 @@
       "Are you sure you want to discard your import?": [
         "Weet u zeker dat u uw import wilt verwijderen?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Weet u zeker dat u de prullenbak wilt leegmaken en alle items permanent wilt verwijderen?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Weet u zeker dat u \"${ itemName }\" permanent wilt verwijderen uit prullenbak?"
       ],
@@ -5144,9 +5102,6 @@
       "Link copied": [
         "Link gekopieerd"
       ],
-      "Link copied to clipboard": [
-        "Link gekopieerd naar klembord"
-      ],
       "Link expired": [
         "Link is vervallen"
       ],
@@ -5522,9 +5477,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Dit is een naam of bijnaam voor uw organisatie die uw gebruikers zullen zien. U kunt dit op elk moment wijzigen."
       ],
-      "This item already exists in your library": [
-        "Dit item bestaat al in uw bibliotheek"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
@@ -5593,12 +5545,6 @@
       ],
       "Tracking": [
         "Tracking"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Overdracht geannuleerd voor bestand \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Overdracht overgeslagen voor bestand \"${ file.name }\""
       ],
       "Trash": [
         "Prullenbak"
@@ -7706,17 +7652,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" kon niet hersteld worden uit prullenbak"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" kon niet worden opgeslagen"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" verplaatst naar de prullenbak"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" uit de prullenbak hersteld"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" succesvol aangemaakt"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kon niet worden hernoemd"
@@ -7786,12 +7726,6 @@
       "Access updated and shared": [
         "Toegang bijgewerkt en gedeeld"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Alle items zullen binnenkort permanent uit de prullenbak worden verwijderd"
-      ],
-      "Cannot load link": [
-        "Kan koppelingen niet laden"
-      ],
       "Cannot load next page": [
         "Kan volgende pagina niet laden"
       ],
@@ -7800,18 +7734,6 @@
       ],
       "Contact group updated": [
         "Contactgroep bijgewerkt"
-      ],
-      "Device failed to be removed": [
-        "Apparaat kon niet worden verwijderd"
-      ],
-      "Device failed to be renamed": [
-        "Apparaat kon niet worden hernoemd"
-      ],
-      "Device removed": [
-        "Apparaat verwijderd"
-      ],
-      "Device renamed": [
-        "Apparaat hernoemd"
       ],
       "Document moved to trash": [
         "Document verplaatst naar prullenbak"
@@ -7854,13 +7776,6 @@
       ],
       "Failed to trash document": [
         "Kan document niet in de prullenbak plaatsen"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Bestand of map \"${ filename }\" en ${ count } andere zijn al aan het uploaden",
-        "Bestand of map \"${ filename }\" en ${ count } andere zijn al aan het uploaden"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Bestand of map \"${ filename }\" is al aan het uploaden"
       ],
       "Invitation's email was sent again": [
         "Uitnodigingsmail is opnieuw verzonden"
@@ -7915,9 +7830,6 @@
       ],
       "The link to your item was deleted": [
         "De link naar uw item werd verwijderd"
-      ],
-      "Trash failed to be emptied": [
-        "Prullenbak legen mislukt"
       ],
       "You stopped sharing this item": [
         "U bent gestopt met dit item te delen"
@@ -9958,9 +9870,6 @@
       "Email settings": [
         "E-mailinstellingen"
       ],
-      "Empty trash": [
-        "Prullenbak leegmaken"
-      ],
       "Enable 2FA": [
         "2FA inschakelen"
       ],
@@ -10241,9 +10150,6 @@
       "Start import process": [
         "Importproces starten"
       ],
-      "Stop sharing": [
-        "Delen stoppen"
-      ],
       "Stop sharing?": [
         "Delen stoppen?"
       ],
@@ -10463,6 +10369,36 @@
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Ontvang ${ discount }% korting op ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Neem ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/maand"
+      ],
+      "2 TB of storage to share": [
+        "2 TB opslagruimte om te delen"
+      ],
+      "2 user accounts": [
+        "2 gebruikersaccounts"
+      ],
+      "All premium features from your current plan": [
+        "Alle premium functies van uw huidige abonnement"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "voor 12 maanden"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/maand"
@@ -10488,6 +10424,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "U kunt uw eigen rollen niet veranderen. Vraag een andere beheerder om deze te wijzigen."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."

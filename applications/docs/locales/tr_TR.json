@@ -342,9 +342,6 @@
       "Email settings": [
         "E-posta ayarları"
       ],
-      "Empty trash": [
-        "Çöp kutusunu boşalt"
-      ],
       "enable desktop notifications": [
         "bilgisayar bildirimlerini açmak"
       ],
@@ -564,9 +561,6 @@
       "Next month": [
         "Sonraki ay"
       ],
-      "Next page": [
-        "Sonraki sayfa"
-      ],
       "No, thanks": [
         "Hayır, teşekkürler"
       ],
@@ -608,9 +602,6 @@
       ],
       "Previous month": [
         "Önceki ay"
-      ],
-      "Previous page": [
-        "Önceki sayfa"
       ],
       "Print": [
         "Yazdır"
@@ -2902,9 +2893,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" zaten var"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } dış hesabınızla bağlantı kuramadı"
       ],
@@ -3341,9 +3329,6 @@
       "Photo not found": [
         "Fotoğraf bulunamadı"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Fotoğraf yükleme özelliği geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Lütfen adresleri eklemeden önce bir özel etki alanı yapılandırın."
       ],
@@ -3490,12 +3475,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Klasör adı çok uzun. Lütfen farklı bir ad seçin."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Davet henüz tamamlanamadı. Lütfen bir süre sonra yeniden deneyin."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Davet artık yok"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Etiket adı geçersiz. Lütfen farklı bir ad seçin."
       ],
@@ -3507,21 +3486,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Öge bağlantınız silinemedi"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Özgün dosyanın yeni düzeltmesi henüz yüklenmemiş. Lütfen bir süre sonra yeniden deneyin"
-      ],
-      "The original file has missing active revision": [
-        "Özgün dosyanın etkin düzeltmesi eksik"
-      ],
-      "The original file has missing hash key": [
-        "Özgün dosyanın karma anahtarı eksik"
-      ],
-      "The original file has missing session key": [
-        "Özgün dosyanın oturum anahtarı eksik"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Özgün dosya henüz yüklenmemiş. Lütfen bir süre sonra yeniden deneyin"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Yüklenen dosya özgün dosya ile eşleşmiyor. Lütfen yeniden deneyin."
@@ -3603,9 +3567,6 @@
       ],
       "Update Too Large": [
         "Güncelleme çok büyük"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Bu klasöre yüklemeler geçici olarak yapılamıyor"
       ],
       "Username must begin with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile başlamalı"
@@ -4766,9 +4727,6 @@
       "Are you sure you want to discard your import?": [
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Çöp kutusunu boşaltmak ve tüm ögeleri kalıcı olarak silmek istediğinize emin misiniz?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Çöp kutusundaki ${ itemName } ögesini kalıcı olarak silmek istediğinize emin misiniz?"
       ],
@@ -5195,9 +5153,6 @@
       "Link copied": [
         "Bağlantı kopyalandı"
       ],
-      "Link copied to clipboard": [
-        "Bağlantı panoya kopyalandı"
-      ],
       "Link expired": [
         "Bağlantının süresi doldu"
       ],
@@ -5585,9 +5540,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Kullanıcılarınıza görüntülenecek kuruluş adınız veya kısaltmanız. İstediğiniz zaman değiştirebilirsiniz."
       ],
-      "This item already exists in your library": [
-        "Bu öge kitaplığınızda zaten var"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
       ],
@@ -5659,12 +5611,6 @@
       ],
       "Tracking": [
         "İzleme"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "\"${ name }\" dosyasının aktarımı iptal edildi"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "\"${ file.name }\" dosyasının aktarımı atlandı"
       ],
       "Trash": [
         "Çöp kutusu"
@@ -7801,17 +7747,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" çöpten çıkarılamadı"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" kaydedilemedi"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" çöpe atıldı"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" çöpten çıkarıldı"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" kaydedildi"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" yeniden adlandırılamadı"
@@ -7881,14 +7821,8 @@
       "Access updated and shared": [
         "Erişim güncellendi ve paylaşıldı"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Tüm ögeler yakında çöp kutusundan kalıcı olarak silinecek"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Bu belge paylaşımlı bir klasörde bulunduğundan yalnızca klasör sahibi onu geri yükleyebilir"
-      ],
-      "Cannot load link": [
-        "Bağlantı yüklenemedi"
       ],
       "Cannot load next page": [
         "Sonraki sayfa yüklenemedi"
@@ -7898,18 +7832,6 @@
       ],
       "Contact group updated": [
         "Kişi grubu güncellendi"
-      ],
-      "Device failed to be removed": [
-        "Aygıt kaldırılamadı"
-      ],
-      "Device failed to be renamed": [
-        "Aygıt yeniden adlandırılamadı"
-      ],
-      "Device removed": [
-        "Aygıt kaldırıldı"
-      ],
-      "Device renamed": [
-        "Aygıt yeniden adlandırıldı"
       ],
       "Document moved to trash": [
         "Belge çöpe atıldı"
@@ -7955,13 +7877,6 @@
       ],
       "Failed to trash document": [
         "Belge çöpe atılamadı"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "\"${ filename }\" dosya ya da klasörü ile ${ count } diğeri zaten yükleniyor",
-        "\"${ filename }\" dosya ya da klasörü ile ${ count } diğeri zaten yükleniyor"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "\"${ filename }\" dosya ya da klasörü zaten yükleniyor"
       ],
       "Invitation's email was sent again": [
         "Davet e-postası yeniden gönderildi"
@@ -8019,9 +7934,6 @@
       ],
       "The link to your item was deleted": [
         "Öge bağlantınız silindi"
-      ],
-      "Trash failed to be emptied": [
-        "Çöp kutusu boşaltılamadı"
       ],
       "You stopped sharing this item": [
         "Bu ögeyi paylaşmayı durdurdunuz"
@@ -10092,9 +10004,6 @@
       "Email settings": [
         "E-posta ayarları"
       ],
-      "Empty trash": [
-        "Çöp kutusunu boşalt"
-      ],
       "Enable 2FA": [
         "İki adımlı doğrulama kullanılsın"
       ],
@@ -10378,9 +10287,6 @@
       "Start import process": [
         "İçe aktarma işlemini başlatın"
       ],
-      "Stop sharing": [
-        "Paylaşımdan kaldır"
-      ],
       "Stop sharing?": [
         "Paylaşmayı durdur?"
       ],
@@ -10603,6 +10509,36 @@
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "${ planName } için %${ discount } indirim kazanın"
+      ],
+      "Get ${ planName }": [
+        "${ planName } tarifesini edinin"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 TB of storage to share": [
+        "Paylaşılabilen 2 TB depolama alanı"
+      ],
+      "2 user accounts": [
+        "2 kullanıcı hesabı"
+      ],
+      "All premium features from your current plan": [
+        "Geçerli tarifenizdeki tüm ücretli özellikler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 ay için"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/ay"
@@ -10628,6 +10564,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Yönetici rollerini kullanabilmek için bu rolleri destekleyen bir tarifeye yükseltin."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Kendi rollerinizi değiştiremezsiniz. Başka bir yöneticiden bunları değiştirmesini isteyin."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."

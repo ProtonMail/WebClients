@@ -342,9 +342,6 @@
       "Email settings": [
         "Configuració del correu"
       ],
-      "Empty trash": [
-        "Buida la paperera"
-      ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
       ],
@@ -567,9 +564,6 @@
       "Next month": [
         "Mes següent"
       ],
-      "Next page": [
-        "Pàgina següent"
-      ],
       "No, thanks": [
         "No, gràcies"
       ],
@@ -611,9 +605,6 @@
       ],
       "Previous month": [
         "Mes anterior"
-      ],
-      "Previous page": [
-        "Pàgina anterior"
       ],
       "Print": [
         "Imprimeix"
@@ -2905,9 +2896,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "«${ sanitizedName }» ja existeix."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } no es pot connectar al vostre compte extern"
       ],
@@ -3344,9 +3332,6 @@
       "Photo not found": [
         "No s’ha trobat la foto"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "La càrrega de fotos està temporalment desactivada. Torneu a provar més tard."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Configureu un domini personalitzat abans d'afegir adreces."
       ],
@@ -3493,12 +3478,6 @@
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Trieu-ne un de diferent."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "La invitació encara no es pot completar. Torneu a intentar-ho més tard."
-      ],
-      "The invitation doesn't exist anymore": [
-        "La invitació ja no existeix."
-      ],
       "The label name is invalid. Please choose a different name.": [
         "El nom de l'etiqueta no és vàlid. Escolliu-ne un altre."
       ],
@@ -3510,21 +3489,6 @@
       ],
       "The link to your item failed to be deleted": [
         "No s'ha pogut eliminar l'enllaç a aquest element"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "La nova revisió del fitxer original encara no s'ha carregat. Proveu-ho més tard"
-      ],
-      "The original file has missing active revision": [
-        "El fitxer original té una revisió activa perduda"
-      ],
-      "The original file has missing hash key": [
-        "El fitxer original té una clau de hash perduda"
-      ],
-      "The original file has missing session key": [
-        "El fitxer original té una clau de sessió perduda"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "El fitxer original encara no s'ha carregat. Torneu-ho a provar més tard"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "El fitxer carregat no coincideix amb l'original. Torneu-ho a provar."
@@ -3606,9 +3570,6 @@
       ],
       "Update Too Large": [
         "L'actualització és massa gran."
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "La càrrega d'aquesta carpeta està temporalment desactivada"
       ],
       "Username must begin with a letter or digit": [
         "El nom d'usuari ha de començar amb una lletra o un dígit."
@@ -4769,9 +4730,6 @@
       "Are you sure you want to discard your import?": [
         "Esteu segur que voleu descartar la vostra importació?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Segur que voleu buidar la paperera i eliminar completament tots els elements?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Segur que voleu eliminar completament «${ itemName }» de la paperera?"
       ],
@@ -5198,9 +5156,6 @@
       "Link copied": [
         "S'ha copiat l'enllaç"
       ],
-      "Link copied to clipboard": [
-        "S'ha copiat l'enllaç al porta-retalls."
-      ],
       "Link expired": [
         "L’enllaç ha caducat."
       ],
@@ -5588,9 +5543,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-lo en qualsevol moment."
       ],
-      "This item already exists in your library": [
-        "Aquest element ja existeix a la biblioteca"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
       ],
@@ -5662,12 +5614,6 @@
       ],
       "Tracking": [
         "Seguiment"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "S'ha cancel·lat la transferència del fitxer \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "S'ha saltat la transferència del fitxer \"${ file.name }\""
       ],
       "Trash": [
         "Paperera"
@@ -7804,17 +7750,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "No s'ha pogut restaurar ${ name } de la paperera."
       ],
-      "\"${ name }\" failed to be saved": [
-        "No s'ha pogut desar \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "S'ha mogut «${ name }» a la paperera"
       ],
       "\"${ name }\" restored from trash": [
         "S'ha restaurat \"${ name }\" de la paperera"
-      ],
-      "\"${ name }\" saved successfully": [
-        "S'ha desat \"${ name }\""
       ],
       "\"${ newName }\" failed to be renamed": [
         "No s'ha pogut canviar el nom de \"${ newName }\""
@@ -7884,14 +7824,8 @@
       "Access updated and shared": [
         "S'ha actualitzat i compartit l'accés"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Aviat se suprimiran permanentment tots els elements de la paperera"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Aquest document es trobava en una carpeta compartida i només el propietari de la carpeta el pot restaurar"
-      ],
-      "Cannot load link": [
-        "No s'ha pogut carregar l'enllaç."
       ],
       "Cannot load next page": [
         "No s'ha pogut carregar la pàgina següent"
@@ -7901,18 +7835,6 @@
       ],
       "Contact group updated": [
         "Grup de contactes actualitzat"
-      ],
-      "Device failed to be removed": [
-        "No s'ha pogut esborrar el dispositiu."
-      ],
-      "Device failed to be renamed": [
-        "No s'ha pogut canviar el nom del dispositiu"
-      ],
-      "Device removed": [
-        "S'ha esborrat el dispositiu"
-      ],
-      "Device renamed": [
-        "S'ha canviat el nom del dispositiu"
       ],
       "Document moved to trash": [
         "S'ha enviat el document a la paperera"
@@ -7958,13 +7880,6 @@
       ],
       "Failed to trash document": [
         "No s'ha pogut enviar el document a la paperera"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "El fitxer o carpeta \"${ filename }\" i ${ count } altre ja s'estan carregant",
-        "El fitxer o carpeta \"${ filename }\" i ${ count } altres ja s'estan carregant"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "El fitxer o carpeta \"${ filename }\" ja s'està carregant"
       ],
       "Invitation's email was sent again": [
         "S'ha tornat a enviar el correu electrònic de la invitació"
@@ -8022,9 +7937,6 @@
       ],
       "The link to your item was deleted": [
         "S'ha eliminat l'enllaç a l'element"
-      ],
-      "Trash failed to be emptied": [
-        "No s'ha pogut buidar la paperera."
       ],
       "You stopped sharing this item": [
         "Heu deixat de compartir aquest element."
@@ -10095,9 +10007,6 @@
       "Email settings": [
         "Configuració del correu"
       ],
-      "Empty trash": [
-        "Buida la paperera"
-      ],
       "Enable 2FA": [
         "Activa el 2FA"
       ],
@@ -10381,9 +10290,6 @@
       "Start import process": [
         "Iniciar el procés d'importació"
       ],
-      "Stop sharing": [
-        "Deixa de compartir"
-      ],
       "Stop sharing?": [
         "Voleu deixar de compartir?"
       ],
@@ -10606,6 +10512,36 @@
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obtingueu un ${ discount }% de descompte al ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obtingueu el pla ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 TB of storage to share": [
+        "2 TB d'emmagatzematge per compartir"
+      ],
+      "2 user accounts": [
+        "2 comptes d'usuari"
+      ],
+      "All premium features from your current plan": [
+        "Totes les característiques prèmium del vostre pla actual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en el preu mensual estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan finalitzi el cicle de facturació."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "durant 12 mesos"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/mes"
@@ -10631,6 +10567,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Milloreu a un pla compatible per utilitzar rols d'administrador/a."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No podeu canviar els vostres propis rols. Demaneu a un altre administrador que ho faci."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."

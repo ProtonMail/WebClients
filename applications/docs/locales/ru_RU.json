@@ -342,9 +342,6 @@
       "Email settings": [
         "Настройки электронной почты"
       ],
-      "Empty trash": [
-        "Очистить корзину"
-      ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
@@ -555,9 +552,6 @@
       "Next month": [
         "Следующий месяц"
       ],
-      "Next page": [
-        "Следующая страница"
-      ],
       "No, thanks": [
         "Нет, спасибо"
       ],
@@ -593,9 +587,6 @@
       ],
       "Previous month": [
         "Предыдущий месяц"
-      ],
-      "Previous page": [
-        "Предыдущая страница"
       ],
       "Print": [
         "Печать"
@@ -2898,9 +2889,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" уже существует"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не может подключиться к вашему внешнему аккаунту"
       ],
@@ -3165,9 +3153,6 @@
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Загрузка фотографий временно отключена. Повторите попытку позже"
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Перед добавлением адресов настройте пользовательский домен."
       ],
@@ -3288,12 +3273,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Имя папки слишком длинное. Пожалуйста, выберите другое имя."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Приглашение пока не может быть закончено. Повторите попытку позже."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Приглашение больше не существует"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Недопустимое название ярлыка. Пожалуйста, выберите другое название."
       ],
@@ -3305,21 +3284,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Не удалось удалить ссылку на ваш элемент"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Новая версия исходного файла еще не загружена, пожалуйста, повторите попытку позже"
-      ],
-      "The original file has missing active revision": [
-        "В исходном файле отсутствует активная версия"
-      ],
-      "The original file has missing hash key": [
-        "У исходного файла отсутствует ключ хэша"
-      ],
-      "The original file has missing session key": [
-        "В исходном файле отсутствует ключ сеанса"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Исходный файл еще не загружен, пожалуйста, повторите попытку позже"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "В вашей внешнем аккаунте слишком много папок. Пожалуйста, настройте импорт, чтобы удалить некоторые папки."
@@ -3374,9 +3338,6 @@
       ],
       "Update Too Large": [
         "Обновление слишком большое"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Загрузка из этой папки временно отключена"
       ],
       "Username must begin with a letter or digit": [
         "Имя пользователя должно начинаться с буквы или цифры"
@@ -4544,9 +4505,6 @@
       "Are you sure you want to discard your import?": [
         "Вы уверены, что хотите сбросить импорт?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Вы уверены, что хотите очистить корзину и безвозвратно удалить все элементы?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Вы уверены, что хотите навсегда удалить \"${ itemName }\" из корзины?"
       ],
@@ -4946,9 +4904,6 @@
       "Link copied": [
         "Ссылка скопирована"
       ],
-      "Link copied to clipboard": [
-        "Ссылка скопирована в буфер обмена"
-      ],
       "Link expired": [
         "Ссылка устарела"
       ],
@@ -5324,9 +5279,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Это название или псевдоним для вашей организации, который будут видеть ваши пользователи. Вы можете изменить его в любое время."
       ],
-      "This item already exists in your library": [
-        "Этот элемент уже существует в вашей библиотеке"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
@@ -5368,12 +5320,6 @@
       ],
       "Tracking": [
         "Отслеживание"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Отменена передача файла \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Пропущена передача файла \"${ file.name }\""
       ],
       "Trash": [
         "Корзина"
@@ -7532,17 +7478,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "Не удалось восстановить из корзины \"${ name }\""
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" не удалось сохранить"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" перемещено в корзину"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" восстановлено из корзины"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" успешно сохранено"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Не удалось переименовать \"${ newName }\""
@@ -7631,12 +7571,6 @@
       "Access updated and shared": [
         "Доступ обновлен и открыт общий доступ"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Все элементы скоро будут окончательно удалены из корзины"
-      ],
-      "Cannot load link": [
-        "Не удалось загрузить ссылку"
-      ],
       "Cannot load next page": [
         "Не удалось загрузить следующую страницу"
       ],
@@ -7645,18 +7579,6 @@
       ],
       "Contact group updated": [
         "Группа контактов обновлена"
-      ],
-      "Device failed to be removed": [
-        "Не удалось удалить устройство"
-      ],
-      "Device failed to be renamed": [
-        "Не удалось переименовать устройство"
-      ],
-      "Device removed": [
-        "Устройство удалено"
-      ],
-      "Device renamed": [
-        "Устройство переименовано"
       ],
       "Document moved to trash": [
         "Документ перемещен в корзину"
@@ -7684,15 +7606,6 @@
       ],
       "Failed to rename document": [
         "Не удалось переименовать документ"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Файл или папка \"${ filename }\" и ${ count } других уже загружаются",
-        "Файл или папка \"${ filename }\" и ${ count } других уже загружаются",
-        "Файл или папка \"${ filename }\" и ${ count } других уже загружаются",
-        "Файл или папка \"${ filename }\" и ${ count } других уже загружаются"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Файл или папка \"${ filename }\" уже загружается"
       ],
       "Invitation's email was sent again": [
         "Электронное письмо с приглашением было отправлено снова"
@@ -7753,9 +7666,6 @@
       ],
       "The link to your item was deleted": [
         "Ссылка на ваш элемент удалена"
-      ],
-      "Trash failed to be emptied": [
-        "Не удалось очистить корзину"
       ],
       "You stopped sharing this item": [
         "Вы перестали делиться этим элементом"
@@ -9834,9 +9744,6 @@
       "Email settings": [
         "Настройки эл. почты"
       ],
-      "Empty trash": [
-        "Очистить корзину"
-      ],
       "Enable 2FA": [
         "Включить 2FA"
       ],
@@ -10112,9 +10019,6 @@
       ],
       "Start import process": [
         "Начать процесс импорта"
-      ],
-      "Stop sharing": [
-        "Закрыть доступ"
       ],
       "Stop sharing?": [
         "Прекратить доступ?"
