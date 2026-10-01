@@ -189,6 +189,7 @@ describe('htmlSlideDocumentsToPdfBytes', () => {
     });
 
     afterEach(() => {
+        jest.restoreAllMocks();
         document.querySelectorAll('[data-pdf-export-root]').forEach((node) => {
             node.remove();
         });
@@ -217,6 +218,8 @@ describe('htmlSlideDocumentsToPdfBytes', () => {
         mockHtml2canvas.mockImplementation(async () => {
             return createCanvas(1920, 1080);
         });
+        // jsdom has no canvas backend, so toDataURL would otherwise return null.
+        jest.spyOn(HTMLCanvasElement.prototype, 'toDataURL').mockReturnValue('data:image/png;base64,AA==');
 
         await htmlSlideDocumentsToPdfBytes(
             [`<!DOCTYPE html><html><body><section class="artifact-slide-page"><h2>One</h2></section></body></html>`],
