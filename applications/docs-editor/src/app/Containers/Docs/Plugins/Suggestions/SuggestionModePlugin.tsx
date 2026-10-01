@@ -27,7 +27,6 @@ import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { SuggestionTypesThatCanBeEmpty, type SuggestionID } from './Types'
 import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INSERT_FILE_COMMAND } from '../../Commands/Events'
 import type { CommentThreadInterface, SuggestionSummaryType } from '@proton/docs-shared'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
 import { useMarkNodesContext } from '../MarkNodesContext'
 import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND, TOGGLE_SUGGESTION_MODE_COMMAND } from './Commands'
 import debounce from 'lodash/debounce'
@@ -113,7 +112,7 @@ export function SuggestionModePlugin({
 
   const { markNodeMap } = useMarkNodesContext()
 
-  const { logger: suggestionModeLogger } = useDocsDependencies()
+  const { logger: suggestionModeLogger, reportError } = useDocsDependencies()
 
   /**
    * Set of suggestion IDs created during the current session.
@@ -200,11 +199,11 @@ export function SuggestionModePlugin({
               createdSuggestionIDs.delete(id)
               suggestionModeLogger.info(`suggestion-mode: Removed id ${id} from set ${[...createdSuggestionIDs]}`)
             })
-            .catch(reportErrorToSentry)
+            .catch(reportError)
         }
       }),
     )
-  }, [createSuggestionThread, editor, markNodeMap, suggestionModeLogger])
+  }, [createSuggestionThread, editor, markNodeMap, suggestionModeLogger, reportError])
 
   useEffect(() => {
     const resolveOrUnresolveThreadsWhereRequired = (reAddedNodes: ProtonNode[], removedNodes: ProtonNode[]) => {
@@ -219,7 +218,7 @@ export function SuggestionModePlugin({
             suggestionModeLogger.info(
               `suggestion-mode: Reopening thread ${thread.id} for suggestion ${suggestionID} after undo/redo`,
             )
-            reopenSuggestion(thread.id).catch(reportErrorToSentry)
+            reopenSuggestion(thread.id).catch(reportError)
           }
           for (const removed of removedNodes) {
             const suggestionID = removed.getSuggestionIdOrThrow()
@@ -230,10 +229,10 @@ export function SuggestionModePlugin({
             suggestionModeLogger.info(
               `suggestion-mode: Rejecting thread ${thread.id} for suggestion ${suggestionID} after undo/redo`,
             )
-            rejectSuggestion(thread.id).catch(reportErrorToSentry)
+            rejectSuggestion(thread.id).catch(reportError)
           }
         })
-        .catch(reportErrorToSentry)
+        .catch(reportError)
     }
 
     const debouncedHandle = debounce(resolveOrUnresolveThreadsWhereRequired, 250)
@@ -350,6 +349,7 @@ export function SuggestionModePlugin({
     onUserModeChange,
     rejectSuggestion,
     reopenSuggestion,
+    reportError,
     suggestionModeLogger,
   ])
 

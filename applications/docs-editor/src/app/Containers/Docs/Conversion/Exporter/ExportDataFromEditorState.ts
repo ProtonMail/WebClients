@@ -6,14 +6,12 @@ import { EditorHtmlExporter } from './EditorHtmlExporter'
 import { EditorDocxExporter } from './DocxExport/EditorDocxExporter'
 import { EditorOdtExporter } from './OdtExport/EditorOdtExporter'
 import { EditorYjsExporter } from './EditorYjsExporter'
-import type { DocxExportContext } from './DocxExport/LexicalToDocx/Context'
+import type { ExporterRequiredCallbacks } from './EditorExporter'
 
 export async function exportDataFromEditorState(
   editorState: SerializedEditorState,
   format: DataTypesThatDocumentCanBeExportedAs,
-  callbacks: {
-    fetchExternalImageAsBase64: DocxExportContext['fetchExternalImageAsBase64']
-  },
+  callbacks: ExporterRequiredCallbacks,
 ): Promise<Uint8Array<ArrayBuffer>> {
   switch (format) {
     case 'txt':

@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
+import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import type { ReactNode } from 'react'
 import { useCallback, useRef, useState } from 'react'
 import type { CommentEditorHandle } from './CommentEditor'
 import { CommentEditor } from './CommentEditor'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { isMac } from '@proton/shared/lib/helpers/browser'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
 
 export function CommentsComposer({
   autoFocus,
@@ -29,6 +29,7 @@ export function CommentsComposer({
   className?: string
   buttons: (canSubmit: boolean, submitComment: () => void) => ReactNode
 }) {
+  const { reportError } = useDocsDependencies()
   const [canSubmit, setCanSubmit] = useState(false)
   const [hasNewLines, setHasNewLines] = useState(false)
   const composerRef = useRef<HTMLDivElement>(null)
@@ -82,7 +83,7 @@ export function CommentsComposer({
           const hasModifier = isMac() ? event.metaKey : event.ctrlKey
           if (hasModifier && canSubmit) {
             event.preventDefault()
-            submitComment().catch(reportErrorToSentry)
+            submitComment().catch(reportError)
             return true
           }
           return false
