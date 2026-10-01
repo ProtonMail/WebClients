@@ -48,7 +48,7 @@ const manager = (() => {
 })();
 
 interface Props {
-    rootRef: MutableRefObject<HTMLDivElement | null>;
+    rootRef: MutableRefObject<HTMLElement | null>;
     active?: boolean;
     restoreFocus?: boolean;
     preventScroll?: boolean;
@@ -163,7 +163,7 @@ const useFocusTrap = ({
             }
         };
 
-        const contain = (root: HTMLDivElement) => {
+        const contain = (root: HTMLElement) => {
             // In the case where the app is inside an iframe, the focus trap can block the parent app to take the focus
             // So it becomes impossible to use inputs for example
             // In that case, iframe side, we see that the active element is the iframe body

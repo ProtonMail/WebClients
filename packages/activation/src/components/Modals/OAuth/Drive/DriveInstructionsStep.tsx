@@ -9,7 +9,8 @@ import { IcLock } from '@proton/icons/icons/IcLock';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
-import { useEasySwitchDispatch } from '../../../../logic/store';
+import { selectOauthImportStateHasReadInstructions } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../logic/store';
 import { DriveOauthTutorial } from './DriveOauthTutorial';
 import { DriveStepModal } from './DriveStepModal';
 import { TransferLockIllustration } from './illustrations/TransferLockIllustration';
@@ -40,7 +41,8 @@ interface Props {
 
 export const DriveInstructionsStep = ({ triggerOAuth }: Props) => {
     const dispatch = useEasySwitchDispatch();
-    const [showTutorial, setShowTutorial] = useState(false);
+    const hasReadInstructions = useEasySwitchSelector(selectOauthImportStateHasReadInstructions);
+    const [showTutorial, setShowTutorial] = useState(!!hasReadInstructions);
 
     const handleCancel = () => {
         dispatch(resetOauthDraft());
