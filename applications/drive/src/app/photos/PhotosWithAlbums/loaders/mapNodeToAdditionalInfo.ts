@@ -29,6 +29,7 @@ export const mapNodeToPhotoItem = (nodeEntityRaw: NodeEntity): PhotoItem | null 
             haveSignatureIssues: !signatureResult.ok,
             parentNodeUid: node.parentUid,
             activeRevisionUid: node.activeRevision?.uid,
+            claimedCaptureTime: parsedClaimedAdditionalMetadata?.camera?.captureTime,
             deprecatedShareId: node.deprecatedShareId,
         },
     };

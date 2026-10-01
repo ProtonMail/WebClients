@@ -76,36 +76,36 @@ describe('exif', () => {
             const value = getCaptureDateTimeString(mockExif);
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const date = new Date(value!);
-            expect(date.getUTCFullYear()).toBe(2024);
-            expect(date.getUTCMonth()).toBe(0);
-            expect(date.getUTCDate()).toBe(7);
-            expect(date.getUTCHours()).toBe(9);
-            expect(date.getUTCMinutes()).toBe(0);
-            expect(date.getUTCSeconds()).toBe(53);
+            expect(date.getFullYear()).toBe(2024);
+            expect(date.getMonth()).toBe(0);
+            expect(date.getDate()).toBe(7);
+            expect(date.getHours()).toBe(9);
+            expect(date.getMinutes()).toBe(0);
+            expect(date.getSeconds()).toBe(53);
         });
         it('should return `DateTimeDigitized` if `DateTimeOriginal` is missing', () => {
             const mock = { ...mockExif, DateTimeOriginal: undefined };
             const value = getCaptureDateTimeString(mock);
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const date = new Date(value!);
-            expect(date.getUTCFullYear()).toBe(2024);
-            expect(date.getUTCMonth()).toBe(0);
-            expect(date.getUTCDate()).toBe(7);
-            expect(date.getUTCHours()).toBe(8);
-            expect(date.getUTCMinutes()).toBe(0);
-            expect(date.getUTCSeconds()).toBe(53);
+            expect(date.getFullYear()).toBe(2024);
+            expect(date.getMonth()).toBe(0);
+            expect(date.getDate()).toBe(7);
+            expect(date.getHours()).toBe(8);
+            expect(date.getMinutes()).toBe(0);
+            expect(date.getSeconds()).toBe(53);
         });
         it('should return `DateTime` if `DateTimeDigitized` and `DateTimeOriginal` is missing', () => {
             const mock = { ...mockExif, DateTimeOriginal: undefined, DateTimeDigitized: undefined };
             const value = getCaptureDateTimeString(mock);
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const date = new Date(value!);
-            expect(date.getUTCFullYear()).toBe(2024);
-            expect(date.getUTCMonth()).toBe(0);
-            expect(date.getUTCDate()).toBe(7);
-            expect(date.getUTCHours()).toBe(10);
-            expect(date.getUTCMinutes()).toBe(0);
-            expect(date.getUTCSeconds()).toBe(53);
+            expect(date.getFullYear()).toBe(2024);
+            expect(date.getMonth()).toBe(0);
+            expect(date.getDate()).toBe(7);
+            expect(date.getHours()).toBe(10);
+            expect(date.getMinutes()).toBe(0);
+            expect(date.getSeconds()).toBe(53);
         });
         it('should return `undefined` if none of prefered props are present', () => {
             const mock = {};
@@ -124,18 +124,43 @@ describe('exif', () => {
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const date = new Date(value!);
 
-            expect(date.getUTCFullYear()).toBe(1892);
-            expect(date.getUTCMonth()).toBe(9);
-            expect(date.getUTCDate()).toBe(6);
-            expect(date.getUTCHours()).toBe(14);
-            expect(date.getUTCMinutes()).toBe(56);
-            expect(date.getUTCSeconds()).toBe(16);
+            expect(date.getFullYear()).toBe(1892);
+            expect(date.getMonth()).toBe(9);
+            expect(date.getDate()).toBe(6);
+            expect(date.getHours()).toBe(14);
+            expect(date.getMinutes()).toBe(56);
+            expect(date.getSeconds()).toBe(16);
+        });
+        it('should keep the wall-clock time and append the matching EXIF offset', () => {
+            const mock = {
+                ...mockExif,
+                OffsetTimeOriginal: { id: 36881, value: ['+09:00'], description: '+09:00' },
+                OffsetTime: { id: 36880, value: ['-05:00'], description: '-05:00' },
+            };
+            expect(getCaptureDateTimeString(mock)).toBe('2024-01-07T09:00:53.000+09:00');
+        });
+        it('should return the real UTC instant, interpreted in the browser timezone, without EXIF offset', () => {
+            const mock = {
+                ...mockExif,
+                OffsetTimeOriginal: { id: 36881, value: ['   :  '], description: '   :  ' },
+            };
+            expect(getCaptureDateTimeString(mock)).toBe(new Date(2024, 0, 7, 9, 0, 53).toISOString());
         });
     });
     describe('getCaptureDateTime', () => {
         const mockFile = new File(['content'], 'test.jpg', {
             type: 'image/jpeg',
             lastModified: new Date('2024-01-01').getTime(),
+        });
+
+        it('should use the EXIF offset to compute the exact UTC instant', () => {
+            const mock = {
+                ...mockExif,
+                OffsetTimeOriginal: { id: 36881, value: ['+02:00'], description: '+02:00' },
+            };
+            const date = getCaptureDateTime(mockFile, mock);
+
+            expect(date.toISOString()).toBe('2024-01-07T07:00:53.000Z');
         });
 
         it('should return the parsed date for pre-epoch dates (before 1970)', () => {
