@@ -95,7 +95,7 @@ export const AuthServiceProvider: FC<PropsWithChildren<{ connectivity: Connectiv
                         state: params.state,
                         selector: params.selector,
                         payloadVersion: params.payloadVersion,
-                        persistent: params.persistent,
+                        persistent: DESKTOP_BUILD || params.persistent,
                     });
                 } catch (error) {
                     logger.error('[AuthServiceProvider] Error consuming fork:', error);
