@@ -9518,6 +9518,10 @@
       "The name will be visible to your users while they are signed in.": [
         "Der Name wird für deine Benutzer sichtbar sein, solange sie angemeldet sind."
       ],
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "Der Vorgang wurde für ${ pausedCount } ${ roleAssignmentSource } unterbrochen. Klicken Sie auf „Weiter“, um die Funktionszuweisung fortzusetzen.",
+        "Der Vorgang wurde für ${ pausedCount } ${ roleAssignmentSource } unterbrochen. Klicken Sie auf „Weiter“, um die Funktionszuweisung fortzusetzen."
+      ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Die Gutschrift für die Empfehlung wird bis zu zwei Monate nach Ende der Testphase der von dir empfohlenen Person gutgeschrieben, sofern diese ein Abonnement abgeschlossen hat."
       ],
@@ -20108,8 +20112,14 @@
       "Disables end-to-end email encryption for this group": [
         "Deaktiviert die Ende-zu-Ende-Verschlüsselung von E-Mails für diese Gruppe"
       ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Externe Adresse – die dieser Gruppe zugewiesenen Funktionen und Berechtigungen können nicht zugewiesen werden."
+      ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Externe Adresse – deaktiviert die Ende-zu-Ende E-Mail-Verschlüsselung für diese Gruppe, und keine verschlüsselten Ressourcen werden mit diesem Benutzer geteilt."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Externe Adresse – Keine Ende-zu-Ende-Verschlüsselung oder gemeinsame Nutzung von Ressourcen; außerdem können keine Funktionen und Berechtigungen zugewiesen werden."
       ],
       "Group membership paused": [
         "Gruppenmitgliedschaft pausiert"
@@ -20229,6 +20239,36 @@
       ],
       "Test credit": [
         "Guthaben testen"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Hol dir ${ discount }% Rabatt auf ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Hol dir ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "2 TB of storage to share": [
+        "2 TB Speicherplatz zur gemeinsamen Nutzung"
+      ],
+      "2 user accounts": [
+        "2 Benutzerkonten"
+      ],
+      "All premium features from your current plan": [
+        "Alle Premium-Funktionen deines aktuellen Abonnements"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "für 12 Monate"
       ]
     },
     "Unlimited offer": {
@@ -20484,6 +20524,9 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kannst deine eigene Funktion nicht ändern. Bitte einen anderen Administrator, dies zu tun."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
