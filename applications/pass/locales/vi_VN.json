@@ -777,6 +777,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Trình quản lý mật khẩu không có ở đây? Hãy yêu cầu."
+      ],
+      "Go back": [
+        "Quay lại"
       ]
     },
     "Activity": {
@@ -1402,6 +1405,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Mã PIN đã bị gỡ bỏ bởi một người dùng ${ PASS_APP_NAME } khác"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Mật khẩu sao lưu không chính xác. Vui lòng thử lại."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Mật khẩu thứ hai không chính xác. Hãy thử lại."
       ]
     },
     "Error message": {
@@ -2070,7 +2079,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Di chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"

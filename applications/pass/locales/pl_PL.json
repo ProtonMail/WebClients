@@ -783,6 +783,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ],
+      "Go back": [
+        "Wróć"
       ]
     },
     "Activity": {
@@ -1417,6 +1420,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kod PIN został usunięty przez inną aplikację ${ PASS_APP_NAME }"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Hasło zapasowe jest nieprawidłowe. Spróbuj ponownie."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Drugie hasło jest nieprawidłowe. Spróbuj ponownie."
       ]
     },
     "Error message": {
@@ -2148,7 +2157,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"

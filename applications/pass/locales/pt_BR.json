@@ -797,6 +797,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ],
+      "Bulk select items": [
+        "Selecionar itens em massa"
+      ],
+      "Go back": [
+        "Voltar"
       ]
     },
     "Activity": {
@@ -945,6 +951,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Suas informações pessoais vazaram em uma violação de dados de um serviço de terceiros."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Verificando ${ compromised.progress.completed } de ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -1453,6 +1462,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Senha de backup incorreta. Tente novamente."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Segunda senha incorreta. Tente novamente."
       ]
     },
     "Error message": {
@@ -2151,7 +2166,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2836,6 +2852,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Adicione um método de pagamento para que sua assinatura continue quando sua avaliação terminar."
       ]
     },
     "Keyboard key": {
@@ -4090,6 +4109,9 @@
       ],
       "ZIP or Postal code": [
         "CEP ou código postal"
+      ],
+      "Add a payment method": [
+        "Adicionar método de pagamento"
       ]
     },
     "Link": {
@@ -4433,6 +4455,9 @@
       ],
       "Used on ${ url }": [
         "Usado no ${ url }"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Digite novamente \"${ name }\" para confirmar a exclusão"
       ]
     },
     "Result": {
@@ -4441,6 +4466,12 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Esta URL NÃO será bloqueada no preenchimento automático"
+      ],
+      "Enter a URL to check if it matches the current rule": [
+        "Insira uma URL para verificar se ela corresponde à regra atual"
+      ],
+      "URL matches the rule": [
+        "A URL corresponde à regra"
       ]
     },
     "Security Center - Info": {
@@ -5176,6 +5207,13 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ],
+      "Continue in your browser": [
+        "Continuar no seu navegador"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "Mover ${ count } item para o ${ target }",
+        "Mover ${ count } itens para o ${ target }"
       ]
     },
     "Title_cloned_item": {
@@ -5533,6 +5571,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "O cofre \"${ name }\" e todos os seus itens serão excluídos permanentemente. Não é possível desfazer esta ação."
       ]
     }
   }
