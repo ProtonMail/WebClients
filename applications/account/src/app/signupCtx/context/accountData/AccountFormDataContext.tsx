@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import isDeepEqual from 'lodash/isEqual';
 import merge from 'lodash/merge';
 
+import type { TIME_PERIOD } from '@proton/activation/src/interface';
 import type { ChallengeResult } from '@proton/challenge/interface';
 import type { ChallengeRef as ChallengeV4Ref } from '@proton/challenge/v4/interface';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
@@ -64,6 +65,8 @@ interface AccountFormDataState {
     domain: string | undefined;
     // For BYOE signups: whether to import existing emails from the connected Gmail account.
     importEmails?: boolean;
+    // For BYOE signups: how far back to import existing emails.
+    importPeriod?: TIME_PERIOD;
 }
 
 interface AccountFormDataStateRequired extends Omit<AccountFormDataState, 'signupType' | 'domain'> {
@@ -357,6 +360,7 @@ const getAccountDataFromState = (state: AccountFormDataStateRequired, payload: C
         signupType: state.signupType,
         password: state.password,
         importEmails: state.importEmails,
+        importPeriod: state.importPeriod,
         payload,
     };
 };

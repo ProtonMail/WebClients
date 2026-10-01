@@ -1,4 +1,5 @@
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
+import type { TIME_PERIOD } from '@proton/activation/src/interface';
 import type { ChallengeResult } from '@proton/challenge/interface';
 import type { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
@@ -121,6 +122,8 @@ export type AccountData = BaseAccountData & {
     signupType: SignupType;
     // For BYOE signups: whether to import existing emails from the connected Gmail account.
     importEmails?: boolean;
+    // For BYOE signups: how far back to import existing emails.
+    importPeriod?: TIME_PERIOD;
 };
 
 interface SetupData {

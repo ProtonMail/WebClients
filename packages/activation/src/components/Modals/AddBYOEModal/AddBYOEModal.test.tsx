@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -21,5 +21,15 @@ describe('AddBYOEModal', () => {
         screen.getByText(`Bring your Gmail into ${MAIL_APP_NAME}`);
         const checkbox = screen.getByTestId('AddBYOEModal:importCheckbox') as HTMLInputElement;
         expect(checkbox.checked).toBe(false);
+    });
+
+    it('should disable the import period when the import checkbox is unticked', () => {
+        render(<AddBYOEModal onSubmit={noop} isLoading={false} open />);
+
+        screen.getByText('Import all messages');
+        expect(screen.getByTestId('AddBYOEModal:importPeriod')).not.toBeDisabled();
+
+        fireEvent.click(screen.getByTestId('AddBYOEModal:importCheckbox'));
+        expect(screen.getByTestId('AddBYOEModal:importPeriod')).toBeDisabled();
     });
 });

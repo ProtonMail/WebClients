@@ -2,19 +2,21 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, type ModalProps, ModalTwo, ModalTwoHeader } from '@proton/components';
+import { Checkbox, type ModalProps, ModalTwo, ModalTwoHeader, Option, SelectTwo } from '@proton/components';
 import { MAIL_APP_NAME, PRODUCT_NAMES } from '@proton/shared/lib/constants';
 import byoeConnectGmail from '@proton/styles/assets/img/illustrations/byoe-connect-gmail.svg';
 import byoeForwarding from '@proton/styles/assets/img/illustrations/byoe-forwarding.svg';
 import byoeProfiling from '@proton/styles/assets/img/illustrations/byoe-profiling.svg';
 import stopHandSign from '@proton/styles/assets/img/illustrations/stop-hand-sign.svg';
 
+import { getTimeUnitLabels } from '../../../constants';
+import { TIME_PERIOD } from '../../../interface';
 import SignInWithGoogle from '../GmailSyncModal/SignInWithGoogle';
 
 import './AddBYOEModal.scss';
 
 interface Props extends Omit<ModalProps, 'onSubmit'> {
-    onSubmit: (importEmails: boolean) => void;
+    onSubmit: (importEmails: boolean, importPeriod: TIME_PERIOD) => void;
     submitDisabled?: boolean;
     isLoading: boolean;
     expectedEmailAddress?: string;
@@ -26,6 +28,8 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
     // The checkbox is ticked by default for everyone, except when the user is converting an
     // active forwarding to a BYOE address using that same Gmail address.
     const [importEmails, setImportEmails] = useState(!expectedEmailAddress);
+    const [importPeriod, setImportPeriod] = useState(TIME_PERIOD.BIG_BANG);
+    const timeUnitLabels = getTimeUnitLabels();
 
     return (
         <ModalTwo
@@ -48,7 +52,7 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                     </div>
                     <div className="flex flex-column items-center gap-4">
                         <SignInWithGoogle
-                            onClick={() => onSubmit(importEmails)}
+                            onClick={() => onSubmit(importEmails, importPeriod)}
                             loading={isLoading}
                             disabled={submitDisabled}
                             fullWidth
@@ -65,6 +69,20 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                         >
                             <span>{c('Label').t`Import your emails`}</span>
                         </Checkbox>
+                        <SelectTwo
+                            value={importPeriod}
+                            onChange={({ value }) => setImportPeriod(value)}
+                            disabled={!importEmails}
+                            className="mt-2"
+                            aria-label={c('Label').t`Import interval`}
+                            data-testid="AddBYOEModal:importPeriod"
+                        >
+                            {Object.values(TIME_PERIOD).map((period) => (
+                                <Option key={period} value={period} title={timeUnitLabels[period]}>
+                                    {timeUnitLabels[period]}
+                                </Option>
+                            ))}
+                        </SelectTwo>
                         <div className="color-weak text-sm text-wrap-balance mt-4">
                             {c('BYOE')
                                 .t`Duplicates from previous imports will be skipped. Undo or import older messages in ${PRODUCT_NAMES.EASY_SWITCH} settings.`}

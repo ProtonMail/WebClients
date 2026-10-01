@@ -12,7 +12,14 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { checkExternalAddressClaimable, startEasySwitchSignupImportTask } from '../api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '../constants';
-import { BYOE_ADDRESS_ERROR, type EASY_SWITCH_SOURCES, type ImportToken, OAUTH_PROVIDER } from '../interface';
+import { getStartTimeFromTimePeriod } from '../helpers/getStartTimeFromTimePeriod';
+import {
+    BYOE_ADDRESS_ERROR,
+    type EASY_SWITCH_SOURCES,
+    type ImportToken,
+    OAUTH_PROVIDER,
+    type TIME_PERIOD,
+} from '../interface';
 import { loadImporters } from '../logic/importers/importers.actions';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../logic/store';
 import { loadSyncList } from '../logic/sync/sync.actions';
@@ -69,7 +76,12 @@ const useSetupGmailBYOEAddress = ({
         }
     };
 
-    const handleBYOEWithImportCallback = async (hasError: boolean, importEmails: boolean, token?: ImportToken) => {
+    const handleBYOEWithImportCallback = async (
+        hasError: boolean,
+        importEmails: boolean,
+        importPeriod: TIME_PERIOD,
+        token?: ImportToken
+    ) => {
         // If setting up the token failed or user has no access to BYOE, close the modal
         if (!hasAccessToBYOE || hasError) {
             onComplete?.();
@@ -96,6 +108,7 @@ const useSetupGmailBYOEAddress = ({
                         Account: token.Account,
                         AutomaticImport: importEmails,
                         QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
+                        StartTime: getStartTimeFromTimePeriod(importPeriod),
                     }),
                     silence: [BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS],
                 });

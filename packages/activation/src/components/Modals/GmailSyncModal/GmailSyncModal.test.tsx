@@ -3,7 +3,7 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { GmailSyncModal } from '../../../../index';
-import { EASY_SWITCH_SOURCES } from '../../../interface';
+import { EASY_SWITCH_SOURCES, TIME_PERIOD } from '../../../interface';
 import { easySwitchRender } from '../../../tests/render';
 
 jest.mock('../../../logic/StoreProvider', () => ({
@@ -72,7 +72,7 @@ describe('GmailSyncModal', () => {
 
         await waitFor(() => {
             expect(mockSyncCallback).not.toHaveBeenCalled();
-            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, true, undefined);
+            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, true, TIME_PERIOD.BIG_BANG, undefined);
         });
     });
 
@@ -96,7 +96,27 @@ describe('GmailSyncModal', () => {
 
         await waitFor(() => {
             expect(mockSyncCallback).not.toHaveBeenCalled();
-            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, false, undefined);
+            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, false, TIME_PERIOD.BIG_BANG, undefined);
+        });
+    });
+    it('should call onBYOECallback with the selected import period', async () => {
+        const mockBYOEWithImportCallback = jest.fn();
+
+        easySwitchRender(
+            <GmailSyncModal
+                open
+                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
+                hasAccessToBYOE
+                onBYOECallback={mockBYOEWithImportCallback}
+            />
+        );
+
+        fireEvent.click(screen.getByText('Import all messages'));
+        fireEvent.click(screen.getByText('Last 3 months only'));
+        fireEvent.click(screen.getByText('Connect your email'));
+
+        await waitFor(() => {
+            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, true, TIME_PERIOD.LAST_3_MONTHS, undefined);
         });
     });
 });

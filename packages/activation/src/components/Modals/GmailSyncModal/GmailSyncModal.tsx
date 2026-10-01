@@ -5,7 +5,7 @@ import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@pro
 
 import { getBYOEFailNotification, getSyncSuccessNotification } from '../../../constants';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
-import type { EASY_SWITCH_SOURCES, ImportToken, OAuthProps } from '../../../interface';
+import type { EASY_SWITCH_SOURCES, ImportToken, OAuthProps, TIME_PERIOD } from '../../../interface';
 import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '../../../interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
 import {
@@ -25,7 +25,7 @@ interface Props extends ModalProps {
     reduceHeight?: boolean;
     onSyncCallback?: (hasError: boolean, sync?: Sync) => void;
     onSyncSkipCallback?: () => void;
-    onBYOECallback?: (hasError: boolean, importEmails: boolean, token?: ImportToken) => void;
+    onBYOECallback?: (hasError: boolean, importEmails: boolean, importPeriod: TIME_PERIOD, token?: ImportToken) => void;
     noSkip?: boolean;
     hasAccessToBYOE?: boolean;
     expectedEmailAddress?: string;
@@ -87,7 +87,7 @@ const GmailSyncModal = ({
         });
     };
 
-    const handleBYOEWithImport = (importEmails: boolean) => {
+    const handleBYOEWithImport = (importEmails: boolean, importPeriod: TIME_PERIOD) => {
         void triggerOAuthPopup({
             provider: OAUTH_PROVIDER.GOOGLE,
             features: [EASY_SWITCH_FEATURES.BYOE],
@@ -108,7 +108,7 @@ const GmailSyncModal = ({
                 const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;
 
                 const hasError = res.type.endsWith('rejected');
-                onBYOECallback?.(hasError, importEmails, payload);
+                onBYOECallback?.(hasError, importEmails, importPeriod, payload);
             },
         });
     };
