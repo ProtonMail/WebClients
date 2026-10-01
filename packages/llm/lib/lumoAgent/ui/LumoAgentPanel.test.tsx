@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react';
 
+import type { RenderResult } from '@testing-library/react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { IcPencil } from '@proton/icons/icons/IcPencil';
@@ -52,10 +53,40 @@ const renderPanel = (props: Partial<ComponentProps<typeof LumoAgentPanel>>) => r
 const thinkingIndicator = () => screen.queryByText('Thinking about this');
 const idleMark = (container: HTMLElement) => container.querySelector('.lumo-agent-avatar');
 
-// JSDOM implements no scrolling; the transcript scrolls itself on every item change.
 beforeAll(() => {
     Element.prototype.scrollTo = jest.fn();
 });
+
+const TRANSCRIPT_HEIGHT = 400;
+const CONTENT_HEIGHT = 1000;
+const PINNED_CARD_HEIGHT = 150;
+const AT_BOTTOM = CONTENT_HEIGHT - TRANSCRIPT_HEIGHT;
+
+const layOutTranscript = (container: HTMLElement, clientHeight: number, scrollTop: number) => {
+    const transcript = container.querySelector('.lumo-agent-transcript')!;
+    Object.defineProperties(transcript, {
+        scrollHeight: { configurable: true, value: CONTENT_HEIGHT },
+        clientHeight: { configurable: true, value: clientHeight },
+        scrollTop: { configurable: true, value: scrollTop },
+    });
+    fireEvent.scroll(transcript);
+};
+
+const userScrollsTranscriptTo = (container: HTMLElement, scrollTop: number) =>
+    layOutTranscript(container, TRANSCRIPT_HEIGHT, scrollTop);
+
+// The browser clamps scrollTop to the taller transcript's new bottom and fires scroll with no user input.
+const pinnedCardCloses = (container: HTMLElement) => {
+    const grownHeight = TRANSCRIPT_HEIGHT + PINNED_CARD_HEIGHT;
+    layOutTranscript(container, grownHeight, CONTENT_HEIGHT - grownHeight);
+};
+
+const userScrollsUpFromBottom = (container: HTMLElement) => {
+    userScrollsTranscriptTo(container, AT_BOTTOM);
+    userScrollsTranscriptTo(container, AT_BOTTOM - 10);
+};
+
+const streamingReply = (text: string): LumoAgentItem => ({ ...reply, text });
 
 describe('LumoAgentPanel', () => {
     it('shows the idle mark and no activity indicator once a turn has finished', () => {
@@ -163,5 +194,81 @@ describe('LumoAgentPanel', () => {
         renderPanel({ items: [userTurn, emptySelection], cardRenderers, isBusy: true });
 
         expect(screen.getByRole('button', { name: 'Confirm' })).toBeDisabled();
+    });
+
+    describe('following the stream', () => {
+        const scrollToMock = () => jest.mocked(Element.prototype.scrollTo);
+
+        const midStream = () => panelWith({ items: [userTurn, streamingReply('Look')], isBusy: true });
+        const nextToken = () => panelWith({ items: [userTurn, streamingReply('Looking')], isBusy: true });
+
+        const detach = (view: RenderResult) => {
+            userScrollsUpFromBottom(view.container);
+            scrollToMock().mockClear();
+            return view;
+        };
+
+        it('leaves the user where they scrolled while tokens keep arriving', () => {
+            const { rerender } = detach(render(midStream()));
+
+            rerender(nextToken());
+
+            expect(scrollToMock()).not.toHaveBeenCalled();
+        });
+
+        it('follows again once the user scrolls back to the bottom', () => {
+            const { container, rerender } = detach(render(midStream()));
+
+            userScrollsTranscriptTo(container, AT_BOTTOM);
+            rerender(nextToken());
+
+            expect(scrollToMock()).toHaveBeenCalled();
+        });
+
+        it('snaps back to the newest turn when the user sends a message', () => {
+            const { rerender } = detach(renderPanel({ items: [userTurn, streamingReply('Look')] }));
+
+            fireEvent.change(screen.getByRole('textbox'), { target: { value: 'and the receipts' } });
+            fireEvent.click(screen.getByRole('button', { name: 'Send' }));
+            rerender(nextToken());
+
+            expect(scrollToMock()).toHaveBeenCalled();
+        });
+
+        it('snaps back to the newest turn when the user picks a suggestion', () => {
+            const { rerender } = detach(renderPanel({ items: [], suggestions }));
+
+            fireEvent.click(screen.getByRole('button', { name: /Tidy up my inbox/ }));
+            rerender(nextToken());
+
+            expect(scrollToMock()).toHaveBeenCalled();
+        });
+
+        it('keeps following after the confirm card resolves and the transcript grows', () => {
+            const appliedConfirm: LumoAgentItem = { ...pendingConfirm, status: ConfirmStatus.APPLIED };
+            const { container, rerender } = renderPanel({ items: [userTurn, pendingConfirm], isBusy: true });
+            userScrollsTranscriptTo(container, AT_BOTTOM);
+
+            rerender(panelWith({ items: [userTurn, appliedConfirm], isBusy: true }));
+            pinnedCardCloses(container);
+            scrollToMock().mockClear();
+            rerender(panelWith({ items: [userTurn, appliedConfirm, streamingReply('Moved')], isBusy: true }));
+
+            expect(scrollToMock()).toHaveBeenCalled();
+        });
+
+        it('keeps following after the user asks to keep going and the card closes', () => {
+            const { container, rerender } = detach(
+                renderPanel({ items: [userTurn, streamingReply('Look')], toolLimit: { steps: 10 } })
+            );
+
+            fireEvent.click(screen.getByRole('button', { name: 'Keep going' }));
+            rerender(nextToken());
+            pinnedCardCloses(container);
+            scrollToMock().mockClear();
+            rerender(panelWith({ items: [userTurn, streamingReply('Looking further')], isBusy: true }));
+
+            expect(scrollToMock()).toHaveBeenCalled();
+        });
     });
 });
