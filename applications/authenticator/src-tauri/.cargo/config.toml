@@ -12,4 +12,6 @@ rustflags = ["-C", "target-feature=+crt-static"]
 
 # Linux ARM64 cross-compilation from macOS
 # 1. docker build --platform linux/arm64 -f linuxarm64.dockerfile -t tauri-arm64-builder .
+#    On a Linux host, match your user so the container can write to the mounted repo:
+#    docker build --platform linux/arm64 --build-arg UID=$(id -u) --build-arg GID=$(id -g) -f linuxarm64.dockerfile -t tauri-arm64-builder .
 # 3. docker run --rm -v $(realpath ../../):/app tauri-arm64-builder
