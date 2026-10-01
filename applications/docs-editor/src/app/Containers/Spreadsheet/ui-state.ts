@@ -357,6 +357,14 @@ export function useProtonSheetsUIState(
   const search = { open: useEvent(state.searchState.onRequestSearch) }
 
   // format
+  // Share quick-apply choices across selection changes and both toolbar instances.
+  const [lastTextColor, setLastTextColor] = useState<Color | undefined>('#000000')
+  const [lastFillColor, setLastFillColor] = useState<Color | undefined>('#ffff00')
+  const [lastBorder, setLastBorder] = useState<{
+    location: BorderLocation
+    color: Color | undefined
+    style: BorderStyle | undefined
+  }>({ location: 'all', color: { theme: 1, tint: 0 }, style: 'solid' })
   const patternSpecs = PATTERN_SPECS({ locale: locale.resolved, currency: locale.currency.code })
   const formatUtils = useFormatUtils(state, patternSpecs, storeAction)
   const canUnmerge = useMemo(
@@ -419,10 +427,14 @@ export function useProtonSheetsUIState(
          * The default value is represented by `undefined`.
          */
         value: state.currentCellFormat?.textFormat?.color ?? undefined,
+        lastUsed: lastTextColor,
         /**
          * Pass `undefined` to set the text color to the default value.
          */
-        set: useEvent((value: Color | undefined) => formatUtils.setTextFormat('color', value)),
+        set: useEvent((value: Color | undefined) => {
+          setLastTextColor(value)
+          formatUtils.setTextFormat('color', value)
+        }),
       },
     },
     backgroundColor: {
@@ -430,17 +442,23 @@ export function useProtonSheetsUIState(
        * The default value is represented by `undefined`.
        */
       value: state.currentCellFormat?.backgroundColor ?? undefined,
+      lastUsed: lastFillColor,
       /**
        * Pass `undefined` to set the background color to the default value.
        */
-      set: useEvent((value: Color | undefined) => formatUtils.setBackgroundColor(value)),
+      set: useEvent((value: Color | undefined) => {
+        setLastFillColor(value)
+        formatUtils.setBackgroundColor(value)
+      }),
     },
     borders: {
       /**
        * The default value is represented by `undefined`.
        */
       value: state.currentCellFormat?.borders ?? undefined,
+      lastUsed: lastBorder,
       set: useEvent((location: BorderLocation, color: Color | undefined, style: BorderStyle | undefined) => {
+        setLastBorder({ location, color, style })
         storeAction(SheetsActions.SetBorder, [state.activeSheetId, state.activeCell, location, color, style])
         state.onChangeBorder(state.activeSheetId, state.activeCell, state.selections, location, color, style)
       }),
