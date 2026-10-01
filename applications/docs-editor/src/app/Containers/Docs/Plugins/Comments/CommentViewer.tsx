@@ -4,7 +4,6 @@ import DocumentEditorTheme from '../../../../Theme/Theme'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
 import { SafeLexicalComposer } from '../../Utils/SafeLexicalComposer'
 import { sanitizeLexicalState } from '../../Utils/SanitizeLexicalState'
 import { CommentLexicalNodes } from './CommentLexicalNodes'
@@ -16,7 +15,7 @@ interface CommentViewerProps {
 }
 
 export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className }) => {
-  const { openLink } = useDocsDependencies()
+  const { openLink, reportError } = useDocsDependencies()
 
   let editorState: string
   try {
@@ -29,7 +28,7 @@ export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className
     namespace: 'CommentViewer',
     nodes: CommentLexicalNodes,
     onError: (error: Error) => {
-      reportErrorToSentry(error)
+      reportError(error)
     },
     theme: DocumentEditorTheme,
     editorState,

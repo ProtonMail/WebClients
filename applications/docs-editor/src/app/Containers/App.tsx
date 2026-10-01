@@ -386,6 +386,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           try {
             const result = await exportDataFromEditorState(editorState, format, {
               fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+              reportError: (error, extra) => reportErrorToSentry(error, undefined, extra),
             })
             return result
           } catch (error) {
@@ -455,7 +456,9 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             editor.update(
               () => {
                 const { nodes } = $generateJSONFromSelectedNodes(editor, selection)
-                editorState = getEditorStateFromSerializedNodes(nodes)
+                editorState = getEditorStateFromSerializedNodes(nodes, (error, extra) =>
+                  reportErrorToSentry(error, undefined, extra),
+                )
               },
               {
                 discrete: true,
@@ -470,6 +473,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
           const result = await exportDataFromEditorState(editorState, format, {
             fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+            reportError: (error, extra) => reportErrorToSentry(error, undefined, extra),
           })
           const resultString = uint8ArrayToUtf8String(result)
 

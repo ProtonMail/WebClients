@@ -47,14 +47,14 @@ import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/componen
 import { Icon } from '../Components/Icon'
 import * as Icons from '../Components/icons'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { c } from 'ttag'
 import { FontColorMenu } from '../../../Components/ColorMenu'
 import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
 import { INSERT_PAGE_BREAK_COMMAND } from '../Plugins/PageBreak/PageBreakNode'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/Commands'
 import { DefaultFont, FontOptions, FontSizes } from '../../../Shared/Fonts'
-import { reportErrorToSentry } from '../../../Utils/errorMessage'
+import { useDocsDependencies } from '../DocsDependenciesProvider'
 import { getHTMLElementFontSize } from '../Utils/getHTMLElementFontSize'
 import { getSelectedNode } from '../Utils/getSelectedNode'
 import AlignmentMenuOptions, { AlignmentOptions } from './AlignmentMenuOptions'
@@ -125,6 +125,7 @@ export default function DocumentEditorToolbar({
   clientInvoker?: EditorRequiresClientMethods
   isEditorHidden?: boolean
 }) {
+  const { reportError } = useDocsDependencies()
   const isAlpha = useIsAlpha()
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
@@ -1327,7 +1328,7 @@ export default function DocumentEditorToolbar({
                 const file = event.target.files[0]
                 activeEditor.dispatchCommand(INSERT_FILE_COMMAND, file)
               } catch (error: unknown) {
-                reportErrorToSentry(error)
+                reportError(error)
               } finally {
                 imageInputRef.current!.value = ''
               }

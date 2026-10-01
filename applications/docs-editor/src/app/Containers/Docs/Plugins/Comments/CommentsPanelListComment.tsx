@@ -11,9 +11,9 @@ import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shar
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
 import { AnonymousUserEmail, CommentThreadState } from '@proton/docs-shared'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { c } from 'ttag'
-import { reportErrorToSentry } from '../../../../Utils/errorMessage'
+import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import { CommentsComposer } from './CommentsComposer'
 import { useCommentsContext } from './CommentsContext'
 import { CommentTime } from './CommentTime'
@@ -36,6 +36,7 @@ export function CommentsPanelListComment({
   isSuggestionThread: boolean
   setIsDeletingThread: (isDeleting: boolean) => void
 }): JSX.Element {
+  const { reportError } = useDocsDependencies()
   const [editor] = useLexicalComposerContext()
 
   const {
@@ -81,7 +82,7 @@ export function CommentsPanelListComment({
       return
     }
     logger.info('Accepting suggestion thread', thread.id)
-    acceptSuggestion(thread.id, summary).catch(reportErrorToSentry)
+    acceptSuggestion(thread.id, summary).catch(reportError)
     editor.focus()
   }
 
@@ -97,7 +98,7 @@ export function CommentsPanelListComment({
       return
     }
     logger.info('Rejecting suggestion thread', thread.id)
-    rejectSuggestion(thread.id, summary).catch(reportErrorToSentry)
+    rejectSuggestion(thread.id, summary).catch(reportError)
     editor.focus()
   }
 
@@ -115,7 +116,7 @@ export function CommentsPanelListComment({
               removeMarkNode(thread.markID)
             }
           })
-          .catch(reportErrorToSentry)
+          .catch(reportError)
           .finally(() => {
             setIsDeleting(false)
             setIsDeletingThread(false)
@@ -132,7 +133,7 @@ export function CommentsPanelListComment({
       onSubmit: async () => {
         setIsDeleting(true)
         deleteComment(thread.id, comment.id)
-          .catch(reportErrorToSentry)
+          .catch(reportError)
           .finally(() => {
             setIsDeleting(false)
           })
@@ -272,7 +273,7 @@ export function CommentsPanelListComment({
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm"
                     onClick={() => {
-                      resolveThread(thread.id).catch(reportErrorToSentry)
+                      resolveThread(thread.id).catch(reportError)
                     }}
                     data-testid="resolve-button"
                   >
@@ -284,7 +285,7 @@ export function CommentsPanelListComment({
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm"
                     onClick={() => {
-                      unresolveThread(thread.id).catch(reportErrorToSentry)
+                      unresolveThread(thread.id).catch(reportError)
                     }}
                     data-testid="reopen-button"
                   >
@@ -296,7 +297,7 @@ export function CommentsPanelListComment({
                     className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
                     onClick={() => {
                       if (isFirstComment) {
-                        handleDeleteThread().catch(reportErrorToSentry)
+                        handleDeleteThread().catch(reportError)
                         return
                       }
 

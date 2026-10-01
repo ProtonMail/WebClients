@@ -4,16 +4,17 @@ import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import type { ReactNode } from 'react'
 import React from 'react'
 import { c } from 'ttag'
-import { reportErrorToSentry } from '../../../Utils/errorMessage'
+import { useDocsDependencies } from '../DocsDependenciesProvider'
 
 export const SafeLexicalComposer: React.FC<{
   initialConfig: InitialConfigType
   children: ReactNode
 }> = ({ initialConfig, children }) => {
+  const { reportError } = useDocsDependencies()
   return (
     <ErrorBoundary
       onError={(error) => {
-        reportErrorToSentry(error)
+        reportError(error)
       }}
       renderFunction={(error) => (
         <div role="alert">
