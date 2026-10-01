@@ -16,6 +16,7 @@ import useModals from '@proton/components/hooks/useModals';
 import {
     type ApplePayFlow,
     getOfferedApplePayFlow,
+    hasNativeApplePaySession,
     isApplePayQRFlowSupported,
     setOfferedApplePayFlow,
 } from '@proton/payments/core/apple-pay-support';
@@ -31,7 +32,6 @@ import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -371,7 +371,7 @@ export const useApplePayDependencies = (
 
     const checkApplePay = async (): Promise<ApplePayFlow | null> => {
         try {
-            if (isSafari()) {
+            if (hasNativeApplePaySession()) {
                 const isNativeAvailable = applePayCapabilitiesEnabled
                     ? await isAvailableInIframe()
                     : await wasAvailableInBothOrigins();
