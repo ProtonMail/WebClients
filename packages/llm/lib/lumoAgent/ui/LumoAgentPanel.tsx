@@ -54,6 +54,9 @@ const toolLimitSentence = (steps: number) => {
     return c('Info').jt`${LUMO_SHORT_APP_NAME} has taken ${count} so far. Keep going?`;
 };
 
+const BOTTOM_SNAP_THRESHOLD_PX = 32;
+const SUBPIXEL_TOLERANCE_PX = 1;
+
 /**
  * The generic transcript + composer. It renders the hook's item stream and pins the single pending
  * confirm card above the composer; every visual element comes from `@proton/lumo-ui`, and the
@@ -79,18 +82,50 @@ const LumoAgentPanel = ({
 }: Props) => {
     const [draft, setDraft] = useState('');
     const scrollRef = useRef<HTMLDivElement>(null);
+    const isFollowingBottomRef = useRef(true);
+    const lastScrollTopRef = useRef(0);
 
     useEffect(() => {
-        // The empty state can overflow, so following the bottom would open the drawer past the first card.
-        if (items.length === 0) {
+        if (items.length === 0 || !isFollowingBottomRef.current) {
             return;
         }
         scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
     }, [items, isBusy]);
 
+    // Direction rather than distance decides detaching: a small trackpad nudge stays inside any
+    // threshold, and the next streamed token would yank it straight back down. A scroll that lands
+    // exactly on the bottom never detaches, because that is the browser clamping scrollTop after the
+    // transcript grows or its content shrinks.
+    const trackFollowingBottom = () => {
+        const transcript = scrollRef.current;
+        if (!transcript) {
+            return;
+        }
+        const scrolledUp = transcript.scrollTop < lastScrollTopRef.current;
+        lastScrollTopRef.current = transcript.scrollTop;
+        const distanceFromBottom = transcript.scrollHeight - transcript.scrollTop - transcript.clientHeight;
+        if (scrolledUp && distanceFromBottom > SUBPIXEL_TOLERANCE_PX) {
+            isFollowingBottomRef.current = false;
+            return;
+        }
+        if (distanceFromBottom <= BOTTOM_SNAP_THRESHOLD_PX) {
+            isFollowingBottomRef.current = true;
+        }
+    };
+
+    const followBottom = () => {
+        isFollowingBottomRef.current = true;
+    };
+
     const pickSuggestion = (prompt: string, cardId: string) => {
+        followBottom();
         onSuggestionPicked?.(cardId);
         onSend(prompt);
+    };
+
+    const resume = () => {
+        followBottom();
+        onResume();
     };
 
     const pending = items.find((item) => item.kind === 'confirm' && item.status === ConfirmStatus.PENDING);
@@ -103,6 +138,7 @@ const LumoAgentPanel = ({
             return;
         }
         setDraft('');
+        followBottom();
         onSend(text);
     };
 
@@ -163,7 +199,7 @@ const LumoAgentPanel = ({
 
     return (
         <div className="lumo-agent-panel">
-            <div ref={scrollRef} className="lumo-agent-transcript">
+            <div ref={scrollRef} className="lumo-agent-transcript" onScroll={trackFollowingBottom}>
                 {suggestions && items.length === 0 && (
                     <WelcomeSuggestions cards={suggestions} onPick={pickSuggestion} />
                 )}
@@ -190,7 +226,7 @@ const LumoAgentPanel = ({
                     note={toolLimit.activity ? <NoteLine>{toolLimit.activity}</NoteLine> : null}
                     applyLabel={c('Action').t`Keep going`}
                     cancelLabel={c('Action').t`Stop here`}
-                    onApply={onResume}
+                    onApply={resume}
                     onCancel={onDismissToolLimit}
                 />
             ) : null}
