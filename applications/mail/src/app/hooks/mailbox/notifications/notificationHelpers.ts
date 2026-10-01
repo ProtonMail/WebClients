@@ -6,6 +6,7 @@ import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { create, createElectronNotification } from '@proton/shared/lib/helpers/desktopNotification';
+import { lowercaseEmailDomain } from '@proton/shared/lib/helpers/email';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
@@ -25,10 +26,11 @@ interface NotificationParams {
 }
 
 const getNotificationBodyAndTitle = (message: Message) => {
-    const sender = message.Sender.Name || message.Sender.Address;
+    const sender = lowercaseEmailDomain(message.Sender.Name || message.Sender.Address);
+    const subject = lowercaseEmailDomain(message.Subject);
     return {
         title: c('Desktop notification title').t`New email received`,
-        body: c('Desktop notification body').t`From: ${sender} - ${message.Subject}`,
+        body: c('Desktop notification body').t`From: ${sender} - ${subject}`,
     };
 };
 

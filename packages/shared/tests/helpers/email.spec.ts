@@ -5,6 +5,7 @@ import {
     canonicalizeInternalEmail,
     getEmailTo,
     isNoReplyEmail,
+    lowercaseEmailDomain,
     parseMailtoURL,
     validateDomain,
     validateEmailAddress,
@@ -240,6 +241,63 @@ describe('email', () => {
                 'example@noreply.com', // Only the local part is checked
             ];
             expect(emails.map((email) => isNoReplyEmail(email))).toEqual([true, true, true, true, false]);
+        });
+    });
+
+    describe('lowercaseEmailDomain', () => {
+        it('should leave text without email untouched', () => {
+            expect(lowercaseEmailDomain('John DOE')).toBe('John DOE');
+        });
+
+        it('should lowercase the domain of an email and keep the local part', () => {
+            expect(lowercaseEmailDomain('Security@PROTON.ME')).toBe('Security@proton.me');
+        });
+
+        it('should lowercase the domain of emails embedded in text', () => {
+            expect(lowercaseEmailDomain('Support <Security@PROTON.ME> and Admin@Proton.CH')).toBe(
+                'Support <Security@proton.me> and Admin@proton.ch'
+            );
+        });
+
+        it('should only lowercase after the last @', () => {
+            expect(lowercaseEmailDomain('"A@B"@EXAMPLE.COM')).toBe('"A@B"@example.com');
+        });
+
+        it('should lowercase emails surrounded by quoted text', () => {
+            expect(lowercaseEmailDomain('example@domain.com')).toBe('example@domain.com');
+            expect(lowercaseEmailDomain("'Sundar' sundar@gmaiI.com")).toBe("'Sundar' sundar@gmaii.com");
+            expect(lowercaseEmailDomain("'test' email@gmaiI.com 'test")).toBe("'test' email@gmaii.com 'test");
+        });
+
+        it('should not lowercase text adjacent to the domain', () => {
+            expect(lowercaseEmailDomain("email@gmaiI.com'TEST")).toBe("email@gmaii.com'TEST");
+            expect(lowercaseEmailDomain('(a@GmaiI.com)Hello')).toBe('(a@gmaii.com)Hello');
+            expect(lowercaseEmailDomain('a@GmaiI.com.')).toBe('a@gmaii.com.');
+        });
+
+        it('should lowercase every email when separated by punctuation only', () => {
+            expect(lowercaseEmailDomain('a@GmaiI.com,b@GmaiI.com')).toBe('a@gmaii.com,b@gmaii.com');
+        });
+
+        it('should still lowercase the valid email inside malformed prefixes and suffixes', () => {
+            expect(lowercaseEmailDomain('..security@PayPaI.com')).toBe('..security@paypai.com');
+            expect(lowercaseEmailDomain('a..security@PayPaI.com')).toBe('a..security@paypai.com');
+            expect(lowercaseEmailDomain('security@PayPaI.com-')).toBe('security@paypai.com-');
+        });
+
+        it('should lowercase unicode domains', () => {
+            expect(lowercaseEmailDomain('info@BÜCHER.DE')).toBe('info@bücher.de');
+        });
+
+        it('should leave text that is not a valid email untouched', () => {
+            expect(lowercaseEmailDomain('Hello@World')).toBe('Hello@World');
+            expect(lowercaseEmailDomain('Hello @World.COM')).toBe('Hello @World.COM');
+        });
+
+        it('should lowercase all emails', () => {
+            expect(lowercaseEmailDomain('alice@gmaiI.com AAA bob@gmaiI.com')).toBe(
+                'alice@gmaii.com AAA bob@gmaii.com'
+            );
         });
     });
 });
