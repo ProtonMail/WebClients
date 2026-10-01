@@ -794,6 +794,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+      ],
+      "Go back": [
+        "Takaisin"
       ]
     },
     "Activity": {
@@ -1431,6 +1434,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koodisi poistettiin toiselta ${ PASS_APP_NAME } -päätteeltä"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Väärä varasalasana. Yritä uudelleen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Väärä toine salasana. Yritä uudelleen."
       ]
     },
     "Error message": {
@@ -2120,7 +2129,8 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"

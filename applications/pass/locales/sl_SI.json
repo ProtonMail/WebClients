@@ -636,6 +636,9 @@
       ],
       "Yes": [
         "Da"
+      ],
+      "Go back": [
+        "Pojdi nazaj"
       ]
     },
     "Browser": {
@@ -1024,6 +1027,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Vašo kodo PIN je odstranil drug odjemalec ${ PASS_APP_NAME }."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Nepravilno varnostno geslo. Poskusite znova."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nepravilno drugo geslo. Poskusite znova."
       ]
     },
     "Error message": {
