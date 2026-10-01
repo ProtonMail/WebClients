@@ -40,6 +40,7 @@ export const ProtonLoader = ({ className, type = ProtonLoaderType.Default, ...re
             fill="none"
             viewBox="0 0 56 56"
             aria-hidden="true"
+            data-proton-loader
             className={clsx(['w-custom', className])}
             style={{ '--w-custom': '10em' }}
             {...rest}
