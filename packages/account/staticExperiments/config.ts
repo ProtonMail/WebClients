@@ -14,7 +14,7 @@ export const staticExperimentsConfig = {
         schedule: [
             {
                 startsAt: '2026-01-01T00:00:00.000Z',
-                weights: { v4: 99, v5: 1 },
+                weights: { v4: 90, v5: 10 },
             },
         ],
     },
