@@ -29,7 +29,7 @@ keyring = { version = "3.6.3", features = ["apple-native", "windows-native", "sy
 tauri-plugin-process = "2.3.1"
 tauri-plugin-log = "2.9.0"
 log = "0.4.29"
-tauri-plugin-http = { version = "2.5.9", features = ["unsafe-headers", "dangerous-settings"] }
+tauri-plugin-http = { version = "2.6.1", features = ["unsafe-headers", "dangerous-settings"] }
 rand = { version = "0.10.0" }
 base64 = { version = "0.22.1" }
 # Tauri Specta v2 is still in beta, and requires using Tauri v2 and Specta v2
@@ -47,7 +47,7 @@ objc2 = "0.6.4"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 tauri-plugin-single-instance = "2.4.1"
-tauri-plugin-updater = "2.10.1"
+tauri-plugin-updater = "2.11.0"
 tauri-plugin-window-state = "2.4.1"
 
 [target.'cfg(windows)'.dependencies]
