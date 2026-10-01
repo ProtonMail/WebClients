@@ -210,7 +210,6 @@ enum DocsFeatureFlag {
     DocsLoadRecentsWithDriveSDK = 'DocsLoadRecentsWithDriveSDK',
     DocsMoveModalDriveSDK = 'DocsMoveModalDriveSDK',
     DocsRenameWithDriveSDK = 'DocsRenameWithDriveSDK',
-    DocsSharingModalDriveSDK = 'DocsSharingModalDriveSDK',
     DocsTrashWithDriveSDK = 'DocsTrashWithDriveSDK',
 }
 

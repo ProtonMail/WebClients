@@ -7,12 +7,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
-import {
-  useMoveModalDriveSdkEnabled,
-  useRenameWithSDK,
-  useSharingModalDriveSdkEnabled,
-  useTrashWithSDK,
-} from '~/utils/flags'
+import { useMoveModalDriveSdkEnabled, useRenameWithSDK, useTrashWithSDK } from '~/utils/flags'
 import { useEvent } from '~/utils/misc'
 import { getDrive, generateNodeUid } from '@proton/drive'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
@@ -67,7 +62,6 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const { getLocalID } = useAuthentication()
 
   const drive = getDrive()
-  const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
   const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
   const renameWithSDK = useRenameWithSDK()
   const trashWithSDK = useTrashWithSDK()
@@ -88,14 +82,10 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   })
 
   const share = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
-    if (sharingModalDriveSdkEnabled) {
-      showSharingModal({
-        drive,
-        nodeUid: generateNodeUid(volumeId, linkId),
-      })
-    } else {
-      driveCompat.openDocumentSharingModal({ linkId, volumeId })
-    }
+    showSharingModal({
+      drive,
+      nodeUid: generateNodeUid(volumeId, linkId),
+    })
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_shared)
   })
 

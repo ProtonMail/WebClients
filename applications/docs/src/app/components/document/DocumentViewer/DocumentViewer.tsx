@@ -22,7 +22,6 @@ import {
   DocControllerEvent,
   SquashVerificationObjectionDecision,
   WebsocketConnectionEvent,
-  isDocumentState,
 } from '@proton/docs-core'
 import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
@@ -67,7 +66,6 @@ import {
   useIsGatePrivateInviteAccessEnabled,
   useIsOpenTracerEnabled,
   useIsSheetsEditorEnabled,
-  useSharingModalDriveSdkEnabled,
 } from '~/utils/flags'
 import type { ProviderType } from '../../../provider-type'
 import TracerAlert from '../../../tracer/TracerAlert'
@@ -83,7 +81,6 @@ import type { InviteAutoAcceptResult } from './InviteAutoAccepter'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { PrivateDocumentInviteGate } from './PrivateDocumentInviteGate'
 import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
-import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
 import { useSheetsDebugArtifacts } from './useSheetsDebugArtifacts'
 
 function useSuggestionsFeatureFlag() {
@@ -258,8 +255,6 @@ export function DocumentViewer({
    * In private mode, we know the user's role immediately so don't have to wait for the userRole property to settle.
    */
   const renderEditor = !application.isPublicMode ? true : isPublicViewer != undefined
-
-  const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
 
   useChangeAddressWhenPubliclyShared(nodeMeta, documentState)
 
@@ -841,14 +836,6 @@ export function DocumentViewer({
       {ready && <WordCountOverlay />}
 
       {(!documentState || !editorController) && <Loader documentType={documentType} />}
-
-      {documentState &&
-        isDocumentState(documentState) &&
-        isPrivateNodeMeta(nodeMeta) &&
-        documentState.getProperty('userRole').canReadPublicShareUrl() &&
-        !sharingModalDriveSdkEnabled && (
-          <AppendPublicShareKeyMaterialToTitle nodeMeta={nodeMeta} documentState={documentState} />
-        )}
 
       {renderEditor && (
         <>

@@ -30,7 +30,7 @@ import type { DocumentAction, DocumentType } from '@proton/docs-shared'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { useFlag } from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
-import { useIsSheetsEditorEnabled, useSharingModalDriveSdkEnabled } from '~/utils/flags'
+import { useIsSheetsEditorEnabled } from '~/utils/flags'
 import { getDocsReportContextLines } from '~/utils/report-context'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { WorkspacePromoBanner } from '../../DocumentViewer/WorkspacePromoBanner'
@@ -167,9 +167,8 @@ function DocsHeaderForDocument({
   const isHomepageEnabled = useFlag('DocsHomepageEnabled')
   const { getLocalID } = useAuthentication()
 
-  const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
   const { showSharingModal, sharingModal } = useSharingModal()
-  function openSharingModalReplaceAddressSDK() {
+  function openSharingModalReplaceAddress() {
     showSharingModal({
       drive: getDrive(),
       nodeUid: generateNodeUid(volumeId, nodeId),
@@ -248,13 +247,7 @@ function DocsHeaderForDocument({
               <DocumentActiveUsers className="mr-2 hidden md:flex" />
 
               {documentState.getProperty('userRole').canShare() && (
-                <HeaderShareButton
-                  onClick={
-                    sharingModalDriveSdkEnabled
-                      ? openSharingModalReplaceAddressSDK
-                      : () => authenticatedController?.openDocumentSharingModal()
-                  }
-                />
+                <HeaderShareButton onClick={openSharingModalReplaceAddress} />
               )}
             </>
           )}

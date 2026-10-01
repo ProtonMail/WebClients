@@ -1,4 +1,5 @@
 import type { SessionKey } from '@protontech/crypto';
+
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
 import type { ThumbnailType } from './media';

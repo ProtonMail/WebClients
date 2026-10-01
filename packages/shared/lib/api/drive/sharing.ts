@@ -1,5 +1,4 @@
-import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
-import type { CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
+import { HTTP_ERROR_CODES } from '../../errors';
 
 export const queryInitSRPHandshake = (token: string) => {
     return {
@@ -75,48 +74,6 @@ export const querySharedURLFileRevision = (
         };
     }
     return query;
-};
-
-export const queryCreateSharedLink = (shareId: string, data: CreateSharedURL) => {
-    return {
-        method: 'post',
-        url: `drive/shares/${shareId}/urls`,
-        data,
-    };
-};
-
-export const querySharedLinks = (shareId: string, params: { Page: number; PageSize?: number; Recursive?: 1 | 0 }) => {
-    return {
-        method: 'get',
-        url: `drive/shares/${shareId}/urls`,
-        params,
-    };
-};
-
-export const queryUpdateSharedLink = (shareId: string, shareUrlId: string, data: Partial<UpdateSharedURL>) => {
-    return {
-        method: 'put',
-        url: `drive/shares/${shareId}/urls/${shareUrlId}`,
-        data,
-        silence: [API_CUSTOM_ERROR_CODES.MAX_PUBLIC_EDIT_MODE_FOR_FREE_USER],
-    };
-};
-
-export const queryDeleteSharedLink = (shareId: string, shareUrlId: string) => {
-    return {
-        method: 'delete',
-        url: `drive/shares/${shareId}/urls/${shareUrlId}`,
-    };
-};
-
-export const queryDeleteMultipleSharedLinks = (shareId: string, shareUrlIds: string[]) => {
-    return {
-        method: 'post',
-        url: `drive/shares/${shareId}/urls/delete_multiple`,
-        data: {
-            ShareURLIDs: shareUrlIds,
-        },
-    };
 };
 
 export const querySharedWithMeLinks = (params?: { AnchorID?: string }) => {
