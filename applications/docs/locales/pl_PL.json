@@ -342,9 +342,6 @@
       "Email settings": [
         "Ustawienia adresu e-mail"
       ],
-      "Empty trash": [
-        "Opróżnij kosz"
-      ],
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
       ],
@@ -555,9 +552,6 @@
       "Next month": [
         "Następny miesiąc"
       ],
-      "Next page": [
-        "Następna strona"
-      ],
       "No, thanks": [
         "Nie, dziękuję"
       ],
@@ -593,9 +587,6 @@
       ],
       "Previous month": [
         "Poprzedni miesiąc"
-      ],
-      "Previous page": [
-        "Poprzednia strona"
       ],
       "Print": [
         "Drukuj"
@@ -2901,9 +2892,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" już istnieje"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } nie może połączyć się z kontem zewnętrznym"
       ],
@@ -3168,9 +3156,6 @@
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Przesyłanie zdjęć jest tymczasowo wyłączone. Spróbuj ponownie później"
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Ustaw niestandardową domenę przed dodaniem adresów."
       ],
@@ -3291,12 +3276,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Nazwa folderu jest zbyt długa. Wpisz krótszą nazwę."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Zaproszenie nie może zostać zakończone. Spróbuj ponownie później."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Zaproszenie nie istnieje"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Nazwa etykiety jest nieprawidłowa. Wpisz inną nazwę."
       ],
@@ -3308,21 +3287,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Usunięcie linku do elementu nie powiodło się"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Nowa rewizja oryginalnego pliku nie została przesłana. Spróbuj ponownie później"
-      ],
-      "The original file has missing active revision": [
-        "Oryginalny plik nie posiada aktywnej rewizji"
-      ],
-      "The original file has missing hash key": [
-        "Oryginalny plik nie posiada kryptograficznego skrótu klucza"
-      ],
-      "The original file has missing session key": [
-        "Oryginalny plik nie posiada klucza sesji"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Oryginalny plik nie został przesłany. Spróbuj ponownie później"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Posiadasz zbyt wiele folderów na swoim koncie zewnętrznym. Dostosuj proces importowania, aby usunąć niektóre foldery."
@@ -3377,9 +3341,6 @@
       ],
       "Update Too Large": [
         "Aktualziacja jest zbyt duża"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Przesyłanie tego folderu jest tymczasowo wyłączone"
       ],
       "Username must begin with a letter or digit": [
         "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
@@ -4547,9 +4508,6 @@
       "Are you sure you want to discard your import?": [
         "Czy na pewno chcesz odrzucić swój import?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Czy na pewno chcesz opróżnić kosz i trwale usunąć wszystkie elementy?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Czy na pewno chcesz trwale usunąć element \"${ itemName }\"?"
       ],
@@ -4949,9 +4907,6 @@
       "Link copied": [
         "Link został skopiowany"
       ],
-      "Link copied to clipboard": [
-        "Link został skopiowany do schowka"
-      ],
       "Link expired": [
         "Link wygasł"
       ],
@@ -5327,9 +5282,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "To jest nazwa organizacji, którą będą widzieć użytkownicy. Możesz ją zmienić w dowolnym momencie."
       ],
-      "This item already exists in your library": [
-        "Ten element już istnieje"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
@@ -5371,12 +5323,6 @@
       ],
       "Tracking": [
         "Śledzenie"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Transfer pliku \"${ name }\" został anulowany"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Transfer pliku \"${ file.name }\" został pominięty"
       ],
       "Trash": [
         "Kosz"
@@ -7540,17 +7486,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "Przywrócenie elementu \"${ name } z kosza nie powiodło się"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Nie udało się zapisać pliku \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "Element \"${ name }\" został przeniesiony do kosza"
       ],
       "\"${ name }\" restored from trash": [
         "Element \"${ name }\" został przywrócony z kosza"
-      ],
-      "\"${ name }\" saved successfully": [
-        "Plik \"${ name }\" został zapisany"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Zmiana nazwy \"${ newName }\" nie powiodła się"
@@ -7639,12 +7579,6 @@
       "Access updated and shared": [
         "Dostęp został zaktualizowany i przyznany"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Wszystkie elementy w koszu wkrótce zostaną trwale usunięte"
-      ],
-      "Cannot load link": [
-        "Nie można załadować linku"
-      ],
       "Cannot load next page": [
         "Nie można załadować następnej strony"
       ],
@@ -7653,18 +7587,6 @@
       ],
       "Contact group updated": [
         "Grupa kontaktów została zaktualizowana"
-      ],
-      "Device failed to be removed": [
-        "Usunięcie urządzenia nie powiodło się"
-      ],
-      "Device failed to be renamed": [
-        "Zmiana nazwy urządzenia nie powiodła się"
-      ],
-      "Device removed": [
-        "Urządzenie zostało usunięte"
-      ],
-      "Device renamed": [
-        "Nazwa urządzenia została zmieniona"
       ],
       "Document moved to trash": [
         "Dokument został przeniesiony do kosza"
@@ -7692,15 +7614,6 @@
       ],
       "Failed to rename document": [
         "Nie udało się zmienić nazwy dokumentu"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Plik lub folder \"${ filename }\" i ${ count } inny jest już przesyłany",
-        "Plik lub folder \"${ filename }\" i ${ count } inne są już przesyłane",
-        "Plik lub folder \"${ filename }\" i ${ count } innych są już przesyłane",
-        "Plik lub folder \"${ filename }\" i ${ count } innych są już przesyłane"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Plik lub folder \"${ filename }\" jest już przesyłany"
       ],
       "Invitation's email was sent again": [
         "Zaproszenie zostało ponownie wysłane"
@@ -7761,9 +7674,6 @@
       ],
       "The link to your item was deleted": [
         "Link do elementu został usunięty"
-      ],
-      "Trash failed to be emptied": [
-        "Opróżnienie kosza nie powiodło się"
       ],
       "You stopped sharing this item": [
         "Zatrzymano udostępnianie elementu"
@@ -9842,9 +9752,6 @@
       "Email settings": [
         "Ustawienia adresu e-mail"
       ],
-      "Empty trash": [
-        "Opróżnij kosz"
-      ],
       "Enable 2FA": [
         "Włącz uwierzytelnianie dwustopniowe"
       ],
@@ -10120,9 +10027,6 @@
       ],
       "Start import process": [
         "Rozpocznij proces importowania"
-      ],
-      "Stop sharing": [
-        "Zatrzymaj udostępnianie"
       ],
       "Stop sharing?": [
         "Zatrzymać udostępnianie?"

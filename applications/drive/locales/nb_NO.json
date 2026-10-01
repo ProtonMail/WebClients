@@ -303,9 +303,6 @@
       "Create folder": [
         "Opprett mappe"
       ],
-      "Create new folder": [
-        "Opprett ny mappe"
-      ],
       "Create new password": [
         "Opprett nytt passord"
       ],
@@ -3397,9 +3394,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "En melding er nødvendig når du rapporterer brudd på opphavsrett eller stjålne data"
       ],
-      "A problem occurred, please try again.": [
-        "En feil oppstod. Forsøk igjen."
-      ],
       "Address could not be added.": [
         "Adressen kunne ikke legges til."
       ],
@@ -3480,12 +3474,6 @@
       ],
       "Contact signature not verified": [
         "Kontaktsignaturen er ikke bekreftet"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Innholdssøk kan ikke aktiveres i denne nettleseren. Avslutt privat nettlesingsmodus eller bruk en annen nettleser."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Innholdssøk kan ikke aktiveres. Start programmet på nytt eller tøm data."
       ],
       "Copy operation aborted": [
         "Kopieringsoperasjonen ble avbrutt"
@@ -3593,9 +3581,6 @@
       ],
       "Failed to change permissions settings": [
         "Kunne ikke endre tillatelsesinnstillinger"
-      ],
-      "Failed to copy photo to album": [
-        "Kunne ikke kopiere bildet til albumet"
       ],
       "Failed to create folder": [
         "Kunne ikke opprette mappe"
@@ -3870,9 +3855,6 @@
       ],
       "Photo not found": [
         "Bilde ikke funnet"
-      ],
-      "Please activate your search again": [
-        "Aktiver søket ditt på nytt"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Sjekk om ABN-nummeret ditt er registrert for grenseoverskridende merverdiavgift"
@@ -5656,14 +5638,8 @@
       "Clear data": [
         "Tøm data"
       ],
-      "Clear encrypted search data": [
-        "Tøm kryptert søkedata"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Tømming av nettleserdata vil slette søkeindeksen på denne enheten. Alle filer må indekseres på nytt mens du bruker søkefunksjonaliteten."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Tømmer nettleserdata relatert til det krypterte søket."
       ],
       "Clears browser data related to the search.": [
         "Tømmer nettleserdata relatert til søket."
@@ -5852,9 +5828,6 @@
       "Enabling drive search": [
         "Aktiverer søk i Drive"
       ],
-      "Encrypted search is here": [
-        "Kryptert søk er her"
-      ],
       "End-to-end encrypted": [
         "Ende-til-ende-kryptert"
       ],
@@ -5884,16 +5857,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Skriv inn ditt eget passord (som betrodd kontakt)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Beregnet tid som gjenstår: ${ estimatedMinutes } minutt",
-        "Beregnet tid som gjenstår: ${ estimatedMinutes } minutter"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Estimert gjenværende tid: mindre enn ett minutt"
-      ],
-      "Estimating time remaining...": [
-        "Beregner gjenstående tid…"
       ],
       "Everything in ${ planOrAppName }": [
         "Alt i ${ planOrAppName }"
@@ -5978,9 +5941,6 @@
       ],
       "High Priority": [
         "Høy prioritet"
-      ],
-      "How does encrypted search work?": [
-        "Hvordan fungerer kryptert søk?"
       ],
       "I have not finished this one yet.": [
         "Jeg er ikke ferdig med denne ennå."
@@ -6072,12 +6032,6 @@
       ],
       "Indexing in progress": [
         "Indeksering pågår"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Indekserer elementer ${ esProgress } av ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Indekserer søketreff..."
       ],
       "Inherited from parent folder": [
         "Arvet fra overordnet mappe"
@@ -6256,9 +6210,6 @@
       "Move ${ folderCount } folder": [
         "Flytt ${ folderCount } mappe",
         "Flytt ${ folderCount } mapper"
-      ],
-      "Moving files": [
-        "Flytter filer"
       ],
       "My Links": [
         "Mine koblinger"
@@ -6511,9 +6462,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Privat søk aktivert. Du kan nå lukke denne dialogen og søke etter filer og mapper."
-      ],
       "Public link": [
         "Offentlig kobling"
       ],
@@ -6582,9 +6530,6 @@
       ],
       "Scan to download": [
         "Skann for å laste ned"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Søk kan ikke aktiveres i denne nettleseren"
       ],
       "Search data can't be read": [
         "Søkedataene kan ikke leses"
@@ -6880,9 +6825,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "For å muliggjøre virkelig privat søk, må ${ DRIVE_APP_NAME } indeksere filene lokalt."
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "For å muliggjøre virkelig privat søk, må vi indeksere filene dine lokalt. Du kan fremdeles bruke ${ DRIVE_APP_NAME } som normalt - vi gir deg beskjed når indekseringen er ferdig."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
       ],
@@ -6981,9 +6923,6 @@
       ],
       "Update required": [
         "Oppdatering kreves"
-      ],
-      "Updating drive search...": [
-        "Oppdaterer Drive-søk..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Oppgrader når som helst for å få med deg resten"
@@ -8052,9 +7991,6 @@
       "Shared with me": [
         "Delt med meg"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "Vis indekseringsfremdrift for kryptert søk"
-      ],
       "Sign emails": [
         "Signer e-poster"
       ],
@@ -8120,9 +8056,6 @@
       ],
       "Toolbar": [
         "Verktøylinje"
-      ],
-      "Type": [
-        "Type"
       ],
       "Unlock drive": [
         "Lås opp stasjon"
@@ -9812,35 +9745,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" opprettet"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" slettet"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "\"${ ellipsedName }\" slettet permanent fra papirkurven"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "\"${ ellipsedName }\" kunne ikke opprettes"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "\"${ ellipsedName } ble ikke slettet"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "\"${ ellipsedName }\" kunne ikke slettes permanent fra papirkurven"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "\"${ ellipsedName }\" kunne ikke flyttes"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\" kunne ikke gjenopprettes fra papirkurven"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" flyttet"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "\"${ ellipsedName }\" gjenopprettet fra papirkurven"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" flyttet"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" delt"
@@ -9888,10 +9800,6 @@
         "${ numberOfItems } element kopiert",
         "${ numberOfItems } elementer kopiert"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } element slettet",
-        "${ numberOfItems } elementer slettet"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } element slettet permanent",
         "${ numberOfItems } elementer slettet permanent"
@@ -9900,21 +9808,9 @@
         "${ numberOfItems } element slettet permanent fra papirkurven",
         "${ numberOfItems } elementer slettet permanent fra papirkurven"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } element kunne ikke slettes permanent fra papirkurven",
-        "${ numberOfItems } elementer kunne ikke slettes permanent fra papirkurven"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } element kunne ikke flyttes",
-        "${ numberOfItems } elementer kunne ikke flyttes"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } element kunne ikke flyttes til papirkurven",
         "${ numberOfItems } elementer kunne ikke flyttes til papirkurven"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } element kunne ikke gjenopprettes fra papirkurven",
-        "${ numberOfItems } elementer kunne ikke gjenopprettes fra papirkurven"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } element flyttet",
@@ -9927,10 +9823,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } element gjenopprettet fra papirkurven",
         "${ numberOfItems } elementer gjenopprettet fra papirkurven"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } element flyttet",
-        "${ numberOfItems } elementer flyttet"
       ],
       "${ reason } has been disabled": [
         "${ reason } er deaktivert"
@@ -9951,9 +9843,6 @@
       "All items deleted permanently from trash": [
         "Alle elementer slettet permanent fra papirkurven"
       ],
-      "Cannot load link": [
-        "Kan ikke laste kobling"
-      ],
       "Cannot load next page": [
         "Kan ikke laste inn neste side"
       ],
@@ -9966,20 +9855,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopi av \"${ ellipsedName }\" flyttet til papirkurven"
       ],
-      "Device failed to be removed": [
-        "Enhet kunne ikke fjernes"
-      ],
-      "Device failed to be renamed": [
-        "Enhet kunne ikke gis nytt navn"
-      ],
       "Device removed": [
         "Enhet fjernet"
       ],
       "Device renamed": [
         "Enhet byttet navn"
-      ],
-      "Encrypted search activated": [
-        "Kryptert søk aktivert"
       ],
       "Error while listing devices": [
         "Feil ved opplisting av enheter"
@@ -11838,12 +11718,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Redigeringspersoner kan nå administrere deling og invitere andre. Du kan slå det av når som helst i delingsinnstillingene."
-      ],
-      "Encrypted search is here": [
-        "Kryptert søk er her"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Nå kan du enkelt søke i Drive-filer samtidig som du holder dataene sikre."
       ]
     },
     "sso": {

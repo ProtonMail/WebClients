@@ -28476,8 +28476,14 @@
       "Disables end-to-end email encryption for this group": [
         "Bu grup için uçtan uca e-posta şifrelemesini kapatır"
       ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Dış adres - Bu gruba roller ve izinler atanamaz."
+      ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Dış adres - Bu grup için uçtan uca e-posta şifrelemesini kapatır ve şifrelenmiş kaynaklar bu kullanıcı ile paylaşılmaz."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Dış adres: Uçtan uca şifreleme veya kaynak paylaşımı yoktur ve roller ile izinler atanamaz."
       ],
       "Group membership paused": [
         "Grup üyeliği duraklatılmış"
@@ -28630,6 +28636,36 @@
       ],
       "Test credit": [
         "Deneme kredisi"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "${ planName } için %${ discount } indirim kazanın"
+      ],
+      "Get ${ planName }": [
+        "${ planName } tarifesini edinin"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 TB of storage to share": [
+        "Paylaşılabilen 2 TB depolama alanı"
+      ],
+      "2 user accounts": [
+        "2 kullanıcı hesabı"
+      ],
+      "All premium features from your current plan": [
+        "Geçerli tarifenizdeki tüm ücretli özellikler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 ay için"
       ]
     },
     "Unlimited offer": {
@@ -28946,6 +28982,9 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Kendi rollerinizi değiştiremezsiniz. Başka bir yöneticiden bunları değiştirmesini isteyin."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."

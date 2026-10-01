@@ -339,9 +339,6 @@
       "Email settings": [
         "이메일 설정"
       ],
-      "Empty trash": [
-        "휴지통 비우기"
-      ],
       "enable desktop notifications": [
         "데스크톱 알림을 활성화"
       ],
@@ -561,9 +558,6 @@
       "Next month": [
         "다음 달"
       ],
-      "Next page": [
-        "다음 페이지"
-      ],
       "No, thanks": [
         "아니요, 괜찮아요"
       ],
@@ -605,9 +599,6 @@
       ],
       "Previous month": [
         "지난 달"
-      ],
-      "Previous page": [
-        "이전 페이지"
       ],
       "Print": [
         "인쇄"
@@ -2880,9 +2871,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\"이(가) 이미 존재합니다"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } 외부 계정에 연결할 수 없었습니다."
       ],
@@ -3312,9 +3300,6 @@
       "Photo not found": [
         "사진을 찾을 수 없음"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "사진 업로드가 일시적으로 비활성화되었습니다. 나중에 다시 시도해 주십시오."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "주소를 추가하기 전에 지정 도메인을 설정해야 합니다."
       ],
@@ -3459,12 +3444,6 @@
       "The folder name is too long. Please choose a different name.": [
         "폴더 이름이 너무 깁니다. 다른 이름을 사용해 주세요."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "이 초대는 완료되지 않았습니다. 나중에 다시 시도하세요."
-      ],
-      "The invitation doesn't exist anymore": [
-        "이 초대는 더 이상 존재하지 않습니다."
-      ],
       "The label name is invalid. Please choose a different name.": [
         "라벨 이름이 유효하지 않습니다. 다른 이름을 사용해 주세요."
       ],
@@ -3476,21 +3455,6 @@
       ],
       "The link to your item failed to be deleted": [
         "항목 링크를 삭제하는 데 실패했습니다."
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "원본 파일의 새로운 리비전이 아직 업로드되지 않았습니다, 나중에 다시 시도해 주세요"
-      ],
-      "The original file has missing active revision": [
-        "원본 파일에 활성화된 수정본이 없습니다"
-      ],
-      "The original file has missing hash key": [
-        "원본 파일에 해시 키가 없습니다"
-      ],
-      "The original file has missing session key": [
-        "원본 파일에 세션 키가 없습니다"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "원본 파일이 아직 업로드되지 않았습니다, 나중에 다시 시도해 주세요"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "업로드된 파일과 원본 파일이 일치하지 않습니다. 다시 시도해 주세요."
@@ -3572,9 +3536,6 @@
       ],
       "Update Too Large": [
         "업데이트 너무 큼"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "이 폴더에 대한 업로드가 일시적으로 비활성화 되었습니다."
       ],
       "Username must begin with a letter or digit": [
         "사용자명은 문자로 시작해야 합니다"
@@ -4696,9 +4657,6 @@
       "Are you sure you want to discard your import?": [
         "정말로 불러오기를 취소하시겠어요?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "정말 휴지통을 비워 모든 항목을 삭제하시겠습니까?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "정말 \"${ itemName }\"을(를) 휴지통에서 영구적으로 삭제하시겠습니까?"
       ],
@@ -5122,9 +5080,6 @@
       "Link copied": [
         "링크를 복사했습니다"
       ],
-      "Link copied to clipboard": [
-        "링크가 클립보드에 복사됨"
-      ],
       "Link expired": [
         "링크가 만료되었습니다"
       ],
@@ -5509,9 +5464,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "사용자가 볼 수 있는 조직의 이름 또는 닉네임입니다. 언제든지 변경할 수 있습니다."
       ],
-      "This item already exists in your library": [
-        "이 항목은 이미 라이브러리에 존재합니다."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
       ],
@@ -5583,12 +5535,6 @@
       ],
       "Tracking": [
         "트래킹"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "파일 \"${ name }\" 의 이동 취소됨"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "파일 \"${ file.name }\" 의 이동 생략됨"
       ],
       "Trash": [
         "휴지통"
@@ -6482,6 +6428,9 @@
       ],
       "Pay invoice": [
         "청구서 지불"
+      ],
+      "Pay it": [
+        "결제"
       ],
       "Reactivate now": [
         "지금 재활성화"
@@ -7669,17 +7618,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\"을(를) 휴지통에서 복구하는 데 실패했습니다"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\"을(를) 생성할 수 없습니다"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" 이(가) 휴지통으로 이동됨"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" 이(가) 휴지통에서 복구되었습니다"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\"이(가) 성공적으로 저장되었습니다"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"의 이름을 변경할 수 없습니다"
@@ -7738,14 +7681,8 @@
       "Access updated and shared": [
         "접근을 업데이트 및 공유했습니다."
       ],
-      "All items will soon be permanently deleted from trash": [
-        "휴지통의 모든 항목이 영구적으로 삭제됩니다"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "현재 문서가 공유된 폴더에 있으므로 폴더의 소유자만 복원할 수 있습니다."
-      ],
-      "Cannot load link": [
-        "링크를 불러오는 중 문제 발생"
       ],
       "Cannot load next page": [
         "다음 페이지 불러오기 실패"
@@ -7755,18 +7692,6 @@
       ],
       "Contact group updated": [
         "연락처 그룹 업데이트됨"
-      ],
-      "Device failed to be removed": [
-        "기기 삭제 실패"
-      ],
-      "Device failed to be renamed": [
-        "기기 이름 변경 실패"
-      ],
-      "Device removed": [
-        "기기 삭제됨"
-      ],
-      "Device renamed": [
-        "기기 이름 변경됨"
       ],
       "Document moved to trash": [
         "문서가 휴지통으로 이동되었습니다"
@@ -7812,12 +7737,6 @@
       ],
       "Failed to trash document": [
         "문서 휴지통 이동에 실패했습니다"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "\"${ filename }\" 및 ${ count }개의 파일 및 폴더가 이미 업로드 중입니다"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "파일 또는 폴더 \"${ filename }\"이(가) 이미 업로드 중입니다"
       ],
       "Invitation's email was sent again": [
         "초대 이메일을 다시 전송했습니다."
@@ -7872,9 +7791,6 @@
       ],
       "The link to your item was deleted": [
         "항목의 링크가 삭제되었습니다"
-      ],
-      "Trash failed to be emptied": [
-        "휴지통 비우기 실패"
       ],
       "You stopped sharing this item": [
         "이 항목에 대한 공유를 멈추었습니다"
@@ -9890,9 +9806,6 @@
       "Email settings": [
         "이메일 설정"
       ],
-      "Empty trash": [
-        "휴지통 비우기"
-      ],
       "Enable 2FA": [
         "2단계 인증 활성화"
       ],
@@ -10174,9 +10087,6 @@
       ],
       "Start import process": [
         "불러오기 과정 시작"
-      ],
-      "Stop sharing": [
-        "공유 중지"
       ],
       "Stop sharing?": [
         "공유를 중단합니까?"

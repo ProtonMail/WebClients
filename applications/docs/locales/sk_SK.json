@@ -348,9 +348,6 @@
       "Email settings": [
         "Nastavenie emailu"
       ],
-      "Empty trash": [
-        "Vyprázdniť kôš"
-      ],
       "enable desktop notifications": [
         "povoliť notifikácie na pracovnej ploche"
       ],
@@ -570,9 +567,6 @@
       "Next month": [
         "Budúci mesiac"
       ],
-      "Next page": [
-        "Ďalšia strana"
-      ],
       "No, thanks": [
         "Nie, ďakujem"
       ],
@@ -614,9 +608,6 @@
       ],
       "Previous month": [
         "Predchádzajúci mesiac"
-      ],
-      "Previous page": [
-        "Predchádzajúca strana"
       ],
       "Print": [
         "Tlačiť"
@@ -2946,9 +2937,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "„${ sanitizedName }“ už existuje"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } sa nedokáže pripojiť k vášmu externému účtu."
       ],
@@ -3399,9 +3387,6 @@
       "Photo not found": [
         "Fotografia nebola nájdená"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Nahrávanie fotografií je dočasne nedostupné. Skúste to prosím, neskôr."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Pred pridaním adries nastavte vlastnú doménu."
       ],
@@ -3552,12 +3537,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Názov priečinka je príliš dlhý. Zvoľte prosím iný názov."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Pozvánku ešte nie je možné dokončiť. Skúste to znova neskôr, prosím."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Pozvánka už neexistuje"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Názov štítku je neplatný. Zvoľte prosím iný názov."
       ],
@@ -3569,21 +3548,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Odkaz na vašu položku sa nepodarilo zmazať"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Nová kontrola originálneho súboru ešte nie je nahratá, skúste to znova neskôr, prosím"
-      ],
-      "The original file has missing active revision": [
-        "Pôvodnému súboru chýbajú aktívne revízie"
-      ],
-      "The original file has missing hash key": [
-        "Originálnemu súboru chýba hash kľúč"
-      ],
-      "The original file has missing session key": [
-        "Pôvodnému súboru chýba kľúč relácie"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Pôvodný súbor ešte nie je nahratý, skúste to znova neskôr, prosím"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Nahratý súbor nezodpovedá originálu. Skúste to znova, prosím."
@@ -3665,9 +3629,6 @@
       ],
       "Update Too Large": [
         "Aktualizácia je príliš veľká"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Nahrávanie do tohto priečinka je dočasne deaktivované"
       ],
       "Username must begin with a letter or digit": [
         "Používateľské meno musí začínať písmenom alebo číslom"
@@ -4906,9 +4867,6 @@
       "Are you sure you want to discard your import?": [
         "Naozaj chcete zahodiť váš import?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Naozaj chcete vyprázdniť kôš a natrvalo vymazať všetky položky?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Naozaj chcete „${ itemName }“ natrvalo vymazať z koša?"
       ],
@@ -5341,9 +5299,6 @@
       "Link copied": [
         "Odkaz bol skopírovaný"
       ],
-      "Link copied to clipboard": [
-        "Odkaz bol skopírovaný do schránky"
-      ],
       "Link expired": [
         "Platnosť odkazu vypršala"
       ],
@@ -5737,9 +5692,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Toto je názov alebo prezývka vašej organizácie, ktorú uvidia vaši používatelia. Môžete ho kedykoľvek zmeniť."
       ],
-      "This item already exists in your library": [
-        "Táto položka už vo vašej knižnici existuje"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
       ],
@@ -5811,12 +5763,6 @@
       ],
       "Tracking": [
         "Sledovanie"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Prenos súboru „${ name }“ zrušený"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Prenos súboru „${ file.name }“ vynechaný"
       ],
       "Trash": [
         "Kôš"
@@ -8047,17 +7993,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "„${ name }“ sa nepodarilo obnoviť z koša"
       ],
-      "\"${ name }\" failed to be saved": [
-        "„${ name }“ sa nepodarilo uložiť"
-      ],
       "\"${ name }\" moved to trash": [
         "„${ name }“ presunuté do koša"
       ],
       "\"${ name }\" restored from trash": [
         "„${ name }“ obnovené z koša"
-      ],
-      "\"${ name }\" saved successfully": [
-        "„${ name }“ úspešne uložené"
       ],
       "\"${ newName }\" failed to be renamed": [
         "„${ newName }“ sa nepodarilo premenovať"
@@ -8149,14 +8089,8 @@
       "Access updated and shared": [
         "Prístup bol aktualizovaný a zdieľaný"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Všetky položky budú čoskoro trvalo zmazané z koša"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Keďže sa tento dokument nachádzal v zdieľanej zložke, obnoviť ho môže iba vlastník zložky"
-      ],
-      "Cannot load link": [
-        "Odkaz sa nepodarilo načítať"
       ],
       "Cannot load next page": [
         "Nepodarilo sa načítať ďalšiu stránku"
@@ -8166,18 +8100,6 @@
       ],
       "Contact group updated": [
         "Skupina kontaktov bola aktualizovaná"
-      ],
-      "Device failed to be removed": [
-        "Zariadenie sa nepodarilo odstrániť"
-      ],
-      "Device failed to be renamed": [
-        "Zariadenie sa nepodarilo premenovať"
-      ],
-      "Device removed": [
-        "Zariadenie odstránené"
-      ],
-      "Device renamed": [
-        "Zariadenie premenované"
       ],
       "Document moved to trash": [
         "Dokument bol presunutý do koša"
@@ -8223,15 +8145,6 @@
       ],
       "Failed to trash document": [
         "Odstránenie dokumentu do koša zlyhalo"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Súbor alebo priečinok \"${ filename }\" a ${ count } ďalší sa už nahráva",
-        "Súbor alebo priečinok \"${ filename }\" a ${ count } ďalšie sa už nahrávajú",
-        "Súbor alebo priečinok \"${ filename }\" a ${ count } ďalších sa už nahráva",
-        "Súbor alebo priečinok \"${ filename }\" a ${ count } ďalších sa už nahráva"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Súbor alebo priečinok „${ filename }“ už sa nahráva"
       ],
       "Invitation's email was sent again": [
         "Email s pozvánkou bol znova odoslaný"
@@ -8295,9 +8208,6 @@
       ],
       "The link to your item was deleted": [
         "Odkaz na vašu položku bol zmazaný"
-      ],
-      "Trash failed to be emptied": [
-        "Kôš sa nepodarilo vysypať"
       ],
       "You stopped sharing this item": [
         "Prestali ste zdieľať túto položku"
@@ -10478,9 +10388,6 @@
       "Email settings": [
         "Nastavenie emailu"
       ],
-      "Empty trash": [
-        "Vyprázdniť kôš"
-      ],
       "Enable 2FA": [
         "Povoliť 2FA"
       ],
@@ -10766,9 +10673,6 @@
       "Start import process": [
         "Zahájiť proces importu"
       ],
-      "Stop sharing": [
-        "Ukončiť zdieľanie"
-      ],
       "Stop sharing?": [
         "Ukončiť zdieľanie?"
       ],
@@ -11016,6 +10920,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Navýšte úroveň na podporovaný plán, aby ste mohli využívať pozície správcov."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Svoje vlastné role nemôžete zmeniť. Požiadajte iného správcu, aby ich zmenil."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."

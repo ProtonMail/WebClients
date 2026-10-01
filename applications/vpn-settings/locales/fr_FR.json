@@ -19784,6 +19784,36 @@
         "Paiement test"
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Profitez de ${ discount } % de réduction sur ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Passer à ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "2 TB of storage to share": [
+        "2 To d'espace de stockage à partager"
+      ],
+      "2 user accounts": [
+        "2 comptes utilisateur"
+      ],
+      "All premium features from your current plan": [
+        "Toutes les fonctionnalités premium de votre abonnement actuel"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "pendant 12 mois"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/mois"
@@ -20037,6 +20067,9 @@
       ],
       "Writing assistant": [
         "Assistant d'écriture"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Vous ne pouvez pas modifier vos propres rôles. Demandez à un autre administrateur de les modifier."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."

@@ -312,6 +312,9 @@
       "Deny ${ participantName }": [
         "${ participantName } katılımcısını reddet"
       ],
+      "Desync audio output": [
+        "Ses çıkışı eşitlemesini kaldır"
+      ],
       "Disable ${ participantName }'s video": [
         "${ participantName } katılımcısının görüntüsünü kapat"
       ],
@@ -384,6 +387,9 @@
       "End meeting for all": [
         "Görüşmeyi herkes için sonlandır"
       ],
+      "Fail audio output pin": [
+        "Ses çıkışı ucu çalışmadı"
+      ],
       "Forgot password?": [
         "Parolamı unuttum"
       ],
@@ -453,6 +459,9 @@
       "Lock meeting": [
         "Görüşmeyi kilitle"
       ],
+      "Log audio output state": [
+        "Ses çıkışı durumu günlüğe kaydedilsin"
+      ],
       "Lower hand": [
         "Eli indir"
       ],
@@ -521,6 +530,9 @@
       ],
       "Raise hand": [
         "El kaldır"
+      ],
+      "Re-apply audio output": [
+        "Ses çıkışını yeniden uygulayın"
       ],
       "React with ${ emoji }": [
         "${ emoji } ile tepki ver"
@@ -646,6 +658,9 @@
       ],
       "Sign out of all accounts": [
         "Tüm hesapların oturumunu kapat"
+      ],
+      "Simulate output device loss": [
+        "Çıkış aygıtı kaybının benzetimini yap"
       ],
       "Simulate reconnection": [
         "Yeniden bağlanma benzetimi"
@@ -4186,6 +4201,9 @@
       ],
       "Assign a new host": [
         "Yeni bir görüşme sahibi ata"
+      ],
+      "Audio Output Testing": [
+        "Ses çıkışı sınanıyor"
       ],
       "Available Cameras": [
         "Kullanılabilecek kameralar"

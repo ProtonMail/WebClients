@@ -339,9 +339,6 @@
       "Email settings": [
         "Paramètres du message"
       ],
-      "Empty trash": [
-        "Vider le dossier Corbeille"
-      ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
@@ -564,9 +561,6 @@
       "Next month": [
         "Mois suivant"
       ],
-      "Next page": [
-        "Page suivante"
-      ],
       "No, thanks": [
         "Non merci"
       ],
@@ -605,9 +599,6 @@
       ],
       "Previous month": [
         "Mois précédent"
-      ],
-      "Previous page": [
-        "Page précédente"
       ],
       "Print": [
         "Imprimer"
@@ -2896,9 +2887,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "« ${ sanitizedName } » existe déjà."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } ne parvient pas à se connecter à votre compte externe."
       ],
@@ -3263,9 +3251,6 @@
       "Photo not found": [
         "La photo est introuvable"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Le chargement de photos est temporairement désactivé. Réessayez plus tard."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Veuillez configurer un domaine personnalisé avant d'ajouter des adresses."
       ],
@@ -3406,12 +3391,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Le nom du dossier est trop long, veuillez en choisir un autre."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "L'invitation ne peut pas encore être terminée. Réessayez plus tard."
-      ],
-      "The invitation doesn't exist anymore": [
-        "L'invitation n'existe plus."
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Le nom du label n'est pas valide, veuillez en choisir un autre."
       ],
@@ -3423,21 +3402,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Le lien vers votre élément n'a pas pu être supprimé."
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "La nouvelle révision du fichier d'origine n'est pas encore chargée, nous vous invitons à réessayer plus tard."
-      ],
-      "The original file has missing active revision": [
-        "Il manque une révision active pour le fichier d'origine."
-      ],
-      "The original file has missing hash key": [
-        "Il manque une clé de hachage pour le fichier d'origine."
-      ],
-      "The original file has missing session key": [
-        "Il manque une clé de session pour le fichier d'origine."
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Le fichier d'origine n'est pas encore chargé, nous vous invitons à réessayer plus tard."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Le fichier importé ne correspond pas à l'original. Veuillez réessayer."
@@ -3516,9 +3480,6 @@
       ],
       "Update Too Large": [
         "La mise à jour est trop volumineuse."
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "L'importation de ce dossier a été temporairement désactivée."
       ],
       "Username must begin with a letter or digit": [
         "Le nom d'utilisateur doit commencer par une lettre ou un chiffre."
@@ -4658,9 +4619,6 @@
       "Are you sure you want to discard your import?": [
         "Voulez-vous vraiment abandonner votre importation ?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Voulez-vous vraiment vider le dossier Corbeille et définitivement supprimer tous les éléments ?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Voulez-vous vraiment définitivement supprimer ${ itemName } du dossier Corbeille ?"
       ],
@@ -5069,9 +5027,6 @@
       "Link copied": [
         "Lien copié"
       ],
-      "Link copied to clipboard": [
-        "Le lien est copié dans le presse-papiers."
-      ],
       "Link expired": [
         "Le lien a expiré."
       ],
@@ -5447,9 +5402,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Il s’agit d’un nom ou d’un surnom pour votre organisation que vos utilisateurs verront. Vous pouvez le modifier à tout moment."
       ],
-      "This item already exists in your library": [
-        "Cet élément existe déjà dans votre bibliothèque."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
       ],
@@ -5509,12 +5461,6 @@
       ],
       "Tracking": [
         "Traqueurs"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Le transfert a été annulé pour le fichier « ${ name } »."
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Le transfert a été ignoré pour le fichier « ${ file.name } »."
       ],
       "Trash": [
         "Corbeille"
@@ -7630,17 +7576,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "« ${ name } » n'a pas pu être restauré depuis le dossier Corbeille."
       ],
-      "\"${ name }\" failed to be saved": [
-        "« ${ name } » n'a pas pu être enregistré."
-      ],
       "\"${ name }\" moved to trash": [
         "« ${ name } » a été déplacé dans le dossier Corbeille."
       ],
       "\"${ name }\" restored from trash": [
         "« ${ name } » a été restauré depuis le dossier Corbeille."
-      ],
-      "\"${ name }\" saved successfully": [
-        "« ${ name } » a été enregistré."
       ],
       "\"${ newName }\" failed to be renamed": [
         "« ${ newName } » n'a pas pu être renommé."
@@ -7710,14 +7650,8 @@
       "Access updated and shared": [
         "L'accès a été mis à jour et partagé."
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Tous les éléments seront bientôt supprimés définitivement du dossier Corbeille."
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Ce document se trouvant dans un dossier partagé, seul le propriétaire du dossier peut le restaurer."
-      ],
-      "Cannot load link": [
-        "Impossible de charger le lien"
       ],
       "Cannot load next page": [
         "Impossible de charger la page suivante"
@@ -7727,18 +7661,6 @@
       ],
       "Contact group updated": [
         "Le groupe de contacts a été mis à jour."
-      ],
-      "Device failed to be removed": [
-        "L'appareil n'a pas pu être retiré."
-      ],
-      "Device failed to be renamed": [
-        "L'appareil n'a pas pu être renommé."
-      ],
-      "Device removed": [
-        "L'appareil a été retiré."
-      ],
-      "Device renamed": [
-        "L'appareil a été renommé."
       ],
       "Document moved to trash": [
         "Le document a été mis à la corbeille."
@@ -7781,13 +7703,6 @@
       ],
       "Failed to trash document": [
         "Le document n'a pas pu être mis à la corbeille"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Le fichier ou dossier « ${ filename } » et ${ count } autre sont déjà en cours de chargement.",
-        "Le fichier ou dossier « ${ filename } » et ${ count } autres sont déjà en cours de chargement."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Le fichier ou dossier « ${ filename } » est déjà en cours de chargement."
       ],
       "Invitation's email was sent again": [
         "L'e-mail d'invitation a été renvoyé."
@@ -7842,9 +7757,6 @@
       ],
       "The link to your item was deleted": [
         "Le lien vers votre élément a été supprimé."
-      ],
-      "Trash failed to be emptied": [
-        "Le dossier Corbeille n'a pas pu être vidé."
       ],
       "You stopped sharing this item": [
         "Vous avez arrêté le partage de cet élément."
@@ -9906,9 +9818,6 @@
       "Email settings": [
         "Paramètres du message"
       ],
-      "Empty trash": [
-        "Vider le dossier Corbeille"
-      ],
       "Enable 2FA": [
         "Activer l'authentification à deux facteurs (A2F)"
       ],
@@ -10189,9 +10098,6 @@
       "Start import process": [
         "Démarrer l'importation"
       ],
-      "Stop sharing": [
-        "Arrêter le partage"
-      ],
       "Stop sharing?": [
         "Arrêter le partage ?"
       ],
@@ -10405,6 +10311,36 @@
         "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Profitez de ${ discount } % de réduction sur ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Passer à ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "2 TB of storage to share": [
+        "2 To d'espace de stockage à partager"
+      ],
+      "2 user accounts": [
+        "2 comptes utilisateur"
+      ],
+      "All premium features from your current plan": [
+        "Toutes les fonctionnalités premium de votre abonnement actuel"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "pendant 12 mois"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/mois"
@@ -10430,6 +10366,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Passez à une formule prise en charge pour pouvoir utiliser les rôles d'administrateur."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Vous ne pouvez pas modifier vos propres rôles. Demandez à un autre administrateur de les modifier."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."

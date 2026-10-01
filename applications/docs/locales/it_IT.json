@@ -336,9 +336,6 @@
       "Email settings": [
         "Impostazioni email"
       ],
-      "Empty trash": [
-        "Svuota il cestino"
-      ],
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
       ],
@@ -552,9 +549,6 @@
       "Next month": [
         "Mese successivo"
       ],
-      "Next page": [
-        "Pagina successiva"
-      ],
       "No, thanks": [
         "No, grazie"
       ],
@@ -590,9 +584,6 @@
       ],
       "Previous month": [
         "Mese precedente"
-      ],
-      "Previous page": [
-        "Pagina precedente"
       ],
       "Print": [
         "Stampa"
@@ -2872,9 +2863,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "«${ sanitizedName }» esiste già."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } non può connettersi al tuo account esterno"
       ],
@@ -3206,9 +3194,6 @@
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Il caricamento delle foto è temporaneamente disabilitato. Riprova più tardi."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Configura un dominio personalizzato prima di aggiungere indirizzi."
       ],
@@ -3331,12 +3316,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Il nome della cartella è troppo lungo. Scegli un nome diverso."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "L'invito non può ancora essere completato. Riprova più tardi."
-      ],
-      "The invitation doesn't exist anymore": [
-        "L'invito non esiste più"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Il nome dell'etichetta non è valido. Scegli un nome differente."
       ],
@@ -3348,21 +3327,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Eliminazione del link al tuo elemento non riuscita"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "La nuova revisione del file originale non è ancora stata caricata, riprova più tardi"
-      ],
-      "The original file has missing active revision": [
-        "Il file originale ha una revisione attiva mancante"
-      ],
-      "The original file has missing hash key": [
-        "Il file originale ha una chiave hash mancante"
-      ],
-      "The original file has missing session key": [
-        "Il file originale ha una chiave di sessione mancante"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Il file originale non è ancora stato caricato, riprova più tardi"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Il file caricato non corrisponde all'originale. Riprova."
@@ -3429,9 +3393,6 @@
       ],
       "Update Too Large": [
         "Aggiornamento troppo grande"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Il caricamento per questa cartella è temporaneamente disabilitato"
       ],
       "Username must begin with a letter or digit": [
         "Il nome utente deve iniziare con una lettera o un numero."
@@ -4559,9 +4520,6 @@
       "Are you sure you want to discard your import?": [
         "Sei sicuro di voler annullare la tua importazione?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Sei sicuro di voler svuotare il cestino ed eliminare definitivamente tutti gli elementi?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Sei sicuro di voler eliminare definitivamente \"${ itemName }\" dal cestino?"
       ],
@@ -4964,9 +4922,6 @@
       "Link copied": [
         "Link copiato"
       ],
-      "Link copied to clipboard": [
-        "Link copiato negli appunti"
-      ],
       "Link expired": [
         "Link scaduto"
       ],
@@ -5342,9 +5297,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Questo è un nome o un nickname per la tua organizzazione che sarà visualizzato dai tuoi utenti. Puoi modificarlo in qualsiasi momento."
       ],
-      "This item already exists in your library": [
-        "Questo elemento è già presente nella tua libreria"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Questo link conduce a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
@@ -5413,12 +5365,6 @@
       ],
       "Tracking": [
         "Monitoraggio"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Trasferimento annullato per il file \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Trasferimento ignorato per il file \"${ file.name }\""
       ],
       "Trash": [
         "Cestino"
@@ -7522,17 +7468,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "Ripristino di \"${ name }\" dal cestino non riuscito"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Salvataggio di \"${ name }\" non riuscito"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" spostato nel cestino"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" ripristinato dal cestino"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" salvato con successo"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Rinominazione di \"${ newName }\" non riuscita"
@@ -7602,14 +7542,8 @@
       "Access updated and shared": [
         "Accesso aggiornato e condiviso"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Tutti gli elementi verranno presto eliminati definitivamente dal cestino"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Poiché questo documento si trovava in una cartella condivisa, solo il proprietario della cartella può ripristinarlo"
-      ],
-      "Cannot load link": [
-        "Impossibile caricare il link"
       ],
       "Cannot load next page": [
         "Impossibile caricare la pagina successiva"
@@ -7619,18 +7553,6 @@
       ],
       "Contact group updated": [
         "Gruppo di contatti aggiornato"
-      ],
-      "Device failed to be removed": [
-        "Rimozione del dispositivo non riuscita"
-      ],
-      "Device failed to be renamed": [
-        "Rinominazione del dispositivo non riuscita"
-      ],
-      "Device removed": [
-        "Dispositivo rimosso"
-      ],
-      "Device renamed": [
-        "Dispositivo rinominato"
       ],
       "Document moved to trash": [
         "Documento spostato nel cestino"
@@ -7667,13 +7589,6 @@
       ],
       "Failed to trash document": [
         "Impossibile spostare il documento nel cestino"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Il file o la cartella \"${ filename }\" e ${ count } altro sono già in caricamento",
-        "Il file o la cartella \"${ filename }\" e ${ count } altri sono già in caricamento"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Il file o la cartella \"${ filename }\" è già in fase di caricamento"
       ],
       "Invitation's email was sent again": [
         "L'email di invito è stata inviata nuovamente"
@@ -7728,9 +7643,6 @@
       ],
       "The link to your item was deleted": [
         "Il link al tuo elemento è stato eliminato"
-      ],
-      "Trash failed to be emptied": [
-        "Svuotamento del cestino non riuscito"
       ],
       "You stopped sharing this item": [
         "Hai interrotto la condivisione di questo elemento"
@@ -9750,9 +9662,6 @@
       "Email settings": [
         "Impostazioni email"
       ],
-      "Empty trash": [
-        "Svuota il cestino"
-      ],
       "Enable 2FA": [
         "Abilita 2FA"
       ],
@@ -10032,9 +9941,6 @@
       ],
       "Start import process": [
         "Avvia il processo d'importazione"
-      ],
-      "Stop sharing": [
-        "Interrompi condivisione"
       ],
       "Stop sharing?": [
         "Vuoi interrompere la condivisione?"

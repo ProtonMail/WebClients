@@ -28476,8 +28476,14 @@
       "Disables end-to-end email encryption for this group": [
         "Απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα"
       ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Εξωτερική διεύθυνση – δεν είναι δυνατή η απόδοση των ρόλων και των δικαιωμάτων που έχουν ανατεθεί σε αυτή την ομάδα."
+      ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα και δε θα γίνει κοινή χρήση κρυπτογραφημένων πόρων με αυτόν τον χρήστη."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Εξωτερική διεύθυνση — Δεν υπάρχει διατερματική κρυπτογράφηση ούτε κοινή χρήση πόρων, ενώ δεν είναι δυνατή η ανάθεση ρόλων και δικαιωμάτων."
       ],
       "Group membership paused": [
         "Η συμμετοχή στην ομάδα τέθηκε σε παύση"
@@ -28630,6 +28636,36 @@
       ],
       "Test credit": [
         "Δοκιμαστική πίστωση"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Κερδίστε ${ discount }% στο ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Αποκτήστε το ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/μήνα"
+      ],
+      "2 TB of storage to share": [
+        "2 TB αποθηκευτικού χώρου για κοινή χρήση"
+      ],
+      "2 user accounts": [
+        "2 λογαριασμοί χρηστών"
+      ],
+      "All premium features from your current plan": [
+        "Όλες οι premium λειτουργίες του τρέχοντος πλάνου σας"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "για 12 μήνες"
       ]
     },
     "Unlimited offer": {
@@ -28946,6 +28982,9 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Δεν μπορείς να αλλάξεις τους δικούς σου ρόλους. Ζήτησε από έναν άλλον διαχειριστή να τους αλλάξει."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."

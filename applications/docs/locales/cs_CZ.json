@@ -342,9 +342,6 @@
       "Email settings": [
         "Nastavení e-mailu"
       ],
-      "Empty trash": [
-        "Vysypat koš"
-      ],
       "enable desktop notifications": [
         "povolit upozornění"
       ],
@@ -555,9 +552,6 @@
       "Next month": [
         "Další měsíc"
       ],
-      "Next page": [
-        "Další stránka"
-      ],
       "No, thanks": [
         "Ne, děkuji"
       ],
@@ -593,9 +587,6 @@
       ],
       "Previous month": [
         "Předchozí měsíc"
-      ],
-      "Previous page": [
-        "Předchozí stránka"
       ],
       "Print": [
         "Vytisknout"
@@ -2901,9 +2892,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" již existuje"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } se nemůže připojit k vašemu externímu účtu"
       ],
@@ -3168,9 +3156,6 @@
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Nahrávání fotek je dočasně vypnuté. Zkuste to prosíme později."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Před přidáním adres nastavte vlastní doménu."
       ],
@@ -3291,12 +3276,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Název složky je příliš dlouhý. Zvolte jiný název."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Pozvánku zatím nelze dokončit. Zkuste to prosím později."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Pozvánka již neexistuje"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Název štítku je neplatný. Zvolte prosím jiný název."
       ],
@@ -3308,21 +3287,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Odkaz na vaší položku se nepodařilo smazat"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Nová revize původního souboru ještě nebyla nahrána, zkuste to prosím později"
-      ],
-      "The original file has missing active revision": [
-        "V původním souboru chybí aktivní revize"
-      ],
-      "The original file has missing hash key": [
-        "V původním souboru chybí hash klíč"
-      ],
-      "The original file has missing session key": [
-        "V původním souboru chybí klíč relace"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Původní soubor ještě nebyl nahrán, zkuste to prosím později"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašem externím účtu je příliš mnoho složek. Upravte prosím import pro odstranění některých složek."
@@ -3377,9 +3341,6 @@
       ],
       "Update Too Large": [
         "Aktualizace je moc velká"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Nahrávání pro tuto složku je dočasně zakázáno"
       ],
       "Username must begin with a letter or digit": [
         "Uživatelské jméno musí začínat písmenem nebo číslicí"
@@ -4547,9 +4508,6 @@
       "Are you sure you want to discard your import?": [
         "Jste si jistí, že chcete zahodit váš import?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Opravdu chcete trvale smazat \"${ itemName }\" z koše?"
       ],
@@ -4949,9 +4907,6 @@
       "Link copied": [
         "Odkaz zkopírován"
       ],
-      "Link copied to clipboard": [
-        "Odkaz zkopírován do schránky"
-      ],
       "Link expired": [
         "Odkaz vypršel"
       ],
@@ -5327,9 +5282,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Jedná se o název nebo přezdívku vaší organizace, kterou uživatelé uvidí. Můžete je kdykoli změnit."
       ],
-      "This item already exists in your library": [
-        "Tato položka již ve vaší knihovně existuje"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o platební kartě."
       ],
@@ -5371,12 +5323,6 @@
       ],
       "Tracking": [
         "Sledování"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Přenos zrušen pro soubor \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Přenos vynechán pro soubor \"${ file.name }\""
       ],
       "Trash": [
         "Koš"
@@ -7540,17 +7486,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" se nepodařilo obnovit z koše"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" se nepodařilo uložit"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" přesunuto do koše"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" obnoveno z koše"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" úspěšně uloženo"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" se nepodařilo přejmenovat"
@@ -7639,12 +7579,6 @@
       "Access updated and shared": [
         "Přístup aktualizován a sdílen"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Všechny položky budou brzy nevratně smazány z koše"
-      ],
-      "Cannot load link": [
-        "Odkaz se nepodařilo načíst"
-      ],
       "Cannot load next page": [
         "Další stránku se nepodařilo načíst"
       ],
@@ -7653,18 +7587,6 @@
       ],
       "Contact group updated": [
         "Skupina kontaktů byla aktualizována"
-      ],
-      "Device failed to be removed": [
-        "Zařízení se nepodařilo odstranit"
-      ],
-      "Device failed to be renamed": [
-        "Zařízení se nepodařilo přejmenovat"
-      ],
-      "Device removed": [
-        "Zařízení odstraněno"
-      ],
-      "Device renamed": [
-        "Zařízení přejmenováno"
       ],
       "Document moved to trash": [
         "Dokument byl přesunut do koše"
@@ -7692,15 +7614,6 @@
       ],
       "Failed to rename document": [
         "Přejmenování dokumentu selhalo"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Soubor nebo složka \"${ filename }\" a ${ count } další se již nahrávají",
-        "Soubor nebo složka \"${ filename }\" a ${ count } další se již nahrávají",
-        "Soubor nebo složka \"${ filename }\" a ${ count } dalších se již nahrávají",
-        "Soubor nebo složka \"${ filename }\" a ${ count } dalších se již nahrávají"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Soubor nebo složka \"${ filename }\" se již nahrává"
       ],
       "Invitation's email was sent again": [
         "E-mail s pozvánkou byl znovu odeslán"
@@ -7761,9 +7674,6 @@
       ],
       "The link to your item was deleted": [
         "Odkaz na položku byl odstraněn"
-      ],
-      "Trash failed to be emptied": [
-        "Koš se nepodařilo vyprázdnit"
       ],
       "You stopped sharing this item": [
         "Ukončili jste sdílení této položky"
@@ -9842,9 +9752,6 @@
       "Email settings": [
         "Nastavení e-mailu"
       ],
-      "Empty trash": [
-        "Vyprázdnit koš"
-      ],
       "Enable 2FA": [
         "Povolit 2FA"
       ],
@@ -10120,9 +10027,6 @@
       ],
       "Start import process": [
         "Zahájit proces importu"
-      ],
-      "Stop sharing": [
-        "Zrušit sdílení"
       ],
       "Stop sharing?": [
         "Ukončit sdílení?"

@@ -124,6 +124,9 @@
       "Bulk restore items from trash": [
         "Restaurar itens em massa da lixeira"
       ],
+      "Bulk select items": [
+        "Selecionar itens em massa"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -929,6 +932,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Verifique se suas senhas foram expostas"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Verificando ${ compromised.progress.completed } de ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Crie senhas exclusivas"
@@ -1744,6 +1750,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Os tokens de acesso, usados em conjunto com ${ passCliLink }, permitem automatizar o CI/CD ou conceder ao seu agente de IA acesso restrito ao que ele precisa para executar sua tarefa."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Adicione um método de pagamento para que sua assinatura continue quando sua avaliação terminar."
+      ],
       "Add your custom email address to monitor:": [
         "Adicione seu endereço de e-mail personalizado para monitoramento:"
       ],
@@ -2250,7 +2259,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -3112,6 +3122,9 @@
       ],
       "Account Type": [
         "Tipo de conta"
+      ],
+      "Add a payment method": [
+        "Adicionar método de pagamento"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Adicione um prefixo aleatório para esse domínio ao criar um alias."
@@ -4598,6 +4611,9 @@
       "Please describe the problem and include any error messages": [
         "Descreva o problema e inclua quaisquer mensagens de erro"
       ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Digite novamente \"${ name }\" para confirmar a exclusão"
+      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Procurar ${ pluralItemType } em ${ vaultName }"
       ],
@@ -4630,11 +4646,17 @@
       ]
     },
     "Result": {
+      "Enter a URL to check if it matches the current rule": [
+        "Insira uma URL para verificar se ela corresponde à regra atual"
+      ],
       "This URL will be blocked from autofill": [
         "Esta URL será bloqueada no preenchimento automático"
       ],
       "This URL will NOT be blocked from autofill": [
         "Esta URL NÃO será bloqueada no preenchimento automático"
+      ],
+      "URL matches the rule": [
+        "A URL corresponde à regra"
       ]
     },
     "Security Center - Info": {
@@ -4907,6 +4929,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Continue in your browser": [
+        "Continuar no seu navegador"
+      ],
       "Create a vault": [
         "Criar um cofre"
       ],
@@ -5099,6 +5124,10 @@
       ],
       "Modified": [
         "Modificado"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "Mover ${ count } item para o ${ target }",
+        "Mover ${ count } itens para o ${ target }"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Mover ${ trashedItemsCount } item para a lixeira?",
@@ -5676,6 +5705,9 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Não foi possível fazer login no ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "O cofre \"${ name }\" e todos os seus itens serão excluídos permanentemente. Não é possível desfazer esta ação."
       ],
       "Vault name is required": [
         "O nome do cofre é obrigatório"

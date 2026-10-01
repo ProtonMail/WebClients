@@ -318,9 +318,6 @@
       "Email settings": [
         "E-mail beállítások"
       ],
-      "Empty trash": [
-        "Lomtár kiürítése"
-      ],
       "enable desktop notifications": [
         "asztali értesítéset küldhessen"
       ],
@@ -513,9 +510,6 @@
       "Next month": [
         "Következő hónap"
       ],
-      "Next page": [
-        "Következő oldal"
-      ],
       "No, thanks": [
         "Köszönöm, nem"
       ],
@@ -548,9 +542,6 @@
       ],
       "Previous month": [
         "Előző hónap"
-      ],
-      "Previous page": [
-        "Előző oldal"
       ],
       "Print": [
         "Nyomtatás"
@@ -2623,9 +2614,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" már létezik"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } nem tudd kapcsolódni az ön külső fiókjaihoz."
       ],
@@ -2847,9 +2835,6 @@
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "A fényképek feltöltése ideiglenesen le van tiltva. Kérjük, próbálja meg később újra."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Címek létrehozása előtt, állítson be egy saját domain nevet."
       ],
@@ -2948,12 +2933,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Ez a mappanév túl hosszú. Adjon meg egy másik nevet."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "A meghívó teljesítése még nem lehetséges. Kérjük, próbálja később újra."
-      ],
-      "The invitation doesn't exist anymore": [
-        "A meghívó már nem létezik"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Ez a címkenév érvénytelen. Adjon meg egy másik nevet."
       ],
@@ -2965,21 +2944,6 @@
       ],
       "The link to your item failed to be deleted": [
         "A fájlra vonatkozó hivatkozás törlése nem sikerült"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Az eredeti fájl új verziója még nincs feltöltve, próbálja meg később"
-      ],
-      "The original file has missing active revision": [
-        "Az eredeti fájlnak nincs aktív verziója"
-      ],
-      "The original file has missing hash key": [
-        "Az eredeti fájlnak nincs ellenőrzőösszeg kulcsa"
-      ],
-      "The original file has missing session key": [
-        "Az eredeti fájlnak nincs munkafolyamat kulcsa"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Az eredeti fájl még nincs feltöltve, próbálja meg később"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
@@ -3028,9 +2992,6 @@
       ],
       "Update Too Large": [
         "Frissítés túl nagy"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "A mappa feltöltése ideiglenesen le van tiltva"
       ],
       "Username must begin with a letter or digit": [
         "Felhasználónévnek betűvel vagy számmal kell kezdődnie"
@@ -4064,9 +4025,6 @@
       "Are you sure you want to discard your import?": [
         "Biztos, hogy elveti az importálást?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Biztos benne, hogy kiüríti a lomtárat és véglegesen törli az összes benne lévő elemet?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Biztos, hogy véglegesen törli az alábbit: ${ itemName } a lomtárból?"
       ],
@@ -4393,9 +4351,6 @@
       ],
       "Limited availability": [
         "Korlátozott elérhetőség"
-      ],
-      "Link copied to clipboard": [
-        "Hivatkozás a vágólapra másolva"
       ],
       "Link expired": [
         "A hivatkozás lejárt"
@@ -4727,9 +4682,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Ez egy név vagy becenév a szervezet számára, amelyet a felhasználók látni fognak. Bármikor megváltoztathatja."
       ],
-      "This item already exists in your library": [
-        "Ez az elem már létezik a könyvtárban"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
@@ -4768,12 +4720,6 @@
       ],
       "Tracking": [
         "Nyomkövetés"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "\"${ name }\" fájl átvitele megszakítva"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "\"${ file.name }\" fájl átvitele átugorva"
       ],
       "Trash": [
         "Lomtár"
@@ -6632,17 +6578,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name } fájl visszaállítása a lomtárból nem sikerült"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" mentése nem sikerült"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" áthelyezve a lomtárba"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" visszaállítva a lomtárból"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" sikeresen mentve"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" átnevezése nem sikerült"
@@ -6705,12 +6645,6 @@
       "Access updated and shared": [
         "Hozzáférés frissítve és megosztva"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Minden elem hamarosan törlésre fog kerülni a Lomtárban"
-      ],
-      "Cannot load link": [
-        "A hivatkozást betöltése nem sikerült"
-      ],
       "Cannot load next page": [
         "A következő oldal betöltése nem sikerült"
       ],
@@ -6719,18 +6653,6 @@
       ],
       "Contact group updated": [
         "Névjegy csoport frissítve"
-      ],
-      "Device failed to be removed": [
-        "Az eszközt nem sikerült eltávolítani"
-      ],
-      "Device failed to be renamed": [
-        "Az eszközt nem sikerült átnevezni"
-      ],
-      "Device removed": [
-        "Eszköz eltávolítva"
-      ],
-      "Device renamed": [
-        "Eszköz átnevezve"
       ],
       "External invitation removed from the share": [
         "Külső meghívás eltávolítva a megosztásból"
@@ -6746,13 +6668,6 @@
       ],
       "Failed to reject share invitation": [
         "Nem sikerült elutasítani a megosztási meghívót"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "A fájl vagy mappa \"${ filename }\" és ${ count } másik már feltöltés alatt van",
-        "A fájl vagy mappa \"${ filename }\" és ${ count } másik már feltöltés alatt van"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "A fájl vagy mappa \"${ filename }\" már feltöltés alatt van"
       ],
       "Invitation's email was sent again": [
         "A meghívó e-mailt ismét elküldtük"
@@ -6801,9 +6716,6 @@
       ],
       "The link to your item was deleted": [
         "A fájlra vonatkozó hivatkozás törölve"
-      ],
-      "Trash failed to be emptied": [
-        "A lomtár ürítése nem sikerült"
       ],
       "You stopped sharing this item": [
         "Ön leállította ennek az elemnek a megosztását"
@@ -8524,9 +8436,6 @@
       "Email settings": [
         "E-mail beállítások"
       ],
-      "Empty trash": [
-        "Lomtár kiürítése"
-      ],
       "Enable 2FA": [
         "Kétlépcsős hitelesítés bekapcsolása"
       ],
@@ -8773,9 +8682,6 @@
       ],
       "Start import process": [
         "Importálási folyamat indítása"
-      ],
-      "Stop sharing": [
-        "Megosztás megszüntetése"
       ],
       "Stop sharing?": [
         "Megosztás megszüntetése?"

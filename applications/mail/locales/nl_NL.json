@@ -1544,8 +1544,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -8143,7 +8142,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -17456,6 +17456,36 @@
         "Deze versie van Tor Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Ontvang ${ discount }% korting op ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Neem ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/maand"
+      ],
+      "2 TB of storage to share": [
+        "2 TB opslagruimte om te delen"
+      ],
+      "2 user accounts": [
+        "2 gebruikersaccounts"
+      ],
+      "All premium features from your current plan": [
+        "Alle premium functies van uw huidige abonnement"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "voor 12 maanden"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/maand"
@@ -17492,6 +17522,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "U kunt uw eigen rollen niet veranderen. Vraag een andere beheerder om deze te wijzigen."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."

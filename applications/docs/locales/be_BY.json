@@ -348,9 +348,6 @@
       "Email settings": [
         "Налады электроннай пошты"
       ],
-      "Empty trash": [
-        "Ачысціць сметніцу"
-      ],
       "enable desktop notifications": [
         "ўключэнне апавяшчэнняў на працоўным стале"
       ],
@@ -573,9 +570,6 @@
       "Next month": [
         "Наступны месяц"
       ],
-      "Next page": [
-        "Наступная старонка"
-      ],
       "No, thanks": [
         "Не, дзякуй"
       ],
@@ -617,9 +611,6 @@
       ],
       "Previous month": [
         "Папярэдні месяц"
-      ],
-      "Previous page": [
-        "Папярэдняя старонка"
       ],
       "Print": [
         "Друкаваць"
@@ -2949,9 +2940,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" ужо існуе"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } не можа падключыцца да вашага знешняга ўліковага запісу"
       ],
@@ -3399,9 +3387,6 @@
       "Photo not found": [
         "Фатаграфія не знойдзена"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Запампоўванне фатаграфій часова адключана. Паўтарыце спробу пазней."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Перад дадаваннем адрасоў неабходна сканфігурыраваць карыстальніцкі дамен."
       ],
@@ -3552,12 +3537,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Назва папкі занадта доўгая. Выберыце іншую назву."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Запрашэнне пакуль не завершана. Паўтарыце спробу пазней."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Запрашэнне больш не існуе"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Памылковая назва меткі. Выберыце іншую назву."
       ],
@@ -3569,21 +3548,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Не ўдалося выдаліць спасылку на ваш элемент"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Новая рэдакцыя арыгінальнага файла пакуль не запампавана. Паўтарыце спробу пазней"
-      ],
-      "The original file has missing active revision": [
-        "У арыгінальным файле адсутнічае актыўная рэдакцыя"
-      ],
-      "The original file has missing hash key": [
-        "У арыгінальным файле адсутнічае хэш-ключ"
-      ],
-      "The original file has missing session key": [
-        "У арыгінальным файле адсутнічае ключ сеанса"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Арыгінальны файл пакуль не запампаваны. Паўтарыце спробу пазней"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Запампаваны файл не адпавядае арыгіналу. Паўтарыце спробу."
@@ -3665,9 +3629,6 @@
       ],
       "Update Too Large": [
         "Занадта вялікае абнаўленне"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Запампоўванне для гэтай папкі часова адключана"
       ],
       "Username must begin with a letter or digit": [
         "Імя карыстальніка павінна пачынацца з літары або лічбы"
@@ -4153,6 +4114,9 @@
       ],
       "Still waiting?": [
         "Усё яшчэ чакаеце?"
+      ],
+      "Touch your security key to continue.": [
+        "Дакраніцеся да свайго ключа бяспекі, каб працягнуць."
       ]
     },
     "fido2: Label": {
@@ -4897,9 +4861,6 @@
       "Are you sure you want to discard your import?": [
         "Вы сапраўды хочаце адхіліць імпарт?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Вы сапраўды хочаце ачысціць сметніцу і незваротна выдаліць усе элементы?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Вы сапраўды хочаце незваротна выдаліць \"${ itemName }\" са сметніцы?"
       ],
@@ -5329,9 +5290,6 @@
       "Link copied": [
         "Спасылка скапіявана"
       ],
-      "Link copied to clipboard": [
-        "Спасылка скапіявана ў буфер абмену"
-      ],
       "Link expired": [
         "Спасылка пратэрмінавана"
       ],
@@ -5716,9 +5674,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Гэта імя або псеўданім для вашай арганізацыі, якое будзе бачнае вашым карыстальнікам. Яго можна змяніць у любы час."
       ],
-      "This item already exists in your library": [
-        "Гэты элемент ужо існуе ў вашай бібліятэцы"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
       ],
@@ -5787,12 +5742,6 @@
       ],
       "Tracking": [
         "Адсочванне"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Перадача скасавана для файла \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Перадача прапушчана для файла ${ file.name }\""
       ],
       "Trash": [
         "Сметніца"
@@ -6387,6 +6336,9 @@
       ],
       "Include debug information": [
         "Уключыць адладачную інфармацыю"
+      ],
+      "Include document name in notification": [
+        "Уключыць назву дакумента ў апавяшчэнне"
       ],
       "Include message and file name in invite email": [
         "Уключаць паведамленне і назву файла ў запрашальны ліст"
@@ -8017,17 +7969,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "Не ўдалося аднавіць са сметніцы \"${ name }\""
       ],
-      "\"${ name }\" failed to be saved": [
-        "Не ўдалося захаваць\"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" перамешчаны ў сметніцу"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" адноўлены са сметніцы"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" паспяхова захаваны"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Не ўдалося перайменаваць \"${ newName }\""
@@ -8119,12 +8065,6 @@
       "Access updated and shared": [
         "Доступ абноўлены і абагулены"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Усе элементы неўзабаве будуць незваротна выдалены са сметніцы"
-      ],
-      "Cannot load link": [
-        "Немагчыма загрузіць спасылку"
-      ],
       "Cannot load next page": [
         "Немагчыма загрузіць наступную старонку"
       ],
@@ -8133,18 +8073,6 @@
       ],
       "Contact group updated": [
         "Група кантактаў абноўлена"
-      ],
-      "Device failed to be removed": [
-        "Не ўдалося выдаліць прыладу"
-      ],
-      "Device failed to be renamed": [
-        "Не ўдалося перайменаваць прыладу"
-      ],
-      "Device removed": [
-        "Прылада выдалена"
-      ],
-      "Device renamed": [
-        "Прылада перайменавана"
       ],
       "Document moved to trash": [
         "Дакумент перамешчаны ў сметніцу"
@@ -8191,15 +8119,6 @@
       "Failed to trash document": [
         "Не ўдалося перамясціць дакумент у сметніцу"
       ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампоўваюцца",
-        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампоўваюцца",
-        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампоўваюцца",
-        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампоўваюцца"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Файл або папка \"${ filename }\" ужо запампаваны"
-      ],
       "Invitation's email was sent again": [
         "Запрашальны ліст быў адпраўлены паўторна"
       ],
@@ -8233,6 +8152,9 @@
       "Recent documents updated": [
         "Нядаўнія дакументы абноўлены"
       ],
+      "Report submitted successfully": [
+        "Справаздача паспяхова адпраўлена"
+      ],
       "Root folder failed to be loaded": [
         "Не ўдалося загрузіць каранёвую папку"
       ],
@@ -8259,9 +8181,6 @@
       ],
       "The link to your item was deleted": [
         "Спасылка на ваш элемент была выдалена"
-      ],
-      "Trash failed to be emptied": [
-        "Не ўдалося ачысціць сметніцу"
       ],
       "You stopped sharing this item": [
         "Вы спынілі абагульванне гэтага элемента"
@@ -10436,9 +10355,6 @@
       "Email settings": [
         "Налады электроннай пошты"
       ],
-      "Empty trash": [
-        "Ачысціць сметніцу"
-      ],
       "Enable 2FA": [
         "Уключыць 2ФА"
       ],
@@ -10724,9 +10640,6 @@
       "Start import process": [
         "Пачаць працэс імпартавання"
       ],
-      "Stop sharing": [
-        "Спыніць абагульванне"
-      ],
       "Stop sharing?": [
         "Спыніць абагульванне?"
       ],
@@ -10944,6 +10857,30 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Атрымаць ${ discount }% скідку на ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 TB of storage to share": [
+        "2 ТБ сховішча для абагульвання"
+      ],
+      "2 user accounts": [
+        "2 уліковыя запісы карыстальніка"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
       ]
     },
     "Unlimited offer": {
