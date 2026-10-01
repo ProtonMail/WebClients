@@ -8,6 +8,7 @@ body,
 .app-root {
   display: flex;
   flex-direction: column;
+  background: white;
 }
 .standalone-sheet-header {
   display: flex;
@@ -15,18 +16,32 @@ body,
   gap: 24px;
   padding: 10px 18px;
   flex-shrink: 0;
-  border-bottom: 1px solid var(--border-weak);
-  background: var(--background-norm);
-  color: var(--text-norm);
+  border-bottom: 1px solid #eae7e4;
+  background: white;
+  color: #0c0c14;
   font:
     14px system-ui,
     sans-serif;
 }
 .standalone-sheet-header output {
-  color: var(--text-weak);
+  color: #5c5958;
 }
 .standalone-sheet-editor {
   flex: 1;
   min-height: 0;
   position: relative;
+}
+
+[data-theme-mode='dark'] .app-root,
+[data-theme-mode='dark'] .standalone-sheet-header {
+  background: #16141c;
+  color: white;
+}
+
+[data-theme-mode='dark'] .standalone-sheet-header {
+  border-bottom-color: #343140;
+}
+
+[data-theme-mode='dark'] .standalone-sheet-header output {
+  color: #a7a4b5;
 }
