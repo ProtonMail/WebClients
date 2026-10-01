@@ -342,9 +342,6 @@
       "Email settings": [
         "E-Mail-Einstellungen"
       ],
-      "Empty trash": [
-        "Papierkorb leeren"
-      ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
       ],
@@ -564,9 +561,6 @@
       "Next month": [
         "Nächster Monat"
       ],
-      "Next page": [
-        "Nächste Seite"
-      ],
       "No, thanks": [
         "Nein, danke"
       ],
@@ -608,9 +602,6 @@
       ],
       "Previous month": [
         "Vorheriger Monat"
-      ],
-      "Previous page": [
-        "Vorherige Seite"
       ],
       "Print": [
         "Drucken"
@@ -2902,9 +2893,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "„${ sanitizedName }“ ist bereits vorhanden"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kann sich nicht mit deinem externen Account verbinden"
       ],
@@ -3341,9 +3329,6 @@
       "Photo not found": [
         "Foto nicht gefunden"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Das Hochladen von Fotos ist vorübergehend deaktiviert. Bitte versuche es später erneut."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Bitte richte eine eigene Domain ein, bevor du Adressen hinzufügst."
       ],
@@ -3490,12 +3475,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Der Name des Ordners ist zu lang. Bitte wähle einen kürzeren Namen."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Die Einladung kann noch nicht abgeschlossen werden. Bitte versuche es später erneut."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Die Einladung existiert nicht mehr."
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Der Name der Kategorie ist ungültig. Bitte wähle einen anderen Namen."
       ],
@@ -3507,21 +3486,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Der Link zu deinem Eintrag konnte nicht gelöscht werden"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Die neue Revision der Originaldatei ist noch nicht hochgeladen, bitte versuche es später noch einmal."
-      ],
-      "The original file has missing active revision": [
-        "Die Originaldatei fehlt eine aktive Revision"
-      ],
-      "The original file has missing hash key": [
-        "In der Originaldatei fehlt der Hash-Schlüssel"
-      ],
-      "The original file has missing session key": [
-        "In der Originaldatei fehlt ein Sitzungsschlüssel"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Die Originaldatei ist noch nicht hochgeladen, bitte versuche es später noch einmal."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Die hochgeladene Datei stimmt nicht mit dem Original überein. Bitte versuche es erneut."
@@ -3603,9 +3567,6 @@
       ],
       "Update Too Large": [
         "Aktualisierung zu groß"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Für diesen Ordner ist das Hochladen vorübergehend deaktiviert."
       ],
       "Username must begin with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer beginnen."
@@ -4766,9 +4727,6 @@
       "Are you sure you want to discard your import?": [
         "Möchtest du deinen Import wirklich verwerfen?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Möchtest du den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Möchtest du „${ itemName }“ dauerhaft aus dem Papierkorb löschen?"
       ],
@@ -5195,9 +5153,6 @@
       "Link copied": [
         "Link kopiert"
       ],
-      "Link copied to clipboard": [
-        "Link in die Zwischenablage kopiert"
-      ],
       "Link expired": [
         "Link abgelaufen"
       ],
@@ -5585,9 +5540,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Dies ist ein Name oder ein Spitzname für deine Organisation, der deinen Benutzern angezeigt wird. Du kannst ihn jederzeit ändern."
       ],
-      "This item already exists in your library": [
-        "Dieses Element existiert bereits in deiner Bibliothek."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
       ],
@@ -5659,12 +5611,6 @@
       ],
       "Tracking": [
         "Tracking"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Übertragung der Datei „${ name }“ wurde abgebrochen"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Übertragung der Datei „${ file.name }“ wurde übersprungen"
       ],
       "Trash": [
         "Papierkorb"
@@ -7801,17 +7747,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" konnte nicht aus dem Papierkorb wiederhergestellt werden"
       ],
-      "\"${ name }\" failed to be saved": [
-        "„${ name }“ konnte nicht gespeichert werden."
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" in den Papierkorb verschoben"
       ],
       "\"${ name }\" restored from trash": [
         "„${ name }“ aus dem Papierkorb wiederhergestellt"
-      ],
-      "\"${ name }\" saved successfully": [
-        "„${ name }“ erfolgreich gespeichert"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" konnte nicht umbenannt werden"
@@ -7881,14 +7821,8 @@
       "Access updated and shared": [
         "Zugang aktualisiert und geteilt"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Alle Elemente werden demnächst dauerhaft aus dem Papierkorb gelöscht"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Da sich dieses Dokument in einem freigegebenen Ordner befand, kann es nur der Ordnerbesitzer wiederherstellen."
-      ],
-      "Cannot load link": [
-        "Link kann nicht geladen werden"
       ],
       "Cannot load next page": [
         "Nächste Seite kann nicht geladen werden"
@@ -7898,18 +7832,6 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe aktualisiert"
-      ],
-      "Device failed to be removed": [
-        "Gerät konnte nicht entfernt werden"
-      ],
-      "Device failed to be renamed": [
-        "Gerät konnte nicht umbenannt werden"
-      ],
-      "Device removed": [
-        "Gerät entfernt"
-      ],
-      "Device renamed": [
-        "Gerät umbenannt"
       ],
       "Document moved to trash": [
         "Dokument in den Papierkorb verschoben"
@@ -7955,13 +7877,6 @@
       ],
       "Failed to trash document": [
         "Dokument konnte nicht in den Papierkorb verschoben werden"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Die Datei oder der Ordner \"${ filename }\" und ${ count } weitere(r) werden bereits hochgeladen.",
-        "Die Datei oder der Ordner \"${ filename }\" und ${ count } weitere werden bereits hochgeladen."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Die Datei oder der Ordner „${ filename }“ wird bereits hochgeladen."
       ],
       "Invitation's email was sent again": [
         "Einladungs-E-Mail wurde erneut versendet"
@@ -8019,9 +7934,6 @@
       ],
       "The link to your item was deleted": [
         "Der Link zu deinem Element wurde gelöscht"
-      ],
-      "Trash failed to be emptied": [
-        "Der Papierkorb konnte nicht geleert werden"
       ],
       "You stopped sharing this item": [
         "Du hast aufgehört, diesen Eintrag zu teilen."
@@ -10092,9 +10004,6 @@
       "Email settings": [
         "E-Mail-Einstellungen"
       ],
-      "Empty trash": [
-        "Papierkorb leeren"
-      ],
       "Enable 2FA": [
         "2FA aktivieren"
       ],
@@ -10378,9 +10287,6 @@
       "Start import process": [
         "Importvorgang starten"
       ],
-      "Stop sharing": [
-        "Teilen beenden"
-      ],
       "Stop sharing?": [
         "Teilen beenden?"
       ],
@@ -10603,6 +10509,36 @@
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Hol dir ${ discount }% Rabatt auf ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Hol dir ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "2 TB of storage to share": [
+        "2 TB Speicherplatz zur gemeinsamen Nutzung"
+      ],
+      "2 user accounts": [
+        "2 Benutzerkonten"
+      ],
+      "All premium features from your current plan": [
+        "Alle Premium-Funktionen deines aktuellen Abonnements"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "für 12 Monate"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/ Monat"
@@ -10628,6 +10564,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Zu einem unterstützten Abonnement upgraden, um Administratorrollen nutzen zu können."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kannst deine eigene Funktion nicht ändern. Bitte einen anderen Administrator, dies zu tun."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."

@@ -336,9 +336,6 @@
       "Email settings": [
         "ელფოსტის მორგება"
       ],
-      "Empty trash": [
-        "ნაგვის გასუფთავება"
-      ],
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
       ],
@@ -549,9 +546,6 @@
       "Next month": [
         "შემდეგი თვე"
       ],
-      "Next page": [
-        "შემდეგი გვერდი"
-      ],
       "No, thanks": [
         "არა, მადლობა"
       ],
@@ -587,9 +581,6 @@
       ],
       "Previous month": [
         "წინა თვე"
-      ],
-      "Previous page": [
-        "წინა გვერდი"
       ],
       "Print": [
         "დაბეჭდვა"
@@ -2861,9 +2852,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" უკვე არსებობს"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } თქვენს გარე ანგარიშს ვერ დაუკავშირდა"
       ],
@@ -3116,9 +3104,6 @@
       "Passwords do not match": [
         "პაროლები არ ემთხვევა"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "სურათების ატვირთვა დროებით გათიშულია. მოგვიანებით სცადეთ"
-      ],
       "Please configure a custom domain before adding addresses.": [
         "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
       ],
@@ -3235,12 +3220,6 @@
       "The folder name is too long. Please choose a different name.": [
         "საქაღალდის სახელი ძალიან გრძელია. აირჩიეთ სხვა სახელი."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "ამ მოწვევის დასრულება ჯერ შეუძლებელია. მოგვიანებით სცადეთ."
-      ],
-      "The invitation doesn't exist anymore": [
-        "მოსაწვევი აღარ არსებობს"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "ჭდის სახელი არასწორია. აირჩიეთ სხვა სახელი."
       ],
@@ -3252,21 +3231,6 @@
       ],
       "The link to your item failed to be deleted": [
         "ბმული თქვენს ელემენტამდე არასწორი ან წაშლილია"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "საწყისის ფაილი ახალი რევიზია ჯერ ატვირთული არაა. მოგვიანებით სცადეთ"
-      ],
-      "The original file has missing active revision": [
-        "საწყის ფაილს აქტიური რევიზია აკლია"
-      ],
-      "The original file has missing hash key": [
-        "პირველად ფაილს აკლია hash გასაღები"
-      ],
-      "The original file has missing session key": [
-        "პირველად ფაილს აკლია სესიის გასაღები"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "საწყისი ფაილი ჯერ ატვირთული არაა. მოგვიანებით სცადეთ"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "თქვენს გარე ანგარიშზე, მეტისმეტად, ბევრი საქაღალდეა. გთხოვთ, ხელით მიუთითოთ შემოსატანი საქაღალდეები."
@@ -3321,9 +3285,6 @@
       ],
       "Update Too Large": [
         "განახლება ძალიან დიდია"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "ამ საქაღალდისთვის ატვირთვა დროებით გათიშულია"
       ],
       "Username must begin with a letter or digit": [
         "მომხმარებლის სახელი ასოთი ან ციფრით უნდა იწყებოდეს"
@@ -4413,9 +4374,6 @@
       "Are you sure you want to discard your import?": [
         "გნებავთ თქვენი შემოტანის გაუქმება?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ ნაგვის გასუფთავება და იქ მდებარე ყველა ფაილის სამუდამოდ წაშლა?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, სამუდამოდ წაშალოთ \"${ itemName }\" ნაგვის ყუთიდან?"
       ],
@@ -4809,9 +4767,6 @@
       "Link copied": [
         "ბმული დაკოპირებულია"
       ],
-      "Link copied to clipboard": [
-        "ბმული დაკოპირდა გაცვლის ბაფერში"
-      ],
       "Link expired": [
         "ბმული ვადა გასულია"
       ],
@@ -5181,9 +5136,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "ეს არის სახელი ან მეტსახელი თქვენი ორგანიზაციისთვის, რომელსაც თქვენი მომხმარებლები დაინახავენ. მისი შეცვლა ნებისმიერ დროს შეგიძლიათ."
       ],
-      "This item already exists in your library": [
-        "ეს ელემენტი თქვენს ბიბლიოთეკაში უკვე არსებობს"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "ბმული მიდის ვებგვერდამდე, რომელმაც შეიძლება მოიპაროს თქვენი ისეთი ინფორმაცია, როგორიცაა პაროლები და საკრედიტო ბარათის დეტალები."
       ],
@@ -5225,12 +5177,6 @@
       ],
       "Tracking": [
         "ტრეკინგი"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "\"${ name }\"-ის გადაცემა გაუქმებულია"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "\"${ file.name }\"-ის გადაცემა გამოტოვებულია"
       ],
       "Trash": [
         "ნაგვის ყუთი"
@@ -7300,17 +7246,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\"-ის ნაგვის ყუთიდან აღდგენის შეცდომა"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\"-ის შენახვის შეცდომა"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" ნაგვის ყუთში ჩავარდა"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" აღდგენილია ნაგვის ყუთიდან"
-      ],
-      "\"${ name }\" saved successfully": [
-        "${ name } წარმატებით იქნა შენახული"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"-ის გადარქმევის შეცდომა"
@@ -7377,12 +7317,6 @@
       "Access updated and shared": [
         "წვდომა განახლებული და გაზიარებულია"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "ნაგვის ყუთიდან ფაილები მალე სამუდამოდ წაიშლება"
-      ],
-      "Cannot load link": [
-        "ბმულის ჩატვირთვის შეცდომა"
-      ],
       "Cannot load next page": [
         "შემდეგი გვერდის ჩატვირთვის შეცდომა"
       ],
@@ -7391,18 +7325,6 @@
       ],
       "Contact group updated": [
         "კონტაქტების ჯგუფი განახლდა"
-      ],
-      "Device failed to be removed": [
-        "მოწყობილობის წაშლის შეცდომა"
-      ],
-      "Device failed to be renamed": [
-        "მოწყობილობის სახელის გადარქმევის შეცდომა"
-      ],
-      "Device removed": [
-        "მოწყობილობა წაიშალა"
-      ],
-      "Device renamed": [
-        "მოწყობილობის სახელი შეიცვალა"
       ],
       "Document moved to trash": [
         "დოკუმენტი გადატანილია ნაგავში"
@@ -7430,13 +7352,6 @@
       ],
       "Failed to rename document": [
         "დოკუმენტისთვის სახელის გადარქმევა ვერ მოხერხდა"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "ფაილის ან საქაღალდის \"${ filename }\" და ${ count } სხვის ატვირთვა უკვე მიმდინარეობს",
-        "ფაილის ან საქაღალდის \"${ filename }\" და ${ count } სხვის ატვირთვა უკვე მიმდინარეობს"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "ფაილის ან საქაღალდის \"${ filename }\" ატვირთვა უკვე მიმდინარეობს"
       ],
       "Invitation's email was sent again": [
         "მოსაწვევის ელფოსტა კიდევ გაიგზავნა"
@@ -7491,9 +7406,6 @@
       ],
       "The link to your item was deleted": [
         "ბმული თქვენს ელემენტამდე წაიშალა"
-      ],
-      "Trash failed to be emptied": [
-        "ნაგვის ყუთის გასუფთავების შეცდომა"
       ],
       "You stopped sharing this item": [
         "თქვენ შეწყვიტეთ ამ ელემენტის გაზიარება"
@@ -9414,9 +9326,6 @@
       "Email settings": [
         "ელფოსტის მორგება"
       ],
-      "Empty trash": [
-        "ნაგვის გასუფთავება"
-      ],
       "Enable 2FA": [
         "2FA-ის ჩართვა"
       ],
@@ -9690,9 +9599,6 @@
       ],
       "Start import process": [
         "შემოტანის დაწყება"
-      ],
-      "Stop sharing": [
-        "გაზიარების შეწყვეტა"
       ],
       "Stop sharing?": [
         "შევწყვიტო გაზიარება?"

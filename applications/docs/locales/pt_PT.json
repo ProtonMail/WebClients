@@ -336,9 +336,6 @@
       "Email settings": [
         "Definições de e-mail"
       ],
-      "Empty trash": [
-        "Esvaziar o lixo"
-      ],
       "enable desktop notifications": [
         "ativar as notificações"
       ],
@@ -549,9 +546,6 @@
       "Next month": [
         "Mês seguinte"
       ],
-      "Next page": [
-        "Página seguinte"
-      ],
       "No, thanks": [
         "Não, obrigado"
       ],
@@ -587,9 +581,6 @@
       ],
       "Previous month": [
         "Mês anterior"
-      ],
-      "Previous page": [
-        "Página anterior"
       ],
       "Print": [
         "Imprimir"
@@ -2865,9 +2856,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "«${ sanitizedName }» já existe."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } não se consegue conectar à sua conta externa"
       ],
@@ -3166,9 +3154,6 @@
       "Passwords do not match": [
         "As palavras-passe não correspondem."
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "O envio de fotos está temporariamente desativado. Tente novamente mais tarde."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Configure um domínio personalizado antes de adicionar endereços."
       ],
@@ -3288,12 +3273,6 @@
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Escolha um nome diferente."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "O convite ainda não pode ser finalizado. Tente novamente mais tarde."
-      ],
-      "The invitation doesn't exist anymore": [
-        "O convite não existe mais."
-      ],
       "The label name is invalid. Please choose a different name.": [
         "O nome da etiqueta não é válido. Escolha um nome diferente."
       ],
@@ -3305,21 +3284,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Falha ao eliminar a ligação ao item"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "A nova revisão do ficheiro original ainda não foi enviada. Tente novamente mais tarde."
-      ],
-      "The original file has missing active revision": [
-        "O ficheiro original tem uma revisão ativa em falta."
-      ],
-      "The original file has missing hash key": [
-        "O ficheiro original tem uma chave hash em falta."
-      ],
-      "The original file has missing session key": [
-        "O ficheiro original tem uma chave de sessão em falta."
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "O ficheiro original ainda não foi enviado. Tente novamente mais tarde"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
@@ -3383,9 +3347,6 @@
       ],
       "Update Too Large": [
         "Atualização muito grande"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "O envio para esta pasta está temporariamente desativado."
       ],
       "Username must begin with a letter or digit": [
         "O nome de utilizador deve começar com uma letra ou um algarismo"
@@ -4484,9 +4445,6 @@
       "Are you sure you want to discard your import?": [
         "Tem a certeza de que deseja descartar a importação?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Tem a certeza de que deseja esvaziar o lixo e eliminar permanentemente todos os itens?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Tem a certeza de que deseja eliminar permanentemente \"${ itemName }\" do lixo?"
       ],
@@ -4880,9 +4838,6 @@
       "Link copied": [
         "Ligação copiada"
       ],
-      "Link copied to clipboard": [
-        "Ligação copiada para a área de transferência"
-      ],
       "Link expired": [
         "Link expirado"
       ],
@@ -5252,9 +5207,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Este é um nome ou uma alcunha para a sua organização que os seus utilizadores verão. Pode alterá-lo a qualquer altura."
       ],
-      "This item already exists in your library": [
-        "Este item já existe na sua biblioteca."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esta hiperligação leva a um website que pode tentar roubar a sua informação, como palavras-passe e números de cartão de crédito."
       ],
@@ -5296,12 +5248,6 @@
       ],
       "Tracking": [
         "Rastreamento"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "A transferência foi cancelada para o ficheiro \"${ name }\"."
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "A transferência foi ignorada para o ficheiro \"${ file.name }\"."
       ],
       "Trash": [
         "Lixo"
@@ -7380,17 +7326,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "Erro ao restaurar \"${ name }\" do lixo"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Erro ao guardar \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para o lixo"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" restaurado do lixo"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" guardado"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Erro ao renomear \"${ newName }\""
@@ -7457,12 +7397,6 @@
       "Access updated and shared": [
         "O acesso foi atualizado e partilhado."
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Todos os itens serão permanentemente eliminados do lixo"
-      ],
-      "Cannot load link": [
-        "Não é possível carregar a ligação."
-      ],
       "Cannot load next page": [
         "Não é possível carregar a página seguinte."
       ],
@@ -7471,18 +7405,6 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
-      ],
-      "Device failed to be removed": [
-        "Erro ao remover o dispositivo"
-      ],
-      "Device failed to be renamed": [
-        "Erro ao mudar o nome do dispositivo"
-      ],
-      "Device removed": [
-        "O dispositivo foi removido."
-      ],
-      "Device renamed": [
-        "O nome do dispositivo foi alterado."
       ],
       "Document moved to trash": [
         "Documento movido para o lixo"
@@ -7510,13 +7432,6 @@
       ],
       "Failed to rename document": [
         "Erro ao alterar o nome do documento"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "O ficheiro ou pasta «${ filename }» e ${ count } outro já são enviados.",
-        "O ficheiro ou pasta «${ filename }» e ${ count } outros já são enviados."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "O ficheiro ou pasta “${ filename }” já está a ser carregado"
       ],
       "Invitation's email was sent again": [
         "O e-mail do convite foi enviado novamente."
@@ -7571,9 +7486,6 @@
       ],
       "The link to your item was deleted": [
         "A ligação ao seu item foi eliminada."
-      ],
-      "Trash failed to be emptied": [
-        "Erro ao esvaziar o lixo"
       ],
       "You stopped sharing this item": [
         "Parou de partilhar este item."
@@ -9499,9 +9411,6 @@
       "Email settings": [
         "Definições de e-mail"
       ],
-      "Empty trash": [
-        "Esvaziar o lixo"
-      ],
       "Enable 2FA": [
         "Ativar A2F"
       ],
@@ -9775,9 +9684,6 @@
       ],
       "Start import process": [
         "Iniciar o processo de importação"
-      ],
-      "Stop sharing": [
-        "Parar a partilha"
       ],
       "Stop sharing?": [
         "Parar de partilhar?"

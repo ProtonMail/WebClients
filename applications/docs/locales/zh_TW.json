@@ -333,9 +333,6 @@
       "Email settings": [
         "電郵設定"
       ],
-      "Empty trash": [
-        "清空垃圾桶"
-      ],
       "enable desktop notifications": [
         "啟用桌面通知"
       ],
@@ -549,9 +546,6 @@
       "Next month": [
         "下個月"
       ],
-      "Next page": [
-        "下一頁"
-      ],
       "No, thanks": [
         "不用了，謝謝"
       ],
@@ -587,9 +581,6 @@
       ],
       "Previous month": [
         "上個月"
-      ],
-      "Previous page": [
-        "上一頁"
       ],
       "Print": [
         "列印"
@@ -2847,9 +2838,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "「${ sanitizedName }」已存在"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME }無法連接外部帳號"
       ],
@@ -3189,9 +3177,6 @@
       "Photo not found": [
         "找不到照片"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "照片上載暫時停用。請稍後再試"
-      ],
       "Please configure a custom domain before adding addresses.": [
         "您需要先設定好自訂網域才能新增電子郵件。"
       ],
@@ -3324,12 +3309,6 @@
       "The folder name is too long. Please choose a different name.": [
         "資料夾名稱太長。請選擇其它名稱。"
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "此邀請函無法完成。請稍後再試。"
-      ],
-      "The invitation doesn't exist anymore": [
-        "此邀請函已經不存在"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "此標籤名稱無法使用。請換另一個名稱。"
       ],
@@ -3341,21 +3320,6 @@
       ],
       "The link to your item failed to be deleted": [
         "未能刪除指向您項目的連結"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "原始檔案的新修訂版本尚未上載，請稍後再試"
-      ],
-      "The original file has missing active revision": [
-        "原始檔案缺少檔案修訂"
-      ],
-      "The original file has missing hash key": [
-        "原始檔案缺少雜湊金鑰"
-      ],
-      "The original file has missing session key": [
-        "原始檔案缺少工作階段金鑰"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "原始檔案尚未上載，請稍後再試"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待匯入的外部帳號裡資料夾過多，請自訂匯入內容並刪除部份資料夾。"
@@ -3434,9 +3398,6 @@
       ],
       "Update Too Large": [
         "更新內容超過大小限制"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "上傳此資料夾已暫時關閉"
       ],
       "Username must begin with a letter or digit": [
         "使用者名稱的開頭必須為字母或數字"
@@ -4525,9 +4486,6 @@
       "Are you sure you want to discard your import?": [
         "您確定要捨棄您的匯入嗎？"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "您確定要清空垃圾桶並永久刪除當中所有項目嗎？"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "您確定要從垃圾桶中永久刪除 “${ itemName }” 嗎？"
       ],
@@ -4921,9 +4879,6 @@
       "Link copied": [
         "已複製連結"
       ],
-      "Link copied to clipboard": [
-        "連結已複製到剪貼簿"
-      ],
       "Link expired": [
         "連結已過期"
       ],
@@ -5293,9 +5248,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "此是貴組織使用者可看見的名稱或暱稱。您可隨時時修正它。"
       ],
-      "This item already exists in your library": [
-        "此項目已存在於資料庫"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向的網站可能試圖竊取您的資訊，例如密碼或信用卡細節 。"
       ],
@@ -5346,12 +5298,6 @@
       ],
       "Tracking": [
         "追蹤"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "已取消檔案「${ name }」的傳輸"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "已跳過檔案「${ file.name }」的傳輸"
       ],
       "Trash": [
         "垃圾桶"
@@ -7397,17 +7343,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "檔案 \"${ name }\" 未能從垃圾中被復原"
       ],
-      "\"${ name }\" failed to be saved": [
-        "「${ name }」儲存失敗"
-      ],
       "\"${ name }\" moved to trash": [
         "「${ name }」已移動到垃圾桶"
       ],
       "\"${ name }\" restored from trash": [
         "「${ name }」已從垃圾桶中還原"
-      ],
-      "\"${ name }\" saved successfully": [
-        "「${ name }」已成功儲存"
       ],
       "\"${ newName }\" failed to be renamed": [
         "「${ newName }」重新命名失敗"
@@ -7463,12 +7403,6 @@
       "Access updated and shared": [
         "存取權已更新和共享"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "所有項目將從「垃圾桶」中永久刪除"
-      ],
-      "Cannot load link": [
-        "無法載入連結"
-      ],
       "Cannot load next page": [
         "無法載入下一頁"
       ],
@@ -7477,18 +7411,6 @@
       ],
       "Contact group updated": [
         "聯絡人群組已更新"
-      ],
-      "Device failed to be removed": [
-        "無法移除裝置"
-      ],
-      "Device failed to be renamed": [
-        "無法重新命名裝置"
-      ],
-      "Device removed": [
-        "已移除裝置"
-      ],
-      "Device renamed": [
-        "裝置已重新命名"
       ],
       "Document moved to trash": [
         "文件已移至垃圾桶"
@@ -7516,12 +7438,6 @@
       ],
       "Failed to rename document": [
         "無法重新命名文件"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "檔案或資料夾「${ filename }」以及其它 ${ count } 正在上載中"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "檔案或資料夾「${ filename }」正在上載中"
       ],
       "Invitation's email was sent again": [
         "邀請函電子郵件已重新寄件"
@@ -7573,9 +7489,6 @@
       ],
       "The link to your item was deleted": [
         "指向您的項目的連結已刪除"
-      ],
-      "Trash failed to be emptied": [
-        "無法清空垃圾桶"
       ],
       "You stopped sharing this item": [
         "您已停止分享這個項目"
@@ -9527,9 +9440,6 @@
       "Email settings": [
         "電郵設定"
       ],
-      "Empty trash": [
-        "清空垃圾桶"
-      ],
       "Enable 2FA": [
         "啟用2FA"
       ],
@@ -9805,9 +9715,6 @@
       ],
       "Start import process": [
         "開始匯入流程"
-      ],
-      "Stop sharing": [
-        "停止分享"
       ],
       "Stop sharing?": [
         "停止共用?"

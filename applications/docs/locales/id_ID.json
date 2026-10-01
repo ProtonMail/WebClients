@@ -333,9 +333,6 @@
       "Email settings": [
         "Pengaturan email"
       ],
-      "Empty trash": [
-        "Kosongkan sampah"
-      ],
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
       ],
@@ -546,9 +543,6 @@
       "Next month": [
         "Bulan selanjutnya"
       ],
-      "Next page": [
-        "Halaman selanjutnya"
-      ],
       "No, thanks": [
         "Tidak, terima kasih"
       ],
@@ -584,9 +578,6 @@
       ],
       "Previous month": [
         "Bulan sebelumnya"
-      ],
-      "Previous page": [
-        "Halaman sebelumnya"
       ],
       "Print": [
         "Cetak"
@@ -2841,9 +2832,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" sudah ada"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda"
       ],
@@ -3090,9 +3078,6 @@
       "Passwords do not match": [
         "Kata sandi tidak sesuai"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Unggahan foto untuk sementara dinonaktifkan. Silakan coba lagi nanti"
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Silakan atur domain kustom sebelum menambahkan alamat"
       ],
@@ -3207,12 +3192,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Nama folder terlalu panjang. Mohon pilih nama lain."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Undangan ini belum dapat diselesaikan. Silakan coba lagi nanti."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Undangan ini tidak lagi ada"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Nama label tidak valid. Silakan pilih nama lain."
       ],
@@ -3224,21 +3203,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Tautan ke item Anda gagal dihapus"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Revisi baru file asli belum diunggah. Silakan coba lagi nanti"
-      ],
-      "The original file has missing active revision": [
-        "File asli memiliki revisi aktif yang hilang"
-      ],
-      "The original file has missing hash key": [
-        "Terdapat kunci hash yang hilang pada file asli"
-      ],
-      "The original file has missing session key": [
-        "Terdapat kunci sesi yang hilang pada file asli"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "File asli belum diunggah. Silakan coba lagi nanti"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
@@ -3293,9 +3257,6 @@
       ],
       "Update Too Large": [
         "Pembaruan Terlalu Besar"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Unggahan bagi folder ini untuk sementara dinonaktifkan"
       ],
       "Username must begin with a letter or digit": [
         "Nama pengguna harus dimulai dengan huruf atau angka"
@@ -4346,9 +4307,6 @@
       "Are you sure you want to discard your import?": [
         "Apakah Anda yakin ingin membuang impor Anda?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Apakah Anda yakin untuk mengosongkan sampah dan menghapus seluruh berkas yang ada di dalamnya secara permanen?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Apakah Anda yakin untuk menghapus \"${ itemName }\" dari sampah secara permanen?"
       ],
@@ -4739,9 +4697,6 @@
       "Link copied": [
         "Tautan disalin"
       ],
-      "Link copied to clipboard": [
-        "Tautan disalin ke papan klip"
-      ],
       "Link expired": [
         "Tautan kedaluwarsa"
       ],
@@ -5108,9 +5063,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Nama ini adalah nama atau julukan organisasi yang akan dilihat oleh para pengguna Anda. Anda dapat mengubah nama ini kapan saja."
       ],
-      "This item already exists in your library": [
-        "Item ini telah ada pada pustaka Anda"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
       ],
@@ -5152,12 +5104,6 @@
       ],
       "Tracking": [
         "Pelacakan"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Transfer file \"${ name }\" dibatalkan"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Transfer untuk file \"${ file.name }\" dilewati"
       ],
       "Trash": [
         "Sampah"
@@ -7180,17 +7126,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" gagal untuk dipulihkan dari sampah"
       ],
-      "\"${ name }\" failed to be saved": [
-        "\"${ name }\" gagal disimpan"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" dipindahkan ke sampah"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" dipulihkan dari sampah"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" berhasil disimpan"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Nama \"${ newName }\" gagal diubah"
@@ -7246,12 +7186,6 @@
       "Access updated and shared": [
         "Akses diperbarui dan dibagikan"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Semua item akan segera dihapus secara permanen dari sampah"
-      ],
-      "Cannot load link": [
-        "Tautan tidak dapat dimuat"
-      ],
       "Cannot load next page": [
         "Halaman selanjutnya tidak dapat dimuat"
       ],
@@ -7260,18 +7194,6 @@
       ],
       "Contact group updated": [
         "Grup kontak telah diperbarui"
-      ],
-      "Device failed to be removed": [
-        "Perangkat gagal dihapus"
-      ],
-      "Device failed to be renamed": [
-        "Nama perangkat gagal diubah"
-      ],
-      "Device removed": [
-        "Perangkat dihapus"
-      ],
-      "Device renamed": [
-        "Nama perangkat diubah"
       ],
       "Document moved to trash": [
         "Dokumen dipindahkan ke tempat sampah"
@@ -7299,12 +7221,6 @@
       ],
       "Failed to rename document": [
         "Gagal mengubah nama dokumen"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "File atau folder \"${ filename }\" dan ${ count } lainnya sedang dalam proses pengunggahan"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "File atau folder \"${ filename }\" sedang dalam proses pengunggahan"
       ],
       "Invitation's email was sent again": [
         "Email undangan telah dikirim ulang"
@@ -7356,9 +7272,6 @@
       ],
       "The link to your item was deleted": [
         "Tautan ke item Anda telah dihapus"
-      ],
-      "Trash failed to be emptied": [
-        "Gagal mengosongkan sampah"
       ],
       "You stopped sharing this item": [
         "Anda berhenti membagikan item ini"
@@ -9224,9 +9137,6 @@
       "Email settings": [
         "Pengaturan email"
       ],
-      "Empty trash": [
-        "Kosongkan sampah"
-      ],
       "Enable 2FA": [
         "Aktifkan 2FA"
       ],
@@ -9499,9 +9409,6 @@
       ],
       "Start import process": [
         "Mulai proses impor"
-      ],
-      "Stop sharing": [
-        "Berhenti berbagi"
       ],
       "Stop sharing?": [
         "Berhenti bagikan?"
