@@ -39,12 +39,6 @@ import {
 } from '../DriveSDK/trash'
 import { generateNodeUid } from '@proton/drive'
 
-// This is part of a hack to make sure the name in the document sharing modal is updated when the document name changes.
-// While having these module-scoped variable here looks a bit stinky, it's completely fine because the purpose is to prevent a
-// memory leak by re-setting it every time the modal is opened.
-let OVERRIDDEN_NAME_CLEANUP = () => {}
-let OVERRIDDEN_NAME_LISTENERS = new Set<(name: string) => void>()
-
 /**
  * Controls the lifecycle of a single document for an authenticated user.
  */
@@ -473,31 +467,6 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
       })
       this.documentState.setProperty('documentTrashState', 'trashed')
     }
-  }
-
-  public openDocumentSharingModal(): void {
-    OVERRIDDEN_NAME_CLEANUP()
-    OVERRIDDEN_NAME_LISTENERS.clear()
-    OVERRIDDEN_NAME_LISTENERS = new Set<(name: string) => void>()
-    OVERRIDDEN_NAME_CLEANUP = this.documentState.subscribeToProperty('documentName', (name) => {
-      for (const listener of OVERRIDDEN_NAME_LISTENERS) {
-        listener(name)
-      }
-    })
-    void this.driveCompat.openDocumentSharingModal({
-      linkId: this.documentState.getProperty('entitlements').nodeMeta.linkId,
-      volumeId: this.documentState.getProperty('entitlements').nodeMeta.volumeId,
-      onPublicLinkToggle: (enabled) => {
-        this.documentState.emitEvent({
-          name: 'PublicLinkToggleStateChanged',
-          payload: { enabled },
-        })
-      },
-      registerOverriddenNameListener: (listener: (name: string) => void) => {
-        OVERRIDDEN_NAME_LISTENERS.add(listener)
-        listener(this.documentState.getProperty('documentName'))
-      },
-    })
   }
 
   public openMoveToFolderModal() {

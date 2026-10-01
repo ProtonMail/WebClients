@@ -9,7 +9,6 @@ import { isPrivateNodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import { addSentryBreadcrumb, SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 import { useEffect, useRef } from 'react'
 import { useApplication } from '~/utils/application-context'
-import { useSharingModalDriveSdkEnabled } from '~/utils/flags'
 
 export function useChangeAddressWhenPubliclyShared(
   nodeMeta: NodeMeta | PublicNodeMeta,
@@ -19,18 +18,14 @@ export function useChangeAddressWhenPubliclyShared(
   const drive = getDrive()
   const { getLocalID } = useAuthentication()
 
-  const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
-
   const nodeMetaNotPrivate = !isPrivateNodeMeta(nodeMeta)
 
   const changedAddress = useRef<boolean>(false)
   useEffect(
-    // When SDK is enabled and AppendPublicShareKeyMaterialToTitle is not used, the default URL address is not updated
     function setInitialAddress() {
       void OpenTracer.trace('boot_use_change_address_when_publicly_shared_set_initial_address_start')
       if (
         changedAddress.current ||
-        !sharingModalDriveSdkEnabled ||
         !documentState ||
         !documentState.getProperty('userRole').canReadPublicShareUrl() ||
         nodeMetaNotPrivate
@@ -58,7 +53,7 @@ export function useChangeAddressWhenPubliclyShared(
           }),
         )
     },
-    [documentState, sharingModalDriveSdkEnabled, nodeMetaNotPrivate, drive, getLocalID, isPublicMode],
+    [documentState, nodeMetaNotPrivate, drive, getLocalID, isPublicMode],
   )
 }
 

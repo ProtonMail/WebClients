@@ -1,16 +1,10 @@
-import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
+import type { SessionKey } from '@protontech/crypto';
 
 import type { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 import type { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import type { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
-
-type WithSRPPayload<T extends any> = T & {
-    srpModulusID: string;
-    srpVerifier: string;
-    urlPasswordSalt: string;
-};
 
 // Share type string used in metrics context, do not confuse with ShareType enum.
 export type ShareTypeString = 'main' | 'device' | 'photo' | 'shared';
@@ -52,34 +46,6 @@ export interface ShareWithKey extends Share {
     memberships: ShareMembership[];
 }
 
-export type ShareURL = WithSRPPayload<{
-    shareId: string;
-    shareUrlId: string;
-    expirationTime: number | null;
-    creatorEmail: string;
-    password: string;
-    flags: number;
-    token: string;
-    publicUrl: string;
-    sharePassphraseKeyPacket: string;
-    sharePasswordSalt: string;
-    hasGeneratedPasswordIncluded: boolean;
-    numAccesses: number;
-    maxAccesses: number;
-    permissions: number;
-}>;
-
-export type UpdateSharedURL = WithSRPPayload<{
-    expirationDuration: number | null;
-    expirationTime: number | null;
-    flags: number;
-    maxAccesses: number;
-    password: string;
-    permissions: number;
-    sharePassphraseKeyPacket: string;
-    sharePasswordSalt: string;
-}>;
-
 export interface LockedVolumeForRestore {
     lockedVolumeId: string;
     defaultShares: LockedShareForRestore[];
@@ -100,18 +66,6 @@ interface LockedPhotosForRestore extends LockedShareForRestore {
     shareDecryptedPassphrase: string;
     shareSessionKey: SessionKey;
 }
-export interface ShareMember {
-    memberId: string;
-    email: string;
-    inviterEmail: string;
-    addressId: string;
-    createTime: number;
-    modifyTime: number;
-    permissions: SHARE_MEMBER_PERMISSIONS;
-    keyPacketSignature: string;
-    sessionKeySignature: string;
-}
-
 export interface ShareMembership {
     memberId: string;
     shareId: string;
@@ -175,17 +129,6 @@ export interface ShareExternalInvitation {
     permissions: SHARE_MEMBER_PERMISSIONS;
     state: SHARE_EXTERNAL_INVITATION_STATE;
     externalInvitationSignature: string;
-}
-
-export interface ShareInvitee {
-    name: string;
-    email: string;
-    contactId?: string;
-    error?: Error;
-    group?: string;
-    isExternal?: boolean;
-    isLoading?: boolean;
-    publicKey?: PublicKeyReference;
 }
 
 export interface SharedUrlInfo {
