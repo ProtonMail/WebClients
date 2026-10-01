@@ -25,6 +25,7 @@ export {
     type LumoApiClientConfig,
     type ChunkCallback,
     type FinishCallback,
+    type RecordRequestCallback,
     type AssistantCallOptions,
     type AssistantCallResult,
     type RequestInterceptor,
