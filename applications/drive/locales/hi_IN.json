@@ -303,9 +303,6 @@
       "Create folder": [
         "फोल्डर बनाएं"
       ],
-      "Create new folder": [
-        "नया फोल्डर बनाएं"
-      ],
       "Create new password": [
         "नया पासवर्ड बनाएं"
       ],
@@ -3394,9 +3391,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "कॉपीराइट उल्लंघन या चुराए गए डाटा की रिपोर्ट करते समय संदेश देना ज़रूरी है"
       ],
-      "A problem occurred, please try again.": [
-        "कोई गड़बड़ हुई, कृपया फिर से कोशिश करें।"
-      ],
       "Address could not be added.": [
         "पता जोड़ा नहीं जा सका।"
       ],
@@ -3477,12 +3471,6 @@
       ],
       "Contact signature not verified": [
         "संपर्क हस्ताक्षर सत्यापित नहीं"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "इस ब्राउज़र में सामग्री खोज सक्षम नहीं की जा सकती है। कृपया निजी ब्राउज़िंग मोड छोड़ें या किसी अन्य ब्राउज़र का उपयोग करें।"
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "कंटेंट खोज सक्षम नहीं की जा सकती। कृपया एप्लीकेशन को वापिस शुरु करें या डेटा हटाएं।"
       ],
       "Copy operation aborted": [
         "कॉपी कार्रवाई निरस्त की गई"
@@ -3590,9 +3578,6 @@
       ],
       "Failed to change permissions settings": [
         "अनुमति सेटिंग बदलने में विफल"
-      ],
-      "Failed to copy photo to album": [
-        "फ़ोटो को एल्बम में कॉपी करने में विफल रहा"
       ],
       "Failed to create folder": [
         "फोल्डर बनाने में विफल"
@@ -3867,9 +3852,6 @@
       ],
       "Photo not found": [
         "फोटो नहीं मिली"
-      ],
-      "Please activate your search again": [
-        "कृपया अपना खोज वापिस सक्षम करें"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "कृपया जांचें कि क्या आपका ABN सीमा पार VAT के लिए पंजीकृत है"
@@ -5650,14 +5632,8 @@
       "Clear data": [
         "डाटा मिटाएं"
       ],
-      "Clear encrypted search data": [
-        "एन्क्रिप्ट किया खोज डाटा साफ करें"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "ब्राउज़र डेटा साफ़ करने से इस डिवाइस पर खोज अनुक्रमणिका साफ़ हो जाएगा। खोज सुविधा का उपयोग करते समय सभी फ़ाइलों को फिर से अनुक्रमित करना होगा।"
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "एन्क्रिप्टेड खोज से संबंधित ब्राउज़र डेटा साफ़ करता है।"
       ],
       "Clears browser data related to the search.": [
         "खोज से संबंधित ब्राउज़र डेटा साफ़ करता है।"
@@ -5846,9 +5822,6 @@
       "Enabling drive search": [
         "ड्राइव खोज चालू कर रहे"
       ],
-      "Encrypted search is here": [
-        "एन्क्रिप्टेड खोज यहाँ है"
-      ],
       "End-to-end encrypted": [
         "शुरु-से-अंत तक एन्क्रिप्ट किया"
       ],
@@ -5878,16 +5851,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "अपना स्वयं का पासवर्ड दर्ज करें (विश्वसनीय संपर्क के रूप में)।"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "अनुमानित समय शेष: ${ estimatedMinutes } मिनट",
-        "अनुमानित समय शेष: ${ estimatedMinutes } मिनट"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "अनुमानित समय शेष: एक मिनट से भी कम"
-      ],
-      "Estimating time remaining...": [
-        "शेष समय का अनुमान लगाया जा रहा है..."
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName } में सब कुछ"
@@ -5972,9 +5935,6 @@
       ],
       "High Priority": [
         "उच्च प्राथमिकता"
-      ],
-      "How does encrypted search work?": [
-        "एन्क्रिप्टेड खोज कैसे काम करती है?"
       ],
       "I have not finished this one yet.": [
         "मैंने अभी ये पूरा नहीं किया है।"
@@ -6066,12 +6026,6 @@
       ],
       "Indexing in progress": [
         "इंडेक्सिंग हो रही है"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "${ totalProgressToShow } में से ${ esProgress } चीज़ें लिस्ट कर रहे"
-      ],
-      "Indexing search results…": [
-        "खोज परिणाम इंडेक्स कर रहे…"
       ],
       "Inherited from parent folder": [
         "मुख्य फ़ोल्डर से इनहेरिट की गई"
@@ -6250,9 +6204,6 @@
       "Move ${ folderCount } folder": [
         "${ folderCount } फोल्डर को ले जाएँ",
         "${ folderCount } फोल्डर को ले जाएँ"
-      ],
-      "Moving files": [
-        "फ़ाइलें ले जाई जा रही हैं"
       ],
       "My Links": [
         "मेरे लिंक"
@@ -6502,9 +6453,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "निजी ब्राउज़िंग (या \"इंकोग्निटो\" मोड) केवल आपके डिवाइस पर आपकी गतिविधि को छिपाए रखने के लिए उपयोगी है। यह आपके ब्राउज़र को इतिहास और कुकीज़ सहेजने से रोकता है, लेकिन यह आपको अदृश्य नहीं बनाता है। आपका ISP, नेटवर्क एडमिनिस्ट्रेटर और आपके द्वारा देखी जाने वाली वेबसाइटें अभी भी देख सकती हैं कि आप ऑनलाइन क्या करते हैं।"
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "निजी खोज सक्षम कर दी गई है। अब आप इस संवाद को बंद करके फ़ाइलें और फोल्डर खोज सकते हैं।"
-      ],
       "Public link": [
         "सार्वजनिक लिंक"
       ],
@@ -6573,9 +6521,6 @@
       ],
       "Scan to download": [
         "स्कैन करके डाउनलोड करें"
-      ],
-      "Search cannot be enabled in this browser": [
-        "इस ब्राउज़र में खोज सक्षम नहीं की जा सकती"
       ],
       "Search data can't be read": [
         "सर्च डाटा पढ़ा नहीं जा सकता"
@@ -6871,9 +6816,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "खोज पूरा निजी करने के लिए ${ DRIVE_APP_NAME } को आपके फाइलों के नाम डिवाइस में रखने पड़ेंगे।"
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "वास्तव में निजी खोज को चालू करने के लिए, हमें आपकी फ़ाइलों को स्थानीय रूप से अनुक्रमित करना होगा। आप अभी भी सामान्य रूप से ${ DRIVE_APP_NAME } का उपयोग कर सकते हैं - अनुक्रमण पूरा होने पर हम आपको सूचित करेंगे।"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "स्पैम और दुर्व्यवहार से लड़ने के लिए, कृपया सत्यापित करें कि आप इंसान हैं।"
       ],
@@ -6972,9 +6914,6 @@
       ],
       "Update required": [
         "अपडेट चाहिए"
-      ],
-      "Updating drive search...": [
-        "ड्राइव खोज अपडेट कर रहे..."
       ],
       "Upgrade anytime to bring over the rest": [
         "बाकी को लाने के लिए किसी भी समय अपग्रेड करें"
@@ -8043,9 +7982,6 @@
       "Shared with me": [
         "मेरे साथ साझा किया गया"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "एन्क्रिप्टेड खोज के सूचीकरण की प्रगति दिखाएं"
-      ],
       "Sign emails": [
         "ईमेल पे हस्ताक्षर करें"
       ],
@@ -8111,9 +8047,6 @@
       ],
       "Toolbar": [
         "टूलबार"
-      ],
-      "Type": [
-        "प्रकार"
       ],
       "Unlock drive": [
         "ड्राइव अनलॉक करें"
@@ -9746,35 +9679,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" सफलतापूर्वक बनाया गया"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" मिटा दिया गया"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "\"${ ellipsedName }\" हमेशा के लिए कचरे से मिटाया गया"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "\"${ ellipsedName }\" बनाया नहीं जा सका"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "\"${ ellipsedName }\" मिटाया नहीं जा सका"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "\"${ ellipsedName }\" को हमेशा के लिए कचरे से मिटाया नहीं जा सका"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "\"${ ellipsedName }\" ले जाने में असफल"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\" कचरे से रीस्टोर करने में असफल"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" ले जाया गया"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "\"${ ellipsedName }\" कचरे से लाया गया"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" सफलतापूर्वक ले जाया गया"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" शेयर किया गया"
@@ -9822,10 +9734,6 @@
         "${ numberOfItems } चीज़ कॉपी की गई",
         "${ numberOfItems } चीज़ें कॉपी की गईं"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } आइटम मिटाया गया",
-        "${ numberOfItems } आइटम मिटाए गए"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } आइटम स्थायी रूप से मिटाया गया",
         "${ numberOfItems } आइटम स्थायी रूप से मिटाए गए"
@@ -9834,21 +9742,9 @@
         "${ numberOfItems } चीज़ कचरे से हमेशा के लिए मिटाया गया",
         "${ numberOfItems } चीज़े कचरे से हमेशा के लिए मिटाए गए"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } चीज़ कचरे से हमेशा के लिए मिटाने में असफल",
-        "${ numberOfItems } चीज़े कचरे से हमेशा के लिए मिटाने में असफल"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } चीज़ ले जाने में असफल",
-        "${ numberOfItems } चीज़े ले जाने में असफल"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } चीज़ कचरे में ले जाने में असफल",
         "${ numberOfItems } चीज़े कचरे में ले जाने में असफल"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } चीज़ कचरे से लाने में असफल",
-        "${ numberOfItems } चीज़े कचरे से लाने में असफल"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } आइटम ले जाया गया",
@@ -9861,10 +9757,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } चीज़ कचरे से लाया गया",
         "${ numberOfItems } चीज़े कचरे से लाए गए"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } चीज़ सफलतापूर्वक ले गए",
-        "${ numberOfItems } चीज़ें सफलतापूर्वक ले गए"
       ],
       "${ reason } has been disabled": [
         "${ reason } को अक्षम कर दिया गया है"
@@ -9885,9 +9777,6 @@
       "All items deleted permanently from trash": [
         "सभी चीज़ें कचरे से हमेशा के लिए मिटा दी गईं"
       ],
-      "Cannot load link": [
-        "लिंक लोड नहीं हुआ"
-      ],
       "Cannot load next page": [
         "अगला पन्ना लोड नहीं कर सके"
       ],
@@ -9900,20 +9789,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "\"${ ellipsedName }\" की कॉपी कचरे में चली गई"
       ],
-      "Device failed to be removed": [
-        "डिवाइस हटाने में असफल"
-      ],
-      "Device failed to be renamed": [
-        "डिवाइस नाम बदलने में असफल"
-      ],
       "Device removed": [
         "डिवाइस हटाया गया"
       ],
       "Device renamed": [
         "डिवाइस नाम बदला गया"
-      ],
-      "Encrypted search activated": [
-        "एन्क्रिप्टेड खोज सक्रिय कर दी गई है"
       ],
       "Error while listing devices": [
         "डिवाइस लोड करते समय एरर"
@@ -11772,12 +11652,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "एडिटर अब शेयरिंग संभाल सकते हैं और दूसरों को न्योता दे सकते हैं। आप इसे कभी भी शेयर सेटिंग में बंद कर सकते हैं।"
-      ],
-      "Encrypted search is here": [
-        "एन्क्रिप्टेड खोज यहाँ है"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "अब आप आराम से डाटा सुरक्षित रखकर अपने ड्राइव फाइलों को खोज सकते हैं।"
       ]
     },
     "sso": {

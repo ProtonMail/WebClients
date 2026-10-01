@@ -303,9 +303,6 @@
       "Create folder": [
         "Opret mappe"
       ],
-      "Create new folder": [
-        "Opret ny mappe"
-      ],
       "Create new password": [
         "Opret ny adgangskode"
       ],
@@ -3406,9 +3403,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "Det kræver en besked for at oprette en rapport om krænkelse af ophavsretten eller stjålet data"
       ],
-      "A problem occurred, please try again.": [
-        "Der opstod et problem. Prøv igen."
-      ],
       "Address could not be added.": [
         "Adressen kunne ikke tilføjes."
       ],
@@ -3489,12 +3483,6 @@
       ],
       "Contact signature not verified": [
         "Kontaktsignatur ikke bekræftet"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Indholdssøgning kan ikke aktiveres i denne browser. Afslut privat browsing eller brug en anden browser."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Indholdssøgning kan ikke aktiveres. Genstart applikationen, eller ryd data."
       ],
       "Copy operation aborted": [
         "Kopiering afbrudt"
@@ -3602,9 +3590,6 @@
       ],
       "Failed to change permissions settings": [
         "Tilladelsesindstillinger kunne ikke ændres"
-      ],
-      "Failed to copy photo to album": [
-        "Kunne ikke kopiere foto til album"
       ],
       "Failed to create folder": [
         "Kunne ikke oprette mappe"
@@ -3879,9 +3864,6 @@
       ],
       "Photo not found": [
         "Foto ikke fundet"
-      ],
-      "Please activate your search again": [
-        "Aktiver venligst din søgning igen"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Tjek venligst om dit ABN er registeret til moms på tværs af grænser"
@@ -5671,14 +5653,8 @@
       "Clear data": [
         "Ryd data"
       ],
-      "Clear encrypted search data": [
-        "Ryd krypterede søgedata"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Rydning af browserdata vil rydde søgeindekset på denne enhed. Alle filer skal indekseres igen for at bruge søgefunktionen."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Rydder browserdata relateret til den krypterede søgning."
       ],
       "Clears browser data related to the search.": [
         "Rydder browserdata relateret til søgningen."
@@ -5873,9 +5849,6 @@
       "Enabling drive search": [
         "Aktiverer søgning på drev"
       ],
-      "Encrypted search is here": [
-        "Nu med krypteret søgning"
-      ],
       "End-to-end encrypted": [
         "End-to-end krypteret"
       ],
@@ -5905,16 +5878,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Indtast din egen adgangskode (som betroet kontakt)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Anslået resterende tid: ${ estimatedMinutes } minut",
-        "Anslået resterende tid: ${ estimatedMinutes } minutter"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Anslået resterende tid: Mindre end et minut"
-      ],
-      "Estimating time remaining...": [
-        "Estimerer resterende tid..."
       ],
       "Everything in ${ planOrAppName }": [
         "Alt i ${ planOrAppName }"
@@ -5999,9 +5962,6 @@
       ],
       "High Priority": [
         "Høj prioritet"
-      ],
-      "How does encrypted search work?": [
-        "Hvordan fungerer krypteret søgning?"
       ],
       "I have not finished this one yet.": [
         "Denne er endnu ikke afsluttet."
@@ -6096,12 +6056,6 @@
       ],
       "Indexing in progress": [
         "Indeksering er i gang"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Indekserer ${ esProgress } elementer ud of ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Indekserer søgeresultater…"
       ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
@@ -6283,9 +6237,6 @@
       "Move ${ folderCount } folder": [
         "Flyt ${ folderCount } mappe",
         "Flyt ${ folderCount } mapper"
-      ],
-      "Moving files": [
-        "Flytter filer"
       ],
       "My Links": [
         "Mine links"
@@ -6547,9 +6498,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat browsing (eller \"inkognito\"-tilstand) er kun nyttig til at holde din aktivitet skjult på din enhed. Den forhindrer din browser i at gemme historik og cookies, men den gør dig ikke usynlig. Din internetudbyder, netværksadministrator og de websteder, du besøger, kan stadig se, hvad du foretager dig online."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Privat søgning aktiveret. Du kan nu lukke denne dialog og søge efter filer og mapper."
-      ],
       "Public link": [
         "Offentligt link"
       ],
@@ -6618,9 +6566,6 @@
       ],
       "Scan to download": [
         "Skan for at downloade"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Søgning kan ikke aktiveres i denne browser"
       ],
       "Search covers your recent items": [
         "Søgning dækker dine seneste elementer"
@@ -6922,9 +6867,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "For at aktivere ægte privat søgning skal ${ DRIVE_APP_NAME } indeksere dine filer lokalt."
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "For at muliggøre en ægte privat søgning er vi nødt til at indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } normalt - vi giver dig besked, når indekseringen er færdig."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
@@ -7023,9 +6965,6 @@
       ],
       "Update required": [
         "Opdatering nødvendig"
-      ],
-      "Updating drive search...": [
-        "Opdaterer drevsøgning..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Opgrader når som helst for at overføre resten"
@@ -8121,9 +8060,6 @@
       "Shared with me": [
         "Delt med mig"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "Vis fremskridt i indeksering af krypteret søgning"
-      ],
       "Sign emails": [
         "Signér e-mails"
       ],
@@ -8189,9 +8125,6 @@
       ],
       "Toolbar": [
         "Værktøjslinje"
-      ],
-      "Type": [
-        "Type"
       ],
       "Unlock drive": [
         "Lås drev op"
@@ -9827,35 +9760,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" oprettet"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" slettet"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "\"${ ellipsedName }\" er slettet permanent fra papirkurven"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "\"${ ellipsedName }\" kunne ikke oprettes"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "\"${ ellipsedName }\" kunne ikke slettes"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "\"${ ellipsedName }\" kunne ikke slettes permanent fra papirkurven"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "\"${ ellipsedName }\" kunne ikke flyttes"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\" kunne ikke gendannes fra papirkurv"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" flyttet"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "\"${ ellipsedName }\" gendannet fra papirkurv"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" blev flyttet"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" delt"
@@ -9903,10 +9815,6 @@
         "${ numberOfItems } element kopieret",
         "${ numberOfItems } elementer kopieret"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } element slettet",
-        "${ numberOfItems } elementer slettet"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } element slettet permanent",
         "${ numberOfItems } elementer slettet permanent"
@@ -9915,21 +9823,9 @@
         "${ numberOfItems } element permanent slettet fra papirkurven",
         "${ numberOfItems } elementer permanent slettet fra papirkurven"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } element kunne ikke fjernes permanent fra papirkurven",
-        "${ numberOfItems } elementer kunne ikke fjernes permanent fra papirkurven"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } element kunne ikke flyttes",
-        "${ numberOfItems } elementer kunne ikke flyttes"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } element kunne ikke flyttes til papirkurven",
         "${ numberOfItems } elementer kunne ikke flyttes til papirkurven"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } element kunne ikke gendannes fra papirkurven",
-        "${ numberOfItems } elementer kunne ikke gendannes fra papirkurven"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } element flyttet",
@@ -9942,10 +9838,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } element gendannet fra papirkurven",
         "${ numberOfItems } elementer gendannet fra papirkurven"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } element flyttet",
-        "${ numberOfItems } elementer flyttet"
       ],
       "${ reason } has been disabled": [
         "${ reason } er blevet deaktiveret"
@@ -9966,9 +9858,6 @@
       "All items deleted permanently from trash": [
         "Alle elementer er permanent slettet fra Papirkurven"
       ],
-      "Cannot load link": [
-        "Link kan ikke indlæses"
-      ],
       "Cannot load next page": [
         "Næste side kunne ikke indlæses"
       ],
@@ -9981,20 +9870,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopi af \"${ ellipsedName }\" flyttet til papirkurv"
       ],
-      "Device failed to be removed": [
-        "Det lykkedes ikke at fjerne enheden"
-      ],
-      "Device failed to be renamed": [
-        "Det lykkedes ikke at omdøbe enheden"
-      ],
       "Device removed": [
         "Enhed fjernet"
       ],
       "Device renamed": [
         "Enhed omdøbt"
-      ],
-      "Encrypted search activated": [
-        "Krypteret søgning aktiveret"
       ],
       "Error while listing devices": [
         "Fejl ved oplistning af enheder"
@@ -11883,12 +11763,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Redaktører kan nu administrere deling og invitere andre. Det kan til enhver tid slås fra i delingsindstillingerne."
-      ],
-      "Encrypted search is here": [
-        "Nu med krypteret søgning"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Nu kan du nemt søge i Drive-filer, mens dine data forbliver sikre."
       ]
     },
     "sso": {
@@ -13922,6 +13796,36 @@
         "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Få ${ discount }% rabat på ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Få ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 TB of storage to share": [
+        "2 TB lagerplads til deling"
+      ],
+      "2 user accounts": [
+        "2 brugerkonti"
+      ],
+      "All premium features from your current plan": [
+        "Alle premium-funktioner fra dit nuværende abonnement"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/måned"
@@ -13957,6 +13861,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Opgrader til en understøttet plan for at bruge administratorroller."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan ikke ændre dine egne roller. Bed en anden administrator om at ændre dem."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brugeren har accepteret invitationen."

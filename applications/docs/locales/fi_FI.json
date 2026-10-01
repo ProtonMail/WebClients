@@ -339,9 +339,6 @@
       "Email settings": [
         "Osoitteen asetukset"
       ],
-      "Empty trash": [
-        "Tyhjennä roskakori"
-      ],
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
       ],
@@ -552,9 +549,6 @@
       "Next month": [
         "Seuraava kuukausi"
       ],
-      "Next page": [
-        "Seuraava sivu"
-      ],
       "No, thanks": [
         "Ei kiitos"
       ],
@@ -590,9 +584,6 @@
       ],
       "Previous month": [
         "Edellinen kuukausi"
-      ],
-      "Previous page": [
-        "Edellinen sivu"
       ],
       "Print": [
         "Tulosta"
@@ -2867,9 +2858,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "\"${ sanitizedName }\" on jo olemassa"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } ei voi yhdistää ulkoiseen tiliisi"
       ],
@@ -3143,9 +3131,6 @@
       "Photo not found": [
         "Kuvaa ei löytynyt"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Kuvien lähetys on väliaikaisesti pois käytöstä. Yritä myöhemmin uudelleen"
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Määritä oma verkkotunnus ennen kuin lisäät osoitteita."
       ],
@@ -3268,12 +3253,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Kansion nimi on liian pitkä. Valitse eri nimi."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Kutsun viimeistely ei ole vielä mahdollista. Yritä myöhemmin uudelleen."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Kutsua ei ole enää olemassa"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Tunnisteen nimi on virheellinen. Valitse eri nimi."
       ],
@@ -3285,21 +3264,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Kohteen linkin poisto epäonnistui"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Alkuperäisen tiedoston uutta versiota ei ole vielä tallennettu. Yritä myöhemmin uudelleen"
-      ],
-      "The original file has missing active revision": [
-        "Alkuperäiseltä tiedostolta puuttuu aktiivinen versio"
-      ],
-      "The original file has missing hash key": [
-        "Alkuperäiseltä tiedostolta puuttuu hajautusarvon avain"
-      ],
-      "The original file has missing session key": [
-        "Alkuperäiseltä tiedostolta puuttuu istunnon avain"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Alkuperäistä tiedostoa ei ole vielä tallennettu. Yritä myöhemmin uudelleen"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ulkoisella tililläsi on liian monta kansiota. Muokkaa tuontia tai poista joitakin kansioita."
@@ -3354,9 +3318,6 @@
       ],
       "Update Too Large": [
         "Päivitys on liian suuri"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Tallennus tähän kansioon on tilapäisesti poistettu estetty"
       ],
       "Username must begin with a letter or digit": [
         "Käyttäjätunnuksen on alettava kirjaimella tai numerolla"
@@ -4454,9 +4415,6 @@
       "Are you sure you want to discard your import?": [
         "Haluatko varmasti hylätä tuontisi?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Haluatko varmasti tyhjentää roskakorin ja poistaa kaikki kohteet pysyvästi?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Haluatko varmasti poistaa kohteen \"${ itemName }\" roskakorista pysyvästi?"
       ],
@@ -4874,9 +4832,6 @@
       "Link copied": [
         "Linkki kopioitu"
       ],
-      "Link copied to clipboard": [
-        "Linkki kopioitiin leikepöydälle"
-      ],
       "Link expired": [
         "Linkki vanhentunut"
       ],
@@ -5252,9 +5207,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Tämä on nimi tai lempinimi organisaatiollesi, jonka käyttäjäsi näkevät. Voit muuttaa sitä milloin tahansa."
       ],
-      "This item already exists in your library": [
-        "Kohde löytyy jo kirjastostasi"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojesi ja maksukorttiesi tietojen kaltaisia tietoja."
       ],
@@ -5299,12 +5251,6 @@
       ],
       "Tracking": [
         "Seuranta"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Tiedoston \"${ name }\" siirto peruttiin"
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Tiedoston \"${ file.name }\" siirto ohitettiin"
       ],
       "Trash": [
         "Roskakori"
@@ -7404,17 +7350,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "Kohteen \"${ name }\" palautus roskakorista epäonnistui"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Kohteen \"${ name }\" tallennus epäonnistui"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" siirrettiin roskakoriin"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" palautettiin roskakorista"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" tallennettiin"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Kohteen \"${ newName }\" uudelleennimeäminen epäonnistui"
@@ -7484,14 +7424,8 @@
       "Access updated and shared": [
         "Käyttöoikeus muutettiin ja jaettiin"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Kaikki roskakorin kohteet poistetaan pian pysyvästi"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Koska tämä tiedosto oli jaetussa kansiossa, vain kansion omistaja voi palauttaa sen"
-      ],
-      "Cannot load link": [
-        "Linkin lataus epäonnistui"
       ],
       "Cannot load next page": [
         "Seuraavan sivun lataus epäonnistui"
@@ -7501,18 +7435,6 @@
       ],
       "Contact group updated": [
         "Yhteystietoryhmä päivitettiin"
-      ],
-      "Device failed to be removed": [
-        "Laitteen poisto epäonnistui"
-      ],
-      "Device failed to be renamed": [
-        "Laitteen uudelleennimeäminen epäonnistui"
-      ],
-      "Device removed": [
-        "Laite poistettiin"
-      ],
-      "Device renamed": [
-        "Laite nimettiin uudelleen"
       ],
       "Document moved to trash": [
         "Dokumentti siirrettiin roskakoriin"
@@ -7558,13 +7480,6 @@
       ],
       "Failed to trash document": [
         "Tiedoston siirtäminen roskakoriin epäonnistui"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo",
-        "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Tiedostoa tai kansiota \"${ filename }\" tallennetaan jo"
       ],
       "Invitation's email was sent again": [
         "Kutsusähköposti lähetettiin uudelleen"
@@ -7622,9 +7537,6 @@
       ],
       "The link to your item was deleted": [
         "Kohteen linkki poistettiin"
-      ],
-      "Trash failed to be emptied": [
-        "Roskakorin tyhjennys epäonnistui"
       ],
       "You stopped sharing this item": [
         "Lopetit kohteen jakamisen"
@@ -9616,9 +9528,6 @@
       "Email settings": [
         "Osoitteen asetukset"
       ],
-      "Empty trash": [
-        "Tyhjennä roskakori"
-      ],
       "Enable 2FA": [
         "Ota 2FA käyttöön"
       ],
@@ -9898,9 +9807,6 @@
       ],
       "Start import process": [
         "Aloita tuonti"
-      ],
-      "Stop sharing": [
-        "Lopeta jakaminen"
       ],
       "Stop sharing?": [
         "Lopetetaanko jakaminen?"

@@ -342,9 +342,6 @@
       "Email settings": [
         "E-postinställningar"
       ],
-      "Empty trash": [
-        "Töm papperskorgen"
-      ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
       ],
@@ -561,9 +558,6 @@
       "Next month": [
         "Nästa månad"
       ],
-      "Next page": [
-        "Nästa sida"
-      ],
       "No, thanks": [
         "Nej tack"
       ],
@@ -602,9 +596,6 @@
       ],
       "Previous month": [
         "Föregående månad"
-      ],
-      "Previous page": [
-        "Föregående sida"
       ],
       "Print": [
         "Skriv ut"
@@ -2889,9 +2880,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "”${ sanitizedName }” finns redan"
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kan inte ansluta till ditt externa konto"
       ],
@@ -3301,9 +3289,6 @@
       "Photo not found": [
         "Foto hittades inte"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "Fotouppladdning är tillfälligt inaktiverad. Försök igen senare"
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Konfigurera en anpassad domän innan du lägger till adresser."
       ],
@@ -3450,12 +3435,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Mappnamnet är för långt. Välj ett annat namn."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Inbjudan kan inte slutföras ännu. Försök igen senare."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Inbjudan finns inte längre"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Etikettnamnet är ogiltigt. Välj ett annat namn."
       ],
@@ -3467,21 +3446,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Länken till ditt objekt misslyckades att tas bort"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "Den nya versionen av originalfilen är inte uppladdad ännu, försök igen senare"
-      ],
-      "The original file has missing active revision": [
-        "Originalfilen saknar aktiv version"
-      ],
-      "The original file has missing hash key": [
-        "Originalfilen saknar hashnyckel"
-      ],
-      "The original file has missing session key": [
-        "Originalfilen saknar sessionsnyckel"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "Originalfilen har inte laddats upp ännu, försök igen senare"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Den uppladdade filen matchar inte originalet. Försök igen."
@@ -3560,9 +3524,6 @@
       ],
       "Update Too Large": [
         "Uppdatering är för stor"
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "Uppladdning för denna mapp är tillfälligt inaktiverad"
       ],
       "Username must begin with a letter or digit": [
         "Användarnamn måste börja med en bokstav eller siffra"
@@ -4714,9 +4675,6 @@
       "Are you sure you want to discard your import?": [
         "Är du säker på att du vill kasta din import?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Är du säker på att du vill tömma papperskorgen och ta bort alla objekt?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Är du säker på att du vill ta bort “${ itemName }“ permanent från papperskorg?"
       ],
@@ -5140,9 +5098,6 @@
       "Link copied": [
         "Länk kopierad"
       ],
-      "Link copied to clipboard": [
-        "Länk kopierad till urklipp"
-      ],
       "Link expired": [
         "Länk löpt ut"
       ],
@@ -5530,9 +5485,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Detta är ett namn eller smeknamn för din organisation som dina användare kommer att se. Du kan ändra det när som helst."
       ],
-      "This item already exists in your library": [
-        "Detta objekt finns redan i ditt bibliotek"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denna länk leder till en webbplats som kanske försöker stjäla din information, såsom lösenord och kreditkortsuppgifter."
       ],
@@ -5595,12 +5547,6 @@
       ],
       "Tracking": [
         "Spårning"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Överföringen avbröts för filen \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Överföringen hoppades över för filen \"${ file.name }\""
       ],
       "Trash": [
         "Papperskorg"
@@ -7722,17 +7668,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "“${ name }“ misslyckades att återställas från papperskorg"
       ],
-      "\"${ name }\" failed to be saved": [
-        "”${ name }” kunde inte sparas"
-      ],
       "\"${ name }\" moved to trash": [
         "“${ name }“ flyttades till papperskorgen"
       ],
       "\"${ name }\" restored from trash": [
         "“${ name }“ återställd från papperskorg"
-      ],
-      "\"${ name }\" saved successfully": [
-        "”${ name }” har sparats"
       ],
       "\"${ newName }\" failed to be renamed": [
         "“${ newName }“ misslyckades att namnändras"
@@ -7802,14 +7742,8 @@
       "Access updated and shared": [
         "Åtkomst uppdaterad och delad"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Alla objekt kommer snart att tas bort permanent från papperskorgen"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Eftersom detta dokument var i en delad mapp kan endast mappens ägaren återställa det"
-      ],
-      "Cannot load link": [
-        "Kan inte ladda länk"
       ],
       "Cannot load next page": [
         "Kan inte ladda nästa sida"
@@ -7819,18 +7753,6 @@
       ],
       "Contact group updated": [
         "Kontaktgrupp uppdaterad"
-      ],
-      "Device failed to be removed": [
-        "Enhet kunde inte tas bort"
-      ],
-      "Device failed to be renamed": [
-        "Enhet kunde inte döpas om"
-      ],
-      "Device removed": [
-        "Enhet borttagen"
-      ],
-      "Device renamed": [
-        "Enhet omdöpt"
       ],
       "Document moved to trash": [
         "Dokument flyttat till papperskorg"
@@ -7876,13 +7798,6 @@
       ],
       "Failed to trash document": [
         "Misslyckades att slänga dokument"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Filen eller mappen \"${ filename }\" och ${ count } andra laddas redan upp",
-        "Filen eller mappen \"${ filename }\" och ${ count } andra laddas redan upp"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "Fil eller mapp ”${ filename }” laddas redan upp"
       ],
       "Invitation's email was sent again": [
         "E-postinbjudan skickades igen"
@@ -7940,9 +7855,6 @@
       ],
       "The link to your item was deleted": [
         "Länken till ditt objekt togs bort"
-      ],
-      "Trash failed to be emptied": [
-        "Misslyckades att tömma papperskorg"
       ],
       "You stopped sharing this item": [
         "Du stoppade dela detta objekt"
@@ -9986,9 +9898,6 @@
       "Email settings": [
         "E-postinställningar"
       ],
-      "Empty trash": [
-        "Töm papperskorgen"
-      ],
       "Enable 2FA": [
         "Aktivera 2FA"
       ],
@@ -10272,9 +10181,6 @@
       "Start import process": [
         "Starta importprocessen"
       ],
-      "Stop sharing": [
-        "Sluta dela"
-      ],
       "Stop sharing?": [
         "Sluta dela?"
       ],
@@ -10495,6 +10401,27 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "2 TB of storage to share": [
+        "2 TB lagringsutrymme att dela"
+      ],
+      "2 user accounts": [
+        "2 användarkonton"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "för 12 månader"
       ]
     },
     "Unlimited offer": {

@@ -336,9 +336,6 @@
       "Email settings": [
         "Configuración del correo electrónico"
       ],
-      "Empty trash": [
-        "Vaciar papelera"
-      ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
       ],
@@ -552,9 +549,6 @@
       "Next month": [
         "Mes siguiente"
       ],
-      "Next page": [
-        "Página siguiente"
-      ],
       "No, thanks": [
         "No, gracias"
       ],
@@ -590,9 +584,6 @@
       ],
       "Previous month": [
         "Mes anterior"
-      ],
-      "Previous page": [
-        "Página anterior"
       ],
       "Print": [
         "Imprimir"
@@ -2864,9 +2855,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "«${ sanitizedName }» ya existe."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } no se puede conectar a tu cuenta externa."
       ],
@@ -3125,9 +3113,6 @@
       "Passwords do not match": [
         "Las contraseñas no coinciden."
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "La carga de fotos está temporalmente desactivada. Inténtalo de nuevo más tarde."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Configura un dominio personalizado antes de añadir direcciones."
       ],
@@ -3247,12 +3232,6 @@
       "The folder name is too long. Please choose a different name.": [
         "El nombre de la carpeta es demasiado largo. Elige un nombre diferente."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "La invitación aún no se puede completar. Inténtalo más tarde."
-      ],
-      "The invitation doesn't exist anymore": [
-        "La invitación ya no existe."
-      ],
       "The label name is invalid. Please choose a different name.": [
         "El nombre de la etiqueta no es válido. Elige un nombre diferente."
       ],
@@ -3264,21 +3243,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Error al eliminar el enlace a tu elemento"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "La nueva revisión del archivo original aún no se ha cargado. Inténtalo de nuevo más tarde."
-      ],
-      "The original file has missing active revision": [
-        "El archivo original no tiene revisión activa."
-      ],
-      "The original file has missing hash key": [
-        "No se encuentra la clave hash del archivo original."
-      ],
-      "The original file has missing session key": [
-        "Falta una clave de sesión al archivo original."
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "El archivo original aún no se ha cargado. Inténtalo de nuevo más tarde."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en tu cuenta externa. Personaliza la importación para eliminar algunas carpetas."
@@ -3333,9 +3297,6 @@
       ],
       "Update Too Large": [
         "La actualización es demasiado grande."
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "La carga para esta carpeta está desactivada temporalmente."
       ],
       "Username must begin with a letter or digit": [
         "El nombre de usuario debe comenzar con una letra o un número."
@@ -4430,9 +4391,6 @@
       "Are you sure you want to discard your import?": [
         "¿Estás seguro de que quieres descartar la importación?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "¿Estás seguro de que quieres vaciar la papelera y eliminar permanentemente todos los elementos?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "¿Estás seguro de que quieres eliminar \"${ itemName }\" de la papelera de forma permanente?"
       ],
@@ -4826,9 +4784,6 @@
       "Link copied": [
         "Enlace copiado"
       ],
-      "Link copied to clipboard": [
-        "Enlace copiado al portapapeles"
-      ],
       "Link expired": [
         "Enlace expirado"
       ],
@@ -5198,9 +5153,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Este es un nombre o un apodo para tu organización que verán tus usuarios. Puedes cambiarlo cuando quieras."
       ],
-      "This item already exists in your library": [
-        "Este elemento ya existe en tu librería."
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
       ],
@@ -5242,12 +5194,6 @@
       ],
       "Tracking": [
         "Rastreadores"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Se ha cancelado la transferencia del archivo \"${ name }\"."
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Se ha omitido la transferencia del archivo \"${ file.name }\"."
       ],
       "Trash": [
         "Papelera"
@@ -7317,17 +7263,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "Error al restaurar \"${ name }\" de la papelera"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Error al guardar \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" se ha movido a la papelera."
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" se ha restaurado de la papelera."
-      ],
-      "\"${ name }\" saved successfully": [
-        "Se ha guardado \"${ name }\"."
       ],
       "\"${ newName }\" failed to be renamed": [
         "Error al renombrar \"${ newName }\""
@@ -7394,12 +7334,6 @@
       "Access updated and shared": [
         "Se ha actualizado y compartido el acceso."
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Se eliminarán permanentemente todos los elementos de la papelera."
-      ],
-      "Cannot load link": [
-        "Error al cargar el enlace"
-      ],
       "Cannot load next page": [
         "Error al cargar la siguiente página"
       ],
@@ -7408,18 +7342,6 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
-      ],
-      "Device failed to be removed": [
-        "Error al eliminar el dispositivo"
-      ],
-      "Device failed to be renamed": [
-        "Error al renombrar el dispositivo"
-      ],
-      "Device removed": [
-        "El dispositivo está eliminado."
-      ],
-      "Device renamed": [
-        "Dispositivo renombrado"
       ],
       "Document moved to trash": [
         "Se ha movido el documento a la papelera"
@@ -7447,13 +7369,6 @@
       ],
       "Failed to rename document": [
         "No se ha podido cambiar el nombre del documento"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando",
-        "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando."
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "El archivo o la carpeta \"${ filename }\" ya se está cargando."
       ],
       "Invitation's email was sent again": [
         "Se ha enviado de nuevo el correo de invitación."
@@ -7508,9 +7423,6 @@
       ],
       "The link to your item was deleted": [
         "Se ha eliminado el enlace a tu elemento."
-      ],
-      "Trash failed to be emptied": [
-        "Error al vaciar la papelera"
       ],
       "You stopped sharing this item": [
         "Has dejado de compartir este elemento."
@@ -9479,9 +9391,6 @@
       "Email settings": [
         "Ajustes del correo"
       ],
-      "Empty trash": [
-        "Vaciar papelera"
-      ],
       "Enable 2FA": [
         "Activar 2FA"
       ],
@@ -9755,9 +9664,6 @@
       ],
       "Start import process": [
         "Iniciar el proceso de importación"
-      ],
-      "Stop sharing": [
-        "Dejar de compartir"
       ],
       "Stop sharing?": [
         "¿Dejar de compartir?"

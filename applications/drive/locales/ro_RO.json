@@ -306,9 +306,6 @@
       "Create folder": [
         "Creare folder"
       ],
-      "Create new folder": [
-        "Creare folder"
-      ],
       "Create new password": [
         "Creare parolă"
       ],
@@ -3434,9 +3431,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "Când se raportează încălcarea drepturilor de autor sau furtul de date este necesar un mesaj."
       ],
-      "A problem occurred, please try again.": [
-        "A apărut o problemă. Reîncercați."
-      ],
       "Address could not be added.": [
         "Adresa nu a putut fi adăugată."
       ],
@@ -3517,12 +3511,6 @@
       ],
       "Contact signature not verified": [
         "Semnătura contactului nu a fost verificată"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Căutarea în conținutul mesajelor nu poate fi activată în acest navigator. Închideți modul de navigare privat sau folosiți alt navigator."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Căutarea în conținut nu poate fi activată. Reporniți aplicația sau ștergeți datele."
       ],
       "Copy operation aborted": [
         "Operația de copiere a fost anulată."
@@ -3632,9 +3620,6 @@
       ],
       "Failed to change permissions settings": [
         "Nu s-au putut modifica setările de permisiuni."
-      ],
-      "Failed to copy photo to album": [
-        "Fotografia nu s-a putut copia în album."
       ],
       "Failed to create folder": [
         "Crearea folderului a eșuat."
@@ -3913,9 +3898,6 @@
       ],
       "Photo not found": [
         "Fotografie negăsită."
-      ],
-      "Please activate your search again": [
-        "Reactivați căutarea."
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Verificați dacă numărul ABN vă este înregistrat pentru TVA transfrontalier."
@@ -5757,14 +5739,8 @@
       "Clear data": [
         "Ștergere date"
       ],
-      "Clear encrypted search data": [
-        "Ștergere date de căutare criptate."
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Ștergerea datelor din navigator va șterge indexul de căutare de pe acest dispozitiv. Toate fișierele vor trebui să fie reindexate în timpul utilizării funcției de căutare."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Se șterg datele din navigator legate de căutarea criptată."
       ],
       "Clears browser data related to the search.": [
         "Șterge datele legate de căutare din navigatorul web."
@@ -5963,9 +5939,6 @@
       "Enabling drive search": [
         "Se activează căutarea în unitate."
       ],
-      "Encrypted search is here": [
-        "Căutarea criptată este aici"
-      ],
       "End-to-end encrypted": [
         "Criptat bilateral"
       ],
@@ -5995,17 +5968,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Introduceți parola (ca și contact aprobat)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Timp estimat rămas: ${ estimatedMinutes } minut",
-        "Timp estimat rămas: ${ estimatedMinutes } minute",
-        "Timp estimat rămas: ${ estimatedMinutes } de minute"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Timp estimat rămas: mai puțin de un minut"
-      ],
-      "Estimating time remaining...": [
-        "Se estimează timpul rămas..."
       ],
       "Everything in ${ planOrAppName }": [
         "Toate din ${ planOrAppName }"
@@ -6090,9 +6052,6 @@
       ],
       "High Priority": [
         "Prioritate înaltă"
-      ],
-      "How does encrypted search work?": [
-        "Cum funcționează căutarea criptată?"
       ],
       "I have not finished this one yet.": [
         "Pe acesta încă nu l-am terminat încă."
@@ -6188,12 +6147,6 @@
       ],
       "Indexing in progress": [
         "Indexare în derulare"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "S-au indexat ${ esProgress } articole din ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Se indexează rezultatele căutării…"
       ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
@@ -6379,9 +6332,6 @@
         "Mutare ${ folderCount } folder",
         "Mutare ${ folderCount } foldere",
         "Mutare ${ folderCount } de foldere"
-      ],
-      "Moving files": [
-        "Se mută fișierele"
       ],
       "My Links": [
         "Legăturile mele"
@@ -6645,9 +6595,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Navigarea privată (sau modul „incognito”) este utilă doar pentru a vă păstra activitatea ascunsă pe dispozitiv. Îți oprește browserul să salveze istoricul și cookie-urile, dar nu te face invizibil. ISP-ul dvs., administratorul de rețea și site-urile web pe care le vizitați pot vedea în continuare ceea ce faceți online."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Căutarea privată este activată. Acum puteți închide acest dialog și căuta fișiere sau foldere."
-      ],
       "Public link": [
         "Legătură web publică"
       ],
@@ -6716,9 +6663,6 @@
       ],
       "Scan to download": [
         "Scanați pentru descărcare"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Căutarea nu poate fi activată în acest navigator."
       ],
       "Search covers your recent items": [
         "Căutarea include articolele recente"
@@ -7023,9 +6967,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Pentru a permite o căutare cu adevărat privată, ${ DRIVE_APP_NAME } trebuie să vă indexeze fișierele la nivel local."
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Pentru a permite o căutare cu adevărat privată, trebuie indexate fișierele la nivel local. Puteți utiliza în continuare ${ DRIVE_APP_NAME } în mod normal - vă vom anunța când indexarea este finalizată."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
@@ -7124,9 +7065,6 @@
       ],
       "Update required": [
         "Actualizare necesară"
-      ],
-      "Updating drive search...": [
-        "Actualizare căutare în unitate..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Modificați oricând abonamentul pentru a obține și restul"
@@ -7385,6 +7323,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Aveți un abonament ${ planTitle } de evaluare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de evaluare."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Aveți o factură neachitată. ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Aveți o factură neachitată cu scadența la ${ dueDate }. ${ payInvoiceLink }"
       ],
       "You may be redirected to your bank’s website.": [
         "Probabil va trebui să accesați pagina web a băncii."
@@ -8231,9 +8175,6 @@
       "Shared with me": [
         "Partajate cu mine"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "Afișare progres indexare pentru căutarea criptată"
-      ],
       "Sign emails": [
         "Semnare mesaje"
       ],
@@ -8299,9 +8240,6 @@
       ],
       "Toolbar": [
         "Bară de unelte"
-      ],
-      "Type": [
-        "Tip"
       ],
       "Unlock drive": [
         "Deblocare unitate"
@@ -8503,6 +8441,9 @@
       ],
       "Pay invoice": [
         "Plată factură"
+      ],
+      "Pay it": [
+        "Plătiți-o"
       ],
       "Photos": [
         "Fotografii"
@@ -9976,35 +9917,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "„${ ellipsedName }” a fost creat."
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "„${ ellipsedName }” s-a șters."
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "„${ ellipsedName }” s-a șters permanent din gunoi."
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "„${ ellipsedName }” nu a putut fi creat."
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "„${ ellipsedName }” nu s-a putut șterge."
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "„${ ellipsedName }” nu a putut fi eliminat definitiv din gunoi."
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "„${ ellipsedName }” nu a putut fi mutat."
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "„${ ellipsedName }” nu a putut fi restaurat din gunoi."
       ],
       "\"${ ellipsedName }\" moved": [
         "„${ ellipsedName }” s-a mutat."
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "„${ ellipsedName }” s-a restaurat din gunoi."
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "„${ ellipsedName }” s-a mutat."
       ],
       "\"${ fileName }\" shared": [
         "„${ fileName }” s-a partajat"
@@ -10059,11 +9979,6 @@
         "Articole copiate: ${ numberOfItems }",
         "Articole copiate: ${ numberOfItems }"
       ],
-      "${ numberOfItems } item deleted": [
-        "Articole șterse: ${ numberOfItems }",
-        "Articole șterse: ${ numberOfItems }",
-        "Articole șterse: ${ numberOfItems }"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "Articole șterse permanent: ${ numberOfItems }",
         "Articole șterse permanent: ${ numberOfItems }",
@@ -10074,25 +9989,10 @@
         "S-au eliminat definitiv ${ numberOfItems } articole din «Gunoi».",
         "S-au eliminat definitiv ${ numberOfItems } de articole din «Gunoi»."
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Un element nu a putut fi eliminat definitiv din «Gunoi».",
-        "${ numberOfItems } articole nu au putut fi eliminate definitiv din «Gunoi».",
-        "${ numberOfItems } de articole nu au putut fi eliminate definitiv din «Gunoi»."
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "Un element nu a putut fi mutat.",
-        "${ numberOfItems } articole nu au putut fi mutate.",
-        "${ numberOfItems } de articole nu au putut fi mutate."
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "Un element nu a putut fi mutat în «Gunoi».",
         "${ numberOfItems } articole nu s-au putut muta în «Gunoi».",
         "${ numberOfItems } de articole nu s-au putut muta în «Gunoi»."
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "Un element nu a putut fi restaurat din «Gunoi».",
-        "${ numberOfItems } articole nu au putut fi restaurate din «Gunoi».",
-        "${ numberOfItems } de articole nu au putut fi restaurate din «Gunoi»."
       ],
       "${ numberOfItems } item moved": [
         "Articole mutate: ${ numberOfItems }",
@@ -10108,11 +10008,6 @@
         "Un element a fost restaurat din «Gunoi».",
         "${ numberOfItems } articole au fost restaurate din «Gunoi».",
         "${ numberOfItems } de articole au fost restaurate din «Gunoi»."
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "Articole mutate: ${ numberOfItems }",
-        "Articole mutate: ${ numberOfItems }",
-        "Articole mutate: ${ numberOfItems }"
       ],
       "${ reason } has been disabled": [
         "${ reason } a fost dezactivat"
@@ -10134,9 +10029,6 @@
       "All items deleted permanently from trash": [
         "S-au eliminat definitiv toate articolele din gunoi."
       ],
-      "Cannot load link": [
-        "Legătura nu s-a putut încărca."
-      ],
       "Cannot load next page": [
         "Nu s-a putut încărca pagina următoare."
       ],
@@ -10149,20 +10041,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Copia lui „${ ellipsedName }” a fost mutată în gunoi."
       ],
-      "Device failed to be removed": [
-        "Dispozitivul nu a reușit să fie îndepărtat"
-      ],
-      "Device failed to be renamed": [
-        "Dispozitivul nu a putut fi redenumit."
-      ],
       "Device removed": [
         "Dispozitiv îndepărtat"
       ],
       "Device renamed": [
         "Dispozitivul a fost redenumit."
-      ],
-      "Encrypted search activated": [
-        "Căutarea criptată a fost activată."
       ],
       "Error while listing devices": [
         "Eroare la listarea dispozitivelor."
@@ -12086,12 +11969,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Editorii pot gestiona acum partajarea și pot invita alte persoane. Puteți dezactiva oricând această opțiune în setările de partajare."
-      ],
-      "Encrypted search is here": [
-        "Căutarea criptată este aici"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Acum puteți căuta cu ușurință fișierele din unitate, păstrând în același timp datele în siguranță."
       ]
     },
     "sso": {

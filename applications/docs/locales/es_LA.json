@@ -342,9 +342,6 @@
       "Email settings": [
         "Ajustes del correo"
       ],
-      "Empty trash": [
-        "Vaciar papelera"
-      ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
       ],
@@ -567,9 +564,6 @@
       "Next month": [
         "Mes siguiente"
       ],
-      "Next page": [
-        "Página siguiente"
-      ],
       "No, thanks": [
         "No, gracias"
       ],
@@ -611,9 +605,6 @@
       ],
       "Previous month": [
         "Mes anterior"
-      ],
-      "Previous page": [
-        "Página anterior"
       ],
       "Print": [
         "Imprimir"
@@ -2905,9 +2896,6 @@
       ]
     },
     "Error": {
-      "\"${ sanitizedName }\" already exists": [
-        "«${ sanitizedName }» ya existe."
-      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } no se puede conectar a la cuenta externa"
       ],
@@ -3344,9 +3332,6 @@
       "Photo not found": [
         "Foto no encontrada"
       ],
-      "Photos upload is temporarily disabled. Please try again later": [
-        "La carga de fotos está temporalmente desactivada. Intente de nuevo más tarde."
-      ],
       "Please configure a custom domain before adding addresses.": [
         "Configure un dominio personalizado antes de agregar direcciones."
       ],
@@ -3493,12 +3478,6 @@
       "The folder name is too long. Please choose a different name.": [
         "El nombre de la carpeta es demasiado largo. Elija un nombre diferente."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "La invitación aún no se puede completar. Inténtelo más tarde."
-      ],
-      "The invitation doesn't exist anymore": [
-        "La invitación ya no existe"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "El nombre de la etiqueta no es válido. Elija un nombre diferente."
       ],
@@ -3510,21 +3489,6 @@
       ],
       "The link to your item failed to be deleted": [
         "Error al eliminar el enlace a su elemento"
-      ],
-      "The new revision of original file is not uploaded yet, please try again later": [
-        "La revisión nueva del archivo original aún no se ha cargado, intente de nuevo más tarde"
-      ],
-      "The original file has missing active revision": [
-        "Al archivo original le falta una revisión activa"
-      ],
-      "The original file has missing hash key": [
-        "Al archivo original le falta una clave hash"
-      ],
-      "The original file has missing session key": [
-        "Al archivo original le falta una clave de sesión"
-      ],
-      "The original file is not uploaded yet, please try again later": [
-        "El archivo original aún no se ha cargado, intente de nuevo más tarde"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "El archivo cargado no coincide con el original. Intente de nuevo."
@@ -3606,9 +3570,6 @@
       ],
       "Update Too Large": [
         "La actualización es demasiado grande."
-      ],
-      "Upload for this folder is temporarily disabled": [
-        "La carga para esta carpeta está desactivada temporalmente."
       ],
       "Username must begin with a letter or digit": [
         "El nombre de usuario debe comenzar con una letra o dígito"
@@ -4769,9 +4730,6 @@
       "Are you sure you want to discard your import?": [
         "¿En verdad desea descartar su importación?"
       ],
-      "Are you sure you want to empty trash and permanently delete all the items?": [
-        "¿Está seguro de que quiere vaciar la papelera y eliminar permanentemente todos los elementos?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "¿Está seguro que quiere eliminar permanentemente \"${ itemName }\" de la papelera?"
       ],
@@ -5198,9 +5156,6 @@
       "Link copied": [
         "Enlace copiado"
       ],
-      "Link copied to clipboard": [
-        "Enlace copiado al portapapeles"
-      ],
       "Link expired": [
         "Enlace expirado"
       ],
@@ -5588,9 +5543,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Este es un nombre o un apodo para su organización que verán sus usuarios. Puede cambiarlo en cualquier momento."
       ],
-      "This item already exists in your library": [
-        "Este elemento ya existe en su librería"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar informaciiones, como contraseñas y datos de tarjetas de crédito."
       ],
@@ -5662,12 +5614,6 @@
       ],
       "Tracking": [
         "Rastreadores"
-      ],
-      "Transfer canceled for file \"${ name }\"": [
-        "Transferencia cancelada para el archivo \"${ name }\""
-      ],
-      "Transfer skipped for file \"${ file.name }\"": [
-        "Transferencia omitida para el archivo \"${ file.name }\""
       ],
       "Trash": [
         "Papelera"
@@ -5823,6 +5769,12 @@
       ],
       "You don't have access": [
         "No tiene acceso"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Tiene una factura abierta ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Tiene una factura abierta el ${ dueDate } ${ payInvoiceLink }"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Puede que no tenga los premisos necesarios para verlo en la cuenta seleccionada. Intente con otra cuenta o contáctese con el propietario para obtener acceso."
@@ -6567,6 +6519,9 @@
       ],
       "Pay invoice": [
         "Pagar factura"
+      ],
+      "Pay it": [
+        "Pagarla"
       ],
       "Reactivate now": [
         "Reactivar"
@@ -7795,17 +7750,11 @@
       "\"${ name }\" failed to be restored from trash": [
         "Error al restaurar \"${ name }\" de la papelera"
       ],
-      "\"${ name }\" failed to be saved": [
-        "Error al guardar \"${ name }\""
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido a la papelera"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" restaurado de la papelera"
-      ],
-      "\"${ name }\" saved successfully": [
-        "\"${ name }\" guardado"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Error al renombrar \"${ newName }\""
@@ -7875,14 +7824,8 @@
       "Access updated and shared": [
         "Acceso actualizado y compartido"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Todos los elementos serán eliminados permanentemente de la papelera"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Como este documento estaba en una carpeta compartida, solo el propietario de la carpeta puede restaurarlo"
-      ],
-      "Cannot load link": [
-        "Error al cargar el enlace"
       ],
       "Cannot load next page": [
         "Error al cargar la página siguiente"
@@ -7892,18 +7835,6 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
-      ],
-      "Device failed to be removed": [
-        "Error al eliminar el dispositivo"
-      ],
-      "Device failed to be renamed": [
-        "Error al renombrar el dispositivo"
-      ],
-      "Device removed": [
-        "Dispositivo eliminado"
-      ],
-      "Device renamed": [
-        "Dispositivo renombrado"
       ],
       "Document moved to trash": [
         "Documento movido a la papelera"
@@ -7949,13 +7880,6 @@
       ],
       "Failed to trash document": [
         "Error al enviar el documento a la papelera"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando",
-        "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando"
-      ],
-      "File or folder \"${ filename }\" is already uploading": [
-        "El archivo o carpeta \"${ filename }\" ya se está cargando"
       ],
       "Invitation's email was sent again": [
         "Se envió nuevamente el correo de invitación."
@@ -8013,9 +7937,6 @@
       ],
       "The link to your item was deleted": [
         "El enlace al elemento fue eliminado"
-      ],
-      "Trash failed to be emptied": [
-        "Error al vaciar la papelera"
       ],
       "You stopped sharing this item": [
         "Ha dejado de compartir este elemento"
@@ -10086,9 +10007,6 @@
       "Email settings": [
         "Ajustes del correo"
       ],
-      "Empty trash": [
-        "Vaciar papelera"
-      ],
       "Enable 2FA": [
         "Activar 2FA"
       ],
@@ -10372,9 +10290,6 @@
       "Start import process": [
         "Iniciar proceso de importación"
       ],
-      "Stop sharing": [
-        "Dejar de compartir"
-      ],
       "Stop sharing?": [
         "¿Dejar de compartir?"
       ],
@@ -10597,6 +10512,36 @@
         "${ PASS_APP_NAME }: Inicios de sesión seguros en todos los dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obtener ${ discount }% de descuento en ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
+      "2 user accounts": [
+        "2 cuentas de usuario"
+      ],
+      "All premium features from your current plan": [
+        "Todas las funciones premium de su plan actual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/mes"
@@ -10622,6 +10567,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Actualice a un plan que admita usar roles de administrador."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No puede cambiar sus propios roles. Pida a otro administrador que los cambie."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrá asignar roles una vez que el usuario haya aceptado la invitación."

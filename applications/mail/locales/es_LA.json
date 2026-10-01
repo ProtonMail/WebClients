@@ -1553,8 +1553,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -8246,7 +8245,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9834,6 +9834,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Tiene una suscripción de prueba ${ planTitle }. No se requiere un pago en este momento. La suscripción será renovada automáticamente al finalizar el periodo de prueba."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Tiene una factura abierta ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Tiene una factura abierta el ${ dueDate } ${ payInvoiceLink }"
       ],
       "You have no conversations in this category": [
         "No tiene conversaciones en esta categoría"
@@ -11630,6 +11636,9 @@
       ],
       "Pay invoice": [
         "Pagar factura"
+      ],
+      "Pay it": [
+        "Pagarla"
       ],
       "Privacy policy": [
         "Política de privacidad"
@@ -17788,6 +17797,36 @@
         "Esta versión del navegador Tor no es compatible. Actualice a la última ${ stableRelease }."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obtener ${ discount }% de descuento en ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
+      "2 user accounts": [
+        "2 cuentas de usuario"
+      ],
+      "All premium features from your current plan": [
+        "Todas las funciones premium de su plan actual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/mes"
@@ -17824,6 +17863,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Actualice a un plan que admita usar roles de administrador."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No puede cambiar sus propios roles. Pida a otro administrador que los cambie."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrá asignar roles una vez que el usuario haya aceptado la invitación."

@@ -303,9 +303,6 @@
       "Create folder": [
         "Ordner erstellen"
       ],
-      "Create new folder": [
-        "Neuen Ordner erstellen"
-      ],
       "Create new password": [
         "Neues Passwort erstellen"
       ],
@@ -3406,9 +3403,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "Bei der Meldung von Urheberrechtsverletzungen oder gestohlenen Daten ist eine Nachricht erforderlich."
       ],
-      "A problem occurred, please try again.": [
-        "Es ist ein Problem aufgetreten, bitte versuche es erneut."
-      ],
       "Address could not be added.": [
         "E-Mail-Adresse konnte nicht hinzugefügt werden."
       ],
@@ -3489,12 +3483,6 @@
       ],
       "Contact signature not verified": [
         "Kontaktsignatur nicht bestätigt"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Die Inhaltssuche kann in diesem Browser nicht aktiviert werden. Bitte beende den privaten Browsermodus oder verwende einen anderen Browser."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Fehler beim Aktivieren der Inhaltssuche. Bitte starte die Anwendung neu oder leere den Cache."
       ],
       "Copy operation aborted": [
         "Kopiervorgang abgebrochen"
@@ -3602,9 +3590,6 @@
       ],
       "Failed to change permissions settings": [
         "Fehler beim Ändern der Berechtigungseinstellungen"
-      ],
-      "Failed to copy photo to album": [
-        "Das Kopieren des Fotos in das Album ist fehlgeschlagen"
       ],
       "Failed to create folder": [
         "Ordner konnte nicht erstellt werden."
@@ -3879,9 +3864,6 @@
       ],
       "Photo not found": [
         "Foto nicht gefunden"
-      ],
-      "Please activate your search again": [
-        "Bitte aktiviere die Inhaltssuche erneut."
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Bitte überprüfe, ob deine ABN für die grenzüberschreitende Mehrwertsteuer registriert ist"
@@ -5671,14 +5653,8 @@
       "Clear data": [
         "Daten bereinigen"
       ],
-      "Clear encrypted search data": [
-        "Verschlüsselte Suchdaten löschen"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Durch das Löschen der Browserdaten wird der Suchindex auf diesem Gerät gelöscht. Bei der Nutzung der Suchfunktion müssen alle Dateien erneut indiziert werden."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Löscht die Browserdaten im Zusammenhang mit der verschlüsselten Suche."
       ],
       "Clears browser data related to the search.": [
         "Löscht Browserdaten im Zusammenhang mit der Suche."
@@ -5873,9 +5849,6 @@
       "Enabling drive search": [
         "Suche in Drive wird aktiviert"
       ],
-      "Encrypted search is here": [
-        "Die verschlüsselte Suche ist da"
-      ],
       "End-to-end encrypted": [
         "Ende-zu-Ende-verschlüsselt"
       ],
@@ -5905,16 +5878,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minute",
-        "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minuten"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Geschätzte verbleibende Zeit: Weniger als eine Minute"
-      ],
-      "Estimating time remaining...": [
-        "Verbleibende Zeit wird ermittelt..."
       ],
       "Everything in ${ planOrAppName }": [
         "Alles in ${ planOrAppName }"
@@ -5999,9 +5962,6 @@
       ],
       "High Priority": [
         "Hohe Priorität"
-      ],
-      "How does encrypted search work?": [
-        "Wie funktioniert die verschlüsselte Suche?"
       ],
       "I have not finished this one yet.": [
         "Das habe ich noch nicht fertiggestellt."
@@ -6096,12 +6056,6 @@
       ],
       "Indexing in progress": [
         "Indizierung läuft"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "${ esProgress } von insgesamt ${ totalProgressToShow } Elementen wurden indiziert"
-      ],
-      "Indexing search results…": [
-        "Suchresultate werden indexiert…"
       ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
@@ -6283,9 +6237,6 @@
       "Move ${ folderCount } folder": [
         "${ folderCount } Ordner verschieben",
         "${ folderCount } Ordner verschieben"
-      ],
-      "Moving files": [
-        "Dateien werden verschoben"
       ],
       "My Links": [
         "Meine Links"
@@ -6547,9 +6498,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Der Modus „Privates Surfen“ (oder „Inkognito“-Modus) ist nur nützlich, um deine Aktivitäten auf deinem Gerät verborgen zu halten. Er verhindert, dass dein Browser den Verlauf und die Cookies speichert, aber er macht dich nicht unsichtbar. Dein Internetdienstanbieter, dein Netzwerkadministrator und die von dir besuchten Websites können immer noch sehen, was du online tust."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Die private Suche ist aktiviert. Du kannst nun diesen Dialog schließen und nach Dateien und Ordnern suchen."
-      ],
       "Public link": [
         "Öffentlicher Link"
       ],
@@ -6618,9 +6566,6 @@
       ],
       "Scan to download": [
         "Zum Herunterladen scannen"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Die Suche kann in diesem Browser nicht aktiviert werden"
       ],
       "Search covers your recent items": [
         "Die Suche umfasst deine letzten Einträge"
@@ -6922,9 +6867,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Um eine wirklich private Suche zu ermöglichen, muss ${ DRIVE_APP_NAME } deine Dateien lokal indexieren."
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Um eine wirklich private Suche zu ermöglichen, müssen deine Dateien lokal indiziert werden. Du kannst ${ DRIVE_APP_NAME } weiterhin wie gewohnt nutzen – du wirst benachrichtigt, sobald die Indizierung abgeschlossen ist."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
@@ -7023,9 +6965,6 @@
       ],
       "Update required": [
         "Aktualisierung erforderlich"
-      ],
-      "Updating drive search...": [
-        "Drive Suche wird aktualisiert..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Jederzeit upgraden, um den Rest zu übertragen"
@@ -8121,9 +8060,6 @@
       "Shared with me": [
         "Mit mir geteilt"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "Indizierungsfortschritt der verschlüsselten Suche anzeigen"
-      ],
       "Sign emails": [
         "E-Mails signieren"
       ],
@@ -8189,9 +8125,6 @@
       ],
       "Toolbar": [
         "Symbolleiste"
-      ],
-      "Type": [
-        "Typ"
       ],
       "Unlock drive": [
         "Laufwerk entsperren"
@@ -9884,35 +9817,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "„${ ellipsedName }“ erfolgreich erstellt"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "„${ ellipsedName }“ wurde gelöscht"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "„${ ellipsedName }“ dauerhaft aus dem Papierkorb gelöscht"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "\"${ ellipsedName }\" konnte nicht erstellt werden"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "\"${ ellipsedName }\" konnte nicht gelöscht werden"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "\"${ ellipsedName }\" konnte nicht dauerhaft aus dem Papierkorb gelöscht werden"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "„${ ellipsedName }“ konnte nicht verschoben werden"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\" konnte nicht aus dem Papierkorb wiederhergestellt werden"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" verschoben"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "„${ ellipsedName }“ aus dem Papierkorb wiederhergestellt"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "„${ ellipsedName }“ erfolgreich verschoben"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" geteilt"
@@ -9960,10 +9872,6 @@
         "${ numberOfItems } Element kopiert",
         "${ numberOfItems } Elemente kopiert"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } Eintrag gelöscht",
-        "${ numberOfItems } Einträge gelöscht"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } Element dauerhaft gelöscht",
         "${ numberOfItems } Elemente dauerhaft gelöscht"
@@ -9972,21 +9880,9 @@
         "${ numberOfItems } Element dauerhaft aus dem Papierkorb gelöscht",
         "${ numberOfItems } Elemente dauerhaft aus dem Papierkorb gelöscht"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } Element konnte nicht dauerhaft aus dem Papierkorb gelöscht werden",
-        "${ numberOfItems } Elemente konnten nicht dauerhaft aus dem Papierkorb gelöscht werden"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } Element konnte nicht verschoben werden",
-        "${ numberOfItems } Elemente konnten nicht verschoben werden"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } Element konnte nicht in den Papierkorb verschoben werden",
         "${ numberOfItems } Elemente konnten nicht in den Papierkorb verschoben werden"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } Element konnte nicht aus dem Papierkorb wiederhergestellt werden",
-        "${ numberOfItems } Elemente konnten nicht aus dem Papierkorb wiederhergestellt werden"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } Eintrag verschoben",
@@ -9999,10 +9895,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } Element aus dem Papierkorb wiederhergestellt",
         "${ numberOfItems } Elemente aus dem Papierkorb wiederhergestellt"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } Eintrag erfolgreich verschoben",
-        "${ numberOfItems } Einträge erfolgreich verschoben"
       ],
       "${ reason } has been disabled": [
         "${ reason } wurde deaktiviert."
@@ -10023,9 +9915,6 @@
       "All items deleted permanently from trash": [
         "Alle Einträge dauerhaft aus dem Papierkorb gelöscht."
       ],
-      "Cannot load link": [
-        "Link kann nicht geladen werden"
-      ],
       "Cannot load next page": [
         "Nächste Seite kann nicht geladen werden"
       ],
@@ -10038,20 +9927,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopie von \"${ ellipsedName }\" in den Papierkorb verschoben"
       ],
-      "Device failed to be removed": [
-        "Gerät konnte nicht entfernt werden"
-      ],
-      "Device failed to be renamed": [
-        "Gerät konnte nicht umbenannt werden"
-      ],
       "Device removed": [
         "Gerät entfernt"
       ],
       "Device renamed": [
         "Gerät umbenannt"
-      ],
-      "Encrypted search activated": [
-        "Verschlüsselte Suche aktiviert"
       ],
       "Error while listing devices": [
         "Fehler beim Auflisten der Geräte"
@@ -11940,12 +11820,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Bearbeiter können nun die Freigabe verwalten und andere einladen. Du kannst diese Funktion jederzeit in den Freigabeeinstellungen ausschalten."
-      ],
-      "Encrypted search is here": [
-        "Die verschlüsselte Suche ist da"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Jetzt kannst du Drive-Dateien ganz einfach durchsuchen und gleichzeitig deine Daten schützen."
       ]
     },
     "sso": {
@@ -13979,6 +13853,36 @@
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Hol dir ${ discount }% Rabatt auf ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Hol dir ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "2 TB of storage to share": [
+        "2 TB Speicherplatz zur gemeinsamen Nutzung"
+      ],
+      "2 user accounts": [
+        "2 Benutzerkonten"
+      ],
+      "All premium features from your current plan": [
+        "Alle Premium-Funktionen deines aktuellen Abonnements"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "für 12 Monate"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/ Monat"
@@ -14014,6 +13918,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Zu einem unterstützten Abonnement upgraden, um Administratorrollen nutzen zu können."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kannst deine eigene Funktion nicht ändern. Bitte einen anderen Administrator, dies zu tun."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."

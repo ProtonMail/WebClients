@@ -20690,8 +20690,14 @@
       "Disables end-to-end email encryption for this group": [
         "Deaktivuje end-to-end šifrovanie emailov pre túto skupinu"
       ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Externá adresa – tejto adrese nemožno prideliť úlohy a oprávnenia priradené tejto skupine."
+      ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Externá adresa - deaktivuje end-to-end šifrovanie emailov pre túto skupinu a s týmto používateľom nebudú zdieľané žiadne šifrované zdroje."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Externá adresa — Neexistuje end-to-end šifrovanie ani zdieľanie zdrojov a nie je možné prideľovať role a oprávnenia."
       ],
       "Group membership paused": [
         "Členstvo v skupine pozastavené"
@@ -21072,6 +21078,9 @@
       ],
       "Writing assistant": [
         "Asistent písania"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Svoje vlastné role nemôžete zmeniť. Požiadajte iného správcu, aby ich zmenil."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Akonáhle používateľ prijme pozvánku, budete môcť priradiť pozície."

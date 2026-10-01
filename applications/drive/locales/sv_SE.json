@@ -303,9 +303,6 @@
       "Create folder": [
         "Skapa mapp"
       ],
-      "Create new folder": [
-        "Skapa ny mapp"
-      ],
       "Create new password": [
         "Skapa nytt lösenord"
       ],
@@ -3390,9 +3387,6 @@
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
       ],
-      "A problem occurred, please try again.": [
-        "Ett problem uppstod, försök igen."
-      ],
       "Address could not be added.": [
         "Adress kunde inte läggas till."
       ],
@@ -3470,12 +3464,6 @@
       ],
       "Contact signature not verified": [
         "Kontaktsignatur inte verifierad"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Innehållssökning kan inte aktiveras i denna webbläsare. Avsluta läget för privat surfning eller använd en annan webbläsare."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Innehållssökning kan inte aktiveras. Starta om applikationen eller rensa data."
       ],
       "Copy operation aborted": [
         "Kopieringsåtgärd avbröts"
@@ -3577,9 +3565,6 @@
       ],
       "Failed to change permissions settings": [
         "Misslyckades att ändra behörighetsinställningar"
-      ],
-      "Failed to copy photo to album": [
-        "Misslyckades att kopiera foto till album"
       ],
       "Failed to create folder": [
         "Misslyckades att skapa mapp"
@@ -3839,9 +3824,6 @@
       ],
       "Photo not found": [
         "Foto hittades inte"
-      ],
-      "Please activate your search again": [
-        "Aktivera din sökning igen"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Kontrollera om ditt ABN är registrerat för moms vid gränsöverskridande handel"
@@ -5586,14 +5568,8 @@
       "Clear data": [
         "Rensa data"
       ],
-      "Clear encrypted search data": [
-        "Rensa krypterad sökdata"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Rensning av webbläsardata kommer att rensa sökindex på den här enheten. Alla filer behöver då indexeras igen för att kunna använda sökfunktionen."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Rensar webbläsardata relaterad till krypterade sökningar."
       ],
       "Clears browser data related to the search.": [
         "Rensar webbläsardata relaterad till sökningen."
@@ -5775,9 +5751,6 @@
       "Enabling auto-deletion…": [
         "Aktiverar automatisk borttagning…"
       ],
-      "Encrypted search is here": [
-        "Krypterad sökning är här"
-      ],
       "End-to-end encrypted": [
         "End-to-end-krypterat"
       ],
@@ -5807,16 +5780,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Ange ditt eget lösenord (som betrodd kontakt)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Beräknad återstående tid: ${ estimatedMinutes } minut",
-        "Beräknad återstående tid: ${ estimatedMinutes } minuter"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Beräknad återstående tid: Mindre än en minut"
-      ],
-      "Estimating time remaining...": [
-        "Beräknar återstående tid..."
       ],
       "Everything in ${ planOrAppName }": [
         "Allt i ${ planOrAppName }"
@@ -5901,9 +5864,6 @@
       ],
       "High Priority": [
         "Hög prioritet"
-      ],
-      "How does encrypted search work?": [
-        "Hur fungerar krypterad sökning?"
       ],
       "I have not finished this one yet.": [
         "Jag har inte slutförd denna än."
@@ -5992,12 +5952,6 @@
       ],
       "Indexing in progress": [
         "Indexering pågår"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Indexerar objekt ${ esProgress } av ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Indexerar sökresultat …"
       ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
@@ -6176,9 +6130,6 @@
       "Move ${ folderCount } folder": [
         "Flytta ${ folderCount } mapp",
         "Flytta ${ folderCount } mappar"
-      ],
-      "Moving files": [
-        "Flyttar filer"
       ],
       "My Links": [
         "Mina länkar"
@@ -6419,9 +6370,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfning (eller ”inkognitoläge”) är endast användbart för att hålla din aktivitet dold på din enhet. Det hindrar din webbläsare från att spara historik och cookies, men det gör dig inte osynlig. Din internetleverantör, nätverksadministratör och de webbplatser du besöker kan fortfarande se vad du gör på nätet."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Privat sökning aktiverad. Du kan nu stänga denna dialogruta och söka efter filer och mappar."
-      ],
       "Public link": [
         "Offentlig länk"
       ],
@@ -6490,9 +6438,6 @@
       ],
       "Scan to download": [
         "Skanna för att ladda ner"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Sökning kan inte aktiveras i denna webbläsare"
       ],
       "Search data can't be read": [
         "Sökdata kan inte läsas"
@@ -6874,9 +6819,6 @@
       ],
       "Update required": [
         "Uppdatering krävs"
-      ],
-      "Updating drive search...": [
-        "Uppdaterar Drive-sök…"
       ],
       "Upgrade anytime to bring over the rest": [
         "Uppgradera när som helst för att flytta över resten"
@@ -7921,9 +7863,6 @@
       "Shared with me": [
         "Delat med mig"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "Visa indexeringsförlopp för krypterad sökning"
-      ],
       "Sign emails": [
         "Signera e-post"
       ],
@@ -7989,9 +7928,6 @@
       ],
       "Toolbar": [
         "Verktygsfält"
-      ],
-      "Type": [
-        "Typ"
       ],
       "Unlock drive": [
         "Lås upp Drive"
@@ -9678,32 +9614,11 @@
       "\"${ ellipsedName }\" created successfully": [
         "”${ ellipsedName }” skapades utan problem"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "”${ ellipsedName }” borttaget"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "“${ ellipsedName }“ misslyckades att skapas"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "“${ ellipsedName }“ misslyckades att tas bort"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "”${ ellipsedName }” misslyckades att tas bort permanent från papperskorg"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "”${ ellipsedName }” misslyckades att flyttas"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "”${ ellipsedName }” misslyckades att återställas från papperskorg"
-      ],
       "\"${ ellipsedName }\" moved": [
         "”${ ellipsedName }” flyttad"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "”${ ellipsedName }” återställd från papperskorg"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "”${ ellipsedName }” flyttades utan problem"
       ],
       "\"${ fileName }\" shared": [
         "”${ fileName }” delad"
@@ -9747,10 +9662,6 @@
         "${ numberOfItems } objekt kopierat",
         "${ numberOfItems } objekt kopierade"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } objekt borttaget",
-        "${ numberOfItems } objekt borttagna"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } objekt borttaget permanent",
         "${ numberOfItems } objekt borttagna permanent"
@@ -9759,21 +9670,9 @@
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg",
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "“${ numberOfItems }“ fil misslyckades att tas bort permanent från papperskorgen",
-        "en“${ numberOfItems }“ filer misslyckades att tas bort permanent från papperskorg"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } objekt kunde inte flyttas",
-        "${ numberOfItems } objekt kunde inte flyttas"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } objekt misslyckades att flyttas till papperskorg",
         "${ numberOfItems } objekt misslyckades att flyttas till papperskorg"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "“${ numberOfItems }“ fil misslyckades att återställas från papperskorgen",
-        "“${ numberOfItems }“ filer misslyckades att återställas från papperskorgen"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } objekt flyttat",
@@ -9786,10 +9685,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } objekt återställdes från papperskorg",
         "${ numberOfItems } objekt återställdes från papperskorg"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } objekt har flyttats",
-        "${ numberOfItems } objekt har flyttats"
       ],
       "${ reason } has been disabled": [
         "${ reason } har inaktiverats"
@@ -9810,9 +9705,6 @@
       "All items deleted permanently from trash": [
         "Alla objekt borttagna permanent från papperskorg"
       ],
-      "Cannot load link": [
-        "Kan inte ladda länk"
-      ],
       "Cannot load next page": [
         "Kan inte ladda nästa sida"
       ],
@@ -9825,20 +9717,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopia av “${ ellipsedName }“ flyttades till papperskorg"
       ],
-      "Device failed to be removed": [
-        "Enhet kunde inte tas bort"
-      ],
-      "Device failed to be renamed": [
-        "Enhet kunde inte döpas om"
-      ],
       "Device removed": [
         "Enhet borttagen"
       ],
       "Device renamed": [
         "Enhet omdöpt"
-      ],
-      "Encrypted search activated": [
-        "Krypterad sökning aktiverad"
       ],
       "Error while listing devices": [
         "Fel vid listning av enheter"
@@ -11681,12 +11564,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Redaktörer kan nu hantera delning och bjuda in andra. Du kan stänga av det när som helst i delningsinställningar."
-      ],
-      "Encrypted search is here": [
-        "Krypterad sökning är här"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Nu kan du enkelt söka bland filer på Drive medan du håller din data säker."
       ]
     },
     "sso": {
@@ -13694,6 +13571,27 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "2 TB of storage to share": [
+        "2 TB lagringsutrymme att dela"
+      ],
+      "2 user accounts": [
+        "2 användarkonton"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "för 12 månader"
       ]
     },
     "Unlimited offer": {

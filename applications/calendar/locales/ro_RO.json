@@ -6959,6 +6959,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Aveți un abonament ${ planTitle } de evaluare. Nu este necesară nici o plată în acest moment. Abonamentul se va reînnoi automat la sfârșitul perioadei de evaluare."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Aveți o factură neachitată. ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Aveți o factură neachitată cu scadența la ${ dueDate }. ${ payInvoiceLink }"
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Ați reactivat cheile și evenimentele legate de următoarele calendare se pot decripta acum."
       ],
@@ -8028,6 +8034,9 @@
       ],
       "Pay invoice": [
         "Plată factură"
+      ],
+      "Pay it": [
+        "Plătiți-o"
       ],
       "Reactivate now": [
         "Reactivare acum"

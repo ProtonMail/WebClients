@@ -1553,8 +1553,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -8246,7 +8245,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -13589,7 +13589,7 @@
         "el dia 14 del mes"
       ],
       "15th of the month": [
-        "el dia 15 del mes"
+        "15 del mes"
       ],
       "16th of the month": [
         "el dia 16 del mes"
@@ -13601,10 +13601,10 @@
         "el dia 18 del mes"
       ],
       "19th of the month": [
-        "el dia 19 del mes"
+        "19 del mes"
       ],
       "1st of the month": [
-        "el dia 1 del mes"
+        "1 del mes"
       ],
       "20th of the month": [
         "el dia 20 del mes"
@@ -13616,7 +13616,7 @@
         "el dia 22 del mes"
       ],
       "23rd of the month": [
-        "el dia 23 del mes"
+        "23 del mes"
       ],
       "24th of the month": [
         "el dia 24 del mes"
@@ -17797,6 +17797,36 @@
         "Aquesta versió del Navegador Tor no és compatible. Actualitzeu a la darrera ${ stableRelease }."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obtingueu un ${ discount }% de descompte al ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obtingueu el pla ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 TB of storage to share": [
+        "2 TB d'emmagatzematge per compartir"
+      ],
+      "2 user accounts": [
+        "2 comptes d'usuari"
+      ],
+      "All premium features from your current plan": [
+        "Totes les característiques prèmium del vostre pla actual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en el preu mensual estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan finalitzi el cicle de facturació."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "durant 12 mesos"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/mes"
@@ -17833,6 +17863,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Milloreu a un pla compatible per utilitzar rols d'administrador/a."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No podeu canviar els vostres propis rols. Demaneu a un altre administrador que ho faci."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
