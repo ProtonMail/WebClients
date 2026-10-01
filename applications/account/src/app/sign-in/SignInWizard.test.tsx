@@ -2,6 +2,7 @@ import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import { fromCallback, fromPromise } from 'xstate';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { TelemetryUnauthLost2FAEvents } from '@proton/shared/lib/api/telemetry';
 import { SecondPasswordError, TOTPError } from '@proton/shared/lib/authentication/error';
 import type { KeySalt, User } from '@proton/shared/lib/interfaces';
 
@@ -9,7 +10,7 @@ import type { AuthSession } from '../content/authSession';
 import type { Paths } from '../content/helper';
 import { SignInWizard } from './SignInWizard';
 import { AuthType, type AuthTypeData, type SSODataTypes, SSOLoginCapabilites } from './auth/interface';
-import type { PrepareSSOResult } from './auth/sso';
+import type { PrepareSSOResult, SSOSignInResult } from './auth/sso';
 import { SignInPageLayout } from './components/SignInPageLayout';
 import { RememberMode } from './rememberMode';
 import { SignInStateMachine } from './state-machine/SignInStateMachine';
@@ -20,7 +21,7 @@ import { credentialsStateMachine } from './steps/credentials/state-machine/crede
 import { lost2FAStateMachine } from './steps/password-account/screens/lost-two-factor/state-machine/lost2FAStateMachine';
 import { createLost2FAFlow } from './steps/password-account/screens/lost-two-factor/state-machine/verificationActors';
 import { passwordAccountStateMachine } from './steps/password-account/state-machine/passwordAccountStateMachine';
-import { ssoStateMachine } from './steps/sso/state-machine/ssoStateMachine';
+import { type SSODeviceEvent, ssoStateMachine } from './steps/sso/state-machine/ssoStateMachine';
 import { SignInContext } from './wizard/SignInContext';
 import { SignInProvider } from './wizard/SignInProvider';
 
@@ -29,6 +30,13 @@ jest.mock('./steps/credentials/useLoginChallenge', () => ({
 }));
 
 jest.mock('../locales', () => jest.requireActual('../locales'));
+
+const mockSendTelemetryReport = jest.fn();
+jest.mock('@proton/shared/lib/helpers/metrics', () => ({
+    ...jest.requireActual('@proton/shared/lib/helpers/metrics'),
+    sendTelemetryReport: (...args: unknown[]) => mockSendTelemetryReport(...args),
+    telemetryReportsBatchQueue: { flush: () => Promise.resolve() },
+}));
 
 // The email verification sends a code when it opens; it stays pending here
 const mockInitiateVerification = jest.fn(() => new Promise<never>(() => {}));
@@ -42,16 +50,6 @@ jest.mock('@proton/account/safetyReview/verification/verification', () => ({
 const mockCreateNotification = jest.fn();
 jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
-}));
-
-// Counts its renders, so a test can tell the loader never showed, not even for one render
-const mockLoaderPage = jest.fn();
-jest.mock('@proton/components/containers/app/LoaderPage', () => ({
-    __esModule: true,
-    default: () => {
-        mockLoaderPage();
-        return null;
-    },
 }));
 
 const ssoData = {
@@ -89,7 +87,7 @@ const renderWizard = (
         authTypeData = { type: AuthType.ExternalSSO },
     }: { withRedirectToken?: boolean; showSSONotice?: boolean; authTypeData?: AuthTypeData } = {}
 ) => {
-    renderWithProviders(
+    const wizard = () => (
         <SignInContext.Provider
             logic={machine}
             options={{
@@ -120,6 +118,9 @@ const renderWizard = (
             </SignInProvider>
         </SignInContext.Provider>
     );
+    const { rerender } = renderWithProviders(wizard());
+    // Renders the page again, as its parents may at any time; with the same machine, the sign-in carries on where it is
+    return { rerender: () => rerender(wizard()) };
 };
 
 /**
@@ -173,6 +174,9 @@ const TWO_FACTOR_AUTH_TYPES: CreatedAuth['authTypes'] = {
     unlock: false,
 };
 
+/** Leaves the page for the password reset, which the app provides (`useSignInMachine`). */
+const goToResetPassword = jest.fn();
+
 /** Signs in with a password account with these auth types (by default TOTP two-factor) and recovery methods. */
 const renderPasswordSignIn = (
     recoveryMethods: { email?: boolean; phone?: boolean; phrase?: boolean },
@@ -198,6 +202,7 @@ const renderPasswordSignIn = (
                 actors: {
                     startAuthSession: fromPromise(() => Promise.resolve()),
                     authenticateWithSSOToken: fromPromise(() => Promise.resolve({} as PrimaryAuthResult)),
+                    authenticateWithPassword: fromPromise(() => Promise.resolve({} as PrimaryAuthResult)),
                 },
             }),
             prepareSignIn: fromPromise(() => Promise.resolve()),
@@ -207,6 +212,7 @@ const renderPasswordSignIn = (
                     lostTwoFactorFlow: createLost2FAFlow({ api: () => new Promise(() => {}) }),
                     ...passwordAccountActors,
                 },
+                actions: { goToResetPassword: (_, params) => goToResetPassword(params) },
             }),
             createAuthState: fromPromise(() =>
                 Promise.resolve<CreatedAuth>({
@@ -216,7 +222,7 @@ const renderPasswordSignIn = (
             ),
         },
     });
-    renderWizard(machine);
+    return renderWizard(machine);
 };
 
 /** From the two-factor screen into the lost-2FA flow, which starts with the backup codes. */
@@ -225,7 +231,7 @@ const openLostTwoFactor = async () => {
     expect(await screen.findByText('Use backup recovery code')).toBeInTheDocument();
 };
 
-/** Each lost-2FA screen is framed by `Lost2FAStepLayout`: its title, and the account's username. */
+/** Each lost-2FA screen shows its title, and the account’s username under it (`Lost2FAUsername`). */
 const expectLost2FAFrame = (title: string) => {
     expect(screen.getByRole('heading', { name: title })).toBeInTheDocument();
     expect(screen.getByText('member@example.com')).toBeInTheDocument();
@@ -244,10 +250,23 @@ const enterTotp = async () => {
     });
 };
 
-/** The layout has a Back button for each screen size. */
-const clickBack = () => fireEvent.click(screen.getAllByRole('button', { name: 'Back' })[0]);
+/**
+ * The page has a Back button for each screen size: the layout's top bar, for small screens, then the screen's heading,
+ * which each screen wires itself. This clicks the heading's.
+ */
+const clickBack = () => fireEvent.click(screen.getAllByRole('button', { name: 'Back' })[1]);
+
+/** The layout's top bar's Back button, for small screens. */
+const clickTopBarBack = () => fireEvent.click(screen.getAllByRole('button', { name: 'Back' })[0]);
 
 describe('SignInWizard', () => {
+    it('leaves out the subtitle of a screen that has none', async () => {
+        // The SSO form's subtitle is the app the sign-in continues to, and this one continues to none
+        renderSignInOnSSO({ withRedirectToken: false });
+        expect(await screen.findByRole('heading', { name: 'Sign in to your organization' })).toBeInTheDocument();
+        expect(screen.queryByTestId('public-main-header:subtitle')).not.toBeInTheDocument();
+    });
+
     it('shows the SSO notice when the page opens the SSO form with it', async () => {
         renderSignInOnSSO({ withRedirectToken: false, showSSONotice: true });
         expect(await screen.findByLabelText('Email')).toBeInTheDocument();
@@ -351,7 +370,86 @@ describe('SignInWizard', () => {
         expect(screen.getByRole('heading', { name: 'Ask your administrator for access?' })).toBeInTheDocument();
     });
 
+    it('shows the sign-in loading once another device approves, instead of the ways out', async () => {
+        let approve = () => {};
+        renderSignInOnSSO({
+            data: {
+                ...ssoData,
+                address: { Email: 'member@example.com' },
+                deviceData: { deviceOutput: {}, deviceSecretData: { confirmationCodes: ['ABCD', 'ABCD', 'ABCD'] } },
+                intent: {
+                    step: SSOLoginCapabilites.OTHER_DEVICES,
+                    capabilities: new Set([
+                        SSOLoginCapabilites.OTHER_DEVICES,
+                        SSOLoginCapabilites.ENTER_BACKUP_PASSWORD,
+                    ]),
+                },
+            } as unknown as SSODataTypes,
+            ssoActors: {
+                waitForDeviceApproval: fromCallback<SSODeviceEvent, { auth: SignInAuthState }>(({ sendBack }) => {
+                    approve = () =>
+                        sendBack({ type: 'sso.device.approved', payload: { deviceSecretUser: {} as never } });
+                    return () => {};
+                }),
+                // The approved device signs in, and the app then takes the page away
+                confirmSSODevice: fromPromise(() => new Promise<SSOSignInResult>(() => {})),
+            },
+        });
+        expect(
+            await screen.findByRole('heading', { name: 'Approve the sign-in from another device' })
+        ).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Use backup password instead' })).toBeInTheDocument();
+
+        act(() => approve());
+        // The code stays, marked approved, and the sign-in shows as a busy button in place of the ways out
+        expect(await screen.findByText('Approved')).toBeInTheDocument();
+        expect(screen.getByTestId('sso:confirmation-code')).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /Signing in/ })).toHaveAttribute('aria-busy', 'true');
+        expect(screen.queryByRole('button', { name: 'Use backup password instead' })).not.toBeInTheDocument();
+    });
+
+    it('keeps the page when the SSO flow moves to another screen', async () => {
+        renderSignInOnSSO({
+            data: {
+                ...ssoData,
+                intent: {
+                    step: SSOLoginCapabilites.ASK_ADMIN,
+                    capabilities: new Set([SSOLoginCapabilites.ASK_ADMIN, SSOLoginCapabilites.ENTER_BACKUP_PASSWORD]),
+                },
+            } as SSODataTypes,
+        });
+        expect(await screen.findByRole('heading', { name: 'Ask your administrator for access?' })).toBeInTheDocument();
+        const page = screen.getByRole('main');
+
+        fireEvent.click(screen.getByRole('button', { name: 'Use backup password instead' }));
+        expect(await screen.findByRole('heading', { name: 'Enter your backup password' })).toBeInTheDocument();
+        expect(screen.getByRole('main')).toBe(page);
+    });
+
+    it('keeps the page when the sign-in moves between steps', async () => {
+        renderSignInOnSSO();
+        expect(await screen.findByText('Enter your backup password')).toBeInTheDocument();
+        const page = screen.getByRole('main');
+
+        // Back from the SSO flow returns to the credentials step
+        clickBack();
+        expect(await screen.findByLabelText('Email')).toBeInTheDocument();
+        expect(screen.getByRole('main')).toBe(page);
+    });
+
     describe('lost two-factor', () => {
+        it('keeps the page between its screens', async () => {
+            renderPasswordSignIn({ email: true });
+            await openLostTwoFactor();
+            const page = screen.getByRole('main');
+
+            skipBackupCodes();
+            expect(
+                await screen.findByRole('heading', { name: 'Disable two-factor authentication?' })
+            ).toBeInTheDocument();
+            expect(screen.getByRole('main')).toBe(page);
+        });
+
         it('opens the backup codes from the two-factor screen', async () => {
             renderPasswordSignIn({});
             expect(await screen.findByText('Two-factor authentication')).toBeInTheDocument();
@@ -394,6 +492,30 @@ describe('SignInWizard', () => {
             expectLost2FAFrame('Disable two-factor authentication?');
         });
 
+        it('keeps its last screen up while the page leaves to reset the password', async () => {
+            goToResetPassword.mockClear();
+            const { rerender } = renderPasswordSignIn({});
+            await openLostTwoFactor();
+            skipBackupCodes();
+            fireEvent.click(await screen.findByRole('button', { name: 'Recover account' }));
+            expect(goToResetPassword).toHaveBeenCalledWith({ username: 'member@example.com' });
+
+            // The next page loads: the screen stays up, loading, even if the page renders again
+            rerender();
+            expectLost2FAFrame('Disable two-factor authentication?');
+            expect(screen.getByRole('button', { name: /Recover account/ })).toHaveAttribute('aria-busy', 'true');
+        });
+
+        it('goes back to the two-factor screen, and opens a new flow from there', async () => {
+            renderPasswordSignIn({});
+            await openLostTwoFactor();
+            clickBack();
+            expect(await screen.findByRole('heading', { name: 'Two-factor authentication' })).toBeInTheDocument();
+            // A new flow, the password flow's child under the stopped one's id
+            await openLostTwoFactor();
+            expectLost2FAFrame('Use backup recovery code');
+        });
+
         it('clears the typed code once a new one is sent', async () => {
             mockInitiateVerification.mockImplementationOnce(
                 () =>
@@ -421,7 +543,6 @@ describe('SignInWizard', () => {
         });
 
         it('keeps the backup code form up, loading, while a valid code signs in', async () => {
-            mockLoaderPage.mockClear();
             const completeSignIn = jest.fn(() => new Promise<void>(() => {}));
             renderPasswordSignIn(
                 {},
@@ -439,54 +560,101 @@ describe('SignInWizard', () => {
                 }
             );
             await openLostTwoFactor();
+            const page = screen.getByRole('main');
             fireEvent.change(screen.getByRole('textbox'), { target: { value: 'backup12' } });
             fireEvent.click(screen.getByRole('button', { name: 'Authenticate' }));
 
             await waitFor(() => expect(completeSignIn).toHaveBeenCalled());
             expectLost2FAFrame('Use backup recovery code');
             expect(screen.getByRole('button', { name: /Authenticate/ })).toHaveAttribute('aria-busy', 'true');
-            expect(mockLoaderPage).not.toHaveBeenCalled();
+            // The same page throughout: had it rendered nothing in between, its main element would be a new one
+            expect(screen.getByRole('main')).toBe(page);
+        });
+
+        it('reports each backup code and how the flow ended, in telemetry', async () => {
+            mockSendTelemetryReport.mockClear();
+            renderPasswordSignIn(
+                {},
+                {
+                    // A wrong code, so the form takes back again once it's checked
+                    lostTwoFactorFlow: lost2FAStateMachine.provide({
+                        actors: {
+                            verifyBackupCode: fromPromise(() => Promise.reject(new TOTPError('Incorrect code'))),
+                        },
+                    }),
+                }
+            );
+            await openLostTwoFactor();
+            const flowOutcomes = () =>
+                mockSendTelemetryReport.mock.calls.flatMap(([report]) =>
+                    report.event === TelemetryUnauthLost2FAEvents.flow_outcome ? [report.dimensions.outcome] : []
+                );
+
+            const stepLoads = () =>
+                mockSendTelemetryReport.mock.calls.flatMap(([report]) =>
+                    report.event === TelemetryUnauthLost2FAEvents.step_load ? [report.dimensions.step] : []
+                );
+
+            fireEvent.change(screen.getByRole('textbox'), { target: { value: 'backup12' } });
+            fireEvent.click(screen.getByRole('button', { name: 'Authenticate' }));
+            expect(flowOutcomes()).toEqual(['totp backup code provided']);
+            expect(await screen.findByText('Incorrect code')).toBeInTheDocument();
+            // The code is asked for again, on the same step, which loaded once
+            expect(stepLoads()).toEqual(['request totp backup codes']);
+
+            // Back from the backup codes, the account's only way here, returns to the two-factor screen
+            clickBack();
+            expect(await screen.findByRole('heading', { name: 'Two-factor authentication' })).toBeInTheDocument();
+            expect(flowOutcomes()).toEqual(['totp backup code provided', 'return to 2fa step']);
         });
     });
 
-    /**
-     * `PasswordAccountStep` and `SSOStep` fall back to the loader once their flow is gone. It is not meant to be
-     * seen: ending the flow either leaves the step in the same transition, or hands the session to the app first.
-     */
     describe('when an account flow ends', () => {
-        beforeEach(() => mockLoaderPage.mockClear());
-
-        it('goes back to the credentials form without the loader when leaving the password account flow', async () => {
+        // The same page throughout: had it rendered nothing in between, its main element would be a new one
+        it('goes back to the credentials form when leaving the password account flow', async () => {
             renderPasswordSignIn({});
             expect(await screen.findByText('Two-factor authentication')).toBeInTheDocument();
-            clickBack();
+            const page = screen.getByRole('main');
+            // The small screens' back, from the layout's top bar; the other tests use the heading's
+            clickTopBarBack();
             expect(await screen.findByLabelText('Email')).toBeInTheDocument();
-            expect(mockLoaderPage).not.toHaveBeenCalled();
+            expect(screen.getByRole('main')).toBe(page);
         });
 
-        it('goes back to the credentials form without the loader when leaving the SSO flow', async () => {
+        it('signs in again after going back to the credentials form', async () => {
+            renderPasswordSignIn({});
+            expect(await screen.findByRole('heading', { name: 'Two-factor authentication' })).toBeInTheDocument();
+            const page = screen.getByRole('main');
+            clickBack();
+            // The reopened credentials step, its redirect token used: the SSO form, then the password form
+            fireEvent.click(await screen.findByRole('button', { name: 'Sign in with password' }));
+            fireEvent.change(await screen.findByLabelText('Password'), { target: { value: 'secret' } });
+            fireEvent.click(screen.getByRole('button', { name: 'Sign in' }));
+            // A new password account flow, the sign-in's child under the stopped one's id
+            expect(await screen.findByRole('heading', { name: 'Two-factor authentication' })).toBeInTheDocument();
+            expect(screen.getByRole('main')).toBe(page);
+        });
+
+        it('goes back to the credentials form when leaving the SSO flow', async () => {
             renderSignInOnSSO();
             expect(await screen.findByText('Enter your backup password')).toBeInTheDocument();
+            const page = screen.getByRole('main');
             clickBack();
             expect(await screen.findByLabelText('Email')).toBeInTheDocument();
-            expect(mockLoaderPage).not.toHaveBeenCalled();
+            expect(screen.getByRole('main')).toBe(page);
         });
 
-        it('goes back to the credentials form without the loader when the password account flow fails', async () => {
+        it('goes back to the credentials form when the password account flow fails', async () => {
             renderPasswordSignIn({}, { verifyTwoFactor: fromPromise(() => Promise.reject(new Error('Offline'))) });
+            expect(await screen.findByRole('heading', { name: 'Two-factor authentication' })).toBeInTheDocument();
+            const page = screen.getByRole('main');
             await enterTotp();
             expect(await screen.findByLabelText('Email')).toBeInTheDocument();
-            expect(mockLoaderPage).not.toHaveBeenCalled();
+            expect(screen.getByRole('main')).toBe(page);
         });
 
-        it('shows the loader only once the session is handed to the app, which leaves the page', async () => {
-            let handOver!: () => void;
-            const completeSignIn = jest.fn(
-                () =>
-                    new Promise<void>((resolve) => {
-                        handOver = resolve;
-                    })
-            );
+        it('keeps the two-factor screen up, loading, once the session is handed to the app', async () => {
+            const completeSignIn = jest.fn(() => Promise.resolve());
             renderPasswordSignIn(
                 {},
                 {
@@ -499,16 +667,16 @@ describe('SignInWizard', () => {
                     completeSignIn: fromPromise(completeSignIn),
                 }
             );
+            expect(await screen.findByRole('heading', { name: 'Two-factor authentication' })).toBeInTheDocument();
+            const page = screen.getByRole('main');
             await enterTotp();
 
-            // The app takes over (`onLogin`) while the two-factor screen stays up, loading
+            // The app has the session (`onLogin`); the screen stays up, loading, until the app takes the page away
             await waitFor(() => expect(completeSignIn).toHaveBeenCalled());
+            await act(async () => {});
             expect(screen.getByRole('heading', { name: 'Two-factor authentication' })).toBeInTheDocument();
-            expect(mockLoaderPage).not.toHaveBeenCalled();
-
-            // Only here, where the app has already navigated away and unmounts the sign-in
-            await act(async () => handOver());
-            await waitFor(() => expect(mockLoaderPage).toHaveBeenCalled());
+            expect(screen.getByRole('button', { name: /Authenticat/ })).toHaveAttribute('aria-busy', 'true');
+            expect(screen.getByRole('main')).toBe(page);
         });
     });
 });

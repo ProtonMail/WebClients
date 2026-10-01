@@ -4,34 +4,27 @@ import { fromPromise } from 'xstate';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { Paths } from '../../../content/helper';
+import { SignInWizard } from '../../SignInWizard';
 import { AuthType, type AuthTypeData } from '../../auth/interface';
 import { SignInPageLayout } from '../../components/SignInPageLayout';
 import { RememberMode } from '../../rememberMode';
 import { SignInStateMachine } from '../../state-machine/SignInStateMachine';
 import { SignInContext } from '../../wizard/SignInContext';
 import { SignInProvider } from '../../wizard/SignInProvider';
-import { CredentialsContext } from './CredentialsContext';
-import LoginForm from './LoginForm';
 import type { CredentialsFormValues, PrimaryAuthResult } from './state-machine/credentialsActors';
+import { InvalidLoginError } from './state-machine/credentialsErrors';
 import { credentialsStateMachine } from './state-machine/credentialsStateMachine';
-
-/** The form, with the credentials step's actor from the sign-in, as `CredentialsStep` provides it. */
-const LoginFormInStep = () => {
-    const credentialsRef = SignInContext.useSelector((snapshot) => snapshot.children.credentials);
-    return credentialsRef ? (
-        <CredentialsContext.Provider value={credentialsRef}>
-            <LoginForm />
-        </CredentialsContext.Provider>
-    ) : null;
-};
 
 jest.mock('./useLoginChallenge', () => ({
     useLoginChallenge: () => ({ element: null, getPayload: () => Promise.resolve(undefined) }),
 }));
 
 jest.mock('../../../locales', () => jest.requireActual('../../../locales'));
+
+jest.mock('@proton/unleash/useFlag');
 
 const paths = {
     signup: '/signup',
@@ -44,10 +37,12 @@ const paths = {
 const renderForm = ({
     authTypeData = { type: AuthType.Srp },
     compactForm = false,
+    testflight,
     authenticateWithPassword = jest.fn((_values: CredentialsFormValues) => new Promise<PrimaryAuthResult>(() => {})),
 }: {
     authTypeData?: AuthTypeData;
     compactForm?: boolean;
+    testflight?: 'vpn';
     authenticateWithPassword?: jest.Mock;
 } = {}) => {
     const machine = SignInStateMachine.provide({
@@ -84,18 +79,22 @@ const renderForm = ({
                 showContinueTo={false}
                 paths={paths}
                 remember={RememberMode.Visible}
-                testflight={undefined}
+                testflight={testflight}
                 isPorkbun={false}
                 onError={jest.fn()}
             >
-                <LoginFormInStep />
+                <SignInWizard />
             </SignInProvider>
         </SignInContext.Provider>
     );
     return { authenticateWithPassword };
 };
 
-describe('LoginForm', () => {
+describe('the credentials screens', () => {
+    afterEach(() => {
+        jest.mocked(useFlag).mockReset();
+    });
+
     it('asks for username and password, then submits them with the remember choice', async () => {
         const { authenticateWithPassword } = renderForm();
         const user = userEvent.setup();
@@ -124,7 +123,11 @@ describe('LoginForm', () => {
     it('shows a wrong password inline and clears it when the user edits a field', async () => {
         renderForm({
             authenticateWithPassword: jest.fn(() =>
-                Promise.reject({ data: { Code: API_CUSTOM_ERROR_CODES.INVALID_LOGIN, Error: 'Wrong password' } })
+                Promise.reject(
+                    new InvalidLoginError({
+                        data: { Code: API_CUSTOM_ERROR_CODES.INVALID_LOGIN, Error: 'Wrong password' },
+                    })
+                )
             ),
         });
         const user = userEvent.setup();
@@ -136,6 +139,29 @@ describe('LoginForm', () => {
         expect(await screen.findByTestId('login:error-block')).toHaveTextContent('Wrong password');
         await user.type(screen.getByLabelText('Password'), 'x');
         await waitFor(() => expect(screen.queryByTestId('login:error-block')).not.toBeInTheDocument());
+    });
+
+    it.each([
+        ['password', { type: AuthType.Srp }],
+        ['auto', { type: AuthType.Auto }],
+        ['SSO', { type: AuthType.ExternalSSO }],
+    ] as const)(
+        "shows the testflight variant's title and banner instead of the %s screen's title",
+        (_, authTypeData) => {
+            renderForm({ authTypeData, testflight: 'vpn' });
+            expect(screen.getByRole('heading', { name: 'Sign in to join the Beta program' })).toBeInTheDocument();
+            expect(screen.getByText(/to join the Proton VPN iOS Beta program/)).toBeInTheDocument();
+            expect(screen.getByText(/You will be redirected to Apple Testflight/)).toBeInTheDocument();
+        }
+    );
+
+    it('greets the account on the auto password screen, the testflight variant too', () => {
+        renderForm({ authTypeData: { type: AuthType.AutoSrp, username: 'member@example.com' }, testflight: 'vpn' });
+        expect(screen.getByRole('heading', { name: 'Welcome' })).toBeInTheDocument();
+        expect(screen.queryByText('Sign in to join the Beta program')).not.toBeInTheDocument();
+        expect(screen.queryByText(/to join the Proton VPN iOS Beta program/)).not.toBeInTheDocument();
+        // The banner is about the whole sign-in, so it stays
+        expect(screen.getByText(/You will be redirected to Apple Testflight/)).toBeInTheDocument();
     });
 
     it('shows the sign-up prompt and help links', () => {
@@ -158,6 +184,12 @@ describe('LoginForm', () => {
         expect(screen.getByRole('button', { name: 'Continue' })).toBeInTheDocument();
     });
 
+    it('does not submit an empty email with SSO', async () => {
+        renderForm({ authTypeData: { type: AuthType.ExternalSSO } });
+        await userEvent.setup().click(screen.getByRole('button', { name: 'Sign in' }));
+        expect(screen.getByText('This field is required')).toBeInTheDocument();
+    });
+
     it('asks only for the email with SSO, and switches to the password form on request', async () => {
         renderForm({ authTypeData: { type: AuthType.ExternalSSO } });
         expect(screen.getByLabelText('Email')).toBeInTheDocument();
@@ -171,5 +203,24 @@ describe('LoginForm', () => {
         expect(screen.getByTestId('login-form')).toBeInTheDocument();
         // The email typed in the SSO form carries over
         expect(screen.getByLabelText('Email or username')).toHaveValue('member@company.com');
+    });
+
+    it('keeps the Lumo help open, with its conversation, across a mode switch', async () => {
+        jest.mocked(useFlag).mockImplementation((flag) => flag === 'LumoSignInHelp');
+        renderForm({ authTypeData: { type: AuthType.ExternalSSO } });
+        const user = userEvent.setup();
+        const launcher = () => screen.getByRole('button', { name: 'Get help from Lumo' });
+
+        await user.click(launcher());
+        const conversation = screen.getByTitle('Troubleshoot with Lumo');
+        const page = screen.getByRole('main');
+
+        await user.click(screen.getByRole('button', { name: 'Sign in with password' }));
+        expect(await screen.findByLabelText('Password')).toBeInTheDocument();
+
+        // The layout is rendered once, so the switch keeps the page, and the panel in it
+        expect(screen.getByRole('main')).toBe(page);
+        expect(launcher()).toHaveAttribute('aria-expanded', 'true');
+        expect(screen.getByTitle('Troubleshoot with Lumo')).toBe(conversation);
     });
 });

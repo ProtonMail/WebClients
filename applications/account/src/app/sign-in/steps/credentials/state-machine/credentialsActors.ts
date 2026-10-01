@@ -18,6 +18,7 @@ import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { AuthType } from '../../../auth/interface';
 import { loginWithPassword } from '../../../auth/passwordLogin';
 import type { SignInActorServices } from '../../../state-machine/signInActors';
+import { rethrowCredentialsError } from './credentialsErrors';
 
 /** What the username step (auto) and the SSO form submit: the server decides how the account signs in. */
 export interface UsernameFormValues {
@@ -50,26 +51,29 @@ export interface SSOProviderResult {
 /** How the account signs in, from the username alone: with its SSO provider, or with a password. */
 export type AccountType = { type: 'sso'; ssoInfo: SSOInfoResponse } | { type: 'srp' };
 
-export interface SSOTokenInput extends SSOProviderResult {
+/** The token the identity provider handed over, from its window (with the session `uid`) or its redirect. */
+export interface SSOTokenInput {
+    uid: string | undefined;
+    token: string | undefined;
     username: string;
     persistent: boolean;
 }
 
 export const createCredentialsActors = (services: SignInActorServices) => {
-    const { api, startAuth } = services;
-    /** Before the first request of an attempt: wait for the preparation, then set up the auth session. */
+    const { api } = services;
+    /** Before the first request of an attempt: wait for the page's preparation, then prepare the attempt. */
     const beforeRequest = async () => {
-        await services.prepare();
-        await startAuth();
+        await services.preparePage();
+        await services.prepareAttempt();
     };
 
     return {
-        startAuthSession: fromPromise<void>(() => services.onStartAuth()),
+        startAuthSession: fromPromise<void>(() => services.startAuthSession()),
         fetchAccountType: fromPromise<AccountType, { username: string }>(async ({ input }) => {
             await beforeRequest();
             const info = await api<SSOInfoResponse | InfoResponse>(
                 getInfo({ username: input.username, intent: 'Auto' })
-            );
+            ).catch(rethrowCredentialsError);
             if ('SSOChallengeToken' in info) {
                 return { type: 'sso', ssoInfo: info };
             }
@@ -80,11 +84,13 @@ export const createCredentialsActors = (services: SignInActorServices) => {
         }),
         fetchSSOInfo: fromPromise<SSOInfoResponse, { username: string }>(async ({ input }) => {
             await beforeRequest();
-            return api<SSOInfoResponse>(getInfo({ username: input.username, intent: 'SSO' }));
+            return api<SSOInfoResponse>(getInfo({ username: input.username, intent: 'SSO' })).catch(
+                rethrowCredentialsError
+            );
         }),
         authenticateWithPassword: fromPromise<PrimaryAuthResult, CredentialsFormValues>(async ({ input }) => {
             await beforeRequest();
-            const { result, authVersion } = await loginWithPassword({ ...input, api });
+            const { result, authVersion } = await loginWithPassword({ ...input, api }).catch(rethrowCredentialsError);
             return {
                 authType: AuthType.Srp,
                 authResponse: result,
@@ -94,13 +100,24 @@ export const createCredentialsActors = (services: SignInActorServices) => {
                 persistent: input.persistent,
             };
         }),
-        /** Stopping the actor (cancel, back, unmount) aborts the provider window. */
-        authorizeWithSSOProvider: fromPromise<SSOProviderResult, { token: string }>(({ input, signal }) =>
-            handleExternalSSOLogin({ token: input.token, signal })
+        /**
+         * Stopping the actor (cancel, back, unmount) aborts the provider window. It opens with the SSO info's challenge
+         * token; checked here, so a missing one fails the step like a request instead of opening the window empty.
+         */
+        authorizeWithSSOProvider: fromPromise<SSOProviderResult, { token: string | undefined }>(
+            async ({ input, signal }) => {
+                if (!input.token) {
+                    throw new Error('Missing SSO challenge token');
+                }
+                return handleExternalSSOLogin({ token: input.token, signal });
+            }
         ),
         authenticateWithSSOToken: fromPromise<PrimaryAuthResult, SSOTokenInput>(
             async ({ input: { uid, token, username, persistent } }) => {
-                await services.prepare();
+                if (!token) {
+                    throw new Error('Missing SSO token');
+                }
+                await services.preparePage();
                 const config = auth({ SSOResponseToken: token }, persistent);
                 const authResponse = await api<AuthResponse>(uid ? withUIDHeaders(uid, config) : config);
                 return {
