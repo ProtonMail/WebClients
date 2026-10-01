@@ -1361,7 +1361,7 @@
         "Ignoreu-ho"
       ],
       "Sign in with Google": [
-        "Iniciar sessió amb Google"
+        "Inicia la sessió amb Google"
       ],
       "Importing from Google": [
         "S'està important des de Google"
@@ -15419,6 +15419,9 @@
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Milloreu a un pla compatible per utilitzar rols d'administrador/a."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No podeu canviar els vostres propis rols. Demaneu a un altre administrador que ho faci."
       ]
     },
     "Role": {
@@ -15597,6 +15600,36 @@
     "Payments.InfoBanner": {
       "Changing your billing address may affect taxes on future invoices.": [
         "Canviar l'adreça de facturació podria afectar els impostos de les pròximes factures."
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obtingueu un ${ discount }% de descompte al ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obtingueu el pla ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 TB of storage to share": [
+        "2 TB d'emmagatzematge per compartir"
+      ],
+      "2 user accounts": [
+        "2 comptes d'usuari"
+      ],
+      "All premium features from your current plan": [
+        "Totes les característiques prèmium del vostre pla actual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en el preu mensual estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan finalitzi el cicle de facturació."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "durant 12 mesos"
       ]
     }
   }
