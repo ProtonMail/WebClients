@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcBroom } from '@proton/icons/icons/IcBroom';
 import { IcBug } from '@proton/icons/icons/IcBug';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 
 interface Props {
     hasConversation: boolean;
@@ -12,14 +12,14 @@ interface Props {
     openDebugReport?: () => void;
 }
 
-/** Shared so every host's header uses the same report and clear actions. */
+/** Shared so every host's header uses the same report and new-chat actions. */
 export const LumoConversationHeaderActions = ({ hasConversation, clear, openDebugReport }: Props) => {
     if (!hasConversation) {
         return null;
     }
 
     const reportLabel = c('Action').t`Report a problem`;
-    const clearLabel = c('Action').t`Clear conversation`;
+    const newChatLabel = c('Action').t`New chat`;
 
     return (
         <>
@@ -30,9 +30,9 @@ export const LumoConversationHeaderActions = ({ hasConversation, clear, openDebu
                     </Button>
                 </Tooltip>
             )}
-            <Tooltip title={clearLabel}>
+            <Tooltip title={newChatLabel}>
                 <Button icon color="weak" shape="ghost" onClick={clear}>
-                    <IcBroom alt={clearLabel} />
+                    <IcPenSquare alt={newChatLabel} />
                 </Button>
             </Tooltip>
         </>
