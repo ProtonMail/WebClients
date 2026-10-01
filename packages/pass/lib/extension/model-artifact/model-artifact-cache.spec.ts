@@ -1,19 +1,13 @@
-import { detectionClasses } from '@protontech/autofill/types';
-import type { DetectionClass } from '@protontech/autofill/types';
-
 import type { ModelArtifact } from './model-artifact';
 import { mergeModelArtifactCache, parseModelArtifactCache, validateModelArtifactCache } from './model-artifact-cache';
 
-/** Empty `coeffs` trivially satisfies pass-ml's structural validation. */
-const validPerceptronWeights = () =>
-    Object.fromEntries(detectionClasses.map((klass) => [klass, { bias: 0, coeffs: [] }])) as Record<
-        DetectionClass,
-        { bias: number; coeffs: [] }
-    >;
+// The cache layer only validates structure (string modelId, known arch, object weights) —
+// real weight validation happens in `createModelProvider` at load time.
+const artifactFixture = (modelId: string): ModelArtifact => ({ modelId, arch: 'rf', weights: {} as never });
 
 describe('`validateModelArtifactCache`/`parseModelArtifactCache`', () => {
-    const artifact: ModelArtifact = { modelId: '2026.8.2475-lr', arch: 'lr', weights: validPerceptronWeights() };
-    const rfArtifact: ModelArtifact = { modelId: '2026.8.2475-rf', arch: 'rf', weights: {} as any };
+    const artifact: ModelArtifact = artifactFixture('2026.10.2554-rf');
+    const rfArtifact: ModelArtifact = artifactFixture('2026.8.2475-rf');
 
     test('parses an empty cache from `null`', () => {
         const result = parseModelArtifactCache(null);
@@ -49,17 +43,18 @@ describe('`validateModelArtifactCache`/`parseModelArtifactCache`', () => {
     test('fails when a non-first cache entry is malformed', () => {
         const result = validateModelArtifactCache({
             [artifact.modelId]: artifact,
-            'other-model': { arch: 'lr' },
+            'other-model': { arch: 'rf' },
         });
         expect(result.ok).toBe(false);
         if (!result.ok) expect(result.error).toContain('other-model');
     });
 
     test.each([
-        ['missing `modelId`', { arch: 'lr', weights: {} }],
+        ['missing `modelId`', { arch: 'rf', weights: {} }],
         ['missing `arch`', { modelId: 'x', weights: {} }],
         ['an unrecognized `arch`', { modelId: 'x', arch: 'xgboost', weights: {} }],
-        ['non-object `weights`', { modelId: 'x', arch: 'lr', weights: 'not-an-object' }],
+        ['a retired `arch`', { modelId: 'x', arch: 'lr', weights: {} }],
+        ['non-object `weights`', { modelId: 'x', arch: 'rf', weights: 'not-an-object' }],
     ])('fails when a cache entry has %s', (_label, entry) => {
         const result = validateModelArtifactCache({ x: entry });
         expect(result.ok).toBe(false);
@@ -67,7 +62,7 @@ describe('`validateModelArtifactCache`/`parseModelArtifactCache`', () => {
 });
 
 describe('`mergeModelArtifactCache`', () => {
-    const artifact = (modelId: string): ModelArtifact => ({ modelId, arch: 'lr', weights: validPerceptronWeights() });
+    const artifact = (modelId: string): ModelArtifact => ({ modelId, arch: 'rf', weights: {} as never });
 
     test('adds a new entry', () => {
         const cache = mergeModelArtifactCache({}, artifact('control-model'));
