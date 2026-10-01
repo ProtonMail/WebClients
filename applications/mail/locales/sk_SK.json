@@ -1561,10 +1561,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -8492,7 +8489,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -19152,6 +19152,36 @@
     "Action: rename label": {
       "Rename ${ label } to…": [
         "Premenovať ${ label } na…"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Získajte zľavu ${ discount } % na ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Získať ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mesiac"
+      ],
+      "2 TB of storage to share": [
+        "2 TB úložiska na zdieľanie"
+      ],
+      "2 user accounts": [
+        "2 používateľské účty"
+      ],
+      "All premium features from your current plan": [
+        "Všetky prémiové funkcie z vášho aktuálneho plánu"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného cyklu obnoví za štandardnú ročnú sadzbu."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "na 12 mesiacov"
       ]
     }
   }
