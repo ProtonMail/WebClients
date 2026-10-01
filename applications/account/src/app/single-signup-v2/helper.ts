@@ -30,7 +30,7 @@ import {
     isLifetimePlanSelected,
 } from '@proton/payments/core/plan/helpers';
 import type { Plan, PlansMap, StrictPlan, SubscriptionPlan } from '@proton/payments/core/plan/interface';
-import { getAddonsFromIDs, hasPlanIDs, switchPlan } from '@proton/payments/core/planIDs';
+import { getAddonsFromIDs, getPlanFromIDs, hasPlanIDs, switchPlan } from '@proton/payments/core/planIDs';
 import { getPrice } from '@proton/payments/core/price-helpers';
 import {
     getIsPlanTransitionForbidden,
@@ -46,6 +46,7 @@ import {
     isSubscriptionCheckForbidden,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { hasCycle } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
@@ -573,6 +574,37 @@ const handleBf2025LumoAddonEdgeCases = ({
     return selectedCoupon;
 };
 
+/**
+ * The signup configuration cycles are only the ones offered in the cycle selector. A cycle explicitly requested through
+ * the URL (e.g. 6 months for the Cape promotion) is also allowed when the selected plan has pricing for it.
+ */
+export const getSessionCycle = ({
+    signupParameters,
+    subscription,
+    options,
+    availableCycles,
+    plansMap,
+}: {
+    signupParameters: Pick<SignupParameters2, 'cycle'>;
+    subscription: Subscription | FreeSubscription;
+    options: Pick<Options, 'cycle' | 'planIDs'>;
+    availableCycles: CYCLE[];
+    plansMap: PlansMap;
+}): CYCLE => {
+    const preferredCycle = signupParameters.cycle || subscription.Cycle || options.cycle;
+    if (availableCycles.includes(preferredCycle)) {
+        return preferredCycle;
+    }
+
+    const requestedCycle = signupParameters.cycle;
+    const plan = getPlanFromIDs(options.planIDs ?? {}, plansMap);
+    if (requestedCycle && plan && hasCycle(plan, requestedCycle)) {
+        return requestedCycle;
+    }
+
+    return Math.max(...availableCycles);
+};
+
 export const getUserInfo = async ({
     api,
     audience,
@@ -675,15 +707,13 @@ export const getUserInfo = async ({
         state.access = false;
     }
 
-    const cycle = (() => {
-        const preferredCycle = signupParameters.cycle || subscription.Cycle || options.cycle;
-
-        if (availableCycles.includes(preferredCycle)) {
-            return preferredCycle;
-        }
-
-        return Math.max(...availableCycles);
-    })();
+    const cycle = getSessionCycle({
+        signupParameters,
+        subscription,
+        options,
+        availableCycles,
+        plansMap,
+    });
 
     let optionsWithSubscriptionDefaults = {
         ...options,
