@@ -11,6 +11,7 @@ import { authInterceptors } from './lib/auth/interceptors';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { PLATFORM_CLIENT_ID } from './lib/env';
 import { fixSSOUrl } from './lib/sso';
+import { flushAll, installCookieFlush } from './lib/storage/storage.flush';
 import { getTheme } from './lib/theming';
 import { setTagCookie } from './lib/updater/helpers';
 import { getUpdateStore } from './lib/updater/store';
@@ -74,6 +75,8 @@ const createSession = () => {
 
     void setTagCookie(secureSession, getUpdateStore().beta);
 
+    installCookieFlush(secureSession);
+
     return secureSession;
 };
 
@@ -132,11 +135,9 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
 
     ctx.window.on('closed', () => (ctx.window = null));
 
-    // Flush DOMStorage (the persisted session blob) to disk before the OS
-    // reboots/shuts down, as a safeguard against losing the latest write.
     ctx.window.on('session-end', () => {
-        logger.info('[storage] session-end: flushing DOMStorage before shutdown');
-        ctx.session?.flushStorageData();
+        logger.info('[storage] session-end: flushing to disk before shutdown');
+        void flushAll(ctx.session);
     });
 
     await ctx.window.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
@@ -265,5 +266,6 @@ app.addListener('will-quit', async (event) => {
     event.preventDefault();
     exiting = true;
     await cleanup();
+    await flushAll(ctx.session);
     app.exit(0);
 });

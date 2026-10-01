@@ -17,6 +17,9 @@ import {
     isDeepLinkSupported,
 } from './deep-link';
 
+/** `RememberMode.HiddenEnabled` from the account app */
+const REMEMBER_MODE_HIDDEN_ENABLED = '3';
+
 export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) => {
     app.addListener('web-contents-created', (_, contents) => {
         contents.addListener('will-attach-webview', (evt) => evt.preventDefault());
@@ -62,6 +65,9 @@ export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) =>
 
                 // Push the fork to the desktop client ID instead of the web one
                 url.searchParams.set(ForkSearchParameters.ChildClientID, PLATFORM_CLIENT_ID);
+
+                // Force "Keep me signed in" without showing it: the desktop session inherits the account login's persistence
+                url.searchParams.set('remember', REMEMBER_MODE_HIDDEN_ENABLED);
 
                 logger.info(`[will-navigate] external login with redirect: ${url.href}`);
 
