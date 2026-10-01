@@ -151,6 +151,18 @@ describe('CleanUpStaleBlobsTask', () => {
         await expect(new CleanUpStaleBlobsTask().execute(ctx)).rejects.toBeInstanceOf(SearchLibraryError);
     });
 
+    it('surfaces a connection force-closed by the browser so the queue can stop', async () => {
+        await indexRegistry.get(IndexKind.MAIN, db);
+        const forceClosed = new DOMException(
+            'Connection is closing because of: Force close delete origin',
+            'UnknownError'
+        );
+        jest.spyOn(db, 'getAllIndexBlobKeys').mockRejectedValueOnce(forceClosed);
+
+        const ctx = makeTaskContext({ indexRegistry, db });
+        await expect(new CleanUpStaleBlobsTask().execute(ctx)).rejects.toBe(forceClosed);
+    });
+
     it('keeps absorbing a non-systemic failure', async () => {
         const instance = await indexRegistry.get(IndexKind.MAIN, db);
         await indexDocuments(instance.indexWriter, [makeTestIndexEntry('main-doc')]);

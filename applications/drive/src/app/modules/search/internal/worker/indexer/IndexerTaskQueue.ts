@@ -10,6 +10,7 @@ import {
     DEFAULT_RETRY_AFTER_IN_MS,
     classifyError,
     computeBackoff,
+    isConnectionForceClosedError,
     sendErrorReportForSearch,
 } from '../../shared/errors';
 import type { SearchMetrics } from '../../shared/searchMetrics';
@@ -378,6 +379,18 @@ export class IndexerTaskQueue {
             // timeout, is an ordinary failure. Returning for one of those would skip both the
             // metric and the re-enqueue below, stalling the populator with no trace.
             if (signal.aborted) {
+                return;
+            }
+
+            // The browser wiped the origin's storage under us. Stop before anything below touches
+            // the dead connection: diagnostics would fail, and a retry would hit InvalidStateError
+            // and surface as corrupted_db, prompting a rebuild of a DB that no longer exists.
+            if (isConnectionForceClosedError(e)) {
+                Logger.info('IndexerTaskQueue: IndexedDB connection force-closed by the browser, stopping');
+                // Fire-and-forget for the same reason as the permanent-error path below.
+                this.stop().catch((error: unknown) =>
+                    this.searchMetrics.markSearchOtherError({ error, message: 'IndexerTaskQueue: stop() failed' })
+                );
                 return;
             }
 
