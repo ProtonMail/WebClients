@@ -15,7 +15,7 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
-        "dompurify": "^3.4.15"
+        "dompurify": "^3.4.16"
     },
     "devDependencies": {
         "@proton/jest-swc-preset": "workspace:^",
