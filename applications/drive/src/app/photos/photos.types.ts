@@ -10,6 +10,7 @@ interface PhotoAdditionalInfo {
     isShared: boolean;
     parentNodeUid: string | undefined;
     activeRevisionUid: string | undefined;
+    claimedCaptureTime: string | undefined;
     /** @deprecated */
     deprecatedShareId: string | undefined;
 }

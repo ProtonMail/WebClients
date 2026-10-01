@@ -4,18 +4,27 @@ import { isValidDate } from '@proton/shared/lib/date/date';
 
 import { formatExifDateTime } from './formatExifDateTime';
 
-export const getFormattedDateTime = (exif?: ExifTags) => {
+const EXIF_OFFSET_REGEX = /^[+-]\d{2}:\d{2}$/;
+
+const getExifDateTime = (exif?: ExifTags) => {
     if (!exif) {
         return undefined;
     }
-    const sources = [exif.DateTimeOriginal, exif.DateTimeDigitized, exif.DateTime];
-    for (let i = 0; i < sources.length; i++) {
-        const source = sources[i];
-        if (!source?.value?.[0]) {
+    const sources = [
+        [exif.DateTimeOriginal, exif.OffsetTimeOriginal],
+        [exif.DateTimeDigitized, exif.OffsetTimeDigitized],
+        [exif.DateTime, exif.OffsetTime],
+    ];
+    for (const [dateTimeTag, offsetTag] of sources) {
+        if (!dateTimeTag?.value?.[0]) {
             continue;
         }
         try {
-            return formatExifDateTime(source.value[0]);
+            const offset = offsetTag?.value?.[0];
+            return {
+                dateTime: formatExifDateTime(dateTimeTag.value[0]),
+                offset: offset && EXIF_OFFSET_REGEX.test(offset) ? offset : undefined,
+            };
         } catch {
             continue;
         }
@@ -23,8 +32,13 @@ export const getFormattedDateTime = (exif?: ExifTags) => {
     return undefined;
 };
 
+export const getFormattedDateTime = (exif?: ExifTags) => getExifDateTime(exif)?.dateTime;
+
 export const getCaptureDateTime = (file: File, exif?: ExifTags, mp4CreationTime?: Date | null) => {
-    const formattedDateTime = getFormattedDateTime(exif);
+    const exifDateTime = getExifDateTime(exif);
+    const isoDateTime = exifDateTime?.dateTime.replace(' ', 'T');
+    // EXIF offset known --> exact UTC instant. Otherwise --> interpreted in the browser timezone.
+    const formattedDateTime = exifDateTime?.offset ? `${isoDateTime}${exifDateTime.offset}` : isoDateTime;
 
     // NOTE: From specification (https://drive.gitlab-pages.protontech.ch/documentation/specifications/photos/upload/#revision-commit),
     // the fallback datetime should be the creation time. However in a browser
@@ -50,19 +64,23 @@ export const getPhotoDimensions = ({ exif, png }: ExpandedTags): { width?: numbe
 
 export const getCaptureDateTimeString = (exif?: ExifTags) => {
     try {
-        const formattedDateTime = getFormattedDateTime(exif);
-        if (!formattedDateTime) {
+        const exifDateTime = getExifDateTime(exif);
+        if (!exifDateTime) {
             return undefined;
         }
 
-        // Treat EXIF datetime as UTC by appending 'Z'
-        const captureDateTime = new Date(`${formattedDateTime}Z`);
+        // EXIF offset known --> camera wall-clock time with the offset (eg. 18:22:16+02:00).
+        // Otherwise --> real UTC instant, interpreted in the browser timezone like Photo.CaptureTime (eg. 16:22:16Z).
+        // NOTE: Until September 2026, web wrongly wrote the camera wall-clock time with 'Z' (eg. 18:22:16Z).
+        const localDateTime = exifDateTime.dateTime.replace(' ', 'T');
+        const captureDateTime = exifDateTime.offset ? new Date(`${localDateTime}Z`) : new Date(localDateTime);
 
         if (!isValidDate(captureDateTime)) {
             return new Date().toISOString();
         }
 
-        return captureDateTime.toISOString();
+        const isoDateTime = captureDateTime.toISOString();
+        return exifDateTime.offset ? isoDateTime.replace(/Z$/, exifDateTime.offset) : isoDateTime;
     } catch {
         return undefined;
     }

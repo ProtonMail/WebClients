@@ -167,6 +167,7 @@ describe('subscribeToPhotosEvents', () => {
                         haveSignatureIssues: false,
                         parentNodeUid: PHOTOS_ROOT_UID,
                         activeRevisionUid: undefined,
+                        claimedCaptureTime: undefined,
                         deprecatedShareId: undefined,
                     },
                 })
@@ -248,6 +249,7 @@ describe('subscribeToPhotosEvents', () => {
                         haveSignatureIssues: false,
                         parentNodeUid: PHOTOS_ROOT_UID,
                         activeRevisionUid: undefined,
+                        claimedCaptureTime: undefined,
                         deprecatedShareId: undefined,
                     },
                 })
