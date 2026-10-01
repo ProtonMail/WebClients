@@ -727,16 +727,27 @@ const ToolCallStep = ({
                                 <pre className="text-sm m-0 whitespace-pre-wrap">{result}</pre>
                             </div>
                         )}
-                        {!isExpanded && (
-                            <button
-                                className={clsx(toolStepToggleClassName, 'cursor-pointer mt-1')}
-                                onClick={() => setIsExpanded(true)}
-                                type="button"
-                            >
-                                <span className="text-sm color-weak">View tool result</span>
-                                <LumoIcon name="ChevronDown" width={12} height={12} />
-                            </button>
-                        )}
+                        <button
+                            className={clsx(toolStepToggleClassName, 'cursor-pointer mt-1')}
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            type="button"
+                            aria-expanded={isExpanded}
+                        >
+                            <span className="text-sm color-weak">
+                                {isExpanded
+                                    ? c('collider_2025:Reasoning').t`Hide tool result`
+                                    : c('collider_2025:Reasoning').t`View tool result`}
+                            </span>
+                            <LumoIcon
+                                name="ChevronDown"
+                                width={12}
+                                height={12}
+                                className={clsx(
+                                    'thinking-step-chevron',
+                                    isExpanded && 'thinking-step-chevron--expanded'
+                                )}
+                            />
+                        </button>
                     </>
                 ) : hasDetails ? (
                     <>
