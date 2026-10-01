@@ -1,14 +1,14 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 
-import { signInStepRegistry } from './signInStepRegistry';
+import { SignInRoutes } from './routes/SignInRoutes';
+import { signInRoutes } from './signInRoutes';
 import { SignInContext } from './wizard/SignInContext';
 import { useSignInProps } from './wizard/SignInProvider';
 
+/** The sign-in's page: the screen the machines are on, inside the page's layout (`signInRoutes`). */
 export const SignInWizard = () => {
     const { onError } = useSignInProps();
     const actorRef = SignInContext.useActorRef();
-    // The machine's `step` (not its state value) picks the screen, so the current step stays up while the machine works.
-    const step = SignInContext.useSelector((snapshot) => snapshot.context.step);
 
     const onErrorRef = useRef(onError);
     useLayoutEffect(() => {
@@ -19,6 +19,5 @@ export const SignInWizard = () => {
         return () => subscription.unsubscribe();
     }, [actorRef]);
 
-    const Step = signInStepRegistry[step];
-    return <Step />;
+    return <SignInRoutes routes={signInRoutes} />;
 };

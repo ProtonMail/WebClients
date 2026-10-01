@@ -7,16 +7,22 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { OnLoginCallback } from '../content/authSession';
 import type { Paths } from '../content/helper';
 import SignInContainer from '../sign-in/SignInContainer';
-import type { SignInLayoutProps } from '../sign-in/components/SignInLayout';
+import type { SignInLayout, SignInLayoutHeaderProps, SignInLayoutProps } from '../sign-in/components/SignInLayout';
 import { RememberMode } from '../sign-in/rememberMode';
 
-/** Each sign-in step as modal content; the modal itself stays open across steps. */
-const LoginModalLayout = ({ title, subTitle, children }: SignInLayoutProps) => (
-    <>
-        <ModalTwoHeader title={title} subline={subTitle} titleClassName="text-4xl mb-1" />
-        <ModalTwoContent>{children}</ModalTwoContent>
-    </>
-);
+/**
+ * Each sign-in step in the modal, which stays open across steps: the heading in the modal's header, and the rest in its
+ * scrolling content.
+ */
+const LoginModalLayout: SignInLayout = {
+    Shell: function LoginModalShell({ children }: SignInLayoutProps) {
+        return <>{children}</>;
+    },
+    Header: function LoginModalHeader({ title, subTitle }: SignInLayoutHeaderProps) {
+        return <ModalTwoHeader title={title} subline={subTitle} titleClassName="text-4xl mb-1" />;
+    },
+    Body: ModalTwoContent,
+};
 
 interface Props extends ModalProps {
     onLogin: OnLoginCallback;

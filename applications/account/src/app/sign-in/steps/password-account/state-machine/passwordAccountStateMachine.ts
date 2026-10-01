@@ -2,7 +2,8 @@
  * The password account flow: after a password (SRP) sign-in, the sign-in machine runs this as a child with the
  * auth state. Second factor (or the lost-2FA flow), loading the account, then whatever the account needs: a new
  * password, key setup, the second password, or unlocking with the login password. It completes the sign-in itself,
- * so the last screen stays up with its loading state, and ends with a result.
+ * then waits on its last screen, loading, until the app takes the sign-in away (`handedOver`); it only ends, with a
+ * result, when cancelled or failed.
  * Each screen sets `screen`; the work states keep it, so the screen stays up while a request runs.
  */
 import { c } from 'ttag';
@@ -31,6 +32,7 @@ import {
     type AccountFlowResult,
     NO_PASSWORD_POLICIES,
     failAccountFlow,
+    failAccountFlowOnReport,
 } from '../../../state-machine/accountFlow';
 import {
     type StepErrorEvent,
@@ -41,7 +43,7 @@ import {
 } from '../../../state-machine/machineHelpers';
 import type { SignInAuthState } from '../../../state-machine/signInAuthState';
 import {
-    type Lost2FAOutcome,
+    type Lost2FAEnd,
     type Lost2FAParentEvent,
     lost2FAStateMachine,
 } from '../screens/lost-two-factor/state-machine/lost2FAStateMachine';
@@ -53,7 +55,7 @@ export type PasswordAccountEvent =
     | { type: 'twoFactor.submitted'; payload: { credentials: TwoFactorCredentials } }
     /** The user changed the code; a rejected code's message goes. */
     | { type: 'twoFactor.codeEdited' }
-    | { type: 'lostTwoFactor.opened' }
+    | { type: 'lost2FA.opened' }
     | { type: 'unlock.submitted'; payload: { password: string } }
     /** The user changed the second password; a rejected one's message goes. */
     | { type: 'unlock.passwordEdited' }
@@ -61,7 +63,7 @@ export type PasswordAccountEvent =
     /** From the lost-2FA flow (a child actor): a backup code signed in, or an error to show. */
     | Lost2FAParentEvent
     /** The spawned lost-2FA flow ended, or crashed. */
-    | DoneActorEvent<{ outcome: Lost2FAOutcome }, 'lostTwoFactor'>
+    | DoneActorEvent<{ outcome: Lost2FAEnd }, 'lostTwoFactor'>
     | ErrorActorEvent<unknown, 'lostTwoFactor'>
     | { type: 'decision.back' };
 
@@ -92,6 +94,15 @@ interface PasswordAccountMachineContext {
     result: AccountFlowResult | undefined;
 }
 
+/** The screen that shows; the work states keep the last one up. */
+export const selectScreen = ({ context }: { context: PasswordAccountMachineContext }) => context.screen;
+
+/**
+ * The id of the actor the screen belongs to: this flow, or while it's open, the lost-2FA flow, its child under that id.
+ */
+export const selectScreenActor = ({ context }: { context: PasswordAccountMachineContext }) =>
+    context.screen === 'lostTwoFactor' ? ('lostTwoFactor' as const) : ('passwordAccount' as const);
+
 /** Derived from the flow's auth state; the screens read them with `useSelector`. */
 export const selectTwoFactorTypes = ({ context }: { context: PasswordAccountMachineContext }) =>
     context.authTypes.twoFactor;
@@ -103,14 +114,26 @@ export const selectFido2 = ({ context }: { context: PasswordAccountMachineContex
 export const selectPasswordPolicies = ({ context }: { context: PasswordAccountMachineContext }) =>
     context.passwordPolicies;
 
+/** Why the last code was rejected, for the code form. */
+export const selectTwoFactorError = ({ context }: { context: PasswordAccountMachineContext }) => context.twoFactorError;
+
 /** Guard: the lost-2FA flow ended with this outcome. */
-const lostTwoFactorEnded = (outcome: Lost2FAOutcome) => ({
+const lostTwoFactorEnded = (outcome: Lost2FAEnd) => ({
     type: 'isLostTwoFactorOutcome' as const,
-    params: ({ event }: { event: { output: { outcome: Lost2FAOutcome } } }) => ({
+    params: ({ event }: { event: { output: { outcome: Lost2FAEnd } } }) => ({
         outcome: event.output.outcome,
         expected: outcome,
     }),
 });
+
+/**
+ * Shows a screen other than the lost-2FA flow's. That flow outlives its own screen (see `lostTwoFactor`), so it stops
+ * once another screen shows, and its id is free again for the next visit.
+ */
+const showScreen = (screen: Exclude<PasswordAccountScreen, 'lostTwoFactor'>) => [
+    'stopLostTwoFactor' as const,
+    { type: 'setScreen' as const, params: { screen } },
+];
 
 /** The session is ready: complete the sign-in, with the current screen still up. */
 const completeWithSession = {
@@ -146,6 +169,8 @@ export const passwordAccountStateMachine = setup({
         // Provided by `useSignInMachine` (or a test)
         goToResetPassword: (_, _params: { username: string }) => unprovidedAction('goToResetPassword'),
         setScreen: assign((_, params: { screen: PasswordAccountScreen }) => ({ screen: params.screen })),
+        /** Only through `showScreen`: once another screen shows. */
+        stopLostTwoFactor: stopChild('lostTwoFactor'),
         setSession: assign((_, params: { session: AuthSession }) => ({ session: params.session })),
         setResult: assign((_, params: { result: AccountFlowResult }) => ({ result: params.result })),
         /** The actors return what they loaded; these merge it into a new auth state. */
@@ -173,13 +198,11 @@ export const passwordAccountStateMachine = setup({
             type: 'step.errorReported',
             payload: { error: params.error },
         })),
-        /** Once another screen shows; the id is free again when the flow reopens. */
-        stopLostTwoFactor: stopChild('lostTwoFactor'),
     },
     guards: {
         hasTwoFactor: ({ context }) => context.authTypes.twoFactor.enabled,
         isErrorOf,
-        isLostTwoFactorOutcome: (_, params: { outcome: Lost2FAOutcome; expected: Lost2FAOutcome }) =>
+        isLostTwoFactorOutcome: (_, params: { outcome: Lost2FAEnd; expected: Lost2FAEnd }) =>
             params.outcome === params.expected,
         hasTemporaryPassword: ({ context }) =>
             context.auth.account.user?.Keys.length === 0 && !!context.auth.credentials.authResponse.TemporaryPassword,
@@ -212,17 +235,16 @@ export const passwordAccountStateMachine = setup({
 
         twoFactor: {
             entry: [
-                'stopLostTwoFactor',
-                { type: 'setScreen', params: { screen: 'twoFactor' } },
+                ...showScreen('twoFactor'),
                 // A code rejected before leaving the screen doesn't show when coming back to it
                 'clearTwoFactorError',
             ],
             initial: 'idle',
-            // On the screen, so they work while a code is checked, like main
+            // On the screen, so they also work while a code is checked: abandoning a check loses nothing
             on: {
                 'twoFactor.codeEdited': { actions: 'clearTwoFactorError' },
                 'decision.back': { target: 'cancelled' },
-                'lostTwoFactor.opened': { target: 'lostTwoFactor' },
+                'lost2FA.opened': { target: 'lostTwoFactor' },
             },
             states: {
                 idle: {
@@ -255,7 +277,7 @@ export const passwordAccountStateMachine = setup({
         /**
          * Shows the lost-2FA flow, a child spawned on entry; it sends backup codes here to verify and ends with its
          * outcome. Spawned rather than invoked, so it outlives this state: after a valid code, its form stays up
-         * with its loading state while the account loads and the sign-in completes, like main.
+         * with its loading state while the account loads and the sign-in completes.
          */
         lostTwoFactor: {
             entry: [
@@ -279,25 +301,25 @@ export const passwordAccountStateMachine = setup({
             on: {
                 'xstate.done.actor.lostTwoFactor': [
                     {
-                        guard: lostTwoFactorEnded('return to 2fa step'),
+                        guard: lostTwoFactorEnded('returnToTwoFactor'),
                         target: 'twoFactor',
                     },
                     // Two-factor authentication is disabled: back to the credentials form, with the username, to
                     // sign in again in the page
-                    { guard: lostTwoFactorEnded('signin to continue'), target: 'cancelled' },
-                    // Resetting the password leaves the page; stay here until it unloads.
-                    {
-                        actions: {
-                            type: 'goToResetPassword',
-                            params: ({ context }) => ({ username: context.auth.credentials.username }),
-                        },
-                    },
+                    { guard: lostTwoFactorEnded('signInAgain'), target: 'cancelled' },
                 ],
+                // Resetting the password leaves the page; the flow stays on its screen, loading, until it unloads
+                'lost2FA.passwordResetChosen': {
+                    actions: {
+                        type: 'goToResetPassword',
+                        params: ({ context }) => ({ username: context.auth.credentials.username }),
+                    },
+                },
                 // The flow or one of its verifications crashed
                 'xstate.error.actor.lostTwoFactor': failAccountFlow,
-                'lostTwoFactor.backupCodeAccepted': { target: 'loadingAccount' },
-                'lostTwoFactor.backupCodeFailed': failAccountFlow,
-                'lostTwoFactor.errorReported': {
+                'lost2FA.backupCodeAccepted': { target: 'loadingAccount' },
+                'lost2FA.backupCodeFailed': failAccountFlowOnReport,
+                'lost2FA.errorReported': {
                     actions: { type: 'reportError', params: ({ event }) => ({ error: event.payload.error }) },
                 },
             },
@@ -383,8 +405,7 @@ export const passwordAccountStateMachine = setup({
         /** Two-password mode: unlock the keys with the second password. */
         unlock: {
             entry: [
-                'stopLostTwoFactor',
-                { type: 'setScreen', params: { screen: 'unlock' } },
+                ...showScreen('unlock'),
                 // A password rejected before leaving the screen doesn't show when coming back to it
                 'clearUnlockError',
             ],
@@ -429,7 +450,7 @@ export const passwordAccountStateMachine = setup({
 
         /** Signed in with a temporary password; replace it. */
         newPassword: {
-            entry: ['stopLostTwoFactor', { type: 'setScreen', params: { screen: 'newPassword' } }],
+            entry: showScreen('newPassword'),
             initial: 'idle',
             on: {
                 'decision.back': { target: 'cancelled' },
@@ -463,17 +484,19 @@ export const passwordAccountStateMachine = setup({
             invoke: {
                 src: 'completeSignIn',
                 input: ({ context }) => ({ session: context.session }),
-                onDone: {
-                    target: 'signedIn',
-                    actions: { type: 'setResult', params: { result: { type: 'signedIn' } } },
-                },
+                onDone: { target: 'handedOver' },
                 onError: failAccountFlow,
             },
         },
 
-        signedIn: {
-            type: 'final',
+        /**
+         * The app has the session. The screen stays up, loading, until the app takes the sign-in away: a redirect to
+         * another app keeps the page until the next one loads.
+         */
+        handedOver: {
+            tags: [PasswordAccountStateMachineTags.submitting],
         },
+
         cancelled: {
             type: 'final',
             entry: { type: 'setResult', params: { result: { type: 'cancelled' } } },
@@ -485,10 +508,10 @@ export const passwordAccountStateMachine = setup({
     },
 });
 
-/** A request runs; the screen shows its loading state. */
-export const selectTwoFactorError = ({ context }: { context: PasswordAccountMachineContext }) => context.twoFactorError;
-
 export const selectUnlockError = ({ context }: { context: PasswordAccountMachineContext }) => context.unlockError;
 
-export const selectSubmitting = (snapshot: SnapshotFrom<typeof passwordAccountStateMachine>) =>
+type PasswordAccountSnapshot = SnapshotFrom<typeof passwordAccountStateMachine>;
+
+/** A request runs; the screen shows its loading state. */
+export const selectSubmitting = (snapshot: PasswordAccountSnapshot) =>
     snapshot.hasTag(PasswordAccountStateMachineTags.submitting);

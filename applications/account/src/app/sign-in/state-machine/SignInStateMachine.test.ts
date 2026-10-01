@@ -24,9 +24,17 @@ import type {
     SSOProviderResult,
     UsernameFormValues,
 } from '../steps/credentials/state-machine/credentialsActors';
+import {
+    InvalidLoginError,
+    SwitchToSRPError,
+    SwitchToSSOError,
+} from '../steps/credentials/state-machine/credentialsErrors';
 import { credentialsStateMachine, selectAuthType } from '../steps/credentials/state-machine/credentialsStateMachine';
 import { lost2FAStateMachine } from '../steps/password-account/screens/lost-two-factor/state-machine/lost2FAStateMachine';
-import { passwordAccountStateMachine } from '../steps/password-account/state-machine/passwordAccountStateMachine';
+import {
+    passwordAccountStateMachine,
+    selectScreenActor,
+} from '../steps/password-account/state-machine/passwordAccountStateMachine';
 import { type SSODeviceEvent, SSOStateMachineTags, ssoStateMachine } from '../steps/sso/state-machine/ssoStateMachine';
 import { type SignInMachineEmitted, type SignInMachineInput, SignInStateMachine } from './SignInStateMachine';
 import type { CreatedAuth } from './signInActors';
@@ -251,7 +259,7 @@ function startActor(overrides: Overrides = {}, input: Partial<SignInMachineInput
     const emitted: SignInMachineEmitted[] = [];
     actor.on('*', (event) => emitted.push(event));
     // The credentials step emits the SSO notice for its screen. Its actor exists before the sign-in starts, as
-    // `CredentialsStep` relies on to subscribe in time for the notice at page load.
+    // the credentials route's frame relies on to subscribe in time for the notice at page load.
     const noticeEvents: unknown[] = [];
     actor.getSnapshot().children.credentials?.on('notice.ssoRequired', (event) => noticeEvents.push(event));
     actor.start();
@@ -283,6 +291,9 @@ const passwordAccount = (actor: Actor) => {
     return child;
 };
 
+/** Signed in: the account flow handed the session to the app, and stays on its loading screen until the app takes over. */
+const isSignedIn = (actor: Actor) => accountFlow(actor)?.getSnapshot().value === 'handedOver';
+
 /** Polls until the condition holds: child actors don't always change the sign-in's snapshot. */
 const waitUntil = async (condition: () => boolean, timeout = 1_000) => {
     const start = Date.now();
@@ -294,11 +305,11 @@ const waitUntil = async (condition: () => boolean, timeout = 1_000) => {
     }
 };
 
-/** Nothing runs: the credentials form or an account flow's screen waits for the user, or the sign-in is done. */
+/** Nothing runs: the credentials form or an account flow's screen waits for the user, or the sign-in is handed over. */
 const waitUntilSettled = async (actor: Actor) => {
     await waitUntil(() => {
         const snap = actor.getSnapshot();
-        if (snap.status !== 'active') {
+        if (snap.status !== 'active' || isSignedIn(actor)) {
             return true;
         }
         const flow = accountFlow(actor)?.getSnapshot();
@@ -343,8 +354,8 @@ describe('SignInStateMachine', () => {
 
         it('signs in with a password and completes in one-password mode', async () => {
             const { actor, spies } = startActor();
-            const snap = await submitCredentials(actor);
-            expect(snap.status).toBe('done');
+            await submitCredentials(actor);
+            expect(isSignedIn(actor)).toBe(true);
             expect(spies.unlockKeys).toHaveBeenCalledTimes(1);
             expect(spies.completeSignIn).toHaveBeenCalledTimes(1);
         });
@@ -375,7 +386,8 @@ describe('SignInStateMachine', () => {
 
         it('shows a wrong password inline and clears it on edit', async () => {
             const { actor, errors } = startActor({
-                authenticateWithPassword: () => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.INVALID_LOGIN)),
+                authenticateWithPassword: () =>
+                    Promise.reject(new InvalidLoginError(apiError(API_CUSTOM_ERROR_CODES.INVALID_LOGIN))),
             });
             await submitCredentials(actor);
             expect(
@@ -393,7 +405,8 @@ describe('SignInStateMachine', () => {
 
         it('switches to the SSO form when the account uses SSO', async () => {
             const { actor, notices } = startActor({
-                authenticateWithPassword: () => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO)),
+                authenticateWithPassword: () =>
+                    Promise.reject(new SwitchToSSOError(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO))),
             });
             await submitCredentials(actor);
             expect(
@@ -407,7 +420,10 @@ describe('SignInStateMachine', () => {
 
         it('sends SSO accounts of other apps to account', async () => {
             const { actor, spies } = startActor(
-                { authenticateWithPassword: () => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO)) },
+                {
+                    authenticateWithPassword: () =>
+                        Promise.reject(new SwitchToSSOError(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO))),
+                },
                 { redirectsSSOToAccount: true }
             );
             await submitCredentials(actor);
@@ -454,7 +470,10 @@ describe('SignInStateMachine', () => {
         it('restarts the credentials step on the form when it crashes, and reports the error', async () => {
             const error = new Error('crash');
             const { actor, spies, errors } = startActor(
-                { authenticateWithPassword: () => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO)) },
+                {
+                    authenticateWithPassword: () =>
+                        Promise.reject(new SwitchToSSOError(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO))),
+                },
                 { redirectsSSOToAccount: true }
             );
             spies.redirectToAccountSSO.mockImplementation(() => {
@@ -529,7 +548,8 @@ describe('SignInStateMachine', () => {
 
         it('does not block sign-in when preparation fails', async () => {
             const { actor, errors } = startActor({ prepareSignIn: () => Promise.reject(new Error('offline')) });
-            expect((await submitCredentials(actor)).status).toBe('done');
+            await submitCredentials(actor);
+            expect(isSignedIn(actor)).toBe(true);
             expect(errors()).toEqual([]);
         });
     });
@@ -613,7 +633,7 @@ describe('SignInStateMachine', () => {
             ).toBe(true);
         });
 
-        it('keeps the page back waiting for the password login, like main', async () => {
+        it('keeps the page back waiting for the password login', async () => {
             const { actor, spies } = startWith(
                 { type: AuthType.Srp },
                 { authenticateWithPassword: () => new Promise<PrimaryAuthResult>(() => {}) },
@@ -682,7 +702,10 @@ describe('SignInStateMachine', () => {
         it('sends SSO accounts of other apps to account from the username step', async () => {
             const { actor, spies, errors } = startWith(
                 { type: AuthType.Auto },
-                { fetchAccountType: () => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO)) },
+                {
+                    fetchAccountType: () =>
+                        Promise.reject(new SwitchToSSOError(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO))),
+                },
                 { redirectsSSOToAccount: true }
             );
             await submitUsername(actor);
@@ -712,7 +735,7 @@ describe('SignInStateMachine', () => {
         });
 
         it('falls back to the password form when the account has no SSO', async () => {
-            const error = apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SRP);
+            const error = new SwitchToSRPError(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SRP));
             const { actor, errors } = startWith(
                 { type: AuthType.ExternalSSO },
                 { fetchSSOInfo: () => Promise.reject(error) }
@@ -776,8 +799,24 @@ describe('SignInStateMachine', () => {
                 type: 'twoFactor.submitted',
                 payload: { credentials: { type: 'code', payload: '123456' } },
             });
-            expect((await waitUntilSettled(actor)).status).toBe('done');
+            await waitUntilSettled(actor);
+            expect(isSignedIn(actor)).toBe(true);
             expect(spies.completeSignIn).toHaveBeenCalledTimes(1);
+        });
+
+        it('ignores back once the app has the session', async () => {
+            const { actor } = await startOnTwoFactor();
+            passwordAccount(actor).send({
+                type: 'twoFactor.submitted',
+                payload: { credentials: { type: 'code', payload: '123456' } },
+            });
+            await waitUntilSettled(actor);
+            expect(isSignedIn(actor)).toBe(true);
+            passwordAccount(actor).send({ type: 'decision.back' });
+            // Still on the two-factor screen, loading, rather than back on the credentials form
+            expect(isSignedIn(actor)).toBe(true);
+            expect(actor.getSnapshot().context.step).toBe('passwordAccount');
+            expect(passwordAccount(actor).getSnapshot().context.screen).toBe('twoFactor');
         });
 
         it('shows the account flow step once, and leaves it as the flow goes on', async () => {
@@ -852,7 +891,7 @@ describe('SignInStateMachine', () => {
             expect(spies.completeSignIn).not.toHaveBeenCalled();
         });
 
-        it('opens the lost two-factor flow while a code is checked, like main', async () => {
+        it('opens the lost two-factor flow while a code is checked', async () => {
             const pending = deferred<void>();
             const { actor } = await startOnTwoFactor({ verifyTwoFactor: () => pending.promise });
             passwordAccount(actor).send({
@@ -860,7 +899,7 @@ describe('SignInStateMachine', () => {
                 payload: { credentials: { type: 'code', payload: '123456' } },
             });
             expect(passwordAccount(actor).getSnapshot().matches({ twoFactor: 'submitting' })).toBe(true);
-            passwordAccount(actor).send({ type: 'lostTwoFactor.opened' });
+            passwordAccount(actor).send({ type: 'lost2FA.opened' });
             expect(passwordAccount(actor).getSnapshot().matches('lostTwoFactor')).toBe(true);
             // The verification was left behind; its late result is ignored
             pending.resolve();
@@ -873,7 +912,7 @@ describe('SignInStateMachine', () => {
         const startOnLostTwoFactor = async (overrides: Overrides = {}) => {
             const started = startActor({ created: makeCreatedAuth({ twoFactor: true }), ...overrides });
             await submitCredentials(started.actor);
-            passwordAccount(started.actor).send({ type: 'lostTwoFactor.opened' });
+            passwordAccount(started.actor).send({ type: 'lost2FA.opened' });
             const flow = passwordAccount(started.actor).getSnapshot().children.lostTwoFactor!;
             return { ...started, flow };
         };
@@ -885,34 +924,35 @@ describe('SignInStateMachine', () => {
 
         it('verifies the backup code sent by the flow and signs in', async () => {
             const { actor, flow, spies } = await startOnLostTwoFactor();
-            flow.send({ type: 'lost2FA.backupCode.submitted', code: 'backup' });
-            const snap = await waitUntilSettled(actor);
+            flow.send({ type: 'lost2FA.backupCodeSubmitted', payload: { code: 'backup' } });
+            await waitUntilSettled(actor);
             expect(spies.verifyTwoFactor).toHaveBeenCalledWith(
                 expect.objectContaining({ credentials: { type: 'code', payload: 'backup' } })
             );
-            expect(snap.status).toBe('done');
+            expect(isSignedIn(actor)).toBe(true);
         });
 
-        it('keeps the flow on its loading backup code form until the sign-in completes, like main', async () => {
+        it('keeps the flow on its loading backup code form until the sign-in completes', async () => {
             const signIn = deferred<void>();
             const { actor, flow } = await startOnLostTwoFactor({ completeSignIn: () => signIn.promise });
-            flow.send({ type: 'lost2FA.backupCode.submitted', code: 'backup' });
+            flow.send({ type: 'lost2FA.backupCodeSubmitted', payload: { code: 'backup' } });
             await waitUntil(() => passwordAccount(actor).getSnapshot().matches('completing'));
             const snapshot = passwordAccount(actor).getSnapshot();
             expect(snapshot.context.screen).toBe('lostTwoFactor');
             // Compared by session: a failing match on the actors themselves overflows Jest's serializer
             expect(snapshot.children.lostTwoFactor?.sessionId).toBe(flow.sessionId);
-            expect(flow.getSnapshot().matches({ requestBackupCode: 'accepted' })).toBe(true);
+            expect(flow.getSnapshot().matches({ requestBackupCode: 'reported' })).toBe(true);
             expect(flow.getSnapshot().hasTag('submitting')).toBe(true);
             signIn.resolve();
-            expect((await waitUntilSettled(actor)).status).toBe('done');
+            await waitUntilSettled(actor);
+            expect(isSignedIn(actor)).toBe(true);
         });
 
         it('stops the flow once the account needs its second password', async () => {
             const { actor, flow } = await startOnLostTwoFactor({
                 created: makeCreatedAuth({ twoFactor: true, secondPassword: true }),
             });
-            flow.send({ type: 'lost2FA.backupCode.submitted', code: 'backup' });
+            flow.send({ type: 'lost2FA.backupCodeSubmitted', payload: { code: 'backup' } });
             await waitUntil(() => passwordAccount(actor).getSnapshot().matches('unlock'));
             expect(passwordAccount(actor).getSnapshot().context.screen).toBe('unlock');
             expect(passwordAccount(actor).getSnapshot().children.lostTwoFactor?.sessionId).toBeUndefined();
@@ -923,18 +963,25 @@ describe('SignInStateMachine', () => {
             const { actor, flow } = await startOnLostTwoFactor();
             flow.send({ type: 'decision.back' });
             expect(passwordAccount(actor).getSnapshot().children.lostTwoFactor?.sessionId).toBeUndefined();
-            passwordAccount(actor).send({ type: 'lostTwoFactor.opened' });
+            passwordAccount(actor).send({ type: 'lost2FA.opened' });
             const reopened = passwordAccount(actor).getSnapshot().children.lostTwoFactor;
             expect(reopened?.sessionId).toBeDefined();
             expect(reopened?.sessionId).not.toBe(flow.sessionId);
             expect(reopened!.getSnapshot().matches('requestBackupCode')).toBe(true);
         });
 
+        it('names the lost-2FA flow as the actor holding the screen while it is open', async () => {
+            const { actor, flow } = await startOnLostTwoFactor();
+            expect(selectScreenActor(passwordAccount(actor).getSnapshot())).toBe('lostTwoFactor');
+            flow.send({ type: 'decision.back' });
+            expect(selectScreenActor(passwordAccount(actor).getSnapshot())).toBe('passwordAccount');
+        });
+
         it('shows a wrong backup code inline in the flow, without reporting it', async () => {
             const { actor, flow, errors } = await startOnLostTwoFactor({
                 verifyTwoFactor: () => Promise.reject(new TOTPError('Too many attempts')),
             });
-            flow.send({ type: 'lost2FA.backupCode.submitted', code: 'wrong' });
+            flow.send({ type: 'lost2FA.backupCodeSubmitted', payload: { code: 'wrong' } });
             await waitUntilSettled(actor);
             expect(passwordAccount(actor).getSnapshot().matches('lostTwoFactor')).toBe(true);
             expect(flow.getSnapshot().matches({ requestBackupCode: 'idle' })).toBe(true);
@@ -946,7 +993,7 @@ describe('SignInStateMachine', () => {
             const { actor, flow } = await startOnLostTwoFactor({
                 verifyTwoFactor: () => Promise.reject(new TOTPError('')),
             });
-            flow.send({ type: 'lost2FA.backupCode.submitted', code: 'wrong' });
+            flow.send({ type: 'lost2FA.backupCodeSubmitted', payload: { code: 'wrong' } });
             await waitUntilSettled(actor);
             expect(flow.getSnapshot().context.backupCodeError).toBe('Incorrect recovery code. Please try again.');
         });
@@ -965,7 +1012,7 @@ describe('SignInStateMachine', () => {
             });
             flow.send({ type: 'lost2FA.otherMethodRequested' });
             expect(flow.getSnapshot().matches('verifyOwnershipWithPhrase')).toBe(true);
-            flow.send({ type: 'verification.phraseSubmitted', phrase: 'wrong' });
+            flow.send({ type: 'verification.phraseSubmitted', payload: { phrase: 'wrong' } });
             await waitUntil(() => errors().length > 0);
             expect(errors()).toEqual([error]);
         });
@@ -974,10 +1021,10 @@ describe('SignInStateMachine', () => {
             const { actor, flow } = await startOnLostTwoFactor({
                 verifyTwoFactor: () => Promise.reject(new TOTPError('Incorrect code')),
             });
-            flow.send({ type: 'lost2FA.backupCode.submitted', code: 'wrong' });
+            flow.send({ type: 'lost2FA.backupCodeSubmitted', payload: { code: 'wrong' } });
             await waitUntilSettled(actor);
             expect(flow.getSnapshot().context.backupCodeError).toBe('Incorrect code');
-            flow.send({ type: 'lost2FA.backupCode.edited' });
+            flow.send({ type: 'lost2FA.backupCodeEdited' });
             expect(flow.getSnapshot().context.backupCodeError).toBeUndefined();
         });
 
@@ -985,7 +1032,7 @@ describe('SignInStateMachine', () => {
             const { actor, flow } = await startOnLostTwoFactor({
                 verifyTwoFactor: () => Promise.reject(new TOTPError('Incorrect code')),
             });
-            flow.send({ type: 'lost2FA.backupCode.submitted', code: 'wrong' });
+            flow.send({ type: 'lost2FA.backupCodeSubmitted', payload: { code: 'wrong' } });
             await waitUntilSettled(actor);
             expect(flow.getSnapshot().context.backupCodeError).toBe('Incorrect code');
             // No recovery method in the test account: the other way is the reset screen
@@ -1007,7 +1054,7 @@ describe('SignInStateMachine', () => {
                 lostTwoFactorFlow: crashing,
             });
             await submitCredentials(actor);
-            passwordAccount(actor).send({ type: 'lostTwoFactor.opened' });
+            passwordAccount(actor).send({ type: 'lost2FA.opened' });
             await waitUntil(() => actor.getSnapshot().matches('awaitingCredentials'));
             expect(errors()).toEqual([error]);
             expect(
@@ -1035,13 +1082,13 @@ describe('SignInStateMachine', () => {
             ).toBe(true);
         });
 
-        it('goes back to the credentials form on any other backup code error, like main', async () => {
+        it('goes back to the credentials form on any other backup code error', async () => {
             // Like the session the third wrong code revokes (a 401)
             const error = Object.assign(new Error('Incorrect code. Please try again.'), { status: 401 });
             const { actor, flow, errors } = await startOnLostTwoFactor({
                 verifyTwoFactor: () => Promise.reject(error),
             });
-            flow.send({ type: 'lost2FA.backupCode.submitted', code: 'backup' });
+            flow.send({ type: 'lost2FA.backupCodeSubmitted', payload: { code: 'backup' } });
             await waitUntil(() => actor.getSnapshot().matches('awaitingCredentials'));
             expect(errors()).toEqual([error]);
             expect(
@@ -1054,7 +1101,7 @@ describe('SignInStateMachine', () => {
         it('ignores the ways out while the backup code is checked', async () => {
             const check = deferred<void>();
             const { actor, flow, spies } = await startOnLostTwoFactor({ verifyTwoFactor: () => check.promise });
-            flow.send({ type: 'lost2FA.backupCode.submitted', code: 'backup' });
+            flow.send({ type: 'lost2FA.backupCodeSubmitted', payload: { code: 'backup' } });
             // A valid code is used up on the server and signs in, which leaving would drop
             expect(flow.getSnapshot().can({ type: 'decision.back' })).toBe(false);
             expect(flow.getSnapshot().can({ type: 'lost2FA.otherMethodRequested' })).toBe(false);
@@ -1062,7 +1109,8 @@ describe('SignInStateMachine', () => {
             expect(flow.getSnapshot().matches({ requestBackupCode: 'submitting' })).toBe(true);
             expect(passwordAccount(actor).getSnapshot().matches('lostTwoFactor')).toBe(true);
             check.resolve();
-            expect((await waitUntilSettled(actor)).status).toBe('done');
+            await waitUntilSettled(actor);
+            expect(isSignedIn(actor)).toBe(true);
             expect(spies.completeSignIn).toHaveBeenCalledTimes(1);
         });
 
@@ -1084,7 +1132,7 @@ describe('SignInStateMachine', () => {
             expect(flow.getSnapshot().matches('requestBackupCode')).toBe(true);
 
             flow.send({ type: 'lost2FA.otherMethodRequested' });
-            flow.send({ type: 'verification.phraseSubmitted', phrase: 'my phrase' });
+            flow.send({ type: 'verification.phraseSubmitted', payload: { phrase: 'my phrase' } });
             // The flow ignores back while the phrase is checked: the server may disable two-factor authentication
             expect(flow.getSnapshot().can({ type: 'decision.back' })).toBe(false);
             flow.send({ type: 'decision.back' });
@@ -1103,7 +1151,7 @@ describe('SignInStateMachine', () => {
                 }),
             });
             flow.send({ type: 'lost2FA.otherMethodRequested' });
-            flow.send({ type: 'verification.phraseSubmitted', phrase: 'my phrase' });
+            flow.send({ type: 'verification.phraseSubmitted', payload: { phrase: 'my phrase' } });
             await waitUntil(() => flow.getSnapshot().matches('twoFactorDisabled'));
 
             flow.send({ type: 'lost2FA.signInRequested' });
@@ -1126,13 +1174,19 @@ describe('SignInStateMachine', () => {
             expect(passwordAccount(actor).getSnapshot().matches('twoFactor')).toBe(true);
         });
 
-        it('goes to the password reset when the flow ends there', async () => {
-            const { flow, spies } = await startOnLostTwoFactor();
+        it('goes to the password reset when the flow asks, keeping the flow on its screen', async () => {
+            const { actor, flow, spies } = await startOnLostTwoFactor();
             // No recovery method in the test account: skipping the backup code leaves only the reset
             flow.send({ type: 'lost2FA.otherMethodRequested' });
             flow.send({ type: 'lost2FA.passwordResetRequested' });
             expect(spies.goToResetPassword).toHaveBeenCalledWith({ username: 'member@example.com' });
-            expect(flow.getSnapshot().status).toBe('done');
+            // Waiting, loading, until the next page loads
+            expect(flow.getSnapshot().matches('resettingPassword')).toBe(true);
+            // Still the named child, which the page reads the screen from. Compared by session: a failing match on the
+            // actors themselves overflows Jest's serializer
+            const snapshot = passwordAccount(actor).getSnapshot();
+            expect(selectScreenActor(snapshot)).toBe('lostTwoFactor');
+            expect(snapshot.children.lostTwoFactor?.sessionId).toBe(flow.sessionId);
         });
     });
 
@@ -1142,7 +1196,8 @@ describe('SignInStateMachine', () => {
                 created: makeCreatedAuth({ authType: AuthType.ExternalSSO }),
                 prepareSSO: () => Promise.resolve({ type: 'session', session }),
             });
-            expect((await submitCredentials(actor)).status).toBe('done');
+            await submitCredentials(actor);
+            expect(isSignedIn(actor)).toBe(true);
             expect(spies.completeSignIn).toHaveBeenCalledTimes(1);
         });
 
@@ -1154,21 +1209,24 @@ describe('SignInStateMachine', () => {
             expect(flow.context.passwordPolicies).toEqual([{ PolicyName: 'length' }]);
             expect(flow.context.auth.account.salts).toEqual([]);
             passwordAccount(actor).send({ type: 'newPassword.submitted', payload: { password: 'new' } });
-            expect((await waitUntilSettled(actor)).status).toBe('done');
+            await waitUntilSettled(actor);
+            expect(isSignedIn(actor)).toBe(true);
             expect(spies.setupPassword).toHaveBeenCalledTimes(1);
         });
 
         it('creates keys with the sign-in password when the account needs them', async () => {
             jest.mocked(getRequiresPasswordSetup).mockReturnValueOnce(true);
             const { actor, spies } = startActor({ created: makeCreatedAuth({ keys: 0 }) });
-            expect((await submitCredentials(actor)).status).toBe('done');
+            await submitCredentials(actor);
+            expect(isSignedIn(actor)).toBe(true);
             expect(spies.setupPassword).toHaveBeenCalledTimes(1);
             expect(spies.finalize).not.toHaveBeenCalled();
         });
 
         it('finalizes accounts without keys', async () => {
             const { actor, spies } = startActor({ created: makeCreatedAuth({ keys: 0 }) });
-            expect((await submitCredentials(actor)).status).toBe('done');
+            await submitCredentials(actor);
+            expect(isSignedIn(actor)).toBe(true);
             expect(spies.finalize).toHaveBeenCalledTimes(1);
             expect(spies.unlockKeys).not.toHaveBeenCalled();
         });
@@ -1192,7 +1250,8 @@ describe('SignInStateMachine', () => {
             passwordAccount(actor).send({ type: 'unlock.passwordEdited' });
             expect(passwordAccount(actor).getSnapshot().context.unlockError).toBeUndefined();
             passwordAccount(actor).send({ type: 'unlock.submitted', payload: { password: 'right' } });
-            expect((await waitUntilSettled(actor)).status).toBe('done');
+            await waitUntilSettled(actor);
+            expect(isSignedIn(actor)).toBe(true);
         });
 
         it.each([
@@ -1221,7 +1280,8 @@ describe('SignInStateMachine', () => {
                     .matches({ [screen]: 'submitting' })
             ).toBe(true);
             pending.resolve(session);
-            expect((await waitUntilSettled(actor)).status).toBe('done');
+            await waitUntilSettled(actor);
+            expect(isSignedIn(actor)).toBe(true);
         });
     });
 
@@ -1246,7 +1306,7 @@ describe('SignInStateMachine', () => {
         const ssoScreen = (actor: Actor) => sso(actor).getSnapshot().context.screen;
         const waitUntilSSOSettled = (actor: Actor) =>
             waitFor(sso(actor), (snap) => !snap.hasTag(SSOStateMachineTags.submitting), { timeout: 1_000 });
-        const waitUntilDone = (actor: Actor) => waitFor(actor, (snap) => snap.status === 'done', { timeout: 1_000 });
+        const waitUntilSignedIn = (actor: Actor) => waitUntil(() => isSignedIn(actor));
 
         it('opens the screen for the SSO intent', async () => {
             const { actor } = await startOnSSO({ step: SSOLoginCapabilites.OTHER_DEVICES });
@@ -1258,7 +1318,7 @@ describe('SignInStateMachine', () => {
             const { actor, polls, spies } = await startOnSSO({ step: SSOLoginCapabilites.OTHER_DEVICES });
             expect(polls).toHaveLength(1);
             polls[0].sendBack({ type: 'sso.device.approved', payload: { deviceSecretUser: {} as never } });
-            expect((await waitUntilDone(actor)).status).toBe('done');
+            await waitUntilSignedIn(actor);
             expect(polls[0].stopped).toBe(true);
             expect(spies.completeSignIn).toHaveBeenCalledTimes(1);
         });
@@ -1279,11 +1339,11 @@ describe('SignInStateMachine', () => {
                     }),
             });
             polls[0].sendBack({ type: 'sso.device.approved', payload: { deviceSecretUser: {} as never } });
-            await waitUntilDone(actor);
+            await waitUntilSignedIn(actor);
             expect(confirmSSODevice.mock.calls[0][0]?.input.auth.account.addresses).toBe(addresses);
         });
 
-        it('stops polling when confirming the approved device fails, like main', async () => {
+        it('stops polling when confirming the approved device fails', async () => {
             const error = new Error('boom');
             const { actor, polls, errors } = await startOnSSO(
                 { step: SSOLoginCapabilites.OTHER_DEVICES },
@@ -1300,7 +1360,7 @@ describe('SignInStateMachine', () => {
         it('ends the attempt when polling finds the session gone, and reports it', async () => {
             const error = { status: 401 };
             const { actor, polls, errors } = await startOnSSO({ step: SSOLoginCapabilites.OTHER_DEVICES });
-            polls[0].sendBack({ type: 'sso.device.failed', error });
+            polls[0].sendBack({ type: 'sso.device.failed', payload: { error } });
             expect(actor.getSnapshot().matches('awaitingCredentials')).toBe(true);
             expect(
                 credentialsFlow(actor)
@@ -1433,11 +1493,25 @@ describe('SignInStateMachine', () => {
             expect(errors()).toEqual([error]);
         });
 
-        it('frees the organization logo after signing in too', async () => {
+        it('keeps the organization logo while the app takes over, and frees it once the page unmounts', async () => {
             const { actor, polls, ssoData } = await startOnSSO({ step: SSOLoginCapabilites.OTHER_DEVICES });
             polls[0].sendBack({ type: 'sso.device.approved', payload: { deviceSecretUser: {} as never } });
-            await waitUntilDone(actor);
+            await waitUntilSignedIn(actor);
+            // The screen stays up until the page goes
+            expect(ssoData?.organizationData.logo?.cleanup).not.toHaveBeenCalled();
+            actor.stop();
             expect(ssoData?.organizationData.logo?.cleanup).toHaveBeenCalledTimes(1);
+        });
+
+        it('ignores back once the app has the session', async () => {
+            const { actor, polls } = await startOnSSO({ step: SSOLoginCapabilites.OTHER_DEVICES });
+            polls[0].sendBack({ type: 'sso.device.approved', payload: { deviceSecretUser: {} as never } });
+            await waitUntilSignedIn(actor);
+            sso(actor).send({ type: 'decision.back' });
+            // Still on the SSO screen, loading, rather than back on the credentials form
+            expect(isSignedIn(actor)).toBe(true);
+            expect(actor.getSnapshot().context.step).toBe('sso');
+            expect(ssoScreen(actor)).toBe('otherDevices');
         });
 
         it('frees the organization logo when the page unmounts mid-flow', async () => {
@@ -1499,7 +1573,7 @@ describe('SignInStateMachine', () => {
             sso(actor).send({ type: 'decision.back' });
             expect(sso(actor).getSnapshot().matches('completing')).toBe(true);
             pending.resolve();
-            expect((await waitUntilDone(actor)).status).toBe('done');
+            await waitUntilSignedIn(actor);
         });
 
         it('lets the user retry a wrong backup password', async () => {
@@ -1518,7 +1592,7 @@ describe('SignInStateMachine', () => {
             expect(ssoScreen(actor)).toBe('backupPassword');
             expect(errors()).toHaveLength(1);
             sso(actor).send({ type: 'sso.backupPassword.submitted', payload: { password: 'right' } });
-            expect((await waitUntilDone(actor)).status).toBe('done');
+            await waitUntilSignedIn(actor);
         });
 
         it('reports an error that ends the SSO steps, and goes back to the credentials form', async () => {
@@ -1559,7 +1633,7 @@ describe('SignInStateMachine', () => {
             sso(actor).send({ type: 'sso.continued' });
             expect(ssoScreen(actor)).toBe('newBackupPassword');
             sso(actor).send({ type: 'sso.newBackupPassword.submitted', payload: { password: 'new backup' } });
-            expect((await waitUntilDone(actor)).status).toBe('done');
+            await waitUntilSignedIn(actor);
             expect(spies.changeBackupPassword).toHaveBeenCalledWith(
                 expect.objectContaining({ ssoData: setPasswordData, session: undefined, password: 'new backup' })
             );
@@ -1594,7 +1668,7 @@ describe('SignInStateMachine', () => {
 
             sso(actor).send({ type: 'sso.continued' });
             sso(actor).send({ type: 'sso.newBackupPassword.submitted', payload: { password: 'new backup' } });
-            expect((await waitUntilDone(actor)).status).toBe('done');
+            await waitUntilSignedIn(actor);
             expect(spies.changeBackupPassword).toHaveBeenCalledWith(
                 expect.objectContaining({ ssoData: setPasswordData, session: undefined, password: 'new backup' })
             );
@@ -1618,7 +1692,7 @@ describe('SignInStateMachine', () => {
 
             sso(actor).send({ type: 'sso.continued' });
             sso(actor).send({ type: 'sso.newBackupPassword.submitted', payload: { password: 'new backup' } });
-            expect((await waitUntilDone(actor)).status).toBe('done');
+            await waitUntilSignedIn(actor);
             const { auth, session: changedWith } = spies.changeBackupPassword.mock.calls[0][0] as {
                 auth: SignInAuthState;
                 session: AuthSession | undefined;
@@ -1643,7 +1717,7 @@ describe('SignInStateMachine', () => {
             );
             polls[0].sendBack({ type: 'sso.device.approved', payload: { deviceSecretUser: {} as never } });
             await waitUntilSSOSettled(actor);
-            expect(ssoScreen(actor)).toBe('newBackupPassword');
+            expect(ssoScreen(actor)).toBe('accessGranted');
         });
 
         it('skips the backup password intro when the organization disabled it', async () => {
@@ -1660,14 +1734,14 @@ describe('SignInStateMachine', () => {
             );
             sso(actor).send({ type: 'sso.backupPassword.submitted', payload: { password: 'backup' } });
             await waitUntilSSOSettled(actor);
-            expect(ssoScreen(actor)).toBe('newBackupPassword');
+            expect(ssoScreen(actor)).toBe('accessGranted');
         });
 
         it('sets up keys on the first sign-in', async () => {
             const { actor, spies } = await startOnSSO({ step: SSOLoginCapabilites.SETUP_BACKUP_PASSWORD });
             expect(ssoScreen(actor)).toBe('setupKeys');
             sso(actor).send({ type: 'sso.setup.submitted', payload: { password: 'backup' } });
-            expect((await waitUntilDone(actor)).status).toBe('done');
+            await waitUntilSignedIn(actor);
             expect(spies.setupSSOKeys).toHaveBeenCalledWith(expect.objectContaining({ password: 'backup' }));
         });
 
@@ -1702,7 +1776,8 @@ describe('SignInStateMachine', () => {
             expect(passwordAccount(actor).getSnapshot().context.screen).toBe('twoFactor');
             expect(passwordAccount(actor).getSnapshot().hasTag('submitting')).toBe(true);
             pending.resolve();
-            expect((await waitUntilSettled(actor)).status).toBe('done');
+            await waitUntilSettled(actor);
+            expect(isSignedIn(actor)).toBe(true);
         });
 
         it('returns to credentials and reports the error when onLogin fails', async () => {

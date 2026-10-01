@@ -7,9 +7,9 @@ import type { ActorRefFrom, AnyActorLogic } from 'xstate';
 type SnapshotOf<TActorRef> = TActorRef extends { getSnapshot(): infer TSnapshot } ? TSnapshot : undefined;
 
 /**
- * Like `createActorContext`, but for an actor the sign-in machine already runs (an invoked child), which
- * `createActorContext` can't take: the step that finds the child provides its ref, and the components below read it
- * without props.
+ * Like `createActorContext`, but for an actor the sign-in's machines already run (a child), which `createActorContext`
+ * can't take: the page (`SignInRoutes`) provides the child's ref, or `null` while it isn't running, and the components
+ * below read it without props.
  */
 export const createChildActorContext = <TLogic extends AnyActorLogic>(name: string) => {
     const Context = createContext<ActorRefFrom<TLogic> | null>(null);
@@ -18,7 +18,7 @@ export const createChildActorContext = <TLogic extends AnyActorLogic>(name: stri
     const useActorRef = (): ActorRefFrom<TLogic> => {
         const actorRef = useContext(Context);
         if (actorRef === null) {
-            throw new Error(`${name} is used outside its provider`);
+            throw new Error(`${name} is used outside its provider, or while its actor isn't running`);
         }
         return actorRef;
     };

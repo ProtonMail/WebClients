@@ -1,3 +1,10 @@
+/**
+ * The lost-2FA flow: the password account flow runs it as a child for a member who can't provide their second factor.
+ * It offers the ways out the account has, in order: a backup code, which is a second factor and signs in, then a code
+ * sent to the recovery email or phone, or the recovery phrase, each of which disables two-factor authentication so the
+ * member signs in again. With no way left, it offers to reset the password. Each way's requests are actors
+ * (`verificationActors`); the flow ends with its outcome, which the password account flow acts on.
+ */
 import { c } from 'ttag';
 import { type SnapshotFrom, assertEvent, assign, emit, sendParent, setup } from 'xstate';
 
@@ -39,7 +46,7 @@ interface Lost2FAMachineContext {
     recoveryMethods: Lost2FARecoveryMethods;
     username: string;
     twoFactorAuthTypes: TwoFactorAuthTypes;
-    outcome: Lost2FAOutcome | undefined;
+    outcome: Lost2FAEnd | undefined;
     /** Why the last backup code was rejected. */
     backupCodeError: string | undefined;
     /** The sent codes, so coming back to a method doesn't send another one. */
@@ -50,50 +57,63 @@ interface Lost2FAMachineContext {
     invalidCode: boolean;
 }
 
-/** How the flow ends; the parent takes it from there. */
-export type Lost2FAOutcome = 'signin to continue' | 'return to 2fa step' | 'reset password';
+/** How the flow ends, as telemetry reports it. */
+export type Lost2FAOutcome = 'signInAgain' | 'returnToTwoFactor' | 'resetPassword';
+
+/**
+ * What the flow finishes with; the parent takes it from there. Resetting the password leaves the page instead, so
+ * that flow stays on its screen until the page unloads (`resettingPassword`).
+ */
+export type Lost2FAEnd = Exclude<Lost2FAOutcome, 'resetPassword'>;
 
 type Lost2FAMachineEvent =
     | { type: 'lost2FA.signInRequested' }
     | { type: 'decision.back' }
     | { type: 'lost2FA.passwordResetRequested' }
     /** From the backup code screen; checked as the second factor. */
-    | { type: 'lost2FA.backupCode.submitted'; code: string }
+    | { type: 'lost2FA.backupCodeSubmitted'; payload: { code: string } }
     /** The user changed the backup code; a rejected code's message goes. */
-    | { type: 'lost2FA.backupCode.edited' }
+    | { type: 'lost2FA.backupCodeEdited' }
     | { type: 'lost2FA.otherMethodRequested' }
     /** The code screens (recovery email or phone). */
     | { type: 'verification.codeRequested' }
     | { type: 'verification.sendingCodeRetried' }
     /** The user changed the code; a rejected code's message goes. */
     | { type: 'verification.codeEdited' }
-    | { type: 'verification.codeSubmitted'; code: string }
+    | { type: 'verification.codeSubmitted'; payload: { code: string } }
     /** The new code dialog: opened, confirmed, or closed. */
     | { type: 'verification.newCodeRequested' }
     | { type: 'verification.resendRequested' }
     | { type: 'verification.newCodeDialogClosed' }
     /** The recovery phrase screen. */
-    | { type: 'verification.phraseSubmitted'; phrase: string };
+    | { type: 'verification.phraseSubmitted'; payload: { phrase: string } };
 
 /** Sent to the parent (the password account flow). */
 export type Lost2FAParentEvent =
     /** The backup code signed in: it loads the account, and stops the flow once another screen shows. */
-    | { type: 'lostTwoFactor.backupCodeAccepted' }
+    | { type: 'lost2FA.backupCodeAccepted' }
     /**
      * Checking the backup code failed for another reason than a wrong code, like the session the third wrong code
-     * revokes: it ends the sign-in attempt, like main, and the sign-in reports the error.
+     * revokes: it ends the sign-in attempt, and the sign-in reports the error.
      */
-    | { type: 'lostTwoFactor.backupCodeFailed'; error: unknown }
+    | { type: 'lost2FA.backupCodeFailed'; payload: { error: unknown } }
     /** It forwards the error to the sign-in to show. */
-    | { type: 'lostTwoFactor.errorReported'; payload: { error: unknown } };
+    | { type: 'lost2FA.errorReported'; payload: { error: unknown } }
+    /** The user chose to reset the password: it leaves the page for the reset. */
+    | { type: 'lost2FA.passwordResetChosen' };
 
 type Lost2FAEmitted =
-    /** For telemetry: every submitted backup code, and how the flow ended. */
-    | { type: 'outcome'; outcome: Lost2FAOutcome | 'totp backup code provided' }
+    /** For telemetry: how the flow ended. */
+    | { type: 'lost2FA.ended'; payload: { outcome: Lost2FAOutcome } }
+    /** For telemetry: a backup code was submitted. */
+    | { type: 'lost2FA.backupCodeProvided' }
     /** The new code was sent: the code form tells the user, and clears the old code. */
     | { type: 'verification.codeResent' };
 
-export enum Lost2FAStateMachineTags {
+/** How often sending the email code can be retried on one visit to its screen. */
+const MAX_SENDING_ATTEMPTS = 3;
+
+enum Lost2FAStateMachineTags {
     /** A verification request runs; the screen shows its loading state. */
     submitting = 'submitting',
     /** The code screens' new code dialog is open, whether the email or the phone code. */
@@ -149,7 +169,7 @@ const lost2FASetup = setup({
         context: {} as Lost2FAMachineContext,
         events: {} as Lost2FAMachineEvent,
         emitted: {} as Lost2FAEmitted,
-        output: {} as { outcome: Lost2FAOutcome },
+        output: {} as { outcome: Lost2FAEnd },
         tags: {} as `${Lost2FAStateMachineTags}`,
     },
     guards: {
@@ -159,7 +179,7 @@ const lost2FASetup = setup({
         hasRecoveryPhrase: ({ context }) => context.recoveryMethods.phrase,
         hasVerificationResult: ({ context }, params: { method: VerificationMethod }) =>
             !!context.verificationResults[params.method],
-        canRetrySending: ({ context }) => context.sendingAttempts < 3,
+        canRetrySending: ({ context }) => context.sendingAttempts < MAX_SENDING_ATTEMPTS,
         isErrorOf,
     },
     actors: {
@@ -188,20 +208,32 @@ const lost2FASetup = setup({
         })),
         clearBackupCodeError: assign({ backupCodeError: undefined }),
         /** The machine's output once it reaches a final state. */
-        setOutcome: assign((_, params: { outcome: Lost2FAOutcome }) => ({ outcome: params.outcome })),
+        setOutcome: assign((_, params: { outcome: Lost2FAEnd }) => ({ outcome: params.outcome })),
         reportOutcome: emit((_, params: { outcome: Lost2FAOutcome }) => ({
-            type: 'outcome' as const,
-            outcome: params.outcome,
+            type: 'lost2FA.ended' as const,
+            payload: { outcome: params.outcome },
         })),
         reportError: sendParent((_, params: { error: unknown }): Lost2FAParentEvent => ({
-            type: 'lostTwoFactor.errorReported',
+            type: 'lost2FA.errorReported',
+            payload: { error: params.error },
+        })),
+        /** Sending the email code failed once more on this visit. */
+        countSendingAttempt: assign({ sendingAttempts: ({ context }) => context.sendingAttempts + 1 }),
+        markInvalidCode: assign({ invalidCode: true }),
+        clearInvalidCode: assign({ invalidCode: false }),
+        notifyCodeResent: emit({ type: 'verification.codeResent' as const }),
+        reportBackupCodeProvided: emit({ type: 'lost2FA.backupCodeProvided' as const }),
+        reportBackupCodeAccepted: sendParent({ type: 'lost2FA.backupCodeAccepted' } satisfies Lost2FAParentEvent),
+        reportPasswordResetChosen: sendParent({ type: 'lost2FA.passwordResetChosen' } satisfies Lost2FAParentEvent),
+        reportBackupCodeFailed: sendParent((_, params: { error: unknown }): Lost2FAParentEvent => ({
+            type: 'lost2FA.backupCodeFailed',
             payload: { error: params.error },
         })),
     },
 });
 
 /** A final state: the flow ends with this outcome, and reports it for telemetry. */
-const endWith = (outcome: Lost2FAOutcome) =>
+const endWith = (outcome: Lost2FAEnd) =>
     lost2FASetup.createStateConfig({
         type: 'final',
         entry: [
@@ -212,11 +244,17 @@ const endWith = (outcome: Lost2FAOutcome) =>
 
 /**
  * Proves ownership of the recovery email or phone with a code, then disables two-factor authentication. The email
- * code is sent right away (with a few retries); the phone code once the user asks, since it may cost them.
- * The screen's state handles back and the other methods; checking the code ignores them (see `verifying`).
+ * code is sent right away (with a few retries); the phone code once the user asks, since it may cost them. Back and
+ * another method move along the list of methods; checking the code ignores them (see `verifying`).
  */
-const verifyWithCode = (method: VerificationMethod) =>
-    lost2FASetup.createStateConfig({
+const verifyWithCode = (method: VerificationMethod) => {
+    const screen = method === 'email' ? 'verifyOwnershipWithEmail' : 'verifyOwnershipWithPhone';
+    return lost2FASetup.createStateConfig({
+        entry: 'startVerification',
+        on: {
+            'decision.back': previousMethod(screen),
+            'lost2FA.otherMethodRequested': nextMethod(screen),
+        },
         initial: 'routeCode',
         states: {
             routeCode: {
@@ -248,10 +286,7 @@ const verifyWithCode = (method: VerificationMethod) =>
                             ? {
                                   target: 'sendingCodeFailed',
                                   // Reported too, so a reason from the API (such as a rate limit) shows with the retry
-                                  actions: [
-                                      assign({ sendingAttempts: ({ context }) => context.sendingAttempts + 1 }),
-                                      reportActorError,
-                                  ],
+                                  actions: ['countSendingAttempt', reportActorError],
                               }
                             : { target: 'readyToSend', actions: reportActorError },
                 },
@@ -265,7 +300,7 @@ const verifyWithCode = (method: VerificationMethod) =>
             awaitingCode: {
                 initial: 'editing',
                 on: {
-                    'verification.codeEdited': { actions: assign({ invalidCode: false }) },
+                    'verification.codeEdited': { actions: 'clearInvalidCode' },
                 },
                 states: {
                     editing: {
@@ -288,14 +323,18 @@ const verifyWithCode = (method: VerificationMethod) =>
                             src: 'verifyCodeAndDisable2FA',
                             input: ({ context, event }) => {
                                 assertEvent(event, 'verification.codeSubmitted');
-                                return { method, token: context.verificationResults[method]?.token, code: event.code };
+                                return {
+                                    method,
+                                    token: context.verificationResults[method]?.token,
+                                    code: event.payload.code,
+                                };
                             },
                             onDone: { target: '#lost2FA.twoFactorDisabled' },
                             onError: [
                                 {
                                     guard: errorOf(InvalidCodeError),
                                     target: 'editing',
-                                    actions: assign({ invalidCode: true }),
+                                    actions: 'markInvalidCode',
                                 },
                                 { target: 'editing', actions: reportActorError },
                             ],
@@ -317,10 +356,7 @@ const verifyWithCode = (method: VerificationMethod) =>
                             input: ({ context }) => ({ method, token: context.verificationResults[method]?.token }),
                             onDone: {
                                 target: 'editing',
-                                actions: [
-                                    assign({ invalidCode: false }),
-                                    emit({ type: 'verification.codeResent' as const }),
-                                ],
+                                actions: ['clearInvalidCode', 'notifyCodeResent'],
                             },
                             onError: { target: 'newCodeDialog', actions: reportActorError },
                         },
@@ -329,6 +365,7 @@ const verifyWithCode = (method: VerificationMethod) =>
             },
         },
     });
+};
 
 export const lost2FAStateMachine = lost2FASetup.createMachine({
     id: 'lost2FA',
@@ -343,7 +380,7 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
         sendingAttempts: 0,
         invalidCode: false,
     }),
-    output: ({ context }) => ({ outcome: context.outcome ?? 'return to 2fa step' }),
+    output: ({ context }) => ({ outcome: context.outcome ?? 'returnToTwoFactor' }),
 
     states: {
         routeRecoveryMethod: {
@@ -356,18 +393,15 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
             entry: 'clearBackupCodeError',
             initial: 'idle',
             on: {
-                'lost2FA.backupCode.edited': { actions: 'clearBackupCodeError' },
+                'lost2FA.backupCodeEdited': { actions: 'clearBackupCodeError' },
                 'decision.back': previousMethod('requestBackupCode'),
             },
             states: {
                 idle: {
                     on: {
-                        'lost2FA.backupCode.submitted': {
+                        'lost2FA.backupCodeSubmitted': {
                             target: 'submitting',
-                            actions: [
-                                'clearBackupCodeError',
-                                emit({ type: 'outcome', outcome: 'totp backup code provided' }),
-                            ],
+                            actions: ['clearBackupCodeError', 'reportBackupCodeProvided'],
                         },
                         'lost2FA.otherMethodRequested': nextMethod('requestBackupCode'),
                     },
@@ -384,14 +418,12 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
                     invoke: {
                         src: 'verifyBackupCode',
                         input: ({ event }) => {
-                            assertEvent(event, 'lost2FA.backupCode.submitted');
-                            return { code: event.code };
+                            assertEvent(event, 'lost2FA.backupCodeSubmitted');
+                            return { code: event.payload.code };
                         },
                         onDone: {
-                            target: 'accepted',
-                            actions: sendParent({
-                                type: 'lostTwoFactor.backupCodeAccepted',
-                            } satisfies Lost2FAParentEvent),
+                            target: 'reported',
+                            actions: 'reportBackupCodeAccepted',
                         },
                         onError: [
                             {
@@ -403,19 +435,21 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
                                 },
                             },
                             {
-                                actions: sendParent(({ event }): Lost2FAParentEvent => ({
-                                    type: 'lostTwoFactor.backupCodeFailed',
-                                    error: event.error,
-                                })),
+                                target: 'reported',
+                                actions: {
+                                    type: 'reportBackupCodeFailed',
+                                    params: ({ event }) => ({ error: event.error }),
+                                },
                             },
                         ],
                     },
                 },
                 /**
-                 * The code signed in: the form stays up, loading, while the password account flow finishes the
-                 * sign-in (like main), until it stops this flow for another screen.
+                 * The check's outcome went to the password account flow, which carries on from there, with the form
+                 * up, loading: after a valid code it finishes the sign-in, and stops this flow only if the account
+                 * needs another screen first; after a failure it ends the attempt, and this flow with it.
                  */
-                accepted: {
+                reported: {
                     tags: [Lost2FAStateMachineTags.submitting],
                     on: {
                         'decision.back': {},
@@ -424,23 +458,9 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
             },
         },
 
-        verifyOwnershipWithEmail: {
-            entry: 'startVerification',
-            on: {
-                'decision.back': previousMethod('verifyOwnershipWithEmail'),
-                'lost2FA.otherMethodRequested': nextMethod('verifyOwnershipWithEmail'),
-            },
-            ...verifyWithCode('email'),
-        },
+        verifyOwnershipWithEmail: verifyWithCode('email'),
 
-        verifyOwnershipWithPhone: {
-            entry: 'startVerification',
-            on: {
-                'decision.back': previousMethod('verifyOwnershipWithPhone'),
-                'lost2FA.otherMethodRequested': nextMethod('verifyOwnershipWithPhone'),
-            },
-            ...verifyWithCode('phone'),
-        },
+        verifyOwnershipWithPhone: verifyWithCode('phone'),
 
         /** Proves ownership with the account's recovery phrase, then disables two-factor authentication. */
         verifyOwnershipWithPhrase: {
@@ -466,7 +486,7 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
                         src: 'verifyPhraseAndDisable2FA',
                         input: ({ context, event }) => {
                             assertEvent(event, 'verification.phraseSubmitted');
-                            return { username: context.username, phrase: event.phrase };
+                            return { username: context.username, phrase: event.payload.phrase };
                         },
                         onDone: { target: '#lost2FA.twoFactorDisabled' },
                         onError: { target: 'editing', actions: reportActorError },
@@ -480,17 +500,24 @@ export const lost2FAStateMachine = lost2FASetup.createMachine({
                 'lost2FA.signInRequested': { target: 'signInToContinue' },
             },
         },
-        signInToContinue: endWith('signin to continue'),
+        signInToContinue: endWith('signInAgain'),
 
         noMethod: {
             on: {
                 'decision.back': previousMethod('noMethod'),
-                'lost2FA.passwordResetRequested': { target: 'resetPassword' },
+                'lost2FA.passwordResetRequested': { target: 'resettingPassword' },
             },
         },
-        resetPassword: endWith('reset password'),
+        /**
+         * The password account flow leaves the page for the password reset. This flow stays on its screen, loading,
+         * until the page unloads, rather than ending: nothing on the screen is then sent to a finished flow.
+         */
+        resettingPassword: {
+            tags: [Lost2FAStateMachineTags.submitting],
+            entry: [{ type: 'reportOutcome', params: { outcome: 'resetPassword' } }, 'reportPasswordResetChosen'],
+        },
 
-        returnToTwoFactor: endWith('return to 2fa step'),
+        returnToTwoFactor: endWith('returnToTwoFactor'),
     },
 });
 
@@ -504,7 +531,7 @@ export const selectLost2FAScreen = (snapshot: Lost2FASnapshot): Lost2FAScreen | 
     if (snapshot.matches('signInToContinue')) {
         return 'twoFactorDisabled';
     }
-    if (snapshot.matches('resetPassword')) {
+    if (snapshot.matches('resettingPassword')) {
         return 'noMethod';
     }
     return lost2FAScreens.find((screen) => snapshot.matches(screen));
@@ -531,3 +558,34 @@ export const selectLost2FAUsername = ({ context }: { context: Lost2FAMachineCont
 
 export const selectLost2FARecoveryMethods = ({ context }: { context: Lost2FAMachineContext }) =>
     context.recoveryMethods;
+
+/** A request runs; the screen shows its loading state. */
+export const selectSubmitting = (snapshot: Lost2FASnapshot) => snapshot.hasTag(Lost2FAStateMachineTags.submitting);
+
+/** Why the last backup code was rejected, for its form. */
+export const selectBackupCodeError = ({ context }: { context: Lost2FAMachineContext }) => context.backupCodeError;
+
+/** The backup code screen waits for a code, rather than checking one. */
+export const selectAwaitingBackupCode = (snapshot: Lost2FASnapshot) => snapshot.matches({ requestBackupCode: 'idle' });
+
+/** The last verification code was wrong. */
+export const selectInvalidCode = ({ context }: { context: Lost2FAMachineContext }) => context.invalidCode;
+
+/** The code screens' new code dialog is open. */
+export const selectNewCodeDialogOpen = (snapshot: Lost2FASnapshot) =>
+    snapshot.hasTag(Lost2FAStateMachineTags.newCodeDialog);
+
+/** The new code is being sent; the dialog stays open, loading. */
+export const selectResending = (snapshot: Lost2FASnapshot) => snapshot.hasTag(Lost2FAStateMachineTags.resending);
+
+/** The phone code is being sent, after the user asked. */
+export const selectSendingPhoneCode = (snapshot: Lost2FASnapshot) =>
+    snapshot.matches({ verifyOwnershipWithPhone: 'sendingCode' });
+
+/** Sending the email code failed. */
+export const selectEmailSendingFailed = (snapshot: Lost2FASnapshot) =>
+    snapshot.matches({ verifyOwnershipWithEmail: 'sendingCodeFailed' });
+
+/** Sending the email code can be tried again; only a few times per visit. */
+export const selectCanRetrySending = (snapshot: Lost2FASnapshot) =>
+    snapshot.can({ type: 'verification.sendingCodeRetried' });
