@@ -4,19 +4,19 @@
  * run. A successful first authentication is sent to the sign-in (`credentials.authenticated`) and the form waits in
  * its `submitted` state, loading, until the next step is ready; the sign-in sends `credentials.reopened` when the
  * attempt ends without signing in. Alongside the forms, the auth session is started early, and again on reopen.
- * It emits `notice.ssoRequired` for `CredentialsStep` when the account should continue with its SSO provider.
+ * It emits `notice.ssoRequired` for the credentials route's frame when the account should continue with its SSO
+ * provider.
  */
-import { c } from 'ttag';
-import { type SnapshotFrom, assertEvent, assign, emit, enqueueActions, sendParent, setup } from 'xstate';
+import { type SnapshotFrom, and, assertEvent, assign, emit, enqueueActions, sendParent, setup } from 'xstate';
 
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { ExternalSSOError } from '@proton/shared/lib/authentication/ssoExternalLogin';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { AuthType, type AuthTypeData } from '../../../auth/interface';
 import {
     type StepErrorEvent,
+    errorOf,
+    isErrorOf,
     reportActorError,
     unprovidedAction,
     unprovidedActors,
@@ -29,6 +29,7 @@ import type {
     SSOProviderResult,
     UsernameFormValues,
 } from './credentialsActors';
+import { InvalidLoginError, SwitchToSRPError, SwitchToSSOError } from './credentialsErrors';
 
 export interface CredentialsMachineInput {
     username: string;
@@ -83,10 +84,10 @@ export type CredentialsParentEvent =
     /** An error to show; the form stays up. */
     | StepErrorEvent;
 
-/** For `CredentialsStep`: tell the user to press Sign in to continue with their SSO provider. */
+/** For the credentials route's frame: tell the user to press Sign in to continue with their SSO provider. */
 type CredentialsEmitted = { type: 'notice.ssoRequired' };
 
-export enum CredentialsStateMachineTags {
+enum CredentialsStateMachineTags {
     /** A request runs, or the next step is being prepared; the form shows its loading state. */
     submitting = 'submitting',
     /** The identity provider's window is open; the form offers to cancel it. */
@@ -98,28 +99,6 @@ const initialForms: Record<AuthType, CredentialsForm> = {
     [AuthType.AutoSrp]: 'autoSrp',
     [AuthType.Srp]: 'srp',
     [AuthType.ExternalSSO]: 'externalSSO',
-};
-
-/** Guard: the failed request's API error has this code. */
-const errorCode = (code: number) => ({
-    type: 'hasErrorCode' as const,
-    params: ({ event }: { event: { error: unknown } }) => ({ error: event.error, code }),
-});
-
-/** The provider window only opens once the SSO info came; a missing token fails the step rather than open it empty. */
-const getSSOChallengeToken = (context: CredentialsMachineContext) => {
-    if (!context.ssoInfo) {
-        throw new Error('Missing SSO challenge token');
-    }
-    return context.ssoInfo.SSOChallengeToken;
-};
-
-/** The redirect's token is only used when the page brought one (see `hasExternalSSOToken`). */
-const getExternalSSO = (context: CredentialsMachineContext) => {
-    if (!context.externalSSO) {
-        throw new Error('Missing SSO response token');
-    }
-    return context.externalSSO;
 };
 
 const credentialsSetup = setup({
@@ -156,19 +135,24 @@ const credentialsSetup = setup({
             ssoInfo: undefined,
             ssoProviderResult: undefined,
         })),
+        /** After `errorOf(InvalidLoginError)`: the error has the API's message, or a fallback. */
         setErrorMessage: assign((_, params: { error: unknown }) => ({
-            errorMessage: getApiErrorMessage(params.error) || c('Error').t`Unknown error`,
+            errorMessage: params.error instanceof InvalidLoginError ? params.error.message : undefined,
         })),
         clearErrorMessage: assign({ errorMessage: undefined }),
         setSSOInfo: assign((_, params: { ssoInfo: SSOInfoResponse | undefined }) => ({ ssoInfo: params.ssoInfo })),
         setSSOProviderResult: assign((_, params: { result: SSOProviderResult }) => ({
             ssoProviderResult: params.result,
         })),
-        /** Exchange the token from the identity provider redirect; it can only be used once. */
-        useExternalSSOToken: assign(({ context }) => {
-            const { persistent, token } = getExternalSSO(context);
-            return { persistent, ssoProviderResult: { uid: undefined, token }, externalSSO: undefined };
-        }),
+        /**
+         * Exchange the token from the identity provider redirect; it can only be used once. Only run when the page
+         * brought one (see `hasExternalSSOToken`); `authenticateWithSSOToken` fails if there isn't.
+         */
+        consumeExternalSSOToken: assign(({ context }) => ({
+            persistent: context.externalSSO?.persistent ?? context.persistent,
+            ssoProviderResult: context.externalSSO && { uid: undefined, token: context.externalSSO.token },
+            externalSSO: undefined,
+        })),
         /** The attempt starts over from the form: drop the last submission's SSO state. */
         resetAttempt: assign({ ssoInfo: undefined, ssoProviderResult: undefined }),
         reportAuthenticated: sendParent((_, params: { primaryAuth: PrimaryAuthResult }): CredentialsParentEvent => ({
@@ -188,22 +172,15 @@ const credentialsSetup = setup({
         hasExternalSSOToken: ({ context }) => !!context.externalSSO,
         isAccountType: (_, params: { accountType: AccountType; type: AccountType['type'] }) =>
             params.accountType.type === params.type,
-        hasErrorCode: (_, params: { error: unknown; code: number }) => getApiError(params.error).code === params.code,
-        /** This app sends SSO accounts to the account app instead of signing them in. */
-        shouldRedirectSSOToAccount: ({ context }, params: { error: unknown }) =>
-            context.redirectsSSOToAccount &&
-            getApiError(params.error).code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO,
-        /** The user closed the provider window, or it timed out. */
-        isSSOProviderClosed: (_, params: { error: unknown }) => params.error instanceof ExternalSSOError,
+        isErrorOf,
+        /** This app sends SSO accounts to the account app. */
+        redirectsSSOToAccount: ({ context }) => context.redirectsSSOToAccount,
     },
 });
 
 /** An SSO account of an app that doesn't sign them in: send them to account's SSO page, and stay on the form. */
 const redirectSSOToAccount = {
-    guard: {
-        type: 'shouldRedirectSSOToAccount' as const,
-        params: ({ event }: { event: { error: unknown } }) => ({ error: event.error }),
-    },
+    guard: and(['redirectsSSOToAccount', errorOf(SwitchToSSOError)]),
     target: 'idle',
     actions: {
         type: 'redirectToAccountSSO' as const,
@@ -238,12 +215,12 @@ const signingIn = credentialsSetup.createStateConfig({
         onError: [
             redirectSSOToAccount,
             {
-                guard: errorCode(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO),
+                guard: errorOf(SwitchToSSOError),
                 target: '#credentials.form.externalSSO',
                 actions: 'notifySSORequired',
             },
             {
-                guard: errorCode(API_CUSTOM_ERROR_CODES.INVALID_LOGIN),
+                guard: errorOf(InvalidLoginError),
                 target: 'idle',
                 actions: { type: 'setErrorMessage', params: ({ event }) => ({ error: event.error }) },
             },
@@ -274,7 +251,7 @@ const ssoProvider = (form: 'auto' | 'externalSSO') =>
                     },
                     onError: [
                         {
-                            guard: errorCode(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SRP),
+                            guard: errorOf(SwitchToSRPError),
                             target: '#credentials.form.srp',
                             actions: reportActorError,
                         },
@@ -289,14 +266,15 @@ const ssoProvider = (form: 'auto' | 'externalSSO') =>
                 },
                 invoke: {
                     src: 'authorizeWithSSOProvider',
-                    input: ({ context }) => ({ token: getSSOChallengeToken(context) }),
+                    input: ({ context }) => ({ token: context.ssoInfo?.SSOChallengeToken }),
                     onDone: {
                         target: 'exchangingToken',
                         actions: { type: 'setSSOProviderResult', params: ({ event }) => ({ result: event.output }) },
                     },
                     onError: [
                         {
-                            guard: { type: 'isSSOProviderClosed', params: ({ event }) => ({ error: event.error }) },
+                            // The user closed the provider window, or it timed out
+                            guard: errorOf(ExternalSSOError),
                             target: `#credentials.form.${form}.idle`,
                         },
                         { target: `#credentials.form.${form}.idle`, actions: reportActorError },
@@ -306,16 +284,12 @@ const ssoProvider = (form: 'auto' | 'externalSSO') =>
             exchangingToken: {
                 invoke: {
                     src: 'authenticateWithSSOToken',
-                    input: ({ context }) => {
-                        if (!context.ssoProviderResult) {
-                            throw new Error('Missing SSO token');
-                        }
-                        return {
-                            ...context.ssoProviderResult,
-                            username: context.username,
-                            persistent: context.persistent,
-                        };
-                    },
+                    input: ({ context }) => ({
+                        uid: context.ssoProviderResult?.uid,
+                        token: context.ssoProviderResult?.token,
+                        username: context.username,
+                        persistent: context.persistent,
+                    }),
                     onDone: {
                         target: `#credentials.form.${form}.submitted`,
                         actions: {
@@ -399,7 +373,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                         },
                         checkingAccountType: {
                             tags: [CredentialsStateMachineTags.submitting],
-                            // The page's back waits for the request, like main
+                            // The page's back, which leaves the page, waits for the request
                             on: { 'decision.back': {} },
                             invoke: {
                                 src: 'fetchAccountType',
@@ -423,7 +397,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                 onError: [
                                     redirectSSOToAccount,
                                     {
-                                        guard: errorCode(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO),
+                                        guard: errorOf(SwitchToSSOError),
                                         target: 'ssoProvider',
                                     },
                                     { target: 'idle', actions: reportActorError },
@@ -469,7 +443,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                 },
                             },
                         },
-                        // The page's back waits for the request, like main
+                        // The page's back, which leaves the page, waits for the request
                         signingIn: { ...signingIn, on: { 'decision.back': {} } },
                         submitted,
                     },
@@ -486,7 +460,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                             always: {
                                 guard: 'hasExternalSSOToken',
                                 target: 'ssoProvider.exchangingToken',
-                                actions: 'useExternalSSOToken',
+                                actions: 'consumeExternalSSOToken',
                             },
                             on: {
                                 'credentials.usernameSubmitted': {
@@ -523,3 +497,23 @@ export const selectAuthType = (snapshot: CredentialsSnapshot): AuthType => {
     }
     return AuthType.Srp;
 };
+
+/** A request runs, or the next step is being prepared; the form shows its loading state. */
+export const selectSubmitting = (snapshot: CredentialsSnapshot) =>
+    snapshot.hasTag(CredentialsStateMachineTags.submitting);
+
+/** The identity provider's window is open; the form offers to cancel it. */
+export const selectAwaitingProvider = (snapshot: CredentialsSnapshot) =>
+    snapshot.hasTag(CredentialsStateMachineTags.awaitingProvider);
+
+/** Shown inline in the form: a wrong username or password. */
+export const selectErrorMessage = (snapshot: CredentialsSnapshot) => snapshot.context.errorMessage;
+
+/** The username the forms start with, carried over between them. */
+export const selectUsername = (snapshot: CredentialsSnapshot) => snapshot.context.username;
+
+/** Whether the page itself can be left, which is what back means for the forms that start an attempt. */
+export const selectCanNavigateBack = (snapshot: CredentialsSnapshot) => snapshot.context.canNavigateBack;
+
+/** Back works now: it doesn't while a request runs, or once the sign-in has taken over. */
+export const selectCanGoBack = (snapshot: CredentialsSnapshot) => snapshot.can({ type: 'decision.back' });

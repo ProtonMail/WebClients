@@ -72,7 +72,7 @@ export const createSSOActors = (services: SignInActorServices) => {
                         sendBack({ type: 'sso.device.rejected' });
                     } else if (getIs401Error(error) || getApiError(error).status === HTTP_STATUS_CODE.FORBIDDEN) {
                         // The session is gone (the API layer already tried to refresh it), or no longer allowed
-                        sendBack({ type: 'sso.device.failed', error });
+                        sendBack({ type: 'sso.device.failed', payload: { error } });
                     }
                     // Other errors are transient; polling continues.
                 },

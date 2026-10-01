@@ -10,9 +10,11 @@ import SSOConfirmationCode from './SSOConfirmationCode';
 interface Props {
     ssoData: SSODataTypes | undefined;
     onUseBackupPassword?: () => void;
+    /** The request was approved and the sign-in runs: the code shows it, in place of the ways out. */
+    signingIn?: boolean;
 }
 
-const SSOAdminDeviceConfirmation2 = ({ ssoData, onUseBackupPassword }: Props) => {
+const SSOAdminDeviceConfirmation2 = ({ ssoData, onUseBackupPassword, signingIn = false }: Props) => {
     const text = (() => {
         if (!ssoData || ssoData.type === 'setup' || ssoData.type === 'set-password') {
             return '';
@@ -30,19 +32,27 @@ const SSOAdminDeviceConfirmation2 = ({ ssoData, onUseBackupPassword }: Props) =>
     return (
         <div>
             <Text>{text}</Text>
-            <SSOConfirmationCode ssoData={ssoData} />
-            {onUseBackupPassword && (
-                <Button
-                    size="large"
-                    shape="outline"
-                    color="weak"
-                    type="button"
-                    fullWidth
-                    className="mt-6"
-                    onClick={onUseBackupPassword}
-                >
-                    {c('sso').t`Use backup password instead`}
+            <SSOConfirmationCode ssoData={ssoData} approved={signingIn} />
+            {signingIn ? (
+                <Button size="large" color="norm" fullWidth loading className="mt-6">
+                    {c('sso').t`Signing in`}
                 </Button>
+            ) : (
+                <>
+                    {onUseBackupPassword && (
+                        <Button
+                            size="large"
+                            shape="outline"
+                            color="weak"
+                            type="button"
+                            fullWidth
+                            className="mt-6"
+                            onClick={onUseBackupPassword}
+                        >
+                            {c('sso').t`Use backup password instead`}
+                        </Button>
+                    )}
+                </>
             )}
         </div>
     );

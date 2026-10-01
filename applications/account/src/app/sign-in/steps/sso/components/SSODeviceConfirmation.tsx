@@ -13,9 +13,11 @@ interface Props {
     ssoData: SSODataTypes | undefined;
     onUseBackupPassword?: () => void;
     onAskAdminHelp?: () => void;
+    /** The request was approved and the sign-in runs: the code shows it, in place of the ways out. */
+    signingIn?: boolean;
 }
 
-const SSODeviceConfirmation = ({ ssoData, onAskAdminHelp, onUseBackupPassword }: Props) => {
+const SSODeviceConfirmation = ({ ssoData, onAskAdminHelp, onUseBackupPassword, signingIn = false }: Props) => {
     const authDevices = ssoData?.authDevices || [];
 
     const email = (() => {
@@ -33,46 +35,54 @@ const SSODeviceConfirmation = ({ ssoData, onAskAdminHelp, onUseBackupPassword }:
                         .t`To make sure it's really you trying to sign in to **${email}**, review the confirmation code and approve the request from another device.`
                 )}
             </Text>
-            <SSOConfirmationCode ssoData={ssoData} />
-            {authDevices.length > 0 && (
-                <div className="mt-4 flex overflow-hidden">
-                    <div>{c('sso').t`Devices available`}</div>
-                    <div className="w-full max-h-custom" style={{ '--max-h-custom': '10em' }}>
-                        <Scroll>
-                            <div className="rounded border border-weak flex flex-column divide-y divide-weak">
-                                {authDevices.map((authDevice) => (
-                                    <AuthDeviceItem key={authDevice.ID} authDevice={authDevice} />
-                                ))}
+            <SSOConfirmationCode ssoData={ssoData} approved={signingIn} />
+            {signingIn ? (
+                <Button size="large" color="norm" fullWidth loading className="mt-6">
+                    {c('sso').t`Signing in`}
+                </Button>
+            ) : (
+                <>
+                    {authDevices.length > 0 && (
+                        <div className="mt-4 flex overflow-hidden">
+                            <div>{c('sso').t`Devices available`}</div>
+                            <div className="w-full max-h-custom" style={{ '--max-h-custom': '10em' }}>
+                                <Scroll>
+                                    <div className="rounded border border-weak flex flex-column divide-y divide-weak">
+                                        {authDevices.map((authDevice) => (
+                                            <AuthDeviceItem key={authDevice.ID} authDevice={authDevice} />
+                                        ))}
+                                    </div>
+                                </Scroll>
                             </div>
-                        </Scroll>
-                    </div>
-                </div>
-            )}
-            {onUseBackupPassword && (
-                <Button
-                    size="large"
-                    shape="outline"
-                    color="weak"
-                    type="button"
-                    fullWidth
-                    className="mt-6"
-                    onClick={onUseBackupPassword}
-                >
-                    {c('sso').t`Use backup password instead`}
-                </Button>
-            )}
-            {onAskAdminHelp && (
-                <Button
-                    size="large"
-                    shape="ghost"
-                    color="norm"
-                    type="button"
-                    fullWidth
-                    className="mt-2"
-                    onClick={onAskAdminHelp}
-                >
-                    {c('sso').t`Ask administrator for help`}
-                </Button>
+                        </div>
+                    )}
+                    {onUseBackupPassword && (
+                        <Button
+                            size="large"
+                            shape="outline"
+                            color="weak"
+                            type="button"
+                            fullWidth
+                            className="mt-6"
+                            onClick={onUseBackupPassword}
+                        >
+                            {c('sso').t`Use backup password instead`}
+                        </Button>
+                    )}
+                    {onAskAdminHelp && (
+                        <Button
+                            size="large"
+                            shape="ghost"
+                            color="norm"
+                            type="button"
+                            fullWidth
+                            className="mt-2"
+                            onClick={onAskAdminHelp}
+                        >
+                            {c('sso').t`Ask administrator for help`}
+                        </Button>
+                    )}
+                </>
             )}
         </div>
     );

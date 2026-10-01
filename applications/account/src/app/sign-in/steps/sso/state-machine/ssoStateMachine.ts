@@ -1,7 +1,8 @@
 /**
  * The SSO account flow: after an SSO sign-in, the sign-in machine runs this as a child with the auth state. It loads
  * the account and signs in directly when the device can unlock the keys; otherwise the SSO steps: device approval,
- * the backup password and key setup. It completes the sign-in itself and ends with a result.
+ * the backup password and key setup. It completes the sign-in itself, then waits on its last screen, loading, until
+ * the app takes the sign-in away (`handedOver`); it only ends, with a result, when cancelled or failed.
  * Each screen sets `screen`; the work states keep it, so the screen stays up while a request runs. Capabilities
  * from the SSO intent decide which ways out exist.
  */
@@ -32,6 +33,7 @@ import {
     type AccountFlowInput,
     type AccountFlowResult,
     failAccountFlow,
+    failAccountFlowOnReport,
     retryOnWrongPassword,
 } from '../../../state-machine/accountFlow';
 import {
@@ -44,7 +46,7 @@ import type { SignInAuthState } from '../../../state-machine/signInAuthState';
 import { getJoinOrganization } from './joinOrganization';
 import type { SSOActors } from './ssoActors';
 
-export type SSOScreen =
+type SSOScreen =
     | 'setupKeys'
     | 'otherDevices'
     | 'askAdmin'
@@ -53,14 +55,16 @@ export type SSOScreen =
     | 'firstLoginAfterConversion'
     | 'rejected'
     | 'adminGranted'
-    | 'newBackupPassword';
+    | 'newBackupPassword'
+    /** The new backup password when the organization disabled them: a confirmation, which brings its own heading. */
+    | 'accessGranted';
 
 /** Sent by `waitForDeviceApproval` when another device or an administrator answers the sign-in request. */
 export type SSODeviceEvent =
     | { type: 'sso.device.approved'; payload: { deviceSecretUser: DeviceSecretUser } }
     | { type: 'sso.device.rejected' }
     /** The sign-in's session ended (a 401 its refresh couldn't fix) or was refused (a 403): the attempt ends. */
-    | { type: 'sso.device.failed'; error: unknown };
+    | { type: 'sso.device.failed'; payload: { error: unknown } };
 
 type SSOEvent =
     | { type: 'sso.setup.submitted'; payload: { password: string | null } }
@@ -105,8 +109,8 @@ export interface ChangeBackupPasswordInput extends SSOInput {
 type SSOLogo = SSODataTypes['organizationData']['logo'];
 
 /**
- * Holds the organization logo loaded with the SSO data and frees its object URL when the SSO steps stop, however they
- * end: signed in, cancelled, failed, or the page unmounting.
+ * Holds the organization logo loaded with the SSO data and frees its object URL when the SSO steps stop: cancelled,
+ * failed, or the page unmounting, which is also when a signed-in flow stops.
  */
 const holdSSOLogo = fromCallback<EventObject, SSOLogo>(
     ({ input }) =>
@@ -126,6 +130,9 @@ const canUseBackupPassword = {
  */
 const blockWaysOut = { 'decision.back': {}, 'sso.adminHelp.requested': {}, 'sso.backupPassword.requested': {} };
 
+/** Back leaves the SSO steps, and the sign-in goes back to the credentials form. */
+const leaveSSO = { target: '#sso.cancelled' };
+
 /** Back from an SSO screen returns to where the member could choose it, or leaves the SSO steps. */
 const backWithinSSO = [
     {
@@ -139,7 +146,7 @@ const backWithinSSO = [
         },
         target: '#sso.waysIn.firstLoginAfterConversion',
     },
-    { target: '#sso.cancelled' },
+    leaveSSO,
 ];
 
 /** Asking the administrator for help, when allowed; once they got the request, it waits for their approval again. */
@@ -190,6 +197,9 @@ export const selectBackupPasswordDisabled = ({ context }: { context: SSOMachineC
     getBackupPasswordDisabled(context.auth.credentials.authResponse);
 
 export const selectSSOData = ({ context }: { context: SSOMachineContext }) => context.ssoData;
+
+/** The screen that shows; the work states keep the last one up. */
+export const selectScreen = ({ context }: { context: SSOMachineContext }) => context.screen;
 
 /** The organization the member joins and the name they join as; select it with `shallowEqual`. */
 export const selectJoinOrganization = ({ context }: { context: SSOMachineContext }) =>
@@ -276,7 +286,10 @@ const ssoSetup = setup({
     },
 });
 
-/** A screen that waits for another device or an administrator to approve the sign-in, polling until they answer. */
+/**
+ * Waits for another device or an administrator to approve the sign-in, polling until they answer; a child of the
+ * screen that asks for the approval, which holds the ways out.
+ */
 const waitForApproval = ssoSetup.createStateConfig({
     initial: 'polling',
     states: {
@@ -289,7 +302,7 @@ const waitForApproval = ssoSetup.createStateConfig({
             on: {
                 'sso.device.approved': { target: 'confirming' },
                 'sso.device.rejected': { target: '#sso.rejected' },
-                'sso.device.failed': failAccountFlow,
+                'sso.device.failed': failAccountFlowOnReport,
             },
         },
         /** Signs in with the approved device; the screen stays, and its ways out are ignored. */
@@ -307,7 +320,7 @@ const waitForApproval = ssoSetup.createStateConfig({
                     };
                 },
                 onDone: routeSignInResult,
-                // Without polling again, like main: the next poll would find the same approval and fail the same way
+                // Without polling again: the next poll would find the same approval and fail the same way
                 onError: { target: 'confirmationFailed', actions: reportActorError },
             },
         },
@@ -328,9 +341,7 @@ export const ssoStateMachine = ssoSetup.createMachine({
         result: undefined,
     }),
     output: ({ context }) => context.result ?? { type: 'cancelled' },
-    on: {
-        'decision.back': { target: '.cancelled' },
-    },
+    // Back is each screen's: a state that doesn't handle it ignores it
     states: {
         loadingAccount: {
             tags: [SSOStateMachineTags.submitting],
@@ -382,6 +393,9 @@ export const ssoStateMachine = ssoSetup.createMachine({
         /** First sign-in of a member without keys: set them up, with a backup password unless disabled. */
         setupKeys: {
             entry: { type: 'setScreen', params: { screen: 'setupKeys' } },
+            on: {
+                'decision.back': leaveSSO,
+            },
             initial: 'idle',
             states: {
                 idle: {
@@ -433,10 +447,14 @@ export const ssoStateMachine = ssoSetup.createMachine({
                 /** Approve the sign-in from another signed-in device. */
                 otherDevices: {
                     entry: { type: 'setScreen', params: { screen: 'otherDevices' } },
-                    ...waitForApproval,
                     on: {
                         'sso.backupPassword.requested': toBackupPassword,
                         'sso.adminHelp.requested': askAdminHelp,
+                        'decision.back': leaveSSO,
+                    },
+                    initial: 'approval',
+                    states: {
+                        approval: waitForApproval,
                     },
                 },
 
@@ -476,10 +494,13 @@ export const ssoStateMachine = ssoSetup.createMachine({
                 /** The administrator got the request; share the confirmation code and wait for the approval. */
                 adminConfirmationCode: {
                     entry: { type: 'setScreen', params: { screen: 'adminConfirmationCode' } },
-                    ...waitForApproval,
                     on: {
                         'sso.backupPassword.requested': toBackupPassword,
                         'decision.back': backWithinSSO,
+                    },
+                    initial: 'approval',
+                    states: {
+                        approval: waitForApproval,
                     },
                 },
 
@@ -488,6 +509,7 @@ export const ssoStateMachine = ssoSetup.createMachine({
                     entry: { type: 'setScreen', params: { screen: 'firstLoginAfterConversion' } },
                     on: {
                         'sso.continued': { target: '#sso.backupPassword' },
+                        'decision.back': leaveSSO,
                     },
                 },
 
@@ -500,6 +522,9 @@ export const ssoStateMachine = ssoSetup.createMachine({
 
         rejected: {
             entry: { type: 'setScreen', params: { screen: 'rejected' } },
+            on: {
+                'decision.back': leaveSSO,
+            },
         },
 
         backupPassword: {
@@ -551,11 +576,22 @@ export const ssoStateMachine = ssoSetup.createMachine({
             entry: { type: 'setScreen', params: { screen: 'adminGranted' } },
             on: {
                 'sso.continued': { target: 'newBackupPassword' },
+                'decision.back': leaveSSO,
             },
         },
         /** Set a backup password, or just continue when the organization disabled it. */
         newBackupPassword: {
-            entry: { type: 'setScreen', params: { screen: 'newBackupPassword' } },
+            entry: {
+                type: 'setScreen',
+                params: ({ context }) => ({
+                    screen: getBackupPasswordDisabled(context.auth.credentials.authResponse)
+                        ? 'accessGranted'
+                        : 'newBackupPassword',
+                }),
+            },
+            on: {
+                'decision.back': leaveSSO,
+            },
             initial: 'idle',
             states: {
                 idle: {
@@ -587,22 +623,26 @@ export const ssoStateMachine = ssoSetup.createMachine({
             },
         },
 
-        /** Hands the session to the app; the current screen stays up with its loading state, and its ways out are ignored. */
+        /**
+         * Hands the session to the app; the current screen stays up with its loading state. It handles none of the
+         * screen's ways out, so they're ignored.
+         */
         completing: {
             tags: [SSOStateMachineTags.submitting],
-            on: blockWaysOut,
             invoke: {
                 src: 'completeSignIn',
                 input: ({ context }) => ({ session: context.session }),
-                onDone: {
-                    target: 'signedIn',
-                    actions: { type: 'setResult', params: { result: { type: 'signedIn' } } },
-                },
+                onDone: { target: 'handedOver' },
                 onError: failAccountFlow,
             },
         },
-        signedIn: {
-            type: 'final',
+
+        /**
+         * The app has the session. The screen stays up, loading, until the app takes the sign-in away (see the
+         * password account flow's `handedOver`); like `completing`, it ignores the screen's ways out.
+         */
+        handedOver: {
+            tags: [SSOStateMachineTags.submitting],
         },
         cancelled: {
             type: 'final',
@@ -615,6 +655,7 @@ export const ssoStateMachine = ssoSetup.createMachine({
     },
 });
 
+type SSOSnapshot = SnapshotFrom<typeof ssoStateMachine>;
+
 /** A request runs; the screen shows its loading state. */
-export const selectSubmitting = (snapshot: SnapshotFrom<typeof ssoStateMachine>) =>
-    snapshot.hasTag(SSOStateMachineTags.submitting);
+export const selectSubmitting = (snapshot: SSOSnapshot) => snapshot.hasTag(SSOStateMachineTags.submitting);
