@@ -975,6 +975,12 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Адбылася ўцечка вашых асабістых звестак са старонняга сэрвісу."
+      ],
+      "Change these passwords immediately": [
+        "Неадкладна змяніце гэтыя паролі"
+      ],
+      "Check if your passwords have been exposed": [
+        "Праверце, ці быў скампраментаваны ваш пароль"
       ]
     },
     "Email": {
@@ -1510,6 +1516,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
+      ],
+      "Folder name does not match": [
+        "Назва папкі не супадае"
+      ],
+      "Incorrect backup password. Please try again.": [
+        "Няправільны рэзервовы пароль. Паўтарыце спробу."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Няправільны другі пароль. Паўтарыце спробу."
+      ],
+      "This invite is no longer available": [
+        "Гэта запрашэнне больш недаступна"
       ]
     },
     "Error message": {
@@ -2310,10 +2328,7 @@
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -3082,6 +3097,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Папка \"${ payload.folder.name }\" створана"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Папка перайменавана на \"${ payload.folder.name }\""
       ]
     },
     "Keyboard key": {
@@ -4337,6 +4358,9 @@
       ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
+      ],
+      "Add a payment method": [
+        "Дадаць спосаб аплаты"
       ]
     },
     "Link": {
@@ -4692,6 +4716,9 @@
       ],
       "URL matches the rule": [
         "URL-адрас адправядае правілу"
+      ],
+      "URL doesn't match the rule": [
+        "URL-адрас не адпавядае правілу"
       ]
     },
     "Security Center - Info": {
@@ -5447,6 +5474,30 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ],
+      "Create folder in \"${ vaultName }\"": [
+        "Стварыць папку ў \"${ vaultName }\""
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Стварыць падпапку ў \"${ folderName }\""
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Выдаліць папку “${ name }\"?"
+      ],
+      "Keep your subscription active": [
+        "Падтрымлівайце падпіску ў актыўным стане"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "Перамясціць ${ count } элемент у ${ target }",
+        "Перамясціць ${ count } элементы ў ${ target }",
+        "Перамясціць ${ count } элементаў у ${ target }",
+        "Перамясціць ${ count } элементаў у ${ target }"
+      ],
+      "Move item to \"${ target }\"": [
+        "Перамясціць элемент у \"${ target }\""
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Палепшыце, каб праверыць скампраметаваныя паролі"
       ]
     },
     "Title_cloned_item": {
@@ -5813,6 +5864,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Дасягнуты максімальны ўзровень укладзеных папак"
       ]
     }
   }
