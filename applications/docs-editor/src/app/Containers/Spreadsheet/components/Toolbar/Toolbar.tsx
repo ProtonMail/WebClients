@@ -308,21 +308,32 @@ function TextColor() {
   const mounted = Ariakit.useStoreState(popover, 'mounted')
   const color = useUI((ui) => ui.format.text.color.value)
   const theme = useUI((ui) => ui.legacy.theme)
-  const colorString = getStringifiedColor(color, theme)
+  const lastUsedColor = useUI((ui) => ui.format.text.color.lastUsed)
+  const colorString = getStringifiedColor(lastUsedColor, theme)
   const onChange = useUI.$.format.text.color.set
   return (
     <Ariakit.PopoverProvider store={popover}>
-      <Ariakit.PopoverDisclosure
-        render={
-          <T.Item
-            icon={Icons.textColor}
-            style={{ '--selected-color': colorString }}
-            disabled={useUI((ui) => ui.info.isReadonly)}
-          >
-            {s('Text color')}
-          </T.Item>
-        }
-      />
+      <div className="flex">
+        <T.Item
+          icon={Icons.textColor}
+          style={{ '--selected-color': colorString }}
+          onClick={() => onChange(lastUsedColor)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          {s('Apply text color')}
+        </T.Item>
+        <Ariakit.PopoverDisclosure
+          render={
+            <T.Item
+              className="w-[1rem] !px-0"
+              icon={Icons.chevronDownFilled}
+              disabled={useUI((ui) => ui.info.isReadonly)}
+            >
+              {s('Choose text color')}
+            </T.Item>
+          }
+        />
+      </div>
       {mounted && (
         <Atoms.DropdownPopover {...Atoms.DROPDOWN_POPOVER_DEFAULTS} className="p-2" render={<Ariakit.Popover />}>
           <ColorPicker selectedColor={color} onChange={onChange} />
@@ -337,22 +348,32 @@ function FillColor() {
   const mounted = Ariakit.useStoreState(popover, 'mounted')
   const color = useUI((ui) => ui.format.backgroundColor.value)
   const theme = useUI((ui) => ui.legacy.theme)
-  const colorString = getStringifiedColor(color, theme)
+  const lastUsedColor = useUI((ui) => ui.format.backgroundColor.lastUsed)
+  const colorString = getStringifiedColor(lastUsedColor, theme)
   const onChange = useUI.$.format.backgroundColor.set
   return (
     <Ariakit.PopoverProvider store={popover}>
-      <Ariakit.PopoverDisclosure
-        render={
-          <T.Item
-            icon={Icons.bucketColor}
-            style={{ '--selected-color': colorString }}
-            dropdownIndicator
-            disabled={useUI((ui) => ui.info.isReadonly)}
-          >
-            {s('Fill color')}
-          </T.Item>
-        }
-      />
+      <div className="flex">
+        <T.Item
+          icon={Icons.bucketColor}
+          style={{ '--selected-color': colorString }}
+          onClick={() => onChange(lastUsedColor)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          {s('Apply fill color')}
+        </T.Item>
+        <Ariakit.PopoverDisclosure
+          render={
+            <T.Item
+              className="w-[1rem] !px-0"
+              icon={Icons.chevronDownFilled}
+              disabled={useUI((ui) => ui.info.isReadonly)}
+            >
+              {s('Choose fill color')}
+            </T.Item>
+          }
+        />
+      </div>
       {mounted && (
         <Atoms.DropdownPopover {...Atoms.DROPDOWN_POPOVER_DEFAULTS} className="p-2" render={<Ariakit.Popover />}>
           <ColorPicker selectedColor={color} onChange={onChange} />
@@ -367,18 +388,32 @@ function BorderSelector() {
   const mounted = Ariakit.useStoreState(popover, 'mounted')
   const theme = useUI((ui) => ui.legacy.theme)
   const borders = useUI((ui) => ui.format.borders.value)
+  const lastUsedBorder = useUI((ui) => ui.format.borders.lastUsed)
   const onChange = useUI.$.format.borders.set
   const [color, setColor] = useState<Color>()
   const [style, setStyle] = useState<BorderStyle>('solid')
   return (
     <Ariakit.PopoverProvider store={popover}>
-      <Ariakit.PopoverDisclosure
-        render={
-          <T.Item icon={Icons.layoutGrid} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
-            {s('Border')}
-          </T.Item>
-        }
-      />
+      <div className="flex">
+        <T.Item
+          icon={Icons.layoutGrid}
+          onClick={() => onChange(lastUsedBorder.location, lastUsedBorder.color, lastUsedBorder.style)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          {s('Apply border')}
+        </T.Item>
+        <Ariakit.PopoverDisclosure
+          render={
+            <T.Item
+              className="w-[1rem] !px-0"
+              icon={Icons.chevronDownFilled}
+              disabled={useUI((ui) => ui.info.isReadonly)}
+            >
+              {s('Choose border')}
+            </T.Item>
+          }
+        />
+      </div>
       {mounted && (
         <Atoms.DropdownPopover
           {...Atoms.DROPDOWN_POPOVER_DEFAULTS}
@@ -624,9 +659,12 @@ function strings() {
     'Increase decimal places': c('sheets_2025:Spreadsheet editor toolbar').t`Increase decimal places`,
     'More formats': c('sheets_2025:Spreadsheet editor toolbar').t`More formats`,
     Font: c('sheets_2025:Spreadsheet editor toolbar').t`Font`,
-    'Text color': c('sheets_2025:Spreadsheet editor toolbar').t`Text color`,
-    'Fill color': c('sheets_2025:Spreadsheet editor toolbar').t`Fill color`,
-    Border: c('sheets_2025:Spreadsheet editor toolbar').t`Border`,
+    'Apply text color': c('sheets_2025:Spreadsheet editor toolbar').t`Apply text color`,
+    'Choose text color': c('sheets_2025:Spreadsheet editor toolbar').t`Choose text color`,
+    'Apply fill color': c('sheets_2025:Spreadsheet editor toolbar').t`Apply fill color`,
+    'Choose fill color': c('sheets_2025:Spreadsheet editor toolbar').t`Choose fill color`,
+    'Apply border': c('sheets_2025:Spreadsheet editor toolbar').t`Apply border`,
+    'Choose border': c('sheets_2025:Spreadsheet editor toolbar').t`Choose border`,
     'Merge cells': c('sheets_2025:Spreadsheet editor toolbar').t`Merge cells`,
     'Unmerge cells': c('sheets_2025:Spreadsheet editor toolbar').t`Unmerge cells`,
     'Select merge type': c('sheets_2025:Spreadsheet editor toolbar').t`Select merge type`,
