@@ -17,7 +17,7 @@ import { useEvent } from '~/utils/misc'
 import { useHomepageView } from '../../../__utils/homepage-view'
 import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
 import { DeletePermanentlyButton } from './buttons/DeletePermanently'
-import { useLoadRecentsWithSdkEnabled, useSharingModalDriveSdkEnabled, useTrashWithSDK } from '~/utils/flags'
+import { useLoadRecentsWithSdkEnabled, useTrashWithSDK } from '~/utils/flags'
 import { MemberRole } from '@proton/drive'
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
@@ -116,20 +116,18 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
 }
 
 function useCanShare(currentDocument: RecentDocumentsItem | undefined) {
-  const sdkSharingModalEnabled = useSharingModalDriveSdkEnabled()
   const loadRecentsWithSdkEnabled = useLoadRecentsWithSdkEnabled()
 
   if (!currentDocument) {
     return false
   }
 
-  if (sdkSharingModalEnabled) {
-    if (loadRecentsWithSdkEnabled) {
-      return currentDocument.effectiveRole === MemberRole.Admin
-    } else if (currentDocument.permissions) {
-      return rawPermissionToRole(currentDocument.permissions).canShare()
-    }
+  if (loadRecentsWithSdkEnabled) {
+    return currentDocument.effectiveRole === MemberRole.Admin
+  } else if (currentDocument.permissions) {
+    return rawPermissionToRole(currentDocument.permissions).canShare()
   }
+
   return !currentDocument.isSharedWithMe
 }
 
