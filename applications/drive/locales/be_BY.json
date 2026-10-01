@@ -309,9 +309,6 @@
       "Create folder": [
         "Стварыць папку"
       ],
-      "Create new folder": [
-        "Стварыць новую папку"
-      ],
       "Create new password": [
         "Стварыць новы пароль"
       ],
@@ -3462,9 +3459,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "Пры справаздачы аб парушэнні аўтарскіх правоў або крадзяжы даных вы павінны пакінуць паведамленне"
       ],
-      "A problem occurred, please try again.": [
-        "Узнікла праблема. Паўтарыце спробу."
-      ],
       "Address could not be added.": [
         "Немагчыма дадаць адрас."
       ],
@@ -3545,12 +3539,6 @@
       ],
       "Contact signature not verified": [
         "Подпіс кантакту неправераны"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Немагчыма ўключыць пошук змесціва ў гэтым браўзеры. Выйдзіце з рэжыму прыватнага прагляду або скарыстайцеся іншым браўзерам."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Пошук па кантэксце не можа быць уключаны. Перазапусціце праграму або ачысціце яе даныя."
       ],
       "Copy operation aborted": [
         "Аперацыя капіявання перарвана"
@@ -3662,9 +3650,6 @@
       ],
       "Failed to change permissions settings": [
         "Не ўдалося змяніць налады дазволаў"
-      ],
-      "Failed to copy photo to album": [
-        "Не ўдалося скапіяваць фатаграфію ў альбом"
       ],
       "Failed to create folder": [
         "Не ўдалося стварыць папку"
@@ -3947,9 +3932,6 @@
       ],
       "Photo not found": [
         "Фатаграфія не знойдзена"
-      ],
-      "Please activate your search again": [
-        "Актывуйце пошук яшчэ раз"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Праверце, ці зарэгістраваны ваш ABN для трансгранічнага ПДВ"
@@ -4770,6 +4752,9 @@
       ],
       "Still waiting?": [
         "Усё яшчэ чакаеце?"
+      ],
+      "Touch your security key to continue.": [
+        "Дакраніцеся да свайго ключа бяспекі, каб працягнуць."
       ]
     },
     "fido2: Label": {
@@ -5825,14 +5810,8 @@
       "Clear data": [
         "Ачысціць даныя"
       ],
-      "Clear encrypted search data": [
-        "Ачысціць зашыфраваныя даныя пошуку"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Ачыстка даных браўзера таксама ачысціць індэкс пошуку на гэтай прыладзе. Неабходна будзе зрабіць паўторную індэксацыю ўсіх файлаў выкарыстоўваючы функцыянальнасць пошуку."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Ачышчае даныя браўзера, якія звязаны з зашыфраваным пошукам."
       ],
       "Clears browser data related to the search.": [
         "Ачышчае даныя браўзера, якія звязаны з пошукам."
@@ -6029,9 +6008,6 @@
       "Enabling drive search": [
         "Уключэнне пошуку на дыску"
       ],
-      "Encrypted search is here": [
-        "Зашыфраваны пошук тут"
-      ],
       "End-to-end encrypted": [
         "Зашыфравана скразным метадам"
       ],
@@ -6061,18 +6037,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Увядзіце свой пароль (як давераны кантакт)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Прыблізна засталося часу: ${ estimatedMinutes } хвіліна",
-        "Прыблізна засталося часу: ${ estimatedMinutes } хвіліны",
-        "Прыблізна засталося часу: ${ estimatedMinutes } хвілін",
-        "Прыблізна засталося часу: ${ estimatedMinutes } хвілін"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Прыблізна засталося часу: менш за хвіліну"
-      ],
-      "Estimating time remaining...": [
-        "Прыблізна засталося часу..."
       ],
       "Everything in ${ planOrAppName }": [
         "Усё, што ўваходзіць у ${ planOrAppName }"
@@ -6158,9 +6122,6 @@
       "High Priority": [
         "Высокі прыярытэт"
       ],
-      "How does encrypted search work?": [
-        "Як працуе зашыфраваны пошук?"
-      ],
       "I have not finished this one yet.": [
         "Я яшчэ не завяршыў гэта."
       ],
@@ -6215,6 +6176,9 @@
       "Import mailbox": [
         "Імпартаванне паштовай скрыні"
       ],
+      "Import your files and folders": [
+        "Імпарт вашых файлаў і папак"
+      ],
       "Important note": [
         "Важная заўвага"
       ],
@@ -6253,12 +6217,6 @@
       ],
       "Indexing in progress": [
         "Выконваецца індэксацыя"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Індэксаванне элементаў. Праіндэксавана: ${ esProgress } з ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Індэксацыя вынікаў пошуку…"
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
@@ -6445,9 +6403,6 @@
         "Перамясціць ${ folderCount } папкі",
         "Перамясціць ${ folderCount } папак",
         "Перамясціць ${ folderCount } папак"
-      ],
-      "Moving files": [
-        "Перамяшчэнне файлаў"
       ],
       "My Links": [
         "Мае спасылкі"
@@ -6707,9 +6662,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Прыватны прагляд вэб-старонак (або рэжым \"інкогніта\") карысны толькі для хавання актыўнасці на вашай прыладзе. Браўзер не будзе захоўваць гісторыю і файлы cookie, але гэта не робіць вас нябачным. Ваш пастаўшчык паслуг інтэрнэту, сеткавы адміністратар і вэб-сайты ўсё яшчэ могуць бачыць, што вы робіце ў інтэрнэце."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Прыватны пошук уключаны. Цяпер вы можаце закрыць гэта дыялогавае акно і шукаць у файлах і папках."
-      ],
       "Public link": [
         "Публічная спасылка"
       ],
@@ -6778,9 +6730,6 @@
       ],
       "Scan to download": [
         "Сканіраваць і спампаваць"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Немагчыма ўключыць пошук у гэтым браўзеры"
       ],
       "Search data can't be read": [
         "Немагчыма прачытаць даныя пошуку"
@@ -7082,9 +7031,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "${ DRIVE_APP_NAME } неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук."
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Неабходна лакальна праіндэксаваць вашы файлы для таго, каб задзейнічаць сапраўды прыватны пошук. Вы можаце выкарыстоўваць ${ DRIVE_APP_NAME } у звычайным рэжыме. Вам будзе адпраўлена апавяшчэнне, калі індэксацыя будзе завершана."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
@@ -7183,9 +7129,6 @@
       ],
       "Update required": [
         "Патрабуецца абнаўленне"
-      ],
-      "Updating drive search...": [
-        "Абнаўленне пошуку на дыску..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Палепшыце ў любы час, каб перанесці астатняе"
@@ -8296,9 +8239,6 @@
       "Shared with me": [
         "Абагулена са мной"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "Паказаць ход выканання індэксацыі зашыфраванага пошуку"
-      ],
       "Sign emails": [
         "Падпісваць лісты"
       ],
@@ -8364,9 +8304,6 @@
       ],
       "Toolbar": [
         "Панэль інструментаў"
-      ],
-      "Type": [
-        "Тып"
       ],
       "Unlock drive": [
         "Разблакіраваць дыск"
@@ -10137,35 +10074,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" паспяхова створаны"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" выдалены"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "\"${ ellipsedName }\" незваротна выдалены са сметніцы"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "Не ўдалося стварыць \"${ ellipsedName }\""
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "Не ўдалося выдаліць \"${ ellipsedName }\""
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "Не ўдалося незваротна выдаліць са сметніцы \"${ ellipsedName }\""
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "Не ўдалося перамясціць \"${ ellipsedName }\""
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "Не ўдалося аднавіць са сметніцы \"${ ellipsedName }\""
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" перамешчаны"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "\"${ ellipsedName }\" адноўлены са сметніцы"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" паспяхова перамешчаны"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" абагулены"
@@ -10227,12 +10143,6 @@
         "${ numberOfItems } элементаў скапіяваны",
         "${ numberOfItems } элементаў скапіяваны"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } элемент выдалены",
-        "${ numberOfItems } элементы выдалены",
-        "${ numberOfItems } элементаў выдалена",
-        "${ numberOfItems } элементаў выдалена"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } элемент выдалены незваротна",
         "${ numberOfItems } элементы выдалены незваротна",
@@ -10245,29 +10155,11 @@
         "${ numberOfItems } элементаў незваротна выдалены са сметніцы",
         "${ numberOfItems } элементы незваротна выдалены са сметніцы"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элемент",
-        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элементы",
-        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элементаў",
-        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элементы"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "Не ўдалося перамясціць ${ numberOfItems } элемент",
-        "Не ўдалося перамясціць ${ numberOfItems } элементы",
-        "Не ўдалося перамясціць ${ numberOfItems } элементаў",
-        "Не ўдалося перамясціць ${ numberOfItems } элементаў"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элемент",
         "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элементы",
         "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элементаў",
         "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элементы"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элемент",
-        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементы",
-        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементаў",
-        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементы"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } элемент перамешчаны",
@@ -10286,12 +10178,6 @@
         "${ numberOfItems } элементы адноўлены са сметніцы",
         "${ numberOfItems } элементаў адноўлены са сметніцы",
         "${ numberOfItems } элементы адноўлены са сметніцы"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } элемент паспяхова перамешчаны",
-        "${ numberOfItems } элементы паспяхова перамешчаны",
-        "${ numberOfItems } элементаў паспяхова перамешчаны",
-        "${ numberOfItems } элементаў паспяхова перамешчаны"
       ],
       "${ reason } has been disabled": [
         "${ reason } быў адключаны"
@@ -10314,9 +10200,6 @@
       "All items deleted permanently from trash": [
         "Усе элементы незваротна выдалены са сметніцы"
       ],
-      "Cannot load link": [
-        "Немагчыма загрузіць спасылку"
-      ],
       "Cannot load next page": [
         "Немагчыма загрузіць наступную старонку"
       ],
@@ -10329,20 +10212,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Копія \"${ ellipsedName }\" перамешчана ў сметніцу"
       ],
-      "Device failed to be removed": [
-        "Не ўдалося выдаліць прыладу"
-      ],
-      "Device failed to be renamed": [
-        "Не ўдалося перайменаваць прыладу"
-      ],
       "Device removed": [
         "Прылада выдалена"
       ],
       "Device renamed": [
         "Прылада перайменавана"
-      ],
-      "Encrypted search activated": [
-        "Актываваны зашыфраваны пошук"
       ],
       "Error while listing devices": [
         "Памылка пры пераліку прылад"
@@ -12290,12 +12164,6 @@
       ],
       "Editor permissions": [
         "Дазволы рэдактара"
-      ],
-      "Encrypted search is here": [
-        "Зашыфраваны пошук тут"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Зараз вы можаце лёгка шукаць файлы ў Drive, захоўваючы бяспеку даных."
       ]
     },
     "sso": {
@@ -13512,6 +13380,9 @@
       "Easy switch": [
         "Лёгкае пераход"
       ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch з Google Drive"
+      ],
       "Edit billing address": [
         "Рэдагаваць адрас аплаты"
       ],
@@ -14377,6 +14248,30 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Атрымаць ${ discount }% скідку на ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 TB of storage to share": [
+        "2 ТБ сховішча для абагульвання"
+      ],
+      "2 user accounts": [
+        "2 уліковыя запісы карыстальніка"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
       ]
     },
     "Unlimited offer": {

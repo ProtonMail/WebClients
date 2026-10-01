@@ -303,9 +303,6 @@
       "Create folder": [
         "Klasör oluştur"
       ],
-      "Create new folder": [
-        "Yeni klasör ekle"
-      ],
       "Create new password": [
         "Yeni parola oluştur"
       ],
@@ -3406,9 +3403,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "Telif hakkı ihlali veya çalıntı verileri bildirirken bir ileti yazılmalıdır"
       ],
-      "A problem occurred, please try again.": [
-        "Bir sorun çıktı. Lütfen yeniden deneyin."
-      ],
       "Address could not be added.": [
         "Adres eklenemedi."
       ],
@@ -3489,12 +3483,6 @@
       ],
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Bu tarayıcıda içerik arama özelliği açılamıyor. Lütfen gizli/özel pencereden çıkın ya da farklı bir tarayıcı deneyin."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "İçerik arama açılamadı. Lütfen uygulamayı yeniden başlatın ya da verileri temizleyin."
       ],
       "Copy operation aborted": [
         "Kopyalama işlemi iptal edildi"
@@ -3602,9 +3590,6 @@
       ],
       "Failed to change permissions settings": [
         "İzin ayarları değiştirilemedi"
-      ],
-      "Failed to copy photo to album": [
-        "Fotoğraf albüme kopyalanamadı"
       ],
       "Failed to create folder": [
         "Klasör oluşturulamadı."
@@ -3879,9 +3864,6 @@
       ],
       "Photo not found": [
         "Fotoğraf bulunamadı"
-      ],
-      "Please activate your search again": [
-        "Lütfen arama özelliğini yeniden açın"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Lütfen ABN numaranızın sınır ötesi KDV için kayıtlı olup olmadığını denetleyin"
@@ -5671,14 +5653,8 @@
       "Clear data": [
         "Verileri temizle"
       ],
-      "Clear encrypted search data": [
-        "Şifrelenmiş arama verilerini temizle"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Bu aygıtta tanımlama bilgilerinin temizlenmesi arama dizinini de siler. Silme sonrası arama özelliğini kullanabilmek tüm dosyalar yeniden dizine eklenmelidir."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Şifrelenmiş arama ile ilişkili tarayıcı verilerini temizler."
       ],
       "Clears browser data related to the search.": [
         "Arama ile ilgili tarayıcı verilerini temizler."
@@ -5873,9 +5849,6 @@
       "Enabling drive search": [
         "Drive arama özelliği açılıyor"
       ],
-      "Encrypted search is here": [
-        "Şifrelenmiş aramayı deneyimleyin"
-      ],
       "End-to-end encrypted": [
         "Uçtan uca şifrelenmiş"
       ],
@@ -5905,16 +5878,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Kendi parolanızı yazın (güvenilen kişi olarak)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Öngörülen kalan süre: ${ estimatedMinutes } dakika",
-        "Öngörülen kalan süre: ${ estimatedMinutes } dakika"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Öngörülen kalan süre: Bir dakikadan az"
-      ],
-      "Estimating time remaining...": [
-        "Kalan süre öngörülüyor..."
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName } özelliklerinin tümü"
@@ -5999,9 +5962,6 @@
       ],
       "High Priority": [
         "Yüksek öncelik"
-      ],
-      "How does encrypted search work?": [
-        "Şifrelenmiş arama nasıl çalışır?"
       ],
       "I have not finished this one yet.": [
         "Bunu henüz bitirmedim."
@@ -6096,12 +6056,6 @@
       ],
       "Indexing in progress": [
         "Dizine ekleme sürüyor"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "${ esProgress } / ${ totalProgressToShow } öge dizine ekleniyor"
-      ],
-      "Indexing search results…": [
-        "Arama sonuçları dizini oluşturuluyor…"
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
@@ -6283,9 +6237,6 @@
       "Move ${ folderCount } folder": [
         "${ folderCount } klasörü taşı",
         "${ folderCount } klasörü taşı"
-      ],
-      "Moving files": [
-        "Dosyalar taşınıyor"
       ],
       "My Links": [
         "Bağlantılarım"
@@ -6547,9 +6498,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Gizli gezinme (veya “gizli” kip) yalnızca aygıtınızda etkinliğinizin gizliliğini korumak için kullanışlıdır. Tarayıcınızın gezinme geçmişinizi ve tanımlama bilgilerini kaydetmesini engeller, ancak sizi görünmez yapmaz. İnternet hizmeti sağlayıcınız, ağ yöneticiniz ve ziyaret ettiğiniz siteler çevrim içi ortamda ne yaptığınızı görmeyi sürdürebilir."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Gizli arama özelliği açıldı. Bu pencereyi kapatarak dosya ve klasörlerde arama yapabilirsiniz."
-      ],
       "Public link": [
         "Herkese açık bağlantı"
       ],
@@ -6618,9 +6566,6 @@
       ],
       "Scan to download": [
         "İndirmek için tara"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Bu tarayıcıda arama özelliği açılamaz"
       ],
       "Search covers your recent items": [
         "Arama sonuçlarında, son ögeleriniz görüntülenir"
@@ -6922,9 +6867,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli."
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Gerçek gizliliği koruyan arama özelliğini açmak için yerel dizini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
@@ -7023,9 +6965,6 @@
       ],
       "Update required": [
         "Güncelleme gerekli"
-      ],
-      "Updating drive search...": [
-        "Drive araması güncelleniyor..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Geri kalanını getirmek için istediğiniz zaman tarifenizi yükseltebilirsiniz"
@@ -8121,9 +8060,6 @@
       "Shared with me": [
         "Benimle paylaşılanlar"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "Şifrelenmiş aramanın dizine ekleme işlemini görüntüle"
-      ],
       "Sign emails": [
         "E-postaları imzala"
       ],
@@ -8189,9 +8125,6 @@
       ],
       "Toolbar": [
         "Araç çubuğu"
-      ],
-      "Type": [
-        "Tür"
       ],
       "Unlock drive": [
         "Sürücünün kilidini aç"
@@ -9827,35 +9760,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" eklendi"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" silindi"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "\"${ ellipsedName }\" çöp kutusundan kalıcı olarak silindi"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "\"${ ellipsedName }\" oluşturulamadı"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "\"${ ellipsedName }\" silinemedi"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "\"${ ellipsedName }\" çöp kutusundan kalıcı olarak silinemedi"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "\"${ ellipsedName }\" taşınamadı"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\" çöpten çıkarılamadı"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" taşındı"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "\"${ ellipsedName }\" çöpten çıkarıldı"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" taşındı"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" paylaşıldı"
@@ -9903,10 +9815,6 @@
         "${ numberOfItems } öge kopyalandı",
         "${ numberOfItems } öge kopyalandı"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } öge silindi",
-        "${ numberOfItems } öge silindi"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } öge kalıcı olarak silindi",
         "${ numberOfItems } öge kalıcı olarak silindi"
@@ -9915,21 +9823,9 @@
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi",
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } öge çöp kutusundan kalıcı olarak silinemedi",
-        "${ numberOfItems } öge çöp kutusundan kalıcı olarak silinemedi"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } öge taşınamadı",
-        "${ numberOfItems } öge taşınamadı"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } öge çöpe atılamadı",
         "${ numberOfItems } öge çöpe atılamadı"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } öge çöpten çıkarılamadı",
-        "${ numberOfItems } öge çöpten çıkarılamadı"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } öge taşındı",
@@ -9942,10 +9838,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } öge çöpten çıkarıldı",
         "${ numberOfItems } öge çöpten çıkarıldı"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } öge taşındı",
-        "${ numberOfItems } öge taşındı"
       ],
       "${ reason } has been disabled": [
         "${ reason } kullanım dışı bırakıldı"
@@ -9966,9 +9858,6 @@
       "All items deleted permanently from trash": [
         "Tüm ögeler çöp kutusundan kalıcı olarak silindi"
       ],
-      "Cannot load link": [
-        "Bağlantı yüklenemedi"
-      ],
       "Cannot load next page": [
         "Sonraki sayfa yüklenemedi"
       ],
@@ -9981,20 +9870,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "\"${ ellipsedName }\" kopyası çöpe atıldı"
       ],
-      "Device failed to be removed": [
-        "Aygıt kaldırılamadı"
-      ],
-      "Device failed to be renamed": [
-        "Aygıt yeniden adlandırılamadı"
-      ],
       "Device removed": [
         "Aygıt kaldırıldı"
       ],
       "Device renamed": [
         "Aygıt yeniden adlandırıldı"
-      ],
-      "Encrypted search activated": [
-        "Şifrelenmiş arama özelliği açıldı"
       ],
       "Error while listing devices": [
         "Aygıtlar listelenirken sorun çıktı"
@@ -11883,12 +11763,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Düzenleyiciler artık paylaşımları yönetebilir ve başkalarını davet edebilir. Bu özelliği paylaşım ayarlarından istediğiniz zaman kapatabilirsiniz."
-      ],
-      "Encrypted search is here": [
-        "Şifrelenmiş aramayı deneyimleyin"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
       ]
     },
     "sso": {
@@ -13922,6 +13796,36 @@
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "${ planName } için %${ discount } indirim kazanın"
+      ],
+      "Get ${ planName }": [
+        "${ planName } tarifesini edinin"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 TB of storage to share": [
+        "Paylaşılabilen 2 TB depolama alanı"
+      ],
+      "2 user accounts": [
+        "2 kullanıcı hesabı"
+      ],
+      "All premium features from your current plan": [
+        "Geçerli tarifenizdeki tüm ücretli özellikler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 ay için"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/ay"
@@ -13957,6 +13861,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Yönetici rollerini kullanabilmek için bu rolleri destekleyen bir tarifeye yükseltin."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Kendi rollerinizi değiştiremezsiniz. Başka bir yöneticiden bunları değiştirmesini isteyin."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."

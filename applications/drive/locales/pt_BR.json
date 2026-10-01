@@ -300,9 +300,6 @@
       "Create folder": [
         "Criar pasta"
       ],
-      "Create new folder": [
-        "Criar uma pasta"
-      ],
       "Create new password": [
         "Criar nova senha"
       ],
@@ -3400,9 +3397,6 @@
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
-      "A problem occurred, please try again.": [
-        "Ocorreu um erro. Tente novamente."
-      ],
       "Address could not be added.": [
         "O endereço não pôde ser adicionado."
       ],
@@ -3474,12 +3468,6 @@
       ],
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Não é possível ativar a pesquisa de conteúdo neste navegador. Saia do modo de navegação privada ou use outro navegador."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "A pesquisa de conteúdo não pode ser ativada. Reinicie o aplicativo ou limpe os dados."
       ],
       "Copy operation aborted": [
         "Operação de cópia interrompida"
@@ -3578,9 +3566,6 @@
       ],
       "Failed to change permissions settings": [
         "Falha ao alterar as configurações de permissões"
-      ],
-      "Failed to copy photo to album": [
-        "Erro ao copiar a foto para o álbum"
       ],
       "Failed to create folder": [
         "Falha ao criar a pasta"
@@ -3837,9 +3822,6 @@
       ],
       "Photo not found": [
         "Foto não encontrada"
-      ],
-      "Please activate your search again": [
-        "Ative a pesquisa novamente."
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Por favor, verifique se o seu ABN está registrado para IVA transfronteiriço"
@@ -5590,14 +5572,8 @@
       "Clear data": [
         "Limpar dados"
       ],
-      "Clear encrypted search data": [
-        "Limpar dados de pesquisa criptografada"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Limpar os dados do navegador limpará o índice de pesquisa neste dispositivo. Todos os arquivos precisariam ser reindexados novamente ao usar a funcionalidade de pesquisa."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Limpa os dados do navegador relacionados à pesquisa criptografada."
       ],
       "Clears browser data related to the search.": [
         "Limpa os dados do navegador relacionados à pesquisa."
@@ -5786,9 +5762,6 @@
       "Enabling drive search": [
         "Ativando pesquisa de drive"
       ],
-      "Encrypted search is here": [
-        "A pesquisa criptografada está aqui"
-      ],
       "End-to-end encrypted": [
         "Criptografado de ponta a ponta"
       ],
@@ -5818,16 +5791,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Digite sua própria senha (como contato de confiança)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Tempo restante estimado: ${ estimatedMinutes } minuto",
-        "Tempo restante estimado: ${ estimatedMinutes } minutos"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Tempo restante estimado: menos de um minuto"
-      ],
-      "Estimating time remaining...": [
-        "Estimando o tempo restante..."
       ],
       "Everything in ${ planOrAppName }": [
         "Tudo que está incluso no ${ planOrAppName }"
@@ -5912,9 +5875,6 @@
       ],
       "High Priority": [
         "Alta prioridade"
-      ],
-      "How does encrypted search work?": [
-        "Como a pesquisa criptografada funciona?"
       ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Confirmo, por meio deste e de boa-fé, que as informações e declarações contidas no relatório estão corretas e completas."
@@ -6003,12 +5963,6 @@
       ],
       "Indexing in progress": [
         "Indexação em progresso"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Indexando itens ${ esProgress } de ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Indexando resultados da pesquisa…"
       ],
       "Inherited from parent folder": [
         "Herdado da pasta acima"
@@ -6181,9 +6135,6 @@
       "Move ${ folderCount } folder": [
         "Mover ${ folderCount } pasta",
         "Mover ${ folderCount } pastas"
-      ],
-      "Moving files": [
-        "Movendo arquivos"
       ],
       "My Links": [
         "Meus links"
@@ -6433,9 +6384,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "A navegação privada (ou modo “incógnito”) é útil apenas para manter sua atividade oculta no seu dispositivo. Ela impede que seu navegador salve o histórico e os cookies, mas não o torna invisível. Seu ISP, administrador de rede e os sites que você visita ainda podem ver o que você faz on-line."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Pesquisa privada ativada. Agora você pode fechar esta caixa de diálogo e procurar arquivos e pastas."
-      ],
       "Public link": [
         "Link público"
       ],
@@ -6504,9 +6452,6 @@
       ],
       "Scan to download": [
         "Digitalizar para baixar"
-      ],
-      "Search cannot be enabled in this browser": [
-        "A pesquisa não pode ser ativada nesse navegador"
       ],
       "Search covers your recent items": [
         "A pesquisa inclui seus itens recentes"
@@ -6790,9 +6735,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Para ativar a pesquisa verdadeiramente privada, o ${ DRIVE_APP_NAME } precisa indexar seus arquivos localmente."
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Para ativar uma pesquisa verdadeiramente privada, precisamos indexar seus arquivos localmente. Você ainda pode usar ${ DRIVE_APP_NAME } normalmente - nós o informaremos quando a indexação estiver concluída."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
@@ -6888,9 +6830,6 @@
       ],
       "Update required": [
         "Atualização necessária"
-      ],
-      "Updating drive search...": [
-        "Atualizando pesquisa de drive..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Faça upgrade a qualquer momento para importar o resto"
@@ -7949,9 +7888,6 @@
       "Shared with me": [
         "Compartilhado comigo"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "Mostrar processo de indexação de pesquisa criptografada"
-      ],
       "Sign emails": [
         "Assinar e-mails"
       ],
@@ -8017,9 +7953,6 @@
       ],
       "Toolbar": [
         "Barra de ferramentas"
-      ],
-      "Type": [
-        "Tipo"
       ],
       "Unlock drive": [
         "Desbloquear drive"
@@ -9703,35 +9636,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" criado com sucesso"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\" detectado"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "\"${ ellipsedName }\" excluído permanentemente da lixeira"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "\"${ ellipsedName }\" falhou ao ser criado"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "\"${ ellipsedName }\" não foi excluído"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "\"${ ellipsedName }\" falhou ao ser excluído permanentemente da lixeira"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "\"${ ellipsedName }\" falhou ao ser movido"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "Erro ao restaurar \"${ ellipsedName }\" da lixeira"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" movido"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "\"${ ellipsedName }\" restaurado da lixeira"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" movido"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" compartilhado"
@@ -9779,10 +9691,6 @@
         "${ numberOfItems } item copiado",
         "${ numberOfItems } itens copiados"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } item excluído",
-        "${ numberOfItems } itens excluídos"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } item excluído permanentemente",
         "${ numberOfItems } itens excluídos permanentemente"
@@ -9791,21 +9699,9 @@
         "${ numberOfItems } item excluído permanentemente da lixeira",
         "${ numberOfItems } itens excluídos permanentemente da lixeira"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Erro ao excluir permanentemente ${ numberOfItems } arquivo da lixeira",
-        "Erro ao excluir permanentemente ${ numberOfItems } arquivos da lixeira"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "Erro ao mover ${ numberOfItems } item",
-        "Erro ao mover ${ numberOfItems } itens"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "Erro ao mover ${ numberOfItems } item para a lixeira",
         "Erro ao mover ${ numberOfItems } itens para a lixeira"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "Erro ao restaurar ${ numberOfItems } arquivo da lixeira",
-        "Erro ao restaurar ${ numberOfItems } arquivos da lixeira"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } item movido",
@@ -9818,10 +9714,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item restaurado da lixeira",
         "${ numberOfItems } itens restaurados da lixeira"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } item movido",
-        "${ numberOfItems } itens movidos"
       ],
       "${ reason } has been disabled": [
         "${ reason } foi desativado"
@@ -9842,9 +9734,6 @@
       "All items deleted permanently from trash": [
         "Todos os itens foram excluídos permanentemente da lixeira"
       ],
-      "Cannot load link": [
-        "Não foi possível carregar o link"
-      ],
       "Cannot load next page": [
         "Não foi possível carregar a próxima página"
       ],
@@ -9857,20 +9746,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Cópia de \"${ ellipsedName }\" movido para a lixeira"
       ],
-      "Device failed to be removed": [
-        "Erro ao remover o dispositivo"
-      ],
-      "Device failed to be renamed": [
-        "Erro ao renomear o dispositivo"
-      ],
       "Device removed": [
         "Dispositivo removido"
       ],
       "Device renamed": [
         "Dispositivo renomeado"
-      ],
-      "Encrypted search activated": [
-        "Pesquisa criptografada ativada"
       ],
       "Error while listing devices": [
         "Erro ao listar dispositivos"
@@ -11733,12 +11613,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Os editores agora podem gerenciar o compartilhamento e convidar outras pessoas. Você pode desativar essa função a qualquer momento nas configurações de compartilhamento."
-      ],
-      "Encrypted search is here": [
-        "A pesquisa criptografada está aqui"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Agora você pode facilmente pesquisar os arquivos do Drive enquanto mantém seus dados seguros."
       ]
     },
     "sso": {

@@ -184,9 +184,6 @@
       "Create folder": [
         "Snulfu-d akaram"
       ],
-      "Create new folder": [
-        "Rnu akaram amaynut"
-      ],
       "Current plan": [
         "Aɣawas amiran"
       ],
@@ -2032,9 +2029,6 @@
       "A group with this name already exists": [
         "Yella yakan ugraw s yisem-agi"
       ],
-      "A problem occurred, please try again.": [
-        "Yella-d wugur, ttxil-k·m εreḍ tikkelt-nniḍen."
-      ],
       "Address primary private key not found": [
         "Tasarut tamaẓlayt tagejdant n tansa ulac-itt"
       ],
@@ -2067,9 +2061,6 @@
       ],
       "Contact signature not verified": [
         "Azmul n unermis ur yettwasenqed ara"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Anadi n ugbur ur yezmir ara ad yettwarmad deg yiminig-a. Ttxil ffeɣ seg uskar n tunigin tusligin neɣ seqdec iminig-nniḍen."
       ],
       "Domain not available, try again later": [
         "Ulac taɣult, ɛreḍ tikkelt-nniḍen ticki"
@@ -2165,9 +2156,6 @@
       ],
       "Payment process not supported": [
         "Akala n uxelleṣ ur yettwasefrak ara"
-      ],
-      "Please activate your search again": [
-        "Ttxil-k·m rmed anadi-k·m i tikkelt niḍen"
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Sbadu taɣult tudmawant send ad ternuḍ iseqdacen ar tuddsa-ik."
@@ -3072,9 +3060,6 @@
       "Clear data": [
         "Sfeḍ isefka"
       ],
-      "Clear encrypted search data": [
-        "Sfeḍ isefka n unadi yettwawgelhen"
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
       ],
@@ -3180,16 +3165,6 @@
       ],
       "Enter your own password (as organization admin).": [
         "Sekcem awal-ik uffir (am unedbal n tkebbanit)"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Akud i d-yeggran: ${ estimatedMinutes } n tesdat",
-        "Akud i d-yeggran: ${ estimatedMinutes } n tesdatin"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Akud i d-yeggran: ddaw n tesdat"
-      ],
-      "Estimating time remaining...": [
-        "Akud yettuṛaǧun ad d-yeqqim..."
       ],
       "Expired": [
         "Yemmut"
@@ -4035,9 +4010,6 @@
       "Toolbar": [
         "Tafeggagt n ifecka"
       ],
-      "Type": [
-        "Anaw"
-      ],
       "Upload picture": [
         "Sali-d tugna"
       ],
@@ -4624,21 +4596,9 @@
         "${ numberOfItems } n uferdis yettwakkes seg tqecwalt s wudem imezgi",
         "${ numberOfItems } n yiferdisen ttwakksen seg tqecwalt s wudem imezgi"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } n uferdis yegguma ad yettwakkes seg tqecwalt i lebda",
-        "${ numberOfItems } n yiferdisen yegguma ad yettwakkes seg tqecwalt i lebda"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "Asmutti n ${ numberOfItems } n uferdis ur yeddi ara",
-        "Asmutti n ${ numberOfItems } n yiferdisen ur yeddi ara"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } n uferdis d awezɣi ad yettwarr ɣer tqecwalt",
         "${ numberOfItems } n uferdis d awezɣi ad ttwarren ɣer tqecwalt"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } n uferdis d awezɣi ad d-yettwaru seg tqecwalt",
-        "${ numberOfItems } n yiferdisen d awezɣi ad d-yettwaru seg tqecwalt"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } n uferdis imutti ɣer tqecwal",
@@ -4654,9 +4614,6 @@
       "${ reason } has been enabled": [
         "${ reason } yettwarmed"
       ],
-      "Cannot load link": [
-        "Aferdis yegguma ad d-yali"
-      ],
       "Cannot load next page": [
         "Asebter uḍfir yegguma ad d-yali"
       ],
@@ -4665,12 +4622,6 @@
       ],
       "Contact group updated": [
         "Agraw n unermes yettwasnifel"
-      ],
-      "Device failed to be removed": [
-        "Tecceḍ tukksa n yibenk"
-      ],
-      "Device failed to be renamed": [
-        "Abeddel n yisem n yibenk yecceḍ"
       ],
       "Device removed": [
         "Yettwakkes yibenk"
