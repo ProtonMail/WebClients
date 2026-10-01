@@ -272,9 +272,6 @@
       "Create folder": [
         "Stvori mapu"
       ],
-      "Create new folder": [
-        "Stvori novu mapu"
-      ],
       "Create new password": [
         "Stvori novu lozinku"
       ],
@@ -3148,9 +3145,6 @@
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
       ],
-      "A problem occurred, please try again.": [
-        "Došlo je do pogreške, pokušajte ponovno."
-      ],
       "Address could not be added.": [
         "Nije moguće dodati adresu."
       ],
@@ -3202,12 +3196,6 @@
       "Contact signature not verified": [
         "Potpis kontakta nije potvrđen"
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Pretraga sadržaja ne može se omogućiti u ovom pregledniku. Napustite privatni način pregledavanja ili upotrijebite drugi preglednik."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Pretraga sadržaja ne može se omogućiti. Ponovno pokrenite aplikaciju ili očistite podatke."
-      ],
       "Data integrity check failed": [
         "Provjera integriteta podataka nije uspjela"
       ],
@@ -3253,9 +3241,6 @@
       ],
       "Failed to change permissions settings": [
         "Promjena postavki dozvola nije uspjela"
-      ],
-      "Failed to copy photo to album": [
-        "Kopiranje fotografije u album nije uspjelo"
       ],
       "Failed to create folder": [
         "Stvaranje mape nije uspjelo"
@@ -3424,9 +3409,6 @@
       ],
       "Payment process not supported": [
         "Proces plaćanja nije podržan"
-      ],
-      "Please activate your search again": [
-        "Ponovno aktivirajte svoje pretraživanje"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Molimo provjerite je li vaš ABN registriran za prekogranični PDV"
@@ -4924,12 +4906,6 @@
       "Clear data": [
         "Izbriši podatke"
       ],
-      "Clear encrypted search data": [
-        "Očisti podatke šifriranog pretraživanja"
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Čisti podatke preglednika povezane sa šifriranim pretraživanjem."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
@@ -5115,17 +5091,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Unesite vlastitu lozinku (kao pouzdani kontakt)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minuta",
-        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minute",
-        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minuta"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Procijenjeno preostalo vrijeme: manje od minute"
-      ],
-      "Estimating time remaining...": [
-        "Procjena preostalog vremena..."
       ],
       "Everything in ${ planOrAppName }": [
         "Sve u ${ planOrAppName }"
@@ -6744,9 +6709,6 @@
       "Toolbar": [
         "Alatna traka"
       ],
-      "Type": [
-        "Vrsta"
-      ],
       "Upload picture": [
         "Učitaj sliku"
       ],
@@ -8353,9 +8315,6 @@
       "\"${ ellipsedName }\" created successfully": [
         "Stavka „${ ellipsedName }” uspješno je stvorena"
       ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "Stvaranje stavke „${ ellipsedName }” nije uspjelo"
-      ],
       "\"${ ellipsedName }\" moved": [
         "„${ ellipsedName }” premješteno"
       ],
@@ -8387,11 +8346,6 @@
         "Nije uspjelo brisanje ${ errors.length } stavke",
         "Nije uspjelo brisanje ${ errors.length } stavki"
       ],
-      "${ numberOfItems } item deleted": [
-        "Izbrisana je ${ numberOfItems } stavka",
-        "Izbrisane su ${ numberOfItems } stavke",
-        "Izbrisano je ${ numberOfItems } stavki"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } stavka je trajno izbrisana",
         "${ numberOfItems } stavke su trajno izbrisane",
@@ -8402,25 +8356,10 @@
         "${ numberOfItems } stavke trajno izbrisane iz otpada",
         "${ numberOfItems } stavki trajno izbrisano iz otpada"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Trajno brisanje ${ numberOfItems } stavke iz otpada nije uspjelo",
-        "Trajno brisanje ${ numberOfItems } stavke iz otpada nije uspjelo",
-        "Trajno brisanje ${ numberOfItems } stavki iz otpada nije uspjelo"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "Nije uspjelo premještanje ${ numberOfItems } stavke",
-        "Nije uspjelo premještanje ${ numberOfItems } stavki",
-        "Nije uspjelo premještanje ${ numberOfItems } stavki"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "Nije uspjelo premještanje ${ numberOfItems } stavke u otpad",
         "Nije uspjelo premještanje ${ numberOfItems } stavke u otpad",
         "Nije uspjelo premještanje ${ numberOfItems } stavki u otpad"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "Vraćanje ${ numberOfItems } stavke iz otpada nije uspjelo",
-        "Vraćanje ${ numberOfItems } stavke iz otpada nije uspjelo",
-        "Vraćanje ${ numberOfItems } stavki iz otpada nije uspjelo"
       ],
       "${ numberOfItems } item moved": [
         "Premještena je ${ numberOfItems } stavka",
@@ -8449,9 +8388,6 @@
       "Access updated": [
         "Pristup je ažuriran"
       ],
-      "Cannot load link": [
-        "Nije moguće učitati poveznicu"
-      ],
       "Cannot load next page": [
         "Nije moguće učitati sljedeću stranicu"
       ],
@@ -8460,12 +8396,6 @@
       ],
       "Contact group updated": [
         "Kontaktna grupa je ažurirana"
-      ],
-      "Device failed to be removed": [
-        "Uklanjanje uređaja nije uspjelo"
-      ],
-      "Device failed to be renamed": [
-        "Preimenovanje uređaja nije uspjelo"
       ],
       "Device removed": [
         "Uređaj je uklonjen"

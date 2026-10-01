@@ -273,9 +273,6 @@
       "Create folder": [
         "Создать папку"
       ],
-      "Create new folder": [
-        "Создать новую папку"
-      ],
       "Create new password": [
         "Создать новый пароль"
       ],
@@ -3168,9 +3165,6 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
-      "A problem occurred, please try again.": [
-        "Что-то пошло не так. Попробуйте ещё раз."
-      ],
       "Address could not be added.": [
         "Не удалось добавить адрес."
       ],
@@ -3222,12 +3216,6 @@
       "Contact signature not verified": [
         "Подпись контакта не подтверждена"
       ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Невозможно включить поиск контента. Пожалуйста, перезапустите приложение или очистите данные."
-      ],
       "Data integrity check failed": [
         "Ошибка проверки целостности данных"
       ],
@@ -3275,9 +3263,6 @@
       ],
       "Failed to change permissions settings": [
         "Не удалось изменить настройки разрешений"
-      ],
-      "Failed to copy photo to album": [
-        "Не удалось скопировать фото в альбом"
       ],
       "Failed to create folder": [
         "Не удалось создать папку"
@@ -3449,9 +3434,6 @@
       ],
       "Payment process not supported": [
         "Процесс оплаты не поддерживается"
-      ],
-      "Please activate your search again": [
-        "Активируйте поиск снова"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Пожалуйста, проверьте, зарегистрирован ли ваш ABN для трансграничного НДС"
@@ -4991,12 +4973,6 @@
       "Clear data": [
         "Очистить данные"
       ],
-      "Clear encrypted search data": [
-        "Очистить зашифрованные данные поиска"
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Очищает данные браузера, связанные с зашифрованным поиском."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
       ],
@@ -5185,18 +5161,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Введите собственный пароль (как доверенный контакт)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Оставшееся время: ${ estimatedMinutes } минута",
-        "Оставшееся время: ${ estimatedMinutes } минуты",
-        "Оставшееся время: ${ estimatedMinutes } минут",
-        "Оставшееся время: ${ estimatedMinutes } минут"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Оставшееся время: меньше минуты"
-      ],
-      "Estimating time remaining...": [
-        "Оценка оставшегося времени..."
       ],
       "Everything in ${ planOrAppName }": [
         "Все в ${ planOrAppName }"
@@ -6828,9 +6792,6 @@
       ],
       "Toolbar": [
         "Панель инструментов"
-      ],
-      "Type": [
-        "Тип"
       ],
       "Upload picture": [
         "Загрузить изображение"
@@ -8477,9 +8438,6 @@
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" успешно создано"
       ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "Не удалось создать \"${ ellipsedName }\""
-      ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" перемещено"
       ],
@@ -8513,12 +8471,6 @@
         "Не удалось удалить ${ errors.length } элементов",
         "Не удалось удалить ${ errors.length } элемента"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } элемент удалён",
-        "${ numberOfItems } элемента удалены",
-        "${ numberOfItems } элементов удалены",
-        "${ numberOfItems } элемента удалены"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } элемент удален окончательно",
         "${ numberOfItems } элемента удалены окончательно",
@@ -8531,29 +8483,11 @@
         "${ numberOfItems } элементов окончательно удалены из корзины",
         "${ numberOfItems } элементов окончательно удалены из корзины"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } элемент не удалось окончательно удалить из корзины",
-        "${ numberOfItems } элемента не удалось окончательно удалить из корзины",
-        "${ numberOfItems } элементов не удалось окончательно удалить из корзины",
-        "${ numberOfItems } элементов не удалось окончательно удалить из корзины"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } элемент не удалось переместить",
-        "${ numberOfItems } элемента не удалось переместить",
-        "${ numberOfItems } элементов не удалось переместить",
-        "${ numberOfItems } элементов не удалось переместить"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } элемент не удалось переместить в корзину",
         "${ numberOfItems } элемента не удалось переместить в корзину",
         "${ numberOfItems } элементов не удалось переместить в корзину",
         "${ numberOfItems } элементов не удалось переместить в корзину"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } элемент не удалось восстановить из корзины",
-        "${ numberOfItems } элемента не удалось восстановить из корзины",
-        "${ numberOfItems } элементов не удалось восстановить из корзины",
-        "${ numberOfItems } элементов не удалось восстановить из корзины"
       ],
       "${ numberOfItems } item moved": [
         "Перемещен ${ numberOfItems } элемент",
@@ -8585,9 +8519,6 @@
       "Access updated": [
         "Доступ обновлен"
       ],
-      "Cannot load link": [
-        "Не удалось загрузить ссылку"
-      ],
       "Cannot load next page": [
         "Не удалось загрузить следующую страницу"
       ],
@@ -8596,12 +8527,6 @@
       ],
       "Contact group updated": [
         "Группа контактов обновлена"
-      ],
-      "Device failed to be removed": [
-        "Не удалось удалить устройство"
-      ],
-      "Device failed to be renamed": [
-        "Не удалось переименовать устройство"
       ],
       "Device removed": [
         "Устройство удалено"

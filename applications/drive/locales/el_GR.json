@@ -303,9 +303,6 @@
       "Create folder": [
         "Δημιούργησε ένα φάκελο"
       ],
-      "Create new folder": [
-        "Δημιουργία νέου φακέλου"
-      ],
       "Create new password": [
         "Δημιουργία νέου κωδικού πρόσβασης"
       ],
@@ -3406,9 +3403,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "Απαιτείται μήνυμα κατά την αναφορά παραβίασης πνευματικών δικαιωμάτων ή κλοπής δεδομένων"
       ],
-      "A problem occurred, please try again.": [
-        "Προέκυψε πρόβλημα. Παρακαλούμε δοκιμάστε ξανά."
-      ],
       "Address could not be added.": [
         "Η διεύθυνση δεν μπόρεσε να προστεθεί."
       ],
@@ -3489,12 +3483,6 @@
       ],
       "Contact signature not verified": [
         "Η υπογραφή επαφής δεν πιστοποιήθηκε"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Η αναζήτηση περιεχομένου δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή. Παρακαλούμε τερματίστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε έναν άλλον περιηγητή."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Δεν είναι δυνατή η ενεργοποίηση της αναζήτησης περιεχομένου. Επανεκκινήστε την εφαρμογή ή διαγράψτε δεδομένα."
       ],
       "Copy operation aborted": [
         "Η λειτουργία αντιγραφής διακόπηκε"
@@ -3602,9 +3590,6 @@
       ],
       "Failed to change permissions settings": [
         "Αποτυχία αλλαγής ρυθμίσεων δικαιωμάτων"
-      ],
-      "Failed to copy photo to album": [
-        "Αποτυχία αντιγραφής της φωτογραφίας στο άλμπουμ"
       ],
       "Failed to create folder": [
         "Αποτυχία δημιουργίας φακέλου"
@@ -3879,9 +3864,6 @@
       ],
       "Photo not found": [
         "Η Φωτογραφία δε βρέθηκε"
-      ],
-      "Please activate your search again": [
-        "Παρακαλούμε ενεργοποιήστε ξανά την αναζήτησή σας"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Ελέγξτε εάν ο ABN σας είναι εγγεγραμμένος για διασυνοριακό ΦΠΑ"
@@ -5671,14 +5653,8 @@
       "Clear data": [
         "Εκκαθάριση δεδομένων"
       ],
-      "Clear encrypted search data": [
-        "Εκκαθάριση δεδομένων κρυπτογραφημένης αναζήτησης"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Η εκκαθάριση δεδομένων περιηγητή θα διαγράψει το ευρετήριο αναζήτησης αυτής της συσκευής. Όλα τα αρχεία θα χρειαστεί να ευρετηριοποιηθούν ξανά κατά τη χρήση της λειτουργίας αναζήτησης."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "Εκκαθάριση δεδομένων περιηγητή σχετικών με την κρυπτογραφημένη αναζήτηση."
       ],
       "Clears browser data related to the search.": [
         "Εκκαθάριση δεδομένων περιηγητή σχετικών με την αναζήτηση."
@@ -5873,9 +5849,6 @@
       "Enabling drive search": [
         "Γίνεται ενεργοποίηση τοπικής αναζήτησης"
       ],
-      "Encrypted search is here": [
-        "Η κρυπτογραφημένη αναζήτηση είναι εδώ"
-      ],
       "End-to-end encrypted": [
         "Διατερματικά κρυπτογραφημένο"
       ],
@@ -5905,16 +5878,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
-        "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτά"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "Εκτιμώμενος χρόνος που απομένει: Λιγότερο από 1 λεπτό"
-      ],
-      "Estimating time remaining...": [
-        "Εκτίμηση χρόνου που απομένει..."
       ],
       "Everything in ${ planOrAppName }": [
         "Όλα στο ${ planOrAppName }"
@@ -5999,9 +5962,6 @@
       ],
       "High Priority": [
         "Υψηλή προτεραιότητα"
-      ],
-      "How does encrypted search work?": [
-        "Πώς δουλεύει η κρυπτογραφημένη αναζήτηση;"
       ],
       "I have not finished this one yet.": [
         "Δεν το έχω τελειώσει ακόμα αυτό."
@@ -6096,12 +6056,6 @@
       ],
       "Indexing in progress": [
         "Ευρετηρίαση σε εξέλιξη"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Ευρετηριοποίηση στοιχείων: ${ esProgress } από ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "Γίνεται ευρετηριοποίηση αποτελεσμάτων αναζήτησης…"
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
@@ -6283,9 +6237,6 @@
       "Move ${ folderCount } folder": [
         "Μετακίνηση ${ folderCount } φακέλου",
         "Μετακίνηση ${ folderCount } φακέλων"
-      ],
-      "Moving files": [
-        "Μετακίνηση αρχείων"
       ],
       "My Links": [
         "Οι Σύνδεσμοί μου"
@@ -6547,9 +6498,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Η ιδιωτική περιήγηση (ή η κατάσταση ανώνυμης περιήγησης) είναι χρήσιμη μόνο για να διατηρείτε τη δραστηριότητά σας κρυφή στη συσκευή σας. Εμποδίζει το πρόγραμμα περιήγησής σας να αποθηκεύει ιστορικό και cookies, αλλά δεν σας κάνει αόρατους. Η υπηρεσία παροχής Internet, ο διαχειριστής δικτύου και οι τοποθεσίες Web που επισκέπτεστε εξακολουθούν να μπορούν να δουν τι κάνετε στο Internet."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Η ιδιωτική αναζήτηση ενεργοποιήθηκε. Τώρα μπορείτε να κλείσετε αυτόν τον διάλογο και να αναζητήσετε αρχεία και φακέλους."
-      ],
       "Public link": [
         "Δημόσιος σύνδεσμος"
       ],
@@ -6618,9 +6566,6 @@
       ],
       "Scan to download": [
         "Σαρώστε για λήψη"
-      ],
-      "Search cannot be enabled in this browser": [
-        "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
       ],
       "Search covers your recent items": [
         "Η αναζήτηση καλύπτει τα πρόσφατα στοιχεία σας"
@@ -6922,9 +6867,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, το ${ DRIVE_APP_NAME } χρειάζεται να δεικτοδοτήσει τα αρχεία σας τοπικά."
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, χρειάζεται να δεικτοδοτήσουμε τα αρχεία σας τοπικά. Μπορείτε να συνεχίσετε τη χρήση του ${ DRIVE_APP_NAME } κανονικά - θα σας ενημερώσουμε όταν η δεικτοδότηση ολοκληρωθεί."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
@@ -7023,9 +6965,6 @@
       ],
       "Update required": [
         "Απαιτείται ενημέρωση"
-      ],
-      "Updating drive search...": [
-        "Ενημέρωση τοπικής αναζήτησης..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Αναβαθμίστε οποιαδήποτε στιγμή για να φέρετε τα υπόλοιπα"
@@ -8121,9 +8060,6 @@
       "Shared with me": [
         "Σε κοινή χρήση με εμένα"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "Εμφάνιση προόδου ευρετηριοποίησης της Κρυπτογραφημένης Αναζήτησης"
-      ],
       "Sign emails": [
         "Υπογραφεί ηλεκτρονικών ταχυδρομείων"
       ],
@@ -8189,9 +8125,6 @@
       ],
       "Toolbar": [
         "Γραμμή εργαλειών"
-      ],
-      "Type": [
-        "Τύπος"
       ],
       "Unlock drive": [
         "Ξεκλείδωμα δίσκου"
@@ -9827,35 +9760,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "Το \"${ ellipsedName }\" δημιουργήθηκε επιτυχώς"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "Το \"${ ellipsedName }\" διαγράφηκε"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "Το \"${ ellipsedName }\" διαγράφηκε οριστικά από τα Διαγραμμένα"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "Αποτυχία δημιουργίας του \"${ ellipsedName }\""
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "Αποτυχία διαγραφής του \"${ ellipsedName }\""
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "Αποτυχία οριστικής διαγραφής του \"${ ellipsedName }\" από τα Διαγραμμένα"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "Αποτυχία μετακίνησης του \"${ ellipsedName }\""
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "Αποτυχία επαναφοράς του \"${ ellipsedName }\" από τα Διαγραμμένα"
       ],
       "\"${ ellipsedName }\" moved": [
         "Το \"${ ellipsedName }\" μετακινήθηκε"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "Το \"${ ellipsedName }\" επαναφέρθηκε από τα Διαγραμμένα"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "Επιτυχής μετακίνηση του \"${ ellipsedName }\""
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" κοινοποιήθηκε"
@@ -9903,10 +9815,6 @@
         "${ numberOfItems } στοιχείο αντιγράφηκε",
         "${ numberOfItems } στοιχεία αντιγράφηκαν"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } στοιχείο διαγράφηκε",
-        "${ numberOfItems } στοιχεία διαγράφηκαν"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } στοιχείο διαγράφηκε οριστικά",
         "${ numberOfItems } στοιχεία διαγράφηκαν οριστικά"
@@ -9915,21 +9823,9 @@
         "${ numberOfItems } στοιχείο εξαλείφθηκε οριστικά από τα Διαγραμμένα",
         "${ numberOfItems } στοιχεία εξαλείφθηκαν οριστικά από τα Διαγραμμένα"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Αποτυχία οριστικής εξάλειψης \"${ numberOfItems }\" στοιχείου από τα Διαγραμμένα",
-        "Αποτυχία οριστικής εξάλειψης \"${ numberOfItems }\" στοιχείων από τα Διαγραμμένα"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "Αποτυχία μετακίνησης ${ numberOfItems } στοιχείου",
-        "Αποτυχία μετακίνησης ${ numberOfItems } στοιχείων"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "Αποτυχία μετακίνησης ${ numberOfItems } στοιχείου στα Διαγραμμένα",
         "Αποτυχία μετακίνησης ${ numberOfItems } στοιχείων στα Διαγραμμένα"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "Αποτυχία επαναφοράς ${ numberOfItems } στοιχείου από τα Διαγραμμένα",
-        "Αποτυχία επαναφοράς ${ numberOfItems } στοιχείων από τα Διαγραμμένα"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } στοιχείο μετακινήθηκε",
@@ -9942,10 +9838,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } στοιχείο επαναφέρθηκε από τα Διαγραμμένα",
         "${ numberOfItems } στοιχεία επαναφέρθηκαν από τα Διαγραμμένα"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } στοιχείο μετακινήθηκε επιτυχώς",
-        "${ numberOfItems } στοιχεία μετακινήθηκαν επιτυχώς"
       ],
       "${ reason } has been disabled": [
         "${ reason } έχει απενεργοποιηθεί"
@@ -9966,9 +9858,6 @@
       "All items deleted permanently from trash": [
         "Όλα τα στοιχεία εξαλείφθηκαν οριστικά από τα διαγραμμένα"
       ],
-      "Cannot load link": [
-        "Αποτυχία φόρτωσης συνδέσμου"
-      ],
       "Cannot load next page": [
         "Η επόμενη σελίδα απέτυχε να φορτωθεί"
       ],
@@ -9981,20 +9870,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Αντίγραφο του \"${ ellipsedName }\" μετακινήθηκε στον κάδο απορριμμάτων"
       ],
-      "Device failed to be removed": [
-        "Αποτυχία αφαίρεσης συσκευής"
-      ],
-      "Device failed to be renamed": [
-        "Αποτυχία μετονομασίας συσκευής"
-      ],
       "Device removed": [
         "Η συσκευή αφαιρέθηκε"
       ],
       "Device renamed": [
         "Η συσκευή μετονομάστηκε"
-      ],
-      "Encrypted search activated": [
-        "Κρυπτογραφημένη αναζήτηση ενεργή"
       ],
       "Error while listing devices": [
         "Σφάλμα κατά την καταχώριση συσκευών"
@@ -11883,12 +11763,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "Οι συντάκτες μπορούν πλέον να διαχειρίζονται την κοινή χρήση και να προσκαλούν άλλους. Μπορείτε να την απενεργοποιήσετε ανά πάσα στιγμή στις ρυθμίσεις Κοινής χρήσης."
-      ],
-      "Encrypted search is here": [
-        "Η κρυπτογραφημένη αναζήτηση είναι εδώ"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "Τώρα είναι δυνατή η αναζήτηση στο Drive, εύκολα και διατηρώντας τη διασφάλιση των δεδομένων σας."
       ]
     },
     "sso": {
@@ -13922,6 +13796,36 @@
         "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Κερδίστε ${ discount }% στο ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Αποκτήστε το ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/μήνα"
+      ],
+      "2 TB of storage to share": [
+        "2 TB αποθηκευτικού χώρου για κοινή χρήση"
+      ],
+      "2 user accounts": [
+        "2 λογαριασμοί χρηστών"
+      ],
+      "All premium features from your current plan": [
+        "Όλες οι premium λειτουργίες του τρέχοντος πλάνου σας"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "για 12 μήνες"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/μήνα"
@@ -13957,6 +13861,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Αναβαθμίστε σε ένα υποστηριζόμενο πρόγραμμα για να χρησιμοποιήσετε ρόλους διαχειριστή."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Δεν μπορείς να αλλάξεις τους δικούς σου ρόλους. Ζήτησε από έναν άλλον διαχειριστή να τους αλλάξει."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."

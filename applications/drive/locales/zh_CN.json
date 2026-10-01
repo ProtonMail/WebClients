@@ -300,9 +300,6 @@
       "Create folder": [
         "新建文件夹"
       ],
-      "Create new folder": [
-        "创建文件夹"
-      ],
       "Create new password": [
         "创建新密码"
       ],
@@ -3375,9 +3372,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "举报版权侵权或数据被盗时必须填写消息"
       ],
-      "A problem occurred, please try again.": [
-        "出现了问题，请重试。"
-      ],
       "Address could not be added.": [
         "无法添加地址！"
       ],
@@ -3458,12 +3452,6 @@
       ],
       "Contact signature not verified": [
         "未验证联系人签名"
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "此浏览器无法开启全文搜索，请退出隐私浏览模式或使用其他浏览器。"
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "无法启用内容搜索。请重新启动应用或清除数据。"
       ],
       "Copy operation aborted": [
         "复制操作已中止"
@@ -3569,9 +3557,6 @@
       ],
       "Failed to change permissions settings": [
         "更改权限设置失败"
-      ],
-      "Failed to copy photo to album": [
-        "无法将照片复制到相册"
       ],
       "Failed to create folder": [
         "创建文件夹失败"
@@ -3842,9 +3827,6 @@
       ],
       "Photo not found": [
         "未找到照片"
-      ],
-      "Please activate your search again": [
-        "请重新开启全文搜索"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "请检查您的 ABN 是否已注册跨境增值税"
@@ -5579,14 +5561,8 @@
       "Clear data": [
         "清除数据"
       ],
-      "Clear encrypted search data": [
-        "清除加密的搜索数据"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "清除浏览器数据将同时清除此设备上的搜索索引。使用搜索功能时，所有文件都需要重新建立索引。"
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "清除与加密搜索相关的浏览器数据。"
       ],
       "Clears browser data related to the search.": [
         "清除与搜索相关的浏览器数据。"
@@ -5771,9 +5747,6 @@
       "Enabling drive search": [
         "正在启用云端硬盘搜索"
       ],
-      "Encrypted search is here": [
-        "加密搜索已上线"
-      ],
       "End-to-end encrypted": [
         "端到端加密"
       ],
@@ -5803,15 +5776,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "输入您自己的密码（作为可信联系人）"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "预计剩余时间：${ estimatedMinutes } 分钟"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "预计剩余时间：不到一分钟"
-      ],
-      "Estimating time remaining...": [
-        "正在估算剩余时间..."
       ],
       "Everything in ${ planOrAppName }": [
         "一切尽在 ${ planOrAppName }"
@@ -5896,9 +5860,6 @@
       ],
       "High Priority": [
         "首要优先顺序"
-      ],
-      "How does encrypted search work?": [
-        "加密搜索如何运作？"
       ],
       "I have not finished this one yet.": [
         "该项尚未完成"
@@ -5989,12 +5950,6 @@
       ],
       "Indexing in progress": [
         "正在索引"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "正在建立索引：${ esProgress } / ${ totalProgressToShow }"
-      ],
-      "Indexing search results…": [
-        "正在索引搜索结果…"
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
@@ -6169,9 +6124,6 @@
       ],
       "Move ${ folderCount } folder": [
         "移动 ${ folderCount } 个文件夹"
-      ],
-      "Moving files": [
-        "正在移动文件"
       ],
       "My Links": [
         "我的链接"
@@ -6422,9 +6374,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "隐私浏览模式（或称「无痕模式」）仅能隐藏您在设备上的活动痕迹。它能阻止浏览器保存历史记录和 Cookie，但无法让您真正隐身。您的互联网服务提供商、网络管理员以及访问的网站仍可追踪您的在线行为。"
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "隐私搜索已启用，您现在可以关闭此对话框并搜索文件和文件夹。"
-      ],
       "Public link": [
         "公开链接"
       ],
@@ -6493,9 +6442,6 @@
       ],
       "Scan to download": [
         "扫描以下载"
-      ],
-      "Search cannot be enabled in this browser": [
-        "浏览器无法启用搜索"
       ],
       "Search covers your recent items": [
         "搜索涵盖您最近的项目"
@@ -6794,9 +6740,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "若要启用真正的隐私搜索，${ DRIVE_APP_NAME } 需要在本地为您的文件建立索引。"
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "若要启用真正的隐私搜索，我们需要在本地为您的文件建立索引。您可以正常使用 ${ DRIVE_APP_NAME }，索引完成后我们会通知您。"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
@@ -6895,9 +6838,6 @@
       ],
       "Update required": [
         "需要更新"
-      ],
-      "Updating drive search...": [
-        "正在更新云端硬盘搜索..."
       ],
       "Upgrade anytime to bring over the rest": [
         "随时升级以迁移剩余内容"
@@ -7957,9 +7897,6 @@
       "Shared with me": [
         "与我共享"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "显示加密搜索的索引进度"
-      ],
       "Sign emails": [
         "签名电子邮件"
       ],
@@ -8025,9 +7962,6 @@
       ],
       "Toolbar": [
         "工具栏"
-      ],
-      "Type": [
-        "类型"
       ],
       "Unlock drive": [
         "解锁云端硬盘"
@@ -9618,35 +9552,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "“${ ellipsedName }”创建成功"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "“${ ellipsedName }”已删除"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "已从回收站永久删除“${ ellipsedName }”"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "“${ ellipsedName }”创建失败"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "删除“${ ellipsedName }”失败"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "从回收站永久删除“${ ellipsedName }”失败"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "移动“${ ellipsedName }”失败"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "从回收站恢复“${ ellipsedName }”失败"
       ],
       "\"${ ellipsedName }\" moved": [
         "“${ ellipsedName }”已移动"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "已从回收站恢复“${ ellipsedName }”"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "“${ ellipsedName }”移动成功"
       ],
       "\"${ fileName }\" shared": [
         "“${ fileName }”已共享"
@@ -9687,26 +9600,14 @@
       "${ numberOfItems } item copied": [
         "已复制 ${ numberOfItems } 项"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } 项目已删除"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } 个项目已永久删除"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } 个项目已从回收站永久删除"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems }\" 个项目从回收站永久删除失败"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } 个项目移动失败"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } 个项目移到回收站失败"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems }\" 个项目从回收站还原失败"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } 个项目已移动"
@@ -9716,9 +9617,6 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "从回收站还原了${ numberOfItems } 个项目"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "成功移动 ${ numberOfItems } 项"
       ],
       "${ reason } has been disabled": [
         "${ reason } 已停用"
@@ -9738,9 +9636,6 @@
       "All items deleted permanently from trash": [
         "所有项目已从回收站永久删除"
       ],
-      "Cannot load link": [
-        "无法加载链接"
-      ],
       "Cannot load next page": [
         "无法加载下一页"
       ],
@@ -9753,20 +9648,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "“${ ellipsedName }”的副本已移至回收站"
       ],
-      "Device failed to be removed": [
-        "设备移除失败"
-      ],
-      "Device failed to be renamed": [
-        "设备重命名失败"
-      ],
       "Device removed": [
         "设备已移除"
       ],
       "Device renamed": [
         "设备已重命名"
-      ],
-      "Encrypted search activated": [
-        "加密搜索已激活"
       ],
       "Error while listing devices": [
         "列出设备时出错"
@@ -11614,12 +11500,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "编辑者现在可以管理共享并邀请他人，您随时可以在共享设置中关闭此功能。"
-      ],
-      "Encrypted search is here": [
-        "加密搜索已上线"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "现在您可以轻松搜索云端硬盘文件，同时确保数据安全。"
       ]
     },
     "sso": {

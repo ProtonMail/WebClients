@@ -300,9 +300,6 @@
       "Create folder": [
         "폴더 생성"
       ],
-      "Create new folder": [
-        "새 폴더 만들기"
-      ],
       "Create new password": [
         "새로운 비밀번호 생성"
       ],
@@ -3378,9 +3375,6 @@
       "A message is required when reporting copyright infringement or stolen data": [
         "저작권 침해나 데이터 유실에 대한 리포트 제출 시 메시지가 필요합니다."
       ],
-      "A problem occurred, please try again.": [
-        "문제가 발생했습니다. 다시 시도해 주세요."
-      ],
       "Address could not be added.": [
         "주소를 추가할 수 없습니다."
       ],
@@ -3461,12 +3455,6 @@
       ],
       "Contact signature not verified": [
         "연락처 서명이 인증되지 않았습니다."
-      ],
-      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "콘텐츠 검색이 이 브라우저에서는 작동하지 않습니다. 시크릿 모드를 종료하거나 다른 브라우저를 이용해 주세요."
-      ],
-      "Content search cannot be enabled. Please restart the application or clear data.": [
-        "내용 검색을 활성화 할 수 없습니다. 어플리케이션을 재시작하거나 데이터를 제거하십시오."
       ],
       "Copy operation aborted": [
         "복사 작업 중단됨"
@@ -3572,9 +3560,6 @@
       ],
       "Failed to change permissions settings": [
         "권한 설정을 변경할 수 없습니다."
-      ],
-      "Failed to copy photo to album": [
-        "사진을 앨범에 복사하지 못했습니다."
       ],
       "Failed to create folder": [
         "폴더 생성 실패"
@@ -3845,9 +3830,6 @@
       ],
       "Photo not found": [
         "사진을 찾을 수 없음"
-      ],
-      "Please activate your search again": [
-        "다시 검색을 활성화 해주세요"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "사용자의 ABN이 국가 간 부가가치세(VAT) 등록이 되어 있는지 확인해 주세요."
@@ -5585,14 +5567,8 @@
       "Clear data": [
         "데이터 지우기"
       ],
-      "Clear encrypted search data": [
-        "암호화된 검색 데이터 지우기"
-      ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "브라우저 데이터를 지우면 이 기기의 검색 색인이 삭제됩니다. 검색 기능을 사용하는 동안 모든 파일을 다시 인덱싱해야 합니다."
-      ],
-      "Clears browser data related to the encrypted search.": [
-        "암호화된 검색과 관련한 브라우저 데이터를 삭제합니다."
       ],
       "Clears browser data related to the search.": [
         "검색과 관련된 브라우저 데이터를 삭제합니다."
@@ -5783,9 +5759,6 @@
       "Enabling drive search": [
         "드라이브 검색을 활성화하는 중"
       ],
-      "Encrypted search is here": [
-        "여기서 암호화된 검색을 찾을 수 있습니다"
-      ],
       "End-to-end encrypted": [
         "종단간 암호화됨"
       ],
@@ -5815,15 +5788,6 @@
       ],
       "Enter your own password (as trusted contact).": [
         "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "남은 예상 시간: ${ estimatedMinutes }분"
-      ],
-      "Estimated time remaining: Less than a minute": [
-        "남은 예상 시간: 1분 이하"
-      ],
-      "Estimating time remaining...": [
-        "남은 시간 예상 중..."
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName }(에)서 하나로"
@@ -5908,9 +5872,6 @@
       ],
       "High Priority": [
         "중요도 높음"
-      ],
-      "How does encrypted search work?": [
-        "암호화된 검색은 어떻게 작동하나요?"
       ],
       "I have not finished this one yet.": [
         "아직 마무리하지 않았어요."
@@ -6004,12 +5965,6 @@
       ],
       "Indexing in progress": [
         "색인 진행 중"
-      ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "항목 인덱싱 ${ totalProgressToShow }개 중 ${ esProgress }개"
-      ],
-      "Indexing search results…": [
-        "검색 결과를 인덱싱하는 중..."
       ],
       "Inherited from parent folder": [
         "상위폴더에 상속되어 있습니다"
@@ -6187,9 +6142,6 @@
       ],
       "Move ${ folderCount } folder": [
         "폴더 ${ folderCount }개 이동"
-      ],
-      "Moving files": [
-        "파일 이동 중"
       ],
       "My Links": [
         "내 링크"
@@ -6449,9 +6401,6 @@
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "비공개 브라우징 모드(일명 \"시크릿\" 모드)는 기기에서의 온라인 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 사용자가 온라인에서 수행하는 작업을 확인할 수 있습니다."
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "비공개 검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
-      ],
       "Public link": [
         "공개 링크"
       ],
@@ -6520,9 +6469,6 @@
       ],
       "Scan to download": [
         "스캔하여 다운로드"
-      ],
-      "Search cannot be enabled in this browser": [
-        "이 브라우저에서 검색을 활성화할 수 없습니다"
       ],
       "Search covers your recent items": [
         "최근 항목만 검색할 수 있습니다"
@@ -6821,9 +6767,6 @@
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "비공개 검색을 활성화하려면, ${ DRIVE_APP_NAME }가 로컬에서 파일 인덱싱을 해야합니다."
       ],
-      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "완전한 비공개 검색을 활성화하려면, 로컬에서 사용자의 파일을 색인해야 합니다. 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다 - 인덱싱이 완료되면 알려 드리겠습니다."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
       ],
@@ -6922,9 +6865,6 @@
       ],
       "Update required": [
         "업데이트 필요"
-      ],
-      "Updating drive search...": [
-        "드라이브 검색을 업데이트하는 중..."
       ],
       "Upgrade anytime to bring over the rest": [
         "언제든지 업그레이드하여 남은 메일을 모두 가져오세요"
@@ -7996,9 +7936,6 @@
       "Shared with me": [
         "나와 공유됨"
       ],
-      "Show indexing progress of Encrypted Search": [
-        "암호화 검색 인덱싱 진행 사항 보기"
-      ],
       "Sign emails": [
         "이메일 서명"
       ],
@@ -8064,9 +8001,6 @@
       ],
       "Toolbar": [
         "툴바"
-      ],
-      "Type": [
-        "유형"
       ],
       "Unlock drive": [
         "드라이브 잠금 해제"
@@ -8268,6 +8202,9 @@
       ],
       "Pay invoice": [
         "청구서 지불"
+      ],
+      "Pay it": [
+        "결제"
       ],
       "Photos": [
         "사진"
@@ -9657,35 +9594,14 @@
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\"이(가) 성공적으로 생성되었습니다"
       ],
-      "\"${ ellipsedName }\" deleted": [
-        "\"${ ellipsedName }\"이(가) 삭제됨"
-      ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "\"${ ellipsedName }\" 이(가) 휴지통에서 완전히 삭제되었습니다"
-      ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "\"${ ellipsedName }\"을(를) 생성할 수 없습니다"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted": [
-        "\"${ ellipsedName }\" 삭제 실패"
-      ],
-      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
-        "\"${ ellipsedName }\"의 휴지통에서 삭제를 실패했습니다"
-      ],
-      "\"${ ellipsedName }\" failed to be moved": [
-        "\"${ ellipsedName }\"(을)를 이동할 수 없습니다"
-      ],
-      "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\"을(를) 휴지통에서 복구하는 데 실패했습니다"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" 항목이 이동되었습니다"
       ],
       "\"${ ellipsedName }\" restored from trash": [
         "\"${ ellipsedName }\"이(가) 휴지통에서 복구되었습니다"
-      ],
-      "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\"이(가) 성공적으로 이동되었습니다"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\"이(가) 공유됨"
@@ -9726,26 +9642,14 @@
       "${ numberOfItems } item copied": [
         "${ numberOfItems }개 항목 복사됨"
       ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems }개 항목 삭제됨"
-      ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems }개가 영구적으로 삭제되었습니다"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems }개가 휴지통에서 영구적으로 삭제되었습니다"
       ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems }개를 휴지통에서 영구적으로 삭제하는 데 실패했습니다"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems }개 이동 실패"
-      ],
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems }개를 휴지통으로 이동하는데 실패했습니다"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems }개를 휴지통에서 복구하는 데 실패했습니다"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems }개 항목 이동"
@@ -9755,9 +9659,6 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems }개가 휴지통에서 복구되었습니다"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems }개가 성공적으로 삭제되었습니다"
       ],
       "${ reason } has been disabled": [
         "${ reason }이(가) 비활성화 되었습니다."
@@ -9777,9 +9678,6 @@
       "All items deleted permanently from trash": [
         "모든 항목이 휴지통에서 영구적으로 삭제되었습니다"
       ],
-      "Cannot load link": [
-        "링크를 불러오는 중 문제 발생"
-      ],
       "Cannot load next page": [
         "다음 페이지 불러오기 실패"
       ],
@@ -9792,20 +9690,11 @@
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "\"${ ellipsedName }\"의 사본이 휴지통으로 이동됨"
       ],
-      "Device failed to be removed": [
-        "기기 삭제 실패"
-      ],
-      "Device failed to be renamed": [
-        "기기 이름 변경 실패"
-      ],
       "Device removed": [
         "기기 삭제됨"
       ],
       "Device renamed": [
         "기기 이름 변경됨"
-      ],
-      "Encrypted search activated": [
-        "암호화된 검색 활성화됨"
       ],
       "Error while listing devices": [
         "기기 목록 가져오기 오류"
@@ -11659,12 +11548,6 @@
       ],
       "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
         "이제 편집자가 공유 권한을 관리하고 타인을 초대할 수 있습니다. 언제든지 공유 설정에서 해제할 수 있습니다."
-      ],
-      "Encrypted search is here": [
-        "여기서 암호화된 검색을 찾을 수 있습니다"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        "이제 데이터를 안전하게 지키면서 쉽게 드라이브 파일을 검색할 수 있습니다."
       ]
     },
     "sso": {
