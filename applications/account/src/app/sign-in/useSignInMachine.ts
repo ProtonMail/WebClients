@@ -78,16 +78,16 @@ export const useSignInMachine = (options: Options) => {
                 return latestRef.current.productParam;
             },
             getKtActivation,
-            prepare: () => {
+            preparePage: () => {
                 // Warms up the sign-in; best-effort, so a failure doesn't block it
                 preparation ??= api(queryAvailableDomains('login')).then(noop, noop);
                 return preparation;
             },
-            startAuth: async () => {
+            prepareAttempt: async () => {
                 await latestRef.current.onPreSubmit?.();
                 await latestRef.current.onStartAuth();
             },
-            onStartAuth: () => latestRef.current.onStartAuth(),
+            startAuthSession: () => latestRef.current.onStartAuth(),
             onLogin: (session) => latestRef.current.onLogin(session),
         };
 

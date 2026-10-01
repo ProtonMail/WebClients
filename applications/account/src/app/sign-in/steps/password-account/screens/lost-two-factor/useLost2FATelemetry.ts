@@ -4,7 +4,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { TelemetryMeasurementGroups, TelemetryUnauthLost2FAEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 
-import type { Lost2FARecoveryMethods } from './state-machine/lost2FAStateMachine';
+import type { Lost2FAOutcome, Lost2FARecoveryMethods } from './state-machine/lost2FAStateMachine';
 
 type Cohort = 'none' | 'single' | 'multiple';
 
@@ -28,6 +28,13 @@ type Step =
     | 'no method to disable 2fa';
 
 type FlowOutcome = 'signin to continue' | 'return to 2fa step' | 'reset password' | 'totp backup code provided';
+
+/** How the flow's outcomes are named in telemetry. */
+export const flowOutcomes: Record<Lost2FAOutcome, FlowOutcome> = {
+    signInAgain: 'signin to continue',
+    returnToTwoFactor: 'return to 2fa step',
+    resetPassword: 'reset password',
+};
 
 interface TelemetryFunctions {
     sendStepLoad: (step: Step) => void;

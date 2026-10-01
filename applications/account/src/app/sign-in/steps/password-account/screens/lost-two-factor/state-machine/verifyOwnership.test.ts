@@ -41,11 +41,13 @@ const deferred = <T>() => {
 type Flow = ActorRefFrom<typeof lost2FAStateMachine>;
 
 /**
- * Runs the lost-2FA flow as the password account flow does: as a child, whose reported errors the parent collects.
+ * Runs the lost-2FA flow as the password account flow does: as a child, whose reported errors and password reset
+ * requests the parent collects.
  * With only the given recovery methods (and no authenticator app, unless `totp`) it opens on the first one's screen.
  */
 const runFlow = (logic: typeof lost2FAStateMachine, recoveryMethods: Partial<Lost2FARecoveryMethods>, totp = false) => {
     const errors: unknown[] = [];
+    let passwordResets = 0;
     const parent = setup({
         types: { events: {} as Lost2FAParentEvent },
         actors: { lost2FA: logic },
@@ -60,12 +62,13 @@ const runFlow = (logic: typeof lost2FAStateMachine, recoveryMethods: Partial<Los
             },
         },
         on: {
-            'lostTwoFactor.errorReported': { actions: ({ event }) => errors.push(event.payload.error) },
+            'lost2FA.errorReported': { actions: ({ event }) => errors.push(event.payload.error) },
+            'lost2FA.passwordResetChosen': { actions: () => passwordResets++ },
         },
     });
     const actor = createActor(parent).start();
     const flow = actor.getSnapshot().children.lost2FA as Flow;
-    return { flow, errors };
+    return { flow, errors, passwordResets: () => passwordResets };
 };
 
 /** A state of the email or phone code screen, as `snapshot.matches` takes it under the screen's state. */
@@ -149,7 +152,7 @@ describe('lost-2FA navigation', () => {
             expect(screenOf(flow)).toBe(screen);
         }
         flow.send({ type: 'decision.back' });
-        expect(flow.getSnapshot().output).toEqual({ outcome: 'return to 2fa step' });
+        expect(flow.getSnapshot().output).toEqual({ outcome: 'returnToTwoFactor' });
     });
 
     it('skips the methods the account lacks, both ways', () => {
@@ -161,15 +164,20 @@ describe('lost-2FA navigation', () => {
         expect(screenOf(flow)).toBe('verifyOwnershipWithPhone');
         // The first screen: back returns to the two-factor screen
         flow.send({ type: 'decision.back' });
-        expect(flow.getSnapshot().output).toEqual({ outcome: 'return to 2fa step' });
+        expect(flow.getSnapshot().output).toEqual({ outcome: 'returnToTwoFactor' });
     });
 
-    it('keeps the last screen up while the flow ends with a page change', () => {
-        const { flow } = runFlow(logic, {});
+    it('asks for the password reset, and waits on its screen, loading, while the page leaves', () => {
+        const { flow, passwordResets } = runFlow(logic, {});
         expect(screenOf(flow)).toBe('noMethod');
         flow.send({ type: 'lost2FA.passwordResetRequested' });
-        expect(flow.getSnapshot().output).toEqual({ outcome: 'reset password' });
+        expect(passwordResets()).toBe(1);
+        expect(flow.getSnapshot().status).toBe('active');
+        expect(flow.getSnapshot().hasTag('submitting')).toBe(true);
         expect(screenOf(flow)).toBe('noMethod');
+        // Nothing leads away from it any more
+        flow.send({ type: 'decision.back' });
+        expect(flow.getSnapshot().matches('resettingPassword')).toBe(true);
     });
 });
 
@@ -222,7 +230,7 @@ describe('lost-2FA code verification', () => {
 
     it('disables two-factor authentication with the right code', async () => {
         const { flow, spies } = await startOnCode('phone');
-        flow.send({ type: 'verification.codeSubmitted', code: '123456' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '123456' } });
         expect(flow.getSnapshot().hasTag('submitting')).toBe(true);
         await waitFor(flow, (snap) => snap.matches('twoFactorDisabled'));
         expect(spies.verifyCodeAndDisable2FA).toHaveBeenCalledWith({ method: 'phone', token: 'token', code: '123456' });
@@ -232,7 +240,7 @@ describe('lost-2FA code verification', () => {
         const { flow, errors } = await startOnCode('email', {
             verifyCodeAndDisable2FA: () => Promise.reject(invalidCodeError),
         });
-        flow.send({ type: 'verification.codeSubmitted', code: '000000' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '000000' } });
         await waitFor(flow, (snap) => snap.context.invalidCode);
         expect(isAt(flow, 'email', { awaitingCode: 'editing' })).toBe(true);
         expect(errors).toEqual([]);
@@ -243,7 +251,7 @@ describe('lost-2FA code verification', () => {
     it('reports any other error and lets the user retry', async () => {
         const error = new Error('offline');
         const { flow, errors } = await startOnCode('email', { verifyCodeAndDisable2FA: () => Promise.reject(error) });
-        flow.send({ type: 'verification.codeSubmitted', code: '123456' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '123456' } });
         await waitFor(flow, () => errors.length > 0);
         expect(isAt(flow, 'email', { awaitingCode: 'editing' })).toBe(true);
         expect(errors).toEqual([error]);
@@ -255,7 +263,7 @@ describe('lost-2FA code verification', () => {
         });
         const emitted: string[] = [];
         flow.on('*', (event) => emitted.push(event.type));
-        flow.send({ type: 'verification.codeSubmitted', code: '000000' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '000000' } });
         await waitFor(flow, (snap) => snap.context.invalidCode);
 
         flow.send({ type: 'verification.newCodeRequested' });
@@ -293,7 +301,7 @@ describe('lost-2FA code verification', () => {
             recoveryMethods: { phone: true },
             verifyCodeAndDisable2FA: () => check.promise,
         });
-        flow.send({ type: 'verification.codeSubmitted', code: '123456' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '123456' } });
         // By then the server may have disabled two-factor authentication, which leaving would hide
         expect(flow.getSnapshot().can({ type: 'lost2FA.otherMethodRequested' })).toBe(false);
         expect(flow.getSnapshot().can({ type: 'decision.back' })).toBe(false);
@@ -308,7 +316,7 @@ describe('lost-2FA code verification', () => {
         const { flow } = await startOnCode('email', {
             verifyCodeAndDisable2FA: () => Promise.reject(invalidCodeError),
         });
-        flow.send({ type: 'verification.codeSubmitted', code: '000000' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '000000' } });
         await waitFor(flow, (snap) => snap.context.invalidCode);
         expect(flow.getSnapshot().can({ type: 'lost2FA.otherMethodRequested' })).toBe(true);
     });
@@ -318,7 +326,7 @@ describe('lost-2FA code verification', () => {
             verifyCodeAndDisable2FA: () => Promise.reject(invalidCodeError),
             recoveryMethods: { phone: true },
         });
-        flow.send({ type: 'verification.codeSubmitted', code: '000000' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '000000' } });
         await waitFor(flow, (snap) => snap.context.invalidCode);
         flow.send({ type: 'lost2FA.otherMethodRequested' });
         flow.send({ type: 'decision.back' });
@@ -338,7 +346,7 @@ describe('lost-2FA phrase verification', () => {
 
     it('disables two-factor authentication with the recovery phrase', async () => {
         const { flow, spy } = startPhrase(() => Promise.resolve());
-        flow.send({ type: 'verification.phraseSubmitted', phrase: 'my phrase' });
+        flow.send({ type: 'verification.phraseSubmitted', payload: { phrase: 'my phrase' } });
         await waitFor(flow, (snap) => snap.matches('twoFactorDisabled'));
         expect(spy).toHaveBeenCalledWith({ username: 'member@example.com', phrase: 'my phrase' });
     });
@@ -346,7 +354,7 @@ describe('lost-2FA phrase verification', () => {
     it('reports a failed check and lets the user retry', async () => {
         const error = new Error('wrong phrase');
         const { flow, errors } = startPhrase(() => Promise.reject(error));
-        flow.send({ type: 'verification.phraseSubmitted', phrase: 'wrong' });
+        flow.send({ type: 'verification.phraseSubmitted', payload: { phrase: 'wrong' } });
         await waitFor(flow, () => errors.length > 0);
         expect(flow.getSnapshot().matches({ verifyOwnershipWithPhrase: 'editing' })).toBe(true);
         expect(errors).toEqual([error]);
@@ -355,7 +363,7 @@ describe('lost-2FA phrase verification', () => {
     it('ignores another way while the phrase is checked', async () => {
         const check = deferred<void>();
         const { flow } = startPhrase(() => check.promise);
-        flow.send({ type: 'verification.phraseSubmitted', phrase: 'my phrase' });
+        flow.send({ type: 'verification.phraseSubmitted', payload: { phrase: 'my phrase' } });
         expect(flow.getSnapshot().can({ type: 'lost2FA.otherMethodRequested' })).toBe(false);
         flow.send({ type: 'lost2FA.otherMethodRequested' });
         check.resolve();
@@ -383,7 +391,7 @@ describe('createVerificationActors', () => {
     it('disables two-factor authentication once the code is verified', async () => {
         const { flow, called } = startWithApi(() => Promise.resolve({ Token: 'verified' }));
         await untilAt(flow, 'email', { awaitingCode: 'editing' });
-        flow.send({ type: 'verification.codeSubmitted', code: '123456' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '123456' } });
         await waitFor(flow, (snap) => snap.matches('twoFactorDisabled'));
         expect(called(DISABLE_2FA)).toBe(true);
     });
@@ -394,7 +402,7 @@ describe('createVerificationActors', () => {
             config.url.startsWith('core/v4/verification/') ? check.promise : Promise.resolve({})
         );
         await untilAt(flow, 'email', { awaitingCode: 'editing' });
-        flow.send({ type: 'verification.codeSubmitted', code: '123456' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '123456' } });
         // Leaving is refused while the check runs, so the screen shows what happened on the server
         flow.send({ type: 'lost2FA.otherMethodRequested' });
         flow.send({ type: 'decision.back' });
@@ -409,7 +417,7 @@ describe('createVerificationActors', () => {
             config.url.startsWith('core/v4/verification/') ? Promise.reject(invalidToken) : Promise.resolve({})
         );
         await untilAt(flow, 'email', { awaitingCode: 'editing' });
-        flow.send({ type: 'verification.codeSubmitted', code: '000000' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '000000' } });
         await waitFor(flow, (snap) => snap.context.invalidCode);
         expect(errors).toEqual([]);
         expect(called(DISABLE_2FA)).toBe(false);
@@ -420,7 +428,7 @@ describe('createVerificationActors', () => {
             config.url === DISABLE_2FA ? Promise.reject(invalidToken) : Promise.resolve({ Token: 'verified' })
         );
         await untilAt(flow, 'email', { awaitingCode: 'editing' });
-        flow.send({ type: 'verification.codeSubmitted', code: '123456' });
+        flow.send({ type: 'verification.codeSubmitted', payload: { code: '123456' } });
         await waitFor(flow, () => errors.length > 0);
         expect(errors).toEqual([invalidToken]);
         expect(flow.getSnapshot().context.invalidCode).toBe(false);

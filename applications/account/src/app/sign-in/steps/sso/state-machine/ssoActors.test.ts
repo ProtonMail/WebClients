@@ -69,7 +69,7 @@ describe('waitForDeviceApproval', () => {
         expect(received).toEqual([]);
 
         await jest.advanceTimersByTimeAsync(POLL_INTERVAL);
-        expect(received).toEqual([{ type: 'sso.device.failed', error }]);
+        expect(received).toEqual([{ type: 'sso.device.failed', payload: { error } }]);
 
         await jest.advanceTimersByTimeAsync(POLL_INTERVAL * 3);
         expect(mockGetAuthDeviceDataByUser).toHaveBeenCalledTimes(3);

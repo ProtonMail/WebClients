@@ -22,18 +22,18 @@ export interface CreatedAuth {
 export interface SignInActorServices extends SignInServices {
     getKtActivation: () => Promise<KeyTransparencyActivation>;
     /** Warms up the sign-in page, once per page; the requests wait for it. It never fails. */
-    prepare: () => Promise<void>;
-    /** Runs before the first request of an attempt: loads the crypto worker, then starts the auth session. */
-    startAuth: () => Promise<void>;
-    /** Starts the unauthenticated session. */
-    onStartAuth: () => Promise<void>;
+    preparePage: () => Promise<void>;
+    /** Before the first request of an attempt: loads the crypto worker, then starts the auth session. */
+    prepareAttempt: () => Promise<void>;
+    /** Starts the unauthenticated session, ahead of any attempt. */
+    startAuthSession: () => Promise<void>;
     onLogin: (session: AuthSession) => Promise<unknown>;
 }
 
 export const createSignInActors = (services: SignInActorServices) => {
     return {
         /** The domains request that prepares the sign-in; the requests wait for it (see `createCredentialsActors`). */
-        prepareSignIn: fromPromise<void>(() => services.prepare()),
+        prepareSignIn: fromPromise<void>(() => services.preparePage()),
         createAuthState: fromPromise<CreatedAuth, PrimaryAuthResult>(async ({ input }) => {
             const activation = await services.getKtActivation();
             const auth: SignInAuthState = {

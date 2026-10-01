@@ -35,12 +35,12 @@ export interface StepErrorEvent {
 
 type ErrorClass = abstract new (...args: never[]) => Error;
 
-/** Guard: the failed request's error is of this class (a wrong code is a `TOTPError`, a wrong password a `PasswordError`). */
-export const isErrorOf = (_: unknown, params: { error: unknown; errorClass: ErrorClass }) =>
-    params.error instanceof params.errorClass;
+/**
+ * Guard: the failed request's error is of this class (a wrong code is a `TOTPError`, a wrong password a `PasswordError`).
+ * It reads the error from the event, so its params stay static, which `and()` needs to type the machine.
+ */
+export const isErrorOf = ({ event }: { event: object }, params: { errorClass: ErrorClass }) =>
+    'error' in event && event.error instanceof params.errorClass;
 
-/** Guard params for `isErrorOf`: the failed request's error is of this class. */
-export const errorOf = (errorClass: ErrorClass) => ({
-    type: 'isErrorOf' as const,
-    params: ({ event }: { event: { error: unknown } }) => ({ error: event.error, errorClass }),
-});
+/** Guard for `isErrorOf`: the failed request's error is of this class. */
+export const errorOf = (errorClass: ErrorClass) => ({ type: 'isErrorOf' as const, params: { errorClass } });
