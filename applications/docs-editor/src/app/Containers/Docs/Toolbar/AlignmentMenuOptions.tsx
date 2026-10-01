@@ -5,7 +5,7 @@ import { c } from 'ttag'
 import { memo } from 'react'
 import { Icon } from '../Components/Icon'
 import * as Icons from '../Components/icons'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
 import ToolbarTooltip from './ToolbarTooltip'
 

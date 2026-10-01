@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 import { useCallback, useRef, useState } from 'react'
 import type { CommentEditorHandle } from './CommentEditor'
 import { CommentEditor } from './CommentEditor'
-import clsx from '@proton/utils/clsx'
+import clsx from 'clsx'
 import { isMac } from '@proton/shared/lib/helpers/browser'
 import { reportErrorToSentry } from '../../../../Utils/errorMessage'
 
