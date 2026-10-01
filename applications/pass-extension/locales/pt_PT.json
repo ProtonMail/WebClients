@@ -1461,6 +1461,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "O Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }."
+      ],
+      "Incorrect backup password. Please try again.": [
+        "A palavra-passe de backup não é correta. Tente novamente."
+      ],
+      "Incorrect second password. Please try again.": [
+        "A secunda palavra-passe não é correta. Tente novamente."
       ]
     },
     "Error message": {
@@ -2214,8 +2220,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
