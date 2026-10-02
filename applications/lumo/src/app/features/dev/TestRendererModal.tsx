@@ -8,6 +8,7 @@
  * - Code blocks in various languages
  * - Complex markdown
  * - Edge cases (empty content, special characters, etc.)
+ * - Artifact panel viz format boundary (document chat-fences vs presentation chart placeholders)
  *
  * Usage:
  * 1. Open the Performance Monitor (Cmd/Ctrl + Shift + P)
@@ -26,6 +27,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
+import {
+    DOCUMENT_WITH_CHAT_VIZ_BLOCKS,
+    PRESENTATION_WITH_CHART_PLACEHOLDER,
+    PRESENTATION_WITH_VEGA_LITE_FENCE,
+} from '../../components/Conversation/artifact/artifactVisualizationFixtures';
 import { CREATE_ARTIFACT_TOOL_NAME } from '../../components/Conversation/artifact/createArtifactTool';
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { useLumoDispatch } from '../../redux/hooks';
@@ -223,6 +229,57 @@ This should show an artifact chip and panel.`,
 helloWorld();`,
                 },
                 'call-artifact-simple'
+            ),
+        ],
+    },
+    chat_viz_fences_reference: {
+        name: 'Chat viz (reference): card-row + vega-lite in message body',
+        content: `Same markdown as the document artifact viz fixture, rendered **in chat** (not the side panel):
+
+${DOCUMENT_WITH_CHAT_VIZ_BLOCKS}`,
+    },
+    artifact_viz_document_chat_fences: {
+        name: 'Artifact panel: document with chat viz fences (cards → table/quote, live chart)',
+        content: `Open the **document** artifact in the side panel. The \`card-row\` should show as a Metric / Value / Change table, the \`card\` as a quote, and the \`vega-lite\` fence as a live chart — no raw JSON.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'viz-format-document',
+                    type: 'document',
+                    title: 'Proton 2028 Vision (viz fixture)',
+                    content: DOCUMENT_WITH_CHAT_VIZ_BLOCKS,
+                },
+                'call-artifact-viz-document'
+            ),
+        ],
+    },
+    artifact_viz_presentation_wrong_vega_fence: {
+        name: 'Artifact panel: slides with stray vega-lite fence (cleaned up to a chart)',
+        content: `Open the **presentation** artifact. The chat-style \`vega-lite\` fence inside the slide HTML is rewritten to a chart placeholder, so the slide should show a bar chart, not raw Vega JSON.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'viz-format-slides-wrong',
+                    type: 'presentation',
+                    title: 'Power of Artifacts Deck (wrong chart format)',
+                    content: PRESENTATION_WITH_VEGA_LITE_FENCE,
+                },
+                'call-artifact-viz-slides-wrong'
+            ),
+        ],
+    },
+    artifact_viz_presentation_chart_placeholder: {
+        name: 'Artifact panel: slides with chart placeholder (working embed)',
+        content: `Open the **presentation** artifact. The slide should show a pre-rendered bar chart (SVG), using \`application/lumo-vega-lite+json\`.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'viz-format-slides-ok',
+                    type: 'presentation',
+                    title: 'Chart slide (correct placeholder)',
+                    content: PRESENTATION_WITH_CHART_PLACEHOLDER,
+                },
+                'call-artifact-viz-slides-ok'
             ),
         ],
     },
