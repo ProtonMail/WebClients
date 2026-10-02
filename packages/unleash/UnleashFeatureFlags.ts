@@ -153,6 +153,7 @@ export enum CommonFeatureFlag {
     SubscriberNudgeDriveMonthlyDisabled = 'SubscriberNudgeDriveMonthlyDisabled',
     SubscriberNudgeMailMonthlyDisabled = 'SubscriberNudgeMailMonthlyDisabled',
     UnlimitedToDuoPermanentOffer = 'UnlimitedToDuoPermanentOffer',
+    UnlimitedToDuoDiscountedOffer = 'UnlimitedToDuoDiscountedOffer',
     VPNDrawer = 'VPNDrawer',
     WalletAztecoWeb = 'WalletAztecoWeb',
     WalletFullSync = 'WalletFullSync',

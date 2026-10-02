@@ -39,8 +39,14 @@ const OfferModal = ({ offer, offerConfig, modalProps, currency, onChangeCurrency
             size="large"
         >
             <ModalTwoContent>
-                {modalProps.onClose && (
-                    <OfferCloseButton onClose={modalProps.onClose} darkBackground={offer.darkBackground} />
+                {handleCloseModal && (
+                    <OfferCloseButton
+                        onClose={() => {
+                            offerConfig.tracking?.onClickCloseButton?.();
+                            handleCloseModal();
+                        }}
+                        darkBackground={offer.darkBackground}
+                    />
                 )}
                 <offerConfig.layout
                     offer={offer}
