@@ -172,9 +172,11 @@ const SubUserEditModal = ({
     const { createNotification } = useNotifications();
     const silentApi = useSilentApi();
 
-    const [selectedRoles, setSelectedRoles] = useState<Set<string>>(
-        () => new Set(member.UserOrganizationRoles?.map(({ Role }) => Role.OrganizationRoleID) ?? [])
-    );
+    // Unset until edited, so roles loaded after opening are not submitted as removals
+    const [editedRoles, setEditedRoles] = useState<Set<string> | null>(null);
+    const selectedRoles =
+        editedRoles ?? new Set(member.UserOrganizationRoles?.map(({ Role }) => Role.OrganizationRoleID) ?? []);
+    const loadingMemberRoles = member.roleState === 'initial' || member.roleState === 'pending';
     const [adminRolesUIState, loadingAdminRolesUI] = useAdminRolesUI();
     const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
         FeatureCode.AdminRolesOnboardingModal
@@ -389,7 +391,7 @@ const SubUserEditModal = ({
                 {adminRolesUIState === AdminRolesUIState.Disabled && (
                     <MemberOwnerRoleToggle
                         member={member}
-                        onChangeSelectedRoles={setSelectedRoles}
+                        onChangeSelectedRoles={setEditedRoles}
                         hasToggledPrivate={hasToggledPrivate}
                     />
                 )}
@@ -613,12 +615,12 @@ const SubUserEditModal = ({
                         const memberDiff = getMemberDiff({ model, initialModel, hasVPN });
                         const hasMemberChanges = await handleUpdateMember(memberDiff, null, false);
                         let hasRoleChanges = false;
-                        if (adminRolesUIState === AdminRolesUIState.Enabled) {
+                        if (adminRolesUIState === AdminRolesUIState.Enabled && editedRoles !== null) {
                             const result = await dispatch(
                                 assignMemberRoles({
                                     member,
                                     currentRoles: member.UserOrganizationRoles ?? [],
-                                    desiredRoleIds: selectedRoles,
+                                    desiredRoleIds: editedRoles,
                                     payload: null,
                                     api: silentApi,
                                 })
@@ -667,12 +669,13 @@ const SubUserEditModal = ({
                                       content: (
                                           <RolesAndPermissionsTab
                                               selectedRoles={selectedRoles}
-                                              onChange={setSelectedRoles}
+                                              onChange={setEditedRoles}
                                               userRoles={member.UserOrganizationRoles}
                                               isEditingSelf={isSelf}
                                               disabled={
                                                   isSelf ||
                                                   isPendingMagicLinkInvite ||
+                                                  loadingMemberRoles ||
                                                   adminRolesUIState !== AdminRolesUIState.Enabled
                                               }
                                               banner={getRolesTabBanner({
