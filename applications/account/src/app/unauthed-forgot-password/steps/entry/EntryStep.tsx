@@ -21,8 +21,9 @@ import { useAutomaticRecoveryVerification } from '../../hooks/useAutomaticRecove
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useForgotPasswordProps } from '../../wizard/ForgotPasswordProvider';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const EntryStep = () => {
+export const EntryStep = ({ onBack }: ForgotPasswordStepProps) => {
     const { sendResetPasswordRecoveryMethodsRequested, sendResetPasswordStepLoad } = useResetPasswordTelemetry({
         variant: 'B',
     });
@@ -99,7 +100,7 @@ export const EntryStep = () => {
     const showLoading = loading || automaticVerification.loading || automationMnemonicVerificationLoading;
     return (
         <>
-            <Header title={c('Title').t`Recover account`} onBack={handleBackStep} />
+            <Header title={c('Title').t`Recover account`} onBack={onBack} />
             <Content>
                 <Text>{c('Info').t`Enter your ${BRAND_NAME} Account email address or username.`}</Text>
                 <form
