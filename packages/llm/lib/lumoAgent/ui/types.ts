@@ -16,17 +16,6 @@ export enum ConfirmStatus {
     CANCELLED = 'cancelled',
 }
 
-/**
- * A chain parked on the round budget, and what it managed before it stopped — so the offer to carry on
- * can say how far it has got rather than "this is taking a lot of steps".
- */
-export interface ToolLimit {
-    /** Tool calls made this exchange, the resumed rounds included. */
-    steps: number;
-    /** The last step the user was shown; absent when that step was a mutation, which reports as a tile. */
-    activity?: string;
-}
-
 /** The chat items the panel renders — the human-facing view of the executor's event stream. */
 export type LumoAgentItem =
     | { id: number; kind: 'user'; text: string }
@@ -88,7 +77,6 @@ export enum LumoChainEnd {
     FAILED = 'failed',
     /** The user stopped it. Distinct from {@link DISCARDED}: they wanted the answer and gave up on it. */
     STOPPED = 'stopped',
-    BUDGET = 'budget',
     REPLACED = 'replaced',
     /** The conversation it belonged to went away: cleared, or the panel unmounted under it. */
     DISCARDED = 'discarded',
@@ -103,7 +91,7 @@ export enum LumoConfirmAnswer {
 /** Lifecycle facts the hook alone can see. The host decides what, if anything, to report. */
 export interface LumoAgentTelemetry {
     promptSent: () => void;
-    chainEnded: (end: LumoChainEnd, stats: { durationMs: number; toolCalls: number; isResume: boolean }) => void;
+    chainEnded: (end: LumoChainEnd, stats: { durationMs: number; toolCalls: number }) => void;
     confirmAnswered: (tool: ToolName, answer: LumoConfirmAnswer) => void;
 }
 

@@ -27,7 +27,6 @@ import { ArtifactPanelMobileOverlay } from './artifact/ArtifactPanelMobileOverla
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
 import DesktopApprovalCards from './messageChain/message/DesktopToolApproval/DesktopApprovalCards';
-import ToolBudgetCard from './messageChain/message/ToolBudget/ToolBudgetCard';
 import { WebSearchSourcesView } from './messageChain/message/toolCall/WebSearchSourcesView';
 import { useImageLimitInfo } from './useImageLimitInfo';
 
@@ -109,56 +108,59 @@ const ConversationLayout = ({
         }
     }, []);
 
-    const handleArtifactResizePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
-        e.preventDefault();
-        const handle = e.currentTarget;
-        const pointerId = e.pointerId;
-        handle.setPointerCapture(pointerId);
+    const handleArtifactResizePointerDown = useCallback(
+        (e: React.PointerEvent<HTMLDivElement>) => {
+            e.preventDefault();
+            const handle = e.currentTarget;
+            const pointerId = e.pointerId;
+            handle.setPointerCapture(pointerId);
 
-        const startX = e.clientX;
-        const startPct = panelWidthPctRef.current;
-        dragWidthPctRef.current = startPct;
+            const startX = e.clientX;
+            const startPct = panelWidthPctRef.current;
+            dragWidthPctRef.current = startPct;
 
-        document.body.style.cursor = 'col-resize';
-        document.body.style.userSelect = 'none';
+            document.body.style.cursor = 'col-resize';
+            document.body.style.userSelect = 'none';
 
-        const handlePointerMove = (ev: PointerEvent) => {
-            if (ev.pointerId !== pointerId) {
-                return;
-            }
-            const containerWidth = splitRowRef.current?.clientWidth ?? window.innerWidth;
-            const dx = ev.clientX - startX;
-            const deltaPct = (dx / containerWidth) * 100;
-            const newPct = Math.max(25, Math.min(75, startPct - deltaPct));
-            dragWidthPctRef.current = newPct;
-            applyArtifactPanelWidthPct(newPct);
-        };
+            const handlePointerMove = (ev: PointerEvent) => {
+                if (ev.pointerId !== pointerId) {
+                    return;
+                }
+                const containerWidth = splitRowRef.current?.clientWidth ?? window.innerWidth;
+                const dx = ev.clientX - startX;
+                const deltaPct = (dx / containerWidth) * 100;
+                const newPct = Math.max(25, Math.min(75, startPct - deltaPct));
+                dragWidthPctRef.current = newPct;
+                applyArtifactPanelWidthPct(newPct);
+            };
 
-        const cleanup = () => {
-            try {
-                handle.releasePointerCapture(pointerId);
-            } catch {
-                // Handle may already be unmounted.
-            }
-            handle.removeEventListener('pointermove', handlePointerMove);
-            handle.removeEventListener('pointerup', handlePointerUp);
-            handle.removeEventListener('pointercancel', handlePointerUp);
-            document.body.style.cursor = '';
-            document.body.style.userSelect = '';
-        };
+            const cleanup = () => {
+                try {
+                    handle.releasePointerCapture(pointerId);
+                } catch {
+                    // Handle may already be unmounted.
+                }
+                handle.removeEventListener('pointermove', handlePointerMove);
+                handle.removeEventListener('pointerup', handlePointerUp);
+                handle.removeEventListener('pointercancel', handlePointerUp);
+                document.body.style.cursor = '';
+                document.body.style.userSelect = '';
+            };
 
-        const handlePointerUp = (ev: PointerEvent) => {
-            if (ev.pointerId !== pointerId) {
-                return;
-            }
-            setPanelWidthPct(dragWidthPctRef.current);
-            cleanup();
-        };
+            const handlePointerUp = (ev: PointerEvent) => {
+                if (ev.pointerId !== pointerId) {
+                    return;
+                }
+                setPanelWidthPct(dragWidthPctRef.current);
+                cleanup();
+            };
 
-        handle.addEventListener('pointermove', handlePointerMove);
-        handle.addEventListener('pointerup', handlePointerUp);
-        handle.addEventListener('pointercancel', handlePointerUp);
-    }, [applyArtifactPanelWidthPct]);
+            handle.addEventListener('pointermove', handlePointerMove);
+            handle.addEventListener('pointerup', handlePointerUp);
+            handle.addEventListener('pointercancel', handlePointerUp);
+        },
+        [applyArtifactPanelWidthPct]
+    );
 
     return (
         <>
@@ -227,12 +229,7 @@ const ConversationLayout = ({
                                 onRetryPanelToggle={handleRetryPanelToggle}
                                 composerContainerRef={composerContainerRef}
                                 conversationId={conversationId}
-                                afterMessages={
-                                    <>
-                                        <DesktopApprovalCards />
-                                        <ToolBudgetCard conversationId={conversationId} />
-                                    </>
-                                }
+                                afterMessages={<DesktopApprovalCards />}
                             />
                             {/* TODO: update to show all conversations errors at some point */}
                             {conversationErrors.length > 0 && (
@@ -277,7 +274,6 @@ const ConversationLayout = ({
                             className="artifact-panel-container hidden md:flex flex-column min-w-0"
                             style={{ flex: `0 0 ${panelWidthPct}%` }}
                         >
-                            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
                             <div
                                 className="artifact-panel-resize-handle"
                                 onPointerDown={handleArtifactResizePointerDown}

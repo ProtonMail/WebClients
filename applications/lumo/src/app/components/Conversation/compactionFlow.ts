@@ -4,8 +4,8 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import type { ContextFilter } from '../../llm';
 import { compactConversation, estimateTurnsTokens } from '../../llm/compaction';
-import { getContextWindowConfigForModelTier } from '../../llm/modelContextLimits';
 import { NotEnoughToCompactError } from '../../llm/compaction/partition';
+import { getContextWindowConfigForModelTier } from '../../llm/modelContextLimits';
 import { updateConversationStatus } from '../../redux/slices/core/conversations';
 import {
     addMessage,
@@ -17,8 +17,6 @@ import {
 import type { LumoDispatch } from '../../redux/store';
 import { isContextLengthExceededError } from '../../services/errors/contextLengthError';
 import { isAbortError, throwIfAborted } from '../../services/generation/abortGeneration';
-import { generationRegistry } from '../../services/generation/generationRegistry';
-import { clearSuspendedChain, setSuspendedChain } from '../../services/generation/toolBudgetStore';
 import {
     type Attachment,
     type CompactionMeta,
@@ -132,9 +130,6 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
         let currentParentId = parentMessageId;
         let compactions = 0;
 
-        // This generation supersedes whatever the previous one left suspended for this conversation.
-        clearSuspendedChain(conversationId);
-
         /** Run compaction, materialize the branch, and advance the local cursors. */
         const compactAndAdvance = async (): Promise<void> => {
             const branch = await dispatch(
@@ -191,7 +186,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             throwIfAborted(sendOptions.signal);
             try {
                 const turns = buildTurns(currentChain);
-                const result = await dispatch(
+                await dispatch(
                     sendMessageWithRedux(api, turns, {
                         ...sendOptions,
                         clientToolExecutor: resolveClientToolExecutor(sendOptions),
@@ -200,20 +195,6 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                         spaceId,
                     })
                 );
-                // The tool loop ran out of rounds mid-task: park the chain so the conversation can
-                // offer to carry on instead of ending the turn in silence.
-                if (result?.stoppedOnBudget) {
-                    dispatch(
-                        suspendChain({
-                            api,
-                            conversationId,
-                            spaceId,
-                            messageId: currentAssistantId,
-                            turns: result.turns,
-                            sendOptions,
-                        })
-                    );
-                }
                 return;
             } catch (error) {
                 if (!isContextLengthExceededError(error) || compactions >= maxCompactions) {
@@ -230,72 +211,6 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                     throw compactionError;
                 }
             }
-        }
-    };
-}
-
-/** A chain the round budget cut short, kept as everything a resume needs to pick it back up. */
-type Suspension = {
-    api: Api;
-    conversationId: ConversationId;
-    spaceId: SpaceId;
-    messageId: MessageId;
-    turns: Turn[];
-    sendOptions: ForwardedSendOptions;
-};
-
-function suspendChain(suspension: Suspension) {
-    return (dispatch: LumoDispatch): void => {
-        setSuspendedChain({
-            conversationId: suspension.conversationId,
-            resume: () => dispatch(resumeChain(suspension)),
-        });
-    };
-}
-
-/**
- * Carry a suspended chain on. The saved turns are replayed as-is and the answer streams into the same
- * assistant message
- */
-function resumeChain(suspension: Suspension) {
-    return async (dispatch: LumoDispatch): Promise<void> => {
-        const { api, conversationId, spaceId, messageId, turns, sendOptions } = suspension;
-
-        // A resume is its own generation: it needs a live signal for the composer's stop button, and
-        // the registry slot keeps a message sent in the meantime from racing it.
-        let controller: AbortController;
-        try {
-            controller = generationRegistry.start(conversationId);
-        } catch {
-            return;
-        }
-
-        clearSuspendedChain(conversationId);
-        dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
-
-        try {
-            const result = await dispatch(
-                sendMessageWithRedux(api, turns, {
-                    ...sendOptions,
-                    // A chain suspended mid tool loop has to resume with the same client tools
-                    // registered, or the model loses the artifact tool it was in the middle of using.
-                    clientToolExecutor: resolveClientToolExecutor(sendOptions),
-                    // The first attempt already settled the title; a resume only continues the answer.
-                    generateTitle: false,
-                    signal: controller.signal,
-                    messageId,
-                    conversationId,
-                    spaceId,
-                })
-            );
-            if (result?.stoppedOnBudget) {
-                dispatch(suspendChain({ ...suspension, turns: result.turns }));
-            }
-        } catch (error) {
-            console.warn('resume after tool-round budget failed', error);
-            dispatch(suspendChain(suspension));
-        } finally {
-            generationRegistry.finish(conversationId);
         }
     };
 }

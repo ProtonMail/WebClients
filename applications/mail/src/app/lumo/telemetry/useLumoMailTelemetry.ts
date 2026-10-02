@@ -13,7 +13,6 @@ enum EndReason {
     SUCCEEDED = 'succeeded',
     FAILED = 'failed',
     USER_STOPPED = 'user_stopped',
-    ROUND_BUDGET = 'round_budget',
     REPLACED = 'replaced',
     DISCARDED = 'discarded',
 }
@@ -31,7 +30,6 @@ const CHAIN_END_REASONS: Record<LumoChainEnd, EndReason> = {
     [LumoChainEnd.SUCCEEDED]: EndReason.SUCCEEDED,
     [LumoChainEnd.FAILED]: EndReason.FAILED,
     [LumoChainEnd.STOPPED]: EndReason.USER_STOPPED,
-    [LumoChainEnd.BUDGET]: EndReason.ROUND_BUDGET,
     [LumoChainEnd.REPLACED]: EndReason.REPLACED,
     [LumoChainEnd.DISCARDED]: EndReason.DISCARDED,
 };
@@ -93,10 +91,12 @@ export const useLumoMailTelemetry = (): LumoMailTelemetry => {
             });
         },
 
-        chainEnded: (end, { durationMs, toolCalls, isResume }) =>
+        chainEnded: (end, { durationMs, toolCalls }) =>
             report(
                 TelemetryMailLumoEvents.chain_end,
-                { isResumed: String(isResume), reason: CHAIN_END_REASONS[end] },
+                // Chains no longer stop on a tool-round budget, so none is ever resumed. The dimension stays
+                // until the event schema drops it.
+                { isResumed: 'false', reason: CHAIN_END_REASONS[end] },
                 { durationSeconds: durationMs / 1000, toolCalls }
             ),
 
