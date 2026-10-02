@@ -11,7 +11,7 @@ const mockedUseLumoFlags = useLumoFlags as jest.Mock;
 const mockedIsBridgeAvailable = isNativeAuthBridgeAvailable as jest.Mock;
 
 const ANDROID_UA = 'Mozilla/5.0 (Linux; Android 16; Pixel 9) AppleWebKit/537.36 ProtonLumo/2.1.0 (Android 16; Pixel 9)';
-const IOS_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) ProtonLumo/2.1.0 (iOS/26.0; iPhone 17)';
+const IOS_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) ProtonLumo/2.1.1 (iOS/26.0; iPhone 17)';
 const BROWSER_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/140.0.0.0 Safari/537.36';
 
 const setup = ({
