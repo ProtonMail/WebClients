@@ -2,44 +2,25 @@ import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useLocalState from '@proton/components/hooks/useLocalState';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import useLoading from '@proton/hooks/useLoading';
 import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
-import { defaultPersistentKey } from '../../public/helper';
-import { useResetPasswordTelemetry } from '../../reset/resetPasswordTelemetry';
-import { authMnemonicAndGetKeys } from '../actions';
-import type { UnauthedForgotPasswordStateMachine } from '../state-machine/UnauthedForgotPasswordStateMachine';
-import { useMachineWizard } from '../wizard/MachineWizardProvider';
+import { ForgotPasswordContext } from '../wizard/ForgotPasswordContext';
 
 const decodeAutomaticResetParams = (base64String: string) => {
     const decodedString = uint8ArrayToBinaryString(Uint8Array.fromBase64(base64String, { alphabet: 'base64url' }));
     return JSON.parse(decodedString);
 };
 
-interface Props {
-    onPreSubmit: () => Promise<void>;
-    onStartAuth: () => Promise<void>;
-}
-
-export const useAutomaticMnemonicVerification = ({ onPreSubmit, onStartAuth }: Props) => {
-    const [loading, withLoading] = useLoading();
-    const { sendResetPasswordMethodValidated } = useResetPasswordTelemetry({
-        variant: 'B',
-    });
-
-    const { send } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const silentApi = useSilentApi();
-
-    const [persistent] = useLocalState(false, defaultPersistentKey);
+/**
+ * A recovery link (username and recovery phrase in the URL hash) has the machine check the phrase right away. The
+ * hash is removed from the URL once read.
+ */
+export const useAutomaticMnemonicVerification = () => {
+    const { send } = ForgotPasswordContext.useActorRef();
     const history = useHistory();
     const location = useLocation();
     const errorHandler = useErrorHandler();
 
-    /**
-     * Recovery phrase automatic password reset
-     */
     useEffect(() => {
         const hash = location.hash.slice(1);
         if (!hash) {
@@ -63,33 +44,6 @@ export const useAutomaticMnemonicVerification = ({ onPreSubmit, onStartAuth }: P
             return;
         }
 
-        const run = async () => {
-            try {
-                await onPreSubmit?.();
-                await onStartAuth();
-                const mnemonicData = await authMnemonicAndGetKeys({
-                    username,
-                    mnemonic: value,
-                    persistent,
-                    api: silentApi,
-                });
-                sendResetPasswordMethodValidated({ step: 'entry', method: 'mnemonic' });
-                if (mnemonicData) {
-                    send({
-                        type: 'mnemonic.prefilled',
-                        payload: {
-                            username,
-                            mnemonicData,
-                        },
-                    });
-                }
-            } catch (e) {
-                errorHandler(e);
-            }
-        };
-
-        void withLoading(run());
+        send({ type: 'recoveryLink.opened', payload: { username, mnemonic: value } });
     }, []);
-
-    return { loading };
 };

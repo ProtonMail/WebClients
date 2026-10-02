@@ -1,37 +1,39 @@
 /**
  * Forgot-password flow state machine — naming conventions:
- * - **States:** camelCase; work-in-progress describes the step (`verifyRecoveryEmail`);
- *   terminal states use a `done*` / `fatal*` / `doneHelp*` prefix.
- * - **Events:** `domain.action` (e.g. `email.code.validated`, `decision.skip`) so related events sort together.
- * - **Actors / machine actions:** camelCase verbs (`fetchRecoveryMethods`, `redirectToSignIn`).
+ * - **States:** camelCase; work-in-progress describes the step (`verifyRecoveryEmail`); states that only pick the
+ *   next step, with eventless transitions, are named `route*`.
+ * - **Events:** `domain.action` (e.g. `code.submitted`, `decision.skip`) so related events sort together.
+ * - **Actors / machine actions:** camelCase verbs (`sendResetCode`, `redirectToSignIn`).
+ *
+ * Every request is an actor invoked by a work state (`forgotPasswordActors`), so leaving a state stops caring about
+ * its request, whose result can never land in a later step. The steps send what the user did and read the state.
  */
-import { assign, fromPromise, setup } from 'xstate';
+import { type SnapshotFrom, assertEvent, assign, emit, setup } from 'xstate';
 
-import type {
-    AccountType,
-    DelegatedAccessSummary,
-    RecoveryMethod,
-    ValidateResetTokenResponse,
-} from '@proton/shared/lib/api/reset';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import type { DelegatedAccessSummary, RecoveryMethod, ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
-import type { MnemonicData } from '../actions';
+import { reportActorError, unprovidedActors } from '../../sign-in/state-machine/machineHelpers';
 import { DeviceRecoveryLevel } from '../actions';
-
-type MnemonicDataWithoutAPI = Omit<MnemonicData, 'api'>;
-type UnauthedForgotPasswordErrorCode = 'ERROR_FETCHING_RECOVERY_METHODS' | 'ERROR_FETCHING_MNEMONIC';
+import type {
+    CodeMethod,
+    ForgotPasswordActors,
+    MnemonicDataWithoutAPI,
+    OwnershipProof,
+    RecoveryMethods,
+} from './forgotPasswordActors';
 
 interface UnauthedForgotPasswordMachineContext {
     username: string;
-    accountType: AccountType | '';
     ownershipVerificationMethod: RecoveryMethod | undefined;
     ownershipVerificationCode: string;
     resetResponse: ValidateResetTokenResponse | undefined;
     deviceRecoveryLevel: DeviceRecoveryLevel;
     recoveryMethods: RecoveryMethod[];
     hasEmergencyContacts: boolean;
-    errorCode: UnauthedForgotPasswordErrorCode | undefined;
     resetWithDataLoss: boolean;
     mnemonicData: MnemonicDataWithoutAPI | undefined;
     emailRecoverySkipped: boolean;
@@ -39,63 +41,55 @@ interface UnauthedForgotPasswordMachineContext {
     delegatedAccessContacts: DelegatedAccessSummary[];
     redactedRecoveryEmail: string | undefined;
     redactedRecoveryPhoneNumber: string | undefined;
+    /** Why the API refused a recovery method, for its error step. */
     apiErrorMessage: string | undefined;
-}
-
-/** Sent when the user chooses account recovery and recovery methods are known. */
-interface RecoverySelectedPayload {
-    methods: RecoveryMethod[];
-    username: string;
-    accountType: AccountType | '';
-    redactedEmail: string | undefined;
-    redactedPhoneNumber: string | undefined;
-    hasEmergencyContacts: boolean;
-}
-
-interface OwnershipRecoveryValidatedPayload {
-    ownershipVerificationCode: string;
-    resetResponse: ValidateResetTokenResponse;
-    deviceRecoveryLevel: DeviceRecoveryLevel;
+    /** The last code was wrong; cleared once the user edits it or a new one is sent. */
+    invalidCode: boolean;
 }
 
 /**
  * Event types use `domain.action` segments so new flows can add siblings without renaming.
- * `decision.*` / `nav.*` are shared UX intents reused across steps.
+ * `decision.*` are shared UX intents reused across steps.
  */
-export type UnauthedForgotPasswordMachineEvent =
+type UnauthedForgotPasswordMachineEvent =
     | { type: 'decision.confirm' }
     | { type: 'decision.no' }
     | { type: 'decision.back' }
     | { type: 'decision.skip' }
     | { type: 'decision.yes' }
-    | { type: 'email.code.validated'; payload: OwnershipRecoveryValidatedPayload }
-    | { type: 'email.code.validation.failed'; payload: { errorMessage: string } }
-    | { type: 'help.opened' }
-    | { type: 'mnemonic.validated'; payload: { mnemonicData: MnemonicDataWithoutAPI } }
-    | { type: 'mnemonic.prefilled'; payload: { mnemonicData: MnemonicDataWithoutAPI; username: string } }
-    | {
-          type: 'token.prefilled';
-          payload: {
-              username: string;
-          } & OwnershipRecoveryValidatedPayload;
-      }
-    | {
-          type: 'username.prefilled';
-          payload: {
-              username: string;
-          };
-      }
-    | {
-          type: 'recovery.started';
-          payload: RecoverySelectedPayload;
-      }
-    | { type: 'sms.code.sent' }
-    | { type: 'sms.code.send.failed'; payload: { errorMessage: string } }
-    | { type: 'sms.code.validated'; payload: OwnershipRecoveryValidatedPayload }
+    /** The entry step: the account to recover, or a link that opened the page. */
+    | { type: 'username.submitted'; payload: { username: string } }
+    | { type: 'username.prefilled'; payload: { username: string } }
+    | { type: 'resetLink.opened'; payload: { username: string; token: string } }
+    | { type: 'recoveryLink.opened'; payload: { username: string; mnemonic: string } }
+    /** The code steps, for the recovery email or phone. */
+    | { type: 'code.requested' }
+    | { type: 'code.submitted'; payload: { code: string } }
+    | { type: 'code.edited' }
+    /** The new code dialog: opened, confirmed, or dismissed. */
+    | { type: 'newCode.requested' }
+    | { type: 'newCode.confirmed' }
+    | { type: 'newCode.dismissed' }
+    | { type: 'phrase.submitted'; payload: { mnemonic: string } }
+    | { type: 'password.submitted'; payload: { password: string } }
     | { type: 'socialRecovery.started' };
+
+export type UnauthedForgotPasswordMachineEmitted =
+    /** A request failed in a way the step doesn't show itself; the page shows it. */
+    | { type: 'error'; error: unknown }
+    /** The new code was sent: the code form tells the user, and clears the old code. */
+    | { type: 'code.resent' }
+    /** The reset token was refused when setting the new password: the page is out of date. */
+    | { type: 'resetToken.rejected' };
 
 export enum UnauthedForgotPasswordStateMachineTags {
     hideReturnToSignIn = 'hideReturnToSignIn',
+    /** A request runs; the step shows its loading state. */
+    submitting = 'submitting',
+    /** The code steps' new code dialog is open. */
+    newCodeDialog = 'newCodeDialog',
+    /** The dialog stays open while the new code is sent. */
+    resending = 'resending',
 }
 
 /**
@@ -123,11 +117,29 @@ const backFromDataLossOffer = [
     ...backFromEmergencyAccessOffer,
 ];
 
-export const UnauthedForgotPasswordStateMachine = setup({
+/** Guard: the failed request's API error has this code. */
+const errorCode = (code: number) => ({
+    type: 'hasErrorCode' as const,
+    params: ({ event }: { event: { error: unknown } }) => ({ error: event.error, code }),
+});
+
+const forgotPasswordSetup = setup({
     types: {
         context: {} as UnauthedForgotPasswordMachineContext,
         events: {} as UnauthedForgotPasswordMachineEvent,
+        emitted: {} as UnauthedForgotPasswordMachineEmitted,
         tags: {} as `${UnauthedForgotPasswordStateMachineTags}`,
+    },
+    actors: {
+        ...unprovidedActors<ForgotPasswordActors>({
+            requestRecoveryMethods: true,
+            validateResetLink: true,
+            validateRecoveryLink: true,
+            sendResetCode: true,
+            validateResetCode: true,
+            validatePhrase: true,
+            resetPassword: true,
+        }),
     },
     guards: {
         hasExternalEmailWithLoginRecovery: ({ context }) =>
@@ -146,18 +158,33 @@ export const UnauthedForgotPasswordStateMachine = setup({
             context.delegatedAccessContacts?.some(({ Types }) =>
                 hasBit(Types, DelegatedAccessTypeEnum.EmergencyAccess)
             ),
-    },
-    actors: {
-        fetchRecoveryMethods: fromPromise(async () => {
-            return Promise.resolve([]);
-        }),
-        checkDeviceRecovery: fromPromise(() => Promise.resolve()),
-        checkMnemonic: fromPromise(() => Promise.resolve()),
-        checkOtherSessions: fromPromise(() => Promise.resolve()),
-        checkSocialRecovery: fromPromise(() => Promise.resolve()),
+        hasErrorCode: (_, params: { error: unknown; code: number }) => getApiError(params.error).code === params.code,
     },
     actions: {
         redirectToSignIn: () => {},
+        /** The account's recovery methods, and where their codes go, for this attempt. */
+        storeRecoveryMethods: assign((_, params: RecoveryMethods) => ({
+            recoveryMethods: params.methods,
+            username: params.username,
+            redactedRecoveryEmail: params.redactedEmail,
+            redactedRecoveryPhoneNumber: params.redactedPhoneNumber,
+            hasEmergencyContacts: params.hasEmergencyContacts,
+        })),
+        setUsername: assign((_, params: { username: string }) => ({ username: params.username })),
+        /** Ownership was proven: the reset token, and what the account can recover with it. */
+        storeOwnershipProof: assign((_, params: OwnershipProof & { method: RecoveryMethod }) => ({
+            ownershipVerificationMethod: params.method,
+            ownershipVerificationCode: params.ownershipVerificationCode,
+            resetResponse: params.resetResponse,
+            delegatedAccessContacts: params.resetResponse.DelegatedAccesses,
+            deviceRecoveryLevel: params.deviceRecoveryLevel,
+        })),
+        /** The recovery phrase decrypted the account's keys, which the reset re-encrypts. */
+        storeMnemonicData: assign((_, params: { mnemonicData: MnemonicDataWithoutAPI }) => ({
+            mnemonicData: params.mnemonicData,
+        })),
+        skipEmailRecovery: assign({ emailRecoverySkipped: true }),
+        skipSmsRecovery: assign({ smsRecoverySkipped: true }),
         /**
          * A new attempt, maybe for another account: every recovery method is offered again, including the ones skipped
          * on the way, and the ownership an earlier attempt proved no longer counts.
@@ -170,22 +197,124 @@ export const UnauthedForgotPasswordStateMachine = setup({
             resetResponse: undefined,
             delegatedAccessContacts: [],
             deviceRecoveryLevel: DeviceRecoveryLevel.NONE,
+            invalidCode: false,
         }),
+        setApiErrorMessage: assign((_, params: { error: unknown }) => ({
+            apiErrorMessage: getApiErrorMessage(params.error),
+        })),
+        clearApiErrorMessage: assign({ apiErrorMessage: undefined }),
+        markInvalidCode: assign({ invalidCode: true }),
+        clearInvalidCode: assign({ invalidCode: false }),
+        acceptDataLoss: assign({ resetWithDataLoss: true }),
+        /** Hands the error to the page to show. */
+        reportError: emit((_, params: { error: unknown }) => ({ type: 'error' as const, error: params.error })),
+        notifyCodeResent: emit({ type: 'code.resent' as const }),
+        notifyResetTokenRejected: emit({ type: 'resetToken.rejected' as const }),
     },
-}).createMachine({
-    /** @xstate-layout N4IgpgJg5mDOIC5QDMD2AnKqAuAFAhrLAO4YQB0YAdtugJ4DE6YAxqgG5j3mzb7rZIAbQAMAXUSgADqlgBLbHNRVJIAB6IAbACZN5bQGYALEZHaAnEYCsADgDsdqwBoQdRDYvkr3zUc1W7AEYrEVsAXzCXNEwcAiJSdApqWkYACzAAGylyVClqYXFVGXlFZVUNBE0RPUMTM0tbB2dXREDtU30DKx1NNpsqwJsIqIwsPEISMkoaegYIVjl5ZXIAI3wWAGtRCSQQYoUlFV2Kg0sbck07XQMDO387I3sXNwQ7o3Jbm36zUwfu4ZA0TGcUmiWmKQYUgmCQoUmYyDkGQyBR20lkBzKxy0gRqxlMFms9kcz1agRxXhE5hENja3Ss5isRgBQNi0KmzDYnHoAFkwNhUqgILAADKofAQORUKBzZRgciS9ioDZylnjeLs1gcLh0Xn8wUisUSqUIBWoFj4UpUbbbIroy3lRDed72KyBAweRwGamBEkIXTaC4iQIPcyaL5dOzmZmjVnqsEcrU8vkCoWi8WS6UQWXyqiK5XkVUgmHkBNcnXJ-Vpo1QE25s0Ww7WwKovZ2w4Ov3mOz6UNU9o6QbmbS+mnkIzmCeaSxum4GKfRmJq0EUUva3Upg3pqUyqhy035wts+OasvryuGjO1xXmy3W7Qt-b2rEINqaAwXK5+EQ3II2Ay+gxtHObRuj-ICLG6YwrAXYEjxXE81wrVML23Lh0AwcgpAyC1ogAWwLGMl2LVckz1ZCtxrU0b0bcQbV2R922fV930uftv1uQZ-xaP0ug+b87BsXsyS9fwYNjZdKFw-BEQAJQQ+gADUuDkZA6AAYUFMAGDAKTEXINh5nIdh8AyOQIAtFFbRKRjQAqRlnUcN0PSsL0aQAkILlDIJtHaFzgiGSJAUIosph06SMjkzltSU9AVPUzS5gWJYqB4DY5CkOi0WszFbMdRlyBdJztE9b1fRxPRfD-YIRG-XQ-2gwLDzjChYFw2BIsTOgAEFiGk7ANPmBhWtgfTNJ4ZJMtbbKjlyv17B7KcfgHQTh24zR1vISMIPMd0gPMDwxKIqZho6sser6gatPmFhFkOVZ1i2Qp6LbHL1EQYruwsRb+20QdVpeGwAi8DwAn2y4hxcw6QrBE75O63qFEuxKbuS1L0smhjXoqCxPt7JbfpW31x3eYNbiuMwgy9Qwobgng2tO6LlNUpHhtGwzjNM8zBAgDGXpmt7KipTb-FDIMdD8OxfTsG5Az2y4QgZf5GuC2nYaixSmfiwbrtu5ZYDSjKnqyjF+YqRbhfpAZxcuX0327fwgz8HaRFMSHlcXaGKAyesMgAIQegBXKQ1PSTYdz3OsDxV5ryG980-cD4PQ42K961vWijamk2OzaawvB0L4g36VzNCJmwRHIQJQzDQJTC9Mw7BpmO45M-3NiDkPWA2bT0HQ9BMOw7A8IIj3aZbhP26TrvU+o5RrUzzHTdaXz86A8vBjfalS+424rE27oBJ0Qx9vdJuJPHtuNg75QEXQXDkd1lK2CoW-cN56aOysf73vdPRHm6cwbov6MnsGfYsF9E4aRfnIO+D9Ub63RgvPmOdLiBErqBCwuhqTaGpETBk5AaqXB0EOMkO0ozu1gjHXCu5cLKDkCwBm3AWDJwzNyGhdCWBdWMoifAKxEQKEYFmXcOY8wqmjhJahOkOGMLoPpFhUo2FSKoPQrh4VeH8OwHQGeDY54ZwfMg587puy12pKEKuNhxwOF9Dgnynk-w1Q8B4Lo2gwFTEkbQ5RDC4ZyK7qw9hnjVE8L4aZTR4cRFKjEaPKh-j6EyJ8ZsPxSiVHcOwsEgR2j05iCEM2Ky2cmLGHfIyK4DxirrRAtvF4wYLFeB8sEYq3QjDGEbhQ8SxZ3HSO8cw3xCiYmcJSeokJjA0IYSwjhDA+EmoSN6XErpCSelJL6WotJmiMk0SyUgj++TGleCMMUowpSdDdDKlONBADAiUl6OXMwriwTtM8XEqQqR0CEDAAAURmIwO59CjImTMhZHmGy8mzUEjUfw9hsGA28FxSp-Q9CMkgmSewBMDA3IoF8rx6tZGPOebAN5Hy4F3TWJsd+QKBY9E6HUAkjRiTcQnHvRwEM2icV0M0kYUSpkLIeU8l57yIQ63gQbElT5ZozkKbs4q+y7iHIqa0Haf8LF2Bqo0wCQ4UUtKOrc6Z3jsU8vxfyu6CCMo5OepskVgExV7IOeU6xv096GFdNLSwlIbguPVZ7cg6KuU4rADIglyxn6vyFTZAWbo3Q7MtVK613EfL+E2l0V0XwPBBmqKioyTM5CQC6hkQQ6AqAWRmfIqAAB5fkXAADKcBkqwDCfuSJlCJJchUhmiAWac15sEAW7pxbS3oArUQQ4sBVm6PWfo01IbRYfnaEOK4c5qgypfCDAhYZGREK+D5VNjaESZuzVwdtPrOmFpLekXtlaB09z7gPMZd8R71uLJu5trbd35oPV2o95bT3KEHVRHRVo9G5OFeOqok7xzFUMFUdaZUGQBlqGDGk+1dkbvTduttz7MU5B7X2qtIdUD0KuklO6dA4BBqxu9UwehgyGHJg7G4RgyqKvMJ0IpxgzAgRdoh2KW6W07tzahzq6Hj2YYHdh3DfqUpUFQMRpefoyOVxnVRkINGyoeAY-tFy346iuksOxptyGn0du8esRQnBBPKAAJJUF4OgAOLBLSibRobUdpLsaRneAEQGVdqTlxxnRykjHdnMZ8iEJkbrab3t0zx-TaHYBmjkCZGRncw5CIjqIm9rSphha4yhyLfHos3Ti3DBLKdv2ZMkx2QCugCEGFrk08p9h52DHJFOKrQYGQCUsK6tlt70tIcy3p-dUWYv5cxYV89IzB7D0mXenrj6Iv9Zy4NiKBXk5Dt-SO-9waTgxsq9V8VoE7iQe2YDUM3Rgj1y0yFmOGWZt7ribl2Li3MVFuQMgLgQ0Fu3b4AISyJqnOID8MVSdvh6RfDlT5iuR3rACUVfYG42nOPXd42WHg724ZPZe+gOzhrSuGPWucAS-kCSDFo9xQYv1Ayhi9MYWubQ4cPu4zd7xOkuAwCoCwbqLAWCVrR69-VyxCOwGx7Nf79srhA-2oJOcSnbFdFU6ENzXY1WdbS2CK79PEfakksz6gbOuoc6589nn+HljicFwLYXgPrDi9ByT+wzp6RQ6C-YgKSuNUUFV1lubSOmeYG1+zznRARtJfCVHdlU2ON0493E73LOdd64D8t4razTcVCMOc841hAIOxcoDerTjNoOGDG8ekfhafhYZ2h6Pvvdf+9gCN4Z-dRlD3Gal13abw9l-V9wSvrO-eVsKyt+ejmAMp50CL3QluQeS5J5Yd8Zh1r+BAlXawmhU0B1zNNtX2WkeGbkMZj9FncDoVwlIbAdn+fJ9ldLt01I8TyzfNYxFY5AaGGq2SN0q-1-t967NuJO+9-9s-UP1QGP1P15zEwk0BWH0vwDCq1clv0cHv2jWPkYweDfBuBIUVyClDymDX3dz61uzkCgF3AgHMzklxWwDLUECkGrTAPswvz9HqXIF7BXSqVDQf0GCfy-iq0aTf0wMmxwM-x02-3Lz427zZygT4Bs0oLAGoMx0FUgI23ekVTtSaWdWMHLkliQKqyYMBmMF8DJHFVTS5nwFFCIDIL5GE05zPyIwUJIwQAVnOBqjMD0OpB2iUy-iYPWgCEtl6HCAuwkmMNMPajgAsIFBE1oJN1sKkwcIIRqlqCqAlwO3OEAR2hAkPmhw6ywK6zBChGagrWwCDkhFVnwE4ABSH0UJfC8KYOz3pB8k+GaBeEMHLiXXazJhwSPlTVyOXHyMKK6OLFgBKOEGNWNigMqNjQZHdFqMo0BmsUaQrgARvwsW+G-CMLAHYFwxkQADFUAkRUBiAABVKQBgdYNgNfbAEsOAbADAb7EYio5rNBXQMMQwOI2FTQxo90CuaoVohwdo9dAEcTeYeAXYfgxIdbOwgAWnnUhNTWSHoDBKk12XeAaGXxAnhSAhHFjRdQJAhnqkyJBPgkxTPHImrHhI7HFzjV2WDERNsBtmjV2U2nLi6DAhwWlhX38OLDClkjhhijikulJOfBxgWj7H+z+msRqk2nHEsF6HOUZCMVTTVk6nOkRk0n5KF2-gQCFm8BqhMSgznD4PEX6Ppm5M1j5J+1GMhwIUpMAnqDDFT1tkuB7BuCLmCBxEjFTQgUnkK1VJDTuDQQQO6FCGcJpGhXcFn0ZEwWKjnSCHIRd3dQ9KvmDhvhgVwm9IqFrkVQ+Htzg18A+hsF9BCDQVVVuAsHQJCDxINLcS1UxVTMdGJ0qQcAYxdm8BAhpFT38H1OwM1U5RfTmSgEUQ8WSSWQ0ReFuLsPOXVKrjuAKh8n6C7BFnKVTU9W1W5VxV5ThLNIqOlnfAKTBj2gbLePejMDQSnBpEDMZCpFZSyOVzRSrL4x1VxRkRrJfHOT0CqyAmsGcMVVriU0Enz04jnF0EVlL2EM7xHKzlGJxHyiqH2iZUpEApDMqLJ2lgaWDGpGVWdyvNbzwJ-x7LSilDfRPQAIsyfNQoDGgppF+jgqa0gzDUeC-BfNT1dGAoRy3w1xwAE331rzCM5yfN+lDE2m-EAXaBdirh9Bt3aCXVnOMA+jfGYs309w1z-zABMyoHM0s2swA0Xg7HKQrh3PsFa2CAPJfHozjSY3xFYzZNjNCw30j28TuyG06i9I3LsK+m3LaEVRAlMAaEg1CErnOS+NdmnBjMwvdWwpEKR3soe06m53QCfL0L0GjPaAsVcN2SU2CE8gsGqCJzpAwvxLbyEJYoUq71wi1x72r313RyfMaQdJlwsS-gMIeClwDAcBPMGFF2DEspCusq-0KqjxKp9zKrjy4q7jio9C8EMvWlOF2W8B8veFKVZJEFFy3g-zCtApIt8AY3ItgqHGoujW-ArlU1OAVyuGrhWpsvwIMxs132Us4qAJAJIuUP3kWtDC+AEj-HnTqLcv6EjAeEeFCDOp6vkoIKIMgFIJCIoKoKBNHKkxZPlSC0LwMNDHYOSOf24Kq2EgBoKqBsZ36pj3ihoEM2kOoN4saXeEVWLIp3OT8DrPekMADH-j0NT3TPLM7IoFwPOpwqiyDhkAEDUmSC4HMzQHWq7HJwovOR2rcOjQow+EGFBntRxiMItBMNkGCPIMsLACqq+BUMeFuDl0AVzw8HJ2lmpAVhwWCyspjj6LIB6KkBIvHHOGpzSP6DXSMqaL0DBnYgEkeA3lWPWM5y2J2O9gONtucphuLk8NazuC-l0DdGsQ+Pzm+Koz+ItoCNlGr1QDOLIKuOYAgDir2gIUjEAhDBDDEveP6B0NsFnOlkcSMNlE9nMOwCfOAQDGDFlsDJlJpuMsWvzx6C6BdipHOxTuLCSy2PCkgCbvaCRK-ia1OEMBuCSMrinEjBdiaR0A7OyIoCS1eVxqryGqqvxwKhMBjq+BlIZCl2PIuUp1T1T2Tq6pjiSwAAlMgpBXk1AFBeLw7mCWro7egELPKAw+xk0QJfpM9U1kAlaMhXle4MASLmyxwfITAv4PymSyo3NTKuwXyvJyEIggA */
+});
+
+/**
+ * Sends a reset code. The API refuses a method with a reason (a rate limit, say), which gets its own step; any other
+ * failure shows, and the step goes on to `failedTarget`.
+ */
+const sendingCode = (method: CodeMethod, step: string, sentTarget: string, failedTarget: string) =>
+    forgotPasswordSetup.createStateConfig({
+        tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+        invoke: {
+            src: 'sendResetCode',
+            input: ({ context }) => ({ username: context.username, method, step }),
+            onDone: { target: sentTarget },
+            onError: [
+                {
+                    guard: errorCode(API_CUSTOM_ERROR_CODES.NOT_ALLOWED),
+                    target: '#forgotPassword.recoveryMethodVerificationError',
+                    actions: { type: 'setApiErrorMessage', params: ({ event }) => ({ error: event.error }) },
+                },
+                { target: failedTarget, actions: reportActorError },
+            ],
+        },
+    });
+
+/**
+ * The code sent to the recovery email or phone: a valid one proves ownership. A new code is sent from a dialog that
+ * asks first, since the first one may just be in the spam folder.
+ */
+const awaitingCode = (method: CodeMethod, step: string) =>
+    forgotPasswordSetup.createStateConfig({
+        // A wrong code from an earlier code step, or an earlier visit to this one, says nothing about this code
+        entry: 'clearInvalidCode',
+        initial: 'editing',
+        states: {
+            editing: {
+                on: {
+                    'code.submitted': { target: 'validating' },
+                    'code.edited': { actions: 'clearInvalidCode' },
+                    'newCode.requested': { target: 'newCodeDialog' },
+                },
+            },
+            validating: {
+                tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                invoke: {
+                    src: 'validateResetCode',
+                    input: ({ context, event }) => {
+                        assertEvent(event, 'code.submitted');
+                        return { username: context.username, method, step, code: event.payload.code };
+                    },
+                    onDone: {
+                        target: '#forgotPassword.routeDeviceRecovery',
+                        actions: { type: 'storeOwnershipProof', params: ({ event }) => ({ ...event.output, method }) },
+                    },
+                    onError: [
+                        {
+                            guard: errorCode(API_CUSTOM_ERROR_CODES.INVALID_VALUE),
+                            target: 'editing',
+                            actions: 'markInvalidCode',
+                        },
+                        { target: 'editing', actions: reportActorError },
+                    ],
+                },
+            },
+            newCodeDialog: {
+                tags: [UnauthedForgotPasswordStateMachineTags.newCodeDialog],
+                on: {
+                    'newCode.confirmed': { target: 'resending' },
+                    'newCode.dismissed': { target: 'editing' },
+                },
+            },
+            /** The dialog stays open, loading, until the new code was sent. */
+            resending: {
+                tags: [
+                    UnauthedForgotPasswordStateMachineTags.newCodeDialog,
+                    UnauthedForgotPasswordStateMachineTags.resending,
+                ],
+                invoke: {
+                    src: 'sendResetCode',
+                    input: ({ context }) => ({ username: context.username, method, step }),
+                    onDone: { target: 'editing', actions: ['clearInvalidCode', 'notifyCodeResent'] },
+                    onError: [
+                        {
+                            guard: errorCode(API_CUSTOM_ERROR_CODES.NOT_ALLOWED),
+                            target: '#forgotPassword.recoveryMethodVerificationError',
+                            actions: { type: 'setApiErrorMessage', params: ({ event }) => ({ error: event.error }) },
+                        },
+                        { target: 'newCodeDialog', actions: reportActorError },
+                    ],
+                },
+            },
+        },
+    });
+
+export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMachine({
     id: 'forgotPassword',
     initial: 'entry',
     context: {
         username: '',
-        accountType: '',
         ownershipVerificationMethod: undefined,
         ownershipVerificationCode: '',
         resetResponse: undefined,
         deviceRecoveryLevel: DeviceRecoveryLevel.NONE,
         recoveryMethods: [],
         hasEmergencyContacts: false,
-        errorCode: undefined,
         apiErrorMessage: undefined,
         resetWithDataLoss: false,
         mnemonicData: undefined,
@@ -194,188 +323,209 @@ export const UnauthedForgotPasswordStateMachine = setup({
         delegatedAccessContacts: [],
         redactedRecoveryEmail: undefined,
         redactedRecoveryPhoneNumber: undefined,
+        invalidCode: false,
     },
 
     states: {
-        /** User picks recovery path (account request, help, or pre-filled reset). */
+        /** User picks recovery path (account request, or pre-filled reset). */
         entry: {
             tags: [UnauthedForgotPasswordStateMachineTags.hideReturnToSignIn],
             // However the user comes back here, the next attempt starts from scratch
             entry: 'startNewAttempt',
+            initial: 'idle',
             on: {
-                'recovery.started': {
-                    target: 'loadRecoveryMethods',
-                    actions: assign(({ event }) => ({
-                        recoveryMethods: event.payload.methods,
-                        username: event.payload.username,
-                        accountType: event.payload.accountType,
-                        redactedRecoveryEmail: event.payload.redactedEmail,
-                        redactedRecoveryPhoneNumber: event.payload.redactedPhoneNumber,
-                        hasEmergencyContacts: event.payload.hasEmergencyContacts,
-                    })),
-                },
-                'help.opened': {
-                    target: 'doneHelpExit',
-                },
                 'decision.back': {
-                    actions: {
-                        type: 'redirectToSignIn',
+                    actions: 'redirectToSignIn',
+                },
+            },
+            states: {
+                idle: {
+                    on: {
+                        'username.submitted': {
+                            target: 'requestingMethods',
+                            actions: { type: 'setUsername', params: ({ event }) => event.payload },
+                        },
+                        'username.prefilled': {
+                            actions: { type: 'setUsername', params: ({ event }) => event.payload },
+                        },
+                        'resetLink.opened': {
+                            target: 'validatingResetLink',
+                            actions: { type: 'setUsername', params: ({ event }) => event.payload },
+                        },
+                        'recoveryLink.opened': {
+                            target: 'validatingRecoveryLink',
+                            actions: { type: 'setUsername', params: ({ event }) => event.payload },
+                        },
                     },
                 },
-                'mnemonic.prefilled': {
-                    target: 'setNewPassword',
-                    actions: assign(({ event }) => ({
-                        username: event.payload.username,
-                        mnemonicData: event.payload.mnemonicData,
-                    })),
+                requestingMethods: {
+                    tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                    invoke: {
+                        src: 'requestRecoveryMethods',
+                        input: ({ context }) => ({ username: context.username }),
+                        onDone: {
+                            target: '#forgotPassword.routeRecoveryMethod',
+                            actions: { type: 'storeRecoveryMethods', params: ({ event }) => event.output },
+                        },
+                        onError: { target: 'idle', actions: reportActorError },
+                    },
                 },
-                'username.prefilled': {
-                    target: 'entry',
-                    actions: assign(({ event }) => ({
-                        username: event.payload.username,
-                    })),
+                validatingResetLink: {
+                    tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                    invoke: {
+                        src: 'validateResetLink',
+                        input: ({ context, event }) => {
+                            assertEvent(event, 'resetLink.opened');
+                            return { username: context.username, token: event.payload.token };
+                        },
+                        onDone: {
+                            target: '#forgotPassword.setNewPassword',
+                            actions: {
+                                type: 'storeOwnershipProof',
+                                params: ({ event }) => ({ ...event.output, method: 'mnemonic' as const }),
+                            },
+                        },
+                        onError: { target: 'idle', actions: reportActorError },
+                    },
                 },
-                'token.prefilled': {
-                    target: 'setNewPassword',
-                    actions: assign(({ event }) => ({
-                        username: event.payload.username,
-                        ownershipVerificationMethod: 'mnemonic',
-                        ownershipVerificationCode: event.payload.ownershipVerificationCode,
-                        resetResponse: event.payload.resetResponse,
-                        delegatedAccessContacts: event.payload.resetResponse.DelegatedAccesses,
-                        deviceRecoveryLevel: event.payload.deviceRecoveryLevel,
-                    })),
+                validatingRecoveryLink: {
+                    tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                    invoke: {
+                        src: 'validateRecoveryLink',
+                        input: ({ context, event }) => {
+                            assertEvent(event, 'recoveryLink.opened');
+                            return { username: context.username, mnemonic: event.payload.mnemonic };
+                        },
+                        onDone: {
+                            target: '#forgotPassword.setNewPassword',
+                            actions: {
+                                type: 'storeMnemonicData',
+                                params: ({ event }) => ({ mnemonicData: event.output }),
+                            },
+                        },
+                        onError: { target: 'idle', actions: reportActorError },
+                    },
                 },
             },
         },
 
-        loadRecoveryMethods: {
-            invoke: {
-                src: 'fetchRecoveryMethods',
-                onDone: [
-                    {
-                        guard: 'hasExternalEmailWithLoginRecovery',
-                        target: 'verifyRecoveryEmail',
-                    },
-                    {
-                        guard: 'hasEmailRecovery',
-                        target: 'verifyRecoveryEmail',
-                    },
-                    {
-                        guard: 'hasSmsRecovery',
-                        target: 'enterRecoverySms',
-                    },
-                    {
-                        target: 'mnemonicRecovery.checkMnemonic',
-                    },
-                ],
-                onError: {
-                    target: 'fatalError',
-                    actions: assign(() => ({ errorCode: 'ERROR_FETCHING_RECOVERY_METHODS' })),
+        /** The first recovery method the account has and the user hasn't skipped. */
+        routeRecoveryMethod: {
+            always: [
+                {
+                    guard: 'hasExternalEmailWithLoginRecovery',
+                    target: 'verifyRecoveryEmail',
                 },
-            },
+                {
+                    guard: 'hasEmailRecovery',
+                    target: 'verifyRecoveryEmail',
+                },
+                {
+                    guard: 'hasSmsRecovery',
+                    target: 'enterRecoverySms',
+                },
+                {
+                    target: 'mnemonicRecovery',
+                },
+            ],
         },
 
+        /** The code is sent to the recovery email as soon as the step opens. */
         verifyRecoveryEmail: {
+            initial: 'sendingCode',
             on: {
-                'email.code.validated': {
-                    target: 'checkDeviceRecovery',
-                    actions: assign(({ event }) => ({
-                        ownershipVerificationMethod: 'email',
-                        ownershipVerificationCode: event.payload.ownershipVerificationCode,
-                        resetResponse: event.payload.resetResponse,
-                        delegatedAccessContacts: event.payload.resetResponse.DelegatedAccesses,
-                        deviceRecoveryLevel: event.payload.deviceRecoveryLevel,
-                    })),
-                },
-                'email.code.validation.failed': {
-                    target: 'recoveryMethodVerificationError',
-                    actions: assign(({ event }) => ({
-                        apiErrorMessage: event.payload.errorMessage,
-                    })),
-                },
                 'decision.back': {
                     target: 'entry',
                 },
                 'decision.skip': {
-                    target: 'loadRecoveryMethods',
-                    actions: assign(() => ({ emailRecoverySkipped: true })),
+                    target: 'routeRecoveryMethod',
+                    actions: 'skipEmailRecovery',
                 },
+            },
+            states: {
+                // A code that failed to send can still be sent again from the code form
+                sendingCode: sendingCode('email', 'verifyRecoveryEmail', 'awaitingCode', 'awaitingCode'),
+                awaitingCode: awaitingCode('email', 'verifyRecoveryEmail'),
             },
         },
 
+        /** The code is only sent to the recovery phone once the user asks, since it may cost them. */
         enterRecoverySms: {
+            initial: 'idle',
             on: {
-                'sms.code.sent': {
-                    target: 'verifyRecoverySms',
-                },
-                'sms.code.send.failed': {
-                    target: 'recoveryMethodVerificationError',
-                    actions: assign(({ event }) => ({
-                        apiErrorMessage: event.payload.errorMessage,
-                    })),
-                },
                 'decision.back': {
                     target: 'entry',
                 },
                 'decision.skip': {
-                    target: 'loadRecoveryMethods',
-                    actions: assign(() => ({ smsRecoverySkipped: true })),
+                    target: 'routeRecoveryMethod',
+                    actions: 'skipSmsRecovery',
                 },
+            },
+            states: {
+                idle: {
+                    on: {
+                        'code.requested': { target: 'sendingCode' },
+                    },
+                },
+                sendingCode: sendingCode('sms', 'enterRecoverySms', '#forgotPassword.verifyRecoverySms', 'idle'),
             },
         },
 
         verifyRecoverySms: {
+            initial: 'awaitingCode',
             on: {
-                'sms.code.validated': {
-                    target: 'checkDeviceRecovery',
-                    actions: assign(({ event }) => ({
-                        ownershipVerificationMethod: 'sms',
-                        ownershipVerificationCode: event.payload.ownershipVerificationCode,
-                        resetResponse: event.payload.resetResponse,
-                        delegatedAccessContacts: event.payload.resetResponse.DelegatedAccesses,
-                        deviceRecoveryLevel: event.payload.deviceRecoveryLevel,
-                    })),
-                },
                 'decision.back': {
                     target: 'enterRecoverySms',
                 },
                 'decision.skip': {
-                    target: 'loadRecoveryMethods',
-                    actions: assign(() => ({ smsRecoverySkipped: true })),
+                    target: 'routeRecoveryMethod',
+                    actions: 'skipSmsRecovery',
                 },
+            },
+            states: {
+                awaitingCode: awaitingCode('sms', 'verifyRecoverySms'),
             },
         },
 
-        checkDeviceRecovery: {
-            invoke: {
-                src: 'checkDeviceRecovery',
-                onDone: [
-                    {
-                        guard: 'hasFullDeviceRecovery',
-                        target: 'setNewPassword',
-                    },
-                    {
-                        target: 'mnemonicRecovery.checkMnemonic',
-                    },
-                ],
-                onError: {
-                    target: 'mnemonicRecovery.checkMnemonic',
+        /** With a full device recovery, the password can be reset without losing data. */
+        routeDeviceRecovery: {
+            always: [
+                {
+                    guard: 'hasFullDeviceRecovery',
+                    target: 'setNewPassword',
                 },
-            },
+                {
+                    target: 'mnemonicRecovery',
+                },
+            ],
         },
 
         mnemonicRecovery: {
-            initial: 'checkMnemonic',
+            initial: 'routeMnemonic',
             states: {
-                checkMnemonic: {
-                    invoke: {
-                        src: 'checkMnemonic',
-                        onDone: [
-                            {
-                                guard: 'hasMnemonic',
-                                target: 'enterPhrase',
-                            },
+                /** The recovery phrase when the account has one; otherwise the other ways to recover. */
+                routeMnemonic: {
+                    always: [
+                        {
+                            guard: 'hasMnemonic',
+                            target: 'enterPhrase',
+                        },
+                        {
+                            guard: 'hasResetResponse',
+                            target: '#forgotPassword.authenticatedRecovery',
+                        },
+                        {
+                            target: '#forgotPassword.unauthenticatedRecovery',
+                        },
+                    ],
+                },
+                enterPhrase: {
+                    initial: 'idle',
+                    on: {
+                        'decision.back': {
+                            target: '#forgotPassword.entry',
+                        },
+                        'decision.skip': [
                             {
                                 guard: 'hasResetResponse',
                                 target: '#forgotPassword.authenticatedRecovery',
@@ -384,30 +534,31 @@ export const UnauthedForgotPasswordStateMachine = setup({
                                 target: '#forgotPassword.unauthenticatedRecovery',
                             },
                         ],
-                        onError: {
-                            target: '#forgotPassword.fatalError',
-                            actions: assign(() => ({ errorCode: 'ERROR_FETCHING_MNEMONIC' })),
-                        },
                     },
-                },
-                enterPhrase: {
-                    on: {
-                        'mnemonic.validated': {
-                            target: 'confirmPhrase',
-                            actions: assign(({ event }) => ({ mnemonicData: event.payload.mnemonicData })),
-                        },
-                        'decision.back': {
-                            target: '#forgotPassword.entry',
-                        },
-                        'decision.skip': [
-                            {
-                                guard: 'hasResetResponse',
-                                target: '#forgotPassword.authenticatedRecovery.checkOtherSessions',
+                    states: {
+                        idle: {
+                            on: {
+                                'phrase.submitted': { target: 'validating' },
                             },
-                            {
-                                target: '#forgotPassword.unauthenticatedRecovery',
+                        },
+                        validating: {
+                            tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                            invoke: {
+                                src: 'validatePhrase',
+                                input: ({ context, event }) => {
+                                    assertEvent(event, 'phrase.submitted');
+                                    return { username: context.username, mnemonic: event.payload.mnemonic };
+                                },
+                                onDone: {
+                                    target: '#forgotPassword.mnemonicRecovery.confirmPhrase',
+                                    actions: {
+                                        type: 'storeMnemonicData',
+                                        params: ({ event }) => ({ mnemonicData: event.output }),
+                                    },
+                                },
+                                onError: { target: 'idle', actions: reportActorError },
                             },
-                        ],
+                        },
                     },
                 },
                 confirmPhrase: {
@@ -420,26 +571,24 @@ export const UnauthedForgotPasswordStateMachine = setup({
             },
         },
 
-        /** After mnemonic skip: user already proved ownership (email/SMS). */
+        /**
+         * Ownership proven by email or SMS, so there is a reset token (`resetResponse`), and no recovery phrase used:
+         * the account's other sessions, then its contacts, then a reset that loses data.
+         */
         authenticatedRecovery: {
-            initial: 'checkOtherSessions',
+            initial: 'routeOtherSessions',
             states: {
-                checkOtherSessions: {
-                    invoke: {
-                        src: 'checkOtherSessions',
-                        onDone: [
-                            {
-                                guard: 'hasOtherLoggedInSessions',
-                                target: 'otherSessionsPrompt',
-                            },
-                            {
-                                target: 'checkSocialRecovery',
-                            },
-                        ],
-                        onError: {
-                            target: 'checkSocialRecovery',
+                /** The account's other signed-in sessions may reset the password without losing data. */
+                routeOtherSessions: {
+                    always: [
+                        {
+                            guard: 'hasOtherLoggedInSessions',
+                            target: 'otherSessionsPrompt',
                         },
-                    },
+                        {
+                            target: 'routeDelegatedAccess',
+                        },
+                    ],
                 },
                 otherSessionsPrompt: {
                     on: {
@@ -448,40 +597,35 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         },
                         'decision.back': backFromSessionsPrompt,
                         'decision.no': {
-                            target: 'checkSocialRecovery',
+                            target: 'routeDelegatedAccess',
                         },
                     },
                 },
                 activeSessionInstructions: {
                     on: {
                         'decision.skip': {
-                            target: 'checkSocialRecovery',
+                            target: 'routeDelegatedAccess',
                         },
                         'decision.back': {
                             target: 'otherSessionsPrompt',
                         },
                     },
                 },
-                checkSocialRecovery: {
-                    invoke: {
-                        src: 'checkSocialRecovery',
-                        onDone: [
-                            {
-                                guard: 'hasSocialContacts',
-                                target: 'socialRecoveryOffer',
-                            },
-                            {
-                                guard: 'hasEmergencyContacts',
-                                target: 'emergencyAccessOffer',
-                            },
-                            {
-                                target: '#forgotPassword.offerDataLossReset',
-                            },
-                        ],
-                        onError: {
+                /** The account's recovery contacts, then its emergency contacts, then a reset that loses data. */
+                routeDelegatedAccess: {
+                    always: [
+                        {
+                            guard: 'hasSocialContacts',
+                            target: 'socialRecoveryOffer',
+                        },
+                        {
+                            guard: 'hasEmergencyContacts',
+                            target: 'emergencyAccessOffer',
+                        },
+                        {
                             target: '#forgotPassword.offerDataLossReset',
                         },
-                    },
+                    ],
                 },
                 socialRecoveryOffer: {
                     on: {
@@ -514,7 +658,10 @@ export const UnauthedForgotPasswordStateMachine = setup({
             },
         },
 
-        /** After mnemonic skip: user has not completed ownership verification. */
+        /**
+         * Ownership not proven, and no recovery phrase used: the account's other sessions and emergency contacts can
+         * still help, outside this flow.
+         */
         unauthenticatedRecovery: {
             initial: 'otherSessionsPrompt',
             states: {
@@ -566,6 +713,10 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         },
                     },
                 },
+                /**
+                 * How emergency contacts can change the password, offered by either branch. It stays here, so that
+                 * `previous` can return to it from `recoveryFailed`.
+                 */
                 emergencyContactInstructions: {
                     on: {
                         'decision.skip': [
@@ -598,7 +749,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
             on: {
                 'decision.yes': {
                     target: '#forgotPassword.setNewPassword',
-                    actions: assign(() => ({ resetWithDataLoss: true })),
+                    actions: 'acceptDataLoss',
                 },
                 'decision.skip': {
                     target: 'recoveryFailed',
@@ -609,6 +760,45 @@ export const UnauthedForgotPasswordStateMachine = setup({
 
         setNewPassword: {
             tags: [UnauthedForgotPasswordStateMachineTags.hideReturnToSignIn],
+            initial: 'idle',
+            states: {
+                idle: {
+                    on: {
+                        'password.submitted': { target: 'resetting' },
+                    },
+                },
+                resetting: {
+                    tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                    invoke: {
+                        src: 'resetPassword',
+                        input: ({ context, event }) => {
+                            assertEvent(event, 'password.submitted');
+                            return {
+                                newPassword: event.payload.password,
+                                username: context.username,
+                                mnemonicData: context.mnemonicData,
+                                resetResponse: context.resetResponse,
+                                ownershipVerificationCode: context.ownershipVerificationCode,
+                                ownershipVerificationMethod: context.ownershipVerificationMethod,
+                                deviceRecoveryLevel: context.deviceRecoveryLevel,
+                            };
+                        },
+                        onDone: { target: 'signedIn' },
+                        onError: [
+                            {
+                                guard: errorCode(API_CUSTOM_ERROR_CODES.INVALID_VALUE),
+                                target: 'idle',
+                                actions: 'notifyResetTokenRejected',
+                            },
+                            { target: 'idle', actions: reportActorError },
+                        ],
+                    },
+                },
+                /** The app takes the session and leaves the page; the form stays up, loading, meanwhile. */
+                signedIn: {
+                    tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                },
+            },
         },
 
         recoveryFailed: {
@@ -628,26 +818,66 @@ export const UnauthedForgotPasswordStateMachine = setup({
             },
         },
 
-        doneHelpExit: {
-            type: 'final',
-        },
-
-        fatalError: {
-            type: 'final',
-        },
-
         recoveryMethodVerificationError: {
             on: {
                 'decision.back': {
                     target: '#forgotPassword.entry',
-                    actions: assign(() => ({ apiErrorMessage: undefined })),
+                    actions: 'clearApiErrorMessage',
                 },
                 'decision.skip': {
-                    actions: {
-                        type: 'redirectToSignIn',
-                    },
+                    actions: 'redirectToSignIn',
                 },
             },
         },
     },
 });
+
+export type UnauthedForgotPasswordSnapshot = SnapshotFrom<typeof UnauthedForgotPasswordStateMachine>;
+
+type ContextOnly = { context: UnauthedForgotPasswordMachineContext };
+
+/**
+ * What the page and the steps read, with `useSelector`. Each returns one value, kept as context holds it, so a
+ * component only re-renders when what it shows changes.
+ */
+export const selectUsername = ({ context }: ContextOnly) => context.username;
+
+/** The reset token's response, once ownership was proven: the account's sessions, keys and password policies. */
+export const selectResetResponse = ({ context }: ContextOnly) => context.resetResponse;
+
+export const selectDelegatedAccessContacts = ({ context }: ContextOnly) => context.delegatedAccessContacts;
+
+/** Where the codes go, redacted, for the code steps to say. */
+export const selectRedactedRecoveryEmail = ({ context }: ContextOnly) => context.redactedRecoveryEmail;
+
+export const selectRedactedRecoveryPhoneNumber = ({ context }: ContextOnly) => context.redactedRecoveryPhoneNumber;
+
+/** Why the API refused a recovery method, for its error step. */
+export const selectApiErrorMessage = ({ context }: ContextOnly) => context.apiErrorMessage;
+
+/** The user accepted losing their data, so the reset form's button shows the reset as dangerous. */
+export const selectResetWithDataLoss = ({ context }: ContextOnly) => context.resetWithDataLoss;
+
+/** The last code was wrong. */
+export const selectInvalidCode = ({ context }: ContextOnly) => context.invalidCode;
+
+/** A request runs; the step shows its loading state. */
+export const selectSubmitting = (snapshot: UnauthedForgotPasswordSnapshot) =>
+    snapshot.hasTag(UnauthedForgotPasswordStateMachineTags.submitting);
+
+/** The code steps' new code dialog is open. */
+export const selectNewCodeDialogOpen = (snapshot: UnauthedForgotPasswordSnapshot) =>
+    snapshot.hasTag(UnauthedForgotPasswordStateMachineTags.newCodeDialog);
+
+/** The new code is being sent; the dialog stays open, loading. */
+export const selectResending = (snapshot: UnauthedForgotPasswordSnapshot) =>
+    snapshot.hasTag(UnauthedForgotPasswordStateMachineTags.resending);
+
+/** The entry step, which the page decorates. */
+export const selectOnEntry = (snapshot: UnauthedForgotPasswordSnapshot) => snapshot.matches('entry');
+
+/** The step has somewhere to go back to, so the page and the step's heading show a back button. */
+export const selectCanGoBack = (snapshot: UnauthedForgotPasswordSnapshot) => snapshot.can({ type: 'decision.back' });
+
+export const selectHideReturnToSignIn = (snapshot: UnauthedForgotPasswordSnapshot) =>
+    snapshot.hasTag(UnauthedForgotPasswordStateMachineTags.hideReturnToSignIn);
