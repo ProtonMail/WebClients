@@ -13452,6 +13452,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Kendi rollerinizi değiştiremezsiniz. Başka bir yöneticiden bunları değiştirmesini isteyin."
       ]
     },
     "Validation": {
@@ -13899,6 +13902,36 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "${ planName } için %${ discount } indirim kazanın"
+      ],
+      "Get ${ planName }": [
+        "${ planName } tarifesini edinin"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 TB of storage to share": [
+        "Paylaşılabilen 2 TB depolama alanı"
+      ],
+      "2 user accounts": [
+        "2 kullanıcı hesabı"
+      ],
+      "All premium features from your current plan": [
+        "Geçerli tarifenizdeki tüm ücretli özellikler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 ay için"
       ]
     }
   }
