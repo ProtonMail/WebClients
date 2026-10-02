@@ -5624,6 +5624,22 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "S'ha fusionat ${ count } carpeta a la seva carpeta principal perquè s'ha assolit el nivell màxim de nius.",
+        "S'han fusionat ${ count } carpetes a la seva carpeta principal perquè s'ha assolit el nivell màxim de nius."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "No s'ha importat ${ count } carpeta perquè la seva carpeta principal ha assolit el nombre màxim de subcarpetes. Els seus elements s'han importat a la carpeta més propera disponible.",
+        "No s'han importat ${ count } carpetes perquè la seva carpeta principal ha assolit el nombre màxim de subcarpetes. Els seus elements s'han importat a la carpeta més propera disponible."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "No s'ha importat ${ count } carpeta perquè aquesta caixa forta ha assolit el seu límit de carpetes. Els seus elements s'han importat a la carpeta més propera disponible.",
+        "No s'han importat ${ count } carpetes perquè aquesta caixa forta ha assolit el seu límit de carpetes. Els seus elements s'han importat a la carpeta més propera disponible."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "No s'ha pogut crear ${ failed } carpeta. Els seus elements s'han importat a la carpeta més propera disponible.",
+        "No s'han pogut crear ${ failed } carpetes. Els seus elements s'han importat a la carpeta més propera disponible."
       ]
     }
   }
