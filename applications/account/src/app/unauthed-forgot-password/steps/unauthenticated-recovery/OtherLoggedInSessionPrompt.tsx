@@ -11,9 +11,10 @@ import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 import YesNoButtons from '../authenticated-recovery/delegated-access/components/YesNoButtons';
 
-export const OtherLoggedInSessionPrompt = () => {
+export const OtherLoggedInSessionPrompt = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username } = snapshot.context;
 
@@ -28,7 +29,7 @@ export const OtherLoggedInSessionPrompt = () => {
         <>
             <Header
                 title={c('Title').t`Are you already signed in to ${BRAND_NAME} in a browser?`}
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
                 subTitle={<UserNameWithIcon username={username} />}
             />
             <Content>

@@ -12,9 +12,10 @@ import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry
 import { SignedInSessionsList } from '../../components/SignedInSessionsList';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 import YesNoButtons from './delegated-access/components/YesNoButtons';
 
-export const AuthenticatedSessionPrompt = () => {
+export const AuthenticatedSessionPrompt = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { resetResponse, username } = snapshot.context;
 
@@ -35,7 +36,7 @@ export const AuthenticatedSessionPrompt = () => {
             <Header
                 title={c('Title').t`Can you access your session in the browser?`}
                 subTitle={<UserNameWithIcon username={username} />}
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
             />
             <Content>
                 <p>

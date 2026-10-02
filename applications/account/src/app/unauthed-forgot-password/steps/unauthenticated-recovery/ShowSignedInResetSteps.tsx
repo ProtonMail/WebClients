@@ -13,8 +13,9 @@ import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const ShowSignedInResetSteps = () => {
+export const ShowSignedInResetSteps = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username } = snapshot.context;
 
@@ -30,7 +31,7 @@ export const ShowSignedInResetSteps = () => {
             <Header
                 title={c('Title').t`Try changing your password in your active web session`}
                 subTitle={<UserNameWithIcon username={username} />}
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
             />
             <Content>
                 <p className="m-0">
