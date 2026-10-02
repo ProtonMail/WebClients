@@ -10,4 +10,4 @@
 
 ## Tests
 
-`yarn test` covers the prop contract and the chart.js configuration, with `react-chartjs-2` mocked; `register.test.ts` is the exception and reads the real registry. Only `yarn test:visual` in `applications/storybook` proves a chart drew: Linux-only baselines, refreshed by the manual `storybook:test:visual:update` job, never committed from macOS.
+`pnpm run test` covers the prop contract and the chart.js configuration, with `react-chartjs-2` mocked; `register.test.ts` is the exception and reads the real registry. Only `pnpm run test:visual` in `applications/storybook` proves a chart drew: Linux-only baselines, refreshed by the manual `storybook:test:visual:update` job, never committed from macOS.

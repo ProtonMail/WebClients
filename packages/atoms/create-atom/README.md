@@ -7,7 +7,7 @@ A script to create the skeleton of an atom for `@proton/atoms`. Based on https:/
 The script takes 1 argument - the name of the component. For example,
 
 ```
-yarn create-atom MyAtom
+pnpm run create-atom MyAtom
 ```
 
 This will create a `MyAtom` directory in `@proton/atoms` and output the following skeleton files
@@ -38,4 +38,4 @@ Consumers (and stories) then import it as `import { MyAtom } from '@proton/atoms
 
 ## Monorepo script
 
-You can run the script from the monorepo root using `yarn create-atom MyAtom`.
+You can run the script from the monorepo root using `pnpm run create-atom MyAtom`.
