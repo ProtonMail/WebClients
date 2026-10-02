@@ -3,7 +3,9 @@ import type { Config } from 'jest';
 const jestConfig: Config = {
     forceExit: true,
     setupFilesAfterEnv: ['./jest.setup.js'],
-    moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
+    // No '<rootDir>/node_modules': pnpm puts react-router-dom-v5-compat's react-router@6 there, and resolving it
+    // first would hand v6 to every react-router@5 importer, including react-router-dom.
+    moduleDirectories: ['node_modules'],
     collectCoverageFrom: [
         'src/**/*.{js,jsx,ts,tsx}',
         '!src/app/locales.ts',

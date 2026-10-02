@@ -28,4 +28,4 @@ Then you can use the [Icon component](https://design-system.protontech.ch/?path=
 In case some icons need to be changed/added, the process is:
 
 - edit the `assets/sprite-icons.svg` file (making the relevant changes there)
-- run `yarn workspace @proton/icons build` to generate the React components
+- run `pnpm --filter @proton/icons run build` to generate the React components

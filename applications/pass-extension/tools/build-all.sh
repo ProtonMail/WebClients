@@ -62,7 +62,7 @@ function bundle_extension {
     on_enter "$display"
 
 
-    eval "${env_vars[*]} yarn run $cmd"
+    eval "${env_vars[*]} pnpm run $cmd"
     cd dist
 
     local suffix=""
@@ -93,16 +93,17 @@ function bundle_extension_from_sources {
     on_enter "$1 (sources)"
 
     # Lock `ProtonConfigV2` for reproducibility
-    BUILD_TARGET=$1 NODE_ENV=production yarn run config:lock >/dev/null
+    BUILD_TARGET=$1 NODE_ENV=production pnpm run config:lock >/dev/null
     cd ../../
 
     zip -rqX "$OUTDIR/$BUILD_ID-FF-sources.zip" \
         "applications/pass-extension" \
         "packages" \
         "utilities" \
-        "yarn.lock" \
-        ".yarn" \
-        ".yarnrc.yml" \
+        "pnpm-lock.yaml" \
+        "pnpm-workspace.yaml" \
+        ".npmrc" \
+        "patches" \
         ./*.js \
         ./*.json \
         ./*.mjs \
@@ -121,9 +122,7 @@ function bundle_extension_from_sources {
         -x "packages/ai-assistant/*" \
         -x "packages/raw-images/tests/*" \
         -x "applications/pass-extension/dist/*" \
-        -x "applications/pass-extension/*.md" \
-        -x ".yarn/install-state.gz" \
-        -x ".yarn/cache/*"
+        -x "applications/pass-extension/*.md"
 
     cd "$PASSDIR"
     zip -uqX "$OUTDIR/$BUILD_ID-FF-sources.zip" "FIREFOX_REVIEWERS.md"
@@ -134,15 +133,15 @@ function bundle_extension_from_sources {
     mkdir -p "$OUTDIR/$BUILD_ID-FF-sources"
     cd "$OUTDIR/$BUILD_ID-FF-sources"
     unzip -q "$ARTEFACTSDIR/release/$BUILD_ID-FF-sources.zip"
-    yarn install --no-immutable
+    pnpm install --no-frozen-lockfile
     cd applications/pass-extension
-    RELEASE=true yarn run build:extension:ff
+    RELEASE=true pnpm run build:extension:ff
     cd dist
     zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-FF.zip" "."
 
     # Remove config lock to not affect chromium builds
     cd "$PASSDIR"
-    yarn run config:clean
+    pnpm run config:clean
 
     on_leave "release/$BUILD_ID-FF.zip"
 }
@@ -151,17 +150,17 @@ function bundle_extension_from_sources {
 echo "Building extensions... This may take a while."
 printf "\tNode\t%s (%s)\n" "$(node --version)" "$(which node)"
 printf "\tnpm\tv%s (%s)\n" "$(npm --version)" "$(which npm)"
-printf "\tYarn\tv%s (%s)\n" "$(yarn --version)" "$(which yarn)"
+printf "\tpnpm\tv%s (%s)\n" "$(pnpm --version)" "$(which pnpm)"
 
 for var in "REPODIR" "PASSDIR" "VERSION" "ARTEFACTSDIR" "OUTDIR" "COMMIT" "BUILD_ID"; do
     printf "\t%s = %s\n" "${var}" "${!var}"
 done
 
 # Validate dependencies
-echo -e "\nValidating yarn.lock..."
+echo -e "\nValidating pnpm-lock.yaml..."
 if [ -z ${CI+n} ]; then
     cd "$REPODIR"
-    yarn install --immutable --immutable-cache >/dev/null
+    pnpm install --frozen-lockfile >/dev/null
     printf "\t✅ %s\n" "OK"
 else
     printf "\t⚠️ Skipped, \$CI var is already set\n"

@@ -31,13 +31,13 @@
         "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "TZ=UTC vitest",
-        "test:ci": "yarn test --run",
-        "test:ui": "yarn test --ui",
-        "test:watch": "yarn test --watch"
+        "test:ci": "pnpm run test --run",
+        "test:ui": "pnpm run test --ui",
+        "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
-        "@proton/andromeda": "workspace:packages/wasm/andromeda",
+        "@proton/andromeda": "workspace:andromeda-wasm@^",
         "@proton/app-context": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/hooks": "workspace:^",

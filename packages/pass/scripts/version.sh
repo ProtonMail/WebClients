@@ -2,7 +2,7 @@
 
 if [ -z "$1" ]; then
     echo "Please provide a new version number as an argument."
-    echo "Usage: \`yarn workspace @proton/pass run version:update <new_version>\`"
+    echo "Usage: \`pnpm --filter @proton/pass run version:update <new_version>\`"
     exit 1
 fi
 

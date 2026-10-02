@@ -12,7 +12,7 @@
         "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find lib/ index.js -type f -name '*.js')",
         "test": "./test/test-linter.sh* && ./test/test-validator.sh",
-        "test:ci": "yarn test"
+        "test:ci": "pnpm run test"
     },
     "dependencies": {
         "execa": "^5.1.1",
