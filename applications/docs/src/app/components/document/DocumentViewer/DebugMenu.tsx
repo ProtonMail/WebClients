@@ -1,8 +1,15 @@
+import { useNotifications } from '@proton/app-context/useNotifications'
 import { Button } from '@proton/atoms/Button/Button'
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner'
+import { Badge } from '@proton/components/components/badge/Badge'
+import Details from '@proton/components/components/container/Details'
+import Summary from '@proton/components/components/container/Summary'
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel'
 import { IcCross } from '@proton/icons/icons/IcCross'
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle'
+import type { ReactNode } from 'react'
 import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import type {
@@ -14,11 +21,48 @@ import type {
 import type { DocumentType } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
 import { ConnectionCloseReason } from '@proton/docs-proto'
-import { isDevOrBlack } from '@proton/shared/lib/env'
 import { Tooltip } from '@proton/docs-shared/components/ui/ui'
 import * as Ariakit from '@ariakit/react'
 
 const UpdateReplayTool = lazy(() => import('./UpdateReplayTool'))
+
+type FileInputButtonProps = {
+  children: ReactNode
+  onFileSelect: (file: File) => Promise<void>
+}
+
+function FileInputButton({ children, onFileSelect }: FileInputButtonProps) {
+  const inputRef = useRef<HTMLInputElement>(null)
+  const { createNotification } = useNotifications()
+
+  return (
+    <>
+      <input
+        ref={inputRef}
+        type="file"
+        className="sr-only"
+        aria-label="Choose a file to apply"
+        onChange={(event) => {
+          const input = event.currentTarget
+          const file = input.files?.[0]
+          input.value = ''
+          if (file) {
+            void onFileSelect(file).catch((error) => {
+              console.error(error)
+              createNotification({
+                type: 'error',
+                text: c('Notification').t`Failed to apply file. Check the file and try again.`,
+              })
+            })
+          }
+        }}
+      />
+      <Button size="small" color="danger" onClick={() => inputRef.current?.click()}>
+        {children}
+      </Button>
+    </>
+  )
+}
 
 export type DebugMenuProps = {
   docController?: AuthenticatedDocControllerInterface
@@ -128,9 +172,6 @@ export function DebugMenu({ docController, editorController, documentState, docu
 
   const [showUpdateReplayTool, setShowUpdateReplayTool] = useState(false)
 
-  const patchesFileInputRef = useRef<HTMLInputElement>(null)
-  const spreadsheetStateFileInputRef = useRef<HTMLInputElement>(null)
-
   if (!isOpen) {
     return (
       <button
@@ -168,7 +209,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
       <div
         id="debug-menu"
         className={clsx(
-          'flex min-w-[12.5rem] flex-col flex-nowrap gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1 [&_button]:flex [&_button]:items-center [&_button]:justify-between [&_button]:gap-3 [&_button]:text-left',
+          'flex w-[22rem] max-w-[calc(100vw-1rem)] flex-col flex-nowrap gap-2 rounded border border-[--border-weak] bg-[--background-weak] px-1 py-1 [&_button]:flex [&_button]:items-center [&_button]:justify-between [&_button]:gap-3 [&_button]:text-left',
         )}
         data-testid="debug-menu"
       >
@@ -182,39 +223,22 @@ export function DebugMenu({ docController, editorController, documentState, docu
             <IcCross className="h-3.5 w-3.5" />
           </button>
         </div>
-        <div className="mb-1 flex flex-col flex-nowrap gap-2 overflow-y-auto px-1 *:flex-shrink-0">
-          {docController && (
-            <>
-              <div>ClientID: {clientId}</div>
-            </>
-          )}
-          {isDevOrBlack() && (
-            <>
-              {docController && (
-                <>
-                  <Button size="small" onClick={commitToRTS}>
-                    Commit Doc with RTS
-                  </Button>
-                  <Button size="small" onClick={squashDocument}>
-                    Squash Last Commit with DX
-                  </Button>
-                  <Button size="small" onClick={createInitialCommit} data-testid="create-initial-commit">
-                    Create Initial Commit
-                  </Button>
-                </>
-              )}
-              <Button size="small" onClick={closeConnection}>
-                Close Connection
-              </Button>
-            </>
-          )}
+        <div className="mb-1 flex max-h-[min(42rem,calc(100vh-2rem))] flex-col flex-nowrap gap-2 overflow-y-auto px-1 *:flex-shrink-0">
+          <div className="flex flex-col gap-0.5 px-1">
+            <div className="font-semibold">Diagnostics</div>
+            <div className="color-weak text-sm">
+              These actions do not modify the open document. Downloads and copied data may contain document content.
+            </div>
+            {docController && <div className="mt-1 text-sm">Client ID: {clientId}</div>}
+          </div>
+
           <Button size="small" onClick={copyYDocAsJSON}>
             Copy Y.Doc as JSON
           </Button>
           {isDocument && (
             <>
               <Button size="small" onClick={copyEditorJSON}>
-                Copy Editor JSON
+                Copy Editor State as JSON
               </Button>
               <Button size="small" onClick={toggleDebugTreeView}>
                 Toggle Tree View
@@ -224,56 +248,65 @@ export function DebugMenu({ docController, editorController, documentState, docu
           {isSpreadsheet && (
             <>
               <Button size="small" onClick={copyLatestSpreadsheetStateToLogJSON}>
-                Copy Spreadsheet State
+                Copy Local Spreadsheet State as JSON
               </Button>
               <Button size="small" onClick={() => editorController.downloadSpreadsheetPatches()}>
-                Download stored patches
-              </Button>
-              <input
-                ref={patchesFileInputRef}
-                type="file"
-                className="sr-only"
-                onChange={async function handlePatchesFile(event) {
-                  const file = event.target.files?.[0]
-                  if (!file) {
-                    return
-                  }
-                  const fileReader = new FileReader()
-                  fileReader.onload = async (event) => {
-                    const spreadsheetState = JSON.parse(event.target?.result as string)
-                    await editorController.replaceLocalSpreadsheetState(spreadsheetState, false)
-                  }
-                  fileReader.readAsText(file)
-                }}
-              />
-              <Button
-                size="small"
-                onClick={() => {
-                  const fileInput = patchesFileInputRef.current
-                  if (!fileInput) {
-                    return
-                  }
-                  fileInput.click()
-                }}
-              >
-                Apply spreadsheet state from file
+                Download Stored Patches as JSON
+                <Ariakit.TooltipProvider>
+                  <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
+                    <IcInfoCircle />
+                  </Ariakit.TooltipAnchor>
+                  <Tooltip>
+                    Downloads locally stored spreadsheet changes as JSON to inspect or replay when debugging
+                  </Tooltip>
+                </Ariakit.TooltipProvider>
               </Button>
               <Button size="small" onClick={() => editorController.downloadSpreadsheetActions()}>
-                Download stored actions
+                Download Stored Actions as JSON
+                <Ariakit.TooltipProvider>
+                  <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
+                    <IcInfoCircle />
+                  </Ariakit.TooltipAnchor>
+                  <Tooltip>Downloads locally stored spreadsheet actions as JSON to inspect when debugging</Tooltip>
+                </Ariakit.TooltipProvider>
+              </Button>
+              <Button
+                size="small"
+                onClick={async () => {
+                  const patches = await editorController.generateSpreadsheetPatches()
+                  if (!patches) {
+                    return
+                  }
+                  const stringifiedPatches = JSON.stringify(patches)
+                  const blob = new Blob([stringifiedPatches], { type: 'application/json' })
+                  const url = URL.createObjectURL(blob)
+                  const a = document.createElement('a')
+                  a.href = url
+                  a.download = 'spreadsheet-state-patches.json'
+                  a.click()
+                  URL.revokeObjectURL(url)
+                  a.remove()
+                }}
+              >
+                Generate Patches from State
               </Button>
             </>
           )}
           <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
-            Download state as JSON
+            Download Current State as ZIP
             <Ariakit.TooltipProvider>
               <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
                 <IcInfoCircle />
               </Ariakit.TooltipAnchor>
-              <Tooltip>Downloads the current Yjs and local state of the document as JSON</Tooltip>
+              <Tooltip>
+                {isSpreadsheet
+                  ? 'Downloads the same Y.Doc and local spreadsheet state as the copy actions, as JSON files in one ZIP'
+                  : 'Downloads the same Y.Doc and editor state as the copy actions, as JSON files in one ZIP'}
+              </Tooltip>
             </Ariakit.TooltipProvider>
           </Button>
           <Button size="small" onClick={downloadYJSStateAsUpdate}>
-            Download YJS state as single update
+            Download YJS State as One Update
             <Ariakit.TooltipProvider>
               <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
                 <IcInfoCircle />
@@ -282,7 +315,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
             </Ariakit.TooltipProvider>
           </Button>
           <Button size="small" onClick={() => editorController.downloadBaseCommit()}>
-            Download base commit updates
+            Download Base Commit Updates
             <Ariakit.TooltipProvider>
               <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
                 <IcInfoCircle />
@@ -293,12 +326,12 @@ export function DebugMenu({ docController, editorController, documentState, docu
           {docController && (
             <>
               <Button size="small" onClick={() => docController.downloadAllUpdatesAsZip()}>
-                Download all updates as ZIP
+                Download All Updates as ZIP
                 <Ariakit.TooltipProvider>
                   <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
                     <IcInfoCircle />
                   </Ariakit.TooltipAnchor>
-                  <Tooltip>Downloads all updates as a ZIP file</Tooltip>
+                  <Tooltip>Downloads every update so they can be inspected or replayed</Tooltip>
                 </Ariakit.TooltipProvider>
               </Button>
               <Button
@@ -308,91 +341,95 @@ export function DebugMenu({ docController, editorController, documentState, docu
                   await docController.downloadUpdatesInformation(yDocJSON)
                 }}
               >
-                Download update debug information
+                Download Update Metadata
                 <Ariakit.TooltipProvider>
                   <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
                     <IcInfoCircle />
                   </Ariakit.TooltipAnchor>
-                  <Tooltip>Downloads debug information about all updates, does not include the content</Tooltip>
+                  <Tooltip>Downloads information about every update without document content</Tooltip>
                 </Ariakit.TooltipProvider>
               </Button>
               <Button size="small" onClick={() => docController.downloadObfuscatedUpdates()}>
-                Download obfuscated updates
+                Download Obfuscated Updates
                 <Ariakit.TooltipProvider>
                   <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
                     <IcInfoCircle />
                   </Ariakit.TooltipAnchor>
-                  <Tooltip>
-                    Downloads all updates obfuscated so that they can be used for debugging without revealing sensitive
-                    data
-                  </Tooltip>
+                  <Tooltip>Downloads updates with sensitive content obfuscated for safer sharing</Tooltip>
                 </Ariakit.TooltipProvider>
               </Button>
             </>
           )}
-          {isDevOrBlack() && (
-            <>
-              {isSpreadsheet && (
+
+          <Details
+            className="rounded border border-[--signal-danger] bg-[--background-norm]"
+            data-testid="dangerous-debug-actions"
+          >
+            <Summary className="px-2 py-2" classNameChildren="flex items-center justify-between gap-2 font-semibold">
+              <span>State-changing actions</span>
+              <Badge type="error" className="m-0">
+                DANGEROUS
+              </Badge>
+            </Summary>
+            <div className="flex flex-col gap-2 border-t border-[--signal-danger] p-2">
+              <Banner variant={BannerVariants.DANGER}>
+                <div className="flex flex-col gap-1">
+                  <div>
+                    Use these actions only when Proton Support or a developer instructs you. They can change the
+                    document, discard recovery data, or interrupt syncing. You may not be able to undo the result.
+                  </div>
+                  <div className="font-semibold">
+                    To protect the original, make a copy of the document and run these actions on the copy whenever
+                    possible.
+                  </div>
+                </div>
+              </Banner>
+
+              {docController && (
                 <>
-                  <Button size="small" onClick={() => editorController.removeSpreadsheetPatches()}>
-                    Remove stored patches
+                  <Button size="small" color="danger" onClick={commitToRTS}>
+                    Commit Document with RTS
                   </Button>
-                  <Button
-                    size="small"
-                    onClick={async () => {
-                      const patches = await editorController.generateSpreadsheetPatches()
-                      if (!patches) {
-                        return
-                      }
-                      const stringifiedPatches = JSON.stringify(patches)
-                      const blob = new Blob([stringifiedPatches], { type: 'application/json' })
-                      const url = URL.createObjectURL(blob)
-                      const a = document.createElement('a')
-                      a.href = url
-                      a.download = 'spreadsheet-state-patches.json'
-                      a.click()
-                      URL.revokeObjectURL(url)
-                      a.remove()
-                    }}
-                  >
-                    Generate patches from state
+                  <Button size="small" color="danger" onClick={squashDocument}>
+                    Squash Last Commit with DX
                   </Button>
-                  <input
-                    ref={spreadsheetStateFileInputRef}
-                    type="file"
-                    className="sr-only"
-                    onChange={async function handlePatchesFile(event) {
-                      const file = event.target.files?.[0]
-                      if (!file) {
-                        return
-                      }
-                      const fileReader = new FileReader()
-                      fileReader.onload = async (event) => {
-                        const patches = JSON.parse(event.target?.result as string)
-                        await editorController.applyPatches(patches)
-                      }
-                      fileReader.readAsText(file)
-                    }}
-                  />
-                  <Button
-                    size="small"
-                    onClick={() => {
-                      const fileInput = spreadsheetStateFileInputRef.current
-                      if (!fileInput) {
-                        return
-                      }
-                      fileInput.click()
-                    }}
-                  >
-                    Apply patches from file
+                  <Button size="small" color="danger" onClick={createInitialCommit} data-testid="create-initial-commit">
+                    Create Initial Commit
                   </Button>
                 </>
               )}
-              <Button size="small" onClick={() => setShowUpdateReplayTool(true)}>
-                Update Replay Tool
+              <Button size="small" color="danger" onClick={closeConnection}>
+                Close Connection
               </Button>
-            </>
-          )}
+
+              {isSpreadsheet && (
+                <>
+                  <FileInputButton
+                    onFileSelect={async (file) => {
+                      const spreadsheetState = JSON.parse(await file.text())
+                      await editorController.replaceLocalSpreadsheetState(spreadsheetState, false)
+                    }}
+                  >
+                    Apply Spreadsheet State from File
+                  </FileInputButton>
+                  <Button size="small" color="danger" onClick={() => editorController.removeSpreadsheetPatches()}>
+                    Remove Stored Patches
+                  </Button>
+                  <FileInputButton
+                    onFileSelect={async (file) => {
+                      const patches = JSON.parse(await file.text())
+                      await editorController.applyPatches(patches)
+                    }}
+                  >
+                    Apply Patches from File
+                  </FileInputButton>
+                </>
+              )}
+              <Button size="small" color="danger" onClick={() => setShowUpdateReplayTool(true)}>
+                Open Update Replay Tool
+              </Button>
+            </div>
+          </Details>
         </div>
       </div>
     </div>
