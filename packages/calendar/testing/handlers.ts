@@ -8,7 +8,7 @@ import { addressBuilder, calendarBuilder, calendarEventBuilder, userBuilder } fr
  * Default MSW handlers for tests.
  *
  * Handlers are created with this package's `msw` install, which can be a
- * separate yarn workspace instance from the consumer's. Spread the result into
+ * separate workspace-local copy from the consumer's. Spread the result into
  * `setupServer(...)` from the consumer's `msw/node` and cast to that copy's
  * `RequestHandler[]`.
  */
