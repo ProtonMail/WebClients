@@ -614,7 +614,8 @@ function $handleInsertTextData(
 
   const prevSibling = suggestionNode.getPreviousSibling()
 
-  const lastChildOfPrevBlock = suggestionNode.getTopLevelElement()?.getPreviousSibling<ElementNode>()?.getLastChild()
+  const prevBlock = suggestionNode.getTopLevelElement()?.getPreviousSibling()
+  const lastChildOfPrevBlock = $isElementNode(prevBlock) ? prevBlock.getLastChild() : null
 
   const nextSibling = suggestionNode.getNextSibling()
 
