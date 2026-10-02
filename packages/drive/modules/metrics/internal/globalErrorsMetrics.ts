@@ -68,7 +68,7 @@ export class GlobalErrorsMetrics {
         return (
             (event.eventName === 'upload' && event.error && event.error !== 'network_error') ||
             (event.eventName === 'download' && event.error && event.error !== 'network_error') ||
-            (event.eventName === 'decryptionError' && !event.fromBefore2024)
+            (event.eventName === 'decryptionError' && event.recency !== 'before_2024')
         );
     }
 
