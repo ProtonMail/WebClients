@@ -1751,6 +1751,9 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "New chat": [
+        "새로운 채팅"
       ]
     },
     "action": {
@@ -4425,6 +4428,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "보낸 사람: ${ sender } - ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "보낸 사람: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -13702,6 +13708,42 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }은(는) ${ PLAN_NAMES[PLANS.PASS] }와(과) 겸용할 수 없습니다."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private는 활성 구독과 함께 결제할 수 없습니다."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private는 기부가 필수입니다."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "크레딧 구매는 별도 결제건으로 분리됩니다."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "하나의 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }만 결제할 수 있습니다."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "플랜 변경 전 추가적인 지갑 계좌를 폐지해야 합니다."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "선택된 플랜은 계정에 설정된 도메인만큼을 지원하지 않습니다."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "선택된 플랜은 현재 계정이 사용하는 저장공간만큼 지원하지 않습니다."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "이 플랜은 사용자의 조직에 속한 구성원들을 지원하지 않습니다."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "무료 체험에서는 ${ LUMO_SHORT_APP_NAME } 이용 권한을 지원하지 않습니다."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "무료 체험에서는 사용자 지정 도메인 이용 권한을 지원하지 않습니다."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "무료 체험에서는 Scribe 이용 권한을 지원하지 않습니다."
       ]
     },
     "Payments.Error": {
@@ -17452,6 +17494,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "나 자신의 규칙은 변경할 수 없습니다. 다른 관리자에게 변경을 문의하십시오."
       ]
     },
     "Validation": {
@@ -17853,6 +17898,27 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ planName }": [
+        "${ planName } 받기"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/월간"
+      ],
+      "2 TB of storage to share": [
+        "공유 가능한 2 TB 저장공간"
+      ],
+      "All premium features from your current plan": [
+        "현재 플랜의 모든 프리미엄 기능"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12개월간"
       ]
     }
   }

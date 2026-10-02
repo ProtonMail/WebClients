@@ -1756,6 +1756,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "New chat": [
+        "Yeni sohbet"
       ]
     },
     "action": {
@@ -4463,6 +4466,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "Gönderici: ${ sender } - ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "Gönderici: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -8245,8 +8251,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
