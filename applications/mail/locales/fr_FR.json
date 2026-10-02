@@ -1753,6 +1753,9 @@
       ],
       "Run realistic session": [
         "Effectuer une session réaliste"
+      ],
+      "New chat": [
+        "Nouvelle conversation"
       ]
     },
     "action": {
@@ -4463,6 +4466,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "De : ${ sender } – ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "De : ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
