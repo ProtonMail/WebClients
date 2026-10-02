@@ -15,14 +15,20 @@ import { UserNameWithIcon } from '../../../../components/username/UserNameWithIc
 import Content from '../../../../public/Content';
 import Header from '../../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../../reset/resetPasswordTelemetry';
-import type { UnauthedForgotPasswordStateMachine } from '../../../state-machine/UnauthedForgotPasswordStateMachine';
-import { useMachineWizard } from '../../../wizard/MachineWizardProvider';
+import {
+    selectDelegatedAccessContacts,
+    selectResetResponse,
+    selectUsername,
+} from '../../../state-machine/UnauthedForgotPasswordStateMachine';
+import { ForgotPasswordContext } from '../../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../../wizard/forgotPasswordStep';
 import YesNoButtons from './components/YesNoButtons';
 
 export const EmergencyAccessStep = ({ onBack }: ForgotPasswordStepProps) => {
-    const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const { delegatedAccessContacts, resetResponse, username } = snapshot.context;
+    const { send } = ForgotPasswordContext.useActorRef();
+    const delegatedAccessContacts = ForgotPasswordContext.useSelector(selectDelegatedAccessContacts);
+    const resetResponse = ForgotPasswordContext.useSelector(selectResetResponse);
+    const username = ForgotPasswordContext.useSelector(selectUsername);
 
     const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
     useEffect(() => {
