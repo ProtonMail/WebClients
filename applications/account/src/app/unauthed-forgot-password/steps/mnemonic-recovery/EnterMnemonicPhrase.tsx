@@ -22,8 +22,9 @@ import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry
 import { authMnemonicAndGetKeys } from '../../actions';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const EnterMnemonicPhrase = () => {
+export const EnterMnemonicPhrase = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username, resetResponse } = snapshot.context;
 
@@ -65,7 +66,7 @@ export const EnterMnemonicPhrase = () => {
             <Header
                 title={resetResponse ? c('Title').t`Reset password?` : c('Title').t`Verify it’s you`}
                 subTitle={<UserNameWithIcon username={username} />}
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
             />
             <Content>
                 {resetResponse ? (

@@ -22,8 +22,9 @@ import { DeviceRecoveryLevel, performPasswordChangeViaMnemonic, performPasswordR
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useForgotPasswordProps } from '../../wizard/ForgotPasswordProvider';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const ResetPassword = () => {
+export const ResetPassword = ({ onBack }: ForgotPasswordStepProps) => {
     const { onLogin, productParam, setupVPN } = useForgotPasswordProps();
     const { snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const {
@@ -115,7 +116,11 @@ export const ResetPassword = () => {
 
     return (
         <>
-            <Header title={c('Title').t`Reset password?`} subTitle={<UserNameWithIcon username={username} />} />
+            <Header
+                title={c('Title').t`Reset password?`}
+                subTitle={<UserNameWithIcon username={username} />}
+                onBack={onBack}
+            />
             <Content>
                 <SetPasswordWithPolicyForm
                     passwordPolicies={resetResponse?.PasswordPolicies ?? []}

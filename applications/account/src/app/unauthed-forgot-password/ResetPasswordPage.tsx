@@ -60,15 +60,18 @@ export const ResetPasswordPage = ({
         })
     );
 
-    const handleBackStep = () => send({ type: 'decision.back' });
+    // Back, only where the step has somewhere to go back to: the page shows it on small screens, the step's heading on
+    // larger ones
+    const onBack = snapshot.can({ type: 'decision.back' }) ? () => send({ type: 'decision.back' }) : undefined;
 
     return (
-        <Layout toApp={toApp} hasDecoration={snapshot.value === 'entry'} onBack={handleBackStep}>
+        <Layout toApp={toApp} hasDecoration={snapshot.value === 'entry'} onBack={onBack}>
             <Main>
                 <UnauthedForgotPasswordWizard
                     actorRef={actorRef}
                     snapshot={snapshot}
                     send={send}
+                    onBack={onBack}
                     onPreSubmit={onPreSubmit}
                     onStartAuth={onStartAuth}
                     onLogin={onLogin}

@@ -15,8 +15,9 @@ import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry
 import lockErrorExclamation from '../../icons/lock-error-exclamation.svg';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const ResetPasswordWithDataLoss = () => {
+export const ResetPasswordWithDataLoss = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username, resetResponse } = snapshot.context;
 
@@ -47,7 +48,11 @@ export const ResetPasswordWithDataLoss = () => {
     );
     return (
         <>
-            <Header title={c('Title').t`Reset password?`} subTitle={<UserNameWithIcon username={username} />} />
+            <Header
+                title={c('Title').t`Reset password?`}
+                subTitle={<UserNameWithIcon username={username} />}
+                onBack={onBack}
+            />
             <Content>
                 <p className="m-0">
                     {getBoldFormattedText(

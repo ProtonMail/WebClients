@@ -98,6 +98,31 @@ export enum UnauthedForgotPasswordStateMachineTags {
     hideReturnToSignIn = 'hideReturnToSignIn',
 }
 
+/**
+ * Back in the verified recovery goes to the latest earlier prompt or offer the user saw. Each of those screens shows
+ * when its guard holds, so the guards tell which one it was: from the latest, the emergency access offer, the social
+ * recovery offer, the signed-in sessions prompt and the phrase step; with none of them, the entry screen.
+ *
+ * Back skips the instructions a prompt or offer may have led to (emergency contacts, signed-in sessions): having seen
+ * them leaves the same context as having declined, so back returns to the prompt or offer, which leads to them again.
+ */
+const backFromSessionsPrompt = [
+    { guard: 'hasMnemonic' as const, target: '#forgotPassword.mnemonicRecovery.enterPhrase' },
+    { target: '#forgotPassword.entry' },
+];
+const backFromSocialRecoveryOffer = [
+    { guard: 'hasOtherLoggedInSessions' as const, target: '#forgotPassword.authenticatedRecovery.otherSessionsPrompt' },
+    ...backFromSessionsPrompt,
+];
+const backFromEmergencyAccessOffer = [
+    { guard: 'hasSocialContacts' as const, target: '#forgotPassword.authenticatedRecovery.socialRecoveryOffer' },
+    ...backFromSocialRecoveryOffer,
+];
+const backFromDataLossOffer = [
+    { guard: 'hasEmergencyContacts' as const, target: '#forgotPassword.authenticatedRecovery.emergencyAccessOffer' },
+    ...backFromEmergencyAccessOffer,
+];
+
 export const UnauthedForgotPasswordStateMachine = setup({
     types: {
         context: {} as UnauthedForgotPasswordMachineContext,
@@ -133,6 +158,19 @@ export const UnauthedForgotPasswordStateMachine = setup({
     },
     actions: {
         redirectToSignIn: () => {},
+        /**
+         * A new attempt, maybe for another account: every recovery method is offered again, including the ones skipped
+         * on the way, and the ownership an earlier attempt proved no longer counts.
+         */
+        startNewAttempt: assign({
+            emailRecoverySkipped: false,
+            smsRecoverySkipped: false,
+            ownershipVerificationMethod: undefined,
+            ownershipVerificationCode: '',
+            resetResponse: undefined,
+            delegatedAccessContacts: [],
+            deviceRecoveryLevel: DeviceRecoveryLevel.NONE,
+        }),
     },
 }).createMachine({
     /** @xstate-layout N4IgpgJg5mDOIC5QDMD2AnKqAuAFAhrLAO4YQB0YAdtugJ4DE6YAxqgG5j3mzb7rZIAbQAMAXUSgADqlgBLbHNRVJIAB6IAbACZN5bQGYALEZHaAnEYCsADgDsdqwBoQdRDYvkr3zUc1W7AEYrEVsAXzCXNEwcAiJSdApqWkYACzAAGylyVClqYXFVGXlFZVUNBE0RPUMTM0tbB2dXREDtU30DKx1NNpsqwJsIqIwsPEISMkoaegYIVjl5ZXIAI3wWAGtRCSQQYoUlFV2Kg0sbck07XQMDO387I3sXNwQ7o3Jbm36zUwfu4ZA0TGcUmiWmKQYUgmCQoUmYyDkGQyBR20lkBzKxy0gRqxlMFms9kcz1agRxXhE5hENja3Ss5isRgBQNi0KmzDYnHoAFkwNhUqgILAADKofAQORUKBzZRgciS9ioDZylnjeLs1gcLh0Xn8wUisUSqUIBWoFj4UpUbbbIroy3lRDed72KyBAweRwGamBEkIXTaC4iQIPcyaL5dOzmZmjVnqsEcrU8vkCoWi8WS6UQWXyqiK5XkVUgmHkBNcnXJ-Vpo1QE25s0Ww7WwKovZ2w4Ov3mOz6UNU9o6QbmbS+mnkIzmCeaSxum4GKfRmJq0EUUva3Upg3pqUyqhy035wts+OasvryuGjO1xXmy3W7Qt-b2rEINqaAwXK5+EQ3II2Ay+gxtHObRuj-ICLG6YwrAXYEjxXE81wrVML23Lh0AwcgpAyC1ogAWwLGMl2LVckz1ZCtxrU0b0bcQbV2R922fV930uftv1uQZ-xaP0ug+b87BsXsyS9fwYNjZdKFw-BEQAJQQ+gADUuDkZA6AAYUFMAGDAKTEXINh5nIdh8AyOQIAtFFbRKRjQAqRlnUcN0PSsL0aQAkILlDIJtHaFzgiGSJAUIosph06SMjkzltSU9AVPUzS5gWJYqB4DY5CkOi0WszFbMdRlyBdJztE9b1fRxPRfD-YIRG-XQ-2gwLDzjChYFw2BIsTOgAEFiGk7ANPmBhWtgfTNJ4ZJMtbbKjlyv17B7KcfgHQTh24zR1vISMIPMd0gPMDwxKIqZho6sser6gatPmFhFkOVZ1i2Qp6LbHL1EQYruwsRb+20QdVpeGwAi8DwAn2y4hxcw6QrBE75O63qFEuxKbuS1L0smhjXoqCxPt7JbfpW31x3eYNbiuMwgy9Qwobgng2tO6LlNUpHhtGwzjNM8zBAgDGXpmt7KipTb-FDIMdD8OxfTsG5Az2y4QgZf5GuC2nYaixSmfiwbrtu5ZYDSjKnqyjF+YqRbhfpAZxcuX0327fwgz8HaRFMSHlcXaGKAyesMgAIQegBXKQ1PSTYdz3OsDxV5ryG980-cD4PQ42K961vWijamk2OzaawvB0L4g36VzNCJmwRHIQJQzDQJTC9Mw7BpmO45M-3NiDkPWA2bT0HQ9BMOw7A8IIj3aZbhP26TrvU+o5RrUzzHTdaXz86A8vBjfalS+424rE27oBJ0Qx9vdJuJPHtuNg75QEXQXDkd1lK2CoW-cN56aOysf73vdPRHm6cwbov6MnsGfYsF9E4aRfnIO+D9Ub63RgvPmOdLiBErqBCwuhqTaGpETBk5AaqXB0EOMkO0ozu1gjHXCu5cLKDkCwBm3AWDJwzNyGhdCWBdWMoifAKxEQKEYFmXcOY8wqmjhJahOkOGMLoPpFhUo2FSKoPQrh4VeH8OwHQGeDY54ZwfMg587puy12pKEKuNhxwOF9Dgnynk-w1Q8B4Lo2gwFTEkbQ5RDC4ZyK7qw9hnjVE8L4aZTR4cRFKjEaPKh-j6EyJ8ZsPxSiVHcOwsEgR2j05iCEM2Ky2cmLGHfIyK4DxirrRAtvF4wYLFeB8sEYq3QjDGEbhQ8SxZ3HSO8cw3xCiYmcJSeokJjA0IYSwjhDA+EmoSN6XErpCSelJL6WotJmiMk0SyUgj++TGleCMMUowpSdDdDKlONBADAiUl6OXMwriwTtM8XEqQqR0CEDAAAURmIwO59CjImTMhZHmGy8mzUEjUfw9hsGA28FxSp-Q9CMkgmSewBMDA3IoF8rx6tZGPOebAN5Hy4F3TWJsd+QKBY9E6HUAkjRiTcQnHvRwEM2icV0M0kYUSpkLIeU8l57yIQ63gQbElT5ZozkKbs4q+y7iHIqa0Haf8LF2Bqo0wCQ4UUtKOrc6Z3jsU8vxfyu6CCMo5OepskVgExV7IOeU6xv096GFdNLSwlIbguPVZ7cg6KuU4rADIglyxn6vyFTZAWbo3Q7MtVK613EfL+E2l0V0XwPBBmqKioyTM5CQC6hkQQ6AqAWRmfIqAAB5fkXAADKcBkqwDCfuSJlCJJchUhmiAWac15sEAW7pxbS3oArUQQ4sBVm6PWfo01IbRYfnaEOK4c5qgypfCDAhYZGREK+D5VNjaESZuzVwdtPrOmFpLekXtlaB09z7gPMZd8R71uLJu5trbd35oPV2o95bT3KEHVRHRVo9G5OFeOqok7xzFUMFUdaZUGQBlqGDGk+1dkbvTduttz7MU5B7X2qtIdUD0KuklO6dA4BBqxu9UwehgyGHJg7G4RgyqKvMJ0IpxgzAgRdoh2KW6W07tzahzq6Hj2YYHdh3DfqUpUFQMRpefoyOVxnVRkINGyoeAY-tFy346iuksOxptyGn0du8esRQnBBPKAAJJUF4OgAOLBLSibRobUdpLsaRneAEQGVdqTlxxnRykjHdnMZ8iEJkbrab3t0zx-TaHYBmjkCZGRncw5CIjqIm9rSphha4yhyLfHos3Ti3DBLKdv2ZMkx2QCugCEGFrk08p9h52DHJFOKrQYGQCUsK6tlt70tIcy3p-dUWYv5cxYV89IzB7D0mXenrj6Iv9Zy4NiKBXk5Dt-SO-9waTgxsq9V8VoE7iQe2YDUM3Rgj1y0yFmOGWZt7ribl2Li3MVFuQMgLgQ0Fu3b4AISyJqnOID8MVSdvh6RfDlT5iuR3rACUVfYG42nOPXd42WHg724ZPZe+gOzhrSuGPWucAS-kCSDFo9xQYv1Ayhi9MYWubQ4cPu4zd7xOkuAwCoCwbqLAWCVrR69-VyxCOwGx7Nf79srhA-2oJOcSnbFdFU6ENzXY1WdbS2CK79PEfakksz6gbOuoc6589nn+HljicFwLYXgPrDi9ByT+wzp6RQ6C-YgKSuNUUFV1lubSOmeYG1+zznRARtJfCVHdlU2ON0493E73LOdd64D8t4razTcVCMOc841hAIOxcoDerTjNoOGDG8ekfhafhYZ2h6Pvvdf+9gCN4Z-dRlD3Gal13abw9l-V9wSvrO-eVsKyt+ejmAMp50CL3QluQeS5J5Yd8Zh1r+BAlXawmhU0B1zNNtX2WkeGbkMZj9FncDoVwlIbAdn+fJ9ldLt01I8TyzfNYxFY5AaGGq2SN0q-1-t967NuJO+9-9s-UP1QGP1P15zEwk0BWH0vwDCq1clv0cHv2jWPkYweDfBuBIUVyClDymDX3dz61uzkCgF3AgHMzklxWwDLUECkGrTAPswvz9HqXIF7BXSqVDQf0GCfy-iq0aTf0wMmxwM-x02-3Lz427zZygT4Bs0oLAGoMx0FUgI23ekVTtSaWdWMHLkliQKqyYMBmMF8DJHFVTS5nwFFCIDIL5GE05zPyIwUJIwQAVnOBqjMD0OpB2iUy-iYPWgCEtl6HCAuwkmMNMPajgAsIFBE1oJN1sKkwcIIRqlqCqAlwO3OEAR2hAkPmhw6ywK6zBChGagrWwCDkhFVnwE4ABSH0UJfC8KYOz3pB8k+GaBeEMHLiXXazJhwSPlTVyOXHyMKK6OLFgBKOEGNWNigMqNjQZHdFqMo0BmsUaQrgARvwsW+G-CMLAHYFwxkQADFUAkRUBiAABVKQBgdYNgNfbAEsOAbADAb7EYio5rNBXQMMQwOI2FTQxo90CuaoVohwdo9dAEcTeYeAXYfgxIdbOwgAWnnUhNTWSHoDBKk12XeAaGXxAnhSAhHFjRdQJAhnqkyJBPgkxTPHImrHhI7HFzjV2WDERNsBtmjV2U2nLi6DAhwWlhX38OLDClkjhhijikulJOfBxgWj7H+z+msRqk2nHEsF6HOUZCMVTTVk6nOkRk0n5KF2-gQCFm8BqhMSgznD4PEX6Ppm5M1j5J+1GMhwIUpMAnqDDFT1tkuB7BuCLmCBxEjFTQgUnkK1VJDTuDQQQO6FCGcJpGhXcFn0ZEwWKjnSCHIRd3dQ9KvmDhvhgVwm9IqFrkVQ+Htzg18A+hsF9BCDQVVVuAsHQJCDxINLcS1UxVTMdGJ0qQcAYxdm8BAhpFT38H1OwM1U5RfTmSgEUQ8WSSWQ0ReFuLsPOXVKrjuAKh8n6C7BFnKVTU9W1W5VxV5ThLNIqOlnfAKTBj2gbLePejMDQSnBpEDMZCpFZSyOVzRSrL4x1VxRkRrJfHOT0CqyAmsGcMVVriU0Enz04jnF0EVlL2EM7xHKzlGJxHyiqH2iZUpEApDMqLJ2lgaWDGpGVWdyvNbzwJ-x7LSilDfRPQAIsyfNQoDGgppF+jgqa0gzDUeC-BfNT1dGAoRy3w1xwAE331rzCM5yfN+lDE2m-EAXaBdirh9Bt3aCXVnOMA+jfGYs309w1z-zABMyoHM0s2swA0Xg7HKQrh3PsFa2CAPJfHozjSY3xFYzZNjNCw30j28TuyG06i9I3LsK+m3LaEVRAlMAaEg1CErnOS+NdmnBjMwvdWwpEKR3soe06m53QCfL0L0GjPaAsVcN2SU2CE8gsGqCJzpAwvxLbyEJYoUq71wi1x72r313RyfMaQdJlwsS-gMIeClwDAcBPMGFF2DEspCusq-0KqjxKp9zKrjy4q7jio9C8EMvWlOF2W8B8veFKVZJEFFy3g-zCtApIt8AY3ItgqHGoujW-ArlU1OAVyuGrhWpsvwIMxs132Us4qAJAJIuUP3kWtDC+AEj-HnTqLcv6EjAeEeFCDOp6vkoIKIMgFIJCIoKoKBNHKkxZPlSC0LwMNDHYOSOf24Kq2EgBoKqBsZ36pj3ihoEM2kOoN4saXeEVWLIp3OT8DrPekMADH-j0NT3TPLM7IoFwPOpwqiyDhkAEDUmSC4HMzQHWq7HJwovOR2rcOjQow+EGFBntRxiMItBMNkGCPIMsLACqq+BUMeFuDl0AVzw8HJ2lmpAVhwWCyspjj6LIB6KkBIvHHOGpzSP6DXSMqaL0DBnYgEkeA3lWPWM5y2J2O9gONtucphuLk8NazuC-l0DdGsQ+Pzm+Koz+ItoCNlGr1QDOLIKuOYAgDir2gIUjEAhDBDDEveP6B0NsFnOlkcSMNlE9nMOwCfOAQDGDFlsDJlJpuMsWvzx6C6BdipHOxTuLCSy2PCkgCbvaCRK-ia1OEMBuCSMrinEjBdiaR0A7OyIoCS1eVxqryGqqvxwKhMBjq+BlIZCl2PIuUp1T1T2Tq6pjiSwAAlMgpBXk1AFBeLw7mCWro7egELPKAw+xk0QJfpM9U1kAlaMhXle4MASLmyxwfITAv4PymSyo3NTKuwXyvJyEIggA */
@@ -162,6 +200,8 @@ export const UnauthedForgotPasswordStateMachine = setup({
         /** User picks recovery path (account request, help, or pre-filled reset). */
         entry: {
             tags: [UnauthedForgotPasswordStateMachineTags.hideReturnToSignIn],
+            // However the user comes back here, the next attempt starts from scratch
+            entry: 'startNewAttempt',
             on: {
                 'recovery.started': {
                     target: 'loadRecoveryMethods',
@@ -256,7 +296,6 @@ export const UnauthedForgotPasswordStateMachine = setup({
                 },
                 'decision.back': {
                     target: 'entry',
-                    actions: assign(() => ({ smsRecoverySkipped: false, emailRecoverySkipped: false })),
                 },
                 'decision.skip': {
                     target: 'loadRecoveryMethods',
@@ -278,7 +317,6 @@ export const UnauthedForgotPasswordStateMachine = setup({
                 },
                 'decision.back': {
                     target: 'entry',
-                    actions: assign(() => ({ smsRecoverySkipped: false, emailRecoverySkipped: false })),
                 },
                 'decision.skip': {
                     target: 'loadRecoveryMethods',
@@ -360,7 +398,6 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         },
                         'decision.back': {
                             target: '#forgotPassword.entry',
-                            actions: assign(() => ({ smsRecoverySkipped: false, emailRecoverySkipped: false })),
                         },
                         'decision.skip': [
                             {
@@ -409,15 +446,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         'decision.yes': {
                             target: 'activeSessionInstructions',
                         },
-                        'decision.back': [
-                            {
-                                guard: 'hasMnemonic',
-                                target: '#forgotPassword.mnemonicRecovery.enterPhrase',
-                            },
-                            {
-                                target: '#forgotPassword.entry',
-                            },
-                        ],
+                        'decision.back': backFromSessionsPrompt,
                         'decision.no': {
                             target: 'checkSocialRecovery',
                         },
@@ -459,9 +488,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         'socialRecovery.started': {
                             target: '#forgotPassword.setNewPassword',
                         },
-                        'decision.back': {
-                            target: '#forgotPassword.mnemonicRecovery.enterPhrase',
-                        },
+                        'decision.back': backFromSocialRecoveryOffer,
                         'decision.skip': [
                             {
                                 guard: 'hasEmergencyContacts',
@@ -478,9 +505,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         'decision.yes': {
                             target: '#forgotPassword.unauthenticatedRecovery.emergencyContactInstructions',
                         },
-                        'decision.back': {
-                            target: '#forgotPassword.mnemonicRecovery.enterPhrase',
-                        },
+                        'decision.back': backFromEmergencyAccessOffer,
                         'decision.no': {
                             target: '#forgotPassword.offerDataLossReset',
                         },
@@ -563,6 +588,9 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         ],
                     },
                 },
+
+                /** The last step shown here, or else the sessions prompt. */
+                previous: { type: 'history', target: 'otherSessionsPrompt' },
             },
         },
 
@@ -575,6 +603,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
                 'decision.skip': {
                     target: 'recoveryFailed',
                 },
+                'decision.back': backFromDataLossOffer,
             },
         },
 
@@ -586,11 +615,14 @@ export const UnauthedForgotPasswordStateMachine = setup({
             on: {
                 'decision.back': [
                     {
-                        guard: 'hasEmergencyContacts',
-                        target: '#forgotPassword.unauthenticatedRecovery.emergencyAccessOffer',
+                        // Ownership was proven in this attempt (`resetResponse` is cleared on entry), so this came from
+                        // declining the data-loss reset
+                        guard: 'hasResetResponse',
+                        target: 'offerDataLossReset',
                     },
                     {
-                        target: '#forgotPassword.unauthenticatedRecovery.otherSessionsPrompt',
+                        // Otherwise one of the unauthenticated recovery steps led here
+                        target: '#forgotPassword.unauthenticatedRecovery.previous',
                     },
                 ],
             },

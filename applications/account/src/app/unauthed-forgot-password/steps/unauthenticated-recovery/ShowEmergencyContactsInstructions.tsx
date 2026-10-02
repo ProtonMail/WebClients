@@ -14,8 +14,9 @@ import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const ShowEmergencyContactsInstructions = () => {
+export const ShowEmergencyContactsInstructions = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username } = snapshot.context;
 
@@ -31,7 +32,7 @@ export const ShowEmergencyContactsInstructions = () => {
             <Header
                 title={c('Title').t`Ask your emergency contacts for help`}
                 subTitle={<UserNameWithIcon username={username} />}
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
             />
             <Content>
                 <div className="mt-6">

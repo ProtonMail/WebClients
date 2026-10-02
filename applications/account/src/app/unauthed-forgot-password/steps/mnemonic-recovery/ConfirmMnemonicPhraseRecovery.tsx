@@ -11,8 +11,9 @@ import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const ConfirmMnemonicPhraseRecovery = () => {
+export const ConfirmMnemonicPhraseRecovery = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username } = snapshot.context;
 
@@ -25,7 +26,11 @@ export const ConfirmMnemonicPhraseRecovery = () => {
 
     return (
         <>
-            <Header title={c('Title').t`Reset password?`} subTitle={<UserNameWithIcon username={username} />} />
+            <Header
+                title={c('Title').t`Reset password?`}
+                subTitle={<UserNameWithIcon username={username} />}
+                onBack={onBack}
+            />
             <Content>
                 <div className="mb-4">
                     {c('Info').t`You can now reset your password to regain access to your account.`}{' '}

@@ -17,9 +17,10 @@ import Header from '../../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../../reset/resetPasswordTelemetry';
 import type { UnauthedForgotPasswordStateMachine } from '../../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../../wizard/forgotPasswordStep';
 import YesNoButtons from './components/YesNoButtons';
 
-export const EmergencyAccessStep = () => {
+export const EmergencyAccessStep = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { delegatedAccessContacts, resetResponse, username } = snapshot.context;
 
@@ -41,7 +42,7 @@ export const EmergencyAccessStep = () => {
             <Header
                 title={c('Title').t`Can you reach out to your emergency contacts?`}
                 subTitle={<UserNameWithIcon username={username} />}
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
             />
             <Content>
                 <p className="mt-0">

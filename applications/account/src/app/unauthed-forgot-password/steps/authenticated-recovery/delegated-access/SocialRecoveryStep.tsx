@@ -20,8 +20,9 @@ import { useResetPasswordTelemetry } from '../../../../reset/resetPasswordTeleme
 import lockWarningExclamation from '../../../icons/lock-warning-exclamation.svg';
 import type { UnauthedForgotPasswordStateMachine } from '../../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../../wizard/forgotPasswordStep';
 
-export const SocialRecoveryStep = () => {
+export const SocialRecoveryStep = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { delegatedAccessContacts, username } = snapshot.context;
 
@@ -53,7 +54,7 @@ export const SocialRecoveryStep = () => {
             <Header
                 title={c('Title').t`Reset password?`}
                 subTitle={<UserNameWithIcon username={username} />}
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
             />
             <Content>
                 <div className="mb-4">

@@ -17,8 +17,11 @@ import { VerifySMSRecoveryCode } from './steps/sms-recovery/VerifySMSRecoveryCod
 import { OtherLoggedInSessionPrompt } from './steps/unauthenticated-recovery/OtherLoggedInSessionPrompt';
 import { ShowEmergencyContactsInstructions } from './steps/unauthenticated-recovery/ShowEmergencyContactsInstructions';
 import { ShowSignedInResetSteps } from './steps/unauthenticated-recovery/ShowSignedInResetSteps';
+import type { ForgotPasswordStepProps } from './wizard/forgotPasswordStep';
 
-export const forgotPasswordStepRegistry: Partial<Record<ForgotPasswordStatePath, ComponentType>> = {
+export const forgotPasswordStepRegistry: Partial<
+    Record<ForgotPasswordStatePath, ComponentType<ForgotPasswordStepProps>>
+> = {
     entry: EntryStep,
     verifyRecoveryEmail: VerifyEmailRecoveryCode,
     enterRecoverySms: ConfirmPhoneVerification,

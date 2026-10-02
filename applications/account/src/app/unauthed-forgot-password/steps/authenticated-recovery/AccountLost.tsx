@@ -15,9 +15,10 @@ import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry
 import { SignedInSessionsList } from '../../components/SignedInSessionsList';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const AccountLost = () => {
-    const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
+export const AccountLost = ({ onBack }: ForgotPasswordStepProps) => {
+    const { snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { resetResponse, username } = snapshot.context;
 
     const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
@@ -38,7 +39,7 @@ export const AccountLost = () => {
             <Header
                 title={c('Title').t`Couldn’t recover your account`}
                 subTitle={<UserNameWithIcon username={username} />}
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
             />
             <Content className="flex flex-column gap-4">
                 <p className="m-0">{c('Info')
