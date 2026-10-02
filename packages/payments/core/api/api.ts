@@ -100,6 +100,7 @@ export type CheckSubscriptionData = {
     ProrationMode?: ProrationMode;
     ValidateBillingAddress?: boolean;
     VatId?: string;
+    ValidateGuards?: boolean;
 };
 
 export enum InvoiceDocument {
