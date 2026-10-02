@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
+import { IcPassPasskey } from '@proton/icons/icons/IcPassPasskey';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
@@ -81,7 +82,7 @@ const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDo
                 <ListItem
                     key={`${passkey.credentialId}-${idx}`}
                     className="rounded-none"
-                    icon={{ type: 'icon', icon: 'pass-passkey', url: domain }}
+                    icon={{ type: 'icon', icon: IcPassPasskey, url: domain }}
                     title={passkey.name}
                     subTitle={passkey.username}
                     onClick={() => authenticate(passkey)}

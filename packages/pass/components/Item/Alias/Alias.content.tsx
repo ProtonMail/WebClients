@@ -4,6 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
+import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
+import { IcChartLine } from '@proton/icons/icons/IcChartLine';
+import { IcNote } from '@proton/icons/icons/IcNote';
+
 import aliasContactSpotlightImg from '../../../assets/alias/alias-contact-spotlight.svg';
 import { useDeobfuscatedValue } from '../../../hooks/useDeobfuscatedValue';
 import { useActionRequest } from '../../../hooks/useRequest';
@@ -79,7 +85,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
             <FieldsetCluster mode="read" as="div">
                 <ValueControl
                     clickToCopy
-                    icon="alias"
+                    icon={IcAlias}
                     label={aliasDisabled ? c('Label').t`Alias address (disabled)` : c('Label').t`Alias address`}
                     value={aliasEmail ?? undefined}
                     extra={actions}
@@ -92,7 +98,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                     <ValueControl
                         as="ul"
                         loading={!ready}
-                        icon="arrow-up-and-right-big"
+                        icon={IcArrowUpAndRightBig}
                         label={c('Label').t`Forwards to`}
                     >
                         {mailboxesForAlias.map(({ email }) => (
@@ -109,7 +115,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                     <ValueControl
                         clickToCopy
                         as={TextAreaReadonly}
-                        icon="note"
+                        icon={IcNote}
                         label={c('Label').t`Note`}
                         value={note}
                     />
@@ -121,7 +127,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                     <ValueControl
                         clickToCopy
                         as={TextAreaReadonly}
-                        icon="note"
+                        icon={IcNote}
                         label={<AliasSLNoteLabel />}
                         value={slNote}
                     />
@@ -133,7 +139,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                     <FieldsetCluster mode="read" as="div">
                         <ValueControl
                             clickToCopy
-                            icon="card-identity"
+                            icon={IcCardIdentity}
                             label={c('Label').t`Display name`}
                             value={displayName}
                         />
@@ -170,7 +176,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                         .t`Need to email someone but don’t want them to see your email address? Set up a contact alias.`}</div>
 
                     <FieldsetCluster mode="read" as="div">
-                        <FieldBox icon="chart-line">
+                        <FieldBox icon={IcChartLine}>
                             <div className="color-weak text-sm">{c('Title').t`Activity`}</div>
                             <div>{`${forwardText} • ${replyText} • ${blockedText}`}</div>
                         </FieldBox>

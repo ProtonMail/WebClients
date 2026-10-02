@@ -4,6 +4,7 @@ import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -49,7 +50,7 @@ export const AutosaveForm: FC<Props> = ({ data, busy, form }) => {
                     icon={
                         <ItemIcon
                             url={domain}
-                            icon={'user'}
+                            icon={IcUser}
                             size={5}
                             alt=""
                             className="shrink-0"

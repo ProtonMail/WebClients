@@ -11,14 +11,14 @@ import type { ShareItem } from '../../../store/reducers';
 import { selectWritableVaults } from '../../../store/selectors';
 import type { Maybe, ShareType } from '../../../types';
 import { VaultColor } from '../../../types/protobuf/vault-v1.static';
-import type { VaultIconName } from '../../Vault/VaultIcon';
+import type { VaultIconValue } from '../../Vault/VaultIcon';
 import { VaultIcon } from '../../Vault/VaultIcon';
 import { VAULT_COLOR_MAP } from '../../Vault/constants';
 import { SelectField, type SelectFieldProps } from './SelectField';
 
 import './VaultPickerField.scss';
 
-type VaultPickerSelection = { title: string; icon?: VaultIconName; color?: VaultColor };
+type VaultPickerSelection = { title: string; icon?: VaultIconValue; color?: VaultColor };
 type VaultPickerFieldProps = Omit<SelectFieldProps, 'children'> & { legacy?: boolean };
 type VaultPickerProps = VaultPickerFieldProps & { vaults: ShareItem<ShareType.Vault>[] };
 

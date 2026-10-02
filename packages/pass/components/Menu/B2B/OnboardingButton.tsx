@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcStar } from '@proton/icons/icons/IcStar';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownMenuButtonLabel } from '../../Layout/Dropdown/DropdownMenuButton';
@@ -19,7 +20,7 @@ export const OnboardingButton: FC = () => {
         <div className="pass-onboarding-button relative shrink-0 mx-3">
             <div className={clsx('pass-onboarding-button--gradient', isActive && 'pass-onboarding-button--active')}>
                 <DropdownMenuButtonCore className="py-3" onClick={launch}>
-                    <DropdownMenuButtonLabel icon="star" label={c('Action').t`Get Started`} />
+                    <DropdownMenuButtonLabel icon={IcStar} label={c('Action').t`Get Started`} />
                 </DropdownMenuButtonCore>
 
                 <div

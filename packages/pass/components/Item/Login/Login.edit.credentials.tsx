@@ -7,7 +7,9 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUser } from '@proton/icons/icons/IcUser';
 
 import type { AliasForLoginProps } from '../../../hooks/useAliasForLogin';
@@ -99,7 +101,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, alias }) => {
                             <QuickActionsDropdown color="weak" shape="solid" key="edit-alias">
                                 <DropdownMenuButton
                                     label={c('Action').t`Delete alias`}
-                                    icon="trash"
+                                    icon={IcTrash}
                                     onClick={() =>
                                         form.setValues((values) =>
                                             merge(values, {
@@ -151,7 +153,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, alias }) => {
                     label={c('Label').t`Username`}
                     placeholder={c('Placeholder').t`Enter username`}
                     component={TextField}
-                    icon="user"
+                    icon={IcUser}
                 />
             )}
             <Field
@@ -159,7 +161,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, alias }) => {
                 label={c('Label').t`Password`}
                 placeholder={c('Placeholder').t`Enter password`}
                 component={PasswordField}
-                icon="key"
+                icon={IcKey}
                 showStrength
                 onPasswordGenerated={(value: string) => {
                     const { urls, url } = form.values;

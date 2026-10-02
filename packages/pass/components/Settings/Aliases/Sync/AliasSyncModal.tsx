@@ -6,7 +6,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -15,6 +14,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { IcPassHome } from '@proton/icons/icons/IcPassHome';
 
 import { useRequest } from '../../../../hooks/useRequest';
 import { aliasSyncEnable } from '../../../../store/actions';
@@ -66,29 +66,27 @@ export const AliasSyncModal: FC<Props> = ({ aliasCount, onClose }) => {
                                         onValue={(value) => form.setFieldValue('shareId', value)}
                                     >
                                         {writableVaults
-                                            .map((vault) => (
-                                                <Option
-                                                    key={vault.shareId}
-                                                    title={vault.content.name}
-                                                    value={vault.shareId}
-                                                    className="text-sm"
-                                                >
-                                                    <span className="flex items-center">
-                                                        <Icon
-                                                            name={
-                                                                vault.content.display.icon
-                                                                    ? VAULT_ICON_MAP[vault.content.display.icon]
-                                                                    : 'pass-home'
-                                                            }
-                                                            size={3.5}
-                                                            className="mr-3 grow-0"
-                                                        />
-                                                        <span className="flex-1 text-ellipsis">
-                                                            {vault.content.name}
+                                            .map((vault) => {
+                                                const VaultOptionIcon = vault.content.display.icon
+                                                    ? VAULT_ICON_MAP[vault.content.display.icon]
+                                                    : IcPassHome;
+
+                                                return (
+                                                    <Option
+                                                        key={vault.shareId}
+                                                        title={vault.content.name}
+                                                        value={vault.shareId}
+                                                        className="text-sm"
+                                                    >
+                                                        <span className="flex items-center">
+                                                            <VaultOptionIcon size={3.5} className="mr-3 grow-0" />
+                                                            <span className="flex-1 text-ellipsis">
+                                                                {vault.content.name}
+                                                            </span>
                                                         </span>
-                                                    </span>
-                                                </Option>
-                                            ))
+                                                    </Option>
+                                                );
+                                            })
                                             .filter(truthy)}
                                     </SelectTwo>
                                 </div>

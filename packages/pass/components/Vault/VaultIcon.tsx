@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName, IconSize } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcPassAllVaults } from '@proton/icons/icons/IcPassAllVaults';
+import type { IconSize } from '@proton/icons/types';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
@@ -12,14 +13,14 @@ import { VAULT_COLOR_MAP, VAULT_ICON_MAP } from './constants';
 
 import './VaultIcon.scss';
 
-export type VaultIconName = VaultIconEnum | IconName;
+export type VaultIconValue = VaultIconEnum | IconComponent;
 
 type Props = {
     background?: boolean;
     className?: string;
     color?: VaultColorEnum;
     highlighted?: boolean;
-    icon?: VaultIconName;
+    icon?: VaultIconValue;
     size?: IconSize;
 };
 
@@ -31,9 +32,9 @@ export const VaultIcon: FC<Props> = ({
     highlighted,
     size = 5,
     color,
-    icon = 'pass-all-vaults',
+    icon = IcPassAllVaults,
 }) => {
-    const iconName = typeof icon === 'number' ? VAULT_ICON_MAP[icon] : icon;
+    const VaultIconComponent = typeof icon === 'number' ? VAULT_ICON_MAP[icon] : icon;
 
     return (
         <span
@@ -51,7 +52,7 @@ export const VaultIcon: FC<Props> = ({
                 '--h-custom': rem(getIconSizePx(background ? size * 2 : size)),
             }}
         >
-            <Icon className="absolute inset-center" name={iconName} size={size} />
+            <VaultIconComponent className="absolute inset-center" size={size} />
         </span>
     );
 };

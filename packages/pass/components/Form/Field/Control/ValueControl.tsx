@@ -1,4 +1,4 @@
-import type { ComponentType, ElementType, ReactElement } from 'react';
+import type { ComponentType, ElementType } from 'react';
 import { type ReactNode, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
@@ -6,9 +6,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
+import type { IconSlotValue } from '../../../Layout/Icon/IconSlot';
 import { FieldBox, type FieldBoxProps } from '../Layout/FieldBox';
 import type { ClickToCopyProps } from './ClickToCopy';
 import { ClickToCopy } from './ClickToCopy';
@@ -29,7 +29,7 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     extra?: ReactNode;
     hidden?: boolean;
     hiddenValue?: string;
-    icon?: IconName | ReactElement;
+    icon?: IconSlotValue;
     label: ReactNode;
     loading?: boolean;
     value?: string;

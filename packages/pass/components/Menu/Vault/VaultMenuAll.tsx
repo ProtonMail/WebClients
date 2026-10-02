@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
+import { IcListBullets } from '@proton/icons/icons/IcListBullets';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -47,7 +48,7 @@ export const VaultMenuAll = memo(({ count, selected, onAction = noop }: Props) =
                           <DropdownMenuButton
                               key="vault-edit"
                               label={c('Action').t`Organize vaults`}
-                              icon="list-bullets"
+                              icon={IcListBullets}
                               onClick={organize}
                           />,
                       ]

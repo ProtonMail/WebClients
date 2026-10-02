@@ -30,7 +30,7 @@ export const BreachUpsellCard: FC<Props> = ({ className, onUpsell }) => (
             titleClassname="text-lg text-bold"
             subtitle={c('Description').t`Get notified if your email, password or other personal data was leaked.`}
             subtitleClassname="color-norm-major"
-            icon={() => <img src={shield} alt="" className="shrink-0" />}
+            icon={<img src={shield} alt="" className="shrink-0" />}
         />
         <Button type="button" color="norm" pill onClick={onUpsell} className="w-full mt-4">
             {c('Action').t`Enable ${DARK_WEB_MONITORING_NAME}`}

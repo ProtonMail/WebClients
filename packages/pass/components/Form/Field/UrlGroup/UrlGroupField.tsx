@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { useFeatureFlag } from '../../../../hooks/useFeatureFlag';
@@ -45,7 +46,7 @@ export const UrlGroupField: FC<UrlGroupProps> = ({ initialTestUrl, renderExtraAc
     const hasURL = Boolean(values.url) || values.urls.some(({ url }) => !isEmptyString(url));
 
     return (
-        <FieldBox icon="earth">
+        <FieldBox icon={IcEarth}>
             <label
                 htmlFor="next-url-field"
                 className="field-two-label text-sm"

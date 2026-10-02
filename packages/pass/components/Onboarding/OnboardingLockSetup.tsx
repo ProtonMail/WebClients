@@ -3,10 +3,14 @@ import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
+import type { IconComponent } from '@proton/icons/component';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
-import type { IconName } from '@proton/icons/types';
+import { IcFingerprint } from '@proton/icons/icons/IcFingerprint';
+import { IcPassLockmodeBiometrics } from '@proton/icons/icons/IcPassLockmodeBiometrics';
+import { IcPassLockmodeNone } from '@proton/icons/icons/IcPassLockmodeNone';
+import { IcPassLockmodePassword } from '@proton/icons/icons/IcPassLockmodePassword';
+import { IcPassLockmodePin } from '@proton/icons/icons/IcPassLockmodePin';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -19,7 +23,7 @@ import { LockTTLField } from '../Lock/LockTTLField';
 type LockModeOption = {
     value: LockMode;
     label: ReactNode;
-    icon: IconName;
+    icon: IconComponent;
     active: boolean;
 };
 
@@ -32,25 +36,25 @@ export const OnboardingLockSetup: FC = () => {
             {
                 value: LockMode.SESSION,
                 label: c('Label').t`PIN code`,
-                icon: 'pass-lockmode-pin',
+                icon: IcPassLockmodePin,
                 active: true,
             },
             {
                 value: LockMode.PASSWORD,
                 label: c('Label').t`Password`,
-                icon: 'pass-lockmode-password',
+                icon: IcPassLockmodePassword,
                 active: password.enabled,
             },
             {
                 value: LockMode.BIOMETRICS,
                 label: c('Label').t`Biometrics`,
-                icon: isMac() ? 'fingerprint' : 'pass-lockmode-biometrics',
+                icon: isMac() ? IcFingerprint : IcPassLockmodeBiometrics,
                 active: DESKTOP_BUILD && password.enabled && biometrics.enabled,
             },
             {
                 value: LockMode.DESKTOP,
                 label: c('Label').t`Biometrics`,
-                icon: isMac() ? 'fingerprint' : 'pass-lockmode-biometrics',
+                icon: isMac() ? IcFingerprint : IcPassLockmodeBiometrics,
                 active: EXTENSION_BUILD && extensionBiometrics.enabled,
             },
             {
@@ -61,7 +65,7 @@ export const OnboardingLockSetup: FC = () => {
                         <span className="color-weak text-sm align-end">({c('Info').t`Not recommended`})</span>
                     </>
                 ),
-                icon: 'pass-lockmode-none',
+                icon: IcPassLockmodeNone,
                 active: !lock.orgControlled,
             },
         ];
@@ -77,11 +81,11 @@ export const OnboardingLockSetup: FC = () => {
                 value={lock.mode}
                 className={clsx('pass-onboarding-modal--radio w-full', !online && 'opacity-70 pointer-events-none')}
                 disableChange={!online || lock.loading}
-                options={lockModes.map(({ value, icon, label }) => ({
+                options={lockModes.map(({ value, icon: Icon, label }) => ({
                     value,
                     label: (
                         <div className="pass-onboarding-modal--option rounded-xl flex items-center w-full py-3 px-4">
-                            <Icon name={icon} size={6} />
+                            <Icon size={6} />
                             <div className={clsx('flex-1 px-4', lock.mode === value && 'text-bold')}>{label}</div>
                             {lock.mode === value && (
                                 <IcCheckmarkCircleFilled size={6} color="var(--interaction-norm)" />

@@ -1,12 +1,11 @@
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
 import type { Callback } from '../../../types';
 
 export type InviteStepAttributes = {
     closeAction: Callback;
-    closeIcon: IconName;
+    closeIcon: IconComponent;
     closeLabel: string;
     submitDisabled?: boolean;
     submitLoading?: boolean;
@@ -23,7 +22,7 @@ export const InviteStepActions = (formID: string, attributes: InviteStepAttribut
         pill
         shape="solid"
     >
-        <Icon className="modal-close-icon" name={attributes.closeIcon} alt={attributes.closeLabel} />
+        <attributes.closeIcon className="modal-close-icon" alt={attributes.closeLabel} />
     </Button>,
     <Button
         color="norm"

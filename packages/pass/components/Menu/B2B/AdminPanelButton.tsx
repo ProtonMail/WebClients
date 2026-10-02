@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -14,7 +15,7 @@ export const AdminPanelButton: FC<Organization> = ({ Name, UsedMembers, MaxMembe
 
     return (
         <DropdownMenuButton
-            icon="users"
+            icon={IcUsers}
             className={clsx('rounded', configured ? 'py-3' : 'py-2')}
             ellipsis
             label={<AdminPanelLabel Name={Name} UsedMembers={UsedMembers} MaxMembers={MaxMembers} />}

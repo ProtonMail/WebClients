@@ -3,18 +3,18 @@ import type { MouseEventHandler } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 import clsx from '@proton/utils/clsx';
 
 type Props = {
     onClick?: MouseEventHandler<HTMLButtonElement>;
-    iconName?: IconName;
+    icon?: IconComponent;
     className?: string;
 };
 
-export const InfoButton = ({ onClick, className, iconName = 'question-circle' }: Props) => (
+export const InfoButton = ({ onClick, className, icon: Icon = IcQuestionCircle }: Props) => (
     <Button className={clsx('button-xs', className)} onClick={onClick} pill shape="ghost" icon size="small">
-        <Icon name={iconName} alt={c('Action').t`More info`} size={3} />
+        <Icon alt={c('Action').t`More info`} size={3} />
     </Button>
 );

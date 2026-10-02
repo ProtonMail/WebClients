@@ -3,7 +3,8 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import { IcChevronRightFilled } from '@proton/icons/icons/IcChevronRightFilled';
 import clsx from '@proton/utils/clsx';
 
 type Props = {
@@ -42,7 +43,7 @@ export const PassExpandButton: FC<Props> = ({
             aria-expanded={expanded}
             title={expanded ? titleExpanded : titleCollapsed}
         >
-            <Icon name={expanded ? 'chevron-down-filled' : 'chevron-right-filled'} />
+            {expanded ? <IcChevronDownFilled /> : <IcChevronRightFilled />}
         </ButtonLike>
     );
 };
