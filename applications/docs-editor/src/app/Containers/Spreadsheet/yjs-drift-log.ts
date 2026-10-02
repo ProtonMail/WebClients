@@ -79,19 +79,20 @@ function summarizeArray(values: unknown[], depth: number): unknown {
 
 function summarizeRecord(value: Record<string, unknown>, depth: number): unknown {
   const keys = Object.keys(value).sort()
+  const sampledKeys = keys.slice(0, MAX_OBJECT_KEYS)
   if (depth >= MAX_DEPTH) {
-    return { type: 'object', keyCount: keys.length, keys: keys.slice(0, MAX_OBJECT_KEYS) }
+    return { type: 'object', keyCount: keys.length, keys: sampledKeys }
   }
 
   const sample: Record<string, unknown> = {}
-  for (const key of keys.slice(0, MAX_OBJECT_KEYS)) {
+  for (const key of sampledKeys) {
     sample[key] = summarizeForDriftLog(value[key], depth + 1)
   }
 
   return {
     type: 'object',
     keyCount: keys.length,
-    keys: keys.slice(0, MAX_OBJECT_KEYS),
+    keys: sampledKeys,
     sample,
   }
 }
