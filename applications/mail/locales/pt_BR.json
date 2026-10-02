@@ -1747,6 +1747,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
+      "New chat": [
+        "Novo bate-papo"
       ]
     },
     "action": {
@@ -4457,6 +4463,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "De: ${ sender } - ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "De: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -5634,6 +5643,12 @@
       ],
       "Incorrect second password. Please try again.": [
         "Segunda senha incorreta. Tente novamente."
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Não foi possível ler parte deste arquivo: ${ message }"
+      ],
+      "Move operation aborted": [
+        "Operação de movimento interrompida"
       ]
     },
     "error": {
@@ -9872,6 +9887,27 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "Drafted an ${ kind }": [
+        "Redigiu um ${ kind }"
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Olá, Lumo, procure meus e-mails dos últimos 7 dias e me diga quais deles realmente precisam de uma resposta minha. Me dê uma breve descrição do que cada um está pedindo e descarte tudo o que eu puder ignorar."
+      ],
+      "Opened a draft": [
+        "Abriu um rascunho"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Ler rascunho \"${ subject }\""
+      ],
+      "Readdressed the draft": [
+        "Rascunho revisado"
+      ],
+      "Turn off your away message": [
+        "Desative sua mensagem de ausência"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Você tem uma fatura em aberta em ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -11193,6 +11229,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "From date": [
+        "Da data"
+      ],
+      "IndexedDB store": [
+        "Armazenamento IndexedDB"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13093,6 +13135,9 @@
       ],
       "Your subscription renews soon": [
         "Sua assinatura renovará em breve"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunidade de aproveitar o primeiro mês do plano ${ plan } por esse preço."
       ]
     },
     "Offer fearue": {
@@ -13139,6 +13184,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Aliases ilimitados para proteger a sua identidade"
+      ],
+      "Short @pm.me address": [
+        "Endereço de e-mail curto @pm.me"
       ]
     },
     "Onboarding List Placeholder": {
@@ -18073,6 +18121,33 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obter ${ discount }% de desconto no ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obter ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "2 TB of storage to share": [
+        "2 TB de armazenamento para compartilhar"
+      ],
+      "2 user accounts": [
+        "2 contas de usuário"
+      ],
+      "All premium features from your current plan": [
+        "Todos os recursos premium do seu plano atual"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "por 12 meses"
       ]
     }
   }
