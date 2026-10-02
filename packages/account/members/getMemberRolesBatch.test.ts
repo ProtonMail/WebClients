@@ -2,12 +2,12 @@ import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
-import { getMemberOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
+import { getMembersOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
 import type { EnhancedMember, RoleAssignment } from '@proton/shared/lib/interfaces';
 
 import { type MembersState, getMemberRolesBatch, invalidateMemberRoles, membersReducer, selectMembers } from './index';
 
-const CHUNK_SIZE = 50;
+const CHUNK_SIZE = 250;
 
 const getMember = (ID: string): EnhancedMember =>
     ({
@@ -69,8 +69,18 @@ const setup = ({
     };
 };
 
-const resolveRoles = () =>
-    jest.fn().mockResolvedValue({ RoleAssignments: [roleAssignment], RequiresOrgKeyPromotion: true });
+const getIDs = (members: EnhancedMember[]) => members.map(({ ID }) => ID);
+
+const resolveRoles = ({ leftOutMemberIDs = [] }: { leftOutMemberIDs?: string[] } = {}) =>
+    jest.fn(({ data }: { data: { MemberIDs: string[] } }) =>
+        Promise.resolve({
+            Members: data.MemberIDs.filter((MemberID) => !leftOutMemberIDs.includes(MemberID)).map((MemberID) => ({
+                MemberID,
+                RoleAssignments: [roleAssignment],
+                RequiresOrgKeyPromotion: true,
+            })),
+        })
+    );
 
 describe('getMemberRolesBatch', () => {
     afterEach(() => {
@@ -78,18 +88,18 @@ describe('getMemberRolesBatch', () => {
     });
 
     it('requests every member once and commits one chunk at a time', async () => {
-        const members = getMembers(120);
+        const members = getMembers(300);
         const api = resolveRoles();
         const { dispatch, getCommits, getMembersFromStore } = setup({ members, api });
 
         await dispatch(getMemberRolesBatch({ members }));
 
-        expect(api).toHaveBeenCalledTimes(120);
-        expect(api).toHaveBeenCalledWith(getMemberOrganizationRoles('0'));
-        expect(api).toHaveBeenCalledWith(getMemberOrganizationRoles('119'));
+        expect(api).toHaveBeenCalledTimes(2);
+        expect(api).toHaveBeenNthCalledWith(1, getMembersOrganizationRoles(getIDs(members.slice(0, CHUNK_SIZE))));
+        expect(api).toHaveBeenNthCalledWith(2, getMembersOrganizationRoles(getIDs(members.slice(CHUNK_SIZE))));
 
-        // 1 commit to mark the batch pending + ceil(120 / 50) = 3 commits landing the results.
-        expect(getCommits()).toBe(1 + Math.ceil(120 / CHUNK_SIZE));
+        // 1 commit to mark the batch pending + ceil(300 / 250) = 2 commits landing the results.
+        expect(getCommits()).toBe(1 + Math.ceil(300 / CHUNK_SIZE));
 
         expect(
             getMembersFromStore().every(
@@ -101,18 +111,27 @@ describe('getMemberRolesBatch', () => {
         ).toBe(true);
     });
 
-    it('keeps the rest of a chunk when one member fails', async () => {
+    it('rejects the members the api leaves out and keeps the rest of the chunk', async () => {
         const members = getMembers(3);
-        const api = jest.fn((config: { url: string }) =>
-            config.url === getMemberOrganizationRoles('1').url
-                ? Promise.reject(new Error('nope'))
-                : Promise.resolve({ RoleAssignments: [roleAssignment], RequiresOrgKeyPromotion: false })
-        ) as unknown as jest.Mock;
+        const api = resolveRoles({ leftOutMemberIDs: ['1'] });
         const { dispatch, getMembersFromStore } = setup({ members, api });
 
         await dispatch(getMemberRolesBatch({ members }));
 
         expect(getMembersFromStore().map((member) => member.roleState)).toEqual(['full', 'rejected', 'full']);
+    });
+
+    it('rejects only the chunk whose request fails', async () => {
+        const members = getMembers(CHUNK_SIZE + 1);
+        const api = resolveRoles();
+        api.mockRejectedValueOnce(new Error('nope'));
+        const { dispatch, getMembersFromStore } = setup({ members, api });
+
+        await dispatch(getMemberRolesBatch({ members }));
+
+        const roleStates = getMembersFromStore().map((member) => member.roleState);
+        expect(roleStates.slice(0, CHUNK_SIZE).every((roleState) => roleState === 'rejected')).toBe(true);
+        expect(roleStates[CHUNK_SIZE]).toBe('full');
     });
 
     it('does not re-request members that are already pending or resolved', async () => {
@@ -121,12 +140,12 @@ describe('getMemberRolesBatch', () => {
         const { dispatch } = setup({ members, api });
 
         await dispatch(getMemberRolesBatch({ members }));
-        expect(api).toHaveBeenCalledTimes(3);
+        expect(api).toHaveBeenCalledTimes(1);
 
         // The calling effect re-runs on every commit; the pending marker is what stops it from starting
         // an overlapping sweep.
         await dispatch(getMemberRolesBatch({ members }));
-        expect(api).toHaveBeenCalledTimes(3);
+        expect(api).toHaveBeenCalledTimes(1);
     });
 
     it('refetches members whose roles were invalidated', async () => {
@@ -135,13 +154,14 @@ describe('getMemberRolesBatch', () => {
         const { dispatch, getMembersFromStore } = setup({ members, api });
 
         await dispatch(getMemberRolesBatch({ members }));
-        expect(api).toHaveBeenCalledTimes(2);
+        expect(api).toHaveBeenCalledTimes(1);
 
         dispatch(invalidateMemberRoles({ member: members[0] }));
         expect(getMembersFromStore()[0].roleState).toBe('stale');
 
         await dispatch(getMemberRolesBatch({ members }));
-        expect(api).toHaveBeenCalledTimes(3);
+        expect(api).toHaveBeenCalledTimes(2);
+        expect(api).toHaveBeenLastCalledWith(getMembersOrganizationRoles([members[0].ID]));
         expect(getMembersFromStore()[0].roleState).toBe('full');
     });
 
