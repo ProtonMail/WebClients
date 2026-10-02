@@ -266,4 +266,3 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
 };
 
 export const CompactionMarker = memo(CompactionMarkerComponent);
-export default CompactionMarker;

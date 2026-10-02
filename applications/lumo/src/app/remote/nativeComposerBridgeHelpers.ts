@@ -1,16 +1,12 @@
 import type { ModelTier, ResponseMode } from '../providers/ModelTierProvider';
 import type { ImageAspectRatio, LUMO_API_ERRORS } from '../types';
 import {
-    type AspectRatioInfo,
-    type AspectRatioKey,
     type CustomLumo,
     type LimitReachedPayload,
-    type LimitReachedResource,
     type LumoFile,
     type LumoMode,
     type MaxModelAvailability,
     type SidebarLayout,
-    type State,
     limitResourceToErrorType,
 } from './nativeComposerBridge';
 
@@ -194,11 +190,6 @@ export const onNativeRemoveFile = (handler: RemoveFileEventHandler): (() => void
     return () => window.removeEventListener('lumo:removeFile', handler as EventListener);
 };
 
-export const onNativePreviewFile = (handler: PreviewFileEventHandler): (() => void) => {
-    window.addEventListener('lumo:previewFile', handler as EventListener);
-    return () => window.removeEventListener('lumo:previewFile', handler as EventListener);
-};
-
 export const onNativeToggleCreateImage = (handler: SimpleToggleEventHandler): (() => void) => {
     window.addEventListener('lumo:toggleCreateImage', handler as EventListener);
     return () => window.removeEventListener('lumo:toggleCreateImage', handler as EventListener);
@@ -321,25 +312,8 @@ export const injectNativeImageGenerationHelper = (prompt: string): void => {
     (window as any).nativeComposerApiInstance.injectImageGenerationHelperPrompt(prompt);
 };
 
-export type {
-    CustomLumo,
-    AspectRatioInfo,
-    AspectRatioKey,
-    LimitReachedPayload,
-    LimitReachedResource,
-    LumoFile,
-    LumoMode,
-    MaxModelAvailability,
-    State,
-};
-export {
-    AVAILABLE_ASPECT_RATIOS,
-    LumoFileType,
-    aspectRatioKeyToImageRatio,
-    getLumoFileType,
-    imageRatioToAspectRatioKey,
-    limitResourceToErrorType,
-} from './nativeComposerBridge';
+export type { CustomLumo, LimitReachedPayload, LumoFile, LumoMode, MaxModelAvailability };
+export { limitResourceToErrorType } from './nativeComposerBridge';
 
 export type FileUploadEventHandler = (
     event: CustomEvent<{ source: string; files: { base64: string; name: string }[] }>
@@ -348,7 +322,6 @@ export type SendPromptEventHandler = (event: CustomEvent<{ text: string; webSear
 export type AbortPromptEventHandler = (event: CustomEvent<{ source: string }>) => void;
 export type SimpleToggleEventHandler = (event: CustomEvent<{ source: null }>) => void;
 export type RemoveFileEventHandler = (event: CustomEvent<{ attachmentId: string }>) => void;
-export type PreviewFileEventHandler = (event: CustomEvent<{ attachmentId: string }>) => void;
 export type ChangeModelTypeEventHandler = (event: CustomEvent<{ modelTier: ModelTier }>) => void;
 export type ChangeResponseModeEventHandler = (event: CustomEvent<{ responseMode: ResponseMode }>) => void;
 export type SelectCustomLumoEventHandler = (event: CustomEvent<{ id: string }>) => void;

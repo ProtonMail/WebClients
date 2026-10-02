@@ -20,7 +20,7 @@ export const ANIMATED_BACKGROUND_MAX_DPR = 1.1;
 export const ANIMATED_BACKGROUND_TARGET_FPS = 24;
 
 /** Particle sample-texture refresh cadence. Blobs drift slowly, so a few Hz reads as identical. */
-export const ANIMATED_BACKGROUND_SAMPLE_REFRESH_HZ = 8;
+const ANIMATED_BACKGROUND_SAMPLE_REFRESH_HZ = 8;
 export const ANIMATED_BACKGROUND_SAMPLE_REFRESH_INTERVAL_MS = 1000 / ANIMATED_BACKGROUND_SAMPLE_REFRESH_HZ;
 
 type BlobOverrides = Partial<Omit<WebglShaderBgBlobConfig, 'x' | 'color'>>;
@@ -314,7 +314,7 @@ const LAVA_LAMP_SHADER_SHARED: Omit<WebglShaderBgConfig, 'baseColor' | 'blobs'> 
     metaSoftness: 0.19,
 };
 
-export const ANIMATED_BACKGROUND_SHADER_CONFIG_LIGHT: WebglShaderBgConfig = {
+const ANIMATED_BACKGROUND_SHADER_CONFIG_LIGHT: WebglShaderBgConfig = {
     baseColor: LIGHT_BASE_COLOR,
     speed: 0.82,
     glowPower: 3.4,
@@ -330,7 +330,7 @@ export const ANIMATED_BACKGROUND_SHADER_CONFIG_LIGHT: WebglShaderBgConfig = {
     blobs: LIGHT_BLOBS,
 };
 
-export const ANIMATED_BACKGROUND_SHADER_CONFIG_DARK: WebglShaderBgConfig = {
+const ANIMATED_BACKGROUND_SHADER_CONFIG_DARK: WebglShaderBgConfig = {
     baseColor: DARK_BASE_COLOR,
     speed: 0.82,
     glowPower: 3.1,
@@ -346,20 +346,18 @@ export const ANIMATED_BACKGROUND_SHADER_CONFIG_DARK: WebglShaderBgConfig = {
     blobs: DARK_BLOBS,
 };
 
-export const ANIMATED_BACKGROUND_SHADER_CONFIG_LAVA_LAMP_LIGHT: WebglShaderBgConfig = {
+const ANIMATED_BACKGROUND_SHADER_CONFIG_LAVA_LAMP_LIGHT: WebglShaderBgConfig = {
     ...LAVA_LAMP_SHADER_SHARED,
     baseColor: LIGHT_BASE_COLOR,
     blobs: LAVA_LAMP_LIGHT_BLOBS,
 };
 
-export const ANIMATED_BACKGROUND_SHADER_CONFIG_LAVA_LAMP_DARK: WebglShaderBgConfig = {
+const ANIMATED_BACKGROUND_SHADER_CONFIG_LAVA_LAMP_DARK: WebglShaderBgConfig = {
     ...LAVA_LAMP_SHADER_SHARED,
     baseColor: DARK_BASE_COLOR,
     blobs: LAVA_LAMP_DARK_BLOBS,
 };
 
-/** @deprecated Use {@link getAnimatedBackgroundShaderConfig} */
-export const ANIMATED_BACKGROUND_SHADER_CONFIG = ANIMATED_BACKGROUND_SHADER_CONFIG_LIGHT;
 
 export function getAnimatedBackgroundShaderConfig(
     isDark: boolean,
@@ -387,18 +385,16 @@ const PARTICLE_CONFIG_SHARED: Partial<GridParticleFieldOptions> = {
     revealThreshold: 0.012,
 };
 
-export const ANIMATED_BACKGROUND_PARTICLE_CONFIG_LIGHT: Partial<GridParticleFieldOptions> = {
+const ANIMATED_BACKGROUND_PARTICLE_CONFIG_LIGHT: Partial<GridParticleFieldOptions> = {
     ...PARTICLE_CONFIG_SHARED,
     alpha: 0.72,
 };
 
-export const ANIMATED_BACKGROUND_PARTICLE_CONFIG_DARK: Partial<GridParticleFieldOptions> = {
+const ANIMATED_BACKGROUND_PARTICLE_CONFIG_DARK: Partial<GridParticleFieldOptions> = {
     ...PARTICLE_CONFIG_SHARED,
     alpha: 0.78,
 };
 
-/** @deprecated Use {@link getAnimatedBackgroundParticleConfig} */
-export const ANIMATED_BACKGROUND_PARTICLE_CONFIG = ANIMATED_BACKGROUND_PARTICLE_CONFIG_LIGHT;
 
 export function getAnimatedBackgroundParticleConfig(
     isDark: boolean,

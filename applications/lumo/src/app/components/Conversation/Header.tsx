@@ -10,7 +10,7 @@ import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 import './Header.scss';
 
-export const SidebarToggleButton = ({ className }: { className?: string }) => {
+const SidebarToggleButton = ({ className }: { className?: string }) => {
     const { toggle: toggleSideMenu, isVisible } = useSidebar();
 
     return (
@@ -30,7 +30,7 @@ export const SidebarToggleButton = ({ className }: { className?: string }) => {
     );
 };
 
-export const DrawerToggleButton = ({ className }: { className?: string }) => {
+const DrawerToggleButton = ({ className }: { className?: string }) => {
     const { toggle, isOpen } = useRightPanel();
     return (
         <Button onClick={toggle} icon shape="ghost" color="weak" size="medium" className={clsx('shrink-0', className)}>

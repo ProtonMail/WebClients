@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 
 import { LumoLink } from '../../../components/Links/LumoLink';
 
-export interface SidebarNavItem {
+interface SidebarNavItem {
     id: string;
     to: string;
     label: string;

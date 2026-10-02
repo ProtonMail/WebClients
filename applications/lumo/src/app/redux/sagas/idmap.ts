@@ -23,7 +23,7 @@ export function* waitForMapping(type: ResourceType, localId: LocalId): SagaItera
     return remoteId;
 }
 
-export function* saveIdMapToIdb({ payload: entry }: { payload: IdMapEntry }): SagaIterator {
+function* saveIdMapToIdb({ payload: entry }: { payload: IdMapEntry }): SagaIterator {
     console.log('Saga triggered: saveIdMapToIdb', entry);
     const dbApi: DbApi = yield getContext('dbApi');
     yield call([dbApi, dbApi.addRemoteId], entry);

@@ -92,10 +92,3 @@ export async function loadUserSettingsFromStorage(
     }
 }
 
-/**
- * Clear user settings from localStorage
- */
-export function clearUserSettingsFromStorage(): void {
-    const storageKey = getUserSettingsStorageKey();
-    localStorage.removeItem(storageKey);
-}

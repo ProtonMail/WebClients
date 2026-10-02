@@ -61,5 +61,3 @@ export const MasterKeyBanner = () => {
         </Banner>
     );
 };
-
-export default MasterKeyBanner;

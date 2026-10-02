@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { LUMO_ELIGIBILITY } from '../../../types';
-import type { LumoState } from '../../store';
+import type { LUMO_ELIGIBILITY } from '../../../types';
 
 // export enum LUMO_ELIGIBILITY {
 //     'Eligible' = 0,
@@ -9,7 +8,7 @@ import type { LumoState } from '../../store';
 //     'NotOnWaitlist' = 2
 // }
 
-export type EligibilityStatusState = { eligibility: LUMO_ELIGIBILITY | null; recentlyJoined: boolean };
+type EligibilityStatusState = { eligibility: LUMO_ELIGIBILITY | null; recentlyJoined: boolean };
 
 const initialState: EligibilityStatusState = {
     eligibility: null,
@@ -23,17 +22,9 @@ const eligibilityStatusSlice = createSlice({
         updateEligibilityStatus: (state, action) => {
             state.eligibility = action.payload;
         },
-        joinWaitlistSuccess: (state) => {
-            state.eligibility = LUMO_ELIGIBILITY.OnWaitlist;
-            state.recentlyJoined = true;
-        },
     },
 });
 
-export const { updateEligibilityStatus, joinWaitlistSuccess } = eligibilityStatusSlice.actions;
+export const { updateEligibilityStatus } = eligibilityStatusSlice.actions;
 
 export default eligibilityStatusSlice.reducer;
-
-export const selectEligibilityStatus = (state: LumoState) => state.eligibilityStatus.eligibility;
-export const selectRecentlyJoined = (state: LumoState) => state.eligibilityStatus.recentlyJoined;
-export const selectEligibilityStatusState = (state: LumoState) => state.eligibilityStatus;

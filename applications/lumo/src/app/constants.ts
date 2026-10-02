@@ -4,7 +4,6 @@ This class is added to any upsell/upgrade components that can direct users to ac
 export const LUMO_UPGRADE_TRIGGER_CLASS = 'lumo-upgrade-trigger';
 
 export const LUMO_PLUS_UPGRADE_PATH = '/dashboard?addon=lumo';
-export const LUMO_PLUS_FREE_PATH_TO_ACCOUNT = '/dashboard?plan=lumo2024';
 export const LUMO_SIGNUP_PATH = '/signup';
 export const LUMO_BUSINESS_PATH = '/business/lumo';
 export const LUMO_TO_WORKSPACE_PATH = '/business/plans';

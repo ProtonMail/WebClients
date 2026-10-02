@@ -62,5 +62,3 @@ export const usePersonalization = () => {
         getPersonalizationPrompt,
     };
 };
-
-export default usePersonalization;

@@ -10,7 +10,7 @@ export const EXPIRATION_OPTIONS = [
     { value: '365', text: c('collider_2025: Option').t`1 year` },
 ];
 
-export const EXPIRING_SOON_THRESHOLD = 7 * 86400;
+const EXPIRING_SOON_THRESHOLD = 7 * 86400;
 
 export const getExpirationTimestamp = (days: number) => Math.floor(Date.now() / 1000) + days * 86400;
 

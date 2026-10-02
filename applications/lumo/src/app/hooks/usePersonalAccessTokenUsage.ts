@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 
@@ -13,20 +13,12 @@ export interface TokenUsageState {
     error: boolean;
 }
 
-const EMPTY_STATE: TokenUsageState = {
-    days: [],
-    totalTokenCount: 0,
-    totalApiCalls: 0,
-    isLoading: true,
-    error: false,
-};
-
 const toISODate = (date: Date) => date.toISOString().slice(0, 10);
 
 /**
  * Fetches usage for one PAT (shared by the per-token hook and aggregate overview).
  */
-export const fetchPersonalAccessTokenUsage = async (
+const fetchPersonalAccessTokenUsage = async (
     api: ReturnType<typeof useApi>,
     tokenId: string,
     windowDays: number
@@ -133,39 +125,3 @@ export const getLoadingUsageState = (): TokenUsageState => ({
     isLoading: true,
     error: false,
 });
-
-/**
- * Fetches LLM token usage for a single Personal Access Token over the given
- * window (default 30 days). Returns per-day counts and totals.
- */
-export const usePersonalAccessTokenUsage = (tokenId: string, windowDays = 30): TokenUsageState => {
-    const api = useApi();
-    const apiRef = useRef(api);
-    apiRef.current = api;
-
-    const [state, setState] = useState<TokenUsageState>(EMPTY_STATE);
-
-    const load = useCallback(
-        async (onDone: (result: TokenUsageState) => void) => {
-            const result = await fetchPersonalAccessTokenUsage(apiRef.current, tokenId, windowDays);
-            onDone(result);
-        },
-        [tokenId, windowDays]
-    );
-
-    // React.StrictMode double-invokes effects in development. The ignore flag
-    // ensures the first (simulated) unmount discards its result so only the second
-    // (real) mount's response updates state.
-    useEffect(() => {
-        let ignore = false;
-        setState(EMPTY_STATE);
-        void load((result) => {
-            if (!ignore) setState(result);
-        });
-        return () => {
-            ignore = true;
-        };
-    }, [load]);
-
-    return state;
-};

@@ -456,7 +456,7 @@ const MarkdownBlock: React.FC<{
 
 MarkdownBlock.displayName = 'MarkdownBlock';
 
-export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = React.memo(
+const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = React.memo(
     ({
         content,
         isStreaming,

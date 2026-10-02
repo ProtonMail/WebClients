@@ -11,21 +11,9 @@
 // nominal identity across the app <-> @proton/lumo-api-client boundary.
 import { Role } from '@proton/lumo-api-client/types-api';
 
-import type { RequestId } from './types';
-
 // *** Role ***
 
 export { Role };
-
-export function isRole(value: any): value is Role {
-    return (
-        value === Role.Assistant ||
-        value === Role.User ||
-        value === Role.System ||
-        value === Role.ToolCall ||
-        value === Role.ToolResult
-    );
-}
 
 // *** Turn ***
 
@@ -42,175 +30,12 @@ export type WireTurn = {
     images?: WireImage[];
 };
 
-export type EncryptedWireTurn = WireTurn & { encrypted: true };
-export type UnencryptedWireTurn = WireTurn & { encrypted?: false };
-
-export function isWireTurn(obj: any): obj is WireTurn {
-    return (
-        obj &&
-        typeof obj === 'object' &&
-        'role' in obj &&
-        isRole(obj.role) &&
-        (obj.content === undefined || typeof obj.content === 'string') &&
-        (obj.encrypted === undefined || typeof obj.encrypted === 'boolean') &&
-        (obj.images === undefined || (Array.isArray(obj.images) && obj.images.every((img: any) => isWireImage(img))))
-    );
-}
-
-export function isWireImage(obj: any): obj is WireImage {
-    return (
-        obj &&
-        typeof obj === 'object' &&
-        typeof obj.encrypted === 'boolean' &&
-        typeof obj.image_id === 'string' &&
-        typeof obj.data === 'string'
-    );
-}
-
-export function isEncryptedWireTurn(obj: any): obj is EncryptedWireTurn {
-    return isWireTurn(obj) && obj.encrypted === true;
-}
-
-export function isUnencryptedWireTurn(obj: any): obj is UnencryptedWireTurn {
-    return isWireTurn(obj) && (obj.encrypted === false || obj.encrypted === undefined);
-}
-
 // *** Generation ***
-
-export type Tier = 'anonymous' | 'basic' | 'free';
-
-export type ToolName =
-    | 'proton_info'
-    | 'web_search'
-    | 'weather'
-    | 'stock'
-    | 'cryptocurrency'
-    | 'generate_image'
-    | 'describe_image'
-    | 'edit_image'
-    | 'web_extract';
-
-/*
- * A generation request in the format that the scheduler backend expects.
- */
-export type LumoApiGenerationRequest = {
-    type: 'generation_request';
-    turns: WireTurn[];
-    tier?: Tier;
-    options?: Options;
-    targets?: RequestableGenerationTarget[];
-    request_key?: string; // aes-gcm-256, pgp-encrypted, base64
-    request_id?: RequestId; // uuid used solely for AEAD encryption
-};
-
-/*
- * OpenAI-compatible chat completions request body for `POST /ai/v1/chat/completions`.
- */
-/** Built-in scheduler tools (web_search, weather, etc.) use the name-only shape. */
-export type ChatCompletionsBuiltInTool = {
-    name: ToolName;
-};
-
-/** Client-side / desktop connector tools — flat Lumo API shape sent on the wire. */
-export type ChatCompletionsFlatFunctionTool = {
-    name: string;
-    description?: string;
-    parameters?: Record<string, unknown>;
-};
-
-/** OpenAI nested shape accepted in client code; flattened before sending to Lumo. */
-export type ChatCompletionsFunctionTool = {
-    type: 'function';
-    function: {
-        name: string;
-        description?: string;
-        parameters?: Record<string, unknown>;
-    };
-};
-
-export type ChatCompletionsTool =
-    ChatCompletionsBuiltInTool | ChatCompletionsFlatFunctionTool | ChatCompletionsFunctionTool;
-
-/**
- * OpenAI content parts. A message's `content` may be a plain string (the common
- * text-only case) or an array of these parts when images are attached.
- */
-export type ChatCompletionsTextPart = {
-    type: 'text';
-    text: string;
-    encrypted?: boolean;
-};
-
-export type ChatCompletionsImagePart = {
-    type: 'image_url';
-    image_url: {
-        url: string;
-        detail?: 'auto' | 'low' | 'high';
-        encrypted?: boolean;
-    };
-};
-
-export type ChatCompletionsContentPart = ChatCompletionsTextPart | ChatCompletionsImagePart;
-
-export type ChatCompletionsMessage = {
-    /**
-     * `lumo_tool_call` is a non-standard Lumo extension role. The OpenAI schema
-     * carries tool calls in an assistant message's `tool_calls` array with the
-     * name/arguments in cleartext, which is incompatible with U2L encryption
-     * (only `content` is encrypted). Lumo instead sends each tool call as its
-     * own message with this role and the canonical `{"name","arguments"}` JSON
-     * (encrypted in production) in `content`. The scheduler converts it back to
-     * a structured `assistant` `tool_calls` message before reaching vLLM.
-     */
-    role: 'system' | 'user' | 'assistant' | 'tool' | 'lumo_tool_call';
-    content?: string | ChatCompletionsContentPart[];
-    /**
-     * Lumo extension: marks string `content` as U2L-encrypted ciphertext.
-     * Only valid when `content` is a plain string. For parts-content messages,
-     * each part carries its own `encrypted` flag as a sibling to the sensitive field.
-     */
-    encrypted?: boolean;
-};
-
-export type LumoCompletionTarget = 'message' | 'title' | 'suggested_questions';
-
-export type ChatCompletionsLumoExtension = {
-    client_type: 'frontend';
-    target?: LumoCompletionTarget;
-    request_key?: string;
-    request_id?: string;
-    image_aspect_ratio?: ImageAspectRatio;
-};
-
-export type ChatCompletionsStreamOptions = {
-    include_usage?: boolean;
-};
-
-/**
- * OpenAI structured-outputs response format. When set, the backend forwards it to the
- * model's guided decoding so the streamed output is constrained to the given JSON schema.
- * See https://developers.openai.com/api/docs/guides/structured-outputs.
- */
-export type ResponseFormatJSONSchema = {
-    type: 'json_schema';
-    json_schema: {
-        name: string;
-        schema: Record<string, unknown>;
-        strict?: boolean;
-        description?: string;
-    };
-};
-
-export type ResponseFormat = ResponseFormatJSONSchema;
 
 export type LumoRemainingLimits = {
     lite?: number;
     max?: number;
     images?: number;
-};
-
-export type LumoUsageLimitsResponse = {
-    limits: LumoRemainingLimits;
 };
 
 export type LumoStreamUsage = {
@@ -222,40 +47,8 @@ export type LumoStreamUsage = {
     image_limit_applied?: boolean;
 };
 
-export type ChatCompletionsRequest = {
-    model: string;
-    messages: ChatCompletionsMessage[];
-    stream: boolean;
-    stream_options?: ChatCompletionsStreamOptions;
-    reasoning_effort?: 'none' | 'high';
-    tools?: ChatCompletionsTool[];
-    tool_choice?: 'auto' | 'none' | 'required';
-    response_format?: ResponseFormat;
-    lumo?: ChatCompletionsLumoExtension;
-};
-
-/*
- * @deprecated Legacy payload for `POST /ai/v1/chat` — use ChatCompletionsRequest instead.
- */
-export type ChatEndpointGenerationRequest = {
-    Prompt: LumoApiGenerationRequest;
-};
-
 export const IMAGE_ASPECT_RATIOS = ['1:1', '2:3', '3:2', '9:16', '16:9'] as const;
 export type ImageAspectRatio = (typeof IMAGE_ASPECT_RATIOS)[number];
-
-export type Options = {
-    /** Built-in tool names, OpenAI function tools (e.g. desktop connectors), or `true` for none. */
-    tools?: ToolName[] | ChatCompletionsTool[] | boolean;
-    reasoning?: boolean;
-    suggested_questions?: boolean;
-    image_aspect_ratio?: ImageAspectRatio;
-};
-
-// *** Utility types for encryption state ***
-
-export type Encrypted<T extends { encrypted?: boolean }> = Omit<T, 'encrypted'> & { encrypted: true };
-export type Decrypted<T extends { encrypted?: boolean }> = Omit<T, 'encrypted'> & { encrypted?: false };
 
 // *** Generation Response Message Types ***
 
@@ -270,7 +63,7 @@ export type TokenDataMessage = {
     content: string;
     encrypted?: boolean;
 };
-export type ImageDataMessage = {
+type ImageDataMessage = {
     type: 'image_data';
     image_id?: string;
     data?: string;
@@ -278,12 +71,12 @@ export type ImageDataMessage = {
     seed?: number;
     encrypted?: boolean;
 };
-export type DoneMessage = { type: 'done' };
-export type TimeoutMessage = { type: 'timeout' };
-export type ErrorMessage = { type: 'error' };
-export type RejectedMessage = { type: 'rejected' };
-export type HarmfulMessage = { type: 'harmful' };
-export type UsageMessage = { type: 'usage'; usage: LumoStreamUsage };
+type DoneMessage = { type: 'done' };
+type TimeoutMessage = { type: 'timeout' };
+type ErrorMessage = { type: 'error' };
+type RejectedMessage = { type: 'rejected' };
+type HarmfulMessage = { type: 'harmful' };
+type UsageMessage = { type: 'usage'; usage: LumoStreamUsage };
 
 /*
  * Context-window overflow surfaced mid-stream. The chat-completions adapter maps
@@ -293,7 +86,7 @@ export type UsageMessage = { type: 'usage'; usage: LumoStreamUsage };
  * Legacy wire shape (still accepted):
  *   data:{"type":"tool-error","error":{"code":"context_length_exceeded","message":"..."}}
  */
-export type ToolErrorMessage = {
+type ToolErrorMessage = {
     type: 'tool-error';
     error: {
         code: string;
@@ -305,7 +98,7 @@ export const CONTEXT_LENGTH_EXCEEDED_CODE = 'context_length_exceeded';
 
 // Server-side tool call dispatched by the scheduler (chat.tool_call SSE chunk).
 // Emitted twice: announce (arguments absent) then dispatch (arguments present).
-export type ServerToolCallMessage = {
+type ServerToolCallMessage = {
     type: 'server_tool_call';
     call_id: string;
     name: string;
@@ -314,7 +107,7 @@ export type ServerToolCallMessage = {
 };
 
 // Server-side tool result returned after execution (chat.tool_result SSE chunk).
-export type ServerToolResultMessage = {
+type ServerToolResultMessage = {
     type: 'server_tool_result';
 
     call_id: string;
@@ -324,15 +117,6 @@ export type ServerToolResultMessage = {
     };
     encrypted?: boolean;
 };
-
-export type EncryptedTokenDataMessage = Encrypted<TokenDataMessage>;
-export type DecryptedTokenDataMessage = Decrypted<TokenDataMessage>;
-export type EncryptedImageDataMessage = Encrypted<ImageDataMessage>;
-export type DecryptedImageDataMessage = Decrypted<ImageDataMessage>;
-export type EncryptedServerToolCallMessage = Encrypted<ServerToolCallMessage>;
-export type DecryptedServerToolCallMessage = Decrypted<ServerToolCallMessage>;
-export type EncryptedServerToolResultMessage = Encrypted<ServerToolResultMessage>;
-export type DecryptedServerToolResultMessage = Decrypted<ServerToolResultMessage>;
 
 export type GenerationResponseMessage =
     | QueuedMessage
@@ -564,11 +348,7 @@ function isRequestableGenerationTarget(value: any): value is RequestableGenerati
     return ['message', 'title'].includes(value);
 }
 
-export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result' | 'reasoning' | 'suggested_questions';
-
-export function isGenerationTarget(value: any): value is GenerationTarget {
-    return ['message', 'title', 'tool_call', 'tool_result', 'reasoning', 'suggested_questions'].includes(value);
-}
+type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result' | 'reasoning' | 'suggested_questions';
 
 /*
  * Note:

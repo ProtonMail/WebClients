@@ -7,7 +7,7 @@ import type { ModelState } from '@proton/redux-utilities/initialModelState/inter
 import { getRemainingInvitations } from '@proton/shared/lib/api/lumo';
 
 const name = 'lumo/remainingInvites' as const;
-export interface RemainingInvitesState {
+interface RemainingInvitesState {
     [name]: ModelState<{ remaining: number }>;
 }
 
@@ -16,11 +16,11 @@ type Model = NonNullable<SliceState['value']>;
 
 const initialState = getInitialModelState<Model>();
 
-export const selectRemainingInvites = (state: RemainingInvitesState) => {
+const selectRemainingInvites = (state: RemainingInvitesState) => {
     return state[name];
 };
 
-export const decrementAvailableInvites = createAction('decrement available invites', () => ({ payload: {} }));
+const decrementAvailableInvites = createAction('decrement available invites', () => ({ payload: {} }));
 
 const modelThunk = createAsyncModelThunk<Model, RemainingInvitesState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
@@ -48,4 +48,3 @@ const slice = createSlice({
 });
 
 export const remainingInvitesReducer = { [name]: slice.reducer };
-export const remainingInvitesThunk = modelThunk.thunk;

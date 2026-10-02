@@ -1,6 +1,6 @@
 // Inspired by '@proton/pass/utils/object'
 
-export const identityK = <T>(k: string, _: T): string => k;
+const identityK = <T>(k: string, _: T): string => k;
 export const identityV = <T>(_: string, v: T): T => v;
 
 export const objectMapKV = <Obj extends { [key: string]: any }, R extends any>(
