@@ -25,14 +25,9 @@ jest.mock('../reset/resetPasswordTelemetry', () => ({
         sendResetPasswordCodeSent: jest.fn(),
         sendResetPasswordRecoveryMethodsRequested: jest.fn(),
         sendResetPasswordMethodValidated: jest.fn(),
+        sendResetPasswordSuccess: jest.fn(),
+        sendResetPasswordFailure: jest.fn(),
     }),
-}));
-
-jest.mock('./hooks/useRequestCode', () => ({
-    useRequestCode:
-        ({ onSuccess }: { onSuccess: () => void }) =>
-        () =>
-            Promise.resolve().then(onSuccess),
 }));
 
 jest.mock('../locales', () => jest.requireActual('../locales'));

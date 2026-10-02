@@ -1,79 +1,33 @@
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import useLoading from '@proton/hooks/useLoading';
-import { type ValidateResetTokenResponse, validateResetToken } from '@proton/shared/lib/api/reset';
 
-import { useResetPasswordTelemetry } from '../../reset/resetPasswordTelemetry';
-import { DeviceRecoveryLevel } from '../actions';
-import type { UnauthedForgotPasswordStateMachine } from '../state-machine/UnauthedForgotPasswordStateMachine';
-import { useMachineWizard } from '../wizard/MachineWizardProvider';
+import { ForgotPasswordContext } from '../wizard/ForgotPasswordContext';
 
 interface Props {
-    onPreSubmit: () => Promise<void>;
-    onStartAuth: () => Promise<void>;
-    onSuccess: (username: string) => void;
+    /** A username alone just fills in the form. */
+    onUsername: (username: string) => void;
 }
 
-export const useAutomaticRecoveryVerification = ({ onPreSubmit, onStartAuth, onSuccess }: Props) => {
-    const [loading, withLoading] = useLoading();
-    const { send } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const errorHandler = useErrorHandler();
-    const { sendResetPasswordMethodValidated } = useResetPasswordTelemetry({ variant: 'B' });
-
-    const silentApi = useSilentApi();
+/**
+ * A reset link (username and token in the URL) has the machine check the token right away. The parameters are
+ * removed from the URL once read.
+ */
+export const useAutomaticRecoveryVerification = ({ onUsername }: Props) => {
+    const { send } = ForgotPasswordContext.useActorRef();
 
     useSearchParamsEffect((params) => {
         const username = params.get('username');
         const token = params.get('token');
         const variant = params.get('variant');
 
-        /**
-         * Automatic token validation reset
-         */
         if (username && token) {
-            const run = async () => {
-                try {
-                    await onPreSubmit();
-                    await onStartAuth();
-                    const resetResponse = await silentApi<ValidateResetTokenResponse>(
-                        validateResetToken(username, token)
-                    );
-                    sendResetPasswordMethodValidated({ step: 'entry', method: 'mnemonic' });
-                    send({
-                        type: 'token.prefilled',
-                        payload: {
-                            username,
-                            ownershipVerificationCode: token,
-                            resetResponse,
-                            deviceRecoveryLevel: DeviceRecoveryLevel.NONE,
-                        },
-                    });
-                } catch (e) {
-                    errorHandler(e);
-                }
-            };
-            void withLoading(run());
-
+            send({ type: 'resetLink.opened', payload: { username, token } });
             return new URLSearchParams(variant ? { variant } : undefined);
         }
 
-        /**
-         * Automatic username filling
-         */
         if (username) {
-            send({
-                type: 'username.prefilled',
-                payload: {
-                    username,
-                },
-            });
-            onSuccess(username);
+            send({ type: 'username.prefilled', payload: { username } });
+            onUsername(username);
             return new URLSearchParams(variant ? { variant } : undefined);
         }
     }, []);
-
-    return {
-        loading,
-    };
 };

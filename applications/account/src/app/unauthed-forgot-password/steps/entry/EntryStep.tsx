@@ -5,9 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
@@ -15,37 +12,22 @@ import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import Text from '../../../public/Text';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
-import { NoResetMethodsError, handleRequestRecoveryMethods } from '../../actions';
 import { useAutomaticMnemonicVerification } from '../../hooks/useAutomaticMnemonicVerification';
 import { useAutomaticRecoveryVerification } from '../../hooks/useAutomaticRecoveryVerification';
-import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
-import { useForgotPasswordProps } from '../../wizard/ForgotPasswordProvider';
-import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import { selectSubmitting } from '../../state-machine/UnauthedForgotPasswordStateMachine';
+import { ForgotPasswordContext } from '../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
 export const EntryStep = ({ onBack }: ForgotPasswordStepProps) => {
-    const { sendResetPasswordRecoveryMethodsRequested, sendResetPasswordStepLoad } = useResetPasswordTelemetry({
-        variant: 'B',
-    });
-    const { onPreSubmit, onStartAuth } = useForgotPasswordProps();
-    const { send } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const [loading, withLoading] = useLoading();
-    const silentApi = useSilentApi();
-    const errorHandler = useErrorHandler();
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { send } = ForgotPasswordContext.useActorRef();
+    // The recovery methods are being requested, or a link that opened the page is being checked
+    const loading = ForgotPasswordContext.useSelector(selectSubmitting);
 
     const { validator, onFormSubmit } = useFormErrors();
     const [username, setUsername] = useState('');
-    const { loading: automationMnemonicVerificationLoading } = useAutomaticMnemonicVerification({
-        onPreSubmit,
-        onStartAuth,
-    });
-    const automaticVerification = useAutomaticRecoveryVerification({
-        onPreSubmit,
-        onStartAuth,
-        onSuccess: (username: string) => {
-            setUsername(username);
-        },
-    });
+    useAutomaticMnemonicVerification();
+    useAutomaticRecoveryVerification({ onUsername: setUsername });
 
     useEffect(() => {
         sendResetPasswordStepLoad({
@@ -53,51 +35,8 @@ export const EntryStep = ({ onBack }: ForgotPasswordStepProps) => {
         });
     }, []);
 
-    const handleSubmit = async () => {
-        try {
-            await onPreSubmit();
-            await onStartAuth();
-            const result = await handleRequestRecoveryMethods({
-                username,
-                api: silentApi,
-            });
-            sendResetPasswordRecoveryMethodsRequested({
-                hasPasswordResetMethod:
-                    result.methods.includes('email') ||
-                    result.methods.includes('sms') ||
-                    result.methods.includes('login'),
-                hasDataRecoveryMethod: result.methods.includes('mnemonic'),
-            });
-            send({
-                type: 'recovery.started',
-                payload: result,
-            });
-        } catch (error) {
-            if (error instanceof NoResetMethodsError) {
-                sendResetPasswordRecoveryMethodsRequested({
-                    hasPasswordResetMethod: false,
-                    hasDataRecoveryMethod: false,
-                });
-                send({
-                    type: 'recovery.started',
-                    payload: {
-                        accountType: '',
-                        methods: [],
-                        username,
-                        redactedEmail: '',
-                        redactedPhoneNumber: '',
-                        hasEmergencyContacts: false,
-                    },
-                });
-            } else {
-                errorHandler(error);
-            }
-        }
-    };
-
     const handleBackStep = () => send({ type: 'decision.back' });
 
-    const showLoading = loading || automaticVerification.loading || automationMnemonicVerificationLoading;
     return (
         <>
             <Header title={c('Title').t`Recover account`} onBack={onBack} />
@@ -109,7 +48,7 @@ export const EntryStep = ({ onBack }: ForgotPasswordStepProps) => {
                         if (loading || !onFormSubmit()) {
                             return;
                         }
-                        void withLoading(handleSubmit());
+                        send({ type: 'username.submitted', payload: { username } });
                     }}
                 >
                     <InputFieldTwo
@@ -117,12 +56,12 @@ export const EntryStep = ({ onBack }: ForgotPasswordStepProps) => {
                         bigger
                         label={c('Label').t`Email or username`}
                         error={validator([requiredValidator(username)])}
-                        disableChange={showLoading}
+                        disableChange={loading}
                         value={username}
                         onValue={setUsername}
                         autoFocus
                     />
-                    <Button size="large" color="norm" loading={showLoading} type="submit" fullWidth className="mt-6">
+                    <Button size="large" color="norm" loading={loading} type="submit" fullWidth className="mt-6">
                         {c('Action').t`Next`}
                     </Button>
                     <Button size="large" shape="ghost" color="norm" fullWidth className="mt-2" onClick={handleBackStep}>

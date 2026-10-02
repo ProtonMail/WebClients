@@ -18,13 +18,17 @@ import Content from '../../../../public/Content';
 import Header from '../../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../../reset/resetPasswordTelemetry';
 import lockWarningExclamation from '../../../icons/lock-warning-exclamation.svg';
-import type { UnauthedForgotPasswordStateMachine } from '../../../state-machine/UnauthedForgotPasswordStateMachine';
-import { useMachineWizard } from '../../../wizard/MachineWizardProvider';
+import {
+    selectDelegatedAccessContacts,
+    selectUsername,
+} from '../../../state-machine/UnauthedForgotPasswordStateMachine';
+import { ForgotPasswordContext } from '../../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../../wizard/forgotPasswordStep';
 
 export const SocialRecoveryStep = ({ onBack }: ForgotPasswordStepProps) => {
-    const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const { delegatedAccessContacts, username } = snapshot.context;
+    const { send } = ForgotPasswordContext.useActorRef();
+    const delegatedAccessContacts = ForgotPasswordContext.useSelector(selectDelegatedAccessContacts);
+    const username = ForgotPasswordContext.useSelector(selectUsername);
 
     const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
     useEffect(() => {

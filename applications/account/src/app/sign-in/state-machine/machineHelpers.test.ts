@@ -6,7 +6,7 @@ describe('unprovidedActors', () => {
     it('fails an actor the app did not provide, naming it', async () => {
         const { loadAccount } = unprovidedActors<{ loadAccount: AnyActorLogic }>({ loadAccount: true });
         const actor = createActor(loadAccount).start();
-        await expect(waitFor(actor, () => false)).rejects.toThrow("The sign-in's loadAccount actor is not provided");
+        await expect(waitFor(actor, () => false)).rejects.toThrow('The loadAccount actor is not provided');
     });
 });
 
