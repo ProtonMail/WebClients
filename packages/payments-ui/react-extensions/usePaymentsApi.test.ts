@@ -83,6 +83,29 @@ describe('usePaymentsApi', () => {
         });
     });
 
+    // TODO remove when the API rteturn the new contract
+    it('should normalize transition guard fields on the check response', async () => {
+        addApiMock('payments/v5/subscription/check', () => ({
+            Amount: 1500,
+            Currency: 'USD',
+            AmountDue: 1500,
+            Cycle: 12,
+            GuardResult: 'You are using more storage than this plan allows.',
+            GuardResultCode: 8010505,
+        }));
+
+        const { result } = renderHook(() => usePaymentsApi(), {
+            wrapper: getWrapper(),
+        });
+
+        const checkResult = await result.current.paymentsApi.checkSubscription(getCheckSubscriptionData());
+
+        expect(checkResult.GuardResult).toEqual([
+            { Code: 8010505, Message: 'You are using more storage than this plan allows.' },
+        ]);
+        expect(checkResult).not.toHaveProperty('GuardResultCode');
+    });
+
     it.each([
         {
             appName: APPS.PROTONACCOUNTLITE,

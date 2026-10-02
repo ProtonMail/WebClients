@@ -72,4 +72,25 @@ describe('createPaymentSubscription', () => {
 
         expect(wrongPlanNameReports()).toHaveLength(0);
     });
+
+    it('should normalize the transition guard fields on the response', async () => {
+        const api = jest.fn().mockResolvedValue({
+            Subscription: {},
+            GuardResult: 'refusal',
+            GuardResultCode: 8010505,
+        }) as unknown as Api;
+
+        const response = await createPaymentSubscription(api, buildData({ [PLANS.VPN2024]: 1 }), {
+            build: 'proton-account' as APP_NAMES,
+            telemetryContext: undefined,
+            userCurrency: 'USD',
+            subscription: undefined,
+            product: 'generic',
+            paymentMethodType: undefined,
+            paymentMethodValue: undefined,
+        } as any);
+
+        expect(response?.GuardResult).toEqual([{ Code: 8010505, Message: 'refusal' }]);
+        expect(response).not.toHaveProperty('GuardResultCode');
+    });
 });
