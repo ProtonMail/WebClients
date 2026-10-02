@@ -57,6 +57,9 @@ const Info = ({
     };
 
     const safeTitle = title || '';
+    // The icon's label is plain text: a title with elements in it would read as "[object Object]"
+    const label =
+        typeof title === 'string' && title ? c('Action').t`More info: ${safeTitle}` : c('Action').t`More info`;
     const Icon = (() => {
         if (questionMark && !filled) {
             return IcQuestionCircle;
@@ -78,11 +81,7 @@ const Info = ({
                 )}
                 href={url}
             >
-                <Icon
-                    className={clsx(colorPrimary && 'color-primary', className)}
-                    alt={c('Action').t`More info: ${safeTitle}`}
-                    {...rest}
-                />
+                <Icon className={clsx(colorPrimary && 'color-primary', className)} alt={label} {...rest} />
             </Href>
         );
     }
@@ -110,11 +109,7 @@ const Info = ({
                 type="button"
                 role={url ? 'link' : undefined}
             >
-                <Icon
-                    className={clsx(colorPrimary && 'color-primary', className)}
-                    alt={c('Action').t`More info: ${safeTitle}`}
-                    {...rest}
-                />
+                <Icon className={clsx(colorPrimary && 'color-primary', className)} alt={label} {...rest} />
             </button>
         </Tooltip>
     );
