@@ -1,3 +1,5 @@
+const forbiddenPatterns = [/url\s*\(/i, /expression\s*\(/i, /javascript\s*:/i, /data\s*:/i, /@import/i]
+
 export function sanitizeInlineStyle(styleString: string): string {
   const allowedProperties = [
     '--list-marker-color',
@@ -44,8 +46,6 @@ export function sanitizeInlineStyle(styleString: string): string {
     }
 
     // Check for suspicious patterns that might allow CSS injection
-    const forbiddenPatterns = [/url\s*\(/i, /expression\s*\(/i, /javascript\s*:/i, /data\s*:/i, /@import/i]
-
     if (forbiddenPatterns.some((pattern) => pattern.test(propValue))) {
       continue
     }
