@@ -18,7 +18,11 @@ import {
     setReconnectionFailed,
 } from '@proton/meet/store/slices/connectionSlice';
 import { selectMeetingLinkName, selectMeetingPassword } from '@proton/meet/store/slices/currentMeeting';
-import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices/meetAppStateSlice';
+import {
+    setMeetingEndedReason,
+    setPreviousMeetingLink,
+    setUpsellModalType,
+} from '@proton/meet/store/slices/meetAppStateSlice';
 import {
     selectHasAnotherAdmin,
     selectIsGuestAdmin,
@@ -27,7 +31,7 @@ import {
 import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
 import { PopUpControls, setPopupStateValue } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectSubscriptionStatus, selectUserId } from '@proton/meet/store/slices/userSlice';
-import { UpsellModalTypes } from '@proton/meet/types/types';
+import { MeetingEndedReasons, UpsellModalTypes } from '@proton/meet/types/types';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -367,6 +371,10 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
             );
             await handleEndMeeting();
         } else {
+            // Match the copy shown when the server ends the meeting for the same reason
+            dispatch(
+                setMeetingEndedReason({ reason: MeetingEndedReasons.TimeLimitExceeded, isLocalParticipantHost: false })
+            );
             handleLeave();
             dispatch(setUpsellModalType(UpsellModalTypes.MeetingEnded));
         }
