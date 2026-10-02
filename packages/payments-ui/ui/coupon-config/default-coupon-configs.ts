@@ -3,6 +3,7 @@ import type { CouponConfig } from './interface';
 import { monthlyNudgeConfig } from './monthlyNudge';
 import { porkbunConfig } from './porkbun';
 import { q3Sale2026Config } from './q3Sale2026';
+import { tryDuo2026Config } from './tryDuo2026';
 import { tryMailPlus0724Config } from './tryMailPlus0724';
 import { tryMailPlus0926Config } from './tryMailPlus0926';
 import { tryMailPlusMobile2026Config } from './tryMailPlusMobile2026';
@@ -17,4 +18,5 @@ export const defaultCouponConfigs: CouponConfig[] = [
     tryMailPlus0926Config,
     tryMailPlusMobile2026Config,
     porkbunConfig,
+    tryDuo2026Config,
 ];
