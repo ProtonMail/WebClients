@@ -6,7 +6,8 @@ import { sanitizeVegaSpec } from './sanitizeVegaSpec';
 import { createSecureVegaLoader } from './secureVegaLoader';
 
 // The static counterpart of VegaLiteChart: same sanitizer, loader and theme, but rendered once to an
-// inert SVG string for surfaces that can't run vega (sandboxed slides, PDF/print exports).
+// inert SVG string (sandboxed slides, PDF/print exports) or PNG bytes (Word) for surfaces that can't
+// run vega.
 
 // sanitizeVegaSpec always forces `width: 'container'` (via applyResponsiveChartLayout, shared with
 // chat charts) so the live DOM element's measured size drives layout. That has nothing to measure
@@ -30,18 +31,11 @@ function withFixedSize(spec: VisualizationSpec, size: StaticChartSize): Visualiz
     } as VisualizationSpec;
 }
 
-/**
- * Render a raw Vega-Lite spec (JSON text, as the model wrote it) to an SVG string. Throws when the
- * spec is malformed or rejected by sanitizeVegaSpec — callers swap in their own fallback.
- *
- * sanitizeVegaSpec is the exact function chat-rendered charts go through (mark-type allowlist,
- * rejection of external data/URLs and dangerous usermeta, expression neutralization), so static
- * charts get identical, already-reviewed security guarantees.
- */
-export async function renderVegaSpecToSvg(
+async function withStaticView<T>(
     rawSpecJson: string,
-    size: StaticChartSize = { width: STATIC_CHART_WIDTH, height: STATIC_CHART_HEIGHT }
-): Promise<string> {
+    size: StaticChartSize,
+    read: (view: Result['view']) => Promise<T>
+): Promise<T> {
     const spec = withFixedSize(sanitizeVegaSpec(rawSpecJson), size);
 
     // Never attached to the live document — a detached element is all vega-embed needs since the
@@ -61,8 +55,65 @@ export async function renderVegaSpecToSvg(
     try {
         await result.view.run();
         result.view.resize();
-        return await result.view.toSVG();
+        return await read(result.view);
     } finally {
         result.view.finalize();
     }
+}
+
+/**
+ * Render a raw Vega-Lite spec (JSON text, as the model wrote it) to an SVG string. Throws when the
+ * spec is malformed or rejected by sanitizeVegaSpec — callers swap in their own fallback.
+ *
+ * sanitizeVegaSpec is the exact function chat-rendered charts go through (mark-type allowlist,
+ * rejection of external data/URLs and dangerous usermeta, expression neutralization), so static
+ * charts get identical, already-reviewed security guarantees.
+ */
+export async function renderVegaSpecToSvg(
+    rawSpecJson: string,
+    size: StaticChartSize = { width: STATIC_CHART_WIDTH, height: STATIC_CHART_HEIGHT }
+): Promise<string> {
+    return withStaticView(rawSpecJson, size, (view) => {
+        return view.toSVG();
+    });
+}
+
+export interface StaticChartPng {
+    data: Uint8Array<ArrayBuffer>;
+    /** Size in CSS pixels (the PNG itself is `scale` times larger). */
+    width: number;
+    height: number;
+}
+
+function readPngSize(data: Uint8Array<ArrayBuffer>): { width: number; height: number } {
+    // The IHDR chunk always comes first: width and height are big-endian at bytes 16 and 20.
+    const view = new DataView(data.buffer, data.byteOffset, data.byteLength);
+    return { width: view.getUint32(16), height: view.getUint32(20) };
+}
+
+/**
+ * Render a raw Vega-Lite spec to PNG bytes, for outputs that can't take SVG (Word: the docx version
+ * in use only embeds raster images). Same sanitizer, loader and theme as renderVegaSpecToSvg; the
+ * same call the chat chart's PNG download makes. Throws on a bad spec, like renderVegaSpecToSvg.
+ */
+export async function renderVegaSpecToPng(
+    rawSpecJson: string,
+    { scale = 2, ...size }: Partial<StaticChartSize> & { scale?: number } = {}
+): Promise<StaticChartPng> {
+    const dataUrl = await withStaticView(
+        rawSpecJson,
+        { width: size.width ?? STATIC_CHART_WIDTH, height: size.height ?? STATIC_CHART_HEIGHT },
+        (view) => {
+            return view.toImageURL('png', scale);
+        }
+    );
+
+    const base64 = dataUrl.slice(dataUrl.indexOf(',') + 1);
+    const data = Uint8Array.from(atob(base64), (char) => {
+        return char.charCodeAt(0);
+    });
+    // Measured from the PNG rather than the spec: titles, axes and legends add to the plot size.
+    const pixels = readPngSize(data);
+
+    return { data, width: Math.round(pixels.width / scale), height: Math.round(pixels.height / scale) };
 }
