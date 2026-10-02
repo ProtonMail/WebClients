@@ -1,12 +1,12 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { ChatCompletionsRequest } from '../types-api';
-import { CLIENT_TOOL_ROUND_BUDGET, LumoApiClient, MAX_CLIENT_TOOL_ROUNDS } from './client';
-import type { ClientToolExecutor, ClientToolResult, PendingClientToolCall } from './client-tools';
+import { LumoApiClient, MAX_CLIENT_TOOL_ROUNDS } from './client';
+import type { ClientToolExecutor, ClientToolResult } from './client-tools';
 import { encryptTurns } from './encryption';
 import { RequestEncryptionParams } from './encryptionParams';
 import { callChatEndpoint } from './network';
-import { type EncryptedTurn, type GenerationResponseMessage, Role, type Turn } from './types';
+import { type EncryptedTurn, Role, type Turn } from './types';
 
 jest.mock('uuid', () => ({ v4: () => 'request-id' }));
 jest.mock('./encryption', () => ({ DEFAULT_LUMO_PUB_KEY: 'pub-key', encryptTurns: jest.fn() }));
@@ -65,12 +65,11 @@ const toolCallResponse = (name: string, narration = ''): ReadableStream =>
 const proseResponse = (text: string): ReadableStream =>
     stream(sse({ choices: [{ index: 0, delta: { content: text } }] }) + 'data: [DONE]\n\n');
 
-/** Executor whose every call succeeds; `billableFor` decides which of them spend the budget. */
-const makeExecutor = (billableFor: (call: PendingClientToolCall) => boolean): ClientToolExecutor => ({
+/** Executor whose every call succeeds. */
+const executor: ClientToolExecutor = {
     canExecute: () => true,
-    execute: async (calls): Promise<ClientToolResult[]> =>
-        calls.map((call) => ({ content: `ran ${call.name}`, billable: billableFor(call) })),
-});
+    execute: async (calls): Promise<ClientToolResult[]> => calls.map((call) => ({ content: `ran ${call.name}` })),
+};
 
 const sentRequests = (): ChatCompletionsRequest[] =>
     mockedCallChatEndpoint.mock.calls.map(([, payload]) => payload as ChatCompletionsRequest);
@@ -79,7 +78,14 @@ const api = (() => {}) as unknown as Api;
 const userTurns = [{ role: 'user' as any, content: 'find my festival tickets' }];
 const searchTool = { type: 'function' as const, function: { name: 'search', description: '', parameters: {} } };
 
-const alwaysCallsTools = () => mockedCallChatEndpoint.mockImplementation(async () => toolCallResponse('search'));
+/** The model calls a tool for `toolRounds` generations, then answers. */
+const callsToolsFor = (toolRounds: number, narration = '') => {
+    let generations = 0;
+    mockedCallChatEndpoint.mockImplementation(async () => {
+        generations += 1;
+        return generations <= toolRounds ? toolCallResponse('search', narration) : proseResponse('Here it is.');
+    });
+};
 
 const newClient = () => new LumoApiClient({ enableU2LEncryption: false, enableSmoothing: false });
 
@@ -90,114 +96,64 @@ beforeEach(() => {
 });
 
 describe('callAssistant client tool rounds', () => {
-    it('stops on the budget and reports it, rather than running a round the caller cannot see', async () => {
-        alwaysCallsTools();
+    it('keeps running tool rounds until the model stops calling tools', async () => {
+        callsToolsFor(25);
 
-        const result = await newClient().callAssistant(api, userTurns, {
-            clientToolExecutor: makeExecutor(() => true),
+        const { status } = await newClient().callAssistant(api, userTurns, {
+            clientToolExecutor: executor,
             clientTools: [searchTool],
         });
 
-        expect(sentRequests()).toHaveLength(CLIENT_TOOL_ROUND_BUDGET);
-        expect(result.stoppedOnBudget).toBe(true);
+        expect(sentRequests()).toHaveLength(26);
+        expect(status).toBe('succeeded');
     });
 
-    it('returns the chain it got through, so the caller can resume it without re-asking the model', async () => {
-        alwaysCallsTools();
+    it('stops a model that never stops calling tools at the round ceiling', async () => {
+        callsToolsFor(Infinity);
 
-        const { turns } = await newClient().callAssistant(api, userTurns, {
-            clientToolExecutor: makeExecutor(() => true),
-            clientTools: [searchTool],
-        });
-
-        expect(turns.filter((turn) => turn.content === 'ran search')).toHaveLength(CLIENT_TOOL_ROUND_BUDGET);
-        expect(turns[0]).toEqual(userTurns[0]);
-    });
-
-    it('does not report a budget stop when the model stops calling tools', async () => {
-        mockedCallChatEndpoint.mockImplementation(async () => proseResponse('Here it is.'));
-
-        const result = await newClient().callAssistant(api, userTurns, {
-            clientToolExecutor: makeExecutor(() => true),
-            clientTools: [searchTool],
-        });
-
-        expect(sentRequests()).toHaveLength(1);
-        expect(result.stoppedOnBudget).toBe(false);
-    });
-
-    it('does not report a budget stop when there is no executor to run the calls', async () => {
-        alwaysCallsTools();
-
-        const result = await newClient().callAssistant(api, userTurns, { clientTools: [searchTool] });
-
-        expect(sentRequests()).toHaveLength(1);
-        expect(result.stoppedOnBudget).toBe(false);
-    });
-
-    it('does not spend the budget on a non-billable round, so a guided chain gets the same work done', async () => {
-        let generations = 0;
-        mockedCallChatEndpoint.mockImplementation(async () => {
-            generations += 1;
-            return toolCallResponse(generations === 1 ? 'load_guide' : 'search');
-        });
-
-        await newClient().callAssistant(api, userTurns, {
-            clientToolExecutor: makeExecutor((call) => call.name !== 'load_guide'),
-            clientTools: [searchTool],
-        });
-
-        expect(sentRequests()).toHaveLength(CLIENT_TOOL_ROUND_BUDGET + 1);
-    });
-
-    it('terminates when every round is non-billable', async () => {
-        alwaysCallsTools();
-
-        const result = await newClient().callAssistant(api, userTurns, {
-            clientToolExecutor: makeExecutor(() => false),
+        const { status } = await newClient().callAssistant(api, userTurns, {
+            clientToolExecutor: executor,
             clientTools: [searchTool],
         });
 
         expect(sentRequests()).toHaveLength(MAX_CLIENT_TOOL_ROUNDS);
-        expect(result.stoppedOnBudget).toBe(true);
+        expect(status).toBe('succeeded');
     });
 
-    it('closes the turn off cleanly on a budget stop, so the caller can offer to carry on', async () => {
-        alwaysCallsTools();
-        const chunks: GenerationResponseMessage[] = [];
-        const finishCallback = jest.fn();
-
-        const result = await newClient().callAssistant(api, userTurns, {
-            clientToolExecutor: makeExecutor(() => true),
-            clientTools: [searchTool],
-            chunkCallback: async (chunk) => {
-                chunks.push(chunk);
-            },
-            finishCallback,
-        });
-
-        expect(result.stoppedOnBudget).toBe(true);
-        expect(chunks.filter((chunk) => chunk.type === 'done')).toHaveLength(1);
-        expect(finishCallback).toHaveBeenCalledTimes(1);
-        expect(finishCallback).toHaveBeenCalledWith('succeeded');
-    });
-
-    it('carries what the model said into the chain, so a resume does not make it repeat itself', async () => {
-        mockedCallChatEndpoint.mockImplementation(async () => toolCallResponse('search', 'Looking now.'));
+    it('returns the chain it got through, client-tool exchanges included', async () => {
+        callsToolsFor(3);
 
         const { turns } = await newClient().callAssistant(api, userTurns, {
-            clientToolExecutor: makeExecutor(() => true),
+            clientToolExecutor: executor,
             clientTools: [searchTool],
         });
 
-        expect(turns.filter((turn) => turn.content === 'Looking now.')).toHaveLength(CLIENT_TOOL_ROUND_BUDGET);
+        expect(turns.filter((turn) => turn.content === 'ran search')).toHaveLength(3);
+        expect(turns[0]).toEqual(userTurns[0]);
+    });
+
+    it('carries what the model said between tool calls into the chain', async () => {
+        callsToolsFor(3, 'Looking now.');
+
+        const { turns } = await newClient().callAssistant(api, userTurns, {
+            clientToolExecutor: executor,
+            clientTools: [searchTool],
+        });
+
+        expect(turns.filter((turn) => turn.content === 'Looking now.')).toHaveLength(3);
         expect(turns[turns.length - 1]).toEqual({ role: Role.Assistant, content: '' });
     });
 
+    it('sends a single request when there is no executor to run the calls', async () => {
+        callsToolsFor(Infinity);
+
+        await newClient().callAssistant(api, userTurns, { clientTools: [searchTool] });
+
+        expect(sentRequests()).toHaveLength(1);
+    });
+
     it('reports a missing tool result to the model instead of failing the whole turn', async () => {
-        mockedCallChatEndpoint
-            .mockImplementationOnce(async () => toolCallResponse('search'))
-            .mockImplementation(async () => proseResponse('Here it is.'));
+        callsToolsFor(1);
 
         const { status, turns } = await newClient().callAssistant(api, userTurns, {
             clientToolExecutor: { canExecute: () => true, execute: async () => [] },
@@ -208,28 +164,29 @@ describe('callAssistant client tool rounds', () => {
         expect(turns.some((turn) => turn.content?.includes('The search tool returned no result'))).toBe(true);
     });
 
-    it('does not report a budget stop when the user stopped the chain mid-tool', async () => {
-        alwaysCallsTools();
+    it('does not start another round when the user stops it mid-tool', async () => {
+        callsToolsFor(Infinity);
         const controller = new AbortController();
         let executions = 0;
 
-        const result = await newClient().callAssistant(api, userTurns, {
+        const call = newClient().callAssistant(api, userTurns, {
             clientToolExecutor: {
                 canExecute: () => true,
                 execute: async (calls) => {
                     executions += 1;
-                    if (executions === CLIENT_TOOL_ROUND_BUDGET) {
+                    if (executions === 3) {
                         controller.abort();
                     }
-                    return calls.map((call) => ({ content: `ran ${call.name}` }));
+                    return calls.map((c) => ({ content: `ran ${c.name}` }));
                 },
             },
             clientTools: [searchTool],
             signal: controller.signal,
         });
 
-        expect(executions).toBe(CLIENT_TOOL_ROUND_BUDGET);
-        expect(result.stoppedOnBudget).toBe(false);
+        await expect(call).resolves.toMatchObject({ status: 'succeeded' });
+        expect(executions).toBe(3);
+        expect(sentRequests()).toHaveLength(3);
     });
 });
 
@@ -259,20 +216,18 @@ describe('callAssistant recordRequestCallback', () => {
     });
 
     it('fires once per round, the last one carrying the tool results', async () => {
-        alwaysCallsTools();
+        callsToolsFor(3);
         const recordRequestCallback = jest.fn();
 
         await newClient().callAssistant(api, userTurns, {
-            clientToolExecutor: makeExecutor(() => true),
+            clientToolExecutor: executor,
             clientTools: [searchTool],
             recordRequestCallback,
         });
 
-        expect(recordRequestCallback).toHaveBeenCalledTimes(CLIENT_TOOL_ROUND_BUDGET);
+        expect(recordRequestCallback).toHaveBeenCalledTimes(4);
         const [last] = recordRequestCallback.mock.calls.at(-1) as [ChatCompletionsRequest];
-        expect(last.messages.filter((message) => message.content === 'ran search')).toHaveLength(
-            CLIENT_TOOL_ROUND_BUDGET - 1
-        );
+        expect(last.messages.filter((message) => message.content === 'ran search')).toHaveLength(3);
     });
 
     it('fires before sending, so a failed generation is still recorded', async () => {
