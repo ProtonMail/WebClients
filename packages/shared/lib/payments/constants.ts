@@ -277,6 +277,7 @@ export enum PLANS {
 
     PASS_FAMILY = 'passfamily2024',
     PASS_LIFETIME = 'passlifetime2024',
+    PASS_BASIC = 'passbasic2026',
     LUMO = 'lumo2024',
     LUMO_BUSINESS = 'lumobiz2025',
     MEET = 'meet2026',
@@ -313,6 +314,7 @@ export const PLAN_NAMES: Record<PLANS, string> = {
     [PLANS.PASS_BUSINESS]: 'Pass Professional',
     [PLANS.PASS_FAMILY]: 'Pass Family',
     [PLANS.PASS_LIFETIME]: 'Pass + SimpleLogin Lifetime',
+    [PLANS.PASS_BASIC]: 'Pass Basic',
     [PLANS.MEET]: 'Meet Professional',
     [PLANS.MEET_BUSINESS]: 'Meet Professional',
     [PLANS.VPN_PASS_BUNDLE_BUSINESS]: 'VPN and Pass Professional',
