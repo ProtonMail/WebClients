@@ -34,14 +34,11 @@ const suggestions = [
 const baseProps: ComponentProps<typeof LumoAgentPanel> = {
     items: [],
     isBusy: false,
-    toolLimit: null,
     cardRenderers: { move_items: { icon: IcPencil, sentence: () => 'Move 1 email to Archive' } },
     onSend: jest.fn(),
     onStop: jest.fn(),
     onConfirm: jest.fn(),
     onCancel: jest.fn(),
-    onResume: jest.fn(),
-    onDismissToolLimit: jest.fn(),
 };
 
 const panelWith = (props: Partial<ComponentProps<typeof LumoAgentPanel>>) => (
@@ -158,14 +155,6 @@ describe('LumoAgentPanel', () => {
         expect(screen.getByText('Move 1 emails')).toBeInTheDocument();
     });
 
-    it('names the steps taken and the last one on the tool-limit card', () => {
-        renderPanel({ items: [userTurn], toolLimit: { steps: 10, activity: 'Found 12 emails' } });
-
-        expect(screen.getByText(/10 steps/)).toBeInTheDocument();
-        expect(screen.getByText('Found 12 emails')).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Keep going' })).toBeInTheDocument();
-    });
-
     // The empty state is the whole feature: cards teach a first-time user, and must be gone the moment
     // there is a conversation to read instead.
     it('offers the suggestion cards only while the transcript is empty', () => {
@@ -253,20 +242,6 @@ describe('LumoAgentPanel', () => {
             pinnedCardCloses(container);
             scrollToMock().mockClear();
             rerender(panelWith({ items: [userTurn, appliedConfirm, streamingReply('Moved')], isBusy: true }));
-
-            expect(scrollToMock()).toHaveBeenCalled();
-        });
-
-        it('keeps following after the user asks to keep going and the card closes', () => {
-            const { container, rerender } = detach(
-                renderPanel({ items: [userTurn, streamingReply('Look')], toolLimit: { steps: 10 } })
-            );
-
-            fireEvent.click(screen.getByRole('button', { name: 'Keep going' }));
-            rerender(nextToken());
-            pinnedCardCloses(container);
-            scrollToMock().mockClear();
-            rerender(panelWith({ items: [userTurn, streamingReply('Looking further')], isBusy: true }));
 
             expect(scrollToMock()).toHaveBeenCalled();
         });

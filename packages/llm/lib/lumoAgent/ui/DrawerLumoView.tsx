@@ -20,15 +20,12 @@ const DrawerLumoView = () => {
     const {
         items,
         isBusy,
-        toolLimit,
         cardRenderers,
         serverToolMeta,
         suggestions,
         hasConversation,
         send,
         stop,
-        resume,
-        dismissToolLimit,
         confirm,
         cancel,
         clear,
@@ -62,7 +59,6 @@ const DrawerLumoView = () => {
             <LumoAgentPanel
                 items={items}
                 isBusy={isBusy}
-                toolLimit={toolLimit}
                 cardRenderers={cardRenderers}
                 serverToolMeta={serverToolMeta}
                 suggestions={suggestions}
@@ -72,8 +68,6 @@ const DrawerLumoView = () => {
                 onClose={closeDrawer}
                 onConfirm={confirm}
                 onCancel={cancel}
-                onResume={resume}
-                onDismissToolLimit={dismissToolLimit}
             />
         </DrawerView>
     );

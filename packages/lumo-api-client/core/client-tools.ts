@@ -9,12 +9,6 @@ export type PendingClientToolCall = {
 export type ClientToolResult = {
     content: string;
     is_error?: boolean;
-    /**
-     * Spends a round of the client-tool budget unless explicitly `false` — nothing to do with user
-     * billing. Set `false` only for work that unblocks the model without advancing it (e.g. loading a
-     * guide); a chain of free rounds still terminates on the total-round backstop.
-     */
-    billable?: boolean;
 };
 
 /**

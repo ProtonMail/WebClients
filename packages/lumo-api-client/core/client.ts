@@ -67,14 +67,10 @@ const DEFAULT_CONFIG: LumoApiClientConfig = {
 };
 
 /**
- * Rounds of billable client-tool work one turn may spend
+ * Safety net against a runaway model, not a UX budget: high enough to never trip in normal use. A chain
+ * that hits it just ends, without a closing answer.
  */
-export const CLIENT_TOOL_ROUND_BUDGET = 10;
-
-/**
- * Backstop on total rounds, billable or not
- */
-export const MAX_CLIENT_TOOL_ROUNDS = CLIENT_TOOL_ROUND_BUDGET * 2;
+export const MAX_CLIENT_TOOL_ROUNDS = 100;
 
 type GenerationRequestFlags = {
     enableExternalTools: boolean;
@@ -214,11 +210,8 @@ export class LumoApiClient {
 
         let currentTurns = turns;
         let finalStatus: Status = 'failed';
-        let stoppedOnBudget = false;
         try {
-            let rounds = 0;
-            let billableRounds = 0;
-            while (true) {
+            for (let rounds = 0; rounds < MAX_CLIENT_TOOL_ROUNDS; rounds++) {
                 const plaintextRequest = await this.preparePlaintextGenerationRequest(
                     currentTurns,
                     {
@@ -269,27 +262,18 @@ export class LumoApiClient {
                     break;
                 }
 
-                const executed = await this.appendClientToolResults(
+                currentTurns = await this.appendClientToolResults(
                     this.withAssistantReply(currentTurns, roundReply),
                     executableCalls,
                     resolvedClientToolExecutor,
                     chunkCallback
                 );
-                currentTurns = executed.turns;
                 roundReply = '';
-                rounds++;
-                if (executed.billable) {
-                    billableRounds++;
-                }
 
-                if (billableRounds >= CLIENT_TOOL_ROUND_BUDGET || rounds >= MAX_CLIENT_TOOL_ROUNDS) {
-                    stoppedOnBudget = true;
+                // A stop that lands while a tool runs must not start another round.
+                if (signal?.aborted) {
                     break;
                 }
-            }
-
-            if (signal?.aborted) {
-                stoppedOnBudget = false;
             }
 
             if (chunkCallback) {
@@ -306,7 +290,7 @@ export class LumoApiClient {
             }
         }
 
-        return { status: finalStatus, stoppedOnBudget, turns: currentTurns };
+        return { status: finalStatus, turns: currentTurns };
     }
 
     private async runSseReceiveLoop(
@@ -497,7 +481,7 @@ export class LumoApiClient {
         calls: PendingClientToolCall[],
         executor: ClientToolExecutor,
         chunkCallback: ChunkCallback | undefined
-    ): Promise<{ turns: Turn[]; billable: boolean }> {
+    ): Promise<Turn[]> {
         const results = await executor.execute(calls);
         // An executor that answers fewer calls than it was given must not take the whole turn down
         // with it; the model can recover from a per-call error.
@@ -551,7 +535,7 @@ export class LumoApiClient {
             content: '',
         });
 
-        return { turns: nextTurns, billable: executed.some(({ result }) => result.billable !== false) };
+        return nextTurns;
     }
 
     private async runTargetedGeneration(
