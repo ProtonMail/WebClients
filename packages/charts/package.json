@@ -17,7 +17,7 @@
         "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "TZ=UTC vitest",
-        "test:ci": "pnpm run test --coverage --run",
+        "test:ci": "pnpm run test --run",
         "test:ui": "pnpm run test --ui",
         "test:watch": "pnpm run test --watch"
     },
