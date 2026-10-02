@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 import Radio from './Radio';
 
-export interface RadioGroupProps<T> {
+interface RadioGroupProps<T> {
     name: string;
     options: {
         value: T;

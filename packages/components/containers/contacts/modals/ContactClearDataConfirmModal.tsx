@@ -19,7 +19,7 @@ export interface ContactClearDataConfirmProps {
     errorKey: Key;
 }
 
-export interface ContactClearDataConfirmModalProps {
+interface ContactClearDataConfirmModalProps {
     onClearData: (props: ContactClearDataExecutionProps) => void;
 }
 

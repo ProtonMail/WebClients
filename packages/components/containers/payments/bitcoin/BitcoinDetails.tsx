@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 import Copy from '../../../components/button/Copy';
 import SkeletonLoader from '../../../components/skeletonLoader/SkeletonLoader';
 
-export interface Props {
+interface Props {
     amount: number;
     address: string;
     loading: boolean;

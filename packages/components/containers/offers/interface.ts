@@ -46,7 +46,7 @@ export interface Operation {
     isUsingMoreThan80PercentStorage?: boolean;
 }
 
-export interface OfferImages {
+interface OfferImages {
     sideImage?: string;
     sideImage2x?: string;
     bannerImage?: string;
@@ -140,7 +140,7 @@ export interface Deal {
     sentenceSaveType?: 'switch-yearly' | 'switch-two-year' | 'limited-time-deal';
 }
 
-export interface Prices {
+interface Prices {
     withCoupon: number;
     withoutCoupon: number;
     withoutCouponMonthly: number;

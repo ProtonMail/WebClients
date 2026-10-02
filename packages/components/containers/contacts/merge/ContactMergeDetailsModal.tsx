@@ -21,7 +21,7 @@ import useContactList from '../hooks/useContactList';
 import useVCardContact from '../hooks/useVCardContact';
 import ContactView from '../view/ContactView';
 
-export interface ContactMergeDetailsModalProps {
+interface ContactMergeDetailsModalProps {
     contactID: string;
 }
 

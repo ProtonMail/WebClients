@@ -1,6 +1,5 @@
 import type { TipProps, TopNavbarOfferConfig } from '../../common/helpers/interface';
 
-export type SUPPORTED_PRODUCTS = 'mail' | 'drive';
 export const MINIMUM_DAYS_SUBSCRIBED_TO_UNLIMITED = 7;
 export const MAX_DAYS_TO_SHOW_SAME_TIP = 30;
 

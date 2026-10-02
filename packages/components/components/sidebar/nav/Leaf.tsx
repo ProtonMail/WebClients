@@ -75,4 +75,3 @@ Leaf.IconPlaceholder = Slots.Placeholder;
 Leaf.Text = Slots.Text;
 
 export { Leaf };
-export type { LeafProps };

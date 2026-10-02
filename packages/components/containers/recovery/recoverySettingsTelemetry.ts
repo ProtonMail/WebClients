@@ -10,7 +10,7 @@ import { TelemetryMeasurementGroups, TelemetryRecoverySettingsEvents } from '@pr
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 
-export type RecoverySettingsTelemetryVariant = 'A' | 'B';
+type RecoverySettingsTelemetryVariant = 'A' | 'B';
 
 const RecoverySettingsTelemetryVariantContext = createContext<RecoverySettingsTelemetryVariant>('A');
 

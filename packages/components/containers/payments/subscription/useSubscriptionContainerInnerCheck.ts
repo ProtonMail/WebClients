@@ -36,7 +36,7 @@ import { switchCycle } from './helpers/switchCycle';
 
 export const getCodes = ({ gift, coupon }: Pick<Model, 'gift' | 'coupon'>): string[] => [gift, coupon].filter(isTruthy);
 
-export interface PlanTransitionCallbacks {
+interface PlanTransitionCallbacks {
     onPlusToPlusTransition: (unlockPlan: Plan | undefined) => void;
     onVisionaryDowngradeWarning: () => Promise<void>;
     onVisionaryDowngradeHide: () => void;

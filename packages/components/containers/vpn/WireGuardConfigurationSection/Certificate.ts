@@ -1,6 +1,6 @@
 import type { KeyMode } from './KeyPair';
 
-export type CertificateMode = 'session' | 'persistent';
+type CertificateMode = 'session' | 'persistent';
 
 export interface CertificateGenerationParams {
     ClientPublicKey: string;

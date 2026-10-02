@@ -8,7 +8,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import Prompt from '../../../components/prompt/Prompt';
 import type { PromptProps } from '../../../components/prompt/Prompt';
 
-export type VisionaryWarningModalOwnProps = { type: 'downgrade' | 'switch' | 'delete' };
+type VisionaryWarningModalOwnProps = { type: 'downgrade' | 'switch' | 'delete' };
 
 interface Props extends Omit<PromptProps, 'children' | 'title' | 'buttons'>, VisionaryWarningModalOwnProps {
     onConfirm: () => void;

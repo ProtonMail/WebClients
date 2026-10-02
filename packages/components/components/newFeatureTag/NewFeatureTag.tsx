@@ -13,7 +13,7 @@ import Spotlight from '../spotlight/Spotlight';
 
 export type IsActiveInEnvironmentContainer = { [key in EnvironmentExtended]?: boolean };
 
-export interface NewFeatureTagProps {
+interface NewFeatureTagProps {
     /** Used for localStorage key */
     featureKey: string;
     /** Will be hide after the user saw it once */

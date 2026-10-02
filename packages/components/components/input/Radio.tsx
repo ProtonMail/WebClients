@@ -2,7 +2,7 @@ import type { InputHTMLAttributes } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-export interface Props extends InputHTMLAttributes<HTMLInputElement> {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
     id: string;
     className?: string;
     name: string;
