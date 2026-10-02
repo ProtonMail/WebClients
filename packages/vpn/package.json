@@ -23,7 +23,7 @@
         "./routes/organization": "./src/routes/organization/index.tsx"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "TZ=UTC vitest run",
         "test:ci": "pnpm run test --run",

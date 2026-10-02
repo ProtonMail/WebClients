@@ -17,7 +17,7 @@
     },
     "scripts": {
         "check:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs --check",
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "generate:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs",
         "lint": "eslint --quiet",
         "test": "jest",

@@ -43,7 +43,7 @@
         "i18n:validate:context:web": {
             "inputs": ["po/**"]
         },
-        "check-types": {
+        "check:types": {
             "dependsOn": ["transit"]
         },
         "dev": {

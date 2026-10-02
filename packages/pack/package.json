@@ -7,7 +7,7 @@
         "proton-pack": "./bin/protonPack.js"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "pretty": "prettier --write  cli bin"
     },

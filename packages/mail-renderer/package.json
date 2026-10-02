@@ -28,7 +28,7 @@
         "./hooks/useObserveIframeHeight": "./src/hooks/useObserveIframeHeight.ts"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest --logHeapUsage --forceExit",
         "test:ci": "jest --runInBand --ci --forceExit --logHeapUsage",

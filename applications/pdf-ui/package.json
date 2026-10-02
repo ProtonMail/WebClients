@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "build": "tsc && vite build",
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "preview": "vite preview",
         "start": "vite"

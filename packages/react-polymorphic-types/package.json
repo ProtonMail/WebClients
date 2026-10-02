@@ -16,7 +16,7 @@
         "empty.js"
     ],
     "scripts": {
-        "check-types": "tsc --checkers 1"
+        "check:types": "tsc --checkers 1"
     },
     "devDependencies": {
         "@types/react": "^18.3.31",
