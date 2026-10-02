@@ -55,6 +55,7 @@ import {
     isArtifactSaveFormatSupported,
 } from './artifactSaveFormats';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
+import { normalizeDocumentCardFences } from './artifactVizCards';
 import type { ArtifactType } from './parseArtifacts';
 
 import './ArtifactPanel.scss';
@@ -567,7 +568,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     useEffect(() => {
         setManualEditActive(false);
         setManualEditMode('rich');
-        setDraftContent(selectedArtifact?.content ?? '');
+        setDraftContent(normalizeDocumentCardFences(selectedArtifact?.content ?? ''));
     }, [selectedArtifact?.id, selectedVersionIndex]);
 
     const selectedContent = selectedArtifact?.content;
@@ -579,7 +580,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         let cancelled = false;
         void loadNormalizeMarkdownForEditor()
             .then((normalize) => {
-                return normalize(selectedContent);
+                return normalize(normalizeDocumentCardFences(selectedContent));
             })
             .then((normalized) => {
                 if (!cancelled) {
@@ -624,8 +625,11 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         !isSelectedVersionProvisional &&
         versionCount !== undefined &&
         selectedVersionIndex === versionCount - 1;
+    // The editor starts from what the preview shows: leaked chat card fences already turned into a
+    // table / quote (D12). Saving persists that form; opening and saving unchanged still is a no-op.
+    const editableContent = normalizeDocumentCardFences(artifact.content);
     const isUnchangedDraft = (content: string) => {
-        return content === artifact.content || content === normalizedOriginalContent;
+        return content === artifact.content || content === editableContent || content === normalizedOriginalContent;
     };
     const manualEditDirty = !isUnchangedDraft(draftContent) && draftContent.trim().length > 0;
     const artifactSaveFormats =
@@ -649,13 +653,13 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     };
 
     const handleStartManualEdit = () => {
-        setDraftContent(artifact.content);
+        setDraftContent(editableContent);
         setManualEditMode('rich');
         setManualEditActive(true);
     };
 
     const handleCancelManualEdit = () => {
-        setDraftContent(artifact.content);
+        setDraftContent(editableContent);
         setManualEditActive(false);
     };
 
