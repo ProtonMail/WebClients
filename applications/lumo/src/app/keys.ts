@@ -42,7 +42,7 @@ declare const LUMO_CUSTOM_PUB_KEY: string | undefined;
  * To use a custom key (e.g., for local dev backend):
  * 1. Save your dev public key to a file: ~/.proton/lumo-dev.pub
  * 2. Set environment variable: export LUMO_PUB_KEY_PATH=~/.proton/lumo-dev.pub
- * 3. Start the app: yarn workspace proton-lumo start
+ * 3. Start the app: pnpm --filter proton-lumo run start
  *
  * The custom key is loaded by webpack at build time and injected as a compile-time constant.
  * No key material needs to be committed to the repository.

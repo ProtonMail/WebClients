@@ -16,13 +16,10 @@ tests/pass/hars/**/*
 .stylelintcache
 .eslintcache
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 node_modules
 dist
 config.ts
 tsconfig.tsbuildinfo
-.yarn/*
 .pnp.*
 .netlify
 storybook-static
