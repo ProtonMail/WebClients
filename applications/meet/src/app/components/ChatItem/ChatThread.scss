@@ -20,6 +20,13 @@
 		color: var(--interaction-norm-major-1) !important;
 	}
 
+	// Positioned content in the replies (quick-reaction toolbar, `.absolute` reply placeholder) shares the
+	// pinned root's z-index and comes later in the DOM, so it would paint over the root. Only while pinned:
+	// otherwise the first reply's toolbar is meant to overlap the toggle row above it.
+	&.chat-thread--stuck .chat-thread-body {
+		isolation: isolate;
+	}
+
 	.chat-thread-body {
 		&-open {
 			border-inline-start: 2px solid var(--border-norm);
