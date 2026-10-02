@@ -6,6 +6,7 @@ import { defaultApp as app, makeCheckResult, makePlan, makePricing } from './tes
 
 jest.mock('../../components/RenewalNotice', () => ({
     getCheckoutRenewNoticeTextFromCheckResult: jest.fn(() => 'mocked renewal notice'),
+    getSwitchTermsNoticeText: jest.fn(() => 'mocked switch terms notice'),
     calculateRenewalTimeDuringCheckout: jest.fn(() => 'mocked renewal time'),
 }));
 
@@ -14,6 +15,13 @@ const mailPlan = makePlan({
     Title: 'Mail Plus',
     Pricing: makePricing(499, 4788, 8376),
     DefaultPricing: makePricing(499, 4788, 8376),
+});
+
+const passBasicPlan = makePlan({
+    Name: PLANS.PASS_BASIC,
+    Title: 'Pass Basic',
+    Pricing: makePricing(199, 1999, 3999),
+    DefaultPricing: makePricing(199, 1999, 3999),
 });
 
 const notForbidden: any = { forbidden: false };
@@ -34,5 +42,17 @@ describe('createRenewalNoticeItem', () => {
         const renewalNotice = result.getItem('renewalNotice');
         expect(renewalNotice.visible).toBe(true);
         expect(renewalNotice.content).toBe('mocked renewal notice');
+    });
+
+    it('should use the switch terms notice for Pass basic', () => {
+        const result = getHeadlessCheckout({
+            planIDs: { [PLANS.PASS_BASIC]: 1 },
+            plansMap: { [PLANS.PASS_BASIC]: passBasicPlan },
+            checkResult: makeCheckResult(),
+            paymentForbiddenReason: notForbidden,
+            app,
+        });
+
+        expect(result.getItem('renewalNotice').content).toBe('mocked switch terms notice');
     });
 });

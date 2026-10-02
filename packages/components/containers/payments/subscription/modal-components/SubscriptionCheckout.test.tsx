@@ -6,7 +6,7 @@ import { buildUser } from '@proton/account/testing/buildUser';
 import { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
@@ -23,10 +23,24 @@ jest.mock('@proton/app-context/useConfig', () => ({
 }));
 
 jest.mock('../../Checkout', () => {
-    const MockChildrenOnly = ({ children }: { children: ReactNode }) => <>{children}</>;
+    const MockCheckout = ({
+        children,
+        renewNotice,
+        showPaymentProtectionCopy,
+    }: {
+        children: ReactNode;
+        renewNotice: ReactNode;
+        showPaymentProtectionCopy: boolean;
+    }) => (
+        <>
+            {children}
+            <div data-testid="renew-notice">{renewNotice}</div>
+            {showPaymentProtectionCopy && <div data-testid="payment-protection-copy" />}
+        </>
+    );
     return {
         __esModule: true,
-        default: MockChildrenOnly,
+        default: MockCheckout,
     };
 });
 
@@ -530,4 +544,80 @@ describe('SubscriptionCheckout', () => {
 
         expect(screen.queryAllByTestId('members-price-per-month')).toHaveLength(0);
     });
+
+    it.each([
+        { plan: PLANS.PASS, rowCount: 1 },
+        { plan: PLANS.PASS_BASIC, rowCount: 0 },
+    ])('should render $rowCount price, tax-exclusive, proration and credits row for $plan', ({ plan, rowCount }) => {
+        renderWithProviders(
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
+                checkResult={{
+                    ...checkResult,
+                    TaxMode: TaxMode.EXCLUSIVE,
+                    Taxes: [{ Name: 'VAT', Rate: 20, Amount: 100 }],
+                    Proration: -451,
+                    Credit: -200,
+                }}
+                plansMap={{} as any}
+                currency="CHF"
+                cycle={CYCLE.MONTHLY}
+                planIDs={{ [plan]: 1 }}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={true}
+                isCustomBilling={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
+                isScheduled={false}
+                subscription={buildSubscription()}
+                paymentForbiddenReason={{ forbidden: false }}
+                paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
+                trial={false}
+            />
+        );
+
+        expect(screen.queryAllByTestId('price')).toHaveLength(rowCount);
+        expect(screen.queryAllByTestId('container-undefined')).toHaveLength(rowCount);
+        expect(screen.queryAllByTestId('proration-value')).toHaveLength(rowCount);
+        expect(screen.queryAllByTestId('credits-value')).toHaveLength(rowCount);
+    });
+
+    it.each([
+        { plan: PLANS.PASS, isPassBasic: false },
+        { plan: PLANS.PASS_BASIC, isPassBasic: true },
+    ])(
+        'should show the switch terms notice instead of payment protection copy for $plan: $isPassBasic',
+        ({ plan, isPassBasic }) => {
+            renderWithProviders(
+                <WrappedSubscriptionCheckout
+                    freePlan={FREE_PLAN}
+                    checkResult={{ ...checkResult, AmountDue: 0 }}
+                    plansMap={{} as any}
+                    currency="CHF"
+                    cycle={CYCLE.MONTHLY}
+                    planIDs={{ [plan]: 1 }}
+                    user={buildUser()}
+                    onChangeCurrency={() => {}}
+                    isProration={false}
+                    isCustomBilling={false}
+                    isScheduledChargedImmediately={false}
+                    isScheduledChargedLater={false}
+                    isScheduled={false}
+                    subscription={buildSubscription()}
+                    paymentForbiddenReason={{ forbidden: false }}
+                    paymentMethods={{} as any}
+                    paymentFacade={{ showTaxCountry: true } as any}
+                    trial={false}
+                />
+            );
+
+            expect(screen.queryAllByTestId('payment-protection-copy')).toHaveLength(isPassBasic ? 0 : 1);
+            expect(
+                screen.getByTestId('renew-notice').textContent ===
+                    'By switching, you agree to our terms and conditions.'
+            ).toBe(isPassBasic);
+        }
+    );
 });
