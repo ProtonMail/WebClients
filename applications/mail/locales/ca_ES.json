@@ -1756,6 +1756,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "New chat": [
+        "Nou xat"
       ]
     },
     "action": {
@@ -4463,6 +4466,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "De: ${ sender } - ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "De: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -6957,7 +6963,7 @@
         "En curs"
       ],
       "Migrated": [
-        "S'han migrat"
+        "S'ha migrat"
       ],
       "Pending": [
         "Està pendent"
@@ -8245,8 +8251,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -13619,13 +13624,13 @@
         "23 del mes"
       ],
       "24th of the month": [
-        "el dia 24 del mes"
+        "24 del mes"
       ],
       "25th of the month": [
         "25 del mes"
       ],
       "26th of the month": [
-        "el dia 26 del mes"
+        "26 del mes"
       ],
       "27th of the month": [
         "el dia 27 del mes"
@@ -13637,10 +13642,10 @@
         "el dia 29 del mes"
       ],
       "2nd of the month": [
-        "el dia 2 del mes"
+        "2 del mes"
       ],
       "30th of the month": [
-        "el dia 30 del mes"
+        "30 del mes"
       ],
       "31st of the month": [
         "el dia 31 del mes"
@@ -13658,7 +13663,7 @@
         "el dia 6 del mes"
       ],
       "7th of the month": [
-        "el dia 7 del mes"
+        "7 del mes"
       ],
       "8th of the month": [
         "el dia 8 del mes"
@@ -13991,6 +13996,78 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } no es pot combinar amb ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } només està disponible als plans d'empresa."
+      ],
+      "An organization is required for this plan.": [
+        "Es requereix una organització per a aquest pla."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private no es pot comprar amb una subscripció activa."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private requereix una donació."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Comprar crèdits requereix una compra independent."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Només es pot comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Tanqueu els comptes de cartera addicionals abans de canviar de pla."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Tanqueu les carteres addicionals abans de canviar de pla."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Les llicències d'Scribe no poden superar el nombre de membres."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "El pla seleccionat no ofereix prou adreces per al vostre compte."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "El pla seleccionat no ofereix prou dominis per al vostre compte."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "El pla seleccionat no ofereix prou membres per al vostre compte."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "El pla seleccionat no ofereix prou emmagatzematge per al teu compte."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Aquest servidor dedicat està assignat a una passarel·la i no es pot canviar."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Aquest pla no suporta els membres del vostre compte."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Els plans de prova no admeten llicències de ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Els plans de prova no admeten dominis personalitzats."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Els plans de prova no admeten IP dedicades."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Els plans de prova no admeten llicències d'Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Els plans de prova no admeten tants membres."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Ja teniu ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Ja teniu Born Private."
+      ],
+      "Your account is too old for Born Private.": [
+        "El vostre compte és massa antic per a Born Private."
       ]
     },
     "Payments.Error": {
@@ -14284,7 +14361,7 @@
         "Cerca per nom o correu electrònic"
       ],
       "Search for users or addresses": [
-        "Cercar un usuari o adreça"
+        "Cerca usuaris o adreces"
       ],
       "Search messages": [
         "Cerqueu missatges"
