@@ -7,7 +7,7 @@ import { getProcessingCategory } from './filetypes';
 /**
  * Check if a file is a spreadsheet (CSV or Excel)
  */
-export function isSpreadsheetFile(file: File): boolean {
+function isSpreadsheetFile(file: File): boolean {
     const category = getProcessingCategory(file.type, file.name);
     return category === 'csv' || category === 'excel';
 }
@@ -48,20 +48,6 @@ export function isPresentationFile(file: File): boolean {
  */
 export function isImageFile(file: File): boolean {
     return getProcessingCategory(file.type, file.name) === 'image';
-}
-
-/**
- * Check if a file is a PDF
- */
-export function isPdfFile(file: File): boolean {
-    return getProcessingCategory(file.type, file.name) === 'pdf';
-}
-
-/**
- * Check if a file is a text file
- */
-export function isTextFile(file: File): boolean {
-    return getProcessingCategory(file.type, file.name) === 'text';
 }
 
 /**

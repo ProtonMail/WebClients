@@ -35,7 +35,7 @@ export function* waitForMasterKey(context: string): SagaIterator<Base64> {
     return bundle.primaryMasterKey;
 }
 
-export function* waitForMasterKeysBundle(context: string): SagaIterator<MasterKeysBundle> {
+function* waitForMasterKeysBundle(context: string): SagaIterator<MasterKeysBundle> {
     const masterKeyState: MasterKeyState = yield select(selectMasterKeyState);
 
     switch (masterKeyState.status) {

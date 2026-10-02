@@ -3,7 +3,7 @@ import type { ImageProcessingResult, ProcessingError, TextProcessingResult } fro
 
 export type InternalTextResult = Omit<TextProcessingResult, 'id'>;
 export type InternalImageResult = Omit<ImageProcessingResult, 'id'>;
-export type InternalError = Omit<ProcessingError, 'id'>;
+type InternalError = Omit<ProcessingError, 'id'>;
 export type InternalFileResult = InternalTextResult | InternalImageResult | InternalError;
 
 export interface TruncationResult {

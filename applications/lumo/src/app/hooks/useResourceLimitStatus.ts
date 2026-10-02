@@ -2,11 +2,7 @@ import { useMemo } from 'react';
 
 import { APPROACHING_LIMIT_RATIO, RESOURCE_LIMITS, type ResourceLimitType } from '../constants/limits';
 import { useLumoSelector } from '../redux/hooks';
-import {
-    selectAttachmentsBySpaceId,
-    selectConversationsBySpaceId,
-    selectMessagesByConversationId,
-} from '../redux/selectors';
+import { selectAttachmentsBySpaceId, selectMessagesByConversationId } from '../redux/selectors';
 import type { DebugLimitOverride } from '../redux/slices/meta/errors';
 import { selectDebugLimitOverride } from '../redux/slices/meta/errors';
 import type { ConversationId, SpaceId } from '../types';
@@ -72,15 +68,6 @@ export const useMessagesLimitStatus = (conversationId: ConversationId | null | u
     );
 };
 
-export const useConversationsLimitStatus = (spaceId: SpaceId | null | undefined): ResourceLimitStatus => {
-    const conversations = useLumoSelector(selectConversationsBySpaceId(spaceId));
-    const overrideState = useLumoSelector(selectDebugLimitOverride('conversations'));
-    return useMemo(
-        () => buildStatus('conversations', Object.keys(conversations).length, overrideState.override),
-        [conversations, overrideState]
-    );
-};
-
 export const useAssetsLimitStatus = (spaceId: SpaceId | null | undefined): ResourceLimitStatus => {
     const attachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
     const overrideState = useLumoSelector(selectDebugLimitOverride('assets'));
@@ -92,14 +79,5 @@ export const useAssetsLimitStatus = (spaceId: SpaceId | null | undefined): Resou
                 spaceId && overrideState.spaceId === spaceId ? overrideState.override : null
             ),
         [attachments, spaceId, overrideState]
-    );
-};
-
-export const useSpacesLimitStatus = (): ResourceLimitStatus => {
-    const spaces = useLumoSelector((state) => state.spaces);
-    const overrideState = useLumoSelector(selectDebugLimitOverride('spaces'));
-    return useMemo(
-        () => buildStatus('spaces', Object.keys(spaces).length, overrideState.override),
-        [spaces, overrideState]
     );
 };

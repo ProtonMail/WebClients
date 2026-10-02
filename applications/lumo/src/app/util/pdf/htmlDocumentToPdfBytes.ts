@@ -1,4 +1,5 @@
 import { yieldToMainThread } from '../export/exportUiHelpers';
+import type { MountedExportDocument } from '../export/htmlDocumentCapture';
 import {
     DEFAULT_VIEWPORT_WIDTH,
     PRESENTATION_CAPTURE_SCALE,
@@ -10,9 +11,6 @@ import {
     mountExportDocument,
     prepareMountedExport,
 } from '../export/htmlDocumentCapture';
-import type { MountedExportDocument } from '../export/htmlDocumentCapture';
-
-export { PDF_EXPORT_BODY_CLASS } from '../export/htmlDocumentCapture';
 
 export type PdfExportProgressCallback = (current: number, total: number) => void;
 

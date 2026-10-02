@@ -7,10 +7,10 @@ export const LUMO_ROUTES = {
     AI_PAPER_TRAIL: '/aitrail',
 } as const;
 
-export const isGuestPathname = (pathname: string): boolean =>
+const isGuestPathname = (pathname: string): boolean =>
     pathname === LUMO_ROUTES.GUEST || pathname.startsWith(`${LUMO_ROUTES.GUEST}/`);
 
-export const isAgentPathname = (pathname: string): boolean =>
+const isAgentPathname = (pathname: string): boolean =>
     pathname === LUMO_ROUTES.AGENT || pathname.startsWith(`${LUMO_ROUTES.AGENT}/`);
 
 export const isPublicPathname = (pathname: string): boolean =>

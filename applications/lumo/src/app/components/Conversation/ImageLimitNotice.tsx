@@ -31,5 +31,3 @@ export const ImageLimitNotice = ({ exceedsLimit }: ImageLimitNoticeProps) => {
         </div>
     );
 };
-
-export default ImageLimitNotice;

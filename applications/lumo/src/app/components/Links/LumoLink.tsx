@@ -14,5 +14,3 @@ export const LumoLink = ({ to, ...props }: any) => {
 
     return <RouterLink to={fullPath} {...props} style={{ textDecoration: 'none', color: 'inherit' }} />;
 };
-
-export default LumoLink;

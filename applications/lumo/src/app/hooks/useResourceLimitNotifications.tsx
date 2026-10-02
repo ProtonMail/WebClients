@@ -8,7 +8,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { selectConversationById } from '../redux/selectors';
-import type { ResourceLimitError, ResourceLimitType } from '../redux/slices/meta/errors';
+import type { ResourceLimitError } from '../redux/slices/meta/errors';
 import { dismissResourceLimitError, selectResourceLimitErrors } from '../redux/slices/meta/errors';
 import { limitResourceToErrorType, onComposerError } from '../remote/nativeComposerBridgeHelpers';
 import type { ConversationId, SpaceId } from '../types';
@@ -99,27 +99,4 @@ export const useResourceLimitNotifications = () => {
             dispatch(dismissResourceLimitError(error.id));
         }
     }, [errors, createNotification, dispatch, activeConversationId, activeSpaceId, spaces]);
-};
-
-export const getApproachingLimitText = (resource: ResourceLimitType, _remaining: number): string => {
-    switch (resource) {
-        case 'messages':
-            // translator: shown when a conversation is getting long. Frames it as a performance hint, not a plan limit.
-            return c('collider_2025: Warning')
-                .t`This conversation is getting long. Start a new chat soon to keep ${LUMO_SHORT_APP_NAME} purring.`;
-        case 'assets':
-            // translator: shown when a project is getting close to its responsive file capacity.
-            return c('collider_2025: Warning')
-                .t`This project is filling up. Tidying away files you no longer need keeps ${LUMO_SHORT_APP_NAME} purring.`;
-        case 'conversations':
-            // translator: shown when a project is getting close to its responsive conversation capacity.
-            return c('collider_2025: Warning')
-                .t`This project is filling up. Tidying away conversations you no longer need keeps ${LUMO_SHORT_APP_NAME} purring.`;
-        case 'spaces':
-            // translator: shown when a user is getting close to the number of projects that stay responsive.
-            return c('collider_2025: Warning')
-                .t`You're getting close to the number of projects ${LUMO_SHORT_APP_NAME} can keep purring over.`;
-        default:
-            return '';
-    }
 };

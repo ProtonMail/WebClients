@@ -8,7 +8,7 @@ import type { LumoDispatch } from '../redux/store';
 import { attachmentDataCache } from '../services/attachmentDataCache';
 import type { Attachment, SpaceId } from '../types';
 
-export function attachmentMatchesProjectFile(
+function attachmentMatchesProjectFile(
     attachment: Pick<Attachment, 'filename' | 'driveNodeId'>,
     projectFile: Pick<Attachment, 'filename' | 'driveNodeId'>
 ): boolean {
@@ -58,7 +58,7 @@ export function isAttachmentRemovedFromProjectKnowledge(
 /**
  * Format attachment content with standard markers for LLM context
  */
-export function formatAttachmentContext(attachment: Attachment): string {
+function formatAttachmentContext(attachment: Attachment): string {
     if (!attachment.markdown) {
         return '';
     }

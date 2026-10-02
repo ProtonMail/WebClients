@@ -32,7 +32,7 @@ import { useImageLimitInfo } from './useImageLimitInfo';
 
 import './ConversationComponent.scss';
 
-export interface ConversationComponentProps {
+interface ConversationComponentProps {
     isGenerating?: boolean;
     isProcessingAttachment: boolean;
     conversation?: Conversation;

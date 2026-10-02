@@ -22,14 +22,7 @@ import {
 
 const chartFontSize = (designPx: number) => scaleChartFontSize(designPx, true);
 
-export {
-    PROTON_BAR_COLOR,
-    PROTON_CATEGORY_COLORS,
-    PROTON_CHART_COLORS,
-    PROTON_LINE_ACCENT,
-    PROTON_LINE_COLOR,
-    PROTON_PURPLE,
-} from './protonChartTokens';
+export { PROTON_CATEGORY_COLORS, PROTON_PURPLE } from './protonChartTokens';
 
 const DARK_AXIS = {
     ink: '#FFFFFF',
