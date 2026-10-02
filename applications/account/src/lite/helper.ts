@@ -13,6 +13,7 @@ export enum SupportedActions {
     SpamFiltersSettings = 'spam-filters-settings', // ET
     PrivacySecuritySettings = 'privacy-security-settings', // ET
     CategoryView = 'category-view', // ET
+    BYOEMobile = 'byoe-mobile', // ET
     VPNLite = 'vpn-lite',
     SignOut = 'sign-out',
 }
