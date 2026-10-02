@@ -4,6 +4,8 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
@@ -67,7 +69,7 @@ export const AutofillIdentity: FC<Props> = ({ action, ...payload }) => {
                       state.needsUpgrade && (
                           <ListItem
                               key="upgrade-autofill"
-                              icon={{ type: 'icon', icon: 'arrow-within-square' }}
+                              icon={{ type: 'icon', icon: IcArrowWithinSquare }}
                               title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
                               subTitle={c('Warning')
                                   .t`Your plan only allows you to autofill from your first two vaults`}
@@ -80,7 +82,7 @@ export const AutofillIdentity: FC<Props> = ({ action, ...payload }) => {
                               key={itemId}
                               title={name}
                               subTitle={fullName || c('Title').t`Identity`}
-                              icon={{ type: 'icon', icon: 'card-identity' }}
+                              icon={{ type: 'icon', icon: IcCardIdentity }}
                               onClick={() => {
                                   controller.forwardMessage({
                                       type: InlinePortMessageType.AUTOFILL_ACTION,

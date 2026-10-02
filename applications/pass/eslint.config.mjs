@@ -2,6 +2,7 @@ import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
 import { createBarrelPaths } from '@proton/eslint-config-proton/barrel';
+import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
 import { createRestrictedImportRule } from '@proton/eslint-config-proton/restrictedImports';
 
 const noParentRelativeImports = {
@@ -9,7 +10,10 @@ const noParentRelativeImports = {
     message: 'Use the proton-pass-web/* alias instead of walking up directories.',
 };
 
-const restrictedImportOptions = { paths: createBarrelPaths(), patterns: [noParentRelativeImports] };
+const restrictedImportOptions = {
+    paths: [...createBarrelPaths(), ...iconRestrictedImports],
+    patterns: [noParentRelativeImports],
+};
 
 export default defineConfig([
     defaultConfig,

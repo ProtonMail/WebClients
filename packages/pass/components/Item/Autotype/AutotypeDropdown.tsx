@@ -8,6 +8,7 @@ import Badge from '@proton/components/components/badge/Badge';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 
 import { UpsellRef } from '../../../constants';
 import { useAutotypeExecute } from '../../../hooks/autotype/useAutotypeExecute';
@@ -50,7 +51,7 @@ export const AutotypeDropdown: FC<AutotypeDropdownProps> = ({ actions }) => {
                         {isFreePlan && <PassPlusIcon className="ml-2 shrink-0" />}
                     </>
                 }
-                icon="magic-wand"
+                icon={IcMagicWand}
                 extra={
                     autotypeDiscoverySpotlight.open &&
                     !isFreePlan && (

@@ -4,14 +4,14 @@ import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownMenuButton } from './DropdownMenuButton';
 
 export const DROPDOWN_SEPARATOR = '__SEPARATOR__' as const;
 export type DropdownMenuOption =
-    { label: string; value: string; icon?: IconName; onClick: () => void } | typeof DROPDOWN_SEPARATOR;
+    { label: string; value: string; icon?: IconComponent; onClick: () => void } | typeof DROPDOWN_SEPARATOR;
 
 type DropdownMenuBaseProps = PropsWithChildren & {
     className?: string;

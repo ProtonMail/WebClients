@@ -4,6 +4,7 @@ import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
+import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
 import noop from '@proton/utils/noop';
 
 import type { SanitizedAliasOptions } from '../../../hooks/useAliasOptions';
@@ -43,7 +44,7 @@ const AliasFormBase: FC<
                     label={c('Label').t`Forwards to`}
                     placeholder={c('Label').t`Select an email address`}
                     component={SelectField}
-                    icon="arrow-up-and-right-big"
+                    icon={IcArrowUpAndRightBig}
                     multiple
                     disabled={disabled || mailboxes.length <= 1}
                     loading={loading}

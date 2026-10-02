@@ -8,7 +8,10 @@ import type { DropdownProps } from '@proton/components/components/dropdown/Dropd
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import clsx from '@proton/utils/clsx';
 
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
@@ -27,41 +30,41 @@ type Props = {
 };
 
 const getSortOptionDetails = (option: ItemSortFilter) => {
-    const options: Record<string, { label: string; shortLabel: string; icon: IconName }> = {
+    const options: Record<string, { label: string; shortLabel: string; icon: IconComponent }> = {
         relevant: {
             // translator: this is sorting filter label from drop down menu (Relevant means search results are ordered by how well they match the search term)
             label: c('Label').t`Relevant`,
             // translator: this is short filter label for "Relevant" (when filter is selected)
             shortLabel: c('Label').t`Relevant`,
-            icon: 'magnifier',
+            icon: IcMagnifier,
         },
         createTimeASC: {
             // translator: this is sorting filter label from drop down menu
             label: c('Label').t`Oldest to newest`,
             // translator: this is short filter label for "Oldest to newest" (when filter is selected)
             shortLabel: c('Label').t`Old-New`,
-            icon: 'arrow-down-arrow-up',
+            icon: IcArrowDownArrowUp,
         },
         createTimeDESC: {
             // translator: this is sorting filter label from drop down menu
             label: c('Label').t`Newest to oldest`,
             // translator: this is short filter label for "Newest to oldest" (when filter is selected)
             shortLabel: c('Label').t`New-Old`,
-            icon: 'arrow-down-arrow-up',
+            icon: IcArrowDownArrowUp,
         },
         recent: {
             // translator: this is sorting filter label from drop down menu (Recent means items that have been recently used or updated ordered by time (today, last week, last 2 weeks, last month...))
             label: c('Label').t`Most recent`,
             // translator: this is short filter label for "Most recent" (when filter is selected)
             shortLabel: c('Label').t`Recent`,
-            icon: 'clock',
+            icon: IcClock,
         },
         titleASC: {
             // translator: this is sorting filter label from drop down menu
             label: c('Label').t`Alphabetical`,
             // translator: this is short filter label for "Alphabetical" (when filter is selected)
             shortLabel: c('Label').t`A-Z`,
-            icon: 'arrow-down-arrow-up',
+            icon: IcArrowDownArrowUp,
         },
     };
 

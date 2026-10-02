@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Marks from '@proton/components/components/text/Marks';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcPinAngledFilled } from '@proton/icons/icons/IcPinAngledFilled';
 import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import clsx from '@proton/utils/clsx';
@@ -110,7 +111,7 @@ export const ItemsListItem = memo(
                                             className={
                                                 'ui-standard absolute bulk-select-check pass-item-list--checkmark'
                                             }
-                                            icon={'checkmark'}
+                                            icon={IcCheckmark}
                                             loadImage={false}
                                             normColor={false}
                                             pill

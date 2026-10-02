@@ -2,15 +2,16 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcGrid2 } from '@proton/icons/icons/IcGrid2';
 
-import { itemTypeToIconName } from '../../components/Layout/Icon/ItemIcon';
+import { itemTypeToIcon } from '../../components/Layout/Icon/ItemIcon';
 import { compoundItemFilters } from '../../lib/items/item.utils';
 import type { ItemType, ItemTypeFilter } from '../../types';
 import { PassFeature } from '../../types/api/features';
 import { useFeatureFlag } from '../useFeatureFlag';
 
-type ItemFilterData = { label: string; icon: IconName; itemFilters?: ItemType[] };
+type ItemFilterData = { label: string; icon: IconComponent; itemFilters?: ItemType[] };
 
 type ConditionalItemFilter<T extends boolean> = Omit<Record<ItemTypeFilter, ItemFilterData>, 'custom'> &
     (T extends true ? { custom: ItemFilterData } : { custom?: ItemFilterData });
@@ -22,33 +23,33 @@ export const useItemFilters = () => {
         () => ({
             '*': {
                 label: c('Label').t`All`,
-                icon: 'grid-2',
+                icon: IcGrid2,
             },
             login: {
                 label: c('Label').t`Logins`,
-                icon: itemTypeToIconName.login,
+                icon: itemTypeToIcon.login,
             },
             alias: {
                 label: c('Label').t`Aliases`,
-                icon: itemTypeToIconName.alias,
+                icon: itemTypeToIcon.alias,
             },
             creditCard: {
                 label: c('Label').t`Cards`,
-                icon: itemTypeToIconName.creditCard,
+                icon: itemTypeToIcon.creditCard,
             },
             note: {
                 label: c('Label').t`Notes`,
-                icon: itemTypeToIconName.note,
+                icon: itemTypeToIcon.note,
             },
             identity: {
                 label: c('Label').t`Identities`,
-                icon: itemTypeToIconName.identity,
+                icon: itemTypeToIcon.identity,
             },
             ...(customItemsEnabled
                 ? {
                       custom: {
                           label: c('Label').t`Custom Items`,
-                          icon: itemTypeToIconName.custom,
+                          icon: itemTypeToIcon.custom,
                           itemFilters: compoundItemFilters.custom,
                       },
                   }

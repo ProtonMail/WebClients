@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { IcLock } from '@proton/icons/icons/IcLock';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useUserInitiatedLock } from '../../../hooks/auth/useUserInitiatedLock';
@@ -31,7 +32,7 @@ export const AuthActions = memo(({ onLock }: Props) => {
                 onClick={handleLock}
                 disabled={disabled}
                 label={c('Action').t`Lock ${PASS_APP_NAME}`}
-                icon="lock"
+                icon={IcLock}
                 parentClassName="mx-3"
                 className="rounded"
             />

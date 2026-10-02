@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+
 import { useRequest } from '../../hooks/useRequest';
 import { secureLinksRemoveInactive } from '../../store/actions';
 import { selectInactiveSecureLinksCount } from '../../store/selectors';
@@ -26,7 +28,7 @@ export const SecureLinkQuickActions: FC = () => {
                         : c('Action').t`No expired links`
                 }
                 ellipsis
-                icon="trash"
+                icon={IcTrash}
                 size="small"
             />
         </QuickActionsDropdown>

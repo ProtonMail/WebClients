@@ -3,9 +3,18 @@ import { type FC, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
+import type { IconComponent } from '@proton/icons/component';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcAliasSlash } from '@proton/icons/icons/IcAliasSlash';
+import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import type { IconName, IconSize } from '@proton/icons/types';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcFilingCabinet } from '@proton/icons/icons/IcFilingCabinet';
+import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import { IcWrench } from '@proton/icons/icons/IcWrench';
+import type { IconSize } from '@proton/icons/types';
 import amex from '@proton/styles/assets/img/credit-card-icons/cc-american-express.svg';
 import masterCard from '@proton/styles/assets/img/credit-card-icons/cc-mastercard.svg';
 import visa from '@proton/styles/assets/img/credit-card-icons/cc-visa.svg';
@@ -19,24 +28,24 @@ import { CardType } from '../../../types/protobuf/item-v1.static';
 import { DomainIcon, ImageStatus } from './DomainIcon';
 import { IconBox, getIconSizePx } from './IconBox';
 
-export const itemTypeToIconName: ItemMap<IconName> = {
-    login: 'user',
-    note: 'file-lines',
-    alias: 'alias',
-    creditCard: 'credit-card',
-    identity: 'card-identity',
-    sshKey: 'filing-cabinet',
-    wifi: 'shield-2-bolt',
-    custom: 'wrench',
+export const itemTypeToIcon: ItemMap<IconComponent> = {
+    login: IcUser,
+    note: IcFileLines,
+    alias: IcAlias,
+    creditCard: IcCreditCard,
+    identity: IcCardIdentity,
+    sshKey: IcFilingCabinet,
+    wifi: IcShield2Bolt,
+    custom: IcWrench,
 };
 
-const presentItemIcon = (item: ItemRevision): IconName =>
-    isDisabledAliasItem(item) ? 'alias-slash' : itemTypeToIconName[item.data.type];
+const presentItemIcon = (item: ItemRevision): IconComponent =>
+    isDisabledAliasItem(item) ? IcAliasSlash : itemTypeToIcon[item.data.type];
 
 type BaseItemIconProps = {
     alt: string;
     className?: string;
-    icon: IconName;
+    icon: IconComponent;
     iconClassName?: string;
     loadImage?: boolean;
     normColor?: boolean;
@@ -50,7 +59,7 @@ type BaseItemIconProps = {
 export const ItemIcon: FC<BaseItemIconProps> = ({
     alt,
     className,
-    icon,
+    icon: Icon,
     iconClassName,
     loadImage = true,
     normColor = true,
@@ -106,7 +115,6 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
                 <Icon
                     className={clsx('absolute inset-center', iconClassName, ready && 'anime-fade-out')}
                     color={normColor ? 'var(--interaction-norm)' : ''}
-                    name={icon}
                     size={size}
                 />
             )}

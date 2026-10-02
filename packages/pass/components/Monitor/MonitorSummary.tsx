@@ -6,6 +6,8 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcExclamationFilled } from '@proton/icons/icons/IcExclamationFilled';
 import { DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { UpsellRef } from '../../constants';
@@ -19,6 +21,7 @@ import { TelemetryEventName } from '../../types/data/telemetry';
 import { PillBadge } from '../Layout/Badge/PillBadge';
 import { ButtonCard } from '../Layout/Card/ButtonCard';
 import { CardContent } from '../Layout/Card/CardContent';
+import { CardIcon } from '../Layout/Card/CardIcon';
 import { useNavigate } from '../Navigation/NavigationActions';
 import { getLocalPath } from '../Navigation/routing';
 import { PassPlusPromotionButton } from '../Upsell/PassPlusPromotionButton';
@@ -93,18 +96,18 @@ export const MonitorSummary: FC = () => {
                                     title={c('Title').t`Weak passwords`}
                                     type={insecure.count > 0 ? 'warning' : insecure.loading ? 'primary' : 'success'}
                                     icon={
-                                        insecureReady
-                                            ? insecure.count > 0
-                                                ? 'exclamation-filled'
-                                                : 'checkmark'
-                                            : () => <CircleLoader size="small" />
+                                        insecureReady ? (
+                                            <CardIcon icon={insecure.count > 0 ? IcExclamationFilled : IcCheckmark} />
+                                        ) : (
+                                            <CircleLoader size="small" />
+                                        )
                                     }
                                 />
 
                                 <ButtonCard
                                     actions={<PillBadge label={duplicates.count} />}
                                     disabled={duplicates.count === 0}
-                                    icon={duplicates.count > 0 ? 'exclamation-filled' : 'checkmark'}
+                                    icon={<CardIcon icon={duplicates.count > 0 ? IcExclamationFilled : IcCheckmark} />}
                                     onClick={() => navigate(getLocalPath('monitor/duplicates'))}
                                     subtitle={c('Description').t`Create unique passwords`}
                                     title={c('Title').t`Reused passwords`}
@@ -132,11 +135,13 @@ export const MonitorSummary: FC = () => {
                                                       : 'success'
                                             }
                                             icon={
-                                                compromisedReady
-                                                    ? compromised.count > 0
-                                                        ? 'exclamation-filled'
-                                                        : 'checkmark'
-                                                    : () => <CircleLoader size="small" />
+                                                compromisedReady ? (
+                                                    <CardIcon
+                                                        icon={compromised.count > 0 ? IcExclamationFilled : IcCheckmark}
+                                                    />
+                                                ) : (
+                                                    <CircleLoader size="small" />
+                                                )
                                             }
                                         />
                                     ) : (
@@ -185,11 +190,11 @@ export const MonitorSummary: FC = () => {
                                 onClose={() => setUpsellModalOpen(false)}
                                 features={
                                     <div className="border border-weak p-4 w-full rounded-xl">
-                                        {features.map(({ label, icon }) => (
+                                        {features.map(({ label, icon: Icon }) => (
                                             <CardContent
                                                 key={label}
                                                 className="p-2 text-lg color-primary"
-                                                icon={icon}
+                                                icon={Icon && <Icon size={5} />}
                                                 title={label}
                                                 ellipsis
                                             />

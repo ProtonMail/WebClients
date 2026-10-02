@@ -3,6 +3,9 @@ import type { FC, ReactNode } from 'react';
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+
 import { useInviteForm } from '../../../hooks/invite/useInviteForm';
 import { AccessTarget } from '../../../lib/access/types';
 import type { ItemInviteFormValues, SelectedItem } from '../../../types';
@@ -35,7 +38,7 @@ export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
             case 'members':
                 return {
                     closeAction: close,
-                    closeIcon: 'cross-big',
+                    closeIcon: IcCrossBig,
                     closeLabel: c('Action').t`Close`,
                     submitDisabled,
                     submitText: c('Action').t`Continue`,
@@ -43,7 +46,7 @@ export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
             case 'permissions':
                 return {
                     closeAction: () => form.setFieldValue('step', 'members'),
-                    closeIcon: 'chevron-left',
+                    closeIcon: IcChevronLeft,
                     closeLabel: c('Action').t`Back`,
                     submitDisabled,
                     submitText: c('Action').t`Continue`,
@@ -52,7 +55,7 @@ export const ItemInviteCreate: FC<SelectedItem> = ({ shareId, itemId }) => {
             case 'review':
                 return {
                     closeAction: () => form.setFieldValue('step', 'permissions'),
-                    closeIcon: 'chevron-left',
+                    closeIcon: IcChevronLeft,
                     closeLabel: c('Action').t`Back`,
                     submitDisabled,
                     submitLoading: loading,

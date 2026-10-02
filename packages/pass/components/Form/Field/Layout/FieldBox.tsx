@@ -10,11 +10,10 @@ import {
     isValidElement,
 } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import type { MaybeArray } from '../../../../types';
+import { IconSlot, type IconSlotValue, isIconComponent } from '../../../Layout/Icon/IconSlot';
 
 import './FieldBox.scss';
 
@@ -23,7 +22,7 @@ export type FieldBoxProps = {
     actionsContainerClassName?: string;
     children?: ReactNode | undefined;
     className?: string;
-    icon?: IconName | ReactElement;
+    icon?: IconSlotValue;
     unstyled?: boolean;
     onClick?: MouseEventHandler;
     onMouseDown?: MouseEventHandler;
@@ -51,8 +50,6 @@ const stopOnClickPropagation = (nodes: MaybeArray<ReactElement>): MaybeArray<Rea
 
 const FieldBoxRender: ForwardRefRenderFunction<HTMLDivElement, FieldBoxProps> = (props, ref) => {
     const { className, actions, actionsContainerClassName, children, icon } = props;
-    const isCoreIcon = typeof icon == 'string';
-    const iconEl = isCoreIcon ? <Icon name={icon} size={4} /> : icon;
 
     return (
         <div
@@ -63,10 +60,10 @@ const FieldBoxRender: ForwardRefRenderFunction<HTMLDivElement, FieldBoxProps> = 
         >
             {icon && (
                 <span
-                    className={clsx('flex justify-center items-center shrink-0 pr-4', isCoreIcon && 'mt-2')}
+                    className={clsx('flex justify-center items-center shrink-0 pr-4', isIconComponent(icon) && 'mt-2')}
                     style={{ color: 'var(--fieldset-cluster-icon-color)' }}
                 >
-                    {iconEl}
+                    <IconSlot icon={icon} size={4} />
                 </span>
             )}
 

@@ -5,14 +5,14 @@ import { selectFolderPath } from '../../store/selectors';
 import type { MaybeNull } from '../../types';
 import type { VaultColor } from '../../types/protobuf/vault-v1.static';
 import { FolderBreadcrumbCore } from './FolderBreadcrumbCore';
-import type { VaultIconName } from './VaultIcon';
+import type { VaultIconValue } from './VaultIcon';
 
 type Props = {
     shareId: string;
     folderId: MaybeNull<string>;
     vaultName: string;
     vaultColor?: VaultColor;
-    vaultIcon?: VaultIconName;
+    vaultIcon?: VaultIconValue;
 };
 
 export const FolderBreadcrumb: FC<Props> = ({ shareId, folderId, vaultName, vaultColor, vaultIcon }) => {

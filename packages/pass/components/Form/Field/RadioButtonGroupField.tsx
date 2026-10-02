@@ -2,12 +2,11 @@ import { Children, type FC, type ReactElement, type ReactNode, cloneElement } fr
 
 import type { FieldProps } from 'formik';
 
-import Icon from '@proton/components/components/icon/Icon';
 import InputButton from '@proton/components/components/input/InputButton';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../../hooks/useFieldControl';
@@ -25,9 +24,9 @@ type BaseRadioProps<T> = {
     value: T;
 };
 
-type RadioButtonProps<T> = BaseRadioProps<T> & { color?: string; icon?: IconName };
+type RadioButtonProps<T> = BaseRadioProps<T> & { color?: string; icon?: IconComponent };
 
-export const RadioButton = <T,>({ onChange, id, checked, value, name, color, icon }: RadioButtonProps<T>) => {
+export const RadioButton = <T,>({ onChange, id, checked, value, name, color, icon: Icon }: RadioButtonProps<T>) => {
     return (
         <InputButton
             type="radio"
@@ -40,7 +39,7 @@ export const RadioButton = <T,>({ onChange, id, checked, value, name, color, ico
                 style: { '--radio-button-background': color ? `rgb(${color})` : 'var(--background-weak)' },
             }}
         >
-            {icon && <Icon name={icon} size={5} />}
+            {Icon && <Icon size={5} />}
         </InputButton>
     );
 };

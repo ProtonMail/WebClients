@@ -1,13 +1,13 @@
 import type { FC } from 'react';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
 import type { UpsellRef } from '../../../../constants';
 import { UpgradeButton } from '../../../Upsell/UpgradeButton';
 import { ValueControl } from './ValueControl';
 
 type UpgradeControlProps = {
-    icon?: IconName;
+    icon?: IconComponent;
     label: string;
     upsellRef: UpsellRef;
 };
