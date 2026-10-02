@@ -8,6 +8,14 @@ export const getMemberOrganizationRoles = (memberID: string) => ({
     url: `permissions/v1/members/${memberID}/roles`,
 });
 
+export const getMembersOrganizationRoles = (memberIDs: string[]) => ({
+    method: 'post',
+    url: 'permissions/v1/members/roles',
+    data: {
+        MemberIDs: memberIDs,
+    },
+});
+
 export const getGroupOrganizationRoles = (groupID: string) => ({
     method: 'get',
     url: `permissions/v1/groups/${groupID}/roles`,
