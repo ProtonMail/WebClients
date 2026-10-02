@@ -8,6 +8,7 @@ import { APPS } from '@proton/shared/lib/constants'
 import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { useMoveModalDriveSdkEnabled, useRenameWithSDK, useTrashWithSDK } from '~/utils/flags'
+import { constructDriveFolderUrl } from '~/utils/open-drive-folder'
 import { useEvent } from '~/utils/misc'
 import { getDrive, generateNodeUid } from '@proton/drive'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
@@ -149,13 +150,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   )
 
   const openParent = useEvent(({ parentLinkId, shareId, isSharedWithMe }: RecentDocumentsItem) => {
-    let to = '/'
-    if (parentLinkId) {
-      to = `/${shareId}/folder/${parentLinkId}`
-    }
-    if (isSharedWithMe) {
-      to = `/shared-with-me`
-    }
+    const to = constructDriveFolderUrl(parentLinkId, shareId, isSharedWithMe)
     window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()))
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_source_opened)
   })

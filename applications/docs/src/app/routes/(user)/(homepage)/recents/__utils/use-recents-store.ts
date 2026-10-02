@@ -1,5 +1,4 @@
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
-import type { Address } from '@proton/shared/lib/interfaces/Address'
 import { generateNodeUid } from '@proton/drive'
 import { create } from 'zustand'
 
@@ -12,9 +11,6 @@ interface RecentsStore {
 
   recentDocumentsInitialized: boolean
   setInitialized: () => void
-
-  addresses: Address[]
-  setAddresses: (addresses: Address[]) => void
 }
 
 export const useRecentsStore = create((set): RecentsStore => ({
@@ -61,8 +57,4 @@ export const useRecentsStore = create((set): RecentsStore => ({
   recentDocumentsInitialized: false,
 
   setInitialized: () => set(() => ({ recentDocumentsInitialized: true })),
-
-  addresses: [],
-
-  setAddresses: (addresses) => set(() => ({ addresses })),
 }))
