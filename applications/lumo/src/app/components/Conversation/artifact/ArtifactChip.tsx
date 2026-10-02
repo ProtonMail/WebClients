@@ -158,5 +158,3 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
         </button>
     );
 };
-
-export default ArtifactChip;

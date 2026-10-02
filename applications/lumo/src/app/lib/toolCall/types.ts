@@ -17,7 +17,7 @@ export type ToolCallName = ToolCallData['name'];
  */
 export type ToolCallAnnouncement = { name: string; arguments?: never };
 
-export function isToolCallAnnouncement(data: unknown): data is ToolCallAnnouncement {
+function isToolCallAnnouncement(data: unknown): data is ToolCallAnnouncement {
     return (
         typeof data === 'object' &&
         data !== null &&
@@ -36,7 +36,7 @@ export function tryParseToolCallAnnouncement(content: string): ToolCallAnnouncem
     return null;
 }
 
-export function isToolCallData(data: unknown): data is ToolCallData {
+function isToolCallData(data: unknown): data is ToolCallData {
     return (
         isWebSearchToolCallData(data) ||
         isWebExtractToolCallData(data) ||
@@ -75,12 +75,12 @@ export function isWebExtractToolCallData(data: unknown): data is WebExtractToolC
     );
 }
 
-export type WebSearchArguments = {
+type WebSearchArguments = {
     query: string;
     urls?: string[];
 };
 
-export function isWebSearchArguments(args: unknown): args is WebSearchArguments {
+function isWebSearchArguments(args: unknown): args is WebSearchArguments {
     // prettier-ignore
     return (
         typeof args === 'object' &&
@@ -89,9 +89,9 @@ export function isWebSearchArguments(args: unknown): args is WebSearchArguments 
     );
 }
 
-export type DescribeImageToolCallData = { name: 'describe_image'; arguments: DescribeImageArguments };
+type DescribeImageToolCallData = { name: 'describe_image'; arguments: DescribeImageArguments };
 
-export function isDescribeImageToolCallData(data: unknown): data is DescribeImageToolCallData {
+function isDescribeImageToolCallData(data: unknown): data is DescribeImageToolCallData {
     // prettier-ignore
     return (
         typeof data === 'object' &&
@@ -101,12 +101,12 @@ export function isDescribeImageToolCallData(data: unknown): data is DescribeImag
     );
 }
 
-export type DescribeImageArguments = {
+type DescribeImageArguments = {
     image_id: string;
     question?: string | null;
 };
 
-export function isDescribeImageArguments(args: unknown): args is DescribeImageArguments {
+function isDescribeImageArguments(args: unknown): args is DescribeImageArguments {
     // prettier-ignore
     return (
         typeof args === 'object' &&
@@ -116,9 +116,9 @@ export function isDescribeImageArguments(args: unknown): args is DescribeImageAr
     );
 }
 
-export type GenerateImageToolCallData = { name: 'generate_image'; arguments: GenerateImageArguments };
+type GenerateImageToolCallData = { name: 'generate_image'; arguments: GenerateImageArguments };
 
-export function isGenerateImageToolCallData(data: unknown): data is GenerateImageToolCallData {
+function isGenerateImageToolCallData(data: unknown): data is GenerateImageToolCallData {
     // prettier-ignore
     return (
         typeof data === 'object' &&
@@ -128,14 +128,14 @@ export function isGenerateImageToolCallData(data: unknown): data is GenerateImag
     );
 }
 
-export type GenerateImageArguments = {
+type GenerateImageArguments = {
     negative_prompt?: string | null;
     output_format?: string | null;
     prompt: string;
     seed?: number | null;
 };
 
-export function isGenerateImageArguments(args: unknown): args is GenerateImageArguments {
+function isGenerateImageArguments(args: unknown): args is GenerateImageArguments {
     // prettier-ignore
     return (
         typeof args === 'object' &&
@@ -147,9 +147,9 @@ export function isGenerateImageArguments(args: unknown): args is GenerateImageAr
     );
 }
 
-export type EditImageToolCallData = { name: 'edit_image'; arguments: EditImageArguments };
+type EditImageToolCallData = { name: 'edit_image'; arguments: EditImageArguments };
 
-export function isEditImageToolCallData(data: unknown): data is EditImageToolCallData {
+function isEditImageToolCallData(data: unknown): data is EditImageToolCallData {
     // prettier-ignore
     return (
         typeof data === 'object' &&
@@ -159,14 +159,14 @@ export function isEditImageToolCallData(data: unknown): data is EditImageToolCal
     );
 }
 
-export type EditImageArguments = {
+type EditImageArguments = {
     image: string[];
     prompt: string;
     cfg_scale?: number | null;
     seed?: number | null;
 };
 
-export function isEditImageArguments(args: unknown): args is EditImageArguments {
+function isEditImageArguments(args: unknown): args is EditImageArguments {
     // prettier-ignore
     return (
         typeof args === 'object' &&
@@ -178,9 +178,9 @@ export function isEditImageArguments(args: unknown): args is EditImageArguments 
     );
 }
 
-export type ProtonInfoToolCallData = { name: 'proton_info' };
+type ProtonInfoToolCallData = { name: 'proton_info' };
 
-export function isProtonInfoToolCallData(data: unknown): data is ProtonInfoToolCallData {
+function isProtonInfoToolCallData(data: unknown): data is ProtonInfoToolCallData {
     // prettier-ignore
     return (
         typeof data === 'object' &&
@@ -189,9 +189,9 @@ export function isProtonInfoToolCallData(data: unknown): data is ProtonInfoToolC
     );
 }
 
-export type WeatherToolCallData = { name: 'weather'; arguments: WeatherArguments };
+type WeatherToolCallData = { name: 'weather'; arguments: WeatherArguments };
 
-export function isWeatherToolCallData(data: unknown): data is WeatherToolCallData {
+function isWeatherToolCallData(data: unknown): data is WeatherToolCallData {
     // prettier-ignore
     return (
         typeof data === 'object' &&
@@ -201,13 +201,13 @@ export function isWeatherToolCallData(data: unknown): data is WeatherToolCallDat
     );
 }
 
-export type WeatherLocation = { city: string; country_code?: string | null } | { lat: number; lon: number };
+type WeatherLocation = { city: string; country_code?: string | null } | { lat: number; lon: number };
 
-export type WeatherArguments = {
+type WeatherArguments = {
     location: WeatherLocation;
 };
 
-export function isWeatherArguments(args: unknown): args is WeatherArguments {
+function isWeatherArguments(args: unknown): args is WeatherArguments {
     // prettier-ignore
     return (
         typeof args === 'object' &&
@@ -216,7 +216,7 @@ export function isWeatherArguments(args: unknown): args is WeatherArguments {
     );
 }
 
-export function isWeatherLocation(location: unknown): location is WeatherLocation {
+function isWeatherLocation(location: unknown): location is WeatherLocation {
     if (typeof location !== 'object' || location === null) {
         return false;
     }
@@ -251,12 +251,12 @@ export function isStockToolCallData(data: unknown): data is StockToolCallData {
     );
 }
 
-export type StockArguments = {
+type StockArguments = {
     symbol: string;
     days?: number | null;
 };
 
-export function isStockArguments(args: unknown): args is StockArguments {
+function isStockArguments(args: unknown): args is StockArguments {
     // prettier-ignore
     return (
         typeof args === 'object' &&
@@ -278,12 +278,12 @@ export function isCryptocurrencyToolCallData(data: unknown): data is Cryptocurre
     );
 }
 
-export type CryptocurrencyArguments = {
+type CryptocurrencyArguments = {
     symbol: string;
     currency: string;
 };
 
-export function isCryptocurrencyArguments(args: unknown): args is CryptocurrencyArguments {
+function isCryptocurrencyArguments(args: unknown): args is CryptocurrencyArguments {
     // prettier-ignore
     return (
         typeof args === 'object' &&
@@ -294,7 +294,7 @@ export function isCryptocurrencyArguments(args: unknown): args is Cryptocurrency
 }
 
 /** Desktop connector tools use a `connector__tool` namespaced name. */
-export type NativeToolName = `${string}__${string}`;
+type NativeToolName = `${string}__${string}`;
 export type NativeToolCallData = {
     name: NativeToolName;
     arguments: Record<string, unknown>;
@@ -320,7 +320,7 @@ export function isNativeToolCallData(data: unknown): data is NativeToolCallData 
 
 export type ToolResultData = WebSourceToolResultData | ToolResultError;
 
-export function isToolResultData(data: unknown): data is ToolResultData {
+function isToolResultData(data: unknown): data is ToolResultData {
     return isWebSourceToolResultData(data) || isToolResultError(data);
 }
 
@@ -347,7 +347,7 @@ export type SearchItem = {
     extra_snippets?: string[];
 };
 
-export function isSearchItem(item: unknown): item is SearchItem {
+function isSearchItem(item: unknown): item is SearchItem {
     return (
         typeof item === 'object' &&
         item !== null &&
@@ -362,11 +362,11 @@ export function isSearchItem(item: unknown): item is SearchItem {
     );
 }
 
-export type ToolResultError = {
+type ToolResultError = {
     error: boolean;
 };
 
-export function isToolResultError(data: unknown): data is ToolResultError {
+function isToolResultError(data: unknown): data is ToolResultError {
     return typeof data === 'object' && data !== null && 'error' in data && typeof data.error === 'boolean';
 }
 

@@ -15,7 +15,7 @@ import { buildPaperTrailContext } from './buildPaperTrailContext';
 import { type NormalizedExport, parseExportFile } from './parsers';
 import { buildPaperTrailPrompt, getExportFilename } from './prompt';
 
-export type PaperTrailStatus = 'idle' | 'parsing' | 'generating' | 'error';
+type PaperTrailStatus = 'idle' | 'parsing' | 'generating' | 'error';
 
 interface StartResult {
     status: PaperTrailStatus;

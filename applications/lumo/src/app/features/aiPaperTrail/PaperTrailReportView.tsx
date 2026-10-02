@@ -443,5 +443,3 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
         </div>
     );
 };
-
-export default PaperTrailReportView;

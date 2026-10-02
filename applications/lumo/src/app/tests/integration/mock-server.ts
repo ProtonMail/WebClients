@@ -33,7 +33,7 @@ export type MockDbConversation = {
     ConversationTag: string;
 };
 
-export type MockResponseConversation = MockDbConversation & {
+type MockResponseConversation = MockDbConversation & {
     Messages: MockResponseMessage[];
 };
 
@@ -48,7 +48,7 @@ export type MockDbMessage = {
     ParentID?: string;
 };
 
-export type MockResponseMessage = Omit<MockDbMessage, 'Encrypted'>;
+type MockResponseMessage = Omit<MockDbMessage, 'Encrypted'>;
 
 // Add asset types
 export type MockDbAsset = {
@@ -60,7 +60,7 @@ export type MockDbAsset = {
     AssetTag: string;
 };
 
-export type MockResponseAsset = Omit<MockDbAsset, 'Encrypted'>;
+type MockResponseAsset = Omit<MockDbAsset, 'Encrypted'>;
 
 export type MockDbUserSettings = {
     UserSettingsTag: string;

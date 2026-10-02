@@ -25,10 +25,6 @@ export type DeleteAllSpacesFailure = {
     error: string;
 };
 
-export type PullSpaceFailure = PullSpaceRequest & {
-    error?: string;
-};
-
 // Low-level Redux store operations without side-effects.
 export const addSpace = createAction<Space>('lumo/space/add');
 export const deleteSpace = createAction<SpaceId>('lumo/space/delete');
@@ -55,7 +51,7 @@ export const deleteAllSpacesSuccess = createAction<void>('lumo/space/deleteAll/s
 export const deleteAllSpacesFailure = createAction<DeleteAllSpacesFailure>('lumo/space/deleteAll/failure');
 
 export type SpaceMap = Record<SpaceId, Space>;
-export const EMPTY_SPACE_MAP: SpaceMap = {};
+const EMPTY_SPACE_MAP: SpaceMap = {};
 
 const spacesReducer = createReducer<SpaceMap>(EMPTY_SPACE_MAP, (builder) => {
     builder

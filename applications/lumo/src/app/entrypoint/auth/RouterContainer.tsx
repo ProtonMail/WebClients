@@ -19,7 +19,7 @@ export interface RouteParams {
     conversationId: string;
 }
 
-export const RouterContainer = () => {
+const RouterContainer = () => {
     const { APP_NAME } = useConfig();
 
     return (

@@ -2,7 +2,7 @@ import { DEFAULT_CONTEXT_LIMITS, DEFAULT_CONTEXT_WINDOW_CONFIG } from './context
 
 export type ContextSegmentId = 'conversation' | 'tool_calls' | 'files' | 'buffer' | 'free';
 
-export type ContextSegment = {
+type ContextSegment = {
     id: ContextSegmentId;
     tokens: number;
     /** Width as a percentage of the bar (0–100), already clamped for over-capacity. */

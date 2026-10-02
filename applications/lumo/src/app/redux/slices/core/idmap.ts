@@ -2,11 +2,11 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 
 import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../../../remote/types';
 
-export type IdMap = {
+type IdMap = {
     local2remote: Record<ResourceType, Record<LocalId, RemoteId>>;
     remote2local: Record<ResourceType, Record<RemoteId, LocalId>>;
 };
-export const EMPTY_ID_MAP = {
+const EMPTY_ID_MAP = {
     local2remote: {
         space: {},
         conversation: {},

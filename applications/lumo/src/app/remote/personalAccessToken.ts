@@ -30,11 +30,6 @@ export interface ListPersonalAccessTokensResponse {
     };
 }
 
-export interface RenewPersonalAccessTokenResponse {
-    Code: number;
-    PersonalAccessToken: Pick<PersonalAccessToken, 'PersonalAccessTokenID' | 'ExpireTime' | 'ModifyTime' | 'Token'>;
-}
-
 export interface PersonalAccessTokenUsageDay {
     /** ISO date string e.g. "2026-03-11" */
     Date: string;
@@ -42,11 +37,6 @@ export interface PersonalAccessTokenUsageDay {
     TokenCount: number;
     /** Number of API calls made on this day */
     ApiCalls: number;
-}
-
-export interface PersonalAccessTokenUsageResponse {
-    Code: number;
-    Usage: PersonalAccessTokenUsageDay[];
 }
 
 const PAT_BASE_URL = 'account/4/personal-access-token';

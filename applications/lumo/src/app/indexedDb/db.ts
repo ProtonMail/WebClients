@@ -34,59 +34,59 @@ export const MESSAGE_STORE = 'messages_v4';
 export const ATTACHMENT_STORE = 'attachments_v4';
 export const ASSET_STORE = 'assets_v1';
 export const REMOTE_ID_STORE = 'remote_ids_v4';
-export const FOUNDATION_SEARCH_STORE = 'foundation_search_v1';
+const FOUNDATION_SEARCH_STORE = 'foundation_search_v1';
 
-export const DB_BASE_NAME = 'LumoDB';
-export const DB_NAME_SALT = 'AT8hqCBf9sDXLeCNXbaWXD769XdpPDfk';
+const DB_BASE_NAME = 'LumoDB';
+const DB_NAME_SALT = 'AT8hqCBf9sDXLeCNXbaWXD769XdpPDfk';
 
-export enum SpaceStoreFields {
+enum SpaceStoreFields {
     Id = 'id',
 }
 
-export enum ConversationStoreFields {
+enum ConversationStoreFields {
     Id = 'id',
     SpaceId = 'spaceId',
 }
 
-export enum MessageStoreFields {
+enum MessageStoreFields {
     Id = 'id',
     ConversationId = 'conversationId',
 }
 
-export enum AttachmentStoreFields {
+enum AttachmentStoreFields {
     Id = 'id',
     SpaceId = 'spaceId',
 }
 
-export enum FoundationSearchStoreFields {
+enum FoundationSearchStoreFields {
     BlobName = 'blobName',
     BlobData = 'blobData',
     LastUpdated = 'lastUpdated',
 }
 
-export enum RemoteIdStoreFields {
+enum RemoteIdStoreFields {
     Type = 'type',
     RemoteId = 'remoteId',
     LocalId = 'localId',
 }
 
-export enum ConversationStoreIndexes {
+enum ConversationStoreIndexes {
     SpaceId = 'idx_spaceId',
 }
 
-export enum MessageStoreIndexes {
+enum MessageStoreIndexes {
     ConversationId = 'idx_conversationId',
 }
 
-export enum AttachmentStoreIndexes {
+enum AttachmentStoreIndexes {
     SpaceId = 'idx_spaceId',
 }
 
-export enum AssetStoreIndexes {
+enum AssetStoreIndexes {
     SpaceId = 'idx_spaceId',
 }
 
-export enum RemoteIdStoreIndexes {
+enum RemoteIdStoreIndexes {
     TypeRemoteId = 'idx_type_remoteId',
 }
 

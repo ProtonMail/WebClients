@@ -92,7 +92,7 @@ interface PanelHeaderProps {
     onExitFullscreen?: () => void;
 }
 
-export type ArtifactPanelLayout = 'docked' | 'mobile' | 'fullscreen';
+type ArtifactPanelLayout = 'docked' | 'mobile' | 'fullscreen';
 
 const getVersionLabel = (versionNumber: number, totalVersions: number) => {
     return c('collider_2025:Info').t`v${versionNumber} of ${totalVersions}`;

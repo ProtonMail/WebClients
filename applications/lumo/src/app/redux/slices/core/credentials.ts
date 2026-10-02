@@ -27,7 +27,7 @@ export const masterKeyIneligible = createAction('lumo/credentials/masterKeyIneli
  */
 export const masterKeyRetrying = createAction('lumo/credentials/masterKeyRetrying');
 
-export const EMPTY_CREDENTIALS: Credentials = {
+const EMPTY_CREDENTIALS: Credentials = {
     masterKeyState: { status: 'loading' },
 };
 const initialState: Credentials = EMPTY_CREDENTIALS;

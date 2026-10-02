@@ -79,7 +79,7 @@ export interface PaperTrailReport {
 }
 
 /** A per-area exposure score (0 = nothing revealed, 100 = fully exposed). */
-export interface PaperTrailAreaScore {
+interface PaperTrailAreaScore {
     area: string;
     exposureScore: number;
 }
@@ -100,7 +100,7 @@ export interface PaperTrailCardData {
 }
 
 /** Turn an archetype label into a social-style @handle (fallback when the model omits "handle"). */
-export const toHandle = (label: string): string => {
+const toHandle = (label: string): string => {
     const slug = label
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, '_')
@@ -145,9 +145,6 @@ export const privacyTypeLabel = (score: number): string => {
     }
     return 'Privacy maxxing';
 };
-
-/** @deprecated Use `privacyTypeLabel` — kept for callers that still reference the old name. */
-export const exposureGrade = privacyTypeLabel;
 
 /**
  * Derive the share-safe card payload from the full report. We surface exposure directly

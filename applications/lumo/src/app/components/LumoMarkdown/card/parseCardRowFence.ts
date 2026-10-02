@@ -80,7 +80,7 @@ export function parseCardRowFence(content: string): MetricCardFence[] | null {
     return null;
 }
 
-export function parseCardRowFromCodeSegment(code: string): MetricCardFence[] | null {
+function parseCardRowFromCodeSegment(code: string): MetricCardFence[] | null {
     const payload = parseCardRowPayload(code);
     if (!Array.isArray(payload)) {
         return null;

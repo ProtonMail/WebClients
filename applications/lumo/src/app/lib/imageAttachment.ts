@@ -78,7 +78,7 @@ export function createImageAttachment(
     return { attachment, data: imageData };
 }
 
-export function imageMarkdownFragment(imageId: string): string {
+function imageMarkdownFragment(imageId: string): string {
     return `![Generated image](attachment:${imageId})`;
 }
 

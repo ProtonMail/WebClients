@@ -19,8 +19,6 @@ import LumoSidebar from './sidebar/LumoSidebar';
 
 import './MainLayout.scss';
 
-export type ActivePanel = 'chatHistory' | 'favoriteChats' | null;
-
 interface Props {
     children: ReactNode;
 }

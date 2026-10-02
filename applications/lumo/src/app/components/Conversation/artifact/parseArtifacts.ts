@@ -1,4 +1,4 @@
-export const ARTIFACT_TYPES = ['code', 'document', 'webpage', 'presentation'] as const;
+const ARTIFACT_TYPES = ['code', 'document', 'webpage', 'presentation'] as const;
 
 export type ArtifactType = (typeof ARTIFACT_TYPES)[number];
 

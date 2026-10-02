@@ -7,9 +7,6 @@ import { shouldRenderAsVegaChart } from '../vega/detectVegaSpec';
 import { parseCardRowFence, parseCardRowSegmentCode } from './parseCardRowFence';
 import type { MetricCardFence } from './metricCardTypes';
 
-export type { MetricCardFence } from './metricCardTypes';
-export { parseCardRowFence } from './parseCardRowFence';
-
 const METRIC_SECTION_KEY = 'metric-section';
 
 function blockContainsVegaChart(content: string): boolean {

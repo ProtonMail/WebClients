@@ -45,4 +45,3 @@ const ArtifactEditMarkerComponent = ({ message }: ArtifactEditMarkerProps) => {
 };
 
 export const ArtifactEditMarker = memo(ArtifactEditMarkerComponent);
-export default ArtifactEditMarker;

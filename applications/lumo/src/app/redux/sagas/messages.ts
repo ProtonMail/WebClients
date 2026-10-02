@@ -1,6 +1,6 @@
 import isEqual from 'lodash/isEqual';
 import type { SagaIterator } from 'redux-saga';
-import { call, delay, fork, getContext, put, select, take } from 'redux-saga/effects';
+import { call, delay, fork, getContext, put, select } from 'redux-saga/effects';
 
 import { MAX_MESSAGES_PER_CONVERSATION } from '../../constants/limits';
 import type { AesGcmCryptoKey } from '../../crypto/types';
@@ -8,7 +8,7 @@ import type { DbApi } from '../../indexedDb/db';
 import type { LumoApi } from '../../remote/api';
 import { convertNewMessageToApi } from '../../remote/conversion';
 import type { Priority } from '../../remote/scheduler';
-import type { IdMapEntry, LocalId, RemoteId, RemoteMessage, ResourceType } from '../../remote/types';
+import type { IdMapEntry, RemoteId, RemoteMessage, ResourceType } from '../../remote/types';
 import { deserializeMessage, serializeMessage } from '../../serialization';
 import {
     type Conversation,
@@ -51,11 +51,9 @@ import {
 } from './sagaErrors';
 import { waitForSpace } from './spaces';
 
-export { considerRequestingFullMessage, waitForConversation } from './conversationMessageCoordination';
-
 /*** helpers ***/
 
-export function* saveDirtyMessage(serializedMessage: SerializedMessage): SagaIterator {
+function* saveDirtyMessage(serializedMessage: SerializedMessage): SagaIterator {
     console.log('Saga triggered: saveDirtyMessage', serializedMessage);
 
     // Check if this message belongs to a ghost conversation - if so, skip saving to IndexedDB
@@ -73,7 +71,7 @@ export function* saveDirtyMessage(serializedMessage: SerializedMessage): SagaIte
     });
 }
 
-export function* clearDirtyIfUnchanged(serializedMessage: SerializedMessage): SagaIterator<boolean> {
+function* clearDirtyIfUnchanged(serializedMessage: SerializedMessage): SagaIterator<boolean> {
     console.log('Saga triggered: clearDirtyIfUnchanged', serializedMessage);
     // fixme: possibly racy between getting `fresh` and storing the object
     // fixme: consider delegating the CAS to dbApi instead, which can manage the read-then-write inside a tx
@@ -93,7 +91,7 @@ export function* clearDirtyIfUnchanged(serializedMessage: SerializedMessage): Sa
     }
 }
 
-export function* serializeMessageSaga(message: Message, spaceDek?: AesGcmCryptoKey): SagaIterator<SerializedMessage> {
+function* serializeMessageSaga(message: Message, spaceDek?: AesGcmCryptoKey): SagaIterator<SerializedMessage> {
     const { id: localId, conversationId } = message;
 
     let spaceDek_: AesGcmCryptoKey;
@@ -160,22 +158,6 @@ export function* deserializeMessageSaga(
     return cleanMessage(deserializedMessage);
 }
 
-export function* waitForMessage(localId: LocalId): SagaIterator<Message> {
-    const type = 'message';
-    console.log(`Saga triggered: waitForMessage: ${type} ${localId}`);
-    const mapped: Message | undefined = yield select(selectMessageById(localId));
-    if (mapped) {
-        console.log(`waitForMessage: requested ${type} ${localId} -> found immediately, returning value`);
-        return mapped;
-    }
-    console.log(`waitForMessage: requested ${type} ${localId} -> not ready, waiting`);
-    const { payload: resource }: ReturnType<typeof addMessage> = yield take(
-        (a: any) => a.type === addMessage.type && a.payload.id === localId
-    );
-    console.log(`waitForMessage: requested ${type} ${localId} -> now available, returning value ${resource}`);
-    return resource;
-}
-
 /*** loggers ***/
 
 export function* logPushMessageSuccess({ payload }: { payload: PushMessageSuccess }): SagaIterator<any> {
@@ -201,7 +183,7 @@ export function* logPullMessageFailure({ payload: remoteMessage }: { payload: Re
 
 /*** sync: local -> remote ***/
 
-export function* httpPostMessage(serializedMessage: SerializedMessage, priority: Priority): SagaIterator<IdMapEntry> {
+function* httpPostMessage(serializedMessage: SerializedMessage, priority: Priority): SagaIterator<IdMapEntry> {
     console.log('Saga triggered: httpPostMessage', serializedMessage);
     const type: ResourceType = 'message';
     const { id: localId, conversationId: localConversationId, parentId: localParentId } = serializedMessage;

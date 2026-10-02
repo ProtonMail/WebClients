@@ -23,7 +23,7 @@ import {
 } from './tokens';
 import { buildTranscript } from './transcript';
 
-export type Summarizer = (transcript: string) => Promise<string>;
+type Summarizer = (transcript: string) => Promise<string>;
 
 export type CompactionEngineOptions = {
     targetTokens?: number;

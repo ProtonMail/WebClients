@@ -2,7 +2,7 @@
  * Utility for notifying mobile apps when the Lumo web application is fully loaded
  */
 
-export interface LumoAppLoadedMessage {
+interface LumoAppLoadedMessage {
     type: 'LUMO_APP_LOADED';
     timestamp: number;
     version?: string;
@@ -65,22 +65,6 @@ export const notifyMobileAppLoaded = (delayMs: number = 150): void => {
 
         console.log('Lumo app loaded notification sent to mobile apps', message);
     }, delayMs);
-};
-
-/**
- * For debugging: Listen for the lumo-app-loaded event
- */
-export const addMobileAppLoadedListener = (callback: (message: LumoAppLoadedMessage) => void): (() => void) => {
-    const handler = (event: CustomEvent<LumoAppLoadedMessage>) => {
-        callback(event.detail);
-    };
-    
-    window.addEventListener('lumo-app-loaded', handler as EventListener);
-    
-    // Return cleanup function
-    return () => {
-        window.removeEventListener('lumo-app-loaded', handler as EventListener);
-    };
 };
 
 /**

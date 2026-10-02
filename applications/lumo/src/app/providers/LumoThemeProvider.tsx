@@ -5,12 +5,7 @@ import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import { getLumoDefaultTheme } from './lumoThemeUtils';
 import { useLumoThemeLogic } from './useLumoThemeLogic';
 
-export const LUMO_THEME_ID = 'lumo-theme';
 export { ThemeTypes };
-
-// Re-export utilities for backward compatibility
-export { getLumoDefaultTheme } from './lumoThemeUtils';
-export type { LumoLocalSettings } from './lumoThemeStorage';
 
 export interface LumoThemeContextType {
     theme: ThemeTypes;
@@ -20,7 +15,7 @@ export interface LumoThemeContextType {
     isAutoMode: boolean;
 }
 
-export const LumoThemeContext = createContext<LumoThemeContextType>({
+const LumoThemeContext = createContext<LumoThemeContextType>({
     theme: getLumoDefaultTheme(),
     setTheme: () => {},
     setAutoTheme: () => {},

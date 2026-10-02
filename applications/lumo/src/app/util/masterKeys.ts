@@ -20,7 +20,7 @@ export function mergeRefreshedMasterKeysBundle(
 }
 
 /** Master key envelopes are keyed by unique server IDs; exclude only the current primary. */
-export function getLegacyMasterKeyBase64(bundle: MasterKeysBundle): Base64[] {
+function getLegacyMasterKeyBase64(bundle: MasterKeysBundle): Base64[] {
     return Object.entries(bundle.masterKeys)
         .filter(([id]) => id !== bundle.primaryMasterKeyId)
         .map(([, keyBase64]) => keyBase64);

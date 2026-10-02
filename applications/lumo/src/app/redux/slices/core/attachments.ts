@@ -47,7 +47,7 @@ export type RemoteShallowAttachmentRequest = RemoteShallowAttachment & {
 export const upsertAttachment = createAction<Attachment>('lumo/attachment/upsert');
 export const deleteAttachment = createAction<AttachmentId>('lumo/attachment/delete');
 export const deleteAllAttachments = createAction('lumo/attachment/deleteAll');
-export const deleteAttachmentsBySpaceId = createAction<SpaceId>('lumo/attachment/deleteBySpaceId');
+const deleteAttachmentsBySpaceId = createAction<SpaceId>('lumo/attachment/deleteBySpaceId');
 export type ClearProvisionalAttachmentsPayload = {
     /** Attachment IDs to keep even when they lack a spaceId (e.g. sent @mention files). */
     preserveIds?: AttachmentId[];

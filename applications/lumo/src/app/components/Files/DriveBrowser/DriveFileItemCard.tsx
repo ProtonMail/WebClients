@@ -11,7 +11,7 @@ import { getFileTypeDescription, getMimeTypeFromExtension } from '../../../util/
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { formatFileSize } from '../fileUtils';
 
-export interface FileItemAction {
+interface FileItemAction {
     icon?: React.ComponentType<{ size?: number }>;
     iconName?: string;
     label: string;

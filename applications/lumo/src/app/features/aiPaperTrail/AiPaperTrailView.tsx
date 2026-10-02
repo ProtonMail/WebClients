@@ -209,5 +209,3 @@ export const AiPaperTrailView = () => {
         </PaperTrailLightThemeScope>
     );
 };
-
-export default AiPaperTrailView;

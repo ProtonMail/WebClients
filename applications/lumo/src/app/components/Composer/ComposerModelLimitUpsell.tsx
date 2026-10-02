@@ -86,5 +86,3 @@ export const ComposerModelLimitUpsell = ({ composerMode }: Props) => {
         />
     );
 };
-
-export default ComposerModelLimitUpsell;

@@ -9,5 +9,3 @@ export const CreateFreeAccountButton = (props: AuthButtonProps) => {
 export const CreateFreeAccountLink = ({ className }: BaseAuthProps) => {
     return <AuthActionButton variant="link" action="signup" className={className} />;
 };
-
-export default CreateFreeAccountLink;

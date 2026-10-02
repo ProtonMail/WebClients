@@ -1,7 +1,7 @@
 import { type Message, type MessageId, isCompactionMessage } from '../../types';
 
 /** Compaction boundary markers present in a linear chain, in chronological order. */
-export function getCompactionBoundaries(messageChain: Message[]): Message[] {
+function getCompactionBoundaries(messageChain: Message[]): Message[] {
     return messageChain.filter(isCompactionMessage);
 }
 
@@ -39,7 +39,7 @@ function summarizesPrefixOf(boundary: Message, chainMessageIds: MessageId[]): bo
  * is what makes the rule symmetric — a boundary produced after the fork diverged names
  * messages absent from the other chain and is therefore never applied to it.
  */
-export function getSharedHistoryCompactionBoundary(
+function getSharedHistoryCompactionBoundary(
     messageChain: Message[],
     messageMap: Record<MessageId, Message>
 ): Message | undefined {
@@ -119,12 +119,4 @@ export function getSummarizedMessageIds(
     }
 
     return ids;
-}
-
-export function isSummarizedMessage(
-    messageId: MessageId,
-    messageChain: Message[],
-    messageMap?: Record<MessageId, Message>
-): boolean {
-    return getSummarizedMessageIds(messageChain, messageMap).has(messageId);
 }

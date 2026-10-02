@@ -6,7 +6,7 @@ export const setReduxLoadedFromIdb = createAction('lumo/meta/setReduxLoadedFromI
 /** Set after the addMasterKey settings listener finishes (remote or localStorage fallback). */
 export const setLumoUserSettingsBootstrapped = createAction('lumo/meta/setLumoUserSettingsBootstrapped');
 
-export interface InitializationState {
+interface InitializationState {
     reduxLoadedFromIdb: boolean;
     /** True once Lumo user settings have been loaded after the master key is available. */
     lumoUserSettingsBootstrapped: boolean;

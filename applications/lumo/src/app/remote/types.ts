@@ -4,7 +4,6 @@ import type {
     ConversationId,
     Deleted,
     Encrypted,
-    MessageId,
     NonDeleted,
     SerializedAttachment,
     SerializedConversation,
@@ -74,9 +73,7 @@ export type MasterKeyFromApi = {
     MasterKey?: unknown;     // Expecting string (PGP armor)
 };
 
-export type UserId = string;
-
-export const ResourceTypes = ['space', 'conversation', 'message', 'attachment', 'asset'] as const;
+const ResourceTypes = ['space', 'conversation', 'message', 'attachment', 'asset'] as const;
 export type ResourceType = (typeof ResourceTypes)[number];
 
 export type LocalId = string;
@@ -89,15 +86,15 @@ export type IdMapEntry = { remoteId: RemoteId; localId: LocalId; type: ResourceT
 // It's nothing more than a terminology difference.
 export type SpaceTag = LocalId;
 export type ConversationTag = LocalId;
-export type MessageTag = LocalId;
-export type AssetTag = LocalId;
+type MessageTag = LocalId;
+type AssetTag = LocalId;
 
-export type RemoteSpaceBase = SerializedSpace & {
+type RemoteSpaceBase = SerializedSpace & {
     remoteId: RemoteId;
 };
 export type RemoteSpace = RemoteSpaceBase & NonDeleted;
 export type RemoteDeletedSpace = Omit<RemoteSpaceBase, 'encrypted'> & Deleted;
-export type RemoteConversationBase = SerializedConversation & {
+type RemoteConversationBase = SerializedConversation & {
     remoteId: RemoteId;
     remoteSpaceId: RemoteId;
 };
@@ -108,17 +105,16 @@ export type RemoteMessage = SerializedMessage & {
     remoteConversationId: RemoteId;
     remoteParentId: RemoteId | undefined;
 };
-export type RemoteAssetBase = SerializedAttachment & {
+type RemoteAssetBase = SerializedAttachment & {
     remoteId: RemoteId;
     remoteSpaceId: RemoteId;
 };
 export type RemoteAsset = RemoteAssetBase & NonDeleted;
-export type RemoteShallowAsset = Omit<RemoteAssetBase, 'encrypted'> & NonDeleted & Shallow;
+type RemoteShallowAsset = Omit<RemoteAssetBase, 'encrypted'> & NonDeleted & Shallow;
 export type RemoteFilledAsset = Omit<RemoteAssetBase, 'encrypted'> & NonDeleted & Encrypted;
 export type RemoteDeletedAsset = Omit<RemoteAssetBase, 'encrypted'> & Deleted;
 
 // Aliases for consistent naming with other resources
-export type RemoteAttachment = RemoteAsset;
 export type RemoteShallowAttachment = RemoteShallowAsset;
 export type RemoteFilledAttachment = RemoteFilledAsset;
 export type RemoteDeletedAttachment = RemoteDeletedAsset;
@@ -167,7 +163,7 @@ export type ConversationToApi = {
     ConversationTag: ConversationTag;
 };
 
-export type AssetToApi = {
+type AssetToApi = {
     ID: RemoteId;
     SpaceID: RemoteId;
     Encrypted?: Base64;
@@ -179,7 +175,7 @@ export type MasterKeyToApi = {
     MasterKey: Base64;
 };
 
-export type OmitId<T> = Omit<T, 'ID'>;
+type OmitId<T> = Omit<T, 'ID'>;
 export type NewMessageToApi = OmitId<MessageToApi>;
 export type NewConversationToApi = OmitId<ConversationToApi>;
 export type NewSpaceToApi = OmitId<SpaceToApi>;
@@ -219,82 +215,6 @@ export type ListAssetsRemote = {
     assets: RemoteAsset[];
     deletedAssets: RemoteDeletedAsset[];
 };
-
-// Remote worker requests
-export type PostSpaceRequest = {
-    type: 'post_space';
-    space: SerializedSpace;
-};
-export type PostConversationRequest = {
-    type: 'post_conversation';
-    conversation: SerializedConversation;
-};
-export type PostMessageRequest = {
-    type: 'post_message';
-    message: SerializedMessage;
-};
-export type PutConversationRequest = {
-    type: 'put_conversation';
-    conversation: SerializedConversation;
-};
-export type PutMessageRequest = {
-    type: 'put_message';
-    message: SerializedMessage;
-};
-export type ListSpacesRequest = {
-    type: 'list_spaces';
-};
-export type ListSpacesResponse = {
-    type: 'list_spaces';
-    // listSpaces: ListSpaces;
-    needsReload: boolean;
-};
-export type GetConversationRequest = {
-    type: 'get_conversation';
-    conversationId: ConversationId; // local id
-};
-export type GetConversationResponse = {
-    type: 'get_conversation';
-    // getConversation: GetConversation;
-    needsReload: boolean;
-};
-export type DeleteConversationRequest = {
-    type: 'delete_conversation';
-    conversationId: ConversationId; // local id
-};
-export type GetMessageRequest = {
-    type: 'get_message';
-    messageId: MessageId; // local id
-};
-export type InitRequest = {
-    type: 'init';
-    masterKey: Base64;
-    origin: string;
-    uid: string;
-    userId: string | undefined;
-};
-export type InitResponse = {
-    type: 'init';
-};
-// prettier-ignore
-export type WorkerRequest =
-    | PostSpaceRequest
-    | PostConversationRequest
-    | PostMessageRequest
-    | PutConversationRequest
-    | PutMessageRequest
-    | ListSpacesRequest
-    | GetConversationRequest
-    | DeleteConversationRequest
-    | GetMessageRequest
-    | InitRequest
-    ;
-// prettier-ignore
-export type WorkerResponse =
-    | InitResponse
-    | ListSpacesResponse
-    | GetConversationResponse
-    ;
 
 export type UserSettingsFromApi = {
     UserSettingsTag?: string;

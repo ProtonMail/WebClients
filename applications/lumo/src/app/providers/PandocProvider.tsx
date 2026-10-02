@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef } from 'react';
+import { createContext, useEffect, useRef } from 'react';
 
 import { PandocConverter } from '../lib/attachments/pandoc-wasm';
 
@@ -54,10 +54,4 @@ export function PandocProvider({ children }: { children: React.ReactNode }) {
             {children}
         </PandocContext.Provider>
     );
-}
-
-export function usePandoc() {
-    const context = useContext(PandocContext);
-    if (!context) throw new Error('usePandoc must be used within a PandocProvider');
-    return context.getInstance;
 }

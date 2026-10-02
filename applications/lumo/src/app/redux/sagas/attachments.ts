@@ -1,6 +1,6 @@
 import isEqual from 'lodash/isEqual';
 import type { SagaIterator } from 'redux-saga';
-import { call, delay, fork, getContext, put, select, take } from 'redux-saga/effects';
+import { call, delay, fork, getContext, put, select } from 'redux-saga/effects';
 
 import { MAX_ASSETS_PER_SPACE } from '../../constants/limits';
 import type { AesGcmCryptoKey } from '../../crypto/types';
@@ -129,23 +129,7 @@ function cleanAttachmentSerialized(attachment: SerializedAttachment): Serialized
     };
 }
 
-export function* waitForAttachment(localId: LocalId): SagaIterator<Attachment> {
-    const type = 'attachment';
-    console.log(`Saga triggered: waitForAttachment: ${type} ${localId}`);
-    const mapped: Attachment | undefined = yield select(selectAttachmentById(localId));
-    if (mapped) {
-        console.log(`waitForAttachment: requested ${type} ${localId} -> found immediately, returning value`);
-        return mapped;
-    }
-    console.log(`waitForAttachment: requested ${type} ${localId} -> not ready, waiting`);
-    const { payload: resource }: ReturnType<typeof addAttachment> = yield take(
-        (a: any) => a.type === addAttachment.type && a.payload.id === localId
-    );
-    console.log(`waitForAttachment: requested ${type} ${localId} -> now available, returning value ${resource}`);
-    return resource;
-}
-
-export function* serializeAttachmentSaga(
+function* serializeAttachmentSaga(
     attachment: Attachment,
     spaceDek?: AesGcmCryptoKey
 ): SagaIterator<SerializedAttachment> {

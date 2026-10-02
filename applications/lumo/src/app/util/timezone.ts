@@ -1,4 +1,4 @@
-export const getUserTimezone = (): string | undefined => {
+const getUserTimezone = (): string | undefined => {
     try {
         return Intl.DateTimeFormat().resolvedOptions().timeZone;
     } catch {

@@ -34,7 +34,7 @@ export function dedupeAttachmentsByDocumentKey<T extends Pick<Attachment, 'filen
     return Array.from(byKey.values());
 }
 
-export function attachmentMatchesFileReference(
+function attachmentMatchesFileReference(
     att: Pick<Attachment, 'filename' | 'driveNodeId'>,
     fileName: string,
     driveNodeId?: string

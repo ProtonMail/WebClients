@@ -27,5 +27,3 @@ export const ChatRetentionEnforcer = () => {
 
     return null;
 };
-
-export default ChatRetentionEnforcer;

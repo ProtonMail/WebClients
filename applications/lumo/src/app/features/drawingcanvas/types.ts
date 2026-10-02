@@ -1,6 +1,6 @@
 export type DrawingMode = 'blank' | 'overlay';
 
-export type DrawingTool = 'pen';
+type DrawingTool = 'pen';
 
 export interface Point {
     x: number;
@@ -11,12 +11,6 @@ export interface Stroke {
     points: Point[];
     color: string;
     width: number;
-}
-
-export interface DrawingState {
-    strokes: Stroke[];
-    currentStroke: Stroke | null;
-    redoStack: Stroke[];
 }
 
 export interface CanvasConfig {

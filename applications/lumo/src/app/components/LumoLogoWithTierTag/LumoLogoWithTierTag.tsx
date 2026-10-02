@@ -19,7 +19,7 @@ export const getLogoSrc = (theme: ThemeTypes) => {
     return theme === ThemeTypes.LumoDark ? lumoLogov6Dark : lumoLogov6;
 };
 
-export const getTierTag = (hasLumoB2B: boolean, hasLumoSeat: boolean): LumoTierTag | null => {
+const getTierTag = (hasLumoB2B: boolean, hasLumoSeat: boolean): LumoTierTag | null => {
     if (hasLumoB2B) {
         return 'pro';
     }

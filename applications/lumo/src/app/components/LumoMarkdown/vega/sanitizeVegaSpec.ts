@@ -199,7 +199,7 @@ function parseJsonLenient(raw: string): unknown {
     throw lastError ?? new Error('Invalid JSON');
 }
 
-export function parseVegaSpecJson(raw: string): Record<string, unknown> {
+function parseVegaSpecJson(raw: string): Record<string, unknown> {
     const trimmed = stripMarkdownCodeFence(raw.trim());
     if (!trimmed) {
         throw new VegaSpecParseError('Vega spec is empty');

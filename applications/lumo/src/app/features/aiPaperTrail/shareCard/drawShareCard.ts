@@ -6,16 +6,13 @@ import { loadLucideIconImage } from './lucideIconImage';
 
 export const CARD_WIDTH = 1080;
 
-/** Default height for layouts with 8 exposure areas — use `computeShareCardHeight` for the actual value. */
-export const CARD_HEIGHT = 1064;
-
 export type ShareCardTheme = 'dark' | 'light';
 
 export interface ShareCardRenderOptions {
     hideFooter?: boolean;
 }
 
-export const SHARE_CARD_URL = 'lumo.proton.me/aitrail';
+const SHARE_CARD_URL = 'lumo.proton.me/aitrail';
 
 const FONT_STACK = `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`;
 const SYNE_FONT = `Syne, ${FONT_STACK}`;

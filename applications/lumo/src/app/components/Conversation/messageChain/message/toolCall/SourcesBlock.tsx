@@ -58,7 +58,7 @@ export const SourcesButton = ({ results, onClick }: SourcesBlockProps) => {
     );
 };
 
-export const ColoredDisk = ({ domain }: { domain: string }) => {
+const ColoredDisk = ({ domain }: { domain: string }) => {
     const colorHexString = getColorFromDomain(domain);
     const letter = (domain[0] || ' ').toUpperCase();
     return (

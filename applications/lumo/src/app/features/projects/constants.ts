@@ -4,7 +4,6 @@ import type { IconName } from '../../components/LumoIcon/LumoIcon';
 import { DEFAULT_PROJECT_ICON } from './projectIconIds';
 import { getProjectLucideIcon, isKnownProjectIcon, normalizeProjectIconId } from './projectIconMapping';
 
-export type { ProjectIconId } from './projectIconIds';
 export { DEFAULT_PROJECT_ICON, PROJECT_ICONS } from './projectIconIds';
 export interface ProjectCategory {
     id: string;
@@ -14,7 +13,7 @@ export interface ProjectCategory {
     color: string;
 }
 
-export const DEFAULT_PROJECT_COLOR = '#6D4AFF';
+const DEFAULT_PROJECT_COLOR = '#6D4AFF';
 
 // Icon heuristics: map keywords to icons
 const ICON_KEYWORDS: Record<string, string[]> = {
@@ -135,7 +134,6 @@ export function getProjectCategory(iconId?: string): ProjectCategory {
     };
 }
 
-export { getProjectLucideIcon, isKnownProjectIcon, normalizeProjectIconId } from './projectIconMapping';
 
 // Map direct icon names to prompt categories for suggestions
 const ICON_TO_PROMPT_CATEGORY: Record<string, string> = {

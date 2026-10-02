@@ -141,4 +141,3 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
     );
 };
 
-export default ContextUsageBreakdown;

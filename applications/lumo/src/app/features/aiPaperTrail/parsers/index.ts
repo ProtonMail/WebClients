@@ -3,16 +3,8 @@ import { isClaudeExport, parseClaudeExport } from './claude';
 import { type NormalizedExport, PaperTrailParseError } from './types';
 import { readConversationsFromZip } from './zipConversations';
 
-export type { NormalizedConversation, NormalizedExport, NormalizedUserPrompt, PaperTrailSource } from './types';
+export type { NormalizedExport, NormalizedUserPrompt } from './types';
 export { PaperTrailParseError } from './types';
-export {
-    CONVERSATIONS_JSON,
-    getConversationJsonBasename,
-    isConversationJsonPath,
-    listConversationJsonPaths,
-    mergeConversationJsonTexts,
-    readConversationsFromZip,
-} from './zipConversations';
 
 const isZip = (file: File): boolean =>
     file.name.toLowerCase().endsWith('.zip') ||

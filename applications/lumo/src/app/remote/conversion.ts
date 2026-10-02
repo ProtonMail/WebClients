@@ -41,7 +41,6 @@ import {
     type ListConversationsRemote,
     type ListSpacesRemote,
     type MessageFromApi,
-    type MessageToApi,
     type NewConversationToApi,
     type NewMessageToApi,
     type NewSpaceToApi,
@@ -54,9 +53,6 @@ import {
     isRoleInt,
     isStatusInt,
 } from './types';
-
-// Type alias for backwards compatibility (assets are now attachments)
-type SerializedAsset = SerializedAttachment;
 
 const isValidBoolean = (b: unknown): b is boolean => typeof b === 'boolean';
 const isValidString = (str: unknown): str is string => typeof str === 'string' && str !== '';
@@ -341,19 +337,6 @@ export function convertMessagesFromApi(
     return Object.values(map);
 }
 
-export function convertMessageToApi(
-    message: SerializedMessage,
-    remoteId: RemoteId,
-    remoteConversationId: RemoteId,
-    remoteParentId: RemoteId | undefined
-): MessageToApi {
-    const newMessageToApi = convertNewMessageToApi(message, remoteConversationId, remoteParentId);
-    return {
-        ID: remoteId,
-        ...newMessageToApi,
-    };
-}
-
 function ensureConcat(encrypted: EncryptedData | undefined): Base64 | undefined;
 function ensureConcat(encrypted: EncryptedData): Base64;
 function ensureConcat(encrypted: undefined): undefined;
@@ -443,16 +426,6 @@ export function convertNewAttachmentToApi(
         Encrypted: encryptedConcat,
         AssetTag: id,
         ...(assetType !== undefined && { AssetType: assetType }),
-    };
-}
-
-export function convertNewAssetToApi(asset: SerializedAsset, remoteSpaceId: RemoteId): NewAssetToApi {
-    const { id, encrypted } = asset;
-    const encryptedConcat = ensureConcat(encrypted);
-    return {
-        SpaceID: remoteSpaceId,
-        Encrypted: encryptedConcat,
-        AssetTag: id,
     };
 }
 

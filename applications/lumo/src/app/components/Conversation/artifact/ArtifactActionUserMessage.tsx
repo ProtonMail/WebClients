@@ -43,5 +43,3 @@ export const ArtifactActionUserMessage = ({
         </div>
     );
 };
-
-export default ArtifactActionUserMessage;

@@ -7,7 +7,7 @@ import type { RetryStrategy } from '../types';
 import { isImeComposing } from '../util/keyboard';
 import { type IconName, LumoIcon } from './LumoIcon/LumoIcon';
 
-export type RetryOption = {
+type RetryOption = {
     strategy: RetryStrategy;
     label: string;
     icon: IconName;
@@ -147,5 +147,3 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
         </div>
     );
 };
-
-export default RetryPanel;

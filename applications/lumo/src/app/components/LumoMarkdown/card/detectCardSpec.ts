@@ -34,7 +34,7 @@ export function isCardRowLanguage(language: string): boolean {
     return language.toLowerCase() === 'card-row';
 }
 
-export function isCardLanguage(language: string): boolean {
+function isCardLanguage(language: string): boolean {
     return language.toLowerCase() === 'card' || isCardRowLanguage(language);
 }
 

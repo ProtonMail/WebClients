@@ -37,7 +37,7 @@ const LOCALE_TO_MARKETING_SLUG: Record<string, string> = {
  * Reads `localeCode` at call time — safe to use inside render functions because
  * locale changes trigger a full app re-render via LocaleInjector / GuestApp bootstrap.
  */
-export const getMarketingLocalePrefix = (): string => {
+const getMarketingLocalePrefix = (): string => {
     const slug = LOCALE_TO_MARKETING_SLUG[localeCode];
     return slug ? `/${slug}` : '';
 };

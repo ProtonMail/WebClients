@@ -75,8 +75,8 @@ export const extendStore = (newThunkArguments: Partial<LumoThunkArguments>) => {
 export type LumoState = ReturnType<typeof rootReducer>;
 export type LumoStore = ReturnType<typeof setupStore>;
 export type LumoDispatch = LumoStore['dispatch'];
-export type ExtraArgument = typeof extraThunkArguments;
-export type LumoMiddleware = Middleware<{}, LumoState>;
+type ExtraArgument = typeof extraThunkArguments;
+type LumoMiddleware = Middleware<{}, LumoState>;
 export type LumoListener = LumoMiddleware & ListenerMiddlewareInstance<LumoState>;
 export type LumoSagaContext = {
     dbApi: DbApi;

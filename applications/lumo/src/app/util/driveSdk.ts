@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { InvalidNameError, NodeEntity } from '@proton/drive';
 
-export type NormalizedNode = Omit<NodeEntity, 'name'> & {
+type NormalizedNode = Omit<NodeEntity, 'name'> & {
     name: string;
 };
 
@@ -11,7 +11,7 @@ export type GetNodeEntityType = {
     errors: Map<'name' | 'unhandledError', Error | InvalidNameError>;
 };
 
-export function getNodeName(node: NodeEntity): string {
+function getNodeName(node: NodeEntity): string {
     const name = node.name;
     if (name.ok) {
         return name.value;

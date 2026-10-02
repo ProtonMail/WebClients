@@ -1,4 +1,4 @@
-export function isLetter(c: string): boolean {
+function isLetter(c: string): boolean {
     return /^\p{L}/u.test(c);
 }
 

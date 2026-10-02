@@ -13,7 +13,7 @@ export const importGuestDataFailure = createAction<{
     error: string;
 }>('guestMigration/importGuestDataFailure');
 
-export interface GuestMigrationState {
+interface GuestMigrationState {
     isImporting: boolean;
     importSuccess: boolean;
     importError: string | null;
