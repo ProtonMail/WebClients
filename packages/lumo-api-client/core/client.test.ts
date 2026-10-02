@@ -286,3 +286,46 @@ describe('callAssistant recordRequestCallback', () => {
         expect(recordRequestCallback).toHaveBeenCalledTimes(1);
     });
 });
+
+describe('callAssistant abort', () => {
+    const longReply = sse({ choices: [{ index: 0, delta: { content: 'word '.repeat(200) } }] });
+
+    const stillSending = (body: string): ReadableStream =>
+        new ReadableStream({
+            start(controller) {
+                controller.enqueue(new TextEncoder().encode(body));
+            },
+        });
+
+    const tokensAfterAbortOnFirst = async () => {
+        const controller = new AbortController();
+        const tokensAfterAbort: string[] = [];
+        await new LumoApiClient({ enableU2LEncryption: false, enableSmoothing: true }).callAssistant(api, userTurns, {
+            signal: controller.signal,
+            chunkCallback: async (chunk) => {
+                if (chunk.type !== 'token_data') {
+                    return;
+                }
+                if (controller.signal.aborted) {
+                    tokensAfterAbort.push(chunk.content);
+                }
+                controller.abort();
+            },
+        });
+        // Lets a still-scheduled smoothing tick fire, so an enqueue into the cancelled stream fails the test.
+        await new Promise((resolve) => setTimeout(resolve, 50));
+        return tokensAfterAbort;
+    };
+
+    it('stops emitting the smoothed reply once the server has finished sending', async () => {
+        mockedCallChatEndpoint.mockImplementation(async () => stream(longReply + 'data: [DONE]\n\n'));
+
+        expect(await tokensAfterAbortOnFirst()).toEqual([]);
+    });
+
+    it('stops emitting the smoothed reply while the server is still sending', async () => {
+        mockedCallChatEndpoint.mockImplementation(async () => stillSending(longReply));
+
+        expect(await tokensAfterAbortOnFirst()).toEqual([]);
+    });
+});
