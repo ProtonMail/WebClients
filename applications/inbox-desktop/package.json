@@ -15,7 +15,6 @@
         "check:format": "prettier . --check",
         "check:lint": "eslint --quiet",
         "check:types": "tsc --noEmit --checkers 1",
-        "check-types": "pnpm run check:types",
         "create-uninstaller": "appify ./src/macos/uninstall.sh './src/macos/Proton Mail Uninstaller.app' ./assets/icons/uninstaller.png",
         "format": "prettier . --write --list-different",
         "i18n:extract:web": "node tasks/extract-translations.mjs",

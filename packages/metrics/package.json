@@ -10,7 +10,7 @@
         "./webvitals": "./webvitals.ts"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "generate-metrics": "ts-node -P scripts/tsconfig.metrics-scripts.json ./scripts/generate-metrics.ts",
         "generate-schema-types": "bash scripts/generate-schema-types.sh",
         "lint": "eslint --quiet",

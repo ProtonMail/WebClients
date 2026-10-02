@@ -13,7 +13,7 @@
         "./verification": "./lib/verification/index.ts"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find lib tests -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",

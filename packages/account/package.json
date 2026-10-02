@@ -113,7 +113,7 @@
     },
     "main": "index.ts",
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --logHeapUsage",

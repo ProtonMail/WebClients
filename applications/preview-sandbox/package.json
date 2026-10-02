@@ -5,7 +5,7 @@
     "author": "Proton AG",
     "scripts": {
         "build": "cross-env NODE_ENV=production ./bin/build.mjs",
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "pretty": "prettier --write  $(find src -type f -name '*.ts')",
         "test": "echo No tests yet",

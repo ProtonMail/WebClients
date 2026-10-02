@@ -50,7 +50,7 @@
         "./Vr/Vr": "./src/Vr/Vr.tsx"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "create-atom": "ts-node -P create-atom/tsconfig.create-atom.json create-atom/index",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "eslint --quiet",
