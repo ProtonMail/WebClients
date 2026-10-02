@@ -10,6 +10,8 @@ import { getDrive, useDrive } from '@proton/drive'
 import { APPS } from '@proton/shared/lib/constants'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import config from '~/config'
+import { useGetCacheConfig } from '@proton/docs-core/lib/Crypto/useGetCacheConfig'
+import { isDriveCompatSDKEnabled } from '@proton/docs-core/lib/Util/isDriveCompatSDKEnabled'
 
 export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCompat }) {
   const api = useApi()
@@ -17,8 +19,15 @@ export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCo
   const { UID } = useAuthentication()
   const { init: initializeDriveSDK } = useDrive()
   const unleashClient = useUnleashClient()
+  const getCacheConfig = useGetCacheConfig()
 
   const application = useMemo(() => {
+    let cacheConfig
+    if (isDriveCompatSDKEnabled(unleashClient)) {
+      cacheConfig = getCacheConfig()
+    }
+
+    // This is private application, public one is in PublicApplicationContent
     const application = new Application(
       api,
       undefined,
@@ -30,6 +39,7 @@ export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCo
       config.APP_NAME,
       config.APP_VERSION,
       unleashClient,
+      cacheConfig,
     )
 
     const drive = getDrive()
@@ -45,6 +55,7 @@ export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCo
 
     return application
     // Ensure only one application instance is created
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {

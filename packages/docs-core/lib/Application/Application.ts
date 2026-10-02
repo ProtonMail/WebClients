@@ -22,6 +22,7 @@ import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import type { DriveCompat, PublicDriveCompat } from '@proton/drive-store/lib'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
 import type { DocsApi } from '../Api/DocsApi'
+import type { CacheConfig } from '@proton/drive-store/lib/CacheConfig'
 
 declare const window: CustomWindow
 
@@ -38,6 +39,7 @@ export class Application implements ApplicationInterface {
     this.appVersion,
     this.unleashClient,
     this.syncedEditorState,
+    this.cacheConfig,
   )
 
   constructor(
@@ -48,6 +50,7 @@ export class Application implements ApplicationInterface {
     private appName: APP_NAMES,
     private appVersion: string,
     private unleashClient: UnleashClient,
+    private cacheConfig?: CacheConfig,
   ) {
     this.deps.get<MetricService>(App_TYPES.MetricService).initialize()
   }
