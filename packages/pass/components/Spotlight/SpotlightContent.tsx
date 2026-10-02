@@ -21,7 +21,7 @@ export type BaseSpotlightMessage = {
     onClose?: () => void;
 };
 
-export type DefaultSplotlightMessage = BaseSpotlightMessage & {
+type DefaultSplotlightMessage = BaseSpotlightMessage & {
     mode: 'default';
     action?: { label: string; onClick: (e: MouseEvent<HTMLElement>) => void; type: 'link' | 'button' };
     button?: ReactNode;
@@ -31,7 +31,7 @@ export type DefaultSplotlightMessage = BaseSpotlightMessage & {
     title: ReactNode;
 };
 
-export type CustomSplotlightMessage = BaseSpotlightMessage & {
+type CustomSplotlightMessage = BaseSpotlightMessage & {
     mode: 'custom';
     component: ComponentType<BaseSpotlightMessage>;
 };

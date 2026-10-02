@@ -19,7 +19,7 @@ import {
     verifyCustomAddress,
 } from '../actions';
 
-export type MonitorState = MaybeNull<{
+type MonitorState = MaybeNull<{
     custom: MonitorAddress<AddressType.CUSTOM>[];
     preview: MonitorDomain[];
     proton: MonitorAddress<AddressType.PROTON>[];

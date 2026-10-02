@@ -3,15 +3,12 @@ import { c } from 'ttag';
 
 import type { ImportReport } from '../../../lib/import/helpers/report';
 import type { ImportPayload, ImportProvider } from '../../../lib/import/types';
-import type { ClientEndpoint, IndexedByShareIdAndItemId, ItemRevision, UniqueItem, WithTabId } from '../../../types';
+import type { ClientEndpoint, IndexedByShareIdAndItemId, ItemRevision, WithTabId } from '../../../types';
 import { withRequestProgress } from '../../request/enhancers';
 import { requestActionsFactory } from '../../request/flow';
 import { withCache } from '../enhancers/cache';
 import { withItems } from '../enhancers/items';
 import { withNotification } from '../enhancers/notification';
-
-export type ImportFile = UniqueItem & { filename: string };
-export type ImportFilesReport = { totalFiles: number; ignoredFiles: string[] };
 
 type ImportIntentDTO = { data: ImportPayload; provider: ImportProvider };
 type ImportFailureDTO = { report: ImportReport; endpoint?: ClientEndpoint };

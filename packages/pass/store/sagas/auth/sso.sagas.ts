@@ -19,7 +19,7 @@ import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } fro
 import { createRequestSaga } from '../../request/sagas';
 import { selectAllAddresses, selectUser } from '../../selectors';
 
-export const authDevices = createRequestSaga({
+const authDevices = createRequestSaga({
     actions: getAuthDevices,
     call: function* () {
         const user: MaybeNull<User> = yield select(selectUser);
@@ -28,7 +28,7 @@ export const authDevices = createRequestSaga({
     },
 });
 
-export const confirmPending = createRequestSaga({
+const confirmPending = createRequestSaga({
     actions: confirmPendingAuthDevice,
     call: function* ({ pendingAuthDevice, confirmationCode }, { getAuthStore }) {
         const addresses: Address[] = yield select(selectAllAddresses);
@@ -50,7 +50,7 @@ export const confirmPending = createRequestSaga({
     },
 });
 
-export const rejectPending = createRequestSaga({
+const rejectPending = createRequestSaga({
     actions: rejectPendingAuthDevice,
     call: (pendingAuthDevice) => {
         api(rejectAuthDeviceConfig(pendingAuthDevice.ID)).catch(noop);

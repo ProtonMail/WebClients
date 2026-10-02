@@ -17,8 +17,6 @@ import { processSharesCreated, processSharesDeleted, processSharesUpdated } from
 import { processFullRefresh } from './user-events.sync';
 import { processBreachUpdate, processOrganizationInfoChanged, processUserRefresh } from './user-events.user';
 
-export type ProcessResult = { status: 'processed'; ok: boolean } | { status: 'skipped'; reason: string };
-
 /** Predicates that determine if event processing should proceed */
 const shouldSkipEvent = (events: SyncEventListOutput): boolean => {
     /** Edge-case: We might receive an update event from the BE before a file

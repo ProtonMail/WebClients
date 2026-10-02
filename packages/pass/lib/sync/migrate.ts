@@ -29,7 +29,7 @@ import {
 import { type SyncResultV1, syncV1 } from './v1/sync';
 import { getUserEventLatestID } from './v2/user-events.requests';
 
-export function* drainShareEvents(share: Share, options: RootSagaOptions, nextEventID?: string): Generator {
+function* drainShareEvents(share: Share, options: RootSagaOptions, nextEventID?: string): Generator {
     const { shareId } = share;
 
     try {
@@ -43,7 +43,7 @@ export function* drainShareEvents(share: Share, options: RootSagaOptions, nextEv
     }
 }
 
-export function* drainShares() {
+function* drainShares() {
     const shares: ShareGetResponse[] = yield call(getShares);
     const localShares: SharesState = yield select(selectShareState);
 
@@ -53,7 +53,7 @@ export function* drainShares() {
     if (newShares.length) yield call(processSharesIncomingEvent, newShares);
 }
 
-export function* drainInvites() {
+function* drainInvites() {
     const userInvites: InvitesGetResponse = yield call(getUserInvites);
     yield call(processUserInvitePollingEvent, userInvites);
 
@@ -63,7 +63,7 @@ export function* drainInvites() {
     }
 }
 
-export function* updateSyncStrategy(strategy: SyncStrategy, userEventId: MaybeNull<string>) {
+function* updateSyncStrategy(strategy: SyncStrategy, userEventId: MaybeNull<string>) {
     setSyncStrategy(strategy);
     yield put(syncMigration({ userEventId, strategy }));
 }
@@ -89,7 +89,7 @@ export function* updateSyncStrategy(strategy: SyncStrategy, userEventId: MaybeNu
  * Step 4 is the only atomic commit that flips the client to V2. If any step
  * throws before it, the strategy stays LEGACY and the migration retries on
  * next boot. Step-2 revalidations are harmless and re-run on the next attempt. */
-export function* migrateV2(options: RootSagaOptions) {
+function* migrateV2(options: RootSagaOptions) {
     /** 1. Anchor V2 event cursor at current server state */
     const userEventId: string = yield call(getUserEventLatestID);
 
@@ -116,7 +116,7 @@ export function* migrateV2(options: RootSagaOptions) {
  * sequence can apply it through `bootSuccess`. Reverts the strategy to `LEGACY`
  * with a null cursor. Boot-time only: if any step throws, the current strategy
  * is kept and the rollback retries on next boot. */
-export function* rollbackV2(options: RootSagaOptions): Generator<unknown, SyncResultV1> {
+function* rollbackV2(options: RootSagaOptions): Generator<unknown, SyncResultV1> {
     const result: SyncResultV1 = yield call(syncV1, options);
     yield call(updateSyncStrategy, SyncStrategy.LEGACY, null);
     return result;

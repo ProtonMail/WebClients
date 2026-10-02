@@ -8,7 +8,7 @@ import { createPassBridge } from '.';
 import type { MaybeNull } from '../../types';
 import type { PassBridge } from './types';
 
-export const PassBridgeContext = createContext<MaybeNull<PassBridge>>(null);
+const PassBridgeContext = createContext<MaybeNull<PassBridge>>(null);
 
 export const PassBridgeProvider: FC<PropsWithChildren> = ({ children }) => {
     const silentAPI = useSilentApi();

@@ -40,9 +40,6 @@ export enum ExportFormat {
     JSON = 'json',
 }
 
-export type ExportOptions =
-    { format: ExportFormat.PGP; passphrase: string } | { format: Exclude<ExportFormat, ExportFormat.PGP> };
-
 export type ExportRequestOptions = {
     format: ExportFormat;
     passphrase: string;
@@ -52,4 +49,3 @@ export type ExportRequestOptions = {
 };
 
 export type ExportResult = FileForDownload & { mimeType: string };
-export type ExportFailure = { error: string };

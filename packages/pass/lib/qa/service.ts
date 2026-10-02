@@ -26,7 +26,7 @@ const QA_DEFAULT_STATE: QAState = {
     sync_strategy_v2: true,
 };
 
-export const QA_SCENARIOS = objectKeys<QAScenario>(QA_DEFAULT_STATE);
+const QA_SCENARIOS = objectKeys<QAScenario>(QA_DEFAULT_STATE);
 
 export type QAScenario = keyof QAState;
 export type QAEvent = { [K in QAScenario]: { type: K; enabled: QAState[K] } }[QAScenario];

@@ -12,7 +12,7 @@ export enum InjectionMode {
     LOOSE = 'read',
 }
 
-export type ContextValue<T extends ContextHandler = ContextHandler> = T extends ContextHandler<infer U> ? U : never;
+type ContextValue<T extends ContextHandler = ContextHandler> = T extends ContextHandler<infer U> ? U : never;
 
 /** The type `F` extends `Maybe<Callback>` to enhance automatic inference
  * when utilizing `withContext` on typed optional object methods. This avoids

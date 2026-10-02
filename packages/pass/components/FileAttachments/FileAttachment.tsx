@@ -24,7 +24,7 @@ import { DropdownMenuButton } from '../Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../Layout/Dropdown/QuickActionsDropdown';
 import { FileAttachmentIcon } from './FileAttachmentIcon';
 
-export type FileOrDescriptor = {
+type FileOrDescriptor = {
     name: string;
     size: number;
     mimeType?: string;

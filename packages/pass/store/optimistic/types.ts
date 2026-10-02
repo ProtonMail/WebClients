@@ -19,7 +19,7 @@ export enum HistoryFlag {
     DETERMINISTIC = 2,
 }
 
-export type OptimisticActionId = string;
+type OptimisticActionId = string;
 
 export type DeterministicHistoryItem = {
     type: HistoryFlag.DETERMINISTIC;
@@ -33,7 +33,7 @@ export type OptimisticHistoryItem = {
     failed?: boolean;
 };
 
-export type OptimisticEffectHistoryItem = {
+type OptimisticEffectHistoryItem = {
     id: OptimisticActionId;
     type: HistoryFlag.OPTIMISTIC_EFFECT;
     action: Action;
@@ -64,7 +64,7 @@ export type CombinedOptimisticReducer<T = any> = Reducer<T, any, {}> & {
 
 export type OptimisticReducersMapValues<T = any> = (Reducer<T> | WithOptimisticReducer<T>) | OptimisticReducersMapObject<T>;
 
-export type UnwrapOptimisticReducersMapValues<T> = Exclude<
+type UnwrapOptimisticReducersMapValues<T> = Exclude<
     T extends WithOptimisticReducer<infer S>
         ? WrappedOptimisticState<S>
         : T extends Reducer<infer S>

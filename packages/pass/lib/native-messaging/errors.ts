@@ -61,15 +61,13 @@ export const getForNativeMessageErrorFromConnectionError = (
     return NativeMessageErrorType.UNKNOWN;
 };
 
-export const getNativeMessageErrorType = (err: unknown): NativeMessageErrorType | null => {
+const getNativeMessageErrorType = (err: unknown): NativeMessageErrorType | null => {
     if (!err || typeof err !== 'object' || !('message' in err)) return null;
     const { message } = err as { message: unknown };
     return (
         Object.values(NativeMessageErrorType).find((type) => message === getMessageForNativeMessageError(type)) ?? null
     );
 };
-
-export const isErrorOfType = (err: unknown, type: NativeMessageErrorType) => getNativeMessageErrorType(err) === type;
 
 export type NativeMessageErrorKind = 'auth' | 'infra';
 

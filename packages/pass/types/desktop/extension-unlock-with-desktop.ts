@@ -43,26 +43,21 @@ export type NativeMessageSetupLockSecretResponse = {
     userIdentifier: string;
 };
 
-export type NativeMessageUnlockRequest = {
+type NativeMessageUnlockRequest = {
     type: NativeMessageType.UNLOCK;
     encrypt: false;
     userIdentifier: string;
 };
 
-export type NativeMessageUnlockResponse = {
+type NativeMessageUnlockResponse = {
     type: NativeMessageType.UNLOCK;
     encrypt: false;
     secret: string;
 };
 
 export type NativeMessageRequestForType<Type extends NativeMessageType> = Extract<NativeMessageRequest, { type: Type }>;
-export type NativeMessageResponseForType<Type extends NativeMessageType> = Extract<
-    NativeMessageResponse,
-    { type: Type }
->;
-export type NativeMessageRequestForResponse<Res extends NativeMessageResponse> = NativeMessageRequestForType<
-    Res['type']
->;
+type NativeMessageResponseForType<Type extends NativeMessageType> = Extract<NativeMessageResponse, { type: Type }>;
+
 export type NativeMessageResponseForRequest<Req extends NativeMessageRequest> = NativeMessageResponseForType<
     Req['type']
 >;
@@ -81,6 +76,5 @@ export type NativeMessagePayload<Mes extends NativeMessage> =
         { type: Mes['type']; messageId: string; encrypted: string; serverTime: number; userIdentifier?: string }
     :   Omit<Mes, 'encrypt'> & { messageId: string };
 
-export type NativeMessageResponseWithError<Res extends NativeMessageResponse> =
-    | Res
-    | (Pick<Res, 'type'> & { error: NativeMessageErrorType });
+type NativeMessageResponseWithError<Res extends NativeMessageResponse> =
+    Res | (Pick<Res, 'type'> & { error: NativeMessageErrorType });

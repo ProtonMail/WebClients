@@ -17,7 +17,7 @@ import {
     sanitizeFileName,
 } from '../file-attachments/helpers';
 
-export type ExportFileStream = InputWithoutMeta | InputWithSizeMeta;
+type ExportFileStream = InputWithoutMeta | InputWithSizeMeta;
 export type ExportGenerator = AsyncGenerator<ExportFileStream>;
 
 export const archivePath = (filename: string, subpath?: string) => {

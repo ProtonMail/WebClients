@@ -50,7 +50,6 @@ export type AppState = {
 };
 
 export type SessionStoreData = AuthSession & { resumeCount: number; resumeAttemptedAt: MaybeNull<number> };
-export type SessionStoreKeys = keyof SessionStoreData;
 
 export type LocalStoreData = {
     b2bEvents: string;
@@ -74,8 +73,6 @@ export type LocalStoreData = {
     websiteRules: string;
     [QA_STATE_KEY]: string;
 };
-
-export type LocalStoreKeys = keyof LocalStoreData;
 
 export type PopupInitialState = {
     search: MaybeNull<string>;

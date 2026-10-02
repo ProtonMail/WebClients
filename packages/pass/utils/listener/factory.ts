@@ -5,15 +5,6 @@ import { skipFirst } from '../fp/control';
 import { pipe } from '../fp/pipe';
 import type { PubSub, Subscriber } from '../pubsub/factory';
 
-/**
- * Removing every listener from a DOM node
- * can be achieved by cloning the node and
- * replacing it in-place
- */
-export const removeListeners = (el: HTMLElement): void => {
-    el.replaceWith(el.cloneNode(true));
-};
-
 type EventSource = Window | Document | HTMLElement | MediaQueryList | ServiceWorkerGlobalScope;
 
 type EventMap<T extends EventSource> = T extends Window
@@ -28,7 +19,7 @@ type EventMap<T extends EventSource> = T extends Window
 
 type EventType<T extends EventSource, E extends keyof EventMap<T>> = EventMap<T>[E];
 
-export type Listener<T extends EventSource = any, E extends keyof EventMap<T> = any> =
+type Listener<T extends EventSource = any, E extends keyof EventMap<T> = any> =
     | {
           kind: 'listener';
           fn: (e: EventType<T, E>) => void;

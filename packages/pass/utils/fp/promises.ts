@@ -114,8 +114,6 @@ export const asyncQueue = <F extends (...args: any[]) => Promise<any>>(fn: F, op
     }) as F;
 };
 
-export type CancelablePromise<T> = Promise<T> & { cancel: () => void };
-
 export const cancelable = <T>(
     job: (signal: AbortSignal) => Promise<T>,
     ctrl: AbortController = new AbortController()

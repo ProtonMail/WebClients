@@ -3,11 +3,6 @@ import type { Action } from 'redux';
 import type { HistoryItem, OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
 import { isCombinedOptimisticReducer } from './assertions';
 
-export const wrapOptimisticState = <T>(state: T): WrappedOptimisticState<T> => ({
-    ...state,
-    optimistic: { history: [] },
-});
-
 export const unwrapOptimisticState = <T>(state: WrappedOptimisticState<T>): T => {
     const { optimistic, ...inner } = state;
 
@@ -31,11 +26,7 @@ export const getActionFromHistoryItem = (item: HistoryItem): Action => item.acti
 export const sanitizeOptimisticReducerMapObject = (map: OptimisticReducersMapObject): OptimisticReducersMapObject => {
     return Object.fromEntries(
         Object.entries(map).map(([reducerKey, reducer]) => {
-            if (
-                typeof reducer === 'function' &&
-                isCombinedOptimisticReducer(reducer) &&
-                reducer.innerCombinedReducers !== undefined
-            ) {
+            if (typeof reducer === 'function' && isCombinedOptimisticReducer(reducer) && reducer.innerCombinedReducers !== undefined) {
                 return [reducerKey, sanitizeOptimisticReducerMapObject(reducer.innerCombinedReducers)];
             }
 

@@ -6,15 +6,9 @@ import type { ParsedUrl, URLComponents } from '../types';
 import { sanitizeURL } from './sanitize';
 import { UNSUPPORTED_SCHEMES_REGEX } from './url.constants';
 
-export {
-    MAX_HOSTNAME_LENGTH,
-    RegexURL,
-    UNSUPPORTED_SCHEMES,
-    UNSUPPORTED_SCHEMES_REGEX,
-    isValidURLScheme,
-} from './url.constants';
+export { MAX_HOSTNAME_LENGTH, RegexURL, UNSUPPORTED_SCHEMES, isValidURLScheme } from './url.constants';
 
-export const URL_COMPONENTS = ['domain', 'port', 'protocol'] as const;
+const URL_COMPONENTS = ['domain', 'port', 'protocol'] as const;
 
 export const isTotpUri = (maybeUri: string): boolean => maybeUri.startsWith('otpauth://');
 

@@ -15,7 +15,7 @@ type Props = {
     onPressEnter?: KeyboardEventHandler<HTMLInputElement>;
 };
 
-export const [MIN_READS, MAX_READS] = [1, 1000];
+const [MIN_READS, MAX_READS] = [1, 1000];
 
 export const MaxReadsToggleInput: FC<Props> = ({ disabled, value, onPressEnter, onChange }) => (
     <>
