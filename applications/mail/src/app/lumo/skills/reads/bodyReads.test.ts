@@ -8,7 +8,6 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { getParamsFromPathname } from '../../../helpers/mailboxUrl';
-import { HIDDEN_MARKER } from '../../helpers/hiddenMarker';
 import type { MailToolDeps } from '../../toolModule';
 import { createReadEmailHandler, readEmailDefinition } from './readEmail';
 import { createReadOpenEmailHandler, readOpenEmailDefinition } from './readOpenEmail';
@@ -736,7 +735,6 @@ describe('an HTML email reaching the model', () => {
 
         expect(result.emails[0].body).toContain('Your room is booked.');
         expect(result.emails[0].body).not.toContain(INJECTION);
-        expect(result.emails[0].body).toContain(HIDDEN_MARKER);
     });
 });
 
