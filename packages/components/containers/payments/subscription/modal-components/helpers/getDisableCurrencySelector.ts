@@ -1,9 +1,14 @@
 import type { MethodsHook } from '@proton/payments-ui/react-extensions/index';
+import { PLANS } from '@proton/payments/core/constants';
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/currencyOverride';
 import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+
+const currencyLockedPlans = [PLANS.PASS_BASIC];
+
+const isDisabledByPlan = (planIDs: PlanIDs, plans: PLANS[]) => plans.some((plan) => !!planIDs[plan]);
 
 export const getDisableCurrencySelector = (
     paymentMethods: MethodsHook,
@@ -15,5 +20,11 @@ export const getDisableCurrencySelector = (
     const hasCurrencyRestrictedMethod = isCurrencyRestrictedMethod(paymentMethods.selectedMethod?.type);
     const isLifetimeWithCredits = user.Credit > 0 && isLifetimePlanSelected(planIDs);
 
-    return hasCurrencyRestrictedMethod || isLifetimeWithCredits || couponConfig?.disableCurrencySelector || loading;
+    return (
+        hasCurrencyRestrictedMethod ||
+        isLifetimeWithCredits ||
+        isDisabledByPlan(planIDs, currencyLockedPlans) ||
+        couponConfig?.disableCurrencySelector ||
+        loading
+    );
 };

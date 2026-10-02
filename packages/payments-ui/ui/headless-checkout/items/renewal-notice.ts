@@ -1,4 +1,6 @@
-import { getCheckoutRenewNoticeTextFromCheckResult } from '../../components/RenewalNotice';
+import { PLANS } from '@proton/payments/core/constants';
+
+import { getCheckoutRenewNoticeTextFromCheckResult, getSwitchTermsNoticeText } from '../../components/RenewalNotice';
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import type { BaseLineItem } from './base-line-item';
 
@@ -10,13 +12,15 @@ export interface RenewalNoticeLineItem
 function formatRenewalNotice(ctx: HeadlessCheckoutContextInner) {
     const { checkResult, plansMap, planIDs, subscription, app, isPaidPlan, paymentForbiddenReason } = ctx;
 
-    const renewalNotice = getCheckoutRenewNoticeTextFromCheckResult({
-        checkResult,
-        plansMap,
-        planIDs,
-        subscription,
-        app,
-    });
+    const renewalNotice = planIDs[PLANS.PASS_BASIC]
+        ? getSwitchTermsNoticeText(app)
+        : getCheckoutRenewNoticeTextFromCheckResult({
+              checkResult,
+              plansMap,
+              planIDs,
+              subscription,
+              app,
+          });
 
     const displayRenewNotice = isPaidPlan && !paymentForbiddenReason?.forbidden;
 
