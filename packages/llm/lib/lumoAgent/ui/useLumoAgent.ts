@@ -312,8 +312,8 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
     const cancel = useCallback(() => releasePendingConfirm(LumoConfirmAnswer.CANCELLED), [releasePendingConfirm]);
 
-    // Every abort reaches the chain as the same `AbortError`, so the caller says which one it was. An
-    // `AbortError` from anywhere else is the user's own stop as far as the chain can tell.
+    // Every abort reaches the chain the same way (a plain finish or an `AbortError`), so the caller says
+    // which one it was. An `AbortError` from anywhere else is the user's own stop as far as the chain can tell.
     const abortEndRef = useRef(LumoChainEnd.STOPPED);
 
     const abortChain = useCallback((end: LumoChainEnd) => {
@@ -508,11 +508,11 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     signal: controller.signal,
                     chunkCallback,
                 });
-                // An abandoned chain can return normally rather than throw — the transport reports an
-                // aborted budget stop as a plain finish — so nothing past this point may land on the turn
+                // An abandoned chain usually returns normally rather than throw, since the transport
+                // reports an abort as a plain finish, so nothing past this point may land on the turn
                 // that replaced it.
                 if (controllerRef.current !== controller) {
-                    reportChainEnd(LumoChainEnd.REPLACED);
+                    reportChainEnd(abortEndRef.current);
                     return;
                 }
                 const sentCount = withoutBlankAssistantTurns(turns).length;

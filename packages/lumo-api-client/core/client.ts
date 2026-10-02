@@ -358,8 +358,10 @@ export class LumoApiClient {
                 .pipeThrough(makeDecryptionTransformStream(encryption)) // U2L decryption
                 .pipeThrough(makeImageLoggerTransformStream()) // noop - logs image_data
                 .pipeThrough(makeContextUpdaterTransformStream(responseContext)) // bookkeeping (read-only)
-                .pipeThrough(makeSmoothingTransformStream(enableSmoothing))
-                .pipeTo(makeFinishSink(thisNotifyResponse, chunkCallback, responseContext)); // calls callbacks with final chunks
+                .pipeThrough(makeSmoothingTransformStream(enableSmoothing, signal))
+                // The signal must reach the sink too: once the body has closed, the smoothing buffer drains with
+                // no further bytes for the abort transform to catch.
+                .pipeTo(makeFinishSink(thisNotifyResponse, chunkCallback, responseContext), { signal }); // calls callbacks with final chunks
 
             // Stream is complete
             finalStatus = 'succeeded';

@@ -1317,6 +1317,32 @@ describe('useLumoAgent', () => {
             expect(lastChainEnd()[0]).toBe(LumoChainEnd.DISCARDED);
         });
 
+        // The real transport swallows the abort and finishes cleanly, exactly as a replaced chain does.
+        it.each([
+            ['stopped', (result: AgentResult) => result.current.stop(), LumoChainEnd.STOPPED],
+            ['cleared', (result: AgentResult) => result.current.clear(), LumoChainEnd.DISCARDED],
+        ])('reports a chain %s while the transport finishes cleanly as %s', async (_name, abandon, end) => {
+            let releaseChain = () => {};
+            const chainMayFinish = new Promise<void>((resolve) => {
+                releaseChain = resolve;
+            });
+            script = () => chainMayFinish;
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            let sendPromise!: Promise<void>;
+            act(() => {
+                sendPromise = result.current.send('find my tickets');
+            });
+
+            act(() => abandon(result));
+            await act(async () => {
+                releaseChain();
+                await sendPromise;
+            });
+
+            expect(lastChainEnd()[0]).toBe(end);
+        });
+
         it('reports a chain parked on its round budget as budget, not as an answer', async () => {
             script = async ({ chunk }) => {
                 chunk(message('Still looking.'));
