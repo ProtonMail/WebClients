@@ -4,18 +4,29 @@ import { useHistory } from 'react-router-dom';
 import { useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { ConnectionState, DisconnectReason, RoomEvent } from 'livekit-client';
+import type { RemoteParticipant } from 'livekit-client';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetStore } from '@proton/meet/store/hooks';
 import { resetChatAndReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { setIsReconnecting, setJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
-import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices/meetAppStateSlice';
+import {
+    setMeetingEndedReason,
+    setPreviousMeetingLink,
+    setUpsellModalType,
+} from '@proton/meet/store/slices/meetAppStateSlice';
+import { selectIsLocalParticipantHost } from '@proton/meet/store/slices/participants/participantsSlice';
 import { resetUiState } from '@proton/meet/store/slices/uiStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { isValidMessageString } from '../../utils/isValidMessageString';
 import { useStableCallback } from '../useStableCallback';
+
+// Topic livekit-ops publishes the deletion reason on, right before deleting the room
+export const ROOM_DELETED_TOPIC = 'room_deleted';
+const MAX_MEETING_ENDED_REASON_LENGTH = 256;
 
 interface UseRoomEventHandlersParams {
     joinedRoom: boolean;
@@ -57,6 +68,7 @@ export const useRoomEventHandlers = ({
 }: UseRoomEventHandlersParams): UseRoomEventHandlersResult => {
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
+    const store = useMeetStore();
     const history = useHistory();
     const meetCoreClient = useMeetCoreClient();
 
@@ -64,6 +76,7 @@ export const useRoomEventHandlers = ({
     const [showReconnectedMessage, setShowReconnectedMessage] = useState(false);
 
     const liveKitConnectionStateRef = useRef<ConnectionState | null>(null);
+    const meetingEndedReasonRef = useRef<string | null>(null);
 
     const handleConnectionStateChanged = useStableCallback((state: ConnectionState) => {
         const previousState = liveKitConnectionStateRef.current;
@@ -88,6 +101,34 @@ export const useRoomEventHandlers = ({
             setShowReconnectedMessage(false);
         }
     });
+
+    const handleDataReceived = useStableCallback(
+        (
+            // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
+            payload: Uint8Array,
+            participant?: RemoteParticipant,
+            _kind?: unknown,
+            topic?: string
+        ) => {
+            // Ignore participants publishing on the same topic to avoid impersonation
+            if (topic !== ROOM_DELETED_TOPIC || participant) {
+                return;
+            }
+
+            const reason = new TextDecoder().decode(payload).trim();
+            if (!reason || reason.length > MAX_MEETING_ENDED_REASON_LENGTH || !isValidMessageString(reason)) {
+                return;
+            }
+
+            meetingEndedReasonRef.current = reason;
+            dispatch(
+                setMeetingEndedReason({
+                    reason,
+                    isLocalParticipantHost: selectIsLocalParticipantHost(store.getState()),
+                })
+            );
+        }
+    );
 
     const handleDisconnected = useStableCallback((reason?: DisconnectReason) => {
         // STATE_MISMATCH is recoverable — trigger full reconnection flow
@@ -152,14 +193,19 @@ export const useRoomEventHandlers = ({
             return;
         }
 
+        meetingEndedReasonRef.current = null;
+        dispatch(setMeetingEndedReason(null));
+
         room.on(RoomEvent.ConnectionStateChanged, handleConnectionStateChanged);
+        room.on(RoomEvent.DataReceived, handleDataReceived);
         room.on(RoomEvent.Disconnected, handleDisconnected);
 
         return () => {
             room.off(RoomEvent.ConnectionStateChanged, handleConnectionStateChanged);
+            room.off(RoomEvent.DataReceived, handleDataReceived);
             room.off(RoomEvent.Disconnected, handleDisconnected);
         };
-    }, [joinedRoom, room, handleConnectionStateChanged, handleDisconnected]);
+    }, [joinedRoom, room, dispatch, handleConnectionStateChanged, handleDataReceived, handleDisconnected]);
 
     return {
         liveKitConnectionState,
