@@ -2,5 +2,5 @@
 
 ```bash
 npm install -g tsx # first time only
-yarn generate:api-types
+pnpm run generate:api-types
 ```

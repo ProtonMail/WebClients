@@ -12,7 +12,7 @@ This project is a monorepo hosting the Proton web clients. It includes the web a
 - <img src="./applications/lumo/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Lumo</span>
 - <img src="./applications/meet/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Meet</span>
 
-Technically, this monorepo is based on Yarn & Yarn Workspaces, with unified versioning for all packages inside.
+Technically, this monorepo is based on pnpm & pnpm workspaces, with unified versioning for all packages inside.
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ Technically, this monorepo is based on Yarn & Yarn Workspaces, with unified vers
 You'll need to have the following environment to work with this project:
 
 - Node.js LTS
-- Yarn 4
+- pnpm 12, installed through Corepack (`corepack enable pnpm`)
 - git
 
 See `package.json` for specific version requirements.
@@ -35,14 +35,14 @@ git clone git@github.com:ProtonMail/WebClients.git
 
 # Install all dependencies for the entire monorepo & symlink
 # local dependents to one another
-yarn install
+pnpm install
 
 # Run web clients by running proton-<package-name>
 # Example: proton mail web client
-yarn workspace proton-mail start
+pnpm --filter proton-mail run start
 ```
 
-For additional details on how to interact with the monorepo, see the [yarn docs](https://yarnpkg.com/) for reference.
+For additional details on how to interact with the monorepo, see the [pnpm docs](https://pnpm.io/) for reference.
 
 ## How VPN app differs from the rest
 
@@ -54,17 +54,17 @@ Since both domains are separate, we don't share a local SSO between them. Theref
 
 ```shell
 # To serve VPN through vpn-settings
-yarn workspace --port 8050 proton-vpn-settings start
+pnpm --filter proton-vpn-settings run start --port 8050
 
 # To serve VPN through account
-yarn start-all --applications "proton-account"
+pnpm run start-all --applications "proton-account"
 ```
 
 ## How to version an application manually
 
 While being on the `main` branch for a clean release.
 
-From the root folder, run `yarn workspace @proton/version run version --applications proton-X --version x.x.x.x`
+From the root folder, run `pnpm --filter @proton/version run version --applications proton-X --version x.x.x.x`
 
 ## Help us to translate the project
 

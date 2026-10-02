@@ -28,7 +28,9 @@
                 "turbo",
                 "@proton/stylelint-config-proton",
                 "stylelint-config-standard-scss",
-                "stylelint-use-logical-spec"
+                "stylelint-use-logical-spec",
+                "@typescript/native",
+                "^(@proton|@proton-pass-desktop)/|^@types/global-types-monorepo$|^proton-|^(andromeda-wasm|eslint-plugin-custom-rules|pdf-ui)$"
             ]
         },
         "applications/account": {

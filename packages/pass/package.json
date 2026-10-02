@@ -6,8 +6,8 @@
     "scripts": {
         "check-types": "tsc --checkers 1",
         "cherry": "scripts/cherry.sh",
-        "docs:build": "yarn workspace @proton/pass-docs build",
-        "docs:dev": "yarn workspace @proton/pass-docs dev",
+        "docs:build": "pnpm --filter @proton/pass-docs run build",
+        "docs:dev": "pnpm --filter @proton/pass-docs run dev",
         "generate:api-types": "API=${API:-proton.black} ./utils/openapi/index.ts \"https://${API}/api/internal/doc?page=pass\" > ./types/api/pass.ts",
         "generate:proto": "scripts/generate-protos.sh",
         "generate:rule-types": "./lib/extension/rules/generate.sh",
@@ -17,8 +17,8 @@
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "proton-pack dev-server --appMode=standalone",
         "test": "NODE_NO_WARNINGS=1 jest --verbose",
-        "test:ci": "yarn test:tz && jest --runInBand --ci --logHeapUsage",
-        "test:tz": "bash -c 'for tz in UTC America/New_York Europe/Paris Asia/Tokyo; do TZ=$tz yarn test time/format.spec.ts || exit 1; done'",
+        "test:ci": "pnpm run test:tz && jest --runInBand --ci --logHeapUsage",
+        "test:tz": "bash -c 'for tz in UTC America/New_York Europe/Paris Asia/Tokyo; do TZ=$tz pnpm run test time/format.spec.ts || exit 1; done'",
         "test:watch": "jest --watch",
         "version:update": "scripts/version.sh"
     },
