@@ -105,7 +105,7 @@ async function main() {
 
     if (checkMode) {
         console.error('entitlement-names.ts is out of sync with Chargebee.');
-        console.error('Run: yarn workspace @proton/payments generate:entitlement-names');
+        console.error('Run: pnpm --filter @proton/payments run generate:entitlement-names');
         process.exit(1);
     }
 

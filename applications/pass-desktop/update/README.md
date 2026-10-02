@@ -32,7 +32,7 @@ Filenames must match the manifest URLs:
 ## Run the server
 
 ```sh
-yarn workspace proton-pass-desktop update:serve
+pnpm --filter proton-pass-desktop run update:serve
 ```
 
 Serves this folder on port `8099` with caching disabled (`-c-1`), so edited manifests are picked up immediately. The launcher auto-detects TLS:
@@ -58,7 +58,7 @@ The cert is reused from local-sso rather than generated here:
 The MSIX install has no ATS constraint, so skip HTTPS — serve plain HTTP and let the guest reach the host directly by IP. No hostname, cert, or CA import needed.
 
 ```sh
-yarn workspace proton-pass-desktop update:serve --http
+pnpm --filter proton-pass-desktop run update:serve --http
 ```
 
 `http-server` binds all interfaces, so the VM reaches it at the **host's IP** (here `192.168.1.21`, which depends on the VM network mode — bridged → host LAN IP; NAT → the host-only gateway IP). Then:

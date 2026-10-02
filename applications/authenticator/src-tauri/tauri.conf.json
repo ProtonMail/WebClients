@@ -3,9 +3,9 @@
     "productName": "Proton Authenticator",
     "identifier": "me.proton.authenticator",
     "build": {
-        "beforeDevCommand": "yarn start:web --port=50001",
+        "beforeDevCommand": "pnpm run start:web --port=50001",
         "devUrl": "http://localhost:50001",
-        "beforeBuildCommand": "yarn build:web",
+        "beforeBuildCommand": "pnpm run build:web",
         "frontendDist": "../dist"
     },
     "app": {

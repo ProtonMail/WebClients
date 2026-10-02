@@ -8,7 +8,7 @@
     "scripts": {
         "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
-        "lint:fix": "yarn run lint --fix"
+        "lint:fix": "pnpm run lint --fix"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",

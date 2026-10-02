@@ -8,7 +8,7 @@ This project builds into a single-page HTML file. This file is loaded by the cli
 
 ## Building
 
-`yarn build` will build the project, and copy it to the apps that use it.
+`pnpm run build` will build the project, and copy it to the apps that use it.
 
 You can refer to [`bin/build.js`](./bin/build.js) to see what exactly is happening.
 

@@ -15,7 +15,7 @@
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find src fixtures -type f -name '*.ts')",
         "test": "jest",
-        "test:ci": "yarn test",
+        "test:ci": "pnpm run test",
         "test:watch": "jest --watch --coverage=false --watchAll"
     },
     "dependencies": {

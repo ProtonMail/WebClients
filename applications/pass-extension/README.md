@@ -29,10 +29,10 @@ The extension supports different browser targets:
 ### Development Commands
 
 ```shell
-yarn start # Development build without hot reloading
-yarn start:reload # Development build with hot reloading
-yarn start:prod # Development build using production config (no hot reloading)
-yarn start:prod:reload # Development build using production config with hot reloading
+pnpm run start # Development build without hot reloading
+pnpm run start:reload # Development build with hot reloading
+pnpm run start:prod # Development build using production config (no hot reloading)
+pnpm run start:prod:reload # Development build using production config with hot reloading
 ```
 
 If you want to target the production api, add set this env var `API_ENV=proton.me`
@@ -43,13 +43,13 @@ In dev-mode, you can inspect the redux stores on the REDUX_DEVTOOLS_PORT (defaul
 
 ```bash
 # Build for Chrome (default)
-yarn build:extension
+pnpm run build:extension
 
 # Build for Firefox
-BUILD_TARGET=firefox yarn build:extension
+BUILD_TARGET=firefox pnpm run build:extension
 
 # Build for all platforms
-yarn build:extension:all
+pnpm run build:extension:all
 ```
 
 ### Loading Extensions
@@ -76,7 +76,7 @@ Make sure you have a ruby 4+. At the moment of writing, ruby 4.0.2, installed fr
 For the first time, run the build, install some dependencies and link the assets to the xcode project and open the `Proton Pass.xcodeproj` project for the first time
 
 ```shell
-BUILD_TARGET=safari yarn build:extension && (cd safari && gem install xcodeproj && ruby ./tools/reference_dist_directory.rb && open "Proton Pass.xcodeproj")
+BUILD_TARGET=safari pnpm run build:extension && (cd safari && gem install xcodeproj && ruby ./tools/reference_dist_directory.rb && open "Proton Pass.xcodeproj")
 ```
 
 Run the build from Xcode, in case of following error, select the team in Xcode:
@@ -91,7 +91,7 @@ From this point on, run the following command for all code changes. This script 
 - kill and reopen safari
 
 ```bash
-sed -i '' -E "s/(\"version\": )\"[^\"]*\"/\1\"$(date +%Y.%m%d.%H%M)\"/" manifest-safari.json && BUILD_TARGET=safari yarn build:extension && (
+sed -i '' -E "s/(\"version\": )\"[^\"]*\"/\1\"$(date +%Y.%m%d.%H%M)\"/" manifest-safari.json && BUILD_TARGET=safari pnpm run build:extension && (
   cd safari &&
   ruby ./tools/reference_dist_directory.rb &&
   xcodebuild \
@@ -117,7 +117,7 @@ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 xcode-select -p # to verify, Should output /Applications/Xcode.app/Contents/Developer
 ```
 
-Debugging extension components in Safari is challenging due to dev-tools limitations. For troubleshooting, build your project with the `HTTP_DEBUGGER=true` flag and launch the debugger interface using `yarn debugger:http`. This configuration will route all extension logs and error messages to stdout.
+Debugging extension components in Safari is challenging due to dev-tools limitations. For troubleshooting, build your project with the `HTTP_DEBUGGER=true` flag and launch the debugger interface using `pnpm run debugger:http`. This configuration will route all extension logs and error messages to stdout.
 
 ### Local Backend Integration
 
@@ -128,7 +128,7 @@ Debugging extension components in Safari is challenging due to dev-tools limitat
 2. Run web account client:
 
     ```shell
-    yarn workspace proton-account start --api=https://localhost --port 8081
+    pnpm --filter proton-account run start --api=https://localhost --port 8081
     ```
 
 3. Set up TLS termination with Caddy:

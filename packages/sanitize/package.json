@@ -11,8 +11,8 @@
         "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest",
-        "test:ci": "yarn test --ci --runInBand --logHeapUsage",
-        "test:watch": "yarn test --watch"
+        "test:ci": "pnpm run test --ci --runInBand --logHeapUsage",
+        "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
         "dompurify": "^3.4.16"

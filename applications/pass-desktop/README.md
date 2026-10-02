@@ -18,31 +18,31 @@ Make sure the correct Rust target is set in `native/build.js` for your architect
 Install dependencies:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 Build the native Rust module (required on first run and after native code changes):
 
 ```bash
-yarn build:native
+pnpm run build:native
 ```
 
 Start the app in development mode, it'll target black environment:
 
 ```bash
-yarn start
+pnpm run start
 ```
 
 If you want to target prod, use this instead
 
 ```bash
-yarn start:prod
+pnpm run start:prod
 ```
 
 On Linux, if you get a sandbox error, you'll need to disable Electron sandbox by doing:
 
 ```bash
-ELECTRON_DISABLE_SANDBOX=1 yarn start
+ELECTRON_DISABLE_SANDBOX=1 pnpm run start
 ```
 
 ## Internal only

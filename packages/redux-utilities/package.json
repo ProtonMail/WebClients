@@ -16,7 +16,7 @@
         "check-types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest --runInBand",
-        "test:ci": "yarn test"
+        "test:ci": "pnpm run test"
     },
     "dependencies": {
         "@proton/react-redux-store": "workspace:^",

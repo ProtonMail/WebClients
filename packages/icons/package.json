@@ -21,9 +21,9 @@
         "types.ts"
     ],
     "scripts": {
-        "build": "yarn generate && tsc -P build.tsconfig.json",
+        "build": "pnpm run generate && tsc -P build.tsconfig.json",
         "generate": "tsx ./bin/generateReactIcons.ts",
-        "prepack": "yarn build"
+        "prepack": "pnpm run build"
     },
     "dependencies": {
         "@proton/utils": "workspace:^",

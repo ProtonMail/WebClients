@@ -17,7 +17,7 @@
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch",
-        "update-metrics": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && yarn generate-schema-types && yarn generate-metrics"
+        "update-metrics": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && pnpm run generate-schema-types && pnpm run generate-metrics"
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
