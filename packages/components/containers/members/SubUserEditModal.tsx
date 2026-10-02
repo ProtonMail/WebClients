@@ -176,8 +176,10 @@ const SubUserEditModal = ({
     const [editedRoles, setEditedRoles] = useState<Set<string> | null>(null);
     const selectedRoles =
         editedRoles ?? new Set(member.UserOrganizationRoles?.map(({ Role }) => Role.OrganizationRoleID) ?? []);
+    const hasMemberRoles = member.roleState === 'full' || member.roleState === 'stale';
     const loadingMemberRoles = member.roleState === 'initial' || member.roleState === 'pending';
     const [adminRolesUIState, loadingAdminRolesUI] = useAdminRolesUI();
+    const submitsEditedRoles = adminRolesUIState === AdminRolesUIState.Enabled && editedRoles !== null;
     const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
         FeatureCode.AdminRolesOnboardingModal
     );
@@ -615,7 +617,7 @@ const SubUserEditModal = ({
                         const memberDiff = getMemberDiff({ model, initialModel, hasVPN });
                         const hasMemberChanges = await handleUpdateMember(memberDiff, null, false);
                         let hasRoleChanges = false;
-                        if (adminRolesUIState === AdminRolesUIState.Enabled && editedRoles !== null) {
+                        if (submitsEditedRoles && hasMemberRoles) {
                             const result = await dispatch(
                                 assignMemberRoles({
                                     member,
@@ -626,6 +628,12 @@ const SubUserEditModal = ({
                                 })
                             );
                             hasRoleChanges = result.changed;
+                        } else if (submitsEditedRoles) {
+                            createNotification({
+                                type: 'error',
+                                text: c('Error')
+                                    .t`Role changes were not saved because the user's roles could not be loaded.`,
+                            });
                         }
                         if (hasMemberChanges || hasRoleChanges) {
                             createNotification({ text: c('Success').t`User updated` });
@@ -675,7 +683,7 @@ const SubUserEditModal = ({
                                               disabled={
                                                   isSelf ||
                                                   isPendingMagicLinkInvite ||
-                                                  loadingMemberRoles ||
+                                                  !hasMemberRoles ||
                                                   adminRolesUIState !== AdminRolesUIState.Enabled
                                               }
                                               banner={getRolesTabBanner({
@@ -694,7 +702,12 @@ const SubUserEditModal = ({
                 />
                 <ModalFooter>
                     <div>{/* empty div to make it right aligned*/}</div>
-                    <Button loading={submitting} type="submit" color="norm">
+                    <Button
+                        loading={submitting}
+                        disabled={submitsEditedRoles && loadingMemberRoles}
+                        type="submit"
+                        color="norm"
+                    >
                         {c('Action').t`Save`}
                     </Button>
                 </ModalFooter>
