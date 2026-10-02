@@ -4,6 +4,7 @@ import type { Coupon, CouponDiscountBreakdownBE, Tax } from '@proton/shared/lib/
 
 import type { CheckSubscriptionData } from '../api/api';
 import type { InvalidCouponError, WrongBillingAddressError } from '../errors';
+import type { GuardError } from './guard';
 
 export type {
     Coupon,
@@ -75,6 +76,11 @@ interface SubscriptionCheckResponse {
     RenewCycle: Cycle | null;
 
     CouponDiscountBreakdown?: CouponDiscountBreakdownBE | null;
+    /**
+     * Guard refusals, always a list after normalizeGuardResult() ran in the payments API wrappers.
+     * Null/absent means the selection passed all guards.
+     */
+    GuardResult?: GuardError[] | null;
 }
 
 export type SubscriptionEstimation = SubscriptionCheckResponse & {
