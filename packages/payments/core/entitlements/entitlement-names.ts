@@ -1,6 +1,6 @@
 // AUTO-GENERATED FILE — DO NOT EDIT BY HAND.
 // Source of truth: Chargebee features.
-// Regenerate: `yarn workspace @proton/payments generate:entitlement-names`.
+// Regenerate: `pnpm --filter @proton/payments run generate:entitlement-names`.
 // Customize enum keys or descriptions in core/entitlements/scripts/overrides.json.
 
 export enum EntitlementName {

@@ -11,18 +11,18 @@
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
         "test": "TZ=UTC vitest",
         "test:ci": "TZ=UTC vitest run",
-        "test:ui": "yarn test --ui",
-        "test:watch": "yarn test --watch"
+        "test:ui": "pnpm run test --ui",
+        "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
-        "@proton/app-context": "workspace:packages/app-context",
+        "@proton/app-context": "workspace:^",
         "@proton/payments": "workspace:^",
         "@proton/react-redux-store": "workspace:^",
         "@proton/redux-shared-store": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
         "@proton/redux-utilities": "workspace:^",
-        "@proton/shared": "workspace:packages/shared",
+        "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
@@ -36,7 +36,7 @@
         "ttag": "^1.8.12"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
+        "@proton/eslint-config-proton": "workspace:^",
         "@proton/polyfill": "workspace:^",
         "@proton/vitest-config": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",

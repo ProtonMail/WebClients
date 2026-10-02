@@ -30,5 +30,5 @@ RUN (getent group "${GID}" || groupadd --gid "${GID}" builder) \
 USER builder
 WORKDIR /app
 
-CMD ["/bin/bash", "-c", "yarn && cd applications/authenticator && NODE_ENV=production yarn tauri build --target aarch64-unknown-linux-gnu --features devtools"]
+CMD ["/bin/bash", "-c", "pnpm install --frozen-lockfile && cd applications/authenticator && NODE_ENV=production pnpm exec tauri build --target aarch64-unknown-linux-gnu --features devtools"]
 

@@ -9,7 +9,7 @@
 2. Start the application from the root directory:
 
     ```shell
-    yarn start-all --applications "proton-pass" --api proton.black
+    pnpm run start-all --applications "proton-pass" --api proton.black
     ```
 
 3. Host configuration: The first run should add these entries to your `/etc/hosts` file:
