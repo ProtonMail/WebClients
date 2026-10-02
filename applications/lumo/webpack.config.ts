@@ -69,8 +69,9 @@ const result = (opts: WebpackEnvArguments): Configuration => {
         );
     }
 
-    // jspdf dynamically imports dompurify from its optional dependency path; yarn hoists
-    // dompurify to the workspace root, so webpack must alias it explicitly.
+    // jspdf dynamically imports dompurify from its optional dependency path; the hoisted
+    // node_modules layout puts dompurify at the workspace root, so webpack must alias it
+    // explicitly.
     config.resolve = config.resolve ?? {};
     config.resolve.alias = {
         ...(typeof config.resolve.alias === 'object' && !Array.isArray(config.resolve.alias)
