@@ -10,14 +10,15 @@ import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { SignedInSessionsList } from '../../components/SignedInSessionsList';
-import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
-import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import { selectResetResponse, selectUsername } from '../../state-machine/UnauthedForgotPasswordStateMachine';
+import { ForgotPasswordContext } from '../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 import YesNoButtons from './delegated-access/components/YesNoButtons';
 
 export const AuthenticatedSessionPrompt = ({ onBack }: ForgotPasswordStepProps) => {
-    const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const { resetResponse, username } = snapshot.context;
+    const { send } = ForgotPasswordContext.useActorRef();
+    const resetResponse = ForgotPasswordContext.useSelector(selectResetResponse);
+    const username = ForgotPasswordContext.useSelector(selectUsername);
 
     const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
     useEffect(() => {

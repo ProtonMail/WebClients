@@ -1,6 +1,11 @@
 import type { ComponentType } from 'react';
 
-import type { ForgotPasswordStatePath } from './state-machine/statePath';
+import type { StateValueFrom } from 'xstate';
+
+import type {
+    UnauthedForgotPasswordSnapshot,
+    UnauthedForgotPasswordStateMachine,
+} from './state-machine/UnauthedForgotPasswordStateMachine';
 import { AccountLost } from './steps/authenticated-recovery/AccountLost';
 import { AuthenticatedSessionPrompt } from './steps/authenticated-recovery/AuthenticatedSessionPrompt';
 import { EmergencyAccessStep } from './steps/authenticated-recovery/delegated-access/EmergencyAccessStep';
@@ -19,25 +24,33 @@ import { ShowEmergencyContactsInstructions } from './steps/unauthenticated-recov
 import { ShowSignedInResetSteps } from './steps/unauthenticated-recovery/ShowSignedInResetSteps';
 import type { ForgotPasswordStepProps } from './wizard/forgotPasswordStep';
 
-export const forgotPasswordStepRegistry: Partial<
-    Record<ForgotPasswordStatePath, ComponentType<ForgotPasswordStepProps>>
-> = {
-    entry: EntryStep,
-    verifyRecoveryEmail: VerifyEmailRecoveryCode,
-    enterRecoverySms: ConfirmPhoneVerification,
-    verifyRecoverySms: VerifySMSRecoveryCode,
-    'mnemonicRecovery.enterPhrase': EnterMnemonicPhrase,
-    'mnemonicRecovery.confirmPhrase': ConfirmMnemonicPhraseRecovery,
-    'unauthenticatedRecovery.otherSessionsPrompt': OtherLoggedInSessionPrompt,
-    'unauthenticatedRecovery.activeSessionInstructions': ShowSignedInResetSteps,
-    'unauthenticatedRecovery.emergencyContactInstructions': ShowEmergencyContactsInstructions,
-    'authenticatedRecovery.otherSessionsPrompt': AuthenticatedSessionPrompt,
-    'authenticatedRecovery.activeSessionInstructions': ShowSignedInResetSteps,
-    'authenticatedRecovery.socialRecoveryOffer': SocialRecoveryStep,
-    'authenticatedRecovery.emergencyAccessOffer': EmergencyAccessStep,
-    'unauthenticatedRecovery.emergencyAccessOffer': EmergencyAccessStep,
-    offerDataLossReset: ResetPasswordWithDataLoss,
-    recoveryFailed: AccountLost,
-    setNewPassword: ResetPassword,
-    recoveryMethodVerificationError: RecoveryMethodVerificationError,
-};
+type ForgotPasswordState = StateValueFrom<typeof UnauthedForgotPasswordStateMachine>;
+
+/**
+ * The step each state shows, found with `snapshot.matches`. The states are typed against the machine, so renaming one
+ * without updating this list fails to compile. The `route*` states pass straight through, so they have no step.
+ */
+const forgotPasswordSteps: [ForgotPasswordState, ComponentType<ForgotPasswordStepProps>][] = [
+    ['entry', EntryStep],
+    ['verifyRecoveryEmail', VerifyEmailRecoveryCode],
+    ['enterRecoverySms', ConfirmPhoneVerification],
+    ['verifyRecoverySms', VerifySMSRecoveryCode],
+    [{ mnemonicRecovery: 'enterPhrase' }, EnterMnemonicPhrase],
+    [{ mnemonicRecovery: 'confirmPhrase' }, ConfirmMnemonicPhraseRecovery],
+    [{ unauthenticatedRecovery: 'otherSessionsPrompt' }, OtherLoggedInSessionPrompt],
+    [{ unauthenticatedRecovery: 'activeSessionInstructions' }, ShowSignedInResetSteps],
+    [{ unauthenticatedRecovery: 'emergencyAccessOffer' }, EmergencyAccessStep],
+    [{ unauthenticatedRecovery: 'emergencyContactInstructions' }, ShowEmergencyContactsInstructions],
+    [{ authenticatedRecovery: 'otherSessionsPrompt' }, AuthenticatedSessionPrompt],
+    [{ authenticatedRecovery: 'activeSessionInstructions' }, ShowSignedInResetSteps],
+    [{ authenticatedRecovery: 'socialRecoveryOffer' }, SocialRecoveryStep],
+    [{ authenticatedRecovery: 'emergencyAccessOffer' }, EmergencyAccessStep],
+    ['offerDataLossReset', ResetPasswordWithDataLoss],
+    ['recoveryFailed', AccountLost],
+    ['setNewPassword', ResetPassword],
+    ['recoveryMethodVerificationError', RecoveryMethodVerificationError],
+];
+
+/** The step for the state the flow is in, for the wizard to show. */
+export const selectStep = (snapshot: UnauthedForgotPasswordSnapshot) =>
+    forgotPasswordSteps.find(([state]) => snapshot.matches(state))?.[1];
