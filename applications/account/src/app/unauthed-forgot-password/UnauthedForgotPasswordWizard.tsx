@@ -8,23 +8,26 @@ import { flattenStateValue } from './state-machine/statePath';
 import { ForgotPasswordProvider } from './wizard/ForgotPasswordProvider';
 import type { MachineWizardProviderProps } from './wizard/MachineWizardProvider';
 import { MachineWizardProvider } from './wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from './wizard/forgotPasswordStep';
 
 export const UnauthedForgotPasswordWizard = ({
     actorRef,
     send,
     snapshot,
+    onBack,
     onPreSubmit,
     onStartAuth,
     onLogin,
     productParam,
     setupVPN,
-}: Omit<MachineWizardProviderProps, 'children'> & {
-    onLogin: OnLoginCallback;
-    setupVPN: boolean;
-    productParam: ProductParam;
-    onPreSubmit: () => Promise<void>;
-    onStartAuth: () => Promise<void>;
-}) => {
+}: Omit<MachineWizardProviderProps, 'children'> &
+    ForgotPasswordStepProps & {
+        onLogin: OnLoginCallback;
+        setupVPN: boolean;
+        productParam: ProductParam;
+        onPreSubmit: () => Promise<void>;
+        onStartAuth: () => Promise<void>;
+    }) => {
     const path: ForgotPasswordStatePath = flattenStateValue<ForgotPasswordStatePath>(snapshot.value);
     const Step = forgotPasswordStepRegistry[path];
 
@@ -41,7 +44,7 @@ export const UnauthedForgotPasswordWizard = ({
                 productParam={productParam}
                 setupVPN={setupVPN}
             >
-                {Step ? <Step /> : null}
+                {Step ? <Step onBack={onBack} /> : null}
             </ForgotPasswordProvider>
         </MachineWizardProvider>
     );

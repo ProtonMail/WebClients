@@ -7,8 +7,9 @@ import Header from '../../../public/Header';
 import userExclamation from '../../../public/user-exclamation.svg';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const RecoveryMethodVerificationError = () => {
+export const RecoveryMethodVerificationError = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { apiErrorMessage } = snapshot.context;
 
@@ -24,7 +25,7 @@ export const RecoveryMethodVerificationError = () => {
                         {c('Title').t`Something went wrong`}
                     </>
                 }
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
             />
             <Content className="text-center">
                 {/* We don't have to translate the error here as it is returned by the API and will already be translated */}
