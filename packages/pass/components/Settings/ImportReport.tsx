@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
+import TruncatedText from '@proton/components/components/truncatedText/TruncatedText';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { PROVIDER_INFO_MAP } from '../../lib/import/types';
@@ -87,20 +88,21 @@ export const ImportReport: FC = () => {
                             )}
                             <div className="color-weak overflow-auto" style={{ maxHeight: 150 }}>
                                 {ignored.map((description, idx) => (
-                                    <span className="block text-ellipsis" key={`ignored-${idx}`}>
-                                        {description}
+                                    <span className="block" key={`ignored-${idx}`}>
+                                        <TruncatedText maxChars={100}>{description}</TruncatedText>
                                     </span>
                                 ))}
 
                                 {ignoredFiles.map((filename, idx) => (
-                                    <span className="block text-ellipsis" key={`ignored-${idx}`}>
-                                        [{c('Pass_file_attachments').t`File`}] {filename}
+                                    <span className="block" key={`ignored-file-${idx}`}>
+                                        [{c('Pass_file_attachments').t`File`}]{' '}
+                                        <TruncatedText maxChars={100}>{filename}</TruncatedText>
                                     </span>
                                 ))}
 
                                 {warnings.map((warning, idx) => (
-                                    <span className="block text-ellipsis" key={`warning-${idx}`}>
-                                        {warning}
+                                    <span className="block" key={`warning-${idx}`}>
+                                        <TruncatedText maxChars={100}>{warning}</TruncatedText>
                                     </span>
                                 ))}
                             </div>
