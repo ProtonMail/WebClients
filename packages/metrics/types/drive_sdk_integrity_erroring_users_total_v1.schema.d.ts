@@ -12,6 +12,7 @@ export interface HttpsProtonMeDriveSdkIntegrityErroringUsersTotalV1SchemaJson {
   Labels: {
     volumeType: "own_volume" | "own_photo_volume" | "shared" | "shared_public" | "unknown";
     userPlan: "free" | "paid" | "anonymous" | "unknown";
+    causedBy: "1p" | "3p-sdk" | "3p" | "unknown";
   };
   Value: number;
 }
