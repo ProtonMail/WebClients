@@ -2,7 +2,7 @@ import type { LumoCardSpec } from '../../LumoMarkdown/card/cardTypes';
 import { isCardLanguage, isCardRowLanguage } from '../../LumoMarkdown/card/detectCardSpec';
 import { parseCardRowSegmentCode } from '../../LumoMarkdown/card/parseCardRowFence';
 import { tryParseCardSpec } from '../../LumoMarkdown/card/parseCardSpec';
-import { findCompleteMarkdownCodeFence } from '../../LumoMarkdown/vega/parseMarkdownCodeFence';
+import { replaceCompleteMarkdownCodeFences } from '../../LumoMarkdown/vega/parseMarkdownCodeFence';
 
 // Cards (```card-row / ```card) are a chat-only primitive (D12). When one leaks into an artifact, it
 // is turned into plain content that keeps its data — a table or list for metrics, a quote for a
@@ -66,21 +66,10 @@ export function cardsToMarkdown(cards: LumoCardSpec[]): string {
 
 /** Replace every complete card fence in document markdown with its plain-markdown form. */
 export function normalizeDocumentCardFences(markdown: string): string {
-    let result = '';
-    let position = 0;
-
-    for (
-        let fence = findCompleteMarkdownCodeFence(markdown, position);
-        fence;
-        fence = findCompleteMarkdownCodeFence(markdown, position)
-    ) {
+    return replaceCompleteMarkdownCodeFences(markdown, (fence) => {
         const cards = parseArtifactCardFence(fence.language, fence.code);
-        result += markdown.slice(position, fence.start);
-        result += cards ? cardsToMarkdown(cards) : markdown.slice(fence.start, fence.end);
-        position = fence.end;
-    }
-
-    return result + markdown.slice(position);
+        return cards ? cardsToMarkdown(cards) : null;
+    });
 }
 
 /** Metrics → a list of "Title: value (change)"; findings and summaries → one quote each. */
