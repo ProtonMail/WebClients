@@ -300,7 +300,7 @@ export default defineConfig(
              * either outside the linting package root (pkgUp from the file being linted) or under
              * one of the configured external-module folders (here `node_modules`).
              *
-             * In this Yarn workspace, `@proton/*` imports follow symlinks to real paths under
+             * In this pnpm workspace, `@proton/*` imports follow symlinks to real paths under
              * `packages/` or `applications/`, which sit outside the linting package folder, so
              * cross-package edges are generally not traversed even though they are not in
              * `node_modules`. npm dependencies resolve under the repo-root `node_modules/` and
@@ -382,7 +382,6 @@ export default defineConfig(
         extends: [configs.disableTypeChecked],
     },
     globalIgnores([
-        '.yarn/',
         '**/node_modules/**',
         '**/dist/**',
         '**/.*/',

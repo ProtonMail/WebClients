@@ -1,6 +1,6 @@
 /** Debug interceptors for MV3 service workers, where DevTools access is limited.
  * Captures and forwards errors, console logs, and network failures to the local
- * HTTP debug server. To launch the debug server, run `yarn debugger:http` */
+ * HTTP debug server. To launch the debug server, run `pnpm debugger:http` */
 import { registerLoggerEffect } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
