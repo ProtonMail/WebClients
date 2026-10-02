@@ -20,6 +20,10 @@ jest.mock('../../../util/pptx/htmlSlidesToPptxBytes', () => {
     };
 });
 
+jest.mock('../../LumoMarkdown/vega/renderVegaSpecToSvg', () => ({
+    renderVegaSpecToPng: jest.fn(),
+    renderVegaSpecToSvg: jest.fn(),
+}));
 jest.mock('../../../util/docx/markdownToDocx', () => {
     return {
         DOCX_MIME_TYPE: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -106,9 +110,27 @@ describe('buildArtifactFileForSave', () => {
         expect(markdownToDocxBlob).toHaveBeenCalledWith(documentArtifact.content, {
             title: 'Teen Vaping Essay',
             creator: 'Lumo',
+            localImages: new Map(),
         });
         expect(prepared.fileName).toBe('teen-vaping-essay.docx');
         expect(prepared.mimeType).toBe('application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+    });
+
+    it('gives Word charts as embedded images and chat cards as a quote, not raw fences (D12)', async () => {
+        const { markdownToDocxBlob } = jest.requireMock('../../../util/docx/markdownToDocx');
+        const { renderVegaSpecToPng } = jest.requireMock('../../LumoMarkdown/vega/renderVegaSpecToSvg');
+        const png = { data: new Uint8Array([1]), width: 640, height: 360 };
+        renderVegaSpecToPng.mockResolvedValueOnce(png);
+        const content =
+            '# Report\n\n```vega-lite\n{"title":"Sales","data":{"values":[{"q":"Q1","v":3}]},"mark":"bar"}\n```\n\n' +
+            '```card\n{"type":"finding","title":"Takeaway","body":"Up."}\n```\n';
+
+        await buildArtifactFileForSave({ ...documentArtifact, content }, 'docx');
+
+        const [markdown, options] = markdownToDocxBlob.mock.calls.at(-1);
+        const [key] = Array.from((options.localImages as Map<string, unknown>).keys());
+        expect(markdown).toBe(`# Report\n\n![Sales](${key})\n\n> **Takeaway**: Up.\n`);
+        expect(options.localImages.get(key)).toBe(png);
     });
 
     it('builds PPTX bytes for presentations', async () => {

@@ -15,22 +15,29 @@ function readTitleText(value: unknown): string | undefined {
 }
 
 /**
- * Read a chart's title and subtitle from raw spec JSON (as the model wrote it), tolerating trailing
- * commas. Returns an empty object when the spec doesn't parse or has no title.
+ * Read a chart's title and subtitle from raw spec JSON (as the model wrote it). Returns an empty
+ * object when the spec doesn't parse or has no title.
  */
 export function readChartSpecTitle(code: string): ChartSpecTitle {
+    const title = parseChartSpecLenient(code)?.title;
+
+    if (title && typeof title === 'object' && !Array.isArray(title)) {
+        const titleObject = title as Record<string, unknown>;
+        return { text: readTitleText(titleObject.text), subtitle: readTitleText(titleObject.subtitle) };
+    }
+
+    return { text: readTitleText(title) };
+}
+
+/** Parse raw spec JSON, tolerating trailing commas; null when it isn't a JSON object. */
+export function parseChartSpecLenient(code: string): Record<string, unknown> | null {
     try {
         const withoutTrailingCommas = code.trim().replace(/,\s*([}\]])/g, '$1');
-        const parsed = JSON.parse(withoutTrailingCommas) as Record<string, unknown>;
-        const title = parsed?.title;
-
-        if (title && typeof title === 'object' && !Array.isArray(title)) {
-            const titleObject = title as Record<string, unknown>;
-            return { text: readTitleText(titleObject.text), subtitle: readTitleText(titleObject.subtitle) };
-        }
-
-        return { text: readTitleText(title) };
+        const parsed: unknown = JSON.parse(withoutTrailingCommas);
+        return parsed && typeof parsed === 'object' && !Array.isArray(parsed)
+            ? (parsed as Record<string, unknown>)
+            : null;
     } catch {
-        return {};
+        return null;
     }
 }
