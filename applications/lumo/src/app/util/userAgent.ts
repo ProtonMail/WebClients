@@ -35,12 +35,11 @@ export const canUseNativeAuth = (): boolean => {
         const { version, platform } = appInfo;
         let targetVersion: string | null = null;
 
-        // On iOS the native sign in / sign up flow is not ready in 2.0.0, so it
-        // ships from 2.1.0 and 2.0.0 falls back to the web sign in / sign up flow.
-        // Android has native auth ready from 2.0.0.
+        // On iOS 2.1.0 shipped a broken native account flow (fixed natively in 2.1.1),
+        // so iOS requires 2.1.1 and older versions fall back to the web sign in / sign up flow.
         // iPad runs the same binary as iPhone, so it shares the iOS target version.
         if (platform === 'ios') {
-            targetVersion = '2.1.0';
+            targetVersion = '2.1.1';
         } else if (platform === 'android') {
             targetVersion = '2.1.0';
         }
