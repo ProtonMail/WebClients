@@ -5696,6 +5696,22 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } map is samengevoegd met de bovenliggende map omdat het maximale nestniveau is bereikt.",
+        "${ count } mappen zijn samengevoegd met de bovenliggende map omdat het maximale nestniveau is bereikt."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } map is niet geïmporteerd omdat de bovenliggende map het maximale aantal submappen heeft bereikt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map.",
+        "${ count } mappen zijn niet geïmporteerd omdat de bovenliggende map het maximale aantal submappen heeft bereikt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } map is niet geïmporteerd omdat deze kluis de maplimiet heeft bereikt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map.",
+        "${ count } mappen zijn niet geïmporteerd omdat deze kluis de maplimiet heeft bereikt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } map kon niet worden gemaakt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map.",
+        "${ failed } mappen konden niet worden gemaakt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map."
       ]
     }
   }
