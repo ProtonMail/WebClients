@@ -8,7 +8,7 @@ import { sanitizeArtifactExportBodyHtml } from '../../../util/export/sanitizeArt
 import type { HtmlDocumentToPdfOptions } from '../../../util/pdf/htmlDocumentToPdfBytes';
 import { buildPresentationSlidesHtml, extractPresentationSlideFragments } from './artifactPresentationHtml';
 import type { ArtifactType, ParsedArtifact } from './parseArtifacts';
-import { renderChartsInSlideContent, slideContentHasChartPlaceholder } from './presentationCharts';
+import { renderChartsInSlideContent, slideContentNeedsChartPass } from './presentationCharts';
 
 const DOCUMENT_EXPORT_STYLES = `
 .pdf-export-body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #111827; margin: 0; padding: 0; background: #fff; box-sizing: border-box; width: 100%; }
@@ -210,7 +210,7 @@ async function buildDocumentHtmlDocument(artifact: ParsedArtifact): Promise<stri
 
 async function preparePresentationSlideContent(artifact: ParsedArtifact): Promise<string> {
     let slideContent = artifact.content;
-    if (slideContentHasChartPlaceholder(slideContent)) {
+    if (slideContentNeedsChartPass(slideContent)) {
         slideContent = await renderChartsInSlideContent(slideContent);
     }
 

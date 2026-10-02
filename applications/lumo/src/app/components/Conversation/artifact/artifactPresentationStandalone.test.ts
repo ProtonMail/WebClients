@@ -9,7 +9,7 @@ jest.mock('./presentationCharts', () => ({
     renderChartsInSlideContent: jest.fn(async (content: string) => {
         return content.replace('<!--chart-->', '<div class="lumo-chart"><svg></svg></div>');
     }),
-    slideContentHasChartPlaceholder: jest.fn(() => false),
+    slideContentNeedsChartPass: jest.fn(() => false),
 }));
 
 const deck = {
