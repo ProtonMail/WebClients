@@ -5378,7 +5378,7 @@
         "En curs"
       ],
       "Migrated": [
-        "S'han migrat"
+        "S'ha migrat"
       ],
       "Pending": [
         "Està pendent"
@@ -10148,6 +10148,78 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } no es pot combinar amb ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } només està disponible als plans d'empresa."
+      ],
+      "An organization is required for this plan.": [
+        "Es requereix una organització per a aquest pla."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private no es pot comprar amb una subscripció activa."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private requereix una donació."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Comprar crèdits requereix una compra independent."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Només es pot comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Tanqueu els comptes de cartera addicionals abans de canviar de pla."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Tanqueu les carteres addicionals abans de canviar de pla."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Les llicències d'Scribe no poden superar el nombre de membres."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "El pla seleccionat no ofereix prou adreces per al vostre compte."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "El pla seleccionat no ofereix prou dominis per al vostre compte."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "El pla seleccionat no ofereix prou membres per al vostre compte."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "El pla seleccionat no ofereix prou emmagatzematge per al teu compte."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Aquest servidor dedicat està assignat a una passarel·la i no es pot canviar."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Aquest pla no suporta els membres del vostre compte."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Els plans de prova no admeten llicències de ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Els plans de prova no admeten dominis personalitzats."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Els plans de prova no admeten IP dedicades."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Els plans de prova no admeten llicències d'Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Els plans de prova no admeten tants membres."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Ja teniu ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Ja teniu Born Private."
+      ],
+      "Your account is too old for Born Private.": [
+        "El vostre compte és massa antic per a Born Private."
       ]
     },
     "Payments.Error": {
@@ -10441,7 +10513,7 @@
         "Cerca per nom o correu electrònic"
       ],
       "Search for users or addresses": [
-        "Cercar un usuari o adreça"
+        "Cerca usuaris o adreces"
       ],
       "Search parent folder": [
         "Cerca la carpeta principal"
@@ -13202,6 +13274,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No podeu canviar els vostres propis rols. Demaneu a un altre administrador que ho faci."
       ]
     },
     "Validation": {
@@ -13646,6 +13721,36 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obtingueu un ${ discount }% de descompte al ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obtingueu el pla ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 TB of storage to share": [
+        "2 TB d'emmagatzematge per compartir"
+      ],
+      "2 user accounts": [
+        "2 comptes d'usuari"
+      ],
+      "All premium features from your current plan": [
+        "Totes les característiques prèmium del vostre pla actual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en el preu mensual estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan finalitzi el cicle de facturació."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "durant 12 mesos"
       ]
     }
   }

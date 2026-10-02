@@ -10148,6 +10148,78 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kann nicht mit ${ PLAN_NAMES[PLANS.PASS] } kombiniert werden."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ist nur für Unternehmensabonnemente verfügbar."
+      ],
+      "An organization is required for this plan.": [
+        "Für dieses Abonnement ist eine Organisation erforderlich."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "«Born Private» kann nicht gekauft werden, wenn ein aktives Abonnement besteht."
+      ],
+      "Born Private requires a donation.": [
+        "Für «Born Private» ist eine Spende erforderlich."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Der Erwerb von Guthaben erfordert einen separaten Kauf."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Es kann nur ein ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } erworben werden."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Bitte schließe alle zusätzlichen Wallet-Konten, bevor du dein Abonnement wechselst."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Bitte schließe alle zusätzlichen Wallets, bevor du dein Abonnement wechselst."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Die Anzahl der Scribe-Lizenzen darf die Anzahl der Mitglieder nicht übersteigen."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Das ausgewählte Abonnement bietet nicht genügend Adressen für dein Konto."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Das ausgewählte Abonnement bietet nicht genügend Domains für dein Konto."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Das ausgewählte Abonnement bietet nicht genügend Mitglieder für dein Konto."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Das ausgewählte Abonnement bietet nicht genügend Speicherplatz für dein Konto."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Dieser dedizierte Server ist einem Gateway zugewiesen und kann nicht geändert werden."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Dieses Abonnement bietet keinen Support für die Mitglieder deines Kontos."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Testversionen unterstützen keine ${ LUMO_SHORT_APP_NAME }-Lizenzen."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Testversionen unterstützen keine eigenen Domains."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Testversionen unterstützen keine dedizierten IP-Adressen."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Testversionen unterstützen keine Scribe-Lizenzen."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Testversionen unterstützen nicht so viele Mitglieder."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du besitzt bereits ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Du besitzt «Born Private» bereits."
+      ],
+      "Your account is too old for Born Private.": [
+        "Dein Konto ist zu alt für «Born Private»."
       ]
     },
     "Payments.Error": {
@@ -13202,6 +13274,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kannst deine eigene Funktion nicht ändern. Bitte einen anderen Administrator, dies zu tun."
       ]
     },
     "Validation": {
@@ -13646,6 +13721,36 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Hol dir ${ discount }% Rabatt auf ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Hol dir ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "2 TB of storage to share": [
+        "2 TB Speicherplatz zur gemeinsamen Nutzung"
+      ],
+      "2 user accounts": [
+        "2 Benutzerkonten"
+      ],
+      "All premium features from your current plan": [
+        "Alle Premium-Funktionen deines aktuellen Abonnements"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "für 12 Monate"
       ]
     }
   }
