@@ -154,12 +154,12 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                 unstyled
                                 onBlur={() => setBlurred({ ...blurred, name: true })}
                                 onValue={(name: string) => {
+                                    // The alias field is read-only and always derived from the name,
+                                    // matching the prefix sent to the API on submit.
                                     setFormValues({
                                         ...formValues,
                                         name,
-                                        ...(!blurred.alias
-                                            ? { alias: `${deriveAliasPrefix(name)}${aliasSuffix}` }
-                                            : {}),
+                                        alias: `${deriveAliasPrefix(name)}${aliasSuffix}`,
                                     });
                                 }}
                                 error={getFieldError('name')}
@@ -175,9 +175,6 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                                     unstyled
                                     inputClassName="rounded-none"
                                     onBlur={() => setBlurred({ ...blurred, alias: true })}
-                                    onValue={(alias: string) => {
-                                        setFormValues({ ...formValues, alias });
-                                    }}
                                     value={formValues.alias}
                                 />
                             </InputFieldStacked>
