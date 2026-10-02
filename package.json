@@ -5,6 +5,7 @@
     "scripts": {
         "app-versions": "bash utilities/app-versions/app-versions.sh",
         "check:branch": "node utilities/branch-check/branch-check.mjs",
+        "check:constraints": "node utilities/workspace-constraints/workspace-constraints.mjs",
         "config-app": "(packages/config/install 2>/dev/null) || true",
         "create-atom": "pnpm --filter @proton/atoms run create-atom",
         "postinstall": "is-ci || (husky; pnpm run config-app)",
