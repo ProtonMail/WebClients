@@ -5797,6 +5797,22 @@
       ],
       "You've reached the maximum number of folders for this vault": [
         "Έχετε φτάσει τον μέγιστο αριθμό φακέλων για αυτή την κρύπτη"
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } φάκελος συγχωνεύτηκε με τον γονικό του φάκελο επειδή επιτεύχθηκε το μέγιστο επίπεδο ένθεσης.",
+        "${ count } φάκελοι συγχωνεύτηκαν με τον γονικό τουε φάκελο επειδή επιτεύχθηκε το μέγιστο επίπεδο ένθεσης."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } φάκελος δεν εισήχθη επειδή ο γονικός του φάκελος έφτασε τον μέγιστο αριθμό υποφακέλων. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο.",
+        "${ count } φάκελοι δεν εισήχθησαν επειδή ο γονικός τους φάκελος έφτασε τον μέγιστο αριθμό υποφακέλων. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } φάκελος δεν εισήχθη επειδή αυτή η κρύπτη έφτασε στο όριο φακέλων της. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο.",
+        "${ count } φάκελοι δεν εισήχθησαν επειδή αυτή η κρύπτη έφτασε στο όριο φακέλων της. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "Δεν ήταν δυνατή η δημιουργία ${ failed } φακέλου. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο.",
+        "Δεν ήταν δυνατή η δημιουργία ${ failed } φακέλων. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο."
       ]
     }
   }
