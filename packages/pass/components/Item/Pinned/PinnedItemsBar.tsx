@@ -4,6 +4,7 @@ import { useSelector, useStore } from 'react-redux';
 import { c } from 'ttag';
 
 import { IcPinAngled } from '@proton/icons/icons/IcPinAngled';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import clsx from '@proton/utils/clsx';
 
 import { useResponsiveHorizontalList } from '../../../hooks/useResponsiveHorizontalList';
@@ -61,7 +62,7 @@ const PinnedItemBarContent = memo(({ sort, onSelect }: Props) => {
             </div>
             {list.hidden.length > 0 && (
                 <QuickActionsDropdown
-                    icon="three-dots-horizontal"
+                    icon={IcThreeDotsHorizontal}
                     color="weak"
                     shape="solid"
                     size="small"

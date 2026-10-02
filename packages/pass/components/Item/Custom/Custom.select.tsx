@@ -1,7 +1,6 @@
 import { type FC, useMemo } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import { type CustomTemplate, getGroupedTemplates } from './Custom.templates';
@@ -23,7 +22,7 @@ export const CustomSelect: FC<Props> = ({ onSelect }) =>
                         onClick={() => onSelect(template)}
                     >
                         <div className="flex items-center w-full text-left flex-nowrap">
-                            <Icon name={template.icon} className="shrink-0 mr-2" />
+                            <template.icon className="shrink-0 mr-2" />
                             <span className="text-ellipsis">{template.label}</span>
                         </div>
                     </Button>

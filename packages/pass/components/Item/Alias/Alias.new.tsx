@@ -5,7 +5,9 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { IcNote } from '@proton/icons/icons/IcNote';
 
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '../../../constants';
 import { useAliasOptions } from '../../../hooks/useAliasOptions';
@@ -221,7 +223,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, folderId, url
 
                             <FieldsetCluster mode="read" as="div">
                                 <ValueControl
-                                    icon="alias"
+                                    icon={IcAlias}
                                     label={c('Label').t`You are about to create`}
                                     loading={loading}
                                     error={Boolean(
@@ -272,7 +274,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, folderId, url
                                     label={c('Label').t`Note`}
                                     placeholder={c('Placeholder').t`Enter a note...`}
                                     component={TextAreaField}
-                                    icon="note"
+                                    icon={IcNote}
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
                                     disabled={unverified}
                                 />

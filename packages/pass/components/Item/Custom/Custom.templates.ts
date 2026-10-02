@@ -1,13 +1,27 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
+import { IcBank } from '@proton/icons/icons/IcBank';
+import { IcBrandBitcoin } from '@proton/icons/icons/IcBrandBitcoin';
+import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
+import { IcCode } from '@proton/icons/icons/IcCode';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcFilingCabinet } from '@proton/icons/icons/IcFilingCabinet';
+import { IcHeart } from '@proton/icons/icons/IcHeart';
+import { IcServers } from '@proton/icons/icons/IcServers';
+import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { IcWrench } from '@proton/icons/icons/IcWrench';
 
 import type { CustomExtraFieldType, DeobfuscatedItemExtraField, ItemCustomType } from '../../../types';
 import { SubTheme } from '../../Layout/Theme/types';
 
 export type CustomTemplate = {
     label: string;
-    icon: IconName;
+    icon: IconComponent;
     type: ItemCustomType;
     fields: { label: string; type: CustomExtraFieldType }[];
 };
@@ -20,7 +34,7 @@ export type CustomTemplateGroup = {
 
 export const EMPTY_CUSTOM_ITEM: CustomTemplate = {
     label: '',
-    icon: 'wrench',
+    icon: IcWrench,
     type: 'custom',
     fields: [],
 };
@@ -33,7 +47,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`API Credential`,
-                icon: 'code',
+                icon: IcCode,
                 fields: [
                     { label: c('Label').t`API Key`, type: 'hidden' },
                     { label: c('Label').t`Secret`, type: 'hidden' },
@@ -44,7 +58,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Database`,
-                icon: 'storage',
+                icon: IcStorage,
                 fields: [
                     { label: c('Label').t`Host`, type: 'text' },
                     { label: c('Label').t`Port`, type: 'text' },
@@ -56,7 +70,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Server`,
-                icon: 'servers',
+                icon: IcServers,
                 fields: [
                     { label: c('Label').t`IP Address`, type: 'text' },
                     { label: c('Label').t`Hostname`, type: 'text' },
@@ -68,7 +82,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Software license`,
-                icon: 'file-lines',
+                icon: IcFileLines,
                 fields: [
                     { label: c('Label').t`License Key`, type: 'hidden' },
                     { label: c('Label').t`Product`, type: 'text' },
@@ -84,7 +98,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
              */
             {
                 label: c('Label').t`SSH key`,
-                icon: 'filing-cabinet',
+                icon: IcFilingCabinet,
                 type: 'sshKey',
                 fields: [
                     { label: c('Label').t`Username`, type: 'text' },
@@ -93,7 +107,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             },
             {
                 label: c('Label').t`WiFi network`,
-                icon: 'shield-2-bolt',
+                icon: IcShield2Bolt,
                 type: 'wifi',
                 fields: [],
             },
@@ -106,7 +120,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Bank Account`,
-                icon: 'bank',
+                icon: IcBank,
                 fields: [
                     { label: c('Label').t`Bank Name`, type: 'text' },
                     { label: c('Label').t`Account Number`, type: 'text' },
@@ -120,7 +134,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Crypto Wallet`,
-                icon: 'brand-bitcoin',
+                icon: IcBrandBitcoin,
                 fields: [
                     { label: c('Label').t`Wallet Name`, type: 'text' },
                     { label: c('Label').t`Address`, type: 'text' },
@@ -138,7 +152,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Driver License`,
-                icon: 'card-identity',
+                icon: IcCardIdentity,
                 fields: [
                     { label: c('Label').t`Full Name`, type: 'text' },
                     { label: c('Label').t`License Number`, type: 'text' },
@@ -151,7 +165,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Medical Record`,
-                icon: 'heart',
+                icon: IcHeart,
                 fields: [
                     { label: c('Label').t`Patient Name`, type: 'text' },
                     { label: c('Label').t`Record Number`, type: 'hidden' },
@@ -164,7 +178,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Membership`,
-                icon: 'user-circle',
+                icon: IcUserCircle,
                 fields: [
                     { label: c('Label').t`Organization Name`, type: 'text' },
                     { label: c('Label').t`Membership ID`, type: 'text' },
@@ -176,7 +190,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Passport`,
-                icon: 'card-identity',
+                icon: IcCardIdentity,
                 fields: [
                     { label: c('Label').t`Full Name`, type: 'text' },
                     { label: c('Label').t`Passport Number`, type: 'hidden' },
@@ -189,7 +203,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Reward Program`,
-                icon: 'bag-percent',
+                icon: IcBagPercent,
                 fields: [
                     { label: c('Label').t`Program Name`, type: 'text' },
                     { label: c('Label').t`Member ID`, type: 'text' },
@@ -201,7 +215,7 @@ export const getGroupedTemplates = (): CustomTemplateGroup[] => [
             {
                 type: 'custom',
                 label: c('Label').t`Social Security`,
-                icon: 'users',
+                icon: IcUsers,
                 fields: [
                     { label: c('Label').t`Full Name`, type: 'text' },
                     { label: c('Label').t`SSN`, type: 'hidden' },

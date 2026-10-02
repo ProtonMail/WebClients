@@ -6,6 +6,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcNote } from '@proton/icons/icons/IcNote';
+import { IcPassPasskey } from '@proton/icons/icons/IcPassPasskey';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import noop from '@proton/utils/noop';
 
@@ -231,7 +234,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                             {form.values.passkeys.map((passkey, idx, passkeys) => (
                                 <FieldsetCluster key={passkey.keyId}>
                                     <ValueControl
-                                        icon={'pass-passkey'}
+                                        icon={IcPassPasskey}
                                         label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
                                         value={passkey.userName}
                                         valueClassName="cursor-default"
@@ -262,7 +265,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                      * a TOTP item, allow edit so user can retrieve
                                      * the secret or remove it */
                                     needsUpgrade && isEmptyString(form.values.totpUri) ? (
-                                        <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
+                                        <ValueControl icon={IcLock} label={c('Label').t`2FA secret key (TOTP)`}>
                                             <UpgradeButton inline upsellRef={UpsellRef.LIMIT_2FA} />
                                         </ValueControl>
                                     ) : (
@@ -272,7 +275,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                             label={c('Label').t`2FA secret key (TOTP)`}
                                             placeholder={c('Placeholder').t`Add 2FA secret key`}
                                             component={TextField}
-                                            icon="lock"
+                                            icon={IcLock}
                                         />
                                     )
                                 }
@@ -308,7 +311,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                     label={c('Label').t`Note`}
                                     placeholder={c('Placeholder').t`Add note`}
                                     component={TextAreaField}
-                                    icon="note"
+                                    icon={IcNote}
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
                                 />
                             </FieldsetCluster>

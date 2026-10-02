@@ -48,7 +48,7 @@ export const Sentinel: FC<Props> = ({ onUpsell }) => {
                     .jt`Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${learnMoreLink}`
             }
             subtitleClassname="color-norm-major"
-            icon={() => <img src={sentinel} alt="" />}
+            icon={<img src={sentinel} alt="" />}
             actions={
                 <Toggle
                     id="toggle-sentinel"

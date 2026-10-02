@@ -5,7 +5,11 @@ import { c } from 'ttag';
 import { Card } from '@proton/atoms/Card/Card';
 import type { BadgeType } from '@proton/components/components/badge/Badge';
 import { Badge } from '@proton/components/components/badge/Badge';
+import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcPassAllVaults } from '@proton/icons/icons/IcPassAllVaults';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
 import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
@@ -95,7 +99,7 @@ export const AccessTokenCard: FC<Props> = ({ className, token, onDelete, onManag
             </div>
 
             <QuickActionsDropdown
-                icon="three-dots-vertical"
+                icon={IcThreeDotsVertical}
                 color="weak"
                 shape="ghost"
                 size="small"
@@ -105,18 +109,23 @@ export const AccessTokenCard: FC<Props> = ({ className, token, onDelete, onManag
                 {!isExpired && (
                     <DropdownMenuButton
                         label={c('Action').t`Manage vault access`}
-                        icon="pass-all-vaults"
+                        icon={IcPassAllVaults}
                         onClick={() => onManageAccess(token)}
                     />
                 )}
                 {token.Flags?.PassAgent && (
                     <DropdownMenuButton
                         label={c('Action').t`View agent activity`}
-                        icon="clock"
+                        icon={IcClock}
                         onClick={() => onViewActions(token)}
                     />
                 )}
-                <DropdownMenuButton label={c('Action').t`Delete`} icon="trash" danger onClick={() => onDelete(token)} />
+                <DropdownMenuButton
+                    label={c('Action').t`Delete`}
+                    icon={IcTrash}
+                    danger
+                    onClick={() => onDelete(token)}
+                />
             </QuickActionsDropdown>
         </Card>
     );

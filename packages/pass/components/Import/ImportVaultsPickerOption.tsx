@@ -3,11 +3,11 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { IcPassHome } from '@proton/icons/icons/IcPassHome';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import type { ImportVault } from '../../lib/import/types';
@@ -65,27 +65,25 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                                 <span className="flex-1 text-ellipsis">{c('Label').t`New vault`}</span>
                             </span>
                         </Option>,
-                        ...vaults.map((vault) => (
-                            <Option
-                                key={vault.shareId}
-                                title={vault.content.name}
-                                value={vault.shareId}
-                                className="text-sm"
-                            >
-                                <span className="flex items-center">
-                                    <Icon
-                                        name={
-                                            vault.content.display.icon
-                                                ? VAULT_ICON_MAP[vault.content.display.icon]
-                                                : 'pass-home'
-                                        }
-                                        size={3.5}
-                                        className="mr-3 grow-0"
-                                    />
-                                    <span className="flex-1 text-ellipsis">{vault.content.name}</span>
-                                </span>
-                            </Option>
-                        )),
+                        ...vaults.map((vault) => {
+                            const VaultOptionIcon = vault.content.display.icon
+                                ? VAULT_ICON_MAP[vault.content.display.icon]
+                                : IcPassHome;
+
+                            return (
+                                <Option
+                                    key={vault.shareId}
+                                    title={vault.content.name}
+                                    value={vault.shareId}
+                                    className="text-sm"
+                                >
+                                    <span className="flex items-center">
+                                        <VaultOptionIcon size={3.5} className="mr-3 grow-0" />
+                                        <span className="flex-1 text-ellipsis">{vault.content.name}</span>
+                                    </span>
+                                </Option>
+                            );
+                        }),
                     ].filter(truthy)}
                 </SelectTwo>
             </div>

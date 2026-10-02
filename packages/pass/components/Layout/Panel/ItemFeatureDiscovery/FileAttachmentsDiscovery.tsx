@@ -2,6 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
+
 import notesImg from '../../../../assets/file-attachments/notes.svg';
 import { SpotlightMessage } from '../../../../types';
 import { SpotlightGradient } from '../../../Spotlight/SpotlightGradient';
@@ -19,7 +21,7 @@ export const FileAttachmentsDiscovery: FC = () => (
                 onClose={close}
                 className="mb-2"
                 backgroundImage={notesImg}
-                closeButtonProps={{ icon: 'cross-circle-filled', dark: true }}
+                closeButtonProps={{ icon: IcCrossCircleFilled, dark: true }}
             />
         )}
     </WithSpotlight>

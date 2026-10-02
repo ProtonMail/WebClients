@@ -5,6 +5,8 @@ import { useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import { UpsellRef } from '../../../constants';
@@ -97,7 +99,7 @@ export const CustomNew = <T extends ItemCustomType>({
             discardable={!(form.dirty && showForm)}
             formId={FORM_ID}
             handleCancelClick={handleCancelClick}
-            cancelIcon={showForm ? 'arrow-left' : 'cross'}
+            cancelIcon={showForm ? IcArrowLeft : IcCross}
             type={form.values.type}
             valid={form.isValid && !form.status?.isBusy}
             actions={ParentPortal}

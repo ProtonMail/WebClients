@@ -4,6 +4,9 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
+import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
 import clsx from '@proton/utils/clsx';
 
 import { useConfirm } from '../../../hooks/useConfirm';
@@ -144,21 +147,21 @@ export const ShareMember: FC<Props> = ({
                 <QuickActionsDropdown color="weak" shape="ghost">
                     <DropdownMenuButton
                         label={c('Action').t`Make viewer`}
-                        icon={role === ShareRole.READ ? 'checkmark' : undefined}
+                        icon={role === ShareRole.READ ? IcCheckmark : undefined}
                         onClick={() => edit(ShareRole.READ)}
                         disabled={editRole.loading}
                         className={role !== ShareRole.READ ? 'pl-10' : ''}
                     />
                     <DropdownMenuButton
                         label={c('Action').t`Make editor`}
-                        icon={role === ShareRole.WRITE ? 'checkmark' : undefined}
+                        icon={role === ShareRole.WRITE ? IcCheckmark : undefined}
                         onClick={() => edit(ShareRole.WRITE)}
                         disabled={editRole.loading}
                         className={role !== ShareRole.WRITE ? 'pl-10' : ''}
                     />
                     <DropdownMenuButton
                         label={labels.singleAction}
-                        icon={role === ShareRole.MANAGER ? 'checkmark' : undefined}
+                        icon={role === ShareRole.MANAGER ? IcCheckmark : undefined}
                         onClick={() => edit(ShareRole.MANAGER)}
                         disabled={editRole.loading}
                         className={role !== ShareRole.MANAGER ? 'pl-10' : ''}
@@ -166,13 +169,13 @@ export const ShareMember: FC<Props> = ({
                     {showTransfer && (
                         <DropdownMenuButton
                             label={c('Action').t`Transfer ownership`}
-                            icon="shield-half-filled"
+                            icon={IcShieldHalfFilled}
                             onClick={() => transfer.prompt({ shareId, userShareId })}
                         />
                     )}
                     <DropdownMenuButton
                         label={c('Action').t`Remove access`}
-                        icon="circle-slash"
+                        icon={IcCircleSlash}
                         danger
                         onClick={remove}
                     />

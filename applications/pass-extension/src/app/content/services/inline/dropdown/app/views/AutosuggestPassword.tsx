@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
+import { IcKey } from '@proton/icons/icons/IcKey';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { PasswordMemorableOptions } from '@proton/pass/components/Password/PasswordMemorableOptions';
@@ -103,7 +104,7 @@ export const AutosuggestPassword: FC<Props> = ({ action, config, clipboardSettin
 
             <ListItem
                 subTheme={SubTheme.RED}
-                icon={{ type: 'icon', icon: 'key' }}
+                icon={{ type: 'icon', icon: IcKey }}
                 title={label}
                 subTitle={<span className="text-monospace">{getCharsGroupedByColor(generator.password)}</span>}
                 onClick={autofillPassword}

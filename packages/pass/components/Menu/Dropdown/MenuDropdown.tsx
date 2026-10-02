@@ -9,6 +9,15 @@ import type { DropdownProps } from '@proton/components/components/dropdown/Dropd
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcNotepadChecklist } from '@proton/icons/icons/IcNotepadChecklist';
+import { IcPassShieldWarning } from '@proton/icons/icons/IcPassShieldWarning';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AccountPath } from '../../../constants';
@@ -61,12 +70,12 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
             {
                 onClick: navigateToAccount,
                 label: c('Action').t`Account settings`,
-                icon: 'arrow-within-square',
+                icon: IcArrowWithinSquare,
             },
             {
                 onClick: () => onLogout({ soft: false }),
                 label: c('Action').t`Sign out`,
-                icon: 'arrow-out-from-rectangle',
+                icon: IcArrowOutFromRectangle,
             },
         ],
         []
@@ -100,7 +109,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                     <DropdownMenuButton
                         onClick={withAppMenuClose(handleMonitor)}
                         label={c('Label').t`${PASS_SHORT_APP_NAME} Monitor`}
-                        icon={'pass-shield-warning'}
+                        icon={IcPassShieldWarning}
                         className="pt-1.5 pb-1.5"
                     />
 
@@ -108,7 +117,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                         <DropdownMenuButton
                             onClick={withAppMenuClose(navigateToAdminPanel)}
                             ellipsis={false}
-                            icon="users"
+                            icon={IcUsers}
                             className="pt-1.5 pb-1.5"
                             label={<AdminPanelLabel {...org.organization} />}
                         />
@@ -117,7 +126,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                     <DropdownMenuButton
                         onClick={withAppMenuClose(() => openSettings())}
                         label={c('Label').t`Settings`}
-                        icon={'cog-wheel'}
+                        icon={IcCogWheel}
                         className="pt-1.5 pb-1.5"
                     />
 
@@ -125,7 +134,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                         <DropdownMenuButton
                             onClick={withAppMenuClose(() => popup?.expand?.())}
                             label={c('Label').t`Larger window`}
-                            icon="arrow-within-square"
+                            icon={IcArrowWithinSquare}
                             className="pt-1.5 pb-1.5"
                         />
                     )}
@@ -137,17 +146,17 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                             label={
                                 EXTENSION_BUILD ? c('Action').t`Lock extension` : c('Action').t`Lock ${PASS_APP_NAME}`
                             }
-                            icon="lock"
+                            icon={IcLock}
                             className="pt-1.5 pb-1.5"
                         />
                     )}
 
-                    <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={advanced} />
+                    <Submenu icon={IcNotepadChecklist} label={c('Action').t`Advanced`} items={advanced} />
 
                     <hr className="my-2 mx-4" aria-hidden="true" />
 
                     <Submenu
-                        icon="mobile"
+                        icon={IcMobile}
                         label={
                             // translator: if the translated text is longer than the english text,
                             // please simply translate as "Get apps" because UI space is limited.
@@ -155,7 +164,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                         }
                         items={download}
                     />
-                    <Submenu icon="user" label={c('Action').t`Account`} items={accountMenuItems} />
+                    <Submenu icon={IcUser} label={c('Action').t`Account`} items={accountMenuItems} />
                 </DropdownMenu>
             </Dropdown>
         </nav>

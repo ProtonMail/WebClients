@@ -6,8 +6,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
 import clsx from '@proton/utils/clsx';
 
 import { useFeatureFlag } from '../../../../hooks/useFeatureFlag';
@@ -20,7 +21,7 @@ import { usePassCore } from '../../../Core/PassCoreProvider';
 import { useFolderCreate } from '../../../Folders/useFolderCreate';
 import { useFolderCreateTarget } from '../../../Folders/useFolderCreateTarget';
 import { useFoldersAccess } from '../../../Folders/useFoldersAccess';
-import { itemTypeToIconName } from '../../../Layout/Icon/ItemIcon';
+import { itemTypeToIcon } from '../../../Layout/Icon/ItemIcon';
 import { SubTheme } from '../../../Layout/Theme/types';
 import { MaybeTooltip } from '../../../Layout/Tooltip/MaybeTooltip';
 import { useNavigate } from '../../../Navigation/NavigationActions';
@@ -33,7 +34,7 @@ type ItemQuickAction = {
     disabled?: boolean;
     disabledReason?: MaybeNull<string>;
     hidden?: boolean;
-    icon: IconName;
+    icon: IconComponent;
     label: string;
     shape?: ButtonLikeShape;
     subTheme?: SubTheme;
@@ -68,7 +69,7 @@ export const QuickActionsPlaceholder: FC = () => {
     const quickActions = useMemo<ItemQuickAction[]>(() => {
         const actions: ItemQuickAction[] = [
             {
-                icon: itemTypeToIconName.login,
+                icon: itemTypeToIcon.login,
                 label: c('Label').t`Create a login`,
                 subTheme: SubTheme.VIOLET,
                 type: 'login',
@@ -76,35 +77,35 @@ export const QuickActionsPlaceholder: FC = () => {
             },
             {
                 hidden: orgAliasCreationDisabled,
-                icon: itemTypeToIconName.alias,
+                icon: itemTypeToIcon.alias,
                 label: c('Label').t`Create a hide-my-email alias`,
                 subTheme: SubTheme.TEAL,
                 type: 'alias',
                 onClick: () => onCreate('alias'),
             },
             {
-                icon: itemTypeToIconName.creditCard,
+                icon: itemTypeToIcon.creditCard,
                 label: c('Label').t`Create a credit card`,
                 subTheme: SubTheme.LIME,
                 type: 'creditCard',
                 onClick: () => onCreate('creditCard'),
             },
             {
-                icon: itemTypeToIconName.note,
+                icon: itemTypeToIcon.note,
                 label: c('Label').t`Create an encrypted note`,
                 subTheme: SubTheme.ORANGE,
                 type: 'note',
                 onClick: () => onCreate('note'),
             },
             {
-                icon: itemTypeToIconName.identity,
+                icon: itemTypeToIcon.identity,
                 label: c('Label').t`Create an Identity`,
                 type: 'identity',
                 onClick: () => onCreate('identity'),
             },
             {
                 hidden: !showCustomItem,
-                icon: itemTypeToIconName.custom,
+                icon: itemTypeToIcon.custom,
                 label: c('Label').t`Create a custom item`,
                 subTheme: SubTheme.GRAY,
                 type: 'custom',
@@ -114,7 +115,7 @@ export const QuickActionsPlaceholder: FC = () => {
                 hidden: !folderTarget || !folderCanShow,
                 disabled: folderLimitReached,
                 disabledReason: folderLimitReason,
-                icon: 'folder',
+                icon: IcFolder,
                 shape: 'outline',
                 label: c('Label').t`Create a folder`,
                 type: 'folder',
@@ -122,7 +123,7 @@ export const QuickActionsPlaceholder: FC = () => {
             },
             {
                 type: 'import',
-                icon: 'arrow-up-line',
+                icon: IcArrowUpLine,
                 shape: 'outline',
                 label: c('Label').t`Import passwords`,
                 onClick: () => openSettings('import'),
@@ -154,7 +155,7 @@ export const QuickActionsPlaceholder: FC = () => {
                 <span className="color-weak inline-block mb-2">{message}</span>
             </div>
 
-            {quickActions.map(({ type, icon, label, shape, subTheme, onClick, disabled, disabledReason }) => (
+            {quickActions.map(({ type, icon: Icon, label, shape, subTheme, onClick, disabled, disabledReason }) => (
                 <MaybeTooltip
                     key={`quick-action-${type}`}
                     active={Boolean(disabledReason)}
@@ -173,7 +174,6 @@ export const QuickActionsPlaceholder: FC = () => {
                         size={EXTENSION_BUILD ? 'small' : 'medium'}
                     >
                         <Icon
-                            name={icon}
                             color="var(--interaction-norm)"
                             className="absolute left-custom top-0 bottom-0 my-auto"
                             style={{ '--left-custom': '1rem' }}

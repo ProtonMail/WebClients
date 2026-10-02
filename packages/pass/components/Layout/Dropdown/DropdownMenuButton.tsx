@@ -19,11 +19,11 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
-import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
+
+import { IconSlot, type IconSlotValue } from '../Icon/IconSlot';
 
 type QuickActionChildProp = { onClick: (evt: MouseEvent) => void };
 type QuickActionChild = ReactElement<QuickActionChildProp>;
@@ -73,7 +73,7 @@ const QuickActionsDropdown: FC<Props> = ({ children, originalPlacement }) => {
 type DropdownMenuButtonLabelProps = {
     label: ReactNode;
     labelClassname?: string;
-    icon?: IconName | ReactElement;
+    icon?: IconSlotValue;
     extra?: ReactNode;
     ellipsis?: boolean;
     danger?: boolean;
@@ -92,11 +92,7 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
     return (
         <div className="flex justify-space-between items-center flex-nowrap gap-2 max-h-custom">
             <div className={clsx(labelClassname, 'flex items-center flex-nowrap gap-2')}>
-                {typeof icon === 'string' ? (
-                    <Icon name={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'shrink-0')} />
-                ) : (
-                    icon
-                )}
+                <IconSlot icon={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'shrink-0')} />
                 <div className={clsx('flex flex-nowrap flex-auto gap-1', danger && 'color-danger')}>
                     {strLabel ? <span className={clsx(ellipsis && 'text-ellipsis')}>{label}</span> : label}
                 </div>

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
 import type { WithSpotlightRenderProps } from '../../components/Spotlight/WithSpotlight';
 
@@ -23,5 +23,5 @@ export type AutotypeAction = {
     key: AutotypeKey;
     title: ReactNode;
     subtitle?: ReactNode;
-    icon?: IconName;
+    icon?: IconComponent;
 };

@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
+import { IcArrowUpAndLeft } from '@proton/icons/icons/IcArrowUpAndLeft';
+import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -63,7 +65,7 @@ export const VaultMenuTrash = memo(({ selected, onAction = noop }: Props) => {
                     key="trash-restore"
                     onClick={onTrashRestore}
                     label={c('Label').t`Restore all items`}
-                    icon="arrow-up-and-left"
+                    icon={IcArrowUpAndLeft}
                     disabled={count === 0}
                 />,
 
@@ -71,7 +73,7 @@ export const VaultMenuTrash = memo(({ selected, onAction = noop }: Props) => {
                     key="trash-empty"
                     onClick={onTrashEmpty}
                     label={c('Label').t`Empty trash`}
-                    icon="trash-cross"
+                    icon={IcTrashCross}
                     disabled={count === 0}
                     danger
                 />,

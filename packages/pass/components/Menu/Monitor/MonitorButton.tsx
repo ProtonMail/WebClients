@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { IcPassShieldMonitoringOk } from '@proton/icons/icons/IcPassShieldMonitoringOk';
+import { IcPassShieldMonitoringWarning } from '@proton/icons/icons/IcPassShieldMonitoringWarning';
 import clsx from '@proton/utils/clsx';
 
 import { selectTotalBreaches } from '../../../store/selectors';
@@ -18,7 +20,7 @@ export const MonitorButton: FC<RouteMatchProps> = ({ active, exact }) => {
 
     return (
         <DropdownMenuButton
-            icon={`pass-shield-monitoring-${breachCount ? 'warning' : 'ok'}`}
+            icon={breachCount ? IcPassShieldMonitoringWarning : IcPassShieldMonitoringOk}
             className={clsx('rounded', active && 'is-selected')}
             ellipsis
             label={c('Action').t`Pass Monitor`}

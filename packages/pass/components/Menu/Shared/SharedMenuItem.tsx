@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -15,7 +15,7 @@ import { VaultIcon } from '../../Vault/VaultIcon';
 
 type Props = {
     count: number;
-    icon: IconName;
+    icon: IconComponent;
     label?: string;
     selected: boolean;
     subLabel?: string;

@@ -6,7 +6,17 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Badge } from '@proton/components/components/badge/Badge';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcBuildings } from '@proton/icons/icons/IcBuildings';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcLocks } from '@proton/icons/icons/IcLocks';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 
 import { AccountPath } from '../../../constants';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
@@ -23,7 +33,7 @@ import { useOrganization } from '../../Organization/OrganizationProvider';
 import { useSpotlightFor } from '../../Spotlight/WithSpotlight';
 
 type MenuAction = {
-    icon: IconName;
+    icon: IconComponent;
     key: string;
     label: string;
     subMenu?: ReactNode;
@@ -59,17 +69,15 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
 
     const settings = useMemo<MenuAction[]>(
         () => [
-            { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel' },
-            ...(!orgAliasCreationDisabled
-                ? [{ key: 'aliases', label: c('Label').t`Aliases`, icon: 'alias' as const }]
-                : []),
-            { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
+            { key: 'general', label: c('Label').t`General`, icon: IcCogWheel },
+            ...(!orgAliasCreationDisabled ? [{ key: 'aliases', label: c('Label').t`Aliases`, icon: IcAlias }] : []),
+            { key: 'security', label: c('Label').t`Security`, icon: IcLocks },
             ...(accessTokensEnabled
                 ? [
                       {
                           key: 'access-tokens',
                           label: c('Label').t`Access tokens`,
-                          icon: 'key' as const,
+                          icon: IcKey,
                           signaled: accessTokensSignaled,
                           onClick: () => {
                               if (accessTokensSpotlight.open) accessTokensSpotlight.close();
@@ -78,21 +86,21 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
                       },
                   ]
                 : []),
-            { key: 'import', label: c('Label').t`Import`, icon: 'arrow-down-line' },
-            { key: 'export', label: c('Label').t`Export`, icon: 'arrow-up-line' },
-            { key: 'account', label: c('Label').t`Account`, icon: 'arrow-within-square', onClick: navigateToAccount },
+            { key: 'import', label: c('Label').t`Import`, icon: IcArrowDownLine },
+            { key: 'export', label: c('Label').t`Export`, icon: IcArrowUpLine },
+            { key: 'account', label: c('Label').t`Account`, icon: IcArrowWithinSquare, onClick: navigateToAccount },
             ...(orgEnabled
                 ? [
                       {
                           key: 'organization',
                           label: c('Label').t`Organization`,
-                          icon: 'buildings',
+                          icon: IcBuildings,
                           onClick: navigateToOrganization,
                       } as const,
                   ]
                 : []),
-            { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
-            { key: 'logout', label: c('Action').t`Sign out`, icon: 'arrow-out-from-rectangle', onClick: handleLogout },
+            { key: 'support', label: c('Label').t`Support`, icon: IcSpeechBubble },
+            { key: 'logout', label: c('Action').t`Sign out`, icon: IcArrowOutFromRectangle, onClick: handleLogout },
         ],
         [orgEnabled, orgAliasCreationDisabled, accessTokensEnabled, accessTokensSpotlight.open]
     );
@@ -100,7 +108,7 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
     return (
         <>
             <QuickActionsDropdown
-                icon="cog-wheel"
+                icon={IcCogWheel}
                 size="small"
                 shape="ghost"
                 className="shrink-0"

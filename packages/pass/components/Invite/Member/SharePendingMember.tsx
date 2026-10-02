@@ -5,6 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
+import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 import clsx from '@proton/utils/clsx';
 
 import { useActionRequest } from '../../../hooks/useRequest';
@@ -111,7 +113,7 @@ export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
                           <DropdownMenuButton
                               key="resend"
                               label={c('Action').t`Resend invitation`}
-                              icon={'paper-plane'}
+                              icon={IcPaperPlane}
                               onClick={resend}
                               disabled={loading}
                           />,
@@ -119,7 +121,7 @@ export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
                           <DropdownMenuButton
                               key="remove"
                               label={c('Action').t`Remove access`}
-                              icon="circle-slash"
+                              icon={IcCircleSlash}
                               danger
                               onClick={remove}
                               disabled={loading}
@@ -161,7 +163,7 @@ export const PendingNewMember: FC<PendingNewMemberProps> = ({
                           <DropdownMenuButton
                               key="remove"
                               label={c('Action').t`Remove access`}
-                              icon="circle-slash"
+                              icon={IcCircleSlash}
                               danger
                               onClick={remove}
                               disabled={loading}

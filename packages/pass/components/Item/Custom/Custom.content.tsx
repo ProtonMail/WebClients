@@ -2,6 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
+import { IcNote } from '@proton/icons/icons/IcNote';
+
 import { useDeobfuscatedItem, usePartialDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
 import type { ItemCustomType, ItemRevision } from '../../../types';
 import { ExtraFieldsControl } from '../../Form/Field/Control/ExtraFieldsControl';
@@ -72,7 +74,7 @@ export const CustomContent = <T extends ItemCustomType>({ revision }: ItemConten
                     <ValueControl
                         clickToCopy
                         as={TextAreaReadonly}
-                        icon="note"
+                        icon={IcNote}
                         label={c('Label').t`Note`}
                         value={note}
                     />

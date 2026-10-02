@@ -4,8 +4,10 @@ import type { PasswordScore } from '@protontech/pass-rust-core/worker';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
+import { IcPassShieldFillDanger } from '@proton/icons/icons/IcPassShieldFillDanger';
+import { IcPassShieldFillSuccess } from '@proton/icons/icons/IcPassShieldFillSuccess';
+import { IcPassShieldFillWarning } from '@proton/icons/icons/IcPassShieldFillWarning';
 import clsx from '@proton/utils/clsx';
 
 import './PasswordStrength.scss';
@@ -23,10 +25,10 @@ export const strengthClassNames: Record<PasswordScore, string> = {
     Strong: 'pass-password-strength pass-password-strength--strong',
 };
 
-export const strenghtIconNames: Record<PasswordScore, IconName> = {
-    Vulnerable: 'pass-shield-fill-danger',
-    Weak: 'pass-shield-fill-warning',
-    Strong: 'pass-shield-fill-success',
+export const strengthIcons: Record<PasswordScore, IconComponent> = {
+    Vulnerable: IcPassShieldFillDanger,
+    Weak: IcPassShieldFillWarning,
+    Strong: IcPassShieldFillSuccess,
 };
 
 export const PasswordStrength: FC<{
@@ -35,7 +37,7 @@ export const PasswordStrength: FC<{
     inline?: boolean;
 }> = (props) => {
     const className = strengthClassNames[props.strength];
-    const strengthIcon = strenghtIconNames[props.strength];
+    const StrengthIcon = strengthIcons[props.strength];
     const translatedStrength = translateStrengths()[props.strength];
 
     return (
@@ -48,7 +50,7 @@ export const PasswordStrength: FC<{
             )}
         >
             <Tooltip title={translatedStrength}>
-                <Icon name={strengthIcon} size={5} className="shrink-0" alt={translatedStrength} />
+                <StrengthIcon size={5} className="shrink-0" alt={translatedStrength} />
             </Tooltip>
 
             <span>{translatedStrength}</span>

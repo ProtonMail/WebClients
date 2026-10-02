@@ -8,7 +8,6 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
-import type { IconSize } from '@proton/icons/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -22,7 +21,6 @@ import './PassPlusPromotionButton';
 type UpgradeButtonProps = PromotionButtonProps<typeof ButtonLike> & {
     buttonSize?: ButtonLikeSize;
     className?: string;
-    iconSize?: IconSize;
     gradient?: boolean;
     inline?: boolean;
     label?: string;
@@ -35,6 +33,7 @@ type UpgradeButtonProps = PromotionButtonProps<typeof ButtonLike> & {
 export const UpgradeButton: FC<UpgradeButtonProps> = ({
     buttonSize,
     className,
+    iconComponent,
     iconSize,
     gradient = false,
     inline = false,
@@ -51,6 +50,7 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
     })();
 
     const buttonProps = inline ? ({ as: 'a', shape: 'underline' } as const) : ({ pill: true, shape: 'solid' } as const);
+    const promotionButtonProps = gradient ? { iconComponent, iconSize } : undefined;
 
     /** When PassNavbarUpgradeToAccount is enabled, upgrade button opens the
      * account upgrade page instead of the signup page. */
@@ -78,6 +78,7 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
             size={buttonSize}
             style={style}
             {...buttonProps}
+            {...promotionButtonProps}
             {...rest}
         >
             {label || c('Action').t`Upgrade`}
