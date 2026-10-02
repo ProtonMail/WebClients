@@ -10,7 +10,6 @@
  */
 export interface HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV2SchemaJson {
   Labels: {
-    volumeType: "own_volume" | "own_photo_volume" | "shared" | "shared_public" | "unknown";
     field:
       | "shareKey"
       | "membershipInviter"
@@ -22,7 +21,8 @@ export interface HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV2SchemaJs
       | "nodeContentKey"
       | "content";
     addressMatchingDefaultShare: "yes" | "no" | "unknown";
-    recency: "past_month" | "past_year" | "since_2024" | "before_2024";
+    recency: "past_month" | "past_year" | "since_2024" | "before_2024" | "unknown";
+    causedBy: "1p" | "3p-sdk" | "3p" | "unknown";
   };
   Value: number;
 }

@@ -553,38 +553,38 @@ describe('MetricHandler', () => {
                 time: new Date(),
                 event: {
                     eventName: 'decryptionError',
-                    volumeType: MetricVolumeType.OwnVolume,
                     field: 'nodeKey',
-                    fromBefore2024: true,
+                    recency: 'before_2024',
+                    createdBy: '1p',
                     error: 'Invalid key',
                     uid: 'uid',
                 },
             });
 
             expect(metrics.drive_sdk_integrity_decryption_errors_total.increment).toHaveBeenCalledWith({
-                volumeType: 'own_volume',
                 field: 'nodeKey',
-                fromBefore2024: 'yes',
+                recency: 'before_2024',
+                causedBy: '1p',
             });
         });
 
-        it('should handle undefined fromBefore2024', () => {
+        it('should handle undefined recency and createdBy', () => {
             metricHandler.onEvent({
                 time: new Date(),
                 event: {
                     eventName: 'decryptionError',
-                    volumeType: MetricVolumeType.OwnVolume,
                     field: 'nodeKey',
-                    fromBefore2024: undefined,
+                    recency: undefined,
+                    createdBy: undefined,
                     error: 'Invalid key',
                     uid: 'uid',
                 },
             });
 
             expect(metrics.drive_sdk_integrity_decryption_errors_total.increment).toHaveBeenCalledWith({
-                volumeType: 'own_volume',
                 field: 'nodeKey',
-                fromBefore2024: 'unknown',
+                recency: 'unknown',
+                causedBy: 'unknown',
             });
         });
 
@@ -593,9 +593,9 @@ describe('MetricHandler', () => {
                 time: new Date(),
                 event: {
                     eventName: 'decryptionError',
-                    volumeType: MetricVolumeType.OwnVolume,
                     field: 'nodeKey',
-                    fromBefore2024: false,
+                    recency: 'past_month',
+                    createdBy: '1p',
                     error: 'Invalid key',
                     uid: 'uid',
                 },
@@ -607,23 +607,23 @@ describe('MetricHandler', () => {
                     driveSdkMetricEvent: 'decryptionError',
                 },
                 extra: {
-                    volumeType: MetricVolumeType.OwnVolume,
                     field: 'nodeKey',
-                    fromBefore2024: false,
+                    recency: 'past_month',
+                    createdBy: '1p',
                     error: 'Invalid key',
                     uid: 'uid',
                 },
             });
         });
 
-        it('should not capture sentry message when fromBefore2024 is true', () => {
+        it('should not capture sentry message when recency is before_2024', () => {
             metricHandler.onEvent({
                 time: new Date(),
                 event: {
                     eventName: 'decryptionError',
-                    volumeType: MetricVolumeType.OwnVolume,
                     field: 'nodeKey',
-                    fromBefore2024: true,
+                    recency: 'before_2024',
+                    createdBy: '1p',
                     error: 'Invalid key',
                     uid: 'uid',
                 },
@@ -638,9 +638,9 @@ describe('MetricHandler', () => {
                     time: new Date(),
                     event: {
                         eventName: 'decryptionError',
-                        volumeType: MetricVolumeType.OwnVolume,
                         field: 'nodeKey',
-                        fromBefore2024: false,
+                        recency: 'past_month',
+                        createdBy: '1p',
                         error: 'Invalid key',
                         uid: 'uid',
                     },
@@ -648,8 +648,9 @@ describe('MetricHandler', () => {
 
                 expect(metrics.drive_sdk_integrity_erroring_users_total.increment).toHaveBeenCalledTimes(1);
                 expect(metrics.drive_sdk_integrity_erroring_users_total.increment).toHaveBeenCalledWith({
-                    volumeType: 'own_volume',
+                    volumeType: 'unknown',
                     userPlan: 'free',
+                    causedBy: '1p',
                 });
             });
 
@@ -658,9 +659,9 @@ describe('MetricHandler', () => {
                     time: new Date(),
                     event: {
                         eventName: 'decryptionError',
-                        volumeType: MetricVolumeType.OwnVolume,
                         field: 'nodeKey',
-                        fromBefore2024: false,
+                        recency: 'past_month',
+                        createdBy: '1p',
                         error: 'Invalid key',
                         uid: 'uid',
                     },
@@ -670,9 +671,9 @@ describe('MetricHandler', () => {
                     time: new Date(),
                     event: {
                         eventName: 'verificationError',
-                        volumeType: MetricVolumeType.OwnVolume,
                         field: 'nodeName',
-                        fromBefore2024: false,
+                        recency: 'past_month',
+                        createdBy: '1p',
                         addressMatchingDefaultShare: true,
                         uid: 'uid',
                     },
@@ -686,9 +687,9 @@ describe('MetricHandler', () => {
                     time: new Date(),
                     event: {
                         eventName: 'decryptionError',
-                        volumeType: MetricVolumeType.OwnVolume,
                         field: 'nodeKey',
-                        fromBefore2024: false,
+                        recency: 'past_month',
+                        createdBy: '1p',
                         error: 'Invalid key',
                         uid: 'uid',
                     },
@@ -703,9 +704,9 @@ describe('MetricHandler', () => {
                     time: new Date(),
                     event: {
                         eventName: 'verificationError',
-                        volumeType: MetricVolumeType.OwnVolume,
                         field: 'nodeName',
-                        fromBefore2024: false,
+                        recency: 'past_month',
+                        createdBy: '1p',
                         addressMatchingDefaultShare: true,
                         uid: 'uid',
                     },
@@ -722,19 +723,19 @@ describe('MetricHandler', () => {
                 time: new Date(),
                 event: {
                     eventName: 'verificationError',
-                    volumeType: MetricVolumeType.OwnVolume,
                     field: 'nodeName',
-                    fromBefore2024: false,
+                    recency: 'past_month',
+                    createdBy: '1p',
                     addressMatchingDefaultShare: true,
                     uid: 'uid',
                 },
             });
 
             expect(metrics.drive_sdk_integrity_verification_errors_total.increment).toHaveBeenCalledWith({
-                volumeType: MetricVolumeType.OwnVolume,
                 field: 'nodeName',
                 addressMatchingDefaultShare: 'yes',
-                fromBefore2024: 'no',
+                recency: 'past_month',
+                causedBy: '1p',
             });
         });
 
@@ -743,19 +744,19 @@ describe('MetricHandler', () => {
                 time: new Date(),
                 event: {
                     eventName: 'verificationError',
-                    volumeType: MetricVolumeType.OwnVolume,
                     field: 'nodeName',
-                    fromBefore2024: undefined,
+                    recency: undefined,
+                    createdBy: undefined,
                     addressMatchingDefaultShare: undefined,
                     uid: 'uid',
                 },
             });
 
             expect(metrics.drive_sdk_integrity_verification_errors_total.increment).toHaveBeenCalledWith({
-                volumeType: MetricVolumeType.OwnVolume,
                 field: 'nodeName',
                 addressMatchingDefaultShare: 'unknown',
-                fromBefore2024: 'unknown',
+                recency: 'unknown',
+                causedBy: 'unknown',
             });
         });
     });
