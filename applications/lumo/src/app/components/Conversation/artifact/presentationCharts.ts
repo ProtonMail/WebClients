@@ -1,17 +1,8 @@
 import { looksLikeVegaSpec } from '../../LumoMarkdown/vega/detectVegaSpec';
 import { renderVegaSpecToSvg } from '../../LumoMarkdown/vega/renderVegaSpecToSvg';
 import { isVegaLanguage } from '../../LumoMarkdown/vega/vegaLanguages';
+import { CHART_PLACEHOLDER_SELECTOR, CHART_PLACEHOLDER_TYPE } from './artifactCharts';
 import { cardsToSlideFragment, parseArtifactCardFence } from './artifactVizCards';
-
-// The model embeds a chart as a non-executing <script> block inside a <section> — browsers never
-// execute a <script> whose `type` isn't a recognized JS MIME type (the same mechanism sites use
-// for e.g. `application/ld+json`), so this is inert wherever it lands, including the DOMParser
-// pass in buildArtifactDocument. It also avoids HTML-attribute quote-escaping entirely: the spec's own
-// quotes/braces sit safely as text content instead of needing entity-escaping inside an attribute
-// value, which matters given models already struggle with nested-quote content elsewhere in this
-// tool (see DESIGN.md's duplicate-tool-call finding).
-const CHART_PLACEHOLDER_TYPE = 'application/lumo-vega-lite+json';
-const CHART_PLACEHOLDER_SELECTOR = `script[type="${CHART_PLACEHOLDER_TYPE}"]`;
 
 // Chat-style fences the model sometimes writes into slide HTML despite the tool description (D12):
 // ```vega-lite as loose text or inside <pre><code>, and ```card-row / ```card. Reveal shows them as raw
@@ -139,6 +130,38 @@ function rewriteTextNodeFences(doc: Document): boolean {
     return changed;
 }
 
+async function replacePlaceholdersWithSvg(doc: Document): Promise<void> {
+    const placeholders = Array.from(doc.body.querySelectorAll(CHART_PLACEHOLDER_SELECTOR));
+
+    await Promise.all(
+        placeholders.map(async (node) => {
+            const wrapper = doc.createElement('div');
+            try {
+                wrapper.className = 'lumo-chart';
+                appendRenderedSvg(doc, wrapper, await renderVegaSpecToSvg(node.textContent ?? ''));
+            } catch {
+                wrapper.className = 'lumo-chart-error';
+                wrapper.textContent = 'Chart unavailable';
+            }
+            node.replaceWith(wrapper);
+        })
+    );
+}
+
+/**
+ * Replace chart placeholders in an HTML fragment with pre-rendered SVG, and nothing else — no fence
+ * rewriting, so code blocks in a document export stay exactly as written.
+ */
+export async function renderChartPlaceholders(html: string): Promise<string> {
+    if (!html.includes(CHART_PLACEHOLDER_TYPE)) {
+        return html;
+    }
+
+    const doc = new DOMParser().parseFromString(`<!doctype html><body>${html}`, 'text/html');
+    await replacePlaceholdersWithSvg(doc);
+    return doc.body.innerHTML;
+}
+
 function appendRenderedSvg(targetDoc: Document, wrapper: HTMLElement, svg: string): void {
     const parsed = new DOMParser().parseFromString(svg, 'image/svg+xml');
     const root = parsed.documentElement;
@@ -169,25 +192,12 @@ export async function renderChartsInSlideContent(content: string): Promise<strin
     const doc = new DOMParser().parseFromString(`<!doctype html><body>${content}`, 'text/html');
     const rewroteElements = rewriteElementFences(doc);
     const rewroteText = rewriteTextNodeFences(doc);
-    const placeholders = Array.from(doc.body.querySelectorAll(CHART_PLACEHOLDER_SELECTOR));
+    const hasPlaceholders = doc.body.querySelector(CHART_PLACEHOLDER_SELECTOR) !== null;
 
-    if (!rewroteElements && !rewroteText && placeholders.length === 0) {
+    if (!rewroteElements && !rewroteText && !hasPlaceholders) {
         return content;
     }
 
-    await Promise.all(
-        placeholders.map(async (node) => {
-            const wrapper = doc.createElement('div');
-            try {
-                wrapper.className = 'lumo-chart';
-                appendRenderedSvg(doc, wrapper, await renderVegaSpecToSvg(node.textContent ?? ''));
-            } catch {
-                wrapper.className = 'lumo-chart-error';
-                wrapper.textContent = 'Chart unavailable';
-            }
-            node.replaceWith(wrapper);
-        })
-    );
-
+    await replacePlaceholdersWithSvg(doc);
     return doc.body.innerHTML;
 }
