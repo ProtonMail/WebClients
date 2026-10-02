@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -22,10 +23,16 @@ interface Props {
 export const BYOEMobile = ({ layout, loader }: Props) => {
     const { state, toggle } = useToggle(true);
 
+    const { createNotification } = useNotifications();
+
     // TODO add some loading
     if (false) {
         return loader;
     }
+
+    const handleClick = () => {
+        createNotification({ text: 'Not implemented yet' });
+    };
 
     return layout(
         <div className="mobile-settings">
@@ -58,8 +65,14 @@ export const BYOEMobile = ({ layout, loader }: Props) => {
                     <Toggle id="import-toggle" checked={state} onChange={toggle} loading={false} />
                 </MobileSectionRow>
                 <MobileSectionRow>
-                    <Button fullWidth size="large" color="norm" shape="solid" className="rounded-full">{c('Action')
-                        .t`Connect and import`}</Button>
+                    <Button
+                        fullWidth
+                        size="large"
+                        color="norm"
+                        shape="solid"
+                        className="rounded-full"
+                        onClick={handleClick}
+                    >{c('Action').t`Connect and import`}</Button>
                 </MobileSectionRow>
             </MobileSection>
         </div>,
