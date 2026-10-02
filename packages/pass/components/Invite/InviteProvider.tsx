@@ -17,8 +17,7 @@ import { InviteViews } from './InviteViews';
 
 import './InviteProvider.scss';
 
-export type { InviteContextState, InviteResponseDTO } from './InviteContext';
-export { useInviteActions, useLatestInvite } from './InviteContext';
+export { useInviteActions } from './InviteContext';
 
 export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
     const latestInvite = useSelector(selectMostRecentInvite);

@@ -17,7 +17,7 @@ import { isVaultInviteResponse } from './invite.utils';
 
 /** Resolves the encryption key for the invite based on its target
  * type. Returns `null` if the invite data is invalid. */
-export const parseInviteKey = (invite: AbstractInviteResponse): MaybeNull<KeyRotationKeyPair> => {
+const parseInviteKey = (invite: AbstractInviteResponse): MaybeNull<KeyRotationKeyPair> => {
     const encryptedVault = invite.VaultData;
     if (!encryptedVault && invite.TargetType !== ShareType.Item) return null;
 
@@ -29,7 +29,7 @@ export const parseInviteKey = (invite: AbstractInviteResponse): MaybeNull<KeyRot
 };
 
 /** Decrypts vault metadata for a user invite */
-export const parseUserInviteVault = async (
+const parseUserInviteVault = async (
     invite: InviteDataForUser,
     inviteKey: KeyRotationKeyPair
 ): Promise<InviteVaultData> => {
@@ -50,7 +50,7 @@ export const parseUserInviteVault = async (
 };
 
 /** Decrypts vault metadata for a group invite */
-export const parseGroupInviteVault = async (
+const parseGroupInviteVault = async (
     invite: GroupInviteListItemResponse,
     inviteKey: KeyRotationKeyPair
 ): Promise<InviteVaultData> => {

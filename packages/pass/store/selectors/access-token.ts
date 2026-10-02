@@ -6,7 +6,7 @@ import { sortOn } from '../../utils/fp/sort';
 import type { AccessTokenState } from '../reducers/access-tokens';
 import type { State } from '../types';
 
-export const selectAccessTokenState = ({ accessTokens }: State): AccessTokenState => accessTokens;
+const selectAccessTokenState = ({ accessTokens }: State): AccessTokenState => accessTokens;
 
 export const selectAccessTokens = createSelector(selectAccessTokenState, (state): PersonalAccessToken[] =>
     state.tokens.toSorted(sortOn('CreateTime'))

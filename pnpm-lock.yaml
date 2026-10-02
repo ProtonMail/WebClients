@@ -3611,6 +3611,9 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
+      circular-dependency-plugin:
+        specifier: ^5.2.2
+        version: 5.2.2(webpack@5.111.1)
       cross-env:
         specifier: ^10.1.0
         version: 10.1.0
@@ -5788,6 +5791,9 @@ importers:
       '@types/jest':
         specifier: ^30.0.0
         version: 30.0.0
+      '@types/mime-types':
+        specifier: ^2.1.4
+        version: 2.1.4
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
@@ -7146,24 +7152,15 @@ importers:
       '@proton/components':
         specifier: workspace:^
         version: link:../components
-      '@proton/cross-storage':
-        specifier: workspace:^
-        version: link:../cross-storage
       '@proton/hooks':
         specifier: workspace:^
         version: link:../hooks
       '@proton/icons':
         specifier: workspace:^
         version: link:../icons
-      '@proton/key-transparency':
-        specifier: workspace:^
-        version: link:../key-transparency
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
-      '@proton/polyfill':
-        specifier: workspace:^
-        version: link:../polyfill
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
@@ -7297,9 +7294,6 @@ importers:
       '@types/lodash':
         specifier: ^4.17.25
         version: 4.17.25
-      '@types/mime-types':
-        specifier: ^2.1.4
-        version: 2.1.4
       '@types/react':
         specifier: ^18.3.31
         version: 18.3.31
@@ -7315,15 +7309,9 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
-      circular-dependency-plugin:
-        specifier: ^5.2.2
-        version: 5.2.2(webpack@5.111.1)
       core-js:
         specifier: ^3.50.0
         version: 3.50.0
-      cross-env:
-        specifier: ^10.1.0
-        version: 10.1.0
       eslint:
         specifier: ^10.11.0
         version: 10.11.0(jiti@2.7.0)(supports-color@11.0.0)
@@ -7369,9 +7357,6 @@ importers:
       astro-mermaid:
         specifier: ^2.1.0
         version: 2.1.0(astro@7.3.3(@types/node@26.0.0)(idb-keyval@6.3.0)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.1))(mermaid@11.17.2)
-      cookie:
-        specifier: ^2.0.1
-        version: 2.0.1
       mermaid:
         specifier: ^11.17.2
         version: 11.17.2

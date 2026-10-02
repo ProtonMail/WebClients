@@ -5,7 +5,7 @@ import { useAuthStore } from './AuthStoreProvider';
 
 export const SessionsContext = createContext<SwitchableSession[]>([]);
 
-export const useSessions = () => useContext(SessionsContext);
+const useSessions = () => useContext(SessionsContext);
 
 export const useSwitchableSessionCount = () => useSessions().length;
 

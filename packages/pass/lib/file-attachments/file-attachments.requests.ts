@@ -99,7 +99,7 @@ export const restoreSingleFile = async (
         })
     ).Result.File;
 
-export const restoreRevisionFiles = async (
+const restoreRevisionFiles = async (
     dto: { toRestore: FileID[]; itemKey: ItemKey } & SelectedItem
 ): Promise<ItemRevisionContentsResponse> =>
     (

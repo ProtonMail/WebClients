@@ -5,7 +5,7 @@ import { api } from '../api/api';
 import { createPageIterator } from '../api/utils';
 import { parseFolderResponse } from './folders.parser';
 
-export const getAllFoldersApi = async (shareId: string): Promise<FolderDataResponse[]> =>
+const getAllFoldersApi = async (shareId: string): Promise<FolderDataResponse[]> =>
     createPageIterator({
         request: async (Since) => {
             const {

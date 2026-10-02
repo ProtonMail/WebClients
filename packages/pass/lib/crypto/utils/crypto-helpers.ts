@@ -1,5 +1,4 @@
 import {
-    KEY_LENGTH_BYTES,
     generateKey,
     decryptData as genericDecryptData,
     encryptData as genericEncryptData,
@@ -9,7 +8,7 @@ import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import type { PassEncryptionTag } from '../../../types';
 
-export { generateKey, importKey as importSymmetricKey, KEY_LENGTH_BYTES };
+export { generateKey, importKey as importSymmetricKey };
 
 export const encryptData = async (key: CryptoKey, data: Uint8Array<ArrayBuffer>, tag: PassEncryptionTag) =>
     genericEncryptData(key, data, utf8StringToUint8Array(tag));

@@ -16,7 +16,7 @@ export type {
     PassCoreProviderProps,
     PopupController,
 } from './PassCoreContext';
-export { PassCoreContext, useCurrentPort, useCurrentTabID, usePassCore } from './PassCoreContext';
+export { useCurrentPort, useCurrentTabID, usePassCore } from './PassCoreContext';
 
 /** The `PassCoreProvider` must be made available on all pass
  * clients : it provides implementations for processes that are

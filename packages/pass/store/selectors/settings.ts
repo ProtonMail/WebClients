@@ -3,7 +3,6 @@ import { createSelector } from '@reduxjs/toolkit';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import type { PassThemeOption } from '../../components/Layout/Theme/types';
-import { DEFAULT_LOCK_TTL } from '../../constants';
 import { LockMode } from '../../lib/auth/lock/types';
 import { type DomainCriterias, mergePauseCriterias } from '../../lib/settings/pause-list';
 import type { Maybe } from '../../types';
@@ -12,7 +11,7 @@ import { EXCLUDED_SETTINGS_KEYS } from '../reducers/settings';
 import type { State } from '../types';
 import { selectOrganizationSettings } from './organization';
 
-export const selectSettings = ({ settings }: State) => settings;
+const selectSettings = ({ settings }: State) => settings;
 export const selectProxiedSettings = createSelector(selectSettings, (settings) => omit(settings, EXCLUDED_SETTINGS_KEYS));
 
 export const selectCanLoadDomainImages = ({ settings }: State) => settings.loadDomainImages;
@@ -45,9 +44,4 @@ export const selectLockMode = ({ settings }: State) => settings.lockMode ?? Lock
 export const selectLockEnabled = pipe(selectLockMode, (mode) => mode !== LockMode.NONE);
 export const selectLockSetupRequired = createSelector([selectLockMode, selectOrganizationSettings], (lockMode, orgSettings) =>
     Boolean(orgSettings?.ForceLockSeconds && orgSettings.ForceLockSeconds > 0 && lockMode === LockMode.NONE)
-);
-
-export const selectSanitizedLockTTL = createSelector(
-    [selectLockTTL, selectOrganizationSettings],
-    (ttl, orgSettings) => orgSettings?.ForceLockSeconds ?? ttl ?? DEFAULT_LOCK_TTL
 );

@@ -44,7 +44,7 @@ export enum BitwardenUriMatchType {
     Never = 5,
 }
 
-export type BitwardenUri = {
+type BitwardenUri = {
     uri: string;
     match?: BitwardenUriMatchType;
 };
@@ -94,7 +94,7 @@ export type BitwardenIdentityItem = BitwardenBaseItem & {
     };
 };
 
-export type BitwardenNoteItem = BitwardenBaseItem & { type: BitwardenType.NOTE };
+type BitwardenNoteItem = BitwardenBaseItem & { type: BitwardenType.NOTE };
 
 export type BitwardenSshKeyItem = BitwardenBaseItem & {
     type: BitwardenType.SSH_KEY;
@@ -105,7 +105,7 @@ export type BitwardenSshKeyItem = BitwardenBaseItem & {
     };
 };
 
-export type BitwardenItem =
+type BitwardenItem =
     BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem | BitwardenIdentityItem | BitwardenSshKeyItem;
 
 export type BitwardenData = {

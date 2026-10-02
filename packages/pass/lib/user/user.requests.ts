@@ -3,16 +3,10 @@ import { getLatestID } from '@proton/shared/lib/api/events';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
+import type { User, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { DEFAULT_PASS_FEATURES } from '../../constants';
-import type {
-    FeatureFlagAndVariantState,
-    FeatureFlagState,
-    FeatureFlagVariants,
-    HydratedAccessState,
-    HydratedUserState,
-} from '../../store/reducers';
+import type { FeatureFlagAndVariantState, HydratedAccessState, HydratedUserState } from '../../store/reducers';
 import type { Maybe } from '../../types';
 import type { FeatureFlagsResponse } from '../../types/api/features';
 import { PassFeature, PassFeaturesValues, isAutofillModelExperimentGroup } from '../../types/api/features';
@@ -78,20 +72,9 @@ export const getUserSettings = async (): Promise<UserSettings> => {
     return (await api<{ UserSettings: UserSettings }>(getSettings())).UserSettings;
 };
 
-export const getUserModel = async (): Promise<User> => api<{ User: User }>(getUser()).then(prop('User'));
+const getUserModel = async (): Promise<User> => api<{ User: User }>(getUser()).then(prop('User'));
 
-export const getUserLatestEventID = async (): Promise<string> =>
-    api<{ EventID: string }>(getLatestID()).then(prop('EventID'));
-
-export type UserData = {
-    access: HydratedAccessState;
-    addresses: Record<string, Address>;
-    eventId: string;
-    features: FeatureFlagState;
-    featureVariants: FeatureFlagVariants;
-    user: User;
-    userSettings: UserSettings;
-};
+const getUserLatestEventID = async (): Promise<string> => api<{ EventID: string }>(getLatestID()).then(prop('EventID'));
 
 /** Resolves all necessary user data to build up the user state */
 export const getUserData = async (webExtensionId: Maybe<string>): Promise<HydratedUserState> => {

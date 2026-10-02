@@ -11,7 +11,6 @@ import {
 } from '../../lib/vaults/vault.predicates';
 import { sortVaults } from '../../lib/vaults/vault.utils';
 import type { BulkSelectionDTO, Maybe, MaybeNull, ShareId, ShareType } from '../../types';
-import { prop } from '../../utils/fp/lens';
 import { not } from '../../utils/fp/predicates';
 import { logId } from '../../utils/logger';
 import {
@@ -27,14 +26,13 @@ import type { State } from '../types';
 import { SelectorError } from './errors';
 
 export const selectShareState = ({ shares }: State) => shares;
-export const selectShareDedupeState = ({ sharesDedupe: { dedupe } }: State) => dedupe;
-export const selectShareDedupeAndVisibileState = ({ sharesDedupe: { dedupeAndVisible } }: State) => dedupeAndVisible;
+const selectShareDedupeState = ({ sharesDedupe: { dedupe } }: State) => dedupe;
+const selectShareDedupeAndVisibileState = ({ sharesDedupe: { dedupeAndVisible } }: State) => dedupeAndVisible;
 
 export const selectAllShares = createSelector([selectShareState], (s) => Object.values(s));
 export const selectAllVaults = createSelector([selectAllShares], (s) => s.filter(isVaultShare).sort(sortVaults));
-export const selectAllVaultIDs = createSelector([selectAllVaults], (vaults) => new Set(vaults.map(prop('vaultId'))));
 
-export const selectDedupedShares = createSelector([selectAllShares, selectShareDedupeState], (s, d) => s.filter(isShareDeduped(d)));
+const selectDedupedShares = createSelector([selectAllShares, selectShareDedupeState], (s, d) => s.filter(isShareDeduped(d)));
 export const selectDedupedVaults = createSelector([selectAllVaults, selectShareDedupeState], (s, d) => s.filter(isShareDeduped(d)));
 
 export const selectVisibleVaults = createSelector([selectAllVaults, selectShareDedupeAndVisibileState], (s, d) =>
@@ -53,7 +51,7 @@ export const createVisibilityFilterSelector = <T extends { shareId: string }>(fi
     });
 
 export const selectItemShares = createSelector([selectDedupedShares], (s) => s.filter(isItemShare));
-export const selectWritableShares = createSelector([selectDedupedShares], (v) => v.filter(isShareWritable));
+
 export const selectVisibleWritableShares = createSelector([selectVisibleShares], (v) => v.filter(isShareWritable));
 export const selectWritableVaults = createSelector([selectDedupedShares], (v) => v.filter(isWritableVault));
 export const selectOwnedVaults = createSelector([selectDedupedVaults], (v) => v.filter(isOwnVault));

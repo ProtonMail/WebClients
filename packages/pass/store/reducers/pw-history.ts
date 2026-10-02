@@ -15,7 +15,7 @@ export type PasswordHistoryEntry = {
 
 export type PasswordItem = Omit<PasswordHistoryEntry, 'createTime' | 'id'>;
 
-export type PasswordHistoryState = PasswordHistoryEntry[];
+type PasswordHistoryState = PasswordHistoryEntry[];
 
 const reducer: Reducer<PasswordHistoryState> = (state = [], action) => {
     if (passwordSave.match(action)) return [action.payload, ...state];

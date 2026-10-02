@@ -19,9 +19,9 @@ type RefreshCookieResponse = { LocalID?: number; RefreshCounter: number; Refresh
 
 export type RefreshSessionData = Pick<AuthSession, 'UID' | 'AccessToken' | 'RefreshToken' | 'RefreshTime' | 'cookies'>;
 export type RefreshHandler = (response: Response, options: ApiOptions) => Promise<void>;
-export type OnRefreshCallback = (response: RefreshSessionData) => MaybePromise<void>;
+type OnRefreshCallback = (response: RefreshSessionData) => MaybePromise<void>;
 
-export type DynamicRefreshResult =
+type DynamicRefreshResult =
     | { type: AuthMode.COOKIE; response: { json: () => Promise<RefreshCookieResponse> } }
     | { type: AuthMode.TOKEN; response: { json: () => Promise<RefreshSessionResponse> } };
 

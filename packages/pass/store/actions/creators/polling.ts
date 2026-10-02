@@ -7,7 +7,7 @@ import { SyncStrategy } from '../../../lib/sync/types';
 
 export const forcePollV1 = createAction<string>('channel::poll::v1');
 export const forcePollV2 = createAction('channel::poll::v2');
-export const syncShares = () => forcePollV1('shares');
+const syncShares = () => forcePollV1('shares');
 export const syncShare = (shareID: string) => forcePollV1(`share::${shareID}`);
 export const refreshShareAccess = createAction<string>('share::access::refresh');
 

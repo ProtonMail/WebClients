@@ -14,7 +14,7 @@ import { hasDomain, hasOTP, hasPasskeys } from '../items/item.predicates';
 import { intoSelectedItem } from '../items/item.utils';
 import { getAutofillUrls } from '../urls/utils/autofill';
 
-export type MonitorCheckOptions = {
+type MonitorCheckOptions = {
     shareIds?: ShareId[];
 };
 export interface MonitorService {

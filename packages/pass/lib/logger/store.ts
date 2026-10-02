@@ -47,5 +47,3 @@ export const createLogStore = <T extends LogStorageData>(storage: AnyStorage<T>)
 
     return { push, read, flush: write.flush, clear };
 };
-
-export type LogStore = ReturnType<typeof createLogStore>;

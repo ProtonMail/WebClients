@@ -36,7 +36,7 @@ const decrypt = async <T extends object>(options: {
  * shares from the state that lack a corresponding share manager reference in the snapshot.
  * If removal creates a discrepancy in the item shares, returns undefined to indicate that
  * a refetch is necessary to reconcile the state and snapshot. */
-export const sanitizeCache = (cache: Maybe<PassCache>): Maybe<PassCache> => {
+const sanitizeCache = (cache: Maybe<PassCache>): Maybe<PassCache> => {
     if (!cache) return;
 
     const state = { ...cache.state };

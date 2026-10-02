@@ -4,7 +4,7 @@ import type { OptimisticReducersMapObject, OptimisticSelector, StateFromOptimist
 import { asIfNotFailed } from './select-is-failed';
 import { asIfNotOptimistic } from './select-is-optimistic';
 
-export type OptimisticList<T extends any[]> = (Unpack<T> & { optimistic: boolean; failed: boolean })[];
+type OptimisticList<T extends any[]> = (Unpack<T> & { optimistic: boolean; failed: boolean })[];
 
 /**
  * When retrieving a list from a selector for an optimistic sub-state,

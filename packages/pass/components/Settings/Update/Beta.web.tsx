@@ -12,10 +12,6 @@ import { selectBetaEnabled } from '../../../store/selectors';
 import { PassFeature } from '../../../types/api/features';
 import { SettingsPanel } from '../SettingsPanel';
 
-/** Limit beta enabling to the cohort having the `PassWebInternalAlpha`
- * flag for now. FIXME: remove this when leveraging the user settings */
-export const useShowBetaWeb = () => useFeatureFlag(PassFeature.PassWebInternalAlpha) && BUILD_TARGET === 'web';
-
 const useToggleBeta = () => {
     const dispatch = useDispatch();
     const betaEnabled = useSelector(selectBetaEnabled);
