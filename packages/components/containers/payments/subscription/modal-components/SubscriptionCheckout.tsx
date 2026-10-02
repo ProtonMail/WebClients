@@ -13,6 +13,7 @@ import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hook
 import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
+import { PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
@@ -117,6 +118,7 @@ const SubscriptionCheckout = ({
         return null;
     }
 
+    const isPassBasic = !!planIDs[PLANS.PASS_BASIC];
     const list = getWhatsIncluded({ planIDs, plansMap, freePlan, scribeToLumo });
     const disableCurrencySelector = getDisableCurrencySelector(paymentMethods, user, planIDs, couponConfig, loading);
 
@@ -341,7 +343,15 @@ const SubscriptionCheckout = ({
     );
 
     const bodyItems = checkoutView.getVisibleItems({
-        exclude: ['amountDue', 'discount', 'renewalNotice', 'taxInclusive', 'billingCycle', 'vatReverseCharge'],
+        exclude: [
+            'amountDue',
+            'discount',
+            'renewalNotice',
+            'taxInclusive',
+            'billingCycle',
+            'vatReverseCharge',
+            ...(isPassBasic ? (['taxExclusive', 'planAmount', 'proration', 'credit'] as const) : []),
+        ],
     });
     const planAmountValue = checkoutView.getItem('planAmount').amount;
 
@@ -360,6 +370,7 @@ const SubscriptionCheckout = ({
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
             disableCurrencySelector={disableCurrencySelector}
             renewNotice={checkoutView.render('renewalNotice')}
+            showPaymentProtectionCopy={!isPassBasic}
         >
             {/* Plan header: title + discount badge + billing cycle */}
             <div className="mb-4 flex flex-column">

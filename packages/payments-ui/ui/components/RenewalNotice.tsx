@@ -410,6 +410,16 @@ export const getTrialRenewalAmountDueNoticeText = () => {
     return c('Payments').jt`Amount due after trial on ${formattedDate}`;
 };
 
+export const getSwitchTermsNoticeText = (app: APP_NAMES | undefined) => {
+    const termsLink = (
+        <Href className="color-inherit" href={getTermsURL(app)} key="terms-and-conditions">
+            {c('Payments').t`terms and conditions`}
+        </Href>
+    );
+    // translator: Full sentence is: By switching, you agree to our <terms and conditions>.
+    return c('Payments').jt`By switching, you agree to our ${termsLink}.`;
+};
+
 export const getTrialRenewalNoticeTextWithTermsAndConditions = ({
     renewCycle,
     app,

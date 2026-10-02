@@ -7,7 +7,7 @@ import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hook
 import type { VatNumberHook } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
 import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { PAYMENT_METHOD_TYPES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription } from '@proton/payments/core/interface';
 import { SubscriptionMode, SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { hasMigrationDiscount, isTrial } from '@proton/payments/core/subscription/helpers';
@@ -123,6 +123,13 @@ export const SubscriptionSubmitButton = ({
             const price = getSimplePriceString(currency, amountDue);
             return {
                 children: couponConfig?.renderPayCTA?.() ?? c('Action').t`Pay ${price} now`,
+            };
+        }
+
+        if (checkResult?.requestData.Plans[PLANS.PASS_BASIC]) {
+            const planName = PLAN_NAMES[PLANS.PASS_BASIC];
+            return {
+                children: c('Action').t`Switch to ${planName}`,
             };
         }
 

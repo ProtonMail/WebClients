@@ -29,7 +29,7 @@ import { IdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealA
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/payments-ui/ui/components/SepaDirectDebit';
 import { getMinCreditAmount, getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import type { BillingAddressStatus } from '@proton/payments/core/billing-address/billing-address';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { savedMethodRequires3DS } from '@proton/payments/core/createPaymentToken';
 import type {
     AvailablePaymentMethod,
@@ -41,7 +41,7 @@ import type {
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { User } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -105,6 +105,7 @@ export interface Props {
     creditCardDetailsRef?: Ref<HTMLDivElement>;
     selectedProcessor: PaymentProcessorHook | undefined;
     processingPayment: boolean;
+    checkResult?: SubscriptionEstimation;
 }
 
 export const PaymentsNoApi = ({
@@ -144,6 +145,7 @@ export const PaymentsNoApi = ({
     creditCardDetailsRef,
     selectedProcessor,
     processingPayment,
+    checkResult,
 }: Props) => {
     const isBitcoinMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
     const showBitcoinMethod = isBitcoinMethod && !isBilledUser(user);
@@ -391,6 +393,7 @@ export const PaymentsNoApi = ({
                     hasPaymentMethod={!!savedPaymentMethods?.length}
                     subscription={subscription}
                     taxFields={taxFields}
+                    isPassBasic={!!checkResult?.requestData.Plans[PLANS.PASS_BASIC]}
                 />
             )}
         </>

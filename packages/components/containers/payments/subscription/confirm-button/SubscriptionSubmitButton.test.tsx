@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { CYCLE, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
@@ -102,5 +102,17 @@ describe('SubscriptionSubmitButton', () => {
         });
 
         expect(screen.getByText('Confirm')).toBeInTheDocument();
+    });
+
+    it('should show "Switch to Pass Basic" when switching to Pass basic', () => {
+        renderButton({
+            checkResult: {
+                ...baseCheckResult,
+                AmountDue: 0,
+                requestData: { ...baseCheckResult.requestData, Plans: { [PLANS.PASS_BASIC]: 1 } },
+            },
+        });
+
+        expect(screen.getByText('Switch to Pass Basic')).toBeInTheDocument();
     });
 });

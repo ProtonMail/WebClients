@@ -113,6 +113,32 @@ describe('getDisableCurrencySelector', () => {
         });
     });
 
+    describe('plan-locked currency', () => {
+        it('returns true when Pass basic is selected', () => {
+            expect(
+                getDisableCurrencySelector(
+                    baseArgs.paymentMethods,
+                    baseArgs.user,
+                    { [PLANS.PASS_BASIC]: 1 },
+                    baseArgs.couponConfig,
+                    baseArgs.loading
+                )
+            ).toBe(true);
+        });
+
+        it('returns falsy when Pass basic quantity is 0', () => {
+            expect(
+                getDisableCurrencySelector(
+                    baseArgs.paymentMethods,
+                    baseArgs.user,
+                    { [PLANS.PASS_BASIC]: 0 },
+                    baseArgs.couponConfig,
+                    baseArgs.loading
+                )
+            ).toBeFalsy();
+        });
+    });
+
     describe('coupon config', () => {
         it('returns true when couponConfig.disableCurrencySelector is true', () => {
             expect(
