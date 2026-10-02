@@ -14,6 +14,7 @@ import SpamFiltersSettings from './actions/SpamFiltersSettings';
 import SubscribeAccount from './actions/SubscribeAccount';
 import VPNLite from './actions/VPNLite';
 import WalletSettings from './actions/WalletSettings';
+import { BYOEMobile } from './actions/byoe-mobile/BYOEMobile';
 import { SignOut } from './actions/sign-out/SignOut';
 import { SupportedActions } from './helper';
 
@@ -39,6 +40,7 @@ const LegacyLiteAppBaseRoute = ({ action, redirect, app, searchParams, loader, l
             {action === SupportedActions.EmailSignatures && <SignatureSettings layout={layout} loader={loader} />}
             {action === SupportedActions.EmailSettings && <EmailSettings layout={layout} loader={loader} />}
             {action === SupportedActions.CategoryView && <CategoriesLiteView layout={layout} loader={loader} />}
+            {action === SupportedActions.BYOEMobile && <BYOEMobile layout={layout} loader={loader} />}
             {action === SupportedActions.LabelsSettings && <LabelsSettings layout={layout} loader={loader} />}
             {action === SupportedActions.SpamFiltersSettings && <SpamFiltersSettings layout={layout} />}
             {action === SupportedActions.SignOut && <SignOut layout={layout} initialHashParams={initialHashParams} />}
