@@ -11,10 +11,7 @@ import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/f
 
 import { getEmailVerificationCodeText, getSMSVerificationCodeText } from '../../../../../../content/helper';
 import RequestNewCodeModal from '../../../../../../unauthed-forgot-password/components/RequestNewCodeModal';
-import {
-    useNewCodeLinks,
-    useNotifyCodeSent,
-} from '../../../../../../unauthed-forgot-password/hooks/useRequestNewVerificationCode';
+import { useNewCodeLinks, useNotifyCodeSent } from '../../../../../../unauthed-forgot-password/hooks/useNewCodeLinks';
 import { Lost2FAContext } from '../Lost2FAContext';
 import {
     type VerificationMethod,

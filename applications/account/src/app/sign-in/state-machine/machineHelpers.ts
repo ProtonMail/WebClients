@@ -1,10 +1,13 @@
-/** Transitions, guards and placeholders the sign-in's machines share. Each machine defines its own `reportError` action. */
+/**
+ * Transitions, guards and placeholders the sign-in's machines share, and the forgot-password machine borrows. Each
+ * machine defines its own `reportError` action.
+ */
 import { type AnyActorLogic, fromPromise } from 'xstate';
 
 /**
- * Placeholders for the actors a machine takes from the app: `useSignInMachine` (or a test) provides them. Running one
- * that wasn't provided fails its state like a failed request, naming the actor, instead of the machine crashing.
- * Listing every name (checked against the type) keeps the placeholders complete.
+ * Placeholders for the actors a machine takes from the app: `useSignInMachine` or `useForgotPasswordMachine` (or a
+ * test) provides them. Running one that wasn't provided fails its state like a failed request, naming the actor,
+ * instead of the machine crashing. Listing every name (checked against the type) keeps the placeholders complete.
  */
 export const unprovidedActors = <TActors extends Record<string, AnyActorLogic>>(
     names: Record<keyof TActors, true>
@@ -12,7 +15,7 @@ export const unprovidedActors = <TActors extends Record<string, AnyActorLogic>>(
     Object.fromEntries(
         Object.keys(names).map((name) => [
             name,
-            fromPromise(() => Promise.reject(new Error(`The sign-in's ${name} actor is not provided`))),
+            fromPromise(() => Promise.reject(new Error(`The ${name} actor is not provided`))),
         ])
     ) as unknown as TActors;
 

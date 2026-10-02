@@ -1,52 +1,32 @@
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useLocalState from '@proton/components/hooks/useLocalState';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import useLoading from '@proton/hooks/useLoading';
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import noop from '@proton/utils/noop';
 
 import SetPasswordWithPolicyForm from '../../../components/password-forms/SetPasswordWithPolicyForm';
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
-import { defaultPersistentKey } from '../../../public/helper';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
-import { useGetAccountKTActivation } from '../../../useGetAccountKTActivation';
-import { DeviceRecoveryLevel, performPasswordChangeViaMnemonic, performPasswordReset } from '../../actions';
-import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
-import { useForgotPasswordProps } from '../../wizard/ForgotPasswordProvider';
-import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import {
+    selectResetResponse,
+    selectResetWithDataLoss,
+    selectSubmitting,
+    selectUsername,
+} from '../../state-machine/UnauthedForgotPasswordStateMachine';
+import { ForgotPasswordContext } from '../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
+/** The new password; the machine resets it with what the flow recovered, and signs in. */
 export const ResetPassword = ({ onBack }: ForgotPasswordStepProps) => {
-    const { onLogin, productParam, setupVPN } = useForgotPasswordProps();
-    const { snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const {
-        username,
-        resetResponse,
-        ownershipVerificationCode,
-        mnemonicData,
-        resetWithDataLoss,
-        ownershipVerificationMethod,
-        deviceRecoveryLevel,
-    } = snapshot.context;
+    const actorRef = ForgotPasswordContext.useActorRef();
+    const username = ForgotPasswordContext.useSelector(selectUsername);
+    const resetResponse = ForgotPasswordContext.useSelector(selectResetResponse);
+    const resetWithDataLoss = ForgotPasswordContext.useSelector(selectResetWithDataLoss);
+    const submitting = ForgotPasswordContext.useSelector(selectSubmitting);
     const { createNotification } = useNotifications();
-
-    const { sendResetPasswordSuccess, sendResetPasswordFailure, sendResetPasswordStepLoad } = useResetPasswordTelemetry(
-        { variant: 'B' }
-    );
-
-    const silentApi = useSilentApi();
-    const [persistent] = useLocalState(false, defaultPersistentKey);
-    const getKtActivation = useGetAccountKTActivation();
-    const errorHandler = useErrorHandler();
-    const [submitting, withSubmitting] = useLoading();
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
 
     useEffect(() => {
         sendResetPasswordStepLoad({
@@ -54,64 +34,27 @@ export const ResetPassword = ({ onBack }: ForgotPasswordStepProps) => {
         });
     }, []);
 
-    const handleSubmit = async (newPassword: string) => {
+    const createNotificationRef = useRef(createNotification);
+    useLayoutEffect(() => {
+        createNotificationRef.current = createNotification;
+    });
+    useEffect(() => {
+        const subscription = actorRef.on('resetToken.rejected', () =>
+            createNotificationRef.current({
+                type: 'error',
+                text: c('Error').t`Invalid reset token. Please refresh the page and try again.`,
+                expiration: 30_000,
+            })
+        );
+        return () => subscription.unsubscribe();
+    }, [actorRef]);
+
+    const handleSubmit = (password: string) => {
         createNotification({
             text: c('Info').t`This can take a few seconds or a few minutes depending on your device`,
             type: 'info',
         });
-
-        try {
-            if (mnemonicData) {
-                const authSession = await performPasswordChangeViaMnemonic({
-                    newPassword,
-                    mnemonicData: { ...mnemonicData, api: silentApi },
-                    persistent,
-                    api: silentApi,
-                });
-                sendResetPasswordSuccess({
-                    step: 'setNewPassword',
-                    method: deviceRecoveryLevel === DeviceRecoveryLevel.FULL ? 'device-recovery' : 'mnemonic',
-                });
-                await onLogin(authSession);
-            } else if (resetResponse) {
-                const authSession = await performPasswordReset({
-                    newPassword,
-                    username,
-                    ownershipVerificationCode,
-                    resetResponse,
-                    persistent,
-                    productParam,
-                    ktActivation: await getKtActivation(),
-                    setupVPN,
-                    api: silentApi,
-                });
-                sendResetPasswordSuccess({
-                    step: 'setNewPassword',
-                    method:
-                        deviceRecoveryLevel === DeviceRecoveryLevel.FULL
-                            ? 'device-recovery'
-                            : ownershipVerificationMethod,
-                });
-                await onLogin(authSession);
-            }
-        } catch (error) {
-            sendResetPasswordFailure({
-                method: mnemonicData ? 'mnemonic' : ownershipVerificationMethod,
-                step: 'setNewPassword',
-            });
-
-            const apiError = getApiError(error);
-            const apiErrorMessage = getApiErrorMessage(error);
-            if (apiError.code === API_CUSTOM_ERROR_CODES.INVALID_VALUE && apiErrorMessage) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`Invalid reset token. Please refresh the page and try again.`,
-                    expiration: 30_000,
-                });
-            } else {
-                errorHandler(error);
-            }
-        }
+        actorRef.send({ type: 'password.submitted', payload: { password } });
     };
 
     return (
@@ -124,9 +67,7 @@ export const ResetPassword = ({ onBack }: ForgotPasswordStepProps) => {
             <Content>
                 <SetPasswordWithPolicyForm
                     passwordPolicies={resetResponse?.PasswordPolicies ?? []}
-                    onSubmit={({ password }) => {
-                        withSubmitting(handleSubmit(password)).catch(noop);
-                    }}
+                    onSubmit={({ password }) => handleSubmit(password)}
                     submitting={submitting}
                     submitButtonColor={resetWithDataLoss ? 'danger' : 'norm'}
                 />

@@ -9,13 +9,13 @@ import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon'
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
-import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
-import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import { selectUsername } from '../../state-machine/UnauthedForgotPasswordStateMachine';
+import { ForgotPasswordContext } from '../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
 export const ConfirmMnemonicPhraseRecovery = ({ onBack }: ForgotPasswordStepProps) => {
-    const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const { username } = snapshot.context;
+    const { send } = ForgotPasswordContext.useActorRef();
+    const username = ForgotPasswordContext.useSelector(selectUsername);
 
     const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
     useEffect(() => {

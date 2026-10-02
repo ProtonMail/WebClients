@@ -3,28 +3,28 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useLoading from '@proton/hooks/useLoading';
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import { getResendSMSVerificationCodeText } from '../../../content/helper';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
-import { useRequestCode } from '../../hooks/useRequestCode';
-import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
-import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import {
+    selectRedactedRecoveryPhoneNumber,
+    selectSubmitting,
+    selectUsername,
+} from '../../state-machine/UnauthedForgotPasswordStateMachine';
+import { ForgotPasswordContext } from '../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
+/** The code is only sent to the recovery phone once the user asks, since it may cost them. */
 export const ConfirmPhoneVerification = ({ onBack }: ForgotPasswordStepProps) => {
-    const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const { username, redactedRecoveryPhoneNumber } = snapshot.context;
-    const { sendResetPasswordCodeSent, sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    const { send } = ForgotPasswordContext.useActorRef();
+    const username = ForgotPasswordContext.useSelector(selectUsername);
+    const redactedRecoveryPhoneNumber = ForgotPasswordContext.useSelector(selectRedactedRecoveryPhoneNumber);
+    const sendingCode = ForgotPasswordContext.useSelector(selectSubmitting);
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
 
-    const [loading, withLoading] = useLoading();
-    const errorHandler = useErrorHandler();
     const RedactedPhoneNumber = <strong key="redacted-phone-number">{redactedRecoveryPhoneNumber}</strong>;
 
     useEffect(() => {
@@ -33,39 +33,6 @@ export const ConfirmPhoneVerification = ({ onBack }: ForgotPasswordStepProps) =>
         });
     }, []);
 
-    const requestCode = useRequestCode({
-        method: 'phone',
-        username,
-        onSuccess: () => {
-            send({
-                type: 'sms.code.sent',
-            });
-        },
-        onError: (error) => {
-            const apiError = getApiError(error);
-            const apiErrorMessage = getApiErrorMessage(error);
-            if (apiError.code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED && apiErrorMessage) {
-                send({
-                    type: 'sms.code.send.failed',
-                    payload: {
-                        errorMessage: apiErrorMessage,
-                    },
-                });
-            } else {
-                errorHandler(error);
-            }
-        },
-    });
-
-    const handleSubmit = () => {
-        if (loading) {
-            return;
-        }
-
-        void withLoading(
-            requestCode().then(() => sendResetPasswordCodeSent({ step: 'enterRecoverySms', method: 'sms' }))
-        );
-    };
     return (
         <>
             <Header
@@ -86,8 +53,8 @@ export const ConfirmPhoneVerification = ({ onBack }: ForgotPasswordStepProps) =>
                     color="norm"
                     type="submit"
                     fullWidth
-                    onClick={handleSubmit}
-                    loading={loading}
+                    onClick={() => send({ type: 'code.requested' })}
+                    loading={sendingCode}
                     className="mt-6"
                 >
                     {c('Action').t`Send code`}
