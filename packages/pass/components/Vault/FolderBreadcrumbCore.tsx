@@ -7,7 +7,7 @@ import clsx from '@proton/utils/clsx';
 import type { FolderData } from '../../types';
 import type { VaultColor } from '../../types/protobuf/vault-v1.static';
 import { PassFolderIcon } from '../Folders/PassFolderIcon';
-import type { VaultIconName } from './VaultIcon';
+import type { VaultIconValue } from './VaultIcon';
 import { VaultIcon } from './VaultIcon';
 
 type FolderPathSegment = {
@@ -22,7 +22,7 @@ type Props = {
     shareId: string;
     vaultName: string;
     vaultColor?: VaultColor;
-    vaultIcon?: VaultIconName;
+    vaultIcon?: VaultIconValue;
     path: FolderData[];
     className?: string;
 };
