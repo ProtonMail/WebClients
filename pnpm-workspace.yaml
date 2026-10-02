@@ -10,9 +10,6 @@ packages:
     - utilities/*
     - vendor/*/*
 
-# Same flat node_modules layout Yarn's node-modules linker produced.
-nodeLinker: hoisted
-
 # Each workspace declares the type packages it uses. Most list node, webpack-env and jest in
 # compilerOptions.types through tsconfig.base.json, so these ranges are shared here.
 catalog:
