@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-export interface FeaturePair<T extends number | boolean = number | boolean> {
+interface FeaturePair<T extends number | boolean = number | boolean> {
     name: string;
     shortName?: string;
     value: T;

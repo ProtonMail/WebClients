@@ -18,7 +18,7 @@ interface ReturnValue {
     }) => Promise<void>;
 }
 
-export type UseAddressFlags = (address: Address, user: UserModel) => ReturnValue;
+type UseAddressFlags = (address: Address, user: UserModel) => ReturnValue;
 
 const useAddressFlags: UseAddressFlags = (initialAddress, user) => {
     const dispatch = useDispatch();

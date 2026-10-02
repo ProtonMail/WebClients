@@ -81,7 +81,7 @@ export const useRenewToggle = ({ initialRenewState = Autopay.ENABLE }: UseRenewT
     return { onChange, disableRenewModal, renewState, setRenewState };
 };
 
-export type Props = {
+type Props = {
     loading?: boolean;
     onChange: () => any;
 } & Pick<UseRenewToggleResult, 'renewState' | 'disableRenewModal'>;

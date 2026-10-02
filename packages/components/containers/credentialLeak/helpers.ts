@@ -12,7 +12,7 @@ import breachIconWarningSmall from '@proton/styles/assets/img/breach-alert/shiel
 import type { SampleBreach } from './models';
 import { BREACH_STATE } from './models';
 
-export const enum SEVERITY_LEVELS {
+const enum SEVERITY_LEVELS {
     HIGH = 0.67,
     MEDIUM = 0.33,
 }

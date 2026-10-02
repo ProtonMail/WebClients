@@ -12,7 +12,7 @@ import NotificationContext from './notificationContext';
 type ButtonPropsFilter<T> = Omit<T, 'shape' | 'color' | 'size'>;
 type NotificationOwnProps = { close?: boolean } & ButtonPropsFilter<ButtonLikeOwnProps>;
 
-export type NotificationButtonProps<E extends ElementType> = PolymorphicPropsWithoutRef<
+type NotificationButtonProps<E extends ElementType> = PolymorphicPropsWithoutRef<
     ButtonPropsFilter<ButtonLikeProps<E>>,
     E
 >;

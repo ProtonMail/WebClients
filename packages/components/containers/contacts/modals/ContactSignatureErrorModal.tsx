@@ -9,11 +9,11 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 
-export interface ContactSignatureErrorProps {
+interface ContactSignatureErrorProps {
     contactID: string;
 }
 
-export interface ContactSignatureErrorModalProps {
+interface ContactSignatureErrorModalProps {
     onResign: () => void;
 }
 

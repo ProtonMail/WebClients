@@ -30,7 +30,7 @@ interface OwnProps<E extends ElementType> {
     forceOpen?: boolean;
 }
 
-export type Props<T extends ElementType> = DropdownButtonProps<T> & OwnProps<T>;
+type Props<T extends ElementType> = DropdownButtonProps<T> & OwnProps<T>;
 
 const SimpleDropdownBase = <E extends ElementType>(
     {

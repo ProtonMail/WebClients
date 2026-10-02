@@ -13,7 +13,7 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import useAuthentication from '../../hooks/useAuthentication';
 import { PaymentsNoApi } from './Payment';
 
-export type Props = ReturnType<typeof usePaymentFacade> & {
+type Props = ReturnType<typeof usePaymentFacade> & {
     noMaxWidth?: boolean;
     hideFirstLabel?: boolean;
     hideSavedMethodsDetails?: boolean;

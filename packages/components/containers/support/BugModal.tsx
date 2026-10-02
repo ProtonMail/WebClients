@@ -45,7 +45,7 @@ import { findCategoryOption, getMailOptions, getVPNOptions } from './bugCategori
 import { REPORT_MAX_CHARS } from './constants';
 import { useBugModalLogs } from './useBugModalLogs';
 
-export type BugModalMode = 'chat-no-agents';
+type BugModalMode = 'chat-no-agents';
 
 interface Model extends ReturnType<typeof getReportInfo> {
     Category: OptionOptionItem | undefined;

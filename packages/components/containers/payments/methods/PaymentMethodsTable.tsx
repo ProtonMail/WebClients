@@ -20,7 +20,7 @@ import PaymentMethodState from './PaymentMethodState';
 
 const NBSP_HTML = '\u00A0';
 
-export interface Props {
+interface Props {
     methods: SavedPaymentMethod[];
     app: APP_NAMES;
 }

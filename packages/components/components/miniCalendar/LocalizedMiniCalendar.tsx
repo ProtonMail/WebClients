@@ -9,7 +9,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Props as MiniCalProps } from './MiniCalendar';
 import MiniCalendar from './MiniCalendar';
 
-export type Props = MiniCalProps;
+type Props = MiniCalProps;
 
 const LocalizedMiniCalendar = ({
     weekStartsOn,

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-export interface Props {
+interface Props {
     role?: string;
     children: ReactNode;
 }

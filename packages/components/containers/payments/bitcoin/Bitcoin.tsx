@@ -14,7 +14,7 @@ import BitcoinDetails from './BitcoinDetails';
 import type { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
 import BitcoinQRCode from './BitcoinQRCode';
 
-export type Props = BitcoinHook & {
+type Props = BitcoinHook & {
     suffix?: ReactNode;
 };
 

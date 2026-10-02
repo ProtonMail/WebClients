@@ -8,7 +8,7 @@ import useAutoGrow from '../../hooks/useAutoGrow';
 import ErrorZone from '../text/ErrorZone';
 import useInput from './useInput';
 
-export interface Props extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
+interface Props extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
     ref?: Ref<HTMLTextAreaElement>; // override ref so that LegacyRef isn't used
     error?: string;
     isSubmitted?: boolean;

@@ -5,7 +5,7 @@ import clsx from '@proton/utils/clsx';
 
 import Label from '../label/Label';
 
-export interface IconRowProps {
+interface IconRowProps {
     className?: string;
     children: ReactNode;
     icon: ReactElement;

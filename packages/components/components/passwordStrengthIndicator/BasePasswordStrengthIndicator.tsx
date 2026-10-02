@@ -31,7 +31,7 @@ import './PasswordStrengthIndicator.scss';
 
 const BETTER_PASSWORD_LENGTH = 12;
 
-export interface PasswordStrengthIndicatorProps extends ComponentPropsWithoutRef<'div'> {
+interface PasswordStrengthIndicatorProps extends ComponentPropsWithoutRef<'div'> {
     variant: PasswordStrengthIndicatorVariant;
     score: PasswordScore;
     penalties?: Set<PasswordPenalties>;

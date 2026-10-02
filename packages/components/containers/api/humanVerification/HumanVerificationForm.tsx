@@ -18,7 +18,7 @@ import { HumanVerificationSteps } from './interface';
 
 import './HumanVerificationModal.scss';
 
-export interface HumanVerificationFormProps {
+interface HumanVerificationFormProps {
     // The api of the session that got challenged, which is not necessarily the one the app provides
     api: Api;
     onSubmit: (token: string, tokenType: HumanVerificationMethodType, verificationModel?: VerificationModel) => void;

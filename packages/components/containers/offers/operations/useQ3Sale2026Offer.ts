@@ -15,7 +15,7 @@ import { withResolvedRefs } from '../helpers/withResolvedRefs';
 import useOfferFlags from '../hooks/useOfferFlags';
 import type { OfferConfig, Operation } from '../interface';
 
-export interface Q3Sale2026EligibilityArgs {
+interface Q3Sale2026EligibilityArgs {
     user: UserModel;
     subscription?: Subscription;
     protonConfig: ProtonConfig;

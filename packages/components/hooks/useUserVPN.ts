@@ -5,7 +5,7 @@ import { useCache } from '@proton/app-context/useCache';
 import type { Currency } from '@proton/payments/core/interface';
 import { getClientVPNInfo } from '@proton/shared/lib/api/vpn';
 
-export interface VPNUserInfo {
+interface VPNUserInfo {
     VPN: {
         ExpirationTime: number;
         Name: string;

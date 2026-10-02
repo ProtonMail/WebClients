@@ -38,7 +38,7 @@ const convertContactToRecipient = ({ Name, ContactID, Email }: ContactEmail) => 
     Address: Email,
 });
 
-export interface ContactSelectorProps {
+interface ContactSelectorProps {
     inputValue: any;
     onGroupDetails: (contactGroupID: string) => void;
     onEdit: (props: ContactEditProps) => void;

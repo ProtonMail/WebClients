@@ -7,7 +7,7 @@ import AuthenticatorLogo from './AuthenticatorLogo';
 import CalendarLogo from './CalendarLogo';
 import DocsLogo from './DocsLogo';
 import DriveLogo from './DriveLogo';
-import type { LogoProps as LogoBaseProps, LogoVariant } from './LogoBase';
+import type { LogoProps as LogoBaseProps } from './LogoBase';
 import LumoLogo from './LumoLogo';
 import MailLogo from './MailLogo';
 import MeetLogo from './MeetLogo';
@@ -33,8 +33,6 @@ const {
     PROTONSPACES,
     PROTONCONSOLE,
 } = APPS;
-
-export type { LogoVariant };
 
 export interface LogoProps extends LogoBaseProps {
     appName: APP_NAMES;

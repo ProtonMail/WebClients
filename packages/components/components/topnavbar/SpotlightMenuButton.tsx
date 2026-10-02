@@ -18,12 +18,12 @@ import { GetStartedButton } from './GetStartedButton';
 
 export type DisplayItem = DropdownDisplayItem | LinkDisplayItem;
 
-export interface DropdownDisplayItem extends DisplayItemBase {
+interface DropdownDisplayItem extends DisplayItemBase {
     type: 'dropdown';
     dropdownLinks: { label: string; icon: IconComponent; href: string }[];
 }
 
-export interface LinkDisplayItem extends DisplayItemBase {
+interface LinkDisplayItem extends DisplayItemBase {
     type: 'link';
     linkHref: string;
 }

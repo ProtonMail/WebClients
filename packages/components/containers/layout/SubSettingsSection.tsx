@@ -16,7 +16,7 @@ import ProtonBadge from '../../components/protonBadge/ProtonBadge';
 import SettingsSectionTitle from '../account/SettingsSectionTitle';
 import { SettingsLayoutVariant } from './interface';
 
-export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'> {
+interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'> {
     id: string;
     className?: string;
     title?: string;

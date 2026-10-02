@@ -2,7 +2,7 @@ import StepDot from '../../../stepDot/StepDot';
 import StepDots from '../../../stepDots/StepDots';
 import type { FeatureTourStep, FeatureTourStepId } from '../../interface';
 
-export interface FeatureTourStepBulletProps {
+interface FeatureTourStepBulletProps {
     steps: FeatureTourStep[];
     onClick: (stepIdx: FeatureTourStepId) => void;
 }

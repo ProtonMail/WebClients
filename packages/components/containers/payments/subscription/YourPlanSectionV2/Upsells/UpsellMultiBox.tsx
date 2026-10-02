@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 
 import './UpsellMultiBox.scss';
 
-export type UpsellMultiBoxGradientType = 'vpn' | 'unlimited';
+type UpsellMultiBoxGradientType = 'vpn' | 'unlimited';
 
 interface UpsellMultiBoxGradientProps {
     children: ReactNode;
@@ -27,7 +27,7 @@ interface Props {
     style?: 'card' | 'promotionGradient';
 }
 
-export type UpsellMultiBoxProps<E extends ElementType> = PolymorphicPropsWithoutRef<Props, E>;
+type UpsellMultiBoxProps<E extends ElementType> = PolymorphicPropsWithoutRef<Props, E>;
 
 const defaultElement = 'div';
 

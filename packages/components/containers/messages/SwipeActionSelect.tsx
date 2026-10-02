@@ -5,7 +5,7 @@ import { SWIPE_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import Option from '../../components/option/Option';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
 
-export interface SwipeActionSelectProps {
+interface SwipeActionSelectProps {
     onChange: (swipeAction: SWIPE_ACTION) => void;
     value: SWIPE_ACTION;
     id?: string;

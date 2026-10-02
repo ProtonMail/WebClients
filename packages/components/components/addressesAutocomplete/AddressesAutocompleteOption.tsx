@@ -6,7 +6,7 @@ import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFi
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
-export interface OptionProps<V> extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onChange' | 'title'> {
+interface OptionProps<V> extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onChange' | 'title'> {
     value: V;
     onChange?: (value: V) => void;
     selected?: boolean;

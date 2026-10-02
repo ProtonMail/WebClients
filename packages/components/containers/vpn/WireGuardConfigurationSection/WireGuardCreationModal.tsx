@@ -15,7 +15,7 @@ import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import { Tabs } from '../../../components/tabs/Tabs';
 import TextAreaTwo from '../../../components/v2/input/TextArea';
 
-export interface WireGuardCreationModalProps extends ModalProps {
+interface WireGuardCreationModalProps extends ModalProps {
     text?: string;
     serverName?: string;
     config?: string;
