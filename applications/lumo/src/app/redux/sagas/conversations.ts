@@ -18,7 +18,6 @@ import type {
     ResourceType,
 } from '../../remote/types';
 import { deserializeConversation, serializeConversation } from '../../serialization';
-import { clearAllSuspendedChains, clearSuspendedChain } from '../../services/generation/toolBudgetStore';
 import {
     type Conversation,
     type ConversationId,
@@ -191,14 +190,6 @@ export function* softDeleteConversationFromLocal({ payload: localId }: { payload
     // Trigger push to sync deletion to server
     console.log(`softDeleteConversationFromLocal: triggering push for deleted conversation ${localId}`);
     yield put(pushConversationRequest({ id: localId, priority: 'urgent' }));
-}
-
-export function* clearSuspendedChainOnDelete({ payload: localId }: { payload: ConversationId }): SagaIterator<any> {
-    yield call(clearSuspendedChain, localId);
-}
-
-export function* clearSuspendedChainsOnDeleteAll(): SagaIterator<any> {
-    yield call(clearAllSuspendedChains);
 }
 
 /*** loggers ***/

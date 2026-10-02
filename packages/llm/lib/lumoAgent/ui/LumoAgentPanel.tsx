@@ -1,35 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { c, msgid } from 'ttag';
-
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
-import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
-import {
-    Chip,
-    ConfirmCardShell,
-    LumoLogo,
-    LumoThinking,
-    NoteLine,
-    PromptInput,
-    ServerToolChip,
-    renderReplyMarkdown,
-    sentenceValue,
-} from '@proton/lumo-ui';
+import { Chip, LumoLogo, LumoThinking, PromptInput, ServerToolChip, renderReplyMarkdown } from '@proton/lumo-ui';
 import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
 import WelcomeSuggestions from '@proton/lumo-ui/WelcomeSuggestions';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import ResultTile from './ResultTile';
 import ConfirmCard, { defaultCardRenderer } from './cardRenderers';
-import type { CardRenderers, LumoAgentItem, ServerToolMeta, ToolLimit } from './types';
+import type { CardRenderers, LumoAgentItem, ServerToolMeta } from './types';
 import { ConfirmStatus } from './types';
 
 interface Props {
     items: LumoAgentItem[];
     isBusy: boolean;
-    /** Set while the chain has run out of tool rounds and waits on the user to say whether to carry on. */
-    toolLimit: ToolLimit | null;
     cardRenderers?: CardRenderers;
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
     /** Empty-state cards. Absent for a product that wants none (e.g. Drive's file preview). */
@@ -43,16 +27,7 @@ interface Props {
     onClose?: () => void;
     onConfirm: (params: Record<string, any>) => void;
     onCancel: () => void;
-    onResume: () => void;
-    onDismissToolLimit: () => void;
 }
-
-const toolLimitSentence = (steps: number) => {
-    const count = sentenceValue(c('Info').ngettext(msgid`${steps} step`, `${steps} steps`, steps));
-
-    // translator: how many tool calls the assistant has made before pausing to ask, e.g. "Lumo has taken 10 steps so far. Keep going?"
-    return c('Info').jt`${LUMO_SHORT_APP_NAME} has taken ${count} so far. Keep going?`;
-};
 
 const BOTTOM_SNAP_THRESHOLD_PX = 32;
 const SUBPIXEL_TOLERANCE_PX = 1;
@@ -65,7 +40,6 @@ const SUBPIXEL_TOLERANCE_PX = 1;
 const LumoAgentPanel = ({
     items,
     isBusy,
-    toolLimit,
     cardRenderers,
     serverToolMeta,
     suggestions,
@@ -77,8 +51,6 @@ const LumoAgentPanel = ({
     onClose,
     onConfirm,
     onCancel,
-    onResume,
-    onDismissToolLimit,
 }: Props) => {
     const [draft, setDraft] = useState('');
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -121,11 +93,6 @@ const LumoAgentPanel = ({
         followBottom();
         onSuggestionPicked?.(cardId);
         onSend(prompt);
-    };
-
-    const resume = () => {
-        followBottom();
-        onResume();
     };
 
     const pending = items.find((item) => item.kind === 'confirm' && item.status === ConfirmStatus.PENDING);
@@ -216,18 +183,6 @@ const LumoAgentPanel = ({
                     labels={pending.labels}
                     onApply={onConfirm}
                     onCancel={onCancel}
-                />
-            ) : null}
-
-            {toolLimit ? (
-                <ConfirmCardShell
-                    icon={IcHourglass}
-                    sentence={toolLimitSentence(toolLimit.steps)}
-                    note={toolLimit.activity ? <NoteLine>{toolLimit.activity}</NoteLine> : null}
-                    applyLabel={c('Action').t`Keep going`}
-                    cancelLabel={c('Action').t`Stop here`}
-                    onApply={resume}
-                    onCancel={onDismissToolLimit}
                 />
             ) : null}
 

@@ -86,26 +86,24 @@ describe('useLumoMailTelemetry', () => {
         expectReport('prompt_sent', { promptSource: 'typed', suggestionCard: 'n/a' });
     });
 
-    it('reports a chain with the time and the calls it took, and remembers it was a resume', () => {
+    it('reports a chain with the time and the calls it took', () => {
         const { current } = renderTelemetry();
 
-        act(() => current.chainEnded(LumoChainEnd.SUCCEEDED, { durationMs: 2500, toolCalls: 3, isResume: true }));
+        act(() => current.chainEnded(LumoChainEnd.SUCCEEDED, { durationMs: 2500, toolCalls: 3 }));
 
-        expectReport('chain_end', { isResumed: 'true', reason: 'succeeded' }, { durationSeconds: 2.5, toolCalls: 3 });
+        expectReport('chain_end', { isResumed: 'false', reason: 'succeeded' }, { durationSeconds: 2.5, toolCalls: 3 });
     });
 
-    // Every way a turn can end collapses onto one event, so the reason is the only thing separating
-    // "the user gave up" from "we ran out of rounds", which are opposite problems with opposite fixes.
+    // Every way a turn can end collapses onto one event, so the reason is the only thing separating them.
     it.each([
         [LumoChainEnd.FAILED, 'failed'],
         [LumoChainEnd.STOPPED, 'user_stopped'],
-        [LumoChainEnd.BUDGET, 'round_budget'],
         [LumoChainEnd.REPLACED, 'replaced'],
         [LumoChainEnd.DISCARDED, 'discarded'],
     ])('reports %s with its own reason', (end, reason) => {
         const { current } = renderTelemetry();
 
-        act(() => current.chainEnded(end, { durationMs: 4000, toolCalls: 10, isResume: false }));
+        act(() => current.chainEnded(end, { durationMs: 4000, toolCalls: 10 }));
 
         expectReport('chain_end', { isResumed: 'false', reason }, { durationSeconds: 4, toolCalls: 10 });
     });

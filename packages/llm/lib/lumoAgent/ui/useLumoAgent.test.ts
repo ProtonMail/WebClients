@@ -19,7 +19,7 @@ import useLumoAgent from './useLumoAgent';
 type Script = (ctx: {
     executor: ClientToolExecutor;
     chunk: (message: GenerationResponseMessage) => void;
-}) => Promise<void | { stoppedOnBudget?: boolean; turns?: Turn[] }>;
+}) => Promise<void | { turns?: Turn[] }>;
 let script: Script = async () => {};
 const sentTurns: Turn[][] = [];
 
@@ -37,7 +37,6 @@ jest.mock('@proton/lumo-api-client', () => ({
                 (await script({ executor: options.clientToolExecutor, chunk: options.chunkCallback })) || {};
             return {
                 status: 'succeeded',
-                stoppedOnBudget: outcome.stoppedOnBudget ?? false,
                 turns: outcome.turns ?? turns,
             };
         }
@@ -640,88 +639,16 @@ describe('useLumoAgent', () => {
             });
             await pinConfirm(result);
 
-            script = async ({ chunk }) => {
-                chunk(message('Still looking.'));
-                return { stoppedOnBudget: true, turns: sentTurns[1] };
-            };
+            script = async ({ chunk }) => chunk(message('In Archive.'));
             await act(async () => {
                 await result.current.send('actually where are my tickets');
             });
 
             // The abandoned chain returns normally, not by throwing: the transport reports an aborted
-            // budget stop as a plain finish.
+            // round as a plain finish.
             await act(async () => {
                 releaseAbandoned();
                 await sendPromise;
-            });
-            expect(result.current.toolLimit).not.toBeNull();
-
-            script = async ({ chunk }) => chunk(message('In Archive.'));
-            await act(async () => {
-                await result.current.resume();
-            });
-            script = async ({ chunk }) => chunk(message('Any time.'));
-            await act(async () => {
-                await result.current.send('thanks');
-            });
-
-            expect(sentTurns[3]).toEqual([
-                expect.objectContaining({ role: 'system' }),
-                { role: 'user', content: 'actually where are my tickets' },
-                { role: 'assistant', content: 'Still looking.\n\nIn Archive.' },
-                { role: 'user', content: 'thanks' },
-            ]);
-        });
-    });
-
-    describe('a chain that stops on its tool budget', () => {
-        const chain: Turn[] = afterToolRound([{ role: 'user' as any, content: 'the whole chain so far' }]);
-        const stopOnBudget: Script = async ({ chunk }) => {
-            chunk(message('I found one order, but I have not checked Trash yet.'));
-            return { stoppedOnBudget: true, turns: chain };
-        };
-
-        it('asks the user whether to carry on rather than ending the turn on its own', async () => {
-            script = stopOnBudget;
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('find my festival tickets');
-            });
-
-            expect(result.current.toolLimit).not.toBeNull();
-            expect(result.current.isBusy).toBe(false);
-        });
-
-        it('resumes from the accumulated chain instead of re-sending the message', async () => {
-            script = stopOnBudget;
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('find my festival tickets');
-            });
-
-            script = async ({ chunk }) => chunk(message('Found them in Trash.'));
-            await act(async () => {
-                await result.current.resume();
-            });
-
-            expect(sentTurns[1]).toEqual(chain);
-            expect(result.current.toolLimit).toBeNull();
-            expect(result.current.items.map((item) => item.kind)).toEqual(['user', 'reply', 'reply']);
-        });
-
-        it('banks both halves of the answer once the user has carried on', async () => {
-            script = stopOnBudget;
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('find my festival tickets');
-            });
-
-            script = async ({ chunk }) => chunk(message('Found them in Trash.'));
-            await act(async () => {
-                await result.current.resume();
             });
 
             script = async ({ chunk }) => chunk(message('Any time.'));
@@ -731,178 +658,9 @@ describe('useLumoAgent', () => {
 
             expect(sentTurns[2]).toEqual([
                 expect.objectContaining({ role: 'system' }),
-                { role: 'user', content: 'find my festival tickets' },
-                {
-                    role: 'assistant',
-                    content: 'I found one order, but I have not checked Trash yet.\n\nFound them in Trash.',
-                },
+                { role: 'user', content: 'actually where are my tickets' },
+                { role: 'assistant', content: 'In Archive.' },
                 { role: 'user', content: 'thanks' },
-            ]);
-        });
-
-        it('says it is unfinished when the budget runs out on a round that wrote no prose', async () => {
-            script = async ({ executor }) => {
-                await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
-                return { stoppedOnBudget: true, turns: chain };
-            };
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('find my festival tickets');
-            });
-
-            expect(result.current.items.map((item) => item.kind)).toEqual(['user', 'chip', 'reply']);
-
-            script = async ({ chunk }) => chunk(message('Sure.'));
-            await act(async () => {
-                await result.current.send('never mind, what time is it');
-            });
-
-            // Never an empty assistant turn: the stand-in prose is what gets banked.
-            expect(sentTurns[1]).toEqual([
-                expect.objectContaining({ role: 'system' }),
-                { role: 'user', content: 'find my festival tickets' },
-                { role: 'assistant', content: 'I have not finished this one yet.' },
-                { role: 'user', content: 'never mind, what time is it' },
-            ]);
-        });
-
-        // The card tells the user how far it has got, so the count is the chain's own tool calls and the
-        // note is the last step they were shown — neither is a stand-in for "a lot".
-        it("counts the parked chain's tool calls and keeps its last step", async () => {
-            script = async ({ executor, chunk }) => {
-                chunk(message('Checking the Inbox.'));
-                await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
-                await executor.execute([{ id: '2', name: 'view_items', arguments: '{}' }]);
-                return {
-                    stoppedOnBudget: true,
-                    turns: afterToolRound(
-                        [{ role: 'user' as any, content: 'find my festival tickets' }],
-                        { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
-                        { role: 'tool_result', content: '2 items' },
-                        { role: 'tool_call', content: '{"id":"2","name":"view_items","arguments":{}}' },
-                        { role: 'tool_result', content: '2 items' }
-                    ),
-                };
-            };
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('find my festival tickets');
-            });
-
-            expect(result.current.toolLimit).toEqual({ steps: 2, activity: 'Read 2 items' });
-        });
-
-        // History keeps every tool call verbatim, so a count over the whole array reports steps the
-        // current question never took, against a budget it cannot exceed.
-        it('counts and names this exchange only, not the tool calls history carries', async () => {
-            script = async ({ executor, chunk }) => {
-                await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
-                chunk(message('Two in the Inbox.'));
-                return {
-                    turns: afterToolRound(
-                        sentTurns[0],
-                        { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
-                        { role: 'tool_result', content: '2 items' }
-                    ),
-                };
-            };
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('how many are in my inbox');
-            });
-
-            script = async ({ chunk }) => {
-                chunk(message('Still looking.'));
-                return { stoppedOnBudget: true, turns: sentTurns[1] };
-            };
-            await act(async () => {
-                await result.current.send('and in Trash');
-            });
-
-            expect(sentTurns[1]).toContainEqual(expect.objectContaining({ role: 'tool_call' }));
-            expect(result.current.toolLimit).toEqual({ steps: 0 });
-        });
-
-        it('keeps the offer, and the partial answer, when the resumed chain fails', async () => {
-            script = stopOnBudget;
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('find my festival tickets');
-            });
-
-            script = async () => {
-                throw new Error('network');
-            };
-            await act(async () => {
-                await result.current.resume();
-            });
-
-            expect(result.current.toolLimit).not.toBeNull();
-
-            script = async ({ chunk }) => chunk(message('Found them in Trash.'));
-            await act(async () => {
-                await result.current.resume();
-            });
-
-            expect(sentTurns[2]).toEqual(chain);
-            expect(result.current.toolLimit).toBeNull();
-        });
-
-        it('banks whatever it managed to say when the user declines and types instead', async () => {
-            script = stopOnBudget;
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('find my festival tickets');
-            });
-
-            script = async ({ chunk }) => chunk(message('Sure.'));
-            await act(async () => {
-                await result.current.send('never mind, what time is it');
-            });
-
-            expect(result.current.toolLimit).toBeNull();
-            expect(sentTurns[1]).toEqual([
-                expect.objectContaining({ role: 'system' }),
-                { role: 'user', content: 'find my festival tickets' },
-                { role: 'assistant', content: 'I found one order, but I have not checked Trash yet.' },
-                { role: 'user', content: 'never mind, what time is it' },
-            ]);
-        });
-
-        it('banks its narration once, and not after the tool turns, when it stopped on a tool round', async () => {
-            script = async ({ chunk }) => {
-                chunk(message('Checking the Inbox.'));
-                return {
-                    stoppedOnBudget: true,
-                    turns: afterToolRound(
-                        sentTurns[0],
-                        { role: 'assistant', content: 'Checking the Inbox.' },
-                        { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
-                        { role: 'tool_result', content: '2 items' }
-                    ),
-                };
-            };
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('find my festival tickets');
-            });
-
-            script = async ({ chunk }) => chunk(message('Sure.'));
-            await act(async () => {
-                await result.current.send('never mind, what time is it');
-            });
-
-            expect(sentTurns[1]).toEqual([
-                expect.objectContaining({ role: 'system' }),
-                { role: 'user', content: 'find my festival tickets' },
-                { role: 'assistant', content: 'Checking the Inbox.' },
-                { role: 'user', content: 'never mind, what time is it' },
             ]);
         });
     });
@@ -995,54 +753,6 @@ describe('useLumoAgent', () => {
             const results = sentTurns[1].filter((turn) => turn.role === 'tool_result');
             expect(results).toHaveLength(1);
             expect(results[0].content).not.toContain('archived 400 emails');
-        });
-
-        it('banks a resumed exchange once, carrying the tool turns of both of its chains', async () => {
-            const firstCall = '{"id":"1","name":"view_items","arguments":{}}';
-            const secondCall = '{"id":"2","name":"move_items","arguments":{"target":"Archive"}}';
-            script = async ({ chunk }) => {
-                chunk(message('Checking the Inbox.'));
-                return {
-                    stoppedOnBudget: true,
-                    turns: chainWith(
-                        { role: 'assistant', content: 'Checking the Inbox.' },
-                        { role: 'tool_call', content: firstCall },
-                        { role: 'tool_result', content: '2 items' }
-                    ),
-                };
-            };
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('archive my old tickets');
-            });
-
-            script = async ({ chunk }) => {
-                chunk(message('Archived them.'));
-                return {
-                    turns: afterToolRound(
-                        sentTurns[1],
-                        { role: 'tool_call', content: secondCall },
-                        { role: 'tool_result', content: 'Applied move_items successfully.' }
-                    ),
-                };
-            };
-            await act(async () => {
-                await result.current.resume();
-            });
-            await secondMessage(result, 'thanks');
-
-            expect(sentTurns[2]).toEqual([
-                expect.objectContaining({ role: 'system' }),
-                { role: 'user', content: 'archive my old tickets' },
-                { role: 'assistant', content: 'Checking the Inbox.' },
-                { role: 'tool_call', content: firstCall },
-                expect.objectContaining({ role: 'tool_result' }),
-                { role: 'tool_call', content: secondCall },
-                { role: 'tool_result', content: 'Applied move_items successfully.' },
-                { role: 'assistant', content: 'Archived them.' },
-                { role: 'user', content: 'thanks' },
-            ]);
         });
 
         it('banks a prose-only exchange as the question and the answer, and nothing else', async () => {
@@ -1168,57 +878,6 @@ describe('useLumoAgent', () => {
         expect(result.current.getDebugTranscript()).toMatch(/===== TOOL_RESULT =====\n2 items$/);
     });
 
-    it('does not repeat the prose the user already read when a resumed chain answers plainly', async () => {
-        script = async ({ chunk }) => {
-            chunk(message('I checked the Inbox.'));
-            return { stoppedOnBudget: true, turns: sentTurns[0] };
-        };
-
-        const { result } = renderHook(() => useLumoAgent(config));
-        await act(async () => {
-            await result.current.send('find my tickets');
-        });
-
-        script = async ({ chunk }) => chunk(message('They were in Archive.'));
-        await act(async () => {
-            await result.current.resume();
-        });
-
-        const transcript = result.current.getDebugTranscript();
-        expect(transcript.match(/I checked the Inbox\./g)).toHaveLength(1);
-        expect(transcript).toContain('They were in Archive.');
-    });
-
-    it("does not repeat a resumed round's narration when that round ended on a tool call", async () => {
-        script = async ({ chunk }) => {
-            chunk(message('I checked the Inbox.'));
-            return { stoppedOnBudget: true, turns: sentTurns[0] };
-        };
-
-        const { result } = renderHook(() => useLumoAgent(config));
-        await act(async () => {
-            await result.current.send('find my tickets');
-        });
-
-        script = async ({ executor, chunk }) => {
-            chunk(message('Now Trash.'));
-            await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
-            return {
-                turns: afterToolRound(
-                    sentTurns[1],
-                    { role: 'assistant', content: 'Now Trash.' },
-                    { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
-                    { role: 'tool_result', content: '2 items' }
-                ),
-            };
-        };
-        await act(async () => {
-            await result.current.resume();
-        });
-
-        expect(result.current.getDebugTranscript().match(/Now Trash\./g)).toHaveLength(1);
-    });
-
     describe('the lifecycle it reports to its host', () => {
         const abortError = () => Object.assign(new Error('stopped'), { name: 'AbortError' });
 
@@ -1235,10 +894,7 @@ describe('useLumoAgent', () => {
                 await result.current.send('how many are in my inbox');
             });
 
-            expect(lastChainEnd()).toEqual([
-                LumoChainEnd.SUCCEEDED,
-                { durationMs: expect.any(Number), toolCalls: 1, isResume: false },
-            ]);
+            expect(lastChainEnd()).toEqual([LumoChainEnd.SUCCEEDED, { durationMs: expect.any(Number), toolCalls: 1 }]);
         });
 
         it('reports a chain that threw as failed', async () => {
@@ -1343,20 +999,6 @@ describe('useLumoAgent', () => {
             expect(lastChainEnd()[0]).toBe(end);
         });
 
-        it('reports a chain parked on its round budget as budget, not as an answer', async () => {
-            script = async ({ chunk }) => {
-                chunk(message('Still looking.'));
-                return { stoppedOnBudget: true, turns: sentTurns[0] };
-            };
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('find my tickets');
-            });
-
-            expect(lastChainEnd()[0]).toBe(LumoChainEnd.BUDGET);
-        });
-
         // Without this the chain that a new message replaced never reports at all, and an abandoned
         // chain is indistinguishable from one still running.
         it('reports a chain whose successor owns the turn as replaced', async () => {
@@ -1387,39 +1029,6 @@ describe('useLumoAgent', () => {
             });
 
             expect(telemetry.chainEnded.mock.calls.map(([end]) => end)).toContain(LumoChainEnd.REPLACED);
-        });
-
-        it('counts a resumed chain as a resume, and carries the rounds it already spent', async () => {
-            script = async ({ executor, chunk }) => {
-                await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
-                chunk(message('Still looking.'));
-                return {
-                    stoppedOnBudget: true,
-                    turns: afterToolRound(
-                        [{ role: 'user' as any, content: 'find my tickets' }],
-                        { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
-                        { role: 'tool_result', content: '2 items' }
-                    ),
-                };
-            };
-
-            const { result } = renderHook(() => useLumoAgent(config));
-            await act(async () => {
-                await result.current.send('find my tickets');
-            });
-
-            script = async ({ executor, chunk }) => {
-                await executor.execute([{ id: '2', name: 'view_items', arguments: '{}' }]);
-                chunk(message('In Trash.'));
-            };
-            await act(async () => {
-                await result.current.resume();
-            });
-
-            expect(lastChainEnd()).toEqual([
-                LumoChainEnd.SUCCEEDED,
-                { durationMs: expect.any(Number), toolCalls: 2, isResume: true },
-            ]);
         });
 
         it('names the tool on the card the user answered', async () => {
