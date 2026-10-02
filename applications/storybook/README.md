@@ -9,17 +9,17 @@ Storybook live can be accessed at: https://design-system.protontech.ch/
 Run docs-only in development mode
 
 ```shell
-yarn workspace proton-storybook docs # From root folder
+pnpm --filter proton-storybook run docs # From root folder
 
-yarn docs
+pnpm run docs
 ```
 
 Run in development mode
 
 ```shell
-yarn workspace proton-storybook dev # From root folder
+pnpm --filter proton-storybook run dev # From root folder
 
-yarn dev
+pnpm run dev
 ```
 
 ## Visual Testing

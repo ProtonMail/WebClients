@@ -21,7 +21,7 @@ for version in "${!SCHEMAS[@]}"; do
 
     curl -sf "${SCHEMAS[$version]}" >"$schema_file"
     curl -sf "${RULES[$version]}" >"$rules_file"
-    yarn json2ts -i "$schema_file" -o "$types_file"
+    pnpm exec json2ts -i "$schema_file" -o "$types_file"
 
     echo "  ✓ $version completed"
 done

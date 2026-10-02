@@ -5,7 +5,7 @@
     "license": "GPL-3.0",
     "author": "",
     "scripts": {
-        "analyze": "yarn build:web --analyze",
+        "analyze": "pnpm run build:web --analyze",
         "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",
         "check-types": "tsc --checkers 1",
         "i18n:extract:web": "proton-i18n extract",

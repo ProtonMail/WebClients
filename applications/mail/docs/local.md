@@ -2,21 +2,21 @@
 
 ## Run only Mail
 
-`yarn start-all --applications "proton-mail"`
+`pnpm run start-all --applications "proton-mail"`
 
 ## Run Account and Mail together
 
-`yarn start-all --applications "proton-account proton-mail"`
+`pnpm run start-all --applications "proton-account proton-mail"`
 
 ## Run Account, Calendar and Mail together
 
-`yarn start-all --applications "proton-account proton-calendar proton-mail"`
+`pnpm run start-all --applications "proton-account proton-calendar proton-mail"`
 
 ## Target a canonical API env
 
-Pink: `yarn start-all --applications "proton-mail" --api proton.pink`
+Pink: `pnpm run start-all --applications "proton-mail" --api proton.pink`
 
-Black: `yarn start-all --applications "proton-mail" --api proton.black`
+Black: `pnpm run start-all --applications "proton-mail" --api proton.black`
 
 ## Target a scientist API env
 
@@ -26,6 +26,6 @@ Once the env is ready, prepend the scientist name to the api
 
 Example with `Fermi`:
 
-`yarn start-all --applications "proton-mail" --api fermi.proton.black`
+`pnpm run start-all --applications "proton-mail" --api fermi.proton.black`
 
-`yarn start-all --applications "proton-mail" --api fermi.proton.pink`
+`pnpm run start-all --applications "proton-mail" --api fermi.proton.pink`

@@ -1,2 +1,2 @@
-yarn run lint-staged
-yarn run knip:staged
+pnpm exec lint-staged
+pnpm run knip:staged

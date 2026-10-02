@@ -5,7 +5,7 @@
         "build:web": "cross-env NODE_ENV=production API_ENV=proton.me webpack --config webpack.config.ts",
         "check-types": "tsc --checkers 1",
         "fmt:native": "cd src-tauri && make fmt",
-        "generate:api-types": "yarn workspace @proton/pass generator:openapi \"https://$API/api/internal/doc?page=authenticator\" > ./src/lib/api/types.ts",
+        "generate:api-types": "pnpm --silent --filter @proton/pass run generator:openapi \"https://$API/api/internal/doc?page=authenticator\" > ./src/lib/api/types.ts",
         "i18n:extract:desktop": "proton-i18n extract",
         "i18n:getlatest": "proton-i18n upgrade",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
