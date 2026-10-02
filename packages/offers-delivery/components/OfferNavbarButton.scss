@@ -1,0 +1,12 @@
+// Doubled selector to outrank ButtonLike's shape/colour rules in every state,
+// the same way PromotionButton's campaign variants do. The custom properties are
+// set inline from props; there are deliberately no fallbacks.
+.offer-navbar-button.offer-navbar-button {
+	&,
+	&:hover,
+	&:focus {
+		background: var(--offer-navbar-button-background);
+		color: var(--offer-navbar-button-color);
+		border: 0;
+	}
+}
