@@ -1766,6 +1766,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "New chat": [
+        "Nový chat"
       ]
     },
     "action": {
@@ -4539,6 +4542,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "Od: ${ sender } - ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "Od: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -8529,10 +8535,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -14467,6 +14470,78 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nie je možné kombinovať s ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } je k dispozícii iba v rámci firemných plánov."
+      ],
+      "An organization is required for this plan.": [
+        "Tento plán si vyžaduje organizáciu."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
+      ],
+      "Born Private requires a donation.": [
+        "Na Born Private je potrebný príspevok."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Nákup kreditov si vyžaduje samostatnú platbu."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Je možné zakúpiť iba jeden ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Pred zmenou tarifného plánu prosím zrušte všetky nadbytočné účty v peňaženke."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Pred zmenou tarifného plánu uzavrite všetky ďalšie peňaženky, prosím."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Počet licencií Scribe nesmie presiahnuť počet členov."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Vybraný plán neposkytuje pre váš účet dostatočný počet adries."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Vybraný plán neposkytuje pre váš účet dostatočný počet domén."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Vybraný plán neposkytuje pre váš účet dostatočný počet členov."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Vybraný plán neposkytuje pre váš účet dostatočné úložisko."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Tento vyhradený server je priradený k bráne a nie je možné ho zmeniť."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Tento plán nepodporuje členov vo vašom účte."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Skúšobné plány nepodporujú ${ LUMO_SHORT_APP_NAME } licencie."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Skúšobné plány nepodporujú vlastné domény."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Skúšobné plány nepodporujú dedikované IP."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Skúšobné plány nepodporujú Scribe licencie."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Skúšobné plány nepodporujú takýto počet členov."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Už vlastníte ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Born Private už vlastníte."
+      ],
+      "Your account is too old for Born Private.": [
+        "Váš účet je príliš starý na službu Born Private."
       ]
     },
     "Payments.Error": {
@@ -19041,6 +19116,36 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Získajte zľavu ${ discount } % na ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Získať ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mesiac"
+      ],
+      "2 TB of storage to share": [
+        "2 TB úložiska na zdieľanie"
+      ],
+      "2 user accounts": [
+        "2 používateľské účty"
+      ],
+      "All premium features from your current plan": [
+        "Všetky prémiové funkcie z vášho aktuálneho plánu"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného cyklu obnoví za štandardnú ročnú sadzbu."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "na 12 mesiacov"
       ]
     }
   }

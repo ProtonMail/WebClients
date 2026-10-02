@@ -1744,6 +1744,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "New chat": [
+        "Nieuwe chat"
       ]
     },
     "action": {
@@ -4441,6 +4444,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "Van: ${ sender } - ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "Van: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -8142,8 +8148,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
