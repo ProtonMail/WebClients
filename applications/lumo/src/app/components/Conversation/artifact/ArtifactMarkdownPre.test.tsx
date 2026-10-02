@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import type { Element } from 'hast';
 
-import { ArtifactMarkdownPre, readArtifactChartFence } from './ArtifactMarkdownPre';
+import { ArtifactMarkdownPre } from './ArtifactMarkdownPre';
+import { readArtifactChartFence } from './artifactCharts';
 
 // react-markdown is ESM-only and not in this package's Jest transform allowlist, so these tests feed
 // the `pre` override the same hast node react-markdown passes it, rather than rendering markdown.
