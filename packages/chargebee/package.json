@@ -5,7 +5,7 @@
     "scripts": {
         "build": "tsc && NODE_ENV='production' vite build",
         "build:watch": "tsc && NODE_ENV='development' vite build --watch",
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "serve": "serve dist -p 5173",
         "start": "concurrently \"npm run build:watch\" \"npm run serve\"",

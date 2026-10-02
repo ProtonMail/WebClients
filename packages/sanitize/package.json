@@ -8,7 +8,7 @@
         "./purify": "./src/purify.ts"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "pnpm run test --ci --runInBand --logHeapUsage",

@@ -6,7 +6,7 @@
     "main": "index.html",
     "scripts": {
         "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --prependAsyncCss",
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "i18n:extract:web": "proton-i18n extract",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
