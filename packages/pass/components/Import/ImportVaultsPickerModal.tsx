@@ -59,14 +59,12 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({
                 warnings: payload.warnings,
             }),
         initialValues: {
-            vaults: payload.vaults.map(
-                (vault): VaultPickerValue => ({
-                    ...vault,
-                    shareId: defaultVault?.shareId ?? '',
-                    name: defaultVault?.content.name ?? '',
-                    selected: true,
-                })
-            ),
+            vaults: payload.vaults.map((vault): VaultPickerValue => ({
+                ...vault,
+                shareId: defaultVault?.shareId ?? '',
+                name: defaultVault?.content.name ?? '',
+                selected: true,
+            })),
         },
     });
 
@@ -77,6 +75,7 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({
 
     const vaultsRemaining = safeVaultLimit - vaultTotalCount - vaultsToCreate;
     const canCreateVault = vaultsRemaining > 0;
+    const hasSelectedVault = form.values.vaults.some((vault) => vault.selected);
 
     return (
         <ModalTwo open onClose={onClose} onReset={onReset} size={'medium'} className="mt-10">
@@ -158,7 +157,7 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({
                 <Button type="reset" shape="outline" onClick={onClose} color="danger" pill>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button type="submit" color="norm" form={FORM_ID} pill disabled={disabled}>
+                <Button type="submit" color="norm" form={FORM_ID} pill disabled={disabled || !hasSelectedVault}>
                     {c('Action').t`Confirm`}
                 </Button>
             </ModalTwoFooter>
