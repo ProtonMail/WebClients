@@ -8,7 +8,7 @@ import {
 } from './createArtifactTool';
 import type { ArtifactType, ParsedArtifact } from './parseArtifacts';
 
-export interface ArtifactVersion {
+interface ArtifactVersion {
     messageId: MessageId;
     content: string;
     language?: string;
@@ -17,7 +17,7 @@ export interface ArtifactVersion {
     provisional?: boolean;
 }
 
-export interface ArtifactRegistryEntry {
+interface ArtifactRegistryEntry {
     id: string;
     type: ArtifactType;
     title: string;

@@ -47,38 +47,6 @@ export const useFileItemData = (file: any, attachment?: Attachment) => {
     };
 };
 
-// Shared color mapping utilities
-export const getSizeColor = (sizeLevel: string) => {
-    switch (sizeLevel) {
-        case 'very-large':
-            return 'text-bold color-weak';
-        case 'large':
-            return 'text-bold color-weak';
-        default:
-            return 'text-normal color-weak';
-    }
-};
-
-// Shared preview handler creator
-export const createPreviewHandler = (
-    canView: boolean,
-    onView: Function | undefined,
-    file: any,
-    fullAttachment: any
-) => {
-    return (e: React.MouseEvent) => {
-        e.stopPropagation();
-        if (canView && onView) {
-            // Handle different onView signatures
-            if (onView.length === 1) {
-                onView(fullAttachment); // CurrentAttachmentItem
-            } else {
-                onView(file, fullAttachment, e); // HistoricalFileItem and FileItem
-            }
-        }
-    };
-};
-
 /**
  * Format file size in bytes to human readable format
  * @param bytes - Size in bytes

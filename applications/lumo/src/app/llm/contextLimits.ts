@@ -12,13 +12,10 @@ export const DEFAULT_CONTEXT_LIMITS: ContextLimits = {
 } as const;
 
 /** Context window size the default warning/danger ratios were tuned against. */
-export const DEFAULT_MAX_CONTEXT_LENGTH = DEFAULT_CONTEXT_LIMITS.MAX_CONTEXT;
+const DEFAULT_MAX_CONTEXT_LENGTH = DEFAULT_CONTEXT_LIMITS.MAX_CONTEXT;
 
 const WARNING_RATIO = DEFAULT_CONTEXT_LIMITS.WARNING_THRESHOLD / DEFAULT_MAX_CONTEXT_LENGTH;
 const DANGER_RATIO = DEFAULT_CONTEXT_LIMITS.DANGER_THRESHOLD / DEFAULT_MAX_CONTEXT_LENGTH;
-
-/** @deprecated Use DEFAULT_CONTEXT_LIMITS or model-specific limits from useContextLimits. */
-export const CONTEXT_LIMITS = DEFAULT_CONTEXT_LIMITS;
 
 export function deriveContextLimits(maxContextLength: number): ContextLimits {
     const maxContext = Math.max(1, Math.round(maxContextLength));
@@ -37,7 +34,7 @@ export function getProactiveCompactionThresholdTokens(limits: ContextLimits): nu
     return Math.round(limits.MAX_CONTEXT * 0.9);
 }
 
-export function getRequestInputTokenBudget(limits: ContextLimits = DEFAULT_CONTEXT_LIMITS): number {
+function getRequestInputTokenBudget(limits: ContextLimits = DEFAULT_CONTEXT_LIMITS): number {
     return Math.round(limits.MAX_CONTEXT * 0.78);
 }
 
@@ -62,10 +59,10 @@ export function getContextUsagePercentage(tokenCount: number, limits: ContextLim
 }
 
 /** Allowance for turns the chain does not account for: system prompt, personalization, memories, instructions. */
-export const REQUEST_OVERHEAD_TOKEN_ALLOWANCE = 4_000;
+const REQUEST_OVERHEAD_TOKEN_ALLOWANCE = 4_000;
 
 /** Never starve the current question of file content, even when history is large. */
-export const MIN_FILE_TOKEN_BUDGET = 8_000;
+const MIN_FILE_TOKEN_BUDGET = 8_000;
 
 /**
  * Derived budgets and compaction thresholds for a model context window.

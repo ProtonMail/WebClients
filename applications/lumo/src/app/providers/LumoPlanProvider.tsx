@@ -227,18 +227,3 @@ export const useLumoUserType = () => {
     return { lumoUserType, isGuest, isLumoFree, isLumoPaid };
 };
 
-export const useLumoSubscription = () => {
-    const { hasLumoSeat, isVisionary, hasLumoPlus, hasOrganization } = useLumoPlan();
-    return { hasLumoSeat, isVisionary, hasLumoPlus, hasOrganization };
-};
-
-export const useLumoUpsells = () => {
-    const { canShowLumoUpsellFree, canShowLumoUpsellB2C, canShowLumoUpsellB2B, canShowTalkToAdminLumoUpsell } =
-        useLumoPlan();
-    return {
-        canShowLumoUpsellFree,
-        canShowLumoUpsellB2C,
-        canShowLumoUpsellB2B,
-        canShowTalkToAdminLumoUpsell,
-    };
-};

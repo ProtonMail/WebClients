@@ -10,7 +10,7 @@ import type { Attachment, AttachmentId, Message } from '../../types';
  * 1. Attachments from all messages in the conversation
  * 2. Provisional attachments (uploaded but not yet sent)
  */
-export function getConversationAttachments(
+function getConversationAttachments(
     messageChain: Message[],
     allAttachments: Record<AttachmentId, Attachment>
 ): Attachment[] {
@@ -37,38 +37,6 @@ export function getConversationAttachments(
     });
 
     return conversationAttachments;
-}
-
-/**
- * Find a duplicate attachment in the conversation
- * A file is considered duplicate if it has the same name (case-insensitive)
- * We check by filename only since size might differ slightly or be unknown for Drive files
- * Returns the duplicate attachment if found, null otherwise
- */
-export function findDuplicateAttachment(
-    file: File,
-    messageChain: Message[],
-    allAttachments: Record<AttachmentId, Attachment>
-): Attachment | null {
-    const conversationAttachments = getConversationAttachments(messageChain, allAttachments);
-
-    // Check if a file with the same name already exists in this conversation (case-insensitive)
-    const duplicate = conversationAttachments.find(
-        (attachment) => attachment.filename.toLowerCase() === file.name.toLowerCase()
-    );
-
-    return duplicate || null;
-}
-
-/**
- * Check if a file is a duplicate in the conversation
- */
-export function isDuplicateFile(
-    file: File,
-    messageChain: Message[],
-    allAttachments: Record<AttachmentId, Attachment>
-): boolean {
-    return findDuplicateAttachment(file, messageChain, allAttachments) !== null;
 }
 
 /**

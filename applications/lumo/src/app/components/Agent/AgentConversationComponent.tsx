@@ -16,7 +16,7 @@ import { MessageChainComponent } from '../Conversation/messageChain/MessageChain
 import { FloatingRetryPanel } from '../FloatingRetryPanel';
 import ErrorCard from '../Notifications/ErrorCard';
 
-export interface AgentConversationComponentProps {
+interface AgentConversationComponentProps {
     isGenerating?: boolean;
     isProcessingAttachment: boolean;
     conversation?: Conversation;

@@ -153,9 +153,6 @@ export const sendMessageEditEvent = () => {
     sendLumoMessageEvent('edit');
 };
 
-export const sendMessageRegenerateEvent = () => {
-    sendLumoMessageEvent('regenerate');
-};
 export const sendMessageCopyEvent = () => {
     sendLumoMessageEvent('copy');
 };
@@ -168,12 +165,6 @@ const sendLumoConversationEvent = (eventType: string, eventData?: Record<string,
     sendLumoCustomEvent('lumo-conversation-event', {
         eventType,
         ...eventData,
-    });
-};
-
-export const sendConversationNewChatEvent = (guest: boolean) => {
-    sendLumoConversationEvent('new', {
-        guest,
     });
 };
 

@@ -68,5 +68,3 @@ export const ArtifactPanelLoading = () => {
         </div>
     );
 };
-
-export default ArtifactPanelLoading;

@@ -14,39 +14,6 @@ interface DeleteConversationsWithSemanticsParams {
     removeSearchDocumentsBySpace: (spaceId: SpaceId) => void;
 }
 
-export const getConversationIdsAffectedByDelete = (
-    conversationIds: ConversationId[],
-    conversationsMap: ConversationMap,
-    spacesMap: SpaceMap
-): Set<ConversationId> => {
-    const affectedConversationIds = new Set<ConversationId>();
-    const spaceIdsToDelete = new Set<SpaceId>();
-
-    for (const conversationId of conversationIds) {
-        const conversation = conversationsMap[conversationId];
-
-        if (!conversation) {
-            continue;
-        }
-
-        const space = spacesMap[conversation.spaceId];
-
-        if (space?.isProject === true) {
-            affectedConversationIds.add(conversationId);
-        } else {
-            spaceIdsToDelete.add(conversation.spaceId);
-        }
-    }
-
-    for (const conversation of Object.values(conversationsMap)) {
-        if (spaceIdsToDelete.has(conversation.spaceId)) {
-            affectedConversationIds.add(conversation.id);
-        }
-    }
-
-    return affectedConversationIds;
-};
-
 export const deleteConversationsWithSemantics = async ({
     conversationIds,
     conversationsMap,

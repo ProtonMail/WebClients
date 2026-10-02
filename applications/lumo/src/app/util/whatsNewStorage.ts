@@ -13,11 +13,6 @@ export const hasSeenFeatureFlag = (id: string, versionId: string): boolean => {
     return seenFlags.some((flag) => flag.id === id && flag.versionId === versionId);
 };
 
-export const hasDeclinedFeatureFlag = (id: string, versionId: string): boolean => {
-    const seenFlags = getSeenFeatureFlags();
-    return seenFlags.some((flag) => flag.id === id && flag.versionId === versionId && flag.wasDeclined);
-};
-
 export const markFeatureFlagAsSeen = (id: string, versionId: string, wasDeclined: boolean): void => {
     try {
         const seenFlags = getSeenFeatureFlags();

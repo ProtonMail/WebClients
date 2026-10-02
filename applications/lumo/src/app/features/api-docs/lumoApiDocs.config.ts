@@ -6,15 +6,15 @@
 
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
-export type EndpointStatus = 'ga' | 'beta';
+type EndpointStatus = 'ga' | 'beta';
 
 export type CodeLang = 'curl' | 'python' | 'typescript' | 'rust';
 
 export type ChatExampleVariant = 'basic' | 'tool_call';
 
-export type LumoModelId = 'lumo-lite' | 'lumo-max';
+type LumoModelId = 'lumo-lite' | 'lumo-max';
 
-export interface ApiDocParameter {
+interface ApiDocParameter {
     name: string;
     type: string;
     required: boolean;
@@ -23,7 +23,7 @@ export interface ApiDocParameter {
     default?: string;
 }
 
-export interface ApiDocEndpoint {
+interface ApiDocEndpoint {
     id: string;
     method: HttpMethod;
     /** Path segment after base URL, e.g. "/chat/completions" */
@@ -34,12 +34,12 @@ export interface ApiDocEndpoint {
     parameters?: ApiDocParameter[];
 }
 
-export interface ApiDocEndpointGroup {
+interface ApiDocEndpointGroup {
     id: string;
     endpoints: ApiDocEndpoint[];
 }
 
-export interface ApiDocModel {
+interface ApiDocModel {
     id: LumoModelId;
     label: string;
     description: string;

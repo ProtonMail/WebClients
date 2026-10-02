@@ -147,16 +147,5 @@ const personalizationReducer = createReducer(initialState, (builder) => {
         });
 });
 
-// Helpers
-export function isNonEmptyPersonalization(personalization: PersonalizationSettings) {
-    const fieldsToCheck: (keyof PersonalizationSettings)[] = [
-        'nickname',
-        'jobRole',
-        'personality',
-        'additionalContext',
-    ];
-    return fieldsToCheck.some((field) => personalization[field] !== initialState[field]);
-}
-
 // Export Reducer
 export default personalizationReducer;

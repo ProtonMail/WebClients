@@ -16,7 +16,7 @@ import ConfirmDeleteModal from '../Modals/ConfirmDeleteModal';
 
 import './SelectableConversationList.scss';
 
-export interface ConversationGroup {
+interface ConversationGroup {
     title: string;
     conversations: Conversation[];
     headerAction?: React.ReactNode; // Optional action to show next to the title
@@ -274,5 +274,3 @@ export const SelectableConversationList = ({
         </div>
     );
 };
-
-export default SelectableConversationList;

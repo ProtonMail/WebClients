@@ -9,7 +9,7 @@ import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
 import { sendUpgradeButtonClickedEvent } from '../../util/telemetry';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
-export type ModelModePanelLayout = 'dropdown' | 'sheet';
+type ModelModePanelLayout = 'dropdown' | 'sheet';
 
 export interface ModelModeOption {
     tier: ModelTier;

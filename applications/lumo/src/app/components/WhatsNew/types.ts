@@ -5,7 +5,7 @@ export interface FeaturePoint {
     getText: () => string;
 }
 
-export type WhatsNewStageImageScale = 'sm' | 'md' | 'lg';
+type WhatsNewStageImageScale = 'sm' | 'md' | 'lg';
 
 export interface WhatsNewStage {
     id: string;

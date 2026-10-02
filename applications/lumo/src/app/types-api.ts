@@ -11,21 +11,9 @@
 // nominal identity across the app <-> @proton/lumo-api-client boundary.
 import { Role } from '@proton/lumo-api-client/types-api';
 
-import type { RequestId } from './types';
-
 // *** Role ***
 
 export { Role };
-
-export function isRole(value: any): value is Role {
-    return (
-        value === Role.Assistant ||
-        value === Role.User ||
-        value === Role.System ||
-        value === Role.ToolCall ||
-        value === Role.ToolResult
-    );
-}
 
 // *** Turn ***
 
@@ -42,175 +30,12 @@ export type WireTurn = {
     images?: WireImage[];
 };
 
-export type EncryptedWireTurn = WireTurn & { encrypted: true };
-export type UnencryptedWireTurn = WireTurn & { encrypted?: false };
-
-export function isWireTurn(obj: any): obj is WireTurn {
-    return (
-        obj &&
-        typeof obj === 'object' &&
-        'role' in obj &&
-        isRole(obj.role) &&
-        (obj.content === undefined || typeof obj.content === 'string') &&
-        (obj.encrypted === undefined || typeof obj.encrypted === 'boolean') &&
-        (obj.images === undefined || (Array.isArray(obj.images) && obj.images.every((img: any) => isWireImage(img))))
-    );
-}
-
-export function isWireImage(obj: any): obj is WireImage {
-    return (
-        obj &&
-        typeof obj === 'object' &&
-        typeof obj.encrypted === 'boolean' &&
-        typeof obj.image_id === 'string' &&
-        typeof obj.data === 'string'
-    );
-}
-
-export function isEncryptedWireTurn(obj: any): obj is EncryptedWireTurn {
-    return isWireTurn(obj) && obj.encrypted === true;
-}
-
-export function isUnencryptedWireTurn(obj: any): obj is UnencryptedWireTurn {
-    return isWireTurn(obj) && (obj.encrypted === false || obj.encrypted === undefined);
-}
-
 // *** Generation ***
-
-export type Tier = 'anonymous' | 'basic' | 'free';
-
-export type ToolName =
-    | 'proton_info'
-    | 'web_search'
-    | 'weather'
-    | 'stock'
-    | 'cryptocurrency'
-    | 'generate_image'
-    | 'describe_image'
-    | 'edit_image'
-    | 'web_extract';
-
-/*
- * A generation request in the format that the scheduler backend expects.
- */
-export type LumoApiGenerationRequest = {
-    type: 'generation_request';
-    turns: WireTurn[];
-    tier?: Tier;
-    options?: Options;
-    targets?: RequestableGenerationTarget[];
-    request_key?: string; // aes-gcm-256, pgp-encrypted, base64
-    request_id?: RequestId; // uuid used solely for AEAD encryption
-};
-
-/*
- * OpenAI-compatible chat completions request body for `POST /ai/v1/chat/completions`.
- */
-/** Built-in scheduler tools (web_search, weather, etc.) use the name-only shape. */
-export type ChatCompletionsBuiltInTool = {
-    name: ToolName;
-};
-
-/** Client-side / desktop connector tools — flat Lumo API shape sent on the wire. */
-export type ChatCompletionsFlatFunctionTool = {
-    name: string;
-    description?: string;
-    parameters?: Record<string, unknown>;
-};
-
-/** OpenAI nested shape accepted in client code; flattened before sending to Lumo. */
-export type ChatCompletionsFunctionTool = {
-    type: 'function';
-    function: {
-        name: string;
-        description?: string;
-        parameters?: Record<string, unknown>;
-    };
-};
-
-export type ChatCompletionsTool =
-    ChatCompletionsBuiltInTool | ChatCompletionsFlatFunctionTool | ChatCompletionsFunctionTool;
-
-/**
- * OpenAI content parts. A message's `content` may be a plain string (the common
- * text-only case) or an array of these parts when images are attached.
- */
-export type ChatCompletionsTextPart = {
-    type: 'text';
-    text: string;
-    encrypted?: boolean;
-};
-
-export type ChatCompletionsImagePart = {
-    type: 'image_url';
-    image_url: {
-        url: string;
-        detail?: 'auto' | 'low' | 'high';
-        encrypted?: boolean;
-    };
-};
-
-export type ChatCompletionsContentPart = ChatCompletionsTextPart | ChatCompletionsImagePart;
-
-export type ChatCompletionsMessage = {
-    /**
-     * `lumo_tool_call` is a non-standard Lumo extension role. The OpenAI schema
-     * carries tool calls in an assistant message's `tool_calls` array with the
-     * name/arguments in cleartext, which is incompatible with U2L encryption
-     * (only `content` is encrypted). Lumo instead sends each tool call as its
-     * own message with this role and the canonical `{"name","arguments"}` JSON
-     * (encrypted in production) in `content`. The scheduler converts it back to
-     * a structured `assistant` `tool_calls` message before reaching vLLM.
-     */
-    role: 'system' | 'user' | 'assistant' | 'tool' | 'lumo_tool_call';
-    content?: string | ChatCompletionsContentPart[];
-    /**
-     * Lumo extension: marks string `content` as U2L-encrypted ciphertext.
-     * Only valid when `content` is a plain string. For parts-content messages,
-     * each part carries its own `encrypted` flag as a sibling to the sensitive field.
-     */
-    encrypted?: boolean;
-};
-
-export type LumoCompletionTarget = 'message' | 'title' | 'suggested_questions';
-
-export type ChatCompletionsLumoExtension = {
-    client_type: 'frontend';
-    target?: LumoCompletionTarget;
-    request_key?: string;
-    request_id?: string;
-    image_aspect_ratio?: ImageAspectRatio;
-};
-
-export type ChatCompletionsStreamOptions = {
-    include_usage?: boolean;
-};
-
-/**
- * OpenAI structured-outputs response format. When set, the backend forwards it to the
- * model's guided decoding so the streamed output is constrained to the given JSON schema.
- * See https://developers.openai.com/api/docs/guides/structured-outputs.
- */
-export type ResponseFormatJSONSchema = {
-    type: 'json_schema';
-    json_schema: {
-        name: string;
-        schema: Record<string, unknown>;
-        strict?: boolean;
-        description?: string;
-    };
-};
-
-export type ResponseFormat = ResponseFormatJSONSchema;
 
 export type LumoRemainingLimits = {
     lite?: number;
     max?: number;
     images?: number;
-};
-
-export type LumoUsageLimitsResponse = {
-    limits: LumoRemainingLimits;
 };
 
 export type LumoStreamUsage = {
@@ -222,55 +47,23 @@ export type LumoStreamUsage = {
     image_limit_applied?: boolean;
 };
 
-export type ChatCompletionsRequest = {
-    model: string;
-    messages: ChatCompletionsMessage[];
-    stream: boolean;
-    stream_options?: ChatCompletionsStreamOptions;
-    reasoning_effort?: 'none' | 'high';
-    tools?: ChatCompletionsTool[];
-    tool_choice?: 'auto' | 'none' | 'required';
-    response_format?: ResponseFormat;
-    lumo?: ChatCompletionsLumoExtension;
-};
-
-/*
- * @deprecated Legacy payload for `POST /ai/v1/chat` — use ChatCompletionsRequest instead.
- */
-export type ChatEndpointGenerationRequest = {
-    Prompt: LumoApiGenerationRequest;
-};
-
 export const IMAGE_ASPECT_RATIOS = ['1:1', '2:3', '3:2', '9:16', '16:9'] as const;
 export type ImageAspectRatio = (typeof IMAGE_ASPECT_RATIOS)[number];
 
-export type Options = {
-    /** Built-in tool names, OpenAI function tools (e.g. desktop connectors), or `true` for none. */
-    tools?: ToolName[] | ChatCompletionsTool[] | boolean;
-    reasoning?: boolean;
-    suggested_questions?: boolean;
-    image_aspect_ratio?: ImageAspectRatio;
-};
-
-// *** Utility types for encryption state ***
-
-export type Encrypted<T extends { encrypted?: boolean }> = Omit<T, 'encrypted'> & { encrypted: true };
-export type Decrypted<T extends { encrypted?: boolean }> = Omit<T, 'encrypted'> & { encrypted?: false };
-
 // *** Generation Response Message Types ***
 
-export type QueuedMessage = { type: 'queued'; target?: GenerationTarget };
-export type IngestingMessage = { type: 'ingesting'; target: GenerationTarget };
+type QueuedMessage = { type: 'queued'; target?: GenerationTarget };
+type IngestingMessage = { type: 'ingesting'; target: GenerationTarget };
 /** Exact serving model reported by the SSE stream for a generation target. */
-export type ModelMessage = { type: 'model'; target: GenerationTarget; model: string };
-export type TokenDataMessage = {
+type ModelMessage = { type: 'model'; target: GenerationTarget; model: string };
+type TokenDataMessage = {
     type: 'token_data';
     target: GenerationTarget;
     count: number;
     content: string;
     encrypted?: boolean;
 };
-export type ImageDataMessage = {
+type ImageDataMessage = {
     type: 'image_data';
     image_id?: string;
     data?: string;
@@ -278,12 +71,12 @@ export type ImageDataMessage = {
     seed?: number;
     encrypted?: boolean;
 };
-export type DoneMessage = { type: 'done' };
-export type TimeoutMessage = { type: 'timeout' };
-export type ErrorMessage = { type: 'error' };
-export type RejectedMessage = { type: 'rejected' };
-export type HarmfulMessage = { type: 'harmful' };
-export type UsageMessage = { type: 'usage'; usage: LumoStreamUsage };
+type DoneMessage = { type: 'done' };
+type TimeoutMessage = { type: 'timeout' };
+type ErrorMessage = { type: 'error' };
+type RejectedMessage = { type: 'rejected' };
+type HarmfulMessage = { type: 'harmful' };
+type UsageMessage = { type: 'usage'; usage: LumoStreamUsage };
 
 /*
  * Context-window overflow surfaced mid-stream. The chat-completions adapter maps
@@ -293,7 +86,7 @@ export type UsageMessage = { type: 'usage'; usage: LumoStreamUsage };
  * Legacy wire shape (still accepted):
  *   data:{"type":"tool-error","error":{"code":"context_length_exceeded","message":"..."}}
  */
-export type ToolErrorMessage = {
+type ToolErrorMessage = {
     type: 'tool-error';
     error: {
         code: string;
@@ -305,7 +98,7 @@ export const CONTEXT_LENGTH_EXCEEDED_CODE = 'context_length_exceeded';
 
 // Server-side tool call dispatched by the scheduler (chat.tool_call SSE chunk).
 // Emitted twice: announce (arguments absent) then dispatch (arguments present).
-export type ServerToolCallMessage = {
+type ServerToolCallMessage = {
     type: 'server_tool_call';
     call_id: string;
     name: string;
@@ -314,7 +107,7 @@ export type ServerToolCallMessage = {
 };
 
 // Server-side tool result returned after execution (chat.tool_result SSE chunk).
-export type ServerToolResultMessage = {
+type ServerToolResultMessage = {
     type: 'server_tool_result';
 
     call_id: string;
@@ -324,15 +117,6 @@ export type ServerToolResultMessage = {
     };
     encrypted?: boolean;
 };
-
-export type EncryptedTokenDataMessage = Encrypted<TokenDataMessage>;
-export type DecryptedTokenDataMessage = Decrypted<TokenDataMessage>;
-export type EncryptedImageDataMessage = Encrypted<ImageDataMessage>;
-export type DecryptedImageDataMessage = Decrypted<ImageDataMessage>;
-export type EncryptedServerToolCallMessage = Encrypted<ServerToolCallMessage>;
-export type DecryptedServerToolCallMessage = Decrypted<ServerToolCallMessage>;
-export type EncryptedServerToolResultMessage = Encrypted<ServerToolResultMessage>;
-export type DecryptedServerToolResultMessage = Decrypted<ServerToolResultMessage>;
 
 export type GenerationResponseMessage =
     | QueuedMessage
@@ -350,213 +134,9 @@ export type GenerationResponseMessage =
     | UsageMessage
     | ToolErrorMessage;
 
-export type GenerationResponseMessageDecrypted =
-    | QueuedMessage
-    | IngestingMessage
-    | ModelMessage
-    | DecryptedTokenDataMessage
-    | DecryptedImageDataMessage
-    | DecryptedServerToolCallMessage
-    | DecryptedServerToolResultMessage
-    | DoneMessage
-    | TimeoutMessage
-    | ErrorMessage
-    | RejectedMessage
-    | HarmfulMessage
-    | UsageMessage
-    | ToolErrorMessage;
-
 // *** Type Guards ***
 
-export function isQueuedMessage(obj: any): obj is QueuedMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'queued';
-}
-
-export function isIngestingMessage(obj: any): obj is IngestingMessage {
-    return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'ingesting' &&
-        'target' in obj &&
-        isGenerationTarget(obj.target)
-    );
-}
-
-export function isModelMessage(obj: any): obj is ModelMessage {
-    return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'model' &&
-        'target' in obj &&
-        isGenerationTarget(obj.target) &&
-        typeof obj.model === 'string'
-    );
-}
-
-export function isTokenDataMessage(obj: any): obj is TokenDataMessage {
-    return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'token_data' &&
-        'target' in obj &&
-        'count' in obj &&
-        'content' in obj &&
-        isGenerationTarget(obj.target) &&
-        typeof obj.count === 'number' &&
-        typeof obj.content === 'string' &&
-        (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
-    );
-}
-
-export function isImageDataMessage(obj: any): obj is ImageDataMessage {
-    return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'image_data' &&
-        (!('image_id' in obj) || typeof obj.image_id === 'string') &&
-        (!('data' in obj) || typeof obj.data === 'string') &&
-        (!('is_final' in obj) || typeof obj.is_final === 'boolean') &&
-        (!('seed' in obj) || typeof obj.seed === 'number') &&
-        (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
-    );
-}
-
-export function isDoneMessage(obj: any): obj is DoneMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'done';
-}
-
-export function isTimeoutMessage(obj: any): obj is TimeoutMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'timeout';
-}
-
-export function isErrorMessage(obj: any): obj is ErrorMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'error';
-}
-
-export function isRejectedMessage(obj: any): obj is RejectedMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'rejected';
-}
-
-export function isHarmfulMessage(obj: any): obj is HarmfulMessage {
-    return typeof obj === 'object' && obj !== null && obj.type === 'harmful';
-}
-
-export function isUsageMessage(obj: any): obj is UsageMessage {
-    return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'usage' &&
-        typeof obj.usage === 'object' &&
-        obj.usage !== null
-    );
-}
-
-export function isToolErrorMessage(obj: any): obj is ToolErrorMessage {
-    return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'tool-error' &&
-        typeof obj.error === 'object' &&
-        obj.error !== null &&
-        typeof obj.error.code === 'string'
-    );
-}
-
-export function isContextLengthExceededMessage(obj: any): obj is ToolErrorMessage {
-    return isToolErrorMessage(obj) && obj.error.code === CONTEXT_LENGTH_EXCEEDED_CODE;
-}
-
-export function isEncrypted<T extends { encrypted?: boolean }>(
-    obj: any,
-    guard: (obj: any) => obj is T
-): obj is Encrypted<T> {
-    return guard(obj) && obj.encrypted === true;
-}
-
-export function isDecrypted<T extends { encrypted?: boolean }>(
-    obj: any,
-    guard: (obj: any) => obj is T
-): obj is Decrypted<T> {
-    return guard(obj) && (obj.encrypted === undefined || obj.encrypted === false);
-}
-
-export function isEncryptedTokenDataMessage(obj: any): obj is EncryptedTokenDataMessage {
-    return isEncrypted(obj, isTokenDataMessage);
-}
-
-export function isDecryptedTokenDataMessage(obj: any): obj is DecryptedTokenDataMessage {
-    return isDecrypted(obj, isTokenDataMessage);
-}
-
-export function isEncryptedImageDataMessage(obj: any): obj is EncryptedImageDataMessage {
-    return isEncrypted(obj, isImageDataMessage);
-}
-
-export function isDecryptedImageDataMessage(obj: any): obj is DecryptedImageDataMessage {
-    return isDecrypted(obj, isImageDataMessage);
-}
-
-export function isServerToolCallMessage(obj: any): obj is ServerToolCallMessage {
-    return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'server_tool_call' &&
-        typeof obj.call_id === 'string' &&
-        typeof obj.name === 'string' &&
-        (!('arguments' in obj) || typeof obj.arguments === 'string') &&
-        (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
-    );
-}
-
-export function isServerToolResultMessage(obj: any): obj is ServerToolResultMessage {
-    return (
-        typeof obj === 'object' &&
-        obj !== null &&
-        obj.type === 'server_tool_result' &&
-        typeof obj.call_id === 'string' &&
-        typeof obj.content === 'string' &&
-        (!('meta' in obj) ||
-            (typeof obj.meta === 'object' && obj.meta !== null && typeof obj.meta.settings === 'string')) &&
-        (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
-    );
-}
-
-export function isEncryptedServerToolCallMessage(obj: any): obj is EncryptedServerToolCallMessage {
-    return isEncrypted(obj, isServerToolCallMessage);
-}
-
-export function isDecryptedServerToolCallMessage(obj: any): obj is DecryptedServerToolCallMessage {
-    return isDecrypted(obj, isServerToolCallMessage);
-}
-
-export function isEncryptedServerToolResultMessage(obj: any): obj is EncryptedServerToolResultMessage {
-    return isEncrypted(obj, isServerToolResultMessage);
-}
-
-export function isDecryptedServerToolResultMessage(obj: any): obj is DecryptedServerToolResultMessage {
-    return isDecrypted(obj, isServerToolResultMessage);
-}
-
-export function isGenerationResponseMessage(obj: any): obj is GenerationResponseMessage {
-    return (
-        isQueuedMessage(obj) ||
-        isIngestingMessage(obj) ||
-        isModelMessage(obj) ||
-        isTokenDataMessage(obj) ||
-        isImageDataMessage(obj) ||
-        isServerToolCallMessage(obj) ||
-        isServerToolResultMessage(obj) ||
-        isDoneMessage(obj) ||
-        isTimeoutMessage(obj) ||
-        isErrorMessage(obj) ||
-        isRejectedMessage(obj) ||
-        isHarmfulMessage(obj) ||
-        isUsageMessage(obj) ||
-        isToolErrorMessage(obj)
-    );
-}
-
-export type RequestableGenerationTarget = 'message' | 'title';
+type RequestableGenerationTarget = 'message' | 'title';
 
 // @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -564,11 +144,7 @@ function isRequestableGenerationTarget(value: any): value is RequestableGenerati
     return ['message', 'title'].includes(value);
 }
 
-export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result' | 'reasoning' | 'suggested_questions';
-
-export function isGenerationTarget(value: any): value is GenerationTarget {
-    return ['message', 'title', 'tool_call', 'tool_result', 'reasoning', 'suggested_questions'].includes(value);
-}
+type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result' | 'reasoning' | 'suggested_questions';
 
 /*
  * Note:

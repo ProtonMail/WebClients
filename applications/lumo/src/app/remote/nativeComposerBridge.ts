@@ -29,7 +29,7 @@ import { IMAGE_ASPECT_RATIOS, type ImageAspectRatio, LUMO_API_ERRORS } from '../
  * predate the model/mode split. Newer clients read `model` + `responseMode`
  * instead; this field exists so old clients can still decode the bridge state.
  */
-export type LegacyModelTier = 'auto' | 'fast' | 'thinking';
+type LegacyModelTier = 'auto' | 'fast' | 'thinking';
 
 /**
  * Native Composer Bridge
@@ -130,19 +130,19 @@ export enum LumoFileType {
     ProtonSheet = 'ProtonSheet',
 }
 
-export interface FeatureFlags {
+interface FeatureFlags {
     isImageGenEnabled: boolean;
     isModelSelectionEnabled: boolean;
     isToolsEnabled: boolean;
     isApertusModelEnabled: boolean;
 }
 
-export interface UserFlags {
+interface UserFlags {
     isFreeUser: boolean;
     isGuestUser: boolean;
 }
 
-export interface EditMode {
+interface EditMode {
     active: boolean;
 }
 
@@ -201,7 +201,7 @@ export interface SidebarLayout {
  */
 export type MaxModelAvailability = 'available' | 'unavailable_high_load' | 'unavailable_limit_reached';
 
-export interface State {
+interface State {
     lumoMode: LumoMode;
     /** Legacy field for old native clients; derived from `responseMode`. */
     modelTier: LegacyModelTier;

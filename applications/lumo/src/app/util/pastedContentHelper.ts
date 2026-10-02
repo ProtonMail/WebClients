@@ -33,7 +33,7 @@ export function shouldConvertPasteToAttachment(content: string): boolean {
 /**
  * Generate a filename for pasted content based on its characteristics
  */
-export function generateFilenameForPastedContent(content: string): string {
+function generateFilenameForPastedContent(content: string): string {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
     return `pasted-content-${timestamp}.txt`;
 }

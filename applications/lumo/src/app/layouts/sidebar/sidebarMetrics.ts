@@ -1,8 +1,8 @@
 import type { SidebarLayout } from '../../remote/nativeComposerBridge';
 
 /** Used when the custom properties in index.scss can't be read (e.g. jsdom, CSS not yet applied). */
-export const SIDEBAR_FALLBACK_EXPANDED_WIDTH_PX = 300;
-export const SIDEBAR_FALLBACK_TRANSITION_MS = 300;
+const SIDEBAR_FALLBACK_EXPANDED_WIDTH_PX = 300;
+const SIDEBAR_FALLBACK_TRANSITION_MS = 300;
 
 export interface SidebarMetrics {
     /** Width of the sidebar when expanded, in CSS px. */

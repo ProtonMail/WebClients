@@ -1,6 +1,6 @@
 import { getArtifactActionDisplayContent } from './components/Conversation/artifact/artifactActionPrompts';
-import type { ArtifactActionMeta, ContentBlock, Message, TextBlock, ToolCallBlock, ToolResultBlock } from './types';
-import { isArtifactActionMeta, isTextBlock, isToolCallBlock, isToolResultBlock } from './types';
+import type { ContentBlock, Message, TextBlock, ToolCallBlock, ToolResultBlock } from './types';
+import { isTextBlock, isToolCallBlock, isToolResultBlock } from './types';
 
 /**
  * Try to parse JSON, returning the parsed value or undefined on failure.
@@ -41,10 +41,6 @@ export function getMessageDisplayContent(message: Message): string {
     return getMessageContent(message);
 }
 
-export function hasArtifactAction(message: Message): message is Message & { artifactAction: ArtifactActionMeta } {
-    return isArtifactActionMeta(message.artifactAction);
-}
-
 /**
  * Get message blocks array.
  * Constructs from legacy fields if blocks don't exist.
@@ -76,28 +72,6 @@ export function getMessageBlocks(message: Message): ContentBlock[] {
         blocks.push({ type: 'text', content: message.content });
     }
     return blocks;
-}
-
-/**
- * Get all tool call blocks from a message.
- */
-export function getMessageToolCalls(message: Message): ToolCallBlock[] {
-    return getMessageBlocks(message).filter(isToolCallBlock);
-}
-
-/**
- * Get all tool result blocks from a message.
- */
-export function getMessageToolResults(message: Message): ToolResultBlock[] {
-    return getMessageBlocks(message).filter(isToolResultBlock);
-}
-
-/**
- * Check if a message has any text content.
- */
-export function hasMessageContent(message: Message): boolean {
-    const blocks = getMessageBlocks(message);
-    return blocks.some((b) => isTextBlock(b) && b.content.trim().length > 0);
 }
 
 /**
@@ -146,7 +120,7 @@ function findToolResult(
 }
 
 /** Tool call id of a tool_call block, when the stream provided one. */
-export function getToolCallBlockId(block: ToolCallBlock): string | undefined {
+function getToolCallBlockId(block: ToolCallBlock): string | undefined {
     return getToolCallId(block.toolCall) ?? getToolCallId(tryParseJSON(block.content));
 }
 
@@ -430,7 +404,7 @@ export function addToolResultBlock(blocks: ContentBlock[], toolResult: string, t
  * Uses reference equality for blocks and string equality for legacy fields.
  * This is fast and sufficient since blocks array is replaced on each update.
  */
-export function messageContentEqual(a: Message, b: Message): boolean {
+function messageContentEqual(a: Message, b: Message): boolean {
     return (
         a.content === b.content &&
         a.toolCall === b.toolCall && // String comparison (cheap)
@@ -446,14 +420,14 @@ export function messageContentEqual(a: Message, b: Message): boolean {
 /**
  * Check if message display state has changed.
  */
-export function messageStateEqual(a: Message, b: Message): boolean {
+function messageStateEqual(a: Message, b: Message): boolean {
     return a.status === b.status && a.placeholder === b.placeholder;
 }
 
 /**
  * Check if message attachments have changed.
  */
-export function messageAttachmentsEqual(a: Message, b: Message): boolean {
+function messageAttachmentsEqual(a: Message, b: Message): boolean {
     return a.attachments === b.attachments; // Reference equality
 }
 
@@ -466,32 +440,3 @@ export function messagesEqualForRendering(a: Message, b: Message): boolean {
     return a.id === b.id && messageContentEqual(a, b) && messageStateEqual(a, b) && messageAttachmentsEqual(a, b);
 }
 
-/**
- * Strict equality check for messages.
- * Checks all fields including metadata.
- * Use for tests or when complete equality verification is needed.
- */
-export function messagesDeepEqual(a: Message, b: Message): boolean {
-    return (
-        a.id === b.id &&
-        a.createdAt === b.createdAt &&
-        a.role === b.role &&
-        a.parentId === b.parentId &&
-        a.conversationId === b.conversationId &&
-        messageStateEqual(a, b) &&
-        messageContentEqual(a, b) &&
-        a.context === b.context &&
-        messageAttachmentsEqual(a, b) &&
-        deepEqualArray(a.contextFiles, b.contextFiles)
-    );
-}
-
-/**
- * Helper for array reference equality comparison.
- */
-function deepEqualArray<T>(a: T[] | undefined, b: T[] | undefined): boolean {
-    if (a === b) return true;
-    if (!a || !b) return false;
-    if (a.length !== b.length) return false;
-    return a.every((item, i) => item === b[i]);
-}

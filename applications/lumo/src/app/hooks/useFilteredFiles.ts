@@ -15,7 +15,7 @@ export type LinkedAttachment = Attachment & {
 };
 
 // prettier-ignore
-export function isLinkedAttachment(value: any): value is LinkedAttachment {
+function isLinkedAttachment(value: any): value is LinkedAttachment {
     return (
         isAttachment(value) &&
         ('messageId' in value && typeof value.messageId === 'string') &&

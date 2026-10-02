@@ -17,8 +17,7 @@ import { type AdString, type Base64, type EncryptedData, isOldEncryptedData } fr
 import type { AesGcmCryptoKey, AesKwCryptoKey } from './types';
 
 export const generateMasterKeyBytes = () => generateAesWrapKeyBytes();
-export const generateSpaceKeyBytes = () => generateAesGcmKeyBytes(); // meant to go through HKDF to achieve domain separation (e.g. `SPACE_DEK_CONTEXT`)
-export const generateRequestKeyBytes = () => generateAesGcmKeyBytes();
+const generateSpaceKeyBytes = () => generateAesGcmKeyBytes(); // meant to go through HKDF to achieve domain separation (e.g. `SPACE_DEK_CONTEXT`)
 
 export const generateSpaceKeyBase64 = () => generateSpaceKeyBytes().toBase64();
 export const generateMasterKeyBase64 = () => generateMasterKeyBytes().toBase64();
@@ -70,7 +69,7 @@ async function base64ToAesGcmCryptoKey(base64Key: string, extractable?: boolean)
 
 export const base64ToSpaceKey = base64ToAesGcmCryptoKey;
 
-export async function bytesToAesWrapKey(bytes: Uint8Array<ArrayBuffer>): Promise<AesKwCryptoKey> {
+async function bytesToAesWrapKey(bytes: Uint8Array<ArrayBuffer>): Promise<AesKwCryptoKey> {
     const wrappingKey = await importWrappingKey(bytes);
     return {
         type: 'AesKwCryptoKey',
@@ -78,13 +77,12 @@ export async function bytesToAesWrapKey(bytes: Uint8Array<ArrayBuffer>): Promise
     };
 }
 
-export async function base64ToAesWrapKey(base64Key: string): Promise<AesKwCryptoKey> {
+async function base64ToAesWrapKey(base64Key: string): Promise<AesKwCryptoKey> {
     const bytes = Uint8Array.fromBase64(base64Key);
     return bytesToAesWrapKey(bytes);
 }
 
 export const base64ToMasterKey = base64ToAesWrapKey;
-export const bytesToMasterKey = bytesToAesWrapKey;
 
 export async function decryptUint8Array(
     encryptedBase64: EncryptedData,
@@ -157,7 +155,7 @@ export async function deriveDataEncryptionKey(spaceKeyBytes: Uint8Array<ArrayBuf
 /**
  * Generate a new search index key (same as space key generation).
  */
-export const generateSearchIndexKeyBytes = () => generateAesGcmKeyBytes();
+const generateSearchIndexKeyBytes = () => generateAesGcmKeyBytes();
 export const generateSearchIndexKeyBase64 = () => generateSearchIndexKeyBytes().toBase64();
 
 /**
@@ -176,11 +174,6 @@ export async function deriveSearchIndexDek(searchIndexKeyBytes: Uint8Array<Array
     };
 }
 
-/**
- * Convert base64 search index key to AesGcmCryptoKey
- */
-export const base64ToSearchIndexKey = base64ToAesGcmCryptoKey;
-
 export async function wrapAesKey(
     keyToWrap: AesGcmCryptoKey,
     { wrappingKey }: AesKwCryptoKey
@@ -189,7 +182,7 @@ export async function wrapAesKey(
     return wrappedBytes;
 }
 
-export async function unwrapAesKey(
+async function unwrapAesKey(
     encryptedKeyBytes: Uint8Array<ArrayBuffer>,
     masterKey: AesKwCryptoKey,
     extractable?: boolean

@@ -1,4 +1,4 @@
-import { PROTON_BAR_COLOR } from './protonVegaTheme';
+import { PROTON_PURPLE } from './protonVegaTheme';
 import { VegaSpecParseError, VegaSpecSecurityError, sanitizeVegaSpec } from './sanitizeVegaSpec';
 
 describe('sanitizeVegaSpec', () => {
@@ -21,7 +21,7 @@ describe('sanitizeVegaSpec', () => {
     it('accepts inline Vega-Lite specs', () => {
         const spec = sanitizeVegaSpec(validSpec);
         expect(spec).toMatchObject({
-            mark: { type: 'bar', color: PROTON_BAR_COLOR },
+            mark: { type: 'bar', color: PROTON_PURPLE },
         });
     });
 
@@ -96,7 +96,7 @@ describe('sanitizeVegaSpec', () => {
             "data": { "values": [{ "category": "A", "amount": 1 },] },
         }`;
 
-        expect(sanitizeVegaSpec(spec)).toMatchObject({ mark: { type: 'bar', color: PROTON_BAR_COLOR } });
+        expect(sanitizeVegaSpec(spec)).toMatchObject({ mark: { type: 'bar', color: PROTON_PURPLE } });
     });
 
     it('accepts unquoted object keys from LLM output', () => {
@@ -135,7 +135,7 @@ describe('sanitizeVegaSpec', () => {
             },
         });
 
-        expect(sanitizeVegaSpec(spec)).toMatchObject({ mark: { type: 'bar', color: PROTON_BAR_COLOR } });
+        expect(sanitizeVegaSpec(spec)).toMatchObject({ mark: { type: 'bar', color: PROTON_PURPLE } });
     });
 
     it('repairs double-wrapped objects in data.values arrays', () => {

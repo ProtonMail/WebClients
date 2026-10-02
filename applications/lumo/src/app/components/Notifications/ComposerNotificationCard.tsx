@@ -130,5 +130,3 @@ export const ComposerNotificationCard = ({
         </div>
     );
 };
-
-export default ComposerNotificationCard;

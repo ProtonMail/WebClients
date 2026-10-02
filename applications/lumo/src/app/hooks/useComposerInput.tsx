@@ -5,7 +5,7 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isImeComposing } from '../util/keyboard';
 import { shouldConvertPasteToAttachment } from '../util/pastedContentHelper';
 
-export interface ComposerInputProps {
+interface ComposerInputProps {
     onSubmitCallback: (value: string) => void;
     content?: string;
     isGenerating?: boolean;

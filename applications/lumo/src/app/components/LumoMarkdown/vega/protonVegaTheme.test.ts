@@ -3,9 +3,7 @@ import {
     applyProtonMarkColors,
     applyResponsiveChartLayout,
     getProtonVegaConfig,
-    PROTON_BAR_COLOR,
     PROTON_CATEGORY_COLORS,
-    PROTON_LINE_COLOR,
     PROTON_PURPLE,
     stripHardcodedChartColors,
 } from './protonVegaTheme';
@@ -29,9 +27,9 @@ describe('protonVegaTheme', () => {
 
         expect((config.range?.category as string[] | undefined)?.[0]).toBe(PROTON_PURPLE);
         expect(config.background).toBe('transparent');
-        expect(config.line?.color).toBe(PROTON_LINE_COLOR);
+        expect(config.line?.color).toBe(PROTON_PURPLE);
         expect(config.line?.strokeWidth).toBe(2.25);
-        expect(config.bar?.color).toBe(PROTON_BAR_COLOR);
+        expect(config.bar?.color).toBe(PROTON_PURPLE);
         expect(config.bar?.cornerRadiusEnd).toBe(3);
         expect(config.area?.color).toBe(PROTON_PURPLE);
         expect(config.area?.opacity).toBe(0.18);
@@ -205,8 +203,8 @@ describe('protonVegaTheme', () => {
         applyProtonMarkColors(spec);
 
         const charts = spec.vconcat as Record<string, unknown>[];
-        expect((charts[0]!.mark as Record<string, unknown>).color).toBe(PROTON_BAR_COLOR);
-        expect((charts[1]!.mark as Record<string, unknown>).color).toBe(PROTON_LINE_COLOR);
+        expect((charts[0]!.mark as Record<string, unknown>).color).toBe(PROTON_PURPLE);
+        expect((charts[1]!.mark as Record<string, unknown>).color).toBe(PROTON_PURPLE);
         expect((charts[2]!.mark as Record<string, unknown>).color).toBe(PROTON_PURPLE);
         expect((charts[2]!.mark as Record<string, unknown>).opacity).toBe(0.18);
     });

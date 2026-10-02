@@ -9,7 +9,7 @@ import type { Conversation } from '../../types';
 
 export type ConversationSortField = ChatHistoryDateField;
 
-export const CONVERSATION_DATE_GROUP_ORDER = ['today', 'yesterday', 'last-week', 'older'] as const;
+const CONVERSATION_DATE_GROUP_ORDER = ['today', 'yesterday', 'last-week', 'older'] as const;
 
 export type ConversationDateGroupKey = (typeof CONVERSATION_DATE_GROUP_ORDER)[number];
 
@@ -19,7 +19,7 @@ export interface ConversationDateGroup {
     conversations: Conversation[];
 }
 
-export const sortConversationsByField = (
+const sortConversationsByField = (
     conversations: Conversation[],
     sortBy: ConversationSortField = 'updatedAt'
 ): Conversation[] => [...conversations].sort((a, b) => new Date(b[sortBy]).getTime() - new Date(a[sortBy]).getTime());
@@ -51,12 +51,6 @@ export const getConversationDateGroupTitle = (key: ConversationDateGroupKey): st
         case 'older':
             return c('collider_2025:Title').t`Older`;
     }
-};
-
-export const formatConversationDateGroupLabel = (dayStart: Date, now: Date = startOfDay(new Date())): string => {
-    const dayDiff = differenceInCalendarDays(now, dayStart);
-
-    return getConversationDateGroupTitle(getConversationDateGroupKey(dayDiff));
 };
 
 /**
@@ -92,17 +86,11 @@ export const groupConversationsByDate = (
     }));
 };
 
-export const searchConversations = (conversations: Conversation[], searchInput: string) => {
-    const normalizedSearchInput = searchInput.trim().toLowerCase(); // todo unidecode accents
-    const matchesSearch = (c: Conversation) => !searchInput || c.title.toLowerCase().includes(normalizedSearchInput);
-    return conversations.filter(matchesSearch);
-};
-
 /**
  * Filter conversations (or any conversation-derived row with a createdAt) to only those
  * within the free-user retention window. Retention is based on createdAt.
  */
-export const filterConversationsWithinRetentionWindow = <T extends { createdAt: string }>(
+const filterConversationsWithinRetentionWindow = <T extends { createdAt: string }>(
     conversations: T[],
     retentionDays: number = FREE_USER_CHAT_RETENTION_DAYS,
     now: Date = new Date()

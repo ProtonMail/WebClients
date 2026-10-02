@@ -2,7 +2,7 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 
 import type { AttachmentId } from '../../types';
 
-export type AttachmentLoadingStateEntry = {
+type AttachmentLoadingStateEntry = {
     loading: boolean;
     error?: string;
 };

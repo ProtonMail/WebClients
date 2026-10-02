@@ -12,13 +12,13 @@ import { isCryptocurrencyToolCallData, isStockToolCallData, tryParseToolCall } f
 import type { ContentBlock, ToolCallBlock, ToolResultBlock } from '../../../../../../types';
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 
-export interface MonthlyPoint {
+interface MonthlyPoint {
     date: string;
     price: number;
     volume: number;
 }
 
-export interface CompanyInfo {
+interface CompanyInfo {
     name: string;
     description?: string;
     exchange?: string;
@@ -87,7 +87,7 @@ export const formatLastUpdated = (dateStr: string): string => {
     return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 };
 
-export const parseFinanceResult = (result: string): FinanceData | null => {
+const parseFinanceResult = (result: string): FinanceData | null => {
     try {
         const parsed = JSON.parse(result);
         if (

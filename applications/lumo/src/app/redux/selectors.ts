@@ -3,24 +3,20 @@ import type { Selector } from 'react-redux';
 import { createSelector } from '@reduxjs/toolkit';
 import { differenceInCalendarDays, startOfDay } from 'date-fns';
 
-import type { UserState } from '@proton/account';
-
 import type { ConversationDateGroupKey } from '../layouts/sidepanel/helpers';
 import { getConversationDateGroupKey } from '../layouts/sidepanel/helpers';
 import { isGeneratedImageAttachment } from '../lib/imageAttachment';
 import type { LocalId, RemoteId, ResourceType } from '../remote/types';
 import type { Attachment, AttachmentId, Base64, Conversation, MasterKeysBundle, Message, Space } from '../types';
-import { type ConversationId, type MessageId, Role, type SpaceId } from '../types';
+import type { ConversationId, MessageId, SpaceId } from '../types';
 import { listify, mapIds, setify } from '../util/collections';
 import { sortByDate } from '../util/date';
 import { objectFilterV } from '../util/objects';
-import { getInitials } from '../util/username';
 import type { AttachmentMap } from './slices/core/attachments';
 import { EMPTY_ATTACHMENT_MAP } from './slices/core/attachments';
 import { EMPTY_CONVERSATION_MAP } from './slices/core/conversations';
 import type { MessageMap } from './slices/core/messages';
 import { EMPTY_MESSAGE_MAP } from './slices/core/messages';
-import { isNonEmptyPersonalization } from './slices/personalization';
 import type { LumoState, LumoState as RootState } from './store';
 
 export type LumoSelector<T> = Selector<LumoState, T>;
@@ -29,18 +25,11 @@ export type LumoSelector<T> = Selector<LumoState, T>;
  * Helper that wraps any selector to accept optional input, returning
  * a predefined fallback value if input is null/undefined.
  */
-export const makeOptional =
+const makeOptional =
     <TArg, TResult>(selector: (arg: TArg) => LumoSelector<TResult>, fallback: TResult) =>
     (arg: TArg | null | undefined): LumoSelector<TResult> =>
     (state: RootState) =>
         arg !== null && arg !== undefined ? selector(arg)(state) : fallback;
-
-/*
- * Selectors from the shared Proton state.
- */
-
-export const selectDisplayName = (state: UserState) => state.user.value?.DisplayName;
-export const selectDisplayNameInitials = (state: UserState) => getInitials(selectDisplayName(state));
 
 /*
  * Selectors specific to Lumo.
@@ -140,18 +129,12 @@ export const selectMessagesBySpaceId = (spaceId: SpaceId | null | undefined) => 
 export const selectAttachmentsBySpaceId = (spaceId: SpaceId | null | undefined) => (state: LumoState) =>
     objectFilterV(state.attachments, (c: Attachment) => c.spaceId === spaceId, EMPTY_ATTACHMENT_MAP);
 
-export const selectAttachmentLoadingState = (attachmentId: AttachmentId) => (state: LumoState) =>
+const selectAttachmentLoadingState = (attachmentId: AttachmentId) => (state: LumoState) =>
     state.attachmentLoadingState[attachmentId];
 
 export const selectAttachmentLoadingStateOptional = makeOptional(selectAttachmentLoadingState, undefined);
 
 export const selectSpaceByIdOptional = makeOptional(selectSpaceById, undefined);
-
-export const selectAllUserMessages = (state: LumoState) =>
-    objectFilterV(state.messages, (m: Message) => m.role === Role.User);
-
-export const selectFavoritedConversations = (state: LumoState) =>
-    objectFilterV(state.conversations, (c: Conversation) => !!c.starred);
 
 export const selectSpaceByConversationId =
     (conversationId: ConversationId) =>
@@ -187,20 +170,7 @@ export const selectRemoteIdFromLocal =
     (state: LumoState): RemoteId | undefined =>
         state.idmap.local2remote[type][localId];
 
-export const selectPersonalizationSettings = (state: LumoState) => state.personalization;
-export const selectHasModifiedPersonalization = (state: LumoState) =>
-    isNonEmptyPersonalization(selectPersonalizationSettings(state));
-
 export const selectContextFilters = (state: any) => state.contextFilters.filters;
-
-export const selectContextFiltersForMessage = (messageId: string) => (state: any) => {
-    return state.contextFilters.filters.find((filter: any) => filter.messageId === messageId);
-};
-
-export const selectIsFileExcluded = (messageId: string, filename: string) => (state: any) => {
-    const filter = state.contextFilters.filters.find((filter: any) => filter.messageId === messageId);
-    return filter ? filter.excludedFiles.includes(filename) : false;
-};
 
 /*
  * Memoized selectors — use with shallowEqual in useLumoSelector to avoid
@@ -239,16 +209,6 @@ export const selectAttachmentCountsBySpaceId = createSelector([selectAttachments
     });
     return counts;
 });
-
-// Pre-filtered, sorted base list for chat history. Excludes ghost and starred
-// conversations (starred appear in the sidebar favorites section).
-export const selectHistoryConversationsSorted = createSelector(
-    [selectConversations, selectChatHistoryDateField],
-    (conversations, dateField) =>
-        Object.values(conversations)
-            .filter((c: Conversation) => !c.ghost && !c.starred)
-            .sort(sortByDate<Conversation>('desc', dateField))
-);
 
 // Minimal per-conversation row for the chat history list — contains only stable
 // fields (id, groupKey, spaceId, createdAt). title and status are intentionally

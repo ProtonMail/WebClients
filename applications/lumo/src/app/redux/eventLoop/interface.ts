@@ -3,7 +3,7 @@ import type { LumoEventResponse } from '@proton/shared/lib/interfaces/Lumo';
 
 import type { LumoDispatch, LumoState } from '../store';
 
-export type LumoEventLoopRequiredState = LumoState;
+type LumoEventLoopRequiredState = LumoState;
 
 export type LumoEventLoopCallback = (args: {
     event: LumoEventResponse;

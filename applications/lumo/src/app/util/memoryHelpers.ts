@@ -21,22 +21,22 @@ export type MemorySamplingOptions = {
 export const MEMORY_GENERATION_MAX_SAMPLES = 100;
 
 /** Per-prompt character cap to limit payload size. */
-export const MEMORY_GENERATION_MAX_CHARS_PER_SAMPLE = 512;
+const MEMORY_GENERATION_MAX_CHARS_PER_SAMPLE = 512;
 
 /** Minimum prompt length to be considered useful for sampling. */
-export const MEMORY_GENERATION_MIN_PROMPT_LENGTH = 32;
+const MEMORY_GENERATION_MIN_PROMPT_LENGTH = 32;
 
 /** Hard cap on memories the model may return per operation. */
 export const MEMORY_GENERATION_MAX_MEMORIES = 50;
 
 /** Soft target the model is steered toward for generate/refresh. */
-export const MEMORY_GENERATION_TARGET_COUNT = 12;
+const MEMORY_GENERATION_TARGET_COUNT = 12;
 
 /** Maximum length of a single saved memory. */
 export const MEMORY_MAX_CONTENT_LENGTH = 256;
 
 /** Minimum length for a stored memory string. */
-export const MEMORY_MIN_CONTENT_LENGTH = 8;
+const MEMORY_MIN_CONTENT_LENGTH = 8;
 
 /** General-chat user prompts before a background memory update runs. */
 export const MEMORY_AUTO_SAVE_PROMPT_THRESHOLD = 10;
@@ -45,7 +45,7 @@ export const MEMORY_AUTO_SAVE_PROMPT_THRESHOLD = 10;
 export const MEMORY_RECOMMENDED_TOTAL_COUNT = 50;
 
 /** Minimum saved memories required before running optimize. */
-export const MEMORY_OPTIMIZE_MIN_COUNT = 2;
+const MEMORY_OPTIMIZE_MIN_COUNT = 2;
 
 const MIN_SAMPLES_TO_GENERATE = 2;
 
@@ -66,11 +66,11 @@ const normalizeMemoryContent = (content: string) => normalizeText(content).slice
 // Memory source helpers
 // ---------------------------------------------------------------------------
 
-export const getMemorySource = (memory: Memory): MemorySource => memory.source ?? 'user';
+const getMemorySource = (memory: Memory): MemorySource => memory.source ?? 'user';
 
 export const isUserMemory = (memory: Memory) => getMemorySource(memory) === 'user';
 
-export const isGeneratedMemory = (memory: Memory) => getMemorySource(memory) === 'generated';
+const isGeneratedMemory = (memory: Memory) => getMemorySource(memory) === 'generated';
 
 export const normalizeMemories = (memories: Memory[] | undefined): Memory[] =>
     (memories ?? []).map((memory) => ({ ...memory, source: getMemorySource(memory) }));

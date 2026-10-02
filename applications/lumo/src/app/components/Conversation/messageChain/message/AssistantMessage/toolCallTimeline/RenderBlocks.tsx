@@ -61,7 +61,7 @@ function preprocessContent(content: string | undefined): string {
 /**
  * Check if a tool call is in progress (no result yet).
  */
-export function isToolCallInProgress(
+function isToolCallInProgress(
     block: ToolCallBlock,
     allBlocks: ContentBlock[],
     isGenerating: boolean,
@@ -107,7 +107,7 @@ function hasStartedProseResponse(blocks: ContentBlock[]): boolean {
     return false;
 }
 
-export function isThinkingInProgress(
+function isThinkingInProgress(
     blocks: ContentBlock[],
     message: Message,
     conversationIsGenerating: boolean,

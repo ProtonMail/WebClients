@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
@@ -9,7 +9,7 @@ interface OnboardingContextProps {
     resetOnboarding: () => void;
 }
 
-export const OnboardingContext = createContext<OnboardingContextProps | null>(null);
+const OnboardingContext = createContext<OnboardingContextProps | null>(null);
 
 interface Props {
     children?: ReactNode;
@@ -62,14 +62,4 @@ export const OnboardingProvider = ({ children }: Props) => {
             {children}
         </OnboardingContext.Provider>
     );
-};
-
-export const useOnboardingContext = () => {
-    const state = useContext(OnboardingContext);
-
-    if (!state) {
-        throw new Error('Onboarding Context needs to be initialized');
-    }
-
-    return state;
 };

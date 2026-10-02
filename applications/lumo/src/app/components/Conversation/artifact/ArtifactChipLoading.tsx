@@ -27,5 +27,3 @@ export const ArtifactChipLoading = () => {
         </div>
     );
 };
-
-export default ArtifactChipLoading;

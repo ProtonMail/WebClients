@@ -137,10 +137,6 @@ const errorsSlice = createSlice({
             state.resourceLimitErrors = state.resourceLimitErrors.filter((e) => e.id !== action.payload);
         },
 
-        clearResourceLimitErrors: (state) => {
-            state.resourceLimitErrors = [];
-        },
-
         setDebugLimitOverride: (
             state,
             action: PayloadAction<{
@@ -176,7 +172,6 @@ export const {
     clearTierErrors,
     addResourceLimitError,
     dismissResourceLimitError,
-    clearResourceLimitErrors,
     setDebugLimitOverride,
     clearAllDebugLimitOverrides,
 } = errorsSlice.actions;

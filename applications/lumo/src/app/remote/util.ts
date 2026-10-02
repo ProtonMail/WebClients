@@ -7,4 +7,4 @@ export const objectToPascalCaseKeys = (obj: Record<string, any>): Record<string,
     return objectMapKV(obj, identityV, stringToPascalCase);
 };
 
-export const stringToPascalCase = (s: string): string => (s.length > 0 ? `${s[0].toUpperCase()}${s.slice(1)}` : s);
+const stringToPascalCase = (s: string): string => (s.length > 0 ? `${s[0].toUpperCase()}${s.slice(1)}` : s);

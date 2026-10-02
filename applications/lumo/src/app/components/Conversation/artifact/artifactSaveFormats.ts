@@ -2,9 +2,7 @@ import { c } from 'ttag';
 
 import type { ArtifactType } from './parseArtifacts';
 
-export const ARTIFACT_SAVE_FORMATS = ['md', 'txt', 'pdf', 'pptx'] as const;
-
-export type ArtifactSaveFormat = (typeof ARTIFACT_SAVE_FORMATS)[number];
+export type ArtifactSaveFormat = 'md' | 'txt' | 'pdf' | 'pptx';
 
 const DOCUMENT_SAVE_FORMATS: ArtifactSaveFormat[] = ['md', 'txt', 'pdf'];
 const PRESENTATION_SAVE_FORMATS: ArtifactSaveFormat[] = ['pdf', 'pptx'];
@@ -67,8 +65,4 @@ export function getArtifactDownloadLabel(format: ArtifactSaveFormat): string {
         default:
             return getArtifactSaveFormatLabel(format);
     }
-}
-
-export function getArtifactSaveFormatExtension(format: ArtifactSaveFormat): string {
-    return format;
 }

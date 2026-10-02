@@ -7,7 +7,7 @@ import { addIdMapEntry } from '../../../redux/slices/core/idmap';
 import { addAttachment } from '../../../redux/slices/core/attachments';
 import { extraThunkArguments } from '../../../redux/thunk';
 
-export type GalleryImageItem = {
+type GalleryImageItem = {
     localId: string;
     localSpaceId: string;
     remoteId: string;

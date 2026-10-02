@@ -7,15 +7,3 @@ const pendingAttachmentsMap = new Map<AttachmentId, Attachment>();
 export const storePendingAttachment = (attachment: Attachment): void => {
     pendingAttachmentsMap.set(attachment.id, attachment);
 };
-
-export const getPendingAttachment = (attachmentId: AttachmentId): Attachment | undefined => {
-    return pendingAttachmentsMap.get(attachmentId);
-};
-
-export const removePendingAttachment = (attachmentId: AttachmentId): void => {
-    pendingAttachmentsMap.delete(attachmentId);
-};
-
-export const clearPendingAttachments = (): void => {
-    pendingAttachmentsMap.clear();
-};

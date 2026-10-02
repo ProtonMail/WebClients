@@ -124,5 +124,3 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
         />
     );
 };
-
-export default ComposerLimitBanner;

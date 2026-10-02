@@ -4,12 +4,6 @@ import { ThemeTypes, useLumoTheme } from '../../providers';
 import type { AnimatedBackgroundBlobMode } from './animatedBackgroundConfig';
 import { createAnimatedBackground } from './createAnimatedBackground';
 
-export {
-    ANIMATED_BACKGROUND_MAX_DPR,
-    ANIMATED_BACKGROUND_TARGET_FPS,
-} from './animatedBackgroundConfig';
-export type { AnimatedBackgroundBlobMode } from './animatedBackgroundConfig';
-
 interface UseAnimatedBackgroundOptions {
     blobMode: AnimatedBackgroundBlobMode;
 }

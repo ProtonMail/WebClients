@@ -58,12 +58,3 @@ export interface SearchServiceStatus {
     };
 }
 
-export interface SearchOptions {
-    hasLumoPlus?: boolean;
-}
-
-export interface SearchService {
-    getAllConversations(state: SearchState, options?: SearchOptions): Promise<SearchResult[]>;
-    searchAsync(query: string, state: SearchState, options?: SearchOptions): Promise<SearchResult[]>;
-    getStatus(): Promise<SearchServiceStatus>;
-}

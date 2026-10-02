@@ -4,7 +4,7 @@
  * to eliminate duplication across components.
  */
 
-export interface FileTypeConfig {
+interface FileTypeConfig {
     extensions: string[];
     mimeTypes: string[];
     description: string;
@@ -23,7 +23,7 @@ export interface FileTypeConfig {
     pandocFormat?: string;
 }
 
-export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
+const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     // Image formats
     jpeg: {
         extensions: ['jpg', 'jpeg'],
@@ -481,7 +481,7 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
 };
 
 // Helper functions
-export function getAllSupportedMimeTypes(): Set<string> {
+function getAllSupportedMimeTypes(): Set<string> {
     const mimeTypes = new Set<string>();
     Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
         config.mimeTypes.forEach((mimeType) => mimeTypes.add(mimeType));
@@ -489,7 +489,7 @@ export function getAllSupportedMimeTypes(): Set<string> {
     return mimeTypes;
 }
 
-export function getAllSupportedExtensions(): Set<string> {
+function getAllSupportedExtensions(): Set<string> {
     const extensions = new Set<string>();
     Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
         config.extensions.forEach((ext) => extensions.add(ext));
@@ -497,7 +497,7 @@ export function getAllSupportedExtensions(): Set<string> {
     return extensions;
 }
 
-export function getExtensionToMimeTypeMap(): Record<string, string> {
+function getExtensionToMimeTypeMap(): Record<string, string> {
     const map: Record<string, string> = {};
     Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
         // Use the first MIME type as the primary one
@@ -513,7 +513,7 @@ export function getExtensionToMimeTypeMap(): Record<string, string> {
     return map;
 }
 
-export function getMimeTypeToDescriptionMap(): Record<string, string> {
+function getMimeTypeToDescriptionMap(): Record<string, string> {
     const map: Record<string, string> = {};
     Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
         config.mimeTypes.forEach((mimeType) => {
@@ -527,7 +527,7 @@ export function getMimeTypeToDescriptionMap(): Record<string, string> {
     return map;
 }
 
-export function getExtensionToDescriptionMap(): Record<string, string> {
+function getExtensionToDescriptionMap(): Record<string, string> {
     const map: Record<string, string> = {};
     Object.values(FILE_TYPE_CONFIGS).forEach((config) => {
         config.extensions.forEach((ext) => {
@@ -564,7 +564,7 @@ export function getFileTypeDescription(fileName: string, mimeType?: string): str
 }
 
 /** Extensions that must never be indexed, extracted, or attached to context. */
-export const BLOCKED_FILE_EXTENSIONS = new Set(['ai']);
+const BLOCKED_FILE_EXTENSIONS = new Set(['ai']);
 
 export function isBlockedFileExtension(fileName: string): boolean {
     const ext = fileName.split('.').pop()?.toLowerCase();
@@ -623,112 +623,6 @@ export function mimeTypeToPandocFormat(mimeType: string): string | undefined {
     }
 
     return undefined;
-}
-
-/**
- * Determine if a file type should be processed directly as plain text
- * instead of going through Pandoc conversion
- */
-export function shouldProcessAsPlainText(mimeType: string): boolean {
-    // Normalize mimeType by converting to lowercase and trimming
-    const normalizedMime = mimeType.toLowerCase().trim();
-
-    // Files that should be processed directly as plain text (no Pandoc needed)
-    const plainTextTypes = new Set([
-        // Code files
-        'application/javascript',
-        'text/javascript',
-        'application/typescript',
-        'text/x-typescript',
-        'text/x-python',
-        'text/x-java-source',
-        'text/x-c',
-        'text/x-c++',
-        'text/x-csharp',
-        'text/x-php',
-        'text/x-ruby',
-        'text/x-go',
-        'text/x-rust',
-        'text/x-swift',
-        'text/x-kotlin',
-        'text/x-scala',
-        'text/x-clojure',
-        'text/x-haskell',
-        'text/x-ocaml',
-        'text/x-rsrc',
-        'text/x-sql',
-        'application/x-sql',
-        'text/x-sh',
-        'application/x-sh',
-        'text/x-shellscript',
-        'text/x-powershell',
-        'application/x-bat',
-        'text/x-dart',
-        'text/x-elixir',
-        'text/x-erlang',
-        'text/x-lua',
-        'text/x-perl',
-        'application/x-perl',
-        'text/x-groovy',
-        'text/x-vim',
-        'application/x-python',
-        'application/x-php',
-        'application/x-ruby',
-        'text/x-c++src',
-
-        // Text and markup formats (already plain text, LLMs can read them directly)
-        'text/markdown',
-        'text/x-markdown',
-        'text/latex',
-        'text/rst',
-        'text/asciidoc',
-        'text/x-asciidoc',
-
-        // Data/Config files
-        'application/json',
-        'application/xml',
-        'text/xml',
-        'application/yaml',
-        'text/yaml',
-        'application/x-yaml',
-        'text/x-yaml',
-        'application/toml',
-        'text/toml',
-
-        // Web files
-        'text/css',
-        'text/html', // HTML can be processed directly, LLMs understand HTML markup
-
-        // Already handled separately
-        'text/plain',
-        'text/csv',
-        'application/csv',
-
-        // Log files and other plain text
-        'text/x-log',
-        'application/x-log',
-    ]);
-
-    return plainTextTypes.has(normalizedMime);
-}
-
-/**
- * Determine if a file type needs actual Pandoc document conversion
- */
-export function needsPandocConversion(mimeType: string): boolean {
-    // Normalize mimeType by converting to lowercase and trimming
-    const normalizedMime = mimeType.toLowerCase().trim();
-
-    // Only binary document formats that need text extraction via Pandoc
-    const pandocTypes = new Set([
-        // Binary document formats (need Pandoc to extract text)
-        'application/msword',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'application/vnd.oasis.opendocument.text',
-        'application/rtf', // RTF has control codes, needs conversion to clean text
-    ]);
-
-    return pandocTypes.has(normalizedMime);
 }
 
 /**

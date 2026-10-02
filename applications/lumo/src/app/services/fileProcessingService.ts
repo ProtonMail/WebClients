@@ -26,7 +26,7 @@ export type FileProcessingOptions = {
     fileData?: ArrayBuffer;
 };
 
-export interface ExcelSheetsListResult {
+interface ExcelSheetsListResult {
     id: string;
     type: 'excel-sheets';
     sheets: ExcelSheetInfo[];

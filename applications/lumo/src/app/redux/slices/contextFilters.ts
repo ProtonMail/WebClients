@@ -2,7 +2,7 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 
 import type { ContextFilter } from '../../llm';
 
-export type ContextFiltersState = {
+type ContextFiltersState = {
     filters: ContextFilter[];
 };
 
@@ -11,12 +11,12 @@ const initialState: ContextFiltersState = {
 };
 
 export type FilterAction = { messageId: string; filename: string };
-export type ClearFilterAction = { messageId?: string };
+type ClearFilterAction = { messageId?: string };
 
 // Actions
 export const addContextFilter = createAction<FilterAction>('contextFilters/add');
 export const removeContextFilter = createAction<FilterAction>('contextFilters/remove');
-export const clearContextFilters = createAction<ClearFilterAction>('contextFilters/clear');
+const clearContextFilters = createAction<ClearFilterAction>('contextFilters/clear');
 export const resetAllContextFilters = createAction('contextFilters/resetAll');
 
 // Reducer

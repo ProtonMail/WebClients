@@ -172,5 +172,3 @@ export const ComposerExpirationBanner = ({ conversationId }: Props) => {
         />
     );
 };
-
-export default ComposerExpirationBanner;

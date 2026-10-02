@@ -1,7 +1,7 @@
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 /** Matches `@proton/styles` `$root-default-font-size` used by the `rem()` Sass helper. */
-export const CHART_FONT_ROOT_PX = 16;
+const CHART_FONT_ROOT_PX = 16;
 
 /**
  * Scale a design-time px font size to match rem-based UI typography at the current root font size.

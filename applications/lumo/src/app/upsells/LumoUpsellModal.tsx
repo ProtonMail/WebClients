@@ -59,7 +59,7 @@ const businessFeatures: PlanFeature[] = [
     },
 ];
 
-export interface UpsellPlanPricing {
+interface UpsellPlanPricing {
     planName: string;
     currency: Currency;
     monthlyAmount?: number;

@@ -11,7 +11,6 @@ import { getFileExtension } from './parseArtifacts';
 import type { ArtifactType, ParsedArtifact } from './parseArtifacts';
 
 export type { ArtifactType } from './parseArtifacts';
-export { ARTIFACT_TYPES, isArtifactType } from './parseArtifacts';
 
 interface ArtifactTypeConfigEntry {
     icon: typeof IcCode;

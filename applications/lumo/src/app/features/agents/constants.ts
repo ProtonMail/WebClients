@@ -1,7 +1,7 @@
 /** Max number of personal custom agents a free user can create. Plus users have no limit. */
 export const FREE_CUSTOM_AGENT_LIMIT = 1;
 
-export { PROJECT_ICONS as AGENT_ICONS, getIconFromProjectName as getIconFromAgentName } from '../projects/constants';
+export { getIconFromProjectName as getIconFromAgentName } from '../projects/constants';
 
 export const DEFAULT_AGENT_ICON = 'robot';
 

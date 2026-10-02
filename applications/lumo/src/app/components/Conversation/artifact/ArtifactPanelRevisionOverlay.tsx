@@ -59,5 +59,3 @@ export const ArtifactPanelRevisionOverlay = ({ artifactType }: ArtifactPanelRevi
         </div>
     );
 };
-
-export default ArtifactPanelRevisionOverlay;
