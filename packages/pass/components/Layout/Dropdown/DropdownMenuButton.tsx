@@ -19,10 +19,11 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
-import type { IconComponent } from '@proton/icons/component';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import clsx from '@proton/utils/clsx';
+
+import { IconSlot, type IconSlotValue } from '../Icon/IconSlot';
 
 type QuickActionChildProp = { onClick: (evt: MouseEvent) => void };
 type QuickActionChild = ReactElement<QuickActionChildProp>;
@@ -72,16 +73,10 @@ const QuickActionsDropdown: FC<Props> = ({ children, originalPlacement }) => {
 type DropdownMenuButtonLabelProps = {
     label: ReactNode;
     labelClassname?: string;
-    icon?: IconComponent | ReactElement;
+    icon?: IconSlotValue;
     extra?: ReactNode;
     ellipsis?: boolean;
     danger?: boolean;
-};
-
-const DropdownMenuButtonIcon = ({ icon, danger }: { icon?: IconComponent | ReactElement; danger?: boolean }) => {
-    if (typeof icon !== 'function') return <>{icon}</>;
-    const Icon = icon;
-    return <Icon className={clsx(danger ? 'color-danger' : 'color-weak', 'shrink-0')} />;
 };
 
 export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
@@ -97,8 +92,7 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
     return (
         <div className="flex justify-space-between items-center flex-nowrap gap-2 max-h-custom">
             <div className={clsx(labelClassname, 'flex items-center flex-nowrap gap-2')}>
-                {/* A function is the icon component; an element is already rendered. */}
-                <DropdownMenuButtonIcon danger={danger} icon={icon} />
+                <IconSlot icon={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'shrink-0')} />
                 <div className={clsx('flex flex-nowrap flex-auto gap-1', danger && 'color-danger')}>
                     {strLabel ? <span className={clsx(ellipsis && 'text-ellipsis')}>{label}</span> : label}
                 </div>

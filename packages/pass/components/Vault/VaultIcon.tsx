@@ -13,14 +13,14 @@ import { VAULT_COLOR_MAP, VAULT_ICON_MAP } from './constants';
 
 import './VaultIcon.scss';
 
-export type VaultIconName = VaultIconEnum | IconComponent;
+export type VaultIconValue = VaultIconEnum | IconComponent;
 
 type Props = {
     background?: boolean;
     className?: string;
     color?: VaultColorEnum;
     highlighted?: boolean;
-    icon?: VaultIconName;
+    icon?: VaultIconValue;
     size?: IconSize;
 };
 
