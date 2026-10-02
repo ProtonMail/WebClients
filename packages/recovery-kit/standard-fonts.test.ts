@@ -1,6 +1,6 @@
 /**
  * This is a test to ensure the bigint polyfill patch is applied. It is intended to catch a scenario where the
- * ed25519 library may get updated and we won't get notified through the yarn install.
+ * ed25519 library may get updated and we won't get notified through the pnpm install.
  */
 describe('pdf-lib', () => {
     it('should use the minified build of @pdf-lib/standard-fonts', () => {

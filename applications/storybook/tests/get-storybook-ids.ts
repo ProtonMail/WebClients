@@ -28,7 +28,7 @@ export function getStorybooIds() {
     const storybookStaticFolder = resolve(__dirname, '../storybook-static');
 
     if (!existsSync(storybookStaticFolder)) {
-        throw new Error('storybook-static folder does not exist, try to run "yarn build" first.');
+        throw new Error('storybook-static folder does not exist, try to run "pnpm run build" first.');
     }
 
     const content = readFileSync(resolve(storybookStaticFolder, './index.json'), 'utf-8');
