@@ -1,11 +1,3 @@
-/**
- * Be very careful when editing these predicates :
- * They are used accross the worker code-base in order
- * to safe-guard certain actions or block them. Some
- * of them are also used in the UI code to trigger
- * certain effects.
- */
-import type { PassConfig } from '../../hooks/usePassConfig';
 import { AppStatus } from '../../types';
 import { eq, oneOf, or } from '../../utils/fp/predicates';
 
@@ -23,11 +15,8 @@ export const clientMissingScope = eq(AppStatus.MISSING_SCOPE);
 export const clientBusy = oneOf(AppStatus.IDLE, AppStatus.AUTHORIZED, AppStatus.AUTHORIZING, AppStatus.BOOTING);
 export const clientBooted = oneOf(AppStatus.READY, AppStatus.OFFLINE);
 
-export const clientCanBoot = or(clientAuthorized, clientUnauthorized, clientErrored);
 export const clientHasSession = or(clientBooted, clientSessionLocked, clientPasswordLocked, clientDesktopLocked);
 export const clientNeedsSession = or(clientErrored, clientUnauthorized, clientMissingScope);
 export const clientStatusResolved = or(clientHasSession, clientNeedsSession);
 export const clientDisabled = or(clientUnauthorized, clientErrored, clientStale);
 export const clientLocked = or(clientSessionLocked, clientPasswordLocked, clientDesktopLocked, clientMissingScope);
-
-export const isTaggedBuild = (config: PassConfig) => ENV === 'production' && config.BRANCH.startsWith('proton-pass@');

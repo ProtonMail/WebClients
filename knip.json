@@ -16,7 +16,12 @@
         "packages/shared/lib/api/drive/link.ts": ["exports"],
         "packages/shared/lib/calendar/sharing/shareUrl/shareUrl.ts": ["exports"],
         "packages/shared/lib/mnemonic/helpers.ts": ["types"],
-        "applications/admin/src/app/constants/appConstants.ts": ["enumMembers"]
+        "applications/admin/src/app/constants/appConstants.ts": ["enumMembers"],
+        "packages/pass/lib/sync/global.ts": ["duplicates"],
+        "packages/pass/lib/import/providers/1password/1pux.types.ts": ["enumMembers"],
+        "packages/pass/lib/import/providers/enpass/enpass.types.ts": ["enumMembers"],
+        "packages/pass/types/api/events.ts": ["enumMembers"],
+        "packages/pass/types/data/invites.ts": ["enumMembers"]
     },
     "ignore": ["**/*.d.ts", "**/vendor/**"],
     "ignoreWorkspaces": ["packages/wasm/andromeda"],
@@ -406,9 +411,20 @@
             "ignoreDependencies": ["@proton/collect-metrics"]
         },
         "packages/pass": {
-            "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignore": ["**"]
+            "entry": [
+                "lib/globals/webextension-polyfill.stub.ts",
+                "utils/logger/loglevel.mock.ts",
+                "store/prettier.config.mjs",
+                "types/prettier.config.mjs"
+            ],
+            "project": ["**/*.{js,mjs,ts,tsx}"],
+            "ignore": [
+                "types/api/pass.ts",
+                "types/protobuf/*-v1.ts",
+                "types/protobuf/google/**",
+                "lib/extension/rules/v*/types.ts"
+            ],
+            "ignoreDependencies": ["@protobuf-ts/plugin", "core-js", "json-schema-to-typescript", "tsx"]
         },
         "packages/payments": {
             "entry": [],

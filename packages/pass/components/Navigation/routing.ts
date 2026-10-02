@@ -14,7 +14,6 @@ export type ItemNewRouteParams = { type: ItemType };
 export type ItemRouteOptions = { scope?: ItemScope };
 export type AuthRouteState = { error?: string; userInitiatedLock?: boolean };
 export type ItemScope = Unpack<typeof ItemScopes>;
-export type PremiumRoute = Unpack<typeof PremiumRoutes>;
 
 export enum PublicRoutes {
     SecureLink = '/secure-link/:token',
@@ -82,8 +81,7 @@ export const getNewItemRoute = (type?: ItemType, scope: ItemScope = 'share'): st
 };
 
 export const getTrashRoute = () => getLocalPath('trash');
-export const getOnboardingRoute = () => getLocalPath('onboarding');
-export const getSecureLinksRoute = () => getLocalPath('secure-links');
+
 export const getMonitorRoute = () => getLocalPath('monitor');
 
 export const getInitialFilters = (): ItemFilters => ({

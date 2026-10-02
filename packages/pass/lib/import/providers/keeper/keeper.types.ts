@@ -23,11 +23,11 @@ export type KeeperPhoneField = {
     region?: string;
 };
 
-export type KeeperFolder = {
+type KeeperFolder = {
     folder?: string;
 };
 
-export type KeeperItemType =
+type KeeperItemType =
     | 'login'
     | 'encryptedNotes'
     | 'bankCard'

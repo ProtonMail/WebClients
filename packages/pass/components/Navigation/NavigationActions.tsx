@@ -9,7 +9,7 @@ import type { ItemFilters, MaybeNull } from '../../types';
 import type { ItemScope } from './routing';
 import { getItemRoute, getLocalPath, setSearchFilters } from './routing';
 
-export type NavigateOptions<LocationState = any> = {
+type NavigateOptions<LocationState = any> = {
     filters?: Partial<ItemFilters>;
     hash?: string;
     mode?: 'push' | 'replace';

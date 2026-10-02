@@ -13,7 +13,7 @@ export const channelRequest = withKey(`worker::channel`);
 export const itemPinRequest = withItemKey(`item::pin`);
 export const itemUnpinRequest = withItemKey(`item::unpin`);
 export const itemRevisionsRequest = withItemKey(`item::revisions`);
-export const itemsImportRequest = () => `items::import`;
+
 export const itemsBulkMoveRequest = () => `items::bulk::move`;
 export const itemsBulkTrashRequest = () => `items::bulk::trash`;
 export const itemsBulkDeleteRequest = () => `items::bulk::delete`;
@@ -40,12 +40,11 @@ export const shareLeaveRequest = withKey(`share::leave`);
 
 export const inviteCreateRequest = withKey(`invite::create`);
 export const inviteResendRequest = withKey(`invite::resend`);
-export const inviteAcceptRequest = withKey(`invite::accept`);
-export const inviteRejectRequest = withKey(`invite::reject`);
+
 export const inviteRemoveRequest = withKey(`invite::remove`);
 export const inviteRecommendationsRequest = withKey(`invite::recommendations`);
 export const inviteRecommendationsSuggestedRequest = withKey(`invite::recommendations::suggested`);
-export const inviteRecommendationsOrganizationRequest = withKey(`invite::recommendations::organization`);
+
 export const inviteAddressesValidateRequest = withKey(`invite::addresses::validate`);
 export const newUserInvitePromoteRequest = withKey(`new-user-invite::promote`);
 export const newUserInviteRemoveRequest = withKey(`new-user-invite::remove`);

@@ -97,14 +97,14 @@ export type OnePassSection = {
     fields: OnePassField[];
 };
 
-export type OnePassItemDetails = {
+type OnePassItemDetails = {
     notesPlain: Maybe<string>;
     sections: Maybe<OnePassSection[]>;
 };
 
-export type OnePassPassword = OnePassItemDetails & { password: string };
-export type OnePassNote = OnePassItemDetails;
-export type OnePassLogin = OnePassItemDetails & {
+type OnePassPassword = OnePassItemDetails & { password: string };
+type OnePassNote = OnePassItemDetails;
+type OnePassLogin = OnePassItemDetails & {
     loginFields: {
         value: string;
         name: Maybe<string>;
@@ -114,11 +114,11 @@ export type OnePassLogin = OnePassItemDetails & {
         sections: OnePassSection[];
     }[];
 };
-export type OnePassCreditCard = OnePassItemDetails;
-export type OnePassIdentity = OnePassItemDetails;
-export type OnePassSshKey = OnePassItemDetails;
-export type OnePassWifi = OnePassItemDetails;
-export type OnePassDocumentItem = OnePassItemDetails & { documentAttributes: Maybe<OnePassFileAttributes> };
+type OnePassCreditCard = OnePassItemDetails;
+type OnePassIdentity = OnePassItemDetails;
+type OnePassSshKey = OnePassItemDetails;
+type OnePassWifi = OnePassItemDetails;
+type OnePassDocumentItem = OnePassItemDetails & { documentAttributes: Maybe<OnePassFileAttributes> };
 
 export type OnePassBaseItem = {
     uuid: string;

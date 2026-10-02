@@ -26,9 +26,9 @@ import type { FeatureFlagAndVariantState, rootReducer } from './reducers';
 import type { ProxiedSettings } from './reducers/settings';
 
 export type State = ReturnType<typeof rootReducer>;
-export type Telemetry = { start: () => void; stop: () => void; push: (event: TelemetryEvent) => Promise<boolean> };
+type Telemetry = { start: () => void; stop: () => void; push: (event: TelemetryEvent) => Promise<boolean> };
 export type PassSaga = (options: RootSagaOptions) => Generator;
-export type PassBootResult =
+type PassBootResult =
     | { ok: true; fromCache: boolean; offline: boolean; version?: string; reauth?: ReauthActionPayload }
     | { ok: false; clearCache: boolean; offline: boolean };
 

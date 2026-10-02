@@ -32,13 +32,13 @@ import {
 } from '../actions';
 import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '../actions/creators/sso';
 
-export type AddressState = { [addressId: string]: Address };
+type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
 export type FeatureFlagVariantValue = Omit<FeatureFlagVariant, 'enabled'>;
 export type FeatureFlagVariants = Partial<Record<PassFeature, FeatureFlagVariantValue>>;
 export type FeatureFlagAndVariantState = { features: FeatureFlagState; variants: FeatureFlagVariants };
 
-export type UserSettingsState = {
+type UserSettingsState = {
     Email: { Status: SETTINGS_STATUS };
     HighSecurity: {
         Eligible: BitField;
@@ -51,7 +51,7 @@ export type UserSettingsState = {
     Telemetry: BitField;
 };
 
-export type UserData = {
+type UserData = {
     defaultShareId: MaybeNull<string>;
     aliasSyncEnabled: boolean;
     /**
@@ -64,7 +64,7 @@ export type UserData = {
     pendingAliasToSync: number;
 };
 
-export type UserAccessState = {
+type UserAccessState = {
     plan: MaybeNull<PassPlanResponse>;
     pendingInvites: number;
     waitingNewUserInvites: number;

@@ -7,7 +7,7 @@ import type { Maybe } from '../../../types';
 
 type Props = { index: number; total: number };
 
-export const getTimelineImage = (index: number, total: number): Maybe<string> => {
+const getTimelineImage = (index: number, total: number): Maybe<string> => {
     if (total <= 1) return;
     if (index === 0) return timelineTop;
     if (index < total - 1) return timelineMiddle;

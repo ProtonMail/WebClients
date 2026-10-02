@@ -5,7 +5,7 @@ import type { IndexedByShareIdAndItemId, Item, ItemRevision, OptimisticItem, Sel
 
 type AliasMailbox = { id: number; email: string };
 
-export type AliasCreateDTO = {
+type AliasCreateDTO = {
     mailboxes: AliasMailbox[];
     prefix: CustomAliasCreateRequest['Prefix'];
     signedSuffix: CustomAliasCreateRequest['SignedSuffix'];
@@ -21,7 +21,7 @@ export type LoginWithAliasCreationDTO =
  * - alias specifics : extra parameters required for alias creation
  * - login specifics : support login with alias creation intent
  */
-export type ItemCreateIntentDTO = {
+type ItemCreateIntentDTO = {
     alias: AliasCreateDTO;
     login: LoginWithAliasCreationDTO;
     note: never;
@@ -32,7 +32,7 @@ export type ItemCreateIntentDTO = {
     custom: never;
 };
 
-export type ItemEditIntentDTO = {
+type ItemEditIntentDTO = {
     alias: MaybeNull<{
         aliasOwner: boolean;
         mailboxes: AliasMailbox[];
@@ -49,7 +49,7 @@ export type ItemEditIntentDTO = {
     custom: never;
 };
 
-export type ItemImportIntentDTO = {
+type ItemImportIntentDTO = {
     alias: { aliasEmail: string };
     login: never;
     note: never;

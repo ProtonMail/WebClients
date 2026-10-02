@@ -16,8 +16,8 @@ type SpotlightServiceOptions<StorageKey extends string> = {
     migrate?: (storageKey: StorageKey) => void;
 };
 
-export type SpotlightWhen = (previousAck: Maybe<SpotlightAcknowledgment>, state: SpotlightState) => boolean;
-export type SpotlightAck = (ack: SpotlightAcknowledgment) => SpotlightAcknowledgment;
+type SpotlightWhen = (previousAck: Maybe<SpotlightAcknowledgment>, state: SpotlightState) => boolean;
+type SpotlightAck = (ack: SpotlightAcknowledgment) => SpotlightAcknowledgment;
 export type SpotlightRule = {
     /** Onboarding message type */
     message: SpotlightMessage;
@@ -30,7 +30,7 @@ export type SpotlightRule = {
     onAcknowledge?: SpotlightAck;
 };
 
-export const INITIAL_SPOTLIGHT_STATE: SpotlightState = {
+const INITIAL_SPOTLIGHT_STATE: SpotlightState = {
     installedOn: getEpoch(),
     updatedOn: -1,
     acknowledged: [],
@@ -111,8 +111,6 @@ export const createSpotlightService = <StorageKey extends string>(options: Spotl
 
     return { acknowledge, checkMessage, init, reset, setState, getMessage, state };
 };
-
-export type SpotlightService = ReturnType<typeof createSpotlightService>;
 
 export type SpotlightProxy = {
     /** Returns `true` if a spotlight message should show */

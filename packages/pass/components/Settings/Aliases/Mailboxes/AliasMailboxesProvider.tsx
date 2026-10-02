@@ -22,8 +22,7 @@ import {
     type AliasMailboxesContextValue,
 } from './AliasMailboxesContext';
 
-export type { AliasMailboxAction } from './AliasMailboxesContext';
-export { useAliasMailboxes, useMailbox } from './AliasMailboxesContext';
+export { useAliasMailboxes } from './AliasMailboxesContext';
 
 export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
     const upsell = useUpselling();

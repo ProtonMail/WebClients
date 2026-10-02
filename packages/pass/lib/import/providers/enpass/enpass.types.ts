@@ -3,7 +3,7 @@ export type EnpassData = {
     items: EnpassItem<EnpassCategory>[];
 };
 
-export type EnpassFolder = {
+type EnpassFolder = {
     icon: string;
     parent_uuid: string;
     title: string;
@@ -11,7 +11,7 @@ export type EnpassFolder = {
     uuid: string;
 };
 
-export type EnpassAttachment = {
+type EnpassAttachment = {
     data: string;
     kind: string;
     name: string;
@@ -63,13 +63,13 @@ export type EnpassField = {
     value_updated_at: number;
 };
 
-export type EnpassFieldHistory = {
+type EnpassFieldHistory = {
     encrypted: boolean;
     updated_at: number;
     value: string;
 };
 
-export type EnpassItemIcon = {
+type EnpassItemIcon = {
     fav: string;
     image: {
         file: string;

@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren, createContext, useContext } from 'react';
+import { type FC, type PropsWithChildren, createContext } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useActivityProbe } from '../../hooks/useActivityProbe';
@@ -11,7 +11,6 @@ import type { ActivityProbe } from '../../utils/time/probe';
 import { useOnline } from './ConnectivityProvider';
 
 const LockProbeContext = createContext<MaybeNull<ActivityProbe>>(null);
-export const useLockProbe = () => useContext(LockProbeContext);
 
 /** Extend the lock time every time we reach the TTL half-time */
 const ttlToProbeTimeout = (ttl: number) => epochToMs(ttl / 2);

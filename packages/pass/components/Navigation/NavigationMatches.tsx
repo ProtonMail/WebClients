@@ -31,5 +31,5 @@ export const NavigationMatches: FC<PropsWithChildren> = ({ children }) => {
     );
 };
 
-export const useNavigationMatches = createUseContext(NavigationMatchesContext);
+const useNavigationMatches = createUseContext(NavigationMatchesContext);
 export const useItemScope = () => useNavigationMatches().itemScope;

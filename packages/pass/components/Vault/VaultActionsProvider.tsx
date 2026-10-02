@@ -37,7 +37,7 @@ type VaultActionState =
     | { view: 'create' | 'trash-empty' | 'organize' }
     | { view: 'edit' | 'delete' | 'move' | 'leave'; vault: VaultShareItem };
 
-export const VaultActionsContext = createContext<MaybeNull<VaultActionsContextValue>>(null);
+const VaultActionsContext = createContext<MaybeNull<VaultActionsContextValue>>(null);
 export const useVaultActions = createUseContext(VaultActionsContext);
 
 export const handleSelect = (navigate: ReturnType<typeof useNavigate>, selected: string) => {

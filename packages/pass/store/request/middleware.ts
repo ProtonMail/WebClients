@@ -15,7 +15,7 @@ export interface RequestTracker {
     push: (requestID: string) => Awaiter<RequestAsyncResult>;
 }
 
-export type RequestAsyncAccept = (action: WithRequest<Action, RequestType, unknown>) => boolean;
+type RequestAsyncAccept = (action: WithRequest<Action, RequestType, unknown>) => boolean;
 
 type RequestMiddlewareOptions = {
     acceptAsync?: RequestAsyncAccept;

@@ -13,10 +13,9 @@ import { type ObjectHandler, objectHandler } from '../../utils/object/handler';
 import { uniqueId } from '../../utils/string/unique-id';
 import { deobfuscateItem, obfuscateItem } from './item.obfuscation';
 
-export const itemMetaFactory = (): ObjectHandler<Metadata> =>
-    objectHandler({ name: '', note: '', itemUuid: uniqueId() });
+const itemMetaFactory = (): ObjectHandler<Metadata> => objectHandler({ name: '', note: '', itemUuid: uniqueId() });
 
-export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<DeobfuscatedItemContent<T>>>(type: T): R => {
+const itemContentBuilder = <T extends ItemType, R = ObjectHandler<DeobfuscatedItemContent<T>>>(type: T): R => {
     switch (type) {
         case 'alias': {
             return objectHandler<DeobfuscatedItemContent<'alias'>>({}) as R;

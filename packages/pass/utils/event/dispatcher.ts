@@ -1,7 +1,7 @@
 import identity from '@proton/utils/identity';
 import noop from '@proton/utils/noop';
 
-import type { AnyStorage, MaybeNull } from '../../types';
+import type { AnyStorage } from '../../types';
 import { asyncLock, asyncQueue } from '../fp/promises';
 import { logger } from '../logger';
 import type { AbstractAlarm } from '../time/alarm';
@@ -9,8 +9,8 @@ import { UNIX_MINUTE } from '../time/constants';
 import { getEpoch } from '../time/epoch';
 
 export type EventBundle<Event> = { sendTime: number; events: Event[]; retryCount: number };
-export type EventDispatcherState<Event> = { buffer: Event[]; job: MaybeNull<Promise<void>> };
-export type EventDispatchResult = { ok: true } | { ok: false; retry: boolean };
+
+type EventDispatchResult = { ok: true } | { ok: false; retry: boolean };
 
 export type EventDispatcherOptions<Event, StorageKey extends string> = {
     id: string;
@@ -111,7 +111,7 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
 
     const stop = () => {
         log(`Stopping dispatcher...`);
-        alarm.reset();
+        void alarm.reset();
         void resetBundle();
     };
 

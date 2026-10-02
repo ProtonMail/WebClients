@@ -11,7 +11,7 @@ import type { State } from '../../store/types';
 import type { UniqueItem } from '../../types';
 import { useAsyncRequestDispatch } from '../useDispatchAsyncRequest';
 
-export const useFileResolver = () => {
+const useFileResolver = () => {
     const store = useStore<State>();
     const dispatch = useAsyncRequestDispatch();
 

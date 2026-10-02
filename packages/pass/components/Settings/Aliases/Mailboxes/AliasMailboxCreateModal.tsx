@@ -17,7 +17,7 @@ import { Panel } from '../../../Layout/Panel/Panel';
 import { PanelHeader } from '../../../Layout/Panel/PanelHeader';
 import { useAliasMailboxes } from './AliasMailboxesContext';
 
-export const FORM_ID = 'custom-address-add';
+const FORM_ID = 'custom-address-add';
 
 export const AliasMailboxCreateModal: FC = () => {
     const { setAction, onMailboxCreated } = useAliasMailboxes();

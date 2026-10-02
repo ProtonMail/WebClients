@@ -91,5 +91,3 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
 
     return state;
 };
-
-export default shares;

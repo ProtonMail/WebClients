@@ -13,7 +13,7 @@ const DEFAULT_ACCESS: AccessItem = {
     newUserInvites: [],
 };
 
-export const selectAccessState = (state: State) => state.access;
+const selectAccessState = (state: State) => state.access;
 const getAccess = (access: AccessState, key: string) => access[key] || DEFAULT_ACCESS;
 
 export const selectAccess =

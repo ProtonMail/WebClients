@@ -22,7 +22,7 @@ import { Panel } from '../../Layout/Panel/Panel';
 import { PanelHeader } from '../../Layout/Panel/PanelHeader';
 import { useMonitor } from '../MonitorContext';
 
-export const FORM_ID = 'custom-address-add';
+const FORM_ID = 'custom-address-add';
 type Props = { onClose: () => void };
 type FormValues = { email: string };
 

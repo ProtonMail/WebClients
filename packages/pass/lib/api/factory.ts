@@ -60,7 +60,7 @@ export type ApiFactoryOptions = {
  * Supports upgrading from token-based to cookie-based authentication.
  * This is crucial for scenarios where token-based auth is required
  * before transitioning to cookies, enabling seamless auth upgrades. */
-export const getDynamicAuth = (): Maybe<ApiAuth> => {
+const getDynamicAuth = (): Maybe<ApiAuth> => {
     const { cookies, UID, AccessToken, RefreshToken, RefreshTime } = authStore.getSession();
     if (!UID) return undefined;
 

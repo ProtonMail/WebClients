@@ -3,7 +3,7 @@ import type { FormType } from '@protontech/autofill/types';
 import type { URLComponents } from '../../lib/urls/types';
 import type { MaybeNull, RequiredNonNull } from '../utils';
 import type { WithAutosavePrompt } from './autosave';
-import type { FrameId, TabId } from './runtime';
+import type { FrameId } from './runtime';
 
 export enum FormEntryStatus {
     STAGING = 0,
@@ -28,7 +28,7 @@ export type FormSubmission = {
 };
 
 export type FormSubmitPayload = FormSubmission & { reason: string };
-export type FormIdentifier = `${TabId}:${string}`;
+
 export type FormCredentials = { userIdentifier: string; password: string };
 export type FormEntryBase = FormSubmission & RequiredNonNull<URLComponents, 'domain' | 'protocol'>;
 

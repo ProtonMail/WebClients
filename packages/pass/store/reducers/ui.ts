@@ -6,7 +6,7 @@ import { setUIStateValue, unsetUIStateValue } from '../actions/creators/ui';
 /** Keep to JSON-serializable primitives : values cross the popup/worker
  * port boundary. Deliberately excluded from the persisted cache */
 export type UIStateValue = boolean | number | string;
-export type UIState = { values: Record<string, UIStateValue> };
+type UIState = { values: Record<string, UIStateValue> };
 
 const getInitialState = (): UIState => ({ values: {} });
 

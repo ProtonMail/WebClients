@@ -28,7 +28,6 @@ export const FOLDER_MAX_DEPTH = 5;
  * production API configuration */
 export const API_CONCURRENCY_TRESHOLD = 20;
 
-export const PASS_LEARN_MORE_URL = 'https://proton.me/pass';
 export const PASS_VIDEO_URL = 'https://proton.me/download/pass/videos/proton-pass-tutorial.webm';
 export const PASS_X_URL = 'https://x.com/Proton_Pass';
 export const PASS_REDDIT_URL = 'https://www.reddit.com/r/ProtonPass/';
@@ -159,11 +158,8 @@ export const FILE_PUBLIC_SHARE = 'secure-link';
 export const FILE_PENDING_SHARE = 'pending-share';
 export const FILE_ENCRYPTION_VERSION = 2;
 
-export const PASS_PROTON_ANNIVERSARY_END_DATE = new Date('2025-05-28T12:00:00+01:00').getTime();
-
 export const PASS_PLUS_LIFETIME_PRICE = 19900; // €199
 export const PASS_PLUS_PRICE = 299; // €2.99
-export const PASS_FAMILY_PRICE = 499; // €4.99
 export const PROTON_UNLIMITED_PRICE = 999; // €9.99
 
 /** Pass client platforms. Kept here rather than next to `clients` so that

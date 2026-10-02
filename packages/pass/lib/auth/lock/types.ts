@@ -40,7 +40,7 @@ export type LockCreateDTO = { ttl: number; current?: UnlockDTO } & (
     | { mode: LockMode.NONE }
 );
 
-export type LockOptions = { broadcast?: boolean; soft?: boolean };
+type LockOptions = { broadcast?: boolean; soft?: boolean };
 
 export interface LockAdapter<TCreate = string, TUnlock = TCreate> {
     type: LockMode;

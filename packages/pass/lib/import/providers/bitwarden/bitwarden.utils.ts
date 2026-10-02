@@ -34,7 +34,7 @@ const BITWARDEN_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
 
 const BITWARDEN_CUSTOM_FIELD_TYPES = Object.values(BitwardenCustomFieldType);
 
-export const isBitwardenLinkedAndroidAppUrl = (url: string) => {
+const isBitwardenLinkedAndroidAppUrl = (url: string) => {
     try {
         return url.startsWith(BITWARDEN_ANDROID_APP_FLAG);
     } catch (e) {

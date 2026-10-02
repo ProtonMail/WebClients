@@ -84,12 +84,5 @@ export type DashlanePersonalInfoItem = {
 export type DashlaneItem =
     DashlaneLoginItem | DashlaneNoteItem | DashlaneIdItem | DashlanePaymentItem | DashlanePersonalInfoItem;
 
-export type ValidDashlaneItemKeys =
-    | keyof DashlaneLoginItem
-    | keyof DashlaneNoteItem
-    | keyof DashlanePaymentItem
-    | keyof DashlaneIdItem
-    | keyof DashlanePersonalInfoItem;
-
 export type DashlaneItemParser<T extends DashlaneItem = DashlaneItem> = (item: T) => ItemImportIntent;
 export type DashlaneItemAsyncParser<T extends DashlaneItem = DashlaneItem> = (item: T) => Promise<ItemImportIntent>;

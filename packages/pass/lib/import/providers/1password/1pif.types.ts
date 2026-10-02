@@ -19,13 +19,13 @@ export enum OnePassLegacySectionFieldKey {
     URL = 'URL',
 }
 
-export type OnePassLegacyField = {
+type OnePassLegacyField = {
     value: string;
     type: OnePassFieldType;
     designation?: OnePassLoginDesignation;
 };
 
-export type OnePassLegacySectionFieldValue<K extends OnePassLegacySectionFieldKey = OnePassLegacySectionFieldKey> = {
+type OnePassLegacySectionFieldValue<K extends OnePassLegacySectionFieldKey = OnePassLegacySectionFieldKey> = {
     [OnePassLegacySectionFieldKey.ADDRESS]?: Record<string, string>;
     [OnePassLegacySectionFieldKey.CONCEALED]?: string;
     [OnePassLegacySectionFieldKey.DATE]?: number;
@@ -75,7 +75,5 @@ export type OnePassLegacyItem = {
         pin?: string;
     };
 };
-
-export type OnePassLegacyFieldValueFactory = { [key: string]: (...args: any) => string };
 
 export type OnePasswordWifiFields = { ssid?: string; password?: string; security: WifiSecurity };

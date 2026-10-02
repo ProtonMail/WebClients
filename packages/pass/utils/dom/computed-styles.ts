@@ -1,5 +1,4 @@
 import type { Identity } from '../../types';
-import { pipe } from '../fp/pipe';
 
 export interface StyleParser {
     <T extends (value: string, node: HTMLElement) => any = Identity<string>>(
@@ -23,8 +22,6 @@ export const createStyleParser = (node: HTMLElement): StyleParser => {
 
 export const pixelParser = (value: string) => parseInt(value.replace('px', ''), 10);
 export const pixelEncoder = (value: number): string => `${Math.round(value)}px`;
-export const pixelTransformer = (value: string, transformer: (value: number) => number): string =>
-    pipe(pixelParser, transformer, pixelEncoder)(value);
 
 const getOffsetFor = (dir: 'top' | 'left' | 'bottom' | 'right') => (parser: StyleParser) => {
     const padding = parser(`padding-${dir}`, pixelParser);
@@ -33,9 +30,9 @@ const getOffsetFor = (dir: 'top' | 'left' | 'bottom' | 'right') => (parser: Styl
 };
 
 export const getOffsetTop = getOffsetFor('top');
-export const getOffsetBottom = getOffsetFor('bottom');
+const getOffsetBottom = getOffsetFor('bottom');
 export const getOffsetLeft = getOffsetFor('left');
-export const getOffsetRight = getOffsetFor('right');
+const getOffsetRight = getOffsetFor('right');
 
 /* certain target nodes will be have their height/width set to 'auto',
  * in this case fallback to the element's `offsetHeight` */

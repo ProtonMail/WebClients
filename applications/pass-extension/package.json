@@ -66,6 +66,7 @@
         "@types/socketcluster-server": "^19.0.1",
         "@types/webextension-polyfill": "^0.12.6",
         "@typescript/native": "npm:typescript@^7.0.2",
+        "circular-dependency-plugin": "^5.2.2",
         "cross-env": "^10.1.0",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",

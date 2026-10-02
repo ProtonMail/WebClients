@@ -2,7 +2,7 @@ import type { PassBridge, PassBridgeAliasItem } from '../../../lib/bridge/types'
 import { isTrashed } from '../../../lib/items/item.predicates';
 import type { PassAliasesVault } from './interface';
 
-export const filterPassAliases = (aliases: PassBridgeAliasItem[]) => {
+const filterPassAliases = (aliases: PassBridgeAliasItem[]) => {
     const filterNonTrashedItems = ({ item }: PassBridgeAliasItem) => !isTrashed(item);
     const sortDesc = (a: PassBridgeAliasItem, b: PassBridgeAliasItem) => {
         const aTime = a.item.lastUseTime ?? a.item.revisionTime;

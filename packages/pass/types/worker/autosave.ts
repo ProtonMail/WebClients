@@ -27,9 +27,9 @@ export type AutosaveFormValues = AutosaveRequest & { step: 'select' | 'edit' };
 /** `submittedAt` is used to infer if the autosave payload
  * resulted from an actual form submission. */
 
-export type AutosaveCreatePayload = AutosaveCreate<AutosavePayloadData>;
+type AutosaveCreatePayload = AutosaveCreate<AutosavePayloadData>;
 export type AutosaveUpdatePayload = AutosaveUpdate<AutosaveCandidates>;
-export type AutosavePayloadData = FormCredentials & {
+type AutosavePayloadData = FormCredentials & {
     submittedAt: MaybeNull<number>;
     iframeUrl?: MaybeNull<string>;
     telemetry: AutofillPageTelemetryDimensions;

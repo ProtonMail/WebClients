@@ -107,7 +107,7 @@ const into1PasswordExtraField = (
     }
 };
 
-export const format1PasswordFieldValue = (field: OnePassFields, key: OnePassFieldKey): string => {
+const format1PasswordFieldValue = (field: OnePassFields, key: OnePassFieldKey): string => {
     const value = field[key];
     if (!value) return '';
 
@@ -121,7 +121,7 @@ export const format1PasswordFieldValue = (field: OnePassFields, key: OnePassFiel
     }
 };
 
-export const format1PasswordLegacyFieldValue = (field: OnePassLegacySectionField): string => {
+const format1PasswordLegacyFieldValue = (field: OnePassLegacySectionField): string => {
     const value = field.v;
     if (!value) return '';
 

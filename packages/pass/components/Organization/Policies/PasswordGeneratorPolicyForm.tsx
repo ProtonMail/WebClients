@@ -91,7 +91,7 @@ const memorablePasswordRules: PasswordGeneratorRule[] = [
     },
 ];
 
-export const getRangeError = (type: 'character' | 'word', value?: MaybeNull<number>) => {
+const getRangeError = (type: 'character' | 'word', value?: MaybeNull<number>) => {
     const minimumNumber = type === 'character' ? 4 : 1;
     const maximumNumber = type === 'character' ? 64 : 10;
 
@@ -110,7 +110,7 @@ export const getRangeError = (type: 'character' | 'word', value?: MaybeNull<numb
     return undefined;
 };
 
-export const validatePasswordGeneratorForm = (
+const validatePasswordGeneratorForm = (
     values: OrganizationUpdatePasswordPolicyInput
 ): FormikErrors<OrganizationUpdatePasswordPolicyInput> => {
     const errors: FormikErrors<OrganizationUpdatePasswordPolicyInput> = {};

@@ -12,7 +12,7 @@ type AutotypeDropdownLoginProps = {
     data: Item<'login'>;
 };
 
-export const AutotypeDropdownLoginCore: FC<AutotypeDropdownLoginProps> = ({ data }) => {
+const AutotypeDropdownLoginCore: FC<AutotypeDropdownLoginProps> = ({ data }) => {
     const { actions } = useAutotypeActions(data);
     const isPassEssentials = useSelector(selectUserPlan)?.InternalName === 'passpro2024';
 

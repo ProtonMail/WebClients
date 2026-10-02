@@ -1,5 +1,4 @@
-import type { FormSubmission, ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '../../types';
-import type { ParsedUrl } from '../urls/types';
+import type { ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '../../types';
 
 export type PrivateDomains = MaybeNull<Set<string>>;
 
@@ -20,17 +19,4 @@ export type SelectItemsOptions = {
     visible?: boolean;
 };
 
-export type SelectItemsByDomainOptions = {
-    isPrivate: boolean;
-    port: MaybeNull<string>;
-    protocol: MaybeNull<string>;
-    shareIds?: string[];
-    sortOn?: 'priority' | 'lastUseTime';
-    strict?: boolean;
-    visible?: boolean;
-};
-
-export type GetLoginCandidatesOptions = { url?: string; shareIds?: string[]; strict?: boolean };
-export type SelectAutofillCandidatesOptions = ParsedUrl & { shareIds?: string[]; strict?: boolean };
-export type SelectOTPAutofillCandidateOptions = ParsedUrl & { submission?: FormSubmission };
 export type SelectAutosaveCandidatesOptions = { domain: string; userIdentifier?: string; shareIds?: string[] };

@@ -19,7 +19,7 @@ export enum ItemUrlMatch {
     /** No match */
     NO_MATCH = -1,
 }
-export const BEST_MATCH = ItemUrlMatch.EXACT_MATCH;
+const BEST_MATCH = ItemUrlMatch.EXACT_MATCH;
 
 const sharePort = (item: ParsedUrl, match: ParsedUrl) => !match.port || item.port === match.port;
 

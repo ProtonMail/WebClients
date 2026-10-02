@@ -4,7 +4,7 @@ import { UNIX_WEEK } from '../../utils/time/constants';
 export type OfflinePromptSettings = { count: number; dismissedAt: number };
 
 export const OFFLINE_PROMPT_MAX_DISMISSALS = 2;
-export const OFFLINE_PROMPT_INTERVAL = UNIX_WEEK * 2;
+const OFFLINE_PROMPT_INTERVAL = UNIX_WEEK * 2;
 
 /** Offline mode cannot be enabled silently: it requires the user's password,
  * an online SRP check and an argon2 derivation. Users without offline components

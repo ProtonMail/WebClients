@@ -17,7 +17,7 @@ import { createPageIterator } from '../api/utils';
 import { isPassB2BPlan } from '../b2b/b2b.utils';
 import type { OrganizationReportDTO, PauseListEntryAddDTO, PauseListEntryUpdateDTO } from './types';
 
-export const getUserOrganization = async (): Promise<MaybeNull<Organization>> => {
+const getUserOrganization = async (): Promise<MaybeNull<Organization>> => {
     try {
         logger.info(`[User] Syncing organization info`);
         return (await api<{ Organization: Organization }>(coreGetOrganization())).Organization;

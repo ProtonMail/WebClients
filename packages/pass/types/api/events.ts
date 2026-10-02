@@ -15,17 +15,6 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
-export enum ChannelType {
-    USER = 'user',
-    SHARE = 'share',
-    SHARES = 'shares',
-}
-
-export enum ShareEventType {
-    SHARE_DISABLED = 'SHARE_DISABLED',
-    ITEMS_DELETED = 'ITEMS_DELETED',
-}
-
 export enum EventActions {
     DELETE = 0,
     CREATE = 1,
@@ -46,17 +35,13 @@ export type CoreEvent = {
     GroupMembers?: GroupMemberEvent[];
 };
 
-export type AddressEvent = {
+type AddressEvent = {
     ID: string;
     Action: EventActions;
     Address: Address;
 };
 
-export type ShareEventPayload =
-    | { type: ShareEventType.SHARE_DISABLED; shareId: string }
-    | { type: ShareEventType.ITEMS_DELETED; shareId: string; itemIds: string[] };
-
-export type GroupMemberEvent = {
+type GroupMemberEvent = {
     ID: string;
     Action: EventActions;
     GroupMember: GroupMember & GroupMembershipReturn;

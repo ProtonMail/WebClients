@@ -20,7 +20,7 @@ import { VaultForm, type VaultFormValues } from './Vault.form';
 
 type Props = Omit<ModalProps, 'onSubmit'> & { vault: VaultShareItem; onSuccess: () => void };
 
-export const FORM_ID = 'vault-edit';
+const FORM_ID = 'vault-edit';
 
 export const VaultEdit: FC<Props> = ({ vault, onSuccess, ...modalProps }) => {
     const editVault = useActionRequest(vaultEditIntent, { onSuccess });

@@ -29,10 +29,10 @@ export type RequiredNonNull<T, K extends keyof T = keyof T> = Omit<T, K> & {
 };
 export type RequiredProps<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 export type RecursivePartial<T> = { [P in keyof T]?: RecursivePartial<T[P]> };
-export type OptionalProp<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
+
 export type ExtractKeysOfType<T, U> = { [K in keyof T]: T[K] extends U ? K : never }[keyof T];
 export type DefinedPropertiesOnly<S extends {}> = Pick<S, DefinedKeys<S>>;
-export type DefinedKeys<S extends {}, K = keyof S> = Extract<
+type DefinedKeys<S extends {}, K = keyof S> = Extract<
     K,
     K extends keyof S ?
         S[K] extends undefined ?
@@ -50,5 +50,3 @@ export type TypeMapper<T, U extends [unknown, unknown][]> =
     : T extends (infer A)[] ? TypeMapper<A, U>[]
     : T extends Record<any, any> ? { [K in keyof T]: TypeMapper<T[K], U> }
     : T;
-
-export type ColorRGB = `${number} ${number} ${number}`;

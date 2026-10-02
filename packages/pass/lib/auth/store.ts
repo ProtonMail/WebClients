@@ -9,7 +9,6 @@ import { type AuthSession, SESSION_VERSION } from './session';
 import { decodeUserData, encodeUserData } from './store.utils';
 
 export type AuthStore = ReturnType<typeof createAuthStore>;
-export type AuthStoreOptions = { cookies: boolean };
 
 const PASS_ACCESS_TOKEN_KEY = 'pass:access_token';
 const PASS_COOKIE_AUTH_KEY = 'pass:auth_cookies';

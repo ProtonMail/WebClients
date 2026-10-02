@@ -1,9 +1,7 @@
 import type { Action, Reducer } from 'redux';
 
-import type { Share, ShareId, ShareType } from '../../types';
+import type { ShareId } from '../../types';
 import { matchSyncAction, sharesDedupeUpdate } from '../actions';
-
-export type ShareItem<T extends ShareType = ShareType> = Share<T>;
 
 export type ShareDedupeState = {
     dedupe: ShareId[];
