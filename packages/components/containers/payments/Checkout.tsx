@@ -19,6 +19,7 @@ export interface Props {
     description?: ReactNode;
     renewNotice: ReactNode;
     disableCurrencySelector: boolean | undefined;
+    showPaymentProtectionCopy?: boolean;
 }
 
 const Checkout = ({
@@ -31,6 +32,7 @@ const Checkout = ({
     description,
     renewNotice,
     disableCurrencySelector,
+    showPaymentProtectionCopy = true,
 }: Props) => {
     return (
         <div className="p-6">
@@ -59,13 +61,15 @@ const Checkout = ({
                         </span>
                     </div>
                 )}
-                <div className="flex flex-nowrap color-weak my-2">
-                    <span className="shrink-0 mr-2">
-                        <IcShield />
-                    </span>
-                    <span className="flex-1">{c('Info')
-                        .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
-                </div>
+                {showPaymentProtectionCopy && (
+                    <div className="flex flex-nowrap color-weak my-2">
+                        <span className="shrink-0 mr-2">
+                            <IcShield />
+                        </span>
+                        <span className="flex-1">{c('Info')
+                            .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
+                    </div>
+                )}
                 {hasGuarantee && (
                     <div className="flex flex-nowrap color-weak">
                         <span className="shrink-0 mr-2">
