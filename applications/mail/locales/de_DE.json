@@ -1756,6 +1756,9 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "New chat": [
+        "Neuer Chat"
       ]
     },
     "action": {
@@ -4466,6 +4469,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "Von: ${ sender } – ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "Von: ${ sender } – ${ subject }"
       ]
     },
     "Desktop notification title": {
