@@ -108,8 +108,7 @@
                 "src/app/services/workers/fileProcessingWorker.ts",
                 "src/app/workers/search/searchWorker.ts"
             ],
-            "project": ["src/**/*.{ts,tsx,scss,sass}"],
-            "ignore": ["**"]
+            "project": ["src/**/*.{ts,tsx,scss,sass}"]
         },
         "applications/mail": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/eo.tsx", "webpack.config.{js,ts}"],

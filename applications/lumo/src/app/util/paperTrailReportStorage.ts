@@ -21,10 +21,6 @@ export const getPaperTrailReport = (id: string): PaperTrailReport | undefined =>
     return readReports()[id];
 };
 
-export const hasPaperTrailReport = (id: string): boolean => {
-    return id in readReports();
-};
-
 export const deletePaperTrailReport = (id: string): void => {
     const reports = readReports();
     if (!(id in reports)) {

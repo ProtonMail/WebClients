@@ -367,7 +367,7 @@ function masterKeyResolutionFailure(
     };
 }
 
-export const initializeLumoCritical = (
+const initializeLumoCritical = (
     userKeys: UserKeysOnly,
     uid: string,
     envelopePromise?: Promise<MasterKeyEnvelope>
@@ -413,7 +413,7 @@ export const initializeLumoCritical = (
     };
 };
 
-export const loadUserKeys = (userKeysPromise?: Promise<DecryptedKey<PrivateKeyReference>[]>) => {
+const loadUserKeys = (userKeysPromise?: Promise<DecryptedKey<PrivateKeyReference>[]>) => {
     return async (dispatch: LumoDispatch): Promise<UserKeysOnly> => {
         const pendingUserKeys = userKeysPromise ?? dispatch(userKeysThunk());
         const allUserKeys = await pendingUserKeys;

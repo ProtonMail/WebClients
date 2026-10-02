@@ -137,7 +137,7 @@ export const canUseNativeSidebarLayout = (): boolean => {
  *
  * @returns The version string or null if not found
  */
-export const getNativeAppVersion = (): string | null => {
+const getNativeAppVersion = (): string | null => {
     const userAgent = navigator.userAgent;
 
     // Match ProtonLumo/ followed by version string until space or (
@@ -186,7 +186,7 @@ export const getNativeAppInfo = (): {
  * fail-closed when the native UA is malformed.
  *
  */
-export const isNativeVersionOlderThan = (version: string | null, targetVersion: string): boolean => {
+const isNativeVersionOlderThan = (version: string | null, targetVersion: string): boolean => {
     if (!version) return true;
 
     const currentMatch = version.match(/^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.-]+))?$/);

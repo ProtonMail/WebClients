@@ -76,7 +76,7 @@ export const createInitialLumoUserSettings = (): LumoUserSettings => {
     };
 };
 
-export const initialLumoUserSettings = createInitialLumoUserSettings();
+const initialLumoUserSettings = createInitialLumoUserSettings();
 
 const lumoUserSettingsReducer = createReducer(initialLumoUserSettings, (builder) => {
     builder

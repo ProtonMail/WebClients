@@ -149,7 +149,7 @@ export function resolveRequestContextFiles(
  * `prepareTurns` document deduplication, context filters, image limits, and
  * non-sendable attachment skipping.
  */
-export function collectRequestContextFiles(
+function collectRequestContextFiles(
     effectiveChain: Message[],
     contextFilters: ContextFilter[],
     allAttachments: Record<string, Attachment>,

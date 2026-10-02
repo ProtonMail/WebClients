@@ -66,8 +66,6 @@ import { waitForMapping } from './idmap';
 import { ClientError, RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isLimitReachedError } from './sagaErrors';
 import { waitForSpace } from './spaces';
 
-export { waitForConversation } from './conversationMessageCoordination';
-
 /*** helpers ***/
 
 function* saveDirtyConversation(serializedConversation: SerializedConversation): SagaIterator {
@@ -106,7 +104,7 @@ function* clearDirtyIfUnchanged(serializedConversation: SerializedConversation):
     }
 }
 
-export function* serializeConversationSaga(
+function* serializeConversationSaga(
     conversation: Conversation,
     spaceDek?: AesGcmCryptoKey
 ): SagaIterator<SerializedConversation> {

@@ -17,7 +17,6 @@ import { useDriveFileLoader } from './useDriveFileLoader';
 import { EMPTY_FILES, useFileInventory } from './useFileInventory';
 
 export type { FileItem } from './fileMentionHelpers';
-export { buildAlreadyMentionedNames, filterFiles } from './fileMentionHelpers';
 
 export interface FileMentionState {
     isActive: boolean;

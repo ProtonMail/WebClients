@@ -13,7 +13,7 @@ export type ExcelConversionResult = {
     rowCount: number;
 };
 
-export const getExcelSheetFileName = (fileName: string, sheetName: string) => {
+const getExcelSheetFileName = (fileName: string, sheetName: string) => {
     const sanitizedSheetName = sheetName.replace(/[\\/:*?"<>|]/g, '-').trim() || 'Sheet';
     const extensionIndex = fileName.lastIndexOf('.');
 

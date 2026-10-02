@@ -61,9 +61,8 @@ import { calculateMessageContentTokens } from './utils';
 import { VISUALIZATION_INSTRUCTIONS } from './visualizationPrompt';
 
 export type { ContextFilter } from './contextFilter';
-export { formatPersonalization } from './formatPersonalization';
 
-export const EMPTY_ASSISTANT_TURN: Turn = {
+const EMPTY_ASSISTANT_TURN: Turn = {
     role: Role.Assistant,
     content: '',
 };
@@ -500,10 +499,6 @@ function expandAttachmentsIntoTurns(
     return [...textTurns, mergedTurn];
 }
 
-export function appendFinalTurn(turns: Turn[], finalTurn = EMPTY_ASSISTANT_TURN): Turn[] {
-    return [...turns, finalTurn];
-}
-
 async function decryptContent(
     content: Base64,
     u2lParams: { requestKey: AesGcmCryptoKey; requestId: RequestId }
@@ -513,7 +508,7 @@ async function decryptContent(
     return decryptString(content, requestKey, ad);
 }
 
-export function postProcessTitle(title: string): string {
+function postProcessTitle(title: string): string {
     title = title.trim();
     const regex = /"([^"]+)"/;
     const match = title.match(regex);

@@ -1,6 +1,4 @@
-import type { FeatureFlags } from './nativeFeatureFlagsBridge';
-
-export const isNativeFeatureFlagsBridgeAvailable = (): boolean => {
+const isNativeFeatureFlagsBridgeAvailable = (): boolean => {
     return !!(window as any).nativeFeatureFlagsApiInstance && !!(window as any).nativeFeatureFlagsApi;
 };
 
@@ -11,5 +9,3 @@ export const setNativeIsNativeAccountEnabled = (enabled: boolean): void => {
     }
     (window as any).nativeFeatureFlagsApiInstance.setNativeAccountEnabled(enabled);
 };
-
-export type { FeatureFlags };

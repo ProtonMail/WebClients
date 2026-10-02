@@ -13,12 +13,6 @@ function blobToDataURL(blob: Blob): Promise<string | null> {
     });
 }
 
-export const getDomainPart = (url: string) => {
-    const domain = url.split('/')[2];
-    return domain.replace(/^www\./i, '').toLowerCase();
-    // return domain;
-};
-
 interface CacheEntry {
     promise?: Promise<string | null>;
     result?: string | null;

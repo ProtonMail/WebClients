@@ -2,22 +2,12 @@ import { type ArtifactType, isArtifactType } from './components/Conversation/art
 import { deriveDataEncryptionKey } from './crypto';
 import type { Base64, EncryptedData } from './crypto/encryptedData';
 import type { AesGcmCryptoKey } from './crypto/types';
-import type { AttachmentMap } from './redux/slices/core/attachments';
-import type { ConversationMap } from './redux/slices/core/conversations';
-import type { MessageMap } from './redux/slices/core/messages';
-import type { SpaceMap } from './redux/slices/core/spaces';
 import {
-    type EncryptedWireTurn,
     type GenerationResponseMessage,
     IMAGE_ASPECT_RATIOS,
     type ImageAspectRatio,
     Role,
-    type UnencryptedWireTurn,
     type WireTurn,
-    isEncryptedWireTurn,
-    isRole,
-    isUnencryptedWireTurn,
-    isWireTurn,
 } from './types-api';
 
 export type { ImageAspectRatio };
@@ -27,41 +17,25 @@ export { IMAGE_ASPECT_RATIOS };
 // Turn types are defined in types-api as WireTurn (matching backend schema)
 // We export them here as Turn for convenience throughout the codebase
 export type Turn = WireTurn;
-export type EncryptedTurn = EncryptedWireTurn;
-export type UnencryptedTurn = UnencryptedWireTurn;
-export const isTurn = isWireTurn;
-export const isEncryptedTurn = isEncryptedWireTurn;
-export const isUnencryptedTurn = isUnencryptedWireTurn;
 export { Role };
 
-export type { AdString, Base64, EncryptedData, OldEncryptedData } from './crypto/encryptedData';
+export type { AdString, Base64, EncryptedData } from './crypto/encryptedData';
 export { isOldEncryptedData } from './crypto/encryptedData';
 
 // *** Various string aliases ***
-export type Armor = string;
 
 // *** Ids ***
-export type Uuid = string;
+type Uuid = string;
 export type SpaceId = Uuid;
 export type ConversationId = Uuid;
 export type MessageId = Uuid;
 export type AttachmentId = Uuid;
 export type RequestId = Uuid;
 
-const UUID_RE = /^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$/;
-
 export const isRemoteId = (value: unknown): value is MessageId => typeof value === 'string' && value.length > 0;
-export const isUuid = (value: unknown): value is Uuid => typeof value === 'string' && UUID_RE.test(value);
-export const isMessageId = isUuid;
-export const isConversationId = isUuid;
-export const isSpaceId = isUuid;
 
 // *** Status ***
 export type Status = 'succeeded' | 'failed';
-
-export function isStatus(value: any): value is Status {
-    return value === 'succeeded' || value === 'failed';
-}
 
 export type Encrypted = {
     encrypted: EncryptedData; // JSON-encoded "priv" part of Message/Conversation/Space/Attachment, encrypted with spaceKey
@@ -94,7 +68,7 @@ export type ProjectSpace = {
     linkedDriveFolder?: LinkedDriveFolder;
 };
 
-export type SimpleSpace = {
+type SimpleSpace = {
     isProject?: false; // Not a project (false, undefined, or unspecified)
 };
 
@@ -110,54 +84,28 @@ export type SpaceKeyEnc = {
 
 export type NonDeleted = { deleted?: false | undefined };
 export type Deleted = { deleted: true };
-export type WithSpaceKey = SpaceKeyEnc;
-export type WithoutSpaceKey = { wrappedSpaceKey?: never };
-export type MaybeSpaceKey = (NonDeleted & WithSpaceKey) | (Deleted & WithoutSpaceKey);
-export type LocalFlagsForSpace = Omit<LocalFlags, 'deleted'>;
+type WithSpaceKey = SpaceKeyEnc;
+type WithoutSpaceKey = { wrappedSpaceKey?: never };
+type MaybeSpaceKey = (NonDeleted & WithSpaceKey) | (Deleted & WithoutSpaceKey);
+type LocalFlagsForSpace = Omit<LocalFlags, 'deleted'>;
 
 export type Space = SpacePub & SpacePriv & SpaceKeyClear;
 export type SerializedSpace = SpacePub & Partial<Encrypted> & MaybeSpaceKey & LocalFlagsForSpace;
-export type DeletedSpace = SerializedSpace & Deleted;
 export type SerializedSpaceMap = Record<SpaceId, SerializedSpace>;
-
-export function isSpacePub(value: any): value is SpacePub {
-    return (
-        typeof value === 'object' &&
-        value !== null &&
-        typeof value.id === 'string' &&
-        typeof value.createdAt === 'string'
-    );
-}
 
 export function isSpacePriv(value: any): value is SpacePriv {
     return isProjectSpace(value) || isSimpleSpace(value);
 }
 
-export function isProjectSpace(value: any): value is ProjectSpace {
+function isProjectSpace(value: any): value is ProjectSpace {
     return typeof value === 'object' && value !== null && value.isProject === true;
 }
 
-export function isSimpleSpace(value: any): value is SimpleSpace {
+function isSimpleSpace(value: any): value is SimpleSpace {
     return typeof value === 'object' && value !== null && (value.isProject === false || value.isProject === undefined);
 }
 
-export function isSpaceKeyClear(value: any): value is SpaceKeyClear {
-    return typeof value === 'object' && value !== null && typeof value.spaceKey === 'string';
-}
-
-export function isSpaceKeyEnc(value: any): value is SpaceKeyEnc {
-    return typeof value === 'object' && value !== null && typeof value.wrappedSpaceKey === 'string';
-}
-
-export function isSpace(value: any): value is Space {
-    return isSpacePub(value) && isSpacePriv(value) && isSpaceKeyClear(value);
-}
-
-export function isDeletedSpace(value: any): value is DeletedSpace {
-    return isSpacePub(value) && 'deleted' in value && value.deleted === true;
-}
-
-export function getSpacePriv(s: SpacePriv): SpacePriv {
+function getSpacePriv(s: SpacePriv): SpacePriv {
     if (s.isProject) {
         const { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } =
             s satisfies ProjectSpace;
@@ -173,7 +121,7 @@ export function getSpacePub(s: SpacePub): SpacePub {
     return { id, createdAt, updatedAt };
 }
 
-export function getSpaceKeyClear(s: SpaceKeyClear): SpaceKeyClear {
+function getSpaceKeyClear(s: SpaceKeyClear): SpaceKeyClear {
     const { spaceKey } = s;
     return { spaceKey };
 }
@@ -349,7 +297,7 @@ export type ThinkingTimelineEvent =
     | { type: 'reasoning'; timestamp: number; content: string }
     | { type: 'tool_call'; timestamp: number; toolCallIndex: number };
 
-export type ReasoningChunk = {
+type ReasoningChunk = {
     content: string;
     sequence: number; // The count from token_data message
 };
@@ -399,7 +347,7 @@ export type CompactionMeta = {
     createdAt: string; // ISO date
 };
 
-export type ArtifactActionKind = 'explain' | 'improve' | 'edit';
+type ArtifactActionKind = 'explain' | 'improve' | 'edit';
 
 /** UI metadata for artifact panel selection actions (Explain / Improve / Edit). */
 export type ArtifactActionMeta = {
@@ -412,7 +360,7 @@ export type ArtifactActionMeta = {
     userInstruction?: string;
 };
 
-export function isArtifactActionMeta(value: unknown): value is ArtifactActionMeta {
+function isArtifactActionMeta(value: unknown): value is ArtifactActionMeta {
     if (typeof value !== 'object' || value === null) {
         return false;
     }
@@ -433,13 +381,13 @@ export function isArtifactActionMeta(value: unknown): value is ArtifactActionMet
  * A message carrying this is a version-bearing, non-generating "manual edit" message: it
  * contributes a version to the artifact registry but never triggers an assistant reply.
  */
-export type ArtifactManualEditMeta = {
+type ArtifactManualEditMeta = {
     artifactId: string;
     artifactTitle: string;
     artifactType: ArtifactType;
 };
 
-export function isArtifactManualEditMeta(value: unknown): value is ArtifactManualEditMeta {
+function isArtifactManualEditMeta(value: unknown): value is ArtifactManualEditMeta {
     if (typeof value !== 'object' || value === null) {
         return false;
     }
@@ -542,7 +490,6 @@ export type MessageUsage = {
 
 export type Message = MessagePub & MessagePriv;
 export type SerializedMessage = MessagePub & Partial<Encrypted> & LocalFlags;
-export type DeletedMessage = Omit<SerializedMessage, 'encrypted'> & Deleted;
 export type SerializedMessageMap = Record<MessageId, SerializedMessage>;
 
 export function isTextBlock(block: any): block is TextBlock {
@@ -561,22 +508,8 @@ export function isToolResultBlock(block: any): block is ToolResultBlock {
     );
 }
 
-export function isContentBlock(value: any): value is ContentBlock {
+function isContentBlock(value: any): value is ContentBlock {
     return isTextBlock(value) || isToolCallBlock(value) || isToolResultBlock(value);
-}
-
-export function isMessagePub(value: any): value is MessagePub {
-    return (
-        typeof value === 'object' &&
-        value !== null &&
-        typeof value.id === 'string' &&
-        typeof value.createdAt === 'string' &&
-        isRole(value.role) &&
-        (value.parentId === undefined || typeof value.parentId === 'string') &&
-        typeof value.conversationId === 'string' &&
-        (value.placeholder === undefined || typeof value.placeholder === 'boolean') &&
-        (value.status === undefined || isStatus(value.status))
-    );
 }
 
 export function isMessagePriv(value: any): value is MessagePriv {
@@ -662,13 +595,6 @@ export function isCompactionMessage(message: MessagePriv): boolean {
 
 export function isManualArtifactEditMessage(message: MessagePriv): boolean {
     return message.artifactManualEdit !== undefined;
-}
-
-export function splitMessage(m: Message): { messagePriv: MessagePriv; messagePub: MessagePub } {
-    return {
-        messagePriv: getMessagePriv(m),
-        messagePub: getMessagePub(m),
-    };
 }
 
 export function cleanMessage(message: Message): Message {
@@ -810,7 +736,7 @@ export type LocalFlags = {
     deleted?: boolean; // indicates resource is soft-deleted locally (may or may not be persisted on server)
 };
 
-export type ConversationExtra = {
+type ConversationExtra = {
     status?: ConversationStatus;
     ghost?: boolean; // Mark conversations as ghost mode (transient)
 };
@@ -819,17 +745,6 @@ export type Conversation = ConversationPub & ConversationPriv & ConversationExtr
 export type SerializedConversation = ConversationPub & Encrypted & LocalFlags;
 export type DeletedConversation = Omit<SerializedConversation, 'encrypted'> & Deleted;
 export type SerializedConversationMap = Record<ConversationId, SerializedConversation>;
-
-export function isConversationPub(value: any): value is ConversationPub {
-    return (
-        typeof value === 'object' &&
-        value !== null &&
-        typeof value.id === 'string' &&
-        typeof value.spaceId === 'string' &&
-        typeof value.createdAt === 'string' &&
-        (value.starred === undefined || typeof value.starred === 'boolean')
-    );
-}
 
 export function isConversationPriv(value: any): value is ConversationPriv {
     return typeof value === 'object' && value !== null && typeof value.title === 'string';
@@ -840,7 +755,7 @@ export function getConversationPub(c: ConversationPub): ConversationPub {
     return { id, spaceId, createdAt, updatedAt, starred };
 }
 
-export function getConversationPriv(c: ConversationPriv): ConversationPriv {
+function getConversationPriv(c: ConversationPriv): ConversationPriv {
     const { title, agentId } = c;
     return { title, ...(agentId && { agentId }) };
 }
@@ -945,10 +860,9 @@ export type ShallowAttachment = Omit<Attachment, 'data' | 'markdown' | 'imagePre
 // This is how objects are serialized into both IndexedDB and the remote persistence API.
 // The Encrypted part reflects AttachmentPriv and thus contains "heavy" fields like the data blob
 export type SerializedAttachment = AttachmentPub & Partial<Encrypted> & LocalFlags;
-export type DeletedAttachment = Omit<SerializedAttachment, 'encrypted'> & Deleted;
 export type SerializedAttachmentMap = Record<AttachmentId, SerializedAttachment>;
 
-export function isAttachmentPub(value: any): value is AttachmentPub {
+function isAttachmentPub(value: any): value is AttachmentPub {
     // prettier-ignore
     return (
         typeof value === 'object' &&
@@ -1115,11 +1029,6 @@ export function cleanAttachment(attachment: Attachment): Attachment {
     };
 }
 
-// *** Resources (common to space/conv/message) ***
-
-export type Resource = Space | Conversation | Message | Attachment;
-export type SerializedResource = SerializedSpace | SerializedConversation | SerializedMessage | SerializedAttachment;
-
 // *** Actions ***
 
 export type EditConversation = {
@@ -1151,13 +1060,6 @@ export type FinishMessageAction = {
     requestedModel?: string;
 };
 
-export type PopulateInitialStateAction = {
-    spaces: SpaceMap;
-    conversations: ConversationMap;
-    messages: MessageMap;
-    attachments: AttachmentMap;
-};
-
 // *** Credentials ***
 
 /**
@@ -1170,7 +1072,7 @@ export type PopulateInitialStateAction = {
  * `redux/sagas/masterKey.ts`.
  */
 /** Decrypted AES master keys keyed by their server-side master key ID. */
-export type MasterKeysById = Record<string, Base64>;
+type MasterKeysById = Record<string, Base64>;
 
 export type MasterKeysBundle = {
     primaryMasterKeyId: string;
@@ -1195,10 +1097,6 @@ export type Credentials = {
     masterKeyState: MasterKeyState;
 };
 
-export function isCredentials(obj: any): obj is Credentials {
-    return obj && typeof obj === 'object' && typeof obj.masterKeyState?.status === 'string';
-}
-
 export type MasterKey = {
     id: string;
     isLatest: boolean;
@@ -1216,13 +1114,6 @@ export type SiblingInfo = {
     onNext: () => void;
 };
 
-export type LlamaCppPayload = {
-    prompt: string;
-    n_predict: number;
-    stop: string[];
-    stream: boolean;
-};
-
 export type ProtonApiResponse = {
     Code: number;
     Conversation?: unknown;
@@ -1232,22 +1123,6 @@ export type ProtonApiResponse = {
     Asset?: unknown;
     MasterKeys?: unknown;
 };
-
-export interface UploadedFile {
-    id: string;
-    name: string;
-    size: number;
-    type: string;
-    data: Blob;
-    uploadedAt: Date;
-    processed: boolean;
-    stats?: {
-        originalContent: string;
-        convertedContent: string;
-        originalSize: number;
-        convertedSize: number;
-    };
-}
 
 export enum LUMO_ELIGIBILITY {
     Eligible = 0,
@@ -1321,11 +1196,6 @@ export interface GenerationError {
     originalMessage: GenerationResponseMessage;
     actionParams?: ActionParams;
 }
-
-export type GenerationErrorAction = {
-    type: 'generation_error';
-    payload: GenerationError;
-};
 
 export enum ComposerMode {
     NEW_CONVERSATION = 'new-conversation',

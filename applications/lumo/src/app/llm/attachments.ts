@@ -236,7 +236,7 @@ export async function addContextToMessages(
 // Retrieves a full copy with all fields defined (especially `data`, `markdown`) from a partial
 // attachment that may have these fields undefined. The full copy is retrieved from IndexedDB,
 // which serves as the source of truth for attachments and contains all fields.
-export async function fillOneAttachmentData(
+async function fillOneAttachmentData(
     attachment: Attachment,
     user: User | undefined,
     spaceDek: AesGcmCryptoKey | undefined,

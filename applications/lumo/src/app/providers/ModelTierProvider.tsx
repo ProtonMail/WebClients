@@ -20,9 +20,8 @@ import {
 import { ModelTierContext, type ModelTierContextType } from './modelTierContext';
 
 export type { ModelTier, ResponseMode } from './modelTierConstants';
-export { DEFAULT_MODEL_TIER, DEFAULT_RESPONSE_MODE, getSelectedModelTier } from './modelTierConstants';
+export { getSelectedModelTier } from './modelTierConstants';
 export { useModelTier, useOptionalModelTier } from './modelTierContext';
-export type { ModelTierContextType } from './modelTierContext';
 
 interface ModelTierProviderProps {
     children: ReactNode;

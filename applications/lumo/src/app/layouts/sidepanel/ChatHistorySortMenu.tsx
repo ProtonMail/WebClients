@@ -49,7 +49,7 @@ const SortMenuItem = ({ label, selected, onSelect }: SortMenuItemProps) => {
     );
 };
 
-export interface ChatHistorySortMenuOption {
+interface ChatHistorySortMenuOption {
     value: ChatHistoryDateField;
     label: string;
 }

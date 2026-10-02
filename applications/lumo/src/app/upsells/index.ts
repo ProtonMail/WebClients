@@ -7,12 +7,4 @@
  */
 
 // Composed components
-export { LumoChatHistoryUpsell } from './composed/LumoChatHistoryUpsell';
 export { LumoSidebarUpsell } from './composed/LumoSidebarUpsell';
-export { default as LumoNavbarUpsell } from './composed/LumoNavbarUpsell';
-export { default as LumoTierErrorUpsell } from './composed/LumoTierErrorUpsellButtons';
-
-// Primitives (export if needed by consumers)
-export { default as GetLumoPlusButton } from './primitives/GetLumoPlusButton';
-export { GetLumoPlusContent } from './primitives/GetLumoPlusContent';
-export { SubscriptionPanel } from './primitives/SubscriptionPanel';
