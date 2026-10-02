@@ -156,6 +156,53 @@ describe('$handleBeforeInputEvent', () => {
       })
     })
 
+    test.each(['', 'Hello'])(
+      'should insert text after a divider with existing paragraph text %p',
+      async (existingText) => {
+        const onCreation = jest.fn()
+
+        await update(() => {
+          const paragraph = $createParagraphNode()
+          if (existingText) {
+            paragraph.append($createTextNode(existingText))
+          }
+          $getRoot().append($createHorizontalRuleNode(), paragraph)
+          paragraph.selectEnd()
+
+          expect(() =>
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertText',
+                data: 'World',
+                dataTransfer: null,
+              } as InputEvent,
+              onCreation,
+              logger,
+            ),
+          ).not.toThrow()
+        })
+
+        editor!.read(() => {
+          expect($isHorizontalRuleNode($getRoot().getFirstChild())).toBe(true)
+          const paragraph = $getRoot().getLastChildOrThrow<ParagraphNode>()
+          expect(paragraph.getTextContent()).toBe(existingText + 'World')
+          const suggestion = paragraph.getLastChild()
+          assertCondition($isSuggestionNode(suggestion))
+          expect(suggestion.getSuggestionTypeOrThrow()).toBe('insert')
+          expect(suggestion.getTextContent()).toBe('World')
+          expect(onCreation).toHaveBeenCalledTimes(1)
+          expect(onCreation).toHaveBeenCalledWith(suggestion.getSuggestionIdOrThrow())
+
+          const selection = $getSelection()
+          assertCondition($isRangeSelection(selection))
+          expect(selection.isCollapsed()).toBe(true)
+          expect(selection.focus.getNode()).toBe(suggestion.getLastChild())
+          expect(selection.focus.offset).toBe('World'.length)
+        })
+      },
+    )
+
     describe('Insert text next to insert-suggestion sibling', () => {
       let paragraph: ParagraphNode
       let suggestion: ProtonNode
