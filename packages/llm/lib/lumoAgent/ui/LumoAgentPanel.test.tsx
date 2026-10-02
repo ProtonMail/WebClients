@@ -85,6 +85,12 @@ const userScrollsUpFromBottom = (container: HTMLElement) => {
 
 const streamingReply = (text: string): LumoAgentItem => ({ ...reply, text });
 
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: jest.fn() }),
+}));
+jest.mock('@proton/app-context/useApi', () => ({ useApi: () => jest.fn() }));
+jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => jest.fn() }));
+
 describe('LumoAgentPanel', () => {
     it('shows the idle mark and no activity indicator once a turn has finished', () => {
         const { container } = renderPanel({ items: [userTurn, reply] });
@@ -183,6 +189,15 @@ describe('LumoAgentPanel', () => {
         renderPanel({ items: [userTurn, emptySelection], cardRenderers, isBusy: true });
 
         expect(screen.getByRole('button', { name: 'Confirm' })).toBeDisabled();
+    });
+
+    it('asks before opening an external link in a reply, with no option to stop asking', () => {
+        renderPanel({ items: [userTurn, streamingReply('[invoice](https://evil.example/?d=secret)')] });
+
+        fireEvent.click(screen.getByRole('link', { name: 'invoice' }));
+
+        expect(screen.getByText('Link confirmation')).toBeInTheDocument();
+        expect(screen.queryByText("Don't ask again")).toBeNull();
     });
 
     describe('following the stream', () => {
