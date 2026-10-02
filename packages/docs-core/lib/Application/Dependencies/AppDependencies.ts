@@ -57,6 +57,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants'
 import type { SheetsDatabaseSchema } from '../../Database/SheetsDBSchema'
 import { CURRENT_SHEETS_DB_VERSION, SHEETS_DATABASE_NAME, sheetsDBMigrations } from '../../Database/SheetsDBSchema'
 import { SheetsStorageService } from '../../Services/SheetsStorage/SheetsStorageService'
+import type { CacheConfig } from '@proton/drive-store/lib/CacheConfig'
 
 export class AppDependencies extends DependencyContainer {
   constructor(
@@ -68,6 +69,7 @@ export class AppDependencies extends DependencyContainer {
     appVersion: string,
     unleashClient: UnleashClient,
     syncedEditorState: SyncedEditorState,
+    providedCacheConfig?: CacheConfig,
   ) {
     super()
 
@@ -103,7 +105,7 @@ export class AppDependencies extends DependencyContainer {
         return undefined
       }
 
-      const cacheConfig = compatWrapper.getUserCompat().getKeysForLocalStorageEncryption()
+      const cacheConfig = providedCacheConfig ?? compatWrapper.getUserCompat().getKeysForLocalStorageEncryption()
       if (!cacheConfig) {
         return undefined
       }
@@ -121,7 +123,7 @@ export class AppDependencies extends DependencyContainer {
         return undefined
       }
 
-      const cacheConfig = compatWrapper.getUserCompat().getKeysForLocalStorageEncryption()
+      const cacheConfig = providedCacheConfig ?? compatWrapper.getUserCompat().getKeysForLocalStorageEncryption()
       if (!cacheConfig) {
         return undefined
       }
