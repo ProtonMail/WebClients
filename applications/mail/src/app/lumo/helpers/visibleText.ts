@@ -1,12 +1,11 @@
 import tinycolor from 'tinycolor2';
 
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
-import { escapeRegex } from '@proton/shared/lib/helpers/regex';
+import { escape } from '@proton/sanitize/escape';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 
 import { exportPlainText, getPlainTextContent } from '../../helpers/message/messageContentPlainText';
 import { getDocumentContent } from '../../helpers/message/messageContentQuery';
-import { HIDDEN_MARKER } from './hiddenMarker';
 
 /** Far below the 4.5 accessibility floor: unreadable, not merely low-contrast. */
 const UNREADABLE_CONTRAST = 1.5;
@@ -102,28 +101,41 @@ const isCollapsedToNothing = (style: CSSStyleDeclaration): boolean =>
     style.overflow === 'hidden' &&
     [style.height, style.maxHeight, style.width, style.maxWidth].some((size) => parseFloat(size) === 0);
 
-const isHiddenByStyle = (style: CSSStyleDeclaration): boolean =>
+/** Inherited and overridable, so a descendant that restores them is visible: MJML wraps every column in `font-size:0`. */
+const hidesOwnText = (style: CSSStyleDeclaration): boolean =>
+    style.visibility !== 'visible' || parseFloat(style.fontSize) === 0;
+
+const hidesSubtree = (style: CSSStyleDeclaration): boolean =>
     style.display === 'none' ||
-    style.visibility !== 'visible' ||
     style.opacity === '0' ||
-    parseFloat(style.fontSize) === 0 ||
     isPushedOffscreen(style) ||
     isCollapsedToNothing(style) ||
     isClippedToNothing(style);
 
 /**
- * The nearest opaque ancestor colour, since an element's own is transparent unless set. A background image
- * must not suspend the check — an ancestor carrying one was a bypass for white-on-white — so
- * `background: #123 url(hero.png)` scores against #123, and artwork with no colour behind it fails closed.
+ * Every translucent ancestor colour composited down to the nearest opaque one, or the canvas: read alone, a 2%
+ * black tint scores as solid black. A background image must not suspend the check — an ancestor carrying one
+ * was a bypass for white-on-white — so `background: #123 url(hero.png)` scores against #123, and artwork with
+ * no colour behind it fails closed.
  */
 const paintedBackground = (element: Element, styleOf: ComputedStyleReader): string => {
+    const layers: tinycolor.Instance[] = [];
     for (let ancestor: Element | null = element; ancestor; ancestor = ancestor.parentElement) {
         const background = tinycolor(styleOf(ancestor).backgroundColor);
-        if (background.isValid() && background.getAlpha() > 0) {
-            return background.toRgbString();
+        if (!background.isValid() || background.getAlpha() === 0) {
+            continue;
+        }
+        layers.push(background);
+        if (background.getAlpha() === 1) {
+            break;
         }
     }
-    return CANVAS_BACKGROUND;
+    return layers
+        .reduceRight(
+            (below, layer) => tinycolor.mix(below, layer, layer.getAlpha() * 100),
+            tinycolor(CANVAS_BACKGROUND)
+        )
+        .toRgbString();
 };
 
 const ownTextNodes = (element: Element): Text[] =>
@@ -143,28 +155,9 @@ const isUnreadable = (element: Element, styleOf: ComputedStyleReader): boolean =
     return tinycolor.readability(painted, background) < UNREADABLE_CONTRAST;
 };
 
-const MARKER_LITERAL = new RegExp(escapeRegex(HIDDEN_MARKER), 'g');
-
-const withoutSpoofedMarkers = (text: string): string => text.replace(MARKER_LITERAL, '');
-
-/** A sender could otherwise fake concealment. Text nodes, so an entity-encoded copy is caught too. */
-const removeSpoofedMarkers = (body: HTMLElement): void => {
-    const walker = body.ownerDocument.createTreeWalker(body, NodeFilter.SHOW_TEXT);
-    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
-        if (node.textContent?.includes(HIDDEN_MARKER)) {
-            node.textContent = withoutSpoofedMarkers(node.textContent);
-        }
-    }
-};
-
-const replaceWithMarker = (node: ChildNode): void =>
-    node.replaceWith(node.ownerDocument!.createTextNode(` ${HIDDEN_MARKER} `));
-
 /** Decide before mutating: removing a `<style>` withdraws rules the later elements are read against. */
 const stripConcealed = (body: HTMLElement, view: Window): void => {
-    removeSpoofedMarkers(body);
-
-    const elements = body.querySelectorAll('*');
+    const elements = [body, ...body.querySelectorAll<HTMLElement>('*')];
     if (elements.length > MAX_ELEMENTS) {
         // Fail closed: a tool error beats handing over an unchecked body.
         throw new Error(`Cannot read the email body: ${elements.length} elements is beyond what can be checked.`);
@@ -172,7 +165,7 @@ const stripConcealed = (body: HTMLElement, view: Window): void => {
 
     const styleOf = cachedStyleReader(view);
     const hidden: Element[] = [];
-    const unreadable: Element[] = [];
+    const ownTextConcealed: HTMLElement[] = [];
     const styles: Element[] = [];
 
     elements.forEach((element) => {
@@ -180,28 +173,53 @@ const stripConcealed = (body: HTMLElement, view: Window): void => {
             styles.push(element);
             return;
         }
-        if (isHiddenByStyle(styleOf(element))) {
-            // A hidden spacer holding only an <img> concealed nothing and must not warn.
-            if (element.textContent?.trim()) {
-                hidden.push(element);
-            }
+        const style = styleOf(element);
+        if (hidesSubtree(style)) {
+            hidden.push(element);
             return;
         }
-        if (isUnreadable(element, styleOf)) {
-            unreadable.push(element);
+        if (hidesOwnText(style) || isUnreadable(element, styleOf)) {
+            ownTextConcealed.push(element);
         }
     });
 
     // Turndown emits a style element's text content, so raw CSS would reach the model as prose.
     styles.forEach((style) => style.remove());
-    // Own text only: a child that sets the colour back to readable is visible.
-    unreadable.forEach((element) => ownTextNodes(element).forEach(replaceWithMarker));
-    hidden.forEach(replaceWithMarker);
+    // Own text only: a child that restores its colour, size or visibility is visible.
+    ownTextConcealed.forEach((element) => {
+        ownTextNodes(element).forEach((node) => node.remove());
+        // `toText` drops an inline `visibility:hidden` subtree whole, the visible descendants with it.
+        element.style.removeProperty('visibility');
+    });
+    // Detached, the body would still hand its content back to the caller holding it.
+    hidden.forEach((element) => (element === body ? body.replaceChildren() : element.remove()));
+};
+
+/**
+ * The renderer colours links from the theme (`MessageIframe.raw.scss`), so without this an uncoloured link is
+ * scored in the browser's default blue. Mail's own root carries the same theme variables as the renderer's frame.
+ */
+const rendererLinkStyle = (): string => {
+    const linkColor = getComputedStyle(document.documentElement).getPropertyValue('--interaction-norm').trim();
+    return linkColor ? `<style>a{color:${linkColor}}a:not([href]){color:inherit!important}</style>` : '';
 };
 
 /** The parser hoists a leading `<style>` into `<head>`, which `getDocumentContent` drops — carry those rules across. */
 const headStyles = (root: Element | undefined): string =>
     [...(root?.querySelector('head')?.querySelectorAll('style') ?? [])].map((style) => style.outerHTML).join('');
+
+const BODY_ATTRIBUTES = ['class', 'style'];
+
+/** `getDocumentContent` drops the `<body>` itself; the renderer carries its styling across on a wrapper. */
+const bodyContent = (root: Element | undefined): string => {
+    const content = getDocumentContent(root);
+    const body = root?.querySelector('body');
+    const attributes = BODY_ATTRIBUTES.flatMap((name) => {
+        const value = body?.getAttribute(name);
+        return value ? [`${name}="${escape(value)}"`] : [];
+    });
+    return attributes.length ? `<div ${attributes.join(' ')}>${content}</div>` : content;
+};
 
 const LOADING_ATTRIBUTES = ['src', 'srcset', 'poster', 'background'];
 
@@ -263,31 +281,28 @@ const inIsolatedDocument = <T>(html: string, read: (body: HTMLElement, view: Win
     }
 };
 
-const MARKER_RUN = new RegExp(`(?:${escapeRegex(HIDDEN_MARKER)}\\s*){2,}`, 'g');
-
-const collapseMarkers = (text: string): string => text.replace(MARKER_RUN, `${HIDDEN_MARKER}\n`).trim();
-
 /**
- * The model-facing body of an email, with text the reader could not see removed and marked. Lumo-only:
- * `toText` drives the composer's downconvert, and that output must not change.
+ * The model-facing body of an email, with text the reader could not see removed. Lumo-only: `toText` drives
+ * the composer's downconvert, and that output must not change.
  */
 export const toVisibleText = (message: MessageState): string => {
     if (isPlainText(message.data)) {
-        return withoutSpoofedMarkers(getPlainTextContent(message));
+        return getPlainTextContent(message);
     }
 
     // Serialized, never the store's own document: the renderer draws from that tree.
     const stored = message.messageDocument?.document;
-    const html = withoutRemoteLoads(headStyles(stored) + getDocumentContent(stored));
+    // Renderer rules first, as in its frame, so the email's own rules still win at equal specificity.
+    const html = rendererLinkStyle() + withoutRemoteLoads(headStyles(stored) + bodyContent(stored));
     const visible = inIsolatedDocument(html, (body, view) => {
         stripConcealed(body, view);
         return body.innerHTML;
     });
 
     if (visible === undefined) {
-        // Fail closed: raw HTML would hand every concealed instruction over unmarked.
+        // Fail closed: raw HTML would hand every concealed instruction over.
         throw new Error('Cannot read the email body: no isolated document to resolve the cascade in.');
     }
 
-    return collapseMarkers(exportPlainText(visible));
+    return exportPlainText(visible).trim();
 };
