@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
 import { Chip, LumoLogo, LumoThinking, PromptInput, ServerToolChip, renderReplyMarkdown } from '@proton/lumo-ui';
@@ -56,6 +57,9 @@ const LumoAgentPanel = ({
     const scrollRef = useRef<HTMLDivElement>(null);
     const isFollowingBottomRef = useRef(true);
     const lastScrollTopRef = useRef(0);
+    // Model-authored links always confirm: no mail settings, so the email ConfirmLink choice never applies,
+    // and isOutside hides the modal's "Don't ask again", which would write that email setting.
+    const { modal: linkConfirmationModal } = useLinkHandler(scrollRef, undefined, { isOutside: true });
 
     useEffect(() => {
         if (items.length === 0 || !isFollowingBottomRef.current) {
@@ -175,6 +179,7 @@ const LumoAgentPanel = ({
                 {/* Idle Lumo mark beneath the latest turn, once a conversation exists (like lumo.proton.me). */}
                 {!isGenerating && items.length > 0 && <LumoLogo className="lumo-agent-avatar" />}
             </div>
+            {linkConfirmationModal}
 
             {pending?.kind === 'confirm' ? (
                 <ConfirmCard
