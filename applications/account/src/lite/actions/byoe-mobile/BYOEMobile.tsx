@@ -17,18 +17,12 @@ import '../MobileSettings.scss';
 
 interface Props {
     layout: (children: React.ReactNode, props?: any) => React.ReactNode;
-    loader: React.ReactNode;
 }
 
-export const BYOEMobile = ({ layout, loader }: Props) => {
+export const BYOEMobile = ({ layout }: Props) => {
     const { state, toggle } = useToggle(true);
 
     const { createNotification } = useNotifications();
-
-    // TODO add some loading
-    if (false) {
-        return loader;
-    }
 
     const handleClick = () => {
         createNotification({ text: 'Not implemented yet' });
