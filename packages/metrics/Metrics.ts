@@ -66,9 +66,9 @@ import type { HttpsProtonMeDriveSdkDownloadErrorsTotalV1SchemaJson } from './typ
 import type { HttpsProtonMeDriveSdkDownloadErrorsTransferSizeHistogramV1SchemaJson } from './types/drive_sdk_download_errors_transfer_size_histogram_v1.schema';
 import type { HttpsProtonMeDriveSdkDownloadSuccessRateTotalV1SchemaJson } from './types/drive_sdk_download_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveSdkIntegrityBlockVerificationErrorsTotalV1SchemaJson } from './types/drive_sdk_integrity_block_verification_errors_total_v1.schema';
-import type { HttpsProtonMeDriveSdkIntegrityDecryptionErrorsTotalV1SchemaJson } from './types/drive_sdk_integrity_decryption_errors_total_v1.schema';
+import type { HttpsProtonMeDriveSdkIntegrityDecryptionErrorsTotalV2SchemaJson } from './types/drive_sdk_integrity_decryption_errors_total_v2.schema';
 import type { HttpsProtonMeDriveSdkIntegrityErroringUsersTotalV1SchemaJson } from './types/drive_sdk_integrity_erroring_users_total_v1.schema';
-import type { HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV1SchemaJson } from './types/drive_sdk_integrity_verification_errors_total_v1.schema';
+import type { HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV2SchemaJson } from './types/drive_sdk_integrity_verification_errors_total_v2.schema';
 import type { HttpsProtonMeDriveSdkUploadErroringUsersTotalV1SchemaJson } from './types/drive_sdk_upload_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveSdkUploadErrorsFileSizeHistogramV1SchemaJson } from './types/drive_sdk_upload_errors_file_size_histogram_v1.schema';
 import type { HttpsProtonMeDriveSdkUploadErrorsTotalV1SchemaJson } from './types/drive_sdk_upload_errors_total_v1.schema';
@@ -330,11 +330,11 @@ class Metrics extends MetricsBase {
 
     public drive_sdk_integrity_block_verification_errors_total: Counter<HttpsProtonMeDriveSdkIntegrityBlockVerificationErrorsTotalV1SchemaJson>;
 
-    public drive_sdk_integrity_decryption_errors_total: Counter<HttpsProtonMeDriveSdkIntegrityDecryptionErrorsTotalV1SchemaJson>;
+    public drive_sdk_integrity_decryption_errors_total: Counter<HttpsProtonMeDriveSdkIntegrityDecryptionErrorsTotalV2SchemaJson>;
 
     public drive_sdk_integrity_erroring_users_total: Counter<HttpsProtonMeDriveSdkIntegrityErroringUsersTotalV1SchemaJson>;
 
-    public drive_sdk_integrity_verification_errors_total: Counter<HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV1SchemaJson>;
+    public drive_sdk_integrity_verification_errors_total: Counter<HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV2SchemaJson>;
 
     public drive_sdk_upload_erroring_users_total: Counter<HttpsProtonMeDriveSdkUploadErroringUsersTotalV1SchemaJson>;
 
@@ -942,8 +942,8 @@ class Metrics extends MetricsBase {
             );
 
         this.drive_sdk_integrity_decryption_errors_total =
-            new Counter<HttpsProtonMeDriveSdkIntegrityDecryptionErrorsTotalV1SchemaJson>(
-                { name: 'drive_sdk_integrity_decryption_errors_total', version: 1 },
+            new Counter<HttpsProtonMeDriveSdkIntegrityDecryptionErrorsTotalV2SchemaJson>(
+                { name: 'drive_sdk_integrity_decryption_errors_total', version: 2 },
                 this.requestService
             );
 
@@ -954,8 +954,8 @@ class Metrics extends MetricsBase {
             );
 
         this.drive_sdk_integrity_verification_errors_total =
-            new Counter<HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV1SchemaJson>(
-                { name: 'drive_sdk_integrity_verification_errors_total', version: 1 },
+            new Counter<HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV2SchemaJson>(
+                { name: 'drive_sdk_integrity_verification_errors_total', version: 2 },
                 this.requestService
             );
 

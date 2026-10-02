@@ -1510,8 +1510,8 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/drive-sdk':
-        specifier: ^0.20.1
-        version: 0.20.1(@protontech/crypto@2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2))
+        specifier: ^0.22.2
+        version: 0.22.2(@protontech/crypto@2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(react@18.3.1))(react@18.3.1)
@@ -2010,8 +2010,8 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
-        specifier: ^0.20.1
-        version: 0.20.1(@protontech/crypto@2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2))
+        specifier: ^0.22.2
+        version: 0.22.2(@protontech/crypto@2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(react@18.3.1))(react@18.3.1)
@@ -2384,8 +2384,8 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
-        specifier: ^0.20.1
-        version: 0.20.1(@protontech/crypto@2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2))
+        specifier: ^0.22.2
+        version: 0.22.2(@protontech/crypto@2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(react@18.3.1))(react@18.3.1)
@@ -4429,8 +4429,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/drive-sdk':
-        specifier: ^0.20.1
-        version: 0.20.1(@protontech/crypto@2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2))
+        specifier: ^0.22.2
+        version: 0.22.2(@protontech/crypto@2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(react@18.3.1))(react@18.3.1)
@@ -5737,8 +5737,8 @@ importers:
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
-        specifier: ^0.20.1
-        version: 0.20.1(@protontech/crypto@2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2))
+        specifier: ^0.22.2
+        version: 0.22.2(@protontech/crypto@2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2))
       '@types/node':
         specifier: ^24.13.6
         version: 24.13.6
@@ -10189,6 +10189,9 @@ packages:
   '@blazediff/core@1.10.0':
     resolution: {integrity: sha512-AOQff0zgR7cGsZL+4E7hVkmujoPUpm0J9xzWGWZj5wCjd3gmxESXAPfKyuzs93VdpQNFhHlBhfOjrcZ+XTERtQ==}
 
+  '@boltffi/runtime@0.31.0':
+    resolution: {integrity: sha512-nxht21tsG0KLzkdN2gHqSAZv7Ainht5v/Q6ZGVT8xXAmJKdewk4PwwryLeQR4xrejwDOtuWRD7p7OGkKGw8JIQ==}
+
   '@braintree/sanitize-url@7.1.2':
     resolution: {integrity: sha512-jigsZK+sMF/cuiB7sERuo9V7N9jx+dhmHHnQyDSVdpZwVutaBu7WvNYqMDLSgFgfB30n452TP3vjDAvFC973mA==}
 
@@ -13907,8 +13910,8 @@ packages:
   '@protontech/crypto@2.1.3':
     resolution: {integrity: sha512-Sbf/7yqwIE40L7AzZvRPfCWvDaHJ3GzELF3BhvhoVpGPImUxkbjRsJscGq/+Amglh3zAWaN1z2mCPoC1uUl2ZA==}
 
-  '@protontech/drive-sdk@0.20.1':
-    resolution: {integrity: sha512-D+ZVZqqXBQEgIBnZ7lpddz9iTGIGvIv9Jo4ujMfLVt9vZwBCBea71FxRaCMxPrVI+5+boCXgmfMX9WEDg2UOfg==}
+  '@protontech/drive-sdk@0.22.2':
+    resolution: {integrity: sha512-J5qM6SkQ2TsymagFJR3Al+f3TjFzwxb+eUUK6ZDMlzv52MOCDjNNaOIHF3+44uXI/Lka0g1kaSaTF2tFISL6tw==}
     peerDependencies:
       '@protontech/crypto': ^2.1.3
 
@@ -28700,6 +28703,8 @@ snapshots:
 
   '@blazediff/core@1.10.0': {}
 
+  '@boltffi/runtime@0.31.0': {}
+
   '@braintree/sanitize-url@7.1.2': {}
 
   '@bramus/specificity@2.4.2':
@@ -33218,10 +33223,12 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@protontech/drive-sdk@0.20.1(@protontech/crypto@2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2))':
+  '@protontech/drive-sdk@0.22.2(@protontech/crypto@2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2))':
     dependencies:
+      '@boltffi/runtime': 0.31.0
       '@noble/hashes': 1.8.0
       '@protontech/crypto': 2.1.3(@types/node@24.13.6)(@typescript/typescript6@6.0.2)
+      comlink: 4.4.2
       ttag: 1.8.12
     optionalDependencies:
       '@xmldom/xmldom': 0.9.12
@@ -33229,10 +33236,12 @@ snapshots:
     transitivePeerDependencies:
       - babel-plugin-macros
 
-  '@protontech/drive-sdk@0.20.1(@protontech/crypto@2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2))':
+  '@protontech/drive-sdk@0.22.2(@protontech/crypto@2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2))':
     dependencies:
+      '@boltffi/runtime': 0.31.0
       '@noble/hashes': 1.8.0
       '@protontech/crypto': 2.1.3(@types/node@26.0.0)(@typescript/typescript6@6.0.2)
+      comlink: 4.4.2
       ttag: 1.8.12
     optionalDependencies:
       '@xmldom/xmldom': 0.9.12

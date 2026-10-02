@@ -250,12 +250,12 @@ export class MetricHandler {
 
     private onDecryptionError(metric: MetricDecryptionErrorEvent) {
         metrics.drive_sdk_integrity_decryption_errors_total.increment({
-            volumeType: metric.volumeType,
             field: metric.field,
-            fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
+            recency: metric.recency ?? 'unknown',
+            causedBy: metric.createdBy ?? 'unknown',
         });
 
-        if (metric.fromBefore2024 === false) {
+        if (metric.recency !== undefined && metric.recency !== 'before_2024') {
             this.reportIntegrityErroringUsers(metric);
 
             captureMessage('Metric event details: decryption error', {
@@ -264,10 +264,10 @@ export class MetricHandler {
                     driveSdkMetricEvent: 'decryptionError',
                 },
                 extra: {
-                    volumeType: metric.volumeType,
                     uid: metric.uid,
                     field: metric.field,
-                    fromBefore2024: metric.fromBefore2024,
+                    recency: metric.recency,
+                    createdBy: metric.createdBy,
                     error: metric.error,
                 },
             });
@@ -276,13 +276,17 @@ export class MetricHandler {
 
     private onVerificationError(metric: MetricVerificationErrorEvent) {
         metrics.drive_sdk_integrity_verification_errors_total.increment({
-            volumeType: metric.volumeType,
             field: metric.field,
             addressMatchingDefaultShare: this.getYesNoUnknown(metric.addressMatchingDefaultShare),
-            fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
+            recency: metric.recency ?? 'unknown',
+            causedBy: metric.createdBy ?? 'unknown',
         });
 
-        if (metric.fromBefore2024 === false && metric.addressMatchingDefaultShare === true) {
+        if (
+            metric.recency !== undefined &&
+            metric.recency !== 'before_2024' &&
+            metric.addressMatchingDefaultShare === true
+        ) {
             this.reportIntegrityErroringUsers(metric);
         }
     }
@@ -295,8 +299,10 @@ export class MetricHandler {
             this.lastIntegrityError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL
         ) {
             metrics.drive_sdk_integrity_erroring_users_total.increment({
+                // volumeType will be removed in the future versions of the metrics, kept for compatibility.
                 volumeType: 'volumeType' in metric ? metric.volumeType : 'unknown',
                 userPlan: this.userPlan,
+                causedBy: 'createdBy' in metric && metric.createdBy ? metric.createdBy : 'unknown',
             });
             this.lastIntegrityError = new Date();
         }
