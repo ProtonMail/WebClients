@@ -1,3 +1,5 @@
+import { readChartSpecTitle } from './chartSpecTitle';
+
 function slugifyTitle(title: string): string {
     return title
         .trim()
@@ -10,26 +12,8 @@ function slugifyTitle(title: string): string {
 
 /** Derive a safe PNG filename from a chart spec title, when available. */
 export function getChartDownloadFilename(code: string): string {
-    try {
-        const withoutTrailingCommas = code.trim().replace(/,\s*([}\]])/g, '$1');
-        const parsed = JSON.parse(withoutTrailingCommas) as Record<string, unknown>;
-        const title = parsed.title;
-        const text =
-            typeof title === 'string'
-                ? title
-                : title && typeof title === 'object' && !Array.isArray(title)
-                  ? (title as Record<string, unknown>).text
-                  : undefined;
+    const { text } = readChartSpecTitle(code);
+    const slug = text ? slugifyTitle(text) : '';
 
-        if (typeof text === 'string') {
-            const slug = slugifyTitle(text);
-            if (slug) {
-                return `${slug}.png`;
-            }
-        }
-    } catch {
-        // Fall back below.
-    }
-
-    return 'chart.png';
+    return slug ? `${slug}.png` : 'chart.png';
 }
