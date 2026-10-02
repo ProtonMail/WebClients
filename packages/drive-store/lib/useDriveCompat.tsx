@@ -161,7 +161,6 @@ export const useDriveCompat = (): DriveCompat => {
 
     return {
         getVerificationKey,
-        getKeysForLocalStorageEncryption,
 
         // No feature parity in Drive SDK - has to be done in Realtime SDK
         createDocumentNode: withResolveShareId(createDocumentNode),
@@ -175,6 +174,7 @@ export const useDriveCompat = (): DriveCompat => {
         findAvailableNodeName: withResolveShareId(findAvailableNodeName),
         getDocumentKeys: withResolveShareId(getDocumentKeys),
         getPrimaryAddressKeys,
+        getKeysForLocalStorageEncryption,
         // DocumentViewer calls DocLoader calls LoadDocument calls GetNodePermissions calls this
         getNodePermissions: withResolveShareId(getNodePermissions),
         // Used only in RecentDocumentsService - remove after rollout of DocsLoadRecentsWithDriveSDK
