@@ -26,6 +26,8 @@ import type {
     V5PaymentToken,
 } from '../interface';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from '../plan/helpers';
+import type { GuardFields } from '../subscription/guard';
+import { normalizeGuardResult } from '../subscription/guard';
 import type { Subscription } from '../subscription/interface';
 import { isTokenPaymentMethod, isV5PaymentToken } from '../type-guards';
 
@@ -280,7 +282,10 @@ export const createPaymentSubscription = async (
     captureWrongPlanIDs(data.Plans, { source: 'subscribe', cycle: data.Cycle, currency: data.Currency });
 
     try {
-        const createSubscriptionResponse = await api<{ Subscription: Subscription }>(createSubscriptionQueryConfig);
+        // TODO: remove when the API will serve the new contract
+        const createSubscriptionResponse = normalizeGuardResult(
+            await api<{ Subscription: Subscription } & GuardFields>(createSubscriptionQueryConfig)
+        );
 
         checkoutTelemetry.reportPayment({
             stage: 'payment_success',
