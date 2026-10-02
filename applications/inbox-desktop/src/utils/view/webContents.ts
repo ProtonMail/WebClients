@@ -37,7 +37,6 @@ import { isDynamicOAuthURL, isOAuthWindow, registerOAuthWindow, unregisterOAuthW
 import { sentryReport } from "../sentryReport";
 import { openExternalRedirect } from "../openExternal/openExternal";
 import { urlRedirectManager } from "../urlRedirects/manager";
-import { watchForStuckLoader, cancelStuckLoaderWatch } from "./utils/stuckViewTracker";
 
 const RENDERER_LOG_MAX_MESSAGE_LENGTH = 500;
 
@@ -60,7 +59,6 @@ export function handleWebContents(contents: WebContents) {
     };
 
     contents.on("did-navigate", async (_ev, url) => {
-        cancelStuckLoaderWatch(contents.id);
         logger().info("did-navigate", url);
 
         updateViewURL(contents, url);
@@ -176,11 +174,6 @@ export function handleWebContents(contents: WebContents) {
             const viewName = getWebContentsViewName(contents);
             if (viewName) showNetworkErrorPage(viewName);
         }
-    });
-
-    contents.on("did-finish-load", () => {
-        if (!isCurrentContent()) return;
-        void watchForStuckLoader(contents, isCurrentContent);
     });
 
     contents.on("will-navigate", (details) => {

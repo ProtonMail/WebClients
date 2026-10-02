@@ -26,7 +26,6 @@ import { readAndClearOpenCalendarArgs, readAndClearOpenMailArgs, urlHasOpenMailP
 import { readAndClearMailtoArgs, urlHasMailto } from "../protocol/mailto";
 import { sentryReport } from "../sentryReport";
 import { addHashToCurrentURL } from "../urls/urlHelpers";
-import { watchForStuckLoader } from "./utils/stuckViewTracker";
 import {
     getLocalID,
     isAccountLogin,
@@ -404,9 +403,6 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
         mainWindow!.setContentView(view);
     }
 
-    const contents = view.webContents;
-    void watchForStuckLoader(contents, () => getCurrentView()?.webContents === contents);
-
     if (previousViewID === "account") {
         let reportedError: Error | undefined;
 
@@ -463,11 +459,6 @@ export const openMail = (labelID?: string, elementID?: string, messageID?: strin
     }
 
     mainWindow.focus();
-};
-
-export const openMailToDefaultAndForceReload = async () => {
-    await showView("mail");
-    await loadURL("mail", getAppURL().mail, { force: true });
 };
 
 const openViewWithoutReload = (view: "mail" | "calendar") => {

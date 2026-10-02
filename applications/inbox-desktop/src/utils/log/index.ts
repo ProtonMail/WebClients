@@ -31,7 +31,6 @@ export const ioStreamLogger = Logger.scope("io-stream");
 export const profilerLogger = Logger.scope("profiler");
 export const webRequestRouterLogger = Logger.scope("web-request-router");
 export const uidLogger = Logger.scope("uid");
-export const stuckLoaderWatchLogger = Logger.scope("stuck-loader-watch");
 export const rendererLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
     viewID ? Logger.scope(`renderer/${viewID}`) : Logger.scope("renderer");
 
