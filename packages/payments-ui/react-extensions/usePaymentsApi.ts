@@ -38,6 +38,7 @@ import type {
 } from '@proton/payments/core/interface';
 import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { normalizeGuardResult } from '@proton/payments/core/subscription/guard';
 import { getPlanName, isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
@@ -279,8 +280,11 @@ export const usePaymentsApi = (
             if (isLifetimePlanSelected(data.Plans)) {
                 const result = await api(checkProduct(data));
 
+                // TODO: remove when the API will serve the new contract
+                const normalizedGuardResult = normalizeGuardResult(result);
+
                 return {
-                    ...result,
+                    ...normalizedGuardResult,
 
                     // filling in the missing properties to match the normal check response
                     Proration: 0,
@@ -314,12 +318,15 @@ export const usePaymentsApi = (
                     silence,
                 });
 
+                // TODO: remove when the API will serve the new contract
+                const normalizedGuardResult = normalizeGuardResult(result);
+
                 if (data.ProrationMode) {
-                    result.ProrationMode = data.ProrationMode;
+                    normalizedGuardResult.ProrationMode = data.ProrationMode;
                 }
 
                 const enrichedCheckResponse = {
-                    ...result,
+                    ...normalizedGuardResult,
                     requestData: data,
                 };
 
