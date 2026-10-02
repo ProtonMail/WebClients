@@ -1,6 +1,4 @@
-import { MemberRole, type NodeEntity } from '@proton/drive'
-import { findUserAddress } from '@proton/shared/lib/helpers/address'
-import type { Address } from '@proton/shared/lib/interfaces'
+import type { NodeEntity } from '@proton/drive'
 import { c } from 'ttag'
 
 /**
@@ -18,12 +16,18 @@ export function getFullPathFromAncestry(ancestry: NodeEntity[]) {
   return path
 }
 
-export function getIsSharedWithMe(node: NodeEntity, addresses: Address[] | undefined) {
-  const ownerEmail = node.ownedBy.email
-  const ownerIsCurrentUser = !!findUserAddress(ownerEmail, addresses)
-  const isSharedDirectly = node.isShared && node.directRole !== MemberRole.Inherited && !ownerIsCurrentUser
-  const isSharedIndirectly = !node.isShared && node.directRole === MemberRole.Inherited && !ownerIsCurrentUser
-  return isSharedDirectly || isSharedIndirectly
+export function getIsSharedWithMe(node: NodeEntity) {
+  if (!node.membership) {
+    // Not shared directly
+    if (node.directRole === 'inherited') {
+      // but sits in a shared folder
+      return true
+    }
+  } else {
+    // Shared directly
+    return true
+  }
+  return false
 }
 
 export function getAuthorName(author: NodeEntity['keyAuthor']) {

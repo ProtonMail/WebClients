@@ -30,7 +30,7 @@ import type { DocumentAction, DocumentType } from '@proton/docs-shared'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { useFlag } from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
-import { useIsSheetsEditorEnabled } from '~/utils/flags'
+import { useIsSheetsEditorEnabled, useDriveCompatSDK } from '~/utils/flags'
 import { getDocsReportContextLines } from '~/utils/report-context'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { WorkspacePromoBanner } from '../../DocumentViewer/WorkspacePromoBanner'
@@ -38,6 +38,8 @@ import { HeaderShareButton } from './HeaderShareButton'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { replaceAddress, reportChangeAddressError } from '../../useChangeAddressWhenPubliclyShared'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
+import { isPrivateNodeMeta } from '@proton/drive-store'
+import { getShareId } from '@proton/docs-core/lib/DriveSDK/getShareId'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
@@ -162,12 +164,39 @@ function DocsHeaderForDocument({
   renameController,
   documentType,
 }: DocsHeaderForDocumentProps) {
-  const { publicContext } = useDocsContext()
+  const { publicContext, privateContext } = useDocsContext()
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
   const isHomepageEnabled = useFlag('DocsHomepageEnabled')
   const { getLocalID } = useAuthentication()
+  const replaceCompatWithSDK = useDriveCompatSDK()
 
   const { showSharingModal, sharingModal } = useSharingModal()
+
+  // Preload shareId to not slow down TitleDropdown when doing Open in Drive
+  const [shareId, setShareId] = useState<string>()
+  useEffect(() => {
+    const preloadShareId = async () => {
+      if (!privateContext) {
+        return
+      }
+
+      const nodeMeta = documentState.getProperty('entitlements').nodeMeta
+      if (!isPrivateNodeMeta(nodeMeta)) {
+        return
+      }
+
+      try {
+        const { compat } = privateContext
+        const shareId = replaceCompatWithSDK ? await getShareId(nodeMeta) : await compat.getShareId(nodeMeta)
+        setShareId(shareId)
+      } catch (error) {
+        traceError(error)
+      }
+    }
+
+    void preloadShareId()
+  }, [documentState, privateContext, replaceCompatWithSDK])
+
   function openSharingModalReplaceAddress() {
     showSharingModal({
       drive: getDrive(),
@@ -225,6 +254,7 @@ function DocsHeaderForDocument({
             editorController={editorController}
             documentState={documentState}
             renameController={renameController}
+            shareId={shareId}
           />
           <div
             className="flex-grow-1 flex-basis-0 ml-0.5 flex min-w-fit flex-shrink-0 items-center justify-between gap-2 head-max-1199:!max-w-[4.5rem]"
