@@ -71,8 +71,9 @@ jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
     default: () => [false],
 }));
+const mockCreateNotification = jest.fn();
 jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+    useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 jest.mock('../../hooks/useSilentApi', () => ({
     useSilentApi: () => jest.fn(),
@@ -174,5 +175,48 @@ describe('SubUserEditModal', () => {
 
         rerender(getMember({ roleState: 'full' }));
         expect(screen.getByLabelText('User Admin')).toBeEnabled();
+    });
+
+    it('disables role selection when the member roles failed to load', () => {
+        renderModal(getMember({ roleState: 'rejected' }));
+
+        fireEvent.click(screen.getByRole('tab', { name: 'Roles and permissions' }));
+
+        expect(screen.getByLabelText('User Admin')).toBeDisabled();
+    });
+
+    it('disables save while edited member roles reload, then submits the removal', async () => {
+        const roles = [getRoleAssignment(mockOwnerRole), getRoleAssignment(mockUserAdminRole)];
+        const { rerender } = renderModal(getMember({ UserOrganizationRoles: roles }));
+
+        fireEvent.click(screen.getByRole('tab', { name: 'Roles and permissions' }));
+        fireEvent.click(screen.getByLabelText('User Admin'));
+        rerender(getMember({ roleState: 'initial' }));
+        expect(screen.getByRole('button', { name: 'Save' })).toBeDisabled();
+
+        rerender(getMember({ UserOrganizationRoles: roles }));
+        await save();
+
+        expect(assignMemberRoles).toHaveBeenCalledWith(
+            expect.objectContaining({ currentRoles: roles, desiredRoleIds: new Set(['owner-role']) })
+        );
+    });
+
+    it('saves without the edited roles when the member roles fail to reload', async () => {
+        const roles = [getRoleAssignment(mockOwnerRole), getRoleAssignment(mockUserAdminRole)];
+        const { rerender } = renderModal(getMember({ UserOrganizationRoles: roles }));
+
+        fireEvent.click(screen.getByRole('tab', { name: 'Roles and permissions' }));
+        fireEvent.click(screen.getByLabelText('User Admin'));
+        rerender(getMember({ roleState: 'rejected' }));
+        expect(screen.getByRole('button', { name: 'Save' })).toBeEnabled();
+
+        await save();
+
+        expect(assignMemberRoles).not.toHaveBeenCalled();
+        expect(mockCreateNotification).toHaveBeenCalledWith({
+            type: 'error',
+            text: "Role changes were not saved because the user's roles could not be loaded.",
+        });
     });
 });
