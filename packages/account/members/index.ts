@@ -10,7 +10,11 @@ import { cacheHelper, createPromiseStore } from '@proton/redux-utilities/promise
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
-import { getMemberOrganizationRoles, updateMemberOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
+import {
+    getMemberOrganizationRoles,
+    getMembersOrganizationRoles,
+    updateMemberOrganizationRoles,
+} from '@proton/shared/lib/api/organizationRoles';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
@@ -38,6 +42,10 @@ const name = 'members' as const;
 type MemberRolesResponse = {
     RoleAssignments: RoleAssignment[];
     RequiresOrgKeyPromotion: boolean;
+};
+
+type MembersRolesResponse = {
+    Members: (MemberRolesResponse & { MemberID: string })[];
 };
 
 /** One member's roles request as committed in bulk by {@link getMemberRolesBatch}; no response means it failed. */
@@ -470,10 +478,13 @@ export const getMemberAddresses = ({
 };
 
 /**
- * How many members' roles are requested (and then committed to the store) at a time by
- * {@link getMemberRolesBatch}.
+ * How many members' roles are requested in one call (and then committed to the store) by
+ * {@link getMemberRolesBatch}. The API accepts at most 250 member IDs per call.
  */
-const MEMBER_ROLES_CHUNK_SIZE = 50;
+const MEMBER_ROLES_CHUNK_SIZE = 250;
+
+const getRolesByMemberID = ({ Members }: MembersRolesResponse) =>
+    new Map<string, MemberRolesResponse>(Members.map((memberRoles) => [memberRoles.MemberID, memberRoles]));
 
 const getTemporaryRolePromiseMap = (() => {
     let map: undefined | Map<string, Promise<RoleAssignment[]>>;
@@ -551,6 +562,8 @@ export const getMemberRoles = ({
  * Marking the batch pending up front is also what stops the calling effect — which re-runs on every
  * commit, since each one gives the members array a new identity — from starting an overlapping sweep.
  *
+ * Members the API leaves out of the response (deleted, or not in the organization) are marked rejected.
+ *
  * Use {@link getMemberRoles} for a single member.
  */
 export const getMemberRolesBatch = ({
@@ -575,17 +588,13 @@ export const getMemberRolesBatch = ({
         dispatch(slice.actions.memberRolesFetchPending({ members: targets }));
 
         for (const group of chunk(targets, MEMBER_ROLES_CHUNK_SIZE)) {
-            // Every request catches its own failure, so Promise.all never rejects and the rest of the
-            // chunk is processed. Otherwise members are left in 'pending'.
-            const results = await Promise.all(
-                group.map((member) =>
-                    extra
-                        .api<MemberRolesResponse>(getMemberOrganizationRoles(member.ID))
-                        .then((response) => ({ member, response }))
-                        .catch(() => ({ member, response: undefined }))
-                )
-            );
+            // A failed request must still settle the chunk as rejected, otherwise its members stay 'pending'.
+            const rolesByMemberID = await extra
+                .api<MembersRolesResponse>(getMembersOrganizationRoles(group.map(({ ID }) => ID)))
+                .then(getRolesByMemberID)
+                .catch(() => new Map<string, MemberRolesResponse>());
 
+            const results = group.map((member) => ({ member, response: rolesByMemberID.get(member.ID) }));
             dispatch(slice.actions.memberRolesFetchSettled(results));
         }
     };
