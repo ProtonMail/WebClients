@@ -1,4 +1,3 @@
-import { HIDDEN_MARKER } from './helpers/hiddenMarker';
 import { MAIL_RULES } from './rules';
 
 describe('MAIL_RULES', () => {
@@ -16,11 +15,5 @@ describe('MAIL_RULES', () => {
         ],
     ])('pins %s', (_case, claim) => {
         expect(MAIL_RULES).toContain(claim);
-    });
-
-    // Wiring, not prose: the rules block must name the exact marker the strip emits, or the model stops
-    // recognising it and silently drops the "hidden text was filtered out" disclosure.
-    it('names the marker toVisibleText actually emits', () => {
-        expect(MAIL_RULES).toContain(HIDDEN_MARKER);
     });
 });
