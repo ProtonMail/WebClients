@@ -114,7 +114,7 @@ describe('getNativeAppInfo', () => {
 
 describe('canUseNativeAuth', () => {
     it('is true on iPad at the minimum version, as on iPhone', () => {
-        setUserAgent(ipadUA('2.1.0'));
+        setUserAgent(ipadUA('2.1.1'));
         expect(canUseNativeAuth()).toBe(true);
     });
 
@@ -124,17 +124,17 @@ describe('canUseNativeAuth', () => {
     });
 
     it('is false on iPad below the minimum version', () => {
-        setUserAgent(ipadUA('2.0.0'));
+        setUserAgent(ipadUA('2.1.0'));
         expect(canUseNativeAuth()).toBe(false);
     });
 
     it('is true on iPhone at the minimum version', () => {
-        setUserAgent(iosUA('2.1.0'));
+        setUserAgent(iosUA('2.1.1'));
         expect(canUseNativeAuth()).toBe(true);
     });
 
     it('is false on iPhone below the minimum version', () => {
-        setUserAgent(iosUA('2.0.0'));
+        setUserAgent(iosUA('2.1.0'));
         expect(canUseNativeAuth()).toBe(false);
     });
 
