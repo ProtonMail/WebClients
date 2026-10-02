@@ -19,7 +19,7 @@ The store must hold this package's reducer under the `offersDelivery` key (`Offe
 
 1. **Fetch** (`getCampaign`) — returns at most one already-selected `Campaign`, or nothing. Gated by the `CentralisedOffersDelivery` flag; no consuming app gates anything itself.
 2. **Gate display** — surfaced until `endTime` passes. A `null` `endTime` never expires. Avoiding collision with the app's other startup UI is the consuming app's responsibility.
-3. **Expose** — `useActiveOffer(variant)`, called wherever a surface lives. Render the shipped `OfferBanner` / `OfferModal`, or bespoke UI.
+3. **Expose** — `useActiveOffer(variant)`, called wherever a surface lives. Render the shipped `OfferBanner` / `OfferModal` / `OfferNavbarButton`, or bespoke UI.
 4. **Report** — to `inapp/campaign/event`. `Action` is an **integer** 1-5; anything else is a 400. The backend owns campaign state and telemetry; the client only emits.
 5. **Resolve CTAs** — a symbolic `cta.ref` is resolved and validated to a host action **at ingest**, before it reaches a consumer.
 
@@ -43,7 +43,7 @@ Delivery is single-shot and best effort: `sendCampaignEvent` does not retry, and
 | Kill switch | `components/useActiveOffer.ts`, `store/listener.ts`, `store/slice.ts` | `CommonFeatureFlag.CentralisedOffersDelivery` (`@proton/unleash/Flags`) — read only **inside this package**. `useFlag` in the hook gates the render, `unleashClient` in the listener gates the fetch, and the thunk's `miss` throws as defence in depth against a caller that dispatches it directly. |
 | State | `store/slice.ts` | One module-level slice — `createSlice` + `createAsyncModelThunk` + `ModelState<Campaign>` — like every `@proton/account` slice, with an `OffersDeliveryState` interface for the structural requirement on the host store. Owns `CAMPAIGN_EXPIRY` (10 min, the revalidation throttle), the `endedCampaignKey` latch, and the SEEN dedupe. |
 | Revalidation | `store/listener.ts` | `startOffersDeliveryListener(startListening, { appReady })` — fetches when the host signals readiness and on tab focus. |
-| UI | `components/*` | `useActiveOffer` (per-variant hook, called anywhere: kill-switch read, selection, CTA/dismiss/seen handlers), `OfferBanner` / `OfferModal` (shipped surfaces), `OfferSurface` (shared `{ offer }` props type). No provider — nothing in this package wraps the host's tree. |
+| UI | `components/*` | `useActiveOffer` (per-variant hook, called anywhere: kill-switch read, selection, CTA/dismiss/seen handlers), `OfferBanner` / `OfferModal` / `OfferNavbarButton` (shipped surfaces), `OfferSurface` (shared `{ offer }` props type). No provider — nothing in this package wraps the host's tree. |
 
 ### Caching and revalidation
 
@@ -104,7 +104,7 @@ The variant argument is required: it is what tells the package which caller inte
 Read `offer.campaign`, `offer.onAction`, `offer.onDismiss`, and attach `offer.seenRef` to whatever you render. Two things to know:
 
 - **Rendering a real `<a href={campaign.cta.href}>`? Forward the click event to `onAction`.** It skips its own navigation when `currentTarget` is an anchor carrying an href, so cmd/middle-click and copy-link keep working. Omit the event and the link opens twice. Neither shipped surface renders an anchor, so this path has no test coverage.
-- Bespoke UI opts out of the e2e coverage on the shipped `data-testid`s (`offer-banner`, `offer-banner:body`, `offer-banner:cta`, `offer-modal:cta`) and needs its own CTA/dismiss/seen tests.
+- Bespoke UI opts out of the e2e coverage on the shipped `data-testid`s (`offer-banner`, `offer-banner:body`, `offer-banner:cta`, `offer-modal:cta`, `offer-navbar-button`) and needs its own CTA/dismiss/seen tests.
 
 ### SEEN reporting
 
@@ -117,6 +117,15 @@ Dedupe by `campaignKey` lives in the slice (`seenCampaignKeys`), not in a compon
 `OfferModal` accepts `OfferSurfaceProps & Partial<ModalStateProps>`. `open` defaults to `true` for standalone use; spread `useModalState()`'s `modalProps` onto it instead to register it in an app's `StartupModal` queue (`@proton/components/components/startupModals`). `onClose` reports the dismissal then calls through, and so does the CTA since `CtaClicked` is terminal. `onExit` is forwarded but never fires — both terminal actions null the slice value in the same commit, so the modal unmounts hard.
 
 **Collision policy is the consuming app's responsibility.** `OfferModal` no longer probes the DOM itself; that was racy, since startup modals activate off async data. `StartupModals` enforces one-at-a-time plus a `domIsBusy()` guard, and priority is just position in its array — append the offer last and everything else outranks it. An offer's `showModal` flips late, on a network response, often after a populated form already reads as busy, so its `StartupModal` entry sets `retryUntilIdle: true`: `StartupModals` retries the `domIsBusy()` check every second until it's idle or the 20s startup window closes, instead of forfeiting the slot on the first busy sample. See [Reference integration](#reference-integration).
+
+### The navbar surface
+
+`OfferNavbarButton` is a persistent top-navbar entry point for a `Modal` campaign. It is a separate path from `OfferModal`, not a replacement: `OfferModal` is the one-shot `StartupModals` surface, this one is click-to-open and never queued.
+
+- **SEEN is reported by the button**, via `seenRef`, when it mounts.
+- **A click is not a CTA.** The host's `onClick` decides what opens; the button calls neither `onAction` nor `onDismiss`, so it stays until the campaign ends.
+- **Appearance is entirely the host's**: `icon` (any node, left of the label; `null` for none), `backgroundColor` (any CSS `background`, colour or gradient), `color` and `label` are required, plus an optional `className`. `backgroundColor`/`color` are passed as the custom properties `--offer-navbar-button-background` / `--offer-navbar-button-color`, which the stylesheet uses with no fallbacks, so the package ships no look of its own.
+- **Placement is the host's**: Mail passes it through `PrivateHeader`'s `upsellButton` only while `useActiveOffer(CampaignVariant.MODAL, …)` is non-null, so it replaces the whole `TopNavbarUpsell` chain (seasonal offers, post-signup promos, the upgrade button) and `undefined` falls back to it.
 
 ## Security
 
@@ -134,7 +143,7 @@ There is **no client-side pacing.** `endedCampaignKey` is not an exception to th
 
 ## Localization
 
-Campaign `title`, `body` and CTA text arrive already localized and are deliberately **not** wrapped in `c()` — the backend, not ttag, owns this copy, and wrapping it would submit backend-owned strings to the client's translation pipeline for no benefit. The only client-owned translated string is `OfferModal`'s "Not now".
+Campaign `title`, `body` and CTA text arrive already localized and are deliberately **not** wrapped in `c()` — the backend, not ttag, owns this copy, and wrapping it would submit backend-owned strings to the client's translation pipeline for no benefit. Client-owned translated strings are limited to surface chrome: `OfferModal`'s "Not now". `OfferNavbarButton`'s `label` is a prop, so the host translates it at its call site.
 
 ## Scope notes
 
