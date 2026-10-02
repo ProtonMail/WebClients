@@ -16,8 +16,9 @@ import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry
 import { useRequestCode } from '../../hooks/useRequestCode';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const ConfirmPhoneVerification = () => {
+export const ConfirmPhoneVerification = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username, redactedRecoveryPhoneNumber } = snapshot.context;
     const { sendResetPasswordCodeSent, sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
@@ -70,7 +71,7 @@ export const ConfirmPhoneVerification = () => {
             <Header
                 title={c('Title').t`Verify it’s you`}
                 subTitle={<UserNameWithIcon username={username} />}
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
             />
             <Content>
                 <p>
