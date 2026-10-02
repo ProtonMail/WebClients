@@ -3,7 +3,7 @@ import { cloneElement } from 'react';
 import BackdropContainer from '../../components/modalTwo/BackdropContainer';
 import type { Modal } from './interface';
 
-export interface ModalPropsInjection {
+interface ModalPropsInjection {
     key: string;
     onClose: () => void;
     onExit: () => void;

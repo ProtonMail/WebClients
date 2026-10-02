@@ -31,7 +31,7 @@ interface Props extends ModalProps<'form'> {
     addressesToGenerate: Address[];
 }
 
-export enum StatusEnum {
+enum StatusEnum {
     QUEUED = 0,
     DONE = 1,
     FAILURE = 2,
@@ -50,7 +50,7 @@ const getStatus = (text: 'ok' | 'loading' | 'error') => {
     }
 };
 
-export interface Status {
+interface Status {
     type: StatusEnum;
     tooltip?: string;
 }

@@ -57,7 +57,7 @@ const reasons: { [key in REASON]: { tag: string; label: string } } = {
     },
 };
 
-export interface Props extends ModalProps {}
+interface Props extends ModalProps {}
 
 const CancelSubscriptionViaSupportModal = ({ open, onClose, ...rest }: Props) => {
     const api = useApi();

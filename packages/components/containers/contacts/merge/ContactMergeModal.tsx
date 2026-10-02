@@ -14,7 +14,7 @@ export interface ContactMergeProps {
     onMerged: () => void;
 }
 
-export interface ContactMergeModalProps {
+interface ContactMergeModalProps {
     onMergeDetails: (contactID: string) => void;
     onMergePreview: (props: ContactMergePreviewModalProps) => void;
 }

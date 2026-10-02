@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 
 import { useDateCountdown } from '@proton/hooks';
 
-export interface TimeRemainingProps {
+interface TimeRemainingProps {
     /**
      * The expiry date as a unix timestamp in seconds
      */

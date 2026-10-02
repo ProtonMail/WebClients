@@ -24,7 +24,7 @@ import Option from '../../../option/Option';
 import SelectTwo from '../../../selectTwo/SelectTwo';
 import type { InsertLinkSelectionType } from './InsertLinkModal';
 
-export interface InsertLinkModalProps {
+interface InsertLinkModalProps {
     modalStateProps: ModalStateProps;
     onSubmit: (url: string, altAttribute: string | undefined, textToDisplay?: string) => void;
     selectionType: InsertLinkSelectionType;

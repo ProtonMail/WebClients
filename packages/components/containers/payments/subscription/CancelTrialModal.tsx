@@ -82,7 +82,7 @@ const FeatureList = () => {
     );
 };
 
-export interface CancelTrialModalProps extends ModalStateProps {
+interface CancelTrialModalProps extends ModalStateProps {
     onConfirm: () => void;
 }
 

@@ -27,12 +27,12 @@ import { getSimplePriceString } from '../../../../components/price/helper';
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';
 
 // A renewal notice rendered as up to two lines: the next charge (primary) and the eventual recurring price (secondary).
-export interface RenewalText {
+interface RenewalText {
     primary: string;
     secondary?: string;
 }
 
-export type SubscriptionRowKind = 'current' | 'upcoming';
+type SubscriptionRowKind = 'current' | 'upcoming';
 
 export interface SubscriptionRow {
     id: string;
@@ -63,9 +63,9 @@ export interface SubscriptionRow {
     renewalTooltip: ReactNode;
 }
 
-export type ScheduledChangeKind = 'amount-change' | 'prepaid-upgrade' | 'unpaid-change';
+type ScheduledChangeKind = 'amount-change' | 'prepaid-upgrade' | 'unpaid-change';
 
-export interface ScheduledChange {
+interface ScheduledChange {
     kind: ScheduledChangeKind;
     isPrepaid: boolean;
     nextCycle: CYCLE;

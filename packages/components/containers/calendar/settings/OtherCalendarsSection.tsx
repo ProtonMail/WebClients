@@ -44,7 +44,7 @@ type ModalsMap = {
     deleteCalendarModal: ModalWithProps;
 };
 
-export interface OtherCalendarsSectionProps extends ComponentPropsWithoutRef<'div'> {
+interface OtherCalendarsSectionProps extends ComponentPropsWithoutRef<'div'> {
     subscribedCalendars: SubscribedCalendar[];
     sharedCalendars: VisualCalendar[];
     calendarInvitations: CalendarMemberInvitation[];
