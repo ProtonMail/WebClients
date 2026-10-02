@@ -5,13 +5,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import userExclamation from '../../../public/user-exclamation.svg';
-import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
-import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import { selectApiErrorMessage } from '../../state-machine/UnauthedForgotPasswordStateMachine';
+import { ForgotPasswordContext } from '../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
 export const RecoveryMethodVerificationError = ({ onBack }: ForgotPasswordStepProps) => {
-    const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const { apiErrorMessage } = snapshot.context;
+    const { send } = ForgotPasswordContext.useActorRef();
+    const apiErrorMessage = ForgotPasswordContext.useSelector(selectApiErrorMessage);
 
     return (
         <>

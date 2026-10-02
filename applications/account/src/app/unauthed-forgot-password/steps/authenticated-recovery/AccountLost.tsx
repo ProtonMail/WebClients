@@ -13,13 +13,13 @@ import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { SignedInSessionsList } from '../../components/SignedInSessionsList';
-import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
-import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import { selectResetResponse, selectUsername } from '../../state-machine/UnauthedForgotPasswordStateMachine';
+import { ForgotPasswordContext } from '../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
 export const AccountLost = ({ onBack }: ForgotPasswordStepProps) => {
-    const { snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const { resetResponse, username } = snapshot.context;
+    const resetResponse = ForgotPasswordContext.useSelector(selectResetResponse);
+    const username = ForgotPasswordContext.useSelector(selectUsername);
 
     const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
     useEffect(() => {
