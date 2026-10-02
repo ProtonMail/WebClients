@@ -30,6 +30,7 @@ const useOfferFlags = (config: OfferConfig) => {
     return {
         loading: globalFlagLoading || userFlagLoading,
         isActive: globalFlag?.Value?.[config.ID] === true && !hasBit(userFlagValue, Hide),
+        isHidden: hasBit(userFlagValue, Hide),
         isVisited: hasBit(userFlagValue, Visited),
         isReplayConsumed: hasBit(userFlagValue, ReplayConsumed),
         handleHide: () => {
