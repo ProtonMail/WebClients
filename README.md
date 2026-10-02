@@ -21,7 +21,7 @@ Technically, this monorepo is based on pnpm & pnpm workspaces, with unified vers
 You'll need to have the following environment to work with this project:
 
 - Node.js LTS
-- pnpm 12, installed through Corepack (`corepack enable pnpm`)
+- pnpm 12 (see the `packageManager` field in `package.json` for the exact version), e.g. `npm install -g pnpm@<version>`
 - git
 
 See `package.json` for specific version requirements.
