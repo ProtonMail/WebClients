@@ -67,7 +67,7 @@ const validateURL = (override?: unknown): null | URLConfig => {
     }
 };
 
-const getAppURLInternal = (): URLConfig => {
+export const getAppURL = (): URLConfig => {
     const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
 
     if ((!app.isPackaged || isPlaywrightTest) && process.env.BASE_LOCAL_URL) {
@@ -82,14 +82,4 @@ const getAppURLInternal = (): URLConfig => {
     }
 
     return defaultAppURL;
-};
-
-let parsedAppUrls: URLConfig | null = null;
-
-export const getAppURL = (): URLConfig => {
-    if (!parsedAppUrls) {
-        parsedAppUrls = getAppURLInternal();
-    }
-
-    return parsedAppUrls;
 };
