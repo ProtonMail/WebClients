@@ -10,15 +10,13 @@ import {
   generateNodeUid,
   getDrive,
 } from '@proton/drive'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { getFullPathFromAncestry, getIsSharedWithMe } from '~/drive-sdk'
 import { createDocumentItem } from './create-document-items'
 import { useRecentsStore } from './use-recents-store'
 import { getRoleFromHierarchy } from '@proton/docs-core/lib/DriveSDK/getRoleFromHierarchy'
-import { useAddresses } from '@proton/account/addresses/hooks'
-import type { Address } from '@proton/shared/lib/interfaces/Address'
 import type { RecentDocumentAPIItem } from '@proton/docs-core/lib/Api/Types/GetRecentsResponse'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
 import { addSentryBreadcrumb } from '@proton/shared/lib/helpers/sentry'
@@ -26,14 +24,6 @@ import { traceRecentsError } from './traceRecentsError'
 import { getEventSubscriber, type SDKEventListener } from '~/drive-sdk/event-subscriber'
 
 export function useRecents(drive: ProtonDriveClient) {
-  const [addresses] = useAddresses()
-  useEffect(() => {
-    const { setAddresses } = useRecentsStore.getState()
-    if (addresses) {
-      setAddresses(addresses)
-    }
-  }, [addresses])
-
   const app = useApplication()
   const { docsApi, logger } = app
   const { createNotification } = useNotifications()
@@ -141,7 +131,7 @@ export function useRecents(drive: ProtonDriveClient) {
                 continue
               }
 
-              const documentDetails = getDocumentDetails(document, node, nodesByUid, addresses)
+              const documentDetails = getDocumentDetails(document, node, nodesByUid)
               documentItems.push(createDocumentItem(node, documentDetails))
 
               if (documentDetails.isSharedWithMe) {
@@ -176,7 +166,7 @@ export function useRecents(drive: ProtonDriveClient) {
           })
         })
     },
-    [fetchRecents, addresses, logger, eventSubscriber, createNotification],
+    [fetchRecents, logger, eventSubscriber, createNotification],
   )
 
   const updateRenamedDocumentInCache = useCallback((uniqueId: string, name: string) => {
@@ -194,7 +184,7 @@ export function useRecents(drive: ProtonDriveClient) {
 
   const recentsListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
     const drive = getDrive()
-    const { setDocument, setRecentDocuments, removeChildrenOf, removeDocument, addresses } = useRecentsStore.getState()
+    const { setDocument, setRecentDocuments, removeChildrenOf, removeDocument } = useRecentsStore.getState()
 
     if (event.type === 'node_deleted') {
       removeDocument(event.nodeUid)
@@ -217,7 +207,7 @@ export function useRecents(drive: ProtonDriveClient) {
             // Updated document is not in recents list - ignore
             return
           }
-          setDocument(await loadDocument(drive, event.nodeUid, addresses, document))
+          setDocument(await loadDocument(drive, event.nodeUid, document))
         } else if (node.type === NodeType.Folder) {
           const childrenOfUpdatedFolder: RecentDocumentsItemValue[] = []
 
@@ -234,7 +224,7 @@ export function useRecents(drive: ProtonDriveClient) {
           if (childrenOfUpdatedFolder.length > 0) {
             const updatedDocuments = await Promise.all(
               childrenOfUpdatedFolder.map((document) =>
-                loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), addresses, document),
+                loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), document),
               ),
             )
             setRecentDocuments(updatedDocuments)
@@ -263,12 +253,7 @@ export function useRecents(drive: ProtonDriveClient) {
   }
 }
 
-function getDocumentDetails(
-  document: RecentDocumentAPIItem,
-  node: NodeEntity,
-  nodesByUid: Map<string, NodeEntity>,
-  addresses: Address[] | undefined,
-) {
+function getDocumentDetails(document: RecentDocumentAPIItem, node: NodeEntity, nodesByUid: Map<string, NodeEntity>) {
   // most immediate parent first, root last
   const ancestorsNodeUids = document.AncestorIDs.map((ancestorLinkID) =>
     generateNodeUid(document.VolumeID, ancestorLinkID),
@@ -283,7 +268,7 @@ function getDocumentDetails(
   // root first, most immediate parent last
   const ancestorsReversed = ancestors.toReversed()
 
-  const isSharedWithMe = addresses ? getIsSharedWithMe(node, addresses) : false
+  const isSharedWithMe = getIsSharedWithMe(node)
 
   return {
     isSharedWithMe,
@@ -295,12 +280,7 @@ function getDocumentDetails(
   }
 }
 
-async function loadDocument(
-  drive: ProtonDriveClient,
-  nodeUid: string,
-  addresses: Address[],
-  document?: RecentDocumentsItemValue,
-) {
+async function loadDocument(drive: ProtonDriveClient, nodeUid: string, document?: RecentDocumentsItemValue) {
   const hierarchy = await drive.getNodeHierarchy(nodeUid)
   // Always present - getNodeHierarchy includes self (so at least 1 item)
   const node = hierarchy.at(-1) as NodeEntity
@@ -311,7 +291,7 @@ async function loadDocument(
   // most immediate parent first, root last
   const ancestorsNodeUids = ancestors.toReversed().map(({ uid }) => uid)
 
-  const isSharedWithMe = getIsSharedWithMe(node, addresses)
+  const isSharedWithMe = getIsSharedWithMe(node)
 
   return createDocumentItem(node, {
     isSharedWithMe,

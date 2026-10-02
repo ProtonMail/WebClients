@@ -53,8 +53,11 @@ import { isPrivateNodeMeta } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { isDefaultDocumentName } from '@proton/shared/lib/docs/utils/isDefaultDocumentName'
+import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
 import { useApplication } from '~/utils/application-context'
+import { constructDriveFolderUrl } from '~/utils/open-drive-folder'
+import { getIsSharedWithMe } from '~/drive-sdk'
 import { AutoGrowingInput } from './AutoGrowingInput'
 import { useHistoryViewerModal } from '../HistoryViewerModal/HistoryViewerModal'
 import { TrashedDocumentModal } from './TrashedDocumentModal'
@@ -72,7 +75,6 @@ import {
   useRenameWithSDK,
   useTrashWithSDK,
   useIsODTEnabled,
-  useDriveCompatSDK,
 } from '~/utils/flags'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
@@ -82,10 +84,9 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser'
 import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
-import { generateNodeUid } from '@proton/drive'
+import { generateNodeUid, getDrive } from '@proton/drive'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
 import type { UserModel } from '@proton/shared/lib/interfaces'
-import { getShareId } from '@proton/docs-core/lib/DriveSDK/getShareId'
 import { useOpenDocument } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
 
 export type DocumentTitleDropdownProps = {
@@ -95,6 +96,7 @@ export type DocumentTitleDropdownProps = {
   documentState: DocumentState | PublicDocumentState
   actionMode?: DocumentAction['mode']
   documentType: DocumentType
+  shareId?: string
 }
 
 const SupportsFieldSizing = CSS.supports('field-sizing: content')
@@ -106,6 +108,7 @@ export function DocumentTitleDropdown({
   documentState,
   actionMode,
   documentType,
+  shareId,
 }: DocumentTitleDropdownProps) {
   const application = useApplication()
   const isPublicMode = application.isPublicMode
@@ -121,7 +124,6 @@ export function DocumentTitleDropdown({
   const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
   const renameWithSDK = useRenameWithSDK()
   const trashWithSDK = useTrashWithSDK()
-  const replaceCompatWithSDK = useDriveCompatSDK()
   const isSheetsEnabled = useIsSheetsEnabled()
   const isODTEnabled = useIsODTEnabled()
 
@@ -322,16 +324,24 @@ export function DocumentTitleDropdown({
     const node = documentState.getProperty('decryptedNode')
     const nodeMeta = documentState.getProperty('entitlements').nodeMeta
     let to: string | undefined
+
     if (!!privateContext && isPrivateNodeMeta(nodeMeta)) {
-      const { compat } = privateContext
-      // Drive still uses share ID for URLs
-      const shareId = replaceCompatWithSDK ? await getShareId(nodeMeta) : await compat.getShareId(nodeMeta)
-      if (node.parentNodeId) {
-        to = `/${shareId}/folder/${node.parentNodeId}`
+      try {
+        const { volumeId, linkId } = nodeMeta
+
+        const nodeSDK = await getDrive().getNode(generateNodeUid(volumeId, linkId))
+        const sharedWithMe = getIsSharedWithMe(nodeSDK)
+
+        // Drive still uses share ID for URLs
+        to = constructDriveFolderUrl(node.parentNodeId, shareId, sharedWithMe)
+      } catch (error) {
+        // Fall back to Drive root
+        traceError(error)
       }
     }
+
     openProtonDrive(to)
-  }, [documentState, openProtonDrive, privateContext, replaceCompatWithSDK])
+  }, [documentState, openProtonDrive, privateContext, shareId])
 
   const handleSheetImportData = useCallback(
     (data: SheetImportData) => {
@@ -435,7 +445,7 @@ export function DocumentTitleDropdown({
           openHelp()
           break
         case 'open-proton-drive':
-          openProtonDrive()
+          void openDriveFolderForDocument()
           break
         case 'download':
           void editorController.exportAndDownload(data.format)
@@ -458,7 +468,7 @@ export function DocumentTitleDropdown({
     trashDocument,
     printAsPDF,
     openHelp,
-    openProtonDrive,
+    openDriveFolderForDocument,
     editorController,
     openRecentSpreadsheets,
     toggleDebugMode,
