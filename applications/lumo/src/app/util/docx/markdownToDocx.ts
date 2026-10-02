@@ -25,6 +25,8 @@ export const DOCX_MIME_TYPE = 'application/vnd.openxmlformats-officedocument.wor
 const PAGE_MARGIN_TWIPS = 1440;
 // A4 (the docx library's default page size) minus the 1" margins on each side.
 const CONTENT_WIDTH_TWIPS = 11906 - 2 * PAGE_MARGIN_TWIPS;
+// 1 CSS pixel = 15 twips (1440 twips per inch, 96 pixels per inch).
+const CONTENT_WIDTH_PX = Math.floor(CONTENT_WIDTH_TWIPS / 15);
 const LIST_INDENT_TWIPS = 720;
 const LIST_HANGING_TWIPS = 360;
 const QUOTE_INDENT_TWIPS = 360;
@@ -44,6 +46,10 @@ const BODY_SPACING = { after: 180, line: LINE_SPACING };
 const TIGHT_LIST_SPACING = { after: 60, line: LINE_SPACING };
 const HEADING_SPACING = { before: 280, after: 120, line: LINE_SPACING };
 const CODE_SPACING = { before: 120, after: 180, line: 240 };
+// Word tables have no "space after", so a table runs straight into the next block, and two tables
+// with nothing between them merge into one in Word and Google Docs. A spacer paragraph whose exact
+// line height equals a paragraph's spacing-after fixes both.
+const TABLE_SPACER_TWIPS = 180;
 const CODE_STYLE_ID = 'LumoCode';
 const BULLET_REFERENCE = 'lumo-bullet';
 const MUTED_TEXT_COLOR = '595959';
@@ -77,15 +83,30 @@ interface BlockScope {
 
 interface ConversionContext {
     docx: DocxModule;
+    localImages: ReadonlyMap<string, DocxLocalImage>;
     definitions: Map<string, Definition>;
     footnoteDefinitions: Map<string, FootnoteDefinition>;
     footnoteIds: Map<string, number>;
     orderedListConfigs: { reference: string; start: number }[];
 }
 
+/** An image the caller already has as bytes (e.g. a chart rendered in this browser). */
+export interface DocxLocalImage {
+    /** PNG or JPEG bytes. */
+    data: Uint8Array<ArrayBuffer>;
+    /** Display size in CSS pixels; scaled down to the page width when wider. */
+    width: number;
+    height: number;
+}
+
 export interface MarkdownToDocxOptions {
     title: string;
     creator?: string;
+    /**
+     * Images to embed, keyed by the exact URL of a markdown image (`![alt](key)`). Only these are
+     * embedded; every other image stays alt text, so the export never fetches anything.
+     */
+    localImages?: ReadonlyMap<string, DocxLocalImage>;
 }
 
 function cleanText(value: string): string {
@@ -206,9 +227,22 @@ function phrasingToInlines(ctx: ConversionContext, nodes: PhrasingContent[], sty
             }
             case 'image':
             case 'imageReference': {
-                // Images are not embedded: fetching them would contact third-party servers from the
-                // user's browser. Keep the alt text, linked to the source when it is a web URL.
                 const url = node.type === 'image' ? node.url : ctx.definitions.get(node.identifier)?.url;
+                const localImage = url ? ctx.localImages.get(url) : undefined;
+                if (localImage) {
+                    const width = Math.min(localImage.width, CONTENT_WIDTH_PX);
+                    const height = Math.round((localImage.height * width) / localImage.width);
+                    const alt = node.alt?.trim() || undefined;
+                    return [
+                        new ctx.docx.ImageRun({
+                            data: localImage.data,
+                            transformation: { width, height },
+                            altText: alt ? { name: alt, title: alt, description: alt } : undefined,
+                        }),
+                    ];
+                }
+                // Other images are not embedded: fetching them would contact third-party servers from
+                // the user's browser. Keep the alt text, linked to the source when it is a web URL.
                 const label = node.alt?.trim() || url || '';
                 if (!label) {
                     return [];
@@ -424,6 +458,23 @@ function horizontalRuleToDocx(ctx: ConversionContext, scope: BlockScope): Table 
     });
 }
 
+function createTableSpacer(ctx: ConversionContext, height: number): Paragraph {
+    return new ctx.docx.Paragraph({
+        children: [],
+        spacing: { before: 0, after: 0, line: height, lineRule: ctx.docx.LineRuleType.EXACT },
+    });
+}
+
+/** Horizontal rules are tables too: keep any that still touch another table from merging into it. */
+function separateAdjacentTables(ctx: ConversionContext, blocks: DocxBlock[]): DocxBlock[] {
+    return blocks.flatMap((block, index) => {
+        const next = blocks[index + 1];
+        return block instanceof ctx.docx.Table && next instanceof ctx.docx.Table
+            ? [block, createTableSpacer(ctx, 20)]
+            : [block];
+    });
+}
+
 function blockToDocx(ctx: ConversionContext, node: RootContent, scope: BlockScope): DocxBlock[] {
     const { docx } = ctx;
 
@@ -482,7 +533,7 @@ function blockToDocx(ctx: ConversionContext, node: RootContent, scope: BlockScop
             ];
         }
         case 'table':
-            return [tableToDocx(ctx, node, scope)];
+            return [tableToDocx(ctx, node, scope), createTableSpacer(ctx, TABLE_SPACER_TWIPS)];
         case 'thematicBreak':
             return [horizontalRuleToDocx(ctx, scope)];
         case 'html': {
@@ -604,6 +655,7 @@ export async function markdownToDocxBlob(markdown: string, options: MarkdownToDo
 function buildDocxDocument(docx: DocxModule, tree: Root, options: MarkdownToDocxOptions) {
     const ctx: ConversionContext = {
         docx,
+        localImages: options.localImages ?? new Map(),
         definitions: new Map(
             collectNodes<Definition>(tree, 'definition').map((definition) => {
                 return [definition.identifier, definition];
@@ -618,9 +670,12 @@ function buildDocxDocument(docx: DocxModule, tree: Root, options: MarkdownToDocx
         orderedListConfigs: [],
     };
 
-    const children = tree.children.flatMap((node) => {
-        return blockToDocx(ctx, node, { quoteDepth: 0 });
-    });
+    const children = separateAdjacentTables(
+        ctx,
+        tree.children.flatMap((node) => {
+            return blockToDocx(ctx, node, { quoteDepth: 0 });
+        })
+    );
 
     // Footnote bodies are converted after the main text, which assigns ids in order of first reference.
     const footnotes: Record<string, { children: Paragraph[] }> = {};

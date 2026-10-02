@@ -102,6 +102,18 @@ describe('markdownToDocxBlob', () => {
         expect(document).toContain('Ada');
     });
 
+    it('separates consecutive tables so Word and Google Docs do not merge them, and spaces a table from the next block', async () => {
+        const { document } = await readDocxParts(
+            '| A | B |\n| --- | --- |\n| 1 | 2 |\n\n| C | D |\n| --- | --- |\n| 3 | 4 |\n\n---\n\n| E |\n| --- |\n| 5 |\n\nAfter'
+        );
+
+        expect(countMatches(document, /<w:tbl>/g)).toBe(4);
+        expect(document).not.toMatch(/<\/w:tbl>\s*<w:tbl>/);
+        expect(document).toMatch(
+            /<\/w:tbl><w:p><w:pPr><w:spacing w:before="0" w:after="0" w:line="180" w:lineRule="exact"\/>/
+        );
+    });
+
     it('keeps code block lines and whitespace in a single code-styled paragraph', async () => {
         const { document } = await readDocxParts('```ts\nconst a = 1;\n    return a;\n```');
 

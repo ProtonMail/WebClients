@@ -6,6 +6,7 @@ import { ensurePdfFileName } from '../../../util/pdf/downloadHtmlAsPdf';
 import { htmlDocumentToPdfBytes, htmlSlideDocumentsToPdfBytes } from '../../../util/pdf/htmlDocumentToPdfBytes';
 import { ensurePptxFileName } from '../../../util/pptx/downloadHtmlAsPptx';
 import { htmlSlidesToPptxBytes } from '../../../util/pptx/htmlSlidesToPptxBytes';
+import { prepareDocxCharts } from './artifactDocxCharts';
 import {
     PRESENTATION_PDF_EXPORT_OPTIONS,
     PRESENTATION_PPTX_EXPORT_OPTIONS,
@@ -17,6 +18,7 @@ import {
 import { markdownToPlainText } from './artifactMarkdownPlainText';
 import type { ArtifactSaveFormat } from './artifactSaveFormats';
 import { isArtifactSaveFormatSupported } from './artifactSaveFormats';
+import { normalizeDocumentCardFences } from './artifactVizCards';
 import type { ParsedArtifact } from './parseArtifacts';
 
 export type ArtifactFileBytesProgressCallback = (current: number, total: number) => void;
@@ -34,6 +36,11 @@ const SAVE_FORMAT_MIME_TYPES: Record<ArtifactSaveFormat, string> = {
     pdf: 'application/pdf',
     pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
 };
+
+async function buildDocumentDocxBlob(artifact: ParsedArtifact): Promise<Blob> {
+    const { markdown, localImages } = await prepareDocxCharts(normalizeDocumentCardFences(artifact.content));
+    return markdownToDocxBlob(markdown, { title: artifact.title, creator: LUMO_SHORT_APP_NAME, localImages });
+}
 
 export async function buildArtifactFileForSave(
     artifact: ParsedArtifact,
@@ -71,7 +78,8 @@ export async function buildArtifactFileForSave(
 
     if (format === 'docx') {
         return {
-            data: await markdownToDocxBlob(artifact.content, { title: artifact.title, creator: LUMO_SHORT_APP_NAME }),
+            // Word gets charts as images and leaked chat cards as table / quote (D12).
+            data: await buildDocumentDocxBlob(artifact),
             fileName: buildArtifactFileName(artifact, format),
             mimeType,
         };
