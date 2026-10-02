@@ -79,7 +79,7 @@ export const STIFFNESS_PUSH = 8;
 export const STIFFNESS_PULL = 16;
 export const STIFFNESS_PULL_ENDING = 40;
 
-const makeSmoothingTransformer = (): Transformer<M, M> => {
+const makeSmoothingTransformer = (signal: AbortSignal | undefined): Transformer<M, M> => {
     let buffer = new StringDeque('');
     let rate = 0; // char/second - emission process first derivative (aka speed or velocity)
     let lastTime = Date.now();
@@ -104,10 +104,10 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
     // The readable side may be cancelled/errored (e.g. the consumer aborts the generation or
     // navigates away) while a smoothing timer is still scheduled. When that happens the
     // controller can no longer accept chunks and `enqueue` throws. `desiredSize` is `null`
-    // for an errored/closed stream, so we use it to detect this and stop the timer loop
-    // instead of crashing.
+    // for an errored stream, so we use it to detect this and stop the timer loop instead of
+    // crashing. A cancelled stream reads as closed (`desiredSize` 0), which only the signal reveals.
     function canEnqueue(controller: TransformStreamDefaultController<M>): boolean {
-        if (controller.desiredSize === null) {
+        if (controller.desiredSize === null || signal?.aborted) {
             disableTimeout();
             return false;
         }
@@ -137,7 +137,7 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
 
         // Bail out if the stream is no longer writable (cancelled/errored). This prevents a
         // dangling timer from throwing when it tries to enqueue into an errored stream.
-        if (controller.desiredSize === null) {
+        if (!canEnqueue(controller)) {
             return;
         }
 
@@ -210,7 +210,7 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
 
         // Make progress manually until stream is over. Stop early if the stream became
         // cancelled/errored, otherwise the buffer would never drain and we'd loop forever.
-        while (!buffer.isEmpty() && controller.desiredSize !== null) {
+        while (!buffer.isEmpty() && canEnqueue(controller)) {
             progress(controller, false);
             await sleep(REFRESH_MS);
         }
@@ -250,5 +250,8 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
 const strategy = {
     highWaterMark: 99999999,
 };
-export const makeSmoothingTransformStream = (enabled: boolean = true): TransformStream<M, M> =>
-    enabled ? new TransformStream(makeSmoothingTransformer(), strategy, strategy) : new TransformStream(); // passthrough if disabled
+export const makeSmoothingTransformStream = (
+    enabled: boolean = true,
+    signal: AbortSignal | undefined = undefined
+): TransformStream<M, M> =>
+    enabled ? new TransformStream(makeSmoothingTransformer(signal), strategy, strategy) : new TransformStream(); // passthrough if disabled
