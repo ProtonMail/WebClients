@@ -5624,6 +5624,22 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } Ordner wurde in seinen übergeordneten Ordner integriert, da die maximale Verschachtelungstiefe erreicht wurde.",
+        "${ count } Ordner wurden in ihren übergeordneten Ordner zusammengeführt, da die maximale Verschachtelungstiefe erreicht wurde."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } Ordner wurde nicht importiert, da sein übergeordneter Ordner die maximale Anzahl an Unterordnern erreicht hat. Dessen Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert.",
+        "${ count } Ordner wurden nicht importiert, da ihr übergeordneter Ordner die maximale Anzahl an Unterordnern erreicht hatte. Die darin enthaltenen Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } Ordner wurde nicht importiert, da dieser Tresor seine maximale Ordneranzahl erreicht hat. Die darin enthaltenen Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert.",
+        "${ count } Ordner wurden nicht importiert, da dieser Tresor seine maximale Ordneranzahl erreicht hat. Die darin enthaltenen Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } Ordner konnte nicht erstellt werden. Dessen Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert.",
+        "${ failed } Ordner konnten nicht erstellt werden. Deren Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert."
       ]
     }
   }
