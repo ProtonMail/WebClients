@@ -3,7 +3,7 @@ import { createContext, useContext } from 'react';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
 import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
 
-import type { CardRenderers, LumoAgentItem, ServerToolMeta, ToolLimit } from './types';
+import type { CardRenderers, LumoAgentItem, ServerToolMeta } from './types';
 
 /**
  * The conversation surface exposed by `useLumoAgent`, plus the product's render config. It bridges the
@@ -14,11 +14,8 @@ import type { CardRenderers, LumoAgentItem, ServerToolMeta, ToolLimit } from './
 export interface LumoAgentDrawerValue {
     items: LumoAgentItem[];
     isBusy: boolean;
-    toolLimit: ToolLimit | null;
     hasConversation: boolean;
     send: (text: string) => void;
-    resume: () => void;
-    dismissToolLimit: () => void;
     confirm: (params: Record<string, any>) => void;
     cancel: () => void;
     stop: () => void;

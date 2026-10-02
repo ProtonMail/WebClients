@@ -21,7 +21,7 @@ import { ConfirmOutcome, createClientToolExecutor } from '../engine/engine';
 import { LOAD_GUIDE_TOOL_NAME } from '../engine/loadGuide';
 import { createReferenceRegistry } from '../engine/referenceRegistry';
 import { buildSystemPrompt } from '../prompt/buildSystemPrompt';
-import type { LumoAgentConfig, LumoAgentItem, ToolLimit } from './types';
+import type { LumoAgentConfig, LumoAgentItem } from './types';
 import { ConfirmStatus, LumoChainEnd, LumoConfirmAnswer } from './types';
 
 /** The engine reports how a change went; the tile is a UI state. Neither vocabulary owns the other. */
@@ -84,20 +84,11 @@ const projectChainForHistory = (chainWork: Turn[], definitions: ToolDefinition[]
 
 /**
  * The transport pads a tool round with a blank assistant turn and drops that padding again before the
- * next one, so a resumed chain comes back one turn shorter at the front than it was sent. Measuring both
- * ends without the padding keeps them aligned, and keeps a blank turn from reading as narration.
+ * next one. Measuring both ends without the padding keeps them aligned, and keeps a blank turn from
+ * reading as narration.
  */
 const withoutBlankAssistantTurns = (turns: Turn[]): Turn[] =>
     turns.filter((turn) => turn.role !== ASSISTANT || !!turn.content?.trim());
-
-/**
- * Tool calls made since the question, resumed rounds included: a resumed chain is handed the whole turn
- * array, banked history and all, and every one of this exchange's rounds sits after its user turn.
- */
-const countToolCallsSinceQuestion = (turns: Turn[]): number => {
-    const question = turns.map((turn) => turn.role).lastIndexOf(USER);
-    return turns.slice(question + 1).filter((turn) => turn.role === TOOL_CALL).length;
-};
 
 /** Banked history replays as question-then-answer, so a trailing tool call or result is not banked. */
 const untilLastSpokenTurn = (turns: Turn[]): Turn[] => {
@@ -107,7 +98,7 @@ const untilLastSpokenTurn = (turns: Turn[]): Turn[] => {
 
 /**
  * Prose the projection does not already carry, merged into a trailing assistant turn rather than added
- * beside it: a resumed exchange writes its answer in two halves, and the history it replays is one turn.
+ * beside it: the history an exchange replays is one answer turn.
  */
 const appendProse = (turns: Turn[], prose: string): Turn[] => {
     const last = turns[turns.length - 1];
@@ -162,7 +153,6 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     const [items, setItems] = useState<LumoAgentItem[]>([]);
     const [isBusy, setIsBusy] = useState(false);
     const [sessionKey, setSessionKey] = useState(0);
-    const [toolLimit, setToolLimit] = useState<ToolLimit | null>(null);
 
     const idRef = useRef(0);
     const controllerRef = useRef<AbortController | null>(null);
@@ -172,16 +162,11 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     const historyRef = useRef<Turn[]>([]);
     // What the debug transcript copies: every turn verbatim, including read payloads history elides.
     const transcriptRef = useRef<Turn[]>([]);
-    // The exchange's projected turns, waiting to be banked. Per exchange, not per chain: a chain that
-    // stops on the round budget banks nothing, and the resumed chain only sees its own new turns.
+    // The exchange's projected turns, waiting to be banked.
     const projectedChainRef = useRef<Turn[]>([]);
-    const pendingResumeRef = useRef<{ turns: Turn[]; userText: string; reply: string; limit: ToolLimit } | null>(null);
-    // The last step the user was shown, so a chain parked on the budget can name where it got to.
-    const lastActivityRef = useRef('');
     const replyIdRef = useRef<number | null>(null);
     const replyTextRef = useRef('');
-    // Every bubble of prose the current chain has written, carried across a resume so history keeps the
-    // half of the answer the user already read. `replyTextRef` only ever holds the live bubble.
+    // Every bubble of prose the current chain has written. `replyTextRef` only ever holds the live bubble.
     const chainReplyRef = useRef('');
     // Read through a ref so no reporting call site has to depend on `config`. The cleanup effect below
     // would otherwise abort the chain and abandon its card on every render a caller changed config on.
@@ -209,20 +194,6 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         }
         historyRef.current = [...historyRef.current, { role: USER, content: userText }, ...projected];
     }, []);
-
-    const clearPendingResume = useCallback(() => {
-        pendingResumeRef.current = null;
-        setToolLimit(null);
-    }, []);
-
-    const discardPendingResume = useCallback(() => {
-        const pending = pendingResumeRef.current;
-        if (!pending) {
-            return;
-        }
-        clearPendingResume();
-        commitHistory(pending.userText);
-    }, [clearPendingResume, commitHistory]);
 
     const appendReplyDelta = useCallback(
         (delta: string) => {
@@ -366,7 +337,6 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 if (byName.get(chip.tool)?.kind === 'mutation' || chip.tool === LOAD_GUIDE_TOOL_NAME) {
                     return;
                 }
-                lastActivityRef.current = chip.summary.label;
                 pushItem({
                     id: nextId(),
                     kind: 'chip',
@@ -382,17 +352,14 @@ const useLumoAgent = (config: LumoAgentConfig) => {
      * Bank a finished chain's own turns — each round's narration, then its tool calls (id, name,
      * decrypted arguments) and results — in the order the model produced them. The transport breaks its
      * loop before banking the closing prose, so what this chain produced minus the narration already in
-     * `chainWork` supplies it: nothing when the last round called a tool rather than speaking. A resumed
-     * chain carries the prose the user already read, and the chain that wrote it banked it, so that
-     * prefix is dropped first. The live bubble is the fallback for a chain whose prose a chip or an
-     * error split mid-round, where the subtraction no longer lines up. The same walk projects the chain
+     * `chainWork` supplies it: nothing when the last round called a tool rather than speaking. The live
+     * bubble is the fallback for a chain whose prose a chip or an error split mid-round, where the
+     * subtraction no longer lines up. The same walk projects the chain
      * into the exchange history is waiting to bank (see {@link projectChainForHistory}).
      */
     const recordChainWork = useCallback(
-        (chainWork: Turn[], carriedReply: string) => {
-            // A resumed chain's first bubble is joined onto the prose it carries; the subtraction only
-            // lines up once that join is off the front.
-            const produced = chainReplyRef.current.slice(carriedReply.length).trimStart();
+        (chainWork: Turn[]) => {
+            const produced = chainReplyRef.current.trimStart();
             const narrated = chainWork
                 .filter((turn) => turn.role === ASSISTANT)
                 .map((turn) => turn.content)
@@ -411,24 +378,20 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     );
 
     const runChain = useCallback(
-        async (turns: Turn[], userText: string, resumed?: { reply: string }) => {
+        async (turns: Turn[], userText: string) => {
             setIsBusy(true);
-            const carriedReply = resumed?.reply ?? '';
-            chainReplyRef.current = carriedReply;
+            chainReplyRef.current = '';
 
             const controller = new AbortController();
             controllerRef.current = controller;
 
             const startedAt = performance.now();
-            // Counted here rather than off the returned turns, because a chain that throws or is aborted
-            // never returns any. A resumed chain is handed the whole exchange, so it starts from what
-            // its earlier rounds already spent.
-            let toolCalls = countToolCallsSinceQuestion(turns);
+            // Counted here rather than off the returned turns, because a chain that throws never returns any.
+            let toolCalls = 0;
             const reportChainEnd = (end: LumoChainEnd) =>
                 telemetryRef.current?.chainEnded(end, {
                     durationMs: performance.now() - startedAt,
                     toolCalls,
-                    isResume: !!resumed,
                 });
 
             // A tool can hand over an image mid-chain (the file on screen, say) — a tool result is text
@@ -495,7 +458,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 const clientTools: ChatCompletionsFunctionTool[] = (await executor.getClientTools?.()) ?? [];
                 // The executor is shared across chains, so bind this one's signal to its batches: an
                 // abandoned chain must not confirm and run the tail of its batch on the turn that replaced it.
-                const { stoppedOnBudget, turns: chainTurns } = await client.callAssistant(api, turns, {
+                const { turns: chainTurns } = await client.callAssistant(api, turns, {
                     clientToolExecutor: {
                         ...executor,
                         execute: (calls) => {
@@ -516,28 +479,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     return;
                 }
                 const sentCount = withoutBlankAssistantTurns(turns).length;
-                recordChainWork(withoutBlankAssistantTurns(chainTurns).slice(sentCount), carriedReply);
-                if (stoppedOnBudget) {
-                    finalizeReply();
-                    if (!chainReplyRef.current) {
-                        // The budget can run out on a tool-only round, leaving the user nothing to read
-                        // and nothing to bank if they decline. Say so instead of stopping in silence.
-                        const unfinished = c('Info').t`I have not finished this one yet.`;
-                        appendReplyDelta(unfinished);
-                        finalizeReply();
-                        // `recordChainWork` has already run, so this one has to be projected by hand.
-                        projectedChainRef.current = appendProse(projectedChainRef.current, unfinished);
-                    }
-                    const limit: ToolLimit = {
-                        steps: countToolCallsSinceQuestion(chainTurns),
-                        activity: lastActivityRef.current || undefined,
-                    };
-                    pendingResumeRef.current = { turns: chainTurns, userText, reply: chainReplyRef.current, limit };
-                    setToolLimit(limit);
-                    reportChainEnd(LumoChainEnd.BUDGET);
-                    return;
-                }
-                clearPendingResume();
+                recordChainWork(withoutBlankAssistantTurns(chainTurns).slice(sentCount));
                 commitHistory(userText);
                 reportChainEnd(streamFailed ? LumoChainEnd.FAILED : LumoChainEnd.SUCCEEDED);
             } catch (error: any) {
@@ -548,9 +490,6 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 reportChainEnd(isAbort ? abortEndRef.current : LumoChainEnd.FAILED);
                 // Known gap: a failed chain's turns stay inside the transport, so the tool exchanges of
                 // the run most worth reporting never reach the transcript.
-                // The stash outlives a failed resume, so the offer to carry on comes back rather than
-                // taking the whole exchange down with it.
-                setToolLimit(pendingResumeRef.current?.limit ?? null);
             } finally {
                 // An abandoned chain must not clear state its successor already owns.
                 if (controllerRef.current === controller) {
@@ -564,7 +503,6 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             config,
             executor,
             appendReplyDelta,
-            clearPendingResume,
             commitHistory,
             recordChainWork,
             finalizeReply,
@@ -601,32 +539,16 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             }
             telemetryRef.current?.promptSent();
 
-            discardPendingResume();
-            // Anything the last exchange left unbanked (an abandoned or failed chain) is not this one's,
-            // and neither is the step it got as far as.
+            // Anything the last exchange left unbanked (an abandoned or failed chain) is not this one's.
             projectedChainRef.current = [];
-            lastActivityRef.current = '';
             finalizeReply();
             pushItem({ id: nextId(), kind: 'user', text });
             transcriptRef.current.push({ role: USER, content: text });
 
             await runChain([buildSystemTurn(), ...historyRef.current, { role: USER, content: text }], text);
         },
-        [buildSystemTurn, isBusy, discardPendingResume, finalizeReply, nextId, pushItem, runChain, abandonChain]
+        [buildSystemTurn, isBusy, finalizeReply, nextId, pushItem, runChain, abandonChain]
     );
-
-    const resume = useCallback(async () => {
-        const pending = pendingResumeRef.current;
-        if (!pending || isBusy || controllerRef.current) {
-            return;
-        }
-        // The stash stays put until `runChain` has banked the exchange: if the resume aborts or throws,
-        // the partial answer and the offer to carry on are both still there.
-        setToolLimit(null);
-        finalizeReply();
-
-        await runChain(pending.turns, pending.userText, { reply: pending.reply });
-    }, [isBusy, finalizeReply, runChain]);
 
     /**
      * The model-facing exchange as one copyable string, for a bug report: the system prompt, then each
@@ -649,20 +571,15 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         replyIdRef.current = null;
         replyTextRef.current = '';
         chainReplyRef.current = '';
-        lastActivityRef.current = '';
-        clearPendingResume();
         setItems([]);
         setSessionKey((key) => key + 1);
-    }, [abandonChain, clearPendingResume]);
+    }, [abandonChain]);
 
     return {
         items,
         isBusy,
-        toolLimit,
         hasConversation: items.length > 0,
         send,
-        resume,
-        dismissToolLimit: discardPendingResume,
         confirm,
         cancel,
         stop,
