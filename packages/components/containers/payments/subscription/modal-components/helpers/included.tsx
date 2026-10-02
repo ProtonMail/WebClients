@@ -223,6 +223,31 @@ export const getWhatsIncluded = ({
         ];
     }
 
+    if (planIDs[PLANS.PASS_BASIC]) {
+        included = [
+            {
+                type: 'text',
+                text: getLoginsAndNotesText(),
+            },
+            {
+                type: 'text',
+                text: c('Info').t`1 device per user`,
+            },
+            {
+                type: 'text',
+                text: c('Info').t`1 vault per user`,
+            },
+            {
+                type: 'text',
+                text: get2FAAuthenticatorText(),
+            },
+            {
+                type: 'text',
+                text: getSecureSharingText(true),
+            },
+        ];
+    }
+
     const family = planIDs[PLANS.FAMILY];
     if (family !== undefined && family > 0) {
         const storage = humanSize({

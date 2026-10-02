@@ -8,15 +8,22 @@ interface Props {
     subscription: Subscription | FreeSubscription | undefined;
     hasPaymentMethod: boolean;
     taxFields: React.ReactNode;
+    isPassBasic?: boolean;
 }
 
-export const NoPaymentRequiredNote = ({ subscription, hasPaymentMethod, taxFields }: Props) => {
+export const NoPaymentRequiredNote = ({ subscription, hasPaymentMethod, taxFields, isPassBasic }: Props) => {
     const trial = isTrial(subscription);
     const planTitle = getPlanTitle(subscription);
 
     return (
         <div>
-            {!trial && <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>}
+            {!trial && (
+                <div className="mb-4">
+                    {isPassBasic
+                        ? c('Info').t`No payment is required.`
+                        : c('Info').t`No payment is required at this time.`}
+                </div>
+            )}
             {trial && !hasPaymentMethod && (
                 <>
                     <div className="mb-4">

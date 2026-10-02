@@ -1072,7 +1072,7 @@ const SubscriptionContainerInner = ({
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
         [SUBSCRIPTION_STEPS.PLAN_SELECTION]: c('Title').t`Select a plan`,
         [SUBSCRIPTION_STEPS.CHECKOUT]:
-            checkResult?.AmountDue === 0 && shouldPassIsTrial(model, true)
+            (checkResult?.AmountDue === 0 && shouldPassIsTrial(model, true)) || model.planIDs[PLANS.PASS_BASIC]
                 ? c('new_plans: title').t`Review subscription`
                 : c('new_plans: title').t`Review subscription and pay`,
         [SUBSCRIPTION_STEPS.UPGRADE]: '',
@@ -1346,7 +1346,7 @@ const SubscriptionContainerInner = ({
                                 onChangeCurrency={handleChangeCurrency}
                                 paymentFacade={paymentFacade}
                                 paymentMethods={paymentFacade.methods}
-                                showPlanDescription={audience !== Audience.B2B}
+                                showPlanDescription={audience !== Audience.B2B || !!model.planIDs[PLANS.PASS_BASIC]}
                                 paymentForbiddenReason={model.paymentForbiddenReason}
                                 taxCountry={billingAddressHook.taxCountry}
                                 user={user}
