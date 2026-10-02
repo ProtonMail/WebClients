@@ -71,6 +71,7 @@ const DeleteConfirmModal = ({ inviteActions, onConfirm, onClose, isOpen }: Props
             ]}
             onSubmit={handleSubmit}
             open={isOpen}
+            enableDangerSubmitHotkey
         >
             {alertText}
         </Prompt>

@@ -29,6 +29,12 @@ export interface PromptProps extends Omit<ModalProps, 'children' | 'size' | 'tit
     children: ReactNode;
     ModalContentProps?: ModalContentProps;
     'data-testid'?: string;
+    /**
+     * Allow the Enter hotkey to trigger a destructive (danger-colored) button.
+     * Disabled by default to prevent accidental destructive actions.
+     * When enabled, only Enter is mapped (Space keeps acting on the focused button).
+     */
+    enableDangerSubmitHotkey?: boolean;
 }
 
 const Prompt = ({
@@ -42,6 +48,7 @@ const Prompt = ({
     ModalContentProps,
     'data-testid': dataTestId,
     disableCloseWhenClickOutside = false,
+    enableDangerSubmitHotkey = false,
     ...rest
 }: PromptProps) => {
     const buttonArray = Array.isArray(buttons) ? buttons : [buttons];
@@ -73,20 +80,28 @@ const Prompt = ({
     })();
 
     const onSubmitHotkeyPress = async (e: any) => {
+        // Prevent the native activation of a focused button so that the
+        // hotkey is the single source of truth for the triggered action
+        e.preventDefault();
         e.stopPropagation();
-        // Filtering out the destructive actions to prevent mistakes
-        // and removing the weak buttons, as they never are the main action
+        // Filtering out the destructive actions to prevent mistakes, unless
+        // explicitly enabled, and removing the weak buttons, as they never are the main action
         const cta = buttonArray.find(
-            (button) => button.props.color !== 'danger' && button.props.color !== 'weak' && !button.props.disabled
+            (button) =>
+                (enableDangerSubmitHotkey || button.props.color !== 'danger') &&
+                button.props.color !== 'weak' &&
+                !button.props.disabled
         );
 
         cta?.props.onClick?.(e);
     };
 
-    const hotkeys: HotkeyTuple[] = [
-        [KeyboardKey.Enter, onSubmitHotkeyPress],
-        [KeyboardKey.Space, onSubmitHotkeyPress],
-    ];
+    const hotkeys: HotkeyTuple[] = enableDangerSubmitHotkey
+        ? [[KeyboardKey.Enter, onSubmitHotkeyPress]]
+        : [
+              [KeyboardKey.Enter, onSubmitHotkeyPress],
+              [KeyboardKey.Space, onSubmitHotkeyPress],
+          ];
 
     return (
         <ModalTwo
