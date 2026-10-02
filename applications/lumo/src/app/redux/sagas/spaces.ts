@@ -83,7 +83,7 @@ import { getMasterKeyContext, waitForMasterKey } from './masterKey';
 import { RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isLimitReachedError } from './sagaErrors';
 
 /*** helpers ***/
-export function* saveDirtySpace(serializedSpace: SerializedSpace): SagaIterator {
+function* saveDirtySpace(serializedSpace: SerializedSpace): SagaIterator {
     console.log('Saga triggered: saveDirtySpace', serializedSpace);
 
     // Check if this space is associated with ghost conversations - if so, skip saving to IndexedDB
@@ -100,13 +100,13 @@ export function* saveDirtySpace(serializedSpace: SerializedSpace): SagaIterator 
     });
 }
 
-export function* clearDirtyIfUnchanged(serializedSpace: SerializedSpace): SagaIterator<boolean> {
+function* clearDirtyIfUnchanged(serializedSpace: SerializedSpace): SagaIterator<boolean> {
     console.log('Saga triggered: clearDirtyIfUnchanged', serializedSpace);
     const dbApi: DbApi = yield getContext('dbApi');
     return yield call([dbApi, dbApi.markSpaceAsSynced], serializedSpace);
 }
 
-export function* deleteSpaceCascadeInRedux(spaceId: SpaceId): SagaIterator<any> {
+function* deleteSpaceCascadeInRedux(spaceId: SpaceId): SagaIterator<any> {
     const conversations: ConversationMap = yield select(selectConversationsBySpaceId(spaceId));
     const messages: MessageMap = yield select(selectMessagesBySpaceId(spaceId));
     const attachments: AttachmentMap = yield select(selectAttachmentsBySpaceId(spaceId));
@@ -163,7 +163,7 @@ export function* migrateSpaceMasterKeyIfNeeded(space: Space, needsMasterKeyMigra
     yield put(pushSpaceRequest({ id: space.id, priority: 'background' }));
 }
 
-export function* serializeSpaceSaga(space: Space): SagaIterator<SerializedSpace> {
+function* serializeSpaceSaga(space: Space): SagaIterator<SerializedSpace> {
     const { id: localId } = space;
     const masterKeyBase64 = yield call(waitForMasterKey, `serializeSpaceSaga ${localId}`);
     const masterKey: AesKwCryptoKey = yield call(base64ToMasterKey, masterKeyBase64);
@@ -219,10 +219,6 @@ export function* logPushSpaceFailure({ payload }: { payload: PushSpaceRequest })
 
 export function* logPushSpaceNoop({ payload }: { payload: PushSpaceRequest }): SagaIterator<any> {
     console.log('push space noop', payload);
-}
-
-export function* logPullSpaceSuccess({ payload }: { payload: PullSpaceRequest }): SagaIterator<any> {
-    console.log('pull space success', payload);
 }
 
 export function* logPullSpaceFailure({ payload }: { payload: SpaceId }): SagaIterator<any> {
@@ -285,7 +281,7 @@ export function* handleDeleteAllSpaces(): SagaIterator<any> {
 
 /*** sync: local -> remote ***/
 
-export function* httpPostSpace(serializedSpace: SerializedSpace, priority: Priority): SagaIterator<IdMapEntry> {
+function* httpPostSpace(serializedSpace: SerializedSpace, priority: Priority): SagaIterator<IdMapEntry> {
     console.log('Saga triggered: httpPostSpace', serializedSpace);
     const type: ResourceType = 'space';
     const { id: localId } = serializedSpace;
@@ -297,7 +293,7 @@ export function* httpPostSpace(serializedSpace: SerializedSpace, priority: Prior
     return entry;
 }
 
-export function* httpPutSpace(
+function* httpPutSpace(
     serializedSpace: SerializedSpace,
     remoteId: RemoteId,
     priority: Priority
@@ -309,7 +305,7 @@ export function* httpPutSpace(
     return yield call([lumoApi, lumoApi.putSpace], spaceToApi, priority);
 }
 
-export function* httpDeleteSpace(localId: LocalId, remoteId: RemoteId, priority: Priority): SagaIterator<RemoteStatus> {
+function* httpDeleteSpace(localId: LocalId, remoteId: RemoteId, priority: Priority): SagaIterator<RemoteStatus> {
     console.log('Saga triggered: httpDeleteSpace', { localId, remoteId });
     const type: ResourceType = 'space';
     const lumoApi: LumoApi = yield getContext('lumoApi');
@@ -404,7 +400,7 @@ export function* retryPushSpace({ payload }: { payload: PushSpaceRequest }): Sag
 
 /*** sync: remote -> local ***/
 
-export function* waitForSpaceRemoteId(localId: SpaceId): SagaIterator<SpaceId | undefined> {
+function* waitForSpaceRemoteId(localId: SpaceId): SagaIterator<SpaceId | undefined> {
     console.log('Saga triggered: waitForSpaceRemoteId', localId);
     const type = 'space';
     const existingRemoteId: RemoteId | undefined = yield select((s: LumoState) => s.idmap.local2remote[type][localId]);
@@ -507,7 +503,7 @@ export function* pullSpaces(): SagaIterator<void> {
     }
 }
 
-export function* processPullSpacesGeneric(payload: PullSpacesRemote): SagaIterator<any> {
+function* processPullSpacesGeneric(payload: PullSpacesRemote): SagaIterator<any> {
     const { conversations, deletedConversations, deletedSpaces, spaces, assets, deletedAssets, requestFull } = payload;
     for (const space of listify(deletedSpaces)) {
         const { wrappedSpaceKey, ...deletedSpace } = space;

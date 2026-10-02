@@ -6,7 +6,7 @@ const COL_GAP = 32;
 const ROW_GAP = 48;
 const PADDING = 24;
 
-export interface LayoutedNode {
+interface LayoutedNode {
     node: WorkflowNode;
     x: number;
     y: number;

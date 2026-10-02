@@ -15,7 +15,7 @@ export interface DownloadArtifactPptxOptions {
     onProgress?: SlideCaptureProgressCallback;
 }
 
-export { artifactSupportsPptxExport, buildArtifactFileName } from './artifactHtmlDocument';
+export { artifactSupportsPptxExport } from './artifactHtmlDocument';
 
 /** Download a presentation artifact as PPTX (one rasterized image slide per section). */
 export async function downloadArtifactPptx(

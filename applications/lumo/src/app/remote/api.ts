@@ -47,7 +47,7 @@ import type {
 import { objectToPascalCaseKeys, oldestDateReducer } from './util';
 
 export type RemoteStatus = 'ok' | 'deleted';
-export type ResourceName =
+type ResourceName =
     'masterkeys' | 'spaces' | 'conversations' | 'messages' | 'assets' | 'personalization' | 'settings';
 
 // prettier-ignore
@@ -66,19 +66,19 @@ type PuttableResource =
     | SpaceToApi
     | { ID: RemoteId; SpaceID: RemoteId; Encrypted?: Base64; AssetTag: string }; // AssetToApi
 
-export type ListSpacesParams = {
+type ListSpacesParams = {
     createTimeUntil?: number; // unix timestamp (seconds)
     createTimeSince?: number; // unix timestamp (seconds)
 };
 
 export enum AssetType {
-    Generic = 0,
+    // Generic = 0,
     GeneratedImage = 1,
-    GeneratedVideo = 2,
-    GeneratedDoc = 3,
+    // GeneratedVideo = 2,
+    // GeneratedDoc = 3,
 }
 
-export type ListGeneratedAssetsParams = {
+type ListGeneratedAssetsParams = {
     assetType?: AssetType;
     createTimeSince?: number; // unix timestamp (seconds)
     createTimeUntil?: number; // unix timestamp (seconds)

@@ -200,5 +200,3 @@ export const ArtifactInlineEdit = ({
         </div>
     );
 };
-
-export default ArtifactInlineEdit;

@@ -5,11 +5,11 @@ const MAX_CHUNK_TOKENS = 6000;
 const OVERLAP_TOKENS = 500;
 const CHUNKING_THRESHOLD_TOKENS = 20000;
 
-export function estimateTokens(text: string): number {
+function estimateTokens(text: string): number {
     return Math.ceil(text.length / CHARS_PER_TOKEN);
 }
 
-export function needsChunking(content: string): boolean {
+function needsChunking(content: string): boolean {
     return estimateTokens(content) > CHUNKING_THRESHOLD_TOKENS;
 }
 

@@ -271,5 +271,3 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
         </div>
     );
 };
-
-export default SearchIndexDebugPanel;

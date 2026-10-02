@@ -206,5 +206,3 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
         </ModalTwo>
     );
 };
-
-export default ShareableCard;

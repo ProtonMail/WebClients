@@ -7,7 +7,7 @@ import isEqual from 'lodash/isEqual';
  * tied to the composer state. Flags are pushed to native via `onFeatureFlags`.
  */
 
-export interface FeatureFlags {
+interface FeatureFlags {
     isNativeAccountEnabled: boolean;
 }
 

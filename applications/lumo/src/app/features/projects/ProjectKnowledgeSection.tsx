@@ -23,7 +23,7 @@ import { ProjectDriveFolderInfo } from './components/ProjectDriveFolderInfo';
 // Drive-specific props — only present when a Drive folder is linked
 // ---------------------------------------------------------------------------
 
-export interface DriveKnowledgeProps {
+interface DriveKnowledgeProps {
     linkedDriveFolder: LinkedDriveFolder;
     breadcrumbs: BreadcrumbItem[];
     isRootFolder: boolean;

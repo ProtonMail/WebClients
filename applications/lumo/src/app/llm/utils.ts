@@ -137,16 +137,3 @@ export const getFileSizeLevel = (tokenCount: number): 'small' | 'medium' | 'larg
     }
     return 'small';
 };
-
-// Get progress bar state for visual indicators
-export const getContextProgressState = (percentage: number): 'low' | 'medium' | 'high' | 'critical' => {
-    if (percentage >= 100) {
-        return 'critical';
-    } else if (percentage >= 75) {
-        return 'high';
-    } else if (percentage >= 50) {
-        return 'medium';
-    }
-    return 'low';
-};
-

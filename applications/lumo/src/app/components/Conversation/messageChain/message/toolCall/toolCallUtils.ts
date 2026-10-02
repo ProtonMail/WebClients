@@ -1,6 +1,5 @@
 import type { SearchItem, ToolCallData, ToolResultData } from '../../../../../lib/toolCall/types';
 import {
-    isToolResultError,
     isWebExtractToolCallData,
     isWebSearchToolCallData,
     isWebSourceToolResultData,
@@ -29,7 +28,7 @@ export function parseToolCallBlock(block: ToolCallBlock): ToolCallData | null {
  * Parse and validate a tool result block.
  * Returns typed data if valid, null otherwise.
  */
-export function parseToolResultBlock(block: ToolResultBlock): ToolResultData | null {
+function parseToolResultBlock(block: ToolResultBlock): ToolResultData | null {
     // Try using pre-parsed data first
     if (block.toolResult) {
         const validated = tryParseToolResult(block.content);
@@ -38,42 +37,6 @@ export function parseToolResultBlock(block: ToolResultBlock): ToolResultData | n
 
     // Fallback to parsing the string
     return tryParseToolResult(block.content);
-}
-
-/**
- * Check if a tool result indicates an error.
- */
-export function isToolResultErrorBlock(block: ToolResultBlock): boolean {
-    const parsed = parseToolResultBlock(block);
-    return parsed ? isToolResultError(parsed) : false;
-}
-
-/**
- * Get human-readable error message for a tool call.
- */
-export function getToolCallErrorMessage(toolCall: ToolCallData): string {
-    if (isWebSearchToolCallData(toolCall)) {
-        return `Error while searching for: ${toolCall.arguments.query}`;
-    }
-
-    switch (toolCall.name) {
-        case 'weather':
-            return `Error while checking weather`;
-        case 'stock':
-            return `Error while looking up stock prices`;
-        case 'cryptocurrency':
-            return `Error while checking cryptocurrency prices`;
-        case 'describe_image':
-            return `Error while describing image`;
-        case 'generate_image':
-            return `Error while generating image`;
-        case 'edit_image':
-            return `Error while editing image`;
-        case 'proton_info':
-            return `Error while checking Proton knowledge`;
-        default:
-            return 'Error while executing tool';
-    }
 }
 
 function isWebSourceToolCall(toolCall: ToolCallData): boolean {

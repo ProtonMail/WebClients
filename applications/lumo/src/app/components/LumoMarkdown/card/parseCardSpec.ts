@@ -1,6 +1,6 @@
 import { CARD_TYPES, type LumoCardDirection, type LumoCardSeverity, type LumoCardSpec, type LumoCardType } from './cardTypes';
 
-export class CardSpecParseError extends Error {
+class CardSpecParseError extends Error {
     constructor(message: string) {
         super(message);
         this.name = 'CardSpecParseError';

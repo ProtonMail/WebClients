@@ -1165,67 +1165,10 @@ function assignProvisionalAttachmentsToSpace(attachments: Attachment[], spaceId:
     };
 }
 
-export function generateFakeConversationToShowTierError({
-    newMessageContent,
-    navigateCallback,
-}: {
-    newMessageContent: string;
-    navigateCallback: (conversationId: ConversationId) => void;
-}) {
-    return async (dispatch: AppDispatch): Promise<Message | undefined> => {
-        if (!newMessageContent.trim()) {
-            return undefined;
-        }
-
-        const [date1, date2] = createDatePair();
-
-        // Create new space and conversation just like in sendMessage
-        const { conversationId, spaceId } = dispatch(initializeNewSpaceAndConversation(date1));
-
-        const { userMessage, assistantMessage } = createMessagePair(
-            newMessageContent,
-            [],
-            conversationId,
-            undefined,
-            date1,
-            date2
-        );
-        dispatch(addMessage(userMessage));
-        dispatch(
-            finishMessage({
-                messageId: userMessage.id,
-                conversationId,
-                spaceId,
-                status: 'succeeded',
-                content: userMessage.content ?? '',
-                role: Role.User,
-            })
-        );
-        dispatch(addMessage(assistantMessage));
-
-        navigateCallback(conversationId);
-
-        dispatch(
-            finishMessage({
-                messageId: assistantMessage.id,
-                conversationId,
-                spaceId,
-                status: 'succeeded',
-                content: assistantMessage.content ?? '',
-                role: Role.Assistant,
-            })
-        );
-
-        dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.COMPLETED }));
-
-        return userMessage;
-    };
-}
-
 // Helper function to generate personalization prompt from state — see llm/formatPersonalization.ts
 export { formatPersonalization } from '../../llm/formatPersonalization';
 
-export function formatMemories(memories: Memory[] | undefined): string {
+function formatMemories(memories: Memory[] | undefined): string {
     if (!memories || memories.length === 0) {
         return '';
     }

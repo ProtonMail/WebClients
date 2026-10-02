@@ -164,7 +164,7 @@ export function setDebugMaxModelOverride(override: DebugMaxModelOverride | null)
     publish();
 }
 
-export function getDebugMaxModelOverride(): DebugMaxModelOverride | null {
+function getDebugMaxModelOverride(): DebugMaxModelOverride | null {
     return debugMaxOverride;
 }
 
@@ -198,7 +198,7 @@ export function setDebugModelLimitsExhausted(exhausted: boolean): void {
     publish();
 }
 
-export function getDebugModelLimitsExhausted(): boolean {
+function getDebugModelLimitsExhausted(): boolean {
     return debugModelLimitsExhausted;
 }
 
@@ -208,21 +208,6 @@ export function useDebugModelLimitsExhausted(): boolean {
 
 export function isLimitExhausted(remaining: number | undefined): boolean {
     return remaining === 0;
-}
-
-/** Show the remaining-count indicator when at zero or down to this many requests left. */
-export const LOW_REMAINING_LIMIT_THRESHOLD = 5;
-
-export function isLimitLow(remaining: number | undefined): boolean {
-    return remaining !== undefined && remaining > 0 && remaining <= LOW_REMAINING_LIMIT_THRESHOLD;
-}
-
-export function shouldShowRemainingLimitIndicator(remaining: number | undefined): boolean {
-    if (remaining === undefined) {
-        return false;
-    }
-
-    return isLimitExhausted(remaining) || isLimitLow(remaining);
 }
 
 export type ModelSwitchSuggestionArgs = {
@@ -436,11 +421,6 @@ export function shouldShowLimitUpsell(
         hasTierErrors &&
         isModelTierLimitExhausted(selectedModelTier, remainingLimits)
     );
-}
-
-/** @deprecated Use isModelTierLimitExhausted for the selected model tier. */
-export function isChatLimitExhausted(limits: LumoRemainingLimits | null): boolean {
-    return isModelTierLimitExhausted('lumo-lite', limits);
 }
 
 export function resolveUsageModelTier(modelTier: ModelTier | undefined): UsageModelTier | undefined {

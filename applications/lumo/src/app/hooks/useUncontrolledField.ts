@@ -3,7 +3,7 @@ import { useCallback, useRef, useState } from 'react';
 
 type FieldElement = HTMLInputElement | HTMLTextAreaElement;
 
-export interface UncontrolledFieldBind<T extends FieldElement> {
+interface UncontrolledFieldBind<T extends FieldElement> {
     ref: RefObject<T>;
     defaultValue: string;
     onChange: (event: ChangeEvent<T>) => void;

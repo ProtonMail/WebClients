@@ -7,7 +7,7 @@ interface ConversationContext {
     isNewChatPage: boolean;
 }
 
-export const HistoryContext = createContext<ConversationContext | null>(null);
+const HistoryContext = createContext<ConversationContext | null>(null);
 
 interface Props {
     children?: ReactNode;

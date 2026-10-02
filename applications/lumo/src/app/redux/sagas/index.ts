@@ -169,25 +169,13 @@ import {
     softDeleteSpaceFromRemote,
 } from './spaces';
 
-export {
-    ClientError,
-    ConflictClientError,
-    LimitReachedError,
-    RETRY_PUSH_EVERY_MS,
-    callWithRetry,
-    isClientError,
-    isConflictClientError,
-    isLimitReachedError,
-    setRetryPushEveryMs,
-} from './sagaErrors';
-
-export type SagaReturnType<F extends (...args: any[]) => any> = ReturnType<F> extends SagaIterator<infer R> ? R : never;
+export { setRetryPushEveryMs } from './sagaErrors';
 
 /**
  * Wraps a saga so that calls with the same action.payload.id
  * are queued and run one-by-one.
  */
-export function noRaceSameId<A extends { payload: { id: string } }>(
+function noRaceSameId<A extends { payload: { id: string } }>(
     worker: (action: A) => SagaIterator
 ): Saga<[action: A]> {
     const queues: Record<string, A[]> = {};
@@ -221,7 +209,7 @@ export function noRaceSameId<A extends { payload: { id: string } }>(
  * Wraps a saga so that calls with the same action.payload.id
  * are ignored if one is already running.
  */
-export function dedupSameId<A extends { payload: { id: string } }>(
+function dedupSameId<A extends { payload: { id: string } }>(
     worker: (action: A) => SagaIterator
 ): Saga<[action: A]> {
     const processing: Record<string, boolean> = {};
@@ -241,7 +229,7 @@ export function dedupSameId<A extends { payload: { id: string } }>(
     };
 }
 
-export function* loadReduxFromIdb(): SagaIterator {
+function* loadReduxFromIdb(): SagaIterator {
     console.log('Saga triggered: loadReduxFromIdb');
     const dbApi: DbApi = yield getContext('dbApi');
 
@@ -419,7 +407,7 @@ function* reindexUploadedAttachments(): SagaIterator {
     yield call(reconcileProjectSearchIndex);
 }
 
-export function* unloadRedux(): SagaIterator {
+function* unloadRedux(): SagaIterator {
     yield put(deleteAllSpaces());
     yield put(deleteAllConversations());
     yield put(deleteAllMessages());
@@ -427,13 +415,13 @@ export function* unloadRedux(): SagaIterator {
     yield put(deleteAllIdMaps());
 }
 
-export function* reloadRedux({}: { payload: any }): SagaIterator<any> {
+function* reloadRedux({}: { payload: any }): SagaIterator<any> {
     console.log('Saga triggered: reloadRedux');
     yield call(unloadRedux);
     yield call(loadReduxFromIdb);
 }
 
-export function* pushDirtyResources(): SagaIterator {
+function* pushDirtyResources(): SagaIterator {
     console.log('Saga triggered: pushDirtyResources');
     const dbApi: DbApi = yield getContext('dbApi');
 
@@ -481,7 +469,7 @@ export function* pushDirtyResources(): SagaIterator {
     }
 }
 
-export function* initAppSaga({}: { payload: any }): SagaIterator<any> {
+function* initAppSaga({}: { payload: any }): SagaIterator<any> {
     console.log('Saga triggered: initAppSaga');
     yield call(loadReduxFromIdb);
     yield put(pullSpacesRequest());

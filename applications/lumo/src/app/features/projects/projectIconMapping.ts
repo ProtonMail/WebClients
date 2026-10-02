@@ -5,7 +5,7 @@ import { DEFAULT_PROJECT_ICON, PROJECT_ICONS } from './projectIconIds';
  * Canonical Proton project icon ids → closest Lucide icon for LumoIcon.
  * Stored project/agent icon values stay as Proton ids; resolve at render time only.
  */
-export const PROTON_PROJECT_ICON_TO_LUCIDE = {
+const PROTON_PROJECT_ICON_TO_LUCIDE = {
     folder: 'Folder',
     'file-lines': 'FileText',
     'calendar-cells': 'Calendar',
@@ -61,7 +61,7 @@ export const PROTON_PROJECT_ICON_TO_LUCIDE = {
  * Legacy category ids and other historical values that may still be persisted
  * on spaces, agents, or example data. Map directly to Lucide without migration.
  */
-export const LEGACY_PROJECT_ICON_TO_LUCIDE = {
+const LEGACY_PROJECT_ICON_TO_LUCIDE = {
     health: 'Heart',
     investing: 'TrendingUp',
     finance: 'Banknote',
@@ -89,7 +89,7 @@ export const LEGACY_PROJECT_ICON_TO_LUCIDE = {
  * Optional aliases from legacy ids to canonical Proton ids used in PROJECT_ICONS.
  * Prefer direct Lucide mapping when the legacy id has no close Proton equivalent.
  */
-export const LEGACY_PROJECT_ICON_ALIASES: Record<string, string> = {
+const LEGACY_PROJECT_ICON_ALIASES: Record<string, string> = {
     health: 'pass-heart',
     investing: 'money-bills',
     finance: 'money-bills',
@@ -111,7 +111,7 @@ export const LEGACY_PROJECT_ICON_ALIASES: Record<string, string> = {
 
 const DEFAULT_LUCIDE_ICON: IconName = 'Folder';
 
-export const isCanonicalProjectIcon = (iconId: string): boolean => {
+const isCanonicalProjectIcon = (iconId: string): boolean => {
     return (PROJECT_ICONS as readonly string[]).includes(iconId);
 };
 

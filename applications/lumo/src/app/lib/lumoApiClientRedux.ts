@@ -25,7 +25,6 @@ import {
     addImageAttachment,
     appendChunk,
     appendReasoning,
-    deleteMessage,
     finishMessage,
     pushMessageRequest,
     recordMessageUsage,
@@ -457,68 +456,5 @@ export function sendMessageWithRedux(
 
             throw error;
         }
-    };
-}
-
-/**
- * Create Redux callbacks for streaming responses
- */
-// TODO unused? consider removing
-export function createReduxCallbacks(
-    messageId: string,
-    conversationId: string,
-    spaceId: string,
-    role: Role = Role.Assistant
-) {
-    // FIXME
-    // FIXME
-    // I think we lost the ability to generate a title.
-    // Reference code is getCallbacks() in llm/index.ts, notably, calls to changeConversationTitle()
-    // FIXME
-    // FIXME
-
-    let accumulatedContent = '';
-
-    return {
-        // todo turn chunkCallback(message, dispatch) into dispatch(chunkCallback(message))
-        chunkCallback: async (message: GenerationResponseMessage, dispatch: LumoDispatch) => {
-            if (message.type === 'token_data' && message.target === 'message') {
-                accumulatedContent += message.content;
-
-                dispatch(
-                    appendChunk({
-                        messageId,
-                        content: message.content,
-                    })
-                );
-            }
-            return {};
-        },
-        // todo turn finishCallback(status, dispatch) into dispatch(finishCallback(status))
-        finishCallback: async (status: 'succeeded' | 'failed', dispatch: LumoDispatch) => {
-            // If generation failed, delete the message instead of keeping it
-            if (status === 'failed') {
-                dispatch(deleteMessage(messageId));
-            } else {
-                dispatch(
-                    finishMessage({
-                        messageId,
-                        conversationId,
-                        spaceId,
-                        content: accumulatedContent,
-                        status,
-                        role,
-                    })
-                );
-            }
-
-            // Update conversation status to completed
-            dispatch(
-                updateConversationStatus({
-                    id: conversationId,
-                    status: ConversationStatus.COMPLETED,
-                })
-            );
-        },
     };
 }

@@ -44,7 +44,7 @@ import {
 import { sleep } from '../../util/date';
 import type { MockDatabase, MockDbSpace } from './mock-server';
 
-export const USER_TEST_UID = 'test-uid';
+const USER_TEST_UID = 'test-uid';
 
 export type WaitOpts = { timeout?: number; pollInterval?: number; message?: string };
 
@@ -56,7 +56,7 @@ export interface ActionHistoryTracker {
     hasAction: (actionType: string) => boolean;
 }
 
-export function createActionHistoryTracker(): ActionHistoryTracker {
+function createActionHistoryTracker(): ActionHistoryTracker {
     const actions: AnyAction[] = [];
 
     return {
@@ -67,7 +67,7 @@ export function createActionHistoryTracker(): ActionHistoryTracker {
     };
 }
 
-export function createActionHistoryMiddleware(tracker: ActionHistoryTracker): Middleware {
+function createActionHistoryMiddleware(tracker: ActionHistoryTracker): Middleware {
     return (_store) => (next) => (action) => {
         tracker.actions.push(action as AnyAction);
         return next(action);

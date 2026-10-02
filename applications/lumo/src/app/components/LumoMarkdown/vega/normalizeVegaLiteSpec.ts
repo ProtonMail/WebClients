@@ -243,7 +243,7 @@ export function normalizeLayeredChartUnits(spec: Record<string, unknown>): void 
  * Vega-Lite then ignores the root unit and only compiles the layer — e.g. donut + text
  * renders blank because the text layer lacks theta.
  */
-export function normalizeRootUnitWithLayer(spec: Record<string, unknown>): void {
+function normalizeRootUnitWithLayer(spec: Record<string, unknown>): void {
     const layers = spec.layer;
     if (!Array.isArray(layers) || layers.length === 0) {
         return;
@@ -347,7 +347,7 @@ function normalizeCalendarYearChannel(x: Record<string, unknown>): void {
 }
 
 /** Numeric calendar years encoded as temporal (or ordinal + timeUnit) collapse to Jan 1970 ticks. */
-export function normalizeYearAxisEncoding(spec: Record<string, unknown>): void {
+function normalizeYearAxisEncoding(spec: Record<string, unknown>): void {
     const rootValues = extractInlineValues(spec);
 
     visitChartNodesForNormalize(spec, (node) => {
@@ -426,7 +426,7 @@ function seriesFromMetricFilter(filter: string, seriesKeys: string[]): string | 
  * LLMs often emit dual-axis layer specs that filter on `datum.metric` and plot `value`
  * without folding wide data first. Map each layer to the matching numeric column instead.
  */
-export function normalizeWideDataLayerCharts(spec: Record<string, unknown>): void {
+function normalizeWideDataLayerCharts(spec: Record<string, unknown>): void {
     const layers = spec.layer;
     if (!Array.isArray(layers)) {
         return;
@@ -913,7 +913,7 @@ function isDiscreteFieldType(type: unknown): boolean {
  * LLMs often emit 1D "heatmaps" (rect + rainbow scheme + hour on both axes).
  * Convert to bar charts unless both x and y are discrete categories (true 2D heatmap).
  */
-export function normalizeMisusedHeatmaps(spec: Record<string, unknown>): void {
+function normalizeMisusedHeatmaps(spec: Record<string, unknown>): void {
     visitChartNodesForNormalize(spec, (node) => {
         const mark = node.mark;
         const markType = typeof mark === 'string' ? mark : (mark as Record<string, unknown> | undefined)?.type;
@@ -1003,7 +1003,7 @@ function collectParamNames(spec: Record<string, unknown>): Set<string> {
  * Selection params defined on a vconcat/hconcat child are not visible to sibling panels.
  * Hoist them to the composition root so linked filters and conditions resolve.
  */
-export function hoistCompositionParams(spec: Record<string, unknown>): void {
+function hoistCompositionParams(spec: Record<string, unknown>): void {
     for (const key of ['vconcat', 'hconcat', 'concat'] as const) {
         const children = spec[key];
         if (!Array.isArray(children) || children.length === 0) {
@@ -1167,7 +1167,7 @@ function stripAllInteractiveFeatures(spec: Record<string, unknown>): void {
  * interactivity prompt — child-scoped params, orphan filters, and grayed-out conditions
  * compile cleanly but render blank panels.
  */
-export function repairInteractiveSpec(spec: Record<string, unknown>): void {
+function repairInteractiveSpec(spec: Record<string, unknown>): void {
     hoistCompositionParams(spec);
 
     const compositionChildren = getCompositionChildren(spec);
@@ -1515,7 +1515,7 @@ function visitChartNodesForNormalize(
  * Param-driven data filters hide all marks when the selection is empty unless `empty: true`.
  * LLM specs often omit that flag, which produces blank charts with no compile error.
  */
-export function normalizeSelectionFilters(spec: Record<string, unknown>): void {
+function normalizeSelectionFilters(spec: Record<string, unknown>): void {
     visitChartNodesForNormalize(spec, (node) => {
         const transforms = node.transform;
         if (!Array.isArray(transforms)) {

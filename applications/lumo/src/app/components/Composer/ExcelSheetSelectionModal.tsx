@@ -21,7 +21,7 @@ type ExcelSheetSelectionModalProps = Omit<ModalProps, 'children' | 'onClose'> & 
     onConfirm: (sheetNames: string[]) => void;
 };
 
-export const ExcelSheetSelectionModal = ({
+const ExcelSheetSelectionModal = ({
     fileName,
     sheets,
     onCancel,
