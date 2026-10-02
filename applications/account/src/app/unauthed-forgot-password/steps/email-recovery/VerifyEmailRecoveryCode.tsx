@@ -26,8 +26,9 @@ import { useRequestCode } from '../../hooks/useRequestCode';
 import { useRequestNewVerificationCode } from '../../hooks/useRequestNewVerificationCode';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
+import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
-export const VerifyEmailRecoveryCode = () => {
+export const VerifyEmailRecoveryCode = ({ onBack }: ForgotPasswordStepProps) => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username, redactedRecoveryEmail } = snapshot.context;
     const { sendResetPasswordCodeSent, sendResetPasswordMethodValidated, sendResetPasswordStepLoad } =
@@ -115,7 +116,7 @@ export const VerifyEmailRecoveryCode = () => {
             <Header
                 title={c('Title').t`Verify it’s you`}
                 subTitle={<UserNameWithIcon username={username} />}
-                onBack={() => send({ type: 'decision.back' })}
+                onBack={onBack}
             />
             <Content>
                 <p>

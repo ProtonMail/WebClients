@@ -52,11 +52,7 @@ const emergencyContact = () => makeContact(DelegatedAccessTypeEnum.EmergencyAcce
 const rejecting = fromPromise<void>(() => Promise.reject(new Error('actor-error')));
 
 type ActorKey =
-    | 'fetchRecoveryMethods'
-    | 'checkDeviceRecovery'
-    | 'checkMnemonic'
-    | 'checkOtherSessions'
-    | 'checkSocialRecovery';
+    'fetchRecoveryMethods' | 'checkDeviceRecovery' | 'checkMnemonic' | 'checkOtherSessions' | 'checkSocialRecovery';
 type ActorOverrides = Partial<Record<ActorKey, AnyActorLogic>>;
 
 function startActor(overrides: ActorOverrides = {}) {
@@ -649,10 +645,34 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().matches('setNewPassword')).toBe(true);
         });
 
-        it('decision.back → mnemonicRecovery.enterPhrase', async () => {
+        it('decision.back with mnemonic → mnemonicRecovery.enterPhrase', async () => {
             const actor = await navigateToSocialRecoveryOffer();
             actor.send({ type: 'decision.back' });
             expect(actor.getSnapshot().matches({ mnemonicRecovery: 'enterPhrase' })).toBe(true);
+        });
+
+        it('decision.back without mnemonic → entry', async () => {
+            const actor = startActor();
+            await navigatePastCheckDeviceRecovery(
+                actor,
+                DeviceRecoveryLevel.NONE,
+                makeResetResponse({ DelegatedAccesses: [socialContact()] })
+            );
+            await waitForState(actor, { authenticatedRecovery: 'socialRecoveryOffer' });
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('entry')).toBe(true);
+        });
+
+        it('decision.back with signed-in sessions → otherSessionsPrompt', async () => {
+            const sessions: ExistingSession[] = [{ CreateTime: 0, LocalizedClientName: 'session-1' }];
+            const resetResponse = makeResetResponse({ Sessions: sessions, DelegatedAccesses: [socialContact()] });
+            const actor = startActor();
+            await navigateToAuthenticatedRecovery(actor, resetResponse);
+            await waitForState(actor, { authenticatedRecovery: 'otherSessionsPrompt' });
+            actor.send({ type: 'decision.no' });
+            await waitForState(actor, { authenticatedRecovery: 'socialRecoveryOffer' });
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ authenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
         });
 
         it('decision.skip with emergency contacts → emergencyAccessOffer', async () => {
@@ -690,10 +710,45 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'emergencyContactInstructions' })).toBe(true);
         });
 
-        it('decision.back → mnemonicRecovery.enterPhrase', async () => {
+        it('decision.back with mnemonic → mnemonicRecovery.enterPhrase', async () => {
             const actor = await navigateToAuthenticatedEmergencyOffer();
             actor.send({ type: 'decision.back' });
             expect(actor.getSnapshot().matches({ mnemonicRecovery: 'enterPhrase' })).toBe(true);
+        });
+
+        it('decision.back without mnemonic → entry', async () => {
+            const actor = startActor();
+            await navigatePastCheckDeviceRecovery(
+                actor,
+                DeviceRecoveryLevel.NONE,
+                makeResetResponse({ DelegatedAccesses: [emergencyContact()] })
+            );
+            await waitForState(actor, { authenticatedRecovery: 'emergencyAccessOffer' });
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('entry')).toBe(true);
+        });
+
+        it('decision.back with social contacts → socialRecoveryOffer', async () => {
+            const resetResponse = makeResetResponse({ DelegatedAccesses: [socialContact(), emergencyContact()] });
+            const actor = startActor();
+            await navigateToAuthenticatedRecovery(actor, resetResponse);
+            await waitForState(actor, { authenticatedRecovery: 'socialRecoveryOffer' });
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches({ authenticatedRecovery: 'emergencyAccessOffer' })).toBe(true);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ authenticatedRecovery: 'socialRecoveryOffer' })).toBe(true);
+        });
+
+        it('decision.back with signed-in sessions → otherSessionsPrompt', async () => {
+            const sessions: ExistingSession[] = [{ CreateTime: 0, LocalizedClientName: 'session-1' }];
+            const resetResponse = makeResetResponse({ Sessions: sessions, DelegatedAccesses: [emergencyContact()] });
+            const actor = startActor();
+            await navigateToAuthenticatedRecovery(actor, resetResponse);
+            await waitForState(actor, { authenticatedRecovery: 'otherSessionsPrompt' });
+            actor.send({ type: 'decision.no' });
+            await waitForState(actor, { authenticatedRecovery: 'emergencyAccessOffer' });
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ authenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
         });
 
         it('decision.no → offerDataLossReset', async () => {
@@ -847,10 +902,77 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             actor.send({ type: 'decision.skip' });
             expect(actor.getSnapshot().matches('recoveryFailed')).toBe(true);
         });
+
+        it('decision.back with emergency contacts → authenticatedRecovery.emergencyAccessOffer', async () => {
+            const resetResponse = makeResetResponse({ DelegatedAccesses: [socialContact(), emergencyContact()] });
+            const actor = startActor();
+            await navigateToAuthenticatedRecovery(actor, resetResponse);
+            await waitForState(actor, { authenticatedRecovery: 'socialRecoveryOffer' });
+            actor.send({ type: 'decision.skip' });
+            actor.send({ type: 'decision.no' });
+            expect(actor.getSnapshot().matches('offerDataLossReset')).toBe(true);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ authenticatedRecovery: 'emergencyAccessOffer' })).toBe(true);
+        });
+
+        it('decision.back with social contacts → authenticatedRecovery.socialRecoveryOffer', async () => {
+            const sessions: ExistingSession[] = [{ CreateTime: 0, LocalizedClientName: 'session-1' }];
+            const resetResponse = makeResetResponse({ Sessions: sessions, DelegatedAccesses: [socialContact()] });
+            const actor = startActor();
+            await navigateToAuthenticatedRecovery(actor, resetResponse);
+            await waitForState(actor, { authenticatedRecovery: 'otherSessionsPrompt' });
+            actor.send({ type: 'decision.no' });
+            await waitForState(actor, { authenticatedRecovery: 'socialRecoveryOffer' });
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches('offerDataLossReset')).toBe(true);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ authenticatedRecovery: 'socialRecoveryOffer' })).toBe(true);
+        });
+
+        it('decision.back with signed-in sessions → authenticatedRecovery.otherSessionsPrompt', async () => {
+            const sessions: ExistingSession[] = [{ CreateTime: 0, LocalizedClientName: 'session-1' }];
+            const actor = startActor();
+            await navigateToAuthenticatedRecovery(actor, makeResetResponse({ Sessions: sessions }));
+            await waitForState(actor, { authenticatedRecovery: 'otherSessionsPrompt' });
+            actor.send({ type: 'decision.no' });
+            await waitForState(actor, 'offerDataLossReset');
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ authenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
+        });
+
+        it('decision.back with mnemonic → mnemonicRecovery.enterPhrase', async () => {
+            const actor = startActor();
+            await navigatePastAuthenticatedInvokeChain(actor, makeResetResponse());
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ mnemonicRecovery: 'enterPhrase' })).toBe(true);
+        });
+
+        it('decision.back without mnemonic → entry', async () => {
+            const actor = startActor();
+            await navigatePastCheckDeviceRecovery(actor, DeviceRecoveryLevel.NONE, makeResetResponse());
+            await waitForState(actor, 'offerDataLossReset');
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('entry')).toBe(true);
+        });
     });
 
     describe('recoveryFailed', () => {
-        it('decision.back with emergencyContacts → unauthenticatedRecovery.emergencyAccessOffer', async () => {
+        it('decision.back after declining the data-loss reset → offerDataLossReset', async () => {
+            // With an emergency contact, so proven ownership has to come before the unauthenticated steps
+            const resetResponse = makeResetResponse({ DelegatedAccesses: [emergencyContact()] });
+            const actor = startActor();
+            await navigateToAuthenticatedRecovery(actor, resetResponse);
+            await waitForState(actor, { authenticatedRecovery: 'emergencyAccessOffer' });
+            actor.send({ type: 'decision.no' });
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches('recoveryFailed')).toBe(true);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('offerDataLossReset')).toBe(true);
+            // The offer goes back too, so the page's back button stays, and keeps the focus
+            expect(actor.getSnapshot().can({ type: 'decision.back' })).toBe(true);
+        });
+
+        it('decision.back after declining emergency access → unauthenticatedRecovery.emergencyAccessOffer', async () => {
             const actor = startActor();
             await navigateToUnauthenticatedRecovery(actor, { hasEmergencyContacts: true });
             actor.send({ type: 'decision.no' });
@@ -860,13 +982,34 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'emergencyAccessOffer' })).toBe(true);
         });
 
-        it('decision.back without emergencyContacts → unauthenticatedRecovery.otherSessionsPrompt', async () => {
+        it('decision.back after the emergency contact instructions → unauthenticatedRecovery.emergencyContactInstructions', async () => {
+            const actor = startActor();
+            await navigateToUnauthenticatedRecovery(actor, { hasEmergencyContacts: true });
+            actor.send({ type: 'decision.no' });
+            actor.send({ type: 'decision.yes' });
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches('recoveryFailed')).toBe(true);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'emergencyContactInstructions' })).toBe(true);
+        });
+
+        it('decision.back after declining the sessions prompt → unauthenticatedRecovery.otherSessionsPrompt', async () => {
             const actor = startActor();
             await navigateToUnauthenticatedRecovery(actor, { hasEmergencyContacts: false });
             actor.send({ type: 'decision.no' });
             expect(actor.getSnapshot().matches('recoveryFailed')).toBe(true);
             actor.send({ type: 'decision.back' });
             expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
+        });
+
+        it('decision.back after the signed-in session instructions → unauthenticatedRecovery.activeSessionInstructions', async () => {
+            const actor = startActor();
+            await navigateToUnauthenticatedRecovery(actor, { hasEmergencyContacts: false });
+            actor.send({ type: 'decision.yes' });
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches('recoveryFailed')).toBe(true);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'activeSessionInstructions' })).toBe(true);
         });
     });
 
@@ -1033,6 +1176,91 @@ describe('UnauthedForgotPasswordStateMachine', () => {
 
             actor.send({ type: 'decision.back' });
             expect(actor.getSnapshot().matches('entry')).toBe(true);
+        });
+
+        it('skip email → verify by SMS → back from the sessions prompt → retry shows email first', async () => {
+            const sessions: ExistingSession[] = [{ CreateTime: 0, LocalizedClientName: 'session-1' }];
+            const actor = startActor();
+            sendRecoveryStarted(actor, ['email', 'sms']);
+            await waitUntilLeft(actor, 'loadRecoveryMethods');
+            actor.send({ type: 'decision.skip' });
+            await waitUntilLeft(actor, 'loadRecoveryMethods');
+            actor.send({ type: 'sms.code.sent' });
+            actor.send({
+                type: 'sms.code.validated',
+                payload: makeOwnershipPayload({ resetResponse: makeResetResponse({ Sessions: sessions }) }),
+            });
+            await waitForState(actor, { authenticatedRecovery: 'otherSessionsPrompt' });
+
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('entry')).toBe(true);
+
+            const snap = await retry(actor, ['email', 'sms']);
+            expect(snap.matches('verifyRecoveryEmail')).toBe(true);
+        });
+
+        it('skip email and SMS → back from the unauthenticated sessions prompt → retry shows email first', async () => {
+            const actor = startActor();
+            sendRecoveryStarted(actor, ['email', 'sms']);
+            await waitUntilLeft(actor, 'loadRecoveryMethods');
+            actor.send({ type: 'decision.skip' });
+            await waitUntilLeft(actor, 'loadRecoveryMethods');
+            actor.send({ type: 'decision.skip' });
+            await waitForState(actor, { unauthenticatedRecovery: 'otherSessionsPrompt' });
+
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('entry')).toBe(true);
+
+            const snap = await retry(actor, ['email', 'sms']);
+            expect(snap.matches('verifyRecoveryEmail')).toBe(true);
+        });
+
+        it('skip email → SMS fails to send → back from the error → retry shows email first', async () => {
+            const actor = startActor();
+            sendRecoveryStarted(actor, ['email', 'sms']);
+            await waitUntilLeft(actor, 'loadRecoveryMethods');
+            actor.send({ type: 'decision.skip' });
+            await waitUntilLeft(actor, 'loadRecoveryMethods');
+            actor.send({ type: 'sms.code.send.failed', payload: { errorMessage: 'Too many attempts' } });
+            expect(actor.getSnapshot().matches('recoveryMethodVerificationError')).toBe(true);
+
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('entry')).toBe(true);
+            expect(actor.getSnapshot().context.apiErrorMessage).toBeUndefined();
+
+            const snap = await retry(actor, ['email', 'sms']);
+            expect(snap.matches('verifyRecoveryEmail')).toBe(true);
+        });
+
+        it('verified → back to entry → a new attempt has to prove ownership again', async () => {
+            const actor = startActor();
+            await navigatePastCheckDeviceRecovery(
+                actor,
+                DeviceRecoveryLevel.NONE,
+                makeResetResponse({ DelegatedAccesses: [socialContact()] })
+            );
+            await waitForState(actor, { authenticatedRecovery: 'socialRecoveryOffer' });
+
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('entry')).toBe(true);
+            expect(actor.getSnapshot().context).toMatchObject({
+                ownershipVerificationMethod: undefined,
+                ownershipVerificationCode: '',
+                resetResponse: undefined,
+                delegatedAccessContacts: [],
+                deviceRecoveryLevel: DeviceRecoveryLevel.NONE,
+            });
+
+            // Maybe for another account, one without email or SMS: nothing proves it's theirs
+            await retry(actor, []);
+            const snap = await waitForState(actor, { unauthenticatedRecovery: 'otherSessionsPrompt' });
+            expect(snap.matches({ unauthenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
+
+            // So back from "Couldn't recover your account" doesn't offer the earlier attempt's data-loss reset
+            actor.send({ type: 'decision.no' });
+            expect(actor.getSnapshot().matches('recoveryFailed')).toBe(true);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
         });
 
         it('skip email in attempt 1 → back → attempt 2 sees email fresh', async () => {
