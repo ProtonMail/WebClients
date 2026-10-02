@@ -8,7 +8,7 @@ import { sanitizeArtifactExportBodyHtml } from '../../../util/export/sanitizeArt
 import type { HtmlDocumentToPdfOptions } from '../../../util/pdf/htmlDocumentToPdfBytes';
 import { buildPresentationSlidesHtml, extractPresentationSlideFragments } from './artifactPresentationHtml';
 import type { ArtifactType, ParsedArtifact } from './parseArtifacts';
-import { renderChartsInSlideContent, slideContentNeedsChartPass } from './presentationCharts';
+import { renderChartPlaceholders, renderChartsInSlideContent, slideContentNeedsChartPass } from './presentationCharts';
 
 const DOCUMENT_EXPORT_STYLES = `
 .pdf-export-body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #111827; margin: 0; padding: 0; background: #fff; box-sizing: border-box; width: 100%; }
@@ -35,6 +35,9 @@ const DOCUMENT_EXPORT_STYLES = `
 .artifact-markdown pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 .artifact-markdown a { color: #6d4aff; }
 .artifact-markdown img { max-width: 100%; height: auto; }
+.artifact-markdown .lumo-chart, .artifact-markdown .lumo-chart-error { display: flex; justify-content: center; margin: 1rem 0; }
+.artifact-markdown .lumo-chart svg { max-width: 100%; height: auto; }
+.artifact-markdown .lumo-chart-error { color: #6b7280; font-style: italic; }
 /* Print path (Save as PDF): no page size, so the user's paper default (A4 or Letter) applies. */
 @page { margin: 18mm 16mm; }
 @media print {
@@ -42,7 +45,7 @@ const DOCUMENT_EXPORT_STYLES = `
   .artifact-markdown h1, .artifact-markdown h2, .artifact-markdown h3,
   .artifact-markdown h4, .artifact-markdown h5, .artifact-markdown h6 { break-after: avoid; }
   .artifact-markdown pre, .artifact-markdown blockquote, .artifact-markdown tr,
-  .artifact-markdown img, .artifact-markdown figure { break-inside: avoid; }
+  .artifact-markdown img, .artifact-markdown figure, .artifact-markdown .lumo-chart { break-inside: avoid; }
   .artifact-markdown p, .artifact-markdown li { orphans: 3; widows: 3; }
   .artifact-markdown thead { display: table-header-group; }
 }
@@ -200,7 +203,9 @@ ${body}
 
 async function buildDocumentHtmlDocument(artifact: ParsedArtifact): Promise<string> {
     const { markdownToHtmlBody } = await import('./artifactMarkdownHtml');
-    const body = sanitizeArtifactExportBodyHtml(markdownToHtmlBody(artifact.content));
+    // Charts are rendered to inert SVG before sanitizing, which strips the placeholder <script>s (D12).
+    const withCharts = await renderChartPlaceholders(markdownToHtmlBody(artifact.content, { charts: 'placeholder' }));
+    const body = sanitizeArtifactExportBodyHtml(withCharts);
     return wrapArtifactHtmlDocument(
         `<article class="artifact-markdown">${body}</article>`,
         artifact.title,

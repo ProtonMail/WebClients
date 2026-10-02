@@ -95,6 +95,35 @@ describe('wrapArtifactHtmlDocument', () => {
 });
 
 describe('buildArtifactHtmlDocument', () => {
+    // D12: document exports pre-render ```vega-lite fences (emitted as placeholders) to inert SVG.
+    it('renders chart placeholders in a document export to SVG before sanitizing', async () => {
+        const { markdownToHtmlBody } = await import('./artifactMarkdownHtml');
+        const { default: embed } = await import('vega-embed');
+        jest.mocked(embed).mockResolvedValueOnce({
+            view: {
+                run: jest.fn(),
+                resize: jest.fn(),
+                toSVG: jest.fn().mockResolvedValue('<svg xmlns="http://www.w3.org/2000/svg"><rect/></svg>'),
+                finalize: jest.fn(),
+            },
+        } as never);
+        const spec = '{"mark":"bar","data":{"values":[{"a":1}]},"encoding":{"x":{"field":"a","type":"nominal"}}}';
+        jest.mocked(markdownToHtmlBody).mockReturnValueOnce(
+            `<h1>Report</h1><div><script type="application/lumo-vega-lite+json">${spec}</script></div>`
+        );
+
+        const html = await buildArtifactHtmlDocument({
+            id: 'doc-chart',
+            type: 'document',
+            title: 'Report',
+            content: 'x',
+        });
+
+        expect(jest.mocked(markdownToHtmlBody)).toHaveBeenLastCalledWith('x', { charts: 'placeholder' });
+        expect(html).toContain('<div class="lumo-chart"><svg');
+        expect(html).not.toContain('application/lumo-vega-lite+json');
+    });
+
     it('strips malicious markup from document export bodies', async () => {
         const { markdownToHtmlBody } = await import('./artifactMarkdownHtml');
         jest.mocked(markdownToHtmlBody).mockReturnValueOnce('<h1>Summary</h1><img src=x onerror="alert(1)">');
