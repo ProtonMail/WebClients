@@ -6,6 +6,7 @@ import { messageByID } from '../../../store/messages/messagesSelectors';
 import { writtenDraftBody } from '../../helpers/draftBody';
 import { DRAFT_KIND_FOR, DraftKind } from '../../helpers/draftKind';
 import { truncateBody } from '../../helpers/messages';
+import { messageReferenceFor } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 
 interface OpenDraft {
@@ -106,7 +107,7 @@ export const createReadComposerHandler =
                           })
                         : '',
                     ...(kind !== DraftKind.NEW && parentID
-                        ? { answers: references.referenceFor('email', parentID) }
+                        ? { answers: messageReferenceFor(references, parentID) }
                         : {}),
                 },
             ];

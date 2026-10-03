@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 
 import { selectParams } from '../../../store/elements/elementsSelectors';
-
 import type { DecryptedMessage } from '../../helpers/messages';
 import { readDecryptedMessage, toDecryptedMessage, truncateBody } from '../../helpers/messages';
+import { conversationReferenceFor, messageReferenceFor } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 
 export interface ReadOpenEmailResult {
@@ -59,10 +59,12 @@ export const createReadOpenEmailHandler =
         }
 
         const email = toDecryptedMessage(decrypted);
-        return {
-            isOpen: true,
-            email: { reference: references.referenceFor('email', id, { title: email.subject }), ...email },
-        };
+        const label = { title: email.subject };
+        const reference =
+            decrypted.data?.ID === id
+                ? messageReferenceFor(references, id, label)
+                : conversationReferenceFor(references, id, label);
+        return { isOpen: true, email: { reference, ...email } };
     };
 
 export const readOpenEmailModule: MailToolModule = {
