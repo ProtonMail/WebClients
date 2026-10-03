@@ -29,7 +29,7 @@
         "@protontech/crypto": "*",
         "asn1js": "^3.0.10",
         "date-fns": "^2.30.0",
-        "pkijs": "^3.4.0",
+        "pkijs": "^3.4.1",
         "pvutils": "^1.2.0",
         "ttag": "^1.8.12"
     },
@@ -42,6 +42,6 @@
         "eslint": "^10.11.0",
         "happy-dom": "^20.14.5",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
-        "vitest": "^5.0.1"
+        "vitest": "^5.0.2"
     }
 }

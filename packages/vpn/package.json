@@ -45,7 +45,7 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "fast-xml-parser": "^5.11.1",
+        "fast-xml-parser": "^5.11.2",
         "react": "^18.3.1",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.8.12"
@@ -58,12 +58,12 @@
         "@testing-library/user-event": "^14.6.7",
         "@typescript/native": "npm:typescript@^7.0.2",
         "@vitejs/plugin-react": "^6.1.1",
-        "@vitest/coverage-v8": "^5.0.1",
-        "@vitest/ui": "^5.0.1",
+        "@vitest/coverage-v8": "^5.0.2",
+        "@vitest/ui": "^5.0.2",
         "eslint": "^10.11.0",
         "happy-dom": "^20.14.5",
         "react-dom": "^18.3.1",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
-        "vitest": "^5.0.1"
+        "vitest": "^5.0.2"
     }
 }
