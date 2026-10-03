@@ -25,11 +25,17 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
     const assetsFolder = 'assets/static';
 
     // The webpack target resolves the env section straight from the root .browserslistrc (see `target`
-    // below). The babel/css loaders need the resolved query, so derive it from the same env to keep them
-    // in sync, unless an app supplied an explicit override. (webpack only accepts an env name or config
-    // path in `browserslist:<...>`, not a raw query, once a .browserslistrc is discoverable.)
+    // below). The babel/css loaders need the query, so read it from the same env to keep them in sync,
+    // unless an app supplied an explicit override. (webpack only accepts an env name or config path in
+    // `browserslist:<...>`, not a raw query, once a .browserslistrc is discoverable.)
+    // Pass the query, not the browsers it resolves to: the loaders resolve it with their own copies of
+    // browserslist, and one with older data throws on a newer version ("Unknown version 152 of edge").
     const browserslistQuery =
-        webpackOptions.browserslist ?? browserslist(null, { env: webpackOptions.browserslistEnv }).join(', ');
+        webpackOptions.browserslist ??
+        (
+            browserslist.loadConfig({ path: process.cwd(), env: webpackOptions.browserslistEnv }) ??
+            browserslist.defaults
+        ).join(', ');
     const loaderOptions = { ...webpackOptions, browserslist: browserslistQuery };
 
     return {
