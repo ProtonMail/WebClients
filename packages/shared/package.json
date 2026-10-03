@@ -26,12 +26,12 @@
         "@protontech/crypto": "*",
         "@protontech/mimemessage": "~v1.1.4",
         "@protontech/mutex-browser": "^1.0.5",
-        "@protontech/telemetry": "^2.1.0",
+        "@protontech/telemetry": "^2.2.0",
         "@protontech/tidy-url": "^1.18.5",
         "@protontech/timezone-support": "^2.1.0",
         "@scure/base": "^2.4.0",
         "@sentry/browser": "^7.120.4",
-        "@types/node": "^24.13.6",
+        "@types/node": "^24.19.0",
         "@types/papaparse": "^5.5.2",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.8",
@@ -58,13 +58,13 @@
         "@proton/vitest-config": "workspace:^",
         "@types/file-saver": "^2.0.7",
         "@typescript/native": "npm:typescript@^7.0.2",
-        "@vitest/browser-playwright": "^5.0.1",
+        "@vitest/browser-playwright": "^5.0.2",
         "@webgpu/types": "^0.1.74",
         "eslint": "^10.11.0",
         "playwright": "^1.63.0",
-        "prettier": "^3.9.8",
+        "prettier": "^3.9.9",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
-        "vitest": "^5.0.1"
+        "vitest": "^5.0.2"
     },
     "peerDependencies": {
         "electron": "*"
