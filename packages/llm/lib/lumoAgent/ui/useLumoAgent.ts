@@ -90,12 +90,6 @@ const projectChainForHistory = (chainWork: Turn[], definitions: ToolDefinition[]
 const withoutBlankAssistantTurns = (turns: Turn[]): Turn[] =>
     turns.filter((turn) => turn.role !== ASSISTANT || !!turn.content?.trim());
 
-/** Banked history replays as question-then-answer, so a trailing tool call or result is not banked. */
-const untilLastSpokenTurn = (turns: Turn[]): Turn[] => {
-    const fromEnd = [...turns].reverse().findIndex((turn) => turn.role === ASSISTANT && !!turn.content);
-    return fromEnd === -1 ? [] : turns.slice(0, turns.length - fromEnd);
-};
-
 /**
  * Prose the projection does not already carry, merged into a trailing assistant turn rather than added
  * beside it: the history an exchange replays is one answer turn.
@@ -185,10 +179,10 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
     /** Banks the exchange the projection has accumulated, and empties it either way. */
     const commitHistory = useCallback((userText: string) => {
-        const projected = untilLastSpokenTurn(projectedChainRef.current);
+        const projected = projectedChainRef.current;
         projectedChainRef.current = [];
-        // An exchange that ended without prose has nothing worth remembering — bank neither side rather
-        // than an unanswered question.
+        // A trailing tool result is banked as it stands, so a mutation the model never spoke after is
+        // still known to have applied.
         if (!projected.length) {
             return;
         }
