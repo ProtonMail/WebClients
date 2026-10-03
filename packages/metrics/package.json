@@ -21,14 +21,14 @@
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
-        "prettier": "^3.9.8",
+        "prettier": "^3.9.9",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
         "web-vitals": "^4.2.4"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
-        "@types/node": "^24.13.6",
+        "@types/node": "^24.19.0",
         "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
         "jest": "^30.5.2",

@@ -93,11 +93,11 @@
         "andromeda-wasm": "workspace:^",
         "eslint-plugin-custom-rules": "workspace:^",
         "husky": "^9.1.7",
-        "knip": "^6.37.0",
-        "lint-staged": "^17.5.1",
+        "knip": "^6.38.0",
+        "lint-staged": "^17.6.0",
         "nyc": "^17.1.0",
         "pdf-ui": "workspace:^",
-        "prettier": "^3.9.8",
+        "prettier": "^3.9.9",
         "proton-account": "workspace:^",
         "proton-admin": "workspace:^",
         "proton-authenticator": "workspace:^",
@@ -121,7 +121,7 @@
         "proton-vpn-settings": "workspace:^",
         "proton-wallet": "workspace:^",
         "sort-package-json": "^4.0.0",
-        "turbo": "2.10.12"
+        "turbo": "2.11.5"
     },
     "packageManager": "pnpm@12.8.1",
     "engines": {
