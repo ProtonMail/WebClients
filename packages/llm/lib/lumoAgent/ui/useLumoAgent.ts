@@ -15,7 +15,7 @@ import type { WireImage } from '@proton/lumo-api-client/types-api';
 import { lumoImageMarker } from '@proton/lumo-api-client/utils';
 import type { ServerToolSource } from '@proton/lumo-ui';
 
-import type { ToolDefinition, ToolImage, ToolName } from '../contracts/types';
+import type { ToolImage, ToolName } from '../contracts/types';
 import type { ConfirmDecision, ToolChip } from '../engine/engine';
 import { ConfirmOutcome, createClientToolExecutor } from '../engine/engine';
 import { LOAD_GUIDE_TOOL_NAME } from '../engine/loadGuide';
@@ -36,8 +36,7 @@ const ASSISTANT = 'assistant' as Role;
 const TOOL_CALL = 'tool_call' as Role;
 const TOOL_RESULT = 'tool_result' as Role;
 
-/** Stands in for an elided read payload; the values it held are stale by the time it would be replayed. */
-const ELIDED_READ = '[earlier read - re-run the tool for current values]';
+const ELIDED_GUIDE = '[guide loaded - its rules are in the system prompt]';
 
 const parseToolCallName = (content: string | undefined): string => {
     try {
@@ -48,14 +47,10 @@ const parseToolCallName = (content: string | undefined): string => {
 };
 
 /**
- * The chain as history should remember it: the narration and every tool call verbatim, so the model can
- * see that it works by calling tools, but a read's payload replaced by {@link ELIDED_READ} so a replay
- * never answers from values that have since moved on. A mutation's result is the durable fact the next
- * turn reasons from ("was off"), so it stays. A call naming a tool this session does not define is read
- * as a read — eliding is the safe side.
+ * The chain as history should remember it: every turn verbatim, so the model never re-runs a read it
+ * already holds. A guide load's result is the one exception, since the system prompt re-injects that body.
  */
-const projectChainForHistory = (chainWork: Turn[], definitions: ToolDefinition[]): Turn[] => {
-    const kindByName = new Map(definitions.map((definition) => [definition.name, definition.kind]));
+const projectChainForHistory = (chainWork: Turn[]): Turn[] => {
     const projected: Turn[] = [];
     let calledName = '';
 
@@ -72,8 +67,8 @@ const projectChainForHistory = (chainWork: Turn[], definitions: ToolDefinition[]
             continue;
         }
         if (turn.role === TOOL_RESULT) {
-            const isMutation = kindByName.get(calledName) === 'mutation';
-            projected.push(isMutation ? turn : { role: TOOL_RESULT, content: ELIDED_READ });
+            const isGuideLoad = calledName === LOAD_GUIDE_TOOL_NAME;
+            projected.push(isGuideLoad ? { role: TOOL_RESULT, content: ELIDED_GUIDE } : turn);
             continue;
         }
         projected.push(turn);
@@ -154,7 +149,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     // tool it proposes and the answer it awaits have exactly the same lifetime.
     const confirmResolveRef = useRef<{ tool: ToolName; resolve: (decision: ConfirmDecision) => void } | null>(null);
     const historyRef = useRef<Turn[]>([]);
-    // What the debug transcript copies: every turn verbatim, including read payloads history elides.
+    // What the debug transcript copies: every turn verbatim, including guide bodies history elides.
     const transcriptRef = useRef<Turn[]>([]);
     // The exchange's projected turns, waiting to be banked.
     const projectedChainRef = useRef<Turn[]>([]);
@@ -351,25 +346,22 @@ const useLumoAgent = (config: LumoAgentConfig) => {
      * subtraction no longer lines up. The same walk projects the chain
      * into the exchange history is waiting to bank (see {@link projectChainForHistory}).
      */
-    const recordChainWork = useCallback(
-        (chainWork: Turn[]) => {
-            const produced = chainReplyRef.current.trimStart();
-            const narrated = chainWork
-                .filter((turn) => turn.role === ASSISTANT)
-                .map((turn) => turn.content)
-                .join('\n\n');
-            const closing = produced.startsWith(narrated)
-                ? produced.slice(narrated.length).trimStart()
-                : replyTextRef.current;
-            transcriptRef.current.push(...chainWork);
-            projectedChainRef.current.push(...projectChainForHistory(chainWork, config.definitions));
-            if (closing) {
-                transcriptRef.current.push({ role: ASSISTANT, content: closing });
-                projectedChainRef.current = appendProse(projectedChainRef.current, closing);
-            }
-        },
-        [config]
-    );
+    const recordChainWork = useCallback((chainWork: Turn[]) => {
+        const produced = chainReplyRef.current.trimStart();
+        const narrated = chainWork
+            .filter((turn) => turn.role === ASSISTANT)
+            .map((turn) => turn.content)
+            .join('\n\n');
+        const closing = produced.startsWith(narrated)
+            ? produced.slice(narrated.length).trimStart()
+            : replyTextRef.current;
+        transcriptRef.current.push(...chainWork);
+        projectedChainRef.current.push(...projectChainForHistory(chainWork));
+        if (closing) {
+            transcriptRef.current.push({ role: ASSISTANT, content: closing });
+            projectedChainRef.current = appendProse(projectedChainRef.current, closing);
+        }
+    }, []);
 
     const runChain = useCallback(
         async (turns: Turn[], userText: string) => {
