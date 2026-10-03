@@ -772,14 +772,12 @@ describe('useLumoAgent', () => {
             ]);
         });
 
-        it('banks neither side of an exchange that ran a tool but never answered', async () => {
+        it('banks the tool work of an exchange the model never spoke in', async () => {
+            const call = '{"id":"1","name":"view_items","arguments":{}}';
             script = async ({ executor }) => {
                 await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
                 return {
-                    turns: chainWith(
-                        { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
-                        { role: 'tool_result', content: '2 items' }
-                    ),
+                    turns: chainWith({ role: 'tool_call', content: call }, { role: 'tool_result', content: '2 items' }),
                 };
             };
 
@@ -787,11 +785,44 @@ describe('useLumoAgent', () => {
             await act(async () => {
                 await result.current.send('show me');
             });
-            await secondMessage(result, 'never mind');
+            await secondMessage(result, 'and the second one?');
 
             expect(sentTurns[1]).toEqual([
                 expect.objectContaining({ role: 'system' }),
-                { role: 'user', content: 'never mind' },
+                { role: 'user', content: 'show me' },
+                { role: 'tool_call', content: call },
+                { role: 'tool_result', content: expect.any(String) },
+                { role: 'user', content: 'and the second one?' },
+            ]);
+        });
+
+        it('banks a mutation that ran after the last narration, so the next message knows it applied', async () => {
+            const call = '{"id":"1","name":"move_items","arguments":{"target":"Archive"}}';
+            const applied = 'Applied move_items successfully. 2 moved to Archive.';
+            script = async ({ chunk }) => {
+                chunk(message('I will move them.'));
+                return {
+                    turns: chainWith(
+                        { role: 'assistant', content: 'I will move them.' },
+                        { role: 'tool_call', content: call },
+                        { role: 'tool_result', content: applied }
+                    ),
+                };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('move them to Archive');
+            });
+            await secondMessage(result, 'undo that');
+
+            expect(sentTurns[1]).toEqual([
+                expect.objectContaining({ role: 'system' }),
+                { role: 'user', content: 'move them to Archive' },
+                { role: 'assistant', content: 'I will move them.' },
+                { role: 'tool_call', content: call },
+                { role: 'tool_result', content: applied },
+                { role: 'user', content: 'undo that' },
             ]);
         });
     });
