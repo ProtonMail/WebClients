@@ -2,8 +2,38 @@ import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import type { Element } from '../../models/element';
 import type { ToolStore } from '../toolModule';
-import { resolveElements } from './references';
+import { emailReferenceFor, isConversationReferenceID, resolveElements } from './references';
+
+describe('emailReferenceFor', () => {
+    const conversationRow = { ID: 'CONVERSATION_1' } as Element;
+    const messageRow = { ID: 'MESSAGE_1', ConversationID: 'CONVERSATION_1' } as Element;
+
+    // Once the email has left every store, this record is the only thing that says which endpoint fetches it.
+    it('records a conversation row as a conversation id', () => {
+        const references = createReferenceRegistry();
+
+        const reference = emailReferenceFor(references, conversationRow);
+
+        expect(references.idFor(reference)).toBe('CONVERSATION_1');
+        expect(isConversationReferenceID(references, 'CONVERSATION_1')).toBe(true);
+    });
+
+    it('leaves a message row unrecorded, so it reads as a message id', () => {
+        const references = createReferenceRegistry();
+
+        emailReferenceFor(references, messageRow);
+
+        expect(isConversationReferenceID(references, 'MESSAGE_1')).toBe(false);
+    });
+
+    it('scopes the record to the registry that minted the reference', () => {
+        emailReferenceFor(createReferenceRegistry(), conversationRow);
+
+        expect(isConversationReferenceID(createReferenceRegistry(), 'CONVERSATION_1')).toBe(false);
+    });
+});
 
 const storeWith = ({
     elements = {},
