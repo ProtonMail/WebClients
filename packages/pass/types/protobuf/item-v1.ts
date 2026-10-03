@@ -553,6 +553,13 @@ export interface Metadata {
      * @generated from protobuf field: string item_uuid = 3
      */
     itemUuid: string;
+    /**
+     * Optional user-defined icon as a base64 data URI
+     * (`data:image/png;base64,...` or `data:image/svg+xml;base64,...`)
+     *
+     * @generated from protobuf field: optional string icon = 4
+     */
+    icon?: string;
 }
 /**
  * @generated from protobuf message proton_pass_item_v1.Content
@@ -2378,6 +2385,7 @@ class Metadata$Type extends MessageType<Metadata> {
             { no: 1, name: 'name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: 'note', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: 'item_uuid', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: 'icon', kind: 'scalar', opt: true, T: 9 /*ScalarType.STRING*/ },
         ]);
     }
     create(value?: PartialMessage<Metadata>): Metadata {
@@ -2403,6 +2411,9 @@ class Metadata$Type extends MessageType<Metadata> {
                 case /* string item_uuid */ 3:
                     message.itemUuid = reader.string();
                     break;
+                case /* optional string icon */ 4:
+                    message.icon = reader.string();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === 'throw')
@@ -2423,6 +2434,8 @@ class Metadata$Type extends MessageType<Metadata> {
         if (message.note !== '') writer.tag(2, WireType.LengthDelimited).string(message.note);
         /* string item_uuid = 3; */
         if (message.itemUuid !== '') writer.tag(3, WireType.LengthDelimited).string(message.itemUuid);
+        /* optional string icon = 4; */
+        if (message.icon !== undefined) writer.tag(4, WireType.LengthDelimited).string(message.icon);
         let u = options.writeUnknownFields;
         if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
         return writer;

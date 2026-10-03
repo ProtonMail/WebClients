@@ -1,5 +1,6 @@
-import type { ItemType, SafeProtobufItem } from '../../types';
-import { decodeItemContent, encodeItemContent } from './item-proto.transformer';
+import type { Item, ItemType, SafeProtobufItem } from '../../types';
+import { decodeItemContent, encodeItemContent, serializeItemContent } from './item-proto.transformer';
+import { itemBuilder } from './item.builder';
 
 function checkAndCast<T extends ItemType>(input: SafeProtobufItem, expectedType: T): SafeProtobufItem<T> {
     const { content } = input.content;
@@ -80,5 +81,44 @@ describe('ItemContentTransformer', () => {
         expect(login.content.content.login.itemEmail).toStrictEqual(itemEmail);
         expect(login.content.content.login.itemUsername).toStrictEqual(itemUsername);
         expect(login.content.content.login.password).toStrictEqual(itemPassword);
+    });
+
+    describe('metadata icon', () => {
+        const icon =
+            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';
+
+        const createItem = (metadata: Partial<Item['metadata']> = {}): Item<'login'> => {
+            const item = itemBuilder('login').data;
+            item.metadata = { ...item.metadata, name: 'Item', ...metadata };
+            return item;
+        };
+
+        it('should preserve `metadata.icon` through serialization', () => {
+            const item = createItem({ icon });
+            const decoded = decodeItemContent(serializeItemContent(item));
+
+            expect(decoded.metadata.icon).toStrictEqual(icon);
+            expect(decoded.metadata.name).toStrictEqual('Item');
+            expect(decoded.metadata.itemUuid).toStrictEqual(item.metadata.itemUuid);
+        });
+
+        it('should not set `metadata.icon` for items without icon', () => {
+            const item = createItem();
+            const encoded = serializeItemContent(item);
+            const decoded = decodeItemContent(encoded);
+
+            expect(decoded.metadata.icon).toBeUndefined();
+            expect('icon' in decoded.metadata).toBe(false);
+            expect(decoded.metadata.name).toStrictEqual('Item');
+            expect(decoded.metadata.itemUuid).toStrictEqual(item.metadata.itemUuid);
+            expect(decoded.content.content.oneofKind).toStrictEqual('login');
+        });
+
+        it('should produce identical bytes for items without icon and with `icon: undefined`', () => {
+            const item = createItem();
+            const withUndefinedIcon = { ...item, metadata: { ...item.metadata, icon: undefined } };
+
+            expect(serializeItemContent(withUndefinedIcon)).toStrictEqual(serializeItemContent(item));
+        });
     });
 });

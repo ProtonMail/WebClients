@@ -213,6 +213,9 @@ message Metadata {
 	string name = 1;
 	string note = 2;
 	string item_uuid = 3;
+	// Optional user-defined icon as a base64 data URI
+	// (`data:image/png;base64,...` or `data:image/svg+xml;base64,...`)
+	optional string icon = 4;
 }
 
 message Content {
