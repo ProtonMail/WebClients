@@ -21,11 +21,11 @@
         "@babel/runtime": "^7.29.7",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.6.3",
         "@sentry/webpack-plugin": "^1.21.0",
-        "@swc/core": "^1.16.2",
+        "@swc/core": "^1.16.13",
         "autoprefixer": "^10.6.1",
         "babel-loader": "^10.1.1",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-        "browserslist": "^4.29.0",
+        "browserslist": "^4.29.3",
         "commander": "^14.0.3",
         "copy-webpack-plugin": "^14.0.0",
         "core-js": "^3.50.0",
@@ -59,7 +59,7 @@
     "devDependencies": {
         "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.11.0",
-        "prettier": "^3.9.8",
+        "prettier": "^3.9.9",
         "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "peerDependencies": {
