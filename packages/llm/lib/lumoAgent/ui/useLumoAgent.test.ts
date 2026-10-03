@@ -705,7 +705,7 @@ describe('useLumoAgent', () => {
             ]);
         });
 
-        it("keeps a read's call but not its payload, which has had a whole turn to go stale", async () => {
+        it("keeps a read's payload, so the next message can answer from it without reading again", async () => {
             const call = '{"id":"1","name":"view_items","arguments":{}}';
             script = async ({ chunk }) => {
                 chunk(message('Let me look.'));
@@ -725,34 +725,39 @@ describe('useLumoAgent', () => {
             });
             await secondMessage(result, 'and the second one?');
 
-            expect(sentTurns[1]).toContainEqual({ role: 'tool_call', content: call });
-            const results = sentTurns[1].filter((turn) => turn.role === 'tool_result');
-            expect(results).toHaveLength(1);
-            expect(results[0].content).not.toContain('Gas bill');
+            expect(sentTurns[1]).toEqual([
+                expect.objectContaining({ role: 'system' }),
+                { role: 'user', content: 'show me' },
+                { role: 'assistant', content: 'Let me look.' },
+                { role: 'tool_call', content: call },
+                { role: 'tool_result', content: '2 items: Gas bill, Festival ticket' },
+                { role: 'assistant', content: 'Two items.' },
+                { role: 'user', content: 'and the second one?' },
+            ]);
         });
 
-        it('elides the result of a call naming a tool this session does not define', async () => {
-            const call = '{"id":"1","name":"archive_everything","arguments":{}}';
+        it("elides a guide load's body, which the system prompt already carries", async () => {
+            const call = '{"id":"1","name":"load_guide","arguments":{"guide":"search_items"}}';
             script = async ({ chunk }) => {
-                chunk(message('Done.'));
+                chunk(message('Found one.'));
                 return {
                     turns: chainWith(
                         { role: 'tool_call', content: call },
-                        { role: 'tool_result', content: 'archived 400 emails' }
+                        { role: 'tool_result', content: 'THE SEARCH GUIDE' }
                     ),
                 };
             };
 
             const { result } = renderHook(() => useLumoAgent(config));
             await act(async () => {
-                await result.current.send('tidy up');
+                await result.current.send('find it');
             });
-            await secondMessage(result, 'what did you do?');
+            await secondMessage(result, 'and another?');
 
             expect(sentTurns[1]).toContainEqual({ role: 'tool_call', content: call });
             const results = sentTurns[1].filter((turn) => turn.role === 'tool_result');
             expect(results).toHaveLength(1);
-            expect(results[0].content).not.toContain('archived 400 emails');
+            expect(results[0].content).not.toContain('THE SEARCH GUIDE');
         });
 
         it('banks a prose-only exchange as the question and the answer, and nothing else', async () => {
