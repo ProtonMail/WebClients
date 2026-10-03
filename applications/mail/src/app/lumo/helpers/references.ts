@@ -1,6 +1,7 @@
 import { ToolInputError, UnknownReferenceError } from '@proton/llm/lib/lumoAgent/contracts/errors';
-import type { ReferenceKind, ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { ReferenceKind, ReferenceLabel, ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 
+import { isElementConversation } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 import { taskRunning } from '../../store/elements/elementsSelectors';
 import type { ToolStore } from '../toolModule';
@@ -28,6 +29,46 @@ export const resolveTypedId = (reference: string, kinds: ReferenceKind[], refere
         );
     }
     return resolveId(reference, references);
+};
+
+// Keyed on the registry so the record is scoped to the session that minted the references and goes with it.
+const conversationIDsByRegistry = new WeakMap<ReferenceRegistry, Set<string>>();
+
+const conversationIDsMintedBy = (references: ReferenceRegistry): Set<string> => {
+    const existing = conversationIDsByRegistry.get(references);
+    if (existing) {
+        return existing;
+    }
+    const minted = new Set<string>();
+    conversationIDsByRegistry.set(references, minted);
+    return minted;
+};
+
+/*
+ * Every email reference is minted through these, never `referenceFor('email', …)` (lint-enforced): once
+ * the email has left every store, the recorded conversation ids are the only way to pick the endpoint.
+ */
+export const messageReferenceFor = (references: ReferenceRegistry, messageID: string, label?: ReferenceLabel) => {
+    return references.referenceFor('email', messageID, label);
+};
+
+export const conversationReferenceFor = (
+    references: ReferenceRegistry,
+    conversationID: string,
+    label?: ReferenceLabel
+) => {
+    conversationIDsMintedBy(references).add(conversationID);
+    return references.referenceFor('email', conversationID, label);
+};
+
+export const emailReferenceFor = (references: ReferenceRegistry, element: Element, label?: ReferenceLabel) => {
+    return isElementConversation(element)
+        ? conversationReferenceFor(references, element.ID, label)
+        : messageReferenceFor(references, element.ID, label);
+};
+
+export const isConversationReferenceID = (references: ReferenceRegistry, id: string): boolean => {
+    return conversationIDsMintedBy(references).has(id);
 };
 
 /**

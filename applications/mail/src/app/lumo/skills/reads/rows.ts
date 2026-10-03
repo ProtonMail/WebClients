@@ -16,8 +16,8 @@ import {
     selectLabelID,
     taskRunningInLabel,
 } from '../../../store/elements/elementsSelectors';
-
 import { formatLocalDate, formatSender } from '../../helpers/formatting';
+import { emailReferenceFor } from '../../helpers/references';
 import type { MailToolDeps } from '../../toolModule';
 
 /** One on-screen email, metadata only — the shared row shape every list-style read returns. */
@@ -114,7 +114,7 @@ export const buildAgentEmailRows = (deps: RowDeps, references: ReferenceRegistry
         // `getDate` resolves a conversation's label-contextual time, so this matches the day on screen.
         const date = getDate(element, labelID);
         return {
-            reference: references.referenceFor('email', element.ID || '', {
+            reference: emailReferenceFor(references, element, {
                 title: subject,
                 subtitle: from,
                 // The epoch stands for "no time", so there is nothing here for a card to show.
