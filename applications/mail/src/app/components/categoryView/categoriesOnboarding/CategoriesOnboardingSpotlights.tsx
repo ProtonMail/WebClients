@@ -7,7 +7,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import { useAuthentication } from '@proton/components/index';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';

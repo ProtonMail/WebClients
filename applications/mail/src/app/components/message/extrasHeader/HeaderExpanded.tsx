@@ -9,7 +9,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useToggle from '@proton/hooks/useToggle'
+import useToggle from '@proton/hooks/useToggle';
 import { IcArrowUpAndLeftBig } from '@proton/icons/icons/IcArrowUpAndLeftBig';
 import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
 import { IcArrowsUpAndLeftBig } from '@proton/icons/icons/IcArrowsUpAndLeftBig';
@@ -34,10 +34,9 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { hasLabel } from '../../../helpers/elements';
-
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { isSelfAddress } from '../../../helpers/addresses';
+import { hasLabel } from '../../../helpers/elements';
 import type { MessageViewIcons } from '../../../helpers/message/icon';
 import { getExpiresOnMessage, getMessageExpirationDate } from '../../../helpers/message/messageExpirationTime';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
@@ -227,7 +226,7 @@ const HeaderExpanded = ({
                     <span className="inline-flex">
                         <ItemLocation element={message.data} labelID={labelID} />
                         <ItemAttachmentIcon
-                            icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                            hasOnlyIcsAttachments={hasOnlyIcsAttachments}
                             onClick={handleAttachmentIconClick}
                             element={message.data}
                             className="mr-2"
@@ -269,7 +268,7 @@ const HeaderExpanded = ({
                                 <span className="inline-flex">
                                     <ItemLocation element={message.data} labelID={labelID} />
                                     <ItemAttachmentIcon
-                                        icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                                        hasOnlyIcsAttachments={hasOnlyIcsAttachments}
                                         onClick={handleAttachmentIconClick}
                                         element={message.data}
                                         className="mr-2 mt-0.5"

@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import { mailTestRender } from '../../../../helpers/tests/render';
-import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
+import { SortSubscriptionsValue, SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
 import * as mailboxSelectors from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 import { generateSubscriptionList } from '../testData';
@@ -108,7 +108,9 @@ describe('NewsletterSubscriptionList', () => {
             expect(sortingDropdown).toBeInTheDocument();
             fireEvent.click(sortingDropdown);
 
-            const recentlyReceivedOption = screen.getByTestId('dropdown-item-inbox');
+            const recentlyReceivedOption = screen.getByTestId(
+                `dropdown-item-${SortSubscriptionsValue.RecentlyReceived}`
+            );
             expect(recentlyReceivedOption).toBeInTheDocument();
             expect(recentlyReceivedOption).toHaveClass('dropdown-item--is-selected');
         });
