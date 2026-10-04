@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Checkbox, type ModalProps, ModalTwo, ModalTwoHeader, Option, SelectTwo } from '@proton/components';
-import { MAIL_APP_NAME, PRODUCT_NAMES } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeConnectGmail from '@proton/styles/assets/img/illustrations/byoe-connect-gmail.svg';
 import byoeForwarding from '@proton/styles/assets/img/illustrations/byoe-forwarding.svg';
 import byoeProfiling from '@proton/styles/assets/img/illustrations/byoe-profiling.svg';
@@ -85,7 +85,7 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                         </SelectTwo>
                         <div className="color-weak text-sm text-wrap-balance mt-4">
                             {c('BYOE')
-                                .t`Duplicates from previous imports will be skipped. Undo or import older messages in ${PRODUCT_NAMES.EASY_SWITCH} settings.`}
+                                .t`Your newest emails will be imported first. Emails you've already imported won't be copied again.`}
                         </div>
                     </div>
                 </div>
