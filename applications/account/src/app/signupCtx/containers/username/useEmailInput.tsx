@@ -12,7 +12,6 @@ import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import clsx from '@proton/utils/clsx';
 
-import challengeIconsSvg from '../../../signup/challenge-icons.source.svg';
 import { getThemeData } from '../../../signup/challenge-theme';
 import { SignupType } from '../../../signup/interfaces';
 import { useAccountFormDataContext } from '../../context/accountData/AccountFormDataContext';
@@ -80,7 +79,6 @@ const useEmailInput = ({
             <div className={`${inputsWrapper}`}>
                 <ChallengeV4
                     getThemeData={getThemeData}
-                    getIconsData={() => challengeIconsSvg}
                     bodyClassName="color-norm bg-transparent px-2"
                     iframeClassName="challenge-width-increase"
                     challengeRef={refs.challenge}
