@@ -96,7 +96,7 @@ describe('GmailSyncModal', () => {
 
         await waitFor(() => {
             expect(mockSyncCallback).not.toHaveBeenCalled();
-            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, false, TIME_PERIOD.BIG_BANG, undefined);
+            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, false, undefined, undefined);
         });
     });
     it('should call onBYOECallback with the selected import period', async () => {

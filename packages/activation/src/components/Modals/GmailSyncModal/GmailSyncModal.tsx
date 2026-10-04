@@ -25,7 +25,12 @@ interface Props extends ModalProps {
     reduceHeight?: boolean;
     onSyncCallback?: (hasError: boolean, sync?: Sync) => void;
     onSyncSkipCallback?: () => void;
-    onBYOECallback?: (hasError: boolean, importEmails: boolean, importPeriod: TIME_PERIOD, token?: ImportToken) => void;
+    onBYOECallback?: (
+        hasError: boolean,
+        importEmails: boolean,
+        importPeriod: TIME_PERIOD | undefined,
+        token?: ImportToken
+    ) => void;
     noSkip?: boolean;
     hasAccessToBYOE?: boolean;
     expectedEmailAddress?: string;
@@ -87,7 +92,7 @@ const GmailSyncModal = ({
         });
     };
 
-    const handleBYOEWithImport = (importEmails: boolean, importPeriod: TIME_PERIOD) => {
+    const handleBYOEWithImport = (importEmails: boolean, importPeriod?: TIME_PERIOD) => {
         void triggerOAuthPopup({
             provider: OAUTH_PROVIDER.GOOGLE,
             features: [EASY_SWITCH_FEATURES.BYOE],
