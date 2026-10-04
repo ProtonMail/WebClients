@@ -8,6 +8,7 @@ import byoeConnectGmail from '@proton/styles/assets/img/illustrations/byoe-conne
 import byoeForwarding from '@proton/styles/assets/img/illustrations/byoe-forwarding.svg';
 import byoeProfiling from '@proton/styles/assets/img/illustrations/byoe-profiling.svg';
 import stopHandSign from '@proton/styles/assets/img/illustrations/stop-hand-sign.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { getTimeUnitLabels } from '../../../constants';
 import { TIME_PERIOD } from '../../../interface';
@@ -31,6 +32,7 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
     const [importEmails, setImportEmails] = useState(!expectedEmailAddress);
     const [importPeriod, setImportPeriod] = useState(TIME_PERIOD.BIG_BANG);
     const timeUnitLabels = getTimeUnitLabels();
+    const isImportPeriodEnabled = useFlag('InboxBringYourOwnEmailImportPeriod');
 
     return (
         <ModalTwo
@@ -53,7 +55,9 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                     </div>
                     <div className="flex flex-column items-center gap-4">
                         <SignInWithGoogle
-                            onClick={() => onSubmit(importEmails, importEmails ? importPeriod : undefined)}
+                            onClick={() =>
+                                onSubmit(importEmails, isImportPeriodEnabled && importEmails ? importPeriod : undefined)
+                            }
                             loading={isLoading}
                             disabled={submitDisabled}
                             fullWidth
@@ -70,20 +74,22 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                         >
                             <span>{c('Label').t`Import your emails`}</span>
                         </Checkbox>
-                        <SelectTwo
-                            value={importPeriod}
-                            onChange={({ value }) => setImportPeriod(value)}
-                            disabled={!importEmails}
-                            className="mt-2"
-                            aria-label={c('Label').t`Import interval`}
-                            data-testid="AddBYOEModal:importPeriod"
-                        >
-                            {Object.values(TIME_PERIOD).map((period) => (
-                                <Option key={period} value={period} title={timeUnitLabels[period]}>
-                                    {timeUnitLabels[period]}
-                                </Option>
-                            ))}
-                        </SelectTwo>
+                        {isImportPeriodEnabled && (
+                            <SelectTwo
+                                value={importPeriod}
+                                onChange={({ value }) => setImportPeriod(value)}
+                                disabled={!importEmails}
+                                className="mt-2"
+                                aria-label={c('Label').t`Import interval`}
+                                data-testid="AddBYOEModal:importPeriod"
+                            >
+                                {Object.values(TIME_PERIOD).map((period) => (
+                                    <Option key={period} value={period} title={timeUnitLabels[period]}>
+                                        {timeUnitLabels[period]}
+                                    </Option>
+                                ))}
+                            </SelectTwo>
+                        )}
                         <div className="color-weak text-sm text-wrap-balance mt-4">
                             {c('BYOE')
                                 .t`Your newest emails will be imported first. Emails you've already imported won't be copied again.`}
