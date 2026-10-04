@@ -5164,9 +5164,6 @@ importers:
       '@proton/colors':
         specifier: workspace:^
         version: link:../colors
-      '@proton/cross-storage':
-        specifier: workspace:^
-        version: link:../cross-storage
       '@proton/features':
         specifier: workspace:^
         version: link:../features
@@ -5182,12 +5179,6 @@ importers:
       '@proton/logger':
         specifier: workspace:^
         version: link:../logger
-      '@proton/lumo-api-client':
-        specifier: workspace:^
-        version: link:../lumo-api-client
-      '@proton/lumo-ui':
-        specifier: workspace:^
-        version: link:../lumo-ui
       '@proton/mail':
         specifier: workspace:^
         version: link:../mail
@@ -5248,9 +5239,6 @@ importers:
       '@types/codemirror':
         specifier: 5.60.18
         version: 5.60.18
-      '@types/markdown-it':
-        specifier: ^13.0.9
-        version: 13.0.9
       '@types/react':
         specifier: ^18.3.31
         version: 18.3.31
@@ -5275,9 +5263,6 @@ importers:
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
-      docx-preview:
-        specifier: ^0.4.1
-        version: 0.4.1
       dompurify:
         specifier: ^3.4.16
         version: 3.4.16
@@ -5302,18 +5287,12 @@ importers:
       libphonenumber-js:
         specifier: ^1.13.14
         version: 1.13.14
-      linkify-it:
-        specifier: ^5.0.2
-        version: 5.0.2
       lodash:
         specifier: ^4.18.1
         version: 4.18.1
       lottie-react:
         specifier: ^2.4.2
         version: 2.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      markdown-it:
-        specifier: ^14.3.2
-        version: 14.3.2
       papaparse:
         specifier: ^5.7.0
         version: 5.7.0
@@ -5344,9 +5323,6 @@ importers:
       react-virtualized:
         specifier: ^9.22.6
         version: 9.22.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      resize-observer:
-        specifier: ^1.0.4
-        version: 1.0.4
       roosterjs:
         specifier: 8.47.0
         version: 8.47.0
