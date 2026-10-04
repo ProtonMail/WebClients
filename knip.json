@@ -281,7 +281,8 @@
         "packages/components": {
             "entry": [],
             "project": ["**/*.{js,jsx,ts,tsx}"],
-            "ignore": ["containers/filePreview/iwad/**"]
+            "ignore": ["containers/filePreview/iwad/**"],
+            "ignoreDependencies": ["core-js"]
         },
         "packages/cross-storage": {
             "entry": [],
