@@ -10,8 +10,6 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -105,13 +103,13 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
                 <DropdownMenu className="my-3 w-custom" style={{ '--w-custom': '16rem' }}>
                     {dropdownData.menuItems.map((item) => (
                         <DropdownMenuButton
-                            key={item.icon}
+                            key={item.filter}
                             disabled={userLoading || filterLoading}
                             onClick={(e) => handleClick(item.filter, e)}
                             className="text-left flex flex-nowrap pl-6"
                             data-testid={`dropdown-item-${item.filter}`}
                         >
-                            <Icon name={item.icon} className="mr-2 mt-0.5 shrink-0" />
+                            <item.icon className="mr-2 mt-0.5 shrink-0" />
                             {item.label}
                         </DropdownMenuButton>
                     ))}

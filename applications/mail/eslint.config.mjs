@@ -1,8 +1,36 @@
 import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
-import { atomsPackage, componentsPackage, createBarrelConfig, iconsPackage } from '@proton/eslint-config-proton/barrel';
+import { atomsPackage, componentsPackage, createBarrelPaths, iconsPackage } from '@proton/eslint-config-proton/barrel';
 import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
+import { createRestrictedImportRule } from '@proton/eslint-config-proton/restrictedImports';
+
+const barrelPackages = [atomsPackage, iconsPackage, componentsPackage];
+
+/**
+ * Every `no-restricted-imports` restriction for the app goes in here. Flat config replaces a rule's options wholesale
+ * for each file it matches, so another config object setting the rule would silently drop these and the shared ones.
+ */
+const restrictedImportOptions = {
+    paths: [
+        // `@proton/components/index` resolves to the same barrel as `@proton/components`, so ban both specifiers.
+        ...createBarrelPaths(barrelPackages),
+        ...createBarrelPaths(barrelPackages.map((name) => `${name}/index`)),
+        ...iconRestrictedImports,
+        {
+            name: '@proton/mail/store/counts/conversationCountsSlice',
+            importNames: ['useConversationCounts'],
+            message:
+                'To get location count, use useMailboxCounter from proton-mail/hooks/mailboxCounter/useMailboxCounter instead.',
+        },
+        {
+            name: '@proton/mail/store/counts/messageCountsSlice',
+            importNames: ['useMessageCounts'],
+            message:
+                'To get location count, use useMailboxCounter from proton-mail/hooks/mailboxCounter/useMailboxCounter instead.',
+        },
+    ],
+};
 
 const noEnumDestructuring = {
     selector: "VariableDeclarator[id.type='ObjectPattern'][init.name=/^[A-Z_]+$/]",
@@ -12,7 +40,6 @@ const noEnumDestructuring = {
 
 export default defineConfig([
     defaultConfig,
-    createBarrelConfig({ packages: [atomsPackage, iconsPackage, componentsPackage] }),
     {
         rules: {
             'no-console': 'off',
@@ -20,26 +47,13 @@ export default defineConfig([
             '@typescript-eslint/no-misused-promises': 'off',
             'react-hooks/exhaustive-deps': 'error',
             'no-restricted-syntax': ['error', noEnumDestructuring],
-            'no-restricted-imports': [
-                'warn',
-                {
-                    paths: [
-                        {
-                            name: '@proton/mail/store/counts/conversationCountsSlice',
-                            importNames: ['useConversationCounts'],
-                            message:
-                                'To get location count, use useMailboxCounter from proton-mail/hooks/mailboxCounter/useMailboxCounter instead.',
-                        },
-                        {
-                            name: '@proton/mail/store/counts/messageCountsSlice',
-                            importNames: ['useMessageCounts'],
-                            message:
-                                'To get location count, use useMailboxCounter from proton-mail/hooks/mailboxCounter/useMailboxCounter instead.',
-                        },
-                    ],
-                },
-            ],
-            '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
+            'no-restricted-imports': createRestrictedImportRule(restrictedImportOptions),
+        },
+    },
+    {
+        files: ['**/*.tsx', '**/*.jsx'],
+        rules: {
+            'no-restricted-imports': createRestrictedImportRule({ ...restrictedImportOptions, tsx: true }),
         },
     },
     {

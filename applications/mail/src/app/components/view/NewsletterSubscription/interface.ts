@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 export type ModalFilterType = 'MarkAsRead' | 'MoveToArchive' | 'MoveToTrash' | 'RemoveFromList';
@@ -28,7 +28,7 @@ export interface NewsletterSubscriptionFilterState {
 }
 
 export interface MenuItem {
-    icon: IconName;
+    icon: IconComponent;
     label: string;
     filter: ModalFilterType;
 }
