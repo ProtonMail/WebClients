@@ -5,7 +5,8 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcFileImage } from '@proton/icons/icons/IcFileImage';
+import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
 import { getAnchor } from '@proton/mail/helpers/message/messageImages/getAnchor';
 import type { MessageImage, OnMessageImageLoadError } from '@proton/mail/store/messages/messagesTypes';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
@@ -133,7 +134,7 @@ const MessageBodyImage = ({
         ? errorMessage
         : c('Message image').t`Image has not been loaded in order to protect your privacy.`;
 
-    const icon = error ? 'file-slash' : 'file-image';
+    const PlaceholderIcon = error ? IcFileSlash : IcFileImage;
 
     const style = extractStyle(original, getIframeDocument(iframeRef.current)?.defaultView?.innerWidth);
 
@@ -142,7 +143,7 @@ const MessageBodyImage = ({
             style={style}
             className={clsx(['proton-image-placeholder', !!error && 'proton-image-placeholder--error'])}
         >
-            {!showLoader ? <Icon name={icon} size={4} /> : null}
+            {!showLoader ? <PlaceholderIcon size={4} /> : null}
 
             {showLoader ? (
                 <>
