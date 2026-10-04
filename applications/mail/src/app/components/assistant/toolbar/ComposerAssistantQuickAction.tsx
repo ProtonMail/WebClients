@@ -1,18 +1,16 @@
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
 interface Props {
-    icon: IconName;
+    icon: IconComponent;
     text: string;
     tooltipText: string;
     onClickRefineAction: () => void;
     disabled?: boolean;
 }
 
-const ComposerAssistantQuickAction = ({ icon, text, onClickRefineAction, tooltipText, disabled }: Props) => {
+const ComposerAssistantQuickAction = ({ icon: Icon, text, onClickRefineAction, tooltipText, disabled }: Props) => {
     return (
         <Tooltip title={tooltipText}>
             <Button
@@ -22,7 +20,7 @@ const ComposerAssistantQuickAction = ({ icon, text, onClickRefineAction, tooltip
                 size="small"
                 disabled={disabled}
             >
-                <Icon name={icon} className="composer-assistant-special-color mr-1" />
+                <Icon className="composer-assistant-special-color mr-1" />
                 {text}
             </Button>
         </Tooltip>

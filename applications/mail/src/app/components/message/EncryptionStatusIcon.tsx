@@ -1,11 +1,9 @@
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import clsx from '@proton/utils/clsx';
 
-import { getSendIconHref, getStatusIconName } from '../../helpers/message/icon';
+import { getSendIconHref, getStatusIconComponent } from '../../helpers/message/icon';
 import type { StatusIcon } from '../../models/crypto';
 
 interface Props extends Partial<StatusIcon> {
@@ -38,12 +36,12 @@ const EncryptionStatusIcon = ({
     }
 
     const href = shouldHaveHref && getSendIconHref({ isEncrypted, fill });
-    const iconName = getStatusIconName({ isEncrypted, fill });
+    const StatusIconComponent = getStatusIconComponent({ isEncrypted, fill });
     const tooltip = useTooltip ? text : undefined;
 
     const spanClassNames = clsx(['inline-flex shrink-0 align-middle', className]);
-    const icon = iconName && (
-        <Icon size={4} name={iconName} className={colorClassName} alt={text || ''} data-testid="encryption-icon" />
+    const icon = StatusIconComponent && (
+        <StatusIconComponent size={4} className={colorClassName} alt={text || ''} data-testid="encryption-icon" />
     );
 
     return (

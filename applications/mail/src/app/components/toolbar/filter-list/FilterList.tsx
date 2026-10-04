@@ -8,11 +8,13 @@ import Dropdown, { DropdownBorderRadius } from '@proton/components/components/dr
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
+import type { IconComponent } from '@proton/icons/component';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import { IcLinesLongToSmall } from '@proton/icons/icons/IcLinesLongToSmall';
-import type { IconName } from '@proton/icons/types';
+import { IcListArrowDown } from '@proton/icons/icons/IcListArrowDown';
+import { IcListArrowUp } from '@proton/icons/icons/IcListArrowUp';
+import { IcSizeArrowDown } from '@proton/icons/icons/IcSizeArrowDown';
+import { IcSizeArrowUp } from '@proton/icons/icons/IcSizeArrowUp';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 import { resetFilter, resetFilterAndSort, resetSort, setFilterInUrl, setSortInUrl } from '../../../helpers/mailboxUrl';
@@ -31,7 +33,7 @@ interface FilterOption {
 
 interface SortOption {
     label: string;
-    iconName: IconName;
+    icon: IconComponent;
     testID: string;
     isActive: boolean;
     sort: Sort;
@@ -88,7 +90,7 @@ export const FilterList = () => {
     const sortOptions: SortOption[] = [
         {
             label: c('Sort option').t`Newest first`,
-            iconName: 'list-arrow-down',
+            icon: IcListArrowDown,
             testID: 'toolbar:sort-new-to-old',
             isActive: activeState.isNewestFirstActive,
             sort: { sort: 'Time', desc: true },
@@ -96,7 +98,7 @@ export const FilterList = () => {
         },
         {
             label: c('Sort option').t`Oldest first`,
-            iconName: 'list-arrow-up',
+            icon: IcListArrowUp,
             testID: 'toolbar:sort-old-to-new',
             isActive: activeState.isOldestFirstActive,
             sort: { sort: 'Time', desc: false },
@@ -104,7 +106,7 @@ export const FilterList = () => {
         },
         {
             label: c('Sort option').t`Largest first`,
-            iconName: 'size-arrow-down',
+            icon: IcSizeArrowDown,
             testID: 'toolbar:sort-desc',
             isActive: activeState.isLargestFirstActive,
             sort: { sort: 'Size', desc: true },
@@ -112,7 +114,7 @@ export const FilterList = () => {
         },
         {
             label: c('Sort option').t`Smallest first`,
-            iconName: 'size-arrow-up',
+            icon: IcSizeArrowUp,
             testID: 'toolbar:sort-asc',
             isActive: activeState.isSmallestFirstActive,
             sort: { sort: 'Size', desc: false },
@@ -207,7 +209,7 @@ export const FilterList = () => {
                             aria-pressed={option.isActive}
                         >
                             <span className="flex items-start flex-nowrap gap-2 text-left">
-                                <Icon name={option.iconName} title={option.label} className="shrink-0 mt-0.5" />
+                                <option.icon title={option.label} className="shrink-0 mt-0.5" />
                                 <span className="flex-1">{option.label}</span>
                             </span>
                             {option.isActive && <IcCheckmarkStrong className="color-primary shrink-0 mt-0.5" />}

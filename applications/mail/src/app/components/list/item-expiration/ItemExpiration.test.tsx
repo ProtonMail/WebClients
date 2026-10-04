@@ -2,11 +2,14 @@ import { screen } from '@testing-library/react';
 import { addDays, addHours, addMinutes, getUnixTime } from 'date-fns';
 
 import { getModelState } from '@proton/account/tests';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
+import { assertIconComponent } from '../../../helpers/tests/assertion';
 import { minimalCache } from '../../../helpers/tests/cache';
 import { mailTestRender } from '../../../helpers/tests/render';
 import type { Element } from '../../../models/element';
@@ -89,9 +92,7 @@ describe('ItemExpiration', () => {
                 }
             );
 
-            expect(screen.getByTestId('item-expiration').querySelector('use')?.getAttribute('xlink:href')).toBe(
-                '#ic-trash-clock'
-            );
+            assertIconComponent(screen.getByTestId('item-expiration').querySelector('svg'), IcTrashClock);
         });
 
         it('Should display Hourglass if label ID is not valid', async () => {
@@ -111,9 +112,7 @@ describe('ItemExpiration', () => {
                 }
             );
 
-            expect(screen.getByTestId('item-expiration').querySelector('use')?.getAttribute('xlink:href')).toBe(
-                '#ic-hourglass'
-            );
+            assertIconComponent(screen.getByTestId('item-expiration').querySelector('svg'), IcHourglass);
         });
 
         it('Should display Hourglass icon if label ID is valid and setting is null', async () => {
@@ -136,9 +135,7 @@ describe('ItemExpiration', () => {
                 }
             );
 
-            expect(screen.getByTestId('item-expiration').querySelector('use')?.getAttribute('xlink:href')).toBe(
-                '#ic-hourglass'
-            );
+            assertIconComponent(screen.getByTestId('item-expiration').querySelector('svg'), IcHourglass);
         });
     });
 
@@ -162,9 +159,7 @@ describe('ItemExpiration', () => {
                 }
             );
 
-            expect(screen.getByTestId('item-expiration').querySelector('use')?.getAttribute('xlink:href')).toBe(
-                '#ic-trash-clock'
-            );
+            assertIconComponent(screen.getByTestId('item-expiration').querySelector('svg'), IcTrashClock);
         });
     });
 });

@@ -5,13 +5,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import type { IconComponent } from '@proton/icons/component';
 import { IcArrowLeftAndUp } from '@proton/icons/icons/IcArrowLeftAndUp';
-import type { IconName } from '@proton/icons/types';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
+import { IcTextQuoteFilled } from '@proton/icons/icons/IcTextQuoteFilled';
 import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -46,9 +46,9 @@ const ComposerAssistantCustomInput = ({
 
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const { buttonText, buttonIconName }: { buttonText: string; buttonIconName: IconName } = useMemo(() => {
+    const { buttonText, buttonIcon: ButtonIcon }: { buttonText: string; buttonIcon: IconComponent } = useMemo(() => {
         let buttonText = c('Action').t`Write for me`;
-        let buttonIconName: IconName = 'pen-sparks';
+        let buttonIcon: IconComponent = IcPenSparks;
 
         if (isAssistantExpanded) {
             buttonText = c('Action').t`Modify`;
@@ -58,11 +58,11 @@ const ComposerAssistantCustomInput = ({
         // we should show "Modify selection" since no text is selected at this stage.
         const hasSelectedTextInComposer = !!selection.composerSelectedText && !isAssistantExpanded;
         if (hasSelectedTextInComposer || !!selection.generationSelectedText) {
-            buttonIconName = 'text-quote-filled';
+            buttonIcon = IcTextQuoteFilled;
             buttonText = c('Action').t`Modify selection`;
         }
 
-        return { buttonText, buttonIconName };
+        return { buttonText, buttonIcon };
     }, [isAssistantExpanded, selection.composerSelectedText, selection.generationSelectedText]);
 
     const selectedTextToDisplay = useMemo(() => {
@@ -145,7 +145,7 @@ const ComposerAssistantCustomInput = ({
                 size="small"
                 disabled={disabled}
             >
-                <Icon name={buttonIconName} className="composer-assistant-special-color mr-1" />
+                <ButtonIcon className="composer-assistant-special-color mr-1" />
                 {buttonText}
             </Button>
             {showPopover && (

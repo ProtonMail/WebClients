@@ -12,19 +12,18 @@ import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Mes
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import ItemAttachmentThumbnails from './ItemAttachmentThumbnails';
-import { canShowAttachmentThumbnails } from '../../helpers/attachment/attachmentThumbnails';
-import { useMailSelector } from '../../store/hooks';
-
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { canShowAttachmentThumbnails } from '../../helpers/attachment/attachmentThumbnails';
 import { getLabelIDs, isStarred as testIsStarred } from '../../helpers/elements';
 import { useExpiringElement } from '../../hooks/useExpiringElement';
 import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
+import { useMailSelector } from '../../store/hooks';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
+import ItemAttachmentThumbnails from './ItemAttachmentThumbnails';
 import ItemDate from './ItemDate';
 import ItemHoverButtons from './ItemHoverButtons';
 import ItemLabels from './ItemLabels';
@@ -206,7 +205,7 @@ const ItemColumnLayout = ({
                                 )}
                                 {!isSnoozeDropdownOpen && (
                                     <ItemAttachmentIcon
-                                        icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                                        hasOnlyIcsAttachments={hasOnlyIcsAttachments}
                                         element={element}
                                         className="self-center"
                                     />
@@ -228,7 +227,7 @@ const ItemColumnLayout = ({
                                 />
                             )}
                             <ItemAttachmentIcon
-                                icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                                hasOnlyIcsAttachments={hasOnlyIcsAttachments}
                                 element={element}
                                 className="ml-1 self-center"
                             />

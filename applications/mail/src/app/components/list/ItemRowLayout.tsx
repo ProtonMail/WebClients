@@ -9,19 +9,18 @@ import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Mes
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import ItemAttachmentThumbnails from './ItemAttachmentThumbnails';
 import { MAX_ROW_ATTACHMENT_THUMBNAILS } from '../../constants';
-import { canShowAttachmentThumbnails } from '../../helpers/attachment/attachmentThumbnails';
-import { useMailSelector } from '../../store/hooks';
-
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { canShowAttachmentThumbnails } from '../../helpers/attachment/attachmentThumbnails';
 import { useExpiringElement } from '../../hooks/useExpiringElement';
 import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
+import { useMailSelector } from '../../store/hooks';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
+import ItemAttachmentThumbnails from './ItemAttachmentThumbnails';
 import ItemDate from './ItemDate';
 import ItemHoverButtons from './ItemHoverButtons';
 import ItemLabels from './ItemLabels';
@@ -188,7 +187,7 @@ const ItemRowLayout = ({
                         )}
 
                         <ItemAttachmentIcon
-                            icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                            hasOnlyIcsAttachments={hasOnlyIcsAttachments}
                             element={element}
                             className="shrink-0"
                         />
