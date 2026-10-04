@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TotpInput from '@proton/components/components/v2/input/TotpInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';

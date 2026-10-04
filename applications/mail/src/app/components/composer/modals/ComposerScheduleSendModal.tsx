@@ -6,18 +6,17 @@ import { c } from 'ttag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import TimeInput from '@proton/components/components/input/TimeInput';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
-import { useMailDispatch } from '../../../store/hooks';
-
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
 import { getMinScheduleTime } from '../../../helpers/schedule';
 import useFutureTimeDate from '../../../hooks/message/useFutureTimeDate';
+import { useMailDispatch } from '../../../store/hooks';
 import { updateScheduled } from '../../../store/messages/scheduled/scheduledActions';
 import ComposerInnerModal from './ComposerInnerModal';
 import { getChooseDateText } from './helper';

@@ -18,7 +18,7 @@ import clsx from '@proton/utils/clsx';
 import useModalState from '../../../components/modalTwo/useModalState';
 import Option from '../../../components/option/Option';
 import SearchableSelect from '../../../components/selectTwo/SearchableSelect';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import type { LabelModel } from '../../labels/modals/EditLabelModal';
 import EditLabelModal from '../../labels/modals/EditLabelModal';
 import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';

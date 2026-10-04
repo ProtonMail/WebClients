@@ -22,7 +22,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import TimeInput from '@proton/components/components/input/TimeInput';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';

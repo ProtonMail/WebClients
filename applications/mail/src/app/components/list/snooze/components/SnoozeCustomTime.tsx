@@ -7,16 +7,15 @@ import { c } from 'ttag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import TimeInput from '@proton/components/components/input/TimeInput';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
-import { getSnoozeTimeFromSnoozeLabel } from '../../../../helpers/snooze';
-import type { Element } from '../../../../models/element';
-
 import { getMinScheduleTime } from '../../../../helpers/schedule';
+import { getSnoozeTimeFromSnoozeLabel } from '../../../../helpers/snooze';
 import useFutureTimeDate from '../../../../hooks/message/useFutureTimeDate';
+import type { Element } from '../../../../models/element';
 import type { SNOOZE_DURATION } from '../constant';
 import SnoozeHeader from './SnoozeHeader';
 

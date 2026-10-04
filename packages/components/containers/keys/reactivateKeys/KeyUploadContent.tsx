@@ -14,7 +14,7 @@ import uniqueBy from '@proton/utils/uniqueBy';
 import Table from '../../../components/table/Table';
 import TableBody from '../../../components/table/TableBody';
 import TableRow from '../../../components/table/TableRow';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import { type ProcessedKey, useProcessKey } from '../importKeys/useProcessKey';
 
 interface FileInputProps {

@@ -13,7 +13,7 @@ import useModalState from '../../../components/modalTwo/useModalState';
 import type { SelectChangeEvent } from '../../../components/selectTwo/select';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSection from '../../account/SettingsSection';
-import ExportModal from '../exportModal/ExportModal';
+import { ExportModal } from '../exportModal/ExportModal';
 
 interface Props {
     fallbackCalendar?: VisualCalendar;

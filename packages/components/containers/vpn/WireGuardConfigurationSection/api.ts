@@ -3,7 +3,7 @@ import type { PaginationParams } from '@proton/shared/lib/api/interface';
 import type { CertificateDeletionParams, CertificateGenerationParams } from './Certificate';
 
 export enum CertificateMode {
-    SESSION = 'session',
+    // SESSION = 'session',
     PERSISTENT = 'persistent',
 }
 

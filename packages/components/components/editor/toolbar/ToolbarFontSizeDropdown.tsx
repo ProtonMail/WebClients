@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
-import Badge from '../../badge/Badge';
+import { Badge } from '../../badge/Badge';
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuContainer from '../../dropdown/DropdownMenuContainer';
 import { FONT_SIZES } from '../constants';

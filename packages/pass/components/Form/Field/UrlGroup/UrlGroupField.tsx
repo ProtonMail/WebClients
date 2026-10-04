@@ -5,7 +5,7 @@ import { FieldArray, type FormikErrors, useFormikContext } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcEarth } from '@proton/icons/icons/IcEarth';

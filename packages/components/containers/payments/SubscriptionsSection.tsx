@@ -9,7 +9,7 @@ import { PLAN_TYPES } from '@proton/payments/core/constants';
 import { getSubscriptionsArray } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 
-import { default as Badge } from '../../components/badge/Badge';
+import { Badge } from '../../components/badge/Badge';
 import DropdownActions from '../../components/dropdown/DropdownActions';
 import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';

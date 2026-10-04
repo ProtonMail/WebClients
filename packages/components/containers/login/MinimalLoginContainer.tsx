@@ -21,7 +21,7 @@ import noop from '@proton/utils/noop';
 import Checkbox from '../../components/input/Checkbox';
 import Label from '../../components/label/Label';
 import { Tabs } from '../../components/tabs/Tabs';
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import PasswordInputTwo from '../../components/v2/input/PasswordInput';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';

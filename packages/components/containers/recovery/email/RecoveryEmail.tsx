@@ -12,7 +12,7 @@ import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
 import useFormErrors from '../../../components/v2/useFormErrors';
 

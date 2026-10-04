@@ -15,7 +15,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState, { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 

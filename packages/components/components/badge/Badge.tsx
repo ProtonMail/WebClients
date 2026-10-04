@@ -59,5 +59,3 @@ export const Badge = ({
 
     return wrappedBadge;
 };
-
-export default Badge;

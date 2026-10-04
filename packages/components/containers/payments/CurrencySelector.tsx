@@ -5,7 +5,7 @@ import { mainCurrencies } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
 import clsx from '@proton/utils/clsx';
 
-import ButtonGroup from '../../components/button/ButtonGroup';
+import { ButtonGroup } from '../../components/button/ButtonGroup';
 import Option from '../../components/option/Option';
 import type { SelectTwoProps } from '../../components/selectTwo/SelectTwo';
 import SelectTwo from '../../components/selectTwo/SelectTwo';

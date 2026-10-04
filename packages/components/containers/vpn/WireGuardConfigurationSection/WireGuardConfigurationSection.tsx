@@ -28,7 +28,7 @@ import Option from '../../../components/option/Option';
 import Prompt from '../../../components/prompt/Prompt';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
 import Toggle from '../../../components/toggle/Toggle';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import TextAreaTwo from '../../../components/v2/input/TextArea';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import { getObjectKeys } from '../../../helpers/getObjectKeys';

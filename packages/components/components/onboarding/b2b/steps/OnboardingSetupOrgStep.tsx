@@ -18,7 +18,7 @@ import ModalTwoContent from '../../../modalTwo/ModalContent';
 import ModalTwoFooter from '../../../modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../modalTwo/ModalHeader';
 import { useModalTwoPromise } from '../../../modalTwo/useModalTwo';
-import InputFieldTwo from '../../../v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../v2/field/InputField';
 
 interface Props {
     onNextStep: () => void;

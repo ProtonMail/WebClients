@@ -11,7 +11,7 @@ import { getTimezone } from '@proton/shared/lib/date/timezone';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
 import type { DropdownSizeUnit, Unit } from '../../../components/dropdown/utils';
-import TimeZoneSelector from '../../../components/timezoneSelector/TimeZoneSelector';
+import { TimeZoneSelector } from '../../../components/timezoneSelector/TimeZoneSelector';
 import useEventManager from '../../../hooks/useEventManager';
 
 interface Props {

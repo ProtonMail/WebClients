@@ -15,7 +15,7 @@ import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
-import InputFieldTwo from '../v2/field/InputField';
+import { InputField as InputFieldTwo } from '../v2/field/InputField';
 import empty from './illustrations/empty.svg';
 import strong from './illustrations/strong.svg';
 import vulnerable from './illustrations/vulnerable.svg';

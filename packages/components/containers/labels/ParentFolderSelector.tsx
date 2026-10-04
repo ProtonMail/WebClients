@@ -11,7 +11,7 @@ import Loader from '../../components/loader/Loader';
 import Option from '../../components/option/Option';
 import type { OptionProps } from '../../components/select/Select';
 import SearchableSelect from '../../components/selectTwo/SearchableSelect';
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 
 interface Props {
     id: string;

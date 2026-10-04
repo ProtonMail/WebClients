@@ -4,7 +4,7 @@ import type { FieldProps } from 'formik';
 
 import InputButton from '@proton/components/components/input/InputButton';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { IconComponent } from '@proton/icons/component';
 import clsx from '@proton/utils/clsx';

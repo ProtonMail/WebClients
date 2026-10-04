@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { Input } from '@proton/atoms/Input/Input';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

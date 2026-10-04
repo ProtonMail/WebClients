@@ -30,7 +30,7 @@ import Pagination from '../../components/pagination/Pagination';
 import usePaginationAsync from '../../components/pagination/usePaginationAsync';
 import Toggle from '../../components/toggle/Toggle';
 import AddressesAutocompleteTwo from '../../components/v2/addressesAutocomplete/AddressesAutocomplete';
-import InputField from '../../components/v2/field/InputField';
+import { InputField } from '../../components/v2/field/InputField';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import SettingsSectionWide from '../account/SettingsSectionWide';
 import RecipientsLimitationModal from '../b2bDashboard/ActivityMonitor/RecipientsLimitationModal';

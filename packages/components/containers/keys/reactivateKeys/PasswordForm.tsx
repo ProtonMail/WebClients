@@ -7,7 +7,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import PasswordInputTwo from '../../../components/v2/input/PasswordInput';
 import useFormErrors from '../../../components/v2/useFormErrors';
 import useErrorHandler from '../../../hooks/useErrorHandler';

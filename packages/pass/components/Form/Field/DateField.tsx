@@ -5,7 +5,7 @@ import { type Locale, parse } from 'date-fns';
 import type { FieldProps } from 'formik';
 
 import type { Input } from '@proton/atoms/Input/Input';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import clsx from '@proton/utils/clsx';

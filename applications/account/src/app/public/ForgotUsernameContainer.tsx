@@ -7,7 +7,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';

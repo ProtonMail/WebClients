@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 
-import Tabs from '../../../tabs/Tabs';
+import { Tabs } from '../../../tabs/Tabs';
 import DrawerAppSection from '../shared/DrawerAppSection';
 import linuxDesktopImage from './proton-vpn-desktop-linux.png';
 import macDesktopImage from './proton-vpn-desktop-mac.png';

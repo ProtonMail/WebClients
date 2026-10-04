@@ -3,7 +3,7 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { useLoading } from '@proton/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
 

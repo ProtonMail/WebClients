@@ -4,7 +4,7 @@ import InputFieldStacked from '@proton/components/components/inputFieldStacked/I
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';

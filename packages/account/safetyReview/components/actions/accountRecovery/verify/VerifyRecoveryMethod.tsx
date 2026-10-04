@@ -4,7 +4,7 @@ import throttle from 'lodash/throttle';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TotpInput from '@proton/components/components/v2/input/TotpInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { WithLoading } from '@proton/hooks/useLoading';

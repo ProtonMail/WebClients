@@ -19,7 +19,7 @@ import Modal from '../../../components/modalTwo/Modal';
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import useFormErrors from '../../../components/v2/useFormErrors';
 import useErrorHandler from '../../../hooks/useErrorHandler';
 import { maxSecurityKeyNameLength } from './constants';

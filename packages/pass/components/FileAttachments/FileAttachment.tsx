@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 import { IcCross } from '@proton/icons/icons/IcCross';

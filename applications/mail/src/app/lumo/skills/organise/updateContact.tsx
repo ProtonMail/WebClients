@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type {

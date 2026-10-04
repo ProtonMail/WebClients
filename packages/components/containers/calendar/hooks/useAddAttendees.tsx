@@ -36,7 +36,7 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 
-import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
+import { useGetCalendarInfo } from '../../../hooks/useGetCalendarInfo';
 import { useGetCanonicalEmailsMap } from '../../../hooks/useGetCanonicalEmailsMap';
 import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferences';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';

@@ -15,7 +15,7 @@ import Form from '../form/Form';
 import type { ModalProps } from '../modalTwo/Modal';
 import ModalTwo from '../modalTwo/Modal';
 import Mark from '../text/Mark';
-import InputFieldTwo from '../v2/field/InputField';
+import { InputField as InputFieldTwo } from '../v2/field/InputField';
 
 import './Commander.scss';
 

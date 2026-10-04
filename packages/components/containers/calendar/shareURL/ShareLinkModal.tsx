@@ -23,8 +23,8 @@ import type { BasicModalProps } from '../../../components/modalTwo/BasicModal';
 import BasicModal from '../../../components/modalTwo/BasicModal';
 import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
-import InputFieldTwo from '../../../components/v2/field/InputField';
-import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
+import { useGetCalendarInfo } from '../../../hooks/useGetCalendarInfo';
 
 interface Props extends Omit<BasicModalProps, 'children' | 'footer'> {
     calendarID: string;

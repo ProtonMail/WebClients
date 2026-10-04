@@ -15,7 +15,7 @@ import ModalTwo from '../../components/modalTwo/Modal';
 import ModalTwoContent from '../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import TextAreaTwo from '../../components/v2/input/TextArea';
 import useEventManager from '../../hooks/useEventManager';
 

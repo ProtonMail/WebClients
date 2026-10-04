@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import TotpInput from '../../../components/v2/input/TotpInput';
 
 interface TotpInputFieldProps {

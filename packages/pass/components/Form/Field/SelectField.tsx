@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import type { FieldProps } from 'formik';
 
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import clsx from '@proton/utils/clsx';
 

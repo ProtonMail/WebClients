@@ -8,7 +8,7 @@ import type { Cycle } from '@proton/payments/core/interface';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 
-import ButtonGroup from '../../components/button/ButtonGroup';
+import { ButtonGroup } from '../../components/button/ButtonGroup';
 import type { Props as ForwardedButtonGroupProps } from '../../components/button/ButtonGroup';
 import Option from '../../components/option/Option';
 import type { Props as ForwardedSelectProps } from '../../components/select/Select';
