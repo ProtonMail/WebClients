@@ -8,18 +8,16 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
-import iframeSVG from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 import clsx from '@proton/utils/clsx';
-
-import MessageBodyPlaceholder from './MessageBodyPlaceholder';
-import MessageBodyPrint from './MessageBodyPrint';
-import useMessageImagesLoadError from './hooks/useMessageImagesLoadError';
-import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
-import { isMessageContentEmpty } from '../../helpers/message/messageContent';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
+import { isMessageContentEmpty } from '../../helpers/message/messageContent';
+import MessageBodyPlaceholder from './MessageBodyPlaceholder';
+import MessageBodyPrint from './MessageBodyPrint';
+import useMessageImagesLoadError from './hooks/useMessageImagesLoadError';
 
 import iframeCSSStyles from '@proton/mail-renderer/helpers/MessageIframe.raw.scss';
 
@@ -175,7 +173,6 @@ const MessageBody = ({
                         onMessageImageLoadError={handleMessageImageLoadError}
                         theme={theme}
                         iframeCSSStyles={iframeCSSStyles}
-                        iframeSVG={iframeSVG}
                     />
                     <MessageBodyPrint isPrint={isPrint} iframeRef={iframeRef} message={message} labelID={labelID} />
                     {linkModal}
