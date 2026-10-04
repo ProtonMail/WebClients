@@ -6,11 +6,12 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
 import CircularProgress from '@proton/components/components/progress/CircularProgress';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -19,7 +20,6 @@ import clsx from '@proton/utils/clsx';
 
 import { isAttachmentUpload } from '../../../../hooks/composer/useAttachments/helpers';
 import type { PendingUpload } from '../../../../hooks/composer/useAttachments/interface';
-
 import type { AttachmentHandler } from './attachmentListTypes';
 import { AttachmentAction } from './attachmentListTypes';
 
@@ -34,6 +34,12 @@ const getActionTitle = (action: AttachmentAction, attachmentName: string) => {
         default:
             return attachmentName;
     }
+};
+
+const actionIcons = {
+    [AttachmentAction.Download]: IcArrowDownLine,
+    [AttachmentAction.Preview]: IcArrowsFromCenter,
+    [AttachmentAction.Remove]: IcCross,
 };
 
 const getSenderVerificationString = (verificationStatus?: MAIL_VERIFICATION_STATUS) => {
@@ -92,7 +98,7 @@ const AttachmentItem = ({
     const primaryTitle = `${name} ${humanAttachmentSize}${getSenderVerificationString(attachmentVerified)}`;
     const primaryActionTitle = getActionTitle(primaryAction, primaryTitle);
 
-    const showSecondaryAction = secondaryAction !== AttachmentAction.None;
+    const SecondaryActionIcon = secondaryAction === AttachmentAction.None ? undefined : actionIcons[secondaryAction];
     const secondaryActionTitle = getActionTitle(secondaryAction, name);
 
     const handleAction = (primary: boolean) => () => {
@@ -110,12 +116,6 @@ const AttachmentItem = ({
 
         void withLoading(action);
     };
-
-    const actionIcon = {
-        [AttachmentAction.Download]: 'arrow-down-line',
-        [AttachmentAction.Preview]: 'arrows-from-center',
-        [AttachmentAction.Remove]: 'cross',
-    } as const;
 
     return (
         <div className="message-attachmentList-item-container" data-testid="attachment-item">
@@ -161,7 +161,7 @@ const AttachmentItem = ({
                         </button>
                     </Tooltip>
                 </span>
-                {showSecondaryAction && (
+                {SecondaryActionIcon && (
                     <button
                         type="button"
                         className="inline-flex pr-2 pl-1 *:pointer-events-none rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
@@ -181,11 +181,7 @@ const AttachmentItem = ({
                             {loading ? (
                                 <CircleLoader className="m-auto" size="small" />
                             ) : (
-                                <Icon
-                                    name={actionIcon[secondaryAction]}
-                                    className="m-auto"
-                                    alt={secondaryActionTitle}
-                                />
+                                <SecondaryActionIcon className="m-auto" alt={secondaryActionTitle} />
                             )}
                         </span>
                     </button>

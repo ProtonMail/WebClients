@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/icons/component';
 
 export enum TipActionType {
     CreateFolder = 'folder',
@@ -20,7 +20,7 @@ export enum TipActionType {
 
 export interface TipData {
     id: number;
-    icon: IconName;
+    icon: IconComponent;
     message: string;
     cta: ReactNode;
     action: TipActionType;

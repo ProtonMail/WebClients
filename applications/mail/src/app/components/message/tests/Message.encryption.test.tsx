@@ -1,6 +1,8 @@
 import { findByText, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/tests';
+import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
+import { IcLockExclamationFilled } from '@proton/icons/icons/IcLockExclamationFilled';
 import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -8,7 +10,7 @@ import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Mes
 
 import { constructMime } from '../../../helpers/send/sendMimeBuilder';
 import { addApiMock, api } from '../../../helpers/tests/api';
-import { assertIcon } from '../../../helpers/tests/assertion';
+import { assertIconComponent } from '../../../helpers/tests/assertion';
 import { getCompleteAddress } from '../../../helpers/tests/cache';
 import { addApiContact } from '../../../helpers/tests/contact';
 import type { GeneratedKey } from '../../../helpers/tests/crypto';
@@ -249,7 +251,7 @@ describe('MessageView encryption', () => {
 
             const icon = await screen.findByTestId('encryption-icon');
 
-            assertIcon(icon, 'lock-check-filled', 'color-info');
+            assertIconComponent(icon, IcLockCheckFilled, 'color-info');
         });
 
         it('verified sender external', async () => {
@@ -302,7 +304,7 @@ describe('MessageView encryption', () => {
 
             const icon = await screen.findByTestId('encryption-icon');
 
-            assertIcon(icon, 'lock-check-filled', 'color-success');
+            assertIconComponent(icon, IcLockCheckFilled, 'color-success');
         });
 
         it('signature verification error', async () => {
@@ -345,7 +347,7 @@ describe('MessageView encryption', () => {
             await open();
 
             const icon = await screen.findByTestId('encryption-icon');
-            assertIcon(icon, 'lock-exclamation-filled', 'color-info');
+            assertIconComponent(icon, IcLockExclamationFilled, 'color-info');
         });
     });
 });

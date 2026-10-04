@@ -1,7 +1,6 @@
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconName } from '@proton/icons/types';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isExpiringByRetentionRule, isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -36,16 +35,16 @@ const ItemExpiration = ({ className, expirationTime, element, labelID }: Props) 
         return null;
     }
 
-    const iconName: Extract<IconName, 'hourglass' | 'trash-clock'> = (() => {
+    const ExpirationIcon = (() => {
         if (
             isAllowedAutoDeleteLabelID(labelID) &&
             ((isElementMessage(element) && !isFrozenExpiration(element)) ||
                 (isElementConversation(element) && mailSettings.AutoDeleteSpamAndTrashDays !== null))
         ) {
-            return 'trash-clock';
+            return IcTrashClock;
         }
 
-        return 'hourglass';
+        return IcHourglass;
     })();
 
     return (
@@ -58,7 +57,7 @@ const ItemExpiration = ({ className, expirationTime, element, labelID }: Props) 
                 ])}
                 data-testid="item-expiration"
             >
-                <Icon name={iconName} className="shrink-0" size={3.5} alt={tooltipMessage} />
+                <ExpirationIcon className="shrink-0" size={3.5} alt={tooltipMessage} />
                 <span className="ml-1 text-sm text-nowrap">{shortMessage}</span>
             </div>
         </Tooltip>

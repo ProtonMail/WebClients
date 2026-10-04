@@ -1,5 +1,14 @@
 import { c, msgid } from 'ttag';
 
+import type { IconComponent } from '@proton/icons/component';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
+import { IcLockExclamationFilled } from '@proton/icons/icons/IcLockExclamationFilled';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
+import { IcLockOpenCheckFilled } from '@proton/icons/icons/IcLockOpenCheckFilled';
+import { IcLockOpenExclamationFilled } from '@proton/icons/icons/IcLockOpenExclamationFilled';
+import { IcLockOpenPenFilled } from '@proton/icons/icons/IcLockOpenPenFilled';
+import { IcLockPenFilled } from '@proton/icons/icons/IcLockPenFilled';
 import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/key-transparency/keys';
 import type {
     MessageState,
@@ -731,23 +740,26 @@ export const getReceivedStatusIcon = (
     };
 };
 
-export const getStatusIconName = ({ isEncrypted, fill }: Pick<Partial<StatusIcon>, 'isEncrypted' | 'fill'>) => {
+export const getStatusIconComponent = ({
+    isEncrypted,
+    fill,
+}: Pick<Partial<StatusIcon>, 'isEncrypted' | 'fill'>): IconComponent | undefined => {
     if (fill === STATUS_ICONS_FILLS.PLAIN) {
-        return 'lock-filled';
+        return IcLockFilled;
     }
     if (fill === STATUS_ICONS_FILLS.CHECKMARK) {
-        return isEncrypted ? 'lock-check-filled' : 'lock-open-check-filled';
+        return isEncrypted ? IcLockCheckFilled : IcLockOpenCheckFilled;
     }
     if (fill === STATUS_ICONS_FILLS.SIGN) {
-        return isEncrypted ? 'lock-pen-filled' : 'lock-open-pen-filled';
+        return isEncrypted ? IcLockPenFilled : IcLockOpenPenFilled;
     }
     if (fill === STATUS_ICONS_FILLS.WARNING) {
-        return isEncrypted ? 'lock-exclamation-filled' : 'lock-open-exclamation-filled';
+        return isEncrypted ? IcLockExclamationFilled : IcLockOpenExclamationFilled;
     }
     if (fill === STATUS_ICONS_FILLS.FAIL) {
-        return 'exclamation-circle';
+        return IcExclamationCircle;
     }
-    return '';
+    return undefined;
 };
 
 export const getSendIconHref = ({ isEncrypted, fill }: Pick<Partial<StatusIcon>, 'isEncrypted' | 'fill'>) => {

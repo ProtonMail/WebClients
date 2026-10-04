@@ -6,10 +6,13 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import Icon from '@proton/components/components/icon/Icon';
+import type { IconComponent } from '@proton/icons/component';
+import { IcArrowRightArrowLeft } from '@proton/icons/icons/IcArrowRightArrowLeft';
+import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
+import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcListArrowDown } from '@proton/icons/icons/IcListArrowDown';
-import type { IconName } from '@proton/icons/types';
+import { IcListArrowUp } from '@proton/icons/icons/IcListArrowUp';
+import { IcSortAlphabetically } from '@proton/icons/icons/IcSortAlphabetically';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -45,46 +48,39 @@ const SortingDropdownMenu = () => {
     };
 
     const items: {
+        value: SortSubscriptionsValue;
         text: string;
-        icon: IconName;
-        onClick: () => void;
-        active: boolean;
+        icon: IconComponent;
     }[] = [
         {
+            value: SortSubscriptionsValue.LastRead,
             text: c('Action').t`Least read`,
-            icon: 'list-arrow-down',
-            onClick: () => handleSortChange(SortSubscriptionsValue.LastRead),
-            active: selectedSort === SortSubscriptionsValue.LastRead,
+            icon: IcListArrowDown,
         },
         {
+            value: SortSubscriptionsValue.MostRead,
             text: c('Action').t`Most read`,
-            icon: 'list-arrow-up',
-            onClick: () => handleSortChange(SortSubscriptionsValue.MostRead),
-            active: selectedSort === SortSubscriptionsValue.MostRead,
+            icon: IcListArrowUp,
         },
         {
+            value: SortSubscriptionsValue.MostFrequent,
             text: c('Action').t`Most frequent`,
-            icon: 'arrow-right-arrow-left',
-            onClick: () => handleSortChange(SortSubscriptionsValue.MostFrequent),
-            active: selectedSort === SortSubscriptionsValue.MostFrequent,
+            icon: IcArrowRightArrowLeft,
         },
         {
+            value: SortSubscriptionsValue.Alphabetical,
             text: c('Action').t`A to Z`,
-            icon: 'sort-alphabetically',
-            onClick: () => handleSortChange(SortSubscriptionsValue.Alphabetical),
-            active: selectedSort === SortSubscriptionsValue.Alphabetical,
+            icon: IcSortAlphabetically,
         },
         {
+            value: SortSubscriptionsValue.RecentlyRead,
             text: c('Action').t`Recently read`,
-            icon: 'envelope-open',
-            onClick: () => handleSortChange(SortSubscriptionsValue.RecentlyRead),
-            active: selectedSort === SortSubscriptionsValue.RecentlyRead,
+            icon: IcEnvelopeOpen,
         },
         {
+            value: SortSubscriptionsValue.RecentlyReceived,
             text: c('Action').t`Recently received`,
-            icon: 'inbox',
-            onClick: () => handleSortChange(SortSubscriptionsValue.RecentlyReceived),
-            active: selectedSort === SortSubscriptionsValue.RecentlyReceived,
+            icon: IcInbox,
         },
     ];
 
@@ -107,13 +103,13 @@ const SortingDropdownMenu = () => {
                 <DropdownMenu>
                     {items.map((option) => (
                         <DropdownMenuButton
-                            key={option.icon}
-                            isSelected={option.active}
-                            onClick={option.onClick}
+                            key={option.value}
+                            isSelected={selectedSort === option.value}
+                            onClick={() => handleSortChange(option.value)}
                             className="text-left flex items-center"
-                            data-testid={`dropdown-item-${option.icon}`}
+                            data-testid={`dropdown-item-${option.value}`}
                         >
-                            <Icon name={option.icon} className="mr-2" />
+                            <option.icon className="mr-2" />
                             {option.text}
                         </DropdownMenuButton>
                     ))}

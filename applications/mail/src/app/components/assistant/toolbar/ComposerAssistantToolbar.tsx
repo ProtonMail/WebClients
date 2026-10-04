@@ -7,7 +7,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Vr } from '@proton/atoms/Vr/Vr';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { IcArrowToCenterHorizontal } from '@proton/icons/icons/IcArrowToCenterHorizontal';
+import { IcArrowsFromCenterHorizontal } from '@proton/icons/icons/IcArrowsFromCenterHorizontal';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcMagnifierCheck } from '@proton/icons/icons/IcMagnifierCheck';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';
 import type { ActionType } from '@proton/llm/lib/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -15,11 +18,10 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useComposerAssistantProvider } from '../provider/ComposerAssistantProvider';
-import type { ComposerAssistantInitialSetupSpotlightRef } from '../spotlights/ComposerAssistantInitialSetupSpotlight';
 import type { GenerateResultProps } from '../../../hooks/assistant/useComposerAssistantGenerate';
 import type { ComposerAssistantSelection } from '../../../hooks/assistant/useComposerAssistantSelectedText';
-
+import { useComposerAssistantProvider } from '../provider/ComposerAssistantProvider';
+import type { ComposerAssistantInitialSetupSpotlightRef } from '../spotlights/ComposerAssistantInitialSetupSpotlight';
 import ComposerAssistantCustomInput from './ComposerAssistantCustomInput';
 import ComposerAssistantQuickAction from './ComposerAssistantQuickAction';
 import ComposerAssistantQuickActionsDropdown from './ComposerAssistantQuickActionsDropdown';
@@ -154,7 +156,7 @@ const ComposerAssistantToolbar = ({
                                         hasSelectedText ? c('Info').t`Proofread selection` : c('Info').t`Proofread text`
                                     }
                                     text={c('Action').t`Proofread`}
-                                    icon="magnifier-check"
+                                    icon={IcMagnifierCheck}
                                     onClickRefineAction={() => handleGenerate('proofread')}
                                     disabled={!canUseRefineButtons || disableActions}
                                 />
@@ -168,7 +170,7 @@ const ComposerAssistantToolbar = ({
                                         hasSelectedText ? c('Info').t`Expand selection` : c('Info').t`Expand text`
                                     }
                                     text={c('Action').t`Expand`}
-                                    icon="arrows-from-center-horizontal"
+                                    icon={IcArrowsFromCenterHorizontal}
                                     onClickRefineAction={() => handleGenerate('expand')}
                                     disabled={!canUseRefineButtons || disableActions}
                                 />
@@ -178,7 +180,7 @@ const ComposerAssistantToolbar = ({
                                         hasSelectedText ? c('Info').t`Shorten selection` : c('Info').t`Shorten text`
                                     }
                                     text={c('Action').t`Shorten`}
-                                    icon="arrow-to-center-horizontal"
+                                    icon={IcArrowToCenterHorizontal}
                                     onClickRefineAction={() => handleGenerate('shorten')}
                                     disabled={!canUseRefineButtons || disableActions}
                                 />
