@@ -1,5 +1,8 @@
 import { c } from 'ttag';
 
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import type { Folder, UserModel } from '@proton/shared/lib/interfaces';
@@ -130,12 +133,12 @@ export const getFilterDropdownData = (subscription: NewsletterSubscription, filt
 
     const menuItems: MenuItem[] = [
         {
-            icon: 'envelope-open',
+            icon: IcEnvelopeOpen,
             label: isFilterEnabled && markingAsRead ? c('Action').t`Stop marking as read` : c('Action').t`Mark as read`,
             filter: 'MarkAsRead',
         },
         {
-            icon: 'archive-box',
+            icon: IcArchiveBox,
             label:
                 isFilterEnabled && movingToArchive
                     ? c('Action').t`Stop moving to Archive`
@@ -143,7 +146,7 @@ export const getFilterDropdownData = (subscription: NewsletterSubscription, filt
             filter: 'MoveToArchive',
         },
         {
-            icon: 'trash',
+            icon: IcTrash,
             label:
                 isFilterEnabled && movingToTrash ? c('Action').t`Stop moving to Trash` : c('Action').t`Move to Trash`,
             filter: 'MoveToTrash',

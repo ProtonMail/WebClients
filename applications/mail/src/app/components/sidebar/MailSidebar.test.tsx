@@ -1,4 +1,4 @@
-import { act, fireEvent, getAllByText, render, screen } from '@testing-library/react';
+import { act, fireEvent, getAllByText, screen } from '@testing-library/react';
 import { addDays, subDays } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
@@ -7,7 +7,6 @@ import { buildUser } from '@proton/account/testing/buildUser';
 import { getModelState } from '@proton/account/tests';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import type { IconComponent } from '@proton/icons/component';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcFolders } from '@proton/icons/icons/IcFolders';
@@ -23,7 +22,7 @@ import range from '@proton/utils/range';
 
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import * as GetStartedChecklistProviderModule from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { assertFocus } from '../../helpers/tests/assertion';
+import { assertFocus, assertIconComponent } from '../../helpers/tests/assertion';
 import { minimalCache } from '../../helpers/tests/cache';
 import { clearAll, getDropdown } from '../../helpers/tests/helper';
 import { mailTestRender } from '../../helpers/tests/render';
@@ -47,12 +46,6 @@ jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProv
 loudRejection();
 
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
-
-/** The Ic* components inline their markup, so that markup is what identifies which icon was rendered. */
-const getIconMarkup = (Icon: IconComponent) => {
-    const { container } = render(<Icon />, { container: document.createElement('div') });
-    return container.querySelector('svg')!.innerHTML;
-};
 
 const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' } as Folder;
 const subfolder = { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2', ParentID: folder.ID } as Folder;
@@ -288,13 +281,13 @@ describe('MailSidebar', () => {
         const folderIcon = folderElement.querySelector('svg:not(.navigation-icon--expand)');
 
         expect(folderElement.textContent).toContain(folder.Name);
-        expect(folderIcon?.innerHTML).toBe(getIconMarkup(IcFolders));
+        assertIconComponent(folderIcon, IcFolders);
 
         const subfolderElement = screen.getByTestId(`navigation-link:${subfolder.ID}`);
         const subfolderIcon = subfolderElement.querySelector('svg');
 
         expect(subfolderElement.textContent).toContain(subfolder.Name);
-        expect(subfolderIcon?.innerHTML).toBe(getIconMarkup(IcFolder));
+        assertIconComponent(subfolderIcon, IcFolder);
 
         const collapseButton = folderElement.querySelector('button');
 
@@ -318,7 +311,7 @@ describe('MailSidebar', () => {
         const labelIcon = labelElement.querySelector('svg');
 
         expect(labelElement.textContent).toContain(label.Name);
-        expect(labelIcon?.innerHTML).toBe(getIconMarkup(IcCircleFilled));
+        assertIconComponent(labelIcon, IcCircleFilled);
         expect(labelIcon?.style.color).toBe('rgb(255, 0, 0)');
     });
 

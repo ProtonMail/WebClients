@@ -10,6 +10,19 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcAt } from '@proton/icons/icons/IcAt';
+import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcBrandProtonPass } from '@proton/icons/icons/IcBrandProtonPass';
+import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
+import { IcFolders } from '@proton/icons/icons/IcFolders';
+import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
+import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
+import { IcTag } from '@proton/icons/icons/IcTag';
+import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
+import { IcTv } from '@proton/icons/icons/IcTv';
 import { logger } from '@proton/logger';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -110,7 +123,7 @@ const useTips = () => {
         () => [
             {
                 id: 0,
-                icon: 'folders',
+                icon: IcFolders,
                 // translator: the sentence contains a non-translatable text and is as follows: Create a folder such as "Receipts" to keep all your online receipts in one place.
                 message: c('Info')
                     .t`Create a folder such as “${suggestedFolderName}“ to keep all your online receipts in one place.`,
@@ -124,7 +137,7 @@ const useTips = () => {
             },
             {
                 id: 1,
-                icon: 'tag',
+                icon: IcTag,
                 // translator: the sentence contains a non-translatable text and is as follows: Give incoming bills a color-coded label, such as "To Pay". Once they’re paid, change the label to "Paid".
                 message: c('Info')
                     .t`Give incoming bills a color-coded label, such as “${suggestedLabelName}“. Once they're paid, change the label to “${suggestedPaidLabelName}“.`,
@@ -138,7 +151,7 @@ const useTips = () => {
             },
             {
                 id: 2,
-                icon: 'tv',
+                icon: IcTv,
                 message: c('Info')
                     .t`To avoid getting sidetracked by the open tabs in your browser, use the desktop app.`,
                 cta: (
@@ -152,7 +165,7 @@ const useTips = () => {
             },
             {
                 id: 3,
-                icon: 'at',
+                icon: IcAt,
                 message: c('Info')
                     .t`Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${PM_DOMAIN}”.`,
                 cta: (
@@ -165,7 +178,7 @@ const useTips = () => {
             },
             {
                 id: 4,
-                icon: 'alias',
+                icon: IcAlias,
                 message: c('Info')
                     .t`When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.`,
                 cta: (
@@ -196,7 +209,7 @@ const useTips = () => {
             },
             {
                 id: 5,
-                icon: 'paper-plane-clock',
+                icon: IcPaperPlaneClock,
                 message: c('Info')
                     .t`Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.`,
                 cta: <ProtonTipCTA actionType={TipActionType.ScheduleMessage} ctaText={showMeHowCTA} />,
@@ -204,7 +217,7 @@ const useTips = () => {
             },
             {
                 id: 6,
-                icon: 'trash-clock',
+                icon: IcTrashClock,
                 message: c('Info')
                     .t`Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.`,
                 cta: <ProtonTipCTA actionType={TipActionType.ClearMailbox} ctaText={c('Tip Action').t`Activate`} />,
@@ -212,7 +225,7 @@ const useTips = () => {
             },
             {
                 id: 7,
-                icon: 'envelopes',
+                icon: IcEnvelopes,
                 message: c('Info')
                     .t`Use different email addresses for different purposes so you can easily separate your emails by work, personal, or other areas.`,
                 cta: (
@@ -226,7 +239,7 @@ const useTips = () => {
             },
             {
                 id: 8,
-                icon: 'clock',
+                icon: IcClock,
                 message: c('Info')
                     .t`Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.`,
                 cta: <ProtonTipCTA actionType={TipActionType.SnoozeEmail} ctaText={showMeHowCTA} />,
@@ -234,7 +247,7 @@ const useTips = () => {
             },
             {
                 id: 9,
-                icon: 'shield-2-bolt',
+                icon: IcShield2Bolt,
                 message: c('Info')
                     .t`If your password ends up on the dark web, ${BRAND_NAME} can tell you which service your data was leaked from and how to halt the damage.`,
                 cta: (
@@ -248,7 +261,7 @@ const useTips = () => {
             },
             {
                 id: 10,
-                icon: 'brand-proton-drive',
+                icon: IcBrandProtonDrive,
                 message: c('Info')
                     .t`Did you know you have encrypted cloud storage included with your ${BRAND_NAME} Account? Head over to ${DRIVE_APP_NAME} and make the most of your space. It's free.`,
                 // translator: Open Proton Drive
@@ -266,7 +279,7 @@ const useTips = () => {
             },
             {
                 id: 11,
-                icon: 'brand-proton-pass',
+                icon: IcBrandProtonPass,
                 message: c('Info')
                     .t`Keep your login and credit card details safe but always on hand by adding them to ${PASS_APP_NAME}. It's free, and included with your ${BRAND_NAME} Account.`,
                 // translator: Open Proton Pass
@@ -284,7 +297,7 @@ const useTips = () => {
             },
             {
                 id: 12,
-                icon: 'brand-proton-vpn',
+                icon: IcBrandProtonVpn,
                 message: c('Info')
                     .t`When you're traveling or using public WiFi, connect to ${VPN_APP_NAME} to prevent anyone from tracking your online activity or stealing your data. It's free.`,
                 // translator: Download Proton VPN
