@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 
-import Tabs from '../../components/tabs/Tabs';
+import { Tabs } from '../../components/tabs/Tabs';
 import BreachListItem from './BreachListItem';
 import BreachListUpgradeLink from './BreachListUpgradeLink';
 import EmptyBreachListCard from './EmptyBreachListCard';

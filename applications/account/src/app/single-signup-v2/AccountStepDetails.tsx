@@ -9,7 +9,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Info from '@proton/components/components/link/Info';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import ChallengeV4 from '@proton/components/containers/challenge/ChallengeV4';
 import useRightToLeft from '@proton/hooks/useRightToLeft';

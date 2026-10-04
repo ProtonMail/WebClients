@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
 interface Props {

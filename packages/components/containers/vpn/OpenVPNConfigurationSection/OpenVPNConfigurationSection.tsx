@@ -22,7 +22,7 @@ import Radio from '../../../components/input/Radio';
 import RadioGroup from '../../../components/input/RadioGroup';
 import Info from '../../../components/link/Info';
 import SettingsLink from '../../../components/link/SettingsLink';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import useSortedList from '../../../hooks/useSortedList';
 import useUserVPN from '../../../hooks/useUserVPN';
 import useVPNLogicals from '../../../hooks/useVPNLogicals';

@@ -7,7 +7,7 @@ import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import type { DropzoneShape, DropzoneSize } from '@proton/components/components/dropzone/Dropzone';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 
 const sizes: DropzoneSize[] = ['small', 'medium', 'large'];
 const shapes: DropzoneShape[] = ['norm', 'transparent', 'flashy', 'invisible'];

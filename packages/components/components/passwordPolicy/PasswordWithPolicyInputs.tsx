@@ -6,7 +6,7 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 
-import InputFieldTwo from '../v2/field/InputField';
+import { InputField as InputFieldTwo } from '../v2/field/InputField';
 import PasswordInputTwo from '../v2/input/PasswordInput';
 import type { FormErrorsHook } from '../v2/useFormErrors';
 import { PasswordPolicySpotlight } from './index';

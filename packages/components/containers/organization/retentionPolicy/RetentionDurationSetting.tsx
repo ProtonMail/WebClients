@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import { RetentionRuleAction, RetentionRuleProduct } from '@proton/shared/lib/interfaces/RetentionRule';
 
 import RadioGroup from '../../../components/input/RadioGroup';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import type { RetentionRuleFormData } from './types';
 
 import './RetentionDurationSetting.scss';

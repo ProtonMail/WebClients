@@ -15,7 +15,7 @@ import type { ExportCalendarModel, ExportError, VcalVeventComponent } from '@pro
 import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
 import DynamicProgress from '../../../components/progress/DynamicProgress';
-import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
+import { useGetCalendarInfo } from '../../../hooks/useGetCalendarInfo';
 import useGetVerificationPreferences from '../../../hooks/useGetVerificationPreferences';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 

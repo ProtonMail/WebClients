@@ -29,7 +29,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import ButtonGroup from '../../../components/button/ButtonGroup';
+import { ButtonGroup } from '../../../components/button/ButtonGroup';
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
 import Info from '../../../components/link/Info';
 import SettingsLink from '../../../components/link/SettingsLink';

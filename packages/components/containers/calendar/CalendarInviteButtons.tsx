@@ -9,7 +9,7 @@ import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
 
-import ButtonGroup from '../../components/button/ButtonGroup';
+import { ButtonGroup } from '../../components/button/ButtonGroup';
 import DropdownMenu from '../../components/dropdown/DropdownMenu';
 import DropdownMenuButton from '../../components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';

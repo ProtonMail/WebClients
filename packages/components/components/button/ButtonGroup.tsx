@@ -80,5 +80,3 @@ export const ButtonGroup = forwardRef<HTMLDivElement, Props>(
 );
 
 ButtonGroup.displayName = 'ButtonGroup';
-
-export default ButtonGroup;
