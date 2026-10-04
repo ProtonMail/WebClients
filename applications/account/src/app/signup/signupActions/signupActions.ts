@@ -509,14 +509,15 @@ export const handleSetupUser = async ({
     ) {
         const emailAddress = newCache.setupData.addresses[0].Email;
         const { importPeriod } = newCache.accountData;
+        const automaticImport = newCache.accountData.importEmails ?? true;
         await api(
             startEasySwitchSignupImportTask({
                 Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SIGNUP,
                 Account: emailAddress,
                 Provider: OAUTH_PROVIDER.GOOGLE,
-                AutomaticImport: newCache.accountData.importEmails ?? true,
+                AutomaticImport: automaticImport,
                 QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
-                StartTime: importPeriod ? getStartTimeFromTimePeriod(importPeriod) : undefined,
+                StartTime: automaticImport && importPeriod ? getStartTimeFromTimePeriod(importPeriod) : undefined,
             })
         );
     }

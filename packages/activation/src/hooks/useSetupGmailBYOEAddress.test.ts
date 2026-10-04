@@ -190,6 +190,23 @@ describe('useSetupGmailBYOEAddress', () => {
             jest.useRealTimers();
         });
 
+        it('should send no StartTime when importEmails is false, even if a period is given', async () => {
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: jest.fn(),
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
+
+            await act(async () => {
+                await result.current.handleBYOEWithImportCallback(false, false, TIME_PERIOD.LAST_3_MONTHS, mockToken);
+            });
+
+            expect(mockStartImportTask).toHaveBeenCalledWith(
+                expect.objectContaining({ AutomaticImport: false, StartTime: undefined })
+            );
+        });
+
         it('should create address but not start an automatic import when importEmails is false', async () => {
             const mockShowSuccessModal = jest.fn();
             const { result } = renderHook(() =>

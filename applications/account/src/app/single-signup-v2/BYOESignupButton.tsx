@@ -28,7 +28,7 @@ import { SignupType } from '../signup/interfaces';
 interface Props {
     provider?: ImportProvider | OAUTH_PROVIDER;
     onEmailValue: (value: string) => void;
-    onImportEmailsValue: (importEmails: boolean, importPeriod: TIME_PERIOD) => void;
+    onImportEmailsValue: (importEmails: boolean, importPeriod?: TIME_PERIOD) => void;
     signupType: SignupType;
     setSignupType: (signupType: SignupType) => void;
     onUseInternalAddress: () => void;
@@ -49,7 +49,7 @@ const BYOESignupButton = ({
     const [addBYOEModalProps, setAddBYOEModalOpen, renderAddBYOEModal] = useModalState();
     const [loading, withLoading] = useLoading();
 
-    const callback = async (oauthProps: OAuthProps, importEmails: boolean, importPeriod: TIME_PERIOD) => {
+    const callback = async (oauthProps: OAuthProps, importEmails: boolean, importPeriod?: TIME_PERIOD) => {
         try {
             const result = await withLoading<CreateSignupOAuthTokenResponse>(
                 api(
@@ -73,7 +73,7 @@ const BYOESignupButton = ({
         setTimeout(() => passwordInputRef.current?.focus(), 200);
     };
 
-    const handleShowOauthPopup = async (importEmails: boolean, importPeriod: TIME_PERIOD) => {
+    const handleShowOauthPopup = async (importEmails: boolean, importPeriod?: TIME_PERIOD) => {
         const redirectUri = getOAuthRedirectURL(provider);
         const authorizationUrl = generateGoogleOAuthUrl({
             redirectUri,

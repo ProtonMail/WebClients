@@ -79,7 +79,7 @@ const useSetupGmailBYOEAddress = ({
     const handleBYOEWithImportCallback = async (
         hasError: boolean,
         importEmails: boolean,
-        importPeriod: TIME_PERIOD,
+        importPeriod: TIME_PERIOD | undefined,
         token?: ImportToken
     ) => {
         // If setting up the token failed or user has no access to BYOE, close the modal
@@ -108,7 +108,7 @@ const useSetupGmailBYOEAddress = ({
                         Account: token.Account,
                         AutomaticImport: importEmails,
                         QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
-                        StartTime: getStartTimeFromTimePeriod(importPeriod),
+                        StartTime: importEmails && importPeriod ? getStartTimeFromTimePeriod(importPeriod) : undefined,
                     }),
                     silence: [BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS],
                 });
