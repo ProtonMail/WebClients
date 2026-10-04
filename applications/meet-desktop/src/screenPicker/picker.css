@@ -1,0 +1,224 @@
+:root {
+    --background: #16141c;
+    --surface: #292733;
+    --surface-hover: #353340;
+    --border: #3e3b49;
+    --text: #ffffff;
+    --text-weak: #a7a4b5;
+    --primary: #8a6eff;
+    --primary-hover: #9e87ff;
+
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    font-size: 14px;
+    user-select: none;
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.picker {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.picker-header {
+    padding: 20px 24px 0;
+}
+
+.picker-title {
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.picker-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 10px;
+    background: var(--surface);
+    width: fit-content;
+}
+
+.picker-tab {
+    padding: 6px 16px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--text-weak);
+}
+
+.picker-tab:hover {
+    color: var(--text);
+}
+
+.picker-tab.is-active {
+    background: var(--surface-hover);
+    color: var(--text);
+}
+
+.picker-grid {
+    flex: 1;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    align-content: start;
+    gap: 16px;
+    padding: 20px 24px;
+}
+
+.picker-empty {
+    flex: 1;
+    margin: 0;
+    padding: 20px 24px;
+    color: var(--text-weak);
+    text-align: center;
+}
+
+.picker-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    padding: 8px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: transparent;
+    text-align: start;
+}
+
+.picker-card:hover {
+    background: var(--surface);
+}
+
+.picker-card.is-selected {
+    border-color: var(--primary);
+    background: var(--surface);
+}
+
+.picker-card:focus-visible {
+    outline: none;
+    border-color: var(--primary-hover);
+}
+
+.picker-card-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    background: #000000;
+    overflow: hidden;
+}
+
+.picker-card-thumbnail {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.picker-card-caption {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+}
+
+.picker-card-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.picker-card-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.picker-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+}
+
+.picker-audio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.picker-audio input {
+    accent-color: var(--primary);
+    margin: 0;
+}
+
+.picker-actions {
+    display: flex;
+    gap: 8px;
+    margin-inline-start: auto;
+}
+
+.picker-button {
+    padding: 8px 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+}
+
+.picker-button:hover {
+    background: var(--surface);
+}
+
+.picker-button--primary {
+    border-color: var(--primary);
+    background: var(--primary);
+}
+
+.picker-button--primary:hover {
+    border-color: var(--primary-hover);
+    background: var(--primary-hover);
+}
+
+.picker-button--primary:disabled {
+    opacity: 0.5;
+    cursor: default;
+}

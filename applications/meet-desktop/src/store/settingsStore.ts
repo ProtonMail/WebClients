@@ -10,6 +10,7 @@ export interface SettingsStore {
     overrideError: boolean;
     releaseCategory?: RELEASE_CATEGORIES;
     rolloutProportion?: number;
+    screenCapturePermissionRequested?: boolean;
 }
 
 const defaultSettings = {
