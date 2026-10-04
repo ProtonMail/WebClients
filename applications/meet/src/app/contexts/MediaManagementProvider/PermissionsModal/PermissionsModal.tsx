@@ -7,6 +7,7 @@ import { PermissionsBlockedMicrophoneModal } from './PermissionsBlockedMicrophon
 import { PermissionsBlockedModal } from './PermissionsBlockedModal';
 import { PermissionsBlockedScreenShareModal } from './PermissionsBlockedScreenShareModal';
 import { PermissionsNeededModal } from './PermissionsNeededModal';
+import { ScreenRecordingPermissionModal } from './ScreenRecordingPermissionModal';
 
 export const PermissionsModal = () => {
     const { permissionsModal } = useMeetSelector(selectPermissionsModals);
@@ -22,6 +23,8 @@ export const PermissionsModal = () => {
             return <PermissionsBlockedMicrophoneModal />;
         case PermissionsModalType.PERMISSIONS_BLOCKED_SCREEN_SHARE_MODAL:
             return <PermissionsBlockedScreenShareModal />;
+        case PermissionsModalType.SCREEN_RECORDING_PERMISSION_MODAL:
+            return <ScreenRecordingPermissionModal />;
         default:
             return null;
     }

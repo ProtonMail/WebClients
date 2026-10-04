@@ -33,6 +33,7 @@ import { WaitingRoomRejectedModal } from '../../components/PreJoinDetails/Waitin
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeetingRecorder/recordingStorage/purge';
+import { useScreenRecordingPermissionPrompt } from '../../hooks/useScreenRecordingPermissionPrompt';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 
 import './PrejoinContainer.scss';
@@ -88,6 +89,8 @@ export const PrejoinContainer = ({
     useEffect(() => {
         dispatch(setLocalParticipantColorIndex(participantColorIndex.current));
     }, [dispatch]);
+
+    useScreenRecordingPermissionPrompt();
 
     const isRecordingSupported = useIsRecordingSupported();
 

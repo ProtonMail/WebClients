@@ -7,6 +7,7 @@ export enum PermissionsModalType {
     PERMISSIONS_BLOCKED_CAMERA_MODAL = 'permissionsBlockedCameraModal',
     PERMISSIONS_BLOCKED_MICROPHONE_MODAL = 'permissionsBlockedMicrophoneModal',
     PERMISSIONS_BLOCKED_SCREEN_SHARE_MODAL = 'permissionsBlockedScreenShareModal',
+    SCREEN_RECORDING_PERMISSION_MODAL = 'screenRecordingPermissionModal',
 }
 
 export interface DeviceManagementState {
