@@ -16,7 +16,8 @@ import SignInWithGoogle from '../GmailSyncModal/SignInWithGoogle';
 import './AddBYOEModal.scss';
 
 interface Props extends Omit<ModalProps, 'onSubmit'> {
-    onSubmit: (importEmails: boolean, importPeriod: TIME_PERIOD) => void;
+    // importPeriod is only provided when importEmails is true
+    onSubmit: (importEmails: boolean, importPeriod?: TIME_PERIOD) => void;
     submitDisabled?: boolean;
     isLoading: boolean;
     expectedEmailAddress?: string;
@@ -52,7 +53,7 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                     </div>
                     <div className="flex flex-column items-center gap-4">
                         <SignInWithGoogle
-                            onClick={() => onSubmit(importEmails, importPeriod)}
+                            onClick={() => onSubmit(importEmails, importEmails ? importPeriod : undefined)}
                             loading={isLoading}
                             disabled={submitDisabled}
                             fullWidth
