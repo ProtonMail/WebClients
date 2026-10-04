@@ -163,6 +163,14 @@ const config: ForgeConfig = {
                             js: "./src/preload.ts",
                         },
                     },
+                    {
+                        html: "./src/screenPicker/picker.html",
+                        js: "./src/screenPicker/picker.ts",
+                        name: "screen_picker",
+                        preload: {
+                            js: "./src/screenPicker/preload.ts",
+                        },
+                    },
                 ],
             },
             devServer: {

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+    </head>
+    <body>
+        <main class="picker">
+            <header class="picker-header">
+                <h1 id="title" class="picker-title"></h1>
+                <div class="picker-tabs" role="tablist">
+                    <button id="tab-screen" class="picker-tab" role="tab" data-type="screen"></button>
+                    <button id="tab-window" class="picker-tab" role="tab" data-type="window"></button>
+                </div>
+            </header>
+            <div id="grid" class="picker-grid" role="listbox"></div>
+            <p id="empty" class="picker-empty" hidden></p>
+            <footer class="picker-footer">
+                <label id="audio" class="picker-audio" hidden>
+                    <input id="audio-input" type="checkbox" checked />
+                    <span id="audio-label"></span>
+                </label>
+                <div class="picker-actions">
+                    <button id="cancel" class="picker-button"></button>
+                    <button id="share" class="picker-button picker-button--primary" disabled></button>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>
