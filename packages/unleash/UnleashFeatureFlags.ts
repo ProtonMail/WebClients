@@ -112,6 +112,7 @@ export enum CommonFeatureFlag {
     GoUnlimitedOffer2025 = 'GoUnlimitedOffer2025',
     InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
     InboxBringYourOwnEmailClient = 'InboxBringYourOwnEmailClient',
+    InboxBringYourOwnEmailImportPeriod = 'InboxBringYourOwnEmailImportPeriod',
     InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
     InboxDesktopAppSessionCacheDisabled = 'InboxDesktopAppSessionCacheDisabled',
     InboxDesktopBugReportLogAttachmentDisabled = 'InboxDesktopBugReportLogAttachmentDisabled',

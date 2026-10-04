@@ -6,6 +6,11 @@ import { GmailSyncModal } from '../../../../index';
 import { EASY_SWITCH_SOURCES, TIME_PERIOD } from '../../../interface';
 import { easySwitchRender } from '../../../tests/render';
 
+jest.mock('@proton/unleash/useFlag', () => ({
+    __esModule: true,
+    useFlag: jest.fn(() => true),
+}));
+
 jest.mock('../../../logic/StoreProvider', () => ({
     __esModule: true,
     default: ({ children }: any) => children,

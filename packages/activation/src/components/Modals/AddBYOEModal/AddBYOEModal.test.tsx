@@ -1,11 +1,31 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import AddBYOEModal from './AddBYOEModal';
 
+jest.mock('@proton/unleash/useFlag', () => ({
+    __esModule: true,
+    useFlag: jest.fn(() => true),
+}));
+
 describe('AddBYOEModal', () => {
+    beforeEach(() => {
+        jest.mocked(useFlag).mockReturnValue(true);
+    });
+
+    it('should hide the import period and not send it when the feature flag is off', () => {
+        jest.mocked(useFlag).mockReturnValue(false);
+        const onSubmit = jest.fn();
+        render(<AddBYOEModal onSubmit={onSubmit} isLoading={false} open />);
+
+        expect(screen.queryByTestId('AddBYOEModal:importPeriod')).toBeNull();
+        fireEvent.click(screen.getByText('Connect your email'));
+        expect(onSubmit).toHaveBeenCalledWith(true, undefined);
+    });
+
     it('should show the import checkbox ticked by default', () => {
         render(<AddBYOEModal onSubmit={noop} isLoading={false} open />);
 
