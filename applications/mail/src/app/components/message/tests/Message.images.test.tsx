@@ -2,6 +2,7 @@ import { findByTestId, fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/tests';
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
+import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
@@ -10,7 +11,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 import { addApiMock } from '../../../helpers/tests/api';
-import { assertIcon } from '../../../helpers/tests/assertion';
+import { assertIconComponent } from '../../../helpers/tests/assertion';
 import { minimalCache } from '../../../helpers/tests/cache';
 import { clearAll } from '../../../helpers/tests/helper';
 import MessageView from '../MessageView';
@@ -268,7 +269,7 @@ describe('Message images', () => {
         const placeholder = iframeRerendered.querySelector('.proton-image-placeholder') as HTMLImageElement;
 
         expect(placeholder).not.toBe(null);
-        assertIcon(placeholder.querySelector('svg'), 'file-slash');
+        assertIconComponent(placeholder.querySelector('svg'), IcFileSlash);
 
         loadButton = screen.getByTestId('remote-content:load');
         fireEvent.click(loadButton);
