@@ -54,11 +54,7 @@ interface OfferImages {
     modalImage?: string;
 }
 
-export interface OfferDealSaveSentenceType {
-    sentenceSaveType?: 'switch-yearly' | 'limited-time-deal';
-}
-
-export interface OfferTracking {
+interface OfferTracking {
     onTopNavbarClick?: () => void;
     onClickCloseButton?: () => void;
     onSelectDeal?: () => void;

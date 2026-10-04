@@ -3,7 +3,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField } from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
@@ -61,7 +61,7 @@ export const ResetCodeForm = ({ method, destination }: Props) => {
                     actorRef.send({ type: 'code.submitted', payload: { code } });
                 }}
             >
-                <InputFieldTwo
+                <InputField
                     id="reset-token"
                     bigger
                     label={c('Label').t`Enter code`}
