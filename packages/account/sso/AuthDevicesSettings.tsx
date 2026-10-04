@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import Badge from '@proton/components/components/badge/Badge';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import { Badge } from '@proton/components/components/badge/Badge';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Table from '@proton/components/components/table/Table';

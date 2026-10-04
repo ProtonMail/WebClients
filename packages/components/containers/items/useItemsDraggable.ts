@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import generateUID from '@proton/utils/generateUID';
 
-import useHandler from '../../hooks/useHandler';
+import { useHandler } from '../../hooks/useHandler';
 import { DRAG_ITEM_ID_KEY, DRAG_ITEM_KEY } from './constants';
 
 import './items.scss';

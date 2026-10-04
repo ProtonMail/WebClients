@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 
-import Badge from '../../components/badge/Badge';
+import { Badge } from '../../components/badge/Badge';
 import type { Session } from './interface';
 
 interface Props {

@@ -11,7 +11,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 
 import type { BadgeType } from '../../components/badge/Badge';
-import Badge from '../../components/badge/Badge';
+import { Badge } from '../../components/badge/Badge';
 
 const VERIFY_TYPES = {
     [VERIFY_STATE.VERIFY_STATE_DEFAULT]: 'origin',

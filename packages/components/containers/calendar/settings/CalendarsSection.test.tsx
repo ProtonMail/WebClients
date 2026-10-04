@@ -27,7 +27,7 @@ jest.mock('@proton/account/addresses/hooks', () => ({
     useGetAddresses: jest.fn(),
 }));
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
-jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
+jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => ({ useCalendarsInfoListener: () => ({}) }));
 jest.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(),
 }));

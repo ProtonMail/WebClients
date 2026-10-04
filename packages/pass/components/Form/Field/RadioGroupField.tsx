@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import type { FieldProps } from 'formik';
 
 import Radio from '@proton/components/components/input/Radio';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import clsx from '@proton/utils/clsx';
 

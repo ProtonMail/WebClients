@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import type { CountryOption } from '@proton/components/components/country/helpers';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 
 const options: CountryOption[] = [
     { countryName: 'France', countryCode: 'fr' },

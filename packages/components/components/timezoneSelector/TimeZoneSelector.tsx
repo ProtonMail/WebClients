@@ -110,5 +110,3 @@ export const TimeZoneSelector = ({
         </>
     );
 };
-
-export default TimeZoneSelector;

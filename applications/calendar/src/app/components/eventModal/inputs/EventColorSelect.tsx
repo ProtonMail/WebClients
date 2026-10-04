@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import ColorPicker from '@proton/components/components/input/ColorPicker';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';

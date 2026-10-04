@@ -12,7 +12,7 @@ import { renderWithProviders } from '../../contacts/tests/render';
 import { organization } from '../../payments/subscription/__mocks__/data';
 import SharedServersSection from './SharedServersSection';
 import { SharedServersBuilder } from './SharedServersSection.test.builder';
-import useSharedServersHook from './useSharedServers';
+import { useSharedServers as useSharedServersHook } from './useSharedServers';
 
 jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),

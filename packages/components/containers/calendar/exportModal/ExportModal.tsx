@@ -136,5 +136,3 @@ export const ExportModal = ({ calendar, onClose, onExit, isOpen = false }: Props
         </BasicModal>
     );
 };
-
-export default ExportModal;

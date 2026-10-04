@@ -340,5 +340,3 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
         </>
     );
 };
-
-export default VpnAlsoInYourPlanSection;
