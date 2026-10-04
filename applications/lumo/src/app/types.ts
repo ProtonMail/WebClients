@@ -347,7 +347,7 @@ export type CompactionMeta = {
     createdAt: string; // ISO date
 };
 
-type ArtifactActionKind = 'explain' | 'improve' | 'edit';
+export type ArtifactActionKind = 'explain' | 'improve' | 'edit';
 
 /** UI metadata for artifact panel selection actions (Explain / Improve / Edit). */
 export type ArtifactActionMeta = {
@@ -360,7 +360,7 @@ export type ArtifactActionMeta = {
     userInstruction?: string;
 };
 
-function isArtifactActionMeta(value: unknown): value is ArtifactActionMeta {
+export function isArtifactActionMeta(value: unknown): value is ArtifactActionMeta {
     if (typeof value !== 'object' || value === null) {
         return false;
     }
