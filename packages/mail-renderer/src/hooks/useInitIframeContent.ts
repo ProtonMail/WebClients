@@ -26,7 +26,6 @@ interface Props {
     isPrint: boolean;
     theme: ThemeContextInterface;
     iframeCSSStyles: string;
-    iframeSVG: string;
 }
 
 const useInitIframeContent = ({
@@ -40,7 +39,6 @@ const useInitIframeContent = ({
     isPrint,
     theme,
     iframeCSSStyles,
-    iframeSVG,
 }: Props) => {
     const [initStatus, setInitStatus] = useState<'start' | 'done'>('start');
     const iframeRootDivRef = useRef<HTMLDivElement>();
@@ -82,7 +80,6 @@ const useInitIframeContent = ({
                 themeCSSVariables,
                 isPrint,
                 iframeCSSStyles,
-                iframeSVG,
             });
             doc.open();
             doc.write(iframeContent);

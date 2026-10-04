@@ -16,7 +16,6 @@ type Options = {
     themeCSSVariables: string;
     isPrint: boolean;
     iframeCSSStyles: string;
-    iframeSVG: string;
 };
 
 const escapeHTMLAttribute = (value: string) =>
@@ -34,7 +33,6 @@ const getIframeHtml = ({
     themeCSSVariables,
     isPrint,
     iframeCSSStyles,
-    iframeSVG,
 }: Options) => {
     /**
      * Defense-in-depth: `messageHead` is serialized to a string and written verbatim into
@@ -108,7 +106,6 @@ const getIframeHtml = ({
           ${messageHead}
         </head>
         <body ${bodyLangAttr}>
-        ${iframeSVG}
         <div id="${MESSAGE_IFRAME_ROOT_ID}" ${isPrint ? `class="${MESSAGE_IFRAME_PRINT_CLASS}"` : ''}>
           ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>` : ''}
           <div ${
