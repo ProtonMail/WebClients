@@ -39,6 +39,7 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeetingRecorder/recordingStorage/purge';
 import type { JoinTelemetryDimensions } from '../../telemetry/useJoinTelemetryDimensions';
+import { useScreenRecordingPermissionPrompt } from '../../hooks/useScreenRecordingPermissionPrompt';
 import { useSendOnce } from '../../telemetry/useSendOnce';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 
@@ -110,6 +111,8 @@ export const PrejoinContainer = ({
     useEffect(() => {
         dispatch(setLocalParticipantColorIndex(participantColorIndex.current));
     }, [dispatch]);
+
+    useScreenRecordingPermissionPrompt();
 
     const isRecordingSupported = useIsRecordingSupported();
 

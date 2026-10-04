@@ -138,7 +138,8 @@ export function useCurrentScreenShare({
                 err.message === 'Permission denied by user' ||
                 err.message ===
                     'The request is not allowed by the user agent or the platform in the current context.' ||
-                (err.message === 'Could not start video source' && isElectronApp)
+                // The desktop app declines with an AbortError when the user closes or cancels its picker.
+                ((err.message === 'Could not start video source' || err.name === 'AbortError') && isElectronApp)
             ) {
                 sendScreenShareToggled('on', arePermissionsBlocked ? 'failed' : 'cancelled');
                 sendMeetActionsEvent(TelemetryMeetActionsEvents.permission_requested, {

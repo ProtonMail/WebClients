@@ -129,6 +129,8 @@
                 "src/index.ts",
                 "src/preload.ts",
                 "src/renderer.ts",
+                "src/screenPicker/picker.ts",
+                "src/screenPicker/preload.ts",
                 "src/ipc/main.ts",
                 "forge.config.ts",
                 "webpack.main.config.ts",
