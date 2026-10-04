@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { useUpsellConfig } from '@proton/components/index';
+import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import range from '@proton/utils/range';
 

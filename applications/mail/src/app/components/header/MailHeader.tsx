@@ -4,10 +4,10 @@ import { memo, useCallback } from 'react';
 import { c } from 'ttag';
 
 import FloatingButton from '@proton/components/components/button/FloatingButton';
+import Hamburger from '@proton/components/components/sidebar/Hamburger';
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { Hamburger } from '@proton/components/index';
 import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';

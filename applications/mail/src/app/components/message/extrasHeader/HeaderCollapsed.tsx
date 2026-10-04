@@ -64,6 +64,7 @@ const HeaderCollapsed = ({
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
 
     return (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
             className={clsx([
                 'message-header message-header-collapsed px-5 flex flex-nowrap items-center',
@@ -132,7 +133,7 @@ const HeaderCollapsed = ({
                         {!!hasAttachments(message.data) && (
                             <span className="mr-2 flex">
                                 <ItemAttachmentIcon
-                                    icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                                    hasOnlyIcsAttachments={hasOnlyIcsAttachments}
                                     element={message.data}
                                     className="m-auto"
                                 />
