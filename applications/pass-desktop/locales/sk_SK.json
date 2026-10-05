@@ -837,6 +837,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ],
+      "Show less": [
+        "Zobraziť menej"
+      ],
+      "Show more": [
+        "Zobraziť viac"
       ]
     },
     "Activity": {
@@ -5954,6 +5960,30 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } priečinok bol zlúčený so svojím nadradeným priečinkom, pretože bola dosiahnutá maximálna úroveň vnorenia.",
+        "${ count } priečinky boli zlúčené so svojimi nadradenými priečinkami, pretože bola dosiahnutá maximálna úroveň vnorenia.",
+        "${ count } priečinkov bolo zlúčených so svojimi nadradenými priečinkami, pretože bola dosiahnutá maximálna úroveň vnorenia.",
+        "${ count } priečinkov bolo zlúčených so svojimi nadradenými priečinkami, pretože bola dosiahnutá maximálna úroveň vnorenia."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } priečinok nebol naimportovaný, pretože jeho nadradená zložka dosiahla maximálny počet podzložiek. Jeho položky boli importované do najbližšej dostupnej zložky.",
+        "${ count } priečinky neboli naimportované, pretože ich nadradená zložka dosiahla maximálny počet podzložiek. Ich položky boli importované do najbližšej dostupnej zložky.",
+        "${ count } priečinkov nebolo naimportovaných, pretože ich nadradená zložka dosiahla maximálny počet podzložiek. Ich položky boli importované do najbližšej dostupnej zložky.",
+        "${ count } priečinkov nebolo naimportovaných, pretože ich nadradená zložka dosiahla maximálny počet podzložiek. Ich položky boli importované do najbližšej dostupnej zložky."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } priečinok nebol naimportovaný, pretože tento úložný priestor dosiahol limit počtu priečinkov. Jeho položky boli importované do najbližšieho dostupného priečinka.",
+        "${ count } priečinky neboli naimportované, pretože tento úložný priestor dosiahol limit počtu priečinkov. Ich položky boli importované do najbližších dostupných priečinkov.",
+        "${ count } priečinkov nebolo naimportovaných, pretože tento úložný priestor dosiahol limit počtu priečinkov. Ich položky boli importované do najbližších dostupných priečinkov.",
+        "${ count } priečinkov nebolo naimportovaných, pretože tento úložný priestor dosiahol limit počtu priečinkov. Ich položky boli importované do najbližších dostupných priečinkov."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } priečinok sa nepodarilo vytvoriť. Jeho položky boli naimportované do najbližšieho dostupného priečinka.",
+        "${ failed } priečinky sa nepodarilo vytvoriť. Ich položky boli naimportované do najbližšieho dostupného priečinka.",
+        "${ failed } priečinkov sa nepodarilo vytvoriť. Ich položky boli naimportované do najbližšieho dostupného priečinka.",
+        "${ failed } priečinkov sa nepodarilo vytvoriť. Ich položky boli naimportované do najbližšieho dostupného priečinka."
       ]
     }
   }

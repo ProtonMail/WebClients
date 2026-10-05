@@ -833,6 +833,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Show less": [
+        "Vis mindre"
+      ],
+      "Show more": [
+        "Vis mere"
       ]
     },
     "Activity": {
@@ -5824,6 +5830,22 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } mappe blev flettet ind i dens overordnede mappe, fordi det nåede det dybeste niveau for undermapper.",
+        "${ count } mapper blev flettet ind i dens overordnede mappe, fordi det nåede det dybeste niveau for undermapper."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } mappe blev ikke importeret, fordi der ikke kunne være flere undermapper i dens overordnede mappe. Dens elementer blev importeret til den nærmeste ledige mappe.",
+        "${ count } mapper blev ikke importeret, fordi der ikke kunne være flere undermapper i deres overordnede mappe. Deres elementer blev importeret til den nærmeste ledige mappe."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } mappe blev ikke importeret, fordi der ikke kan være flere mapper i denne boks. Dens elementer blev importeret til den nærmeste ledige mappe.",
+        "${ count } mapper blev ikke importeret, fordi der ikke kan være flere mapper i denne boks. Deres elementer blev importeret til den nærmeste ledige mappe."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } mappe kunne ikke oprettes. Dens elementer blev importeret til den nærmeste ledige mappe.",
+        "${ failed } mapper kunne ikke oprettes. Deres elementer blev importeret til den nærmeste ledige mappe."
       ]
     }
   }
