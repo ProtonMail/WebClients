@@ -826,6 +826,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
+      ],
+      "More info": [
+        "További információk"
       ]
     },
     "Actions message": {
@@ -3029,6 +3032,19 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nem dekódolható név"
+      ],
+      "Cannot verify the author of this file": [
+        "A fájl szerzője nem ellenőrizhető"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "A név maximum ${ MAX_NODE_NAME_LENGTH } karakter hosszú lehet",
+        "A név maximum ${ MAX_NODE_NAME_LENGTH } karakter hosszú lehet"
+      ],
+      "Part of the file appears to be corrupted": [
+        "A fájl egy része sérült"
+      ],
+      "Verification keys are not available": [
+        "Az ellenőrzési kulcsok nem érhetők el"
       ]
     },
     "error": {
@@ -5610,6 +5626,18 @@
       "Up to ${ n } participant": [
         "${ n } résztvevő",
         "Akár ${ n } résztvevő"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } megbeszélés egyszerre",
+        "${ n } megbeszélés egyszerre"
+      ],
+      "Up to ${ n } meeting per day": [
+        "${ n } megbeszélés naponta",
+        "Akár ${ n } megbeszélés naponta"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videómegbeszélések, ${ n } résztvevővel",
+        "Videómegbeszélések, ${ n } résztvevővel"
       ]
     },
     "Message": {

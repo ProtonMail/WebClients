@@ -910,6 +910,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
+      ],
+      "More info": [
+        "Altre informazioni"
       ]
     },
     "Actions message": {
@@ -10374,6 +10377,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "All premium features from your current plan": [
+        "Tutte le funzionalità premium del tuo piano attuale"
       ]
     }
   }
