@@ -877,17 +877,17 @@ const useThreeDsChallenge = (iframe = false) => {
 };
 
 const IFRAME_PADDING = 8;
-const MIN_PAYPAL_BUTTON_WIDTH = 150;
+export const WALLET_BUTTON_WIDTH = 150;
 
 export function getPaypalButtonWidth(width: string): string;
 export function getPaypalButtonWidth(width?: number): number;
 export function getPaypalButtonWidth(width?: number | string): number | string;
-export function getPaypalButtonWidth(width: number | string = MIN_PAYPAL_BUTTON_WIDTH): number | string {
+export function getPaypalButtonWidth(width: number | string = WALLET_BUTTON_WIDTH): number | string {
     if (typeof width === 'string') {
         return width;
     }
 
-    return Math.max(MIN_PAYPAL_BUTTON_WIDTH, width);
+    return Math.max(WALLET_BUTTON_WIDTH, width);
 }
 
 function getPaypalIframeWidth(width?: number | string): number | string {
