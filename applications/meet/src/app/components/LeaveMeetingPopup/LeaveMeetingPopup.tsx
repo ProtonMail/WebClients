@@ -6,7 +6,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import useLoading from '@proton/hooks/useLoading';
-import { IcMeetPhone } from '@proton/icons/icons/IcMeetPhone';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectHasAnotherAdmin,
@@ -25,11 +24,9 @@ import {
     toggleSideBarState,
 } from '@proton/meet/store/slices/uiStateSlice';
 import { useFlag } from '@proton/unleash/useFlag';
-import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { EndMeetingWarningModal } from '../EndMeetingWarningModal/EndMeetingWarningModal';
 import { LeaveMeetingWarningModal } from '../LeaveMeetingWarningModal/LeaveMeetingWarningModal';
 import { ScreenShareLeaveWarningModal } from '../ScreenShareLeaveWarningModal/ScreenShareLeaveWarningModal';
@@ -53,8 +50,6 @@ export const LeaveMeetingPopup = () => {
     const [loadingEndMeeting, withLoadingEndMeeting] = useLoading();
 
     const [endingMeeting, setEndingMeeting] = useState(false);
-
-    const isLargerThanMd = useIsLargerThanMd();
 
     const handleButtonClick = () => {
         switch (true) {
@@ -98,7 +93,8 @@ export const LeaveMeetingPopup = () => {
         <>
             <Button
                 ref={anchorRef}
-                className={clsx('px-4 py-2 sm:px-7 sm:py-3 lg:px-8 lg:py-4', 'leave-button border-none shrink-0')}
+                className="leave-button border-none shrink-0 px-0 w-custom h-custom"
+                style={{ '--w-custom': '6.875rem', '--h-custom': '3.5rem' }}
                 pill={true}
                 size="large"
                 onClick={handleButtonClick}
@@ -106,7 +102,7 @@ export const LeaveMeetingPopup = () => {
                 aria-expanded={popupState[PopUpControls.LeaveMeeting]}
                 aria-haspopup="dialog"
             >
-                {isLargerThanMd ? c('Action').t`Leave` : <IcMeetPhone className="shrink-0" size={8} />}
+                {c('Action').t`Leave`}
             </Button>
             <Dropdown
                 className="leave-meeting-popup meet-radius"

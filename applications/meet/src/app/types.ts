@@ -1,5 +1,3 @@
-export { MeetingSideBars } from '@proton/meet/store/slices/uiStateSlice';
-
 export enum QualityScenarios {
     // ScreenShare = 'ScreenShare',
     PortraitView = 'PortraitView',
