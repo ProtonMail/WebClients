@@ -5,7 +5,7 @@
     "author": "ProtonMail",
     "sideEffects": false,
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "generate-date-fns-locales-map": "node lib/i18n/generateDateFnsLocaleMap.ts lib/i18n/dateFnsLocaleMap.ts && prettier --write lib/i18n/dateFnsLocaleMap.ts",
         "i18n:validate": "proton-i18n validate lint-functions lib",
         "lint": "eslint --quiet",

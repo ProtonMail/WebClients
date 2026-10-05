@@ -14,7 +14,7 @@
         "./TrendChart.types": "./src/charts/TrendChart/TrendChart.types.ts"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "TZ=UTC vitest",
         "test:ci": "pnpm run test --run",

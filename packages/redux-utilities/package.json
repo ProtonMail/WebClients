@@ -13,7 +13,7 @@
         "./initialModelState/interface": "./initialModelState/interface.ts"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest --runInBand",
         "test:ci": "pnpm run test"

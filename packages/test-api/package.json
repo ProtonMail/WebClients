@@ -9,7 +9,7 @@
         "./mockRandomValues": "./src/mockRandomValues.ts"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "lint:fix": "pnpm run lint --fix"
     },

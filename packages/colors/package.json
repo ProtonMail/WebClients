@@ -4,7 +4,7 @@
     "description": "Package containing the logic for Proton's design system color computations",
     "scripts": {
         "build": "webpack-cli",
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "generate": "ts-node -P tsconfig.generate.json gen-themes-cli",
         "lint": "eslint --quiet",
         "test": "NODE_OPTIONS=--experimental-vm-modules jest",
