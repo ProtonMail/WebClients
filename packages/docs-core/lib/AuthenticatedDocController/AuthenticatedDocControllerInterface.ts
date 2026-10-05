@@ -17,10 +17,10 @@ export interface AuthenticatedDocControllerInterface {
   getVersionHistory(): NativeVersionHistory | undefined
   openMoveToFolderModal(): void
   restoreRevisionAsCopy(yjsContent: YjsState): Promise<{ nodeMeta: NodeMeta; documentType: DocumentType }>
-  restoreDocument(useSDK?: boolean): Promise<void>
+  restoreDocument(replaceDriveCompat?: boolean): Promise<void>
   squashDocument(): Promise<void>
   squashEverythingInBaseCommit(): Promise<Result<boolean>>
-  trashDocument(useSDK?: boolean): Promise<void>
+  trashDocument(replaceDriveCompat?: boolean): Promise<void>
   getAllUpdatesAsZip(): Promise<Blob>
   downloadAllUpdatesAsZip(): Promise<void>
   downloadUpdatesInformation(ydoc?: unknown): Promise<void>

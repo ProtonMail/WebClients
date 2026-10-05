@@ -11,6 +11,7 @@ import { APPS } from '@proton/shared/lib/constants'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import config from '~/config'
 import { useGetCacheConfig } from '@proton/docs-core/lib/Crypto/useGetCacheConfig'
+import { useGetVerificationKey } from '@proton/docs-core/lib/Crypto/useGetVerificationKey'
 import { isDriveCompatSDKEnabled } from '@proton/docs-core/lib/Util/isDriveCompatSDKEnabled'
 
 export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCompat }) {
@@ -20,13 +21,10 @@ export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCo
   const { init: initializeDriveSDK } = useDrive()
   const unleashClient = useUnleashClient()
   const getCacheConfig = useGetCacheConfig()
+  const getVerificationKey = useGetVerificationKey(api)
 
   const application = useMemo(() => {
-    let cacheConfig
-    if (isDriveCompatSDKEnabled(unleashClient)) {
-      cacheConfig = getCacheConfig()
-    }
-
+    const replaceDriveCompat = isDriveCompatSDKEnabled(unleashClient)
     // This is private application, public one is in PublicApplicationContent
     const application = new Application(
       api,
@@ -39,7 +37,8 @@ export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCo
       config.APP_NAME,
       config.APP_VERSION,
       unleashClient,
-      cacheConfig,
+      replaceDriveCompat ? getCacheConfig() : undefined,
+      replaceDriveCompat ? getVerificationKey : undefined,
     )
 
     const drive = getDrive()
