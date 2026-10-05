@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { type DisplayItem, SpotlightMenuButton } from '@proton/components/components/topnavbar/SpotlightMenuButton';
-import { useLocalState } from '@proton/components/index';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
