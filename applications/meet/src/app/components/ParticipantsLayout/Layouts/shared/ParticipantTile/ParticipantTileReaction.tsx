@@ -25,7 +25,9 @@ export const ParticipantTileReaction = ({ participantIdentity, position }: Props
     const activeEmoji = useMeetSelector((state) => selectActiveReaction(state, participantIdentity));
     const raisedHands = useMeetSelector(selectRaisedHands);
     const isHandRaised = raisedHands.includes(participantIdentity);
-    const displayEmoji = activeEmoji || (isHandRaised ? RAISE_HAND_EMOJI : undefined);
+    // Only the raised hand is shown on the tile. Other reactions are animated screen-wide by <ReactionStream />.
+    const tileEmoji = activeEmoji === RAISE_HAND_EMOJI ? activeEmoji : undefined;
+    const displayEmoji = tileEmoji || (isHandRaised ? RAISE_HAND_EMOJI : undefined);
     const { adminLowerHand } = useRaiseHand();
 
     // Track the last visible emoji synchronously during render so the exit class
