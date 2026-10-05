@@ -1,5 +1,5 @@
 import { $insertNodeToNearestRoot } from '@lexical/utils'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import { $createParagraphNode, $getSelection, $isRangeSelection } from 'lexical'
 import { $createPageBreakNode } from '../PageBreak/PageBreakNode'
 import { $createSuggestionNode } from './ProtonNode'
@@ -10,7 +10,7 @@ export function $insertPageBreakAsSuggestion(onSuggestionCreation: (id: string) 
     return true
   }
 
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
   const pageBreakNode = $createPageBreakNode()
   const suggestionNode = $createSuggestionNode(suggestionID, 'insert')
   suggestionNode.append(pageBreakNode)
