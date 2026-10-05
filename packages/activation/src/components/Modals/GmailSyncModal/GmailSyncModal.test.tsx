@@ -46,14 +46,26 @@ describe('GmailSyncModal', () => {
     });
 
     it('should show the add byoe modal', () => {
-        easySwitchRender(<GmailSyncModal open source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} hasAccessToBYOE />);
+        easySwitchRender(
+            <GmailSyncModal
+                open
+                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
+                onBYOECallback={() => {}}
+                hasAccessToBYOE
+            />
+        );
 
         screen.getByText(`Bring your Gmail into ${MAIL_APP_NAME}`);
     });
 
     it('should show the forwarding modal', () => {
         easySwitchRender(
-            <GmailSyncModal open source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} hasAccessToBYOE={false} />
+            <GmailSyncModal
+                open
+                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
+                onBYOECallback={() => {}}
+                hasAccessToBYOE={false}
+            />
         );
 
         screen.getByText('Automatically forward');
@@ -77,7 +89,12 @@ describe('GmailSyncModal', () => {
 
         await waitFor(() => {
             expect(mockSyncCallback).not.toHaveBeenCalled();
-            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, true, TIME_PERIOD.BIG_BANG, undefined);
+            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith({
+                hasError: false,
+                importEmails: true,
+                importPeriod: TIME_PERIOD.BIG_BANG,
+                token: undefined,
+            });
         });
     });
 
@@ -101,7 +118,12 @@ describe('GmailSyncModal', () => {
 
         await waitFor(() => {
             expect(mockSyncCallback).not.toHaveBeenCalled();
-            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, false, undefined, undefined);
+            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith({
+                hasError: false,
+                importEmails: false,
+                importPeriod: undefined,
+                token: undefined,
+            });
         });
     });
     it('should call onBYOECallback with the selected import period', async () => {
@@ -121,7 +143,12 @@ describe('GmailSyncModal', () => {
         fireEvent.click(screen.getByText('Connect your email'));
 
         await waitFor(() => {
-            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith(false, true, TIME_PERIOD.LAST_3_MONTHS, undefined);
+            expect(mockBYOEWithImportCallback).toHaveBeenCalledWith({
+                hasError: false,
+                importEmails: true,
+                importPeriod: TIME_PERIOD.LAST_3_MONTHS,
+                token: undefined,
+            });
         });
     });
 });

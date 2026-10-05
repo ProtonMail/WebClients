@@ -76,12 +76,17 @@ const useSetupGmailBYOEAddress = ({
         }
     };
 
-    const handleBYOEWithImportCallback = async (
-        hasError: boolean,
-        importEmails: boolean,
-        importPeriod: TIME_PERIOD | undefined,
-        token?: ImportToken
-    ) => {
+    const handleBYOEWithImportCallback = async ({
+        hasError,
+        importEmails,
+        importPeriod,
+        token,
+    }: {
+        hasError: boolean;
+        importEmails: boolean;
+        importPeriod: TIME_PERIOD | undefined;
+        token?: ImportToken;
+    }) => {
         // If setting up the token failed or user has no access to BYOE, close the modal
         if (!hasAccessToBYOE || hasError) {
             onComplete?.();

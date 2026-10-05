@@ -75,7 +75,7 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                             <span>{c('Label').t`Import your emails`}</span>
                         </Checkbox>
                         {isImportPeriodEnabled && (
-                            <SelectTwo
+                            <SelectTwo<TIME_PERIOD>
                                 value={importPeriod}
                                 onChange={({ value }) => setImportPeriod(value)}
                                 disabled={!importEmails}
