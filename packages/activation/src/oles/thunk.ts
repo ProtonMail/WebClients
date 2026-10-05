@@ -53,15 +53,9 @@ import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelpe
 import { getDecryptedAddressKeys } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
 import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import getRandomString from '@proton/utils/getRandomString';
-import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import {
-    createJoiningLink,
-    createOrganizationImporter,
-    createOrganizationImporterMigration,
-    patchOrganizationImporter,
-} from '../api';
+import { createJoiningLink, createOrganizationImporter, patchOrganizationImporter } from '../api';
 import {
     type ApiImporterOrganization,
     ApiImporterOrganizationState,
@@ -70,6 +64,7 @@ import {
 } from '../api/api.interface';
 import type { OAuthToken } from '../logic/oauthToken';
 import { areEquivalentEmails, isRelevantAddress, shouldCreateUserPredicate } from './helpers';
+import { resolveMigrationCandidates, submitMigrations } from './migrationSubmission';
 import type { JoiningLink, MigrationConfiguration } from './types';
 
 type RequiredState = KtState &
@@ -440,25 +435,14 @@ export const createMigrationBatch = createAsyncThunk<
                 ]);
             }
 
-            const addressesToMigrate = (() => {
-                const knownAddresses = getKnownAddresses();
-                return users
-                    .map((u) => knownAddresses.find((a) => areEquivalentEmails(a.Email, u.Email)))
-                    .filter(isTruthy);
-            })();
+            const migrationCandidates = resolveMigrationCandidates(users, getKnownAddresses());
 
-            if (addressesToMigrate.length) {
-                await api(
-                    createOrganizationImporterMigration({
-                        ImporterOrganizationId: importerOrganizationId,
-                        AddressIds: addressesToMigrate.map((a) => a.ID),
-                    })
-                );
-            }
+            const { submitted, failed } = await submitMigrations(api, importerOrganizationId, migrationCandidates);
+            errors.push(...failed.map(({ candidate, error }) => toSerializableUserError(candidate.user, error)));
 
             return {
                 errors,
-                results: addressesToMigrate,
+                results: submitted.map(({ address }) => address),
             };
         } finally {
             extra.eventManager.start();
