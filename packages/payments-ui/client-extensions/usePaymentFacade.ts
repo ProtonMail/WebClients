@@ -229,7 +229,7 @@ export const usePaymentFacade = ({
         onQrPendingModalClosed: () => setApplePayAttempt((attempt) => attempt + 1),
     });
 
-    const { canUseGooglePay, googlePayModalHandles } = useGooglePayDependencies(chargebeeHandles, {
+    const { googlePayModalHandles } = useGooglePayDependencies(chargebeeHandles, {
         onPaymentFailure: () => reportPaymentEvent('payment_declined', PAYMENT_METHOD_TYPES.GOOGLE_PAY),
         onVerificationCancelled: () =>
             reportPaymentEvent('verification_rejected_by_user', PAYMENT_METHOD_TYPES.GOOGLE_PAY),
@@ -268,7 +268,6 @@ export const usePaymentFacade = ({
             planIDs,
             isTrial,
             canUseApplePay,
-            canUseGooglePay,
             paymentMethodFlags,
             telemetryContext,
             onDeclined: ({ selectedMethodType, selectedMethodValue }) =>
