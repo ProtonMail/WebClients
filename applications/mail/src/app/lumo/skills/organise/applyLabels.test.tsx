@@ -10,6 +10,7 @@ import {
     resolveLabelChanges,
 } from './applyLabels';
 import { hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
+import { offListState } from './organise.test.helpers';
 
 describe('applyLabelsDefinition', () => {
     // Without this, "always tag mail from X" is answered by labelling the mail already on screen — the
@@ -98,7 +99,7 @@ describe('createApplyLabelsHandler', () => {
         const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const labelReference = references.referenceFor('label', 'LABEL_ID_1', { title: 'Receipts' });
         const element = { ID: 'ELEMENT_ID_1' };
-        const store = { getState: () => ({ elements: { elements: { ELEMENT_ID_1: element } } }) };
+        const store = { getState: () => offListState([element]) };
         const applyMultipleLocations = jest.fn().mockResolvedValue(undefined);
         const deps = { store, applyMultipleLocations } as unknown as MailToolDeps;
 
@@ -106,7 +107,7 @@ describe('createApplyLabelsHandler', () => {
     };
 
     // `createFilters: false` is the boundary the tool description draws: tag these emails, propose no rule.
-    it('resolves both kinds of reference and adds the labels without creating a filter', async () => {
+    it('resolves both kinds of reference, on screen or not, and adds the labels without creating a filter', async () => {
         const { references, emailReference, labelReference, element, applyMultipleLocations, deps } = setUp();
 
         await createApplyLabelsHandler(deps)({ ids: [emailReference], labels: [labelReference] }, { references });
