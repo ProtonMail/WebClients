@@ -931,6 +931,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
+      ],
+      "More info": [
+        "Diğer bilgiler"
       ]
     },
     "Actions message": {
@@ -7051,7 +7054,7 @@
         "HIPAA uyumluluğu"
       ],
       "Encrypted contact details": [
-        "Şifrelenmiş kişi bilgileri"
+        "Kişi bilgilerini şifreleme"
       ],
       "Encrypted VPN servers": [
         "Şifrelenmiş VPN sunucuları"
@@ -7124,7 +7127,7 @@
         "Kimlik bilgilerini korumak için parola yöneticisi"
       ],
       "Password-protected Emails": [
-        "Parola korumalı e-postalar"
+        "E-postaları parola ile koruma"
       ],
       "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
         "Telefon desteği (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ kullanıcı)"
@@ -7166,7 +7169,7 @@
         "E-posta yazma süresini azaltın"
       ],
       "Schedule and snooze emails for any time": [
-        "İletileri istediğiniz zamana planlayın veya erteleyin"
+        "E-postaları istediğiniz zaman gönderme veya erteleme"
       ],
       "Secure Core servers": [
         "Secure Core sunucuları"
@@ -7193,7 +7196,7 @@
         "Kullanıcı olarak oturum açma"
       ],
       "SMTP submission": [
-        "SMTP gönderimi"
+        "SMTP ile gönderme"
       ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
@@ -7232,7 +7235,7 @@
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
       "Unlimited labels": [
-        "Sınırsız etiket"
+        "Sınırsız sayıda etiket"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -7946,6 +7949,9 @@
       ],
       "Your settings have been changed successfully": [
         "Ayarlarınız değiştirildi"
+      ],
+      "Failed to apply file. Check the file and try again.": [
+        "Dosya uygulanamadı. Dosyayı denetleyip yeniden deneyin."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8326,6 +8332,81 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }, ${ PLAN_NAMES[PLANS.PASS] } ile birleştirilemez."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } yalnızca kurumsal tarifelerde kullanılabilir."
+      ],
+      "An organization is required for this plan.": [
+        "Bu tarife için bir kuruluş gereklidir."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private etkin bir abonelik ile satın alınamaz."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private için bir bağış yapılması gereklidir."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Kredi satın almak için ayrı bir satın alma gerekir."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Geçiş yaparak ${ termsLink } içeriğini kabul etmiş olursunuz."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Yalnızca bir ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } satın alınabilir."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Lütfen tarifenizi değiştirmeden önce ek cüzdan hesaplarını kapatın."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Lütfen tarifenizi değiştirmeden önce ek cüzdanları kapatın."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe koltuk sayısı üye sayısını aşamaz."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Seçilmiş tarife hesabınız için yeterli adres sunmuyor."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Seçilmiş tarife hesabınız için yeterli etki alanı sunmuyor."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Seçilmiş tarife hesabınız için yeterli üye sunmuyor."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Seçilmiş tarife hesabınız için yeterli depolama alanı sunmuyor."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Bu sie ayrılmış sunucu bir ağ geçidine atanmış ve değiştirilemez."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Bu tarife hesabınızdaki üyeleri desteklemez."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Deneme tarifelerinde ${ LUMO_SHORT_APP_NAME } koltukları desteklenmez."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Deneme tarifeleri özel etki alanlarını desteklemez."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Deneme tarifeleri size ayrılmış IP adreslerini desteklemez."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Deneme tarifelerinde Scribe koltukları desteklenmez."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Deneme tarifeleri bu kadar çok üyeyi desteklemez."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Zaten ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } sahibisiniz."
+      ],
+      "You already own Born Private.": [
+        "Zaten Born Private kapsamındasınız."
+      ],
+      "Your account is too old for Born Private.": [
+        "Hesabınız Born Private için çok eski."
       ]
     },
     "PGP key encryption warning": {

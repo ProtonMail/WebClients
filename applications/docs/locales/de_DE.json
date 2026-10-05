@@ -931,6 +931,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
+      "More info": [
+        "Weitere Informationen"
       ]
     },
     "Actions message": {
@@ -7946,6 +7949,9 @@
       ],
       "Your settings have been changed successfully": [
         "Deine Einstellungen wurden erfolgreich geändert"
+      ],
+      "Failed to apply file. Check the file and try again.": [
+        "Die Datei konnte nicht übernommen werden. Überprüfe die Datei und versuche es erneut."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8326,6 +8332,81 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monat verlängert. Du kannst jederzeit kündigen.",
         "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monate verlängert. Du kannst jederzeit kündigen."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kann nicht mit ${ PLAN_NAMES[PLANS.PASS] } kombiniert werden."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ist nur in Unternehmensabonnements verfügbar."
+      ],
+      "An organization is required for this plan.": [
+        "Für dieses Abonnement ist eine Organisation erforderlich."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "«Born Private» kann nicht gekauft werden, wenn ein aktives Abonnement besteht."
+      ],
+      "Born Private requires a donation.": [
+        "Für «Born Private» ist eine Spende erforderlich."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Der Erwerb von Guthaben erfordert einen separaten Kauf."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Mit dem Wechsel erklärst du dich mit unseren ${ termsLink } einverstanden."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Es kann nur ein ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } erworben werden."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Bitte schließe alle zusätzlichen Wallet-Konten, bevor du dein Abonnement wechselst."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Bitte schließe alle zusätzlichen Wallets, bevor du dein Abonnement wechselst."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Die Anzahl der Scribe-Lizenzen darf die Anzahl der Mitglieder nicht übersteigen."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Das ausgewählte Abonnement bietet eine zu geringe Anzahl an Adressen für dein Konto."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Das ausgewählte Abonnement bietet nicht genügend Domains für dein Konto."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Der ausgewählte Tarif bietet dir eine zu geringe Anzahl an Mitgliedern für dein Konto."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Das ausgewählte Abonnement bietet nicht genügend Speicherplatz für dein Konto."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Dieser dedizierte Server ist einem Gateway zugewiesen und kann nicht geändert werden."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Dieses Abonnement bietet keine Unterstützung für die Mitglieder deines Kontos."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Testversionen unterstützen keine ${ LUMO_SHORT_APP_NAME }-Lizenzen."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Testversionen unterstützen keine eigenen Domains."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Testversionen unterstützen keine dedizierten IP-Adressen."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Testversionen unterstützen keine Scribe-Lizenzen."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Testversionen unterstützen nicht so viele Mitglieder."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du besitzt bereits ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Du besitzt „Born Private“ bereits."
+      ],
+      "Your account is too old for Born Private.": [
+        "Dein Konto ist zu alt für „Born Private“."
       ]
     },
     "PGP key encryption warning": {
