@@ -837,6 +837,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Show less": [
+        "Паказаць менш"
+      ],
+      "Show more": [
+        "Паказаць больш"
       ]
     },
     "Activity": {
@@ -2334,7 +2340,7 @@
         "Ніколі"
       ],
       "New": [
-        "Новы"
+        "Новая"
       ],
       "New version ${ latestVersion } is available.": [
         "Даступна новая версія ${ latestVersion }."
@@ -3034,6 +3040,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Пераключыцеся на іншую папку або стварыце элемент у гэтай папцы"
       ]
     },
     "Keyboard key": {
@@ -4742,6 +4751,9 @@
       ],
       "Used on ${ url }": [
         "Выкарыстоўваецца на ${ url }"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Увядзіце паўторна \"${ name }\", каб пацвердзіць выдаленне"
       ]
     },
     "Result": {
@@ -5894,6 +5906,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Вы дасягнулі максімальнай колькасці папак на гэтым узроўні"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Вы дасягнулі максімальнай колькасці папак для гэтага сховішча"
       ]
     }
   }
