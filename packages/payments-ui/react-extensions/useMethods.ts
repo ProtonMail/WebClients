@@ -45,7 +45,6 @@ export interface Props {
     planIDs?: PlanIDs;
     subscription?: Subscription | FreeSubscription;
     canUseApplePay?: boolean;
-    canUseGooglePay?: boolean;
     isTrial?: boolean;
     paymentMethodFlags: PaymentMethodFlags;
     sortNewMethods?: (methods: AvailablePaymentMethod[]) => AvailablePaymentMethod[];

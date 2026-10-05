@@ -119,7 +119,6 @@ const buildMethods = (overrides: Partial<PaymentMethodsContext> = {}) =>
 const permissive: Partial<PaymentMethodsContext> = {
     amount: 100_000,
     canUseApplePay: true,
-    canUseGooglePay: true,
     enableSepa: true,
     enableSepaB2C: true,
     billingAddress: { CountryCode: 'CH', State: '' },
@@ -2138,10 +2137,6 @@ describe('Google Pay', () => {
         const paymentStatus = { ...status, VendorStates: { ...status.VendorStates, Google: false } };
 
         expect(hasNewMethod(PAYMENT_METHOD_TYPES.GOOGLE_PAY, { ...permissive, paymentStatus })).toBe(false);
-    });
-
-    it.each([false, undefined])('should not be offered when canUseGooglePay is %s', (canUseGooglePay) => {
-        expect(hasNewMethod(PAYMENT_METHOD_TYPES.GOOGLE_PAY, { ...permissive, canUseGooglePay })).toBe(false);
     });
 
     it('should be offered for reservation-donation while Apple Pay is not', () => {
