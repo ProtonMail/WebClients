@@ -1,0 +1,85 @@
+.reaction-stream {
+	position: fixed;
+	inset: 0;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.reaction-stream-item {
+	position: absolute;
+	inset-block-end: 6rem; // just above the 5rem control bar
+	inset-inline-start: var(--reaction-left);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.25rem;
+	animation: reaction-stream-rise 4.2s cubic-bezier(0.3, 0.5, 0.5, 1) forwards;
+	will-change: transform, opacity;
+}
+
+.reaction-stream-emoji {
+	font-size: 2.75rem;
+	line-height: 1;
+}
+
+.reaction-stream-name {
+	max-inline-size: 10rem;
+	padding-block: 0.125rem;
+	padding-inline: 0.5rem;
+	border: 1px solid var(--border-norm);
+	border-radius: var(--border-radius-full);
+	background: color-mix(in srgb, var(--interaction-weak-minor-3) 60%, transparent);
+	backdrop-filter: blur(14px);
+	color: var(--text-norm);
+	font-size: 0.75rem;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+@keyframes reaction-stream-rise {
+	0% {
+		opacity: 0;
+		transform: translate(0, 0) scale(0.6);
+	}
+
+	8% {
+		opacity: 1;
+		transform: translate(calc(var(--reaction-drift) * 0.4), calc(var(--reaction-rise) * -0.1)) scale(1);
+	}
+
+	40% {
+		opacity: 1;
+		transform: translate(calc(var(--reaction-drift) * -1), calc(var(--reaction-rise) * -0.4)) scale(1);
+	}
+
+	75% {
+		opacity: 1;
+		transform: translate(var(--reaction-drift), calc(var(--reaction-rise) * -0.75)) scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translate(0, calc(var(--reaction-rise) * -1)) scale(0.95);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reaction-stream-item {
+		animation: reaction-stream-fade 3s ease-in-out forwards;
+	}
+}
+
+@keyframes reaction-stream-fade {
+	0% {
+		opacity: 0;
+	}
+
+	10%,
+	80% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
