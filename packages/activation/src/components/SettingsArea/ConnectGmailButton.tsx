@@ -21,6 +21,7 @@ import { useEasySwitchDispatch } from '../../logic/store';
 import { changeCreateLoadingState } from '../../logic/sync/sync.actions';
 import AddressLinkedToAnotherAccountModal from '../Modals/AddressLinkedToAnotherAccountModal/AddressLinkedToAnotherAccountModal';
 import BYOEConversionModal from '../Modals/BYOEConversionModal/BYOEConversionModal';
+import { ClaimableAddressModal } from '../Modals/ClaimableAddressModal/ClaimableAddressModal';
 import GmailSyncModal from '../Modals/GmailSyncModal/GmailSyncModal';
 import ReachedLimitForwardingModal from '../Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
 import RemoveForwardingModal from '../Modals/RemoveForwardingModal/RemoveForwardingModal';
@@ -66,8 +67,10 @@ const ConnectGmailButton = ({
         setAddressLinkedToAnotherAccountModalOpen,
         renderAddressLinkedToAnotherAccountModal,
     ] = useModalState();
+    const [claimableAddressModalProps, setClaimableAddressModalOpen, renderClaimableAddressModal] = useModalState();
 
     const [expectedEmailAddress, setExpectedEmailAddress] = useState<string | undefined>();
+    const [claimableEmailAddress, setClaimableEmailAddress] = useState<string | undefined>();
 
     const { isInMaintenance, handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
         showSuccessModal: (connectedAddress: string, importEmails: boolean) => {
@@ -81,6 +84,10 @@ const ConnectGmailButton = ({
         },
         showAddressLinkedToAnotherAccountModal: () => {
             setAddressLinkedToAnotherAccountModalOpen(true);
+        },
+        showClaimableAddressModal: (email: string) => {
+            setClaimableEmailAddress(email);
+            setClaimableAddressModalOpen(true);
         },
         onComplete: () => {
             easySwitchDispatch(changeCreateLoadingState('idle'));
@@ -175,6 +182,9 @@ const ConnectGmailButton = ({
             {renderRemoveForwardingModal && <RemoveForwardingModal {...removeForwardingModalProps} />}
             {renderAddressLinkedToAnotherAccountModal && (
                 <AddressLinkedToAnotherAccountModal {...addressLinkedToAnotherAccountModalProps} />
+            )}
+            {renderClaimableAddressModal && claimableEmailAddress && (
+                <ClaimableAddressModal emailAddress={claimableEmailAddress} {...claimableAddressModalProps} />
             )}
         </>
     );
