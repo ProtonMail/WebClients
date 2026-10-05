@@ -2,11 +2,9 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { Href } from '@proton/atoms/Href/Href';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useToggle from '@proton/hooks/useToggle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import icon from '@proton/styles/assets/img/byoe/mobile-gmail-app-icon.svg';
 
 import MobileSection from '../../components/MobileSection';
@@ -44,15 +42,12 @@ export const BYOEMobile = ({ layout }: Props) => {
                             <li className="text-medium">{c('Label')
                                 .t`Send from your Gmail address in ${BRAND_NAME}`}</li>
                         </ul>
-                        <Href className="color-primary text-semibold text-no-decoration" href={getStaticURL('')}>
-                            {c('Link').t`Learn more`}
-                        </Href>
                     </div>
                 </MobileSectionRow>
                 <MobileSectionRow>
                     <MobileSectionLabel
                         htmlFor="import-toggle"
-                        description={<span>{c('Label').t`Up to 80% of storage limit`}</span>}
+                        description={<span>{c('Label').t`Start with your most recent messages`}</span>}
                     >
                         {c('Label').t`Import messages`}
                     </MobileSectionLabel>
