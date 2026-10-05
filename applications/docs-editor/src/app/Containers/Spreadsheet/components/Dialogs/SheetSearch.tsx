@@ -28,6 +28,13 @@ export function SheetSearch() {
       hideOnEscape={false}
       open={isActive}
       onClose={handleReset}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault()
+          event.stopPropagation()
+          handleReset()
+        }
+      }}
       className="absolute right-4 top-4 flex w-[400px] items-center gap-2 rounded-b-[8px] border border-[#D1CFCD] bg-[white] px-2.5 py-2.5 shadow-[0px_12px_24px_-4px_rgba(0,0,0,0.16)] outline-none"
     >
       <label className="flex h-[34px] min-w-0 grow cursor-text items-center gap-1.5 rounded-[8px] border border-[#D1CFCD] pl-3 pr-4 transition focus-within:border-[#6D4AFF] focus-within:ring-[3px] focus-within:ring-[#6D4AFF]/20">
@@ -38,9 +45,6 @@ export function SheetSearch() {
           autoFocus
           onChange={(event) => onSubmit(event.target.value)}
           onKeyDown={(event) => {
-            if (event.key === 'Escape') {
-              handleReset()
-            }
             if (event.key === 'Enter') {
               onNext()
             }
