@@ -14,6 +14,8 @@ interface ProgressiveMarkdownProps {
     sourcesContainerRef?: React.RefObject<HTMLDivElement>;
     messageContentContainerRef?: React.RefObject<HTMLDivElement>;
     message: Message;
+    /** When false, Vega code fences render as static highlighted code (untrusted previews). */
+    enableVegaCharts?: boolean;
 }
 
 // Simple loading fallback that matches the markdown content area

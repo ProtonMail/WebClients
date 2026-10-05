@@ -314,6 +314,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
                 <LazyProgressiveMarkdownRenderer
                     content={truncatedContent.content}
                     isStreaming={false}
+                    enableVegaCharts={false}
                     message={{
                         id: 'file-content',
                         content: truncatedContent.content,

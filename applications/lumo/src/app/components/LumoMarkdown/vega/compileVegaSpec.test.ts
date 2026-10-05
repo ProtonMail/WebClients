@@ -57,7 +57,7 @@ describe('compileVegaSpec', () => {
         expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
     });
 
-    it('compiles linked brush selection specs after sanitization', () => {
+    it('compiles dual-panel weather charts after stripping brush interactivity', () => {
         const weather = [
             { date: '2012-01-01', temp_max: 8, weather: 'rain' },
             { date: '2012-01-02', temp_max: 10, weather: 'sun' },
@@ -100,16 +100,15 @@ describe('compileVegaSpec', () => {
         });
 
         const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
-        expect(spec.params).toEqual([{ name: 'brush', select: { type: 'interval', encodings: ['x'] } }]);
-        const colorEncoding = ((spec as Record<string, unknown>).vconcat as Record<string, unknown>[])[0]
-            ?.encoding as Record<string, unknown>;
+        expect(spec.params).toBeUndefined();
+        const panels = (spec as Record<string, unknown>).vconcat as Record<string, unknown>[];
+        const colorEncoding = panels[0]?.encoding as Record<string, unknown>;
         expect(colorEncoding.color).toMatchObject({
-            condition: { param: 'brush', field: 'weather', type: 'nominal' },
-            value: 'lightgray',
+            field: 'weather',
+            type: 'nominal',
         });
-        const bottomTransform = ((spec as Record<string, unknown>).vconcat as Record<string, unknown>[])[1]
-            ?.transform as Record<string, unknown>[];
-        expect(bottomTransform[0]?.filter).toMatchObject({ param: 'brush', empty: true });
+        expect(colorEncoding.color).not.toHaveProperty('condition');
+        expect(panels[1]?.transform).toBeUndefined();
         expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
     });
 
