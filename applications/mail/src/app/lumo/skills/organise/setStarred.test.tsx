@@ -6,6 +6,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
 import type { MailToolDeps } from '../../toolModule';
 import { emailCountDetail, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
+import { offListState } from './organise.test.helpers';
 import { createSetStarredHandler, setStarredCardRenderer, setStarredDefinition } from './setStarred';
 
 describe('setStarredDefinition', () => {
@@ -72,7 +73,7 @@ describe('createSetStarredHandler', () => {
         const references = createReferenceRegistry();
         const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const element = { ID: 'ELEMENT_ID_1' };
-        const store = { getState: () => ({ elements: { elements: { ELEMENT_ID_1: element } } }) };
+        const store = { getState: () => offListState([element]) };
         const applyLocation = jest.fn().mockResolvedValue([]);
         const deps = { store, applyLocation } as unknown as MailToolDeps;
 
@@ -83,18 +84,21 @@ describe('createSetStarredHandler', () => {
     it.each([
         ['stars', true, false],
         ['unstars', false, true],
-    ])('resolves references to elements and %s them without toggling', async (_name, starred, removeLabel) => {
-        const { references, emailReference, element, applyLocation, deps } = setUp();
+    ])(
+        'resolves references to their current elements, on screen or not, and %s them without toggling',
+        async (_name, starred, removeLabel) => {
+            const { references, emailReference, element, applyLocation, deps } = setUp();
 
-        await createSetStarredHandler(deps)({ ids: [emailReference], starred }, { references });
+            await createSetStarredHandler(deps)({ ids: [emailReference], starred }, { references });
 
-        expect(applyLocation).toHaveBeenCalledWith({
-            type: APPLY_LOCATION_TYPES.STAR,
-            elements: [element],
-            destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
-            removeLabel,
-        });
-    });
+            expect(applyLocation).toHaveBeenCalledWith({
+                type: APPLY_LOCATION_TYPES.STAR,
+                elements: [element],
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                removeLabel,
+            });
+        }
+    );
 
     it('rejects a hallucinated reference before touching apply-location', async () => {
         const references = createReferenceRegistry();

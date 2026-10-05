@@ -12,7 +12,7 @@ import type {
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 
-import { resolveElements, resolveTypedId } from '../../helpers/references';
+import { resolveFreshElements, resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import {
     emailIds,
@@ -49,7 +49,7 @@ export const applyLabelsDefinition: ToolDefinition<ApplyLabelsParams, void> = {
     name: 'apply_labels',
     kind: 'mutation',
     toolDescription:
-        'Add one or more labels to one or more emails. Labels are additive tags and do NOT move the email (unlike move_emails). `ids` are email-… references from view_emails/search; `labels` are label-… references from list_labels. Use for "tag/label these as X". The on-screen rows show which labels an email already carries: a row lists them as `labels: …`, and a row without that part carries none. Only pass emails that are missing the label you are adding — if every email the user means already carries it, tell them there is nothing to do instead of proposing this. This tags only the specific emails you pass — it does NOT act on future mail; for a rule that automatically tags or files incoming mail, use create_filter. If the label does not exist yet, create it first with create_label. Proposed to the user for confirmation before it runs. Example: { "ids": ["email-a1b2c3"], "labels": ["label-m3n4p5"] }.',
+        'Add one or more labels to one or more emails. Labels are additive tags and do NOT move the email (unlike move_emails). `ids` are email-… references from any earlier result in this conversation; `labels` are label-… references from list_labels. Use for "tag/label these as X". The rows show which labels an email already carries: a row lists them as `labels: …`, and a row without that part carries none. Only pass emails that are missing the label you are adding — if every email the user means already carries it, tell them there is nothing to do instead of proposing this. This tags only the specific emails you pass — it does NOT act on future mail; for a rule that automatically tags or files incoming mail, use create_filter. If the label does not exist yet, create it first with create_label. Proposed to the user for confirmation before it runs. Example: { "ids": ["email-a1b2c3"], "labels": ["label-m3n4p5"] }.',
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
@@ -62,7 +62,7 @@ export const applyLabelsDefinition: ToolDefinition<ApplyLabelsParams, void> = {
     examples: [
         {
             context:
-                'search returned email-a1b2c3, and list_labels returned `label-m3n4p5 | "Receipts"`. Tag that email with the Receipts label.',
+                'Earlier in the conversation search returned email-a1b2c3 and list_labels returned `label-m3n4p5 | "Receipts"`. The user now asks to tag that email as a receipt. Both references are already in hand, so apply the label with no new search or list.',
             call: { ids: ['email-a1b2c3'], labels: ['label-m3n4p5'] },
         },
     ],
@@ -74,8 +74,8 @@ export const applyLabelsDefinition: ToolDefinition<ApplyLabelsParams, void> = {
 export const createApplyLabelsHandler =
     (mail: MailToolDeps): ToolHandler<ApplyLabelsParams, void> =>
     async ({ ids, labels }, { references }) => {
-        const elements = resolveElements(mail.store, ids, references);
         const changes = resolveLabelChanges(labels, references);
+        const elements = await resolveFreshElements(mail, ids, references);
         // `createFilters: false` — tagging these emails must not also propose a rule for future mail; that
         // is `create_filter`'s job, and the tool description draws the same line for the model.
         await mail.applyMultipleLocations({ elements, createFilters: false, changes });
