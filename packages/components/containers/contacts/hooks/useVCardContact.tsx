@@ -7,7 +7,7 @@ import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys';
 
-export type VCardContactModel = {
+type VCardContactModel = {
     ID?: string;
     vCardContact?: VCardContact;
     errors?: (CryptoProcessingError | Error)[];

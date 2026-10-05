@@ -9,7 +9,7 @@ import useAssistantTelemetry from './useAssistantTelemetry';
 
 export const ASSISTANT_TRIAL_TIME_DAYS = 14;
 
-export type TrialStatus = 'trial-ongoing' | 'trial-ended' | 'trial-not-started' | 'is-paid' | 'no-trial';
+type TrialStatus = 'trial-ongoing' | 'trial-ended' | 'trial-not-started' | 'is-paid' | 'no-trial';
 
 // Prevent multiple starts in case of multiple start calls
 let started = false;

@@ -9,7 +9,7 @@ import Breadcrumb from './Breadcrumb';
 import CollapsedBreadcrumbs from './CollapsedBreadcrumbs';
 import type { BreadcrumbInfo } from './interfaces';
 
-export type GroupedBreadcrumbs = (BreadcrumbInfo | BreadcrumbInfo[])[];
+type GroupedBreadcrumbs = (BreadcrumbInfo | BreadcrumbInfo[])[];
 
 interface Props {
     className?: string;

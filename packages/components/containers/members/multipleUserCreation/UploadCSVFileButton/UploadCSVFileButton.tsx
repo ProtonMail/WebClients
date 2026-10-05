@@ -20,7 +20,7 @@ import { CsvFormatError, TooManyUsersError } from '../errors/CsvFormatErrors';
 import type { UserTemplate } from '../types';
 import CsvFormatErrorModal from './CsvFormatErrorModal';
 
-export interface Props {
+interface Props {
     /**
      * The mode is detected from the uploaded file rather than taken from the selection, so it's handed
      * back to the caller along with the users.

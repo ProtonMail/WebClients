@@ -1,7 +1,7 @@
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
 import DriveLogo from '@proton/components/components/logo/DriveLogo'
 import Form from '@proton/components/components/form/Form'
-import InputFieldTwo from '@proton/components/components/v2/field/InputField'
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField'
 import ModalTwo from '@proton/components/components/modalTwo/Modal'
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'

@@ -4,7 +4,7 @@ import { getHours, getMinutes, isValid, parseISO, set } from 'date-fns';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import TimeInput from '@proton/components/components/input/TimeInput';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 

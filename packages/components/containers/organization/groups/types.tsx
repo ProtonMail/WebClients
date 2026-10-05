@@ -45,7 +45,7 @@ export interface GroupFormData {
     adminRoles: string[];
 }
 
-export interface SerializedGroupFormData {
+interface SerializedGroupFormData {
     id: string | undefined;
     name: string;
     email: string;

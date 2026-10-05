@@ -43,7 +43,7 @@ import useModalState from '../../components/modalTwo/useModalState';
 import { useModalTwo } from '../../components/modalTwo/useModalTwo';
 import Prompt from '../../components/prompt/Prompt';
 import Toggle from '../../components/toggle/Toggle';
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import useErrorHandler from '../../hooks/useErrorHandler';

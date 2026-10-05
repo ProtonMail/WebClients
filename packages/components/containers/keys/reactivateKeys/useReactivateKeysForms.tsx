@@ -17,7 +17,7 @@ import { PasswordForm, PasswordFormId } from './PasswordForm';
 import { RecoveryContactForm, RecoveryContactFormId } from './RecoveryContactForm';
 import type { ReactivateKeysContentProps } from './interface';
 
-export interface ReactivateKeysForm {
+interface ReactivateKeysForm {
     id: string;
     title: string;
     content: ReactNode;

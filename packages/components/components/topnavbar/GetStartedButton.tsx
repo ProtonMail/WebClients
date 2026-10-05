@@ -8,7 +8,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import ButtonGroup from '../button/ButtonGroup';
+import { ButtonGroup } from '../button/ButtonGroup';
 import TopNavbarListItemButton from './TopNavbarListItemButton';
 
 type Props = {

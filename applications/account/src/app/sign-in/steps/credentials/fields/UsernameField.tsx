@@ -1,6 +1,6 @@
 import type { ReactNode, Ref } from 'react';
 
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 
 export const UsernameField = ({
     label,

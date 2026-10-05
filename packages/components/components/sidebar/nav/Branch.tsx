@@ -249,4 +249,3 @@ Branch.Text = Slots.Text;
 Branch.Content = BranchContent;
 
 export { Branch };
-export type { BranchProps, BranchHeaderProps, BranchTriggerProps, BranchContentProps };

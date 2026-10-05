@@ -9,7 +9,7 @@ import { Audience } from '@proton/shared/lib/interfaces';
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 import { getActivityLogText, getTeamPoliciesText } from './pass';
 
-export const getTwoFA = (): PlanCardFeatureDefinition => {
+const getTwoFA = (): PlanCardFeatureDefinition => {
     return {
         id: '2fa',
         text: c('new_plans: feature').t`Two-factor authentication`,
@@ -51,7 +51,7 @@ export const getSSOIntegration = (included: boolean = false): PlanCardFeatureDef
     };
 };
 
-export const getConsole = (): PlanCardFeatureDefinition => {
+const getConsole = (): PlanCardFeatureDefinition => {
     return {
         id: 'console',
         text: c('new_plans: feature').t`Admin console`,
@@ -61,7 +61,7 @@ export const getConsole = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getBilling = (): PlanCardFeatureDefinition => {
+const getBilling = (): PlanCardFeatureDefinition => {
     return {
         id: 'billing',
         text: c('new_plans: feature').t`Centralized billing`,
@@ -71,7 +71,7 @@ export const getBilling = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getAdmins = (): PlanCardFeatureDefinition => {
+const getAdmins = (): PlanCardFeatureDefinition => {
     return {
         id: 'admins',
         text: c('new_plans: feature').t`Multiple admin roles`,
@@ -81,7 +81,7 @@ export const getAdmins = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getSignIn = (): PlanCardFeatureDefinition => {
+const getSignIn = (): PlanCardFeatureDefinition => {
     return {
         id: 'sign-in',
         text: c('new_plans: feature').t`Sign in as user`,
@@ -90,7 +90,7 @@ export const getSignIn = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
-export const getCredentials = (): PlanCardFeatureDefinition => {
+const getCredentials = (): PlanCardFeatureDefinition => {
     return {
         id: 'credentials',
         text: c('new_plans: feature').t`User credential management`,
@@ -99,7 +99,7 @@ export const getCredentials = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getSessions = (): PlanCardFeatureDefinition => {
+const getSessions = (): PlanCardFeatureDefinition => {
     return {
         id: 'sessions',
         text: c('new_plans: feature').t`User session management`,
@@ -109,7 +109,7 @@ export const getSessions = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getUserStorageManagement = (): PlanCardFeatureDefinition => {
+const getUserStorageManagement = (): PlanCardFeatureDefinition => {
     return {
         id: 'user-storage-management',
         text: c('new_plans: feature').t`User storage management`,
@@ -452,14 +452,14 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
         },
     ];
 };
-export const getGDPR = (): PlanCardFeatureDefinition => {
+const getGDPR = (): PlanCardFeatureDefinition => {
     return {
         id: 'gdpr',
         text: c('new_plans: feature').t`GDPR data processing agreement`,
         included: true,
     };
 };
-export const getHIPAA = (): PlanCardFeatureDefinition => {
+const getHIPAA = (): PlanCardFeatureDefinition => {
     return {
         id: 'hipaa',
         text: c('new_plans: feature').t`Enables HIPAA compliance`,
@@ -468,7 +468,7 @@ export const getHIPAA = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
-export const getSupport = (): PlanCardFeatureDefinition => {
+const getSupport = (): PlanCardFeatureDefinition => {
     return {
         id: 'b2b-support',
         text: c('new_plans: feature').t`Priority email support`,
@@ -490,7 +490,7 @@ export const getPhoneSupport = (): PlanCardFeatureDefinition => {
         icon: IcPhone,
     };
 };
-export const getSLA = (): PlanCardFeatureDefinition => {
+const getSLA = (): PlanCardFeatureDefinition => {
     return {
         id: 'sla',
         text: c('new_plans: feature').t`99.95% SLA`,

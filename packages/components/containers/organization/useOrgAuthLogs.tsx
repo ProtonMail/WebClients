@@ -6,7 +6,7 @@ import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import type { AuthLogsQueryParams } from '../b2bDashboard/ActivityMonitor/helpers';
 
-export const getFormattedQueryString = (params: { [key: string]: any }) => {
+const getFormattedQueryString = (params: { [key: string]: any }) => {
     const queryParts: string[] = [];
 
     Object.keys(params).forEach((key) => {

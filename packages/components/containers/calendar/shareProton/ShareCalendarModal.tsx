@@ -49,7 +49,7 @@ import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferen
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 import { useKeyTransparencyContext } from '../../keyTransparency/useKeyTransparencyContext';
 
-export enum VALIDATION_ERROR_TYPES {
+enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL = 0,
     NOT_PROTON_ACCOUNT = 1,
     SHARING_UNSUPPORTED = 2,

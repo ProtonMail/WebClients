@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 import type { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
 import DropdownMenuButton from './DropdownMenuButton';
 
-export interface Props extends DropdownMenuButtonProps {
+interface Props extends DropdownMenuButtonProps {
     buttonContent?: ReactNode;
     extraContent?: ReactNode;
     buttonRef?: Ref<HTMLButtonElement>;

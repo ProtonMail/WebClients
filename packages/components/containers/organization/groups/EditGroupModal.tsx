@@ -27,7 +27,7 @@ import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import useModalState from '../../../components/modalTwo/useModalState';
 import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import TextAreaTwo from '../../../components/v2/input/TextArea';
 import ModalHeaderWithTabs from '../../members/rolesAndPermissions/ModalHeaderWithTabs';
 import RolesAndPermissionsTab from '../../members/rolesAndPermissions/RolesAndPermissionsTab';

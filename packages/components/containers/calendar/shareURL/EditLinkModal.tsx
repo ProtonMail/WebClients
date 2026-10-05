@@ -11,7 +11,7 @@ import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 import Form from '../../../components/form/Form';
 import type { BasicModalProps } from '../../../components/modalTwo/BasicModal';
 import BasicModal from '../../../components/modalTwo/BasicModal';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 
 interface EditLinkModalProps extends Omit<BasicModalProps, 'children' | 'footer'> {
     decryptedPurpose: Nullable<string>;

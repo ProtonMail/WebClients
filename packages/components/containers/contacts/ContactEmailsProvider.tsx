@@ -8,7 +8,7 @@ import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/c
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 export type GroupWithContacts = { group: ContactGroup; contacts: ContactEmail[] };
-export type GroupsWithContactsMap = SimpleMap<GroupWithContacts>;
+type GroupsWithContactsMap = SimpleMap<GroupWithContacts>;
 
 export type ContactEmailsCache = {
     contactEmails: ContactEmail[];

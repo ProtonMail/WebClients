@@ -27,7 +27,7 @@ import type { ModalStateProps } from '../../../components/modalTwo/useModalState
 import useModalState from '../../../components/modalTwo/useModalState';
 import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';

@@ -13,7 +13,7 @@ type EligibilityProps = {
     user: UserModel;
 };
 
-export const hasValidApp = (appName: APP_NAMES): appName is 'proton-mail' | 'proton-drive' => {
+const hasValidApp = (appName: APP_NAMES): appName is 'proton-mail' | 'proton-drive' => {
     return appName === APPS.PROTONMAIL || appName === APPS.PROTONDRIVE;
 };
 

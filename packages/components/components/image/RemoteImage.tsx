@@ -11,7 +11,7 @@ import LoadRemoteImageBanner from '../../containers/banner/LoadRemoteImageBanner
 import useLoadContactImage from '../../hooks/useLoadContactImage';
 import Loader from '../loader/Loader';
 
-export interface Props extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
+interface Props extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
     src: string;
     text?: string;
     /**

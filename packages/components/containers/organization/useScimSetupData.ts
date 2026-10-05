@@ -20,7 +20,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import useGroupKeys from './groups/useGroupKeys';
 
-export { ItemStatus, Phase };
+export { ItemStatus };
 
 export interface PendingUserItem {
     member: MemberReadyForManualUnprivatization;

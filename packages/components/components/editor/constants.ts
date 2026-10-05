@@ -160,13 +160,6 @@ export const FONT_COLORNAMES = {
     '#BE8F35': () => c('color').t`satin sheen gold`,
     '#7F6124': () => c('color').t`field drab`,
 } as const;
-
-export const FONT_COLORS = Object.keys(FONT_COLORNAMES) as string[];
-
-export const HEADER_CLASS = 'h4';
-export const DEFAULT_LINK = '';
-export const DEFAULT_IMAGE = '';
-export const RGB_REGEX = /rgb\((\d+)\s*,\s*(\d+),\s*(\d+)\)/;
 export const EMBEDDABLE_TYPES = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 
 export const EDITOR_DEFAULT_METADATA: EditorMetadata = {

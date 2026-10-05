@@ -12,7 +12,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import GenericError from '@proton/components/containers/error/GenericError';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';

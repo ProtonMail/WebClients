@@ -11,7 +11,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { PasswordPolicySpotlight, usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
 import PasswordStrengthIndicator from '@proton/components/components/passwordStrengthIndicator/PasswordStrengthIndicator';
 import Progress from '@proton/components/components/progress/Progress';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import TotpInput from '@proton/components/components/v2/input/TotpInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';

@@ -13,7 +13,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcPassTrash } from '@proton/icons/icons/IcPassTrash';

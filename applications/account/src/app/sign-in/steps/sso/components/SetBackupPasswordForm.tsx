@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 
 import SetPasswordWithPolicyForm from '../../../../components/password-forms/SetPasswordWithPolicyForm';
 import JoinOrganizationAdminItem from '../../../../public/JoinOrganizationAdminItem';

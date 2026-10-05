@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useLoading from '@proton/hooks/useLoading';

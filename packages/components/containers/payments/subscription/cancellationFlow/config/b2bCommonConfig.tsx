@@ -47,7 +47,7 @@ export const getDefaultTestimonial = (planName: string): PlanConfigTestimonial =
     };
 };
 
-export const ExpirationTime = ({
+const ExpirationTime = ({
     subscription,
     isChargeBeeUser,
 }: {

@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 import type { Props as SettingsLinkProps } from '../link/SettingsLink';
 import SettingsLink from '../link/SettingsLink';
 
-export interface SidebarListItemSettingsLinkProps extends Omit<SettingsLinkProps, 'className'> {
+interface SidebarListItemSettingsLinkProps extends Omit<SettingsLinkProps, 'className'> {
     children: ReactNode;
     itemClassName?: string;
     className?: string;

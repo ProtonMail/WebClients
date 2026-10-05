@@ -5,7 +5,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import clsx from '@proton/utils/clsx';
 
-export interface Props {
+interface Props {
     weekStartsOn: WeekStartsOn;
     numberOfDays?: number;
     weekdaysLong: string[];

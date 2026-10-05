@@ -4,7 +4,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, CLIENT_TYPES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-export type OptionLabelItem = { type: 'label'; value: string };
+type OptionLabelItem = { type: 'label'; value: string };
 export type OptionOptionItem = {
     type: 'option';
     title: string;

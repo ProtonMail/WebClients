@@ -1,4 +1,4 @@
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 
 interface Props {

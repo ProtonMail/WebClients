@@ -10,7 +10,7 @@ import Option from '../option/Option';
 import type { SearcheableSelectProps } from '../selectTwo/SearchableSelect';
 import SearchableSelect from '../selectTwo/SearchableSelect';
 import { defaultFilterFunction } from '../selectTwo/helpers';
-import InputFieldTwo from '../v2/field/InputField';
+import { InputField as InputFieldTwo } from '../v2/field/InputField';
 import { getFlagSvg } from '../v2/phone/flagSvgs';
 import type { CountryOption } from './helpers';
 import {

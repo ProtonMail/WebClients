@@ -43,7 +43,7 @@ const getTopBannerMessage = (daysDifference: number, endDate: Date) => {
     return undefined;
 };
 
-export const InboxDesktopFreeTrialTopBanner = ({ className }: { className?: string }) => {
+const InboxDesktopFreeTrialTopBanner = ({ className }: { className?: string }) => {
     const { freeTrialDates, firstLogin, updateReminderFlag, displayReminder } = useInboxFreeTrial();
     const today = startOfDay(new Date());
 

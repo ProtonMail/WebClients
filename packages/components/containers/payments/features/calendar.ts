@@ -24,17 +24,6 @@ const getNCalendarsTooltipText = (n: number) => {
     );
 };
 
-export const getNCalendarToCreateFeature = (n: number): PlanCardFeatureDefinition => ({
-    id: 'n-calendar-to-create',
-    icon: IcBrandProtonCalendar,
-    included: true,
-    text: c('new_plans: Upsell attribute').ngettext(
-        msgid`Create up to ${n} calendar`,
-        `Create up to ${n} calendars`,
-        n
-    ),
-});
-
 export const getNCalendarsText = (n: number) => {
     return c('new_plans: feature').ngettext(msgid`${n} calendar`, `${n} calendars`, n);
 };

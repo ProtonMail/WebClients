@@ -7,11 +7,6 @@ import clsx from '@proton/utils/clsx';
 
 import './VideoInstructions.scss';
 
-export interface VideoSource {
-    format: string;
-    src: string;
-}
-
 const VideoInstructions = ({ children, className, ...rest }: React.ComponentPropsWithoutRef<'video'>) => {
     const [videoEnded, setVideoEnded] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);

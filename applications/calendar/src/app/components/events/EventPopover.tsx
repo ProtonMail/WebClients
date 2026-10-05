@@ -6,7 +6,7 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import Loader from '@proton/components/components/loader/Loader';
 import CalendarInviteButtons from '@proton/components/containers/calendar/CalendarInviteButtons';

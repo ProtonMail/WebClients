@@ -24,7 +24,7 @@ import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '../../../components/selectTwo/select';
 import Toggle from '../../../components/toggle/Toggle';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';

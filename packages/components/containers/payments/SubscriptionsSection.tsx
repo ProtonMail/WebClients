@@ -9,7 +9,7 @@ import { PLAN_TYPES } from '@proton/payments/core/constants';
 import { getSubscriptionsArray } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 
-import { default as Badge } from '../../components/badge/Badge';
+import { Badge } from '../../components/badge/Badge';
 import DropdownActions from '../../components/dropdown/DropdownActions';
 import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
@@ -25,7 +25,7 @@ import type { SubscriptionRow as SubscriptionRowType } from './subscription/help
 import { getSubscriptionRows } from './subscription/helpers/getSubscriptionRows';
 import { useReactivateAction } from './subscription/helpers/useReactivateAction';
 
-export const SubscriptionRow = ({ row }: { row: SubscriptionRowType }) => {
+const SubscriptionRow = ({ row }: { row: SubscriptionRowType }) => {
     const {
         subscription,
         planTitle,

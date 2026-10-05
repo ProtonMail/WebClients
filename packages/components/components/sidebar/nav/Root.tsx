@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 import './styles.scss';
 
-export interface SidebarRootProps {
+interface SidebarRootProps {
     children: ReactNode;
     className?: string;
 }

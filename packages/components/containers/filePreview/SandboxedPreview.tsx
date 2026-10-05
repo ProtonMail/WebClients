@@ -115,5 +115,3 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
         />
     );
 };
-
-export default SandboxedPreview;

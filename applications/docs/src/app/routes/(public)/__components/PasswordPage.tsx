@@ -1,4 +1,4 @@
-import InputFieldTwo from '@proton/components/components/v2/field/InputField'
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField'
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput'
 import type { FormEvent } from 'react'
 import { useState } from 'react'

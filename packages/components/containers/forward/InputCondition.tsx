@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import type { Condition } from '../filters/interfaces';
 import TokensCondition from './TokensCondition';
 

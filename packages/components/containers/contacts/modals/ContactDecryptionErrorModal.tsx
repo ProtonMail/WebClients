@@ -21,11 +21,11 @@ import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import type { ContactClearDataConfirmProps } from './ContactClearDataConfirmModal';
 
-export interface ContactDecryptionErrorProps {
+interface ContactDecryptionErrorProps {
     contactID: string;
 }
 
-export interface ContactDecryptionErrorModalProps {
+interface ContactDecryptionErrorModalProps {
     onClearDataConfirm: (props: ContactClearDataConfirmProps) => void;
 }
 

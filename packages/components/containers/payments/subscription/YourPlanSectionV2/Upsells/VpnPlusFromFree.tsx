@@ -35,7 +35,7 @@ import shieldIcon from '../icons/shield.svg';
 import streamingIcon from '../icons/streaming.svg';
 import UpsellMultiBox from './UpsellMultiBox';
 
-export const getVPNFeatures = (): PlanCardFeatureDefinition[] => {
+const getVPNFeatures = (): PlanCardFeatureDefinition[] => {
     return [
         {
             id: 'countries',

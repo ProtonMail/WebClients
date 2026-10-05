@@ -18,5 +18,3 @@ export class Cell {
         this.rowSpan = rowSpan;
     }
 }
-
-export default Cell;

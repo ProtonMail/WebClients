@@ -827,5 +827,3 @@ export const YourPlanUpsellsSectionV2 = (props: YourPlanSectionV2Props) => {
         </PaymentsContextProvider>
     );
 };
-
-export default YourPlanUpsellsSectionV2;

@@ -56,7 +56,7 @@ import PasswordWithPolicyInputs from '../../components/passwordPolicy/PasswordWi
 import { usePasswordPolicyValidation } from '../../components/passwordPolicy/index';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
 import Toggle from '../../components/toggle/Toggle';
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import useEventManager from '../../hooks/useEventManager';

@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 
 interface DropdownMenuLinkOwnProps {}
 
-export type DropdownMenuLinkProps<E extends ElementType> = PolymorphicPropsWithoutRef<DropdownMenuLinkOwnProps, E>;
+type DropdownMenuLinkProps<E extends ElementType> = PolymorphicPropsWithoutRef<DropdownMenuLinkOwnProps, E>;
 
 const defaultElement = Href;
 

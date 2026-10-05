@@ -66,16 +66,6 @@ export interface PlanCardFeature {
     };
 }
 
-export enum PlanCardFeatureType {
-    highlight = 0,
-    mail = 1,
-    calendar = 2,
-    drive = 3,
-    vpn = 4,
-    team = 5,
-    support = 6,
-}
-
 export interface ShortPlan {
     label: string;
     description: string;

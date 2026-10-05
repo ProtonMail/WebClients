@@ -20,7 +20,7 @@ import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import PasswordInputTwo from '../../../components/v2/input/PasswordInput';
 import useFormErrors from '../../../components/v2/useFormErrors';
 import AuthModal, { type AuthModalResult } from '../../password/AuthModal';

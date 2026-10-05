@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
 import { useMeetSelector } from '@proton/meet/store/hooks';

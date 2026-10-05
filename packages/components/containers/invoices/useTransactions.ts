@@ -7,7 +7,7 @@ import { usePaginationAsync } from '../../components/pagination';
 import useApiResult from '../../hooks/useApiResult';
 import type { DocumentHook } from './types';
 
-export const ELEMENTS_PER_PAGE = 10;
+const ELEMENTS_PER_PAGE = 10;
 
 export type TransactionsHook = DocumentHook & {
     type: 'transactions';

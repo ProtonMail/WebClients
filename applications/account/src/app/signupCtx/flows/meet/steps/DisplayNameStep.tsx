@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';

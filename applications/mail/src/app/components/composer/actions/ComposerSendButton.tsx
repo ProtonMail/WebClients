@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { Color } from '@proton/components/components/button/ButtonGroup';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 
 interface Props {
     color: Color;

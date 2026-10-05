@@ -11,7 +11,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
-import PersonalCalendarModal from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
+import { PersonalCalendarModal } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
 import ImportModal from '@proton/components/containers/calendar/importModal/ImportModal';
 import ShareCalendarModal from '@proton/components/containers/calendar/shareProton/ShareCalendarModal';
 import ShareLinkModal from '@proton/components/containers/calendar/shareURL/ShareLinkModal';

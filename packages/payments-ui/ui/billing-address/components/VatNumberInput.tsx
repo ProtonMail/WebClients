@@ -4,7 +4,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import type { CountriesWithCustomVatName } from '@proton/payments/core/billing-address/vat-helpers';
 import { getVatNumberName } from '@proton/payments/core/billing-address/vat-helpers';
 import { type BillingAddressFieldStatus, backendBillingAddressFieldError } from '@proton/payments/core/errors';

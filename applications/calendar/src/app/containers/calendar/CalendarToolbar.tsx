@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
-import TimeZoneSelector from '@proton/components/components/timezoneSelector/TimeZoneSelector';
+import { TimeZoneSelector } from '@proton/components/components/timezoneSelector/TimeZoneSelector';
 import Toolbar from '@proton/components/components/toolbar/Toolbar';
 import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 

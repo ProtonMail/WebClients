@@ -18,7 +18,7 @@ import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import { type ModalStateProps, useModalStateObject } from '../../../components/modalTwo/useModalState';
 import Prompt from '../../../components/prompt/Prompt';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import TextAreaTwo from '../../../components/v2/input/TextArea';
 import ProductSelection from './ProductSelection';
 import RetentionDurationSetting from './RetentionDurationSetting';
@@ -46,7 +46,7 @@ const INITIAL_FORM_VALUES: RetentionRuleFormData = {
 };
 const MAX_TITLE_LENGTH = 191;
 
-export const getRuleNamePlaceholder = (product: RetentionRuleProduct) => {
+const getRuleNamePlaceholder = (product: RetentionRuleProduct) => {
     if (product === RetentionRuleProduct.Mail) {
         return c('retention_policy_2025_Placeholder').t`E.g. Cleanup unused mailboxes`;
     }

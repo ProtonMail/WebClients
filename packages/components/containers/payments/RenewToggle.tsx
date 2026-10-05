@@ -17,7 +17,7 @@ type DisableRenewModalOwnProps = { isVPNPlan: boolean };
 type DisableRenewModalPromiseProps = { onResolve: (result: boolean) => void; onReject: () => void };
 type DisableRenewModalProps = ModalProps & DisableRenewModalPromiseProps & DisableRenewModalOwnProps;
 
-export const DisableRenewModal = ({ isVPNPlan, onResolve, onReject, ...rest }: DisableRenewModalProps) => {
+const DisableRenewModal = ({ isVPNPlan, onResolve, onReject, ...rest }: DisableRenewModalProps) => {
     return (
         <Prompt
             data-testid="disable-renew-modal"
@@ -81,7 +81,7 @@ export const useRenewToggle = ({ initialRenewState = Autopay.ENABLE }: UseRenewT
     return { onChange, disableRenewModal, renewState, setRenewState };
 };
 
-export type Props = {
+type Props = {
     loading?: boolean;
     onChange: () => any;
 } & Pick<UseRenewToggleResult, 'renewState' | 'disableRenewModal'>;

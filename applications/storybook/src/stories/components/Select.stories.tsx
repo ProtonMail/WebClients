@@ -6,7 +6,7 @@ import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
 import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
 import { IcBrandChrome } from '@proton/icons/icons/IcBrandChrome';

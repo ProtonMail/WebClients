@@ -12,7 +12,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import useAppLink from '@proton/components/components/link/useAppLink';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { useLoading } from '@proton/hooks/index';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';

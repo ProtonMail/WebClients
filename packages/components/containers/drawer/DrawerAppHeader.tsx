@@ -25,7 +25,7 @@ import { useTheme } from '../themes/ThemeProvider';
 
 import './DrawerAppHeader.scss';
 
-export interface PrivateIframeHeaderProps {
+interface PrivateIframeHeaderProps {
     title?: ReactNode;
     onCloseDropdown?: () => void;
     isUsingTabs?: boolean;

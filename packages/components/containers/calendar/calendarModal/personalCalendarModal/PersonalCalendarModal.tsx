@@ -24,7 +24,7 @@ import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import Option from '../../../../components/option/Option';
 import SelectTwo from '../../../../components/selectTwo/SelectTwo';
 import TruncatedText from '../../../../components/truncatedText/TruncatedText';
-import InputFieldTwo from '../../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../../components/v2/field/InputField';
 import { useContactEmailsCache } from '../../../contacts/ContactEmailsProvider';
 import GenericError from '../../../error/GenericError';
 import useGetCalendarActions from '../../hooks/useGetCalendarActions';
@@ -403,5 +403,3 @@ export const PersonalCalendarModal = ({
         </ModalTwo>
     );
 };
-
-export default PersonalCalendarModal;

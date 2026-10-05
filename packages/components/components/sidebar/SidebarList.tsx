@@ -16,12 +16,4 @@ const SidebarList = ({ className, listClassName = 'navigation-list', children, .
     );
 };
 
-export const SubSidebarList = ({ children, ...rest }: Props) => {
-    return (
-        <SidebarList listClassName="navigation-sublist" {...rest}>
-            {children}
-        </SidebarList>
-    );
-};
-
 export default SidebarList;

@@ -21,7 +21,7 @@ export const PAID_MAX_PARTICIPANTS = 100;
 export const PAID_PREMIUM_MAX_PARTICIPANTS = 250;
 
 export const FREE_MAX_MEETINGS_PER_DAY = 5;
-export const PAID_MAX_MEETINGS_PER_DAY = 'unlimited';
+const PAID_MAX_MEETINGS_PER_DAY = 'unlimited';
 
 export const getMeetAppFeature = (): PlanCardFeatureDefinition => {
     return {
@@ -87,7 +87,7 @@ export const getMaxMeetingsText = (n: number) => {
     return c('meet_2025: Feature').ngettext(msgid`${n} active meeting at a time`, `${n} active meetings at a time`, n);
 };
 
-export const getMaxActiveMeetings = (n: number): PlanCardFeatureDefinition => {
+const getMaxActiveMeetings = (n: number): PlanCardFeatureDefinition => {
     return {
         id: 'max-active-meetings',
         text: getMaxMeetingsText(n),
@@ -112,7 +112,7 @@ export const getMaxMeetingsPerDay = (n: number | 'unlimited'): PlanCardFeatureDe
     };
 };
 
-export const getMeetE2EFeatureText = () => {
+const getMeetE2EFeatureText = () => {
     return c('meet_2025: Feature').t`End-to-end encrypted screen sharing and ephemeral in-call chat`;
 };
 
@@ -137,7 +137,7 @@ export const getMeetBuiltInChatText = () => {
     return c('meet_2025: Feature').t`Built-in chat`;
 };
 
-export const getMeetBookingPagesText = () => {
+const getMeetBookingPagesText = () => {
     return c('meet_2025: Feature').t`Booking pages`;
 };
 

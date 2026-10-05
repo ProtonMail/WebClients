@@ -20,7 +20,7 @@ import CalendarSidebarListItems from './CalendarSidebarListItems';
 
 jest.mock('@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
     __esModule: true,
-    default: jest.fn(({ open }) => <span>{open ? 'PersonalCalendarModal' : null}</span>),
+    PersonalCalendarModal: jest.fn(({ open }) => <span>{open ? 'PersonalCalendarModal' : null}</span>),
 }));
 
 jest.mock('@proton/components/containers/calendar/importModal/ImportModal', () => ({

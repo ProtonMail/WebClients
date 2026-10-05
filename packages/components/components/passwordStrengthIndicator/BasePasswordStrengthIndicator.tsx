@@ -15,7 +15,7 @@ import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
-import InputFieldTwo from '../v2/field/InputField';
+import { InputField as InputFieldTwo } from '../v2/field/InputField';
 import empty from './illustrations/empty.svg';
 import strong from './illustrations/strong.svg';
 import vulnerable from './illustrations/vulnerable.svg';
@@ -31,7 +31,7 @@ import './PasswordStrengthIndicator.scss';
 
 const BETTER_PASSWORD_LENGTH = 12;
 
-export interface PasswordStrengthIndicatorProps extends ComponentPropsWithoutRef<'div'> {
+interface PasswordStrengthIndicatorProps extends ComponentPropsWithoutRef<'div'> {
     variant: PasswordStrengthIndicatorVariant;
     score: PasswordScore;
     penalties?: Set<PasswordPenalties>;
@@ -132,7 +132,7 @@ const consolidatePenalties = (
     return result;
 };
 
-export const IndicatorBars = () => (
+const IndicatorBars = () => (
     <div className="password-strength-indicator-bars flex flex-1 flex-nowrap gap-1 items-center" aria-hidden="true">
         <span className="flex-1 rounded"></span>
         <span className="flex-1 rounded"></span>

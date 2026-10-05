@@ -25,5 +25,3 @@ const useCalendarsInfoCalendarListener = (calendarIDs: string[]) => {
 export const useCalendarsInfoListener = (calendarIDs: string[]) => {
     useCalendarsInfoCalendarListener(calendarIDs);
 };
-
-export default useCalendarsInfoListener;

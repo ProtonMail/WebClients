@@ -11,7 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 
 import { useRequest } from '../../../hooks/useRequest';
 import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';

@@ -34,7 +34,7 @@ type State =
 
 const initialState = { type: 'init' } as const;
 
-export interface SSOAuthModalProps
+interface SSOAuthModalProps
     extends Omit<OwnAuthModalProps, 'onSuccess'>, Omit<PromptProps, 'title' | 'buttons' | 'children' | 'onError'> {
     onSuccess?: (data: SSOAuthModalResult) => Promise<void> | void;
     api?: Api;

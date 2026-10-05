@@ -30,7 +30,7 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import useEventManager from '../../../hooks/useEventManager';
-import useHandler from '../../../hooks/useHandler';
+import { useHandler } from '../../../hooks/useHandler';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useApplyGroups from '../hooks/useApplyGroups';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';

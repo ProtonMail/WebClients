@@ -39,13 +39,7 @@ import type { OpenSubscriptionModalCallback } from './subscriptionModalContext';
 import type { OpenCallbackProps, SubscriptionOverridableStep } from './subscriptionModalTypes';
 
 export type { OpenCallbackProps, OpenSubscriptionModalCallback, SubscriptionOverridableStep };
-export {
-    SubscriptionModalContext,
-    useOptionalSubscriptionModal,
-    useOptionalSubscriptionModalRaw,
-    useSubscriptionModal,
-    useSubscriptionModalRaw,
-};
+export { useOptionalSubscriptionModal, useOptionalSubscriptionModalRaw, useSubscriptionModal, useSubscriptionModalRaw };
 
 interface Props {
     children: ReactNode;

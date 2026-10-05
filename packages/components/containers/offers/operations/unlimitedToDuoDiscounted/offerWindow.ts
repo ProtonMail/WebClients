@@ -5,7 +5,7 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 
 type DayRange = [start: number, end: number];
 
-export const OFFER_WINDOWS: Partial<Record<CYCLE, DayRange[]>> = {
+const OFFER_WINDOWS: Partial<Record<CYCLE, DayRange[]>> = {
     [CYCLE.YEARLY]: [[305, 365]],
     [CYCLE.TWO_YEARS]: [
         [220, 280],
