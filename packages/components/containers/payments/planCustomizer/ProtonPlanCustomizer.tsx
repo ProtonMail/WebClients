@@ -147,6 +147,8 @@ const ADDON_RENDERERS_MAPPING: Record<ADDON_PREFIXES, AddonRenderer> = {
     [ADDON_PREFIXES.SCRIBE]: getScribeAddonComponent,
     [ADDON_PREFIXES.LUMO]: getLumoAddonComponent,
     [ADDON_PREFIXES.MEET]: getMeetAddonComponent,
+    // MSP addon can't be added by a user, so we don't need to render it
+    [ADDON_PREFIXES.MSP]: () => null,
 };
 
 const AddonCustomizer = (props: AddonCustomizerProps) => {
