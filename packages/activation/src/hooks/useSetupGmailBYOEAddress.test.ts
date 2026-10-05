@@ -110,7 +110,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(true, true, TIME_PERIOD.BIG_BANG, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: true,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                });
             });
 
             expect(mockDispatch).not.toHaveBeenCalled();
@@ -129,7 +134,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                });
             });
 
             expect(mockDispatch).not.toHaveBeenCalled();
@@ -147,7 +157,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                });
             });
 
             expect(mockDispatch).toHaveBeenCalled();
@@ -165,10 +180,37 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                });
             });
 
             expect(mockStartImportTask).toHaveBeenCalledWith(expect.objectContaining({ StartTime: undefined }));
+        });
+
+        it('should send no StartTime when importing without a period (import period flag off)', async () => {
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: jest.fn(),
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                })
+            );
+
+            await act(async () => {
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: true,
+                    importPeriod: undefined,
+                    token: mockToken,
+                });
+            });
+
+            expect(mockStartImportTask).toHaveBeenCalledWith(
+                expect.objectContaining({ AutomaticImport: true, StartTime: undefined })
+            );
         });
 
         it('should send the StartTime matching the selected import period', async () => {
@@ -181,7 +223,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.LAST_3_MONTHS, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.LAST_3_MONTHS,
+                    token: mockToken,
+                });
             });
 
             expect(mockStartImportTask).toHaveBeenCalledWith(
@@ -199,7 +246,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, false, TIME_PERIOD.LAST_3_MONTHS, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: false,
+                    importPeriod: TIME_PERIOD.LAST_3_MONTHS,
+                    token: mockToken,
+                });
             });
 
             expect(mockStartImportTask).toHaveBeenCalledWith(
@@ -217,7 +269,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, false, TIME_PERIOD.BIG_BANG, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: false,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                });
             });
 
             expect(mockApi).toHaveBeenCalled();
@@ -237,7 +294,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                });
             });
 
             expect(mockCreateNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'error' }));
@@ -262,7 +324,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                });
             });
 
             expect(mockApi).toHaveBeenCalled();
@@ -295,7 +362,12 @@ describe('useSetupGmailBYOEAddress', () => {
                     })
                 );
                 await act(async () => {
-                    await result.current.handleBYOEWithImportCallback(false, true, undefined, mockToken);
+                    await result.current.handleBYOEWithImportCallback({
+                        hasError: false,
+                        importEmails: true,
+                        importPeriod: undefined,
+                        token: mockToken,
+                    });
                 });
                 return { showClaimable, showLegacy };
             };
@@ -337,7 +409,12 @@ describe('useSetupGmailBYOEAddress', () => {
                     })
                 );
                 await act(async () => {
-                    await result.current.handleBYOEWithImportCallback(false, true, undefined, mockToken);
+                    await result.current.handleBYOEWithImportCallback({
+                        hasError: false,
+                        importEmails: true,
+                        importPeriod: undefined,
+                        token: mockToken,
+                    });
                 });
                 expect(mockApi.mock.calls.some(isClaimableCall)).toBe(false);
                 expect(showClaimable).not.toHaveBeenCalled();
@@ -363,7 +440,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, true, TIME_PERIOD.BIG_BANG, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                });
             });
 
             expect(mockApi).toHaveBeenCalled();
@@ -387,7 +469,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, false, TIME_PERIOD.BIG_BANG, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: false,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                });
             });
 
             expect(mockApi).toHaveBeenCalled();
@@ -409,7 +496,12 @@ describe('useSetupGmailBYOEAddress', () => {
             );
 
             await act(async () => {
-                await result.current.handleBYOEWithImportCallback(false, false, TIME_PERIOD.BIG_BANG, mockToken);
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: false,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                });
             });
 
             expect(mockApi).toHaveBeenCalled();
