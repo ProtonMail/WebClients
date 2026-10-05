@@ -13,6 +13,11 @@ export type AudioTrackProcessor = TrackProcessor<Track.Kind.Audio, AudioProcesso
     detach?: () => void;
 };
 
+export interface CreateProcessorOptions {
+    /** Called once the processor has stopped denoising because of performance issues. */
+    onDisabledForPerformance?: () => void;
+}
+
 /**
  * Abstraction over the noise cancellation backends.
  *
@@ -27,5 +32,5 @@ export interface NoiseCancellationModel {
     /** Whether the model is the browser's native noise suppression implementation (not a processor). */
     readonly isNative: boolean;
     isSupported(): boolean;
-    createProcessor(): AudioTrackProcessor | null;
+    createProcessor(options?: CreateProcessorOptions): AudioTrackProcessor | null;
 }
