@@ -86,7 +86,7 @@
         "Lisää puhelinnumero"
       ],
       "Add photos": [
-        "Lisää kuvia"
+        "Lisää kuvat"
       ],
       "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
         "Lisää albumiin \"${ album.name }\" (${ album.photoCount } kuva)",
@@ -546,7 +546,7 @@
         "Avaa omat tiedostot"
       ],
       "Go to parent": [
-        "Avaa yläkansio"
+        "Siirry yläkansioon"
       ],
       "Go to settings": [
         "Avaa asetukset"
@@ -1350,6 +1350,15 @@
       ],
       "Maybe later": [
         "Ehkä myöhemmin"
+      ],
+      "Import now": [
+        "Tuo nyt"
+      ],
+      "More info": [
+        "Lisätiedot"
+      ],
+      "New chat": [
+        "Uusi keskustelu"
       ]
     },
     "Action: Docs": {
@@ -5440,7 +5449,7 @@
         "Anonyymi"
       ],
       "Apr": [
-        "huhti"
+        "Huhti"
       ],
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
@@ -5470,7 +5479,7 @@
         "Huomiota vaaditaan"
       ],
       "Aug": [
-        "elo"
+        "Elo"
       ],
       "Available": [
         "Käytettävissä"
@@ -5807,7 +5816,7 @@
         "Epäonnistui"
       ],
       "Feb": [
-        "helmi"
+        "Helmi"
       ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" poistettiin latauksen aikana"
@@ -5982,16 +5991,16 @@
         "Se on helppoa ja turvallista"
       ],
       "Jan": [
-        "tammi"
+        "Tammi"
       ],
       "JCB logo": [
         "JCB-logo"
       ],
       "Jul": [
-        "heinä"
+        "Heinä"
       ],
       "Jun": [
-        "kesä"
+        "Kesä"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
@@ -6063,7 +6072,7 @@
         "Haittaohjelma havaittu"
       ],
       "Mar": [
-        "maalis"
+        "Maalis"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
@@ -6073,7 +6082,7 @@
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkkiä"
       ],
       "May": [
-        "tuoko"
+        "Touko"
       ],
       "Medium Priority": [
         "Keskitason tärkeys"
@@ -6091,7 +6100,7 @@
         "Valvo tilejä"
       ],
       "More": [
-        "Lisää"
+        "Enemmän"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Useimmat julkiset Wi-Fi-verkot ovat turvallisia, mutta joskus puutteellisesti suojattuja, jolloin voit altistua kyberuhkille. VPN salaa tietoliikenteesi ja pitää sinut suojattuna."
@@ -6115,7 +6124,7 @@
         "Ei"
       ],
       "No Albums": [
-        "Albumeita ei ole"
+        "Ei albumeita"
       ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
@@ -6151,7 +6160,7 @@
         "Huomioi: Tiedot saattavat edelleen löytyä paikallisesti niiltä laitteilta, joille ${ DRIVE_APP_NAME } on asennettu."
       ],
       "Nov": [
-        "Nyt"
+        "Marras"
       ],
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
@@ -6160,7 +6169,7 @@
         "Numerot"
       ],
       "Oct": [
-        "loka"
+        "Loka"
       ],
       "of": [
         "/"
@@ -6422,7 +6431,7 @@
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
       ],
       "Sep": [
-        "syys"
+        "Syys"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-maksut eivät ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen."
@@ -7606,7 +7615,7 @@
         "${ nbYear } vuotta"
       ],
       "(Expired)": [
-        "(erääntynyt)"
+        "(Erääntyneet)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
@@ -8397,6 +8406,9 @@
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } merkkiä"
+      ],
+      "Image": [
+        "Kuva"
       ]
     },
     "Label for contact group color": {
@@ -10496,7 +10508,7 @@
         "Ohita"
       ],
       "Skip for now": [
-        "Ohita tällä kertaa"
+        "Ohita toistaiseksi"
       ],
       "Try the app": [
         "Kokeile sovellusta"
@@ -10513,7 +10525,7 @@
     },
     "Onboarding Info": {
       "10 minutes": [
-        "10 minuuttia"
+        "10 minuutin kuluttua"
       ],
       "Access your files on the go": [
         "Käytä tiedostojasi liikkeellä"
@@ -12894,7 +12906,7 @@
         "Muotokuvat"
       ],
       "RAW": [
-        "RAW-kuvat"
+        "RAW"
       ],
       "Screenshots": [
         "Kuvakaappaukset"
@@ -13408,7 +13420,7 @@
         "Kirjaaja"
       ],
       "Logs": [
-        "Lokitiedot"
+        "Lokit"
       ],
       "Make a copy": [
         "Luo kopio"
@@ -13510,7 +13522,7 @@
         "Latausten määrä"
       ],
       "Number of items": [
-        "Kohdemäärä"
+        "Kohteiden määrä"
       ],
       "One email, many recipients": [
         "Yksi sähköposti, monta vastaanottajaa"
@@ -14796,6 +14808,11 @@
       ],
       "One plan, more power": [
         "Yksi tilaus, enemmän tehoa"
+      ]
+    },
+    "tryduo2026: Info": {
+      "2 user accounts": [
+        "Kaksi käyttäjätiliä"
       ]
     }
   }
