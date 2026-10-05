@@ -1,0 +1,194 @@
+@use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+
+$panel-inset: rem(16);
+$drawer-button-clearance: rem(32);
+$hamburger-size: rem(40);
+$prompt-height: rem(40);
+$card-gap: rem(8);
+$card-offset: $panel-inset + $hamburger-size + $card-gap;
+$card-top-gap: rem(8);
+$prompt-bottom: $panel-inset + ($hamburger-size - $prompt-height) * 0.5;
+
+.lumo-floating-panel {
+	--lumo-floating-panel-inset-end: #{$panel-inset};
+
+	position: fixed;
+
+	// Below the composers, so an open composer covers whatever it overlaps
+	z-index: map.get($z-indexes, 'floating-action-buttons');
+	pointer-events: none;
+
+	&--drawer-button-clearance {
+		--lumo-floating-panel-inset-end: #{$panel-inset + $drawer-button-clearance};
+	}
+}
+
+.lumo-floating-panel-chat {
+	position: absolute;
+	inset: 0;
+}
+
+.lumo-floating-panel-dock,
+.lumo-floating-panel-card-slot,
+.lumo-floating-panel-prompt-slot,
+.lumo-floating-panel-resize-edge {
+	position: absolute;
+	pointer-events: auto;
+}
+
+.lumo-floating-panel--right {
+	.lumo-floating-panel-card-slot,
+	.lumo-floating-panel-resize-edge,
+	.lumo-floating-panel-dock {
+		inset-inline-end: var(--lumo-floating-panel-inset-end);
+	}
+
+	.lumo-floating-panel-prompt-slot {
+		inset-inline-end: calc(var(--lumo-floating-panel-inset-end) + #{$hamburger-size + $card-gap});
+	}
+}
+
+// The right-side layout moved across, not mirrored: the hamburger stays at the prompt's end, on the card's inner edge
+.lumo-floating-panel--left {
+	.lumo-floating-panel-card-slot,
+	.lumo-floating-panel-resize-edge,
+	.lumo-floating-panel-prompt-slot {
+		inset-inline-start: $panel-inset;
+	}
+
+	.lumo-floating-panel-dock {
+		inset-inline-start: calc(#{$panel-inset - $hamburger-size} + var(--lumo-floating-panel-card-width));
+	}
+}
+
+.lumo-floating-panel-resize-edge {
+	inset-block: $card-top-gap $prompt-bottom;
+	inline-size: var(--lumo-floating-panel-card-width);
+	pointer-events: none;
+
+	&--card-only {
+		inset-block-end: $card-offset;
+	}
+
+	// Mail's resize handle stacks three indicators while dragging; keep only its 2px line
+	.resize-area-button {
+		pointer-events: auto;
+
+		&::before {
+			inset-block: var(--border-radius-xl);
+		}
+
+		&:hover {
+			border-inline: none;
+		}
+
+		> div {
+			display: none;
+		}
+	}
+}
+
+// Anchored by its bottom edge, centred on the hamburger at rest, so a multi-line prompt grows upwards
+.lumo-floating-panel-prompt-slot {
+	inset-block-end: $prompt-bottom;
+	inline-size: calc(var(--lumo-floating-panel-card-width) - #{$hamburger-size + $card-gap});
+}
+
+.lumo-floating-panel-prompt-placeholder {
+	block-size: $prompt-height;
+}
+
+.lumo-floating-panel-card-slot {
+	inset-block-end: $card-offset;
+	block-size: calc(100% - #{$card-offset + $card-top-gap});
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border: 1px solid var(--border-weak);
+		border-radius: var(--border-radius-xl);
+		pointer-events: none;
+	}
+}
+
+.lumo-floating-panel-card {
+	inline-size: var(--lumo-floating-panel-card-width);
+	block-size: 100%;
+	background-color: color-mix(in srgb, var(--background-strong) 20%, transparent);
+	backdrop-filter: blur(#{rem(4)});
+
+	.lumo-agent-reply {
+		border: 1px solid var(--border-weak);
+		background: var(--background-norm);
+	}
+
+	.lumo-agent-bubble.is-user {
+		border: 1px solid color-mix(in srgb, var(--interaction-norm) 15%, transparent);
+	}
+
+	.lumo-agent-tool-row {
+		padding-block: rem(6);
+		border: 1px solid var(--border-weak);
+		border-radius: var(--border-radius-lg);
+		background: var(--background-norm);
+	}
+
+	.button.lumo-welcome-card {
+		--button-default-background-color: var(--background-norm);
+		--button-default-border-color: var(--border-norm);
+		--button-hover-border-color: var(--border-norm);
+		--button-active-border-color: var(--border-norm);
+	}
+}
+
+// An iframe under the pointer (email body, composer) would swallow the drag's mousemove and mouseup
+.lumo-floating-panel-card-resizing iframe {
+	pointer-events: none;
+}
+
+// The panel scrolls its own transcript, so its container must be allowed to shrink below its content
+.lumo-floating-panel-card-body {
+	min-block-size: 0;
+}
+
+// The dock and each chip are the white backing, because a ghost button's hover colour is translucent
+.lumo-floating-panel-dock,
+.lumo-floating-panel-chip {
+	border-radius: var(--border-radius-full);
+	background-color: var(--background-norm);
+	box-shadow: var(--shadow-lifted);
+}
+
+.lumo-floating-panel-dock {
+	inset-block-end: $panel-inset;
+
+	// The rounded-full utility loses to ButtonLike's radius, which loads after it
+	.button {
+		border-radius: var(--border-radius-full);
+	}
+
+	.lumo-floating-panel-hamburger {
+		inline-size: $hamburger-size;
+		block-size: $hamburger-size;
+	}
+}
+
+// The bottom padding bridges the gap to the hamburger, so the pointer keeps the hover on its way up
+.lumo-floating-panel-stack {
+	position: absolute;
+	inset-block-end: 100%;
+	inset-inline: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: rem(8);
+	padding-block-end: rem(8);
+	visibility: hidden;
+
+	.lumo-floating-panel-dock:is(:hover, .lumo-floating-panel-dock--open) & {
+		visibility: visible;
+	}
+}
