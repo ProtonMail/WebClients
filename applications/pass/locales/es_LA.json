@@ -803,6 +803,12 @@
       ],
       "Go back": [
         "Regresar"
+      ],
+      "Show less": [
+        "Mostrar menos"
+      ],
+      "Show more": [
+        "Mostrar más"
       ]
     },
     "Activity": {
@@ -2178,8 +2184,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -5624,6 +5629,22 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "Se fusionó ${ count } carpeta con su carpeta principal porque se alcanzó el nivel máximo de anidamiento.",
+        "Se fusionaron ${ count } carpetas con su carpeta principal porque se alcanzó el nivel máximo de anidamiento."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "No se importó ${ count } carpeta porque su carpeta principal alcanzó el número máximo de subcarpetas. Sus elementos se importaron a la carpeta disponible más cercana.",
+        "No se importaron ${ count } carpetas porque su carpeta principal alcanzó el número máximo de subcarpetas. Sus elementos se importaron a la carpeta disponible más cercana."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "No se importó ${ count } carpeta porque esta bóveda alcanzó el número máximo de carpetas. Sus elementos se importaron a la carpeta disponible más cercana.",
+        "No se importaron ${ count } carpetas porque esta bóveda alcanzó el número máximo de carpetas. Sus elementos se importaron a la carpeta disponible más cercana."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "No se pudo crear ${ failed } carpeta. Sus elementos se importaron a la carpeta disponible más cercana.",
+        "No se pudieron crear ${ failed } carpetas. Sus elementos se importaron a la carpeta disponible más cercana."
       ]
     }
   }
