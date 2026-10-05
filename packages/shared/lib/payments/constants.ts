@@ -101,6 +101,7 @@ export enum ADDON_PREFIXES {
     SCRIBE = '1scribe',
     LUMO = '1lumo',
     MEET = '1meet',
+    MSP = '1msp',
 }
 
 export enum ADDON_NAMES {
@@ -209,6 +210,9 @@ export enum ADDON_NAMES {
     MEET_FAMILY = `${ADDON_PREFIXES.MEET}-family2022`,
     MEET_DUO = `${ADDON_PREFIXES.MEET}-duo2024`,
     MEET_VPN_PASS_BUNDLE = `${ADDON_PREFIXES.MEET}-vpnpass2023`,
+
+    // MSP addons
+    MSP_PASS_BUSINESS = `${ADDON_PREFIXES.MSP}-passbiz2024`,
 }
 
 // Max quantity for all addons

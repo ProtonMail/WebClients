@@ -75,21 +75,22 @@ describe('addon config invariants', () => {
         }
     });
 
-    it('display order is unique and contiguous from 0', () => {
+    it('display order is unique and contiguous from -1', () => {
         const orders = getAllAddonConfigs()
             .map((c) => c.displayOrder)
             .sort((a, b) => a - b);
-        expect(orders).toEqual([0, 1, 2, 3, 4, 5]);
+        expect(orders).toEqual([-1, 0, 1, 2, 3, 4, 5]);
     });
 
     it('assigns each addon type its expected transfer strategy', () => {
         const expectedTransferStrategies = {
             [ADDON_PREFIXES.MEMBER]: 'member',
             [ADDON_PREFIXES.DOMAIN]: 'domain',
-            [ADDON_PREFIXES.IP]: 'subtract-included',
+            [ADDON_PREFIXES.IP]: 'addonSeats',
             [ADDON_PREFIXES.SCRIBE]: 'scribe',
             [ADDON_PREFIXES.LUMO]: 'lumo',
             [ADDON_PREFIXES.MEET]: 'meet',
+            [ADDON_PREFIXES.MSP]: 'addonSeats',
         } satisfies Record<ADDON_PREFIXES, AddonTransferStrategy>;
 
         for (const config of getAllAddonConfigs()) {
@@ -182,6 +183,14 @@ describe('getTransferOrder', () => {
         );
         const firstPooled = Math.min(order.indexOf(ADDON_PREFIXES.LUMO), order.indexOf(ADDON_PREFIXES.SCRIBE));
         expect(lastIndependent).toBeLessThan(firstPooled);
+    });
+    it('processes MSP before member, and member before the per-member-capped ones', () => {
+        const order = getTransferOrder();
+        const member = order.indexOf(ADDON_PREFIXES.MEMBER);
+        expect(order.indexOf(ADDON_PREFIXES.MSP)).toBeLessThan(member);
+        for (const capped of [ADDON_PREFIXES.SCRIBE, ADDON_PREFIXES.LUMO, ADDON_PREFIXES.MEET]) {
+            expect(order.indexOf(capped)).toBeGreaterThan(member);
+        }
     });
 });
 

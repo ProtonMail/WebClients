@@ -7,6 +7,7 @@ import { IP_ADDON_CONFIG } from './configs/ipAddonConfig';
 import { LUMO_ADDON_CONFIG } from './configs/lumoAddonConfig';
 import { MEET_ADDON_CONFIG } from './configs/meetAddonConfig';
 import { MEMBER_ADDON_CONFIG } from './configs/memberAddonConfig';
+import { MSP_ADDON_CONFIG } from './configs/mspAddonConfig';
 import { SCRIBE_ADDON_CONFIG } from './configs/scribeAddonConfig';
 import type { AddonConfig, AddonFlags } from './interfaces';
 
@@ -19,6 +20,7 @@ const ADDON_CONFIGS: Record<ADDON_PREFIXES, AddonConfig> = {
     [ADDON_PREFIXES.SCRIBE]: SCRIBE_ADDON_CONFIG,
     [ADDON_PREFIXES.LUMO]: LUMO_ADDON_CONFIG,
     [ADDON_PREFIXES.MEET]: MEET_ADDON_CONFIG,
+    [ADDON_PREFIXES.MSP]: MSP_ADDON_CONFIG,
 };
 
 export const getAllAddonConfigs = (): AddonConfig[] => Object.values(ADDON_CONFIGS);

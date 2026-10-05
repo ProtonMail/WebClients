@@ -26,7 +26,7 @@ export type AddonVisibilityRule = (ctx: AddonCustomizerContext) => boolean;
 /**
  * How an addon contributes to feature limits.
  * `native`: the limit is reported on the plan by the API (member, domain).
- * `synthetic`: the addon fabricates a limit the API doesn't return (ip, scribe, lumo, meet).
+ * `synthetic`: the addon fabricates a limit the API doesn't return (ip, scribe, lumo, meet, msp).
  */
 export type AddonFeatureLimit =
     | { kind: 'native'; key: 'MaxMembers' | 'MaxDomains' }
@@ -39,7 +39,7 @@ export type AddonFeatureLimit =
       };
 
 /** Named strategy resolved by `switchPlan`; configs must not depend on its implementation. */
-export type AddonTransferStrategy = 'member' | 'domain' | 'scribe' | 'lumo' | 'meet' | 'subtract-included';
+export type AddonTransferStrategy = 'member' | 'domain' | 'scribe' | 'lumo' | 'meet' | 'addonSeats';
 
 /**
  * The single declarative definition of an addon — the unit of the addon SDK.
