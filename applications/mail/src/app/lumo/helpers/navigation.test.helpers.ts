@@ -6,6 +6,7 @@
  */
 import { createLocation } from 'history';
 
+import { defaultApiStatus } from '@proton/account/apiStatus';
 import { defaultESStatus } from '@proton/encrypted-search/constants';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
@@ -16,7 +17,6 @@ import { categoryIDFromUrl, extractSearchParameters, filterFromUrl, sortFromUrl 
 import type { Element } from '../../models/element';
 import { newElementsState } from '../../store/elements/elementsSlice';
 import type { ElementsState } from '../../store/elements/elementsTypes';
-
 import type { ToolStore } from '../toolModule';
 
 export const locationFor = (labelID: string, hash = '') => createLocation(`/${labelID}${hash && `#${hash}`}`);
@@ -99,7 +99,13 @@ export const fakeStore = (overrides: Partial<ElementsState> = {}) => {
     const listeners = new Set<() => void>();
 
     const store = {
-        getState: () => ({ elements, mailSettings: { value: undefined }, addresses: { value: [] } }) as any,
+        getState: () =>
+            ({
+                elements,
+                mailSettings: { value: undefined },
+                addresses: { value: [] },
+                apiStatus: defaultApiStatus,
+            }) as any,
         subscribe: (listener: () => void) => {
             listeners.add(listener);
             return () => listeners.delete(listener);
