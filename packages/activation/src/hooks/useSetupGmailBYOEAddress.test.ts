@@ -295,7 +295,7 @@ describe('useSetupGmailBYOEAddress', () => {
                     })
                 );
                 await act(async () => {
-                    await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                    await result.current.handleBYOEWithImportCallback(false, true, undefined, mockToken);
                 });
                 return { showClaimable, showLegacy };
             };
@@ -337,7 +337,7 @@ describe('useSetupGmailBYOEAddress', () => {
                     })
                 );
                 await act(async () => {
-                    await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                    await result.current.handleBYOEWithImportCallback(false, true, undefined, mockToken);
                 });
                 expect(mockApi.mock.calls.some(isClaimableCall)).toBe(false);
                 expect(showClaimable).not.toHaveBeenCalled();

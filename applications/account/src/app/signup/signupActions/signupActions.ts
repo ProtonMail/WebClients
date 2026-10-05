@@ -5,7 +5,6 @@ import {
 } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
-import { getStartTimeFromTimePeriod } from '@proton/activation/src/helpers/getStartTimeFromTimePeriod';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
@@ -508,16 +507,13 @@ export const handleSetupUser = async ({
         newCache.setupData?.addresses.length > 0
     ) {
         const emailAddress = newCache.setupData.addresses[0].Email;
-        const { importPeriod } = newCache.accountData;
-        const automaticImport = newCache.accountData.importEmails ?? true;
         await api(
             startEasySwitchSignupImportTask({
                 Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SIGNUP,
                 Account: emailAddress,
                 Provider: OAUTH_PROVIDER.GOOGLE,
-                AutomaticImport: automaticImport,
+                AutomaticImport: newCache.accountData.importEmails ?? true,
                 QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
-                StartTime: automaticImport && importPeriod ? getStartTimeFromTimePeriod(importPeriod) : undefined,
             })
         );
     }
