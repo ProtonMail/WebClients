@@ -71,8 +71,9 @@ export const MeetingBody = ({
 
     const isNarrowHeight = useIsNarrowHeight();
 
-    const { activeBreakpoint } = useActiveBreakpoint();
+    const { activeBreakpoint, viewportWidth } = useActiveBreakpoint();
     const isXSmallScreen = activeBreakpoint === 'xsmall';
+    const isLargeDesktop = viewportWidth['>=xlarge'];
 
     const participantSideBarOpen = useMeetSelector(selectParticipantSideBarOpen);
 
@@ -156,8 +157,8 @@ export const MeetingBody = ({
                             {getConnectionStatusMessage(showReconnectedMessage, liveKitConnectionState)}
                         </TopBanner>
                     )}
-                {!isNarrowHeight && (
-                    <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
+                {!isNarrowHeight && !isLargeDesktop && (
+                    <div className="flex flex-nowrap gap-2 justify-between items-center">
                         <MeetingName classNames={{ name: 'flex-1 text-lg text-semibold' }} />
                         <div className="text-ellipsis overflow-hidden">
                             {isVideoEnabled && isMobile() && (
