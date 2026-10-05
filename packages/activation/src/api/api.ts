@@ -133,6 +133,12 @@ export const startEasySwitchSignupImportTask = ({
     },
 });
 
+export const checkExternalAddressClaimable = (Email: string) => ({
+    method: 'POST' as const,
+    url: 'mail/v4/byoe-address/claimable',
+    data: { Email },
+});
+
 export const getImportsList = () => ({
     url: 'importer/v1/importers',
     method: 'GET',
