@@ -290,7 +290,9 @@ export class LumoApiClient {
             }
         }
 
-        return { status: finalStatus, turns: currentTurns };
+        const sentCount = this.stripTrailingEmptyAssistant(turns).length;
+        const producedTurns = this.withAssistantReply(currentTurns, roundReply).slice(sentCount);
+        return { status: finalStatus, turns: currentTurns, producedTurns };
     }
 
     private async runSseReceiveLoop(
