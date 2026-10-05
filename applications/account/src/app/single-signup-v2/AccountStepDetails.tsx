@@ -24,7 +24,6 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import PasswordStrengthIndicatorSpotlight from '../signup/PasswordStrengthIndicatorSpotlight';
-import challengeIconsSvg from '../signup/challenge-icons.source.svg';
 import { getThemeData } from '../signup/challenge-theme';
 import { type AccountData, SignupType } from '../signup/interfaces';
 import { useAccountFormDataContext } from '../signupCtx/context/accountData/AccountFormDataContext';
@@ -203,7 +202,6 @@ const AccountStepDetails = ({
                 <div className={`${inputsWrapper} mb-4`}>
                     <ChallengeV4
                         getThemeData={getThemeData}
-                        getIconsData={() => challengeIconsSvg}
                         bodyClassName="color-norm bg-transparent px-2"
                         iframeClassName="challenge-width-increase"
                         challengeRef={refs.challenge}

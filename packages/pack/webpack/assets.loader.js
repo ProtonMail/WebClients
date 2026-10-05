@@ -19,15 +19,6 @@ module.exports = ({ inlineIcons } = { inlineIcons: false }) => [
          */
         oneOf: [
             {
-                test: /\.source\.svg/,
-                // Special case for the email sprite icons which is injected into the MessageBodyIframe.tsx from getIframeHtml
-                type: 'asset/source',
-                loader: require.resolve('svgo-loader'),
-                options: {
-                    plugins: ['removeComments'],
-                },
-            },
-            {
                 test: new RegExp(`${DESIGN_SYSTEM_ICONS_SVG}$`),
                 type: inlineIcons ? 'asset/source' : 'asset/resource',
                 loader: require.resolve('svgo-loader'),

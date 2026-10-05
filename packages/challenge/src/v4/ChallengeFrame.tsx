@@ -20,7 +20,6 @@ export interface Props extends Omit<
     children?: ReactNode;
     src: string;
     getThemeData?: () => string | undefined;
-    getIconsData?: () => string | undefined;
     className?: string;
     empty?: boolean;
     bodyClassName?: string;
@@ -51,7 +50,6 @@ const ChallengeFrame = ({
     breakpointClassName = '',
     challengeRef,
     src,
-    getIconsData,
     getThemeData,
     hasSizeObserver,
     errorTimeout = ERROR_TIMEOUT_MS,
@@ -211,7 +209,6 @@ const ChallengeFrame = ({
                         }, errorTimeout);
 
                         const themeNodeData = empty ? '' : getThemeData?.();
-                        const iconsNodeData = empty ? '' : getIconsData?.();
 
                         setStage('load');
 
@@ -219,7 +216,8 @@ const ChallengeFrame = ({
                             {
                                 type: 'load',
                                 payload: {
-                                    iconsRoot: iconsNodeData || '',
+                                    // Icons render inline in the forwarded html, but the frame still reads this field.
+                                    iconsRoot: '',
                                     stylesRoot: `${styles}\n${themeNodeData || ''}`,
                                     hasSizeObserver,
                                     bodyClassName,
