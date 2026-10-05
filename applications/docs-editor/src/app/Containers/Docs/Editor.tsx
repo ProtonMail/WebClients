@@ -43,7 +43,7 @@ import { WordCountPlugin } from './Plugins/WordCount/WordCountPlugin'
 import TreeViewPlugin from './Plugins/TreeView/TreeViewPlugin'
 import { ProtonContentEditable } from './ContentEditable/ProtonContentEditable'
 import { MarkNodesProvider } from './Plugins/MarkNodesContext'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { ProtonLinkPlugin } from './Plugins/Link/LinkPlugin'
 import { FormattingPlugin } from './Plugins/FormattingPlugin'
 import { EditorUserMode } from '../../Lib/EditorUserMode'
@@ -336,6 +336,8 @@ export function Editor({
             <CommentPlugin
               key={userMode} // force rerender of comments when user mode changes
               controller={clientInvoker}
+              documentId={documentId}
+              isSuggestionMode={isSuggestionMode}
               userAddress={userAddress}
             />
           )}
