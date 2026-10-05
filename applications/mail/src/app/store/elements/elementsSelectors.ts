@@ -70,6 +70,7 @@ export const pendingActions = (state: MailState) => state.elements.pendingAction
 const retry = (state: MailState) => state.elements.retry;
 export const selectRetry = retry;
 const invalidated = (state: MailState) => state.elements.invalidated;
+const apiOffline = (state: MailState) => state.apiStatus.offline;
 const total = (state: MailState) => state.elements.total;
 export const taskRunning = (state: MailState) => state.elements.taskRunning;
 const awaitingStaleRetryMap = (state: MailState) => state.elements.awaitingStaleRetry;
@@ -418,10 +419,16 @@ export const placeholderCount = createSelector(
 );
 
 export const selectLoading = createSelector(
-    [beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated, pageCached],
-    (beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated, pageCached) =>
+    [beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated, pageCached, apiOffline],
+    (beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated, pageCached, offline) => {
+        // Offline with no cached page: fetches cannot succeed — show an empty list instead of count-based skeletons.
+        if (offline && !pageCached) {
+            return false;
+        }
+
         // A page that was never cached has an unknown content: keep loading rather than claiming it's empty.
-        (beforeFirstLoad || pendingRequest || shouldLoadElements || !pageCached) && !invalidated
+        return (beforeFirstLoad || pendingRequest || shouldLoadElements || !pageCached) && !invalidated;
+    }
 );
 
 export const totalReturned = createSelector([contextTotal, dynamicTotal], (contextTotal, dynamicTotal) => {
