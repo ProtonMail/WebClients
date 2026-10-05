@@ -1328,6 +1328,15 @@
       ],
       "Maybe later": [
         "稍後再考慮"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "More info": [
+        "更多資訊"
+      ],
+      "New chat": [
+        "新增聊天"
       ]
     },
     "Action: Sheets": {
@@ -4299,6 +4308,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "第二密碼錯誤。請重新再試。"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "失敗替 ${ signatureType } 簽名驗證: ${ errorMessage }"
       ]
     },
     "error": {
@@ -7493,6 +7505,9 @@
       ],
       "Have some more time to decide without interruption.": [
         "在未被干擾下有更充分的時間決定。"
+      ],
+      "No payment is required.": [
+        "無須付款。"
       ]
     },
     "info": {
@@ -10911,6 +10926,15 @@
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "透過 ${ IDEAL_WERO_BRAND_NAME } 付款"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "切換代表您同意我們的 ${ termsLink }."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "試用方案不支援 ${ LUMO_SHORT_APP_NAME } 座席。"
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "試用方案不支援獨立 IPs。"
       ]
     },
     "Payments.Error": {
@@ -14679,6 +14703,11 @@
     "q3campaign2026: Info, Calendar first": {
       "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "全部的頂級質子版 ${ CALENDAR_SHORT_APP_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 、 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/每月"
       ]
     }
   }

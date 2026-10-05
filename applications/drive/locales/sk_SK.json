@@ -1388,6 +1388,18 @@
       ],
       "Maybe later": [
         "Možno neskôr"
+      ],
+      "Import now": [
+        "Importovať teraz"
+      ],
+      "More info": [
+        "Viac informácií"
+      ],
+      "New chat": [
+        "Nový chat"
+      ],
+      "Switch to ${ planName }": [
+        "Prejsť na ${ planName }"
       ]
     },
     "Action: Docs": {
@@ -8308,6 +8320,18 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "1 device per user": [
+        "1 zariadenie na používateľa"
+      ],
+      "1 vault per user": [
+        "1 trezor na používateľa"
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Naimportujte si súbory a zložky z Google Drive a uchovajte ich v súkromí v ${ DRIVE_APP_NAME }."
+      ],
+      "No payment is required.": [
+        "Nie je potrebné žiadne platba."
       ]
     },
     "info": {
@@ -9230,6 +9254,9 @@
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } znakov"
+      ],
+      "Image": [
+        "Obrázok"
       ]
     },
     "Label for contact group color": {
@@ -12044,6 +12071,81 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_WERO_BRAND_NAME } podporuje platby len v eurách."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nie je možné kombinovať s ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } je k dispozícii iba v rámci firemných plánov."
+      ],
+      "An organization is required for this plan.": [
+        "Tento plán si vyžaduje organizáciu."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
+      ],
+      "Born Private requires a donation.": [
+        "Na Born Private je potrebný príspevok."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Nákup kreditov si vyžaduje samostatnú platbu."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Prechodom súhlasíte s našimi ${ termsLink }."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Je možné zakúpiť iba jeden ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Pred zmenou tarifného plánu prosím zrušte všetky nadbytočné účty v peňaženke."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Pred zmenou tarifného plánu uzavrite všetky ďalšie peňaženky, prosím."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Počet licencií Scribe nesmie presiahnuť počet členov."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Vybraný plán neposkytuje pre váš účet dostatočný počet adries."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Vybraný plán neposkytuje pre váš účet dostatočný počet domén."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Vybraný plán neposkytuje pre váš účet dostatočný počet členov."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Vybraný plán neposkytuje pre váš účet dostatočné úložisko."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Tento vyhradený server je priradený k bráne a nie je možné ho zmeniť."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Tento plán nepodporuje členov vo vašom účte."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Skúšobné plány nepodporujú ${ LUMO_SHORT_APP_NAME } licencie."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Skúšobné plány nepodporujú vlastné domény."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Skúšobné plány nepodporujú dedikované IP."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Skúšobné plány nepodporujú Scribe licencie."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Skúšobné plány nepodporujú takýto počet členov."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Už vlastníte ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Born Private už vlastníte."
+      ],
+      "Your account is too old for Born Private.": [
+        "Váš účet je príliš starý na službu Born Private."
       ]
     },
     "Payments.Error": {
@@ -15250,6 +15352,9 @@
       ],
       "Preparing your import": [
         "Pripravujeme váš import"
+      ],
+      "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
+        "Preneste si súbory z Google Drive do ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16084,6 +16189,36 @@
     "Payments.InfoBanner": {
       "Changing your billing address may affect taxes on future invoices.": [
         "Zmena fakturačnej adresy môže mať vplyv na výšku daní na budúcich faktúrach."
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Získajte zľavu ${ discount } % na ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Získať ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mesiac"
+      ],
+      "2 TB of storage to share": [
+        "2 TB úložiska na zdieľanie"
+      ],
+      "2 user accounts": [
+        "2 používateľské účty"
+      ],
+      "All premium features from your current plan": [
+        "Všetky prémiové funkcie z vášho aktuálneho plánu"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného cyklu obnoví za štandardnú ročnú sadzbu."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "na 12 mesiacov"
       ]
     }
   }

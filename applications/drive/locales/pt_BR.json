@@ -1368,6 +1368,18 @@
       ],
       "Sign in with Google": [
         "Iniciar sessão com Google"
+      ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
+      "Import now": [
+        "Importar agora"
+      ],
+      "More info": [
+        "Mais informações"
+      ],
+      "New chat": [
+        "Novo bate-papo"
       ]
     },
     "Action: Docs": {
@@ -4462,6 +4474,12 @@
       ],
       "Incorrect second password. Please try again.": [
         "Segunda senha incorreta. Tente novamente."
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Não foi possível ler parte deste arquivo: ${ message }"
+      ],
+      "Move operation aborted": [
+        "Operação de movimento interrompida"
       ]
     },
     "error": {
@@ -7847,6 +7865,15 @@
       ],
       "Search covers your recent items": [
         "A pesquisa inclui seus itens recentes"
+      ],
+      "Looked at this image": [
+        "Olhei para esta imagem"
+      ],
+      "Private and encrypted": [
+        "Privado e criptografado"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Você tem uma fatura em aberta em ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -8760,6 +8787,9 @@
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } caracteres"
+      ],
+      "Image": [
+        "Imagem"
       ]
     },
     "Label for contact group color": {
@@ -10856,6 +10886,9 @@
       ],
       "Your subscription renews soon": [
         "Sua assinatura renovará em breve"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunidade de aproveitar o primeiro mês do plano ${ plan } por esse preço."
       ]
     },
     "Offer fearue": {
@@ -10902,6 +10935,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Aliases ilimitados para proteger a sua identidade"
+      ],
+      "Short @pm.me address": [
+        "Endereço de e-mail curto @pm.me"
       ]
     },
     "Onboarding": {
@@ -14601,6 +14637,18 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Boas-vindas ao ${ DRIVE_APP_NAME }"
+      ],
+      "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
+        "Traga seus arquivos do Google Drive para o ${ DRIVE_APP_NAME }"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch de Google Drive"
+      ],
+      "Import started": [
+        "Importação iniciada"
+      ],
+      "Your import is finished!": [
+        "Sua importação terminou!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15391,6 +15439,33 @@
     "ngc_access_banner: action": {
       "Try it now": [
         "Experimente agora"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obter ${ discount }% de desconto no ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obter ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "2 TB of storage to share": [
+        "2 TB de armazenamento para compartilhar"
+      ],
+      "2 user accounts": [
+        "2 contas de usuário"
+      ],
+      "All premium features from your current plan": [
+        "Todos os recursos premium do seu plano atual"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "por 12 meses"
       ]
     }
   }

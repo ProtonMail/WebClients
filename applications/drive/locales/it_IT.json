@@ -1344,6 +1344,9 @@
       ],
       "Maybe later": [
         "Forse più tardi"
+      ],
+      "More info": [
+        "Altre informazioni"
       ]
     },
     "Action: Docs": {
@@ -8580,6 +8583,9 @@
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } caratteri"
+      ],
+      "Image": [
+        "Immagine"
       ]
     },
     "Label for contact group color": {
@@ -11313,6 +11319,9 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - carta che termina con ${ paymentMethod.Details.Last4 }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - carta che termina con ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -15119,6 +15128,11 @@
       ],
       "key": [
         "chiave"
+      ]
+    },
+    "tryduo2026: Info": {
+      "All premium features from your current plan": [
+        "Tutte le funzionalità premium del tuo piano attuale"
       ]
     }
   }
