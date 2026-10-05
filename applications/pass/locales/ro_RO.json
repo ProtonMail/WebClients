@@ -805,6 +805,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Show less": [
+        "Afișare mai puțin"
+      ],
+      "Show more": [
+        "Afișare mai mult"
       ]
     },
     "Activity": {
@@ -5687,6 +5693,26 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } folder a fost fuzionat cu folderul părinte deoarece a fost atins nivelul maxim de imbricare.",
+        "${ count } foldere au fost fuzionate cu folderul părinte deoarece a fost atins nivelul maxim de imbricare.",
+        "${ count } de foldere au fost fuzionate cu folderul părinte deoarece a fost atins nivelul maxim de imbricare."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } folder nu a fost importat deoarece folderul său părinte a atins numărul maxim de subfoldere. Articolele sale au fost importate în cel mai apropiat folder disponibil.",
+        "${ count } foldere nu a fost importate deoarece folderul lor părinte a atins numărul maxim de subfoldere. Articolele lor au fost importate în cel mai apropiat folder disponibil.",
+        "${ count } de foldere nu a fost importate deoarece folderul lor părinte a atins numărul maxim de subfoldere. Articolele lor au fost importate în cel mai apropiat folder disponibil."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } folder nu a fost importat deoarece acest seif a atins limita de foldere. Articolele sale au fost importate în cel mai apropiat folder disponibil.",
+        "${ count } foldere nu au fost importate deoarece acest seif a atins limita de foldere. Articolele lor au fost importate în cel mai apropiat folder disponibil.",
+        "${ count } de foldere nu au fost importate deoarece acest seif a atins limita de foldere. Articolele lor au fost importate în cel mai apropiat folder disponibil."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } folder nu a putut fi creat. Articolele sale au fost importate în cel mai apropiat folder disponibil.",
+        "${ failed } foldere nu au putut fi create. Articolele lor au fost importate în cel mai apropiat folder disponibil.",
+        "${ failed } de foldere nu au putut fi create. Articolele lor au fost importate în cel mai apropiat folder disponibil."
       ]
     }
   }

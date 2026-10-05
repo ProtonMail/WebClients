@@ -800,6 +800,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Show less": [
+        "Afficher moins"
+      ],
+      "Show more": [
+        "Afficher plus"
       ]
     },
     "Activity": {
@@ -5620,6 +5626,22 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } dossier a été fusionné dans son dossier parent car le niveau d'imbrication maximum a été atteint.",
+        "${ count } dossiers ont été fusionnés dans leur dossier parent car le niveau d'imbrication maximum a été atteint."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } dossier n'a pas été importé car son dossier parent a atteint le nombre maximum de sous-dossiers. Ses éléments ont été importés dans le dossier disponible le plus proche.",
+        "${ count } dossiers n'ont pas été importés car leur dossier parent a atteint le nombre maximum de sous-dossiers. Leurs éléments ont été importés dans le dossier disponible le plus proche."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } dossier n'a pas été importé car ce coffre-fort a atteint sa limite de dossiers. Ses éléments ont été importés dans le dossier disponible le plus proche.",
+        "${ count } dossiers n'ont pas été importés car ce coffre-fort a atteint sa limite de dossiers. Ses éléments ont été importés dans le dossier disponible le plus proche."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } dossier n'a pas pu être créé. Ses éléments ont été importés dans le dossier disponible le plus proche.",
+        "${ failed } dossiers n'ont pas pu être créés. Leurs éléments ont été importés dans le dossier disponible le plus proche."
       ]
     }
   }
