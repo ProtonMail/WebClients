@@ -8,3 +8,5 @@ export type WordCountInfoCollection = {
   document?: WordCountInfo
   selection?: WordCountInfo
 }
+
+export type CodePointRange = [number, number]
