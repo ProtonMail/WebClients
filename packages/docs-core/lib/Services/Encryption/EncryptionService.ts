@@ -24,6 +24,7 @@ export class EncryptionService<C extends EncryptionContext> {
   constructor(
     private context: C,
     private driveCompat: DriveCompatWrapper,
+    private providedGetVerificationKey?: (email: string) => Promise<PublicKeyReference[]>,
   ) {
     this.context = context
   }
@@ -172,7 +173,9 @@ export class EncryptionService<C extends EncryptionContext> {
         return Result.ok(keys)
       }
 
-      const value = await this.driveCompat.getUserCompat().getVerificationKey(email)
+      const value = this.providedGetVerificationKey
+        ? await this.providedGetVerificationKey(email)
+        : await this.driveCompat.getUserCompat().getVerificationKey(email)
 
       return Result.ok(value)
     } catch (error) {
