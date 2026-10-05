@@ -223,6 +223,7 @@ enum DriveFeatureFlag {
     DriveSharingEditingDisabled = 'DriveSharingEditingDisabled',
     // Rollouts
     DriveSharingAdminPermissions = 'DriveSharingAdminPermissions',
+    DriveWebRecentlyAccessed = 'DriveWebRecentlyAccessed',
     DriveWebSearchFoundation = 'DriveWebSearchFoundation',
     // Offers
     DriveFreeMinutesUpload = 'DriveFreeMinutesUpload',
