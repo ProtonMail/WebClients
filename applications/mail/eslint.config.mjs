@@ -5,17 +5,13 @@ import { atomsPackage, componentsPackage, createBarrelPaths, iconsPackage } from
 import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
 import { createRestrictedImportRule } from '@proton/eslint-config-proton/restrictedImports';
 
-const barrelPackages = [atomsPackage, iconsPackage, componentsPackage];
-
 /**
  * Every `no-restricted-imports` restriction for the app goes in here. Flat config replaces a rule's options wholesale
  * for each file it matches, so another config object setting the rule would silently drop these and the shared ones.
  */
 const restrictedImportOptions = {
     paths: [
-        // `@proton/components/index` resolves to the same barrel as `@proton/components`, so ban both specifiers.
-        ...createBarrelPaths(barrelPackages),
-        ...createBarrelPaths(barrelPackages.map((name) => `${name}/index`)),
+        ...createBarrelPaths([atomsPackage, iconsPackage, componentsPackage]),
         ...iconRestrictedImports,
         {
             name: '@proton/mail/store/counts/conversationCountsSlice',

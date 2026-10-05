@@ -12,13 +12,7 @@ import {
 import { iconRestrictedImports } from '@proton/eslint-config-proton/icon';
 import { createRestrictedImportRule } from '@proton/eslint-config-proton/restrictedImports';
 
-const barrelPackages = [accountPackage, atomsPackage, componentsPackage, hooksPackage, iconsPackage];
-
-// Both `@proton/components` and `@proton/components/index` resolve to the barrel, so restrict both specifiers.
-const barrelPaths = [
-    ...createBarrelPaths(barrelPackages),
-    ...createBarrelPaths(barrelPackages.map((name) => `${name}/index`)),
-];
+const barrelPaths = createBarrelPaths([accountPackage, atomsPackage, componentsPackage, hooksPackage, iconsPackage]);
 
 export default defineConfig([
     config,
