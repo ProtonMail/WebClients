@@ -137,7 +137,7 @@ export function DocumentViewer({
 
   const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
   const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
-  const isDriveCompatSDK = useDriveCompatSDK()
+  const replaceDriveCompat = useDriveCompatSDK()
   const getPrimaryAddressKeys = useGetPrimaryAddressKeys()
   const isOpenTracerEnabled = useIsOpenTracerEnabled()
   const isDarkThemeEnabled = useIsDarkThemeEnabled()
@@ -664,7 +664,7 @@ export function DocumentViewer({
       setInitializing(true)
       void OpenTracer.trace('boot_doc_viewer_loader_initialize_start', { documentType })
 
-      if (isDriveCompatSDK && isPrivateNode) {
+      if (replaceDriveCompat && isPrivateNode) {
         getPrimaryAddressKeys()
           .then((keys) => {
             void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType), keys)
@@ -691,7 +691,7 @@ export function DocumentViewer({
     initializing,
     nodeMeta,
     accessReady,
-    isDriveCompatSDK,
+    replaceDriveCompat,
     removeLocalIDFromUrl,
     getPrimaryAddressKeys,
     isPrivateNode,

@@ -48,9 +48,9 @@ export class GetDocumentKeys implements UseCaseInterface<GetDocumentKeysResult> 
     }
 
     try {
-      const useSDK = isDriveCompatSDKEnabled(this.unleashClient)
+      const replaceDriveCompat = isDriveCompatSDKEnabled(this.unleashClient)
 
-      const documentContentKeyPromise = useSDK
+      const documentContentKeyPromise = replaceDriveCompat
         ? getDocumentKeys(nodeMeta)
         : this.compatWrapper.getCompat<DriveCompat>().getDocumentKeys(nodeMeta)
       const addressWithKeysPromise = primaryAddressKeys

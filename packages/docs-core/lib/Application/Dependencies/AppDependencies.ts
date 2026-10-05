@@ -58,6 +58,7 @@ import type { SheetsDatabaseSchema } from '../../Database/SheetsDBSchema'
 import { CURRENT_SHEETS_DB_VERSION, SHEETS_DATABASE_NAME, sheetsDBMigrations } from '../../Database/SheetsDBSchema'
 import { SheetsStorageService } from '../../Services/SheetsStorage/SheetsStorageService'
 import type { CacheConfig } from '@proton/drive-store/lib/CacheConfig'
+import type { PublicKeyReference } from '@protontech/crypto'
 
 export class AppDependencies extends DependencyContainer {
   constructor(
@@ -70,6 +71,7 @@ export class AppDependencies extends DependencyContainer {
     unleashClient: UnleashClient,
     syncedEditorState: SyncedEditorState,
     providedCacheConfig?: CacheConfig,
+    providedGetVerificationKey?: (email: string) => Promise<PublicKeyReference[]>,
   ) {
     super()
 
@@ -141,11 +143,11 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.RealtimeEncryptionService, () => {
-      return new EncryptionService(EncryptionContext.RealtimeMessage, compatWrapper)
+      return new EncryptionService(EncryptionContext.RealtimeMessage, compatWrapper, providedGetVerificationKey)
     })
 
     this.bind(App_TYPES.CommentsEncryptionService, () => {
-      return new EncryptionService(EncryptionContext.PersistentComment, compatWrapper)
+      return new EncryptionService(EncryptionContext.PersistentComment, compatWrapper, providedGetVerificationKey)
     })
 
     this.bind(App_TYPES.LocalStorageEncryptionService, () => {

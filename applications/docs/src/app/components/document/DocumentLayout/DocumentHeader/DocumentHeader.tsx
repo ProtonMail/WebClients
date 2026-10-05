@@ -168,7 +168,7 @@ function DocsHeaderForDocument({
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
   const isHomepageEnabled = useFlag('DocsHomepageEnabled')
   const { getLocalID } = useAuthentication()
-  const replaceCompatWithSDK = useDriveCompatSDK()
+  const replaceDriveCompat = useDriveCompatSDK()
 
   const { showSharingModal, sharingModal } = useSharingModal()
 
@@ -187,7 +187,7 @@ function DocsHeaderForDocument({
 
       try {
         const { compat } = privateContext
-        const shareId = replaceCompatWithSDK ? await getShareId(nodeMeta) : await compat.getShareId(nodeMeta)
+        const shareId = replaceDriveCompat ? await getShareId(nodeMeta) : await compat.getShareId(nodeMeta)
         setShareId(shareId)
       } catch (error) {
         traceError(error)
@@ -195,7 +195,7 @@ function DocsHeaderForDocument({
     }
 
     void preloadShareId()
-  }, [documentState, privateContext, replaceCompatWithSDK])
+  }, [documentState, privateContext, replaceDriveCompat])
 
   function openSharingModalReplaceAddress() {
     showSharingModal({
