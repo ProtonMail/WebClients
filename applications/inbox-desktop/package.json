@@ -24,7 +24,7 @@
         "make": "electron-forge make",
         "make:beta": "cross-env RELEASE=beta electron-forge make",
         "make:snap": "IS_SNAP=1 electron-forge make --platform=linux --arch=x64 --targets=@electron-forge/maker-deb && bash ./scripts/package_snap.sh",
-        "make-test": "SKIP_CODESIGN=true PLAYWRIGHT_TEST=true electron-forge make",
+        "make-test": "cross-env SKIP_CODESIGN=true PLAYWRIGHT_TEST=true electron-forge make",
         "package": "electron-forge package",
         "start": "electron-forge start",
         "start:snap": "IS_SNAP=1 electron-forge start ",
