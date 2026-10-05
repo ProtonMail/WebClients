@@ -118,7 +118,7 @@ const AudioSettingsDropdownComponent = ({
                                 label={microphoneState.systemDefaultLabel}
                                 Icon={IcCheckmark}
                                 role="option"
-                                aria-selected={shouldShowSystemDefaultCheckmark(microphoneState)}
+                                ariaSelected={shouldShowSystemDefaultCheckmark(microphoneState)}
                             />
                         )}
                         {microphones.map((mic) => (
@@ -143,7 +143,7 @@ const AudioSettingsDropdownComponent = ({
                                 label={mic.label}
                                 Icon={IcCheckmark}
                                 role="option"
-                                aria-selected={shouldShowDeviceCheckmark(mic.deviceId, audioDeviceId!, microphoneState)}
+                                ariaSelected={shouldShowDeviceCheckmark(mic.deviceId, audioDeviceId!, microphoneState)}
                             />
                         ))}
                     </div>
@@ -198,7 +198,7 @@ const AudioSettingsDropdownComponent = ({
                                     label={speakerState.systemDefaultLabel}
                                     Icon={IcCheckmark}
                                     role="option"
-                                    aria-selected={shouldShowSystemDefaultCheckmark(speakerState)}
+                                    ariaSelected={shouldShowSystemDefaultCheckmark(speakerState)}
                                 />
                             )}
                             {speakers.map((speaker) => (
@@ -227,7 +227,7 @@ const AudioSettingsDropdownComponent = ({
                                     }}
                                     Icon={IcCheckmark}
                                     role="option"
-                                    aria-selected={shouldShowDeviceCheckmark(
+                                    ariaSelected={shouldShowDeviceCheckmark(
                                         speaker.deviceId,
                                         activeOutputDeviceId!,
                                         speakerState
