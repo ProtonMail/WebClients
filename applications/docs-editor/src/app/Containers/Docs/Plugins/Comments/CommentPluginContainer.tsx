@@ -10,7 +10,7 @@ import {
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { mergeRegister, registerNestedElementResolver } from '@lexical/utils'
 import { $getNodeByKey, $getSelection, $isElementNode, $isRangeSelection, COMMAND_PRIORITY_EDITOR } from 'lexical'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { FloatingQuickActions } from './FloatingQuickActions'
@@ -35,15 +35,20 @@ import { useCustomCollaborationContext } from '../Collaboration/CustomCollaborat
 import { useSyncedState } from '../../../../Hooks/useSyncedState'
 import { useContactEmails } from '../../../../Hooks/useContactEmails'
 import { TYPING_STATUS_CHANGE_EVENT_COMMAND } from './CommentsPanelListThread'
+import { registerCommentCutMove } from './registerCommentCutMove'
 import { useRightPanelContext } from '../../../DocsLayout'
 import { useDocsDependencies } from '../../DocsDependenciesProvider'
 
 export default function CommentPlugin({
   controller,
   userAddress,
+  documentId,
+  isSuggestionMode,
 }: {
   controller: EditorRequiresClientMethods
   userAddress: string
+  documentId: string
+  isSuggestionMode: boolean
 }): JSX.Element {
   const { application } = useApplication()
   const { logger, reportError } = useDocsDependencies()
@@ -57,6 +62,14 @@ export default function CommentPlugin({
   const [currentCommentDraft, setCurrentCommentDraft] = useState<string | undefined>()
 
   const [threads, setThreads] = useState<CommentThreadInterface[]>([])
+  const threadMarkIDs = useRef(new Set<string>())
+  threadMarkIDs.current = new Set(threads.map((thread) => thread.markID).filter((id): id is string => !!id))
+
+  useEffect(() => {
+    if (!isSuggestionMode) {
+      return registerCommentCutMove(editor, documentId, () => threadMarkIDs.current)
+    }
+  }, [editor, documentId, isSuggestionMode])
 
   const activeThreads = useMemo(() => {
     const activeThreads = threads.filter((thread) => thread.state === CommentThreadState.Active)
