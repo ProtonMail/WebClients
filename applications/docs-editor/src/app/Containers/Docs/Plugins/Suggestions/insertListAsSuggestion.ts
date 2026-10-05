@@ -18,7 +18,7 @@ import { $getListInfo } from '../CustomList/$getListInfo'
 import { $insertFirst } from '@lexical/utils'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import { $getElementBlockType } from '../BlockTypePlugin'
 import { $isEmptyListItemExceptForSuggestions } from './Utils'
 
@@ -62,7 +62,7 @@ export function $insertListAsSuggestion(
 
   const nodes = selection.getNodes()
 
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
 
   if ($isRangeSelection(selection)) {
     const anchorNode = selection.anchor.getNode()

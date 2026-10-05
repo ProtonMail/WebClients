@@ -1,5 +1,5 @@
 import { $wrapNodeInElement } from '@lexical/utils'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import type { DocsLogger } from '../../contract/DocsLogger'
 import type { TextFormatType, TextNode } from 'lexical'
 import {
@@ -82,7 +82,7 @@ export function $formatTextAsSuggestion(
     return true
   }
 
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
 
   const selectedNodes = selection.getNodes()
 
