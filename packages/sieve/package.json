@@ -11,7 +11,7 @@
         "./types": "./src/interface.ts"
     },
     "scripts": {
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find src fixtures -type f -name '*.ts')",
         "test": "jest",

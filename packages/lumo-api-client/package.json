@@ -42,7 +42,7 @@
     "types": "index.ts",
     "scripts": {
         "build": "tsc",
-        "check-types": "tsc --noEmit --checkers 1",
+        "check:types": "tsc --noEmit --checkers 1",
         "lint": "eslint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage"
