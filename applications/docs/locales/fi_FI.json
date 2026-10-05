@@ -913,6 +913,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston"
+      ],
+      "More info": [
+        "Lisätiedot"
       ]
     },
     "Actions message": {
@@ -10231,6 +10234,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "2 user accounts": [
+        "Kaksi käyttäjätiliä"
       ]
     }
   }
