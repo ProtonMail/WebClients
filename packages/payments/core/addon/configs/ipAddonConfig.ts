@@ -15,7 +15,7 @@ export const IP_ADDON_CONFIG: AddonConfig = {
     alwaysOffered: true,
     featureLimit: { kind: 'synthetic', key: 'MaxIPs', grants: { MaxIPs: 1 } },
     includedByPlanOverride: { [PLANS.VPN_BUSINESS]: 1 },
-    transferStrategy: 'subtract-included',
+    transferStrategy: 'addonSeats',
     tooltipLabel: (price) => c('Addon').t`${price} per dedicated server`,
     title: (_isB2C: boolean, options?: { short?: boolean }) =>
         options?.short ? c('Addon').t`Servers` : c('Addon').t`Dedicated VPN servers`,
