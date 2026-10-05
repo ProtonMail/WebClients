@@ -6,7 +6,7 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { useMyCountry } from '@proton/components/index';
+import useMyCountry from '@proton/components/hooks/useMyCountry';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';

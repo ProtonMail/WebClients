@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useSettingsLink } from '@proton/components/index';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 
 import { resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '../../../../logic/store';
