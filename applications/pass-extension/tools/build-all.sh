@@ -133,7 +133,8 @@ function bundle_extension_from_sources {
     mkdir -p "$OUTDIR/$BUILD_ID-FF-sources"
     cd "$OUTDIR/$BUILD_ID-FF-sources"
     unzip -q "$ARTEFACTSDIR/release/$BUILD_ID-FF-sources.zip"
-    pnpm install --no-frozen-lockfile
+    # Only install the extension's dependencies: the sources leave out most workspaces
+    pnpm install --frozen-lockfile --filter 'proton-pass-extension...'
     cd applications/pass-extension
     RELEASE=true pnpm run build:extension:ff
     cd dist
