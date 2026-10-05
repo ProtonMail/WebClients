@@ -36,9 +36,17 @@ interface ChatThreadProps {
      * participant joined). A placeholder is shown in place of the root message.
      */
     isRootMissing?: boolean;
+    /** The root is currently pinned at the top of the chat while its replies scroll underneath. */
+    isStuck?: boolean;
 }
 
-export const ChatThread = ({ rootMessage, replies, roomName, isRootMissing = false }: ChatThreadProps) => {
+export const ChatThread = ({
+    rootMessage,
+    replies,
+    roomName,
+    isRootMissing = false,
+    isStuck = false,
+}: ChatThreadProps) => {
     const replyCount = replies.length;
 
     const dispatch = useMeetDispatch();
@@ -117,7 +125,7 @@ export const ChatThread = ({ rootMessage, replies, roomName, isRootMissing = fal
     const threadRepliesId = `chat-thread-replies-${rootMessage.id}`;
 
     return (
-        <div className="chat-thread">
+        <div className={clsx('chat-thread', isStuck && 'chat-thread--stuck')}>
             {/* Root + collapse toggle stick together at the top while replies scroll under them.
                 A root taller than 60% of the chat area is left unpinned so it can't hide its replies. */}
             <div
@@ -126,6 +134,7 @@ export const ChatThread = ({ rootMessage, replies, roomName, isRootMissing = fal
                     'chat-thread-header',
                     expanded && replyCount > 0 && !isRootTooTall && 'chat-thread-header--sticky'
                 )}
+                data-thread-root-id={rootMessage.id}
             >
                 {isRootMissing ? (
                     <div className="chat-item chat-thread-missing-root flex gap-2 flex-nowrap shrink-0 mr-2 py-2 px-1 items-center">
