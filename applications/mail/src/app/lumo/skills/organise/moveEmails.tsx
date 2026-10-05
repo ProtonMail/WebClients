@@ -12,7 +12,7 @@ import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
-import { resolveElements, resolveId } from '../../helpers/references';
+import { resolveFreshElements, resolveId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import {
     emailIds,
@@ -77,7 +77,7 @@ export const moveEmailsDefinition: ToolDefinition<MoveEmailsParams, void> = {
     name: 'move_emails',
     kind: 'mutation',
     toolDescription:
-        'Move one or more emails to a folder OR to a system location. `ids` are email-… references from view_emails/search. Pass EXACTLY ONE destination: set `folder` to a folder-… reference from list_folders (and leave `location` null) to file into a custom folder; OR set `location` to one of "trash" (use this for "delete"/"bin"/"remove these" — it is reversible, NOT a permanent delete), "archive", or "spam" (and leave `folder` null). Folders and these locations are exclusive, so this removes the emails from where they currently live. To add a tag WITHOUT moving, use apply_labels instead. Proposed to the user for confirmation before it runs. Examples: into Travel → { "ids": ["email-a1b2c3"], "folder": "folder-x7b2q1", "location": null }; to Trash → { "ids": ["email-a1b2c3"], "folder": null, "location": "trash" }.',
+        'Move one or more emails to a folder OR to a system location. `ids` are email-… references from any earlier result in this conversation. Pass EXACTLY ONE destination: set `folder` to a folder-… reference from list_folders (and leave `location` null) to file into a custom folder; OR set `location` to one of "trash" (use this for "delete"/"bin"/"remove these" — it is reversible, NOT a permanent delete), "archive", or "spam" (and leave `folder` null). Folders and these locations are exclusive, so this removes the emails from where they currently live. To add a tag WITHOUT moving, use apply_labels instead. Proposed to the user for confirmation before it runs. Examples: into Travel → { "ids": ["email-a1b2c3"], "folder": "folder-x7b2q1", "location": null }; to Trash → { "ids": ["email-a1b2c3"], "folder": null, "location": "trash" }.',
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
@@ -91,7 +91,7 @@ export const moveEmailsDefinition: ToolDefinition<MoveEmailsParams, void> = {
     examples: [
         {
             context:
-                'search returned email-a1b2c3 and email-d4e5f6, and list_folders returned `folder-x7b2q1 | "Travel"`. Move both emails into Travel.',
+                'Earlier in the conversation open_folder listed `email-a1b2c3 | Ada | Booking | 2026-10-02 | read | Inbox` and `email-d4e5f6 | Ada | Receipt | 2026-10-02 | read | Inbox`, and list_folders returned `folder-x7b2q1 | "Travel"`. The user now asks to move Ada\'s emails from today into Travel. Every reference is already in hand, so move them with no new search or list.',
             call: { ids: ['email-a1b2c3', 'email-d4e5f6'], folder: 'folder-x7b2q1', location: null },
         },
         {
@@ -108,7 +108,6 @@ export const moveEmailsDefinition: ToolDefinition<MoveEmailsParams, void> = {
 export const createMoveEmailsHandler =
     (mail: MailToolDeps): ToolHandler<MoveEmailsParams, void> =>
     async ({ ids, folder, location }, { references }) => {
-        const elements = resolveElements(mail.store, ids, references);
         // EXACTLY-ONE / known-location enforcement lives in the pure resolver (shared with the schema): a
         // system location maps to its label id; a custom folder resolves its reference.
         const resolved = resolveMoveTarget({ folder, location });
@@ -116,6 +115,7 @@ export const createMoveEmailsHandler =
             'location' in resolved
                 ? MOVE_LOCATION_LABEL_IDS[resolved.location]
                 : resolveId(resolved.folder, references);
+        const elements = await resolveFreshElements(mail, ids, references);
         await mail.applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID });
     };
 
