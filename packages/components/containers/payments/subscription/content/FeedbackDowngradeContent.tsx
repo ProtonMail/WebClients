@@ -23,7 +23,7 @@ import ModalHeader from '../../../../components/modalTwo/ModalHeader';
 import type { ModalTwoPromiseHandlers } from '../../../../components/modalTwo/useModalTwo';
 import Option from '../../../../components/option/Option';
 import SelectTwo from '../../../../components/selectTwo/SelectTwo';
-import InputFieldTwo from '../../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../../components/v2/field/InputField';
 import TextAreaTwo from '../../../../components/v2/input/TextArea';
 import useFormErrors from '../../../../components/v2/useFormErrors';
 import { getCharacterCountText } from '../../../../helpers/getCharacterCountText';

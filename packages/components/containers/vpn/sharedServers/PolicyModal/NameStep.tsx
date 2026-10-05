@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import InputFieldTwo from '../../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../../components/v2/field/InputField';
 
 interface SharedServersNameStepProps {
     policyName: string;

@@ -11,7 +11,7 @@ import ColorPicker from '../../components/input/ColorPicker';
 import Label from '../../components/label/Label';
 import Info from '../../components/link/Info';
 import Toggle from '../../components/toggle/Toggle';
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import ParentFolderSelector from './ParentFolderSelector';
 
 interface Props {

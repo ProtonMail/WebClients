@@ -27,7 +27,7 @@ import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
 import DynamicProgress from '../../../components/progress/DynamicProgress';
 import useBeforeUnload from '../../../hooks/useBeforeUnload';
-import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
+import { useGetCalendarInfo } from '../../../hooks/useGetCalendarInfo';
 
 const getEventsWithoutDefaultNotifications = (events: VcalVeventComponent[]) => {
     return events.map((eventComponent) => ({ eventComponent, hasDefaultNotifications: false }));

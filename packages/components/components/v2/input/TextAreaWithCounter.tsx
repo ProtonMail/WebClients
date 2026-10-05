@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 import TextAreaTwo, { type TextAreaTwoProps } from './TextArea';
 
-export type CounterPosition = 'bottom-right' | 'bottom-left';
+type CounterPosition = 'bottom-right' | 'bottom-left';
 
 interface CharacterCountProps {
     currentCount: number;
@@ -34,7 +34,7 @@ const CharacterCount = ({
     </div>
 );
 
-export interface TextAreaWithCounterProps extends TextAreaTwoProps {
+interface TextAreaWithCounterProps extends TextAreaTwoProps {
     maxCharacterCount?: number;
     showCharacterCount?: boolean;
     characterCountClassName?: string;

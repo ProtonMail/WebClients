@@ -10,7 +10,7 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import FolderIcon from '@proton/components/containers/labels/FolderIcon';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';

@@ -14,7 +14,7 @@ const getTargetDate = (target: any, days: Date[]) => {
     }
 };
 
-export interface Props {
+interface Props {
     days: Date[];
     onSelectDate?: (a1: Date) => void;
     onSelectDateRange?: (a1: DateTuple) => void;

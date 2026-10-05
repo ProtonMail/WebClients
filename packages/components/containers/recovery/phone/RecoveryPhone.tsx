@@ -7,7 +7,7 @@ import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFi
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import clsx from '@proton/utils/clsx';
 
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
 import PhoneInput from '../../../components/v2/phone/LazyPhoneInput';
 import useFormErrors from '../../../components/v2/useFormErrors';

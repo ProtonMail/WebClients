@@ -7,7 +7,7 @@ import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { ModalProps } from '../../components/modalTwo/Modal';
 import Prompt from '../../components/prompt/Prompt';
 
-export interface DowngradeModalProps extends ModalProps {
+interface DowngradeModalProps extends ModalProps {
     hasMail: boolean;
     hasVpn: boolean;
     onConfirm: () => void;

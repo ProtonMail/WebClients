@@ -7,7 +7,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Domain } from '@proton/shared/lib/interfaces';
 
 import Alert from '../../components/alert/Alert';
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 
 interface Props {
     domain: Domain | undefined;

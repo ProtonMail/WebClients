@@ -8,7 +8,7 @@ import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import PhoneInput from '../../../components/v2/phone/LazyPhoneInput';
 import useFormErrors from '../../../components/v2/useFormErrors';
 

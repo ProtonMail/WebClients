@@ -18,7 +18,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     value?: number;
 }
 
-export enum MeterValue {
+enum MeterValue {
     Optimum = 0,
     Min = 0,
     Low = 50,

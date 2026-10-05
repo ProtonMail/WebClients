@@ -7,7 +7,7 @@ import type { ThemeColorUnion } from '@proton/colors';
 import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 
-export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     children: ReactNode;
     id?: string;
     className?: string;

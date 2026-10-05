@@ -27,7 +27,7 @@ const fromFormatted = (value: string, locale: Locale) => {
     return parse(value, 'p', new Date(), { locale });
 };
 
-export const formatDuration = (label: string, minutes: number) => {
+const formatDuration = (label: string, minutes: number) => {
     const hours = withDecimalPrecision(minutes / 60, 1);
     const hoursInt = Math.floor(hours);
 

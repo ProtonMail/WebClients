@@ -16,7 +16,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import useModalState from '../../components/modalTwo/useModalState';
 import { useModalTwoStatic } from '../../components/modalTwo/useModalTwo';
-import Tabs from '../../components/tabs/Tabs';
+import { Tabs } from '../../components/tabs/Tabs';
 import MailUpsellButton from '../../components/upsell/MailUpsellButton';
 import UpsellModal from '../../components/upsell/UpsellModal/UpsellModal';
 import SettingsParagraph from '../account/SettingsParagraph';

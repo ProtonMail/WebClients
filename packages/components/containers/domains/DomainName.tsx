@@ -5,7 +5,7 @@ import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 
 const { DOMAIN_STATE_DEFAULT, DOMAIN_STATE_VERIFIED, DOMAIN_STATE_WARN } = DOMAIN_STATE;
 
-export interface Props {
+interface Props {
     domain: Domain;
 }
 

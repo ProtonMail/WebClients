@@ -83,7 +83,7 @@ const toDateTimes = (unixTimestamp: number, timezone: string, repeat: AutoReplyD
     }
 };
 
-export const getMatchingValues = ({ Zone, Repeat }: tsAutoResponder) => {
+const getMatchingValues = ({ Zone, Repeat }: tsAutoResponder) => {
     const duration = getDurationOptions().find(({ value }) => value === Repeat);
     const timezones = getTimeZoneOptions();
     const matchingTimezone = getMatchingTimezone(Zone, timezones) || getMatchingTimezone(getTimezone(), timezones);
@@ -94,7 +94,7 @@ export const getMatchingValues = ({ Zone, Repeat }: tsAutoResponder) => {
     };
 };
 
-export const toModel = (
+const toModel = (
     { Message, StartTime, EndTime, DaysSelected, Subject, IsEnabled }: tsAutoResponder,
     { timezone, duration }: { timezone: string; duration: AutoReplyDuration }
 ): AutoReplyFormModel => {

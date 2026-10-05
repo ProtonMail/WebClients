@@ -11,7 +11,7 @@ import Table from '../../../../components/table/Table';
 import TableBody from '../../../../components/table/TableBody';
 import TableCell from '../../../../components/table/TableCell';
 import TableRow from '../../../../components/table/TableRow';
-import Tabs from '../../../../components/tabs/Tabs';
+import { Tabs } from '../../../../components/tabs/Tabs';
 import { CountryFlagAndName } from '../../gateways/CountryFlagAndName';
 import type { Location, VpnLocationFilterPolicyLocal } from '../constants';
 

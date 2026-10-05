@@ -1,6 +1,6 @@
 import type { DragEvent, MouseEvent, ReactNode } from 'react';
 
-export interface Props {
+interface Props {
     disabled?: boolean;
     content?: ReactNode;
     toggled?: boolean;

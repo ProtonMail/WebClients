@@ -20,7 +20,7 @@ import ModalHeader from '../../../../components/modalTwo/ModalHeader';
 import Option from '../../../../components/option/Option';
 import Prompt from '../../../../components/prompt/Prompt';
 import SelectTwo from '../../../../components/selectTwo/SelectTwo';
-import InputFieldTwo from '../../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../../components/v2/field/InputField';
 import TextAreaTwo from '../../../../components/v2/input/TextArea';
 import useFormErrors from '../../../../components/v2/useFormErrors';
 import { getClientName } from '../../../../helpers/report';
@@ -57,7 +57,7 @@ const reasons: { [key in REASON]: { tag: string; label: string } } = {
     },
 };
 
-export interface Props extends ModalProps {}
+interface Props extends ModalProps {}
 
 const CancelSubscriptionViaSupportModal = ({ open, onClose, ...rest }: Props) => {
     const api = useApi();

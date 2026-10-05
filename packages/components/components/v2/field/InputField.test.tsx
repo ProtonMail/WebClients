@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import InputFieldTwo from './InputField';
+import { InputField as InputFieldTwo } from './InputField';
 
 const ComponentWithDefaultTestId = (props: any) => {
     return (

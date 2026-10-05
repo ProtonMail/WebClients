@@ -59,7 +59,7 @@ type Props = {
     paymentStatus: PaymentStatus;
 } & ModalProps;
 
-export const DEFAULT_CREDITS_AMOUNT = 5000;
+const DEFAULT_CREDITS_AMOUNT = 5000;
 
 const nonChargeableMethods = new Set<PlainPaymentMethodType | undefined>([
     PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,

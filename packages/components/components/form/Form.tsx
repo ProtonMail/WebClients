@@ -7,7 +7,7 @@ interface FormOwnProps {
 
 export const FormContext = createContext<FormOwnProps>({});
 
-export type FormProps = ComponentPropsWithoutRef<'form'> & FormOwnProps;
+type FormProps = ComponentPropsWithoutRef<'form'> & FormOwnProps;
 
 const Form = ({ dense, ...props }: FormProps) => {
     return (

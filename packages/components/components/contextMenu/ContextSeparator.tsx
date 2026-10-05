@@ -1,6 +1,6 @@
 import clsx from '@proton/utils/clsx';
 
-export interface Props {
+interface Props {
     className?: string;
 }
 

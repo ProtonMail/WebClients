@@ -8,7 +8,7 @@ import { deleteVersionCookies } from '../../helpers/versionCookie';
 const API_ERROR_KEY = 'API_ERROR_REFRESH';
 const EARLY_ACCESS_KEY = 'EARLY_ACCESS_RESET';
 
-export const clearAutomaticErrorRefresh = () => {
+const clearAutomaticErrorRefresh = () => {
     sessionStorage.removeItem(API_ERROR_KEY);
     sessionStorage.removeItem(EARLY_ACCESS_KEY);
 };

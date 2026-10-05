@@ -2,7 +2,7 @@ import type { ChangeEvent, FC, KeyboardEvent, KeyboardEventHandler } from 'react
 import { useEffect, useReducer } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';

@@ -33,7 +33,7 @@ import Option from '../../components/option/Option';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
 import StepDot from '../../components/stepDot/StepDot';
 import StepDots from '../../components/stepDots/StepDots';
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import TextAreaTwo from '../../components/v2/input/TextArea';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useEventManager from '../../hooks/useEventManager';

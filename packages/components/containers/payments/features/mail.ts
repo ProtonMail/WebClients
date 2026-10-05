@@ -2,7 +2,6 @@ import { c, msgid } from 'ttag';
 
 import { IcAt } from '@proton/icons/icons/IcAt';
 import { IcBrandProtonMail } from '@proton/icons/icons/IcBrandProtonMail';
-import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcDesktop } from '@proton/icons/icons/IcDesktop';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
@@ -103,14 +102,6 @@ export const getCustomSecureMailB2B = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getExtraPersonalizationFeature = (): PlanCardFeatureDefinition => ({
-    id: 'extra-personalization',
-    icon: IcCheckmarkCircle,
-    text: c('new_plans: Upsell attribute')
-        .t`Add more personalization with 15 email addresses and support for 3 custom email domains`,
-    included: true,
-});
-
 export const getNMessagesFeature = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
@@ -154,7 +145,7 @@ export const getOwnDomainFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getDesktopAppText = () => {
+const getDesktopAppText = () => {
     return c('BF2024: Deal details').t`${MAIL_APP_NAME} desktop app`;
 };
 
@@ -301,7 +292,7 @@ const getSignature = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
+const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     return {
         id: 'mail-end-to-end-encryption',
         text: c('new_plans: feature').t`End-to-end encryption`,
@@ -311,7 +302,7 @@ export const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getEncryptionOutside = (): PlanCardFeatureDefinition => {
+const getEncryptionOutside = (): PlanCardFeatureDefinition => {
     /**
      * Workaround for bug where ttag cannot handle strings where the same variable appears twice
      * https://confluence.protontech.ch/pages/viewpage.action?pageId=64690626#LocalisationonFrontendrulesandbestpractices-Twicesamevariables
@@ -356,7 +347,7 @@ export const getContactGroupsManagement = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getSMTP = (included: boolean): PlanCardFeatureDefinition => {
+const getSMTP = (included: boolean): PlanCardFeatureDefinition => {
     return {
         id: 'smtp',
         text: c('new_plans: feature').t`Email client support (via IMAP/SMTP)`,
@@ -420,7 +411,7 @@ const getAutoDeleteSpamAndTrash = (included: boolean): PlanCardFeatureDefinition
     };
 };
 
-export const getScheduleAndSnooze = (included: boolean): PlanCardFeatureDefinition => {
+const getScheduleAndSnooze = (included: boolean): PlanCardFeatureDefinition => {
     return {
         id: 'schedule-and-snooze',
         text: c('new_plans: feature').t`Schedule and snooze emails for any time`,
@@ -431,7 +422,7 @@ export const getScheduleAndSnooze = (included: boolean): PlanCardFeatureDefiniti
     };
 };
 
-export const getDesktopApp = (included: boolean): PlanCardFeatureDefinition => {
+const getDesktopApp = (included: boolean): PlanCardFeatureDefinition => {
     return {
         id: 'mail-desktop-app',
         text: c('new_plans: feature').t`Desktop app`,
@@ -442,7 +433,7 @@ export const getDesktopApp = (included: boolean): PlanCardFeatureDefinition => {
     };
 };
 
-export const getEmailDistributionLists = (included: boolean): PlanCardFeatureDefinition => {
+const getEmailDistributionLists = (included: boolean): PlanCardFeatureDefinition => {
     return {
         id: 'email-distribution-lists',
         text: c('new_plans: feature').t`Email groups`,
@@ -556,7 +547,7 @@ const getEasySwitch = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getShortDomain = (included: boolean): PlanCardFeatureDefinition => {
+const getShortDomain = (included: boolean): PlanCardFeatureDefinition => {
     return {
         id: 'short-domain',
         text: c('new_plans: feature').t`Short domain (@pm.me)`,

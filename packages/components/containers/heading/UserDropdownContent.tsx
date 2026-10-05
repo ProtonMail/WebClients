@@ -31,13 +31,7 @@ import { UserDropdownFooter } from './UserDropdownFooter';
 
 import './UserDropdown.scss';
 
-export const UserSection = ({
-    info,
-    upgrade,
-}: {
-    info: UserDropdownValue['info'];
-    upgrade: UserDropdownValue['upgrade'];
-}) => {
+const UserSection = ({ info, upgrade }: { info: UserDropdownValue['info']; upgrade: UserDropdownValue['upgrade'] }) => {
     const { createNotification } = useNotifications();
     const { viewportWidth } = useActiveBreakpoint();
     const currentTheme = useTheme();

@@ -32,7 +32,7 @@ import ModalFooter from '../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../components/modalTwo/ModalHeader';
 import Option from '../../components/option/Option';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import TextAreaTwo from '../../components/v2/input/TextArea';
 import useFormErrors from '../../components/v2/useFormErrors';
 import { getCharacterCountText } from '../../helpers/getCharacterCountText';
@@ -45,7 +45,7 @@ import { findCategoryOption, getMailOptions, getVPNOptions } from './bugCategori
 import { REPORT_MAX_CHARS } from './constants';
 import { useBugModalLogs } from './useBugModalLogs';
 
-export type BugModalMode = 'chat-no-agents';
+type BugModalMode = 'chat-no-agents';
 
 interface Model extends ReturnType<typeof getReportInfo> {
     Category: OptionOptionItem | undefined;

@@ -30,7 +30,7 @@ import Option from '../../components/option/Option';
 import PasswordWithPolicyInputs from '../../components/passwordPolicy/PasswordWithPolicyInputs';
 import { usePasswordPolicyValidation } from '../../components/passwordPolicy/index';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
-import InputFieldTwo from '../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
 

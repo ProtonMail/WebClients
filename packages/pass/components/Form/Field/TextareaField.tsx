@@ -3,7 +3,7 @@ import { type FC, forwardRef, useMemo, useState } from 'react';
 
 import type { FieldProps } from 'formik';
 
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import clsx from '@proton/utils/clsx';

@@ -5,7 +5,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import Badge from '../../components/badge/Badge';
+import { Badge } from '../../components/badge/Badge';
 import type { AddressStatuses } from './helper';
 
 const AddressStatus = ({

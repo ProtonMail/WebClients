@@ -13,11 +13,7 @@ import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetr
 import { UpsellModalPanel } from './panels/UpsellModalPanel';
 import { useUpsellModal } from './useUpsellModal';
 
-export type KeepSubscription = {
-    status: 'kept';
-};
-
-export type UpsellResult = {
+type UpsellResult = {
     status: 'cancelled' | 'kept' | 'upsold';
 };
 

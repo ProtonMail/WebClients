@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 
 import { resolveFolderPath } from '../../../lib/folders/folder.utils';
 import { fromFolderKey, getFolderKey } from '../../../lib/items/item.utils';

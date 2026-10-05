@@ -96,5 +96,3 @@ export const useSharedServers = (maxAge: number) => {
         countUsersNotInAnyPolicy: result.EmailsOfUsersNotInAnyPolicy.length,
     };
 };
-
-export default useSharedServers;

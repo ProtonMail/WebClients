@@ -6,7 +6,6 @@ import { IcBolt } from '@proton/icons/icons/IcBolt';
 import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
 import { IcBrandTor } from '@proton/icons/icons/IcBrandTor';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
 import { IcEarth } from '@proton/icons/icons/IcEarth';
 import { IcLifeRing } from '@proton/icons/icons/IcLifeRing';
@@ -43,13 +42,6 @@ export const getB2BFreeVPNConnectionsText = (n: number) => {
     );
 };
 
-export const getAdvancedVPNFeature = (): PlanCardFeatureDefinition => ({
-    id: 'advanced-vpn',
-    icon: IcCheckmarkCircle,
-    included: true,
-    text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
-});
-
 export const getB2BHighSpeedVPNConnectionsText = (n: number) => {
     return c('Subscription attribute').ngettext(
         msgid`${n} high-speed VPN connection per user`,
@@ -65,15 +57,7 @@ export const getB2BHighSpeedVPNConnectionsFeature = (): PlanCardFeatureDefinitio
     included: true,
 });
 
-export const getB2BVPNConnectionsText = (n: number) => {
-    return c('Subscription attribute').ngettext(
-        msgid`${n} VPN connection per user`,
-        `${n} VPN connections per user`,
-        n
-    );
-};
-
-export const getB2BVPNConnectionsDevicesText = (n: number) => {
+const getB2BVPNConnectionsDevicesText = (n: number) => {
     return c('Subscription attribute').ngettext(
         msgid`VPN connection for ${n} device per user`,
         `VPN connection for ${n} devices per user`,
@@ -267,7 +251,7 @@ const getVPNConnectionsB2B = (n = 0, highlight?: boolean): PlanCardFeatureDefini
     };
 };
 
-export const getVPNConnections = (n = 0, highlight?: boolean): PlanCardFeatureDefinition => {
+const getVPNConnections = (n = 0, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         id: 'n-vpn-connections',
         text: c('new_plans: feature').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n),
@@ -409,27 +393,6 @@ export const getNCountries = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
-export const getVPNDevices = (n: number): PlanCardFeatureDefinition => {
-    if (n === 1) {
-        return {
-            id: 'vpn-devices',
-            text: c('new_plans: feature').t`Free VPN on a single device`,
-            tooltip: c('new_plans: tooltip')
-                .t`Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results`,
-            included: true,
-        };
-    }
-    return {
-        id: 'vpn-devices',
-        text: c('new_plans: feature').ngettext(
-            msgid`High-speed VPN on ${n} device`,
-            `High-speed VPN on ${n} devices`,
-            n
-        ),
-        included: true,
-    };
-};
-
 export const getUnlockStreaming = (): PlanCardFeatureDefinition => {
     return {
         id: 'unlock-streaming',
@@ -467,13 +430,6 @@ export const getDedicatedServersVPNFeature = (): PlanCardFeatureDefinition => {
             .t`Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control`,
     };
 };
-
-export const getDedicatedAccountManagerVPNFeature = (): PlanCardFeatureDefinition => ({
-    id: 'dedicated-account-manager-vpn',
-    icon: IcCheckmark,
-    included: true,
-    text: c('new_plans: Upsell attribute').t`Dedicated Account manager`,
-});
 
 export const getAESEncryptionVPNFeature = (): PlanCardFeatureDefinition => ({
     id: 'aes-encryption-vpn',

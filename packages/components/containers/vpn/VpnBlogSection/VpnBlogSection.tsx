@@ -103,5 +103,3 @@ export const VpnBlogSection = () => {
         </DashboardGrid>
     );
 };
-
-export default VpnBlogSection;

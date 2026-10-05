@@ -41,7 +41,7 @@ const getMonday = (days: Date[], start: number, end: number) => {
     }
 };
 
-export interface Props {
+interface Props {
     days: Date[];
     numberOfWeeks: number;
     onClickWeekNumber?: (monday: Date) => void;

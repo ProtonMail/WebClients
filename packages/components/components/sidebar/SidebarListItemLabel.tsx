@@ -2,7 +2,7 @@ import type { HTMLAttributes, ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-export interface Props extends HTMLAttributes<HTMLLabelElement> {
+interface Props extends HTMLAttributes<HTMLLabelElement> {
     children: ReactNode;
     htmlFor: string;
 }

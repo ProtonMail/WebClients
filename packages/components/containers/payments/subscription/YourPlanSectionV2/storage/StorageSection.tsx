@@ -198,7 +198,7 @@ interface DashboardStorageSection {
     shouldRender: (app: APP_NAMES, subscription: Subscription | FreeSubscription) => boolean;
 }
 
-export function getDashboardStorageSections(
+function getDashboardStorageSections(
     organization: Organization | undefined,
     user: UserModel,
     subscription: Subscription | FreeSubscription,

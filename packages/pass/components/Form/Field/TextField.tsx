@@ -4,7 +4,7 @@ import { forwardRef, useState } from 'react';
 import type { FieldProps } from 'formik';
 
 import type { Input } from '@proton/atoms/Input/Input';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import clsx from '@proton/utils/clsx';
 import identity from '@proton/utils/identity';

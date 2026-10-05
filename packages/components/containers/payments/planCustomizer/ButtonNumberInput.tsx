@@ -10,7 +10,7 @@ import Info from '../../../components/link/Info';
 import { IncreaseBlockedTooltip } from './IncreaseBlockedTooltip';
 import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';
 
-export const getIsValidValue = (min: number, max: number, step: number, newValue?: number) => {
+const getIsValidValue = (min: number, max: number, step: number, newValue?: number) => {
     return newValue !== undefined && newValue >= min && newValue <= max && newValue % step === 0;
 };
 

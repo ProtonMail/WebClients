@@ -13,7 +13,7 @@ import Modal, { type ModalProps } from '../../components/modalTwo/Modal';
 import ModalContent from '../../components/modalTwo/ModalContent';
 import ModalHeader from '../../components/modalTwo/ModalHeader';
 
-export interface Props extends ModalProps {
+interface Props extends ModalProps {
     APP_NAME: APP_NAMES;
     onOpenBugModal: () => void;
 }

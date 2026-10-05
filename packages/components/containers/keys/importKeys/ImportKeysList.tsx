@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import Badge from '../../../components/badge/Badge';
+import { Badge } from '../../../components/badge/Badge';
 import LoaderIcon from '../../../components/loader/LoaderIcon';
 import Table from '../../../components/table/Table';
 import TableBody from '../../../components/table/TableBody';

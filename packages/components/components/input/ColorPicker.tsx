@@ -25,7 +25,7 @@ interface OwnProps {
 
 type ButtonProps = DropdownButtonProps<'button'>;
 
-export type Props =
+type Props =
     ({ layout: 'inline' } & OwnProps) | ({ layout?: 'dropdown' } & OwnProps & Omit<ButtonProps, 'onChange' | 'as'>);
 
 const getOptions = () => {
