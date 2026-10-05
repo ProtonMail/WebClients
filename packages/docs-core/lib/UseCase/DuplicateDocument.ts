@@ -24,16 +24,16 @@ export class DuplicateDocument {
   /** Execute for a private document */
   async executePrivate(nodeMeta: NodeMeta, state: Uint8Array<ArrayBuffer>): Promise<Result<DocumentNodeMeta>> {
     try {
-      const useSDK = isDriveCompatSDKEnabled(this.unleashClient)
+      const replaceDriveCompat = isDriveCompatSDKEnabled(this.unleashClient)
 
       let node
-      if (useSDK) {
+      if (replaceDriveCompat) {
         node = await getDecryptedNode(nodeMeta)
       } else {
         node = await this.driveCompat.getNode(nodeMeta)
       }
 
-      const parentMetaGetter = useSDK ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
+      const parentMetaGetter = replaceDriveCompat ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
       const parentMeta: NodeMeta = node.parentNodeId
         ? {
             volumeId: node.volumeId,

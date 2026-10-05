@@ -400,13 +400,13 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     return result.getValue()
   }
 
-  public async trashDocument(useSDK = false): Promise<void> {
+  public async trashDocument(replaceDriveCompat = false): Promise<void> {
     this.documentState.setProperty('documentTrashState', 'trashing')
 
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
 
-      if (useSDK) {
+      if (replaceDriveCompat) {
         try {
           await trashDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
         } catch (error) {
@@ -432,13 +432,13 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     }
   }
 
-  public async restoreDocument(useSDK = false): Promise<void> {
+  public async restoreDocument(replaceDriveCompat = false): Promise<void> {
     this.documentState.setProperty('documentTrashState', 'restoring')
 
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
 
-      if (useSDK) {
+      if (replaceDriveCompat) {
         await restoreDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
       } else {
         // Not replacing this, because will be deleted when we switch to SDK 100%
@@ -448,7 +448,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
       await this.refreshNodeAndDocMeta({ imposeTrashState: 'not_trashed' })
     } catch (error: any) {
-      if (useSDK) {
+      if (replaceDriveCompat) {
         if (error.message.includes('Insufficient permissions')) {
           PostApplicationError(this.eventBus, {
             translatedError: c('Error')

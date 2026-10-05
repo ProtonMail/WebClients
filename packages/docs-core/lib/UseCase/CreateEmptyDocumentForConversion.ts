@@ -29,8 +29,8 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
     contents: Uint8Array<ArrayBuffer>
   }): Promise<Result<FileToDocConversionResult>> {
     try {
-      const useSDK = isDriveCompatSDKEnabled(this.unleashClient)
-      const getRoot = useSDK ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
+      const replaceDriveCompat = isDriveCompatSDKEnabled(this.unleashClient)
+      const getRoot = replaceDriveCompat ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
       const parentMeta: NodeMeta = node.parentNodeId
         ? {
             volumeId: node.volumeId,
@@ -39,7 +39,7 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
         : await getRoot()
 
       const nodeNameWithoutExtension = getNodeNameWithoutExtension(node)
-      const newDocName = useSDK
+      const newDocName = replaceDriveCompat
         ? await findAvailableNodeName(parentMeta, nodeNameWithoutExtension)
         : await this.driveCompat.findAvailableNodeName(parentMeta, nodeNameWithoutExtension)
 

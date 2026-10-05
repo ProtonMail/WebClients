@@ -36,7 +36,7 @@ import { getNodeContents as getNodeContentsSDK } from '@proton/docs-core/lib/Dri
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
-  const replaceCompatWithSDK = useDriveCompatSDK()
+  const replaceDriveCompat = useDriveCompatSDK()
 
   const [user] = useUser()
 
@@ -75,7 +75,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
     const name =
       docType === 'sheet' ? c('Title').t`Untitled spreadsheet ${date}` : c('Title').t`Untitled document ${date}`
 
-    const getRoot = replaceCompatWithSDK ? getMyFilesNodeMeta : driveCompat.getMyFilesNodeMeta
+    const getRoot = replaceDriveCompat ? getMyFilesNodeMeta : driveCompat.getMyFilesNodeMeta
     const root =
       openAction && openAction.mode === 'create'
         ? {
@@ -90,7 +90,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
     )
 
     return result
-  }, [application.logger, driveCompat, openAction, replaceCompatWithSDK])
+  }, [application.logger, driveCompat, openAction, replaceDriveCompat])
 
   useEffect(() => {
     if (isCreatingNewDocument) {
@@ -182,7 +182,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
     return undefined
   }, [contentToInject, didCreateNewDocument])
 
-  const getNodeContents = replaceCompatWithSDK ? getNodeContentsSDK : driveCompat.getNodeContents
+  const getNodeContents = replaceDriveCompat ? getNodeContentsSDK : driveCompat.getNodeContents
 
   return (
     <WordCountProvider>
