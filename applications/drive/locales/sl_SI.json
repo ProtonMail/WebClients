@@ -1289,6 +1289,9 @@
       ],
       "Stop": [
         "Ustavi"
+      ],
+      "More info": [
+        "Več informacij"
       ]
     },
     "Actions": {
@@ -3763,7 +3766,7 @@
         "Shema obrnjene davčne obveznosti ni podprta za ta paket"
       ],
       "Search failed": [
-        "Search failed"
+        "Iskanje ni uspelo"
       ],
       "Signature not verified": [
         "Podpis ni potrjen"
@@ -5530,7 +5533,7 @@
         "Ali res želite izprazniti smetnjak in trajno izbrisati vse predmete?"
       ],
       "Are you sure you want to permanently delete": [
-        "Ali ste prepričani, da želite trajno izbrisati"
+        "Ali ste prepričani, da želite trajno izbrisati?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Ali ste prepričani, da želite trajno izbrisati ${ itemName } iz smeti?"
@@ -6361,7 +6364,7 @@
         "Poskusite znova, uporabite drug način plačila ali se za pomoč obrnite na PayPal."
       ],
       "Please use another browser or download the file.": [
-        "Prosimo, uporabite drug brskalnik ali prenesite datoteko."
+        "Uporabite drug brskalnik ali prenesite datoteko."
       ],
       "Please wait till your changes are synced with the server.": [
         "Počakajte, spremembe se sinhronizirajo s strežnikom."
@@ -6709,7 +6712,7 @@
         "S tem boste preklicali vse preostale nalaganja in prenose. Preklicani prenosi ne bodo shranjeni v ${ DRIVE_APP_NAME }."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "To bo izbrisalo samo album. Vaše fotografije bodo ostale v vašem časovnem traku. Tega dejanja ni mogoče razveljaviti."
+        "To bo izbrisalo samo album. Vaše fotografije bodo ostale v vaši časovnici. Tega dejanja ni mogoče razveljaviti."
       ],
       "This will permanently delete the file you uploaded.": [
         "S tem boste trajno izbrisali datoteko, ki ste jo naložili."
@@ -7495,7 +7498,7 @@
         "Indeksirano: ${ first }, ${ second }, ${ third } in ${ fourth }"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Indeksiranje je naletelo na nepričakovano stanje in se ne more nadaljevati. Indeks je potrebno obnoviti."
+        "Indeksiranje je naletelo na nepričakovano stanje in se ne more nadaljevati. Indeks je treba obnoviti."
       ],
       "One encrypted suite. Full business protection.": [
         "En šifriran paket. Celovita zaščita za podjetja."
@@ -7507,7 +7510,7 @@
         "Podatki za iskanje so poškodovani"
       ],
       "Search encountered an internal error. Rebuild the index to recover.": [
-        "Med iskanjem je prišlo do notranje napake. Indeks je potrebno obnoviti."
+        "Med iskanjem je prišlo do notranje napake. Indeks je treba obnoviti."
       ],
       "Search engine error": [
         "Napaka iskalnika"
@@ -7519,7 +7522,7 @@
         "Nekatere fotografije v tem albumu niso shranjene na vaši časovnici. Če izbrišete ta album, bodo te fotografije trajno izbrisane."
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "Da bi lahko v celoti omogočili funkcijo iskanja, je potrebno vaše datoteke indeksirati lokalno. V tem času lahko aplikacijo ${ DRIVE_APP_NAME } uporabljate kot običajno. Ko se indeksiranje zaključi, vas bomo o tem obvestili. Če zapustite to stran, se indeksiranje začasno ustavi in se bo nadaljevalo, ko se vrnete."
+        "Vaše datoteke je treba indeksirati lokalno, da bi lahko v celoti omogočili funkcijo iskanja. V tem času lahko aplikacijo ${ DRIVE_APP_NAME } uporabljate kot običajno. Ko se indeksiranje zaključi, vas bomo o tem obvestili. Če zapustite to stran, se indeksiranje začasno ustavi in se bo nadaljevalo, ko se vrnete."
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Ko odstranite ${ deviceName } kot sinhronizirano napravo, bodo vse mape, ki so bile iz te naprave dodane v \"Ta računalnik\", trajno odstranjene iz ${ DRIVE_APP_NAME }."
@@ -7528,10 +7531,10 @@
         "V vašem brskalniku je med indeksiranjem datotek za iskanje zmanjkalo prostora. Sprostite prostor za shranjevanje in nato obnovite indeks."
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "Indeks vaših datotek se ponovno ustvarja. Z iskanjem lahko nadaljujete. a so rezultati lahko nepopolni. Ko bo postopek zaključen, vas bomo obvestili."
+        "Indeks vaših datotek se ponovno ustvarja. Z iskanjem lahko nadaljujete, a so rezultati lahko nepopolni. Ko bo postopek zaključen, vas bomo obvestili."
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "Aplikacija ${ DRIVE_APP_NAME } je zaznala, da je indeks za lokalno iskanje poškodovan in ga ni več mogoče uporabljati. Indeks je potrebno obnoviti, da se ponovno vzpostavi iskanje."
+        "Aplikacija ${ DRIVE_APP_NAME } je zaznala, da je indeks za lokalno iskanje poškodovan in ga ni več mogoče uporabljati. Indeks je treba obnoviti, da se ponovno vzpostavi iskanje."
       ],
       "I have not finished this one yet.": [
         "Tega še nisem dokončal."
@@ -8387,7 +8390,7 @@
         "Ustvarjeno ${ created }"
       ],
       "Deleted ${ deleted }": [
-        "izbrisano: ${ deleted }"
+        "Izbrisano: ${ deleted }"
       ],
       "Device #${ position }": [
         "Naprava: #${ position }"
@@ -8417,7 +8420,7 @@
         "Indeksiranje"
       ],
       "Pending invitation": [
-        "Povabilo na čakanju"
+        "Čakajoče povabilo"
       ],
       "Shared by ${ sharedBy }": [
         "V skupni rabi z ${ sharedBy }"
@@ -10224,7 +10227,7 @@
         "Datoteka je odstranjena."
       ],
       "Invitation's email was sent again": [
-        "E-poštno sporočilo s povabilom je bilo ponovno poslano"
+        "E-poštno sporočilo s povabilom je bilo ponovno poslano."
       ],
       "Link copied to clipboard": [
         "Povezava je kopirana v odložišče"
@@ -10389,7 +10392,7 @@
         "Vsi predmeti so trajno izbrisani iz smetnjaka"
       ],
       "This secure link expired, please change expire date in sharing settings": [
-        "Ta varna povezava je potekla. Prosimo, spremenite datum poteka veljavnosti v nastavitvah deljenja."
+        "Ta varna povezava je potekla. Spremenite datum poteka veljavnosti v nastavitvah deljenja."
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "\"${ ellipsedName } je trajno izbrisan iz smetnjaka"
@@ -10619,7 +10622,7 @@
         "Organizirajte datoteke neposredno s svoje namizne aplikacije"
       ],
       "Scan the QR code to install the mobile app": [
-        "Za namestitev mobilne aplikacije odčitajte QR kodo"
+        "Za namestitev mobilne aplikacije odčitajte QR kodo."
       ],
       "Secure your files": [
         "Zavarujte vaše datoteke"
@@ -13336,7 +13339,7 @@
         "Potrebujete več vzdevkov?"
       ],
       "Need to share more files with edit access?": [
-        "Želite datoteke deliti z možnostjo urejanja?"
+        "Želite več datotek deliti z možnostjo urejanja?"
       ],
       "Network error": [
         "Napaka v omrežju"
