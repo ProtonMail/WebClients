@@ -1,5 +1,5 @@
 import { $findMatchingParent, $wrapNodeInElement } from '@lexical/utils'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import type { DocsLogger } from '../../contract/DocsLogger'
 import { $createRangeSelection, $getNodeByKey, $setSelection } from 'lexical'
 import { $createImageNode } from '../Image/ImageNode'
@@ -30,7 +30,7 @@ export function $handleImageSizeChangeAsSuggestion(
     return true
   }
   logger.info('suggestion-mode: Wrapping node with new suggestion', initialWidth, initialHeight)
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
   $wrapNodeInElement(node, () =>
     $createSuggestionNode(suggestionID, 'image-change', {
       width: initialWidth,
@@ -61,7 +61,7 @@ export function $handleImageDragAndDropAsSuggestion(
     logger.info('suggestion-mode: Cannot drop image')
     return true
   }
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
   const range = getDragSelection(event)
   logger.info('suggestion-mode: Wrapping existing node with "delete" type')
   $wrapNodeInElement(draggedImageNode, () => $createSuggestionNode(suggestionID, 'delete'))

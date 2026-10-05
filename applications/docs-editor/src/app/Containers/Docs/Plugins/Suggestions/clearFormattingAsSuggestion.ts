@@ -1,5 +1,5 @@
 import { $getNearestBlockElementAncestorOrThrow, $wrapNodeInElement } from '@lexical/utils'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import { $getSelection, $isRangeSelection, $isTextNode } from 'lexical'
 import { $createSuggestionNode } from './ProtonNode'
 
@@ -23,7 +23,7 @@ export function $clearFormattingAsSuggestion(onSuggestionCreation: (id: string) 
     return true
   }
 
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
 
   let didCreateSuggestion = false
 

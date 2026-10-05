@@ -1,6 +1,6 @@
 import { $generateNodesFromSerializedNodes, $insertGeneratedNodes } from '@lexical/clipboard'
 import { $findMatchingParent, $insertFirst } from '@lexical/utils'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode } from 'lexical'
 import {
   $isDecoratorNode,
@@ -81,7 +81,7 @@ export function $handleBeforeInputEvent(
     return true
   }
 
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
 
   if ($isAnyPartOfSelectionInCodeNode(selection)) {
     logger.info('suggestion-mode: Aborting beforeinput because selection is inside a code-block')

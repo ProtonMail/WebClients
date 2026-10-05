@@ -3,7 +3,7 @@ import type { ElementNode } from 'lexical'
 import { $getSelection, $isElementNode, $isRangeSelection, type ElementFormatType } from 'lexical'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
 import type { DocsLogger } from '../../contract/DocsLogger'
 import { $isListNode } from '@lexical/list'
@@ -25,7 +25,7 @@ export function $setElementAlignmentAsSuggestion(
   const nodes = selection.getNodes()
   const alreadyHandled = new Set()
 
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
   let didCreateSuggestion = false
 
   for (const node of nodes) {
