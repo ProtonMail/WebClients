@@ -1,5 +1,6 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { type WordCountInfoCollection, createWordCountInfo } from '@proton/docs-shared'
+import type { WordCountInfoCollection } from '../../Utils/WordCount/WordCountTypes'
+import { createWordCountInfo } from '../../Utils/WordCount/createWordCountInfo'
 import { useEffect } from 'react'
 import { $getRoot, $getSelection } from 'lexical'
 
