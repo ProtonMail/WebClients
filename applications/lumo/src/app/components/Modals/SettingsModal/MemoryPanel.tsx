@@ -1,21 +1,13 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    Dropdown,
-    DropdownMenuButton,
-    InputFieldTwo,
-    Prompt,
-    SimpleDropdown,
-    Toggle,
-    useModalStateObject,
-} from '@proton/components';
+import { InputFieldTwo, Prompt, Toggle, useModalStateObject } from '@proton/components';
+import TextAreaWithCounter from '@proton/components/components/v2/input/TextAreaWithCounter';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoUserSettings } from '../../../hooks';
@@ -162,20 +154,71 @@ const ToggleRow = ({ id, label, tooltip, checked, onChange }: ToggleRowProps) =>
     </div>
 );
 
-interface AddMemoryPopoverProps {
-    tipsTitle: string;
-    onAdd: (content: string) => void;
-    disabled?: boolean;
+interface MemoryComposeFormProps {
+    value: string;
+    onChange: (next: string) => void;
+    onCancel: () => void;
+    onSubmit: () => void;
+    submitLabel: string;
+    submitDisabled?: boolean;
+    placeholder?: string;
+    autoFocus?: boolean;
 }
 
-const AddMemoryPopover = ({ tipsTitle, onAdd, disabled = false }: AddMemoryPopoverProps) => {
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [value, setValue] = useState('');
+const MemoryComposeForm = ({
+    value,
+    onChange,
+    onCancel,
+    onSubmit,
+    submitLabel,
+    submitDisabled = false,
+    placeholder,
+    autoFocus = false,
+}: MemoryComposeFormProps) => (
+    <>
+        <InputFieldTwo
+            as={TextAreaWithCounter}
+            rows={2}
+            autoFocus={autoFocus}
+            value={value}
+            maxCharacterCount={MEMORY_MAX_CONTENT_LENGTH}
+            showCharacterCount
+            counterPosition="bottom-right"
+            characterCountClassName="text-xs text-right"
+            className="memory-panel-compose-field w-full"
+            placeholder={placeholder}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => onChange(e.target.value)}
+            onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    onCancel();
+                } else if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
+                    e.preventDefault();
+                    if (!submitDisabled) {
+                        onSubmit();
+                    }
+                }
+            }}
+        />
+        <div className="flex flex-row flex-nowrap items-center justify-end gap-2">
+            <Button shape="ghost" size="small" onClick={onCancel}>
+                {c('collider_2025: Action').t`Cancel`}
+            </Button>
+            <Button shape="solid" color="norm" size="small" onClick={onSubmit} disabled={submitDisabled}>
+                {submitLabel}
+            </Button>
+        </div>
+    </>
+);
 
-    const handleClose = () => {
-        setValue('');
-        close();
-    };
+interface MemoryAddRowProps {
+    tipsTitle: string;
+    onAdd: (content: string) => void;
+    onCancel: () => void;
+}
+
+const MemoryAddRow = ({ tipsTitle, onAdd, onCancel }: MemoryAddRowProps) => {
+    const [value, setValue] = useState('');
 
     const handleAdd = () => {
         const trimmed = value.trim();
@@ -183,118 +226,27 @@ const AddMemoryPopover = ({ tipsTitle, onAdd, disabled = false }: AddMemoryPopov
             return;
         }
         onAdd(trimmed);
-        setValue('');
-        close();
     };
 
     return (
-        <>
-            <Tooltip title={c('collider_2025: Action').t`Add memory`}>
-                <Button
-                    ref={anchorRef}
-                    icon
-                    shape="ghost"
-                    size="small"
-                    onClick={toggle}
-                    disabled={disabled}
-                    aria-label={c('collider_2025: Action').t`Add memory`}
-                >
-                    <LumoIcon name="Plus" size={16} />
-                </Button>
-            </Tooltip>
-            <Dropdown
-                isOpen={isOpen}
-                anchorRef={anchorRef}
-                onClose={handleClose}
-                autoClose={false}
-                originalPlacement="bottom-end"
-                className="memory-panel-add-popover"
-            >
-                <div className="flex flex-column flex-nowrap gap-2 p-3">
-                    <div className="flex flex-row flex-nowrap items-center gap-1 text-sm text-semibold">
-                        <span>{c('collider_2025: Title').t`Add your own memory`}</span>
-                        <InfoTooltip title={tipsTitle} />
-                    </div>
-                    <InputFieldTwo
-                        value={value}
-                        placeholder={c('collider_2025: Placeholder').t`e.g. I prefer concise, bullet-point answers`}
-                        assistContainerClassName="hidden"
-                        autoFocus={isOpen}
-                        onChange={(e) => setValue(e.target.value)}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter') {
-                                e.preventDefault();
-                                handleAdd();
-                            } else if (e.key === 'Escape') {
-                                e.preventDefault();
-                                handleClose();
-                            }
-                        }}
-                    />
-                    <Button color="norm" onClick={handleAdd} disabled={!value.trim()}>
-                        {c('collider_2025: Action').t`Add`}
-                    </Button>
-                </div>
-            </Dropdown>
-        </>
-    );
-};
-
-interface MemoryActionsMenuProps {
-    hasMemories: boolean;
-    hasGeneratedMemories: boolean;
-    canOptimize: boolean;
-    onOptimize: () => void;
-    onClearAll: () => void;
-    onClearGenerated: () => void;
-}
-
-const MemoryActionsMenu = ({
-    hasMemories,
-    hasGeneratedMemories,
-    canOptimize,
-    onOptimize,
-    onClearAll,
-    onClearGenerated,
-}: MemoryActionsMenuProps) => {
-    if (!hasMemories && !hasGeneratedMemories) {
-        return null;
-    }
-
-    return (
-        <SimpleDropdown
-            as={Button}
-            icon
-            hasCaret={false}
-            shape="ghost"
-            size="small"
-            content={<LumoIcon name="Ellipsis" size={16} aria-label={c('collider_2025: Action').t`More options`} />}
-        >
-            {canOptimize && (
-                <DropdownMenuButton
-                    className="flex flex-nowrap items-center gap-2 text-left w-full"
-                    onClick={onOptimize}
-                >
-                    {c('collider_2025: Action').t`Optimize memories`}
-                </DropdownMenuButton>
-            )}
-            {hasGeneratedMemories && (
-                <DropdownMenuButton
-                    className="flex flex-nowrap items-center gap-2 text-left w-full color-danger"
-                    onClick={onClearGenerated}
-                >
-                    {c('collider_2025: Action').t`Clear auto-generated`}
-                </DropdownMenuButton>
-            )}
-            {hasMemories && (
-                <DropdownMenuButton
-                    className="flex flex-nowrap items-center gap-2 text-left w-full color-danger"
-                    onClick={onClearAll}
-                >
-                    {c('collider_2025: Action').t`Clear all`}
-                </DropdownMenuButton>
-            )}
-        </SimpleDropdown>
+        <li className="memory-panel-list-item memory-panel-compose-row flex flex-column flex-nowrap gap-3 p-3">
+            <div className="flex flex-row flex-nowrap items-center gap-2 text-xs color-weak">
+                <span className="text-sm text-semibold color-norm">
+                    {c('collider_2025: Title').t`Add your own memory`}
+                </span>
+                <InfoTooltip title={tipsTitle} />
+            </div>
+            <MemoryComposeForm
+                value={value}
+                onChange={setValue}
+                onCancel={onCancel}
+                onSubmit={handleAdd}
+                submitLabel={c('collider_2025: Action').t`Add`}
+                submitDisabled={!value.trim()}
+                placeholder={c('collider_2025: Placeholder').t`e.g. I prefer concise, bullet-point answers`}
+                autoFocus
+            />
+        </li>
     );
 };
 
@@ -310,6 +262,12 @@ interface MemoryRowProps {
 const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, onDelete }: MemoryRowProps) => {
     const [draft, setDraft] = useState(memory.content);
 
+    useEffect(() => {
+        if (isEditing) {
+            setDraft(memory.content);
+        }
+    }, [isEditing, memory.content]);
+
     const handleSave = () => {
         const trimmed = draft.trim();
         if (!trimmed || trimmed === memory.content) {
@@ -320,6 +278,35 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
     };
 
     const isTouchDevice = useIsTouchDevice();
+    const trimmedDraft = draft.trim();
+    const canSave = Boolean(trimmedDraft) && trimmedDraft !== memory.content;
+
+    const metaRow = (
+        <div className="flex flex-row flex-nowrap items-center gap-2 text-xs color-weak">
+            <time dateTime={new Date(memory.createdAt).toISOString()}>{formatMemoryDate(memory.createdAt)}</time>
+            <span aria-hidden="true">·</span>
+            <span className={`memory-panel-source-pill${isUserMemory(memory) ? '' : ' is-generated'}`}>
+                {isUserMemory(memory) ? c('collider_2025: Label').t`You` : c('collider_2025: Label').t`From chats`}
+            </span>
+        </div>
+    );
+
+    if (isEditing) {
+        return (
+            <li className="memory-panel-list-item memory-panel-compose-row flex flex-column flex-nowrap gap-3 p-3">
+                {metaRow}
+                <MemoryComposeForm
+                    value={draft}
+                    onChange={setDraft}
+                    onCancel={onCancelEdit}
+                    onSubmit={handleSave}
+                    submitLabel={c('collider_2025: Action').t`Save`}
+                    submitDisabled={!canSave}
+                    autoFocus
+                />
+            </li>
+        );
+    }
 
     return (
         <li
@@ -329,102 +316,38 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
             )}
         >
             <div className="flex flex-column flex-nowrap flex-1 min-w-0 gap-1">
-                <div className="flex flex-row flex-nowrap items-center gap-2 text-xs color-weak">
-                    <time dateTime={new Date(memory.createdAt).toISOString()}>
-                        {formatMemoryDate(memory.createdAt)}
-                    </time>
-                    <span aria-hidden="true">·</span>
-                    <span className={`memory-panel-source-pill${isUserMemory(memory) ? '' : ' is-generated'}`}>
-                        {isUserMemory(memory)
-                            ? c('collider_2025: Label').t`You`
-                            : c('collider_2025: Label').t`From chats`}
-                    </span>
-                </div>
-
-                {isEditing ? (
-                    <InputFieldTwo
-                        as="textarea"
-                        rows={2}
-                        autoFocus
-                        value={draft}
-                        maxLength={MEMORY_MAX_CONTENT_LENGTH}
-                        assistContainerClassName="hidden"
-                        className="memory-panel-edit-field w-full"
-                        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setDraft(e.target.value)}
-                        onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-                            if (e.key === 'Escape') {
-                                e.preventDefault();
-                                onCancelEdit();
-                            } else if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
-                                e.preventDefault();
-                                handleSave();
-                            }
-                        }}
-                    />
-                ) : (
-                    <p className="m-0 text-sm lh130 text-break w-full">{memory.content}</p>
-                )}
+                {metaRow}
+                <p className="m-0 text-sm lh130 text-break w-full">{memory.content}</p>
             </div>
 
             <div
                 className={clsx(
                     'flex flex-row flex-nowrap items-center gap-0 shrink-0',
-                    !isTouchDevice && !isEditing && 'group-hover:opacity-100'
+                    !isTouchDevice && 'group-hover:opacity-100'
                 )}
             >
-                {isEditing ? (
-                    <>
-                        <Tooltip title={c('collider_2025: Action').t`Save (⌘+Enter)`}>
-                            <Button
-                                shape="ghost"
-                                size="small"
-                                icon
-                                color="success"
-                                onClick={handleSave}
-                                disabled={!draft.trim()}
-                                aria-label={c('collider_2025: Action').t`Save`}
-                            >
-                                <LumoIcon name="Check" size={16} />
-                            </Button>
-                        </Tooltip>
-                        <Tooltip title={c('collider_2025: Action').t`Cancel (Esc)`}>
-                            <Button
-                                shape="ghost"
-                                size="small"
-                                icon
-                                onClick={onCancelEdit}
-                                aria-label={c('collider_2025: Action').t`Cancel`}
-                            >
-                                <LumoIcon name="X" size={16} />
-                            </Button>
-                        </Tooltip>
-                    </>
-                ) : (
-                    <>
-                        <Tooltip title={c('collider_2025: Action').t`Edit memory`}>
-                            <Button
-                                shape="ghost"
-                                size="small"
-                                icon
-                                onClick={onStartEdit}
-                                aria-label={c('collider_2025: Action').t`Edit memory`}
-                            >
-                                <LumoIcon name="Pencil" size={16} />
-                            </Button>
-                        </Tooltip>
-                        <Tooltip title={c('collider_2025: Action').t`Delete memory`}>
-                            <Button
-                                shape="ghost"
-                                size="small"
-                                icon
-                                onClick={onDelete}
-                                aria-label={c('collider_2025: Action').t`Delete memory`}
-                            >
-                                <LumoIcon name="Trash" size={16} />
-                            </Button>
-                        </Tooltip>
-                    </>
-                )}
+                <Tooltip title={c('collider_2025: Action').t`Edit memory`}>
+                    <Button
+                        shape="ghost"
+                        size="small"
+                        icon
+                        onClick={onStartEdit}
+                        aria-label={c('collider_2025: Action').t`Edit memory`}
+                    >
+                        <LumoIcon name="Pencil" size={16} />
+                    </Button>
+                </Tooltip>
+                <Tooltip title={c('collider_2025: Action').t`Delete memory`}>
+                    <Button
+                        shape="ghost"
+                        size="small"
+                        icon
+                        onClick={onDelete}
+                        aria-label={c('collider_2025: Action').t`Delete memory`}
+                    >
+                        <LumoIcon name="Trash" size={16} />
+                    </Button>
+                </Tooltip>
             </div>
         </li>
     );
@@ -439,6 +362,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
     const store = useLumoStore();
 
     const [editingId, setEditingId] = useState<string | null>(null);
+    const [isAddingMemory, setIsAddingMemory] = useState(false);
     const clearAllModal = useModalStateObject();
     const clearGeneratedModal = useModalStateObject();
     const disableMemoryModal = useModalStateObject();
@@ -464,7 +388,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
     const isMemoryAutoSaveEnabled = lumoUserSettings.isMemoryAutoSaveEnabled ?? true;
     const promptsUntilAutoSave = Math.max(0, MEMORY_AUTO_SAVE_PROMPT_THRESHOLD - newPromptsSinceLastUpdate);
     const hasMemories = memories.length > 0;
-    const canOptimize = canOptimizeMemories(memories.length);
+    const canOptimize = canOptimizeMemories(generatedMemories.length);
     const suggestOptimize = shouldSuggestMemoryOptimize(memories);
     const hasNewChats = newPromptsSinceLastUpdate > 0;
     const showUpdateFromChatsButton = hasMemories && hasNewChats;
@@ -480,6 +404,12 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
 
     const handleAddMemory = (content: string) => {
         persistMemories([createMemory(content, 'user'), ...memories]);
+        setIsAddingMemory(false);
+    };
+
+    const handleStartAddMemory = () => {
+        setEditingId(null);
+        setIsAddingMemory((open) => !open);
     };
 
     const handleDeleteMemory = (id: string) => {
@@ -714,13 +644,13 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                         {suggestOptimize && (
                             <p className="memory-panel-optimize-hint m-0 text-sm color-weak shrink-0">
                                 {c('collider_2025: Info')
-                                    .t`You have many saved memories. Use Optimize in the menu to merge duplicates and keep the list focused.`}
+                                    .t`You have many saved memories. Optimize merges duplicate chat-based entries and keeps the list focused.`}
                             </p>
                         )}
 
                         <section className="memory-panel-main flex flex-column flex-nowrap flex-1 min-h-0 rounded-lg border border-weak bg-weak overflow-hidden">
-                            <header className="shrink-0 flex flex-row flex-nowrap items-center justify-space-between gap-2 py-2 px-3 border-bottom border-weak bg-norm">
-                                <div className="flex flex-row flex-nowrap items-center min-w-0">
+                            <header className="memory-panel-toolbar shrink-0 flex flex-row flex-wrap items-center justify-space-between gap-x-2 gap-y-1 py-2 px-3 border-bottom border-weak bg-norm">
+                                <div className="flex flex-row flex-wrap items-center gap-1 min-w-0">
                                     {showUpdateFromChatsButton && (
                                         <Button
                                             shape="ghost"
@@ -729,34 +659,88 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                             onClick={handleUpdateFromChats}
                                             disabled={!canGenerateFromChats || isGenerating}
                                             loading={isBootstrapping}
-                                            className="flex flex-row flex-nowrap items-center text-sm"
+                                            className="flex flex-row flex-nowrap items-center text-sm shrink-0"
                                         >
                                             <LumoIcon name="WandSparkles" size={14} className="mr-2" />
                                             {updateButtonLabel}
                                         </Button>
                                     )}
                                 </div>
-                                <div className="flex flex-row flex-nowrap items-center gap-1 shrink-0">
-                                    <AddMemoryPopover tipsTitle={memoryTipsTitle} onAdd={handleAddMemory} />
-                                    <MemoryActionsMenu
-                                        hasMemories={hasMemories}
-                                        hasGeneratedMemories={generatedMemories.length > 0}
-                                        canOptimize={canOptimize}
-                                        onOptimize={() => optimizeModal.openModal(true)}
-                                        onClearAll={() => clearAllModal.openModal(true)}
-                                        onClearGenerated={() => clearGeneratedModal.openModal(true)}
-                                    />
+                                <div className="flex flex-row flex-wrap items-center justify-end gap-1 shrink-0">
+                                    {canOptimize && (
+                                        <Button
+                                            shape="ghost"
+                                            size="small"
+                                            color="norm"
+                                            className="text-sm shrink-0"
+                                            onClick={() => optimizeModal.openModal(true)}
+                                        >
+                                            {c('collider_2025: Action').t`Optimize memories`}
+                                        </Button>
+                                    )}
+                                    {generatedMemories.length > 0 && (
+                                        <Button
+                                            shape="ghost"
+                                            size="small"
+                                            color="danger"
+                                            className="text-sm shrink-0"
+                                            onClick={() => clearGeneratedModal.openModal(true)}
+                                        >
+                                            {c('collider_2025: Action').t`Clear auto-generated`}
+                                        </Button>
+                                    )}
+                                    {hasMemories && (
+                                        <Button
+                                            shape="ghost"
+                                            size="small"
+                                            color="danger"
+                                            className="text-sm shrink-0"
+                                            onClick={() => clearAllModal.openModal(true)}
+                                        >
+                                            {c('collider_2025: Action').t`Clear all`}
+                                        </Button>
+                                    )}
+                                    {(canOptimize || generatedMemories.length > 0 || hasMemories) && (
+                                        <span
+                                            className="memory-panel-toolbar-divider shrink-0"
+                                            aria-hidden="true"
+                                        />
+                                    )}
+                                    <Tooltip title={c('collider_2025: Action').t`Add memory`}>
+                                        <Button
+                                            icon
+                                            shape="ghost"
+                                            size="small"
+                                            onClick={handleStartAddMemory}
+                                            aria-label={c('collider_2025: Action').t`Add memory`}
+                                            aria-expanded={isAddingMemory}
+                                            className={clsx('shrink-0', isAddingMemory && 'is-active')}
+                                        >
+                                            <LumoIcon name="Plus" size={16} />
+                                        </Button>
+                                    </Tooltip>
                                 </div>
                             </header>
 
-                            {hasMemories ? (
+                            {hasMemories || isAddingMemory ? (
                                 <ul className="memory-panel-list unstyled m-0 p-0 flex-1 min-h-0 overflow-y-auto">
+                                    {isAddingMemory && (
+                                        <MemoryAddRow
+                                            key="memory-add-row"
+                                            tipsTitle={memoryTipsTitle}
+                                            onAdd={handleAddMemory}
+                                            onCancel={() => setIsAddingMemory(false)}
+                                        />
+                                    )}
                                     {memories.map((memory) => (
                                         <MemoryRow
                                             key={memory.id}
                                             memory={memory}
                                             isEditing={editingId === memory.id}
-                                            onStartEdit={() => setEditingId(memory.id)}
+                                            onStartEdit={() => {
+                                                setIsAddingMemory(false);
+                                                setEditingId(memory.id);
+                                            }}
                                             onCancelEdit={() => setEditingId(null)}
                                             onSaveEdit={(next) => handleSaveEdit(memory.id, next)}
                                             onDelete={() => handleDeleteMemory(memory.id)}
@@ -785,6 +769,25 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                         loading={isBootstrapping}
                                     >
                                         <LumoIcon name="WandSparkles" size={16} className="mr-2" />
+                                        {c('collider_2025: Action').t`Generate from chats`}
+                                    </Button>
+                                </div>
+                            )}
+
+                            {!hasMemories && isAddingMemory && (
+                                <div className="memory-panel-compose-footer shrink-0 flex flex-column flex-nowrap items-center gap-2 py-4 px-4 text-center border-top border-weak">
+                                    <p className="m-0 text-sm color-weak lh130">
+                                        {c('collider_2025: Info').t`Or pull suggestions from your recent chats.`}
+                                    </p>
+                                    <Button
+                                        shape="ghost"
+                                        size="small"
+                                        color="norm"
+                                        onClick={handleUpdateFromChats}
+                                        disabled={!canGenerateFromChats}
+                                        loading={isBootstrapping}
+                                    >
+                                        <LumoIcon name="WandSparkles" size={14} className="mr-2" />
                                         {c('collider_2025: Action').t`Generate from chats`}
                                     </Button>
                                 </div>
@@ -823,7 +826,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
             >
                 <p className="m-0">
                     {c('collider_2025: Description')
-                        .t`${LUMO_SHORT_APP_NAME} will review your saved memories, remove duplicates, and merge related entries into clearer ones. Your memory list will be replaced with the optimized result.`}
+                        .t`${LUMO_SHORT_APP_NAME} will review chat-based memories, remove duplicates, and merge related entries into clearer ones. Memories you wrote yourself are left unchanged.`}
                 </p>
             </Prompt>
 
