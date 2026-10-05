@@ -16,6 +16,16 @@ const result = (opts: WebpackEnvArguments): Configuration => {
   const webpackOptions = getWebpackOptions(opts, { appConfig })
   const config = getConfig(webpackOptions)
 
+  // Keep dependencies such as Jotai on the editor's React runtime, including JSX and renderer subpaths.
+  config.resolve = {
+    ...config.resolve,
+    alias: {
+      ...config.resolve?.alias,
+      react: path.dirname(require.resolve('react/package.json', { paths: [__dirname] })),
+      'react-dom': path.dirname(require.resolve('react-dom/package.json', { paths: [__dirname] })),
+    },
+  }
+
   if (isStandaloneSheet) {
     config.entry = { index: [path.resolve(__dirname, 'src/standalone-sheet/index.tsx')] }
     if (config.devServer) {
