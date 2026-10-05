@@ -233,10 +233,9 @@ describe('getParameters', () => {
     });
 
     describe('totalX params', () => {
-        it.each(Object.entries(ADDON_PREFIXES))(
+        it.each(Object.values(ADDON_GENERIC_NAMES))(
             'total%s is ignored when missing plan',
-            (_, addonPrefix: ADDON_PREFIXES) => {
-                const addon = ADDON_GENERIC_NAMES[addonPrefix];
+            (addon) => {
                 const result = callGetParameters(`?total${addon}=1`);
 
                 expect(result.totals).not.toHaveProperty(`total${addon}`);
@@ -252,10 +251,9 @@ describe('getParameters', () => {
             expect(result.totals).not.toHaveProperty(param);
         });
 
-        it.each(Object.entries(ADDON_PREFIXES))(
+        it.each(Object.values(ADDON_GENERIC_NAMES))(
             'total%s is present when plan defined',
-            (_, addonPrefix: ADDON_PREFIXES) => {
-                const addon = ADDON_GENERIC_NAMES[addonPrefix];
+            (addon) => {
                 const result = callGetParameters(`?plan=mail2022&total${addon}=1`);
 
                 expect(result.totals).toHaveProperty(`total${addon}`);

@@ -6,7 +6,7 @@ import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, type PLANS } from './constants';
 import { getDefaultMainCurrency } from './currencies';
 import type { FeatureLimitKey, FreeSubscription, PlanIDs } from './interface';
 import { getSupportedAddons, isAddonType } from './plan/addons';
-import { getPlanFeatureLimit } from './plan/feature-limits';
+import { getPlanFeatureLimit, getPlansLimit } from './plan/feature-limits';
 import { getPlanNameFromIDs, isMultiUserPersonalPlan } from './plan/helpers';
 import type { Plan } from './plan/interface';
 import { getSubscriptionsArray, isManagedExternally } from './subscription/helpers/external-management';
@@ -181,20 +181,43 @@ export interface TransferAddonArgs {
 /** A transfer strategy returns the new addon quantity, or `undefined` to keep the carried-over value. */
 export type TransferAddonFn = (args: TransferAddonArgs) => number | undefined;
 
+const getSpaceFromNonMemberAddons = (planIDs: PlanIDs, plans: Plan[]): number => {
+    const nonMemberAddons = Object.entries(planIDs).flatMap(([name, quantity]) => {
+        const addonType = getAddonConfigByName(name as ADDON_NAMES)?.addonType;
+        const addonPlan = plans.find(({ Name }) => Name === name);
+        if (!addonType || addonType === ADDON_PREFIXES.MEMBER || !addonPlan) {
+            return [];
+        }
+        return [{ plan: addonPlan, quantity }];
+    });
+
+    return getPlansLimit(nonMemberAddons, 'MaxSpace');
+};
+
 // Find out the smallest number of member addons that could accommodate the previously known usage of the
 // resources. For example, if the user had 5 addresses, and each member addon only provides 1 additional
 // address, then we would need to add 5 member addons to cover the previous usage. The maximum is chosen
 // across all types of resources (space, addresses, VPNs, members, calendars) so as to ensure that the new
 // plan covers the maximum usage of any single resource. In addition, we explicitly check how many members
 // were used previously.
-export const transferMember: TransferAddonFn = ({ addon, currentPlanIDs, plan, currentPlan, organization, plans }) => {
+export const transferMember: TransferAddonFn = ({
+    addon,
+    currentPlanIDs,
+    newPlanIDs,
+    plan,
+    currentPlan,
+    organization,
+    plans,
+}) => {
     const memberAddon = plans.find(({ Name }) => Name === addon);
     if (!memberAddon) {
         return undefined;
     }
 
-    const diffSpace =
-        ((organization.UsedMembers > 1 ? organization.AssignedSpace : organization.UsedSpace) || 0) - plan.MaxSpace;
+    // MSP transfers before member (see getTransferOrder), so newPlanIDs already holds the space it
+    // grants. Member addons only need to cover the rest.
+    const usedSpace = (organization.UsedMembers > 1 ? organization.AssignedSpace : organization.UsedSpace) || 0;
+    const diffSpace = usedSpace - plan.MaxSpace - getSpaceFromNonMemberAddons(newPlanIDs, plans);
     const memberAddonsWithEnoughSpace =
         diffSpace > 0 && memberAddon.MaxSpace ? Math.ceil(diffSpace / memberAddon.MaxSpace) : 0;
 
@@ -318,10 +341,7 @@ export const transferLumo: TransferAddonFn = ({ addon, currentPlanIDs, newPlanID
 export const transferMeet: TransferAddonFn = ({ currentPlanIDs, plan, plans }) =>
     getMeetWithEnoughSeats({ planIDs: currentPlanIDs, toPlan: plan, plans });
 
-// Computed strategy 'subtract-included': new quantity = current total of the feature minus what the
-// new plan already includes.
-export const transferSubtractIncluded: TransferAddonFn = ({ currentPlanIDs, newPlanIDs, plans, featureLimitKey }) => {
-    // cycle and currency don't matter in this case
+const transferAddonSeats: TransferAddonFn = ({ currentPlanIDs, newPlanIDs, plans, featureLimitKey }) => {
     const current = new SelectedPlan(currentPlanIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
     const next = new SelectedPlan(newPlanIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
 
@@ -334,7 +354,7 @@ const transferHandlers: Record<AddonTransferStrategy, TransferAddonFn> = {
     scribe: transferScribe,
     lumo: transferLumo,
     meet: transferMeet,
-    'subtract-included': transferSubtractIncluded,
+    addonSeats: transferAddonSeats,
 };
 
 /**
