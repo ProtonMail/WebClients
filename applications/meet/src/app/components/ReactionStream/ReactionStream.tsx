@@ -28,16 +28,31 @@ interface StreamItem {
     rise: number;
 }
 
-const randomBetween = (min: number, max: number) => min + Math.random() * (max - min);
+// Maps a string to a number in [0, 1) (FNV-1a). Positions are derived from the reaction id
+// rather than randomness, so each reaction gets its own spot and the result is reproducible.
+const hashToUnit = (value: string, salt: number) => {
+    let hash = 2166136261 ^ salt;
+    for (let i = 0; i < value.length; i++) {
+        hash = Math.imul(hash ^ value.charCodeAt(i), 16777619);
+    }
+    return (hash >>> 0) / 4294967296;
+};
 
-const createStreamItem = (identity: string, emoji: string, timestamp: number): StreamItem => ({
-    id: `${identity}-${timestamp}`,
-    identity,
-    emoji,
-    left: randomBetween(3, 25),
-    drift: randomBetween(10, 24) * (Math.random() < 0.5 ? -1 : 1),
-    rise: randomBetween(50, 65),
-});
+const between = (unit: number, min: number, max: number) => min + unit * (max - min);
+
+const createStreamItem = (identity: string, emoji: string, timestamp: number): StreamItem => {
+    const id = `${identity}-${timestamp}`;
+    const unit = (salt: number) => hashToUnit(id, salt);
+
+    return {
+        id,
+        identity,
+        emoji,
+        left: between(unit(1), 3, 25),
+        drift: between(unit(2), 10, 24) * (unit(3) < 0.5 ? -1 : 1),
+        rise: between(unit(4), 50, 65),
+    };
+};
 
 const ReactionStreamItem = ({ item, onDone }: { item: StreamItem; onDone: (id: string) => void }) => {
     const localParticipantIdentity = useMeetSelector(selectLocalParticipantIdentity);
