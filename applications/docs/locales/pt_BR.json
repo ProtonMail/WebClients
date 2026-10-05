@@ -931,6 +931,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
+      ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
+      "More info": [
+        "Mais informações"
       ]
     },
     "Actions message": {
@@ -3583,6 +3589,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Não foi possível ler parte deste arquivo: ${ message }"
+      ],
+      "Move operation aborted": [
+        "Operação de movimento interrompida"
       ]
     },
     "error": {
@@ -5819,6 +5831,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Você tem uma fatura em aberta em ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -7950,6 +7965,9 @@
       ],
       "Your subscription renews soon": [
         "Sua assinatura renovará em breve"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunidade de aproveitar o primeiro mês do plano ${ plan } por esse preço."
       ]
     },
     "Offer fearue": {
@@ -7996,6 +8014,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Aliases ilimitados para proteger a sua identidade"
+      ],
+      "Short @pm.me address": [
+        "Endereço de e-mail curto @pm.me"
       ]
     },
     "Onboarding Trial": {
@@ -10611,6 +10632,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Seu período de teste terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obter ${ discount }% de desconto no ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obter ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "2 TB of storage to share": [
+        "2 TB de armazenamento para compartilhar"
+      ],
+      "2 user accounts": [
+        "2 contas de usuário"
+      ],
+      "All premium features from your current plan": [
+        "Todos os recursos premium do seu plano atual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "por 12 meses"
       ]
     }
   }

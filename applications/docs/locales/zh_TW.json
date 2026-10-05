@@ -905,6 +905,12 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "More info": [
+        "更多資訊"
       ]
     },
     "Actions message": {
@@ -3458,6 +3464,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️無法解密的名字"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "失敗替 ${ signatureType } 簽名驗證: ${ errorMessage }"
       ]
     },
     "error": {
@@ -7847,6 +7856,15 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "到期後將自動以 ${ renewPriceStr } 的價格續約 ${ renewalLength } 個月。您可以隨時取消。"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "切換代表您同意我們的 ${ termsLink }."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "試用方案不支援 ${ LUMO_SHORT_APP_NAME } 座席。"
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "試用方案不支援獨立 IPs。"
       ]
     },
     "PGP key encryption warning": {
@@ -10124,6 +10142,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的試用將於 ${ textDate } 結束。若您在 ${ textDate } 前取消，則不會收費。${ action }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "購買 ${ planName } 享 ${ discount }% 折扣"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/每月"
+      ],
+      "2 TB of storage to share": [
+        "共享 2 TB 儲存空間"
+      ],
+      "2 user accounts": [
+        "2 位使用者帳號"
+      ],
+      "All premium features from your current plan": [
+        "來自於您現行方案的全部頂級質子版功能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 個月"
       ]
     }
   }
