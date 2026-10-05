@@ -10,7 +10,7 @@ import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/ad
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { startEasySwitchSignupImportTask } from '../api';
+import { checkExternalAddressClaimable, startEasySwitchSignupImportTask } from '../api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '../constants';
 import { BYOE_ADDRESS_ERROR, type EASY_SWITCH_SOURCES, type ImportToken, OAUTH_PROVIDER } from '../interface';
 import { loadImporters } from '../logic/importers/importers.actions';
@@ -24,6 +24,7 @@ import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 interface Props {
     showSuccessModal: (connectedAddress: string, importEmails: boolean) => void;
     showAddressLinkedToAnotherAccountModal?: () => void;
+    showClaimableAddressModal?: (email: string) => void;
     onComplete?: () => void;
     source: EASY_SWITCH_SOURCES;
 }
@@ -31,6 +32,7 @@ interface Props {
 const useSetupGmailBYOEAddress = ({
     showSuccessModal,
     showAddressLinkedToAnotherAccountModal,
+    showClaimableAddressModal,
     onComplete,
     source,
 }: Props) => {
@@ -38,6 +40,8 @@ const useSetupGmailBYOEAddress = ({
     const [addresses] = useAddresses();
     const [hasAccessToBYOE] = useBYOEFeatureStatus();
     const isInMaintenance = useFlag('MaintenanceImporter');
+    const canClaimExternalAddress = useFlag('CanClaimExternalAddress');
+
     const easySwitchDispatch = useEasySwitchDispatch();
     const allSyncs = useEasySwitchSelector(getAllSync);
     const handleError = useErrorHandler();
@@ -99,7 +103,24 @@ const useSetupGmailBYOEAddress = ({
                 const { code } = getApiError(e);
 
                 if (code === BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS) {
-                    showAddressLinkedToAnotherAccountModal?.();
+                    let isClaimable = false;
+                    try {
+                        // We want to gate the API call to avoid making it if the feature is not enabled
+                        if (canClaimExternalAddress) {
+                            const response = await api<{ CanBeClaimed: boolean }>(
+                                checkExternalAddressClaimable(token.Account)
+                            );
+                            isClaimable = response?.CanBeClaimed === true;
+                        }
+                    } catch {
+                        isClaimable = false;
+                    }
+
+                    if (isClaimable) {
+                        showClaimableAddressModal?.(token.Account);
+                    } else {
+                        showAddressLinkedToAnotherAccountModal?.();
+                    }
                     onComplete?.();
                     return;
                 }

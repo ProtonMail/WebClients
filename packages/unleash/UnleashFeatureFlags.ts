@@ -58,6 +58,7 @@ type AccountProjectFeatureFlag =
 
 enum ActivationFeatureFlag {
     MaintenanceImporter = 'MaintenanceImporter',
+    CanClaimExternalAddress = 'CanClaimExternalAddress',
 }
 
 enum AdminFeatureFlag {
