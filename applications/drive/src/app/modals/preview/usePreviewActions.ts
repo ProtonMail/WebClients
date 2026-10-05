@@ -1,4 +1,5 @@
 import { MemberRole, type NodeEntity } from '@proton/drive';
+import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet, isSupportedText } from '@proton/shared/lib/helpers/mimetype';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -66,6 +67,7 @@ export default function usePreviewActions({
 
         const uploadController = await uploader.uploadFromStream(bufferToStream(content), []);
         await uploadController.completion();
+        recentlyAccessed.report(drive, [nodeUid]);
     };
 
     const openInDocsType = mimeType ? getOpenInDocsInfo(mimeType) : undefined;
