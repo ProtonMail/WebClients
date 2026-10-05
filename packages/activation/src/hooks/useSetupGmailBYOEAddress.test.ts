@@ -2,6 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { startEasySwitchSignupImportTask } from '../api';
 import type { ImportToken } from '../interface';
@@ -52,6 +53,8 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn(() => false),
 }));
 
+const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+
 jest.mock('./useBYOEFeatureStatus');
 const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
 
@@ -62,6 +65,7 @@ jest.mock('../thunks/byoeAddresses', () => ({
 
 jest.mock('../api', () => ({
     startEasySwitchSignupImportTask: jest.fn(),
+    checkExternalAddressClaimable: jest.fn((Email: string) => ({ url: 'claimable', method: 'POST', Email })),
 }));
 
 jest.mock('@proton/shared/lib/helpers/address', () => ({
@@ -92,6 +96,7 @@ describe('useSetupGmailBYOEAddress', () => {
             mockGetIsBYOEAddress.mockReturnValue(false);
             mockDispatch.mockResolvedValue({ Email: 'test@gmail.com', ID: 'addr-id' });
             mockApi.mockResolvedValue({});
+            mockUseFlag.mockReturnValue(false);
         });
 
         it('should do nothing when hasError is true', async () => {
@@ -213,6 +218,78 @@ describe('useSetupGmailBYOEAddress', () => {
             expect(mockErrorHandler).not.toHaveBeenCalled();
             expect(mockShowSuccessModal).not.toHaveBeenCalled();
             expect(mockDispatch).not.toHaveBeenCalled();
+        });
+
+        describe('claimable external address check', () => {
+            const rejectWith2011 = () =>
+                Object.assign(new Error('exists'), {
+                    data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
+                });
+            const isClaimableCall = (call: any[]) => call[0]?.url === 'claimable';
+
+            const setup = async (checkResult: () => Promise<any>, { flagEnabled = true } = {}) => {
+                mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress' && flagEnabled);
+                mockApi.mockImplementation((config: any) =>
+                    config.url === 'claimable' ? checkResult() : Promise.reject(rejectWith2011())
+                );
+                const showClaimable = jest.fn();
+                const showLegacy = jest.fn();
+                const { result } = renderHook(() =>
+                    useSetupGmailBYOEAddress({
+                        showSuccessModal: jest.fn(),
+                        showAddressLinkedToAnotherAccountModal: showLegacy,
+                        showClaimableAddressModal: showClaimable,
+                        source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    })
+                );
+                await act(async () => {
+                    await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                });
+                return { showClaimable, showLegacy };
+            };
+
+            it('should show the claimable modal on 2011 when the address is claimable', async () => {
+                const { showClaimable, showLegacy } = await setup(async () => ({ CanBeClaimed: true }));
+                expect(showClaimable).toHaveBeenCalledWith(mockToken.Account);
+                expect(showLegacy).not.toHaveBeenCalled();
+            });
+
+            it('should show the legacy modal on 2011 when the address is not claimable', async () => {
+                const { showClaimable, showLegacy } = await setup(async () => ({ CanBeClaimed: false }));
+                expect(showLegacy).toHaveBeenCalled();
+                expect(showClaimable).not.toHaveBeenCalled();
+            });
+
+            it('should fall back to the legacy modal on 2011 when the claimable check fails', async () => {
+                const { showClaimable, showLegacy } = await setup(() => Promise.reject(new Error('Network error')));
+                expect(showLegacy).toHaveBeenCalled();
+                expect(showClaimable).not.toHaveBeenCalled();
+            });
+
+            it('should skip the claimable check and show the legacy modal on 2011 when the flag is disabled', async () => {
+                const { showClaimable, showLegacy } = await setup(async () => ({ CanBeClaimed: true }), {
+                    flagEnabled: false,
+                });
+                expect(mockApi.mock.calls.some(isClaimableCall)).toBe(false);
+                expect(showLegacy).toHaveBeenCalled();
+                expect(showClaimable).not.toHaveBeenCalled();
+            });
+
+            it('should never call the claimable endpoint when the import succeeds', async () => {
+                const showClaimable = jest.fn();
+                const { result } = renderHook(() =>
+                    useSetupGmailBYOEAddress({
+                        showSuccessModal: jest.fn(),
+                        showClaimableAddressModal: showClaimable,
+                        source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    })
+                );
+                await act(async () => {
+                    await result.current.handleBYOEWithImportCallback(false, true, mockToken);
+                });
+                expect(mockApi.mock.calls.some(isClaimableCall)).toBe(false);
+                expect(showClaimable).not.toHaveBeenCalled();
+            });
         });
 
         it('if API fails with an error other than 2011 then it should be handled as normal', async () => {
