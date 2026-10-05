@@ -5,6 +5,7 @@ import { PLANS_MAP, getLongTestPlans } from '../testing/data-plans';
 import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from './constants';
 import type { PlanIDs } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
+import type { Plan } from './plan/interface';
 import {
     clearPlanIDs,
     getAddonsFromIDs,
@@ -925,6 +926,68 @@ describe('planIDsPositiveDifference', () => {
             [PLANS.BUNDLE_PRO_2024]: 1,
             [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 4,
             [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 1,
+        });
+    });
+});
+
+describe('member addon transfer — space granted by other addons', () => {
+    const GB = 1024 ** 3;
+    const plans = getLongTestPlans();
+    const memberPassBusiness = plans.find(({ Name }) => Name === ADDON_NAMES.MEMBER_PASS_BUSINESS) as Plan;
+    const mspPassBusiness: Plan = {
+        ...memberPassBusiness,
+        Name: ADDON_NAMES.MSP_PASS_BUSINESS,
+        MaxSpace: 10240 * GB,
+        MaxMembers: 0,
+        MaxAddresses: 0,
+    };
+    const plansWithMsp = [...plans, mspPassBusiness];
+
+    it('should not buy member addons for the space that the MSP addon already grants', () => {
+        const organization = {
+            UsedMembers: 3,
+            UsedSpace: 2275177,
+            AssignedSpace: 1040 * GB,
+        } as Organization;
+
+        expect(
+            switchPlan({
+                currentPlanIDs: {
+                    [PLANS.PASS_BUSINESS]: 1,
+                    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: 20,
+                    [ADDON_NAMES.MSP_PASS_BUSINESS]: 1,
+                },
+                newPlan: PLANS.PASS_BUSINESS,
+                plans: plansWithMsp,
+                organization,
+            })
+        ).toEqual({
+            [PLANS.PASS_BUSINESS]: 1,
+            [ADDON_NAMES.MEMBER_PASS_BUSINESS]: 20,
+            [ADDON_NAMES.MSP_PASS_BUSINESS]: 1,
+        });
+    });
+
+    it('should cover the space with member addons when the MSP addon is not available in the new plan', () => {
+        const organization = {
+            UsedMembers: 1,
+            UsedSpace: 5000 * GB,
+        } as Organization;
+        const currentPlanIDs = { [PLANS.PASS_BUSINESS]: 1, [ADDON_NAMES.MSP_PASS_BUSINESS]: 1 };
+
+        expect(switchPlan({ currentPlanIDs, newPlan: PLANS.PASS_BUSINESS, plans: plansWithMsp, organization })).toEqual(
+            {
+                [PLANS.PASS_BUSINESS]: 1,
+                [ADDON_NAMES.MSP_PASS_BUSINESS]: 1,
+            }
+        );
+
+        // bundlepro2024 has 1 TB in the plan and 1 TB per member addon: ceil((5000 GB - 1024 GB) / 1024 GB) = 4
+        expect(
+            switchPlan({ currentPlanIDs, newPlan: PLANS.BUNDLE_PRO_2024, plans: plansWithMsp, organization })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 4,
         });
     });
 });

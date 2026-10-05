@@ -232,6 +232,7 @@ describe('getSupportedAddons', () => {
                 [ADDON_NAMES.MEMBER_PASS_BUSINESS]: true,
                 [ADDON_NAMES.LUMO_PASS_BUSINESS]: true,
                 [ADDON_NAMES.MEET_PASS_BUSINESS]: true,
+                [ADDON_NAMES.MSP_PASS_BUSINESS]: true,
             };
             expect(result).toEqual(expected);
         });
