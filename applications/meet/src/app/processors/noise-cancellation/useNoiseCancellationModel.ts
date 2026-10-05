@@ -22,7 +22,7 @@ export const useNoiseCancellationModel = (): NoiseCancellationModel => {
 
     const getNoiseCancellationModel = useCallback(() => {
         const candidates = [
-            createKrispModel(room, isKrispDebugEnabled),
+            createKrispModel(room, { debugLogs: isKrispDebugEnabled, reportError: reportMeetError }),
             createDtlnModel({ isDtlnPerfMonitorEnabled, reportError: reportMeetError }),
             nativeModel,
         ];
