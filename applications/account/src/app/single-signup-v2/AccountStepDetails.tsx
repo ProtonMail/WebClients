@@ -416,9 +416,7 @@ const AccountStepDetails = ({
                     {hasAccessToBYOE && (
                         <BYOESignupButton
                             onEmailValue={(value) => onValue.onEmailValue(value, state.domains)}
-                            onImportEmailsValue={(importEmails, importPeriod) =>
-                                onValue.onDetailsDiff({ importEmails, importPeriod })
-                            }
+                            onImportEmailsValue={(importEmails) => onValue.onDetailsDiff({ importEmails })}
                             signupType={state.signupType}
                             setSignupType={(signupType) => onValue.onDetailsDiff({ signupType })}
                             onUseInternalAddress={() =>
