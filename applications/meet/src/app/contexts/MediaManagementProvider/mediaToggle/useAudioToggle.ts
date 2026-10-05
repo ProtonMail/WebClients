@@ -3,7 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { LocalTrack } from 'livekit-client';
 import { Track } from 'livekit-client';
+import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
@@ -68,6 +70,7 @@ const getErrorReason = (error: unknown) => {
  */
 export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudioContext: MeetAudioContext) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
+    const { createNotification } = useNotifications();
 
     const noiseCancellationModel = useNoiseCancellationModel();
     const isNoiseCancellationDisabledByDefault = useIsNoiseCancellationDisabledByDefault();
@@ -280,6 +283,24 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
         }
     };
 
+    const turnOffNoiseFilterForPerformance = useStableCallback(async (generation: number) => {
+        if (generation !== noiseFilterGeneration.current) {
+            debugLog('noiseFilter:disabled-for-performance-stale', { generation });
+            return;
+        }
+
+        debugLog('noiseFilter:disabled-for-performance', { model: noiseCancellationModel.id });
+        setNoiseFilter(false);
+        await detachNoiseFilter();
+
+        createNotification({
+            key: 'noise-cancellation-disabled-for-performance',
+            type: 'warning',
+            text: c('Info')
+                .t`Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.`,
+        });
+    });
+
     /**
      * Creates a new noise filter processor (Krisp or DTLN) and attaches it to the current audio track.
      * Guards against stale attach via generation counter — if abandonNoiseFilter() is called while
@@ -339,7 +360,11 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
             return;
         }
 
-        const processor = noiseCancellationModel.createProcessor();
+        const processor = noiseCancellationModel.createProcessor({
+            onDisabledForPerformance: () => {
+                void turnOffNoiseFilterForPerformance(gen);
+            },
+        });
 
         if (!processor) {
             debugLog('noiseFilter:attach-skip-no-processor', { model: noiseCancellationModel.id });
@@ -731,7 +756,10 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
         setNoiseFilter(newValue);
         persistNoiseFilter(newValue);
 
-        if (isMicrophoneEnabled) {
+        // Muted mics still carry the processor, and unmuting only ever attaches one, never removes it.
+        const shouldDetachWhileMuted = !newValue && !noiseCancellationModel.isNative && !!noiseFilterProcessor.current;
+
+        if (isMicrophoneEnabled || shouldDetachWhileMuted) {
             try {
                 if (noiseCancellationModel.isNative) {
                     // Recreate the mic track with the native `noiseSuppression` constraint, since
