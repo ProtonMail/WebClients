@@ -109,5 +109,3 @@ export const useInterval = (interval: number, handler: Handler) => {
 
     return () => actualHandler.cancel?.();
 };
-
-export default useHandler;

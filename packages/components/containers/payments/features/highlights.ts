@@ -35,7 +35,7 @@ import { getStorage } from './drive';
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 import { getPassMonitorText } from './pass';
 
-export const getNUsersAdminText = ({ n, admins, users }: { n: number; admins: number; users: number }) => {
+const getNUsersAdminText = ({ n, admins, users }: { n: number; admins: number; users: number }) => {
     const adminsText = c('new_plans: feature highlight').ngettext(msgid`${admins} admin`, `${admins} admins`, admins);
     const usersText = c('new_plans: feature highlight').ngettext(msgid`${users} user`, `${users} users`, users);
 
@@ -230,7 +230,7 @@ export const getAdminPanel = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getCustomBranding = (included: boolean): PlanCardFeatureDefinition => {
+const getCustomBranding = (included: boolean): PlanCardFeatureDefinition => {
     return {
         id: 'custom-branding',
         text: c('new_plans: feature').t`Custom workspace branding`,

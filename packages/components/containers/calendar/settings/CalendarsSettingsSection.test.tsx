@@ -60,7 +60,7 @@ jest.mock('@proton/app-context/useApi', () => ({
 }));
 
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
-jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
+jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => ({ useCalendarsInfoListener: () => ({}) }));
 jest.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({ call: jest.fn() })),
 }));

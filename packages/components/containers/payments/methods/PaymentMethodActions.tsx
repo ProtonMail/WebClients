@@ -18,7 +18,7 @@ import useModalState, { useModalStateWithData } from '../../../components/modalT
 import Prompt from '../../../components/prompt/Prompt';
 import useEventManager from '../../../hooks/useEventManager';
 
-export interface Props {
+interface Props {
     method: SavedPaymentMethod;
     methods: SavedPaymentMethod[];
     app: APP_NAMES;

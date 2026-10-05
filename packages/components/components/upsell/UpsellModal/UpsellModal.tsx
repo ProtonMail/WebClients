@@ -11,7 +11,7 @@ import UpsellModalDescription from './components/UpsellModalDescription';
 import UpsellModalUpgradeButton from './components/UpsellModalUpgradeButton';
 import useUpsellModalConfig from './hooks/useUpsellModalConfig';
 
-export interface UpsellModalProps {
+interface UpsellModalProps {
     title: ReactNode;
     /** Image displayed above the title */
     illustration: string;

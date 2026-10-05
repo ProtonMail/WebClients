@@ -29,7 +29,7 @@ export const createLocationFilter = (payload: CreateLocationFilterPayload) => ({
     data: payload,
 });
 
-export interface CountryCitiesTranslations {
+interface CountryCitiesTranslations {
     [/** english */ city: string]: /** translation */ string | null;
 }
 

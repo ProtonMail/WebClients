@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import Info from '../../components/link/Info';
 import Time, { getReadableTime } from '../../components/time/Time';
 
-export interface Props {
+interface Props {
     nextSubscriptionStart: number;
 }
 

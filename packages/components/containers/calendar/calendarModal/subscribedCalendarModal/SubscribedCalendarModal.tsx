@@ -19,7 +19,7 @@ import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/cale
 import Form from '../../../../components/form/Form';
 import Loader from '../../../../components/loader/Loader';
 import BasicModal from '../../../../components/modalTwo/BasicModal';
-import InputFieldTwo from '../../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../../components/v2/field/InputField';
 import GenericError from '../../../error/GenericError';
 import useGetCalendarActions from '../../hooks/useGetCalendarActions';
 import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';

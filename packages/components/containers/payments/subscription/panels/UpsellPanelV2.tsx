@@ -21,7 +21,7 @@ import { isUpsellCta } from '../helpers';
 
 import './UpsellPanelV2.scss';
 
-export interface UpsellPanelProps {
+interface UpsellPanelProps {
     title: string;
     plan?: PLANS;
     icon?: ReactNode;

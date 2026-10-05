@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-export interface Props extends HTMLAttributes<HTMLSpanElement> {
+interface Props extends HTMLAttributes<HTMLSpanElement> {
     className?: string;
 }
 

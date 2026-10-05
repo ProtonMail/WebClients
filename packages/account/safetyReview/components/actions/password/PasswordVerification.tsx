@@ -12,7 +12,7 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { TwoFactorAuth } from '@proton/components/containers/password/TwoFactorAuth';
 import { getReAuthTwoFactorTypes } from '@proton/components/containers/password/getReAuthTwoFactorTypes';

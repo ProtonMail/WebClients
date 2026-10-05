@@ -73,13 +73,3 @@ vi.mock('@proton/components/containers/vpn/OpenVPNConfigurationSection/LoadIndic
     __esModule: true,
     default: () => null,
 }));
-
-vi.mock('@proton/components/containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection', () => ({
-    __esModule: true,
-    default: () => null,
-}));
-
-vi.mock('@proton/components/containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection', () => ({
-    __esModule: true,
-    default: () => null,
-}));

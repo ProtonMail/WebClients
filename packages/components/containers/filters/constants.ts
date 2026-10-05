@@ -50,7 +50,7 @@ export const getComparatorLabels = (comparator: ConditionComparator) => {
     }
 };
 
-export const getOperatorLabels = (statement: FilterStatement) => {
+const getOperatorLabels = (statement: FilterStatement) => {
     switch (statement) {
         case FilterStatement.ALL:
             return c('Filter modal operators').t`All conditions must be fulfilled (AND)`;

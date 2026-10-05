@@ -1,7 +1,7 @@
 import { usePlans } from '@proton/account/plans/hooks';
 import { PLANS } from '@proton/payments/core/constants';
 
-export const useHasPlan = (planName: PLANS) => {
+const useHasPlan = (planName: PLANS) => {
     const [plansResult] = usePlans();
     return plansResult?.plans.some(({ Name }) => Name === planName);
 };

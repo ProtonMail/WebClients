@@ -2,7 +2,7 @@ import { PLANS } from '@proton/payments/core/constants';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-export const getSsoKbUrl = (app: APP_NAMES) => {
+const getSsoKbUrl = (app: APP_NAMES) => {
     if (app === APPS.PROTONVPN_SETTINGS) {
         return 'https://protonvpn.com/support/sso';
     }
@@ -14,7 +14,7 @@ export const getSsoKbUrl = (app: APP_NAMES) => {
     }
 };
 
-export const getSsoUpsellPlan = (app: APP_NAMES) => {
+const getSsoUpsellPlan = (app: APP_NAMES) => {
     if (app === APPS.PROTONVPN_SETTINGS) {
         return PLANS.VPN_BUSINESS;
     }

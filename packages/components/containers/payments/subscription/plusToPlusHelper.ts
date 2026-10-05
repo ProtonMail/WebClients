@@ -4,7 +4,7 @@ import type { Plan, SubscriptionPlan } from '@proton/payments/core/plan/interfac
 import { isValidPlanName } from '@proton/payments/core/type-guards';
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-export const getPlusTitle = (appName: string) => {
+const getPlusTitle = (appName: string) => {
     return `${appName} Plus`;
 };
 

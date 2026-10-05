@@ -17,7 +17,7 @@ import type { Domain, EdugainAffiliations, SSO } from '@proton/shared/lib/interf
 import { IDP_TYPE } from '@proton/shared/lib/interfaces';
 
 import Info from '../../../components/link/Info';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import TextAreaTwo from '../../../components/v2/input/TextArea';
 import useFormErrors from '../../../components/v2/useFormErrors';
 import SettingsLayout from '../../account/SettingsLayout';

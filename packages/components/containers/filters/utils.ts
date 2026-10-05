@@ -160,7 +160,7 @@ export const newFilter = (): CreateFilter => {
 /**
  * Return a filter name based on baseName but unique in the list of existing filters
  */
-export const createUniqueName = (baseName: string, filters: Filter[]) => {
+const createUniqueName = (baseName: string, filters: Filter[]) => {
     let filterName = baseName;
     let counter = 1;
     const isAlreadyUsed = (name: string) => filters.some((filter) => filter.Name === name);
@@ -214,5 +214,3 @@ export const createDefaultLabelsFilter = (
         return filter;
     }, []);
 };
-
-export default newFilter;

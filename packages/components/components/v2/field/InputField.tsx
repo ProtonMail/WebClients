@@ -236,5 +236,3 @@ https://github.com/styleguidist/react-docgen-typescript/issues/215
 */
 export const InputField: PolymorphicForwardRefExoticComponent<InputFieldOwnProps, typeof defaultElement> =
     forwardRef(InputFieldBase);
-
-export default InputField;

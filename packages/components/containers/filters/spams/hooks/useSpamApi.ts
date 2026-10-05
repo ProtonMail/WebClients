@@ -54,7 +54,7 @@ const getHumanReadableLocation = (location: INCOMING_DEFAULTS_LOCATION): SpamLoc
     throw new Error('location is not valid');
 };
 
-export type FetchSpams = (
+type FetchSpams = (
     location: SpamNavItem,
     search: string | undefined,
     page: number,

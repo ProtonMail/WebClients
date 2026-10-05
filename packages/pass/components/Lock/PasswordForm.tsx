@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 
 import { usePasswordForm } from '../../hooks/auth/usePasswordForm';

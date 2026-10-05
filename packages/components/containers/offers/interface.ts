@@ -46,7 +46,7 @@ export interface Operation {
     isUsingMoreThan80PercentStorage?: boolean;
 }
 
-export interface OfferImages {
+interface OfferImages {
     sideImage?: string;
     sideImage2x?: string;
     bannerImage?: string;
@@ -54,11 +54,7 @@ export interface OfferImages {
     modalImage?: string;
 }
 
-export interface OfferDealSaveSentenceType {
-    sentenceSaveType?: 'switch-yearly' | 'limited-time-deal';
-}
-
-export interface OfferTracking {
+interface OfferTracking {
     onTopNavbarClick?: () => void;
     onClickCloseButton?: () => void;
     onSelectDeal?: () => void;
@@ -140,7 +136,7 @@ export interface Deal {
     sentenceSaveType?: 'switch-yearly' | 'switch-two-year' | 'limited-time-deal';
 }
 
-export interface Prices {
+interface Prices {
     withCoupon: number;
     withoutCoupon: number;
     withoutCouponMonthly: number;

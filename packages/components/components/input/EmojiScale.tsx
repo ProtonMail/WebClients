@@ -16,7 +16,7 @@ import ScaleLabel from './ScaleLabel';
 
 import './EmojiScale.scss';
 
-export interface EmojiScaleProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> {
+interface EmojiScaleProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> {
     fromLabel: string;
     toLabel: string;
     value?: number;

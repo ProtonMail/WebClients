@@ -12,7 +12,7 @@ import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 import { useElectronDefaultApp } from './useElectronDefaultApp';
 
-export function InboxDesktopDefaultAppSettings() {
+function InboxDesktopDefaultAppSettings() {
     const { enabled, isDefault, shouldCheck, setShouldCheck, triggerPrompt, Prompt } = useElectronDefaultApp();
 
     if (!isElectronMail || !enabled) {

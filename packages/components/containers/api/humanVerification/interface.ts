@@ -36,7 +36,7 @@ export interface VerificationTokenResult {
     Token: string;
 }
 
-export interface OwnershipMethodCache {
+interface OwnershipMethodCache {
     promise: Promise<VerificationDataResult>;
     result: OwnershipVerificationModel;
 }

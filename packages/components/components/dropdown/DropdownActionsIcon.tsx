@@ -12,7 +12,7 @@ import DropdownMenu from './DropdownMenu';
 import DropdownMenuButton from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
 
-export interface Props extends ButtonProps {
+interface Props extends ButtonProps {
     list: DropdownActionProps[];
     iconElement: React.JSX.Element;
     loading?: boolean;

@@ -155,26 +155,6 @@ export const getPermissions = ({
 export type AddressPermissions = ReturnType<typeof getPermissions>;
 export type AddressStatuses = ReturnType<typeof getStatus>;
 
-export interface AddressWithMemberID extends PartialMemberAddress {
-    MemberID: string;
-    MemberName?: string;
-}
-
-export interface MembersMap {
-    [MemberID: string]: Member;
-}
-
-export interface SwitchAddressPermissionMultiResponses {
-    Responses: SwitchAddressPermissionResponse[];
-}
-
-export interface SwitchAddressPermissionResponse {
-    AddressID: string;
-    Response: {
-        Code: number;
-    };
-}
-
 export interface PermissionOption {
     text: string;
     value: ADDRESS_PERMISSIONS;

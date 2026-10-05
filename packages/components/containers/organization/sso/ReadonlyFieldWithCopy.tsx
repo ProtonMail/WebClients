@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 
 import Copy from '../../../components/button/Copy';
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
-import InputFieldTwo from '../../../components/v2/field/InputField';
+import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 
 interface Props extends Omit<InputFieldProps<typeof Input>, 'readonly' | 'unstyled'> {}
 

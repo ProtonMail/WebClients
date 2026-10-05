@@ -15,7 +15,7 @@ const HumanVerificationModal = lazy(
         )
 );
 
-export interface ApiEventTarget {
+interface ApiEventTarget {
     addEventListener: (cb: ApiListenerCallback) => void;
     removeEventListener: (cb: ApiListenerCallback) => void;
 }

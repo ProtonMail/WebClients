@@ -15,7 +15,7 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import useEventManager from '../../../hooks/useEventManager';
 
-export type UpdateGroupOptions = {
+type UpdateGroupOptions = {
     groupID: string | undefined;
     name: string;
     color: string;

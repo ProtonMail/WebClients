@@ -60,7 +60,7 @@ export const isClientIDRuleScope = (id: string) => {
     return id.startsWith(CLIENT_ID_PREFIX);
 };
 
-export const getDaysString = (n: number) => {
+const getDaysString = (n: number) => {
     return c('retention_policy_2025_Info').ngettext(msgid`${n} day`, `${n} days`, n);
 };
 
