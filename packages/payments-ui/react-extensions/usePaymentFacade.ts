@@ -202,7 +202,6 @@ export const usePaymentFacade = (
         subscription,
         isTrial,
         canUseApplePay,
-        canUseGooglePay,
         paymentMethodFlags,
         onDeclined,
         onValidationFailed,
@@ -234,7 +233,6 @@ export const usePaymentFacade = (
         subscription?: Subscription | FreeSubscription;
         isTrial?: boolean;
         canUseApplePay?: boolean;
-        canUseGooglePay?: boolean;
         paymentMethodFlags: PaymentMethodFlags;
         telemetryContext: PaymentTelemetryContext;
         onDeclined: ({
@@ -302,7 +300,6 @@ export const usePaymentFacade = (
             planIDs,
             subscription,
             canUseApplePay,
-            canUseGooglePay,
             isTrial,
             paymentMethodFlags,
             sortNewMethods,

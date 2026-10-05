@@ -54,7 +54,6 @@ export type PaymentMethodsContext = PaymentMethodFlags & {
     planIDs?: PlanIDs;
     subscription?: Subscription | FreeSubscription;
     canUseApplePay?: boolean;
-    canUseGooglePay?: boolean;
     isTrial?: boolean;
 };
 
@@ -234,18 +233,10 @@ const isApplePayAvailable = ({
     !!canUseApplePay &&
     !isTrial;
 
-const isGooglePayAvailable = ({
-    paymentStatus,
-    amount,
-    currency,
-    flow,
-    canUseGooglePay,
-    isTrial,
-}: PaymentMethodsContext) =>
+const isGooglePayAvailable = ({ paymentStatus, amount, currency, flow, isTrial }: PaymentMethodsContext) =>
     paymentStatus.VendorStates.Google &&
     amount >= getMinGooglePayAmount(currency) &&
     googlePayEnabledFlows.includes(flow) &&
-    !!canUseGooglePay &&
     !isTrial;
 
 const isChargebeeIdealAvailable = ({
