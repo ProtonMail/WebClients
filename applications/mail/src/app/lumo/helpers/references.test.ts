@@ -1,10 +1,18 @@
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { API_CODES, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import type { Element } from '../../models/element';
 import type { ToolStore } from '../toolModule';
-import { emailReferenceFor, isConversationReferenceID, resolveElements } from './references';
+import type { ElementFetchDeps } from './references';
+import {
+    conversationReferenceFor,
+    emailReferenceFor,
+    isConversationReferenceID,
+    messageReferenceFor,
+    resolveElements,
+    resolveFreshElements,
+} from './references';
 
 describe('emailReferenceFor', () => {
     const conversationRow = { ID: 'CONVERSATION_1' } as Element;
@@ -32,6 +40,126 @@ describe('emailReferenceFor', () => {
         emailReferenceFor(createReferenceRegistry(), conversationRow);
 
         expect(isConversationReferenceID(createReferenceRegistry(), 'CONVERSATION_1')).toBe(false);
+    });
+});
+
+const conversation = { ID: 'CONVERSATION_1', Subject: 'Booking', Labels: [] };
+const message = { ID: 'MESSAGE_1', ConversationID: 'CONVERSATION_1', Subject: 'Booking', LabelIDs: [] };
+
+const apiError = (code: API_CODES) => {
+    return Object.assign(new Error('api error'), { status: 422, data: { Code: code, Error: 'api error' } });
+};
+
+const mailWith = ({
+    elements = {},
+    conversations = {},
+    messages = {},
+}: {
+    elements?: Record<string, unknown>;
+    conversations?: Record<string, unknown>;
+    messages?: Record<string, unknown>;
+} = {}) => {
+    return {
+        store: { getState: () => ({ elements: { elements }, conversations, messages }) },
+        fetchConversation: jest.fn().mockResolvedValue(conversation),
+        fetchMessage: jest.fn().mockResolvedValue(message),
+    } as unknown as ElementFetchDeps & { fetchConversation: jest.Mock; fetchMessage: jest.Mock };
+};
+
+describe('resolveFreshElements', () => {
+    const mintConversation = () => {
+        const references = createReferenceRegistry();
+        const reference = conversationReferenceFor(references, 'CONVERSATION_1', { title: 'Booking' });
+        return { references, reference };
+    };
+
+    const mintMessage = () => {
+        const references = createReferenceRegistry();
+        const reference = messageReferenceFor(references, 'MESSAGE_1');
+        return { references, reference };
+    };
+
+    it('resolves a reference still in the list to that element, without fetching', async () => {
+        const { references, reference } = mintConversation();
+        const mail = mailWith({ elements: { CONVERSATION_1: conversation } });
+
+        await expect(resolveFreshElements(mail, [reference], references)).resolves.toEqual([conversation]);
+        expect(mail.fetchConversation).not.toHaveBeenCalled();
+    });
+
+    // The everyday case: a second search with a different keyword resets the list, but the conversation
+    // the first one found is still held, event-updated, in its own slice.
+    it('resolves a reference that left the list from the conversations it is still held in', async () => {
+        const { references, reference } = mintConversation();
+        const mail = mailWith({ conversations: { CONVERSATION_1: { Conversation: conversation } } });
+
+        await expect(resolveFreshElements(mail, [reference], references)).resolves.toEqual([conversation]);
+        expect(mail.fetchConversation).not.toHaveBeenCalled();
+    });
+
+    it('resolves a message reference that left the list from the messages it is still held in', async () => {
+        const { references, reference } = mintMessage();
+        const mail = mailWith({ messages: { MESSAGE_1: { localID: 'MESSAGE_1', data: message } } });
+
+        await expect(resolveFreshElements(mail, [reference], references)).resolves.toEqual([message]);
+        expect(mail.fetchMessage).not.toHaveBeenCalled();
+    });
+
+    it('fetches a conversation reference no slice holds from the conversations endpoint', async () => {
+        const { references, reference } = mintConversation();
+        const mail = mailWith();
+
+        await expect(resolveFreshElements(mail, [reference], references)).resolves.toEqual([conversation]);
+        expect(mail.fetchConversation).toHaveBeenCalledWith('CONVERSATION_1');
+        expect(mail.fetchMessage).not.toHaveBeenCalled();
+    });
+
+    it('fetches a message reference no slice holds from the messages endpoint', async () => {
+        const { references, reference } = mintMessage();
+        const mail = mailWith();
+
+        await expect(resolveFreshElements(mail, [reference], references)).resolves.toEqual([message]);
+        expect(mail.fetchMessage).toHaveBeenCalledWith('MESSAGE_1');
+        expect(mail.fetchConversation).not.toHaveBeenCalled();
+    });
+
+    // Retrying cannot bring a deleted email back, so the model needs a fact to relay, named the way the
+    // user knows the email.
+    it('reports an email the server no longer has as deleted, by its subject', async () => {
+        const { references, reference } = mintConversation();
+        const mail = mailWith();
+        mail.fetchConversation.mockRejectedValue(apiError(API_CODES.NOT_FOUND_ERROR));
+
+        const resolving = resolveFreshElements(mail, [reference], references);
+
+        await expect(resolving).rejects.toThrow(ToolInputError);
+        await expect(resolving).rejects.toThrow(`Email ${reference} ("Booking") no longer exists`);
+    });
+
+    it('lets any other fetch failure through as it is, rather than calling the email deleted', async () => {
+        const { references, reference } = mintMessage();
+        const mail = mailWith();
+        const offline = new Error('offline');
+        mail.fetchMessage.mockRejectedValue(offline);
+
+        await expect(resolveFreshElements(mail, [reference], references)).rejects.toBe(offline);
+    });
+
+    it('lets an invalid-id failure through rather than calling the email deleted', async () => {
+        const { references, reference } = mintMessage();
+        const mail = mailWith();
+        const wrongEndpoint = apiError(API_CODES.INVALID_ID_ERROR);
+        mail.fetchMessage.mockRejectedValue(wrongEndpoint);
+
+        await expect(resolveFreshElements(mail, [reference], references)).rejects.toBe(wrongEndpoint);
+    });
+
+    // The hooks report an empty selection as a bare `'Elements are required'` (or silently do nothing), so
+    // without this the model is told only that the tool failed, and Lumo tells the user it worked.
+    it('rejects an empty selection with something the model can act on', async () => {
+        const { references } = mintConversation();
+
+        await expect(resolveFreshElements(mailWith(), [], references)).rejects.toThrow(/at least one email-…/);
     });
 });
 
