@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Info } from '@proton/components/index';
+import Info from '@proton/components/components/link/Info';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
