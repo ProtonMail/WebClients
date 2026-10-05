@@ -1,8 +1,19 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, Loader, UncontainedWrapper } from '@proton/components';
-import type { IconName } from '@proton/icons/types';
+import { Loader, UncontainedWrapper } from '@proton/components';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcHeart } from '@proton/icons/icons/IcHeart';
+import { IcImageStacked } from '@proton/icons/icons/IcImageStacked';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcLive } from '@proton/icons/icons/IcLive';
+import { IcPanorama } from '@proton/icons/icons/IcPanorama';
+import { IcRaw } from '@proton/icons/icons/IcRaw';
+import { IcScreenshot } from '@proton/icons/icons/IcScreenshot';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import clsx from '@proton/utils/clsx';
 
@@ -16,6 +27,8 @@ interface TagsProps<T extends Tag> {
     loading?: boolean;
 }
 
+type IconComponent = typeof IcCheckmark;
+
 export type PhotosTagsProps = TagsProps<PhotoTag>;
 export type AlbumsTagsProps = TagsProps<AlbumTag>;
 
@@ -23,7 +36,7 @@ const getTagLabelWithIcon = (
     tag: Tag
 ): {
     label: string;
-    iconName: IconName;
+    icon: IconComponent;
 } => {
     if (Object.values(PhotoTag).includes(tag as PhotoTag)) {
         const photoTag = tag as PhotoTag;
@@ -31,53 +44,53 @@ const getTagLabelWithIcon = (
             case PhotoTag.Favorites:
                 return {
                     label: c('Tag').t`Favorites`,
-                    iconName: 'heart',
+                    icon: IcHeart,
                 };
             case PhotoTag.Screenshots:
                 return {
                     label: c('Tag').t`Screenshots`,
-                    iconName: 'screenshot',
+                    icon: IcScreenshot,
                 };
             case PhotoTag.Videos:
                 return {
                     label: c('Tag').t`Videos`,
-                    iconName: 'video-camera',
+                    icon: IcVideoCamera,
                 };
             case PhotoTag.LivePhotos:
             case PhotoTag.MotionPhotos:
                 return {
                     label: c('Tag').t`Live Photos`,
-                    iconName: 'live',
+                    icon: IcLive,
                 };
             case PhotoTag.Selfies:
                 return {
                     label: c('Tag').t`Selfies`,
-                    iconName: 'user',
+                    icon: IcUser,
                 };
             case PhotoTag.Portraits:
                 return {
                     label: c('Tag').t`Portraits`,
-                    iconName: 'user-circle',
+                    icon: IcUserCircle,
                 };
             case PhotoTag.Bursts:
                 return {
                     label: c('Tag').t`Bursts`,
-                    iconName: 'image-stacked',
+                    icon: IcImageStacked,
                 };
             case PhotoTag.Panoramas:
                 return {
                     label: c('Tag').t`Panoramas`,
-                    iconName: 'panorama',
+                    icon: IcPanorama,
                 };
             case PhotoTag.Raw:
                 return {
                     label: c('Tag').t`RAW`,
-                    iconName: 'raw',
+                    icon: IcRaw,
                 };
             case PhotoTag.All:
                 return {
                     label: c('Label').t`All`,
-                    iconName: 'checkmark',
+                    icon: IcCheckmark,
                 };
         }
     }
@@ -87,22 +100,22 @@ const getTagLabelWithIcon = (
         case AlbumTag.All:
             return {
                 label: c('Label').t`All`,
-                iconName: 'checkmark',
+                icon: IcCheckmark,
             };
         case AlbumTag.MyAlbums:
             return {
                 label: c('Label').t`My Albums`,
-                iconName: 'user',
+                icon: IcUser,
             };
         case AlbumTag.Shared:
             return {
                 label: c('Label').t`Shared`,
-                iconName: 'link',
+                icon: IcLink,
             };
         case AlbumTag.SharedWithMe:
             return {
                 label: c('Label').t`Shared with me`,
-                iconName: 'users',
+                icon: IcUsers,
             };
         default:
             throw new Error(`Unhandled tag type: ${tag}`);
@@ -119,7 +132,7 @@ function Tags<T extends Tag>({ selectedTags, tags, onTagSelect, counts, loading 
             innerClassName="flex flex-nowrap items-center gap-1 py-0.5 pl-0.5"
         >
             {tags.map((tag) => {
-                const { iconName, label } = getTagLabelWithIcon(tag);
+                const { icon: Icon, label } = getTagLabelWithIcon(tag);
                 const selected = selectedTags.includes(tag);
                 const count = counts?.[tag];
                 return (
@@ -133,7 +146,7 @@ function Tags<T extends Tag>({ selectedTags, tags, onTagSelect, counts, loading 
                         )}
                         onClick={() => onTagSelect([tag])}
                     >
-                        <Icon className="shrink-0" name={iconName} />
+                        <Icon className="shrink-0" />
                         {loading ? (
                             <span className="inline-flex gap-2 items-center">
                                 {label}
