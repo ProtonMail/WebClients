@@ -2,14 +2,17 @@ import { renderHook, waitFor } from '@testing-library/react';
 
 import type { NodeEntity } from '@proton/drive/index';
 import { NodeType, RevisionState } from '@proton/drive/index';
+import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { useFileDetailsModalState } from './useFileDetailsModalState';
 
 const noop = () => {};
 
-function renderDetails(node: NodeEntity) {
-    const drive = { getNode: async () => node };
+function renderDetails(
+    node: NodeEntity,
+    drive: { getNode: () => Promise<NodeEntity> } = { getNode: async () => node }
+) {
     return renderHook(() =>
         useFileDetailsModalState({ nodeUid: node.uid, drive, open: true, onClose: noop, onExit: noop })
     );
@@ -78,5 +81,37 @@ describe('useFileDetailsModalState - isImported', () => {
 
         await waitFor(() => expect(result.current.details).toBeDefined());
         expect(result.current.details?.isImported).toBeUndefined();
+    });
+});
+
+describe('useFileDetailsModalState - recently accessed reporting', () => {
+    afterEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    it('reports the node as recently accessed once details load', async () => {
+        const reportSpy = jest.spyOn(recentlyAccessed, 'report');
+        const node = createMockNodeEntity({ type: NodeType.File });
+        const drive = { getNode: async () => node };
+
+        const { result } = renderDetails(node, drive);
+
+        await waitFor(() => expect(result.current.details).toBeDefined());
+        expect(reportSpy).toHaveBeenCalledWith(drive, [node.uid]);
+    });
+
+    it('does not report when loading the node fails', async () => {
+        const reportSpy = jest.spyOn(recentlyAccessed, 'report');
+        const node = createMockNodeEntity({ type: NodeType.File });
+        const drive = {
+            getNode: async () => {
+                throw new Error('load error');
+            },
+        };
+
+        const { result } = renderDetails(node, drive);
+
+        await waitFor(() => expect(result.current.isLoading).toBe(false));
+        expect(reportSpy).not.toHaveBeenCalled();
     });
 });

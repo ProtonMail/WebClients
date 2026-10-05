@@ -23,6 +23,7 @@ import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getBusDriver } from '@proton/drive/modules/busDriver';
 import { logging } from '@proton/drive/modules/logging';
 import { driveMetrics } from '@proton/drive/modules/metrics';
+import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
 import { useInitEncryptedThumbnailCache } from '@proton/drive/modules/thumbnails';
 import { useLoading } from '@proton/hooks';
 import { isPaid } from '@proton/shared/lib/user/helpers';
@@ -256,6 +257,7 @@ const MainContainer: FunctionComponent = () => {
     const [user] = useUser();
     const [loading, setLoading] = useState(true);
     const coreEventManager = useEventManager();
+    const isRecentlyAccessedEnabled = useFlag('DriveWebRecentlyAccessed');
 
     useEffect(() => {
         if (loading) {
@@ -288,12 +290,16 @@ const MainContainer: FunctionComponent = () => {
             const photos = getDriveForPhotos();
             await photos.getMyPhotosRootFolder();
 
+            if (isRecentlyAccessedEnabled) {
+                recentlyAccessed.start();
+            }
+
             setLoading(false);
         };
         if (!drive) {
             void initializeSDK();
         }
-    }, [init, user]);
+    }, [init, user, isRecentlyAccessedEnabled]);
 
     if (loading) {
         return <LoaderPage />;

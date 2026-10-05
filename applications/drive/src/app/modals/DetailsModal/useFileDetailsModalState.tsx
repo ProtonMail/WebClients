@@ -8,6 +8,7 @@ import type { Author, NodeEntity, ProtonDriveClient, Revision } from '@proton/dr
 import { MemberRole, NodeType, getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getFormattedNodeLocation, getNodeName } from '@proton/drive/modules/nodes';
+import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
 import { useLoading } from '@proton/hooks';
 
 import { getMimeTypeDescription } from '../../legacy/components/sections/helpers';
@@ -127,6 +128,7 @@ export function useFileDetailsModalState({
                               }
                             : undefined,
                 });
+                recentlyAccessed.report(drive, [nodeUid]);
             } catch (error: unknown) {
                 handleSdkError(error, { showNotification: false, extra: { nodeUid } });
                 setHasError(true);
