@@ -228,6 +228,8 @@ export interface AssistantCallResult {
     status: Status;
     /** The chain as sent on the last round, client-tool exchanges included; the closing answer is not in it. */
     turns: Turn[];
+    /** Only what this call added: the closing answer included, blank assistant padding left out. */
+    producedTurns: Turn[];
 }
 
 /**
