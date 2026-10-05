@@ -142,6 +142,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     const [items, setItems] = useState<LumoAgentItem[]>([]);
     const [isBusy, setIsBusy] = useState(false);
     const [sessionKey, setSessionKey] = useState(0);
+    const [draft, setDraft] = useState('');
 
     const idRef = useRef(0);
     const controllerRef = useRef<AbortController | null>(null);
@@ -565,6 +566,8 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         items,
         isBusy,
         hasConversation: items.length > 0,
+        draft,
+        setDraft,
         send,
         confirm,
         cancel,
