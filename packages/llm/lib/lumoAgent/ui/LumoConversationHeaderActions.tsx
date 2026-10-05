@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -12,29 +14,38 @@ interface Props {
     openDebugReport?: () => void;
 }
 
-/** Shared so every host's header uses the same report and new-chat actions. */
-export const LumoConversationHeaderActions = ({ hasConversation, clear, openDebugReport }: Props) => {
+interface ConversationAction {
+    label: string;
+    icon: ReactNode;
+    onClick: () => void;
+}
+
+/** Shared so every host surface offers the same report and new-chat actions, in the same order. */
+export const getConversationActions = ({ hasConversation, clear, openDebugReport }: Props): ConversationAction[] => {
     if (!hasConversation) {
-        return null;
+        return [];
+    }
+
+    const newChatLabel = c('Action').t`New chat`;
+    const newChat = { label: newChatLabel, icon: <IcPenSquare alt={newChatLabel} />, onClick: clear };
+    if (!openDebugReport) {
+        return [newChat];
     }
 
     const reportLabel = c('Action').t`Report a problem`;
-    const newChatLabel = c('Action').t`New chat`;
+    return [{ label: reportLabel, icon: <IcBug alt={reportLabel} />, onClick: openDebugReport }, newChat];
+};
 
+export const LumoConversationHeaderActions = (props: Props) => {
     return (
         <>
-            {openDebugReport && (
-                <Tooltip title={reportLabel}>
-                    <Button icon color="weak" shape="ghost" onClick={openDebugReport}>
-                        <IcBug alt={reportLabel} />
+            {getConversationActions(props).map(({ label, icon, onClick }) => (
+                <Tooltip key={label} title={label}>
+                    <Button icon color="weak" shape="ghost" onClick={onClick}>
+                        {icon}
                     </Button>
                 </Tooltip>
-            )}
-            <Tooltip title={newChatLabel}>
-                <Button icon color="weak" shape="ghost" onClick={clear}>
-                    <IcPenSquare alt={newChatLabel} />
-                </Button>
-            </Tooltip>
+            ))}
         </>
     );
 };

@@ -25,6 +25,8 @@ export interface LumoAgentDrawerValue {
     clear: () => void;
     /** Supplied only by a host that can open a composer, and the report button appears only with it. */
     openDebugReport?: () => void;
+    /** Supplied only by a host that has a floating panel, and the detach button appears only with it. */
+    onDetach?: () => void;
     /** Runs before the card's prompt is sent, so the host can attribute that send to the card. */
     onSuggestionPicked?: (cardId: string) => void;
     cardRenderers?: CardRenderers;
