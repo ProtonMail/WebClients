@@ -827,6 +827,12 @@
       ],
       "Go back": [
         "Takaisin"
+      ],
+      "Show less": [
+        "Näytä vähemmän"
+      ],
+      "Show more": [
+        "Näytä lisää"
       ]
     },
     "Activity": {
@@ -2222,7 +2228,8 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2931,6 +2938,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
+      ],
+      "Folder deleted": [
+        "Kansio poistettiin"
       ]
     },
     "Keyboard key": {
@@ -5300,6 +5310,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
+      ],
+      "Rename folder": [
+        "Nimeä kansio uudelleen"
       ]
     },
     "Title_cloned_item": {
