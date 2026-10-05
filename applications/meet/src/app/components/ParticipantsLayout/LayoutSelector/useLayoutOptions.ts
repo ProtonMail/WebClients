@@ -64,3 +64,6 @@ export const useLayoutOptions = () => {
 
     return { options, selectedOption: options.find((option) => option.isSelected) ?? options[0] };
 };
+
+export type LayoutOptionsState = ReturnType<typeof useLayoutOptions>;
+export type LayoutOption = LayoutOptionsState['options'][number];

@@ -23,6 +23,10 @@ interface ConfirmationModalProps {
     onSecondaryAction?: () => void;
     secondaryButtonClass?: MeetButtonClass;
     onClose?: () => void;
+    /** `row` places the secondary action to the left of the primary one. */
+    buttonsLayout?: 'column' | 'row';
+    /** Rendered below the action buttons. */
+    footer?: React.ReactNode;
     /** Forwarded to ModalTwo. See its `enableFocusTrap`. */
     enableFocusTrap?: boolean;
 }
@@ -41,8 +45,38 @@ const ConfirmationModalContent = ({
     secondaryButtonClass = 'tertiary',
     onSecondaryAction,
     onClose,
+    buttonsLayout = 'column',
+    footer,
 }: ConfirmationModalProps) => {
     const { id } = useContext(ModalContext);
+    const isRow = buttonsLayout === 'row';
+
+    const primaryButton = (
+        <Button
+            className={clsx(
+                'rounded-full text-semibold',
+                isRow && 'flex-1',
+                primaryButtonClass,
+                primaryLoading && primaryButtonClass === 'danger' && 'confirmation-modal-danger-loading'
+            )}
+            onClick={onPrimaryAction}
+            disabled={primaryLoading}
+            loading={primaryLoading}
+            size="large"
+        >
+            {primaryText}
+        </Button>
+    );
+
+    const secondaryButton = onSecondaryAction && (
+        <Button
+            className={clsx('rounded-full text-semibold', isRow && 'flex-1', secondaryButtonClass)}
+            onClick={onSecondaryAction}
+            size="large"
+        >
+            {secondaryText || c('Action').t`Cancel`}
+        </Button>
+    );
 
     return (
         <>
@@ -78,31 +112,20 @@ const ConfirmationModalContent = ({
                     </div>
                 )}
 
-                <div className="w-full flex flex-column flex-nowrap gap-2 mt-4">
-                    <Button
-                        className={clsx(
-                            'rounded-full text-semibold',
-                            primaryButtonClass,
-                            primaryLoading && primaryButtonClass === 'danger' && 'confirmation-modal-danger-loading'
-                        )}
-                        onClick={onPrimaryAction}
-                        disabled={primaryLoading}
-                        loading={primaryLoading}
-                        size="large"
-                    >
-                        {primaryText}
-                    </Button>
-
-                    {onSecondaryAction && (
-                        <Button
-                            className={clsx('rounded-full text-semibold', secondaryButtonClass)}
-                            onClick={onSecondaryAction}
-                            size="large"
-                        >
-                            {secondaryText || c('Action').t`Cancel`}
-                        </Button>
+                <div className={clsx('w-full flex flex-nowrap gap-2 mt-4', isRow ? 'flex-row' : 'flex-column')}>
+                    {isRow ? (
+                        <>
+                            {secondaryButton}
+                            {primaryButton}
+                        </>
+                    ) : (
+                        <>
+                            {primaryButton}
+                            {secondaryButton}
+                        </>
                     )}
                 </div>
+                {footer}
             </div>
         </>
     );

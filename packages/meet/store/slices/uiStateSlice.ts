@@ -51,6 +51,7 @@ interface UIState {
     chatFocusedMessageId: string | null;
     participantCountMismatchSince: number | null;
     participantCountMismatchBannerDismissed: boolean;
+    transcriptionEnabled: boolean;
 }
 
 const initialState: UIState = {
@@ -79,6 +80,7 @@ const initialState: UIState = {
     chatFocusedMessageId: null,
     participantCountMismatchSince: null,
     participantCountMismatchBannerDismissed: false,
+    transcriptionEnabled: false,
 };
 
 const slice = createSlice({
@@ -167,6 +169,9 @@ const slice = createSlice({
         dismissParticipantCountMismatchBanner: (state) => {
             state.participantCountMismatchBannerDismissed = true;
         },
+        toggleTranscription: (state) => {
+            state.transcriptionEnabled = !state.transcriptionEnabled;
+        },
         openWaitingRoomSideBar: (state) => {
             Object.keys(state.sideBarState).forEach((key) => {
                 state.sideBarState[key as MeetingSideBars] = false;
@@ -186,6 +191,7 @@ const slice = createSlice({
             state.chatFocusedMessageId = initialState.chatFocusedMessageId;
             state.participantCountMismatchSince = initialState.participantCountMismatchSince;
             state.participantCountMismatchBannerDismissed = initialState.participantCountMismatchBannerDismissed;
+            state.transcriptionEnabled = initialState.transcriptionEnabled;
         },
     },
 });
@@ -206,6 +212,7 @@ export const {
     setNoDeviceDetected,
     setParticipantCountMismatchSince,
     dismissParticipantCountMismatchBanner,
+    toggleTranscription,
     resetUiState,
 } = slice.actions;
 
@@ -222,6 +229,7 @@ export const selectChatFocusedMessageId = (state: MeetState) => state.uiState.ch
 export const selectParticipantCountMismatchSince = (state: MeetState) => state.uiState.participantCountMismatchSince;
 export const selectParticipantCountMismatchBannerDismissed = (state: MeetState) =>
     state.uiState.participantCountMismatchBannerDismissed;
+export const selectTranscriptionEnabled = (state: MeetState) => state.uiState.transcriptionEnabled;
 export const selectIsSideBarOpen = (state: MeetState) =>
     Object.values(state.uiState.sideBarState).some((value) => value);
 
