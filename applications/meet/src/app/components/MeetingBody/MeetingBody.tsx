@@ -36,6 +36,7 @@ import { ParticipantControls } from '../ParticipantControls/ParticipantControls'
 import { ParticipantList } from '../ParticipantList/ParticipantList';
 import { ParticipantsLayout } from '../ParticipantsLayout/ParticipantsLayout';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
+import { ReactionStream } from '../ReactionStream/ReactionStream';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
 import { Settings } from '../Settings/Settings';
 import { AudioRenderer } from './AudioRenderer';
@@ -204,6 +205,7 @@ export const MeetingBody = ({
                 </div>
                 <Captions />
                 <ParticipantControls />
+                <ReactionStream />
                 <AudioRenderer isSpatialAudioEnabled={isSpatialAudioEnabled} />
                 <NoDeviceDetectedInfo />
                 <NoDeviceDetectedModal />
