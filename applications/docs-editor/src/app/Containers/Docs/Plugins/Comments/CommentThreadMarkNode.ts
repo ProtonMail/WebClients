@@ -1,3 +1,4 @@
+import { $isSerializingCommentCut } from './CommentCutSerialization'
 import { addClassNamesToElement, removeClassNamesFromElement } from '@lexical/utils'
 import type {
   EditorConfig,
@@ -185,6 +186,9 @@ export class CommentThreadMarkNode extends ElementNode {
     if (!$isRangeSelection(selection) || destination === 'html') {
       return false
     }
+    if ($isSerializingCommentCut(this.getIDs())) {
+      return true
+    }
     const anchor = selection.anchor
     const focus = selection.focus
     const anchorNode = anchor.getNode()
@@ -195,7 +199,7 @@ export class CommentThreadMarkNode extends ElementNode {
   }
 
   excludeFromCopy(destination: 'clone' | 'html'): boolean {
-    return destination !== 'clone'
+    return destination !== 'clone' && !$isSerializingCommentCut(this.getIDs())
   }
 }
 
