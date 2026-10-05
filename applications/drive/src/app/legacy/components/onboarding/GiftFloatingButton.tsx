@@ -6,7 +6,6 @@ import { c, msgid } from 'ttag';
 import type { ThemeColorUnion } from '@proton/colors';
 import {
     FloatingButton,
-    Icon,
     Row,
     Spotlight,
     useActiveBreakpoint,
@@ -17,8 +16,13 @@ import { generateNodeUid } from '@proton/drive';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import type { IconName } from '@proton/icons/types';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcGift } from '@proton/icons/icons/IcGift';
+import { IcKeySkeleton } from '@proton/icons/icons/IcKeySkeleton';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -36,6 +40,8 @@ import { useTransferManagerState } from '../../../sections/transferManager/useTr
 import useChecklist from './useChecklist';
 
 import './GiftFloatingButton.scss';
+
+type IconComponent = typeof IcCheckmark;
 
 export default function GiftFloatingButton() {
     const checklist = useChecklist();
@@ -100,7 +106,7 @@ function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: (dismiss?: boolean) =
     );
 
     return (
-        <FloatingSpotlight content={spotlightContent} show={show} onClick={onSeen} color="success" icon="checkmark" />
+        <FloatingSpotlight content={spotlightContent} show={show} onClick={onSeen} color="success" icon={IcCheckmark} />
     );
 }
 
@@ -167,7 +173,7 @@ function WelcomeActionsSpotlight({
                 show={showPopup || showList}
                 onClick={toggleOpen}
                 color={showList ? 'weak' : 'norm'}
-                icon={showList ? 'cross' : 'gift'}
+                icon={showList ? IcCross : IcGift}
             />
             {fileSharingModal}
             {sharingModal}
@@ -179,14 +185,14 @@ function FloatingSpotlight({
     content,
     show,
     color,
-    icon,
+    icon: Icon,
     hasClose = false,
     onClick,
 }: {
     content: React.ReactNode;
     show: boolean;
     color: ThemeColorUnion;
-    icon: IconName;
+    icon: IconComponent;
     hasClose?: boolean;
     onClick: () => void;
 }) {
@@ -207,7 +213,7 @@ function FloatingSpotlight({
                 color={color}
                 data-testid="gift-floating-button"
             >
-                <Icon size={5} name={icon} className="m-auto" />
+                <Icon size={5} className="m-auto" />
             </FloatingButton>
         </Spotlight>
     );
@@ -224,8 +230,8 @@ function WelcomeActions({
     showFileSharingModal: ReturnType<typeof useFileSharingModal>[1];
     showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
 }) {
-    const getIconName = (actionName: ChecklistKey, iconName: IconName) => {
-        return completedActions.includes(actionName) ? 'checkmark' : iconName;
+    const getIconName = (actionName: ChecklistKey, icon: IconComponent) => {
+        return completedActions.includes(actionName) ? IcCheckmark : icon;
     };
 
     const { activeFolder } = useActiveShare();
@@ -240,7 +246,7 @@ function WelcomeActions({
 
     return (
         <>
-            <WelcomeAction icon="checkmark" title={c('Label').t`Create ${BRAND_NAME} account`} />
+            <WelcomeAction icon={IcCheckmark} title={c('Label').t`Create ${BRAND_NAME} account`} />
             <input
                 multiple
                 type="file"
@@ -252,7 +258,7 @@ function WelcomeActions({
                 }}
             />
             <WelcomeAction
-                icon={getIconName(ChecklistKey.DriveUpload, 'arrow-up-line')}
+                icon={getIconName(ChecklistKey.DriveUpload, IcArrowUpLine)}
                 title={c('Label').t`Upload your first file`}
                 text={c('Info').t`And access it from anywhere`}
                 action={() => {
@@ -260,7 +266,7 @@ function WelcomeActions({
                 }}
             />
             <WelcomeAction
-                icon={getIconName(ChecklistKey.DriveShare, 'user-plus')}
+                icon={getIconName(ChecklistKey.DriveShare, IcUserPlus)}
                 title={c('Label').t`Share a file, folder, or album`}
                 text={c('Info').t`It’s easy and secure`}
                 action={() => {
@@ -269,7 +275,7 @@ function WelcomeActions({
                 }}
             />
             <WelcomeAction
-                icon={getIconName(ChecklistKey.RecoveryMethod, 'key-skeleton')}
+                icon={getIconName(ChecklistKey.RecoveryMethod, IcKeySkeleton)}
                 title={c('Label').t`Set recovery method`}
                 text={c('Info').t`Makes your account safer`}
                 action={() => {
@@ -284,19 +290,19 @@ function WelcomeActions({
 }
 
 function WelcomeAction({
-    icon,
+    icon: Icon,
     title,
     text,
     action,
 }: {
-    icon: IconName;
+    icon: IconComponent;
     title: string;
     text?: string;
     action?: () => void;
 }) {
     const [onHover, setOnHover] = useState(false);
 
-    const isDone = icon === 'checkmark';
+    const isDone = Icon === IcCheckmark;
 
     return (
         <Row
@@ -315,7 +321,7 @@ function WelcomeAction({
                 style={{ '--w-custom': '2.5em', '--h-custom': '2.5em' }}
                 data-testid="welcome-actions-icons"
             >
-                <Icon name={icon} />
+                <Icon />
             </div>
             <div className={clsx(['flex-1', isDone && 'text-strike color-weak'])} data-testid="welcome-actions-text">
                 {title}
