@@ -1,5 +1,74 @@
+import { type TopLevelSpec, compile } from 'vega-lite';
+
 import { PROTON_PURPLE } from './protonVegaTheme';
 import { VegaSpecParseError, VegaSpecSecurityError, sanitizeVegaSpec } from './sanitizeVegaSpec';
+
+/** Minimal structural clone of the reported dual-panel timer PoC (redacted receiver URL). */
+function buildRemoteHistoryKeyExfiltrationPoCSkeleton(): Record<string, unknown> {
+    return {
+        $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
+        data: {
+            name: 'leak',
+            values: [{ waitCount: 0, cursor: 0 }],
+        },
+        datasets: {
+            scratch: [],
+        },
+        vconcat: [
+            {
+                data: { name: 'leak' },
+                params: [
+                    {
+                        name: 'probe',
+                        select: {
+                            type: 'point',
+                            on: {
+                                source: 'timer',
+                                type: 400,
+                                filter: "event.dataflow._el ? modify('scratch',{type:'lumo/space/list/request'}) : 0",
+                            },
+                            clear: false,
+                        },
+                    },
+                ],
+                mark: 'text',
+                encoding: {
+                    text: { value: 'Remote history validation' },
+                },
+                height: 100,
+            },
+            {
+                data: { name: 'scratch' },
+                mark: { type: 'text', opacity: 0 },
+                encoding: {
+                    text: { value: '' },
+                },
+                height: 100,
+            },
+        ],
+    };
+}
+
+function specHasParams(spec: Record<string, unknown>): boolean {
+    let found = false;
+    const visit = (value: unknown): void => {
+        if (found || value === null || typeof value !== 'object') {
+            return;
+        }
+        if (Array.isArray(value)) {
+            value.forEach(visit);
+            return;
+        }
+        const objectValue = value as Record<string, unknown>;
+        if (objectValue.params !== undefined) {
+            found = true;
+            return;
+        }
+        Object.values(objectValue).forEach(visit);
+    };
+    visit(spec);
+    return found;
+}
 
 describe('sanitizeVegaSpec', () => {
     const validSpec = JSON.stringify({
@@ -286,5 +355,57 @@ describe('sanitizeVegaSpec', () => {
 
         expect(() => sanitizeVegaSpec(spec)).toThrow(VegaSpecSecurityError);
         expect(() => sanitizeVegaSpec(spec)).toThrow(/Mark type "link" is not allowed/);
+    });
+
+    it('neutralizes the reported dual-panel timer remote-history exfiltration PoC skeleton', () => {
+        const raw = JSON.stringify(buildRemoteHistoryKeyExfiltrationPoCSkeleton());
+        const spec = sanitizeVegaSpec(raw) as Record<string, unknown>;
+
+        expect(spec.datasets).toBeUndefined();
+        expect(specHasParams(spec)).toBe(false);
+        expect(() => compile(spec as unknown as TopLevelSpec)).not.toThrow();
+    });
+
+    it('strips transform filters that reference Vega host internals', () => {
+        const spec = JSON.stringify({
+            mark: 'bar',
+            data: { values: [{ x: 1, y: 2 }] },
+            transform: [{ filter: "event.dataflow._el ? 1 : 0" }],
+            encoding: {
+                x: { field: 'x', type: 'quantitative' },
+                y: { field: 'y', type: 'quantitative' },
+            },
+        });
+
+        const sanitized = sanitizeVegaSpec(spec) as Record<string, unknown>;
+        const transforms = sanitized.transform as Record<string, unknown>[] | undefined;
+        expect(transforms?.[0]?.filter).toBeUndefined();
+    });
+
+    it('strips timer selection handlers with hostile filter expressions', () => {
+        const spec = JSON.stringify({
+            mark: 'point',
+            data: { values: [{ x: 1, y: 1 }] },
+            params: [
+                {
+                    name: 'probe',
+                    select: {
+                        type: 'point',
+                        on: {
+                            source: 'timer',
+                            type: 200,
+                            filter: "memoizedProps.store.getState ? 1 : 0",
+                        },
+                    },
+                },
+            ],
+            encoding: {
+                x: { field: 'x', type: 'quantitative' },
+                y: { field: 'y', type: 'quantitative' },
+            },
+        });
+
+        const sanitized = sanitizeVegaSpec(spec) as Record<string, unknown>;
+        expect(specHasParams(sanitized)).toBe(false);
     });
 });

@@ -230,7 +230,7 @@ describe('normalizeVegaLiteSpec', () => {
         expect(normalized.transform).toBeUndefined();
     });
 
-    it('keeps param-driven filters visible when the selection is empty on linked views', () => {
+    it('strips root selection params from 2-panel linked views', () => {
         const normalized = normalizeVegaLiteSpec({
             params: [{ name: 'brush', select: { type: 'interval', encodings: ['x'] } }],
             vconcat: [
@@ -252,14 +252,11 @@ describe('normalizeVegaLiteSpec', () => {
             ],
         });
 
-        const bottomTransform = (normalized.vconcat as Record<string, unknown>[])[1]?.transform as Record<
-            string,
-            unknown
-        >[];
-        expect(bottomTransform[0]?.filter).toEqual({ param: 'brush', empty: true });
+        expect(normalized.params).toBeUndefined();
+        expect((normalized.vconcat as Record<string, unknown>[])[1]?.transform).toBeUndefined();
     });
 
-    it('hoists child selection params to the vconcat root for linked views', () => {
+    it('strips interactivity from 2-panel vconcat charts', () => {
         const normalized = normalizeVegaLiteSpec({
             vconcat: [
                 {
@@ -268,6 +265,10 @@ describe('normalizeVegaLiteSpec', () => {
                     encoding: {
                         x: { field: 'month', type: 'ordinal' },
                         y: { field: 'temperature', type: 'quantitative' },
+                        color: {
+                            condition: { param: 'brush', field: 'month', type: 'nominal' },
+                            value: 'lightgray',
+                        },
                     },
                 },
                 {
@@ -281,8 +282,14 @@ describe('normalizeVegaLiteSpec', () => {
             ],
         });
 
-        expect(normalized.params).toEqual([{ name: 'brush', select: { type: 'interval', encodings: ['x'] } }]);
-        expect((normalized.vconcat as Record<string, unknown>[])[0]?.params).toBeUndefined();
+        expect(normalized.params).toBeUndefined();
+        const panels = normalized.vconcat as Record<string, unknown>[];
+        expect(panels[0]?.params).toBeUndefined();
+        expect(panels[1]?.transform).toBeUndefined();
+        expect((panels[0]?.encoding as Record<string, unknown>).color).toEqual({
+            field: 'month',
+            type: 'nominal',
+        });
     });
 
     it('strips accidental interactivity from 3-panel static vconcat charts', () => {
@@ -601,6 +608,16 @@ describe('normalizeVegaLiteSpec', () => {
         normalizeArcDonutCharts(spec);
 
         expect((spec.layer as Record<string, unknown>[]).length).toBe(1);
+    });
+
+    it('strips hostile Vega host-escape fragments from transform filters', () => {
+        const spec: Record<string, unknown> = {
+            transform: [{ filter: "modify('scratch',{type:'lumo/conversation/pullRequest'})" }],
+        };
+
+        normalizeUnsafeVegaExpressions(spec);
+
+        expect(spec.transform).toEqual([{}]);
     });
 
     it('strips unsafe axis labelExpr method calls used for temporal tick formatting', () => {
