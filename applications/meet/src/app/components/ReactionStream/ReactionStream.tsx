@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
@@ -62,11 +63,13 @@ const ReactionStreamItem = ({ item, onDone }: { item: StreamItem; onDone: (id: s
     return (
         <div
             className="reaction-stream-item"
-            style={{
-                '--reaction-left': `${item.left}%`,
-                '--reaction-drift': `${item.drift}px`,
-                '--reaction-rise': `${item.rise}vh`,
-            }}
+            style={
+                {
+                    '--reaction-left': `${item.left}%`,
+                    '--reaction-drift': `${item.drift}px`,
+                    '--reaction-rise': `${item.rise}vh`,
+                } as CSSProperties
+            }
             onAnimationEnd={() => onDone(item.id)}
         >
             <span className="reaction-stream-emoji">{item.emoji}</span>
