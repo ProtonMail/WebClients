@@ -25,8 +25,8 @@ export class CreateNewDocument {
     documentType: DocumentType,
   ): Promise<Result<DocumentNodeMeta>> {
     try {
-      const useSDK = isDriveCompatSDKEnabled(this.unleashClient)
-      const getRoot = useSDK ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
+      const replaceDriveCompat = isDriveCompatSDKEnabled(this.unleashClient)
+      const getRoot = replaceDriveCompat ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
       const parentMeta: NodeMeta = siblingNode.parentNodeId
         ? {
             volumeId: siblingMeta.volumeId,
@@ -34,7 +34,7 @@ export class CreateNewDocument {
           }
         : await getRoot()
 
-      const name = useSDK
+      const name = replaceDriveCompat
         ? await findAvailableNodeName(parentMeta, desiredName)
         : await this.driveCompat.findAvailableNodeName(parentMeta, desiredName)
       const shellResult = await this.driveCompat.createDocumentNode(parentMeta, name, documentType)
