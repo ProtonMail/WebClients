@@ -2,7 +2,7 @@ import { parseAsync } from 'docx-preview-cjs'
 import type { LexicalEditor } from 'lexical'
 import { $createParagraphNode, $insertNodes } from 'lexical'
 
-import { TranslatedResult } from '@proton/docs-shared'
+import { TranslatedResult } from '../../../Utils/TranslatedResult'
 import { c } from 'ttag'
 import { ParseDocxElements } from './Parsing/ParseDocxElement'
 import { mapDocxChildren } from './CreateLexicalNodeFromDocxInfo'
