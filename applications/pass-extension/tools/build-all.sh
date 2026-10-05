@@ -96,7 +96,7 @@ function bundle_extension_from_sources {
     BUILD_TARGET=$1 NODE_ENV=production pnpm run config:lock >/dev/null
     cd ../../
 
-    zip -rqX "$OUTDIR/$BUILD_ID-FF-sources.zip" \
+    zip -rqXy "$OUTDIR/$BUILD_ID-FF-sources.zip" \
         "applications/pass-extension" \
         "packages" \
         "utilities" \
