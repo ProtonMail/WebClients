@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Badge } from '@proton/components/index';
+import { Badge } from '@proton/components/components/badge/Badge';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import illustration from '@proton/styles/assets/img/illustrations/vpn/always-on/always-on-vpn-configuration.svg';
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Loader } from '@proton/components/index';
+import Loader from '@proton/components/components/loader/Loader';
 import { hasVpnPro } from '@proton/payments/core/subscription/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 

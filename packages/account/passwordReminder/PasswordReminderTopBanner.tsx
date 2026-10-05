@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
-import { useModalState } from '@proton/components/index';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
