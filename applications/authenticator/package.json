@@ -3,7 +3,7 @@
     "scripts": {
         "build:desktop": "cross-env NODE_ENV=production API_ENV=proton.me tools/build.sh",
         "build:web": "cross-env NODE_ENV=production API_ENV=proton.me webpack --config webpack.config.ts",
-        "check-types": "tsc --checkers 1",
+        "check:types": "tsc --checkers 1",
         "fmt:native": "cd src-tauri && make fmt",
         "generate:api-types": "pnpm --silent --filter @proton/pass run generator:openapi \"https://$API/api/internal/doc?page=authenticator\" > ./src/lib/api/types.ts",
         "i18n:extract:desktop": "proton-i18n extract",
