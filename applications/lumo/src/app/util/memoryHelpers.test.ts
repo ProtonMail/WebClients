@@ -477,16 +477,16 @@ describe('memoryHelpers', () => {
         expect(isMemoryCountHigh(existing)).toBe(true);
     });
 
-    it('builds an optimize prompt from saved memories', () => {
+    it('builds an optimize prompt from chat-based memories only', () => {
         const memories: Memory[] = [
             { id: '1', content: 'Prefers concise answers', createdAt: 1, source: 'user' },
             { id: '2', content: 'Works in product design', createdAt: 2, source: 'generated' },
         ];
         const prompt = buildMemoryOptimizePrompt(memories);
 
-        expect(prompt).toContain('Prefers concise answers');
+        expect(prompt).not.toContain('Prefers concise answers');
         expect(prompt).toContain('Works in product design');
-        expect(prompt).toContain('consolidate');
+        expect(prompt).toContain('chat-based');
         expect(prompt).toContain('ONLY a JSON array');
     });
 
@@ -495,24 +495,41 @@ describe('memoryHelpers', () => {
         expect(parseMemoryOptimizeResponse(raw)).toEqual(['Merged concise preference', 'Works in product design']);
     });
 
-    it('rebuilds optimized memories while preserving exact user entries', () => {
+    it('rebuilds optimized chat-based memories while leaving user entries untouched', () => {
         const previous: Memory[] = [
             { id: 'user-1', content: 'Prefers concise answers', createdAt: 10, source: 'user' },
             { id: 'generated-1', content: 'Likes bullet points', createdAt: 20, source: 'generated' },
         ];
-        const optimized = rebuildMemoriesFromOptimizedContents(
-            ['Prefers concise answers', 'Prefers concise bullet-point answers'],
-            previous
-        );
+        const optimized = rebuildMemoriesFromOptimizedContents(['Prefers concise bullet-point answers'], previous);
 
         expect(optimized).toHaveLength(2);
-        expect(optimized[0]).toMatchObject({
+        const userEntry = optimized.find((memory) => memory.id === 'user-1');
+        expect(userEntry).toMatchObject({
             id: 'user-1',
             content: 'Prefers concise answers',
             source: 'user',
             createdAt: 10,
         });
-        expect(optimized[1]?.source).toBe('generated');
-        expect(optimized[1]?.content).toBe('Prefers concise bullet-point answers');
+        expect(optimized.find((memory) => memory.source === 'generated')?.content).toBe(
+            'Prefers concise bullet-point answers'
+        );
+    });
+
+    it('drops optimized strings that duplicate user-written memory content', () => {
+        const previous: Memory[] = [
+            { id: 'user-1', content: 'Prefers concise answers', createdAt: 10, source: 'user' },
+            { id: 'generated-1', content: 'Likes bullet points', createdAt: 20, source: 'generated' },
+        ];
+        const optimized = rebuildMemoriesFromOptimizedContents(
+            ['Prefers concise answers', 'Merged chat preference'],
+            previous
+        );
+
+        expect(optimized).toHaveLength(2);
+        expect(optimized.filter((memory) => memory.source === 'user')).toHaveLength(1);
+        expect(optimized.some((memory) => memory.content === 'Prefers concise answers' && memory.id === 'user-1')).toBe(
+            true
+        );
+        expect(optimized.some((memory) => memory.content === 'Merged chat preference')).toBe(true);
     });
 });
