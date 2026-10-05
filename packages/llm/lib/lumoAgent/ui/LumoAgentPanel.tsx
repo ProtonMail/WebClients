@@ -1,14 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
-import { Chip, LumoLogo, LumoThinking, PromptInput, ServerToolChip, renderReplyMarkdown } from '@proton/lumo-ui';
+import { Chip, LumoLogo, LumoThinking, ServerToolChip, renderReplyMarkdown } from '@proton/lumo-ui';
 import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
 import WelcomeSuggestions from '@proton/lumo-ui/WelcomeSuggestions';
 
+import LumoAgentPromptBar from './LumoAgentPromptBar';
 import ResultTile from './ResultTile';
 import ConfirmCard, { defaultCardRenderer } from './cardRenderers';
+import { findPendingConfirm, isAgentGenerating } from './pendingConfirm';
 import type { CardRenderers, LumoAgentItem, ServerToolMeta } from './types';
 import { ConfirmStatus } from './types';
 
@@ -21,6 +23,10 @@ interface Props {
     suggestions?: WelcomeSuggestionCard[];
     thinkingLabel?: string;
     placeholder?: string;
+    /** Off for a host that renders the prompt outside the panel. */
+    showPromptInput?: boolean;
+    draft: string;
+    onDraftChange: (draft: string) => void;
     onSend: (text: string) => void;
     /** Runs before the card's prompt is sent, so the host can attribute that send to the card. */
     onSuggestionPicked?: (cardId: string) => void;
@@ -46,6 +52,9 @@ const LumoAgentPanel = ({
     suggestions,
     thinkingLabel,
     placeholder,
+    showPromptInput = true,
+    draft,
+    onDraftChange,
     onSend,
     onSuggestionPicked,
     onStop,
@@ -53,7 +62,6 @@ const LumoAgentPanel = ({
     onConfirm,
     onCancel,
 }: Props) => {
-    const [draft, setDraft] = useState('');
     const scrollRef = useRef<HTMLDivElement>(null);
     const isFollowingBottomRef = useRef(true);
     const lastScrollTopRef = useRef(0);
@@ -99,19 +107,13 @@ const LumoAgentPanel = ({
         onSend(prompt);
     };
 
-    const pending = items.find((item) => item.kind === 'confirm' && item.status === ConfirmStatus.PENDING);
-
-    const isGenerating = isBusy && !pending;
-
-    const submit = () => {
-        const text = draft.trim();
-        if (!text || isGenerating) {
-            return;
-        }
-        setDraft('');
+    const sendPrompt = (text: string) => {
         followBottom();
         onSend(text);
     };
+
+    const pending = findPendingConfirm(items);
+    const isGenerating = isAgentGenerating(items, isBusy);
 
     const renderItem = (item: LumoAgentItem) => {
         switch (item.kind) {
@@ -191,17 +193,19 @@ const LumoAgentPanel = ({
                 />
             ) : null}
 
-            <div className="lumo-agent-composer shrink-0">
-                <PromptInput
-                    value={draft}
-                    onChange={setDraft}
-                    onSubmit={submit}
-                    onStop={onStop}
-                    onClose={onClose}
-                    isGenerating={isGenerating}
-                    placeholder={placeholder}
-                />
-            </div>
+            {showPromptInput && (
+                <div className="lumo-agent-composer shrink-0">
+                    <LumoAgentPromptBar
+                        draft={draft}
+                        onDraftChange={onDraftChange}
+                        isGenerating={isGenerating}
+                        onSend={sendPrompt}
+                        onStop={onStop}
+                        onClose={onClose}
+                        placeholder={placeholder}
+                    />
+                </div>
+            )}
         </div>
     );
 };

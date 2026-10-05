@@ -845,6 +845,15 @@ describe('useLumoAgent', () => {
         expect(result.current.hasConversation).toBe(false);
     });
 
+    it('keeps a half-typed draft when the conversation is cleared', () => {
+        const { result } = renderHook(() => useLumoAgent(config));
+
+        act(() => result.current.setDraft('archive the'));
+        act(() => result.current.clear());
+
+        expect(result.current.draft).toBe('archive the');
+    });
+
     it('builds a debug transcript of the system prompt followed by the banked turns in order', async () => {
         script = async ({ chunk }) => chunk(message('First answer.'));
         const { result } = renderHook(() =>
