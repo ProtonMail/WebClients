@@ -39,6 +39,16 @@ describe('getValidatedProtonProtocol', () => {
             output: 'protonmail:',
         },
         {
+            name: 'should return proton-calendar for proton-calendar protocol',
+            input: { app: APPS.PROTONMAIL, protocol: 'proton-calendar://' },
+            output: 'proton-calendar:',
+        },
+        {
+            name: 'should return protoncalendar for protoncalendar protocol',
+            input: { app: APPS.PROTONCALENDAR, protocol: 'protoncalendar://' },
+            output: 'protoncalendar:',
+        },
+        {
             name: 'should return proton-foo for proton-foo',
             input: { app: 'proton-foo' as unknown as APP_NAMES, protocol: 'proton-foo://' },
             output: 'proton-foo:',
