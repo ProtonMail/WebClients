@@ -238,6 +238,10 @@ export const selectActiveReaction = (state: MeetState, identity: string) => {
     return state.meetingChatAndReactions.activeReactions[identity]?.emoji;
 };
 
+export const selectActiveReactions = (state: MeetState) => {
+    return state.meetingChatAndReactions.activeReactions;
+};
+
 const EMPTY_REACTIONS: ChatMessageReactions = {};
 export const selectChatMessageReactions = (state: MeetState, messageId: string) => {
     return state.meetingChatAndReactions.chatMessages.find((m) => m.id === messageId)?.reactions ?? EMPTY_REACTIONS;
