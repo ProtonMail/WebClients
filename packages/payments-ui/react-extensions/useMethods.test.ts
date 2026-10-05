@@ -421,7 +421,6 @@ describe('selection', () => {
                 paymentStatus,
                 flow: 'subscription',
                 canUseApplePay: true,
-                canUseGooglePay: true,
             });
 
             act(() => {

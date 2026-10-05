@@ -470,8 +470,6 @@ export const useGooglePayDependencies = (
         onVerificationCancelled: () => void;
     }
 ) => {
-    const googlePayEnabled = useFlag('GooglePay');
-
     const { createNotification } = useNotifications();
     const modalIdRef = useRef<string | null>(null);
     const { createModal, removeModal } = useModals();
@@ -531,5 +529,5 @@ export const useGooglePayDependencies = (
         onInitialize: () => {},
     };
 
-    return { canUseGooglePay: googlePayEnabled, googlePayModalHandles };
+    return { googlePayModalHandles };
 };
