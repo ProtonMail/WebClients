@@ -45,8 +45,8 @@ export const Chat = () => {
     const [newMessageCount, setNewMessageCount] = useState(0);
     const [newMentionCount, setNewMentionCount] = useState(0);
 
-    // Whether a thread root is pinned at the top; drives the opaque header (see below).
-    const [hasStuckThread, setHasStuckThread] = useState(false);
+    // Root message id of the thread pinned at the top, if any; drives the opaque header (see below).
+    const [stuckThreadId, setStuckThreadId] = useState<string | null>(null);
 
     const roomName = useMeetSelector(selectRoomName);
 
@@ -97,7 +97,7 @@ export const Chat = () => {
 
         const stickyHeaders = container.querySelectorAll<HTMLElement>('.chat-thread-header--sticky');
         if (stickyHeaders.length === 0) {
-            setHasStuckThread(false);
+            setStuckThreadId(null);
             return;
         }
 
@@ -105,15 +105,12 @@ export const Chat = () => {
         const headerHeight = parseFloat(getComputedStyle(container).getPropertyValue('--side-bar-header-height')) || 0;
         const pinLine = containerTop + headerHeight;
 
-        let stuck = false;
-        stickyHeaders.forEach((header) => {
+        const stuckHeader = Array.from(stickyHeaders).find((header) => {
             const rect = header.getBoundingClientRect();
-            if (rect.top <= pinLine + 1 && rect.bottom > pinLine) {
-                stuck = true;
-            }
+            return rect.top <= pinLine + 1 && rect.bottom > pinLine;
         });
 
-        setHasStuckThread(stuck);
+        setStuckThreadId(stuckHeader?.dataset.threadRootId ?? null);
     }, []);
 
     const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
@@ -275,7 +272,7 @@ export const Chat = () => {
             absoluteHeader={true}
             isScrolled={isScrolled}
             paddingClassName="py-4"
-            paddingHeaderClassName={hasStuckThread ? 'chat-panel-header' : ''}
+            paddingHeaderClassName={stuckThreadId !== null ? 'chat-panel-header' : ''}
             header={
                 <div className="flex items-center">
                     {!isSearchOn && (
@@ -361,6 +358,7 @@ export const Chat = () => {
                                           replies={replies}
                                           roomName={roomName}
                                           isRootMissing={isRootMissing}
+                                          isStuck={stuckThreadId === (root as MeetChatMessage).id}
                                       />
                                   ) : (
                                       <ChatItem item={root} roomName={roomName} />
