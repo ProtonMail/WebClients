@@ -1,7 +1,7 @@
 import { $generateNodesFromDOM } from '@lexical/html'
 import { $convertFromMarkdownString } from '@lexical/markdown'
 import type { ConvertibleDataType } from '@proton/docs-shared'
-import { TranslatedResult } from '@proton/docs-shared'
+import { TranslatedResult } from '../Utils/TranslatedResult'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 import type { LexicalEditor, LexicalNode } from 'lexical'
 import { $createParagraphNode, $getRoot, $insertNodes } from 'lexical'
