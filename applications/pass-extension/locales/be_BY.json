@@ -825,6 +825,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Show less": [
+        "Паказаць менш"
+      ],
+      "Show more": [
+        "Паказаць больш"
       ]
     },
     "Activity": {
@@ -2352,7 +2358,7 @@
         "Ніколі"
       ],
       "New": [
-        "Новы"
+        "Новая"
       ],
       "No activity recorded yet.": [
         "Пакуль ніякай актыўнасці не выяўлена."
@@ -3103,6 +3109,9 @@
       ],
       "Folder renamed to \"${ payload.folder.name }\"": [
         "Папка перайменавана на \"${ payload.folder.name }\""
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Пераключыцеся на іншую папку або стварыце элемент у гэтай папцы"
       ]
     },
     "Keyboard key": {
@@ -4581,6 +4590,9 @@
       ],
       "You can attach files to items for a better organization": [
         "Вы можаце далучаць файлы да элементаў для лепшай арганізацыі"
+      ],
+      "You may close this window after saving the file.": [
+        "Вы можаце закрыць гэтае акно пасля захавання файла."
       ]
     },
     "Permission": {
@@ -4705,6 +4717,9 @@
       ],
       "Used on ${ url }": [
         "Выкарыстоўваецца на ${ url }"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Увядзіце паўторна \"${ name }\", каб пацвердзіць выдаленне"
       ]
     },
     "Result": {
@@ -5867,6 +5882,12 @@
       ],
       "You've reached the maximum folder nesting level": [
         "Дасягнуты максімальны ўзровень укладзеных папак"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Вы дасягнулі максімальнай колькасці папак на гэтым узроўні"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Вы дасягнулі максімальнай колькасці папак для гэтага сховішча"
       ]
     }
   }
