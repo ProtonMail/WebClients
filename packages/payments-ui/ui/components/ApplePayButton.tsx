@@ -48,7 +48,7 @@ interface ApplePayButtonProps extends ChargebeeWrapperProps {
     onClick?: (payload: PayButtonOnClickPayload) => void;
 }
 
-export const ApplePayButton = ({ formInvalid, loading, onClick, ...props }: ApplePayButtonProps) => {
+export const ApplePayButton = ({ formInvalid, loading, onClick, width, ...props }: ApplePayButtonProps) => {
     const initializing = props.applePay.initializing;
     const disabled = props.disabled;
 
@@ -74,7 +74,7 @@ export const ApplePayButton = ({ formInvalid, loading, onClick, ...props }: Appl
     }, [initializing, disabled, renderFakeButton]);
 
     return (
-        <div className="relative">
+        <div className="relative" style={{ width }}>
             {fakeApplePayButton}
             <div className={clsx('flex flex-column', renderFakeButton && 'visibility-hidden absolute')}>
                 <ChargebeeIframe

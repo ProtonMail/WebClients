@@ -127,6 +127,7 @@ const applePayEnabledFlows: PaymentMethodFlow[] = [
     'signup-v2-upgrade',
     'signup-vpn',
     'subscription',
+    'invoice',
 ];
 
 const googlePayEnabledFlows: PaymentMethodFlow[] = [...applePayEnabledFlows, 'reservation-donation'];

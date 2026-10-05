@@ -7,8 +7,11 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import { ApplePayButton } from '@proton/payments-ui/ui/components/ApplePayButton';
 import { ChargebeeIdealButton } from '@proton/payments-ui/ui/components/ChargebeeIdealButton';
+import { WALLET_BUTTON_WIDTH } from '@proton/payments-ui/ui/components/ChargebeeIframe';
 import { ChargebeePaypalButton } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
+import { GooglePayButton } from '@proton/payments-ui/ui/components/GooglePayButton';
 import { checkInvoice } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, Invoice } from '@proton/payments/core/interface';
@@ -92,29 +95,11 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
 
     const process = async (processor?: PaymentProcessorHook) =>
         withLoading(async () => {
-            let selectedProcessor = processor;
-
-            // Here we have a unique case when the payment can happen even if no payment methods are offered.
-            // Even in the SubscriptionContainer, we select a payment method underhood when the amount due is 0.
-            // In the PayInvoiceModal, there is an exception for splitted users when when we disable all the new payment
-            // methods. In this case amountDue > 0 check is a traditional one: the payment processor MUST exist if
-            // the AmountDue is greater than 0. There are several UI cases for this:
-            //   - user has saved payment method. Then the payment processor will exist here. It will be payment
-            //       processor for the saved payment method.
-            //   - user does not have saved payment method. Then user will see a prompt to add a payment method (see
-            //       it below). In this case the payment processor will be undefined and this code will never be called
-            //       because the Pay button is supposed to be disabled.
-            //   - finally, amountDue is 0 and there is no payment processor, then it means that the user doesn't have
-            //       saved payment methods. But they are still allowed to pay. In this case we can select any "neutral"
-            //       payment processor. It will behave exactly like in the SubscriptionContainer when the
-            //       amount due is 0.
+            // When credits cover the invoice, only the card processor emits a token-less chargeable payload. The PayPal,
+            // iDEAL, Apple Pay and Google Pay processors are no-ops here because they charge from their own buttons.
+            const selectedProcessor = amountDue === 0 ? paymentFacade.chargebeeCard : processor;
             if (!selectedProcessor) {
-                if (amountDue > 0) {
-                    return;
-                }
-
-                // The case of selecting the "neutral" payment processor.
-                selectedProcessor = paymentFacade.chargebeeCard;
+                return;
             }
 
             try {
@@ -127,7 +112,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
                         invoiceId: invoice.ID,
                         currency,
                         amount: amountDue,
-                        processorType: paymentFacade.selectedProcessor?.meta.type,
+                        processorType: selectedProcessor.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                     },
@@ -136,34 +121,58 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
         });
 
     const submitButton = (() => {
-        if (paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-            return (
-                <ChargebeePaypalButton
-                    chargebeePaypal={paymentFacade.chargebeePaypal}
-                    iframeHandles={paymentFacade.iframeHandles}
-                />
-            );
-        }
-        if (paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
-            return (
-                <ChargebeeIdealButton
-                    chargebeeIdeal={paymentFacade.chargebeeIdeal}
-                    iframeHandles={paymentFacade.iframeHandles}
-                />
-            );
-        }
-
-        return (
+        const defaultButton = (
             <Button
                 color="norm"
                 loading={loading}
-                disabled={paymentFacade.methods.loading}
+                disabled={paymentFacade.methods.loading || amountLoading}
                 type="submit"
                 data-testid="pay-invoice-button"
             >
                 {c('Action').t`Pay`}
             </Button>
         );
+
+        if (amountLoading || amountDue === 0) {
+            return defaultButton;
+        }
+
+        switch (paymentFacade.selectedMethodValue) {
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
+                return (
+                    <ChargebeePaypalButton
+                        chargebeePaypal={paymentFacade.chargebeePaypal}
+                        iframeHandles={paymentFacade.iframeHandles}
+                    />
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
+                return (
+                    <ChargebeeIdealButton
+                        chargebeeIdeal={paymentFacade.chargebeeIdeal}
+                        iframeHandles={paymentFacade.iframeHandles}
+                    />
+                );
+            case PAYMENT_METHOD_TYPES.APPLE_PAY:
+                return (
+                    <ApplePayButton
+                        applePay={paymentFacade.applePay}
+                        iframeHandles={paymentFacade.iframeHandles}
+                        width={WALLET_BUTTON_WIDTH}
+                        loading={loading}
+                    />
+                );
+            case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
+                return (
+                    <GooglePayButton
+                        googlePay={paymentFacade.googlePay}
+                        iframeHandles={paymentFacade.iframeHandles}
+                        width={WALLET_BUTTON_WIDTH}
+                        loading={loading}
+                    />
+                );
+            default:
+                return defaultButton;
+        }
     })();
 
     return (
