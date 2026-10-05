@@ -30,12 +30,15 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getContact } from '@proton/shared/lib/api/contacts';
+import { getConversation } from '@proton/shared/lib/api/conversations';
 import { checkSieveFilter } from '@proton/shared/lib/api/filters';
 import { updateAutoresponder, updateViewLayout, updateViewMode } from '@proton/shared/lib/api/mailSettings';
+import { getMessage } from '@proton/shared/lib/api/messages';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import type { MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -49,6 +52,7 @@ import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import type { RecipientType } from '../../models/address';
 import { composerActions } from '../../store/composers/composersSlice';
 import { load as loadConversationAction } from '../../store/conversations/conversationsActions';
+import type { ConversationResult } from '../../store/conversations/conversationsTypes';
 import { backendActionStarted, markAll as markAllAction } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
 import { buildDebugReportDraft } from '../helpers/debugReport';
@@ -227,6 +231,21 @@ const LumoMailProvider = ({ children }: Props) => {
             // Unwrapped so a failed fetch rejects: dispatching a thunk resolves with a rejected action.
             loadConversation: (conversationID) =>
                 latest.current.dispatch(loadConversationAction({ conversationID, messageID: undefined })).unwrap(),
+            // Silenced: a deleted email is an expected answer that Lumo relays, not an app error to toast.
+            fetchConversation: async (conversationID) => {
+                const { Conversation: conversation } = await latest.current.api<ConversationResult>({
+                    ...getConversation(conversationID),
+                    silence: true,
+                });
+                return conversation;
+            },
+            fetchMessage: async (messageID) => {
+                const { Message: message } = await latest.current.api<{ Message: Message }>({
+                    ...getMessage(messageID),
+                    silence: true,
+                });
+                return message;
+            },
             initializeMessage: (messageID, labelID) => latest.current.initializeMessage(messageID, labelID),
             composeDraft: ({ action, referenceMessage, bodyBeforeQuote }) =>
                 latest.current.onCompose({ type: ComposeTypes.newMessage, action, referenceMessage, bodyBeforeQuote }),

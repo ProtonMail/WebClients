@@ -1,10 +1,14 @@
 import { ToolInputError, UnknownReferenceError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ReferenceKind, ReferenceLabel, ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { API_CODES } from '@proton/shared/lib/constants';
 
 import { isElementConversation } from '../../helpers/elements';
 import type { Element } from '../../models/element';
+import { conversationByID } from '../../store/conversations/conversationsSelectors';
 import { taskRunning } from '../../store/elements/elementsSelectors';
-import type { ToolStore } from '../toolModule';
+import { messageByID } from '../../store/messages/messagesSelectors';
+import type { MailToolDeps, ToolStore } from '../toolModule';
 
 /** Resolve a reference to its real backend id, or reject it as a hallucination the model must recover from. */
 export const resolveId = (reference: string, references: ReferenceRegistry): string => {
@@ -69,6 +73,78 @@ export const emailReferenceFor = (references: ReferenceRegistry, element: Elemen
 
 export const isConversationReferenceID = (references: ReferenceRegistry, id: string): boolean => {
     return conversationIDsMintedBy(references).has(id);
+};
+
+export type ElementFetchDeps = Pick<MailToolDeps, 'store' | 'fetchConversation' | 'fetchMessage'>;
+
+/** Every slice here is kept current by the event loop, so a hit is as fresh as a fetch. */
+const storedElement = (state: ReturnType<ToolStore['getState']>, id: string): Element | undefined => {
+    return (
+        state.elements.elements[id] ??
+        conversationByID(state, { ID: id })?.Conversation ??
+        messageByID(state, { ID: id })?.data
+    );
+};
+
+const CONVERSATION_NOT_FOUND_CODE = 20052;
+// Not `isNotExistError`: its INVALID_ID means the id went to the wrong endpoint, not that the email is gone.
+const EMAIL_DELETED_CODES = [API_CODES.NOT_FOUND_ERROR, CONVERSATION_NOT_FOUND_CODE];
+
+const isEmailDeletedError = (error: unknown): boolean => {
+    return EMAIL_DELETED_CODES.includes(getApiError(error).code);
+};
+
+const goneMessage = (reference: string, references: ReferenceRegistry): string => {
+    const title = references.labelFor(reference)?.title;
+    return `Email ${reference}${title ? ` ("${title}")` : ''} no longer exists: it was permanently deleted.`;
+};
+
+const fetchElement = async (
+    mail: ElementFetchDeps,
+    id: string,
+    reference: string,
+    references: ReferenceRegistry
+): Promise<Element> => {
+    try {
+        return isConversationReferenceID(references, id)
+            ? await mail.fetchConversation(id)
+            : await mail.fetchMessage(id);
+    } catch (error) {
+        if (isEmailDeletedError(error)) {
+            throw new ToolInputError(goneMessage(reference, references));
+        }
+        throw error;
+    }
+};
+
+/** One email's current state, from the store when any slice holds it and from the server otherwise. */
+const resolveFreshElement = async (
+    mail: ElementFetchDeps,
+    reference: string,
+    references: ReferenceRegistry
+): Promise<Element> => {
+    const id = resolveId(reference, references);
+    return storedElement(mail.store.getState(), id) ?? fetchElement(mail, id, reference, references);
+};
+
+/**
+ * Resolve email references to their current {@link Element}s, wherever the email now sits, so the
+ * apply-location hook validates against the mailbox as it is rather than as an earlier read saw it.
+ *
+ * Rejections are {@link ToolInputError}s because an empty `ids` and a deleted email are both things the
+ * model can relay or correct; a plain Error would reach it only as "the tool failed".
+ */
+export const resolveFreshElements = async (
+    mail: ElementFetchDeps,
+    emailReferences: string[],
+    references: ReferenceRegistry
+): Promise<Element[]> => {
+    if (!emailReferences.length) {
+        throw new ToolInputError(
+            '`ids` was empty: pass at least one email-… reference from a mailbox read or a search.'
+        );
+    }
+    return Promise.all(emailReferences.map((reference) => resolveFreshElement(mail, reference, references)));
 };
 
 /**

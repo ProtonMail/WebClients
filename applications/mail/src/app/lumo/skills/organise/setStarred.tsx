@@ -6,7 +6,7 @@ import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
-import { resolveElements } from '../../helpers/references';
+import { resolveFreshElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import {
     emailCountDetail,
@@ -25,7 +25,7 @@ export const setStarredDefinition: ToolDefinition<SetStarredParams, void> = {
     name: 'set_starred',
     kind: 'mutation',
     toolDescription:
-        'Star or unstar one or more emails. `ids` are email-… references from view_emails/search. Set `starred` to true for "star/flag these", or false for "unstar/unflag these" or "remove the star". This SETS that state rather than toggling it, so it is safe on a mixed selection. The on-screen rows show which emails are starred: a row carrying `starred` is starred, and a row without it is not. Only pass emails that are not already in the state you are setting — if every email the user means is already in it, tell them there is nothing to do instead of proposing this. Starring and unstarring only change the star; they do not move the emails or alter anything else. Proposed to the user for confirmation before it runs.',
+        'Star or unstar one or more emails. `ids` are email-… references from any earlier result in this conversation. Set `starred` to true for "star/flag these", or false for "unstar/unflag these" or "remove the star". This SETS that state rather than toggling it, so it is safe on a mixed selection. The rows show which emails are starred: a row carrying `starred` is starred, and a row without it is not. Only pass emails that are not already in the state you are setting — if every email the user means is already in it, tell them there is nothing to do instead of proposing this. Starring and unstarring only change the star; they do not move the emails or alter anything else. Proposed to the user for confirmation before it runs.',
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
@@ -43,7 +43,7 @@ export const setStarredDefinition: ToolDefinition<SetStarredParams, void> = {
         },
         {
             context:
-                'The same rows are on screen and the user asks to unflag the receipt. Only the receipt carries `starred`, so it is the only one that needs unstarring.',
+                'The same rows were returned and the user asks to unflag the receipt. Only the receipt carries `starred`, so it is the only one that needs unstarring.',
             call: { ids: ['email-d4e5f6'], starred: false },
         },
     ],
@@ -57,7 +57,7 @@ export const setStarredDefinition: ToolDefinition<SetStarredParams, void> = {
 export const createSetStarredHandler =
     (mail: MailToolDeps): ToolHandler<SetStarredParams, void> =>
     async ({ ids, starred }, { references }) => {
-        const elements = resolveElements(mail.store, ids, references);
+        const elements = await resolveFreshElements(mail, ids, references);
         // `removeLabel` un-stars, so this sets an absolute state: an email already in the target state is
         // left as it is rather than flipped.
         await mail.applyLocation({

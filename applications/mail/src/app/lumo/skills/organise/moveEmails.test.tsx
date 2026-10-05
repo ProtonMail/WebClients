@@ -7,6 +7,7 @@ import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/inter
 import type { MailToolDeps } from '../../toolModule';
 import { hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
 import { createMoveEmailsHandler, moveEmailsCardRenderer, moveEmailsDefinition, resolveMoveTarget } from './moveEmails';
+import { offListState } from './organise.test.helpers';
 
 describe('resolveMoveTarget', () => {
     it('accepts a system location', () => {
@@ -77,11 +78,11 @@ describe('moveEmailsCardRenderer', () => {
 });
 
 describe('createMoveEmailsHandler', () => {
-    it('resolves references to elements and applies a MOVE to the system label', async () => {
+    it('resolves references to their current elements, on screen or not, and applies a MOVE to the system label', async () => {
         const references = createReferenceRegistry();
         const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const element = { ID: 'ELEMENT_ID_1' };
-        const store = { getState: () => ({ elements: { elements: { ELEMENT_ID_1: element } } }) };
+        const store = { getState: () => offListState([element]) };
         const applyLocation = jest.fn().mockResolvedValue([]);
         const deps = { store, applyLocation } as unknown as MailToolDeps;
 
