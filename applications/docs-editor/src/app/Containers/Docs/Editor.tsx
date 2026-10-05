@@ -12,7 +12,8 @@ import type {
   EditorInitializationConfig,
   DocumentRole,
 } from '@proton/docs-shared'
-import { AnonymousUserDisplayName, GenerateUUID, DocProvider, getRandomAnonymousUserLetter } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
+import { AnonymousUserDisplayName, DocProvider, getRandomAnonymousUserLetter } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { MarkdownTransformers } from './Utils/MarkdownTransformers'
@@ -161,7 +162,7 @@ export function Editor({
     return getRandomAnonymousUserLetter()
   }, [isAnonymousUser])
 
-  const anonymousUserId = useRef(GenerateUUID())
+  const anonymousUserId = useRef(uuidv4())
 
   const awarenessData = useMemo(
     () => ({

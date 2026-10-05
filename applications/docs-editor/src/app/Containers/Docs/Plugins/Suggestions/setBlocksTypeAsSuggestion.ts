@@ -1,7 +1,7 @@
 import { $getRoot, $getSelection, $isRangeSelection } from 'lexical'
 import type { BlockType } from '../BlockTypePlugin'
 import { $getElementBlockType, blockTypeToCreateElementFn } from '../BlockTypePlugin'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
@@ -37,7 +37,7 @@ export function $setBlocksTypeAsSuggestion(
   const anchorAndFocus = selection.getStartEndPoints()
   const anchor = anchorAndFocus ? anchorAndFocus[0] : null
 
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
 
   if (anchor !== null && anchor.key === 'root') {
     logger.info('suggestion-mode: Anchor is root node')

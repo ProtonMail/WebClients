@@ -7,7 +7,7 @@ import {
   $isRangeSelection,
   $isTextNode,
 } from 'lexical'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { $wrapSelectionInSuggestionNode, $isNodeNotInline } from './Utils'
 import type { DocsLogger } from '../../contract/DocsLogger'
@@ -63,7 +63,7 @@ export function $selectionInsertClipboardNodes(
     anchorBeforeInserting.offset === 0 &&
     currentBlock.getFirstDescendant()?.is(pointNode)
 
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
 
   const isInitialSelectionNotCollapsed = !selection.isCollapsed()
   if (isInitialSelectionNotCollapsed) {

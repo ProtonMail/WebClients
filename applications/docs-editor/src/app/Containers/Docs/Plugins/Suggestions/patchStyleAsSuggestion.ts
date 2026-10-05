@@ -1,7 +1,7 @@
 import { $forEachSelectedTextNode, $patchStyleText, getStyleObjectFromCSS } from '@lexical/selection'
 import type { DocsLogger } from '../../contract/DocsLogger'
 import { $getSelection, $isRangeSelection, $setSelection } from 'lexical'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { $findMatchingParent, $wrapNodeInElement } from '@lexical/utils'
@@ -30,7 +30,7 @@ export function $patchStyleAsSuggestion(
     return true
   }
 
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
 
   $forEachSelectedTextNode((textNode) => {
     const styleSuggestionParent = $findMatchingParent(

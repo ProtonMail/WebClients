@@ -2,7 +2,7 @@ import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import type { ElementNode } from 'lexical'
 import { $getSelection, $isRangeSelection, $isElementNode } from 'lexical'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
-import { GenerateUUID } from '@proton/docs-shared'
+import { v4 as uuidv4 } from 'uuid'
 import type { DocsLogger } from '../../contract/DocsLogger'
 import type { IndentChangeSuggestionProperties } from './Types'
 
@@ -21,7 +21,7 @@ export function $handleIndentOutdentAsSuggestion(
 
   const alreadyHandled = new Set()
   const nodes = selection.getNodes()
-  const suggestionID = GenerateUUID()
+  const suggestionID = uuidv4()
 
   for (let i = 0; i < nodes.length; i++) {
     const node = nodes[i]
