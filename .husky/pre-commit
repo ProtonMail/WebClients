@@ -1,2 +1,3 @@
 pnpm exec lint-staged
+pnpm run drive:test-index:staged
 pnpm run knip:staged
