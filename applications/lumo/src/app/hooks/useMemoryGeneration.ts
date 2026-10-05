@@ -17,6 +17,7 @@ import {
     memoriesFromContents,
     parseMemoryGenerationResponse,
     parseMemoryOptimizeResponse,
+    partitionMemories,
     rebuildMemoriesFromOptimizedContents,
     sampleUserPromptsForMemoryGeneration,
 } from '../util/memoryHelpers';
@@ -95,7 +96,8 @@ export function useMemoryGeneration() {
 
     const optimizeMemories = useCallback(
         async (existingMemories: Memory[]): Promise<Memory[]> => {
-            if (!canOptimizeMemories(existingMemories.length)) {
+            const { generated: generatedMemories } = partitionMemories(existingMemories);
+            if (!canOptimizeMemories(generatedMemories.length)) {
                 throw new Error('Not enough memories to optimize');
             }
 
@@ -105,14 +107,11 @@ export function useMemoryGeneration() {
             setIsOptimizing(true);
 
             try {
-                const response = await quickChat(api, buildMemoryOptimizePrompt(existingMemories), {
+                const response = await quickChat(api, buildMemoryOptimizePrompt(generatedMemories), {
                     enableWebSearch: false,
                     signal: controller.signal,
                 });
                 const contents = parseMemoryOptimizeResponse(response);
-                if (contents.length === 0) {
-                    throw new Error('No optimized memories returned');
-                }
                 return rebuildMemoriesFromOptimizedContents(contents, existingMemories);
             } finally {
                 if (optimizeAbortRef.current === controller) {

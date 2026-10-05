@@ -7,8 +7,11 @@
 	overscroll-behavior: contain;
 }
 
-.memory-panel-add-popover {
-	min-inline-size: 18rem;
+.memory-panel-toolbar-divider {
+	inline-size: 1px;
+	block-size: 1.25rem;
+	margin-inline: 0.125rem;
+	background-color: var(--border-weak);
 }
 
 .memory-panel-info {
@@ -27,6 +30,10 @@
 	&:last-child {
 		border-block-end: none;
 	}
+}
+
+.memory-panel-compose-row {
+	background-color: var(--background-norm);
 }
 
 .memory-panel-source-pill {
@@ -60,11 +67,11 @@
 	max-inline-size: 22rem;
 }
 
-// Flatten the field-two appearance for inline memory edits — minimal border, no focus ring,
-// matching font size — so the textarea reads as inline-editable text, not a form input.
-.memory-panel-edit-field {
+// Compose (add memory): standard bordered field — border must stay visible on hover/focus.
+// `className` lands on the textarea itself (TextAreaWithCounter renders it unwrapped).
+.memory-panel-compose-field {
 	inline-size: 100%;
-	border-color: var(--border-weak);
+	border: 1px solid var(--border-weak);
 	font-size: 0.875rem;
 	line-height: 1.4;
 	padding-block: 0.375rem;
@@ -73,12 +80,15 @@
 	min-block-size: 2.5rem;
 	box-shadow: none;
 
-	&:hover,
+	&:hover {
+		border-color: var(--border-norm);
+	}
+
 	&:focus,
-	&:focus-visible,
-	&:focus-within,
-	&.focus {
-		border: none;
+	&:focus-visible {
+		border-color: var(--interaction-norm);
 		box-shadow: none;
+		outline: none;
 	}
 }
+
