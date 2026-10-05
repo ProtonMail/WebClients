@@ -59,9 +59,9 @@ const AdminRolesOnboardingModal = ({ variant, ...props }: Props) => {
                             <p className="color-weak m-0">
                                 {variant === 'member'
                                     ? c('Admin roles onboarding')
-                                          .t`Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.`
+                                          .t`Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.`
                                     : c('Admin roles onboarding')
-                                          .t`Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.`}
+                                          .t`Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.`}
                             </p>
                         </>
                     )}
@@ -76,8 +76,11 @@ const AdminRolesOnboardingModal = ({ variant, ...props }: Props) => {
                                         .t`2 new admin roles`}</h1>
                                 )}
                                 <p className="color-weak my-0">
-                                    {c('Admin roles onboarding')
-                                        .t`Delegate management with the appropriate admin role.`}
+                                    {variant === 'member'
+                                        ? c('Admin roles onboarding')
+                                              .t`Choose from three new admin roles. Each admin receives only the access they need.`
+                                        : c('Admin roles onboarding')
+                                              .t`Choose from two new admin roles. Each admin receives only the access they need.`}
                                 </p>
                             </div>
                             <div className="flex flex-column gap-4">
