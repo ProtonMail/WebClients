@@ -5,6 +5,7 @@ import { AutofillMode } from '../../../types/protobuf';
 import { getStateMock } from '../../../utils/tests/fixtures/url-matching-state';
 import type { SearchItemsByDomainOptions } from '../types';
 import { searchItemsByDomain } from './match';
+import { DomainMatch } from './match-url';
 
 const state = getStateMock();
 
@@ -14,7 +15,7 @@ describe('Match selectors', () => {
     const options: SearchItemsByDomainOptions = {
         privateDomains: new Set(),
         sortOn: 'priority',
-        strict: false,
+        domainMatch: DomainMatch.DEFAULT,
         shareIds: undefined,
         regexEnabled: true,
     };

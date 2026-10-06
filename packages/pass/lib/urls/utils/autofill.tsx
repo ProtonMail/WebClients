@@ -10,7 +10,7 @@ import { deduplicate } from '../../../utils/array/duplicate';
 import { partition } from '../../../utils/array/partition';
 import { isEmptyString } from '../../../utils/string/is-empty-string';
 import { uniqueId } from '../../../utils/string/unique-id';
-import { ItemUrlMatch, getItemPriorityForUrl } from '../search/match-url';
+import { DomainMatch, ItemUrlMatch, getItemPriorityForUrl } from '../search/match-url';
 import { parseUrl } from './parser';
 
 /** List of modes where the url field is an actual url and can be used as such */
@@ -129,7 +129,7 @@ export const testUrl = (url: string, autofillUrl: AutofillUrl, regexEnabled: boo
         itemId: 'itemId',
         data: { type: 'login', content: { autofillUrls: [autofillUrl] } },
     } as ItemRevision<'login'>;
-    const result = getItemPriorityForUrl(parseUrl(url), item, { strict: false, regexEnabled });
+    const result = getItemPriorityForUrl(parseUrl(url), item, { domainMatch: DomainMatch.DEFAULT, regexEnabled });
     return result !== ItemUrlMatch.NO_MATCH;
 };
 
