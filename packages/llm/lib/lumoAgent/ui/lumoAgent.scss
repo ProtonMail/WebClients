@@ -27,17 +27,21 @@
 	white-space: pre-wrap;
 	word-break: break-word;
 
-	// Right-aligned pale-lavender user bubble, matching lumo.proton.me.
 	&.is-user {
 		align-self: flex-end;
 		border-end-end-radius: var(--border-radius-sm);
-		background: var(--interaction-norm-minor-2, rgb(109 74 255 / 0.1));
+		background: var(--interaction-norm-minor-1);
 		color: var(--text-norm);
+
+		// Dark themes have no purple token between minor-1 (darker than the reply bubble) and the solid norm.
+		[data-theme-mode='dark'] & {
+			background: color-mix(in srgb, var(--interaction-norm) 35%, var(--background-norm));
+		}
 	}
 }
 
 // Assistant reply: a soft neutral bubble hugging the left, two-tone (colour + alignment) against the
-// lavender user bubble opposite it. Trim the markdown renderer's outer block margins.
+// purple user bubble opposite it. Trim the markdown renderer's outer block margins.
 .lumo-agent-reply {
 	align-self: flex-start;
 	max-inline-size: var(--lumo-agent-column);
