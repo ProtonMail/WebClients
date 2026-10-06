@@ -234,6 +234,7 @@ export const ComposerEditorArea = ({
                         >
                             <img
                                 src={isGenerating ? lumoStop : lumoStart}
+                                draggable={false}
                                 alt={
                                     isGenerating
                                         ? c('collider_2025: Action').t`Stop generating`
