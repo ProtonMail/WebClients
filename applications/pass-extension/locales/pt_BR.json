@@ -700,6 +700,12 @@
       "Show Less": [
         "Mostrar menos"
       ],
+      "Show less": [
+        "Mostrar menos"
+      ],
+      "Show more": [
+        "Mostrar mais"
+      ],
       "Sign back in": [
         "Inicie sessão novamente"
       ],
@@ -1895,9 +1901,6 @@
       "Can view this item.": [
         "Pode vere esse item."
       ],
-      "Change your password": [
-        "Alterar sua senha"
-      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Escolha uma chave de acesso salva para iniciar sessão em ${ domain }"
       ],
@@ -1997,9 +2000,6 @@
       "Editor": [
         "Editor"
       ],
-      "email": [
-        "e-mail"
-      ],
       "Email address successfully deleted from monitoring": [
         "O endereço de e-mail foi excluído do monitoramento."
       ],
@@ -2095,9 +2095,6 @@
       ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
-      ],
-      "finance": [
-        "finança"
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Pasta \"${ payload.folder.name }\" criada"
@@ -2264,9 +2261,6 @@
       "Medium Priority": [
         "Média prioridade"
       ],
-      "Monitor accounts": [
-        "Monitor de contas"
-      ],
       "Monitoring settings successfully updated": [
         "As configurações de monitoramento foram atualizadas."
       ],
@@ -2378,9 +2372,6 @@
       ],
       "Passkey sign-in": [
         "Iniciar sessão com chave de acesso"
-      ],
-      "password": [
-        "senha"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Senha de bloqueio registrada. Use-a para desbloquear o ${ PASS_APP_NAME }"
@@ -2869,9 +2860,6 @@
       ],
       "User's access successfully updated": [
         "O acesso do usuário foi atualizado."
-      ],
-      "username": [
-        "Nome de usuário"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Cofre \"${ payload.content.name }\" excluído"
@@ -5067,6 +5055,9 @@
       "Item": [
         "Item"
       ],
+      "Keep your subscription active": [
+        "Mantenha sua assinatura ativa"
+      ],
       "Last autofill": [
         "Último preenchimento automático"
       ],
@@ -5585,9 +5576,6 @@
       ],
       "Move to trash": [
         "Mover para a lixeira"
-      ],
-      "Name is required": [
-        "Nome é obrigatório"
       ],
       "No items": [
         "Nenhum item"

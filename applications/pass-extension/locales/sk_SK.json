@@ -700,6 +700,12 @@
       "Show Less": [
         "Zobraziť menej"
       ],
+      "Show less": [
+        "Zobraziť menej"
+      ],
+      "Show more": [
+        "Zobraziť viac"
+      ],
       "Sign back in": [
         "Prihláste sa späť"
       ],
@@ -1946,9 +1952,6 @@
       "Can view this item.": [
         "Môže zobraziť túto položku."
       ],
-      "Change your password": [
-        "Zmeňte si heslo"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total } hesiel"
       ],
@@ -2054,9 +2057,6 @@
       "Editor": [
         "Editor"
       ],
-      "email": [
-        "email"
-      ],
       "Email address successfully deleted from monitoring": [
         "Emailová adresa bola z monitorovania úspešne odstránená"
       ],
@@ -2152,9 +2152,6 @@
       ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV súbor svojimi údajmi"
-      ],
-      "finance": [
-        "financie"
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Priečinok \"${ payload.folder.name }\" bol vytvorený"
@@ -2330,9 +2327,6 @@
       "Medium Priority": [
         "Stredná priorita"
       ],
-      "Monitor accounts": [
-        "Monitorujte účty"
-      ],
       "Monitoring settings successfully updated": [
         "Nastavenia monitorovania boli úspešne aktualizované"
       ],
@@ -2461,9 +2455,6 @@
       ],
       "Passkey sign-in": [
         "Prihlásenie prístupovým kľúčom"
-      ],
-      "password": [
-        "heslo"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Heslo na uzamknutie bolo úspešne zaregistrované. Použite ho na odomknutie ${ PASS_APP_NAME }"
@@ -2959,9 +2950,6 @@
       ],
       "User's access successfully updated": [
         "Prístup používateľa bol úspešne aktualizovaný"
-      ],
-      "username": [
-        "používateľské meno"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" bol úspešne odstránený"
@@ -5604,6 +5592,30 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } heslo je povinné"
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } priečinok bol zlúčený so svojím nadradeným priečinkom, pretože bola dosiahnutá maximálna úroveň vnorenia.",
+        "${ count } priečinky boli zlúčené so svojimi nadradenými priečinkami, pretože bola dosiahnutá maximálna úroveň vnorenia.",
+        "${ count } priečinkov bolo zlúčených so svojimi nadradenými priečinkami, pretože bola dosiahnutá maximálna úroveň vnorenia.",
+        "${ count } priečinkov bolo zlúčených so svojimi nadradenými priečinkami, pretože bola dosiahnutá maximálna úroveň vnorenia."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } priečinok nebol naimportovaný, pretože jeho nadradená zložka dosiahla maximálny počet podzložiek. Jeho položky boli importované do najbližšej dostupnej zložky.",
+        "${ count } priečinky neboli naimportované, pretože ich nadradená zložka dosiahla maximálny počet podzložiek. Ich položky boli importované do najbližšej dostupnej zložky.",
+        "${ count } priečinkov nebolo naimportovaných, pretože ich nadradená zložka dosiahla maximálny počet podzložiek. Ich položky boli importované do najbližšej dostupnej zložky.",
+        "${ count } priečinkov nebolo naimportovaných, pretože ich nadradená zložka dosiahla maximálny počet podzložiek. Ich položky boli importované do najbližšej dostupnej zložky."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } priečinok nebol naimportovaný, pretože tento úložný priestor dosiahol limit počtu priečinkov. Jeho položky boli importované do najbližšieho dostupného priečinka.",
+        "${ count } priečinky neboli naimportované, pretože tento úložný priestor dosiahol limit počtu priečinkov. Ich položky boli importované do najbližších dostupných priečinkov.",
+        "${ count } priečinkov nebolo naimportovaných, pretože tento úložný priestor dosiahol limit počtu priečinkov. Ich položky boli importované do najbližších dostupných priečinkov.",
+        "${ count } priečinkov nebolo naimportovaných, pretože tento úložný priestor dosiahol limit počtu priečinkov. Ich položky boli importované do najbližších dostupných priečinkov."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } priečinok sa nepodarilo vytvoriť. Jeho položky boli naimportované do najbližšieho dostupného priečinka.",
+        "${ failed } priečinky sa nepodarilo vytvoriť. Ich položky boli naimportované do najbližšieho dostupného priečinka.",
+        "${ failed } priečinkov sa nepodarilo vytvoriť. Ich položky boli naimportované do najbližšieho dostupného priečinka.",
+        "${ failed } priečinkov sa nepodarilo vytvoriť. Ich položky boli naimportované do najbližšieho dostupného priečinka."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "Funkcia ${ modeLabelStong } ponúka rozsiahle možnosti ovládania, avšak už jediná chyba môže spôsobiť, že funkcia automatického vypĺňania bude na podvodných alebo phishingových webových stránkach vyhľadávať a vypĺňať údaje."
       ],
@@ -5753,9 +5765,6 @@
       ],
       "Move to trash": [
         "Presunúť do koša"
-      ],
-      "Name is required": [
-        "Názov je povinný"
       ],
       "No items": [
         "Žiadne položky"

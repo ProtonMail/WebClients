@@ -682,6 +682,12 @@
       "Show Less": [
         "Mostrar menos"
       ],
+      "Show less": [
+        "Mostrar menos"
+      ],
+      "Show more": [
+        "Mostrar más"
+      ],
       "Sign back in": [
         "Volver al inicio de sesión"
       ],
@@ -1846,9 +1852,6 @@
       "Can view this item.": [
         "Puede ver este elemento."
       ],
-      "Change your password": [
-        "Cambia tu contraseña"
-      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Selecciona una clave de acceso guardada para iniciar sesión en ${ domain }."
       ],
@@ -1948,9 +1951,6 @@
       "Editor": [
         "Editor"
       ],
-      "email": [
-        "correo electrónico"
-      ],
       "Email address successfully deleted from monitoring": [
         "La dirección de correo electrónico ha sido eliminada del monitoreo."
       ],
@@ -2046,9 +2046,6 @@
       ],
       "Fill in the CSV with your data": [
         "Rellenar el CSV con tus datos"
-      ],
-      "finance": [
-        "finanzas"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Sigue estos pasos para importar tus datos con un archivo CSV genérico:"
@@ -2206,9 +2203,6 @@
       "Medium Priority": [
         "Prioridad media"
       ],
-      "Monitor accounts": [
-        "Monitoreo de cuentas"
-      ],
       "Monitoring settings successfully updated": [
         "Se han actualizado los ajustes de monitoreo."
       ],
@@ -2320,9 +2314,6 @@
       ],
       "Passkey sign-in": [
         "Inicio de sesión con clave de acceso"
-      ],
-      "password": [
-        "contraseña"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se ha registrado el bloqueo por contraseña. Utilízalo para desbloquear ${ PASS_APP_NAME }."
@@ -2811,9 +2802,6 @@
       ],
       "User's access successfully updated": [
         "Se ha actualizado el acceso del usuario."
-      ],
-      "username": [
-        "nombre de usuario"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Se ha eliminado la caja fuerte \"${ payload.content.name }\"."
@@ -5448,9 +5436,6 @@
       ],
       "Move to trash": [
         "Mover a la papelera"
-      ],
-      "Name is required": [
-        "El nombre es obligatorio."
       ],
       "No items": [
         "No hay elementos."

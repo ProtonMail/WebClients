@@ -700,6 +700,12 @@
       "Show Less": [
         "Паказаць менш"
       ],
+      "Show less": [
+        "Паказаць менш"
+      ],
+      "Show more": [
+        "Паказаць больш"
+      ],
       "Sign back in": [
         "Увайсці яшчэ раз"
       ],
@@ -1937,9 +1943,6 @@
       "Can view this item.": [
         "Можа праглядаць гэты элемент."
       ],
-      "Change your password": [
-        "Змяніць свой пароль"
-      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выбраць захаваны ключ доступу для ўваходу ў ${ domain }"
       ],
@@ -2039,9 +2042,6 @@
       "Editor": [
         "Рэдактар​​"
       ],
-      "email": [
-        "электронная пошта"
-      ],
       "Email address successfully deleted from monitoring": [
         "Адрас электроннай пошты паспяхова выдалены з назірання"
       ],
@@ -2137,9 +2137,6 @@
       ],
       "Fill in the CSV with your data": [
         "Запоўніце CSV сваімі данымі"
-      ],
-      "finance": [
-        "фінансы"
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Папка \"${ payload.folder.name }\" створана"
@@ -2312,9 +2309,6 @@
       "Medium Priority": [
         "Сярэдні прыярытэт"
       ],
-      "Monitor accounts": [
-        "Назіранне за ўліковымі запісамі"
-      ],
       "Monitoring settings successfully updated": [
         "Налады назірання паспяхова абноўлены"
       ],
@@ -2358,7 +2352,7 @@
         "Ніколі"
       ],
       "New": [
-        "Новы"
+        "Новая"
       ],
       "No activity recorded yet.": [
         "Пакуль ніякай актыўнасці не выяўлена."
@@ -2428,9 +2422,6 @@
       ],
       "Passkey sign-in": [
         "Увайсці з ключом доступу"
-      ],
-      "password": [
-        "пароль"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Пароль блакіроўкі паспяхова зарэгістраваны. Вы можаце выкарыстоўваць яго, каб разблакіраваць ${ PASS_APP_NAME }"
@@ -2738,6 +2729,9 @@
       "Suggested": [
         "Прапанавана"
       ],
+      "Switch to another folder or create an item in this folder": [
+        "Пераключыцеся на іншую папку або стварыце элемент у гэтай папцы"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Пераключыцеся на іншае сховішча або стварыце элемент у гэтым сховішчы."
       ],
@@ -2923,9 +2917,6 @@
       ],
       "User's access successfully updated": [
         "Доступ карыстальніка паспяхова абноўлены"
-      ],
-      "username": [
-        "імя карыстальніка"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховішча \"${ payload.content.name }\" паспяхова выдалена"
@@ -4581,6 +4572,9 @@
       ],
       "You can attach files to items for a better organization": [
         "Вы можаце далучаць файлы да элементаў для лепшай арганізацыі"
+      ],
+      "You may close this window after saving the file.": [
+        "Вы можаце закрыць гэтае акно пасля захавання файла."
       ]
     },
     "Permission": {
@@ -4675,6 +4669,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Апішыце праблему і далучыце ўсе паведамленні з памылкамі"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Увядзіце паўторна \"${ name }\", каб пацвердзіць выдаленне"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Пошук ${ pluralItemType } у ${ vaultName }"
@@ -5703,9 +5700,6 @@
       "Move to trash": [
         "Перамясціць у сметніцу"
       ],
-      "Name is required": [
-        "Патрабуецца назва"
-      ],
       "No items": [
         "Элементы адсутнічаюць"
       ],
@@ -5834,6 +5828,12 @@
       ],
       "You've reached the maximum folder nesting level": [
         "Дасягнуты максімальны ўзровень укладзеных папак"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Вы дасягнулі максімальнай колькасці папак на гэтым узроўні"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Вы дасягнулі максімальнай колькасці папак для гэтага сховішча"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Ваш адміністратар павінен стварыць для вас сховішча, перш чым вы зможаце ствараць элементы"
