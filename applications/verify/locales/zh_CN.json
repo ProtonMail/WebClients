@@ -38,6 +38,9 @@
       "Get verification code": [
         "获取验证码"
       ],
+      "More info": [
+        "更多信息"
+      ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
       ],
@@ -1499,14 +1502,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "15 个邮箱地址和 3 个自有域名供您选择"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "每位用户存储空间可升至 ${ bundleStorage }"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "总存储空间升至 ${ bundleStorage }"
       ],
       "Support for ${ n } custom email domain": [
         "支持 ${ n } 个自定义域"
@@ -1515,11 +1512,6 @@
     "Placeholder": {
       "Password": [
         "密码"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
       ]
     },
     "saml: Error": {
