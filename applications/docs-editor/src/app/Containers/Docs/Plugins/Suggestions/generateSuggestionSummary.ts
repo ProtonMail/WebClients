@@ -1,6 +1,6 @@
 import type { NodeKey, LexicalEditor, ElementNode } from 'lexical'
 import { $getNodeByKey, $isElementNode, $isTextNode } from 'lexical'
-import type { SuggestionSummaryType } from '@proton/docs-shared'
+import type { SuggestionSummaryType } from '../../contract/SuggestionType'
 import { $isSuggestionNode } from './ProtonNode'
 import { getFormatsForFlag } from '../../Utils/TextFormatUtils'
 import { $isLinkNode } from '@lexical/link'

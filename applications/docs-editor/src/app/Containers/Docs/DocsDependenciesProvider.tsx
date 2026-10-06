@@ -1,4 +1,5 @@
-import type { CommentThreadInterface, SuggestionSummaryType } from '@proton/docs-shared'
+import type { CommentThreadInterface } from '@proton/docs-shared'
+import type { SuggestionSummaryType } from './contract/SuggestionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
