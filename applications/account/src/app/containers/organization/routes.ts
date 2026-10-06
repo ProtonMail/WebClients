@@ -118,8 +118,8 @@ export const getOrganizationAppRoutes = ({
             isPassEssentials ||
             (hasActiveOrganizationKey &&
                 canUseGroups(organization?.PlanName, {
+                    orgHasGroupsEntitlement: entitlements.orgHasGroups,
                     isUserGroupsNoCustomDomainEnabled,
-                    hasGroups,
                 })));
 
     const hasUsedMembers = (organization?.UsedMembers ?? 0) > 1;

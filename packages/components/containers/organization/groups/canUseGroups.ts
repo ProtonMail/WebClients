@@ -1,49 +1,32 @@
 import { PLANS } from '@proton/payments/core/constants';
 
-const groupsCompatiblePlans = new Set([
-    PLANS.MAIL_BUSINESS,
-    PLANS.BUNDLE_PRO,
-    PLANS.BUNDLE_PRO_2024,
-    PLANS.BUNDLE_BIZ_2025,
-    PLANS.VISIONARY,
-    PLANS.PASS_BUSINESS,
-]);
-
 const vpnPlans = new Set([PLANS.VPN_BUSINESS, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE_BUSINESS]);
 
 const canUseGroups = (
     plan: PLANS | undefined,
     options: {
+        orgHasGroupsEntitlement: boolean;
         isUserGroupsNoCustomDomainEnabled: boolean;
-        hasGroups?: boolean;
     }
 ) => {
-    const { isUserGroupsNoCustomDomainEnabled, hasGroups } = options;
-    if (plan === undefined) {
-        return false;
-    }
-    const isVpnPlan = vpnPlans.has(plan);
+    const { orgHasGroupsEntitlement, isUserGroupsNoCustomDomainEnabled } = options;
 
-    // Show existing groups, but NOT for VPN plans when feature flag is disabled -- Breaks the page asking for the domains
-    if (hasGroups && isVpnPlan && !isUserGroupsNoCustomDomainEnabled) {
+    // The `groups` entitlement is the source of truth for whether the plan includes the feature.
+    if (!orgHasGroupsEntitlement) {
         return false;
     }
 
     // The groups without custom domains initiative is being rolled out for VPN plans first,
     // as they want to create groups without custom domains. For this reason, the feature flag
     // for groups without custom domains controls whether a VPN user can use groups.
-    // When we confirm that the feature is stable, we will remove the feature flag and add the VPN plans to the groupsCompatiblePlans set.
-    // The vpnPlans set will then be removed.
-    // The isUserGroupsNoCustomDomainEnabled should also be removed from this function and all callers updated.
-    if (isUserGroupsNoCustomDomainEnabled && isVpnPlan) {
-        return true;
+    // Showing the page to them while the flag is off breaks it, as it asks for a domain.
+    // When we confirm that the feature is stable, we will remove the feature flag, and the
+    // entitlement above becomes the only gate. The vpnPlans set will then be removed.
+    if (plan !== undefined && vpnPlans.has(plan)) {
+        return isUserGroupsNoCustomDomainEnabled;
     }
 
-    if (groupsCompatiblePlans.has(plan)) {
-        return true;
-    }
-
-    return false;
+    return true;
 };
 
 export default canUseGroups;
