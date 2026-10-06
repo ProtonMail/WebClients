@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
 import { type MaybeFreeSubscription, getPlan } from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
@@ -47,10 +48,12 @@ import type { B2BFeaturesID, B2BFeaturesSection, B2BOnboardingFeature } from './
 
 export const getFeatures = (
     subscription: MaybeFreeSubscription,
+    entitlements: EntitlementChecks,
     onClickCTA?: (item: B2BFeaturesID) => Promise<void>
 ): B2BOnboardingFeature[] => {
     const plan = getPlan(subscription)?.Name;
     const canSeeGroupsSection = canUseGroups(plan, {
+        orgHasGroupsEntitlement: entitlements.orgHasGroups,
         isUserGroupsNoCustomDomainEnabled: false,
     });
 

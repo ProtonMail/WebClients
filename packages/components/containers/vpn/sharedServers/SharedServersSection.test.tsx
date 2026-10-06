@@ -28,6 +28,11 @@ describe('SharedServersSection', () => {
         subscription: getSubscriptionState(vpnSubscription),
         user: getModelState({ ...({ ID: 'user-123' } as UserModel) }),
         organization: getOrganizationState(organization),
+        entitlements: getModelState({
+            UserEntitlements: [],
+            OrganizationEntitlements: [],
+            MemberEntitlements: [],
+        }),
         userPermissions: getModelState({
             Roles: [],
             Permissions: ['account.shared_server.update' as const],

@@ -1,6 +1,10 @@
 import { PLANS } from '@proton/payments/core/constants';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import { EntitlementScope, EntitlementType } from '@proton/payments/core/entitlements/interface';
+import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 import {
     APPS,
     CALENDAR_APP_NAME,
@@ -12,6 +16,18 @@ import {
 
 import { getFeatures, getSections } from './helpers';
 import type { B2BFeaturesSection } from './interface';
+
+const entitlementsWithGroups = createEntitlementResolver(
+    makeEntitlements([
+        {
+            Name: EntitlementName.Groups,
+            Quantity: 1,
+            Type: EntitlementType.Switch,
+            Scope: EntitlementScope.Global,
+        },
+    ])
+);
+const entitlementsWithoutGroups = createEntitlementResolver(makeEntitlements());
 
 jest.mock('@proton/payments/core/subscription/helpers', () => ({
     __esModule: true,
@@ -39,7 +55,7 @@ describe('b2b onboarding helpers', () => {
             setMockPlan(PLANS.BUNDLE_PRO_2024);
             const subscription = buildSubscription();
 
-            const features = getFeatures(subscription).filter((f) => f.canShowFeature);
+            const features = getFeatures(subscription, entitlementsWithGroups).filter((f) => f.canShowFeature);
             const featuresIDs = features.map((f) => f.id);
 
             const expectedFeaturesIDs = [
@@ -70,7 +86,7 @@ describe('b2b onboarding helpers', () => {
             setMockPlan(PLANS.MAIL_PRO);
             const subscription = buildSubscription();
 
-            const features = getFeatures(subscription).filter((f) => f.canShowFeature);
+            const features = getFeatures(subscription, entitlementsWithoutGroups).filter((f) => f.canShowFeature);
             const featuresIDs = features.map((f) => f.id);
 
             const expectedFeaturesIDs = [

@@ -23,6 +23,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
@@ -58,6 +59,7 @@ const INITIAL_FORM_VALUES = (organization?: Organization): GroupFormData => ({
 const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const [organization] = useOrganization();
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
+    const [entitlements, loadingEntitlements] = useEntitlementChecks();
 
     const handleError = useErrorHandler();
     const [members] = useMembers();
@@ -178,6 +180,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         loadingDomains ||
         loadingUser ||
         loadingMemberships ||
+        loadingEntitlements ||
         !groups ||
         !members ||
         !selectedDomain ||
@@ -450,6 +453,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         const isPlanUnsupported =
             (invalidGroupSuggestion && filteredGroups.length > 0) ||
             !canUseGroups(organization.PlanName, {
+                orgHasGroupsEntitlement: entitlements.orgHasGroups,
                 isUserGroupsNoCustomDomainEnabled,
             });
 

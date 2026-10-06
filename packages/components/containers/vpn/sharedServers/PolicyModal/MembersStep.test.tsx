@@ -5,6 +5,10 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 
 import MembersStep from './MembersStep';
 
+jest.mock('@proton/payments-ui/entitlements/hooks', () => ({
+    useEntitlementChecks: jest.fn().mockReturnValue([{ orgHasGroups: true }, false]),
+}));
+
 describe('MembersStep', () => {
     const defaultProps = {
         isEditing: false,
