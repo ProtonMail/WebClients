@@ -24,7 +24,7 @@ const SyncRow = ({ syncId }: Props) => {
                 <SyncRowStatus state={state} />
             </TableCell>
             <TableCell className="easy-switch-table-actions">
-                <SyncRowActions syncId={syncId} />
+                <SyncRowActions syncItem={syncItem} />
             </TableCell>
         </TableRow>
     );
