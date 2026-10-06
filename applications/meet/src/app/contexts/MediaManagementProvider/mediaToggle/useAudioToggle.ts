@@ -532,7 +532,8 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
         try {
             const audioPublication = getCurrentPublication();
             const audioTrack = audioPublication?.audioTrack;
-            const isTrackEnded = audioTrack?.mediaStreamTrack?.readyState === 'ended';
+            const captureTrack = audioTrack?.mediaStream?.getAudioTracks()[0];
+            const isTrackEnded = captureTrack?.readyState === 'ended';
             const isDeviceChanging = currentDeviceId.current !== deviceId;
             const isJustTogglingMute = !!audioTrack && !isDeviceChanging && !isTrackEnded;
 
