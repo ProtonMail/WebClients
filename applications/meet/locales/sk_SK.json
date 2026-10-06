@@ -246,9 +246,6 @@
       "Cancel": [
         "Zrušiť"
       ],
-      "Change layout": [
-        "Zmeniť rozloženie"
-      ],
       "Change password": [
         "Zmeniť heslo"
       ],
@@ -381,9 +378,6 @@
       "Enable camera": [
         "Povoliť kameru"
       ],
-      "Enable captions": [
-        "Povoliť titulky"
-      ],
       "Enable waiting room": [
         "Povoliť čakáreň"
       ],
@@ -477,6 +471,9 @@
       "Minimize preview": [
         "Zmenšiť náhľad"
       ],
+      "More info": [
+        "Viac informácií"
+      ],
       "More info: ${ safeTitle }": [
         "Viac informácií: ${ safeTitle }"
       ],
@@ -497,6 +494,9 @@
       ],
       "Noise cancellation": [
         "Potlačenie hluku"
+      ],
+      "Not now": [
+        "Teraz nie"
       ],
       "Open app": [
         "Otvoriť aplikáciu"
@@ -723,6 +723,9 @@
       "Stop Recording Track Stats": [
         "Zastaviť zaznamenávanie štatistík nahrávok"
       ],
+      "Stop sharing": [
+        "Zastaviť zdieľanie"
+      ],
       "Submit": [
         "Potvrdiť"
       ],
@@ -821,9 +824,6 @@
       "Blur background": [
         "Rozostriť pozadie"
       ],
-      "Chat": [
-        "Chat"
-      ],
       "Close": [
         "Zavrieť"
       ],
@@ -836,23 +836,11 @@
       "Copy meeting link": [
         "Kopírovať odkaz na schôdzu"
       ],
-      "Debug devices": [
-        "Ladiť zariadenia"
-      ],
-      "Debug overlay": [
-        "Ladiaca vrstva"
-      ],
-      "Device Debugger": [
-        "Ladiaci nástroj zariadenia"
-      ],
       "Go to dashboard": [
         "Prejsť na nástenku"
       ],
       "Incoming video": [
         "Prichádzajúce video"
-      ],
-      "Layout: ${ selectedLabel }": [
-        "Rozloženie: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Opustiť stretnutie"
@@ -862,12 +850,6 @@
       ],
       "Lock meeting": [
         "Uzamknúť stretnutie"
-      ],
-      "Lower hand": [
-        "Zložiť ruku"
-      ],
-      "Meeting details": [
-        "Podrobnosti stretnutia"
       ],
       "Meeting timer": [
         "Časovač schôdze"
@@ -887,14 +869,8 @@
       "Participant host control options": [
         "Možnosti ovládania účastníkov hostiteľom"
       ],
-      "Participants": [
-        "Účastníci"
-      ],
       "Picture-in-picture while sharing": [
         "Obraz v obraze počas zdieľania"
-      ],
-      "Raise hand": [
-        "Zdvihnúť ruku"
       ],
       "Rotate camera": [
         "Otočiť kameru"
@@ -902,14 +878,8 @@
       "Save my name on this device": [
         "Uložiť moje meno na tomto zariadení"
       ],
-      "Screen share": [
-        "Zdieľanie obrazovky"
-      ],
       "Self view": [
         "Zobrazenie seba samého"
-      ],
-      "Settings": [
-        "Nastavenia"
       ],
       "Stop recording and download.": [
         "Zastaviť nahrávanie a stiahnuť."
@@ -920,17 +890,11 @@
       "Toggle emoji reactions": [
         "Prepnúť reakcie s emoji"
       ],
-      "Toggle meeting details": [
-        "Prepnúť podrobnosti o stretnutí"
-      ],
       "Toggle participants": [
         "Prepnúť účastníkov"
       ],
       "Toggle screen share": [
         "Prepnúť zdieľanie obrazovky"
-      ],
-      "Toggle settings": [
-        "Prepnúť nastavenia"
       ],
       "Video settings": [
         "Nastavenie videa"
@@ -2979,6 +2943,9 @@
       "Host": [
         "Hostiteľ"
       ],
+      "Host has another meeting in progress": [
+        "Hostiteľ má práve prebiehajúcu ďalšiu schôdzku"
+      ],
       "Host has disabled live captions for this meeting.": [
         "Hostiteľ deaktivoval živé titulky pre túto schôdzu."
       ],
@@ -3309,9 +3276,6 @@
       "Share screen": [
         "Zdieľať obrazovku"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Zdieľajte tento odkaz, aby ste pozvali ďalších. Kedykoľvek ho nájdete aj kliknutím na ikonu informácií na paneli nástrojov."
-      ],
       "Sign in": [
         "Prihlásiť sa"
       ],
@@ -3320,9 +3284,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "Výber reproduktora nie je v tomto prehliadači k dispozícii. Použite nastavenia systému na výber iného reproduktora."
-      ],
-      "Start recording": [
-        "Spustiť nahrávanie"
       ],
       "Starting camera…": [
         "Spúšťanie kamery…"
@@ -3366,6 +3327,9 @@
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Táto schôdzka dosiahla časový limit bezplatného balíka. Prejdite na vyšší balík, aby ste si v budúcnosti mohli predĺžiť dĺžku schôdzí."
       ],
+      "This meeting reached the time limit.": [
+        "Táto schôdza dosiahla časový limit."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Táto schôdza bola otvorená v desktopovej aplikácii ${ MEET_APP_NAME }."
       ],
@@ -3383,9 +3347,6 @@
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Na vytvorenie miestnosti budete potrebovať **bezplatný účet ${ BRAND_NAME }**, aby sme ju mohli uložiť. Zaberie to len pár sekúnd."
-      ],
-      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
-        "Na vytvorenie titulkov v reálnom čase potrebuje služba titulkovania prístup k zvukovému záznamu stretnutia. Titulky sú viditeľné len pre vás a neukladajú sa."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
@@ -3407,9 +3368,6 @@
       ],
       "Turn on camera": [
         "Zapnúť kameru"
-      ],
-      "Turn on live captions?": [
-        "Zapnúť titulky v reálnom čase?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Nie je možné opätovne sa pripojiť k stretnutiu. Prihláste sa znova alebo stretnutie opustite, prosím."
@@ -3471,6 +3429,9 @@
       "Yesterday — ${ absoluteDate }": [
         "Včera — ${ absoluteDate }"
       ],
+      "You": [
+        "Vy"
+      ],
       "You are almost there": [
         "Už ste takmer tam"
       ],
@@ -3485,6 +3446,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Mikrofón a kameru môžete kedykoľvek počas stretnutia vypnúť."
+      ],
+      "You have too many meetings in progress": [
+        "Máte príliš veľa prebiehajúcich schôdzí"
       ],
       "You left the meeting": [
         "Odišli ste zo schôdzky"
@@ -3754,6 +3718,9 @@
       ],
       "Monday to Friday": [
         "Pondelok až piatok"
+      ],
+      "More options": [
+        "Ďalšie možnosti"
       ],
       "Mountain landscape background": [
         "Pozadie s horskou scenériou"

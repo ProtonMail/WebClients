@@ -38,6 +38,9 @@
       "Get verification code": [
         "認証コードを取得"
       ],
+      "More info": [
+        "もっと詳しく"
+      ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
       ],
@@ -1481,14 +1484,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "より多くのパーソナライゼーションを追加するために、 15 のメールアドレスと つのカスタムメールドメインのサポートを提供します。"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "ストレージ容量をユーザーあたり ${ bundleStorage } に増量します"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "ストレージ容量を合計 ${ bundleStorage } に拡張"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } 個のカスタムドメインメールアドレスのサポート"
@@ -1497,11 +1494,6 @@
     "Placeholder": {
       "Password": [
         "パスワード"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } のすべてのプレミアム機能"
       ]
     },
     "saml: Error": {

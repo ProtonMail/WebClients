@@ -718,6 +718,12 @@
       "Show Less": [
         "Arată mai puțin"
       ],
+      "Show less": [
+        "Afișare mai puțin"
+      ],
+      "Show more": [
+        "Afișare mai mult"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Conectare cu ${ BRAND_NAME }"
       ],
@@ -1905,9 +1911,6 @@
       "Can view this item.": [
         "Poate vedea acest articol."
       ],
-      "Change your password": [
-        "Modificare parolă"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Se verifică parolele ${ compromised.progress.completed } din ${ compromised.progress.total }"
       ],
@@ -1994,9 +1997,6 @@
       ],
       "Editor": [
         "Editor"
-      ],
-      "email": [
-        "e-mail"
       ],
       "Email address successfully deleted from monitoring": [
         "Adresa de e-mail s-a eliminat de la monitorizare."
@@ -2090,9 +2090,6 @@
       ],
       "Fill in the CSV with your data": [
         "Completați fișierul CSV cu datele necesare."
-      ],
-      "finance": [
-        "finanțe"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Găsiți „Agent de autentificare OpenSSH”, clic-dreapta pe „Proprietăți”."
@@ -2283,9 +2280,6 @@
       "Medium Priority": [
         "Prioritate medie"
       ],
-      "Monitor accounts": [
-        "Monitorizare conturi"
-      ],
       "Monitoring settings successfully updated": [
         "Setările monitorizării s-au actualizat,"
       ],
@@ -2398,9 +2392,6 @@
       ],
       "Pass Plus trial": [
         "Încercare Proton Pass Plus"
-      ],
-      "password": [
-        "parola"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blocarea cu parolă s-a înregistrat. Folosiți-o pentru a debloca ${ PASS_APP_NAME }."
@@ -2870,9 +2861,6 @@
       ],
       "User's access successfully updated": [
         "Accesul utilizatorului a fost actualizat."
-      ],
-      "username": [
-        "nume de utilizator"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Seiful „${ payload.content.name }” a fost șters."
@@ -5572,6 +5560,26 @@
       "${ BRAND_NAME } password is required": [
         "Este necesară parola ${ BRAND_NAME }"
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } folder a fost fuzionat cu folderul părinte deoarece a fost atins nivelul maxim de imbricare.",
+        "${ count } foldere au fost fuzionate cu folderul părinte deoarece a fost atins nivelul maxim de imbricare.",
+        "${ count } de foldere au fost fuzionate cu folderul părinte deoarece a fost atins nivelul maxim de imbricare."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } folder nu a fost importat deoarece folderul său părinte a atins numărul maxim de subfoldere. Articolele sale au fost importate în cel mai apropiat folder disponibil.",
+        "${ count } foldere nu a fost importate deoarece folderul lor părinte a atins numărul maxim de subfoldere. Articolele lor au fost importate în cel mai apropiat folder disponibil.",
+        "${ count } de foldere nu a fost importate deoarece folderul lor părinte a atins numărul maxim de subfoldere. Articolele lor au fost importate în cel mai apropiat folder disponibil."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } folder nu a fost importat deoarece acest seif a atins limita de foldere. Articolele sale au fost importate în cel mai apropiat folder disponibil.",
+        "${ count } foldere nu au fost importate deoarece acest seif a atins limita de foldere. Articolele lor au fost importate în cel mai apropiat folder disponibil.",
+        "${ count } de foldere nu au fost importate deoarece acest seif a atins limita de foldere. Articolele lor au fost importate în cel mai apropiat folder disponibil."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } folder nu a putut fi creat. Articolele sale au fost importate în cel mai apropiat folder disponibil.",
+        "${ failed } foldere nu au putut fi create. Articolele lor au fost importate în cel mai apropiat folder disponibil.",
+        "${ failed } de foldere nu au putut fi create. Articolele lor au fost importate în cel mai apropiat folder disponibil."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } oferă un control puternic, dar o singură eroare poate determina completarea automată să se potrivească și să completeze datele pe site-uri web frauduloase sau de înșelăciune."
       ],
@@ -5715,9 +5723,6 @@
       ],
       "Move to trash": [
         "Mutare în gunoi"
-      ],
-      "Name is required": [
-        "Numele este obligatoriu."
       ],
       "No items": [
         "Nu există articole."

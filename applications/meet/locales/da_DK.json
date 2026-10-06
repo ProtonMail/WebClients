@@ -240,9 +240,6 @@
       "Cancel": [
         "Annullér"
       ],
-      "Change layout": [
-        "Skift layout"
-      ],
       "Change password": [
         "Skift adgangskode"
       ],
@@ -375,9 +372,6 @@
       "Enable camera": [
         "Slå kamera til"
       ],
-      "Enable captions": [
-        "Aktivér undertekster"
-      ],
       "Enable waiting room": [
         "Aktivér venteværelse"
       ],
@@ -471,6 +465,9 @@
       "Minimize preview": [
         "Minimér forhåndsvisning"
       ],
+      "More info": [
+        "Mere info"
+      ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
       ],
@@ -491,6 +488,9 @@
       ],
       "Noise cancellation": [
         "Støjreduktion"
+      ],
+      "Not now": [
+        "Ikke nu"
       ],
       "Open app": [
         "Åbn app"
@@ -713,6 +713,9 @@
       "Stop Recording Track Stats": [
         "Stop optagelse af sporingsstatistik"
       ],
+      "Stop sharing": [
+        "Stop deling"
+      ],
       "Submit": [
         "Indsend"
       ],
@@ -811,9 +814,6 @@
       "Blur background": [
         "Slør baggrund"
       ],
-      "Chat": [
-        "Chat"
-      ],
       "Close": [
         "Luk"
       ],
@@ -826,23 +826,11 @@
       "Copy meeting link": [
         "Kopier mødelink"
       ],
-      "Debug devices": [
-        "Fejlfind enheder"
-      ],
-      "Debug overlay": [
-        "Fejldebug-overlay"
-      ],
-      "Device Debugger": [
-        "Fejlfinder for enheder"
-      ],
       "Go to dashboard": [
         "Gå til kontrolpanel"
       ],
       "Incoming video": [
         "Indgående video"
-      ],
-      "Layout: ${ selectedLabel }": [
-        "Layout: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Forlad møde"
@@ -852,12 +840,6 @@
       ],
       "Lock meeting": [
         "Lås møde"
-      ],
-      "Lower hand": [
-        "Sænk hånden"
-      ],
-      "Meeting details": [
-        "Mødedetaljer"
       ],
       "Meeting timer": [
         "Mødetimer"
@@ -877,14 +859,8 @@
       "Participant host control options": [
         "Deltagerværts kontrolindstillinger"
       ],
-      "Participants": [
-        "Deltagere"
-      ],
       "Picture-in-picture while sharing": [
         "Billede-i-billede-tilstand mens du deler"
-      ],
-      "Raise hand": [
-        "Ræk hånden op"
       ],
       "Rotate camera": [
         "Rotér kamera"
@@ -892,14 +868,8 @@
       "Save my name on this device": [
         "Gem mit navn på denne enhed"
       ],
-      "Screen share": [
-        "Skærmdeling"
-      ],
       "Self view": [
         "Selvvisning"
-      ],
-      "Settings": [
-        "Indstillinger"
       ],
       "Stop recording and download.": [
         "Stop optagelse og download."
@@ -910,17 +880,11 @@
       "Toggle emoji reactions": [
         "Slå emoji-reaktioner til/fra"
       ],
-      "Toggle meeting details": [
-        "Vis/skjul mødedetaljer"
-      ],
       "Toggle participants": [
         "Vis/skjul deltagere"
       ],
       "Toggle screen share": [
         "Slå skærmdeling til/fra"
-      ],
-      "Toggle settings": [
-        "Åbn/luk indstillinger"
       ],
       "Video settings": [
         "Videoindstillinger"
@@ -2945,6 +2909,9 @@
       "Host": [
         "Vært"
       ],
+      "Host has another meeting in progress": [
+        "Værten er i gang med et andet møde"
+      ],
       "Host has disabled live captions for this meeting.": [
         "Værten har slået live undertekster fra i dette møde."
       ],
@@ -3275,9 +3242,6 @@
       "Share screen": [
         "Del skærm"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Del dette link for at invitere andre. De kan også finde det når som helst ved at klikke på infoikonet på værktøjslinjen."
-      ],
       "Sign in": [
         "Log ind"
       ],
@@ -3286,9 +3250,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "Du kan ikke vælge højtalere i denne browser. Brug dine systemindstillinger til at vælge en anden højtaler."
-      ],
-      "Start recording": [
-        "Start optagelse"
       ],
       "Starting camera…": [
         "Starter kamera…"
@@ -3332,6 +3293,9 @@
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Dette møde har nået tidsgrænsen for det gratis abonnement. Opgrader for at forlænge mødetiden i fremtidige møder."
       ],
+      "This meeting reached the time limit.": [
+        "Dette mødet har nået tidsgrænsen."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Dette møde blev åbnet i desktop-appen ${ MEET_APP_NAME }"
       ],
@@ -3349,9 +3313,6 @@
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "For at oprette et møderum, skal du bruge **en gratis ${ BRAND_NAME }-konto** så vi kan gemme rummet. Det tager kun et nogle sekunder."
-      ],
-      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
-        "Tjenesten skal kunne tilgå mødelyden for at skrive live undertekster. Undertekster er kun synlige for dig, og bliver ikke delt."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -3373,9 +3334,6 @@
       ],
       "Turn on camera": [
         "Slå kamera til"
-      ],
-      "Turn on live captions?": [
-        "Slå live undertekster til?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Kunne ikke genoprette forbindelsen til mødet. Tilslut dig igen eller forlad mødet."
@@ -3437,6 +3395,9 @@
       "Yesterday — ${ absoluteDate }": [
         "I går — ${ absoluteDate }"
       ],
+      "You": [
+        "Dig"
+      ],
       "You are almost there": [
         "Du er der næsten"
       ],
@@ -3451,6 +3412,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Du kan stadig slå din mikrofon og dit kamera fra når som helst under mødet"
+      ],
+      "You have too many meetings in progress": [
+        "Du har for mange igangværende møder"
       ],
       "You left the meeting": [
         "Du forlod mødet"
@@ -3718,6 +3682,9 @@
       ],
       "Monday to Friday": [
         "Mandag til fredag"
+      ],
+      "More options": [
+        "Flere muligheder"
       ],
       "Mountain landscape background": [
         "Bjerg-baggrund"

@@ -38,6 +38,9 @@
       "Get verification code": [
         "Lấy mã xác thực"
       ],
+      "More info": [
+        "Thông tin thêm"
+      ],
       "More info: ${ safeTitle }": [
         "Thông tin thêm: ${ safeTitle }"
       ],
@@ -1475,14 +1478,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Cá nhân hóa nhiều hơn với 15 địa chỉ email và hỗ trợ 3 miền email tùy chỉnh"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Tăng không gian lưu trữ lên ${ bundleStorage } mỗi người dùng"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Tăng dung lượng lưu trữ lên tổng cộng ${ bundleStorage }"
       ],
       "Support for ${ n } custom email domain": [
         "Hỗ trợ cho ${ n } miền tùy chỉnh"
@@ -1491,11 +1488,6 @@
     "Placeholder": {
       "Password": [
         "Mật khẩu"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Tất cả tính năng cao cấp từ ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } và ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {

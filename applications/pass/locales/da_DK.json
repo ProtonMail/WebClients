@@ -688,6 +688,12 @@
       "Show Less": [
         "Vis færre"
       ],
+      "Show less": [
+        "Vis mindre"
+      ],
+      "Show more": [
+        "Vis mere"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Log ind på ${ BRAND_NAME }"
       ],
@@ -1804,9 +1810,6 @@
       "Can view this item.": [
         "Kan se dette element."
       ],
-      "Change your password": [
-        "Skift din adgangskode"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total } adgangskoder"
       ],
@@ -1893,9 +1896,6 @@
       ],
       "Editor": [
         "Redaktør"
-      ],
-      "email": [
-        "e-mail"
       ],
       "Email address successfully deleted from monitoring": [
         "E-mail-adresse slettet fra monitorering"
@@ -1992,9 +1992,6 @@
       ],
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
-      ],
-      "finance": [
-        "finans"
       ],
       "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
         "Log ind i browservinduet, som lige åbnede. ${ PASS_APP_NAME } fortsætter automatisk så snart du er færdig."
@@ -2164,9 +2161,6 @@
       "Medium Priority": [
         "Mellem prioritet"
       ],
-      "Monitor accounts": [
-        "Overvåg konti"
-      ],
       "Monitoring settings successfully updated": [
         "Indstillinger for monitorering opdateret"
       ],
@@ -2268,9 +2262,6 @@
       ],
       "Pass Plus trial": [
         "Pass Plus prøveversion"
-      ],
-      "password": [
-        "adgangskode"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Adgangskodelås er blevet registreret. Brug den til at oplåse ${ PASS_APP_NAME }."
@@ -2720,9 +2711,6 @@
       ],
       "User's access successfully updated": [
         "Brugers adgang opdateret"
-      ],
-      "username": [
-        "brugernavn"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Boksen \"${ payload.content.name }\" blev slettet"
@@ -5312,6 +5300,22 @@
       "${ BRAND_NAME } password is required": [
         "Adgangskoden til ${ BRAND_NAME } kræves"
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } mappe blev flettet ind i dens overordnede mappe, fordi det nåede det dybeste niveau for undermapper.",
+        "${ count } mapper blev flettet ind i dens overordnede mappe, fordi det nåede det dybeste niveau for undermapper."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } mappe blev ikke importeret, fordi der ikke kunne være flere undermapper i dens overordnede mappe. Dens elementer blev importeret til den nærmeste ledige mappe.",
+        "${ count } mapper blev ikke importeret, fordi der ikke kunne være flere undermapper i deres overordnede mappe. Deres elementer blev importeret til den nærmeste ledige mappe."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } mappe blev ikke importeret, fordi der ikke kan være flere mapper i denne boks. Dens elementer blev importeret til den nærmeste ledige mappe.",
+        "${ count } mapper blev ikke importeret, fordi der ikke kan være flere mapper i denne boks. Deres elementer blev importeret til den nærmeste ledige mappe."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } mappe kunne ikke oprettes. Dens elementer blev importeret til den nærmeste ledige mappe.",
+        "${ failed } mapper kunne ikke oprettes. Deres elementer blev importeret til den nærmeste ledige mappe."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } giver stærk kontrol, men en enkelt fejl kan få autofyld til at matche og udfylde data på svindel- eller phishing-websteder."
       ],
@@ -5449,9 +5453,6 @@
       ],
       "Move to trash": [
         "Flyt til papirkurv"
-      ],
-      "Name is required": [
-        "Navn er påkrævet"
       ],
       "No items": [
         "Ingen elementer"

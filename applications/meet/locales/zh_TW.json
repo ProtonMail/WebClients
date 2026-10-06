@@ -381,6 +381,9 @@
       "Minimize preview": [
         "最小化預覽"
       ],
+      "More info": [
+        "更多資訊"
+      ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
@@ -398,6 +401,9 @@
       ],
       "Noise cancellation": [
         "噪音抑制"
+      ],
+      "Not now": [
+        "現在不要"
       ],
       "Open app": [
         "開啟應用程式"
@@ -582,6 +588,9 @@
       "Stop Recording Track Stats": [
         "停止錄製軌道統計資料"
       ],
+      "Stop sharing": [
+        "停止分享"
+      ],
       "Submit": [
         "送出"
       ],
@@ -653,9 +662,6 @@
       "Blur background": [
         "模糊背景"
       ],
-      "Chat": [
-        "聊天"
-      ],
       "Close": [
         "關閉"
       ],
@@ -668,9 +674,6 @@
       "Copy meeting link": [
         "複製會議連結"
       ],
-      "Debug overlay": [
-        "偵錯覆疊"
-      ],
       "Go to dashboard": [
         "前往儀表板"
       ],
@@ -679,12 +682,6 @@
       ],
       "Lock meeting": [
         "鎖定會議"
-      ],
-      "Lower hand": [
-        "取消舉手"
-      ],
-      "Meeting details": [
-        "會議詳細資料"
       ],
       "More options": [
         "更多選項"
@@ -701,23 +698,11 @@
       "Participant host control options": [
         "參與者主持人控制選項"
       ],
-      "Participants": [
-        "參與者"
-      ],
-      "Raise hand": [
-        "舉手"
-      ],
       "Rotate camera": [
         "旋轉相機"
       ],
       "Save my name on this device": [
         "在此裝置上儲存我的名稱"
-      ],
-      "Screen share": [
-        "螢幕共享"
-      ],
-      "Settings": [
-        "設定"
       ],
       "Stop recording and download.": [
         "停止錄製並下載。"
@@ -728,17 +713,11 @@
       "Toggle emoji reactions": [
         "切換表情符號回應"
       ],
-      "Toggle meeting details": [
-        "切換顯示會議詳細資料"
-      ],
       "Toggle participants": [
         "移除參與者"
       ],
       "Toggle screen share": [
         "切換螢幕共享"
-      ],
-      "Toggle settings": [
-        "切換設定"
       ],
       "Video settings": [
         "視頻設定"
@@ -1971,6 +1950,9 @@
       "Signature verification for ${ signatureType } failed": [
         "失敗替 ${ signatureType } 簽名驗證"
       ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "失敗替 ${ signatureType } 簽名驗證: ${ errorMessage }"
+      ],
       "Some file data failed to upload. Please try again.": [
         "部分檔案上載失敗。請稍後再試。"
       ],
@@ -2739,9 +2721,6 @@
       "Share screen": [
         "分享畫面"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "共享此連結以邀請他人。您也可以在工具列中點擊資訊圖示隨時找到它。"
-      ],
       "Sign in": [
         "登入"
       ],
@@ -2750,9 +2729,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "在此瀏覽器中無法選取揚聲器。請使用您的系統設定來選擇不同的揚聲器。"
-      ],
-      "Start recording": [
-        "開始記錄"
       ],
       "Starting camera…": [
         "正在啟動相機…"
@@ -2876,6 +2852,9 @@
       ],
       "Yesterday — ${ absoluteDate }": [
         "昨天 — ${ absoluteDate }"
+      ],
+      "You": [
+        "您"
       ],
       "You are almost there": [
         "快完成了。"
@@ -3082,6 +3061,9 @@
       ],
       "Monday to Friday": [
         "週一至週五"
+      ],
+      "More options": [
+        "更多選項"
       ],
       "Muted": [
         "已靜音"

@@ -728,6 +728,9 @@
       "More benefits": [
         "Iba pang benepisyo"
       ],
+      "More info": [
+        "Higit pang impormasyon"
+      ],
       "More info: ${ safeTitle }": [
         "Karagdagang impormasyon: ${ safeTitle }"
       ],
@@ -1547,15 +1550,6 @@
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "I-configure ang mga patakaran sa seguridad, pagpapanatili ng data, at imprastraktura ng VPN, at pamahalaan ang mga audit log."
       ],
-      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
-        "I-delegate ang pamamahala sa pamamagitan ng pag-assign ng mga partikular na tungkulin ng admin. Bigyan ang bawat admin ng access lang na kailangan nila. Sumusunod ito sa prinsipyo ng least privilege, na nagpoprotekta sa iyong organisasyon mula sa mga nakompromisong account at aksidenteng mga error."
-      ],
-      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
-        "I-delegate ang pamamahala para sa maraming user nang sabay-sabay. Magtalaga ng mga partikular na tungkulin ng admin sa mga pangkat para sa awtomatikong mga pahintulot. Sumusunod ito sa prinsipyo ng least privilege upang makatipid ng oras sa onboarding at offboarding habang binabawasan ang mga error."
-      ],
-      "Delegate management with the appropriate admin role.": [
-        "I-delegate ang pamamahala gamit ang naaangkop na tungkulin ng admin."
-      ],
       "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
         "Pamahalaan ang lahat ng user, pangkat, storage, seguridad, billing, mga audit log, at mga configuration ng system."
       ],
@@ -1763,56 +1757,15 @@
         "Hindi available ang offer"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Kasama ang suporta para sa 1 custom na domain ng email, 10 email address, 10 hide-my-email alias, pag-share ng kalendaryo, at marami pa."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop app"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } at ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } na storage"
       ],
-      "1 user account": [
-        "1 user account"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB storage: 40x ng kasalukuyang plano"
-      ],
-      "6 user accounts": [
-        "6 na user account"
-      ],
-      "Admin panel to manage your family": [
-        "Admin panel para pamahalaan ang pamilya"
-      ],
-      "Advanced account protection": [
-        "Advanced na proteksyon sa account"
-      ],
-      "Easily add or remove users": [
-        "Madaling magdagdag o alisin ang mga user"
-      ],
-      "One-time payment, lifetime deal": [
-        "One-time payment lang, lifetime deal na"
-      ],
-      "Online document editor": [
-        "Online na editor ng dokumento"
-      ],
-      "Password health alerts": [
-        "Mga alerto sa katatagan ng password"
-      ],
-      "Recover previous file versions": [
-        "I-recover ang mga nakaraang bersyon ng file"
-      ],
       "Unlimited folders, labels and filters": [
         "Walang limitasyong mga folder, label, at filter"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Walang limitasyong mga login, credit card, hide-my-email alias, at marami pa"
       ],
       "Use your own email domain": [
         "Gamitin ang sariling domain ng email"
@@ -1821,83 +1774,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Siningil ng ${ amount } nang isang beses"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Magre-renew pagkalipas ng 1 buwan sa halagang ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "I-access ang naka-block na nilalaman at mag-browse nang pribado. Kasama ang 8,500+ server sa 110+ bansa, 10 device, mabilis na streaming, ad-blocker at proteksyon sa malware, VPN Accelerator, at marami pa."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Mga secure na login sa lahat ng device. Kasama ang walang limitasyong mga hide-my-email alias, pagbabahagi, pinagsamang 2FA, ${ DARK_WEB_MONITORING_NAME }, at marami pa."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang ${ addresses } email address, suporta para sa mga custom na domain ng email, ${ BRAND_NAME } Scribe writing assistant, walang limitasyong mga hide-my-email alias, at marami pa.",
-        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang ${ addresses } na email address, suporta para sa mga custom na domain ng email, ${ BRAND_NAME } Scribe writing assistant, walang limitasyong mga hide-my-email alias, at marami pa."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang ${ addresses } email address, suporta para sa mga custom na domain ng email, walang limitasyong mga hide-my-email alias, at marami pa.",
-        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang ${ addresses } na email address, suporta para sa mga custom na domain ng email, walang limitasyong mga hide-my-email alias, at marami pa."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang 15 email address, suporta para sa mga custom na domain ng email, ${ BRAND_NAME } Scribe writing assistant, walang limitasyong mga hide-my-email alias, at marami pa."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "I-secure ang mga email at schedule gamit ang end-to-end na encryption. Kasama ang 15 email address, suporta para sa mga custom na domain ng email, walang limitasyong mga hide-my-email alias, at marami pa."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "I-secure ang mga file gamit ang naka-encrypt na cloud storage. Kasama ang online na editor ng dokumento, backup ng larawan, history ng bersyon, naka-encrypt na pagbabahagi ng file, at marami pa."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ang espasyo ng storage ay naka-share sa lahat ng serbisyo ng ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB na data storage"
-      ],
-      "3 TB data storage": [
-        "3 TB na data storage"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "I-access ang 15,000+ na server sa 120+ na bansa"
-      ],
-      "Access advanced AI models": [
-        "I-access ang mga advanced na AI model"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Lahat ng premium feature ng ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, at ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "I-block ang mga ad, tracker, at malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Built-in na 2FA authenticator"
-      ],
-      "Connect 10 devices at once": [
-        "Kumonekta ng 10 device nang sabay-sabay"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Buong history ng chat na may madaling paghahanap at mga paborito"
-      ],
-      "Individual accounts for 6 users": [
-        "Mga indibidwal na account para sa 6 na user"
-      ],
-      "Individual accounts for you and a partner": [
-        "Mga indibidwal na account para sa iyo at sa isang partner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Mas malakas na proteksyon laban sa mga banta sa cyber"
-      ],
-      "Unlimited daily chats": [
-        "Walang limitasyong pang-araw-araw na chat"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Ang espesyal na idinisenyong NetShield ay nagpoprotekta sa mga device at nagpapabilis sa pag-browse sa pamamagitan ng pag-block ng mga ad, tracker, at malware."
       ]
     },
     "Billing cycle": {
@@ -2231,9 +2112,6 @@
       ],
       "Basic chat history": [
         "Basic na chat history"
-      ],
-      "Built and based in Europe": [
-        "Ginawa at nakabase sa Europe"
       ],
       "Compliance with data protection regulations": [
         "Pagsunod sa mga regulasyon sa proteksyon ng data"
@@ -5393,19 +5271,9 @@
         "(walang pamagat)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB kabuuang storage"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Mga benepisyo ng account"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Ang espasyo ng storage ay naka-share sa mga miyembro ng pamilya sa buong ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, at ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -5432,11 +5300,6 @@
       ],
       "View invitation": [
         "Tingnan ang imbitasyon"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Hanggang 6 na user"
       ]
     },
     "familyOffer_2023:Error": {
@@ -5655,17 +5518,6 @@
       ],
       "Set family name": [
         "Itakda ang pangalan ng pamilya"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Kasama ang 2700 server sa 65+ bansa, kumonekta hanggang sa 10 device, i-access ang mga serbisyo sa streaming sa buong mundo, malware at ad-blocker, at higit pa."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Kasama ang suporta para sa 3 custom na domain ng email, 90 email address, unlimited na hide-my-email alias, pagbabahagi ng kalendaryo at higit pa."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "I-secure ang mga file gamit ang naka-encrypt na cloud storage. Kasama ang automatic sync, pagbabahagi ng naka-encrypt na file, at higit pa."
       ]
     },
     "Feature": {
@@ -7160,9 +7012,6 @@
       "Can’t access your recovery phone?": [
         "Hindi ma-access ang recovery phone?"
       ],
-      "Change your password": [
-        "Palitan ang iyong password"
-      ],
       "Choose a plan that works best for you.": [
         "Pumili ng plano na pinakaangkop."
       ],
@@ -7433,9 +7282,6 @@
       "eduGAIN configuration saved": [
         "Na-save ang configuration ng eduGAIN"
       ],
-      "email": [
-        "email"
-      ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Email at kalendaryo, na isinama sa ${ CONTACTS_APP_NAME }"
       ],
@@ -7573,9 +7419,6 @@
       ],
       "Fill in user details": [
         "Punan ang mga detalye ng user"
-      ],
-      "finance": [
-        "pananalapi"
       ],
       "for ${ price }": [
         "para sa ${ price }"
@@ -7993,9 +7836,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Ang mga mensahe sa lahat ng email address ay mapupunta sa inbox."
       ],
-      "Monitor accounts": [
-        "Subaybayan ang mga account"
-      ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Subaybayan at i-audit ang mga pagtatangka sa pag-authenticate para sa lahat ng serbisyo ng ${ BRAND_NAME } na gumagamit ng iyong mga kredensyal sa ${ BRAND_NAME }."
       ],
@@ -8156,9 +7996,6 @@
       ],
       "Pass usage logs": [
         "Mga log ng paggamit ng Pass"
-      ],
-      "password": [
-        "password"
       ],
       "Password copied to clipboard": [
         "Kinopya ang password sa clipboard"
@@ -8910,9 +8747,6 @@
       ],
       "Username": [
         "Username"
-      ],
-      "username": [
-        "username"
       ],
       "Users": [
         "Mga user"
@@ -11632,9 +11466,6 @@
       "Auto-reply": [
         "Auto-reply"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Awtomatikong pagpuno ng mga credit card (paparating na)"
-      ],
       "Automatic email forwarding": [
         "Awtomatikong pag-forward ng email"
       ],
@@ -11664,9 +11495,6 @@
       ],
       "Custom and secure business email": [
         "Custom at secure na email ng negosyo"
-      ],
-      "Custom domains for email aliases": [
-        "Mga custom na domain para sa mga alias ng email"
       ],
       "Custom email domains": [
         "Mga custom na domain ng email"
@@ -11728,9 +11556,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Mga libreng feature mula sa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, at ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Libreng VPN sa iisang device"
-      ],
       "Fully refundable for 30 days": [
         "Ganap na refundable sa loob ng 30 araw"
       ],
@@ -11742,10 +11567,6 @@
       ],
       "Group management (coming soon)": [
         "Pamamahala ng pangkat (paparating na)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "High-speed na VPN sa ${ n } device",
-        "High-speed na VPN sa ${ n } na device"
       ],
       "HTML signatures": [
         "Mga HTML signature"
@@ -11915,9 +11736,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Walang limitasyong naka-share na ${ PASS_SHORT_APP_NAME } vault kada user"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Unlimited na shared vault na may mga pahintulot sa access"
       ],
       "Unlimited vault sharing": [
         "Unlimited na pag-share ng vault"
@@ -12275,9 +12093,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Ang mga hard disk ng server ay ganap na naka-encrypt gamit ang maraming layer ng password kaya protektado ang data kahit na makompromiso ang hardware"
       ],
-      "Password management and identity protection": [
-        "Pamamahala ng password at proteksyon sa pagkakakilanlan"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "I-personalize ang email signature gamit ang mga logo, larawan, icon ng social media, link sa mga detalye ng contact at higit pa"
       ],
@@ -12388,12 +12203,6 @@
         "${ n } bansa",
         "${ n } na bansa"
       ],
-      "Access advanced VPN features": [
-        "I-access ang mga advanced na feature ng VPN"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Magdagdag ng higit pang personalization na may 15 email address at suporta para sa 3 custom na domain ng email"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-bit VPN encryption"
       ],
@@ -12403,9 +12212,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Palakihin ang iyong espasyo ng storage sa ${ bundleStorage } kada user"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Palakihin ang espasyo ng storage sa ${ bundleStorage } kabuuan"
-      ],
       "Browser extension": [
         "Extension ng browser"
       ],
@@ -12414,13 +12220,6 @@
       ],
       "Central control panel": [
         "Central control panel"
-      ],
-      "Create up to ${ n } calendar": [
-        "Gumawa ng hanggang ${ n } kalendaryo",
-        "Gumawa ng hanggang ${ n } na kalendaryo"
-      ],
-      "Dedicated Account manager": [
-        "Dedicated na tagapamahala ng Account"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Mga lokasyon ng dedicated server sa ${ numberOfCountries }+ na bansa"
@@ -13025,9 +12824,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Secure na vault, pagbabahagi ng item at link"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Walang limitasyong mga login, note, credit card, at marami pa"
       ]
     },
     "pass_signup_2023: Title": {
@@ -15277,12 +15073,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 na user"
-      ],
       "All paid Mail and Calendar features": [
         "Lahat ng bayad na feature ng Mail at Kalendaryo"
       ],
@@ -15301,17 +15091,11 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium na ${ appName1 }, ${ appName2 }, at ${ appName3 }"
       ],
-      "Premium early access": [
-        "Premium na maagang pag-access"
-      ],
       "Secure cloud storage": [
         "Secure na cloud storage"
       ],
       "Secure streaming": [
         "Secure na streaming"
-      ],
-      "Support online privacy": [
-        "Suportahan ang online privacy"
       ]
     },
     "specialoffer: Footer": {
@@ -15395,32 +15179,8 @@
       "Get the deal": [
         "Kunin ang deal"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Magre-renew pagkatapos ng 1 taon sa diskwentadong presyo na ${ discountedAmount } sa halip na ${ regularAmount } (${ discount }% na diskwento)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Magre-renew pagkatapos ng 2 taon sa diskwentadong presyo na ${ discountedAmount } sa halip na ${ regularAmount } (${ discount }% na diskwento)"
-      ],
       "Save ${ discount }%": [
         "I-save ang ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Standard na presyo na ${ amount } para sa 1 buwan"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Standard na presyo na ${ amount } para sa 12 buwan"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Standard na presyo na ${ amount } para sa 15 buwan"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Standard na presyo na ${ amount } para sa 24 na buwan"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Standard na presyo na ${ amount } para sa 30 buwan"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Ang espesyal na alok ay valid para sa unang 2 taon"
       ]
     },
     "specialoffer: Title": {
@@ -15450,23 +15210,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "I-access ang naka-block na content at mag-browse nang pribado. Kasama ang 1700 server sa 60+ bansa, pinakamabilis na VPN, 10 koneksyon sa VPN bawat user, serbisyo sa streaming sa buong mundo, malware at ad-blocker, at higit pa."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "I-access ang naka-block na content at mag-browse nang pribado. Kasama ang 1700 server sa 60+ bansa, pinakamabilis na VPN, 10 koneksyon sa VPN, serbisyo sa streaming sa buong mundo, malware at ad-blocker, at higit pa."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Lahat ng premium na serbisyo na may pinakamataas na limitasyon: 100 email address, suporta para sa 10 custom na domain, unlimited na hide-my-email alias, pagbabahagi ng kalendaryo, naka-encrypt na cloud storage at pagbabahagi ng file, at higit pa."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Kasama ang suporta para sa 3 custom na domain ng email, 15 email address, unlimited na hide-my-email alias, pagbabahagi ng kalendaryo, at higit pa."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Tamang-tama para sa mga pamilya o maliliit na team, bawat isa ay maaaring magkaroon ng sariling inbox at alias. Nangangailangan ng custom na domain."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Tanggapin nang walang dagdag na gastos ang mga bayad na bersyon ng lahat ng bagong serbisyo sa privacy na ilalabas sa hinaharap, kasama ang maagang pag-access sa lahat ng feature at produkto sa hinaharap."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "I-secure ang mga file gamit ang naka-encrypt na cloud storage. Kasama ang automatic sync, pagbabahagi ng naka-encrypt na file, at higit pa."
@@ -15972,10 +15720,6 @@
       "${ n } VPN connection": [
         "${ n } koneksyon sa VPN",
         "${ n } na koneksyon sa VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } koneksyon sa VPN bawat user",
-        "${ n } na koneksyon sa VPN bawat user"
       ],
       "${ productName } for ${ count } user": [
         "${ productName } para sa ${ count } user",
@@ -16746,9 +16490,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Kasama ang 2950+ na server sa 65+ na bansa, kumonekta hanggang sa 10 device, i-access ang mga serbisyo sa streaming sa buong mundo, malware at ad-blocker, at higit pa."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Kasama ang suporta para sa 1 custom na domain ng email, 10 email address, 10 hide-my-email alias, pagbabahagi ng kalendaryo, at higit pa."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "I-secure ang mga file gamit ang naka-encrypt na cloud storage. Kasama ang history ng bersyon, pagbabahagi ng naka-encrypt na file, at higit pa."
@@ -18638,6 +18379,36 @@
       ],
       "Test credit": [
         "Test credit"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Kumuha ng ${ discount }% diskwento sa ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Kunin ang ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/buwan"
+      ],
+      "2 TB of storage to share": [
+        "2 TB ng storage na i-share"
+      ],
+      "2 user accounts": [
+        "2 user account"
+      ],
+      "All premium features from your current plan": [
+        "Lahat ng premium feature mula sa kasalukuyang plano"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Ang mga diskwento ay batay sa karaniwang buwanang pagpepresyo. Magre-renew ang iyong subscription sa karaniwang taunang rate kapag natapos na ang siklo ng pagsingil."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "para sa 12 buwan"
       ]
     },
     "Unlimited offer": {

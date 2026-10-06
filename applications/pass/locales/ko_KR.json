@@ -685,6 +685,12 @@
       "Show Less": [
         "간단히 보기"
       ],
+      "Show less": [
+        "가리기"
+      ],
+      "Show more": [
+        "더보기"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME }에 로그인"
       ],
@@ -1778,9 +1784,6 @@
       "Can view this item.": [
         "이 항목을 볼 수 있습니다."
       ],
-      "Change your password": [
-        "비밀번호를 변경하십시오"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "비밀번호 ${ compromised.progress.total }개 중 ${ compromised.progress.completed }개 확인 중"
       ],
@@ -1867,9 +1870,6 @@
       ],
       "Editor": [
         "편집자"
-      ],
-      "email": [
-        "이메일"
       ],
       "Email address successfully deleted from monitoring": [
         "이메일 주소가 모니터링에서 삭제되었습니다"
@@ -1966,9 +1966,6 @@
       ],
       "Fill in the CSV with your data": [
         "사용자의 데이터인 CSV를 채워 넣으십시오"
-      ],
-      "finance": [
-        "금융정보"
       ],
       "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
         "방금 전 열린 브라우저 창에서 로그인을 완료하세요. ${ PASS_APP_NAME }가 로그인 완료 후 자동으로 가져갑니다."
@@ -2135,9 +2132,6 @@
       "Medium Priority": [
         "중요도 보통"
       ],
-      "Monitor accounts": [
-        "계정 모니터링"
-      ],
       "Monitoring settings successfully updated": [
         "모니터링 설정이 업데이트되었습니다"
       ],
@@ -2236,9 +2230,6 @@
       ],
       "Pass Plus trial": [
         "Pass Plus 체험"
-      ],
-      "password": [
-        "비밀번호"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "비밀번호 잠금이 성공적으로 추가되었습니다. ${ PASS_APP_NAME }를 잠금해제 할 때 사용하세요."
@@ -2686,9 +2677,6 @@
       ],
       "User's access successfully updated": [
         "사용자 접근 권한이 성공적으로 업데이트 되었습니다"
-      ],
-      "username": [
-        "사용자 이름"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "금고 :${ payload.content.name }\" 이(가) 성공적으로 삭제되었습니다."
@@ -5382,9 +5370,6 @@
       ],
       "Move to trash": [
         "휴지통으로 이동"
-      ],
-      "Name is required": [
-        "이름은 필수입니다"
       ],
       "No items": [
         "항목 없음"

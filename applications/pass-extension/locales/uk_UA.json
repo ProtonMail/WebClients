@@ -682,6 +682,12 @@
       "Show Less": [
         "Показати менше"
       ],
+      "Show less": [
+        "Згорнути"
+      ],
+      "Show more": [
+        "Розгорнути"
+      ],
       "Sign back in": [
         "Увійти знову"
       ],
@@ -1886,9 +1892,6 @@
       "Can view this item.": [
         "Можна переглянути цей елемент."
       ],
-      "Change your password": [
-        "Змініть свій пароль"
-      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Оберіть збережений ключ доступу для входу до ${ domain }"
       ],
@@ -1988,9 +1991,6 @@
       "Editor": [
         "Редактор"
       ],
-      "email": [
-        "е-пошта"
-      ],
       "Email address successfully deleted from monitoring": [
         "Адресу пошти успішно видалено з відстеження"
       ],
@@ -2086,9 +2086,6 @@
       ],
       "Fill in the CSV with your data": [
         "Заповніть CSV своїми даними"
-      ],
-      "finance": [
-        "фінанси"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Виконайте ці кроки, щоб імпортувати ваші дані за допомогою загального файлу CSV:"
@@ -2252,9 +2249,6 @@
       "Medium Priority": [
         "Середній пріоритет"
       ],
-      "Monitor accounts": [
-        "Моніторинг облікових записів"
-      ],
       "Monitoring settings successfully updated": [
         "Налаштування відстеження успішно оновлено"
       ],
@@ -2368,9 +2362,6 @@
       ],
       "Passkey sign-in": [
         "Вхід з ключем доступу"
-      ],
-      "password": [
-        "пароль"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Блокування паролем успішно зареєстровано. Використовуйте його, щоб розблокувати ${ PASS_APP_NAME }"
@@ -2863,9 +2854,6 @@
       ],
       "User's access successfully updated": [
         "Доступ користувача успішно оновлено"
-      ],
-      "username": [
-        "ім'я користувача"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховище \"${ payload.content.name }\" успішно видалено"
@@ -5564,9 +5552,6 @@
       ],
       "Move to trash": [
         "Перемістити до смітника"
-      ],
-      "Name is required": [
-        "Назва обовʼязкова"
       ],
       "No items": [
         "Немає елементів"

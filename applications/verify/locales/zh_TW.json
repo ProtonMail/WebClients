@@ -38,6 +38,9 @@
       "Get verification code": [
         "取得驗證碼"
       ],
+      "More info": [
+        "更多資訊"
+      ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
@@ -1487,14 +1490,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "可使用多達 15 組電子郵件位址，支援 3 個自訂電子郵件網域，個性化由您定義"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "將現有儲存空間加大至 ${ bundleStorage } 予每位使用者"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
       ],
       "Support for ${ n } custom email domain": [
         "支援 ${ n } 組自訂電子郵件網域"
@@ -1503,11 +1500,6 @@
     "Placeholder": {
       "Password": [
         "密碼"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
