@@ -1,12 +1,11 @@
-import { getUnixTime, subMonths, subYears } from 'date-fns';
-
 import type { RequireSome } from '@proton/shared/lib/interfaces';
 
 import type { ApiStartImportParams } from '../../../../../api/api.interface';
 import { GMAIL_CATEGORIES, MAX_FOLDERS_DEPTH } from '../../../../../constants';
 import { PROTON_DEFAULT_SEPARATOR } from '../../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
+import { getStartTimeFromTimePeriod } from '../../../../../helpers/getStartTimeFromTimePeriod';
 import type { MailImportGmailCategories, MailImportMapping } from '../../../../../interface';
-import { CustomFieldsBitmap, ImportType, TIME_PERIOD } from '../../../../../interface';
+import { CustomFieldsBitmap, ImportType } from '../../../../../interface';
 import type { StepPrepareData } from './useStepPrepareImap';
 
 const generateCustomFieldBitmap = ({
@@ -27,33 +26,6 @@ const generateCustomFieldBitmap = ({
     }
 
     return CustomFields;
-};
-
-const getStartTimeFromTimePeriod = (importPeriod: TIME_PERIOD): number | undefined => {
-    const now = new Date();
-    let result: Date | undefined;
-
-    switch (importPeriod) {
-        case TIME_PERIOD.BIG_BANG:
-            result = undefined;
-            break;
-        case TIME_PERIOD.LAST_YEAR:
-            result = subYears(now, 1);
-            break;
-        case TIME_PERIOD.LAST_6_MONTHS:
-            result = subMonths(now, 6);
-            break;
-        case TIME_PERIOD.LAST_3_MONTHS:
-            result = subMonths(now, 3);
-            break;
-        case TIME_PERIOD.LAST_MONTH:
-            result = subMonths(now, 1);
-            break;
-        default:
-            throw new Error('importPeriod should be specified');
-    }
-
-    return result ? getUnixTime(result) : undefined;
 };
 
 interface FormatProps {
