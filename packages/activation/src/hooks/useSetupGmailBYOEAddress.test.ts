@@ -404,7 +404,7 @@ describe('useSetupGmailBYOEAddress', () => {
 
             it('should show the claimable modal on 2011 when the address is claimable', async () => {
                 const { showClaimable, showLegacy } = await setup(async () => ({ CanBeClaimed: true }));
-                expect(showClaimable).toHaveBeenCalledWith(mockToken.Account);
+                expect(showClaimable).toHaveBeenCalledWith(mockToken.Account, true, undefined);
                 expect(showLegacy).not.toHaveBeenCalled();
             });
 
