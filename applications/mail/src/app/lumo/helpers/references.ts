@@ -117,7 +117,7 @@ const fetchElement = async (
 };
 
 /** One email's current state, from the store when any slice holds it and from the server otherwise. */
-const resolveFreshElement = async (
+export const resolveFreshElement = async (
     mail: ElementFetchDeps,
     reference: string,
     references: ReferenceRegistry
