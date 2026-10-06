@@ -14,7 +14,7 @@ export const viewEmailsDefinition: ToolDefinition<Record<string, never>, AgentEm
     paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
     serializeForLumo: (result) =>
         formatAgentEmailRows(result.rows, result.total) ||
-        (result.bulkActionRunning ? BULK_ACTION_NOTE : 'No emails are currently shown on screen.'),
+        (result.bulkActionRunning ? BULK_ACTION_NOTE : 'No emails were shown on screen.'),
     summarizeChip: (_params, result) => {
         const count = result.rows.length;
         return {
