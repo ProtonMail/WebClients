@@ -700,6 +700,12 @@
       "Show Less": [
         "Mostra menys"
       ],
+      "Show less": [
+        "Mostra'n menys"
+      ],
+      "Show more": [
+        "Mostrar més"
+      ],
       "Sign back in": [
         "Torna a entrar"
       ],
@@ -1898,9 +1904,6 @@
       "Can view this item.": [
         "Pot veure aquest element."
       ],
-      "Change your password": [
-        "Canvieu la vostra contrasenya"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total } contrasenyes"
       ],
@@ -2006,9 +2009,6 @@
       "Editor": [
         "Editor"
       ],
-      "email": [
-        "corrreu electrònic"
-      ],
       "Email address successfully deleted from monitoring": [
         "L'adreça de correu electrònic s'ha suprimit del monitoratge."
       ],
@@ -2104,9 +2104,6 @@
       ],
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
-      ],
-      "finance": [
-        "finances"
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "S'ha creat la carpeta «${ payload.folder.name }»"
@@ -2276,9 +2273,6 @@
       "Medium Priority": [
         "Prioritat mitjana"
       ],
-      "Monitor accounts": [
-        "Supervisar els comptes"
-      ],
       "Monitoring settings successfully updated": [
         "S'han actualitzat les preferències de seguiment."
       ],
@@ -2401,9 +2395,6 @@
       ],
       "Passkey sign-in": [
         "Inici de sessió amb clau d'accés"
-      ],
-      "password": [
-        "contrasenya"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "S'ha registrat el bloqueig de la contrasenya. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }."
@@ -2895,9 +2886,6 @@
       ],
       "User's access successfully updated": [
         "S'ha actualitzat l'accés de l'usuari."
-      ],
-      "username": [
-        "nom d'usuari"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "S'ha eliminat la caixa forta \"${ payload.content.name }\""
@@ -5480,6 +5468,22 @@
       "${ BRAND_NAME } password is required": [
         "Es requereix la contrasenya de ${ BRAND_NAME }."
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "S'ha fusionat ${ count } carpeta a la seva carpeta principal perquè s'ha assolit el nivell màxim de nius.",
+        "S'han fusionat ${ count } carpetes a la seva carpeta principal perquè s'ha assolit el nivell màxim de nius."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "No s'ha importat ${ count } carpeta perquè la seva carpeta principal ha assolit el nombre màxim de subcarpetes. Els seus elements s'han importat a la carpeta més propera disponible.",
+        "No s'han importat ${ count } carpetes perquè la seva carpeta principal ha assolit el nombre màxim de subcarpetes. Els seus elements s'han importat a la carpeta més propera disponible."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "No s'ha importat ${ count } carpeta perquè aquesta caixa forta ha assolit el seu límit de carpetes. Els seus elements s'han importat a la carpeta més propera disponible.",
+        "No s'han importat ${ count } carpetes perquè aquesta caixa forta ha assolit el seu límit de carpetes. Els seus elements s'han importat a la carpeta més propera disponible."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "No s'ha pogut crear ${ failed } carpeta. Els seus elements s'han importat a la carpeta més propera disponible.",
+        "No s'han pogut crear ${ failed } carpetes. Els seus elements s'han importat a la carpeta més propera disponible."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
       ],
@@ -5623,9 +5627,6 @@
       ],
       "Move to trash": [
         "Mou a la paperera"
-      ],
-      "Name is required": [
-        "Es requereix un nom."
       ],
       "No items": [
         "Sense elements"

@@ -682,6 +682,12 @@
       "Show Less": [
         "Hiển thị ít hơn"
       ],
+      "Show less": [
+        "Ẩn bớt"
+      ],
+      "Show more": [
+        "Hiển thị thêm"
+      ],
       "Sign back in": [
         "Đăng nhập lại"
       ],
@@ -1817,9 +1823,6 @@
       "Can view this item.": [
         "Có thể xem mục này."
       ],
-      "Change your password": [
-        "Thay đổi mật khẩu"
-      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Chọn mã khóa đã lưu để đăng nhập vào ${ domain }"
       ],
@@ -1919,9 +1922,6 @@
       "Editor": [
         "Biên tập viên"
       ],
-      "email": [
-        "email"
-      ],
       "Email address successfully deleted from monitoring": [
         "Đã xóa địa chỉ email khỏi giám sát thành công"
       ],
@@ -2017,9 +2017,6 @@
       ],
       "Fill in the CSV with your data": [
         "Điền vào tệp CSV bằng dữ liệu của bạn"
-      ],
-      "finance": [
-        "tài chính"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Làm theo các bước sau để nhập dữ liệu bằng tệp CSV chung:"
@@ -2174,9 +2171,6 @@
       "Medium Priority": [
         "Ưu tiên trung bình"
       ],
-      "Monitor accounts": [
-        "Giám sát tài khoản"
-      ],
       "Monitoring settings successfully updated": [
         "Đã cập nhật cài đặt giám sát thành công"
       ],
@@ -2287,9 +2281,6 @@
       ],
       "Passkey sign-in": [
         "Đăng nhập bằng mã khóa"
-      ],
-      "password": [
-        "mật khẩu"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công khóa bằng mật khẩu. Sử dụng để mở khóa ${ PASS_APP_NAME }"
@@ -2776,9 +2767,6 @@
       ],
       "User's access successfully updated": [
         "Đã cập nhật quyền truy cập của người dùng"
-      ],
-      "username": [
-        "tên người dùng"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Đã xóa thành công kho \"${ payload.content.name }\""
@@ -5378,9 +5366,6 @@
       ],
       "Move to trash": [
         "Di chuyển vào thùng rác"
-      ],
-      "Name is required": [
-        "Tên được yêu cầu"
       ],
       "No items": [
         "Không có mục nào"

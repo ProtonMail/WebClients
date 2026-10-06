@@ -682,6 +682,12 @@
       "Show Less": [
         "Свернуть"
       ],
+      "Show less": [
+        "Показать меньше"
+      ],
+      "Show more": [
+        "Показать больше"
+      ],
       "Sign back in": [
         "Войти обратно"
       ],
@@ -1886,9 +1892,6 @@
       "Can view this item.": [
         "Можно просматривать этот элемент."
       ],
-      "Change your password": [
-        "Измените пароль"
-      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выберите сохраненный passkey для входа в ${ domain }"
       ],
@@ -1988,9 +1991,6 @@
       "Editor": [
         "Редактор"
       ],
-      "email": [
-        "электронная почта"
-      ],
       "Email address successfully deleted from monitoring": [
         "Адрес электронной почты успешно удален из мониторинга"
       ],
@@ -2086,9 +2086,6 @@
       ],
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
-      ],
-      "finance": [
-        "финансы"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выполните эти шаги, чтобы импортировать данные с помощью стандартного CSV:"
@@ -2252,9 +2249,6 @@
       "Medium Priority": [
         "Средний приоритет"
       ],
-      "Monitor accounts": [
-        "Отслеживать аккаунты"
-      ],
       "Monitoring settings successfully updated": [
         "Настройки мониторинга успешно обновлены"
       ],
@@ -2368,9 +2362,6 @@
       ],
       "Passkey sign-in": [
         "Вход с passkey"
-      ],
-      "password": [
-        "пароль"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Блокировка паролем успешно выполнена. Используйте его для разблокировки ${ PASS_APP_NAME }"
@@ -2863,9 +2854,6 @@
       ],
       "User's access successfully updated": [
         "Доступ пользователя обновлен"
-      ],
-      "username": [
-        "имя пользователя"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Хранилище \"${ payload.content.name }\" успешно удалено"
@@ -5564,9 +5552,6 @@
       ],
       "Move to trash": [
         "Переместить в корзину"
-      ],
-      "Name is required": [
-        "Требуется имя"
       ],
       "No items": [
         "Нет элементов"
