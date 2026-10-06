@@ -1759,6 +1759,18 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "More info": [
+        "Más información"
+      ],
+      "New chat": [
+        "Chat nuevo"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ],
+      "Switch to ${ planName }": [
+        "Cambiar a ${ planName }"
       ]
     },
     "action": {
@@ -4459,6 +4471,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "De: ${ sender } - ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "De: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -8205,7 +8220,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -10053,6 +10069,18 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Tiene una factura abierta el ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "1 device per user": [
+        "1 dispositivo por usuario"
+      ],
+      "1 vault per user": [
+        "1 bóveda por usuario"
+      ],
+      "No payment is required.": [
+        "El pago no es obligatorio."
+      ],
+      "Today": [
+        "Hoy"
       ]
     },
     "info": {
@@ -11392,6 +11420,9 @@
       ],
       "To": [
         "Para"
+      ],
+      "Image": [
+        "Imagen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14016,6 +14047,81 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } no puede combinarse con ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } solo está disponible en planes empresariales."
+      ],
+      "An organization is required for this plan.": [
+        "Se requiere una organización para este plan."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "No se puede comprar Born Private con una suscripción activa."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private requiere una donación."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "La compra de créditos requiere una compra separada."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Al cambiar, acepta nuestros ${ termsLink }."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Solo un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } puede ser comprado."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Cierre las cuentas de wallet adicionales antes de cambiar el plan."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Cierre las carteras adicionales antes de cambiar el plan."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Las licencias de Scribe no pueden exceder el número de miembros."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "El plan seleccionado no ofrece direcciones suficientes para su cuenta."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "El plan seleccionado no ofrece dominios suficientes para su cuenta."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "El plan seleccionado no ofrece miembros suficientes para su cuenta."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "El plan seleccionado no ofrece almacenamiento suficiente para su cuenta."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Este servidor dedicado está asignado a una puerta de enlace y no se puede cambiar."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Este plan no admite miembros en su cuenta."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Los planes de prueba no ofrecen licencias de ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Los planes de prueba no admiten dominios personalizados."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Los planes de prueba no ofrecen IPs dedicadas."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Los planes de prueba no admiten licencias de Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Los planes de prueba no admiten esta cantidad de miembros."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Ya posee ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Ya posee Born Private."
+      ],
+      "Your account is too old for Born Private.": [
+        "Su cuenta es demasiado antigua para Born Private."
       ]
     },
     "Payments.Error": {

@@ -1762,6 +1762,21 @@
       ],
       "New chat": [
         "Nou xat"
+      ],
+      "Got it, connect my Gmail": [
+        "Entesos, connecteu el meu Gmail"
+      ],
+      "Learn how this works": [
+        "Apreneu el funcionament d'això"
+      ],
+      "More info": [
+        "Més informació"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ],
+      "Switch to ${ planName }": [
+        "Canvia a ${ planName }"
       ]
     },
     "action": {
@@ -1917,6 +1932,12 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "Managed Service Provider": [
+        "Proveïdor de serveis gestionats"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Les organitzacions amb el complement de proveïdor de serveis gestionats poden crear i gestionar organitzacions filials."
       ]
     },
     "Alert": {
@@ -5678,7 +5699,7 @@
         "Heu arribat al nombre límit de contactes per al vostre compte."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Heu utilitzat totes les adreces del vostre pla. Actualitzeu-lo per afegir-ne una de nova o desactiveu una adreça al vostre compte."
+        "Heu utilitzat totes les adreces del vostre pla. Milloreu el pla per a afegir-ne una de nova o desactiveu una adreça al vostre compte."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
@@ -6622,6 +6643,9 @@
       ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "Good to know before you connect": [
+        "És bo saber-ho abans de connectar-se"
       ]
     },
     "Hint": {
@@ -8221,7 +8245,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -10069,6 +10094,39 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Teniu una factura pendent de pagament el ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** també s'utilitza per iniciar sessió en un compte de ${ BRAND_NAME } separat, fora de ${ MAIL_APP_NAME }."
+      ],
+      "1 device per user": [
+        "1 dispositiu per usuari"
+      ],
+      "1 vault per user": [
+        "1 caixa forta per usuari"
+      ],
+      "Here's what happens when you continue:": [
+        "Això és el que passa quan continueu:"
+      ],
+      "Next time you sign in to your other account": [
+        "La pròxima vegada que inicieu sessió al vostre altre compte"
+      ],
+      "No payment is required.": [
+        "No es requereix cap pagament."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Res no canvia al vostre altre compte de ${ BRAND_NAME }."
+      ],
+      "Today": [
+        "Avui"
+      ],
+      "You'll choose a new username": [
+        "Triareu un nou nom d'usuari"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "A partir d'ara l'utilitzareu per iniciar sessió. Aquest és l'únic canvi."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "El vostre Gmail es connecta a aquesta adreça de ${ MAIL_APP_NAME }"
       ]
     },
     "info": {
@@ -11408,6 +11466,9 @@
       ],
       "To": [
         "Per a"
+      ],
+      "Image": [
+        "Imatge"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13615,10 +13676,10 @@
     },
     "Option": {
       "10th of the month": [
-        "el dia 10 del mes"
+        "10 del mes"
       ],
       "11th of the month": [
-        "el dia 11 del mes"
+        "11 del mes"
       ],
       "12th of the month": [
         "12 del mes"
@@ -13633,10 +13694,10 @@
         "15 del mes"
       ],
       "16th of the month": [
-        "el dia 16 del mes"
+        "16 del mes"
       ],
       "17th of the month": [
-        "el dia 17 del mes"
+        "17 del mes"
       ],
       "18th of the month": [
         "el dia 18 del mes"
@@ -13654,7 +13715,7 @@
         "el dia 21 del mes"
       ],
       "22nd of the month": [
-        "el dia 22 del mes"
+        "22 del mes"
       ],
       "23rd of the month": [
         "23 del mes"
@@ -13669,10 +13730,10 @@
         "26 del mes"
       ],
       "27th of the month": [
-        "el dia 27 del mes"
+        "27 del mes"
       ],
       "28th of the month": [
-        "el dia 28 del mes"
+        "28 del mes"
       ],
       "29th of the month": [
         "el dia 29 del mes"
@@ -13693,16 +13754,16 @@
         "el dia 4 del mes"
       ],
       "5th of the month": [
-        "el dia 5 del mes"
+        "5 del mes"
       ],
       "6th of the month": [
-        "el dia 6 del mes"
+        "6 del mes"
       ],
       "7th of the month": [
         "7 del mes"
       ],
       "8th of the month": [
-        "el dia 8 del mes"
+        "8 del mes"
       ],
       "9th of the month": [
         "el dia 9 del mes"
@@ -14049,7 +14110,7 @@
         "Born Private requereix una donació."
       ],
       "Buying credits requires a separate purchase.": [
-        "Comprar crèdits requereix una compra independent."
+        "L'adquisició de crèdits requereix una compra independent."
       ],
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Només es pot comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
@@ -14061,7 +14122,7 @@
         "Tanqueu les carteres addicionals abans de canviar de pla."
       ],
       "Scribe seats can’t exceed the number of members.": [
-        "Les llicències d'Scribe no poden superar el nombre de membres."
+        "Les llicències de Scribe no poden superar el nombre de membres."
       ],
       "The selected plan doesn’t offer enough addresses for your account.": [
         "El pla seleccionat no ofereix prou adreces per al vostre compte."
@@ -14073,7 +14134,7 @@
         "El pla seleccionat no ofereix prou membres per al vostre compte."
       ],
       "The selected plan doesn’t offer enough storage for your account.": [
-        "El pla seleccionat no ofereix prou emmagatzematge per al teu compte."
+        "El pla seleccionat no ofereix prou emmagatzematge per al vostre compte."
       ],
       "This dedicated server is assigned to a gateway and can’t be changed.": [
         "Aquest servidor dedicat està assignat a una passarel·la i no es pot canviar."
@@ -14091,7 +14152,7 @@
         "Els plans de prova no admeten IP dedicades."
       ],
       "Trial plans don’t support Scribe seats.": [
-        "Els plans de prova no admeten llicències d'Scribe."
+        "Els plans de prova no admeten llicències de Scribe."
       ],
       "Trial plans don’t support this many members.": [
         "Els plans de prova no admeten tants membres."
@@ -14104,6 +14165,9 @@
       ],
       "Your account is too old for Born Private.": [
         "El vostre compte és massa antic per a Born Private."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "En canviar, accepteu els nostres ${ termsLink }."
       ]
     },
     "Payments.Error": {

@@ -1753,6 +1753,18 @@
       ],
       "New chat": [
         "Novo bate-papo"
+      ],
+      "Get index size on disk": [
+        "Obter tamanho do índice no disco"
+      ],
+      "More info": [
+        "Mais informações"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ],
+      "Switch to ${ planName }": [
+        "Alterar para ${ planName }"
       ]
     },
     "action": {
@@ -1898,6 +1910,9 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "Managed Service Provider": [
+        "Provedor de serviço gerenciado"
       ]
     },
     "Alert": {
@@ -5639,6 +5654,9 @@
       ],
       "Move operation aborted": [
         "Operação de movimento interrompida"
+      ],
+      "Could not grant access to the organization key": [
+        "Não foi possível obter o acesso a chave da organização"
       ]
     },
     "error": {
@@ -8111,7 +8129,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -9897,6 +9916,18 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Você tem uma fatura em aberta em ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "1 device per user": [
+        "1 dispositivo por usuário"
+      ],
+      "1 vault per user": [
+        "1 cofres por usuário"
+      ],
+      "Today": [
+        "Hoje"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Você tem uma fatura em aberta ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -11224,6 +11255,9 @@
       ],
       "IndexedDB store": [
         "Armazenamento IndexedDB"
+      ],
+      "Image": [
+        "Imagem"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13836,6 +13870,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ao trocar, você concorda com nossos ${ termsLink }."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Os planos de avaliação não suportam IPs dedicados."
       ]
     },
     "Payments.Error": {
@@ -18223,6 +18263,9 @@
       ],
       "All premium features from your current plan": [
         "Todos os recursos premium do seu plano atual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
       ]
     },
     "tryduo2026: Title": {

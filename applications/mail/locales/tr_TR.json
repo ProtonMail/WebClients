@@ -1762,6 +1762,21 @@
       ],
       "New chat": [
         "Yeni sohbet"
+      ],
+      "Got it, connect my Gmail": [
+        "Anladım, Gmail hesabımı bağla"
+      ],
+      "Learn how this works": [
+        "Nasıl çalıştığını öğrenin"
+      ],
+      "More info": [
+        "Diğer bilgiler"
+      ],
+      "Special Offer": [
+        "Özel teklif"
+      ],
+      "Switch to ${ planName }": [
+        "${ planName } tarifesine geç"
       ]
     },
     "action": {
@@ -1917,6 +1932,12 @@
       ],
       "Writing assistant seats": [
         "Yazma asistanı koltuk sayısı"
+      ],
+      "Managed Service Provider": [
+        "Yönetilen hizmet sağlayıcısı"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Yönetilen hizmet sağlayıcı eklentisini kullanan kuruluşlar, yan kuruluşlar oluşturabilir ve yönetebilir."
       ]
     },
     "Alert": {
@@ -6622,6 +6643,9 @@
       ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "Good to know before you connect": [
+        "Bağlamadan önce bilmek iyi oldu"
       ]
     },
     "Hint": {
@@ -8221,7 +8245,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -10069,6 +10094,39 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "${ dueDate } tarihli ödenmemiş bir faturanız var ${ payInvoiceLink }"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }**, ${ MAIL_APP_NAME } dışında ayrı bir ${ BRAND_NAME } hesabında oturum açmak için de kullanılır."
+      ],
+      "1 device per user": [
+        "Her kullanıcı için 1 aygıt"
+      ],
+      "1 vault per user": [
+        "Her kullanıcı için 1 kasa"
+      ],
+      "Here's what happens when you continue:": [
+        "İlerlediğinizde şunlar olacak:"
+      ],
+      "Next time you sign in to your other account": [
+        "Bir dahaki sefere diğer hesabınızda oturum açtığınızda"
+      ],
+      "No payment is required.": [
+        "Herhangi bir ödeme gerekmez."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Diğer ${ BRAND_NAME } hesabınızda hiçbir şey değişmez."
+      ],
+      "Today": [
+        "Bugün"
+      ],
+      "You'll choose a new username": [
+        "Yeni bir kullanıcı adı seçeceksiniz"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "O andan sonra oturum açmak için kullanacaksınız. Tek değişiklik bu."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Gmail hesabınız bu ${ MAIL_APP_NAME } adresine bağlanır"
       ]
     },
     "info": {
@@ -10480,7 +10538,7 @@
         "Uygulama parolası"
       ],
       "Apply filter to existing emails": [
-        "Süzgeci var olan e-postalara uygula"
+        "Süzgeç var olan e-postalara uygulansın"
       ],
       "Apply to future messages": [
         "Gelecekteki iletilere uygulansın"
@@ -10972,7 +11030,7 @@
         "İletileri şuraya taşı"
       ],
       "Move to": [
-        "Şuraya taşı"
+        "Şuraya taşınsın"
       ],
       "Move to Archive": [
         "Arşivle"
@@ -11408,6 +11466,9 @@
       ],
       "To": [
         "Alıcı"
+      ],
+      "Image": [
+        "Görsel"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12490,7 +12551,7 @@
         "HIPAA uyumluluğu"
       ],
       "Encrypted contact details": [
-        "Şifrelenmiş kişi bilgileri"
+        "Kişi bilgilerini şifreleme"
       ],
       "Encrypted VPN servers": [
         "Şifrelenmiş VPN sunucuları"
@@ -12563,7 +12624,7 @@
         "Kimlik bilgilerini korumak için parola yöneticisi"
       ],
       "Password-protected Emails": [
-        "Parola korumalı e-postalar"
+        "E-postaları parola ile koruma"
       ],
       "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
         "Telefon desteği (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ kullanıcı)"
@@ -12605,7 +12666,7 @@
         "E-posta yazma süresini azaltın"
       ],
       "Schedule and snooze emails for any time": [
-        "İletileri istediğiniz zamana planlayın veya erteleyin"
+        "E-postaları istediğiniz zaman gönderme veya erteleme"
       ],
       "Secure Core servers": [
         "Secure Core sunucuları"
@@ -12632,7 +12693,7 @@
         "Kullanıcı olarak oturum açma"
       ],
       "SMTP submission": [
-        "SMTP gönderimi"
+        "SMTP ile gönderme"
       ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
@@ -12671,7 +12732,7 @@
         "Sınırsız sayıda klasör, etiket ve süzgeç"
       ],
       "Unlimited labels": [
-        "Sınırsız etiket"
+        "Sınırsız sayıda etiket"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -14032,6 +14093,81 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }, ${ PLAN_NAMES[PLANS.PASS] } ile birleştirilemez."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } yalnızca kurumsal tarifelerde kullanılabilir."
+      ],
+      "An organization is required for this plan.": [
+        "Bu tarife için bir kuruluş gereklidir."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private etkin bir abonelik ile satın alınamaz."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private için bir bağış yapılması gereklidir."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Kredi satın almak için ayrı bir satın alma gerekir."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Geçiş yaparak ${ termsLink } içeriğini kabul etmiş olursunuz."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Yalnızca bir ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } satın alınabilir."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Lütfen tarifenizi değiştirmeden önce ek cüzdan hesaplarını kapatın."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Lütfen tarifenizi değiştirmeden önce ek cüzdanları kapatın."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe koltuk sayısı üye sayısını aşamaz."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Seçilmiş tarife hesabınız için yeterli adres sunmuyor."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Seçilmiş tarife hesabınız için yeterli etki alanı sunmuyor."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Seçilmiş tarife hesabınız için yeterli üye sunmuyor."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Seçilmiş tarife hesabınız için yeterli depolama alanı sunmuyor."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Bu sie ayrılmış sunucu bir ağ geçidine atanmış ve değiştirilemez."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Bu tarife hesabınızdaki üyeleri desteklemez."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Deneme tarifelerinde ${ LUMO_SHORT_APP_NAME } koltukları desteklenmez."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Deneme tarifeleri özel etki alanlarını desteklemez."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Deneme tarifeleri size ayrılmış IP adreslerini desteklemez."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Deneme tarifelerinde Scribe koltukları desteklenmez."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Deneme tarifeleri bu kadar çok üyeyi desteklemez."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Zaten ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } sahibisiniz."
+      ],
+      "You already own Born Private.": [
+        "Zaten Born Private kapsamındasınız."
+      ],
+      "Your account is too old for Born Private.": [
+        "Hesabınız Born Private için çok eski."
       ]
     },
     "Payments.Error": {

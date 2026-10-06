@@ -1663,6 +1663,12 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "More info": [
+        "További információk"
+      ],
+      "Stop": [
+        "Leállítás"
       ]
     },
     "action": {
@@ -1673,6 +1679,9 @@
     "Actions": {
       "Set up categories": [
         "Kategóriák beállítása"
+      ],
+      "Next": [
+        "Következő"
       ]
     },
     "Actions message": {
@@ -2494,6 +2503,10 @@
       ],
       "Total": [
         "Összesen"
+      ],
+      "Total for ${ cycle } month": [
+        "Összesen, ${ cycle } hónapra",
+        "Összesen, ${ cycle } hónapra"
       ]
     },
     "Collapsible tooltip": {
@@ -5013,6 +5026,19 @@
       ],
       "Incorrect second password. Please try again.": [
         "Hibás második jelszó. Próbálja meg újra."
+      ],
+      "Cannot verify the author of this file": [
+        "A fájl szerzője nem ellenőrizhető"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "A név maximum ${ MAX_NODE_NAME_LENGTH } karakter hosszú lehet",
+        "A név maximum ${ MAX_NODE_NAME_LENGTH } karakter hosszú lehet"
+      ],
+      "Part of the file appears to be corrupted": [
+        "A fájl egy része sérült"
+      ],
+      "Verification keys are not available": [
+        "Az ellenőrzési kulcsok nem érhetők el"
       ]
     },
     "error": {
@@ -7217,6 +7243,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8623,6 +8650,61 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "${ count } email": [
+        "${ count } e-mail",
+        "${ count } e-mail"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } e-mail - ${ names }",
+        "${ count } e-mail - ${ names }"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-mail → ${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } probléma importálás közben:",
+        "${ issues.length } probléma importálás közben:"
+      ],
+      "Found ${ count } contact": [
+        "${ count } névjegy illeszkedik",
+        "${ count } névjegy illeszkedik"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Egy aktuális, titkosított, keresőindex felfedezve, ${ oldIndexSize } üzenettel.",
+        "Egy aktuális, titkosított, keresőindex felfedezve, ${ oldIndexSize } üzenettel."
+      ],
+      "Read ${ count } email": [
+        "${ count } e-mail olvasása",
+        "${ count } e-mail olvasása"
+      ],
+      "Read ${ count } email on screen": [
+        "${ count } e-mail olvasása a képernyőn",
+        "${ count } e-mail olvasása a képernyőn"
+      ],
+      "Read ${ count } message in this thread": [
+        "${ count } e-mail olvasása ebben a szálban",
+        "${ count } e-mail olvasása ebben a szálban"
+      ],
+      "Read ${ count } open draft": [
+        "${ count } nyitott piszkozat olvasása",
+        "${ count } nyitott piszkozat olvasása"
+      ],
+      "Read your ${ count } filter": [
+        "${ count } szűrő olvasása",
+        "${ count } szűrő olvasása"
+      ],
+      "Read your ${ count } folder": [
+        "${ count } mappa olvasása",
+        "${ count } mappa olvasása"
+      ],
+      "Read your ${ count } label": [
+        "${ count } címke olvasása",
+        "${ count } címke olvasása"
+      ],
+      "Star emails": [
+        "E-mailek csillagozása"
       ]
     },
     "info": {
@@ -9673,6 +9755,9 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Context total": [
+        "Környezet összesen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10144,6 +10229,18 @@
       "Up to ${ n } participant": [
         "${ n } résztvevő",
         "Akár ${ n } résztvevő"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } megbeszélés egyszerre",
+        "${ n } megbeszélés egyszerre"
+      ],
+      "Up to ${ n } meeting per day": [
+        "${ n } megbeszélés naponta",
+        "Akár ${ n } megbeszélés naponta"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videómegbeszélések, ${ n } résztvevővel",
+        "Videómegbeszélések, ${ n } résztvevővel"
       ]
     },
     "meet_2025: Info": {
@@ -15820,6 +15917,48 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } új üzenet",
+        "${ messageCount } új üzenet"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-mail → ${ wakeTime }",
+        "${ count } e-mail → ${ wakeTime }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "${ discount }% kedvezmény a ${ planName } csomagra"
+      ],
+      "Get ${ planName }": [
+        "${ planName } beszerzése"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/hónap"
+      ],
+      "2 TB of storage to share": [
+        "2 TB tárhely megosztásra"
+      ],
+      "2 user accounts": [
+        "2 felhasználói fiók"
+      ],
+      "All premium features from your current plan": [
+        "Az összes prémium funkció a jelenlegi csomagjából"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "A kedvezmények alapja a normál havi díjszabás. Előfizetése a számlázási ciklus végén a normál éves díjszabás szerint újul meg."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 hónapra"
       ]
     }
   }

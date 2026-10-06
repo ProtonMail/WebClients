@@ -1769,6 +1769,18 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "More info": [
+        "Падрабязней"
+      ],
+      "New chat": [
+        "Новы чат"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ],
+      "Switch to ${ planName }": [
+        "Пераключыцца на ${ planName }"
       ]
     },
     "action": {
@@ -4535,6 +4547,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "Ад: ${ sender } - ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "Ад: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -8480,7 +8495,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8705,7 +8723,7 @@
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выберыце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "New": [
-        "Новы"
+        "Новая"
       ],
       "newsletter": [
         "рассылка"
@@ -10359,6 +10377,18 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "У вас ёсць адкрыты рахунак ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "1 device per user": [
+        "1 прылада на карыстальніка"
+      ],
+      "1 vault per user": [
+        "1 сховішча на карыстальніка"
+      ],
+      "No payment is required.": [
+        "Плацеж не патрабуецца."
+      ],
+      "Today": [
+        "Сёння"
       ]
     },
     "info": {
@@ -11711,6 +11741,12 @@
       ],
       "To": [
         "Да"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "Сімвалаў: ${ length }/${ maxLength }"
+      ],
+      "Image": [
+        "Відарыс"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14436,6 +14472,51 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "An organization is required for this plan.": [
+        "Для гэтага тарыфнага плана патрабуецца арганізацыя."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private не можа быць куплены з актыўнай падпіскай."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private патрабуе ахвяраванне."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Купля крэдытаў патрабуе асобнай пакупкі."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Пераходзячы, вы пагаджаецеся з нашымі ${ termsLink }."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Толькі адзін ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } можа быць куплены."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Закрыйце ўліковыя запісы дадатковых кашалькоў перад змяненнем вашага тарыфнага плана."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Колькасць ліцэнзій для Scribe не можа перавышаць колькасць удзельнікаў."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Тарыфныя планы з пробным перыядам не падтрымліваюць ліцэнзіі ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Тарыфныя планы з пробным перыядам карыстальніцкія дамены."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Тарыфныя планы з пробным перыядам не падтрымліваюць вылучаныя IP."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Тарыфныя планы з пробным перыядам не падтрымліваюць ліцэнзіі Scribe"
+      ],
+      "Trial plans don’t support this many members.": [
+        "Тарыфныя планы з пробным перыядам не падтрымліваюць вялікую колькасць удзельнікаў."
+      ],
+      "You already own Born Private.": [
+        "Вы ўжо валодаеце Born Private."
+      ],
+      "Your account is too old for Born Private.": [
+        "У вас занадта стары ўліковы запіс для Born Private."
       ]
     },
     "Payments.Error": {
@@ -19106,6 +19187,12 @@
       ],
       "2 user accounts": [
         "2 уліковыя запісы карыстальніка"
+      ],
+      "All premium features from your current plan": [
+        "Усе прэміяльныя функцыі з вашага бягучага тарыфнага плана"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
       ]
     },
     "tryduo2026: Title": {
