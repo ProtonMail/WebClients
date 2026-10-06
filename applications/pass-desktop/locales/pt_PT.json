@@ -700,6 +700,12 @@
       "Show Less": [
         "Mostrar menos"
       ],
+      "Show less": [
+        "Mostrar menos"
+      ],
+      "Show more": [
+        "Mostrar mais"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com o ${ BRAND_NAME }"
       ],
@@ -1824,9 +1830,6 @@
       "Can view this item.": [
         "Pode ver este item."
       ],
-      "Change your password": [
-        "Altere a sua palavra-passe"
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme a sua palavra-passe para continuar com a remoção."
       ],
@@ -1907,9 +1910,6 @@
       ],
       "Editor": [
         "Editor"
-      ],
-      "email": [
-        "e-mail"
       ],
       "Email address successfully deleted from monitoring": [
         "O endereço de e-mail foi eliminado da monitorização."
@@ -2003,9 +2003,6 @@
       ],
       "Fill in the CSV with your data": [
         "Preencha o ficheiro CSV com os seus dados"
-      ],
-      "finance": [
-        "finanças"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Procure \"Agente de Autenticação OpenSSH\", clique com o botão direito do rato em Propriedades."
@@ -2175,9 +2172,6 @@
       "Medium Priority": [
         "Prioridade média"
       ],
-      "Monitor accounts": [
-        "Monitor de contas"
-      ],
       "Monitoring settings successfully updated": [
         "As definições de monitorização foram atualizadas."
       ],
@@ -2275,9 +2269,6 @@
       ],
       "Pass Plus trial": [
         "Avaliação do Pass Plus"
-      ],
-      "password": [
-        "palavra-passe"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "O bloqueio por palavra-passe foi registado. Utilize-o para desbloquear o ${ PASS_APP_NAME }"
@@ -2739,9 +2730,6 @@
       ],
       "User's access successfully updated": [
         "O acesso do utilizador foi atualizado."
-      ],
-      "username": [
-        "nome de utilizador"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "O cofre \"${ payload.content.name }\" foi eliminado."
@@ -5463,9 +5451,6 @@
       ],
       "Move to trash": [
         "Mover para o lixo"
-      ],
-      "Name is required": [
-        "É necessário um nome."
       ],
       "No items": [
         "Nenhum item"

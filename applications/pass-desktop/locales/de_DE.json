@@ -718,6 +718,12 @@
       "Show Less": [
         "Weniger anzeigen"
       ],
+      "Show less": [
+        "Weniger anzeigen"
+      ],
+      "Show more": [
+        "Mehr anzeigen"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Mit ${ BRAND_NAME } anmelden"
       ],
@@ -1882,9 +1888,6 @@
       "Can view this item.": [
         "Darf dieses Element anzeigen."
       ],
-      "Change your password": [
-        "Passwort ändern"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "${ compromised.progress.completed } von ${ compromised.progress.total } Passwörter werden überprüft"
       ],
@@ -1971,9 +1974,6 @@
       ],
       "Editor": [
         "Bearbeiter"
-      ],
-      "email": [
-        "E-Mail"
       ],
       "Email address successfully deleted from monitoring": [
         "E-Mail-Adresse erfolgreich aus der Überwachung gelöscht."
@@ -2067,9 +2067,6 @@
       ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
-      ],
-      "finance": [
-        "Finanzen"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Suchen „OpenSSH Authentication Agent“ und klicke mit der rechten Maustaste darauf, um die Eigenschaften aufzurufen."
@@ -2257,9 +2254,6 @@
       "Medium Priority": [
         "Mittlere Priorität"
       ],
-      "Monitor accounts": [
-        "Konten überwachen"
-      ],
       "Monitoring settings successfully updated": [
         "Überwachungseinstellungen erfolgreich aktualisiert."
       ],
@@ -2368,9 +2362,6 @@
       ],
       "Pass Plus trial": [
         "Pass Plus-Testversion"
-      ],
-      "password": [
-        "Passwort"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Passwortsperre erfolgreich registriert. Verwenden es, um ${ PASS_APP_NAME } zu entsperren."
@@ -2838,9 +2829,6 @@
       ],
       "User's access successfully updated": [
         "Benutzerzugriff aktualisiert"
-      ],
-      "username": [
-        "Benutzername"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Tresor \"${ payload.content.name }\" erfolgreich gelöscht."
@@ -5510,6 +5498,22 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-Passwort erforderlich"
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } Ordner wurde in seinen übergeordneten Ordner integriert, da die maximale Verschachtelungstiefe erreicht wurde.",
+        "${ count } Ordner wurden in ihren übergeordneten Ordner zusammengeführt, da die maximale Verschachtelungstiefe erreicht wurde."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } Ordner wurde nicht importiert, da sein übergeordneter Ordner die maximale Anzahl an Unterordnern erreicht hat. Dessen Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert.",
+        "${ count } Ordner wurden nicht importiert, da ihr übergeordneter Ordner die maximale Anzahl an Unterordnern erreicht hatte. Die darin enthaltenen Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } Ordner wurde nicht importiert, da dieser Tresor seine maximale Ordneranzahl erreicht hat. Die darin enthaltenen Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert.",
+        "${ count } Ordner wurden nicht importiert, da dieser Tresor seine maximale Ordneranzahl erreicht hat. Die darin enthaltenen Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } Ordner konnte nicht erstellt werden. Dessen Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert.",
+        "${ failed } Ordner konnten nicht erstellt werden. Deren Elemente wurden in den nächstgelegenen verfügbaren Ordner importiert."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } bietet eine leistungsstarke Kontrolle, aber ein einziger Fehler kann dazu führen, dass das automatische Ausfüllen auf betrügerischen oder Phishing-Websites übereinstimmt und Daten ausfüllt."
       ],
@@ -5650,9 +5654,6 @@
       ],
       "Move to trash": [
         "In den Papierkorb verschieben"
-      ],
-      "Name is required": [
-        "Name ist erforderlich"
       ],
       "No items": [
         "Keine Einträge"
