@@ -43,9 +43,10 @@ import './MoreMenu.scss';
 interface Props {
     variant: 'popup' | 'sheet';
     onOpenDeviceState: () => void;
+    showMeetingActions?: boolean;
 }
 
-export const MoreMenu = ({ variant, onOpenDeviceState }: Props) => {
+export const MoreMenu = ({ variant, onOpenDeviceState, showMeetingActions }: Props) => {
     const dispatch = useMeetDispatch();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { viewportWidth } = useActiveBreakpoint();
@@ -182,6 +183,7 @@ export const MoreMenu = ({ variant, onOpenDeviceState }: Props) => {
                     toggles={toggles}
                     actions={actions}
                     layout={layout}
+                    showMeetingActions={showMeetingActions}
                 />
             ) : (
                 isOpen && <MoreMenuSheet onClose={close} toggles={toggles} actions={actions} layout={layout} />
