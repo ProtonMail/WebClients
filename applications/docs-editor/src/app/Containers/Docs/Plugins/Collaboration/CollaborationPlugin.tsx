@@ -7,7 +7,7 @@ import { useEffect, useMemo } from 'react'
 
 import { useYjsCollaboration } from './useYjsCollaboration'
 import { useYjsHistory } from './useYjsHistory'
-import type { EditorInitializationConfig } from '@proton/docs-shared'
+import type { EditorInitializationConfig } from '../../contract/EditorInitialization'
 import { useYjsFocusTracking } from './useYjsFocusTracking'
 import { useScrollToUserCursorOnEvent } from './ScrollToUserCursorPlugin'
 import { useCustomCollaborationContext } from './CustomCollaborationContext'
