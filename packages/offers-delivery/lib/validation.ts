@@ -22,7 +22,7 @@ export const sanitizeHttpsUrl = (value: MaybeNull<string> | undefined): MaybeNul
 
 /** Beyond the https check, so a compromised backend can't beacon the user's
  * IP/Referer to a third-party host via `<img src>`. */
-const PROTON_CDN_HOSTS = ['proton.me', 'proton.black', 'proton.pink'];
+const PROTON_CDN_HOSTS = ['proton.me', 'proton.black', 'proton.pink', 'inapps-static.protonweb.com'];
 
 export const sanitizeImageUrl = (value: MaybeNull<string> | undefined): MaybeNull<string> => {
     const url = sanitizeHttpsUrl(value);
