@@ -2919,6 +2919,9 @@ importers:
       '@proton/icons':
         specifier: workspace:^
         version: link:../../packages/icons
+      '@proton/logger':
+        specifier: workspace:^
+        version: link:../../packages/logger
       '@proton/meet':
         specifier: workspace:^
         version: link:../../packages/meet
@@ -6721,6 +6724,9 @@ importers:
       '@proton/app-context':
         specifier: workspace:^
         version: link:../app-context
+      '@proton/logger':
+        specifier: workspace:^
+        version: link:../logger
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
