@@ -688,6 +688,12 @@
       "Show Less": [
         "收起"
       ],
+      "Show less": [
+        "显示更少"
+      ],
+      "Show more": [
+        "显示更多"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "使用${ BRAND_NAME }登录"
       ],
@@ -1778,9 +1784,6 @@
       "Can view this item.": [
         "可以查看此项目。"
       ],
-      "Change your password": [
-        "更改密码"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "正在检查 ${ compromised.progress.completed } / ${ compromised.progress.total } 个密码"
       ],
@@ -1867,9 +1870,6 @@
       ],
       "Editor": [
         "编辑者"
-      ],
-      "email": [
-        "邮箱"
       ],
       "Email address successfully deleted from monitoring": [
         "从监测中成功删除邮箱地址"
@@ -1966,9 +1966,6 @@
       ],
       "Fill in the CSV with your data": [
         "在 CSV 中填入您的数据"
-      ],
-      "finance": [
-        "金融"
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "文件夹“${ payload.folder.name }”已创建"
@@ -2132,9 +2129,6 @@
       "Medium Priority": [
         "中等优先顺序"
       ],
-      "Monitor accounts": [
-        "监测账户"
-      ],
       "Monitoring settings successfully updated": [
         "监测设置已更新"
       ],
@@ -2233,9 +2227,6 @@
       ],
       "Pass Plus trial": [
         "Pass Plus 试用"
-      ],
-      "password": [
-        "密码"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "密码锁已成功注册，该密码可用于解锁 ${ PASS_APP_NAME }"
@@ -2683,9 +2674,6 @@
       ],
       "User's access successfully updated": [
         "用户访问权限成功更新"
-      ],
-      "username": [
-        "用户名"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保险库 “${ payload.content.name }” 成功删除"
@@ -5367,9 +5355,6 @@
       ],
       "Move to trash": [
         "移至回收站"
-      ],
-      "Name is required": [
-        "名称为必填项"
       ],
       "No items": [
         "没有项目"
