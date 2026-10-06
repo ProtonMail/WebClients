@@ -122,7 +122,6 @@ const permissive: Partial<PaymentMethodsContext> = {
     enableSepa: true,
     enableSepaB2C: true,
     billingAddress: { CountryCode: 'CH', State: '' },
-    enablePaypalRegionalCurrenciesBatch3: true,
     enablePaypalKrw: true,
 };
 
@@ -1939,26 +1938,14 @@ describe('minimum amounts per currency', () => {
 });
 
 describe('PayPal regional currencies', () => {
-    describe.each(['HKD', 'SGD', 'JPY', 'PLN'] as Currency[])('%s', (currency) => {
-        it.each([true, false])('is gated behind enablePaypalRegionalCurrenciesBatch3=%s', (enabled) => {
-            const available = hasNewMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL, {
-                ...permissive,
-                currency,
-                enablePaypalRegionalCurrenciesBatch3: enabled,
-            });
+    it.each(['HKD', 'SGD', 'JPY', 'PLN'] as Currency[])('should offer paypal for %s without any flag', (currency) => {
+        expect(hasNewMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL, { ...permissive, currency })).toBe(true);
+    });
 
-            expect(available).toBe(enabled);
-        });
-
-        it('is not gated behind enablePaypalKrw', () => {
-            const available = hasNewMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL, {
-                ...permissive,
-                currency,
-                enablePaypalKrw: false,
-            });
-
-            expect(available).toBe(true);
-        });
+    it.each(['HKD', 'SGD', 'JPY', 'PLN'] as Currency[])('should not gate %s behind enablePaypalKrw', (currency) => {
+        expect(
+            hasNewMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL, { ...permissive, currency, enablePaypalKrw: false })
+        ).toBe(true);
     });
 
     it.each([true, false])('KRW is gated behind enablePaypalKrw=%s', (enabled) => {
@@ -1971,11 +1958,10 @@ describe('PayPal regional currencies', () => {
         expect(available).toBe(enabled);
     });
 
-    it('should ignore both flags for currencies that are not gated', () => {
+    it('should ignore the flag for currencies that are not gated', () => {
         const available = hasNewMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL, {
             ...permissive,
             currency: 'EUR',
-            enablePaypalRegionalCurrenciesBatch3: false,
             enablePaypalKrw: false,
         });
 
