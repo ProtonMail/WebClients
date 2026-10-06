@@ -525,6 +525,9 @@
       "More benefits": [
         "更多福利"
       ],
+      "More info": [
+        "更多信息"
+      ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
       ],
@@ -1111,56 +1114,15 @@
         "30 天退款保证"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } 与 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
       ],
-      "1 user account": [
-        "1 个账户"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 存储空间：您当前套餐的 40 倍"
-      ],
-      "6 user accounts": [
-        "6 个账户"
-      ],
-      "Admin panel to manage your family": [
-        "用于管理家人的管理员面板"
-      ],
-      "Advanced account protection": [
-        "高级账户保护"
-      ],
-      "Easily add or remove users": [
-        "轻松添加或移除用户"
-      ],
-      "One-time payment, lifetime deal": [
-        "一次性付款，终身有效"
-      ],
-      "Online document editor": [
-        "在线文档编辑器"
-      ],
-      "Password health alerts": [
-        "密码健康警报"
-      ],
-      "Recover previous file versions": [
-        "恢复先前的文件版本"
-      ],
       "Unlimited folders, labels and filters": [
         "不限量文件夹、标签和筛选规则"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "无限制登录、信用卡、Hide-my-email 别名等功能"
       ],
       "Use your own email domain": [
         "个性化邮箱域名"
@@ -1169,87 +1131,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "按 ${ amount } 一次计费"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "次月起按 ${ regularAmount } 续费。"
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "突破网络封锁，保护线上隐私，最多可通过 10 台设备连接全球逾 110 个国家超过 8500 台服务器，畅享全球流媒体服务，拦截恶意软件和广告，还有 VPN 加速器等更多功能等您体验。"
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "在所有设备上安全登录。包括无限制 Hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "使用端到端加密保护您的电子邮件和日程安排。包含 ${ addresses } 个邮箱地址、自定义邮箱域名支持、${ BRAND_NAME } Scribe 写作助手、无限的 Hide-my-email  别名等功能。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 Hide-my-email 邮箱别名等高级功能。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 Hide-my-email 邮箱别名、${ LUMO_SHORT_APP_NAME } 写作助手等高级功能。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "使用端到端加密保护您的电子邮件和日程安排。包含 15 个邮箱地址、自定义邮箱域名支持、无限的 Hide-my-email 别名等功能。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "使用加密云存储保护您的文件。包含在线文档编辑器、照片备份、版本历史记录、加密文件共享等功能。"
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "存储空间在所有 ${ BRAND_NAME } 服务之间共享"
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB 数据存储空间"
-      ],
-      "3 TB data storage": [
-        "3 TB 数据存储空间"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "访问遍布 120 多个国家/地区的 15,000+ 台服务器"
-      ],
-      "Access advanced AI models": [
-        "访问高级 AI 模型"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "包含 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
-      ],
-      "Block ads, trackers, and malware": [
-        "拦截广告、跟踪器和恶意软件"
-      ],
-      "Built-in 2FA authenticator": [
-        "内置 2FA 验证器"
-      ],
-      "Connect 10 devices at once": [
-        "同时连接 10 台设备"
-      ],
-      "Full chat history with easy search and favorites": [
-        "完整的聊天历史记录，支持轻松搜索和收藏"
-      ],
-      "Individual accounts for 6 users": [
-        "为 6 位用户提供独立账户"
-      ],
-      "Individual accounts for you and a partner": [
-        "为您和您的伴侣提供独立账户"
-      ],
-      "Stronger protection against cyber threats": [
-        "针对网络威胁提供更强有力的保护"
-      ],
-      "Unlimited daily chats": [
-        "每日无限制聊天"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "专为设备设计的 NetShield 功能，通过拦截广告、跟踪器和恶意软件来保护您的设备并提升浏览速度。"
       ]
     },
     "Browser": {
@@ -1429,9 +1315,6 @@
       ],
       "Basic chat history": [
         "基础聊天记录"
-      ],
-      "Built and based in Europe": [
-        "在欧洲构建并运营"
       ],
       "Compliance with data protection regulations": [
         "符合数据保护法规要求"
@@ -3039,9 +2922,6 @@
       "Expiration date cannot be in the past": [
         "过期日期不能是过去的时间"
       ],
-      "External invitations are not available yet.": [
-        "外部邀请尚不可用。"
-      ],
       "External invitations are temporarily disabled.": [
         "外部邀请暂时被禁用。"
       ],
@@ -3089,9 +2969,6 @@
       ],
       "Failed to fetch sharing info": [
         "无法获取共享信息"
-      ],
-      "Failed to fetch sharing information": [
-        "获取共享信息失败"
       ],
       "Failed to get inviter keys": [
         "获取邀请人密钥失败"
@@ -3830,16 +3707,6 @@
         "(无标题)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB 总存储空间"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "所有家人共用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的存储空间。"
-      ]
-    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "拒绝邀请"
@@ -3849,11 +3716,6 @@
       ],
       "Switch plans": [
         "变更账户等级"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "最多 6 位用户"
       ]
     },
     "familyOffer_2023:Error": {
@@ -3954,17 +3816,6 @@
       ],
       "Delete organization?": [
         "删除机构?"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "连接全球逾 65 个国家的 2700 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "包含 3 个自定义邮箱域名、90 个邮箱地址、无限的 Hide-my-email 别名、日历共享等功能的支持。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
     "Feature": {
@@ -4645,12 +4496,6 @@
       "and": [
         "并"
       ],
-      "Anyone with this link can access your file.": [
-        "任何持有此链接的人都能下载您的文件。"
-      ],
-      "Anyone with this link can access your folder.": [
-        "任何持有此链接的人都能下载您的文件夹。"
-      ],
       "Are you sure you want to discard your import?": [
         "确定要放弃导入吗？"
       ],
@@ -4701,9 +4546,6 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
-      ],
-      "Change your password": [
-        "更改密码"
       ],
       "characters": [
         "个字符"
@@ -4777,17 +4619,8 @@
       "Create in": [
         "创建于"
       ],
-      "Create public link": [
-        "创建公共链接"
-      ],
       "Create your first folder and start moving your files.": [
         "创建您的第一个文件夹并开始移动文件。"
-      ],
-      "Creating link to file": [
-        "正在创建文件链接"
-      ],
-      "Creating link to folder": [
-        "正在创建文件夹链接"
       ],
       "Creating new document...": [
         "正在新建文档..."
@@ -4846,9 +4679,6 @@
       "Edit email address": [
         "编辑邮箱地址"
       ],
-      "email": [
-        "邮箱"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
       ],
@@ -4906,15 +4736,6 @@
       "Everything in ${ planOrAppName }, plus:": [
         "包含 ${ planOrAppName } 所有功能，外加："
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "无法生成安全链接。原因是：${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "无法生成安全链接。稍后再试"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "无法打开安全链接，原因是：${ error }"
-      ],
       "Failing signatures will be re-signed by you": [
         "未通过的签名将由您重新签署"
       ],
@@ -4923,9 +4744,6 @@
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "仅限文件 (不含照片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }) - 总计上限 100 GB，文件数量上限 100,000 个，单文件大小上限 50 GB"
-      ],
-      "finance": [
-        "金融"
       ],
       "Find out what can be migrated.": [
         "了解可以迁移哪些内容"
@@ -5092,9 +4910,6 @@
       "Loading document...": [
         "正在加载文档..."
       ],
-      "Loading link": [
-        "链接加载中"
-      ],
       "Loading...": [
         "加载中..."
       ],
@@ -5124,9 +4939,6 @@
       ],
       "Merged": [
         "已合并"
-      ],
-      "Monitor accounts": [
-        "监测账户"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多数公共 WiFi 网络都是安全的，但部分网络缺乏防护措施，使您面临网络威胁。通过 VPN 加密技术，您的网络活动将获得全程保护。"
@@ -5182,12 +4994,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "只有同时知道链接和密码的人才能访问此文件。"
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "只有同时知道链接和密码的人才能访问此文件夹。"
-      ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "糟糕！此电子表格无法保存您最近的编辑，因此我们已暂停编辑以防止您丢失工作。"
       ],
@@ -5206,14 +5012,8 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
       ],
-      "Owner": [
-        "所有者"
-      ],
       "owner": [
         "所有者"
-      ],
-      "password": [
-        "密码"
       ],
       "Password copied to clipboard": [
         "密码已复制到剪贴板"
@@ -5226,9 +5026,6 @@
       ],
       "Pending invitations": [
         "待处理邀请"
-      ],
-      "People with access": [
-        "有访问权限的人"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 只能用于纯文本邮件。"
@@ -5274,12 +5071,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "请稍候，我们正在寻找包含用非活动密钥加密数据的联系人。"
-      ],
-      "Preparing link to file": [
-        "正在准备文件链接"
-      ],
-      "Preparing link to folder": [
-        "正在准备文件夹链接"
       ],
       "Primary": [
         "主要"
@@ -5358,9 +5149,6 @@
       ],
       "Settings updated": [
         "设置已更新"
-      ],
-      "Share via link settings": [
-        "通过链接设置共享"
       ],
       "Shared by": [
         "共享者"
@@ -5467,9 +5255,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "此链接是通过旧版本网盘创建的，因此无法更改。如需调整设置，请删除此链接后重新创建。"
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "这意味着您的互联网服务提供商和您访问的网站都无法将您的个人身份信息与在线行为相关联。"
       ],
@@ -5562,9 +5347,6 @@
       ],
       "Uppercase and lowercase letters": [
         "大写字母和小写字母"
-      ],
-      "username": [
-        "用户名"
       ],
       "Users": [
         "用户"
@@ -5755,9 +5537,6 @@
       "Your email address was exposed:": [
         "您的邮箱地址已被泄露："
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "您的邮箱地址将作为链接所有者出现在分享页面上"
-      ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
@@ -5917,15 +5696,6 @@
       "Anyone on the Internet with the link": [
         "互联网上任何拥有此链接的人"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "互联网上任何拥有链接的人都可以编辑"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "互联网上任何知道链接的人都可以查看"
-      ],
-      "Anyone with the link": [
-        "拥有此链接的任何人"
-      ],
       "App password": [
         "应用密码"
       ],
@@ -6058,9 +5828,6 @@
       "Encrypt emails": [
         "加密电子邮件"
       ],
-      "Erase this link and remove everyone with access": [
-        "擦除此链接并删除所有有访问权限的人"
-      ],
       "Expiry": [
         "过期时间"
       ],
@@ -6142,12 +5909,6 @@
       "Main reason for cancelling": [
         "取消的主要原因"
       ],
-      "Make editor": [
-        "成为编辑者"
-      ],
-      "Make viewer": [
-        "成为查看者"
-      ],
       "Manage categories": [
         "管理分类"
       ],
@@ -6211,12 +5972,6 @@
       "Public keys": [
         "公钥"
       ],
-      "Public link expiration date": [
-        "公开链接到期日期"
-      ],
-      "Public link password": [
-        "公共链接密码"
-      ],
       "Region": [
         "区域"
       ],
@@ -6228,12 +5983,6 @@
       ],
       "Set a password to limit access via link": [
         "设置密码以限制通过链接访问"
-      ],
-      "Set expiration date": [
-        "设置有效期"
-      ],
-      "Set link password": [
-        "设置链接密码"
       ],
       "Shared with me": [
         "与我共享"
@@ -6855,9 +6604,6 @@
       "Auto-reply": [
         "自动回复"
       ],
-      "Autofill credit cards (coming soon)": [
-        "自动填写信用卡信息（即将推出）"
-      ],
       "Automatic email forwarding": [
         "自动转发邮件"
       ],
@@ -6884,9 +6630,6 @@
       ],
       "Custom and secure business email": [
         "定制和安全的商务电子邮件"
-      ],
-      "Custom domains for email aliases": [
-        "用于邮箱别名的自有域名"
       ],
       "Custom email domains": [
         "自有域名"
@@ -6945,9 +6688,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、 ${ CALENDAR_SHORT_APP_NAME }和 ${ DRIVE_SHORT_APP_NAME } 的免费功能"
       ],
-      "Free VPN on a single device": [
-        "单台设备免费 VPN"
-      ],
       "Fully refundable for 30 days": [
         "30 天内无理由全额退款"
       ],
@@ -6959,9 +6699,6 @@
       ],
       "Group management (coming soon)": [
         "群组管理（即将推出）"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "${ n } 台设备可同时接入高速 VPN"
       ],
       "HTML signatures": [
         "HTML 落款"
@@ -7118,9 +6855,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "每位用户可无限共享 ${ PASS_SHORT_APP_NAME } 保险库"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "具有访问权限的无限制共享保险库"
       ],
       "Unlimited vault sharing": [
         "无限制共享保险库"
@@ -7418,9 +7152,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "我们的服务器硬盘均已使用多层密码全盘加密，即使硬件遭到掠夺，数据也不会泄露"
       ],
-      "Password management and identity protection": [
-        "密码管理和身份保护"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "在邮件落款中加入图标、图像、链接、社交网络标识等个性化元素"
       ],
@@ -7522,12 +7253,6 @@
       "${ n } country": [
         "${ n } 个国家/地区"
       ],
-      "Access advanced VPN features": [
-        "解锁高级 VPN 功能"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "15 个邮箱地址和 3 个自有域名供您选择"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256 位 VPN 加密"
       ],
@@ -7537,9 +7262,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "每位用户存储空间可升至 ${ bundleStorage }"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "总存储空间升至 ${ bundleStorage }"
-      ],
       "Browser extension": [
         "浏览器扩展"
       ],
@@ -7548,12 +7270,6 @@
       ],
       "Central control panel": [
         "中央控制面板"
-      ],
-      "Create up to ${ n } calendar": [
-        "最多可创建 ${ n } 份日历"
-      ],
-      "Dedicated Account manager": [
-        "专职客户经理"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries }+ 个国家的专用服务器地址"
@@ -7672,9 +7388,6 @@
       "Access updated": [
         "访问权限已更新"
       ],
-      "Access updated and shared": [
-        "访问已更新的和共享的"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "由于此文档位于共享文件夹中，只有文件夹所有者可以恢复它"
       ],
@@ -7692,12 +7405,6 @@
       ],
       "Document restored from trash": [
         "文档已从回收站还原"
-      ],
-      "External invitation removed from the share": [
-        "外部邀请已从共享中删除"
-      ],
-      "External invitation's email was sent again": [
-        "外部邀请的电子邮件已再次发送"
       ],
       "Failed to accept share invitation": [
         "无法接受共享邀请"
@@ -7750,9 +7457,6 @@
       "Public link access updated": [
         "公开链接访问已更新"
       ],
-      "Public link update access failed ": [
-        "公共链接更新访问失败 "
-      ],
       "Recent documents updated": [
         "最近更新的文件"
       ],
@@ -7774,14 +7478,8 @@
       "Share invitation declined": [
         "分享邀请被拒绝"
       ],
-      "Stopping the sharing of this item has failed": [
-        "停止共享此项目失败"
-      ],
       "Subfolder failed to be loaded": [
         "加载子文件夹失败"
-      ],
-      "The link to your item failed to be deleted": [
-        "共享链接删除失败"
       ],
       "The link to your item was deleted": [
         "共享链接已删除"
@@ -7791,9 +7489,6 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "您的 ${ BRAND_NAME } 地址已准备就绪"
-      ],
-      "Your settings failed to be saved": [
-        "您的设置保存失败"
       ],
       "Your settings have been changed successfully": [
         "设置已更改"
@@ -8051,9 +7746,6 @@
       ],
       "Secure vault, item and link sharing": [
         "安全保险库、项目和链接共享"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "无限制登录、备注、信用卡等功能"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8283,9 +7975,6 @@
       ],
       "Select a reason": [
         "请选择原因"
-      ],
-      "Set date": [
-        "设置日期"
       ],
       "Start typing an email address": [
         "请输入邮箱地址"
@@ -8933,12 +8622,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 位用户"
-      ],
       "All paid Mail and Calendar features": [
         "享受 Mail 与 Calendar 的所有付费功能"
       ],
@@ -8954,14 +8637,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "高级版 ${ appName1 }、${ appName2 } 及 ${ appName3 } 账户"
       ],
-      "Premium early access": [
-        "抢先体验高级功能"
-      ],
       "Secure cloud storage": [
         "安全的云存储"
-      ],
-      "Support online privacy": [
-        "支持网络隐私保护"
       ]
     },
     "specialoffer: Footer": {
@@ -9044,32 +8721,8 @@
       "Get the deal": [
         "获取优惠"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "一年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "两年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
-      ],
       "Save ${ discount }%": [
         "立省 ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "一个月的标准价格为${ amount }"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "一年的标准价格为${ amount }"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "15个月的标准价格为${ amount }"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "两年的的标准价格为${ amount }"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "30个月的标准价格为${ amount }"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "特别优惠的有效期为最初的两年"
       ]
     },
     "specialoffer: Title": {
@@ -9099,23 +8752,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，每位用户 10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "包含我们所有高级服务及其最高限制：100 个邮箱地址、支持 10 个自定义邮箱域名、无限的  Hide-my-email 别名、日历共享、加密云存储和文件共享等功能。"
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "包含 3 个自定义邮箱域名、15 个邮箱地址、无限的 Hide-my-email 别名、日历共享等功能的支持。"
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "适合家庭与小型团队，每个人都能拥有各自的邮箱和地址。需要使用自有域名。"
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "无需额外付费即可享受我们未来推出的所有隐私保护服务，还能抢先体验各类新产品和新功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
@@ -9152,13 +8793,7 @@
       ]
     },
     "Status": {
-      "Accepted": [
-        "已接受"
-      ],
       "pending": [
-        "待处理"
-      ],
-      "Pending": [
         "待处理"
       ],
       "user joined": [
@@ -9275,9 +8910,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } 台设备可同时接入 VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "每位用户可通过 ${ n } 台设备同时接入 VPN"
       ],
       "VPN connection for ${ n } device per user": [
         "每位用户 ${ n } 个设备的 VPN 连接"
@@ -9421,9 +9053,6 @@
       "Problem reported": [
         "问题报告"
       ],
-      "Secure link copied": [
-        "已复制安全链接"
-      ],
       "Undo in progress": [
         "正在撤销"
       ],
@@ -9451,9 +9080,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "连接全球逾 65 个国家的 2950 + 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
@@ -9544,28 +9170,6 @@
       ],
       "${ seconds } second": [
         "${ seconds } 秒"
-      ]
-    },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } 小时"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 小时"
-      ],
-      "${ minutes } min": [
-        "${ minutes } 分钟"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } 小时"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 小时"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分钟"
       ]
     },
     "Title": {
@@ -9887,9 +9491,6 @@
       "Make a secure connection your default": [
         "将安全连接设为默认首选"
       ],
-      "Manage secure link": [
-        "管理安全链接"
-      ],
       "Merge contacts": [
         "合并联系人"
       ],
@@ -10016,9 +9617,6 @@
       "Select link expiration date": [
         "选择链接失效日期"
       ],
-      "Select link expiration time": [
-        "选择链接失效时间"
-      ],
       "Select users to migrate": [
         "请选择要迁移的用户"
       ],
@@ -10042,9 +9640,6 @@
       ],
       "Share \"${ fileName }\"": [
         "分享“${ fileName }”"
-      ],
-      "Share ${ name }": [
-        "共享 ${ name }"
       ],
       "Share your calendar with your team": [
         "与团队共享日历"
@@ -10296,6 +9891,36 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 安全登录您的所有设备。包括无限邮箱别名、共享、集成 2FA 等等。"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "开通 ${ planName }，享 ${ discount }% 优惠"
+      ],
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "2 TB of storage to share": [
+        "2 TB 共享存储空间"
+      ],
+      "2 user accounts": [
+        "2 个账户"
+      ],
+      "All premium features from your current plan": [
+        "您当前套餐的所有高级功能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "年费"
       ]
     },
     "Unlimited offer": {
