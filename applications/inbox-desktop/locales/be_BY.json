@@ -154,6 +154,9 @@
       "Uninstall ${ MAIL_APP_NAME }": [
         "Выдаліць ${ MAIL_APP_NAME }"
       ],
+      "Version ${ version } (${ buildInfo })\n${ pkg.config.copyright }": [
+        "Версія ${ version } (${ buildInfo })\n${ pkg.config.copyright }"
+      ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
         "Праграма выкарыстоўвае адмысловае графічнае абсталяванне вашай прылады для адмалёўкі, калі ўключана апаратнае паскарэнне. Гэта можа стаць прычынай праблем сумяшчальнасці ў некаторых сістэмах."
       ],
