@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Doc, Transaction, YEvent } from 'yjs'
 import { UndoManager } from 'yjs'
 
-import type { EditorInitializationConfig } from '@proton/docs-shared'
+import type { EditorInitializationConfig } from '../../contract/EditorInitialization'
 import { initializeEditorAccordingToConfigIfRootIsEmpty } from './initializeEditor'
 import { syncCursorPositions } from './syncCursorPositions'
 import { useDocsDependencies } from '../../DocsDependenciesProvider'
