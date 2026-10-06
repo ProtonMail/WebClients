@@ -225,10 +225,12 @@ const getCompleteStateValues = (
     state: AccountFormDataContextProviderState['values'],
     context: Context
 ): AccountFormDataStateRequired => {
+    const allowedSignupType =
+        state.signupType && context.availableSignupTypes.has(state.signupType) ? state.signupType : undefined;
     return merge({}, state, {
         signupTypes: context.availableSignupTypes,
         signupType:
-            state.signupType ||
+            allowedSignupType ||
             // Default to first item in set
             context.availableSignupTypes.values().next().value ||
             SignupType.Proton,

@@ -1198,6 +1198,10 @@ const Step1 = ({
                                     stepProps.emailReadOnly = invitation.data.invitee !== '';
                                 }
 
+                                if (isPaymentlessTrial) {
+                                    contextProps.availableSignupTypes = new Set([SignupType.External]);
+                                }
+
                                 return {
                                     contextProps,
                                     stepProps,
