@@ -5,6 +5,7 @@ import {
     selectActiveAudioOutputId,
     selectActiveCameraId,
     selectActiveMicrophoneId,
+    selectDisconnectedActiveDevices,
     selectFilteredCameras,
     selectFilteredMicrophones,
     selectFilteredSpeakers,
@@ -12,7 +13,7 @@ import {
     selectPreferredCameraId,
     selectSpeakerState,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
-import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice/types';
+import type { DeviceKind, SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { filterDevices } from '@proton/meet/utils/deviceUtils';
 
@@ -32,38 +33,50 @@ vi.mock('@proton/meet/hooks/useMeetErrorReporting', () => ({
 const livekitReact = vi.hoisted(() => ({ useRoomContext: vi.fn() }));
 vi.mock('@livekit/components-react', () => livekitReact);
 
-const storeMocks = vi.hoisted(() => ({ useMeetSelector: vi.fn((_selector: unknown): unknown => undefined) }));
+const storeMocks = vi.hoisted(() => {
+    const dispatch = vi.fn();
+    return {
+        useMeetSelector: vi.fn((_selector: unknown): unknown => undefined),
+        useMeetDispatch: () => dispatch,
+        dispatch,
+    };
+});
 vi.mock('@proton/meet/store/hooks', () => storeMocks);
 
 const browserMocks = vi.hoisted(() => ({ supportsSetSinkId: vi.fn(() => true) }));
 vi.mock('../../../utils/browser', () => browserMocks);
 
 const notificationMocks = vi.hoisted(() => ({
-    notifyPreferredAvailable: vi.fn(),
     notifyActiveDeviceDisconnected: vi.fn(),
 }));
-vi.mock('./useDeviceNotifications', () => ({ useDeviceNotifications: () => notificationMocks }));
+vi.mock('./useDeviceNotifications/useDeviceNotifications', () => ({ useDeviceNotifications: () => notificationMocks }));
 
 const DEBOUNCE_MS = 200;
 
-const device = (deviceId: string, label: string, groupId = `group-${deviceId}`): SerializableDeviceInfo => ({
-    deviceId,
-    groupId,
-    kind: 'audiooutput',
-    label,
-});
+const deviceOfKind =
+    (kind: MediaDeviceKind) =>
+    (deviceId: string, label: string, groupId = `group-${deviceId}`): SerializableDeviceInfo => ({
+        deviceId,
+        groupId,
+        kind,
+        label,
+    });
 
-const DEFAULT_ENTRY = device('default', 'Default', 'default');
+const speaker = deviceOfKind('audiooutput');
+const microphone = deviceOfKind('audioinput');
+const camera = deviceOfKind('videoinput');
+
+const DEFAULT_SPEAKER_ENTRY = speaker('default', 'Default', 'default');
 
 // Real device list from an Ubuntu report: the synthetic default entry has no resolvable groupId
 // and the first speaker alphabetically is an HDMI port with nothing plugged into it.
 const UBUNTU_SPEAKERS = [
-    DEFAULT_ENTRY,
-    device('hdmi-1', 'Comet Lake PCH-LP cAVS HDMI / DisplayPort 1 Output'),
-    device('hdmi-2', 'Comet Lake PCH-LP cAVS HDMI / DisplayPort 2 Output'),
-    device('headphones', 'Comet Lake PCH-LP cAVS Headphones'),
-    device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
-    device('jabra', 'Jabra Evolve2 30 Analog Stereo'),
+    DEFAULT_SPEAKER_ENTRY,
+    speaker('hdmi-1', 'Comet Lake PCH-LP cAVS HDMI / DisplayPort 1 Output'),
+    speaker('hdmi-2', 'Comet Lake PCH-LP cAVS HDMI / DisplayPort 2 Output'),
+    speaker('headphones', 'Comet Lake PCH-LP cAVS Headphones'),
+    speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+    speaker('jabra', 'Jabra Evolve2 30 Analog Stereo'),
 ];
 
 const deviceState = (overrides: Partial<SliceDeviceState> = {}): SliceDeviceState => ({
@@ -88,6 +101,7 @@ interface SetupOptions {
     microphoneState?: SliceDeviceState;
     speakerState?: SliceDeviceState;
     isConnected?: boolean;
+    disconnectedActiveDevices?: Partial<Record<DeviceKind, SerializableDeviceInfo | null>>;
 }
 
 const setup = (options: SetupOptions = {}) => {
@@ -102,6 +116,7 @@ const setup = (options: SetupOptions = {}) => {
         microphoneState = deviceState(),
         speakerState = deviceState(),
         isConnected = true,
+        disconnectedActiveDevices = {},
     } = options;
 
     const selectorValues = new Map<unknown, unknown>([
@@ -114,6 +129,10 @@ const setup = (options: SetupOptions = {}) => {
         [selectPreferredCameraId, preferredCameraId],
         [selectMicrophoneState, microphoneState],
         [selectSpeakerState, speakerState],
+        [
+            selectDisconnectedActiveDevices,
+            { audioinput: null, audiooutput: null, videoinput: null, ...disconnectedActiveDevices },
+        ],
     ]);
 
     storeMocks.useMeetSelector.mockImplementation((selector: unknown) => selectorValues.get(selector));
@@ -164,7 +183,7 @@ describe('useDynamicDeviceHandling', () => {
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: 'unplugged-dock',
                 speakerState: deviceState({
-                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                    systemDefault: speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
                 }),
             });
 
@@ -177,7 +196,7 @@ describe('useDynamicDeviceHandling', () => {
             const { switchActiveDevice } = setup({
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: 'unplugged-dock',
-                speakerState: deviceState({ systemDefault: device('monitor-source', 'Monitor of Something') }),
+                speakerState: deviceState({ systemDefault: speaker('monitor-source', 'Monitor of Something') }),
             });
 
             expect(switchActiveDevice).toHaveBeenCalledWith(
@@ -185,8 +204,8 @@ describe('useDynamicDeviceHandling', () => {
             );
         });
 
-        it('only notifies when the preferred speaker comes back during a call', () => {
-            const { switchActiveDevice, notifyPreferredAvailable } = setup({
+        it('leaves the speaker alone when the preferred one comes back during a call', () => {
+            const { switchActiveDevice } = setup({
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: 'builtin-speaker',
                 speakerState: deviceState({ preferredDeviceId: 'jabra' }),
@@ -194,24 +213,10 @@ describe('useDynamicDeviceHandling', () => {
             });
 
             expect(switchActiveDevice).not.toHaveBeenCalled();
-            expect(notifyPreferredAvailable).toHaveBeenCalledWith(
-                expect.objectContaining({ kind: 'audiooutput', deviceLabel: 'Jabra Evolve2 30 Analog Stereo' })
-            );
-        });
-
-        it('forwards the groupId so every kind of one headset shares a notification', () => {
-            const { notifyPreferredAvailable } = setup({
-                speakers: UBUNTU_SPEAKERS,
-                activeAudioOutputId: 'builtin-speaker',
-                speakerState: deviceState({ preferredDeviceId: 'jabra' }),
-                isConnected: true,
-            });
-
-            expect(notifyPreferredAvailable).toHaveBeenCalledWith(expect.objectContaining({ groupId: 'group-jabra' }));
         });
 
         it('stays quiet when the preferred speaker is already the one in use', () => {
-            const { switchActiveDevice, notifyPreferredAvailable } = setup({
+            const { switchActiveDevice } = setup({
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: 'jabra',
                 speakerState: deviceState({ preferredDeviceId: 'jabra' }),
@@ -219,34 +224,10 @@ describe('useDynamicDeviceHandling', () => {
             });
 
             expect(switchActiveDevice).not.toHaveBeenCalled();
-            expect(notifyPreferredAvailable).not.toHaveBeenCalled();
-        });
-
-        it('announces the preferred speaker once, not on every device list change', () => {
-            const { notifyPreferredAvailable, rerender, selectorValues } = setup({
-                speakers: UBUNTU_SPEAKERS,
-                activeAudioOutputId: 'builtin-speaker',
-                speakerState: deviceState({ preferredDeviceId: 'jabra' }),
-                isConnected: true,
-            });
-
-            expect(notifyPreferredAvailable).toHaveBeenCalledTimes(1);
-
-            selectorValues.set(selectFilteredSpeakers, filterDevices([...UBUNTU_SPEAKERS, device('dock', 'USB Dock')]));
-
-            act(() => {
-                rerender();
-            });
-
-            act(() => {
-                vi.advanceTimersByTime(DEBOUNCE_MS);
-            });
-
-            expect(notifyPreferredAvailable).toHaveBeenCalledTimes(1);
         });
 
         it('switches straight to the preferred speaker before joining', () => {
-            const { switchActiveDevice, notifyPreferredAvailable } = setup({
+            const { switchActiveDevice } = setup({
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: 'builtin-speaker',
                 speakerState: deviceState({ preferredDeviceId: 'jabra' }),
@@ -256,54 +237,15 @@ describe('useDynamicDeviceHandling', () => {
             expect(switchActiveDevice).toHaveBeenCalledWith(
                 expect.objectContaining({ deviceType: 'audiooutput', deviceId: 'jabra' })
             );
-            expect(notifyPreferredAvailable).not.toHaveBeenCalled();
         });
 
-        it('switches to the preferred speaker and stays quiet when the notification is acted on', () => {
-            const { switchActiveDevice, notifyPreferredAvailable } = setup({
-                speakers: UBUNTU_SPEAKERS,
-                activeAudioOutputId: 'builtin-speaker',
-                speakerState: deviceState({ preferredDeviceId: 'jabra' }),
-                isConnected: true,
-            });
-
-            notifyPreferredAvailable.mock.calls[0][0].onSwitch();
-
-            expect(switchActiveDevice).toHaveBeenCalledWith(
-                expect.objectContaining({ deviceType: 'audiooutput', deviceId: 'jabra' })
-            );
-        });
-
-        it('ignores the notification when the preferred speaker is gone by the time it is acted on', () => {
-            const { switchActiveDevice, notifyPreferredAvailable, rerender, selectorValues } = setup({
-                speakers: UBUNTU_SPEAKERS,
-                activeAudioOutputId: 'builtin-speaker',
-                speakerState: deviceState({ preferredDeviceId: 'jabra' }),
-                isConnected: true,
-            });
-
-            selectorValues.set(
-                selectFilteredSpeakers,
-                filterDevices(UBUNTU_SPEAKERS.filter((speaker) => speaker.deviceId !== 'jabra'))
-            );
-
-            act(() => {
-                rerender();
-            });
-
-            notifyPreferredAvailable.mock.calls[0][0].onSwitch();
-
-            expect(switchActiveDevice).not.toHaveBeenCalledWith(
-                expect.objectContaining({ deviceType: 'audiooutput', deviceId: 'jabra' })
-            );
-        });
-
-        it('notifies when the active speaker is disconnected', () => {
+        it('notifies when the active speaker is disconnected, naming both devices', () => {
             const { switchActiveDevice, notifyActiveDeviceDisconnected } = setup({
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: 'unplugged-dock',
+                disconnectedActiveDevices: { audiooutput: speaker('unplugged-dock', 'Dell Dock Speakers') },
                 speakerState: deviceState({
-                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                    systemDefault: speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
                 }),
             });
 
@@ -311,9 +253,41 @@ describe('useDynamicDeviceHandling', () => {
                 expect.objectContaining({ deviceType: 'audiooutput', deviceId: 'builtin-speaker' })
             );
             expect(notifyActiveDeviceDisconnected).toHaveBeenCalledWith({
-                kind: 'audiooutput',
-                deviceLabel: 'Comet Lake PCH-LP cAVS Speaker',
+                device: speaker('unplugged-dock', 'Dell Dock Speakers'),
+                replacementLabel: 'Comet Lake PCH-LP cAVS Speaker',
             });
+        });
+
+        it('notifies when livekit already moved the active speaker before the decision runs', () => {
+            const { switchActiveDevice, notifyActiveDeviceDisconnected } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: 'builtin-speaker',
+                disconnectedActiveDevices: { audiooutput: speaker('unplugged-dock', 'Dell Dock Speakers') },
+                speakerState: deviceState({
+                    preferredDeviceId: 'unplugged-dock',
+                    systemDefault: speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                }),
+            });
+
+            expect(notifyActiveDeviceDisconnected).toHaveBeenCalledWith({
+                device: speaker('unplugged-dock', 'Dell Dock Speakers'),
+                replacementLabel: 'Comet Lake PCH-LP cAVS Speaker',
+            });
+            expect(switchActiveDevice).not.toHaveBeenCalled();
+        });
+
+        it('does not notify a disconnection when the device is back within the debounce window', () => {
+            const { notifyActiveDeviceDisconnected } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: 'jabra',
+                disconnectedActiveDevices: { audiooutput: speaker('jabra', 'Jabra Evolve2 30 Analog Stereo') },
+                speakerState: deviceState({
+                    preferredDeviceId: 'jabra',
+                    systemDefault: speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                }),
+            });
+
+            expect(notifyActiveDeviceDisconnected).not.toHaveBeenCalled();
         });
 
         it('does not notify a disconnection on the first initialization', () => {
@@ -321,7 +295,7 @@ describe('useDynamicDeviceHandling', () => {
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: '',
                 speakerState: deviceState({
-                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                    systemDefault: speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
                     useSystemDefault: true,
                 }),
             });
@@ -343,7 +317,7 @@ describe('useDynamicDeviceHandling', () => {
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: 'builtin-speaker',
                 speakerState: deviceState({
-                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                    systemDefault: speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
                     useSystemDefault: true,
                 }),
             });
@@ -353,7 +327,7 @@ describe('useDynamicDeviceHandling', () => {
             selectorValues.set(
                 selectSpeakerState,
                 deviceState({
-                    systemDefault: device('jabra', 'Jabra Evolve2 30 Analog Stereo'),
+                    systemDefault: speaker('jabra', 'Jabra Evolve2 30 Analog Stereo'),
                     useSystemDefault: true,
                 })
             );
@@ -376,7 +350,7 @@ describe('useDynamicDeviceHandling', () => {
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: '',
                 speakerState: deviceState({
-                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                    systemDefault: speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
                     useSystemDefault: true,
                 }),
             });
@@ -391,7 +365,7 @@ describe('useDynamicDeviceHandling', () => {
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: '',
                 speakerState: deviceState({
-                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                    systemDefault: speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
                     preferredDeviceId: 'jabra',
                 }),
             });
@@ -408,7 +382,7 @@ describe('useDynamicDeviceHandling', () => {
                 speakers: UBUNTU_SPEAKERS,
                 activeAudioOutputId: 'unplugged-dock',
                 speakerState: deviceState({
-                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                    systemDefault: speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
                 }),
             });
 
@@ -419,7 +393,10 @@ describe('useDynamicDeviceHandling', () => {
     describe('audio input', () => {
         it('does not switch when there is no resolvable system default', () => {
             const { switchActiveDevice, toggleAudio } = setup({
-                microphones: [DEFAULT_ENTRY, device('builtin-mic', 'Built-in Microphone')],
+                microphones: [
+                    microphone('default', 'Default', 'default'),
+                    microphone('builtin-mic', 'Built-in Microphone'),
+                ],
                 activeMicrophoneId: '',
                 microphoneState: deviceState({ systemDefault: null, useSystemDefault: true }),
             });
@@ -430,10 +407,13 @@ describe('useDynamicDeviceHandling', () => {
 
         it('picks the system default on initialization, when there is no active device yet', () => {
             const { switchActiveDevice, toggleAudio } = setup({
-                microphones: [device('builtin-mic', 'Built-in Microphone'), device('usb-mic', 'USB Microphone')],
+                microphones: [
+                    microphone('builtin-mic', 'Built-in Microphone'),
+                    microphone('usb-mic', 'USB Microphone'),
+                ],
                 activeMicrophoneId: '',
                 microphoneState: deviceState({
-                    systemDefault: device('builtin-mic', 'Built-in Microphone'),
+                    systemDefault: microphone('builtin-mic', 'Built-in Microphone'),
                     useSystemDefault: true,
                 }),
                 isConnected: false,
@@ -447,9 +427,12 @@ describe('useDynamicDeviceHandling', () => {
 
         it('recreates the track through toggleAudio when connected', () => {
             const { toggleAudio, switchActiveDevice } = setup({
-                microphones: [device('builtin-mic', 'Built-in Microphone'), device('usb-mic', 'USB Microphone')],
+                microphones: [
+                    microphone('builtin-mic', 'Built-in Microphone'),
+                    microphone('usb-mic', 'USB Microphone'),
+                ],
                 activeMicrophoneId: 'unplugged-mic',
-                microphoneState: deviceState({ systemDefault: device('builtin-mic', 'Built-in Microphone') }),
+                microphoneState: deviceState({ systemDefault: microphone('builtin-mic', 'Built-in Microphone') }),
                 isConnected: true,
             });
 
@@ -461,9 +444,12 @@ describe('useDynamicDeviceHandling', () => {
 
         it('switches the active device directly when not connected', () => {
             const { toggleAudio, switchActiveDevice } = setup({
-                microphones: [device('builtin-mic', 'Built-in Microphone'), device('usb-mic', 'USB Microphone')],
+                microphones: [
+                    microphone('builtin-mic', 'Built-in Microphone'),
+                    microphone('usb-mic', 'USB Microphone'),
+                ],
                 activeMicrophoneId: 'unplugged-mic',
-                microphoneState: deviceState({ systemDefault: device('builtin-mic', 'Built-in Microphone') }),
+                microphoneState: deviceState({ systemDefault: microphone('builtin-mic', 'Built-in Microphone') }),
                 isConnected: false,
             });
 
@@ -472,12 +458,64 @@ describe('useDynamicDeviceHandling', () => {
             );
             expect(toggleAudio).not.toHaveBeenCalled();
         });
+
+        describe('after livekit recovered the disconnected microphone onto another one', () => {
+            const macbookMicrophone = microphone('macbook-mic', 'MacBook Pro Microphone');
+            const airpodsMicrophone = microphone('airpods-mic', 'AirPods');
+            const jabraMicrophone = microphone('jabra-mic', 'Jabra Evolve2 30');
+
+            it('moves to the system default', () => {
+                const { toggleAudio, notifyActiveDeviceDisconnected } = setup({
+                    microphones: [macbookMicrophone, airpodsMicrophone],
+                    activeMicrophoneId: 'macbook-mic',
+                    disconnectedActiveDevices: { audioinput: jabraMicrophone },
+                    microphoneState: deviceState({ preferredDeviceId: 'jabra-mic', systemDefault: airpodsMicrophone }),
+                });
+
+                expect(toggleAudio).toHaveBeenCalledWith(
+                    expect.objectContaining({ audioDeviceId: 'airpods-mic', preserveCache: true })
+                );
+                expect(notifyActiveDeviceDisconnected).toHaveBeenCalledWith({
+                    device: jabraMicrophone,
+                    replacementLabel: 'AirPods',
+                });
+            });
+
+            it('moves to the preferred microphone when it is plugged in', () => {
+                const { toggleAudio } = setup({
+                    microphones: [macbookMicrophone, airpodsMicrophone],
+                    activeMicrophoneId: 'macbook-mic',
+                    disconnectedActiveDevices: { audioinput: jabraMicrophone },
+                    microphoneState: deviceState({
+                        preferredDeviceId: 'airpods-mic',
+                        preferredAvailable: true,
+                        systemDefault: macbookMicrophone,
+                    }),
+                });
+
+                expect(toggleAudio).toHaveBeenCalledWith(expect.objectContaining({ audioDeviceId: 'airpods-mic' }));
+            });
+
+            it('leaves the microphone alone when the disconnected one is back within the debounce window', () => {
+                const { toggleAudio } = setup({
+                    microphones: [macbookMicrophone, jabraMicrophone],
+                    activeMicrophoneId: 'jabra-mic',
+                    disconnectedActiveDevices: { audioinput: jabraMicrophone },
+                    microphoneState: deviceState({
+                        preferredDeviceId: 'airpods-mic',
+                        systemDefault: macbookMicrophone,
+                    }),
+                });
+
+                expect(toggleAudio).not.toHaveBeenCalled();
+            });
+        });
     });
 
     describe('video input', () => {
         it('falls back to the first camera because there is no system default for video', () => {
             const { toggleVideo } = setup({
-                cameras: [device('builtin-cam', 'Built-in Camera'), device('usb-cam', 'USB Camera')],
+                cameras: [camera('builtin-cam', 'Built-in Camera'), camera('usb-cam', 'USB Camera')],
                 activeCameraId: 'unplugged-cam',
                 isConnected: true,
             });
@@ -489,7 +527,7 @@ describe('useDynamicDeviceHandling', () => {
 
         it('picks the first camera on initialization, when there is no active device yet', () => {
             const { switchActiveDevice, toggleVideo } = setup({
-                cameras: [device('facetime', 'FaceTime HD Camera'), device('usb-cam', 'USB Camera')],
+                cameras: [camera('facetime', 'FaceTime HD Camera'), camera('usb-cam', 'USB Camera')],
                 activeCameraId: '',
                 isConnected: false,
             });
@@ -500,18 +538,15 @@ describe('useDynamicDeviceHandling', () => {
             expect(toggleVideo).not.toHaveBeenCalled();
         });
 
-        it('only notifies when the preferred camera comes back during a call', () => {
-            const { toggleVideo, notifyPreferredAvailable } = setup({
-                cameras: [device('builtin-cam', 'Built-in Camera'), device('usb-cam', 'USB Camera')],
+        it('leaves the camera alone when the preferred one comes back during a call', () => {
+            const { toggleVideo } = setup({
+                cameras: [camera('builtin-cam', 'Built-in Camera'), camera('usb-cam', 'USB Camera')],
                 activeCameraId: 'builtin-cam',
                 preferredCameraId: 'usb-cam',
                 isConnected: true,
             });
 
             expect(toggleVideo).not.toHaveBeenCalled();
-            expect(notifyPreferredAvailable).toHaveBeenCalledWith(
-                expect.objectContaining({ kind: 'videoinput', deviceLabel: 'USB Camera' })
-            );
         });
     });
 
@@ -531,8 +566,9 @@ describe('useDynamicDeviceHandling', () => {
                     [selectMicrophoneState, deviceState()],
                     [
                         selectSpeakerState,
-                        deviceState({ systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker') }),
+                        deviceState({ systemDefault: speaker('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker') }),
                     ],
+                    [selectDisconnectedActiveDevices, { audioinput: null, audiooutput: null, videoinput: null }],
                 ]);
                 return values.get(selector);
             });

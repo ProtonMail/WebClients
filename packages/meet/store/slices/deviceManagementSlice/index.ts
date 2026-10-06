@@ -25,6 +25,16 @@ const deviceManagementInitialState: DeviceManagementState = {
     activeCameraId: '',
     activeMicrophoneId: '',
     activeAudioOutputId: null,
+    disconnectedActiveDevices: {
+        audioinput: null,
+        audiooutput: null,
+        videoinput: null,
+    },
+    activeChangedSinceList: {
+        audioinput: false,
+        audiooutput: false,
+        videoinput: false,
+    },
     initialCameraState: false,
     initialAudioState: false,
     userCameraIntent: null,
@@ -32,6 +42,16 @@ const deviceManagementInitialState: DeviceManagementState = {
     uiModals: {
         permissionsModal: PermissionsModalType.NONE,
     },
+};
+
+const getActiveDeviceId = (state: DeviceManagementState, kind: DeviceKind): string | null => {
+    const activeDeviceIdByKind: Record<DeviceKind, string | null> = {
+        audioinput: state.activeMicrophoneId,
+        audiooutput: state.activeAudioOutputId,
+        videoinput: state.activeCameraId,
+    };
+
+    return activeDeviceIdByKind[kind];
 };
 
 const slice = createSlice({
@@ -53,6 +73,38 @@ const slice = createSlice({
         },
         setDeviceList: (state, action: PayloadAction<{ kind: DeviceKind; devices: SerializableDeviceInfo[] }>) => {
             const { kind, devices } = action.payload;
+
+            const previousDevicesByKind: Record<DeviceKind, SerializableDeviceInfo[]> = {
+                audioinput: state.microphones,
+                audiooutput: state.speakers,
+                videoinput: state.cameras,
+            };
+
+            const preferredDeviceIdByKind: Record<DeviceKind, string | null> = {
+                audioinput: state.preferredMicrophoneId,
+                audiooutput: state.preferredSpeakerId,
+                videoinput: state.preferredCameraId,
+            };
+
+            // A preference only says which device was in use when the active device moved since the last list,
+            // which is what recovering a dead track does; otherwise it may be a device plugged back in that the user is not on
+            const inUseDeviceIds = [
+                getActiveDeviceId(state, kind),
+                state.activeChangedSinceList[kind] ? preferredDeviceIdByKind[kind] : null,
+            ].filter((deviceId): deviceId is string => !!deviceId);
+
+            const disconnectedInUseDevice = previousDevicesByKind[kind].find(
+                (device) =>
+                    inUseDeviceIds.includes(device.deviceId) &&
+                    !devices.some((listedDevice) => listedDevice.deviceId === device.deviceId)
+            );
+
+            if (disconnectedInUseDevice) {
+                state.disconnectedActiveDevices[kind] = disconnectedInUseDevice;
+            }
+
+            state.activeChangedSinceList[kind] = false;
+
             switch (kind) {
                 case 'videoinput':
                     state.cameras = devices;
@@ -64,6 +116,9 @@ const slice = createSlice({
                     state.speakers = devices;
                     break;
             }
+        },
+        clearDisconnectedActiveDevice: (state, action: PayloadAction<{ kind: DeviceKind }>) => {
+            state.disconnectedActiveDevices[action.payload.kind] = null;
         },
         setPreferredDevice: (state, action: PayloadAction<{ kind: DeviceKind; deviceId: string | null }>) => {
             const { kind, deviceId } = action.payload;
@@ -81,6 +136,11 @@ const slice = createSlice({
         },
         setActiveDevice: (state, action: PayloadAction<{ kind: DeviceKind; deviceId: string }>) => {
             const { kind, deviceId } = action.payload;
+
+            if (getActiveDeviceId(state, kind) !== deviceId) {
+                state.activeChangedSinceList[kind] = true;
+            }
+
             switch (kind) {
                 case 'videoinput':
                     state.activeCameraId = deviceId;
@@ -224,6 +284,7 @@ export const setPreferredDeviceAndPersist =
 export const {
     setPermissions,
     setDeviceList,
+    clearDisconnectedActiveDevice,
     setActiveDevice,
     setInitialCameraState,
     setInitialAudioState,

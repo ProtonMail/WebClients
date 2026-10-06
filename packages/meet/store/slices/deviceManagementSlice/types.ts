@@ -33,6 +33,12 @@ export interface DeviceManagementState {
     // so it cannot double as "nothing applied yet" without making the first apply look redundant.
     activeAudioOutputId: string | null;
 
+    // Set when the device in use leaves the list, and cleared once the user has been told about it.
+    // Recorded by the reducer because that is the only place where the old and the new list meet,
+    // and it keeps the whole device because its label and groupId are gone from the list by then.
+    disconnectedActiveDevices: Record<DeviceKind, SerializableDeviceInfo | null>;
+    activeChangedSinceList: Record<DeviceKind, boolean>;
+
     // Initial states
     initialCameraState: boolean;
     initialAudioState: boolean;
