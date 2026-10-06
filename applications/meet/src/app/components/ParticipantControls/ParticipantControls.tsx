@@ -27,6 +27,7 @@ import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
+import { useIsLowerMediumWidth } from '../../hooks/useIsLowerMediumWidth';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useToolbarRovingFocus } from '../../hooks/useToolbarRovingFocus';
 import { getCameraButtonAriaLabel, getMicrophoneButtonAriaLabel } from '../../utils/mediaButtonAriaLabels';
@@ -58,6 +59,7 @@ export const ParticipantControls = () => {
     const page = useMeetSelector(selectPage);
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
+    const isLowerMediumWidth = useIsLowerMediumWidth();
     const { viewportWidth } = useActiveBreakpoint();
     const isSmallScreen = viewportWidth['<=small'];
     const isLargeDesktop = viewportWidth['>=xlarge'];
@@ -242,7 +244,7 @@ export const ParticipantControls = () => {
                         </>
                     )}
 
-                    {isSmallScreen ? (
+                    {isSmallScreen || isLowerMediumWidth ? (
                         <ChatButton />
                     ) : (
                         <>
@@ -252,7 +254,11 @@ export const ParticipantControls = () => {
                             <EmojiReactionButton />
                         </>
                     )}
-                    <MoreMenu variant={isSmallScreen ? 'sheet' : 'popup'} onOpenDeviceState={openDeviceStateWindow} />
+                    <MoreMenu
+                        variant={isSmallScreen ? 'sheet' : 'popup'}
+                        onOpenDeviceState={openDeviceStateWindow}
+                        showMeetingActions={isLowerMediumWidth}
+                    />
                     <LeaveMeetingPopup />
                 </div>
                 <div
