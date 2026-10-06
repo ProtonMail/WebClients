@@ -6,6 +6,7 @@ import {
     selectSelectedCameraId,
     selectSortedFilteredCameras,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useDeviceLoading } from '../../hooks/useDeviceLoading';
@@ -26,6 +27,10 @@ export function VideoSettings({ anchorRef, onClose, anchorPosition }: VideoSetti
     const filteredCameras = useMeetSelector(selectSortedFilteredCameras);
 
     const handleCameraChange = async (deviceId: string) => {
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.device_selected, {
+            deviceKind: 'videoinput',
+            source: 'in_call_popup',
+        });
         await toggleVideo({ videoDeviceId: deviceId, isEnabled: isVideoEnabled });
     };
 

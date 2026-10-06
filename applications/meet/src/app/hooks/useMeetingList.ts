@@ -6,6 +6,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useCreateMeeting, useGetMeetingDependencies } from '@proton/meet';
 import { useGetMeetings, useMeetings } from '@proton/meet/store/hooks/useMeetings';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { decryptMeetingName, decryptMeetingPassword } from '@proton/meet/utils/cryptoUtils';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { HOUR } from '@proton/shared/lib/constants';
@@ -16,6 +17,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { saveRotatePersonalMeetingDisable } from '../utils/disableRotatePersonalMeeting';
 import { useRotatePersonalMeetingLink } from './useRotatePersonalMeetingLink';
+import { useStableCallback } from './useStableCallback';
 
 const DECRYPTION_BATCH_SIZE = 5;
 export enum MeetingListStatus {
@@ -77,7 +79,7 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
         }
     };
 
-    const handleFetch = async () => {
+    const handleFetch = useStableCallback(async () => {
         try {
             if (!activeMeetings) {
                 return;
@@ -107,9 +109,9 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
             setMeetings([]);
             setStatus(MeetingListStatus.Error);
         }
-    };
+    });
 
-    const persistPersonalMeetingIntoStore = async (meeting: Meeting) => {
+    const persistPersonalMeetingIntoStore = useStableCallback(async (meeting: Meeting) => {
         const decryptedPersonalMeeting = await getDecryptedMeeting(meeting);
 
         if (!decryptedPersonalMeeting) {
@@ -126,9 +128,9 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
         });
 
         void getMeetings({ cache: CacheType.None });
-    };
+    });
 
-    const setupPersonalMeeting = async () => {
+    const setupPersonalMeeting = useStableCallback(async () => {
         if (
             !meetings ||
             meetings.find((meeting: Meeting) => meeting.Type === MeetingType.PERSONAL) ||
@@ -150,9 +152,9 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
                 text: c('Error').t`Failed to create personal meeting, please refresh the page`,
             });
         }
-    };
+    });
 
-    const setupNewPersonalMeeting = () => {
+    const setupNewPersonalMeeting = useStableCallback(() => {
         return withLoadingRotatePersonalMeeting(async () => {
             try {
                 const { meeting } = await rotatePersonalMeeting({
@@ -160,6 +162,8 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
                 });
 
                 await persistPersonalMeetingIntoStore(meeting);
+
+                sendMeetDashboardEvent(TelemetryMeetDashboardEvents.personal_link_rotated);
 
                 notifications.createNotification({
                     type: 'info',
@@ -171,15 +175,15 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
                 disableRotateButton();
             }
         });
-    };
+    });
 
     useEffect(() => {
         void handleFetch();
-    }, [activeMeetings]);
+    }, [activeMeetings, handleFetch]);
 
     useEffect(() => {
         void setupPersonalMeeting();
-    }, [meetings]);
+    }, [meetings, setupPersonalMeeting]);
 
     return [meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting, status] as const;
 };

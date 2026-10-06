@@ -10,6 +10,7 @@ import {
     selectChatReactionId,
     toggleChatMessageReaction,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -119,7 +120,15 @@ export const useChatMessageReaction = () => {
             return false;
         }
 
-        return isNewChatHandling ? sendReactionNew(messageId, emoji) : sendReactionLegacy(messageId, emoji);
+        const isSent = isNewChatHandling
+            ? await sendReactionNew(messageId, emoji)
+            : await sendReactionLegacy(messageId, emoji);
+
+        if (isSent) {
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.chat_reaction_sent);
+        }
+
+        return isSent;
     };
 
     return sendReaction;

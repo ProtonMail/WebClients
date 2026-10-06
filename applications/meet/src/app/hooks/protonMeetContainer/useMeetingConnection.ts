@@ -52,6 +52,7 @@ export interface ConnectWithMlsResult {
     connectionInfo: ConnectionInfo;
     tokenFetchMs: number;
     mlsSetupMs: number;
+    e2eeEnableMs: number;
     livekitConnectMs: number;
     deviceInitMs: number;
     websocketUrl: string;
@@ -185,10 +186,13 @@ export const useMeetingConnection = ({
             }
 
             let connectionInfo: ConnectionInfo;
+            let e2eeEnableMs: number;
             let livekitConnectMs: number;
             let deviceInitMs: number;
             try {
+                const e2eeStart = performance.now();
                 await room.setE2EEEnabled(true);
+                e2eeEnableMs = Math.round(performance.now() - e2eeStart);
                 // Start device init concurrently with connect so the camera track is included in the initial SDP
                 // offer rather than a post-connect renegotiation (on Safari with H264 that can fail silently).
                 const t2 = performance.now();
@@ -224,6 +228,7 @@ export const useMeetingConnection = ({
                 connectionInfo,
                 tokenFetchMs,
                 mlsSetupMs,
+                e2eeEnableMs,
                 livekitConnectMs,
                 deviceInitMs,
                 websocketUrl,

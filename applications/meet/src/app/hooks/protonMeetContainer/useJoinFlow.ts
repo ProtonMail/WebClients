@@ -28,6 +28,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { type JoinTimer, createJoinTimer, trackJoinSucceeded } from '../../telemetry/joinPerformance';
+import type { JoinTelemetryDimensions } from '../../telemetry/useJoinTelemetryDimensions';
 import { getIceCandidateInfo } from '../../utils/checkIfUsingTurnRelay';
 import { MeetingErrorKind, classifyMeetingError } from '../../utils/classifyMeetingError';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
@@ -61,6 +63,7 @@ interface UseJoinFlowParams {
     displayName: string;
     cleanupMlsState: () => void;
     disallowHealthCheck: () => void;
+    joinTelemetryDimensions: JoinTelemetryDimensions;
 }
 
 export interface UseJoinFlowResult {
@@ -162,6 +165,7 @@ export const useJoinFlow = ({
     displayName,
     cleanupMlsState,
     disallowHealthCheck,
+    joinTelemetryDimensions,
 }: UseJoinFlowParams): UseJoinFlowResult => {
     const dispatch = useMeetDispatch();
     const { getAccessDetails, initHandshake } = useMeetingAuthentication();
@@ -182,6 +186,7 @@ export const useJoinFlow = ({
 
     const joinBlockedRef = useRef(false);
     const loadingStartTimeRef = useRef(0);
+    const joinTimerRef = useRef<JoinTimer>(createJoinTimer());
     const waitingRoomAccessDetailsRef = useRef<MeetingAccessDetails | null>(null);
 
     const { getSessionKey, getSessionKeyBase64 } = useSessionKey({ urlPassword });
@@ -228,6 +233,21 @@ export const useJoinFlow = ({
             });
 
             meetingLinkRef.current = getMeetingLink(meetingToken, meetingPassword);
+
+            trackJoinSucceeded({
+                room,
+                joinTimer: joinTimerRef.current,
+                connectedAt: performance.now(),
+                ...joinTelemetryDimensions,
+                connectPhases: {
+                    tokenFetchMs: connectResult.tokenFetchMs,
+                    mlsSetupMs: connectResult.mlsSetupMs,
+                    e2eeEnableMs: connectResult.e2eeEnableMs,
+                    deviceInitMs: connectResult.deviceInitMs,
+                    livekitConnectMs: connectResult.livekitConnectMs,
+                },
+                getIceCandidateInfo: () => getIceCandidateInfo(room),
+            });
 
             if (meetJoinTelemetryEnabled) {
                 const totalJoinMs = Date.now() - loadingStartTimeRef.current;
@@ -339,6 +359,7 @@ export const useJoinFlow = ({
         joinBlockedRef.current = true;
 
         loadingStartTimeRef.current = Date.now();
+        joinTimerRef.current = createJoinTimer();
 
         try {
             await meetCoreClient.logStartToJoinRoom();
@@ -355,14 +376,17 @@ export const useJoinFlow = ({
             });
             meetingLinkNameRef.current = id; // id is the meeting link name
 
-            const handshakeInfo = await initHandshake(id);
+            const handshakeInfo = await joinTimerRef.current.measure('srpMs', initHandshake(id));
 
-            const { meetingInfo } = await dispatch(
-                meetingInfoThunk({
-                    meetingLinkName: id,
-                    meetingPassword: passwordBase,
-                    handshakeInfo,
-                })
+            const { meetingInfo } = await joinTimerRef.current.measure(
+                'meetingInfoMs',
+                dispatch(
+                    meetingInfoThunk({
+                        meetingLinkName: id,
+                        meetingPassword: passwordBase,
+                        handshakeInfo,
+                    })
+                )
             );
 
             const waitingRoom = !!meetingInfo.WaitingRoom;
@@ -500,6 +524,7 @@ export const useJoinFlow = ({
         joinBlockedRef.current = true;
 
         loadingStartTimeRef.current = Date.now();
+        joinTimerRef.current = createJoinTimer();
 
         try {
             await meetCoreClient.logStartToJoinRoom();
@@ -508,19 +533,22 @@ export const useJoinFlow = ({
         }
 
         try {
-            const handshakeInfo = await initHandshake(meetingToken);
+            const handshakeInfo = await joinTimerRef.current.measure('srpMs', initHandshake(meetingToken));
 
             let meetingInfo;
 
             try {
                 // Not cached: the join needs a fresh meeting session, not just the data
-                ({ meetingInfo } = await dispatch(
-                    meetingInfoThunk({
-                        meetingLinkName: meetingToken,
-                        meetingPassword: urlPassword,
-                        handshakeInfo,
-                        cache: CacheType.None,
-                    })
+                ({ meetingInfo } = await joinTimerRef.current.measure(
+                    'meetingInfoMs',
+                    dispatch(
+                        meetingInfoThunk({
+                            meetingLinkName: meetingToken,
+                            meetingPassword: urlPassword,
+                            handshakeInfo,
+                            cache: CacheType.None,
+                        })
+                    )
                 ));
             } catch (error: any) {
                 dispatch(setJoiningInProgress(false));
