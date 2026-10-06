@@ -78,6 +78,11 @@ const ItemRowLayout = ({
         [Subject, highlightData, highlightMetadata, unread]
     );
 
+    const oneTimeCodeContent = useMemo(
+        () => (highlightData && oneTimeCode ? highlightMetadata(oneTimeCode, unread, false).resultJSX : oneTimeCode),
+        [oneTimeCode, highlightData, highlightMetadata, unread]
+    );
+
     const { resultJSX, numOccurrences } = useMemo(
         () =>
             body && highlightData ? highlightMetadata(body, unread, true) : { resultJSX: undefined, numOccurrences: 0 },
@@ -128,23 +133,33 @@ const ItemRowLayout = ({
                     style={loading ? { '--w-custom': '35rem' } : {}}
                 >
                     <div className="flex flex-column inline-block">
-                        {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
-                        <span
-                            role="heading"
-                            aria-level={2}
-                            className={clsx(['max-w-full text-ellipsis', unread && 'text-semibold'])}
-                            title={Subject}
-                            data-testid="message-row:subject"
-                            id={toValidHtmlId(`message-subject-${element.ID}`)}
-                        >
-                            {showIcon && (
-                                <span className="inline-flex shrink-0 align-bottom mr-1">
-                                    <ItemLocation element={element} labelID={labelID} />
-                                </span>
+                        <div className="flex flex-nowrap items-center max-w-full min-w-0">
+                            {oneTimeCode && (
+                                <ItemOneTimeCode
+                                    code={oneTimeCode}
+                                    codeContent={oneTimeCodeContent}
+                                    element={element}
+                                    className="shrink-0 mr-2"
+                                />
                             )}
-                            {conversationMode && <NumMessages className="shrink-0 mr-1" conversation={element} />}
-                            <span>{subjectContent}</span>
-                        </span>
+                            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
+                            <span
+                                role="heading"
+                                aria-level={2}
+                                className={clsx(['max-w-full text-ellipsis', unread && 'text-semibold'])}
+                                title={Subject}
+                                data-testid="message-row:subject"
+                                id={toValidHtmlId(`message-subject-${element.ID}`)}
+                            >
+                                {showIcon && (
+                                    <span className="inline-flex shrink-0 align-bottom mr-1">
+                                        <ItemLocation element={element} labelID={labelID} />
+                                    </span>
+                                )}
+                                {conversationMode && <NumMessages className="shrink-0 mr-1" conversation={element} />}
+                                <span>{subjectContent}</span>
+                            </span>
+                        </div>
 
                         {!!resultJSX && highlightData && (
                             <>
@@ -160,9 +175,6 @@ const ItemRowLayout = ({
                         )}
                     </div>
                 </div>
-
-                {/* Placed inline right after the subject so it sits with the text and does not shift when the hover action buttons appear on the right. */}
-                {oneTimeCode && <ItemOneTimeCode code={oneTimeCode} element={element} className="ml-2 shrink-0" />}
 
                 <span className="m-auto"></span>
 
