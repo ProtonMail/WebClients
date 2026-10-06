@@ -9,6 +9,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 const APPS_FOR_LOG_COLLECTION: Partial<Record<APP_NAMES, boolean>> = {
     [APPS.PROTONMAIL]: true,
     [APPS.PROTONCALENDAR]: true,
+    [APPS.PROTONMEET]: true,
 };
 
 const getTimestampedFilename = (prefix: string) => `${prefix}-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
