@@ -16,22 +16,20 @@ import type { ImportToken, OAuthProps } from '../../../interface';
 import { AuthenticationMethod, EASY_SWITCH_SOURCES } from '../../../interface';
 import { reconnectImapImport } from '../../../logic/draft/imapDraft/imapDraft.actions';
 import { cancelImporter } from '../../../logic/importers/importers.actions';
-import type { ActiveImportID } from '../../../logic/importers/importers.interface';
-import { selectActiveImporterById, selectImporterById } from '../../../logic/importers/importers.selectors';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
+import type { ActiveImporter, Importer } from '../../../logic/importers/importers.interface';
+import { useEasySwitchDispatch } from '../../../logic/store';
 import { getScopeFromProvider } from '../../Modals/OAuth/OAuthModal.helpers';
 
 interface Props {
-    activeImporterID: ActiveImportID;
+    activeImporter: ActiveImporter;
+    importer: Importer;
 }
 
-const ImporterRowActions = ({ activeImporterID }: Props) => {
+const ImporterRowActions = ({ activeImporter, importer }: Props) => {
     const dispatch = useEasySwitchDispatch();
-    const activeImporter = useEasySwitchSelector((state) => selectActiveImporterById(state, activeImporterID));
-    const importer = useEasySwitchSelector((state) => selectImporterById(state, activeImporter.importerID));
     const { ID, account, sasl, provider, products } = importer;
-    const importProvider = getImportProviderFromApiProvider(provider);
     const { product, errorCode, importState } = activeImporter;
+    const importProvider = getImportProviderFromApiProvider(provider);
 
     const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
         errorMessage: c('Error').t`Your import will not be processed.`,
@@ -151,7 +149,9 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
                         <Button
                             color="danger"
                             onClick={() => {
-                                void withLoadingPrimaryAction(dispatch(cancelImporter({ activeImporterID })));
+                                void withLoadingPrimaryAction(
+                                    dispatch(cancelImporter({ activeImporterID: activeImporter.localID }))
+                                );
                                 showCancelModal(false);
                             }}
                         >{c('Action').t`Cancel`}</Button>,

@@ -35,7 +35,7 @@ const ImporterRow = ({ activeImporterId }: Props) => {
                 </div>
             </TableCell>
             <TableCell className="easy-switch-table-actions">
-                <ImporterRowActions activeImporterID={activeImporter.localID} />
+                <ImporterRowActions activeImporter={activeImporter} importer={importer} />
             </TableCell>
         </TableRow>
     );

@@ -16,20 +16,19 @@ import { ApiSyncState } from '../../../api/api.interface';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import type { ImportToken, OAuthProps } from '../../../interface';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '../../../interface';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
+import { useEasySwitchDispatch } from '../../../logic/store';
 import { SyncTokenStrategy, deleteSyncItem, resumeSyncItem } from '../../../logic/sync/sync.actions';
-import { selectSyncById } from '../../../logic/sync/sync.selectors';
+import type { Sync } from '../../../logic/sync/sync.interface';
 
 interface Props {
-    syncId: string;
+    syncItem: Sync;
 }
 
-const SyncRowActions = ({ syncId }: Props) => {
+const SyncRowActions = ({ syncItem }: Props) => {
     const api = useApi();
+    const syncId = syncItem.id;
     const dispatch = useEasySwitchDispatch();
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
-
-    const syncItem = useEasySwitchSelector((state) => selectSyncById(state, syncId));
 
     const [deleteModalProps, showDeleteModal, renderDeleteModal] = useModalState();
 
