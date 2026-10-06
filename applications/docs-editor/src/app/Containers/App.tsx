@@ -57,7 +57,8 @@ import { toSheetsInitialization } from './adapters/sheets/utils/sheets-initializ
 import SheetsLayout from './SheetsLayout'
 import { useEditorTheme } from '../Theme/EditorThemeProvider'
 import { DocsAdapter } from './adapters/docs/DocsAdapter'
-import { StandaloneDocsEditor } from './Docs/public'
+import { StandaloneDocsEditor, type EditorInitializationConfig as DocsEditorInitializationConfig } from './Docs/public'
+import { toDocsExportFormat, toDocsInitialization } from './adapters/docs/utils/docs-conversion-adapter'
 
 type AppProps = {
   documentType: DocumentType
@@ -77,6 +78,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const [isPublicMode, setIsPublicMode] = useState(false)
   const { setTheme } = useEditorTheme()
   const [editorError, setEditorError] = useState<Error | undefined>(undefined)
+  const [docsEditorInitializationConfig, setDocsEditorInitializationConfig] = useState<DocsEditorInitializationConfig>()
 
   const isSuggestionMode = userMode === EditorUserMode.Suggest
   useEffect(() => {
@@ -226,6 +228,17 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     }
   }, [])
 
+  const onEditorLoadError = useCallback(
+    (message: string) => {
+      const error = new Error(message)
+
+      void bridge.getClientInvoker().reportUserInterfaceError(error, { irrecoverable: true })
+
+      reportErrorToSentry(error)
+    },
+    [bridge],
+  )
+
   useEffect(() => {
     if (!docState) {
       return
@@ -354,6 +367,17 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         appVersion,
         editorInitializationConfig,
       ) {
+        if (documentType === 'doc') {
+          let initializationConfig: DocsEditorInitializationConfig | undefined
+          try {
+            initializationConfig = toDocsInitialization(editorInitializationConfig)
+          } catch {
+            onEditorLoadError(c('Error').t`Failed to import document due to unsupported file format.`)
+            return
+          }
+          setDocsEditorInitializationConfig(initializationConfig)
+        }
+
         docMap.set(documentId, docState.getDoc())
         application.setRole(role)
         setIsPublicMode(isPublicMode)
@@ -384,7 +408,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           const editorState = editorRef.current.getEditorState().toJSON()
 
           try {
-            const result = await exportDataFromEditorState(editorState, format, {
+            const result = await exportDataFromEditorState(editorState, toDocsExportFormat(format), {
               fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
               reportError: (error, extra) => reportErrorToSentry(error, undefined, extra),
             })
@@ -471,7 +495,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             return null
           }
 
-          const result = await exportDataFromEditorState(editorState, format, {
+          const result = await exportDataFromEditorState(editorState, toDocsExportFormat(format), {
             fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
             reportError: (error, extra) => reportErrorToSentry(error, undefined, extra),
           })
@@ -555,7 +579,9 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     bridge,
     docMap,
     docState,
+    documentType,
     notifyParentEditorIsReady,
+    onEditorLoadError,
     setEditingLocked,
     setEditorConfig,
     setEditorHidden,
@@ -651,17 +677,6 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     }
   }, [docState, application.logger, documentType, sheetsInitializationMode])
 
-  const onEditorLoadError = useCallback(
-    (message: string) => {
-      const error = new Error(message)
-
-      void bridge.getClientInvoker().reportUserInterfaceError(error, { irrecoverable: true })
-
-      reportErrorToSentry(error)
-    },
-    [bridge],
-  )
-
   const onEditorError = useCallback(
     (error: Error) => {
       /** Report a UI displayable error */
@@ -730,7 +745,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               docState={docState}
               documentId={editorConfig.current.documentId}
               editingLocked={editingLocked || userMode === EditorUserMode.Preview}
-              editorInitializationConfig={editorConfig.current.editorInitializationConfig}
+              editorInitializationConfig={docsEditorInitializationConfig}
               hidden={editorHidden}
               isSuggestionsFeatureEnabled={suggestionsEnabled}
               lexicalError={editorError}

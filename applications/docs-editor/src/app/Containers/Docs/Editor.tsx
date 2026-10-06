@@ -5,13 +5,8 @@ import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { Provider } from '@lexical/yjs'
-import type {
-  EditorRequiresClientMethods,
-  YDocMap,
-  DocStateInterface,
-  EditorInitializationConfig,
-  DocumentRole,
-} from '@proton/docs-shared'
+import type { EditorRequiresClientMethods, YDocMap, DocStateInterface, DocumentRole } from '@proton/docs-shared'
+import type { EditorInitializationConfig } from './contract/EditorInitialization'
 import { v4 as uuidv4 } from 'uuid'
 import { DocProvider } from '@proton/docs-shared'
 import { AnonymousUserDisplayName, getRandomAnonymousUserLetter } from './Utils/AnonymousUser'

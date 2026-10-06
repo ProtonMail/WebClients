@@ -1,4 +1,4 @@
-import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared'
+import type { DataTypesThatDocumentCanBeExportedAs } from '../../contract/EditorInitialization'
 import type { SerializedEditorState } from 'lexical'
 import { EditorTxtExporter } from './EditorTxtExporter'
 import { EditorMarkdownExporter } from './EditorMarkdownExporter'
