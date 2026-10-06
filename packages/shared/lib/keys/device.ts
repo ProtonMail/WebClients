@@ -551,9 +551,12 @@ export const getLocalizedDeviceState = (state: AuthDeviceState) => {
 export const getAllAuthDevices = async ({
     user,
     api,
+    throwOnError = false,
 }: {
     user: User | null | undefined;
     api: Api;
+    /** Rejects when the request fails, instead of listing no devices. */
+    throwOnError?: boolean;
 }): Promise<AuthDeviceOutput[]> => {
     if (user && getIsGlobalSSOAccount(user)) {
         try {
@@ -562,7 +565,10 @@ export const getAllAuthDevices = async ({
                 ...getAuthDevicesConfig(),
             });
             return AuthDevices;
-        } catch {
+        } catch (e) {
+            if (throwOnError) {
+                throw e;
+            }
             return [];
         }
     }
