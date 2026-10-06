@@ -9,12 +9,23 @@
 	position: absolute;
 	inset-block-end: 6rem; // just above the 5rem control bar
 	inset-inline-start: var(--reaction-left);
+
+	// Rise and appear/disappear are separate animations so the upward motion is one continuous
+	// movement with a single easing (keyframed transforms restart the easing on every segment)
+	animation:
+		reaction-stream-rise 4.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
+		reaction-stream-appear 4.2s linear forwards;
+	will-change: translate, opacity, scale;
+}
+
+// Sideways sway on its own loop, slowing only at the turning points. Combined with the straight
+// rise, the emoji follows a smooth wave. The negative delay starts it centred.
+.reaction-stream-sway {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 0.25rem;
-	animation: reaction-stream-rise 4.2s cubic-bezier(0.3, 0.5, 0.5, 1) forwards;
-	will-change: transform, opacity;
+	animation: reaction-stream-sway 1.5s ease-in-out -0.75s infinite alternate;
 }
 
 .reaction-stream-emoji {
@@ -37,35 +48,50 @@
 }
 
 @keyframes reaction-stream-rise {
+	from {
+		translate: 0 0;
+	}
+
+	to {
+		translate: 0 calc(var(--reaction-rise) * -1);
+	}
+}
+
+@keyframes reaction-stream-appear {
 	0% {
 		opacity: 0;
-		transform: translate(0, 0) scale(0.6);
+		scale: 0.6;
 	}
 
-	8% {
+	6%,
+	80% {
 		opacity: 1;
-		transform: translate(calc(var(--reaction-drift) * 0.4), calc(var(--reaction-rise) * -0.1)) scale(1);
-	}
-
-	40% {
-		opacity: 1;
-		transform: translate(calc(var(--reaction-drift) * -1), calc(var(--reaction-rise) * -0.4)) scale(1);
-	}
-
-	75% {
-		opacity: 1;
-		transform: translate(var(--reaction-drift), calc(var(--reaction-rise) * -0.75)) scale(1);
+		scale: 1;
 	}
 
 	100% {
 		opacity: 0;
-		transform: translate(0, calc(var(--reaction-rise) * -1)) scale(0.95);
+		scale: 0.95;
+	}
+}
+
+@keyframes reaction-stream-sway {
+	from {
+		transform: translateX(calc(var(--reaction-drift) * -1));
+	}
+
+	to {
+		transform: translateX(var(--reaction-drift));
 	}
 }
 
 @media (prefers-reduced-motion: reduce) {
 	.reaction-stream-item {
 		animation: reaction-stream-fade 3s ease-in-out forwards;
+	}
+
+	.reaction-stream-sway {
+		animation: none;
 	}
 }
 

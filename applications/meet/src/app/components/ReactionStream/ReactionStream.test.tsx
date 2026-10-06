@@ -102,8 +102,11 @@ describe('ReactionStream', () => {
         const store = renderStream();
 
         react(store, remoteIdentity, '😁', 1);
-        const item = screen.getByText('😁').parentElement as HTMLElement;
-        fireEvent.animationEnd(item);
+        const item = screen.getByText('😁').closest('.reaction-stream-item') as HTMLElement;
+        // Ending the appear animation doesn't remove it, the end of the rise does
+        fireEvent.animationEnd(item, { animationName: 'reaction-stream-appear' });
+        expect(screen.getByText('😁')).toBeInTheDocument();
+        fireEvent.animationEnd(item, { animationName: 'reaction-stream-rise' });
 
         expect(screen.queryByText('😁')).not.toBeInTheDocument();
     });
