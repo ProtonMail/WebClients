@@ -4,6 +4,7 @@ import type { MessageState, PartialMessageState } from '@proton/mail/store/messa
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { RecipientType } from '../../../models/address';
 import type { DraftChangeability, MailToolDeps } from '../../toolModule';
@@ -29,6 +30,8 @@ export const decryptedParent = (id: string): MessageState =>
 
 interface HarnessOptions {
     messages?: Record<string, MessageState>;
+    conversations?: Record<string, { Messages: Message[] }>;
+    onLoadConversation?: (id: string) => void;
     /** What each composer answers when asked what it will take; one not named here reads as closed. */
     changeability?: Record<string, DraftChangeability>;
     onInitializeMessage?: (id: string) => void;
@@ -39,6 +42,8 @@ interface HarnessOptions {
 /** `composer-0` starts open, so a test that expects a newly opened composer fails if it names that one. */
 export const composeHarness = ({
     messages = {},
+    conversations = {},
+    onLoadConversation,
     changeability = {},
     onInitializeMessage,
     opensComposer = 'composer-1',
@@ -53,10 +58,14 @@ export const composeHarness = ({
             getState: () => ({
                 composers: { composers },
                 messages,
+                conversations,
                 elements: { elements: {}, params: { labelID: MAILBOX_LABEL_IDS.INBOX } },
             }),
         },
         getContactEmails: () => [ADA],
+        loadConversation: async (id: string) => {
+            onLoadConversation?.(id);
+        },
         initializeMessage: async (id: string) => {
             onInitializeMessage?.(id);
         },

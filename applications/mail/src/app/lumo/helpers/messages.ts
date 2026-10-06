@@ -41,7 +41,7 @@ export interface DecryptedMessage extends MessageBody {
     subject: string;
 }
 
-type MessageDeps = Pick<MailToolDeps, 'store' | 'history' | 'getMailSettings'>;
+type MessageDeps = Pick<MailToolDeps, 'store' | 'history' | 'getMailSettings' | 'getFolders'>;
 
 /**
  * Oldest first — the store is keyed by id, so its own order is whenever each message was fetched.
@@ -121,10 +121,12 @@ export const listingLabelID = (element: Element, viewLabelID: string, folders: F
 
 /**
  * Mirrors `useElementActions.handleElement`: with grouping on, a message must be opened via its
- * conversation + messageID, or the router fetches `conversations/{messageId}` and 422s.
+ * conversation + messageID, or the router fetches `conversations/{messageId}` and 422s. An email from
+ * outside the current view opens in its own folder, where the conversation expands the right message.
  */
 export const openInReadingPane = (deps: MessageDeps, element: Element) => {
-    const labelID = convertCustomViewLabelsToAlmostAllMail(selectParams(deps.store.getState()).labelID);
+    const viewLabelID = convertCustomViewLabelsToAlmostAllMail(selectParams(deps.store.getState()).labelID);
+    const labelID = listingLabelID(element, viewLabelID, deps.getFolders());
     const grouped = deps.getMailSettings()?.ViewMode === VIEW_MODE.GROUP;
     const openParams =
         grouped && isElementMessage(element)

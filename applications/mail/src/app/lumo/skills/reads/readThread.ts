@@ -8,7 +8,6 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isElementMessage } from '../../../helpers/elements';
 import type { Element } from '../../../models/element';
 import { selectParams } from '../../../store/elements/elementsSelectors';
-
 import type { MessageBody } from '../../helpers/messages';
 import {
     MAX_BODY_CHARS,
@@ -19,7 +18,7 @@ import {
     truncateBody,
     withStepTimeout,
 } from '../../helpers/messages';
-import { resolveId } from '../../helpers/references';
+import { resolveFreshElement } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 
 const MAX_THREAD_MESSAGES = 30;
@@ -99,6 +98,11 @@ export const readThreadDefinition: ToolDefinition<ReadThreadParams, ReadThreadRe
     },
 };
 
+// A message element carries its ConversationID; a conversation element (grouped mode) IS the id.
+const conversationIDOf = (element: Element) => {
+    return isElementMessage(element) ? element.ConversationID : element.ID;
+};
+
 /**
  * Mail only decrypts what is expanded on screen, so the rest of a thread is metadata only. Each message
  * is decrypted through the same initialize path a `MessageView` drives, which is store/api-only and so
@@ -109,19 +113,20 @@ export const createReadThreadHandler =
     async ({ target }, { references }) => {
         const state = () => mail.store.getState();
 
-        // A message element carries its ConversationID; a conversation element (grouped mode) IS the id.
-        const resolveConversation = (): { conversationID?: string; targetElement?: Element } => {
-            const id = target ? resolveId(target, references) : selectParams(state()).elementID;
+        const resolveTarget = async (reference: string) => {
+            const element = await resolveFreshElement(mail, reference, references);
+            return { conversationID: conversationIDOf(element), targetElement: element };
+        };
+
+        const resolveOpenConversation = (): { conversationID?: string; targetElement?: Element } => {
+            const id = selectParams(state()).elementID;
             if (!id) {
                 return {};
             }
 
             const element = state().elements.elements[id];
             if (element) {
-                return {
-                    conversationID: isElementMessage(element) ? element.ConversationID : id,
-                    targetElement: target ? element : undefined,
-                };
+                return { conversationID: conversationIDOf(element) };
             }
 
             // With no element there is nothing to read the shape off, and guessing wrong fetches
@@ -131,12 +136,12 @@ export const createReadThreadHandler =
                 return { conversationID: knownConversationID };
             }
 
-            // Only an OPEN element is safe to assume is a conversation, and only when the view groups.
+            // An OPEN element is only safe to assume is a conversation when the view groups.
             const grouped = mail.getMailSettings()?.ViewMode === VIEW_MODE.GROUP;
-            return !target && grouped ? { conversationID: id } : {};
+            return grouped ? { conversationID: id } : {};
         };
 
-        const { conversationID, targetElement } = resolveConversation();
+        const { conversationID, targetElement } = target ? await resolveTarget(target) : resolveOpenConversation();
         if (!conversationID) {
             return { found: false, messages: [], total: 0 };
         }
