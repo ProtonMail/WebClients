@@ -1,6 +1,6 @@
 import type { LexicalEditor } from 'lexical'
 import { $getRoot, $createParagraphNode, $getSelection } from 'lexical'
-import type { EditorInitializationConfig } from '@proton/docs-shared'
+import type { EditorInitializationConfig } from '../../contract/EditorInitialization'
 import { DocWillInitializeWithEmptyNodeEvent } from '@proton/docs-shared'
 import { TranslatedResult } from '../../Utils/TranslatedResult'
 import { $importDataIntoEditor } from '../../Conversion/ImportDataIntoEditor'
