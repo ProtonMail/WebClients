@@ -12,9 +12,10 @@ import { isValidDate } from '@proton/shared/lib/date/date';
 
 import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
 import { formatDateToHuman } from '../../../helpers/date';
+import { hasLabel, isElementMessage } from '../../../helpers/elements';
 import { getSnoozeUnixTime } from '../../../helpers/snooze';
-import { selectParams } from '../../../store/elements/elementsSelectors';
-import { resolveElements } from '../../helpers/references';
+import type { Element } from '../../../models/element';
+import { resolveFreshElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { emailIds, emailSelectionSentence, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
 
@@ -46,19 +47,19 @@ export const resolveWakeAt = (wakeAt: string, nowMs: number = Date.now()): Date 
 };
 
 /**
- * `useSnooze` offers snooze only from the Inbox in conversation view but its `snooze()` re-checks nothing:
- * elsewhere it would label mail SNOOZED that the location never surfaces again, and in message view it hands
- * message ids to an endpoint that expects conversation ids.
+ * `useSnooze` offers snooze only on Inbox conversations but its `snooze()` re-checks nothing: on mail outside
+ * the Inbox it would label it SNOOZED where nothing surfaces it again, and on a message it hands a message id
+ * to an endpoint that expects conversation ids.
  */
-export const assertSnoozeAvailable = (labelID: string, conversationMode: boolean): void => {
-    if (labelID !== MAILBOX_LABEL_IDS.INBOX) {
+export const assertSnoozeAvailable = (elements: Element[]): void => {
+    if (elements.some(isElementMessage)) {
         throw new ToolInputError(
-            'Snooze only works on mail in the Inbox. Open the Inbox first, then snooze the emails from there.'
+            'Snooze needs conversation view and these emails were listed in message view, so it cannot be done: tell the user snooze is unavailable in message view.'
         );
     }
-    if (!conversationMode) {
+    if (elements.some((element) => !hasLabel(element, MAILBOX_LABEL_IDS.INBOX))) {
         throw new ToolInputError(
-            'Snooze needs conversation view and this mailbox is in message view, so it cannot be done: tell the user snooze is unavailable in message view.'
+            'Snooze only works on mail in the Inbox, and not every one of these emails is in it. Snooze only the ones in the Inbox.'
         );
     }
 };
@@ -67,7 +68,7 @@ export const snoozeEmailsDefinition: ToolDefinition<SnoozeEmailsParams, void> = 
     name: 'snooze_emails',
     kind: 'mutation',
     toolDescription:
-        'Snooze one or more emails: they leave the inbox now and return to the top of it at a future time. `ids` are email-… references from view_emails/search. `wake_at` is an ISO 8601 datetime IN THE FUTURE when they should come back. Resolve the user\'s natural language ("tomorrow at 8am", "Saturday morning") to an absolute datetime yourself from the current date. If they do NOT give a time, do NOT ask for one: propose tomorrow at 9am — the confirm card shows an EDITABLE date and time, so the user adjusts it there before applying. Only works on mail sitting in the INBOX, and only while the mailbox shows conversations rather than single messages — elsewhere it is refused, so read the Inbox with open_folder or view_emails first and snooze what you find there. Proposed to the user for confirmation before it runs. Example: { "ids": ["email-a1b2c3"], "wake_at": "2026-07-12T09:00:00" }.',
+        'Snooze one or more emails: they leave the inbox now and return to the top of it at a future time. `ids` are email-… references from any earlier result in this conversation. `wake_at` is an ISO 8601 datetime IN THE FUTURE when they should come back. Resolve the user\'s natural language ("tomorrow at 8am", "Saturday morning") to an absolute datetime yourself from the current date. If they do NOT give a time, do NOT ask for one: propose tomorrow at 9am — the confirm card shows an EDITABLE date and time, so the user adjusts it there before applying. Only works on conversations in the INBOX (rows listed in conversation view, not single messages); anything else is refused, so leave it out. Proposed to the user for confirmation before it runs. Example: { "ids": ["email-a1b2c3"], "wake_at": "2026-07-12T09:00:00" }.',
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
@@ -93,9 +94,8 @@ export const createSnoozeEmailsHandler =
     (mail: MailToolDeps): ToolHandler<SnoozeEmailsParams, void> =>
     async ({ ids, wake_at }, { references }) => {
         const snoozeTime = resolveWakeAt(wake_at);
-        const { labelID, conversationMode } = selectParams(mail.store.getState());
-        assertSnoozeAvailable(labelID, conversationMode);
-        const elements = resolveElements(mail.store, ids, references);
+        const elements = await resolveFreshElements(mail, ids, references);
+        assertSnoozeAvailable(elements);
         await mail.snooze({ elements, duration: 'custom', snoozeTime }, SOURCE_ACTION.TOOLBAR);
     };
 
