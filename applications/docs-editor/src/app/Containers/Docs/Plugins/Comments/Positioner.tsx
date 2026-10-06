@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef, ForwardedRef, ReactNode, RefObject } from 'react'
 import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react'
 import debounce from 'lodash/debounce'
-import { mergeRefs } from '../../../../Shared/mergeRefs'
+import { mergeRefs } from '../../Utils/mergeRefs'
 import clsx from 'clsx'
 
 export type PositionedItem = {
