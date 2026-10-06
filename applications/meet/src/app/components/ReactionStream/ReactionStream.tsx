@@ -17,6 +17,9 @@ import './ReactionStream.scss';
 // Upper bound so a burst of reactions can't flood the DOM
 const MAX_VISIBLE_REACTIONS = 30;
 
+// Keyframe names from ReactionStream.scss that mark the end of a reaction
+const END_ANIMATIONS = new Set(['reaction-stream-rise', 'reaction-stream-fade']);
+
 interface StreamItem {
     id: string;
     identity: string;
@@ -70,10 +73,18 @@ const ReactionStreamItem = ({ item, onDone }: { item: StreamItem; onDone: (id: s
                     '--reaction-rise': `${item.rise}vh`,
                 } as CSSProperties
             }
-            onAnimationEnd={() => onDone(item.id)}
+            onAnimationEnd={(event) => {
+                // The item also runs an appear animation and its content sways forever:
+                // only the end of the rise (or the reduced-motion fade) means it's done
+                if (event.target === event.currentTarget && END_ANIMATIONS.has(event.animationName)) {
+                    onDone(item.id);
+                }
+            }}
         >
-            <span className="reaction-stream-emoji">{item.emoji}</span>
-            {label && <span className="reaction-stream-name text-ellipsis">{label}</span>}
+            <div className="reaction-stream-sway">
+                <span className="reaction-stream-emoji">{item.emoji}</span>
+                {label && <span className="reaction-stream-name text-ellipsis">{label}</span>}
+            </div>
         </div>
     );
 };
