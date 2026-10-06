@@ -64,16 +64,9 @@ const CaptionsFeed = () => {
     const nameMap = useMeetSelector(selectParticipantDecryptedNameMap);
 
     const statusMessage = getStatusMessage(status);
-    const centerContent = segments.length <= 1;
 
     return (
-        <div
-            className={clsx(
-                'captions overflow-hidden flex flex-column flex-nowrap items-center gap-1',
-                centerContent ? 'justify-center' : 'justify-end'
-            )}
-            aria-live="polite"
-        >
+        <div className="captions overflow-hidden flex flex-column flex-nowrap items-center gap-1" aria-live="polite">
             {statusMessage ? (
                 <div className="captions__line captions__line--newest inline-flex flex-nowrap gap-2 text-center">
                     <span className={statusMessage.color}>{statusMessage.text}</span>

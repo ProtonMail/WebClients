@@ -1,10 +1,42 @@
 .captions {
-	block-size: 4.5rem;
+	// 20px line box at this font size, per the design spec's base line height. Pinning it as a length
+	// keeps the block-size arithmetic below exact.
+	--captions-line-block-size: 1.25rem;
+	--captions-visible-lines: 4;
+
 	font-size: 0.875rem;
 	font-weight: var(--font-weight-weak);
+	line-height: var(--captions-line-block-size);
+
+	// Four text lines, plus the chrome a full feed adds around them: MAX_VISIBLE (2) segments each
+	// contribute 0.2rem of padding-block, with one 0.25rem gap between.
+	block-size: calc(var(--captions-visible-lines) * var(--captions-line-block-size) + 0.65rem);
+
+	// Own `overflow: hidden` zeroes the automatic minimum size, so `block-size` is only a flex base
+	// size: without this the column parent shrinks the box and eats the newest lines from the bottom.
+	flex-shrink: 0;
+
+	// Overflow of a `justify-content: flex-end` container spills past the *start* edge, so the newest
+	// line stays pinned to the bottom and anything above the fourth is clipped off the top.
+	justify-content: flex-end;
+
+	// Dissolves the clipped line instead of slicing it. Half a line box, so a feed that fills the
+	// area exactly does not get its top line dimmed for nothing.
+	mask-image: linear-gradient(to bottom, transparent, black calc(var(--captions-line-block-size) / 2));
+
+	// Auto margins centre a lone line, then collapse to 0 once it is taller than the box, handing the
+	// overflow back to `justify-content` instead of splitting it across both edges.
+	& > :only-child {
+		margin-block: auto;
+	}
 
 	&__line {
 		padding-block: 0.1rem;
+
+		// Without this the lines absorb the overflow by compressing: the box then fits exactly, the
+		// text inside each squashed line does not, and it is the newest line that gets sliced. Keeping
+		// them rigid is what lets the container actually overflow, so `justify-content` can run.
+		flex-shrink: 0;
 
 		&--old .captions__text {
 			color: color-mix(in srgb, var(--text-norm) 55%, transparent);
