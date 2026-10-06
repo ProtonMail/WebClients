@@ -15,6 +15,7 @@ import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -257,6 +258,9 @@ export const ScheduleMeetingRecapModal = ({
                                         className="button-copy-meeting-link shrink-0 rounded-full"
                                         onClick={() => {
                                             void navigator.clipboard.writeText(meetingLink);
+                                            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_link_copied, {
+                                                source: 'schedule_recap',
+                                            });
                                             notifications.createNotification({
                                                 key: 'link-copied',
                                                 text: c('Notification').t`Link copied to clipboard`,

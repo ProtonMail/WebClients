@@ -8,6 +8,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import { selectMeetingLinkName } from '@proton/meet/store/slices/currentMeeting';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import { CAPTIONS_AGENT_DISABLE_GRACE_MS, PROVIDER_FAILED_ERROR_CODE } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -119,6 +120,10 @@ export const useCaptionsAgentLifecycle = () => {
                     });
                 }
                 if (wantAgent && wantsCaptionsRef.current && code !== undefined) {
+                    sendMeetActionsEvent(TelemetryMeetActionsEvents.captions_failed, {
+                        captionsFailureReason:
+                            code === PROVIDER_FAILED_ERROR_CODE ? 'transcription_failed' : 'request_failed',
+                    });
                     createNotification({
                         type: 'error',
                         text:

@@ -31,6 +31,7 @@ import { useUpdateMeetingWaitingRoom } from '@proton/meet/hooks/useUpdateMeeting
 import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addMeeting, removeMeeting, updateMeeting } from '@proton/meet/store/slices/meetings';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, CALENDAR_APP_NAME, MINUTE } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
@@ -278,6 +279,9 @@ export const ScheduleMeetingForm = ({
                     type,
                 });
                 dispatch(addMeeting(newMeeting));
+                sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_scheduled, {
+                    hasWaitingRoom: restOfValues.waitingRoom === WaitingRoomState.ENABLED,
+                });
                 meetingLink = link;
                 meetingId = newMeeting.ID;
                 onMeetingCreated(newMeeting.ID);
@@ -301,6 +305,7 @@ export const ScheduleMeetingForm = ({
     const handleDeleteMeeting = async (meeting: Meeting) => {
         await deleteMeeting(meeting.ID)
             .then(() => {
+                sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_deleted, { meetingKind: 'scheduled' });
                 dispatch(removeMeeting(meeting.ID));
                 notifications.createNotification({
                     text: c('Info').t`Successfully deleted meeting`,
@@ -341,6 +346,7 @@ export const ScheduleMeetingForm = ({
             return;
         }
         void navigator.clipboard.writeText(meetingLink);
+        sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_link_copied, { source: 'schedule_form' });
         notifications.createNotification({
             key: 'link-copied',
             text: c('Notification').t`Link copied to clipboard`,

@@ -11,6 +11,7 @@ import {
     selectSortedFilteredSpeakers,
     selectSpeakerState,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isDefaultDevice } from '@proton/meet/utils/deviceUtils';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -39,6 +40,11 @@ export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSetti
     const filteredSpeakers = useMeetSelector(selectSortedFilteredSpeakers);
 
     const handleInputDeviceChange = async (value: string | null) => {
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.device_selected, {
+            deviceKind: 'audioinput',
+            source: 'in_call_popup',
+        });
+
         if (!value) {
             await toggleAudio({ isEnabled: false, audioDeviceId: undefined });
             return;
@@ -52,6 +58,11 @@ export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSetti
             if (!supportsSetSinkId()) {
                 return;
             }
+
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.device_selected, {
+                deviceKind: 'audiooutput',
+                source: 'in_call_popup',
+            });
 
             const sinkId = value ?? '';
             await switchActiveDevice({

@@ -9,6 +9,7 @@ import { openLinkInBrowser } from '@proton/components/containers/desktop/openExt
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -116,7 +117,14 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                             <div className="flex items-center sign-in-header-button-container">
                                 {isGuest ? (
                                     <>
-                                        <MeetSignIn className="sign-in-header-button rounded-full py-2">
+                                        <MeetSignIn
+                                            className="sign-in-header-button rounded-full py-2"
+                                            onClick={() =>
+                                                sendMeetDashboardEvent(TelemetryMeetDashboardEvents.sign_in_clicked, {
+                                                    source: isJoinPage ? 'prejoin' : 'guest_dashboard',
+                                                })
+                                            }
+                                        >
                                             {c('Action').t`Sign in`}
                                         </MeetSignIn>
                                         <Button

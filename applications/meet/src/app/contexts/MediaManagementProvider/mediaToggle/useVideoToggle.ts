@@ -14,6 +14,7 @@ import {
     selectSelectedCameraId,
     selectUserCameraIntent,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';
@@ -170,6 +171,9 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
     const handleRotateCamera = useCallback(async () => {
         const newFacingMode = facingMode === 'environment' ? 'user' : 'environment';
         setFacingMode(newFacingMode);
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.camera_rotated, {
+            cameraFacing: newFacingMode === 'user' ? 'front' : 'back',
+        });
 
         if (room.state === ConnectionState.Connected) {
             await toggleVideo({

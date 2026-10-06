@@ -191,16 +191,21 @@ const getAutoRejectThresholdMs = () => {
     return AUTOREJECT_THRESHOLD_MS;
 };
 
+export interface PermissionRequestResult {
+    state: PermissionState;
+    isPermissionAnswer: boolean;
+}
+
 export const requestPermission =
     (
         deviceType: 'camera' | 'microphone',
         deviceId?: string
-    ): ThunkAction<Promise<PermissionState>, MeetState, ProtonThunkArguments, UnknownAction> =>
+    ): ThunkAction<Promise<PermissionRequestResult>, MeetState, ProtonThunkArguments, UnknownAction> =>
     async (dispatch, getState) => {
         const permissions = getState().deviceManagement.permissions;
         const currentPermission = permissions[deviceType];
         if (currentPermission === 'granted') {
-            return 'granted';
+            return { state: 'granted', isPermissionAnswer: true };
         }
 
         let queryState: PermissionState = 'prompt';
@@ -212,7 +217,7 @@ export const requestPermission =
 
         if (queryState === 'granted') {
             dispatch(slice.actions.setPermissions({ [deviceType]: 'granted' }));
-            return 'granted';
+            return { state: 'granted', isPermissionAnswer: true };
         }
 
         const start = performance.now();
@@ -234,7 +239,7 @@ export const requestPermission =
             stream.getTracks().forEach((track) => track.stop());
 
             dispatch(slice.actions.setPermissions({ [deviceType]: 'granted' }));
-            return 'granted';
+            return { state: 'granted', isPermissionAnswer: true };
         } catch (error) {
             const end = performance.now();
             // If the permission request takes less than 300ms, the browser is blocking the permission request.
@@ -253,11 +258,11 @@ export const requestPermission =
                     throw new PermissionBlockedError('Permissions are blocked by the browser');
                 }
 
-                return actualState;
+                return { state: actualState, isPermissionAnswer: true };
             }
 
             dispatch(slice.actions.setPermissions({ [deviceType]: 'prompt' }));
-            return 'prompt';
+            return { state: 'prompt', isPermissionAnswer: false };
         }
     };
 

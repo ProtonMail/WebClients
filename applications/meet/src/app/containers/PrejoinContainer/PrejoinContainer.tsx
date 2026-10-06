@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectAppliedBackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
 import { selectJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
 import {
     selectCameras,
@@ -16,8 +17,12 @@ import {
     selectSpeakerState,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { setLocalParticipantColorIndex } from '@proton/meet/store/slices/participants/participantsSlice';
+import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
+import { getBackgroundEffectType, toToggleState } from '@proton/meet/telemetry/dimensions';
+import type { DeviceKind } from '@proton/meet/telemetry/events';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { APPS } from '@proton/shared/lib/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -33,6 +38,8 @@ import { WaitingRoomRejectedModal } from '../../components/PreJoinDetails/Waitin
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 import { RECORDING_MAX_AGE_MS, purgeOldRecordings } from '../../hooks/useMeetingRecorder/recordingStorage/purge';
+import type { JoinTelemetryDimensions } from '../../telemetry/useJoinTelemetryDimensions';
+import { useSendOnce } from '../../telemetry/useSendOnce';
 import { getDisplayNameStorageKey } from '../../utils/storage';
 
 import './PrejoinContainer.scss';
@@ -47,6 +54,7 @@ interface PrejoinContainerProps {
     isInstantJoin: boolean;
     joiningLoaderHeader?: string;
     joiningLoaderSubtitle?: string;
+    joinTelemetryDimensions: JoinTelemetryDimensions;
 }
 
 export const PrejoinContainer = ({
@@ -59,6 +67,7 @@ export const PrejoinContainer = ({
     isInstantJoin,
     joiningLoaderHeader,
     joiningLoaderSubtitle,
+    joinTelemetryDimensions,
 }: PrejoinContainerProps) => {
     const dispatch = useMeetDispatch();
     const isGuest = useMeetSelector(selectIsGuest);
@@ -81,8 +90,21 @@ export const PrejoinContainer = ({
     const joiningInProgress = useMeetSelector(selectJoiningInProgress);
     const showWaitingRoomAdmission = useMeetSelector(selectIsWaitingRoomAdmissionActive);
 
+    const appliedBackgroundEffect = useMeetSelector(selectAppliedBackgroundEffect);
+    const waitingRoomEnabled = useMeetSelector(selectWaitingRoomSetting);
+    const hasTypedDisplayNameRef = useRef(false);
+
+    useSendOnce(() =>
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.prejoin_viewed, {
+            ...joinTelemetryDimensions,
+            isWaitingRoomEnabled: waitingRoomEnabled,
+        })
+    );
+
     const { switchActiveDevice } = useMediaManagementContext();
 
+    // We only use random number generation for color selection
+    //nosemgrep
     const participantColorIndex = useRef(Math.floor(6 * Math.random()));
 
     useEffect(() => {
@@ -113,10 +135,25 @@ export const PrejoinContainer = ({
             removeItem(storageKey);
         }
 
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.display_name_entered, {
+            isPersisted: keepOnDevice,
+            isPrefilled: !hasTypedDisplayNameRef.current,
+        });
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.join_clicked, {
+            micState: toToggleState(initialAudioState),
+            cameraState: toToggleState(initialCameraState),
+            backgroundEffect: getBackgroundEffectType(appliedBackgroundEffect),
+        });
+
         handleJoin(displayName);
     };
 
+    const sendDeviceChanged = (deviceKind: DeviceKind) => {
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.device_selected, { deviceKind, source: 'prejoin' });
+    };
+
     const handleCameraChange = async (camera: SerializableDeviceInfo) => {
+        sendDeviceChanged('videoinput');
         await switchActiveDevice({
             deviceType: 'videoinput',
             deviceId: camera.deviceId,
@@ -125,6 +162,7 @@ export const PrejoinContainer = ({
     };
 
     const handleMicrophoneChange = async (microphone: SerializableDeviceInfo, isDefaultDevice: boolean) => {
+        sendDeviceChanged('audioinput');
         await switchActiveDevice({
             deviceType: 'audioinput',
             deviceId: microphone.deviceId,
@@ -133,6 +171,7 @@ export const PrejoinContainer = ({
     };
 
     const handleAudioOutputDeviceChange = async (speaker: SerializableDeviceInfo, isDefaultDevice: boolean) => {
+        sendDeviceChanged('audiooutput');
         await switchActiveDevice({
             deviceType: 'audiooutput',
             deviceId: speaker.deviceId,
@@ -185,7 +224,10 @@ export const PrejoinContainer = ({
                             roomId={roomId}
                             displayName={displayName}
                             keepDisplayName={hasStoredDisplayName}
-                            onDisplayNameChange={setDisplayName}
+                            onDisplayNameChange={(name) => {
+                                hasTypedDisplayNameRef.current = true;
+                                setDisplayName(name);
+                            }}
                             onJoinMeeting={handleJoinMeeting}
                             instantMeeting={instantMeeting}
                         />

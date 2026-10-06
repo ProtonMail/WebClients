@@ -17,6 +17,7 @@ import { setMeetCoreErrorResolver } from '@proton/meet/hooks/useMeetErrorReporti
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
 import type { MeetDispatch, MeetExtraThunkArguments, MeetState, MeetStore } from '@proton/meet/store/store';
 import { setupStore } from '@proton/meet/store/store';
+import { initMeetTelemetry } from '@proton/meet/telemetry/meetTelemetry';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -40,6 +41,7 @@ import noop from '@proton/utils/noop';
 
 import { purgeUserRecordings } from './hooks/useMeetingRecorder/recordingStorage/purge';
 import locales from './locales';
+import { markBootstrapEnd, markBootstrapStart, measureLoadPhase, setWasmMode } from './telemetry/loadPerformance';
 import { meetTelemetryConfig } from './telemetryConfig';
 import { pruneOrphanBackgroundCaches, purgeUserBackgrounds } from './utils/customBackgrounds/purge';
 import { clearStoredDevices } from './utils/deviceStorage';
@@ -56,6 +58,7 @@ setMeetCoreErrorResolver(getMeetCoreErrorName);
 
 const MEET_CORE_WORKER_FLAG = 'MeetCoreWorker';
 const MEET_USE_CACHED_SERVER_TIME_FLAG = 'MeetUseCachedServerTime';
+const MEET_EXTENDED_TELEMETRY_FLAG = 'MeetExtendedTelemetry';
 
 const getMeetCoreInitParams = (
     authentication: MeetExtraThunkArguments['authentication'],
@@ -252,7 +255,7 @@ const initAppDependencies = async (
     const { api, silentApi } = getApis(config);
 
     const unleashClient = bootstrap.createUnleash({ api: silentApi });
-    const sessionResult = await getSession({ authentication, api });
+    const sessionResult = await measureLoadPhase('sessionMs', getSession({ authentication, api }));
 
     const eventManager = bootstrap.eventManager({ api: silentApi });
     const meetEventManager = bootstrap.meetEventManager({ api: silentApi });
@@ -289,24 +292,26 @@ const completeAppBootstrap = async ({
         dispatch(initEvent({ User: sessionResult.session.User }));
     }
 
-    const cryptoPromise = bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient });
+    const cryptoPromise = measureLoadPhase(
+        'cryptoInitMs',
+        bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient })
+    );
 
     startMeetingInfoPreload({ dispatch, cryptoReady: cryptoPromise });
 
     const [userData] = await Promise.all([
-        loadUserData(dispatch),
+        measureLoadPhase('sessionMs', loadUserData(dispatch)),
         cryptoPromise,
-        bootstrap.unleashReady({ unleashClient }).catch(noop),
+        measureLoadPhase('unleashMs', bootstrap.unleashReady({ unleashClient })).catch(noop),
     ]);
     initializeLogger({ api, authentication, unleashClient, appName: config.APP_NAME });
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
     const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
-    const meetCoreClient = await initializeMeetCoreClient({
-        authentication,
-        appVersion,
-        meetCoreWorkerEnabled,
-        useCachedServerTime,
-    });
+    const meetCoreClient = await measureLoadPhase(
+        'wasmInitMs',
+        initializeMeetCoreClient({ authentication, appVersion, meetCoreWorkerEnabled, useCachedServerTime })
+    );
+    setWasmMode(meetCoreClient);
     bootstrap.onAbort(signal, () => meetCoreClient.dispose());
 
     if (!!userData.userSettings.Telemetry) {
@@ -372,6 +377,12 @@ const executeBootstrapSteps = async ({
         persist: true,
     });
 
+    initMeetTelemetry({
+        api: restServices.api,
+        getState: store.getState,
+        isEnabled: () => restServices.unleashClient.isEnabled(MEET_EXTENDED_TELEMETRY_FLAG),
+    });
+
     const { userData, meetCoreClient } = await completeAppBootstrap({
         ...restServices,
         authentication,
@@ -393,12 +404,18 @@ const executeBootstrapSteps = async ({
 };
 
 export const bootstrapApp = async (parameters: BootstrapParameters) => {
+    markBootstrapStart();
+
     const authentication = bootstrap.createAuthentication();
 
-    return bootstrap.wrap(
+    const result = await bootstrap.wrap(
         { appName: parameters.config.APP_NAME, authentication },
         executeBootstrapSteps({ ...parameters, authentication })
     );
+
+    markBootstrapEnd();
+
+    return result;
 };
 
 const assertNoSessions = async (api: ApiWithListener) => {
@@ -432,6 +449,8 @@ export const bootstrapGuestApp = async (
     notificationsManager: NotificationsManager,
     signal?: AbortSignal
 ) => {
+    markBootstrapStart();
+
     const api = createApi({ config });
 
     api.addEventListener((event) => {
@@ -459,20 +478,24 @@ export const bootstrapGuestApp = async (
         ...meetTelemetryConfig,
     });
 
-    await unleashClient.start();
+    await measureLoadPhase('unleashMs', unleashClient.start());
 
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
     const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
     const [meetCoreClient] = await Promise.all([
-        initializeMeetCoreClient({ authentication, appVersion, meetCoreWorkerEnabled, useCachedServerTime }),
-        bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
+        measureLoadPhase(
+            'wasmInitMs',
+            initializeMeetCoreClient({ authentication, appVersion, meetCoreWorkerEnabled, useCachedServerTime })
+        ),
+        measureLoadPhase('cryptoInitMs', bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient })),
         loadLocales({ locale: getBrowserLocale(), locales, userSettings: undefined }),
     ]);
+    setWasmMode(meetCoreClient);
     bootstrap.onAbort(signal, () => meetCoreClient.dispose());
 
     const history = createBrowserHistory({ basename: '/guest' });
 
-    await unauthenticatedApi.startUnAuthFlow();
+    await measureLoadPhase('sessionMs', unauthenticatedApi.startUnAuthFlow());
 
     void pruneOrphanBackgroundCaches();
 
@@ -489,7 +512,15 @@ export const bootstrapGuestApp = async (
         },
     });
 
+    initMeetTelemetry({
+        api: unauthenticatedApi.apiCallback,
+        getState: store.getState,
+        isEnabled: () => unleashClient.isEnabled(MEET_EXTENDED_TELEMETRY_FLAG),
+    });
+
     startMeetingInfoPreload({ dispatch: store.dispatch });
+
+    markBootstrapEnd();
 
     return {
         authentication,

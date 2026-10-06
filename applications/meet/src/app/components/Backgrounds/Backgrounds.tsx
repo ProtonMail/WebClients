@@ -7,6 +7,8 @@ import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice
 import { selectPendingBackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
 import { selectActiveCameraId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import { getBackgroundEffectType } from '@proton/meet/telemetry/dimensions';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
@@ -60,6 +62,10 @@ export const Backgrounds = () => {
     const selectedEffect = pendingBackgroundEffect ?? appliedBackgroundEffect;
 
     const handleSelectEffect = (effect: BackgroundEffect) => {
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.background_effect_selected, {
+            effectType: getBackgroundEffectType(effect),
+            source: 'settings',
+        });
         void selectBackgroundEffect(effect);
     };
 

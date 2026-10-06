@@ -30,6 +30,8 @@ import {
     selectUserId,
     setGuestBackgroundId,
 } from '@proton/meet/store/slices/userSlice';
+import { getBackgroundSizeBucket } from '@proton/meet/telemetry/buckets';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import {
     clearPersistedCustomBackgroundId,
     getPersistedCustomBackgroundId,
@@ -486,6 +488,14 @@ export const useCustomBackgrounds = ({
         // Local id: the Drive node UID only exists once the upload completes.
         const pendingId = `pending.${crypto.randomUUID()}`;
 
+        const sendUploadTelemetry = (outcome: 'success' | 'failed') =>
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.custom_background_uploaded, {
+                outcome,
+                sizeBucket: getBackgroundSizeBucket(file.size),
+            });
+
+        let isSaved = false;
+
         try {
             // Ahead of everything else, so nothing that fails here is read, uploaded, cached or
             // applied. Its media type and name are the only ones used from here on.
@@ -527,6 +537,7 @@ export const useCustomBackgrounds = ({
             // The cache is the only copy a guest has, so a dropped write loses the background.
             // Drive holds the original either way, so there it only costs a download.
             if (isGuest && !wasCached) {
+                sendUploadTelemetry('failed');
                 createNotification({
                     type: 'error',
                     text: c('Error').t`This background could not be saved in this browser.`,
@@ -536,8 +547,13 @@ export const useCustomBackgrounds = ({
             }
 
             renderAdded(record);
+            isSaved = true;
+            sendUploadTelemetry('success');
             await selectBackgroundEffect(toCustomBackgroundEffect(record.id));
         } catch (error) {
+            if (!isSaved) {
+                sendUploadTelemetry('failed');
+            }
             if (error instanceof InvalidBackgroundError) {
                 createNotification({ type: 'error', text: getRejectionMessage(error.reason) });
             } else if (isTransientDriveError(error)) {
@@ -567,6 +583,7 @@ export const useCustomBackgrounds = ({
             }
 
             await removeBackground(recordId);
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.custom_background_deleted);
 
             announce(announcementMessages.customBackgroundRemoved());
             await clearSelectionIfApplied(recordId);

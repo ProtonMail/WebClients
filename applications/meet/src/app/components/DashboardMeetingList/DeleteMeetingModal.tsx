@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useDeleteMeeting } from '@proton/meet/hooks/useDeleteMeeting';
 import { useGetMeetings } from '@proton/meet/store/hooks/useMeetings';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { CacheType } from '@proton/redux-utilities/interface';
 
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
@@ -23,6 +24,9 @@ export const DeleteMeetingModal = ({ meetingId, onClose, onDelete, isRoom }: Del
     const handleClick = async () => {
         try {
             await deleteMeeting.deleteMeeting(meetingId);
+            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_deleted, {
+                meetingKind: isRoom ? 'room' : 'scheduled',
+            });
             onClose();
             onDelete?.();
 

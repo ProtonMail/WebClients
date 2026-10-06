@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { toToggleState } from '@proton/meet/telemetry/dimensions';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import { useCaptionsAvailability } from '../../hooks/captions/useCaptionsAvailability';
 import { useCaptionsConsentSkipped } from '../../hooks/captions/useCaptionsConsentSkipped';
@@ -21,7 +23,14 @@ export const useLiveCaptionsToggle = () => {
     const [isCaptionsModalOpen, setIsCaptionsModalOpen] = useState(false);
 
     const setCaptions = (next: boolean) =>
-        withLoading(setWantsCaptions(next)).catch((error) => {
+        withLoading(
+            setWantsCaptions(next).then(() =>
+                sendMeetActionsEvent(TelemetryMeetActionsEvents.captions_toggled, {
+                    state: toToggleState(next),
+                    captionsScope: 'self',
+                })
+            )
+        ).catch((error) => {
             // eslint-disable-next-line no-console
             console.error('Failed to update live captions', error);
             createNotification({

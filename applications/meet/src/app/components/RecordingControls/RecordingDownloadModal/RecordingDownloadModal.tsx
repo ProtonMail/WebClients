@@ -1,8 +1,12 @@
+import { useEffect, useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { IcArrowDownCircle } from '@proton/icons/icons/IcArrowDownCircle';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { clearRecording, selectRecordingStatus } from '@proton/meet/store/slices/recordingsSlice';
+import { clearRecording, selectRecording, selectRecordingStatus } from '@proton/meet/store/slices/recordingsSlice';
+import { getRecordingDurationBucket } from '@proton/meet/telemetry/buckets';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import { useLastRecordingDownload } from '../../../hooks/useMeetingRecorder/hooks/useLastRecordingDownload';
 import { ConfirmationModal } from '../../ConfirmationModal/ConfirmationModal';
@@ -16,6 +20,12 @@ export const RecordingDownloadModal = () => {
     const status = useMeetSelector(selectRecordingStatus);
     const { downloadLastRecording } = useLastRecordingDownload();
     const announce = useAnnounce();
+    const recording = useMeetSelector(selectRecording);
+    const recordingReadyAtRef = useRef(0);
+
+    useEffect(() => {
+        recordingReadyAtRef.current = Date.now();
+    }, [recording]);
 
     if (status === null) {
         return null;
@@ -38,7 +48,22 @@ export const RecordingDownloadModal = () => {
         return <RecordingProcessingModal />;
     }
 
+    const sendPromptAnswered = (action: 'download' | 'dismiss') => {
+        if (recording) {
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.recording_download_prompt_answered, {
+                action,
+                recordingDurationBucket: getRecordingDurationBucket(recordingReadyAtRef.current - recording.createdAt),
+            });
+        }
+    };
+
+    const dismiss = () => {
+        sendPromptAnswered('dismiss');
+        close();
+    };
+
     const handleDownload = async () => {
+        sendPromptAnswered('download');
         try {
             await downloadLastRecording();
             announce(announcementMessages.recordingSaved(), {
@@ -58,8 +83,8 @@ export const RecordingDownloadModal = () => {
             primaryText={c('Action').t`Download`}
             onPrimaryAction={handleDownload}
             secondaryText={c('Action').t`Close`}
-            onSecondaryAction={close}
-            onClose={close}
+            onSecondaryAction={dismiss}
+            onClose={dismiss}
         />
     );
 };

@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcMeetConnectionIndicator } from '@proton/icons/icons/IcMeetConnectionIndicator';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import clsx from '@proton/utils/clsx';
 
 import './NetworkQualityIndicator.scss';
@@ -47,10 +48,19 @@ export const NetworkQualityIndicator = ({ size, participant, indicatorSize = 24 
         return () => {
             room.off('connectionQualityChanged', handleConnectionQualityChanged);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [participant.identity, room]);
 
     const pathVisibilityClasses = getPathVisibilityClasses(connectionQuality);
     const isDanger = connectionQuality === ConnectionQuality.Poor || connectionQuality === ConnectionQuality.Lost;
+
+    useEffect(() => {
+        if (participant.isLocal && isDanger) {
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.poor_connection_indicator_shown, {
+                networkQuality: connectionQuality === ConnectionQuality.Lost ? 'lost' : 'poor',
+            });
+        }
+    }, [participant.isLocal, isDanger, connectionQuality]);
 
     if (!isDanger) {
         // Only display icon when connection quality is poor or lost

@@ -4,6 +4,7 @@ import { Route, useHistory, useLocation } from 'react-router-dom';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { getIsGuestFromUrl, selectIsGuest } from '@proton/meet/store/slices/userSlice';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
@@ -86,6 +87,7 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
         if (location.pathname.includes(landingPageRoute)) {
             if (isGuest) {
+                sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_started_instant, { source: 'deeplink' });
                 history.push({ pathname: '/join', state: { instantJoin: true } });
             } else {
                 history.push('/dashboard');

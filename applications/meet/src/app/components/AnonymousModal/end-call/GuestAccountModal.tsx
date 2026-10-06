@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import type { CTAModalBaseProps } from '../shared/types';
 import { EndCallModalShell } from './EndCallModalShell';
@@ -27,6 +28,7 @@ export const GuestAccountModal = ({ open, onClose, action, rejoin }: CTAModalBas
                     <Button
                         className="secondary rounded-full px-10 py-4 text-semibold flex-auto w-full md:w-auto"
                         onClick={() => {
+                            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.sign_up_clicked);
                             onClose();
                             action();
                         }}
