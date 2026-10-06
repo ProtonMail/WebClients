@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { ToolInputError, UnknownReferenceError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 
 import type { Element } from '../../../models/element';
@@ -11,7 +12,7 @@ import {
     toDecryptedMessage,
     truncateBody,
 } from '../../helpers/messages';
-import { resolveId } from '../../helpers/references';
+import { resolveFreshElement } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 
 /** Keep an empty bucket out of the payload entirely, rather than telling the model about nothing. */
@@ -30,21 +31,21 @@ interface ReadEmailRow extends DecryptedMessage {
 
 /**
  * Told to the model so it cannot assume every requested email came back — and split by cause, because the
- * two need different recoveries: one is worth finding again, the other only worth retrying.
+ * two need different responses: one is a fact to relay, the other only worth retrying.
  */
 export interface ReadEmailsResult {
     emails: ReadEmailRow[];
-    /** Gone from the on-screen list, so there was nothing to open. */
-    notLoaded?: string[];
-    /** On screen, but did not decrypt inside the read's budget. */
+    deleted?: string[];
+    /** Opened, but did not decrypt inside the read's budget. */
     notDecrypted?: string[];
+    unreachable?: string[];
 }
 
 export const readEmailDefinition: ToolDefinition<ReadEmailParams, ReadEmailsResult> = {
     name: 'read_email',
     kind: 'read',
     toolDescription:
-        'Read the decrypted plain-text body of a specific email, identified by an email-… reference that view_emails, open_folder or search returned earlier. Use once you have a candidate row and need its contents — to answer a question about it, summarise it, or decide an action. Reading an email OPENS it in the reading pane, so to answer about or act on ONE email, read just the SINGLE best-matching row — that email is then what the user sees. Pass MULTIPLE references ONLY when the user explicitly wants several emails summarised or compared together; in that case also set best_match to the one reference to leave open on screen (the row that best answers the user). Each reference must be a real email-… you were given: never call this with empty, missing, or invented references. A reference can also go stale once the rows leave the screen; if the result says one is no longer loaded, find it again with search or view_emails rather than asking the user. If you have already identified which email to read, pass its exact reference now rather than deferring. To read the email the user currently has OPEN in the reading pane, use read_open_email instead. To read every message in a conversation, use read_thread. Example: after search returns `email-a1b2c3 | … | Fw: Votre séjour`, call with { "references": ["email-a1b2c3"], "best_match": null }.',
+        'Read the decrypted plain-text body of a specific email, identified by an email-… reference that view_emails, open_folder or search returned earlier. Use once you have a candidate row and need its contents — to answer a question about it, summarise it, or decide an action. Reading an email OPENS it in the reading pane, so to answer about or act on ONE email, read just the SINGLE best-matching row — that email is then what the user sees. Pass MULTIPLE references ONLY when the user explicitly wants several emails summarised or compared together; in that case also set best_match to the one reference to leave open on screen (the row that best answers the user). Each reference must be a real email-… you were given: never call this with empty, missing, or invented references. A reference from any earlier result stays valid for the whole conversation, even once its row has left the screen, so pass it straight here rather than searching again. If you have already identified which email to read, pass its exact reference now rather than deferring. To read the email the user currently has OPEN in the reading pane, use read_open_email instead. To read every message in a conversation, use read_thread. Example: after search returns `email-a1b2c3 | … | Fw: Votre séjour`, call with { "references": ["email-a1b2c3"], "best_match": null }.',
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
@@ -79,11 +80,14 @@ export const readEmailDefinition: ToolDefinition<ReadEmailParams, ReadEmailsResu
                     )}`
             ),
         ];
-        if (result.notLoaded?.length) {
-            parts.push(`No longer loaded on screen: ${result.notLoaded.join(', ')}.`);
+        if (result.deleted?.length) {
+            parts.push(`Permanently deleted, so not read: ${result.deleted.join(', ')}.`);
         }
         if (result.notDecrypted?.length) {
             parts.push(`Could not read (didn't open in time): ${result.notDecrypted.join(', ')}.`);
+        }
+        if (result.unreachable?.length) {
+            parts.push(`Could not read (failed to load from the server): ${result.unreachable.join(', ')}.`);
         }
         return parts.join('\n\n');
     },
@@ -102,11 +106,12 @@ export const createReadEmailHandler =
     (mail: MailToolDeps): ToolHandler<ReadEmailParams, ReadEmailsResult> =>
     async ({ references: emailReferences, best_match }, { references }) => {
         const emails: ReadEmailRow[] = [];
-        const notLoaded: string[] = [];
+        const deleted: string[] = [];
         const notDecrypted: string[] = [];
+        const unreachable: string[] = [];
         const outOfTime = createDecryptDeadline();
 
-        const elementFor = (id: string) => mail.store.getState().elements.elements[id];
+        const readElements = new Map<string, Element>();
         let openReference: string | undefined;
         const open = (element: Element, reference: string) => {
             openInReadingPane(mail, element);
@@ -119,32 +124,40 @@ export const createReadEmailHandler =
                 continue;
             }
 
-            const id = resolveId(reference, references);
-            const element = elementFor(id);
-            if (!element) {
-                notLoaded.push(reference);
+            let element: Element;
+            try {
+                element = await resolveFreshElement(mail, reference, references);
+            } catch (error) {
+                if (error instanceof UnknownReferenceError) {
+                    throw error;
+                }
+                (error instanceof ToolInputError ? deleted : unreachable).push(reference);
                 continue;
             }
 
             // Navigating is what triggers the decrypt.
             open(element, reference);
-            const decrypted = await readDecryptedMessage(mail.store, id);
+            const decrypted = await readDecryptedMessage(mail.store, element.ID);
             if (!decrypted) {
                 notDecrypted.push(reference);
                 continue;
             }
+            readElements.set(reference, element);
             emails.push({ reference, ...toDecryptedMessage(decrypted) });
         }
 
         // Leave the model-designated best match open, unless the batch already ended on it.
-        if (best_match && best_match !== openReference && emails.some((email) => email.reference === best_match)) {
-            const element = elementFor(resolveId(best_match, references));
-            if (element) {
-                open(element, best_match);
-            }
+        const bestMatchElement = best_match ? readElements.get(best_match) : undefined;
+        if (best_match && bestMatchElement && best_match !== openReference) {
+            open(bestMatchElement, best_match);
         }
 
-        return { emails, notLoaded: named(notLoaded), notDecrypted: named(notDecrypted) };
+        return {
+            emails,
+            deleted: named(deleted),
+            notDecrypted: named(notDecrypted),
+            unreachable: named(unreachable),
+        };
     };
 
 export const readEmailModule: MailToolModule = {

@@ -112,7 +112,7 @@ const TOOL_PAYLOADS = [
     ]),
     payloads(readEmailDefinition, [
         { emails: [email] },
-        { emails: [], notLoaded: ['email-a1b2c3'], notDecrypted: ['email-d4e5f6'] },
+        { emails: [], deleted: ['email-a1b2c3'], notDecrypted: ['email-d4e5f6'] },
     ]),
     payloads(readOpenEmailDefinition, [{ isOpen: false }, { isOpen: true }, { isOpen: true, email }]),
     payloads(readThreadDefinition, [
