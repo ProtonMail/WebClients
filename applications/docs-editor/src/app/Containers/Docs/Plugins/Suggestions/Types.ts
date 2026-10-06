@@ -1,4 +1,4 @@
-import type { SuggestionType } from '@proton/docs-shared'
+import type { SuggestionType } from '../../contract/SuggestionType'
 import type { ElementFormatType } from 'lexical'
 import type { BlockType } from '../BlockTypePlugin'
 import type { ListInfo } from '../CustomList/$getListInfo'
