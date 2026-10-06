@@ -38,6 +38,9 @@
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
+      "More info": [
+        "მეტი ინფორმაცია"
+      ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
       ],
@@ -1490,14 +1493,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "მოირგეთ სერვისი უფრო კარგად ელფოსტის 15 მისამართითა და 3 ხელით მითითებული ელფოსტის დომენის საშუალებით"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "გაზარდეთ თქვენი საცავი ${ bundleStorage }-მდე თითოეული მომხმარებლისთვის"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "გაზარდეთ თქვენი საცავი ${ bundleStorage }-მდე"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } მომხმარებლის დომენის მხარდაჭერა",
@@ -1507,11 +1504,6 @@
     "Placeholder": {
       "Password": [
         "პაროლი"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "ყველა პრემიუმ ფუნქცია ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-ისგან, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }-ისგან"
       ]
     },
     "saml: Error": {

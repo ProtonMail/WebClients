@@ -38,6 +38,9 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
+      "More info": [
+        "Více informací"
+      ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
@@ -1520,14 +1523,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Získejte 15 e-mailových adres a podporu pro 3 vlastní e-mailové domény"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Navyšte úložný prostor na ${ bundleStorage } pro každého uživatele"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Zvyšte úložný prostor na ${ bundleStorage } celkem"
       ],
       "Support for ${ n } custom email domain": [
         "Podpora ${ n } vlastní e-mailové domény",
@@ -1539,11 +1536,6 @@
     "Placeholder": {
       "Password": [
         "Heslo"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {

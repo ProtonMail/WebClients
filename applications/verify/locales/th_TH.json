@@ -38,6 +38,9 @@
       "Get verification code": [
         "ใช้รหัสยืนยันตัวตน"
       ],
+      "More info": [
+        "ข้อมูลเพิ่มเติม"
+      ],
       "More info: ${ safeTitle }": [
         "ข้อมูลเพิ่มเติม: ${ safeTitle }"
       ],
@@ -1475,14 +1478,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "เพิ่มความเป็นส่วนตัวมากขึ้นด้วยที่อยู่อีเมล 15 รายการและการรองรับโดเมนอีเมลที่กำหนดเอง 3 โดเมน"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "เพิ่มพื้นที่จัดเก็บข้อมูลของคุณเป็น ${ bundleStorage } ต่อผู้ใช้"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "เพิ่มพื้นที่จัดเก็บของคุณเป็น ${ bundleStorage } ทั้งหมด"
       ],
       "Support for ${ n } custom email domain": [
         "รองรับโดเมนอีเมลที่กำหนดเอง ${ n } โดเมน"
@@ -1491,11 +1488,6 @@
     "Placeholder": {
       "Password": [
         "รหัสผ่าน"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "คุณสมบัติพรีเมียมทั้งหมดจาก ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } และ ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
