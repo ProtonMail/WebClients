@@ -117,11 +117,12 @@ const TrialCopy = ({ subscription, onLearnMore }: { subscription: Subscription; 
 
     return (
         <>
-            <div className="color-weak mt-1">{c('Info')
-                .jt`On ${formattedPeriodEndDate}, your free trial ends and your paid plan starts.`}</div>
-            <InlineLinkButton className="color-weak" onClick={onLearnMore}>
-                {c('Link').t`Learn more`}
-            </InlineLinkButton>
+            <div className="color-weak mt-1">
+                {c('Info').jt`On ${formattedPeriodEndDate}, your free trial ends and your paid plan starts.`}{' '}
+                <InlineLinkButton className="color-weak" onClick={onLearnMore}>
+                    {c('Link').t`Learn more`}
+                </InlineLinkButton>
+            </div>
         </>
     );
 };
