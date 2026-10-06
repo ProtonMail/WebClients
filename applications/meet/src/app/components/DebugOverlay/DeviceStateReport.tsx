@@ -73,6 +73,7 @@ interface Snapshot {
     webAudioMixEnabled: boolean;
     microphoneTrackDeviceId: string | undefined;
     microphoneProcessing: string;
+    microphoneTrackState: string;
     cameraTrackDeviceId: string | undefined;
     audioContextState: string;
     audioContextSampleRate: string;
@@ -90,6 +91,7 @@ const EMPTY_SNAPSHOT: Snapshot = {
     webAudioMixEnabled: false,
     microphoneTrackDeviceId: undefined,
     microphoneProcessing: '(none)',
+    microphoneTrackState: '(no track)',
     cameraTrackDeviceId: undefined,
     audioContextState: '(none)',
     audioContextSampleRate: '(none)',
@@ -184,11 +186,18 @@ const DeviceSection = ({
                 />
             )}
             {kind === 'audioinput' && (
-                <Field
-                    name="applied processing"
-                    value={snapshot.microphoneProcessing}
-                    highlight={snapshot.microphoneProcessing.includes('aec:false')}
-                />
+                <>
+                    <Field
+                        name="applied processing"
+                        value={snapshot.microphoneProcessing}
+                        highlight={snapshot.microphoneProcessing.includes('aec:false')}
+                    />
+                    <Field
+                        name="track readyState"
+                        value={snapshot.microphoneTrackState}
+                        highlight={snapshot.microphoneTrackState.includes('capture:ended')}
+                    />
+                </>
             )}
 
             <Field name="preferred" value={describe(devices, preferredDeviceId)} />
@@ -310,6 +319,8 @@ export const DeviceStateReport = () => {
             const cameraTrack = room.localParticipant.getTrackPublication(Track.Source.Camera)?.track;
 
             const micSettings = microphoneTrack?.mediaStreamTrack?.getSettings() as MediaTrackSettings | undefined;
+            const microphoneCaptureState = microphoneTrack?.mediaStream?.getAudioTracks()[0]?.readyState;
+            const microphoneProcessedState = microphoneTrack?.getProcessor()?.processedTrack?.readyState;
 
             setSnapshot({
                 enumerated,
@@ -332,6 +343,9 @@ export const DeviceStateReport = () => {
                           `agc:${micSettings.autoGainControl}`,
                           `ch:${micSettings.channelCount}`,
                       ].join(' ')
+                    : '(no track)',
+                microphoneTrackState: microphoneTrack
+                    ? `capture:${microphoneCaptureState ?? '(none)'} processed:${microphoneProcessedState ?? '(no processor)'}`
                     : '(no track)',
                 cameraTrackDeviceId: cameraTrack?.mediaStreamTrack?.getSettings().deviceId,
                 audioContextState: audioContext?.state ?? '(none)',
