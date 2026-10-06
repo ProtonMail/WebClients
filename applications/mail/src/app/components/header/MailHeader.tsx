@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import FloatingButton from '@proton/components/components/button/FloatingButton';
 import Hamburger from '@proton/components/components/sidebar/Hamburger';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
@@ -12,6 +13,7 @@ import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+import { OfferDealModal } from '@proton/offers-delivery/components/OfferDealModal';
 import { OfferNavbarButton } from '@proton/offers-delivery/components/OfferNavbarButton';
 import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
 import { CampaignVariant } from '@proton/offers-delivery/interface';
@@ -67,12 +69,13 @@ const MailHeader = ({ labelID, elementsData, actions, assistantButton, settingsB
     // TODO: placeholder until the campaign upsell path is decided. Might be more complicated involving plans etc
     const onUpgrade = useOfferUpgrade('upsell_mail-button-offers-delivery-placeholder');
     const offer = useActiveOffer(CampaignVariant.MODAL, { onUpgrade });
+    const [offerModalProps, setOfferModalOpen, renderOfferModal] = useModalState();
 
     const offerButton =
         offer && !hideUpsellButton ? (
             <OfferNavbarButton
                 offer={offer}
-                onClick={onUpgrade}
+                onClick={() => setOfferModalOpen(true)}
                 icon={<IcBoltFilled size={5} />}
                 backgroundColor="linear-gradient(to right, #fa5c37 0%, #392289 55.288%, #170a31 100%)"
                 color="white"
@@ -118,6 +121,7 @@ const MailHeader = ({ labelID, elementsData, actions, assistantButton, settingsB
                     </FloatingButton>
                 }
             />
+            {renderOfferModal && offer && <OfferDealModal offer={offer} {...offerModalProps} />}
         </>
     );
 };
