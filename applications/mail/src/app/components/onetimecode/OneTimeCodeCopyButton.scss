@@ -1,19 +1,27 @@
-.otp-key-icon {
-	// Orient the diagonal key so the bow (big part) sits on the left and the teeth
-	// point right. At rest the key is rolled so the teeth face down; on hover it
-	// unwinds so the teeth face up — "turning in a lock", bow staying on the left.
-	transform: perspective(400px) rotateX(180deg) rotate(-135deg);
-	transition: transform 0.4s ease-out;
-}
+@use '~@proton/styles/scss/lib/rem' as *;
 
-.otp-copy-button:hover .otp-key-icon {
-	transform: perspective(400px) rotateX(0deg) rotate(-135deg);
-}
+.otp-copy-button {
+	--button-default-background-color: transparent;
+	--button-hover-background-color: transparent;
+	--button-active-background-color: transparent;
+	--button-default-border-color: var(--interaction-norm-major-1);
+	--button-hover-border-color: var(--interaction-norm);
+	--button-active-border-color: var(--interaction-norm);
+	--button-hover-text-color: var(--interaction-norm);
+	--button-active-text-color: var(--interaction-norm);
 
-@media (prefers-reduced-motion: reduce) {
-	.otp-key-icon,
-	.otp-copy-button:hover .otp-key-icon {
-		transition: none;
-		transform: rotateX(180deg) rotate(-135deg); // bow left, teeth down, no roll
+	&--copied {
+		--button-default-border-color: var(--signal-success);
+		--button-hover-border-color: var(--signal-success);
+		--button-active-border-color: var(--signal-success);
+		--button-default-text-color: var(--signal-success);
+		--button-hover-text-color: var(--signal-success);
+		--button-active-text-color: var(--signal-success);
+	}
+
+	&--compact {
+		--padding-block: 0;
+
+		line-height: #{rem(18)};
 	}
 }
