@@ -4,8 +4,8 @@ import type { StaticExperimentConfig } from './types';
 
 export const staticExperimentsConfig = {
     /**
-     * Which challenge frame the login form loads. Keep disabled until the API serves
-     * `/challenge/v5/html`. When enabled, users assigned `v5` use the new frame;
+     * Which challenge frame the login form loads.
+     * When enabled, users assigned `v5` use the new frame;
      * everyone else uses v4.
      */
     ChallengeV5: {
@@ -14,7 +14,7 @@ export const staticExperimentsConfig = {
         schedule: [
             {
                 startsAt: '2026-01-01T00:00:00.000Z',
-                weights: { v4: 90, v5: 10 },
+                weights: { v4: 0, v5: 100 },
             },
         ],
     },
