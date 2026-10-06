@@ -682,6 +682,12 @@
       "Show Less": [
         "Mostrar menos"
       ],
+      "Show less": [
+        "Mostrar menos"
+      ],
+      "Show more": [
+        "Mostrar mais"
+      ],
       "Sign back in": [
         "Inicie sessão novamente"
       ],
@@ -1840,9 +1846,6 @@
       "Can view this item.": [
         "Pode ver este item."
       ],
-      "Change your password": [
-        "Altere a sua palavra-passe"
-      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Escolha uma Chave de acesso guardada para iniciar sessão em ${ domain }."
       ],
@@ -1942,9 +1945,6 @@
       "Editor": [
         "Editor"
       ],
-      "email": [
-        "e-mail"
-      ],
       "Email address successfully deleted from monitoring": [
         "O endereço de e-mail foi eliminado da monitorização."
       ],
@@ -2040,9 +2040,6 @@
       ],
       "Fill in the CSV with your data": [
         "Preencha o ficheiro CSV com os seus dados"
-      ],
-      "finance": [
-        "finanças"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Siga estes passos para importar os seus dados com um ficheiro CSV genérico:"
@@ -2200,9 +2197,6 @@
       "Medium Priority": [
         "Prioridade média"
       ],
-      "Monitor accounts": [
-        "Monitor de contas"
-      ],
       "Monitoring settings successfully updated": [
         "As definições de monitorização foram atualizadas."
       ],
@@ -2314,9 +2308,6 @@
       ],
       "Passkey sign-in": [
         "Iniciar sessão com uma chave de acesso"
-      ],
-      "password": [
-        "palavra-passe"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "O bloqueio por palavra-passe foi registado. Utilize-o para desbloquear o ${ PASS_APP_NAME }"
@@ -2805,9 +2796,6 @@
       ],
       "User's access successfully updated": [
         "O acesso do utilizador foi atualizado."
-      ],
-      "username": [
-        "nome de utilizador"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "O cofre \"${ payload.content.name }\" foi eliminado."
@@ -5439,9 +5427,6 @@
       ],
       "Move to trash": [
         "Mover para o lixo"
-      ],
-      "Name is required": [
-        "É necessário um nome."
       ],
       "No items": [
         "Nenhum item"

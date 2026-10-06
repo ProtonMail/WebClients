@@ -38,6 +38,9 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
+      "More info": [
+        "Detalii"
+      ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
       ],
@@ -1529,14 +1532,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Adăugați mai multe personalizări cu 15 adrese de e-mail și până la 3 domenii adiționale de e-mail personale"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Măriți spațiul de stocare la ${ bundleStorage } per utilizator"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Măriți spațiul de stocare la ${ bundleStorage } în total"
       ],
       "Support for ${ n } custom email domain": [
         "Domenii de e-mail personal acceptate: ${ n }",
@@ -1547,11 +1544,6 @@
     "Placeholder": {
       "Password": [
         "Parola"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {

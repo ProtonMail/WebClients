@@ -577,6 +577,12 @@
       "Show advanced options": [
         "Prikaži napredne možnosti"
       ],
+      "Show less": [
+        "Pokaži manj"
+      ],
+      "Show more": [
+        "Prikaži več"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Prijava z ${ BRAND_NAME }."
       ],
@@ -1319,9 +1325,6 @@
       "Can view this item.": [
         "Lahko si ogleda ta predmet."
       ],
-      "Change your password": [
-        "Spremenite vaše geslo"
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "Potrdite svoje dodatno geslo, da nadaljujete z njegovo odstranitvijo."
       ],
@@ -1358,9 +1361,6 @@
       "Editor": [
         "Urejevalnik"
       ],
-      "email": [
-        "e-pošta"
-      ],
       "Email address successfully deleted from monitoring": [
         "E-poštni naslov uspešno izbrisan iz nadzora."
       ],
@@ -1396,9 +1396,6 @@
       ],
       "Fill in the CSV with your data": [
         "Izpolnite CSV s svojimi podatki"
-      ],
-      "finance": [
-        "finance"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Iz varnostnih razlogov mora biti vaš dostop potrjen"
@@ -1529,9 +1526,6 @@
       "Medium Priority": [
         "Srednja pomembnost"
       ],
-      "Monitor accounts": [
-        "Nadzor računov"
-      ],
       "Monitoring settings successfully updated": [
         "Nastavitve nadzora so bile posodobljene."
       ],
@@ -1568,6 +1562,9 @@
       "None": [
         "Brez"
       ],
+      "Not recommended": [
+        "Ni priporočljivo"
+      ],
       "Offline mode": [
         "Način brez povezave"
       ],
@@ -1585,9 +1582,6 @@
       ],
       "Pass Plus trial": [
         "Pass Plus preizkus"
-      ],
-      "password": [
-        "geslo"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna, se samodejno izbrišejo iz zgodovine.",
@@ -1804,9 +1798,6 @@
       ],
       "User's access removed": [
         "Uporabnikov dostop odstranjen"
-      ],
-      "username": [
-        "uporabniško ime"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" je izbrisan"
@@ -3698,9 +3689,6 @@
       ],
       "Move to trash": [
         "Premakni v smetnjak"
-      ],
-      "Name is required": [
-        "Zahtevano je ime"
       ],
       "No items": [
         "Ni predmetov"

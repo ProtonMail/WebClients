@@ -325,9 +325,6 @@
       "Enable camera": [
         "Abilita la telecamera"
       ],
-      "Enable captions": [
-        "Abilita didascalie"
-      ],
       "Enable waiting room": [
         "Attiva sala d'attesa"
       ],
@@ -409,6 +406,9 @@
       "Minimize preview": [
         "Riduci a icona anteprima"
       ],
+      "More info": [
+        "Altre informazioni"
+      ],
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
       ],
@@ -429,6 +429,9 @@
       ],
       "Noise cancellation": [
         "Eliminazione del rumore"
+      ],
+      "Not now": [
+        "Non ora"
       ],
       "Open app": [
         "Apri l'app"
@@ -621,6 +624,9 @@
       "Stop Recording Track Stats": [
         "Interrompi statistiche registrazione traccia"
       ],
+      "Stop sharing": [
+        "Interrompi condivisione"
+      ],
       "Submit": [
         "Invia"
       ],
@@ -707,9 +713,6 @@
       "Blur background": [
         "Sfocatura dello sfondo"
       ],
-      "Chat": [
-        "Chat"
-      ],
       "Close": [
         "Chiudi"
       ],
@@ -721,15 +724,6 @@
       ],
       "Copy meeting link": [
         "Copia il link della riunione"
-      ],
-      "Debug devices": [
-        "Dispositivi per il debug"
-      ],
-      "Debug overlay": [
-        "Overlay debug"
-      ],
-      "Device Debugger": [
-        "Debugger del dispositivo"
       ],
       "Go to dashboard": [
         "Vai alla dashboard"
@@ -745,12 +739,6 @@
       ],
       "Lock meeting": [
         "Blocca riunione"
-      ],
-      "Lower hand": [
-        "Abbassa la mano"
-      ],
-      "Meeting details": [
-        "Dettagli della riunione"
       ],
       "Meeting timer": [
         "Timer della riunione"
@@ -770,14 +758,8 @@
       "Participant host control options": [
         "Opzioni di controllo per i partecipanti"
       ],
-      "Participants": [
-        "Partecipanti"
-      ],
       "Picture-in-picture while sharing": [
         "Modalità Picture-in-picture durante la condivisione"
-      ],
-      "Raise hand": [
-        "Alza la mano"
       ],
       "Rotate camera": [
         "Ruota la webcam"
@@ -785,14 +767,8 @@
       "Save my name on this device": [
         "Salva il mio nome su questo dispositivo"
       ],
-      "Screen share": [
-        "Condivisione schermo"
-      ],
       "Self view": [
         "Vista personale"
-      ],
-      "Settings": [
-        "Impostazioni"
       ],
       "Stop recording and download.": [
         "Interrompi la registrazione e scarica."
@@ -803,17 +779,11 @@
       "Toggle emoji reactions": [
         "Attiva/disattiva le reazioni con emoji"
       ],
-      "Toggle meeting details": [
-        "Attiva/disattiva i dettagli della riunione"
-      ],
       "Toggle participants": [
         "Attiva/disattiva partecipanti"
       ],
       "Toggle screen share": [
         "Alterna condivisione schermo"
-      ],
-      "Toggle settings": [
-        "Cambia le impostazioni"
       ],
       "Video settings": [
         "Impostazioni video"
@@ -2884,9 +2854,6 @@
       "Share screen": [
         "Condividi schermo"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Condividi questo link per invitare altri. Puoi anche trovarlo in qualsiasi momento cliccando sull'icona info nella barra degli strumenti."
-      ],
       "Sign in": [
         "Accedi"
       ],
@@ -2895,9 +2862,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "La selezione dell'altoparlante non è disponibile in questo browser. Usa le impostazioni di sistema per scegliere un altoparlante diverso."
-      ],
-      "Start recording": [
-        "Inizia registrazione"
       ],
       "Starting camera…": [
         "Avvio fotocamera in corso…"
@@ -2959,9 +2923,6 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Per creare una stanza, ti serve **un account ${ BRAND_NAME } gratuito** in modo da poterla salvare. Richiede solo pochi secondi."
       ],
-      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
-        "Per creare i sottotitoli in tempo reale, il servizio necessita dell'accesso all'audio della riunione. I sottotitoli sono visibili solo a te e non vengono salvati."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
@@ -2982,9 +2943,6 @@
       ],
       "Turn on camera": [
         "Attiva la webcam"
-      ],
-      "Turn on live captions?": [
-        "Attivare i sottotitoli in tempo reale?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Impossibile riconnettersi alla riunione. Unisciti di nuovo o esci."
@@ -3045,6 +3003,9 @@
       ],
       "Yesterday — ${ absoluteDate }": [
         "Ieri — ${ absoluteDate }"
+      ],
+      "You": [
+        "Tu"
       ],
       "You are almost there": [
         "Ci sei quasi"
@@ -3276,6 +3237,9 @@
       ],
       "Monday to Friday": [
         "Da lunedì a venerdì"
+      ],
+      "More options": [
+        "Altre opzioni"
       ],
       "Muted": [
         "Muto"

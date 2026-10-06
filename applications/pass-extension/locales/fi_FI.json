@@ -694,6 +694,12 @@
       "Show Less": [
         "Näytä vähemmän"
       ],
+      "Show less": [
+        "Näytä vähemmän"
+      ],
+      "Show more": [
+        "Näytä lisää"
+      ],
       "Sign back in": [
         "Kirjaudu uudelleen"
       ],
@@ -1864,9 +1870,6 @@
       "Can view this item.": [
         "Voi tarkastella tätä kohdetta."
       ],
-      "Change your password": [
-        "Vaihda salasanasi"
-      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Valitse tallennettu pääsyavain, jolla kirjaudutaan osoitteeseen ${ domain }"
       ],
@@ -1966,9 +1969,6 @@
       "Editor": [
         "Muokkaus"
       ],
-      "email": [
-        "sähköpostiosoite"
-      ],
       "Email address successfully deleted from monitoring": [
         "Sähköpostiosoite poistettiin valvonnasta"
       ],
@@ -2065,8 +2065,8 @@
       "Fill in the CSV with your data": [
         "Täytä CSV omilla tiedoillasi"
       ],
-      "finance": [
-        "rahoitus"
+      "Folder deleted": [
+        "Kansio poistettiin"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Noudata ohjeita tuodaksesi tietosi yleisellä CSV-tiedostolla:"
@@ -2224,9 +2224,6 @@
       "Medium Priority": [
         "Keskitason tärkeys"
       ],
-      "Monitor accounts": [
-        "Valvo tilejä"
-      ],
       "Monitoring settings successfully updated": [
         "Valvonnan asetukset päivitettiin"
       ],
@@ -2338,9 +2335,6 @@
       ],
       "Passkey sign-in": [
         "Kirjaudu pääsyavaimella"
-      ],
-      "password": [
-        "salasana"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Salasanalukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in salasanallasi."
@@ -2829,9 +2823,6 @@
       ],
       "User's access successfully updated": [
         "Käyttäjän käyttöoikeutta muutettiin"
-      ],
-      "username": [
-        "käyttäjätunnus"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Holvi \"${ payload.content.name }\" poistettiin"
@@ -5116,6 +5107,9 @@
       "Remove secure link?": [
         "Poistetaanko suojattu linkki?"
       ],
+      "Rename folder": [
+        "Nimeä kansio uudelleen"
+      ],
       "Reset history for this item?": [
         "Nollataanko tämän kohteen historia?"
       ],
@@ -5466,9 +5460,6 @@
       ],
       "Move to trash": [
         "Siirrä roskakoriin"
-      ],
-      "Name is required": [
-        "Nimi vaaditaan"
       ],
       "No items": [
         "Kohteita ei ole"

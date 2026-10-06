@@ -1697,11 +1697,26 @@
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
+      "Apply border": [
+        "Anvend kant"
+      ],
+      "Apply fill color": [
+        "Anvend fyldfarve"
+      ],
+      "Apply text color": [
+        "Anvend tekstfarve"
+      ],
       "Bold": [
         "Fed"
       ],
-      "Border": [
-        "Kant"
+      "Choose border": [
+        "Vælg kant"
+      ],
+      "Choose fill color": [
+        "Vælg fyldfarve"
+      ],
+      "Choose text color": [
+        "Vælg tekstfarve"
       ],
       "Clear formatting": [
         "Ryd formatering"
@@ -1717,9 +1732,6 @@
       ],
       "Default (${ defaultFont })": [
         "Standard (${ defaultFont })"
-      ],
-      "Fill color": [
-        "Fyldfarve"
       ],
       "Find": [
         "Find"
@@ -1783,9 +1795,6 @@
       ],
       "Strikethrough": [
         "Gennemstreget"
-      ],
-      "Text color": [
-        "Tekstfarve"
       ],
       "Text wrapping": [
         "Tekstombrydning"

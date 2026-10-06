@@ -522,6 +522,9 @@
       "More benefits": [
         "Дополнительные преимущества"
       ],
+      "More info": [
+        "Подробнее"
+      ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
@@ -1126,56 +1129,15 @@
         "Гарантия возврата средств в течение 30 дней"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
       ],
-      "1 user account": [
-        "1 аккаунт пользователя"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "Хранилище 200 ГБ: в 40 раз больше вашего текущего тарифа"
-      ],
-      "6 user accounts": [
-        "6 аккаунтов пользователя"
-      ],
-      "Admin panel to manage your family": [
-        "Панель администратора для управления вашей семьей"
-      ],
-      "Advanced account protection": [
-        "Расширенная защита аккаунта"
-      ],
-      "Easily add or remove users": [
-        "Легко добавлять или удалять участников"
-      ],
-      "One-time payment, lifetime deal": [
-        "Единовременная оплата, пожизненное предложение"
-      ],
-      "Online document editor": [
-        "Онлайн-редактор документов"
-      ],
-      "Password health alerts": [
-        "Оповещения о надёжности пароля"
-      ],
-      "Recover previous file versions": [
-        "Восстановление предыдущих версий файлов"
-      ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Неограниченное количество имен пользователей, кредитных карт, псевдонимов hide-my-email и многое другое"
       ],
       "Use your own email domain": [
         "Используйте свой собственный домен электронной почты"
@@ -1184,87 +1146,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Единоразовый платеж: ${ amount }"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Продлится через 1 месяц по цене ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Мы предлагаем свыше 8500 серверов более чем в 110 странах, 10 устройств, высокоскоростной стриминг, блокировщик рекламы и защиту от вредоносных программ, VPN Accelerator и многое другое."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Защитите логины на всех ваших устройствах, включая неограниченное число псевдонимов hide-my-email, совместное пользование, интегрированную двухфакторную аутентификацию, ${ DARK_WEB_MONITORING_NAME } и многое другое."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адресов электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адрес электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адреса электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адресов электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адресов электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адреса электронной почты, помощник по написанию ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и не только."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Защитите свои письма и расписание с помощью сквозного шифрования. В тариф входят 15 адресов электронной почты, поддержка собственных доменов электронной почты, неограниченное количество псевдонимов hide-my-email и многое другое."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает онлайн-редактор документов, резервное копирование фотографий, историю версий, зашифрованный обмен файлами и многое другое."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "Хранилище данных на 2 ТБ"
-      ],
-      "3 TB data storage": [
-        "Хранилище данных на 3 ТБ"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Доступ к 15 000+ серверов в 120+ странах"
-      ],
-      "Access advanced AI models": [
-        "Доступ к продвинутым моделям ИИ"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Блокировка рекламы, трекеров и вредоносных программ"
-      ],
-      "Built-in 2FA authenticator": [
-        "Встроенный аутентификатор 2FA"
-      ],
-      "Connect 10 devices at once": [
-        "Подключение 10 устройств одновременно"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Полная история чата с удобным поиском и разделом «Избранное»"
-      ],
-      "Individual accounts for 6 users": [
-        "Индивидуальные аккаунты для 6 пользователей"
-      ],
-      "Individual accounts for you and a partner": [
-        "Индивидуальные аккаунты для вас и вашего партнера"
-      ],
-      "Stronger protection against cyber threats": [
-        "Более надежная защита от киберугроз"
-      ],
-      "Unlimited daily chats": [
-        "Безлимитные чаты ежедневно"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Специально разработанная функция NetShield защищает ваши устройства и ускоряет работу в интернете, блокируя рекламу, трекеры и вредоносные программы."
       ]
     },
     "Browser": {
@@ -1450,9 +1336,6 @@
       ],
       "Basic chat history": [
         "Базовая история чата"
-      ],
-      "Built and based in Europe": [
-        "Разработано и базируется в Европе"
       ],
       "Compliance with data protection regulations": [
         "Соблюдение правовых норм по защите данных"
@@ -2994,9 +2877,6 @@
       "Error decrypting a computer": [
         "Ошибка расшифровки компьютера"
       ],
-      "External invitations are not available yet.": [
-        "Внешние приглашения пока недоступны."
-      ],
       "External invitations are temporarily disabled.": [
         "Внешние приглашения временно отключены."
       ],
@@ -3617,16 +3497,6 @@
         "(без названия)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "Хранилище на 3 ТБ"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } доступно всем членам семьи."
-      ]
-    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "Отклонить приглашение"
@@ -3636,11 +3506,6 @@
       ],
       "Switch plans": [
         "Сменить тариф"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "До 6 пользователей"
       ]
     },
     "familyOffer_2023:Error": {
@@ -3741,17 +3606,6 @@
       ],
       "Delete organization?": [
         "Удалить организацию?"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Включает 2700 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Включает поддержку 3 своих доменов, 90 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другое."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
       ]
     },
     "Feature": {
@@ -4496,12 +4350,6 @@
       "and": [
         "и"
       ],
-      "Anyone with this link can access your file.": [
-        "Доступ к файлу разрешен всем, у кого есть ссылка."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Доступ к вашей папке разрешен всем, у кого есть эта ссылка."
-      ],
       "Are you sure you want to discard your import?": [
         "Вы уверены, что хотите сбросить импорт?"
       ],
@@ -4549,9 +4397,6 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
-      ],
-      "Change your password": [
-        "Измените пароль"
       ],
       "characters": [
         "символы"
@@ -4628,17 +4473,8 @@
       "Create in": [
         "Создать в"
       ],
-      "Create public link": [
-        "Создать публичную ссылку"
-      ],
       "Create your first folder and start moving your files.": [
         "Создайте свою первую папку и начните перемещать файлы."
-      ],
-      "Creating link to file": [
-        "Создание ссылки на файл"
-      ],
-      "Creating link to folder": [
-        "Создание ссылки на папку"
       ],
       "Current plan": [
         "Текущий тариф"
@@ -4691,9 +4527,6 @@
       "Edit email address": [
         "Изменить адрес электронной почты"
       ],
-      "email": [
-        "электронная почта"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
       ],
@@ -4745,15 +4578,6 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Все возможности ${ planOrAppName }, а также:"
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Не удалось сгенерировать защищенную ссылку. Причина: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Не удалось сгенерировать защищенную ссылку. Повторите попытку позже"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Не удалось открыть защищенную ссылку. Причина: ${ error }"
-      ],
       "Failing signatures will be re-signed by you": [
         "Неудавшиеся подписи будут вами переподписаны"
       ],
@@ -4762,9 +4586,6 @@
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Только файлы (без фото, ${ DOCS_APP_NAME } или ${ SHEETS_APP_NAME }) — в общей сложности до 100 ГБ, 100 000 файлов и 50 ГБ на один файл"
-      ],
-      "finance": [
-        "финансы"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Папка \"${ link.name }\" была удалена во время загрузки"
@@ -4919,9 +4740,6 @@
       "Loading document...": [
         "Загрузка документа..."
       ],
-      "Loading link": [
-        "Загрузка ссылки"
-      ],
       "Loading...": [
         "Загрузка..."
       ],
@@ -4948,9 +4766,6 @@
       ],
       "Merged": [
         "Объединённые"
-      ],
-      "Monitor accounts": [
-        "Отслеживать аккаунты"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Большинство публичных сетей WiFi безопасны, но в некоторых из них отсутствует защита, что подвергает вас киберугрозам. VPN шифрует ваш трафик, обеспечивая вам защиту."
@@ -5000,12 +4815,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Только люди со ссылкой и паролем могут получить доступ к этой папке."
-      ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "Ой! Не удается сохранить последние изменения в этой электронной таблице, поэтому мы приостановили редактирование, чтобы вы не потеряли свою работу."
       ],
@@ -5024,14 +4833,8 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
       ],
-      "Owner": [
-        "Владелец"
-      ],
       "owner": [
         "владелец"
-      ],
-      "password": [
-        "пароль"
       ],
       "Password copied to clipboard": [
         "Пароль скопирован в буфер обмена"
@@ -5044,9 +4847,6 @@
       ],
       "Pending invitations": [
         "Ожидающие приглашения"
-      ],
-      "People with access": [
-        "Люди с доступом"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline совместим только с форматом «простой текст»."
@@ -5095,12 +4895,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пожалуйста, подождите, пока мы ищем контакты с данными, зашифрованными неактивным ключом."
-      ],
-      "Preparing link to file": [
-        "Подготовка ссылки на файл"
-      ],
-      "Preparing link to folder": [
-        "Подготовка ссылки на папку"
       ],
       "Primary": [
         "Основной"
@@ -5176,9 +4970,6 @@
       ],
       "Settings updated": [
         "Настройки обновлены"
-      ],
-      "Share via link settings": [
-        "Поделиться через настройки ссылки"
       ],
       "Shared by": [
         "Совместное использование"
@@ -5285,9 +5076,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
       ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Эта ссылка была создана в предыдущей версии и не может быть изменена. Удалите эту ссылку и создайте новую, чтобы изменить настройки."
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Это означает, что ваш интернет-провайдер и посещаемые вами сайты не смогут связать вашу личную информацию с вашими действиями в Интернете."
       ],
@@ -5350,9 +5138,6 @@
       ],
       "Uppercase and lowercase letters": [
         "Заглавные и строчные буквы"
-      ],
-      "username": [
-        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -5543,9 +5328,6 @@
       "Your email address was exposed:": [
         "Ваш адрес электронной почты был опубликован:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Ваш адрес электронной почты будет виден как адрес владельца ссылки на странице обмена."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
@@ -5708,15 +5490,6 @@
       "Anyone on the Internet with the link": [
         "Любой пользователь в Интернете, у которого есть ссылка"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "Любой пользователь, имеющий ссылку, может редактировать"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Каждый, кто находится в Интернете и имеет ссылку, может посмотреть"
-      ],
-      "Anyone with the link": [
-        "Любой, у кого есть ссылка"
-      ],
       "App password": [
         "Пароль приложения"
       ],
@@ -5840,9 +5613,6 @@
       "Encrypt emails": [
         "Шифровать письма"
       ],
-      "Erase this link and remove everyone with access": [
-        "Стереть эту ссылку и удалить всех, кто имеет к ней доступ"
-      ],
       "Expiry": [
         "Срок действия"
       ],
@@ -5918,12 +5688,6 @@
       "Main reason for cancelling": [
         "Основная причина отмены"
       ],
-      "Make editor": [
-        "Сделать редактором"
-      ],
-      "Make viewer": [
-        "Сделать зрителем"
-      ],
       "Manage categories": [
         "Управлять категориями"
       ],
@@ -5987,12 +5751,6 @@
       "Public keys": [
         "Открытые ключи"
       ],
-      "Public link expiration date": [
-        "Дата истечения срока действия публичной ссылки"
-      ],
-      "Public link password": [
-        "Пароль публичной ссылки"
-      ],
       "Region": [
         "Регион"
       ],
@@ -6004,12 +5762,6 @@
       ],
       "Set a password to limit access via link": [
         "Установите пароль, чтобы ограничить доступ по ссылке"
-      ],
-      "Set expiration date": [
-        "Задать срок действия"
-      ],
-      "Set link password": [
-        "Установка пароля ссылки"
       ],
       "Shared with me": [
         "В общем доступе со мной"
@@ -6695,9 +6447,6 @@
       "Auto-reply": [
         "Автоответчик"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Автозаполнение кредитных карт (скоро)"
-      ],
       "Automatic email forwarding": [
         "Автоматическая пересылка электронной почты"
       ],
@@ -6724,9 +6473,6 @@
       ],
       "Custom and secure business email": [
         "Настраивамая и защищённая бизнес-почта"
-      ],
-      "Custom domains for email aliases": [
-        "Пользовательские домены для псевдонимов электронной почты"
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
@@ -6785,9 +6531,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Бесплатные функции из ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, и ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Бесплатная VPN на одном устройстве"
-      ],
       "Fully refundable for 30 days": [
         "Полный возврат средств в течение 30 дней"
       ],
@@ -6799,12 +6542,6 @@
       ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Высокоскоростная VPN на ${ n } устройстве",
-        "Высокоскоростная VPN на ${ n } устройствах",
-        "Высокоскоростная VPN на ${ n } устройствах",
-        "Высокоскоростная VPN на ${ n } устройствах"
       ],
       "HTML signatures": [
         "Подписи HTML"
@@ -6961,9 +6698,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Неограниченные общие хранилища ${ PASS_SHORT_APP_NAME } для каждого пользователя"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Неограниченное количество совместно используемых хранилищ с правами доступа"
       ],
       "Unlimited vault sharing": [
         "Неограниченный общий доступ к хранилищу"
@@ -7285,9 +7019,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Жесткие диски наших серверов полностью зашифрованы с помощью нескольких уровней паролей, поэтому ваши данные будут защищены даже в случае взлома нашего оборудования"
       ],
-      "Password management and identity protection": [
-        "Управление паролями и защита личных данных"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персонализируйте свою подпись электронной почты с помощью логотипов, изображений, значков социальных сетей, ссылок на контактную информацию и т. д."
       ],
@@ -7392,12 +7123,6 @@
         "${ n } стран",
         "${ n } стран"
       ],
-      "Access advanced VPN features": [
-        "Получите доступ к расширенным функциям VPN"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Добавьте больше индивидуальности с помощью 15 адресов электронной почты и поддержки 3 пользовательских доменов электронной почты"
-      ],
       "AES 256-bit VPN encryption": [
         "Шифрование VPN AES 256-бит"
       ],
@@ -7407,9 +7132,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Увеличьте хранилище до ${ bundleStorage } на пользователя"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Увеличьте объем хранилища в общей сложности до ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Расширение для браузера"
       ],
@@ -7418,15 +7140,6 @@
       ],
       "Central control panel": [
         "Центральная панель управления"
-      ],
-      "Create up to ${ n } calendar": [
-        "Создать до ${ n } календаря",
-        "Создать до ${ n } календарей",
-        "Создать до ${ n } календарей",
-        "Создать до ${ n } календарей"
-      ],
-      "Dedicated Account manager": [
-        "Выделенный менеджер аккаунтов"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Расположение выделенных серверов в более чем ${ numberOfCountries } странах"
@@ -7568,9 +7281,6 @@
       "Access updated": [
         "Доступ обновлен"
       ],
-      "Access updated and shared": [
-        "Доступ обновлен и открыт общий доступ"
-      ],
       "Cannot load next page": [
         "Не удалось загрузить следующую страницу"
       ],
@@ -7585,12 +7295,6 @@
       ],
       "Document restored from trash": [
         "Документ восстановлен из корзины"
-      ],
-      "External invitation removed from the share": [
-        "Внешнее приглашение удалено из общего доступа"
-      ],
-      "External invitation's email was sent again": [
-        "Электронное письмо с внешним приглашением было отправлено еще раз"
       ],
       "Failed to accept share invitation": [
         "Не удалось принять приглашение на использование общего ресурса"
@@ -7634,9 +7338,6 @@
       "Public link access updated": [
         "Доступ к публичной ссылке обновлен"
       ],
-      "Public link update access failed ": [
-        "Доступ к обновлению публичной ссылки не удался "
-      ],
       "Recent documents updated": [
         "Последние документы обновлены"
       ],
@@ -7655,14 +7356,8 @@
       "Share invitation declined": [
         "Приглашение поделиться отклонено"
       ],
-      "Stopping the sharing of this item has failed": [
-        "Не удалось остановить совместное использование этого элемента"
-      ],
       "Subfolder failed to be loaded": [
         "Не удалось загрузить подпапку"
-      ],
-      "The link to your item failed to be deleted": [
-        "Не удалось удалить ссылку на ваш элемент"
       ],
       "The link to your item was deleted": [
         "Ссылка на ваш элемент удалена"
@@ -7672,9 +7367,6 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Ваш адрес ${ BRAND_NAME } готов к использованию"
-      ],
-      "Your settings failed to be saved": [
-        "Не удалось сохранить настройки"
       ],
       "Your settings have been changed successfully": [
         "Ваши настройки были успешно изменены"
@@ -7908,9 +7600,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Защищенное хранилище, обмен ссылками и элементами"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Неограниченное количество имен пользователей, заметок, кредитных карт и многое другое"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8161,9 +7850,6 @@
       ],
       "Select a reason": [
         "Выберите причину"
-      ],
-      "Set date": [
-        "Установить дату"
       ],
       "Start typing an email address": [
         "Начните вводить адрес эл. почты"
@@ -8823,12 +8509,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 ТБ"
-      ],
-      "6 users": [
-        "6 пользователей"
-      ],
       "All paid Mail and Calendar features": [
         "Все платные функции Mail и Calendar"
       ],
@@ -8844,14 +8524,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Премиум ${ appName1 } и ${ appName2 } и ${ appName3 }"
       ],
-      "Premium early access": [
-        "Ранний доступ"
-      ],
       "Secure cloud storage": [
         "Безопасное облачное хранилище"
-      ],
-      "Support online privacy": [
-        "Обеспечьте свою конфиденциальность в Интернете"
       ]
     },
     "specialoffer: Footer": {
@@ -8937,32 +8611,8 @@
       "Get the deal": [
         "Воспользоваться предложением"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Продлевается через 1 год по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Продлевается через 2 года по сниженной цене: ${ discountedAmount } вместо ${ regularAmount } (скидка ${ discount } %)"
-      ],
       "Save ${ discount }%": [
         "Сэкономьте ${ discount } %"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Цена без скидки: ${ amount } за 1 месяц."
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Цена без скидки: ${ amount } за 12 месяцев."
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Цена без скидки: ${ amount } за 15 месяцев."
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Цена без скидки: ${ amount } за 24 месяца."
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Цена без скидки: ${ amount } за 30 месяцев."
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Специальное предложение действительно в течение первых 2 лет"
       ]
     },
     "specialoffer: Title": {
@@ -8992,23 +8642,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вредоносных программ и другие преимущества."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вредоносных программ и другие преимущества."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Все наших платные сервисы с максимальными лимитами: 100 адресов электронной почты, поддержка 10 своих доменов и неограниченного числа псевдонимов hide-my-email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, и другое."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 3 своих доменов, 15 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Идеально подходит семьям и небольшим командам. У каждого участника будут свои почтовый ящик и алиасы. Необходимо иметь свой домен."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Получайте платные версии всех сервисов, которые мы выпустим в будущем, а также ранний доступ ко всем новым функциям и продуктам без дополнительной платы."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
@@ -9039,14 +8677,8 @@
       ]
     },
     "Status": {
-      "Accepted": [
-        "Принято"
-      ],
       "pending": [
         "ожидает подтверждения"
-      ],
-      "Pending": [
-        "В ожидании"
       ],
       "user joined": [
         "пользователь присоединился"
@@ -9177,12 +8809,6 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } подключение к VPN на пользователя",
-        "${ n } подключения к VPN на пользователя",
-        "${ n } подключений к VPN на пользователя",
-        "${ n } подключений к VPN на пользователя"
       ],
       "VPN connection for ${ n } device per user": [
         "Подключение к VPN для ${ n } устройства на одного пользователя",
@@ -9344,9 +8970,6 @@
       "Problem reported": [
         "О проблеме сообщено"
       ],
-      "Secure link copied": [
-        "Защищенная ссылка скопирована"
-      ],
       "Undo in progress": [
         "Выполняется отмена"
       ],
@@ -9374,9 +8997,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Включает 2950 серверов в более чем 65 странах с возможностью подключения до 10 устройств, доступ к стриминговым платформам со всего мира, блокировщик рекламы и вредоносного ПО и другие преимущества."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
@@ -9467,46 +9087,6 @@
         "${ seconds } секунды",
         "${ seconds } секунд",
         "${ seconds } секунд"
-      ]
-    },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } ч",
-        "${ hours } ч",
-        "${ hours } ч",
-        "${ hours } ч"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 ч",
-        "${ hoursInt }.5 ч",
-        "${ hoursInt }.5 ч",
-        "${ hoursInt }.5 ч"
-      ],
-      "${ minutes } min": [
-        "${ minutes } мин",
-        "${ minutes } мин",
-        "${ minutes } мин",
-        "${ minutes } мин"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } час",
-        "${ hours } часа",
-        "${ hours } часов",
-        "${ hours } часов"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 часа",
-        "${ hoursInt }.5 часа",
-        "${ hoursInt }.5 часов",
-        "${ hoursInt }.5 часов"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минута"
       ]
     },
     "Title": {
@@ -9840,9 +9420,6 @@
       "Make a secure connection your default": [
         "Сделайте защищенное подключение вашим подключением по умолчанию"
       ],
-      "Manage secure link": [
-        "Управление безопасной ссылкой"
-      ],
       "Merge contacts": [
         "Объединение контактов"
       ],
@@ -9963,9 +9540,6 @@
       "Select link expiration date": [
         "Выберите дату окончания действия ссылки"
       ],
-      "Select link expiration time": [
-        "Выберите время окончания действия ссылки"
-      ],
       "Set recovery methods": [
         "Установить методы восстановления"
       ],
@@ -9986,9 +9560,6 @@
       ],
       "Share \"${ fileName }\"": [
         "Поделиться «${ fileName }»"
-      ],
-      "Share ${ name }": [
-        "Общий ресурс ${ name }"
       ],
       "Share your calendar with your team": [
         "Делитесь своим календарём с командой"
@@ -10228,6 +9799,36 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Скидка ${ discount } % на тариф ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Перейти на тариф ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 TB of storage to share": [
+        "2 ТБ хранилища для совместного использования"
+      ],
+      "2 user accounts": [
+        "2 аккаунта пользователя"
+      ],
+      "All premium features from your current plan": [
+        "Все платные функции вашего текущего тарифа"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются от стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платежного цикла."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "на 12 месяцев"
       ]
     },
     "Unlimited offer": {

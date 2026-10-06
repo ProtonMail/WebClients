@@ -682,6 +682,12 @@
       "Show Less": [
         "Minder Weergeven"
       ],
+      "Show less": [
+        "Minder weergeven"
+      ],
+      "Show more": [
+        "Meer weergeven"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Log in met ${ BRAND_NAME }"
       ],
@@ -1779,9 +1785,6 @@
       "Can view this item.": [
         "Kan dit item bekijken"
       ],
-      "Change your password": [
-        "Wijzig uw wachtwoord"
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "Bevestig uw extra wachtwoord om verder te gaan met de verwijdering ervan."
       ],
@@ -1862,9 +1865,6 @@
       ],
       "Editor": [
         "Bewerker"
-      ],
-      "email": [
-        "e-mail"
       ],
       "Email address successfully deleted from monitoring": [
         "E-mailadres succesvol verwijderd uit monitoring"
@@ -1961,9 +1961,6 @@
       ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
-      ],
-      "finance": [
-        "financiën"
       ],
       "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
         "Voltooi het inloggen in het browservenster dat zojuist is geopend. ${ PASS_APP_NAME } wordt automatisch opgehaald zodra u klaar bent."
@@ -2121,9 +2118,6 @@
       "Medium Priority": [
         "Middelmatige prioriteit"
       ],
-      "Monitor accounts": [
-        "Accounts monitoren"
-      ],
       "Monitoring settings successfully updated": [
         "Monitoring instellingen succesvol bijgewerkt"
       ],
@@ -2217,9 +2211,6 @@
       ],
       "Pass Plus trial": [
         "Proton Pass Plus-proefversie"
-      ],
-      "password": [
-        "wachtwoord"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Wachtwoordvergrendeling succesvol geregistreerd. Gebruik het om ${ PASS_APP_NAME } te ontgrendelen"
@@ -2666,9 +2657,6 @@
       ],
       "User's access successfully updated": [
         "Toegang van de gebruiker bijgewerkt"
-      ],
-      "username": [
-        "gebruikersnaam"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Kluis \"${ payload.content.name }\" succesvol verwijderd"
@@ -5203,6 +5191,22 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-wachtwoord is vereist"
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } map is samengevoegd met de bovenliggende map omdat het maximale nestniveau is bereikt.",
+        "${ count } mappen zijn samengevoegd met de bovenliggende map omdat het maximale nestniveau is bereikt."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } map is niet geïmporteerd omdat de bovenliggende map het maximale aantal submappen heeft bereikt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map.",
+        "${ count } mappen zijn niet geïmporteerd omdat de bovenliggende map het maximale aantal submappen heeft bereikt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } map is niet geïmporteerd omdat deze kluis de maplimiet heeft bereikt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map.",
+        "${ count } mappen zijn niet geïmporteerd omdat deze kluis de maplimiet heeft bereikt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } map kon niet worden gemaakt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map.",
+        "${ failed } mappen konden niet worden gemaakt. De items zijn geïmporteerd naar de dichtstbijzijnde beschikbare map."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } biedt krachtige controle, maar een enkele fout kan ertoe leiden dat automatisch aanvullen gegevens matcht en invult op frauduleuze of phishing-websites."
       ],
@@ -5334,9 +5338,6 @@
       ],
       "Move to trash": [
         "Verplaats naar prullenbak"
-      ],
-      "Name is required": [
-        "Naam is vereist."
       ],
       "No items": [
         "Geen items"

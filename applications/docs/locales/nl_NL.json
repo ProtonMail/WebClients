@@ -522,6 +522,9 @@
       "More benefits": [
         "Meer voordelen"
       ],
+      "More info": [
+        "Meer informatie"
+      ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
@@ -1113,56 +1116,15 @@
         "30 dagen geld-terug-garantie"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } en ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
       ],
-      "1 user account": [
-        "1 gebruikersaccount"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB opslag: 40x uw huidig abonnement"
-      ],
-      "6 user accounts": [
-        "6 gebruikersaccounts"
-      ],
-      "Admin panel to manage your family": [
-        "Beheerderpaneel om uw gezin te beheren"
-      ],
-      "Advanced account protection": [
-        "Geavanceerde accountbeveiliging"
-      ],
-      "Easily add or remove users": [
-        "Eenvoudig gebruikers toevoegen of verwijderen"
-      ],
-      "One-time payment, lifetime deal": [
-        "Eenmalige betaling, levenslange deal"
-      ],
-      "Online document editor": [
-        "Online document editor"
-      ],
-      "Password health alerts": [
-        "Wachtwoordgezondheidswaarschuwingen"
-      ],
-      "Recover previous file versions": [
-        "Herstel vorige bestandsversies"
-      ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Onbeperkt inloggen, kredietkaarten, hide-my-email aliassen en meer"
       ],
       "Use your own email domain": [
         "Gebruik uw eigen e-maildomein"
@@ -1171,90 +1133,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "U betaalt ${ amount } eenmaal"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Verlenging na 1 maand voor ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 8 500 servers in meer dan 110 landen, 10 apparaten, high-speed streaming, advertentieblokkering en malwarebescherming, VPN Accelerator en meer."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer.",
-        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-emailde-my-email aliassen en meer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en planning met end-to-end-codering. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ LUMO_SHORT_APP_NAME } schrijfassistent, onbeperkte hide-my-email mailaliassen en meer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief online documenteditor, foto back-up, versiegeschiedenis, versleuteld bestanden delen en meer."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB opslagruimte"
-      ],
-      "3 TB data storage": [
-        "3 TB opslagruimte"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Toegang tot 15 000+ servers in 120+ landen"
-      ],
-      "Access advanced AI models": [
-        "Toegang tot geavanceerde AI-modellen"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium functies van ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokkeer advertenties, trackers en malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Ingebouwde 2FA-authenticator"
-      ],
-      "Connect 10 devices at once": [
-        "Verbind 10 apparaten tegelijk"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Volledige chatgeschiedenis met eenvoudig zoeken en favorieten"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuele accounts voor 6 gebruikers"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuele accounts voor u en een partner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Sterkere bescherming tegen cyberdreigingen"
-      ],
-      "Unlimited daily chats": [
-        "Onbeperkt aantal dagelijkse chats"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Het speciaal ontworpen NetShield beschermt uw apparaten en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
       ]
     },
     "Browser": {
@@ -1436,9 +1319,6 @@
       ],
       "Basic chat history": [
         "Basis gespreksgeschiedenis"
-      ],
-      "Built and based in Europe": [
-        "Gebouwd en gevestigd in Europa"
       ],
       "Compliance with data protection regulations": [
         "Naleving van de regelgeving inzake gegevensbescherming"
@@ -3043,9 +2923,6 @@
       "Expiration date cannot be in the past": [
         "De vervaldatum mag niet in het verleden liggen"
       ],
-      "External invitations are not available yet.": [
-        "Externe uitnodigingen zijn nog niet beschikbaar."
-      ],
       "External invitations are temporarily disabled.": [
         "Externe uitnodigingen zijn tijdelijk uitgeschakeld."
       ],
@@ -3839,16 +3716,6 @@
         "(geen titel)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB opslagruimte"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte wordt gedeeld tussen familieleden op ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
-      ]
-    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "Uitnodiging afwijzen"
@@ -3858,11 +3725,6 @@
       ],
       "Switch plans": [
         "Van abonnement wisselen"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Tot 6 gebruikers"
       ]
     },
     "familyOffer_2023:Error": {
@@ -3964,17 +3826,6 @@
       ],
       "Delete organization?": [
         "Organisatie verwijderen?"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Met 2700 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Ondersteuning voor 3 aangepaste e-maildomeinen, 90 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
       ]
     },
     "Feature": {
@@ -4685,12 +4536,6 @@
       "and": [
         "en"
       ],
-      "Anyone with this link can access your file.": [
-        "Iedereen met deze link heeft toegang tot dit bestand."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Iedereen met deze link heeft toegang tot deze map."
-      ],
       "Are you sure you want to discard your import?": [
         "Weet u zeker dat u uw import wilt verwijderen?"
       ],
@@ -4741,9 +4586,6 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
-      ],
-      "Change your password": [
-        "Wijzig uw wachtwoord"
       ],
       "characters": [
         "tekens"
@@ -4816,17 +4658,8 @@
       "Create in": [
         "Maak in"
       ],
-      "Create public link": [
-        "Maak een publieke link"
-      ],
       "Create your first folder and start moving your files.": [
         "Maak uw eerste map aan en begin uw bestanden te verplaatsen."
-      ],
-      "Creating link to file": [
-        "Link naar bestand maken"
-      ],
-      "Creating link to folder": [
-        "Link naar map maken"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -4882,9 +4715,6 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
-      "email": [
-        "e-mail"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
       ],
@@ -4936,15 +4766,6 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Alles in ${ planOrAppName }, plus:"
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Genereren van beveiligde koppeling mislukt. De reden is: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Genereren van beveiligde koppeling mislukt. Probeer het later opnieuw"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
-      ],
       "Failing signatures will be re-signed by you": [
         "Mislukte handtekeningen zullen opnieuw worden ondertekend door u."
       ],
@@ -4953,9 +4774,6 @@
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
-      ],
-      "finance": [
-        "financiën"
       ],
       "Find out what can be migrated.": [
         "Ontdek wat er gemigreerd kan worden."
@@ -5117,9 +4935,6 @@
       "Loading document...": [
         "Document wordt geladen..."
       ],
-      "Loading link": [
-        "Koppeling laden"
-      ],
       "Loading...": [
         "Laden..."
       ],
@@ -5144,9 +4959,6 @@
       ],
       "Merged": [
         "Samengevoegd"
-      ],
-      "Monitor accounts": [
-        "Accounts monitoren"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
@@ -5199,12 +5011,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Alleen de mensen met de link en het wachtwoord hebben toegang tot deze map."
-      ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "Oeps! Deze spreadsheet kan uw meest recente bewerkingen niet opslaan. Daarom hebben we het bewerken onderbroken om te voorkomen dat u uw werk verliest."
       ],
@@ -5223,14 +5029,8 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
       ],
-      "Owner": [
-        "Eigenaar"
-      ],
       "owner": [
         "eigenaar"
-      ],
-      "password": [
-        "wachtwoord"
       ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
@@ -5243,9 +5043,6 @@
       ],
       "Pending invitations": [
         "Openstaande uitnodigingen"
-      ],
-      "People with access": [
-        "Personen met toegang"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
@@ -5292,12 +5089,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
-      ],
-      "Preparing link to file": [
-        "Link naar bestand wordt voorbereid"
-      ],
-      "Preparing link to folder": [
-        "Link naar map wordt voorbereid"
       ],
       "Primary": [
         "Primair"
@@ -5376,9 +5167,6 @@
       ],
       "Settings updated": [
         "Instellingen bijgewerkt"
-      ],
-      "Share via link settings": [
-        "Deel via linkinstellingen"
       ],
       "Shared by": [
         "Gedeeld door"
@@ -5483,9 +5271,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
       ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Deze koppeling is gemaakt met een oude versie van Drive en kan niet worden aangepast. Verwijder deze link en creeër een nieuwe om de instellingen te wijzigen."
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Dit betekent dat uw internetprovider en de websites die u bezoekt, uw persoonlijke gegevens niet kunnen koppelen aan uw online activiteiten."
       ],
@@ -5575,9 +5360,6 @@
       ],
       "Uppercase and lowercase letters": [
         "Hoofdletters en kleine letters"
-      ],
-      "username": [
-        "gebruikersnaam"
       ],
       "Users": [
         "Gebruikers"
@@ -5768,9 +5550,6 @@
       "Your email address was exposed:": [
         "Uw emailadres werd blootgesteld:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Uw e-mailadres zal zichtbaar zijn als de eigenaar van de link op de deelpagina"
-      ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
@@ -5930,15 +5709,6 @@
       "Anyone on the Internet with the link": [
         "Iedereen op het internet met de link"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "Iedereen op het internet met de link kan bewerken"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Iedereen op het Internet kan het met deze link bekijken"
-      ],
-      "Anyone with the link": [
-        "Iedereen met de link"
-      ],
       "App password": [
         "App-wachtwoord"
       ],
@@ -6068,9 +5838,6 @@
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
-      "Erase this link and remove everyone with access": [
-        "Wis deze link en verwijder iedereen met toegang"
-      ],
       "Expiry": [
         "Vervaldatum"
       ],
@@ -6146,12 +5913,6 @@
       "Main reason for cancelling": [
         "Hoofdreden voor annulering"
       ],
-      "Make editor": [
-        "Maak de persoon een bewerker"
-      ],
-      "Make viewer": [
-        "Maak de persoon een kijker"
-      ],
       "Manage categories": [
         "Beheer categorieën"
       ],
@@ -6215,12 +5976,6 @@
       "Public keys": [
         "Openbare sleutels"
       ],
-      "Public link expiration date": [
-        "Vervaldatum van openbare link"
-      ],
-      "Public link password": [
-        "Wachtwoord voor openbare link"
-      ],
       "Region": [
         "Regio/Provincie"
       ],
@@ -6232,12 +5987,6 @@
       ],
       "Set a password to limit access via link": [
         "Stel een wachtwoord in om toegang via een koppeling te beperken"
-      ],
-      "Set expiration date": [
-        "Vervaldatum instellen"
-      ],
-      "Set link password": [
-        "Wachtwoord voor link instellen"
       ],
       "Shared with me": [
         "Gedeeld met mij"
@@ -6888,9 +6637,6 @@
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Autofill creditcards (weldra klaar)"
-      ],
       "Automatic email forwarding": [
         "Automatisch e-mail doorsturen"
       ],
@@ -6917,9 +6663,6 @@
       ],
       "Custom and secure business email": [
         "Aangepaste en veilige zakelijke e-mail"
-      ],
-      "Custom domains for email aliases": [
-        "Aangepaste domeinen voor e-mailalliassen"
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
@@ -6978,9 +6721,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Gratis functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Gratis VPN op één apparaat"
-      ],
       "Fully refundable for 30 days": [
         "Volledig terugbetaalbaar gedurende 30 dagen"
       ],
@@ -6992,10 +6732,6 @@
       ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "High-speed VPN op ${ n } apparaat",
-        "High-speed VPN op ${ n } apparaten"
       ],
       "HTML signatures": [
         "HTML-handtekeningen"
@@ -7152,9 +6888,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Onbeperkte gedeelde ${ PASS_SHORT_APP_NAME } kluizen per gebruiker"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Onbeperkt aantal gedeelde kluizen met toegangsmachtigingen"
       ],
       "Unlimited vault sharing": [
         "Onbeperkt kluizen delen"
@@ -7460,9 +7193,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "De harde schijven van onze servers zijn volledig versleuteld met meerdere wachtwoordlagen, zodat uw gegevens ook beveiligd zijn als onze hardware in gevaar komt"
       ],
-      "Password management and identity protection": [
-        "Wachtwoordbeheer en identiteitsbescherming"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
       ],
@@ -7565,12 +7295,6 @@
         "${ n } land",
         "${ n } landen"
       ],
-      "Access advanced VPN features": [
-        "Gebruik geavanceerde VPN-functies"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Voeg meer personalisatie toe met 15 e-mailadressen en ondersteuning voor 3 aangepaste e-maildomeinen"
-      ],
       "AES 256-bit VPN encryption": [
         "256-bit AES-versleuteling VPN"
       ],
@@ -7580,9 +7304,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Boost uw opslagruimte uit naar ${ bundleStorage } per gebruiker"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Verhoog uw opslagruimte tot ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Browserextensie"
       ],
@@ -7591,13 +7312,6 @@
       ],
       "Central control panel": [
         "Centraal bedieningspaneel"
-      ],
-      "Create up to ${ n } calendar": [
-        "Maak tot ${ n } agenda",
-        "Maak tot ${ n } agenda's"
-      ],
-      "Dedicated Account manager": [
-        "Toegewezen account manager"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Toegewijde server locaties in ${ numberOfCountries }+ landen"
@@ -7723,9 +7437,6 @@
       "Access updated": [
         "Toegang bijgewerkt."
       ],
-      "Access updated and shared": [
-        "Toegang bijgewerkt en gedeeld"
-      ],
       "Cannot load next page": [
         "Kan volgende pagina niet laden"
       ],
@@ -7740,12 +7451,6 @@
       ],
       "Document restored from trash": [
         "Document hersteld uit prullenbak"
-      ],
-      "External invitation removed from the share": [
-        "Externe uitnodiging is verwijderd uit de share"
-      ],
-      "External invitation's email was sent again": [
-        "Externe uitnodigingsmail is opnieuw verzonden"
       ],
       "Failed to accept share invitation": [
         "Accepteren van uitnodiging mislukt"
@@ -7798,9 +7503,6 @@
       "Public link access updated": [
         "Toegang publieke link aangepast"
       ],
-      "Public link update access failed ": [
-        "Toegang publieke link kon niet aangepast worden "
-      ],
       "Recent documents updated": [
         "Recente documenten bijgewerkt"
       ],
@@ -7819,14 +7521,8 @@
       "Share invitation declined": [
         "Deel-uitnodiging afgewezen"
       ],
-      "Stopping the sharing of this item has failed": [
-        "Het stoppen van het delen van dit item is mislukt"
-      ],
       "Subfolder failed to be loaded": [
         "Submap kon niet geladen worden"
-      ],
-      "The link to your item failed to be deleted": [
-        "De link naar uw item kon niet worden verwijderd"
       ],
       "The link to your item was deleted": [
         "De link naar uw item werd verwijderd"
@@ -7836,9 +7532,6 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Uw ${ BRAND_NAME }-adres is klaar voor gebruik"
-      ],
-      "Your settings failed to be saved": [
-        "Uw instellingen konden niet worden bewaard"
       ],
       "Your settings have been changed successfully": [
         "Uw instellingen zijn succesvol gewijzigd."
@@ -8078,9 +7771,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Veilig delen van kluizen, items en links"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Onbeperkt aantal logins, notities, creditcards, en meer"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8317,9 +8007,6 @@
       ],
       "Select a reason": [
         "Selecteer een reden"
-      ],
-      "Set date": [
-        "Datum instellen"
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"
@@ -8982,12 +8669,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 gebruikers"
-      ],
       "All paid Mail and Calendar features": [
         "Alle betaalde Mail- en Calendar-kenmerken"
       ],
@@ -9003,14 +8684,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
-      "Premium early access": [
-        "Premium vroege toegang"
-      ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
-      ],
-      "Support online privacy": [
-        "Ondersteun online privacy"
       ]
     },
     "specialoffer: Footer": {
@@ -9094,32 +8769,8 @@
       "Get the deal": [
         "Kies deze deal"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Wordt na 1 jaar verlengd tegen de gereduceerde prijs van ${ discountedAmount } in plaats van ${ regularAmount } (${ discount }% korting)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Wordt na 2 jaar verlengd tegen de gereduceerde prijs van ${ discountedAmount } in plaats van ${ regularAmount } (${ discount }% korting)"
-      ],
       "Save ${ discount }%": [
         "Bespaar ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Standaardprijs ${ amount } voor 1 maand"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Standaardprijs ${ amount } voor 12 maanden"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Standaardprijs ${ amount } voor 15 maanden"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Standaardprijs ${ amount } voor 24 maanden"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Standaardprijs ${ amount } voor 30 maanden"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "De speciale aanbieding is geldig voor de eerste 2 jaar"
       ]
     },
     "specialoffer: Title": {
@@ -9149,23 +8800,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering en meer."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Al onze premium diensten met hun hoogste limieten: 100 e-mailadressen, ondersteuning voor 10 aangepaste domeinen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's, versleutelde cloudopslag, versleuteld bestanden delen en meer."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Ondersteuning voor 3 aangepaste e-maildomeinen, 15 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfect voor gezinnen of kleine teams, met voor iedereen een eigen inbox en aliassen. Vereist een aangepast domein."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Ontvang kostenloos de betaalde versies van alle nieuwe privacyservices die we in de toekomst uitbrengen en krijg vroege toegang tot alle toekomstige kenmerken en producten."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -9202,14 +8841,8 @@
       ]
     },
     "Status": {
-      "Accepted": [
-        "Geaccepteerd"
-      ],
       "pending": [
         "in behandeling"
-      ],
-      "Pending": [
-        "In behandeling"
       ],
       "user joined": [
         "gebruiker is toegetreden"
@@ -9330,10 +8963,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-verbinding per gebruiker",
-        "${ n } VPN-verbindingen per gebruiker"
       ],
       "VPN connection for ${ n } device per user": [
         "VPN verbinding voor ${ n } apparaat per gebruiker",
@@ -9483,9 +9112,6 @@
       "Problem reported": [
         "Probleem gerapporteerd"
       ],
-      "Secure link copied": [
-        "Veilige link gekopieerd"
-      ],
       "Undo in progress": [
         "Bezig met ongedaan maken"
       ],
@@ -9513,9 +9139,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Met 2950 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering en meer."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
@@ -9610,34 +9233,6 @@
       "${ seconds } second": [
         "${ seconds } seconde",
         "${ seconds } seconden"
-      ]
-    },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } u",
-        "${ hours } u"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 u",
-        "${ hoursInt },5 u"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } uur",
-        "${ hours } uren"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 uur",
-        "${ hoursInt },5 uren"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
       ]
     },
     "Title": {
@@ -9964,9 +9559,6 @@
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
       ],
-      "Manage secure link": [
-        "Beveiligde link beheren"
-      ],
       "Merge contacts": [
         "Contacten samenvoegen"
       ],
@@ -10090,9 +9682,6 @@
       "Select link expiration date": [
         "Selecteer vervaldatum link"
       ],
-      "Select link expiration time": [
-        "Selecteer vervaltijd link"
-      ],
       "Select users to migrate": [
         "Selecteer gebruikers om te migreren"
       ],
@@ -10116,9 +9705,6 @@
       ],
       "Share \"${ fileName }\"": [
         "Deel \"${ fileName }\""
-      ],
-      "Share ${ name }": [
-        "Deel ${ name }"
       ],
       "Share your calendar with your team": [
         "Deel uw agenda met uw team"

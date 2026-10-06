@@ -670,6 +670,12 @@
       "Show Less": [
         "一部のみ表示"
       ],
+      "Show less": [
+        "詳細を非表示"
+      ],
+      "Show more": [
+        "さらに表示"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } でサインイン"
       ],
@@ -1724,9 +1730,6 @@
       "Can view this item.": [
         "このアイテムを閲覧できます。"
       ],
-      "Change your password": [
-        "パスワードを変更"
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "削除を続行するために、追加パスワードを確認します。"
       ],
@@ -1807,9 +1810,6 @@
       ],
       "Editor": [
         "編集者"
-      ],
-      "email": [
-        "メール"
       ],
       "Email address successfully deleted from monitoring": [
         "メールアドレスが監視から正常に削除されました"
@@ -1906,9 +1906,6 @@
       ],
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
-      ],
-      "finance": [
-        "ファイナンス"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "以下の手順に従って、汎用 CSV を使用してデータをインポートします:"
@@ -2060,9 +2057,6 @@
       "Medium Priority": [
         "優先度：中"
       ],
-      "Monitor accounts": [
-        "アカウントモニター"
-      ],
       "Monitoring settings successfully updated": [
         "モニタリング設定が正常に更新されました"
       ],
@@ -2152,9 +2146,6 @@
       ],
       "Pass Plus trial": [
         "Pass Plusトライアル"
-      ],
-      "password": [
-        "パスワード"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "パスワードロックが正常に登録されました。 ${ PASS_APP_NAME }のロック解除に使用してください"
@@ -2599,9 +2590,6 @@
       ],
       "User's access successfully updated": [
         "ユーザーアクセスは正しく更新されました"
-      ],
-      "username": [
-        "ユーザー名"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保管庫「${ payload.content.name }」が正常に削除されました"
@@ -5211,9 +5199,6 @@
       ],
       "Move to trash": [
         "ごみ箱に移動"
-      ],
-      "Name is required": [
-        "名前は必須です"
       ],
       "No items": [
         "アイテムがありません"

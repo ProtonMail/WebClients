@@ -718,6 +718,12 @@
       "Show Less": [
         "Εμφάνιση λιγότερων"
       ],
+      "Show less": [
+        "Εμφάνιση λιγότερων"
+      ],
+      "Show more": [
+        "Εμφάνιση περισσότερων"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Σύνδεση με ${ BRAND_NAME }"
       ],
@@ -1882,9 +1888,6 @@
       "Can view this item.": [
         "Μπορεί να προβάλλει αυτό το στοιχείο."
       ],
-      "Change your password": [
-        "Αλλάξτε τον κωδικό πρόσβασής σας"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total } κωδικούς πρόσβασης"
       ],
@@ -1971,9 +1974,6 @@
       ],
       "Editor": [
         "Πρόγραμμα επεξεργασίας"
-      ],
-      "email": [
-        "ηλεκτρονικό ταχυδρομείο"
       ],
       "Email address successfully deleted from monitoring": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου διαγράφηκε επιτυχώς από την παρακολούθηση"
@@ -2067,9 +2067,6 @@
       ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
-      ],
-      "finance": [
-        "οικονομικά"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Βρείτε το \"OpenSSH Authentication Agent\", κάντε δεξί κλικ στις Ιδιότητες."
@@ -2257,9 +2254,6 @@
       "Medium Priority": [
         "Μεσαία προτεραιότητα"
       ],
-      "Monitor accounts": [
-        "Παρακολούθηση λογαριασμών"
-      ],
       "Monitoring settings successfully updated": [
         "Οι ρυθμίσεις παρακολούθησης ενημερώθηκαν με επιτυχία"
       ],
@@ -2368,9 +2362,6 @@
       ],
       "Pass Plus trial": [
         "Δοκιμή Pass Plus"
-      ],
-      "password": [
-        "κωδικός πρόσβασης"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Το κλείδωμα με κωδικό πρόσβασης καταχωρήθηκε με επιτυχία. Χρησιμοποιήστε το για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
@@ -2838,9 +2829,6 @@
       ],
       "User's access successfully updated": [
         "Η πρόσβαση του χρήστη ενημερώθηκε με επιτυχία"
-      ],
-      "username": [
-        "όνομα χρήστη"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Η κρύπτη \"${ payload.content.name }\" διαγράφηκε με επιτυχία"
@@ -5510,6 +5498,22 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } κωδικός πρόσβασης απαιτείται"
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } φάκελος συγχωνεύτηκε με τον γονικό του φάκελο επειδή επιτεύχθηκε το μέγιστο επίπεδο ένθεσης.",
+        "${ count } φάκελοι συγχωνεύτηκαν με τον γονικό τουε φάκελο επειδή επιτεύχθηκε το μέγιστο επίπεδο ένθεσης."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } φάκελος δεν εισήχθη επειδή ο γονικός του φάκελος έφτασε τον μέγιστο αριθμό υποφακέλων. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο.",
+        "${ count } φάκελοι δεν εισήχθησαν επειδή ο γονικός τους φάκελος έφτασε τον μέγιστο αριθμό υποφακέλων. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } φάκελος δεν εισήχθη επειδή αυτή η κρύπτη έφτασε στο όριο φακέλων της. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο.",
+        "${ count } φάκελοι δεν εισήχθησαν επειδή αυτή η κρύπτη έφτασε στο όριο φακέλων της. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "Δεν ήταν δυνατή η δημιουργία ${ failed } φακέλου. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο.",
+        "Δεν ήταν δυνατή η δημιουργία ${ failed } φακέλων. Τα στοιχεία του εισήχθησαν στον πλησιέστερο διαθέσιμο φάκελο."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "Το ${ modeLabelStong } παρέχει ισχυρό έλεγχο, αλλά ένα μόνο σφάλμα μπορεί να προκαλέσει την αντιστοίχιση και συμπλήρωση δεδομένων από την αυτόματη συμπλήρωση σε δόλιες ιστοσελίδες ή ιστοσελίδες ηλεκτρονικού \"ψαρέματος\" (phishing)."
       ],
@@ -5650,9 +5654,6 @@
       ],
       "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
-      ],
-      "Name is required": [
-        "Απαιτείται όνομα"
       ],
       "No items": [
         "Δεν υπάρχουν στοιχεία"

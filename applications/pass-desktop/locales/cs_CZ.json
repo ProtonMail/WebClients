@@ -700,6 +700,12 @@
       "Show Less": [
         "Zobrazit méně"
       ],
+      "Show less": [
+        "Zobrazit méně"
+      ],
+      "Show more": [
+        "Zobrazit více"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Přihlaste se pomocí ${ BRAND_NAME }"
       ],
@@ -1868,9 +1874,6 @@
       "Can view this item.": [
         "Může zobrazit tuto položku."
       ],
-      "Change your password": [
-        "Změňte své heslo"
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "Potvrďte své dodatečné heslo pro pokračování v jeho odebrání."
       ],
@@ -1951,9 +1954,6 @@
       ],
       "Editor": [
         "Editor"
-      ],
-      "email": [
-        "e-mail"
       ],
       "Email address successfully deleted from monitoring": [
         "E-mailová adresa úspěšně smazána ze sledování"
@@ -2047,9 +2047,6 @@
       ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
-      ],
-      "finance": [
-        "finance"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Najděte „OpenSSH Authentication Agent“, klikněte pravým tlačítkem a zvolte Vlastnosti."
@@ -2225,9 +2222,6 @@
       "Medium Priority": [
         "Střední priorita"
       ],
-      "Monitor accounts": [
-        "Sledování účtů"
-      ],
       "Monitoring settings successfully updated": [
         "Nastavení sledování úspěšně aktualizováno"
       ],
@@ -2329,9 +2323,6 @@
       ],
       "Pass Plus trial": [
         "Zkušební verze Pass Plus"
-      ],
-      "password": [
-        "heslo"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Zamykání heslem bylo úspěšně registrováno. Použijte jej k odemknutí ${ PASS_APP_NAME }"
@@ -2797,9 +2788,6 @@
       ],
       "User's access successfully updated": [
         "Přístup uživatele byl úspěšně aktualizován"
-      ],
-      "username": [
-        "uživatelské jméno"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" úspěšně smazán"
@@ -5588,9 +5576,6 @@
       ],
       "Move to trash": [
         "Přesunout do koše"
-      ],
-      "Name is required": [
-        "Název je povinný"
       ],
       "No items": [
         "Žádné položky"

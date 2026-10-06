@@ -614,6 +614,9 @@
       "More benefits": [
         "Flere fordeler"
       ],
+      "More info": [
+        "Mer info"
+      ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
       ],
@@ -1315,56 +1318,15 @@
         "30 dagers tilbakebetalingsgaranti"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivebordsapp"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsplass"
       ],
-      "1 user account": [
-        "1 brukerkonto"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagringsplass: 40x din nåværende plan"
-      ],
-      "6 user accounts": [
-        "6 brukerkontoer"
-      ],
-      "Admin panel to manage your family": [
-        "Administrasjonspanel for å administrere familien din"
-      ],
-      "Advanced account protection": [
-        "Avansert kontobeskyttelse"
-      ],
-      "Easily add or remove users": [
-        "Enkelt legg til eller fjern brukere"
-      ],
-      "One-time payment, lifetime deal": [
-        "Engangsbetaling, livstidsavtale"
-      ],
-      "Online document editor": [
-        "Dokumentredigering på nett"
-      ],
-      "Password health alerts": [
-        "Varsler for passordhelse"
-      ],
-      "Recover previous file versions": [
-        "Gjenopprett tidligere filversjoner"
-      ],
       "Unlimited folders, labels and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Ubegrenset antall pålogginger, kredittkort, hide-my-email-aliaser og mer"
       ],
       "Use your own email domain": [
         "Bruk ditt eget e-postdomene"
@@ -1373,90 +1335,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Faktureres til ${ amount } én gang"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Fornyes etter 1 måned til ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ servere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall hide-my-email-aliaser, deling, integrert 2FA, ${ DARK_WEB_MONITORING_NAME } og mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for egendefinerte e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer.",
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ LUMO_SHORT_APP_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Sikre filene dine med kryptert skylagring. Inkluderer dokumentredigering på nett, sikkerhetskopiering av bilder, versjonshistorikk, kryptert fildeling og mer."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB lagringsplass"
-      ],
-      "3 TB data storage": [
-        "3 TB lagringsplass"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Få tilgang til 15 000+ servere i 120+ land"
-      ],
-      "Access advanced AI models": [
-        "Få tilgang til avanserte KI-modeller"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premiumfunksjoner i ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokker annonser, sporere og skadelig programvare"
-      ],
-      "Built-in 2FA authenticator": [
-        "Innebygd 2FA-autentisering"
-      ],
-      "Connect 10 devices at once": [
-        "Koble til 10 enheter om gangen"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Full chathistorikk med enkelt søk og favoritter"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuelle kontoer for 6 brukere"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuelle kontoer for deg og en partner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Sterkere beskyttelse mot cybertrusler"
-      ],
-      "Unlimited daily chats": [
-        "Ubegrenset antall daglige chatter"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Spesialdesignet NetShield beskytter enhetene dine og øker hastigheten på nettlesingen ved å blokkere annonser, sporingsprogrammer og skadelig programvare."
       ]
     },
     "Billing cycle option": {
@@ -1905,9 +1788,6 @@
       ],
       "Basic chat history": [
         "Grunnleggende chatlogg"
-      ],
-      "Built and based in Europe": [
-        "Utviklet og basert i Europa"
       ],
       "Compliance with data protection regulations": [
         "Samsvar med databeskyttelsesforskrifter"
@@ -4687,16 +4567,6 @@
         "(ingen tittel)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB total lagringsplass"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagringsplass er delt mellom familiemedlemmer over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
-      ]
-    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "Avslå invitasjon"
@@ -4706,11 +4576,6 @@
       ],
       "Switch plans": [
         "Bytt plan"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Opptil 6 brukere"
       ]
     },
     "familyOffer_2023:Error": {
@@ -4823,17 +4688,6 @@
       ],
       "Delete organization?": [
         "Slett organisasjon?"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2700 servere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Inkluderer støtte for 3 egendefinerte e-postdomener, 90 e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ]
     },
     "Feature": {
@@ -5746,9 +5600,6 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Husker du ikke passordet ditt? Vi kan hjelpe deg slette den krypterte informasjonen til alle kontakter kryptert med denne nøkkelen, og i prosessen avvise advarselen."
       ],
-      "Change your password": [
-        "Endre passordet ditt"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Sjekker kontakt ${ progress } av ${ max }..."
       ],
@@ -5902,9 +5753,6 @@
       "Edit email address": [
         "Rediger e-postadresse"
       ],
-      "email": [
-        "e-post"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posthotell er kun tilgjengelig for domener du allerede eier. Domeneregistrering er for øyeblikket ikke tilgjengelig gjennom ${ BRAND_NAME }. Du kan verte e-post for domener registrert på alle domeneregistratorer."
       ],
@@ -5977,9 +5825,6 @@
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Bare filer (ingen bilder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – opptil 100 GB totalt, 100 000 filer og 50 GB per fil"
-      ],
-      "finance": [
-        "finans"
       ],
       "Find out what can be migrated.": [
         "Finn ut hva som kan migreres."
@@ -6186,9 +6031,6 @@
       "Min. 48 hours before": [
         "Min. 48 timer før"
       ],
-      "Monitor accounts": [
-        "Overvåk kontoer"
-      ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
@@ -6290,9 +6132,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Våre varsler prioriterer sikkerhet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
-      ],
-      "password": [
-        "passord"
       ],
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
@@ -6677,9 +6516,6 @@
       ],
       "Uppercase and lowercase letters": [
         "Store og små bokstaver"
-      ],
-      "username": [
-        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -8590,9 +8426,6 @@
       "Auto-reply": [
         "Autosvar"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Automatisk utfylling av kredittkort (kommer snart)"
-      ],
       "Automatic email forwarding": [
         "Automatisk videresending av e-post"
       ],
@@ -8619,9 +8452,6 @@
       ],
       "Custom and secure business email": [
         "Tilpasset og sikker bedrifts-e-post"
-      ],
-      "Custom domains for email aliases": [
-        "Egendefinerte domener for e-postaliaser"
       ],
       "Custom email domains": [
         "Egendefinerte e-postdomener"
@@ -8680,9 +8510,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Gratis funksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Gratis VPN på en enkelt enhet"
-      ],
       "Fully refundable for 30 days": [
         "Fullt refunderbar i 30 dager"
       ],
@@ -8694,10 +8521,6 @@
       ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Høyhastighets VPN på ${ n } enhet",
-        "Høyhastighets VPN på ${ n } enheter"
       ],
       "HTML signatures": [
         "HTML-signaturer"
@@ -8854,9 +8677,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Ubegrenset delte ${ PASS_SHORT_APP_NAME }-hvelv per bruker"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Ubegrenset antall delte hvelv med tilgangstillatelser"
       ],
       "Unlimited vault sharing": [
         "Ubegrenset hvelvdeling"
@@ -9176,9 +8996,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Harddiskene til serverne våre er fullstendig kryptert med flere passordlag, slik at dataene er beskyttet selv om maskinvaren vår blir kompromittert."
       ],
-      "Password management and identity protection": [
-        "Passordbehandling og identitetsbeskyttelse"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
       ],
@@ -9281,12 +9098,6 @@
         "${ n } land",
         "${ n } land"
       ],
-      "Access advanced VPN features": [
-        "Få tilgang til avanserte VPN-funksjoner"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Legg til mer personalisering med 15 e-postadresser og støtte for 3 egendefinerte e-postdomener"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-biter VPN-kryptering"
       ],
@@ -9296,9 +9107,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Øk lagringsplassen din til totalt ${ bundleStorage } per bruker"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Øk lagringsplassen din til totalt ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Nettleserutvidelse"
       ],
@@ -9307,13 +9115,6 @@
       ],
       "Central control panel": [
         "Sentralt kontrollpanel"
-      ],
-      "Create up to ${ n } calendar": [
-        "Opprett opptil ${ n } kalender",
-        "Opprett opptil ${ n } kalendere"
-      ],
-      "Dedicated Account manager": [
-        "Dedikert kontobehandler"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikerte serverplasseringer i ${ numberOfCountries }+ land"
@@ -9830,9 +9631,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Sikker deling av hvelv, elementer og koblinger"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Ubegrenset antall pålogginger, notater, kredittkort og mer"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11058,12 +10856,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 brukere"
-      ],
       "All paid Mail and Calendar features": [
         "Alle betalte Mail- og Calendar-funksjoner"
       ],
@@ -11082,17 +10874,11 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
-      "Premium early access": [
-        "Tidlig premiumtilgang"
-      ],
       "Secure cloud storage": [
         "Trygg skylagring"
       ],
       "Secure streaming": [
         "Sikker strømming"
-      ],
-      "Support online privacy": [
-        "Støtt personvern på nettet"
       ]
     },
     "specialoffer: Footer": {
@@ -11176,32 +10962,8 @@
       "Get the deal": [
         "Skaff deg tilbudet"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Fornyes etter 1 år til en rabattert pris på ${ discountedAmount } istedenfor ${ regularAmount } (${ discount }% rabatt)."
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Fornyes etter 2 år til en rabattert pris på ${ discountedAmount } istedenfor ${ regularAmount } (${ discount }% rabatt)."
-      ],
       "Save ${ discount }%": [
         "Spar ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Standard pris ${ amount } for 1 måned"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Standard pris ${ amount } for 12 måneder"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Standard pris ${ amount } for 15 måneder"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Standard pris ${ amount } for 24 måneder"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Standard pris ${ amount } for 30 måneder"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Spesialtilbudet gjelder de første 2 årene"
       ]
     },
     "specialoffer: Title": {
@@ -11231,23 +10993,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 servere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser per bruker, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 servere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alle våre premiumtjenester med sine høyeste grenser: 100 e-postadresser, støtte for 10 tilpassede domener, ubegrensede hide-my-email-aliaser, kalenderdeling, kryptert skylagring + fildeling og mer."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 3 egendefinerte e-postdomener, 15 e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfekt for familier eller små team, hver kan ha sin egen innboks og aliaser. Krever et egendefinert domene."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Motta gratis betalte versjoner av alle nye personverntjenester vi lanserer i fremtiden, sammen med tidlig tilgang til alle fremtidige funksjoner og produkter."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
@@ -11417,10 +11167,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-tilkobling per bruker",
-        "${ n } VPN-tilkoblinger per bruker"
       ],
       "VPN connection for ${ n } device per user": [
         "VPN-tilkobling for ${ n } enhet per bruker",
@@ -12011,9 +11757,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inkluderer 2950+ servere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer versjonshistorikk, kryptert fildeling og mer."
@@ -13106,6 +12849,36 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "Delt ende-til-ende-kryptert med bekreftet kontakt"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Få ${ discount } % rabatt på ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Skaff deg ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 TB of storage to share": [
+        "2 TB med lagringsplass å dele"
+      ],
+      "2 user accounts": [
+        "2 brukerkontoer"
+      ],
+      "All premium features from your current plan": [
+        "Alle premiumfunksjoner fra din nåværende plan"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
       ]
     },
     "Unlimited offer": {

@@ -991,6 +991,9 @@
       "More benefits": [
         "더 많은 혜택"
       ],
+      "More info": [
+        "상세 정보"
+      ],
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
       ],
@@ -1830,15 +1833,6 @@
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "보안 정책, 데이터 보존 및 VPN 인프라를 구성하고 감사 로그를 관리합니다."
       ],
-      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
-        "특정 관리자 역할을 부여하여 관리를 위임하세요. 각 관리자에게 필요한 접근 권한만 부여하세요. 이는 최소 권한의 원칙을 따르는 것으로, 계정 탈취 및 실수로 인한 오류로부터 조직을 보호합니다."
-      ],
-      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
-        "한 번에 많은 사용자에 대한 관리를 위임하세요. 자동 권한 부여를 위해 그룹에 특정 관리자 역할을 할당합니다. 이는 최소 권한 원칙을 따르며, 온보딩 및 오프보딩 시간의 소요를 절약하고 오류를 줄여 줍니다."
-      ],
-      "Delegate management with the appropriate admin role.": [
-        "적절한 관리자 역할을 부여하여 관리를 위임하세요."
-      ],
       "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
         "모든 사용자, 그룹, 스토리지, 보안, 결제, 감사 로그 및 시스템 구성을 관리하세요."
       ],
@@ -2056,56 +2050,15 @@
         "제안 사용 불가"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 데스크톱 앱"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } 및 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "저장공간 ${ storageSize }"
       ],
-      "1 user account": [
-        "1개 사용자 계정"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB 저장 공간: 현재 플랜의 40배에 해당"
-      ],
-      "6 user accounts": [
-        "6개 사용자 계정"
-      ],
-      "Admin panel to manage your family": [
-        "내 가족 계정 관리를 위한 관리자 패널"
-      ],
-      "Advanced account protection": [
-        "향상된 계정 보호 기능"
-      ],
-      "Easily add or remove users": [
-        "쉬운 사용자 추가 및 제거"
-      ],
-      "One-time payment, lifetime deal": [
-        "일회성 결제, 평생 이용"
-      ],
-      "Online document editor": [
-        "온라인 문서 편집기"
-      ],
-      "Password health alerts": [
-        "비밀번호 건강도 알림"
-      ],
-      "Recover previous file versions": [
-        "기존 파일 버전 복원"
-      ],
       "Unlimited folders, labels and filters": [
         "무제한 폴더, 라벨 및 필터"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "무제한 로그인, 신용 카드, hide-my-email 별칭 등"
       ],
       "Use your own email domain": [
         "기존 이메일 도메인 사용"
@@ -2114,87 +2067,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } 1회 청구"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "${ regularAmount }(으)로 1개월 후 갱신됩니다."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "차단된 콘텐츠에 접근 및 비공개로 브라우징하세요. 110여개 이상 국가에서 8500개 이상 서버와 10개 기기, 고속 스트리밍, 광고 제거 및 멀웨어 보호, VPN Accelerator 등이 포함됩니다."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "모든 기기의 로그인 항목을 보호하세요. 무제한 hide-my-email 별칭 공유, 통합된 2단계 인증기, ${ DARK_WEB_MONITORING_NAME } 등 기능이 포함되어 있습니다."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "이메일과 일정을 종단간 암호화로 보호하세요. 15개 이메일 주소, 사용자 지정 도메인 지원, 무제한 hide-my-email 별칭 등이 포함되어 있습니다."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "온라인 문서 편집기, 사진 백업, 버전 기록, 암호화된 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "총 2 TB 저장공간"
-      ],
-      "3 TB data storage": [
-        "3 TB 저장공간"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120개 이상 국가 내의 15,000개 이상 서버에 접근"
-      ],
-      "Access advanced AI models": [
-        "고급 AI 모델 이용"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
-      ],
-      "Block ads, trackers, and malware": [
-        "광고, 트래커 및 멀웨어 차단"
-      ],
-      "Built-in 2FA authenticator": [
-        "내장형 2단계 인증기"
-      ],
-      "Connect 10 devices at once": [
-        "한 번에 10대 기기 연결"
-      ],
-      "Full chat history with easy search and favorites": [
-        "쉬운 검색과 즐겨찾기 기능으로 전체 채팅 기록 보관"
-      ],
-      "Individual accounts for 6 users": [
-        "6명 사용자에 대한 개별 계정"
-      ],
-      "Individual accounts for you and a partner": [
-        "회원님과 파트너를 위한 개별 계정"
-      ],
-      "Stronger protection against cyber threats": [
-        "사이버 위협으로부터 대항하는 더 강력한 보호"
-      ],
-      "Unlimited daily chats": [
-        "일일 무제한 채팅"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "특수 설계된 NetShield는 광고나 추적기 및 멀웨어를 차단하여 기기를 보호하고 브라우징 성능을 향상시켜줍니다."
       ]
     },
     "Billing cycle": {
@@ -2547,9 +2424,6 @@
       ],
       "Basic chat history": [
         "기본 채팅 기록"
-      ],
-      "Built and based in Europe": [
-        "유럽에서 개발 및 기반"
       ],
       "Compliance with data protection regulations": [
         "데이터 보호 규정 준수"
@@ -5964,19 +5838,9 @@
         "(제목 없음)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "총 3TB 저장공간"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "나의 계정 혜택"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } 및 ${ DRIVE_APP_NAME }에 가족 간 스토리지 공간이 공유됩니다."
       ]
     },
     "familyOffer_2023:Action": {
@@ -6003,11 +5867,6 @@
       ],
       "View invitation": [
         "초대 보기"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "최대 6명의 사용자"
       ]
     },
     "familyOffer_2023:Error": {
@@ -6224,17 +6083,6 @@
       ],
       "Set family name": [
         "가족 이름을 설정하세요"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "65개 이상 국가의 2700여개 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "3개 커스텀 이메일 도메인, 90개 이메일 주소, 무제한 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ]
     },
     "Feature": {
@@ -7798,9 +7646,6 @@
       "Can’t access your recovery phone?": [
         "복구 전화번호에 접근할 수 없나요?"
       ],
-      "Change your password": [
-        "비밀번호를 변경하십시오"
-      ],
       "Check if your recovery phrase can be used to fully recover your account.": [
         "계정을 완전하게 복구하기 위해 복구 키 사용 가능 여부를 확인하세요."
       ],
@@ -8107,9 +7952,6 @@
       "eduGAIN configuration saved": [
         "eduGAIN 설정 저장됨"
       ],
-      "email": [
-        "이메일"
-      ],
       "Email address copied to clipboard": [
         "이메일 주소가 클립보드에 복사되었습니다"
       ],
@@ -8268,9 +8110,6 @@
       ],
       "Fill in user details": [
         "사용자 세부 정보를 입력하세요"
-      ],
-      "finance": [
-        "금융정보"
       ],
       "Find out what can be migrated.": [
         "이전되는 항목을 살펴보세요."
@@ -8713,9 +8552,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "내 모든 이메일 주소로 오는 메시지는 받은 편지함으로 이동됩니다."
       ],
-      "Monitor accounts": [
-        "계정 모니터링"
-      ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "${ BRAND_NAME } 자격 증명을 사용하는 모든 ${ BRAND_NAME } 서비스에 대한 인증 시도를 확인해보세요."
       ],
@@ -8886,9 +8722,6 @@
       ],
       "Pass usage logs": [
         "Pass 사용 로그"
-      ],
-      "password": [
-        "비밀번호"
       ],
       "Password copied to clipboard": [
         "비밀번호 복사됨"
@@ -9583,6 +9416,9 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "인터넷 연결을 안전하게 보호하기 위해, 기기에 맞는 ${ VPN_APP_NAME } 애플리케이션을 다운로드 및 설치하여 서버에 접속하세요."
       ],
+      "Today": [
+        "오늘"
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "유료 플랜을 결제하거나 현재 플랜을 갱신하는 데 사용할 수 있는 크레딧으로 계정을 충전하세요. 사용한 ${ i18nCurrency } 당 한개의 크레딧을 받습니다."
       ],
@@ -9713,9 +9549,6 @@
         "사용자 역할 할당됨"
       ],
       "Username": [
-        "사용자 이름"
-      ],
-      "username": [
         "사용자 이름"
       ],
       "Users": [
@@ -12501,9 +12334,6 @@
       "Auto-reply": [
         "자동 회신"
       ],
-      "Autofill credit cards (coming soon)": [
-        "신용카드 자동 완성 (곧 찾아 옵니다)"
-      ],
       "Automatic email forwarding": [
         "자동 이메일 전달"
       ],
@@ -12533,9 +12363,6 @@
       ],
       "Custom and secure business email": [
         "커스텀 및 보안 비즈니스 이메일"
-      ],
-      "Custom domains for email aliases": [
-        "이메일 별칭을 위한 커스텀 도메인"
       ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
@@ -12597,9 +12424,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, 그리고 ${ DRIVE_SHORT_APP_NAME }의 무료 기능들"
       ],
-      "Free VPN on a single device": [
-        "하나의 디바이스에서 무료 VPN"
-      ],
       "Fully refundable for 30 days": [
         "30일 이내 환불 가능"
       ],
@@ -12611,9 +12435,6 @@
       ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "${ n } 기기에서 고속 VPN"
       ],
       "HTML signatures": [
         "HTML 서명"
@@ -12782,9 +12603,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "사용자 당 무제한 공유된 ${ PASS_SHORT_APP_NAME } 금고"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "권한 접근이 포함된 무제한 공유 가능 금고"
       ],
       "Unlimited vault sharing": [
         "무제한 금고 공유"
@@ -13137,9 +12955,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "자사 서버버의 하드 디스크는 여러 암호 계층으로 완전히 암호화되어 하드웨어가 손상되더라도 데이터가 보호됩니다"
       ],
-      "Password management and identity protection": [
-        "비밀번호 관리 및 신원 보호"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
       ],
@@ -13249,12 +13064,6 @@
       "${ n } country": [
         "${ n }개 국가"
       ],
-      "Access advanced VPN features": [
-        "향상된 VPN 기능 접근"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "15개의 이메일 주소로 더 많은 개인화를 추가하고 3개의 커스텀 이메일 도메인을 지원합니다"
-      ],
       "AES 256-bit VPN encryption": [
         "256비트 AES VPN 암호화"
       ],
@@ -13264,9 +13073,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "사용자 당 ${ bundleStorage }(으)로 저장 공간 확장하기"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "최종 ${ bundleStorage }(으)로 저장 공간을 부스트하기"
-      ],
       "Browser extension": [
         "브라우저 확장 프로그램"
       ],
@@ -13275,12 +13081,6 @@
       ],
       "Central control panel": [
         "중앙 관리 패널"
-      ],
-      "Create up to ${ n } calendar": [
-        "최대 ${ n }개 캘린더 생성"
-      ],
-      "Dedicated Account manager": [
-        "전용 계정 관리자"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries }개 이상 국가에서 지원하는 전용 서버 위치"
@@ -14031,9 +13831,6 @@
       ],
       "Secure vault, item and link sharing": [
         "안전한 금고, 항목 및 링크 공유"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "무제한 로그인, 메모 및 신용 카드 등등"
       ]
     },
     "pass_signup_2023: Title": {
@@ -14220,6 +14017,9 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (세금 제외)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }은(는) ${ PLAN_NAMES[PLANS.PASS] }와(과) 겸용할 수 없습니다."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "세금 ${ rate }%: ${ taxAmountElement }"
       ],
@@ -14231,6 +14031,15 @@
       ],
       "Billing Country": [
         "청구 국가 "
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private는 활성 구독과 함께 결제할 수 없습니다."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private는 기부가 필수입니다."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "크레딧 구매는 별도 결제건으로 분리됩니다."
       ],
       "Card number": [
         "카드 번호"
@@ -14271,11 +14080,17 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "하나의 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }만 결제할 수 있습니다."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME }(으)로 결제하기"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "무료 체험 종료 후 구독이 활성화되려면 결제 수단이 필요합니다."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "플랜 변경 전 추가적인 지갑 계좌를 폐지해야 합니다."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -14303,6 +14118,12 @@
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "해당 할인은 ${ renewalsWithCoupon }회 갱신까지 유효합니다."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "선택된 플랜은 계정에 설정된 도메인만큼을 지원하지 않습니다."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "선택된 플랜은 현재 계정이 사용하는 저장공간만큼 지원하지 않습니다."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "특별 할인가는 ${ couponRedemptions }개월 동안 유효합니다. 이후 매월 ${ renewPriceStr }에 자동으로 갱신됩니다. 언제든지 취소할 수 있습니다."
@@ -14337,8 +14158,20 @@
       "This payment method will become your new default for all future renewals.": [
         "이 결제 수단이 향후 모든 갱신에 대한 새로운 결제 기본값으로 설정됩니다."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "이 플랜은 사용자의 조직에 속한 구성원들을 지원하지 않습니다."
+      ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "무료 체험에서는 ${ LUMO_SHORT_APP_NAME } 이용 권한을 지원하지 않습니다."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "무료 체험에서는 사용자 지정 도메인 이용 권한을 지원하지 않습니다."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "무료 체험에서는 Scribe 이용 권한을 지원하지 않습니다."
       ],
       "VAT number": [
         "부가가치세 번호"
@@ -16401,12 +16234,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "사용자 6명"
-      ],
       "All paid Mail and Calendar features": [
         "모든 유료 메일 및 캘린더 기능"
       ],
@@ -16425,17 +16252,11 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "프리미엄 ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
-      "Premium early access": [
-        "프리미엄 얼리 엑세스"
-      ],
       "Secure cloud storage": [
         "안전한 클라우드 저장 공간"
       ],
       "Secure streaming": [
         "보안 스트리밍"
-      ],
-      "Support online privacy": [
-        "온라인 개인정보 보호 지원"
       ]
     },
     "specialoffer: Footer": {
@@ -16518,32 +16339,8 @@
       "Get the deal": [
         "특가로 구매"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "1년 뒤 할인된 가격의 ${ discountedAmount } 가 ${ regularAmount } 으로 갱신됩니다. (${ discount }% 할인)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "2년 뒤 할인된 가격의 ${ discountedAmount } 가 ${ regularAmount } 으로 갱신됩니다. (${ discount }% 할인)"
-      ],
       "Save ${ discount }%": [
         "${ discount }% 절약"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "1달에 기본 가격 ${ amount }씩 청구됨"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "12달에 기본 가격 ${ amount }씩 청구됨"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "15달에 기본 가격 ${ amount }씩 청구됨"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "24달에 기본 가격 ${ amount }씩 청구됨"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "30달에 기본 가격 ${ amount }씩 청구됨"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "본 특가 할인은 최초 2년간 유효합니다"
       ]
     },
     "specialoffer: Title": {
@@ -16573,23 +16370,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "60개 이상의 국가의 1700여개 서버로 차단된 콘텐츠에 접근하고 비공개적으로 브라우징 하고, 빠른 VPN 속도, 사용자 당 10개 VPN 연결, 월드와이드 스트리밍 서비스, 멀웨어 및 광고 차단기 등을 누리십시오."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "60개 이상의 국가의 1700여개 서버로 차단된 콘텐츠에 접근하고 비공개적으로 브라우징 하고, 빠른 VPN 속도, 10개 VPN 연결, 월드와이드 스트리밍 서비스, 멀웨어 및 광고 차단기 등을 누리십시오."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "자사 프리미엄 서비스의 최대 제한: 100개 이메일 주소, 10개 지정 도메인 지원, 무제한 hide-my-email 별칭, 캘린더 공유, 암호화된 클라우드 저장 공간 및 파일 공유 등."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "3개 커스텀 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "가족이나 소규모 팀에 딱 맞습니다. 각 구성원이 그만의 받은 편지함과 별칭을 가지며 커스텀 도메인을 필요로 합니다."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "향후 모든 기능 및 제품에 대한 얼리 액세스와 함께 향후 출시할 모든 새로운 개인 정보 보호 서비스의 유료 버전을 추가 비용 없이 누리세요."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -17105,9 +16890,6 @@
       ],
       "${ n } VPN connection": [
         "${ n }개 VPN 연결"
-      ],
-      "${ n } VPN connection per user": [
-        "사용자 당 ${ n }개 VPN 연결"
       ],
       "${ productName } for ${ count } user": [
         "${ count }명의 사용자를 위한 ${ productName }"
@@ -17869,9 +17651,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65개 이상 국가의 2950개 이상의 서버, 최대 10개 기기 연결, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 차단기 등 포함."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 hide-my-email 별칭, 캘린더 공유 등 지원 포함."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -19888,6 +19667,36 @@
         "테스트 크레딧"
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "${ planName } ${ discount }% 할인 받기"
+      ],
+      "Get ${ planName }": [
+        "${ planName } 받기"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/월간"
+      ],
+      "2 TB of storage to share": [
+        "공유 가능한 2 TB 저장공간"
+      ],
+      "2 user accounts": [
+        "2개 사용자 계정"
+      ],
+      "All premium features from your current plan": [
+        "현재 플랜의 모든 프리미엄 기능"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12개월간"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/월간"
@@ -20138,6 +19947,9 @@
       ],
       "Writing assistant": [
         "글쓰기 도우미"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "나 자신의 규칙은 변경할 수 없습니다. 다른 관리자에게 변경을 문의하십시오."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "사용자가 초대를 수락하면 역할을 할당할 수 있습니다."

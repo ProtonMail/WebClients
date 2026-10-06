@@ -238,9 +238,6 @@
       "Clear browser data": [
         "ब्राउज़र डेटा साफ़ करें"
       ],
-      "Clear conversation": [
-        "बातचीत हटाएं"
-      ],
       "Clear data": [
         "डाटा साफ करें"
       ],
@@ -796,9 +793,6 @@
       "Join with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME } के साथ शामिल हों"
       ],
-      "Keep going": [
-        "जारी रखें"
-      ],
       "Keep inbox as before": [
         "इंबॉक्स को पहले जैसा ही रखें"
       ],
@@ -942,6 +936,9 @@
       ],
       "More details about ${ ariaLabelTitle }": [
         "${ ariaLabelTitle } के बारे में अधिक जानकारी"
+      ],
+      "More info": [
+        "अधिक जानकारी"
       ],
       "More info: ${ safeTitle }": [
         "और जानकारी: ${ safeTitle }"
@@ -1479,9 +1476,6 @@
       ],
       "Stop generating result": [
         "परिणाम जेनरेट करना बंद करें"
-      ],
-      "Stop here": [
-        "यहीं रोकें"
       ],
       "Stop marking as read": [
         "पढ़े गए के रूप में मार्क करना बंद करें"
@@ -2089,56 +2083,15 @@
         "30 दिन की पैसे-वापस गारंटी"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "इसमें 1 कस्टम ईमेल डोमेन, 10 ईमेल पते, 10 hide-my-email नकली-नाम, कैलेंडर साझाकरण और बहुत कुछ के लिए सहायता शामिल है।"
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } डेस्कटॉप ऐप"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } और ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } स्टोरेज"
       ],
-      "1 user account": [
-        "1 उपयोगकर्ता खाता"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 जीबी स्टोरेज: आपके वर्तमान प्लैन का 40 गुना"
-      ],
-      "6 user accounts": [
-        "6 उपयोगकर्ता खाते"
-      ],
-      "Admin panel to manage your family": [
-        "आपके परिवार को संभालने के लिए एडमिन पैनल"
-      ],
-      "Advanced account protection": [
-        "उन्नत खाता सुरक्षा"
-      ],
-      "Easily add or remove users": [
-        "आसानी से उपयोगकर्ताओं को जोड़ें या हटाएं"
-      ],
-      "One-time payment, lifetime deal": [
-        "एक बार का भुगतान, लाइफटाइम डील"
-      ],
-      "Online document editor": [
-        "ऑनलाइन दस्तावेज़ संपादक"
-      ],
-      "Password health alerts": [
-        "पासवर्ड हेल्थ अलर्ट"
-      ],
-      "Recover previous file versions": [
-        "पिछले फ़ाइल वर्ज़न रिकवर करें"
-      ],
       "Unlimited folders, labels and filters": [
         "असीमित फोल्डर, लेबल और फिल्टर"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "असीमित लॉगइन, क्रेडिट कार्ड, hide-my-email नकली-नाम और बहुत कुछ"
       ],
       "Use your own email domain": [
         "अपने खुद के ईमेल डोमेन का उपयोग करें"
@@ -2147,90 +2100,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "एक बार ${ amount } बिल किया गया"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "${ regularAmount } पर 1 महीने बाद नवीनीकृत होता है।"
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "अवरुद्ध सामग्री को एक्सेस करें और निजी तौर पर ब्राउज़ करें। इसमें 110+ देशों में 8,500+ सर्वर, 10 डिवाइस, हाई-स्पीड स्ट्रीमिंग, एड-ब्लॉकर और मालवेयर सुरक्षा, VPN Accelerator और बहुत कुछ शामिल है।"
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "आपके सभी डिवाइस पर सुरक्षित लॉगइन। इसमें असीमित hide-my-email नकली-नाम, शेयरिंग, एकीकृत 2FA, ${ DARK_WEB_MONITORING_NAME } और बहुत कुछ शामिल है।"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पता, कस्टम ईमेल डोमेन के लिए सहायता, ${ BRAND_NAME } Scribe राइटिंग असिस्टेंट, असीमित hide-my-email उपनाम और बहुत कुछ शामिल है।",
-        "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, ${ BRAND_NAME } Scribe राइटिंग असिस्टेंट, असीमित hide-my-email उपनाम और बहुत कुछ शामिल है।"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "अपने ईमेल और शेड्यूल को शुरु-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पता, कस्टम ईमेल डोमेन के लिए सहायता, ${ LUMO_SHORT_APP_NAME } राइटिंग असिस्टेंट, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।",
-        "अपने ईमेल और शेड्यूल को शुरु-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, ${ LUMO_SHORT_APP_NAME } राइटिंग असिस्टेंट, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पता, कस्टम ईमेल डोमेन के लिए सहायता, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।",
-        "अपने ईमेल और शेड्यूल को शुरु-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें ${ addresses } ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें 15 ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, ${ BRAND_NAME } Scribe राइटिंग असिस्टेंट, असीमित hide-my-email उपनाम और बहुत कुछ शामिल है।"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "अपने ईमेल और शेड्यूल को शुरु-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें 15 ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, ${ LUMO_SHORT_APP_NAME } राइटिंग असिस्टेंट, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "अपने ईमेल और शेड्यूल को शुरू-से-अंत तक एन्क्रिप्शन के साथ सुरक्षित करें। इसमें 15 ईमेल पते, कस्टम ईमेल डोमेन के लिए सहायता, असीमित hide-my-email नकली-नाम और बहुत कुछ शामिल है।"
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज के साथ सुरक्षित करें। इसमें ऑनलाइन डॉक्यूमेंट एडिटर, फोटो बैकअप, संस्करण इतिहास, एन्क्रिप्टेड फाइल शेयर, और बहुत कुछ शामिल है।"
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "स्टोरेज स्पेस सभी ${ BRAND_NAME } सेवाओं में साझा किया जाता है।"
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 टीबी डेटा स्टोरेज"
-      ],
-      "3 TB data storage": [
-        "3 टीबी डेटा स्टोरेज"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "120+ देशों में 15,000+ सर्वर एक्सेस करें"
-      ],
-      "Access advanced AI models": [
-        "उन्नत AI मॉडलों को एक्सेस करें"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, और ${ CALENDAR_SHORT_APP_NAME } की सभी प्रीमियम खासियतें"
-      ],
-      "Block ads, trackers, and malware": [
-        "विज्ञापनों, ट्रैकर्स और मालवेयर को ब्लॉक करें"
-      ],
-      "Built-in 2FA authenticator": [
-        "इन-बिल्ट 2FA ऑथेंटिकेटर"
-      ],
-      "Connect 10 devices at once": [
-        "एक साथ 10 डिवाइस कनेक्ट करें"
-      ],
-      "Full chat history with easy search and favorites": [
-        "आसान खोज और पसंदीदा के साथ पूरा चैट इतिहास"
-      ],
-      "Individual accounts for 6 users": [
-        "6 उपयोगकर्ताओं के लिए व्यक्तिगत खाते"
-      ],
-      "Individual accounts for you and a partner": [
-        "आपके और आपके साथी के लिए व्यक्तिगत खाते"
-      ],
-      "Stronger protection against cyber threats": [
-        "साइबर खतरों के खिलाफ अधिक मज़बूत सुरक्षा"
-      ],
-      "Unlimited daily chats": [
-        "प्रतिदिन असीमित चैट"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "विशेष रूप से डिज़ाइन किया गया NetShield आपके डिवाइस की सुरक्षा करता है और विज्ञापनों, ट्रैकर्स व मालवेयर को ब्लॉक करके आपके ब्राउज़िंग को तेज़ करता है।"
       ]
     },
     "Billing cycle option": {
@@ -2783,9 +2657,6 @@
       ],
       "Basic chat history": [
         "बुनियादी चैट इतिहास"
-      ],
-      "Built and based in Europe": [
-        "यूरोप में निर्मित और आधारित"
       ],
       "Compliance with data protection regulations": [
         "डेटा सुरक्षा नियमों का अनुपालन"
@@ -4447,9 +4318,6 @@
       "${ messageCount } new message": [
         "${ messageCount } नया संदेश",
         "${ messageCount } नए संदेश"
-      ],
-      "From: ${ sender } - ${ message.Subject }": [
-        "प्रेषक: ${ sender } - ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -5953,16 +5821,6 @@
         "(कोई शीर्षक नहीं)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "कुल 3 टीबी स्टोरेज"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "स्टोरेज स्पेस को परिवार के सदस्य ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } के बीच शेयर करते हैं।"
-      ]
-    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "न्योता इंकार करें"
@@ -5972,11 +5830,6 @@
       ],
       "Switch plans": [
         "प्लैन बदलें"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "6 उपयोगकर्ताओं तक"
       ]
     },
     "familyOffer_2023:Error": {
@@ -6092,17 +5945,6 @@
       ],
       "Delete organization?": [
         "संगठन मिटाएं?"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "इसमें 65+ देशों में 2700 सर्वर, 10 डिवाइस तक कनेक्ट, दुनिया भर में स्ट्रीमिंग सेवाओं तक एक्सेस, मैलवेयर और एड-ब्लॉकर और बहुत कुछ शामिल है।"
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "इसमें 3 कस्टम ईमेल डोमेन, 90 ईमेल पते, असीमित hide-my-email नकली-नाम, कैलेंडर साझाकरण और बहुत कुछ के लिए सहायता शामिल है।"
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "अपनी फ़ाइलों को एन्क्रिप्ट किया क्लाउड स्टोरेज के साथ सुरक्षित करें। इसमें स्वचालित सिंक, एन्क्रिप्ट किया फ़ाइल शेयर, और बहुत कुछ शामिल है।"
       ]
     },
     "Feature": {
@@ -7120,9 +6962,6 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } में लेखन सहायक शामिल है"
       ],
-      "${ LUMO_SHORT_APP_NAME } has taken ${ count } so far. Keep going?": [
-        "${ LUMO_SHORT_APP_NAME } ने अब तक ${ count } स्टेप लिए हैं। जारी रखें?"
-      ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } आपको जल्दी और आसानी से बेहतर ईमेल लिखने में मदद करता है।"
       ],
@@ -7226,10 +7065,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } लेबल चयनित",
         "${ selectedFoldersCountLocalized } लेबल चयनित"
-      ],
-      "${ steps } step": [
-        "${ steps } स्टेप",
-        "${ steps } स्टेप"
       ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
@@ -7611,9 +7446,6 @@
       ],
       "Change your mailbox layout": [
         "अपने मेलबॉक्स का खाका बदलें"
-      ],
-      "Change your password": [
-        "अपना पासवर्ड बदलें"
       ],
       "Change your theme": [
         "अपनी थीम बदलें"
@@ -8004,9 +7836,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "फिल्टर आने वाले ईमेल के साथ-साथ भेजे गए ईमेल सहित सभी ईमेल पर काम करते हैं। प्रत्येक फ़िल्टर में कम से कम नाम, एक शर्त और एक कार्रवाई होनी चाहिए।"
       ],
-      "finance": [
-        "वित्त"
-      ],
       "Find out what can be migrated.": [
         "जानें कि क्या-क्या माइग्रेट किया जा सकता है।"
       ],
@@ -8085,9 +7914,6 @@
       ],
       "How hide-my-email aliases works": [
         "hide-my-email उर्फ़ कैसे काम करते हैं"
-      ],
-      "I have not finished this one yet.": [
-        "मैंने अभी ये पूरा नहीं किया है।"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "मैं यह संदेश एक गैर-${ MAIL_APP_NAME } उपयोगकर्ता को भेज रहा हूँ।"
@@ -8372,9 +8198,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "आपके सभी ईमेल पतों पर भेजे गए संदेश आपके इंबॉक्स में जाएंगे।"
       ],
-      "Monitor accounts": [
-        "खातों पर नज़र रखें"
-      ],
       "Monthly ${ onDayString }": [
         "मासिक ${ onDayString }"
       ],
@@ -8548,9 +8371,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
         "हमारे सिस्टम ने इस संदेश को फिशिंग प्रयास के रूप में चिह्नित किया है। कृपया सुनिश्चित करने के लिए जांच करें कि यह वैध है।"
-      ],
-      "password": [
-        "पासवर्ड"
       ],
       "Password copied to clipboard": [
         "पासवर्ड क्लिपबोर्ड पे कॉपी किया गया"
@@ -9308,6 +9128,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "पता सत्यापन का उपयोग करने के लिए, आपको एक या अधिक उपलब्ध सार्वजनिक कुंजियों पर भरोसा करना चाहिए, जिसमें आप भेजने के लिए उपयोग करना चाहते हैं। यह एन्क्रिप्शन कुंजियों को नकली होने से रोकता है।"
       ],
+      "Today": [
+        "आज"
+      ],
       "Tomorrow, ${ formattedTime }": [
         "कल, ${ formattedTime }"
       ],
@@ -9463,9 +9286,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "अपने ईमेल को तेज़ी से प्रबंधित करने के लिए कीबोर्ड शॉर्टकट का उपयोग करें।"
-      ],
-      "username": [
-        "यूज़रनेम"
       ],
       "Users": [
         "उपयोगकर्ता"
@@ -10677,6 +10497,9 @@
       ],
       "IF": [
         "अगर"
+      ],
+      "Image": [
+        "तस्वीर"
       ],
       "Import all messages": [
         "सभी संदेशों को आयात करें"
@@ -12226,9 +12049,6 @@
       "Auto-reply": [
         "ऑटोमैटिक-जवाब"
       ],
-      "Autofill credit cards (coming soon)": [
-        "ऑटोफिल क्रेडिट कार्ड (जल्द ही आ रहा है)"
-      ],
       "Automatic email forwarding": [
         "स्वचालित ईमेल फॉरवर्ड"
       ],
@@ -12255,9 +12075,6 @@
       ],
       "Custom and secure business email": [
         "कस्टम और सुरक्षित बिज़नेस ईमेल"
-      ],
-      "Custom domains for email aliases": [
-        "ईमेल उपनाम के लिए कस्टम डोमेन"
       ],
       "Custom email domains": [
         "कस्टम ईमेल डोमेन"
@@ -12316,9 +12133,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } और ${ DRIVE_SHORT_APP_NAME } की ओर से निःशुल्क सुविधाएँ"
       ],
-      "Free VPN on a single device": [
-        "मुफ्त VPN एक डिवाइस पे"
-      ],
       "Fully refundable for 30 days": [
         "30 दिन तक पूरा रिफंड"
       ],
@@ -12330,10 +12144,6 @@
       ],
       "Group management (coming soon)": [
         "समूह प्रबंधन (शीघ्र ही आ रहा है)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "तेज़ VPN ${ n } डिवाइस पे",
-        "तेज़ VPN ${ n } डिवाइस पे"
       ],
       "HTML signatures": [
         "HTML हस्ताक्षर"
@@ -12490,9 +12300,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "प्रति उपयोगकर्ता असीमित शेयर की गई ${ PASS_SHORT_APP_NAME } तिजोरियाँ"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "असीमित साझा तिजोरियाँ जिनमें पहुँच अनुमतियाँ हैं"
       ],
       "Unlimited vault sharing": [
         "असीमित तिजोरी साझाकरण"
@@ -12812,9 +12619,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "हमारे सर्वर के हार्ड डिस्क पूरे तरह से एन्क्रिप्ट किये गए है कई पासवर्ड लेयर के साथ ताकि आपका डाटा सुरक्षित रहे तब भी जब हमारे हार्डवेयर के साथ समझोता हो जाए।"
       ],
-      "Password management and identity protection": [
-        "पासवर्ड प्रबंधन और पहचान सुरक्षा"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "लोगो, तस्वीर, सोशल मीडिया आइकन, अपने संपर्क जानकारी के लिंक, जैसे चीज़ो के साथ अपने ईमेल हस्ताक्षर को अपनी पसंद का बनाएं।"
       ],
@@ -12917,12 +12721,6 @@
         "${ n } देश",
         "${ n } देश"
       ],
-      "Access advanced VPN features": [
-        "एडवांस VPN सुविधाएं एक्सेस करें"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "15 ईमेल पतों और 3 कस्टम ईमेल डोमेन के सपोर्ट के साथ और ज़्यादा पर्सनलाइज़ेशन पाएं"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-बिट VPN एन्क्रिप्शन"
       ],
@@ -12932,9 +12730,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "अपने स्टोरेज स्पेस को ${ bundleStorage } प्रति उपयोगकर्ता तक बढ़ाएं"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "अपने स्टोरेज स्पेस को कुल ${ bundleStorage } तक बढ़ाएं"
-      ],
       "Browser extension": [
         "ब्राउज़र एक्सटेंशन"
       ],
@@ -12943,13 +12738,6 @@
       ],
       "Central control panel": [
         "केंद्रीय नियंत्रण पैनल"
-      ],
-      "Create up to ${ n } calendar": [
-        "${ n } कैलेंडर तक बनाएं",
-        "${ n } कैलेंडर तक बनाएं"
-      ],
-      "Dedicated Account manager": [
-        "समर्पित खाता प्रबंधक"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "${ numberOfCountries }+ देशों में समर्पित सर्वर स्थान"
@@ -13547,9 +13335,6 @@
       ],
       "Secure vault, item and link sharing": [
         "सुरक्षित तिजोरी, आइटम और लिंक शेयरिंग"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "असीमित लॉगइन, नोट्स, क्रेडिट कार्ड और बहुत कुछ"
       ]
     },
     "pass_signup_2023: Title": {
@@ -15035,12 +14820,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 टीबी"
-      ],
-      "6 users": [
-        "6 उपयोगकर्ता"
-      ],
       "All paid Mail and Calendar features": [
         "Mail और Calendar की सभी सशुल्क सुविधाएं"
       ],
@@ -15059,17 +14838,11 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "प्रीमियम ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
-      "Premium early access": [
-        "प्रीमियम जल्दी एक्सेस"
-      ],
       "Secure cloud storage": [
         "सुरक्षित क्लाउड स्टोरेज"
       ],
       "Secure streaming": [
         "सुरक्षित स्ट्रीमिंग"
-      ],
-      "Support online privacy": [
-        "ऑनलाइन निजता को बढ़ावा दें"
       ]
     },
     "specialoffer: Footer": {
@@ -15153,32 +14926,8 @@
       "Get the deal": [
         "सौदा पाएं"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "1 वर्ष बाद ${ regularAmount } के बजाय ${ discountedAmount } की रियायती कीमत (${ discount }% छूट) पर नवीनीकृत होता है।"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "2 साल बाद ${ regularAmount } की जगह ${ discountedAmount } की रियायती कीमत पर रिन्यू होगा (${ discount }% छूट)।"
-      ],
       "Save ${ discount }%": [
         "${ discount }% की छूट"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "1 महीने के लिए मानक दाम ${ amount }"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "12 महीने के लिए मानक दाम ${ amount }"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "15 महीने के लिए मानक दाम ${ amount }"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "24 महीने के लिए मानक दाम ${ amount }"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "30 महीने के लिए मानक दाम ${ amount }"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "विशेष ऑफर पहले 2 वर्षों के लिए मान्य है।"
       ]
     },
     "specialoffer: Title": {
@@ -15208,23 +14957,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम VPN गति, प्रति उपयोगकर्ता 10 VPN कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम VPN गति, 10 VPN कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "हमारी सभी प्रीमियम सेवाएँ अपनी उच्चतम सीमा के साथ: 100 ईमेल पते, 10 कस्टम डोमेन के लिए समर्थन, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण, एन्क्रिप्टेड क्लाउड स्टोरेज और फ़ाइल साझाकरण, और बहुत कुछ।"
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "इसमें 3 कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email नकली-नाम, कैलेंडर साझाकरण, और बहुत कुछ के लिए सहायता शामिल है।"
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "परिवारों या छोटी टीमों के लिए उत्तम, प्रत्येक का अपना इंबॉक्स और नकली-नाम हो सकता है। कस्टम डोमेन की आवश्यकता है।"
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "भविष्य में हमारे द्वारा जारी की जाने वाली सभी नई गोपनीयता सेवाओं के भुगतान की आवश्यकता वाले संस्करण बिना किसी अतिरिक्त लागत के प्राप्त करें, साथ ही भविष्य की सभी सुविधाओं और उत्पादों तक शीघ्र पहुंच प्राप्त करें।"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज के साथ सुरक्षित करें। इसमें स्वचालित सिंक, एन्क्रिप्ट किया गया फ़ाइल शेयर, और बहुत कुछ शामिल है।"
@@ -15435,10 +15172,6 @@
       "${ n } VPN connection": [
         "${ n } VPN कनेक्शन",
         "${ n } VPN कनेक्शन"
-      ],
-      "${ n } VPN connection per user": [
-        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन",
-        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन"
       ],
       "VPN connection for ${ n } device per user": [
         "प्रति उपयोगकर्ता ${ n } डिवाइस के लिए VPN कनेक्शन",
@@ -16182,9 +15915,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "इसमें 65+ देशों में 2950+ सर्वर, 10 डिवाइस तक कनेक्ट, दुनिया भर में स्ट्रीमिंग सेवाओं तक एक्सेस, मालवेयर और एड-ब्लॉकर और बहुत कुछ शामिल है।"
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "इसमें 1 कस्टम ईमेल डोमेन, 10 ईमेल पते, 10 hide-my-email नकली-नाम, कैलेंडर साझाकरण और बहुत कुछ के लिए सहायता शामिल है।"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। संस्करण इतिहास, एन्क्रिप्टेड फ़ाइल साझाकरण, और बहुत कुछ शामिल है।"
@@ -17606,6 +17336,36 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tor ब्राउज़र का यह संस्करण समर्थित नहीं है। कृपया नवीनतम ${ stableRelease } में अपडेट करें"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "${ planName } पर ${ discount }% की छूट पाएं"
+      ],
+      "Get ${ planName }": [
+        "${ planName } लें"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/महीना"
+      ],
+      "2 TB of storage to share": [
+        "शेयर करने के लिए 2 टीबी स्टोरेज"
+      ],
+      "2 user accounts": [
+        "2 उपयोगकर्ता खाते"
+      ],
+      "All premium features from your current plan": [
+        "आपके मौजूदा प्लैन की सभी प्रीमियम खासियतें"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "छूटें मानक मासिक कीमतों पर आधारित हैं। बिल साइकिल खत्म होने पर आपकी सदस्यता मानक वार्षिक दर पर रिन्यू होगी।"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 महीने के लिए"
       ]
     },
     "Unlimited offer": {

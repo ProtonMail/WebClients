@@ -240,11 +240,11 @@
       "Cancel": [
         "Abbrechen"
       ],
-      "Change layout": [
-        "Layout ändern"
-      ],
       "Change password": [
         "Passwort ändern"
+      ],
+      "Chat": [
+        "Unterhaltung"
       ],
       "Chat with us": [
         "Chatte mit uns"
@@ -302,6 +302,12 @@
       ],
       "Create meeting": [
         "Meeting erstellen"
+      ],
+      "Debug devices": [
+        "Fehler auf Geräten beheben"
+      ],
+      "Debug overlay": [
+        "Debug-Overlay"
       ],
       "Delete": [
         "Löschen"
@@ -375,9 +381,6 @@
       "Enable camera": [
         "Kamera aktivieren"
       ],
-      "Enable captions": [
-        "Untertitel aktivieren"
-      ],
       "Enable waiting room": [
         "Wartebereich aktivieren"
       ],
@@ -447,6 +450,9 @@
       "Kick out ${ participantName }": [
         "${ participantName } entfernen"
       ],
+      "Layout": [
+        "Layout"
+      ],
       "Leave": [
         "Verlassen"
       ],
@@ -465,11 +471,17 @@
       "Lower hand": [
         "Hand senken"
       ],
+      "Meeting info": [
+        "Meeting-Information"
+      ],
       "Meeting timer": [
         "Meeting-Timer"
       ],
       "Minimize preview": [
         "Vorschau minimieren"
+      ],
+      "More info": [
+        "Weitere Informationen"
       ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
@@ -492,6 +504,9 @@
       "Noise cancellation": [
         "Geräuschunterdrückung"
       ],
+      "Not now": [
+        "Nicht jetzt"
+      ],
       "Open app": [
         "App öffnen"
       ],
@@ -500,6 +515,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Offene Erwähnung von ${ senderName } im Chat"
+      ],
+      "Participants": [
+        "Teilnehmer"
       ],
       "Participants join after you approve them": [
         "Teilnehmer werden zugelassen, nachdem du sie genehmigt hast"
@@ -546,6 +564,9 @@
       ],
       "Record": [
         "Aufnehmen"
+      ],
+      "Recording": [
+        "Aufnahme"
       ],
       "Recording your microphone...": [
         "Aufnahme über dein Mikrofon..."
@@ -641,6 +662,12 @@
       "Settings": [
         "Einstellungen"
       ],
+      "Share screen": [
+        "Fenster teilen"
+      ],
+      "Show captions": [
+        "Untertitel anzeigen"
+      ],
       "Show options": [
         "Optionen anzeigen"
       ],
@@ -713,6 +740,9 @@
       "Stop Recording Track Stats": [
         "Aufzeichnen von Track-Statistiken stoppen"
       ],
+      "Stop sharing": [
+        "Teilen beenden"
+      ],
       "Submit": [
         "Senden"
       ],
@@ -730,6 +760,9 @@
       ],
       "The current link will stop working.": [
         "Der aktuelle Link wird nicht mehr funktionieren."
+      ],
+      "Transcription": [
+        "Transkription"
       ],
       "Try again": [
         "Erneut versuchen"
@@ -811,9 +844,6 @@
       "Blur background": [
         "Hintergrund unscharf machen"
       ],
-      "Chat": [
-        "Chat"
-      ],
       "Close": [
         "Schließen"
       ],
@@ -826,23 +856,11 @@
       "Copy meeting link": [
         "Meeting-Link kopieren"
       ],
-      "Debug devices": [
-        "Fehler auf Geräten beheben"
-      ],
-      "Debug overlay": [
-        "Debug-Overlay"
-      ],
-      "Device Debugger": [
-        "Fehlerbehebung für Geräte"
-      ],
       "Go to dashboard": [
         "Zum Dashboard gehen"
       ],
       "Incoming video": [
         "Eingehender Videoanruf"
-      ],
-      "Layout: ${ selectedLabel }": [
-        "Layout: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Meeting verlassen"
@@ -852,12 +870,6 @@
       ],
       "Lock meeting": [
         "Meeting sperren"
-      ],
-      "Lower hand": [
-        "Hand senken"
-      ],
-      "Meeting details": [
-        "Meeting-Details"
       ],
       "Meeting timer": [
         "Meeting-Timer"
@@ -877,14 +889,8 @@
       "Participant host control options": [
         "Organisator-Steuerungsoptionen für Teilnehmer"
       ],
-      "Participants": [
-        "Teilnehmer"
-      ],
       "Picture-in-picture while sharing": [
         "Bild-in-Bild beim Teilen"
-      ],
-      "Raise hand": [
-        "Hand heben"
       ],
       "Rotate camera": [
         "Kamera drehen"
@@ -892,14 +898,8 @@
       "Save my name on this device": [
         "Meinen Namen auf diesem Gerät speichern"
       ],
-      "Screen share": [
-        "Bildschirmfreigabe"
-      ],
       "Self view": [
         "Selbstdarstellung"
-      ],
-      "Settings": [
-        "Einstellungen"
       ],
       "Stop recording and download.": [
         "Aufzeichnung stoppen und herunterladen."
@@ -910,17 +910,11 @@
       "Toggle emoji reactions": [
         "Emoji-Reaktionen umschalten"
       ],
-      "Toggle meeting details": [
-        "Meeting-Details ein-/ausblenden"
-      ],
       "Toggle participants": [
         "Teilnehmer ein-/ausblenden"
       ],
       "Toggle screen share": [
         "Bildschirmteilen ein-/ausschalten"
-      ],
-      "Toggle settings": [
-        "Einstellungen ein-/ausblenden"
       ],
       "Video settings": [
         "Videoeinstellungen"
@@ -2945,6 +2939,9 @@
       "Host": [
         "Organisator"
       ],
+      "Host has another meeting in progress": [
+        "Der Veranstalter ist gerade in einem anderen Meeting"
+      ],
       "Host has disabled live captions for this meeting.": [
         "Organisator hat die Live-Untertitel für dieses Meeting deaktiviert."
       ],
@@ -3083,6 +3080,9 @@
       "Microphone permission denied": [
         "Mikrofonzugriff verweigert"
       ],
+      "More options": [
+        "Weitere Optionen"
+      ],
       "Mute microphone": [
         "Mikrofon stummschalten"
       ],
@@ -3133,6 +3133,9 @@
       ],
       "No speaker detected": [
         "Kein Lautsprecher erkannt"
+      ],
+      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
+        "Die Geräuschunterdrückung wurde deaktiviert, da auf deinem Gerät Leistungsprobleme auftraten. Du kannst diese in den Audioeinstellungen erneut aktivieren."
       ],
       "Not sent, check your connection.": [
         "Nicht gesendet, überprüfe deine Verbindung."
@@ -3275,8 +3278,11 @@
       "Share screen": [
         "Bildschirm teilen"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Teile diesen Link, um andere einzuladen. Du findest ihn auch jederzeit, indem du auf das Info-Symbol in der Symbolleiste klickst."
+      "Share this link to invite others. You can also find it anytime under Meeting info in the More options menu.": [
+        "Teile diesen Link, um andere einzuladen. Du findest ihn außerdem jederzeit unter «Meeting-Informationen» im Menü «Weitere Optionen»."
+      ],
+      "Show live captions?": [
+        "Live-Untertitel anzeigen?"
       ],
       "Sign in": [
         "Anmelden"
@@ -3286,9 +3292,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "Die Lautsprecherauswahl ist in diesem Browser nicht verfügbar. Verwende deine Systemeinstellungen, um einen anderen Lautsprecher auszuwählen."
-      ],
-      "Start recording": [
-        "Aufzeichnung starten"
       ],
       "Starting camera…": [
         "Kamera wird gestartet…"
@@ -3307,6 +3310,9 @@
       ],
       "Thank you for joining.": [
         "Danke für deine Teilnahme."
+      ],
+      "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
+        "Der Untertitelungsdienst nutzt den Ton des Meetings. Untertitel sind nur für dich sichtbar und werden nicht gespeichert."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Der Organisator hat dich von diesem Meeting ausgeschlossen. Sollte dies ein Fehler gewesen sein, bitte den Organisator, dich erneut einzuladen."
@@ -3332,6 +3338,9 @@
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Dieses Meeting hat die Zeitbegrenzung des kostenlosen Tarifs erreicht. Führe ein Upgrade durch, um die Dauer deiner zukünftigen Meetings zu verlängern"
       ],
+      "This meeting reached the time limit.": [
+        "Dieses Meeting hat die vorgesehene Dauer erreicht."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Dieses Meeting wurde in der Desktop-App ${ MEET_APP_NAME } geöffnet."
       ],
@@ -3349,9 +3358,6 @@
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Um einen Raum zu erstellen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**, damit wir den Raum speichern können. Das dauert nur wenige Sekunden."
-      ],
-      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
-        "Um Live-Untertitel zu erstellen, benötigt der Dienst für die Untertitelt Zugriff auf den Ton des Meetings. Die Untertitel sind nur für dich sichtbar und werden nicht gespeichert."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
@@ -3373,9 +3379,6 @@
       ],
       "Turn on camera": [
         "Kamera aktivieren"
-      ],
-      "Turn on live captions?": [
-        "Live-Untertitel einschalten?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Die Verbindung zum Meeting kann nicht wiederhergestellt werden. Bitte trete erneut bei oder verlasse das Meeting."
@@ -3437,6 +3440,9 @@
       "Yesterday — ${ absoluteDate }": [
         "Gestern — ${ absoluteDate }"
       ],
+      "You": [
+        "Du"
+      ],
       "You are almost there": [
         "Du bist fast fertig"
       ],
@@ -3451,6 +3457,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Du kannst dein Mikrofon und deine Kamera jederzeit im Meeting ausschalten"
+      ],
+      "You have too many meetings in progress": [
+        "Es sind zu viele Meetings gleichzeitig aktiv."
       ],
       "You left the meeting": [
         "Du hast das Meeting verlassen"
@@ -3629,6 +3638,9 @@
       "Does not repeat": [
         "Keine Wiederholung"
       ],
+      "Don’t show this message again": [
+        "Diese Nachricht nicht mehr anzeigen"
+      ],
       "Download .ics": [
         ".ics herunterladen"
       ],
@@ -3718,6 +3730,9 @@
       ],
       "Monday to Friday": [
         "Montag bis Freitag"
+      ],
+      "More options": [
+        "Weitere Optionen"
       ],
       "Mountain landscape background": [
         "Hintergrund mit Berglandschaft"
@@ -4320,6 +4335,9 @@
       "Meeting": [
         "Meeting"
       ],
+      "Meeting actions": [
+        "Maßnahmen aus Meeting"
+      ],
       "Meeting created": [
         "Meeting erstellt"
       ],
@@ -4367,6 +4385,9 @@
       ],
       "Publications": [
         "Veröffentlichungen"
+      ],
+      "Quick reactions": [
+        "Schnelle Reaktionen"
       ],
       "Reconnection Testing": [
         "Wiederherstellung der Verbindung prüfen"

@@ -232,6 +232,9 @@
       "More benefits": [
         "Meer voordelen"
       ],
+      "More info": [
+        "Meer informatie"
+      ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
@@ -1144,9 +1147,6 @@
       ],
       "Basic chat history": [
         "Basis gespreksgeschiedenis"
-      ],
-      "Built and based in Europe": [
-        "Gebouwd en gevestigd in Europa"
       ],
       "Compliance with data protection regulations": [
         "Naleving van de regelgeving inzake gegevensbescherming"
@@ -3969,9 +3969,6 @@
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Autofill creditcards (weldra klaar)"
-      ],
       "Automatic email forwarding": [
         "Automatisch e-mail doorsturen"
       ],
@@ -3998,9 +3995,6 @@
       ],
       "Custom and secure business email": [
         "Aangepaste en veilige zakelijke e-mail"
-      ],
-      "Custom domains for email aliases": [
-        "Aangepaste domeinen voor e-mailalliassen"
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
@@ -4059,9 +4053,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Gratis functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Gratis VPN op één apparaat"
-      ],
       "Fully refundable for 30 days": [
         "Volledig terugbetaalbaar gedurende 30 dagen"
       ],
@@ -4070,10 +4061,6 @@
       ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "High-speed VPN op ${ n } apparaat",
-        "High-speed VPN op ${ n } apparaten"
       ],
       "HTML signatures": [
         "HTML-handtekeningen"
@@ -4212,9 +4199,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Onbeperkte gedeelde ${ PASS_SHORT_APP_NAME } kluizen per gebruiker"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Onbeperkt aantal gedeelde kluizen met toegangsmachtigingen"
       ],
       "Unlimited vault sharing": [
         "Onbeperkt kluizen delen"
@@ -4504,9 +4488,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "De harde schijven van onze servers zijn volledig versleuteld met meerdere wachtwoordlagen, zodat uw gegevens ook beveiligd zijn als onze hardware in gevaar komt"
       ],
-      "Password management and identity protection": [
-        "Wachtwoordbeheer en identiteitsbescherming"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
       ],
@@ -4609,12 +4590,6 @@
         "${ n } land",
         "${ n } landen"
       ],
-      "Access advanced VPN features": [
-        "Gebruik geavanceerde VPN-functies"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Voeg meer personalisatie toe met 15 e-mailadressen en ondersteuning voor 3 aangepaste e-maildomeinen"
-      ],
       "AES 256-bit VPN encryption": [
         "256-bit AES-versleuteling VPN"
       ],
@@ -4624,9 +4599,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Boost uw opslagruimte uit naar ${ bundleStorage } per gebruiker"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Verhoog uw opslagruimte tot ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Browserextensie"
       ],
@@ -4635,13 +4607,6 @@
       ],
       "Central control panel": [
         "Centraal bedieningspaneel"
-      ],
-      "Create up to ${ n } calendar": [
-        "Maak tot ${ n } agenda",
-        "Maak tot ${ n } agenda's"
-      ],
-      "Dedicated Account manager": [
-        "Toegewezen account manager"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Toegewijde server locaties in ${ numberOfCountries }+ landen"
@@ -4711,9 +4676,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Veilig delen van kluizen, items en links"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Onbeperkt aantal logins, notities, creditcards, en meer"
       ]
     },
     "pass_signup_2023: Title": {
@@ -5472,10 +5434,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-verbinding per gebruiker",
-        "${ n } VPN-verbindingen per gebruiker"
       ],
       "VPN connection for ${ n } device per user": [
         "VPN verbinding voor ${ n } apparaat per gebruiker",

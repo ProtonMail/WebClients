@@ -38,6 +38,9 @@
       "Get verification code": [
         "Получить проверочный код"
       ],
+      "More info": [
+        "Подробнее"
+      ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
@@ -1520,14 +1523,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Добавьте больше индивидуальности с помощью 15 адресов электронной почты и поддержки 3 пользовательских доменов электронной почты"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Увеличьте хранилище до ${ bundleStorage } на пользователя"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Увеличьте объем хранилища в общей сложности до ${ bundleStorage }"
       ],
       "Support for ${ n } custom email domain": [
         "Поддержка ${ n } пользовательского домена электронной почты",
@@ -1539,11 +1536,6 @@
     "Placeholder": {
       "Password": [
         "Пароль"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Все платные функции ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {

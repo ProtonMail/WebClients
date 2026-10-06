@@ -236,11 +236,11 @@
       "Cancel": [
         "Cancelar"
       ],
-      "Change layout": [
-        "Alterar layout"
-      ],
       "Change password": [
         "Alterar senha"
+      ],
+      "Chat": [
+        "Bate-papo"
       ],
       "Chat with us": [
         "Converse conosco"
@@ -298,6 +298,12 @@
       ],
       "Create meeting": [
         "Criar reunião"
+      ],
+      "Debug devices": [
+        "Dispositivos de depuração"
+      ],
+      "Debug overlay": [
+        "Sobreposição de depuração"
       ],
       "Delete": [
         "Excluir"
@@ -368,9 +374,6 @@
       "Enable camera": [
         "Ativar câmera"
       ],
-      "Enable captions": [
-        "Ativar legendas"
-      ],
       "Enable waiting room": [
         "Ativar sala de espera"
       ],
@@ -437,6 +440,9 @@
       "Kick out ${ participantName }": [
         "Expulsar ${ participantName }"
       ],
+      "Layout": [
+        "Layout"
+      ],
       "Leave": [
         "Sair"
       ],
@@ -457,6 +463,9 @@
       ],
       "Minimize preview": [
         "Minimizar pré-visualização"
+      ],
+      "More info": [
+        "Mais informações"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -479,6 +488,9 @@
       "Noise cancellation": [
         "Cancelamento de ruído"
       ],
+      "Not now": [
+        "Agora não"
+      ],
       "Open app": [
         "Abrir aplicativo"
       ],
@@ -487,6 +499,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Abrir menção de ${ senderName } no bate-papo"
+      ],
+      "Participants": [
+        "Participantes"
       ],
       "Participants join after you approve them": [
         "Os participantes entram depois de você aprová-los"
@@ -527,6 +542,9 @@
       ],
       "Record": [
         "Gravar vídeo"
+      ],
+      "Recording": [
+        "Gravando"
       ],
       "Recording your microphone...": [
         "Gravando seu microfone..."
@@ -619,6 +637,12 @@
       "Settings": [
         "Configurações"
       ],
+      "Share screen": [
+        "Compartilhar tela"
+      ],
+      "Show captions": [
+        "Mostrar legendas"
+      ],
       "Show options": [
         "Mostrar opções"
       ],
@@ -688,6 +712,9 @@
       "Stop Recording Track Stats": [
         "Interromper estatísticas de gravação"
       ],
+      "Stop sharing": [
+        "Parar compartilhamento"
+      ],
       "Submit": [
         "Enviar"
       ],
@@ -705,6 +732,9 @@
       ],
       "The current link will stop working.": [
         "O link atual deixará de funcionar."
+      ],
+      "Transcription": [
+        "Transcrição"
       ],
       "Try again": [
         "Tentar novamente"
@@ -783,9 +813,6 @@
       "Blur background": [
         "Desfocar fundo"
       ],
-      "Chat": [
-        "Bate-papo"
-      ],
       "Close": [
         "Fechar"
       ],
@@ -798,23 +825,11 @@
       "Copy meeting link": [
         "Copiar link da reunião"
       ],
-      "Debug devices": [
-        "Dispositivos de depuração"
-      ],
-      "Debug overlay": [
-        "Sobreposição de depuração"
-      ],
-      "Device Debugger": [
-        "Deputador do dispositivo"
-      ],
       "Go to dashboard": [
         "Ir para painel de controle"
       ],
       "Incoming video": [
         "Vídeo recebido"
-      ],
-      "Layout: ${ selectedLabel }": [
-        "Layout: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Sair da reunião"
@@ -824,12 +839,6 @@
       ],
       "Lock meeting": [
         "Bloquear reunião"
-      ],
-      "Lower hand": [
-        "Baixar mão"
-      ],
-      "Meeting details": [
-        "Detalhes da reunião"
       ],
       "Meeting timer": [
         "Temporizador de reunião"
@@ -849,26 +858,14 @@
       "Participant host control options": [
         "Opções de controle do anfitrião para participantes"
       ],
-      "Participants": [
-        "Participantes"
-      ],
-      "Raise hand": [
-        "Levantar a mão"
-      ],
       "Rotate camera": [
         "Girar câmera"
       ],
       "Save my name on this device": [
         "Salvar meu nome neste dispositivo"
       ],
-      "Screen share": [
-        "Compartilhamento de tela"
-      ],
       "Self view": [
         "Minha visualização"
-      ],
-      "Settings": [
-        "Configurações"
       ],
       "Stop recording and download.": [
         "Parar a gravação e baixar."
@@ -879,17 +876,11 @@
       "Toggle emoji reactions": [
         "Alternar para reações com emoji"
       ],
-      "Toggle meeting details": [
-        "Alternar detalhes da reunião"
-      ],
       "Toggle participants": [
         "Mostrar/ocultar participantes"
       ],
       "Toggle screen share": [
         "Alternar compartilhamento de tela"
-      ],
-      "Toggle settings": [
-        "Alternar configurações"
       ],
       "Video settings": [
         "Configurações de vídeo"
@@ -1963,6 +1954,9 @@
       "Could not load the image preview: ${ message }": [
         "Não foi possível carregar a pré-visualização da imagem: ${ message }"
       ],
+      "Could not read part of this file: ${ message }": [
+        "Não foi possível ler parte deste arquivo: ${ message }"
+      ],
       "Could not remove this background. Please try again.": [
         "Não foi possível remover este plano de fundo. Tente novamente."
       ],
@@ -2173,6 +2167,9 @@
       "Missing signature for ${ signatureType }": [
         "Falta a assinatura para ${ signatureType }"
       ],
+      "Move operation aborted": [
+        "Operação de movimento interrompida"
+      ],
       "Moving item to a non-folder is not allowed": [
         "Não é permitido mover o item para um local que não seja uma pasta"
       ],
@@ -2338,6 +2335,9 @@
       ],
       "You do not have access to this item": [
         "Você não tem acesso a esse item"
+      ],
+      "You have reached the maximum number of custom backgrounds.": [
+        "Você atingiu o número máximo de planos de fundos personalizados."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "O seu navegador ficou sem espaço de armazenamento. Nós salvamos a gravação até este ponto."
@@ -2955,6 +2955,9 @@
       "Microphone permission denied": [
         "Permissão de microfone negada"
       ],
+      "More options": [
+        "Mais opções"
+      ],
       "Mute microphone": [
         "Silenciar microfone"
       ],
@@ -3138,8 +3141,8 @@
       "Share screen": [
         "Compartilhar tela"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Compartilhe este link para convidar outras pessoas. Você também pode encontrá-lo a qualquer momento clicando no ícone de informações na barra de ferramentas."
+      "Show live captions?": [
+        "Mostrar legendas ao vivo?"
       ],
       "Sign in": [
         "Iniciar sessão"
@@ -3149,9 +3152,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "A seleção de alto-falante não está disponível neste navegador. Use as configurações do seu sistema para escolher um alto-falante diferente."
-      ],
-      "Start recording": [
-        "Iniciar gravação"
       ],
       "Starting camera…": [
         "Iniciando a câmera…"
@@ -3234,9 +3234,6 @@
       "Turn on camera": [
         "Ativar câmera"
       ],
-      "Turn on live captions?": [
-        "Ativar legendas ao vivo?"
-      ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Não foi possível reconectar-se à reunião. Participe novamente ou saia."
       ],
@@ -3296,6 +3293,9 @@
       ],
       "Yesterday — ${ absoluteDate }": [
         "Ontem — ${ absoluteDate }"
+      ],
+      "You": [
+        "Você"
       ],
       "You are almost there": [
         "Você está quase lá"
@@ -3480,6 +3480,9 @@
       "Does not repeat": [
         "Não repete"
       ],
+      "Don’t show this message again": [
+        "Não mostrar esta mensagem novamente"
+      ],
       "Download .ics": [
         "Baixar .ics"
       ],
@@ -3569,6 +3572,9 @@
       ],
       "Monday to Friday": [
         "De segunda a sexta"
+      ],
+      "More options": [
+        "Mais opções"
       ],
       "Mountain landscape background": [
         "Plano de fundo com paisagem montanhosa"
@@ -4163,6 +4169,9 @@
       "Meeting": [
         "Reunião"
       ],
+      "Meeting actions": [
+        "Ações da reunião"
+      ],
       "Meeting created": [
         "Reunião criada"
       ],
@@ -4210,6 +4219,9 @@
       ],
       "Publications": [
         "Publicações"
+      ],
+      "Quick reactions": [
+        "Reações rápidas"
       ],
       "Reconnection Testing": [
         "Teste de reconexão"

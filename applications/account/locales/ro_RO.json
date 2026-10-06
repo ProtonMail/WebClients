@@ -659,6 +659,9 @@
       "Connect": [
         "Conectare"
       ],
+      "Connect and import": [
+        "Conectare și importare"
+      ],
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
       ],
@@ -1487,6 +1490,9 @@
       "More details": [
         "Mai multe detalii"
       ],
+      "More info": [
+        "Detalii"
+      ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
       ],
@@ -2060,6 +2066,9 @@
       "Switch or add account": [
         "Schimbare sau adăugare cont"
       ],
+      "Switch to ${ planName }": [
+        "Comutare la ${ planName }"
+      ],
       "Switch to free plan": [
         "Comutare la planul gratuit"
       ],
@@ -2561,15 +2570,6 @@
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
       ],
-      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
-        "Delegați gestionarea prin atribuirea unor roluri de administrator specifice. Acordați fiecărui administrator doar accesul de care are nevoie. Aceasta respectă principiul privilegiilor minime, protejându-vă organizația de conturi compromise și erori accidentale."
-      ],
-      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
-        "Delegați gestionarea pentru mai mulți utilizatori simultan. Atribuiți roluri specifice de administrator grupurilor pentru permisiuni automate. Aceasta respectă principiul privilegiilor minime pentru a economisi timp la afiliere și dezafiliere, reducând în același timp erorile."
-      ],
-      "Delegate management with the appropriate admin role.": [
-        "Delegați gestionarea cu rolul de administrator corespunzător."
-      ],
       "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
         "Gestionați toți utilizatorii, grupurile, spațiul de stocare, securitatea, facturarea, jurnalele de audit și configurațiile sistemului."
       ],
@@ -2920,56 +2920,15 @@
         "Ofertă indisponibilă"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } spațiu de stocare"
       ],
-      "1 user account": [
-        "Un cont de utilizator"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GiB stocare: de 40 de ori planul actual"
-      ],
-      "6 user accounts": [
-        "6 conturi de utilizator"
-      ],
-      "Admin panel to manage your family": [
-        "Panou de administrare pentru gestionarea familiei"
-      ],
-      "Advanced account protection": [
-        "Protecție avansată a contului"
-      ],
-      "Easily add or remove users": [
-        "Adăugare și eliminare ușoară utilizatori"
-      ],
-      "One-time payment, lifetime deal": [
-        "O singură plată, ofertă pe viață"
-      ],
-      "Online document editor": [
-        "Editor de documente online"
-      ],
-      "Password health alerts": [
-        "Alerte stare parole"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierelor"
-      ],
       "Unlimited folders, labels and filters": [
         "Foldere, etichete și filtre nelimitate"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Date de autentificare, carduri de plată, aliasuri hide-my-email nelimitate și altele"
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
@@ -2978,93 +2937,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Facturat cu ${ amount } o singură dată"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Se reînnoiește lunar cu ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accesați conținutul blocat și navigați în mod privat. Include peste 8.500 de servere în peste 110 țări, 10 dispozitive simultan, transmisii în flux la viteză maximă, blocare reclame și protecție malware, accelerator VPN și altele."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, ${ DARK_WEB_MONITORING_NAME } și altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Planificați -vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
-        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Planificați-vă și securizați-vă mesajele de pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ LUMO_SHORT_APP_NAME }, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Planificați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, asistență pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Securizați-vă fișierele cu stocare criptată în cloud. Include editor de documente online, conservare pentru fotografii, istoricul versiunilor, partajarea fișierelor criptate și multe altele."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TiB spațiu total"
-      ],
-      "3 TB data storage": [
-        "3 TiB spațiu de stocare"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Accesați peste 15.000 de servere din peste 120 de țări"
-      ],
-      "Access advanced AI models": [
-        "Accesare modele de IA avansate"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate funcțiile premium de la ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocați reclamele, urmăritorii și programele malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autentificator de A2F încorporat"
-      ],
-      "Connect 10 devices at once": [
-        "Conectați 10 dispozitive simultan"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Istoric complet al conversațiilor cu căutare ușoară și favorite"
-      ],
-      "Individual accounts for 6 users": [
-        "Conturi individuale pentru 6 utilizatori"
-      ],
-      "Individual accounts for you and a partner": [
-        "Conturi individuale pentru dvs. și un partener"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protecție mai puternică împotriva amenințărilor cibernetice"
-      ],
-      "Unlimited daily chats": [
-        "Conversații zilnice nelimitate"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield special conceput să vă protejeze dispozitivele și să vă accelereze navigarea prin blocarea reclamelor, monitorizării și a programelor malițioase."
       ]
     },
     "Billing cycle": {
@@ -3889,9 +3766,6 @@
       ],
       "Basic chat history": [
         "Istoric de bază conversații"
-      ],
-      "Built and based in Europe": [
-        "Construit și cu sediul în Europa"
       ],
       "Compliance with data protection regulations": [
         "Respectare reguli de protecție a datelor"
@@ -5555,6 +5429,9 @@
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Personalizați-vă subsolul mesajelor — prezentați-vă marca proprie, nu a noastră."
+      ],
+      "Make your Gmail private in under a minute, without editing or deleting anything there.": [
+        "Transformați-vă contul de Gmail într-unul privat în mai puțin de un minut, fără a modifica sau șterge nimic din el."
       ],
       "Methods that include both password reset and data recovery.": [
         "Metode care includ atât resetarea parolei, cât și recuperarea datelor."
@@ -7908,6 +7785,9 @@
         "Utilizatori pentru care nu s-a putut atribui rolul: ${ failedCount }",
         "Utilizatori pentru care nu s-a putut atribui rolul: ${ failedCount }"
       ],
+      "Role changes were not saved because the user's roles could not be loaded.": [
+        "Modificările rolurilor nu au fost salvate deoarece rolurile utilizatorului nu au putut fi încărcate."
+      ],
       "Server not found": [
         "Server negăsit"
       ],
@@ -8574,19 +8454,9 @@
         "Puteți salva un fișier ICS pentru evenimentele care au fost exportate cu succes."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TiB spațiu total"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Beneficiile contului"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este partajat între membri de familie între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -8619,11 +8489,6 @@
       ],
       "View invitation": [
         "Afișare invitație"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Maxim 6 utilizatori"
       ]
     },
     "familyOffer_2023:Error": {
@@ -8883,17 +8748,6 @@
       ],
       "Set family name": [
         "Setare nume familie"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2700 de servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisie în flux la nivel mondial, blocare malware și reclame și multe altele."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Include suport pentru 3 domenii de e-mail personale, 90 adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ]
     },
     "Feature": {
@@ -10702,6 +10556,12 @@
         "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
         "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
       ],
+      "1 device per user": [
+        "Un dispozitiv per utilizator"
+      ],
+      "1 vault per user": [
+        "Un seif per utilizator"
+      ],
       "2FA disabled": [
         "A2F dezactivată"
       ],
@@ -11198,9 +11058,6 @@
       "Center": [
         "Centrare"
       ],
-      "Change your password": [
-        "Modificare parolă"
-      ],
       "Changes to your default language and time are reflected on the web. To change the default for mobile apps, go to the settings on your device.": [
         "Modificările limbii și orei implicite se reflectă pe web. Pentru a schimba setările implicite pentru aplicațiile mobile, accesați setările dispozitivului."
       ],
@@ -11618,9 +11475,6 @@
       "eduGAIN configuration saved": [
         "Configurația eduGAIN s-a salvat."
       ],
-      "email": [
-        "e-mail"
-      ],
       "Email address": [
         "Adresa de e-mail"
       ],
@@ -11848,9 +11702,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtrele funcționează asupra tuturor mesajelor, incluzându-le atât pe cele primite cât și pe cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
-      ],
-      "finance": [
-        "finanțe"
       ],
       "Find out what can be migrated.": [
         "Aflați ce poate fi migrat."
@@ -12470,9 +12321,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Mesajele adresate tuturor adreselor de e-mail personale vor fi livrate în contul de e-mail."
       ],
-      "Monitor accounts": [
-        "Monitorizare conturi"
-      ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Monitorizați și auditați încercările de autentificare pentru toate serviciile ${ BRAND_NAME } care folosesc informațiile de autentificare ${ BRAND_NAME }."
       ],
@@ -12571,6 +12419,9 @@
       ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
+      ],
+      "No payment is required.": [
+        "Nu este necesară plată."
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
@@ -12725,9 +12576,6 @@
       ],
       "Pass usage logs": [
         "Jurnal de utilizare Pass"
-      ],
-      "password": [
-        "parola"
       ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
@@ -13690,6 +13538,9 @@
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pentru a funcționa corect, fiecare filtru trebuie să conțină cel puțin un nume și un script Sieve valid. Puteți să ${ link }."
       ],
+      "Today": [
+        "Azi"
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Alimentați-vă contul cu credite pe care le puteți folosi pentru a vă cumpăra un plan nou sau pentru a-l reînnoi pe cel existent. Veți obține câte un credit pentru fiecare ${ i18nCurrency } cheltuit."
       ],
@@ -13854,9 +13705,6 @@
       ],
       "Username": [
         "Nume de utilizator"
-      ],
-      "username": [
-        "nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -16070,6 +15918,9 @@
       "Import interval": [
         "Interval de importare"
       ],
+      "Import messages": [
+        "Importare mesaje"
+      ],
       "Import to email address": [
         "Importare în adresa de e-mail"
       ],
@@ -16502,6 +16353,9 @@
       "Read": [
         "Citite"
       ],
+      "Receive Gmail straight in ${ BRAND_NAME } inbox": [
+        "Primiți mesajele din Gmail direct în contul ${ BRAND_NAME }"
+      ],
       "Recommended": [
         "Recomandat"
       ],
@@ -16591,6 +16445,9 @@
       ],
       "Send crash reports": [
         "Trimitere rapoarte de erori"
+      ],
+      "Send from your Gmail address in ${ BRAND_NAME }": [
+        "Trimiteți din adresa Gmail în ${ BRAND_NAME }"
       ],
       "Send in": [
         "Trimitere în"
@@ -16941,6 +16798,9 @@
       ],
       "You don't have permissions": [
         "Nu aveți permisiuni"
+      ],
+      "You will be able to:": [
+        "Veți putea să:"
       ],
       "Your activation code:": [
         "Cod de activare:"
@@ -18614,9 +18474,6 @@
       "Auto-reply": [
         "Răspuns automat"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Autocompletare carduri de credit (în curând)"
-      ],
       "Automatic email forwarding": [
         "Transferare automată mesaje"
       ],
@@ -18646,9 +18503,6 @@
       ],
       "Custom and secure business email": [
         "E-mail de afaceri personalizat și securizat"
-      ],
-      "Custom domains for email aliases": [
-        "Domenii personale pentru aliasuri de e-mail"
       ],
       "Custom email domains": [
         "Domenii personale de e-mail"
@@ -18713,9 +18567,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Funcțiile gratuite de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "VPN gratuit pe un singur dispozitiv"
-      ],
       "Fully refundable for 30 days": [
         "Rambursare completă în primele 30 de zile"
       ],
@@ -18727,11 +18578,6 @@
       ],
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN de mare viteză pe un dispozitiv",
-        "VPN de mare viteză pe ${ n } dispozitive",
-        "VPN de mare viteză pe ${ n } de dispozitive"
       ],
       "HTML signatures": [
         "Semnături HTML"
@@ -18905,9 +18751,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Seifuri ${ PASS_SHORT_APP_NAME } partajate nelimitate per utilizator"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Seifuri partajate nelimitate cu permisiuni de acces"
       ],
       "Unlimited vault sharing": [
         "Partajare nelimitată de seifuri"
@@ -19294,9 +19137,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Discurile serverelor noastre sunt complet criptate cu multiple niveluri de parole astfel încât datele sunt protejate chiar și dacă acestea sunt compromise."
       ],
-      "Password management and identity protection": [
-        "Gestionare parole și protejare identitate"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de rețele sociale, legături web către datele de contact și multe altele."
       ],
@@ -19408,12 +19248,6 @@
         "${ n } țări",
         "${ n } de țări"
       ],
-      "Access advanced VPN features": [
-        "Accesați caracteristici VPN avansate"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Adăugați mai multe personalizări cu 15 adrese de e-mail și până la 3 domenii adiționale de e-mail personale"
-      ],
       "AES 256-bit VPN encryption": [
         "Criptare VPN AES 256-biți"
       ],
@@ -19423,9 +19257,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Măriți spațiul de stocare la ${ bundleStorage } per utilizator"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Măriți spațiul de stocare la ${ bundleStorage } în total"
-      ],
       "Browser extension": [
         "Extensie de navigator"
       ],
@@ -19434,14 +19265,6 @@
       ],
       "Central control panel": [
         "Panou de control central"
-      ],
-      "Create up to ${ n } calendar": [
-        "Creați maxim ${ n } calendar",
-        "Creați până la ${ n } calendare",
-        "Creați până la ${ n } de calendare"
-      ],
-      "Dedicated Account manager": [
-        "Manager dedicat al contului"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Locuri de servere dedicate în peste ${ numberOfCountries } de țări"
@@ -20802,9 +20625,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "pentru a începe să utilizați ${ PASS_APP_NAME } pe telefon"
       ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Date de autentificare, notițe și carduri de plată nelimitate și altele"
-      ],
       "Updating your account": [
         "Se actualizează contul"
       ],
@@ -21045,6 +20865,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (fără TVA)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nu poate fi combinat cu ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } este disponibil doar pentru planurile de afaceri."
+      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -21057,8 +20883,23 @@
       "Amount due after trial on ${ formattedDate }": [
         "Suma datorată după evaluare la ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Pentru acest plan este necesară o organizație."
+      ],
       "Billing Country": [
         "Țara de facturare"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Oferta Born Private nu poate fi achiziționată dacă există un abonament activ."
+      ],
+      "Born Private requires a donation.": [
+        "Oferta Born Private necesită o donație."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Achiziționarea de credite necesită o tranzacție separată."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Dacă vă comutați, sunteți de acord cu acești ${ termsLink }."
       ],
       "Card number": [
         "Număr card"
@@ -21105,11 +20946,20 @@
       "Offer unavailable": [
         "Ofertă indisponibilă"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Poate fi achiziționat doar un singur plan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Plata cu ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de evaluare."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Închideți conturile suplimentare de portofele înainte de a vă schimba planul."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Închideți portofelele suplimentare înainte de a vă schimba planul."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
@@ -21122,6 +20972,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Numărul licențelor pentru Scribe nu îl poate depăși pe cel al numărului de membri."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Ne pare rău, această ofertă nu este disponibilă cu planul actual."
@@ -21139,6 +20992,18 @@
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Planul selectat nu oferă suficiente adrese pentru contul pe care îl dețineți."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Planul selectat nu oferă suficiente domenii pentru contul deținut."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Planul selectat nu oferă suficiente licențe pentru membri din contul pe care îl dețineți."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Planul selectat nu oferă suficient spațiu de stocare pentru contul deținut."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
@@ -21177,14 +21042,35 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Acest server dedicat este alocat unei porți de acces și nu poate fi modificat."
+      ],
       "This offer is not available with your current plan.": [
         "Această ofertă nu este disponibilă cu planul actual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Acest plan nu oferă suport pentru membrii din contul deținut."
+      ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Abonamentele de probare nu acceptă licențe pentru ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Planurile de probare nu suportă domenii personale."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Abonamentele de probare nu oferă suport pentru adrese IP dedicate."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Acest plan nu suportă licențe pentru Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Abonamentele de probare nu suportă un număr atât de mare de membri."
       ],
       "VAT number": [
         "Valoare TVA"
@@ -21198,6 +21084,12 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Aveți deja un abonament la acest plan. Vă puteți schimba abonamentul pe ${ subscriptionPlatform }."
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Deja dețineți planul ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ],
+      "You already own Born Private.": [
+        "Dețineți deja oferta Born Private."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Vi se va retrage suma de ${ amountToCharge } folosind metoda de plată selectată."
       ],
@@ -21206,6 +21098,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă nouă."
+      ],
+      "Your account is too old for Born Private.": [
+        "Contul tău este prea vechi pentru oferta Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_WERO_BRAND_NAME } acceptă doar plăți în euro."
@@ -24176,12 +24071,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TiB"
-      ],
-      "6 users": [
-        "6 utilizatori"
-      ],
       "All paid Mail and Calendar features": [
         "Toate funcțiile cu plată de la Mail și Calendar"
       ],
@@ -24200,17 +24089,11 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "${ appName1 }, ${ appName2 } și ${ appName3 } premium"
       ],
-      "Premium early access": [
-        "Acces timpuriu premium"
-      ],
       "Secure cloud storage": [
         "Stocare securizată în cloud"
       ],
       "Secure streaming": [
         "Redare în flux securizată"
-      ],
-      "Support online privacy": [
-        "Susțineți confidențialitatea online"
       ]
     },
     "specialoffer: Footer": {
@@ -24295,32 +24178,8 @@
       "Get the deal": [
         "Luați oferta"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Reînnoire după un an la preț redus de ${ discountedAmount } în loc de ${ regularAmount } (${ discount }% reducere)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Reînnoire după doi ani la preț redus de ${ discountedAmount } în loc de ${ regularAmount } (${ discount }% reducere)"
-      ],
       "Save ${ discount }%": [
         "Economisiți ${ discount } %"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Preț standard ${ amount } pentru o lună"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Preț standard ${ amount } pentru 12 luni"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Preț standard ${ amount } pentru 15 luni"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Preț standard ${ amount } pentru 24 de luni"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Preț standard ${ amount } pentru 30 de luni"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Oferta speciala este valabilă pentru primii doi ani."
       ]
     },
     "specialoffer: Title": {
@@ -24350,23 +24209,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accesați conținut blocat și navigați în mod privat. Include 1700 de servere în peste 60 de țări, cea mai mare viteză VPN, 10 conexiuni VPN per utilizator, servicii de redare în flux la nivel mondial, blocare malware și reclame și multe altele."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Accesați conținut blocat și navigați în mod privat. Include 1700 de servere în peste 60 de țări, cea mai mare viteză VPN, 10 conexiuni VPN, servicii de redare în flux la nivel mondial, blocare malware și reclame și multe altele."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Toate serviciile noastre premium cu limitele la maxim: 100 de adrese de e-mail, suport pentru 10 domenii personale, aliasuri nelimitate hide-my-email, partajare calendar, stocare criptată în cloud și fișiere partajate și multe altele."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Include suport pentru 3 domenii de e-mail personale, 15 adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfect pentru familii sau echipe mici, fiecare poate avea propria adresă de e-mail și pseudonime. Necesită un domeniu personal."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Primiți fără costuri suplimentare versiunile plătite ale tuturor serviciilor de confidențialitate pe care le lansăm în viitor, împreună cu acces anticipat la toate funcțiile și produsele viitoare."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
@@ -24461,6 +24308,9 @@
       ],
       "Approve the sign-in from another device": [
         "Aprobare conectare de pe alt dispozitiv"
+      ],
+      "Approved": [
+        "Aprobat"
       ],
       "Ask administrator for help": [
         "Solicitare ajutor de la administrator"
@@ -24627,6 +24477,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Solicitare de conectare de pe alt dispozitiv. Sunteți dvs.?"
+      ],
+      "Signing in": [
+        "Se conectează"
       ],
       "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
         "Autentificarea unică este posibil să nu funcționeze corect fără o identitate a organizației. Stabiliți o identitate pentru a asigura o autentificare fiabilă."
@@ -25062,11 +24915,6 @@
         "O conexiune VPN",
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "O conexiune VPN per utilizator",
-        "${ n } conexiuni VPN per utilizator",
-        "${ n } de conexiuni VPN per utilizator"
       ],
       "${ productName } for ${ count } user": [
         "${ productName } pentru ${ count } utilizator",
@@ -25987,9 +25835,6 @@
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Include peste 8.500 de servere în peste 110 țări, conectați până la 10 dispozitive, accesați servicii de transmisii în flux la nivel mondial, programe malițioase, blocare de reclame și multe altele."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
-      ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ]
@@ -26666,6 +26511,9 @@
       ],
       "Connect your custom domain": [
         "Conectați-vă domeniul personal"
+      ],
+      "Connected addresses": [
+        "Adrese conectate"
       ],
       "Connected emails": [
         "Adrese conectate"
@@ -28971,6 +28819,36 @@
         "Credit de test"
       ]
     },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obțineți ${ discount } % reducere la ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "2 TB of storage to share": [
+        "2 TiB de stocare pentru partajare"
+      ],
+      "2 user accounts": [
+        "Două conturi de utilizator"
+      ],
+      "All premium features from your current plan": [
+        "Toate funcțiile premium din planul curent"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ]
+    },
     "Unlimited offer": {
       "/month": [
         "/lună"
@@ -29289,6 +29167,9 @@
       ],
       "Writing assistant": [
         "Asistent de scriere"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Nu vă puteți modifica propriile roluri. Rugați un alt administrator să le modifice."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."

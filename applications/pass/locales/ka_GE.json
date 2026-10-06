@@ -670,6 +670,12 @@
       "Show Less": [
         "ნაკლების ჩვენება"
       ],
+      "Show less": [
+        "ნაკლების ჩვენება"
+      ],
+      "Show more": [
+        "მეტის ჩვენება"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME }-ით შესვლა"
       ],
@@ -1746,9 +1752,6 @@
       "Can view this item.": [
         "შეუძლია ან ელემენტის დათვალიერება"
       ],
-      "Change your password": [
-        "შეცვალეთ თქვენი პაროლი"
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "დაადასტურეთ თქვენი დამატებითი პაროლი, რომ ის წაშალოთ."
       ],
@@ -1829,9 +1832,6 @@
       ],
       "Editor": [
         "რედაქტორი"
-      ],
-      "email": [
-        "ელფოსტა"
       ],
       "Email address successfully deleted from monitoring": [
         "ელფოსტის მისამართიის მონიტორინგიდან წაშლა წარმატებულია"
@@ -1928,9 +1928,6 @@
       ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
-      ],
-      "finance": [
-        "ფინანსები"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "მიყევით ამ ნაბიჯებს, რომ შემოიტანოთ თქვენი მონაცემები ზოგადი CSV-ით:"
@@ -2085,9 +2082,6 @@
       "Medium Priority": [
         "საშუალო პრიორიტეტი"
       ],
-      "Monitor accounts": [
-        "ანგარიშების მონიტორი"
-      ],
       "Monitoring settings successfully updated": [
         "მონიტორინგის პარამეტრები წარმატებით განახლდა"
       ],
@@ -2178,9 +2172,6 @@
       ],
       "Pass Plus trial": [
         "Pass Plus-ის საცდელი"
-      ],
-      "password": [
-        "პაროლი"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "პაროლით დაბლოკვა წამარტებით დარეგისტრირდა. გამოიყენეთ ის ${ PASS_APP_NAME }-ის განბლოკვისთვის"
@@ -2627,9 +2618,6 @@
       ],
       "User's access successfully updated": [
         "მომხმარებლის წვდომები წარმატებით განახლდა"
-      ],
-      "username": [
-        "მომხმარებლის სახელი"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "საცავი \"${ payload.content.name }\" წარმატებით წაიშალა"
@@ -5271,9 +5259,6 @@
       ],
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
-      ],
-      "Name is required": [
-        "სახელი აუცილებელია"
       ],
       "No items": [
         "ელემენტების გარეშე"

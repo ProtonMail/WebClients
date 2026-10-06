@@ -199,11 +199,11 @@
       "Cancel": [
         "Annuler"
       ],
-      "Change layout": [
-        "Changer la disposition"
-      ],
       "Change password": [
         "Changer le mot de passe"
+      ],
+      "Chat": [
+        "Discussion"
       ],
       "Chat with us": [
         "Discutez avec nous"
@@ -261,6 +261,12 @@
       ],
       "Create meeting": [
         "Créer une réunion"
+      ],
+      "Debug devices": [
+        "Appareils de débogage"
+      ],
+      "Debug overlay": [
+        "Overlay de débogage"
       ],
       "Delete": [
         "Supprimer"
@@ -328,9 +334,6 @@
       "Enable camera": [
         "Activer la caméra"
       ],
-      "Enable captions": [
-        "Activer les sous-titres"
-      ],
       "Enable waiting room": [
         "Activer la salle d'attente"
       ],
@@ -397,6 +400,9 @@
       "Kick out ${ participantName }": [
         "Exclure ${ participantName }"
       ],
+      "Layout": [
+        "Disposition"
+      ],
       "Leave": [
         "Quitter"
       ],
@@ -412,11 +418,17 @@
       "Lower hand": [
         "Baisser la main"
       ],
+      "Meeting info": [
+        "Informations sur la réunion"
+      ],
       "Meeting timer": [
         "Minuteur de réunion"
       ],
       "Minimize preview": [
         "Réduire l'aperçu"
+      ],
+      "More info": [
+        "Plus d'informations"
       ],
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
@@ -439,6 +451,9 @@
       "Noise cancellation": [
         "Réduction du bruit"
       ],
+      "Not now": [
+        "Plus tard"
+      ],
       "Open app": [
         "Ouvrir l’application"
       ],
@@ -447,6 +462,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Ouvrir la mention de ${ senderName } dans le chat"
+      ],
+      "Participants": [
+        "Participants"
       ],
       "Participants join after you approve them": [
         "Les participants rejoindront le groupe une fois que vous les aurez validés"
@@ -481,6 +499,9 @@
       ],
       "Record": [
         "Enregistrer"
+      ],
+      "Recording": [
+        "Enregistrement en cours"
       ],
       "Refer a friend": [
         "Parrainer un ami"
@@ -570,6 +591,12 @@
       "Settings": [
         "Paramètres"
       ],
+      "Share screen": [
+        "Partager l'écran"
+      ],
+      "Show captions": [
+        "Afficher les sous-titres"
+      ],
       "Show options": [
         "Afficher les options"
       ],
@@ -639,6 +666,9 @@
       "Stop Recording Track Stats": [
         "Arrêter l'enregistrement des statistiques de suivi"
       ],
+      "Stop sharing": [
+        "Arrêter le partage"
+      ],
       "Submit": [
         "Envoyer"
       ],
@@ -656,6 +686,9 @@
       ],
       "The current link will stop working.": [
         "Le lien actuel cessera de fonctionner."
+      ],
+      "Transcription": [
+        "Transcription"
       ],
       "Try again": [
         "Réessayer"
@@ -731,9 +764,6 @@
       "Blur background": [
         "Flouter l'arrière-plan"
       ],
-      "Chat": [
-        "Chat"
-      ],
       "Close": [
         "Fermer"
       ],
@@ -746,23 +776,11 @@
       "Copy meeting link": [
         "Copier le lien de la réunion"
       ],
-      "Debug devices": [
-        "Appareils de débogage"
-      ],
-      "Debug overlay": [
-        "Superposition de débogage"
-      ],
-      "Device Debugger": [
-        "Débogage d'appareil"
-      ],
       "Go to dashboard": [
         "Aller au tableau de bord"
       ],
       "Incoming video": [
         "Appel vidéo entrant"
-      ],
-      "Layout: ${ selectedLabel }": [
-        "Dispositon : ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Quitter la réunion"
@@ -772,12 +790,6 @@
       ],
       "Lock meeting": [
         "Verrouiller la réunion"
-      ],
-      "Lower hand": [
-        "Baisser la main"
-      ],
-      "Meeting details": [
-        "Informations de la réunion"
       ],
       "Meeting timer": [
         "Minuteur de réunion"
@@ -797,14 +809,8 @@
       "Participant host control options": [
         "Options de contrôle de l'hôte pour les participants"
       ],
-      "Participants": [
-        "Participants"
-      ],
       "Picture-in-picture while sharing": [
         "Picture-in-picture pendant le partage"
-      ],
-      "Raise hand": [
-        "Lever la main"
       ],
       "Rotate camera": [
         "Faire pivoter la caméra"
@@ -812,14 +818,8 @@
       "Save my name on this device": [
         "Enregistrer mon nom sur cet appareil"
       ],
-      "Screen share": [
-        "Partage d’écran"
-      ],
       "Self view": [
         "Vue de soi"
-      ],
-      "Settings": [
-        "Paramètres"
       ],
       "Stop recording and download.": [
         "Arrêter l'enregistrement et télécharger."
@@ -830,17 +830,11 @@
       "Toggle emoji reactions": [
         "Activer/désactiver les réactions émojis"
       ],
-      "Toggle meeting details": [
-        "Afficher/masquer les détails de la réunion"
-      ],
       "Toggle participants": [
         "Afficher/Masquer les participants"
       ],
       "Toggle screen share": [
         "Activer/Désactiver le partage d'écran"
-      ],
-      "Toggle settings": [
-        "Afficher/masquer les paramètres"
       ],
       "Video settings": [
         "Paramètres vidéo"
@@ -2675,6 +2669,9 @@
       "Host": [
         "Hôte"
       ],
+      "Host has another meeting in progress": [
+        "L'hôte a une autre réunion en cours"
+      ],
       "Host has disabled live captions for this meeting.": [
         "L'hôte a désactivé le sous-titrage en direct pour cette réunion."
       ],
@@ -2804,6 +2801,9 @@
       "Microphone permission denied": [
         "L'autorisation d'accéder au microphone a été refusée."
       ],
+      "More options": [
+        "Plus d'options"
+      ],
       "Mute microphone": [
         "Couper le microphone"
       ],
@@ -2854,6 +2854,9 @@
       ],
       "No speaker detected": [
         "Aucun haut-parleur détecté"
+      ],
+      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
+        "La réduction de bruit a été désactivée car votre appareil rencontre des problèmes de performances. Vous pouvez la réactiver dans les paramètres audio."
       ],
       "Not sent, check your connection.": [
         "Envoi impossible, veuillez vérifier votre connexion."
@@ -2984,8 +2987,11 @@
       "Share screen": [
         "Partager l'écran"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Partagez ce lien pour inviter d'autres personnes. Vous pouvez à tout moment le trouver en cliquant sur l'icône d'informations dans la barre d'outils."
+      "Share this link to invite others. You can also find it anytime under Meeting info in the More options menu.": [
+        "Partagez ce lien pour inviter les autres. Vous pouvez aussi le retrouver à tout moment sous les informations de la Réunion dans le menu Plus d'options."
+      ],
+      "Show live captions?": [
+        "Afficher les sous-titres en direct ?"
       ],
       "Sign in": [
         "Se connecter"
@@ -2995,9 +3001,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "La sélection du haut-parleur n'est pas disponible dans ce navigateur. Utilisez les paramètres de votre système pour choisir un autre haut-parleur."
-      ],
-      "Start recording": [
-        "Démarrer l'enregistrement"
       ],
       "Starting camera…": [
         "Démarrage de la caméra..."
@@ -3016,6 +3019,9 @@
       ],
       "Thank you for joining.": [
         "Merci de votre présence."
+      ],
+      "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
+        "Le service de sous-titrage utilise l'audio de la réunion. Les sous-titres sont visibles uniquement pour vous et ne sont pas sauvegardés."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "L'hôte vous a retiré de cette réunion. Si c'est une erreur, demandez à l'hôte de vous inviter à nouveau."
@@ -3037,6 +3043,9 @@
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Cette réunion a atteint la limite de durée prévue dans le forfait gratuit. Passez à un forfait supérieur pour prolonger la durée de vos prochaines réunions."
+      ],
+      "This meeting reached the time limit.": [
+        "Cette réunion a atteint sa limite de temps."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Cette réunion a été ouverte dans l'application de bureau ${ MEET_APP_NAME }."
@@ -3128,6 +3137,9 @@
       "Yesterday — ${ absoluteDate }": [
         "Hier — ${ absoluteDate }"
       ],
+      "You": [
+        "Vous"
+      ],
       "You are almost there": [
         "Vous y êtes presque"
       ],
@@ -3139,6 +3151,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Vous pouvez toujours couper votre microphone et votre caméra à tout moment pendant la réunion"
+      ],
+      "You have too many meetings in progress": [
+        "Vous avez trop de réunions en cours"
       ],
       "You left the meeting": [
         "Vous avez quitté la réunion."
@@ -3278,6 +3293,9 @@
       "Does not repeat": [
         "Ne pas répéter"
       ],
+      "Don’t show this message again": [
+        "Ne plus afficher ce message"
+      ],
       "Download .ics": [
         "Télécharger le .ics"
       ],
@@ -3358,6 +3376,9 @@
       ],
       "Monday to Friday": [
         "Du lundi au vendredi"
+      ],
+      "More options": [
+        "Plus d'options"
       ],
       "Muted": [
         "Muet"
@@ -3946,6 +3967,9 @@
       "Meeting": [
         "Réunion"
       ],
+      "Meeting actions": [
+        "Actions pour la réunion"
+      ],
       "Meeting created": [
         "La réunion a été créée"
       ],
@@ -3987,6 +4011,9 @@
       ],
       "Publications": [
         "Publications"
+      ],
+      "Quick reactions": [
+        "Réactions rapides"
       ],
       "Reconnection Testing": [
         "Test de la reconnexion"

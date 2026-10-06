@@ -240,11 +240,11 @@
       "Cancel": [
         "İptal"
       ],
-      "Change layout": [
-        "Yerleşimi değiştir"
-      ],
       "Change password": [
         "Parolayı değiştir"
+      ],
+      "Chat": [
+        "Sohbet"
       ],
       "Chat with us": [
         "Bizimle canlı görüşün"
@@ -302,6 +302,12 @@
       ],
       "Create meeting": [
         "Görüşme oluştur"
+      ],
+      "Debug devices": [
+        "Aygıt hatalarını ayıkla"
+      ],
+      "Debug overlay": [
+        "Hata ayıklama katmanı"
       ],
       "Delete": [
         "Sil"
@@ -375,9 +381,6 @@
       "Enable camera": [
         "Kamerayı aç"
       ],
-      "Enable captions": [
-        "Alt yazıyı aç"
-      ],
       "Enable waiting room": [
         "Bekleme odasını kullanıma al"
       ],
@@ -447,6 +450,9 @@
       "Kick out ${ participantName }": [
         "${ participantName } katılımcısını çıkart"
       ],
+      "Layout": [
+        "Yerleşim"
+      ],
       "Leave": [
         "Ayrıl"
       ],
@@ -465,11 +471,17 @@
       "Lower hand": [
         "Eli indir"
       ],
+      "Meeting info": [
+        "Görüşme bilgileri"
+      ],
       "Meeting timer": [
         "Görüşme zamanlayıcısı"
       ],
       "Minimize preview": [
         "Ön izlemeyi küçült"
+      ],
+      "More info": [
+        "Diğer bilgiler"
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
@@ -492,6 +504,9 @@
       "Noise cancellation": [
         "Gürültü engelleme"
       ],
+      "Not now": [
+        "Şimdi değil"
+      ],
       "Open app": [
         "Uygulamayı aç"
       ],
@@ -500,6 +515,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "${ senderName } kullanıcısının anmasını sohbette aç"
+      ],
+      "Participants": [
+        "Katılımcılar"
       ],
       "Participants join after you approve them": [
         "Katılımcıların katılması için onay vermeniz gerekir"
@@ -546,6 +564,9 @@
       ],
       "Record": [
         "Kayıt"
+      ],
+      "Recording": [
+        "Kaydediliyor"
       ],
       "Recording your microphone...": [
         "Mikrofonunuzdan kayıt yapılıyor..."
@@ -641,6 +662,12 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Share screen": [
+        "Ekranı paylaş"
+      ],
+      "Show captions": [
+        "Alt yazıları görüntüle"
+      ],
       "Show options": [
         "Seçenekleri görüntüle"
       ],
@@ -713,6 +740,9 @@
       "Stop Recording Track Stats": [
         "Kayıt izleme istatistiklerini durdur"
       ],
+      "Stop sharing": [
+        "Paylaşımdan kaldır"
+      ],
       "Submit": [
         "Gönder"
       ],
@@ -730,6 +760,9 @@
       ],
       "The current link will stop working.": [
         "Geçerli bağlantı artık çalışmayacak."
+      ],
+      "Transcription": [
+        "Yazıya dönüştürme"
       ],
       "Try again": [
         "Yeniden dene"
@@ -811,9 +844,6 @@
       "Blur background": [
         "Arka planı bulanıklaştır"
       ],
-      "Chat": [
-        "Sohbet"
-      ],
       "Close": [
         "Kapat"
       ],
@@ -826,23 +856,11 @@
       "Copy meeting link": [
         "Görüşme bağlantısını kopyala"
       ],
-      "Debug devices": [
-        "Aygıt hatalarını ayıkla"
-      ],
-      "Debug overlay": [
-        "Hata ayıklama katmanı"
-      ],
-      "Device Debugger": [
-        "Aygıt hatası ayıklayıcı"
-      ],
       "Go to dashboard": [
         "Panoya git"
       ],
       "Incoming video": [
         "Gelen görüntü"
-      ],
-      "Layout: ${ selectedLabel }": [
-        "Yerleşim: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Görüşmeden ayrıl"
@@ -852,12 +870,6 @@
       ],
       "Lock meeting": [
         "Görüşmeyi kilitle"
-      ],
-      "Lower hand": [
-        "Eli indir"
-      ],
-      "Meeting details": [
-        "Görüşme ayrıntıları"
       ],
       "Meeting timer": [
         "Görüşme zamanlayıcısı"
@@ -877,14 +889,8 @@
       "Participant host control options": [
         "Görüşme sahibi katılımcı yönetimi seçenekleri"
       ],
-      "Participants": [
-        "Katılımcılar"
-      ],
       "Picture-in-picture while sharing": [
         "Paylaşırken görüntü içinde görüntü"
-      ],
-      "Raise hand": [
-        "El kaldır"
       ],
       "Rotate camera": [
         "Kamerayı döndür"
@@ -892,14 +898,8 @@
       "Save my name on this device": [
         "Adımı bu aygıta kaydet"
       ],
-      "Screen share": [
-        "Ekran paylaşımı"
-      ],
       "Self view": [
         "Kendi görünümüm"
-      ],
-      "Settings": [
-        "Ayarlar"
       ],
       "Stop recording and download.": [
         "Kaydı durdur ve indir."
@@ -910,17 +910,11 @@
       "Toggle emoji reactions": [
         "Emoji tepkilerini aç/kapat"
       ],
-      "Toggle meeting details": [
-        "Görüşme ayrıntılarını aç/kapat"
-      ],
       "Toggle participants": [
         "Katılımcıları aç/kapat"
       ],
       "Toggle screen share": [
         "Ekran paylaşımını aç/kapat"
-      ],
-      "Toggle settings": [
-        "Ayarları aç/kapat"
       ],
       "Video settings": [
         "Görüntü ayarları"
@@ -2945,6 +2939,9 @@
       "Host": [
         "Sunucu"
       ],
+      "Host has another meeting in progress": [
+        "Görüşme sahibinin süren başka bir görüşmesi var"
+      ],
       "Host has disabled live captions for this meeting.": [
         "Görüşme sahibi bu görüşmede canlı alt yazıyı kullanımdan kaldırmış."
       ],
@@ -3083,6 +3080,9 @@
       "Microphone permission denied": [
         "Mikrofona erişme izni verilmedi"
       ],
+      "More options": [
+        "Diğer seçenekler"
+      ],
       "Mute microphone": [
         "Mikrofonu kapat"
       ],
@@ -3133,6 +3133,9 @@
       ],
       "No speaker detected": [
         "Bir hoparlör bulunamadı"
+      ],
+      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
+        "Aygıtınızda başarım sorunları yaşadığından gürültü engelleme kapatıldı. Ses ayarlarından yeniden açabilirsiniz."
       ],
       "Not sent, check your connection.": [
         "Gönderilmedi, bağlantınızı denetleyin."
@@ -3275,8 +3278,11 @@
       "Share screen": [
         "Ekran paylaşımı"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Başkalarını davet etmek için bu bağlantıyı paylaşın. Bağlantıyı istediğiniz zaman araç çubuğundaki bilgiler simgesine tıklayarak görebilirsiniz."
+      "Share this link to invite others. You can also find it anytime under Meeting info in the More options menu.": [
+        "Başkalarını davet etmek için bu bağlantıyı paylaşın. İstediğiniz zaman Diğer seçenek menüsündeki Görüşme bilgileri altında da bulabilirsiniz."
+      ],
+      "Show live captions?": [
+        "Canlı alt yazılar görüntülensin mi?"
       ],
       "Sign in": [
         "Oturum aç"
@@ -3286,9 +3292,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "Bu tarayıcıda hoparlör seçimi özelliği yok. Farklı bir hoparlör seçmek için sistem ayarlarınızı kullanın."
-      ],
-      "Start recording": [
-        "Kaydı başlat"
       ],
       "Starting camera…": [
         "Kamera başlatılıyor…"
@@ -3307,6 +3310,9 @@
       ],
       "Thank you for joining.": [
         "Katıldığınız için teşekkürler."
+      ],
+      "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
+        "Alt yazı hizmeti görüşmenin sesini kullanır. Alt yazılar yalnızca sizin tarafınızdan görülebilir ve kaydedilmez."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Görüşme sahibi sizi bu görüşmeden çıkardı. Bir yanlışlık olduğunu düşünüyorsanız görüşme sahibinden sizi yeniden davet etmesini isteyin."
@@ -3332,6 +3338,9 @@
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Bu görüşme ücretsiz tarifenin zaman sınırına ulaştı. Gelecek görüşmelerinizde toplantı süresini uzatmak için tarifenizi yükseltin."
       ],
+      "This meeting reached the time limit.": [
+        "Bu görüşme zaman sınırına ulaştı."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Bu görüşme ${ MEET_APP_NAME } bilgisayar uygulamasında açıldı."
       ],
@@ -3349,9 +3358,6 @@
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Bir oda oluştururken oda bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
-      ],
-      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
-        "Canlı alt yazı oluşturmak için alt yazı hizmetinin görüşmenin ses kaydını alma izni olması gerekir. Alt yazılar yalnızca sizin tarafınızdan görülebilir ve kaydedilmez."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -3373,9 +3379,6 @@
       ],
       "Turn on camera": [
         "Kamerayı aç"
-      ],
-      "Turn on live captions?": [
-        "Canlı alt yazıyı açmak ister misiniz?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Görüşme ile yeniden bağlantı kurulamadı. Lütfen yeniden katılın ya da görüşmeden ayrılın."
@@ -3437,6 +3440,9 @@
       "Yesterday — ${ absoluteDate }": [
         "Dün — ${ absoluteDate }"
       ],
+      "You": [
+        "Siz"
+      ],
       "You are almost there": [
         "Neredeyse tamam"
       ],
@@ -3451,6 +3457,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Görüşmede mikrofonunuzu ve kameranızı istediğiniz zaman kapatabilirsiniz"
+      ],
+      "You have too many meetings in progress": [
+        "Sürmekte olan çok fazla görüşmeniz var"
       ],
       "You left the meeting": [
         "Görüşmeden ayrıldınız"
@@ -3629,6 +3638,9 @@
       "Does not repeat": [
         "Yinelenmiyor"
       ],
+      "Don’t show this message again": [
+        "Bu ileti bir daha görüntülenmesin"
+      ],
       "Download .ics": [
         ".ics dosyasını indir"
       ],
@@ -3718,6 +3730,9 @@
       ],
       "Monday to Friday": [
         "Pazartesi ile Cuma arasında"
+      ],
+      "More options": [
+        "Diğer seçenekler"
       ],
       "Mountain landscape background": [
         "Dağ manzarası arka planı"
@@ -4320,6 +4335,9 @@
       "Meeting": [
         "Görüşme"
       ],
+      "Meeting actions": [
+        "Görüşme işlemleri"
+      ],
       "Meeting created": [
         "Görüşme oluşturuldu"
       ],
@@ -4367,6 +4385,9 @@
       ],
       "Publications": [
         "Yayınlar"
+      ],
+      "Quick reactions": [
+        "Hızlı tepkiler"
       ],
       "Reconnection Testing": [
         "Yeniden bağlanma sınaması"

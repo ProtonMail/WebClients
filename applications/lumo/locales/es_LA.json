@@ -244,6 +244,9 @@
       "More benefits": [
         "Más ventajas"
       ],
+      "More info": [
+        "Más información"
+      ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
       ],
@@ -396,6 +399,9 @@
       ],
       "Switch or add account": [
         "Cambiar o agregar cuenta"
+      ],
+      "Switch to ${ planName }": [
+        "Cambiar a ${ planName }"
       ],
       "Take a tour": [
         "Explore ahora"
@@ -603,56 +609,15 @@
         "Garantía de reembolso durante 30 días"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo personalizado, 10 direcciones de correo, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicación de escritorio ${ MAIL_APP_NAME }"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
       ],
-      "1 user account": [
-        "1 cuenta de usuario"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB de almacenamiento: 40 veces su plan actual"
-      ],
-      "6 user accounts": [
-        "6 cuentas de usuario"
-      ],
-      "Admin panel to manage your family": [
-        "Panel de administración para gestionar a su familia"
-      ],
-      "Advanced account protection": [
-        "Protección de cuenta avanzada"
-      ],
-      "Easily add or remove users": [
-        "Agregar o eliminar usuarios fácilmente"
-      ],
-      "One-time payment, lifetime deal": [
-        "Un solo pago y una oferta de por vida"
-      ],
-      "Online document editor": [
-        "Editor de documentos en línea"
-      ],
-      "Password health alerts": [
-        "Alertas de estado de la contraseña"
-      ],
-      "Recover previous file versions": [
-        "Recupere las versiones previas de los archivos"
-      ],
       "Unlimited folders, labels and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Inicios de sesión ilimitados, tarjetas de crédito, alias hide-my-email y más"
       ],
       "Use your own email domain": [
         "Use su propio dominio de correo electrónico"
@@ -661,90 +626,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Se renueva después de 1 mes por ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Acceda a contenido bloqueado y navegue de forma privada. Incluye más de 8 500 servidores en más de 110 países, 10 dispositivos, streaming de alta velocidad, bloqueador de anuncios y protección contra malware, VPN Accelerator y más."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Inicios de sesión seguros en todos sus dispositivos. Incluye un número ilimitado de alias de hide-my-email, uso compartido, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } y mucho más."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más.",
-        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más.",
-        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses }dirección de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más.",
-        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, asistente de escritura ${ LUMO_SHORT_APP_NAME }, alias de hide-my-email ilimitados y más."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Asegure sus archivos con almacenamiento cifrado en la nube. Incluye editor de documentos en línea, historial de versiones, intercambio de archivos cifrado y más."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB de almacenamiento de datos"
-      ],
-      "3 TB data storage": [
-        "3 TB de almacenamiento de datos"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Acceda a más de 15 000 servidores en más de 120 países"
-      ],
-      "Access advanced AI models": [
-        "Acceda a modelos avanzados de IA"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Todas las funciones premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquee anuncios, rastreadores y malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autenticador de 2FA integrado"
-      ],
-      "Connect 10 devices at once": [
-        "Conecte 10 dispositivos a la vez"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Historial de chat completo con búsqueda sencilla y favoritos"
-      ],
-      "Individual accounts for 6 users": [
-        "Cuentas individuales para 6 usuarios"
-      ],
-      "Individual accounts for you and a partner": [
-        "Cuentas individuales para usted y un socio"
-      ],
-      "Stronger protection against cyber threats": [
-        "Protección más sólida contra amenazas cibernéticas"
-      ],
-      "Unlimited daily chats": [
-        "Chats diarios ilimitados"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "La tecnología NetShield tiene como fin proteger los dispositivos y que pueda navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
       ]
     },
     "Billing cycle option": {
@@ -1023,9 +909,6 @@
       "Cancel": [
         "Cancelar"
       ],
-      "Cancel (Esc)": [
-        "Cancelar (Esc)"
-      ],
       "Clear": [
         "Borrar"
       ],
@@ -1092,9 +975,6 @@
       "I like this response": [
         "Me gusta esta respuesta."
       ],
-      "Keep going": [
-        "Continuar"
-      ],
       "Let ${ LUMO_SHORT_APP_NAME } out": [
         "Dejar salir a ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -1109,9 +989,6 @@
       ],
       "Manage Subscription": [
         "Gestionar suscripción"
-      ],
-      "More options": [
-        "Más opciones"
       ],
       "New chat": [
         "Nuevo chat"
@@ -1140,9 +1017,6 @@
       "Save": [
         "Guardar"
       ],
-      "Save (⌘+Enter)": [
-        "Guardar (⌘+Enter)"
-      ],
       "Select all": [
         "Seleccionar todo"
       ],
@@ -1163,9 +1037,6 @@
       ],
       "Stop generating": [
         "Detener generación"
-      ],
-      "Stop here": [
-        "Detenerse aquí"
       ],
       "Submit": [
         "Enviar"
@@ -1456,9 +1327,6 @@
       ],
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } consulta su memoria guardada para personalizar las respuestas, estilo de comunicación, experiencia, herramientas concurrentes y proyectos de larga duración."
-      ],
-      "${ LUMO_SHORT_APP_NAME } will review your saved memories, remove duplicates, and merge related entries into clearer ones. Your memory list will be replaced with the optimized result.": [
-        "${ LUMO_SHORT_APP_NAME } revisará sus memorias guardadas, eliminaremos las duplicadas y fusionaremos las entradas relacionadas en otras más claras. Su lista de memorias se reemplazará con el resultado optimizado."
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Agregue sus propios recuerdos, edite cualquier entrada autogenerada o borre todo en cualquier momento. Los recuerdos generados que editó se consideran como propios."
@@ -1781,9 +1649,6 @@
       "Basic chat history": [
         "Historial de chat básico"
       ],
-      "Built and based in Europe": [
-        "Desarrollado y con sede en Europa"
-      ],
       "Compliance with data protection regulations": [
         "Cumplimiento con las regulaciones de protección de datos"
       ],
@@ -2062,6 +1927,9 @@
       "Extract, analyze, and summarise documents, PDFs, and images.": [
         "Extraiga, analice y resuma documentos, archivos PDF e imágenes."
       ],
+      "Feedback about Apertus may also be shared with the Apertus team.": [
+        "Los comentarios sobre Apertus también pueden ser compartidos con el equipo de Apertus."
+      ],
       "File too large for preview (>150k tokens)": [
         "Archivo demasiado grande para la vista previa (>150k tokens)"
       ],
@@ -2332,14 +2200,14 @@
       "This conversation contains many images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_IMAGES_PER_REQUEST } images.": [
         "Esta conversación contiene muchas imágenes. ${ LUMO_SHORT_APP_NAME } solo verá las ${ MAX_IMAGES_PER_REQUEST } imágenes más recientes."
       ],
+      "This conversation's full history is also shared by default to help us improve even further. You can opt out on the next dialog.": [
+        "El historial completo de esta conversación también es compartido por defecto para ayudarnos a mejorar aún más. Puede elegir no hacerlo en la ventana siguiente."
+      ],
       "This file was removed from project knowledge.": [
         "Se eliminó este archivo del conocimiento del proyecto."
       ],
       "This folder is empty": [
         "Esta carpeta está vacía"
-      ],
-      "This is taking a lot of steps. Should it carry on?": [
-        "Esto implica muchos pasos. ¿Debería continuar?"
       ],
       "This shares your general sentiment and response metadata with ${ BRAND_NAME }. Your prompt and the response are not included.": [
         "Esto comparte su opinión general y los metadatos de la respuesta con ${ BRAND_NAME }. Su prompt y la respuesta no se incluyen."
@@ -2392,14 +2260,11 @@
       "We can help you get started with using the ${ LUMO_SHORT_APP_NAME } API. Describe what you want to automate. ${ LUMO_SHORT_APP_NAME } returns a workflow graph and sample code that calls the ${ LUMO_SHORT_APP_NAME } API.": [
         "Podemos ayudarle a comenzar a usar la API de ${ LUMO_SHORT_APP_NAME }. Describa lo que desea automatizar. ${ LUMO_SHORT_APP_NAME } devolverá un gráfico de flujo de trabajo y un código de ejemplo que llama a la API de ${ LUMO_SHORT_APP_NAME }."
       ],
-      "When you submit feedback, your prompt and this response are sent to ${ BRAND_NAME } for analysis and improvement. Feedback about Apertus may also be shared with the Apertus team.": [
-        "Al enviar comentarios, su prompt y esta respuesta se envían a ${ BRAND_NAME } para su análisis y mejora. Los comentarios sobre Apertus también pueden compartirse con el equipo de Apertus."
+      "When you submit feedback, your prompt and this response are sent to ${ BRAND_NAME } for analysis and improvement.": [
+        "Cuando envía comentarios, su prompt y esta respuesta son enviados a ${ BRAND_NAME } para análisis y mejoras."
       ],
       "You are about to visit an external website:": [
         "Está a punto de visitar un sitio web externo:"
-      ],
-      "You have many saved memories. Use Optimize in the menu to merge duplicates and keep the list focused.": [
-        "Tiene demasiadas memorias guardadas. Use Optimizar en el menú para fusionar duplicados y mantener la lista ordenada."
       ],
       "You've reached your image limit for this period.": [
         "Ha alcanzado el límite de imágenes para este periodo."
@@ -2412,9 +2277,6 @@
       ],
       "Your memories are already well organized.": [
         "Sus memorias ya están bien organizadas."
-      ],
-      "Your prompt and this response will be sent to ${ BRAND_NAME } for analysis and improvement. Images and other attachments are not included.": [
-        "El prompt y esta respuesta se enviarán a ${ BRAND_NAME } para análisis y mejora. Las imágenes y otros adjuntos no se incluyen."
       ]
     },
     "collider_2025: Job": {
@@ -3208,9 +3070,6 @@
       "From only": [
         "Desde solo"
       ],
-      "Get": [
-        "Obtener"
-      ],
       "Get ${ BRAND_NAME } Workspace": [
         "Obtenga ${ BRAND_NAME } Workspace"
       ],
@@ -3274,9 +3133,6 @@
       "This conversation is getting long": [
         "Esta conversación se está haciendo demasiado larga"
       ],
-      "This conversation is getting long. Start a new chat soon to keep ${ LUMO_SHORT_APP_NAME } purring.": [
-        "Esta conversación se está haciendo demasiado larga. Inicie un chat nuevo pronto para mantener ${ LUMO_SHORT_APP_NAME } impoluto."
-      ],
       "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
         "Esta conversación es demasiado larga para continuar. Inicie un nuevo chat para mantener ${ LUMO_SHORT_APP_NAME } impoluto y útil."
       ],
@@ -3285,12 +3141,6 @@
       ],
       "This project is filling up": [
         "Este proyecto se está llenando"
-      ],
-      "This project is filling up. Tidying away conversations you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
-        "Este proyecto se está llenando. Borre las conversaciones que ya no necesita para mantener ${ LUMO_SHORT_APP_NAME } impoluto."
-      ],
-      "This project is filling up. Tidying away files you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
-        "Este proyecto se está llenando. Borre los archivos que ya no necesita para mantener ${ LUMO_SHORT_APP_NAME } impoluto."
       ],
       "Tidying away files you no longer need keeps ${ LUMO_SHORT_APP_NAME } purring.": [
         "Borre los archivos que ya no necesita para mantener ${ LUMO_SHORT_APP_NAME } impoluto."
@@ -3306,9 +3156,6 @@
       ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "Estamos experimentando un tráfico superior al habitual por lo que las respuestas pueden ser un poco más lentas de lo normal. Mejore a ${ LUMO_SHORT_APP_NAME } Plus para obtener acceso prioritario durante las horas pico."
-      ],
-      "You're getting close to the number of projects ${ LUMO_SHORT_APP_NAME } can keep purring over.": [
-        "Se está acercando al número de proyectos que ${ LUMO_SHORT_APP_NAME } puede mantener impolutos."
       ]
     },
     "collider_2025: Web Extract": {
@@ -4111,6 +3958,9 @@
       "From ${ DRIVE_APP_NAME }": [
         "Desde ${ DRIVE_APP_NAME }"
       ],
+      "Full history of this conversation, including images and attachments, will be sent to ${ BRAND_NAME } for analysis and improvement.": [
+        "El historial completo de esta conversación, incluyendo imágenes y adjuntos serán enviados a ${ BRAND_NAME } para análisis y mejoras."
+      ],
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Obtenga respuestas más rápidas y precisas de la web, con citas para que pueda verificar la fuente."
       ],
@@ -4315,6 +4165,9 @@
       "Your information is zero-access encrypted": [
         "Su información está cifrada con acceso cero"
       ],
+      "Your prompt and this response will be sent to ${ BRAND_NAME } for analysis and improvement. Images and other attachments are not included.": [
+        "El prompt y esta respuesta se enviarán a ${ BRAND_NAME } para análisis y mejora. Las imágenes y otros adjuntos no se incluyen."
+      ],
       "Your report is being generated privately.": [
         "Su reporte se está generando en privado."
       ],
@@ -4474,6 +4327,9 @@
       ],
       "Image preview": [
         "Vista previa de imagen"
+      ],
+      "Include full conversation": [
+        "Incluir conversación completa"
       ],
       "Inspiration image": [
         "Imagen de inspiración"
@@ -4864,6 +4720,9 @@
       "Hide details": [
         "Ocultar detalles"
       ],
+      "Hide tool result": [
+        "Ocultar resultado de la herramienta"
+      ],
       "Last updated: ": [
         "Última actualización: "
       ],
@@ -4962,6 +4821,9 @@
       ],
       "View details": [
         "Ver los detalles"
+      ],
+      "View tool result": [
+        "Ver resultado de la herramienta"
       ],
       "Worked on an image": [
         "Trabajé en una imagen"
@@ -6897,21 +6759,6 @@
         "Ninguna imagen seleccionada"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB de almacenamiento total"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "El espacio de almacenamiento se comparte entre los miembros de la familia en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Hasta 6 usuarios"
-      ]
-    },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
         "Grupo familiar no reconocido. Intente otra vez."
@@ -6942,17 +6789,6 @@
       ],
       "Delete organization?": [
         "¿Eliminar organización?"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Incluye 2700 servidores en más de 65 países, conecta hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware y bloqueador de anuncios, y más."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 90 direcciones de correo electrónico, alias ilimitados de Hide-my-email, posibilidad de compartir calendario, etc."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteja los archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
       ]
     },
     "Feature": {
@@ -7150,6 +6986,12 @@
       ],
       "0 MB": [
         "0 MB"
+      ],
+      "1 device per user": [
+        "1 dispositivo por usuario"
+      ],
+      "1 vault per user": [
+        "1 bóveda por usuario"
       ],
       "30-day money-back guarantee.": [
         "30 días de garantía de devolución del dinero."
@@ -7430,6 +7272,9 @@
       ],
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
+      ],
+      "No payment is required.": [
+        "El pago no es obligatorio."
       ],
       "No results found": [
         "No se encontraron resultados"
@@ -8672,9 +8517,6 @@
       "Auto-reply": [
         "Respuesta automática"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Completado automático de tarjetas de crédito (próximamente)"
-      ],
       "Automatic email forwarding": [
         "Reenvío de correo automático"
       ],
@@ -8701,9 +8543,6 @@
       ],
       "Custom and secure business email": [
         "Correo electrónico empresarial personalizado y seguro"
-      ],
-      "Custom domains for email aliases": [
-        "Dominios personalizados para alias de correo electrónico"
       ],
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
@@ -8762,9 +8601,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Funciones gratuitas de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "VPN gratis en un dispositivo"
-      ],
       "Fully refundable for 30 days": [
         "Completamente reembolsable durante 30 días"
       ],
@@ -8773,10 +8609,6 @@
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN de alta velocidad en ${ n } dispositivo",
-        "VPN de alta velocidad en ${ n } dispositivos"
       ],
       "HTML signatures": [
         "Firmas HTML"
@@ -8915,9 +8747,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Bóvedas compartidas ilimitadas de ${ PASS_SHORT_APP_NAME } por usuario"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Bóvedas compartidas e ilimitadas con permisos de acceso"
       ],
       "Unlimited vault sharing": [
         "Intercambios ilimitados de bóvedas"
@@ -9210,9 +9039,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Los discos duros de nuestros servidores están completamente cifrados con numerosas capas de contraseñas, por lo que los datos estarán protegidos aunque nuestro hardware se vea amenazado"
       ],
-      "Password management and identity protection": [
-        "Gestión de contraseñas y protección de identidad"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalice la firma del correo electrónico con logotipos, imágenes, íconos de redes sociales, enlaces a los datos de contacto y más"
       ],
@@ -9315,12 +9141,6 @@
         "${ n } pais",
         "${ n } países"
       ],
-      "Access advanced VPN features": [
-        "Acceso a funciones VPN avanzadas"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Agregue más personalización con 15 direcciones de correo y soporte para 3 dominios de correo personalizados"
-      ],
       "AES 256-bit VPN encryption": [
         "Cifrado VPN AES 256-bit"
       ],
@@ -9330,9 +9150,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Aumente el espacio de almacenamiento hasta ${ bundleStorage } por usuario"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Aumente el espacio de almacenamiento hasta ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Extensión de navegador"
       ],
@@ -9341,13 +9158,6 @@
       ],
       "Central control panel": [
         "Panel de control central"
-      ],
-      "Create up to ${ n } calendar": [
-        "Cree hasta ${ n } calendario",
-        "Cree hasta ${ n } calendarios"
-      ],
-      "Dedicated Account manager": [
-        "Gestor de cuenta dedicada"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Ubicaciones de servidores dedicados en más de ${ numberOfCountries } países"
@@ -9447,9 +9257,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Comparta sus bóvedas y credenciales de forma segura"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Inicios de sesión ilimitados, notas, tarjetas de crédito y más"
       ]
     },
     "pass_signup_2023: Title": {
@@ -9556,6 +9363,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (impuestos no incl.)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } no puede combinarse con ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } solo está disponible en planes empresariales."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% de impuesto: ${ taxAmountElement }"
       ],
@@ -9565,8 +9378,23 @@
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad por pagar después de la prueba el ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Se requiere una organización para este plan."
+      ],
       "Billing Country": [
         "País de facturación"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "No se puede comprar Born Private con una suscripción activa."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private requiere una donación."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "La compra de créditos requiere una compra separada."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Al cambiar, acepta nuestros ${ termsLink }."
       ],
       "Card number": [
         "Número de tarjeta"
@@ -9607,11 +9435,20 @@
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Solo un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } puede ser comprado."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Pagar con ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Se requiere un método de pago para activar la suscripción después de que finalice el periodo de prueba."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Cierre las cuentas de wallet adicionales antes de cambiar el plan."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Cierre las carteras adicionales antes de cambiar el plan."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
@@ -9621,6 +9458,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr }, cancele en cualquier momento."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Las licencias de Scribe no pueden exceder el número de miembros."
       ],
       "Tax ${ rate }%": [
         "Impuesto ${ rate }%"
@@ -9634,6 +9474,18 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descuento es válido para ${ renewalsWithCoupon } renovación.",
         "El descuento es válido para ${ renewalsWithCoupon } renovaciones."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "El plan seleccionado no ofrece direcciones suficientes para su cuenta."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "El plan seleccionado no ofrece dominios suficientes para su cuenta."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "El plan seleccionado no ofrece miembros suficientes para su cuenta."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "El plan seleccionado no ofrece almacenamiento suficiente para su cuenta."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después se renovará automáticamente por ${ renewPriceStr } por 1 mes. Puede cancelar en cualquier momento.",
@@ -9664,14 +9516,35 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta acción ampliará la suscripción existente. Solo se le cargará por las adiciones y el tiempo restante del ciclo de facturación actual. La fecha de renovación de la suscripción no cambiará."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Este servidor dedicado está asignado a una puerta de enlace y no se puede cambiar."
+      ],
       "This offer is not available with your current plan.": [
         "Esta oferta no está disponible con el plan actual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en su nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Este plan no admite miembros en su cuenta."
+      ],
       "Timeout exceeded": [
         "Tiempo de espera agotado"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Los planes de prueba no ofrecen licencias de ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Los planes de prueba no admiten dominios personalizados."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Los planes de prueba no ofrecen IPs dedicadas."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Los planes de prueba no admiten licencias de Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Los planes de prueba no admiten esta cantidad de miembros."
       ],
       "VAT number": [
         "Número de IVA"
@@ -9685,11 +9558,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Ya tiene una suscripción a este plan. Puede cambiar la suscripción en ${ subscriptionPlatform }."
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Ya posee ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Ya posee Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto se le redirigirá a PayPal para verificar el pago."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pronto se le redirigirá para verificar el pago."
+      ],
+      "Your account is too old for Born Private.": [
+        "Su cuenta es demasiado antigua para Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
@@ -10162,12 +10044,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 usuarios"
-      ],
       "All paid Mail and Calendar features": [
         "Todas las funciones pagas de Mail y Calendar"
       ],
@@ -10186,17 +10062,11 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "${ appName1 }, ${ appName2 } y ${ appName3 } premium"
       ],
-      "Premium early access": [
-        "Acceso anticipado premium"
-      ],
       "Secure cloud storage": [
         "Almacenamiento seguro en la nube"
       ],
       "Secure streaming": [
         "Transmisión segura"
-      ],
-      "Support online privacy": [
-        "Soporte para la privacidad en línea"
       ]
     },
     "specialoffer: Footer": {
@@ -10253,32 +10123,8 @@
       "Get the deal": [
         "Aprovechar la oferta"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Se renueva después de 1 año a un precio con descuento de ${ discountedAmount } en lugar de ${ regularAmount } (${ discount }% de descuento)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Se renueva después de 2 años a un precio con descuento de ${ discountedAmount } en lugar de ${ regularAmount } (${ discount }% de descuento)"
-      ],
       "Save ${ discount }%": [
         "Ahorre un ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Precio estándar ${ amount } durante 1 mes"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Precio estándar ${ amount } durante 12 meses"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Precio estándar ${ amount } durante 15 meses"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Precio estándar ${ amount } durante 24 meses"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Precio estándar ${ amount } durante 30 meses"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "La oferta especial es válida durante los primeros 2 años"
       ]
     },
     "specialoffer: Title": {
@@ -10287,23 +10133,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN por usuario, servicios de streaming en todo el mundo, bloqueador de malware y anuncios y más."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Acceda a contenido bloqueado y navegue de forma privada. Incluye 1700 servidores en más de 60 países, la velocidad VPN más alta, 10 conexiones VPN, servicios de streaming en todo el mundo, bloqueador de malware y anuncios y más."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, alias ilimitados de Hide-my-email, posibilidad de compartir calendario, etc."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Es perfecto para familias o equipos pequeños, ya que cada uno puede tener su propia bandeja de entrada y alias. Requiere un dominio personalizado."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Obtenga sin costo adicional las versiones pagas de todos los nuevos servicios de privacidad que lanzaremos en el futuro, junto con acceso anticipado a todas las funciones y productos futuros."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja los archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
@@ -10416,10 +10250,6 @@
       "${ n } VPN connection": [
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } conexión VPN por usuario",
-        "${ n } conexiones VPN por usuario"
       ],
       "VPN connection for ${ n } device per user": [
         "Conexión VPN para ${ n } dispositivo por usuario",
@@ -10585,9 +10415,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Incluye más de 2950 servidores en más de 65 países, conecte hasta 10 dispositivos, acceda a servicios de transmisión en todo el mundo, malware, bloqueador de anuncios y más."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo personalizado, 10 direcciones de correo, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Asegure los archivos con almacenamiento en la nube cifrado. Se incluyen el historial de versiones, el intercambio de archivos cifrado y más."

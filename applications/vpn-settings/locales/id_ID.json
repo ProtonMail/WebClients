@@ -728,6 +728,9 @@
       "More benefits": [
         "Lebih banyak manfaat"
       ],
+      "More info": [
+        "Info selengkapnya"
+      ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
       ],
@@ -1537,15 +1540,6 @@
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Konfigurasikan kebijakan keamanan, retensi data, dan infrastruktur VPN, serta kelola log audit."
       ],
-      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
-        "Delegasikan pengelolaan dengan menetapkan peran admin tertentu. Berikan setiap admin hanya akses yang mereka butuhkan. Langkah ini mengikuti prinsip hak istimewa terkecil, guna melindungi organisasi dari akun yang disusupi dan kesalahan yang tidak disengaja."
-      ],
-      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
-        "Delegasikan manajemen untuk banyak pengguna sekaligus. Tetapkan peran admin tertentu ke grup untuk izin otomatis. Ini mengikuti prinsip hak istimewa paling rendah untuk menghemat waktu saat onboarding dan offboarding sekaligus mengurangi kesalahan."
-      ],
-      "Delegate management with the appropriate admin role.": [
-        "Delegasikan pengelolaan dengan peran admin yang sesuai."
-      ],
       "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
         "Kelola semua pengguna, grup, penyimpanan, keamanan, penagihan, log audit, dan konfigurasi sistem."
       ],
@@ -1751,56 +1745,15 @@
         "Penawaran tidak tersedia"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan masih banyak lagi."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } dan ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "Penyimpanan ${ storageSize }"
       ],
-      "1 user account": [
-        "1 akun pengguna"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "Penyimpanan 200 GB: 40x lebih besar dari paket Anda saat ini"
-      ],
-      "6 user accounts": [
-        "6 akun pengguna"
-      ],
-      "Admin panel to manage your family": [
-        "Panel akun untuk mengelola keluarga Anda"
-      ],
-      "Advanced account protection": [
-        "Perlindungan akun bertingkat lanjut"
-      ],
-      "Easily add or remove users": [
-        "Tambah atau kurangi pengguna secara mudah"
-      ],
-      "One-time payment, lifetime deal": [
-        "Satu kali pembayaran, untuk selamanya"
-      ],
-      "Online document editor": [
-        "Editor dokumen daring"
-      ],
-      "Password health alerts": [
-        "Peringatan kesehatan kata sandi"
-      ],
-      "Recover previous file versions": [
-        "Pulihkan versi file sebelumnya"
-      ],
       "Unlimited folders, labels and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Tanpa batasan jumlah login, kartu kredit, alias hide-my-email, dan masih banyak lagi"
       ],
       "Use your own email domain": [
         "Gunakan domain email milik Anda sendiri"
@@ -1809,81 +1762,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Ditagihkan sebesar ${ amount } satu kali"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Diperbarui setelah 1 bulan dengan harga ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Akses konten yang diblokir dan jelajah secara privat. Termasuk 8.500+ server di 110+ negara, 10 perangkat, streaming berkecepatan tinggi, pemblokir iklan dan perlindungan malware, VPN Accelerator, dan lainnya."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Login yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, ${ DARK_WEB_MONITORING_NAME }, dan masih banyak lagi."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Amankan file Anda dengan penyimpanan cloud yang terenkripsi. Meliputi editor dokumen daring, pencadangan foto, riwayat versi, pembagian file yang terenkripsi, dan masih banyak lagi."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "Penyimpanan data 2 TB"
-      ],
-      "3 TB data storage": [
-        "Penyimpanan data 3 TB"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Akses 15.000+ server di 120+ negara"
-      ],
-      "Access advanced AI models": [
-        "Akses model AI canggih"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Semua fitur premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokir iklan, pelacak, dan malware"
-      ],
-      "Built-in 2FA authenticator": [
-        "Autentikator 2FA bawaan"
-      ],
-      "Connect 10 devices at once": [
-        "Hubungkan 10 perangkat sekaligus"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Riwayat obrolan lengkap dengan pencarian mudah dan favorit"
-      ],
-      "Individual accounts for 6 users": [
-        "Akun individu untuk 6 pengguna"
-      ],
-      "Individual accounts for you and a partner": [
-        "Akun individu untuk Anda dan pasangan"
-      ],
-      "Stronger protection against cyber threats": [
-        "Perlindungan lebih kuat terhadap ancaman siber"
-      ],
-      "Unlimited daily chats": [
-        "Obrolan harian tanpa batas"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield yang dirancang khusus melindungi perangkat Anda dan mempercepat penjelajahan dengan memblokir iklan, pelacak, dan malware."
       ]
     },
     "Billing cycle": {
@@ -2212,9 +2095,6 @@
       ],
       "Basic chat history": [
         "Riwayat obrolan dasar"
-      ],
-      "Built and based in Europe": [
-        "Dibuat dan berbasis di Eropa"
       ],
       "Compliance with data protection regulations": [
         "Patuh terhadap peraturan perlindungan data"
@@ -5353,19 +5233,9 @@
         "(tanpa judul)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "Total penyimpanan 3 TB"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Keuntungan akun Anda"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Ruang penyimpanan terbagi dengan anggota keluarga antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -5392,11 +5262,6 @@
       ],
       "View invitation": [
         "Tampilkan undangan"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Hingga 6 pengguna"
       ]
     },
     "familyOffer_2023:Error": {
@@ -5610,17 +5475,6 @@
       ],
       "Set family name": [
         "Tetapkan nama keluarga"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Beserta 2700 server di 65+ negara, hubungan sampai 10 perangkat, akses layanan streaming seluruh dunia, pemblokiran perangkat lunak jahat dan iklan, dan lebih banyak lagi."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Termasuk dukungan untuk 3 domain email khusus, 90 alamat email, alias hide-my-email tanpa batasan jumlah, pembagian kalender, dan masih banyak lagi."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Amankan file Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian file terenkripsi, dan masih banyak lagi."
       ]
     },
     "Feature": {
@@ -7060,9 +6914,6 @@
       "Can’t access your recovery phone?": [
         "Tidak dapat mengakses ponsel pemulihan Anda?"
       ],
-      "Change your password": [
-        "Ubah kata sandi Anda"
-      ],
       "Choose a plan that works best for you.": [
         "Pilih paket yang paling sesuai dengan kebutuhan Anda."
       ],
@@ -7327,9 +7178,6 @@
       "eduGAIN configuration saved": [
         "Konfigurasi eduGAIN disimpan"
       ],
-      "email": [
-        "email"
-      ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Email dan kalender, terintegrasi dengan ${ CONTACTS_APP_NAME }"
       ],
@@ -7467,9 +7315,6 @@
       ],
       "Fill in user details": [
         "Isi rincian pengguna"
-      ],
-      "finance": [
-        "keuangan"
       ],
       "for ${ price }": [
         "untuk ${ price }"
@@ -7885,9 +7730,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
       ],
-      "Monitor accounts": [
-        "Monitor akun"
-      ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Pantau dan audit upaya autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME } Anda."
       ],
@@ -8046,9 +7888,6 @@
       ],
       "Pass usage logs": [
         "Log penggunaan Pass"
-      ],
-      "password": [
-        "kata sandi"
       ],
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
@@ -8793,9 +8632,6 @@
       ],
       "Username": [
         "Nama pengguna"
-      ],
-      "username": [
-        "nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -11464,9 +11300,6 @@
       "Auto-reply": [
         "Pesan balasan otomatis"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Pengisian rincian kartu kredit secara otomatis (segera hadir)"
-      ],
       "Automatic email forwarding": [
         "Penerusan email otomatis"
       ],
@@ -11496,9 +11329,6 @@
       ],
       "Custom and secure business email": [
         "Email bisnis yang khusus dan aman"
-      ],
-      "Custom domains for email aliases": [
-        "Domain khusus untuk alias email"
       ],
       "Custom email domains": [
         "Domain email khusus"
@@ -11560,9 +11390,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Fitur gratis dari ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "VPN gratis untuk satu perangkat"
-      ],
       "Fully refundable for 30 days": [
         "Pengembalian dana sepenuhnya dalam 30 hari"
       ],
@@ -11574,9 +11401,6 @@
       ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN berkecepatan tinggi pada ${ n } perangkat"
       ],
       "HTML signatures": [
         "Tanda tangan HTML"
@@ -11745,9 +11569,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Brankas ${ PASS_SHORT_APP_NAME } terbagi tanpa batasan jumlah per pengguna"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Brankas terbagi yang tak terbatas dengan perizinan akses"
       ],
       "Unlimited vault sharing": [
         "Berbagi brankas tanpa batas"
@@ -12097,9 +11918,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Seluruh cakram data milik server kami terenkripsi dengan kata sandi yang berlapis, sehingga data Anda akan tetap terlindung bahkan apabila perangkat keras kami disusupi"
       ],
-      "Password management and identity protection": [
-        "Pengelolaan kata sandi dan perlindungan identitas"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
       ],
@@ -12209,12 +12027,6 @@
       "${ n } country": [
         "${ n } negara"
       ],
-      "Access advanced VPN features": [
-        "Akses berbagai fitur VPN lanjutan"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Terapkan berbagai opsi personalisasi dengan dukungan 15 alamat email dan 3 domain khusus"
-      ],
       "AES 256-bit VPN encryption": [
         "Enkripsi VPN AES 256-bit"
       ],
@@ -12224,9 +12036,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Tingkatkan ruang penyimpanan Anda ke ${ bundleStorage } per pengguna"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Tingkatkan total ruang penyimpanan Anda ke ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Ekstensi peramban"
       ],
@@ -12235,12 +12044,6 @@
       ],
       "Central control panel": [
         "Kontrol panel pusat"
-      ],
-      "Create up to ${ n } calendar": [
-        "Buat hingga ${ n } kalender"
-      ],
-      "Dedicated Account manager": [
-        "Staf pengelola akun khusus"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Server khusus yang berlokasi di ${ numberOfCountries }+ negara"
@@ -12841,9 +12644,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Pembagian brankas, item, dan tautan yang aman"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Tanpa batasan jumlah login, catatan, kartu kredit, dan masih banyak lagi"
       ]
     },
     "pass_signup_2023: Title": {
@@ -15054,12 +14854,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 pengguna"
-      ],
       "All paid Mail and Calendar features": [
         "Seluruh fitur Mail dan Calendar berbayar"
       ],
@@ -15078,17 +14872,11 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
-      "Premium early access": [
-        "Akses dini premium"
-      ],
       "Secure cloud storage": [
         "Penyimpanan cloud yang aman"
       ],
       "Secure streaming": [
         "Streaming aman"
-      ],
-      "Support online privacy": [
-        "Dukung privasi daring"
       ]
     },
     "specialoffer: Footer": {
@@ -15171,32 +14959,8 @@
       "Get the deal": [
         "Dapatkan penawaran ini"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Diperbarui setelah 1 tahun dengan harga diskon ${ discountedAmount } alih-alih ${ regularAmount } (diskon ${ discount }%)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Diperbarui setelah 2 tahun dengan harga diskon ${ discountedAmount } alih-alih ${ regularAmount } (diskon ${ discount }%)"
-      ],
       "Save ${ discount }%": [
         "Hemat ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Dengan harga standar ${ amount } selama 1 bulan"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Dengan harga standar ${ amount } selama 12 bulan"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Dengan harga standar ${ amount } selama 15 bulan"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Dengan harga standar ${ amount } selama 24 bulan"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Dengan harga standar ${ amount } selama 30 bulan"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Penawaran spesial ini valid untuk 2 tahun pertama"
       ]
     },
     "specialoffer: Title": {
@@ -15226,23 +14990,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Akses konten yang diblokir dan jelajah secara privat. Termasuk 1.700 server di 60+ negara, kecepatan VPN tertinggi, 10 koneksi VPN per pengguna, layanan streaming global, pemblokir malware dan iklan, dan lainnya."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Akses konten yang diblokir dan jelajah secara privat. Termasuk 1.700 server di 60+ negara, kecepatan VPN tertinggi, 10 koneksi VPN, layanan streaming global, pemblokir malware dan iklan, dan lainnya."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Seluruh layanan premium kami dengan batasan tertingginya: 100 alamat email, dukungan untuk 10 domain khusus, alias hide-my-email tanpa batasan jumlah, pembagian kalender, penyimpanan cloud dan pembagian file terenkripsi, dan masih banyak lagi."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Meliputi dukungan 3 domain email khusus, 15 alamat email, alias Hide-my-email tidak terbatas, fitur berbagi kalender, dan masih banyak lagi."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Cocok untuk keluarga atau tim kecil, di mana setiap orang dapat memiliki kotak masuk dan alias mereka sendiri. Memerlukan domain khusus."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Dapatkan semua layanan privasi baru versi berbayar tanpa harga tambahan, beserta akses dini ke semua fitur dan produk."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan file Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian file terenkripsi, dan masih banyak lagi."
@@ -15731,9 +15483,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } koneksi VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } koneksi VPN per pengguna"
       ],
       "${ productName } for ${ count } user": [
         "${ productName } untuk ${ count } pengguna"
@@ -16489,9 +16238,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Meliputi 2950+ server di 65+ negara, kemampuan untuk menghubungkan hingga 10 perangkat, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, dan masih banyak lagi."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Amankan file Anda dengan penyimpanan cloud yang terenkripsi. Meliputi riwayat versi, pembagian file terenkripsi, dan masih banyak lagi."
@@ -18369,6 +18115,36 @@
       ],
       "Test credit": [
         "Kredit uji coba"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Dapatkan diskon ${ discount }% untuk ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Dapatkan ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/bulan"
+      ],
+      "2 TB of storage to share": [
+        "Ruang penyimpanan 2 TB untuk dibagikan"
+      ],
+      "2 user accounts": [
+        "2 akun pengguna"
+      ],
+      "All premium features from your current plan": [
+        "Seluruh fitur premium dari paket Anda saat ini"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Diskon didasarkan pada harga bulanan standar. Langganan Anda akan diperpanjang dengan tarif tahunan standar saat siklus tagihan berakhir."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "selama 12 bulan"
       ]
     },
     "Unlimited offer": {

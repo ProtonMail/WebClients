@@ -38,6 +38,9 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
+      "More info": [
+        "Mer info"
+      ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
       ],
@@ -940,6 +943,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Still waiting?": [
+        "Väntar du fortfarande?"
       ]
     },
     "fido2: Label": {
@@ -1505,14 +1511,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Lägg till mer personifiering med 15 e-postadresser och stöd för 3 anpassade e-postdomäner"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Öka ditt lagringsutrymme till ${ bundleStorage } per användare"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Öka ditt lagringsutrymme till totalt ${ bundleStorage }"
       ],
       "Support for ${ n } custom email domain": [
         "Stöd för ${ n } anpassad e-postdomän",
@@ -1522,11 +1522,6 @@
     "Placeholder": {
       "Password": [
         "Lösenord"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {

@@ -531,6 +531,9 @@
       "More benefits": [
         "Περισσότερα οφέλη"
       ],
+      "More info": [
+        "Περισσότερες πληροφορίες"
+      ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
@@ -1022,6 +1025,12 @@
       "Domains": [
         "Τομείς"
       ],
+      "Managed Service Provider": [
+        "Πάροχος Διαχειριζόμενης Υπηρεσίας"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Οι οργανισμοί που διαθέτουν το πρόσθετο Πάροχος Διαχειριζόμενων Υπηρεσιών μπορούν να δημιουργούν και να διαχειρίζονται θυγατρικούς οργανισμούς."
+      ],
       "Servers": [
         "Διακομιστές"
       ],
@@ -1131,56 +1140,15 @@
         "Εγγύηση επιστροφής χρημάτων 30 ημερών"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } και ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } αποθηκευτικός χώρος"
       ],
-      "1 user account": [
-        "1 λογαριασμός χρήστη"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
-      ],
-      "6 user accounts": [
-        "6 λογαριασμοί χρηστών"
-      ],
-      "Admin panel to manage your family": [
-        "Πίνακας διαχειριστή για τη διαχείριση της οικογένειάς σας"
-      ],
-      "Advanced account protection": [
-        "Προηγμένη προστασία λογαριασμού"
-      ],
-      "Easily add or remove users": [
-        "Εύκολα προσθέστε ή αφαιρέστε χρήστες"
-      ],
-      "One-time payment, lifetime deal": [
-        "Εφάπαξ πληρωμή, συμφωνία εφ' όρου ζωής"
-      ],
-      "Online document editor": [
-        "Online επεξεργαστής εγγράφων"
-      ],
-      "Password health alerts": [
-        "Ειδοποιήσεις υγείας κωδικού πρόσβασης"
-      ],
-      "Recover previous file versions": [
-        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
-      ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Απεριόριστες συνδέσεις, πιστωτικές κάρτες, hide-my-email ψευδώνυμα και πολλά άλλα"
       ],
       "Use your own email domain": [
         "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
@@ -1189,90 +1157,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Χρεώνεται σε ${ amount } μία φορά"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Ανανεώνεται μετά από 1 μήνα με ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει 8.500+ διακομιστές σε 110+ χώρες, 10 συσκευές, μετάδοση υψηλής ταχύτητας, φραγή Διαφημίσεων και προστασία από κακόβουλο λογισμικό, VPN Accelerator και πολλά άλλα."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα hide-my-email, κοινή χρήση, ενσωματωμένο 2FA, ${ DARK_WEB_MONITORING_NAME } και πολλά άλλα."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
-        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Ασφαλίστε τα email σας και προγραμματίστε τα με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διεύθυνση email, υποστήριξη για προσαρμοσμένους τομείς email, βοηθό γραφής ${ LUMO_SHORT_APP_NAME }, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
-        "Ασφαλίστε τα email σας και προγραμματίστε τα με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις email, υποστήριξη για προσαρμοσμένους τομείς email, βοηθό γραφής ${ LUMO_SHORT_APP_NAME }, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση . Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
-        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ LUMO_SHORT_APP_NAME } βοηθό γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει διαδικτυακό πρόγραμμα επεξεργασίας εγγράφων, αντίγραφο ασφαλείας φωτογραφιών, ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ο χώρος αποθήκευσης μοιράζεται μεταξύ όλων των ${ BRAND_NAME } υπηρεσιών."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB αποθηκευτικού χώρου δεδομένων"
-      ],
-      "3 TB data storage": [
-        "3 TB αποθηκευτικού χώρου δεδομένων"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Πρόσβαση σε 15.000+ διακομιστές σε 120+ χώρες"
-      ],
-      "Access advanced AI models": [
-        "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Όλες οι premium λειτουργίες των ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
-      ],
-      "Built-in 2FA authenticator": [
-        "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
-      ],
-      "Connect 10 devices at once": [
-        "Συνδέστε 10 συσκευές ταυτόχρονα"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Πλήρες ιστορικό συνομιλιών με εύκολη αναζήτηση και αγαπημένα"
-      ],
-      "Individual accounts for 6 users": [
-        "Ατομικοί λογαριασμοί για 6 χρήστες"
-      ],
-      "Individual accounts for you and a partner": [
-        "Ατομικοί λογαριασμοί για εσάς και τον σύντροφό σας"
-      ],
-      "Stronger protection against cyber threats": [
-        "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
-      ],
-      "Unlimited daily chats": [
-        "Απεριόριστες καθημερινές συνομιλίες"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Το ειδικά σχεδιασμένο NetShield προστατεύει τις συσκευές σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
       ]
     },
     "Browser": {
@@ -1454,9 +1343,6 @@
       ],
       "Basic chat history": [
         "Βασικό ιστορικό συνομιλιών"
-      ],
-      "Built and based in Europe": [
-        "Κατασκευασμένο και βασισμένο στην Ευρώπη"
       ],
       "Compliance with data protection regulations": [
         "Συμμόρφωση με τους κανονισμούς περί προστασίας δεδομένων"
@@ -3067,9 +2953,6 @@
       "Expiration date cannot be in the past": [
         "Η ημερομηνία λήξης δεν μπορεί να είναι στο παρελθόν"
       ],
-      "External invitations are not available yet.": [
-        "Οι εξωτερικές προσκλήσεις δεν είναι ακόμη διαθέσιμες."
-      ],
       "External invitations are temporarily disabled.": [
         "Οι εξωτερικές προσκλήσεις είναι προσωρινά απενεργοποιημένες"
       ],
@@ -3117,9 +3000,6 @@
       ],
       "Failed to fetch sharing info": [
         "Αποτυχία ανάκτησης πληροφοριών κοινοποίησης"
-      ],
-      "Failed to fetch sharing information": [
-        "Αποτυχία ανάκτησης πληροφοριών κοινής χρήσης"
       ],
       "Failed to get inviter keys": [
         "Αποτυχία λήψης κλειδιών προσκλητού"
@@ -3866,16 +3746,6 @@
         "(χωρίς τίτλο)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB συνολικός αποθηκευτικού χώρου"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των μελών της οικογένειας στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
-      ]
-    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "Απόρριψη πρόσκλησης"
@@ -3885,11 +3755,6 @@
       ],
       "Switch plans": [
         "Αλλαγή πλάνου"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Μέχρι και 6 χρήστες"
       ]
     },
     "familyOffer_2023:Error": {
@@ -3991,17 +3856,6 @@
       ],
       "Delete organization?": [
         "Διαγραφή οργανισμού;"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Περιλαμβάνει 2700 διακομιστές σε 65+ χώρες, συνδέει έως και 10 συσκευές, έχει πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασία κακόβουλο λογισμικό και αποκλεισμό διαφημίσεων και πολλά άλλα."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, 90 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ]
     },
     "Feature": {
@@ -4718,12 +4572,6 @@
       "and": [
         "και"
       ],
-      "Anyone with this link can access your file.": [
-        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να προσπελάσει το αρχείο σας."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στον φάκελό σας."
-      ],
       "Are you sure you want to discard your import?": [
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
@@ -4774,9 +4622,6 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να διαγράψετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και κατά τη διάρκεια της διαδικασίας να απορρίψετε την ειδοποίηση."
-      ],
-      "Change your password": [
-        "Αλλάξτε τον κωδικό πρόσβασής σας"
       ],
       "characters": [
         "χαρακτήρες"
@@ -4852,17 +4697,8 @@
       "Create in": [
         "Δημιουργία σε"
       ],
-      "Create public link": [
-        "Δημιουργία δημόσιου συνδέσμου"
-      ],
       "Create your first folder and start moving your files.": [
         "Δημιουργήστε τον πρώτο σας φάκελο και αρχίστε να μετακινείτε τα αρχεία σας."
-      ],
-      "Creating link to file": [
-        "Δημιουργία συνδέσμου προς το αρχείο"
-      ],
-      "Creating link to folder": [
-        "Δημιουργία συνδέσμου προς το φάκελο"
       ],
       "Creating new document...": [
         "Δημιουργία νέου εγγράφου..."
@@ -4921,9 +4757,6 @@
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
-      "email": [
-        "ηλεκτρονικό ταχυδρομείο"
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
       ],
@@ -4981,15 +4814,6 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Τα πάντα από ${ planOrAppName }, συν:"
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Αποτυχία δημιουργίας ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Αποτυχία δημιουργίας ασφαλούς συνδέσμου. Παρακαλούμε δοκιμάστε ξανά αργότερα"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Αποτυχία ανοίγματος ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
-      ],
       "Failing signatures will be re-signed by you": [
         "Οι υπογραφές που δε λείπουν θα υπογράφονται εκ νέου από εσάς"
       ],
@@ -4998,9 +4822,6 @@
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Μόνο αρχεία (όχι φωτογραφίες, ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }) - έως 100 GB συνολικά, 100.000 αρχεία και 50 GB ανά αρχείο"
-      ],
-      "finance": [
-        "οικονομικά"
       ],
       "Find out what can be migrated.": [
         "Μάθετε τι μπορεί να μετεγκατασταθεί."
@@ -5168,9 +4989,6 @@
       "Loading document...": [
         "Φόρτωση εγγράφου..."
       ],
-      "Loading link": [
-        "Φόρτωση συνδέσμου"
-      ],
       "Loading...": [
         "Φόρτωση..."
       ],
@@ -5201,9 +5019,6 @@
       ],
       "Merged": [
         "Συγχωνευμένο"
-      ],
-      "Monitor accounts": [
-        "Παρακολούθηση λογαριασμών"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
@@ -5259,12 +5074,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Μόνο άτομα που έχουν τον σύνδεσμο και το συνθηματικό έχουν πρόσβαση σε αυτό το φάκελο."
-      ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "Ωχ! Αυτό το υπολογιστικό φύλλο δεν μπορεί να αποθηκεύσει τις πιο πρόσφατες επεξεργασίες σας, επομένως έχουμε διακόψει την επεξεργασία για να αποτρέψουμε την απώλεια της εργασίας σας."
       ],
@@ -5283,14 +5092,8 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Οι ειδοποιήσεις μας δίνουν προτεραιότητα στην ασφάλεια. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
       ],
-      "Owner": [
-        "Ιδιοκτήτης"
-      ],
       "owner": [
         "ιδιοκτήτης"
-      ],
-      "password": [
-        "κωδικός πρόσβασης"
       ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
@@ -5303,9 +5106,6 @@
       ],
       "Pending invitations": [
         "Προσκλήσεις σε αναμονή"
-      ],
-      "People with access": [
-        "Άτομα με πρόσβαση"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline είναι μόνο συμβατό με μορφοποίηση Απλού Κειμένου."
@@ -5352,12 +5152,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
-      ],
-      "Preparing link to file": [
-        "Προετοιμασία συνδέσμου προς το αρχείο"
-      ],
-      "Preparing link to folder": [
-        "Προετοιμασία συνδέσμου προς το φάκελο"
       ],
       "Primary": [
         "Κύριο"
@@ -5436,9 +5230,6 @@
       ],
       "Settings updated": [
         "Οι ρυθμίσεις ενημερώθηκαν"
-      ],
-      "Share via link settings": [
-        "Κοινοποίηση μέσω ρυθμίσεων συνδέσμου"
       ],
       "Shared by": [
         "Κοινοποιήθηκε από"
@@ -5546,9 +5337,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
       ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Αυτός ο σύνδεσμος δεν μπορεί να τροποποιηθεί, επειδή δημιουργήθηκε σε παρωχημένη έκδοση του Drive. Για να αλλάξετε τις ρυθμίσεις, διαγράψτε τον και δημιουργήστε έναν νέο."
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Αυτό σημαίνει ότι ο ISP σας και οι ιστότοποι που επισκέπτεστε δεν μπορούν να συνδέσουν τα προσωπικά σας στοιχεία με τη δραστηριότητά σας στο Internet."
       ],
@@ -5641,9 +5429,6 @@
       ],
       "Uppercase and lowercase letters": [
         "Κεφαλαία και πεζά γράμματα"
-      ],
-      "username": [
-        "όνομα χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -5843,9 +5628,6 @@
       "Your email address was exposed:": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας διέρρευσε:"
       ],
-      "Your email address will be visible as the link's owner on the share page": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας θα είναι ορατή ως κάτοχος του συνδέσμου στη σελίδα κοινής χρήσης"
-      ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
@@ -6008,15 +5790,6 @@
       "Anyone on the Internet with the link": [
         "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο"
       ],
-      "Anyone on the Internet with the link can edit": [
-        "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο μπορεί να επεξεργαστεί"
-      ],
-      "Anyone on the Internet with the link can view": [
-        "Οποιοσδήποτε στο Διαδίκτυο με τον σύνδεσμο μπορεί να δει"
-      ],
-      "Anyone with the link": [
-        "Οποιοσδήποτε έχει το σύνδεσμο"
-      ],
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
       ],
@@ -6149,9 +5922,6 @@
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
       ],
-      "Erase this link and remove everyone with access": [
-        "Διαγραφή αυτού του συνδέσμου και κατάργηση όλων των ατόμων με πρόσβαση"
-      ],
       "Expiry": [
         "Λήξη"
       ],
@@ -6233,12 +6003,6 @@
       "Main reason for cancelling": [
         "Κύριος λόγος ακύρωσης"
       ],
-      "Make editor": [
-        "Ορισμός ως επεξεργαστή"
-      ],
-      "Make viewer": [
-        "Ορισμός ως θεατή"
-      ],
       "Manage categories": [
         "Διαχείριση κατηγοριών"
       ],
@@ -6302,12 +6066,6 @@
       "Public keys": [
         "Δημόσια κλειδιά"
       ],
-      "Public link expiration date": [
-        "Ημερομηνία λήξης δημόσιου συνδέσμου"
-      ],
-      "Public link password": [
-        "Κωδικός πρόσβασης δημόσιου συνδέσμου"
-      ],
       "Region": [
         "Περιοχή"
       ],
@@ -6319,12 +6077,6 @@
       ],
       "Set a password to limit access via link": [
         "Ορίστε έναν κωδικό πρόσβασης για να περιορίσετε την πρόσβαση μέσω συνδέσμου"
-      ],
-      "Set expiration date": [
-        "Ορισμός ημερομηνίας λήξης"
-      ],
-      "Set link password": [
-        "Ορισμός συνθηματικού για το σύνδεσμο"
       ],
       "Shared with me": [
         "Σε κοινή χρήση με εμένα"
@@ -6978,9 +6730,6 @@
       "Auto-reply": [
         "Αυτόματη απάντηση"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Αυτόματη συμπλήρωση πιστωτικών καρτών (σύντομα διαθέσιμη)"
-      ],
       "Automatic email forwarding": [
         "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
@@ -7007,9 +6756,6 @@
       ],
       "Custom and secure business email": [
         "Προσαρμοσμένο και ασφαλές επαγγελματικό ηλεκτρονικό ταχυδρομείο"
-      ],
-      "Custom domains for email aliases": [
-        "Προσαρμοσμένοι τομείς για ψευδώνυμα email"
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
@@ -7068,9 +6814,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Δωρεάν δυνατότητες από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Δωρεάν VPN σε μία μόνο συσκευή"
-      ],
       "Fully refundable for 30 days": [
         "Πλήρης επιστροφή χρημάτων για 30 ημέρες"
       ],
@@ -7082,10 +6825,6 @@
       ],
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
-        "VPN υψηλής ταχύτητας σε ${ n } συσκευές"
       ],
       "HTML signatures": [
         "Υπογραφές HTML"
@@ -7242,9 +6981,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Απεριόριστες κοινόχρηστες κρύπτες ${ PASS_SHORT_APP_NAME } ανά χρήστη"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Απεριόριστες κοινόχρηστες θυρίδες αποθήκευσης με δικαιώματα πρόσβασης"
       ],
       "Unlimited vault sharing": [
         "Απεριόριστη κοινή κρυπτών"
@@ -7550,9 +7286,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Οι σκληροί δίσκοι των διακομιστών μας είναι πλήρως κρυπτογραφημένοι με πολλαπλά επίπεδα κωδικού πρόσβασης, ώστε τα δεδομένα σας να προστατεύονται ακόμη και αν το υλικό μας έχει παραβιαστεί"
       ],
-      "Password management and identity protection": [
-        "Διαχείριση κωδικών πρόσβασης και προστασία ταυτότητας"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Εξατομικεύστε την υπογραφή email σας με λογότυπα, εικόνες, εικονίδια κοινωνικών μέσων, συνδέσμους προς τα στοιχεία επικοινωνίας σας και πολλά άλλα"
       ],
@@ -7655,12 +7388,6 @@
         "${ n } χώρα",
         "${ n } χώρες"
       ],
-      "Access advanced VPN features": [
-        "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Προσθέστε περισσότερη εξατομίκευση με 15 διευθύνσεις email και υποστήριξη για 3 προσαρμοσμένους τομείς email"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-bit VPN κρυπτογράφηση"
       ],
@@ -7670,9 +7397,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Μεγαλώστε τον αποθηκευτικό σας χώρο σε ${ bundleStorage } ανά χρήστη"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Μεγαλώστε τον αποθηκευτικό σας χώρο σε συνολικά ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Προέκταση προγράμματος περιήγησης"
       ],
@@ -7681,13 +7405,6 @@
       ],
       "Central control panel": [
         "Κεντρικός πίνακας ελέγχου"
-      ],
-      "Create up to ${ n } calendar": [
-        "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
-        "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
-      ],
-      "Dedicated Account manager": [
-        "Αποκλειστικός διαχειριστής Λογαριασμού"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Αποκλειστικές τοποθεσίες διακομιστών σε ${ numberOfCountries }+ χώρες"
@@ -7818,9 +7535,6 @@
       "Access updated": [
         "Η πρόσβαση ενημερώθηκε"
       ],
-      "Access updated and shared": [
-        "Η πρόσβαση ενημερώθηκε και κοινοποιήθηκε"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Επειδή αυτό το έγγραφο βρισκόταν σε έναν κοινόχρηστο φάκελο, μόνο ο κάτοχος του φακέλου μπορεί να το επαναφέρει"
       ],
@@ -7839,14 +7553,11 @@
       "Document restored from trash": [
         "Το έγγραφο επαναφέρθηκε από τα διαγραμμένα"
       ],
-      "External invitation removed from the share": [
-        "Η εξωτερική πρόσκληση καταργήθηκε από το κοινόχρηστο στοιχείο"
-      ],
-      "External invitation's email was sent again": [
-        "Το μήνυμα ηλεκτρονικού ταχυδρομείου εξωτερικής πρόσκλησης στάλθηκε ξανά"
-      ],
       "Failed to accept share invitation": [
         "Αποτυχία αποδοχής πρόσκλησης κοινής χρήσης"
+      ],
+      "Failed to apply file. Check the file and try again.": [
+        "Αποτυχία εφαρμογής του αρχείου. Ελέγξτε το αρχείο και δοκιμάστε ξανά."
       ],
       "Failed to delete document": [
         "Αποτυχία διαγραφής εγγράφου"
@@ -7899,9 +7610,6 @@
       "Public link access updated": [
         "Ενημερώθηκε η πρόσβαση σε δημόσιο σύνδεσμο"
       ],
-      "Public link update access failed ": [
-        "Αποτυχία ενημέρωσης πρόσβασης σε δημόσιο σύνδεσμο "
-      ],
       "Recent documents updated": [
         "Πρόσφατα ενημερωμένα έγγραφα"
       ],
@@ -7923,14 +7631,8 @@
       "Share invitation declined": [
         "Η πρόσκληση κοινής χρήσης απορρίφθηκε"
       ],
-      "Stopping the sharing of this item has failed": [
-        "Η διακοπή της κοινοποίησης αυτού του στοιχείου απέτυχε"
-      ],
       "Subfolder failed to be loaded": [
         "Απέτυχε η φόρτωση του υποφακέλου"
-      ],
-      "The link to your item failed to be deleted": [
-        "Αποτυχία διαγραφής του συνδέσμου για το στοιχείο σας"
       ],
       "The link to your item was deleted": [
         "Ο σύνδεσμος προς το στοιχείο σας διαγράφηκε"
@@ -7940,9 +7642,6 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Η διεύθυνσή σας ${ BRAND_NAME } είναι έτοιμη για χρήση"
-      ],
-      "Your settings failed to be saved": [
-        "Αποτυχία αποθήκευσης των ρυθμίσεών σας"
       ],
       "Your settings have been changed successfully": [
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
@@ -8206,9 +7905,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Ασβαλής κρύπτη, στοιχεία και κοινοποίηση συνδέσμων"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Απεριόριστες συνδέσεις, σημειώσεις, πιστωτικές κάρτες και πολλά άλλα"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8285,8 +7981,38 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (χωρίς φόρους)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } δεν μπορεί να συνδυαστεί με το ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } διατίθεται μόνο σε πλάνα για επιχειρήσεις."
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
+      ],
+      "An organization is required for this plan.": [
+        "Απαιτείται ένας οργανισμός για αυτό το πλάνο."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Το Born Private δεν μπορεί να αγοραστεί όσο υπάρχει ενεργή συνδρομή."
+      ],
+      "Born Private requires a donation.": [
+        "Το Born Private απαιτεί δωρεά."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Η αγορά μονάδων απαιτεί ξεχωριστή αγορά."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Με την αλλαγή, αποδέχεστε τους ${ termsLink } μας."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Μπορεί να αγοραστεί μόνο ένα ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Παρακαλούμε κλείστε τους επιπλέον λογαριασμούς πορτοφολιού πριν αλλάξετε το πλάνο σας."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Παρακαλούμε κλείστε τα επιπλέον πορτοφόλια πριν αλλάξετε το πρόγραμμά σας."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Η τιμολόγηση ανανέωσης υπόκειται σε αλλαγές σύμφωνα με τους ${ termsAndConditionsLink }."
@@ -8294,12 +8020,27 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
       ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Οι θέσεις των γραμματέων δεν μπορούν να υπερβαίνουν τον αριθμό των μελών."
+      ],
       "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανέωση.",
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανεώσεις."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό διευθύνσεων για τον λογαριασμό σας."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό τομέων για τον λογαριασμό σας."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό μελών για τον λογαριασμό σας."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αποθηκευτικό χώρο για τον λογαριασμό σας."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ισχύει για ${ couponRedemptions } μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
@@ -8326,6 +8067,36 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Αυτός ο αποκλειστικός διακομιστής έχει αντιστοιχιστεί σε μια πύλη και η ρύθμιση αυτή δεν μπορεί να αλλάξει."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Αυτό το πλάνο δεν υποστηρίζει τα μέλη στον λογαριασμό σας."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις για το ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν προσαρμοσμένους τομείς."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν αποκλειστικές διευθύνσεις IP."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν τόσο μεγάλο αριθμό μελών."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Έχετε ήδη το Born Private."
+      ],
+      "Your account is too old for Born Private.": [
+        "Ο λογαριασμός σας είναι πολύ παλιός για το Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -8445,9 +8216,6 @@
       ],
       "Select a reason": [
         "Επιλογή αιτιολογίας"
-      ],
-      "Set date": [
-        "Ορισμός ημερομηνίας"
       ],
       "Start typing an email address": [
         "Έναρξη πληκτρολόγησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
@@ -9116,12 +8884,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 χρήστες"
-      ],
       "All paid Mail and Calendar features": [
         "Όλες οι δυνατότητες Mail και Calendar επί πληρωμή"
       ],
@@ -9137,14 +8899,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
-      "Premium early access": [
-        "Premium πρώιμη πρόσβαση"
-      ],
       "Secure cloud storage": [
         "Ασφαλής αποθήκευση στο cloud"
-      ],
-      "Support online privacy": [
-        "Υποστήριξη ηλεκτρονικού απορρήτου"
       ]
     },
     "specialoffer: Footer": {
@@ -9228,32 +8984,8 @@
       "Get the deal": [
         "Αποκτήστε την προσφορά"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Ανανεώνεται μετά από 1 έτος σε μειωμένη τιμή ${ discountedAmount } αντί για ${ regularAmount } (${ discount }% έκπτωση)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Ανανεώνεται μετά από 2 έτη σε μειωμένη τιμή ${ discountedAmount } αντί για ${ regularAmount } (${ discount }% έκπτωση)"
-      ],
       "Save ${ discount }%": [
         "Εξοικονομήστε ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Τυπική τιμή ${ amount } για 1 μήνα"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Τυπική τιμή ${ amount } για 12 μήνες"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Τυπική τιμή ${ amount } για 15 μήνες"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Τυπική τιμή ${ amount } για 24 μήνες"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Τυπική τιμή ${ amount } για 30 μήνες"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Η ειδική προσφορά ισχύει για τα πρώτα 2 χρόνια"
       ]
     },
     "specialoffer: Title": {
@@ -9283,23 +9015,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει 1700 διακομιστές σε 60+ χώρες, υψηλότερη ταχύτητα VPN, 10 συνδέσεις VPN ανά χρήστη, παγκόσμιες υπηρεσίες ροής, αποκλεισμό κακόβουλου λογισμικού και διαφημίσεων και πολλά άλλα."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει 1700 διακομιστές σε 60+ χώρες, υψηλότερη ταχύτητα VPN, 10 συνδέσεις VPN, παγκόσμιες υπηρεσίες ροής, αποκλεισμό κακόβουλου λογισμικού και διαφημίσεων και πολλά άλλα."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Όλες οι premium υπηρεσίες μας με τα υψηλότερα όριά τους: 100 διευθύνσεις email, υποστήριξη για 10 προσαρμοσμένους τομείς, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου, κρυπτογραφημένη αποθήκευση cloud και κοινή χρήση αρχείων και πολλά άλλα."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Ιδανικό για οικογένειες ή μικρές ομάδες, το καθένα μπορεί να έχει τα δικά του εισερχόμενα και ψευδώνυμα. Απαιτείται προσαρμοσμένος τομέας."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Λάβετε χωρίς επιπλέον κόστος τις πληρωμένες εκδόσεις όλων των νέων υπηρεσιών απορρήτου που θα κυκλοφορήσουμε στο μέλλον, μαζί με έγκαιρη πρόσβαση σε όλες τις μελλοντικές δυνατότητες και προϊόντα."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
@@ -9336,14 +9056,8 @@
       ]
     },
     "Status": {
-      "Accepted": [
-        "Έγινε αποδοχή"
-      ],
       "pending": [
         "εκκρεμεί"
-      ],
-      "Pending": [
-        "Σε εκκρεμότητα"
       ],
       "user joined": [
         "χρήστης συνδέθηκε"
@@ -9464,10 +9178,6 @@
       "${ n } VPN connection": [
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } σύνδεση VPN ανά χρήστη",
-        "${ n } συνδέσεις VPN ανά χρήστη"
       ],
       "VPN connection for ${ n } device per user": [
         "Σύνδεση VPN για ${ n } συσκευή ανά χρήστη",
@@ -9617,9 +9327,6 @@
       "Problem reported": [
         "Η αναφορά του προβλήματος ολοκληρώθηκε"
       ],
-      "Secure link copied": [
-        "Ο ασφαλής σύνδεσμος αντιγράφηκε"
-      ],
       "Undo in progress": [
         "Αναίρεση σε εξέλιξη"
       ],
@@ -9647,9 +9354,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Περιλαμβάνει 2950+ διακομιστές σε 65+ χώρες, σύνδεση έως και 10 συσκευών, πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασία κακόβουλου λογισμικού και αποκλεισμό διαφημίσεων και πολλά άλλα."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
@@ -9744,34 +9448,6 @@
       "${ seconds } second": [
         "${ seconds } δευτερόλεπτο",
         "${ seconds } δευτερόλεπτα"
-      ]
-    },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } ώ",
-        "${ hours } ώ"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 ώ",
-        "${ hoursInt }.5 ώ"
-      ],
-      "${ minutes } min": [
-        "${ minutes } λ.",
-        "${ minutes } λ."
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } ώρα",
-        "${ hours } ώρες"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }μιση ώρα",
-        "${ hoursInt }μιση ώρες"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } λεπτό",
-        "${ minutes } λεπτά"
       ]
     },
     "Title": {
@@ -10098,9 +9774,6 @@
       "Make a secure connection your default": [
         "Ορισμός ασφαλούς σύνδεσης ως προεπιλογής"
       ],
-      "Manage secure link": [
-        "Διαχείριση ασφαλούς συνδέσμου"
-      ],
       "Merge contacts": [
         "Συγχώνευση Επαφών"
       ],
@@ -10227,9 +9900,6 @@
       "Select link expiration date": [
         "Επιλέξτε ημερομηνία λήξης συνδέσμου"
       ],
-      "Select link expiration time": [
-        "Επιλέξτε το χρόνο λήξης του συνδέσμου"
-      ],
       "Select users to migrate": [
         "Επιλογή χρηστών για μετεγκατάσταση"
       ],
@@ -10253,9 +9923,6 @@
       ],
       "Share \"${ fileName }\"": [
         "Κοινοποίηση \"${ fileName }\""
-      ],
-      "Share ${ name }": [
-        "Κοινοποίηση ${ name }"
       ],
       "Share your calendar with your team": [
         "Κοινοποιήστε το ημερολόγιό σας με την ομάδα σας"

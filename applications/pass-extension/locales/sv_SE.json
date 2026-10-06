@@ -694,6 +694,12 @@
       "Show Less": [
         "Visa mindre"
       ],
+      "Show less": [
+        "Visa mindre"
+      ],
+      "Show more": [
+        "Visa mer"
+      ],
       "Sign back in": [
         "Logga in igen"
       ],
@@ -1889,9 +1895,6 @@
       "Can view this item.": [
         "Kan visa detta objekt."
       ],
-      "Change your password": [
-        "Ändra ditt lösenord"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Kontrollerar ${ compromised.progress.completed } av ${ compromised.progress.total } lösenord"
       ],
@@ -1994,9 +1997,6 @@
       "Editor": [
         "Redigerare"
       ],
-      "email": [
-        "e-post"
-      ],
       "Email address successfully deleted from monitoring": [
         "E-postadress borttagen från övervakning"
       ],
@@ -2092,9 +2092,6 @@
       ],
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
-      ],
-      "finance": [
-        "finans"
       ],
       "Folder deleted": [
         "Mapp borttagen"
@@ -2255,9 +2252,6 @@
       "Medium Priority": [
         "Medium prioritet"
       ],
-      "Monitor accounts": [
-        "Övervaka konton"
-      ],
       "Monitoring settings successfully updated": [
         "Övervakningsinställningar uppdaterades"
       ],
@@ -2372,9 +2366,6 @@
       ],
       "Passkey sign-in": [
         "Passkey-inloggning"
-      ],
-      "password": [
-        "lösenord"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Lösenordslås har registrerats. Använd den för att låsa upp ${ PASS_APP_NAME }"
@@ -2863,9 +2854,6 @@
       ],
       "User's access successfully updated": [
         "Användarens åtkomst uppdaterad"
-      ],
-      "username": [
-        "användarnamn"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Valv “${ payload.content.name }“ borttaget"
@@ -5579,9 +5567,6 @@
       ],
       "Move to trash": [
         "Flytta till papperskorg"
-      ],
-      "Name is required": [
-        "Namn är obligatoriskt"
       ],
       "No items": [
         "Inga objekt"
