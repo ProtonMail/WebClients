@@ -22,10 +22,10 @@ export const readOpenEmailDefinition: ToolDefinition<Record<string, never>, Read
     paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
     serializeForLumo: (result) => {
         if (!result.isOpen) {
-            return 'No email is currently open on screen.';
+            return 'No email was open on screen.';
         }
         if (!result.email) {
-            return 'An email is open but its body could not be read yet.';
+            return 'An email was open but its body could not be read yet.';
         }
         const { reference, subject, from, date, body } = result.email;
         return `Open email ${reference} — "${subject}" from ${from} (${date}):\n${truncateBody(body)}`;

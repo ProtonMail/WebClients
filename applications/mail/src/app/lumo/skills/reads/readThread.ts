@@ -66,10 +66,10 @@ export const readThreadDefinition: ToolDefinition<ReadThreadParams, ReadThreadRe
     ],
     serializeForLumo: (result) => {
         if (!result.found) {
-            return 'No conversation is open to read.';
+            return 'No conversation was open to read.';
         }
         if (!result.messages.length) {
-            return 'The conversation is open but its messages could not be read yet.';
+            return 'The conversation was open but its messages could not be read yet.';
         }
         const shown = result.messages.length;
         const subject = result.subject ?? '';
