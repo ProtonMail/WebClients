@@ -6910,6 +6910,9 @@ importers:
       '@proton/components':
         specifier: workspace:^
         version: link:../components
+      '@proton/icons':
+        specifier: workspace:^
+        version: link:../icons
       '@proton/react-redux-store':
         specifier: workspace:^
         version: link:../react-redux-store
@@ -6922,6 +6925,9 @@ importers:
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
+      '@proton/styles':
+        specifier: workspace:^
+        version: link:../styles
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash

@@ -22,6 +22,13 @@ describe('sanitizeImageUrl', () => {
     it.each([
         ['allowed cdn host', 'https://proton.me/a.png', 'https://proton.me/a.png'],
         ['allowed cdn subdomain', 'https://cdn.proton.me/a.png', 'https://cdn.proton.me/a.png'],
+        [
+            'in-app static host',
+            'https://inapps-static.protonweb.com/17/a.png',
+            'https://inapps-static.protonweb.com/17/a.png',
+        ],
+        ['other host on the in-app static domain', 'https://evil.protonweb.com/a.png', null],
+        ['bare in-app static domain', 'https://protonweb.com/a.png', null],
         ['arbitrary https host', 'https://evil.com/a.png', null],
         ['similar-looking host', 'https://notproton.me/a.png', null],
         ['http on allowed host', 'http://proton.me/a.png', null],

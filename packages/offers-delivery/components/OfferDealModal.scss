@@ -1,0 +1,154 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/styles/scss/specifics/arizona' as *;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.offer-deal-modal {
+	max-inline-size: 31rem;
+	background: white;
+
+	// Remove the content margin so the header image bleeds to the dialog edges.
+	.modal-two-content {
+		position: relative; // anchors the close button to the top of the artwork
+		margin: 0;
+	}
+
+	.offer-deal-close-button {
+		background: #fffc;
+		border-radius: 50%;
+		inline-size: 2rem;
+		block-size: 2rem;
+		margin-block-start: 0.75rem;
+		margin-inline-end: 0.75rem;
+		z-index: 1;
+	}
+
+	.offer-deal-close-icon {
+		fill: black;
+	}
+}
+
+.offer-deal-header {
+	position: relative;
+	min-block-size: 19rem;
+	overflow: hidden;
+
+	@include im.media('<=small') {
+		min-block-size: 15rem;
+	}
+}
+
+.offer-deal-image {
+	position: absolute;
+	inset-block-start: -20%;
+	inset-inline: 0;
+	inline-size: 100%;
+	block-size: 140%;
+	object-fit: cover;
+	object-position: 20% 50%;
+}
+
+// Dark gradient overlay for readability of text on the left/bottom
+.offer-deal-header-overlay {
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(134.9deg, rgb(0 2 63 / 0.4) 1.5%, rgb(0 2 63 / 0) 26.7%),
+		linear-gradient(89.4deg, rgb(7 0 39 / 0.6) 0.3%, rgb(8 0 47 / 0) 54.8%),
+		linear-gradient(to bottom, rgb(0 0 0 / 0) 40%, rgb(0 0 0 / 0.25) 100%);
+}
+
+.offer-deal-header-content {
+	position: relative;
+	inline-size: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 1rem;
+	align-items: flex-start;
+	padding-block: 2.5rem 1.25rem;
+	padding-inline: 3rem;
+	color: white;
+
+	@include im.media('<=small') {
+		padding-block: 1.5rem 1rem;
+		padding-inline: 1.5rem;
+		gap: 0.5rem;
+	}
+}
+
+.offer-deal-title {
+	font-size: 2.8125rem; // 45px
+	color: white;
+	line-height: 1.1;
+	font-style: normal;
+	font-weight: 500;
+	font-synthesis: none;
+	letter-spacing: -0.04em;
+	margin: 0;
+	text-shadow:
+		0 1px 2px rgb(55 37 128 / 0.1),
+		0 2px 4px rgb(55 37 128 / 0.1);
+	max-inline-size: 9ch;
+	text-wrap: balance;
+
+	@include im.media('<=small') {
+		font-size: 2.5rem;
+	}
+}
+
+html:is(
+		[lang^='zh'],
+		[lang^='id'],
+		[lang^='kab'],
+		[lang='es'],
+		[lang='pt-PT'],
+		[lang^='vi'],
+		[lang^='th'],
+		[lang^='fil'],
+		[lang^='cs']
+	)
+	.offer-deal-title {
+	font-size: 2rem;
+}
+
+html:is([lang^='ja'], [lang^='ko'], [lang^='th'], [lang^='fil'], [lang^='hi']) .offer-deal-title {
+	inline-size: auto;
+}
+
+.offer-deal-content {
+	padding-block: 1.25rem;
+	padding-inline: 3rem;
+	background: white;
+
+	@include im.media('<=small') {
+		padding-inline: 1.5rem;
+	}
+}
+
+.offer-deal-features {
+	padding: 0;
+	list-style-type: none;
+	color: #372580;
+
+	li:not(:last-child) {
+		border-block-end: 1px solid rgb(55 37 128 / 0.28);
+	}
+}
+
+[data-theme-mode='dark'] {
+	.offer-deal-modal,
+	.offer-deal-content {
+		background: #1b1340;
+	}
+
+	.offer-deal-features {
+		color: white;
+
+		li:not(:last-child) {
+			border-block-end-color: rgb(255 255 255 / 0.28);
+		}
+	}
+}
