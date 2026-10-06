@@ -30,6 +30,7 @@ export interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'
     openDelay?: number;
     closeDelay?: number;
     longTapDelay?: number;
+    focusVisibleOnly?: boolean;
     updateAnimationFrame?: boolean;
     tooltipClassName?: string;
     tooltipStyle?: CSSProperties;
@@ -98,6 +99,7 @@ const TooltipBase = (
         openDelay,
         closeDelay,
         longTapDelay,
+        focusVisibleOnly,
         updateAnimationFrame,
         tooltipClassName,
         tooltipStyle,
@@ -141,6 +143,7 @@ const TooltipBase = (
         openDelay,
         closeDelay,
         longTapDelay,
+        focusVisibleOnly,
     });
 
     const child = Children.only(children);
