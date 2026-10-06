@@ -29,6 +29,7 @@ const {
     HTTP_DEBUGGER_PORT,
     HTTP_DEBUGGER,
     MANIFEST_KEY,
+    OUTPUT_PATH,
     REDUX_DEVTOOLS,
     REDUX_DEVTOOLS_PORT,
     RELEASE,
@@ -59,6 +60,7 @@ section('Build configuration', () => {
     console.log(` ENV = ${ENV}`);
     console.log(` API_ENV=${API_ENV}`);
     console.log(` RELEASE = ${RELEASE}`);
+    console.log(` OUTPUT_PATH = ${OUTPUT_PATH}`);
     console.log(` BUILD_TARGET = ${BUILD_TARGET}`);
     console.log(` BUILD_STORE_TARGET = ${BUILD_STORE_TARGET}`);
     console.log(` BETA = ${BETA}`);
@@ -277,7 +279,7 @@ const config: Configuration = {
 
             return 'chunk.[name].js';
         },
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, OUTPUT_PATH),
         clean: true,
         assetModuleFilename: (asset) => {
             if (asset.filename && /\.wasm$/.test(asset.filename)) return 'assets/wasm/[hash].wasm';
