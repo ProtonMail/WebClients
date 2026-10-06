@@ -371,10 +371,6 @@
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
-        "packages/logger": {
-            "entry": [],
-            "project": ["**/*.{ts,tsx}"]
-        },
         "packages/lumo-api-client": {
             "entry": ["e2e/desktop-bridge-harness.ts"],
             "project": ["**/*.{ts,tsx}"]
