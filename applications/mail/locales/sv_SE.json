@@ -238,9 +238,6 @@
       "Clear browser data": [
         "Rensa webbläsardata"
       ],
-      "Clear conversation": [
-        "Rensa konversation"
-      ],
       "Clear data": [
         "Rensa data"
       ],
@@ -796,9 +793,6 @@
       "Join with ${ MEET_APP_NAME }": [
         "Gå med i ${ MEET_APP_NAME }"
       ],
-      "Keep going": [
-        "Fortsätt"
-      ],
       "Keep inbox as before": [
         "Behåll inkorg som förut"
       ],
@@ -943,6 +937,9 @@
       "More details about ${ ariaLabelTitle }": [
         "Mer detaljer om ${ ariaLabelTitle }"
       ],
+      "More info": [
+        "Mer info"
+      ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
       ],
@@ -1014,6 +1011,9 @@
       ],
       "Never show": [
         "Visa aldrig"
+      ],
+      "New chat": [
+        "Ny chatt"
       ],
       "New message": [
         "Nytt meddelande"
@@ -1459,6 +1459,9 @@
       "Snooze": [
         "Snooza"
       ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ],
       "Star": [
         "Stjärnmärk"
       ],
@@ -1480,9 +1483,6 @@
       "Stop generating result": [
         "Sluta generera resultat"
       ],
-      "Stop here": [
-        "Stoppa här"
-      ],
       "Stop marking as read": [
         "Sluta markera som läst"
       ],
@@ -1503,6 +1503,9 @@
       ],
       "Switch or add account": [
         "Byt eller lägg till konto"
+      ],
+      "Switch to ${ planName }": [
+        "Byt till ${ planName }"
       ],
       "Take a tour": [
         "Ta en rundtur"
@@ -2083,56 +2086,15 @@
         "30-dagars pengarna tillbaka-garanti"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 hide-my-email-alias, kalenderdelning och mer."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-app för stationär dator"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsutrymme"
       ],
-      "1 user account": [
-        "1 användarkonto"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
-      ],
-      "6 user accounts": [
-        "6 användarkonton"
-      ],
-      "Admin panel to manage your family": [
-        "Adminpanel för att hantera din familj"
-      ],
-      "Advanced account protection": [
-        "Avancerat kontoskydd"
-      ],
-      "Easily add or remove users": [
-        "Lägg till eller ta bort användare enkelt"
-      ],
-      "One-time payment, lifetime deal": [
-        "Engångsbetalning, livstidserbjudande"
-      ],
-      "Online document editor": [
-        "Dokumentredigerare online"
-      ],
-      "Password health alerts": [
-        "Aviseringar om lösenordshälsa"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
-      ],
       "Unlimited folders, labels and filters": [
         "Obegränsat antal mappar, etiketter och filter"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Obegränsade inloggningar, kreditkort, hide-my-email-alias och mer"
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
@@ -2141,86 +2103,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Fakturerad med ${ amount } en gång"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Förnyas efter 1 månad till ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, höghastighetsstreaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Säkra inloggningar på alla dina enheter. Inkluderar obegränsat antal hide-my-email-alias, delning, integrerad 2FA, ${ DARK_WEB_MONITORING_NAME } och mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsat antal hide-my-email-alias och mer.",
-        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsat antal hide-my-email-alias och mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer.",
-        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
-        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ LUMO_SHORT_APP_NAME } skrivassistent, obegränsade hide-my-email-alias och mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Säkra dina filer med krypterad molnlagring. Inkluderar online dokumentredigerare, säkerhetskopiering av foto, versionshistorik, krypterad fildelning och mer."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "2 TB datalagringsutrymme"
-      ],
-      "3 TB data storage": [
-        "3 TB datalagringsutrymme"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Åtkomst till över 15 000 servrar i över 120 länder"
-      ],
-      "Access advanced AI models": [
-        "Åtkomst till avancerade AI-modeller"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alla premiumfunktioner för ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockera annonser, spårare och skadlig kod"
-      ],
-      "Built-in 2FA authenticator": [
-        "Inbyggd 2FA-autentiserare"
-      ],
-      "Connect 10 devices at once": [
-        "Anslut 10 enheter samtidigt"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Fullständig konversationshistorik med enkel sökning och favoriter"
-      ],
-      "Individual accounts for 6 users": [
-        "Individuella konton för 6 användare"
-      ],
-      "Individual accounts for you and a partner": [
-        "Individuella konton för dig och en partner"
-      ],
-      "Stronger protection against cyber threats": [
-        "Starkare skydd mot cyberhot"
-      ],
-      "Unlimited daily chats": [
-        "Obegränsat antal dagliga chattar"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
       ]
     },
     "Billing cycle option": {
@@ -2773,9 +2660,6 @@
       ],
       "Basic chat history": [
         "Grundläggande chatthistorik"
-      ],
-      "Built and based in Europe": [
-        "Byggd och baserad i Europa"
       ],
       "Compliance with data protection regulations": [
         "Efterlevnad av dataskyddsföreskrifter"
@@ -4437,9 +4321,6 @@
       "${ messageCount } new message": [
         "${ messageCount } nytt meddelande",
         "${ messageCount } nya meddelanden"
-      ],
-      "From: ${ sender } - ${ message.Subject }": [
-        "Från: ${ sender } – ${ message.Subject }"
       ]
     },
     "Desktop notification title": {
@@ -5913,16 +5794,6 @@
         "(ingen rubrik)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB totalt lagringsutrymme"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagringsutrymme delas mellan familjemedlemmar mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }."
-      ]
-    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "Avböj inbjudan"
@@ -5932,11 +5803,6 @@
       ],
       "Switch plans": [
         "Byt paket"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Upp till 6 användare"
       ]
     },
     "familyOffer_2023:Error": {
@@ -6054,17 +5920,6 @@
         "Ta bort organisation?"
       ]
     },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderar 2700 servrar i 65+ länder, anslut upp till 10 enheter, få åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Inkluderar stöd för 3 anpassade e-postdomäner, 90 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
-      ]
-    },
     "Feature": {
       "10+ premium features": [
         "10+ premiumfunktioner"
@@ -6104,6 +5959,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Still waiting?": [
+        "Väntar du fortfarande?"
       ]
     },
     "fido2: Label": {
@@ -7175,10 +7033,6 @@
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
       ],
-      "${ steps } step": [
-        "${ steps } steg",
-        "${ steps } steg"
-      ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
       ],
@@ -7268,6 +7122,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
         "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
+      ],
+      "1 vault per user": [
+        "1 valv per användare"
       ],
       "30-day money-back guarantee.": [
         "30 dagars pengarna-tillbaka-garanti."
@@ -7550,9 +7407,6 @@
       ],
       "Change how your mail is grouped": [
         "Ändra hur din e-post är grupperad"
-      ],
-      "Change your password": [
-        "Ändra ditt lösenord"
       ],
       "Change your theme": [
         "Ändra ditt tema"
@@ -7943,9 +7797,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter fungerar på all e-post, såväl inkommande som skickade. Varje filter måste innehålla minst ett namn, ett villkor och en åtgärd."
       ],
-      "finance": [
-        "finans"
-      ],
       "Find out what can be migrated.": [
         "Ta reda på vad som kan migreras."
       ],
@@ -8033,9 +7884,6 @@
       ],
       "How hide-my-email aliases works": [
         "Hur hide-my-email-alias fungerar"
-      ],
-      "I have not finished this one yet.": [
-        "Jag har inte slutförd denna än."
       ],
       "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
         "Jag tittar på vad du får mest av och de mappar och filter du redan har, och kommer därefter med förslag på vad som kan förbättras och vad som saknas. Ingenting flyttas utan din tillåtelse."
@@ -8312,9 +8160,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Meddelanden till alla dina e-postadresser kommer att hamna i din inkorg."
       ],
-      "Monitor accounts": [
-        "Övervaka konton"
-      ],
       "Monthly ${ onDayString }": [
         "En gång i månaden ${ onDayString }"
       ],
@@ -8405,6 +8250,9 @@
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
       ],
+      "No payment is required.": [
+        "Ingen betalning krävs."
+      ],
       "No results found": [
         "Inga resultat hittades"
       ],
@@ -8491,9 +8339,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
         "Vårt system flaggade detta meddelande som ett nätfiskeförsök. Kontrollera för att säkerställa att det är legitimt."
-      ],
-      "password": [
-        "lösenord"
       ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
@@ -8655,6 +8500,9 @@
       "Read ${ count } open draft": [
         "Läst ${ count } öppet utkast",
         "Läst ${ count } öppna utkast"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Läs utkast “${ subject }“"
       ],
       "Read the open draft": [
         "Läs det öppnade utkastet"
@@ -9249,6 +9097,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
+      "Today": [
+        "Idag"
+      ],
       "Tomorrow, ${ formattedTime }": [
         "Imorgon, ${ formattedTime }"
       ],
@@ -9401,9 +9252,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Använd tangentbordsgenvägar för att hantera din e-post snabbare."
-      ],
-      "username": [
-        "användarnamn"
       ],
       "Users": [
         "Användare"
@@ -10609,6 +10457,9 @@
       ],
       "IF": [
         "OM"
+      ],
+      "Image": [
+        "Bild"
       ],
       "Import all messages": [
         "Importera alla meddelanden"
@@ -12131,9 +11982,6 @@
       "Auto-reply": [
         "Automatiskt svar"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Autofyll kreditkort (kommer snart)"
-      ],
       "Automatic email forwarding": [
         "Automatisk vidarebefordran av e-post"
       ],
@@ -12160,9 +12008,6 @@
       ],
       "Custom and secure business email": [
         "Anpassad och säker e-post för företag"
-      ],
-      "Custom domains for email aliases": [
-        "Anpassade domäner för e-postalias"
       ],
       "Custom email domains": [
         "Anpassade e-postdomäner"
@@ -12221,9 +12066,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Gratis funktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Gratis VPN på en enhet"
-      ],
       "Fully refundable for 30 days": [
         "Återbetalas till fullo i 30 dagar"
       ],
@@ -12235,10 +12077,6 @@
       ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Höghastighets-VPN på ${ n } enhet",
-        "Höghastighets-VPN på ${ n } enheter"
       ],
       "HTML signatures": [
         "HTML-signaturer"
@@ -12395,9 +12233,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Obegränsat delade ${ PASS_SHORT_APP_NAME }-valv per användare"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Obegränsat antal delade valv med åtkomstbehörigheter"
       ],
       "Unlimited vault sharing": [
         "Obegränsat antal valvdelningar"
@@ -12717,9 +12552,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Våra serverhårddiskar är fullständigt krypterade med flera lösenordslager så att din data är skyddad även om vår hårdvara skulle vara sårbar"
       ],
-      "Password management and identity protection": [
-        "Lösenordshantering och identitetsskydd"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personifiera din e-postsignatur med loggor bilder, ikoner för sociala medier, länkar till dina kontaktuppgifter och mer"
       ],
@@ -12822,12 +12654,6 @@
         "${ n } land",
         "${ n } länder"
       ],
-      "Access advanced VPN features": [
-        "Få tillgång till avancerade VPN-funktioner"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Lägg till mer personifiering med 15 e-postadresser och stöd för 3 anpassade e-postdomäner"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-bitars VPN-kryptering"
       ],
@@ -12837,9 +12663,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Öka ditt lagringsutrymme till ${ bundleStorage } per användare"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Öka ditt lagringsutrymme till totalt ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Webbläsartillägg"
       ],
@@ -12848,13 +12671,6 @@
       ],
       "Central control panel": [
         "Central kontrollpanel"
-      ],
-      "Create up to ${ n } calendar": [
-        "Skapa upp till ${ n } kalender",
-        "Skapa upp till ${ n } kalendrar"
-      ],
-      "Dedicated Account manager": [
-        "Dedikerad kontohanterare"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikerade serverplatser i ${ numberOfCountries }+ länder"
@@ -13461,9 +13277,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Säker delning av valv, objekt och länk"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Obegränsade inloggningar, anteckningar, kreditkort och mer"
       ]
     },
     "pass_signup_2023: Title": {
@@ -14936,12 +14749,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 användare"
-      ],
       "All paid Mail and Calendar features": [
         "Alla betalda Mail och Calendar-funktioner"
       ],
@@ -14960,17 +14767,11 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium ${ appName1 } och ${ appName2 } och ${ appName3 }"
       ],
-      "Premium early access": [
-        "Premium förhandstillgång"
-      ],
       "Secure cloud storage": [
         "Säker molnlagring"
       ],
       "Secure streaming": [
         "Säker streaming"
-      ],
-      "Support online privacy": [
-        "Stöd integritet online"
       ]
     },
     "specialoffer: Footer": {
@@ -15054,32 +14855,8 @@
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Förnyas efter 1 år till ett rabatterat pris med ${ discountedAmount } istället för ${ regularAmount } (${ discount } % rabatt)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Förnyas efter 2 år till ett rabatterat pris med ${ discountedAmount } istället för ${ regularAmount } (${ discount } % rabatt)"
-      ],
       "Save ${ discount }%": [
         "Spara ${ discount } %"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Ordinarie pris ${ amount } för 1 månad"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Ordinarie pris ${ amount } för 12 månader"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Ordinarie pris ${ amount } för 15 månader"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Ordinarie pris ${ amount } för 24 månader"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Ordinarie pris ${ amount } för 30 månader"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Specialerbjudandet gäller de första 2 åren"
       ]
     },
     "specialoffer: Title": {
@@ -15109,23 +14886,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar per användare, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alla våra premiumtjänster med sina högsta gränser: 100 e-postadresser, stöd för 10 anpassade domäner, obegränsade Hide-my-email-alias, kalenderdelning, krypterad molnlagring och fildelning och mer."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfekt för familjer eller små team, alla kan ha sin egen inkorg och alias. Kräver en anpassad domän."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Få utan extra kostnad de betalda versionerna av alla nya integritetstjänster som vi släpper i framtiden, tillsammans med förhandstillgång till alla framtida funktioner och produkter."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
@@ -15336,10 +15101,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-anslutning per användare",
-        "${ n } VPN-anslutningar per användare"
       ],
       "VPN connection for ${ n } device per user": [
         "VPN-anslutning för ${ n } enhet per användare",
@@ -16083,9 +15844,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inkluderar 2950+ servrar i 65+ länder, anslut upp till 10 enheter, få åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 hide-my-email-alias, kalenderdelning och mer."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
@@ -17510,6 +17268,9 @@
       ]
     },
     "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Få ${ discount } % rabatt på ${ planName }"
+      ],
       "Get ${ planName }": [
         "Skaffa ${ planName }"
       ]
@@ -17523,6 +17284,12 @@
       ],
       "2 user accounts": [
         "2 användarkonton"
+      ],
+      "All premium features from your current plan": [
+        "Alla premiumfunktioner från ditt nuvarande paket"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln avslutas."
       ]
     },
     "tryduo2026: Title": {
