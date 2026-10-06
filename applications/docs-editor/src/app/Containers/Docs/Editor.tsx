@@ -13,7 +13,8 @@ import type {
   DocumentRole,
 } from '@proton/docs-shared'
 import { v4 as uuidv4 } from 'uuid'
-import { AnonymousUserDisplayName, DocProvider, getRandomAnonymousUserLetter } from '@proton/docs-shared'
+import { DocProvider } from '@proton/docs-shared'
+import { AnonymousUserDisplayName, getRandomAnonymousUserLetter } from './Utils/AnonymousUser'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
 import { MarkdownTransformers } from './Utils/MarkdownTransformers'
