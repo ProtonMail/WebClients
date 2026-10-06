@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useSettingsLink } from '@proton/components';
 import { IcArrowDownCircle } from '@proton/icons/icons/IcArrowDownCircle';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {
     selectIsGuestAdmin,
     selectIsLocalParticipantAdminOrHost,
@@ -16,6 +16,7 @@ import {
     selectLocalRecordingTime,
 } from '@proton/meet/store/slices/recordingStatusSlice';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { PLANS } from '@proton/payments/core/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -37,6 +38,7 @@ export const useRecordingToggle = () => {
     const { startRecording, finishRecording } = useMeetingRecorderContext();
     const { createNotification } = useNotifications();
     const goToSettings = useSettingsLink();
+    const store = useMeetStore();
 
     const duration = useMeetSelector(selectLocalRecordingTime);
     const isLocalRecording = useMeetSelector(selectIsLocalParticipantRecording);
@@ -59,7 +61,9 @@ export const useRecordingToggle = () => {
         setShowStartRecordingConfirmation(false);
         try {
             await startRecording();
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.recording_toggled, { state: 'on', outcome: 'success' });
         } catch (error) {
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.recording_toggled, { state: 'on', outcome: 'failed' });
             createNotification({
                 text: c('Error').t`Failed to start recording`,
                 type: 'error',
@@ -70,6 +74,10 @@ export const useRecordingToggle = () => {
     const handleStopRecording = async () => {
         setShowStopRecordingConfirmation(false);
         await finishRecording();
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.recording_toggled, {
+            state: 'off',
+            outcome: store.getState().recordings.status === 'error' ? 'failed' : 'success',
+        });
     };
 
     const onChange = () => {
@@ -83,6 +91,7 @@ export const useRecordingToggle = () => {
             return;
         }
 
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.recording_upsell_shown);
         // Sub users can't upgrade, so we show a modal instead.
         if (isSubUser) {
             setShowSubUserRecordingUpsellModal(true);
@@ -130,6 +139,7 @@ export const useRecordingToggle = () => {
                     open={showRecordingUpsellModal}
                     onClose={() => setShowRecordingUpsellModal(false)}
                     action={() => {
+                        sendMeetActionsEvent(TelemetryMeetActionsEvents.recording_upsell_clicked);
                         goToSettings(`/dashboard?plan=${PLANS.MEET_BUSINESS}`, undefined, true);
                     }}
                 />

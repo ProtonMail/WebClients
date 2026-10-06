@@ -6,10 +6,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isDesktop, isIpad } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
+import { useSendOnce } from '../../telemetry/useSendOnce';
 import { saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 
 import './OpenDesktopAppBanner.scss';
@@ -21,6 +23,8 @@ export const OpenDesktopAppBanner = () => {
     const [visible, setVisible] = useState(() => !isElectronApp && isDesktop() && !isIpad());
 
     const meetingLink = useMeetSelector(selectMeetingLink);
+
+    useSendOnce(() => sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_shown), visible);
 
     useEffect(() => {
         // Remove deprecated banner storage key
@@ -39,6 +43,7 @@ export const OpenDesktopAppBanner = () => {
     );
 
     const handleDownloadApp = () => {
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_clicked, { action: 'download' });
         const protocolUrl = 'https://proton.me/meet/download';
         window.open(protocolUrl, '_blank');
     };
@@ -67,13 +72,23 @@ export const OpenDesktopAppBanner = () => {
                     <Button
                         className="open-desktop-app-banner-button action-button-new rounded-full bg-transparent"
                         onClick={() => {
+                            sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_clicked, {
+                                action: 'open_app',
+                            });
                             tryOpenInDesktopApp(meetingLink);
                             saveDesktopAppPreference(true);
                         }}
                     >{c('Action').t`Open app`}</Button>
                 </div>
             </div>
-            <button onClick={() => setVisible(false)} aria-label={c('Action').t`Close`} className="mr-4 cursor-pointer">
+            <button
+                onClick={() => {
+                    sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_clicked, { action: 'dismiss' });
+                    setVisible(false);
+                }}
+                aria-label={c('Action').t`Close`}
+                className="mr-4 cursor-pointer"
+            >
                 <IcCross className="color-hint" size={5} alt={c('Action').t`Close`} />
             </button>
         </div>

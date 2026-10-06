@@ -14,6 +14,7 @@ import {
     selectUpsellModalType,
     setUpsellModalType,
 } from '@proton/meet/store/slices/meetAppStateSlice';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -62,6 +63,9 @@ export const DashboardContainer = () => {
     const [user] = useUser();
 
     const handleScheduleInCalendar = () => {
+        sendMeetDashboardEvent(TelemetryMeetDashboardEvents.schedule_meeting_opened, {
+            destination: 'calendar_redirect',
+        });
         goToApp(
             `/?action=create&videoConferenceProvider=2&email=${encodeURIComponent(user.Email)}`,
             APPS.PROTONCALENDAR,
@@ -85,11 +89,16 @@ export const DashboardContainer = () => {
             return;
         }
 
+        if (!meeting) {
+            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.schedule_meeting_opened, { destination: 'in_app' });
+        }
+
         setSelectedMeetingId(meeting?.ID);
         openScheduleMeetingModal(true);
     };
 
     const handleStartMeeting = () => {
+        sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_started_instant, { source: 'dashboard' });
         history.push('/join');
     };
 
@@ -109,7 +118,10 @@ export const DashboardContainer = () => {
         <>
             <DashboardContainerBody
                 onScheduleClick={handleScheduleMeeting}
-                onJoinWithLinkClick={() => openJoinWithLinkModal(true)}
+                onJoinWithLinkClick={() => {
+                    sendMeetDashboardEvent(TelemetryMeetDashboardEvents.join_with_link_opened);
+                    openJoinWithLinkModal(true);
+                }}
                 onStartMeetingClick={handleStartMeeting}
                 onCreateRoomClick={() => openCreateRoomModal(true)}
                 meetings={meetings ?? []}

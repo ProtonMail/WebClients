@@ -20,6 +20,7 @@ import {
 } from '@proton/meet/store/slices/meetingInfo';
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
@@ -158,6 +159,9 @@ export const PreJoinDetails = ({
                                 }}
                                 onClick={() => {
                                     void navigator.clipboard.writeText(meetingLink);
+                                    sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_link_copied, {
+                                        source: 'prejoin',
+                                    });
                                     notificationManager.createNotification({
                                         type: 'info',
                                         text: c('Notification').t`Copied to clipboard`,

@@ -4,7 +4,6 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     PermissionBlockedError,
     dismissPermissionsModal,
-    requestPermission,
     showPermissionsModal,
 } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
@@ -17,6 +16,7 @@ import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { ConfirmationModal } from '../../../components/ConfirmationModal/ConfirmationModal';
+import { requestPermissionWithTelemetry } from '../../../telemetry/permissions';
 
 export const PermissionsNeededModal = () => {
     const dispatch = useMeetDispatch();
@@ -72,7 +72,7 @@ export const PermissionsNeededModal = () => {
 
         if (cameraNeeded) {
             try {
-                await dispatch(requestPermission('camera', isSafari() ? activeCameraId : undefined));
+                await dispatch(requestPermissionWithTelemetry('camera', isSafari() ? activeCameraId : undefined));
             } catch (error) {
                 if (error instanceof PermissionBlockedError) {
                     cameraBlocked = true;
@@ -82,7 +82,7 @@ export const PermissionsNeededModal = () => {
 
         if (micNeeded) {
             try {
-                await dispatch(requestPermission('microphone'));
+                await dispatch(requestPermissionWithTelemetry('microphone'));
             } catch (error) {
                 if (error instanceof PermissionBlockedError) {
                     microphoneBlocked = true;

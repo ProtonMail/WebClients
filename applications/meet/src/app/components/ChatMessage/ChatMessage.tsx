@@ -27,6 +27,8 @@ import {
     selectLocalParticipantIdentity,
     selectParticipantName,
 } from '@proton/meet/store/slices/participants/participantsSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { splitMessageIntoMentionSegments } from '@proton/meet/utils/mentions/mentionToken';
 import clsx from '@proton/utils/clsx';
 
 import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
@@ -237,6 +239,10 @@ export const ChatMessage = ({
         composerRef.current?.setValue('');
 
         const result = await onMessageSend(messageToSend);
+
+        if (result && splitMessageIntoMentionSegments(messageToSend).some(({ type }) => type === 'mention')) {
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.chat_mention_used);
+        }
 
         if (!result && currentMessage.current === '') {
             composerRef.current?.setValue(messageToSend);

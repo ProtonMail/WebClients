@@ -389,6 +389,7 @@ enum MeetFeatureFlag {
     PersonalMeetingRotation = 'PersonalMeetingRotation',
     MeetParticipantCountMismatch = 'MeetParticipantCountMismatch',
     MeetTranscription = 'MeetTranscription',
+    MeetExtendedTelemetry = 'MeetExtendedTelemetry',
 }
 
 enum PaymentsFeatureFlag {

@@ -12,6 +12,7 @@ import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { updateParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -54,7 +55,17 @@ export function useCurrentScreenShare({
 
     const screenShareTrack = useScreenShareTrack();
 
+    const sendScreenShareToggled = (state: 'on' | 'off', outcome: 'success' | 'failed' | 'cancelled') =>
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.screen_share_toggled, {
+            state,
+            outcome,
+            hasAudio: !!room.localParticipant.getTrackPublication(Track.Source.ScreenShareAudio),
+        });
+
     const stopScreenShare = useStableCallback(() => {
+        if (room.localParticipant.isScreenShareEnabled) {
+            sendScreenShareToggled('off', 'success');
+        }
         stopPiP();
         void room.localParticipant.setScreenShareEnabled(false);
     });
@@ -108,6 +119,12 @@ export function useCurrentScreenShare({
                 { simulcast: false, degradationPreference: 'maintain-resolution' }
             );
 
+            sendScreenShareToggled('on', 'success');
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.permission_requested, {
+                permissionKind: 'screen',
+                outcome: 'granted',
+            });
+
             if (!isSafari()) {
                 startPiP();
             }
@@ -123,6 +140,11 @@ export function useCurrentScreenShare({
                     'The request is not allowed by the user agent or the platform in the current context.' ||
                 (err.message === 'Could not start video source' && isElectronApp)
             ) {
+                sendScreenShareToggled('on', arePermissionsBlocked ? 'failed' : 'cancelled');
+                sendMeetActionsEvent(TelemetryMeetActionsEvents.permission_requested, {
+                    permissionKind: 'screen',
+                    outcome: arePermissionsBlocked ? 'denied' : 'dismissed',
+                });
                 if (arePermissionsBlocked && !isChrome() && !isElectronApp) {
                     dispatch(
                         showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_SCREEN_SHARE_MODAL })
@@ -147,6 +169,7 @@ export function useCurrentScreenShare({
                 });
             }
 
+            sendScreenShareToggled('on', 'failed');
             reportMeetError(`useCurrentScreenShare.startScreenShare: ${err.message}`, err);
         }
     });

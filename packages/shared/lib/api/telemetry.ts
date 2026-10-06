@@ -19,6 +19,9 @@ export enum TelemetryMeasurementGroups {
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     calendarVideoConferencing = 'calendar.web.video_conferencing',
     meetFunnelTelemetry = 'meet.web.meet_funnel_telemetry',
+    meetActions = 'meet.web.actions',
+    meetDashboard = 'meet.web.dashboard',
+    meetPerformance = 'meet.web.performance',
     accountCancellation = 'account.web.cancellation',
     accountCancellationFeedbackFirst = 'account.web.cancellation_feedback_first',
     settingsHeartBeat = 'any.web.settings_heart_beat',
@@ -148,6 +151,85 @@ export enum TelemetryMeetFunnelTelemetry {
     explore_meet_clicked = 'explore_meet_clicked',
     meeting_created = 'meeting_created',
     meet_opened = 'meet_opened',
+}
+
+export enum TelemetryMeetActionsEvents {
+    prejoin_viewed = 'prejoin_viewed',
+    display_name_entered = 'display_name_entered',
+    waiting_room_toggled = 'waiting_room_toggled',
+    waiting_room_retry_clicked = 'waiting_room_retry_clicked',
+    desktop_app_banner_shown = 'desktop_app_banner_shown',
+    desktop_app_banner_clicked = 'desktop_app_banner_clicked',
+    join_clicked = 'join_clicked',
+    mic_toggled = 'mic_toggled',
+    camera_toggled = 'camera_toggled',
+    device_selected = 'device_selected',
+    camera_rotated = 'camera_rotated',
+    mic_test_completed = 'mic_test_completed',
+    speaker_test_completed = 'speaker_test_completed',
+    permission_requested = 'permission_requested',
+    permission_blocked_modal_shown = 'permission_blocked_modal_shown',
+    no_device_detected = 'no_device_detected',
+    noise_cancellation_toggled = 'noise_cancellation_toggled',
+    background_effect_selected = 'background_effect_selected',
+    custom_background_uploaded = 'custom_background_uploaded',
+    custom_background_deleted = 'custom_background_deleted',
+    screen_share_toggled = 'screen_share_toggled',
+    screen_share_leave_warning_answered = 'screen_share_leave_warning_answered',
+    picture_in_picture_toggled = 'picture_in_picture_toggled',
+    layout_changed = 'layout_changed',
+    self_view_toggled = 'self_view_toggled',
+    incoming_video_toggled = 'incoming_video_toggled',
+    participant_list_toggled = 'participant_list_toggled',
+    participant_muted_by_host = 'participant_muted_by_host',
+    participant_removed = 'participant_removed',
+    host_assigned = 'host_assigned',
+    hand_lowered_by_host = 'hand_lowered_by_host',
+    waiting_room_admission_handled = 'waiting_room_admission_handled',
+    poor_connection_indicator_shown = 'poor_connection_indicator_shown',
+    chat_toggled = 'chat_toggled',
+    chat_reaction_sent = 'chat_reaction_sent',
+    chat_mention_used = 'chat_mention_used',
+    chat_scrolled_to_message = 'chat_scrolled_to_message',
+    emoji_reaction_sent = 'emoji_reaction_sent',
+    hand_raise_toggled = 'hand_raise_toggled',
+    captions_toggled = 'captions_toggled',
+    captions_failed = 'captions_failed',
+    recording_toggled = 'recording_toggled',
+    recording_upsell_shown = 'recording_upsell_shown',
+    recording_upsell_clicked = 'recording_upsell_clicked',
+    recording_download_prompt_answered = 'recording_download_prompt_answered',
+    settings_opened = 'settings_opened',
+    meeting_lock_toggled = 'meeting_lock_toggled',
+    meeting_details_opened = 'meeting_details_opened',
+    connection_lost_modal_shown = 'connection_lost_modal_shown',
+    connection_lost_modal_answered = 'connection_lost_modal_answered',
+}
+
+export enum TelemetryMeetDashboardEvents {
+    dashboard_viewed = 'dashboard_viewed',
+    meeting_started_instant = 'meeting_started_instant',
+    join_with_link_opened = 'join_with_link_opened',
+    join_with_link_submitted = 'join_with_link_submitted',
+    schedule_meeting_opened = 'schedule_meeting_opened',
+    meeting_scheduled = 'meeting_scheduled',
+    room_created = 'room_created',
+    room_edited = 'room_edited',
+    meeting_deleted = 'meeting_deleted',
+    meeting_link_copied = 'meeting_link_copied',
+    personal_link_rotated = 'personal_link_rotated',
+    upsell_banner_shown = 'upsell_banner_shown',
+    upsell_banner_clicked = 'upsell_banner_clicked',
+    recordings_page_viewed = 'recordings_page_viewed',
+    recording_downloaded = 'recording_downloaded',
+    recording_deleted = 'recording_deleted',
+    sign_in_clicked = 'sign_in_clicked',
+    sign_up_clicked = 'sign_up_clicked',
+}
+
+export enum TelemetryMeetPerformanceEvents {
+    app_loaded = 'app_loaded',
+    join_succeeded = 'join_succeeded',
 }
 
 export enum TelemetryMailNewsletterSubscriptions {
@@ -682,7 +764,10 @@ export type TelemetryEvents =
     | TelemetryVpnB2bUserActivityEvents
     | TelemetryPreventWasmLoading
     | TelemetryCategoriesOnboardingEvents
-    | TelemetryMeetFunnelTelemetry;
+    | TelemetryMeetFunnelTelemetry
+    | TelemetryMeetActionsEvents
+    | TelemetryMeetDashboardEvents
+    | TelemetryMeetPerformanceEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

@@ -17,6 +17,7 @@ import {
     toggleShowDuration,
     toggleSideBarState as toggleSideBarStateAction,
 } from '@proton/meet/store/slices/uiStateSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
@@ -155,6 +156,10 @@ export const Settings = () => {
                             loadingBackgroundBlur={loadingBackgroundBlur}
                             isBackgroundBlurSupported={isBackgroundBlurSupported}
                             onChange={() => {
+                                sendMeetActionsEvent(TelemetryMeetActionsEvents.background_effect_selected, {
+                                    effectType: backgroundBlur ? 'none' : 'blur',
+                                    source: 'settings',
+                                });
                                 void withLoadingBackgroundBlur(toggleBackgroundBlur());
                             }}
                             withTooltip={true}

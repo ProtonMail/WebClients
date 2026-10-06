@@ -14,6 +14,8 @@ import {
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
+import type { PictureInPictureTrigger } from '@proton/meet/telemetry/events';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
@@ -121,7 +123,12 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
     };
 
     // Stop PiP - properly async and awaits cleanup
-    const stopPiP = async () => {
+    const stopPiPWithTrigger = async (trigger: PictureInPictureTrigger) => {
+        if (isPipActiveRef.current) {
+            isPipActiveRef.current = false;
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.picture_in_picture_toggled, { state: 'off', trigger });
+        }
+
         await pipCleanup();
 
         // Safari needs a warmup so we can pass strict Safari PiP requirements
@@ -131,6 +138,8 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
 
         setIsPipActive(false);
     };
+
+    const stopPiP = () => stopPiPWithTrigger('screen_share_end');
 
     const pipSetup = async () => {
         if (isMobile() || !pipEnabled) {
@@ -145,7 +154,7 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
     };
 
     // Start PiP
-    const startPiP = useStableCallback(async () => {
+    const startPiP = useStableCallback(async (trigger: PictureInPictureTrigger = 'screen_share_start') => {
         if (!pipEnabled) {
             return;
         }
@@ -172,13 +181,14 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
             }
 
             setIsPipActive(true);
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.picture_in_picture_toggled, { state: 'on', trigger });
 
             // Setup MediaSession
             setupMediaSession();
 
             // Listen for PiP end - properly await the async stopPiP
             sessionManager.addPiPEndListener(() => {
-                void stopPiP();
+                void stopPiPWithTrigger('user_closed');
             });
 
             return;
@@ -274,7 +284,7 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
                 const leftBrowser = !document.hasFocus() && !isTabSwitch;
 
                 if (leftBrowser && isScreenShareActive && !isPipActiveRef.current) {
-                    await startPiP();
+                    await startPiP('window_blur');
                 }
             }, 200);
         };
@@ -296,7 +306,7 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
                     ].some((participant) => participant.isScreenShareEnabled);
 
                     if (isScreenShareActive && !preventBlur.current) {
-                        await startPiP();
+                        await startPiP('browser_media_control');
                     }
                 });
 

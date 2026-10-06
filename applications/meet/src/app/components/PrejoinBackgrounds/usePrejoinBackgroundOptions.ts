@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
 import { selectPendingBackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+import { getBackgroundEffectType } from '@proton/meet/telemetry/dimensions';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import { useAppliedBackgroundEffect } from '../../contexts/BackgroundEffects/useAppliedBackgroundEffect';
@@ -40,6 +42,10 @@ export const usePrejoinBackgroundOptions = ({ tileClassName }: { tileClassName?:
         selectedEffect: pendingBackgroundEffect ?? appliedBackgroundEffect,
         pendingEffect: pendingBackgroundEffect,
         onSelect: (effect: BackgroundEffect) => {
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.background_effect_selected, {
+                effectType: getBackgroundEffectType(effect),
+                source: 'prejoin',
+            });
             void selectBackgroundEffect(effect);
         },
     };

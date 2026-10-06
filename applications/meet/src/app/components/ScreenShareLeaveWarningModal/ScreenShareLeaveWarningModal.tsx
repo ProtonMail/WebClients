@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import screenCancelImg from '@proton/styles/assets/img/meet/screen-cancel.png';
 
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
@@ -36,10 +37,20 @@ export const ScreenShareLeaveWarningModal = ({
             message={message}
             primaryText={primaryText}
             primaryButtonClass="danger"
-            onPrimaryAction={onConfirm}
+            onPrimaryAction={() => {
+                sendMeetActionsEvent(TelemetryMeetActionsEvents.screen_share_leave_warning_answered, {
+                    action: 'continue',
+                });
+                onConfirm();
+            }}
             secondaryText={secondaryText}
             secondaryButtonClass="tertiary"
-            onSecondaryAction={onClose}
+            onSecondaryAction={() => {
+                sendMeetActionsEvent(TelemetryMeetActionsEvents.screen_share_leave_warning_answered, {
+                    action: 'cancel',
+                });
+                onClose();
+            }}
         />
     );
 };
