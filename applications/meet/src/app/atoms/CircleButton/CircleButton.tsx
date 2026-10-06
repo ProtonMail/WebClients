@@ -81,6 +81,7 @@ export const CircleButton = ({
             isOpen={tooltipTitle ? undefined : false}
             openDelay={750}
             closeDelay={0}
+            focusVisibleOnly
         >
             <Button
                 className={clsx(
