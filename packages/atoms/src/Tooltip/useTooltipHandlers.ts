@@ -1,4 +1,4 @@
-import type { MutableRefObject } from 'react';
+import type { FocusEvent, MutableRefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
 import { usePrevious } from '@proton/hooks';
@@ -20,6 +20,15 @@ type OpenCb = (immediate?: boolean) => void;
 
 const tooltips = new Map<number, { state: State; close: MutableRefObject<CloseCb> }>();
 
+const matchesFocusVisible = (element: Element) => {
+    try {
+        return element.matches(':focus-visible');
+    } catch {
+        // Unsupported selector (Safari < 15.4)
+        return true;
+    }
+};
+
 const closePendingTooltips = () => {
     for (const [id, entry] of tooltips) {
         if (entry.state === State.Closing) {
@@ -37,6 +46,7 @@ interface Props {
     openDelay?: number;
     closeDelay?: number;
     longTapDelay?: number;
+    focusVisibleOnly?: boolean;
 }
 
 export const useTooltipHandlers = ({
@@ -47,6 +57,7 @@ export const useTooltipHandlers = ({
     openDelay = OPEN_DELAY_TIMEOUT,
     closeDelay = CLOSE_DELAY_TIMEOUT,
     longTapDelay = LONG_TAP_TIMEOUT,
+    focusVisibleOnly = false,
 }: Props) => {
     const idRef = useRef(-1);
     if (idRef.current === -1) {
@@ -57,6 +68,7 @@ export const useTooltipHandlers = ({
     const closeTimeoutRef = useRef(0);
     const longTapTimeoutRef = useRef(0);
     const ignoreFocusRef = useRef(false);
+    const windowRefocusTargetRef = useRef<EventTarget | null>(null);
     const ignoreNonTouchEventsRef = useRef(false);
     const ignoreNonTouchEventsTimeoutRef = useRef(0);
     const closeRef = useRef(outsideClose);
@@ -131,6 +143,21 @@ export const useTooltipHandlers = ({
     };
 
     useEffect(() => {
+        if (!focusVisibleOnly) {
+            return;
+        }
+        const resetWindowRefocus = (event: Event) => {
+            if (event.target !== windowRefocusTargetRef.current) {
+                windowRefocusTargetRef.current = null;
+            }
+        };
+        document.addEventListener('focusin', resetWindowRefocus, true);
+        return () => {
+            document.removeEventListener('focusin', resetWindowRefocus, true);
+        };
+    }, [focusVisibleOnly]);
+
+    useEffect(() => {
         if (!isOpen) {
             return;
         }
@@ -198,7 +225,9 @@ export const useTooltipHandlers = ({
         close();
     };
 
-    const handleFocus = () => {
+    const handleFocus = (event?: FocusEvent<HTMLElement>) => {
+        const isWindowRefocus = !!windowRefocusTargetRef.current;
+        windowRefocusTargetRef.current = null;
         // Reset ignore focus if it's set. Manages the case for
         // mousedown -> mouseup -> focus
         // and mouseleave never triggered, just as a safety mechanism to reset ignore
@@ -206,7 +235,20 @@ export const useTooltipHandlers = ({
             ignoreFocusRef.current = false;
             return;
         }
+        if (
+            focusVisibleOnly &&
+            (isWindowRefocus || (event?.currentTarget && !matchesFocusVisible(event.currentTarget)))
+        ) {
+            return;
+        }
         open();
+    };
+
+    const handleFocusVisibleOnlyBlur = (event?: FocusEvent<HTMLElement>) => {
+        const target = event?.currentTarget;
+        // Window lost focus; the browser refocuses the element on return
+        windowRefocusTargetRef.current = target && target.ownerDocument.activeElement === target ? target : null;
+        handleCloseTooltip();
     };
 
     useEffect(() => {
@@ -244,6 +286,6 @@ export const useTooltipHandlers = ({
         onMouseEnter: handleMouseEnter,
         onMouseLeave: handleMouseLeave,
         onFocus: handleFocus,
-        onBlur: handleCloseTooltip,
+        onBlur: focusVisibleOnly ? handleFocusVisibleOnlyBlur : handleCloseTooltip,
     };
 };

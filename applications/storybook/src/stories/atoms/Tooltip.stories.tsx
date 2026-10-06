@@ -13,6 +13,9 @@ const meta: Meta<typeof Tooltip> = {
         closeDelay: {
             control: 'number',
         },
+        focusVisibleOnly: {
+            control: 'boolean',
+        },
         isOpen: {
             control: 'boolean',
         },
@@ -49,6 +52,19 @@ export const Default: Story = {};
 export const IsOpen: Story = {
     args: {
         isOpen: true,
+    },
+};
+
+export const FocusVisibleOnly: Story = {
+    args: {
+        focusVisibleOnly: true,
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'Opens on hover and keyboard focus, but not on programmatic focus or window refocus.',
+            },
+        },
     },
 };
 

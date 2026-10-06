@@ -133,4 +133,38 @@ describe('Tooltip', () => {
         fireEvent.animationEnd(screen.getByTestId('tooltip-2'), { animationName: 'anime-tooltip-out-last' });
         expect(screen.queryByTestId('tooltip-2')).toBeNull();
     });
+
+    describe('focusVisibleOnly', () => {
+        beforeEach(() => {
+            render(
+                <Tooltip title={<span data-testid="tooltip">World</span>} focusVisibleOnly>
+                    <button type="button">Hello</button>
+                </Tooltip>
+            );
+        });
+
+        it('should not show tooltip on programmatic focus', () => {
+            const button = screen.getByRole('button', { name: 'Hello' });
+            jest.spyOn(button, 'matches').mockImplementation((selector) => selector !== ':focus-visible');
+
+            act(() => button.focus());
+
+            expect(screen.queryByTestId('tooltip')).toBeNull();
+        });
+
+        it('should not show tooltip when the window regains focus', async () => {
+            const button = screen.getByRole('button', { name: 'Hello' });
+            await timerUserEvent.tab();
+
+            // Window blur
+            fireEvent.blur(button);
+            act(() => {
+                jest.advanceTimersByTime(500);
+            });
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out-last' });
+            fireEvent.focus(button);
+
+            expect(screen.queryByTestId('tooltip')).toBeNull();
+        });
+    });
 });
