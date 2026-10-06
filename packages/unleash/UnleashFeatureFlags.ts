@@ -328,6 +328,7 @@ enum MeetFeatureFlag {
     MeetChatMentions = 'MeetChatMentions',
     MeetChatThreads = 'MeetChatThreads',
     MeetClientMetricsLog = 'MeetClientMetricsLog',
+    MeetCollectLogsKillSwitch = 'MeetCollectLogsKillSwitch',
     MeetCoreWorker = 'MeetCoreWorker',
     MeetCountdownUpsell = 'MeetCountdownUpsell',
     MeetCpuOptimizations = 'MeetCpuOptimizations',

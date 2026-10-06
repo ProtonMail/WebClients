@@ -11,6 +11,8 @@ import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
+import { logger } from '@proton/logger';
+import { ALL_CONSOLE_LEVELS } from '@proton/logger/constants';
 import { setMeetCoreErrorResolver } from '@proton/meet/hooks/useMeetErrorReporting';
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
 import type { MeetDispatch, MeetExtraThunkArguments, MeetState, MeetStore } from '@proton/meet/store/store';
@@ -19,6 +21,7 @@ import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
+import { generateLoggerKey } from '@proton/shared/lib/authentication/loggerKey';
 import { cleanupInactivePersistedSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     getPersistedSession,
@@ -27,7 +30,7 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, isProduction } from '@proton/shared/lib/helpers/sentry';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import type { ProtonConfig, Unwrap } from '@proton/shared/lib/interfaces';
@@ -168,6 +171,39 @@ const loadUserData = async (dispatch: MeetDispatch) => {
     return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope] };
 };
 
+const initializeLogger = ({
+    api,
+    authentication,
+    unleashClient,
+    appName,
+}: Pick<MeetExtraThunkArguments, 'api' | 'authentication' | 'unleashClient'> & {
+    appName: ProtonConfig['APP_NAME'];
+}) => {
+    if (!unleashClient.isEnabled('CollectLogs') || unleashClient.isEnabled('MeetCollectLogsKillSwitch')) {
+        return;
+    }
+
+    void generateLoggerKey(authentication).then(({ key, ID }) =>
+        logger.initialize({
+            encryptionKey: key,
+            appName,
+            loggerID: ID,
+            loggerName: 'meet',
+            consoleLevels: isProduction(window.location.host) ? undefined : ALL_CONSOLE_LEVELS,
+        })
+    );
+
+    api.addEventListener((event) => {
+        if (event.type === 'api-error') {
+            const isPing = event.payload.apiInfo.url === 'tests/ping';
+            if (!isPing) {
+                logger.error(event.payload.apiInfo.url || 'unknown URL', event.payload);
+            }
+        }
+        return false;
+    });
+};
+
 const eventManagerSetup = ({
     eventManager,
     store,
@@ -229,6 +265,7 @@ const initAppDependencies = async (
 };
 
 const completeAppBootstrap = async ({
+    api,
     store,
     authentication,
     unleashClient,
@@ -261,6 +298,7 @@ const completeAppBootstrap = async ({
         cryptoPromise,
         bootstrap.unleashReady({ unleashClient }).catch(noop),
     ]);
+    initializeLogger({ api, authentication, unleashClient, appName: config.APP_NAME });
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
     const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
     const meetCoreClient = await initializeMeetCoreClient({
@@ -287,6 +325,7 @@ const completeAppBootstrap = async ({
     dispatch(bootstrapEvent({ type: 'complete' }));
 
     registerSessionRemovalListener(async (persistedSession) => {
+        await logger.clearLogs();
         clearStoredDevices();
         clearDisabledRotatePersonalMeeting();
         await purgeUserRecordings(persistedSession.UserID);
