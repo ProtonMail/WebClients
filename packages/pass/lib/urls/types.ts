@@ -1,6 +1,6 @@
 import type { ItemRevision } from '../../types/data/items';
 import type { MaybeNull } from '../../types/utils';
-import type { ItemUrlMatch } from './search/match-url';
+import type { DomainMatch, ItemUrlMatch } from './search/match-url';
 
 export type ParsedUrl = {
     /* domain without suffix */
@@ -48,7 +48,7 @@ export type SortOnItems = 'priority' | 'lastUseTime';
 export type SearchItemsByDomainOptions = {
     shareIds?: string[];
     sortOn?: SortOnItems;
-    strict?: boolean;
+    domainMatch?: DomainMatch;
     regexEnabled?: boolean;
     privateDomains?: Set<string>;
 };

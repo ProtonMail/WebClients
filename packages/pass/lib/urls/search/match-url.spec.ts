@@ -4,7 +4,7 @@ import type { AutofillUrl } from '../../../types/protobuf/item-v1';
 import { getModeLabel } from '../utils/autofill';
 import { autofillHelp } from '../utils/autofill.help';
 import { parseUrl } from '../utils/parser';
-import { ItemUrlMatch, getItemPriorityForUrl } from './match-url';
+import { DomainMatch, ItemUrlMatch, getItemPriorityForUrl } from './match-url';
 
 const createMockItem = (urls: string[]) =>
     ({
@@ -21,9 +21,10 @@ const createMockItemWithMode = (autofillUrls: AutofillUrl[]) =>
         data: { type: 'login', content: { autofillUrls } },
     }) as ItemRevision<'login'>;
 
-const options = { strict: false, regexEnabled: true };
-const optionsStrict = { strict: true, regexEnabled: true };
-const optionsNoRegex = { strict: false, regexEnabled: false };
+const options = { domainMatch: DomainMatch.DEFAULT, regexEnabled: true };
+const optionsStrict = { domainMatch: DomainMatch.HOST_AND_SUBDOMAINS, regexEnabled: true };
+const optionsNoRegex = { domainMatch: DomainMatch.DEFAULT, regexEnabled: false };
+const optionsExactHost = { domainMatch: DomainMatch.EXACT_HOST, regexEnabled: true };
 
 describe('getItemPriorityForUrl', () => {
     describe('mode default', () => {
@@ -163,6 +164,16 @@ describe('getItemPriorityForUrl', () => {
             const item2 = createMockItem(['https://pm.me']);
             const result2 = getItemPriorityForUrl(parseUrl('a.b.pm.me'), item2, optionsStrict);
             expect(result2).toBe(ItemUrlMatch.TOP_MATCH);
+        });
+
+        test('should only match the exact host in exact host mode', () => {
+            const item1 = createMockItem(['https://pm.me']);
+            const result1 = getItemPriorityForUrl(parseUrl('a.pm.me'), item1, optionsExactHost);
+            expect(result1).toBe(ItemUrlMatch.NO_MATCH);
+
+            const item2 = createMockItem(['https://pm.me', 'https://a.pm.me']);
+            const result2 = getItemPriorityForUrl(parseUrl('a.pm.me'), item2, optionsExactHost);
+            expect(result2).toBe(ItemUrlMatch.EXACT_MATCH);
         });
 
         test('should return `EXACT_MATCH` on top-level domain match', () => {

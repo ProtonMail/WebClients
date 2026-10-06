@@ -5,7 +5,7 @@ import { prop } from '../../../utils/fp/lens';
 import { isActive, isItemType } from '../../items/item.predicates';
 import type { ItemWithPriority, SearchItemsByDomainOptions, SortOnItems } from '../types';
 import { parseUrl } from '../utils/parser';
-import { ItemUrlMatch, getItemPriorityForUrl } from './match-url';
+import { DomainMatch, ItemUrlMatch, getItemPriorityForUrl } from './match-url';
 
 const sortMatchItems = (sortOn: SortOnItems) => (a: ItemWithPriority, b: ItemWithPriority) => {
     const aPrio = a.priority;
@@ -32,7 +32,7 @@ export const searchItemsByDomain = (
     {
         shareIds = undefined,
         sortOn = 'priority',
-        strict = false,
+        domainMatch = DomainMatch.DEFAULT,
         regexEnabled = false,
         privateDomains,
     }: SearchItemsByDomainOptions
@@ -65,7 +65,7 @@ export const searchItemsByDomain = (
             // Compute priority
             .map((item) => ({
                 item,
-                priority: getItemPriorityForUrl(parsedUrl, item, { strict, regexEnabled }),
+                priority: getItemPriorityForUrl(parsedUrl, item, { domainMatch, regexEnabled }),
             }))
             // Drop match failed
             .filter(({ priority }) => priority !== ItemUrlMatch.NO_MATCH)

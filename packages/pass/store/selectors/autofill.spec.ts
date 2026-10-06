@@ -1,3 +1,4 @@
+import { DomainMatch } from '../../lib/urls/search/match-url';
 import type { FormSubmission } from '../../types/worker/form';
 import { getStateMock } from '../../utils/tests/fixtures/url-matching-state';
 import { selectAutofillLoginCandidates, selectOTPCandidate } from './autofill';
@@ -73,7 +74,7 @@ describe('Autofill selectors', () => {
 
             test('should not return sibling-subdomain items in strict mode', () => {
                 const candidates = selectAutofillLoginCandidates('https://account.google.com', {
-                    strict: true,
+                    domainMatch: DomainMatch.HOST_AND_SUBDOMAINS,
                 })(state);
                 expect(candidates).not.toContain(item4);
                 expect(candidates).not.toContain(item5);
@@ -87,7 +88,7 @@ describe('Autofill selectors', () => {
 
             test('should return the exact host item in strict mode', () => {
                 const candidates = selectAutofillLoginCandidates('https://sub.domain.google.com', {
-                    strict: true,
+                    domainMatch: DomainMatch.HOST_AND_SUBDOMAINS,
                 })(state);
                 expect(candidates).toContain(item4);
             });

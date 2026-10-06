@@ -2,6 +2,7 @@ import { belongsToShares, hasOTP, hasUserIdentifier, isActive, isPasskeyItem } f
 import type { PasskeyQueryPayload, SelectedPasskey } from '../../lib/passkeys/types';
 import { isAutofillableShare } from '../../lib/shares/share.predicates';
 import { searchItemsByDomain } from '../../lib/urls/search/match';
+import { DomainMatch } from '../../lib/urls/search/match-url';
 import type { SearchItemsByDomainOptions } from '../../lib/urls/types';
 import { parseUrl } from '../../lib/urls/utils/parser';
 import { PassFeature } from '../../types/api/features';
@@ -45,13 +46,16 @@ export const selectAutofillLoginCandidates = (url: Maybe<string>, options: Searc
     );
 
 export const selectOTPCandidate = (url: Maybe<string>, submission?: FormSubmission, options?: SearchItemsByDomainOptions) =>
-    createUncachedSelector(selectAutofillLoginCandidates(url, { ...options, strict: true }), (candidates) => {
-        const otpItems = candidates.filter(hasOTP);
-        const userIdentifier = submission?.data.userIdentifier;
+    createUncachedSelector(
+        selectAutofillLoginCandidates(url, { ...options, domainMatch: DomainMatch.HOST_AND_SUBDOMAINS }),
+        (candidates) => {
+            const otpItems = candidates.filter(hasOTP);
+            const userIdentifier = submission?.data.userIdentifier;
 
-        if (userIdentifier) return otpItems.find(hasUserIdentifier(userIdentifier));
-        else return otpItems.sort(sortOn('lastUseTime'))[0];
-    });
+            if (userIdentifier) return otpItems.find(hasUserIdentifier(userIdentifier));
+            else return otpItems.sort(sortOn('lastUseTime'))[0];
+        }
+    );
 
 export const selectPasskeys = (payload: PasskeyQueryPayload) =>
     createUncachedSelector(selectVisibleItems, (items): SelectedPasskey[] => {
