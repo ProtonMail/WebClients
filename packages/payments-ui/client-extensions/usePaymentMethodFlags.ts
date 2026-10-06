@@ -10,7 +10,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 export const usePaymentMethodFlags = (): PaymentMethodFlags => ({
     enableSepa: useFlag('SepaPayments'),
     enableSepaB2C: useFlag('SepaPaymentsB2C'),
-    enablePaypalRegionalCurrenciesBatch3: useFlag('PaypalRegionalCurrenciesBatch3'),
     enablePaypalKrw: useFlag('PaypalKrw'),
     enableIdeal: useFlag('EnableIdeal'),
 });

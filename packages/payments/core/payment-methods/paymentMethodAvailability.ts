@@ -36,7 +36,6 @@ import { getPaymentMethodConfig } from './registry';
 export type PaymentMethodFlags = {
     enableSepa?: boolean;
     enableSepaB2C?: boolean;
-    enablePaypalRegionalCurrenciesBatch3?: boolean;
     enablePaypalKrw?: boolean;
     enableIdeal?: boolean;
 };
@@ -142,9 +141,6 @@ const flowSupportsSepaDirectDebit = ({ flow }: PaymentMethodsContext) => directD
 
 const isChargebeeCardAvailable = ({ paymentStatus }: PaymentMethodsContext) => paymentStatus.VendorStates.Card;
 
-// hide Paypal until Braintree enables new regional currencies
-const newPaypalRegionalCurrencies: Currency[] = ['HKD', 'SGD', 'JPY', 'PLN'];
-
 const isChargebeePaypalAvailable = (context: PaymentMethodsContext) => {
     const { paymentStatus, paymentMethods, amount, currency, flow, isTrial } = context;
 
@@ -152,8 +148,6 @@ const isChargebeePaypalAvailable = (context: PaymentMethodsContext) => {
 
     const isPaypalAmountValid = amount >= getMinPaypalAmountChargebee(currency);
     const isInvoice = flow === 'invoice';
-
-    const isNewCurrency = newPaypalRegionalCurrencies.includes(currency);
 
     // KRW has a separate flag because it requires additional support from PayPal
     const isKrwCurrency = currency === 'KRW';
@@ -163,7 +157,6 @@ const isChargebeePaypalAvailable = (context: PaymentMethodsContext) => {
         !alreadyHasPayPal &&
         (isPaypalAmountValid || isInvoice) &&
         !isTrial &&
-        (!isNewCurrency || !!context.enablePaypalRegionalCurrenciesBatch3) &&
         (!isKrwCurrency || !!context.enablePaypalKrw)
     );
 };

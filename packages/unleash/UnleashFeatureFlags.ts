@@ -400,7 +400,6 @@ enum PaymentsFeatureFlag {
     EnableIdeal = 'EnableIdeal',
     NewProtonBusinessBundlePlans = 'NewProtonBusinessBundlePlans',
     PaypalKrw = 'PaypalKrw',
-    PaypalRegionalCurrenciesBatch3 = 'PaypalRegionalCurrenciesBatch3',
     RegionalCurrenciesBatch3 = 'RegionalCurrenciesBatch3',
     SepaPayments = 'SepaPayments',
     SepaPaymentsB2C = 'SepaPaymentsB2C',
