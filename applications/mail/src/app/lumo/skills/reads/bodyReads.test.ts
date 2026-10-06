@@ -516,7 +516,7 @@ describe('read_open_email', () => {
         const result = await createReadOpenEmailHandler(deps)({}, { references });
 
         expect(result).toEqual({ isOpen: false });
-        expect(readOpenEmailDefinition.serializeForLumo(result, anyReferences)).toContain('No email is currently open');
+        expect(readOpenEmailDefinition.serializeForLumo(result, anyReferences)).toContain('No email was open');
         expect(readOpenEmailDefinition.summarizeChip({}, result).label).toBe('No email open');
     });
 
@@ -819,7 +819,7 @@ describe('read_thread', () => {
 
     it('reports no resolvable conversation rather than an empty thread', () => {
         const result = { found: false, messages: [], total: 0 };
-        expect(readThreadDefinition.serializeForLumo(result, anyReferences)).toContain('No conversation is open');
+        expect(readThreadDefinition.serializeForLumo(result, anyReferences)).toContain('No conversation was open');
         expect(readThreadDefinition.summarizeChip({ target: null }, result).label).toBe('No conversation to read');
     });
 });
