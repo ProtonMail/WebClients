@@ -1,9 +1,10 @@
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Folder } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { hasLabel, isElementMessage } from '../../helpers/elements';
+import { getCurrentFolderIDs, hasLabel, isElementMessage } from '../../helpers/elements';
 import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
@@ -112,6 +113,11 @@ const resolveRead = (store: ToolStore, id: string): MessageState | undefined => 
 /** Resolves UNDEFINED on timeout, so the caller reports the email as unreadable rather than hanging. */
 export const readDecryptedMessage = (store: ToolStore, id: string): Promise<MessageState | undefined> =>
     waitForStoreState(store, () => resolveRead(store, id), STEP_TIMEOUT);
+
+/** A label whose list shows `element`: the current view's when the element is in it, else its own folder's. */
+export const listingLabelID = (element: Element, viewLabelID: string, folders: Folder[]): string => {
+    return hasLabel(element, viewLabelID) ? viewLabelID : (getCurrentFolderIDs(element, folders)[0] ?? viewLabelID);
+};
 
 /**
  * Mirrors `useElementActions.handleElement`: with grouping on, a message must be opened via its
