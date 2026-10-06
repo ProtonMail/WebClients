@@ -1,7 +1,7 @@
 import type { ElementNode, LexicalNode, RangeSelection, TextNode } from 'lexical'
 import { $addUpdateTag, $isDecoratorNode, $isElementNode, $isRootOrShadowRoot, $isTextNode } from 'lexical'
 import { SuggestionTypesThatAffectWholeParent, SuggestionTypesThatCanBeEmpty, type SuggestionProperties } from './Types'
-import type { SuggestionType } from '@proton/docs-shared/lib/SuggestionType'
+import type { SuggestionType } from '../../contract/SuggestionType'
 import { $isImageNode } from '../Image/isImageNode'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
