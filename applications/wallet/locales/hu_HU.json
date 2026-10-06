@@ -217,6 +217,9 @@
       "More benefits": [
         "Több előny"
       ],
+      "More info": [
+        "További információk"
+      ],
       "More info: ${ safeTitle }": [
         "További információk: ${ safeTitle }"
       ],
@@ -1024,6 +1027,10 @@
       ],
       "Total": [
         "Összesen"
+      ],
+      "Total for ${ cycle } month": [
+        "Összesen, ${ cycle } hónapra",
+        "Összesen, ${ cycle } hónapra"
       ]
     },
     "Collapsible tooltip": {
@@ -3376,13 +3383,25 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "${ n } megbeszélés egyszerre",
+        "${ n } megbeszélés egyszerre"
+      ],
       "${ n } participant": [
         "${ n } résztvevő",
         "${ n } résztvevő"
       ],
+      "Up to ${ n } meeting per day": [
+        "${ n } megbeszélés naponta",
+        "Akár ${ n } megbeszélés naponta"
+      ],
       "Up to ${ n } participant": [
         "${ n } résztvevő",
         "Akár ${ n } résztvevő"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videómegbeszélések, ${ n } résztvevővel",
+        "Videómegbeszélések, ${ n } résztvevővel"
       ]
     },
     "meet_2025: Info": {
@@ -3569,9 +3588,6 @@
       "Auto-reply": [
         "Automatikus válasz"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Bankkártyák automatikus kitöltése (hamarosan)"
-      ],
       "Automatic email forwarding": [
         "Automatikus e-mail továbbítás"
       ],
@@ -3598,9 +3614,6 @@
       ],
       "Custom and secure business email": [
         "Egyéni és biztonságos üzleti e-mail"
-      ],
-      "Custom domains for email aliases": [
-        "Saját domain név használata e-mail álnevekhez"
       ],
       "Custom email domains": [
         "Saját domain nevek"
@@ -3653,9 +3666,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "A ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME } ingyenes funkciói"
       ],
-      "Free VPN on a single device": [
-        "Ingyenes VPN egy eszközön"
-      ],
       "Fully refundable for 30 days": [
         "Teljes visszatérítés 30 napon belül"
       ],
@@ -3664,10 +3674,6 @@
       ],
       "Group management (coming soon)": [
         "Csoportkezelés (hamarosan elérhető)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Nagysebességű VPN ${ n } eszközön",
-        "Nagysebességű VPN ${ n } eszközön"
       ],
       "HTML signatures": [
         "HTML aláírás"
@@ -3797,9 +3803,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Korlátlan megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Korlátlan számú megosztott tároló, hozzáférési jogokkal"
       ],
       "Unlimited vault sharing": [
         "Korlátlan számú tároló megosztása"
@@ -4077,9 +4080,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Szervereink merevlemezei teljesen titkosítottak, több rétegű jelszavas védelemmel, így adatai akkor is biztonságban vannak, ha a hardver eszközeink kerülnek illetéktelen kezekbe"
       ],
-      "Password management and identity protection": [
-        "Jelszókezelés és a személyazonosság védelme"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Alakítsa saját igényeihez az e-mail aláírását, logóval, képpel, közösségi média ikonokkal, hivatkozásokkal az elérhetőségeire stb."
       ],
@@ -4179,12 +4179,6 @@
         "${ n } ország",
         "${ n } ország"
       ],
-      "Access advanced VPN features": [
-        "További VPN lehetőségek elérése"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Használjon további személyre szabási lehetőséget 15 e-mail címmel és 3 saját e-mail domain név támogatásával"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-bit VPN titkosítás"
       ],
@@ -4194,9 +4188,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Emelje meg tárhelyét felhasználónként ${ bundleStorage } méretűre"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Emelje meg tárhelyét ${ bundleStorage } méretűre"
-      ],
       "Browser extension": [
         "Böngészőbővítmény"
       ],
@@ -4205,13 +4196,6 @@
       ],
       "Central control panel": [
         "Központi vezérlőpult"
-      ],
-      "Create up to ${ n } calendar": [
-        "Akár ${ n } naptár létrehozása",
-        "Akár ${ n } naptár létrehozása"
-      ],
-      "Dedicated Account manager": [
-        "Kijelölt fiókmenedzser"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikált szerverhelyek ${ numberOfCountries }+ országban"
@@ -4278,9 +4262,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Biztonságos tároló-, elem- és hivatkozásmegosztás"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Korlátlan bejelentkezés, jegyzet, bankkártya és még sok más"
       ]
     },
     "pass_signup_2023: Title": {
@@ -4903,10 +4884,6 @@
       "${ n } VPN connection": [
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN kapcsolat felhasználónként",
-        "${ n } VPN kapcsolat felhasználónként"
       ],
       "VPN connection for ${ n } device per user": [
         "VPN kapcsolat felhasználónként ${ n } eszközre",
