@@ -82,6 +82,11 @@ const ItemColumnLayout = ({
         [Subject, highlightData, highlightMetadata, unread]
     );
 
+    const oneTimeCodeContent = useMemo(
+        () => (highlightData && oneTimeCode ? highlightMetadata(oneTimeCode, unread, false).resultJSX : oneTimeCode),
+        [oneTimeCode, highlightData, highlightMetadata, unread]
+    );
+
     const { resultJSX, numOccurrences } = useMemo(
         () =>
             body && highlightData ? highlightMetadata(body, unread, true) : { resultJSX: undefined, numOccurrences: 0 },
@@ -161,6 +166,15 @@ const ItemColumnLayout = ({
                                 unread && 'text-semibold'
                             )}
                         >
+                            {oneTimeCode && (
+                                <ItemOneTimeCode
+                                    code={oneTimeCode}
+                                    codeContent={oneTimeCodeContent}
+                                    element={element}
+                                    compact
+                                    className="shrink-0 mr-2"
+                                />
+                            )}
                             {showIcon && (
                                 <span className="flex shrink-0">
                                     <ItemLocation element={element} labelID={labelID} />
@@ -178,10 +192,6 @@ const ItemColumnLayout = ({
                             >
                                 {subjectContent}
                             </span>
-                            {/* Placed inline right after the subject so it sits with the text and does not shift when the hover action buttons appear. */}
-                            {oneTimeCode && (
-                                <ItemOneTimeCode code={oneTimeCode} element={element} className="ml-2 shrink-0" />
-                            )}
                         </div>
 
                         <div className="item-icons shrink-0 flex-nowrap hidden md:flex">
