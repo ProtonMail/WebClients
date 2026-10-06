@@ -232,6 +232,9 @@
       "More benefits": [
         "Дополнительные преимущества"
       ],
+      "More info": [
+        "Подробнее"
+      ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
@@ -1148,9 +1151,6 @@
       ],
       "Basic chat history": [
         "Базовая история чата"
-      ],
-      "Built and based in Europe": [
-        "Разработано и базируется в Европе"
       ],
       "Compliance with data protection regulations": [
         "Соблюдение правовых норм по защите данных"
@@ -3999,9 +3999,6 @@
       "Auto-reply": [
         "Автоответчик"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Автозаполнение кредитных карт (скоро)"
-      ],
       "Automatic email forwarding": [
         "Автоматическая пересылка электронной почты"
       ],
@@ -4028,9 +4025,6 @@
       ],
       "Custom and secure business email": [
         "Настраивамая и защищённая бизнес-почта"
-      ],
-      "Custom domains for email aliases": [
-        "Пользовательские домены для псевдонимов электронной почты"
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
@@ -4089,9 +4083,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Бесплатные функции из ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, и ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Бесплатная VPN на одном устройстве"
-      ],
       "Fully refundable for 30 days": [
         "Полный возврат средств в течение 30 дней"
       ],
@@ -4100,12 +4091,6 @@
       ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Высокоскоростная VPN на ${ n } устройстве",
-        "Высокоскоростная VPN на ${ n } устройствах",
-        "Высокоскоростная VPN на ${ n } устройствах",
-        "Высокоскоростная VPN на ${ n } устройствах"
       ],
       "HTML signatures": [
         "Подписи HTML"
@@ -4244,9 +4229,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Неограниченные общие хранилища ${ PASS_SHORT_APP_NAME } для каждого пользователя"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Неограниченное количество совместно используемых хранилищ с правами доступа"
       ],
       "Unlimited vault sharing": [
         "Неограниченный общий доступ к хранилищу"
@@ -4552,9 +4534,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Жесткие диски наших серверов полностью зашифрованы с помощью нескольких уровней паролей, поэтому ваши данные будут защищены даже в случае взлома нашего оборудования"
       ],
-      "Password management and identity protection": [
-        "Управление паролями и защита личных данных"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персонализируйте свою подпись электронной почты с помощью логотипов, изображений, значков социальных сетей, ссылок на контактную информацию и т. д."
       ],
@@ -4659,12 +4638,6 @@
         "${ n } стран",
         "${ n } стран"
       ],
-      "Access advanced VPN features": [
-        "Получите доступ к расширенным функциям VPN"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Добавьте больше индивидуальности с помощью 15 адресов электронной почты и поддержки 3 пользовательских доменов электронной почты"
-      ],
       "AES 256-bit VPN encryption": [
         "Шифрование VPN AES 256-бит"
       ],
@@ -4674,9 +4647,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Увеличьте хранилище до ${ bundleStorage } на пользователя"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Увеличьте объем хранилища в общей сложности до ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Расширение для браузера"
       ],
@@ -4685,15 +4655,6 @@
       ],
       "Central control panel": [
         "Центральная панель управления"
-      ],
-      "Create up to ${ n } calendar": [
-        "Создать до ${ n } календаря",
-        "Создать до ${ n } календарей",
-        "Создать до ${ n } календарей",
-        "Создать до ${ n } календарей"
-      ],
-      "Dedicated Account manager": [
-        "Выделенный менеджер аккаунтов"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Расположение выделенных серверов в более чем ${ numberOfCountries } странах"
@@ -4762,9 +4723,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Защищенное хранилище, обмен ссылками и элементами"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Неограниченное количество имен пользователей, заметок, кредитных карт и многое другое"
       ]
     },
     "pass_signup_2023: Title": {
@@ -5529,12 +5487,6 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } подключение к VPN на пользователя",
-        "${ n } подключения к VPN на пользователя",
-        "${ n } подключений к VPN на пользователя",
-        "${ n } подключений к VPN на пользователя"
       ],
       "VPN connection for ${ n } device per user": [
         "Подключение к VPN для ${ n } устройства на одного пользователя",

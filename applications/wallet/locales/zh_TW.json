@@ -232,6 +232,9 @@
       "More benefits": [
         "更多好處"
       ],
+      "More info": [
+        "更多資訊"
+      ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
@@ -1115,9 +1118,6 @@
       ],
       "Basic chat history": [
         "基本聊天記錄"
-      ],
-      "Built and based in Europe": [
-        "基於歐洲創建"
       ],
       "Compliance with data protection regulations": [
         "遵循資料保護法"
@@ -2992,6 +2992,9 @@
       "No payment is required at this time.": [
         "此時毋須付款。"
       ],
+      "No payment is required.": [
+        "無須付款。"
+      ],
       "No results found": [
         "找不到相符的結果"
       ],
@@ -3873,9 +3876,6 @@
       "Auto-reply": [
         "自動回覆"
       ],
-      "Autofill credit cards (coming soon)": [
-        "自動填入信用卡(近期將到)"
-      ],
       "Automatic email forwarding": [
         "自動郵件轉寄"
       ],
@@ -3902,9 +3902,6 @@
       ],
       "Custom and secure business email": [
         "自訂和自訂商用電子郵件"
-      ],
-      "Custom domains for email aliases": [
-        "電子郵件別名的自訂網域"
       ],
       "Custom email domains": [
         "自訂電郵網域"
@@ -3963,9 +3960,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 和 ${ DRIVE_SHORT_APP_NAME } 的免費功能"
       ],
-      "Free VPN on a single device": [
-        "單一裝置的免費 VPN"
-      ],
       "Fully refundable for 30 days": [
         "30 天體驗不滿意退款服務"
       ],
@@ -3974,9 +3968,6 @@
       ],
       "Group management (coming soon)": [
         "群組管理(即將推出)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "極速 VPN 裝載多達 ${ n } 臺裝置"
       ],
       "HTML signatures": [
         "HTML簽名"
@@ -4115,9 +4106,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "每位使用者無限共享${ PASS_SHORT_APP_NAME }保管庫"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "無限共享保管庫與存取權限"
       ],
       "Unlimited vault sharing": [
         "無上限分享保管庫"
@@ -4402,9 +4390,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "我們以多層密碼完整加密伺服器上的硬碟，即使硬碟被整顆拔走，您的資料仍具備防護力"
       ],
-      "Password management and identity protection": [
-        "使用密碼管理及身分保護"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
       ],
@@ -4506,12 +4491,6 @@
       "${ n } country": [
         "${ n } 個國家"
       ],
-      "Access advanced VPN features": [
-        "存取進階 VPN 功能"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "可使用多達 15 組電子郵件位址，支援 3 個自訂電子郵件網域，個性化由您定義"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-bit VPN 加密"
       ],
@@ -4521,9 +4500,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "將現有儲存空間加大至 ${ bundleStorage } 予每位使用者"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
-      ],
       "Browser extension": [
         "瀏覽器擴充套件"
       ],
@@ -4532,12 +4508,6 @@
       ],
       "Central control panel": [
         "中控面板"
-      ],
-      "Create up to ${ n } calendar": [
-        "創建多達 ${ n } 個行事曆"
-      ],
-      "Dedicated Account manager": [
-        "專屬客戶經理"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "專用伺服器位於${ numberOfCountries }+個國家"
@@ -4606,9 +4576,6 @@
       ],
       "Secure vault, item and link sharing": [
         "安全保管庫、項目和共享連結"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "無限登入、筆記、信用卡和更多"
       ]
     },
     "pass_signup_2023: Title": {
@@ -4705,6 +4672,9 @@
       ],
       "Billing Country": [
         "計費國家"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "切換代表您同意我們的 ${ termsLink }."
       ],
       "Card number": [
         "卡號"
@@ -4804,6 +4774,12 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "試用方案不支援 ${ LUMO_SHORT_APP_NAME } 座席。"
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "試用方案不支援獨立 IPs。"
       ],
       "VAT number": [
         "增值稅編號（VAT）"
@@ -5342,9 +5318,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } 個 VPN 連線 / 每一位使用者"
       ],
       "VPN connection for ${ n } device per user": [
         "每位使用者可以在 ${ n } 台裝置上連接 VPN"

@@ -232,6 +232,9 @@
       "More benefits": [
         "Lebih banyak manfaat"
       ],
+      "More info": [
+        "Info selengkapnya"
+      ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
       ],
@@ -1106,9 +1109,6 @@
       ],
       "Basic chat history": [
         "Riwayat obrolan dasar"
-      ],
-      "Built and based in Europe": [
-        "Dibuat dan berbasis di Eropa"
       ],
       "Compliance with data protection regulations": [
         "Patuh terhadap peraturan perlindungan data"
@@ -3840,9 +3840,6 @@
       "Auto-reply": [
         "Pesan balasan otomatis"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Pengisian rincian kartu kredit secara otomatis (segera hadir)"
-      ],
       "Automatic email forwarding": [
         "Penerusan email otomatis"
       ],
@@ -3869,9 +3866,6 @@
       ],
       "Custom and secure business email": [
         "Email bisnis yang khusus dan aman"
-      ],
-      "Custom domains for email aliases": [
-        "Domain khusus untuk alias email"
       ],
       "Custom email domains": [
         "Domain email khusus"
@@ -3930,9 +3924,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Fitur gratis dari ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "VPN gratis untuk satu perangkat"
-      ],
       "Fully refundable for 30 days": [
         "Pengembalian dana sepenuhnya dalam 30 hari"
       ],
@@ -3941,9 +3932,6 @@
       ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN berkecepatan tinggi pada ${ n } perangkat"
       ],
       "HTML signatures": [
         "Tanda tangan HTML"
@@ -4082,9 +4070,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Brankas ${ PASS_SHORT_APP_NAME } terbagi tanpa batasan jumlah per pengguna"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Brankas terbagi yang tak terbatas dengan perizinan akses"
       ],
       "Unlimited vault sharing": [
         "Berbagi brankas tanpa batas"
@@ -4366,9 +4351,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Seluruh cakram data milik server kami terenkripsi dengan kata sandi yang berlapis, sehingga data Anda akan tetap terlindung bahkan apabila perangkat keras kami disusupi"
       ],
-      "Password management and identity protection": [
-        "Pengelolaan kata sandi dan perlindungan identitas"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
       ],
@@ -4470,12 +4452,6 @@
       "${ n } country": [
         "${ n } negara"
       ],
-      "Access advanced VPN features": [
-        "Akses berbagai fitur VPN lanjutan"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Terapkan berbagai opsi personalisasi dengan dukungan 15 alamat email dan 3 domain khusus"
-      ],
       "AES 256-bit VPN encryption": [
         "Enkripsi VPN AES 256-bit"
       ],
@@ -4485,9 +4461,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Tingkatkan ruang penyimpanan Anda ke ${ bundleStorage } per pengguna"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Tingkatkan total ruang penyimpanan Anda ke ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Ekstensi peramban"
       ],
@@ -4496,12 +4469,6 @@
       ],
       "Central control panel": [
         "Kontrol panel pusat"
-      ],
-      "Create up to ${ n } calendar": [
-        "Buat hingga ${ n } kalender"
-      ],
-      "Dedicated Account manager": [
-        "Staf pengelola akun khusus"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Server khusus yang berlokasi di ${ numberOfCountries }+ negara"
@@ -4567,9 +4534,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Pembagian brankas, item, dan tautan yang aman"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Tanpa batasan jumlah login, catatan, kartu kredit, dan masih banyak lagi"
       ]
     },
     "pass_signup_2023: Title": {
@@ -5292,9 +5256,6 @@
       ],
       "${ n } VPN connection": [
         "${ n } koneksi VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } koneksi VPN per pengguna"
       ],
       "VPN connection for ${ n } device per user": [
         "Koneksi VPN untuk ${ n } perangkat per pengguna"

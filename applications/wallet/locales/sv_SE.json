@@ -232,6 +232,9 @@
       "More benefits": [
         "Fler fördelar"
       ],
+      "More info": [
+        "Mer info"
+      ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
       ],
@@ -372,6 +375,9 @@
       ],
       "Switch or add account": [
         "Byt eller lägg till konto"
+      ],
+      "Switch to ${ planName }": [
+        "Byt till ${ planName }"
       ],
       "Take a tour": [
         "Ta en rundtur"
@@ -1144,9 +1150,6 @@
       ],
       "Basic chat history": [
         "Grundläggande chatthistorik"
-      ],
-      "Built and based in Europe": [
-        "Byggd och baserad i Europa"
       ],
       "Compliance with data protection regulations": [
         "Efterlevnad av dataskyddsföreskrifter"
@@ -2625,6 +2628,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Still waiting?": [
+        "Väntar du fortfarande?"
       ]
     },
     "fido2: Label": {
@@ -2815,6 +2821,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
         "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
+      ],
+      "1 vault per user": [
+        "1 valv per användare"
       ],
       "30-day money-back guarantee.": [
         "30 dagars pengarna-tillbaka-garanti."
@@ -3038,6 +3047,9 @@
       ],
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
+      ],
+      "No payment is required.": [
+        "Ingen betalning krävs."
       ],
       "No results found": [
         "Inga resultat hittades"
@@ -3963,9 +3975,6 @@
       "Auto-reply": [
         "Automatiskt svar"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Autofyll kreditkort (kommer snart)"
-      ],
       "Automatic email forwarding": [
         "Automatisk vidarebefordran av e-post"
       ],
@@ -3992,9 +4001,6 @@
       ],
       "Custom and secure business email": [
         "Anpassad och säker e-post för företag"
-      ],
-      "Custom domains for email aliases": [
-        "Anpassade domäner för e-postalias"
       ],
       "Custom email domains": [
         "Anpassade e-postdomäner"
@@ -4053,9 +4059,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Gratis funktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Gratis VPN på en enhet"
-      ],
       "Fully refundable for 30 days": [
         "Återbetalas till fullo i 30 dagar"
       ],
@@ -4064,10 +4067,6 @@
       ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Höghastighets-VPN på ${ n } enhet",
-        "Höghastighets-VPN på ${ n } enheter"
       ],
       "HTML signatures": [
         "HTML-signaturer"
@@ -4206,9 +4205,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Obegränsat delade ${ PASS_SHORT_APP_NAME }-valv per användare"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Obegränsat antal delade valv med åtkomstbehörigheter"
       ],
       "Unlimited vault sharing": [
         "Obegränsat antal valvdelningar"
@@ -4501,9 +4497,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Våra serverhårddiskar är fullständigt krypterade med flera lösenordslager så att din data är skyddad även om vår hårdvara skulle vara sårbar"
       ],
-      "Password management and identity protection": [
-        "Lösenordshantering och identitetsskydd"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personifiera din e-postsignatur med loggor bilder, ikoner för sociala medier, länkar till dina kontaktuppgifter och mer"
       ],
@@ -4606,12 +4599,6 @@
         "${ n } land",
         "${ n } länder"
       ],
-      "Access advanced VPN features": [
-        "Få tillgång till avancerade VPN-funktioner"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Lägg till mer personifiering med 15 e-postadresser och stöd för 3 anpassade e-postdomäner"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-bitars VPN-kryptering"
       ],
@@ -4621,9 +4608,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Öka ditt lagringsutrymme till ${ bundleStorage } per användare"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Öka ditt lagringsutrymme till totalt ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Webbläsartillägg"
       ],
@@ -4632,13 +4616,6 @@
       ],
       "Central control panel": [
         "Central kontrollpanel"
-      ],
-      "Create up to ${ n } calendar": [
-        "Skapa upp till ${ n } kalender",
-        "Skapa upp till ${ n } kalendrar"
-      ],
-      "Dedicated Account manager": [
-        "Dedikerad kontohanterare"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikerade serverplatser i ${ numberOfCountries }+ länder"
@@ -4711,9 +4688,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Säker delning av valv, objekt och länk"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Obegränsade inloggningar, anteckningar, kreditkort och mer"
       ]
     },
     "pass_signup_2023: Title": {
@@ -5482,10 +5456,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-anslutning per användare",
-        "${ n } VPN-anslutningar per användare"
       ],
       "VPN connection for ${ n } device per user": [
         "VPN-anslutning för ${ n } enhet per användare",

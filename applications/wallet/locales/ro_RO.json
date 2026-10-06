@@ -232,6 +232,9 @@
       "More benefits": [
         "Mai multe beneficii"
       ],
+      "More info": [
+        "Detalii"
+      ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
       ],
@@ -372,6 +375,9 @@
       ],
       "Switch or add account": [
         "Schimbare sau adăugare cont"
+      ],
+      "Switch to ${ planName }": [
+        "Comutare la ${ planName }"
       ],
       "Take a tour": [
         "Faceți un tur"
@@ -1164,9 +1170,6 @@
       ],
       "Basic chat history": [
         "Istoric de bază conversații"
-      ],
-      "Built and based in Europe": [
-        "Construit și cu sediul în Europa"
       ],
       "Compliance with data protection regulations": [
         "Respectare reguli de protecție a datelor"
@@ -2853,6 +2856,12 @@
         "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
         "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
       ],
+      "1 device per user": [
+        "Un dispozitiv per utilizator"
+      ],
+      "1 vault per user": [
+        "Un seif per utilizator"
+      ],
       "30-day money-back guarantee.": [
         "Garanția returnării banilor în 30 de zile."
       ],
@@ -3079,6 +3088,9 @@
       ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
+      ],
+      "No payment is required.": [
+        "Nu este necesară plată."
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
@@ -4038,9 +4050,6 @@
       "Auto-reply": [
         "Răspuns automat"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Autocompletare carduri de credit (în curând)"
-      ],
       "Automatic email forwarding": [
         "Transferare automată mesaje"
       ],
@@ -4067,9 +4076,6 @@
       ],
       "Custom and secure business email": [
         "E-mail de afaceri personalizat și securizat"
-      ],
-      "Custom domains for email aliases": [
-        "Domenii personale pentru aliasuri de e-mail"
       ],
       "Custom email domains": [
         "Domenii personale de e-mail"
@@ -4128,9 +4134,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Funcțiile gratuite de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "VPN gratuit pe un singur dispozitiv"
-      ],
       "Fully refundable for 30 days": [
         "Rambursare completă în primele 30 de zile"
       ],
@@ -4139,11 +4142,6 @@
       ],
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN de mare viteză pe un dispozitiv",
-        "VPN de mare viteză pe ${ n } dispozitive",
-        "VPN de mare viteză pe ${ n } de dispozitive"
       ],
       "HTML signatures": [
         "Semnături HTML"
@@ -4282,9 +4280,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Seifuri ${ PASS_SHORT_APP_NAME } partajate nelimitate per utilizator"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Seifuri partajate nelimitate cu permisiuni de acces"
       ],
       "Unlimited vault sharing": [
         "Partajare nelimitată de seifuri"
@@ -4585,9 +4580,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Discurile serverelor noastre sunt complet criptate cu multiple niveluri de parole astfel încât datele sunt protejate chiar și dacă acestea sunt compromise."
       ],
-      "Password management and identity protection": [
-        "Gestionare parole și protejare identitate"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de rețele sociale, legături web către datele de contact și multe altele."
       ],
@@ -4691,12 +4683,6 @@
         "${ n } țări",
         "${ n } de țări"
       ],
-      "Access advanced VPN features": [
-        "Accesați caracteristici VPN avansate"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Adăugați mai multe personalizări cu 15 adrese de e-mail și până la 3 domenii adiționale de e-mail personale"
-      ],
       "AES 256-bit VPN encryption": [
         "Criptare VPN AES 256-biți"
       ],
@@ -4706,9 +4692,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Măriți spațiul de stocare la ${ bundleStorage } per utilizator"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Măriți spațiul de stocare la ${ bundleStorage } în total"
-      ],
       "Browser extension": [
         "Extensie de navigator"
       ],
@@ -4717,14 +4700,6 @@
       ],
       "Central control panel": [
         "Panou de control central"
-      ],
-      "Create up to ${ n } calendar": [
-        "Creați maxim ${ n } calendar",
-        "Creați până la ${ n } calendare",
-        "Creați până la ${ n } de calendare"
-      ],
-      "Dedicated Account manager": [
-        "Manager dedicat al contului"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Locuri de servere dedicate în peste ${ numberOfCountries } de țări"
@@ -4804,9 +4779,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Partajare sigură seif, articole și legături web"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Date de autentificare, notițe și carduri de plată nelimitate și altele"
       ]
     },
     "pass_signup_2023: Title": {
@@ -4894,6 +4866,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (fără TVA)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nu poate fi combinat cu ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } este disponibil doar pentru planurile de afaceri."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% TVA: ${ taxAmountElement }"
       ],
@@ -4903,8 +4881,23 @@
       "Amount due after trial on ${ formattedDate }": [
         "Suma datorată după evaluare la ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Pentru acest plan este necesară o organizație."
+      ],
       "Billing Country": [
         "Țara de facturare"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Oferta Born Private nu poate fi achiziționată dacă există un abonament activ."
+      ],
+      "Born Private requires a donation.": [
+        "Oferta Born Private necesită o donație."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Achiziționarea de credite necesită o tranzacție separată."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Dacă vă comutați, sunteți de acord cu acești ${ termsLink }."
       ],
       "Card number": [
         "Număr card"
@@ -4945,11 +4938,20 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Poate fi achiziționat doar un singur plan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Plata cu ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de evaluare."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Închideți conturile suplimentare de portofele înainte de a vă schimba planul."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Închideți portofelele suplimentare înainte de a vă schimba planul."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
@@ -4959,6 +4961,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Numărul licențelor pentru Scribe nu îl poate depăși pe cel al numărului de membri."
       ],
       "Tax ${ rate }%": [
         "TVA ${ rate }%"
@@ -4973,6 +4978,18 @@
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Planul selectat nu oferă suficiente adrese pentru contul pe care îl dețineți."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Planul selectat nu oferă suficiente domenii pentru contul deținut."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Planul selectat nu oferă suficiente licențe pentru membri din contul pe care îl dețineți."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Planul selectat nu oferă suficient spațiu de stocare pentru contul deținut."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
@@ -5008,14 +5025,35 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Acest server dedicat este alocat unei porți de acces și nu poate fi modificat."
+      ],
       "This offer is not available with your current plan.": [
         "Această ofertă nu este disponibilă cu planul actual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Acest plan nu oferă suport pentru membrii din contul deținut."
+      ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Abonamentele de probare nu acceptă licențe pentru ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Planurile de probare nu suportă domenii personale."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Abonamentele de probare nu oferă suport pentru adrese IP dedicate."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Acest plan nu suportă licențe pentru Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Abonamentele de probare nu suportă un număr atât de mare de membri."
       ],
       "VAT number": [
         "Valoare TVA"
@@ -5029,11 +5067,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Aveți deja un abonament la acest plan. Vă puteți schimba abonamentul pe ${ subscriptionPlatform }."
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Deja dețineți planul ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ],
+      "You already own Born Private.": [
+        "Dețineți deja oferta Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă nouă."
+      ],
+      "Your account is too old for Born Private.": [
+        "Contul tău este prea vechi pentru oferta Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_WERO_BRAND_NAME } acceptă doar plăți în euro."
@@ -5594,11 +5641,6 @@
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
       ],
-      "${ n } VPN connection per user": [
-        "O conexiune VPN per utilizator",
-        "${ n } conexiuni VPN per utilizator",
-        "${ n } de conexiuni VPN per utilizator"
-      ],
       "VPN connection for ${ n } device per user": [
         "Conexiune VPN pentru ${ n } dispozitiv per utilizator",
         "Conexiuni VPN pentru ${ n } dispozitive per utilizator",
@@ -6098,6 +6140,9 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Treceți la un plan care suportă roluri de administrator."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Nu vă puteți modifica propriile roluri. Rugați un alt administrator să le modifice."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."

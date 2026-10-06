@@ -232,6 +232,9 @@
       "More benefits": [
         "Més avantatges"
       ],
+      "More info": [
+        "Més informació"
+      ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
       ],
@@ -373,6 +376,9 @@
       "Switch or add account": [
         "Canvia o afegeix un compte"
       ],
+      "Switch to ${ planName }": [
+        "Canvia a ${ planName }"
+      ],
       "Take a tour": [
         "Feu una visita guiada"
       ],
@@ -511,6 +517,12 @@
       ],
       "Domains": [
         "Dominis"
+      ],
+      "Managed Service Provider": [
+        "Proveïdor de serveis gestionats"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Les organitzacions amb el complement de proveïdor de serveis gestionats poden crear i gestionar organitzacions filials."
       ],
       "Servers": [
         "Servidors"
@@ -1147,9 +1159,6 @@
       ],
       "Basic chat history": [
         "Historial de xat bàsic"
-      ],
-      "Built and based in Europe": [
-        "Desenvolupat i amb seu a Europa"
       ],
       "Compliance with data protection regulations": [
         "Compleix amb el reglament de protecció de dades"
@@ -2828,6 +2837,12 @@
         "+${ organization.BonusVPN } connexió per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)",
         "+${ organization.BonusVPN } connexions per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)"
       ],
+      "1 device per user": [
+        "1 dispositiu per usuari"
+      ],
+      "1 vault per user": [
+        "1 caixa forta per usuari"
+      ],
       "30-day money-back guarantee.": [
         "30 dies de garantia de reemborsament."
       ],
@@ -3053,6 +3068,9 @@
       ],
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
+      ],
+      "No payment is required.": [
+        "No es requereix cap pagament."
       ],
       "No results found": [
         "No s'ha trobat cap resultat."
@@ -3981,9 +3999,6 @@
       "Auto-reply": [
         "Resposta automàtica"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Emplenament automàtic de targetes de crèdit (disponible pròximament)"
-      ],
       "Automatic email forwarding": [
         "Reenviament automàtic de correu"
       ],
@@ -4010,9 +4025,6 @@
       ],
       "Custom and secure business email": [
         "Correu electrònic empresarial personalitzat i segur"
-      ],
-      "Custom domains for email aliases": [
-        "Dominis personalitzats per a àlies de correu electrònic"
       ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
@@ -4071,9 +4083,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Característiques gratuïtes de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "VPN gratuïta en un sol dispositiu"
-      ],
       "Fully refundable for 30 days": [
         "Totalment reemborsable durant 30 dies"
       ],
@@ -4082,10 +4091,6 @@
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN d'alta velocitat en ${ n } dispositiu",
-        "VPN d'alta velocitat en ${ n } dispositius"
       ],
       "HTML signatures": [
         "Signatures HTML"
@@ -4224,9 +4229,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Nombre il·limitat de caixes fortes de ${ PASS_SHORT_APP_NAME } compartides per usuari"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Caixes fortes compartides il·limitades amb permisos d'accés"
       ],
       "Unlimited vault sharing": [
         "Compartició il·limitada de caixes fortes"
@@ -4519,9 +4521,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Els discos durs dels nostres servidors estan totalment xifrats amb múltiples capes de contrasenya, de manera que les vostres dades estan protegides fins i tot si el nostre maquinari es veiés compromès."
       ],
-      "Password management and identity protection": [
-        "Gestió de contrasenyes i protecció de la identitat"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalitzeu la vostra signatura de correu electrònic amb logos, imatges, icones de xarxes socials, enllaços als detalls de contacte, etc."
       ],
@@ -4624,12 +4623,6 @@
         "${ n } país",
         "${ n } països"
       ],
-      "Access advanced VPN features": [
-        "Accediu a característiques de VPN avançades"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Afegiu més personalització amb 15 adreces de correu electrònic i suport per a 3 dominis de correu electrònic personalitzats"
-      ],
       "AES 256-bit VPN encryption": [
         "Xifratge VPN AES 256-bit"
       ],
@@ -4639,9 +4632,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Augmenteu l'espai d'emmagatzematge a ${ bundleStorage } per usuari."
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Augmenteu l'espai d'emmagatzematge a ${ bundleStorage } en total"
-      ],
       "Browser extension": [
         "Extensió del navegador"
       ],
@@ -4650,13 +4640,6 @@
       ],
       "Central control panel": [
         "Panell de control central"
-      ],
-      "Create up to ${ n } calendar": [
-        "Crea fins a ${ n } calendari",
-        "Crea fins a ${ n } calendaris"
-      ],
-      "Dedicated Account manager": [
-        "Gestor de comptes dedicat"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Ubicacions de servidors dedicats a més de ${ numberOfCountries } països"
@@ -4735,9 +4718,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Compartició segura de caixes fortes, elements i enllaços"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Nombre il·limitat d'inicis de sessió, notes, targetes de crèdit, etc."
       ]
     },
     "pass_signup_2023: Title": {
@@ -4824,6 +4804,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (IVA no inclòs)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } no es pot combinar amb ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } només està disponible als plans d'empresa."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "Impost del ${ rate }%: ${ taxAmountElement }"
       ],
@@ -4833,8 +4819,23 @@
       "Amount due after trial on ${ formattedDate }": [
         "Import a pagar després del període de prova el ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Es requereix una organització per a aquest pla."
+      ],
       "Billing Country": [
         "País de facturació"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private no es pot comprar amb una subscripció activa."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private requereix una donació."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "L'adquisició de crèdits requereix una compra independent."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "En canviar, accepteu els nostres ${ termsLink }."
       ],
       "Card number": [
         "Número de la targeta"
@@ -4875,11 +4876,20 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Només es pot comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Pagueu amb ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Es requereix un mètode de pagament perquè la subscripció s'activi un cop finalitzi la prova."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Tanqueu els comptes de cartera addicionals abans de canviar de pla."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Tanqueu les carteres addicionals abans de canviar de pla."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
@@ -4889,6 +4899,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Les llicències de Scribe no poden superar el nombre de membres."
       ],
       "Tax ${ rate }%": [
         "Impost ${ rate }%"
@@ -4902,6 +4915,18 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descompte és vàlid per a ${ renewalsWithCoupon } renovació.",
         "El descompte és vàlid per a ${ renewalsWithCoupon } renovacions."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "El pla seleccionat no ofereix prou adreces per al vostre compte."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "El pla seleccionat no ofereix prou dominis per al vostre compte."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "El pla seleccionat no ofereix prou membres per al vostre compte."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "El pla seleccionat no ofereix prou emmagatzematge per al vostre compte."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
@@ -4932,14 +4957,35 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Aquesta acció amplia la subscripció existent. Se us cobraran només els nous complements i el temps restant del cicle de facturació actual. La data de renovació de la subscripció no es modificarà."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Aquest servidor dedicat està assignat a una passarel·la i no es pot canviar."
+      ],
       "This offer is not available with your current plan.": [
         "Aquesta oferta no està disponible amb el pla actual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Aquest mètode de pagament esdevindrà el vostre nou mètode per defecte per a totes les renovacions futures."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Aquest pla no suporta els membres del vostre compte."
+      ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Els plans de prova no admeten llicències de ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Els plans de prova no admeten dominis personalitzats."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Els plans de prova no admeten IP dedicades."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Els plans de prova no admeten llicències de Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Els plans de prova no admeten tants membres."
       ],
       "VAT number": [
         "Número d'IVA"
@@ -4953,11 +4999,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Ja teniu una subscripció a aquest pla. Podeu canviar-la a ${ subscriptionPlatform }."
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Ja teniu ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Ja teniu Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Aviat se us redirigirà a PayPal per verificar el vostre pagament."
       ],
       "You will soon be redirected to verify your payment.": [
         "Aviat se us redirigirà per verificar el vostre pagament."
+      ],
+      "Your account is too old for Born Private.": [
+        "El vostre compte és massa antic per a Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_WERO_BRAND_NAME } només admet pagaments en euros."
@@ -5510,10 +5565,6 @@
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } connexió VPN per usuari",
-        "${ n } connexions VPN per usuari"
       ],
       "VPN connection for ${ n } device per user": [
         "Connexió VPN per a ${ n } dispositiu per usuari",

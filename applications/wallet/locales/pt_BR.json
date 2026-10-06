@@ -232,6 +232,9 @@
       "More benefits": [
         "Mais benefícios"
       ],
+      "More info": [
+        "Mais informações"
+      ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
       ],
@@ -373,6 +376,9 @@
       "Switch or add account": [
         "Mudar ou adicionar conta"
       ],
+      "Switch to ${ planName }": [
+        "Alterar para ${ planName }"
+      ],
       "Take a tour": [
         "Faça um tour"
       ],
@@ -511,6 +517,9 @@
       ],
       "Domains": [
         "Domínios"
+      ],
+      "Managed Service Provider": [
+        "Provedor de serviço gerenciado"
       ],
       "Servers": [
         "Servidores"
@@ -1147,9 +1156,6 @@
       ],
       "Basic chat history": [
         "Histórico de bate-papo básico"
-      ],
-      "Built and based in Europe": [
-        "Construído e baseado na Europa"
       ],
       "Compliance with data protection regulations": [
         "Conformidade com os regulamentos de proteção de dados"
@@ -2346,6 +2352,9 @@
       "Contact could not be saved": [
         "Não foi possível salvar o contato."
       ],
+      "Could not grant access to the organization key": [
+        "Não foi possível obter o acesso a chave da organização"
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
       ],
@@ -2824,6 +2833,12 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } conexão para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos na VPN)",
         "+${ organization.BonusVPN } conexões para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos na VPN)"
+      ],
+      "1 device per user": [
+        "1 dispositivo por usuário"
+      ],
+      "1 vault per user": [
+        "1 cofres por usuário"
       ],
       "30-day money-back guarantee.": [
         "Garantia de devolução do seu dinheiro por até 30 dias."
@@ -3972,9 +3987,6 @@
       "Auto-reply": [
         "Resposta automática"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Preenchimento automático de cartões de crédito (em breve)"
-      ],
       "Automatic email forwarding": [
         "Encaminhamento de e-mail automático"
       ],
@@ -4001,9 +4013,6 @@
       ],
       "Custom and secure business email": [
         "E-mail corporativo seguro e personalizado"
-      ],
-      "Custom domains for email aliases": [
-        "Domínios personalizados para encaminhamento de mensagens"
       ],
       "Custom email domains": [
         "Domínios de e-mail personalizados"
@@ -4062,9 +4071,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Recursos gratuitos da ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "VPN gratuita em um único dispositivo"
-      ],
       "Fully refundable for 30 days": [
         "Totalmente reembolsável por 30 dias"
       ],
@@ -4073,10 +4079,6 @@
       ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN de alta velocidade em ${ n } dispositivo",
-        "VPN de alta velocidade em ${ n } dispositivos"
       ],
       "HTML signatures": [
         "Assinaturas HTML"
@@ -4215,9 +4217,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Cofres compartilhados ilimitados da ${ PASS_SHORT_APP_NAME } por usuário"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Cofres compartilhados ilimitados com permissões de acesso"
       ],
       "Unlimited vault sharing": [
         "Compartilhamento de cofre ilimitado"
@@ -4510,9 +4509,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Os discos rígidos dos nossos servidores são totalmente criptografados com múltiplas camadas de senha para que seus dados sejam protegidos mesmo que nosso hardware seja comprometido"
       ],
-      "Password management and identity protection": [
-        "Gerenciamento de senha e proteção de identidade"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
       ],
@@ -4615,12 +4611,6 @@
         "${ n } país",
         "${ n } países"
       ],
-      "Access advanced VPN features": [
-        "Acesse recursos avançados de VPN"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Adicione personalização com 15 endereços de e-mail e suporte para 3 domínios de e-mail personalizados"
-      ],
       "AES 256-bit VPN encryption": [
         "Criptografia AES de 256 bits"
       ],
@@ -4630,9 +4620,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Aumente seu espaço de armazenamento para ${ bundleStorage } por usuário"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Aumente seu espaço de armazenamento para um total de ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Extensão do navegador"
       ],
@@ -4641,13 +4628,6 @@
       ],
       "Central control panel": [
         "Painel de controle central"
-      ],
-      "Create up to ${ n } calendar": [
-        "Crie até ${ n } calendário",
-        "Crie até ${ n } calendários"
-      ],
-      "Dedicated Account manager": [
-        "Gerente de contas dedicado"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Localizações de servidores dedicados em ${ numberOfCountries }+ países"
@@ -4723,9 +4703,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Compartilhamento seguro de item, cofre e link"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Inícios de sessão ilimitados, notas, cartões de crédito e muito mais"
       ]
     },
     "pass_signup_2023: Title": {
@@ -4829,6 +4806,9 @@
       ],
       "Billing Country": [
         "País de Faturamento"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ao trocar, você concorda com nossos ${ termsLink }."
       ],
       "Card number": [
         "Número do cartão"
@@ -4934,6 +4914,9 @@
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Os planos de avaliação não suportam IPs dedicados."
       ],
       "VAT number": [
         "Número de IVA"
@@ -5493,10 +5476,6 @@
       "${ n } VPN connection": [
         "${ n } conexão VPN",
         "${ n } conexões VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } conexões VPN por usuário",
-        "${ n } conexões VPN por usuário"
       ],
       "VPN connection for ${ n } device per user": [
         "Conexão VPN para ${ n } dispositivo por usuário",
