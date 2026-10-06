@@ -2,7 +2,7 @@ import type { Application } from '../Lib/Application'
 import { useEffect, useState } from 'react'
 import type { DocsAwarenessStateChangeData } from '@proton/docs-shared'
 import { DocAwarenessEvent } from '@proton/docs-shared'
-import type { SafeDocsUserState } from '@proton/docs-shared'
+import type { SafeDocsUserState } from '../Containers/Docs/public'
 
 export function useLatestAwarenessStates(application: Application) {
   const [states, setStates] = useState<SafeDocsUserState[]>([])

@@ -2,7 +2,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { useEffect } from 'react'
 import type { Binding } from '@lexical/yjs'
 import { getAnchorAndFocusCollabNodesForUserState } from '@lexical/yjs'
-import type { SafeDocsUserState, UnsafeDocsUserState } from '@proton/docs-shared'
+import type { SafeDocsUserState, UnsafeDocsUserState } from '../../contract/Awareness'
 import { COMMAND_PRIORITY_EDITOR, createCommand, type LexicalCommand } from 'lexical'
 
 export const SCROLL_TO_USER_CURSOR_COMMAND: LexicalCommand<{
