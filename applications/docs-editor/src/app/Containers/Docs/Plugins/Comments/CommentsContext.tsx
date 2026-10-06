@@ -1,4 +1,5 @@
-import type { CommentInterface, CommentThreadInterface, SafeDocsUserState } from '@proton/docs-shared'
+import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
+import type { SafeDocsUserState } from '../../contract/Awareness'
 import { createContext, useContext } from 'react'
 import type { LexicalNode, NodeKey, RangeSelection } from 'lexical'
 import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
