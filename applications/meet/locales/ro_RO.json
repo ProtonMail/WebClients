@@ -243,9 +243,6 @@
       "Cancel": [
         "Anulare"
       ],
-      "Change layout": [
-        "Modificare aranjare"
-      ],
       "Change password": [
         "Modificare parolă"
       ],
@@ -378,9 +375,6 @@
       "Enable camera": [
         "Activare cameră"
       ],
-      "Enable captions": [
-        "Activare subtitrări"
-      ],
       "Enable waiting room": [
         "Activare sală de așteptare"
       ],
@@ -474,6 +468,9 @@
       "Minimize preview": [
         "Micșorare examinare"
       ],
+      "More info": [
+        "Detalii"
+      ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
       ],
@@ -494,6 +491,9 @@
       ],
       "Noise cancellation": [
         "Anulare zgomot"
+      ],
+      "Not now": [
+        "Nu acum"
       ],
       "Open app": [
         "Deschidere aplicație"
@@ -718,6 +718,9 @@
       "Stop Recording Track Stats": [
         "Oprire înregistrare statistici urmărire"
       ],
+      "Stop sharing": [
+        "Oprire partajare"
+      ],
       "Submit": [
         "Trimitere"
       ],
@@ -816,9 +819,6 @@
       "Blur background": [
         "Estompare fundal"
       ],
-      "Chat": [
-        "Conversație"
-      ],
       "Close": [
         "Închidere"
       ],
@@ -831,23 +831,11 @@
       "Copy meeting link": [
         "Copiere legătură web întâlnire"
       ],
-      "Debug devices": [
-        "Depanare dispozitive"
-      ],
-      "Debug overlay": [
-        "Panou de depanare"
-      ],
-      "Device Debugger": [
-        "Depanator de dispozitive"
-      ],
       "Go to dashboard": [
         "Spre panoul de control"
       ],
       "Incoming video": [
         "Video de intrare"
-      ],
-      "Layout: ${ selectedLabel }": [
-        "Aranjare: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Părăsire întâlnire"
@@ -857,12 +845,6 @@
       ],
       "Lock meeting": [
         "Blocare întâlnire"
-      ],
-      "Lower hand": [
-        "Coborâre mână"
-      ],
-      "Meeting details": [
-        "Detalii reuniune"
       ],
       "Meeting timer": [
         "Cronometru conferință"
@@ -882,14 +864,8 @@
       "Participant host control options": [
         "Opțiuni de control ale gazdei pentru participanți"
       ],
-      "Participants": [
-        "Participanți"
-      ],
       "Picture-in-picture while sharing": [
         "Imagine-în-imagine la partajare"
-      ],
-      "Raise hand": [
-        "Ridicare mână"
       ],
       "Rotate camera": [
         "Rotire cameră"
@@ -897,14 +873,8 @@
       "Save my name on this device": [
         "Salvează-mi numele pe acest dispozitiv"
       ],
-      "Screen share": [
-        "Partajare ecran"
-      ],
       "Self view": [
         "Privire proprie"
-      ],
-      "Settings": [
-        "Setări"
       ],
       "Stop recording and download.": [
         "Oprire înregistrare și descărcare."
@@ -915,17 +885,11 @@
       "Toggle emoji reactions": [
         "Comutare reacții emoji"
       ],
-      "Toggle meeting details": [
-        "Comutare detalii întâlnire"
-      ],
       "Toggle participants": [
         "Comutare participanți"
       ],
       "Toggle screen share": [
         "Comutare partajare ecran"
-      ],
-      "Toggle settings": [
-        "Comutare setări"
       ],
       "Video settings": [
         "Setări video"
@@ -2962,6 +2926,9 @@
       "Host": [
         "Gazdă"
       ],
+      "Host has another meeting in progress": [
+        "Gazda are o altă conferință în desfășurare."
+      ],
       "Host has disabled live captions for this meeting.": [
         "Gazda a dezactivat subtitrările live pentru această conferință."
       ],
@@ -3292,9 +3259,6 @@
       "Share screen": [
         "Partajare ecran"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Partajați această legătură web pentru a invita pe alții. O puteți găsi oricând făcând clic pe pictograma info din bara de unelte."
-      ],
       "Sign in": [
         "înregistrați-vă"
       ],
@@ -3303,9 +3267,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "Selectarea difuzorului nu este disponibilă în acest navigator web. Folosiți setările sistemului pentru a alege un alt difuzor."
-      ],
-      "Start recording": [
-        "Pornire înregistrare"
       ],
       "Starting camera…": [
         "Se pornește camera…"
@@ -3349,6 +3310,9 @@
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Această întâlnire a atins limita de timp a unui abonament gratuit. Modificați planul pentru a prelungi durata conferințelor în apelurile viitoare."
       ],
+      "This meeting reached the time limit.": [
+        "Această conferință a atins limita de timp."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Această conferință a fost deschisă în aplicația desktop ${ MEET_APP_NAME }."
       ],
@@ -3366,9 +3330,6 @@
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Pentru a crea o cameră, veți avea nevoie de **un cont gratuit ${ BRAND_NAME }** pentru a o putea salva. Acest lucru durează doar câteva secunde."
-      ],
-      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
-        "Pentru a crea subtitrări live, serviciul de subtitrări are nevoie de acces la sunetul întâlnirii. Subtitrările sunt vizibile doar pentru dvs. și nu sunt salvate."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
@@ -3390,9 +3351,6 @@
       ],
       "Turn on camera": [
         "Activare cameră"
-      ],
-      "Turn on live captions?": [
-        "Activați subtitrările live?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Nu se poate reconecta conferința. Realăturați-vă sau părăsiți-o."
@@ -3454,6 +3412,9 @@
       "Yesterday — ${ absoluteDate }": [
         "Ieri — ${ absoluteDate }"
       ],
+      "You": [
+        "Eu"
+      ],
       "You are almost there": [
         "Aproape gata"
       ],
@@ -3468,6 +3429,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Puteți totuși dezactiva microfonul și camera oricând în cadrul ședinței."
+      ],
+      "You have too many meetings in progress": [
+        "Aveți prea multe întâlniri în desfășurare."
       ],
       "You left the meeting": [
         "Ați părăsit conferința"
@@ -3736,6 +3700,9 @@
       ],
       "Monday to Friday": [
         "De luni până vineri"
+      ],
+      "More options": [
+        "Mai multe opțiuni"
       ],
       "Mountain landscape background": [
         "Fundal cu peisaj montan"
