@@ -85,7 +85,7 @@
         "Tambah nomor telepon"
       ],
       "Add photos": [
-        "Tambah foto"
+        "Tambahkan foto"
       ],
       "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
         "Tambah ke \"${ album.name }\" (${ album.photoCount } foto)"
@@ -448,7 +448,7 @@
         "Lebarkan folder"
       ],
       "Explore more": [
-        "Telusuri lebih lanjut"
+        "Jelajahi lebih lanjut"
       ],
       "Explore other plans": [
         "Telusuri paket lainnya"
@@ -703,7 +703,7 @@
         "Beri nama album Anda"
       ],
       "New": [
-        "File/folder baru"
+        "Baru"
       ],
       "New album": [
         "Album baru"
@@ -931,7 +931,7 @@
         "Cari negara"
       ],
       "Search drive": [
-        "Cari di drive"
+        "Cari drive"
       ],
       "See how": [
         "Lihat caranya"
@@ -958,7 +958,7 @@
         "Pasang sebagai sampul album"
       ],
       "Set as cover": [
-        "Pasang sebagai sampul"
+        "Atur sebagai sampul"
       ],
       "Set recovery methods": [
         "Atur metode pemulihan"
@@ -1328,6 +1328,15 @@
       ],
       "More info": [
         "Info selengkapnya"
+      ],
+      "Import now": [
+        "Impor sekarang"
+      ],
+      "Migrate": [
+        "Migrasi"
+      ],
+      "Stop": [
+        "Berhenti"
       ]
     },
     "Actions": {
@@ -1846,6 +1855,9 @@
       ],
       "Subtotal for ${ cycle } month": [
         "Subtotal untuk ${ cycle } bulan"
+      ],
+      "Amount due": [
+        "Jumlah yang dibayar"
       ]
     },
     "Collapsible tooltip": {
@@ -4647,7 +4659,7 @@
         "Tambah ke album terbagi"
       ],
       "All albums": [
-        "Seluruh album"
+        "Semua album"
       ],
       "Recent": [
         "Terkini"
@@ -6567,7 +6579,7 @@
         "Sayangnya, file ini atau sebagian data yang terkandung di dalamnya tidak dapat didekripsi."
       ],
       "Unknown date": [
-        "Tanggal yang tidak diketahui"
+        "Tanggal tidak diketahui"
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
@@ -7261,6 +7273,9 @@
       ],
       "Link expired": [
         "Tautan kedaluwarsa"
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "info": {
@@ -7549,7 +7564,7 @@
         "Hapus informasi terkait pemulihan."
       ],
       "Deleted": [
-        "Dihapus"
+        "Terhapus"
       ],
       "Device": [
         "Perangkat"
@@ -8147,6 +8162,9 @@
       ],
       "Visible columns:": [
         "Kolom yang terlihat:"
+      ],
+      "Client": [
+        "Klien"
       ]
     },
     "Label for contact group color": {
@@ -10232,7 +10250,7 @@
         "Undang anggota"
       ],
       "Maybe Later": [
-        "Nanti Saja"
+        "Mungkin Nanti"
       ],
       "Maybe later": [
         "Mungkin nanti"
@@ -10244,7 +10262,7 @@
         "Lewati"
       ],
       "Skip for now": [
-        "Lewati untuk sementara"
+        "Lewati dahulu"
       ],
       "Try the app": [
         "Coba aplikasinya"
@@ -12237,7 +12255,7 @@
         "Tangkapan layar Anda akan muncul di sini"
       ],
       "Your selfies photos will appear here": [
-        "Foto swafoto Anda akan muncul di sini"
+        "Swafoto Anda akan muncul di sini"
       ],
       "Your tagged photos will appear here": [
         "Foto yang Anda tandai akan muncul di sini"
@@ -12412,6 +12430,9 @@
       ],
       "Size": [
         "Ukuran"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "TableHeader": {
@@ -12463,7 +12484,7 @@
         "RAW"
       ],
       "Screenshots": [
-        "Tangkapan Layar"
+        "Tangkapan layar"
       ],
       "Selfies": [
         "Swafoto"
@@ -13617,6 +13638,9 @@
       ],
       "Something went wrong": [
         "Terjadi kesalahan"
+      ],
+      "Easy switch": [
+        "Perpindahan mudah"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14317,6 +14341,78 @@
       ],
       "Migrated": [
         "Dimigrasikan"
+      ],
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Dapatkan diskon ${ discount }% untuk ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Dapatkan ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/bulan"
+      ],
+      "2 TB of storage to share": [
+        "Ruang penyimpanan 2 TB untuk dibagikan"
+      ],
+      "2 user accounts": [
+        "2 akun pengguna"
+      ],
+      "All premium features from your current plan": [
+        "Seluruh fitur premium dari paket Anda saat ini"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Diskon didasarkan pada harga bulanan standar. Langganan Anda akan diperpanjang dengan tarif tahunan standar saat siklus tagihan berakhir."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "selama 12 bulan"
       ]
     }
   }
