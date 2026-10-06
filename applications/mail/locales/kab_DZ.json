@@ -664,6 +664,9 @@
       "More details about ${ ariaLabelTitle }": [
         "Ugar n telɣut ɣef ${ ariaLabelTitle }"
       ],
+      "More info": [
+        "Ugar n telɣut"
+      ],
       "More info: ${ safeTitle }": [
         "Ugar n telɣut: ${ safeTitle }"
       ],
@@ -3732,11 +3735,6 @@
         "(ulac azwel)"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TAṬ seg uḥraz asemday"
-      ]
-    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "Gdel tinnubga"
@@ -3746,11 +3744,6 @@
       ],
       "Switch plans": [
         "Beddel iɣawasen"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Armi d 6 n iseqdacen"
       ]
     },
     "familyOffer_2023:Error": {
@@ -4672,9 +4665,6 @@
       "Center": [
         "Slemmes"
       ],
-      "Change your password": [
-        "Senfel awal uffir"
-      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Anadi ɣef yinermisen ${ progress } seg ${ max }..."
       ],
@@ -5119,9 +5109,6 @@
       "Organization size": [
         "Teɣzi n tkebbanit"
       ],
-      "password": [
-        "awal uffir"
-      ],
       "Password copied to clipboard": [
         "Awal uffir yettwanɣel ɣer tecfawt"
       ],
@@ -5467,9 +5454,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Seqdec inegzumen n unasiw akken ad tesferkeḍ Imaylen-ik·im s tɣawla."
-      ],
-      "username": [
-        "isem n useqdac"
       ],
       "Users": [
         "Iseqdacen"
@@ -7179,18 +7163,11 @@
       "End-to-end encryption": [
         "Awgelhen seg yixef ɣer yixef"
       ],
-      "Free VPN on a single device": [
-        "VPN baṭel ɣef yibenk asuf"
-      ],
       "Fully refundable for 30 days": [
         "Tiririt n yidrimen s umelkem ɣef 30 n wussan"
       ],
       "GDPR data processing agreement": [
         "Awati n usesfer n yisefka GDPR"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN arurad agafay ɣef ${ n } yibenk",
-        "VPN arurad agafay ɣef ${ n } yibenkan"
       ],
       "HTML signatures": [
         "Izmulen n HTML"
@@ -7322,9 +7299,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Access advanced VPN features": [
-        "Kcem ɣer tmahilin VPN leqqayen"
-      ],
       "AES 256-bit VPN encryption": [
         "Awgelhen n AES 256-bit VPN"
       ],
@@ -7334,21 +7308,11 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Snerni tallunt-ik n uḥraz i usemday n ${ bundleStorage } i useqdac"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Snerni tallunt-ik n uḥraz i usemday n ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Asiɣzef n yiminig"
       ],
       "Central control panel": [
         "Afeggag n usenqed alemmas"
-      ],
-      "Create up to ${ n } calendar": [
-        "Rnu alamma d ${ n } n uwitay",
-        "Rnu alamma d ${ n } n yiwitayen"
-      ],
-      "Dedicated Account manager": [
-        "Amsefrak n umiḍan yettwagen"
       ],
       "Multi-platform support": [
         "Tallalt i tɣeɣer yemgaraden"
@@ -8115,12 +8079,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TAṬ"
-      ],
-      "6 users": [
-        "6 yiseqdacen"
-      ],
       "All paid Mail and Calendar features": [
         "Akk timahilin n lexlaṣ i Mail d Calender"
       ],
@@ -8130,17 +8088,11 @@
       "Highest VPN speed": [
         "Arured afellay maḍi VPN"
       ],
-      "Premium early access": [
-        "Anekcum Premium uzwir"
-      ],
       "Secure cloud storage": [
         "Aḥraz n usigna aɣellsan"
       ],
       "Secure streaming": [
         "Asuddem aɣellsan"
-      ],
-      "Support online privacy": [
-        "Sefrek tabaḍnit srid"
       ]
     },
     "specialoffer: Link": {
@@ -8258,10 +8210,6 @@
       "${ n } VPN connection": [
         "${ n } tuqqna VPN",
         "${ n } n tuqqniwin VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } n tuqqna VPN i useqdac",
-        "${ n } n tuqqniwin VPN i useqdac"
       ]
     },
     "Subscription change warning": {
@@ -9477,6 +9425,36 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Lqem-agi n yiminig Tor ur yettwadhel ara. Ma ulac uɣilif leqqem ɣer ${ stableRelease } aneggaru"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Awi ${ discount }% n usenqes ɣef ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Awi ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/ayyur"
+      ],
+      "2 TB of storage to share": [
+        "2 TAṬ n uklas i ubḍu"
+      ],
+      "2 user accounts": [
+        "2 imiḍanen n useqdac"
+      ],
+      "All premium features from your current plan": [
+        "Timahilin premium akk seg uɣawas-ik amiran"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Isenqasen d-yebnan ɣef wazal n wayyur aseḥḥan. Tajerridt-ik ad tettwaleqqem s wazal aseḥḥan n useggas mi ara yekfu tuzya n tfaturt."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "i 12 wayyuren"
       ]
     },
     "Unlimited offer": {
