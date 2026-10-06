@@ -1046,6 +1046,12 @@
       ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "More info": [
+        "Més informació"
+      ],
+      "Switch to ${ planName }": [
+        "Canvia a ${ planName }"
       ]
     },
     "action": {
@@ -1169,6 +1175,12 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "Managed Service Provider": [
+        "Proveïdor de serveis gestionats"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Les organitzacions amb el complement de proveïdor de serveis gestionats poden crear i gestionar organitzacions filials."
       ]
     },
     "Alarm notification": {
@@ -4428,7 +4440,7 @@
         "Heu arribat al nombre límit de contactes per al vostre compte."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Heu utilitzat totes les adreces del vostre pla. Actualitzeu-lo per afegir-ne una de nova o desactiveu una adreça al vostre compte."
+        "Heu utilitzat totes les adreces del vostre pla. Milloreu el pla per a afegir-ne una de nova o desactiveu una adreça al vostre compte."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
@@ -7098,6 +7110,15 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Teniu una factura pendent de pagament el ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "1 device per user": [
+        "1 dispositiu per usuari"
+      ],
+      "1 vault per user": [
+        "1 caixa forta per usuari"
+      ],
+      "No payment is required.": [
+        "No es requereix cap pagament."
       ]
     },
     "info": {
@@ -10288,7 +10309,7 @@
         "Born Private requereix una donació."
       ],
       "Buying credits requires a separate purchase.": [
-        "Comprar crèdits requereix una compra independent."
+        "L'adquisició de crèdits requereix una compra independent."
       ],
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Només es pot comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
@@ -10300,7 +10321,7 @@
         "Tanqueu les carteres addicionals abans de canviar de pla."
       ],
       "Scribe seats can’t exceed the number of members.": [
-        "Les llicències d'Scribe no poden superar el nombre de membres."
+        "Les llicències de Scribe no poden superar el nombre de membres."
       ],
       "The selected plan doesn’t offer enough addresses for your account.": [
         "El pla seleccionat no ofereix prou adreces per al vostre compte."
@@ -10312,7 +10333,7 @@
         "El pla seleccionat no ofereix prou membres per al vostre compte."
       ],
       "The selected plan doesn’t offer enough storage for your account.": [
-        "El pla seleccionat no ofereix prou emmagatzematge per al teu compte."
+        "El pla seleccionat no ofereix prou emmagatzematge per al vostre compte."
       ],
       "This dedicated server is assigned to a gateway and can’t be changed.": [
         "Aquest servidor dedicat està assignat a una passarel·la i no es pot canviar."
@@ -10330,7 +10351,7 @@
         "Els plans de prova no admeten IP dedicades."
       ],
       "Trial plans don’t support Scribe seats.": [
-        "Els plans de prova no admeten llicències d'Scribe."
+        "Els plans de prova no admeten llicències de Scribe."
       ],
       "Trial plans don’t support this many members.": [
         "Els plans de prova no admeten tants membres."
@@ -10343,6 +10364,9 @@
       ],
       "Your account is too old for Born Private.": [
         "El vostre compte és massa antic per a Born Private."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "En canviar, accepteu els nostres ${ termsLink }."
       ]
     },
     "Payments.Error": {

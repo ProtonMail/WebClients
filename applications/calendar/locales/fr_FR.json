@@ -1043,6 +1043,12 @@
       ],
       "refresh the page": [
         "actualiser la page"
+      ],
+      "More info": [
+        "Plus d'informations"
+      ],
+      "Switch to ${ planName }": [
+        "Passer à ${ planName }"
       ]
     },
     "action": {
@@ -1166,6 +1172,12 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "Managed Service Provider": [
+        "Fournisseur de services gérés"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Les organisations avec l'extension Fournisseur de services gérés peuvent créer et gérer des organisations filiales."
       ]
     },
     "Alarm notification": {
@@ -6975,6 +6987,15 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
+      ],
+      "1 device per user": [
+        "1 appareil par utilisateur"
+      ],
+      "1 vault per user": [
+        "1 coffre-fort par utilisateur"
+      ],
+      "No payment is required.": [
+        "Aucun paiement n'est requis."
       ]
     },
     "info": {
@@ -10217,6 +10238,9 @@
       ],
       "Your account is too old for Born Private.": [
         "Votre compte est trop ancien pour Born Private."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "En effectuant ce changement, vous acceptez nos ${ termsLink }."
       ]
     },
     "Payments.Error": {

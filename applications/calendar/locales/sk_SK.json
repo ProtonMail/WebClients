@@ -1054,6 +1054,12 @@
       ],
       "refresh the page": [
         "obnoviť stránku"
+      ],
+      "More info": [
+        "Viac informácií"
+      ],
+      "Switch to ${ planName }": [
+        "Prejsť na ${ planName }"
       ]
     },
     "action": {
@@ -7294,6 +7300,15 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "1 device per user": [
+        "1 zariadenie na používateľa"
+      ],
+      "1 vault per user": [
+        "1 trezor na používateľa"
+      ],
+      "No payment is required.": [
+        "Nie je potrebné žiadne platba."
       ]
     },
     "info": {
@@ -10705,6 +10720,9 @@
       ],
       "Your account is too old for Born Private.": [
         "Váš účet je príliš starý na službu Born Private."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Prechodom súhlasíte s našimi ${ termsLink }."
       ]
     },
     "Payments.Error": {
