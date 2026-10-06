@@ -240,11 +240,11 @@
       "Cancel": [
         "Cancel·la"
       ],
-      "Change layout": [
-        "Canvia la disposició"
-      ],
       "Change password": [
         "Canvia la contrasenya"
+      ],
+      "Chat": [
+        "Xat"
       ],
       "Chat with us": [
         "Xategeu amb nosaltres"
@@ -303,6 +303,12 @@
       "Create meeting": [
         "Crea una reunió"
       ],
+      "Debug devices": [
+        "Dispositius de depuració"
+      ],
+      "Debug overlay": [
+        "Superposició de la depuració"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -313,7 +319,7 @@
         "Refusa ${ participantName }"
       ],
       "Desync audio output": [
-        "Deixar de sincronitzar la sortida d'àudio"
+        "Dessincronitza la sortida d'àudio"
       ],
       "Disable ${ participantName }'s video": [
         "Desactiva el vídeo de ${ participantName }"
@@ -374,9 +380,6 @@
       ],
       "Enable camera": [
         "Habilita la càmera"
-      ],
-      "Enable captions": [
-        "Activa els subtítols"
       ],
       "Enable waiting room": [
         "Habilita la sala d'espera"
@@ -447,6 +450,9 @@
       "Kick out ${ participantName }": [
         "Expulsa ${ participantName }"
       ],
+      "Layout": [
+        "Disseny"
+      ],
       "Leave": [
         "Surt"
       ],
@@ -465,11 +471,17 @@
       "Lower hand": [
         "Abaixa la mà"
       ],
+      "Meeting info": [
+        "Informació de la reunió"
+      ],
       "Meeting timer": [
         "Temporitzador de la reunió"
       ],
       "Minimize preview": [
         "Minimitza la previsualització"
+      ],
+      "More info": [
+        "Més informació"
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
@@ -492,6 +504,9 @@
       "Noise cancellation": [
         "Cancel·lació de soroll"
       ],
+      "Not now": [
+        "Ara no"
+      ],
       "Open app": [
         "Obre l'aplicació"
       ],
@@ -500,6 +515,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Obre la menció de ${ senderName } al xat"
+      ],
+      "Participants": [
+        "Participants"
       ],
       "Participants join after you approve them": [
         "Els participants s'hi podran unir un cop els aproveu"
@@ -532,7 +550,7 @@
         "Alça la mà"
       ],
       "Re-apply audio output": [
-        "Tornar a aplicar la sortida d'àudio"
+        "Torna a aplicar la sortida d'àudio"
       ],
       "React with ${ emoji }": [
         "Reacciona amb ${ emoji }"
@@ -546,6 +564,9 @@
       ],
       "Record": [
         "Enregistra"
+      ],
+      "Recording": [
+        "S'està enregistrant"
       ],
       "Recording your microphone...": [
         "S'està enregistrant el micròfon..."
@@ -641,6 +662,12 @@
       "Settings": [
         "Preferències"
       ],
+      "Share screen": [
+        "Compartir la pantalla"
+      ],
+      "Show captions": [
+        "Mostra els subtítols"
+      ],
       "Show options": [
         "Mostra les opcions"
       ],
@@ -660,7 +687,7 @@
         "Tanca tots els comptes"
       ],
       "Simulate output device loss": [
-        "Simular la pèrdua del dispositiu de sortida"
+        "Simula la pèrdua del dispositiu de sortida"
       ],
       "Simulate reconnection": [
         "Simula la reconnexió"
@@ -713,6 +740,9 @@
       "Stop Recording Track Stats": [
         "Atura l'enregistrament de les estadístiques de pista"
       ],
+      "Stop sharing": [
+        "Deixa de compartir"
+      ],
       "Submit": [
         "Envia"
       ],
@@ -730,6 +760,9 @@
       ],
       "The current link will stop working.": [
         "L'enllaç actual deixarà de funcionar."
+      ],
+      "Transcription": [
+        "Transcripció"
       ],
       "Try again": [
         "Proveu de nou"
@@ -783,7 +816,7 @@
         "Mostra la factura"
       ],
       "View security details": [
-        "Veure els detalls de seguretat"
+        "Mostra els detalls de seguretat"
       ],
       "Virtual backgrounds": [
         "Fons virtuals"
@@ -811,9 +844,6 @@
       "Blur background": [
         "Difumina el fons"
       ],
-      "Chat": [
-        "Xat"
-      ],
       "Close": [
         "Tanca"
       ],
@@ -826,23 +856,11 @@
       "Copy meeting link": [
         "Copia l'enllaç de la reunió"
       ],
-      "Debug devices": [
-        "Dispositius de depuració"
-      ],
-      "Debug overlay": [
-        "Superposició de depuració"
-      ],
-      "Device Debugger": [
-        "Depurador de dispositiu"
-      ],
       "Go to dashboard": [
         "Ves al tauler de control"
       ],
       "Incoming video": [
         "Vídeo entrant"
-      ],
-      "Layout: ${ selectedLabel }": [
-        "Disposició: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Surt de la reunió"
@@ -852,12 +870,6 @@
       ],
       "Lock meeting": [
         "Bloqueja la reunió"
-      ],
-      "Lower hand": [
-        "Abaixa la mà"
-      ],
-      "Meeting details": [
-        "Detalls de la reunió"
       ],
       "Meeting timer": [
         "Temporitzador de la reunió"
@@ -877,14 +889,8 @@
       "Participant host control options": [
         "Opcions de control dels participants per part de l'amfitrió"
       ],
-      "Participants": [
-        "Participants"
-      ],
       "Picture-in-picture while sharing": [
         "Imatge sobre imatge durant la compartició"
-      ],
-      "Raise hand": [
-        "Alça la mà"
       ],
       "Rotate camera": [
         "Gira la càmera"
@@ -892,14 +898,8 @@
       "Save my name on this device": [
         "Desa el meu nom en aquest dispositiu"
       ],
-      "Screen share": [
-        "Compartició de pantalla"
-      ],
       "Self view": [
         "Vista pròpia"
-      ],
-      "Settings": [
-        "Preferències"
       ],
       "Stop recording and download.": [
         "Atura l'enregistrament i descarrega'l."
@@ -910,17 +910,11 @@
       "Toggle emoji reactions": [
         "Commuta les reaccions amb emojis"
       ],
-      "Toggle meeting details": [
-        "Commuta els detalls de la reunió"
-      ],
       "Toggle participants": [
         "Commuta els participants"
       ],
       "Toggle screen share": [
         "Commuta la compartició de pantalla"
-      ],
-      "Toggle settings": [
-        "Commuta les preferències"
       ],
       "Video settings": [
         "Preferències de vídeo"
@@ -2945,6 +2939,9 @@
       "Host": [
         "Amfitrió"
       ],
+      "Host has another meeting in progress": [
+        "L'amfitrió té una altra reunió en curs"
+      ],
       "Host has disabled live captions for this meeting.": [
         "L'amfitrió ha desactivat els subtítols en directe per a aquesta reunió."
       ],
@@ -3083,6 +3080,9 @@
       "Microphone permission denied": [
         "S'ha denegat el permís del micròfon"
       ],
+      "More options": [
+        "Més opcions"
+      ],
       "Mute microphone": [
         "Silencia el micròfon"
       ],
@@ -3134,6 +3134,9 @@
       "No speaker detected": [
         "No s'ha detectat cap altaveu"
       ],
+      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
+        "S'ha desactivat la cancel·lació de soroll perquè el vostre dispositiu té problemes de rendiment. Podeu tornar-la a activar a la configuració d'àudio."
+      ],
       "Not sent, check your connection.": [
         "No s'ha enviat. Comproveu la connexió."
       ],
@@ -3168,7 +3171,7 @@
         "Els participants no poden fer servir els subtítols en directe"
       ],
       "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
-        "Participants mostra qui està connectat en aquest moment. Els membres d'MLS mostra qui està inclòs en el grup de seguretat de la reunió. Aquests números poden diferir breument, però la diferència ha durat més de l'esperat."
+        "Participants mostra qui està connectat en aquest moment. Membres d'MLS mostra qui està inclòs en el grup de seguretat de la reunió. Aquests nombres poden diferir breument, però la diferència ha durat més de l'esperat."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Enganxeu l'enllaç de ${ MEET_APP_NAME } per unir-vos a una reunió segura"
@@ -3275,8 +3278,11 @@
       "Share screen": [
         "Comparteix la pantalla"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Compartiu aquest enllaç per convidar altres persones. També el podeu trobar en qualsevol moment fent clic a la icona d'informació de la barra d'eines."
+      "Share this link to invite others. You can also find it anytime under Meeting info in the More options menu.": [
+        "Compartiu aquest enllaç per convidar altres persones. També el trobareu en qualsevol moment a Informació de la reunió, al menú Més opcions."
+      ],
+      "Show live captions?": [
+        "Voleu que es mostrin els subtítols en directe?"
       ],
       "Sign in": [
         "Inicieu la sessió"
@@ -3286,9 +3292,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "La selecció d'altaveu no està disponible en aquest navegador. Utilitzeu les preferències del sistema per a triar un altaveu diferent."
-      ],
-      "Start recording": [
-        "Inicia l'enregistrament"
       ],
       "Starting camera…": [
         "S'està iniciant la càmera…"
@@ -3307,6 +3310,9 @@
       ],
       "Thank you for joining.": [
         "Gràcies per unir-vos-hi."
+      ],
+      "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
+        "El servei de subtitulació utilitza l'àudio de la reunió. Els subtítols només són visibles per a vosaltres i no es desen."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "L'amfitrió us ha tret d'aquesta reunió. Si ha estat un error, demaneu-li que us torni a convidar."
@@ -3332,6 +3338,9 @@
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Aquesta reunió ha assolit el límit de temps d'un pla gratuït. Milloreu de pla per ampliar la durada de la reunió en futures trucades."
       ],
+      "This meeting reached the time limit.": [
+        "Aquesta reunió ha arribat al límit de temps."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Aquesta reunió s'ha obert a l'aplicació d'escriptori ${ MEET_APP_NAME }."
       ],
@@ -3349,9 +3358,6 @@
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Per crear una sala, necessitareu **un compte gratuït de ${ BRAND_NAME }** perquè puguem desar la sala. Només us portarà uns segons."
-      ],
-      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
-        "Per crear subtítols en directe, el servei de subtitulació necessita accedir a l'àudio de la reunió. Els subtítols només són visibles per a vós i no es desen."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
@@ -3373,9 +3379,6 @@
       ],
       "Turn on camera": [
         "Activa la càmera"
-      ],
-      "Turn on live captions?": [
-        "Voleu activar els subtítols en directe?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "No s'ha pogut tornar a connectar a la reunió. Torneu-vos-hi a unir o sortiu-ne."
@@ -3437,6 +3440,9 @@
       "Yesterday — ${ absoluteDate }": [
         "Ahir — ${ absoluteDate }"
       ],
+      "You": [
+        "Vós"
+      ],
       "You are almost there": [
         "Ja gairebé ho teniu"
       ],
@@ -3451,6 +3457,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Podeu desactivar el micròfon i la càmera en qualsevol moment durant la reunió"
+      ],
+      "You have too many meetings in progress": [
+        "Teniu massa reunions en curs"
       ],
       "You left the meeting": [
         "Heu sortit de la reunió"
@@ -3629,6 +3638,9 @@
       "Does not repeat": [
         "No es repeteix"
       ],
+      "Don’t show this message again": [
+        "No tornis a mostrar aquest missatge"
+      ],
       "Download .ics": [
         "Descarrega .ics"
       ],
@@ -3718,6 +3730,9 @@
       ],
       "Monday to Friday": [
         "De dilluns a divendres"
+      ],
+      "More options": [
+        "Més opcions"
       ],
       "Mountain landscape background": [
         "Fons de paisatge de muntanya"
@@ -4203,7 +4218,7 @@
         "Assigna un nou amfitrió"
       ],
       "Audio Output Testing": [
-        "S'està provant la sortida d'àudio"
+        "Test de la sortida d'àudio"
       ],
       "Available Cameras": [
         "Càmeres disponibles"
@@ -4320,6 +4335,9 @@
       "Meeting": [
         "Reunió"
       ],
+      "Meeting actions": [
+        "Accions de la reunió"
+      ],
       "Meeting created": [
         "S'ha creat la reunió"
       ],
@@ -4367,6 +4385,9 @@
       ],
       "Publications": [
         "Publicacions"
+      ],
+      "Quick reactions": [
+        "Reaccions ràpides"
       ],
       "Reconnection Testing": [
         "Proves de reconnexió"

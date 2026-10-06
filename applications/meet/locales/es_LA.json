@@ -240,9 +240,6 @@
       "Cancel": [
         "Cancelar"
       ],
-      "Change layout": [
-        "Cambiar el diseño"
-      ],
       "Change password": [
         "Cambiar contraseña"
       ],
@@ -375,9 +372,6 @@
       "Enable camera": [
         "Activar la cámara"
       ],
-      "Enable captions": [
-        "Activar subtítulos"
-      ],
       "Enable waiting room": [
         "Activar sala de espera"
       ],
@@ -471,6 +465,9 @@
       "Minimize preview": [
         "Minimizar vista previa"
       ],
+      "More info": [
+        "Más información"
+      ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
       ],
@@ -491,6 +488,9 @@
       ],
       "Noise cancellation": [
         "Cancelación de ruido"
+      ],
+      "Not now": [
+        "Ahora no"
       ],
       "Open app": [
         "Abrir la aplicación"
@@ -713,6 +713,9 @@
       "Stop Recording Track Stats": [
         "Detener estadísticas de grabación"
       ],
+      "Stop sharing": [
+        "Dejar de compartir"
+      ],
       "Submit": [
         "Enviar"
       ],
@@ -811,9 +814,6 @@
       "Blur background": [
         "Difuminar fondo"
       ],
-      "Chat": [
-        "Chat"
-      ],
       "Close": [
         "Cerrar"
       ],
@@ -826,23 +826,11 @@
       "Copy meeting link": [
         "Copiar enlace de la reunión"
       ],
-      "Debug devices": [
-        "Dispositivos de depuración"
-      ],
-      "Debug overlay": [
-        "Superposición de depuración"
-      ],
-      "Device Debugger": [
-        "Depurador del dispositivo"
-      ],
       "Go to dashboard": [
         "Ir al panel de control"
       ],
       "Incoming video": [
         "Video entrante"
-      ],
-      "Layout: ${ selectedLabel }": [
-        "Diseño: ${ selectedLabel }"
       ],
       "Leave Meeting": [
         "Salir de la reunión"
@@ -852,12 +840,6 @@
       ],
       "Lock meeting": [
         "Bloquear reunión"
-      ],
-      "Lower hand": [
-        "Bajar la mano"
-      ],
-      "Meeting details": [
-        "Detalles de la reunión"
       ],
       "Meeting timer": [
         "Temporizador de reunión"
@@ -877,14 +859,8 @@
       "Participant host control options": [
         "Opciones de control del anfitrión participante"
       ],
-      "Participants": [
-        "Participantes"
-      ],
       "Picture-in-picture while sharing": [
         "Imagen-en-imagen mientras comparte"
-      ],
-      "Raise hand": [
-        "Levantar la mano"
       ],
       "Rotate camera": [
         "Rotar cámara"
@@ -892,14 +868,8 @@
       "Save my name on this device": [
         "Guardar mi nombre en este dispositivo"
       ],
-      "Screen share": [
-        "Compartir pantalla"
-      ],
       "Self view": [
         "Vista propia"
-      ],
-      "Settings": [
-        "Ajustes"
       ],
       "Stop recording and download.": [
         "Detener la grabación y descargar."
@@ -910,17 +880,11 @@
       "Toggle emoji reactions": [
         "Alternar reacciones con emojis"
       ],
-      "Toggle meeting details": [
-        "Alternar detalles de la reunión"
-      ],
       "Toggle participants": [
         "Alternar participantes"
       ],
       "Toggle screen share": [
         "Alternar compartir pantalla"
-      ],
-      "Toggle settings": [
-        "Alternar ajustes"
       ],
       "Video settings": [
         "Ajustes de video"
@@ -2945,6 +2909,9 @@
       "Host": [
         "Anfitrión"
       ],
+      "Host has another meeting in progress": [
+        "El anfitrión tiene otra reunión en progreso"
+      ],
       "Host has disabled live captions for this meeting.": [
         "El anfitrión desactivó los subtítulos en directo para esta reunión."
       ],
@@ -3275,9 +3242,6 @@
       "Share screen": [
         "Compartir pantalla"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Comparta este enlace para invitar a otros. También puede encontrarlo en cualquier momento haciendo clic en el ícono de información en la barra de herramientas."
-      ],
       "Sign in": [
         "Inicie sesión"
       ],
@@ -3286,9 +3250,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "La selección de altavoz no está disponible en este navegador. Use los ajustes de su sistema para elegir un altavoz diferente."
-      ],
-      "Start recording": [
-        "Iniciar grabación"
       ],
       "Starting camera…": [
         "Iniciando la cámara…"
@@ -3332,6 +3293,9 @@
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Esta reunión alcanzó el límite de tiempo del plan gratuito. Actualice para extender el tiempo de reunión en futuras llamadas."
       ],
+      "This meeting reached the time limit.": [
+        "Esta reunión alcanzó el límite de tiempo."
+      ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunión fue abierta en la aplicación de escritorio de ${ MEET_APP_NAME }."
       ],
@@ -3349,9 +3313,6 @@
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Para crear una sala, necesitará **una Cuenta ${ BRAND_NAME } gratuita** para que podamos guardar la sala. Esto solo toma unos segundos."
-      ],
-      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
-        "Para crear subtítulos en directo, el servicio necesita acceder al audio de la reunión. Los subtítulos solo son visibles a usted y no se guardan."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
@@ -3373,9 +3334,6 @@
       ],
       "Turn on camera": [
         "Encender la cámara"
-      ],
-      "Turn on live captions?": [
-        "¿Activar subtítulos en directo?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "No se puede reconectar a la reunión. Vuelva a unirse o abandone."
@@ -3437,6 +3395,9 @@
       "Yesterday — ${ absoluteDate }": [
         "Ayer — ${ absoluteDate }"
       ],
+      "You": [
+        "Usted"
+      ],
       "You are almost there": [
         "Ya casi terminamos"
       ],
@@ -3451,6 +3412,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Aún puede apagar su micrófono y cámara en cualquier momento de la reunión"
+      ],
+      "You have too many meetings in progress": [
+        "Tiene muchas reuniones en progreso"
       ],
       "You left the meeting": [
         "Abandonó la reunión"
@@ -3718,6 +3682,9 @@
       ],
       "Monday to Friday": [
         "De lunes a viernes"
+      ],
+      "More options": [
+        "Más opciones"
       ],
       "Mountain landscape background": [
         "Fondo de paisaje de montaña"

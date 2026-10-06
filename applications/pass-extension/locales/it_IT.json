@@ -700,6 +700,12 @@
       "Show Less": [
         "Mostra meno"
       ],
+      "Show less": [
+        "Mostra meno"
+      ],
+      "Show more": [
+        "Mostra di più"
+      ],
       "Sign back in": [
         "Effettua nuovamente l'accesso"
       ],
@@ -1885,9 +1891,6 @@
       "Can view this item.": [
         "Può visualizzare questo elemento."
       ],
-      "Change your password": [
-        "Cambia la password"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Verifica di ${ compromised.progress.completed } password su ${ compromised.progress.total } in corso."
       ],
@@ -1990,9 +1993,6 @@
       "Editor": [
         "Editor"
       ],
-      "email": [
-        "email"
-      ],
       "Email address successfully deleted from monitoring": [
         "Indirizzo email eliminato dal monitoraggio"
       ],
@@ -2088,9 +2088,6 @@
       ],
       "Fill in the CSV with your data": [
         "Compila il file CSV con i tuoi dati"
-      ],
-      "finance": [
-        "dati finanziari"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Segui quei passaggi per importare i tuoi dati con un file CSV generico:"
@@ -2248,9 +2245,6 @@
       "Medium Priority": [
         "Priorità media"
       ],
-      "Monitor accounts": [
-        "Monitora gli account"
-      ],
       "Monitoring settings successfully updated": [
         "Impostazioni di monitoraggio aggiornate con successo"
       ],
@@ -2362,9 +2356,6 @@
       ],
       "Passkey sign-in": [
         "Accesso con passkey"
-      ],
-      "password": [
-        "password"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blocco con password impostato correttamente. Utilizzalo per sbloccare ${ PASS_APP_NAME }"
@@ -2853,9 +2844,6 @@
       ],
       "User's access successfully updated": [
         "Accesso dell'utente aggiornato con successo"
-      ],
-      "username": [
-        "nome utente"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "La cassaforte \"${ payload.content.name }\" è stata eliminata con successo"
@@ -5526,9 +5514,6 @@
       ],
       "Move to trash": [
         "Sposta nel cestino"
-      ],
-      "Name is required": [
-        "Nome obbligatorio"
       ],
       "No items": [
         "Nessun elemento"

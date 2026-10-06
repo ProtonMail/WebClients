@@ -38,6 +38,9 @@
       "Get verification code": [
         "احصل على رمز التحقق"
       ],
+      "More info": [
+        "المزيد من المعلومات"
+      ],
       "More info: ${ safeTitle }": [
         "مزيد من المعلومات: ${ safeTitle }"
       ],
@@ -1550,14 +1553,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "أضف المزيد من التخصيص مع 15 عنوان بريد إلكتروني ودعم لـ 3 نطاقات بريد إلكتروني مخصصة"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "عزز مساحة التخزين لديك إلى ${ bundleStorage } لكل مستخدم"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "عزز مساحة التخزين لديك إلى إجمالي ${ bundleStorage }"
       ],
       "Support for ${ n } custom email domains": [
         "دعم نطاقات البريد الإلكتروني المخصصة ${ n }",
@@ -1571,11 +1568,6 @@
     "Placeholder": {
       "Password": [
         "كلمة السر"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "جميع الميزات المميزة من ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } و ${ PASS_SHORT_APP_NAME } و ${ VPN_SHORT_APP_NAME } و ${ DRIVE_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {

@@ -700,6 +700,12 @@
       "Show Less": [
         "Tampilkan Lebih Sedikit"
       ],
+      "Show less": [
+        "Tampilkan lebih sedikit"
+      ],
+      "Show more": [
+        "Tampilkan lebih banyak"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Masuk dengan ${ BRAND_NAME }"
       ],
@@ -1802,9 +1808,6 @@
       "Can view this item.": [
         "Dapat melihat item ini."
       ],
-      "Change your password": [
-        "Ubah kata sandi Anda"
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "Konfirmasikan kata sandi tambahan Anda untuk melanjutkan penghapusannya."
       ],
@@ -1885,9 +1888,6 @@
       ],
       "Editor": [
         "Editor"
-      ],
-      "email": [
-        "email"
       ],
       "Email address successfully deleted from monitoring": [
         "Alamat email berhasil dihapus dari monitoring"
@@ -1981,9 +1981,6 @@
       ],
       "Fill in the CSV with your data": [
         "Isi CSV dengan data Anda"
-      ],
-      "finance": [
-        "keuangan"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Temukan \"Agen Autentikasi OpenSSH\", klik kanan Properti."
@@ -2150,9 +2147,6 @@
       "Medium Priority": [
         "Prioritas Menengah"
       ],
-      "Monitor accounts": [
-        "Monitor akun"
-      ],
       "Monitoring settings successfully updated": [
         "Pengaturan monitoring berhasil diperbarui"
       ],
@@ -2167,9 +2161,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -2248,9 +2239,6 @@
       ],
       "Pass Plus trial": [
         "Uji coba Pass Plus"
-      ],
-      "password": [
-        "kata sandi"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kunci kata sandi berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
@@ -2710,9 +2698,6 @@
       ],
       "User's access successfully updated": [
         "Akses pengguna berhasil diperbarui"
-      ],
-      "username": [
-        "nama pengguna"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Brankas \"${ payload.content.name }\" berhasil dihapus"
@@ -5405,9 +5390,6 @@
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
-      ],
-      "Name is required": [
-        "Nama dibutuhkan"
       ],
       "No items": [
         "Tidak ada item"

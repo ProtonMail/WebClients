@@ -38,6 +38,9 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
+      "More info": [
+        "Mere info"
+      ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
       ],
@@ -1514,14 +1517,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Tilføj mere personalisering med 15 e-mailadresser og understøttelse af 3 brugerdefinerede e-maildomæner"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Forøg din lagerplads til ${ bundleStorage } pr. bruger"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Forøg din lagerplads til ${ bundleStorage } i alt"
       ],
       "Support for ${ n } custom email domain": [
         "Mulighed for ${ n } brugerdefineret e-mail-domæne",
@@ -1531,11 +1528,6 @@
     "Placeholder": {
       "Password": [
         "Adgangskode"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Alle premium-funktioner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {

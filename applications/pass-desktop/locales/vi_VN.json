@@ -700,6 +700,12 @@
       "Show Less": [
         "Hiển thị ít hơn"
       ],
+      "Show less": [
+        "Ẩn bớt"
+      ],
+      "Show more": [
+        "Hiển thị thêm"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Đăng nhập bằng ${ BRAND_NAME }"
       ],
@@ -1802,9 +1808,6 @@
       "Can view this item.": [
         "Có thể xem mục này."
       ],
-      "Change your password": [
-        "Thay đổi mật khẩu"
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "Xác nhận mật khẩu cấp hai để tiếp tục với việc gỡ bỏ nó."
       ],
@@ -1885,9 +1888,6 @@
       ],
       "Editor": [
         "Biên tập viên"
-      ],
-      "email": [
-        "email"
       ],
       "Email address successfully deleted from monitoring": [
         "Đã xóa địa chỉ email khỏi giám sát thành công"
@@ -1981,9 +1981,6 @@
       ],
       "Fill in the CSV with your data": [
         "Điền vào tệp CSV bằng dữ liệu của bạn"
-      ],
-      "finance": [
-        "tài chính"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Tìm \"OpenSSH Authentication Agent\", nhấp chuột phải chọn Properties."
@@ -2150,9 +2147,6 @@
       "Medium Priority": [
         "Ưu tiên trung bình"
       ],
-      "Monitor accounts": [
-        "Giám sát tài khoản"
-      ],
       "Monitoring settings successfully updated": [
         "Đã cập nhật cài đặt giám sát thành công"
       ],
@@ -2167,9 +2161,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -2248,9 +2239,6 @@
       ],
       "Pass Plus trial": [
         "Dùng thử Pass Plus"
-      ],
-      "password": [
-        "mật khẩu"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công khóa bằng mật khẩu. Sử dụng để mở khóa ${ PASS_APP_NAME }"
@@ -2710,9 +2698,6 @@
       ],
       "User's access successfully updated": [
         "Đã cập nhật quyền truy cập của người dùng"
-      ],
-      "username": [
-        "tên người dùng"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Đã xóa thành công kho \"${ payload.content.name }\""
@@ -5402,9 +5387,6 @@
       ],
       "Move to trash": [
         "Di chuyển vào thùng rác"
-      ],
-      "Name is required": [
-        "Tên được yêu cầu"
       ],
       "No items": [
         "Không có mục nào"

@@ -718,6 +718,12 @@
       "Show Less": [
         "Daha az görüntüle"
       ],
+      "Show less": [
+        "Daha az görüntüle"
+      ],
+      "Show more": [
+        "Daha fazla görüntüle"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
       ],
@@ -1882,9 +1888,6 @@
       "Can view this item.": [
         "Bu ögeyi görüntüleyebilir."
       ],
-      "Change your password": [
-        "Parolanızı değiştirin"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "${ compromised.progress.completed } / ${ compromised.progress.total } parola denetleniyor"
       ],
@@ -1971,9 +1974,6 @@
       ],
       "Editor": [
         "Düzenleyici"
-      ],
-      "email": [
-        "e-posta"
       ],
       "Email address successfully deleted from monitoring": [
         "E-posta adresi izlemeden çıkarıldı"
@@ -2067,9 +2067,6 @@
       ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
-      ],
-      "finance": [
-        "finans"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "\"OpenSSH Authentication Agent\" hizmetini bulun ve üzerine sağ tıklayıp Özellikleri seçin."
@@ -2257,9 +2254,6 @@
       "Medium Priority": [
         "Orta öncelik"
       ],
-      "Monitor accounts": [
-        "Hesapları izle"
-      ],
       "Monitoring settings successfully updated": [
         "İzleme ayarları güncellendi"
       ],
@@ -2368,9 +2362,6 @@
       ],
       "Pass Plus trial": [
         "Proton Pass Plus denemesi"
-      ],
-      "password": [
-        "parola"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Parola ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
@@ -2838,9 +2829,6 @@
       ],
       "User's access successfully updated": [
         "Kullanıcının erişimi güncellendi"
-      ],
-      "username": [
-        "kullanıcı adı"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "\"${ payload.content.name }\" kasası silindi"
@@ -5510,6 +5498,22 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } parolası gereklidir"
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "Olabilecek en fazla içe içe düzeye ulaşıldığı için ${ count } klasör üst klasörü ile birleştirildi.",
+        "Olabilecek en fazla içe içe düzeye ulaşıldığı için ${ count } klasör üst klasörü ile birleştirildi."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "Üst klasörü en fazla alt klasör sayısına ulaştığından ${ count } klasör içe aktarılmadı. Ögeleri kullanılabilecek en yakın klasör içine aktarıldı.",
+        "Üst klasörü en fazla alt klasör sayısına ulaştığından ${ count } klasör içe aktarılmadı. Ögeleri kullanılabilecek en yakın klasör içine aktarıldı."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "Bu kasa klasör sayısı sınırına ulaştığından ${ count } klasör içe aktarılmadı. Ögeleri kullanılabilecek en yakın klasör içine aktarıldı.",
+        "Bu kasa klasör sayısı sınırına ulaştığından ${ count } klasör içe aktarılmadı. Ögeleri kullanılabilecek en yakın klasör içine aktarıldı."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } klasör oluşturulamadı. Ögeleri en yakın klasör içine aktarıldı.",
+        "${ failed } klasör oluşturulamadı. Ögeleri en yakın klasör içine aktarıldı."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } güçlü bir denetim sağlar, ancak tek bir hata bile otomatik doldurma özelliğinin sahte veya kimlik avı amaçlı siteler ile eşleşmesine ve bu verilerin doldurulmasına neden olabilir."
       ],
@@ -5650,9 +5654,6 @@
       ],
       "Move to trash": [
         "Çöpe at"
-      ],
-      "Name is required": [
-        "Adın yazılması zorunludur"
       ],
       "No items": [
         "Herhangi bir öge yok"

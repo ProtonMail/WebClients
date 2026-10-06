@@ -232,6 +232,9 @@
       "More benefits": [
         "Weitere Vorteile"
       ],
+      "More info": [
+        "Weitere Informationen"
+      ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
       ],
@@ -373,6 +376,9 @@
       "Switch or add account": [
         "Konto wechseln oder hinzufügen"
       ],
+      "Switch to ${ planName }": [
+        "Zu ${ planName } wechseln"
+      ],
       "Take a tour": [
         "Rundgang"
       ],
@@ -511,6 +517,12 @@
       ],
       "Domains": [
         "Domains"
+      ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisationen mit dem Add-on „Managed Service Provider“ können untergeordnete Organisationen anlegen und verwalten."
       ],
       "Servers": [
         "Server"
@@ -1147,9 +1159,6 @@
       ],
       "Basic chat history": [
         "Einfacher Chatverlauf"
-      ],
-      "Built and based in Europe": [
-        "Entwickelt und Ansässig in Europa"
       ],
       "Compliance with data protection regulations": [
         "Einhaltung der Datenschutzbestimmungen"
@@ -2828,6 +2837,12 @@
         "${ organization.BonusVPN } zusätzliche Verbindung für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
         "${ organization.BonusVPN } zusätzliche Verbindungen für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)"
       ],
+      "1 device per user": [
+        "1 Gerät je Benutzer"
+      ],
+      "1 vault per user": [
+        "1 Tresor je Benutzer"
+      ],
       "30-day money-back guarantee.": [
         "30 Tage Geld-zurück-Garantie."
       ],
@@ -3053,6 +3068,9 @@
       ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
+      ],
+      "No payment is required.": [
+        "Es ist keine Zahlung erforderlich."
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
@@ -3981,9 +3999,6 @@
       "Auto-reply": [
         "Automatische Antworten"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Kreditkarten automatisch ausfüllen (bald verfügbar)"
-      ],
       "Automatic email forwarding": [
         "Automatische E-Mail-Weiterleitung"
       ],
@@ -4010,9 +4025,6 @@
       ],
       "Custom and secure business email": [
         "Benutzerdefinierte und sichere geschäftliche E-Mails"
-      ],
-      "Custom domains for email aliases": [
-        "Eigene Domains für E-Mail-Aliasse"
       ],
       "Custom email domains": [
         "Eigene E-Mail-Domains"
@@ -4071,9 +4083,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Kostenlose Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Kostenloses VPN auf einem Gerät"
-      ],
       "Fully refundable for 30 days": [
         "Vollständig rückerstattbar für 30 Tage"
       ],
@@ -4082,10 +4091,6 @@
       ],
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Hochgeschwindigkeits-VPN auf ${ n } Gerät",
-        "Hochgeschwindigkeits-VPN auf ${ n } Geräten"
       ],
       "HTML signatures": [
         "HTML-Signaturen"
@@ -4224,9 +4229,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Unbegrenzte geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Unbegrenzte gemeinsame Tresore mit Zugriffsberechtigungen"
       ],
       "Unlimited vault sharing": [
         "Unbegrenztes Teilen von Tresoren"
@@ -4519,9 +4521,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Die Festplatten unserer Server werden mit mehreren Passwortebenen vollständig verschlüsselt, sodass deine Daten auch dann geschützt bleiben, wenn unsere Hardware kompromittiert wurde."
       ],
-      "Password management and identity protection": [
-        "Passwortverwaltung und Identitätsschutz"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
       ],
@@ -4624,12 +4623,6 @@
         "${ n } Land",
         "${ n } Länder"
       ],
-      "Access advanced VPN features": [
-        "Profitiere von erweiterten VPN-Funktionen"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Sorge für eine persönliche Note mit 15 E-Mail-Adressen und 3 eigenen E-Mail-Domains."
-      ],
       "AES 256-bit VPN encryption": [
         "256-Bit AES-VPN-Verschlüsselung"
       ],
@@ -4639,9 +4632,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Erhöhe deinen Speicherplatz auf ${ bundleStorage } pro Benutzer."
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Erhöhe deinen Speicherplatz auf insgesamt ${ bundleStorage }."
-      ],
       "Browser extension": [
         "Browser-Erweiterung"
       ],
@@ -4650,13 +4640,6 @@
       ],
       "Central control panel": [
         "Zentrale Systemsteuerung"
-      ],
-      "Create up to ${ n } calendar": [
-        "Erstelle bis zu ${ n } Kalender",
-        "Erstelle bis zu ${ n } Kalender"
-      ],
-      "Dedicated Account manager": [
-        "Dedizierter Kundenbetreuer"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedizierte Serverstandorte in mehr als ${ numberOfCountries } Ländern"
@@ -4735,9 +4718,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Sicherer Tresor, gemeinsame Nutzung von Einträgen und Links"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Unbegrenzte Anzahl von Logins, Notizen, Kreditkarten und mehr"
       ]
     },
     "pass_signup_2023: Title": {
@@ -4824,6 +4804,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (zzgl. MwSt.)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kann nicht mit ${ PLAN_NAMES[PLANS.PASS] } kombiniert werden."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ist nur in Unternehmensabonnements verfügbar."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate } % Steuern: ${ taxAmountElement }"
       ],
@@ -4833,8 +4819,23 @@
       "Amount due after trial on ${ formattedDate }": [
         "Betrag fällig nach der Testversion am ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Für dieses Abonnement ist eine Organisation erforderlich."
+      ],
       "Billing Country": [
         "Rechnungsland"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "«Born Private» kann nicht gekauft werden, wenn ein aktives Abonnement besteht."
+      ],
+      "Born Private requires a donation.": [
+        "Für «Born Private» ist eine Spende erforderlich."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Der Erwerb von Guthaben erfordert einen separaten Kauf."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Mit dem Wechsel erklärst du dich mit unseren ${ termsLink } einverstanden."
       ],
       "Card number": [
         "Kartennummer"
@@ -4875,11 +4876,20 @@
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Es kann nur ein ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } erworben werden."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Mit ${ IDEAL_WERO_BRAND_NAME } bezahlen"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Bitte schließe alle zusätzlichen Wallet-Konten, bevor du dein Abonnement wechselst."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Bitte schließe alle zusätzlichen Wallets, bevor du dein Abonnement wechselst."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
@@ -4889,6 +4899,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Die Anzahl der Scribe-Lizenzen darf die Anzahl der Mitglieder nicht übersteigen."
       ],
       "Tax ${ rate }%": [
         "Steuer ${ rate } %"
@@ -4902,6 +4915,18 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerung gültig.",
         "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerungen gültig."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Das ausgewählte Abonnement bietet eine zu geringe Anzahl an Adressen für dein Konto."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Das ausgewählte Abonnement bietet nicht genügend Domains für dein Konto."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Der ausgewählte Tarif bietet dir eine zu geringe Anzahl an Mitgliedern für dein Konto."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Das ausgewählte Abonnement bietet nicht genügend Speicherplatz für dein Konto."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monat gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
@@ -4932,14 +4957,35 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Diese Aktion erweitert dein bestehendes Abonnement. Dir werden nur die neuen Ergänzungen für die verbleibende Zeit des aktuellen Abrechnungszeitraums in Rechnung gestellt. Das Verlängerungsdatum deines Abonnements wird nicht geändert."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Dieser dedizierte Server ist einem Gateway zugewiesen und kann nicht geändert werden."
+      ],
       "This offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement nicht verfügbar."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Diese Zahlungsmethode wird dein neuer Standard für alle zukünftigen Verlängerungen."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Dieses Abonnement bietet keine Unterstützung für die Mitglieder deines Kontos."
+      ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Testversionen unterstützen keine ${ LUMO_SHORT_APP_NAME }-Lizenzen."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Testversionen unterstützen keine eigenen Domains."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Testversionen unterstützen keine dedizierten IP-Adressen."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Testversionen unterstützen keine Scribe-Lizenzen."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Testversionen unterstützen nicht so viele Mitglieder."
       ],
       "VAT number": [
         "Umsatzsteuernummer"
@@ -4953,11 +4999,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du hast dieses Abonnement bereits. Du kannst dein Abonnement auf ${ subscriptionPlatform } ändern."
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du besitzt bereits ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Du besitzt „Born Private“ bereits."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
       "You will soon be redirected to verify your payment.": [
         "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
+      ],
+      "Your account is too old for Born Private.": [
+        "Dein Konto ist zu alt für „Born Private“."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_WERO_BRAND_NAME } nur Zahlungen in Euro unterstützt."
@@ -5510,10 +5565,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-Verbindung pro Benutzer",
-        "${ n } VPN-Verbindungen pro Benutzer"
       ],
       "VPN connection for ${ n } device per user": [
         "VPN-Verbindung für ${ n } Gerät pro Benutzer",

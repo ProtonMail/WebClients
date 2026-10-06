@@ -700,6 +700,12 @@
       "Show Less": [
         "Pokaż mniej"
       ],
+      "Show less": [
+        "Pokaż mniej"
+      ],
+      "Show more": [
+        "Pokaż więcej"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Zaloguj się przez ${ BRAND_NAME }"
       ],
@@ -1868,9 +1874,6 @@
       "Can view this item.": [
         "Odczyt"
       ],
-      "Change your password": [
-        "Zmień hasło"
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "Potwierdź dodatkowe hasło, aby je usunąć."
       ],
@@ -1951,9 +1954,6 @@
       ],
       "Editor": [
         "Edycja"
-      ],
-      "email": [
-        "adres e-mail"
       ],
       "Email address successfully deleted from monitoring": [
         "Adres e-mail został usunięty z monitoringu"
@@ -2047,9 +2047,6 @@
       ],
       "Fill in the CSV with your data": [
         "Wypełnij plik CSV danymi"
-      ],
-      "finance": [
-        "finanse"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Znajdź usługę „OpenSSH Authentication Agent”, kliknij prawym przyciskiem myszy i wybierz Właściwości."
@@ -2225,9 +2222,6 @@
       "Medium Priority": [
         "Średni priorytet"
       ],
-      "Monitor accounts": [
-        "Monitoring kont"
-      ],
       "Monitoring settings successfully updated": [
         "Ustawienia monitoringu zostały zaktualizowane"
       ],
@@ -2329,9 +2323,6 @@
       ],
       "Pass Plus trial": [
         "Wersja próbna planu Pass Plus"
-      ],
-      "password": [
-        "hasło"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blokada za pomocą hasła została włączona. Użyj tego hasła, aby odblokować ${ PASS_APP_NAME }"
@@ -2797,9 +2788,6 @@
       ],
       "User's access successfully updated": [
         "Uprawienia użytkownika zostały zaktualizowane"
-      ],
-      "username": [
-        "nazwa użytkownika"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Sejf \"${ payload.content.name }\" został usunięty"
@@ -5588,9 +5576,6 @@
       ],
       "Move to trash": [
         "Przenieś do kosza"
-      ],
-      "Name is required": [
-        "Nazwa jest wymagana"
       ],
       "No items": [
         "Brak elementów"
