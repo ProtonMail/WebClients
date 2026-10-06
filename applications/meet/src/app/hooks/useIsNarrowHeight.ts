@@ -1,21 +1,3 @@
-import { useEffect, useState } from 'react';
+import { useMediaQuery } from './useMediaQuery';
 
-export const useIsNarrowHeight = () => {
-    // Build the media query string once
-    const query = `(max-height: 480px)`;
-
-    // Initialise from the current match status
-    const [isNarrowHeight, setIsNarrowHeight] = useState(() => window.matchMedia(query).matches);
-
-    useEffect(() => {
-        const mql = window.matchMedia(query);
-        const listener = (e: MediaQueryListEvent) => setIsNarrowHeight(e.matches);
-
-        // Newer browsers: addEventListener
-        mql.addEventListener('change', listener);
-
-        return () => mql.removeEventListener('change', listener);
-    }, [query]);
-
-    return isNarrowHeight;
-};
+export const useIsNarrowHeight = () => useMediaQuery('(max-height: 480px)');

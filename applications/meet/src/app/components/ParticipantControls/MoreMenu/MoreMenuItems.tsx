@@ -31,6 +31,7 @@ export interface MoreMenuAction {
     Icon: MoreMenuIcon;
     label: string;
     onClick: () => void;
+    rightContent?: ReactNode;
 }
 
 const MoreMenuToggleItem = ({ id, Icon, label, checked, onChange, disabled, loading, tooltip }: MoreMenuToggle) => {
@@ -95,7 +96,8 @@ const MoreMenuDivider = ({ className = 'my-1' }: { className?: string }) => (
 );
 
 interface MoreMenuSectionsProps {
-    leadingActions?: MoreMenuAction[];
+    headerItem?: ReactNode;
+    leadingSections?: MoreMenuAction[][];
     toggles: MoreMenuToggle[];
     layoutItem?: ReactNode;
     actions: MoreMenuAction[];
@@ -105,7 +107,8 @@ interface MoreMenuSectionsProps {
 }
 
 export const MoreMenuSections = ({
-    leadingActions = [],
+    headerItem,
+    leadingSections = [],
     toggles,
     layoutItem,
     actions,
@@ -114,11 +117,12 @@ export const MoreMenuSections = ({
 }: MoreMenuSectionsProps) => {
     const renderActions = (items: MoreMenuAction[]) =>
         items.length > 0 &&
-        items.map(({ id, Icon, label, onClick }) => (
+        items.map(({ id, Icon, label, onClick, rightContent }) => (
             <MoreMenuButtonItem
                 key={id}
                 Icon={Icon}
                 label={label}
+                rightContent={rightContent}
                 onClick={() => {
                     onClick();
                     onClose();
@@ -127,7 +131,8 @@ export const MoreMenuSections = ({
         ));
 
     const sections = [
-        renderActions(leadingActions),
+        headerItem,
+        ...leadingSections.map(renderActions),
         toggles.length > 0 && toggles.map((toggle) => <MoreMenuToggleItem key={toggle.id} {...toggle} />),
         layoutItem,
         renderActions(actions),
