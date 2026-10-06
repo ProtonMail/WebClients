@@ -14,7 +14,7 @@ import { useBYOEGating } from '../../byoe/useBYOEGating';
 import { getBYOEDisabledNotification } from '../../constants';
 import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
 import useSetupGmailBYOEAddress from '../../hooks/useSetupGmailBYOEAddress';
-import type { EASY_SWITCH_SOURCES } from '../../interface';
+import type { EASY_SWITCH_SOURCES, TIME_PERIOD } from '../../interface';
 import { setBYOEFlowResult } from '../../logic/byoeFlow/byoeFlow.slice';
 import { useEasySwitchDispatch } from '../../logic/store';
 import { changeCreateLoadingState } from '../../logic/sync/sync.actions';
@@ -69,9 +69,11 @@ const ConnectGmailButton = ({
     const [claimableAddressModalProps, setClaimableAddressModalOpen, renderClaimableAddressModal] = useModalState();
 
     const [expectedEmailAddress, setExpectedEmailAddress] = useState<string | undefined>();
-    const [claimableEmailAddress, setClaimableEmailAddress] = useState<string | undefined>();
+    const [claimableAddress, setClaimableAddress] = useState<
+        { email: string; importEmails: boolean; importPeriod: TIME_PERIOD | undefined } | undefined
+    >();
 
-    const { handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
+    const { handleBYOEWithImportCallback, handleClaimAddress } = useSetupGmailBYOEAddress({
         showSuccessModal: (connectedAddress: string, importEmails: boolean) => {
             easySwitchDispatch(
                 setBYOEFlowResult({
@@ -84,8 +86,8 @@ const ConnectGmailButton = ({
         showAddressLinkedToAnotherAccountModal: () => {
             setAddressLinkedToAnotherAccountModalOpen(true);
         },
-        showClaimableAddressModal: (email: string) => {
-            setClaimableEmailAddress(email);
+        showClaimableAddressModal: (email: string, importEmails: boolean, importPeriod: TIME_PERIOD | undefined) => {
+            setClaimableAddress({ email, importEmails, importPeriod });
             setClaimableAddressModalOpen(true);
         },
         onComplete: () => {
@@ -173,8 +175,18 @@ const ConnectGmailButton = ({
             {renderAddressLinkedToAnotherAccountModal && (
                 <AddressLinkedToAnotherAccountModal {...addressLinkedToAnotherAccountModalProps} />
             )}
-            {renderClaimableAddressModal && claimableEmailAddress && (
-                <ClaimableAddressModal emailAddress={claimableEmailAddress} {...claimableAddressModalProps} />
+            {renderClaimableAddressModal && claimableAddress && (
+                <ClaimableAddressModal
+                    emailAddress={claimableAddress.email}
+                    onClaim={() =>
+                        handleClaimAddress({
+                            account: claimableAddress.email,
+                            importEmails: claimableAddress.importEmails,
+                            importPeriod: claimableAddress.importPeriod,
+                        })
+                    }
+                    {...claimableAddressModalProps}
+                />
             )}
         </>
     );
