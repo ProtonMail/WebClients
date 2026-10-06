@@ -9,6 +9,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
+import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -129,12 +130,17 @@ const MembersStep = ({
     onChangeApplyPolicyTo,
 }: SharedServersMembersStepProps) => {
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
+    const [entitlements] = useEntitlementChecks();
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
 
     const allowedToUseGroups =
-        hasActiveOrganizationKey && canUseGroups(organization?.PlanName, { isUserGroupsNoCustomDomainEnabled });
+        hasActiveOrganizationKey &&
+        canUseGroups(organization?.PlanName, {
+            orgHasGroupsEntitlement: entitlements.orgHasGroups,
+            isUserGroupsNoCustomDomainEnabled,
+        });
     const hasAtLeastOneGroup = (groups?.length ?? 0) > 0;
 
     const canCreateGroupsPolicy = !!organization && (allowedToUseGroups || hasAtLeastOneGroup);
