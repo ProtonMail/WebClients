@@ -17,19 +17,22 @@ import claimStepNext from '@proton/styles/assets/img/byoe/claim-step-next.svg';
 
 interface Props extends ModalStateProps {
     emailAddress: string;
-    onClaim: () => Promise<unknown>;
+    /** Resolves to true when the claim went through, false to keep the modal open for a retry */
+    onClaim: () => Promise<boolean>;
 }
 
 export const ClaimableAddressModal = ({ emailAddress, onClaim, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
 
     const handleConnectClick = async () => {
-        await withLoading(onClaim());
-        rest.onClose?.();
+        const claimed = await withLoading(onClaim());
+        if (claimed) {
+            rest.onClose();
+        }
     };
 
     return (
-        <Modal {...rest}>
+        <Modal {...rest} disableCloseOnEscape={loading}>
             <ModalContent>
                 <div className="flex flex-column items-center text-center gap-5">
                     <img src={claimExternalAddress} height={176} width={440} alt="" />
