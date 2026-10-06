@@ -196,7 +196,11 @@ const useSetupGmailBYOEAddress = ({
         account: string;
         importEmails: boolean;
         importPeriod: TIME_PERIOD | undefined;
-    }) => {
+    }): Promise<boolean> => {
+        if (!canClaimExternalAddress) {
+            return false;
+        }
+
         try {
             await api(
                 startEasySwitchSignupImportTask({
@@ -215,7 +219,12 @@ const useSetupGmailBYOEAddress = ({
             return false;
         }
 
-        await finalizeBYOEAddress(account, importEmails);
+        // The claim itself succeeded, so the modal can close even if finalizing fails (it reports its own errors)
+        try {
+            await finalizeBYOEAddress(account, importEmails);
+        } catch (e) {
+            handleError(e);
+        }
         return true;
     };
 
