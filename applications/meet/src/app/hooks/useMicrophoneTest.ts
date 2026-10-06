@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Track } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 
 import type { AudioTrackProcessor } from '../processors/noise-cancellation/types';
@@ -286,10 +287,12 @@ export const useMicrophoneTest = ({
             playbackRef.current = { audioContext, source };
             setStatus(MicrophoneTestStatus.Playing);
             source.start();
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.mic_test_completed, { outcome: 'success' });
         } catch (error) {
             void audioContext.close().catch(() => undefined);
             setStatus(MicrophoneTestStatus.Idle);
             setFailure(MicrophoneTestFailure.Playback);
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.mic_test_completed, { outcome: 'failed' });
             reportMeetError('Microphone test playback failed', error);
         }
     };
@@ -441,6 +444,7 @@ export const useMicrophoneTest = ({
             acquiredStream?.getTracks().forEach((track) => track.stop());
             setStatus(MicrophoneTestStatus.Idle);
             setFailure(getFailureReason(error));
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.mic_test_completed, { outcome: 'failed' });
             reportMeetError('Microphone test failed to start', error);
         } finally {
             if (generation === captureGenerationRef.current) {

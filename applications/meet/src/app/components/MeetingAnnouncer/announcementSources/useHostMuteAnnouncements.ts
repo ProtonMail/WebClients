@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 import { RoomEvent, Track } from 'livekit-client';
 
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
+
 import { announcementMessages } from '../messages';
 import { AnnouncementPriority } from '../types';
 import { useAnnounce } from '../useAnnounce';
@@ -27,6 +29,7 @@ export const useHostMuteAnnouncements = () => {
             const publication = room.localParticipant.trackPublications.get(trackSid);
 
             if (publication?.source === Track.Source.Microphone) {
+                sendMeetActionsEvent(TelemetryMeetActionsEvents.mic_toggled, { state: 'off', trigger: 'host_action' });
                 announce(announcementMessages.mutedByHost(), {
                     dedupeKey: 'muted-by-host',
                     priority: AnnouncementPriority.High,
@@ -35,6 +38,10 @@ export const useHostMuteAnnouncements = () => {
             }
 
             if (publication?.source === Track.Source.Camera) {
+                sendMeetActionsEvent(TelemetryMeetActionsEvents.camera_toggled, {
+                    state: 'off',
+                    trigger: 'host_action',
+                });
                 announce(announcementMessages.cameraDisabledByHost(), {
                     dedupeKey: 'camera-disabled-by-host',
                     priority: AnnouncementPriority.High,

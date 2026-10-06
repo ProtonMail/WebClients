@@ -16,6 +16,8 @@ import {
     selectMicrophones,
     selectRealtimeDevices,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { toToggleState } from '@proton/meet/telemetry/dimensions';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isAudioSessionAvailable, setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
@@ -756,6 +758,10 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
         const newValue = !noiseFilter;
         setNoiseFilter(newValue);
         persistNoiseFilter(newValue);
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.noise_cancellation_toggled, {
+            state: toToggleState(newValue),
+            noiseCancellationModel: noiseCancellationModel.id,
+        });
 
         // Muted mics still carry the processor, and unmuting only ever attaches one, never removes it.
         const shouldDetachWhileMuted = !newValue && !noiseCancellationModel.isNative && !!noiseFilterProcessor.current;

@@ -17,6 +17,8 @@ import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting'
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { type OpfsRecording, selectRecordings, setRecordings } from '@proton/meet/store/slices/recordingsSlice';
 import { selectUserId } from '@proton/meet/store/slices/userSlice';
+import { getRecordingSizeBucket } from '@proton/meet/telemetry/buckets';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -30,6 +32,7 @@ import {
     listAllOpfsRecordings,
     listOpfsRecordings,
 } from '../../hooks/useMeetingRecorder/recordingStorage/recordingFiles';
+import { useSendOnce } from '../../telemetry/useSendOnce';
 
 const formatDate = (timestamp: number) =>
     new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(timestamp));
@@ -60,9 +63,14 @@ export const ManageRecordingsContainer = () => {
         void refresh();
     }, [refresh]);
 
+    useSendOnce(() => sendMeetDashboardEvent(TelemetryMeetDashboardEvents.recordings_page_viewed));
+
     const handleDownload = async (recording: OpfsRecording) => {
         try {
             await downloadOpfsRecording(recording);
+            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.recording_downloaded, {
+                sizeBucket: getRecordingSizeBucket(recording.size),
+            });
         } catch (error) {
             if (isDownloadAborted(error)) {
                 return;
@@ -84,6 +92,9 @@ export const ManageRecordingsContainer = () => {
         setDeleting(true);
         try {
             await deleteOpfsRecording(recordingToDelete);
+            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.recording_deleted, {
+                sizeBucket: getRecordingSizeBucket(recordingToDelete.size),
+            });
             createNotification({ type: 'success', text: c('Info').t`Recording deleted` });
             setRecordingToDelete(null);
             await refresh();

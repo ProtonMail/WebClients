@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingReadyPopupOpen, setMeetingReadyPopupOpen } from '@proton/meet/store/slices/uiStateSlice';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
@@ -76,6 +77,9 @@ export const MeetingReadyPopup = ({ meetingLink, closeBySlide }: MeetingReadyPop
                     size="large"
                     onClick={async () => {
                         void navigator.clipboard.writeText(meetingLink);
+                        sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_link_copied, {
+                            source: 'meeting_ready_popup',
+                        });
                         dispatch(setMeetingReadyPopupOpen(false));
                         notifications.createNotification({
                             type: 'success',

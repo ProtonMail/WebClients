@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import { supportsSetSinkId } from '../utils/browser';
 
@@ -78,9 +79,11 @@ export const useSpeakerTest = (speakerDeviceId: string | null) => {
             setHasFailed(false);
             setIsPlaying(true);
             await audio.play();
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.speaker_test_completed, { outcome: 'success' });
         } catch (error) {
             setIsPlaying(false);
             setHasFailed(true);
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.speaker_test_completed, { outcome: 'failed' });
         }
     }, [speakerDeviceId, joiningInProgress]);
 

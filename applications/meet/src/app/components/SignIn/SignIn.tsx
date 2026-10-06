@@ -10,6 +10,7 @@ type Props = {
     size?: ButtonLikeSizeEnum;
     shape?: ButtonLikeShapeEnum;
     style?: React.CSSProperties;
+    onClick?: () => void;
 };
 
 export const MeetSignIn = ({
@@ -18,6 +19,7 @@ export const MeetSignIn = ({
     size = ButtonLikeSizeEnum.Medium,
     shape = ButtonLikeShapeEnum.Ghost,
     style,
+    onClick,
 }: Props) => {
     const handleSignIn = (returnUrl: string) =>
         requestFork({
@@ -29,6 +31,7 @@ export const MeetSignIn = ({
         });
 
     const handleSignInClick = () => {
+        onClick?.();
         const hash = window.location.hash;
 
         if (hash && !isUrlPasswordValid(hash)) {

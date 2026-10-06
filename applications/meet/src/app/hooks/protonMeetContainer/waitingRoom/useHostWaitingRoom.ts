@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useUpdateMeetingWaitingRoom } from '@proton/meet/hooks/useUpdateMeetingWaitingRoom';
-import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import { updateMeeting } from '@proton/meet/store/slices/meetings';
 import { selectWaitingRoomSetting, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import {
@@ -13,7 +13,11 @@ import {
     removeWaitingParticipant,
     removeWaitingParticipants,
     resetWaitingRoom,
+    selectWaitingParticipants,
 } from '@proton/meet/store/slices/waitingRoomSlice';
+import type { MeetState } from '@proton/meet/store/store';
+import { getWaitTimeBucket } from '@proton/meet/telemetry/buckets';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SECOND } from '@proton/shared/lib/constants';
 import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
@@ -26,6 +30,22 @@ import {
 import { useNotifyError } from '../../useNotifyError';
 import { useStableCallback } from '../../useStableCallback';
 import type { GetSessionKeyBase64 } from '../useSessionKey';
+
+// Captured before the request is handled, as handled requests are removed from the store
+const captureAdmissionTelemetry = (state: MeetState, admissionDecision: 'admit' | 'deny') => {
+    const now = Date.now();
+    const requests = selectWaitingParticipants(state);
+
+    return (handledRequestIds: string[]) =>
+        requests
+            .filter((request) => handledRequestIds.includes(request.requestId))
+            .forEach((request) =>
+                sendMeetActionsEvent(TelemetryMeetActionsEvents.waiting_room_admission_handled, {
+                    admissionDecision,
+                    waitTimeBucket: getWaitTimeBucket(now - request.receivedAt),
+                })
+            );
+};
 
 export const useHostWaitingRoom = ({
     meetingLinkName,
@@ -43,6 +63,7 @@ export const useHostWaitingRoom = ({
     const { updateMeetingWaitingRoom } = useUpdateMeetingWaitingRoom();
 
     const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
+    const store = useMeetStore();
 
     useEffect(() => {
         if (!enabled) {
@@ -87,6 +108,7 @@ export const useHostWaitingRoom = ({
 
     const admitRequest = useCallback(
         async (requestId: string) => {
+            const sendAdmissionTelemetry = captureAdmissionTelemetry(store.getState(), 'admit');
             try {
                 const sessionKeyBase64 = await getSessionKeyBase64(meetingLinkName);
                 if (!sessionKeyBase64) {
@@ -94,6 +116,7 @@ export const useHostWaitingRoom = ({
                 }
 
                 await meetCoreClient.admitWaitingRoomJoinRequest(meetingLinkName, requestId, sessionKeyBase64);
+                sendAdmissionTelemetry([requestId]);
                 dispatch(removeWaitingParticipant(requestId));
             } catch (error) {
                 notifyError(c('Error').t`Failed to admit the participant. Please try again.`);
@@ -102,13 +125,15 @@ export const useHostWaitingRoom = ({
                 });
             }
         },
-        [dispatch, getSessionKeyBase64, meetCoreClient, meetingLinkName, notifyError, reportMeetError]
+        [dispatch, getSessionKeyBase64, meetCoreClient, meetingLinkName, notifyError, reportMeetError, store]
     );
 
     const rejectRequest = useCallback(
         async (requestId: string, participantUid: string) => {
+            const sendAdmissionTelemetry = captureAdmissionTelemetry(store.getState(), 'deny');
             try {
                 await meetCoreClient.rejectWaitingRoomJoinRequest(meetingLinkName, requestId, participantUid);
+                sendAdmissionTelemetry([requestId]);
                 dispatch(removeWaitingParticipant(requestId));
             } catch (error) {
                 notifyError(c('Error').t`Failed to deny the participant. Please try again.`);
@@ -117,10 +142,11 @@ export const useHostWaitingRoom = ({
                 });
             }
         },
-        [dispatch, meetCoreClient, meetingLinkName, notifyError, reportMeetError]
+        [dispatch, meetCoreClient, meetingLinkName, notifyError, reportMeetError, store]
     );
 
     const admitAll = useStableCallback(async () => {
+        const sendAdmissionTelemetry = captureAdmissionTelemetry(store.getState(), 'admit');
         try {
             const sessionKeyBase64 = await getSessionKeyBase64(meetingLinkName);
             if (!sessionKeyBase64) {
@@ -132,6 +158,7 @@ export const useHostWaitingRoom = ({
                 sessionKeyBase64
             );
 
+            sendAdmissionTelemetry(admittedRequestIds);
             dispatch(removeWaitingParticipants(admittedRequestIds));
         } catch (error) {
             notifyError(c('Error').t`Failed to admit the participants. Please try again.`);

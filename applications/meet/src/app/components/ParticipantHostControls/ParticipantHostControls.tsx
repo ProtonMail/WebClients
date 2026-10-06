@@ -20,6 +20,7 @@ import {
     selectParticipantIsHostOrAdmin,
     selectParticipantName,
 } from '@proton/meet/store/slices/participants/participantsSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import clsx from '@proton/utils/clsx';
 
@@ -93,11 +94,17 @@ export const ParticipantHostControls = ({
                         onClick={() =>
                             isVideoEnabled &&
                             withLoading(
-                                meetCoreClient.updateParticipantTrackSettings(
-                                    participant.identity,
-                                    null,
-                                    ParticipantCapabilityPermission.NotAllowed
-                                )
+                                meetCoreClient
+                                    .updateParticipantTrackSettings(
+                                        participant.identity,
+                                        null,
+                                        ParticipantCapabilityPermission.NotAllowed
+                                    )
+                                    .then(() =>
+                                        sendMeetActionsEvent(TelemetryMeetActionsEvents.participant_muted_by_host, {
+                                            trackKind: 'video',
+                                        })
+                                    )
                             )
                         }
                         loading={loading}
@@ -116,11 +123,17 @@ export const ParticipantHostControls = ({
                         onClick={() =>
                             isAudioEnabled &&
                             withLoading(
-                                meetCoreClient.updateParticipantTrackSettings(
-                                    participant.identity,
-                                    ParticipantCapabilityPermission.NotAllowed,
-                                    null
-                                )
+                                meetCoreClient
+                                    .updateParticipantTrackSettings(
+                                        participant.identity,
+                                        ParticipantCapabilityPermission.NotAllowed,
+                                        null
+                                    )
+                                    .then(() =>
+                                        sendMeetActionsEvent(TelemetryMeetActionsEvents.participant_muted_by_host, {
+                                            trackKind: 'audio',
+                                        })
+                                    )
                             )
                         }
                         loading={loading}
@@ -137,7 +150,13 @@ export const ParticipantHostControls = ({
                         role="menuitem"
                         loading={loading}
                         disabled={loading}
-                        onClick={() => withLoading(meetCoreClient.removeParticipant(participant.identity))}
+                        onClick={() =>
+                            withLoading(
+                                meetCoreClient
+                                    .removeParticipant(participant.identity)
+                                    .then(() => sendMeetActionsEvent(TelemetryMeetActionsEvents.participant_removed))
+                            )
+                        }
                     >
                         <IcCrossCircle size={5} className="shrink-0" />
                         <span className="flex-1 text-ellipsis" title={c('Action').t`Kick out`}>{c('Action')

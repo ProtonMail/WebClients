@@ -11,6 +11,7 @@ import {
     selectAdmissionStatus,
     selectIsWaitingRoomHost,
 } from '@proton/meet/store/slices/waitingRoomSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import type { WaitingRoomContextValues } from '../../../contexts/WaitingRoomContext';
 import { useNotifyError } from '../../useNotifyError';
@@ -54,6 +55,7 @@ export const useWaitingRoom = ({
 
     const waitingRoomMeetLinkRef = useRef<string | null>(null);
     const guestSessionPreparedRef = useRef(false);
+    const admissionRequestCountRef = useRef(0);
 
     const { admitRequest, rejectRequest, admitAll, toggleWaitingRoom, toggleWaitingRoomPrejoin } = useHostWaitingRoom({
         meetingLinkName,
@@ -108,6 +110,7 @@ export const useWaitingRoom = ({
                 return;
             }
 
+            admissionRequestCountRef.current += 1;
             await startWaitingRoomAdmission(meetingToken, sessionKey);
         },
         [
@@ -129,8 +132,13 @@ export const useWaitingRoom = ({
     }, [handleGuestWaitingRoomLeave]);
 
     const retryWaitingRoom = useCallback(() => {
+        sendMeetActionsEvent(
+            TelemetryMeetActionsEvents.waiting_room_retry_clicked,
+            { reason: admissionStatus === WaitingRoomAdmissionStatus.EXPIRED ? 'expired' : 'rejected' },
+            { attemptNumber: admissionRequestCountRef.current + 1 }
+        );
         void handleGuestTryAgain();
-    }, [handleGuestTryAgain]);
+    }, [handleGuestTryAgain, admissionStatus]);
 
     /**
      * Resolves how this join proceeds. For a guest it starts the admission flow and returns
