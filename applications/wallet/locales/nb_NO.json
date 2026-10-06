@@ -232,6 +232,9 @@
       "More benefits": [
         "Flere fordeler"
       ],
+      "More info": [
+        "Mer info"
+      ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
       ],
@@ -1147,9 +1150,6 @@
       ],
       "Basic chat history": [
         "Grunnleggende chatlogg"
-      ],
-      "Built and based in Europe": [
-        "Utviklet og basert i Europa"
       ],
       "Compliance with data protection regulations": [
         "Samsvar med databeskyttelsesforskrifter"
@@ -3981,9 +3981,6 @@
       "Auto-reply": [
         "Autosvar"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Automatisk utfylling av kredittkort (kommer snart)"
-      ],
       "Automatic email forwarding": [
         "Automatisk videresending av e-post"
       ],
@@ -4010,9 +4007,6 @@
       ],
       "Custom and secure business email": [
         "Tilpasset og sikker bedrifts-e-post"
-      ],
-      "Custom domains for email aliases": [
-        "Egendefinerte domener for e-postaliaser"
       ],
       "Custom email domains": [
         "Egendefinerte e-postdomener"
@@ -4071,9 +4065,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Gratis funksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Gratis VPN på en enkelt enhet"
-      ],
       "Fully refundable for 30 days": [
         "Fullt refunderbar i 30 dager"
       ],
@@ -4082,10 +4073,6 @@
       ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Høyhastighets VPN på ${ n } enhet",
-        "Høyhastighets VPN på ${ n } enheter"
       ],
       "HTML signatures": [
         "HTML-signaturer"
@@ -4224,9 +4211,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Ubegrenset delte ${ PASS_SHORT_APP_NAME }-hvelv per bruker"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Ubegrenset antall delte hvelv med tilgangstillatelser"
       ],
       "Unlimited vault sharing": [
         "Ubegrenset hvelvdeling"
@@ -4519,9 +4503,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Harddiskene til serverne våre er fullstendig kryptert med flere passordlag, slik at dataene er beskyttet selv om maskinvaren vår blir kompromittert."
       ],
-      "Password management and identity protection": [
-        "Passordbehandling og identitetsbeskyttelse"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
       ],
@@ -4624,12 +4605,6 @@
         "${ n } land",
         "${ n } land"
       ],
-      "Access advanced VPN features": [
-        "Få tilgang til avanserte VPN-funksjoner"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Legg til mer personalisering med 15 e-postadresser og støtte for 3 egendefinerte e-postdomener"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-biter VPN-kryptering"
       ],
@@ -4639,9 +4614,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Øk lagringsplassen din til totalt ${ bundleStorage } per bruker"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Øk lagringsplassen din til totalt ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Nettleserutvidelse"
       ],
@@ -4650,13 +4622,6 @@
       ],
       "Central control panel": [
         "Sentralt kontrollpanel"
-      ],
-      "Create up to ${ n } calendar": [
-        "Opprett opptil ${ n } kalender",
-        "Opprett opptil ${ n } kalendere"
-      ],
-      "Dedicated Account manager": [
-        "Dedikert kontobehandler"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Dedikerte serverplasseringer i ${ numberOfCountries }+ land"
@@ -4723,9 +4688,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Sikker deling av hvelv, elementer og koblinger"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Ubegrenset antall pålogginger, notater, kredittkort og mer"
       ]
     },
     "pass_signup_2023: Title": {
@@ -5498,10 +5460,6 @@
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-tilkobling per bruker",
-        "${ n } VPN-tilkoblinger per bruker"
       ],
       "VPN connection for ${ n } device per user": [
         "VPN-tilkobling for ${ n } enhet per bruker",

@@ -232,6 +232,9 @@
       "More benefits": [
         "Περισσότερα οφέλη"
       ],
+      "More info": [
+        "Περισσότερες πληροφορίες"
+      ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
@@ -373,6 +376,9 @@
       "Switch or add account": [
         "Εναλλαγή ή προσθήκη λογαριασμού"
       ],
+      "Switch to ${ planName }": [
+        "Μετάβαση στο ${ planName }"
+      ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
       ],
@@ -511,6 +517,12 @@
       ],
       "Domains": [
         "Τομείς"
+      ],
+      "Managed Service Provider": [
+        "Πάροχος Διαχειριζόμενης Υπηρεσίας"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Οι οργανισμοί που διαθέτουν το πρόσθετο Πάροχος Διαχειριζόμενων Υπηρεσιών μπορούν να δημιουργούν και να διαχειρίζονται θυγατρικούς οργανισμούς."
       ],
       "Servers": [
         "Διακομιστές"
@@ -1147,9 +1159,6 @@
       ],
       "Basic chat history": [
         "Βασικό ιστορικό συνομιλιών"
-      ],
-      "Built and based in Europe": [
-        "Κατασκευασμένο και βασισμένο στην Ευρώπη"
       ],
       "Compliance with data protection regulations": [
         "Συμμόρφωση με τους κανονισμούς περί προστασίας δεδομένων"
@@ -2828,6 +2837,12 @@
         "+${ organization.BonusVPN } σύνδεση για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)",
         "+${ organization.BonusVPN } συνδέσεις για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)"
       ],
+      "1 device per user": [
+        "1 συσκευή ανά χρήστη"
+      ],
+      "1 vault per user": [
+        "1 κρύπτη ανά χρήστη"
+      ],
       "30-day money-back guarantee.": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών."
       ],
@@ -3053,6 +3068,9 @@
       ],
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
+      ],
+      "No payment is required.": [
+        "Δεν απαιτείται πληρωμή."
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
@@ -3981,9 +3999,6 @@
       "Auto-reply": [
         "Αυτόματη απάντηση"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Αυτόματη συμπλήρωση πιστωτικών καρτών (σύντομα διαθέσιμη)"
-      ],
       "Automatic email forwarding": [
         "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
@@ -4010,9 +4025,6 @@
       ],
       "Custom and secure business email": [
         "Προσαρμοσμένο και ασφαλές επαγγελματικό ηλεκτρονικό ταχυδρομείο"
-      ],
-      "Custom domains for email aliases": [
-        "Προσαρμοσμένοι τομείς για ψευδώνυμα email"
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
@@ -4071,9 +4083,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Δωρεάν δυνατότητες από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Δωρεάν VPN σε μία μόνο συσκευή"
-      ],
       "Fully refundable for 30 days": [
         "Πλήρης επιστροφή χρημάτων για 30 ημέρες"
       ],
@@ -4082,10 +4091,6 @@
       ],
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
-        "VPN υψηλής ταχύτητας σε ${ n } συσκευές"
       ],
       "HTML signatures": [
         "Υπογραφές HTML"
@@ -4224,9 +4229,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Απεριόριστες κοινόχρηστες κρύπτες ${ PASS_SHORT_APP_NAME } ανά χρήστη"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Απεριόριστες κοινόχρηστες θυρίδες αποθήκευσης με δικαιώματα πρόσβασης"
       ],
       "Unlimited vault sharing": [
         "Απεριόριστη κοινή κρυπτών"
@@ -4519,9 +4521,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Οι σκληροί δίσκοι των διακομιστών μας είναι πλήρως κρυπτογραφημένοι με πολλαπλά επίπεδα κωδικού πρόσβασης, ώστε τα δεδομένα σας να προστατεύονται ακόμη και αν το υλικό μας έχει παραβιαστεί"
       ],
-      "Password management and identity protection": [
-        "Διαχείριση κωδικών πρόσβασης και προστασία ταυτότητας"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Εξατομικεύστε την υπογραφή email σας με λογότυπα, εικόνες, εικονίδια κοινωνικών μέσων, συνδέσμους προς τα στοιχεία επικοινωνίας σας και πολλά άλλα"
       ],
@@ -4624,12 +4623,6 @@
         "${ n } χώρα",
         "${ n } χώρες"
       ],
-      "Access advanced VPN features": [
-        "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Προσθέστε περισσότερη εξατομίκευση με 15 διευθύνσεις email και υποστήριξη για 3 προσαρμοσμένους τομείς email"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-bit VPN κρυπτογράφηση"
       ],
@@ -4639,9 +4632,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Μεγαλώστε τον αποθηκευτικό σας χώρο σε ${ bundleStorage } ανά χρήστη"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Μεγαλώστε τον αποθηκευτικό σας χώρο σε συνολικά ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Προέκταση προγράμματος περιήγησης"
       ],
@@ -4650,13 +4640,6 @@
       ],
       "Central control panel": [
         "Κεντρικός πίνακας ελέγχου"
-      ],
-      "Create up to ${ n } calendar": [
-        "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
-        "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
-      ],
-      "Dedicated Account manager": [
-        "Αποκλειστικός διαχειριστής Λογαριασμού"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Αποκλειστικές τοποθεσίες διακομιστών σε ${ numberOfCountries }+ χώρες"
@@ -4735,9 +4718,6 @@
       ],
       "Secure vault, item and link sharing": [
         "Ασβαλής κρύπτη, στοιχεία και κοινοποίηση συνδέσμων"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Απεριόριστες συνδέσεις, σημειώσεις, πιστωτικές κάρτες και πολλά άλλα"
       ]
     },
     "pass_signup_2023: Title": {
@@ -4824,6 +4804,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (χωρίς φόρους)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } δεν μπορεί να συνδυαστεί με το ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } διατίθεται μόνο σε πλάνα για επιχειρήσεις."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% φόρος: ${ taxAmountElement }"
       ],
@@ -4833,8 +4819,23 @@
       "Amount due after trial on ${ formattedDate }": [
         "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Απαιτείται ένας οργανισμός για αυτό το πλάνο."
+      ],
       "Billing Country": [
         "Χώρα χρέωσης"
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Το Born Private δεν μπορεί να αγοραστεί όσο υπάρχει ενεργή συνδρομή."
+      ],
+      "Born Private requires a donation.": [
+        "Το Born Private απαιτεί δωρεά."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Η αγορά μονάδων απαιτεί ξεχωριστή αγορά."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Με την αλλαγή, αποδέχεστε τους ${ termsLink } μας."
       ],
       "Card number": [
         "Αριθμός κάρτας"
@@ -4875,11 +4876,20 @@
       "More plans are available in other currencies": [
         "Περισσότερα πλάνα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Μπορεί να αγοραστεί μόνο ένα ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Πληρωμή με ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Η μέθοδος πληρωμής απαιτείται για την ενεργοποίηση της συνδρομής μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Παρακαλούμε κλείστε τους επιπλέον λογαριασμούς πορτοφολιού πριν αλλάξετε το πλάνο σας."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Παρακαλούμε κλείστε τα επιπλέον πορτοφόλια πριν αλλάξετε το πρόγραμμά σας."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
@@ -4889,6 +4899,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Οι θέσεις των γραμματέων δεν μπορούν να υπερβαίνουν τον αριθμό των μελών."
       ],
       "Tax ${ rate }%": [
         "Φόρος ${ rate }%"
@@ -4902,6 +4915,18 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανέωση.",
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανεώσεις."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό διευθύνσεων για τον λογαριασμό σας."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό τομέων για τον λογαριασμό σας."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό μελών για τον λογαριασμό σας."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αποθηκευτικό χώρο για τον λογαριασμό σας."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ισχύει για ${ couponRedemptions } μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
@@ -4932,14 +4957,35 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Αυτή η ενέργεια επεκτείνει την υπάρχουσα συνδρομή. Θα χρεωθείτε μόνο για τα νέα πρόσθετα και τον υπόλοιπο χρόνο του τρέχοντος κύκλου χρέωσης. Η ημερομηνία ανανέωσης της συνδρομής σας δε θα αλλάξει."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Αυτός ο αποκλειστικός διακομιστής έχει αντιστοιχιστεί σε μια πύλη και η ρύθμιση αυτή δεν μπορεί να αλλάξει."
+      ],
       "This offer is not available with your current plan.": [
         "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Αυτό το πλάνο δεν υποστηρίζει τα μέλη στον λογαριασμό σας."
+      ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις για το ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν προσαρμοσμένους τομείς."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν αποκλειστικές διευθύνσεις IP."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν τόσο μεγάλο αριθμό μελών."
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
@@ -4953,11 +4999,20 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Έχετε ήδη συνδρομή σε αυτό το πλάνο. Μπορείτε να αλλάξετε τη συνδρομή σας στο ${ subscriptionPlatform }."
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Έχετε ήδη το Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
       ],
       "You will soon be redirected to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
+      ],
+      "Your account is too old for Born Private.": [
+        "Ο λογαριασμός σας είναι πολύ παλιός για το Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Το νόμισμά σας έχει αλλάξει σε ευρώ (€) επειδή το ${ IDEAL_WERO_BRAND_NAME } υποστηρίζει μόνο πληρωμές σε ευρώ."
@@ -5510,10 +5565,6 @@
       "${ n } VPN connection": [
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } σύνδεση VPN ανά χρήστη",
-        "${ n } συνδέσεις VPN ανά χρήστη"
       ],
       "VPN connection for ${ n } device per user": [
         "Σύνδεση VPN για ${ n } συσκευή ανά χρήστη",
