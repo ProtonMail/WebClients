@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-import type { ItemImportIntent } from '../../../../types';
+import type { ItemImportIntent, Maybe, MaybeNull } from '../../../../types';
 import { AutofillMode } from '../../../../types/protobuf';
 import * as epochUtils from '../../../../utils/time/epoch';
 import { deobfuscateItem } from '../../../items/item.obfuscation';
@@ -14,6 +14,7 @@ jest.mock('@proton/pass/utils/time/epoch', () => ({
 
 describe('Import KeePass xml', () => {
     let payload: ImportPayload;
+    let vault: ImportVault;
 
     const dateMock = jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
 
@@ -21,7 +22,17 @@ describe('Import KeePass xml', () => {
         const sourceData = fs.readFileSync(__dirname + '/mocks/keepass.xml');
         const file = new File([sourceData], 'keepass.xml');
         payload = await readKeePassData(file);
+        [vault] = payload.vaults;
     });
+
+    const getFolderPath = (folderId: MaybeNull<string>): string[] => {
+        const folder = vault.folders.find(({ id }) => id === folderId);
+        if (!folder) return [];
+        return [...getFolderPath(folder.parentId), folder.name];
+    };
+
+    const getFolderName = (folderId: Maybe<MaybeNull<string>>) =>
+        vault.folders.find(({ id }) => id === folderId)?.name ?? null;
 
     afterAll(() => dateMock.mockRestore());
 
@@ -29,20 +40,61 @@ describe('Import KeePass xml', () => {
         await expect(() => readKeePassData(new File([' '], 'corrupted'))).rejects.toThrow();
     });
 
-    it('should extract vaults from groups', () => {
-        expect(payload.vaults.length).toEqual(5);
-        expect(payload.vaults[0].name).toEqual('Group A');
-        expect(payload.vaults[1].name).toEqual('Group B');
-        expect(payload.vaults[2].name).toEqual('Group C');
-        expect(payload.vaults[3].name).toEqual('Import - Apr 27, 2023');
-        expect(payload.vaults[4].name).toEqual('TOTP definitions');
+    it('should import into a single vault named after the root group', () => {
+        expect(payload.vaults.length).toEqual(1);
+        expect(vault.name).toEqual('Group A');
+        expect(vault.items.length).toEqual(11);
+    });
+
+    it('should rebuild the folder hierarchy', () => {
+        expect(vault.folders.map(({ id }) => getFolderPath(id))).toEqual([
+            ['Group B'],
+            ['Group C'],
+            ['TOTP definitions'],
+            ['folder1'],
+            ['folder1', 'subfolder1'],
+        ]);
+    });
+
+    it('should place each item in its folder', () => {
+        const foldered = vault.items.filter(({ folderId }) => folderId !== null);
+
+        expect(foldered.map(({ metadata, folderId }) => [metadata.name, getFolderName(folderId)])).toEqual([
+            ['Broken URL', 'Group B'],
+            ['Login item', 'Group C'],
+            ['Login item', 'Group C'],
+            ['Broken URL', 'Group C'],
+            ['Modern TOTP definition', 'TOTP definitions'],
+            ['Legacy TOTP definition', 'TOTP definitions'],
+            ['folder1 item', 'folder1'],
+            ['subfolder1 item', 'subfolder1'],
+        ]);
+    });
+
+    it('should place entries of a group without name in its parent folder', () => {
+        expect(getFolderName(vault.items[3].folderId)).toEqual('Group C');
+        expect(getFolderName(vault.items[4].folderId)).toEqual('Group C');
+    });
+
+    it('should leave items without a folder at the vault root', () => {
+        const rootItems = vault.items.filter(({ folderId }) => folderId === null);
+        expect(rootItems.map(({ metadata }) => metadata.name)).toEqual([
+            'Login item with note',
+            'trashed item',
+            'trashed item 2.0',
+        ]);
+    });
+
+    it('should import recycle bin entries as trashed items at the vault root', () => {
+        const trashed = vault.items.filter((item) => item.trashed);
+        expect(trashed.map(({ metadata, folderId }) => [metadata.name, folderId])).toEqual([
+            ['trashed item', null],
+            ['trashed item 2.0', null],
+        ]);
     });
 
     it('should extract items from `Group A`', () => {
-        const groupA = payload.vaults[0];
-        expect(groupA.items.length).toEqual(1);
-
-        const loginItem = deobfuscateItem(groupA.items[0]) as unknown as ItemImportIntent<'login'>;
+        const loginItem = deobfuscateItem(vault.items[0]) as unknown as ItemImportIntent<'login'>;
 
         expect(loginItem.type).toEqual('login');
         expect(loginItem.metadata.name).toEqual('Login item with note');
@@ -85,10 +137,7 @@ describe('Import KeePass xml', () => {
     });
 
     it('should extract items from `Group B`', () => {
-        const groupB = payload.vaults[1];
-        expect(groupB.items.length).toEqual(1);
-
-        const loginItem = deobfuscateItem(groupB.items[0]) as unknown as ItemImportIntent<'login'>;
+        const loginItem = deobfuscateItem(vault.items[1]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem.type).toEqual('login');
         expect(loginItem.metadata.name).toEqual('Broken URL');
         expect(loginItem.metadata.note).toEqual('');
@@ -104,10 +153,7 @@ describe('Import KeePass xml', () => {
     });
 
     it('should extract items from `Group C and not trim spaces`', () => {
-        const groupC = payload.vaults[2];
-        expect(groupC.items.length).toEqual(1);
-
-        const loginItem = deobfuscateItem(groupC.items[0]) as unknown as ItemImportIntent<'login'>;
+        const loginItem = deobfuscateItem(vault.items[2]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem.type).toEqual('login');
         expect(loginItem.metadata.name).toEqual('Login item');
         expect(loginItem.metadata.note).toEqual('');
@@ -123,10 +169,7 @@ describe('Import KeePass xml', () => {
     });
 
     it('should extract items from `Group D`', () => {
-        const groupD = payload.vaults[3];
-        expect(groupD.items.length).toEqual(2);
-
-        const loginItem1 = deobfuscateItem(groupD.items[0]) as unknown as ItemImportIntent<'login'>;
+        const loginItem1 = deobfuscateItem(vault.items[3]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem1.type).toEqual('login');
         expect(loginItem1.metadata.name).toEqual('Login item');
         expect(loginItem1.metadata.note).toEqual('some note');
@@ -142,7 +185,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem1.platformSpecific).toBeUndefined();
         expect(loginItem1.trashed).toEqual(false);
 
-        const loginItem2 = deobfuscateItem(groupD.items[1]) as unknown as ItemImportIntent<'login'>;
+        const loginItem2 = deobfuscateItem(vault.items[4]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.name).toEqual('Broken URL');
         expect(loginItem2.metadata.note).toEqual('');
@@ -166,18 +209,13 @@ describe('Import KeePass xml', () => {
     });
 
     describe('TOTP definition', () => {
-        let group: ImportVault;
-
-        beforeAll(async () => {
-            group = payload.vaults[4];
-        });
-
         it('should have 2 items in group', () => {
-            expect(group.items.length).toEqual(2);
+            const items = vault.items.filter(({ folderId }) => getFolderName(folderId) === 'TOTP definitions');
+            expect(items.length).toEqual(2);
         });
 
         it('should extract modern TOTP definition', () => {
-            const item = deobfuscateItem(group.items[0]) as unknown as ItemImportIntent<'login'>;
+            const item = deobfuscateItem(vault.items[7]) as unknown as ItemImportIntent<'login'>;
             expect(item.metadata.name).toEqual('Modern TOTP definition');
             expect(item.content.totpUri).toEqual(
                 'otpauth://totp/Modern%20TOTP%20definition:none?issuer=Modern%20TOTP%20definition&secret=5KO67YMS2FHKA627&algorithm=SHA1&digits=8&period=42'
@@ -185,7 +223,7 @@ describe('Import KeePass xml', () => {
         });
 
         it('should extract legacy TOTP definition', () => {
-            const item = deobfuscateItem(group.items[1]) as unknown as ItemImportIntent<'login'>;
+            const item = deobfuscateItem(vault.items[8]) as unknown as ItemImportIntent<'login'>;
             expect(item.metadata.name).toEqual('Legacy TOTP definition');
             expect(item.content.totpUri).toEqual(
                 'otpauth://totp/Legacy%20TOTP%20definition:none?issuer=Legacy%20TOTP%20definition&secret=AU2HMGCJYPNI2WZT&algorithm=SHA1&digits=8&period=42'
