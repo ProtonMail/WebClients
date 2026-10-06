@@ -140,7 +140,7 @@ export const searchDefinition: ToolDefinition<SearchParams, SearchResult> = {
     // Deliberately short: every parameter, the query syntax and the Encrypted-Search caveats live in the
     // guide, which is in context whenever this tool is (a guided tool is only advertised once loaded).
     toolDescription:
-        'Find emails anywhere in the mailbox and bring the matches on-screen, returning the matching rows (metadata only — no bodies), then read the best one with read_email. Use when the target email is not already on screen; if the user simply names a location in the left panel, use open_folder instead. NEEDS its guide loaded first (call load_guide with "search").',
+        'Find emails anywhere in the mailbox and bring the matches on-screen, returning the matching rows (metadata only — no bodies), then read the best one with read_email. Use when no earlier result in this conversation already gave you the email; if the user simply names a location in the left panel, use open_folder instead. NEEDS its guide loaded first (call load_guide with "search").',
     freeTextParams: SEARCH_FREE_TEXT_PARAMS,
     paramsSchema: {
         type: 'object',

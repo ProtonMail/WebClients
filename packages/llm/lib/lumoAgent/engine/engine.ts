@@ -102,7 +102,7 @@ const parseArgs = (raw: string): unknown => {
 };
 
 const unknownReferenceMessage = (reference: string): string =>
-    `Unknown reference "${reference}" — it was never returned by an earlier read. Re-read to get valid references, then try again.`;
+    `Unknown reference "${reference}": no earlier result in this conversation issued it. Use a reference exactly as a result gave it.`;
 
 /**
  * Reject any reference-shaped param value the registry never issued (hallucination guard), skipping the

@@ -21,13 +21,13 @@ describe('formatAgentEmailRows', () => {
 
     it('renders a count header and one pipe-delimited line per row', () => {
         const out = formatAgentEmailRows([row(), row({ reference: 'email-d4e5f6', subject: 'Bye' })], 2);
-        expect(out).toContain('2 emails shown:');
+        expect(out).toContain('2 emails listed:');
         expect(out).toContain('email-a1b2c3 | Alice | Hi | 2026-07-01 | read | Inbox');
         expect(out).toContain('email-d4e5f6');
     });
 
-    it('notes how many more are not shown when the page is capped', () => {
-        expect(formatAgentEmailRows([row()], 5)).toContain('1 of 5 emails shown (4 more not shown):');
+    it('notes how many more are not listed when the page is capped', () => {
+        expect(formatAgentEmailRows([row()], 5)).toContain('1 of 5 emails listed (4 more not listed):');
     });
 
     it('appends the unread, starred, labels and attachment flags', () => {
