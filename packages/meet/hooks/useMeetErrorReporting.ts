@@ -3,6 +3,8 @@ import { useCallback, useRef } from 'react';
 import type { SeverityLevel } from '@sentry/browser';
 import type { Primitive } from '@sentry/types';
 
+import { logger } from '@proton/logger';
+import type { LogLevel } from '@proton/logger/types';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -35,6 +37,18 @@ const isReportMeetErrorOptions = (options: unknown): options is ReportMeetErrorO
     typeof options === 'object' &&
     ('context' in options || 'level' in options || 'fingerprint' in options || 'tags' in options);
 
+const LOG_LEVEL_BY_SEVERITY: Record<SeverityLevel, LogLevel> = {
+    fatal: 'error',
+    error: 'error',
+    warning: 'warn',
+    log: 'info',
+    info: 'info',
+    debug: 'debug',
+};
+
+const getLoggerArgs = ({ error, ...extra }: Record<string, unknown> = {}) =>
+    [error, Object.keys(extra).length > 0 ? extra : undefined].filter((arg) => arg !== undefined);
+
 // We exclude ApiError from using traceError because they are filtered out if not.
 const getReportableException = (payload: unknown) =>
     payload instanceof Error && !(payload instanceof ApiError) ? payload : undefined;
@@ -47,53 +61,55 @@ export const useMeetErrorReporting = () => {
 
     const reportMeetError = useCallback<ReportMeetError>(
         (label, options) => {
-            if (shouldReportError) {
-                const {
-                    level = 'error',
-                    context,
-                    fingerprint,
-                    tags,
-                }: ReportMeetErrorOptions = isReportMeetErrorOptions(options)
-                    ? options
-                    : { context: { error: options } };
+            const {
+                level = 'error',
+                context,
+                fingerprint,
+                tags,
+            }: ReportMeetErrorOptions = isReportMeetErrorOptions(options) ? options : { context: { error: options } };
 
-                const meetCoreError = resolveMeetCoreError(context?.error);
-                const reportLabel = meetCoreError ? `${label}: ${meetCoreError}` : label;
+            const meetCoreError = resolveMeetCoreError(context?.error);
+            const reportLabel = meetCoreError ? `${label}: ${meetCoreError}` : label;
 
-                const currentCount = errorCountMapRef.current.get(reportLabel) ?? 0;
+            logger[LOG_LEVEL_BY_SEVERITY[level]](reportLabel, ...getLoggerArgs(context));
 
-                if (!removeSentryEventLimit && currentCount >= MAX_SAME_ERROR) {
-                    // do not report the error if it has been reported too many times
-                    return;
-                }
+            if (!shouldReportError) {
+                return;
+            }
 
-                errorCountMapRef.current.set(reportLabel, currentCount + 1);
+            const currentCount = errorCountMapRef.current.get(reportLabel) ?? 0;
 
-                const tagsWithAnalyticsAttributes = {
-                    ...getAnalyticsAttributes(),
-                    ...(meetCoreError && { meetCoreError }),
-                    ...tags,
-                    label,
-                };
-                const exception = getReportableException(context?.error);
+            if (!removeSentryEventLimit && currentCount >= MAX_SAME_ERROR) {
+                // do not report the error if it has been reported too many times
+                return;
+            }
 
-                if (exception) {
-                    traceError(exception, {
-                        level,
-                        extra: context,
-                        tags: tagsWithAnalyticsAttributes,
-                        fingerprint: fingerprint ?? [reportLabel],
-                    });
-                    return;
-                }
+            errorCountMapRef.current.set(reportLabel, currentCount + 1);
 
-                captureMessage(reportLabel, {
+            const tagsWithAnalyticsAttributes = {
+                ...getAnalyticsAttributes(),
+                ...(meetCoreError && { meetCoreError }),
+                ...tags,
+                label,
+            };
+            const exception = getReportableException(context?.error);
+
+            if (exception) {
+                traceError(exception, {
                     level,
                     extra: context,
-                    fingerprint,
                     tags: tagsWithAnalyticsAttributes,
+                    fingerprint: fingerprint ?? [reportLabel],
                 });
+                return;
             }
+
+            captureMessage(reportLabel, {
+                level,
+                extra: context,
+                fingerprint,
+                tags: tagsWithAnalyticsAttributes,
+            });
         },
         [shouldReportError, removeSentryEventLimit, getAnalyticsAttributes]
     );

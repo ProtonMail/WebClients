@@ -2,8 +2,10 @@ import type { ReactNode } from 'react';
 
 import { renderHook } from '@testing-library/react';
 
+import { logger } from '@proton/logger';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { AnalyticsProvider } from '../contexts/AnalyticsContext';
 import { setMeetCoreErrorResolver, useMeetErrorReporting } from './useMeetErrorReporting';
@@ -14,11 +16,17 @@ vi.mock('@proton/shared/lib/helpers/sentry', () => ({
 }));
 
 vi.mock('@proton/unleash/useFlag', () => ({
-    useFlag: () => true,
+    useFlag: vi.fn(),
+}));
+
+vi.mock('@proton/logger', () => ({
+    logger: { error: vi.fn(), warn: vi.fn(), info: vi.fn(), debug: vi.fn() },
 }));
 
 const captureMessageMock = vi.mocked(captureMessage);
 const traceErrorMock = vi.mocked(traceError);
+const useFlagMock = vi.mocked(useFlag);
+const loggerMock = vi.mocked(logger);
 
 const wrapper = ({ children }: { children: ReactNode }) => (
     <AnalyticsProvider attributes={{ meetingLinkName: 'meeting-123' }}>
@@ -31,6 +39,39 @@ const expectedTags = { meetingLinkName: 'meeting-123', isWaitingRoom: true, labe
 describe('useMeetErrorReporting', () => {
     beforeEach(() => {
         vi.clearAllMocks();
+        useFlagMock.mockImplementation(() => true);
+    });
+
+    it('writes the report to the logger at the matching level, with the error apart from the rest of the context', () => {
+        const { result } = renderHook(() => useMeetErrorReporting(), { wrapper });
+
+        const error = new Error('boom');
+
+        result.current.reportMeetError('Something failed', { context: { error, epoch: 4 }, level: 'warning' });
+
+        expect(loggerMock.warn).toHaveBeenCalledWith('Something failed', error, { epoch: 4 });
+    });
+
+    it('writes to the logger even when Sentry reporting is off', () => {
+        useFlagMock.mockImplementation((flag) => flag !== 'MeetErrorReporting');
+        const { result } = renderHook(() => useMeetErrorReporting(), { wrapper });
+
+        result.current.reportMeetError('Something failed', 29);
+
+        expect(loggerMock.error).toHaveBeenCalledWith('Something failed', 29);
+        expect(captureMessageMock).not.toHaveBeenCalled();
+    });
+
+    it('keeps writing to the logger after Sentry stops reporting the same label', () => {
+        useFlagMock.mockImplementation((flag) => flag !== 'MeetRemoveSentryEventLimit');
+        const { result } = renderHook(() => useMeetErrorReporting(), { wrapper });
+
+        for (let i = 0; i < 11; i++) {
+            result.current.reportMeetError('Something failed', 29);
+        }
+
+        expect(captureMessageMock).toHaveBeenCalledTimes(10);
+        expect(loggerMock.error).toHaveBeenCalledTimes(11);
     });
 
     it('tags the report with the attributes of every provider above it', () => {
