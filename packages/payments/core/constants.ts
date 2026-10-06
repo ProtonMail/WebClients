@@ -8,7 +8,7 @@ export * from '@proton/shared/lib/payments/constants';
  */
 export type URL_CONFIGURABLE_ADDON_PREFIX = Exclude<ADDON_PREFIXES, ADDON_PREFIXES.MSP>;
 
-export const ADDON_GENERIC_NAMES = {
+export const ADDON_TOTAL_PARAM_NAMES = {
     [ADDON_PREFIXES.MEMBER]: 'Member',
     [ADDON_PREFIXES.DOMAIN]: 'Domain',
     [ADDON_PREFIXES.IP]: 'Ip',
@@ -17,6 +17,6 @@ export const ADDON_GENERIC_NAMES = {
     [ADDON_PREFIXES.MEET]: 'Meet',
 } as const satisfies Record<URL_CONFIGURABLE_ADDON_PREFIX, string>;
 
-export type ADDON_GENERIC_NAME = (typeof ADDON_GENERIC_NAMES)[keyof typeof ADDON_GENERIC_NAMES];
+export type ADDON_TOTAL_PARAM_NAME = (typeof ADDON_TOTAL_PARAM_NAMES)[keyof typeof ADDON_TOTAL_PARAM_NAMES];
 
-export const URL_CONFIGURABLE_ADDON_PREFIXES = Object.keys(ADDON_GENERIC_NAMES) as URL_CONFIGURABLE_ADDON_PREFIX[];
+export const URL_CONFIGURABLE_ADDON_PREFIXES = Object.keys(ADDON_TOTAL_PARAM_NAMES) as URL_CONFIGURABLE_ADDON_PREFIX[];

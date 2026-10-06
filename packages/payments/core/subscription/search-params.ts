@@ -1,11 +1,17 @@
 import { type SearchParamStringOptions, getSearchParamString } from '@proton/utils/searchParams';
 
-import { type ADDON_GENERIC_NAME, ADDON_GENERIC_NAMES, type COUPON_CODES, CURRENCIES, type PLANS } from '../constants';
+import {
+    type ADDON_TOTAL_PARAM_NAME,
+    ADDON_TOTAL_PARAM_NAMES,
+    type COUPON_CODES,
+    CURRENCIES,
+    type PLANS,
+} from '../constants';
 import type { Currency } from '../interface';
 import { correctDeprecatedPlanName } from '../plan/helpers';
 import { getValidCycle } from './helpers';
 
-type TotalParams = Partial<Record<`total${ADDON_GENERIC_NAME}`, number>>;
+type TotalParams = Partial<Record<`total${ADDON_TOTAL_PARAM_NAME}`, number>>;
 type SubscriptionSearchParamsBase = {
     /** Any coupon code; enum values get autocomplete, arbitrary strings are allowed */
     coupon?: COUPON_CODES | (string & {});
@@ -62,7 +68,7 @@ export type SubscriptionSearchParams = SubscriptionSearchParamsBase &
     SubscriptionSearchParamsTarget &
     TotalParams;
 
-const TOTAL_ADDON_KEYS = Object.values(ADDON_GENERIC_NAMES).map((addon) => `total${addon}`);
+const TOTAL_ADDON_KEYS = Object.values(ADDON_TOTAL_PARAM_NAMES).map((addon) => `total${addon}`);
 
 const getTotalParams = (params: URLSearchParams): TotalParams =>
     TOTAL_ADDON_KEYS.reduce((result, key) => {
