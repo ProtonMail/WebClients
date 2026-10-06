@@ -237,9 +237,6 @@
       "Cancel": [
         "取消"
       ],
-      "Change layout": [
-        "更改布局"
-      ],
       "Change password": [
         "更改密码"
       ],
@@ -369,9 +366,6 @@
       "Enable camera": [
         "启用摄像头"
       ],
-      "Enable captions": [
-        "启用字幕"
-      ],
       "Enable waiting room": [
         "启用等候室"
       ],
@@ -459,6 +453,9 @@
       "Minimize preview": [
         "最小化预览"
       ],
+      "More info": [
+        "更多信息"
+      ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
       ],
@@ -479,6 +476,9 @@
       ],
       "Noise cancellation": [
         "降噪"
+      ],
+      "Not now": [
+        "以后再说"
       ],
       "Open app": [
         "打开应用"
@@ -693,6 +693,9 @@
       "Stop Recording Track Stats": [
         "停止录制轨道统计"
       ],
+      "Stop sharing": [
+        "停止分享"
+      ],
       "Submit": [
         "提交"
       ],
@@ -788,9 +791,6 @@
       "Blur background": [
         "模糊背景"
       ],
-      "Chat": [
-        "聊天"
-      ],
       "Close": [
         "关闭"
       ],
@@ -803,23 +803,11 @@
       "Copy meeting link": [
         "复制会议链接"
       ],
-      "Debug devices": [
-        "调试设备"
-      ],
-      "Debug overlay": [
-        "调试叠加层"
-      ],
-      "Device Debugger": [
-        "设备调试器"
-      ],
       "Go to dashboard": [
         "转到控制面板"
       ],
       "Incoming video": [
         "传入视频"
-      ],
-      "Layout: ${ selectedLabel }": [
-        "布局：${ selectedLabel }"
       ],
       "Leave Meeting": [
         "离开会议"
@@ -829,12 +817,6 @@
       ],
       "Lock meeting": [
         "锁定会议"
-      ],
-      "Lower hand": [
-        "放下"
-      ],
-      "Meeting details": [
-        "会议详情"
       ],
       "Meeting timer": [
         "会议计时器"
@@ -854,14 +836,8 @@
       "Participant host control options": [
         "参与者主持人控制选项"
       ],
-      "Participants": [
-        "参与者"
-      ],
       "Picture-in-picture while sharing": [
         "共享时使用画中画"
-      ],
-      "Raise hand": [
-        "举手"
       ],
       "Rotate camera": [
         "旋转摄像头"
@@ -869,14 +845,8 @@
       "Save my name on this device": [
         "在此设备上保存我的姓名"
       ],
-      "Screen share": [
-        "屏幕共享"
-      ],
       "Self view": [
         "自身视图"
-      ],
-      "Settings": [
-        "设置"
       ],
       "Stop recording and download.": [
         "停止录制并下载"
@@ -887,17 +857,11 @@
       "Toggle emoji reactions": [
         "切换表情反应"
       ],
-      "Toggle meeting details": [
-        "切换会议详情"
-      ],
       "Toggle participants": [
         "切换参与者列表"
       ],
       "Toggle screen share": [
         "切换屏幕共享"
-      ],
-      "Toggle settings": [
-        "切换设置"
       ],
       "Video settings": [
         "视频设置"
@@ -3228,9 +3192,6 @@
       "Share screen": [
         "共享屏幕"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "分享此链接以邀请他人，您也可以随时点击工具栏中的信息图标找到它。"
-      ],
       "Sign in": [
         "登录"
       ],
@@ -3239,9 +3200,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "此浏览器不支持扬声器选择，请使用系统设置选择其他扬声器。"
-      ],
-      "Start recording": [
-        "开始录制"
       ],
       "Starting camera…": [
         "正在启动摄像头…"
@@ -3303,9 +3261,6 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "要创建会议室，您需要**一个免费的 ${ BRAND_NAME } 账户**，以便我们保存该会议室。这仅需几秒钟。"
       ],
-      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
-        "要生成实时字幕，字幕服务需要访问会议音频。字幕仅您可见且不会保存。"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
@@ -3326,9 +3281,6 @@
       ],
       "Turn on camera": [
         "开启摄像头"
-      ],
-      "Turn on live captions?": [
-        "开启实时字幕？"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "无法重新连接到会议，请重新加入或离开。"
@@ -3389,6 +3341,9 @@
       ],
       "Yesterday — ${ absoluteDate }": [
         "昨天 — ${ absoluteDate }"
+      ],
+      "You": [
+        "您"
       ],
       "You are almost there": [
         "快要完成了"
@@ -3670,6 +3625,9 @@
       ],
       "Monday to Friday": [
         "周一至周五"
+      ],
+      "More options": [
+        "更多选项"
       ],
       "Mountain landscape background": [
         "山景背景"

@@ -214,9 +214,6 @@
       "Cancel": [
         "Avbryt"
       ],
-      "Change layout": [
-        "Ändra layout"
-      ],
       "Change password": [
         "Ändra lösenord"
       ],
@@ -430,6 +427,9 @@
       "Minimize preview": [
         "Minimera förhandsgranskning"
       ],
+      "More info": [
+        "Mer info"
+      ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
       ],
@@ -450,6 +450,9 @@
       ],
       "Noise cancellation": [
         "Brusreducering"
+      ],
+      "Not now": [
+        "Inte nu"
       ],
       "Open app": [
         "Öppna app"
@@ -654,6 +657,9 @@
       "Stop Recording Track Stats": [
         "Sluta spela in spårningsstatistik"
       ],
+      "Stop sharing": [
+        "Sluta dela"
+      ],
       "Submit": [
         "Skicka"
       ],
@@ -723,6 +729,9 @@
       "View invoice": [
         "Visa faktura"
       ],
+      "View security details": [
+        "Visa säkerhetsdetaljer"
+      ],
       "Virtual backgrounds": [
         "Virtuella bakgrunder"
       ],
@@ -746,9 +755,6 @@
       "Blur background": [
         "Bakgrundsoskärpa"
       ],
-      "Chat": [
-        "Chatt"
-      ],
       "Close": [
         "Stäng"
       ],
@@ -761,32 +767,17 @@
       "Copy meeting link": [
         "Kopiera möteslänk"
       ],
-      "Debug devices": [
-        "Felsök enheter"
-      ],
-      "Debug overlay": [
-        "Felsökningsöverlägg"
-      ],
       "Go to dashboard": [
         "Gå till adminpanel"
       ],
       "Incoming video": [
         "Inkommande video"
       ],
-      "Layout: ${ selectedLabel }": [
-        "Layout: ${ selectedLabel }"
-      ],
       "Leave Meeting": [
         "Lämna möte"
       ],
       "Lock meeting": [
         "Lås möte"
-      ],
-      "Lower hand": [
-        "Sänk handen"
-      ],
-      "Meeting details": [
-        "Mötesdetaljer"
       ],
       "Meeting timer": [
         "Mötestimer"
@@ -806,26 +797,14 @@
       "Participant host control options": [
         "Kontrollalternativ för deltagarvärd"
       ],
-      "Participants": [
-        "Deltagare"
-      ],
       "Picture-in-picture while sharing": [
         "Bild-i-bild vid delning"
-      ],
-      "Raise hand": [
-        "Räck upp handen"
       ],
       "Rotate camera": [
         "Rotera kamera"
       ],
       "Save my name on this device": [
         "Spara mitt namn på denna enhet"
-      ],
-      "Screen share": [
-        "Skärmdelning"
-      ],
-      "Settings": [
-        "Inställningar"
       ],
       "Stop recording and download.": [
         "Stoppa inspelning och ladda ner."
@@ -836,17 +815,11 @@
       "Toggle emoji reactions": [
         "Slå på/av emoji-reaktioner"
       ],
-      "Toggle meeting details": [
-        "Slå på/av mötesdetaljer"
-      ],
       "Toggle participants": [
         "Slå på/av deltagare"
       ],
       "Toggle screen share": [
         "Slå på/av skärmdelning"
-      ],
-      "Toggle settings": [
-        "Slå på/av inställningar"
       ],
       "Video settings": [
         "Videoinställningar"
@@ -2360,6 +2333,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Still waiting?": [
+        "Väntar du fortfarande?"
       ]
     },
     "fido2: Label": {
@@ -2508,6 +2484,10 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } behöver WebRTC för att köras. Uppdatera din webbläsare eller enhet till en version som stöder WebRTC, prova en annan webbläsare eller inaktivera eventuella tillägg som kan blockera det."
+      ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } medlem",
+        "${ mlsMemberCount } medlemmar"
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } och ${ otherParticipantsCount } andra spelar in"
@@ -3073,9 +3053,6 @@
       "Share screen": [
         "Dela skärm"
       ],
-      "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
-        "Dela denna länk för att bjuda in andra. Du kan också hitta den när som helst genom att klicka på informationsikonen i verktygsfältet."
-      ],
       "Sign in": [
         "Logga in"
       ],
@@ -3084,9 +3061,6 @@
       ],
       "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
         "Val av högtalare är inte tillgängligt i denna webbläsare. Använd dina systeminställningar för att välja en annan högtalare."
-      ],
-      "Start recording": [
-        "Starta inspelning"
       ],
       "Starting camera…": [
         "Startar kamera …"
@@ -3222,6 +3196,9 @@
       ],
       "Yesterday — ${ absoluteDate }": [
         "Igår – ${ absoluteDate }"
+      ],
+      "You": [
+        "Du"
       ],
       "You are almost there": [
         "Du är nästan där"
@@ -3492,6 +3469,9 @@
       ],
       "Monday to Friday": [
         "Måndag till fredag"
+      ],
+      "More options": [
+        "Fler alternativ"
       ],
       "Muted": [
         "Ljud av"
@@ -4086,11 +4066,17 @@
       "Minicalendar": [
         "Minikalender"
       ],
+      "MLS members": [
+        "MLS-medlemmar"
+      ],
       "No one is waiting": [
         "Ingen väntar"
       ],
       "No results found": [
         "Inga resultat hittades"
+      ],
+      "Participant counts don’t match": [
+        "Deltagarantal matchar inte"
       ],
       "Participants": [
         "Deltagare"
