@@ -1,7 +1,10 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { DraftKind } from '../../helpers/draftKind';
+import { conversationReferenceFor } from '../../helpers/references';
 import { ADA, composeHarness, decryptedParent } from './compose.test.helpers';
 import type { CreateDraftParams } from './createDraft';
 import { createCreateDraftHandler } from './createDraft';
@@ -111,6 +114,54 @@ describe('create_draft', () => {
 
         expect(initialized).toEqual(['MESSAGE_1']);
         expect(composed[0].referenceMessage).toBe(messages.MESSAGE_1);
+    });
+
+    describe('answering a conversation reference, as a grouped row mints', () => {
+        const threadMessage = (ID: string, Time: number, Flags = MESSAGE_FLAGS.FLAG_RECEIVED) => {
+            return { ID, Time, Flags } as Message;
+        };
+        const thread = () => {
+            return {
+                Messages: [
+                    threadMessage('MESSAGE_1', 1),
+                    threadMessage('MESSAGE_2', 2),
+                    threadMessage('DRAFT_3', 3, 0),
+                ],
+            };
+        };
+
+        it('quotes the newest message of the conversation that is not a draft', async () => {
+            const parent = decryptedParent('MESSAGE_2');
+            const { create, references, composed } = harness({
+                messages: { MESSAGE_2: parent },
+                conversations: { CONVERSATION_1: thread() },
+            });
+            const answers = conversationReferenceFor(references, 'CONVERSATION_1');
+
+            await create({ kind: DraftKind.REPLY, answers, body: 'Yes' });
+
+            expect(composed[0].referenceMessage).toBe(parent);
+        });
+
+        it('loads a conversation the store does not hold before choosing the message', async () => {
+            const loaded: string[] = [];
+            const conversations: Record<string, { Messages: Message[] }> = {};
+            const parent = decryptedParent('MESSAGE_2');
+            const { create, references, composed } = harness({
+                messages: { MESSAGE_2: parent },
+                conversations,
+                onLoadConversation: (id) => {
+                    loaded.push(id);
+                    conversations[id] = thread();
+                },
+            });
+            const answers = conversationReferenceFor(references, 'CONVERSATION_1');
+
+            await create({ kind: DraftKind.REPLY, answers, body: 'Yes' });
+
+            expect(loaded).toEqual(['CONVERSATION_1']);
+            expect(composed[0].referenceMessage).toBe(parent);
+        });
     });
 
     it('refuses to open a reply it could not decrypt, rather than one with an empty quote', async () => {

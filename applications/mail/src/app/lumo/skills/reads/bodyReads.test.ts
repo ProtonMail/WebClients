@@ -1,13 +1,15 @@
 /** The three body reads share the open-then-decrypt path, so they share one fake-store harness. */
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import { getHumanLabelID } from '@proton/mail/helpers/location';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { protonizer } from '@proton/sanitize/purify';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { API_CODES, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { getParamsFromPathname } from '../../../helpers/mailboxUrl';
+import { conversationReferenceFor } from '../../helpers/references';
 import type { MailToolDeps } from '../../toolModule';
 import { createReadEmailHandler, readEmailDefinition } from './readEmail';
 import { createReadOpenEmailHandler, readOpenEmailDefinition } from './readOpenEmail';
@@ -97,10 +99,18 @@ const unreadThread = () =>
         threadMessage('MESSAGE_1', july(1), { unread: 1 })
     );
 
+const notFound = () => {
+    return Object.assign(new Error('not found'), {
+        status: 422,
+        data: { Code: API_CODES.NOT_FOUND_ERROR, Error: 'Message does not exist' },
+    });
+};
+
 const harness = ({
     elements = {},
     messages = {},
     conversations = {},
+    onServer = {},
     elementID,
     messageID,
     viewMode = VIEW_MODE.SINGLE,
@@ -111,6 +121,8 @@ const harness = ({
     elements?: Record<string, any>;
     messages?: Record<string, MessageState>;
     conversations?: Record<string, any>;
+    /** What a fetch by id finds; anything else is gone from the server. */
+    onServer?: Record<string, any>;
     elementID?: string;
     messageID?: string;
     viewMode?: VIEW_MODE;
@@ -121,6 +133,14 @@ const harness = ({
     const pushed: any[] = [];
     const loaded: string[] = [];
     const initialized: string[] = [];
+    const fetched: string[] = [];
+    const fetchByID = async (id: string) => {
+        fetched.push(id);
+        if (!onServer[id]) {
+            throw notFound();
+        }
+        return onServer[id];
+    };
     const listeners = new Set<() => void>();
     const notify = () => listeners.forEach((listener) => listener());
     const store = {
@@ -151,6 +171,9 @@ const harness = ({
             },
         },
         getMailSettings: () => ({ ViewMode: viewMode }),
+        getFolders: () => [],
+        fetchConversation: fetchByID,
+        fetchMessage: fetchByID,
         loadConversation: async (conversationID: string) => {
             loaded.push(conversationID);
             onLoadConversation?.();
@@ -163,7 +186,7 @@ const harness = ({
         },
     } as unknown as MailToolDeps;
 
-    return { deps, pushed, loaded, initialized, references: createReferenceRegistry() };
+    return { deps, pushed, loaded, initialized, fetched, references: createReferenceRegistry() };
 };
 
 describe('read_email', () => {
@@ -188,7 +211,7 @@ describe('read_email', () => {
                 body: 'Your room is booked.',
             },
         ]);
-        expect(result.notLoaded).toBeUndefined();
+        expect(result.deleted).toBeUndefined();
         expect(result.notDecrypted).toBeUndefined();
         // Reading IS displaying: the row read is the one the user is left looking at.
         expect(pushed).toHaveLength(1);
@@ -306,23 +329,90 @@ describe('read_email', () => {
         expect(result.emails[0].body).toBe('First');
     });
 
-    it('reports an email that is no longer on screen as not loaded, without failing the batch', async () => {
+    // The everyday case behind re-searching: a second search with a different keyword resets the list, and
+    // an email the first one found used to read back as "no longer loaded".
+    it('reads an email an earlier search found, after a later search reset the list', async () => {
+        const messages: Record<string, MessageState> = {};
+        const { deps, fetched, references } = harness({
+            messages,
+            onServer: { MESSAGE_9: { ID: 'MESSAGE_9', ConversationID: 'CONVERSATION_9', LabelIDs: [] } },
+            onNavigate: () => {
+                messages.MESSAGE_9 = decrypted('MESSAGE_9', 'Invoice', 'Amount due: 40.', {
+                    conversationID: 'CONVERSATION_9',
+                });
+            },
+        });
+        const reference = references.referenceFor('email', 'MESSAGE_9', { title: 'Invoice' });
+
+        const result = await createReadEmailHandler(deps)(
+            { references: [reference], best_match: null },
+            { references }
+        );
+
+        expect(fetched).toEqual(['MESSAGE_9']);
+        expect(result.emails.map((email) => email.body)).toEqual(['Amount due: 40.']);
+    });
+
+    it('opens an email from outside the current view in its own folder', async () => {
+        const { deps, pushed, references } = harness({
+            viewMode: VIEW_MODE.GROUP,
+            conversations: {
+                CONVERSATION_1: {
+                    Conversation: { ID: 'CONVERSATION_1', Labels: [{ ID: MAILBOX_LABEL_IDS.ARCHIVE }] },
+                    Messages: [threadMessage('MESSAGE_1', july(1))],
+                },
+            },
+            messages: { MESSAGE_1: decrypted('MESSAGE_1', 'Project kickoff', 'First', { time: july(1) }) },
+        });
+        const reference = conversationReferenceFor(references, 'CONVERSATION_1');
+
+        await createReadEmailHandler(deps)({ references: [reference], best_match: null }, { references });
+
+        expect(getParamsFromPathname(pushed[0].pathname).params).toMatchObject({
+            labelID: getHumanLabelID(MAILBOX_LABEL_IDS.ARCHIVE),
+            elementID: 'CONVERSATION_1',
+        });
+    });
+
+    it('reports a deleted email as deleted, without failing the batch', async () => {
         const { deps, references } = harness({
             elements: { ELEMENT_1: { ID: 'ELEMENT_1' } },
             messages: { ELEMENT_1: decrypted('ELEMENT_1', 'Kept', 'Still here.') },
         });
         const kept = references.referenceFor('email', 'ELEMENT_1', { title: 'Kept' });
-        const evicted = references.referenceFor('email', 'ELEMENT_GONE', { title: 'Evicted' });
+        const gone = references.referenceFor('email', 'ELEMENT_GONE', { title: 'Gone' });
 
         const result = await createReadEmailHandler(deps)(
-            { references: [kept, evicted], best_match: kept },
+            { references: [kept, gone], best_match: kept },
             { references }
         );
 
         expect(result.emails.map((email) => email.reference)).toEqual([kept]);
-        // Evicted, not undecryptable: the two need different recoveries.
-        expect(result.notLoaded).toEqual([evicted]);
+        // Deleted, not undecryptable: one is a fact to relay, the other worth retrying.
+        expect(result.deleted).toEqual([gone]);
         expect(result.notDecrypted).toBeUndefined();
+    });
+
+    it('reports an email the server failed to return as unreachable, without failing the batch', async () => {
+        const { deps, references } = harness({
+            elements: { ELEMENT_1: { ID: 'ELEMENT_1' } },
+            messages: { ELEMENT_1: decrypted('ELEMENT_1', 'Kept', 'Still here.') },
+        });
+        deps.fetchMessage = async () => {
+            throw Object.assign(new Error('offline'), { status: 0 });
+        };
+        const kept = references.referenceFor('email', 'ELEMENT_1', { title: 'Kept' });
+        const offline = references.referenceFor('email', 'ELEMENT_OFFLINE', { title: 'Offline' });
+
+        const result = await createReadEmailHandler(deps)(
+            { references: [kept, offline], best_match: kept },
+            { references }
+        );
+
+        expect(result.emails.map((email) => email.reference)).toEqual([kept]);
+        // Never "deleted": an offline client must not tell the user their mail is gone.
+        expect(result.deleted).toBeUndefined();
+        expect(result.unreachable).toEqual([offline]);
     });
 
     it('does not re-open the best match when the batch already ended on it', async () => {
@@ -351,10 +441,10 @@ describe('read_email', () => {
 
     it('names the unreadable emails in the payload, and says which cause to recover from', () => {
         const serialized = readEmailDefinition.serializeForLumo(
-            { emails: [], notLoaded: ['email-a1b2c3'], notDecrypted: ['email-d4e5f6'] },
+            { emails: [], deleted: ['email-a1b2c3'], notDecrypted: ['email-d4e5f6'] },
             anyReferences
         );
-        expect(serialized).toContain('No longer loaded on screen: email-a1b2c3.');
+        expect(serialized).toContain('Permanently deleted, so not read: email-a1b2c3.');
         expect(serialized).toContain("Could not read (didn't open in time): email-d4e5f6.");
     });
 
@@ -659,14 +749,31 @@ describe('read_thread', () => {
         expect(loaded).toEqual([]);
     });
 
-    it('reports no conversation when the targeted row has been evicted from the list', async () => {
-        const { deps, loaded, pushed, references } = harness({ conversations: twoMessageThread() });
-        const reference = references.referenceFor('email', 'MESSAGE_2', { title: 'Re: Project kickoff' });
+    // A grouped row's reference is a conversation id, which no message in the store carries as its own id.
+    it('reads a grouped conversation reference that has left the list', async () => {
+        const { deps, pushed, references } = harness({
+            viewMode: VIEW_MODE.GROUP,
+            conversations: twoMessageThread(),
+            messages: {
+                MESSAGE_2: decrypted('MESSAGE_2', 'Re: Project kickoff', 'Second', { time: july(2) }),
+                MESSAGE_1: decrypted('MESSAGE_1', 'Project kickoff', 'First', { time: july(1) }),
+            },
+        });
+        const reference = conversationReferenceFor(references, 'CONVERSATION_1');
 
         const result = await createReadThreadHandler(deps)({ target: reference }, { references });
 
-        expect(result).toEqual({ found: false, messages: [], total: 0 });
-        expect(loaded).toEqual([]);
+        expect(result.messages.map((thread) => thread.body)).toEqual(['First', 'Second']);
+        expect(getParamsFromPathname(pushed[0].pathname).params).toMatchObject({ elementID: 'CONVERSATION_1' });
+    });
+
+    it('reports a targeted email the server no longer has as deleted, rather than as nothing open', async () => {
+        const { deps, pushed, references } = harness();
+        const reference = references.referenceFor('email', 'MESSAGE_GONE', { title: 'Re: Project kickoff' });
+
+        await expect(createReadThreadHandler(deps)({ target: reference }, { references })).rejects.toThrow(
+            /no longer exists/
+        );
         expect(pushed).toEqual([]);
     });
 
@@ -744,7 +851,7 @@ describe('recovery from a read that came back with nothing', () => {
         ['read_open_email', readOpenEmailDefinition, 'body could not be read yet, retry once'],
         ['read_thread', readThreadDefinition, 'find the thread yourself with search or view_emails'],
         ['read_thread', readThreadDefinition, 'messages could not be read yet, retry once'],
-        ['read_email', readEmailDefinition, 'no longer loaded, find it again with search or view_emails'],
+        ['read_email', readEmailDefinition, 'pass it straight here rather than searching again'],
     ])('tells %s how to recover for itself', (_tool, definition, clause) => {
         expect(definition.toolDescription).toContain(clause);
     });

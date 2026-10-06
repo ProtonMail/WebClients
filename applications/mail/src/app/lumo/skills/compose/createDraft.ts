@@ -4,11 +4,12 @@ import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces';
+import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import { selectParams } from '../../../store/elements/elementsSelectors';
 import { DraftKind, MESSAGE_ACTION_FOR } from '../../helpers/draftKind';
 import { withStepTimeout } from '../../helpers/messages';
-import { resolveTypedId } from '../../helpers/references';
+import { isConversationReferenceID, resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { createDraftCardRenderer } from './createDraftCard';
 import type { References } from './recipients';
@@ -146,6 +147,23 @@ const answeredMessage = async (mail: MailToolDeps, id: string): Promise<PartialM
     return message?.data && message.messageDocument?.initialized === true ? message : undefined;
 };
 
+/** A reply answers one message, so a conversation reference stands for its newest message that is not a draft. */
+const newestMessageIDOf = async (mail: MailToolDeps, conversationID: string): Promise<string | undefined> => {
+    const storedMessages = () => {
+        return mail.store.getState().conversations[conversationID]?.Messages ?? [];
+    };
+    if (!storedMessages().length) {
+        try {
+            await withStepTimeout(mail.loadConversation(conversationID));
+        } catch {
+            // Judged on what the store holds afterwards, below.
+        }
+    }
+
+    const nonDrafts = storedMessages().filter((message) => !isDraft(message));
+    return nonDrafts.sort((a, b) => b.Time - a.Time)[0]?.ID;
+};
+
 type AddressedFields = Pick<CreateDraftParams, 'answers' | 'to' | 'cc' | 'subject'>;
 
 /** The email a reply or forward quotes, and from which it inherits its recipients and subject. */
@@ -172,7 +190,8 @@ const quotedMessage = async (
     }
 
     const id = resolveTypedId(answers, ['email'], references);
-    const referenceMessage = await answeredMessage(mail, id);
+    const messageID = isConversationReferenceID(references, id) ? await newestMessageIDOf(mail, id) : id;
+    const referenceMessage = messageID ? await answeredMessage(mail, messageID) : undefined;
     if (!referenceMessage) {
         throw new ToolInputError(
             `That email could not be read, so there was nothing to quote in the ${kind}. ` +
