@@ -945,6 +945,9 @@
       "Got it": [
         "حصلت عليها"
       ],
+      "Got it, connect my Gmail": [
+        "فهمت، قم بربط حساب Gmail الخاص بي."
+      ],
       "Group owner": [
         "مالك المجموعة"
       ],
@@ -1059,6 +1062,9 @@
       "Learn about recovery options": [
         "التعرف على خيارات الاسترداد"
       ],
+      "Learn how this works": [
+        "تعرّف على كيفية عمل ذلك"
+      ],
       "Learn more": [
         "أعرف المزيد"
       ],
@@ -1142,6 +1148,9 @@
       ],
       "More details": [
         "مزيد من التفاصيل"
+      ],
+      "More info": [
+        "المزيد من المعلومات"
       ],
       "More info: ${ safeTitle }": [
         "مزيد من المعلومات: ${ safeTitle }"
@@ -2060,6 +2069,12 @@
       "Domains": [
         "النطاقات"
       ],
+      "Managed Service Provider": [
+        "مُقدِّم الخدمات المُدارة"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "يمكن للمؤسسات التي تمتلك الملحق الخاص بمزود الخدمات المُدارة (Managed Service Provider) إنشاء مؤسسات تابعة وإدارتها."
+      ],
       "Servers": [
         "خوادم"
       ],
@@ -2191,17 +2206,20 @@
       "3 new admin roles": [
         "3 أدوار مسؤول جديدة"
       ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "عيّن أدواراً إدارية للمجموعات. أَدِر صلاحيات الوصول للعديد من المستخدمين دفعة واحدة، وقم بتحديثها تلقائياً عند انضمامهم أو مغادرتهم."
+      ],
+      "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
+        "عيّن أدوارًا إدارية محددة. امنح كل مسؤول فقط صلاحيات الوصول التي يحتاجها للحد من تأثير اختراق الحسابات والأخطاء غير المقصودة."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "اختر من بين ثلاثة أدوار جديدة للمسؤولين؛ حيث يحصل كل مسؤول فقط على صلاحيات الوصول التي يحتاجها."
+      ],
+      "Choose from two new admin roles. Each admin receives only the access they need.": [
+        "اختر من بين دورين جديدين للمسؤولين؛ حيث يحصل كل مسؤول فقط على صلاحيات الوصول التي يحتاجها."
+      ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "تكوين سياسات الأمان، والاحتفاظ بالبيانات، والبنية التحتية لـ VPN، وإدارة سجلات التدقيق."
-      ],
-      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
-        "تفويض الإدارة عن طريق تعيين أدوار مسؤول محددة. ومنح كل مسؤول فقط حق الوصول الذي يحتاجه. يتبع هذا مبدأ الامتياز الأقل، مما يحمي المؤسسة من الحسابات المخترقة والأخطاء العرضية."
-      ],
-      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
-        "تفويض الإدارة للعديد من المستخدمين في وقت واحد. تعيين أدوار مسؤول محددة للمجموعات للحصول على أذونات تلقائية. يتبع هذا مبدأ الحد الأدنى من الامتيازات لتوفير الوقت في عمليات الإعداد والمغادرة مع تقليل الأخطاء."
-      ],
-      "Delegate management with the appropriate admin role.": [
-        "تفويض الإدارة باستخدام دور المسؤول المناسب."
       ],
       "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
         "إدارة جميع المستخدمين، والمجموعات، والتخزين، والأمان، والفوترة، وسجلات التدقيق، وتكوينات النظام."
@@ -2418,6 +2436,9 @@
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "جربه مجانًا لمدة ${ TRIAL_DURATION_DAYS } يومًا"
       ],
+      "Up to ${ TRIAL_MAX_USERS } users, during the trial period": [
+        "حتى ${ TRIAL_MAX_USERS } مستخدمين خلال الفترة التجريبية"
+      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "عند الإلغاء، لن تُحوَّل فترتك التجريبية المجانية إلى اشتراك مدفوع، وبإمكانك الاستفادة من مزايا الباقة حتى نهاية الفترة التجريبية. بعد ذلك، سيُخفَّض اشتراكك إلى باقة ${ BRAND_NAME } Free."
       ],
@@ -2438,6 +2459,9 @@
       ],
       "You have reached the trial limit.": [
         "لقد وصلت إلى حد التجربة."
+      ],
+      "Your trial ends on ${ trialEndDate }. Add a payment method whenever you’re ready to keep using all ${ planTitle } features. You’ll only be charged once it’s added.": [
+        "تنتهي فترتك التجريبية في ${ trialEndDate }. أضف طريقة دفع عندما تكون مستعدًا لمواصلة استخدام جميع ميزات ${ planTitle }. ولن يتم تحصيل أي رسوم منك إلا بعد إضافتها."
       ]
     },
     "b2b_trials_Action": {
@@ -2547,56 +2571,15 @@
         "العرض غير متاح"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "يشمل دعمًا لنطاق بريد إلكتروني مخصَّص واحد و10 عناوين بريد إلكتروني و10 أسماء hide-my-email مستعارة ومشاركة التقويم والمزيد."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "تطبيق ${ MAIL_APP_NAME } لسطح المكتب"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } و ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "تخزين ${ storageSize }"
       ],
-      "1 user account": [
-        "حساب مستخدم واحد"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "مساحة تخزين 200 جيجابايت: 40 ضعف خطتك الحالية"
-      ],
-      "6 user accounts": [
-        "6 حسابات مستخدمين"
-      ],
-      "Admin panel to manage your family": [
-        "لوحة تحكم المسؤول لإدارة عائلتك"
-      ],
-      "Advanced account protection": [
-        "الحماية المتقدمة للحساب"
-      ],
-      "Easily add or remove users": [
-        "إضافة المستخدمين أو إزالتهم بسهولة"
-      ],
-      "One-time payment, lifetime deal": [
-        "دفعة لمرة واحدة، صفقة مدى الحياة"
-      ],
-      "Online document editor": [
-        "محرر المستندات عبر الإنترنت"
-      ],
-      "Password health alerts": [
-        "تنبيهات سلامة كلمات المرور"
-      ],
-      "Recover previous file versions": [
-        "استرداد إصدارات الملفات السابقة"
-      ],
       "Unlimited folders, labels and filters": [
         "مجلدات وتسميات ومرشحات غير محدودة"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "تسجيلات دخول وبطاقات ائتمان وأسماء hide-my-email مستعارة غير محدودة والمزيد"
       ],
       "Use your own email domain": [
         "استخدم نطاق بريدك الإلكتروني الخاص"
@@ -2605,91 +2588,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "تُدفع فاتورة بمبلغ ${ amount } مرة واحدة"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "يُجدد بعد شهر واحد بسعر ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "يمكنك الوصول إلى المحتوى المحظور والتصفح بخصوصية. يتضمن أكثر من 8500 خادم في أكثر من 110 دولة، و10 أجهزة، وبث عالي السرعة، ومانع الإعلانات، وحماية من البرامج الضارة، وVPN Accelerator والمزيد."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "تسجيلات دخول آمنة على جميع أجهزتك. يشمل عددًا غير محدود من أسماء hide-my-email المستعارة والمشاركة والمصادقة الثنائية (2FA) المدمجة و${ DARK_WEB_MONITORING_NAME } والمزيد."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل ${ addresses } من عناوين البريد الإلكتروني، ودعمًا لنطاقات البريد الإلكتروني المخصصة، ومساعد الكتابة ${ BRAND_NAME } Scribe، وأسماء hide-my-email مستعارة غير محدودة، والمزيد.",
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل عنوان بريد إلكتروني واحد (${ addresses })، ودعمًا لنطاقات البريد الإلكتروني المخصصة، ومساعد الكتابة ${ BRAND_NAME } Scribe، وأسماء hide-my-email مستعارة غير محدودة، والمزيد.",
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل عنواني بريد إلكتروني (${ addresses })، ودعمًا لنطاقات البريد الإلكتروني المخصصة، ومساعد الكتابة ${ BRAND_NAME } Scribe، وأسماء hide-my-email مستعارة غير محدودة، والمزيد.",
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل ${ addresses } عناوين بريد إلكتروني، ودعمًا لنطاقات البريد الإلكتروني المخصصة، ومساعد الكتابة ${ BRAND_NAME } Scribe، وأسماء hide-my-email مستعارة غير محدودة، والمزيد.",
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل ${ addresses } عنوان بريد إلكتروني، ودعمًا لنطاقات البريد الإلكتروني المخصصة، ومساعد الكتابة ${ BRAND_NAME } Scribe، وأسماء hide-my-email مستعارة غير محدودة، والمزيد.",
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل ${ addresses } عنوان بريد إلكتروني، ودعمًا لنطاقات البريد الإلكتروني المخصصة، ومساعد الكتابة ${ BRAND_NAME } Scribe، وأسماء hide-my-email مستعارة غير محدودة، والمزيد."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل ${ addresses } من عناوين البريد الإلكتروني، ودعمًا لنطاقات البريد الإلكتروني المخصصة، وأسماء hide-my-email مستعارة غير محدودة، والمزيد.",
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل عنوان بريد إلكتروني واحد (${ addresses })، ودعمًا لنطاقات البريد الإلكتروني المخصصة، وأسماء hide-my-email مستعارة غير محدودة، والمزيد.",
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل عنواني بريد إلكتروني (${ addresses })، ودعمًا لنطاقات البريد الإلكتروني المخصصة، وأسماء hide-my-email مستعارة غير محدودة، والمزيد.",
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل ${ addresses } عناوين بريد إلكتروني، ودعمًا لنطاقات البريد الإلكتروني المخصصة، وأسماء hide-my-email مستعارة غير محدودة، والمزيد.",
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل ${ addresses } عنوان بريد إلكتروني، ودعمًا لنطاقات البريد الإلكتروني المخصصة، وأسماء hide-my-email مستعارة غير محدودة، والمزيد.",
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك بتشفير من طرف إلى طرف. يشمل ${ addresses } عنوان بريد إلكتروني، ودعمًا لنطاقات البريد الإلكتروني المخصصة، وأسماء hide-my-email مستعارة غير محدودة، والمزيد."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك من خلال تشفير من طرف إلى طرف. يشمل 15 عنوان بريد إلكتروني، ودعم نطاقات البريد الإلكتروني المخصصة، ومساعد الكتابة ${ BRAND_NAME } Scribe، وأسماء hide-my-email مستعارة غير محدودة، والمزيد."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "أمِّن رسائل بريدك الإلكتروني وجدول مواعيدك من خلال تشفير من طرف إلى طرف. يشمل 15 عنوان بريد إلكتروني، ودعم نطاقات البريد الإلكتروني المخصصة، وأسماء hide-my-email مستعارة غير محدودة، والمزيد."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "أمِّن ملفاتك من خلال تخزين سحابي مشفر. يشمل محرر المستندات عبر الإنترنت والنسخ الاحتياطي للصور وسجل الإصدارات ومشاركة الملفات المشفرة والمزيد."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "مساحة التخزين مشتركة عبر جميع خدمات ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "تخزين بيانات 2 تيرابايت"
-      ],
-      "3 TB data storage": [
-        "تخزين بيانات 3 تيرابايت"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "الوصول إلى أكثر من 15000 خادم في أكثر من 120 دولة"
-      ],
-      "Access advanced AI models": [
-        "الوصول إلى نماذج الذكاء الاصطناعي المتقدمة"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "جميع الميزات المميزة في ${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "حظر الإعلانات،المتتبعات والبرامج المشبوهة"
-      ],
-      "Built-in 2FA authenticator": [
-        "مُصادِق مدمج للمصادقة الثنائية (2FA)"
-      ],
-      "Connect 10 devices at once": [
-        "قم بتوصيل 10 أجهزة في وقت واحد"
-      ],
-      "Full chat history with easy search and favorites": [
-        "سجل الدردشة الكامل مع البحث السهل والمفضلة"
-      ],
-      "Individual accounts for 6 users": [
-        "حسابات فردية ل 6 مستخدمين"
-      ],
-      "Individual accounts for you and a partner": [
-        "حسابات فردية لك ولشريك"
-      ],
-      "Stronger protection against cyber threats": [
-        "حماية أقوى ضد التهديدات السيبرانية"
-      ],
-      "Unlimited daily chats": [
-        "دردشات يومية غير محدودة"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "يحمي NetShield المصمم خصيصا أجهزتك ويسرع تصفحك عن طريق حظر الإعلانات والمتتبعين والبرامج الضارة."
       ]
     },
     "Billing cycle": {
@@ -3479,9 +3382,6 @@
       ],
       "Basic chat history": [
         "سجل الدردشة الأساسي"
-      ],
-      "Built and based in Europe": [
-        "مطوَّر ومقرّه في أوروبا"
       ],
       "Compliance with data protection regulations": [
         "الامتثال للوائح حماية البيانات"
@@ -7871,19 +7771,9 @@
         "يمكن حفظ ملف ICS للأحداث التي تم تصديرها بنجاح."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "إجمالي مساحة التخزين 3 تيرابايت"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "مزايا حسابك"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "مساحة التخزين مشتركة بين أفراد العائلة عبر ${ MAIL_APP_NAME } و${ CALENDAR_APP_NAME } و${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -7916,11 +7806,6 @@
       ],
       "View invitation": [
         "عرض الدعوة"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "ما يصل إلى 6 مستخدمين"
       ]
     },
     "familyOffer_2023:Error": {
@@ -8192,17 +8077,6 @@
       ],
       "Set family name": [
         "تحديد اسم العائلة"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "يشمل 2700 خادم في أكثر من 65 دولة، وتوصيل ما يصل إلى 10 أجهزة، والوصول إلى خدمات البث العالمية، ومانع للبرامج الضارة والإعلانات، والمزيد."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "يشمل دعم 3 نطاقات بريد إلكتروني مخصَّصة، و90 عنوان بريد إلكتروني، وأسماء مستعارة غير محدودة من hide-my-email، ومشاركة التقويم والمزيد."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "أمّن ملفاتك بتخزين سحابي مشفر. يشمل المزامنة التلقائية، ومشاركة الملفات المشفرة، والمزيد."
       ]
     },
     "Feature": {
@@ -8931,6 +8805,9 @@
       ],
       "Folders": [
         "مجلدات"
+      ],
+      "Good to know before you connect": [
+        "معلومات مفيدة قبل الاتصال"
       ],
       "IP address": [
         "عنوان IP"
@@ -9998,6 +9875,9 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** غير مدعوم."
       ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "يُستخدم **${ emailAddress }** أيضاً لتسجيل الدخول إلى حساب ${ BRAND_NAME } منفصل، خارج نطاق ${ MAIL_APP_NAME }."
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**تفعيل النسخ الاحتياطي التلقائي** لراحة البال"
       ],
@@ -10526,9 +10406,6 @@
       "Center": [
         "وسط"
       ],
-      "Change your password": [
-        "تغيير كلمة مرورك"
-      ],
       "Check your network and try again.": [
         "يرجى التحقق من الشبكة والمحاولة مرة أخرى."
       ],
@@ -10907,9 +10784,6 @@
       "eduGAIN configuration saved": [
         "حُفظ تكوين eduGAIN"
       ],
-      "email": [
-        "البريد الإلكتروني"
-      ],
       "Email address": [
         "عنوان البريد الإلكتروني"
       ],
@@ -11108,9 +10982,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "تعمل الفلاتر على جميع رسائل البريد الإلكتروني، بما في ذلك رسائل البريد الإلكتروني الواردة وكذلك المرسلة. يجب أن يحتوي كل عامل تصفية على الأقل على اسم وشرط وإجراء."
       ],
-      "finance": [
-        "مالية"
-      ],
       "Find out what can be migrated.": [
         "تعرّف على ما يمكن نقله."
       ],
@@ -11236,6 +11107,9 @@
       ],
       "here": [
         "هنا"
+      ],
+      "Here's what happens when you continue:": [
+        "إليك ما سيحدث عند المتابعة:"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "يخفي معلومات الهوية عن طريق تحميل المحتوى البعيد عبر بروكسي، مع خيار تخزين المحتوى كـمرفقات."
@@ -11699,9 +11573,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "ستصل الرسائل إلى جميع عناوين بريدك الإلكتروني إلى صندوق الوارد."
       ],
-      "Monitor accounts": [
-        "مراقبة الحسابات"
-      ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "مراقبة وتدقيق محاولات المصادقة لجميع خدمات ${ BRAND_NAME } التي تستخدم بيانات اعتماد ${ BRAND_NAME } الخاصة بك."
       ],
@@ -11752,6 +11623,9 @@
       ],
       "Next billing date": [
         "التاريخ التالي لاحتساب الفاتورة"
+      ],
+      "Next time you sign in to your other account": [
+        "في المرة القادمة التي تسجّل فيها الدخول إلى حسابك الآخر"
       ],
       "No account keys exist": [
         "لا توجد مفاتيح حساب"
@@ -11806,6 +11680,9 @@
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "لم يتم اكتشافه بشكل صحيح؟ اختر مقدم الخدمة الخاص بك من القائمة."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "لا يتغير شيء في حسابك الآخر على ${ BRAND_NAME }."
       ],
       "Number of dedicated servers in the organization": [
         "عدد الخوادم المخصصة في المؤسسة"
@@ -11936,9 +11813,6 @@
       ],
       "Pass usage logs": [
         "سجلات استخدام Pass"
-      ],
-      "password": [
-        "كلمة السر"
       ],
       "Password copied to clipboard": [
         "نُسِخت كلمة المرور إلى الحافظة"
@@ -13000,9 +12874,6 @@
       "Username": [
         "إسم المستخدم"
       ],
-      "username": [
-        "إسم المستخدم"
-      ],
       "Users": [
         "المستخدمين"
       ],
@@ -13528,6 +13399,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "لن تتمكن من استرداد البيانات المقفلة باستخدام ملفات الاسترداد التي نزّلتها. سيؤدي هذا أيضًا إلى تعطيل الاسترداد بالأجهزة."
       ],
+      "You'll choose a new username": [
+        "ستختار اسم مستخدم جديداً."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "ستتلقى مكافأة الائتمان بعد شهر واحد من اشتراك صديقك في خطة سنوية، وبعد شهرين من اشتراكه في خطة شهرية."
       ],
@@ -13544,6 +13418,9 @@
         "سيتم بعد ذلك تحصيل الرسوم منك كل ${ renewCycle } أشهر بقيمة ${ renewAmountStr }. يمكنك الإلغاء في أي وقت.",
         "سيتم بعد ذلك تحصيل الرسوم منك كل ${ renewCycle } شهرًا بقيمة ${ renewAmountStr }. يمكنك الإلغاء في أي وقت.",
         "سيتم بعد ذلك تحصيل الرسوم منك كل ${ renewCycle } شهر بقيمة ${ renewAmountStr }. يمكنك الإلغاء في أي وقت."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "ستستخدمه لتسجيل الدخول من ذلك الحين فصاعداً. هذا هو التغيير الوحيد."
       ],
       "You're now signed in on your TV.": [
         "تم تسجيل الدخول الآن على التلفاز."
@@ -13615,6 +13492,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "تم تحويل تجربتك المجانية بنجاح إلى اشتراك شهري. تاريخ التجديد هو ${ nextBillingDate }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "يتصل حساب Gmail الخاص بك بهذا العنوان في ${ MAIL_APP_NAME }"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "معلوماتك بأمان معنا. سنتواصل معك فقط عندما يكون ذلك مطلوباً لتقديم خدماتنا"
@@ -15737,6 +15617,9 @@
       "Start weekday": [
         "بدء أيام الأسبوع"
       ],
+      "Start with your most recent messages": [
+        "ابدأ بأحدث رسائلك"
+      ],
       "Starts with": [
         "يبدأ بـ"
       ],
@@ -17695,9 +17578,6 @@
       "Auto-reply": [
         "رد تلقائي"
       ],
-      "Autofill credit cards (coming soon)": [
-        "التعبئة التلقائية لبطاقات الائتمان (قريبًا)"
-      ],
       "Automatic email forwarding": [
         "إعادة توجيه البريد الإلكتروني تلقائيًا"
       ],
@@ -17727,9 +17607,6 @@
       ],
       "Custom and secure business email": [
         "بريد إلكتروني تجاري مخصَّص وآمن"
-      ],
-      "Custom domains for email aliases": [
-        "نطاقات مخصصة لعناوين البريد الإلكتروني المستعارة"
       ],
       "Custom email domains": [
         "نطاقات بريد إلكتروني مخصَّصة"
@@ -17794,9 +17671,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "ميزات مجانية من ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME } و ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "VPN مجاني على جهاز واحد"
-      ],
       "Fully refundable for 30 days": [
         "ضمان لاسترداد أموالك خلال 30 يوم"
       ],
@@ -17808,14 +17682,6 @@
       ],
       "Group management (coming soon)": [
         "إدارة المجموعات (قريبًا)"
-      ],
-      "High-speed VPN on ${ n } devices": [
-        "شبكة VPN عالية السرعة على ${ n } جهاز",
-        "شبكة VPN عالية السرعة على ${ n } جهاز",
-        "شبكة VPN عالية السرعة على ${ n } جهاز",
-        "شبكة VPN عالية السرعة على ${ n } أجهزة",
-        "شبكة VPN عالية السرعة على ${ n } أجهزة",
-        "شبكة VPN عالية السرعة على ${ n } أجهزة"
       ],
       "HTML signatures": [
         "تواقيع HTML"
@@ -17992,9 +17858,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "خزائن ${ PASS_SHORT_APP_NAME } مشتركة غير محدودة لكل مستخدم"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "خزائن مشتركة غير محدودة مع أذونات وصول"
       ],
       "Unlimited vault sharing": [
         "مشاركة غير محدودة للخزائن"
@@ -18405,9 +18268,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "الأقراص الصلبة لخوادمنا مشفرة بالكامل بطبقات متعددة من كلمات المرور حتى تكون بياناتك محمية حتى في حالة اختراق أجهزتنا"
       ],
-      "Password management and identity protection": [
-        "إدارة كلمات المرور وحماية الهوية"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "خصص توقيع بريدك الإلكتروني بالشعارات والصور وأيقونات وسائل التواصل الاجتماعي وروابط تفاصيل الاتصال الخاصة بك والمزيد"
       ],
@@ -18522,12 +18382,6 @@
         "${ n } دولة",
         "${ n } دولة"
       ],
-      "Access advanced VPN features": [
-        "الوصول إلى ميزات VPN المتقدمة"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "أضف المزيد من التخصيص مع 15 عنوان بريد إلكتروني ودعم لـ 3 نطاقات بريد إلكتروني مخصصة"
-      ],
       "AES 256-bit VPN encryption": [
         "تشفير VPN بمعيار AES 256-bit"
       ],
@@ -18537,9 +18391,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "عزز مساحة التخزين لديك إلى ${ bundleStorage } لكل مستخدم"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "عزز مساحة التخزين لديك إلى إجمالي ${ bundleStorage }"
-      ],
       "Browser extension": [
         "ملحق متصفح"
       ],
@@ -18548,17 +18399,6 @@
       ],
       "Central control panel": [
         "لوحة التحكم المركزية"
-      ],
-      "Create up to ${ n } calendars": [
-        "إنشاء ما يصل إلى ${ n } تقويمًا",
-        "إنشاء ما يصل إلى ${ n } تقويم",
-        "إنشاء ما يصل إلى ${ n } تقويمين",
-        "إنشاء ما يصل إلى ${ n } تقويمات",
-        "إنشاء ما يصل إلى ${ n } تقويمًا",
-        "إنشاء ما يصل إلى ${ n } تقويمًا"
-      ],
-      "Dedicated Account manager": [
-        "مدير حساب مخصص"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "مواقع خوادم مخصصة في أكثر من ${ numberOfCountries } دولة"
@@ -19780,9 +19620,6 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "لبدء استخدام ${ PASS_APP_NAME } على هاتفك"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "تسجيلات دخول وملاحظات وبطاقات ائتمان غير محدودة والمزيد"
       ],
       "Updating your account": [
         "جارٍ تحديث حسابك"
@@ -23140,12 +22977,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 تيرابايت"
-      ],
-      "6 users": [
-        "6 مستخدمين"
-      ],
       "All paid Mail and Calendar features": [
         "جميع ميزات البريد والتقويم المدفوعة"
       ],
@@ -23164,17 +22995,11 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "${ appName1 } و${ appName2 } و${ appName3 } المميزون"
       ],
-      "Premium early access": [
-        "وصول مبكر مميز"
-      ],
       "Secure cloud storage": [
         "تخزين سحابي آمن"
       ],
       "Secure streaming": [
         "مشاهدة آمنة عبر الإنترنت"
-      ],
-      "Support online privacy": [
-        "دعم الخصوصية على الإنترنت"
       ]
     },
     "specialoffer: Footer": {
@@ -23262,32 +23087,8 @@
       "Get the deal": [
         "احصل على العرض"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "يُجدد بعد عام واحد بسعر مخفض قدره ${ discountedAmount } بدلاً من ${ regularAmount } (خصم ${ discount }%)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "يُجدد بعد عامين بسعر مخفض قدره ${ discountedAmount } بدلاً من ${ regularAmount } (خصم ${ discount }%)"
-      ],
       "Save ${ discount }%": [
         "حفظ ${ discount }%"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "السعر القياسي ${ amount } لمدة شهر واحد"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "السعر القياسي ${ amount } لمدة 12 شهرًا"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "السعر القياسي ${ amount } لمدة 15 شهرًا"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "السعر القياسي ${ amount } لمدة 24 شهرًا"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "السعر القياسي ${ amount } لمدة 30 شهرًا"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "العرض الخاص صالح لأول عامين"
       ]
     },
     "specialoffer: Title": {
@@ -23314,23 +23115,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "الوصول إلى المحتوى المحظور والتصفح بخصوصية. يشمل 1700 خادم في أكثر من 60 دولة، وأعلى سرعة VPN، و10 اتصالات VPN لكل مستخدم، وخدمات بث عالمية، ومانع للبرامج الضارة والإعلانات، والمزيد."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "الوصول إلى المحتوى المحظور والتصفح بخصوصية. يشمل 1700 خادم في أكثر من 60 دولة، وأعلى سرعة VPN، و10 اتصالات VPN، وخدمات بث عالمية، ومانع للبرامج الضارة والإعلانات، والمزيد."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "جميع خدماتنا المميزة بحدودها القصوى: 100 عنوان بريد إلكتروني، ودعم لـ 10 نطاقات مخصَّصة، وأسماء مستعارة غير محدودة من hide-my-email، ومشاركة التقويم، وتخزين سحابي مشفر ومشاركة الملفات، والمزيد."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "يشمل دعم 3 نطاقات بريد إلكتروني مخصَّصة، و15 عنوان بريد إلكتروني، وأسماء مستعارة غير محدودة من hide-my-email، ومشاركة التقويم، والمزيد."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "مثالي للعائلات أو الفرق الصغيرة، يمكن لكل فرد أن يمتلك صندوق الوارد والأسماء المستعارة الخاصة به. يتطلب نطاقًا مخصَّصًا."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "احصل دون تكلفة إضافية على النسخ المدفوعة من جميع خدمات الخصوصية الجديدة التي نصدرها في المستقبل، بالإضافة إلى وصول مبكر لجميع الميزات والمنتجات المستقبلية."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "أمّن ملفاتك بتخزين سحابي مشفر. يشمل المزامنة التلقائية، ومشاركة الملفات المشفرة، والمزيد."
@@ -24024,14 +23813,6 @@
         "${ n } اتصالات VPN",
         "${ n } اتصالات VPN",
         "${ n } اتصالات VPN"
-      ],
-      "${ n } VPN connections per user": [
-        "${ n } اتصال VPN لكل مستخدم",
-        "${ n } اتصال VPN لكل مستخدم",
-        "${ n } اتصال VPN لكل مستخدم",
-        "${ n } اتصالات VPN لكل مستخدم",
-        "${ n } اتصالات VPN لكل مستخدم",
-        "${ n } اتصالات VPN لكل مستخدم"
       ],
       "${ productName } for ${ count } users": [
         "${ productName } لـ ${ count } من المستخدمين",
@@ -24973,9 +24754,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "يشمل أكثر من 2950 خادمًا في أكثر من 65 دولة، وتوصيل ما يصل إلى 10 أجهزة، والوصول إلى خدمات البث العالمية، ومانع للبرامج الضارة والإعلانات، والمزيد."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "يشمل دعم نطاق بريد إلكتروني مخصَّص واحد، و10 عناوين بريد إلكتروني، و10 أسماء بريد إلكتروني مستعارة من hide-my-email، ومشاركة التقويم، والمزيد."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "أمّن ملفاتك بتخزين سحابي مشفر. يشمل سجل الإصدارات، ومشاركة الملفات المشفرة، والمزيد.\n"
@@ -27804,6 +27582,36 @@
       ],
       "Test credit": [
         "رصيد تجريبي"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "أحصل على خصم ${ discount }% على ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "أحصل على ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/ شهر"
+      ],
+      "2 TB of storage to share": [
+        "2 تيرابايت من مساحة التخزين للمشاركة"
+      ],
+      "2 user accounts": [
+        "حسابا مستخدمين"
+      ],
+      "All premium features from your current plan": [
+        "جميع الميزات المميزة من خطتك الحالية"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "تعتمد الخصومات على الأسعار الشهرية القياسية. سيتم تجديد اشتراكك بالسعر السنوي القياسي عند انتهاء دورة الفوترة."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "لمدة 12 شهراً"
       ]
     },
     "Unlimited offer": {

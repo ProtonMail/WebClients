@@ -1116,6 +1116,9 @@
       "More benefits": [
         "Više pogodnosti"
       ],
+      "More info": [
+        "Više informacija"
+      ],
       "More info: ${ safeTitle }": [
         "Više informacija: ${ safeTitle }"
       ],
@@ -2134,15 +2137,6 @@
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Konfigurirajte sigurnosna pravila, zadržavanje podataka i VPN infrastrukturu te upravljajte zapisnicima revizije."
       ],
-      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
-        "Delegirajte upravljanje dodjeljivanjem specifičnih administratorskih uloga. Dajte svakom administratoru samo onaj pristup koji mu je potreban. Time se slijedi načelo najmanjih privilegija, štiteći vašu organizaciju od kompromitiranih korisničkih računa i slučajnih pogrešaka."
-      ],
-      "Delegate management for many users at once. Assign specific admin roles to groups for automatic permissions. This follows the principle of least privilege to save time on onboarding and offboarding while reducing errors.": [
-        "Delegirajte upravljanje za više korisnika odjednom. Dodijelite određene administratorske uloge grupama za automatska dopuštenja. To slijedi načelo najmanjih povlastica radi uštede vremena pri uvođenju i uklanjanju korisnika, uz smanjenje pogrešaka."
-      ],
-      "Delegate management with the appropriate admin role.": [
-        "Delegirajte upravljanje s odgovarajućom administratorskom ulogom."
-      ],
       "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
         "Upravljanje svim korisnicima, grupama, pohranom, sigurnošću, naplatom, zapisnicima revizije i konfiguracijama sustava."
       ],
@@ -2470,56 +2464,15 @@
         "Ponuda nije dostupna"
       ]
     },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Uključuje podršku za 1 prilagođenu domenu e-pošte, 10 adresa e-pošte, 10 hide-my-email pseudonima, dijeljenje kalendara i više."
-      ]
-    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop aplikacija"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } pohrane"
       ],
-      "1 user account": [
-        "1 korisnički račun"
-      ],
-      "200 GB storage: 40x your current plan": [
-        "200 GB pohrana: 40x vaš trenutni plan"
-      ],
-      "6 user accounts": [
-        "6 korisničkih računa"
-      ],
-      "Admin panel to manage your family": [
-        "Administratorska ploča za upravljanje vašom obitelji"
-      ],
-      "Advanced account protection": [
-        "Napredna zaštita korisničkog računa"
-      ],
-      "Easily add or remove users": [
-        "Jednostavno dodajte ili ukloni korisnike"
-      ],
-      "One-time payment, lifetime deal": [
-        "Jednokratno plaćanje, doživotna ponuda"
-      ],
-      "Online document editor": [
-        "Online uređivač dokumenata"
-      ],
-      "Password health alerts": [
-        "Upozorenja o zdravlju lozinke"
-      ],
-      "Recover previous file versions": [
-        "Oporavi prethodne verzije datoteka"
-      ],
       "Unlimited folders, labels and filters": [
         "Neograničen broj mapa, oznaka i filtara"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Neograničene prijave, kreditne kartice, hide-my-email pseudonimi i još mnogo toga"
       ],
       "Use your own email domain": [
         "Koristite vlastitu domenu e-pošte"
@@ -2528,85 +2481,11 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Naplaćeno ${ amount } jednokratno"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Obnavlja se nakon 1 mjeseca po cijeni od ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Pristupite blokiranom sadržaju i pregledavajte privatno. Uključuje 8.500+ poslužitelja u 110+ zemalja, 10 uređaja, streamanje velike brzine, blokator oglasa i zaštitu od zlonamjernih programa, VPN Accelerator i više."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Sigurne prijave na svim vašim uređajima. Uključuje neograničene hide-my-email pseudonime, dijeljenje, integriranu 2FA, ${ DARK_WEB_MONITORING_NAME } i više."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Osigurajte svoju e-poštu i raspored uz end-to-end šifriranje. Uključuje ${ addresses } e-poštu, podršku za prilagođene domene e-pošte, ${ BRAND_NAME } Scribe pomoćnika za pisanje, neograničene hide-my-email pseudonime i više.",
-        "Osigurajte svoju e-poštu i raspored uz end-to-end šifriranje. Uključuje ${ addresses } e-pošte, podršku za prilagođene domene e-pošte, ${ BRAND_NAME } Scribe pomoćnika za pisanje, neograničene hide-my-email pseudonime i više.",
-        "Osigurajte svoju e-poštu i raspored uz end-to-end šifriranje. Uključuje ${ addresses } e-pošta, podršku za prilagođene domene e-pošte, ${ BRAND_NAME } Scribe pomoćnika za pisanje, neograničene hide-my-email pseudonime i više."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Osigurajte svoju e-poštu i raspored end-to-end šifriranjem. Uključuje ${ addresses } adresu e-pošte, podršku za prilagođene domene e-pošte, neograničene hide-my-email pseudonime i više.",
-        "Osigurajte svoju e-poštu i raspored end-to-end šifriranjem. Uključuje ${ addresses } adrese e-pošte, podršku za prilagođene domene e-pošte, neograničene hide-my-email pseudonime i više.",
-        "Osigurajte svoju e-poštu i raspored pomoću end-to-end šifriranja. Uključuje ${ addresses } adresa e-pošte, podršku za prilagođene domene e-pošte, neograničene hide-my-email pseudonime i više."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Osigurajte svoju e-poštu i raspored uz end-to-end šifriranje. Uključuje 15 adresa e-pošte, podršku za prilagođene domene e-pošte, pomoćnika za pisanje ${ BRAND_NAME } Scribe, neograničene hide-my-email pseudonime i još mnogo toga."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Osigurajte svoju e-poštu i raspored end-to-end šifriranjem. Uključuje 15 adresa e-pošte, podršku za prilagođene domene e-pošte, neograničene hide-my-email pseudonime i više."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Osigurajte svoje datoteke šifriranom pohranom u oblaku. Uključuje uređivač dokumenata na mreži, sigurnosnu kopiju fotografija, povijest verzija, šifrirano dijeljenje datoteka i više."
-      ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za pohranu dijeli se između svih ${ BRAND_NAME } usluga."
-      ]
-    },
-    "BF2025: Deal details": {
-      "2 TB data storage": [
-        "Pohrana podataka od 2 TB"
-      ],
-      "3 TB data storage": [
-        "3 TB pohrane podataka"
-      ],
-      "Access 15,000+ servers in 120+ countries": [
-        "Pristupite više od 15.000 poslužitelja u više od 120 zemalja"
-      ],
-      "Access advanced AI models": [
-        "Pristupite naprednim modelima umjetne inteligencije"
-      ],
-      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Sve značajke premium poslužitelja za apl. ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokirajte oglase, pratitelje i zlonamjerne programe"
-      ],
-      "Built-in 2FA authenticator": [
-        "Ugrađeni 2FA autentifikator"
-      ],
-      "Connect 10 devices at once": [
-        "Povežite 10 uređaja istovremeno"
-      ],
-      "Full chat history with easy search and favorites": [
-        "Potpuna povijest razgovora s jednostavnom pretragom i favoritima"
-      ],
-      "Individual accounts for 6 users": [
-        "Pojedinačni korisnički računi za 6 korisnika"
-      ],
-      "Individual accounts for you and a partner": [
-        "Pojedinačni korisnički računi za vas i partnera"
-      ],
-      "Stronger protection against cyber threats": [
-        "Snažnija zaštita od kibernetičkih prijetnji"
-      ],
-      "Unlimited daily chats": [
-        "Neograničeni dnevni razgovori"
-      ]
-    },
-    "BF2025: Tooltip": {
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Posebno dizajniran NetShield štiti vaše uređaje i ubrzava pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
       ]
     },
     "Billing cycle": {
@@ -3372,9 +3251,6 @@
       ],
       "Basic chat history": [
         "Osnovna povijest razgovora"
-      ],
-      "Built and based in Europe": [
-        "Izgrađeno i sjedište u Europi"
       ],
       "Compliance with data protection regulations": [
         "Usklađenost s propisima o zaštiti podataka"
@@ -7702,19 +7578,9 @@
         "Možete spremiti ICS datoteku događaja koji su uspješno izvezeni."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB prostora za pohranu"
-      ]
-    },
     "familyOffer_2023: Title": {
       "Your account's benefits": [
         "Pogodnosti Vašeg korisničkog računa"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Prostor za pohranu dijeli se između članova obitelji u aplikacijama ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "familyOffer_2023:Action": {
@@ -7747,11 +7613,6 @@
       ],
       "View invitation": [
         "Prikaži pozivnicu"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Do 6 korisnika"
       ]
     },
     "familyOffer_2023:Error": {
@@ -8008,17 +7869,6 @@
       ],
       "Set family name": [
         "Postavite prezime"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Uključuje 2700 poslužitelja u više od 65 država, povezivanje do 10 uređaja, pristup svjetskim servisima za streamanje, zaštitu od zlonamjernih programa i blokator oglasa te još mnogo toga."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Uključuje podršku za 3 prilagođene domene e-pošte, 90 e-pošta, neograničen broj hide-my-email pseudonima, dijeljenje kalendara i više."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Osigurajte svoje datoteke sa šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
       ]
     },
     "Feature": {
@@ -10118,9 +9968,6 @@
       "Center": [
         "Sredina"
       ],
-      "Change your password": [
-        "Promijenite vašu lozinku"
-      ],
       "Check your network and try again.": [
         "Provjerite svoju mrežu i pokušajte ponovno."
       ],
@@ -10472,9 +10319,6 @@
       "eduGAIN configuration saved": [
         "eduGAIN konfiguracija spremljena"
       ],
-      "email": [
-        "e-pošta"
-      ],
       "Email address": [
         "Adresa e-pošte"
       ],
@@ -10672,9 +10516,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Svaki filtar mora sadržavati barem naziv, uvjet i radnju."
-      ],
-      "finance": [
-        "financije"
       ],
       "for ${ price }": [
         "za ${ price }"
@@ -11246,9 +11087,6 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Poruke na sve vaše adrese e-pošte stizat će u vašu pristiglu poštu."
       ],
-      "Monitor accounts": [
-        "Nadzor korisničkih računa"
-      ],
       "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Nadzirite i revidirajte pokušaje autentifikacije za sve ${ BRAND_NAME } usluge koje koriste Vaše ${ BRAND_NAME } vjerodajnice."
       ],
@@ -11468,9 +11306,6 @@
       ],
       "Pass usage logs": [
         "Zapisnici korištenja Pass-a"
-      ],
-      "password": [
-        "lozinka"
       ],
       "Password copied to clipboard": [
         "Lozinka je kopirana u međuspremnik"
@@ -12480,9 +12315,6 @@
       ],
       "Username": [
         "Korisničko ime"
-      ],
-      "username": [
-        "korisničko ime"
       ],
       "Users": [
         "Korisnici"
@@ -16969,9 +16801,6 @@
       "Auto-reply": [
         "Automatski odgovor"
       ],
-      "Autofill credit cards (coming soon)": [
-        "Automatsko ispunjavanje kreditnih kartica (uskoro)"
-      ],
       "Automatic email forwarding": [
         "Automatsko prosljeđivanje e-pošte"
       ],
@@ -17001,9 +16830,6 @@
       ],
       "Custom and secure business email": [
         "Prilagođena i sigurna poslovna e-pošta"
-      ],
-      "Custom domains for email aliases": [
-        "Prilagođene domene za pseudonime e-pošte"
       ],
       "Custom email domains": [
         "Prilagođene domene"
@@ -17068,9 +16894,6 @@
       "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
         "Besplatne značajke od ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Free VPN on a single device": [
-        "Besplatni VPN na jednom uređaju"
-      ],
       "Fully refundable for 30 days": [
         "Zajamčen povrat novca unutar 30 dana"
       ],
@@ -17082,11 +16905,6 @@
       ],
       "Group management (coming soon)": [
         "Upravljanje grupom (uskoro)"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN visoke brzine na ${ n } uređaju",
-        "Brzi VPN na ${ n } uređaja",
-        "VPN visoke brzine na ${ n } uređaja"
       ],
       "HTML signatures": [
         "HTML potpisi"
@@ -17260,9 +17078,6 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Neograničen broj zajedničkih ${ PASS_SHORT_APP_NAME } trezora po korisniku"
-      ],
-      "Unlimited shared vaults with access permissions": [
-        "Neograničeni dijeljeni trezori s dozvolama za pristup"
       ],
       "Unlimited vault sharing": [
         "Neograničeno dijeljenje trezora"
@@ -17646,9 +17461,6 @@
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Tvrdi diskovi naših poslužitelja potpuno su šifrirani s više slojeva lozinki tako da su vaši podaci zaštićeni čak i ako je naš hardver ugrožen"
       ],
-      "Password management and identity protection": [
-        "Upravljanje lozinkama i zaštita identiteta"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliziraj svoj potpis e-pošte s logotipovima, slikama, ikonama društvenih mreža, poveznicama na svoje podatke o kontaktu i još mnogo toga"
       ],
@@ -17760,12 +17572,6 @@
         "${ n } države",
         "${ n } država"
       ],
-      "Access advanced VPN features": [
-        "Pristup naprednim VPN značajkama"
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Dodajte više personalizacije s 15 adresa e-pošte i podrškom za 3 prilagođene domene e-pošte"
-      ],
       "AES 256-bit VPN encryption": [
         "AES 256-bitno VPN šifriranje"
       ],
@@ -17775,9 +17581,6 @@
       "Boost your storage space to ${ bundleStorage } per user": [
         "Povećajte svoj prostor za pohranu na ${ bundleStorage } po korisniku"
       ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Povećajte svoj prostor za pohranu na ukupno ${ bundleStorage }"
-      ],
       "Browser extension": [
         "Proširenje preglednika"
       ],
@@ -17786,14 +17589,6 @@
       ],
       "Central control panel": [
         "Središnja upravljačka ploča"
-      ],
-      "Create up to ${ n } calendar": [
-        "Izradite do ${ n } kalendar",
-        "Izradite do ${ n } kalendara",
-        "Izradite do ${ n } kalendara"
-      ],
-      "Dedicated Account manager": [
-        "Namjenski upravitelj korisničkog računa"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Lokacije namjenskih poslužitelja u ${ numberOfCountries }+ država"
@@ -18985,9 +18780,6 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "kako biste počeli koristiti ${ PASS_APP_NAME } na svom telefonu"
-      ],
-      "Unlimited logins, notes, credit cards and more": [
-        "Neograničene prijave, bilješke, kreditne kartice i više"
       ],
       "Updating your account": [
         "Ažuriranje vašeg korisničkog računa"
@@ -22171,12 +21963,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 korisnika"
-      ],
       "All paid Mail and Calendar features": [
         "Sve plaćene značajke za Mail i kalendar"
       ],
@@ -22195,17 +21981,11 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premium ${ appName1 } i ${ appName2 } i ${ appName3 }"
       ],
-      "Premium early access": [
-        "Premium rani pristup"
-      ],
       "Secure cloud storage": [
         "Sigurna pohrana u oblaku"
       ],
       "Secure streaming": [
         "Siguran streaming"
-      ],
-      "Support online privacy": [
-        "Podrška za privatnost na mreži"
       ]
     },
     "specialoffer: Footer": {
@@ -22290,32 +22070,8 @@
       "Get the deal": [
         "Ugrabite ponudu"
       ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Obnavlja se nakon 1 godine po sniženoj cijeni od ${ discountedAmount } umjesto ${ regularAmount } (${ discount }% popusta)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Obnavlja se nakon 2 godine po sniženoj cijeni od ${ discountedAmount } umjesto ${ regularAmount } (${ discount }% popusta)"
-      ],
       "Save ${ discount }%": [
         "Uštedite ${ discount } %"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Standardna cijena ${ amount } za 1 mjesec"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Standardna cijena ${ amount } za 12 mjeseci"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Standardna cijena ${ amount } za 15 mjeseci"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Standardna cijena ${ amount } za 24 mjeseca"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Standardna cijena ${ amount } za 30 mjeseci"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Posebna ponuda vrijedi za prve 2 godine"
       ]
     },
     "specialoffer: Title": {
@@ -22345,23 +22101,11 @@
       ]
     },
     "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Pristupite blokiranom sadržaju i pregledavajte privatno. Uključuje 1700 poslužitelja u 60+ zemalja, najveću VPN brzinu, 10 VPN veza po korisniku, svjetske usluge za streamanje, zlonamjerni program i blokator oglasa, i više."
-      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Pristupite blokiranom sadržaju i pregledavajte privatno. Uključuje 1700 poslužitelja u 60+ zemalja, najveću VPN brzinu, 10 VPN veza, svjetske streaming usluge, blokator zlonamjernih programa i oglasa te više."
       ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Sve naše premium usluge s njihovim najvišim ograničenjima: 100 adresa e-pošte, podrška za 10 prilagođenih domena, neograničeni hide-my-email pseudonimi, dijeljenje kalendara, šifrirana pohrana u oblaku i dijeljenje datoteka, i više."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Uključuje podršku za 3 prilagođene domene e-pošte, 15 adresa e-pošte, neograničene hide-my-email pseudonime, dijeljenje kalendara i više."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Savršeno za obitelji ili male timove, svatko može imati vlastitu pristiglu poštu i pseudonime. Zahtijeva prilagođenu domenu."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Bez dodatnih troškova primite plaćene verzije svih novih usluga privatnosti koje objavimo u budućnosti, uz rani pristup svim budućim značajkama i proizvodima."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Osigurajte svoje datoteke sa šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
@@ -22978,11 +22722,6 @@
         "${ n } VPN veza",
         "${ n } VPN veze",
         "${ n } VPN veza"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN veza po korisniku",
-        "${ n } VPN veze po korisniku",
-        "${ n } VPN veza po korisniku"
       ],
       "${ productName } for ${ count } user": [
         "${ productName } za ${ count } korisnika",
@@ -23876,9 +23615,6 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Uključuje 2950+ poslužitelja u 65+ država, povežite do 10 uređaja, pristupite svjetskim uslugama za streamanje, zlonamjernim programima i blokatoru oglasa i još mnogo toga."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Uključuje podršku za 1 prilagođenu domenu e-pošte, 10 e-pošta, 10 hide-my-email pseudonima, dijeljenje kalendara i više."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Osigurajte svoje datoteke šifriranom pohranom u oblaku. Uključuje povijest verzija, šifrirano dijeljenje datoteka i više."
@@ -26581,6 +26317,36 @@
       ],
       "Test credit": [
         "Testni kredit"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Ostvarite ${ discount } % popusta na ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Nabavite ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mjesec"
+      ],
+      "2 TB of storage to share": [
+        "2 TB pohrane za dijeljenje"
+      ],
+      "2 user accounts": [
+        "2 korisnička računa"
+      ],
+      "All premium features from your current plan": [
+        "Sve premium značajke vašeg trenutačnog plana"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti se temelje na standardnoj mjesečnoj cijeni. Pretplata će se obnoviti po standardnoj godišnjoj cijeni kada završi ciklus naplate."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 mjeseci"
       ]
     },
     "Unlimited offer": {
