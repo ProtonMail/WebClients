@@ -38,6 +38,9 @@
       "Get verification code": [
         "인증코드 전송"
       ],
+      "More info": [
+        "상세 정보"
+      ],
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
       ],
@@ -1499,14 +1502,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "15개의 이메일 주소로 더 많은 개인화를 추가하고 3개의 커스텀 이메일 도메인을 지원합니다"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "사용자 당 ${ bundleStorage }(으)로 저장 공간 확장하기"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "최종 ${ bundleStorage }(으)로 저장 공간을 부스트하기"
       ],
       "Support for ${ n } custom email domain": [
         "${ n }개 커스텀 이메일 도메인 지원"
@@ -1515,11 +1512,6 @@
     "Placeholder": {
       "Password": [
         "비밀번호"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
       ]
     },
     "saml: Error": {

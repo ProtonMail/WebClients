@@ -38,6 +38,9 @@
       "Get verification code": [
         "Отримати код підтвердження"
       ],
+      "More info": [
+        "Докладніше"
+      ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
       ],
@@ -1526,14 +1529,8 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Розширте свої можливості з 15 адресами електронної пошти та підтримкою 3 власних доменів"
-      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Розширте обсяг свого сховища до ${ bundleStorage } на користувача"
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        "Розширте загальний обсяг свого сховища до ${ bundleStorage }"
       ],
       "Support for ${ n } custom email domain": [
         "Підтримка ${ n } власного домену електронної пошти",
@@ -1545,11 +1542,6 @@
     "Placeholder": {
       "Password": [
         "Пароль"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Усі преміум-функції ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } та ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
