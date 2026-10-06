@@ -2,7 +2,7 @@ import noop from '@proton/utils/noop';
 
 /**
  * Minimal logging surface encrypted-search needs. This is deliberately not tied to any specific
- * logging implementation (e.g. `@proton/logger`) — encrypted-search is used by mail, calendar and
+ * logging implementation (e.g. `@protontech/logger`) — encrypted-search is used by mail, calendar and
  * drive, and has no way to know which of them, if any, has initialized a particular logger
  * singleton. Assuming one implicitly would be a hidden dependency: logs would silently vanish in
  * any host application that hasn't set one up, with nothing in this package's API surface hinting
@@ -22,7 +22,7 @@ let esLogger: ESLogger = noopESLogger;
 
 /**
  * Called once by the host application if it wants encrypted-search's indexing/search progress
- * and failures to show up in its own local, shareable logs (e.g. wiring in its `@proton/logger`
+ * and failures to show up in its own local, shareable logs (e.g. wiring in its `@protontech/logger`
  * instance). Optional: encrypted-search works the same either way, just silently either way.
  */
 export const setESLogger = (logger: ESLogger) => {

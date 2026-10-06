@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
+import { logger } from '@protontech/logger';
 import { renderHook } from '@testing-library/react';
 
-import { logger } from '@proton/logger';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -19,7 +19,7 @@ vi.mock('@proton/unleash/useFlag', () => ({
     useFlag: vi.fn(),
 }));
 
-vi.mock('@proton/logger', () => ({
+vi.mock('@protontech/logger', () => ({
     logger: { error: vi.fn(), warn: vi.fn(), info: vi.fn(), debug: vi.fn() },
 }));
 

@@ -1,6 +1,8 @@
 import type { DragEvent, MouseEventHandler } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { logger } from '@protontech/logger';
+
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useHandler } from '@proton/components/hooks/useHandler';
@@ -8,17 +10,15 @@ import useWindowSize from '@proton/components/hooks/useWindowSize';
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
-import { logger } from '@proton/logger';
 import clsx from '@proton/utils/clsx';
-
-import { selectComposer } from '../../store/composers/composerSelectors';
-import { composerActions } from '../../store/composers/composersSlice';
-import { useMailDispatch, useMailSelector } from '../../store/hooks';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
 import { computeComposerStyle, getComposerDimension, shouldBeMaximized } from '../../helpers/composerPositioning';
 import useComposerDrag from '../../hooks/composer/useComposerDrag';
+import { selectComposer } from '../../store/composers/composerSelectors';
 import type { ComposerID } from '../../store/composers/composerTypes';
+import { composerActions } from '../../store/composers/composersSlice';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import type { ComposerAction } from './Composer';
 import Composer from './Composer';
 import ComposerTitleBar from './ComposerTitleBar';

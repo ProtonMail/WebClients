@@ -1,7 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
-import { logger } from '@proton/logger';
 import type { MessageState, MessageStateWithData, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
 import { uploadAttachment } from '@proton/shared/lib/api/attachments';
 import removeExifMetadata from '@proton/shared/lib/helpers/exif';

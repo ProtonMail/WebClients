@@ -422,9 +422,6 @@ importers:
       '@proton/llm':
         specifier: workspace:^
         version: link:packages/llm
-      '@proton/logger':
-        specifier: workspace:^
-        version: link:packages/logger
       '@proton/lumo-api-client':
         specifier: workspace:^
         version: link:packages/lumo-api-client
@@ -521,6 +518,9 @@ importers:
       '@proton/wallet':
         specifier: workspace:^
         version: link:packages/wallet
+      '@protontech/logger':
+        specifier: ^0.0.4
+        version: 0.0.4(@types/node@24.19.0)(typescript@6.0.3)
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^6.0.2
         version: 6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.9)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.70.0))
@@ -683,9 +683,6 @@ importers:
       '@proton/key-transparency':
         specifier: workspace:^
         version: link:../../packages/key-transparency
-      '@proton/logger':
-        specifier: workspace:^
-        version: link:../../packages/logger
       '@proton/mail':
         specifier: workspace:^
         version: link:../../packages/mail
@@ -749,6 +746,9 @@ importers:
       '@protontech/crypto':
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      '@protontech/logger':
+        specifier: ^0.0.4
+        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
@@ -2886,9 +2886,6 @@ importers:
       '@proton/llm':
         specifier: workspace:^
         version: link:../../packages/llm
-      '@proton/logger':
-        specifier: workspace:^
-        version: link:../../packages/logger
       '@proton/lumo-ui':
         specifier: workspace:^
         version: link:../../packages/lumo-ui
@@ -2955,6 +2952,9 @@ importers:
       '@protontech/crypto':
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      '@protontech/logger':
+        specifier: ^0.0.4
+        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/mimemessage':
         specifier: ~v1.1.4
         version: 1.1.4(supports-color@11.0.0)
@@ -3244,6 +3244,9 @@ importers:
       '@protontech/crypto':
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      '@protontech/logger':
+        specifier: ^0.0.4
+        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
@@ -5774,9 +5777,6 @@ importers:
       '@proton/key-transparency':
         specifier: workspace:^
         version: link:../key-transparency
-      '@proton/logger':
-        specifier: workspace:^
-        version: link:../logger
       '@proton/mail':
         specifier: workspace:^
         version: link:../mail
@@ -5828,6 +5828,9 @@ importers:
       '@protontech/crypto':
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      '@protontech/logger':
+        specifier: ^0.0.4
+        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/pass-rust-core':
         specifier: 1.6.0
         version: 1.6.0
@@ -7551,9 +7554,6 @@ importers:
       '@proton/app-context':
         specifier: workspace:^
         version: link:../app-context
-      '@proton/logger':
-        specifier: workspace:^
-        version: link:../logger
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
@@ -7584,6 +7584,9 @@ importers:
       '@protontech/crypto':
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      '@protontech/logger':
+        specifier: ^0.0.4
+        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: ^2.12.0
         version: 2.12.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1))(react@18.3.1)
@@ -8784,9 +8787,6 @@ importers:
       '@proton/colors':
         specifier: workspace:^
         version: link:../colors
-      '@proton/logger':
-        specifier: workspace:^
-        version: link:../logger
       '@proton/redux-utilities':
         specifier: workspace:^
         version: link:../redux-utilities
@@ -8808,6 +8808,9 @@ importers:
       '@protontech/crypto':
         specifier: ^2.1.3
         version: 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      '@protontech/logger':
+        specifier: ^0.0.4
+        version: 0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/mimemessage':
         specifier: ~v1.1.4
         version: 1.1.4(supports-color@11.0.0)
@@ -15282,6 +15285,9 @@ packages:
 
   '@protontech/interval-tree@1.0.0':
     resolution: {integrity: sha512-XwC15KtHFwExKYfCn4d0i2sjV4XTSMlsmSAPZluczR9GHzwi7oCMBHOzhHg3EbhCYjqLJBAxGHFsepfKyfP9ng==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/interval-tree/-/interval-tree-1.0.0.tgz}
+
+  '@protontech/logger@0.0.4':
+    resolution: {integrity: sha512-Xsbo30cRRsllaQJCadC4oULX3PZHgJ/o8FqbjAoeKI17yVTIECZ91x8GthkNg78irL1EltF/36z7xVIkvCVxwg==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/logger/-/logger-0.0.4.tgz}
 
   '@protontech/mimemessage@1.1.4':
     resolution: {integrity: sha512-GboE1mfTF4TIyJ+qAP/MbiLWpf/UmEbLYON4PopTJH4G0Vkn7Wl86gRhDg5ZxXEJAgN2sTSvUnSeLbsStOa/sA==, tarball: https://nexus.protontech.ch/repository/web-npm-private-and-public/@protontech/mimemessage/-/mimemessage-1.1.4.tgz}
@@ -34102,6 +34108,11 @@ snapshots:
       '@types/node': 24.19.0
       typescript: '@typescript/typescript6@6.0.2'
 
+  '@openpgp/web-stream-tools@0.3.1(@types/node@24.19.0)(typescript@6.0.3)':
+    optionalDependencies:
+      '@types/node': 24.19.0
+      typescript: 6.0.3
+
   '@opentelemetry/api-logs@0.220.0':
     dependencies:
       '@opentelemetry/api': 1.9.1
@@ -34715,7 +34726,7 @@ snapshots:
       webpack: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.4(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
     optionalDependencies:
       type-fest: 5.9.0
-      webpack-dev-server: 5.2.6(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
+      webpack-dev-server: 5.2.6(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
       webpack-hot-middleware: 2.26.1
 
   '@pmmmwh/react-refresh-webpack-plugin@0.6.3(react-refresh@0.19.0)(type-fest@5.9.0)(webpack-dev-server@6.0.0)(webpack-hot-middleware@2.26.1)(webpack@5.111.1)':
@@ -34837,6 +34848,18 @@ snapshots:
       - '@types/node'
       - typescript
 
+  '@protontech/crypto@2.1.3(@types/node@24.19.0)(typescript@6.0.3)':
+    dependencies:
+      '@noble/hashes': 2.4.0
+      '@openpgp/web-stream-tools': 0.3.1(@types/node@24.19.0)(typescript@6.0.3)
+      bcryptjs: 3.0.3
+      comlink: 4.4.2
+      core-js: 3.50.0
+      openpgp: '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.19.0)(typescript@6.0.3))'
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
+
   '@protontech/drive-sdk@0.22.2(@protontech/crypto@2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2))':
     dependencies:
       '@boltffi/runtime': 0.31.0
@@ -34870,6 +34893,26 @@ snapshots:
 
   '@protontech/interval-tree@1.0.0': {}
 
+  '@protontech/logger@0.0.4(@types/node@24.19.0)(@typescript/typescript6@6.0.2)':
+    dependencies:
+      '@protontech/crypto': 2.1.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      comlink: 4.4.2
+      core-js: 3.50.0
+      idb: 8.0.3
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
+
+  '@protontech/logger@0.0.4(@types/node@24.19.0)(typescript@6.0.3)':
+    dependencies:
+      '@protontech/crypto': 2.1.3(@types/node@24.19.0)(typescript@6.0.3)
+      comlink: 4.4.2
+      core-js: 3.50.0
+      idb: 8.0.3
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
+
   '@protontech/mimemessage@1.1.4(supports-color@11.0.0)':
     dependencies:
       debug: 2.6.9(supports-color@11.0.0)
@@ -34884,6 +34927,10 @@ snapshots:
   '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.19.0)(@typescript/typescript6@6.0.2))':
     optionalDependencies:
       '@openpgp/web-stream-tools': 0.3.1(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+
+  '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.19.0)(typescript@6.0.3))':
+    optionalDependencies:
+      '@openpgp/web-stream-tools': 0.3.1(@types/node@24.19.0)(typescript@6.0.3)
 
   '@protontech/pass-rust-core@1.6.0': {}
 
@@ -46256,7 +46303,7 @@ snapshots:
       sharp: 0.35.4(@types/node@24.19.0)
       svgo: 4.1.0
 
-  minimizer-webpack-plugin@5.10.1(@swc/core@1.16.13)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack@5.111.1):
+  minimizer-webpack-plugin@5.10.1(@swc/core@1.16.13(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack@5.111.1):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
@@ -51676,7 +51723,7 @@ snapshots:
       js-yaml: 4.3.2
       json5: 2.2.3
       webpack-bundle-analyzer: 5.4.0
-      webpack-dev-server: 5.2.6(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
+      webpack-dev-server: 5.2.6(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
     optional: true
 
   webpack-cli@7.2.3(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@6.0.0)(webpack@5.111.1):
@@ -51764,12 +51811,52 @@ snapshots:
       ws: 8.21.3
     optionalDependencies:
       webpack: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.4(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
+      webpack-cli: 7.2.3(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@6.0.0)(webpack@5.111.1)
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - supports-color
+      - utf-8-validate
+
+  webpack-dev-server@5.2.6(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1):
+    dependencies:
+      '@types/bonjour': 3.5.13
+      '@types/connect-history-api-fallback': 1.5.4
+      '@types/express': 4.17.25
+      '@types/express-serve-static-core': 4.19.9
+      '@types/serve-index': 1.9.4
+      '@types/serve-static': 1.15.10
+      '@types/sockjs': 0.3.36
+      '@types/ws': 8.18.1
+      ansi-html-community: 0.0.8
+      bonjour-service: 1.4.4
+      chokidar: 3.6.0
+      colorette: 2.0.20
+      compression: 1.8.1(supports-color@11.0.0)
+      connect-history-api-fallback: 2.0.0
+      express: 4.22.2(supports-color@11.0.0)
+      graceful-fs: 4.2.11
+      http-proxy-middleware: 2.0.10(@types/express@4.17.25)(debug@4.4.3(supports-color@11.0.0))
+      ipaddr.js: 2.5.0
+      launch-editor: 2.14.1
+      open: 10.2.0
+      p-retry: 6.2.1
+      schema-utils: 4.5.0
+      selfsigned: 5.5.0
+      serve-index: 1.9.2(supports-color@11.0.0)
+      sockjs: 0.3.24
+      spdy: 4.0.2(supports-color@11.0.0)
+      webpack-dev-middleware: 7.4.6(webpack@5.111.1)
+      ws: 8.21.3
+    optionalDependencies:
+      webpack: 5.111.1(@swc/core@1.16.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.4(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
       webpack-cli: 7.2.3(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@5.2.6)(webpack@5.111.1)
     transitivePeerDependencies:
       - bufferutil
       - debug
       - supports-color
       - utf-8-validate
+    optional: true
 
   webpack-dev-server@6.0.0(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1):
     dependencies:
@@ -51899,7 +51986,7 @@ snapshots:
       events: 3.3.0
       graceful-fs: 4.2.11
       mime-db: 1.54.0
-      minimizer-webpack-plugin: 5.10.1(@swc/core@1.16.13)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack@5.111.1)
+      minimizer-webpack-plugin: 5.10.1(@swc/core@1.16.13(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack@5.111.1)
       schema-utils: 4.5.0
       tapable: 2.3.3
       watchpack: 2.5.2
@@ -51983,7 +52070,7 @@ snapshots:
       watchpack: 2.5.2
       webpack-sources: 3.5.1
     optionalDependencies:
-      webpack-cli: 7.2.3(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@5.2.6)(webpack@5.111.1)
+      webpack-cli: 7.2.3(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@6.0.0)(webpack@5.111.1)
     transitivePeerDependencies:
       - '@minify-html/node'
       - '@napi-rs/image'

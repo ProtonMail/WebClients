@@ -1,3 +1,7 @@
+import { logger } from '@protontech/logger';
+import { ALL_CONSOLE_LEVELS } from '@protontech/logger/constants';
+import type { LogLevel } from '@protontech/logger/types';
+
 import {
     addressesThunk,
     initEvent,
@@ -15,9 +19,6 @@ import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode, fetchFeatures } from '@proton/features';
-import { logger } from '@proton/logger';
-import { ALL_CONSOLE_LEVELS } from '@proton/logger/constants';
-import type { LogLevel } from '@proton/logger/types';
 import { contactEmailsThunk } from '@proton/mail/store/contactEmails';
 import { categoriesThunk } from '@proton/mail/store/labels';
 import { mailSettingsThunk } from '@proton/mail/store/mailSettings';

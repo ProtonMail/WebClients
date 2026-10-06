@@ -1,8 +1,9 @@
 import { useRef, useState } from 'react';
 
+import { logger } from '@protontech/logger';
+
 import type { Cancellable } from '@proton/components/hooks/useHandler';
 import { useHandler } from '@proton/components/hooks/useHandler';
-import { logger } from '@proton/logger';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
