@@ -4,14 +4,16 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcLink } from '@proton/icons/icons/IcLink';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
+import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
 import { CreateMeetingDropdown } from '../../components/CreateMeetingDropdown/CreateMeetingDropdown';
 import { DashboardMeetingListLoading } from '../../components/DashboardMeetingList/DashboardMeetingListLoading';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { UpsellBanner } from '../../components/UpsellBanner/UpsellBanner';
-import type { MeetingListStatus } from '../../hooks/useMeetingList';
+import { MeetingListStatus } from '../../hooks/useMeetingList';
+import { useSendOnce } from '../../telemetry/useSendOnce';
 
 import './DashboardContainerBody.scss';
 
@@ -43,6 +45,14 @@ export const DashboardContainerBody = ({
     newlyCreatedMeetingId,
 }: DashboardContainerBodyProps) => {
     const isGuest = useMeetSelector(selectIsGuest);
+
+    useSendOnce(
+        () =>
+            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.dashboard_viewed, {
+                hasPersonalRoom: meetings.some((meeting) => meeting.Type === MeetingType.PERSONAL),
+            }),
+        meetingsListStatus === MeetingListStatus.Done
+    );
 
     const getHeadline = () => {
         // translator: this word is part of the full sentence "Talk in total privacy" but we need to emphasize privacy with a purple color

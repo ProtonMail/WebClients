@@ -23,6 +23,7 @@ import {
 } from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import type { KeyRotationLog } from '@proton/meet/types/types';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
@@ -174,6 +175,9 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                     <button
                                         className="w-full color-primary cursor-pointer text-left unstyled p-0 m-0"
                                         onClick={() => {
+                                            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_link_copied, {
+                                                source: 'meeting_details',
+                                            });
                                             void copyTextToClipboard(meetingLink);
                                         }}
                                         aria-label={c('Label').t`Copy invite link`}

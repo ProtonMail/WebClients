@@ -6,12 +6,13 @@ import { useMeetingUpdates } from '@proton/meet/hooks/useMeetingUpdates';
 import { useUpdateMeetingWaitingRoom } from '@proton/meet/hooks/useUpdateMeetingWaitingRoom';
 import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useGetMeetings } from '@proton/meet/store/hooks/useMeetings';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
-import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import { MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
 import { useNotifyError } from '../../../hooks/useNotifyError';
 import { TranslucentModal } from '../../TranslucentModal/TranslucentModal';
@@ -41,6 +42,9 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
             return;
         }
 
+        const isWaitingRoomChanged =
+            isWaitingRoomCreationEnabled && waitingRoom !== undefined && waitingRoom !== editedRoom.WaitingRoom;
+
         try {
             await saveMeetingName({
                 newTitle: name,
@@ -48,7 +52,7 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
                 meetingObject: editedRoom,
             });
 
-            if (isWaitingRoomCreationEnabled && waitingRoom !== undefined && waitingRoom !== editedRoom.WaitingRoom) {
+            if (isWaitingRoomChanged) {
                 await updateMeetingWaitingRoom({
                     meetingLinkName: editedRoom.MeetingLinkName,
                     waitingRoom,
@@ -56,6 +60,14 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
             }
 
             void getMeetings({ cache: CacheType.None });
+
+            const fieldsChanged = [
+                name !== editedRoom.MeetingName && 'name',
+                isWaitingRoomChanged && 'waitingRoom',
+            ].filter(Boolean);
+            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.room_edited, {
+                fieldsChanged: fieldsChanged.join(',') || 'none',
+            });
 
             createNotification({
                 text: c('Notification').t`Room name updated`,
@@ -75,9 +87,13 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
                 type: MeetingType.PERMANENT,
                 waitingRoom,
             });
+            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.room_created, {
+                hasWaitingRoom: waitingRoom === WaitingRoomState.ENABLED,
+            });
 
             const fullMeetingLink = getAppHref(meetingLink, APPS.PROTONMEET);
             await navigator.clipboard.writeText(fullMeetingLink);
+            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_link_copied, { source: 'room_created' });
 
             void getMeetings({ cache: CacheType.None });
 

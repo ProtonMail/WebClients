@@ -10,6 +10,7 @@ import {
     selectUpsellModalType,
     setUpsellModalType,
 } from '@proton/meet/store/slices/meetAppStateSlice';
+import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -38,6 +39,7 @@ export const GuestDashboardContainer = () => {
     };
 
     const handleStartMeeting = () => {
+        sendMeetDashboardEvent(TelemetryMeetDashboardEvents.meeting_started_instant, { source: 'guest_dashboard' });
         history.push('/join');
     };
 
@@ -58,7 +60,10 @@ export const GuestDashboardContainer = () => {
                 onScheduleClick={() => {
                     dispatch(setUpsellModalType(UpsellModalTypes.Schedule));
                 }}
-                onJoinWithLinkClick={() => openJoinWithLinkModal(true)}
+                onJoinWithLinkClick={() => {
+                    sendMeetDashboardEvent(TelemetryMeetDashboardEvents.join_with_link_opened);
+                    openJoinWithLinkModal(true);
+                }}
                 handleNewRoomClick={() => {
                     dispatch(setUpsellModalType(UpsellModalTypes.Room));
                 }}

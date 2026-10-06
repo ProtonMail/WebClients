@@ -8,6 +8,7 @@ import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
 import { hydrateMeetingPolicies, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
+import { markMeetingInfoNeeded } from '../../telemetry/loadPerformance';
 import type { JoinLocationState } from '../../types';
 import { MeetingErrorKind, classifyMeetingError } from '../../utils/classifyMeetingError';
 import { isExpectedApiFailure } from '../../utils/isExpectedApiFailure';
@@ -76,6 +77,8 @@ export const useMeetingInfoHydration = ({
         }
 
         const resolveMeetingInfo = async () => {
+            markMeetingInfoNeeded();
+
             try {
                 const { meetingInfo } = await dispatch(meetingInfoThunk({ meetingLinkName, meetingPassword }));
 

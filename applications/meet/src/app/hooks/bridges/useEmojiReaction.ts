@@ -5,6 +5,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { clearActiveReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -75,6 +76,8 @@ export const useEmojiReaction = () => {
             handleError('Failed to send emoji reaction');
             return false;
         }
+
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.emoji_reaction_sent);
 
         return true;
     };

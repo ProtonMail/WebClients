@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { LocalTrack } from 'livekit-client';
@@ -10,7 +10,6 @@ import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {
     PermissionBlockedError,
-    requestPermission,
     setActiveDevice,
     setInitialAudioState,
     setInitialCameraState,
@@ -39,6 +38,9 @@ import {
     setNoDeviceDetected,
     setPermissionPromptStatus,
 } from '@proton/meet/store/slices/uiStateSlice';
+import { toToggleState } from '@proton/meet/telemetry/dimensions';
+import type { MediaToggleTrigger } from '@proton/meet/telemetry/events';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isDefaultDevice } from '@proton/meet/utils/deviceUtils';
 import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
@@ -49,6 +51,7 @@ import { AnnouncementPriority } from '../../components/MeetingAnnouncer/types';
 import { useAnnounce } from '../../components/MeetingAnnouncer/useAnnounce';
 import { useMediaToggleShortcuts } from '../../hooks/useMediaToggleShortcuts';
 import { useStableCallback } from '../../hooks/useStableCallback';
+import { requestPermissionWithTelemetry } from '../../telemetry/permissions';
 import type { InitializeDevices, SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
 import { createDummyVideoTrack } from '../../utils/dummyVideoTrack';
@@ -271,6 +274,9 @@ export const MediaManagementProvider = ({
 
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
 
+    // Read synchronously by the toggle handlers, which are shared by the buttons and the shortcuts
+    const mediaToggleTriggerRef = useRef<MediaToggleTrigger>('button');
+
     const handleMicrophoneToggle = useCallback(() => {
         if (room.state === ConnectionState.Connected) {
             if (microphonePermission !== 'granted') {
@@ -282,6 +288,11 @@ export const MediaManagementProvider = ({
                 return;
             }
 
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.mic_toggled, {
+                state: toToggleState(!isMicrophoneEnabled),
+                trigger: mediaToggleTriggerRef.current,
+            });
+
             return toggleAudio({
                 isEnabled: !isMicrophoneEnabled,
                 audioDeviceId: selectedMicrophoneId,
@@ -290,7 +301,7 @@ export const MediaManagementProvider = ({
         }
 
         if (microphonePermission !== 'granted' || microphones.length === 0) {
-            return dispatch(requestPermission('microphone')).catch((error) => {
+            return dispatch(requestPermissionWithTelemetry('microphone')).catch((error) => {
                 if (error instanceof PermissionBlockedError) {
                     dispatch(
                         showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_MICROPHONE_MODAL })
@@ -329,6 +340,11 @@ export const MediaManagementProvider = ({
                 return;
             }
 
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.camera_toggled, {
+                state: toToggleState(!isCameraEnabled),
+                trigger: mediaToggleTriggerRef.current,
+            });
+
             return toggleVideo({
                 isEnabled: !isCameraEnabled,
                 videoDeviceId: selectedCameraId,
@@ -337,7 +353,7 @@ export const MediaManagementProvider = ({
         }
 
         if (cameraPermission !== 'granted' || cameras.length === 0) {
-            return dispatch(requestPermission('camera', activeCameraDeviceId)).catch((error) => {
+            return dispatch(requestPermissionWithTelemetry('camera', activeCameraDeviceId)).catch((error) => {
                 if (error instanceof PermissionBlockedError) {
                     dispatch(showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_CAMERA_MODAL }));
                 }
@@ -359,10 +375,14 @@ export const MediaManagementProvider = ({
 
     useMediaToggleShortcuts({
         onToggleMicrophone: () => {
+            mediaToggleTriggerRef.current = 'keyboard_shortcut';
             void handleMicrophoneToggle();
+            mediaToggleTriggerRef.current = 'button';
         },
         onToggleCamera: () => {
+            mediaToggleTriggerRef.current = 'keyboard_shortcut';
             void handleCameraToggle();
+            mediaToggleTriggerRef.current = 'button';
         },
         dependencies: [handleMicrophoneToggle, handleCameraToggle],
     });

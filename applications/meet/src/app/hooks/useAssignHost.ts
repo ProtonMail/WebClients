@@ -4,6 +4,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { MeetingSideBars, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { updateParticipantPermissions } from '@proton/shared/lib/api/meet';
 
@@ -26,6 +27,7 @@ export const useAssignHost = (accessToken: string, meetingLinkName: string) => {
                     AccessToken: accessToken,
                 })
             );
+            sendMeetActionsEvent(TelemetryMeetActionsEvents.host_assigned);
             dispatch(toggleSideBarState(MeetingSideBars.AssignHost));
 
             notifications.createNotification({

@@ -10,6 +10,8 @@ import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRo
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectWaitingRoomSetting, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
+import { toToggleState } from '@proton/meet/telemetry/dimensions';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { PLANS } from '@proton/payments/core/constants';
 
 import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
@@ -33,6 +35,8 @@ export const WaitingRoomDropdown = ({ instantMeeting }: { instantMeeting: boolea
         if (!isPaidUser) {
             return;
         }
+
+        sendMeetActionsEvent(TelemetryMeetActionsEvents.waiting_room_toggled, { state: toToggleState(value) });
 
         if (!instantMeeting) {
             await withLoading(toggleWaitingRoomPrejoin(value));
