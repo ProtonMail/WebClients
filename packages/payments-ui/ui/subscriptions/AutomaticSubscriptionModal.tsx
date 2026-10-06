@@ -17,8 +17,8 @@ import type { OpenCallbackProps } from '@proton/components/containers/payments/s
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoad from '@proton/components/hooks/useLoad';
 import {
-    ADDON_GENERIC_NAMES,
     ADDON_PREFIXES,
+    ADDON_TOTAL_PARAM_NAMES,
     DEFAULT_CYCLE,
     type PLANS,
     URL_CONFIGURABLE_ADDON_PREFIXES,
@@ -345,7 +345,7 @@ export const AutomaticSubscriptionModal = () => {
                     );
 
                     for (const addon of URL_CONFIGURABLE_ADDON_PREFIXES) {
-                        const totalFromParams = totals[`total${ADDON_GENERIC_NAMES[addon]}`];
+                        const totalFromParams = totals[`total${ADDON_TOTAL_PARAM_NAMES[addon]}`];
 
                         if (!totalFromParams) {
                             continue;
