@@ -15,6 +15,9 @@ export interface LumoAgentDrawerValue {
     items: LumoAgentItem[];
     isBusy: boolean;
     hasConversation: boolean;
+    /** Held with the conversation, so half-typed text survives a surface unmounting its prompt. */
+    draft: string;
+    setDraft: (draft: string) => void;
     send: (text: string) => void;
     confirm: (params: Record<string, any>) => void;
     cancel: () => void;
