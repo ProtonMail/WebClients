@@ -5,6 +5,8 @@ import useLoading from '@proton/hooks/useLoading';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLinkName } from '@proton/meet/store/slices/currentMeeting';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
+import { toToggleState } from '@proton/meet/telemetry/dimensions';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -38,14 +40,22 @@ export const LiveCaptionsHostAvailabilityToggle = () => {
 
         const next = !available;
         void withLoading(
-            meetCoreClient.setClosedCaptionsAvailabilityAsHost(meetingLinkName, next).catch((error: unknown) => {
-                createNotification({
-                    type: 'error',
-                    text:
-                        (error instanceof Error && error.message) ||
-                        c('Error').t`Failed to update live captions availability`,
-                });
-            })
+            meetCoreClient
+                .setClosedCaptionsAvailabilityAsHost(meetingLinkName, next)
+                .then(() =>
+                    sendMeetActionsEvent(TelemetryMeetActionsEvents.captions_toggled, {
+                        state: toToggleState(next),
+                        captionsScope: 'host_availability',
+                    })
+                )
+                .catch((error: unknown) => {
+                    createNotification({
+                        type: 'error',
+                        text:
+                            (error instanceof Error && error.message) ||
+                            c('Error').t`Failed to update live captions availability`,
+                    });
+                })
         );
     };
 

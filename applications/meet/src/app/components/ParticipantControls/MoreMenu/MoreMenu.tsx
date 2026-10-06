@@ -16,11 +16,13 @@ import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
 import {
     MeetingSideBars,
     selectMeetingReadyPopupOpen,
+    selectSideBarState,
     selectTranscriptionEnabled,
     setMeetingReadyPopupOpen,
     toggleSideBarState,
     toggleTranscription,
 } from '@proton/meet/store/slices/uiStateSlice';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -56,6 +58,7 @@ export const MoreMenu = ({ variant, onOpenDeviceState }: Props) => {
     const transcriptionEnabled = useMeetSelector(selectTranscriptionEnabled);
     const meetingReadyPopupOpen = useMeetSelector(selectMeetingReadyPopupOpen);
     const meetingLink = useMeetSelector(selectMeetingLink);
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const recording = useRecordingToggle();
     const liveCaptions = useLiveCaptionsToggle();
@@ -110,7 +113,12 @@ export const MoreMenu = ({ variant, onOpenDeviceState }: Props) => {
             id: 'settings',
             Icon: IcMeetSettings,
             label: c('Action').t`Settings`,
-            onClick: () => dispatch(toggleSideBarState(MeetingSideBars.Settings)),
+            onClick: () => {
+                if (!sideBarState[MeetingSideBars.Settings]) {
+                    sendMeetActionsEvent(TelemetryMeetActionsEvents.settings_opened, { source: 'more_menu' });
+                }
+                dispatch(toggleSideBarState(MeetingSideBars.Settings));
+            },
         },
         {
             id: 'meeting-info',
