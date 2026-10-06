@@ -688,6 +688,12 @@
       "Show Less": [
         "Mostrar menos"
       ],
+      "Show less": [
+        "Mostrar menos"
+      ],
+      "Show more": [
+        "Mostrar más"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sesión con ${ BRAND_NAME }"
       ],
@@ -1804,9 +1810,6 @@
       "Can view this item.": [
         "Puede ver este elemento."
       ],
-      "Change your password": [
-        "Cambie la contraseña"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total } contraseñas"
       ],
@@ -1893,9 +1896,6 @@
       ],
       "Editor": [
         "Editor"
-      ],
-      "email": [
-        "correo"
       ],
       "Email address successfully deleted from monitoring": [
         "La dirección de correo electrónico fue eliminada del monitoreo."
@@ -1992,9 +1992,6 @@
       ],
       "Fill in the CSV with your data": [
         "Complete el CSV con los datos"
-      ],
-      "finance": [
-        "finanzas"
       ],
       "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
         "Finalice el inicio de sesión en la ventana del navegador que acaba de abrir. ${ PASS_APP_NAME } se cargará automáticamente una vez que lo haga."
@@ -2164,9 +2161,6 @@
       "Medium Priority": [
         "Prioridad media"
       ],
-      "Monitor accounts": [
-        "Monitoreo de cuentas"
-      ],
       "Monitoring settings successfully updated": [
         "Ajustes de monitoreo actualizados"
       ],
@@ -2268,9 +2262,6 @@
       ],
       "Pass Plus trial": [
         "Prueba de Proton Pass Plus"
-      ],
-      "password": [
-        "contraseña"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se registró el bloqueo por contraseña. Úsela para desbloquear ${ PASS_APP_NAME }"
@@ -2720,9 +2711,6 @@
       ],
       "User's access successfully updated": [
         "Se actualizó el acceso del usuario."
-      ],
-      "username": [
-        "nombre de usuario"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Se eliminó la bóveda «${ payload.content.name }»."
@@ -5312,6 +5300,22 @@
       "${ BRAND_NAME } password is required": [
         "Se requiere la contraseña de ${ BRAND_NAME }"
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "Se fusionó ${ count } carpeta con su carpeta principal porque se alcanzó el nivel máximo de anidamiento.",
+        "Se fusionaron ${ count } carpetas con su carpeta principal porque se alcanzó el nivel máximo de anidamiento."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "No se importó ${ count } carpeta porque su carpeta principal alcanzó el número máximo de subcarpetas. Sus elementos se importaron a la carpeta disponible más cercana.",
+        "No se importaron ${ count } carpetas porque su carpeta principal alcanzó el número máximo de subcarpetas. Sus elementos se importaron a la carpeta disponible más cercana."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "No se importó ${ count } carpeta porque esta bóveda alcanzó el número máximo de carpetas. Sus elementos se importaron a la carpeta disponible más cercana.",
+        "No se importaron ${ count } carpetas porque esta bóveda alcanzó el número máximo de carpetas. Sus elementos se importaron a la carpeta disponible más cercana."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "No se pudo crear ${ failed } carpeta. Sus elementos se importaron a la carpeta disponible más cercana.",
+        "No se pudieron crear ${ failed } carpetas. Sus elementos se importaron a la carpeta disponible más cercana."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } brinda un control potente, pero un solo error puede provocar que la función de autocompletar coincida con datos de sitios web fraudulentos o de suplantación y los complete automáticamente."
       ],
@@ -5449,9 +5453,6 @@
       ],
       "Move to trash": [
         "Mover a la papelera"
-      ],
-      "Name is required": [
-        "El nombre es obligatorio."
       ],
       "No items": [
         "No hay elementos"
