@@ -1,4 +1,4 @@
-import { type Logger as BaseLogger, logger as baseLogger } from '@proton/logger';
+import { type Logger as BaseLogger, logger as baseLogger } from '@protontech/logger';
 
 export type Logger = Pick<BaseLogger, 'trace' | 'debug' | 'info' | 'warn' | 'error' | 'log'>;
 

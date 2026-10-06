@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 
+import { logger } from '@protontech/logger';
+
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import { logger } from '@proton/logger';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { selectCategoryUnreadCount } from '@proton/mail/store/categoriesView/categoriesViewSelector';
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';

@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
@@ -41,7 +42,6 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { IcWindowMaximised } from '@proton/icons/icons/IcWindowMaximised';
 import { IcWindowSmall } from '@proton/icons/icons/IcWindowSmall';
 import { useAssistant } from '@proton/llm/lib';
-import { logger } from '@proton/logger';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';

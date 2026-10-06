@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router';
 
-import { logger } from '@proton/logger';
+import { logger } from '@protontech/logger';
+
 import { conversationCountsThunk } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsThunk } from '@proton/mail/store/counts/messageCountsSlice';
 import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';

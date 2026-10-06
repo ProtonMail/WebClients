@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
+import { logger } from '@protontech/logger';
+import { generateSyntheticLogCalls } from '@protontech/logger/fixtures';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Progress from '@proton/components/components/progress/Progress';
-import { logger } from '@proton/logger';
-import { generateSyntheticLogCalls } from '@proton/logger/fixtures';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { PhaseResultRows, ResultRow } from './PhaseResultRows';

@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 
+import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { logger } from '@proton/logger';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { deleteMessages } from '@proton/shared/lib/api/messages';

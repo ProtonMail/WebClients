@@ -1,10 +1,10 @@
 import { useCallback, useRef } from 'react';
 
+import { logger } from '@protontech/logger';
+import type { LogLevel } from '@protontech/logger/types';
 import type { SeverityLevel } from '@sentry/browser';
 import type { Primitive } from '@sentry/types';
 
-import { logger } from '@proton/logger';
-import type { LogLevel } from '@proton/logger/types';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';

@@ -1,3 +1,7 @@
+import { logger } from '@protontech/logger';
+import { ALL_CONSOLE_LEVELS } from '@protontech/logger/constants';
+import type { LogLevel } from '@protontech/logger/types';
+
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
@@ -15,9 +19,6 @@ import { calendarEventLoopV6 } from '@proton/calendar/calendarEventLoop';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import { initMainHost } from '@proton/cross-storage/host';
 import { FeatureCode, fetchFeatures } from '@proton/features';
-import { logger } from '@proton/logger';
-import { ALL_CONSOLE_LEVELS } from '@proton/logger/constants';
-import type { LogLevel } from '@proton/logger/types';
 import { contactEventLoopV6 } from '@proton/mail/store/contactEventLoop';
 import { mailEventLoopV6 } from '@proton/mail/store/mailEventLoop';
 import createApi from '@proton/shared/lib/api/createApi';

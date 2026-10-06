@@ -1,7 +1,8 @@
 import type { ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
 import { Component } from 'react';
 
-import type { Logger } from '@proton/logger';
+import type { Logger } from '@protontech/logger';
+
 import type { SentryInitiative } from '@proton/shared/lib/helpers/sentry';
 import { traceError, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 

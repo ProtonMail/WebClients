@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 
+import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { logger } from '@proton/logger';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
