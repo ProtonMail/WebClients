@@ -700,6 +700,12 @@
       "Show Less": [
         "Afficher moins"
       ],
+      "Show less": [
+        "Afficher moins"
+      ],
+      "Show more": [
+        "Afficher plus"
+      ],
       "Sign back in": [
         "Se reconnecter"
       ],
@@ -1895,9 +1901,6 @@
       "Can view this item.": [
         "Peut afficher cet élément."
       ],
-      "Change your password": [
-        "Modifier votre mot de passe"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Vérification de ${ compromised.progress.completed } mots de passe sur ${ compromised.progress.total }"
       ],
@@ -2003,9 +2006,6 @@
       "Editor": [
         "Éditeur"
       ],
-      "email": [
-        "e-mail"
-      ],
       "Email address successfully deleted from monitoring": [
         "L'adresse e-mail a été supprimée de la surveillance."
       ],
@@ -2101,9 +2101,6 @@
       ],
       "Fill in the CSV with your data": [
         "Remplir le fichier CSV avec vos données"
-      ],
-      "finance": [
-        "finance"
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Le dossier \"${ payload.folder.name }\" a été créé"
@@ -2273,9 +2270,6 @@
       "Medium Priority": [
         "Priorité moyenne"
       ],
-      "Monitor accounts": [
-        "Surveiller les comptes"
-      ],
       "Monitoring settings successfully updated": [
         "Les paramètres de surveillance ont été mis à jour."
       ],
@@ -2398,9 +2392,6 @@
       ],
       "Passkey sign-in": [
         "Connexion avec une clé d'accès"
-      ],
-      "password": [
-        "mot de passe"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Le verrouillage par mot de passe a été enregistré. Utilisez-le pour débloquer ${ PASS_APP_NAME }."
@@ -2892,9 +2883,6 @@
       ],
       "User's access successfully updated": [
         "L'accès de l'utilisateur a été mis à jour."
-      ],
-      "username": [
-        "nom d'utilisateur"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Le coffre-fort « ${ payload.content.name } » a été supprimé."
@@ -5477,6 +5465,22 @@
       "${ BRAND_NAME } password is required": [
         "Le mot de passe de ${ BRAND_NAME } est nécessaire."
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } dossier a été fusionné dans son dossier parent car le niveau d'imbrication maximum a été atteint.",
+        "${ count } dossiers ont été fusionnés dans leur dossier parent car le niveau d'imbrication maximum a été atteint."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } dossier n'a pas été importé car son dossier parent a atteint le nombre maximum de sous-dossiers. Ses éléments ont été importés dans le dossier disponible le plus proche.",
+        "${ count } dossiers n'ont pas été importés car leur dossier parent a atteint le nombre maximum de sous-dossiers. Leurs éléments ont été importés dans le dossier disponible le plus proche."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } dossier n'a pas été importé car ce coffre-fort a atteint sa limite de dossiers. Ses éléments ont été importés dans le dossier disponible le plus proche.",
+        "${ count } dossiers n'ont pas été importés car ce coffre-fort a atteint sa limite de dossiers. Ses éléments ont été importés dans le dossier disponible le plus proche."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } dossier n'a pas pu être créé. Ses éléments ont été importés dans le dossier disponible le plus proche.",
+        "${ failed } dossiers n'ont pas pu être créés. Leurs éléments ont été importés dans le dossier disponible le plus proche."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } offre un contrôle très efficace, mais une seule erreur peut entraîner la saisie automatique de données sur des sites frauduleux ou d'hameçonnage."
       ],
@@ -5620,9 +5624,6 @@
       ],
       "Move to trash": [
         "Déplacer dans la corbeille"
-      ],
-      "Name is required": [
-        "Veuillez indiquer un nom."
       ],
       "No items": [
         "Aucun élément"

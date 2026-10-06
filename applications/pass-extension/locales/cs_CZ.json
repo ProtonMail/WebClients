@@ -682,6 +682,12 @@
       "Show Less": [
         "Zobrazit méně"
       ],
+      "Show less": [
+        "Zobrazit méně"
+      ],
+      "Show more": [
+        "Zobrazit více"
+      ],
       "Sign back in": [
         "Přihlásit se zpět"
       ],
@@ -1886,9 +1892,6 @@
       "Can view this item.": [
         "Může zobrazit tuto položku."
       ],
-      "Change your password": [
-        "Změňte své heslo"
-      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vyberte uložený přístupový klíč pro přihlášení k ${ domain }"
       ],
@@ -1988,9 +1991,6 @@
       "Editor": [
         "Editor"
       ],
-      "email": [
-        "e-mail"
-      ],
       "Email address successfully deleted from monitoring": [
         "E-mailová adresa úspěšně smazána ze sledování"
       ],
@@ -2086,9 +2086,6 @@
       ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
-      ],
-      "finance": [
-        "finance"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Postupujte podle těchto kroků pro import vašich dat pomocí obecného CSV:"
@@ -2252,9 +2249,6 @@
       "Medium Priority": [
         "Střední priorita"
       ],
-      "Monitor accounts": [
-        "Sledování účtů"
-      ],
       "Monitoring settings successfully updated": [
         "Nastavení sledování úspěšně aktualizováno"
       ],
@@ -2368,9 +2362,6 @@
       ],
       "Passkey sign-in": [
         "Přihlášení pomocí přístupového klíče"
-      ],
-      "password": [
-        "heslo"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Zamykání heslem bylo úspěšně registrováno. Použijte jej k odemknutí ${ PASS_APP_NAME }"
@@ -2863,9 +2854,6 @@
       ],
       "User's access successfully updated": [
         "Přístup uživatele byl úspěšně aktualizován"
-      ],
-      "username": [
-        "uživatelské jméno"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" úspěšně smazán"
@@ -5564,9 +5552,6 @@
       ],
       "Move to trash": [
         "Přesunout do koše"
-      ],
-      "Name is required": [
-        "Název je povinný"
       ],
       "No items": [
         "Žádné položky"

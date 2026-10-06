@@ -700,6 +700,12 @@
       "Show Less": [
         "Vis mindre"
       ],
+      "Show less": [
+        "Vis mindre"
+      ],
+      "Show more": [
+        "Vis mer"
+      ],
       "Sign back in": [
         "Logg på igjen"
       ],
@@ -1885,9 +1891,6 @@
       "Can view this item.": [
         "Kan lese dette elementet."
       ],
-      "Change your password": [
-        "Endre passordet ditt"
-      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Sjekker ${ compromised.progress.completed } av ${ compromised.progress.total } passord"
       ],
@@ -1990,9 +1993,6 @@
       "Editor": [
         "Redigerer"
       ],
-      "email": [
-        "e-post"
-      ],
       "Email address successfully deleted from monitoring": [
         "E-postadresse slettet fra overvåking"
       ],
@@ -2088,9 +2088,6 @@
       ],
       "Fill in the CSV with your data": [
         "Fyll ut CSV-filen med dataene dine"
-      ],
-      "finance": [
-        "finans"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Følg disse trinnene for å importere dataene dine med en generisk CSV-fil:"
@@ -2248,9 +2245,6 @@
       "Medium Priority": [
         "Middels prioritet"
       ],
-      "Monitor accounts": [
-        "Overvåk kontoer"
-      ],
       "Monitoring settings successfully updated": [
         "Overvåkingsinnstillingene er oppdatert"
       ],
@@ -2365,9 +2359,6 @@
       ],
       "Passkey sign-in": [
         "Tilgangsnøkkelpålogging"
-      ],
-      "password": [
-        "passord"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Passordlås er registrert. Bruk den til å låse opp ${ PASS_APP_NAME }"
@@ -2856,9 +2847,6 @@
       ],
       "User's access successfully updated": [
         "Brukerens tilgang oppdatert"
-      ],
-      "username": [
-        "brukernavn"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Hvelv \"${ payload.content.name }\" slettet"
@@ -5529,9 +5517,6 @@
       ],
       "Move to trash": [
         "Flytt til papirkurven"
-      ],
-      "Name is required": [
-        "Navn kreves"
       ],
       "No items": [
         "Ingen elementer"

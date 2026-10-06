@@ -616,6 +616,12 @@
       "Show Less": [
         "Kevesebb mutatása"
       ],
+      "Show less": [
+        "Kevesebb megjelenítése"
+      ],
+      "Show more": [
+        "Több megjelenítése"
+      ],
       "Sign back in": [
         "Ismét bejelentkezés"
       ],
@@ -1614,9 +1620,6 @@
       "Can view this item.": [
         "Megtekintheti ezt az elemet."
       ],
-      "Change your password": [
-        "Jelszó megváltoztatása"
-      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Válasszon egy hitelesítő kulcsot a(z) ${ domain } bejelentkezéshez"
       ],
@@ -1688,9 +1691,6 @@
       ],
       "Editor": [
         "Szerkesztő"
-      ],
-      "email": [
-        "e-mail cím"
       ],
       "Email address successfully deleted from monitoring": [
         "Az e-mail cím sikeresen törölve a figyelésből"
@@ -1766,9 +1766,6 @@
       ],
       "Fill in the CSV with your data": [
         "Töltse ki a CSV fájlt az adataival"
-      ],
-      "finance": [
-        "pénzügyi"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "A következő lépésekkel importálhat adatokat általános CSV fájlból:"
@@ -1920,9 +1917,6 @@
       "Medium Priority": [
         "Közepes prioritású"
       ],
-      "Monitor accounts": [
-        "Fiókok megfigyelése"
-      ],
       "Monitoring settings successfully updated": [
         "A megfigyelési beállítások frissítve"
       ],
@@ -1998,9 +1992,6 @@
       ],
       "Passkey sign-in": [
         "Hitelesítő kulcsos bejelentkezés"
-      ],
-      "password": [
-        "jelszó"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Jelszózár sikeresen regisztrálva. Használja a ${ PASS_APP_NAME } feloldásához"
@@ -2414,9 +2405,6 @@
       ],
       "User's access successfully updated": [
         "A felhasználói hozzáférés frissítve"
-      ],
-      "username": [
-        "felhasználónév"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Tároló törölve: \"${ payload.content.name }\""
@@ -4798,9 +4786,6 @@
       ],
       "Move to trash": [
         "Áthelyezés a Lomtárba"
-      ],
-      "Name is required": [
-        "Név megadása kötelező"
       ],
       "No items": [
         "Nincsenek elemek"
