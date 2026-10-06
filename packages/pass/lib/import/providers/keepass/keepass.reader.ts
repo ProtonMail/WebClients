@@ -1,9 +1,10 @@
-import get from 'lodash/get';
 import { c } from 'ttag';
 
-import type { ItemImportIntent, Maybe, MaybeNull } from '../../../../types';
+import type { ItemImportIntent, Maybe, MaybeArray } from '../../../../types';
 import { logger } from '../../../../utils/logger';
 import { ImportProviderError } from '../../helpers/error';
+import type { ImportFolderTree } from '../../helpers/folders';
+import { createImportFolderTree } from '../../helpers/folders';
 import { getEmailOrUsername, getImportedVaultName, importLoginItem } from '../../helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '../../types';
 import type { KeePassEntry, KeePassEntryValue, KeePassFile, KeePassGroup, KeePassItem } from './keepass.types';
@@ -29,7 +30,10 @@ const formatOtpAuthUriFromLegacyTotpDefinition = (item: KeePassItem): Maybe<stri
 const formatOtpAuthUri = (item: KeePassItem): Maybe<string> =>
     isLegacyTotpDefinition(item) ? formatOtpAuthUriFromLegacyTotpDefinition(item) : item.otpauth;
 
-const entryToItem = async (entry: KeePassEntry): Promise<ItemImportIntent<'login'>> => {
+const entryToItem = async (
+    entry: KeePassEntry,
+    { trashed }: { trashed: boolean }
+): Promise<ItemImportIntent<'login'>> => {
     const entryString = Array.isArray(entry.String) ? entry.String : [entry.String];
     const item = entryString.reduce<KeePassItem>(
         (acc, field) => {
@@ -84,39 +88,44 @@ const entryToItem = async (entry: KeePassEntry): Promise<ItemImportIntent<'login
         urls: [item.url],
         totp: formatOtpAuthUri(item),
         extraFields: item.customFields,
+        trashed,
         ...(await getEmailOrUsername(item.username)),
     });
 };
 
-const groupToVault = async (group: KeePassGroup): Promise<MaybeNull<ImportVault>> => {
-    const entries = get(group, 'Entry');
-    if (!entries) return null;
-
-    const name = getImportedVaultName(group.Name);
-    const items: ItemImportIntent[] = [];
-
-    for (const entry of Array.isArray(entries) ? entries : [entries]) {
-        items.push(await entryToItem(entry));
-    }
-
-    return { name, shareId: null, folders: [], items };
+const toArray = <T>(value: Maybe<MaybeArray<T>>): T[] => {
+    if (!value) return [];
+    return Array.isArray(value) ? value : [value];
 };
 
-const extractVaults = async (group: KeePassGroup): Promise<ImportVault[]> => {
-    const vaults: ImportVault[] = [];
+type KeePassImportContext = {
+    tree: ImportFolderTree;
+    recycleBinUUID: Maybe<string>;
+};
 
-    const vault = await groupToVault(group);
-    if (vault) vaults.push(vault);
+const isRecycleBin = (group: KeePassGroup, recycleBinUUID: Maybe<string>) =>
+    Boolean(recycleBinUUID) && group.UUID === recycleBinUUID;
 
-    const nestedGroup = get(group, 'Group');
-    if (!nestedGroup) return vaults;
+const extractItems = async (
+    group: KeePassGroup,
+    path: string[],
+    context: KeePassImportContext,
+    inRecycleBin = false
+): Promise<ItemImportIntent[]> => {
+    const trashed = inRecycleBin || isRecycleBin(group, context.recycleBinUUID);
+    const folderId = trashed ? null : context.tree.add(path);
+    const items: ItemImportIntent[] = [];
 
-    for (const group of Array.isArray(nestedGroup) ? nestedGroup : [nestedGroup]) {
-        const nested = await extractVaults(group);
-        vaults.push(...nested);
+    for (const entry of toArray(group.Entry)) {
+        const item = await entryToItem(entry, { trashed });
+        items.push({ ...item, folderId });
     }
 
-    return vaults;
+    for (const subgroup of toArray(group.Group)) {
+        items.push(...(await extractItems(subgroup, [...path, subgroup.Name], context, trashed)));
+    }
+
+    return items;
 };
 
 export const readKeePassData = async (file: File): Promise<ImportReaderResult> => {
@@ -125,7 +134,24 @@ export const readKeePassData = async (file: File): Promise<ImportReaderResult> =
         const X2JS = (await import('x2js')).default;
         const parser = new X2JS({ stripWhitespaces: false });
         const importXml: KeePassFile = parser.xml2js(data);
-        const vaults = await extractVaults(importXml.KeePassFile.Root as KeePassGroup);
+        const { Meta, Root } = importXml.KeePassFile;
+
+        const tree = createImportFolderTree();
+        const context: KeePassImportContext = { tree, recycleBinUUID: Meta?.RecycleBinUUID };
+        const rootGroups = toArray(Root.Group);
+        const hasSingleRootGroup = rootGroups.length === 1;
+        const items: ItemImportIntent[] = [];
+
+        for (const group of rootGroups) {
+            // If only a single root, import to the vault root
+            const path = hasSingleRootGroup ? [] : [group.Name];
+            items.push(...(await extractItems(group, path, context)));
+        }
+
+        const vaultName = hasSingleRootGroup ? rootGroups[0].Name : undefined;
+        const vaults: ImportVault[] = [
+            { name: getImportedVaultName(vaultName), shareId: null, folders: tree.folders, items },
+        ];
 
         return { vaults, ignored: [], warnings: [] };
     } catch (e) {
