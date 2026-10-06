@@ -516,7 +516,9 @@ const getSSOInactiveData = async (
 ): Promise<SSOInactiveData> => {
     const { api } = context;
 
-    const authDevices = await getAllAuthDevices({ user, api });
+    // Throws when the request fails, rather than listing no devices: this device would then be taken for a missing
+    // one and replaced, dropping the approval it waits for
+    const authDevices = await getAllAuthDevices({ user, api, throwOnError: true });
     const authDeviceSelf = authDevices.find(({ ID }) => ID === deviceDataSerialized.serializedDeviceData.id);
     // If we can't find ourselves, just throw to create a new device
     if (!authDeviceSelf) {
@@ -532,6 +534,8 @@ const getSSOInactiveData = async (
     ]);
 
     const address = addresses.find(({ ID }) => ID === authDeviceSelf.ActivationAddressID);
+    // A device created before the member had keys has neither an activation token nor an activation address, so no
+    // other device or administrator can approve it: throw to create a new device
     if (!address) {
         throw new AuthDeviceInvalidError(authDeviceSelf.ID, 'Missing address');
     }
@@ -577,7 +581,10 @@ const getSSOUnlockData = async (
 
     const deviceData = await createAuthDeviceToActivate({ primaryAddressKey, api });
     await setPersistedAuthDeviceDataByUser({ user, deviceData });
-    const authDevices = await getAllAuthDevices({ user, api });
+    // Throws when the request fails, rather than listing no devices: that would hide the approval from another
+    // device, leaving the administrator's, which signs out the other devices. Signing in again continues with this
+    // device, persisted already.
+    const authDevices = await getAllAuthDevices({ user, api, throwOnError: true });
     const activeAuthDevicesExceptSelf = authDevices.filter(
         ({ ID, State }) => ID !== deviceData.deviceOutput.ID && State === AuthDeviceState.Active
     );
@@ -595,6 +602,45 @@ const getSSOUnlockData = async (
 
 /** SSO accounts either sign in directly (the device can unlock the keys) or continue in the SSO steps. */
 export type PrepareSSOResult = { type: 'session'; session: AuthSession } | { type: 'sso'; ssoData: SSODataTypes };
+
+/**
+ * Signs in with the device secret persisted for the user or, while that device isn't active, prepares its approval.
+ * The device errors are the caller's to handle, including those from preparing the approval.
+ */
+const prepareWithDeviceSecret = async (
+    context: LoginFlowContext,
+    { user, addresses }: { user: User; addresses: Address[] | undefined }
+): Promise<PrepareSSOResult> => {
+    try {
+        const deviceSecretUser = await getAuthDeviceDataByUser({ user, api: context.api });
+        if (user.Flags['has-temporary-password']) {
+            return { type: 'sso', ssoData: await getSSOSetPasswordData(context, { deviceSecret: deviceSecretUser }) };
+        }
+        return {
+            type: 'session',
+            session: await finalizeSignIn(context, {
+                user,
+                addresses,
+                loginPassword: '',
+                clearKeyPassword: '',
+                keyPassword: deviceSecretUser.keyPassword,
+                source: SessionSource.Saml,
+            }),
+        };
+    } catch (e) {
+        if (e instanceof AuthDeviceInactiveError) {
+            return {
+                type: 'sso',
+                ssoData: await getSSOInactiveData(context, {
+                    user,
+                    addresses,
+                    deviceDataSerialized: e.deviceDataSerialized,
+                }),
+            };
+        }
+        throw e;
+    }
+};
 
 export const prepareSSOSignIn = async (
     context: LoginFlowContext,
@@ -621,33 +667,8 @@ export const prepareSSOSignIn = async (
 
     // Attempt to use device secret
     try {
-        const deviceSecretUser = await getAuthDeviceDataByUser({ user, api });
-        if (user.Flags['has-temporary-password']) {
-            return { type: 'sso', ssoData: await getSSOSetPasswordData(context, { deviceSecret: deviceSecretUser }) };
-        }
-        return {
-            type: 'session',
-            session: await finalizeSignIn(context, {
-                user,
-                addresses,
-                loginPassword: '',
-                clearKeyPassword: '',
-                keyPassword: deviceSecretUser.keyPassword,
-                source: SessionSource.Saml,
-            }),
-        };
+        return await prepareWithDeviceSecret(context, { user, addresses });
     } catch (e) {
-        if (e instanceof AuthDeviceInactiveError) {
-            return {
-                type: 'sso',
-                ssoData: await getSSOInactiveData(context, {
-                    user,
-                    addresses,
-                    deviceDataSerialized: e.deviceDataSerialized,
-                }),
-            };
-        }
-
         if (e instanceof AuthDeviceNonExistingError || e instanceof AuthDeviceInvalidError) {
             if (e instanceof AuthDeviceInvalidError) {
                 await deleteAuthDevice({
