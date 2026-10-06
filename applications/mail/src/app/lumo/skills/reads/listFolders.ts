@@ -20,7 +20,7 @@ export const listFoldersDefinition: ToolDefinition<Record<string, never>, ListFo
     name: 'list_folders',
     kind: 'read',
     toolDescription:
-        "List the user's custom folders — each with its folder-… reference, name, and parent folder reference (or top-level). Use to resolve a folder the user names into a folder-… reference before moving mail or nesting a new folder, or to check whether a folder already exists (a filter can only file into a folder that already exists). Read-only.",
+        "List the user's custom folders — each with its folder-… reference, name, and parent folder reference (or top-level). Use to resolve a folder the user names into a folder-… reference before moving mail or nesting a new folder (skip it when an earlier list_folders result in this conversation already has that folder), or to check whether a folder already exists (a filter can only file into a folder that already exists). Read-only.",
     paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
     serializeForLumo: (result) => {
         // The parent's name is only on the parent's OWN row, so describing where a folder sits used to
