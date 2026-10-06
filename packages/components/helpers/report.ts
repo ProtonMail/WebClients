@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS_CONFIGURATION, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS_CONFIGURATION, MAIL_APP_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import {
     getInboxDesktopIsSnapPackage,
     getInboxDesktopSnapPackageRevision,
 } from '@proton/shared/lib/desktop/snapHelpers';
 import { getAllAppVersions } from '@proton/shared/lib/desktop/version';
 import { getBrowser, getDevice, getOS } from '@proton/shared/lib/helpers/browser';
-import { electronAppVersion, isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { electronAppVersion, isElectronMail, isElectronMeet } from '@proton/shared/lib/helpers/desktop';
 
 export const getClientName = (appName: APP_NAMES) => {
     return `Web ${APPS_CONFIGURATION[appName].bareName}`;
@@ -60,10 +60,9 @@ export const getReportInfo = () => {
         ? getAllAppVersions()
         : (electronAppVersion ?? browser.version ?? '');
 
+    const appName = isElectronMeet ? MEET_APP_NAME : MAIL_APP_NAME;
     const Browser =
-        browser.name?.toLowerCase() === 'electron'
-            ? c('Browser').t`${MAIL_APP_NAME} Desktop application`
-            : browser.name;
+        browser.name?.toLowerCase() === 'electron' ? c('Browser').t`${appName} Desktop application` : browser.name;
 
     const browserVersion = (() => {
         if (isElectronMail) {
