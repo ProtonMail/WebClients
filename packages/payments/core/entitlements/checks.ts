@@ -10,6 +10,7 @@ export const entitlementChecks = {
     orgHasVpn: (r) => !!r.quantityOrg(EntitlementName.FlagsVpn),
     orgHasSentinel: (r) => !!r.quantityOrg(EntitlementName.Sentinel),
     orgHasLumo: (r) => !!r.quantityOrg(EntitlementName.FlagsLumo),
+    orgHasGroups: (r) => !!r.quantityOrg(EntitlementName.Groups),
     orgHasPassActivityMonitor: (r) => !!r.quantityOrg(EntitlementName.ActivityMonitorPass),
     orgHasVpnActivityMonitor: (r) => !!r.quantityOrg(EntitlementName.ActivityMonitorVpn),
     orgHasVpnLocationFilter: (r) => !!r.quantityOrg(EntitlementName.VpnLocationFilter),
