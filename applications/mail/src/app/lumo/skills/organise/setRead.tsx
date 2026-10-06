@@ -3,11 +3,14 @@ import { c } from 'ttag';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import type { Folder } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
+import type { Element } from '../../../models/element';
 import { selectParams } from '../../../store/elements/elementsSelectors';
-import { resolveElements } from '../../helpers/references';
+import { listingLabelID } from '../../helpers/messages';
+import { resolveFreshElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import {
     emailCountDetail,
@@ -26,7 +29,7 @@ export const setReadDefinition: ToolDefinition<SetReadParams, void> = {
     name: 'set_read',
     kind: 'mutation',
     toolDescription:
-        'Mark one or more emails as read or unread. `ids` are email-… references from view_emails/search. Set `read` to true for "mark these as read", or false for "mark these as unread". This SETS that state rather than toggling it, so it is safe on a mixed selection. Every on-screen row shows its current state as either `read` or `unread`, so only pass emails that are not already in the state you are setting — if every email the user means is already in it, tell them there is nothing to do instead of proposing this. This only changes the read/unread status: it does not star, move or label (use set_starred/move_emails/apply_labels for those). This acts ONLY on the specific emails you pass — to mark an entire folder or label, including mail that is not on screen, use set_location_read instead. Proposed to the user for confirmation before it runs.',
+        'Mark one or more emails as read or unread. `ids` are email-… references from any earlier result in this conversation. Set `read` to true for "mark these as read", or false for "mark these as unread". This SETS that state rather than toggling it, so it is safe on a mixed selection. Every row shows its current state as either `read` or `unread`, so only pass emails that are not already in the state you are setting — if every email the user means is already in it, tell them there is nothing to do instead of proposing this. This only changes the read/unread status: it does not star, move or label (use set_starred/move_emails/apply_labels for those). This acts ONLY on the specific emails you pass — to mark an entire folder or label, including mail that is not on screen, use set_location_read instead. Proposed to the user for confirmation before it runs.',
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
@@ -44,7 +47,7 @@ export const setReadDefinition: ToolDefinition<SetReadParams, void> = {
         },
         {
             context:
-                'The same rows are on screen and the user asks to mark the receipt as unread. It shows `read`, so it is the only one that needs changing.',
+                'The same rows were returned and the user asks to mark the receipt as unread. It shows `read`, so it is the only one that needs changing.',
             call: { ids: ['email-d4e5f6'], read: false },
         },
     ],
@@ -55,19 +58,36 @@ export const setReadDefinition: ToolDefinition<SetReadParams, void> = {
     }),
 };
 
+/**
+ * The label decides a conversation's read state, and the server marks a conversation unread within it, so
+ * an email from outside the current view is marked in a label that actually lists it.
+ */
+const groupByMarkLabel = (elements: Element[], viewLabelID: string, folders: Folder[]): Map<string, Element[]> => {
+    const groups = new Map<string, Element[]>();
+    elements.forEach((element) => {
+        const labelID = listingLabelID(element, viewLabelID, folders);
+        groups.set(labelID, [...(groups.get(labelID) ?? []), element]);
+    });
+    return groups;
+};
+
 export const createSetReadHandler =
     (mail: MailToolDeps): ToolHandler<SetReadParams, void> =>
     async ({ ids, read }, { references }) => {
-        const elements = resolveElements(mail.store, ids, references);
-        // `silent` — Lumo's result tile already reports the outcome, so the hook's notification would double
-        // up. `labelID` is the view the mark happens in, which is what decides a conversation's read state.
-        await mail.markAs({
-            elements,
-            status: read ? MARK_AS_STATUS.READ : MARK_AS_STATUS.UNREAD,
-            silent: true,
-            labelID: selectParams(mail.store.getState()).labelID,
-            sourceAction: SOURCE_ACTION.TOOLBAR,
-        });
+        const elements = await resolveFreshElements(mail, ids, references);
+        const groups = groupByMarkLabel(elements, selectParams(mail.store.getState()).labelID, mail.getFolders());
+        // `silent`: Lumo's result tile already reports the outcome, so the hook's notification would double up.
+        await Promise.all(
+            [...groups].map(([labelID, group]) =>
+                mail.markAs({
+                    elements: group,
+                    status: read ? MARK_AS_STATUS.READ : MARK_AS_STATUS.UNREAD,
+                    silent: true,
+                    labelID,
+                    sourceAction: SOURCE_ACTION.TOOLBAR,
+                })
+            )
+        );
     };
 
 export const setReadCardRenderer: CardRenderer = {

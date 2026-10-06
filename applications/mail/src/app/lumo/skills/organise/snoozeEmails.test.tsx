@@ -4,7 +4,9 @@ import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
+import type { Element } from '../../../models/element';
 import type { MailToolDeps } from '../../toolModule';
+import { conversationIn, offListState } from './organise.test.helpers';
 import {
     assertSnoozeAvailable,
     createSnoozeEmailsHandler,
@@ -30,16 +32,20 @@ describe('resolveWakeAt', () => {
 });
 
 describe('assertSnoozeAvailable', () => {
-    it('allows the Inbox in conversation view', () => {
-        expect(() => assertSnoozeAvailable(MAILBOX_LABEL_IDS.INBOX, true)).not.toThrow();
+    it('allows conversations in the Inbox', () => {
+        expect(() => assertSnoozeAvailable([conversationIn(MAILBOX_LABEL_IDS.INBOX)])).not.toThrow();
     });
 
-    it('refuses anywhere but the Inbox, where snoozed mail would never resurface', () => {
-        expect(() => assertSnoozeAvailable(MAILBOX_LABEL_IDS.ARCHIVE, true)).toThrow(/Inbox/);
+    it('refuses a conversation outside the Inbox, where snoozed mail would never resurface', () => {
+        const selection = [conversationIn(MAILBOX_LABEL_IDS.INBOX), conversationIn(MAILBOX_LABEL_IDS.ARCHIVE)];
+
+        expect(() => assertSnoozeAvailable(selection)).toThrow(/Inbox/);
     });
 
-    it('refuses message view, where the ids are messages and the endpoint takes conversations', () => {
-        expect(() => assertSnoozeAvailable(MAILBOX_LABEL_IDS.INBOX, false)).toThrow(/conversation view/);
+    it('refuses a message, whose id the conversations endpoint cannot take', () => {
+        const message = { ID: 'MESSAGE_1', ConversationID: 'ELEMENT_ID_1', LabelIDs: [MAILBOX_LABEL_IDS.INBOX] };
+
+        expect(() => assertSnoozeAvailable([message as Element])).toThrow(/conversation view/);
     });
 });
 
@@ -64,23 +70,16 @@ describe('snoozeEmailsCardRenderer', () => {
 });
 
 describe('createSnoozeEmailsHandler', () => {
-    const fixture = (snooze: jest.Mock, conversationMode = true) => {
+    const fixture = (snooze: jest.Mock, element: Element = conversationIn(MAILBOX_LABEL_IDS.INBOX)) => {
         const references = createReferenceRegistry();
         const reference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
-        const element = { ID: 'ELEMENT_ID_1' };
-        const store = {
-            getState: () => ({
-                elements: {
-                    elements: { ELEMENT_ID_1: element },
-                    params: { labelID: MAILBOX_LABEL_IDS.INBOX, conversationMode },
-                },
-            }),
-        };
+        // Viewing Archive: the snooze is decided by where the email sits, not by where the user is.
+        const store = { getState: () => offListState([element], MAILBOX_LABEL_IDS.ARCHIVE) };
 
         return { references, reference, element, mail: { store, snooze } as unknown as MailToolDeps };
     };
 
-    it('snoozes the resolved elements with a custom duration at the wake time', async () => {
+    it('snoozes an Inbox conversation from any view, with a custom duration at the wake time', async () => {
         const snooze = jest.fn().mockResolvedValue(undefined);
         const { references, reference, element, mail } = fixture(snooze);
 
@@ -92,13 +91,13 @@ describe('createSnoozeEmailsHandler', () => {
         );
     });
 
-    it('refuses when the mailbox is in message view, before the snooze runs', async () => {
+    it('refuses a conversation outside the Inbox, before the snooze runs', async () => {
         const snooze = jest.fn();
-        const { references, reference, mail } = fixture(snooze, false);
+        const { references, reference, mail } = fixture(snooze, conversationIn(MAILBOX_LABEL_IDS.ARCHIVE));
 
         await expect(
             createSnoozeEmailsHandler(mail)({ ids: [reference], wake_at: '2099-07-11T09:00:00Z' }, { references })
-        ).rejects.toThrow(/conversation view/);
+        ).rejects.toThrow(/Inbox/);
         expect(snooze).not.toHaveBeenCalled();
     });
 
