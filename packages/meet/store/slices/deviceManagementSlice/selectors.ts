@@ -73,6 +73,8 @@ export const selectActiveCameraId = (state: MeetState) => state.deviceManagement
 export const selectActiveMicrophoneId = (state: MeetState) => state.deviceManagement.activeMicrophoneId;
 export const selectActiveAudioOutputId = (state: MeetState) => state.deviceManagement.activeAudioOutputId;
 
+export const selectDisconnectedActiveDevices = (state: MeetState) => state.deviceManagement.disconnectedActiveDevices;
+
 export const selectInitialCameraState = (state: MeetState) => state.deviceManagement.initialCameraState;
 export const selectInitialAudioState = (state: MeetState) => state.deviceManagement.initialAudioState;
 export const selectUserCameraIntent = (state: MeetState) => state.deviceManagement.userCameraIntent;

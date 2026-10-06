@@ -25,7 +25,7 @@ import {
     selectSpeakers,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
-import { isDefaultDevice, resolveDevice } from '@proton/meet/utils/deviceUtils';
+import { isDefaultDevice, resolveDevice, shouldShowSystemDefaultCheckmark } from '@proton/meet/utils/deviceUtils';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -182,7 +182,7 @@ export const DeviceSettings = ({
             supportsSetSinkId()
         ) {
             microphoneLabel = c('Info').t`Custom combination`;
-        } else if (microphoneState.useSystemDefault || !microphoneState.preferredAvailable) {
+        } else if (shouldShowSystemDefaultCheckmark(selectedMicrophoneId, microphoneState)) {
             microphoneLabel = microphoneState.systemDefaultLabel;
         } else {
             microphoneLabel = audioDevice?.label ?? microphoneState.systemDefaultLabel;

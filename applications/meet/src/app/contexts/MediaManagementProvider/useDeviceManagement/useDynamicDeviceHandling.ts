@@ -5,11 +5,13 @@ import { ConnectionState, type LocalTrack, MediaDeviceFailure, RoomEvent, Track 
 import debounce from 'lodash/debounce';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { clearDisconnectedActiveDevice } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
     selectActiveAudioOutputId,
     selectActiveCameraId,
     selectActiveMicrophoneId,
+    selectDisconnectedActiveDevices,
     selectFilteredCameras,
     selectFilteredMicrophones,
     selectFilteredSpeakers,
@@ -23,52 +25,48 @@ import { type SerializableDeviceInfo, isDefaultDevice } from '@proton/meet/utils
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import type { SwitchActiveDevice, ToggleAudioType, ToggleVideoType } from '../../../types';
 import { supportsSetSinkId } from '../../../utils/browser';
-import { useDeviceNotifications } from './useDeviceNotifications';
+import { useDeviceNotifications } from './useDeviceNotifications/useDeviceNotifications';
 
 const DEVICE_CHANGE_DEBOUNCE_MS = 200;
 
-type DeviceSwitchCause = 'no-active-device' | 'system-default-changed' | 'active-disconnected';
-
-export type DeviceDecision =
-    | { type: 'none' }
-    | { type: 'switch'; deviceId: string; cause: DeviceSwitchCause }
-    | { type: 'preferred-available'; deviceId: string };
+export type DeviceDecision = { type: 'none' } | { type: 'switch'; deviceId: string };
 
 const resolveDeviceDecision = ({
     kind,
     deviceList,
     activeDeviceId,
+    disconnectedActiveDeviceId,
     preferredDeviceId,
     systemDefaultDevice,
     previousSystemDefaultDeviceId,
+    canSwitchUnprompted,
 }: {
     kind: DeviceKind;
     deviceList: SerializableDeviceInfo[];
     activeDeviceId: string | null;
+    disconnectedActiveDeviceId: string | null;
     preferredDeviceId: string | null;
     systemDefaultDevice: SerializableDeviceInfo | null;
     previousSystemDefaultDeviceId: string | null;
+    canSwitchUnprompted: boolean;
 }): DeviceDecision => {
     const isAvailable = (deviceId: string | null) =>
         !!deviceId && deviceList.some((device) => device.deviceId === deviceId);
 
-    const isActiveAvailable = isAvailable(activeDeviceId);
-    const wasActiveDisconnected = !!activeDeviceId && !isActiveAvailable && !isDefaultDevice(activeDeviceId);
-    const fallbackCause: DeviceSwitchCause = wasActiveDisconnected ? 'active-disconnected' : 'no-active-device';
+    const wasActiveDisconnected = !!disconnectedActiveDeviceId && !isAvailable(disconnectedActiveDeviceId);
+    const isActiveAvailable = isAvailable(activeDeviceId) && !wasActiveDisconnected;
 
-    const switchTo = (deviceId: string, cause: DeviceSwitchCause): DeviceDecision =>
-        deviceId === activeDeviceId ? { type: 'none' } : { type: 'switch', deviceId, cause };
+    const switchTo = (deviceId: string): DeviceDecision =>
+        deviceId === activeDeviceId ? { type: 'none' } : { type: 'switch', deviceId };
 
-    // The device the user picked is plugged in. If something else is already playing we only tell
-    // them it is back, because taking over mid call is more annoying than useful.
+    // The device the user picked is plugged in. Taking over mid call is more annoying than useful,
+    // so it is only taken when nothing is in use or when joining.
     if (isAvailable(preferredDeviceId)) {
         if (preferredDeviceId === activeDeviceId) {
             return { type: 'none' };
         }
 
-        return isActiveAvailable
-            ? { type: 'preferred-available', deviceId: preferredDeviceId as string }
-            : switchTo(preferredDeviceId as string, fallbackCause);
+        return !isActiveAvailable || canSwitchUnprompted ? switchTo(preferredDeviceId as string) : { type: 'none' };
     }
 
     // No preference saved means the user wants whatever the OS is using, so we follow it when it moves.
@@ -80,7 +78,7 @@ const resolveDeviceDecision = ({
         systemDefaultDevice?.deviceId &&
         previousSystemDefaultDeviceId !== systemDefaultDevice.deviceId
     ) {
-        return switchTo(systemDefaultDevice.deviceId, 'system-default-changed');
+        return switchTo(systemDefaultDevice.deviceId);
     }
 
     // From here on it is the recovery path: either nothing was picked yet, or what we were using is gone.
@@ -93,13 +91,13 @@ const resolveDeviceDecision = ({
             ? systemDefaultDevice.deviceId
             : deviceList[0].deviceId;
 
-        return switchTo(target, fallbackCause);
+        return switchTo(target);
     }
 
     // With no resolvable system default, picking the first audio device is a coin flip: on some Linux
     // setups it is an HDMI port with nothing plugged in. Video has no system default at all, so there
     // the first camera is the only option we have.
-    return kind === 'videoinput' ? switchTo(deviceList[0].deviceId, fallbackCause) : { type: 'none' };
+    return kind === 'videoinput' ? switchTo(deviceList[0].deviceId) : { type: 'none' };
 };
 
 interface UseDynamicDeviceHandlingParams {
@@ -114,8 +112,9 @@ export const useDynamicDeviceHandling = ({
     switchActiveDevice,
 }: UseDynamicDeviceHandlingParams) => {
     const room = useRoomContext();
+    const dispatch = useMeetDispatch();
     const { reportMeetError } = useMeetErrorReporting();
-    const { notifyPreferredAvailable, notifyActiveDeviceDisconnected } = useDeviceNotifications();
+    const { notifyActiveDeviceDisconnected } = useDeviceNotifications();
 
     const filteredMicrophones = useMeetSelector(selectFilteredMicrophones);
     const filteredCameras = useMeetSelector(selectFilteredCameras);
@@ -129,12 +128,7 @@ export const useDynamicDeviceHandling = ({
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
 
-    // The preferred device stays available until the user acts on it, so we only announce it once
-    const announcedPreferredRef = useRef<Record<DeviceKind, string | null>>({
-        audioinput: null,
-        audiooutput: null,
-        videoinput: null,
-    });
+    const disconnectedActiveDevices = useMeetSelector(selectDisconnectedActiveDevices);
 
     // Track previous system default device IDs to detect OS default device changes
     const previousSystemDefaultsRef = useRef<{
@@ -168,53 +162,39 @@ export const useDynamicDeviceHandling = ({
             kind,
             decision,
             deviceList,
+            activeDeviceId,
+            systemDefault,
             applySwitch,
         }: {
             kind: DeviceKind;
             decision: DeviceDecision;
             deviceList: SerializableDeviceInfo[];
+            activeDeviceId: string | null;
+            systemDefault: SerializableDeviceInfo | null;
             applySwitch: (deviceId: string) => void;
         }) => {
-            if (decision.type !== 'preferred-available') {
-                announcedPreferredRef.current[kind] = null;
+            const disconnectedDevice = disconnectedActiveDevices[kind];
+
+            if (disconnectedDevice) {
+                dispatch(clearDisconnectedActiveDevice({ kind }));
+
+                // A device that flapped within the debounce window never stopped being usable
+                if (!isDeviceStillAvailable(kind, disconnectedDevice.deviceId)) {
+                    const inUseDeviceId = decision.type === 'switch' ? decision.deviceId : activeDeviceId;
+                    // The fallback is usually the system default, whose id is not in the list
+                    const inUseDevice = isDefaultDevice(inUseDeviceId)
+                        ? systemDefault
+                        : deviceList.find((device) => device.deviceId === inUseDeviceId);
+
+                    notifyActiveDeviceDisconnected({
+                        device: disconnectedDevice,
+                        replacementLabel: inUseDevice?.label ?? '',
+                    });
+                }
             }
 
             if (decision.type === 'none') {
                 return;
-            }
-
-            const target = deviceList.find((device) => device.deviceId === decision.deviceId);
-
-            if (decision.type === 'preferred-available') {
-                // Before joining, switching is not disruptive, so there is nothing to ask about
-                if (room.state !== ConnectionState.Connected) {
-                    applySwitch(decision.deviceId);
-                    return;
-                }
-
-                if (announcedPreferredRef.current[kind] === decision.deviceId) {
-                    return;
-                }
-
-                announcedPreferredRef.current[kind] = decision.deviceId;
-
-                notifyPreferredAvailable({
-                    kind,
-                    // Shared by every kind the same piece of hardware exposes, so the notification is grouped
-                    groupId: target?.groupId ?? '',
-                    deviceLabel: target?.label ?? '',
-                    // The notification outlives the device, so the list is checked again on click
-                    onSwitch: () => {
-                        if (isDeviceStillAvailable(kind, decision.deviceId)) {
-                            applySwitch(decision.deviceId);
-                        }
-                    },
-                });
-                return;
-            }
-
-            if (decision.cause === 'active-disconnected') {
-                notifyActiveDeviceDisconnected({ kind, deviceLabel: target?.label ?? '' });
             }
 
             applySwitch(decision.deviceId);
@@ -226,15 +206,19 @@ export const useDynamicDeviceHandling = ({
             kind: 'audioinput',
             deviceList: filteredMicrophones,
             activeDeviceId: activeMicrophoneDeviceId,
+            disconnectedActiveDeviceId: disconnectedActiveDevices.audioinput?.deviceId ?? null,
             preferredDeviceId: microphoneState.preferredDeviceId,
             systemDefaultDevice: microphoneState.systemDefault,
             previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.microphone,
+            canSwitchUnprompted: room.state !== ConnectionState.Connected,
         });
 
         applyDecision({
             kind: 'audioinput',
             decision,
             deviceList: filteredMicrophones,
+            activeDeviceId: activeMicrophoneDeviceId,
+            systemDefault: microphoneState.systemDefault,
             applySwitch: (newDeviceId: string) => {
                 if (room.state === ConnectionState.Connected) {
                     void toggleAudio({ audioDeviceId: newDeviceId, preserveCache: true });
@@ -257,15 +241,19 @@ export const useDynamicDeviceHandling = ({
             kind: 'videoinput',
             deviceList: filteredCameras,
             activeDeviceId: activeCameraDeviceId,
+            disconnectedActiveDeviceId: disconnectedActiveDevices.videoinput?.deviceId ?? null,
             preferredDeviceId: preferredCameraId,
             systemDefaultDevice: null,
             previousSystemDefaultDeviceId: null,
+            canSwitchUnprompted: room.state !== ConnectionState.Connected,
         });
 
         applyDecision({
             kind: 'videoinput',
             decision,
             deviceList: filteredCameras,
+            activeDeviceId: activeCameraDeviceId,
+            systemDefault: null,
             applySwitch: async (newDeviceId: string) => {
                 if (room.state !== ConnectionState.Connected) {
                     void switchActiveDevice({
@@ -294,15 +282,19 @@ export const useDynamicDeviceHandling = ({
             kind: 'audiooutput',
             deviceList: filteredSpeakers,
             activeDeviceId: activeAudioOutputDeviceId,
+            disconnectedActiveDeviceId: disconnectedActiveDevices.audiooutput?.deviceId ?? null,
             preferredDeviceId: speakerState.preferredDeviceId,
             systemDefaultDevice: speakerState.systemDefault,
             previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.speaker,
+            canSwitchUnprompted: room.state !== ConnectionState.Connected,
         });
 
         applyDecision({
             kind: 'audiooutput',
             decision,
             deviceList: filteredSpeakers,
+            activeDeviceId: activeAudioOutputDeviceId,
+            systemDefault: speakerState.systemDefault,
             applySwitch: (newDeviceId: string) => {
                 if (supportsSetSinkId()) {
                     void switchActiveDevice({
@@ -333,31 +325,21 @@ export const useDynamicDeviceHandling = ({
         [handleSpeakerListChange]
     );
 
+    // An empty list still runs the pass: losing the last device of a kind is the one case where
+    // there is nothing to switch to and the user has to be told
     useEffect(() => {
-        if (!filteredMicrophones.length) {
-            return;
-        }
-
         debouncedMicrophoneListChange();
 
         return () => debouncedMicrophoneListChange.cancel();
     }, [filteredMicrophones, microphoneState.systemDefault?.deviceId, debouncedMicrophoneListChange]);
 
     useEffect(() => {
-        if (!filteredCameras.length) {
-            return;
-        }
-
         debouncedCameraListChange();
 
         return () => debouncedCameraListChange.cancel();
     }, [filteredCameras, debouncedCameraListChange]);
 
     useEffect(() => {
-        if (!filteredSpeakers.length) {
-            return;
-        }
-
         debouncedSpeakerListChange();
 
         return () => debouncedSpeakerListChange.cancel();

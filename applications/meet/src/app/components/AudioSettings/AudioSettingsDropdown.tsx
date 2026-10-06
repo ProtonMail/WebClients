@@ -10,11 +10,7 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
-import {
-    isDefaultDevice,
-    shouldShowDeviceCheckmark,
-    shouldShowSystemDefaultCheckmark,
-} from '@proton/meet/utils/deviceUtils';
+import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '@proton/meet/utils/deviceUtils';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -74,12 +70,11 @@ const AudioSettingsDropdownComponent = ({
 
     // The tests capture and play on the actual devices, so a system default selection has to
     // stay a system default rather than being pinned to a specific device id.
-    const usesSystemDefaultMicrophone =
-        shouldShowSystemDefaultCheckmark(microphoneState) || isDefaultDevice(audioDeviceId);
+    const usesSystemDefaultMicrophone = shouldShowSystemDefaultCheckmark(audioDeviceId, microphoneState);
     const testMicrophoneDeviceId = usesSystemDefaultMicrophone ? null : audioDeviceId;
 
     const usesSystemDefaultSpeaker =
-        !supportsSetSinkId() || shouldShowSystemDefaultCheckmark(speakerState) || isDefaultDevice(activeOutputDeviceId);
+        !supportsSetSinkId() || shouldShowSystemDefaultCheckmark(activeOutputDeviceId, speakerState);
     const testSpeakerDeviceId = usesSystemDefaultSpeaker ? null : activeOutputDeviceId;
 
     return (
@@ -105,7 +100,10 @@ const AudioSettingsDropdownComponent = ({
                             <OptionButton
                                 key={DEFAULT_DEVICE_ID}
                                 onClick={() => {
-                                    const isAlreadySelected = shouldShowSystemDefaultCheckmark(microphoneState);
+                                    const isAlreadySelected = shouldShowSystemDefaultCheckmark(
+                                        audioDeviceId,
+                                        microphoneState
+                                    );
                                     if (isAlreadySelected) {
                                         return;
                                     }
@@ -113,12 +111,12 @@ const AudioSettingsDropdownComponent = ({
                                         handleInputDeviceChange(DEFAULT_DEVICE_ID)
                                     );
                                 }}
-                                showIcon={shouldShowSystemDefaultCheckmark(microphoneState)}
+                                showIcon={shouldShowSystemDefaultCheckmark(audioDeviceId, microphoneState)}
                                 loading={isMicrophoneLoading(DEFAULT_DEVICE_ID)}
                                 label={microphoneState.systemDefaultLabel}
                                 Icon={IcCheckmark}
                                 role="option"
-                                ariaSelected={shouldShowSystemDefaultCheckmark(microphoneState)}
+                                ariaSelected={shouldShowSystemDefaultCheckmark(audioDeviceId, microphoneState)}
                             />
                         )}
                         {microphones.map((mic) => (
@@ -185,7 +183,10 @@ const AudioSettingsDropdownComponent = ({
                                 <OptionButton
                                     key={DEFAULT_DEVICE_ID}
                                     onClick={() => {
-                                        const isAlreadySelected = shouldShowSystemDefaultCheckmark(speakerState);
+                                        const isAlreadySelected = shouldShowSystemDefaultCheckmark(
+                                            activeOutputDeviceId,
+                                            speakerState
+                                        );
                                         if (isAlreadySelected) {
                                             return;
                                         }
@@ -193,12 +194,12 @@ const AudioSettingsDropdownComponent = ({
                                             handleOutputDeviceChange(DEFAULT_DEVICE_ID)
                                         );
                                     }}
-                                    showIcon={shouldShowSystemDefaultCheckmark(speakerState)}
+                                    showIcon={shouldShowSystemDefaultCheckmark(activeOutputDeviceId, speakerState)}
                                     loading={isSpeakerLoading(DEFAULT_DEVICE_ID)}
                                     label={speakerState.systemDefaultLabel}
                                     Icon={IcCheckmark}
                                     role="option"
-                                    ariaSelected={shouldShowSystemDefaultCheckmark(speakerState)}
+                                    ariaSelected={shouldShowSystemDefaultCheckmark(activeOutputDeviceId, speakerState)}
                                 />
                             )}
                             {speakers.map((speaker) => (

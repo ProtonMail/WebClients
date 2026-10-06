@@ -26,36 +26,25 @@ export const filterDevices = (devices: SerializableDeviceInfo[]): SerializableDe
     );
 };
 
-export interface CheckmarkDeviceState {
-    useSystemDefault: boolean;
-    preferredAvailable: boolean;
-    hasDefaultOption: boolean;
-}
-
-export const shouldShowDeviceCheckmark = (
-    deviceId: string,
-    activeDeviceId: string,
-    deviceState: CheckmarkDeviceState
-): boolean => {
-    if (deviceId !== activeDeviceId || deviceState.useSystemDefault) {
-        return false;
-    }
-    if (deviceState.preferredAvailable) {
-        return true;
-    }
-    return !deviceState.hasDefaultOption;
-};
-
-export const shouldShowSystemDefaultCheckmark = (deviceState: CheckmarkDeviceState): boolean => {
-    const userSelectedSystemDefault = deviceState.useSystemDefault;
-    const preferredDeviceNoLongerAvailable = !deviceState.preferredAvailable;
-
-    return userSelectedSystemDefault || preferredDeviceNoLongerAvailable;
-};
-
 export const isDefaultDevice = (deviceId: string | null): boolean => {
     return deviceId === DEFAULT_DEVICE_ID;
 };
+
+export interface CheckmarkDeviceState {
+    useSystemDefault: boolean;
+    hasDefaultOption: boolean;
+}
+
+export const shouldShowSystemDefaultCheckmark = (
+    activeDeviceId: string | null,
+    deviceState: CheckmarkDeviceState
+): boolean => (deviceState.useSystemDefault || isDefaultDevice(activeDeviceId)) && deviceState.hasDefaultOption;
+
+export const shouldShowDeviceCheckmark = (
+    deviceId: string,
+    activeDeviceId: string | null,
+    deviceState: CheckmarkDeviceState
+): boolean => deviceId === activeDeviceId && !shouldShowSystemDefaultCheckmark(activeDeviceId, deviceState);
 
 export const getDefaultDevice = (devices: SerializableDeviceInfo[]): SerializableDeviceInfo | null => {
     const defaultDevice = devices.find((d) => isDefaultDevice(d.deviceId));
