@@ -6,32 +6,15 @@ import LumoWordmark from '@proton/lumo-ui/LumoWordmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
-import LumoAgentPanel from './LumoAgentPanel';
+import ConnectedLumoAgentPanel from './ConnectedLumoAgentPanel';
 import { LumoConversationHeaderActions } from './LumoConversationHeaderActions';
 import { focusLumoPrompt } from './focusLumoPrompt';
 import { useLumoAgentDrawer } from './lumoAgentDrawerContext';
 
-import '@proton/lumo-ui/lumo-ui.scss';
-
 import './DrawerLumoView.scss';
-import './lumoAgent.scss';
 
 const DrawerLumoView = () => {
-    const {
-        items,
-        isBusy,
-        cardRenderers,
-        serverToolMeta,
-        suggestions,
-        hasConversation,
-        send,
-        stop,
-        confirm,
-        cancel,
-        clear,
-        openDebugReport,
-        onSuggestionPicked,
-    } = useLumoAgentDrawer();
+    const { hasConversation, clear, openDebugReport } = useLumoAgentDrawer();
     const theme = useTheme();
     const { toggleDrawerApp } = useDrawer();
     const closeDrawer = toggleDrawerApp({ app: DRAWER_NATIVE_APPS.LUMO });
@@ -56,19 +39,7 @@ const DrawerLumoView = () => {
             }
             contentClassName="drawer-lumo flex flex-column flex-nowrap"
         >
-            <LumoAgentPanel
-                items={items}
-                isBusy={isBusy}
-                cardRenderers={cardRenderers}
-                serverToolMeta={serverToolMeta}
-                suggestions={suggestions}
-                onSend={send}
-                onSuggestionPicked={onSuggestionPicked}
-                onStop={stop}
-                onClose={closeDrawer}
-                onConfirm={confirm}
-                onCancel={cancel}
-            />
+            <ConnectedLumoAgentPanel onClose={closeDrawer} />
         </DrawerView>
     );
 };

@@ -33,7 +33,8 @@ interface Props {
  * {@link DrawerLumoView}, plus a close button of its own (DrawerView's closes the app-wide drawer).
  */
 export const FilePreviewAssistant = ({ config, onClose }: Props) => {
-    const { items, isBusy, hasConversation, send, stop, confirm, cancel, clear } = useLumoAgent(config);
+    const { items, isBusy, hasConversation, draft, setDraft, send, stop, confirm, cancel, clear } =
+        useLumoAgent(config);
     const theme = useTheme();
 
     const closeLabel = c('Action').t`Close`;
@@ -57,6 +58,8 @@ export const FilePreviewAssistant = ({ config, onClose }: Props) => {
                     isBusy={isBusy}
                     cardRenderers={config.cardRenderers}
                     serverToolMeta={config.serverToolMeta}
+                    draft={draft}
+                    onDraftChange={setDraft}
                     onSend={send}
                     onStop={stop}
                     onClose={onClose}
