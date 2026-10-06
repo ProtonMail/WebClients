@@ -3,8 +3,8 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { getModelState } from '@proton/account/tests';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import {
-    ADDON_GENERIC_NAMES,
     ADDON_PREFIXES,
+    ADDON_TOTAL_PARAM_NAMES,
     COUPON_CODES,
     CURRENCIES,
     CYCLE,
@@ -233,14 +233,11 @@ describe('getParameters', () => {
     });
 
     describe('totalX params', () => {
-        it.each(Object.values(ADDON_GENERIC_NAMES))(
-            'total%s is ignored when missing plan',
-            (addon) => {
-                const result = callGetParameters(`?total${addon}=1`);
+        it.each(Object.values(ADDON_TOTAL_PARAM_NAMES))('total%s is ignored when missing plan', (addon) => {
+            const result = callGetParameters(`?total${addon}=1`);
 
-                expect(result.totals).not.toHaveProperty(`total${addon}`);
-            }
-        );
+            expect(result.totals).not.toHaveProperty(`total${addon}`);
+        });
 
         it.each([
             ['totalLumo', 'Lumo'],
@@ -251,14 +248,11 @@ describe('getParameters', () => {
             expect(result.totals).not.toHaveProperty(param);
         });
 
-        it.each(Object.values(ADDON_GENERIC_NAMES))(
-            'total%s is present when plan defined',
-            (addon) => {
-                const result = callGetParameters(`?plan=mail2022&total${addon}=1`);
+        it.each(Object.values(ADDON_TOTAL_PARAM_NAMES))('total%s is present when plan defined', (addon) => {
+            const result = callGetParameters(`?plan=mail2022&total${addon}=1`);
 
-                expect(result.totals).toHaveProperty(`total${addon}`);
-            }
-        );
+            expect(result.totals).toHaveProperty(`total${addon}`);
+        });
 
         describe('validation and clamping', () => {
             it('drops non-numeric values', () => {
