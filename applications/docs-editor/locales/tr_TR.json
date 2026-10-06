@@ -1697,11 +1697,26 @@
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
+      "Apply border": [
+        "Kenarlık uygula"
+      ],
+      "Apply fill color": [
+        "Dolgu rengi uygula"
+      ],
+      "Apply text color": [
+        "Yazı rengi uygula"
+      ],
       "Bold": [
         "Koyu"
       ],
-      "Border": [
-        "Kenarlık"
+      "Choose border": [
+        "Kenarlık seçin"
+      ],
+      "Choose fill color": [
+        "Dolgu rengini seçin"
+      ],
+      "Choose text color": [
+        "Yazı rengini seçin"
       ],
       "Clear formatting": [
         "Biçimlendirmeyi temizle"
@@ -1717,9 +1732,6 @@
       ],
       "Default (${ defaultFont })": [
         "Varsayılan (${ defaultFont })"
-      ],
-      "Fill color": [
-        "Dolgu rengi"
       ],
       "Find": [
         "Bul"
@@ -1783,9 +1795,6 @@
       ],
       "Strikethrough": [
         "Üzeri çizili"
-      ],
-      "Text color": [
-        "Yazı rengi"
       ],
       "Text wrapping": [
         "Yazı kaydırma"

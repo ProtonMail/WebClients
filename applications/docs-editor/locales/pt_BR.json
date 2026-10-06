@@ -451,6 +451,9 @@
       "Failed to import Markdown due to unknown error.": [
         "Falha ao importar Markdown devido a um erro desconhecido."
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Falha ao importar arquivo do OpenDocument devido a um erro desconhecido."
+      ],
       "Failed to import Word document due to unknown error.": [
         "Falha ao importar documento do Word devido a um erro desconhecido."
       ],
@@ -1688,11 +1691,26 @@
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
+      "Apply border": [
+        "Aplicar borda"
+      ],
+      "Apply fill color": [
+        "Aplicar cor de preenchimento"
+      ],
+      "Apply text color": [
+        "Aplicar cor ao texto"
+      ],
       "Bold": [
         "Negrito"
       ],
-      "Border": [
-        "Borda"
+      "Choose border": [
+        "Escolher borda"
+      ],
+      "Choose fill color": [
+        "Escolha a cor de preenchimento"
+      ],
+      "Choose text color": [
+        "Escolher cor do texto"
       ],
       "Clear formatting": [
         "Limpar formatação"
@@ -1708,9 +1726,6 @@
       ],
       "Default (${ defaultFont })": [
         "Padrão (${ defaultFont })"
-      ],
-      "Fill color": [
-        "Cor de preenchimento"
       ],
       "Find": [
         "Encontrar"
@@ -1774,9 +1789,6 @@
       ],
       "Strikethrough": [
         "Tachado"
-      ],
-      "Text color": [
-        "Cor do texto"
       ],
       "Text wrapping": [
         "Quebra de texto"

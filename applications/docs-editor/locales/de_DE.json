@@ -1697,11 +1697,26 @@
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
+      "Apply border": [
+        "Rahmen übernehmen"
+      ],
+      "Apply fill color": [
+        "Füllfarbe übernehmen"
+      ],
+      "Apply text color": [
+        "Textfarbe übernehmen"
+      ],
       "Bold": [
         "Fett"
       ],
-      "Border": [
-        "Rand"
+      "Choose border": [
+        "Rahmen auswählen"
+      ],
+      "Choose fill color": [
+        "Füllfarbe auswählen"
+      ],
+      "Choose text color": [
+        "Textfarbe auswählen"
       ],
       "Clear formatting": [
         "Formatierung entfernen"
@@ -1717,9 +1732,6 @@
       ],
       "Default (${ defaultFont })": [
         "Standard (${ defaultFont })"
-      ],
-      "Fill color": [
-        "Füllfarbe"
       ],
       "Find": [
         "Suchen"
@@ -1783,9 +1795,6 @@
       ],
       "Strikethrough": [
         "Durchgestrichen"
-      ],
-      "Text color": [
-        "Schriftfarbe"
       ],
       "Text wrapping": [
         "Textumbruch"
