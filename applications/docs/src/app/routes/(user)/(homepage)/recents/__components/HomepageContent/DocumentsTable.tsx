@@ -329,6 +329,7 @@ function Row({ document, variant, addresses }: RowProps) {
       shape="ghost"
       className="text-pre flex flex-nowrap items-center px-2"
       title={!isLocationPath ? locationLabel : undefined}
+      data-testid="document-location-button"
     >
       <Icon className="mr-2 shrink-0" name={locationIcon} />
       <span className="overflow-hidden text-ellipsis">{locationLabel}</span>
