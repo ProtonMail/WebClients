@@ -19,7 +19,7 @@ The store must hold this package's reducer under the `offersDelivery` key (`Offe
 
 1. **Fetch** (`getCampaign`) — returns at most one already-selected `Campaign`, or nothing. Gated by the `CentralisedOffersDelivery` flag; no consuming app gates anything itself.
 2. **Gate display** — surfaced until `endTime` passes. A `null` `endTime` never expires. Avoiding collision with the app's other startup UI is the consuming app's responsibility.
-3. **Expose** — `useActiveOffer(variant)`, called wherever a surface lives. Render the shipped `OfferBanner` / `OfferModal` / `OfferNavbarButton`, or bespoke UI.
+3. **Expose** — `useActiveOffer(variant)`, called wherever a surface lives. Render the shipped `OfferBanner` / `OfferModal` / `OfferNavbarButton` / `OfferDealModal`, or bespoke UI.
 4. **Report** — to `inapp/campaign/event`. `Action` is an **integer** 1-5; anything else is a 400. The backend owns campaign state and telemetry; the client only emits.
 5. **Resolve CTAs** — a symbolic `cta.ref` is resolved and validated to a host action **at ingest**, before it reaches a consumer.
 
@@ -39,11 +39,12 @@ Delivery is single-shot and best effort: `sendCampaignEvent` does not retry, and
 | Pure logic | `lib/selection.ts` | Expiry predicate for the single campaign (`endTime`, nullable). No React/redux. Fully unit-tested. |
 | Security boundary | `lib/validation.ts` | URL validation for all server content. |
 | CTA resolution | `lib/cta.ts` | Resolves a raw `{ Type, Ref }` into a `ResolvedCta` (`external` / `upgrade`), then projects it into the consumer-facing `PublicCta`. The only place a raw server `ref` is read; it is never stored or forwarded. |
+| Feature list | `lib/features.ts` | `getFeatureLines` splits the campaign body into the trimmed, non-blank lines `OfferDealModal` renders as ticked features. |
 | API | `lib/api.ts` | `getCampaign` / `sendCampaignEvent`; normalizes and sanitizes the raw `{ Campaign, Code }` response, resolves the `MessageBody.Variant` sub-object, and calls `resolveCta`. Every `Raw*` field is a claim about untrusted JSON, so ingest drops a campaign rather than trusting a field's presence. |
 | Kill switch | `components/useActiveOffer.ts`, `store/listener.ts`, `store/slice.ts` | `CommonFeatureFlag.CentralisedOffersDelivery` (`@proton/unleash/Flags`) — read only **inside this package**. `useFlag` in the hook gates the render, `unleashClient` in the listener gates the fetch, and the thunk's `miss` throws as defence in depth against a caller that dispatches it directly. |
 | State | `store/slice.ts` | One module-level slice — `createSlice` + `createAsyncModelThunk` + `ModelState<Campaign>` — like every `@proton/account` slice, with an `OffersDeliveryState` interface for the structural requirement on the host store. Owns `CAMPAIGN_EXPIRY` (10 min, the revalidation throttle), the `endedCampaignKey` latch, and the SEEN dedupe. |
 | Revalidation | `store/listener.ts` | `startOffersDeliveryListener(startListening, { appReady })` — fetches when the host signals readiness and on tab focus. |
-| UI | `components/*` | `useActiveOffer` (per-variant hook, called anywhere: kill-switch read, selection, CTA/dismiss/seen handlers), `OfferBanner` / `OfferModal` / `OfferNavbarButton` (shipped surfaces), `OfferSurface` (shared `{ offer }` props type). No provider — nothing in this package wraps the host's tree. |
+| UI | `components/*` | `useActiveOffer` (per-variant hook, called anywhere: kill-switch read, selection, CTA/dismiss/seen handlers), `OfferBanner` / `OfferModal` / `OfferNavbarButton` / `OfferDealModal` (shipped surfaces), `OfferSurface` (shared `{ offer }` props type). No provider — nothing in this package wraps the host's tree. |
 
 ### Caching and revalidation
 
@@ -104,7 +105,7 @@ The variant argument is required: it is what tells the package which caller inte
 Read `offer.campaign`, `offer.onAction`, `offer.onDismiss`, and attach `offer.seenRef` to whatever you render. Two things to know:
 
 - **Rendering a real `<a href={campaign.cta.href}>`? Forward the click event to `onAction`.** It skips its own navigation when `currentTarget` is an anchor carrying an href, so cmd/middle-click and copy-link keep working. Omit the event and the link opens twice. Neither shipped surface renders an anchor, so this path has no test coverage.
-- Bespoke UI opts out of the e2e coverage on the shipped `data-testid`s (`offer-banner`, `offer-banner:body`, `offer-banner:cta`, `offer-modal:cta`, `offer-navbar-button`) and needs its own CTA/dismiss/seen tests.
+- Bespoke UI opts out of the e2e coverage on the shipped `data-testid`s (`offer-banner`, `offer-banner:body`, `offer-banner:cta`, `offer-modal:cta`, `offer-navbar-button`, `offer-deal-modal:cta`, `offer-deal-modal:dismiss`) and needs its own CTA/dismiss/seen tests.
 
 ### SEEN reporting
 
@@ -125,7 +126,17 @@ Dedupe by `campaignKey` lives in the slice (`seenCampaignKeys`), not in a compon
 - **SEEN is reported by the button**, via `seenRef`, when it mounts.
 - **A click is not a CTA.** The host's `onClick` decides what opens; the button calls neither `onAction` nor `onDismiss`, so it stays until the campaign ends.
 - **Appearance is entirely the host's**: `icon` (any node, left of the label; `null` for none), `backgroundColor` (any CSS `background`, colour or gradient), `color` and `label` are required, plus an optional `className`. `backgroundColor`/`color` are passed as the custom properties `--offer-navbar-button-background` / `--offer-navbar-button-color`, which the stylesheet uses with no fallbacks, so the package ships no look of its own.
-- **Placement is the host's**: Mail passes it through `PrivateHeader`'s `upsellButton` only while `useActiveOffer(CampaignVariant.MODAL, …)` is non-null, so it replaces the whole `TopNavbarUpsell` chain (seasonal offers, post-signup promos, the upgrade button) and `undefined` falls back to it.
+- **Placement is the host's**: Mail passes it through `PrivateHeader`'s `upsellButton` only while `useActiveOffer(CampaignVariant.MODAL, …)` is non-null, so it replaces the whole `TopNavbarUpsell` chain (seasonal offers, post-signup promos, the upgrade button) and `undefined` falls back to it. In Mail, a click opens `OfferDealModal`.
+
+### The deal modal
+
+`OfferDealModal` is the Q3 2026 sale layout driven by a `Modal` campaign: the image with the title over it, then the CTA, the body as a ticked feature list (one item per non-blank line), the renewal notice and "Don't show this offer again". It accepts `OfferSurfaceProps & Partial<ModalStateProps>`, like `OfferModal`, and is opened by the host from a persistent entry point such as `OfferNavbarButton`.
+
+- **Every field is required.** Image, title, body and CTA text are required when configuring a campaign. Ingest drops any campaign with a blank title or body, and a `Modal` campaign whose CTA ref this client can't resolve. The image and CTA text are trusted to be present; if sanitising still nulls the image (e.g. a host missing from `PROTON_CDN_HOSTS`) or the text is blank, the modal's `!cta || !message.imageUrl` check renders nothing, so the entry point would open nothing.
+- **Closing is not a dismissal.** The close button, Escape and the backdrop only call `onClose`, so the entry point stays and the modal can be reopened.
+- **Only "Don't show this offer again" dismisses.** It calls `onDismiss` (`DISMISSED`, terminal) then `onClose`, which ends the campaign and removes the entry point. The CTA calls `onAction` (`CTA_CLICKED`, also terminal) then `onClose`.
+- **SEEN is left to the entry point**; the modal doesn't attach `seenRef`.
+- **Pricing is to come.** Plan name, cycle, coupon and the derived prices will come from the campaign evaluate response; the modal shows none of them yet.
 
 ## Security
 
@@ -133,7 +144,7 @@ All server-controlled content is validated once, at ingest, before a consumer se
 
 - **CTAs are resolved at the trust boundary, not at render time.** `lib/cta.ts` is the only code that reads a raw `cta.ref`. `PublicCta` carries no raw `ref` at all — only a `sanitizeHttpsUrl`-validated `href`, or an opaque `kind` routed through `onAction`. Bespoke UI structurally cannot bypass the choke point; there is nothing to bypass with.
 - External URLs are **https-only**, with embedded credentials rejected (`data:`, `javascript:`, `http:`, protocol-relative, `user:pass@host`).
-- Image URLs additionally need a host in `PROTON_CDN_HOSTS` — today `proton.me`, `proton.black` and `proton.pink`, each including their subdomains, so the same asset works on production and on the Proton-owned test environments — so a compromised backend cannot beacon the user's IP/`Referer` to a third party via `<img src>`. An image on any other host is dropped **silently**. Both `<img>` tags also set `referrerPolicy="no-referrer"`.
+- Image URLs additionally need a host in `PROTON_CDN_HOSTS` — today `proton.me`, `proton.black`, `proton.pink` and `inapps-static.protonweb.com`, each including their subdomains, so the same asset works on production and on the Proton-owned test environments — so a compromised backend cannot beacon the user's IP/`Referer` to a third party via `<img src>`. An image on any other host is dropped **silently**. Both `<img>` tags also set `referrerPolicy="no-referrer"`.
 - **Ingest never trusts a field's presence.** A blank or non-string `Title` or `Body` drops the campaign. A blank `CtaText` does not: it degrades to a CTA-less promo (`toPublicCta` returns `null`), which is why both shipped surfaces render the button conditionally. The server-controlled `MessageBody.Variant` is matched against known variants rather than used as a property key.
 - CTA `ref`s are symbolic tokens, never paths. The gateway maps exactly one internal destination (`go_to_upsell` → `GoToUpsell` → `onUpgrade`) and returns no CTA otherwise, so `resolveCta` resolves everything else to `null`. There is deliberately **no** app-path branch — an earlier one handed any `/`-prefixed server string to `history.push`, letting the backend choose a same-origin deep link. No `dangerouslySetInnerHTML`.
 - **`campaignKey` and `messageKey` are shape-checked at ingest.** Both are echoed back to `inapp/campaign/event`, so a blank, non-string or over-long (>128 character) key drops the campaign rather than being carried. There is deliberately **no** charset restriction: these values are compared and echoed, never rendered and never used as a property key, so a charset rule would buy nothing and would risk dropping keys the gateway legitimately issues. Trimming is for measuring only — the stored value is verbatim, or the echoed event would carry a key the backend never issued and silently no-op.
@@ -143,7 +154,7 @@ There is **no client-side pacing.** `endedCampaignKey` is not an exception to th
 
 ## Localization
 
-Campaign `title`, `body` and CTA text arrive already localized and are deliberately **not** wrapped in `c()` — the backend, not ttag, owns this copy, and wrapping it would submit backend-owned strings to the client's translation pipeline for no benefit. Client-owned translated strings are limited to surface chrome: `OfferModal`'s "Not now". `OfferNavbarButton`'s `label` is a prop, so the host translates it at its call site.
+Campaign `title`, `body` and CTA text arrive already localized and are deliberately **not** wrapped in `c()` — the backend, not ttag, owns this copy, and wrapping it would submit backend-owned strings to the client's translation pipeline for no benefit. Client-owned translated strings are limited to surface chrome: `OfferModal`'s "Not now", and `OfferDealModal`'s "Close", renewal notice and "Don't show this offer again". `OfferNavbarButton`'s `label` is a prop, so the host translates it at its call site.
 
 ## Scope notes
 

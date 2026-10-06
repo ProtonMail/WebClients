@@ -14,10 +14,12 @@
     "dependencies": {
         "@proton/atoms": "workspace:^",
         "@proton/components": "workspace:^",
+        "@proton/icons": "workspace:^",
         "@proton/react-redux-store": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
         "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
+        "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "@reduxjs/toolkit": "^2.12.0",
