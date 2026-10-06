@@ -1,5 +1,6 @@
 const BABEL_INCLUDE_NODE_MODULES = [
     '@protontech/crypto',
+    '@protontech/logger',
     'proton-mail',
     '@proton/pack',
     '@proton/shared',
