@@ -443,6 +443,7 @@ $profile-colors:
 
 // Meet button styles. primary | secondary | tertiary | ghost | danger | danger-secondary
 // https://www.figma.com/design/enM75uGIsAX3EyyVwVtd7Z/Proton-Meet----Design-Decisions?node-id=9935-46039&m=dev
+// While loading ([aria-busy='true']), each class keeps its own background instead of the disabled one from ButtonLike.scss
 button {
 	&.primary {
 		background-color: var(--interaction-norm);
@@ -455,6 +456,10 @@ button {
 			background-color: var(--theme-color, var(--interaction-norm-major-1));
 			color: var(--text-invert);
 			border: 1px solid var(--theme-color, var(--interaction-norm-major-1));
+		}
+
+		&[aria-busy='true'] {
+			background-color: var(--interaction-norm);
 		}
 	}
 
@@ -470,6 +475,10 @@ button {
 			color: var(--text-norm);
 			border: 1px solid var(--interaction-weak-major-1);
 		}
+
+		&[aria-busy='true'] {
+			background-color: var(--interaction-weak);
+		}
 	}
 
 	&.tertiary {
@@ -483,6 +492,10 @@ button {
 			background-color: var(--background-weak);
 			color: var(--text-norm);
 			border: 1px solid var(--border-weak);
+		}
+
+		&[aria-busy='true'] {
+			background-color: var(--background-card);
 		}
 	}
 
@@ -498,6 +511,10 @@ button {
 			color: var(--text-norm);
 			border: 1px solid var(--border-weak);
 		}
+
+		&[aria-busy='true'] {
+			background-color: transparent;
+		}
 	}
 
 	&.danger {
@@ -512,6 +529,10 @@ button {
 			color: var(--text-invert);
 			border: 1px solid var(--signal-danger-major-1);
 		}
+
+		&[aria-busy='true'] {
+			background-color: var(--signal-danger);
+		}
 	}
 
 	&.danger-secondary {
@@ -525,6 +546,10 @@ button {
 			background-color: var(--signal-danger-major-2);
 			color: var(--signal-danger-major-1);
 			border: 1px solid var(--signal-danger-major-2);
+		}
+
+		&[aria-busy='true'] {
+			background-color: transparent;
 		}
 	}
 }
