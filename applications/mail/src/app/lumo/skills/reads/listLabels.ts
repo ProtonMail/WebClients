@@ -19,7 +19,7 @@ export const listLabelsDefinition: ToolDefinition<Record<string, never>, ListLab
     name: 'list_labels',
     kind: 'read',
     toolDescription:
-        "List the user's labels — each with its label-… reference, name, and colour. Use to resolve a label the user names into a label-… reference before applying it, or to check whether a label already exists. Labels are additive tags (an email can carry several); folders are exclusive. Read-only.",
+        "List the user's labels — each with its label-… reference, name, and colour. Use to resolve a label the user names into a label-… reference before applying it (skip it when an earlier list_labels result in this conversation already has that label), or to check whether a label already exists. Labels are additive tags (an email can carry several); folders are exclusive. Read-only.",
     paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
     serializeForLumo: (result) =>
         serializeCatalogue(
