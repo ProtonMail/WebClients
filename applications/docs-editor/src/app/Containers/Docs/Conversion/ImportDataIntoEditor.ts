@@ -1,6 +1,6 @@
 import { $generateNodesFromDOM } from '@lexical/html'
 import { $convertFromMarkdownString } from '@lexical/markdown'
-import type { ConvertibleDataType } from '@proton/docs-shared'
+import type { ConvertibleDataType } from '../contract/EditorInitialization'
 import { TranslatedResult } from '../Utils/TranslatedResult'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 import type { LexicalEditor, LexicalNode } from 'lexical'
@@ -33,10 +33,6 @@ export async function $importDataIntoEditor(
 ): Promise<TranslatedResult<void>> {
   if (data.length === 0) {
     return TranslatedResult.ok()
-  }
-
-  if (dataFormat.docType === 'sheet' || ['xlsx', 'csv', 'tsv'].includes(dataFormat.dataType)) {
-    return TranslatedResult.failWithTranslatedError(c('Error').t`Tried to import Sheet data into Lexical`)
   }
 
   editor.update(
