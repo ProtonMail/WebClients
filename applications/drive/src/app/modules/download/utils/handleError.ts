@@ -14,7 +14,12 @@ function trackError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
     const errorMessage = c('Info').t`Unexpected download error`;
     const { updateDownloadItem } = useDownloadManagerStore.getState();
     const errorToHandle = error instanceof Error ? error : new Error(errorMessage);
-    updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: errorToHandle });
+    // The browser's quota message is too long for the transfer row; error reports keep the original
+    const errorToShow =
+        errorToHandle.name === 'QuotaExceededError'
+            ? new Error(c('Error').t`Not enough browser storage`, { cause: errorToHandle })
+            : errorToHandle;
+    updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: errorToShow });
 
     sendErrorReport(
         new EnrichedError(errorToHandle.message, {

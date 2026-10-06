@@ -157,7 +157,7 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
                 <span className="text-nowrap text-rg" data-testid="transfer-row:name">
                     {entry.name}
                 </span>
-                <div className="gap-1 flex items-center">
+                <div className="gap-1 flex flex-nowrap items-center">
                     <span className="flex items-center gap-1 text-sm color-weak" data-testid="transfer-row:status">
                         {getStatusLabel(entry)}
                     </span>
@@ -186,6 +186,7 @@ export const TransferItem = ({ entry, onShare, cancelTransfer, retryTransfer, on
                             <span
                                 className="text-ellipsis text-nowrap text-sm color-weak text-tabular-nums"
                                 data-testid="transfer-row:transferred-data"
+                                title={shouldShowFailedMessage ? entry.error?.message : undefined}
                             >
                                 {shouldShowFailedMessage && entry.error?.message}
                                 {entry.warningMessage}
