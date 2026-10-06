@@ -10,18 +10,14 @@ import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slic
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
 
-export const ParticipantsButton = () => {
-    const dispatch = useMeetDispatch();
+export const useParticipantCountIndicator = () => {
     const isGuest = useMeetSelector(selectIsGuest);
     const instantMeeting = useMeetSelector(selectInstantMeeting);
     const maxParticipants = useMeetSelector(selectMaxParticipants);
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
-    const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
 
-    const sideBarState = useMeetSelector(selectSideBarState);
-
-    const getParticipantCountIndicatorVariant = () => {
+    const getParticipantCountIndicatorVariant = (): 'default' | 'warning' | 'danger' => {
         if (!isLocalParticipantAdminOrHost && !(isGuest && instantMeeting)) {
             return 'default';
         }
@@ -36,6 +32,20 @@ export const ParticipantsButton = () => {
 
         return 'default';
     };
+
+    return {
+        totalParticipantCount,
+        maxParticipants,
+        indicatorStatus: getParticipantCountIndicatorVariant(),
+    };
+};
+
+export const ParticipantsButton = () => {
+    const dispatch = useMeetDispatch();
+    const { totalParticipantCount, maxParticipants, indicatorStatus } = useParticipantCountIndicator();
+    const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
+
+    const sideBarState = useMeetSelector(selectSideBarState);
 
     const getParticipantButtonTooltipTitle = () => {
         if (maxParticipants === 0) {
@@ -65,7 +75,7 @@ export const ParticipantsButton = () => {
                 dispatch(toggleSideBarState(MeetingSideBars.Participants));
             }}
             indicatorContent={totalParticipantCount.toString()}
-            indicatorStatus={getParticipantCountIndicatorVariant()}
+            indicatorStatus={indicatorStatus}
             ariaLabel={c('Alt').t`Toggle participants`}
             ariaPressed={sideBarState[MeetingSideBars.Participants]}
             tooltipTitle={getParticipantButtonTooltipTitle()}
