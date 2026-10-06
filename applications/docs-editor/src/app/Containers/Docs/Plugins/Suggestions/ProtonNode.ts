@@ -1,5 +1,5 @@
 import { addClassNamesToElement } from '@lexical/utils'
-import type { SuggestionType } from '@proton/docs-shared/lib/SuggestionType'
+import type { SuggestionType } from '../../contract/SuggestionType'
 import type {
   BaseSelection,
   EditorConfig,
