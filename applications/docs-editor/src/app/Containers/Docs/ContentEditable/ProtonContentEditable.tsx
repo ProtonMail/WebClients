@@ -6,7 +6,7 @@ import type { Ref } from 'react'
 import { forwardRef, useLayoutEffect, useState } from 'react'
 
 import { ContentEditableElement } from './ProtonContentEditableElement'
-import { useCanShowPlaceholder } from '../../../Shared/useCanShowPlaceholder'
+import { useCanShowPlaceholder } from './useCanShowPlaceholder'
 
 export type Props = Omit<ElementProps, 'editor'> & {
   editor__DEPRECATED?: LexicalEditor

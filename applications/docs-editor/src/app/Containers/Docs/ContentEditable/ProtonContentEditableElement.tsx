@@ -2,7 +2,7 @@ import { KEY_DOWN_COMMAND, PASTE_COMMAND, type LexicalEditor } from 'lexical'
 
 import type { Ref } from 'react'
 import { forwardRef, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
-import { mergeRefs } from '../../../Shared/mergeRefs'
+import { mergeRefs } from '../Utils/mergeRefs'
 import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INPUT_EVENT_COMMAND } from '../Commands/Events'
 import { eventFiles } from '@lexical/rich-text'
 
