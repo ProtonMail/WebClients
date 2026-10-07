@@ -11,6 +11,7 @@ import type { SignInLayout, SignInLayoutProps } from './SignInLayout';
 export const SignInPageLayout: SignInLayout = {
     Shell: function SignInPageShell({
         onBack,
+        topBanner,
         beforeMain,
         bottomRight,
         toApp,
@@ -18,7 +19,14 @@ export const SignInPageLayout: SignInLayout = {
         children,
     }: SignInLayoutProps) {
         return (
-            <Layout toApp={toApp} hasWelcome onBack={onBack} hasDecoration={hasDecoration} bottomRight={bottomRight}>
+            <Layout
+                toApp={toApp}
+                hasWelcome
+                onBack={onBack}
+                hasDecoration={hasDecoration}
+                bottomRight={bottomRight}
+                topBanner={topBanner}
+            >
                 {beforeMain}
                 <Main>{children}</Main>
             </Layout>
