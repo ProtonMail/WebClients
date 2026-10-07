@@ -70,10 +70,10 @@ import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
 import type { ThemeCode } from '../../client-extensions/helpers';
 import type { ApplePayProcessorHook } from '../../payment-processors/useApplePay';
+import type { ChargebeePaypalProcessorHook } from '../../payment-processors/useChargebeePaypal';
 import type { GooglePayProcessorHook } from '../../payment-processors/useGooglePay';
 import type { ChargebeeCardProcessorHook } from '../../react-extensions/useChargebeeCard';
 import type { ChargebeeIdealProcessorHook } from '../../react-extensions/useChargebeeIdeal';
-import type { ChargebeePaypalProcessorHook } from '../../react-extensions/useChargebeePaypal';
 import type { ChargebeeDirectDebitProcessorHook } from '../../react-extensions/useSepaDirectDebit';
 
 /**

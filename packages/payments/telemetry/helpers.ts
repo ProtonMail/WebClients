@@ -152,7 +152,9 @@ export function getTelemetryPaymentMethod({
         return null;
     }
 
-    const plainTelemetryPaymentMethod = getPaymentMethodConfig(paymentMethodType)?.telemetryName;
+    const plainTelemetryPaymentMethod = getPaymentMethodConfig(
+        paymentMethodType as PAYMENT_METHOD_TYPES
+    )?.telemetryName;
 
     if (!plainTelemetryPaymentMethod) {
         return null;
