@@ -79,3 +79,102 @@ export function resolveClientToolExecutor(options: {
     }
     return options.createDefaultExecutor?.();
 }
+
+function findExecutorForCall(
+    executors: ClientToolExecutor[],
+    call: PendingClientToolCall
+): ClientToolExecutor | undefined {
+    return executors.find((executor) => {
+        return executor.canExecute(call.name);
+    });
+}
+
+const missingClientToolResult = (call: PendingClientToolCall): ClientToolResult => {
+    return {
+        content: `No client tool executor registered for "${call.name}".`,
+        is_error: true,
+    };
+};
+
+/**
+ * Merges multiple {@link ClientToolExecutor} instances so one request can advertise and run
+ * several client-side tool families (e.g. Lumo Desktop connectors + create_artifact).
+ */
+export function composeClientToolExecutors(...executors: ClientToolExecutor[]): ClientToolExecutor {
+    const activeExecutors = executors.filter(Boolean);
+    if (activeExecutors.length === 0) {
+        throw new Error('composeClientToolExecutors requires at least one executor');
+    }
+
+    const singleExecutor = activeExecutors[0];
+    if (activeExecutors.length === 1 && singleExecutor) {
+        return singleExecutor;
+    }
+
+    return {
+        getClientTools: async () => {
+            const toolLists = await Promise.all(
+                activeExecutors.map((executor) => {
+                    return executor.getClientTools?.() ?? [];
+                })
+            );
+            const seenNames = new Set<string>();
+            const mergedTools: ChatCompletionsFunctionTool[] = [];
+
+            for (const tool of toolLists.flat()) {
+                const name = tool.function.name;
+                if (seenNames.has(name)) {
+                    continue;
+                }
+                seenNames.add(name);
+                mergedTools.push(tool);
+            }
+
+            return mergedTools;
+        },
+        canExecute: (name) => {
+            return activeExecutors.some((executor) => {
+                return executor.canExecute(name);
+            });
+        },
+        normalizeCalls: (calls) => {
+            return activeExecutors.reduce((normalizedCalls, executor) => {
+                return executor.normalizeCalls?.(normalizedCalls) ?? normalizedCalls;
+            }, calls);
+        },
+        execute: async (calls) => {
+            const results: ClientToolResult[] = new Array(calls.length);
+            let index = 0;
+
+            while (index < calls.length) {
+                const call = calls[index]!;
+                const executor = findExecutorForCall(activeExecutors, call);
+                if (!executor) {
+                    results[index] = missingClientToolResult(call);
+                    index++;
+                    continue;
+                }
+
+                let batchEnd = index + 1;
+                while (batchEnd < calls.length) {
+                    const nextCall = calls[batchEnd]!;
+                    const nextExecutor = findExecutorForCall(activeExecutors, nextCall);
+                    if (nextExecutor !== executor) {
+                        break;
+                    }
+                    batchEnd++;
+                }
+
+                const batch = calls.slice(index, batchEnd);
+                const batchResults = await executor.execute(batch);
+                for (let batchIndex = 0; batchIndex < batch.length; batchIndex++) {
+                    results[index + batchIndex] =
+                        batchResults[batchIndex] ?? missingClientToolResult(batch[batchIndex]!);
+                }
+                index = batchEnd;
+            }
+
+            return results;
+        },
+    };
+}
