@@ -23,8 +23,9 @@ export type KeeperPhoneField = {
     region?: string;
 };
 
-type KeeperFolder = {
+export type KeeperFolder = {
     folder?: string;
+    shared_folder?: string;
 };
 
 type KeeperItemType =

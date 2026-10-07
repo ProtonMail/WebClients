@@ -4,7 +4,7 @@ import type { ItemImportIntent, ItemType } from '../../../../types';
 import { AutofillMode, WifiSecurity } from '../../../../types/protobuf';
 import * as epochUtils from '../../../../utils/time/epoch';
 import { deobfuscateItem } from '../../../items/item.obfuscation';
-import type { ImportPayload } from '../../types';
+import type { ImportFolder, ImportPayload } from '../../types';
 import { readKeeperData } from './keeper.reader';
 
 jest.mock('@proton/pass/utils/time/epoch', () => ({
@@ -31,19 +31,57 @@ describe('Import Keeper JSON', () => {
         await expect(() => readKeeperData(new File([''], 'corrupted'))).rejects.toThrow();
     });
 
-    test('should convert Keeper folders to vaults correctly', () => {
-        expect(data.vaults.length).toEqual(4);
+    test('should import into a single vault', () => {
+        const [vault] = data.vaults;
 
-        expect(data.vaults[0].name).toEqual('folder2');
-        expect(data.vaults[1].name).toEqual('folder1');
-        expect(data.vaults[2].name).toEqual('subfolder1');
-        expect(data.vaults[3].name).toEqual('Import - Apr 27, 2023');
-
-        expect(data.vaults[0].items.length).toEqual(1);
+        expect(data.vaults.length).toEqual(1);
+        expect(vault.name).toEqual('Import - Apr 27, 2023');
+        expect(vault.items.length).toEqual(22);
     });
 
-    test('should support identity items [vault 1]', () => {
-        const item = getKeeperItem<'identity'>(0, 0);
+    test('should rebuild the folder hierarchy', () => {
+        const [vault] = data.vaults;
+        const byId = new Map(vault.folders.map((folder) => [folder.id, folder]));
+        const pathOf = (folder: ImportFolder): string => {
+            const parent = folder.parentId ? byId.get(folder.parentId) : undefined;
+            return parent ? `${pathOf(parent)}/${folder.name}` : folder.name;
+        };
+
+        expect(vault.folders.map(pathOf)).toEqual([
+            'folder2',
+            'folder1',
+            'folder1/subfolder1',
+            'private1',
+            'shared2',
+            'shared3',
+            'shared3/nested',
+            'shared3/nested/sub3',
+        ]);
+    });
+
+    test('should place each item in its folder', () => {
+        const [vault] = data.vaults;
+        const byId = new Map(vault.folders.map(({ id, name }) => [id, name]));
+        const foldered = vault.items.filter(({ folderId }) => folderId !== null);
+
+        expect(foldered.map(({ metadata, folderId }) => [metadata.name, byId.get(folderId ?? '')])).toEqual([
+            ['id item', 'folder2'],
+            ['login of folder1', 'folder1'],
+            ['login of subfolder1', 'subfolder1'],
+            ['login of private and shared folders', 'private1'],
+            ['login of shared2', 'shared2'],
+            ['login of shared3 subfolder', 'sub3'],
+        ]);
+    });
+
+    test('should leave items without a folder at the vault root', () => {
+        const [vault] = data.vaults;
+        const rootItems = vault.items.filter((item) => item.folderId === null);
+        expect(rootItems.length).toEqual(16);
+    });
+
+    test('should support identity items [folder2]', () => {
+        const item = getKeeperItem<'identity'>(0, 6);
         expect(item.type).toEqual('identity');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('id item');
@@ -70,8 +108,8 @@ describe('Import Keeper JSON', () => {
         });
     });
 
-    test('should support login items [vault 2]', () => {
-        const item = getKeeperItem<'login'>(1, 0);
+    test('should support login items [folder1]', () => {
+        const item = getKeeperItem<'login'>(0, 7);
         expect(item.type).toEqual('login');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('login of folder1');
@@ -88,8 +126,8 @@ describe('Import Keeper JSON', () => {
         expect(item.extraFields).toEqual([]);
     });
 
-    test('should support login items [vault 3]', () => {
-        const item = getKeeperItem<'login'>(2, 0);
+    test('should support login items [folder1/subfolder1]', () => {
+        const item = getKeeperItem<'login'>(0, 8);
         expect(item.type).toEqual('login');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('login of subfolder1');
@@ -106,8 +144,8 @@ describe('Import Keeper JSON', () => {
         expect(item.extraFields).toEqual([]);
     });
 
-    test('should support credit card items [vault 4]', () => {
-        const item = getKeeperItem<'creditCard'>(3, 0);
+    test('should support credit card items [root]', () => {
+        const item = getKeeperItem<'creditCard'>(0, 0);
         expect(item.type).toEqual('creditCard');
         expect(item.metadata.name).toEqual('a card');
         expect(item.metadata.note).toEqual('');
@@ -119,14 +157,14 @@ describe('Import Keeper JSON', () => {
         expect(item.extraFields).toEqual([{ data: { content: 'custom value' }, fieldName: 'Text', type: 'text' }]);
     });
 
-    test('should support custom file item [vault 4]', () => {
-        const item = getKeeperItem<'custom'>(3, 1);
+    test('should support custom file item [root]', () => {
+        const item = getKeeperItem<'custom'>(0, 1);
         expect(item.type).toEqual('custom');
         expect(item.metadata.name).toEqual('a file');
     });
 
-    test('should support notes with custom fields [vault 4]', () => {
-        const item = getKeeperItem<'note'>(3, 2);
+    test('should support notes with custom fields [root]', () => {
+        const item = getKeeperItem<'note'>(0, 2);
         expect(item.type).toEqual('note');
         expect(item.metadata.name).toEqual('a note');
         expect(item.metadata.note).toEqual('custom note');
@@ -136,8 +174,8 @@ describe('Import Keeper JSON', () => {
         ]);
     });
 
-    test('should support custom address items [vault 4]', () => {
-        const item = getKeeperItem<'custom'>(3, 3);
+    test('should support custom address items [root]', () => {
+        const item = getKeeperItem<'custom'>(0, 3);
         expect(item.type).toEqual('custom');
         expect(item.metadata.name).toEqual('Address for bank card');
         expect(item.extraFields).toEqual([
@@ -150,8 +188,8 @@ describe('Import Keeper JSON', () => {
         ]);
     });
 
-    test('should support identity items with custom fields [vault 4]', () => {
-        const item = getKeeperItem<'identity'>(3, 4);
+    test('should support identity items with custom fields [root]', () => {
+        const item = getKeeperItem<'identity'>(0, 4);
         expect(item.type).toEqual('identity');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('contact item');
@@ -176,8 +214,8 @@ describe('Import Keeper JSON', () => {
         expect(item.extraFields).toEqual([]);
     });
 
-    test('should support generic items [vault 4]', () => {
-        const item = getKeeperItem<'login'>(3, 5);
+    test('should support generic items [root]', () => {
+        const item = getKeeperItem<'login'>(0, 5);
         expect(item.type).toEqual('login');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('general item');
@@ -186,8 +224,8 @@ describe('Import Keeper JSON', () => {
         expect(item.extraFields).toEqual([]);
     });
 
-    test('should support login with 2FA items [vault 4]', () => {
-        const item = getKeeperItem<'login'>(3, 6);
+    test('should support login with 2FA items [root]', () => {
+        const item = getKeeperItem<'login'>(0, 9);
         expect(item.type).toEqual('login');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('login with 2fa');
@@ -205,8 +243,8 @@ describe('Import Keeper JSON', () => {
         });
     });
 
-    test('should support login with malformed urls [vault 4]', () => {
-        const item = getKeeperItem<'login'>(3, 7);
+    test('should support login with malformed urls [root]', () => {
+        const item = getKeeperItem<'login'>(0, 10);
         expect(item.type).toEqual('login');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('login with broken url');
@@ -223,8 +261,8 @@ describe('Import Keeper JSON', () => {
         });
     });
 
-    test('should support login with commas and quotes [vault 4]', () => {
-        const item = getKeeperItem<'login'>(3, 8);
+    test('should support login with commas and quotes [root]', () => {
+        const item = getKeeperItem<'login'>(0, 11);
         expect(item.type).toEqual('login');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('login with comma, quotes "');
@@ -241,8 +279,8 @@ describe('Import Keeper JSON', () => {
         });
     });
 
-    test('should support login with custom fields [vault 4]', () => {
-        const item = getKeeperItem<'login'>(3, 9);
+    test('should support login with custom fields [root]', () => {
+        const item = getKeeperItem<'login'>(0, 12);
         expect(item.type).toEqual('login');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('login with custom fields');
@@ -311,8 +349,8 @@ describe('Import Keeper JSON', () => {
         ]);
     });
 
-    test('should support login with multiple lines [vault 4]', () => {
-        const item = getKeeperItem<'login'>(3, 10);
+    test('should support login with multiple lines [root]', () => {
+        const item = getKeeperItem<'login'>(0, 13);
         expect(item.type).toEqual('login');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('login with multiple lines');
@@ -329,8 +367,8 @@ describe('Import Keeper JSON', () => {
         });
     });
 
-    test('should support login with multiple urls [vault 4]', () => {
-        const item = getKeeperItem<'login'>(3, 11);
+    test('should support login with multiple urls [root]', () => {
+        const item = getKeeperItem<'login'>(0, 14);
         expect(item.type).toEqual('login');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('login with multiple urls');
@@ -359,8 +397,8 @@ describe('Import Keeper JSON', () => {
         ]);
     });
 
-    test('should support login with secure notes [vault 4]', () => {
-        const item = getKeeperItem<'login'>(3, 12);
+    test('should support login with secure notes [root]', () => {
+        const item = getKeeperItem<'login'>(0, 15);
         expect(item.type).toEqual('note');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('secure note item');
@@ -370,8 +408,8 @@ describe('Import Keeper JSON', () => {
         expect(item.extraFields).toEqual([{ data: { content: 'secured note' }, fieldName: 'note:', type: 'text' }]);
     });
 
-    test('should support SSH key items [vault 4]', () => {
-        const item = getKeeperItem<'sshKey'>(3, 13);
+    test('should support SSH key items [root]', () => {
+        const item = getKeeperItem<'sshKey'>(0, 16);
         expect(item.type).toEqual('sshKey');
         expect(item.metadata.name).toEqual('ssh key item');
         expect(item.content.privateKey).toEqual('pri');
@@ -384,8 +422,8 @@ describe('Import Keeper JSON', () => {
         ]);
     });
 
-    test('should support general item types [vault 4]', () => {
-        const item = getKeeperItem<'login'>(3, 14);
+    test('should support general item types [root]', () => {
+        const item = getKeeperItem<'login'>(0, 17);
         expect(item.type).toEqual('login');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('general item login');
@@ -402,8 +440,8 @@ describe('Import Keeper JSON', () => {
         });
     });
 
-    test('should support WIFI item types [vault 4]', () => {
-        const item = getKeeperItem<'wifi'>(3, 15);
+    test('should support WIFI item types [root]', () => {
+        const item = getKeeperItem<'wifi'>(0, 18);
         expect(item.type).toEqual('wifi');
         expect(item.metadata.itemUuid).not.toBeUndefined();
         expect(item.metadata.name).toEqual('wifi');
