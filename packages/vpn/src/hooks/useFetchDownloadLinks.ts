@@ -3,14 +3,10 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 const MAC_UPDATE_ENDPOINT = 'https://protonvpn.com/download/macos-update5.xml';
-const MAC_UPDATE_LEGACY_ENDPOINT = 'https://protonvpn.com/download/macos-update2.xml';
-
 // Hardcoded URLs for older macOS versions because newer versions of these XML files
 // do not include the older versions and for performance reasons we want
 // to avoid fetching multiple large XML files just to get a few download URLs
-const MAC_LEGACY_URL = 'https://protonvpn.com/download/ProtonVPN_mac_v1.9.6.dmg';
 const MAC_BIG_SUR_URL = 'https://protonvpn.com/download/ProtonVPN_mac_v3.3.6.dmg';
-const MAC_CATALINA_URL = 'https://protonvpn.com/download/ProtonVPN_mac_v3.0.22.dmg';
 const WIN_UPDATE_ENDPOINT = 'https://protonvpn.com/download/windows/x64/v1/version.json';
 const WIN_UPDATE_ENDPOINT_ARM64 = 'https://protonvpn.com/download/windows/arm64/v1/version.json';
 
@@ -49,29 +45,18 @@ type Links = { title: () => string; link: string }[];
 
 const fetchVpnMacosDownloadLink = async (): Promise<Links | undefined> => {
     try {
-        const [macUpdate, macLegacyUpdate, { XMLParser }] = await Promise.all([
+        const [macUpdate, { XMLParser }] = await Promise.all([
             fetch(MAC_UPDATE_ENDPOINT, { method: 'GET' }),
-
-            fetch(MAC_UPDATE_LEGACY_ENDPOINT, { method: 'GET' }),
             import('fast-xml-parser'),
         ]);
         const macText = await macUpdate.text();
         const macXml = new XMLParser({ ignoreAttributes: false, removeNSPrefix: true }).parse(macText) as MacXml;
 
-        const macLegacyText = await macLegacyUpdate.text();
-        const macLegacyXml = new XMLParser({ ignoreAttributes: false, removeNSPrefix: true }).parse(
-            macLegacyText
-        ) as MacXml;
-
-        const legacyItems = macLegacyXml.rss.channel.item;
-        const legacy = getMacItemUrl(legacyItems[0]);
-
         const items = macXml.rss.channel.item.filter((item) => !item.channel);
         const ventura = getMacItemUrl(items.find((item) => item.minimumSystemVersion.toString().startsWith('13')));
         const monterey = getMacItemUrl(items.find((item) => item.minimumSystemVersion.toString().startsWith('12')));
         const bigSur = getMacItemUrl(items.find((item) => item.minimumSystemVersion.toString().startsWith('11')));
-        const catalina = getMacItemUrl(items.find((item) => item.minimumSystemVersion.toString().startsWith('10.15')));
-        const release = getMacItemUrl(items.find((item) => item.minimumSystemVersion >= 14)) || monterey || legacy;
+        const release = getMacItemUrl(items.find((item) => item.minimumSystemVersion >= 14)) || monterey;
 
         const links: Links = [];
         if (release) {
@@ -84,8 +69,6 @@ const fetchVpnMacosDownloadLink = async (): Promise<Links | undefined> => {
             links.push({ link: monterey, title: () => c('Download').t`macOS Monterey` });
         }
         links.push({ link: bigSur ?? MAC_BIG_SUR_URL, title: () => c('Download').t`macOS Big Sur` });
-        links.push({ link: catalina ?? MAC_CATALINA_URL, title: () => c('Download').t`macOS Catalina` });
-        links.push({ link: legacy ?? MAC_LEGACY_URL, title: () => c('Download').t`macOS Mojave or earlier` });
         return release ? links : undefined;
     } catch {
         return undefined;
@@ -174,14 +157,6 @@ export function useFetchDownloadLinks(flag: boolean) {
                     {
                         title: () => c('Download').t`macOS Big Sur`,
                         link: 'https://protonvpn.com/download/ProtonVPN_mac_v3.3.6.dmg',
-                    },
-                    {
-                        title: () => c('Download').t`macOS Catalina`,
-                        link: 'https://protonvpn.com/download/ProtonVPN_mac_v3.0.22.dmg',
-                    },
-                    {
-                        title: () => c('Download').t`macOS Mojave or earlier`,
-                        link: 'https://protonvpn.com/download/ProtonVPN_mac_v1.9.6.dmg',
                     },
                 ]);
             }

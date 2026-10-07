@@ -55,7 +55,7 @@ describe('useFetchDownloadLinks', () => {
                 expect(result.current.mac).toBeDefined();
             });
 
-            expect(result.current.mac).toHaveLength(6);
+            expect(result.current.mac).toHaveLength(4);
             expect(result.current.mac![0].link).toContain('ProtonVPN_mac_v6.3.0.dmg');
         });
     });
@@ -94,7 +94,6 @@ describe('useFetchDownloadLinks', () => {
 
             const calledUrls = mockFetch.mock.calls.map((args) => args[0]);
             expect(calledUrls).toContain('https://protonvpn.com/download/macos-update5.xml');
-            expect(calledUrls).toContain('https://protonvpn.com/download/macos-update2.xml');
         });
 
         it('returns windows links from the fetched data', async () => {
