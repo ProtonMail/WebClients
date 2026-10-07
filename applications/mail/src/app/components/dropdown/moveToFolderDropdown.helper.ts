@@ -14,19 +14,19 @@ import { categoryColorClassName } from '../categoryView/categoriesTabs/tabsInter
 export const getInboxCategoriesItems = ({
     selectAll,
     canMoveToInbox,
-    shouldShowTabs,
+    canMoveToCategories,
     activeCategoriesTabs,
 }: {
     selectAll: boolean;
     canMoveToInbox: boolean;
-    shouldShowTabs: boolean;
+    canMoveToCategories: boolean;
     activeCategoriesTabs: CategoryTab[];
 }) => {
-    if (!canMoveToInbox || (shouldShowTabs && selectAll)) {
+    if (!canMoveToInbox || (canMoveToCategories && selectAll)) {
         return [];
     }
 
-    if (shouldShowTabs && activeCategoriesTabs.length > 0) {
+    if (canMoveToCategories && activeCategoriesTabs.length > 0) {
         return activeCategoriesTabs.map((category) => ({
             ID: category.id,
             Name: getLabelFromCategoryId(category.id),

@@ -28,6 +28,7 @@ describe('useCategoriesShortcuts', () => {
                 isCategoryViewEnabled: false,
                 isCategoryViewEnabledSettled: true,
                 shouldShowTabs: false,
+                canMoveToCategories: false,
                 canUseCategoryView: false,
             });
 
@@ -52,6 +53,7 @@ describe('useCategoriesShortcuts', () => {
                 isCategoryViewEnabled: true,
                 isCategoryViewEnabledSettled: true,
                 shouldShowTabs: true,
+                canMoveToCategories: true,
                 canUseCategoryView: false,
             });
 
@@ -76,6 +78,7 @@ describe('useCategoriesShortcuts', () => {
                 isCategoryViewEnabled: false,
                 isCategoryViewEnabledSettled: true,
                 shouldShowTabs: false,
+                canMoveToCategories: false,
                 canUseCategoryView: false,
             });
 
@@ -93,6 +96,7 @@ describe('useCategoriesShortcuts', () => {
                 isCategoryViewEnabled: true,
                 isCategoryViewEnabledSettled: true,
                 shouldShowTabs: true,
+                canMoveToCategories: true,
                 canUseCategoryView: false,
             });
 
@@ -112,6 +116,7 @@ describe('useCategoriesShortcuts', () => {
                 isCategoryViewEnabled: true,
                 isCategoryViewEnabledSettled: true,
                 shouldShowTabs: true,
+                canMoveToCategories: true,
                 canUseCategoryView: false,
             });
 

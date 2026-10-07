@@ -28,6 +28,7 @@ jest.mock('../../../store/mailbox/mailboxActions', () => {
 jest.mock('../../categoryView/useCategoriesView', () => ({
     useCategoriesView: jest.fn(() => ({
         shouldShowTabs: false,
+        canMoveToCategories: false,
         activeCategoriesTabs: [],
     })),
 }));
@@ -63,6 +64,7 @@ describe('MoveDropdown', () => {
     beforeEach(() => {
         mockedUseCategoriesView.mockReturnValue({
             shouldShowTabs: false,
+            canMoveToCategories: false,
             activeCategoriesTabs: [],
         });
     });
@@ -224,6 +226,7 @@ describe('MoveDropdown', () => {
         it('should disable the checkbox when a category is selected as destination', async () => {
             mockedUseCategoriesView.mockReturnValue({
                 shouldShowTabs: true,
+                canMoveToCategories: true,
                 activeCategoriesTabs: mockActiveCategoriesData,
             });
 
@@ -254,6 +257,7 @@ describe('MoveDropdown', () => {
         it('should untick the checkbox while the destination cannot create filters, and restore it afterwards', async () => {
             mockedUseCategoriesView.mockReturnValue({
                 shouldShowTabs: true,
+                canMoveToCategories: true,
                 activeCategoriesTabs: mockActiveCategoriesData,
             });
 
