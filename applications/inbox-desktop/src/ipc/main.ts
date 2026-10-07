@@ -39,7 +39,7 @@ import { toggleAppCache } from "../utils/appCache";
 import { getLogs } from "../utils/log/getLogsIPC";
 import { handleLogoutIPC } from "../utils/logout/logout";
 import { profiler } from "../utils/profiler/profiler";
-import { startOAuthSession, clearOAuthSession } from "../utils/oauthProcess";
+import { startOAuthSession, clearOAuthSession } from "../utils/oauthSession";
 import { sentryReport } from "../utils/sentryReport";
 import { openExternalIPC } from "../utils/openExternal/openExternal";
 import { externalProtocolManager } from "../utils/openExternal/manager";
@@ -195,19 +195,13 @@ export const handleIPCCalls = () => {
                     resetBadge();
                     clearStorage();
                     break;
-                case "oauthPopupOpened": {
-                    const enabled = payload === "oauthPopupStarted";
-                    global.oauthProcess = enabled;
-                    ipcLogger.debug("oauthProcess", enabled ? "enabled" : "disabled");
-                    break;
-                }
                 case "oauthPopupOpenedV2": {
                     if (payload.action === "oauthPopupStarted") {
                         startOAuthSession(payload.sessionId, payload.authorizationUrl);
-                        ipcLogger.debug("oauthProcess enabled", payload.sessionId, payload.authorizationUrl);
+                        ipcLogger.debug("oauthSession started", payload.sessionId, payload.authorizationUrl);
                     } else {
                         clearOAuthSession(payload.sessionId);
-                        ipcLogger.debug("oauthProcess disabled", payload.sessionId);
+                        ipcLogger.debug("oauthSession cleared", payload.sessionId);
                     }
                     break;
                 }
