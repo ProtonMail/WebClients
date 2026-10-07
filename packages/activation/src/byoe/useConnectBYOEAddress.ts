@@ -21,7 +21,7 @@ import {
 } from '../interface';
 import { loadImporters } from '../logic/importers/importers.actions';
 import { useEasySwitchDispatch } from '../logic/store';
-import { createTokenItem, loadSyncList } from '../logic/sync/sync.actions';
+import { WRONG_ACCOUNT_ERROR, createTokenItem, loadSyncList } from '../logic/sync/sync.actions';
 import { convertBYOEAddress, createBYOEAddress } from '../thunks/byoeAddresses';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import type {
@@ -151,7 +151,7 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
             return importTask;
         }
 
-        // Finalize the address migration to BYOE
+        // Intended order, as in the old hook: a failure here leaves the import task already started
         const finalized = await finalizeAddress(existingAddress, token.Account);
         if (finalized.status === 'failure') {
             return finalized;
@@ -188,11 +188,13 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
                 Source: source,
                 Features: [EASY_SWITCH_FEATURES.BYOE],
                 expectedEmailAddress,
+                // The failure is returned to the caller, which decides what to show
+                silent: true,
             })
         );
 
-        if (response.type.endsWith('rejected')) {
-            const isWrongAccount = (response.payload as { Error?: string } | undefined)?.Error === 'wrong_account';
+        if (response.meta.requestStatus === 'rejected') {
+            const isWrongAccount = response.payload?.Error === WRONG_ACCOUNT_ERROR;
             return fail({ type: isWrongAccount ? 'wrong-account' : 'token-failed' });
         }
 

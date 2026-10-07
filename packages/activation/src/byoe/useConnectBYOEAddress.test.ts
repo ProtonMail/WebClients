@@ -2,13 +2,21 @@ import { act, renderHook } from '@testing-library/react';
 import { getUnixTime } from 'date-fns';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { buildAddress } from '@proton/account/testing/buildAddress';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { startEasySwitchSignupImportTask } from '../api/api';
 import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import type { ImportToken } from '../interface';
-import { BYOE_ADDRESS_ERROR, EASY_SWITCH_SOURCES, OAUTH_PROVIDER, TIME_PERIOD } from '../interface';
+import {
+    BYOE_ADDRESS_ERROR,
+    EASY_SWITCH_FEATURES,
+    EASY_SWITCH_SOURCES,
+    OAUTH_PROVIDER,
+    TIME_PERIOD,
+} from '../interface';
+import { createTokenItem } from '../logic/sync/sync.actions';
 import type { ConnectBYOEAddressResult } from './connectBYOEAddress.interface';
 import { useConnectBYOEAddress } from './useConnectBYOEAddress';
 
@@ -50,6 +58,13 @@ const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 jest.mock('../hooks/useBYOEFeatureStatus');
 const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
 
+jest.mock('../logic/sync/sync.actions', () => ({
+    WRONG_ACCOUNT_ERROR: 'wrong_account',
+    createTokenItem: jest.fn((props) => ({ type: 'token/create', props })),
+    loadSyncList: jest.fn(() => ({ type: 'sync/load' })),
+}));
+const mockCreateTokenItem = createTokenItem as unknown as jest.Mock;
+
 jest.mock('../thunks/byoeAddresses', () => ({
     createBYOEAddress: jest.fn(),
     convertBYOEAddress: jest.fn(),
@@ -78,7 +93,7 @@ const mockToken: ImportToken = {
     Features: [],
 };
 
-const createdAddress = { Email: 'test@gmail.com', ID: 'addr-id' };
+const createdAddress = buildAddress({ Email: mockToken.Account, ID: 'addr-id' });
 
 const connect = async (args: { importEmails?: boolean; importPeriod?: TIME_PERIOD; token?: ImportToken } = {}) => {
     const { result } = renderHook(() => useConnectBYOEAddress({ source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS }));
@@ -176,7 +191,7 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('should return already-added and not call the import API when the address already is a BYOE address', async () => {
-            mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com' } as any);
+            mockFindUserAddress.mockReturnValue(buildAddress({ Email: mockToken.Account }));
             mockGetIsBYOEAddress.mockReturnValue(true);
 
             const outcome = await connect();
@@ -283,7 +298,7 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('should convert address, call import API and return success when address exists and is not BYOE', async () => {
-            mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com', ID: 'addr-id' } as any);
+            mockFindUserAddress.mockReturnValue(createdAddress);
             mockGetIsBYOEAddress.mockReturnValue(false);
 
             const outcome = await connect({ importEmails: false });
@@ -294,7 +309,7 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('should return convert-failed when conversion fails', async () => {
-            mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com', ID: 'addr-id' } as any);
+            mockFindUserAddress.mockReturnValue(createdAddress);
             mockGetIsBYOEAddress.mockReturnValue(false);
             mockDispatch.mockRejectedValue(new Error('Conversion failed'));
 
@@ -314,7 +329,7 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('should carry the api message when conversion fails', async () => {
-            mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com', ID: 'addr-id' } as any);
+            mockFindUserAddress.mockReturnValue(createdAddress);
             mockDispatch.mockRejectedValue({ data: { Code: 2000, Error: 'Boom' } });
 
             const outcome = await connect();
@@ -328,6 +343,24 @@ describe('useConnectBYOEAddress', () => {
             const outcome = await connect();
 
             expect(outcome).toEqual({ status: 'failure', reason: { type: 'create-failed', message: 'Boom' } });
+        });
+
+        // Documents the order, shared with the old hook: the import task starts before the address exists
+        it('should start the import task before creating the address, and keep it started when creation fails', async () => {
+            mockDispatch.mockRejectedValue(new Error('Create failed'));
+
+            const outcome = await connect();
+
+            expect(outcome).toMatchObject({ status: 'failure', reason: { type: 'create-failed' } });
+            expect(mockApi.mock.invocationCallOrder[0]).toBeLessThan(mockDispatch.mock.invocationCallOrder[0]);
+        });
+
+        it('should not create the address when the import task fails', async () => {
+            mockApi.mockRejectedValue({ data: { Code: 2000, Error: 'Source is required' } });
+
+            await connect();
+
+            expect(mockDispatch).not.toHaveBeenCalled();
         });
 
         it('should return unknown when no address comes back after the connection', async () => {
@@ -346,6 +379,112 @@ describe('useConnectBYOEAddress', () => {
             mockDispatch.mockRejectedValue(new Error('Create failed'));
             await connect();
             expect(mockEasySwitchDispatch).not.toHaveBeenCalled();
+        });
+    });
+    describe('connectBYOEAddressWithCode', () => {
+        beforeEach(() => {
+            jest.clearAllMocks();
+            mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
+            mockUseAddresses.mockReturnValue([[], false]);
+            mockFindUserAddress.mockReturnValue(undefined);
+            mockGetIsBYOEAddress.mockReturnValue(false);
+            mockDispatch.mockResolvedValue(createdAddress);
+            mockApi.mockResolvedValue({});
+            mockUseFlag.mockReturnValue(false);
+            mockEasySwitchDispatch.mockResolvedValue({
+                type: 'token/create/fulfilled',
+                meta: { requestStatus: 'fulfilled' },
+                payload: mockToken,
+            });
+        });
+
+        const connectWithCode = async (args: { expectedEmailAddress?: string; importPeriod?: TIME_PERIOD } = {}) => {
+            const { result } = renderHook(() =>
+                useConnectBYOEAddress({ source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS })
+            );
+
+            let outcome: ConnectBYOEAddressResult | undefined;
+            await act(async () => {
+                outcome = await result.current.connectBYOEAddressWithCode({
+                    code: 'the-code',
+                    redirectUri: 'https://account.proton.me/lite?action=byoe-mobile',
+                    importEmails: true,
+                    ...args,
+                });
+            });
+            return outcome!;
+        };
+
+        it('should exchange the code for a BYOE token', async () => {
+            await connectWithCode({ expectedEmailAddress: 'test@gmail.com' });
+
+            expect(mockCreateTokenItem).toHaveBeenCalledWith({
+                Code: 'the-code',
+                Provider: OAUTH_PROVIDER.GOOGLE,
+                RedirectUri: 'https://account.proton.me/lite?action=byoe-mobile',
+                Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                Features: [EASY_SWITCH_FEATURES.BYOE],
+                expectedEmailAddress: 'test@gmail.com',
+                silent: true,
+            });
+        });
+
+        it('should connect the address of the token and return success', async () => {
+            const outcome = await connectWithCode({ importPeriod: TIME_PERIOD.LAST_YEAR });
+
+            expect(mockStartImportTask).toHaveBeenCalledWith(
+                expect.objectContaining({ Account: mockToken.Account, AutomaticImport: true })
+            );
+            expect(outcome).toEqual({ status: 'success', address: createdAddress, importEmails: true });
+        });
+
+        it('should return token-failed and not connect anything when the token cannot be created', async () => {
+            mockEasySwitchDispatch.mockResolvedValue({
+                type: 'token/create/rejected',
+                meta: { requestStatus: 'rejected' },
+                payload: { Code: 2000, Error: 'Invalid code' },
+            });
+
+            const outcome = await connectWithCode();
+
+            expect(outcome).toEqual({ status: 'failure', reason: { type: 'token-failed' } });
+            expect(mockApi).not.toHaveBeenCalled();
+            expect(mockDispatch).not.toHaveBeenCalled();
+        });
+
+        it('should return token-failed when the rejection has no payload', async () => {
+            mockEasySwitchDispatch.mockResolvedValue({
+                type: 'token/create/rejected',
+                meta: { requestStatus: 'rejected' },
+                payload: undefined,
+            });
+
+            const outcome = await connectWithCode();
+
+            expect(outcome).toEqual({ status: 'failure', reason: { type: 'token-failed' } });
+        });
+
+        it('should return wrong-account when the token is for another address than the expected one', async () => {
+            mockEasySwitchDispatch.mockResolvedValue({
+                type: 'token/create/rejected',
+                meta: { requestStatus: 'rejected' },
+                payload: { Code: 0, Error: 'wrong_account' },
+            });
+
+            const outcome = await connectWithCode({ expectedEmailAddress: 'other@gmail.com' });
+
+            expect(outcome).toEqual({ status: 'failure', reason: { type: 'wrong-account' } });
+            expect(mockApi).not.toHaveBeenCalled();
+        });
+
+        it('should return the failure of the connection when the token is valid', async () => {
+            mockApi.mockRejectedValue({
+                data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
+            });
+
+            const outcome = await connectWithCode();
+
+            expect(outcome).toEqual({ status: 'failure', reason: { type: 'linked-to-another-account' } });
         });
     });
 });
