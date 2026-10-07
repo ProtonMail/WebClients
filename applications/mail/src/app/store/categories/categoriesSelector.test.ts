@@ -7,6 +7,7 @@ import { buildMailState } from '../tests/buildMailState';
 import { elementsState } from '../tests/elementsSlice';
 import { organizationState, unloadedOrganizationState } from '../tests/sharedSlices';
 import {
+    selectCanMoveToCategories,
     selectShouldReportUnreadCount,
     selectShouldShowCategoryViewTabs,
     selectShouldShowMoveToPrimaryBadge,
@@ -35,6 +36,29 @@ describe('selectShouldShowCategoryViewTabs', () => {
     it('returns false while searching', () => {
         const state = buildMailState(inboxElements(CATEGORIES, true));
         expect(selectShouldShowCategoryViewTabs(state)).toBe(false);
+    });
+});
+
+describe('selectCanMoveToCategories', () => {
+    it('returns true in Inbox when not searching', () => {
+        expect(selectCanMoveToCategories(buildMailState(inboxElements(CATEGORIES)))).toBe(true);
+    });
+
+    it('returns true when searching in a category', () => {
+        const state = buildMailState(inboxElements([MAILBOX_LABEL_IDS.CATEGORY_SOCIAL], true));
+        expect(selectCanMoveToCategories(state)).toBe(true);
+    });
+
+    it('returns false when searching outside of a category', () => {
+        const state = buildMailState(
+            elementsState({ params: { labelID: MAILBOX_LABEL_IDS.ALL_MAIL, isSearching: true } })
+        );
+        expect(selectCanMoveToCategories(state)).toBe(false);
+    });
+
+    it('returns false outside of Inbox', () => {
+        const state = buildMailState(elementsState({ params: { labelID: MAILBOX_LABEL_IDS.DRAFTS } }));
+        expect(selectCanMoveToCategories(state)).toBe(false);
     });
 });
 

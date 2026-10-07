@@ -11,7 +11,7 @@ describe('MoveToFolderDropdownHelper', () => {
                 getInboxCategoriesItems({
                     selectAll: false,
                     canMoveToInbox: false,
-                    shouldShowTabs: false,
+                    canMoveToCategories: false,
                     activeCategoriesTabs: [],
                 })
             ).toEqual([]);
@@ -21,7 +21,7 @@ describe('MoveToFolderDropdownHelper', () => {
             const res = getInboxCategoriesItems({
                 selectAll: false,
                 canMoveToInbox: true,
-                shouldShowTabs: false,
+                canMoveToCategories: false,
                 activeCategoriesTabs: [
                     {
                         id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
@@ -47,7 +47,7 @@ describe('MoveToFolderDropdownHelper', () => {
             const res = getInboxCategoriesItems({
                 selectAll: false,
                 canMoveToInbox: true,
-                shouldShowTabs: true,
+                canMoveToCategories: true,
                 activeCategoriesTabs: [
                     {
                         id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
@@ -70,7 +70,7 @@ describe('MoveToFolderDropdownHelper', () => {
                 const res = getInboxCategoriesItems({
                     selectAll: false,
                     canMoveToInbox: true,
-                    shouldShowTabs: true,
+                    canMoveToCategories: true,
                     activeCategoriesTabs: [
                         {
                             id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
@@ -90,7 +90,7 @@ describe('MoveToFolderDropdownHelper', () => {
                 const res = getInboxCategoriesItems({
                     selectAll: true,
                     canMoveToInbox: true,
-                    shouldShowTabs: true,
+                    canMoveToCategories: true,
                     activeCategoriesTabs: [
                         {
                             id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
@@ -110,7 +110,7 @@ describe('MoveToFolderDropdownHelper', () => {
                 const res = getInboxCategoriesItems({
                     selectAll: true,
                     canMoveToInbox: true,
-                    shouldShowTabs: true,
+                    canMoveToCategories: true,
                     activeCategoriesTabs: [],
                 });
 
@@ -121,7 +121,7 @@ describe('MoveToFolderDropdownHelper', () => {
                 const res = getInboxCategoriesItems({
                     selectAll: true,
                     canMoveToInbox: true,
-                    shouldShowTabs: false,
+                    canMoveToCategories: false,
                     activeCategoriesTabs: [],
                 });
 
