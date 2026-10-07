@@ -87,7 +87,7 @@ export const ArtifactChip = ({ artifact, messageId }: CompleteChipProps) => {
 
     const handleOpen = () => {
         if (versionIndex !== null) {
-            openArtifact(artifact.id, versionIndex);
+            openArtifact(artifact.id, versionIndex, 'chip');
         }
     };
 

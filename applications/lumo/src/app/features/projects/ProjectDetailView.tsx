@@ -23,8 +23,9 @@ import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { applyRetentionPolicy, groupConversationsByDate } from '../../layouts/sidepanel/helpers';
+import { ArtifactCreationProvider } from '../../providers/ArtifactCreationProvider';
 import { ModelTierProvider } from '../../providers/ModelTierProvider';
-import { WebSearchProvider, useWebSearch } from '../../providers/WebSearchProvider';
+import { WebSearchProvider } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import {
     selectAttachmentsBySpaceId,
@@ -110,7 +111,6 @@ const ProjectDetailViewInner = () => {
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
 
     const { createConversationInProject, deleteProject } = useProjectActions();
-    const { isWebSearchButtonToggled } = useWebSearch();
 
     // Sync space data when navigating to a project to ensure we have the latest state
     // This ensures project-level data (files, settings, linked folders) stays in sync across browsers
@@ -127,7 +127,7 @@ const ProjectDetailViewInner = () => {
     }, [driveBrowserModal]);
 
     const handleSendInProject = useCallback<HandleSendMessage>(
-        async (content, webSearchEnabled, imageOptions, artifactModeActive) => {
+        async (content, webSearchEnabled, imageOptions) => {
             try {
                 if (!content.trim() && provisionalAttachments.length === 0) {
                     console.log('Empty content, skipping send');
@@ -183,7 +183,7 @@ const ProjectDetailViewInner = () => {
                             enableImageTools: ffImageTools,
                             enableSmoothing: ffSmoothRendering,
                             imageAspectRatio: imageOptions?.aspectRatio,
-                            canvasModeActive: artifactModeActive ?? false,
+                            canvasModeActive: false,
                         },
                         settingsContext: {
                             personalization,
@@ -210,7 +210,12 @@ const ProjectDetailViewInner = () => {
             provisionalAttachments,
             createConversationInProject,
             history,
-            isWebSearchButtonToggled,
+            ffExternalTools,
+            ffImageTools,
+            ffSmoothRendering,
+            ffArtifactsView,
+            ffVisualizationInstructions,
+            personalization,
         ]
     );
 
@@ -459,9 +464,11 @@ const ProjectDetailViewInner = () => {
 export const ProjectDetailView = () => {
     return (
         <WebSearchProvider>
-            <ModelTierProvider>
-                <ProjectDetailViewInner />
-            </ModelTierProvider>
+            <ArtifactCreationProvider>
+                <ModelTierProvider>
+                    <ProjectDetailViewInner />
+                </ModelTierProvider>
+            </ArtifactCreationProvider>
         </WebSearchProvider>
     );
 };

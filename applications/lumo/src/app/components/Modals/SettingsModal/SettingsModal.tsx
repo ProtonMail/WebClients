@@ -29,6 +29,7 @@ import { selectSpaceMap } from '../../../redux/slices/core/spaces';
 import { SearchService } from '../../../services/search/searchService';
 import type { Conversation, Message, SpaceId } from '../../../types';
 import { LumoSettingsUpsellSection } from '../../../upsells/composed/LumoSettingsUpsellSection';
+import { sendArtifactCreationDefaultChangedEvent } from '../../../util/telemetry';
 import { getInitials } from '../../../util/username';
 import LumoThemeButton from '../../Buttons/LumoThemeButton';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
@@ -176,13 +177,17 @@ const AppearanceSettingsPanel = () => {
 
 /** General settings panel for authenticated users */
 const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
-    const { externalTools: isLumoToolingEnabled, visualizationInstructions: isVisualizationInstructionsEnabled } =
-        useLumoFlags();
+    const {
+        externalTools: isLumoToolingEnabled,
+        artifactsView: isArtifactsViewEnabled,
+        visualizationInstructions: isVisualizationInstructionsEnabled,
+    } = useLumoFlags();
     const [user] = useUser();
     const userId = user?.ID;
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
     const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
+    const automaticArtifactCreation = lumoUserSettings.automaticArtifactCreation ?? true;
     const visualizationInstructionsEnabled = lumoUserSettings.isVisualizationInstructionsEnabled ?? true;
 
     // Index management state
@@ -296,6 +301,29 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                             onChange={() => {
                                 updateSettings({
                                     automaticWebSearch: !automaticWebSearch,
+                                    _autoSave: true,
+                                });
+                            }}
+                        />
+                    }
+                />
+            )}
+
+            {isArtifactsViewEnabled && (
+                <SettingsSectionItem
+                    icon="FileText"
+                    text={c('collider_2025: Title').t`Automatic Create Artifact`}
+                    subtext={c('collider_2025: Description')
+                        .t`Allow ${LUMO_SHORT_APP_NAME} to create artifacts in the side panel when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.`}
+                    button={
+                        <Toggle
+                            id="automatic-artifact-creation-toggle"
+                            checked={automaticArtifactCreation}
+                            onChange={() => {
+                                const enabled = !automaticArtifactCreation;
+                                sendArtifactCreationDefaultChangedEvent(enabled);
+                                updateSettings({
+                                    automaticArtifactCreation: enabled,
                                     _autoSave: true,
                                 });
                             }}
