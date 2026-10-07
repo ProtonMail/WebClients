@@ -1880,6 +1880,15 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Add users": [
+        "Tambahkan pengguna"
+      ],
+      "Migrate": [
+        "Migrasi"
+      ],
+      "View guide": [
+        "Lihat panduan"
       ]
     },
     "action": {
@@ -3195,6 +3204,12 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Amount due": [
+        "Jumlah yang dibayar"
+      ],
+      "Summary": [
+        "Ringkasan"
       ]
     },
     "Collapsible tooltip": {
@@ -8598,6 +8613,9 @@
       ],
       "Your plan": [
         "Paket Anda"
+      ],
+      "Downloads": [
+        "Unduhan"
       ]
     },
     "Hint": {
@@ -8965,6 +8983,12 @@
       ],
       "Undo in progress": [
         "Pembatalan sedang berlangsung"
+      ],
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Import type": {
@@ -12699,6 +12723,15 @@
       ],
       "Zoom meeting": [
         "Rapat Zoom"
+      ],
+      "All admins": [
+        "Semua admin"
+      ],
+      "On Ubuntu?": [
+        "Di Ubuntu?"
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "info": {
@@ -12837,6 +12870,9 @@
       ],
       "Void": [
         "Batal"
+      ],
+      "Open": [
+        "Buka"
       ]
     },
     "Invoice type display as badge": {
@@ -14929,6 +14965,18 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Beta": [
+        "Beta"
+      ],
+      "Client": [
+        "Klien"
+      ],
+      "Mail": [
+        "Surat"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
       ]
     },
     "label": {
@@ -15354,6 +15402,9 @@
       ],
       "What’s this?": [
         "Apa ini?"
+      ],
+      "Snap store": [
+        "Snap store"
       ]
     },
     "Link (Scribe)": {
@@ -21876,6 +21927,9 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Konfigurasi SSO Anda akan dihapus."
+      ],
+      "Signing in": [
+        "Masuk"
       ]
     },
     "sso: auth device state": {
@@ -21904,6 +21958,9 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Membatalkan langganan Anda, mohon menunggu"
+      ],
+      "Enabled": [
+        "Diaktifkan"
       ]
     },
     "Status": {
@@ -21969,6 +22026,9 @@
       ],
       "Verify ${ value }": [
         "Verifikasi ${ value }"
+      ],
+      "Activated": [
+        "Diaktifkan"
       ]
     },
     "Step in filter modal": {
@@ -23070,6 +23130,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25138,6 +25201,18 @@
       ],
       "Your subscriptions": [
         "Langganan Anda"
+      ],
+      "Final step": [
+        "Langkah terakhir"
+      ],
+      "Need help?": [
+        "Perlu bantuan?"
+      ],
+      "Privacy": [
+        "Privasi"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25235,6 +25310,12 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Billing": [
+        "Pembayaran"
+      ],
+      "Start date": [
+        "Tanggal mulai"
       ]
     },
     "Title; create calendar modal": {
@@ -26060,6 +26141,15 @@
       ],
       "Writing assistant": [
         "Asisten penulisan"
+      ],
+      "Invited": [
+        "Diundang"
+      ],
+      "Pending": [
+        "Tertunda"
+      ],
+      "Requested": [
+        "Diminta"
       ]
     },
     "Validation": {
@@ -26651,6 +26741,94 @@
       ],
       "Yearly, ${ untilString }": [
         "Tahunan, ${ untilString }"
+      ]
+    },
+    "account_search_index": {
+      "Allow list": [
+        "Daftar izin"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Audit log": [
+        "Log audit"
+      ],
+      "Catch-all": [
+        "Tangkap-semua"
+      ],
+      "Dark mode": [
+        "Mode gelap"
+      ],
+      "Inbox tabs": [
+        "Tab kotak masuk"
+      ],
+      "Light mode": [
+        "Mode terang"
+      ],
+      "Play Store": [
+        "Play Store"
+      ],
+      "Telemetry": [
+        "Telemetri"
+      ]
+    },
+    "Billing type": {
+      "Prepaid": [
+        "Prabayar"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
+    "Members table usage": {
+      "Yesterday": [
+        "Kemarin"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
+    "organization key reset": {
+      "Reset key": [
+        "Atur ulang kunci"
+      ],
+      "See users": [
+        "Lihat pengguna"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
+      ]
+    },
+    "Step": {
+      "Final step": [
+        "Langkah terakhir"
       ]
     }
   }

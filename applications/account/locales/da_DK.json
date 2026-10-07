@@ -2305,6 +2305,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Got it, connect my Gmail": [
+        "Forstået, forbind min Gmail"
+      ],
+      "Learn how this works": [
+        "Forstå hvordan det fungerer"
       ]
     },
     "action": {
@@ -2436,6 +2442,12 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentpladser"
+      ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisationer med tilføjelsen Managed Service Provider kan oprette og administrere underorganisationer."
       ]
     },
     "Address action": {
@@ -2579,6 +2591,18 @@
       ],
       "User admin:": [
         "Brugeradmin:"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Tildel administratorroller til grupper. Administrer adgang for mange brugere på én gang, og opdater den automatisk, når folk tilmelder sig eller går."
+      ],
+      "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
+        "Tildel specifikke administratorroller. Giv hver administrator kun den adgang, de har brug for så virkningen af kompromitterede konti og utilsigtede fejl begrænses."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "Vælg mellem tre nye administratorroller. Hver administrator modtager kun den adgang, de har brug for."
+      ],
+      "Choose from two new admin roles. Each admin receives only the access they need.": [
+        "Vælg mellem to nye administratorroller. Hver administrator modtager kun den adgang, de har brug for."
       ]
     },
     "Alert": {
@@ -2802,6 +2826,12 @@
       ],
       "You have reached the trial limit.": [
         "Du har nået grænsen for prøveversionen."
+      ],
+      "Up to ${ TRIAL_MAX_USERS } users, during the trial period": [
+        "Op til ${ TRIAL_MAX_USERS } brugere i prøveperioden"
+      ],
+      "Your trial ends on ${ trialEndDate }. Add a payment method whenever you’re ready to keep using all ${ planTitle } features. You’ll only be charged once it’s added.": [
+        "Din prøveperiode slutter den ${ trialEndDate }. Tilføj en betalingsmetode så snart du er klar til at fortsætte med at bruge alle funktionerne i ${ planTitle }. Du bliver først opkrævet, når den er tilføjet."
       ]
     },
     "b2b_trials_Action": {
@@ -3280,6 +3310,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } skrivebordsapp"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } skrivebordsapp"
       ]
     },
     "Bug category": {
@@ -3424,6 +3457,9 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importer ældre beskeder i indstillingerne for ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ],
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Dine nyeste e-mails bliver importeret først. E-mails, du allerede har importeret, kopieres ikke igen."
       ]
     },
     "Calendar access select label": {
@@ -9497,6 +9533,9 @@
       ],
       "Username": [
         "Brugernavn"
+      ],
+      "Good to know before you connect": [
+        "Nyttigt at vide før du forbinder"
       ]
     },
     "Header for addresses table": {
@@ -14309,6 +14348,27 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** bruges også til at logge ind på en separat ${ BRAND_NAME }-konto, udenfor ${ MAIL_APP_NAME }."
+      ],
+      "Here's what happens when you continue:": [
+        "Dette sker når du fortsætter:"
+      ],
+      "Next time you sign in to your other account": [
+        "Næste gang du logger ind på din anden konto"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Intet ændrer sig i din anden ${ BRAND_NAME }-konto."
+      ],
+      "You'll choose a new username": [
+        "Du vælger et nyt brugernavn"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Du vil bruge den til, at logge ind fremover. Det er den eneste ændring."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Din Gmail forbindes til denne ${ MAIL_APP_NAME }-adresse"
       ]
     },
     "info": {
@@ -16682,6 +16742,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Start with your most recent messages": [
+        "Start med dine seneste beskeder"
       ]
     },
     "label": {
