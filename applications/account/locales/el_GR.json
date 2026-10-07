@@ -3310,6 +3310,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Bug category": {
@@ -3454,6 +3457,9 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Τα διπλότυπα από προηγούμενες εισαγωγές θα παραλειφθούν. Αναιρέστε ή εισαγάγετε παλαιότερα μηνύματα στις ρυθμίσεις ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ],
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Τα πιο πρόσφατα ηλεκτρονικά μηνύματά σας θα εισαχθούν πρώτα. Τα ηλεκτρονικά μηνύματα που έχετε ήδη εισαγάγει δε θα αντιγραφούν ξανά."
       ]
     },
     "Calendar access select label": {

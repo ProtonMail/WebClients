@@ -2305,6 +2305,12 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Got it, connect my Gmail": [
+        "Am înțeles, conectez contul Gmail"
+      ],
+      "Learn how this works": [
+        "Aflați cum funcționează"
       ]
     },
     "action": {
@@ -2447,6 +2453,12 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "Managed Service Provider": [
+        "Furnizor de servicii gestionate"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizațiile care dispun de modulul „Furnizor de servicii gestionate” pot crea și gestiona organizații subsidiare."
       ]
     },
     "Address action": {
@@ -2590,6 +2602,18 @@
       ],
       "User admin:": [
         "Administrator utilizatori:"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Atribuiți roluri de administrator grupurilor. Gestionați accesul pentru mai mulți utilizatori simultan și actualizați-l automat atunci când aceștia se alătură grupului sau îl părăsesc."
+      ],
+      "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
+        "Atribuiți roluri administrative specifice. Oferiți fiecărui administrator doar accesul necesar, pentru a limita impactul conturilor compromise și al erorilor accidentale."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "Alegeți dintre trei noi roluri de administrator. Fiecare administrator primește doar accesul de care are nevoie."
+      ],
+      "Choose from two new admin roles. Each admin receives only the access they need.": [
+        "Alegeți dintre două noi roluri de administrator. Fiecare administrator primește doar accesul de care are nevoie."
       ]
     },
     "Alert": {
@@ -2814,6 +2838,12 @@
       ],
       "You have reached the trial limit.": [
         "Ați atins limita perioadei de evaluare."
+      ],
+      "Up to ${ TRIAL_MAX_USERS } users, during the trial period": [
+        "Până la ${ TRIAL_MAX_USERS } utilizatori, pe durata perioadei de probare"
+      ],
+      "Your trial ends on ${ trialEndDate }. Add a payment method whenever you’re ready to keep using all ${ planTitle } features. You’ll only be charged once it’s added.": [
+        "Perioada de probare se încheie la ${ trialEndDate }. Adăugați o metodă de plată oricând doriți pentru a continua să utilizați toate funcțiile din ${ planTitle }. Taxarea se aplică doar după adăugarea metodei de plată."
       ]
     },
     "b2b_trials_Action": {
@@ -3300,6 +3330,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicați ${ MAIL_APP_NAME } Desktop"
+      ],
+      "${ appName } Desktop application": [
+        "Aplicația desktop ${ appName }"
       ]
     },
     "Bug category": {
@@ -3444,6 +3477,9 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Duplicatele din importările anterioare vor fi omise. Anulați sau importați mesajele mai vechi în setările din ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ],
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Cele mai recente e-mailuri vor fi importate primele. Cele importate deja nu vor mai fi copiate."
       ]
     },
     "Calendar access select label": {
@@ -9567,6 +9603,9 @@
       ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "Good to know before you connect": [
+        "Bine de știut înainte de conectare"
       ]
     },
     "Header for addresses table": {
@@ -14455,6 +14494,27 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** este utilizată și pentru a vă conecta la un cont ${ BRAND_NAME } separat, din afara ${ MAIL_APP_NAME }."
+      ],
+      "Here's what happens when you continue:": [
+        "Iată ce se va întâmpla după ce continuați:"
+      ],
+      "Next time you sign in to your other account": [
+        "Data viitoare când vă conectați la celălalt cont"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Nimic nu se schimbă în celălalt cont al ${ BRAND_NAME }."
+      ],
+      "You'll choose a new username": [
+        "Veți alege un nume de utilizator nou."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "O veți folosi pentru a vă autentifica în viitor. Aceasta este singura schimbare."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Contul Gmail vi se conectează la această adresă ${ MAIL_APP_NAME }."
       ]
     },
     "info": {
@@ -16837,6 +16897,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Start with your most recent messages": [
+        "Începeți cu cele mai recente mesaje personale"
       ]
     },
     "label": {

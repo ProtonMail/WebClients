@@ -2390,6 +2390,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Namizna aplikacija"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Namizna aplikacija"
       ]
     },
     "Bug category": {
@@ -12275,6 +12278,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Start with your most recent messages": [
+        "Začnite z najnovejšimi sporočili"
       ]
     },
     "label": {
@@ -21397,6 +21403,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Letno, ${ untilString }"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Najprej bodo uvožene vaša najnovejše e-poštna sporočila. Tista, ki ste jih že uvozili, se ne bodo ponovno kopirala."
       ]
     }
   }
