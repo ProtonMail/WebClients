@@ -905,6 +905,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Anda tidak dapat mengirim file vCard ke lebih dari ${ maxAttachments } kontak"
+      ],
+      "Migrate": [
+        "Migrasi"
       ]
     },
     "Actions message": {
@@ -3976,6 +3979,12 @@
       ],
       "Migrated": [
         "Dimigrasikan"
+      ],
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Import warning": {
@@ -5168,6 +5177,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "info": {
@@ -5615,6 +5627,9 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak tepercaya)"
+      ],
+      "Client": [
+        "Klien"
       ]
     },
     "Label for contact group color": {
@@ -8482,6 +8497,9 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "TableHeader": {
@@ -9449,6 +9467,42 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uji coba Anda akan berakhir pada ${ textDate }. Anda tidak akan dikenakan biaya apabila Anda membatalkan sebelum ${ textDate }. ${ action }"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
       ]
     }
   }
