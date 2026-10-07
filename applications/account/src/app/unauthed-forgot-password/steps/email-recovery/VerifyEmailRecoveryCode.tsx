@@ -8,7 +8,11 @@ import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { ResetCodeForm } from '../../components/ResetCodeForm';
-import { selectRedactedRecoveryEmail, selectUsername } from '../../state-machine/UnauthedForgotPasswordStateMachine';
+import {
+    selectEmailAwaitingCode,
+    selectRedactedRecoveryEmail,
+    selectUsername,
+} from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { ForgotPasswordContext } from '../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
@@ -16,6 +20,7 @@ import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 export const VerifyEmailRecoveryCode = ({ onBack }: ForgotPasswordStepProps) => {
     const username = ForgotPasswordContext.useSelector(selectUsername);
     const redactedRecoveryEmail = ForgotPasswordContext.useSelector(selectRedactedRecoveryEmail);
+    const awaitingCode = ForgotPasswordContext.useSelector(selectEmailAwaitingCode);
     const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
 
     const RedactedEmail = <strong key="redacted-recovery-email">{redactedRecoveryEmail}</strong>;
@@ -40,7 +45,7 @@ export const VerifyEmailRecoveryCode = ({ onBack }: ForgotPasswordStepProps) => 
                 </p>
 
                 <p>{getEmailVerificationCodeText(RedactedEmail)}</p>
-                <ResetCodeForm method="email" destination={redactedRecoveryEmail ?? ''} />
+                <ResetCodeForm method="email" destination={redactedRecoveryEmail ?? ''} awaitingCode={awaitingCode} />
             </Content>
         </>
     );
