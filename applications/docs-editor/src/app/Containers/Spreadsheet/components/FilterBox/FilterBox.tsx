@@ -1,6 +1,6 @@
 import { Direction, type CellInterface, type CellPosition, type ScrollCoords } from '@rowsncolumns/grid'
 import { isNil } from '@rowsncolumns/utils'
-import { useState, type ReactElement } from 'react'
+import { useState, type KeyboardEvent, type PointerEvent, type ReactElement } from 'react'
 import type { CanvasGridProps, ConditionType, ConditionValue, FilterView, TableView } from '@rowsncolumns/spreadsheet'
 import * as Ariakit from '@ariakit/react'
 import * as Atoms from '../atoms'
@@ -56,24 +56,36 @@ type FilterBoxProps = Omit<FilterBoxBaseProps, 'filter'> & {
   dimensionIndex?: number
 }
 
+/** The menu's width in px: 17rem by default, up to 40rem, never past the space it's given. */
+const MIN_WIDTH = 272
+const MAX_WIDTH = 640
+const WIDTH_STEP = 16
+/** Kept while the sheet is open, so the menu reopens at the width someone dragged it to. */
+let lastWidth = MIN_WIDTH
+
 export function FilterBox(props: FilterBoxProps) {
   const { isOpen, onOpenChange, x, y, dimensionIndex } = props
   const popover = Ariakit.usePopoverStore({
     open: isOpen,
     setOpen: onOpenChange,
   })
+  const [width, setWidthState] = useState(lastWidth)
+  const setWidth = (next: number) => {
+    lastWidth = Math.round(Math.min(Math.max(next, MIN_WIDTH), MAX_WIDTH))
+    setWidthState(lastWidth)
+  }
 
   return (
     <div className="absolute left-0 top-0" style={{ transform: `translate3d(${x}px, ${y}px, 0)` }}>
       <Ariakit.PopoverProvider store={popover} placement="bottom-start">
         <Ariakit.PopoverDisclosure className="bg-transparent absolute left-0 top-0 m-0 h-0 w-0 overflow-hidden border-none p-0 shadow-none" />
         <Atoms.DropdownPopover
-          render={
-            <Ariakit.Popover gutter={8} className="z-10 flex min-h-0 min-w-[17rem] flex-col" portal unmountOnHide />
-          }
+          render={<Ariakit.Popover gutter={8} className="relative z-10 flex min-h-0 flex-col" portal unmountOnHide />}
+          style={{ width }}
           onContextMenu={(e) => e.stopPropagation()}
         >
           {props.filter && !isNil(dimensionIndex) ? <FilterBoxContent {...(props as FilterBoxContentProps)} /> : null}
+          <ResizeHandle width={width} onResize={setWidth} />
         </Atoms.DropdownPopover>
       </Ariakit.PopoverProvider>
     </div>
@@ -213,6 +225,52 @@ function FilterBoxContent({
   )
 }
 
+/**
+ * The menu's right edge: drag it (or use the arrow keys) to widen the menu so
+ * long values fit. Double-click puts it back to the default width. The menu
+ * hangs from its left edge, so only the right edge moves.
+ */
+function ResizeHandle({ width, onResize }: { width: number; onResize: (width: number) => void }) {
+  const onPointerDown = (e: PointerEvent<HTMLButtonElement>) => {
+    if (e.button !== 0) {
+      return
+    }
+    e.preventDefault()
+    const handle = e.currentTarget
+    handle.setPointerCapture(e.pointerId)
+    const startX = e.clientX
+    const startWidth = width
+    const onMove = (move: globalThis.PointerEvent) => onResize(startWidth + move.clientX - startX)
+    const onUp = () => {
+      handle.removeEventListener('pointermove', onMove)
+      handle.removeEventListener('pointerup', onUp)
+      handle.removeEventListener('pointercancel', onUp)
+    }
+    handle.addEventListener('pointermove', onMove)
+    handle.addEventListener('pointerup', onUp)
+    handle.addEventListener('pointercancel', onUp)
+  }
+  const onKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
+    const step = { ArrowLeft: -WIDTH_STEP, ArrowRight: WIDTH_STEP }[e.key]
+    if (step) {
+      e.preventDefault()
+      onResize(width + step)
+    }
+  }
+  return (
+    <button
+      type="button"
+      aria-label={s('Resize filter menu')}
+      onPointerDown={onPointerDown}
+      onKeyDown={onKeyDown}
+      onDoubleClick={() => onResize(MIN_WIDTH)}
+      className="group absolute inset-y-0 right-0 m-0 flex w-2 cursor-ew-resize touch-none items-center justify-center border-0 p-0 [background:transparent] focus:outline-none"
+    >
+      <span className="h-8 w-[.1875rem] rounded-full bg-[--border-norm] transition-colors duration-150 ease-out group-hover:bg-[--text-hint] group-focus-visible:bg-[--text-hint] group-active:bg-[--text-weak]" />
+    </button>
+  )
+}
+
 function strings() {
   return {
     Copy: c('sheets_2025:Spreadsheet filter menu').t`Copy`,
@@ -224,5 +282,6 @@ function strings() {
     'Sort Z → A': c('sheets_2025:Spreadsheet filter menu').t`Sort Z → A`,
     Apply: c('sheets_2025:Spreadsheet filter menu').t`Apply`,
     Cancel: c('sheets_2025:Spreadsheet filter menu').t`Cancel`,
+    'Resize filter menu': c('sheets_2025:Spreadsheet filter menu').t`Resize filter menu`,
   }
 }
