@@ -2,7 +2,6 @@ import { cancellationFlow } from './cancellation-flow';
 import type { CouponConfig } from './interface';
 import { monthlyNudgeConfig } from './monthlyNudge';
 import { porkbunConfig } from './porkbun';
-import { q3Sale2026Config } from './q3Sale2026';
 import { tryDuo2026Config } from './tryDuo2026';
 import { tryMailPlus0724Config } from './tryMailPlus0724';
 import { tryMailPlus0926Config } from './tryMailPlus0926';
@@ -12,7 +11,6 @@ import { vpn15mConfig } from './vpn15m';
 export const defaultCouponConfigs: CouponConfig[] = [
     monthlyNudgeConfig,
     vpn15mConfig,
-    q3Sale2026Config,
     cancellationFlow,
     tryMailPlus0724Config,
     tryMailPlus0926Config,
