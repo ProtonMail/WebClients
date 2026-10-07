@@ -129,10 +129,16 @@ describe('unlimitedToDuoDiscounted eligibility', () => {
         expect(getIsEligible({ ...baseProps, user, subscription: buildSubscription() })).toBe(false);
     });
 
-    it.each(['proton-mail', 'proton-calendar', 'proton-drive'])('should be eligible in %s', (appName) => {
-        const protonConfig = appConfig(appName);
+    it('should be eligible in proton-mail', () => {
+        const protonConfig = appConfig('proton-mail');
 
         expect(getIsEligible({ ...baseProps, protonConfig, subscription: buildSubscription() })).toBe(true);
+    });
+
+    it.each(['proton-calendar', 'proton-drive'])('should not be eligible in %s', (appName) => {
+        const protonConfig = appConfig(appName);
+
+        expect(getIsEligible({ ...baseProps, protonConfig, subscription: buildSubscription() })).toBe(false);
     });
 
     it('should be eligible in the account app when reached from an eligible product', () => {
@@ -142,7 +148,7 @@ describe('unlimitedToDuoDiscounted eligibility', () => {
             getIsEligible({
                 ...baseProps,
                 protonConfig,
-                pathname: '/calendar/dashboard',
+                pathname: '/mail/dashboard',
                 subscription: buildSubscription(),
             })
         ).toBe(true);
@@ -155,7 +161,7 @@ describe('unlimitedToDuoDiscounted eligibility', () => {
             getIsEligible({
                 ...baseProps,
                 protonConfig,
-                pathname: '/docs/dashboard',
+                pathname: '/drive/dashboard',
                 subscription: buildSubscription(),
             })
         ).toBe(false);

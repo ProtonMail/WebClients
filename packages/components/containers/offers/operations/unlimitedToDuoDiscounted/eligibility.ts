@@ -16,7 +16,7 @@ import { getDaysSincePeriodStart, isInOfferWindow } from './offerWindow';
 
 const ELIGIBLE_CYCLES: CYCLE[] = [CYCLE.YEARLY, CYCLE.TWO_YEARS];
 
-const ELIGIBLE_APPS = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE]);
+const ELIGIBLE_APPS = new Set<APP_NAMES>([APPS.PROTONMAIL]);
 
 const isEligibleApp = (protonConfig: ProtonConfig, pathname: string): boolean => {
     const { APP_NAME } = protonConfig;
@@ -32,7 +32,7 @@ const isEligibleApp = (protonConfig: ProtonConfig, pathname: string): boolean =>
 
 /**
  * Targets Unlimited subscribers on a yearly or two-yearly web plan who are approaching renewal,
- * offering Duo 12M at a discount. Runs in Mail, Calendar and Drive.
+ * offering Duo 12M at a discount. Runs in Mail only.
  */
 export function getIsEligible({
     user,
