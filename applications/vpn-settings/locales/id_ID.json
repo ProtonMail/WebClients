@@ -1318,6 +1318,12 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Migrate": [
+        "Migrasi"
+      ],
+      "View guide": [
+        "Lihat panduan"
       ]
     },
     "action": {
@@ -2079,6 +2085,12 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Amount due": [
+        "Jumlah yang dibayar"
+      ],
+      "Summary": [
+        "Ringkasan"
       ]
     },
     "Collapsible tooltip": {
@@ -6357,6 +6369,12 @@
       ],
       "Migrated": [
         "Dimigrasikan"
+      ],
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Import warning": {
@@ -9124,6 +9142,9 @@
       ],
       "Zoom meeting": [
         "Rapat Zoom"
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "info": {
@@ -9242,6 +9263,9 @@
       ],
       "Void": [
         "Batal"
+      ],
+      "Open": [
+        "Buka"
       ]
     },
     "Invoice type display as badge": {
@@ -10286,6 +10310,12 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Client": [
+        "Klien"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15272,6 +15302,9 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Konfigurasi SSO Anda akan dihapus."
+      ],
+      "Signing in": [
+        "Masuk"
       ]
     },
     "sso: auth device state": {
@@ -15300,6 +15333,9 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Membatalkan langganan Anda, mohon menunggu"
+      ],
+      "Enabled": [
+        "Diaktifkan"
       ]
     },
     "Status": {
@@ -16273,6 +16309,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "TableHeader": {
@@ -17740,6 +17779,9 @@
       ],
       "Your subscriptions": [
         "Langganan Anda"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Title for payment methods table": {
@@ -17803,6 +17845,12 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Billing": [
+        "Pembayaran"
+      ],
+      "Start date": [
+        "Tanggal mulai"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -18417,6 +18465,15 @@
       ],
       "Writing assistant": [
         "Asisten penulisan"
+      ],
+      "Invited": [
+        "Diundang"
+      ],
+      "Pending": [
+        "Tertunda"
+      ],
+      "Requested": [
+        "Diminta"
       ]
     },
     "Validation": {
@@ -18694,6 +18751,77 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Setelah verifikasi berhasil, jangan hapus catatan TXT ini karena diperlukan untuk mengonfirmasi bahwa Anda terus memiliki domain tersebut."
+      ]
+    },
+    "account_search_index": {
+      "Allow list": [
+        "Daftar izin"
+      ],
+      "Audit log": [
+        "Log audit"
+      ],
+      "Dark mode": [
+        "Mode gelap"
+      ],
+      "Light mode": [
+        "Mode terang"
+      ],
+      "Telemetry": [
+        "Telemetri"
+      ]
+    },
+    "Billing type": {
+      "Prepaid": [
+        "Prabayar"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
+    "Members table usage": {
+      "Yesterday": [
+        "Kemarin"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
+    "organization key reset": {
+      "Reset key": [
+        "Atur ulang kunci"
+      ],
+      "See users": [
+        "Lihat pengguna"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
       ]
     }
   }

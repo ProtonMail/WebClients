@@ -1584,6 +1584,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Got it, connect my Gmail": [
+        "Jag förstår, anslut min Gmail"
+      ],
+      "Learn how this works": [
+        "Lär dig hur detta fungerar"
       ]
     },
     "action": {
@@ -10034,6 +10040,18 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
+      ],
+      "Here's what happens when you continue:": [
+        "Här är vad som händer när du fortsätter:"
+      ],
+      "Next time you sign in to your other account": [
+        "Nästa gång du loggar in på ditt andra konto"
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Din Gmail ansluter till denna ${ MAIL_APP_NAME }-adress"
       ]
     },
     "info": {
@@ -13351,6 +13369,9 @@
       ],
       "Your subscription renews soon": [
         "Din prenumeration förnyas snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sista chansen att få din första månad med ${ plan } till detta pris."
       ]
     },
     "Offer fearue": {
@@ -14097,6 +14118,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ]
     },
     "Payments.Error": {
