@@ -15,6 +15,7 @@ import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import {
+    selectBackWaits,
     selectResetResponse,
     selectSubmitting,
     selectUsername,
@@ -33,6 +34,8 @@ export const EnterMnemonicPhrase = ({ onBack }: ForgotPasswordStepProps) => {
 
     // The machine checks the phrase
     const loading = ForgotPasswordContext.useSelector(selectSubmitting);
+    // While the phrase is checked, skipping it waits, as the machine does
+    const skipWaits = ForgotPasswordContext.useSelector(selectBackWaits);
     const hasInvalidMnemonic = mnemonic && mnemonicValidation.filter(isTruthy);
 
     const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
@@ -86,7 +89,14 @@ export const EnterMnemonicPhrase = ({ onBack }: ForgotPasswordStepProps) => {
                         {c('Action').t`Reset password`}
                     </Button>
 
-                    <Button size="large" fullWidth className="mt-2" onClick={() => send({ type: 'decision.skip' })}>
+                    <Button
+                        size="large"
+                        fullWidth
+                        className="mt-2"
+                        disabled={skipWaits}
+                        noDisabledStyles={skipWaits}
+                        onClick={() => send({ type: 'decision.skip' })}
+                    >
                         {hasInvalidMnemonic.length > 0
                             ? c('Action').t`Try another way`
                             : c('Action').t`I don't have my phrase`}

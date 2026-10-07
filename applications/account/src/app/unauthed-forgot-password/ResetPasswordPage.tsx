@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -12,12 +12,14 @@ import type { OnLoginCallback } from '../content/authSession';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import { useResetPasswordTelemetry } from '../reset/resetPasswordTelemetry';
+import type { SignInLocationState } from '../sign-in/SignInContainer';
 import { type MetaTags, useMetaTags } from '../useMetaTags';
 import { UnauthedForgotPasswordWizard } from './UnauthedForgotPasswordWizard';
 import {
     selectCanGoBack,
     selectHideReturnToSignIn,
     selectOnEntry,
+    selectUsername,
 } from './state-machine/UnauthedForgotPasswordStateMachine';
 import { useForgotPasswordMachine } from './useForgotPasswordMachine';
 import { ForgotPasswordContext } from './wizard/ForgotPasswordContext';
@@ -39,22 +41,20 @@ const ResetPasswordLayout = ({
     onReturnToSignIn,
 }: {
     toApp: APP_NAMES | undefined;
-    onReturnToSignIn: () => void;
+    /** With the username the user gave, for the sign-in form to start with. */
+    onReturnToSignIn: (username: string) => void;
 }) => {
     const actorRef = ForgotPasswordContext.useActorRef();
     const onEntry = ForgotPasswordContext.useSelector(selectOnEntry);
     const canGoBack = ForgotPasswordContext.useSelector(selectCanGoBack);
     const hideReturnToSignIn = ForgotPasswordContext.useSelector(selectHideReturnToSignIn);
+    const username = ForgotPasswordContext.useSelector(selectUsername);
 
     const errorHandler = useErrorHandler();
-    const errorHandlerRef = useRef(errorHandler);
-    useLayoutEffect(() => {
-        errorHandlerRef.current = errorHandler;
-    });
     useEffect(() => {
-        const subscription = actorRef.on('error', ({ error }) => errorHandlerRef.current(error));
+        const subscription = actorRef.on('error', ({ error }) => errorHandler(error));
         return () => subscription.unsubscribe();
-    }, [actorRef]);
+    }, [actorRef, errorHandler]);
 
     // Back, only where the step has somewhere to go back to: the page shows it on small screens, the step's heading on
     // larger ones
@@ -67,7 +67,13 @@ const ResetPasswordLayout = ({
             </Main>
             {!hideReturnToSignIn && (
                 <div className="text-center">
-                    <Button size="large" color="norm" shape="ghost" className="mt-2" onClick={onReturnToSignIn}>
+                    <Button
+                        size="large"
+                        color="norm"
+                        shape="ghost"
+                        className="mt-2"
+                        onClick={() => onReturnToSignIn(username)}
+                    >
                         {c('Action').t`Return to sign-in`}
                     </Button>
                 </div>
@@ -88,7 +94,10 @@ export const ResetPasswordPage = ({
 }: Props) => {
     useMetaTags(metaTags);
     const history = useHistory();
-    const redirectToSignIn = () => history.push(loginUrl);
+    const redirectToSignIn = (username?: string) => {
+        const state: SignInLocationState | undefined = username ? { username } : undefined;
+        history.push(loginUrl, state);
+    };
     const { sendResetPasswordPageLoad, sendResetPasswordPageExit } = useResetPasswordTelemetry({ variant: 'B' });
     const machine = useForgotPasswordMachine({
         onPreSubmit,

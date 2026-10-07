@@ -31,6 +31,11 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import type { AuthFlows, AuthSession } from '../content/authSession';
+import {
+    NoKeysDecryptedUsingPhraseError,
+    SignInAfterResetError,
+    rethrowResetKeysError,
+} from './state-machine/forgotPasswordErrors';
 
 export interface MnemonicData {
     api: Api;
@@ -83,14 +88,7 @@ export const handleRequestRecoveryMethods = async ({ username, api }: { username
     }
 };
 
-class NoKeysDecryptedUsingPhraseError extends Error {
-    public reason?: string;
-    constructor(reason?: string) {
-        super('No keys were decrypted using the phrase');
-        this.reason = reason;
-    }
-}
-
+/** A phrase that signs in but decrypts none of the keys fails with a `NoKeysDecryptedUsingPhraseError`. */
 export const authMnemonicAndGetKeys = async ({
     username,
     mnemonic,
@@ -179,6 +177,7 @@ export const performPasswordReset = async ({
         supportV6Keys: SupportPgpV6Keys === 1,
     });
 
+    // Only this request uses the reset token, so only it can refuse it
     await srpVerify({
         api,
         credentials: { password: newPassword },
@@ -189,71 +188,76 @@ export const performPasswordReset = async ({
             PrimaryKey: userKeyPayload,
             AddressKeys: addressKeysPayload,
         }),
-    });
+    }).catch(rethrowResetKeysError);
 
-    if (onSKLPublishSuccess) {
-        await onSKLPublishSuccess();
-    }
-
-    const authResponse = await srpAuth({
-        api,
-        credentials: { username, password: newPassword },
-        config: auth({ Username: username }, persistent),
-    }).then((response): Promise<AuthResponse> => response.json());
-    let user = await getUser(api);
-    let keyPassword = passphrase;
-
-    if (user.Keys.length === 0) {
-        if (getRequiresPasswordSetup(user, setupVPN)) {
-            const [domains, addresses] = await Promise.all([
-                api<{ Domains: string[] }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
-                await getAllAddresses(api),
-            ]);
-
-            keyPassword = await handleSetupAddressKeys({
-                api,
-                username,
-                password: newPassword,
-                addresses,
-                domains,
-                preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
-                productParam,
-            });
-            // Refetch the user to update the keys that got generated
-            user = await getUser(api);
+    // The password is changed: from here on, a failure is signing in with it, which the user can still do
+    try {
+        if (onSKLPublishSuccess) {
+            await onSKLPublishSuccess();
         }
+
+        const authResponse = await srpAuth({
+            api,
+            credentials: { username, password: newPassword },
+            config: auth({ Username: username }, persistent),
+        }).then((response): Promise<AuthResponse> => response.json());
+        let user = await getUser(api);
+        let keyPassword = passphrase;
+
+        if (user.Keys.length === 0) {
+            if (getRequiresPasswordSetup(user, setupVPN)) {
+                const [domains, addresses] = await Promise.all([
+                    api<{ Domains: string[] }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
+                    await getAllAddresses(api),
+                ]);
+
+                keyPassword = await handleSetupAddressKeys({
+                    api,
+                    username,
+                    password: newPassword,
+                    addresses,
+                    domains,
+                    preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
+                    productParam,
+                });
+                // Refetch the user to update the keys that got generated
+                user = await getUser(api);
+            }
+        }
+
+        const deviceRecoveryResult = await deviceRecovery({
+            api,
+            keyPassword,
+            persistent,
+            addresses: undefined,
+            user,
+            preAuthKTVerifier,
+        });
+        const trusted = deviceRecoveryResult.trusted;
+        user = deviceRecoveryResult.user;
+
+        const sessionResult = await persistSession({
+            ...authResponse,
+            clearKeyPassword: newPassword,
+            keyPassword,
+            persistent,
+            trusted,
+            User: user,
+            api,
+            source: SessionSource.Proton,
+        });
+
+        await preAuthKTVerifier.preAuthKTCommit(user.ID, api);
+        await resetSelfAudit({ api, ktActivation, user, keyPassword, addressesBeforeReset: addresses });
+
+        return {
+            data: sessionResult,
+            loginPassword: newPassword,
+            flow: 'reset' as AuthFlows,
+        };
+    } catch (error) {
+        throw new SignInAfterResetError(error);
     }
-
-    const deviceRecoveryResult = await deviceRecovery({
-        api,
-        keyPassword,
-        persistent,
-        addresses: undefined,
-        user,
-        preAuthKTVerifier,
-    });
-    const trusted = deviceRecoveryResult.trusted;
-    user = deviceRecoveryResult.user;
-
-    const sessionResult = await persistSession({
-        ...authResponse,
-        clearKeyPassword: newPassword,
-        keyPassword,
-        persistent,
-        trusted,
-        User: user,
-        api,
-        source: SessionSource.Proton,
-    });
-
-    await preAuthKTVerifier.preAuthKTCommit(user.ID, api);
-    await resetSelfAudit({ api, ktActivation, user, keyPassword, addressesBeforeReset: addresses });
-
-    return {
-        data: sessionResult,
-        loginPassword: newPassword,
-        flow: 'reset' as AuthFlows,
-    };
 };
 
 export const performPasswordChangeViaMnemonic = async ({
@@ -291,24 +295,29 @@ export const performPasswordChangeViaMnemonic = async ({
         }),
     });
 
-    const trusted = false;
-    const user = await getUser(api);
-    const sessionResult = await persistSession({
-        ...authResponse,
-        clearKeyPassword: newPassword,
-        keyPassword,
-        persistent,
-        trusted,
-        User: user,
-        api,
-        source: SessionSource.Proton,
-    });
+    // The password is changed: from here on, a failure is signing in with it, which the user can still do
+    try {
+        const trusted = false;
+        const user = await getUser(api);
+        const sessionResult = await persistSession({
+            ...authResponse,
+            clearKeyPassword: newPassword,
+            keyPassword,
+            persistent,
+            trusted,
+            User: user,
+            api,
+            source: SessionSource.Proton,
+        });
 
-    return {
-        data: sessionResult,
-        loginPassword: newPassword,
-        flow: 'reset' as AuthFlows,
-    };
+        return {
+            data: sessionResult,
+            loginPassword: newPassword,
+            flow: 'reset' as AuthFlows,
+        };
+    } catch (error) {
+        throw new SignInAfterResetError(error);
+    }
 };
 
 export enum DeviceRecoveryLevel {
