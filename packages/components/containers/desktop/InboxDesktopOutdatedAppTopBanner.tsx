@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import {
@@ -20,6 +20,9 @@ import { semver } from '@proton/utils/semver';
 import TopBanner from '../topBanners/TopBanner';
 import { openLinkInBrowser } from './openExternalLink';
 import useInboxDesktopVersion from './useInboxDesktopVersion';
+
+const MAC_DMG_URL = 'https://proton.me/download/mail/macos/ProtonMail-desktop.dmg';
+const MAC_KEYCHAIN_PROMPT_KB_URL = 'https://proton.me/support/mail-mac-keychain-password-prompt';
 
 /**
  * Linux is different from Windows and MacOS. There is no auto updates, this means that any user running a version that is not the latest
@@ -99,10 +102,48 @@ const DisplayTopBanner = ({
     );
 };
 
+const MacSigningMigrationTopBanner = ({ className }: { className?: string }) => {
+    const downloadUpdate = <DownloadButton link={MAC_DMG_URL} key="download-update" />;
+    const learnMore = (
+        <Button
+            shape="underline"
+            className="py-0 align-baseline"
+            onClick={() => openLinkInBrowser(MAC_KEYCHAIN_PROMPT_KB_URL)}
+            key="learn-more"
+        >{c('Link').t`Learn more`}</Button>
+    );
+    return (
+        <TopBanner className={clsx('bg-warning', className)}>
+            <span>{c('Info').jt`Please update ${MAIL_APP_NAME} to keep using the app. ${downloadUpdate}`}</span>
+            <span className="block text-normal">
+                {c('Info')
+                    .jt`After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${learnMore}`}
+            </span>
+        </TopBanner>
+    );
+};
+
+const isMacSigningMigrationVersion = (version?: string) => {
+    if (!version) {
+        return false;
+    }
+
+    if (semver(version) < semver('1.13.0') || semver(version) > semver('1.15.0')) {
+        return false;
+    }
+
+    return true;
+};
+
 const InboxDesktopOutdatedAppTopBanner = ({ className }: { className?: string }) => {
     const version = electronAppVersion;
     const { windowsApp, macosApp, linuxApp, isSnapPackage, loading } = useInboxDesktopVersion();
     const isUpdateBannerDisabled = useFlag('InboxDesktopManualUpdateBannerDisabled');
+    const isMacSigningMigrationEnabled = useFlag('InboxDesktopMacSigningMigrationBanner');
+
+    if (isElectronMail && isMacSigningMigrationEnabled && isMac && isMacSigningMigrationVersion(version)) {
+        return <MacSigningMigrationTopBanner className={className} />;
+    }
 
     if (!isElectronMail || isUpdateBannerDisabled || !version || loading) {
         return null;
