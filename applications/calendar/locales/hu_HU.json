@@ -938,6 +938,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "More info": [
+        "További információk"
       ]
     },
     "action": {
@@ -1629,6 +1632,10 @@
       ],
       "Total": [
         "Összesen"
+      ],
+      "Total for ${ cycle } month": [
+        "Összesen, ${ cycle } hónapra",
+        "Összesen, ${ cycle } hónapra"
       ]
     },
     "Collapsible tooltip": {
@@ -3743,6 +3750,19 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "Cannot verify the author of this file": [
+        "A fájl szerzője nem ellenőrizhető"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "A név maximum ${ MAX_NODE_NAME_LENGTH } karakter hosszú lehet",
+        "A név maximum ${ MAX_NODE_NAME_LENGTH } karakter hosszú lehet"
+      ],
+      "Part of the file appears to be corrupted": [
+        "A fájl egy része sérült"
+      ],
+      "Verification keys are not available": [
+        "Az ellenőrzési kulcsok nem érhetők el"
       ]
     },
     "error": {
@@ -6920,6 +6940,18 @@
       "Up to ${ n } participant": [
         "${ n } résztvevő",
         "Akár ${ n } résztvevő"
+      ],
+      "${ n } active meeting at a time": [
+        "${ n } megbeszélés egyszerre",
+        "${ n } megbeszélés egyszerre"
+      ],
+      "Up to ${ n } meeting per day": [
+        "${ n } megbeszélés naponta",
+        "Akár ${ n } megbeszélés naponta"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videómegbeszélések, ${ n } résztvevővel",
+        "Videómegbeszélések, ${ n } résztvevővel"
       ]
     },
     "meet_2025: Info": {
@@ -11799,6 +11831,36 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "${ discount }% kedvezmény a ${ planName } csomagra"
+      ],
+      "Get ${ planName }": [
+        "${ planName } beszerzése"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/hónap"
+      ],
+      "2 TB of storage to share": [
+        "2 TB tárhely megosztásra"
+      ],
+      "2 user accounts": [
+        "2 felhasználói fiók"
+      ],
+      "All premium features from your current plan": [
+        "Az összes prémium funkció a jelenlegi csomagjából"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "A kedvezmények alapja a normál havi díjszabás. Előfizetése a számlázási ciklus végén a normál éves díjszabás szerint újul meg."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 hónapra"
       ]
     }
   }

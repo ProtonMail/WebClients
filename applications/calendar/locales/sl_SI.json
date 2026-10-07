@@ -967,6 +967,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "More info": [
+        "Več informacij"
       ]
     },
     "action": {
@@ -1421,6 +1424,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Namizna aplikacija"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Namizna aplikacija"
       ]
     },
     "Bug category": {
@@ -13035,6 +13041,36 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Pridobi ${ discount } % popusta na ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Pridobi ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mesec"
+      ],
+      "2 TB of storage to share": [
+        "2 TB shrambe za souporabo"
+      ],
+      "2 user accounts": [
+        "2 uporabniška računa"
+      ],
+      "All premium features from your current plan": [
+        "Vse premijske funkcije iz vašega trenutnega paketa"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti veljajo glede na standardno mesečno ceno. Vaša naročnina se bo ob koncu obračunskega obdobja obnovila po standardni letni ceni."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "za 12 mesecev"
       ]
     }
   }
