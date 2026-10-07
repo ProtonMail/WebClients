@@ -1,10 +1,10 @@
 import type { EditorState, ElementNode, TextNode } from 'lexical'
 import { TextRun } from 'docx'
 import tinycolor from 'tinycolor2'
-import { rootFontSize } from '@proton/shared/lib/helpers/dom'
 import { $isLinkNode } from '@lexical/link'
 
-import { DEFAULT_FONT_FACE } from '@proton/components/components/editor/constants'
+import { DEFAULT_FONT_FACE } from '../../../../Constants/Fonts'
+import { rootFontSize } from '../../../../Utils/rootFontSize'
 
 const DummyElementUsedToConvertTextNodeCSSTextToComputedStyles = document.createElement('span')
 
