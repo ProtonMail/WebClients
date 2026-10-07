@@ -1036,6 +1036,12 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "Managed Service Provider": [
+        "Πάροχος Διαχειριζόμενης Υπηρεσίας"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Οι οργανισμοί που διαθέτουν το πρόσθετο Πάροχος Διαχειριζόμενων Υπηρεσιών μπορούν να δημιουργούν και να διαχειρίζονται θυγατρικούς οργανισμούς."
       ]
     },
     "Alert": {
@@ -1281,6 +1287,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Bug category": {

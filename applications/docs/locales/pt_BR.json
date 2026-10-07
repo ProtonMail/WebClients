@@ -1039,6 +1039,9 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "Managed Service Provider": [
+        "Provedor de serviço gerenciado"
       ]
     },
     "Alert": {
@@ -3595,6 +3598,9 @@
       ],
       "Move operation aborted": [
         "Operação de movimento interrompida"
+      ],
+      "Could not grant access to the organization key": [
+        "Não foi possível obter o acesso a chave da organização"
       ]
     },
     "error": {
@@ -5834,6 +5840,9 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Você tem uma fatura em aberta em ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Você tem uma fatura em aberta ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -8236,6 +8245,12 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ao trocar, você concorda com nossos ${ termsLink }."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Os planos de avaliação não suportam IPs dedicados."
       ]
     },
     "PGP key encryption warning": {
