@@ -204,6 +204,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                 try {
                     await compactAndAdvance();
                 } catch (compactionError) {
+                    dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.COMPLETED }));
                     // Nothing to compact, or compaction itself failed — surface the original overflow.
                     if (compactionError instanceof NotEnoughToCompactError) {
                         throw error;
