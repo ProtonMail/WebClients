@@ -1700,6 +1700,18 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Migrate": [
+        "Migrasi"
+      ],
+      "More info": [
+        "Info selengkapnya"
+      ],
+      "Stop": [
+        "Berhenti"
+      ],
+      "View guide": [
+        "Lihat panduan"
       ]
     },
     "action": {
@@ -2666,6 +2678,9 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Amount due": [
+        "Jumlah yang dibayar"
       ]
     },
     "Collapsible tooltip": {
@@ -5805,6 +5820,15 @@
       ],
       "Unread": [
         "Belum dibaca"
+      ],
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Filter Actions": {
@@ -6498,6 +6522,12 @@
       ],
       "Migrated": [
         "Dimigrasikan"
+      ],
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Import warning": {
@@ -8977,6 +9007,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } masalah selama impor:"
+      ],
+      "Add contact": [
+        "Tambahkan kontak"
+      ],
+      "Expand logs": [
+        "Buka log"
+      ],
+      "forward": [
+        "teruskan"
+      ],
+      "Move emails": [
+        "Pindahkan email"
+      ],
+      "open draft": [
+        "buka draf"
+      ],
+      "Readdressed": [
+        "Dikirim ulang"
+      ],
+      "Star emails": [
+        "Bintangi email"
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "info": {
@@ -10164,6 +10221,66 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Archive": [
+        "Arsip"
+      ],
+      "At": [
+        "Di"
+      ],
+      "Burst write": [
+        "Penulisan beruntun"
+      ],
+      "Cc": [
+        "Cc"
+      ],
+      "Client": [
+        "Klien"
+      ],
+      "Comfortable": [
+        "Nyaman"
+      ],
+      "Compact": [
+        "Ringkas"
+      ],
+      "Document ID": [
+        "ID dokumen"
+      ],
+      "Encrypt": [
+        "Enkripsi"
+      ],
+      "Entries": [
+        "Entri"
+      ],
+      "Export size": [
+        "Ukuran ekspor"
+      ],
+      "Filter name": [
+        "Filter nama"
+      ],
+      "Label name": [
+        "Nama label"
+      ],
+      "New name": [
+        "Nama baru"
+      ],
+      "Row": [
+        "Baris"
+      ],
+      "To": [
+        "Ke"
+      ],
+      "Until date": [
+        "Sampai tanggal"
+      ],
+      "Until time": [
+        "Sampai waktu"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14865,6 +14982,9 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "TableHeader": {
@@ -16617,6 +16737,61 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Dapatkan diskon ${ discount }% untuk ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Dapatkan ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/bulan"
+      ],
+      "2 TB of storage to share": [
+        "Ruang penyimpanan 2 TB untuk dibagikan"
+      ],
+      "2 user accounts": [
+        "2 akun pengguna"
+      ],
+      "All premium features from your current plan": [
+        "Seluruh fitur premium dari paket Anda saat ini"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Diskon didasarkan pada harga bulanan standar. Langganan Anda akan diperpanjang dengan tarif tahunan standar saat siklus tagihan berakhir."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "selama 12 bulan"
       ]
     }
   }

@@ -1759,6 +1759,27 @@
       ],
       "New chat": [
         "Neuer Chat"
+      ],
+      "Detach": [
+        "Trennen"
+      ],
+      "Don't show this offer again": [
+        "Dieses Angebot nicht erneut anzeigen"
+      ],
+      "Got it, connect my Gmail": [
+        "Verstanden, verbinde mich mit meinem Gmail-Konto"
+      ],
+      "Learn how this works": [
+        "Erfahre, wie es funktioniert"
+      ],
+      "More info": [
+        "Weitere Informationen"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
+      ],
+      "Switch to ${ planName }": [
+        "Zu ${ planName } wechseln"
       ]
     },
     "action": {
@@ -1914,6 +1935,12 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisationen mit dem Add-on „Managed Service Provider“ können untergeordnete Organisationen anlegen und verwalten."
       ]
     },
     "Alert": {
@@ -2289,6 +2316,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Desktopanwendung"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Desktopanwendung"
       ]
     },
     "Bug category": {
@@ -2421,6 +2451,9 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Duplikate aus früheren Importen werden übersprungen. In den Einstellungen von ${ PRODUCT_NAMES.EASY_SWITCH } kannst du den Vorgang rückgängig machen oder ältere Nachrichten importieren."
+      ],
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Dein neuesten E-Mails werden zuerst importiert. E-Mails, die bereits importiert wurden, werden nicht erneut kopiert."
       ]
     },
     "Calendar attachment tooltip": {
@@ -6616,6 +6649,9 @@
       ],
       "Username": [
         "Benutzername"
+      ],
+      "Good to know before you connect": [
+        "Was Du vor dem Verbinden beachten solltest"
       ]
     },
     "Hint": {
@@ -8251,7 +8287,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -10042,6 +10079,42 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** wird außerdem verwendet, um sich bei einem separaten ${ BRAND_NAME }-Konto anzumelden, das nicht zu ${ MAIL_APP_NAME } gehört."
+      ],
+      "1 device per user": [
+        "1 Gerät je Benutzer"
+      ],
+      "1 vault per user": [
+        "1 Tresor je Benutzer"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ],
+      "Here's what happens when you continue:": [
+        "Folgendes passiert, wenn Sie fortfahren:"
+      ],
+      "Next time you sign in to your other account": [
+        "Wenn du dich das nächste Mal bei deinem anderen Konto anmeldest"
+      ],
+      "No payment is required.": [
+        "Es ist keine Zahlung erforderlich."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "An deinem anderen ${ BRAND_NAME }-Konto ändert sich nichts."
+      ],
+      "Today": [
+        "Heute"
+      ],
+      "You'll choose a new username": [
+        "Wähle einen neuen Benutzernamen aus"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Damit meldest du dich von nun an an. Das ist die einzige Änderung."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Dein Gmail-Konto ist mit dieser ${ MAIL_APP_NAME }-Adresse verknüpft"
       ]
     },
     "info": {
@@ -11381,6 +11454,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Image": [
+        "Bild"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14001,7 +14077,7 @@
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kann nicht mit ${ PLAN_NAMES[PLANS.PASS] } kombiniert werden."
       ],
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ist nur für Unternehmensabonnemente verfügbar."
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ist nur in Unternehmensabonnements verfügbar."
       ],
       "An organization is required for this plan.": [
         "Für dieses Abonnement ist eine Organisation erforderlich."
@@ -14028,13 +14104,13 @@
         "Die Anzahl der Scribe-Lizenzen darf die Anzahl der Mitglieder nicht übersteigen."
       ],
       "The selected plan doesn’t offer enough addresses for your account.": [
-        "Das ausgewählte Abonnement bietet nicht genügend Adressen für dein Konto."
+        "Das ausgewählte Abonnement bietet eine zu geringe Anzahl an Adressen für dein Konto."
       ],
       "The selected plan doesn’t offer enough domains for your account.": [
         "Das ausgewählte Abonnement bietet nicht genügend Domains für dein Konto."
       ],
       "The selected plan doesn’t offer enough members for your account.": [
-        "Das ausgewählte Abonnement bietet nicht genügend Mitglieder für dein Konto."
+        "Der ausgewählte Tarif bietet dir eine zu geringe Anzahl an Mitgliedern für dein Konto."
       ],
       "The selected plan doesn’t offer enough storage for your account.": [
         "Das ausgewählte Abonnement bietet nicht genügend Speicherplatz für dein Konto."
@@ -14043,7 +14119,7 @@
         "Dieser dedizierte Server ist einem Gateway zugewiesen und kann nicht geändert werden."
       ],
       "This plan doesn’t support the members on your account.": [
-        "Dieses Abonnement bietet keinen Support für die Mitglieder deines Kontos."
+        "Dieses Abonnement bietet keine Unterstützung für die Mitglieder deines Kontos."
       ],
       "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
         "Testversionen unterstützen keine ${ LUMO_SHORT_APP_NAME }-Lizenzen."
@@ -14064,10 +14140,13 @@
         "Du besitzt bereits ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
       "You already own Born Private.": [
-        "Du besitzt «Born Private» bereits."
+        "Du besitzt „Born Private“ bereits."
       ],
       "Your account is too old for Born Private.": [
-        "Dein Konto ist zu alt für «Born Private»."
+        "Dein Konto ist zu alt für „Born Private“."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Mit dem Wechsel erklärst du dich mit unseren ${ termsLink } einverstanden."
       ]
     },
     "Payments.Error": {

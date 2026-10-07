@@ -1753,6 +1753,21 @@
       ],
       "New chat": [
         "Ny chatt"
+      ],
+      "Got it, connect my Gmail": [
+        "Jag förstår, anslut min Gmail"
+      ],
+      "Learn how this works": [
+        "Lär dig hur detta fungerar"
+      ],
+      "More info": [
+        "Mer info"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ],
+      "Switch to ${ planName }": [
+        "Byt till ${ planName }"
       ]
     },
     "action": {
@@ -4443,6 +4458,9 @@
       ],
       "From: ${ sender } - ${ message.Subject }": [
         "Från: ${ sender } – ${ message.Subject }"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "Från: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -6107,6 +6125,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Still waiting?": [
+        "Väntar du fortfarande?"
       ]
     },
     "fido2: Label": {
@@ -8132,7 +8153,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9830,6 +9852,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
+      ],
+      "1 vault per user": [
+        "1 valv per användare"
+      ],
+      "Here's what happens when you continue:": [
+        "Här är vad som händer när du fortsätter:"
+      ],
+      "Next time you sign in to your other account": [
+        "Nästa gång du loggar in på ditt andra konto"
+      ],
+      "No payment is required.": [
+        "Ingen betalning krävs."
+      ],
+      "Read draft \"${ subject }\"": [
+        "Läs utkast “${ subject }“"
+      ],
+      "Today": [
+        "Idag"
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Din Gmail ansluter till denna ${ MAIL_APP_NAME }-adress"
       ]
     },
     "info": {
@@ -11133,6 +11179,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Image": [
+        "Bild"
+      ],
+      "Until date": [
+        "Fram till datum"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13027,6 +13079,9 @@
       ],
       "Your subscription renews soon": [
         "Din prenumeration förnyas snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sista chansen att få din första månad med ${ plan } till detta pris."
       ]
     },
     "Offer fearue": {
@@ -13724,6 +13779,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ]
     },
     "Payments.Error": {
@@ -17528,6 +17586,12 @@
       ],
       "2 user accounts": [
         "2 användarkonton"
+      ],
+      "All premium features from your current plan": [
+        "Alla premiumfunktioner från ditt nuvarande paket"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln avslutas."
       ]
     },
     "tryduo2026: Title": {
