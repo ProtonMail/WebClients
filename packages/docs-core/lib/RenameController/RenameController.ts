@@ -5,6 +5,7 @@ import type { GetNode } from '../UseCase/GetNode'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { c } from 'ttag'
 import { renameNode } from '../DriveSDK/renameNode'
+import { renamePublicNode } from '../DriveSDK/renamePublicNode'
 import { findAvailableNodeName } from '../DriveSDK/findAvailableNodeName'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
@@ -16,7 +17,7 @@ export interface RenameControllerInterface {
 export class PublicRenameController implements RenameControllerInterface {
   constructor(
     private readonly documentState: PublicDocumentState,
-    private compat: PublicDriveCompat,
+    private compat: PublicDriveCompat | undefined,
     readonly _getNode: GetNode,
     readonly logger: LoggerInterface,
   ) {}
@@ -25,7 +26,11 @@ export class PublicRenameController implements RenameControllerInterface {
     try {
       const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
 
-      await this.compat.renamePublicDocument(nodeMeta, newName)
+      if (this.compat) {
+        await this.compat.renamePublicDocument(nodeMeta, newName)
+      } else {
+        await renamePublicNode(nodeMeta, newName)
+      }
 
       this.documentState.setProperty('documentName', newName)
       void this._getNode.updateNodeNameInCache(nodeMeta, newName)

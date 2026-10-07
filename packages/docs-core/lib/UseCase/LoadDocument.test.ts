@@ -46,7 +46,7 @@ describe('LoadDocument', () => {
   beforeEach(() => {
     jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
     mockCompatWrapper = {
-      getCompat: jest.fn(),
+      getPublicCompat: jest.fn(),
     } as unknown as jest.Mocked<DriveCompatWrapper>
 
     mockGetDocumentMeta = {
@@ -208,7 +208,7 @@ describe('LoadDocument', () => {
         getDocumentKeys: jest.fn(),
       } as unknown as jest.Mocked<PublicDriveCompat>
 
-      mockCompatWrapper.getCompat.mockReturnValue(mockPublicCompat)
+      mockCompatWrapper.getPublicCompat.mockReturnValue(mockPublicCompat)
       mockGetNode.execute.mockResolvedValue(
         Result.ok({
           node: { name: 'public-doc', trashed: false },
