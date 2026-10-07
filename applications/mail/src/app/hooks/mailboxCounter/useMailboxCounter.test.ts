@@ -56,6 +56,7 @@ const getMockCategoryView = (override: Partial<CategoryViewType> = {}): Category
     isCategoryViewEnabled: false,
     isCategoryViewEnabledSettled: true,
     shouldShowTabs: false,
+    canMoveToCategories: false,
     categoriesStore: [],
     activeCategoriesTabs: [],
     canUseCategoryView: false,

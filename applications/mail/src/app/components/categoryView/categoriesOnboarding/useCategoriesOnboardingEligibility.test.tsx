@@ -51,6 +51,7 @@ const defaultCategoriesView: ReturnType<typeof useCategoriesView> = {
     isCategoryViewEnabledSettled: true,
     canUseCategoryView: true,
     shouldShowTabs: true,
+    canMoveToCategories: true,
     categoriesStore: [],
     activeCategoriesTabs: [],
 };

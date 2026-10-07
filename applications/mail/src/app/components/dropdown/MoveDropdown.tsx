@@ -98,7 +98,7 @@ const MoveDropdown = ({
 
     const { list: treeview } = useMailFolderTreeView();
     const categoryIDs = useMailSelector(selectCategoryIDs);
-    const { shouldShowTabs, activeCategoriesTabs } = useCategoriesView();
+    const { canMoveToCategories, activeCategoriesTabs } = useCategoriesView();
     const { sendReportRecategorizeEmail } = useCategoriesTelemetry();
 
     /*
@@ -150,7 +150,7 @@ const MoveDropdown = ({
             ...getInboxCategoriesItems({
                 selectAll: selectAll || false,
                 canMoveToInbox,
-                shouldShowTabs,
+                canMoveToCategories,
                 activeCategoriesTabs,
             }),
             { ID: MAILBOX_LABEL_IDS.ARCHIVE, Name: c('Mailbox').t`Archive`, icon: IcArchiveBox },
