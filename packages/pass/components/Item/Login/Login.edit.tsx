@@ -39,6 +39,7 @@ import { FileAttachmentsFieldEdit } from '../../FileAttachments/FileAttachmentsF
 import { ValueControl } from '../../Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '../../Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '../../Form/Field/Field';
+import { ItemIconField } from '../../Form/Field/ItemIconField';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { TextField } from '../../Form/Field/TextField';
 import { TextAreaField } from '../../Form/Field/TextareaField';
@@ -71,6 +72,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
             aliasSuffix: undefined,
             extraFields,
             files: filesFormInitializer(),
+            icon: metadata.icon,
             itemEmail: content.itemEmail,
             itemUsername: content.itemUsername,
             mailboxes: [],
@@ -95,6 +97,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
         onSubmit: async ({
             name,
             files,
+            icon,
             itemEmail,
             itemUsername,
             password,
@@ -161,7 +164,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                 extraFields: obfuscateExtraFields(extraFields.map(sanitizeExtraField(sanitizeOTP))),
                 itemId,
                 lastRevision,
-                metadata: { ...metadata, name, note: obfuscate(note) },
+                /** `icon` is always set so that removing the icon overrides the existing one */
+                metadata: { ...metadata, name, note: obfuscate(note), icon },
                 shareId,
             });
         },
@@ -222,13 +226,16 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
-                                <Field
-                                    lengthLimiters
-                                    name="name"
-                                    label={c('Label').t`Title`}
-                                    component={TitleField}
-                                    maxLength={MAX_ITEM_NAME_LENGTH}
-                                />
+                                <div className="flex items-center">
+                                    <Field name="icon" component={ItemIconField} icon="user" />
+                                    <Field
+                                        lengthLimiters
+                                        name="name"
+                                        label={c('Label').t`Title`}
+                                        component={TitleField}
+                                        maxLength={MAX_ITEM_NAME_LENGTH}
+                                    />
+                                </div>
                             </FieldsetCluster>
 
                             {form.values.passkeys.map((passkey, idx, passkeys) => (

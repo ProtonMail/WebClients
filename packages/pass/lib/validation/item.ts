@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../constants';
 import type { BaseItemValues, Maybe } from '../../types';
 import { isEmptyString } from '../../utils/string/is-empty-string';
+import { ITEM_ICON_MAX_LENGTH, isValidItemIcon } from '../items/item-icon';
 import { validateExtraFields } from './extra-field';
 
 export const validateItemName = (name: string): Maybe<string> => {
@@ -23,6 +24,12 @@ export const validateItemName = (name: string): Maybe<string> => {
     }
 };
 
+const validateItemIcon = (icon?: string): Maybe<string> => {
+    if (!icon) return;
+    if (icon.length > ITEM_ICON_MAX_LENGTH) return c('Warning').t`Icon image is too large`;
+    if (!isValidItemIcon(icon)) return c('Warning').t`Icon image is invalid`;
+};
+
 export const validateItemErrors = <T extends BaseItemValues = BaseItemValues>(values: T): FormikErrors<T> => {
     const errors: FormikErrors<BaseItemValues> = {};
 
@@ -38,6 +45,9 @@ export const validateItemErrors = <T extends BaseItemValues = BaseItemValues>(va
             maxLength
         );
     }
+
+    const iconError = validateItemIcon(values.icon);
+    if (iconError) errors.icon = iconError;
 
     return { ...errors, ...validateExtraFields(values) } as FormikErrors<T>;
 };
