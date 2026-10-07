@@ -128,6 +128,10 @@ function isOverHeaderMenuButton(x: number, y: number, handle: Element) {
  * and did. A left click over ▼ now opens the menu as a right-click would:
  * the button's own handler selects just its column, while a right-click keeps
  * every selected column, which the menu then acts on ("Insert 2 columns").
+ *
+ * Which of the two is on top depends on the page (in the Docs app the handle
+ * covers ▼, in the standalone sheet ▼ covers the handle), so a click that
+ * lands on ▼ itself is caught before the engine's handler and treated the same.
  */
 function SheetHeaderMoveDrag({
   x = 0,
@@ -143,7 +147,47 @@ function SheetHeaderMoveDrag({
   onMouseDown,
   ...rest
 }: HeaderMoveDragProps) {
+  const handleRef = useRef<HTMLDivElement>(null)
   const menuPress = useRef(false)
+  // The grid opens its menu where a right-click lands, so pass the real coordinates on.
+  const openMenuAt = (handle: HTMLElement, clientX: number, clientY: number) =>
+    handle.dispatchEvent(
+      new window.MouseEvent('contextmenu', { bubbles: true, cancelable: true, button: 2, clientX, clientY }),
+    )
+  useEffect(() => {
+    /** A press on ▼ inside the handle: the grid's own mousedown would otherwise reselect just that column. */
+    const onMenuButton = (e: globalThis.MouseEvent) => {
+      const handle = handleRef.current
+      const button = e.target instanceof Element ? e.target.closest('button') : null
+      if (!handle || !button?.querySelector('svg')) {
+        return null
+      }
+      const r = handle.getBoundingClientRect()
+      const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom
+      return inside ? handle : null
+    }
+    const swallow = (e: globalThis.MouseEvent) => {
+      if (e.button === 0 && onMenuButton(e)) {
+        e.stopPropagation()
+      }
+    }
+    const onClick = (e: globalThis.MouseEvent) => {
+      const handle = onMenuButton(e)
+      if (handle) {
+        e.preventDefault()
+        e.stopPropagation()
+        openMenuAt(handle, e.clientX, e.clientY)
+      }
+    }
+    document.addEventListener('pointerdown', swallow, true)
+    document.addEventListener('mousedown', swallow, true)
+    document.addEventListener('click', onClick, true)
+    return () => {
+      document.removeEventListener('pointerdown', swallow, true)
+      document.removeEventListener('mousedown', swallow, true)
+      document.removeEventListener('click', onClick, true)
+    }
+  }, [])
   const onHandleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     menuPress.current = e.button === 0 && isOverHeaderMenuButton(e.clientX, e.clientY, e.currentTarget)
     if (!menuPress.current) {
@@ -155,16 +199,7 @@ function SheetHeaderMoveDrag({
       return
     }
     menuPress.current = false
-    // The grid opens its menu where a right-click lands, so pass the real coordinates on.
-    e.currentTarget.dispatchEvent(
-      new window.MouseEvent('contextmenu', {
-        bubbles: true,
-        cancelable: true,
-        button: 2,
-        clientX: e.clientX,
-        clientY: e.clientY,
-      }),
-    )
+    openMenuAt(e.currentTarget, e.clientX, e.clientY)
   }
   const pointerHandlers = { onMouseDown: onHandleMouseDown, onClick: onHandleClick }
   const along =
@@ -179,6 +214,7 @@ function SheetHeaderMoveDrag({
     <div className="rnc-drag-container pointer-events-none absolute inset-0 overflow-hidden">
       {/* Pointer-only, as in the engine: moving columns and the column menu have keyboard routes in the menus. */}
       <div
+        ref={handleRef}
         {...rest}
         {...pointerHandlers}
         style={{ transform: `translate3d(${x}px, ${y}px, 0)`, width, height, cursor: isDragging ? 'grabbing' : 'grab' }}
