@@ -25,7 +25,6 @@ import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentVerificatorV5, PaymentVerificatorV5Params } from '@proton/payments/core/createPaymentToken';
 import { ensureTokenChargeableV5 } from '@proton/payments/core/ensureTokenChargeable';
 import type { ChargebeeIframeHandles, FreeSubscription, V5PaymentToken } from '@proton/payments/core/interface';
-import type { ChargebeePaypalModalHandles } from '@proton/payments/core/payment-processors/chargebeePaypalPayment';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
@@ -37,6 +36,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { ApplePayModalHandles } from '../../payment-processors/useApplePay';
+import type { ChargebeePaypalModalHandles } from '../../payment-processors/useChargebeePaypal';
 import type { GooglePayModalHandles } from '../../payment-processors/useGooglePay';
 import { getDefaultTranslations } from '../ensureTokenChargeable';
 import { abortSignalAny } from './AbortSignalAny';

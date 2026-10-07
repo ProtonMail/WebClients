@@ -9,10 +9,10 @@ import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/b
 import type { ThemeCode } from '@proton/payments-ui/client-extensions/helpers';
 import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
 import type { useCurrencyOverride } from '@proton/payments-ui/payment-methods/useCurrencyOverride';
+import type { ChargebeePaypalProcessorHook } from '@proton/payments-ui/payment-processors/useChargebeePaypal';
 import type { BitcoinHook } from '@proton/payments-ui/react-extensions/useBitcoin';
 import type { ChargebeeCardProcessorHook } from '@proton/payments-ui/react-extensions/useChargebeeCard';
 import type { ChargebeeIdealProcessorHook } from '@proton/payments-ui/react-extensions/useChargebeeIdeal';
-import type { ChargebeePaypalProcessorHook } from '@proton/payments-ui/react-extensions/useChargebeePaypal';
 import type { ChargebeeDirectDebitProcessorHook } from '@proton/payments-ui/react-extensions/useSepaDirectDebit';
 import { TaxFields } from '@proton/payments-ui/ui/billing-address/components/TaxFields';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';

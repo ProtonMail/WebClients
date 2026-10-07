@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { type PaymentsVersion, buyCredit, payInvoice, setPaymentMethodV5 } from '@proton/payments/core/api/api';
@@ -23,7 +23,6 @@ import type {
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
 import type { PaymentMethodFlags } from '@proton/payments/core/payment-methods/paymentMethodAvailability';
-import type { ChargebeePaypalModalHandles } from '@proton/payments/core/payment-processors/chargebeePaypalPayment';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isExistingPaymentMethod } from '@proton/payments/core/type-guards';
@@ -31,14 +30,18 @@ import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api, User } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useCurrencyOverride } from '../payment-methods/useCurrencyOverride';
 import { type ApplePayModalHandles, useApplePay } from '../payment-processors/useApplePay';
+import { useApplePay as useApplePayLegacy } from '../payment-processors/useApplePayLegacy';
+import { type ChargebeePaypalModalHandles, useChargebeePaypal } from '../payment-processors/useChargebeePaypal';
 import { type GooglePayModalHandles, useGooglePay } from '../payment-processors/useGooglePay';
+import { useGooglePay as useGooglePayLegacy } from '../payment-processors/useGooglePayLegacy';
 import useBitcoin from './useBitcoin';
 import { useChargebeeCard } from './useChargebeeCard';
 import { type ChargebeeIdealModalHandles, useChargebeeIdeal } from './useChargebeeIdeal';
-import { useChargebeePaypal } from './useChargebeePaypal';
+import { useChargebeePaypal as useChargebeePaypalLegacy } from './useChargebeePaypalLegacy';
 import type { OnMethodChangedHandler } from './useMethods';
 import { useMethods } from './useMethods';
 import { useSavedChargebeeMethod } from './useSavedChargebeeMethod';
@@ -378,7 +381,19 @@ export const usePaymentFacade = (
         }
     );
 
-    const chargebeePaypal = useChargebeePaypal(
+    const refactoredProcessorsFlag = useFlag('PaymentProcessorsRefactor');
+    // pinned per mount: swapping hook implementations mid-lifecycle would break React's hook order
+    const [refactoredProcessorsEnabled] = useState(refactoredProcessorsFlag);
+    // legacy types declare a required abort signal and a wider meta; the runtime shapes match and every caller passes a signal
+    const useChargebeePaypalProcessor = (
+        refactoredProcessorsEnabled ? useChargebeePaypal : useChargebeePaypalLegacy
+    ) as (...args: Parameters<typeof useChargebeePaypalLegacy>) => ReturnType<typeof useChargebeePaypal>;
+    const useApplePayProcessor = (refactoredProcessorsEnabled ? useApplePay : useApplePayLegacy) as typeof useApplePay;
+    const useGooglePayProcessor = (
+        refactoredProcessorsEnabled ? useGooglePay : useGooglePayLegacy
+    ) as typeof useGooglePay;
+
+    const chargebeePaypal = useChargebeePaypalProcessor(
         {
             amountAndCurrency,
             onChargeable: (params) =>
@@ -399,10 +414,10 @@ export const usePaymentFacade = (
         },
         {
             api,
-            verifyPayment: verifyPaymentChargebeeCard,
             handles: chargebeeHandles,
             events: chargebeeEvents,
             chargebeePaypalModalHandles,
+            verifyPayment: verifyPaymentChargebeeCard,
         }
     );
 
@@ -488,7 +503,7 @@ export const usePaymentFacade = (
         }
     );
 
-    const applePay = useApplePay(
+    const applePay = useApplePayProcessor(
         {
             amountAndCurrency,
             onChargeable: (params) =>
@@ -515,7 +530,7 @@ export const usePaymentFacade = (
         }
     );
 
-    const googlePay = useGooglePay(
+    const googlePay = useGooglePayProcessor(
         {
             amountAndCurrency,
             onChargeable: (params) =>
