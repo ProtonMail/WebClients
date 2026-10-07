@@ -5,6 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../constants';
 import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
@@ -63,8 +64,11 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     }),
 }));
 
+const mockUseFlag = useFlag as jest.MockedFunction<any>;
+
 describe('ConnectGmailButton', () => {
     beforeEach(() => {
+        mockUseFlag.mockReturnValue(false);
         mockUseUser.mockReturnValue([{}, false]);
         mockUseAddresses.mockReturnValue([[], false]);
         mockUseSetupGmailBYOEAddress.mockReturnValue({
@@ -98,11 +102,7 @@ describe('ConnectGmailButton', () => {
 
     it('should render a disabled button if feature is in maintenance', () => {
         mockUseUser.mockReturnValue([{}, false]);
-        mockUseSetupGmailBYOEAddress.mockReturnValue({
-            isInMaintenance: true,
-            handleSyncCallback: jest.fn(),
-            allSyncs: [],
-        });
+        mockUseFlag.mockImplementation((flag: string) => flag === 'MaintenanceImporter');
         render(<ConnectGmailButton showIcon source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
         expect(screen.getByTestId('ProviderButton:googleCardForward')).toBeDisabled();
     });
