@@ -13,7 +13,7 @@ import {
 } from '@proton/docs-shared'
 import type { CreateComment } from '../../UseCase/CreateComment'
 import type { CreateThread } from '../../UseCase/CreateThread'
-import type { DocLoaderInterface } from './DocLoaderInterface'
+import type { DocLoaderInterface, DocLoaderInitializeOptions } from './DocLoaderInterface'
 import type { DocLoaderStatusObserver } from './StatusObserver'
 import type { DocsApi } from '../../Api/DocsApi'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
@@ -36,6 +36,7 @@ import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { getDocumentActionUrl } from '@proton/docs-shared/lib/URL/getDocumentActionUrl'
 
 export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> {
   private editorController?: EditorControllerInterface
@@ -46,7 +47,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
   private readonly statusObservers: DocLoaderStatusObserver<PublicDocumentState>[] = []
 
   constructor(
-    private driveCompat: PublicDriveCompat,
+    private driveCompat: PublicDriveCompat | undefined,
     private websocketSerivce: WebsocketServiceInterface,
     private docsApi: DocsApi,
     private loadDocument: LoadDocument,
@@ -79,10 +80,15 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
     return this.unleashClient.isEnabled(docsFlag)
   }
 
-  public async initialize(nodeMeta: PublicNodeMeta, documentType: DocumentType): Promise<void> {
+  public async initialize(
+    nodeMeta: PublicNodeMeta,
+    documentType: DocumentType,
+    options?: DocLoaderInitializeOptions,
+  ): Promise<void> {
     const publicEditingEnabled = this.publicEditingEnabled()
+    const { primaryAddressKeys, localID } = options ?? {}
 
-    const loadResult = await this.loadDocument.executePublic(nodeMeta, publicEditingEnabled)
+    const loadResult = await this.loadDocument.executePublic(nodeMeta, publicEditingEnabled, primaryAddressKeys)
     if (loadResult.isFailed()) {
       this.logger.error('Failed to load document', loadResult.getError())
       this.statusObservers.forEach((observer) => {
@@ -103,13 +109,13 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       this.logger.info('Redirecting to authed document')
       this.docsApi.resetInflightCount()
       void OpenTracer.trace('boot_public_doc_loader_redirect_to_authed_document_start')
-      this.driveCompat.redirectToAuthedDocument(
-        {
-          volumeId: documentState.getProperty('documentMeta').volumeId,
-          linkId: nodeMeta.linkId,
-        },
-        isProtonDocsSpreadsheet(mimeType) ? 'sheet' : 'doc',
-      )
+      const meta = { volumeId: documentState.getProperty('documentMeta').volumeId, linkId: nodeMeta.linkId }
+      const type = isProtonDocsSpreadsheet(mimeType) ? 'sheet' : 'doc'
+      if (this.driveCompat) {
+        this.driveCompat.redirectToAuthedDocument(meta, type)
+      } else {
+        window.location.assign(getDocumentActionUrl({ ...meta, type, mode: 'open' }, localID))
+      }
       return
     }
 
