@@ -1,6 +1,6 @@
 import type { Api } from '@proton/shared/lib/interfaces'
 import { App_TYPES } from './Dependencies/Types'
-import { AppDependencies } from './Dependencies/AppDependencies'
+import { AppDependencies, type AppDependenciesOptions } from './Dependencies/AppDependencies'
 import type { CreateEmptyDocumentForConversion } from '../UseCase/CreateEmptyDocumentForConversion'
 import type { DocLoader } from '../Services/DocumentLoader/DocLoader'
 import type { DocLoaderInterface } from '../Services/DocumentLoader/DocLoaderInterface'
@@ -22,8 +22,6 @@ import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import type { DriveCompat, PublicDriveCompat } from '@proton/drive-store/lib'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
 import type { DocsApi } from '../Api/DocsApi'
-import type { CacheConfig } from '@proton/drive-store/lib/CacheConfig'
-import type { PublicKeyReference } from '@protontech/crypto'
 
 declare const window: CustomWindow
 
@@ -40,8 +38,7 @@ export class Application implements ApplicationInterface {
     this.appVersion,
     this.unleashClient,
     this.syncedEditorState,
-    this.cacheConfig,
-    this.getVerificationKey,
+    this.options,
   )
 
   constructor(
@@ -52,8 +49,7 @@ export class Application implements ApplicationInterface {
     private appName: APP_NAMES,
     private appVersion: string,
     private unleashClient: UnleashClient,
-    private cacheConfig?: CacheConfig,
-    private getVerificationKey?: (email: string) => Promise<PublicKeyReference[]>,
+    private options?: AppDependenciesOptions,
   ) {
     this.deps.get<MetricService>(App_TYPES.MetricService).initialize()
   }

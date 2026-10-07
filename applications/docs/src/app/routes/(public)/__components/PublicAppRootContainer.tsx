@@ -11,12 +11,21 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { c } from 'ttag'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { usePublicLink, type PublicLinkState } from '~/drive-sdk/usePublicLink'
 import { PasswordPage } from './PasswordPage'
 import { PublicCompatProvider } from '@proton/drive-store/lib/usePublicDriveCompat'
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper'
+import type { UserModel } from '@proton/shared/lib/interfaces'
+import { useGetUser } from '@proton/account/user/hooks'
+import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
 import type { ProviderType } from '../../../provider-type'
 import { DocsUrlContextProvider } from '~/utils/docs-url-bar'
+import { useDriveCompatSDK } from '~/utils/flags'
+import { useFlagsStatus } from '@proton/unleash/proxy'
+import { getDrive, useDrive } from '@proton/drive'
+import config from '~/config'
+import { loggerForSDK, sharedLogger } from '~/drive-sdk/logger'
 
 export function PublicAppRootContainer({
   session,
@@ -26,6 +35,18 @@ export function PublicAppRootContainer({
   hasReadySession: boolean
 }) {
   const useAuthenticatedProvider = hasReadySession || session != undefined
+
+  const { init: initializeDriveSDK } = useDrive()
+  // Only initialize if not already initialized.
+  // Done during render, not in an effect, because children call getDrive()
+  // and effects would run after they render, when the SDK is still uninitialized.
+  if (!getDrive()) {
+    initializeDriveSDK({
+      appName: APPS.PROTONDOCS,
+      appVersion: config.APP_VERSION,
+      logging: loggerForSDK(sharedLogger),
+    })
+  }
 
   // eslint-disable-next-line no-console
   console.log(
@@ -38,36 +59,96 @@ export function PublicAppRootContainer({
     ? PublicDriveStoreProviderWithAuthenticatedUser
     : PublicDriveStoreProvider
 
+  const { flagsReady, flagsError } = useFlagsStatus()
+  const replaceDriveCompat = useDriveCompatSDK()
+  // Switching paths after flags load leaves legacy handshake running, taking the custom password from Drive window
+  if (!flagsReady && !flagsError) {
+    return <DocumentLoader />
+  }
+
+  const RenderApplicationWhenReady = replaceDriveCompat ? RenderWithoutDriveCompat : RenderWithDriveCompat
+  const content = (
+    <DocsUrlContextProvider>
+      <RenderApplicationWhenReady
+        providerType={useAuthenticatedProvider ? 'public-authenticated' : 'public-unauthenticated'}
+      />
+    </DocsUrlContextProvider>
+  )
+
   return (
     <LocationErrorBoundary>
       <ApplicableDriveStoreProvider>
         <UnAuthenticated>
-          <PublicCompatProvider session={session}>
-            <DocsUrlContextProvider>
-              <RenderApplicationWhenReady
-                providerType={useAuthenticatedProvider ? 'public-authenticated' : 'public-unauthenticated'}
-              />
-            </DocsUrlContextProvider>
-          </PublicCompatProvider>
+          {replaceDriveCompat ? content : <PublicCompatProvider session={session}>{content}</PublicCompatProvider>}
         </UnAuthenticated>
       </ApplicableDriveStoreProvider>
     </LocationErrorBoundary>
   )
 }
 
-function RenderApplicationWhenReady({ providerType }: { providerType: ProviderType }) {
+function RenderWithoutDriveCompat({ providerType }: { providerType: ProviderType }) {
+  const { publicLinkState, submitPublicLinkPassword } = usePublicLink(providerType)
+  const { user, isUserReady } = usePublicUser(providerType)
+
+  return (
+    <RenderApplication
+      providerType={providerType}
+      user={user}
+      state={{ ...publicLinkState, isReady: publicLinkState.isReady && isUserReady }}
+      submitPassword={submitPublicLinkPassword}
+      isPublicDocsEnabled
+    />
+  )
+}
+
+// Legacy sets the user during its handshake, which does not run here. The session may be undefined even when signed in.
+function usePublicUser(providerType: ProviderType) {
+  const getUser = useGetUser()
+  const isAuthenticated = providerType === 'public-authenticated'
+  const [user, setUser] = useState<UserModel>()
+  const [isUserReady, setIsUserReady] = useState(!isAuthenticated)
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      getUser()
+        .then(setUser)
+        .catch((error) => traceErrorSDK(error, 'DocsDriveCompatSDK'))
+        .finally(() => setIsUserReady(true))
+    }
+  }, [getUser, isAuthenticated])
+
+  return { user, isUserReady }
+}
+
+function RenderWithDriveCompat({ providerType }: { providerType: ProviderType }) {
   const publicDriveCompat = usePublicDriveCompat()
 
-  const {
-    isError,
-    error,
-    isReady,
-    isWaitingForPasswordFromDriveWindow,
-    isPublicDocsEnabled,
-    isPasswordNeeded,
-    submitPassword,
-  } = publicDriveCompat
+  return (
+    <RenderApplication
+      providerType={providerType}
+      publicDriveCompat={publicDriveCompat}
+      state={publicDriveCompat}
+      submitPassword={publicDriveCompat.submitPassword}
+      isPublicDocsEnabled={publicDriveCompat.isPublicDocsEnabled}
+    />
+  )
+}
 
+function RenderApplication({
+  providerType,
+  publicDriveCompat,
+  user,
+  state: { isReady, isError, error, isPasswordNeeded, isWaitingForPasswordFromDriveWindow },
+  submitPassword,
+  isPublicDocsEnabled,
+}: {
+  providerType: ProviderType
+  publicDriveCompat?: ReturnType<typeof usePublicDriveCompat>
+  user?: UserModel
+  state: PublicLinkState
+  submitPassword: (password: string) => Promise<void>
+  isPublicDocsEnabled: boolean
+}) {
   const hasRenderedContentRef = useRef(false)
 
   useEffect(() => {
@@ -117,13 +198,17 @@ function RenderApplicationWhenReady({ providerType }: { providerType: ProviderTy
   }
 
   if (!isReady) {
-    return (
-      <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
-        <CircleLoader size="large" />
-        <div className="text-center">{c('Info').t`Loading document...`}</div>
-      </div>
-    )
+    return <DocumentLoader />
   }
 
-  return <PublicApplicationContent publicDriveCompat={publicDriveCompat} providerType={providerType} />
+  return <PublicApplicationContent publicDriveCompat={publicDriveCompat} user={user} providerType={providerType} />
+}
+
+function DocumentLoader() {
+  return (
+    <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
+      <CircleLoader size="large" />
+      <div className="text-center">{c('Info').t`Loading document...`}</div>
+    </div>
+  )
 }

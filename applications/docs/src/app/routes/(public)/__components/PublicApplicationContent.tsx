@@ -4,8 +4,10 @@ import { Application } from '@proton/docs-core'
 
 import { ApplicationProvider } from '~/utils/application-context'
 import { DocumentViewer } from '~/components/document/DocumentViewer/DocumentViewer'
-import { usePublicDriveCompat, type PublicDriveCompat } from '@proton/drive-store'
+import type { PublicDriveCompat } from '@proton/drive-store'
+import type { UserModel } from '@proton/shared/lib/interfaces'
 import type { DocumentAction, PublicNodeMeta } from '@proton/docs-shared'
+import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Doc/convert-doc-type'
 import config from '~/config'
 import { WordCountProvider } from '~/components/document/WordCount'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
@@ -16,33 +18,38 @@ import { useUnleashClient } from '@proton/unleash/proxy'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { Route, Routes } from 'react-router-dom-v5-compat'
 import type { ProviderType } from '../../../provider-type'
-import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
+import { getPublicLinkInfo } from '@proton/docs-core/lib/DriveSDK/getPublicDrive'
+import { getPublicAuthHeaders } from '@proton/docs-core/lib/DriveSDK/getPublicAuthHeaders'
+import { sharedLogger } from '~/drive-sdk/logger'
 
 export function PublicApplicationContent({
   publicDriveCompat,
+  user: sdkUser,
   providerType,
 }: {
-  publicDriveCompat: PublicDriveCompat
+  publicDriveCompat?: PublicDriveCompat
+  user?: UserModel
   providerType: ProviderType
 }) {
   const api = useApi()
   const unleashClient = useUnleashClient()
 
-  const { user, localID } = usePublicSessionUser()
+  const { user: legacyUser, localID } = usePublicSessionUser()
+  const user = sdkUser ?? legacyUser
 
   const { openAction } = useDocsUrlBar()
 
   const application = useMemo(() => {
     return new Application(
       api,
-      publicDriveCompat.getPublicAuthHeaders(),
+      publicDriveCompat ? publicDriveCompat.getPublicAuthHeaders() : getPublicAuthHeaders(),
       undefined,
       new DriveCompatWrapper({ publicCompat: publicDriveCompat }),
       config.APP_NAME,
       config.APP_VERSION,
       unleashClient,
+      { logger: sharedLogger },
     )
-    // Ensure only one application instance is created
   }, [])
 
   useEffect(() => {
@@ -83,7 +90,11 @@ export function PublicApplicationContent({
               path="*"
               element={
                 <DocumentLayout documentType={tmpConvertNewDocTypeToOld(openAction.type)}>
-                  <Content providerType={providerType} openAction={openAction} />
+                  <Content
+                    providerType={providerType}
+                    openAction={openAction}
+                    linkId={publicDriveCompat ? publicDriveCompat.linkId : getPublicLinkInfo().linkId}
+                  />
                 </DocumentLayout>
               }
             />
@@ -94,9 +105,15 @@ export function PublicApplicationContent({
   )
 }
 
-function Content({ openAction, providerType }: { openAction: DocumentAction | null; providerType: ProviderType }) {
-  const { linkId } = usePublicDriveCompat()
-
+function Content({
+  openAction,
+  providerType,
+  linkId,
+}: {
+  openAction: DocumentAction | null
+  providerType: ProviderType
+  linkId: string | undefined
+}) {
   if (openAction?.mode !== 'open-url' && openAction?.mode !== 'open-url-download') {
     return null
   }

@@ -24,11 +24,7 @@ export class DriveCompatWrapper<C extends DriveCompat | PublicDriveCompat = Driv
         return 'public';
     }
 
-    getPublicCompat(): PublicDriveCompat {
-        if (!this.publicCompat) {
-            throw new Error('Public drive compat not found');
-        }
-
+    getPublicCompat(): PublicDriveCompat | undefined {
         return this.publicCompat;
     }
 
