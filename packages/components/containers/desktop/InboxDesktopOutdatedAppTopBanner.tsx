@@ -102,9 +102,6 @@ const DisplayTopBanner = ({
     );
 };
 
-<<<<<<< HEAD
-export const InboxDesktopOutdatedAppTopBanner = ({ className }: { className?: string }) => {
-=======
 const MacSigningMigrationTopBanner = ({ className }: { className?: string }) => {
     const downloadUpdate = <DownloadButton link={MAC_DMG_URL} key="download-update" />;
     const learnMore = (
@@ -139,7 +136,6 @@ const isMacSigningMigrationVersion = (version?: string) => {
 };
 
 const InboxDesktopOutdatedAppTopBanner = ({ className }: { className?: string }) => {
->>>>>>> 53b70ae54f0 (Merge branch 'chore/inda-775' into 'main')
     const version = electronAppVersion;
     const { windowsApp, macosApp, linuxApp, isSnapPackage, loading } = useInboxDesktopVersion();
     const isUpdateBannerDisabled = useFlag('InboxDesktopManualUpdateBannerDisabled');
