@@ -884,6 +884,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Application de bureau ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Application de bureau ${ appName }"
       ]
     },
     "Button": {
