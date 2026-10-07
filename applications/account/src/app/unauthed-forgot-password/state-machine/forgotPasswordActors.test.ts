@@ -3,6 +3,7 @@ import { type AnyActorLogic, type InputFrom, type OutputFrom, createActor, toPro
 import type { ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
 import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import {
@@ -20,6 +21,7 @@ import {
     type ResetPasswordInput,
     createForgotPasswordActors,
 } from './forgotPasswordActors';
+import { InvalidResetCodeError, ResetMethodNotAllowedError, SignInAfterResetError } from './forgotPasswordErrors';
 
 jest.mock('../actions', () => ({
     ...jest.requireActual('../actions'),
@@ -34,6 +36,7 @@ const resetResponse = { UserID: 'user-id', UserKeys: [] } as unknown as Validate
 const mnemonicData: MnemonicDataWithoutAPI = { authResponse: {} as AuthResponse, decryptedUserKeys: [] };
 const session = { session: 'signed-in' } as unknown as Parameters<ForgotPasswordServices['onLogin']>[0];
 const ktActivation = 'kt-activation' as unknown as KeyTransparencyActivation;
+const apiError = (code: number) => ({ data: { Code: code, Error: `error ${code}` } });
 
 /** The app's services, faked, with every call recorded in `calls` so a test can check what ran in which order. */
 function makeServices() {
@@ -292,9 +295,27 @@ describe('createForgotPasswordActors', () => {
             expect(calls).toEqual(['api', 'telemetry']);
         });
 
-        it('fails when the code isn’t sent, without reporting it sent', async () => {
+        it('fails with a `ResetMethodNotAllowedError` when the API refuses the method, with its reason', async () => {
             const { services, telemetry } = makeServices();
-            const error = new Error('rate limited');
+            services.api.mockRejectedValue(apiError(API_CUSTOM_ERROR_CODES.NOT_ALLOWED));
+
+            const sending = run(createForgotPasswordActors(services).sendResetCode, {
+                username: 'user@example.com',
+                method: 'sms',
+                step: 'enterRecoverySms',
+            });
+
+            await expect(sending).rejects.toThrow(ResetMethodNotAllowedError);
+            await expect(sending).rejects.toThrow(`error ${API_CUSTOM_ERROR_CODES.NOT_ALLOWED}`);
+            expect(telemetry.sendResetPasswordCodeSent).not.toHaveBeenCalled();
+        });
+
+        it.each([
+            { failure: 'a network error', error: new Error('network') },
+            // A wrong code's, which only checking a code maps
+            { failure: 'another code', error: apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE) },
+        ])('fails with any other error as it is ($failure), without reporting it sent', async ({ error }) => {
+            const { services, telemetry } = makeServices();
             services.api.mockRejectedValue(error);
 
             await expect(
@@ -337,9 +358,29 @@ describe('createForgotPasswordActors', () => {
             });
         });
 
-        it('fails on a wrong code, without reporting it validated', async () => {
+        it('fails with an `InvalidResetCodeError` on a wrong code, without reporting it validated', async () => {
             const { services, telemetry } = makeServices();
-            const error = new Error('invalid code');
+            services.api.mockRejectedValue(apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE));
+
+            const validating = run(createForgotPasswordActors(services).validateResetCode, {
+                username: 'user@example.com',
+                method: 'email',
+                step: 'verifyRecoveryEmail',
+                code: '000000',
+            });
+
+            await expect(validating).rejects.toThrow(InvalidResetCodeError);
+            await expect(validating).rejects.toThrow(`error ${API_CUSTOM_ERROR_CODES.INVALID_VALUE}`);
+            expect(getDeviceRecoveryLevel).not.toHaveBeenCalled();
+            expect(telemetry.sendResetPasswordMethodValidated).not.toHaveBeenCalled();
+        });
+
+        it.each([
+            { failure: 'a network error', error: new Error('network') },
+            // A refused method's, which only sending a code maps
+            { failure: 'another code', error: apiError(API_CUSTOM_ERROR_CODES.NOT_ALLOWED) },
+        ])('fails with any other error as it is ($failure), without reporting it validated', async ({ error }) => {
+            const { services, telemetry } = makeServices();
             services.api.mockRejectedValue(error);
 
             await expect(
@@ -470,16 +511,22 @@ describe('createForgotPasswordActors', () => {
             expect(services.onLogin).not.toHaveBeenCalled();
         });
 
-        it('reports signing in after the reset failing as a failure too', async () => {
-            const { services, telemetry } = makeServices();
-            const error = new Error('sign-in failed');
-            services.onLogin.mockRejectedValue(error);
+        it.each([
+            { recovered: 'a reset token', input: resetInput(), method: 'email' },
+            { recovered: 'the recovery phrase’s keys', input: resetInput({ mnemonicData }), method: 'mnemonic' },
+        ])(
+            'fails with a `SignInAfterResetError` when the app doesn’t take the session after a reset with $recovered',
+            async ({ input, method }) => {
+                const { services, telemetry } = makeServices();
+                const error = new Error('sign-in failed');
+                services.onLogin.mockRejectedValue(error);
 
-            await expect(run(createForgotPasswordActors(services).resetPassword, resetInput())).rejects.toBe(error);
-            expect(telemetry.sendResetPasswordFailure).toHaveBeenCalledWith({
-                step: 'setNewPassword',
-                method: 'email',
-            });
-        });
+                const resetting = run(createForgotPasswordActors(services).resetPassword, input);
+
+                await expect(resetting).rejects.toThrow(SignInAfterResetError);
+                await expect(resetting).rejects.toHaveProperty('cause', error);
+                expect(telemetry.sendResetPasswordFailure).toHaveBeenCalledWith({ step: 'setNewPassword', method });
+            }
+        );
     });
 });

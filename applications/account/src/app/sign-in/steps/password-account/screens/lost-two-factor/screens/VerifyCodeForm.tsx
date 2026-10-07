@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -43,17 +43,13 @@ export const VerifyCodeForm = ({ method }: { method: VerificationMethod }) => {
     });
 
     const notifyCodeSent = useNotifyCodeSent();
-    const notifyCodeSentRef = useRef(notifyCodeSent);
-    useLayoutEffect(() => {
-        notifyCodeSentRef.current = notifyCodeSent;
-    });
     useEffect(() => {
         const subscription = actorRef.on('verification.codeResent', () => {
             setCode('');
-            notifyCodeSentRef.current();
+            notifyCodeSent();
         });
         return () => subscription.unsubscribe();
-    }, [actorRef]);
+    }, [actorRef, notifyCodeSent]);
 
     const destinationElement = <b key={`recovery-${method}`}>{destination}</b>;
 

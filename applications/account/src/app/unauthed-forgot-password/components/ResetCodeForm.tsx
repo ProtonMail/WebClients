@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,6 +9,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { useNewCodeLinks, useNotifyCodeSent } from '../hooks/useNewCodeLinks';
 import {
+    selectBackWaits,
     selectInvalidCode,
     selectNewCodeDialogOpen,
     selectResending,
@@ -22,12 +23,19 @@ interface Props {
     method: CodeMethod;
     /** Where the code went, redacted, for the new code dialog. */
     destination: string;
+    /**
+     * False while the email code is being sent, as its step opens: Verify waits for it, so checking a code never races
+     * the send.
+     */
+    awaitingCode?: boolean;
 }
 
 /** The code sent to the recovery email or phone; the machine checks it, and sends a new one from the dialog. */
-export const ResetCodeForm = ({ method, destination }: Props) => {
+export const ResetCodeForm = ({ method, destination, awaitingCode = true }: Props) => {
     const actorRef = ForgotPasswordContext.useActorRef();
     const loading = ForgotPasswordContext.useSelector(selectSubmitting);
+    // While the code is sent or checked, "Try another way" waits for it, as the machine does
+    const skipWaits = ForgotPasswordContext.useSelector(selectBackWaits);
     const invalidCode = ForgotPasswordContext.useSelector(selectInvalidCode);
     const newCodeDialogOpen = ForgotPasswordContext.useSelector(selectNewCodeDialogOpen);
     const resending = ForgotPasswordContext.useSelector(selectResending);
@@ -38,27 +46,24 @@ export const ResetCodeForm = ({ method, destination }: Props) => {
     });
 
     const notifyCodeSent = useNotifyCodeSent();
-    const notifyCodeSentRef = useRef(notifyCodeSent);
-    useLayoutEffect(() => {
-        notifyCodeSentRef.current = notifyCodeSent;
-    });
     useEffect(() => {
         const subscription = actorRef.on('code.resent', () => {
             setCode('');
-            notifyCodeSentRef.current();
+            notifyCodeSent();
         });
         return () => subscription.unsubscribe();
-    }, [actorRef]);
+    }, [actorRef, notifyCodeSent]);
 
     return (
         <>
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    if (loading || !onFormSubmit()) {
+                    if (!awaitingCode || loading || !onFormSubmit()) {
                         return;
                     }
-                    actorRef.send({ type: 'code.submitted', payload: { code } });
+                    // A pasted code can bring spaces, which the check ignores but the reset refuses
+                    actorRef.send({ type: 'code.submitted', payload: { code: code.trim() } });
                 }}
             >
                 <InputField
@@ -75,7 +80,17 @@ export const ResetCodeForm = ({ method, destination }: Props) => {
                     autoFocus
                     assistiveText={AssistiveText}
                 />
-                <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
+                <Button
+                    size="large"
+                    color="norm"
+                    type="submit"
+                    fullWidth
+                    loading={loading}
+                    // Without the disabled look: the code is usually sent within a second
+                    disabled={!awaitingCode}
+                    noDisabledStyles={!awaitingCode}
+                    className="mt-6"
+                >
                     {c('Action').t`Verify`}
                 </Button>
 
@@ -83,6 +98,8 @@ export const ResetCodeForm = ({ method, destination }: Props) => {
                     size="large"
                     fullWidth
                     className="mt-2"
+                    disabled={skipWaits}
+                    noDisabledStyles={skipWaits}
                     onClick={() => actorRef.send({ type: 'decision.skip' })}
                 >
                     {c('Action').t`Try another way`}
