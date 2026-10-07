@@ -1,8 +1,8 @@
-import type { CanvasGridMethods } from '@rowsncolumns/spreadsheet'
+import type { CanvasGridMethods, CanvasGridProps } from '@rowsncolumns/spreadsheet'
 import { CanvasGrid, getExtendedValueError } from '@rowsncolumns/spreadsheet'
 import { GRID_SELECTION_THEME_PROPS, GRID_THEME_PROPS, FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ChartComponent } from '@rowsncolumns/charts'
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, type ComponentProps, type MouseEvent } from 'react'
 import { type ProtonSheetsUIStoreSetters, useUI } from '../../ui-store'
 import { CellTooltip } from '../misc/CellTooltip'
 import { GridFooter } from '../GridFooter/GridFooter'
@@ -111,6 +111,92 @@ const exposeCanvasGrid = (
   }
 }
 
+type HeaderMoveDragProps = ComponentProps<NonNullable<CanvasGridProps['HeaderMoveDragComponent']>>
+
+/** Whether the ▼ menu button the engine puts on a hovered column header is under the point. */
+function isOverHeaderMenuButton(x: number, y: number, handle: Element) {
+  return document
+    .elementsFromPoint(x, y)
+    .some((el) => el !== handle && el instanceof HTMLButtonElement && el.querySelector('svg') !== null)
+}
+
+/**
+ * The engine's handle for dragging whole columns and rows (header-move in
+ * Rows n' Columns, which isn't exported), with one change. The handle covers
+ * the selected headers, ▼ menu button included, so a left click on ▼ started
+ * a drag and the column menu never opened; right-click went through the grid
+ * and did. A left click over ▼ now opens the menu as a right-click would:
+ * the button's own handler selects just its column, while a right-click keeps
+ * every selected column, which the menu then acts on ("Insert 2 columns").
+ */
+function SheetHeaderMoveDrag({
+  x = 0,
+  y = 0,
+  width = 0,
+  height = 0,
+  isDragging,
+  offset = 0,
+  dragOffset = 0,
+  axis = 'x',
+  containerHeight,
+  containerWidth,
+  onMouseDown,
+  ...rest
+}: HeaderMoveDragProps) {
+  const menuPress = useRef(false)
+  const onHandleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
+    menuPress.current = e.button === 0 && isOverHeaderMenuButton(e.clientX, e.clientY, e.currentTarget)
+    if (!menuPress.current) {
+      onMouseDown?.(e)
+    }
+  }
+  const onHandleClick = (e: MouseEvent<HTMLDivElement>) => {
+    if (!menuPress.current) {
+      return
+    }
+    menuPress.current = false
+    // The grid opens its menu where a right-click lands, so pass the real coordinates on.
+    e.currentTarget.dispatchEvent(
+      new window.MouseEvent('contextmenu', {
+        bubbles: true,
+        cancelable: true,
+        button: 2,
+        clientX: e.clientX,
+        clientY: e.clientY,
+      }),
+    )
+  }
+  const pointerHandlers = { onMouseDown: onHandleMouseDown, onClick: onHandleClick }
+  const along =
+    axis === 'x'
+      ? { transform: `translate3d(${dragOffset}px, ${y + height}px, 0)`, width, height: containerHeight - height }
+      : { transform: `translate3d(${x + width}px, ${dragOffset}px, 0)`, height, width: containerWidth - width }
+  const border =
+    axis === 'x'
+      ? { transform: `translate3d(${offset}px, ${y + height}px, 0)`, height: containerHeight - height, width: 2 }
+      : { transform: `translate3d(${x + width}px, ${offset}px, 0)`, height: 2, width: containerWidth - width }
+  return (
+    <div className="rnc-drag-container pointer-events-none absolute inset-0 overflow-hidden">
+      {/* Pointer-only, as in the engine: moving columns and the column menu have keyboard routes in the menus. */}
+      <div
+        {...rest}
+        {...pointerHandlers}
+        style={{ transform: `translate3d(${x}px, ${y}px, 0)`, width, height, cursor: isDragging ? 'grabbing' : 'grab' }}
+        className="rowcol-drag-handle pointer-events-auto absolute left-0 top-0 select-none"
+      />
+      {isDragging ? (
+        <>
+          <div
+            className="rowcol-drag-highlight absolute left-0 top-0"
+            style={{ ...along, background: '#777', opacity: 0.2 }}
+          />
+          <div className="rowcol-drag-border absolute left-0 top-0" style={{ ...border, background: '#777' }} />
+        </>
+      ) : null}
+    </div>
+  )
+}
+
 export function Grid() {
   const spreadsheetColors = useUI((ui) => ui.legacy.spreadsheetColors)
   const isDarkMode = useUI((ui) => ui.legacy.isDarkMode)
@@ -216,6 +302,7 @@ export function Grid() {
             frozenShadowThickness: 4,
           }
         : GRID_THEME_PROPS)}
+      HeaderMoveDragComponent={SheetHeaderMoveDrag}
       ref={ref}
       // the table hacks are to override the css resets that break the cell date picker
       // also need to override the hover color for buttons
