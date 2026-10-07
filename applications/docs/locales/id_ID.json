@@ -911,6 +911,12 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Anda tidak dapat mengirim file vCard ke lebih dari ${ maxAttachments } kontak"
+      ],
+      "Migrate": [
+        "Migrasi"
+      ],
+      "More info": [
+        "Info selengkapnya"
       ]
     },
     "Actions message": {
@@ -4155,6 +4161,12 @@
       ],
       "Migrated": [
         "Dimigrasikan"
+      ],
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Import warning": {
@@ -5434,6 +5446,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
+      "You": [
+        "Anda"
       ]
     },
     "info": {
@@ -5911,6 +5926,9 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak tepercaya)"
+      ],
+      "Client": [
+        "Klien"
       ]
     },
     "Label for contact group color": {
@@ -8934,6 +8952,9 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "TableHeader": {
@@ -9908,6 +9929,72 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uji coba Anda akan berakhir pada ${ textDate }. Anda tidak akan dikenakan biaya apabila Anda membatalkan sebelum ${ textDate }. ${ action }"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Dapatkan diskon ${ discount }% untuk ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Dapatkan ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/bulan"
+      ],
+      "2 TB of storage to share": [
+        "Ruang penyimpanan 2 TB untuk dibagikan"
+      ],
+      "2 user accounts": [
+        "2 akun pengguna"
+      ],
+      "All premium features from your current plan": [
+        "Seluruh fitur premium dari paket Anda saat ini"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Diskon didasarkan pada harga bulanan standar. Langganan Anda akan diperpanjang dengan tarif tahunan standar saat siklus tagihan berakhir."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "selama 12 bulan"
       ]
     }
   }

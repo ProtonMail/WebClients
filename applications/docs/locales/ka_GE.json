@@ -916,6 +916,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
+      ],
+      "More info": [
+        "მეტი ინფორმაცია"
       ]
     },
     "Actions message": {
@@ -10114,6 +10117,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "თქვენი საცდელი პერიოდი დასრულდება: ${ textDate }. თუ გააუქმებთ ${ textDate }-მდე, თანხა არ ჩამოგეჭრებათ. ${ action }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "მიიღეთ ${ discount }% ფასდაკლება ${ planName }-ზე"
+      ],
+      "Get ${ planName }": [
+        "${ planName }-ის მიღება"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/თვე"
+      ],
+      "2 TB of storage to share": [
+        "2 ტბ საცავი გასაზიარებლად"
+      ],
+      "2 user accounts": [
+        "2 მომხმარებლის ანგარიში"
+      ],
+      "All premium features from your current plan": [
+        "ყველა პრემიუმ ფუნქცია თქვენი მიმდინარე პაკეტიდან"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "ფასდაკლებები ეფუძნება სტანდარტულ თვიურ ფასს. გამოწერა განახლდება სტანდარტული წლიური ტარიფით გადახდის ციკლის დასრულებისას."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 თვით"
       ]
     }
   }

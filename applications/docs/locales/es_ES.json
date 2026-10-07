@@ -919,6 +919,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "More info": [
+        "Más información"
       ]
     },
     "Actions message": {
@@ -10179,6 +10182,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Tu prueba terminará el ${ textDate }. No se te cobrará si cancelas antes del ${ textDate }. ${ action }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Obtén un ${ discount }% de descuento en ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Obtén ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
+      "2 user accounts": [
+        "2 cuentas de usuario"
+      ],
+      "All premium features from your current plan": [
+        "Todas las características prémium de tu plan actual"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
       ]
     }
   }

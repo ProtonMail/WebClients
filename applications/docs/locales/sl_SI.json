@@ -905,6 +905,9 @@
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stikoma ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče."
+      ],
+      "More info": [
+        "Več informacij"
       ]
     },
     "Actions message": {
@@ -1234,6 +1237,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Namizna aplikacija"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Namizna aplikacija"
       ]
     },
     "Bug category": {
@@ -5661,6 +5667,9 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "Do you remember your password?": [
+        "Se še spomnite svojega gesla?"
       ]
     },
     "info": {
@@ -7654,7 +7663,7 @@
         "Datoteka ali mapa »${ filename }« se že nalaga"
       ],
       "Invitation's email was sent again": [
-        "E-poštno sporočilo s povabilom je bilo ponovno poslano"
+        "E-poštno sporočilo s povabilom je bilo ponovno poslano."
       ],
       "Link copied to clipboard": [
         "Povezava je kopirana v odložišče"
@@ -9715,7 +9724,7 @@
         "Moje datoteke"
       ],
       "Need to share more files with edit access?": [
-        "Želite datoteke deliti z možnostjo urejanja?"
+        "Želite več datotek deliti z možnostjo urejanja?"
       ],
       "Next": [
         "Naprej"
@@ -10292,6 +10301,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Pridobi ${ discount } % popusta na ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Pridobi ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mesec"
+      ],
+      "2 TB of storage to share": [
+        "2 TB shrambe za souporabo"
+      ],
+      "2 user accounts": [
+        "2 uporabniška računa"
+      ],
+      "All premium features from your current plan": [
+        "Vse premijske funkcije iz vašega trenutnega paketa"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti veljajo glede na standardno mesečno ceno. Vaša naročnina se bo ob koncu obračunskega obdobja obnovila po standardni letni ceni."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "za 12 mesecev"
       ]
     }
   }
