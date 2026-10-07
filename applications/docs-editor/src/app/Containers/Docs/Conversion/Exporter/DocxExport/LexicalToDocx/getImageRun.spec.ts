@@ -3,10 +3,10 @@ import { AllNodes } from '../../../../AllNodes'
 import { getImageRun } from './getImageRun'
 import { $getRoot, ParagraphNode } from 'lexical'
 import { ImageNode } from '../../../../Plugins/Image/ImageNode'
-import { toImage } from '@proton/shared/lib/helpers/image'
+import { toImage } from '../../../../Utils/toImage'
 import { ImageRun } from 'docx'
 
-jest.mock('@proton/shared/lib/helpers/image', () => ({
+jest.mock('../../../../Utils/toImage', () => ({
   toImage: jest.fn().mockResolvedValue({ width: 100, height: 100 }),
 }))
 
