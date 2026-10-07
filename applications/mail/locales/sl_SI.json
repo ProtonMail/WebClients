@@ -1706,6 +1706,12 @@
       ],
       "Stop": [
         "Ustavi"
+      ],
+      "Detach": [
+        "Odpni"
+      ],
+      "More info": [
+        "Več informacij"
       ]
     },
     "action": {
@@ -2222,6 +2228,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Namizna aplikacija"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Namizna aplikacija"
       ]
     },
     "Bug category": {
@@ -7920,7 +7929,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8298,7 +8310,7 @@
         "Prosimo, poskusite znova z uporabo drugega načina plačila ali se obrnite na vašo banko."
       ],
       "Please use another browser or download the file.": [
-        "Prosimo, uporabite drug brskalnik ali prenesite datoteko."
+        "Uporabite drug brskalnik ali prenesite datoteko."
       ],
       "Please wait for the action to be completed": [
         "Počakajte, da se dejanje zaključi"
@@ -9538,6 +9550,9 @@
       ],
       "Do you remember your password?": [
         "Se še spomnite svojega gesla?"
+      ],
+      "Today": [
+        "Danes"
       ]
     },
     "info": {
@@ -17449,6 +17464,41 @@
     "q3campaign2026: Info": {
       "500 GB of secure storage": [
         "500 GB varne shrambe"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Najprej bodo uvožene vaša najnovejše e-poštna sporočila. Tista, ki ste jih že uvozili, se ne bodo ponovno kopirala."
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Pridobi ${ discount } % popusta na ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Pridobi ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mesec"
+      ],
+      "2 TB of storage to share": [
+        "2 TB shrambe za souporabo"
+      ],
+      "2 user accounts": [
+        "2 uporabniška računa"
+      ],
+      "All premium features from your current plan": [
+        "Vse premijske funkcije iz vašega trenutnega paketa"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti veljajo glede na standardno mesečno ceno. Vaša naročnina se bo ob koncu obračunskega obdobja obnovila po standardni letni ceni."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "za 12 mesecev"
       ]
     }
   }

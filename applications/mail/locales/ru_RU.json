@@ -1715,6 +1715,9 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ],
+      "More info": [
+        "Подробнее"
       ]
     },
     "action": {
@@ -7961,7 +7964,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -17780,6 +17786,36 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Скидка ${ discount } % на тариф ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Перейти на тариф ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 TB of storage to share": [
+        "2 ТБ хранилища для совместного использования"
+      ],
+      "2 user accounts": [
+        "2 аккаунта пользователя"
+      ],
+      "All premium features from your current plan": [
+        "Все платные функции вашего текущего тарифа"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются от стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платежного цикла."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "на 12 месяцев"
       ]
     }
   }

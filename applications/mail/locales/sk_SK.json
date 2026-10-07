@@ -1769,6 +1769,24 @@
       ],
       "New chat": [
         "Nový chat"
+      ],
+      "Detach": [
+        "Odpojiť"
+      ],
+      "Got it, connect my Gmail": [
+        "Rozumiem, prepojiť s mojím Gmailom"
+      ],
+      "Learn how this works": [
+        "Zistite, ako to funguje"
+      ],
+      "More info": [
+        "Viac informácií"
+      ],
+      "Special Offer": [
+        "Špeciálna ponuka"
+      ],
+      "Switch to ${ planName }": [
+        "Prejsť na ${ planName }"
       ]
     },
     "action": {
@@ -1946,6 +1964,12 @@
       ],
       "Writing assistant seats": [
         "Licencie pre asistenta písania"
+      ],
+      "Managed Service Provider": [
+        "Poskytovateľ spravovaných služieb"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizácie s doplnkom „Poskytovateľ spravovaných služieb“ môžu vytvárať a spravovať dcérske organizácie."
       ]
     },
     "Alert": {
@@ -2333,6 +2357,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } desktopová aplikácia"
+      ],
+      "${ appName } Desktop application": [
+        "Desktopová aplikácia ${ appName }"
       ]
     },
     "Bug category": {
@@ -2468,6 +2495,9 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Duplikáty z predchádzajúcich importov budú preskočené. V nastaveniach ${ PRODUCT_NAMES.EASY_SWITCH } môžu byť staršie správy vrátené späť alebo importované."
+      ],
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Najskôr sa načítajú vaše najnovšie emaily. Emaily, ktoré ste už načítali, sa nebudú kopírovať znovu."
       ]
     },
     "Calendar attachment tooltip": {
@@ -6743,6 +6773,9 @@
       ],
       "Username": [
         "Používateľské meno"
+      ],
+      "Good to know before you connect": [
+        "Čo je dobré vedieť pred pripojením"
       ]
     },
     "Hint": {
@@ -8550,7 +8583,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10417,6 +10453,39 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Máte nezaplatenú faktúru s dátumom splatnosti ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** sa používa aj na prihlásenie do samostatného účtu ${ BRAND_NAME } mimo aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "1 device per user": [
+        "1 zariadenie na používateľa"
+      ],
+      "1 vault per user": [
+        "1 trezor na používateľa"
+      ],
+      "Here's what happens when you continue:": [
+        "V prípade, že budete pokračovať, udeje sa nasledovné:"
+      ],
+      "Next time you sign in to your other account": [
+        "Keď sa nabudúce prihlásite do vášho druhého účtu"
+      ],
+      "No payment is required.": [
+        "Nie je potrebné žiadne platba."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Na vašich ostatných ${ BRAND_NAME } účtoch sa nič nemení."
+      ],
+      "Today": [
+        "Dnes"
+      ],
+      "You'll choose a new username": [
+        "Vyberiete si nové používateľské meno"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Odteraz ho budete používať na prihlásenie. To je jediná zmena."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Váš Gmail sa pripája k tejto adrese ${ MAIL_APP_NAME }"
       ]
     },
     "info": {
@@ -11772,6 +11841,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Image": [
+        "Obrázok"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14563,6 +14635,9 @@
       ],
       "Your account is too old for Born Private.": [
         "Váš účet je príliš starý na službu Born Private."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Prechodom súhlasíte s našimi ${ termsLink }."
       ]
     },
     "Payments.Error": {
