@@ -3,7 +3,9 @@ import type { Mock } from 'vitest';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
+import { selectPermissionsModals } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
+import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import { useScreenRecordingPermissionPrompt } from './useScreenRecordingPermissionPrompt';
@@ -18,12 +20,26 @@ const getItemMock = getItem as unknown as Mock;
 
 describe('useScreenRecordingPermissionPrompt', () => {
     const dispatch = vi.fn();
+    let permissionsModal: PermissionsModalType;
+    let storage: Record<string, string>;
 
     beforeEach(() => {
         dispatch.mockReset();
         useMeetDispatchMock.mockReturnValue(dispatch);
-        useMeetSelectorMock.mockReturnValue({ permissionsModal: PermissionsModalType.NONE });
-        getItemMock.mockReturnValue(undefined);
+        permissionsModal = PermissionsModalType.NONE;
+        storage = {};
+        useMeetSelectorMock.mockImplementation((selector) => {
+            if (selector === selectPermissionsModals) {
+                return { permissionsModal };
+            }
+            if (selector === selectIsGuest) {
+                return false;
+            }
+            if (selector === selectUserId) {
+                return 'user-1';
+            }
+        });
+        getItemMock.mockImplementation((key: string) => storage[key]);
     });
 
     afterEach(() => {
@@ -57,7 +73,7 @@ describe('useScreenRecordingPermissionPrompt', () => {
 
     it('waits for other permission modals to close', () => {
         const getScreenCaptureAccess = mockAccess('not-requested');
-        useMeetSelectorMock.mockReturnValue({ permissionsModal: PermissionsModalType.PERMISSIONS_MODAL });
+        permissionsModal = PermissionsModalType.PERMISSIONS_MODAL;
         renderHook(() => useScreenRecordingPermissionPrompt());
 
         expect(getScreenCaptureAccess).not.toHaveBeenCalled();
@@ -65,10 +81,22 @@ describe('useScreenRecordingPermissionPrompt', () => {
 
     it('does nothing once dismissed', () => {
         const getScreenCaptureAccess = mockAccess('not-requested');
-        getItemMock.mockReturnValue('true');
+        storage['screenRecordingPromptDismissed.user.user-1'] = 'true';
         renderHook(() => useScreenRecordingPermissionPrompt());
 
         expect(getScreenCaptureAccess).not.toHaveBeenCalled();
+    });
+
+    it('still asks when only another account dismissed it', async () => {
+        mockAccess('not-requested');
+        storage['screenRecordingPromptDismissed.user.someone-else'] = 'true';
+        renderHook(() => useScreenRecordingPermissionPrompt());
+
+        await waitFor(() =>
+            expect(dispatch).toHaveBeenCalledWith(
+                showPermissionsModal({ modal: PermissionsModalType.SCREEN_RECORDING_PERMISSION_MODAL })
+            )
+        );
     });
 
     it('does nothing on desktop builds without screen capture access', () => {
