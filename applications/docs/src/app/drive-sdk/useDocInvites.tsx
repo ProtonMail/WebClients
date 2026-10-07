@@ -89,7 +89,9 @@ export const useDocInvites: DocInvitesHook = () => {
       }
     } catch (error) {
       updateInvitation(invitation.invitation.invitationId, { isLocked: false })
-      traceErrorSDK(error, 'DocsInvitationsDriveSDK')
+      if (error instanceof Error && error.name !== 'ValidationError') {
+        traceErrorSDK(error, 'DocsInvitationsDriveSDK')
+      }
       throw error
     }
   }, [])
