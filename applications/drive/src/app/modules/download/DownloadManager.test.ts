@@ -462,6 +462,50 @@ describe('DownloadManager', () => {
         expect(readableStream.cancel).toHaveBeenCalled();
     });
 
+    it('should stop the transfer when the browser cancels the save', async () => {
+        const manager = DownloadManager.getInstance();
+        const schedulerInstance = getSchedulerInstance();
+
+        storeMockState.addDownloadItem.mockReturnValue('download-save-cancel');
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.InProgress });
+
+        const node: NodeEntity = createMockNodeEntity({
+            uid: 'file-save-cancel',
+            name: { ok: true as const, value: 'file-save-cancel.txt' },
+        });
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
+
+        const controllerCompletion = createDeferred<void>();
+        const controller = {
+            pause: jest.fn(),
+            resume: jest.fn(),
+            completion: jest.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+        };
+        sdkMock.driveMock.getFileDownloader.mockResolvedValue({
+            getClaimedSizeInBytes: jest.fn(() => 0),
+            downloadToStream: jest.fn(() => controller),
+        });
+        loadCreateReadableStreamWrapperMock.mockResolvedValue({
+            cancel: jest.fn().mockResolvedValue(undefined),
+            locked: true,
+        } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>);
+        fileSaverSaveAsFileMock.mockRejectedValue(new AbortError('Transfer canceled'));
+
+        await manager.download([node.uid]);
+        const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
+        const completionPromise = scheduledTask.start();
+        await flushAsync();
+
+        const transferSignal: AbortSignal = sdkMock.driveMock.getFileDownloader.mock.calls[0][1];
+        await waitForCondition(() => fileSaverSaveAsFileMock.mock.calls.length > 0);
+        await flushAsync();
+        expect(transferSignal.aborted).toBe(true);
+
+        controllerCompletion.reject(new AbortError('cancelled'));
+        await expect(completionPromise).rejects.toBeInstanceOf(AbortError);
+    });
+
     it('should mark a single file download as failed when the SDK throws', async () => {
         const manager = DownloadManager.getInstance();
         const schedulerInstance = getSchedulerInstance();

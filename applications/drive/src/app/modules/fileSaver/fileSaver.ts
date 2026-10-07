@@ -36,6 +36,21 @@ const hasEnoughOPFSStorage = async (size?: number): Promise<boolean> => {
     return false;
 };
 
+const log = (message: string) => fileSaverLogDebug(message);
+
+// Growing the file checks the real quota without writing data; it is shrunk back before writing.
+// Any failure (not only QuotaExceededError) means OPFS can't be trusted for this file, so SW is used.
+const reservesOPFSSpace = async (writable: FileSystemWritableFileStream, size: number): Promise<boolean> => {
+    try {
+        await writable.truncate(size);
+        await writable.truncate(0);
+        return true;
+    } catch (e) {
+        log(`OPFS reservation failed: ${e instanceof Error ? e.name : String(e)}`);
+        return false;
+    }
+};
+
 const getRemovalTimeout = (size?: number): number => {
     if (size) {
         // To be really safe, we account for 1 second (1000ms) to each 30MB of file
@@ -46,8 +61,6 @@ const getRemovalTimeout = (size?: number): number => {
     }
     return 4e4; // 40 seconds, same default as the file-saver package we use https://github.com/eligrey/FileSaver.js/blob/master/src/FileSaver.js#L106
 };
-
-const log = (message: string) => fileSaverLogDebug(message);
 
 // FileSaver provides functionality to start download to file. This class does
 // not deal with API or anything else. Files which fit the memory (see
@@ -169,6 +182,24 @@ export class FileSaver {
                 log(`Failed to initiate OPFS: ${e instanceof Error ? e.message : String(e)}`);
                 log('Fallback to SW download');
                 this.useSWFallback = true;
+                return await this.saveViaDownload(stream, meta);
+            }
+
+            // The quota estimate can be higher than what OPFS accepts (e.g. Chrome incognito), so
+            // reserve the size before reading the stream and use SW right away if it doesn't fit
+            if (meta.size && !(await reservesOPFSSpace(writable, meta.size))) {
+                log('Not enough OPFS space, fallback to SW download');
+                await writable.abort().catch((abortError) => {
+                    log(
+                        `Failed to abort OPFS writable: ${abortError instanceof Error ? abortError.message : String(abortError)}`
+                    );
+                });
+                await root.removeEntry(meta.filename).catch((removeError) => {
+                    log(
+                        `Failed to remove OPFS entry: ${removeError instanceof Error ? removeError.message : String(removeError)}`
+                    );
+                });
+                root = undefined;
                 return await this.saveViaDownload(stream, meta);
             }
 
