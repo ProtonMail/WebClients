@@ -8,15 +8,13 @@
  * Every request is an actor invoked by a work state (`forgotPasswordActors`), so leaving a state stops caring about
  * its request, whose result can never land in a later step. The steps send what the user did and read the state.
  */
-import { type SnapshotFrom, assertEvent, assign, emit, setup } from 'xstate';
+import { type SnapshotFrom, assertEvent, assign, emit, or, setup } from 'xstate';
 
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { DelegatedAccessSummary, RecoveryMethod, ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
-import { reportActorError, unprovidedActors } from '../../sign-in/state-machine/machineHelpers';
+import { errorOf, isErrorOf, reportActorError, unprovidedActors } from '../../sign-in/state-machine/machineHelpers';
 import { DeviceRecoveryLevel } from '../actions';
 import type {
     CodeMethod,
@@ -25,6 +23,14 @@ import type {
     OwnershipProof,
     RecoveryMethods,
 } from './forgotPasswordActors';
+import {
+    InvalidResetCodeError,
+    NoKeysDecryptedUsingPhraseError,
+    ResetKeysRejectedError,
+    ResetMethodNotAllowedError,
+    ResetTokenRejectedError,
+    SignInAfterResetError,
+} from './forgotPasswordErrors';
 
 interface UnauthedForgotPasswordMachineContext {
     username: string;
@@ -36,8 +42,6 @@ interface UnauthedForgotPasswordMachineContext {
     hasEmergencyContacts: boolean;
     resetWithDataLoss: boolean;
     mnemonicData: MnemonicDataWithoutAPI | undefined;
-    emailRecoverySkipped: boolean;
-    smsRecoverySkipped: boolean;
     delegatedAccessContacts: DelegatedAccessSummary[];
     redactedRecoveryEmail: string | undefined;
     redactedRecoveryPhoneNumber: string | undefined;
@@ -79,18 +83,44 @@ export type UnauthedForgotPasswordMachineEmitted =
     | { type: 'error'; error: unknown }
     /** The new code was sent: the code form tells the user, and clears the old code. */
     | { type: 'code.resent' }
-    /** The reset token was refused when setting the new password: the page is out of date. */
-    | { type: 'resetToken.rejected' };
+    /** The password is changed, but signing in with it failed: the page traces what failed, without showing it. */
+    | { type: 'signIn.failed'; error: unknown };
 
 export enum UnauthedForgotPasswordStateMachineTags {
     hideReturnToSignIn = 'hideReturnToSignIn',
     /** A request runs; the step shows its loading state. */
     submitting = 'submitting',
+    /**
+     * Back and "Try another way" wait for the request, which could undo where they lead: a code sent meanwhile, which
+     * a wrong code or the phrase signing in deletes, or a later code replaces. As in the sign-in, the back buttons
+     * stay, doing nothing.
+     */
+    backWaits = 'backWaits',
     /** The code steps' new code dialog is open. */
     newCodeDialog = 'newCodeDialog',
     /** The dialog stays open while the new code is sent. */
     resending = 'resending',
 }
+
+/**
+ * Back between the recovery methods goes to the latest earlier one the account has: the user skipped it to get here,
+ * so it's offered again. The email step sends a new code, as on its first visit: the API keeps one reset token per
+ * account, which a later code replaces, and a wrong code or a sign-in with the phrase deletes. The SMS step offers to
+ * send one again. With no earlier method, the entry step.
+ *
+ * The transitions are `as const`, so that the machine checks their guard names.
+ */
+const backToEmail = { guard: 'hasEmailRecovery', target: '#forgotPassword.verifyRecoveryEmail' } as const;
+const backToSms = { guard: 'hasSmsRecovery', target: '#forgotPassword.enterRecoverySms' } as const;
+const backToPhrase = { guard: 'hasMnemonic', target: '#forgotPassword.mnemonicRecovery.enterPhrase' } as const;
+const backToEntry = { target: '#forgotPassword.entry' } as const;
+const backFromSms = [backToEmail, backToEntry] as const;
+/**
+ * A proven ownership is a checkpoint: back from the phrase step after a valid code starts a new attempt rather than
+ * asking for the code again.
+ */
+const backFromPhrase = [{ guard: 'hasResetResponse', ...backToEntry }, backToSms, ...backFromSms] as const;
+const backFromUnauthenticatedRecovery = [backToPhrase, backToSms, ...backFromSms] as const;
 
 /**
  * Back in the verified recovery goes to the latest earlier prompt or offer the user saw. Each of those screens shows
@@ -100,28 +130,19 @@ export enum UnauthedForgotPasswordStateMachineTags {
  * Back skips the instructions a prompt or offer may have led to (emergency contacts, signed-in sessions): having seen
  * them leaves the same context as having declined, so back returns to the prompt or offer, which leads to them again.
  */
-const backFromSessionsPrompt = [
-    { guard: 'hasMnemonic' as const, target: '#forgotPassword.mnemonicRecovery.enterPhrase' },
-    { target: '#forgotPassword.entry' },
-];
+const backFromSessionsPrompt = [backToPhrase, backToEntry] as const;
 const backFromSocialRecoveryOffer = [
-    { guard: 'hasOtherLoggedInSessions' as const, target: '#forgotPassword.authenticatedRecovery.otherSessionsPrompt' },
+    { guard: 'hasOtherLoggedInSessions', target: '#forgotPassword.authenticatedRecovery.otherSessionsPrompt' },
     ...backFromSessionsPrompt,
-];
+] as const;
 const backFromEmergencyAccessOffer = [
-    { guard: 'hasSocialContacts' as const, target: '#forgotPassword.authenticatedRecovery.socialRecoveryOffer' },
+    { guard: 'hasSocialContacts', target: '#forgotPassword.authenticatedRecovery.socialRecoveryOffer' },
     ...backFromSocialRecoveryOffer,
-];
+] as const;
 const backFromDataLossOffer = [
-    { guard: 'hasEmergencyContacts' as const, target: '#forgotPassword.authenticatedRecovery.emergencyAccessOffer' },
+    { guard: 'hasEmergencyContacts', target: '#forgotPassword.authenticatedRecovery.emergencyAccessOffer' },
     ...backFromEmergencyAccessOffer,
-];
-
-/** Guard: the failed request's API error has this code. */
-const errorCode = (code: number) => ({
-    type: 'hasErrorCode' as const,
-    params: ({ event }: { event: { error: unknown } }) => ({ error: event.error, code }),
-});
+] as const;
 
 const forgotPasswordSetup = setup({
     types: {
@@ -142,10 +163,10 @@ const forgotPasswordSetup = setup({
         }),
     },
     guards: {
-        hasExternalEmailWithLoginRecovery: ({ context }) =>
-            context.recoveryMethods.includes('login') && !context.emailRecoverySkipped,
-        hasEmailRecovery: ({ context }) => context.recoveryMethods.includes('email') && !context.emailRecoverySkipped,
-        hasSmsRecovery: ({ context }) => context.recoveryMethods.includes('sms') && !context.smsRecoverySkipped,
+        /** The codes can go to an email: the recovery email, or the external email the account signs in with. */
+        hasEmailRecovery: ({ context }) =>
+            context.recoveryMethods.includes('email') || context.recoveryMethods.includes('login'),
+        hasSmsRecovery: ({ context }) => context.recoveryMethods.includes('sms'),
         hasMnemonic: ({ context }) => context.recoveryMethods.includes('mnemonic'),
         hasFullDeviceRecovery: ({ context: { deviceRecoveryLevel } }) =>
             deviceRecoveryLevel === DeviceRecoveryLevel.FULL,
@@ -158,9 +179,10 @@ const forgotPasswordSetup = setup({
             context.delegatedAccessContacts?.some(({ Types }) =>
                 hasBit(Types, DelegatedAccessTypeEnum.EmergencyAccess)
             ),
-        hasErrorCode: (_, params: { error: unknown; code: number }) => getApiError(params.error).code === params.code,
+        isErrorOf,
     },
     actions: {
+        /** Leaves for the sign-in page, whose form starts with the username the user gave, if any. */
         redirectToSignIn: () => {},
         /** The account's recovery methods, and where their codes go, for this attempt. */
         storeRecoveryMethods: assign((_, params: RecoveryMethods) => ({
@@ -183,24 +205,22 @@ const forgotPasswordSetup = setup({
         storeMnemonicData: assign((_, params: { mnemonicData: MnemonicDataWithoutAPI }) => ({
             mnemonicData: params.mnemonicData,
         })),
-        skipEmailRecovery: assign({ emailRecoverySkipped: true }),
-        skipSmsRecovery: assign({ smsRecoverySkipped: true }),
         /**
-         * A new attempt, maybe for another account: every recovery method is offered again, including the ones skipped
-         * on the way, and the ownership an earlier attempt proved no longer counts.
+         * A new attempt, maybe for another account: the ownership an earlier attempt proved, or the data loss it
+         * accepted, no longer counts.
          */
         startNewAttempt: assign({
-            emailRecoverySkipped: false,
-            smsRecoverySkipped: false,
             ownershipVerificationMethod: undefined,
             ownershipVerificationCode: '',
             resetResponse: undefined,
             delegatedAccessContacts: [],
             deviceRecoveryLevel: DeviceRecoveryLevel.NONE,
             invalidCode: false,
+            resetWithDataLoss: false,
         }),
+        /** After `errorOf(ResetMethodNotAllowedError)`: the error has the API's reason. */
         setApiErrorMessage: assign((_, params: { error: unknown }) => ({
-            apiErrorMessage: getApiErrorMessage(params.error),
+            apiErrorMessage: params.error instanceof ResetMethodNotAllowedError ? params.error.message : undefined,
         })),
         clearApiErrorMessage: assign({ apiErrorMessage: undefined }),
         markInvalidCode: assign({ invalidCode: true }),
@@ -209,9 +229,19 @@ const forgotPasswordSetup = setup({
         /** Hands the error to the page to show. */
         reportError: emit((_, params: { error: unknown }) => ({ type: 'error' as const, error: params.error })),
         notifyCodeResent: emit({ type: 'code.resent' as const }),
-        notifyResetTokenRejected: emit({ type: 'resetToken.rejected' as const }),
+        /** After `errorOf(SignInAfterResetError)`: hands what failed to the page, to trace. */
+        traceSignInFailure: emit((_, params: { error: unknown }) => ({
+            type: 'signIn.failed' as const,
+            error: params.error instanceof SignInAfterResetError ? params.error.cause : params.error,
+        })),
     },
 });
+
+/** A request that Back and "Try another way" wait for (`backWaits`): they do nothing until it settles. */
+const waitsForRequest = {
+    tags: [UnauthedForgotPasswordStateMachineTags.submitting, UnauthedForgotPasswordStateMachineTags.backWaits],
+    on: { 'decision.back': {}, 'decision.skip': {} },
+};
 
 /**
  * Sends a reset code. The API refuses a method with a reason (a rate limit, say), which gets its own step; any other
@@ -219,14 +249,18 @@ const forgotPasswordSetup = setup({
  */
 const sendingCode = (method: CodeMethod, step: string, sentTarget: string, failedTarget: string) =>
     forgotPasswordSetup.createStateConfig({
-        tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+        // The email code is sent as its step opens, without the user asking: the code form is up meanwhile, so this
+        // isn't shown as a request, and Verify waits for the code (`ResetCodeForm`). The SMS code is sent once the
+        // user asks. Back and "Try another way" wait for either
+        ...waitsForRequest,
+        ...(method === 'email' && { tags: [UnauthedForgotPasswordStateMachineTags.backWaits] }),
         invoke: {
             src: 'sendResetCode',
             input: ({ context }) => ({ username: context.username, method, step }),
             onDone: { target: sentTarget },
             onError: [
                 {
-                    guard: errorCode(API_CUSTOM_ERROR_CODES.NOT_ALLOWED),
+                    guard: errorOf(ResetMethodNotAllowedError),
                     target: '#forgotPassword.recoveryMethodVerificationError',
                     actions: { type: 'setApiErrorMessage', params: ({ event }) => ({ error: event.error }) },
                 },
@@ -241,8 +275,9 @@ const sendingCode = (method: CodeMethod, step: string, sentTarget: string, faile
  */
 const awaitingCode = (method: CodeMethod, step: string) =>
     forgotPasswordSetup.createStateConfig({
-        // A wrong code from an earlier code step, or an earlier visit to this one, says nothing about this code
-        entry: 'clearInvalidCode',
+        // A wrong code says nothing about the next code form, which can show while its code is sent: the email one,
+        // back from the SMS step
+        exit: 'clearInvalidCode',
         initial: 'editing',
         states: {
             editing: {
@@ -253,7 +288,7 @@ const awaitingCode = (method: CodeMethod, step: string) =>
                 },
             },
             validating: {
-                tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                ...waitsForRequest,
                 invoke: {
                     src: 'validateResetCode',
                     input: ({ context, event }) => {
@@ -266,7 +301,7 @@ const awaitingCode = (method: CodeMethod, step: string) =>
                     },
                     onError: [
                         {
-                            guard: errorCode(API_CUSTOM_ERROR_CODES.INVALID_VALUE),
+                            guard: errorOf(InvalidResetCodeError),
                             target: 'editing',
                             actions: 'markInvalidCode',
                         },
@@ -293,7 +328,7 @@ const awaitingCode = (method: CodeMethod, step: string) =>
                     onDone: { target: 'editing', actions: ['clearInvalidCode', 'notifyCodeResent'] },
                     onError: [
                         {
-                            guard: errorCode(API_CUSTOM_ERROR_CODES.NOT_ALLOWED),
+                            guard: errorOf(ResetMethodNotAllowedError),
                             target: '#forgotPassword.recoveryMethodVerificationError',
                             actions: { type: 'setApiErrorMessage', params: ({ event }) => ({ error: event.error }) },
                         },
@@ -318,8 +353,6 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
         apiErrorMessage: undefined,
         resetWithDataLoss: false,
         mnemonicData: undefined,
-        emailRecoverySkipped: false,
-        smsRecoverySkipped: false,
         delegatedAccessContacts: [],
         redactedRecoveryEmail: undefined,
         redactedRecoveryPhoneNumber: undefined,
@@ -409,13 +442,9 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
             },
         },
 
-        /** The first recovery method the account has and the user hasn't skipped. */
+        /** The first recovery method the account has: email, then SMS, then the recovery phrase. */
         routeRecoveryMethod: {
             always: [
-                {
-                    guard: 'hasExternalEmailWithLoginRecovery',
-                    target: 'verifyRecoveryEmail',
-                },
                 {
                     guard: 'hasEmailRecovery',
                     target: 'verifyRecoveryEmail',
@@ -437,10 +466,11 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                 'decision.back': {
                     target: 'entry',
                 },
-                'decision.skip': {
-                    target: 'routeRecoveryMethod',
-                    actions: 'skipEmailRecovery',
-                },
+                // Another way: the next method the account has
+                'decision.skip': [
+                    { guard: 'hasSmsRecovery', target: 'enterRecoverySms' },
+                    { target: 'mnemonicRecovery' },
+                ],
             },
             states: {
                 // A code that failed to send can still be sent again from the code form
@@ -453,13 +483,8 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
         enterRecoverySms: {
             initial: 'idle',
             on: {
-                'decision.back': {
-                    target: 'entry',
-                },
-                'decision.skip': {
-                    target: 'routeRecoveryMethod',
-                    actions: 'skipSmsRecovery',
-                },
+                'decision.back': backFromSms,
+                'decision.skip': { target: 'mnemonicRecovery' },
             },
             states: {
                 idle: {
@@ -477,10 +502,7 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                 'decision.back': {
                     target: 'enterRecoverySms',
                 },
-                'decision.skip': {
-                    target: 'routeRecoveryMethod',
-                    actions: 'skipSmsRecovery',
-                },
+                'decision.skip': { target: 'mnemonicRecovery' },
             },
             states: {
                 awaitingCode: awaitingCode('sms', 'verifyRecoverySms'),
@@ -522,9 +544,7 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                 enterPhrase: {
                     initial: 'idle',
                     on: {
-                        'decision.back': {
-                            target: '#forgotPassword.entry',
-                        },
+                        'decision.back': backFromPhrase,
                         'decision.skip': [
                             {
                                 guard: 'hasResetResponse',
@@ -542,7 +562,7 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                             },
                         },
                         validating: {
-                            tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                            ...waitsForRequest,
                             invoke: {
                                 src: 'validatePhrase',
                                 input: ({ context, event }) => {
@@ -556,7 +576,16 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                                         params: ({ event }) => ({ mnemonicData: event.output }),
                                     },
                                 },
-                                onError: { target: 'idle', actions: reportActorError },
+                                onError: [
+                                    {
+                                        // The phrase signed in, which deletes any reset code, so the attempt can't go
+                                        // on: the user starts over, and the page says something went wrong
+                                        guard: errorOf(NoKeysDecryptedUsingPhraseError),
+                                        target: '#forgotPassword.entry',
+                                        actions: reportActorError,
+                                    },
+                                    { target: 'idle', actions: reportActorError },
+                                ],
                             },
                         },
                     },
@@ -679,9 +708,7 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                                 target: '#forgotPassword.recoveryFailed',
                             },
                         ],
-                        'decision.back': {
-                            target: '#forgotPassword.entry',
-                        },
+                        'decision.back': backFromUnauthenticatedRecovery,
                     },
                 },
                 activeSessionInstructions: {
@@ -786,9 +813,20 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                         onDone: { target: 'signedIn' },
                         onError: [
                             {
-                                guard: errorCode(API_CUSTOM_ERROR_CODES.INVALID_VALUE),
-                                target: 'idle',
-                                actions: 'notifyResetTokenRejected',
+                                // The token is refused, or used up by a reset that refused the new keys, so the form
+                                // can't be sent again: the user starts over, and the page says why
+                                guard: or([errorOf(ResetTokenRejectedError), errorOf(ResetKeysRejectedError)]),
+                                target: '#forgotPassword.entry',
+                                actions: reportActorError,
+                            },
+                            {
+                                // The password is changed, so the form can't be sent again: the user signs in with it
+                                guard: errorOf(SignInAfterResetError),
+                                target: 'passwordChanged',
+                                actions: [
+                                    { type: 'traceSignInFailure', params: ({ event }) => ({ error: event.error }) },
+                                    'redirectToSignIn',
+                                ],
                             },
                             { target: 'idle', actions: reportActorError },
                         ],
@@ -796,6 +834,13 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                 },
                 /** The app takes the session and leaves the page; the form stays up, loading, meanwhile. */
                 signedIn: {
+                    tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                },
+                /**
+                 * The password is changed, but signing in with it failed: the page leaves for the sign-in, and the
+                 * form stays up, loading, meanwhile.
+                 */
+                passwordChanged: {
                     tags: [UnauthedForgotPasswordStateMachineTags.submitting],
                 },
             },
@@ -873,11 +918,26 @@ export const selectNewCodeDialogOpen = (snapshot: UnauthedForgotPasswordSnapshot
 export const selectResending = (snapshot: UnauthedForgotPasswordSnapshot) =>
     snapshot.hasTag(UnauthedForgotPasswordStateMachineTags.resending);
 
+/** The email code was sent, or failed to be (the code form can send another): Verify can check a code. */
+export const selectEmailAwaitingCode = (snapshot: UnauthedForgotPasswordSnapshot) =>
+    snapshot.matches({ verifyRecoveryEmail: 'awaitingCode' });
+
 /** The entry step, which the page decorates. */
 export const selectOnEntry = (snapshot: UnauthedForgotPasswordSnapshot) => snapshot.matches('entry');
 
-/** The step has somewhere to go back to, so the page and the step's heading show a back button. */
-export const selectCanGoBack = (snapshot: UnauthedForgotPasswordSnapshot) => snapshot.can({ type: 'decision.back' });
+/**
+ * The step has somewhere to go back to, so the page and the step's heading show a back button. It stays while Back
+ * waits for a request (`backWaits`), doing nothing meanwhile.
+ */
+export const selectCanGoBack = (snapshot: UnauthedForgotPasswordSnapshot) =>
+    snapshot.can({ type: 'decision.back' }) || snapshot.hasTag(UnauthedForgotPasswordStateMachineTags.backWaits);
+
+/**
+ * Back and "Try another way" wait for a request (`backWaits`): the step's skip button is disabled meanwhile, without
+ * the disabled look, since the request usually settles within a second.
+ */
+export const selectBackWaits = (snapshot: UnauthedForgotPasswordSnapshot) =>
+    snapshot.hasTag(UnauthedForgotPasswordStateMachineTags.backWaits);
 
 export const selectHideReturnToSignIn = (snapshot: UnauthedForgotPasswordSnapshot) =>
     snapshot.hasTag(UnauthedForgotPasswordStateMachineTags.hideReturnToSignIn);
