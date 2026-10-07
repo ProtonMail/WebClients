@@ -3,7 +3,7 @@ import CopyPlugin from 'copy-webpack-plugin';
 import fs from 'fs';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
-import type { Configuration } from 'webpack';
+import type { Configuration, PathData } from 'webpack';
 import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
@@ -124,6 +124,28 @@ const CS_LAYER = 'injection-client';
 const INJECTION_LAYERS = ['injection', CS_LAYER];
 
 const layeredJSLoaders = { oneOf: [{ issuerLayer: INJECTION_LAYERS, ...scriptJSLoader }, appJSLoader] };
+
+/** webpack calls `output.chunkFilename` without a chunk graph when it renders the chunk loading
+ * runtime, so keep a reference to the compilation to read it from. */
+let compilation: webpack.Compilation | undefined;
+const captureCompilation: webpack.WebpackPluginInstance = {
+    apply: (compiler) => compiler.hooks.thisCompilation.tap('CaptureCompilation', (c) => (compilation = c)),
+};
+
+/** Identifies a lazy chunk by the paths of its root modules: relative to their package for
+ * dependencies, relative to this app otherwise. Unlike chunk ids, these don't depend on where
+ * the package manager stores a package or on its version. */
+const getRootModulePaths = (chunk: PathData['chunk'], chunkGraph = compilation?.chunkGraph): string[] => {
+    if (!chunkGraph || !(chunk instanceof webpack.Chunk)) return [];
+    return chunkGraph.getChunkRootModules(chunk).flatMap((module) => {
+        const resource = module.nameForCondition()?.split(path.sep).join('/');
+        if (!resource) return [];
+        const nodeModulesIdx = resource.lastIndexOf('/node_modules/');
+        return nodeModulesIdx === -1
+            ? [path.relative(__dirname, resource).split(path.sep).join('/')]
+            : [resource.slice(nodeModulesIdx + '/node_modules/'.length)];
+    });
+};
 
 const nonAccessibleWebResource = (entry: string) => [entry, './src/lib/utils/web-accessible-resource.ts'];
 const disableBrowserTrap = (entry: string) => [entry, './src/lib/utils/disable-browser-trap.ts'];
@@ -261,16 +283,17 @@ const config: Configuration = {
         /** Some chunks need to be predictable in order for
          * importScripts to work properly in the context of
          * chromium builds (eg crypto lazy loaded modules) */
-        chunkFilename: ({ chunk }) => {
+        chunkFilename: ({ chunk, chunkGraph }) => {
             if (!chunk?.name) {
                 if (chunk?.id) {
-                    const maybeCryptoChunkName = CRYPTO_DYNAMIC_IMPORTS_CHUNKS[chunk.id.toString()];
+                    const modulePaths = getRootModulePaths(chunk, chunkGraph);
+                    const maybeCryptoChunkName = modulePaths.map((p) => CRYPTO_DYNAMIC_IMPORTS_CHUNKS[p]).find(Boolean);
                     if (maybeCryptoChunkName) return maybeCryptoChunkName;
 
                     /** throw on all unhandled chunks for chrome/safari builds requiring manual
                      * dynamic import registration in service-worker importScripts sequence */
-                    if (USE_IMPORT_SCRIPTS && !IGNORED_DYNAMIC_IMPORTS_CHUNKS.has(chunk.id.toString())) {
-                        throw new Error(`lazy loaded chunk needs manual handling: ${chunk?.id.toString()}`);
+                    if (USE_IMPORT_SCRIPTS && !modulePaths.some((p) => IGNORED_DYNAMIC_IMPORTS_CHUNKS.has(p))) {
+                        throw new Error(`lazy loaded chunk needs manual handling: ${modulePaths.join(', ')}`);
                     }
                 }
 
@@ -288,6 +311,7 @@ const config: Configuration = {
         publicPath: '/',
     },
     plugins: [
+        captureCompilation,
         new webpack.EnvironmentPlugin({ NODE_ENV: ENV }),
         new webpack.DefinePlugin({
             /** ProtonConfigV2 (see `packages/pack/webpack/plugins.js`) */
