@@ -45,7 +45,11 @@ const config: ForgeConfig = {
         ...(process.env.SKIP_CODESIGN === "true"
             ? {}
             : {
-                  osxSign: {},
+                  osxSign: process.env.APPLE_TEAM_ID
+                      ? {
+                            identity: `Developer ID Application: Proton AG (${process.env.APPLE_TEAM_ID!})`,
+                        }
+                      : undefined,
                   osxNotarize: {
                       appleId: process.env.APPLE_ID!,
                       appleIdPassword: process.env.APPLE_PASSWORD!,
