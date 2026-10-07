@@ -8,10 +8,9 @@ import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';
-import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import { getTokensByFeature } from '../api';
-import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../constants';
+import { getBYOEAddressLimit } from '../helpers/byoeAddresses';
 import {
     EASY_SWITCH_FEATURES,
     EASY_SWITCH_SOURCES,
@@ -149,10 +148,11 @@ const useReconnectSync = (address: Address) => {
         setLimitModalOpen: (open: boolean) => void;
     }) => {
         // Prevent user from reconnecting manually disconnected address if the BYOE limit has been reached
-        if (!hasPaidMail(user) && activeBYOEAddresses.length >= MAX_SYNC_FREE_USER) {
+        const limit = getBYOEAddressLimit(user, activeBYOEAddresses.length);
+        if (limit === 'free-limit') {
             setUpsellModalOpen(true);
             return;
-        } else if (activeBYOEAddresses.length >= MAX_SYNC_PAID_USER) {
+        } else if (limit === 'paid-limit') {
             setLimitModalOpen(true);
             return;
         }
