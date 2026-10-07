@@ -401,6 +401,7 @@ enum PaymentsFeatureFlag {
     EmailForInvoicesKillSwitch = 'EmailForInvoicesKillSwitch',
     EnableIdeal = 'EnableIdeal',
     NewProtonBusinessBundlePlans = 'NewProtonBusinessBundlePlans',
+    PaymentProcessorsRefactor = 'PaymentProcessorsRefactor',
     PaypalKrw = 'PaypalKrw',
     RegionalCurrenciesBatch3 = 'RegionalCurrenciesBatch3',
     SepaPayments = 'SepaPayments',

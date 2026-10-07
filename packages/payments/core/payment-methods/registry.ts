@@ -1,5 +1,5 @@
 import { PAYMENT_METHOD_TYPES } from '../constants';
-import type { PaymentVendorStates, PlainPaymentMethodType } from '../interface';
+import type { PaymentVendorStates } from '../interface';
 
 export type PaymentSystem = 'chargebee' | 'inhouse';
 
@@ -12,6 +12,8 @@ export type TelemetryMethodName =
 export type PaymentMethodConfig = {
     /** Whether the system can keep this method on file for subsequent payments. */
     savable: boolean;
+    /** Which payment system processes it. Drives the `system` dimension in telemetry. */
+    system: PaymentSystem;
     telemetryName: TelemetryMethodName;
     /** The backend switch that says whether this method is offered at all. Absent when there is none. */
     vendorStateKey?: keyof PaymentVendorStates;
@@ -26,50 +28,59 @@ export type PaymentMethodConfig = {
 export const paymentMethodRegistry = {
     [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: {
         savable: true,
+        system: 'chargebee',
         telemetryName: 'card',
         vendorStateKey: 'Card',
     },
     [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: {
         savable: true,
+        system: 'chargebee',
         telemetryName: 'paypal',
         vendorStateKey: 'Paypal',
     },
     [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: {
         savable: true,
+        system: 'chargebee',
         telemetryName: 'sepa',
         vendorStateKey: 'Card',
     },
     [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: {
         savable: true,
+        system: 'chargebee',
         telemetryName: 'ideal',
         vendorStateKey: 'Ideal',
     },
     [PAYMENT_METHOD_TYPES.APPLE_PAY]: {
         savable: true,
+        system: 'chargebee',
         telemetryName: 'apple_pay',
         vendorStateKey: 'Apple',
     },
     [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: {
         savable: true,
+        system: 'chargebee',
         telemetryName: 'google_pay',
         vendorStateKey: 'Google',
     },
     // in-house QR code and polling, it never goes through the Chargebee iframe
     [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: {
         savable: false,
+        system: 'inhouse',
         telemetryName: 'bitcoin',
         vendorStateKey: 'Bitcoin',
     },
     [PAYMENT_METHOD_TYPES.CASH]: {
         savable: false,
+        system: 'inhouse',
         telemetryName: 'cash',
         vendorStateKey: 'Cash',
     },
     [PAYMENT_METHOD_TYPES.TOKEN]: {
         savable: false,
+        system: 'inhouse',
         telemetryName: 'token',
     },
 } as const satisfies Record<PAYMENT_METHOD_TYPES, PaymentMethodConfig>;
 
-export const getPaymentMethodConfig = (type: PlainPaymentMethodType): PaymentMethodConfig | undefined =>
+export const getPaymentMethodConfig = (type: PAYMENT_METHOD_TYPES): PaymentMethodConfig | undefined =>
     paymentMethodRegistry[type];
