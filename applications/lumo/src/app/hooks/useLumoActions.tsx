@@ -4,6 +4,7 @@ import { useApi } from '@proton/app-context/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
 
 import { buildArtifactActionLlmPrompt } from '../components/Conversation/artifact/artifactActionPrompts';
+import { markArtifactTelemetryLiveMessage } from '../components/Conversation/artifact/artifactVersionTelemetry';
 import { CREATE_ARTIFACT_TOOL_NAME } from '../components/Conversation/artifact/createArtifactTool';
 import type { ArtifactType } from '../components/Conversation/artifact/parseArtifacts';
 import {
@@ -87,7 +88,6 @@ export type HandleSendMessage = (
     newMessage: string,
     isWebSearchButtonToggled: boolean,
     imageOptions?: ImageGenerationOptions,
-    artifactModeActive?: boolean,
     isFromQueryParam?: boolean,
     artifactRevisionTargetId?: string
 ) => Promise<void>;
@@ -230,11 +230,11 @@ export const useLumoActions = ({
             newMessageContent,
             isWebSearchButtonToggled,
             imageOptions,
-            artifactModeActive,
             artifactAction,
             artifactRevisionTargetId,
             isFromQueryParam,
         } = actionParams;
+
         if (!newMessageContent?.trim() && provisionalAttachments.length === 0) return;
 
         const enableExternalTools = ffExternalTools && isWebSearchButtonToggled;
@@ -295,7 +295,6 @@ export const useLumoActions = ({
                     content: newMessageContent ?? '',
                     attachments: filledAttachments,
                     ...(artifactAction && { artifactAction }),
-                    ...(artifactModeActive && { artifactCreateModeActive: true }),
                     ...(artifactRevisionTargetId && { artifactRevisionTargetId }),
                 },
                 conversationContext: {
@@ -314,7 +313,7 @@ export const useLumoActions = ({
                     enableSmoothing,
                     isGhostMode,
                     imageAspectRatio: imageOptions?.aspectRatio,
-                    canvasModeActive: artifactModeActive ?? false,
+                    canvasModeActive: false,
                     isFromQueryParam,
                 },
                 settingsContext: {
@@ -692,7 +691,6 @@ export const useLumoActions = ({
         messageContent: string,
         isWebSearchButtonToggled: boolean,
         imageOptions?: ImageGenerationOptions,
-        artifactModeActive?: boolean,
         isFromQueryParam?: boolean,
         artifactRevisionTargetId?: string
     ) => {
@@ -703,7 +701,6 @@ export const useLumoActions = ({
             newMessageContent: messageContent,
             isWebSearchButtonToggled,
             imageOptions,
-            artifactModeActive,
             isFromQueryParam,
             artifactRevisionTargetId,
         });
@@ -724,7 +721,8 @@ export const useLumoActions = ({
             newMessageContent: buildArtifactActionLlmPrompt(meta),
             isWebSearchButtonToggled,
             artifactAction: meta,
-            artifactRevisionTargetId: meta.artifactId,
+            // Explain only answers in chat — it doesn't revise the artifact.
+            artifactRevisionTargetId: meta.kind === 'explain' ? undefined : meta.artifactId,
         });
     };
 
@@ -808,6 +806,7 @@ export const useLumoActions = ({
             artifactManualEdit: { artifactId, artifactTitle, artifactType },
         };
 
+        markArtifactTelemetryLiveMessage(manualEdit.id);
         dispatch(addMessage(manualEdit));
         dispatch(pushMessageRequest({ id: manualEdit.id }));
     };

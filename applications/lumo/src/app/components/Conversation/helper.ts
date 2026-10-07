@@ -14,7 +14,7 @@ import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
 import { getContextLimitsForModelTier } from '../../llm/modelContextLimits';
 import { selectMessagesByConversationId } from '../../redux/selectors';
-import { clearPendingAgent } from '../../redux/slices/composerActions';
+import { clearPendingAgent, clearPendingArtifactCreation } from '../../redux/slices/composerActions';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
 import {
@@ -62,6 +62,7 @@ import {
     resolveReferencedFilesForSend,
     shouldSkipRagForExplicitFiles,
 } from '../../util/resolveProjectFiles';
+import { type ArtifactGenerationType, sendArtifactTurnContextEvent } from '../../util/telemetry';
 import { buildArtifactRegistry } from './artifact/artifactRegistry';
 import { runGenerationWithCompaction } from './compactionFlow';
 import type { ConversationContext } from './conversationContext';
@@ -135,10 +136,12 @@ export function mergeConversationAttachmentsForTurns(existing: Attachment[], res
 // ?q= deep-link security (guest auto-send, first inference only)
 //
 // Guest chat only: opening a link with ?q= auto-sends a prompt the user did not type and has not reviewed yet.
-// An attacker could embed instructions to call web_extract with exfiltration URLs. We mitigate
-// the immediate auto-send by:
+// An attacker could embed instructions to call web_extract with exfiltration URLs, or to create a
+// live webpage artifact the user did not opt into. We mitigate the immediate auto-send by:
 //   1. Excluding web_extract from the external-tool allowlist (see below).
 //   2. Injecting a one-shot system notice in prepareTurns (isFromQueryParam).
+//   3. Not registering create_artifact on that turn (resolveArtifactToolMode + isFromQueryParam).
+//      Outbound requests from artifact previews depend on CSP on /lumo/v1/artifact-shell (server).
 //
 // Accepted trade-offs (intentional):
 //   - First inference only. After the link opens the prompt appears as the first user message;
@@ -189,33 +192,52 @@ export type UiContext = {
     /** Set only on the auto-send from a ?q= URL; see ?q= deep-link security comment above. */
     isFromQueryParam?: boolean;
     // True only on the turn where the user explicitly entered Create Artifact mode in the
-    // composer. See `resolveArtifactToolMode` for how this combines with existing-artifact
-    // state to decide whether/how the `create_artifact` tool is made available.
+    // composer (phase 2). See `resolveArtifactToolMode` for how this combines with the
+    // persisted preference and existing-artifact state.
     canvasModeActive?: boolean;
 };
 
 // Whether/how the `create_artifact` client tool is made available on this turn:
-// - 'off': not registered at all — no artifact exists yet and the user hasn't opted in.
-// - 'create': the user just entered Create Artifact mode — may create a new artifact or
-//   revise an existing one.
-// - 'revise': mode isn't active, but the conversation already has an artifact — may only
-//   revise it, not spawn an unrelated new one. Covers follow-ups (including the artifact
-//   panel's selection-based inline-edit flow) without requiring the user to re-enter the mode.
-export type ArtifactToolMode = 'off' | 'create' | 'revise';
+// - 'off': not registered — no artifact exists yet and creation is disabled.
+// - 'create': the user explicitly entered Create Artifact mode (phase 2) — the model is told
+//   to respond with the tool.
+// - 'auto': creation is enabled (the default) — the tool is available, but the model decides
+//   whether the request calls for an artifact. May also revise an existing artifact.
+// - 'revise': the conversation already has an artifact but creation is disabled — may only
+//   revise it, not spawn an unrelated new one. Covers follow-ups (including the artifact panel's
+//   inline-edit flow).
+export type ArtifactToolMode = 'off' | 'create' | 'auto' | 'revise';
 
 export function resolveArtifactToolMode(
     canvasModeActive: boolean | undefined,
     messageChain: Message[],
-    isArtifactsViewFeatureEnabled?: boolean
+    isArtifactsViewFeatureEnabled?: boolean,
+    artifactCreationEnabled?: boolean,
+    /** First inference from a ?q= deep link only; see SECBTY comment above. */
+    isFromQueryParam?: boolean
 ): ArtifactToolMode {
     if (!isArtifactsViewFeatureEnabled) {
         return 'off';
     }
+
     if (canvasModeActive) {
         return 'create';
     }
+
+    if (isFromQueryParam) {
+        return 'off';
+    }
+
+    if (artifactCreationEnabled ?? true) {
+        return 'auto';
+    }
+
     const hasArtifact = Object.keys(buildArtifactRegistry(messageChain)).length > 0;
-    return hasArtifact ? 'revise' : 'off';
+    if (hasArtifact) {
+        return 'revise';
+    }
+
+    return 'off';
 }
 
 export type SettingsContext = {
@@ -255,6 +277,39 @@ function ensureConversation(c: ConversationContext, ui: UiContext, createdAt: st
         dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
         return { spaceId, conversationId };
     };
+}
+
+function sendArtifactTurnTelemetry(
+    generationType: ArtifactGenerationType,
+    artifactToolMode: ArtifactToolMode,
+    chain: Message[],
+    isArtifactsViewFeatureEnabled: boolean | undefined
+) {
+    if (!isArtifactsViewFeatureEnabled) {
+        return;
+    }
+
+    sendArtifactTurnContextEvent({
+        generationType,
+        artifactToolMode,
+        hasExistingArtifact: Object.keys(buildArtifactRegistry(chain)).length > 0,
+    });
+}
+
+/**
+ * Whether the model may create new artifacts in this conversation.
+ *
+ * The conversation's own choice (set from the composer tool menu) wins, then the global
+ * setting, then on. A pending composer choice only applies before the conversation exists —
+ * once it does, the choice has already been stamped onto it (see `initializeNewSpaceAndConversation`).
+ */
+export function resolveArtifactCreationEnabled(state: LumoState, conversationId: ConversationId | undefined): boolean {
+    const globalDefault = state.lumoUserSettings?.automaticArtifactCreation ?? true;
+    const conversation = conversationId ? state.conversations[conversationId] : undefined;
+    if (conversation) {
+        return conversation.artifactCreation ?? globalDefault;
+    }
+    return state.composerActions?.pendingArtifactCreation ?? globalDefault;
 }
 
 /**
@@ -583,8 +638,12 @@ export function sendMessage({
             const artifactToolMode = resolveArtifactToolMode(
                 ui.canvasModeActive,
                 updatedLinearChain,
-                s.isArtifactsViewFeatureEnabled
+                s.isArtifactsViewFeatureEnabled,
+                // Fresh state: `state` predates the conversation this send may have just created.
+                resolveArtifactCreationEnabled(getState(), conversationId),
+                ui.isFromQueryParam
             );
+            sendArtifactTurnTelemetry('new', artifactToolMode, updatedLinearChain, s.isArtifactsViewFeatureEnabled);
 
             const contextLimits = getContextLimitsForModelTier(ui.modelTier);
             const buildTurns = (chain: Message[]) =>
@@ -780,8 +839,10 @@ export function regenerateMessage({
             const artifactToolMode = resolveArtifactToolMode(
                 ui.canvasModeActive,
                 c.messageChain,
-                s.isArtifactsViewFeatureEnabled
+                s.isArtifactsViewFeatureEnabled,
+                resolveArtifactCreationEnabled(state, c.conversationId)
             );
+            sendArtifactTurnTelemetry('regenerate', artifactToolMode, c.messageChain, s.isArtifactsViewFeatureEnabled);
 
             const contextLimits = getContextLimitsForModelTier(ui.modelTier);
             const buildTurns = (chain: Message[]) => {
@@ -1005,8 +1066,10 @@ export function retrySendMessage({
         const artifactToolMode = resolveArtifactToolMode(
             ui.canvasModeActive,
             updatedLinearChain,
-            s.isArtifactsViewFeatureEnabled
+            s.isArtifactsViewFeatureEnabled,
+            resolveArtifactCreationEnabled(state, c.conversationId)
         );
+        sendArtifactTurnTelemetry('retry', artifactToolMode, updatedLinearChain, s.isArtifactsViewFeatureEnabled);
 
         const contextLimits = getContextLimitsForModelTier(ui.modelTier);
         const buildTurns = (chain: Message[]) =>
@@ -1065,7 +1128,12 @@ export function retrySendMessage({
 }
 
 export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode: boolean = false) {
-    return (dispatch: LumoDispatch): { conversationId: ConversationId; spaceId: SpaceId } => {
+    return (
+        dispatch: LumoDispatch,
+        getState: () => LumoState
+    ): { conversationId: ConversationId; spaceId: SpaceId } => {
+        const pendingArtifactCreation = getState().composerActions?.pendingArtifactCreation ?? null;
+
         const spaceId = newSpaceId();
         dispatch(addSpace({ id: spaceId, createdAt, updatedAt: createdAt, spaceKey: generateSpaceKeyBase64() }));
         dispatch(pushSpaceRequest({ id: spaceId }));
@@ -1080,9 +1148,14 @@ export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode
                 updatedAt: createdAt,
                 status: ConversationStatus.GENERATING,
                 ...(isGhostMode && { ghost: true }),
+                // Part of the first push, so the server never holds a version without it.
+                ...(pendingArtifactCreation !== null && { artifactCreation: pendingArtifactCreation }),
             })
         );
         dispatch(pushConversationRequest({ id: conversationId }));
+        if (pendingArtifactCreation !== null) {
+            dispatch(clearPendingArtifactCreation());
+        }
 
         return { conversationId, spaceId };
     };

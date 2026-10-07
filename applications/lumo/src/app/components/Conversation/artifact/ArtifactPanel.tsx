@@ -10,10 +10,16 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
+import { useArtifactPanelSpotlight } from '../../../hooks/useArtifactPanelSpotlight';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { createThrottledProgressCallback, yieldToMainThreadPaint } from '../../../util/export/exportUiHelpers';
+import {
+    sendArtifactContentCopiedEvent,
+    sendArtifactDownloadedEvent,
+    sendArtifactWebpageViewToggledEvent,
+} from '../../../util/telemetry';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import DropdownMenu from '../../DropdownMenu';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
@@ -26,6 +32,7 @@ import { ArtifactExportOverlay } from './ArtifactExportOverlay';
 import { ArtifactInlineEdit } from './ArtifactInlineEdit';
 import { ArtifactPanelLoading } from './ArtifactPanelLoading';
 import { ArtifactPanelRevisionOverlay } from './ArtifactPanelRevisionOverlay';
+import { ArtifactPanelSpotlight } from './ArtifactPanelSpotlight';
 import { ArtifactSaveToDriveDropdown } from './ArtifactSaveToDriveDropdown';
 import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
 import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
@@ -92,7 +99,7 @@ interface PanelHeaderProps {
     onExitFullscreen?: () => void;
 }
 
-type ArtifactPanelLayout = 'docked' | 'mobile' | 'fullscreen';
+export type ArtifactPanelLayout = 'docked' | 'mobile' | 'fullscreen';
 
 const getVersionLabel = (versionNumber: number, totalVersions: number) => {
     return c('collider_2025:Info').t`v${versionNumber} of ${totalVersions}`;
@@ -455,6 +462,17 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
     const { artifactsView: isArtifactsViewFlagEnabled } = useLumoFlags();
     const [saveToDriveModal, setSaveToDriveModal, renderSaveToDriveModal] = useModalState();
     const [saveToDriveFormat, setSaveToDriveFormat] = useState<ArtifactSaveFormat>('md');
+    const headerRef = useRef<HTMLDivElement>(null);
+    // Docked only: the fullscreen overlay stacks above spotlights, and the mobile layout has no room.
+    // Waits for generation to finish so it never covers content that is still streaming in.
+    const { shouldShowSpotlight, markSpotlightSeen, handleSpotlightDisplayed } = useArtifactPanelSpotlight(
+        layout === 'docked' &&
+            Boolean(selectedArtifact) &&
+            !isGenerating &&
+            !isSelectedVersionProvisional &&
+            !manualEditActive &&
+            exportingDownloadKind === null
+    );
 
     // Reset to the live preview whenever the user switches to a different artifact (or version) —
     // a user manually inspecting the source of one webpage shouldn't land back on the source of
@@ -538,6 +556,10 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
 
     const handleCopy = () => {
         void navigator.clipboard.writeText(artifact.content).then(() => {
+            sendArtifactContentCopiedEvent({
+                artifactType: artifact.type,
+                layout,
+            });
             setCopySuccess(true);
             setTimeout(() => {
                 setCopySuccess(false);
@@ -560,6 +582,12 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         a.download = filename;
         a.click();
         URL.revokeObjectURL(url);
+        sendArtifactDownloadedEvent({
+            format: 'source',
+            artifactType: artifact.type,
+            layout,
+            result: 'success',
+        });
     };
 
     const handleDownloadTxt = () => {
@@ -572,6 +600,12 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         a.download = filename;
         a.click();
         URL.revokeObjectURL(url);
+        sendArtifactDownloadedEvent({
+            format: 'txt',
+            artifactType: artifact.type,
+            layout,
+            result: 'success',
+        });
     };
 
     const handleDownloadPdf = async () => {
@@ -582,23 +616,47 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                 onProgress: throttledExportProgress,
             });
             if (result === 'success') {
+                sendArtifactDownloadedEvent({
+                    format: 'pdf',
+                    artifactType: artifact.type,
+                    layout,
+                    result: 'success',
+                });
                 createNotification({
                     type: 'success',
                     text: c('collider_2025: Info').t`PDF downloaded.`,
                 });
             } else if (result === 'print_fallback') {
+                sendArtifactDownloadedEvent({
+                    format: 'pdf',
+                    artifactType: artifact.type,
+                    layout,
+                    result: 'print_fallback',
+                });
                 createNotification({
                     type: 'warning',
                     text: c('collider_2025: Info')
                         .t`PDF export failed — opened the print view instead. Choose “Save as PDF” in the print dialog.`,
                 });
             } else {
+                sendArtifactDownloadedEvent({
+                    format: 'pdf',
+                    artifactType: artifact.type,
+                    layout,
+                    result: 'error',
+                });
                 createNotification({
                     type: 'error',
                     text: c('collider_2025: Error').t`Could not export this artifact as PDF.`,
                 });
             }
         } catch {
+            sendArtifactDownloadedEvent({
+                format: 'pdf',
+                artifactType: artifact.type,
+                layout,
+                result: 'error',
+            });
             createNotification({
                 type: 'error',
                 text: c('collider_2025: Error').t`Could not export this artifact as PDF.`,
@@ -616,17 +674,35 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                 onProgress: throttledExportProgress,
             });
             if (result === 'success') {
+                sendArtifactDownloadedEvent({
+                    format: 'pptx',
+                    artifactType: artifact.type,
+                    layout,
+                    result: 'success',
+                });
                 createNotification({
                     type: 'success',
                     text: c('collider_2025: Info').t`PPTX downloaded.`,
                 });
             } else {
+                sendArtifactDownloadedEvent({
+                    format: 'pptx',
+                    artifactType: artifact.type,
+                    layout,
+                    result: 'error',
+                });
                 createNotification({
                     type: 'error',
                     text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
                 });
             }
         } catch {
+            sendArtifactDownloadedEvent({
+                format: 'pptx',
+                artifactType: artifact.type,
+                layout,
+                result: 'error',
+            });
             createNotification({
                 type: 'error',
                 text: c('collider_2025: Error').t`Could not export this artifact as PPTX.`,
@@ -636,50 +712,72 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
         }
     };
 
+    const handleWebpageViewModeChange = (mode: WebpageViewMode) => {
+        sendArtifactWebpageViewToggledEvent({
+            mode,
+            layout,
+        });
+        setWebpageViewMode(mode);
+    };
+
     return (
         <div className="flex flex-column h-full min-h-0 min-w-0 overflow-hidden w-full bg-norm">
-            <PanelHeader
-                type={artifact.type}
-                language={artifact.language}
-                title={artifact.title}
-                isStreaming={false}
-                onCopy={handleCopy}
-                copySuccess={copySuccess}
-                onDownload={handleDownload}
-                onDownloadTxt={handleDownloadTxt}
-                onDownloadPdf={handleDownloadPdf}
-                onDownloadPptx={handleDownloadPptx}
-                canDownloadTxt={canDownloadTxt}
-                canDownloadPdf={canDownloadPdf}
-                canDownloadPptx={canDownloadPptx}
-                exportingDownload={exportingDownload}
-                exportHeaderStatusLabel={exportHeaderStatusLabel}
-                onClose={closePanel}
-                layout={layout}
-                onBack={isMobileView ? closePanel : undefined}
-                onEnterFullscreen={layout === 'docked' ? enterFullscreen : undefined}
-                onExitFullscreen={isFullscreen ? exitFullscreen : undefined}
-                versionIndex={selectedVersionIndex}
-                versionCount={versionCount}
-                onPrevVersion={() => {
-                    goToVersion(selectedVersionIndex - 1);
+            <ArtifactPanelSpotlight
+                anchorRef={headerRef}
+                show={shouldShowSpotlight}
+                onClose={() => {
+                    markSpotlightSeen();
                 }}
-                onNextVersion={() => {
-                    goToVersion(selectedVersionIndex + 1);
-                }}
-                switcherEntries={switcherEntries}
-                onSelectArtifact={openArtifact}
-                webpageViewMode={webpageViewMode}
-                onWebpageViewModeChange={setWebpageViewMode}
-                canManuallyEdit={canManuallyEdit}
-                manualEditActive={manualEditActive}
-                manualEditDirty={manualEditDirty}
-                onStartManualEdit={handleStartManualEdit}
-                onSaveManualEdit={handleSaveManualEdit}
-                onCancelManualEdit={handleCancelManualEdit}
-                artifactSaveFormats={artifactSaveFormats}
-                onSaveToDrive={handleSaveToDrive}
-            />
+                onDisplayed={handleSpotlightDisplayed}
+                isGuest={isGuest}
+            >
+                <div ref={headerRef} className="shrink-0 w-full min-w-0">
+                    <PanelHeader
+                        type={artifact.type}
+                        language={artifact.language}
+                        title={artifact.title}
+                        isStreaming={isSelectedVersionProvisional}
+                        onCopy={handleCopy}
+                        copySuccess={copySuccess}
+                        onDownload={handleDownload}
+                        onDownloadTxt={handleDownloadTxt}
+                        onDownloadPdf={handleDownloadPdf}
+                        onDownloadPptx={handleDownloadPptx}
+                        canDownloadTxt={canDownloadTxt}
+                        canDownloadPdf={canDownloadPdf}
+                        canDownloadPptx={canDownloadPptx}
+                        exportingDownload={exportingDownload}
+                        exportHeaderStatusLabel={exportHeaderStatusLabel}
+                        onClose={closePanel}
+                        layout={layout}
+                        onBack={isMobileView ? closePanel : undefined}
+                        onEnterFullscreen={layout === 'docked' ? enterFullscreen : undefined}
+                        onExitFullscreen={isFullscreen ? exitFullscreen : undefined}
+                        versionIndex={selectedVersionIndex}
+                        versionCount={versionCount}
+                        onPrevVersion={() => {
+                            goToVersion(selectedVersionIndex - 1);
+                        }}
+                        onNextVersion={() => {
+                            goToVersion(selectedVersionIndex + 1);
+                        }}
+                        switcherEntries={switcherEntries}
+                        onSelectArtifact={(id) => {
+                            openArtifact(id, undefined, 'switcher');
+                        }}
+                        webpageViewMode={webpageViewMode}
+                        onWebpageViewModeChange={handleWebpageViewModeChange}
+                        canManuallyEdit={canManuallyEdit}
+                        manualEditActive={manualEditActive}
+                        manualEditDirty={manualEditDirty}
+                        onStartManualEdit={handleStartManualEdit}
+                        onSaveManualEdit={handleSaveManualEdit}
+                        onCancelManualEdit={handleCancelManualEdit}
+                        artifactSaveFormats={artifactSaveFormats}
+                        onSaveToDrive={handleSaveToDrive}
+                    />
+                </div>
+            </ArtifactPanelSpotlight>
             <div
                 ref={contentRef}
                 className="artifact-content-area relative flex flex-column flex-1 min-h-0 min-w-0 overflow-hidden w-full"
@@ -711,6 +809,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked' }: ArtifactPane
                                 title={artifact.title}
                                 artifactType={artifact.type}
                                 isGenerating={isGenerating || isSelectedVersionProvisional}
+                                layout={layout}
                             />
                         )}
                     </div>

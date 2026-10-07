@@ -13,6 +13,7 @@ import noop from '@proton/utils/noop';
 
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import { createThrottledProgressCallback } from '../../../util/export/exportUiHelpers';
+import { sendArtifactSaveToDriveCompletedEvent } from '../../../util/telemetry';
 import { DriveBrowser } from '../../Files';
 import type { BreadcrumbItem } from '../../Files/DriveBrowser/DriveBreadcrumbs';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
@@ -88,6 +89,11 @@ const SaveArtifactToDriveModal = ({ artifact, format, ...modalProps }: SaveArtif
                 );
             });
 
+            sendArtifactSaveToDriveCompletedEvent({
+                format,
+                artifactType: artifact.type,
+                result: 'success',
+            });
             createNotification({
                 text: c('collider_2025:Success').t`Saved to ${DRIVE_SHORT_APP_NAME}`,
                 type: 'success',
@@ -96,6 +102,11 @@ const SaveArtifactToDriveModal = ({ artifact, format, ...modalProps }: SaveArtif
             modalProps.onClose?.();
         } catch (error) {
             console.error('Failed to save artifact to Drive:', error);
+            sendArtifactSaveToDriveCompletedEvent({
+                format,
+                artifactType: artifact.type,
+                result: 'error',
+            });
             createNotification({
                 text: error instanceof Error ? error.message : c('collider_2025:Error').t`Failed to save file`,
                 type: 'error',
