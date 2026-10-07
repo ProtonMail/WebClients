@@ -1764,6 +1764,27 @@
       ],
       "New chat": [
         "Conversație nouă"
+      ],
+      "Detach": [
+        "Detașare"
+      ],
+      "Don't show this offer again": [
+        "Nu mai afișa această ofertă"
+      ],
+      "Got it, connect my Gmail": [
+        "Am înțeles, conectez contul Gmail"
+      ],
+      "Learn how this works": [
+        "Aflați cum funcționează"
+      ],
+      "More info": [
+        "Detalii"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
+      ],
+      "Switch to ${ planName }": [
+        "Comutare la ${ planName }"
       ]
     },
     "action": {
@@ -1930,6 +1951,12 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "Managed Service Provider": [
+        "Furnizor de servicii gestionate"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizațiile care dispun de modulul „Furnizor de servicii gestionate” pot crea și gestiona organizații subsidiare."
       ]
     },
     "Alert": {
@@ -2311,6 +2338,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicați ${ MAIL_APP_NAME } Desktop"
+      ],
+      "${ appName } Desktop application": [
+        "Aplicația desktop ${ appName }"
       ]
     },
     "Bug category": {
@@ -2443,6 +2473,9 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Duplicatele din importările anterioare vor fi omise. Anulați sau importați mesajele mai vechi în setările din ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ],
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Cele mai recente e-mailuri vor fi importate primele. Cele importate deja nu vor mai fi copiate."
       ]
     },
     "Calendar attachment tooltip": {
@@ -6678,6 +6711,9 @@
       ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "Good to know before you connect": [
+        "Bine de știut înainte de conectare"
       ]
     },
     "Hint": {
@@ -8393,7 +8429,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -10219,6 +10257,42 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** este utilizată și pentru a vă conecta la un cont ${ BRAND_NAME } separat, din afara ${ MAIL_APP_NAME }."
+      ],
+      "1 device per user": [
+        "Un dispozitiv per utilizator"
+      ],
+      "1 vault per user": [
+        "Un seif per utilizator"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
+      "Here's what happens when you continue:": [
+        "Iată ce se va întâmpla după ce continuați:"
+      ],
+      "Next time you sign in to your other account": [
+        "Data viitoare când vă conectați la celălalt cont"
+      ],
+      "No payment is required.": [
+        "Nu este necesară plată."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Nimic nu se schimbă în celălalt cont al ${ BRAND_NAME }."
+      ],
+      "Today": [
+        "Azi"
+      ],
+      "You'll choose a new username": [
+        "Veți alege un nume de utilizator nou."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "O veți folosi pentru a vă autentifica în viitor. Aceasta este singura schimbare."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Contul Gmail vi se conectează la această adresă ${ MAIL_APP_NAME }."
       ]
     },
     "info": {
@@ -11566,6 +11640,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Image": [
+        "Imagine"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14233,6 +14310,81 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nu poate fi combinat cu ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } este disponibil doar pentru planurile de afaceri."
+      ],
+      "An organization is required for this plan.": [
+        "Pentru acest plan este necesară o organizație."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Oferta Born Private nu poate fi achiziționată dacă există un abonament activ."
+      ],
+      "Born Private requires a donation.": [
+        "Oferta Born Private necesită o donație."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Achiziționarea de credite necesită o tranzacție separată."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Dacă vă comutați, sunteți de acord cu acești ${ termsLink }."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Poate fi achiziționat doar un singur plan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Închideți conturile suplimentare de portofele înainte de a vă schimba planul."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Închideți portofelele suplimentare înainte de a vă schimba planul."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Numărul licențelor pentru Scribe nu îl poate depăși pe cel al numărului de membri."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Planul selectat nu oferă suficiente adrese pentru contul pe care îl dețineți."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Planul selectat nu oferă suficiente domenii pentru contul deținut."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Planul selectat nu oferă suficiente licențe pentru membri din contul pe care îl dețineți."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Planul selectat nu oferă suficient spațiu de stocare pentru contul deținut."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Acest server dedicat este alocat unei porți de acces și nu poate fi modificat."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Acest plan nu oferă suport pentru membrii din contul deținut."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Abonamentele de probare nu acceptă licențe pentru ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Planurile de probare nu suportă domenii personale."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Abonamentele de probare nu oferă suport pentru adrese IP dedicate."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Acest plan nu suportă licențe pentru Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Abonamentele de probare nu suportă un număr atât de mare de membri."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Deja dețineți planul ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ],
+      "You already own Born Private.": [
+        "Dețineți deja oferta Born Private."
+      ],
+      "Your account is too old for Born Private.": [
+        "Contul tău este prea vechi pentru oferta Born Private."
       ]
     },
     "Payments.Error": {
