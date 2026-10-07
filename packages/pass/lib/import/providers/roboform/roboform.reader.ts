@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import lastItem from '@proton/utils/lastItem';
 
 import type { ItemImportIntent, Maybe } from '../../../../types';
-import { groupByKey } from '../../../../utils/array/group-by-key';
 import { logger } from '../../../../utils/logger';
 import { readCSV } from '../../helpers/csv.reader';
 import { ImportProviderError } from '../../helpers/error';
+import { createImportFolderTree } from '../../helpers/folders';
 import { getEmailOrUsername, getImportedVaultName, importLoginItem, importNoteItem } from '../../helpers/transformers';
 import type { ImportReaderResult, ImportVault } from '../../types';
 import type { RoboformItem, RoboformVariadicItem } from './roboform.types';
@@ -26,7 +26,6 @@ const formatOtpAuthUri = (item: RoboformItem): Maybe<string> => {
 export const readRoboformData = async (file: File): Promise<ImportReaderResult> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
-    const vaults: ImportVault[] = [];
 
     try {
         const data = await file.text();
@@ -45,60 +44,55 @@ export const readRoboformData = async (file: File): Promise<ImportReaderResult> 
                 Login: unescapeFieldValue(Login),
                 Pwd: unescapeFieldValue(Pwd),
                 Note,
-                Folder: lastItem(Folder.split('/')),
+                Folder,
                 RfFieldsV2,
             }));
 
-        for (const vaultItems of groupByKey(parsed, 'Folder')) {
-            const vaultName = vaultItems[0].Folder;
-            const items: ItemImportIntent[] = [];
+        const tree = createImportFolderTree({ separator: '/' });
+        const items: ItemImportIntent[] = [];
 
-            for (const item of vaultItems) {
-                const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
-                    try {
-                        /* Bookmark */
-                        if (item.Url && !item.MatchUrl && !item.Login && !item.Pwd) {
-                            return importLoginItem({
-                                name: item.Name,
-                                urls: [item.Url],
-                                note: item.Note,
-                            });
-                        }
+        for (const item of parsed) {
+            const folderId = tree.add(item.Folder);
 
-                        /* Note */
-                        if (!item.Url && !item.MatchUrl && !item.Login && !item.Pwd) {
-                            return importNoteItem({
-                                name: item.Name,
-                                note: item.Note,
-                            });
-                        }
-
-                        /* Login */
+            const value = await (async (): Promise<Maybe<ItemImportIntent>> => {
+                try {
+                    /* Bookmark */
+                    if (item.Url && !item.MatchUrl && !item.Login && !item.Pwd) {
                         return importLoginItem({
                             name: item.Name,
-                            urls: [item.MatchUrl],
+                            urls: [item.Url],
                             note: item.Note,
-                            password: item.Pwd,
-                            totp: formatOtpAuthUri(item),
-                            ...(await getEmailOrUsername(item.Login)),
                         });
-                    } catch (err) {
-                        const title = item?.Name ?? '';
-                        ignored.push(`[${c('Label').t`Unknown`}] ${title}`);
-                        logger.warn('[Importer::Roboform]', err);
                     }
-                })();
 
-                if (value) items.push(value);
-            }
+                    /* Note */
+                    if (!item.Url && !item.MatchUrl && !item.Login && !item.Pwd) {
+                        return importNoteItem({
+                            name: item.Name,
+                            note: item.Note,
+                        });
+                    }
 
-            vaults.push({
-                shareId: null,
-                name: getImportedVaultName(vaultName),
-                folders: [],
-                items,
-            });
+                    /* Login */
+                    return importLoginItem({
+                        name: item.Name,
+                        urls: [item.MatchUrl],
+                        note: item.Note,
+                        password: item.Pwd,
+                        totp: formatOtpAuthUri(item),
+                        ...(await getEmailOrUsername(item.Login)),
+                    });
+                } catch (err) {
+                    const title = item?.Name ?? '';
+                    ignored.push(`[${c('Label').t`Unknown`}] ${title}`);
+                    logger.warn('[Importer::Roboform]', err);
+                }
+            })();
+
+            if (value) items.push({ ...value, folderId });
         }
+
+        const vaults: ImportVault[] = [{ name: getImportedVaultName(), shareId: null, folders: tree.folders, items }];
 
         return { vaults, ignored, warnings };
     } catch (e) {
