@@ -44,6 +44,22 @@ describe('prepareTurns — artifact tool nudge', () => {
         expect(nudge?.content).toContain('activated Create Artifact mode');
     });
 
+    it('injects the judgment-based nudge (not the forced one) when artifactToolMode is "auto"', () => {
+        const turns = prepareTurns(
+            [message],
+            personalization,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            false,
+            'auto'
+        );
+        const nudge = turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
+        expect(nudge?.content).toContain('most messages should be answered normally in the chat');
+        expect(nudge?.content).not.toContain('activated Create Artifact mode');
+    });
+
     it('injects the revise-only nudge when artifactToolMode is "revise"', () => {
         const turns = prepareTurns(
             [message],
@@ -211,12 +227,7 @@ describe('prepareTurns — attachment content blocks', () => {
             },
         ] as unknown as Attachment[];
 
-        const turns = prepareTurns(
-            [manualMessage, autoMessage],
-            personalization,
-            undefined,
-            makeContext(attachments)
-        );
+        const turns = prepareTurns([manualMessage, autoMessage], personalization, undefined, makeContext(attachments));
 
         const joined = turns.map((t) => t.content).join('\n');
         expect(joined.match(/----- BEGIN FILE CONTENTS -----/g)).toHaveLength(1);

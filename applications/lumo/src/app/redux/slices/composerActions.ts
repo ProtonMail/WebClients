@@ -6,6 +6,10 @@ interface ComposerActionsState {
     // Agent selected for the next/new conversation, before that conversation has an id.
     // Once the conversation is created, the agent is stamped onto it and this is cleared.
     pendingAgentId: string | null;
+    // Artifact-creation choice made in the composer tool menu for a new conversation, before that
+    // conversation has an id. Stamped onto the conversation on first send, then cleared. `null`
+    // means the user hasn't touched the toggle, so the global default applies.
+    pendingArtifactCreation: boolean | null;
     // Whether the agent picker modal is open. Triggered from the Tools menu or the active badge.
     agentPickerOpen: boolean;
 }
@@ -13,6 +17,7 @@ interface ComposerActionsState {
 const initialState: ComposerActionsState = {
     pendingPrefill: null,
     pendingAgentId: null,
+    pendingArtifactCreation: null,
     agentPickerOpen: false,
 };
 
@@ -32,6 +37,12 @@ const composerActionsSlice = createSlice({
         clearPendingAgent: (state) => {
             state.pendingAgentId = null;
         },
+        setPendingArtifactCreation: (state, action: PayloadAction<boolean>) => {
+            state.pendingArtifactCreation = action.payload;
+        },
+        clearPendingArtifactCreation: (state) => {
+            state.pendingArtifactCreation = null;
+        },
         openAgentPicker: (state) => {
             state.agentPickerOpen = true;
         },
@@ -46,6 +57,8 @@ export const {
     clearPendingPrefill,
     setPendingAgent,
     clearPendingAgent,
+    setPendingArtifactCreation,
+    clearPendingArtifactCreation,
     openAgentPicker,
     closeAgentPicker,
 } = composerActionsSlice.actions;
