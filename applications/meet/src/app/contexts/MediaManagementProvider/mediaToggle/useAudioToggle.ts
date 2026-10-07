@@ -532,15 +532,17 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
             return false;
         }
 
-        toggleInProgress.current = true;
+        let failedStep: string | undefined;
 
         const runStep = async <T>(step: string, fn: () => Promise<T>): Promise<T> => {
             debugLog('step:start', { operationId, step });
             try {
                 const result = await fn();
+                failedStep = undefined;
                 debugLog('step:success', { operationId, step });
                 return result;
             } catch (error) {
+                failedStep = step;
                 debugLog('step:failed', { operationId, step, reason: getErrorReason(error) });
                 throw error;
             }
@@ -556,23 +558,26 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
             dtx: false,
         };
 
+        const audioPublication = getCurrentPublication();
+        const audioTrack = audioPublication?.audioTrack;
+        const captureTrack = audioTrack?.mediaStream?.getAudioTracks()[0];
+        const isTrackEnded = captureTrack?.readyState === 'ended';
+        const isDeviceChanging = currentDeviceId.current !== deviceId;
+        const isJustTogglingMute = !!audioTrack && !isDeviceChanging && !isTrackEnded;
+        const hasTrackProcessor = !!audioTrack?.getProcessor();
+
+        debugLog('toggle:strategy', {
+            operationId,
+            hasAudioTrack: !!audioTrack,
+            isTrackEnded,
+            isDeviceChanging,
+            isJustTogglingMute,
+            trackReadyState: audioTrack?.mediaStreamTrack?.readyState,
+        });
+
+        toggleInProgress.current = true;
+
         try {
-            const audioPublication = getCurrentPublication();
-            const audioTrack = audioPublication?.audioTrack;
-            const captureTrack = audioTrack?.mediaStream?.getAudioTracks()[0];
-            const isTrackEnded = captureTrack?.readyState === 'ended';
-            const isDeviceChanging = currentDeviceId.current !== deviceId;
-            const isJustTogglingMute = !!audioTrack && !isDeviceChanging && !isTrackEnded;
-
-            debugLog('toggle:strategy', {
-                operationId,
-                hasAudioTrack: !!audioTrack,
-                isTrackEnded,
-                isDeviceChanging,
-                isJustTogglingMute,
-                trackReadyState: audioTrack?.mediaStreamTrack?.readyState,
-            });
-
             if (isJustTogglingMute) {
                 if (isEnabled) {
                     await runStep('fast-path-unmute', () => withTimeout(audioTrack.unmute(), 'Unmute audio track'));
@@ -696,7 +701,10 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
                 debugLog('noiseFilter:skipped-for-recovery', { operationId });
             }
         } catch (error) {
-            reportError('Failed to toggle audio', error);
+            reportError('Failed to toggle audio', {
+                context: { error },
+                tags: { isEnabled, failedStep, isTrackEnded, hasTrackProcessor },
+            });
             // eslint-disable-next-line no-console
             console.error(error);
             debugLog('toggle:error', { operationId, reason: getErrorReason(error) });
