@@ -1759,6 +1759,27 @@
       ],
       "New chat": [
         "Ny chat"
+      ],
+      "Detach": [
+        "Fjern tilknytning"
+      ],
+      "Don't show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Got it, connect my Gmail": [
+        "Forstået, forbind min Gmail"
+      ],
+      "Learn how this works": [
+        "Forstå hvordan det fungerer"
+      ],
+      "More info": [
+        "Mere info"
+      ],
+      "Special Offer": [
+        "Særtilbud"
+      ],
+      "Switch to ${ planName }": [
+        "Skift til ${ planName }"
       ]
     },
     "action": {
@@ -1914,6 +1935,12 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentpladser"
+      ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisationer med tilføjelsen Managed Service Provider kan oprette og administrere underorganisationer."
       ]
     },
     "Alert": {
@@ -2289,6 +2316,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } skrivebordsapp"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } skrivebordsapp"
       ]
     },
     "Bug category": {
@@ -2424,6 +2454,9 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importer ældre beskeder i indstillingerne for ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ],
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Dine nyeste e-mails bliver importeret først. E-mails, du allerede har importeret, kopieres ikke igen."
       ]
     },
     "Calendar attachment tooltip": {
@@ -6619,6 +6652,9 @@
       ],
       "Username": [
         "Brugernavn"
+      ],
+      "Good to know before you connect": [
+        "Nyttigt at vide før du forbinder"
       ]
     },
     "Hint": {
@@ -8266,7 +8302,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -10063,6 +10100,42 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Du har en åben faktura til ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** bruges også til at logge ind på en separat ${ BRAND_NAME }-konto, udenfor ${ MAIL_APP_NAME }."
+      ],
+      "1 device per user": [
+        "1 enhed per bruger"
+      ],
+      "1 vault per user": [
+        "1 boks pr. bruger"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterne er baseret på de månedlige standardpriser. Når faktureringscyklussen slutter fornyes dit abonnement til standardprisen pr. år."
+      ],
+      "Here's what happens when you continue:": [
+        "Dette sker når du fortsætter:"
+      ],
+      "Next time you sign in to your other account": [
+        "Næste gang du logger ind på din anden konto"
+      ],
+      "No payment is required.": [
+        "Der kræves ingen betaling."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Intet ændrer sig i din anden ${ BRAND_NAME }-konto."
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "You'll choose a new username": [
+        "Du vælger et nyt brugernavn"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Du vil bruge den til, at logge ind fremover. Det er den eneste ændring."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Din Gmail forbindes til denne ${ MAIL_APP_NAME }-adresse"
       ]
     },
     "info": {
@@ -11402,6 +11475,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Image": [
+        "Billede"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14017,6 +14093,81 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan ikke kombineres md ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er kun tilgængeligt på erhvervsabonnementer."
+      ],
+      "An organization is required for this plan.": [
+        "En organisation kræves for dette abonnement."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private kan ikke købes uden et aktivt abonnement."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private kræver en donation."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Køb af kredit kræver et separat køb."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ved at skifte, accepterer du vores ${ termsLink }."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Der kan kun købes ét ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Luk ekstra wallet-konti før du ændrer dit abonnement."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Luk ekstra wallets før du ændrer dit abonnement."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Der kan ikke være flere Scribe-pladser end medlemmer."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Det valgte abonnement understøtter ikke nok adresser til din konto."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Det valgte abonnement understøtter ikke nok domæner til din konto."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Det valgte abonnement understøtter ikke nok medlemmer til din konto."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Det valgte abonnement understøtter ikke nok lagerplads til din konto."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Den dedikerede server er tilknyttet en gateway, og kan ikke ændres."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Dette abonnement understøtter ikke medlemmer på din konto."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Prøveversioner understøtter ikke ${ LUMO_SHORT_APP_NAME }-pladser."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Prøveversioner understøtter ikke brugerdomæner."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Prøveversioner understøtter ikke dedikerede IP-adresser."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Prøveversioner understøtter ikke Scribe-pladser."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Prøveversioner understøtter ikke så stort et antal medlemmer."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du ejer allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Du ejer allerede Born Private."
+      ],
+      "Your account is too old for Born Private.": [
+        "Din konto er for gammel til Born Private."
       ]
     },
     "Payments.Error": {
