@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -20,8 +22,8 @@ export const useNewCodeLinks = ({ onRequestNewCode }: { onRequestNewCode: () => 
     return { InvalidCodeErrorMessage, AssistiveText };
 };
 
-/** Tells the user the new code was sent. */
+/** Tells the user the new code was sent. Stable, like `createNotification`, so effects can depend on it. */
 export const useNotifyCodeSent = () => {
     const { createNotification } = useNotifications();
-    return () => createNotification({ text: c('Info').t`Verification code sent.` });
+    return useCallback(() => createNotification({ text: c('Info').t`Verification code sent.` }), [createNotification]);
 };

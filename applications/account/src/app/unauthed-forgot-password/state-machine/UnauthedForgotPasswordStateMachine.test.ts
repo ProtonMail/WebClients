@@ -16,6 +16,7 @@ import {
     type UnauthedForgotPasswordMachineEmitted,
     UnauthedForgotPasswordStateMachine,
     UnauthedForgotPasswordStateMachineTags,
+    selectCanGoBack,
 } from './UnauthedForgotPasswordStateMachine';
 import type {
     CodeInput,
@@ -24,6 +25,14 @@ import type {
     OwnershipProof,
     ResetPasswordInput,
 } from './forgotPasswordActors';
+import {
+    InvalidResetCodeError,
+    NoKeysDecryptedUsingPhraseError,
+    ResetKeysRejectedError,
+    ResetMethodNotAllowedError,
+    ResetTokenRejectedError,
+    SignInAfterResetError,
+} from './forgotPasswordErrors';
 
 function makeResetResponse(
     overrides: { Sessions?: ExistingSession[]; DelegatedAccesses?: DelegatedAccessSummary[] } = {}
@@ -61,6 +70,12 @@ const mnemonicData: MnemonicDataWithoutAPI = { authResponse: {} as AuthResponse,
 
 const apiError = (code: number) => ({ data: { Code: code, Error: `error ${code}` } });
 
+/** How the requests fail in the ways the machine acts on (`forgotPasswordErrors`). */
+const methodNotAllowed = () => new ResetMethodNotAllowedError(apiError(API_CUSTOM_ERROR_CODES.NOT_ALLOWED));
+const invalidCode = () => new InvalidResetCodeError(apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE));
+const resetTokenRejected = () => new ResetTokenRejectedError(apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE));
+const resetKeysRejected = () => new ResetKeysRejectedError(apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE));
+
 /** The account the fake requests answer for, and what they were asked; each test sets it up as it goes. */
 interface Harness {
     methods: RecoveryMethod[];
@@ -70,6 +85,8 @@ interface Harness {
     sentCodes: CodeInput[];
     resets: ResetPasswordInput[];
     emitted: UnauthedForgotPasswordMachineEmitted[];
+    /** Each time the machine left for the sign-in page, with its username then, which the sign-in form starts with. */
+    signInRedirects: string[];
 }
 
 const harnesses = new WeakMap<object, Harness>();
@@ -82,8 +99,14 @@ function startActor(overrides: Partial<Record<keyof ForgotPasswordActors, AnyAct
         sentCodes: [],
         resets: [],
         emitted: [],
+        signInRedirects: [],
     };
     const machine = UnauthedForgotPasswordStateMachine.provide({
+        actions: {
+            redirectToSignIn: ({ context }) => {
+                harness.signInRedirects.push(context.username);
+            },
+        },
         actors: {
             requestRecoveryMethods: fromPromise(async ({ input }: { input: { username: string } }) => ({
                 methods: harness.methods,
@@ -131,6 +154,8 @@ function waitUntilSettled(actor: ForgotPasswordActor) {
         actor,
         (snap) =>
             !snap.hasTag(UnauthedForgotPasswordStateMachineTags.submitting) &&
+            // Sending the email code isn't shown as a request
+            !snap.matches({ verifyRecoveryEmail: 'sendingCode' }) &&
             !snap.hasTag(UnauthedForgotPasswordStateMachineTags.resending),
         { timeout: 1_000 }
     );
@@ -332,14 +357,6 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(snap.matches('enterRecoverySms')).toBe(true);
         });
 
-        it('email skipped, sms available → enterRecoverySms', async () => {
-            const actor = startActor();
-            await sendRecoveryStarted(actor, ['email', 'sms']);
-            actor.send({ type: 'decision.skip' });
-            const snap = actor.getSnapshot();
-            expect(snap.matches('enterRecoverySms')).toBe(true);
-        });
-
         it('no email/sms → mnemonicRecovery.enterPhrase', async () => {
             const actor = startActor();
             const snap = await startRecoveryWith(actor, ['mnemonic']);
@@ -365,7 +382,6 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(snap.context.delegatedAccessContacts).toHaveLength(1);
         });
 
-        // Email is offered first, so nothing is skipped yet here; "navigation sequences" covers resetting skips
         it('decision.back → entry', async () => {
             const actor = startActor();
             await navigateToVerifyRecoveryEmail(actor);
@@ -373,13 +389,18 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().matches('entry')).toBe(true);
         });
 
-        it('decision.skip → the next method, with emailRecoverySkipped = true', async () => {
+        it('decision.skip → the SMS step, the next method', async () => {
             const actor = startActor();
             await startRecoveryWith(actor, ['email', 'sms']);
             actor.send({ type: 'decision.skip' });
-            const snap = actor.getSnapshot();
-            expect(snap.matches('enterRecoverySms')).toBe(true);
-            expect(snap.context.emailRecoverySkipped).toBe(true);
+            expect(actor.getSnapshot().matches('enterRecoverySms')).toBe(true);
+        });
+
+        it('decision.skip without SMS → the phrase step', async () => {
+            const actor = startActor();
+            await startRecoveryWith(actor, ['email', 'mnemonic']);
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches({ mnemonicRecovery: 'enterPhrase' })).toBe(true);
         });
     });
 
@@ -391,24 +412,19 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().matches('verifyRecoverySms')).toBe(true);
         });
 
-        it('decision.back → entry and resets skip flags', async () => {
+        it('decision.back → entry', async () => {
             const actor = startActor();
             await navigateToEnterRecoverySms(actor);
             actor.send({ type: 'decision.back' });
-            const snap = actor.getSnapshot();
-            expect(snap.matches('entry')).toBe(true);
-            expect(snap.context.smsRecoverySkipped).toBe(false);
-            expect(snap.context.emailRecoverySkipped).toBe(false);
+            expect(actor.getSnapshot().matches('entry')).toBe(true);
         });
 
-        it('decision.skip → the next method, with smsRecoverySkipped = true', async () => {
+        it('decision.skip → the next method', async () => {
             const actor = startActor();
             await navigateToEnterRecoverySms(actor);
             actor.send({ type: 'decision.skip' });
-            const snap = actor.getSnapshot();
             // No other method: the other ways to recover
-            expect(snap.matches({ unauthenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
-            expect(snap.context.smsRecoverySkipped).toBe(true);
+            expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
         });
     });
 
@@ -431,14 +447,12 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().matches('enterRecoverySms')).toBe(true);
         });
 
-        it('decision.skip → the next method, with smsRecoverySkipped = true', async () => {
+        it('decision.skip → the next method', async () => {
             const actor = startActor();
             await navigateToVerifyRecoverySms(actor);
             actor.send({ type: 'decision.skip' });
-            const snap = actor.getSnapshot();
             // No other method: the other ways to recover
-            expect(snap.matches({ unauthenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
-            expect(snap.context.smsRecoverySkipped).toBe(true);
+            expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
         });
     });
 
@@ -501,7 +515,7 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(snap.context.mnemonicData).toBe(mnemonicData);
         });
 
-        // "navigation sequences" covers going back after skipping email or SMS to get here
+        // Without an earlier method; "navigation sequences" covers going back after skipping email or SMS to get here
         it('decision.back → entry', async () => {
             const actor = startActor();
             await sendRecoveryStarted(actor, ['mnemonic']);
@@ -1038,6 +1052,27 @@ describe('UnauthedForgotPasswordStateMachine', () => {
         });
     });
 
+    describe('leaving for sign-in', () => {
+        it('back from the first step leaves with the last username the user gave', async () => {
+            const actor = startActor();
+            await sendRecoveryStarted(actor, ['email']);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('entry')).toBe(true);
+
+            actor.send({ type: 'decision.back' });
+            expect(harnessOf(actor).signInRedirects).toEqual(['user@example.com']);
+        });
+
+        it('the error step leaves with the username the user gave', async () => {
+            const actor = startActor({ sendResetCode: fromPromise(() => Promise.reject(methodNotAllowed())) });
+            await navigateToVerifyRecoveryEmail(actor);
+            expect(actor.getSnapshot().matches('recoveryMethodVerificationError')).toBe(true);
+
+            actor.send({ type: 'decision.skip' });
+            expect(harnessOf(actor).signInRedirects).toEqual(['user@example.com']);
+        });
+    });
+
     describe('hideReturnToSignIn tag', () => {
         it('is present on entry', () => {
             const actor = startActor();
@@ -1073,7 +1108,7 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             return actor.getSnapshot();
         }
 
-        it('skip email → back from SMS enter → retry shows email first', async () => {
+        it('skip email → back from the SMS step → the email code step again, sending a new code', async () => {
             const actor = startActor();
             await startRecoveryWith(actor, ['email', 'sms']);
             expect(actor.getSnapshot().matches('verifyRecoveryEmail')).toBe(true);
@@ -1081,47 +1116,63 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().matches('enterRecoverySms')).toBe(true);
 
             actor.send({ type: 'decision.back' });
-            expect(actor.getSnapshot().matches('entry')).toBe(true);
-            expect(actor.getSnapshot().context.emailRecoverySkipped).toBe(false);
-            expect(actor.getSnapshot().context.smsRecoverySkipped).toBe(false);
+            expect(actor.getSnapshot().matches({ verifyRecoveryEmail: 'sendingCode' })).toBe(true);
+            await waitUntilSettled(actor);
+            expect(actor.getSnapshot().matches({ verifyRecoveryEmail: { awaitingCode: 'editing' } })).toBe(true);
+            // The API keeps one reset token per account, which an SMS code sent meanwhile would have replaced
+            expect(harnessOf(actor).sentCodes.map(({ method }) => method)).toEqual(['email', 'email']);
 
-            const snap = await retry(actor, ['email', 'sms']);
-            expect(snap.matches('verifyRecoveryEmail')).toBe(true);
+            // Skipping it again leads to the SMS step again
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches('enterRecoverySms')).toBe(true);
         });
 
-        it('skip email → skip SMS → back from mnemonic enterPhrase → retry shows email first', async () => {
+        it('skip email → skip SMS → back from the phrase step goes back up the methods, offering each again', async () => {
             const actor = startActor();
             await sendRecoveryStarted(actor, ['email', 'sms', 'mnemonic']);
             actor.send({ type: 'decision.skip' });
             actor.send({ type: 'decision.skip' });
             await waitForState(actor, { mnemonicRecovery: 'enterPhrase' });
-            expect(actor.getSnapshot().context.emailRecoverySkipped).toBe(true);
-            expect(actor.getSnapshot().context.smsRecoverySkipped).toBe(true);
+
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ enterRecoverySms: 'idle' })).toBe(true);
+
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ verifyRecoveryEmail: 'sendingCode' })).toBe(true);
+            await waitUntilSettled(actor);
 
             actor.send({ type: 'decision.back' });
             expect(actor.getSnapshot().matches('entry')).toBe(true);
-            expect(actor.getSnapshot().context.emailRecoverySkipped).toBe(false);
-            expect(actor.getSnapshot().context.smsRecoverySkipped).toBe(false);
-
-            const snap = await retry(actor, ['email', 'sms', 'mnemonic']);
-            expect(snap.matches('verifyRecoveryEmail')).toBe(true);
         });
 
-        it('skip SMS only → back from mnemonic enterPhrase → retry shows SMS first', async () => {
+        it('back up the methods → another way offers each again, in order', async () => {
+            const actor = startActor();
+            await sendRecoveryStarted(actor, ['email', 'sms', 'mnemonic']);
+            actor.send({ type: 'decision.skip' });
+            actor.send({ type: 'decision.skip' });
+            await waitForState(actor, { mnemonicRecovery: 'enterPhrase' });
+            actor.send({ type: 'decision.back' });
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('verifyRecoveryEmail')).toBe(true);
+            await waitUntilSettled(actor);
+
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches({ enterRecoverySms: 'idle' })).toBe(true);
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches({ mnemonicRecovery: 'enterPhrase' })).toBe(true);
+        });
+
+        it('skip SMS only → back from the phrase step → the SMS step again', async () => {
             const actor = startActor();
             await sendRecoveryStarted(actor, ['sms', 'mnemonic']);
             actor.send({ type: 'decision.skip' });
             await waitForState(actor, { mnemonicRecovery: 'enterPhrase' });
-            expect(actor.getSnapshot().context.smsRecoverySkipped).toBe(true);
 
             actor.send({ type: 'decision.back' });
-            expect(actor.getSnapshot().context.smsRecoverySkipped).toBe(false);
-
-            const snap = await retry(actor, ['sms', 'mnemonic']);
-            expect(snap.matches('enterRecoverySms')).toBe(true);
+            expect(actor.getSnapshot().matches({ enterRecoverySms: 'idle' })).toBe(true);
         });
 
-        it('back from verifyRecoveryEmail → retry → email shown again (flag was never set)', async () => {
+        it('back from verifyRecoveryEmail → retry → email shown again', async () => {
             const actor = startActor();
             await startRecoveryWith(actor, ['email', 'sms']);
             expect(actor.getSnapshot().matches('verifyRecoveryEmail')).toBe(true);
@@ -1141,22 +1192,27 @@ describe('UnauthedForgotPasswordStateMachine', () => {
 
             actor.send({ type: 'decision.back' });
             expect(actor.getSnapshot().matches('enterRecoverySms')).toBe(true);
-            expect(actor.getSnapshot().context.smsRecoverySkipped).toBe(false);
         });
 
-        it('skip SMS from verifyRecoverySms sets flag → back from enterPhrase resets it', async () => {
+        it('skip SMS from its code step → back from the phrase step → the SMS step, to send a code again', async () => {
             const actor = startActor();
             await sendRecoveryStarted(actor, ['sms', 'mnemonic']);
             await requestSmsCode(actor);
             actor.send({ type: 'decision.skip' });
             await waitForState(actor, { mnemonicRecovery: 'enterPhrase' });
-            expect(actor.getSnapshot().context.smsRecoverySkipped).toBe(true);
 
             actor.send({ type: 'decision.back' });
-            expect(actor.getSnapshot().context.smsRecoverySkipped).toBe(false);
+            expect(actor.getSnapshot().matches({ enterRecoverySms: 'idle' })).toBe(true);
+        });
 
-            const snap = await retry(actor, ['sms', 'mnemonic']);
-            expect(snap.matches('enterRecoverySms')).toBe(true);
+        it('verified by email → back from the phrase step → entry: a valid code is a checkpoint', async () => {
+            const actor = startActor();
+            await verifyByEmail(actor, DeviceRecoveryLevel.NONE);
+            await waitForState(actor, { mnemonicRecovery: 'enterPhrase' });
+
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches('entry')).toBe(true);
+            expect(actor.getSnapshot().context.resetResponse).toBeUndefined();
         });
 
         it('authenticated recovery → otherSessionsPrompt → back → enterPhrase (hasMnemonic)', async () => {
@@ -1208,7 +1264,7 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(snap.matches('verifyRecoveryEmail')).toBe(true);
         });
 
-        it('skip email and SMS → back from the unauthenticated sessions prompt → retry shows email first', async () => {
+        it('skip email and SMS → back from the unauthenticated sessions prompt → the SMS step, then the email one', async () => {
             const actor = startActor();
             await sendRecoveryStarted(actor, ['email', 'sms']);
             actor.send({ type: 'decision.skip' });
@@ -1216,10 +1272,23 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             await waitForState(actor, { unauthenticatedRecovery: 'otherSessionsPrompt' });
 
             actor.send({ type: 'decision.back' });
-            expect(actor.getSnapshot().matches('entry')).toBe(true);
+            expect(actor.getSnapshot().matches({ enterRecoverySms: 'idle' })).toBe(true);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ verifyRecoveryEmail: 'sendingCode' })).toBe(true);
+        });
 
-            const snap = await retry(actor, ['email', 'sms']);
-            expect(snap.matches('verifyRecoveryEmail')).toBe(true);
+        it('skip the phrase → back from the unauthenticated sessions prompt → the phrase step', async () => {
+            const actor = startActor();
+            await sendRecoveryStarted(actor, ['sms', 'mnemonic']);
+            actor.send({ type: 'decision.skip' });
+            await waitForState(actor, { mnemonicRecovery: 'enterPhrase' });
+            actor.send({ type: 'decision.skip' });
+            expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
+
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ mnemonicRecovery: 'enterPhrase' })).toBe(true);
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ enterRecoverySms: 'idle' })).toBe(true);
         });
 
         it('skip email → SMS fails to send → back from the error → retry shows email first', async () => {
@@ -1227,7 +1296,7 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             const actor = startActor({
                 sendResetCode: fromPromise(async ({ input }: { input: CodeInput }) => {
                     if (input.method === 'sms') {
-                        throw apiError(API_CUSTOM_ERROR_CODES.NOT_ALLOWED);
+                        throw methodNotAllowed();
                     }
                 }),
             });
@@ -1273,19 +1342,6 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             actor.send({ type: 'decision.back' });
             expect(actor.getSnapshot().matches({ unauthenticatedRecovery: 'otherSessionsPrompt' })).toBe(true);
         });
-
-        it('skip email in attempt 1 → back → attempt 2 sees email fresh', async () => {
-            const actor = startActor();
-
-            await sendRecoveryStarted(actor, ['email', 'sms']);
-            actor.send({ type: 'decision.skip' });
-            expect(actor.getSnapshot().matches('enterRecoverySms')).toBe(true);
-            actor.send({ type: 'decision.back' });
-
-            const snap = await retry(actor, ['email', 'sms']);
-            expect(snap.matches('verifyRecoveryEmail')).toBe(true);
-            expect(snap.context.emailRecoverySkipped).toBe(false);
-        });
     });
 
     describe('the requests', () => {
@@ -1298,9 +1354,35 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().matches({ verifyRecoveryEmail: { awaitingCode: 'editing' } })).toBe(true);
         });
 
+        it('waits for the email code it sends as the step opens, without showing it as a request, before taking a code', async () => {
+            // The code is never sent, so the step keeps waiting for it
+            const actor = startActor({ sendResetCode: fromPromise(() => new Promise<void>(() => {})) });
+            harnessOf(actor).methods = ['email'];
+            actor.send({ type: 'username.submitted', payload: { username: 'user@example.com' } });
+            const snapshot = await waitForState(actor, { verifyRecoveryEmail: 'sendingCode' });
+
+            expect(snapshot.hasTag(UnauthedForgotPasswordStateMachineTags.submitting)).toBe(false);
+            // Verify waits for the code meanwhile, since checking one would race the send
+            expect(snapshot.can({ type: 'code.submitted', payload: { code: '123456' } })).toBe(false);
+            // So do back, still shown, and another way: the code could replace one sent meanwhile
+            expect(snapshot.can({ type: 'decision.back' })).toBe(false);
+            expect(selectCanGoBack(snapshot)).toBe(true);
+            expect(snapshot.can({ type: 'decision.skip' })).toBe(false);
+        });
+
+        it('shows sending the SMS code, which the user asked for, as a request', async () => {
+            const actor = startActor({ sendResetCode: fromPromise(() => new Promise<void>(() => {})) });
+            await navigateToEnterRecoverySms(actor);
+            actor.send({ type: 'code.requested' });
+            const snapshot = actor.getSnapshot();
+
+            expect(snapshot.matches({ enterRecoverySms: 'sendingCode' })).toBe(true);
+            expect(snapshot.hasTag(UnauthedForgotPasswordStateMachineTags.submitting)).toBe(true);
+        });
+
         it('gives a method the API refuses its error step, with the reason', async () => {
             const actor = startActor({
-                sendResetCode: fromPromise(() => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.NOT_ALLOWED))),
+                sendResetCode: fromPromise(() => Promise.reject(methodNotAllowed())),
             });
             await navigateToVerifyRecoveryEmail(actor);
             expect(actor.getSnapshot().matches('recoveryMethodVerificationError')).toBe(true);
@@ -1337,7 +1419,7 @@ describe('UnauthedForgotPasswordStateMachine', () => {
 
         it('shows a wrong code inline, and clears it once the user edits it', async () => {
             const actor = startActor({
-                validateResetCode: fromPromise(() => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE))),
+                validateResetCode: fromPromise(() => Promise.reject(invalidCode())),
             });
             await navigateToVerifyRecoveryEmail(actor);
             await submitCode(actor);
@@ -1361,7 +1443,7 @@ describe('UnauthedForgotPasswordStateMachine', () => {
 
         it('doesn’t show a wrong email code on the SMS code form', async () => {
             const actor = startActor({
-                validateResetCode: fromPromise(() => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE))),
+                validateResetCode: fromPromise(() => Promise.reject(invalidCode())),
             });
             await sendRecoveryStarted(actor, ['email', 'sms']);
             await submitCode(actor);
@@ -1375,7 +1457,7 @@ describe('UnauthedForgotPasswordStateMachine', () => {
 
         it('doesn’t show a wrong SMS code again after going back and sending a new one', async () => {
             const actor = startActor({
-                validateResetCode: fromPromise(() => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE))),
+                validateResetCode: fromPromise(() => Promise.reject(invalidCode())),
             });
             await navigateToVerifyRecoverySms(actor);
             await submitCode(actor);
@@ -1388,9 +1470,25 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().context.invalidCode).toBe(false);
         });
 
+        it('doesn’t show a wrong SMS code on the email code form, while its new code is sent', async () => {
+            const actor = startActor({
+                validateResetCode: fromPromise(() => Promise.reject(invalidCode())),
+            });
+            await sendRecoveryStarted(actor, ['email', 'sms']);
+            actor.send({ type: 'decision.skip' });
+            await requestSmsCode(actor);
+            await submitCode(actor);
+            expect(actor.getSnapshot().context.invalidCode).toBe(true);
+
+            actor.send({ type: 'decision.back' });
+            actor.send({ type: 'decision.back' });
+            expect(actor.getSnapshot().matches({ verifyRecoveryEmail: 'sendingCode' })).toBe(true);
+            expect(actor.getSnapshot().context.invalidCode).toBe(false);
+        });
+
         it('sends a new code from the dialog, then tells the code form', async () => {
             const actor = startActor({
-                validateResetCode: fromPromise(() => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE))),
+                validateResetCode: fromPromise(() => Promise.reject(invalidCode())),
             });
             await navigateToVerifyRecoverySms(actor);
             await submitCode(actor);
@@ -1454,7 +1552,7 @@ describe('UnauthedForgotPasswordStateMachine', () => {
 
             it('gives a new code the API refuses the error step, with the reason', async () => {
                 const actor = startActor({
-                    sendResetCode: failingResend(apiError(API_CUSTOM_ERROR_CODES.NOT_ALLOWED)),
+                    sendResetCode: failingResend(methodNotAllowed()),
                 });
                 await navigateToVerifyRecoveryEmail(actor);
                 await resend(actor);
@@ -1472,6 +1570,95 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             await submitPhrase(actor);
             expect(actor.getSnapshot().matches({ mnemonicRecovery: { enterPhrase: 'idle' } })).toBe(true);
             expect(errors(actor)).toEqual([error]);
+        });
+
+        it('starts over, showing why, when the phrase signs in but decrypts no keys', async () => {
+            // Signing in with the phrase deleted the code that proved ownership, so the attempt can't go on
+            const error = new NoKeysDecryptedUsingPhraseError();
+            const actor = startActor({ validatePhrase: fromPromise(() => Promise.reject(error)) });
+            await verifyByEmail(actor, DeviceRecoveryLevel.NONE);
+            await submitPhrase(actor);
+
+            const snapshot = actor.getSnapshot();
+            expect(snapshot.matches({ entry: 'idle' })).toBe(true);
+            expect(errors(actor)).toEqual([error]);
+            // The used-up code doesn't carry over; the username does, for the first step's form
+            expect(snapshot.context.resetResponse).toBeUndefined();
+            expect(snapshot.context.username).toBe('user@example.com');
+        });
+
+        describe('back and another way, while a request runs that they would race', () => {
+            // Either can lead to a new code, which the request could then delete (a wrong code, the phrase signing in)
+            // or replace (another code)
+            it('wait for the phrase check, back still shown', async () => {
+                const actor = startActor({
+                    validatePhrase: fromPromise(() => new Promise<MnemonicDataWithoutAPI>(() => {})),
+                });
+                await sendRecoveryStarted(actor, ['email', 'mnemonic']);
+                actor.send({ type: 'decision.skip' });
+                actor.send({ type: 'phrase.submitted', payload: { mnemonic: 'recovery phrase' } });
+                expect(selectCanGoBack(actor.getSnapshot())).toBe(true);
+
+                actor.send({ type: 'decision.back' });
+                actor.send({ type: 'decision.skip' });
+                expect(actor.getSnapshot().matches({ mnemonicRecovery: { enterPhrase: 'validating' } })).toBe(true);
+                expect(harnessOf(actor).sentCodes).toHaveLength(1);
+            });
+
+            it('wait for the SMS code being sent', async () => {
+                const actor = startActor({
+                    sendResetCode: fromPromise(({ input }: { input: CodeInput }) =>
+                        input.method === 'sms' ? new Promise<void>(() => {}) : Promise.resolve()
+                    ),
+                });
+                await sendRecoveryStarted(actor, ['email', 'sms']);
+                actor.send({ type: 'decision.skip' });
+                actor.send({ type: 'code.requested' });
+                expect(selectCanGoBack(actor.getSnapshot())).toBe(true);
+
+                actor.send({ type: 'decision.back' });
+                actor.send({ type: 'decision.skip' });
+                expect(actor.getSnapshot().matches({ enterRecoverySms: 'sendingCode' })).toBe(true);
+            });
+
+            it('wait for the code check', async () => {
+                // Another way to the SMS step meanwhile, and its code, would be deleted by a check that fails late
+                const actor = startActor({
+                    validateResetCode: fromPromise(() => new Promise<OwnershipProof>(() => {})),
+                });
+                await sendRecoveryStarted(actor, ['email', 'sms']);
+                actor.send({ type: 'code.submitted', payload: { code: '123456' } });
+                expect(selectCanGoBack(actor.getSnapshot())).toBe(true);
+
+                actor.send({ type: 'decision.back' });
+                actor.send({ type: 'decision.skip' });
+                expect(actor.getSnapshot().matches({ verifyRecoveryEmail: { awaitingCode: 'validating' } })).toBe(true);
+            });
+
+            it('wait for the email code being sent as its step opens', async () => {
+                const actor = startActor({ sendResetCode: fromPromise(() => new Promise<void>(() => {})) });
+                harnessOf(actor).methods = ['email', 'sms'];
+                actor.send({ type: 'username.submitted', payload: { username: 'user@example.com' } });
+                await waitForState(actor, { verifyRecoveryEmail: 'sendingCode' });
+                expect(selectCanGoBack(actor.getSnapshot())).toBe(true);
+
+                actor.send({ type: 'decision.back' });
+                actor.send({ type: 'decision.skip' });
+                expect(actor.getSnapshot().matches({ verifyRecoveryEmail: 'sendingCode' })).toBe(true);
+            });
+
+            it('work again once the request settled', async () => {
+                const actor = startActor({
+                    validatePhrase: fromPromise(() => Promise.reject(new Error('wrong phrase'))),
+                });
+                await sendRecoveryStarted(actor, ['email', 'mnemonic']);
+                actor.send({ type: 'decision.skip' });
+                await submitPhrase(actor);
+                expect(actor.getSnapshot().can({ type: 'decision.back' })).toBe(true);
+
+                actor.send({ type: 'decision.back' });
+                expect(actor.getSnapshot().matches('verifyRecoveryEmail')).toBe(true);
+            });
         });
 
         it('resets the password with what the flow recovered, and stays loading while the app signs in', async () => {
@@ -1494,17 +1681,66 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(actor.getSnapshot().hasTag(UnauthedForgotPasswordStateMachineTags.submitting)).toBe(true);
         });
 
-        it('tells the page a refused reset token, and the form can be sent again', async () => {
-            const actor = startActor({
-                resetPassword: fromPromise(() => Promise.reject(apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE))),
-            });
+        it('starts over, showing why, when the reset refuses the token', async () => {
+            const error = resetTokenRejected();
+            const actor = startActor({ resetPassword: fromPromise(() => Promise.reject(error)) });
+            await verifyByEmail(actor, DeviceRecoveryLevel.FULL);
+            actor.send({ type: 'password.submitted', payload: { password: 'new password' } });
+            await waitUntilSettled(actor);
+
+            const snapshot = actor.getSnapshot();
+            expect(snapshot.matches({ entry: 'idle' })).toBe(true);
+            expect(errors(actor)).toEqual([error]);
+            // The refused token doesn't carry over; the username does, for the first step's form
+            expect(snapshot.context.resetResponse).toBeUndefined();
+            expect(snapshot.context.ownershipVerificationCode).toBe('');
+            expect(snapshot.context.username).toBe('user@example.com');
+        });
+
+        it('starts over, showing why, when the reset refuses the new keys after taking the token', async () => {
+            const error = resetKeysRejected();
+            const actor = startActor({ resetPassword: fromPromise(() => Promise.reject(error)) });
+            await navigateToDataLossOffer(actor);
+            actor.send({ type: 'decision.yes' });
+            actor.send({ type: 'password.submitted', payload: { password: 'new password' } });
+            await waitUntilSettled(actor);
+
+            const snapshot = actor.getSnapshot();
+            expect(snapshot.matches({ entry: 'idle' })).toBe(true);
+            expect(errors(actor)).toEqual([error]);
+            // Neither the ownership the failed attempt proved nor the data loss it accepted carries over
+            expect(snapshot.context.resetResponse).toBeUndefined();
+            expect(snapshot.context.resetWithDataLoss).toBe(false);
+        });
+
+        it('only starts over on a `ResetTokenRejectedError`, not on its API code', async () => {
+            // Only the reset request refuses the token, as a `ResetTokenRejectedError`: anything else failing with the
+            // same code shows like any error, and the form can be sent again
+            const error = apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE);
+            const actor = startActor({ resetPassword: fromPromise(() => Promise.reject(error)) });
             await verifyByEmail(actor, DeviceRecoveryLevel.FULL);
             actor.send({ type: 'password.submitted', payload: { password: 'new password' } });
             await waitUntilSettled(actor);
 
             expect(actor.getSnapshot().matches({ setNewPassword: 'idle' })).toBe(true);
-            expect(harnessOf(actor).emitted).toContainEqual({ type: 'resetToken.rejected' });
+            expect(errors(actor)).toEqual([error]);
+        });
+
+        it('sends the user to sign in once the password is changed, if signing in with it fails', async () => {
+            const cause = new Error('network');
+            const actor = startActor({
+                resetPassword: fromPromise(() => Promise.reject(new SignInAfterResetError(cause))),
+            });
+            await verifyByEmail(actor, DeviceRecoveryLevel.FULL);
+            actor.send({ type: 'password.submitted', payload: { password: 'new password' } });
+            await waitForState(actor, { setNewPassword: 'passwordChanged' });
+
+            // The page traces what failed, without showing it
+            expect(harnessOf(actor).emitted).toContainEqual({ type: 'signIn.failed', error: cause });
             expect(errors(actor)).toEqual([]);
+            // The sign-in form starts with the username, and this one stays loading while the page leaves
+            expect(harnessOf(actor).signInRedirects).toEqual(['user@example.com']);
+            expect(actor.getSnapshot().hasTag(UnauthedForgotPasswordStateMachineTags.submitting)).toBe(true);
         });
 
         it('shows a reset that failed for another reason, and the form can be sent again', async () => {
@@ -1516,7 +1752,6 @@ describe('UnauthedForgotPasswordStateMachine', () => {
 
             expect(actor.getSnapshot().matches({ setNewPassword: 'idle' })).toBe(true);
             expect(errors(actor)).toEqual([error]);
-            expect(harnessOf(actor).emitted).not.toContainEqual({ type: 'resetToken.rejected' });
         });
 
         it('resets the password with the recovery phrase’s keys after the phrase step', async () => {
@@ -1530,32 +1765,6 @@ describe('UnauthedForgotPasswordStateMachine', () => {
             expect(harnessOf(actor).resets).toEqual([
                 expect.objectContaining({ newPassword: 'new password', mnemonicData, resetResponse: undefined }),
             ]);
-        });
-
-        it('ignores the result of a request the user left, even once the same check runs again', async () => {
-            // Each code check waits until the test settles it
-            const pending: ((proof: OwnershipProof) => void)[] = [];
-            const actor = startActor({
-                validateResetCode: fromPromise(() => new Promise<OwnershipProof>((resolve) => pending.push(resolve))),
-            });
-            await startRecoveryWith(actor, ['email', 'sms']);
-            actor.send({ type: 'code.submitted', payload: { code: '111111' } });
-
-            // The user gives up on that code, starts over, and is checking a second one when the first answers
-            actor.send({ type: 'decision.back' });
-            await startRecoveryWith(actor, ['email', 'sms']);
-            actor.send({ type: 'code.submitted', payload: { code: '222222' } });
-            expect(pending).toHaveLength(2);
-
-            pending[0](makeOwnershipProof({ ownershipVerificationCode: '111111' }));
-            await new Promise((resolve) => setTimeout(resolve, 0));
-            expect(actor.getSnapshot().matches({ verifyRecoveryEmail: { awaitingCode: 'validating' } })).toBe(true);
-            expect(actor.getSnapshot().context.resetResponse).toBeUndefined();
-
-            // The check the user is waiting for still counts
-            pending[1](makeOwnershipProof({ ownershipVerificationCode: '222222' }));
-            await waitUntilSettled(actor);
-            expect(actor.getSnapshot().context.ownershipVerificationCode).toBe('222222');
         });
     });
 });

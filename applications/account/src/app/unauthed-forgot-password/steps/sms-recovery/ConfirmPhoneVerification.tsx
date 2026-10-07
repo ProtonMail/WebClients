@@ -10,6 +10,7 @@ import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import {
+    selectBackWaits,
     selectRedactedRecoveryPhoneNumber,
     selectSubmitting,
     selectUsername,
@@ -23,6 +24,8 @@ export const ConfirmPhoneVerification = ({ onBack }: ForgotPasswordStepProps) =>
     const username = ForgotPasswordContext.useSelector(selectUsername);
     const redactedRecoveryPhoneNumber = ForgotPasswordContext.useSelector(selectRedactedRecoveryPhoneNumber);
     const sendingCode = ForgotPasswordContext.useSelector(selectSubmitting);
+    // While the code is sent, "Try another way" waits for it, as the machine does
+    const skipWaits = ForgotPasswordContext.useSelector(selectBackWaits);
     const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
 
     const RedactedPhoneNumber = <strong key="redacted-phone-number">{redactedRecoveryPhoneNumber}</strong>;
@@ -60,7 +63,14 @@ export const ConfirmPhoneVerification = ({ onBack }: ForgotPasswordStepProps) =>
                     {c('Action').t`Send code`}
                 </Button>
 
-                <Button size="large" fullWidth className="mt-2" onClick={() => send({ type: 'decision.skip' })}>
+                <Button
+                    size="large"
+                    fullWidth
+                    className="mt-2"
+                    disabled={skipWaits}
+                    noDisabledStyles={skipWaits}
+                    onClick={() => send({ type: 'decision.skip' })}
+                >
                     {c('Action').t`Try another way`}
                 </Button>
             </Content>

@@ -17,7 +17,8 @@ interface Options {
     onLogin: OnLoginCallback;
     productParam: ProductParam;
     setupVPN: boolean;
-    redirectToSignIn: () => void;
+    /** With a username, the sign-in form starts with it. */
+    redirectToSignIn: (username?: string) => void;
 }
 
 /**
@@ -61,7 +62,8 @@ export const useForgotPasswordMachine = (options: Options) => {
         return UnauthedForgotPasswordStateMachine.provide({
             actors: createForgotPasswordActors(services),
             actions: {
-                redirectToSignIn: () => latestRef.current.redirectToSignIn(),
+                // However the user leaves, the sign-in form starts with the username they gave, if any
+                redirectToSignIn: ({ context }) => latestRef.current.redirectToSignIn(context.username),
             },
         });
     });

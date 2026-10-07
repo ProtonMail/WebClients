@@ -1,6 +1,7 @@
 /**
  * The forgot-password machine's requests, built from the app's services; `useForgotPasswordMachine` provides them and
- * tests provide fakes. The telemetry for what a request found goes with the request.
+ * tests provide fakes. The telemetry for what a request found goes with the request, and the API's answers the machine
+ * acts on come as their own errors (`forgotPasswordErrors`).
  */
 import { fromPromise } from 'xstate';
 
@@ -21,6 +22,11 @@ import {
     performPasswordChangeViaMnemonic,
     performPasswordReset,
 } from '../actions';
+import {
+    rethrowSendResetCodeError,
+    rethrowSignInAfterResetError,
+    rethrowValidateResetCodeError,
+} from './forgotPasswordErrors';
 
 export type MnemonicDataWithoutAPI = Omit<MnemonicData, 'api'>;
 
@@ -124,21 +130,28 @@ export const createForgotPasswordActors = (services: ForgotPasswordServices) => 
         }
     ),
 
-    /** Sends a reset code to the recovery email, or the recovery phone. */
+    /**
+     * Sends a reset code to the recovery email, or the recovery phone. The API may refuse the method, with a reason: a
+     * `ResetMethodNotAllowedError`.
+     */
     sendResetCode: fromPromise<void, CodeInput>(async ({ input: { username, method, step } }) => {
-        await services.api(
-            requestLoginResetToken<AutoResetTokenPayload>({
-                Username: username,
-                Method: method === 'sms' ? 'phone' : 'email',
-            })
-        );
+        await services
+            .api(
+                requestLoginResetToken<AutoResetTokenPayload>({
+                    Username: username,
+                    Method: method === 'sms' ? 'phone' : 'email',
+                })
+            )
+            .catch(rethrowSendResetCodeError);
         services.telemetry.sendResetPasswordCodeSent({ step, method });
     }),
 
-    /** A valid code proves ownership; a wrong one fails with the API's `INVALID_VALUE`, so the user can retry. */
+    /** A valid code proves ownership; a wrong one fails with an `InvalidResetCodeError`, so the user can retry. */
     validateResetCode: fromPromise<OwnershipProof, CodeInput & { code: string }>(
         async ({ input: { username, method, step, code } }) => {
-            const resetResponse = await services.api<ValidateResetTokenResponse>(validateResetToken(username, code));
+            const resetResponse = await services
+                .api<ValidateResetTokenResponse>(validateResetToken(username, code))
+                .catch(rethrowValidateResetCodeError);
             const deviceRecoveryLevel = await getDeviceRecoveryLevel(resetResponse);
             services.telemetry.sendResetPasswordMethodValidated({ step, method });
             return { ownershipVerificationCode: code, resetResponse, deviceRecoveryLevel };
@@ -150,7 +163,11 @@ export const createForgotPasswordActors = (services: ForgotPasswordServices) => 
         authMnemonicAndGetKeys({ ...input, persistent: services.getPersistent(), api: services.api })
     ),
 
-    /** Sets the new password with what the flow recovered, then hands the session to the app. */
+    /**
+     * Sets the new password with what the flow recovered, then hands the session to the app. A refused reset token
+     * fails with a `ResetTokenRejectedError`, and anything failing once the password is changed (signing in with it,
+     * or the app taking the session) with a `SignInAfterResetError`.
+     */
     resetPassword: fromPromise<void, ResetPasswordInput>(async ({ input }) => {
         const { api, telemetry } = services;
         const persistent = services.getPersistent();
@@ -167,7 +184,7 @@ export const createForgotPasswordActors = (services: ForgotPasswordServices) => 
                     step: 'setNewPassword',
                     method: recoveredWithDevice ? 'device-recovery' : 'mnemonic',
                 });
-                await services.onLogin(session);
+                await services.onLogin(session).catch(rethrowSignInAfterResetError);
                 return;
             }
             // Every way here recovers the keys or proves ownership; checked, so a missing token fails like a request
@@ -189,7 +206,7 @@ export const createForgotPasswordActors = (services: ForgotPasswordServices) => 
                 step: 'setNewPassword',
                 method: recoveredWithDevice ? 'device-recovery' : input.ownershipVerificationMethod,
             });
-            await services.onLogin(session);
+            await services.onLogin(session).catch(rethrowSignInAfterResetError);
         } catch (error) {
             telemetry.sendResetPasswordFailure({
                 step: 'setNewPassword',
