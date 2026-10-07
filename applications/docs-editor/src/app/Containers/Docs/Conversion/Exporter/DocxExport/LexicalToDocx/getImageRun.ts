@@ -1,6 +1,6 @@
 import { ImageRun } from 'docx'
 import type { ImageNode } from '../../../../Plugins/Image/ImageNode'
-import { toImage } from '@proton/shared/lib/helpers/image'
+import { toImage } from '../../../../Utils/toImage'
 import type { DocxExportContext } from './Context'
 import { isBase64Image } from '../../../ImageSrcUtils'
 
