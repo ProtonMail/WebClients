@@ -106,6 +106,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -130,6 +133,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -153,6 +159,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -176,6 +185,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: jest.fn(),
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -196,6 +208,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: jest.fn(),
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -219,6 +234,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: jest.fn(),
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -242,6 +260,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: jest.fn(),
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -265,6 +286,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -290,6 +314,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -320,6 +347,8 @@ describe('useSetupGmailBYOEAddress', () => {
                     showSuccessModal: mockShowSuccessModal,
                     showAddressLinkedToAnotherAccountModal: mockShowAddressLinkedToAnotherAccountModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -359,6 +388,7 @@ describe('useSetupGmailBYOEAddress', () => {
                         showAddressLinkedToAnotherAccountModal: showLegacy,
                         showClaimableAddressModal: showClaimable,
                         source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                        onComplete: jest.fn(),
                     })
                 );
                 await act(async () => {
@@ -406,6 +436,8 @@ describe('useSetupGmailBYOEAddress', () => {
                         showSuccessModal: jest.fn(),
                         showClaimableAddressModal: showClaimable,
                         source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                        showAddressLinkedToAnotherAccountModal: jest.fn(),
+                        onComplete: jest.fn(),
                     })
                 );
                 await act(async () => {
@@ -436,6 +468,8 @@ describe('useSetupGmailBYOEAddress', () => {
                     showSuccessModal: mockShowSuccessModal,
                     showAddressLinkedToAnotherAccountModal: mockShowAddressLinkedToAnotherAccountModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -465,6 +499,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 
@@ -492,6 +529,9 @@ describe('useSetupGmailBYOEAddress', () => {
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                    onComplete: jest.fn(),
                 })
             );
 

@@ -9,11 +9,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useModalState } from '@proton/components';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 
-import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../constants';
+import { useBYOEGating } from '../../byoe/useBYOEGating';
+import { getBYOEDisabledNotification } from '../../constants';
 import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
-import useBYOEFeatureStatus from '../../hooks/useBYOEFeatureStatus';
 import useSetupGmailBYOEAddress from '../../hooks/useSetupGmailBYOEAddress';
 import type { EASY_SWITCH_SOURCES } from '../../interface';
 import { setBYOEFlowResult } from '../../logic/byoeFlow/byoeFlow.slice';
@@ -46,14 +45,14 @@ const ConnectGmailButton = ({
     source,
 }: Props) => {
     const { createNotification } = useNotifications();
-    const [hasAccessToBYOE, loadingBYOEFeatureStatus] = useBYOEFeatureStatus();
     const easySwitchDispatch = useEasySwitchDispatch();
-    const createBYOEDisabled = useFlag('CreateInboxBringYourOwnEmailDisabled');
 
-    const [user, loadingUser] = useUser();
-    const [addresses, loadingAddresses] = useAddresses();
+    const [user] = useUser();
+    const [addresses] = useAddresses();
 
-    const { activeBYOEAddresses, forwardingList, isLoadingAddressesCount } = useBYOEAddressesCounts();
+    const { hasAccessToBYOE, isLoadingGating, checkGating, isInMaintenance } = useBYOEGating();
+    const { forwardingList } = useBYOEAddressesCounts();
+    const disabled = isLoadingGating || isInMaintenance || !addresses;
 
     const [syncModalProps, setSyncModalOpen, renderSyncModal] = useModalState();
     const [reachedLimitForwardingModalProps, setReachedLimitForwardingModalOpen, renderReachedLimitForwardingModal] =
@@ -72,7 +71,7 @@ const ConnectGmailButton = ({
     const [expectedEmailAddress, setExpectedEmailAddress] = useState<string | undefined>();
     const [claimableEmailAddress, setClaimableEmailAddress] = useState<string | undefined>();
 
-    const { isInMaintenance, handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
+    const { handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
         showSuccessModal: (connectedAddress: string, importEmails: boolean) => {
             easySwitchDispatch(
                 setBYOEFlowResult({
@@ -97,9 +96,6 @@ const ConnectGmailButton = ({
         source,
     });
 
-    const disabled =
-        loadingUser || loadingAddresses || loadingBYOEFeatureStatus || isInMaintenance || isLoadingAddressesCount;
-
     const handleCloseForwardingModal = (hasError?: boolean) => {
         if (!hasError) {
             setSyncModalOpen(false);
@@ -111,18 +107,12 @@ const ConnectGmailButton = ({
             return;
         }
 
-        if (hasAccessToBYOE && createBYOEDisabled) {
-            createNotification({
-                type: 'info',
-                text: c('Info').t`Temporarily unavailable due to high demand. Please try again later.`,
-            });
-            return;
-        }
-
-        // Users should see a limit or upsell modal if reaching the maximum of BYOE addresses included in their plan.
-        if (!hasPaidMail(user) && activeBYOEAddresses.length >= MAX_SYNC_FREE_USER) {
+        const outcome = checkGating();
+        if (outcome === 'feature-disabled') {
+            createNotification(getBYOEDisabledNotification());
+        } else if (outcome === 'free-limit') {
             setUpsellForwardingModalOpen(true);
-        } else if (activeBYOEAddresses.length >= MAX_SYNC_PAID_USER) {
+        } else if (outcome === 'paid-limit') {
             setReachedLimitForwardingModalOpen(true);
         } else {
             onBYOEFlowStart?.();

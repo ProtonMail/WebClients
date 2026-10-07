@@ -30,9 +30,9 @@ import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 
 interface Props {
     showSuccessModal: (connectedAddress: string, importEmails: boolean) => void;
-    showAddressLinkedToAnotherAccountModal?: () => void;
-    showClaimableAddressModal?: (email: string) => void;
-    onComplete?: () => void;
+    showAddressLinkedToAnotherAccountModal: () => void;
+    showClaimableAddressModal: (email: string) => void;
+    onComplete: () => void;
     source: EASY_SWITCH_SOURCES;
 }
 
@@ -46,7 +46,6 @@ const useSetupGmailBYOEAddress = ({
     const api = useApi();
     const [addresses] = useAddresses();
     const [hasAccessToBYOE] = useBYOEFeatureStatus();
-    const isInMaintenance = useFlag('MaintenanceImporter');
     const canClaimExternalAddress = useFlag('CanClaimExternalAddress');
 
     const easySwitchDispatch = useEasySwitchDispatch();
@@ -72,7 +71,7 @@ const useSetupGmailBYOEAddress = ({
         } catch (e) {
             handleError(e);
             onError();
-            onComplete?.();
+            onComplete();
         }
     };
 
@@ -89,7 +88,7 @@ const useSetupGmailBYOEAddress = ({
     }) => {
         // If setting up the token failed or user has no access to BYOE, close the modal
         if (!hasAccessToBYOE || hasError) {
-            onComplete?.();
+            onComplete();
             return;
         }
 
@@ -101,7 +100,7 @@ const useSetupGmailBYOEAddress = ({
                     type: 'error',
                     text: c('Error').t`Address is already added to your account`,
                 });
-                onComplete?.();
+                onComplete();
                 return;
             }
 
@@ -135,16 +134,16 @@ const useSetupGmailBYOEAddress = ({
                     }
 
                     if (isClaimable) {
-                        showClaimableAddressModal?.(token.Account);
+                        showClaimableAddressModal(token.Account);
                     } else {
-                        showAddressLinkedToAnotherAccountModal?.();
+                        showAddressLinkedToAnotherAccountModal();
                     }
-                    onComplete?.();
+                    onComplete();
                     return;
                 }
 
                 handleError(e);
-                onComplete?.();
+                onComplete();
                 return;
             }
 
@@ -159,7 +158,7 @@ const useSetupGmailBYOEAddress = ({
                         type: 'error',
                         text: c('Error').t`Something went wrong while converting the address`,
                     });
-                    onComplete?.();
+                    onComplete();
                     return;
                 }
             } else {
@@ -175,7 +174,7 @@ const useSetupGmailBYOEAddress = ({
             }
 
             if (address) {
-                onComplete?.();
+                onComplete();
                 void easySwitchDispatch(loadSyncList());
                 void easySwitchDispatch(loadImporters());
                 showSuccessModal(address.Email, importEmails);
@@ -183,7 +182,7 @@ const useSetupGmailBYOEAddress = ({
         }
     };
 
-    return { isInMaintenance, handleBYOEWithImportCallback, allSyncs };
+    return { handleBYOEWithImportCallback, allSyncs };
 };
 
 export default useSetupGmailBYOEAddress;
