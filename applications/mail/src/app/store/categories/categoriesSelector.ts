@@ -30,6 +30,18 @@ export const selectShouldShowCategoryViewTabs = createSelector(
 );
 
 /**
+ * Base check to determine if categories can be offered as a move destination.
+ * A category only has a visible effect on elements that are in inbox, so the user must be in Inbox.
+ * While searching, results come from all mail unless the search is scoped to a category
+ * (inbox path with category IDs set), which guarantees every result is in the inbox.
+ */
+export const selectCanMoveToCategories = createSelector(
+    [selectIsSearching, selectLabelID, selectCategoryIDs],
+    (isSearching, labelID, categoryIDs) =>
+        labelID === MAILBOX_LABEL_IDS.INBOX && (!isSearching || categoryIDs.length > 0)
+);
+
+/**
  * Reporting must only happen once the first page of results is the one displayed:
  * we prefetch a second page on load, but only the first page's counts are meaningful.
  * `selectLoading` isn't used here because it takes a `page` prop (see elementsSelectors),
