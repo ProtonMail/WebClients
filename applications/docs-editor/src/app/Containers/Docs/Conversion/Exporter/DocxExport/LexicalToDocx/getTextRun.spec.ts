@@ -4,8 +4,9 @@ import { getTextRun as _getTextRun } from './getTextRun'
 import { createHeadlessEditor } from '@lexical/headless'
 import { LinkNode } from '@lexical/link'
 import { $getRoot, ParagraphNode, TextNode } from 'lexical'
-import { DEFAULT_FONT_FACE, FONT_FACES } from '@proton/components/components/editor/constants'
 import { AllNodes } from '../../../../AllNodes'
+import { DEFAULT_FONT_FACE, MONOSPACE_FONT_FACE } from '../../../../Constants/Fonts'
+import { rootFontSize } from '../../../../Utils/rootFontSize'
 
 jest.mock('docx', () => ({
   ...jest.requireActual('docx'),
@@ -25,6 +26,38 @@ describe('getTextRun', () => {
 
   beforeEach(() => {
     ;(TextRun as jest.Mock).mockImplementation((options: IRunOptions) => options)
+  })
+
+  it('should use the root font size if not explicitly set', () => {
+    const previousRootStyle = document.documentElement.style.cssText
+    document.documentElement.style.fontSize = '18px'
+    rootFontSize(true)
+
+    try {
+      editor.update(
+        () => {
+          $getRoot().clear()
+          const paragraphNode = new ParagraphNode()
+          paragraphNode.setStyle('font-size: 24px;')
+          paragraphNode.append(new TextNode('text content'))
+          $getRoot().append(paragraphNode)
+        },
+        { discrete: true },
+      )
+      const state = editor.getEditorState()
+      const paragraphNode = state.read(() => $getRoot().getFirstChildOrThrow<ParagraphNode>())
+      const textNode = state.read(() => paragraphNode.getFirstChildOrThrow<TextNode>())
+      const result = getTextRun(textNode, paragraphNode, state)
+      expect(result.size).toBe('13.5pt')
+
+      document.documentElement.style.fontSize = '20px'
+      expect(getTextRun(textNode, paragraphNode, state).size).toBe('13.5pt')
+      rootFontSize(true)
+      expect(getTextRun(textNode, paragraphNode, state).size).toBe('15pt')
+    } finally {
+      document.documentElement.style.cssText = previousRootStyle
+      rootFontSize(true)
+    }
   })
 
   it('should get text content', () => {
@@ -119,7 +152,7 @@ describe('getTextRun', () => {
         $getRoot().clear()
         const paragraphNode = new ParagraphNode()
         const textNode = new TextNode('text content')
-        textNode.setStyle(`font-family: ${FONT_FACES.MONOSPACE.value};`)
+        textNode.setStyle(`font-family: ${MONOSPACE_FONT_FACE};`)
         paragraphNode.append(textNode)
         $getRoot().append(paragraphNode)
       },
@@ -129,7 +162,7 @@ describe('getTextRun', () => {
     const paragraphNode = state.read(() => $getRoot().getFirstChildOrThrow<ParagraphNode>())
     const textNode = state.read(() => paragraphNode.getFirstChildOrThrow<TextNode>())
     const result = getTextRun(textNode, paragraphNode, state)
-    expect(result.font).toBe(FONT_FACES.MONOSPACE.value.replace('Monospace', 'monospace'))
+    expect(result.font).toBe(MONOSPACE_FONT_FACE.replace('Monospace', 'monospace'))
   })
 
   it('should have default font family if not explicitly set', () => {
