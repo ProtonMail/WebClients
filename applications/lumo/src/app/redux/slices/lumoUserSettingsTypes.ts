@@ -54,6 +54,7 @@ export interface LumoUserSettings {
     showProjectConversationsInHistory?: boolean;
     chatHistoryDateField?: ChatHistoryDateField;
     automaticWebSearch?: boolean;
+    automaticArtifactCreation?: boolean;
     animatedBackgroundEnabled?: boolean;
     animatedBackgroundBlobMode?: 'ambient' | 'lavaLamp';
     showGallerySuggestions: boolean;
