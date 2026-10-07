@@ -1,4 +1,4 @@
-import type { PrimaryAddressKeys } from '../../DriveSDK/getDocumentKeys'
+import type { DocLoaderInitializeOptions, DocLoaderInterface } from './DocLoaderInterface'
 import { AuthenticatedDocController } from '../../AuthenticatedDocController/AuthenticatedDocController'
 import { CommentController } from '../Comments/CommentController'
 import type { DocumentState } from '../../State/DocumentState'
@@ -11,7 +11,6 @@ import type { AuthenticatedDocControllerInterface } from '../../AuthenticatedDoc
 import type { CreateComment } from '../../UseCase/CreateComment'
 import type { CreateNewDocument } from '../../UseCase/CreateNewDocument'
 import type { CreateThread } from '../../UseCase/CreateThread'
-import type { DocLoaderInterface } from './DocLoaderInterface'
 import type { DocLoaderStatusObserver } from './StatusObserver'
 import type { DocsApi } from '../../Api/DocsApi'
 import type { DriveCompat } from '@proton/drive-store'
@@ -87,7 +86,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
   public async initialize(
     nodeMeta: NodeMeta,
     documentType: DocumentType,
-    primaryAddressKeys?: PrimaryAddressKeys,
+    options?: DocLoaderInitializeOptions,
   ): Promise<void> {
     void OpenTracer.trace('boot_doc_loader_initialize_start', { documentType })
     if (this.docController) {
@@ -95,6 +94,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     }
 
     const startTime = Date.now()
+    const { primaryAddressKeys } = options ?? {}
 
     const loadResult = await this.loadDocument.executePrivate(nodeMeta, primaryAddressKeys)
     if (loadResult.isFailed()) {

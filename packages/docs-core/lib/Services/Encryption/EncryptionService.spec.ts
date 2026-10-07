@@ -7,12 +7,13 @@ import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import * as aesGcm from '@protontech/crypto/subtle/aesGcm.ts'
 import { EncryptionContext } from './EncryptionContext'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
-import type { DriveCompat } from '@proton/drive-store/lib'
+import type { DriveCompat, PublicDriveCompat } from '@proton/drive-store/lib'
 
 jest.mock('@protontech/crypto', () => ({
   CryptoProxy: {
     signMessage: jest.fn(),
     verifyMessage: jest.fn(),
+    importPublicKey: jest.fn(),
   },
 }))
 
@@ -33,11 +34,13 @@ describe('EncryptionService', () => {
     } as unknown as DriveCompat,
   })
 
+  const mockApi = jest.fn()
+
   let service: EncryptionService<EncryptionContext.RealtimeMessage>
 
   beforeEach(() => {
     jest.clearAllMocks()
-    service = new EncryptionService(mockContext, mockDriveCompat)
+    service = new EncryptionService(mockContext, mockDriveCompat, mockApi)
     ;(aesGcm.encryptDataWith16ByteIV as jest.Mock).mockResolvedValue(new Uint8Array([10, 11, 12]))
     ;(aesGcm.decryptData as jest.Mock).mockResolvedValue(new Uint8Array([13, 14, 15]))
   })
@@ -197,16 +200,6 @@ describe('EncryptionService', () => {
       expect(mockDriveCompat.getUserCompat().getVerificationKey).toHaveBeenCalledWith(mockEmail)
     })
 
-    it('should handle missing user compat', async () => {
-      const serviceWithoutCompat = new EncryptionService(mockContext, new DriveCompatWrapper({ userCompat: undefined }))
-
-      const result = await serviceWithoutCompat.getVerificationKey(mockEmail)
-
-      expect(result.isFailed()).toBe(true)
-      expect(result.getError()).toBe('Failed to get verification key Error: Public drive compat not found')
-      expect(() => result.getValue()).toThrow()
-    })
-
     it('should handle errors gracefully', async () => {
       const error = new Error('Get verification key failed')
       ;(mockDriveCompat.getUserCompat().getVerificationKey as jest.Mock).mockRejectedValue(error)
@@ -216,6 +209,40 @@ describe('EncryptionService', () => {
       expect(result.isFailed()).toBe(true)
       expect(result.getError()).toBe(`Failed to get verification key ${error}`)
       expect(() => result.getValue()).toThrow()
+    })
+
+    describe('public context', () => {
+      const mockPublicCompat = { getPublicKeysForEmail: jest.fn() }
+      const mockImportedKey = { key: 'imported-key' }
+      const publicCompatWrapper = new DriveCompatWrapper({
+        publicCompat: mockPublicCompat as unknown as PublicDriveCompat,
+      })
+
+      beforeEach(() => {
+        ;(CryptoProxy.importPublicKey as jest.Mock).mockResolvedValue(mockImportedKey)
+      })
+
+      it('should get public keys from public compat without SDK', async () => {
+        mockPublicCompat.getPublicKeysForEmail.mockResolvedValue(['armored-key'])
+        const publicService = new EncryptionService(mockContext, publicCompatWrapper, mockApi)
+
+        const result = await publicService.getVerificationKey(mockEmail)
+
+        expect(result.getValue()).toEqual([mockImportedKey])
+        expect(mockPublicCompat.getPublicKeysForEmail).toHaveBeenCalledWith(mockEmail)
+        expect(mockApi).not.toHaveBeenCalled()
+      })
+
+      it('should get public keys from api with SDK', async () => {
+        mockApi.mockResolvedValue({ Address: { Keys: [{ PublicKey: 'armored-key' }] } })
+        const publicService = new EncryptionService(mockContext, new DriveCompatWrapper({}), mockApi)
+
+        const result = await publicService.getVerificationKey(mockEmail)
+
+        expect(result.getValue()).toEqual([mockImportedKey])
+        expect(CryptoProxy.importPublicKey).toHaveBeenCalledWith({ armoredKey: 'armored-key' })
+        expect(mockPublicCompat.getPublicKeysForEmail).not.toHaveBeenCalled()
+      })
     })
   })
 })
