@@ -28,7 +28,7 @@ import type { ProtonSheetsState } from './state'
 import { useEvent } from './components/utils'
 import { useMemo, useState } from 'react'
 import type { CellInterface } from '@rowsncolumns/grid'
-import { Direction, isCellWithinBounds, isEqualCells, selectionFromActiveCell } from '@rowsncolumns/grid'
+import { Direction, isEqualCells, selectionFromActiveCell } from '@rowsncolumns/grid'
 import * as Ariakit from '@ariakit/react'
 import { SheetsActions, type SheetsActionType } from './contract/SheetsAction'
 
@@ -648,13 +648,6 @@ export function useProtonSheetsUIState(
   }
 
   // data
-  const activeBasicFilter = useMemo(
-    () =>
-      state.basicFilter && isCellWithinBounds(state.activeCell, state.basicFilter.range)
-        ? state.basicFilter
-        : undefined,
-    [state.activeCell, state.basicFilter],
-  )
   const isProtectedRange = useMemo(
     () => isProtectedRangeFn(state.activeSheetId, defaultSelection.range, state.protectedRanges),
     [defaultSelection.range, state.activeSheetId, state.protectedRanges],
@@ -668,11 +661,22 @@ export function useProtonSheetsUIState(
       storeAction(SheetsActions.SortColumnDescending, [state.activeSheetId, state.activeCell.columnIndex])
       state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'DESCENDING')
     }),
+    /**
+     * A sheet has one filter. While it exists this removes it, wherever the
+     * selection is: the engine removes a filter only when the selection touches
+     * it and otherwise replaces it, which would drop its conditions unasked.
+     */
     toggleFilter: useEvent(() => {
       storeAction(SheetsActions.ToggleFilter, [state.activeSheetId, state.activeCell])
-      state.onCreateBasicFilter?.(state.activeSheetId, state.activeCell, state.selections)
+      const filter = state.basicFilter
+      if (filter) {
+        const corner = { rowIndex: filter.range.startRowIndex, columnIndex: filter.range.startColumnIndex }
+        state.onCreateBasicFilter?.(state.activeSheetId, corner, [{ range: filter.range }])
+      } else {
+        state.onCreateBasicFilter?.(state.activeSheetId, state.activeCell, state.selections)
+      }
     }),
-    hasFilter: Boolean(activeBasicFilter),
+    hasFilter: Boolean(state.basicFilter),
     toggleProtectRange: useEvent(() => {
       const protectedRange = getProtectedRange(state.activeSheetId, defaultSelection.range, state.protectedRanges)
       if (protectedRange?.protectedRangeId) {

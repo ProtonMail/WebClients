@@ -119,6 +119,8 @@ export function ContextMenu({
   const insertColumnsRight = useUI.$.insert.columnsRight
   const insertLink = useUI.$.insert.link
   const copy = useUI.$.operation.copy
+  const hasFilter = useUI((ui) => ui.data.hasFilter)
+  const toggleFilter = useUI.$.withFocusGrid(useUI.$.data.toggleFilter)
   const clearFormat = useUI.$.withFocusGrid(useUI.$.format.clear)
   const clearContent = useUI.$.withFocusGrid(useUI.$.operation.delete)
   const openConditionalFormat = useUI.$.format.conditional.open
@@ -385,6 +387,10 @@ export function ContextMenu({
             disabled={readonly}
           >
             {s('Sort sheet Z to A')}
+          </UI.MenuItem>
+
+          <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.filter} />} onClick={toggleFilter} disabled={readonly}>
+            {hasFilter ? s('Remove filter') : s('Create a filter')}
           </UI.MenuItem>
         </>
       ) : null}
