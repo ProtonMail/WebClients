@@ -4,6 +4,8 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 export interface SignInLayoutProps {
     onBack?: () => void;
+    /** At the top of the page, like an announcement; layouts without room for one leave it out. */
+    topBanner?: ReactNode;
     beforeMain?: ReactNode;
     /** For the page's bottom-right corner, like the Lumo launcher; layouts without one leave it out. */
     bottomRight?: ReactNode;

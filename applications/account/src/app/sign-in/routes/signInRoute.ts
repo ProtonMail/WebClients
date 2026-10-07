@@ -42,6 +42,8 @@ export interface SignInRoute<TSnapshot, TKey extends PropertyKey = PropertyKey> 
     screens: Record<TKey, SignInScreen>;
     /** Stays around the route's screens inside the page while they switch, like the anti-abuse challenge. */
     Frame?: ComponentType<{ children: ReactNode }>;
+    /** At the top of the page, like an announcement. */
+    TopBanner?: ComponentType;
     /** Before the page's main content, like a partner's header. */
     BeforeMain?: ComponentType;
     /** In the page's bottom-right corner, like the Lumo help; the layout shows it with the decoration only. */

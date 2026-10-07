@@ -8,6 +8,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import TroubleshootWithLumo from '../../../public/TroubleshootWithLumo';
 import PorkbunHeader from '../../../single-signup-v2/mail/PorkbunHeader';
 import { AuthType } from '../../auth/interface';
+import { SignInChangeTopBanner } from '../../components/SignInChangeTopBanner';
 import { signInRoute } from '../../routes/signInRoute';
 import { useSignInProps } from '../../wizard/SignInProvider';
 import { CredentialsContext } from './CredentialsContext';
@@ -65,6 +66,7 @@ const PorkbunBeforeMain = () => {
 export const credentialsRoute = signInRoute({
     provider: CredentialsContext.Provider,
     Frame: CredentialsFrame,
+    TopBanner: SignInChangeTopBanner,
     BeforeMain: PorkbunBeforeMain,
     BottomRight: TroubleshootWithLumo,
     decorated: true,

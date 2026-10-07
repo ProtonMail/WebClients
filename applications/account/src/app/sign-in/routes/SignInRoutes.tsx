@@ -66,7 +66,7 @@ export const SignInRoutes = ({ routes }: { routes: SignInRoutesTable }) => {
         const offers = Screen?.offersBack ?? route.offersBack ?? true;
         return typeof offers === 'function' ? offers(snapshot) : offers;
     });
-    const { Frame = NoFrame, BeforeMain, BottomRight, decorated = false } = route;
+    const { Frame = NoFrame, TopBanner, BeforeMain, BottomRight, decorated = false } = route;
 
     // Not expected: back or a failure ends a flow in the same transition that moves to the credentials form, and a flow
     // that signed in stays on its screen, loading, until the app takes the sign-in away
@@ -78,6 +78,7 @@ export const SignInRoutes = ({ routes }: { routes: SignInRoutesTable }) => {
     const page = (
         <layout.Shell
             onBack={onBack}
+            topBanner={TopBanner ? <TopBanner /> : undefined}
             beforeMain={BeforeMain ? <BeforeMain /> : undefined}
             bottomRight={BottomRight ? <BottomRight /> : undefined}
             toApp={toApp}
