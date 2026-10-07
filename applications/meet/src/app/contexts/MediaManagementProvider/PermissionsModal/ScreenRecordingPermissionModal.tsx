@@ -1,16 +1,18 @@
 import { c } from 'ttag';
 
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { dismissPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
+import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { setItem } from '@proton/shared/lib/helpers/storage';
 
 import { ConfirmationModal } from '../../../components/ConfirmationModal/ConfirmationModal';
-
-export const SCREEN_RECORDING_PROMPT_DISMISSED_KEY = 'screen_recording_prompt_dismissed';
+import { getScreenRecordingPromptDismissedKey } from '../../../utils/storage';
 
 export const ScreenRecordingPermissionModal = () => {
     const dispatch = useMeetDispatch();
+    const isGuest = useMeetSelector(selectIsGuest);
+    const userId = useMeetSelector(selectUserId);
 
     const handleAllow = () => {
         dispatch(dismissPermissionsModal());
@@ -18,7 +20,7 @@ export const ScreenRecordingPermissionModal = () => {
     };
 
     const handleNotNow = () => {
-        setItem(SCREEN_RECORDING_PROMPT_DISMISSED_KEY, 'true');
+        setItem(getScreenRecordingPromptDismissedKey(isGuest, userId), 'true');
         dispatch(dismissPermissionsModal());
     };
 
