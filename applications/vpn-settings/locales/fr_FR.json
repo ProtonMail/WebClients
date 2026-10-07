@@ -2134,6 +2134,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Application de bureau ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Application de bureau ${ appName }"
       ]
     },
     "Bug category": {
@@ -2266,6 +2269,9 @@
     "BYOE": {
       "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
         "Les doublons provenant d'importations précédentes seront ignorés. Vous pouvez annuler l'opération ou importer des messages plus anciens dans les paramètres de ${ PRODUCT_NAMES.EASY_SWITCH }."
+      ],
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Vos messages les plus récents seront importés en premier. Les messages que vous avez déjà importés ne seront pas copiés à nouveau."
       ]
     },
     "Cancellation upsell": {

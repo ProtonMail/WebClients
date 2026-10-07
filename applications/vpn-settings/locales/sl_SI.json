@@ -1808,6 +1808,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Namizna aplikacija"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Namizna aplikacija"
       ]
     },
     "Bug category": {
@@ -15882,6 +15885,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po uspešni preveritvi ne odstranjujte tega zapisa TXT, saj je potreben za potrditev, da ste še vedno lastnik domene."
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Najprej bodo uvožene vaša najnovejše e-poštna sporočila. Tista, ki ste jih že uvozili, se ne bodo ponovno kopirala."
       ]
     }
   }
