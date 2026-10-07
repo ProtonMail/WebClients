@@ -13,6 +13,7 @@ import { getStartTimeFromTimePeriod } from '../helpers/getStartTimeFromTimePerio
 import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import {
     BYOE_ADDRESS_ERROR,
+    EASY_SWITCH_FEATURES,
     type EASY_SWITCH_SOURCES,
     type ImportToken,
     OAUTH_PROVIDER,
@@ -20,7 +21,7 @@ import {
 } from '../interface';
 import { loadImporters } from '../logic/importers/importers.actions';
 import { useEasySwitchDispatch } from '../logic/store';
-import { loadSyncList } from '../logic/sync/sync.actions';
+import { createTokenItem, loadSyncList } from '../logic/sync/sync.actions';
 import { convertBYOEAddress, createBYOEAddress } from '../thunks/byoeAddresses';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import type {
@@ -36,6 +37,7 @@ const fail = (reason: ConnectBYOEAddressFailure): ConnectBYOEAddressFailureResul
     return { status: 'failure', reason };
 };
 
+/** BYOE is Gmail only for now, so the provider is hardcoded to Google. Outlook will need it as a parameter. */
 export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES }) => {
     const api = useApi();
     const [addresses] = useAddresses();
@@ -165,8 +167,36 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
         return { status: 'success', address: finalized.address, importEmails };
     };
 
-    const connectBYOEAddressWithCode = () => {
-        throw new Error('Not implemented');
+    const connectBYOEAddressWithCode = async ({
+        code,
+        redirectUri,
+        importEmails,
+        importPeriod,
+        expectedEmailAddress,
+    }: {
+        code: string;
+        redirectUri: string;
+        importEmails: boolean;
+        importPeriod?: TIME_PERIOD;
+        expectedEmailAddress?: string;
+    }): Promise<ConnectBYOEAddressResult> => {
+        const response = await easySwitchDispatch(
+            createTokenItem({
+                Code: code,
+                Provider: OAUTH_PROVIDER.GOOGLE,
+                RedirectUri: redirectUri,
+                Source: source,
+                Features: [EASY_SWITCH_FEATURES.BYOE],
+                expectedEmailAddress,
+            })
+        );
+
+        if (response.type.endsWith('rejected')) {
+            const isWrongAccount = (response.payload as { Error?: string } | undefined)?.Error === 'wrong_account';
+            return fail({ type: isWrongAccount ? 'wrong-account' : 'token-failed' });
+        }
+
+        return connectBYOEAddress({ token: response.payload, importEmails, importPeriod });
     };
 
     return {

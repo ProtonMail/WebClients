@@ -8,6 +8,8 @@ export type ConnectBYOEAddressFailure =
     | { type: 'create-failed'; message?: string }
     | { type: 'convert-failed'; message?: string }
     | { type: 'linked-to-another-account' }
+    | { type: 'wrong-account' }
+    | { type: 'token-failed' }
     | { type: 'claimable-address'; email: string; importEmails: boolean; importPeriod?: TIME_PERIOD }
     | { type: 'unknown'; message?: string };
 
