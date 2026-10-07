@@ -7,7 +7,7 @@ import { createContext, useContext } from 'react'
 
 export type PublicContextValue = {
   user: UserModel | undefined
-  compat: PublicDriveCompat
+  compat?: PublicDriveCompat
   localID: number | undefined
   openParams: DocumentAction
 }
