@@ -4,6 +4,7 @@ import { ipcLogger } from "../utils/log";
 import { getTheme } from "../utils/themes";
 import { storeAppVersion } from "../utils/appVersions";
 import { getLogs } from "../utils/log/getLogsIPC";
+import { clearOAuthSession, startOAuthSession } from "../utils/oauthSession";
 
 jest.mock("electron", () => ({
     ipcMain: { on: jest.fn(), handle: jest.fn() },
@@ -38,7 +39,7 @@ jest.mock("../utils/metrics", () => ({}));
 jest.mock("../utils/telemetry", () => ({}));
 jest.mock("../utils/appCache", () => ({}));
 jest.mock("../utils/logout/logout", () => ({}));
-jest.mock("../utils/oauthProcess", () => ({}));
+jest.mock("../utils/oauthSession", () => ({ startOAuthSession: jest.fn(), clearOAuthSession: jest.fn() }));
 jest.mock("../utils/openExternal/openExternal", () => ({}));
 jest.mock("../utils/openExternal/manager", () => ({}));
 jest.mock("../utils/urlRedirects/manager", () => ({}));
@@ -131,5 +132,38 @@ describe("IPC sender origin validation", () => {
         handlers.clientUpdate(eventFrom("https://evil.com"), { type: "storeAppVersion", payload: "1.0.0" });
 
         expect(ipcLogger.warn).toHaveBeenCalledWith("Rejected clientUpdate IPC from origin: https://evil.com");
+    });
+});
+
+describe("oauthPopupOpenedV2", () => {
+    const TRUSTED_ORIGIN = "https://mail.proton.me";
+    const SESSION_ID = "session";
+    const AUTHORIZATION_URL = "https://account.proton.me/api/oauth/google";
+    const startedMessage = {
+        type: "oauthPopupOpenedV2",
+        payload: { action: "oauthPopupStarted", sessionId: SESSION_ID, authorizationUrl: AUTHORIZATION_URL },
+    };
+
+    it("starts an OAuth session when the popup opens", () => {
+        handlers.clientUpdate(eventFrom(TRUSTED_ORIGIN), startedMessage);
+
+        expect(startOAuthSession).toHaveBeenCalledWith(SESSION_ID, AUTHORIZATION_URL);
+        expect(clearOAuthSession).not.toHaveBeenCalled();
+    });
+
+    it("clears the OAuth session when the popup finishes", () => {
+        handlers.clientUpdate(eventFrom(TRUSTED_ORIGIN), {
+            type: "oauthPopupOpenedV2",
+            payload: { action: "oauthPopupFinished", sessionId: SESSION_ID },
+        });
+
+        expect(clearOAuthSession).toHaveBeenCalledWith(SESSION_ID);
+        expect(startOAuthSession).not.toHaveBeenCalled();
+    });
+
+    it.each(UNTRUSTED_ORIGINS)("does not start an OAuth session from %s", (_, origin) => {
+        handlers.clientUpdate(eventFrom(origin), startedMessage);
+
+        expect(startOAuthSession).not.toHaveBeenCalled();
     });
 });

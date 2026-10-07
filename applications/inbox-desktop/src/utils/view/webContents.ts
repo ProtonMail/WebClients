@@ -7,13 +7,10 @@ import {
     isAccountLogin,
     isAccountSwitch,
     isCalendar,
-    isGoogleOAuthAuthorizationURL,
     isHome,
     isHostAllowed,
     isMail,
-    isMicrosoftAuthURL,
     isUpgradeURL,
-    isZoomAuthURL,
 } from "../urls/urlTests";
 import {
     getAccountView,
@@ -33,7 +30,7 @@ import {
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, rendererLogger, viewLogger } from "../log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
-import { isDynamicOAuthURL, isOAuthWindow, registerOAuthWindow, unregisterOAuthWindow } from "../oauthProcess";
+import { matchesActiveOAuthSession, isOAuthWindow, registerOAuthWindow, unregisterOAuthWindow } from "../oauthSession";
 import { sentryReport } from "../sentryReport";
 import { openExternalRedirect } from "../openExternal/openExternal";
 import { urlRedirectManager } from "../urlRedirects/manager";
@@ -186,12 +183,9 @@ export function handleWebContents(contents: WebContents) {
     contents.on("will-navigate", (details) => {
         logger().info("will-navigate", details.url);
 
-        if (
-            !isOAuthWindow(contents.id) &&
-            !isHostAllowed(details.url) &&
-            !global.oauthProcess &&
-            !global.subscriptionProcess
-        ) {
+        if (isOAuthWindow(contents.id)) return details;
+
+        if (!isHostAllowed(details.url) && !global.subscriptionProcess) {
             logger().info("opening external URL", details.url);
             void openExternalRedirect(details.url);
             return details.preventDefault();
@@ -251,15 +245,8 @@ export function handleWebContents(contents: WebContents) {
             return { action: "allow" };
         };
 
-        // Specific whitelisted URLs should be removed in the future - INDA-661
-        if (
-            isGoogleOAuthAuthorizationURL(url) ||
-            isZoomAuthURL(url) ||
-            isMicrosoftAuthURL(url) ||
-            isDynamicOAuthURL(url)
-        ) {
-            if (!global.oauthProcess) return denyAndOpenExternalRedirect(`oauth disabled, link in view ${url}`);
-            logWindowOpen("allowed", `oauth process enabled, opening in new electron window ${url}`);
+        if (matchesActiveOAuthSession(url)) {
+            logWindowOpen("allowed", `oauth URL, opening in new electron window ${url}`);
             contents.once("did-create-window", (win: BrowserWindow) => {
                 registerOAuthWindow(win.webContents.id);
                 win.webContents.once("destroyed", () => unregisterOAuthWindow(win.webContents.id));
