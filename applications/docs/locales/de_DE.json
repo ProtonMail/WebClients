@@ -1036,6 +1036,12 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisationen mit dem Add-on „Managed Service Provider“ können untergeordnete Organisationen anlegen und verwalten."
       ]
     },
     "Alert": {
@@ -1281,6 +1287,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Desktopanwendung"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Desktopanwendung"
       ]
     },
     "Bug category": {

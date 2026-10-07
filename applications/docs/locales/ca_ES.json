@@ -1039,6 +1039,12 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "Managed Service Provider": [
+        "Proveïdor de serveis gestionats"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Les organitzacions amb el complement de proveïdor de serveis gestionats poden crear i gestionar organitzacions filials."
       ]
     },
     "Alert": {
@@ -1284,6 +1290,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Aplicació d'escriptori de ${ appName }"
       ]
     },
     "Bug category": {
@@ -3633,7 +3642,7 @@
         "Heu arribat al nombre límit de contactes per al vostre compte."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Heu utilitzat totes les adreces del vostre pla. Milloreu el pla per a afegir-ne una de nova o desactiveu una adreça al vostre compte."
+        "Heu utilitzat totes les adreces del pla. Milloreu el pla per a afegir-ne una de nova o desactiveu una adreça al compte."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
@@ -5054,7 +5063,7 @@
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
+        "Si ho cancel·leu, la subscripció a ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
       ],
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Si canvieu d'opinió, us podeu tornar a subscriure en qualsevol moment. Ens sap greu que marxeu!"
@@ -6642,8 +6651,8 @@
     },
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
-        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
-        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+        "${ MEET_APP_NAME } (per a ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per a ${ quantity } usuaris)"
       ],
       "${ MEET_APP_NAME } license": [
         "Llicència de ${ MEET_APP_NAME }"
@@ -7412,7 +7421,7 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si elimineu el vostre compte, perdreu el preu promocional i no estarà disponible si creeu un compte nou."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+        "Esteu gaudint d'un preu promocional al pla actual. Si canvieu el compte a un pla inferior, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
     "new_plans: Subtext": {
@@ -9762,7 +9771,7 @@
         "Expira"
       ],
       "Fingerprint": [
-        "Empremta dactilar"
+        "Empremta digital"
       ],
       "Migration status": [
         "Estat de la migració"
