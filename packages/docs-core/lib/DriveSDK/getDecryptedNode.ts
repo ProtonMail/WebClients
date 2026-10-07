@@ -17,7 +17,7 @@ export async function getDecryptedNode(nodeMeta: NodeMeta): Promise<DecryptedNod
   }
 }
 
-function toDecryptedNode(node: NodeEntity): DecryptedNode {
+export function toDecryptedNode(node: NodeEntity): DecryptedNode {
   const { volumeId, nodeId } = splitNodeUid(node.uid)
   const parentNodeId = node.parentUid ? splitNodeUid(node.parentUid).nodeId : undefined
 

@@ -22,7 +22,9 @@ import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { jwtDecode } from 'jwt-decode'
 import { realtimeTokenPayloadSchema } from './FetchRealtimeToken'
 import type { GetNodePermissions } from './GetNodePermissions'
-import type { PrimaryAddressKeys } from '../DriveSDK/getDocumentKeys'
+import { getPublicDocumentKeys, type PrimaryAddressKeys } from '../DriveSDK/getDocumentKeys'
+import { getPublicLinkInfo } from '../DriveSDK/getPublicDrive'
+import { hasDirectAccessToPublicNode } from '../DriveSDK/hasDirectAccessToPublicNode'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 type LoadDocumentResult<E extends DocumentState | PublicDocumentState> = {
@@ -198,20 +200,25 @@ export class LoadDocument {
   async executePublic(
     nodeMeta: PublicNodeMeta,
     publicEditingEnabled: boolean,
+    primaryAddressKeys?: PrimaryAddressKeys,
   ): Promise<Result<LoadDocumentResult<PublicDocumentState>>> {
-    const compat = this.compatWrapper.getCompat<PublicDriveCompat>()
-    const permissions = compat.permissions
+    const compat = this.compatWrapper.getPublicCompat()
+    const permissions = compat ? compat.permissions : getPublicLinkInfo().permissions
 
     if (!permissions) {
       return Result.fail('Permissions not yet loaded')
     }
 
     try {
+      const keysPromise = compat
+        ? compat.getDocumentKeys(nodeMeta)
+        : getPublicDocumentKeys(nodeMeta, primaryAddressKeys)
+
       const [nodeResult, keysResult, metaResult] = await Promise.all([
         this.getNode.execute(nodeMeta, { useCache: false }).catch((error) => {
           throw new Error(`Failed to load public node: ${error}`)
         }),
-        compat.getDocumentKeys(nodeMeta).catch((error) => {
+        keysPromise.catch((error) => {
           throw new Error(`Failed to load public keys: ${error}`)
         }),
         this.loadMetaAndCommit.execute(nodeMeta).catch((error) => {
@@ -235,18 +242,17 @@ export class LoadDocument {
       }
 
       /**
-       * We attempt to determine if the current public session user can load the actual document meta via the
-       * authenticated API.
+       * We attempt to determine if the current public session user has direct access to this document.
+       * Legacy tries to load the actual document meta via the authenticated API.
+       * SDK uses the public link info, and only checks the document itself when that is not enough.
        *
-       * If it succeeds, this means the user has some sort of access to this document, and can perform
-       * actions like duplicating it.
+       * If the user has some sort of access to this document, they can perform actions like duplicating it.
        */
-      const authenticatedMetaAttempt = await this.getDocumentMeta.execute({
-        volumeId: serverBasedMeta.volumeId,
-        linkId: nodeMeta.linkId,
-      })
-
-      const doesHaveAccessToDoc = !authenticatedMetaAttempt.isFailed()
+      const doesHaveAccessToDoc = compat
+        ? await this.getDocumentMeta
+            .execute({ volumeId: serverBasedMeta.volumeId, linkId: nodeMeta.linkId })
+            .then((result) => !result.isFailed())
+        : await hasDirectAccessToPublicNode(nodeMeta)
 
       const role = (() => {
         if (publicEditingEnabled && getCanWrite(permissions)) {

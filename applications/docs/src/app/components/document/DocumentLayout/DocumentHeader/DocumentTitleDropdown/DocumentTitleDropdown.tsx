@@ -193,12 +193,13 @@ export function DocumentTitleDropdown({
       setIsRenaming(false)
 
       if (oldName !== newName) {
-        void renameController.renameDocument(newName, renameWithSDK).then((result) => {
+        const useSDK = privateContext ? renameWithSDK : !publicContext?.compat
+        void renameController.renameDocument(newName, useSDK).then((result) => {
           if (result.isFailed()) {
             PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
             setTitle(oldName)
-          } else if (renameWithSDK && privateContext) {
-            // Public rename uses legacy - already has the notification
+          } else if (useSDK) {
+            // Public rename with legacy already has the notification
             const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`
             createNotification({
               text: <span className="text-pre-wrap">{successNotificationText}</span>,

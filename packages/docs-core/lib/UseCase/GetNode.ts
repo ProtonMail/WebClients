@@ -8,6 +8,7 @@ import type { CacheService } from '../Services/CacheService'
 import type { CachableResult } from './CachableResult'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { getDecryptedNode } from '../DriveSDK/getDecryptedNode'
+import { getPublicDecryptedNode } from '../DriveSDK/getPublicDecryptedNode'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
 
@@ -77,7 +78,8 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
     try {
       let node: DecryptedNode
       if (isPublicNodeMeta(nodeMeta)) {
-        node = await this.compatWrapper.getPublicCompat().getNode(nodeMeta)
+        const publicCompat = this.compatWrapper.getPublicCompat()
+        node = publicCompat ? await publicCompat.getNode(nodeMeta) : await getPublicDecryptedNode(nodeMeta)
       } else if (options.forceFetch) {
         if (isDriveCompatSDKEnabled(this.unleashClient)) {
           node = await getDecryptedNode(nodeMeta)

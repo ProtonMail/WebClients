@@ -77,7 +77,7 @@ import {
 } from '../../utils/document-update-chunking'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
-import { tmpConvertOldDocTypeToNew } from '../../utils/convert-doc-type'
+import { tmpConvertOldDocTypeToNew } from '@proton/docs-shared/lib/Doc/convert-doc-type'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { seconds_to_ms } from '../../Util/time-utils'
 import type { APP_NAMES } from '@proton/shared/lib/constants'

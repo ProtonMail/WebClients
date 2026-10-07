@@ -26,6 +26,7 @@ import {
 import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { useGetPrimaryAddressKeys } from '@proton/docs-core/lib/Crypto/useGetPrimaryAddressKeys'
+import { useGetDefaultShareAddressKeys } from '@proton/docs-core/lib/Crypto/useGetDefaultShareAddressKeys'
 import type {
   CommentMarkNodeChangeData,
   DocumentAction,
@@ -41,7 +42,8 @@ import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive'
 import { isPrivateNodeMeta, isPublicNodeMeta } from '@proton/drive-store'
 import { UserSettingsProvider } from '@proton/drive-store/store'
-import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
+import { useDocumentWindowAction } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
+import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Doc/convert-doc-type'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -137,8 +139,10 @@ export function DocumentViewer({
 
   const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
   const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
-  const replaceDriveCompat = useDriveCompatSDK()
+  const isDriveCompatSDKFlagOn = useDriveCompatSDK()
+  const documentWindowAction = useDocumentWindowAction()
   const getPrimaryAddressKeys = useGetPrimaryAddressKeys()
+  const getDefaultShareAddressKeys = useGetDefaultShareAddressKeys()
   const isOpenTracerEnabled = useIsOpenTracerEnabled()
   const isDarkThemeEnabled = useIsDarkThemeEnabled()
   const { information: themeInformation } = useTheme()
@@ -151,6 +155,7 @@ export function DocumentViewer({
   }, [bridge, isDarkMode])
 
   const isPrivateNode = isPrivateNodeMeta(nodeMeta)
+  const replaceDriveCompat = isPrivateNode ? isDriveCompatSDKFlagOn : !application.compatWrapper.getPublicCompat()
   const nodeUid = isPrivateNode ? generateNodeUid(nodeMeta.volumeId, nodeMeta.linkId) : null
 
   const { flagsReady } = useFlagsStatus()
@@ -664,16 +669,38 @@ export function DocumentViewer({
       setInitializing(true)
       void OpenTracer.trace('boot_doc_viewer_loader_initialize_start', { documentType })
 
-      if (replaceDriveCompat && isPrivateNode) {
-        getPrimaryAddressKeys()
-          .then((keys) => {
-            void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType), keys)
-          })
-          .catch((error) => {
-            const errorMessage = 'Failed to fetch primary address keys'
-            application.logger.error(errorMessage, error)
-            handleInitError(errorMessage)
-          })
+      if (replaceDriveCompat) {
+        // Unlike legacy, which loads them in parallel with the document, address keys are loaded before it
+        if (isPrivateNode) {
+          getPrimaryAddressKeys()
+            .then((keys) => {
+              void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType), {
+                primaryAddressKeys: keys,
+              })
+            })
+            .catch((error) => {
+              const errorMessage = 'Failed to fetch primary address keys'
+              application.logger.error(errorMessage, error)
+              handleInitError(errorMessage)
+            })
+        } else {
+          // Like legacy getAddressKeyInfo, anonymous viewers get no address keys,
+          // signed-in viewers get their default share keys.
+          const addressKeysPromise =
+            providerType === 'public-unauthenticated' ? Promise.resolve(undefined) : getDefaultShareAddressKeys()
+          addressKeysPromise
+            .then((keys) => {
+              void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType), {
+                primaryAddressKeys: keys,
+                localID: getLocalID(),
+              })
+            })
+            .catch((error) => {
+              const errorMessage = 'Failed to fetch default share address keys'
+              application.logger.error(errorMessage, error)
+              handleInitError(errorMessage)
+            })
+        }
       } else {
         void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType))
       }
@@ -695,6 +722,8 @@ export function DocumentViewer({
     removeLocalIDFromUrl,
     getPrimaryAddressKeys,
     isPrivateNode,
+    providerType,
+    getDefaultShareAddressKeys,
   ])
 
   useEffect(() => {
@@ -724,17 +753,20 @@ export function DocumentViewer({
 
         if (isPublicNodeMeta(nodeMeta)) {
           void OpenTracer.trace('boot_doc_viewer_invite_accept_public_redirect')
-          application.compatWrapper.getPublicCompat().redirectToAuthedDocument({
-            volumeId: result.acceptedNodeMeta.volumeId,
-            linkId: result.acceptedNodeMeta.linkId,
-          })
+          const meta = { volumeId: result.acceptedNodeMeta.volumeId, linkId: result.acceptedNodeMeta.linkId }
+          const publicCompat = application.compatWrapper.getPublicCompat()
+          if (publicCompat) {
+            publicCompat.redirectToAuthedDocument(meta)
+          } else {
+            documentWindowAction({ ...meta, type: 'doc', mode: 'open', window })
+          }
         } else {
           void OpenTracer.trace('boot_doc_viewer_invite_accept_reload')
           window.location.reload()
         }
       }
     },
-    [application.compatWrapper, application.logger, nodeMeta],
+    [application.compatWrapper, application.logger, nodeMeta, documentWindowAction],
   )
 
   /**

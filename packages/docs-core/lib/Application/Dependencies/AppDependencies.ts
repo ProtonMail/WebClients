@@ -60,6 +60,12 @@ import { SheetsStorageService } from '../../Services/SheetsStorage/SheetsStorage
 import type { CacheConfig } from '@proton/drive-store/lib/CacheConfig'
 import type { PublicKeyReference } from '@protontech/crypto'
 
+export type AppDependenciesOptions = {
+  cacheConfig?: CacheConfig
+  getVerificationKey?: (email: string) => Promise<PublicKeyReference[]>
+  logger?: LoggerInterface
+}
+
 export class AppDependencies extends DependencyContainer {
   constructor(
     api: Api,
@@ -70,13 +76,16 @@ export class AppDependencies extends DependencyContainer {
     appVersion: string,
     unleashClient: UnleashClient,
     syncedEditorState: SyncedEditorState,
-    providedCacheConfig?: CacheConfig,
-    providedGetVerificationKey?: (email: string) => Promise<PublicKeyReference[]>,
+    {
+      cacheConfig: providedCacheConfig,
+      getVerificationKey: providedGetVerificationKey,
+      logger: providedLogger,
+    }: AppDependenciesOptions = {},
   ) {
     super()
 
     this.bind(App_TYPES.Logger, () => {
-      const logger = new Logger('proton-docs', DOCS_DEBUG_KEY)
+      const logger = providedLogger ?? new Logger('proton-docs', DOCS_DEBUG_KEY)
       LoadLogger.initialize(logger)
       return logger
     })
@@ -143,15 +152,19 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.RealtimeEncryptionService, () => {
-      return new EncryptionService(EncryptionContext.RealtimeMessage, compatWrapper, providedGetVerificationKey)
+      return new EncryptionService(EncryptionContext.RealtimeMessage, compatWrapper, api, {
+        providedGetVerificationKey,
+      })
     })
 
     this.bind(App_TYPES.CommentsEncryptionService, () => {
-      return new EncryptionService(EncryptionContext.PersistentComment, compatWrapper, providedGetVerificationKey)
+      return new EncryptionService(EncryptionContext.PersistentComment, compatWrapper, api, {
+        providedGetVerificationKey,
+      })
     })
 
     this.bind(App_TYPES.LocalStorageEncryptionService, () => {
-      return new EncryptionService(EncryptionContext.LocalStorage, compatWrapper)
+      return new EncryptionService(EncryptionContext.LocalStorage, compatWrapper, api)
     })
 
     this.bind(App_TYPES.EncryptComment, () => {
