@@ -36,6 +36,21 @@ export const SetInvoiceEmailModal = (props: Props) => {
 
     const [invoiceEmail, setInvoiceEmail] = useState(initialEmail);
     const [sendEmailInvoice, setSendEmailInvoice] = useState(initialSendEmailInvoice);
+    const [isToggleTouched, setIsToggleTouched] = useState(false);
+
+    const handleInvoiceEmailChange = (value: string) => {
+        setInvoiceEmail(value);
+        // Users often enter an address but forget the toggle, so turn it on for them unless they've set it themselves.
+        // Clearing the field undoes that, so an untouched toggle never ends up on with no address.
+        if (!isToggleTouched) {
+            setSendEmailInvoice(value ? true : initialSendEmailInvoice);
+        }
+    };
+
+    const handleSendEmailInvoiceChange = (checked: boolean) => {
+        setIsToggleTouched(true);
+        setSendEmailInvoice(checked);
+    };
 
     const hasChanges = invoiceEmail !== initialEmail || sendEmailInvoice !== initialSendEmailInvoice;
 
@@ -74,7 +89,7 @@ export const SetInvoiceEmailModal = (props: Props) => {
                         className="shrink-0"
                         data-testid="send-email-invoice"
                         checked={sendEmailInvoice}
-                        onChange={({ target }) => setSendEmailInvoice(target.checked)}
+                        onChange={({ target }) => handleSendEmailInvoiceChange(target.checked)}
                     />
                     <label htmlFor="sendEmailInvoice" className="flex-1">
                         {c('Label').t`Send invoices by email`}
@@ -91,7 +106,7 @@ export const SetInvoiceEmailModal = (props: Props) => {
                         sendEmailInvoice ? [requiredValidator(invoiceEmail), emailValidator(invoiceEmail)] : []
                     )}
                     value={invoiceEmail}
-                    onValue={setInvoiceEmail}
+                    onValue={handleInvoiceEmailChange}
                 />
             </ModalTwoContent>
 
