@@ -1027,6 +1027,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "More info": [
+        "更多資訊"
       ]
     },
     "action": {
@@ -4221,6 +4227,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "第二密碼錯誤。請重新再試。"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "失敗替 ${ signatureType } 簽名驗證: ${ errorMessage }"
       ]
     },
     "error": {
@@ -6751,6 +6760,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已達到預約時段限制 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "No payment is required.": [
+        "無須付款。"
       ]
     },
     "info": {
@@ -9722,6 +9734,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "切換代表您同意我們的 ${ termsLink }."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "試用方案不支援 ${ LUMO_SHORT_APP_NAME } 座席。"
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "試用方案不支援獨立 IPs。"
       ]
     },
     "Payments.Error": {
@@ -13058,6 +13079,36 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "購買 ${ planName } 享 ${ discount }% 折扣"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/每月"
+      ],
+      "2 TB of storage to share": [
+        "共享 2 TB 儲存空間"
+      ],
+      "2 user accounts": [
+        "2 位使用者帳號"
+      ],
+      "All premium features from your current plan": [
+        "來自於您現行方案的全部頂級質子版功能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "12 個月"
       ]
     }
   }

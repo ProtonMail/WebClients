@@ -1040,6 +1040,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "More info": [
+        "Més informació"
+      ],
+      "Switch to ${ planName }": [
+        "Canvia a ${ planName }"
       ]
     },
     "action": {
@@ -1163,6 +1169,12 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "Managed Service Provider": [
+        "Proveïdor de serveis gestionats"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Les organitzacions amb el complement de proveïdor de serveis gestionats poden crear i gestionar organitzacions filials."
       ]
     },
     "Alarm notification": {
@@ -1502,6 +1514,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Aplicació d'escriptori de ${ appName }"
       ]
     },
     "Bug category": {
@@ -4383,7 +4398,7 @@
         "Heu arribat al nombre límit de contactes per al vostre compte."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Heu utilitzat totes les adreces del vostre pla. Actualitzeu-lo per afegir-ne una de nova o desactiveu una adreça al vostre compte."
+        "Heu utilitzat totes les adreces del pla. Milloreu el pla per a afegir-ne una de nova o desactiveu una adreça al compte."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
@@ -6045,7 +6060,7 @@
         "Si ho cancel·leu ara, perdreu l'accés a ${ BRAND_NAME } ${ planTitle } el ${ expiryDate }, incloent-hi aquestes característiques:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
+        "Si ho cancel·leu, la subscripció a ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
       ],
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Si canvieu d'opinió, us podeu tornar a subscriure en qualsevol moment. Ens sap greu que marxeu!"
@@ -7047,6 +7062,15 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Teniu una factura pendent de pagament el ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "1 device per user": [
+        "1 dispositiu per usuari"
+      ],
+      "1 vault per user": [
+        "1 caixa forta per usuari"
+      ],
+      "No payment is required.": [
+        "No es requereix cap pagament."
       ]
     },
     "info": {
@@ -9054,7 +9078,7 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si elimineu el vostre compte, perdreu el preu promocional i no estarà disponible si creeu un compte nou."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+        "Esteu gaudint d'un preu promocional al pla actual. Si canvieu el compte a un pla inferior, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
     "new_plans: label": {
@@ -9987,7 +10011,7 @@
         "Google Pay"
       ],
       "New credit/debit card": [
-        "Nova targeta de crèdit/dèbit"
+        "Targeta de crèdit/dèbit nova"
       ]
     },
     "Payment.Sepa.Action": {
@@ -10165,7 +10189,7 @@
         "Born Private requereix una donació."
       ],
       "Buying credits requires a separate purchase.": [
-        "Comprar crèdits requereix una compra independent."
+        "L'adquisició de crèdits requereix una compra independent."
       ],
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Només es pot comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
@@ -10177,7 +10201,7 @@
         "Tanqueu les carteres addicionals abans de canviar de pla."
       ],
       "Scribe seats can’t exceed the number of members.": [
-        "Les llicències d'Scribe no poden superar el nombre de membres."
+        "Les llicències de Scribe no poden superar el nombre de membres."
       ],
       "The selected plan doesn’t offer enough addresses for your account.": [
         "El pla seleccionat no ofereix prou adreces per al vostre compte."
@@ -10189,7 +10213,7 @@
         "El pla seleccionat no ofereix prou membres per al vostre compte."
       ],
       "The selected plan doesn’t offer enough storage for your account.": [
-        "El pla seleccionat no ofereix prou emmagatzematge per al teu compte."
+        "El pla seleccionat no ofereix prou emmagatzematge per al vostre compte."
       ],
       "This dedicated server is assigned to a gateway and can’t be changed.": [
         "Aquest servidor dedicat està assignat a una passarel·la i no es pot canviar."
@@ -10207,7 +10231,7 @@
         "Els plans de prova no admeten IP dedicades."
       ],
       "Trial plans don’t support Scribe seats.": [
-        "Els plans de prova no admeten llicències d'Scribe."
+        "Els plans de prova no admeten llicències de Scribe."
       ],
       "Trial plans don’t support this many members.": [
         "Els plans de prova no admeten tants membres."
@@ -10220,6 +10244,9 @@
       ],
       "Your account is too old for Born Private.": [
         "El vostre compte és massa antic per a Born Private."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "En canviar, accepteu els nostres ${ termsLink }."
       ]
     },
     "Payments.Error": {
@@ -11931,7 +11958,7 @@
         "El nostre sistema ja no us cobrarà automàticament amb aquest mètode de pagament, però la vostra subscripció es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la vostra subscripció, encara heu de fer-ho abans del final del període de facturació. A més, si oblideu fer un pagament manual i la facturació automàtica està desactivada per a tots els mètodes de pagament, es pot baixar la categoria del vostre compte automàticament, cosa que portarà a la pèrdua de moltes característiques."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la subscripció, haureu de fer-ho abans del final del període de facturació. No us podem baixar de categoria automàticament perquè, si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra pròxima factura de subscripció abans de la data de venciment per a evitar la suspensió del compte."
+        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la subscripció encara es renovarà al final del cicle de facturació. Si voleu canviar a un pla inferior o canviar la subscripció, haureu de fer-ho abans del final del període de facturació. No us podem canviar automàticament a un pla inferior perquè, si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra pròxima factura de subscripció abans de la data de venciment per a evitar la suspensió del compte."
       ]
     },
     "Subscription saving": {
@@ -12188,7 +12215,7 @@
         "Expira"
       ],
       "Fingerprint": [
-        "Empremta dactilar"
+        "Empremta digital"
       ],
       "Migration status": [
         "Estat de la migració"

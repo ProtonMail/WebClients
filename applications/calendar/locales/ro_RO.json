@@ -1044,6 +1044,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "More info": [
+        "Detalii"
+      ],
+      "Switch to ${ planName }": [
+        "Comutare la ${ planName }"
       ]
     },
     "action": {
@@ -1178,6 +1184,12 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "Managed Service Provider": [
+        "Furnizor de servicii gestionate"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizațiile care dispun de modulul „Furnizor de servicii gestionate” pot crea și gestiona organizații subsidiare."
       ]
     },
     "Alarm notification": {
@@ -1523,6 +1535,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicați ${ MAIL_APP_NAME } Desktop"
+      ],
+      "${ appName } Desktop application": [
+        "Aplicația desktop ${ appName }"
       ]
     },
     "Bug category": {
@@ -7145,6 +7160,15 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Aveți o factură neachitată cu scadența la ${ dueDate }. ${ payInvoiceLink }"
+      ],
+      "1 device per user": [
+        "Un dispozitiv per utilizator"
+      ],
+      "1 vault per user": [
+        "Un seif per utilizator"
+      ],
+      "No payment is required.": [
+        "Nu este necesară plată."
       ]
     },
     "info": {
@@ -10329,6 +10353,81 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nu poate fi combinat cu ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } este disponibil doar pentru planurile de afaceri."
+      ],
+      "An organization is required for this plan.": [
+        "Pentru acest plan este necesară o organizație."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Oferta Born Private nu poate fi achiziționată dacă există un abonament activ."
+      ],
+      "Born Private requires a donation.": [
+        "Oferta Born Private necesită o donație."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Achiziționarea de credite necesită o tranzacție separată."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Dacă vă comutați, sunteți de acord cu acești ${ termsLink }."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Poate fi achiziționat doar un singur plan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Închideți conturile suplimentare de portofele înainte de a vă schimba planul."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Închideți portofelele suplimentare înainte de a vă schimba planul."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Numărul licențelor pentru Scribe nu îl poate depăși pe cel al numărului de membri."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Planul selectat nu oferă suficiente adrese pentru contul pe care îl dețineți."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Planul selectat nu oferă suficiente domenii pentru contul deținut."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Planul selectat nu oferă suficiente licențe pentru membri din contul pe care îl dețineți."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Planul selectat nu oferă suficient spațiu de stocare pentru contul deținut."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Acest server dedicat este alocat unei porți de acces și nu poate fi modificat."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Acest plan nu oferă suport pentru membrii din contul deținut."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Abonamentele de probare nu acceptă licențe pentru ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Planurile de probare nu suportă domenii personale."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Abonamentele de probare nu oferă suport pentru adrese IP dedicate."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Acest plan nu suportă licențe pentru Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Abonamentele de probare nu suportă un număr atât de mare de membri."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Deja dețineți planul ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ],
+      "You already own Born Private.": [
+        "Dețineți deja oferta Born Private."
+      ],
+      "Your account is too old for Born Private.": [
+        "Contul tău este prea vechi pentru oferta Born Private."
       ]
     },
     "Payments.Error": {

@@ -1031,6 +1031,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "More info": [
+        "Altre informazioni"
       ]
     },
     "action": {
@@ -13341,6 +13344,41 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - carta che termina con ${ Last4 }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Ottieni ${ discount }% di sconto su ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Ottieni ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mese"
+      ],
+      "2 TB of storage to share": [
+        "2 TB di archiviazione da condividere"
+      ],
+      "2 user accounts": [
+        "2 account utente"
+      ],
+      "All premium features from your current plan": [
+        "Tutte le funzionalità premium del tuo piano attuale"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "per 12 mesi"
       ]
     }
   }

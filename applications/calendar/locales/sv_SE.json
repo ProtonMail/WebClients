@@ -1040,6 +1040,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "More info": [
+        "Mer info"
+      ],
+      "Switch to ${ planName }": [
+        "Byt till ${ planName }"
       ]
     },
     "action": {
@@ -4844,6 +4850,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Still waiting?": [
+        "Väntar du fortfarande?"
       ]
     },
     "fido2: Label": {
@@ -6977,6 +6986,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nått gränsen för antal bokningsbara tider (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
+      ],
+      "1 vault per user": [
+        "1 valv per användare"
+      ],
+      "No payment is required.": [
+        "Ingen betalning krävs."
       ]
     },
     "info": {
@@ -9570,6 +9588,9 @@
       ],
       "Your subscription renews soon": [
         "Din prenumeration förnyas snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sista chansen att få din första månad med ${ plan } till detta pris."
       ]
     },
     "Offer fearue": {
@@ -10060,6 +10081,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ]
     },
     "Payments.Error": {
@@ -13558,6 +13582,12 @@
       ],
       "2 user accounts": [
         "2 användarkonton"
+      ],
+      "All premium features from your current plan": [
+        "Alla premiumfunktioner från ditt nuvarande paket"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln avslutas."
       ]
     },
     "tryduo2026: Title": {
