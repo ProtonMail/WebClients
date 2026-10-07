@@ -932,6 +932,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
+      ],
+      "More info": [
+        "更多信息"
       ]
     },
     "Actions message": {
@@ -10589,6 +10592,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。若在 ${ textDate } 前取消，则不会向您收费。${ action }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "开通 ${ planName }，享 ${ discount }% 优惠"
+      ],
+      "Get ${ planName }": [
+        "开通 ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "2 TB of storage to share": [
+        "2 TB 共享存储空间"
+      ],
+      "2 user accounts": [
+        "2 个账户"
+      ],
+      "All premium features from your current plan": [
+        "您当前套餐的所有高级功能"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "年费"
       ]
     }
   }

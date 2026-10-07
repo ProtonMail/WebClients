@@ -929,6 +929,9 @@
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакти",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
+      ],
+      "More info": [
+        "Докладніше"
       ]
     },
     "Actions message": {
@@ -10884,6 +10887,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробний період закінчиться ${ textDate }. З вас не буде стягнено плату, якщо ви скасуєте передплату до ${ textDate }. ${ action }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Отримати ${ planName } зі знижкою ${ discount }%"
+      ],
+      "Get ${ planName }": [
+        "Отримати ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/місяць"
+      ],
+      "2 TB of storage to share": [
+        "2 ТБ сховища для спільного використання"
+      ],
+      "2 user accounts": [
+        "2 облікові записи користувачів"
+      ],
+      "All premium features from your current plan": [
+        "Усі преміум-функції з вашого поточного тарифного плану"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Знижки розраховуються на основі стандартної місячної ціни. Коли платіжний цикл завершиться, передплата буде поновлена за стандартним річним тарифом."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "за 12 місяців"
       ]
     }
   }

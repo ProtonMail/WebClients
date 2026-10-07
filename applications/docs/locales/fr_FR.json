@@ -934,6 +934,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
+      ],
+      "More info": [
+        "Plus d'informations"
       ]
     },
     "Actions message": {
@@ -1036,6 +1039,12 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "Managed Service Provider": [
+        "Fournisseur de services gérés"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Les organisations avec l'extension Fournisseur de services gérés peuvent créer et gérer des organisations filiales."
       ]
     },
     "Alert": {
@@ -1281,6 +1290,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Application de bureau ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Application de bureau ${ appName }"
       ]
     },
     "Bug category": {
@@ -7857,6 +7869,9 @@
       ],
       "Your settings have been changed successfully": [
         "Vos réglages ont été modifiés."
+      ],
+      "Failed to apply file. Check the file and try again.": [
+        "Appliquer le fichier n'a pas abouti. Vérifiez le fichier et réessayez."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8237,6 +8252,81 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment.",
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ne peut pas être combiné avec ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } est uniquement disponible pour les abonnements professionnels."
+      ],
+      "An organization is required for this plan.": [
+        "Une organisation est nécessaire pour cet abonnement."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Born Private ne peut pas être acheté avec un abonnement actif."
+      ],
+      "Born Private requires a donation.": [
+        "Born Private nécessite une donation."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Acheter des crédits nécessite un achat séparé."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "En effectuant ce changement, vous acceptez nos ${ termsLink }."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Seulement un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } peut être acheté."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Veuillez clôturer les comptes de portefeuille supplémentaires avant de changer d'abonnement."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Veuillez clôturer les portefeuilles supplémentaires avant de changer votre abonnement."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Les accès à Scribe ne peuvent dépasser le nombre de membres."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "L'abonnement sélectionné n'offre pas assez d'adresses pour votre compte."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "L'abonnement sélectionné n'offre pas assez de domaines pour votre compte."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "L'abonnement sélectionné n'offre pas assez de membres pour votre compte."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "L'abonnement sélectionné n'offre pas assez d'espace de stockage pour votre compte."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Ce serveur dédié est assigné à une passerelle et ne peut pas être modifié."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Cet abonnement ne prend pas en charge les membres sur votre compte."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Les abonnements en version d'essai ne prennent pas en charge l'accès à ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Les abonnements en version d'essai ne prennent pas en charge les noms de domaine personnalisés."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Les abonnements en version d'essai ne prennent pas en charge les IP dédiées."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Les abonnements en version d'essai ne prennent pas en charge l'accès à Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Les versions d'essai ne prennent pas en charge ce nombre de membres."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Vous possédez déjà ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Vous possédez déjà Born Private."
+      ],
+      "Your account is too old for Born Private.": [
+        "Votre compte est trop ancien pour Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -10433,6 +10523,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vous pourrez attribuer des rôles une fois l'invitation acceptée par l'utilisateur."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Vous ne pouvez pas modifier vos propres rôles. Demandez à un autre administrateur de les modifier."
       ]
     },
     "Validation": {
@@ -10618,6 +10711,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Profitez de ${ discount } % de réduction sur ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Passer à ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "2 TB of storage to share": [
+        "2 To d'espace de stockage à partager"
+      ],
+      "2 user accounts": [
+        "2 comptes utilisateur"
+      ],
+      "All premium features from your current plan": [
+        "Toutes les fonctionnalités premium de votre abonnement actuel"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "pendant 12 mois"
       ]
     }
   }

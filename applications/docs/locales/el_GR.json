@@ -940,6 +940,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "More info": [
+        "Περισσότερες πληροφορίες"
       ]
     },
     "Actions message": {
@@ -1042,6 +1045,12 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "Managed Service Provider": [
+        "Πάροχος Διαχειριζόμενης Υπηρεσίας"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Οι οργανισμοί που διαθέτουν το πρόσθετο Πάροχος Διαχειριζόμενων Υπηρεσιών μπορούν να δημιουργούν και να διαχειρίζονται θυγατρικούς οργανισμούς."
       ]
     },
     "Alert": {
@@ -1287,6 +1296,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Bug category": {
@@ -8034,6 +8046,9 @@
       ],
       "Your settings have been changed successfully": [
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
+      ],
+      "Failed to apply file. Check the file and try again.": [
+        "Αποτυχία εφαρμογής του αρχείου. Ελέγξτε το αρχείο και δοκιμάστε ξανά."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8414,6 +8429,81 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } δεν μπορεί να συνδυαστεί με το ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } διατίθεται μόνο σε πλάνα για επιχειρήσεις."
+      ],
+      "An organization is required for this plan.": [
+        "Απαιτείται ένας οργανισμός για αυτό το πλάνο."
+      ],
+      "Born Private can’t be purchased with an active subscription.": [
+        "Το Born Private δεν μπορεί να αγοραστεί όσο υπάρχει ενεργή συνδρομή."
+      ],
+      "Born Private requires a donation.": [
+        "Το Born Private απαιτεί δωρεά."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Η αγορά μονάδων απαιτεί ξεχωριστή αγορά."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Με την αλλαγή, αποδέχεστε τους ${ termsLink } μας."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Μπορεί να αγοραστεί μόνο ένα ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Παρακαλούμε κλείστε τους επιπλέον λογαριασμούς πορτοφολιού πριν αλλάξετε το πλάνο σας."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Παρακαλούμε κλείστε τα επιπλέον πορτοφόλια πριν αλλάξετε το πρόγραμμά σας."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Οι θέσεις των γραμματέων δεν μπορούν να υπερβαίνουν τον αριθμό των μελών."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό διευθύνσεων για τον λογαριασμό σας."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό τομέων για τον λογαριασμό σας."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό μελών για τον λογαριασμό σας."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αποθηκευτικό χώρο για τον λογαριασμό σας."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Αυτός ο αποκλειστικός διακομιστής έχει αντιστοιχιστεί σε μια πύλη και η ρύθμιση αυτή δεν μπορεί να αλλάξει."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Αυτό το πλάνο δεν υποστηρίζει τα μέλη στον λογαριασμό σας."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις για το ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν προσαρμοσμένους τομείς."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν αποκλειστικές διευθύνσεις IP."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν τόσο μεγάλο αριθμό μελών."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own Born Private.": [
+        "Έχετε ήδη το Born Private."
+      ],
+      "Your account is too old for Born Private.": [
+        "Ο λογαριασμός σας είναι πολύ παλιός για το Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -10631,6 +10721,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Θα μπορείτε να αναθέσετε ρόλους μόλις ο χρήστης αποδεχτεί την πρόσκληση."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Δεν μπορείς να αλλάξεις τους δικούς σου ρόλους. Ζήτησε από έναν άλλον διαχειριστή να τους αλλάξει."
       ]
     },
     "Validation": {
@@ -10816,6 +10909,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Κερδίστε ${ discount }% στο ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Αποκτήστε το ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/μήνα"
+      ],
+      "2 TB of storage to share": [
+        "2 TB αποθηκευτικού χώρου για κοινή χρήση"
+      ],
+      "2 user accounts": [
+        "2 λογαριασμοί χρηστών"
+      ],
+      "All premium features from your current plan": [
+        "Όλες οι premium λειτουργίες του τρέχοντος πλάνου σας"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "για 12 μήνες"
       ]
     }
   }

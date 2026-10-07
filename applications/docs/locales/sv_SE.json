@@ -934,6 +934,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "More info": [
+        "Mer info"
       ]
     },
     "Actions message": {
@@ -4039,6 +4042,9 @@
       ],
       "Security key": [
         "Säkerhetsnyckel"
+      ],
+      "Still waiting?": [
+        "Väntar du fortfarande?"
       ]
     },
     "fido2: Label": {
@@ -5887,6 +5893,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -8052,6 +8061,9 @@
       ],
       "Your subscription renews soon": [
         "Din prenumeration förnyas snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sista chansen att få din första månad med ${ plan } till detta pris."
       ]
     },
     "Offer fearue": {
@@ -8314,6 +8326,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ]
     },
     "PGP key encryption warning": {
@@ -10707,6 +10722,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ]
+    },
+    "tryduo2026: Action": {
+      "Get ${ discount }% off ${ planName }": [
+        "Få ${ discount } % rabatt på ${ planName }"
+      ],
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
+      ]
+    },
+    "tryduo2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "2 TB of storage to share": [
+        "2 TB lagringsutrymme att dela"
+      ],
+      "2 user accounts": [
+        "2 användarkonton"
+      ],
+      "All premium features from your current plan": [
+        "Alla premiumfunktioner från ditt nuvarande paket"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln avslutas."
+      ]
+    },
+    "tryduo2026: Title": {
+      "for 12 months": [
+        "för 12 månader"
       ]
     }
   }
