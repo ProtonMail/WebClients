@@ -87,6 +87,8 @@ When OPFS succeeds we schedule a clean-up of the temporary entry, accounting for
 
 If acquiring the directory or creating the writable stream fails, we mark `useSWFallback = true` and re-enter the Service Worker flow. Users still get a streamed download, just without OPFS performance benefits.
 
+Before reading the stream, the writable is grown to the download size and shrunk back. If that throws `QuotaExceededError`, that download uses the Service Worker instead, because browsers can report more quota than OPFS accepts (e.g. Chrome incognito).
+
 ## Streaming Service Worker
 
 When OPFS is unavailable, `saveViaDownload` streams bytes into a dedicated Download Service Worker. Initialization is guarded by a 15s timeout to avoid hanging on browsers with broken SW support.
