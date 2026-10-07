@@ -22,6 +22,7 @@ import pkg from "../../../package.json";
 import { getFeatureFlagManager } from "../flags/manager";
 import { FeatureFlag } from "../flags/flags";
 import { isWindowValid } from "../view/windowUtils";
+import { setDefaultMailtoApp } from "../protocol/default";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window" | "help";
 interface MenuProps extends MenuItemConstructorOptions {
@@ -70,12 +71,21 @@ const showAboutDialog = () => {
 export const setApplicationMenu = () => {
     const quitMenuProps: MenuProps["submenu"] = isMac ? [] : [{ role: "quit", label: c("App menu").t`Quit` }];
     const hardwareAccelerationDisabled = getSettings().disableHardwareAcceleration;
+    const setDefaultMailtoMenuItem: MenuItemConstructorOptions = {
+        label: c("App menu").t`Set as default email app`,
+        type: "normal",
+        click: () => setDefaultMailtoApp(),
+    };
+    const fileMenuDefaultMailtoItems: MenuItemConstructorOptions[] = isMac
+        ? []
+        : [setDefaultMailtoMenuItem, { type: "separator" }];
 
     const temp: MenuProps[] = [
         {
             label: c("Menu").t`File`,
             key: "file",
             submenu: [
+                ...fileMenuDefaultMailtoItems,
                 {
                     label: c("App menu").t`Clear application data`,
                     type: "normal",
@@ -374,6 +384,7 @@ export const setApplicationMenu = () => {
                         });
                     },
                 },
+                setDefaultMailtoMenuItem,
                 {
                     label: c("App menu").t`Uninstall ${MAIL_APP_NAME}`,
                     type: "normal",
