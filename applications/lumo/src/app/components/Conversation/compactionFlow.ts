@@ -1,4 +1,6 @@
-import type { AssistantCallOptions, LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
+import { composeClientToolExecutors } from '@proton/lumo-api-client';
+import { createDesktopClientToolExecutor, isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+import type { AssistantCallOptions, ClientToolExecutor, LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
@@ -29,6 +31,7 @@ import {
     type Turn,
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
+import { markArtifactTelemetryLiveMessage } from './artifact/artifactVersionTelemetry';
 import { createArtifactToolExecutor } from './artifact/createArtifactTool';
 import type { ArtifactToolMode } from './helper';
 
@@ -82,11 +85,26 @@ export type GenerationWithCompactionParams = {
 // per-request file budget handles instead.
 const DEFAULT_MAX_COMPACTIONS = 1;
 
-/** The `create_artifact` executor for a send, or undefined when the tool isn't registered this turn. */
-function resolveClientToolExecutor(sendOptions: ForwardedSendOptions) {
-    return sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off'
-        ? createArtifactToolExecutor
-        : undefined;
+/**
+ * Client-side tools for a send. Artifact and Lumo Desktop connectors each have their own
+ * {@link ClientToolExecutor}; compose them so enabling create_artifact does not replace desktop tools.
+ */
+function resolveClientToolExecutor(sendOptions: ForwardedSendOptions): ClientToolExecutor | undefined {
+    const executors: ClientToolExecutor[] = [];
+
+    if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
+        executors.push(createArtifactToolExecutor);
+    }
+
+    if (isDesktopEnvironment()) {
+        executors.push(createDesktopClientToolExecutor());
+    }
+
+    if (executors.length === 0) {
+        return undefined;
+    }
+
+    return composeClientToolExecutors(...executors);
 }
 
 /**
@@ -184,6 +202,12 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
 
         while (true) {
             throwIfAborted(sendOptions.signal);
+            // Marked per attempt: compaction retries stream into a fresh assistant message.
+            if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
+                markArtifactTelemetryLiveMessage(currentAssistantId, {
+                    artifactToolMode: sendOptions.artifactToolMode,
+                });
+            }
             try {
                 const turns = buildTurns(currentChain);
                 await dispatch(

@@ -9,6 +9,7 @@ import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
 import { useQueryParam, useSkillParam } from '../../hooks';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
+import { ArtifactCreationProvider } from '../../providers/ArtifactCreationProvider';
 import { ConversationActionsProvider } from '../../providers/ConversationActionsProvider';
 import { useConversation } from '../../providers/ConversationProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -252,9 +253,11 @@ const ConversationPageComponentInner = () => {
 export const ConversationPageComponent = () => {
     return (
         <WebSearchProvider>
-            <ModelTierProvider>
-                <ConversationPageComponentInner />
-            </ModelTierProvider>
+            <ArtifactCreationProvider>
+                <ModelTierProvider>
+                    <ConversationPageComponentInner />
+                </ModelTierProvider>
+            </ArtifactCreationProvider>
         </WebSearchProvider>
     );
 };

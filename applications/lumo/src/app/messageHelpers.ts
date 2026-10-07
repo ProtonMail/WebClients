@@ -1,6 +1,6 @@
 import { getArtifactActionDisplayContent } from './components/Conversation/artifact/artifactActionPrompts';
-import type { ContentBlock, Message, TextBlock, ToolCallBlock, ToolResultBlock } from './types';
-import { isTextBlock, isToolCallBlock, isToolResultBlock } from './types';
+import type { ArtifactActionMeta, ContentBlock, Message, TextBlock, ToolCallBlock, ToolResultBlock } from './types';
+import { isArtifactActionMeta, isTextBlock, isToolCallBlock, isToolResultBlock } from './types';
 
 /**
  * Try to parse JSON, returning the parsed value or undefined on failure.
@@ -39,6 +39,10 @@ export function getMessageDisplayContent(message: Message): string {
         return getArtifactActionDisplayContent(message.artifactAction);
     }
     return getMessageContent(message);
+}
+
+export function hasArtifactAction(message: Message): message is Message & { artifactAction: ArtifactActionMeta } {
+    return isArtifactActionMeta(message.artifactAction);
 }
 
 /**
@@ -439,4 +443,3 @@ function messageAttachmentsEqual(a: Message, b: Message): boolean {
 export function messagesEqualForRendering(a: Message, b: Message): boolean {
     return a.id === b.id && messageContentEqual(a, b) && messageStateEqual(a, b) && messageAttachmentsEqual(a, b);
 }
-
