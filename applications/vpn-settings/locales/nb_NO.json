@@ -2203,11 +2203,6 @@
         "Jobber du med sensitive data?"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-skrivebordsapplikasjon"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } problem"
@@ -2333,11 +2328,6 @@
       ],
       "Take a tour": [
         "Få en omvisning"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikater fra tidligere importer vil bli hoppet over. Angre eller importer eldre meldinger i ${ PRODUCT_NAMES.EASY_SWITCH }-innstillingene."
       ]
     },
     "Cancellation upsell": {
@@ -4113,12 +4103,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave eller tidligere"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -5080,9 +5064,6 @@
       ],
       "Invalid private key file": [
         "Ugyldig privat nøkkelfil"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Ugyldig tilbakestillingstoken. Oppdater siden og prøv på nytt."
       ],
       "Invalid URL": [
         "Ugyldig nettadresse"

@@ -1959,11 +1959,6 @@
         "Työskenteletkö arkaluonteisten tietojen kanssa?"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }in työpöytäsovellus"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME }-ongelma"
@@ -2089,11 +2084,6 @@
       ],
       "Take a tour": [
         "Katso esittely"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Aikaisemmista tuonneista peräisin olevat kaksoiskappaleet ohitetaan. Voit peruuttaa toiminnon tai tuoda vanhempia viestejä ${ PRODUCT_NAMES.EASY_SWITCH } -asetuksissa."
       ]
     },
     "Cancellation upsell": {
@@ -3847,12 +3837,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave or vanhempi"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -4706,9 +4690,6 @@
       ],
       "Invalid private key file": [
         "Virheellinen yksityinen avaintiedosto"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Virheellinen palautustunniste. Päivitä sivu ja yritä uudelleen."
       ],
       "Invalid URL": [
         "Virheellinen URL"

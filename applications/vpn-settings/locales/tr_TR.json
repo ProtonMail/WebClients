@@ -2268,8 +2268,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      "${ appName } Desktop application": [
+        "${ appName } bilgisayar uygulaması"
       ]
     },
     "Bug category": {
@@ -2400,8 +2400,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Önceki içe aktarmalardan gelen çift iletiler atlanacak. ${ PRODUCT_NAMES.EASY_SWITCH } ayarlarından işlemi geri alabilir veya daha eski iletileri içe aktarabilirsiniz."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Önce en yeni e-postalarınız içe aktarılır. Daha önce içe aktardığınız e-postalar yeniden kopyalanmaz."
       ]
     },
     "Cancellation upsell": {
@@ -4185,12 +4185,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave ve öncesi"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -5153,9 +5147,6 @@
       "Invalid private key file": [
         "Kişisel anahtar dosyası geçersiz"
       ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Sıfırlama kodu geçersiz. Lütfen sayfayı yenileyip yeniden deneyin."
-      ],
       "Invalid URL": [
         "Adres geçersiz"
       ],
@@ -5543,6 +5534,9 @@
       "There was an error, please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
+      "This code or link is no longer valid. Please try again.": [
+        "Bu kod veya bağlantı artık geçerli değil. Lütfen yeniden deneyin."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
       ],
@@ -5698,6 +5692,9 @@
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Parolanız sıfırlanamadı. Lütfen yeniden deneyin."
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
@@ -9275,6 +9272,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Bazı sunucular yukarıdaki listede görünmeyebilir. Bu sunucuları bulmak için sunucu adına göre (AT#62 gibi) arama yapın."
       ],
+      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
+        "Yakında, e-posta adresinizi (veya kullanıcı adınızı) ve parolanızı 1 sayfa yerine 2 ayrı adımda yazacaksınız."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin."
       ],
@@ -9907,6 +9907,9 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
+      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
+        "${ BRAND_NAME } oturum açma sayfasını değiştiriyoruz. Parolanız ve aygıtlarınız aynı kalır. ${ learnMore }"
+      ],
       "Web sessions detected:": [
         "Açık internet oturumları:"
       ],
@@ -10268,6 +10271,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Kuruluşunuzun e-posta adresleri, kuruluş anahtarı ile uçtan uca şifreleme ile korunur. Bu parmak izi, hesabınızdaki tüm yöneticilerin aynı anahtara sahip olduğunu doğrulamak için kullanılabilir."
+      ],
+      "Your password and devices stay the same.": [
+        "Parolanız ve aygıtlarınız aynı kalır."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -15047,7 +15053,7 @@
         "Siber tehditlere karşı gelişmiş koruma"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret üzerinden yenilenir."
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
       ]
     },
     "q3campaign2026: Info, Calendar first": {
@@ -19404,6 +19410,9 @@
       "Signed-in reset": [
         "Oturum açmış sıfırlama"
       ],
+      "Signing in is changing": [
+        "Oturum açma değişiyor"
+      ],
       "Simplify email distribution": [
         "E-posta dağıtımını kolaylaştırın"
       ],
@@ -20144,7 +20153,7 @@
         "Geçerli tarifenizdeki tüm ücretli özellikler"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret ile yenilenir."
       ]
     },
     "tryduo2026: Title": {
