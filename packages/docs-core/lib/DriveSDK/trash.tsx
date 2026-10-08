@@ -1,5 +1,5 @@
-import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 import { getDrive } from '@proton/drive'
+import { traceErrorSDK } from './traceErrorSDK'
 
 export async function trashDocument(nodeUid: string) {
   const drive = getDrive()
@@ -29,10 +29,5 @@ export async function deleteDocument(nodeUid: string) {
 }
 
 export function reportTrashError(error: unknown) {
-  traceError(error, {
-    tags: {
-      initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-      feature: 'DocsTrashWithDriveSDK',
-    },
-  })
+  traceErrorSDK(error, 'DocsTrashWithDriveSDK')
 }
