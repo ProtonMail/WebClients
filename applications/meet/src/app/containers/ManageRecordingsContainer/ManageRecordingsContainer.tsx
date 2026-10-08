@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -26,9 +25,9 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConfirmationModal } from '../../components/ConfirmationModal/ConfirmationModal';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
+import { useRecordingDownload } from '../../hooks/useMeetingRecorder/hooks/useRecordingDownload';
 import {
     deleteOpfsRecording,
-    downloadOpfsRecording,
     isDownloadAborted,
     listAllOpfsRecordings,
     listOpfsRecordings,
@@ -40,7 +39,7 @@ const formatDate = (timestamp: number) =>
 
 export const ManageRecordingsContainer = () => {
     const dispatch = useMeetDispatch();
-    const [userKeys = []] = useUserKeys();
+    const { downloadRecording } = useRecordingDownload();
 
     const { createNotification } = useNotifications();
     const { reportMeetError } = useMeetErrorReporting();
@@ -69,20 +68,7 @@ export const ManageRecordingsContainer = () => {
 
     const handleDownload = async (recording: OpfsRecording) => {
         try {
-            
-            const isFullRecording = await downloadOpfsRecording(
-                recording,
-                userKeys.map(({ privateKey }) => privateKey)
-            );
-            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.recording_downloaded, {
-                sizeBucket: getRecordingSizeBucket(recording.size),
-            });
-            if (!isFullRecording) {
-                createNotification({
-                    type: 'info',
-                    text: c('Info').t`Only a partial meeting recording was available.`,
-                });
-            }
+            await downloadRecording(recording);
         } catch (error) {
             if (isDownloadAborted(error)) {
                 return;

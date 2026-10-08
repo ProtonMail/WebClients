@@ -3,9 +3,16 @@ import { CryptoProxy } from '@protontech/crypto';
 
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
-import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
+
+import { isServiceWorkerDownloadSupported, openDownloadStream } from './download/client';
+import { getRecordingFolder, isEncryptedRecordingFolder } from './getRecordingFolder';
 
 const RECORDING_FILENAME_RE = /^recording-(\d+)\.([a-z0-9]+)$/i;
+
+const RECORDING_MIME_TYPES: Record<string, string> = {
+    mp4: 'video/mp4',
+    webm: 'video/webm',
+};
 
 const getRecordingDirectory = async (folder?: string, create = false): Promise<FileSystemDirectoryHandle | null> => {
     if (!navigator.storage?.getDirectory) {
@@ -51,12 +58,17 @@ const collectRecordings = async (directory: FileSystemDirectoryHandle, folder?: 
 const sortNewestFirst = (recordings: OpfsRecording[]): OpfsRecording[] =>
     recordings.sort((a, b) => b.createdAt - a.createdAt);
 
+// Reads the encrypted folder plus the pre-encryption one, so recordings taken before
+// the encryption rollout stay downloadable.
 export const listOpfsRecordings = async (userId: string): Promise<OpfsRecording[]> => {
-    const directory = await getRecordingDirectory(userId);
-    if (!directory) {
-        return [];
-    }
-    return sortNewestFirst(await collectRecordings(directory, userId));
+    const recordings = await Promise.all(
+        [getRecordingFolder(userId), userId].map(async (folder) => {
+            const directory = await getRecordingDirectory(folder);
+            return directory ? collectRecordings(directory, folder) : [];
+        })
+    );
+
+    return sortNewestFirst(recordings.flat());
 };
 
 // Lists every recording on the device: root-level legacy files plus one level of
@@ -87,12 +99,13 @@ export const listAllOpfsRecordings = async (): Promise<OpfsRecording[]> => {
 };
 
 export const getOpfsRecording = async (userId: string, name: string): Promise<OpfsRecording | null> => {
-    const directory = await getRecordingDirectory(userId);
+    const folder = getRecordingFolder(userId);
+    const directory = await getRecordingDirectory(folder);
     if (!directory) {
         return null;
     }
     const file = await (await directory.getFileHandle(name)).getFile();
-    return buildRecording(name, file, userId);
+    return buildRecording(name, file, folder);
 };
 
 export const deleteOpfsRecording = async (recording: OpfsRecording): Promise<void> => {
@@ -112,6 +125,78 @@ const getRecordingFile = async (recording: OpfsRecording): Promise<File> => {
 export const isDownloadAborted = (error: unknown): boolean =>
     error instanceof DOMException && error.name === 'AbortError';
 
+const writeDecryptedStream = async (
+    decryptedStream: ReadableStream<Uint8Array<ArrayBuffer>>,
+    writable: WritableStream<Uint8Array<ArrayBuffer>>,
+    signal?: AbortSignal
+): Promise<boolean> => {
+    let decryptedBytes = 0;
+
+    try {
+        return await decryptedStream
+            // this pipeThrough is needed to detect whether any data was decrypted and written,
+            // in case decryptedStream throws.
+            // We want the default `preventAbort: false` here since errors in decryptedStream should
+            // abort this TransformStream, and propagate to the `pipeTo` .
+            .pipeThrough(
+                new TransformStream<Uint8Array<ArrayBuffer>, Uint8Array<ArrayBuffer>>({
+                    transform(chunk, controller) {
+                        decryptedBytes += chunk.length;
+                        controller.enqueue(chunk);
+                    },
+                })
+            )
+            .pipeTo(writable, {
+                /**
+                 * we want decryption errors to not abort the writable, since already decrypted chunks
+                 * should still be downloaded
+                 */
+                preventAbort: true,
+                signal,
+            })
+            .then(() => true)
+            .catch(async (error) => {
+                if (isDownloadAborted(error)) {
+                    throw error;
+                }
+
+                if (decryptedBytes === 0) {
+                    // decryption error is likely not due to recording truncation;
+                    // also, no data for the user to download anyway
+                    throw error;
+                }
+
+                // because of `preventAbort: true`, we need to manually close the writable here
+                await writable.close();
+                return false;
+            });
+    } catch (error) {
+        await writable.abort(error).catch(() => {});
+        throw error;
+    }
+};
+
+const getRecordingStream = async (
+    recording: OpfsRecording,
+    decryptionKeys: PrivateKeyReference[]
+): Promise<ReadableStream<Uint8Array<ArrayBuffer>>> => {
+    const file = await getRecordingFile(recording);
+
+    if (!isEncryptedRecordingFolder(recording.folder)) {
+        return file.stream();
+    }
+
+    // NB: reading out the stream will fail at some point if the recording was cut short; the partial output can still be used
+    // since AEAD is used for encrypting the recording
+    const { dataStream } = await CryptoProxy.decryptMessageStream({
+        binaryMessageStream: file.stream(),
+        decryptionKeys,
+        format: 'binary',
+    });
+
+    return dataStream as ReadableStream<Uint8Array<ArrayBuffer>>; /* TS issue due to Node types shadowing DOM ones */
+};
+
 /**
  * @returns whether the recording was decrypted and downloaded in full (i.e. the original was not truncated)
  * @throws on decryption or downloading errors
@@ -122,60 +207,28 @@ export const downloadOpfsRecording = async (
 ): Promise<boolean> => {
     const isoDate = new Date(recording.createdAt).toISOString().replace(/[:.]/g, '-');
     const fileName = `meeting-recording-${isoDate}.${recording.extension}`;
+    const mimeType = RECORDING_MIME_TYPES[recording.extension] ?? 'application/octet-stream';
 
-    const file = await getRecordingFile(recording);
-    // NB: reading out the stream will fail at some point if the recording was cut short; the partial output can still be used
-    // since AEAD is used for encrypting the recording
-    const { dataStream: decryptedStream } = await CryptoProxy.decryptMessageStream({
-        binaryMessageStream: file.stream(),
-        decryptionKeys,
-        format: 'binary',
-    });
+    const decryptedStream = await getRecordingStream(recording, decryptionKeys);
 
     if (isChromiumBased() && typeof window.showSaveFilePicker === 'function') {
-        const handle = await window.showSaveFilePicker({ suggestedName: fileName });
-        const writable = await handle.createWritable();
+        const handle = await window.showSaveFilePicker({ suggestedName: fileName, startIn: 'downloads' });
+        return writeDecryptedStream(decryptedStream, await handle.createWritable());
+    }
 
-        try {
-            let decryptedBytes = 0;
-            const isFullRecording = await decryptedStream
-                // this pipeThrough is needed to detect whether any data was decrypted and written,
-                // in case decryptedStream throws.
-                // We want the default `preventAbort: false` here since errors in decryptedStream should
-                // abort this TransformStream, and propagate to the `pipeTo` .
-                .pipeThrough(
-                    new TransformStream<Uint8Array<ArrayBuffer>, Uint8Array<ArrayBuffer>>({
-                        transform(chunk, controller) {
-                            decryptedBytes += chunk.length;
-                            controller.enqueue(chunk);
-                        },
-                    })
-                )
-                .pipeTo(writable, {
-                    /**
-                     * we want decryption errors to not abort the writable, since already decrypted chunks
-                     * should still be downloaded
-                     */
-                    preventAbort: true,
-                })
-                .then(() => true)
-                .catch(async (err) => {
-                    if (decryptedBytes === 0) {
-                        // decryption error is likely not due to recording truncation;
-                        // also, no data for the user to download anyway
-                        throw err;
-                    }
-                    // because of `preventAbort: true`, we need to manually close the writable here
-                    await writable.close();
-                    return false;
-                });
+    if (isServiceWorkerDownloadSupported()) {
+        const abortController = new AbortController();
+        const saveStream = await openDownloadStream(
+            { fileName, mimeType },
+            { onCancel: () => abortController.abort() }
+        ).catch((error) => {
+            // eslint-disable-next-line no-console
+            console.warn('[MeetingRecorder] service worker download unavailable, buffering in memory:', error);
+            return null;
+        });
 
-            return isFullRecording;
-
-            // TODO? notify user in case of isFullRecording === false?
-        } catch (error) {
-            await writable.abort(error).catch(() => {});
-            throw error;
+        if (saveStream) {
+            return writeDecryptedStream(decryptedStream, saveStream, abortController.signal);
         }
     }
 
@@ -188,19 +241,19 @@ export const downloadOpfsRecording = async (
          * Still, the partially recording data can still be playable.
          */
         const reader = stream.getReader();
-        const decryptedChunks = [];
+        const decryptedChunks: Uint8Array<ArrayBuffer>[] = [];
 
         while (true) {
             try {
                 const { done, value } = await reader.read();
                 if (done) {
-                    return { isFullRecording: true, data: mergeUint8Arrays(decryptedChunks) };
+                    return { isFullRecording: true, data: decryptedChunks };
                 }
 
                 decryptedChunks.push(value);
             } catch (e) {
                 if (decryptedChunks.length > 0) {
-                    return { isFullRecording: false, data: mergeUint8Arrays(decryptedChunks) };
+                    return { isFullRecording: false, data: decryptedChunks };
                 }
 
                 throw e;
@@ -208,12 +261,9 @@ export const downloadOpfsRecording = async (
         }
     };
 
-    // TODO update type with actual one based on codec!!!!
-    const decryptedRecording = await readToEndOrPartiallyDecrypted(
-        decryptedStream as ReadableStream /* TS issue due to Node types shadowing DOM ones */
-    );
+    const decryptedRecording = await readToEndOrPartiallyDecrypted(decryptedStream);
 
-    const url = URL.createObjectURL(new Blob([decryptedRecording.data], { type: 'application/octect' }));
+    const url = URL.createObjectURL(new Blob(decryptedRecording.data, { type: mimeType }));
     try {
         const a = document.createElement('a');
         a.href = url;

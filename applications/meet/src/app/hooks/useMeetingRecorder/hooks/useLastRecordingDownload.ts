@@ -1,19 +1,15 @@
 import { useCallback } from 'react';
 
-import { c } from 'ttag';
-
-import { useUserKeys } from '@proton/account/userKeys/hooks';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectRecording, selectRecordingStatus } from '@proton/meet/store/slices/recordingsSlice';
 
-import { downloadOpfsRecording, isDownloadAborted } from '../recordingStorage/recordingFiles';
+import { isDownloadAborted } from '../recordingStorage/recordingFiles';
+import { useRecordingDownload } from './useRecordingDownload';
 
 export const useLastRecordingDownload = () => {
     const { reportMeetError } = useMeetErrorReporting();
-    const [userKeys = []] = useUserKeys();
-    const { createNotification } = useNotifications();
+    const { downloadRecording } = useRecordingDownload();
 
     const recording = useMeetSelector(selectRecording);
     const recordingStatus = useMeetSelector(selectRecordingStatus);
@@ -26,16 +22,7 @@ export const useLastRecordingDownload = () => {
         }
 
         try {
-            const isFullRecording = await downloadOpfsRecording(
-                recording,
-                userKeys.map(({ privateKey }) => privateKey)
-            );
-            if (!isFullRecording) {
-                createNotification({
-                    type: 'info',
-                    text: c('Info').t`Only a partial meeting recording was available.`,
-                });
-            }
+            await downloadRecording(recording);
         } catch (error) {
             if (!isDownloadAborted(error)) {
                 reportMeetError('MeetingRecording Error: Failed to download recording', {
@@ -48,7 +35,7 @@ export const useLastRecordingDownload = () => {
 
             throw error;
         }
-    }, [recording, reportMeetError, userKeys, createNotification]);
+    }, [recording, reportMeetError, downloadRecording]);
 
     return { downloadLastRecording, hasRecordingToDownload };
 };
