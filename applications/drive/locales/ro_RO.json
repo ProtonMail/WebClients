@@ -1393,6 +1393,9 @@
       ],
       "Switch to ${ planName }": [
         "Comutare la ${ planName }"
+      ],
+      "Detach": [
+        "Detașare"
       ]
     },
     "Action: Docs": {
@@ -1521,6 +1524,12 @@
         "${ quantity } domeniu personal",
         "${ quantity } domenii personale",
         "${ quantity } de domenii personale"
+      ],
+      "Managed Service Provider": [
+        "Furnizor de servicii gestionate"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizațiile care dispun de modulul „Furnizor de servicii gestionate” pot crea și gestiona organizații subsidiare."
       ]
     },
     "Alert": {
@@ -1817,6 +1826,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicați ${ MAIL_APP_NAME } Desktop"
+      ],
+      "${ appName } Desktop application": [
+        "Aplicația desktop ${ appName }"
       ]
     },
     "Bug category": {
@@ -4585,6 +4597,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Parolă secundară incorectă. Încercați din nou."
+      ],
+      "Not enough browser storage": [
+        "Spațiu de stocare insuficient în navigatorul web"
       ]
     },
     "error": {
@@ -8226,6 +8241,9 @@
       ],
       "No payment is required.": [
         "Nu este necesară plată."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporar indisponibil din cauza solicitărilor mari. Reîncercați mai târziu."
       ]
     },
     "info": {
