@@ -60,6 +60,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             {...props}
             onClose={props.onClose}
             size={size}
+            data-testid="modal:auto-open"
             className={clsx(
                 'pass-onboarding-modal',
                 currentStep.withHeader && 'pass-onboarding-modal-header-background'
