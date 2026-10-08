@@ -465,6 +465,9 @@
       "Display navigation bar": [
         "Mostrar barra de navegação"
       ],
+      "Don't show this offer again": [
+        "Não mostrar mais esta oferta"
+      ],
       "Done": [
         "Concluído"
       ],
@@ -1556,7 +1559,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -2166,11 +2170,6 @@
         "Anualmente"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicativo para computador do ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema no ${ LUMO_SHORT_APP_NAME }"
@@ -2296,11 +2295,6 @@
       ],
       "Take a tour": [
         "Faça um tour"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicatas de importações anteriores serão puladas. Desfaça ou importe mensagens mais antigas nas configurações do ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -8008,8 +8002,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9188,14 +9181,8 @@
       "Turn off auto-reply": [
         "Desativa resposta automática"
       ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Desative para pesquisar apenas por data, nome, endereço de e-mail ou linha de assunto. Para desabilitar a pesquisa de conteúdo de mensagem (e excluir mensagens baixadas para habilitar esse recurso), vá para Configurações."
-      ],
       "Turn off your away message": [
         "Desative sua mensagem de ausência"
-      ],
-      "Turn on to search the content of your messages": [
-        "Ative para pesquisar o conteúdo de suas mensagens"
       ],
       "Turn on your away message": [
         "Ative sua mensagem de ausência"
@@ -13489,6 +13476,9 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (sem impostos)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } está disponível apenas nos planos empresariais."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% de imposto: ${ taxAmountElement }"
       ],
@@ -13549,6 +13539,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Escolha as contas de wallet adicionais antes de trocar seu plano."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
       ],
@@ -13606,11 +13599,17 @@
       "This payment method will become your new default for all future renewals.": [
         "Este se tornará seu novo método de pagamento padrão para todas as futuras renovações."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Esse plano não suporta membros na sua conta."
+      ],
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Os planos de avaliação não suportam IPs dedicados."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Os planos de avaliação não suportam licenças de Scribe."
       ],
       "VAT number": [
         "Número de IVA"

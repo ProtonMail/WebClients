@@ -894,6 +894,9 @@
       "Messages to this recipient": [
         "Pesan untuk penerima ini"
       ],
+      "Migrate": [
+        "Migrasi"
+      ],
       "Minimize composer": [
         "Minimalkan penulis pesan"
       ],
@@ -1440,6 +1443,9 @@
       "Stay": [
         "Tinggal"
       ],
+      "Stop": [
+        "Berhenti"
+      ],
       "Stop downloading assistant": [
         "Berhenti mengunduh asisten"
       ],
@@ -1646,6 +1652,9 @@
       ],
       "View contact details": [
         "Lihat rincian kontak"
+      ],
+      "View guide": [
+        "Lihat panduan"
       ],
       "View headers": [
         "Lihat header"
@@ -2077,11 +2086,6 @@
         "Tahunan"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikasi Desktop ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Masalah ${ LUMO_SHORT_APP_NAME }"
@@ -2207,11 +2211,6 @@
       ],
       "Take a tour": [
         "Ikuti tur kami"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikat dari impor sebelumnya akan dilewati. Urungkan atau impor pesan yang lebih lama di pengaturan ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -2549,6 +2548,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Amount due": [
+        "Jumlah yang dibayar"
       ],
       "Subtotal": [
         "Subtotal"
@@ -5648,6 +5650,9 @@
       ]
     },
     "Filter": {
+      "All": [
+        "Semua"
+      ],
       "Filter": [
         "Filter"
       ],
@@ -5659,6 +5664,12 @@
       ],
       "Has attachments": [
         "Mengandung lampiran"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
       ],
       "Read": [
         "Dibaca"
@@ -6356,11 +6367,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
       "In progress": [
         "Sedang berlangsung"
       ],
       "Migrated": [
         "Dimigrasikan"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Import warning": {
@@ -6482,6 +6499,9 @@
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } masalah selama impor:"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
@@ -6686,6 +6706,9 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Tambah ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add contact": [
+        "Tambahkan kontak"
       ],
       "Add image URL": [
         "Tambah URL gambar"
@@ -7209,6 +7232,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Semua yang ada di ${ planOrAppName }, ditambah:"
       ],
+      "Expand logs": [
+        "Buka log"
+      ],
       "Expand selection": [
         "Lebarkan pilihan"
       ],
@@ -7262,6 +7288,9 @@
       ],
       "Forgot password?": [
         "Lupa kata sandi?"
+      ],
+      "forward": [
+        "teruskan"
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Coba gratis selama ${ ASSISTANT_TRIAL_TIME_DAYS } hari"
@@ -7560,6 +7589,9 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Sebagian besar jaringan WiFi publik aman, tetapi beberapa di antaranya kurang aman, sehingga mengekspos Anda pada ancaman siber. VPN mengenkripsi lalu lintas Anda, menjaga Anda tetap terlindungi."
       ],
+      "Move emails": [
+        "Pindahkan email"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
       ],
@@ -7646,6 +7678,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
+      ],
+      "open draft": [
+        "buka draf"
       ],
       "Open shortcut cheat sheet": [
         "Buka lembar contekan pintasan"
@@ -7817,6 +7852,9 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Hubungi kami untuk bantuan seputar segala sesuatunya yang berhubungan dengan ${ BRAND_NAME }."
+      ],
+      "Readdressed": [
+        "Dikirim ulang"
       ],
       "Recipient: ": [
         "Penerima: "
@@ -7991,6 +8029,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
+      ],
+      "Star emails": [
+        "Bintangi email"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
@@ -8331,12 +8372,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Nonaktifkan pilihan ini untuk membatasi pencarian hanya berdasarkan tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan (dan menghapus pesan yang telah diunduh untuk mengaktifkan fitur ini), buka menu Pengaturan."
-      ],
-      "Turn on to search the content of your messages": [
-        "Aktifkan untuk mencari konten pesan Anda"
-      ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Tidak dapat mengakses kemampuan penyimpanan di peramban ini. Kami memerlukan akses ini untuk mengaktifkan pencarian konten pesan."
       ],
@@ -8549,6 +8584,9 @@
       ],
       "Yearly": [
         "Tahunan"
+      ],
+      "You": [
+        "Anda"
       ],
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
@@ -9218,6 +9256,12 @@
       "Apply to future messages": [
         "Terapkan ke pesan yang akan datang"
       ],
+      "Archive": [
+        "Arsip"
+      ],
+      "At": [
+        "Di"
+      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -9254,6 +9298,9 @@
       "BTC amount": [
         "Jumlah BTC"
       ],
+      "Burst write": [
+        "Penulisan beruntun"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -9281,6 +9328,9 @@
       "CC": [
         "CC"
       ],
+      "Cc": [
+        "Cc"
+      ],
       "Choose what to do instead": [
         "Pilih tindakan lain"
       ],
@@ -9293,14 +9343,23 @@
       "Clear logs": [
         "Bersihkan log"
       ],
+      "Client": [
+        "Klien"
+      ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
       "Colors": [
         "Warna"
       ],
+      "Comfortable": [
+        "Nyaman"
+      ],
       "Command line interface (CLI)": [
         "Antarmuka baris perintah (CLI)"
+      ],
+      "Compact": [
+        "Ringkas"
       ],
       "Company": [
         "Perusahaan"
@@ -9374,6 +9433,9 @@
       "Display name": [
         "Nama tampilan"
       ],
+      "Document ID": [
+        "ID dokumen"
+      ],
       "Don't ask again": [
         "Jangan tanyakan lagi"
       ],
@@ -9440,8 +9502,14 @@
       "Enable filter": [
         "Aktifkan filter"
       ],
+      "Encrypt": [
+        "Enkripsi"
+      ],
       "Encrypt emails": [
         "Enkripsi email"
+      ],
+      "Entries": [
+        "Entri"
       ],
       "Exact host matching": [
         "Pencocokan host persis"
@@ -9451,6 +9519,9 @@
       ],
       "Expires": [
         "Kedaluwarsa"
+      ],
+      "Export size": [
+        "Ukuran ekspor"
       ],
       "Extended address": [
         "Alamat lengkap"
@@ -9463,6 +9534,9 @@
       ],
       "Filter": [
         "Saring"
+      ],
+      "Filter name": [
+        "Filter nama"
       ],
       "Filter Name": [
         "Nama Filter"
@@ -9575,6 +9649,9 @@
       "Label messages as": [
         "Labeli pesan sebagai"
       ],
+      "Label name": [
+        "Nama label"
+      ],
       "Last 12 months only": [
         "Hanya 12 bulan terakhir"
       ],
@@ -9661,6 +9738,9 @@
       ],
       "Never fill on this exact URL": [
         "Jangan pernah isi pada URL persis ini"
+      ],
+      "New name": [
+        "Nama baru"
       ],
       "New password": [
         "Kata sandi baru"
@@ -9809,6 +9889,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Row": [
+        "Baris"
+      ],
       "Search in": [
         "Cari di"
       ],
@@ -9911,6 +9994,9 @@
       "Time": [
         "Waktu"
       ],
+      "To": [
+        "Ke"
+      ],
       "To:": [
         "Kepada:"
       ],
@@ -9938,6 +10024,12 @@
       "Unsubscribed from ${ truncatedName }.": [
         "Berhenti berlangganan ${ truncatedName }."
       ],
+      "Until date": [
+        "Sampai tanggal"
+      ],
+      "Until time": [
+        "Sampai waktu"
+      ],
       "Updates": [
         "Pembaruan"
       ],
@@ -9955,6 +10047,12 @@
       ],
       "Username": [
         "Nama pengguna"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -11652,6 +11750,11 @@
         "Dukungan untuk ${ n } domain email khusus"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } dibuat"
@@ -12845,6 +12948,26 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Proses: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
       ]
     },
     "Property type": {
@@ -14623,6 +14746,9 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "TableHeader": {

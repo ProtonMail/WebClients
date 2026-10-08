@@ -453,6 +453,9 @@
       "Deselect all messages": [
         "Zrušiť výber všetkých správ"
       ],
+      "Detach": [
+        "Odpojiť"
+      ],
       "Details": [
         "Detaily"
       ],
@@ -693,6 +696,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "Got it, connect my Gmail": [
+        "Rozumiem, prepojiť s mojím Gmailom"
+      ],
       "Help and feedback": [
         "Pomoc a spätná väzba"
       ],
@@ -824,6 +830,9 @@
       ],
       "Later this week": [
         "Neskôr tento týždeň"
+      ],
+      "Learn how this works": [
+        "Zistite, ako to funguje"
       ],
       "Learn more": [
         "Zistiť viac"
@@ -1564,7 +1573,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1935,6 +1947,12 @@
       "Domains": [
         "Domény"
       ],
+      "Managed Service Provider": [
+        "Poskytovateľ spravovaných služieb"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizácie s doplnkom „Poskytovateľ spravovaných služieb“ môžu vytvárať a spravovať dcérske organizácie."
+      ],
       "Servers": [
         "Servery"
       ],
@@ -2205,8 +2223,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktopová aplikácia"
+      "${ appName } Desktop application": [
+        "Desktopová aplikácia ${ appName }"
       ]
     },
     "Bug category": {
@@ -2337,8 +2355,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikáty z predchádzajúcich importov budú preskočené. V nastaveniach ${ PRODUCT_NAMES.EASY_SWITCH } môžu byť staršie správy vrátené späť alebo importované."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Najskôr sa načítajú vaše najnovšie emaily. Emaily, ktoré ste už načítali, sa nebudú kopírovať znovu."
       ]
     },
     "Calendar attachment tooltip": {
@@ -6553,6 +6571,9 @@
       "Drawer": [
         "Bočný panel"
       ],
+      "Good to know before you connect": [
+        "Čo je dobré vedieť pred pripojením"
+      ],
       "Hardware not compatible": [
         "Hardvér nie je kompatibilný"
       ],
@@ -7391,6 +7412,9 @@
       ],
       "(No Recipient)": [
         "(žiaden príjemca)"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** sa používa aj na prihlásenie do samostatného účtu ${ BRAND_NAME } mimo aplikácie ${ MAIL_APP_NAME }."
       ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** výsledok nájdený v ${ labelName }",
@@ -8244,6 +8268,9 @@
       "here": [
         "tu"
       ],
+      "Here's what happens when you continue:": [
+        "V prípade, že budete pokračovať, udeje sa nasledovné:"
+      ],
       "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
         "Ahoj Lumo, pozri sa, aké správy mi najčastejšie prichádzajú do doručenej pošty a tiež na zložky a filtre, ktoré už mám. Potom mi navrhni, ako to udržať v poriadku: čo by som mal zmeniť na tých, ktoré už mám a či by stálo za to pridať niečo nové. Najprv mi ten plán podrobne vysvetli a nič nemeň, kým ti nedám súhlas."
       ],
@@ -8365,10 +8392,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8598,6 +8622,9 @@
       "newsletter": [
         "newsletter"
       ],
+      "Next time you sign in to your other account": [
+        "Keď sa nabudúce prihlásite do vášho druhého účtu"
+      ],
       "No action selected": [
         "Nie je vybratá žiadna akcia"
       ],
@@ -8690,6 +8717,9 @@
       ],
       "Not supported by this browser": [
         "Tento prehliadač túto funkciu nepodporuje"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Na vašich ostatných ${ BRAND_NAME } účtoch sa nič nemení."
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -9621,14 +9651,8 @@
       "Turn off auto-reply": [
         "Vypnúť automatickú odpoveď"
       ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Vypnite vyhľadávanie len podľa dátumu, mena, emailovej adresy alebo predmetu. Ak chcete vypnúť vyhľadávanie obsahu správ (a vymazať správy prevzaté na zapnutie tejto funkcie), prejdite do časti Nastavenia."
-      ],
       "Turn off your away message": [
         "Vypnúť správu o neprítomnosti"
-      ],
-      "Turn on to search the content of your messages": [
-        "Zapnite, ak chcete vyhľadávať v obsahu vašich správ"
       ],
       "Turn on your away message": [
         "Zapnite si správu o neprítomnosti"
@@ -10092,6 +10116,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Napísali ste \"${ attachmentsFoundKeyword }\", ale príloha nebola pridaná. Chcete napriek tomu správu poslať?"
       ],
+      "You'll choose a new username": [
+        "Vyberiete si nové používateľské meno"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
       ],
@@ -10100,6 +10127,9 @@
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Odteraz ho budete používať na prihlásenie. To je jediná zmena."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adrese Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
@@ -10148,6 +10178,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaša bezplatná skúšobná verzia bola úspešne konvertovaná na mesačné predplatné. Váš dátum obnovenia je ${ nextBillingDate }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Váš Gmail sa pripája k tejto adrese ${ MAIL_APP_NAME }"
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Váš hardvér nepodporuje lokálne spustenie asistenta písania. Skúste ho spustiť na serveroch."

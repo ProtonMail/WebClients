@@ -444,6 +444,9 @@
       "Deselect all messages": [
         "Ne izberi nobenega sporočila"
       ],
+      "Detach": [
+        "Odpni"
+      ],
       "Details": [
         "Podrobnosti"
       ],
@@ -1510,7 +1513,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -2100,8 +2106,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Namizna aplikacija"
+      "${ appName } Desktop application": [
+        "${ appName } Namizna aplikacija"
       ]
     },
     "Bug category": {
@@ -2223,6 +2229,11 @@
       ],
       "Take a tour": [
         "Oglejte si"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Najprej bodo uvožene vaša najnovejše e-poštna sporočila. Tista, ki ste jih že uvozili, se ne bodo ponovno kopirala."
       ]
     },
     "Calendar attachment tooltip": {
@@ -7771,10 +7782,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8798,12 +8806,6 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Preizkusite nove zmožnosti, posodobitve in izdelke ${ BRAND_NAME }, preden postanejo dostopni širši javnosti. Aplikacija se bo znova naložila."
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Izklopite, da boste iskali samo po datumu, imenu, e-poštnem naslovu ali vrstici zadeve. Če želite onemogočiti iskanje po vsebini sporočil (in izbrisati sporočila, prenesena za omogočanje te funkcije), pojdite v nastavitve."
-      ],
-      "Turn on to search the content of your messages": [
-        "Vklopi iskanje po vsebini tvojih sporočil."
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Ni mogoče dostopati do zmožnosti shrambe v tem brskalniku. Ta dostop potrebujemo za omogočanje iskanja po vsebini sporočil."

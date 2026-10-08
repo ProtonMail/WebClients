@@ -1522,7 +1522,10 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверять ключу"
+        "Доверенный ключ",
+        "Доверенных ключа",
+        "Доверенных ключей",
+        "Доверенных ключей"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -2128,11 +2131,6 @@
         "Ежегодно"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } для ПК"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Проблема с ${ LUMO_SHORT_APP_NAME }"
@@ -2258,11 +2256,6 @@
       ],
       "Take a tour": [
         "Ознакомительный тур"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Дубликаты из предыдущих импортов будут пропущены. Вы можете отменить импорт или импортировать более старые сообщения в настройках ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -7797,10 +7790,7 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение",
-        "Вставить изображения",
-        "Вставить изображения",
-        "Вставить изображения"
+        "Вставить изображение"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -8758,12 +8748,6 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Выключите, чтобы искать только по дате, имени, адресу электронной почты или теме. Чтобы выключить поиск по содержимому (и удалить сообщения, загруженные для этой функции), перейдите в настройки."
-      ],
-      "Turn on to search the content of your messages": [
-        "Включите поиск по содержимому ваших сообщений"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Не удаётся получить доступ для хранения в этом браузере, нам нужен этот доступ для включения поиска по содержимому сообщений."
