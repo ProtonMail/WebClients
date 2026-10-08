@@ -4,7 +4,6 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import type { Domain, Organization } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import shouldShowMail from '../shouldShowMail';
 import type { DomainSuggestion } from '../types';
@@ -16,10 +15,6 @@ interface UseGroupAvailableAddressDomainsReturn {
     primarySuggestion: DomainSuggestion;
     pmMeDomain: string | null;
     loading: boolean;
-    // @todo: move to consuming components once UserGroupsNoCustomDomain FF is removed
-    invalidGroupSuggestion: boolean;
-    // @todo: move to consuming components once UserGroupsNoCustomDomain FF is removed
-    hasUsableDomain: boolean;
 }
 
 const getPrimarySuggestion = (
@@ -58,8 +53,7 @@ const getAllSuggestions = (
     customDomains: Domain[] | undefined,
     primarySuggestion: DomainSuggestion,
     pmMeDomain: string | null,
-    groupsProtonMeDomain: string | null,
-    isUserGroupsNoCustomDomainEnabled: boolean
+    groupsProtonMeDomain: string | null
 ): DomainSuggestion[] => {
     const verifiedCustomDomains = showMailFeatures ? (customDomains?.filter(getIsDomainActive) ?? []) : [];
     const result: DomainSuggestion[] = [];
@@ -70,11 +64,7 @@ const getAllSuggestions = (
         result.push(primarySuggestion);
     }
 
-    if (
-        groupsProtonMeDomain &&
-        isUserGroupsNoCustomDomainEnabled &&
-        !result.some((s) => s.domain === groupsProtonMeDomain)
-    ) {
+    if (groupsProtonMeDomain && !result.some((s) => s.domain === groupsProtonMeDomain)) {
         result.push({ domain: groupsProtonMeDomain, source: 'group' as const });
     }
 
@@ -87,7 +77,6 @@ const useGroupAvailableAddressDomains = (): UseGroupAvailableAddressDomainsRetur
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [pmMeDomain, loadingPmMeDomain] = usePmMeDomain();
     const [groupsProtonMeDomain, loadingGroupsProtonMeDomain] = useGroupsProtonMeDomain();
-    const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
 
     const primarySuggestion = useMemo(
         () =>
@@ -112,33 +101,13 @@ const useGroupAvailableAddressDomains = (): UseGroupAvailableAddressDomainsRetur
     );
 
     const allSuggestions = useMemo(
-        () =>
-            getAllSuggestions(
-                showMailFeatures,
-                customDomains,
-                primarySuggestion,
-                pmMeDomain,
-                groupsProtonMeDomain,
-                isUserGroupsNoCustomDomainEnabled
-            ),
-        [
-            primarySuggestion,
-            customDomains,
-            pmMeDomain,
-            groupsProtonMeDomain,
-            isUserGroupsNoCustomDomainEnabled,
-            showMailFeatures,
-        ]
+        () => getAllSuggestions(showMailFeatures, customDomains, primarySuggestion, pmMeDomain, groupsProtonMeDomain),
+        [primarySuggestion, customDomains, pmMeDomain, groupsProtonMeDomain, showMailFeatures]
     );
 
     const loading = loadingCustomDomains || loadingPmMeDomain || loadingGroupsProtonMeDomain;
 
-    const invalidGroupSuggestion = primarySuggestion.source === 'group' && !isUserGroupsNoCustomDomainEnabled;
-
-    const hasUsableDomain =
-        allSuggestions.some(({ source }) => source === 'customdomain') || isUserGroupsNoCustomDomainEnabled;
-
-    return { allSuggestions, primarySuggestion, pmMeDomain, loading, invalidGroupSuggestion, hasUsableDomain };
+    return { allSuggestions, primarySuggestion, pmMeDomain, loading };
 };
 
 export default useGroupAvailableAddressDomains;
