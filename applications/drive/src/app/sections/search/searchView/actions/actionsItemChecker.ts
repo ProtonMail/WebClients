@@ -1,21 +1,18 @@
 import { MemberRole, NodeType } from '@proton/drive';
-import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
+import { type OpenInDocsType, isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { getOpenInDocsInfo } from '../../../../utils/docs/openInDocs';
 import type { SearchResultItemUI } from '../store';
 
 type DocsCapability =
-    | { canOpenInDocs: true; openInDocsInfo: OpenInDocsType }
-    | { canOpenInDocs: false; openInDocsInfo?: undefined };
+    { canOpenInDocs: true; openInDocsInfo: OpenInDocsType } | { canOpenInDocs: false; openInDocsInfo?: undefined };
 
 type ParentCapability =
-    | { canGoToParent: true; parentNodeUid: string }
-    | { canGoToParent: false; parentNodeUid?: undefined };
+    { canGoToParent: true; parentNodeUid: string } | { canGoToParent: false; parentNodeUid?: undefined };
 
 type RevisionCapability =
-    | { canShowRevisions: true; revisionNodeUid: string }
-    | { canShowRevisions: false; revisionNodeUid?: undefined };
+    { canShowRevisions: true; revisionNodeUid: string } | { canShowRevisions: false; revisionNodeUid?: undefined };
 
 type ShareCapability = { canShare: true; firstItemUid: string } | { canShare: false };
 
@@ -116,7 +113,10 @@ export const createActionsItemChecker = (
                 : { canGoToParent: false as const };
 
         const revisionPart: RevisionCapability =
-            canEdit && firstItem.type === NodeType.File && buttonType === 'contextMenu'
+            canEdit &&
+            firstItem.type === NodeType.File &&
+            !(firstItem.mediaType && isNativeProtonDocsAppFile(firstItem.mediaType)) &&
+            buttonType === 'contextMenu'
                 ? { canShowRevisions: true as const, revisionNodeUid: firstItem.nodeUid }
                 : { canShowRevisions: false as const };
 

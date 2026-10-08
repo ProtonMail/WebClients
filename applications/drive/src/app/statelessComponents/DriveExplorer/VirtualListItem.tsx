@@ -15,6 +15,7 @@ import type {
 
 interface VirtualListItemProps {
     virtualItem: VirtualItem;
+    minItemHeight: number;
     itemId: string | undefined;
     cells: CellDefinition[];
     loading?: boolean;
@@ -34,6 +35,7 @@ interface VirtualListItemProps {
 
 export function VirtualListItem({
     virtualItem,
+    minItemHeight,
     itemId,
     cells,
     loading = false,
@@ -83,7 +85,7 @@ export function VirtualListItem({
             cells={cells}
             style={{
                 transform: `translateY(${virtualItem.start}px)`,
-                '--min-h-custom': `${virtualItem.size}px`,
+                '--min-h-custom': `${minItemHeight}px`,
             }}
             conditions={conditions}
             selection={selection}
