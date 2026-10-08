@@ -106,7 +106,14 @@ function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: (dismiss?: boolean) =
     );
 
     return (
-        <FloatingSpotlight content={spotlightContent} show={show} onClick={onSeen} color="success" icon={IcCheckmark} />
+        <FloatingSpotlight
+            content={spotlightContent}
+            show={show}
+            onClick={onSeen}
+            color="success"
+            icon={IcCheckmark}
+            finished
+        />
     );
 }
 
@@ -187,6 +194,7 @@ function FloatingSpotlight({
     color,
     icon: Icon,
     hasClose = false,
+    finished = false,
     onClick,
 }: {
     content: React.ReactNode;
@@ -194,6 +202,7 @@ function FloatingSpotlight({
     color: ThemeColorUnion;
     icon: IconComponent;
     hasClose?: boolean;
+    finished?: boolean;
     onClick: () => void;
 }) {
     return (
@@ -211,7 +220,7 @@ function FloatingSpotlight({
                 title={c('Action').t`Your 3 GB bonus`}
                 onClick={onClick}
                 color={color}
-                data-testid="gift-floating-button"
+                data-testid={finished ? 'gift-floating-button-finished' : 'gift-floating-button'}
             >
                 <Icon size={5} className="m-auto" />
             </FloatingButton>
