@@ -18,7 +18,7 @@ import {
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { PLANS } from '@proton/payments/core/constants';
-import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import IcCircleRadioFilled from '@proton/styles/assets/img/meet/ic-circle-radio-filled.svg';
 
@@ -32,6 +32,22 @@ import { RecordingDownloadModal } from './RecordingDownloadModal/RecordingDownlo
 const formatDuration = (seconds: number) => {
     const pattern = seconds >= 3600 ? 'HH:mm:ss' : 'mm:ss';
     return format(addSeconds(startOfDay(new Date()), seconds), pattern, { locale: dateLocale });
+};
+
+const getUnsupportedRecordingTooltip = () => {
+    if (isMobile()) {
+        return undefined;
+    }
+
+    if (isFirefox()) {
+        return c('Info').t`Meeting recordings aren’t supported in Firefox.`;
+    }
+
+    if (isSafari()) {
+        return c('Info').t`Meeting recordings aren’t supported in Safari private mode.`;
+    }
+
+    return undefined;
 };
 
 export const useRecordingToggle = () => {
@@ -53,8 +69,8 @@ export const useRecordingToggle = () => {
     const [showSubUserRecordingUpsellModal, setShowSubUserRecordingUpsellModal] = useState(false);
 
     const hasAdminPermission = isLocalParticipantAdminOrHost || isGuestAdmin;
-    // Firefox keeps a disabled toggle to explain why recording is unavailable.
-    const isVisible = hasAdminPermission && (isRecordingSupported || isFirefox());
+    const unsupportedRecordingTooltip = isRecordingSupported ? undefined : getUnsupportedRecordingTooltip();
+    const isVisible = hasAdminPermission && (isRecordingSupported || !!unsupportedRecordingTooltip);
     const canRecord = hasAdminPermission && isRecordingSupported && isPaidUser;
 
     const handleStartRecording = async () => {
@@ -159,7 +175,7 @@ export const useRecordingToggle = () => {
         isVisible,
         checked: isLocalRecording,
         disabled: !isRecordingSupported,
-        tooltip: isRecordingSupported ? undefined : c('Info').t`Meeting recordings aren’t supported in Firefox.`,
+        tooltip: unsupportedRecordingTooltip,
         duration: formatDuration(duration),
         onChange,
         onStop: () => setShowStopRecordingConfirmation(true),

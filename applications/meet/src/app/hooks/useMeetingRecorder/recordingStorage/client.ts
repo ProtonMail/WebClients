@@ -5,6 +5,7 @@ import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import { forwardWorkerLog } from '../workerLogger';
+import { getRecordingFolder } from './getRecordingFolder';
 import { getOpfsRecording } from './recordingFiles';
 import {
     type FinalizeResponseData,
@@ -25,6 +26,13 @@ type StorageWorkerMessageInput = StorageWorkerMessage extends infer U
         : U
     : never;
 
+interface RecordingStorageClientOptions {
+    fileExtension: string;
+    userId: string;
+    onStorageFull?: (hasWrittenData: boolean) => void;
+    onWriteError?: (error: string, hasWrittenData: boolean) => void;
+}
+
 // Main-thread wrapper around the OPFS recording worker.
 // Use `createRecordingStorageClient` to get an initialized instance.
 export class RecordingStorageClient {
@@ -34,13 +42,15 @@ export class RecordingStorageClient {
     private pendingChunkWrites: Set<Promise<void>> = new Set();
     private fileExtension: string;
     private userId: string;
-    private onStorageFull?: () => void;
+    private onStorageFull?: (hasWrittenData: boolean) => void;
+    private onWriteError?: (error: string, hasWrittenData: boolean) => void;
     private storageFull = false;
 
-    constructor(fileExtension: string, userId: string, onStorageFull?: () => void) {
+    constructor({ fileExtension, userId, onStorageFull, onWriteError }: RecordingStorageClientOptions) {
         this.fileExtension = fileExtension;
         this.userId = userId;
         this.onStorageFull = onStorageFull;
+        this.onWriteError = onWriteError;
         this.storageFull = false;
     }
 
@@ -56,9 +66,18 @@ export class RecordingStorageClient {
 
             const response = event.data;
 
-            if (response.type === StorageWorkerResponseType.STORAGE_FULL && !this.storageFull) {
+            if (response.type === StorageWorkerResponseType.STORAGE_FULL) {
+                if (this.storageFull) {
+                    return;
+                }
+
                 this.storageFull = true;
-                this.onStorageFull?.();
+                this.onStorageFull?.(response.hasWrittenData);
+                return;
+            }
+
+            if (response.type === StorageWorkerResponseType.WRITE_ERROR) {
+                this.onWriteError?.(response.error, response.hasWrittenData);
                 return;
             }
 
@@ -115,7 +134,7 @@ export class RecordingStorageClient {
             type: StorageMessageType.INIT,
             data: {
                 fileExtension: this.fileExtension,
-                userId: this.userId,
+                folder: getRecordingFolder(this.userId),
                 sessionKey: aeadSessionKey,
                 encryptedSessionKey,
             },
@@ -164,6 +183,10 @@ export class RecordingStorageClient {
     async finalize(): Promise<OpfsRecording | null> {
         await this.drainPendingChunkWrites();
         const { fileName } = (await this.send({ type: StorageMessageType.FINALIZE })) as FinalizeResponseData;
+
+        if (!fileName) {
+            return null;
+        }
 
         if (isFirefox()) {
             // Firefox needs the worker to fully release the file handle
@@ -222,13 +245,11 @@ export class RecordingStorageClient {
     }
 }
 
-export const createRecordingStorageClient = async (
-    fileExtension: string,
-    userId: string,
-    encryptionKey: PublicKeyReference,
-    onStorageFull?: () => void
-): Promise<RecordingStorageClient> => {
-    const client = new RecordingStorageClient(fileExtension, userId, onStorageFull);
+export const createRecordingStorageClient = async ({
+    encryptionKey,
+    ...options
+}: RecordingStorageClientOptions & { encryptionKey: PublicKeyReference }): Promise<RecordingStorageClient> => {
+    const client = new RecordingStorageClient(options);
     await client.init(encryptionKey);
     return client;
 };

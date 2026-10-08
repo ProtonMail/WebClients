@@ -2,6 +2,7 @@ import { CryptoProxy, type SessionKey } from '@protontech/crypto';
 
 import { createWorkerLogger } from '../../workerLogger';
 import {
+    type FinalizeResponseData,
     StorageMessageType,
     type StorageWorkerMessage,
     type StorageWorkerResponse,
@@ -13,8 +14,15 @@ const logger = createWorkerLogger('MeetingRecorder/recordingWorker');
 const isQuotaExceededError = (error: unknown): boolean =>
     error instanceof DOMException && error.name === 'QuotaExceededError';
 
+interface OPFSWorkerStorageOptions {
+    onStorageFull: (hasWrittenData: boolean) => void;
+    onWriteError: (error: unknown, hasWrittenData: boolean) => void;
+}
+
 // Persists recorded chunks into a single OPFS file per session.
 class OPFSWorkerStorage {
+    private onStorageFull: (hasWrittenData: boolean) => void;
+    private onWriteError: (error: unknown, hasWrittenData: boolean) => void;
     private root: FileSystemDirectoryHandle | null = null;
     private fileHandle: FileSystemFileHandle | null = null;
     private syncAccessHandle: FileSystemSyncAccessHandle | null = null;
@@ -22,13 +30,19 @@ class OPFSWorkerStorage {
     private fileExtension: string = 'webm';
     private fileName: string = '';
     private full = false;
+    private hasWrittenData = false;
     private writerForDataStreamToEncrypt: WritableStreamDefaultWriter<Uint8Array<ArrayBuffer>> | null = null;
     private readerForEncryptionStreamToStore: ReadableStreamDefaultReader<Uint8Array<ArrayBuffer>> | null = null;
     private encryptionStreamReaderPromise: Promise<void> | null = null;
 
+    constructor({ onStorageFull, onWriteError }: OPFSWorkerStorageOptions) {
+        this.onStorageFull = onStorageFull;
+        this.onWriteError = onWriteError;
+    }
+
     async init(
         fileExtension: string,
-        userId: string,
+        folder: string,
         sessionKey: SessionKey,
         encryptedSessionKey: Uint8Array<ArrayBuffer>
     ): Promise<void> {
@@ -43,7 +57,7 @@ class OPFSWorkerStorage {
 
         const root = await navigator.storage.getDirectory();
         // Namespace recordings under a per-user subdirectory.
-        this.root = await root.getDirectoryHandle(userId, { create: true });
+        this.root = await root.getDirectoryHandle(folder, { create: true });
 
         this.fileHandle = await this.root.getFileHandle(this.fileName, {
             create: true,
@@ -88,6 +102,7 @@ class OPFSWorkerStorage {
                         const bytesWritten = this.syncAccessHandle.write(encryptedChunk, { at: this.filePosition });
                         this.filePosition += bytesWritten;
                         this.syncAccessHandle.flush();
+                        this.hasWrittenData = true;
                     } else {
                         throw new Error('No sync handle available');
                     }
@@ -95,9 +110,11 @@ class OPFSWorkerStorage {
             } catch (error) {
                 await this.readerForEncryptionStreamToStore?.cancel().catch(() => {});
                 if (isQuotaExceededError(error)) {
-                    this.full = true; // notify the main thread, then expect it to call `finalize()`
+                    this.full = true; // the main thread is expected to call `finalize()`
+                    this.onStorageFull(this.hasWrittenData);
                 } else {
-                    throw error;
+                    logger.error('Error while writing the encrypted recording:', error);
+                    this.onWriteError(error, this.hasWrittenData);
                 }
             } finally {
                 this.readerForEncryptionStreamToStore?.releaseLock();
@@ -108,32 +125,41 @@ class OPFSWorkerStorage {
         })();
     }
 
-    async addChunk(chunkBuffer: ArrayBuffer): Promise<boolean> {
+    async addChunk(chunkBuffer: ArrayBuffer): Promise<void> {
         if (this.full) {
-            return true;
+            return;
         }
 
         await this.writerForDataStreamToEncrypt?.write(new Uint8Array(chunkBuffer));
-        return false;
     }
 
     // Closes any pending write handles so the consumer can read them back.
-    async finalize(): Promise<{ fileName: string }> {
+    async finalize(): Promise<FinalizeResponseData> {
         // `close` will reject if readerForEncryptionStreamToStore was cancelled
         await this.writerForDataStreamToEncrypt?.close().catch(() => {});
         this.writerForDataStreamToEncrypt = null;
         await this.encryptionStreamReaderPromise;
 
+        if (!this.hasWrittenData) {
+            await this.removeFile();
+            return { fileName: null };
+        }
+
         return { fileName: this.fileName };
     }
 
     async clear(): Promise<void> {
-        await this.writerForDataStreamToEncrypt?.abort();
+        // `abort` rejects if the encryption stream reader was already cancelled
+        await this.writerForDataStreamToEncrypt?.abort().catch(() => {});
         this.writerForDataStreamToEncrypt = null;
         await this.readerForEncryptionStreamToStore?.cancel().catch(() => {});
         this.readerForEncryptionStreamToStore = null;
         await this.encryptionStreamReaderPromise?.catch(() => {});
 
+        await this.removeFile();
+    }
+
+    private async removeFile(): Promise<void> {
         if (this.syncAccessHandle) {
             this.syncAccessHandle.close();
             this.syncAccessHandle = null;
@@ -146,7 +172,20 @@ class OPFSWorkerStorage {
     }
 }
 
-const storage = new OPFSWorkerStorage();
+const storage = new OPFSWorkerStorage({
+    onStorageFull: (hasWrittenData) => {
+        const notification: StorageWorkerResponse = { type: StorageWorkerResponseType.STORAGE_FULL, hasWrittenData };
+        self.postMessage(notification);
+    },
+    onWriteError: (error, hasWrittenData) => {
+        const notification: StorageWorkerResponse = {
+            type: StorageWorkerResponseType.WRITE_ERROR,
+            error: error instanceof Error ? error.message : String(error),
+            hasWrittenData,
+        };
+        self.postMessage(notification);
+    },
+});
 
 self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
     const message = event.data;
@@ -157,7 +196,7 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
             case StorageMessageType.INIT: {
                 await storage.init(
                     message.data.fileExtension,
-                    message.data.userId,
+                    message.data.folder,
                     message.data.sessionKey,
                     message.data.encryptedSessionKey
                 );
@@ -167,11 +206,7 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
             }
 
             case StorageMessageType.ADD_CHUNK: {
-                const becameFull = await storage.addChunk(message.data.chunkBuffer);
-                if (becameFull) {
-                    const notification: StorageWorkerResponse = { type: StorageWorkerResponseType.STORAGE_FULL };
-                    self.postMessage(notification);
-                }
+                await storage.addChunk(message.data.chunkBuffer);
                 const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
                 self.postMessage(response);
                 break;

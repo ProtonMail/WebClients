@@ -13,7 +13,9 @@ export interface RecordingSessionOptions {
     reportMeetError: ReportMeetError;
     onRuntimeError: () => void;
     // Called when OPFS quota is reached during recording
-    onStorageFull: () => void;
+    onStorageFull: (hasWrittenData: boolean) => void;
+    // Called when writing to OPFS fails for any other reason
+    onWriteError: (hasWrittenData: boolean) => void;
 }
 
 export interface RecordingSessionStartOptions {

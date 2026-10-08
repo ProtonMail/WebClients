@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useRoomContext, useTracks } from '@livekit/components-react';
 import { RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
-import { useUserKeys } from '@proton/account/userKeys/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -37,6 +37,11 @@ import { useRecordingTelemetry } from './hooks/useRecordingTelemetry';
 import { useTrackPublishedSubscriber } from './hooks/useTrackPublishedSubscriber';
 import { isWebCodecsRecordingSupported } from './mediaEncoder/capabilities';
 import { RecordingSession } from './recordingSession/recordingSession';
+import { hasSpaceForRecording } from './recordingStorage/hasSpaceForRecording';
+
+interface FinishRecordingOptions {
+    hasRecordedData?: boolean;
+}
 
 export const useMeetingRecorder = () => {
     const isWebCodecsRecordingEnabled = useFlag('MeetRecordingWebCodecs');
@@ -52,7 +57,7 @@ export const useMeetingRecorder = () => {
     const dispatch = useMeetDispatch();
     const { reportMeetError } = useMeetErrorReporting();
     const { createNotification } = useNotifications();
-    const [userKeys = []] = useUserKeys();
+    const getUserKeys = useGetUserKeys();
 
     const isLocalRecording = useMeetSelector(selectIsLocalParticipantRecording);
     const userId = useMeetSelector(selectUserId);
@@ -86,12 +91,12 @@ export const useMeetingRecorder = () => {
     // Keep the recording identity that changes on a full reconnection.
     const localRecordingIdentityRef = useRef(room.localParticipant.identity);
 
-    const markRecordingStopped = useCallback(() => {
+    const markRecordingStopped = () => {
         dispatch(stopLocalRecordingTimer());
         dispatch(removeParticipantRecording(localRecordingIdentityRef.current));
-    }, [dispatch]);
+    };
 
-    const cleanupSession = useCallback(async () => {
+    const cleanupSession = async () => {
         const session = sessionRef.current;
         if (!session) {
             return;
@@ -99,7 +104,7 @@ export const useMeetingRecorder = () => {
         sessionRef.current = null;
         await session.cleanup();
         markRecordingStopped();
-    }, [markRecordingStopped]);
+    };
 
     useEffect(() => {
         if (!isLocalRecording) {
@@ -160,7 +165,7 @@ export const useMeetingRecorder = () => {
         };
     }, [room, dispatch, announceRecordingToPeers]);
 
-    const stopRecording = useCallback(async () => {
+    const stopRecording = useStableCallback(async () => {
         const session = sessionRef.current;
         if (!session || !session.isActive()) {
             return null;
@@ -187,17 +192,19 @@ export const useMeetingRecorder = () => {
             console.error('Failed to stop recording:', error);
             throw error;
         }
-    }, [sendTelemetryRecordingStats, publishRecordingStatus, markRecordingStopped, reportMeetError]);
+    });
 
-    const finishRecording = useCallback(async () => {
+    const finishRecording = useStableCallback(async ({ hasRecordedData = true }: FinishRecordingOptions = {}) => {
         if (!sessionRef.current?.isActive()) {
             return;
         }
 
-        dispatch(recordingProcessing());
+        if (hasRecordedData) {
+            dispatch(recordingProcessing());
+        }
 
         try {
-            const [recording] = await Promise.all([stopRecording(), wait(1000)]);
+            const [recording] = await Promise.all([stopRecording(), hasRecordedData ? wait(1000) : undefined]);
 
             if (!recording || recording.size === 0) {
                 reportMeetError('MeetingRecording Error: empty or missing recording', {
@@ -207,7 +214,14 @@ export const useMeetingRecorder = () => {
                     },
                 });
 
-                dispatch(recordingFailed());
+                if (hasRecordedData) {
+                    dispatch(recordingFailed());
+                } else {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`Not enough storage space to record. Free up space and try again.`,
+                    });
+                }
 
                 return;
             }
@@ -226,24 +240,29 @@ export const useMeetingRecorder = () => {
         } finally {
             await cleanupSession();
         }
-    }, [stopRecording, reportMeetError, dispatch, cleanupSession]);
-
-    const handleStorageFull = useStableCallback(() => {
-        createNotification({
-            type: 'warning',
-            text: c('Error').t`Your browser ran out of storage space. We saved the recording up to this point.`,
-        });
-        void finishRecording();
     });
 
-    const startRecording = useCallback(async () => {
-        if (!userKeys.length) {
-            // eslint-disable-next-line no-console
-            console.error('[MeetingRecorder] Error: no userKeys available yet');
-            reportMeetError('MeetingRecording Error: no userKeys available yet');
-            return;
+    const handleStorageFull = useStableCallback((hasWrittenData: boolean) => {
+        if (hasWrittenData) {
+            createNotification({
+                type: 'warning',
+                text: c('Error').t`Your browser ran out of storage space. We saved the recording up to this point.`,
+            });
         }
+        void finishRecording({ hasRecordedData: hasWrittenData });
+    });
 
+    const handleWriteError = useStableCallback((hasWrittenData: boolean) => {
+        if (hasWrittenData) {
+            createNotification({
+                type: 'warning',
+                text: c('Error').t`Recording stopped because it could not be saved. We kept it up to this point.`,
+            });
+        }
+        void finishRecording({ hasRecordedData: hasWrittenData });
+    });
+
+    const startRecording = useStableCallback(async () => {
         if (!recordingCodec) {
             // eslint-disable-next-line no-console
             console.error('[MeetingRecorder] codec detection has not resolved yet.');
@@ -251,7 +270,25 @@ export const useMeetingRecorder = () => {
             return;
         }
 
+        if (!(await hasSpaceForRecording())) {
+            reportMeetError('MeetingRecording Error: not enough storage space to start recording');
+            createNotification({
+                type: 'error',
+                text: c('Error').t`Not enough storage space to record. Free up space and try again.`,
+            });
+            return;
+        }
+
         try {
+            const userKeys = await getUserKeys();
+
+            if (!userKeys.length) {
+                // eslint-disable-next-line no-console
+                console.error('[MeetingRecorder] Error: no userKeys available yet');
+                reportMeetError('MeetingRecording Error: no userKeys available yet');
+                return;
+            }
+
             const session = new RecordingSession({
                 codec: recordingCodec,
                 isWebCodecs: isWebCodecsRecordingEnabled && isWebCodecsRecordingSupported(),
@@ -261,6 +298,7 @@ export const useMeetingRecorder = () => {
                     void cleanupSession();
                 },
                 onStorageFull: handleStorageFull,
+                onWriteError: handleWriteError,
             });
             sessionRef.current = session;
 
@@ -290,21 +328,7 @@ export const useMeetingRecorder = () => {
             await cleanupSession();
             throw error;
         }
-    }, [
-        recordingCodec,
-        scene,
-        audioTracks,
-        recordedTracks,
-        reportMeetError,
-        cleanupSession,
-        isWebCodecsRecordingEnabled,
-        userId,
-        dispatch,
-        room,
-        publishRecordingStatus,
-        handleStorageFull,
-        userKeys,
-    ]);
+    });
 
     // Finalize the recording so the download modal can pick it up, even if the
     // meeting view unmounts (e.g., the meeting ended).

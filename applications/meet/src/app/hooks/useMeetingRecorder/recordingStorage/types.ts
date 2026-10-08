@@ -13,7 +13,7 @@ export type StorageWorkerMessage =
           id: string;
           data: {
               fileExtension: string;
-              userId: string;
+              folder: string;
               encryptedSessionKey: Uint8Array<ArrayBuffer>;
               sessionKey: SessionKey;
           };
@@ -26,11 +26,15 @@ export enum StorageWorkerResponseType {
     SUCCESS = 'success',
     ERROR = 'error',
     STORAGE_FULL = 'storageFull',
+    WRITE_ERROR = 'writeError',
 }
 
-export type FinalizeResponseData = { fileName: string };
+// `fileName` is null when no recorded data ever reached the disk, in which case the
+// worker removes the file it created so it does not surface as an empty recording.
+export type FinalizeResponseData = { fileName: string | null };
 
 export type StorageWorkerResponse =
     | { type: StorageWorkerResponseType.SUCCESS; id: string; data?: FinalizeResponseData }
     | { type: StorageWorkerResponseType.ERROR; id: string; error: string }
-    | { type: StorageWorkerResponseType.STORAGE_FULL };
+    | { type: StorageWorkerResponseType.STORAGE_FULL; hasWrittenData: boolean }
+    | { type: StorageWorkerResponseType.WRITE_ERROR; error: string; hasWrittenData: boolean };
