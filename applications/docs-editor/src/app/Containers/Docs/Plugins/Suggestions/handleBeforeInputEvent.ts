@@ -46,7 +46,7 @@ import { $getListInfo } from '../CustomList/$getListInfo'
 import { c } from 'ttag'
 import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
 import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
-import { sanitizeUrl } from '../../../../Utils/sanitizeUrl'
+import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { LINK_CHANGE_COMMAND } from '../Link/LinkPlugin'
 
 /**
