@@ -2,7 +2,8 @@
 // Generate packages/payments/core/entitlements/entitlement-names.ts from the
 // Chargebee features API. Chargebee is the source of truth; this file is
 // regenerated wholesale on every run. Use --check to fail when the committed
-// file is stale (CI drift check).
+// file is stale, or when releaseCandidates in overrides.json contains an id
+// that already exists in the fetched (prod) Chargebee catalog (CI drift check).
 //
 // Required environment variables (loaded from core/entitlements/scripts/.env
 // via `node --env-file-if-exists`, or supplied directly in CI):
@@ -12,9 +13,9 @@
 // Customize enum keys or JSDoc descriptions in ./overrides.json. The same file
 // supports a `releaseCandidates` array of Chargebee IDs that exist in dev but
 // not yet in prod (or vice versa) — useful when you need to use an entitlement
-// name in code before it has been promoted upstream. Release candidates are
-// silently dropped once Chargebee actually returns them, and the script prints
-// a reminder so the override file can be cleaned up.
+// name in code before it has been promoted upstream. In --check mode the
+// script fails if a release candidate already exists in the fetched catalog,
+// so the stale entry must be dropped from overrides.json.
 //
 // Archived/deleted entitlements are kept in the enum (so existing references
 // keep compiling) but flagged @deprecated. To stop emitting one entirely, add
@@ -77,6 +78,7 @@ async function main() {
 
     const overrides = JSON.parse(readFileSync(OVERRIDES_PATH, 'utf8'));
     const auth = 'Basic ' + Buffer.from(apiKey + ':').toString('base64');
+    const checkMode = process.argv.includes('--check');
 
     const chargebeeFeatures = await fetchAllFeatures(auth, site);
     const { features: withReleaseCandidates, supersededByChargebee } = mergeReleaseCandidateFeatures(
@@ -84,8 +86,8 @@ async function main() {
         overrides
     );
     if (supersededByChargebee.length) {
-        console.warn(
-            `Release-candidate entitlements are now in Chargebee — remove from overrides.json: ${supersededByChargebee.join(', ')}`
+        console.error(
+            `Release-candidate entitlements are already in Chargebee (prod) and must be removed from releaseCandidates in overrides.json: ${supersededByChargebee.join(', ')}`
         );
     }
     const { features, removedStillActive } = filterRemovedFeatures(withReleaseCandidates, overrides);
@@ -96,7 +98,12 @@ async function main() {
     }
     const next = render(features, overrides);
     const current = readCurrent(OUTPUT_PATH);
-    const checkMode = process.argv.includes('--check');
+
+    if (checkMode && supersededByChargebee.length) {
+        console.error('overrides.json releaseCandidates are out of sync with Chargebee.');
+        console.error('Remove the ids above from releaseCandidates and commit the change.');
+        process.exit(1);
+    }
 
     if (current === next) {
         console.log(`entitlement-names.ts is up to date (${features.length} entitlements).`);

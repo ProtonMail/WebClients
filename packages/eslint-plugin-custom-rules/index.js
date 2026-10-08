@@ -3,9 +3,11 @@ import deprecateClasses from './deprecate-classes.js';
 import deprecateResponsiveUtilityClasses from './deprecate-responsive-utility-classes.js';
 import deprecateSizingClasses from './deprecate-sizing-classes.js';
 import deprecateSpacingUtilityClasses from './deprecate-spacing-utility-classes.js';
+import noBooleanEntitlementComposition from './no-boolean-entitlement-composition.js';
 import noNestedPackages from './no-nested-packages.js';
 import noPackageSelfImport from './no-package-self-import.js';
 import noPlaywrightStringTag from './no-playwright-string-tag.js';
+import noSingleEntitlementCondition from './no-single-entitlement-condition.js';
 import noTemplateInTranslatorContext from './no-template-in-translator-context.js';
 import useSubscriptionModalLoading from './use-subscription-modal-loading.js';
 import validateTtagKeyAutofixWarning from './validate-ttag-key-autofix-warning.js';
@@ -22,9 +24,11 @@ export default {
         'deprecate-responsive-utility-classes': deprecateResponsiveUtilityClasses,
         'deprecate-sizing-classes': deprecateSizingClasses,
         'deprecate-spacing-utility-classes': deprecateSpacingUtilityClasses,
+        'no-boolean-entitlement-composition': noBooleanEntitlementComposition,
         'no-nested-packages': noNestedPackages,
         'no-package-self-import': noPackageSelfImport,
         'no-playwright-string-tag': noPlaywrightStringTag,
+        'no-single-entitlement-condition': noSingleEntitlementCondition,
         'no-template-in-translator-context': noTemplateInTranslatorContext,
         'use-subscription-modal-loading': useSubscriptionModalLoading,
         'validate-ttag': validateTtag,

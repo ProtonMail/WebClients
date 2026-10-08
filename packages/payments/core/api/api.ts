@@ -13,7 +13,7 @@ import type {
     PLANS,
 } from '../constants';
 import { PLAN_TYPES } from '../constants';
-import type { Entitlements } from '../entitlements/interface';
+import type { EntitlementCatalog, Entitlements } from '../entitlements/interface';
 import { formatPaymentMethods } from '../formatPaymentMethods';
 import type {
     AmountAndCurrency,
@@ -147,6 +147,15 @@ export const queryEntitlements = () => ({
 
 export async function getEntitlements(api: Api) {
     return api<Entitlements>(queryEntitlements());
+}
+
+export const queryEntitlementCatalog = () => ({
+    url: `payments/v6/plans/entitlements`,
+    method: 'get',
+});
+
+export async function getEntitlementCatalog(api: Api) {
+    return api<EntitlementCatalog>(queryEntitlementCatalog());
 }
 
 export const getInvoicePDF = (invoiceID: string, version: PaymentsVersion) => ({

@@ -6,6 +6,7 @@ import { getOrganizationState } from '@proton/account/testing/redux-state';
 import type { Entitlements } from '@proton/payments/core/entitlements/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 import { getPaymentStatusState, getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
@@ -52,6 +53,7 @@ export const getPreloadedState = (
     userInvitations: getModelState([]),
     plans: getModelState({ plans: modelOverrides.plans ?? [], freePlan: FREE_PLAN }),
     entitlements: getModelState(modelOverrides.entitlements ?? makeEntitlements()),
+    entitlementCatalog: getModelState(buildEntitlementCatalog()),
     features: {},
     importerConfig: getModelState({} as ApiEnvironmentConfig),
     ...stateOverrides,

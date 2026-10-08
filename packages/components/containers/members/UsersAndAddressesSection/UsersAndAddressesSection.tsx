@@ -1,9 +1,9 @@
 import type { MutableRefObject } from 'react';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
-import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -42,7 +42,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         planHasUsageColumns(organization?.PlanName) &&
         withinUsageBounds;
     const hasAdminConsoleSurvey = useFlag('AdminConsoleSurvey');
-    const [entitlements, entitlementsLoading] = useEntitlementChecks();
+    const [entitlements, entitlementsLoading] = useEntitlementChecksForOrgAndUser();
     const showAdminConsoleSurvey =
         hasAdminConsoleSurvey &&
         !entitlementsLoading &&

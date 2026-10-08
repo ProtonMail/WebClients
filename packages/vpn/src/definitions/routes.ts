@@ -20,7 +20,7 @@ import type { NavContext } from '@proton/nav/types/models';
 import type { NavDefinition, NavItemDefinition, NavItemResolved, NavResolved } from '@proton/nav/types/nav';
 import type { NavDefinitionIds, NavSectionIds as SectionIds } from '@proton/nav/types/navIds';
 import type { NavSectionResolved } from '@proton/nav/types/section';
-import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
+import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import { getIsB2BAudienceFromPlan, planSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
 import {
     type MaybeFreeSubscription,
@@ -62,7 +62,7 @@ type PropContext = {
 
 type VpnNavContext = {
     subscription: MaybeFreeSubscription;
-    entitlements: EntitlementChecks;
+    entitlements: EntitlementChecksForOrgAndUser;
     notifications?: Record<NavItemDefinition<NavContext>['id'], any>;
     canHaveOrganization: boolean;
     hasActiveOrganizationKey: boolean;
@@ -80,7 +80,7 @@ const routesDefinition = {
         {
             id: 'organization',
             label: () => c('Title').t`Organization`,
-            isVisible: ({ context }) => context.entitlements.orgIsBusiness && context.entitlements.orgHasVpn,
+            isVisible: ({ context }) => context.entitlements.isVpnBusiness,
             children: [
                 {
                     id: 'organization.home',
@@ -250,7 +250,7 @@ const routesDefinition = {
                             to: '/gateways',
                             isVisible: ({ context }) =>
                                 context.permissions['account.gateway.read'] &&
-                                (context.entitlements.orgHasMaxDedicatedIps ||
+                                (context.entitlements.hasMaxDedicatedIps ||
                                     getHasVpnGatewaysUpsellPlan(context.subscription)),
                             sections: [{ id: 'organization.vpn.gateways.servers', to: 'servers' }],
                         },
@@ -260,7 +260,7 @@ const routesDefinition = {
                             to: '/shared-servers',
                             isVisible: ({ context }) =>
                                 context.permissions['account.shared_server.read'] &&
-                                context.entitlements.orgHasVpnLocationFilter,
+                                context.entitlements.hasVpnLocationFilter,
                             sections: [{ id: 'organization.vpn.shared-servers.servers', to: 'servers' }],
                         },
                         {
@@ -277,7 +277,7 @@ const routesDefinition = {
                             to: '/gateway-monitor',
                             isVisible: ({ context }) =>
                                 context.permissions['account.activity_log.read'] &&
-                                context.entitlements.orgHasVpnActivityMonitor &&
+                                context.entitlements.hasVpnActivityMonitor &&
                                 context.hasOrganizationAccess,
                             sections: [
                                 {
@@ -570,7 +570,7 @@ type Args = {
     organization?: NavContext['organization'];
     notifications?: Record<NavItemDefinition<NavContext>['id'], any>;
     subscription: MaybeFreeSubscription;
-    entitlements: EntitlementChecks;
+    entitlements: EntitlementChecksForOrgAndUser;
     context: PropContext;
     flags?: Partial<Record<FeatureFlag, boolean>>;
     permissions: OrgPermissions;

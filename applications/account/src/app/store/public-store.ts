@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import { apiStatusReducer } from '@proton/account/apiStatus';
 import { eligibleTrialsReducer } from '@proton/account/eligibleTrials';
+import { entitlementCatalogReducer } from '@proton/account/entitlementCatalog';
 import { paymentStatusReducer } from '@proton/account/paymentStatus';
 import { plansReducer } from '@proton/account/plans';
 import { referralInfoReducer } from '@proton/account/referralInfo';
@@ -18,6 +19,7 @@ export const setupStore = () => {
             ...apiStatusReducer,
             ...referralInfoReducer,
             ...eligibleTrialsReducer,
+            ...entitlementCatalogReducer,
             ...staticExperimentsReducer,
         },
         devTools: process.env.NODE_ENV !== 'production',

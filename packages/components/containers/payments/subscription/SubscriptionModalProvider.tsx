@@ -3,6 +3,7 @@ import { useCallback, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
@@ -14,6 +15,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
+import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import { fixPlanIDs } from '@proton/payments/core/helpers';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
 import { correctDeprecatedPlanName } from '@proton/payments/core/plan/helpers';
@@ -28,6 +30,7 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 import useModalState from '../../../components/modalTwo/useModalState';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import SubscriptionModal from './SubscriptionModal';
+import type { OpenSubscriptionModalCallback } from './subscriptionModalContext';
 import {
     SubscriptionModalContext,
     useOptionalSubscriptionModal,
@@ -35,7 +38,6 @@ import {
     useSubscriptionModal,
     useSubscriptionModalRaw,
 } from './subscriptionModalContext';
-import type { OpenSubscriptionModalCallback } from './subscriptionModalContext';
 import type { OpenCallbackProps, SubscriptionOverridableStep } from './subscriptionModalTypes';
 
 export type { OpenCallbackProps, OpenSubscriptionModalCallback, SubscriptionOverridableStep };
@@ -68,7 +70,9 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const [initialBillingAddress, setInitialBillingAddress] = useState<BillingAddressExtended | undefined>();
 
     const getOrganization = useGetOrganization();
+    const getEntitlementCatalog = useGetEntitlementCatalog();
     const [organization, setOrganization] = useState<Organization | undefined>();
+    const [entitlementCatalog, setEntitlementCatalog] = useState<EntitlementCatalog | undefined>();
 
     const [modalState, setModalState, renderSubscriptionModal] = useModalState();
     const subscriptionPropsRef = useRef<OpenCallbackProps | null>(null);
@@ -81,6 +85,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
             newPlansResult,
             newOrganization,
             { billingAddress: loadedBillingAddress, paymentStatus: loadedPaymentStatus },
+            newEntitlementCatalog,
         ] = await Promise.all([
             getSubscription(),
             getPlans(),
@@ -90,6 +95,9 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 getFullBillingAddress: paymentsApi.getFullBillingAddress,
                 isAuthenticated: true,
             }),
+
+            // The subscription modal uses the entitlement catalog and all entitlements
+            getEntitlementCatalog(),
         ]);
 
         setSubscription(newSubscription);
@@ -98,6 +106,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
         setPaymentStatus(loadedPaymentStatus);
         setOrganization(newOrganization);
         setInitialBillingAddress(loadedBillingAddress);
+        setEntitlementCatalog(newEntitlementCatalog);
     };
 
     const openSubscriptionModal = async (subscriptionModalProps: OpenCallbackProps) => {
@@ -161,29 +170,36 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
         subscriptionPropsRef.current = null;
     };
 
+    const subscriptionProps = subscriptionPropsRef.current;
+
+    const showModal =
+        renderSubscriptionModal &&
+        subscription &&
+        initialBillingAddress &&
+        plans &&
+        freePlan &&
+        organization &&
+        paymentStatus &&
+        entitlementCatalog &&
+        subscriptionProps;
+
     return (
         <>
-            {renderSubscriptionModal &&
-                subscription &&
-                initialBillingAddress &&
-                plans &&
-                freePlan &&
-                organization &&
-                paymentStatus &&
-                subscriptionPropsRef.current && (
-                    <SubscriptionModal
-                        onClose={handleClose}
-                        app={app}
-                        modalState={modalState}
-                        subscription={subscription}
-                        initialBillingAddress={initialBillingAddress}
-                        plans={plans}
-                        freePlan={freePlan}
-                        organization={organization}
-                        paymentStatus={paymentStatus}
-                        subscriptionProps={subscriptionPropsRef.current}
-                    />
-                )}
+            {showModal && (
+                <SubscriptionModal
+                    onClose={handleClose}
+                    app={app}
+                    modalState={modalState}
+                    subscription={subscription}
+                    initialBillingAddress={initialBillingAddress}
+                    plans={plans}
+                    freePlan={freePlan}
+                    organization={organization}
+                    paymentStatus={paymentStatus}
+                    entitlementCatalog={entitlementCatalog}
+                    subscriptionProps={subscriptionProps}
+                />
+            )}
             <SubscriptionModalContext.Provider value={[openSubscriptionModal, loadingData, true]}>
                 {children}
             </SubscriptionModalContext.Provider>

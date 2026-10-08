@@ -1,5 +1,8 @@
+import { getEntitlementsPerSubscription } from './entitlements/entitlement-grants';
+import { EntitlementName } from './entitlements/entitlement-names';
+import { hasGrantedEntitlement } from './entitlements/helpers';
+import type { EntitlementCatalog } from './entitlements/interface';
 import { TrialType } from './subscription/constants';
-import { getIsB2BAudienceFromSubscription } from './subscription/helpers/plan-audience';
 import { isTrial } from './subscription/helpers/trial';
 import type { MaybeFreeSubscription, Subscription } from './subscription/interface';
 import { isPaidSubscription } from './type-guards';
@@ -44,11 +47,14 @@ type TrialInfo = SubscriptionDoesNotExistTrialInfo | SubscriptionExistsTrialInfo
 
 type TrialInfoForSingleSubscription = ReturnType<typeof getTrialInfoForSingleSubscription>;
 
-export function getTrialInfoForSingleSubscription(subscription: MaybeFreeSubscription) {
-    // This particular check can be answered with the per-plan entitlement catalog endpoint once it's introduced.
-    // Keeping the static B2B check for now.
-    // multi-subs: migrate once entitlement catalog is introduced
-    const isB2BSubscription = getIsB2BAudienceFromSubscription(subscription);
+export function getTrialInfoForSingleSubscription(
+    entitlementCatalog: EntitlementCatalog | undefined,
+    subscription: MaybeFreeSubscription
+) {
+    const isB2BSubscription = hasGrantedEntitlement(
+        getEntitlementsPerSubscription(entitlementCatalog, subscription),
+        EntitlementName.Business
+    );
 
     const isTrialSubscription = isTrial(subscription);
 
@@ -70,14 +76,19 @@ export function getTrialInfoForSingleSubscription(subscription: MaybeFreeSubscri
     };
 }
 
-export function getTrialInfo(subscriptions: Subscription[]): TrialInfo {
+export function getTrialInfo(
+    entitlementCatalog: EntitlementCatalog | undefined,
+    subscriptions: Subscription[]
+): TrialInfo {
     if (subscriptions.length === 0) {
         return {
             hasSubscription: false,
         } satisfies SubscriptionDoesNotExistTrialInfo;
     }
 
-    const trialInfos = subscriptions.map(getTrialInfoForSingleSubscription);
+    const trialInfos = subscriptions.map((subscription) =>
+        getTrialInfoForSingleSubscription(entitlementCatalog, subscription)
+    );
 
     const hasAtLeastOneB2CTrial = trialInfos.some((result) => result.isB2CTrial);
     const hasAtLeastOneB2BTrial = trialInfos.some((result) => result.isB2BTrial);
@@ -101,12 +112,13 @@ export function getTrialInfo(subscriptions: Subscription[]): TrialInfo {
     };
 }
 
-type TrialFilter = Pick<
+export type TrialFilter = Pick<
     TrialInfoForSingleSubscription,
     'isB2CTrial' | 'isB2BTrial' | 'isReferralTrial' | 'isFamilyTrial'
 >;
 
 export function getTrialSubscription(
+    entitlementCatalog: EntitlementCatalog | undefined,
     subscriptions: Subscription[],
     filter?: Partial<TrialFilter>
 ): Subscription | null {
@@ -123,7 +135,7 @@ export function getTrialSubscription(
 
     return (
         subscriptions.find((subscription) => {
-            const trialInfo = getTrialInfoForSingleSubscription(subscription);
+            const trialInfo = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
 
             // the .every() function will fallback to the 'isTrial' if all the other keys are not existant or false.
             return filterEntries.every((key) => trialInfo[key]);

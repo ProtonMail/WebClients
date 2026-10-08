@@ -58,6 +58,7 @@ import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
+import type { EntitlementCatalogState } from '../entitlementCatalog';
 import type { EntitlementsState } from '../entitlements';
 import type { GroupsState } from '../groups';
 import { groupThunk } from '../groups';
@@ -69,6 +70,7 @@ import { getMemberAddresses, membersThunk } from '../members';
 import { unprivatizeSelfForMsp } from '../members/unprivatizeActions';
 import { organizationActions } from '../organization';
 import type { OrganizationRolesState } from '../organizationRoles';
+import type { SubscriptionState } from '../subscription';
 import { userKeysThunk } from '../userKeys';
 import type { RoleChangeClassification } from './classifyRoleChange';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';
@@ -791,7 +793,13 @@ export const rotateOrganizationKeys = ({
 };
 
 export interface CreatePasswordlessOrganizationKeysState
-    extends RotateOrganizationKeysState, MemberState, EntitlementsState, OrganizationRolesState {}
+    extends
+        RotateOrganizationKeysState,
+        MemberState,
+        EntitlementsState,
+        OrganizationRolesState,
+        SubscriptionState,
+        EntitlementCatalogState {}
 
 export const createPasswordlessOrganizationKeys = ({
     publicMembersToReEncryptPayload,

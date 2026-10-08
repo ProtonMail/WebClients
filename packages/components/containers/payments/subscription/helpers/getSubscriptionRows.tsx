@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import type { CYCLE } from '@proton/payments/core/constants';
 import { hasLifetimeCoupon } from '@proton/payments/core/coupons';
+import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { Currency } from '@proton/payments/core/interface';
 import {
     getEffectiveUpcomingSubscription,
@@ -155,11 +156,17 @@ const getRenewalTooltip = (isLifetime: boolean): ReactNode => {
     ) : null;
 };
 
-const getStatus = (
-    subscription: Subscription,
-    kind: SubscriptionRowKind,
-    isExpiring: boolean
-): SubscriptionRow['status'] => {
+const getStatus = ({
+    subscription,
+    kind,
+    isExpiring,
+    entitlementCatalog,
+}: {
+    subscription: Subscription;
+    kind: SubscriptionRowKind;
+    isExpiring: boolean;
+    entitlementCatalog: EntitlementCatalog;
+}): SubscriptionRow['status'] => {
     const isUpcomingKind = kind === 'upcoming';
 
     if (isUpcomingKind) {
@@ -176,7 +183,7 @@ const getStatus = (
         };
     }
 
-    if (getTrialInfoForSingleSubscription(subscription).isTrial) {
+    if (getTrialInfoForSingleSubscription(entitlementCatalog, subscription).isTrial) {
         return {
             type: 'success',
             label: c('Subscription status').t`Free Trial`,
@@ -375,8 +382,9 @@ const forgeSubscriptionRow = (row: {
     hasSeparateUpcomingRow: boolean;
     parent?: Subscription;
     scheduledChange?: ScheduledChange;
+    entitlementCatalog: EntitlementCatalog;
 }): SubscriptionRow => {
-    const { user, subscription, kind, hasSeparateUpcomingRow, parent, scheduledChange } = row;
+    const { user, subscription, kind, hasSeparateUpcomingRow, parent, scheduledChange, entitlementCatalog } = row;
 
     const { planTitle } = getSubscriptionPlanTitle(user, subscription);
     const { renewDisabled, subscriptionExpiresSoon } = subscriptionExpires(subscription);
@@ -414,7 +422,7 @@ const forgeSubscriptionRow = (row: {
         hasSeparateUpcomingRow,
         scheduledChange,
         billingType: getBillingType(subscription, kind, scheduledChange),
-        status: getStatus(subscription, kind, subscriptionExpiresSoon),
+        status: getStatus({ subscription, kind, isExpiring: subscriptionExpiresSoon, entitlementCatalog }),
         renewalTooltip: getRenewalTooltip(isLifetime),
         renewalText: getRenewalText({
             subscription,
@@ -430,7 +438,11 @@ const forgeSubscriptionRow = (row: {
     };
 };
 
-const extractInnerUpcomingSubscription = (user: UserModel, subscription: Subscription): SubscriptionRow[] => {
+const extractInnerUpcomingSubscription = (
+    user: UserModel,
+    subscription: Subscription,
+    entitlementCatalog: EntitlementCatalog
+): SubscriptionRow[] => {
     const upcoming = getEffectiveUpcomingSubscription(subscription);
 
     if (upcoming && !isAddonDowngrade(subscription, upcoming)) {
@@ -441,12 +453,19 @@ const extractInnerUpcomingSubscription = (user: UserModel, subscription: Subscri
                 kind: 'current',
                 hasSeparateUpcomingRow: false,
                 scheduledChange: getScheduledChange(subscription, upcoming),
+                entitlementCatalog,
             }),
         ];
     }
 
     const rows: SubscriptionRow[] = [
-        forgeSubscriptionRow({ user, subscription, kind: 'current', hasSeparateUpcomingRow: !!upcoming }),
+        forgeSubscriptionRow({
+            user,
+            subscription,
+            kind: 'current',
+            hasSeparateUpcomingRow: !!upcoming,
+            entitlementCatalog,
+        }),
     ];
     if (upcoming) {
         rows.push(
@@ -456,6 +475,7 @@ const extractInnerUpcomingSubscription = (user: UserModel, subscription: Subscri
                 kind: 'upcoming',
                 hasSeparateUpcomingRow: false,
                 parent: subscription,
+                entitlementCatalog,
             })
         );
     }
@@ -463,7 +483,11 @@ const extractInnerUpcomingSubscription = (user: UserModel, subscription: Subscri
 };
 
 // A free secondary subscription has no plan, price or renewal to show — it isn't a billing row.
-export const getSubscriptionRows = (user: UserModel, subscriptions: Subscription[]): SubscriptionRow[] =>
+export const getSubscriptionRows = (
+    user: UserModel,
+    subscriptions: Subscription[],
+    entitlementCatalog: EntitlementCatalog
+): SubscriptionRow[] =>
     subscriptions
         .filter(isPaidSubscription)
-        .flatMap((subscription) => extractInnerUpcomingSubscription(user, subscription));
+        .flatMap((subscription) => extractInnerUpcomingSubscription(user, subscription, entitlementCatalog));

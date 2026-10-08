@@ -1,6 +1,7 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
@@ -15,6 +16,7 @@ import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
 
 const TrialInfoDashboardV2 = () => {
     const [subscription] = useSubscription();
+    const [entitlementCatalog] = useEntitlementCatalog();
     const [referralInfo] = useReferralInfo();
     const { referrerRewardAmount } = referralInfo.uiData;
 
@@ -25,8 +27,9 @@ const TrialInfoDashboardV2 = () => {
     if (!isPaidSubscription(subscription)) {
         return null;
     }
-
-    const referralTrialSubscription = getTrialSubscription([subscription], { isReferralTrial: true });
+    const referralTrialSubscription = getTrialSubscription(entitlementCatalog, [subscription], {
+        isReferralTrial: true,
+    });
     if (!referralTrialSubscription) {
         return null;
     }

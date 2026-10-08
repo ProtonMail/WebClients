@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
-import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -23,7 +23,7 @@ interface Props {
 }
 
 const OnboardingDiscoverFeaturesStep = ({ onClose }: Props) => {
-    const [entitlements] = useEntitlementChecks();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
     const { APP_NAME } = useConfig();
     const api = useApi();
 

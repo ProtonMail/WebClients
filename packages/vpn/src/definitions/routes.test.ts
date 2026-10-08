@@ -5,7 +5,9 @@ import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import type { Entitlement } from '@proton/payments/core/entitlements/interface';
 import { EntitlementScope, EntitlementType } from '@proton/payments/core/entitlements/interface';
-import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
+import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
@@ -45,20 +47,37 @@ describe('resolveNavigation', () => {
         Name,
         Quantity: 1,
         Type: EntitlementType.Switch,
-        Scope: EntitlementScope.Global,
+        Scope: EntitlementScope.Organization,
     });
 
-    const b2bEntitlements = createEntitlementResolver(
+    const entitlementCatalog = buildEntitlementCatalog({
+        [PLANS.VPN_BUSINESS]: [
+            EntitlementName.Business,
+            EntitlementName.FlagsVpn,
+            EntitlementName.MaxDedicatedIps,
+            EntitlementName.VpnLocationFilter,
+            EntitlementName.ActivityMonitorVpn,
+        ],
+        [PLANS.VPN2024]: [EntitlementName.FlagsVpn],
+    });
+
+    const b2bEntitlements = createEntitlementResolverForOrgAndUser(
+        entitlementCatalog,
         makeEntitlements([
             orgSwitch(EntitlementName.Business),
             orgSwitch(EntitlementName.FlagsVpn),
             orgSwitch(EntitlementName.MaxDedicatedIps),
             orgSwitch(EntitlementName.VpnLocationFilter),
             orgSwitch(EntitlementName.ActivityMonitorVpn),
-        ])
+        ]),
+        [buildSubscription(PLANS.VPN_BUSINESS)]
     );
 
-    const b2cEntitlements = createEntitlementResolver(makeEntitlements([orgSwitch(EntitlementName.FlagsVpn)]));
+    const b2cEntitlements = createEntitlementResolverForOrgAndUser(
+        entitlementCatalog,
+        makeEntitlements([orgSwitch(EntitlementName.FlagsVpn)]),
+        [buildSubscription(PLANS.VPN2024)]
+    );
 
     const b2bOrganization = {
         Name: 'org',
