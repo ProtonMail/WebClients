@@ -1046,6 +1046,12 @@
       ],
       "Switch to ${ planName }": [
         "Alterar para ${ planName }"
+      ],
+      "Don't show this offer again": [
+        "Não mostrar mais esta oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
       ]
     },
     "action": {
@@ -6996,6 +7002,9 @@
       ],
       "You have an open invoice ${ payInvoiceLink }": [
         "Você tem uma fatura em aberta ${ payInvoiceLink }"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporariamente indisponível devido à alta demanda. Tente novamente mais tarde."
       ]
     },
     "info": {
@@ -10091,6 +10100,18 @@
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Os planos de avaliação não suportam IPs dedicados."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } está disponível apenas nos planos empresariais."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Escolha as contas de wallet adicionais antes de trocar seu plano."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Esse plano não suporta membros na sua conta."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Os planos de avaliação não suportam licenças de Scribe."
       ]
     },
     "Payments.Error": {

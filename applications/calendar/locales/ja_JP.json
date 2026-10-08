@@ -6622,6 +6622,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "現在アクセスが集中しているため、一時的にご利用いただけません。後ほど再度お試しください。"
       ]
     },
     "info": {
