@@ -1,5 +1,12 @@
+import { useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
 
+import { useBYOEGating } from '@proton/activation/src/byoe/useBYOEGating';
+import { useConnectBYOEAddress } from '@proton/activation/src/byoe/useConnectBYOEAddress';
+import { useOAuthRedirectFlow } from '@proton/activation/src/byoe/useOAuthRedirectFlow';
+import { getBYOEDisabledNotification, getGenericLimitReached } from '@proton/activation/src/constants';
+import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -12,6 +19,7 @@ import icon from '@proton/styles/assets/img/byoe/mobile-gmail-app-icon.svg';
 import MobileSection from '../../components/MobileSection';
 import MobileSectionLabel from '../../components/MobileSectionLabel';
 import MobileSectionRow from '../../components/MobileSectionRow';
+import { SupportedActions } from '../../helper';
 
 import '../MobileSettings.scss';
 
@@ -21,13 +29,76 @@ interface Props {
     redirect: string | undefined;
 }
 
+// Google sends the user back here after consent. This exact URL must be allowlisted on the Google OAuth client.
+const REDIRECT_PATH = `/lite?action=${SupportedActions.BYOEMobile}`;
+
 export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
     const { state, toggle } = useToggle(true);
+    const [loading, setLoading] = useState(false);
+
+    const hasHandledCallbackRef = useRef(false);
 
     const { createNotification } = useNotifications();
 
-    const handleClick = () => {
-        createNotification({ text: 'Not implemented yet' });
+    const { checkGating, isLoadingGating } = useBYOEGating();
+    const { connectBYOEAddressWithCode } = useConnectBYOEAddress({ source: EASY_SWITCH_SOURCES.ACCOUNT_LITE_BYOE });
+    const { startOAuthFlow, callback, redirectUri } = useOAuthRedirectFlow({
+        features: [EASY_SWITCH_FEATURES.BYOE],
+        redirectPath: REDIRECT_PATH,
+    });
+
+    // Google sent the user back with an authorization code
+    useEffect(() => {
+        // The address setup reads the user's addresses and feature status, so they must be loaded first
+        if (callback.type === 'none' || isLoadingGating || hasHandledCallbackRef.current) {
+            return;
+        }
+
+        hasHandledCallbackRef.current = true;
+        if (callback.type === 'error') {
+            createNotification({
+                type: 'error',
+                // translators: This string is shown when something went wrong during easy switch Gmail oAuth
+                text: c('Error').t`Permissions request failed.`,
+            });
+            return;
+        }
+
+        const createBYOEAddress = async () => {
+            setLoading(true);
+            const result = await connectBYOEAddressWithCode({
+                code: callback.code,
+                redirectUri,
+                importEmails: callback.state.importEmails,
+            });
+            setLoading(false);
+
+            if (result.status === 'success') {
+                // TODO redirect to native here
+                createNotification({ text: c('Info').t`Your address was connected` });
+                return;
+            }
+
+            if (result.status === 'failure') {
+                if (result.reason.type === 'already-added') {
+                    createNotification({ text: c('Info').t`This address is already linked to another account` });
+                }
+            }
+        };
+
+        void createBYOEAddress();
+    }, [callback, isLoadingGating]);
+
+    // Make sure the user can create a BYOE address, and open the OAuth flow to connect it
+    const handleConnect = () => {
+        const outcome = checkGating();
+        if (outcome === 'feature-disabled' || outcome === 'no-access') {
+            createNotification(getBYOEDisabledNotification());
+        } else if (outcome === 'free-limit' || outcome === 'paid-limit') {
+            createNotification(getGenericLimitReached());
+        } else if (outcome === 'ok') {
+            startOAuthFlow({ importEmails: state, redirect });
+        }
     };
 
     return (
@@ -55,7 +126,7 @@ export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
                     >
                         {c('Label').t`Import messages`}
                     </MobileSectionLabel>
-                    <Toggle id="import-toggle" checked={state} onChange={toggle} loading={false} />
+                    <Toggle id="import-toggle" checked={state} onChange={toggle} disabled={loading} />
                 </MobileSectionRow>
                 <MobileSectionRow>
                     <Button
@@ -64,7 +135,8 @@ export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
                         color="norm"
                         shape="solid"
                         className="rounded-full"
-                        onClick={handleClick}
+                        onClick={handleConnect}
+                        loading={loading}
                     >{c('Action').t`Connect and import`}</Button>
                 </MobileSectionRow>
             </MobileSection>

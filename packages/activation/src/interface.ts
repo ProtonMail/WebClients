@@ -218,6 +218,7 @@ export enum EASY_SWITCH_SOURCES {
     ACCOUNT_WEB_GRANT_PERMISSION_BYOE = 'account-web-grant-permission-byoe',
     ACCOUNT_WEB_RECONNECT_BYOE = 'account-web-reconnect-byoe',
     ACCOUNT_WEB_SIGNUP = 'account-web-signup',
+    ACCOUNT_LITE_BYOE = 'account-lite-byoe',
     CONTACT_WEB_IMPORT_BUTTON = 'contacts-web-import-button',
     MAIL_WEB_CHECKLIST = 'mail-web-checklist',
     MAIL_WEB_CHECKLIST_BYOE = 'mail-web-checklist-byoe',
