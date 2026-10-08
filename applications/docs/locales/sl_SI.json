@@ -1109,8 +1109,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Namizna aplikacija"
+      "${ appName } Desktop application": [
+        "${ appName } Namizna aplikacija"
       ]
     },
     "Bug category": {
@@ -5023,6 +5023,9 @@
       ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Trenutno ni dosegljivo zaradi visokega povpraševanja. Poskusite znova kasneje."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Začasno ni na voljo. Poskusite znova pozneje."

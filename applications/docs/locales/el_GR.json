@@ -1165,8 +1165,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
+      "${ appName } Desktop application": [
+        "${ appName } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Bug category": {
@@ -5282,6 +5282,9 @@
       ],
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Προσωρινά μη διαθέσιμο λόγω υψηλής ζήτησης. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
