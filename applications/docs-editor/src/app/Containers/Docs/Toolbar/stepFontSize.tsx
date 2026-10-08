@@ -1,4 +1,4 @@
-import { FontSizes } from '../../../Shared/Fonts'
+import { FontSizes } from '../Constants/Fonts'
 
 export const stepFontSize = (currentFontSize: string, step: number): string => {
   const currentFontIndex = FontSizes.indexOf(parseFloat(currentFontSize))

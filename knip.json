@@ -78,7 +78,8 @@
                 "src/standalone-sheet/index.tsx",
                 "src/standalone-doc/index.tsx",
                 "webpack.config.{js,ts}",
-                "src/app/Theme/Theme.ts"
+                "src/app/Theme/Theme.ts",
+                "src/app/Shared/Fonts.ts"
             ],
             "project": ["src/**/*.{ts,tsx,scss,sass,css}"],
             "ignoreDependencies": ["@babel/preset-typescript", "babel-plugin-transform-require-context"]
