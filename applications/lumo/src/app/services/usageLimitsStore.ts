@@ -272,12 +272,18 @@ export function getRemainingForModelTier(
 }
 
 export function isModelTierLimitExhausted(modelTier: UsageModelTier, limits: LumoRemainingLimits | null): boolean {
+    // Lumo Preview is internal-only and not subject to the Lite/Max usage pools.
+    if (modelTier === 'lumo-preview') {
+        return false;
+    }
+
     return isLimitExhausted(getRemainingForModelTier(modelTier, limits));
 }
 
 export type ModelTierAvailabilityOptions = {
     isMaxAvailable?: boolean;
     isApertusEnabled?: boolean;
+    isPreviewEnabled?: boolean;
 };
 
 export function isModelTierSelectable(
@@ -290,6 +296,10 @@ export function isModelTierSelectable(
     }
 
     if (modelTier === 'apertus-15' && options?.isApertusEnabled === false) {
+        return false;
+    }
+
+    if (modelTier === 'lumo-preview' && options?.isPreviewEnabled !== true) {
         return false;
     }
 
@@ -348,6 +358,10 @@ export function resolveAvailableModelTier(
 
     if (selected === 'apertus-15' && options?.isApertusEnabled === false) {
         return 'lumo-lite';
+    }
+
+    if (selected === 'lumo-preview') {
+        return resolveDefaultModelTier(limits, options);
     }
 
     // Apertus shares Lite's quota but must not consume or select the Max pool.

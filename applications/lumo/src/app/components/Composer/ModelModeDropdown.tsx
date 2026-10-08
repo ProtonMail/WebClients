@@ -27,7 +27,7 @@ export const ModelModeDropdown = () => {
     const { modelTier, setModelTier, responseMode, setResponseMode } = useModelTier();
     const { hasLumoPlus } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
-    const { apertusModelAvailable } = useLumoFlags();
+    const { apertusModelAvailable, previewModelAvailable } = useLumoFlags();
     const { isSmallScreen } = useIsLumoSmallScreen();
     const dispatch = useLumoDispatch();
     const remainingLimits = useRemainingLimits();
@@ -36,8 +36,9 @@ export const ModelModeDropdown = () => {
     const triggerRef = useRef<HTMLButtonElement>(null);
 
     const modelOptions = useMemo(
-        () => buildModelModeOptions(remainingLimits, isMaxAvailableByFlag, apertusModelAvailable),
-        [remainingLimits, isMaxAvailableByFlag, apertusModelAvailable]
+        () =>
+            buildModelModeOptions(remainingLimits, isMaxAvailableByFlag, apertusModelAvailable, previewModelAvailable),
+        [remainingLimits, isMaxAvailableByFlag, apertusModelAvailable, previewModelAvailable]
     );
     const responseModeOptions = getResponseModeOptions();
     const selectedModelTier = getSelectedModelTier(modelTier);
@@ -55,6 +56,7 @@ export const ModelModeDropdown = () => {
             isModelTierSelectable(tier, remainingLimits, {
                 isMaxAvailable: isMaxAvailableByFlag,
                 isApertusEnabled: apertusModelAvailable,
+                isPreviewEnabled: previewModelAvailable,
             })
         ) {
             dispatch(clearTierErrors());

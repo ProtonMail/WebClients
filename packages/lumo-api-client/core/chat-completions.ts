@@ -19,8 +19,9 @@ export const DEFAULT_CHAT_MODEL = 'lumo-lite';
 export const LUMO_LITE_MODEL = 'lumo-lite';
 export const LUMO_MAX_MODEL = 'lumo-max';
 export const APERTUS_15_MODEL = 'apertus-15';
+export const LUMO_PREVIEW_MODEL = 'lumo-preview';
 
-export type LumoApiModelTier = 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15';
+export type LumoApiModelTier = 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15' | 'lumo-preview';
 
 export type ToChatCompletionsOptions = {
     enableReasoning?: boolean;
@@ -54,6 +55,8 @@ export function resolveChatModel(modelTier: LumoApiModelTier = 'auto', model?: s
             return LUMO_MAX_MODEL;
         case 'apertus-15':
             return APERTUS_15_MODEL;
+        case 'lumo-preview':
+            return LUMO_PREVIEW_MODEL;
         default:
             return DEFAULT_CHAT_MODEL;
     }

@@ -28,7 +28,7 @@ export const useChatLimitGate = () => {
     const modelTierContext = useOptionalModelTier();
     const selectedModelTier = resolveUsageModelTier(modelTierContext?.modelTier);
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
-    const { apertusModelAvailable } = useLumoFlags();
+    const { apertusModelAvailable, previewModelAvailable } = useLumoFlags();
     const { hasTierErrors } = useTierErrors();
     const dispatch = useLumoDispatch();
 
@@ -37,11 +37,14 @@ export const useChatLimitGate = () => {
         !isModelTierSelectable(selectedModelTier, remainingLimits, {
             isMaxAvailable: isMaxAvailableByFlag,
             isApertusEnabled: apertusModelAvailable,
+            isPreviewEnabled: previewModelAvailable,
         });
     const allModelLimitsExhausted = areAllModelLimitsExhausted(remainingLimits);
     const anyModelLimitExhausted = isAnyModelLimitExhausted(remainingLimits);
     const isBlocked =
-        (!hasLumoPlus && selectedModelLimitExhausted) || (selectedModelTier === 'apertus-15' && !apertusModelAvailable);
+        (!hasLumoPlus && selectedModelLimitExhausted) ||
+        (selectedModelTier === 'apertus-15' && !apertusModelAvailable) ||
+        (selectedModelTier === 'lumo-preview' && !previewModelAvailable);
 
     const ensureTierError = useCallback(() => {
         if (!hasLumoPlus && selectedModelTier && selectedModelLimitExhausted && !hasTierErrors) {
