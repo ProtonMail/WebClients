@@ -24,7 +24,7 @@ export class VideoMixerClient {
     private canvasStream: MediaStream;
     private trackCaptures: Map<string, TrackCapture> = new Map();
     private reportMeetError: ReportMeetError;
-    private encoderOnChunk: ((data: Uint8Array<ArrayBuffer>, position: number) => void) | null = null;
+    private encoderOnChunk: ((data: Uint8Array<ArrayBuffer>) => void) | null = null;
     private encoderDoneResolve: (() => void) | null = null;
 
     constructor({
@@ -52,7 +52,7 @@ export class VideoMixerClient {
 
             const message = event.data;
             if (message?.type === 'encoderChunk') {
-                this.encoderOnChunk?.(message.data, message.position);
+                this.encoderOnChunk?.(message.data);
             } else if (message?.type === 'encoderDone') {
                 this.encoderDoneResolve?.();
                 this.encoderDoneResolve = null;
@@ -135,7 +135,7 @@ export class VideoMixerClient {
         return this.canvasStream.getVideoTracks();
     }
 
-    public startEncoder(onChunk: (data: Uint8Array<ArrayBuffer>, position: number) => void): void {
+    public startEncoder(onChunk: (data: Uint8Array<ArrayBuffer>) => void): void {
         this.encoderOnChunk = onChunk;
         this.worker.postMessage({ type: VideoMixerMessageType.START_ENCODER });
     }

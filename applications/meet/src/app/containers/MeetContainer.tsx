@@ -11,6 +11,7 @@ import {
     stopMeetingDurationTimer,
 } from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
+import { clearRecording } from '@proton/meet/store/slices/recordingsSlice';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
@@ -106,6 +107,10 @@ export const MeetContainer = ({
     }, [dispatch, expirationTime]);
 
     useEffect(() => {
+        // Not part of `resetMeetingState`: the post-meeting screen reads this slice after
+        // this container unmounts, so a leftover recording is dropped on the way in instead.
+        dispatch(clearRecording());
+
         return () => {
             dispatch(resetMeetingState());
         };

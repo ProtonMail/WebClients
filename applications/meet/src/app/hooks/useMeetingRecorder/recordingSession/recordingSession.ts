@@ -33,8 +33,10 @@ export class RecordingSession {
     private userId: string;
     private reportMeetError: ReportMeetError;
     private onRuntimeError: () => void;
-    private onStorageFull: () => void;
+    private onStorageFull: (hasWrittenData: boolean) => void;
+    private onWriteError: (hasWrittenData: boolean) => void;
     private storageFull = false;
+    private writeError: string | null = null;
 
     constructor({
         codec,
@@ -43,6 +45,7 @@ export class RecordingSession {
         reportMeetError,
         onRuntimeError,
         onStorageFull,
+        onWriteError,
     }: RecordingSessionOptions) {
         this.codec = codec;
         this.isWebCodecs = isWebCodecs;
@@ -50,20 +53,42 @@ export class RecordingSession {
         this.reportMeetError = reportMeetError;
         this.onRuntimeError = onRuntimeError;
         this.onStorageFull = onStorageFull;
+        this.onWriteError = onWriteError;
     }
 
-    private handleStorageFull = (): void => {
+    private handleStorageFull = (hasWrittenData: boolean): void => {
         if (this.storageFull) {
             return;
         }
         this.storageFull = true;
-        this.onStorageFull();
+
+        if (!this.active) {
+            return;
+        }
+
+        this.onStorageFull(hasWrittenData);
+    };
+
+    private handleWriteError = (error: string, hasWrittenData: boolean): void => {
+        // eslint-disable-next-line no-console
+        console.error('[MeetingRecorder] storage write error:', error);
+        this.reportMeetError('MeetingRecording Error: Failed to write the recording', {
+            context: { error, recordingCodec: this.codec },
+        });
+        this.writeError = error;
+
+        if (!this.active) {
+            return;
+        }
+
+        this.onWriteError(hasWrittenData);
     };
 
     public async start({
         initialScene,
         initialAudioTracks,
         initialRecordedTracks,
+        encryptionKey,
     }: RecordingSessionStartOptions): Promise<void> {
         // eslint-disable-next-line no-console
         console.log('[MeetingRecorder] starting recording', {
@@ -71,7 +96,13 @@ export class RecordingSession {
             backend: this.isWebCodecs ? 'webcodecs' : 'mediarecorder',
         });
 
-        this.storage = await createRecordingStorageClient(this.codec.extension, this.userId, this.handleStorageFull);
+        this.storage = await createRecordingStorageClient({
+            fileExtension: this.codec.extension,
+            userId: this.userId,
+            encryptionKey,
+            onStorageFull: this.handleStorageFull,
+            onWriteError: this.handleWriteError,
+        });
 
         this.videoMixer = new VideoMixerClient({
             initialScene,
@@ -93,9 +124,9 @@ export class RecordingSession {
                 videoMixer: this.videoMixer,
                 audioMixer: this.audioMixer,
                 codec: this.codec,
-                onChunk: (data, position) => {
+                onChunk: (data) => {
                     stats.recordChunk(data.byteLength);
-                    void storage.addChunk(data, position).catch((error) => {
+                    void storage.addChunk(data).catch((error) => {
                         reportMeetError('MeetingRecording Error WebCodecs: Failed to store chunk in OPFS', {
                             context: {
                                 error: error instanceof Error ? error.message : String(error),
@@ -182,6 +213,17 @@ export class RecordingSession {
         }
 
         await this.mediaRecorder.start();
+
+        if (this.storageFull || this.writeError) {
+            await this.mediaRecorder.stop().catch(() => {});
+            await storage.clear().catch(() => {});
+
+            throw new Error(
+                this.storageFull
+                    ? 'Storage is full, the recording could not be started'
+                    : `The recording could not be written: ${this.writeError}`
+            );
+        }
 
         this.watchdog = createChunkWatchdog({
             stats,

@@ -1,4 +1,8 @@
-export const RECORDING_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000; // 7 days
+import { DAY } from '@proton/shared/lib/constants';
+
+import { getRecordingFolder } from './getRecordingFolder';
+
+export const RECORDING_MAX_AGE_MS = 30 * DAY;
 
 // Matches `recording-<timestamp>.<ext>` as written by the storage worker.
 const RECORDING_FILENAME_RE = /^recording-(\d+)\./;
@@ -75,10 +79,17 @@ export const purgeUserRecordings = async (userId: string): Promise<void> => {
     if (!userId || !navigator.storage?.getDirectory) {
         return;
     }
-    try {
-        const root = await navigator.storage.getDirectory();
-        await root.removeEntry(userId, { recursive: true });
-    } catch {
-        // No directory for this user (nothing recorded) — nothing to purge.
+
+    const root = await navigator.storage.getDirectory().catch(() => null);
+    if (!root) {
+        return;
+    }
+
+    for (const folder of [userId, getRecordingFolder(userId)]) {
+        try {
+            await root.removeEntry(folder, { recursive: true });
+        } catch {
+            // No directory for this user (nothing recorded) — nothing to purge.
+        }
     }
 };

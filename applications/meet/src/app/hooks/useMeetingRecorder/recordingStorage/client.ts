@@ -1,10 +1,15 @@
+import type { PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import { forwardWorkerLog } from '../workerLogger';
+import { getRecordingFolder } from './getRecordingFolder';
 import { getOpfsRecording } from './recordingFiles';
 import {
     type FinalizeResponseData,
+    type RecordingEncryption,
     StorageMessageType,
     type StorageWorkerMessage,
     type StorageWorkerResponse,
@@ -22,6 +27,33 @@ type StorageWorkerMessageInput = StorageWorkerMessage extends infer U
         : U
     : never;
 
+interface RecordingStorageClientOptions {
+    fileExtension: string;
+    userId: string;
+    onStorageFull?: (hasWrittenData: boolean) => void;
+    onWriteError?: (error: string, hasWrittenData: boolean) => void;
+}
+
+const createRecordingEncryption = async (encryptionKey: PublicKeyReference): Promise<RecordingEncryption> => {
+    const aeadSessionKey = await CryptoProxy.generateSessionKey({
+        config: {
+            /**
+             * An AEAD session key needs to be generated here, to make it possible to safely release
+             * partially decrypted data, if the encrypted file is truncated (e.g. on max storage quota reached).
+             * @dev this setting is not backwards compatible across clients, do not blindly use it elsewhere
+             */
+            aeadProtect: true,
+        },
+    });
+    const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
+        ...aeadSessionKey,
+        encryptionKeys: encryptionKey,
+        format: 'binary',
+    });
+
+    return { sessionKey: aeadSessionKey, encryptedSessionKey };
+};
+
 // Main-thread wrapper around the OPFS recording worker.
 // Use `createRecordingStorageClient` to get an initialized instance.
 export class RecordingStorageClient {
@@ -31,15 +63,20 @@ export class RecordingStorageClient {
     private pendingChunkWrites: Set<Promise<void>> = new Set();
     private fileExtension: string;
     private userId: string;
-    private onStorageFull?: () => void;
+    private folder: string = '';
+    private onStorageFull?: (hasWrittenData: boolean) => void;
+    private onWriteError?: (error: string, hasWrittenData: boolean) => void;
+    private storageFull = false;
 
-    constructor(fileExtension: string, userId: string, onStorageFull?: () => void) {
+    constructor({ fileExtension, userId, onStorageFull, onWriteError }: RecordingStorageClientOptions) {
         this.fileExtension = fileExtension;
         this.userId = userId;
         this.onStorageFull = onStorageFull;
+        this.onWriteError = onWriteError;
+        this.storageFull = false;
     }
 
-    async init(): Promise<void> {
+    async init(encryptionKey?: PublicKeyReference): Promise<void> {
         this.worker = new Worker(new URL('./worker/worker.ts', import.meta.url), {
             type: 'module',
         });
@@ -52,7 +89,17 @@ export class RecordingStorageClient {
             const response = event.data;
 
             if (response.type === StorageWorkerResponseType.STORAGE_FULL) {
-                this.onStorageFull?.();
+                if (this.storageFull) {
+                    return;
+                }
+
+                this.storageFull = true;
+                this.onStorageFull?.(response.hasWrittenData);
+                return;
+            }
+
+            if (response.type === StorageWorkerResponseType.WRITE_ERROR) {
+                this.onWriteError?.(response.error, response.hasWrittenData);
                 return;
             }
 
@@ -89,15 +136,19 @@ export class RecordingStorageClient {
             this.pendingMessages.clear();
         };
 
+        this.folder = encryptionKey ? getRecordingFolder(this.userId) : this.userId;
+
         await this.send({
             type: StorageMessageType.INIT,
-            data: { fileExtension: this.fileExtension, userId: this.userId },
+            data: {
+                fileExtension: this.fileExtension,
+                folder: this.folder,
+                encryption: encryptionKey ? await createRecordingEncryption(encryptionKey) : undefined,
+            },
         });
     }
 
-    // `position` is set by the WebCodecs path (mediabunny gives an explicit byte
-    // offset per chunk); the MediaRecorder path omits it and the worker appends.
-    async addChunk(chunk: Blob | Uint8Array<ArrayBuffer>, position?: number): Promise<void> {
+    async addChunk(chunk: Blob | Uint8Array<ArrayBuffer>): Promise<void> {
         if (!this.worker) {
             throw new Error('Worker not initialized');
         }
@@ -116,7 +167,7 @@ export class RecordingStorageClient {
 
         const writePromise = (async () => {
             const chunkBuffer = await getChunkBuffer();
-            await this.send({ type: StorageMessageType.ADD_CHUNK, data: { chunkBuffer, position } }, [chunkBuffer]);
+            await this.send({ type: StorageMessageType.ADD_CHUNK, data: { chunkBuffer } }, [chunkBuffer]);
         })();
 
         this.pendingChunkWrites.add(writePromise);
@@ -135,43 +186,28 @@ export class RecordingStorageClient {
         await Promise.allSettled([...this.pendingChunkWrites]);
     }
 
-    // Closes write handles and returns the recording's files in order.
-    // Today there is always one file; the artifact is plural to keep
-    // multi-file rotation forward-compatible.
+    // Closes the write handle and returns the finalized recording.
     async finalize(): Promise<OpfsRecording | null> {
         await this.drainPendingChunkWrites();
-        const { fileNames } = (await this.send({ type: StorageMessageType.FINALIZE })) as FinalizeResponseData;
+        const { fileName } = (await this.send({ type: StorageMessageType.FINALIZE })) as FinalizeResponseData;
+
+        if (!fileName) {
+            return null;
+        }
 
         if (isFirefox()) {
-            // Firefox needs the worker to fully release the file handles
-            // before the main thread can read them back from OPFS.
+            // Firefox needs the worker to fully release the file handle
+            // before the main thread can read it back from OPFS.
             this.terminate();
             await new Promise((resolve) => setTimeout(resolve, 50));
         }
 
-        return fileNames[0] ? getOpfsRecording(this.userId, fileNames[0]) : null;
+        return getOpfsRecording(this.folder, fileName);
     }
 
     async clear(): Promise<void> {
         await this.drainPendingChunkWrites();
         await this.send({ type: StorageMessageType.CLEAR });
-    }
-
-    close(): void {
-        if (!this.worker) {
-            return;
-        }
-
-        try {
-            const message: StorageWorkerMessage = {
-                type: StorageMessageType.CLOSE,
-                id: this.generateMessageId(),
-            };
-            this.worker.postMessage(message);
-        } catch (err) {
-            // eslint-disable-next-line no-console
-            console.error('[MeetingRecorder/recordingWorker] Error sending close message:', err);
-        }
     }
 
     terminate(): void {
@@ -216,12 +252,11 @@ export class RecordingStorageClient {
     }
 }
 
-export const createRecordingStorageClient = async (
-    fileExtension: string,
-    userId: string,
-    onStorageFull?: () => void
-): Promise<RecordingStorageClient> => {
-    const client = new RecordingStorageClient(fileExtension, userId, onStorageFull);
-    await client.init();
+export const createRecordingStorageClient = async ({
+    encryptionKey,
+    ...options
+}: RecordingStorageClientOptions & { encryptionKey?: PublicKeyReference }): Promise<RecordingStorageClient> => {
+    const client = new RecordingStorageClient(options);
+    await client.init(encryptionKey);
     return client;
 };

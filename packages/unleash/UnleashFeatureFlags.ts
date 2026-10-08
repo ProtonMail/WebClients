@@ -366,6 +366,7 @@ enum MeetFeatureFlag {
     MeetProtonCalendarDeepLink = 'MeetProtonCalendarDeepLink',
     MeetQualityTelemetry = 'MeetQualityTelemetry',
     MeetQualityTelemetryKillSwitch = 'MeetQualityTelemetryKillSwitch',
+    MeetRecordingEncryption = 'MeetRecordingEncryption',
     MeetRecordingRecoveryUI = 'MeetRecordingRecoveryUI',
     MeetRecordingShowAllRecordings = 'MeetRecordingShowAllRecordings',
     MeetRecordingWebCodecs = 'MeetRecordingWebCodecs',
