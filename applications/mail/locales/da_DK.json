@@ -1553,7 +1553,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -8287,8 +8288,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -10090,7 +10090,7 @@
         "1 boks pr. bruger"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatterne er baseret på de månedlige standardpriser. Når faktureringscyklussen slutter fornyes dit abonnement til standardprisen pr. år."
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
       ],
       "Here's what happens when you continue:": [
         "Dette sker når du fortsætter:"
@@ -10115,6 +10115,12 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Din Gmail forbindes til denne ${ MAIL_APP_NAME }-adresse"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Mac vil muligvis bede om en adgangskode efter opdateringen. Indtast adgangskoden, som du bruger til at låse op for din Mac, og vælg derefter Tillad altid for at forblive logget ind. ${ learnMore }"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Opdater ${ MAIL_APP_NAME } for at fortsætte med at bruge appen. ${ downloadUpdate }"
       ]
     },
     "info": {

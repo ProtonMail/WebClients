@@ -1544,7 +1544,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -8157,8 +8158,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -9826,6 +9826,12 @@
       ],
       "Today": [
         "Vandaag"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Na de update kan uw Mac om een ​​wachtwoord vragen. Typ het wachtwoord dat u gebruikt om uw Mac te ontgrendelen en klik vervolgens op Altijd toestaan ​​om aangemeld te blijven. ${ learnMore }"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Update ${ MAIL_APP_NAME } om de app te blijven gebruiken. ${ downloadUpdate }"
       ]
     },
     "info": {
