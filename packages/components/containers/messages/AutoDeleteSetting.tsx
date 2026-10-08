@@ -49,7 +49,7 @@ const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISA
                 <SettingsLayoutLeft>
                     <label htmlFor="autoDelete" className="text-semibold flex flex-nowrap items-start">
                         <span className="mr-2 flex-1">
-                            <span className="mr-2">{c('Label').t`Auto-delete unwanted messages`}</span>
+                            <span className="mr-2">{c('Label').t`Auto-delete trash and spam`}</span>
                             <Info
                                 className="shrink-0"
                                 title={c('Tooltip')

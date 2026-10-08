@@ -202,7 +202,7 @@ const EmailSettings = ({
                             htmlFor="autoDelete"
                             description={c('Info')
                                 .t`Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.`}
-                        >{c('Label').t`Auto-delete unwanted messages`}</MobileSectionLabel>
+                        >{c('Label').t`Auto-delete trash and spam`}</MobileSectionLabel>
                         <AutoDeleteSpamAndTrashDaysToggle
                             id="autoDelete"
                             loading={loadingAutoDeleteSpamAndTrashDays}
