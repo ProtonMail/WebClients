@@ -82,6 +82,9 @@
       "Library background applied": [
         "Biblioteksbakgrund tillämpad"
       ],
+      "Light ${ BRAND_NAME } background applied": [
+        "Ljus ${ BRAND_NAME }-bakgrund tillämpad"
+      ],
       "New chat message: ${ message }": [
         "Nytt chattmeddelande: ${ message }"
       ],
@@ -217,6 +220,9 @@
       "Change password": [
         "Ändra lösenord"
       ],
+      "Chat": [
+        "Chatt"
+      ],
       "Chat with us": [
         "Chatta med oss"
       ],
@@ -273,6 +279,9 @@
       ],
       "Create meeting": [
         "Skapa möte"
+      ],
+      "Debug devices": [
+        "Felsök enheter"
       ],
       "Delete": [
         "Ta bort"
@@ -409,6 +418,9 @@
       "Kick out ${ participantName }": [
         "Kasta ut ${ participantName }"
       ],
+      "Layout": [
+        "Layout"
+      ],
       "Leave": [
         "Lämna"
       ],
@@ -420,6 +432,9 @@
       ],
       "Lower hand": [
         "Sänk handen"
+      ],
+      "Meeting info": [
+        "Mötesinfo"
       ],
       "Meeting timer": [
         "Mötestimer"
@@ -460,6 +475,9 @@
       "Open link": [
         "Öppna länk"
       ],
+      "Participants": [
+        "Deltagare"
+      ],
       "Participants join after you approve them": [
         "Deltagare går med efter att du har godkänt dem"
       ],
@@ -499,6 +517,9 @@
       ],
       "Record": [
         "Spela in"
+      ],
+      "Recording": [
+        "Spelar in"
       ],
       "Recording your microphone...": [
         "Spelar in din mikrofon …"
@@ -591,6 +612,9 @@
       "Settings": [
         "Inställningar"
       ],
+      "Share screen": [
+        "Dela skärm"
+      ],
       "Show options": [
         "Visa alternativ"
       ],
@@ -678,6 +702,9 @@
       "The current link will stop working.": [
         "Nuvarande länken kommer sluta fungera."
       ],
+      "Transcription": [
+        "Transkription"
+      ],
       "Try again": [
         "Försök igen"
       ],
@@ -707,9 +734,6 @@
       ],
       "Use camera": [
         "Använd kamera"
-      ],
-      "Use it": [
-        "Använd den"
       ],
       "Use microphone": [
         "Använd mikrofon"
@@ -894,8 +918,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Applikation för stationär dator ${ appName }"
       ]
     },
     "Bug category": {
@@ -2467,9 +2491,6 @@
       " and ": [
         " och "
       ],
-      "${ deviceLabel } is available again": [
-        "${ deviceLabel } är tillgänglig igen"
-      ],
       "${ maxParticipants } participant limit reached": [
         "Gränsen på ${ maxParticipants } deltagare har uppnåtts"
       ],
@@ -2876,6 +2897,9 @@
       "Microphone permission denied": [
         "Mikrofonbehörighet nekad"
       ],
+      "More options": [
+        "Fler alternativ"
+      ],
       "Mute microphone": [
         "Stäng av mikrofon"
       ],
@@ -2933,6 +2957,15 @@
       "notify everyone here": [
         "avisera alla här"
       ],
+      "Now using ${ first } and ${ second }.": [
+        "Använder nu ${ first } och ${ second }."
+      ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "Använder nu ${ first }, ${ second } och ${ third }."
+      ],
+      "Now using ${ first }.": [
+        "Använder nu ${ first }."
+      ],
       "Only meetings you created appear here": [
         "Endast möten du skapat visas här"
       ],
@@ -2950,6 +2983,9 @@
       ],
       "Participant": [
         "Deltagare"
+      ],
+      "Participant counts don’t match": [
+        "Deltagarantal matchar inte"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Klistra in din ${ MEET_APP_NAME }-länk för att gå med i ett säkert möte."
@@ -3040,6 +3076,15 @@
       ],
       "Select a speaker": [
         "Välj en högtalare"
+      ],
+      "Selected camera has disconnected.": [
+        "Vald kamera har kopplats från."
+      ],
+      "Selected microphone has disconnected.": [
+        "Vald mikrofon har kopplats från."
+      ],
+      "Selected speaker has disconnected.": [
+        "Vald högtalare har kopplats från."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
@@ -3215,6 +3260,9 @@
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Du kan fortfarande stänga av din mikrofon och kamera när som helst under mötet."
       ],
+      "You have too many meetings in progress": [
+        "Du har för många pågående möten"
+      ],
       "You left the meeting": [
         "Du lämnade mötet"
       ],
@@ -3257,38 +3305,14 @@
       "Your browser or device isn’t supported": [
         "Din webbläsare eller enhet stöds inte"
       ],
-      "Your camera was disconnected. Now using ${ deviceLabel }.": [
-        "Din kamera kopplades från. Använder nu ${ deviceLabel }."
-      ],
-      "Your device was disconnected. Now using ${ deviceLabel }.": [
-        "Din enhet kopplades från. Använder nu ${ deviceLabel }."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
       ],
       "Your meeting is ready": [
         "Ditt möte är redo"
       ],
-      "Your microphone and camera were disconnected. Now using other devices.": [
-        "Din mikrofon och kamera kopplades från. Andra enheter används nu."
-      ],
-      "Your microphone and speaker were disconnected. Now using other devices.": [
-        "Din mikrofon och högtalare kopplades från. Andra enheter används nu."
-      ],
-      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
-        "Din mikrofon kopplades från. Använder nu ${ deviceLabel }."
-      ],
-      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
-        "Din mikrofon, högtalare och kamera kopplades från. Andra enheter används nu."
-      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
-      ],
-      "Your speaker and camera were disconnected. Now using other devices.": [
-        "Din högtalare och kamera kopplades från. Andra enheter används nu."
-      ],
-      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
-        "Din högtalare kopplades från. Använder nu ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Du är på väg att öppna en länk i en ny flik. Se till att du litar på webbplatsen innan du fortsätter."
@@ -3385,6 +3409,9 @@
       ],
       "Does not repeat": [
         "Upprepas inte"
+      ],
+      "Don’t show this message again": [
+        "Visa inte detta meddelande igen"
       ],
       "Download .ics": [
         "Ladda ner .ics"
@@ -4047,6 +4074,9 @@
       ],
       "Meeting": [
         "Möte"
+      ],
+      "Meeting actions": [
+        "Mötesåtgärder"
       ],
       "Meeting created": [
         "Möte skapat"

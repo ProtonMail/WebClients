@@ -912,8 +912,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Application de bureau ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Application de bureau ${ appName }"
       ]
     },
     "Bug category": {
@@ -2861,6 +2861,15 @@
       "Not sent, check your connection.": [
         "Envoi impossible, veuillez vérifier votre connexion."
       ],
+      "Now using ${ first } and ${ second }.": [
+        "${ first } et ${ second } sont désormais utilisés."
+      ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "${ first }, ${ second } et ${ third } sont désormais utilisés."
+      ],
+      "Now using ${ first }.": [
+        "${ first } est désormais utilisé."
+      ],
       "Only meetings you created appear here": [
         "Seules les réunions que vous avez créées apparaissent ici"
       ],
@@ -2974,6 +2983,27 @@
       ],
       "Select a speaker": [
         "Sélectionner une sortie audio"
+      ],
+      "Selected camera has disconnected.": [
+        "La caméra sélectionnée s’est déconnectée."
+      ],
+      "Selected devices have disconnected.": [
+        "Les appareils sélectionnés se sont déconnectés."
+      ],
+      "Selected microphone and camera have disconnected.": [
+        "Le microphone et la caméra sélectionnés se sont déconnectés."
+      ],
+      "Selected microphone and speaker have disconnected.": [
+        "Le microphone et le haut-parleur sélectionnés se sont déconnectés."
+      ],
+      "Selected microphone has disconnected.": [
+        "Le microphone sélectionné s’est déconnecté."
+      ],
+      "Selected speaker and camera have disconnected.": [
+        "Le haut-parleur et la caméra sélectionnés se sont déconnectés."
+      ],
+      "Selected speaker has disconnected.": [
+        "Le haut-parleur sélectionné s’est déconnecté."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."

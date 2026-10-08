@@ -243,6 +243,9 @@
       "Change password": [
         "Змяніць пароль"
       ],
+      "Chat": [
+        "Чат"
+      ],
       "Chat with us": [
         "Чат з намі"
       ],
@@ -299,6 +302,12 @@
       ],
       "Create meeting": [
         "Стварыць сустрэчу"
+      ],
+      "Debug devices": [
+        "Адладка прылад"
+      ],
+      "Debug overlay": [
+        "Адладка накладання"
       ],
       "Delete": [
         "Выдаліць"
@@ -441,6 +450,9 @@
       "Kick out ${ participantName }": [
         "Выгнаць ${ participantName }"
       ],
+      "Layout": [
+        "Макет"
+      ],
       "Leave": [
         "Выйсці"
       ],
@@ -458,6 +470,9 @@
       ],
       "Lower hand": [
         "Апусціць руку"
+      ],
+      "Meeting info": [
+        "Інфармацыя аб сустрэчы:"
       ],
       "Meeting timer": [
         "Таймер сустрэчы"
@@ -500,6 +515,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Адкрыць згадванне ад ${ senderName } у чаце"
+      ],
+      "Participants": [
+        "Удзельнікі"
       ],
       "Participants join after you approve them": [
         "Удзельнікі далучаюцца пасля таго, як вы іх ухваліце"
@@ -548,6 +566,9 @@
       ],
       "Record": [
         "Запісаць"
+      ],
+      "Recording": [
+        "Запіс"
       ],
       "Recording your microphone...": [
         "Запіс вашага мікрафона..."
@@ -645,6 +666,12 @@
       "Settings": [
         "Налады"
       ],
+      "Share screen": [
+        "Абагуліць экран"
+      ],
+      "Show captions": [
+        "Паказаць цітры"
+      ],
       "Show options": [
         "Паказаць параметры"
       ],
@@ -738,6 +765,9 @@
       "The current link will stop working.": [
         "Бягучая спасылка перастане працаваць."
       ],
+      "Transcription": [
+        "Транскрыпцыя"
+      ],
       "Try again": [
         "Паўтарыце спробу"
       ],
@@ -767,9 +797,6 @@
       ],
       "Use camera": [
         "Выкарыстоўваць камеру"
-      ],
-      "Use it": [
-        "Выкарыстаць яго"
       ],
       "Use microphone": [
         "Выкарыстоўваць мікрафон"
@@ -963,11 +990,6 @@
     "Banner": {
       "Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.": [
         "Падключана праз рэжым рэтрансляцыі TURN з прычыны абмежаванняў вашай сеткі. Гэта можа павялічыць затрымку і паўплываць на якасць сувязі."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -2595,9 +2617,6 @@
       " and ": [
         " і "
       ],
-      "${ deviceLabel } is available again": [
-        "${ deviceLabel } зноў даступна"
-      ],
       "${ maxParticipants } participant limit reached": [
         "Дасягнута абмежаванне па колькасці ўдзельнікаў (максімум: ${ maxParticipants })"
       ],
@@ -3015,6 +3034,9 @@
       "Microphone permission denied": [
         "Доступ да мікрафона забаронены"
       ],
+      "More options": [
+        "Дадатковыя параметры"
+      ],
       "Mute microphone": [
         "Адключыць мікрафон"
       ],
@@ -3071,6 +3093,9 @@
       ],
       "notify everyone here": [
         "апавясціць усіх тут"
+      ],
+      "Now using ${ first }.": [
+        "Цяпер выкарыстоўваецца ${ first }."
       ],
       "Only meetings you created appear here": [
         "У гэтым месцы будуць толькі сустрэчы, створаныя вамі"
@@ -3200,6 +3225,9 @@
       ],
       "Share screen": [
         "Абагуліць экран"
+      ],
+      "Show live captions?": [
+        "Паказваць дынамічныя цітры?"
       ],
       "Sign in": [
         "ўвайдзіце"
@@ -3402,26 +3430,14 @@
       "Your browser or device isn’t supported": [
         "Ваш браўзер або прылада не падтрымліваецца"
       ],
-      "Your camera was disconnected. Now using ${ deviceLabel }.": [
-        "Ваша камера была адключана. Цяпер выкарыстоўваецца ${ deviceLabel }."
-      ],
-      "Your device was disconnected. Now using ${ deviceLabel }.": [
-        "Ваша прылада была адключана. Цяпер выкарыстоўваецца ${ deviceLabel }."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
       "Your meeting is ready": [
         "Ваша сустрэча гатова"
       ],
-      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
-        "Ваш мікрафон быў адключаны. Цяпер выкарыстоўваецца ${ deviceLabel }."
-      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
-      ],
-      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
-        "Вашы дынамікі былі адключаны. Цяпер выкарыстоўваюцца ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Вы збіраецеся адкрыць спасылку ў новай укладцы. Пераканайцеся, што вы давяраеце вэб-сайту перад працягам."
@@ -4225,6 +4241,9 @@
       "Meeting": [
         "Сустрэча"
       ],
+      "Meeting actions": [
+        "Падзеі сустрэчы"
+      ],
       "Meeting created": [
         "Сустрэча створана"
       ],
@@ -4272,6 +4291,9 @@
       ],
       "Publications": [
         "Публікацыі"
+      ],
+      "Quick reactions": [
+        "Хуткія рэакцыі"
       ],
       "Reconnection Testing": [
         "Тэсціраванне перападключэння"

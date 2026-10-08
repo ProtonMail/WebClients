@@ -246,6 +246,9 @@
       "Change password": [
         "Modificare parolă"
       ],
+      "Chat": [
+        "Conversație"
+      ],
       "Chat with us": [
         "Conversați cu noi"
       ],
@@ -302,6 +305,12 @@
       ],
       "Create meeting": [
         "Creare conferință"
+      ],
+      "Debug devices": [
+        "Depanare dispozitive"
+      ],
+      "Debug overlay": [
+        "Panou de depanare"
       ],
       "Delete": [
         "Ștergere"
@@ -444,6 +453,9 @@
       "Kick out ${ participantName }": [
         "Eliminare ${ participantName }"
       ],
+      "Layout": [
+        "Aranjare"
+      ],
       "Leave": [
         "Lăsați"
       ],
@@ -461,6 +473,9 @@
       ],
       "Lower hand": [
         "Mâna coborâtă"
+      ],
+      "Meeting info": [
+        "Informații conferință"
       ],
       "Meeting timer": [
         "Cronometru conferință"
@@ -503,6 +518,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Deschidere mențiune de la ${ senderName } în conversație"
+      ],
+      "Participants": [
+        "Participanți"
       ],
       "Participants join after you approve them": [
         "Participanții se alătură după ce-i aprobați"
@@ -550,6 +568,9 @@
       ],
       "Record": [
         "Înregistrare"
+      ],
+      "Recording": [
+        "Se înregistrează"
       ],
       "Recording your microphone...": [
         "Se înregistrează microfonul..."
@@ -646,6 +667,12 @@
       "Settings": [
         "Setări"
       ],
+      "Share screen": [
+        "Partajare ecran"
+      ],
+      "Show captions": [
+        "Afișare subtitrări"
+      ],
       "Show options": [
         "Afișare opțiuni"
       ],
@@ -739,6 +766,9 @@
       "The current link will stop working.": [
         "Legătura web curentă nu va mai funcționa."
       ],
+      "Transcription": [
+        "Transcriere"
+      ],
       "Try again": [
         "Reîncercați"
       ],
@@ -768,9 +798,6 @@
       ],
       "Use camera": [
         "Utilizare cameră"
-      ],
-      "Use it": [
-        "Folosire"
       ],
       "Use microphone": [
         "Folosire microfon"
@@ -967,8 +994,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicați ${ MAIL_APP_NAME } Desktop"
+      "${ appName } Desktop application": [
+        "Aplicația desktop ${ appName }"
       ]
     },
     "Bug category": {
@@ -2619,9 +2646,6 @@
       " and ": [
         " și "
       ],
-      "${ deviceLabel } is available again": [
-        "${ deviceLabel } s-a reactivat."
-      ],
       "${ maxParticipants } participant limit reached": [
         "A fost atinsă limita de participanți: ${ maxParticipants }."
       ],
@@ -3067,6 +3091,9 @@
       "Microphone permission denied": [
         "Accesul la microfon a fost respins"
       ],
+      "More options": [
+        "Mai multe opțiuni"
+      ],
       "Mute microphone": [
         "Oprire microfon"
       ],
@@ -3118,11 +3145,23 @@
       "No speaker detected": [
         "Niciun difuzor detectat"
       ],
+      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
+        "Anularea zgomotului a fost dezactivată deoarece dispozitivul întâmpină probleme de performanță. O puteți reactiva din setările audio."
+      ],
       "Not sent, check your connection.": [
         "Netrimis. Verificați conexiunea."
       ],
       "notify everyone here": [
         "notificare toți de aici"
+      ],
+      "Now using ${ first } and ${ second }.": [
+        "Acum se utilizează ${ first } și ${ second }."
+      ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "Acum se utilizează ${ first }, ${ second } și ${ third }."
+      ],
+      "Now using ${ first }.": [
+        "Acum se utilizează ${ first }."
       ],
       "Only meetings you created appear here": [
         "Aici apar doar conferințele pe care le-ați creat."
@@ -3247,6 +3286,27 @@
       "Select a speaker": [
         "Selectați un difuzor"
       ],
+      "Selected camera has disconnected.": [
+        "Camera selectată a fost deconectată."
+      ],
+      "Selected devices have disconnected.": [
+        "Dispozitivele selectate s-au deconectat."
+      ],
+      "Selected microphone and camera have disconnected.": [
+        "Microfonul și difuzorul selectate s-au deconectat."
+      ],
+      "Selected microphone and speaker have disconnected.": [
+        "Microfonul și difuzorul selectate s-au deconectat."
+      ],
+      "Selected microphone has disconnected.": [
+        "Microfonul selectat s-a deconectat."
+      ],
+      "Selected speaker and camera have disconnected.": [
+        "Difuzorul și camera selectate s-au deconectat."
+      ],
+      "Selected speaker has disconnected.": [
+        "Difuzorul selectat a fost deconectat."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
       ],
@@ -3258,6 +3318,12 @@
       ],
       "Share screen": [
         "Partajare ecran"
+      ],
+      "Share this link to invite others. You can also find it anytime under Meeting info in the More options menu.": [
+        "Partajați această legătură pentru a invita și alte persoane. O puteți găsi oricând la secțiunea „Informații conferință” din meniul „Mai multe opțiuni”."
+      ],
+      "Show live captions?": [
+        "Afișați subtitrările live?"
       ],
       "Sign in": [
         "înregistrați-vă"
@@ -3285,6 +3351,9 @@
       ],
       "Thank you for joining.": [
         "Vă mulțumim că v-ați alăturat."
+      ],
+      "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
+        "Serviciul de subtitrare utilizează sunetul din cadrul conferinței. Subtitrările sunt vizibile doar pentru dumneavoastră și nu sunt salvate."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Gazda v-a eliminat din această întâlnire. Dacă a fost o greșeală, rugați gazda să vă invite din nou."
@@ -3475,38 +3544,14 @@
       "Your browser or device isn’t supported": [
         "Navigatorul web sau dispozitivul nu este suportat."
       ],
-      "Your camera was disconnected. Now using ${ deviceLabel }.": [
-        "Camera a fost deconectată. Acum se folosește ${ deviceLabel }."
-      ],
-      "Your device was disconnected. Now using ${ deviceLabel }.": [
-        "Dispozitivul a fost deconectat. Acum se folosește ${ deviceLabel }."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
       "Your meeting is ready": [
         "Întâlnirea este pregătită"
       ],
-      "Your microphone and camera were disconnected. Now using other devices.": [
-        "Microfonul și camera au fost deconectate. Acum folosiți alte dispozitive."
-      ],
-      "Your microphone and speaker were disconnected. Now using other devices.": [
-        "Microfonul și difuzorul au fost deconectate. Acum folosiți alte dispozitive."
-      ],
-      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
-        "Microfonul a fost deconectat. Acum se folosește ${ deviceLabel }."
-      ],
-      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
-        "Microfonul, difuzorul și camera au fost deconectate. Acum se folosesc alte dispozitive."
-      ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
-      ],
-      "Your speaker and camera were disconnected. Now using other devices.": [
-        "Microfonul și camera au fost deconectate. Acum folosiți alte dispozitive."
-      ],
-      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
-        "Difuzorul a fost deconectat. Acum se folosește ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Urmează să deschideți o legătură web într-o filă nouă. Asigurați-vă că aprobați site-ul web înainte de a continua."
@@ -3610,6 +3655,9 @@
       ],
       "Does not repeat": [
         "Nu se repetă"
+      ],
+      "Don’t show this message again": [
+        "Nu arătați din nou acest mesaj"
       ],
       "Download .ics": [
         "Descărcare .ics"
@@ -4307,6 +4355,9 @@
       "Meeting": [
         "Conferință"
       ],
+      "Meeting actions": [
+        "Acțiuni conferință"
+      ],
       "Meeting created": [
         "Conferință creată"
       ],
@@ -4354,6 +4405,9 @@
       ],
       "Publications": [
         "Publicări"
+      ],
+      "Quick reactions": [
+        "Reacții rapide"
       ],
       "Reconnection Testing": [
         "Testare reconectare"
