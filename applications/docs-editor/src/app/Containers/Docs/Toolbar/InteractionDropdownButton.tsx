@@ -1,7 +1,7 @@
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
+import { DropdownMenuButton } from '../Components/Dropdown'
 import { Icon } from '../Components/Icon'
 import * as Icons from '../Components/icons'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import type { ReactNode } from 'react'
 
 export function InteractionDropdownButton({
