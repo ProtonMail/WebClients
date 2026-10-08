@@ -43,8 +43,8 @@ export const rootCertificates: Map<KT_CERTIFICATE_ISSUER, string[]> = new Map([
  * See comment at the top of this file.
  */
 export const ctLogs ={
-  version: '90.7',
-  log_list_timestamp: '2026-09-07T13:35:45Z',
+  version: '93.7',
+  log_list_timestamp: '2026-10-07T13:42:13Z',
   operators: [
     {
       name: 'Google',
@@ -620,6 +620,97 @@ export const ctLogs ={
             start_inclusive: '2027-07-01T00:00:00Z',
             end_exclusive: '2028-01-01T00:00:00Z'
           }
+        },
+        {
+          description: 'Geomys Tuscolo2028h1',
+          log_id: 'TefD7+U3ZpoMsB44OPqv3PCMmoBWM55wK1iVm9FxiS4=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEoCrY9Jw/QWI36H+7Y8UlXfNOxk2Atg3H3nXSqLKz52sV4RV9ERRq/IjD4uSP/k5xCT+4nHCjAL8kRjGUeslejw==',
+          submission_url: 'https://tuscolo2028h1.sunlight.geomys.org/',
+          monitoring_url: 'https://tuscolo2028h1.skylight.geomys.org/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-01-01T00:00:00Z',
+            end_exclusive: '2028-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'Geomys Tuscolo2028h2',
+          log_id: 'A18eYQnn44YBqbhkHlfl9aePeIcnUy/PQlPx68mqDzk=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFvXbrz+N3iRcf4pomNlyVokxas/fGQu1DqxIbZ9M34w9W98lDao2v6qV7mRDDDcoh2kSfyAe6GxLuBMrmRPEMg==',
+          submission_url: 'https://tuscolo2028h2.sunlight.geomys.org/',
+          monitoring_url: 'https://tuscolo2028h2.skylight.geomys.org/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-07-01T00:00:00Z',
+            end_exclusive: '2029-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'Geomys Trastevere2026h2',
+          log_id: 'yMaDuhp5vKPNGyZsbZ6MzSf0hFEMerHyV59nUhBYOgM=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEEzFcfnR+P+xG2TA2LWjhkeMcQMTU62r6koepINb7hwcl/hitPLeUzD3vRDpNyvq+9Vrci1FEmctYDWH+iZ2hww==',
+          submission_url: 'https://trastevere2026h2.sunlight.geomys.org/',
+          monitoring_url: 'https://trastevere2026h2.skylight.geomys.org/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2026-07-01T00:00:00Z',
+            end_exclusive: '2027-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'Geomys Trastevere2027h1',
+          log_id: 'F23RQr8KrLyBjUUTu9zDCtteWTJiU5KLmtfLdg/247k=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEcGYiRUG5f1qpqGWsFjfXZZT5NqkWVUJdtRSsWyhKOXXryyIIlfsUtKhmqJSPJhkxS9U1hgPQZ5dzXDA5x/5pYA==',
+          submission_url: 'https://trastevere2027h1.sunlight.geomys.org/',
+          monitoring_url: 'https://trastevere2027h1.skylight.geomys.org/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2027-01-01T00:00:00Z',
+            end_exclusive: '2027-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'Geomys Trastevere2027h2',
+          log_id: 'dZIIKK86Y1XymO0JfjR1dfm5hDwR4TkfV0QpnxyujO4=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJPGejk3XdRtqgzqM5SJPvN9Y6CpSincXJAFPzR4+/hP6KuWhmeL1GVCnbYJ2hFS94pE8k7feYNGB6tuYkvXw2Q==',
+          submission_url: 'https://trastevere2027h2.sunlight.geomys.org/',
+          monitoring_url: 'https://trastevere2027h2.skylight.geomys.org/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2027-07-01T00:00:00Z',
+            end_exclusive: '2028-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'Geomys Trastevere2028h1',
+          log_id: 'j5ct6c9T2eqhZDHY6vWLWGZ8/QysT5c0VLGZaVHvlYc=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE05RdO9dxuePFpoo+c/h8Aj9iOsl3dRzRJarigJiLWXEtm9JV9n0rs9M/fDVSSwGEh2p9PUO8RR1+6Bt77v2iLQ==',
+          submission_url: 'https://trastevere2028h1.sunlight.geomys.org/',
+          monitoring_url: 'https://trastevere2028h1.skylight.geomys.org/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-01-01T00:00:00Z',
+            end_exclusive: '2028-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'Geomys Trastevere2028h2',
+          log_id: 'y6VZ4BSDyZ+U7N2er0ezmWM1bZ/1wShe6un50SqgTMc=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEB4h5MMLSgZuO0R2uMCvA/5WYIvsiYMcYLviqSqL6RNnpOnXiGlz49iWeo7n0R+v9CUj0Clv2In5EwnHwGK2/Tw==',
+          submission_url: 'https://trastevere2028h2.sunlight.geomys.org/',
+          monitoring_url: 'https://trastevere2028h2.skylight.geomys.org/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-07-01T00:00:00Z',
+            end_exclusive: '2029-01-01T00:00:00Z'
+          }
         }
       ]
     },
@@ -717,6 +808,202 @@ export const ctLogs ={
           temporal_interval: {
             start_inclusive: '2027-07-01T00:00:00Z',
             end_exclusive: '2028-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'IPng Networks Gouda2028h1',
+          log_id: 'EgXQJVrBiTyuVBBwPE8Sc/yXAOErWEp/gGrcVVWAwLE=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5mgCmJbPo4B+gxJf8U94HykKo0cBsGsqnSu/ycQ61WGS6b/XL2StiN28YF8/8I4GmLQBDUkz1sTOG4syBcKYMw==',
+          submission_url: 'https://gouda2028h1.log.ct.ipng.ch/',
+          monitoring_url: 'https://gouda2028h1.mon.ct.ipng.ch/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-01-01T00:00:00Z',
+            end_exclusive: '2028-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'IPng Networks Gouda2028h2',
+          log_id: 'ANXCUqZpzf6O0sgXpi5M/O2SyHSR7pccmv3bUoh4hag=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAENtjPyH/uZmZuu4RQSJU0p+unP9ZZKv/Z4MLpQhdbiFGgUBIgBr6urLPCIzSFZuM4HhgnnwiI4aS7Wpi0kMEoNw==',
+          submission_url: 'https://gouda2028h2.log.ct.ipng.ch/',
+          monitoring_url: 'https://gouda2028h2.mon.ct.ipng.ch/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-07-01T00:00:00Z',
+            end_exclusive: '2029-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'IPng Networks Halloumi2028h1',
+          log_id: '6+a9C+qJOkTtPzg+2/4QzZnxhphufXsmsBqEMk57934=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQVDEFJcCWS8jtF8M3uMfghI3wMo6VwH2Cpf/9P1x9/sv7aV8WSnrw7pq0EW1njmLo/6FBoCWHLpqoGKmBZKDVg==',
+          submission_url: 'https://halloumi2028h1.log.ct.ipng.ch/',
+          monitoring_url: 'https://halloumi2028h1.mon.ct.ipng.ch/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-01-01T00:00:00Z',
+            end_exclusive: '2028-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'IPng Networks Halloumi2028h2',
+          log_id: 'ALNWz93lJLRlXUxjZTxSUMQ04goEhRA5uv1kzlyFq2s=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEEZvv84G/hcMbLeIokkLkT0JPzRkdV5VvAXpWGYJGwwETCO447iGSZScyW0ROuNbvsotXYjs02ADpW+6OTD0hXg==',
+          submission_url: 'https://halloumi2028h2.log.ct.ipng.ch/',
+          monitoring_url: 'https://halloumi2028h2.mon.ct.ipng.ch/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-09T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-07-01T00:00:00Z',
+            end_exclusive: '2029-01-01T00:00:00Z'
+          }
+        }
+      ]
+    },
+    {
+      name: 'Microsec',
+      email: [ 'ct-log-op@microsec.hu' ],
+      logs: [],
+      tiled_logs: [
+        {
+          description: 'Microsec Eszigno2026h2',
+          log_id: 'KNPGjqGDY293g5DLHjiKzpOgTpFpnQdXNunGFtEf4Gc=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvBcE01QW9mpuRViHPCs6zNADkGj+nIM9hHSdqBlWPNIOZDr9Zb9hhUTB/9W5eqRlfynSmrnl1AKTPF836w3J6g==',
+          submission_url: 'https://eszigno2026h2.log.ct.e-szigno.hu/',
+          monitoring_url: 'https://eszigno2026h2.mon.ct.e-szigno.hu/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-22T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2026-07-01T00:00:00Z',
+            end_exclusive: '2027-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'Microsec Eszigno2027h1',
+          log_id: 'eBAmYgxXrnCeBgs/iwSfqrh6aXhhDP+YpDWqAgNwe9k=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEhuG9m7D8nlSquWGaAF0NXc0ClYZYpEipNa/NeThGlber9tzMoHLRQXncwNBBqcxbXOannRTI/+utdT7wP9S7Jw==',
+          submission_url: 'https://eszigno2027h1.log.ct.e-szigno.hu/',
+          monitoring_url: 'https://eszigno2027h1.mon.ct.e-szigno.hu/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-22T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2027-01-01T00:00:00Z',
+            end_exclusive: '2027-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'Microsec Eszigno2027h2',
+          log_id: 'GrnppF/Ct4QLH+fciv7lRpXau5p8I9NfpTclu4k6md0=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/XDM4otADNamGuQ1qjcAy+VMdPw75EQtjCEZTBnmJy5QhzHpPReQjYGrLhKuWGXlQJ2AxeVl6/0vm/aRcpsBlg==',
+          submission_url: 'https://eszigno2027h2.log.ct.e-szigno.hu/',
+          monitoring_url: 'https://eszigno2027h2.mon.ct.e-szigno.hu/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-22T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2027-07-01T00:00:00Z',
+            end_exclusive: '2028-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'Microsec Eszigno2028h1',
+          log_id: 'bdyd6YsZgQp1oXcR+tZVoOVbdYzpKkXZg27d9PznIBM=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEaYdzBFWDI3Mf74StObgh3wImAflYLO9aM62xwivJX5pAAXfMEEfImBihn/IfkknTuKOIqeHfxVd/sCAfiN5CLQ==',
+          submission_url: 'https://eszigno2028h1.log.ct.e-szigno.hu/',
+          monitoring_url: 'https://eszigno2028h1.mon.ct.e-szigno.hu/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-22T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-01-01T00:00:00Z',
+            end_exclusive: '2028-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'Microsec Eszigno2028h2',
+          log_id: '2iKjSO8buzFuV+ARSkqcdAe1DxOmJTk9JtLe4joj4hY=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFNithqA5EW7rjf1HswV8jLvzqWZeA4kM4UMvR8PMrOtY6izw7fO159pjewHRu36fEsbcjUf/q2ujFbnpJavWaQ==',
+          submission_url: 'https://eszigno2028h2.log.ct.e-szigno.hu/',
+          monitoring_url: 'https://eszigno2028h2.mon.ct.e-szigno.hu/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-22T13:45:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-07-01T00:00:00Z',
+            end_exclusive: '2029-01-01T00:00:00Z'
+          }
+        }
+      ]
+    },
+    {
+      name: 'GoDaddy',
+      email: [ 'ctlog@godaddy.com' ],
+      logs: [],
+      tiled_logs: [
+        {
+          description: 'GoDaddy Aquamarine2026h2',
+          log_id: '6jAGlJ1CunsD2FCB4yYsua5xil5vUDT3ePE4BU6CdFw=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMTyKhqKtqQBhdnxqQIiyXSX4/Zm4ejW8LrvCxxXLJ8UrchT0A7ZeXnc8vZEVV5oeelR0wOKLtDPLDh6nshBHcw==',
+          submission_url: 'https://ct-log-api.godaddy.com/aquamarine2026h2/',
+          monitoring_url: 'https://ct-log-api.godaddy.com/aquamarine2026h2/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-30T13:40:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2026-07-01T00:00:00Z',
+            end_exclusive: '2027-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'GoDaddy Aquamarine2027h1',
+          log_id: '/cLoBbiE8/CzcwbEliJzk9OExUIiB/1Aj+4CBc6jVhY=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDMQ0K5rmCd7krvHQytXOSmsQqRcDZRnbo6brb2ctD4QKL+XQr0CGU47OfQ2q08zRtKRiXZ6SDGKKHamcpL9t+Q==',
+          submission_url: 'https://ct-log-api.godaddy.com/aquamarine2027h1/',
+          monitoring_url: 'https://ct-log-api.godaddy.com/aquamarine2027h1/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-30T13:40:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2027-01-01T00:00:00Z',
+            end_exclusive: '2027-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'GoDaddy Aquamarine2027h2',
+          log_id: '8LDBho1KJqIqj/7ghUOplCvvi7u69tYBqyHdvnFJ/68=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQ54z+CumfMd4Ts18GjnllfUZoCjFFYQUGAeQ1KkuX7eNdxNEPyjXJrMaqRr5F6lYtT6XFkAohz/fkguaIhU51w==',
+          submission_url: 'https://ct-log-api.godaddy.com/aquamarine2027h2/',
+          monitoring_url: 'https://ct-log-api.godaddy.com/aquamarine2027h2/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-30T13:40:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2027-07-01T00:00:00Z',
+            end_exclusive: '2028-01-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'GoDaddy Aquamarine2028h1',
+          log_id: 'Nh2PNG9+2gYj4hlfNqqVGKiHKCEzvpzppruUJGPrTaY=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAELFHjZjQhWW0TDbKFi9smkN42jZIkWW94f0tCpbJkxYLqKeZGxWr9xHl/BMDvqSseBwOrkXUOnXkzenI7tJli+Q==',
+          submission_url: 'https://ct-log-api.godaddy.com/aquamarine2028h1/',
+          monitoring_url: 'https://ct-log-api.godaddy.com/aquamarine2028h1/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-30T13:40:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-01-01T00:00:00Z',
+            end_exclusive: '2028-07-01T00:00:00Z'
+          }
+        },
+        {
+          description: 'GoDaddy Aquamarine2028h2',
+          log_id: '/jwyxS3R1tXbsRUdYe6iH5EhBfIZa1UNh/as89aPnFM=',
+          key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOZA5sbbVjTlj60DpI6u9AKO/79QvNB7mIq/det2cLZnhV9N4pygpZ1rArRxzn80Y4ydFh+bKOqk7gWnrYfDuqA==',
+          submission_url: 'https://ct-log-api.godaddy.com/aquamarine2028h2/',
+          monitoring_url: 'https://ct-log-api.godaddy.com/aquamarine2028h2/',
+          mmd: 60,
+          state: { qualified: { timestamp: '2026-09-30T13:40:00Z' } },
+          temporal_interval: {
+            start_inclusive: '2028-07-01T00:00:00Z',
+            end_exclusive: '2029-01-01T00:00:00Z'
           }
         }
       ]
