@@ -1523,7 +1523,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -2104,11 +2105,6 @@
         "Anual"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicação para desktop do ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema com o ${ LUMO_SHORT_APP_NAME }"
@@ -2234,11 +2230,6 @@
       ],
       "Take a tour": [
         "Visita guiada"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Os duplicados de importações anteriores serão ignorados. Desfaça ou importe mensagens mais antigas nas definições do ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -7615,8 +7606,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -8569,12 +8559,6 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente novas funcionalidades, atualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Desative para pesquisar apenas por data, nome, endereço de e-mail ou linha de assunto. Para desativar a pesquisa no conteúdo das mensagens (e eliminar as mensagens descarregadas para ativar esta funcionalidade), aceda as definições."
-      ],
-      "Turn on to search the content of your messages": [
-        "Ative para pesquisar o conteúdo das suas mensagens"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Não é possível aceder às capacidades de armazenamento neste navegador. Precisamos desse acesso para ativar a pesquisa de conteúdo das mensagens."

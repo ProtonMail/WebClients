@@ -450,6 +450,9 @@
       "Deselect all messages": [
         "Deselectare toate mesajele"
       ],
+      "Detach": [
+        "Detașare"
+      ],
       "Details": [
         "Detalii"
       ],
@@ -467,6 +470,9 @@
       ],
       "Display navigation bar": [
         "Afișare bară de navigare"
+      ],
+      "Don't show this offer again": [
+        "Nu mai afișa această ofertă"
       ],
       "Done": [
         "Gata"
@@ -690,6 +696,9 @@
       "Got it": [
         "Am înțeles"
       ],
+      "Got it, connect my Gmail": [
+        "Am înțeles, conectez contul Gmail"
+      ],
       "Help and feedback": [
         "Ajutor și feedback"
       ],
@@ -820,6 +829,9 @@
       ],
       "Later this week": [
         "La sfârșitul săptămânii"
+      ],
+      "Learn how this works": [
+        "Aflați cum funcționează"
       ],
       "Learn more": [
         "Detalii"
@@ -1560,7 +1572,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -1919,6 +1933,12 @@
       "Domains": [
         "Domenii"
       ],
+      "Managed Service Provider": [
+        "Furnizor de servicii gestionate"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizațiile care dispun de modulul „Furnizor de servicii gestionate” pot crea și gestiona organizații subsidiare."
+      ],
       "Servers": [
         "Servere"
       ],
@@ -2186,8 +2206,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicați ${ MAIL_APP_NAME } Desktop"
+      "${ appName } Desktop application": [
+        "Aplicația desktop ${ appName }"
       ]
     },
     "Bug category": {
@@ -2318,8 +2338,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicatele din importările anterioare vor fi omise. Anulați sau importați mesajele mai vechi în setările din ${ PRODUCT_NAMES.EASY_SWITCH }."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Cele mai recente e-mailuri vor fi importate primele. Cele importate deja nu vor mai fi copiate."
       ]
     },
     "Calendar attachment tooltip": {
@@ -6494,6 +6514,9 @@
       "Drawer": [
         "Panou lateral"
       ],
+      "Good to know before you connect": [
+        "Bine de știut înainte de conectare"
+      ],
       "Hardware not compatible": [
         "Dispozitiv incompatibil"
       ],
@@ -7275,6 +7298,9 @@
       "(No Recipient)": [
         "(Fără destinatar)"
       ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** este utilizată și pentru a vă conecta la un cont ${ BRAND_NAME } separat, din afara ${ MAIL_APP_NAME }."
+      ],
       "**${ total }** result found in ${ labelName }": [
         "Rezultate găsite în ${ labelName }: **${ total }**",
         "Rezultate găsite în ${ labelName }: **${ total }**",
@@ -7775,6 +7801,9 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Știați? Am rezervat o adresă de e-mail mai scurtă doar pentru dvs. Este numele de utilizator urmat de „@${ PM_DOMAIN }”."
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Descoperiți funcțiile noi deblocate și începeți să le folosiți chiar acum!"
       ],
@@ -8107,6 +8136,9 @@
       "here": [
         "aici"
       ],
+      "Here's what happens when you continue:": [
+        "Iată ce se va întâmpla după ce continuați:"
+      ],
       "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
         "Hei, Lumo, aruncă o privire peste mesajele pe care le primesc cel mai des în cont, precum și peste folderele și filtrele pe care le am deja, apoi propune-mi o modalitate de a le organiza: ce ar trebui schimbat la cele existente și ce elemente noi ar merita adăugate. Explică-mi mai întâi planul și nu muta nimic până nu îmi dau acordul."
       ],
@@ -8227,9 +8259,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8459,6 +8489,9 @@
       "newsletter": [
         "buletin informativ"
       ],
+      "Next time you sign in to your other account": [
+        "Data viitoare când vă conectați la celălalt cont"
+      ],
       "No action selected": [
         "Nicio acțiune selectată"
       ],
@@ -8551,6 +8584,9 @@
       ],
       "Not supported by this browser": [
         "Nesuportat de acest navigator web"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Nimic nu se schimbă în celălalt cont al ${ BRAND_NAME }."
       ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
@@ -9469,14 +9505,8 @@
       "Turn off auto-reply": [
         "Dezactivare răspuns automat"
       ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Dezactivați pentru a căuta numai după dată, nume, adresă de e-mail sau conținut subiect. Pentru a dezactiva căutarea în conținutul mesajelor (și a șterge mesajele descărcate pentru a activa această funcție), accesați rubrica Setări."
-      ],
       "Turn off your away message": [
         "Dezactivare mesaj de indisponibilitate"
-      ],
-      "Turn on to search the content of your messages": [
-        "Activați-l pentru a căuta în conținutul mesajelor."
       ],
       "Turn on your away message": [
         "Activare mesaj de indisponibilitate"
@@ -9922,6 +9952,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ați scris „${ attachmentsFoundKeyword }”, dar nu a fost adăugat niciun atașament. Doriți să trimiteți totuși mesajul?"
       ],
+      "You'll choose a new username": [
+        "Veți alege un nume de utilizator nou."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
       ],
@@ -9929,6 +9962,9 @@
         "Se va factura apoi la fiecare ${ renewCycle } lună cu ${ renewAmountStr }. Puteți anula oricând.",
         "Se va factura apoi la fiecare ${ renewCycle } luni cu ${ renewAmountStr }. Puteți anula oricând.",
         "Se va factura apoi la fiecare ${ renewCycle } de luni cu ${ renewAmountStr }. Puteți anula oricând."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "O veți folosi pentru a vă autentifica în viitor. Aceasta este singura schimbare."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
@@ -9976,6 +10012,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Probarea gratuită a fost convertită cu un abonament lunar. Data lui de reînnoire este ${ nextBillingDate }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Contul Gmail vi se conectează la această adresă ${ MAIL_APP_NAME }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Dispozitivul actual nu acceptă rularea asistentului de scriere la nivel local. Încercați să îl rulați pe servere."

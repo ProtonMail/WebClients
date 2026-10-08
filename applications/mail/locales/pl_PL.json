@@ -1522,7 +1522,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufany klucz",
+        "Zaufane klucze",
+        "Zaufanych kluczy",
+        "Zaufane klucze"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -2131,11 +2134,6 @@
         "Rocznie"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problem z ${ LUMO_SHORT_APP_NAME }"
@@ -2261,11 +2259,6 @@
       ],
       "Take a tour": [
         "Otwórz przewodnik"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikaty z poprzednich importów zostaną pominięte. Cofnij operację lub zaimportuj starsze wiadomości w ustawieniach ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -7774,10 +7767,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8735,12 +8725,6 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Wyłącz, aby wyszukiwać tylko według daty, nazwy, adresu e-mail lub tematu. Aby wyłączyć wyszukiwanie zawartości wiadomości (i usunąć pobrane wiadomości), przejdź do ustawień."
-      ],
-      "Turn on to search the content of your messages": [
-        "Włącz, aby wyszukiwać zawartość wiadomości"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Nie można uzyskać dostępu do funkcji przechowywania w tej przeglądarce. Potrzebujemy tego dostępu, aby umożliwić wyszukiwanie zawartości wiadomości."

@@ -1481,7 +1481,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1982,11 +1983,6 @@
       ],
       "Yearly": [
         "Évente"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } asztali alkalmazás"
       ]
     },
     "Bug category": {
@@ -7186,7 +7182,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8122,12 +8117,6 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Próbálja ki a ${ BRAND_NAME } új funkcióit, frissítéseit és termékeit mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez újra fogja tölteni az alkalmazást"
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Kapcsolja ki, hogy csak dátum, név, e-mail cím vagy tárgysor alapján keressen. Az üzenetek tartalma keresésének letiltásához (és a letöltött üzenetek törléséhez) lépjen a Beállítások menüpontba."
-      ],
-      "Turn on to search the content of your messages": [
-        "Kapcsolja be, hogy az üzenetek szövegében is kereshessen"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Ebben a böngészőben nem érhetőek el a tárolási lehetőségek, az üzenetek tartalmának kereséséhez szükségünk van erre a hozzáférésre."

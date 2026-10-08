@@ -1514,7 +1514,8 @@
         "ნდობა"
       ],
       "Trust key": [
-        "გასაღების სანდოობა"
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -2095,11 +2096,6 @@
         "წლიურად"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME }-ის პრობლემა"
@@ -2225,11 +2221,6 @@
       ],
       "Take a tour": [
         "გასაცნობი ტური"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "დუბლიკატები წინა იმპორტებიდან გამოტოვებული იქნება. დაბრუნება ან უფრო ძველი შეტყობინებების იმპორტი ${ PRODUCT_NAMES.EASY_SWITCH } პარამეტრებში."
       ]
     },
     "Calendar attachment tooltip": {
@@ -7518,8 +7509,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8465,12 +8455,6 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "გამორთეთ მხოლოდ თარიღით, სახელით, ელფოსტის მისამართით ან თემით ძიებისთვის. შეტყობინების შემცველობაში ძიების გამოსართავად (და ამ ფუნქციის ჩასართავად ჩამოტვირთული შეტყობინებების წასაშლელად) გადადით პარამეტრებში."
-      ],
-      "Turn on to search the content of your messages": [
-        "ჩართეთ თქვენი შეტყობინებების შემცველობაში ძებნა"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "ბრაუზერის სააცავის შესაძლებლობებთან წვდომა შეუძლებელია. ეს წვდომა შეტყობინების შემცველობაში ძებნისთვისაა საჭირო."

@@ -1526,7 +1526,8 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen"
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -2107,11 +2108,6 @@
         "Vuosittain"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }in työpöytäsovellus"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME }-ongelma"
@@ -2237,11 +2233,6 @@
       ],
       "Take a tour": [
         "Katso esittely"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Aikaisemmista tuonneista peräisin olevat kaksoiskappaleet ohitetaan. Voit peruuttaa toiminnon tai tuoda vanhempia viestejä ${ PRODUCT_NAMES.EASY_SWITCH } -asetuksissa."
       ]
     },
     "Calendar attachment tooltip": {
@@ -7593,8 +7584,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8577,12 +8567,6 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Poista käytöstä etsiäksesi vain päiväyksen, nimen, sähköpostiosoitteen tai aiheen perusteella. Poistaaksesi viestien sisältöhaun käytöstä (ja poistaaksesi sitä varten ladatut viestit), avaa asetukset."
-      ],
-      "Turn on to search the content of your messages": [
-        "Ota käyttöön etsiäksesi viestiesi sisällöstä"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Selaimessa ei ole käytettävissä tallennusominaisuuksia, joita tarvitaan viestin sisältöhaun suorittamiseen."

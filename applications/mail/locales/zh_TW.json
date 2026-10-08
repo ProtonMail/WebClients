@@ -2112,11 +2112,6 @@
         "每年"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }桌面應用程式"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } 疑難問題"
@@ -2242,11 +2237,6 @@
       ],
       "Take a tour": [
         "瀏覽"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "來自先前匯入的重複項目將被略過。可在 ${ PRODUCT_NAMES.EASY_SWITCH } 設定中復原或匯入較舊的訊息。"
       ]
     },
     "Calendar attachment tooltip": {
@@ -7688,7 +7678,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -8763,12 +8753,6 @@
       ],
       "Turn off auto-reply": [
         "關閉自動回復"
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "關閉「搜尋郵件內容」後，僅搜尋日期、名稱、電子郵件地址或主旨。若要停用郵件內容搜尋功能(以及刪除已為了此功能而下載的郵件內容)，請至設定。"
-      ],
-      "Turn on to search the content of your messages": [
-        "啟用以搜尋您的郵件內容"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "無法於此瀏覽器存取儲存功能，我們需要此權限以啟用訊息內文搜尋。"
