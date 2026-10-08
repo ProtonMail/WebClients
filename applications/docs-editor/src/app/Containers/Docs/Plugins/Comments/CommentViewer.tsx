@@ -1,6 +1,6 @@
 import React from 'react'
 import type { InitialConfigType } from '@lexical/react/LexicalComposer'
-import DocumentEditorTheme from '../../../../Theme/Theme'
+import DocumentEditorTheme from '../../theme/Theme'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
