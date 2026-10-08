@@ -121,8 +121,13 @@ export const DashboardMeetingList = ({
     // Sticky header positioning
     const { isStuck, stickyRef, previousElementRef } = useSticky({ shouldUseSticky: shouldShowSearchBar });
 
+    const orderedTimeBasedMeetings =
+        sortBy === SortOption.Upcoming
+            ? [...timeBasedMeetings].sort((a, b) => a.adjustedStartTime - b.adjustedStartTime)
+            : timeBasedMeetings;
+
     const { meetingsByDay, meetingsCount } = groupMeetingsByDay(
-        timeBasedMeetings,
+        orderedTimeBasedMeetings,
         selectedSortOption?.groupBy ?? 'adjustedStartTime'
     );
 
