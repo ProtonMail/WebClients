@@ -84,11 +84,19 @@ export class UploadEventHandler {
         const driveClient = isForPhotos
             ? UploadDriveClientRegistry.getDrivePhotosClient()
             : UploadDriveClientRegistry.getDriveClient();
-        await Promise.all(
+        const results = await Promise.allSettled(
             Array.from(this.eventSubscriptions.values()).map((callback) => {
                 return callback(event, driveClient);
             })
         );
+        for (const result of results) {
+            if (result.status === 'rejected') {
+                uploadLogError('Upload event subscriber failed', result.reason, {
+                    uploadId: event.uploadId,
+                    eventType: event.type,
+                });
+            }
+        }
 
         const handler = this.eventHandlers[event.type];
         if (handler) {
