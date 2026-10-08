@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -38,16 +38,16 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
 
     const anchorRef = useRef<HTMLDivElement>(null);
     const { isPaidUser, isSubUser, hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
+    const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
+    const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
 
     const { timeLeftMs } = useMeetingDuration();
 
     const [showRemainingTime, setShowRemainingTime] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
-    const canOpenDropdown = !isPaidUser && !isSubUser;
+    const isFreeAdminOrHost = (isLocalParticipantAdminOrHost || isGuestAdmin) && !isPaidUser && !isSubUser;
 
-    const forceShowPopup = showRemainingTime && canOpenDropdown;
-
-    const isPopupOpen = (isHovered || forceShowPopup) && meetCountdownUpsellEnabled;
+    const isPopupOpen = (isHovered || showRemainingTime) && meetCountdownUpsellEnabled;
 
     const timeLeft = (
         <time dateTime={formatDuration(timeLeftMs)} className="text-tabular-nums" key="time-left">
@@ -70,25 +70,25 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     }, [timeLeftMs, showRemainingTimeEnabled]);
 
     const handleMouseEnter = () => {
-        if (canOpenDropdown) {
+        if (isFreeAdminOrHost) {
             setIsHovered(true);
         }
     };
 
     const handleMouseLeave = () => {
-        if (!forceShowPopup) {
+        if (!showRemainingTime) {
             setIsHovered(false);
         }
     };
 
     const handleFocus = () => {
-        if (canOpenDropdown) {
+        if (isFreeAdminOrHost) {
             setIsHovered(true);
         }
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
-        if (!e.currentTarget.contains(e.relatedTarget as Node) && !forceShowPopup) {
+        if (!e.currentTarget.contains(e.relatedTarget as Node) && !showRemainingTime) {
             setIsHovered(false);
         }
     };
@@ -102,7 +102,7 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
             onFocus={handleFocus}
             onBlur={handleBlur}
             // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-            tabIndex={canOpenDropdown ? 0 : undefined}
+            tabIndex={isFreeAdminOrHost ? 0 : undefined}
             aria-haspopup="dialog"
             aria-expanded={isPopupOpen}
         >
@@ -140,7 +140,9 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
                                 {c('Info').jt`Meeting will end in ${timeLeft}`}
                             </div>
                             <div className="color-weak w-full text-center text-semibold">
-                                {c('Info').t`Free meetings are limited to 1 hour. This call will disconnect soon.`}
+                                {isFreeAdminOrHost
+                                    ? c('Info').t`Free meetings are limited to 1 hour. This call will disconnect soon.`
+                                    : c('Info').t`This meeting has a time limit. This call will disconnect soon.`}
                             </div>
                         </div>
                     </div>
@@ -185,24 +187,17 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const MeetingName = ({ classNames }: MeetingNameProps) => {
-    const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
-    const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
     const roomName = useMeetSelector(selectRoomName);
     const showDuration = useMeetSelector(selectShowDuration);
 
-    const Container = useMemo(
-        () => (isLocalParticipantAdminOrHost || isGuestAdmin ? CTAContainer : React.Fragment),
-        [isLocalParticipantAdminOrHost, isGuestAdmin]
-    );
-
     return (
-        <Container>
+        <CTAContainer>
             <div className={clsx('flex items-center gap-2 flex-nowrap items-baseline', classNames?.root)}>
                 <h1 className={clsx('meeting-name flex-1 text-ellipsis overflow-hidden m-0', classNames?.name)}>
                     {roomName}
                 </h1>
                 {showDuration && <MeetingDuration className={classNames?.duration} />}
             </div>
-        </Container>
+        </CTAContainer>
     );
 };
