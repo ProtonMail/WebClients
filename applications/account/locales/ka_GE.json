@@ -1527,9 +1527,6 @@
       "Set as default": [
         "ნაგულისხმევად დაყენება"
       ],
-      "Set as default mail application": [
-        "ნაგულისხმევ საფოსტო აპლიკაციად დაყენება"
-      ],
       "Set catch-all": [
         "დომენის ყველა ელფოსტის მიღება"
       ],
@@ -2791,11 +2788,6 @@
         "ბოლო ვერსიის პოვნის შეცდომა"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME }-ის პრობლემა"
@@ -2933,11 +2925,6 @@
       ],
       "Take a tour": [
         "გასაცნობი ტური"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "დუბლიკატები წინა იმპორტებიდან გამოტოვებული იქნება. დაბრუნება ან უფრო ძველი შეტყობინებების იმპორტი ${ PRODUCT_NAMES.EASY_SWITCH } პარამეტრებში."
       ]
     },
     "Calendar access select label": {
@@ -4728,12 +4715,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } ${ DRIVE_APP_NAME }-ში გაძლევთ საშუალებას სხვებთან ერთად იმუშაოთ უსაფრთხო, დაშიფრულ გარემოში."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } არ არის თქვენი ნაგულისხმევი საფოსტო აპლიკაცია."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } არის თქვენი ნაგულისხმევი საფოსტო აპლიკაცია."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } ინახავს თქვენს ბიზნეს მონაცემებს უსაფრთხოდ და გაძლევთ საშუალებას გაუგზავნოთ დაშიფრული ელფოსტა ნებისმიერს."
       ],
@@ -5307,12 +5288,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave ან უფრო ძველი"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6721,9 +6696,6 @@
       ],
       "Invalid private key file": [
         "არასწორი პირადი გასაღების ფაილი"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "გადატვირთვის არასწორი ტოკენი. გთხოვთ, განაახლოთ გვერდი და თავიდან სცადოთ."
       ],
       "Invalid Sieve code": [
         "Sieve-ის არასწორი კოდი"
@@ -10069,9 +10041,6 @@
       "default email address": [
         "ნაგულისხმევი ელფოსტის მისამართი"
       ],
-      "Default email application": [
-        "ელ-ფოსტის ნაგულისხმევი აპლიკაცია"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "წაშალეთ ყველა სხვა MX ჩანაწერი ან დარწმუნდით, რომ ${ MAIL_APP_NAME }-ის პრიორიტეტი ყველაზე ნაკლებია."
       ],
@@ -11524,9 +11493,6 @@
       "Session timed out": [
         "სესიის დრო გავიდა"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "დააყენეთ ${ MAIL_APP_NAME } ნაგულისხმევ ელფოსტის კლიენტად. ${ MAIL_APP_NAME } ავტომატურად გაიხსნება, როცა ელფოსტის ბმულს გახსნით."
-      ],
       "Set password": [
         "პაროლის დაყენება"
       ],
@@ -12363,9 +12329,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "როცა გამორთულია, ეს ხელს უშლის დაშორებულ გამოსახულებებს, ჩაიტვირთონ თქვენი ნებართვის გარეშე."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "როდესაც ჩართულია, ჩვენ შევამოწმებთ, არის თუ არა ${ MAIL_APP_NAME } თქვენი ნაგულისხმევი საფოსტო აპლიკაცია და შეგატყობინებთ, თუ ეს ასე არ არის."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName }-სთვის თქვენს იდენტიფიკატორის მომწოდებელში SAML-ის ჩართვისას, შეიძლება გკითხონ, გნებავთ თუ არა უკუკავშირის (ACS) ბმული და გამომცემლის ID გამოიყენოთ. უბრალოდ დააკოპირეთ ქვემოთ მოყვანილი მონაცემები და ჩასვით ისინი იდენტიფიკატორის მომწოდებლის შესაბამის ველებში."
@@ -23893,9 +23856,6 @@
       ],
       "Change second password": [
         "მეორე პაროლის შეცვლა"
-      ],
-      "Check your default mail application": [
-        "შეამოწმეთ თქვენი ნაგულისხმევი საფოსტო აპლიკაცია"
       ],
       "Choose a provider": [
         "აირჩიეთ პროვაიდერი"

@@ -1724,9 +1724,6 @@
       "Set as default": [
         "Définir par défaut"
       ],
-      "Set as default mail application": [
-        "Définir comme application de messagerie par défaut"
-      ],
       "Set catch-all": [
         "Configurer catch-all"
       ],
@@ -3091,8 +3088,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Application de bureau ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Application de bureau ${ appName }"
       ]
     },
     "Bug category": {
@@ -3235,8 +3232,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Les doublons provenant d'importations précédentes seront ignorés. Vous pouvez annuler l'opération ou importer des messages plus anciens dans les paramètres de ${ PRODUCT_NAMES.EASY_SWITCH }."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Vos messages les plus récents seront importés en premier. Les messages que vous avez déjà importés ne seront pas copiés à nouveau."
       ]
     },
     "Calendar access select label": {
@@ -5060,12 +5057,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } dans ${ DRIVE_APP_NAME } vous permet de travailler avec d'autres personnes dans un environnement chiffré et sécurisé."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } n'est pas votre application de messagerie par défaut."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } est votre application de messagerie par défaut."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } garantit la sécurité de vos données et permet d'envoyer des e-mails chiffrés à tout le monde."
       ],
@@ -5651,12 +5642,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave ou version plus ancienne"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -7155,9 +7140,6 @@
       "Invalid private key file": [
         "Fichier de clé privée invalide"
       ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Le jeton de réinitialisation n'est pas valide. Veuillez actualiser la page et réessayer."
-      ],
       "Invalid Sieve code": [
         "Code Sieve invalide"
       ],
@@ -7579,6 +7561,9 @@
       "There was an error, please try again.": [
         "Une erreur s’est produite, veuillez réessayer."
       ],
+      "This code or link is no longer valid. Please try again.": [
+        "Ce code ou ce lien n'est plus valide. Veuillez réessayer."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
       ],
@@ -7743,6 +7728,9 @@
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Votre mot de passe n'a pas pu être réinitialisé. Veuillez réessayer."
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
@@ -10794,9 +10782,6 @@
       "default email address": [
         "adresse e-mail par défaut"
       ],
-      "Default email application": [
-        "Application de messagerie par défaut"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Supprimez les autres enregistrements MX ou assurez-vous que la priorité de ${ MAIL_APP_NAME } est le nombre le plus bas."
       ],
@@ -12402,9 +12387,6 @@
       "Session timed out": [
         "La session a expiré."
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Définissez ${ MAIL_APP_NAME } comme votre application de messagerie par défaut. ${ MAIL_APP_NAME } s’ouvrira automatiquement lorsque vous cliquerez sur un lien de messagerie."
-      ],
       "Set password": [
         "Définir le mot de passe"
       ],
@@ -12510,6 +12492,9 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Quelque chose n'a pas fonctionné. Veuillez réessayer ou contacter le service clients."
+      ],
+      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
+        "Bientôt, vous entrerez votre adresse e-mail (ou nom d'utilisateur) et votre mot de passe en 2 étapes séparées au lieu de sur une seule page."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Indiquez le domaine autorisant l'authentification unique (SSO) SAML."
@@ -13312,6 +13297,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
       ],
+      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
+        "Nous changeons la page de connexion de ${ BRAND_NAME }. Votre mot de passe et vos appareils restent les mêmes. ${ learnMore }"
+      ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Nous avons remarqué que certains utilisateurs n'ont pas encore activé leur compte ${ BRAND_NAME }."
       ],
@@ -13347,9 +13335,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Quand elle est désactivée, cette option empêche le chargement d'images distantes à votre insu."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Lorsque cette option est activée, nous vérifierons si ${ MAIL_APP_NAME } est votre application de messagerie par défaut et vous avertirons si ce n'est pas le cas."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quand vous activez SAML pour ${ appName } dans votre fournisseur d'identité, vous pouvez être invité à utiliser l'URL de rappel (ACS) et l'ID de l'émetteur. Il vous suffit de copier-coller les données ci-dessous dans les champs de votre fournisseur d'identité."
@@ -13799,6 +13784,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Les messages de votre organisation sont protégés par un chiffrement de bout en bout grâce à la clé de l'organisation. Cette empreinte peut être utilisée pour vérifier que tous les administrateurs de votre compte ont la même clé."
+      ],
+      "Your password and devices stay the same.": [
+        "Votre mot de passe et vos appareils restent les mêmes."
       ],
       "Your payment details are encrypted and secure": [
         "Vos informations de paiement sont chiffrées et sécurisées"
@@ -15948,7 +15936,7 @@
         "Premier jour de la semaine"
       ],
       "Start with your most recent messages": [
-        "Démarrer avec vos messages les plus récents"
+        "Commencer par vos messages les plus récents"
       ],
       "Starts with": [
         "Commence par"
@@ -25480,9 +25468,6 @@
       "Change second password": [
         "Changer le second mot de passe"
       ],
-      "Check your default mail application": [
-        "Vérifiez votre application de messagerie par défaut"
-      ],
       "Choose a deployment method": [
         "Choisissez une méthode de déploiement"
       ],
@@ -26797,6 +26782,9 @@
       ],
       "Signed-in reset": [
         "Réinitialisation lorsque connecté"
+      ],
+      "Signing in is changing": [
+        "La connexion évolue"
       ],
       "Simplify email distribution": [
         "Simplifiez la distribution des messages"

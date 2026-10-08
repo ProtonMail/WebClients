@@ -54,6 +54,35 @@
         "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Allow list": [
+        "Daftar izin"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Audit log": [
+        "Log audit"
+      ],
+      "Catch-all": [
+        "Tangkap-semua"
+      ],
+      "Dark mode": [
+        "Mode gelap"
+      ],
+      "Inbox tabs": [
+        "Tab kotak masuk"
+      ],
+      "Light mode": [
+        "Mode terang"
+      ],
+      "Play Store": [
+        "Play Store"
+      ],
+      "Telemetry": [
+        "Telemetri"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Akun"
@@ -166,6 +195,9 @@
         "Tambah filter Sieve"
       ],
       "Add user": [
+        "Tambahkan pengguna"
+      ],
+      "Add users": [
         "Tambahkan pengguna"
       ],
       "Added ${ memberName } as group owner": [
@@ -1110,6 +1142,9 @@
       "Maybe later": [
         "Mungkin nanti"
       ],
+      "Migrate": [
+        "Migrasi"
+      ],
       "More": [
         "Lainnya"
       ],
@@ -1524,9 +1559,6 @@
       "Set as default": [
         "Atur sebagai bawaan"
       ],
-      "Set as default mail application": [
-        "Tetapkan sebagai aplikasi email bawaan"
-      ],
       "Set catch-all": [
         "Tentukan alamat catch-all"
       ],
@@ -1835,6 +1867,9 @@
       ],
       "View all reports": [
         "Lihat seluruh laporan"
+      ],
+      "View guide": [
+        "Lihat panduan"
       ],
       "View invoice": [
         "Lihat faktur"
@@ -2504,6 +2539,11 @@
         "Tahunan"
       ]
     },
+    "Billing type": {
+      "Prepaid": [
+        "Prabayar"
+      ]
+    },
     "Blog": {
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Kebijakan tanpa log ${ VPN_APP_NAME } VPN telah dibuktikan oleh hasil audit eksternal"
@@ -2774,11 +2814,6 @@
         "Versi terbaru gagal ditemukan"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikasi Desktop ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Masalah ${ LUMO_SHORT_APP_NAME }"
@@ -2916,11 +2951,6 @@
       ],
       "Take a tour": [
         "Ikuti tur kami"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikat dari impor sebelumnya akan dilewati. Urungkan atau impor pesan yang lebih lama di pengaturan ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -3178,6 +3208,9 @@
       "${ users } user": [
         "${ users } pengguna"
       ],
+      "Amount due": [
+        "Jumlah yang dibayar"
+      ],
       "Started ${ formattedStartDate }": [
         "Dimulai sejak ${ formattedStartDate }"
       ],
@@ -3192,6 +3225,9 @@
       ],
       "Subtotal for ${ cycle } month": [
         "Subtotal untuk ${ cycle } bulan"
+      ],
+      "Summary": [
+        "Ringkasan"
       ],
       "Total": [
         "Total"
@@ -4699,12 +4735,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } di ${ DRIVE_APP_NAME } memungkinkan Anda untuk saling bekerja sama dalam lingkungan yang aman dan terenkripsi."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } bukan aplikasi email bawaan Anda."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } adalah aplikasi email bawaan Anda."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } menjaga keamanan data bisnis Anda dan memungkinkan pengiriman email terenkripsi kepada siapa saja."
       ],
@@ -5273,12 +5303,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave atau lebih lama"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6678,9 +6702,6 @@
       "Invalid private key file": [
         "File kunci pribadi tidak valid"
       ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Token atur ulang tidak valid. Silakan muat ulang halaman dan coba lagi."
-      ],
       "Invalid Sieve code": [
         "Kode Sieve tidak valid"
       ],
@@ -8048,6 +8069,17 @@
         "Terabita"
       ]
     },
+    "Filter": {
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arsipkan"
@@ -8584,6 +8616,9 @@
       "Contact us": [
         "Hubungi kami"
       ],
+      "Downloads": [
+        "Unduhan"
+      ],
       "Enjoying ${ planName }?": [
         "Menikmati ${ planName }?"
       ],
@@ -8945,6 +8980,9 @@
       "Failed": [
         "Gagal"
       ],
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
       "Imported": [
         "Diimpor"
       ],
@@ -8959,6 +8997,9 @@
       ],
       "Paused": [
         "Dijeda"
+      ],
+      "Pending": [
+        "Tertunda"
       ],
       "Undo finished": [
         "Pengurungan selesai"
@@ -9453,6 +9494,9 @@
       ],
       "All (${ totalFoldersCount } label)": [
         "Semua (${ totalFoldersCount } label)"
+      ],
+      "All admins": [
+        "Semua admin"
       ],
       "All data and settings are preserved": [
         "Semua data dan pengaturan dipertahankan"
@@ -9951,9 +9995,6 @@
       ],
       "default email address": [
         "alamat email bawaan"
-      ],
-      "Default email application": [
-        "Aplikasi email bawaan"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Hapus rekaman data MX lainnya atau pastikan Proritas ${ MAIL_APP_NAME } berada pada tingkatan terendah."
@@ -10978,6 +11019,9 @@
       "On": [
         "Nyala"
       ],
+      "On Ubuntu?": [
+        "Di Ubuntu?"
+      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Setelah akses ke akun diberikan, mereka dapat mengakses pengaturan **Pemulihan** Anda dan **mengubah kata sandi ${ ACCOUNT_APP_NAME }** untuk Anda."
       ],
@@ -11397,9 +11441,6 @@
       ],
       "Session timed out": [
         "Waktu sesi habis"
-      ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Tetapkan ${ MAIL_APP_NAME } sebagai aplikasi email bawaan Anda. Ke depannya, ${ MAIL_APP_NAME } akan terbuka secara otomatis pada saat Anda mengklik tautan email."
       ],
       "Set password": [
         "Atur kata sandi"
@@ -12232,9 +12273,6 @@
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Saat dinonaktifkan, ini mencegah gambar jarak jauh dimuat tanpa sepengetahuan Anda."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Saat diaktifkan, aplikasi akan memeriksa apakah ${ MAIL_APP_NAME } adalah aplikasi email bawaan Anda dan akan memberi tahu jika bukan."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pada saat mengaktifkan SAML untuk ${ appName } di layanan penyedia identitas Anda, Anda mungkin akan diminta untuk menggunakan URL Callback (ACS) dan Issuer ID. Cukup salin dan tempel data di bawah ini ke kolom yang disediakan oleh penyedia identitas Anda."
       ],
@@ -12306,6 +12344,9 @@
       ],
       "Yearly": [
         "Tahunan"
+      ],
+      "You": [
+        "Anda"
       ],
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
@@ -12825,6 +12866,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Dihadiahkan"
+      ],
+      "Open": [
+        "Buka"
       ],
       "Paid": [
         "Lunas"
@@ -13553,6 +13597,9 @@
       "Backup password": [
         "Kata sandi cadangan"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Ditagihkan sebesar ${ priceYearly } setiap 12 bulan."
       ],
@@ -13639,6 +13686,9 @@
       ],
       "City": [
         "Kota"
+      ],
+      "Client": [
+        "Klien"
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
@@ -14164,6 +14214,9 @@
       ],
       "Logo": [
         "Logo"
+      ],
+      "Mail": [
+        "Surat"
       ],
       "Mail Server (IMAP)": [
         "Server Mail (IMAP)"
@@ -14777,6 +14830,9 @@
       "Updates - Automated confirmations, alerts, and account updates": [
         "Pembaruan - Konfirmasi otomatis, peringatan, dan pembaruan akun"
       ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
       "Upload 1 or more encryption keys": [
         "Unggah setidaknya 1 kunci enkripsi"
       ],
@@ -15313,6 +15369,9 @@
       "Sign in": [
         "Masuk"
       ],
+      "Snap store": [
+        "Snap store"
+      ],
       "switch account": [
         "ganti akun"
       ],
@@ -15821,6 +15880,11 @@
       ],
       "Sign in": [
         "Masuk"
+      ]
+    },
+    "Members table usage": {
+      "Yesterday": [
+        "Kemarin"
       ]
     },
     "Message": {
@@ -17303,6 +17367,11 @@
         "Daftar periksa pemulihan"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } dibuat"
@@ -18010,6 +18079,14 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Paket Anda meliputi ruang penyimpanan tambahan hingga ${ humanReadableAvailableSpace }."
+      ]
+    },
+    "organization key reset": {
+      "Reset key": [
+        "Atur ulang kunci"
+      ],
+      "See users": [
+        "Lihat pengguna"
       ]
     },
     "Organization logo upload": {
@@ -19275,6 +19352,26 @@
       ],
       "Secondary time zone": [
         "Zona waktu sekunder"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
       ]
     },
     "Property type": {
@@ -21823,6 +21920,9 @@
       "Sign-in requested on another device. Was it you?": [
         "Terdapat permintaan entri masuk pada perangkat lainnya. Apakah ini Anda?"
       ],
+      "Signing in": [
+        "Masuk"
+      ],
       "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
         "Single sign-on dapat tidak berfungsi dengan benar tanpa identitas organisasi. Atur identitas organisasi Anda untuk memastikan autentikasi yang terjamin."
       ],
@@ -21904,6 +22004,9 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Membatalkan langganan Anda, mohon menunggu"
+      ],
+      "Enabled": [
+        "Diaktifkan"
       ]
     },
     "Status": {
@@ -21912,6 +22015,9 @@
       ],
       "... waiting": [
         "... menunggu"
+      ],
+      "Activated": [
+        "Diaktifkan"
       ],
       "Active": [
         "Aktif"
@@ -21969,6 +22075,11 @@
       ],
       "Verify ${ value }": [
         "Verifikasi ${ value }"
+      ]
+    },
+    "Step": {
+      "Final step": [
+        "Langkah terakhir"
       ]
     },
     "Step in filter modal": {
@@ -23070,6 +23181,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -23573,9 +23687,6 @@
       "Change second password": [
         "Ubah kata sandi kedua"
       ],
-      "Check your default mail application": [
-        "Periksa aplikasi email bawaan Anda"
-      ],
       "Choose a provider": [
         "Pilih penyedia"
       ],
@@ -24074,6 +24185,9 @@
       "Filters": [
         "Filter"
       ],
+      "Final step": [
+        "Langkah terakhir"
+      ],
       "Find email or username": [
         "Cari email atau nama pengguna"
       ],
@@ -24371,6 +24485,9 @@
       "Name": [
         "Nama"
       ],
+      "Need help?": [
+        "Perlu bantuan?"
+      ],
       "Need more labels or folders?": [
         "Butuh lebih banyak label atau folder?"
       ],
@@ -24517,6 +24634,9 @@
       ],
       "Priority support:": [
         "Dukungan prioritas:"
+      ],
+      "Privacy": [
+        "Privasi"
       ],
       "Privacy and data collection": [
         "Privasi dan pengumpulan data"
@@ -25064,6 +25184,9 @@
       "What is the dark web?": [
         "Apa itu dark web?"
       ],
+      "Windows": [
+        "Windows"
+      ],
       "Wipe all logs?": [
         "Hapus seluruh log?"
       ],
@@ -25227,11 +25350,17 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Pembayaran"
+      ],
       "End date": [
         "Tanggal berakhir"
       ],
       "Plan": [
         "Paket"
+      ],
+      "Start date": [
+        "Tanggal mulai"
       ],
       "Status": [
         "Status"
@@ -26045,6 +26174,15 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Undangan terkirim, menunggu balasan dari anggota yang diundang"
+      ],
+      "Invited": [
+        "Diundang"
+      ],
+      "Pending": [
+        "Tertunda"
+      ],
+      "Requested": [
+        "Diminta"
       ],
       "SSO user provided by your identity provider": [
         "Pengguna SSO disediakan oleh penyedia identitas Anda"

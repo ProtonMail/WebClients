@@ -1524,9 +1524,6 @@
       "Set as default": [
         "デフォルトとして設定"
       ],
-      "Set as default mail application": [
-        "デフォルトのメールアプリとして設定"
-      ],
       "Set catch-all": [
         "Catch-All を設定"
       ],
@@ -2774,11 +2771,6 @@
         "最新バージョンが見つかりませんでした"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } デスクトップアプリ"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } の不具合"
@@ -2916,11 +2908,6 @@
       ],
       "Take a tour": [
         "ツアーを開始"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "以前のインポートとの重複はスキップされます。元に戻す、またはより古いメッセージをインポートするには、${ PRODUCT_NAMES.EASY_SWITCH }設定に移動してください。"
       ]
     },
     "Calendar access select label": {
@@ -4699,12 +4686,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME }の${ DOCS_SHORT_APP_NAME }では、安全で暗号化された環境で他の人と共同作業ができます。"
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME }はデフォルトのメールアプリではありません。"
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME }はお客様のデフォルトのメールアプリです。"
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME }はビジネスデータを安全に保ち、誰にでも暗号化済みメールを送信できるようにします。"
       ],
@@ -5273,12 +5254,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave 以前"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6698,9 +6673,6 @@
       ],
       "Invalid private key file": [
         "無効な秘密鍵ファイル"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "無効なリセットトークンです。ページを再読み込みして、もう一度お試しください。"
       ],
       "Invalid Sieve code": [
         "無効な Sieve コード"
@@ -10011,9 +9983,6 @@
       "default email address": [
         "既定のメールアドレス"
       ],
-      "Default email application": [
-        "既定のメールアプリ"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
       ],
@@ -11460,9 +11429,6 @@
       "Session timed out": [
         "セッションがタイムアウトしました"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定しましょう。メールのリンクをクリックした時に、自動で${ MAIL_APP_NAME }が開きます。"
-      ],
       "Set password": [
         "パスワードを設定"
       ],
@@ -12305,9 +12271,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "無効にすることで、お客様の知らないうちにリモートが画像が読み込まれるのを防ぎます。"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "有効にすると、${ MAIL_APP_NAME }がデフォルトのメールアプリであるかを確認し、そうでない場合は通知します。"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "ID プロバイダーで ${ appName } の SAML を有効にすると、コールバック (ACS) URL と発行者 ID を使用するように求められる場合があります。以下のデータをコピーして ID プロバイダーのフィールドに貼り付けるだけです。"
@@ -23713,9 +23676,6 @@
       ],
       "Change second password": [
         "セカンドパスワードを変更"
-      ],
-      "Check your default mail application": [
-        "デフォルトのメールアプリを確認する"
       ],
       "Choose a provider": [
         "プロバイダーを選択"

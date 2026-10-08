@@ -1524,9 +1524,6 @@
       "Set as default": [
         "Postavi kao zadano"
       ],
-      "Set as default mail application": [
-        "Postavi kao zadanu apl. e-pošte"
-      ],
       "Set catch-all": [
         "Postavi dohvati-sve"
       ],
@@ -2802,11 +2799,6 @@
         "Učitavanje najnovije verzije nije uspjelo"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } stolna apl."
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problem s ${ LUMO_SHORT_APP_NAME }"
@@ -2944,11 +2936,6 @@
       ],
       "Take a tour": [
         "Započnite obilazak"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikati iz prethodnih uvoza bit će preskočeni. Poništite ili uvezite starije poruke u postavkama za ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -4751,12 +4738,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } u ${ DRIVE_APP_NAME } omogućuje vam suradnju s drugima u sigurnom, šifriranom okruženju."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } nije vaša zadana apl. e-pošte."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } je vaša zadana apl. e-pošte."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } čuva sigurnost vaših poslovnih podataka i omogućuje vam slanje šifrirane e-pošte bilo kome."
       ],
@@ -5335,12 +5316,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave ili stariji"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6759,9 +6734,6 @@
       ],
       "Invalid private key file": [
         "Nevažeća datoteka privatnog ključa"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Nevažeći token za ponovno pokretanje. Osvježite stranicu i pokušajte ponovno."
       ],
       "Invalid Sieve code": [
         "Nevažeći Sieve kôd"
@@ -10174,9 +10146,6 @@
       "default email address": [
         "zadana adresa e-pošte"
       ],
-      "Default email application": [
-        "Zadano apl. e-pošte"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Izbrišite sve ostale MX zapise ili se pobrinite da prioritet ${ MAIL_APP_NAME } bude najniži broj."
       ],
@@ -11638,9 +11607,6 @@
       "Session timed out": [
         "Sesija je istekla"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Postavite ${ MAIL_APP_NAME } kao Vaše zadano apl. e-pošte. ${ MAIL_APP_NAME } otvorit će se automatski kada kliknete poveznicu e-pošte."
-      ],
       "Set password": [
         "Postavi lozinku"
       ],
@@ -12483,9 +12449,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Kada je onemogućeno, ovo sprječava učitavanje udaljenih slika bez vašeg znanja."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Kada je omogućeno, provjerit ćemo je li ${ MAIL_APP_NAME } vaša zadana apl. e-pošte i obavijestiti vas ako nije."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Prilikom omogućavanja SAML-a za aplikaciju ${ appName } kod vašeg davatelja identiteta, možda će se od vas tražiti da upotrijebite URL za povratni poziv (ACS) i ID izdavatelja. Samo kopirajte i zalijepite podatke u nastavku u polja svog davatelja identiteta."
@@ -24178,9 +24141,6 @@
       ],
       "Change second password": [
         "Promijeni drugu lozinku"
-      ],
-      "Check your default mail application": [
-        "Provjerite svoju zadanu apl. e-pošte"
       ],
       "Choose a provider": [
         "Odaberite pružatelja usluga"
