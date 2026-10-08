@@ -232,11 +232,6 @@ const convertDocument = async ({ uid, type }: { uid: string; type: DocumentType 
     getNewWindow(buildDocumentUrl({ type, mode: 'convert', volumeId, linkId: nodeId }).toString());
 };
 
-export const openDocumentHistory = async ({ uid, type }: { uid: string; type: DocumentType | ProtonDocumentType }) => {
-    const { volumeId, nodeId } = splitNodeUid(uid);
-    getNewWindow(buildDocumentUrl({ type, mode: 'history', volumeId, linkId: nodeId }).toString());
-};
-
 export const openDocsOrSheetsDocument = async ({
     uid,
     type,

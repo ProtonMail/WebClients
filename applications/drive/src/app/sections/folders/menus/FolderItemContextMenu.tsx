@@ -1,6 +1,7 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import { ContextSeparator } from '@proton/components';
+import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { ItemContextMenu } from '../../../legacy/components/sections/ContextMenu/ItemContextMenu';
@@ -58,6 +59,8 @@ export function FolderItemContextMenu({
     );
 
     const canCopyPublicLink = canShareSelectedItem && selectedItem?.isSharedPublicly;
+    const canShowVersionHistory =
+        permissions.canEdit && isOnlyOneFileItem && !isNativeProtonDocsAppFile(selectedItem.mimeType);
 
     const openInDocsInfo = selectedItem?.mimeType ? getOpenInDocsInfo(selectedItem.mimeType) : undefined;
     const hasPreviewAvailable =
@@ -99,12 +102,11 @@ export function FolderItemContextMenu({
             )}
             <DetailsButton type="context" selectedItems={selectedItems} onClick={showDetailsModal} close={close} />
             {(permissions.canEdit || permissions.canReportAbuse) && <ContextSeparator />}
-            {permissions.canEdit && isOnlyOneFileItem && (
+            {canShowVersionHistory && (
                 <>
                     <RevisionsContextButton
                         nodeUid={selectedItem.uid}
                         rootShareId={selectedItem.rootShareId}
-                        mediaType={selectedItem.mimeType}
                         showRevisionsModal={showRevisionsModal}
                         close={close}
                     />
