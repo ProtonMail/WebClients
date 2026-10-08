@@ -16,7 +16,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { setScrollableTablesActive } from '@lexical/table'
 import { TableOfContents } from '../../Components/TableOfContents/TableOfContents'
 import DocsLayout from '../DocsLayout'
-import { getDocsLayoutScrollContainer } from '../docsLayoutUtils'
+import { getDocsLayoutScrollContainer } from './Layout/docsLayoutUtils'
 import { ReadonlyLinkFixPlugin } from './Plugins/Link/ReadonlyLinkFixPlugin'
 import { useDocsDependencies } from './DocsDependenciesProvider'
 
