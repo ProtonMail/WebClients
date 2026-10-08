@@ -9,6 +9,7 @@
  * - Complex markdown
  * - Edge cases (empty content, special characters, etc.)
  * - Artifact panel viz format boundary (document chat-fences vs presentation chart placeholders)
+ * - Standalone artifact types for UI: code, webpage (HTML/JS preview), document (WYSIWYG email)
  *
  * Usage:
  * 1. Open the Performance Monitor (Cmd/Ctrl + Shift + P)
@@ -167,71 +168,7 @@ const TEST_CONTENT_SAMPLES: Record<string, TestContentSample> = {
         name: 'Image Mixed with Markdown',
         content: `# Article with Images\n\nSome **introductory** text before the image.\n\n![Header image](https://example.com/header.jpg)\n\n## Section\n\n- List item with ![icon](https://example.com/icon.png) inline\n- Another item\n\n> Blockquote with an image: ![quote](https://example.com/quote.png)\n\nFinal paragraph.`,
     },
-    artifact_panel_test: {
-        name: 'Artifact Panel & Chip Test',
-        content: `Here is a revised version. It maintains a stern, no-nonsense tone but removes the emotional language ("disappointing," "neglect") to focus strictly on the facts and the breach of the rental agreement. It is direct and leaves no room for ambiguity, yet it avoids the personal attacks that could backfire legally.
-
-**Key adjustments in this version:**
-*   **Removed Emotional Language:** Replaced "disappointing" and "neglect" with "material breach" and "failure." This sounds more legal and less personal.
-*   **Direct Tone:** Uses "I am hereby requesting" and "I require" to establish authority.
-*   **Clear Consequences:** States the next steps as a logical outcome of inaction rather than a threat.
-
-Would you like to refine the deadline date or the specific percentage before sending?`,
-        blocks: [
-            makeArtifactToolCallBlock(
-                {
-                    id: 'landlord-letter',
-                    type: 'document',
-                    title: 'Final Notice: Unresolved Maintenance and Rent Adjustment',
-                    content: `Subject: URGENT: Unresolved Maintenance Issues and Rent Adjustment Request - [Your Address/Unit Number]
-
-Dear Mr. Big Pants,
-
-I am writing to formally notify you that the following critical issues in my unit remain unresolved despite my previous requests:
-
-1.  **Broken Window:** The window in the [specific room] is still broken. This is a security hazard and a violation of the warranty of habitability.
-2.  **Noise Nuisance:** Your dog's excessive barking continues to disturb the peace and quiet enjoyment of the property.
-3.  **Uninstalled Washer:** The washing machine provided has not been installed, rendering a promised amenity unusable.
-
-These failures constitute a material breach of the lease agreement. As a result, the current rent amount is no longer justified given the diminished condition and utility of the unit.
-
-I am hereby requesting a rent reduction of [Amount or Percentage]% effective immediately, retroactive to [Date of first report], until these issues are fully resolved. Additionally, I require that you arrange for the installation of the washing machine by [Date].
-
-Please provide written confirmation of this rent adjustment and a scheduled date for the washer installation by [Response Deadline, e.g., 5 business days]. Failure to address these matters will leave me no choice but to file a formal complaint with the local housing authority and pursue all applicable legal remedies, including rent withholding and damages.
-
-I expect a prompt response.
-
-Sincerely,
-
-[Your Name]
-[Your Phone Number]`,
-                },
-                'call-artifact-panel'
-            ),
-        ],
-    },
-    artifact_simple_test: {
-        name: 'Simple Artifact Test',
-        content: `This is a simple test to debug the artifact functionality.
-
-This should show an artifact chip and panel.`,
-        blocks: [
-            makeArtifactToolCallBlock(
-                {
-                    id: 'hello-world',
-                    type: 'code',
-                    language: 'javascript',
-                    title: 'Hello World',
-                    content: `function helloWorld() {
-    console.log("Hello, World!");
-}
-
-helloWorld();`,
-                },
-                'call-artifact-simple'
-            ),
-        ],
-    },
+    // --- Artifacts (Test Renderer list order: chat viz reference → document → code → webpage → slides → multi) ---
     chat_viz_fences_reference: {
         name: 'Chat viz (reference): card-row + vega-lite in message body',
         content: `Same markdown as the document artifact viz fixture, rendered **in chat** (not the side panel):
@@ -246,10 +183,152 @@ ${DOCUMENT_WITH_CHAT_VIZ_BLOCKS}`,
                 {
                     id: 'viz-format-document',
                     type: 'document',
-                    title: 'Proton 2028 Vision (viz fixture)',
+                    title: 'Document · card-row→table, card→quote, vega-lite→live chart',
                     content: DOCUMENT_WITH_CHAT_VIZ_BLOCKS,
                 },
                 'call-artifact-viz-document'
+            ),
+        ],
+    },
+    artifact_ui_document_email: {
+        name: 'Artifact panel: document (invitation email / WYSIWYG)',
+        content: `Open the **document** artifact and switch to rich-text edit to exercise the WYSIWYG editor. Content is a casual invitation email with bold text and a numbered list.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'artifact-ui-birthday-party-email',
+                    type: 'document',
+                    title: 'Document · invitation email (bold, numbered list; WYSIWYG edit)',
+                    content: `**Subject:** 🎂 Birthday Party at My Place this Saturday!
+
+**Hey everyone!**
+
+Hope you're all having a great week! I wanted to invite you to a birthday party at my place this Saturday, starting at 7 PM.
+
+What's the plan? Cake, snacks, good drinks, and good company. I'll handle the cake and main treats (trust me, there's plenty to go around), and I'd love for everyone to bring whatever drinks they'd like to enjoy. Whether you're into beer, wine, cocktails, or something non-alcoholic — feel free to bring what you fancy.
+
+**When:** Saturday at 7 PM **Where:** My place (I'll send the address if you don't already have it!)
+
+Please reply to let me know:
+
+1. How many people you'll be bringing (just so I can plan enough cake and seating)
+2. What drinks you'll be bringing (or if you'd like me to handle everything)
+3. oh my gosh
+
+Looking forward to celebrating with you all! Let me know if you have any dietary restrictions too.
+
+Cheers,
+[Your Name]
+
+---
+
+**P. S.** If you have a favorite party snack or dessert you'd like to share, feel free to bring it along too!`,
+                },
+                'call-artifact-ui-document-email'
+            ),
+        ],
+    },
+    artifact_ui_code: {
+        name: 'Artifact panel: code (TypeScript)',
+        content: `Open the **code** artifact to check syntax highlighting, line numbers, and panel chrome.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'artifact-ui-ts-helper',
+                    type: 'code',
+                    language: 'typescript',
+                    title: 'Code · TypeScript RSVP helper (syntax highlight, line numbers)',
+                    content: `type Rsvp = { name: string; guests: number; bringingDrinks: boolean };
+
+export function countGuests(rsvps: Rsvp[]): number {
+    return rsvps.reduce((total, rsvp) => {
+        return total + 1 + rsvp.guests;
+    }, 0);
+}
+
+const sample: Rsvp[] = [
+    { name: 'Alex', guests: 1, bringingDrinks: true },
+    { name: 'Sam', guests: 0, bringingDrinks: false },
+];
+
+console.log(\`Expected headcount: \${countGuests(sample)}\`);`,
+                },
+                'call-artifact-ui-code'
+            ),
+        ],
+    },
+    artifact_ui_webpage: {
+        name: 'Artifact panel: webpage (HTML + JS)',
+        content: `Open the **webpage** artifact. Use preview vs source toggle; the page should show a styled counter button.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'artifact-ui-webpage-counter',
+                    type: 'webpage',
+                    title: 'Webpage · sandbox preview: gradient card + “+1 guest” button',
+                    content: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birthday RSVP demo</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+      color: #f4f4f5;
+    }
+    .card {
+      background: #fff;
+      color: #18181b;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      text-align: center;
+      max-width: 320px;
+    }
+    h1 { font-size: 1.25rem; margin: 0 0 0.5rem; }
+    p { margin: 0 0 1.25rem; color: #52525b; font-size: 0.9rem; }
+    #count { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+    button {
+      background: #6d4aff;
+      color: #fff;
+      border: none;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:active { transform: scale(0.98); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Birthday party RSVPs</h1>
+    <p>Click to simulate another guest replying.</p>
+    <div id="count">0</div>
+    <button type="button" id="btn">+1 guest</button>
+  </div>
+  <script>
+    (function () {
+      var n = 0;
+      var el = document.getElementById('count');
+      document.getElementById('btn').addEventListener('click', function () {
+        n += 1;
+        el.textContent = String(n);
+      });
+    })();
+  </script>
+</body>
+</html>`,
+                },
+                'call-artifact-ui-webpage'
             ),
         ],
     },
@@ -261,7 +340,7 @@ ${DOCUMENT_WITH_CHAT_VIZ_BLOCKS}`,
                 {
                     id: 'viz-format-slides-wrong',
                     type: 'presentation',
-                    title: 'Power of Artifacts Deck (wrong chart format)',
+                    title: 'Slides · chat vega-lite fence rewritten to bar chart in slide',
                     content: PRESENTATION_WITH_VEGA_LITE_FENCE,
                 },
                 'call-artifact-viz-slides-wrong'
@@ -276,7 +355,7 @@ ${DOCUMENT_WITH_CHAT_VIZ_BLOCKS}`,
                 {
                     id: 'viz-format-slides-ok',
                     type: 'presentation',
-                    title: 'Chart slide (correct placeholder)',
+                    title: 'Slides · lumo-vega-lite placeholder renders SVG bar chart',
                     content: PRESENTATION_WITH_CHART_PLACEHOLDER,
                 },
                 'call-artifact-viz-slides-ok'
@@ -295,7 +374,7 @@ This test should show two artifacts: one document and one code block.`,
                 {
                     id: 'sample-document',
                     type: 'document',
-                    title: 'Sample Document',
+                    title: 'Document · markdown headings, bullets, inline code',
                     content: `# Sample Document
 
 This is a **markdown** document with some content.
@@ -315,7 +394,7 @@ Here's some inline code: \`console.log("test")\``,
                     id: 'python-script',
                     type: 'code',
                     language: 'python',
-                    title: 'Python Script',
+                    title: 'Code · Python factorial (syntax highlight, line numbers)',
                     content: `def factorial(n):
     if n <= 1:
         return 1
