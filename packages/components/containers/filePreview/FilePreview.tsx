@@ -304,6 +304,11 @@ export const FilePreviewContent = ({
             return <SandboxedPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
         }
 
+        // A thumbnail skips the early loader, but only images can render it --> keep loading until contents arrive
+        if (isLoading) {
+            return <PreviewLoader />;
+        }
+
         return (
             <div className="file-preview-container">
                 <UnsupportedPreview onDownload={onDownload} tooLarge={isTooLarge} />
