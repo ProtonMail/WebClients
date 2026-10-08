@@ -1297,11 +1297,6 @@
         "年払い"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } デスクトップアプリ"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } の不具合"
@@ -5371,6 +5366,9 @@
       ],
       "Symbols (#$&)": [
         "記号 (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "現在アクセスが集中しているため、一時的にご利用いただけません。後ほど再度お試しください。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
