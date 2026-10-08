@@ -880,11 +880,6 @@
         "Sat"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikasi Desktop ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Masalah ${ LUMO_SHORT_APP_NAME }"
@@ -1084,6 +1079,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Amount due": [
+        "Jumlah yang dibayar"
       ],
       "Subtotal": [
         "Subtotal"
@@ -3293,6 +3291,9 @@
       ],
       "City": [
         "Kota"
+      ],
+      "Client": [
+        "Klien"
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
