@@ -5418,6 +5418,42 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2(@opentelemetry/api@1.9.1)(@types/node@26.0.0)(@vitest/browser-playwright@5.0.2)(@vitest/coverage-v8@5.0.2)(@vitest/ui@5.0.2)(happy-dom@20.14.5)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@26.0.0)(@typescript/typescript6@6.0.2))(vite@8.3.1(@types/node@26.0.0)(jiti@2.7.0))
 
+  packages/console:
+    devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
+      '@proton/vitest-config':
+        specifier: workspace:^
+        version: link:../vitest-config
+      '@testing-library/jest-dom':
+        specifier: ^6.9.1
+        version: 6.9.1
+      '@typescript/native':
+        specifier: npm:typescript@^7.0.2
+        version: typescript@7.0.2
+      '@vitejs/plugin-react':
+        specifier: ^6.1.1
+        version: 6.1.1(vite@8.3.1(@types/node@26.0.0)(jiti@2.7.0))
+      '@vitest/coverage-v8':
+        specifier: ^5.0.2
+        version: 5.0.2(@vitest/browser@5.0.2)(vitest@5.0.2)
+      '@vitest/ui':
+        specifier: ^5.0.2
+        version: 5.0.2(vitest@5.0.2)
+      eslint:
+        specifier: ^10.11.0
+        version: 10.11.0(jiti@2.7.0)(supports-color@11.0.0)
+      happy-dom:
+        specifier: ^20.14.5
+        version: 20.14.5
+      typescript:
+        specifier: npm:@typescript/typescript6@^6.0.2
+        version: '@typescript/typescript6@6.0.2'
+      vitest:
+        specifier: ^5.0.2
+        version: 5.0.2(@opentelemetry/api@1.9.1)(@types/node@26.0.0)(@vitest/browser-playwright@5.0.2)(@vitest/coverage-v8@5.0.2)(@vitest/ui@5.0.2)(happy-dom@20.14.5)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@26.0.0)(@typescript/typescript6@6.0.2))(vite@8.3.1(@types/node@26.0.0)(jiti@2.7.0))
+
   packages/cross-storage:
     dependencies:
       '@proton/shared':

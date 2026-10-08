@@ -289,6 +289,10 @@
             "ignore": ["containers/filePreview/iwad/**"],
             "ignoreDependencies": ["core-js"]
         },
+        "packages/console": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
         "packages/cross-storage": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
