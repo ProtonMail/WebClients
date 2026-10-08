@@ -12,7 +12,6 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { inboxDesktopHasPrintDialogOption, inboxDesktopPrintDialog } from '@proton/shared/lib/desktop/printing/print';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import MessageBody from '../MessageBody';
@@ -27,10 +26,10 @@ interface Props extends ModalProps {
 const MessagePrintModal = ({ labelID, message, ...rest }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement | null>();
     const { onClose } = rest;
-    const isInboxDesktopPrintDialoglDisabled = useFlag('InboxDesktopSaveAsPdfPrintDialogDisabled');
 
     const handlePrint = async () => {
-        if (!isInboxDesktopPrintDialoglDisabled && inboxDesktopHasPrintDialogOption()) {
+        // A remnant of desktop mail clients pre < 1.14.0; Should be kept.
+        if (inboxDesktopHasPrintDialogOption()) {
             const iframe = iframeRef.current;
             if (!iframe?.contentDocument) {
                 return;
