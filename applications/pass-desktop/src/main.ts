@@ -193,6 +193,8 @@ if (!app.requestSingleInstanceLock()) {
     // Hard-exit: app.quit() is async and would let the rest of this module
     // keep running — including testDeepLinkSupport(), which would fire
     // another protonpass://test and spawn yet another instance. Fork-bomb.
+    // It would also race the primary instance to bind the native-messaging
+    // socket (EADDRINUSE on Windows, socket file stolen on macOS/Linux).
     // Nothing has been initialised yet at this point so no cleanup is owed.
     process.exit(0);
 }

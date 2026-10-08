@@ -37,6 +37,7 @@ import {
 } from '@proton/pass/store/actions/creators/client';
 import { notification } from '@proton/pass/store/actions/creators/notification';
 import type { Api } from '@proton/pass/types/api/api';
+import type { NativeMessageErrorType } from '@proton/pass/types/desktop';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { AppStatus } from '@proton/pass/types/worker/state';
@@ -429,7 +430,11 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 case 'success':
                     return { ok: true };
                 case 'failure':
-                    return { ok: false, error: res.error };
+                    /** Desktop unlock carries the typed `NativeMessageErrorType` (not a localized
+                     * string) so the popup can reconstruct and localize the error at the edge. */
+                    return payload.mode === LockMode.DESKTOP
+                        ? { ok: false, errorType: res.error as NativeMessageErrorType }
+                        : { ok: false, error: res.error };
             }
         })
     );

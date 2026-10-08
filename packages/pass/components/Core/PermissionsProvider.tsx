@@ -16,12 +16,13 @@ type PermissionService = {
     requestPermission: (permissions: Permission[]) => Promise<boolean>;
 };
 
-type PermissionsContextValue = {
+export type PermissionsContextValue = {
     /** Resolves `true` if the permissions are already granted. */
     hasPermission: (permissions: Permission[]) => Promise<boolean>;
     /** Shows a confirmation prompt before invoking the browser permission
      * request. Granting permissions like `nativeMessaging` triggers a worker
-     * reload, so the user must be warned first. Resolves `true` when granted. */
+     * reload, so the user must be warned first. Resolves once the prompt flow
+     * completes (the browser grant result is not surfaced). */
     requestPermission: (permissions: Permission[], opts: PermissionPrompt) => Promise<void>;
 };
 

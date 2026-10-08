@@ -1,7 +1,4 @@
-mod check;
-
-use anyhow::{bail, ensure, Result};
-use check::generic_check_presence;
+use anyhow::{anyhow, ensure, Result};
 use widestring::U16CString;
 use windows::{
     core::{factory, HSTRING, PCWSTR, PWSTR},
@@ -16,6 +13,8 @@ use windows::{
     },
 };
 
+use super::check::{convert, generic_check_presence};
+
 pub struct Biometrics {}
 
 impl super::BiometricsTrait for Biometrics {
@@ -29,24 +28,13 @@ impl super::BiometricsTrait for Biometrics {
     }
 
     fn check_presence(handle: Vec<u8>, reason: String) -> Result<()> {
-        let h = isize::from_le_bytes(handle.clone().try_into().unwrap());
-        let window = HWND(h);
+        let bytes: [u8; 8] = handle.try_into().map_err(|_| anyhow!("Invalid window handle"))?;
+        let window = HWND(isize::from_le_bytes(bytes));
 
         let interop = factory::<UserConsentVerifier, IUserConsentVerifierInterop>()?;
         let operation: IAsyncOperation<UserConsentVerificationResult> =
             unsafe { interop.RequestVerificationForWindowAsync(window, &HSTRING::from(reason))? };
-        let result = operation.get()?;
-
-        match result {
-            UserConsentVerificationResult::Verified => Ok(()),
-            UserConsentVerificationResult::DeviceBusy => bail!("Authentication device is busy."),
-            UserConsentVerificationResult::DeviceNotPresent => bail!("No authentication device found."),
-            UserConsentVerificationResult::DisabledByPolicy => bail!("Authentication device is disabled by policy."),
-            UserConsentVerificationResult::NotConfiguredForUser => bail!("No authentication device configured."),
-            UserConsentVerificationResult::Canceled => bail!("Authentication cancelled."),
-            UserConsentVerificationResult::RetriesExhausted => bail!("There have been too many failed attempts."),
-            _ => bail!("Biometric authentication failed."),
-        }
+        convert(operation.get()?)
     }
 
     fn new_check_presence(reason: String) -> Result<()> {

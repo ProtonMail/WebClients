@@ -3,8 +3,21 @@
   Full MSIX manifest, consumed verbatim by MakerMSIX via the `appManifest`
   option. Replaces (rather than augments) the maker's built-in template
   because that template hardcodes the <Application> block and exposes no
-  hook for adding a windows.protocol Extension. {{Version}} and
-  {{Publisher}} are substituted by forge.config.ts at build time.
+  hook for adding Extensions. Here we declare:
+  - a windows.protocol Extension for `protonpass://` external-login deep
+    links.
+  - a windows.appExecutionAlias so the native-messaging host
+    (proton_pass_nm_host.exe) is launchable by the browser from a stable,
+    update-independent stub outside the protected WindowsApps folder.
+  - disabled filesystem write virtualization so AppData writes (the Firefox
+    host copy in %LOCALAPPDATA%\Proton Pass and the host's own log folder)
+    land at their real paths instead of being redirected into the package's
+    LocalCache.
+  - disabled registry write virtualization so HKCU registry writes (the
+    NativeMessagingHosts keys pointing at the manifests) are visible to
+    browsers outside the package.
+  {{Version}} and {{Publisher}} are substituted by forge.config.ts at build
+  time.
 -->
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
@@ -12,8 +25,10 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
   xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
-  IgnorableNamespaces="uap uap3 desktop2">
+  xmlns:desktop6="http://schemas.microsoft.com/appx/manifest/desktop/windows10/6"
+  IgnorableNamespaces="uap uap3 uap5 desktop desktop2 desktop6">
   <Identity Name="ProtonPass"
           ProcessorArchitecture="x64"
           Version="{{Version}}"
@@ -22,15 +37,22 @@
     <DisplayName>Proton Pass</DisplayName>
     <PublisherDisplayName>Proton AG</PublisherDisplayName>
     <Logo>assets\icon.png</Logo>
+    <!-- Both require the unvirtualizedResources restricted capability (else
+         silently ignored) and min OS 10.0.18362 (Windows 10 1903) per MS docs. -->
+    <desktop6:FileSystemWriteVirtualization>disabled</desktop6:FileSystemWriteVirtualization>
+    <desktop6:RegistryWriteVirtualization>disabled</desktop6:RegistryWriteVirtualization>
   </Properties>
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.18362.0" MaxVersionTested="10.0.18362.0" />
   </Dependencies>
   <Resources>
     <Resource Language="en-US" />
   </Resources>
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
+    <!-- Restricted capability — needs a review justification for Store submission;
+         required for FileSystem/RegistryWriteVirtualization=disabled to take effect. -->
+    <rescap:Capability Name="unvirtualizedResources" />
     <Capability Name="internetClient" />
   </Capabilities>
   <Applications>
@@ -48,6 +70,11 @@
             <uap:DisplayName>Proton Pass Login</uap:DisplayName>
           </uap:Protocol>
         </uap:Extension>
+        <uap3:Extension Category="windows.appExecutionAlias" Executable="app\resources\assets\proton_pass_nm_host.exe" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="proton_pass_nm_host.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
       </Extensions>
     </Application>
   </Applications>
