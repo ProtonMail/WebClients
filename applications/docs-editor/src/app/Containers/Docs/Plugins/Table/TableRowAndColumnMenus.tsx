@@ -16,7 +16,7 @@ import { setColorForSelection } from './TableUtils/setColorForSelection'
 import { $clearCellsInTableSelection } from './TableUtils/clearCellsInTableSelection'
 import { selectColumn } from './TableUtils/selectColumn'
 import { selectRow } from './TableUtils/selectRow'
-import { FontColorMenu } from '../../../../Components/ColorMenu'
+import { FontColorMenu } from '../../Components/ColorMenu'
 import {
   DELETE_TABLE_COLUMN_AT_SELECTION_COMMAND,
   DELETE_TABLE_ROW_AT_SELECTION_COMMAND,
