@@ -107,6 +107,30 @@ describe('useDriveImportStatus', () => {
             expect(result.current.isImporting).toBe(true);
         });
 
+        it('reports a paused import when the backend stopped it', () => {
+            const { result } = renderWithState(
+                easySwitchState({ importer: true, activeState: ApiImporterState.PAUSED })
+            );
+
+            expect(result.current.isPaused).toBe(true);
+            expect(result.current.isImporting).toBe(false);
+            expect(result.current.hasCompletedImport).toBe(false);
+        });
+
+        it('reports a running import again once a paused import is resumed', () => {
+            const { result, rerender } = renderWithState(
+                easySwitchState({ importer: true, activeState: ApiImporterState.PAUSED })
+            );
+            expect(result.current.isPaused).toBe(true);
+
+            const resumedState = easySwitchState({ importer: true, activeState: ApiImporterState.RUNNING });
+            jest.mocked(useEasySwitchSelector).mockImplementation((selector) => selector(resumedState));
+            rerender();
+
+            expect(result.current.isPaused).toBe(false);
+            expect(result.current.isImporting).toBe(true);
+        });
+
         it('is not loaded until the importers have been fetched once', () => {
             const { result } = renderWithState(easySwitchState({ loading: 'pending' }));
 
@@ -153,6 +177,14 @@ describe('useDriveImportStatus', () => {
             act(() => emitEvent(importerEvent(ApiImporterState.FAILED)));
 
             expect(result.current.outcome).toBe('failed');
+        });
+
+        it('reports paused when the backend stops the import', () => {
+            const { result } = renderWithState(easySwitchState({ importer: true }));
+
+            act(() => emitEvent(importerEvent(ApiImporterState.PAUSED)));
+
+            expect(result.current.outcome).toBe('paused');
         });
 
         it('ignores an import that is still running', () => {
