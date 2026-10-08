@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -135,8 +136,10 @@ const SubscriptionRow = ({ row }: { row: SubscriptionRowType }) => {
 const SubscriptionsSection = () => {
     const [subscription, subscriptionLoading] = useSubscription();
     const [user] = useUser();
+    const [entitlementCatalog, entitlementCatalogLoading] = useEntitlementCatalog();
 
-    if (subscriptionLoading || !subscription) {
+    const loading = subscriptionLoading || entitlementCatalogLoading || !entitlementCatalog || !subscription;
+    if (loading) {
         return <Loader />;
     }
 
@@ -146,7 +149,7 @@ const SubscriptionsSection = () => {
     }
 
     const allSubscriptions = getSubscriptionsArray(subscription);
-    const rows = getSubscriptionRows(user, allSubscriptions);
+    const rows = getSubscriptionRows(user, allSubscriptions, entitlementCatalog);
 
     return (
         <div style={{ overflow: 'auto' }}>

@@ -63,7 +63,7 @@ export const getPassAppRoutes = ({
                 available:
                     (hasOrganizationKey || hasOrganization) &&
                     permissions['account.activity_log.read'] &&
-                    (entitlements.orgHasPassActivityMonitor || isPassEssentials),
+                    (entitlements.hasPassActivityMonitor || isPassEssentials),
                 upgradeRequired: isPassEssentials,
                 subsections: [
                     {

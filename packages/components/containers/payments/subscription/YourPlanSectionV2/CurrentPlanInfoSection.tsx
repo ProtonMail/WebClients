@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
@@ -158,6 +159,7 @@ export const CurrentPlanInfoSection = ({
     editBillingCycle = false,
 }: CurrentPlanInfoSectionProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
+    const [entitlementCatalog] = useEntitlementCatalog();
     const { isFree, canPay, isMember } = user;
     const telemetryFlow = useDashboardPaymentFlow(app);
     const goToSettings = useSettingsLink();
@@ -230,7 +232,8 @@ export const CurrentPlanInfoSection = ({
                 isPaidSubscription(subscription) &&
                 willTrialExpireInLessThan1Week(subscription) &&
                 subscriptionExpiresSoon) ||
-            (getTrialInfoForSingleSubscription(subscription).isFamilyTrial && !hasTrialPaymentMethods)
+            (getTrialInfoForSingleSubscription(entitlementCatalog, subscription).isFamilyTrial &&
+                !hasTrialPaymentMethods)
         ) {
             return (
                 <Button onClick={() => handleEditPayment(SUBSCRIPTION_STEPS.CHECKOUT)} data-testid="subscribe">

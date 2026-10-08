@@ -12,6 +12,7 @@ import { OutgoingEmergencyContactTopBanner } from '@proton/account/delegatedAcce
 import { IncomingRecoveryContactTopBanner } from '@proton/account/delegatedAccess/recoveryContact/incoming/IncomingRecoveryContactTopBanner';
 import { OutgoingRecoveryContactTopBanner } from '@proton/account/delegatedAccess/recoveryContact/outgoing/OutgoingRecoveryContactTopBanner';
 import { getTrustedContactRoute } from '@proton/account/delegatedAccess/routes';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -62,7 +63,6 @@ import useShowThemeSelection from '@proton/components/hooks/useShowThemeSelectio
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments/core/subscription/helpers';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -200,7 +200,7 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
-    const [entitlements, loadingEntitlements] = useEntitlementChecks();
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const [{ permissions }] = useUserPermissions();
     const location = useLocation();
 

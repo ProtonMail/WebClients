@@ -33,6 +33,7 @@ import { getCheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import { ADDON_PREFIXES, PLANS } from '@proton/payments/core/constants';
 import { getStaticCouponConfig } from '@proton/payments/core/coupon-config/get-static-coupon-config';
 import { isCSCoupon } from '@proton/payments/core/coupon-config/helpers';
+import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import { DisplayablePaymentError } from '@proton/payments/core/errors';
 import { captureWrongPlanIDs, captureWrongPlanName } from '@proton/payments/core/helpers';
 import type {
@@ -248,6 +249,7 @@ export interface SubscriptionContainerProps {
     // Skip plan transition check if they are handled externally
     skipPlanTransitionChecks?: boolean;
     initialBillingAddress: BillingAddress;
+    entitlementCatalog: EntitlementCatalog;
 }
 
 type SubscriptionContainerOpenCallbackPropKeys =
@@ -320,6 +322,7 @@ const SubscriptionContainerInner = ({
     skipPlanTransitionChecks,
     initialBillingAddress,
     trial,
+    entitlementCatalog,
 }: SubscriptionContainerProps) => {
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
@@ -820,6 +823,7 @@ const SubscriptionContainerInner = ({
             newCycle,
             downgradeIsTrial,
             subscription,
+            entitlementCatalog,
         });
     };
 

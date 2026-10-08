@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -119,6 +120,7 @@ export type UpsellsHook = {
 };
 
 const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUpsellSectionProps) => {
+    const [entitlementCatalog] = useEntitlementCatalog();
     const isFree = user.isFree;
 
     const vpnVariant = useVariant('VPNDashboard');
@@ -135,7 +137,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
     const hasLumoPlus = hasLumo(subscription);
 
     // For users on Ex-Family Unlimited trial, show Unlimited 1m + 12m upsell
-    const exFamilyTrial = getTrialInfoForSingleSubscription(subscription).isFamilyTrial;
+    const exFamilyTrial = getTrialInfoForSingleSubscription(entitlementCatalog, subscription).isFamilyTrial;
 
     // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
     const isFreeUser = hasMailFree || hasDriveFree || hasPassFree || hasVPNFree || hasLumoPlus || hasMeetFree;

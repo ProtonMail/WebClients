@@ -1,9 +1,9 @@
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 import { serverEvent } from '../eventLoop';
-import { type EntitlementsState, entitlementsThunk, selectEntitlements } from './index';
+import { type EntitlementsState, selectEntitlements } from './index';
+import { refetchEntitlementsAndCatalog } from './refetchEntitlementsAndCatalog';
 
 export const entitlementsListener = <T extends EntitlementsState>(startListening: SharedStartListening<T>) => {
     startListening({
@@ -13,7 +13,10 @@ export const entitlementsListener = <T extends EntitlementsState>(startListening
                 (action.payload.OrganizationEntitlements || action.payload.MemberEntitlements) &&
                 selectEntitlements(getState())?.value
             ) {
-                await dispatch(entitlementsThunk({ api: getSilentApi(extra.api), cache: CacheType.None }));
+                await refetchEntitlementsAndCatalog({
+                    dispatch,
+                    api: getSilentApi(extra.api),
+                });
             }
         },
     });

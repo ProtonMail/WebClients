@@ -1,12 +1,12 @@
 import { renderHook } from '@testing-library/react';
 import type { MockedFunction } from 'vitest';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { defineSidebar } from '@proton/nav/api/defineSidebar';
-import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useB2BAdminSidebarFeature } from './useB2BAdminSidebarFeature';
@@ -28,20 +28,20 @@ vi.mock('../definitions/routes', () => ({ resolveNavigation: vi.fn(() => 'nav') 
 vi.mock('@proton/nav/api/applyPrefix', () => ({ applyPrefix: vi.fn((nav) => `${nav}-prefixed`) }));
 vi.mock('@proton/nav/api/defineSidebar', () => ({ defineSidebar: vi.fn(() => 'sidebar-tree') }));
 vi.mock('@proton/nav/api/defineSearchOptions', () => ({ defineSearchOptions: vi.fn(() => 'search-options') }));
-vi.mock('@proton/payments-ui/entitlements/hooks', () => ({ useEntitlementChecks: vi.fn() }));
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({ useEntitlementChecksForOrgAndUser: vi.fn() }));
 
 const mockUseUser = useUser as MockedFunction<any>;
 const mockUseSubscription = useSubscription as MockedFunction<any>;
 const mockUseOrganization = useOrganization as MockedFunction<any>;
 const mockUseUserPermissions = useUserPermissions as MockedFunction<any>;
-const mockUseEntitlementChecks = useEntitlementChecks as MockedFunction<any>;
+const mockUseEntitlementChecks = useEntitlementChecksForOrgAndUser as MockedFunction<any>;
 const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 const mockDefineSidebar = defineSidebar as MockedFunction<any>;
 
 const user = { ID: 'user' };
 const subscription = { ID: 'subscription' };
 const organization = { ID: 'organization' };
-const entitlements = { orgIsBusiness: true, orgHasVpn: true };
+const entitlements = { isVpnBusiness: true };
 const permissions = { 'organization.gateways': true };
 
 describe('useB2BAdminSidebarFeature', () => {
@@ -100,11 +100,8 @@ describe('useB2BAdminSidebarFeature', () => {
         expect(result.current).toEqual({ enabled: false, loading: false, routes: undefined });
     });
 
-    it.each([
-        ['the organization is not a business one', { orgIsBusiness: false, orgHasVpn: true }],
-        ['the organization has no vpn', { orgIsBusiness: true, orgHasVpn: false }],
-    ])('is disabled and settled when %s', (_name, entitlements) => {
-        mockUseEntitlementChecks.mockReturnValue([entitlements, false]);
+    it('is disabled and settled when the organization is not a vpn business', () => {
+        mockUseEntitlementChecks.mockReturnValue([{ isVpnBusiness: false }, false]);
 
         const { result } = renderHook(() => useB2BAdminSidebarFeature({ prefix: '/vpn' }));
 

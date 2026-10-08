@@ -370,6 +370,14 @@ export default defineConfig(
         },
     },
     {
+        name: 'entitlement-checks',
+        files: typescriptGlobs,
+        rules: {
+            'custom-rules/no-single-entitlement-condition': 'error',
+            'custom-rules/no-boolean-entitlement-composition': 'error',
+        },
+    },
+    {
         name: 'tsx-restricted-imports',
         files: ['**/*.tsx', '**/*.jsx'],
         rules: {

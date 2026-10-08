@@ -1,5 +1,8 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
@@ -16,7 +19,7 @@ import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
-import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
+import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import { getIsPassB2BPlan } from '@proton/payments/core/plan/helpers';
 import { Renew } from '@proton/payments/core/subscription/constants';
@@ -131,7 +134,7 @@ interface Props {
     app: APP_NAMES;
     user: UserModel;
     subscription: MaybeFreeSubscription;
-    entitlements: EntitlementChecks;
+    entitlements: EntitlementChecksForOrgAndUser;
     organization?: Organization;
     addresses?: Address[];
     upsells: Upsell[];
@@ -140,7 +143,11 @@ interface Props {
 const SubscriptionPanel = ({ app, subscription, organization, entitlements, user, addresses, upsells }: Props) => {
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
     const isPassB2bPlan = getIsPassB2BPlan(planName);
-    const trialInfo = getTrialInfoForSingleSubscription(subscription);
+    const [entitlementCatalog] = useEntitlementCatalog();
+    const trialInfo = useMemo(
+        () => getTrialInfoForSingleSubscription(entitlementCatalog, subscription),
+        [entitlementCatalog, subscription]
+    );
     const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
@@ -313,7 +320,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
     };
 
     const b2bUsersItem: Item | false = !!userText &&
-        (MaxMembers > 1 || entitlements.orgIsBusiness || upsellsShowB2BUsersRow(upsells)) && {
+        (MaxMembers > 1 || entitlements.isBusiness || upsellsShowB2BUsersRow(upsells)) && {
             id: 'users',
             icon: IcUsers,
             text: userText,
@@ -356,7 +363,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
             return false;
         }
 
-        const showGetMoreButton = MaxAI < MaxMembers && entitlements.orgIsBusiness;
+        const showGetMoreButton = MaxAI < MaxMembers && entitlements.isBusiness;
         const actionElement = showGetMoreButton ? <GetMoreButton /> : null;
 
         return {
@@ -466,14 +473,13 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
                 ...b2bUsersItem,
                 actionElement: getMoreButtonVpnUpsell,
             },
-            entitlements.orgIsBusiness &&
-                entitlements.orgHasVpn && {
-                    id: 'servers',
-                    icon: IcServers,
-                    text: serverText,
-                    actionElement: getMoreButtonVpnUpsell,
-                    dataTestId: 'servers',
-                },
+            entitlements.isVpnBusiness && {
+                id: 'servers',
+                icon: IcServers,
+                text: serverText,
+                actionElement: getMoreButtonVpnUpsell,
+                dataTestId: 'servers',
+            },
         ].filter(isTruthy);
 
         return (
@@ -539,7 +545,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
                 text: vpnText,
             },
             getProtonPassFeature(user.hasPaidPass ? 'unlimited' : FREE_PASS_ALIASES),
-            entitlements.orgHasSentinel ? getSentinel(true) : false,
+            entitlements.hasSentinel ? getSentinel(true) : false,
             scribeItem,
             lumoItem,
             meetItem,

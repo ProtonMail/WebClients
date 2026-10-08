@@ -14,7 +14,7 @@ export const getMspAppRoutes = ({ app, entitlements, user }: GeneralRouterParams
     const isAllowedApp = app === APPS.PROTONPASS || app === APPS.PROTONACCOUNT;
     // MSP is exclusively available for passbiz2024 customers that have subsidiaries and members subsidiaries entitlements,
     // this is subject to change in the future
-    const isEligible = entitlements.orgIsMspEligible;
+    const isEligible = entitlements.isMspEligible;
     // The user can view companies page if they are an owner or have the IT manager permission
     // @todo: implement this when new MSP permissions are implemented
     const canViewCompanies = true;

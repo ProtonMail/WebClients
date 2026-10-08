@@ -5,6 +5,7 @@ import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
 import { c, msgid } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useGetGroupMembers, useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { createGroup, deleteGroup, editGroup } from '@proton/account/groups/actions';
@@ -23,7 +24,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
@@ -56,7 +56,7 @@ const INITIAL_FORM_VALUES = (organization?: Organization): GroupFormData => ({
 
 const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const [organization] = useOrganization();
-    const [entitlements, loadingEntitlements] = useEntitlementChecks();
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
 
     const handleError = useErrorHandler();
     const [members] = useMembers();
@@ -447,7 +447,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         });
 
     const getRestrictedBy = (): GroupsRestriction => {
-        const isPlanUnsupported = !entitlements.orgHasGroups;
+        const isPlanUnsupported = !entitlements.hasGroups;
 
         if (isPlanUnsupported) {
             return { reason: GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED };

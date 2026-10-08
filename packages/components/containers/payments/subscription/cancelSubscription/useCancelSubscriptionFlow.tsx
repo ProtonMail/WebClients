@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useGetSubscription, useSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
@@ -68,7 +69,8 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     const getSubscription = useGetSubscription();
     const getUser = useGetUser();
     const [subscription, loadingSubscription] = useSubscription();
-    const { isB2BTrial } = getTrialInfoForSingleSubscription(subscription);
+    const [entitlementCatalog, loadingEntitlementCatalog] = useEntitlementCatalog();
+    const { isB2BTrial } = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
     const [plansResult, loadingPlans] = usePlans();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const plans = plansResult?.plans ?? [];
@@ -280,7 +282,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     };
 
     return {
-        loadingCancelSubscription: loadingSubscription || loadingPlans,
+        loadingCancelSubscription: loadingSubscription || loadingPlans || loadingEntitlementCatalog,
         cancelSubscriptionModals: modals,
         cancelSubscription,
     };
