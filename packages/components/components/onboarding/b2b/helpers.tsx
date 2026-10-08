@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
-import { type MaybeFreeSubscription, getPlan } from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
     type APP_NAMES,
@@ -41,21 +40,15 @@ import imapSmtpImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-tools.
 import vpnImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-vpn.svg';
 import isTruthy from '@proton/utils/isTruthy';
 
-import canUseGroups from '../../../containers/organization/groups/canUseGroups';
 import AppLink from '../../link/AppLink';
 import SettingsLink from '../../link/SettingsLink';
 import type { B2BFeaturesID, B2BFeaturesSection, B2BOnboardingFeature } from './interface';
 
 export const getFeatures = (
-    subscription: MaybeFreeSubscription,
     entitlements: EntitlementChecks,
     onClickCTA?: (item: B2BFeaturesID) => Promise<void>
 ): B2BOnboardingFeature[] => {
-    const plan = getPlan(subscription)?.Name;
-    const canSeeGroupsSection = canUseGroups(plan, {
-        orgHasGroupsEntitlement: entitlements.orgHasGroups,
-        isUserGroupsNoCustomDomainEnabled: false,
-    });
+    const canSeeGroupsSection = entitlements.orgHasGroups;
 
     return [
         {

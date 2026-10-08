@@ -38,7 +38,6 @@ const defaultFlags: Flags = {
     isReferralProgramEnabled: false,
     isDriveEasySwitchNewUIEnabled: false,
     canDisplayNonPrivateEmailPhone: false,
-    isUserGroupsNoCustomDomainEnabled: false,
     isScribeEnabled: false,
     isZoomIntegrationEnabled: false,
     isProtonMeetIntegrationEnabled: false,
