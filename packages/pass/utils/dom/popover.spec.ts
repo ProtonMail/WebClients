@@ -63,6 +63,24 @@ describe('TopLayerManager', () => {
         expect(TopLayerManager.ensureTopLevel(guard)).toBe(true);
     });
 
+    test('rejects a guard whose `popover` attribute was removed by the page', async () => {
+        const guard = createPopoverEl();
+        await toggleEl(guard, true);
+        expect(TopLayerManager.ensureTopLevel(guard)).toBe(true);
+        guard.removeAttribute('popover');
+        await toggleEl(guard, false);
+        expect(TopLayerManager.elements).not.toContain(guard);
+        expect(TopLayerManager.ensureTopLevel(guard)).toBe(false);
+    });
+
+    test('rejects a guard no longer in the top-layer even if still tracked', async () => {
+        const guard = createPopoverEl();
+        await toggleEl(guard, true);
+        jest.spyOn(guard, 'matches').mockReturnValue(false);
+        expect(TopLayerManager.elements).toContain(guard);
+        expect(TopLayerManager.ensureTopLevel(guard)).toBe(false);
+    });
+
     test('foreign element cycling above guard poisons within the window', async () => {
         const now = jest.spyOn(performance, 'now');
         let time = 1000;

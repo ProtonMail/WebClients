@@ -58,7 +58,10 @@ export const TopLayerManager = (() => {
 
     const onToggle = ({ target }: Event) => {
         if (!target || !isHTMLElement(target)) return;
-        if (!(target instanceof HTMLDialogElement || target.hasAttribute('popover'))) return;
+        /** Removing the `popover` attribute closes the element, but the toggle event
+         * fires after the removal: also handle tracked elements so they get untracked */
+        const tracked = TOP_LAYER_ELS.has(target);
+        if (!(target instanceof HTMLDialogElement || target.hasAttribute('popover') || tracked)) return;
 
         const { guard } = state;
         const matchTopLayer = safeMatch(target, ':modal') || safeMatch(target, ':popover-open');
@@ -111,6 +114,12 @@ export const TopLayerManager = (() => {
                  * timing attacks where an overlay is cycled out just before the
                  * user's click event is processed (see `POISON_WINDOW_MS`). */
                 if (performance.now() - state.poisonedAt < POISON_WINDOW_MS) return false;
+
+                /** Check in real time rather than trusting `TOP_LAYER_ELS`, which can be stale:
+                 * a page removing the `popover` attribute takes the element out of the
+                 * top-layer while it stays visible and clickable under page overlays */
+                if (!safeMatch(element, ':popover-open')) return false;
+
                 const popovers = TopLayerManager.elements;
                 const rootIdx = popovers.findIndex(eq<HTMLElement>(element));
                 if (rootIdx !== popovers.length - 1) return false;
