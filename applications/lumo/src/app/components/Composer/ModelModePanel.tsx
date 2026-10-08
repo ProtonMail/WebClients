@@ -6,6 +6,7 @@ import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/const
 import type { ModelTier, ResponseMode } from '../../providers/ModelTierProvider';
 import { isLimitExhausted, isModelTierSelectable } from '../../services/usageLimitsStore';
 import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
+import { getModelDisplayName } from '../../util/modelTierDisplay';
 import { sendUpgradeButtonClickedEvent } from '../../util/telemetry';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
@@ -330,7 +331,8 @@ export const ModelModePanel = ({
 export const buildModelModeOptions = (
     remainingLimits: { lite?: number; max?: number } | null,
     isMaxAvailableByFlag: boolean,
-    isApertusEnabled: boolean
+    isApertusEnabled: boolean,
+    isPreviewEnabled = false
 ): ModelModeOption[] => [
     ...(isApertusEnabled
         ? [
@@ -362,4 +364,13 @@ export const buildModelModeOptions = (
         getUnavailableReason: () => (!isMaxAvailableByFlag ? 'high-load' : null),
         isDisabled: () => !isModelTierSelectable('lumo-max', remainingLimits, { isMaxAvailable: isMaxAvailableByFlag }),
     },
+    ...(isPreviewEnabled
+        ? [
+              {
+                  tier: 'lumo-preview' as const,
+                  getLabel: () => `${getModelDisplayName('lumo-preview')} ✨`,
+                  getDescription: () => c('collider_2025: Description').t`Internal preview of an upcoming model`,
+              },
+          ]
+        : []),
 ];

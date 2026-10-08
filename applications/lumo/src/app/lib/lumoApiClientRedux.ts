@@ -292,7 +292,8 @@ export function sendMessageWithRedux(
                                 message,
                                 assistantOptions.modelTier === 'lumo-lite' ||
                                     assistantOptions.modelTier === 'lumo-max' ||
-                                    assistantOptions.modelTier === 'apertus-15'
+                                    assistantOptions.modelTier === 'apertus-15' ||
+                                    assistantOptions.modelTier === 'lumo-preview'
                                     ? assistantOptions.modelTier
                                     : undefined
                             );

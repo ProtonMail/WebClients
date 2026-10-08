@@ -183,7 +183,7 @@ export interface AssistantCallOptions {
     enableExternalTools?: boolean;
     enableImageTools?: boolean;
     enableReasoning?: boolean;
-    modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15';
+    modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15' | 'lumo-preview';
     enableSuggestedQuestions?: boolean;
     /** Auto-register the Lumo Desktop bridge executor when no `clientToolExecutor` is supplied. Default: false. */
     enableDesktopTools?: boolean;

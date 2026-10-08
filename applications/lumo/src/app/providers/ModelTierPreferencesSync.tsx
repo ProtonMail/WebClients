@@ -18,7 +18,7 @@ export const ModelTierPreferencesSync = () => {
     const { setModelTierWithoutPersist, setResponseModeWithoutPersist } = useModelTier();
     const remainingLimits = useRemainingLimits();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
-    const { apertusModelAvailable } = useLumoFlags();
+    const { apertusModelAvailable, previewModelAvailable } = useLumoFlags();
 
     useLayoutEffect(() => {
         if (isGuest) {
@@ -43,12 +43,14 @@ export const ModelTierPreferencesSync = () => {
             const availableTier = resolveAvailableModelTier(preferredModelTier, remainingLimits, {
                 isMaxAvailable: isMaxAvailableByFlag,
                 isApertusEnabled: apertusModelAvailable,
+                isPreviewEnabled: previewModelAvailable,
             });
             setModelTierWithoutPersist(availableTier);
         }
     }, [
         isGuest,
         apertusModelAvailable,
+        previewModelAvailable,
         isMaxAvailableByFlag,
         lumoUserSettings.preferredModelTier,
         lumoUserSettings.preferredResponseMode,

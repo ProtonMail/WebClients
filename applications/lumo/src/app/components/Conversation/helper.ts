@@ -183,7 +183,7 @@ export type UiContext = {
     enableExternalTools: boolean;
     enableImageTools: boolean;
     enableReasoning?: boolean;
-    modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15';
+    modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15' | 'lumo-preview';
     generateTitle?: boolean;
     enableSmoothing?: boolean; // todo remove optional
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
