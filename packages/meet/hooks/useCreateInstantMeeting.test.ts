@@ -98,7 +98,7 @@ describe('useCreateMeeting', () => {
         expect(meeting).toEqual({
             passwordBase: 'mockpassword',
             meetingLink: `/join/${meetingLinkName}#mockpassword`,
-            id: meetingLinkName,
+            meetingLinkName,
         });
     });
 });

@@ -6,10 +6,10 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { resetMeetingState } from '@proton/meet/store/resetMeetingState';
 import {
     selectExpirationTime,
-    setMeetingInfo,
+    setCurrentMeeting,
     startMeetingDurationTimer,
     stopMeetingDurationTimer,
-} from '@proton/meet/store/slices/meetingInfo';
+} from '@proton/meet/store/slices/currentMeeting';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { clearRecording } from '@proton/meet/store/slices/recordingsSlice';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
@@ -87,7 +87,7 @@ export const MeetContainer = ({
 
     useLayoutEffect(() => {
         dispatch(
-            setMeetingInfo({
+            setCurrentMeeting({
                 instantMeeting,
                 displayName,
             })

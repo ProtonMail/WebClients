@@ -4,8 +4,8 @@ import type { ParticipantQualityStats } from './types';
 
 export const getUrlWithoutProtocol = (url: string) => url.replace(/^[a-z]+:\/\//i, '');
 
-// identity, roomId, type, trackSid, isLocal, pcRole
-const BASE_STAT_KEY_COUNT = 6;
+// identity, roomId, meetingLinkName, type, trackSid, isLocal, pcRole
+const BASE_STAT_KEY_COUNT = 7;
 
 // Simulcast emits one outbound-rtp / remote-inbound-rtp pair per layer. The pre-existing fields keep
 // last-layer-wins so previously collected data stays comparable, but the uplink fields are aggregated:
@@ -26,16 +26,17 @@ const assignIfDefined = (target: Record<string, unknown>, key: string, value: un
 export const getWebRTCStats = async (
     pub: RemoteTrackPublication,
     identity: string,
-    roomId: string,
+    meetingLinkName: string,
     isLocal = false
 ) => {
     if ((!isLocal && !pub.isSubscribed) || !pub.isEnabled || pub.isMuted || !pub.track) {
         return null;
     }
 
-    const stats: Record<string, unknown> = {
+    const stats: ParticipantQualityStats = {
         identity,
-        roomId,
+        roomId: meetingLinkName,
+        meetingLinkName,
         type: pub.track.source,
         trackSid: pub.trackSid,
         isLocal,
@@ -148,7 +149,7 @@ export const getWebRTCStats = async (
         return null;
     }
 
-    return Object.keys(stats).length > BASE_STAT_KEY_COUNT ? (stats as ParticipantQualityStats) : null;
+    return Object.keys(stats).length > BASE_STAT_KEY_COUNT ? stats : null;
 };
 
 const toDelta = (current: number | undefined, previous: number | undefined) => {
@@ -173,7 +174,8 @@ export const calculateStatsDelta = (
 ): ParticipantQualityStats => {
     return {
         identity: current.identity,
-        roomId: current.roomId,
+        roomId: current.meetingLinkName,
+        meetingLinkName: current.meetingLinkName,
         type: current.type,
         trackSid: current.trackSid,
         isLocal: current.isLocal,

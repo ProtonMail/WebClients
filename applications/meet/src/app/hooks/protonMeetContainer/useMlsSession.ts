@@ -26,7 +26,7 @@ import { useNotifyError } from '../useNotifyError';
 interface UseMlsSessionParams {
     getGroupKeyInfo: () => Promise<{ key: string; epoch: bigint }>;
     onNewGroupKeyInfo: (key: string, epoch: bigint) => Promise<void>;
-    updateAdminParticipant: (roomId: string, participantUid: string, participantType: Number) => Promise<void>;
+    updateAdminParticipant: (meetingLinkName: string, participantUid: string, participantType: Number) => Promise<void>;
     allowHealthCheck: () => void;
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
     currentKeyRef: MutableRefObject<string | null>;

@@ -27,6 +27,7 @@ export const useRecordingTelemetry = (recordingCodec: RecordingCodec | null) => 
 
             const recordingStats: RecordingStats = {
                 roomId: room.name,
+                meetingLinkName: room.name,
                 identity: localIdentity,
                 recordingDuration: currentRecordingDuration.current ?? 0,
                 recordingSize: size,

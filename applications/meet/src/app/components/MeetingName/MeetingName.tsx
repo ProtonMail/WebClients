@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, SettingsLink } from '@proton/components';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
+import { selectMeetingName } from '@proton/meet/store/slices/currentMeeting';
 import {
     selectIsGuestAdmin,
     selectIsLocalParticipantAdminOrHost,
@@ -187,14 +187,14 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const MeetingName = ({ classNames }: MeetingNameProps) => {
-    const roomName = useMeetSelector(selectRoomName);
+    const meetingName = useMeetSelector(selectMeetingName);
     const showDuration = useMeetSelector(selectShowDuration);
 
     return (
         <CTAContainer>
             <div className={clsx('flex items-center gap-2 flex-nowrap items-baseline', classNames?.root)}>
                 <h1 className={clsx('meeting-name flex-1 text-ellipsis overflow-hidden m-0', classNames?.name)}>
-                    {roomName}
+                    {meetingName}
                 </h1>
                 {showDuration && <MeetingDuration className={classNames?.duration} />}
             </div>

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
+import { selectMeetingName } from '@proton/meet/store/slices/currentMeeting';
 import {
     selectLocalParticipantIdentity,
     selectParticipantName,
@@ -33,7 +33,7 @@ const isParticipantEventRecord = (update: MeetingRoomUpdate): update is Particip
     update.type === 'event';
 
 export const MeetingUpdateSnackbar = ({ update, onClose, onOpen }: Props) => {
-    const roomName = useMeetSelector(selectRoomName);
+    const meetingName = useMeetSelector(selectMeetingName);
     const participantName = useMeetSelector((state) => selectParticipantName(state, update.identity));
     const localParticipantIdentity = useMeetSelector(selectLocalParticipantIdentity);
 
@@ -43,7 +43,7 @@ export const MeetingUpdateSnackbar = ({ update, onClose, onOpen }: Props) => {
 
     const roomNameLabel = (
         <span key="room-name" style={{ color: 'var(--interaction-norm)' }}>
-            {roomName}
+            {meetingName}
         </span>
     );
 

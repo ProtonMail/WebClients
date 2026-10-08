@@ -8,11 +8,11 @@ import { c } from 'ttag';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectDisplayName } from '@proton/meet/store/slices/currentMeeting';
 import {
     selectInitialCameraState,
     selectIsMediaInitializing,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
-import { selectDisplayName } from '@proton/meet/store/slices/meetingInfo';
 import { selectParticipantName } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';

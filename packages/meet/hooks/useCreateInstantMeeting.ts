@@ -51,7 +51,7 @@ export const useCreateInstantMeeting = () => {
 
         return {
             meetingLink: `/join/${response.Meeting.MeetingLinkName}#${passwordBase}`,
-            id: response.Meeting.MeetingLinkName,
+            meetingLinkName: response.Meeting.MeetingLinkName,
             passwordBase,
         };
     };

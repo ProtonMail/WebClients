@@ -14,6 +14,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Toggle } from '@proton/components/index';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMeetingName } from '@proton/meet/store/slices/currentMeeting';
 import { selectKrispDebug, toggleKrispDebug } from '@proton/meet/store/slices/devToolsSlice';
 import { setActiveDevice } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
@@ -26,7 +27,6 @@ import {
     selectSpeakerState,
     selectSpeakers,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
-import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
@@ -480,7 +480,7 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
 
     const { localParticipant, isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const remoteParticipants = useRemoteParticipants();
-    const roomName = useMeetSelector(selectRoomName);
+    const meetingName = useMeetSelector(selectMeetingName);
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const cameras = useMeetSelector(selectCameras);
     const microphones = useMeetSelector(selectMicrophones);
@@ -646,7 +646,7 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
                 const participantReportInfo = await getRemoteParticipantReportInfo(participant);
 
                 const report = {
-                    roomName: room.name,
+                    meetingLinkName: room.name,
                     timestamp: new Date().toISOString(),
                     participantIdentity: participant.identity,
                     participantInfo: participantReportInfo,
@@ -698,7 +698,7 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
         }
 
         const report = {
-            roomName: room.name,
+            meetingLinkName: room.name,
             timestamp: new Date().toISOString(),
             localParticipant: localReportInfo,
             remoteParticipants: remoteReportInfos,
@@ -734,7 +734,7 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
         );
 
         const report = {
-            roomName: room.name,
+            meetingLinkName: room.name,
             timestamp: new Date().toISOString(),
             localParticipant: localReportInfo,
         };
@@ -759,7 +759,7 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
             const participantReportInfo = await getRemoteParticipantReportInfo(participant);
 
             const report = {
-                roomName: room.name,
+                meetingLinkName: room.name,
                 timestamp: new Date().toISOString(),
                 participant: participantReportInfo,
             };
@@ -801,7 +801,7 @@ export const DebugOverlay = ({ isOpen, onClose, onSimulateReconnection }: DebugO
                 <div className="debug-overlay-header">
                     <h2 className="debug-overlay-title">
                         {c('Title').t`Debug Overlay`}
-                        {roomName && <span className="debug-room-name"> - {roomName}</span>}
+                        {meetingName && <span className="debug-room-name"> - {meetingName}</span>}
                     </h2>
                     <div className="debug-header-actions">
                         <Button size="small" onClick={handleReportMeetingIssue}>

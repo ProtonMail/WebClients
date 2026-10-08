@@ -5,7 +5,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
+import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import { selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice.ts';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';

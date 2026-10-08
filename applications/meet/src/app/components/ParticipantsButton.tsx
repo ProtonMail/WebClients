@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectInstantMeeting, selectMaxParticipants } from '@proton/meet/store/slices/meetingInfo';
+import { selectInstantMeeting, selectMaxParticipants } from '@proton/meet/store/slices/currentMeeting';
 import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
