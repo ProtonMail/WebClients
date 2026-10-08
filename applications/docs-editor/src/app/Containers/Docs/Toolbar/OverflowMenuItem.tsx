@@ -1,6 +1,5 @@
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
-import clsx from 'clsx'
+import { DropdownMenuButton, SimpleDropdown } from '../Components/Dropdown'
+import { clsx } from 'clsx'
 import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
 import type { ToolbarItemInterface } from './ToolbarItemInterface'
 import ToolbarTooltip from './ToolbarTooltip'
@@ -39,9 +38,10 @@ export function OverflowMenuItem({ item }: { item: ToolbarItemInterface }) {
       as={DropdownMenuButton}
       className="flex items-center justify-between gap-2 px-2 text-left text-sm"
       content={item.label('overflow')}
+      data-testid={`overflow-${item.id}`}
       disabled={item.disabled}
-      contentProps={item.dropdownProps}
-      data-submenu-button
+      // Closing a submenu returns focus to its item in the overflow menu.
+      contentProps={{ ...item.dropdownProps, autoFocusOnHide: true }}
     >
       {item.menu}
     </SimpleDropdown>
