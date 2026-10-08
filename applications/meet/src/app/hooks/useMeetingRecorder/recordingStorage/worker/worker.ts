@@ -3,6 +3,7 @@ import { CryptoProxy, type SessionKey } from '@protontech/crypto';
 import { createWorkerLogger } from '../../workerLogger';
 import {
     type FinalizeResponseData,
+    type RecordingEncryption,
     StorageMessageType,
     type StorageWorkerMessage,
     type StorageWorkerResponse,
@@ -13,6 +14,15 @@ const logger = createWorkerLogger('MeetingRecorder/recordingWorker');
 
 const isQuotaExceededError = (error: unknown): boolean =>
     error instanceof DOMException && error.name === 'QuotaExceededError';
+
+const encryptRecordingStream = async (dataStream: ReadableStream<Uint8Array<ArrayBuffer>>, sessionKey: SessionKey) => {
+    const { messageStream } = await CryptoProxy.encryptMessageStream({
+        binaryDataStream: dataStream,
+        sessionKey,
+        format: 'binary',
+    });
+    return messageStream;
+};
 
 interface OPFSWorkerStorageOptions {
     onStorageFull: (hasWrittenData: boolean) => void;
@@ -40,20 +50,17 @@ class OPFSWorkerStorage {
         this.onWriteError = onWriteError;
     }
 
-    async init(
-        fileExtension: string,
-        folder: string,
-        sessionKey: SessionKey,
-        encryptedSessionKey: Uint8Array<ArrayBuffer>
-    ): Promise<void> {
+    async init(fileExtension: string, folder: string, encryption?: RecordingEncryption): Promise<void> {
         this.fileExtension = fileExtension;
         this.fileName = `recording-${Date.now()}.${this.fileExtension}`;
 
-        // import CryptoApi dynamically on init to make sure the code does not spill outside of the worker;
-        // and so it's easier to catch any loading errors
-        const { Api: CryptoApi } = await import('@protontech/crypto/proxy/endpoint/api.ts');
-        CryptoApi.init({});
-        CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
+        if (encryption) {
+            // import CryptoApi dynamically on init to make sure the code does not spill outside of the worker;
+            // and so it's easier to catch any loading errors
+            const { Api: CryptoApi } = await import('@protontech/crypto/proxy/endpoint/api.ts');
+            CryptoApi.init({});
+            CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
+        }
 
         const root = await navigator.storage.getDirectory();
         // Namespace recordings under a per-user subdirectory.
@@ -73,13 +80,9 @@ class OPFSWorkerStorage {
         // TransformStreams are supported wherever createSyncAccessHandle, so polyfilling not needed
         const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>, Uint8Array<ArrayBuffer>>();
         this.writerForDataStreamToEncrypt = writable.getWriter();
-        const { messageStream: encryptedStreamToStore } = await CryptoProxy.encryptMessageStream({
-            binaryDataStream: readable,
-            sessionKey,
-            format: 'binary',
-        });
+        const streamToStore = encryption ? await encryptRecordingStream(readable, encryption.sessionKey) : readable;
 
-        this.readerForEncryptionStreamToStore = encryptedStreamToStore.getReader();
+        this.readerForEncryptionStreamToStore = streamToStore.getReader();
         this.encryptionStreamReaderPromise = (async () => {
             try {
                 while (true) {
@@ -93,9 +96,9 @@ class OPFSWorkerStorage {
                     }
 
                     if (this.syncAccessHandle) {
-                        if (this.filePosition === 0) {
+                        if (this.filePosition === 0 && encryption) {
                             // prepend the session key
-                            this.filePosition += this.syncAccessHandle.write(encryptedSessionKey, {
+                            this.filePosition += this.syncAccessHandle.write(encryption.encryptedSessionKey, {
                                 at: this.filePosition,
                             });
                         }
@@ -113,7 +116,7 @@ class OPFSWorkerStorage {
                     this.full = true; // the main thread is expected to call `finalize()`
                     this.onStorageFull(this.hasWrittenData);
                 } else {
-                    logger.error('Error while writing the encrypted recording:', error);
+                    logger.error('Error while writing the recording:', error);
                     this.onWriteError(error, this.hasWrittenData);
                 }
             } finally {
@@ -194,12 +197,7 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
     try {
         switch (message.type) {
             case StorageMessageType.INIT: {
-                await storage.init(
-                    message.data.fileExtension,
-                    message.data.folder,
-                    message.data.sessionKey,
-                    message.data.encryptedSessionKey
-                );
+                await storage.init(message.data.fileExtension, message.data.folder, message.data.encryption);
                 const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
                 self.postMessage(response);
                 break;

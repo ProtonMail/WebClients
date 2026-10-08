@@ -22,5 +22,5 @@ export interface RecordingSessionStartOptions {
     initialScene: SceneState;
     initialAudioTracks: TrackReference[];
     initialRecordedTracks: RecordingTrackInfo[];
-    encryptionKey: PublicKeyReference;
+    encryptionKey?: PublicKeyReference;
 }

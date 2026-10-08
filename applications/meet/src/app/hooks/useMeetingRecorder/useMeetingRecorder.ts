@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { useRoomContext, useTracks } from '@livekit/components-react';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -45,6 +46,7 @@ interface FinishRecordingOptions {
 
 export const useMeetingRecorder = () => {
     const isWebCodecsRecordingEnabled = useFlag('MeetRecordingWebCodecs');
+    const isRecordingEncryptionEnabled = useFlag('MeetRecordingEncryption');
 
     const hasRecordingPermissions = useMeetSelector(selectHasRecordingPermissions);
     const isRecordingSupported = useIsRecordingSupported();
@@ -280,13 +282,19 @@ export const useMeetingRecorder = () => {
         }
 
         try {
-            const userKeys = await getUserKeys();
+            let encryptionKey: PublicKeyReference | undefined;
 
-            if (!userKeys.length) {
-                // eslint-disable-next-line no-console
-                console.error('[MeetingRecorder] Error: no userKeys available yet');
-                reportMeetError('MeetingRecording Error: no userKeys available yet');
-                return;
+            if (isRecordingEncryptionEnabled) {
+                const userKeys = await getUserKeys();
+
+                if (!userKeys.length) {
+                    // eslint-disable-next-line no-console
+                    console.error('[MeetingRecorder] Error: no userKeys available yet');
+                    reportMeetError('MeetingRecording Error: no userKeys available yet');
+                    return;
+                }
+
+                encryptionKey = userKeys[0].publicKey;
             }
 
             const session = new RecordingSession({
@@ -306,7 +314,7 @@ export const useMeetingRecorder = () => {
                 initialScene: scene,
                 initialAudioTracks: audioTracks,
                 initialRecordedTracks: recordedTracks,
-                encryptionKey: userKeys[0].publicKey,
+                encryptionKey,
             });
 
             localRecordingIdentityRef.current = room.localParticipant.identity;
