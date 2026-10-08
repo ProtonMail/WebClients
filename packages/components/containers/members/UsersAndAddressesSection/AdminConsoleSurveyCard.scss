@@ -1,0 +1,76 @@
+@use '~@proton/styles/scss/lib/easing' as *;
+
+$enter-delay: 0.56s;
+
+@keyframes anime-survey-card-in {
+	from {
+		opacity: 0;
+		transform: translateX(3rem) scale(0.96);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0) scale(1);
+	}
+}
+
+// Must be a separate @keyframes from the entrance: an animation only restarts (and fires `animationend`) when its
+// `animation-name` changes, so reusing `anime-survey-card-in` in reverse would never play once the entrance is done.
+@keyframes anime-survey-card-out {
+	from {
+		opacity: 1;
+		transform: translateX(0) scale(1);
+	}
+
+	to {
+		opacity: 0;
+		transform: translateX(3rem) scale(0.96);
+	}
+}
+
+@keyframes anime-survey-illustration-in {
+	from {
+		opacity: 0;
+		transform: scale(0.8) rotate(-6deg);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1) rotate(0);
+	}
+}
+
+@keyframes anime-survey-content-in {
+	from {
+		opacity: 0;
+		transform: translateY(0.5rem);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.admin-console-survey-card {
+	animation: anime-survey-card-in 0.42s easing(ease-out-expo) $enter-delay backwards;
+
+	// `both` keeps the card hidden at the end of the exit until it is unmounted.
+	&--closing {
+		animation: anime-survey-card-out 0.21s ease-in both;
+	}
+
+	&-illustration {
+		animation: anime-survey-illustration-in 0.42s easing(ease-out-back) ($enter-delay + 0.14s) backwards;
+	}
+
+	&-content > * {
+		animation: anime-survey-content-in 0.28s easing(ease-out-expo) backwards;
+
+		@for $i from 1 through 3 {
+			&:nth-child(#{$i}) {
+				animation-delay: $enter-delay + 0.175s + ($i * 0.056s);
+			}
+		}
+	}
+}
