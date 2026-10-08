@@ -4,6 +4,7 @@ import tinycolor from 'tinycolor2'
 import genAccentColorShades from '@proton/colors/gen-accent-shades'
 import { useCallback, useMemo, useState } from 'react'
 import { Button } from '@proton/atoms/Button/Button'
+import { MenuItem } from '@ariakit/react'
 
 const Colors = {
   black: {
@@ -91,8 +92,9 @@ function Color({
   type: 'text' | 'highlight' | 'background'
 }) {
   return (
-    <button
-      className="border-weak relative flex h-6 w-6 items-center justify-center rounded border text-xs font-semibold outline-1 hover:outline hover:outline-[#000]"
+    <MenuItem
+      render={<button type="button" aria-label={label} />}
+      className="border-weak relative flex h-6 w-6 items-center justify-center rounded border text-xs font-semibold outline-1 hover:outline hover:outline-[#000] focus-visible:outline focus-visible:outline-[#000]"
       style={{
         backgroundColor: color.background,
         color: color.text,
@@ -110,7 +112,7 @@ function Color({
       data-testid={`${name}-${type}-color`}
     >
       <div aria-hidden="true">A</div>
-    </button>
+    </MenuItem>
   )
 }
 
@@ -167,9 +169,9 @@ export function FontColorMenu({
         >
           {c('Label').t`Text and highlight color`}
         </div>
-        <Button shape="solid" size="small" className="rounded text-xs" onClick={clearColor}>
+        <MenuItem render={<Button shape="solid" size="small" className="rounded text-xs" />} onClick={clearColor}>
           Clear
-        </Button>
+        </MenuItem>
       </div>
       <div className="flex items-center gap-2">
         {ColorsWithShades.map((color) => {

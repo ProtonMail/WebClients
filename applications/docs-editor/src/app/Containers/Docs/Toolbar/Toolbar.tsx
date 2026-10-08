@@ -1,8 +1,4 @@
-import Dropdown from '@proton/components/components/dropdown/Dropdown'
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton'
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../Components/Dropdown'
 import Spotlight from '@proton/components/components/spotlight/Spotlight'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react'
@@ -81,12 +77,12 @@ import { blockTypeToBlockName, SET_BLOCK_TYPE_COMMAND } from '../Plugins/BlockTy
 import { EditorEvent, TooltipKey, useTooltipOnce, EditorSystemMode } from '@proton/docs-shared'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
-import { isHTMLElement } from '../Utils/guard'
 import { stepFontSize } from './stepFontSize'
 import { isMobile } from './isMobile'
 import type { ToolbarItems } from './ToolbarItems'
 import { OverflowMenuItem } from './OverflowMenuItem'
 import { ToolbarItem } from './ToolbarItem'
+import { BlockTypeMenu } from './BlockTypeMenu'
 import { useSyncedState } from '../../../Hooks/useSyncedState'
 import { useIsAlpha } from '../../../Hooks/useIsAlpha'
 
@@ -565,64 +561,6 @@ export default function DocumentEditorToolbar({
     activeEditor.dispatchCommand(CLEAR_FORMATTING_COMMAND, undefined)
   }, [activeEditor])
 
-  const blockTypes: {
-    type: BlockType
-    name: string
-    tooltip: React.ReactNode
-    onClick: () => void
-    className?: string
-  }[] = [
-    {
-      type: 'paragraph',
-      name: blockTypeToBlockName.paragraph,
-      onClick: formatParagraph,
-      tooltip: <ShortcutLabel shortcut="NORMAL_TEXT_SHORTCUT" />,
-      className: 'Lexical__paragraph',
-    },
-    {
-      type: 'h1',
-      name: blockTypeToBlockName.h1,
-      onClick: () => formatHeading('h1'),
-      tooltip: <ShortcutLabel shortcut="HEADING_1_SHORTCUT" />,
-      className: 'Lexical__h1 mb-0 mt-0',
-    },
-    {
-      type: 'h2',
-      name: blockTypeToBlockName.h2,
-      onClick: () => formatHeading('h2'),
-      tooltip: <ShortcutLabel shortcut="HEADING_2_SHORTCUT" />,
-      className: 'Lexical__h2 mb-0 mt-0',
-    },
-    {
-      type: 'h3',
-      name: blockTypeToBlockName.h3,
-      onClick: () => formatHeading('h3'),
-      tooltip: <ShortcutLabel shortcut="HEADING_3_SHORTCUT" />,
-      className: 'Lexical__h3 mb-0 mt-0',
-    },
-    {
-      type: 'h4',
-      name: blockTypeToBlockName.h4,
-      onClick: () => formatHeading('h4'),
-      tooltip: <ShortcutLabel shortcut="HEADING_4_SHORTCUT" />,
-      className: 'Lexical__h4 color-weak mb-0 mt-0',
-    },
-    {
-      type: 'h5',
-      name: blockTypeToBlockName.h5,
-      onClick: () => formatHeading('h5'),
-      tooltip: <ShortcutLabel shortcut="HEADING_5_SHORTCUT" />,
-      className: 'Lexical__h5 color-weak mb-0 mt-0',
-    },
-    {
-      type: 'h6',
-      name: blockTypeToBlockName.h6,
-      onClick: () => formatHeading('h6'),
-      tooltip: <ShortcutLabel shortcut="HEADING_6_SHORTCUT" />,
-      className: 'Lexical__h6 color-weak mb-0 mt-0',
-    },
-  ]
-
   const listTypes = [
     {
       type: 'check',
@@ -673,10 +611,15 @@ export default function DocumentEditorToolbar({
 
   const DropdownContentProps = useMemo(
     () => ({
+      autoFocusOnHide: false,
       onClosed: () => {
         const activeElement = document.activeElement
         const rootElementParent = editor.getRootElement()?.parentElement
         if (!rootElementParent || rootElementParent.contains(activeElement)) {
+          return
+        }
+        // Keep focus on the control the user clicked or tabbed to when dismissing a menu.
+        if (activeElement && activeElement !== document.body) {
           return
         }
         focusEditor()
@@ -793,15 +736,7 @@ export default function DocumentEditorToolbar({
             </span>
           ),
           menu: (
-            <DropdownMenu>
-              {blockTypes.map(({ type, name, onClick, tooltip, className }) => (
-                <ToolbarTooltip key={type} title={tooltip} originalPlacement="right">
-                  <DropdownMenuButton className={`text-left ${className}`} onClick={onClick} disabled={!isEditable}>
-                    {name}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-              ))}
-            </DropdownMenu>
+            <BlockTypeMenu isEditable={isEditable} formatParagraph={formatParagraph} formatHeading={formatHeading} />
           ),
           disabled: !isEditable,
           dropdownProps: DropdownContentProps,
@@ -1122,10 +1057,6 @@ export default function DocumentEditorToolbar({
                   </>
                 }
                 hasCaret={false}
-                onClick={(event: MouseEvent) => {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }}
                 originalPlacement="right-start"
                 contentProps={{
                   offset: 0,
@@ -1375,17 +1306,10 @@ export default function DocumentEditorToolbar({
         <Dropdown
           isOpen={isOverflowMenuOpen}
           anchorRef={overflowMenuAnchorRef}
-          onClose={(event) => {
-            const target = event?.target
-            const isOpeningSubmenu = isHTMLElement(target) && target.closest('[data-submenu-button]')
-            if (isOpeningSubmenu) {
-              return
-            }
-            closeOverflowMenu()
-          }}
+          onClose={closeOverflowMenu}
           {...DropdownContentProps}
         >
-          <DropdownMenu className="[&>li>hr]:min-h-px">
+          <DropdownMenu className="[&>hr]:min-h-px">
             {toolbarItems.map((group, index, array) => {
               const shouldShowInOverflowMenu = group.showInToolbar === false || !visibleButtons[group.id]
               if (!shouldShowInOverflowMenu) {
