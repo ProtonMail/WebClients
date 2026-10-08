@@ -7980,6 +7980,34 @@ importers:
         specifier: ^15.11.0
         version: 15.11.0(supports-color@11.0.0)(typescript@6.0.3)
 
+  packages/telemetry-tracker:
+    dependencies:
+      '@proton/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@proton/eslint-config-proton':
+        specifier: workspace:^
+        version: link:../eslint-config-proton
+      '@proton/jest-swc-preset':
+        specifier: workspace:^
+        version: link:../jest-swc-preset
+      '@types/jest':
+        specifier: ^30.0.0
+        version: 30.0.0
+      '@typescript/native':
+        specifier: npm:typescript@^7.0.2
+        version: typescript@7.0.2
+      eslint:
+        specifier: ^10.11.0
+        version: 10.11.0(jiti@2.7.0)(supports-color@11.0.0)
+      jest:
+        specifier: ^30.5.2
+        version: 30.5.2(@types/node@26.0.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.13)(@types/node@26.0.0)(@typescript/typescript6@6.0.2))
+      typescript:
+        specifier: npm:@typescript/typescript6@^6.0.2
+        version: '@typescript/typescript6@6.0.2'
+
   packages/test-api:
     dependencies:
       '@proton/utils':
