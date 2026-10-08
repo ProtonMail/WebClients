@@ -884,11 +884,6 @@
         "Disinstalla ${ PASS_APP_NAME }"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Applicazione desktop ${ MAIL_APP_NAME }"
-      ]
-    },
     "Button": {
       "More info": [
         "Più informazioni"
@@ -2240,8 +2235,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"

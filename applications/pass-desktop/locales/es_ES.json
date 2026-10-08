@@ -863,11 +863,6 @@
         "Desinstalar ${ PASS_APP_NAME }"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
-      ]
-    },
     "Button": {
       "More info": [
         "Más información"
@@ -2198,8 +2193,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
