@@ -15,6 +15,9 @@ import type { LoadingState, Sync } from './sync.interface';
 
 type SubmitError = { Code: number; Error: string };
 
+/** Rejection reason of the token and sync thunks when the token is for another address than `expectedEmailAddress`. */
+export const WRONG_ACCOUNT_ERROR = 'wrong_account';
+
 export enum SyncTokenStrategy {
     create = 0,
     useExisting = 1,
@@ -120,7 +123,7 @@ export const createSyncItem = createAsyncThunk<
                 text: c('error').t`Please sign in with the same Gmail address you originally connected`,
             });
 
-            return thunkApi.rejectWithValue({ Code: 0, Error: 'wrong_account' });
+            return thunkApi.rejectWithValue({ Code: 0, Error: WRONG_ACCOUNT_ERROR });
         }
 
         const createImportPayload: CreateImportPayload = {
@@ -233,6 +236,8 @@ export type CreateTokenProps = {
     RedirectUri: string;
     Features?: EASY_SWITCH_FEATURES[];
     expectedEmailAddress?: string;
+    /** The caller reports failures itself, so the thunk must not show any notification. */
+    silent?: boolean;
 };
 
 export const createTokenItem = createAsyncThunk<
@@ -243,7 +248,7 @@ export const createTokenItem = createAsyncThunk<
         fulfillValue: ImportToken;
     }
 >('token/create', async (props, thunkApi) => {
-    const { Source, errorNotification, Code, Provider, RedirectUri, Features, expectedEmailAddress } = props;
+    const { Source, errorNotification, Code, Provider, RedirectUri, Features, expectedEmailAddress, silent } = props;
 
     try {
         const { Token }: { Token: ImportToken; DisplayName: string } = await thunkApi.extra.api(
@@ -260,17 +265,19 @@ export const createTokenItem = createAsyncThunk<
 
         // In the conversion flow, user needs to connect using the selected address
         if (expectedEmailAddress && Account !== expectedEmailAddress) {
-            thunkApi.extra.notificationManager.createNotification({
-                type: 'error',
-                text: c('error').t`Please sign in with a Gmail address that already forwards to ${MAIL_APP_NAME}`,
-            });
+            if (!silent) {
+                thunkApi.extra.notificationManager.createNotification({
+                    type: 'error',
+                    text: c('error').t`Please sign in with a Gmail address that already forwards to ${MAIL_APP_NAME}`,
+                });
+            }
 
-            return thunkApi.rejectWithValue({ Code: 0, Error: 'wrong_account' });
+            return thunkApi.rejectWithValue({ Code: 0, Error: WRONG_ACCOUNT_ERROR });
         }
 
         return Token;
     } catch (error: any) {
-        if (errorNotification) {
+        if (errorNotification && !silent) {
             thunkApi.extra.notificationManager.createNotification(errorNotification);
         }
         return thunkApi.rejectWithValue(error.data as SubmitError);
