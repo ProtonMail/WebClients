@@ -33,7 +33,7 @@ interface Props {
 // Google sends the user back here after consent. This exact URL must be allowlisted on the Google OAuth client.
 const REDIRECT_PATH = `/lite?action=${SupportedActions.BYOEMobile}`;
 
-export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
+const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
     const hasHandledCallbackRef = useRef(false);
 
     const { state, toggle } = useToggle(true);
