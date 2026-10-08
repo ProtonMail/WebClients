@@ -351,6 +351,9 @@
       "Deselect all": [
         "Odznači vse"
       ],
+      "Detach": [
+        "Odpni"
+      ],
       "Details": [
         "Podrobnosti"
       ],
@@ -1409,8 +1412,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Namizna aplikacija"
+      "${ appName } Desktop application": [
+        "${ appName } Namizna aplikacija"
       ]
     },
     "Bug category": {
@@ -3386,6 +3389,9 @@
       ],
       "Not a valid number": [
         "Ni veljavna številka"
+      ],
+      "Not enough browser storage": [
+        "V brskalniku ni dovolj prostora za shranjevanje"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Stik ${ noEmailsContactNamesList } nima e-poštnega naslova",
@@ -6008,6 +6014,9 @@
       ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Trenutno ni dosegljivo zaradi visokega povpraševanja. Poskusite znova kasneje."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Začasno ni na voljo. Poskusite znova pozneje."

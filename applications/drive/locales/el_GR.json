@@ -359,6 +359,9 @@
       "Deselect all": [
         "Αποεπιλογή όλων"
       ],
+      "Detach": [
+        "Απόσπαση"
+      ],
       "Details": [
         "Λεπτομέρειες"
       ],
@@ -1568,8 +1571,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
+      "${ appName } Desktop application": [
+        "${ appName } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Bug category": {
@@ -3691,6 +3694,9 @@
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
+      ],
+      "Not enough browser storage": [
+        "Ανεπαρκής αποθηκευτικός χώρος προγράμματος περιήγησης"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Μία από τις επαφές δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }",
@@ -6570,6 +6576,9 @@
       ],
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Προσωρινά μη διαθέσιμο λόγω υψηλής ζήτησης. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
