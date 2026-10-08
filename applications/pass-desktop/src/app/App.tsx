@@ -25,10 +25,12 @@ import { exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { getBiometricsStorageKey, inferBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
+import { respondToDesktopLockMessage } from '@proton/pass/lib/auth/lock/desktop/logic.desktop';
 import { type AuthStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { createNativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.desktop';
 import { createConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
@@ -57,7 +59,6 @@ import { clipboard } from '../lib/clipboard';
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { useDesktopContextMenu } from '../lib/hooks/useDesktopContextMenu';
 import { installStorageFlush } from '../lib/storage/storage.view';
-import { ExtensionUnlock } from './ExtensionUnlock';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
 import { isFirstLaunch } from './firstLaunch';
 import locales from './locales';
@@ -80,6 +81,8 @@ exposePassCrypto(createPassCrypto(core, store));
 
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
 connectivity.init();
+
+createNativeMessagingService(authStore, respondToDesktopLockMessage);
 
 const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
@@ -159,17 +162,15 @@ export const App = () => {
                                                 <AuthServiceProvider connectivity={connectivity}>
                                                     <StoreProvider>
                                                         <ContextMenuProvider>
-                                                            <ExtensionUnlock>
-                                                                <Localized>
-                                                                    <ClipboardProvider>
-                                                                        {showWelcome ? <WelcomeScreen /> : <AppGuard />}
-                                                                    </ClipboardProvider>
-                                                                </Localized>
-                                                                <Portal>
-                                                                    <ModalsChildren />
-                                                                    <NotificationsChildren />
-                                                                </Portal>
-                                                            </ExtensionUnlock>
+                                                            <Localized>
+                                                                <ClipboardProvider>
+                                                                    {showWelcome ? <WelcomeScreen /> : <AppGuard />}
+                                                                </ClipboardProvider>
+                                                            </Localized>
+                                                            <Portal>
+                                                                <ModalsChildren />
+                                                                <NotificationsChildren />
+                                                            </Portal>
                                                         </ContextMenuProvider>
                                                     </StoreProvider>
                                                 </AuthServiceProvider>

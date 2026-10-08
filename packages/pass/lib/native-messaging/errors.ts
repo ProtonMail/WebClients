@@ -38,15 +38,20 @@ export const getMessageForNativeMessageError = (error: NativeMessageErrorType) =
             return c('Error').t`The ${PASS_APP_NAME} desktop app should be logged in.`;
         case NativeMessageErrorType.UNLOCK_IN_PROGRESS:
             return c('Error').t`A desktop unlock check is already in progress.`;
+        case NativeMessageErrorType.TOO_MANY_ATTEMPTS:
+            return c('Warning').t`Too many attempts`;
         default:
             return c('Error').t`Unknown error.`;
     }
 };
 
 export class NativeMessageError extends Error {
+    type: NativeMessageErrorType;
+
     constructor(type: NativeMessageErrorType) {
         super(getMessageForNativeMessageError(type));
         this.name = type;
+        this.type = type;
     }
 }
 
@@ -54,20 +59,30 @@ export const getForNativeMessageErrorFromConnectionError = (
     port: Maybe<Runtime.PortErrorType>,
     last: Maybe<Runtime.PropertyLastErrorType>
 ): NativeMessageErrorType => {
-    const message = last?.message?.toLowerCase() ?? '';
+    /** Firefox carries the failure on `port.error` while leaving `runtime.lastError` null;
+     * Chrome does the opposite. */
+    const message = (last?.message ?? port?.message)?.toLowerCase() ?? '';
     if (message.includes('not found')) return NativeMessageErrorType.HOST_NOT_FOUND;
     if (message.includes('exited')) return NativeMessageErrorType.HOST_NOT_RESPONDING;
-    log('Unkown connection error', port, last);
+    /** Firefox does not match the patterns above: an uninstalled desktop app disconnects
+     * with "No such native application {name}" (manifest gone) or "Failed to start native
+     * messanging host {name}" (manifest present, host binary gone — note the upstream
+     * typo, match it verbatim). See IDTEAM-5762. */
+    if (message.includes('no such native application')) return NativeMessageErrorType.HOST_NOT_FOUND;
+    if (message.includes('messanging')) return NativeMessageErrorType.HOST_NOT_RESPONDING;
+    /** Firefox gives no structured error to the extension: when the manifest is present but the
+     * host binary is missing or fails to spawn, `port.error` is the generic "An unexpected error
+     * occurred" with an empty stack and no result code (the real cause is only visible in the
+     * Browser Console). A fresh `connectNative` can only reach this state when the host cannot
+     * launch, i.e. the desktop app is effectively absent — map it to HOST_NOT_FOUND. See
+     * IDTEAM-5762. */
+    if (message.includes('unexpected error')) return NativeMessageErrorType.HOST_NOT_FOUND;
+    log('Unkown connection error', last?.message ?? port?.message);
     return NativeMessageErrorType.UNKNOWN;
 };
 
-const getNativeMessageErrorType = (err: unknown): NativeMessageErrorType | null => {
-    if (!err || typeof err !== 'object' || !('message' in err)) return null;
-    const { message } = err as { message: unknown };
-    return (
-        Object.values(NativeMessageErrorType).find((type) => message === getMessageForNativeMessageError(type)) ?? null
-    );
-};
+export const getNativeMessageErrorType = (err: unknown): NativeMessageErrorType | null =>
+    err instanceof NativeMessageError ? err.type : null;
 
 export type NativeMessageErrorKind = 'auth' | 'infra';
 
@@ -76,6 +91,7 @@ const getErrorTypeKind = (type: NativeMessageErrorType): NativeMessageErrorKind 
         case NativeMessageErrorType.BIOMETRICS_FAILED:
         case NativeMessageErrorType.SECRET_NOT_FOUND:
         case NativeMessageErrorType.SECRET_MISMATCH:
+        case NativeMessageErrorType.TOO_MANY_ATTEMPTS:
             return 'auth';
         case NativeMessageErrorType.HOST_NOT_FOUND:
         case NativeMessageErrorType.HOST_NOT_RESPONDING:

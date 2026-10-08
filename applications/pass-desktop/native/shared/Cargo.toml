@@ -10,7 +10,7 @@ crate-type = ["lib"]
 anyhow = "1.0.80"
 base64 = "=0.21.5"
 log = "0.4"
-native_messaging = "0.2"
+native_messaging = "0.3"
 rand = "0.8"
 
 [target.'cfg(windows)'.dependencies]
@@ -21,15 +21,20 @@ windows = { version = "=0.54.0", features = [
   "Security_Cryptography",
   "Storage_Streams",
   "Win32_Foundation",
+  "Win32_Graphics_Gdi",
   "Win32_Security_Credentials",
+  "Win32_System_Com",
+  "Win32_System_LibraryLoader",
+  "Win32_System_Threading",
   "Win32_System_WinRT",
+  "Win32_UI_WindowsAndMessaging",
 ] }
-robius-authentication = "0.3"
-native_messaging = { version = "0.2", features = ["windows-registry"] }
+native_messaging = { version = "0.3", features = ["windows-registry"] }
 
 [target.'cfg(target_os = "macos")'.dependencies]
 core-foundation = "=0.9.4"
 security-framework = "=2.9.2"
 security-framework-sys = "=2.9.1"
 objc2-local-authentication = { version = "0.3", features = ["block2"] }
-robius-authentication = "0.3"
+objc2-foundation = "0.3"
+block2 = "0.6"

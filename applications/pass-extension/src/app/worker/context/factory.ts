@@ -10,6 +10,7 @@ import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { clientBooted, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { createNativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.extension';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { resolveModelArtifact } from '@proton/pass/store/actions/creators/model-artifact';
@@ -47,7 +48,6 @@ import { createContentScriptService } from '../services/injection';
 import { createInlineService } from '../services/inline';
 import { createLoggerService } from '../services/logger';
 import { createMonitorService } from '../services/monitor';
-import { createNativeMessagingService } from '../services/native-messaging';
 import { createOTPService } from '../services/otp';
 import { createPasskeyService } from '../services/passkey';
 import { createSentryService } from '../services/sentry';
@@ -73,7 +73,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const core = createPassCoreProxyService();
     const auth = createAuthService(api, authStore);
     const store = createStoreService();
-    const nativeMessaging = createNativeMessagingService(authStore);
+    const nativeMessaging = createNativeMessagingService();
 
     if (ENV === 'development') QA_SERVICE?.init(storage.local);
     auth.registerLockAdapter(sessionLockAdapterFactory(auth));

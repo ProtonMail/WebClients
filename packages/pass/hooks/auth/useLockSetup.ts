@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { isMac } from '@proton/shared/lib/helpers/browser';
+import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 import { useAuthStore } from '../../components/Core/AuthStoreProvider';
@@ -16,6 +16,7 @@ import { usePinUnlock } from '../../components/Lock/PinUnlockProvider';
 import { useUnlock } from '../../components/Lock/UnlockProvider';
 import { useOrganization } from '../../components/Organization/OrganizationProvider';
 import { DEFAULT_LOCK_TTL } from '../../constants';
+import { ensureDesktopLockPermissions } from '../../lib/auth/lock/desktop/logic.extension';
 import type { UnlockDTO } from '../../lib/auth/lock/types';
 import { LockMode } from '../../lib/auth/lock/types';
 import { ReauthAction } from '../../lib/auth/reauth';
@@ -253,17 +254,8 @@ export const useLockSetup = (): LockSetup => {
             }
 
             case LockMode.DESKTOP: {
-                if (!EXTENSION_BUILD || !permissions) throw new Error('Unsupported lock mode');
-                const needsPermission = !(await permissions.hasPermission(['nativeMessaging']));
-
-                if (needsPermission) {
-                    await permissions.requestPermission(['nativeMessaging'], {
-                        title: c('Title').t`Browser permission required`,
-                        message: c('Info')
-                            .t`To set up biometrics unlock, ${PASS_APP_NAME} requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.`,
-                    });
-                    return;
-                }
+                const ready = await ensureDesktopLockPermissions(permissions);
+                if (!ready) return;
 
                 /** FIXME: for offline support using `LockMode.DESKTOP` we should
                  * go through the same password confirm flow as `LockMode.BIOMETRICS` */
@@ -357,9 +349,8 @@ export const useLockSetup = (): LockSetup => {
             enabled:
                 EXTENSION_BUILD &&
                 desktopUnlockFeatureFlag &&
-                // It's not possible to constraint a feature flag to extension + os
-                // Limiting to macos is meant to be removed
-                isMac(),
+                // Biometric is not supported on linux
+                (isMac() || isWindows()),
         }),
         [desktopUnlockFeatureFlag]
     );

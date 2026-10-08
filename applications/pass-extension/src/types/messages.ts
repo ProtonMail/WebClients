@@ -26,6 +26,7 @@ import type { FileTransferErrorDTO, FileTransferWriteDTO } from '@proton/pass/ty
 import type { UniqueItem } from '@proton/pass/types/data/items';
 import type { AliasCreateRequest } from '@proton/pass/types/data/items.dto';
 import type { TelemetryEventDTO } from '@proton/pass/types/data/telemetry';
+import type { NativeMessageErrorType } from '@proton/pass/types/desktop';
 import type { Maybe, MaybeNull, Result } from '@proton/pass/types/utils/index';
 import type {
     AutofillCCResult,
@@ -120,7 +121,6 @@ export enum WorkerMessageType {
     CONNECTIVITY_SYNC = 'CONNECTIVITY_SYNC',
 
     DEBUG = 'DEBUG',
-    DESKTOP_UNLOCK_SECRET = 'DESKTOP_UNLOCK_SECRET',
     ENDPOINT_INIT = 'ENDPOINT_INIT',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
     FETCH_ABORT = 'FETCH_ABORT',
@@ -227,8 +227,8 @@ type ConnectivityStatusMessage = WithPayload<WorkerMessageType.CONNECTIVITY, { s
 type ConnectivitySyncMessage = WithPayload<WorkerMessageType.CONNECTIVITY_SYNC, { online: boolean }>;
 
 type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
-type DesktopUnlockSecretMessage = { type: WorkerMessageType.DESKTOP_UNLOCK_SECRET };
 type EndpointInitMessage = WithPayload<WorkerMessageType.ENDPOINT_INIT, { popup?: boolean }>;
+
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
 type FetchDomainImageMessage = WithPayload<WorkerMessageType.FETCH_DOMAINIMAGE, { url: string }>;
@@ -328,7 +328,6 @@ export type WorkerMessage =
     | ConnectivityStatusMessage
     | ConnectivitySyncMessage
     | DebugMessage
-    | DesktopUnlockSecretMessage
     | EndpointInitMessage
     | FeatureFlagsUpdateMessage
     | FetchAbortMessage
@@ -405,7 +404,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTH_CONFIRM_PASSWORD]: Result;
     [WorkerMessageType.AUTH_INIT]: AppState;
     [WorkerMessageType.AUTH_PULL_FORK]: Result<PullForkResponse>;
-    [WorkerMessageType.AUTH_UNLOCK]: Result;
+    [WorkerMessageType.AUTH_UNLOCK]: Result<{}, { errorType?: NativeMessageErrorType }>;
     [WorkerMessageType.AUTOFILL_CC_QUERY]: AutofillCCResult;
     [WorkerMessageType.AUTOFILL_IDENTITY_QUERY]: AutofillIdentityResult;
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
@@ -415,7 +414,6 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: ClientInitResult;
     [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };
-    [WorkerMessageType.DESKTOP_UNLOCK_SECRET]: { secret: string };
     [WorkerMessageType.ENDPOINT_INIT]: EndpointContext;
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };

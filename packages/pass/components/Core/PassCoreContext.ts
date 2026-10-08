@@ -93,8 +93,6 @@ export type PassCoreContextValue = {
     isFirstLaunch?: () => boolean;
     /** Only relevant for extension */
     popup?: PopupController;
-    /** Request desktop unlock secret, only relevant for extension */
-    getDesktopUnlockSecret?: () => Promise<string>;
     /** SSH agent service, only relevant for desktop */
     sshAgent?: MaybeNull<SshAgentService>;
 };
