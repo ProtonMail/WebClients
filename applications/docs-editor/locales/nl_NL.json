@@ -445,6 +445,9 @@
       "Failed to export document.": [
         "Exporteren van document mislukt."
       ],
+      "Failed to import document due to unsupported file format.": [
+        "Kan het document niet importeren vanwege een niet-ondersteunde bestandsindeling."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Importeren van HTML mislukt door een onbekende fout."
       ],
@@ -465,9 +468,6 @@
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Dit rekenblad is incompatibel met de huidige clientversie. Probeer de client opnieuw te laden. Als de fout blijft optreden, neem dan contact op met de ondersteuning."
-      ],
-      "Tried to import Sheet data into Lexical": [
-        "Probeerde Sheet gegevens te importeren in Lexical"
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Kan het Word-document niet converteren. Is het met een wachtwoord beveiligd? Verwijder dan het wachtwoord en probeer het opnieuw."

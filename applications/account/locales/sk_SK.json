@@ -1280,6 +1280,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "Got it, connect my Gmail": [
+        "Rozumiem, prepojiť s mojím Gmailom"
+      ],
       "Grant access": [
         "Povoliť prístup"
       ],
@@ -1405,6 +1408,9 @@
       ],
       "Learn about recovery options": [
         "Zistite viac o možnostiach obnovy"
+      ],
+      "Learn how this works": [
+        "Zistite, ako to funguje"
       ],
       "Learn more": [
         "Zistiť viac"
@@ -1906,9 +1912,6 @@
       ],
       "Set as default": [
         "Nastaviť ako predvolený"
-      ],
-      "Set as default mail application": [
-        "Nastaviť ako predvolenú poštovú aplikáciu"
       ],
       "Set catch-all": [
         "Nastavenie doménového koša"
@@ -2447,6 +2450,12 @@
       "Domains": [
         "Domény"
       ],
+      "Managed Service Provider": [
+        "Poskytovateľ spravovaných služieb"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizácie s doplnkom „Poskytovateľ spravovaných služieb“ môžu vytvárať a spravovať dcérske organizácie."
+      ],
       "Servers": [
         "Servery"
       ],
@@ -2577,6 +2586,18 @@
       ],
       "3 new admin roles": [
         "3 nové správcovské pozície"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Priraďte skupinám správcovské pozície. Spravujte prístup pre viacerých používateľov naraz a automaticky ho aktualizujte, keď sa používatelia pripoja alebo odídu."
+      ],
+      "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
+        "Priraďte konkrétne správcovské pozície. Každému správcovi udeľte len taký prístup, aký potrebuje, aby ste obmedzili dopad kompromitovaných účtov a náhodných chýb."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "Vyberte si z troch nových správcovských pozícií. Každý správca dostane len také oprávnenia, aké potrebuje."
+      ],
+      "Choose from two new admin roles. Each admin receives only the access they need.": [
+        "Vyberte si z dvoch nových správcovských pozícií. Každý správca dostane len také oprávnenia, aké potrebuje."
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
@@ -2800,6 +2821,9 @@
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Vyskúšajte si to zadarmo na ${ TRIAL_DURATION_DAYS } dní"
       ],
+      "Up to ${ TRIAL_MAX_USERS } users, during the trial period": [
+        "Až ${ TRIAL_MAX_USERS } používateľov počas skúšobného obdobia"
+      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
         "Po zrušení sa vaša bezplatná skúšobná verzia neprevedie na platené predplatné, ale výhody plánu môžete využívať až do konca skúšobného obdobia."
       ],
@@ -2826,6 +2850,9 @@
       ],
       "You have reached the trial limit.": [
         "Dosiahli ste limit skúšobného obdobia."
+      ],
+      "Your trial ends on ${ trialEndDate }. Add a payment method whenever you’re ready to keep using all ${ planTitle } features. You’ll only be charged once it’s added.": [
+        "Vaša skúšobná verzia končí dňa ${ trialEndDate }. Akonáhle budete pripravení naďalej využívať všetky funkcie balíka ${ planTitle }, pridajte spôsob platby. Poplatok vám bude účtovaný až po jeho pridaní."
       ]
     },
     "b2b_trials_Action": {
@@ -3318,8 +3345,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktopová aplikácia"
+      "${ appName } Desktop application": [
+        "Desktopová aplikácia ${ appName }"
       ]
     },
     "Bug category": {
@@ -3462,8 +3489,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikáty z predchádzajúcich importov budú preskočené. V nastaveniach ${ PRODUCT_NAMES.EASY_SWITCH } môžu byť staršie správy vrátené späť alebo importované."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Najskôr sa načítajú vaše najnovšie emaily. Emaily, ktoré ste už načítali, sa nebudú kopírovať znovu."
       ]
     },
     "Calendar access select label": {
@@ -5316,12 +5343,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožňuje spolupracovať s ostatnými v zabezpečenom, šifrovanom prostredí."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } nie je vašou predvolenou poštovou aplikáciou."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } je vašou predvolenou poštovou aplikáciou."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } uchováva vaše obchodné údaje v bezpečí a umožňuje posielať šifrované emaily komukoľvek."
       ],
@@ -5932,12 +5953,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave or earlier"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -7512,9 +7527,6 @@
       ],
       "Invalid private key file": [
         "Neplatný súbor súkromného kľúča"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Neplatný token na obnovenie. Obnovte stránku a skúste to znova, prosím."
       ],
       "Invalid Sieve code": [
         "Neplatný Sieve kód"
@@ -9572,6 +9584,9 @@
       "Folders": [
         "Priečinky"
       ],
+      "Good to know before you connect": [
+        "Čo je dobré vedieť pred pripojením"
+      ],
       "IP address": [
         "IP adresa"
       ],
@@ -10619,6 +10634,9 @@
       "**${ appName }** is not supported.": [
         "Aplikácia **${ appName }** nie je podporovaná."
       ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** sa používa aj na prihlásenie do samostatného účtu ${ BRAND_NAME } mimo aplikácie ${ MAIL_APP_NAME }."
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**Povoliť automatické zálohy** pre pokoj v duši"
       ],
@@ -11417,9 +11435,6 @@
       "default email address": [
         "predvolená emailová adresa"
       ],
-      "Default email application": [
-        "Predvolená emailová aplikácia"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstráňte všetky ostatné MX záznamy, alebo sa uistite, že priorita ${ MAIL_APP_NAME } má najnižšie číslo."
       ],
@@ -11963,6 +11978,9 @@
       "here": [
         "tu"
       ],
+      "Here's what happens when you continue:": [
+        "V prípade, že budete pokračovať, udeje sa nasledovné:"
+      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skryje identifikačné informácie načítaním vzdialeného obsahu cez proxy server. Možnosť ukladať obsah ako prílohy."
       ],
@@ -12503,6 +12521,9 @@
       "Next billing date": [
         "Dátum ďalšej fakturácie"
       ],
+      "Next time you sign in to your other account": [
+        "Keď sa nabudúce prihlásite do vášho druhého účtu"
+      ],
       "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
         "Následne sa prihláste do svojho Google účtu a povoľte ${ BRAND_NAME } prístup do Google Drive. Vaše súbory a zložky naimportujeme do ${ DRIVE_APP_NAME }."
       ],
@@ -12571,6 +12592,9 @@
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Nenašlo sa to správne? Vyberte si svojho poskytovateľa zo zoznamu."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Na vašich ostatných ${ BRAND_NAME } účtoch sa nič nemení."
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -13069,9 +13093,6 @@
       ],
       "Session timed out": [
         "Relácia vypršala"
-      ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu. ${ MAIL_APP_NAME } sa otvorí automaticky po kliknutí na emailový odkaz."
       ],
       "Set password": [
         "Nastaviť heslo"
@@ -14063,9 +14084,6 @@
       "When enabled, members cannot opt out of password check-ins in their own settings.": [
         "Ak je táto funkcia zapnutá, členovia si nemôžu v svojich nastaveniach vypnúť prihlasovanie pomocou hesla."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Ak je táto funkcia povolená, skontrolujeme, či je ${ MAIL_APP_NAME } vašou predvolenou poštovou aplikáciou a upozorníme vás, ak nie je."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pri povolení SAML pre ${ appName } u poskytovateľa identity sa môže zobraziť výzva na použitie URL adresy spätného volania (ACS) a ID vydavateľa. Stačí skopírovať a vložiť nižšie uvedené údaje do polí poskytovateľa identity."
       ],
@@ -14411,6 +14429,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Pomocou stiahnutých súborov na obnovu nebudete môcť obnoviť uzamknuté údaje. Tým sa zakáže aj obnovenie na základe zariadenia."
       ],
+      "You'll choose a new username": [
+        "Vyberiete si nové používateľské meno"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
       ],
@@ -14425,6 +14446,9 @@
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Odteraz ho budete používať na prihlásenie. To je jediná zmena."
       ],
       "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
         "Chystáte sa prihlásiť do svojho ${ BRAND_NAME } účtu na tejto adrese:"
@@ -14515,6 +14539,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaša bezplatná skúšobná verzia bola úspešne konvertovaná na mesačné predplatné. Váš dátum obnovenia je ${ nextBillingDate }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Váš Gmail sa pripája k tejto adrese ${ MAIL_APP_NAME }"
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Váš Google Drive môže byť prázdny alebo môže obsahovať iba súbory, ktoré nie sú podporované."
@@ -16726,6 +16753,9 @@
       ],
       "Start weekday": [
         "Začiatok pracovného týždňa"
+      ],
+      "Start with your most recent messages": [
+        "Začnite s najnovšími správami"
       ],
       "Starts with": [
         "Začína s"
@@ -26759,9 +26789,6 @@
       ],
       "Change second password": [
         "Zmeniť druhé heslo"
-      ],
-      "Check your default mail application": [
-        "Skontrolovať predvolenú poštovú aplikáciu"
       ],
       "Choose a deployment method": [
         "Vyberte spôsob nasadenia"

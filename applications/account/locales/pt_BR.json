@@ -1889,9 +1889,6 @@
       "Set as default": [
         "Definir como padrão"
       ],
-      "Set as default mail application": [
-        "Definir como aplicativo de e-mail padrão"
-      ],
       "Set catch-all": [
         "Definir catch-all"
       ],
@@ -3240,11 +3237,6 @@
         "Não foi possível encontrar a última versão."
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicativo para computador do ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema no ${ LUMO_SHORT_APP_NAME }"
@@ -3382,11 +3374,6 @@
       ],
       "Take a tour": [
         "Faça um tour"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicatas de importações anteriores serão puladas. Desfaça ou importe mensagens mais antigas nas configurações do ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -5213,12 +5200,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } em ${ DRIVE_APP_NAME } permite que você colabore com outras pessoas em um ambiente seguro e criptografado."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "O ${ MAIL_APP_NAME } não é seu aplicativo padrão de e-mail."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "O ${ MAIL_APP_NAME } é seu aplicativo padrão de e-mail."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } mantém os dados do seu negócio seguros e permite que você envie e-mails criptografados a qualquer um."
       ],
@@ -5798,12 +5779,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave ou mais recente"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -7334,9 +7309,6 @@
       ],
       "Invalid private key file": [
         "O arquivo de chave privada não é válido."
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Token de redefinição inválido. Por favor, atualize a página e tente novamente."
       ],
       "Invalid Sieve code": [
         "O código Sieve não é válido."
@@ -11002,9 +10974,6 @@
       "default email address": [
         "endereço de e-mail padrão"
       ],
-      "Default email application": [
-        "Aplicativo de e-mail padrão"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Exclua quaisquer outros registros MX ou certifique-se de que a prioridade do ${ MAIL_APP_NAME } é o menor número."
       ],
@@ -12595,9 +12564,6 @@
       "Session timed out": [
         "Sessão expirada"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Definir ${ MAIL_APP_NAME } como seu aplicativo de e-mails padrão. O ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
-      ],
       "Set password": [
         "Defina uma senha"
       ],
@@ -13525,9 +13491,6 @@
       ],
       "When enabled, members cannot opt out of password check-ins in their own settings.": [
         "Quando essa opção estiver ativada, os membros não poderão desativar o início de sessão por senha em suas próprias configurações."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Quando ativado, verificaremos se o ${ MAIL_APP_NAME } é o seu aplicativo padrão de e-mail e o notificaremos se não for."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ao ativar o SAML para ${ appName } em seu provedor de identidade, você poderá ser solicitado a usar o URL de retorno de chamada (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu provedor de identidade."
@@ -20282,6 +20245,9 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (sem impostos)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } está disponível apenas nos planos empresariais."
+      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20351,6 +20317,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Escolha as contas de wallet adicionais antes de trocar seu plano."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
       ],
@@ -20417,11 +20386,17 @@
       "This payment method will become your new default for all future renewals.": [
         "Este se tornará seu novo método de pagamento padrão para todas as futuras renovações."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Esse plano não suporta membros na sua conta."
+      ],
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Os planos de avaliação não suportam IPs dedicados."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Os planos de avaliação não suportam licenças de Scribe."
       ],
       "VAT number": [
         "Número de IVA"
@@ -25607,9 +25582,6 @@
       ],
       "Change second password": [
         "Alterar segunda senha"
-      ],
-      "Check your default mail application": [
-        "Verifique seu aplicativo de e-mail padrão"
       ],
       "Choose a deployment method": [
         "Escolha seu método de implantação"

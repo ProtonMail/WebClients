@@ -341,6 +341,9 @@
       "Display navigation bar": [
         "Afficher la barre de navigation"
       ],
+      "Don't show this offer again": [
+        "Ne plus afficher cette offre"
+      ],
       "Done": [
         "Terminé"
       ],
@@ -890,6 +893,9 @@
       "Skip verification": [
         "Ignorer la vérification"
       ],
+      "Special Offer": [
+        "Offre spéciale"
+      ],
       "Start import": [
         "Démarrer l'importation"
       ],
@@ -1389,8 +1395,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Application de bureau ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Application de bureau ${ appName }"
       ]
     },
     "Bug category": {
@@ -5390,6 +5396,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Les annonceurs suivent votre navigation pour afficher des publicités ciblées. ${ VPN_APP_NAME } bloque les traqueurs et les publicités, rendant votre connexion plus rapide et améliorant votre expérience en ligne."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Après avoir effectué la mise à jour, votre Mac pourrait demander un mot de passe. Saisissez le mot de passe que vous utilisez pour déverrouiller votre Mac, puis cliquez Toujours Autoriser pour rester connecté. ${ learnMore }"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ],
@@ -5620,6 +5629,9 @@
       ],
       "Discard changes?": [
         "Abandonner les modifications ?"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Découvrez les nouvelles fonctionnalités disponibles et utilisez-les dès maintenant !"
@@ -6104,6 +6116,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
       ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Veuillez mettre à jour ${ MAIL_APP_NAME } pour continuer à utiliser l'application. ${ downloadUpdate }"
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Veuillez patienter pendant que nous recherchons des contacts qui peuvent être signés une nouvelle fois avec la clé de chiffrement principale."
       ],
@@ -6249,6 +6264,9 @@
       ],
       "Take control of your digital life": [
         "Prenez le contrôle de votre vie numérique"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporairement indisponible à cause d'une forte demande. Veuillez réessayer ultérieurement."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."

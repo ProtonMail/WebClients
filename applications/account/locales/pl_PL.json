@@ -1524,9 +1524,6 @@
       "Set as default": [
         "Ustaw jako domyślny"
       ],
-      "Set as default mail application": [
-        "Ustaw jako domyślną aplikację pocztową"
-      ],
       "Set catch-all": [
         "Ustaw adres catch-all"
       ],
@@ -2816,11 +2813,6 @@
         "Nie udało się znaleźć najnowszej wersji"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problem z ${ LUMO_SHORT_APP_NAME }"
@@ -2958,11 +2950,6 @@
       ],
       "Take a tour": [
         "Otwórz przewodnik"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikaty z poprzednich importów zostaną pominięte. Cofnij operację lub zaimportuj starsze wiadomości w ustawieniach ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -4777,12 +4764,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } w ${ DRIVE_APP_NAME } umożliwia współpracę z innymi w bezpiecznym i szyfrowanym środowisku."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } nie jest Twoją domyślną aplikacją pocztową."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } to Twoja domyślna aplikacja pocztowa."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "Aplikacja ${ MAIL_APP_NAME } dba o bezpieczeństwo danych Twojej firmy i umożliwia wysyłanie zaszyfrowanych wiadomości do każdego."
       ],
@@ -5366,12 +5347,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave lub starszy"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6800,9 +6775,6 @@
       ],
       "Invalid private key file": [
         "Nieprawidłowy plik klucza prywatnego"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Nieprawidłowy token resetowania. Odśwież stronę i spróbuj ponownie."
       ],
       "Invalid Sieve code": [
         "Nieprawidłowy kod Sieve"
@@ -10285,9 +10257,6 @@
       "default email address": [
         "domyślny adres e-mail"
       ],
-      "Default email application": [
-        "Domyślna aplikacja pocztowa"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Usuń wszystkie inne rekordy MX lub upewnij się, że priorytet rekordu ${ MAIL_APP_NAME } posiada najniższy numer."
       ],
@@ -11758,9 +11727,6 @@
       "Session timed out": [
         "Upłynął limit czasu sesji"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową Aplikacja ${ MAIL_APP_NAME } otworzy się automatycznie po kliknięciu linku do adresu e-mail."
-      ],
       "Set password": [
         "Ustaw hasło"
       ],
@@ -12609,9 +12575,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Jeśli funkcja jest wyłączona, zdalne obrazy nie zostaną załadowane bez Twojej wiedzy."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Gdy ta opcja jest włączona, będziemy sprawdzać, czy ${ MAIL_APP_NAME } jest Twoją domyślną aplikacją pocztową, i powiadomimy Cię, jeśli tak nie jest."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Po włączeniu uwierzytelniania SAML dla ${ appName } może być koniecznie użycie adresu URL odpowiedzi usługi ACS i identyfikatora dostawcy. Kopiuj i wklej poniższe dane do pól dostawcy tożsamości."
@@ -24529,9 +24492,6 @@
       ],
       "Change second password": [
         "Zmień drugie hasło"
-      ],
-      "Check your default mail application": [
-        "Sprawdź swoją domyślną aplikację pocztową"
       ],
       "Choose a provider": [
         "Wybierz dostawcę"

@@ -507,6 +507,9 @@
       "Merge contacts": [
         "Gabungkan kontak"
       ],
+      "Migrate": [
+        "Migrasi"
+      ],
       "More actions": [
         "Tindakan lainnya"
       ],
@@ -1106,11 +1109,6 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikasi Desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -3604,6 +3602,17 @@
         "Terabita"
       ]
     },
+    "Filter": {
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } berhasil diperbarui"
@@ -3971,11 +3980,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
       "In progress": [
         "Sedang berlangsung"
       ],
       "Migrated": [
         "Dimigrasikan"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Import warning": {
@@ -4815,6 +4830,9 @@
       "Symbols (#$&)": [
         "Simbol (#$&)"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tidak tersedia sementara karena permintaan tinggi. Silakan coba lagi nanti."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Sementara tidak tersedia. Silakan coba lagi nanti."
       ],
@@ -4991,6 +5009,9 @@
       ],
       "Writing assistant": [
         "Asisten penulisan"
+      ],
+      "You": [
+        "Anda"
       ],
       "you": [
         "Anda"
@@ -5297,6 +5318,9 @@
       ],
       "City": [
         "Kota"
+      ],
+      "Client": [
+        "Klien"
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
@@ -6817,6 +6841,11 @@
         "Dukungan untuk ${ n } domain email khusus"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" berhasil dibuat"
@@ -7486,6 +7515,26 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Proses: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
       ]
     },
     "Property type": {
@@ -8482,6 +8531,9 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "TableHeader": {

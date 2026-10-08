@@ -2080,11 +2080,6 @@
         "年払い"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } デスクトップアプリ"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } の不具合"
@@ -2210,11 +2205,6 @@
       ],
       "Take a tour": [
         "ツアーを開始"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "以前のインポートとの重複はスキップされます。元に戻す、またはより古いメッセージをインポートするには、${ PRODUCT_NAMES.EASY_SWITCH }設定に移動してください。"
       ]
     },
     "Calendar attachment tooltip": {
@@ -7470,7 +7460,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8455,12 +8445,6 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "オフにすると、日付、名前、メールアドレス、件名のみで検索できます。メッセージ内容の検索を無効にする(およびこの機能を有効にするためにダウンロードしたメッセージを削除する)には、設定へ進んでください。"
-      ],
-      "Turn on to search the content of your messages": [
-        "メッセージ内容の検索をオンにします"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "このブラウザではストレージ機能へのアクセスができません、メッセージ内容の検索を有効にするためには、このアクセスが必要です。"

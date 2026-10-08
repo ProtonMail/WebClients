@@ -1522,7 +1522,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2131,11 +2134,6 @@
         "Ročně"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktopová aplikace"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problém s ${ LUMO_SHORT_APP_NAME }"
@@ -2261,11 +2259,6 @@
       ],
       "Take a tour": [
         "Absolvovat prohlídku"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicity z předchozích importů budou přeskočeny. Akci můžete vzít zpět nebo importovat starší zprávy v nastavení ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -7774,10 +7767,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8735,12 +8725,6 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Vypněte pro vyhledávání pouze podle data, jména, e-mailové adresy nebo předmětu. Chcete-li deaktivovat vyhledávání v obsahu zpráv (a smazat zprávy stažené pro povolení této funkce), přejděte do Nastavení."
-      ],
-      "Turn on to search the content of your messages": [
-        "Zapněte pro možnost vyhledávat v obsahu vašich zpráv"
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "V tomto prohlížeči nelze přistupovat k funkci úložiště. Tento přístup potřebujeme, abychom mohli prohledávat obsah zpráv."

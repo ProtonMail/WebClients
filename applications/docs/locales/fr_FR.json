@@ -1159,8 +1159,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Application de bureau ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Application de bureau ${ appName }"
       ]
     },
     "Bug category": {
@@ -5147,6 +5147,9 @@
       ],
       "Symbols (#$&)": [
         "Symboles (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporairement indisponible à cause d'une forte demande. Veuillez réessayer ultérieurement."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."

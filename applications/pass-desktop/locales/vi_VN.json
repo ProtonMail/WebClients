@@ -861,11 +861,6 @@
         "Gỡ cài đặt ${ PASS_APP_NAME }"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Ứng dụng máy tính để bàn ${ MAIL_APP_NAME }"
-      ]
-    },
     "Button": {
       "More info": [
         "Thông tin thêm"
@@ -2161,6 +2156,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
         "Đang chuyển mục"

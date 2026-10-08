@@ -684,6 +684,9 @@
       "Got it": [
         "Förstått"
       ],
+      "Got it, connect my Gmail": [
+        "Jag förstår, anslut min Gmail"
+      ],
       "Help and feedback": [
         "Hjälp och feedback"
       ],
@@ -813,6 +816,9 @@
       ],
       "Later this week": [
         "Senare denna vecka"
+      ],
+      "Learn how this works": [
+        "Lär dig hur detta fungerar"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -1553,7 +1559,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2148,8 +2155,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Applikation för stationär dator ${ appName }"
       ]
     },
     "Bug category": {
@@ -2277,11 +2284,6 @@
       ],
       "Take a tour": [
         "Ta en rundtur"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Dubbletter från tidigare importer kommer att hoppas över. Ångra eller importera äldre meddelanden i inställningarna för ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -4321,6 +4323,9 @@
       "${ messageCount } new message": [
         "${ messageCount } nytt meddelande",
         "${ messageCount } nya meddelanden"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "Från: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -7043,6 +7048,9 @@
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
+      ],
       "${ total } conversation": [
         "${ total } konversation",
         "${ total } konversationer"
@@ -7122,6 +7130,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
         "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
+      ],
+      "1 device per user": [
+        "1 enhet per användare"
       ],
       "1 vault per user": [
         "1 valv per användare"
@@ -7867,6 +7878,9 @@
       "here": [
         "här"
       ],
+      "Here's what happens when you continue:": [
+        "Här är vad som händer när du fortsätter:"
+      ],
       "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
         "Hej Lumo, ta en titt på vad jag får mest av i min inkorg, på de mappar och filter jag redan har, och föreslå sen hur jag kan hålla det organiserat: vad som kan ändras på de jag redan har, och något nytt värt att lägga till. Gå igenom planen med mig först, och flytta ingenting innan jag säger ja."
       ],
@@ -7977,8 +7991,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8195,6 +8208,9 @@
       ],
       "newsletter": [
         "nyhetsbrev"
+      ],
+      "Next time you sign in to your other account": [
+        "Nästa gång du loggar in på ditt andra konto"
       ],
       "No action selected": [
         "Ingen åtgärd vald"
@@ -9136,12 +9152,6 @@
       "Turn off auto-reply": [
         "Stäng av automatiskt svar"
       ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Stäng av för att endast söka efter datum, namn, e-postadress eller ämnesrad. För att inaktivera sökning av meddelandeinnehåll (och ta bort nedladdade meddelanden för att aktivera denna funktion) gå till inställningar."
-      ],
-      "Turn on to search the content of your messages": [
-        "Slå på för att söka efter innehållet i dina meddelanden"
-      ],
       "Turn on your away message": [
         "Aktivera ditt frånvaromeddelande"
       ],
@@ -9602,6 +9612,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Din Gmail ansluter till denna ${ MAIL_APP_NAME }-adress"
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Din hårdvara stöder inte att köra skrivassistenten lokalt. Prova köra den på servrar."
@@ -10895,6 +10908,9 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Avslutade prenumeration från ${ truncatedName }."
+      ],
+      "Until date": [
+        "Fram till datum"
       ],
       "Updates": [
         "Uppdateringar"
@@ -12797,6 +12813,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sista chansen att få din första månad med ${ plan } till detta pris."
+      ],
       "Last day to save": [
         "Sista dagen att spara"
       ],
@@ -13439,6 +13458,9 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betala med ${ IDEAL_WERO_BRAND_NAME }"

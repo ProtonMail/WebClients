@@ -1524,9 +1524,6 @@
       "Set as default": [
         "Đặt làm mặc định"
       ],
-      "Set as default mail application": [
-        "Đặt làm ứng dụng thư mặc định"
-      ],
       "Set catch-all": [
         "Thiết lập nhận tất cả"
       ],
@@ -2774,11 +2771,6 @@
         "Không tìm thấy phiên bản mới nhất"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Ứng dụng máy tính để bàn ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Vấn đề với ${ LUMO_SHORT_APP_NAME }"
@@ -2916,11 +2908,6 @@
       ],
       "Take a tour": [
         "Xem tour giới thiệu"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Các thư trùng lặp từ lần nhập trước sẽ bị bỏ qua. Hoàn tác hoặc nhập các thư cũ hơn trong phần cài đặt ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -4699,12 +4686,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } trong ${ DRIVE_APP_NAME } cho phép làm việc cùng người khác trong môi trường an toàn, đã mã hóa."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } không phải là ứng dụng thư mặc định."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } là ứng dụng thư mặc định."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } giữ an toàn cho dữ liệu doanh nghiệp và cho phép gửi email đã mã hóa tới bất kỳ ai."
       ],
@@ -5273,12 +5254,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave hoặc cũ hơn"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6677,9 +6652,6 @@
       ],
       "Invalid private key file": [
         "Tệp khóa riêng tư không hợp lệ"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Mã thông báo đặt lại không hợp lệ. Vui lòng làm mới trang và thử lại."
       ],
       "Invalid Sieve code": [
         "Mã Sieve không hợp lệ"
@@ -9952,9 +9924,6 @@
       "default email address": [
         "địa chỉ email mặc định"
       ],
-      "Default email application": [
-        "Ứng dụng email mặc định"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Xóa bất kỳ bản ghi MX nào khác hoặc đảm bảo Độ ưu tiên của ${ MAIL_APP_NAME } là số thấp nhất."
       ],
@@ -11398,9 +11367,6 @@
       "Session timed out": [
         "Phiên hết hạn"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Đặt ${ MAIL_APP_NAME } làm ứng dụng email mặc định. ${ MAIL_APP_NAME } sẽ tự động mở khi bạn nhấp vào liên kết email."
-      ],
       "Set password": [
         "Đặt mật khẩu"
       ],
@@ -12231,9 +12197,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Khi bị vô hiệu hóa, việc này ngăn hình ảnh từ xa tải xuống mà bạn không biết."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Khi kích hoạt, hệ thống sẽ kiểm tra xem ${ MAIL_APP_NAME } có phải là ứng dụng thư mặc định hay không và thông báo nếu chưa phải."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Khi kích hoạt SAML cho ${ appName } trong nhà cung cấp danh tính, có thể được nhắc sử dụng URL gọi lại (ACS) và ID nhà phát hành. Chỉ cần sao chép và dán dữ liệu bên dưới vào các trường của nhà cung cấp danh tính."
@@ -23572,9 +23535,6 @@
       ],
       "Change second password": [
         "Thay đổi mật khẩu thứ hai"
-      ],
-      "Check your default mail application": [
-        "Kiểm tra ứng dụng thư mặc định"
       ],
       "Choose a provider": [
         "Chọn nhà cung cấp"

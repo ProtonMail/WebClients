@@ -867,11 +867,6 @@
         "Odinstaluj ${ PASS_APP_NAME }"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
-      ]
-    },
     "Button": {
       "More info": [
         "Więcej informacji"
@@ -2241,10 +2236,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"

@@ -861,11 +861,6 @@
         "${ PASS_APP_NAME }をアンインストール"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } デスクトップアプリ"
-      ]
-    },
     "Button": {
       "More info": [
         "詳細はこちら"
@@ -2161,6 +2156,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"

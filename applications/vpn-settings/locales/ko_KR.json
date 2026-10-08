@@ -2191,11 +2191,6 @@
         "민감한 데이터를 다루고 계신가요?"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } 문제"
@@ -2321,11 +2316,6 @@
       ],
       "Take a tour": [
         "둘러보기"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "기존에 불러온 항목 중 중복되는 항목은 생략됩니다. ${ PRODUCT_NAMES.EASY_SWITCH } 설정에서 실행 취소하거나 더 오래된 메시지를 불러올 수 있습니다."
       ]
     },
     "Cancellation upsell": {
@@ -4093,12 +4083,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave 및 이전 버전"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -5050,9 +5034,6 @@
       ],
       "Invalid private key file": [
         "유효하지 않은 개인 키 파일"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "재설정 토큰이 유효하지 않습니다. 페이지를 새로고침하고 다시 시도해 주세요."
       ],
       "Invalid URL": [
         "유효하지 않은 URL"

@@ -1556,7 +1556,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -2166,11 +2167,6 @@
         "Anual"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema con ${ LUMO_SHORT_APP_NAME }"
@@ -2296,11 +2292,6 @@
       ],
       "Take a tour": [
         "Explore ahora"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Se omiten los duplicados de las importaciones anteriores. Deshaga o importe mensajes más antiguos en los ajustes de ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -8089,8 +8080,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9317,14 +9307,8 @@
       "Turn off auto-reply": [
         "Desactivar respuesta automática"
       ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Desactívela para buscar solo por fecha, nombre, dirección de correo o asunto. Para desactivar la búsqueda en el contenido del mensaje (y eliminar los mensajes descargados para activar esta función), vaya a los ajustes."
-      ],
       "Turn off your away message": [
         "Desactive su mensaje de ausencia"
-      ],
-      "Turn on to search the content of your messages": [
-        "Actívelo para buscar el contenido de los mensajes"
       ],
       "Turn on your away message": [
         "Active su mensaje de ausencia"

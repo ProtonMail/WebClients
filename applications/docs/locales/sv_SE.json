@@ -1150,8 +1150,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Applikation för stationär dator ${ appName }"
       ]
     },
     "Bug category": {
@@ -4433,6 +4433,9 @@
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } användare hittades",
         "${ total } användare hittades"
@@ -5228,6 +5231,9 @@
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tillfälligt otillgänglig på grund av hög efterfrågan. Försök igen senare."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
@@ -7617,6 +7623,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sista chansen att få din första månad med ${ plan } till detta pris."
+      ],
       "Last day to save": [
         "Sista dagen att spara"
       ],
@@ -7881,6 +7890,9 @@
       ],
       "Amount due after trial on ${ formattedDate }": [
         "Belopp att betala efter provperioden den ${ formattedDate }"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Priserna för förnyelse kan ändras enligt ${ termsAndConditionsLink }."

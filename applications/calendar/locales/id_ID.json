@@ -599,6 +599,9 @@
       "Merge contacts": [
         "Gabungkan kontak"
       ],
+      "Migrate": [
+        "Migrasi"
+      ],
       "More actions": [
         "Tindakan lainnya"
       ],
@@ -1343,11 +1346,6 @@
         "Tahunan"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikasi Desktop ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Masalah ${ LUMO_SHORT_APP_NAME }"
@@ -1708,6 +1706,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Amount due": [
+        "Jumlah yang dibayar"
       ],
       "Subtotal": [
         "Subtotal"
@@ -4438,6 +4439,17 @@
         "Terabita"
       ]
     },
+    "Filter": {
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } berhasil diperbarui"
@@ -4845,11 +4857,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
       "In progress": [
         "Sedang berlangsung"
       ],
       "Migrated": [
         "Dimigrasikan"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Import warning": {
@@ -5890,6 +5908,9 @@
       "Take control of your digital life": [
         "Raih kendali atas kehidupan digital Anda"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tidak tersedia sementara karena permintaan tinggi. Silakan coba lagi nanti."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Sementara tidak tersedia. Silakan coba lagi nanti."
       ],
@@ -6156,6 +6177,9 @@
       ],
       "Yearly": [
         "Tahunan"
+      ],
+      "You": [
+        "Anda"
       ],
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
@@ -6656,6 +6680,9 @@
       ],
       "City": [
         "Kota"
+      ],
+      "Client": [
+        "Klien"
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
@@ -8564,6 +8591,11 @@
         "Dukungan untuk ${ n } domain email khusus"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
     "Note": {
       "Note:": [
         "Catatan:"
@@ -9623,6 +9655,26 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Proses: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
       ]
     },
     "Property type": {
@@ -11026,6 +11078,9 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "TableHeader": {

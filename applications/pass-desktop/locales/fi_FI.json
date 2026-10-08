@@ -878,11 +878,6 @@
         "Poista ${ PASS_APP_NAME }"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }in työpöytäsovellus"
-      ]
-    },
     "Button": {
       "More info": [
         "Lisätietoja"
@@ -2219,8 +2214,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"

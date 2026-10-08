@@ -1229,6 +1229,9 @@
       "Got it": [
         "Förstått"
       ],
+      "Got it, connect my Gmail": [
+        "Jag förstår, anslut min Gmail"
+      ],
       "Grant access": [
         "Bevilja åtkomst"
       ],
@@ -1354,6 +1357,9 @@
       ],
       "Learn about recovery options": [
         "Lär dig om återställningsalternativ"
+      ],
+      "Learn how this works": [
+        "Lär dig hur detta fungerar"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -1852,9 +1858,6 @@
       ],
       "Set as default": [
         "Ställ in som standard"
-      ],
-      "Set as default mail application": [
-        "Ställ in som standardapplikation för e-post"
       ],
       "Set catch-all": [
         "Ställ in \"Catch-all\""
@@ -2719,6 +2722,9 @@
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Prova det gratis i ${ TRIAL_DURATION_DAYS } dagar"
       ],
+      "Up to ${ TRIAL_MAX_USERS } users, during the trial period": [
+        "Upp till ${ TRIAL_MAX_USERS } användare under provperioden"
+      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din gratis provperiod inte att omvandlas till en betald prenumeration, men du kan fortfarande dra nytta av paketförmåner fram till slutet av provperioden. Därefter kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
       ],
@@ -3186,8 +3192,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Applikation för stationär dator ${ appName }"
       ]
     },
     "Bug category": {
@@ -3327,11 +3333,6 @@
       ],
       "Take a tour": [
         "Ta en rundtur"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Dubbletter från tidigare importer kommer att hoppas över. Ångra eller importera äldre meddelanden i inställningarna för ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -5155,12 +5156,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } låter dig arbeta tillsammans med andra i en säker, krypterad miljö."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } är inte din standardapplikation för e-post."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } är din standardapplikation för e-post."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } håller din företagsdata säker och låter dig skicka krypterad e-post till vem som helst."
       ],
@@ -5737,12 +5732,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave eller tidigare"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -7273,9 +7262,6 @@
       ],
       "Invalid private key file": [
         "Ogiltig privat nyckelfil"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Ogiltig återställningstoken. Uppdatera sidan och försök igen."
       ],
       "Invalid Sieve code": [
         "Ogiltig Sieve-kod"
@@ -10127,6 +10113,9 @@
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } användare hittades",
         "${ total } användare hittades"
@@ -10244,6 +10233,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
         "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
+      ],
+      "1 device per user": [
+        "1 enhet per användare"
       ],
       "1 vault per user": [
         "1 valv per användare"
@@ -10947,9 +10939,6 @@
       "default email address": [
         "standard e-postadress"
       ],
-      "Default email application": [
-        "Standardapplikation för e-post"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Ta bort andra MX-poster eller se till att ${ MAIL_APP_NAME }s prioritet är det lägsta numret."
       ],
@@ -11461,6 +11450,9 @@
       ],
       "here": [
         "här"
+      ],
+      "Here's what happens when you continue:": [
+        "Här är vad som händer när du fortsätter:"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Döljer identifierande information genom att ladda fjärrinnehåll via en proxy. Möjlighet att lagra innehåll som bilagor."
@@ -11980,6 +11972,9 @@
       ],
       "Next billing date": [
         "Nästa faktureringsdatum"
+      ],
+      "Next time you sign in to your other account": [
+        "Nästa gång du loggar in på ditt andra konto"
       ],
       "No account keys exist": [
         "Det finns inga kontonycklar"
@@ -12509,9 +12504,6 @@
       ],
       "Session timed out": [
         "Session timeout"
-      ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
       ],
       "Set password": [
         "Ställ in lösenord"
@@ -13419,9 +13411,6 @@
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "När detta är inaktiverat förhindrar det att fjärrbilder laddas utan din vetskap."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "När det är aktiverat kommer vi kontrollera om ${ MAIL_APP_NAME } är din standardapplikation för e-post och avisera dig om det inte är det."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
       ],
@@ -13829,6 +13818,9 @@
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
       ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Din Gmail ansluter till denna ${ MAIL_APP_NAME }-adress"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information är säker hos oss. Vi kommer endast kontakta dig när det krävs för att tillhandahålla våra tjänster."
       ],
@@ -14050,6 +14042,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Gåva"
+      ],
+      "Open": [
+        "Öppna"
       ],
       "Paid": [
         "Betald"
@@ -18966,6 +18961,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sista chansen att få din första månad med ${ plan } till detta pris."
+      ],
       "Last day to save": [
         "Sista dagen att spara"
       ],
@@ -20193,6 +20191,9 @@
       ],
       "Offer unavailable": [
         "Erbjudande otillgängligt"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betala med ${ IDEAL_WERO_BRAND_NAME }"
@@ -25468,9 +25469,6 @@
       ],
       "Change second password": [
         "Ändra andra lösenord"
-      ],
-      "Check your default mail application": [
-        "Kontrollera din standardapplikation för e-post"
       ],
       "Choose a deployment method": [
         "Välj en distributionsmetod"

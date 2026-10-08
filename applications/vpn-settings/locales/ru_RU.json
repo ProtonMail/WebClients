@@ -1919,11 +1919,6 @@
         "Работаете с конфиденциальными данными?"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } для ПК"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Проблема с ${ LUMO_SHORT_APP_NAME }"
@@ -2049,11 +2044,6 @@
       ],
       "Take a tour": [
         "Ознакомительный тур"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Дубликаты из предыдущих импортов будут пропущены. Вы можете отменить импорт или импортировать более старые сообщения в настройках ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -3824,12 +3814,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave или более ранняя версия"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -4697,9 +4681,6 @@
       ],
       "Invalid private key file": [
         "Недопустимый файл закрытого ключа"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Недействительный токен сброса. Пожалуйста, обновите страницу и попробуйте еще раз."
       ],
       "Invalid URL": [
         "Недействительный URL"

@@ -445,6 +445,9 @@
       "Failed to export document.": [
         "Dokumentet kunne ikke eksporteres."
       ],
+      "Failed to import document due to unsupported file format.": [
+        "Dokumentet kunne ikke importeres, da filformatet ikke understøttes."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Kunne ikke importere HTML pga. ukendt fejl."
       ],
@@ -468,9 +471,6 @@
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Dette regneark er ikke kompatibelt med den nuværende klientversion. Prøv at genindlæse klienten. Kontakt support hvis problemet fortsætter."
-      ],
-      "Tried to import Sheet data into Lexical": [
-        "Forsøgte at importere regnearksdata i Lexical."
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Ikke muligt at konvertere Word-dokument. Er det adgangskodebeskyttet? Hvis ja, så fjern adgangskoden og prøv igen."

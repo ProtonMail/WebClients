@@ -445,6 +445,9 @@
       "Failed to export document.": [
         "Exportarea documentului a eșuat."
       ],
+      "Failed to import document due to unsupported file format.": [
+        "Importarea documentului a eșuat din cauza unui format de fișier neacceptat."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Importarea fișierului HTML a eșuat din cauza unei erori necunoscute."
       ],
@@ -468,9 +471,6 @@
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Acest registru de lucru nu este compatibil cu versiunea curentă a clientului. Încercați să reîncărcați clientul. Dacă eroarea persistă, contactați asistența."
-      ],
-      "Tried to import Sheet data into Lexical": [
-        "S-a încercat importarea datelor din foaia de calcul în Lexical."
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Nu se poate converti documentul Word. Este protejat prin parolă? Dacă da, trebuie să eliminați parola și să reîncercați."

@@ -1926,11 +1926,6 @@
         "Érzékeny adatokkal dolgozik?"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } asztali alkalmazás"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Probléma az alkalmazással"
@@ -4000,12 +3995,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave vagy korábbi"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -7265,9 +7254,6 @@
       "default email address": [
         "alapértelmezett e-mail cím"
       ],
-      "Default email application": [
-        "Alapértelmezett e-mail alkalmazás"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
       ],
@@ -8316,9 +8302,6 @@
       ],
       "Session timed out": [
         "A munkamenet lejárt"
-      ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Állítsa be ${ MAIL_APP_NAME }-t alapértelmezett e-mail alkalmazásnak. ${ MAIL_APP_NAME } automatikusan megnyílik, amikor egy e-mail linkre kattint."
       ],
       "Set password": [
         "Jelszó beállítása"

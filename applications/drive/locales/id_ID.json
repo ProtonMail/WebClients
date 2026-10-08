@@ -84,11 +84,17 @@
       "Add phone number": [
         "Tambah nomor telepon"
       ],
+      "Add photos": [
+        "Tambahkan foto"
+      ],
       "Add storage": [
         "Tambah penyimpanan"
       ],
       "Add to group": [
         "Tambahkan ke grup"
+      ],
+      "Album name": [
+        "Nama album"
       ],
       "Apply": [
         "Terapkan"
@@ -300,6 +306,9 @@
       "Delete ${ selectedCount } contact group": [
         "Hapus ${ selectedCount } grup kontak"
       ],
+      "Delete album": [
+        "Hapus album"
+      ],
       "Delete contact": [
         "Hapus kontak"
       ],
@@ -323,6 +332,9 @@
       ],
       "Display navigation bar": [
         "Tampilkan bilah navigasi"
+      ],
+      "Display next": [
+        "Tampilkan berikutnya"
       ],
       "Done": [
         "Selesai"
@@ -350,6 +362,9 @@
       ],
       "Download logs": [
         "Unduh log"
+      ],
+      "Drive Locked": [
+        "Drive Terkunci"
       ],
       "Edit": [
         "Sunting"
@@ -383,6 +398,9 @@
       ],
       "Encrypted": [
         "Terenkripsi"
+      ],
+      "Explore more": [
+        "Jelajahi lebih lanjut"
       ],
       "Explore other plans": [
         "Telusuri paket lainnya"
@@ -450,6 +468,9 @@
       "Go to label": [
         "Buka label"
       ],
+      "Go to parent": [
+        "Pergi ke induk"
+      ],
       "Go to settings": [
         "Buka pengaturan"
       ],
@@ -504,8 +525,14 @@
       "Import from Outlook": [
         "Impor dari Outlook"
       ],
+      "Import now": [
+        "Impor sekarang"
+      ],
       "Increase": [
         "Tambah"
+      ],
+      "Join album": [
+        "Gabung ke album"
       ],
       "Keep my subscription": [
         "Pertahankan langganan saya"
@@ -552,6 +579,9 @@
       "Manage labels": [
         "Kelola label"
       ],
+      "Manage share": [
+        "Kelola pembagian"
+      ],
       "Manage users/addresses": [
         "Kelola pengguna/alamat"
       ],
@@ -575,6 +605,9 @@
       ],
       "Merge contacts": [
         "Gabungkan kontak"
+      ],
+      "Migrate": [
+        "Migrasi"
       ],
       "Minimize transfers": [
         "Sembunyikan jendela transfer"
@@ -608,6 +641,12 @@
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
+      ],
+      "New": [
+        "Baru"
+      ],
+      "New album": [
+        "Album baru"
       ],
       "New document": [
         "Dokumen baru"
@@ -720,6 +759,9 @@
       "Rename": [
         "Ubah nama"
       ],
+      "Rename album": [
+        "Ubah nama album"
+      ],
       "Replace file": [
         "Ganti file"
       ],
@@ -786,6 +828,9 @@
       "Search countries": [
         "Cari negara"
       ],
+      "Search drive": [
+        "Cari drive"
+      ],
       "See how": [
         "Lihat caranya"
       ],
@@ -819,6 +864,9 @@
       "Set as album cover": [
         "Pasang sebagai sampul album"
       ],
+      "Set as cover": [
+        "Atur sebagai sampul"
+      ],
       "Set password or expiration date": [
         "Atur kata sandi atau tanggal kedalewarsa"
       ],
@@ -842,6 +890,9 @@
       ],
       "Share": [
         "Bagikan"
+      ],
+      "Share file": [
+        "Bagikan file"
       ],
       "Share item": [
         "Bagikan item"
@@ -899,6 +950,9 @@
       ],
       "Stay": [
         "Tinggal"
+      ],
+      "Stop": [
+        "Berhenti"
       ],
       "Stop sharing": [
         "Berhenti berbagi"
@@ -1228,6 +1282,11 @@
         "Masa uji coba gratis Anda berakhir dalam ${ timeRemaining }"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Diundang"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
@@ -1295,11 +1354,6 @@
       ],
       "Yearly": [
         "Tahunan"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikasi Desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -1487,6 +1541,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Amount due": [
+        "Jumlah yang dibayar"
       ],
       "Subtotal": [
         "Subtotal"
@@ -3913,6 +3970,17 @@
         "Terabita"
       ]
     },
+    "Filter": {
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } berhasil diperbarui"
@@ -3973,11 +4041,19 @@
       "Password ends with": [
         "Kata sandi berakhir dengan"
       ],
+      "Rename album": [
+        "Ubah nama album"
+      ],
       "Security Center": [
         "Pusat Keamanan"
       ],
       "Username": [
         "Nama pengguna"
+      ]
+    },
+    "Heading": {
+      "All albums": [
+        "Semua album"
       ]
     },
     "Hint": {
@@ -4286,11 +4362,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
       "In progress": [
         "Sedang berlangsung"
       ],
       "Migrated": [
         "Dimigrasikan"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Import warning": {
@@ -4548,6 +4630,9 @@
       "Anonymous": [
         "Anonim"
       ],
+      "Apr": [
+        "Apr"
+      ],
       "Are you sure you want to discard your changes?": [
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
@@ -4571,6 +4656,9 @@
       ],
       "Attention required": [
         "Perlu perhatian"
+      ],
+      "Aug": [
+        "Agu"
       ],
       "Awaiting transaction": [
         "Menunggu transaksi"
@@ -4686,6 +4774,9 @@
       "Custom email domains": [
         "Domain email khusus"
       ],
+      "Dec": [
+        "Des"
+      ],
       "Decrypting files": [
         "Mendekripsi file"
       ],
@@ -4770,6 +4861,9 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Email yang telah dipindahkan ke Sampah dan Spam lebih dari 30 hari yang lalu akan dibersihkan secara otomatis."
       ],
+      "Empty folder": [
+        "Folder kosong"
+      ],
       "Enabling auto-deletion…": [
         "Mengaktifkan penghapusan otomatis…"
       ],
@@ -4811,6 +4905,9 @@
       ],
       "Expired": [
         "Kedaluwarsa"
+      ],
+      "Feb": [
+        "Feb"
       ],
       "File could not be scanned": [
         "File tidak dapat dipindai"
@@ -4926,6 +5023,9 @@
       "Invite link copied": [
         "Tautan undangan disalin"
       ],
+      "Issues found": [
+        "Isu ditemukan"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sepertinya baru-baru ini Anda mencoba untuk mengunggah ${ uploadName }. Apabila unggahan gagal, silakan ${ replaceFile }. Apabila unggahan masih berlangsung, mengubah file akan membatalkan unggahan yang telah ada."
       ],
@@ -4935,8 +5035,17 @@
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Sebaiknya gunakan VPN setiap saat. Tetapi inilah saat ancaman keamanan siber bisa paling tinggi:"
       ],
+      "Jan": [
+        "Jan"
+      ],
       "JCB logo": [
         "Logo JCB"
+      ],
+      "Jul": [
+        "Jul"
+      ],
+      "Jun": [
+        "Jun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
@@ -4995,11 +5104,17 @@
       "Malware detected": [
         "Malware terdeteksi"
       ],
+      "Mar": [
+        "Mar"
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimal ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
+      ],
+      "May": [
+        "Mei"
       ],
       "Medium Priority": [
         "Prioritas Menengah"
@@ -5012,6 +5127,9 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
+      ],
+      "More": [
+        "Lainnya"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Sebagian besar jaringan WiFi publik aman, tetapi beberapa di antaranya kurang aman, sehingga mengekspos Anda pada ancaman siber. VPN mengenkripsi lalu lintas Anda, menjaga Anda tetap terlindungi."
@@ -5049,6 +5167,9 @@
       "Not connected": [
         "Tidak terhubung"
       ],
+      "Nov": [
+        "Nov"
+      ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
       ],
@@ -5057,6 +5178,9 @@
       ],
       "Numbers": [
         "Angka"
+      ],
+      "Oct": [
+        "Okt"
       ],
       "of": [
         "dari"
@@ -5241,6 +5365,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
       ],
+      "Sep": [
+        "Sep"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Pembayaran SEPA tidak tersedia saat ini. Silakan coba lagi nanti."
       ],
@@ -5261,6 +5388,9 @@
       ],
       "Setting up your new address…": [
         "Mempersiapkan alamat baru Anda…"
+      ],
+      "Shared by ": [
+        "Dibagikan oleh "
       ],
       "Shared link not found": [
         "Tautan yang dibagikan tidak ditemukan"
@@ -5309,6 +5439,9 @@
       ],
       "Symbols (#$&)": [
         "Simbol (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tidak tersedia sementara karena permintaan tinggi. Silakan coba lagi nanti."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Sementara tidak tersedia. Silakan coba lagi nanti."
@@ -5376,6 +5509,9 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Hal ini berarti bahwa ISP Anda dan situs web yang Anda kunjungi tidak dapat menghubungkan informasi pribadi Anda dengan aktivitas daring Anda."
       ],
+      "This month": [
+        "Bulan ini"
+      ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Kode unik ini dapat digunakan oleh situs web dan ISP (penyedia layanan internet) untuk menautkan lokasi dan riwayat penjelajahan Anda ke perangkat Anda"
       ],
@@ -5405,6 +5541,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
+      ],
+      "Time": [
+        "Waktu"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Untuk menyelesaikan pembayaran Anda, silakan kirim ${ btcAmountBold } ke alamat di bawah ini."
@@ -5462,6 +5601,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Sayangnya, file ini atau sebagian data yang terkandung di dalamnya tidak dapat didekripsi."
+      ],
+      "Unknown date": [
+        "Tanggal tidak diketahui"
       ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
@@ -5588,6 +5730,9 @@
       ],
       "Yes": [
         "Ya"
+      ],
+      "You": [
+        "Anda"
       ],
       "you": [
         "Anda"
@@ -5972,6 +6117,9 @@
       "City": [
         "Kota"
       ],
+      "Client": [
+        "Klien"
+      ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
@@ -6031,6 +6179,9 @@
       ],
       "Delete recovery-related information.": [
         "Hapus informasi terkait pemulihan."
+      ],
+      "Deleted": [
+        "Terhapus"
       ],
       "Device": [
         "Perangkat"
@@ -6151,6 +6302,9 @@
       ],
       "Include message and file name in invite email": [
         "Sertakan pesan dan nama file dalam email undangan"
+      ],
+      "Index kinds": [
+        "Jenis indeks"
       ],
       "Integrated 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
@@ -6302,6 +6456,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Searchable": [
+        "Dapat dicari"
+      ],
       "Select type of abuse": [
         "Pilih jenis penyalahgunaan"
       ],
@@ -6379,6 +6536,12 @@
       ],
       "Toolbar": [
         "Toolbar"
+      ],
+      "Unlock drive": [
+        "Buka kunci drive"
+      ],
+      "Unlock later": [
+        "Buka kunci nanti"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -7922,6 +8085,11 @@
         "Dukungan untuk ${ n } domain email khusus"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" berhasil dibuat"
@@ -8009,6 +8177,9 @@
       ],
       "Failed to reject share invitation": [
         "Undangan untuk berbagi gagal ditolak"
+      ],
+      "File removed": [
+        "File dihapus"
       ],
       "Invitation's email was sent again": [
         "Email undangan telah dikirim ulang"
@@ -8205,6 +8376,31 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Selamat datang di ${ appName }"
+      ]
+    },
+    "Onboarding Action": {
+      "Maybe Later": [
+        "Mungkin Nanti"
+      ],
+      "Select theme": [
+        "Pilih tema"
+      ],
+      "Skip": [
+        "Lewati"
+      ],
+      "Skip for now": [
+        "Lewati dahulu"
+      ],
+      "Upload file": [
+        "Unggah file"
+      ]
+    },
+    "Onboarding Info": {
+      "10 minutes": [
+        "10 menit"
+      ],
+      "Hang tight": [
+        "Bersiaplah"
       ]
     },
     "Onboarding Trial": {
@@ -8845,6 +9041,26 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Proses: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
       ]
     },
     "Property type": {
@@ -9929,6 +10145,9 @@
     "Subtitle": {
       "Shared by ${ sharedBy }": [
         "Dibagikan oleh ${ sharedBy }"
+      ],
+      "Your selfies photos will appear here": [
+        "Swafoto Anda akan muncul di sini"
       ]
     },
     "Success": {
@@ -10076,6 +10295,9 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "TableHeader": {
@@ -10105,6 +10327,23 @@
       ],
       "vCard field": [
         "Kolom vCard"
+      ]
+    },
+    "Tag": {
+      "Favorites": [
+        "Favorit"
+      ],
+      "Live Photos": [
+        "Foto Langsung"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Tangkapan layar"
+      ],
+      "Selfies": [
+        "Swafoto"
       ]
     },
     "Time unit": {
@@ -10362,6 +10601,9 @@
       "Devices": [
         "Perangkat"
       ],
+      "Diagnostics": [
+        "Diagnostik"
+      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Tanda tangan digital terverifikasi secara parsial. File ini dibuat dengan menggunakan tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas mereka tidak dapat diverifikasi."
       ],
@@ -10421,6 +10663,9 @@
       ],
       "Drop to upload": [
         "Lepaskan untuk mengunggah"
+      ],
+      "Easy switch": [
+        "Perpindahan mudah"
       ],
       "Edit billing address": [
         "Edit alamat penagihan"
@@ -10557,6 +10802,9 @@
       "Location": [
         "Lokasi"
       ],
+      "Logs": [
+        "Log"
+      ],
       "Make a secure connection your default": [
         "Jadikan koneksi aman sebagai koneksi bawaan Anda"
       ],
@@ -10568,6 +10816,9 @@
       ],
       "Merging contacts": [
         "Menggabungkan kontak"
+      ],
+      "Message": [
+        "Pesan"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migrasikan organisasi ke ${ BRAND_NAME }"
@@ -10602,8 +10853,23 @@
       "No breaches detected": [
         "Tidak ada pembobolan yang terdeteksi"
       ],
+      "No bursts": [
+        "Tidak ada foto beruntun"
+      ],
+      "No favorites": [
+        "Tidak ada favorit"
+      ],
+      "No photos": [
+        "Tidak ada foto"
+      ],
+      "No portraits": [
+        "Tidak ada potret"
+      ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
+      ],
+      "No selfies": [
+        "Tidak ada swafoto"
       ],
       "Notes": [
         "Catatan"
@@ -10716,6 +10982,9 @@
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Simpan untuk nanti di ${ DRIVE_APP_NAME }"
       ],
+      "Searching…": [
+        "Mencari…"
+      ],
       "Security center": [
         "Pusat keamanan"
       ],
@@ -10769,6 +11038,9 @@
       ],
       "Shared with me": [
         "Dibagikan dengan saya"
+      ],
+      "Show actions": [
+        "Tampilkan tindakan"
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
@@ -10835,6 +11107,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Untuk mempratinjau spreadsheet ini, buka di ${ SHEETS_APP_NAME } atau unduh."
+      ],
+      "Total size": [
+        "Ukuran total"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"

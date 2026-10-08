@@ -861,11 +861,6 @@
         "Copot pemasangan ${ PASS_APP_NAME }"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikasi Desktop ${ MAIL_APP_NAME }"
-      ]
-    },
     "Button": {
       "More info": [
         "Info selengkapnya"
@@ -2162,6 +2157,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
+      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -3325,6 +3323,9 @@
         "Lantai, apartemen, gedung"
       ],
       "Folder": [
+        "Folder"
+      ],
+      "Folders": [
         "Folder"
       ],
       "For a one-off sharing": [

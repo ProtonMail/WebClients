@@ -445,6 +445,9 @@
       "Failed to export document.": [
         "L'exportation du document n'a pas abouti."
       ],
+      "Failed to import document due to unsupported file format.": [
+        "L'importation du document n'a pas abouti car le format de fichier n'est pas pris en charge."
+      ],
       "Failed to import HTML due to unknown error.": [
         "L'importation du HTML n'a pas abouti en raison d'une erreur inconnue."
       ],
@@ -468,9 +471,6 @@
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Cette feuille de calcul est incompatible avec la version actuelle du client. Veuillez essayer de recharger le client. Si l’erreur persiste, veuillez contacter le support."
-      ],
-      "Tried to import Sheet data into Lexical": [
-        "Tentative d'importation des données de feuille dans Lexical"
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "La conversion du document Word n'a pas abouti. Est-il protégé par un mot de passe ? Si c'est le cas, nous vous invitons à retirer le mot de passe et à réessayer."

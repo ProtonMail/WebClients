@@ -1901,9 +1901,6 @@
       "Set as default": [
         "Angi som standard"
       ],
-      "Set as default mail application": [
-        "Angi som standard e-postapplikasjon"
-      ],
       "Set catch-all": [
         "Konfigurer catch-all"
       ],
@@ -3231,11 +3228,6 @@
         "Fant ikke siste versjon"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-skrivebordsapplikasjon"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } problem"
@@ -3373,11 +3365,6 @@
       ],
       "Take a tour": [
         "Få en omvisning"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikater fra tidligere importer vil bli hoppet over. Angre eller importer eldre meldinger i ${ PRODUCT_NAMES.EASY_SWITCH }-innstillingene."
       ]
     },
     "Calendar access select label": {
@@ -5199,12 +5186,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert og kryptert miljø."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } er ikke din standard e-postapplikasjon."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } er din standard e-postapplikasjon."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } holder forretningsdataene dine sikre og lar deg sende krypterte e-postmeldinger til hvem som helst."
       ],
@@ -5799,12 +5780,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave eller tidligere"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -7359,9 +7334,6 @@
       ],
       "Invalid private key file": [
         "Ugyldig privat nøkkelfil"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Ugyldig tilbakestillingstoken. Oppdater siden og prøv på nytt."
       ],
       "Invalid Sieve code": [
         "Ugyldig Sieve-kode"
@@ -11093,9 +11065,6 @@
       "default email address": [
         "standard e-postadresse"
       ],
-      "Default email application": [
-        "Standardprogram for e-post"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
       ],
@@ -12710,9 +12679,6 @@
       "Session timed out": [
         "Økten ble tidsavbrutt"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Angi ${ MAIL_APP_NAME } som din standard e-postapplikasjon. ${ MAIL_APP_NAME } vil åpne automatisk når du klikker en e-postkobling."
-      ],
       "Set password": [
         "Angi passord"
       ],
@@ -13676,9 +13642,6 @@
       ],
       "When enabled, members cannot opt out of password check-ins in their own settings.": [
         "Når dette er aktivert, kan ikke medlemmer velge bort sjekking av passord i sine egne innstillinger."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Når aktivert, vil vi sjekke om ${ MAIL_APP_NAME } er standard e-postapplikasjon og varsle deg hvis den ikke er det."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i identitetsleverandøren, kan du bli bedt om å bruke URL-adressen for tilbakeringing (ACS) og utsteder-ID. Bare kopier og lim inn dataene nedenfor i identitetsleverandørfeltene dine."
@@ -25844,9 +25807,6 @@
       ],
       "Change second password": [
         "Endre andre passord"
-      ],
-      "Check your default mail application": [
-        "Sjekk standard e-postapplikasjon"
       ],
       "Choose a deployment method": [
         "Velg en distribusjonsmetode"
