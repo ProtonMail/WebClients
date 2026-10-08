@@ -16,8 +16,8 @@ import {
     selectIsMeetingLoading,
     selectIsPersonalRoom,
     selectMeetingLink,
-    selectRoomName,
-} from '@proton/meet/store/slices/meetingInfo';
+    selectMeetingName,
+} from '@proton/meet/store/slices/currentMeeting';
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
@@ -32,7 +32,7 @@ import { PreJoinDetailsShell } from './shared/PreJoinDetailsShell';
 import './PreJoinDetails.scss';
 
 type PreJoinDetailsProps = {
-    roomId: string;
+    meetingLinkName: string;
     displayName: string;
     keepDisplayName: boolean;
     onDisplayNameChange: (displayName: string) => void;
@@ -41,7 +41,7 @@ type PreJoinDetailsProps = {
 };
 
 export const PreJoinDetails = ({
-    roomId,
+    meetingLinkName,
     displayName,
     onDisplayNameChange,
     keepDisplayName,
@@ -52,7 +52,7 @@ export const PreJoinDetails = ({
     const { viewportWidth } = useActiveBreakpoint();
 
     const isMeetingLoading = useMeetSelector(selectIsMeetingLoading);
-    const meetingName = useMeetSelector(selectRoomName);
+    const meetingName = useMeetSelector(selectMeetingName);
     const isPersonalRoom = useMeetSelector(selectIsPersonalRoom);
     const isHost = useMeetSelector(selectCanManageWaitingRoom);
     const meetingLink = useMeetSelector(selectMeetingLink);
@@ -143,7 +143,7 @@ export const PreJoinDetails = ({
                                 type="text"
                                 unstyled
                                 inputClassName="rounded-none"
-                                value={roomId || c('Placeholder').t`Loading...`}
+                                value={meetingLinkName || c('Placeholder').t`Loading...`}
                                 onChange={(e) => e.preventDefault()}
                                 readOnly
                                 tabIndex={-1}

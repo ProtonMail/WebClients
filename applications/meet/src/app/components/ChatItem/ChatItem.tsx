@@ -36,7 +36,7 @@ import './ChatItem.scss';
 const QUICK_REACTIONS = ['👍', '❤️', '😂', '😮', '🥲', '👎'];
 
 interface ChatItemProps {
-    roomName?: string;
+    meetingName?: string;
     item: MeetingRoomUpdate;
     displayDate?: boolean;
     /**
@@ -56,7 +56,7 @@ const isParticipantEventRecord = (item: MeetingRoomUpdate): item is ParticipantE
     return item.type === 'event';
 };
 
-export const ChatItem = ({ roomName, item, displayDate = true, variant = 'default', onReply }: ChatItemProps) => {
+export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'default', onReply }: ChatItemProps) => {
     const { type, identity, timestamp } = item;
 
     const isThreadItem = variant === 'thread';
@@ -89,7 +89,7 @@ export const ChatItem = ({ roomName, item, displayDate = true, variant = 'defaul
 
     const roomNameLabel = (
         <span key="room-name" className="ml-1 room-name">
-            {roomName}
+            {meetingName}
         </span>
     );
 

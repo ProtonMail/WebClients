@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
+import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isDesktop, isIpad } from '@proton/shared/lib/helpers/browser';

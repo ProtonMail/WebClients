@@ -54,8 +54,8 @@ function createTestWrapper(store: ReturnType<typeof createMockStore>) {
     return TestWrapper;
 }
 
-const renderDesktopAppRedirect = ({ token = 'meeting-abc', isInstantJoin = false } = {}) =>
-    renderHook(() => useDesktopAppRedirect({ token, isInstantJoin }), {
+const renderDesktopAppRedirect = ({ meetingLinkName = 'meeting-abc', isInstantJoin = false } = {}) =>
+    renderHook(() => useDesktopAppRedirect({ meetingLinkName, isInstantJoin }), {
         wrapper: createTestWrapper(createMockStore()),
     });
 
@@ -101,7 +101,7 @@ describe('useDesktopAppRedirect', () => {
     });
 
     it('stays on the web when there is no meeting link', () => {
-        const { result } = renderDesktopAppRedirect({ token: '' });
+        const { result } = renderDesktopAppRedirect({ meetingLinkName: '' });
 
         expect(result.current.openedInDesktopApp).toBe(false);
         expect(tryOpenInDesktopAppMock).not.toHaveBeenCalled();

@@ -30,7 +30,7 @@ interface ChatThreadProps {
     rootMessage: MeetChatMessage;
     /** Replies belonging to the thread, expected to be sorted by timestamp. */
     replies: MeetChatMessage[];
-    roomName?: string;
+    meetingName?: string;
     /**
      * The thread's root message is not available locally (e.g. it was sent before the local
      * participant joined). A placeholder is shown in place of the root message.
@@ -43,7 +43,7 @@ interface ChatThreadProps {
 export const ChatThread = ({
     rootMessage,
     replies,
-    roomName,
+    meetingName,
     isRootMissing = false,
     isStuck = false,
 }: ChatThreadProps) => {
@@ -148,7 +148,7 @@ export const ChatThread = ({
                         </div>
                     </div>
                 ) : (
-                    <ChatItem item={rootMessage} roomName={roomName} onReply={handleReplyClick} />
+                    <ChatItem item={rootMessage} meetingName={meetingName} onReply={handleReplyClick} />
                 )}
 
                 {replyCount > 0 && (
@@ -200,7 +200,7 @@ export const ChatThread = ({
                                 <ChatItem
                                     key={`${reply.identity}-${reply.timestamp}`}
                                     item={reply}
-                                    roomName={roomName}
+                                    meetingName={meetingName}
                                     variant="thread"
                                 />
                             ))}

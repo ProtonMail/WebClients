@@ -1,5 +1,9 @@
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsExpiringSoon, selectMeetingDurationMs, selectTimeLeftMs } from '@proton/meet/store/slices/meetingInfo';
+import {
+    selectIsExpiringSoon,
+    selectMeetingDurationMs,
+    selectTimeLeftMs,
+} from '@proton/meet/store/slices/currentMeeting';
 
 export const useMeetingDuration = () => {
     const meetingDurationMs = useMeetSelector(selectMeetingDurationMs);

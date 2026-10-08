@@ -68,7 +68,7 @@ const createParams = (overrides: Record<string, any> = {}): any => ({
 });
 
 const baseConnectParams = {
-    meetingToken: 'meeting-abc',
+    meetingLinkName: 'meeting-abc',
     meetingPassword: 'pw',
     displayName: 'Alice',
     timeoutMs: 20_000,
@@ -97,7 +97,9 @@ describe('useMeetingConnection', () => {
                 res = await result.current.connectWithMls({ ...baseConnectParams, queryParticipantsCount: true });
             });
 
-            expect(mockGetAccessDetails).toHaveBeenCalledWith(expect.objectContaining({ token: 'meeting-abc' }));
+            expect(mockGetAccessDetails).toHaveBeenCalledWith(
+                expect.objectContaining({ meetingLinkName: 'meeting-abc' })
+            );
             expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false);
             expect(params.keyProvider.setKeyWithEpoch).toHaveBeenCalledWith('group-key', 1n);
             expect(mockRoom.setE2EEEnabled).toHaveBeenCalledWith(true);

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectExpirationTime } from '@proton/meet/store/slices/meetingInfo';
+import { selectExpirationTime } from '@proton/meet/store/slices/currentMeeting';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetContext } from '../contexts/MeetContext';
