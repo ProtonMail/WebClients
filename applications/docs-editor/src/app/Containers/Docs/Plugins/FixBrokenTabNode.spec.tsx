@@ -8,7 +8,7 @@ import type { Root } from 'react-dom/client'
 import { createRoot } from 'react-dom/client'
 import { AllNodes } from '../AllNodes'
 import { ProtonContentEditable } from '../ContentEditable/ProtonContentEditable'
-import * as ReactTestUtils from '../../../Utils/react-test-utils'
+import * as ReactTestUtils from './TestUtils/react-test-utils'
 import { assertCondition } from './Suggestions/TestUtils'
 import { FixBrokenTabNode } from './FixBrokenTabNode'
 
