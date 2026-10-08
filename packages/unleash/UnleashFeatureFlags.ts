@@ -5,6 +5,7 @@
 
 enum AccountB2BFeatureFlag {
     AccountSettingsUserDisableFE = 'AccountSettingsUserDisableFE',
+    AdminConsoleSurvey = 'AdminConsoleSurvey',
     AdminRoleMVP = 'AdminRoleMVP',
     AdminRolesWithMSP = 'AdminRolesWithMSP',
     DataRetentionPolicy = 'DataRetentionPolicy',
