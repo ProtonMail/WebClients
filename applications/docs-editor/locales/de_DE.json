@@ -445,6 +445,9 @@
       "Failed to export document.": [
         "Dokument konnte nicht exportiert werden."
       ],
+      "Failed to import document due to unsupported file format.": [
+        "Das Dokument konnte aufgrund eines nicht unterstützten Dateiformats nicht importiert werden."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Fehler beim Importieren der HTML-Daten aufgrund eines unbekannten Fehlers."
       ],
@@ -468,9 +471,6 @@
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Diese Tabelle ist mit der aktuellen Client-Version inkompatibel. Bitte versuche, den Client neu zu laden. Wenn der Fehler weiterhin besteht, wende dich bitte an den Support."
-      ],
-      "Tried to import Sheet data into Lexical": [
-        "Es wurde versucht, Sheet-Daten in Lexical zu importieren"
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Fehler beim Konvertieren des Word-Dokumentes. Ist es passwortgeschützt? Wenn ja, entferne bitte das Passwort und versuche es erneut."
@@ -527,7 +527,7 @@
         "Kommentare"
       ],
       "Editing": [
-        "Bearbeitet"
+        "Bearbeiten"
       ],
       "Font": [
         "Schriftart"
