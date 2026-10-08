@@ -15,10 +15,12 @@ export const ModelTierLimitsSync = () => {
     const remainingLimits = useRemainingLimits();
     const { hasLumoPlus } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
-    const { apertusModelAvailable } = useLumoFlags();
+    const { apertusModelAvailable, previewModelAvailable } = useLumoFlags();
 
     useLayoutEffect(() => {
-        const isSelectedModelAvailable = modelTier !== 'apertus-15' || apertusModelAvailable;
+        const isSelectedModelAvailable =
+            (modelTier !== 'apertus-15' || apertusModelAvailable) &&
+            (modelTier !== 'lumo-preview' || previewModelAvailable);
 
         if (hasLumoPlus && isSelectedModelAvailable) {
             return;
@@ -27,6 +29,7 @@ export const ModelTierLimitsSync = () => {
         const availableTier = resolveAvailableModelTier(modelTier, remainingLimits, {
             isMaxAvailable: isMaxAvailableByFlag,
             isApertusEnabled: apertusModelAvailable,
+            isPreviewEnabled: previewModelAvailable,
         });
 
         if (availableTier !== getSelectedModelTier(modelTier)) {
@@ -34,6 +37,7 @@ export const ModelTierLimitsSync = () => {
         }
     }, [
         apertusModelAvailable,
+        previewModelAvailable,
         hasLumoPlus,
         isMaxAvailableByFlag,
         modelTier,

@@ -271,6 +271,7 @@ enum LumoFeatureFlag {
     LumoNativeComposerImage = 'LumoNativeComposerImage',
     LumoNativeComposerModelSelection = 'LumoNativeComposerModelSelection',
     LumoNewMarketingLinks = 'LumoNewMarketingLinks',
+    LumoPreviewModel = 'LumoPreviewModel',
     LumoProjects = 'LumoProjects',
     LumoShowNextPromptSuggestions = 'LumoShowNextPromptSuggestions',
     LumoSmoothedRendering = 'LumoSmoothedRendering',
