@@ -6922,6 +6922,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "由于需求过高暂时不可用，请稍后重试。"
       ]
     },
     "info": {
