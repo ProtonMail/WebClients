@@ -17,6 +17,10 @@ export function getModelDisplayName(modelTier: ModelTier, options?: GetModelDisp
         return options?.withFlag ? `${name} 🇨🇭` : name;
     }
 
+    if (modelTier === 'lumo-preview') {
+        return `${LUMO_SHORT_APP_NAME} Preview`;
+    }
+
     return options?.liteLabel === 'short'
         ? `${LUMO_SHORT_APP_NAME} Lite`
         : `${LUMO_SHORT_APP_NAME} 2.0 Lite`;

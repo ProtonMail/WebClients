@@ -65,7 +65,7 @@ export interface LumoUserSettings {
     memoryPromptsSinceAutoSave?: number;
     /** Newest chat prompt included in a scan that successfully persisted at least one memory. */
     memoryLastProcessedMessageAt?: string;
-    preferredModelTier?: 'lumo-lite' | 'lumo-max' | 'apertus-15';
+    preferredModelTier?: 'lumo-lite' | 'lumo-max' | 'apertus-15' | 'lumo-preview';
     preferredResponseMode?: 'fast' | 'thinking';
     apertusOnboardingAcceptedAt?: number;
 }

@@ -109,6 +109,24 @@ export const canUseNewModel = (): boolean => {
     return true;
 };
 
+export const canUsePreviewModel = (): boolean => {
+    const appInfo = getNativeAppInfo();
+    if (appInfo) {
+        let targetVersion: string | null = null;
+        const { version, platform } = appInfo;
+
+        if (platform === 'ios') {
+            targetVersion = '2.2.0';
+        } else if (platform === 'android') {
+            targetVersion = '2.2.0';
+        }
+
+        return targetVersion !== null && !isNativeVersionOlderThan(version, targetVersion);
+    }
+
+    return true;
+};
+
 /**
  * Returns true if the native app understands `State.sidebar` and can lay its composer out
  * around the sidebar. Older clients would render a full-width composer over an expanded
