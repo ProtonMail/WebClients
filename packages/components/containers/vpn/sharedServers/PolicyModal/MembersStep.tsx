@@ -14,14 +14,12 @@ import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Organization } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import Checkbox from '../../../../components/input/Checkbox';
 import Table from '../../../../components/table/Table';
 import TableBody from '../../../../components/table/TableBody';
 import TableCell from '../../../../components/table/TableCell';
 import TableRow from '../../../../components/table/TableRow';
-import canUseGroups from '../../../organization/groups/canUseGroups';
 import ApplyPolicyButton from '../ApplyPolicyButton';
 import type { SharedServerGroup, SharedServerUser } from '../useSharedServers';
 
@@ -129,18 +127,12 @@ const MembersStep = ({
     applyPolicyTo,
     onChangeApplyPolicyTo,
 }: SharedServersMembersStepProps) => {
-    const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
     const [entitlements] = useEntitlementChecks();
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
 
-    const allowedToUseGroups =
-        hasActiveOrganizationKey &&
-        canUseGroups(organization?.PlanName, {
-            orgHasGroupsEntitlement: entitlements.orgHasGroups,
-            isUserGroupsNoCustomDomainEnabled,
-        });
+    const allowedToUseGroups = hasActiveOrganizationKey && entitlements.orgHasGroups;
     const hasAtLeastOneGroup = (groups?.length ?? 0) > 0;
 
     const canCreateGroupsPolicy = !!organization && (allowedToUseGroups || hasAtLeastOneGroup);

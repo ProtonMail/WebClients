@@ -338,7 +338,6 @@ export {
     getMailPlusInboxFeatures,
     getTryDrivePlus2024Features,
 } from './containers/offers/helpers/offerCopies';
-export { default as canUseGroups } from './containers/organization/groups/canUseGroups';
 export { default as OrganizationGroupsManagementSection } from './containers/organization/groups/OrganizationGroupsManagementSection';
 export { useOrganizationTheme } from './containers/organization/logoUpload/useOrganizationTheme';
 export { default as OrganizationPasswordPoliciesSection } from './containers/organization/OrganizationPasswordPoliciesSection';
