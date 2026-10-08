@@ -1,6 +1,6 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
-import { getDrive, type ProtonDriveClient, type ProtonInvitationWithNode } from '@proton/drive'
+import { getDrive, ValidationError, type ProtonDriveClient, type ProtonInvitationWithNode } from '@proton/drive'
 import type { ExtendedInvitationDetails } from '@proton/drive-store/store'
 import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
@@ -8,7 +8,6 @@ import { useCallback, useEffect, useState } from 'react'
 import type { DocInvitesHook } from '@proton/drive-store'
 import { c } from 'ttag'
 import { useDocInvitationsStore } from './use-doc-invitations-store'
-import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 /**
  * This hook can be used only ONCE because it will re-fetch all invitations every time it's initialized.
@@ -65,12 +64,7 @@ export const useDocInvites: DocInvitesHook = () => {
 
     if (!drive) {
       const error = new Error('Drive SDK not initialized')
-      traceError(error, {
-        tags: {
-          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-          feature: 'DocsInvitationsDriveSDK',
-        },
-      })
+      traceErrorSDK(error, 'DocsInvitationsDriveSDK')
       throw error
     }
 
@@ -89,7 +83,7 @@ export const useDocInvites: DocInvitesHook = () => {
       }
     } catch (error) {
       updateInvitation(invitation.invitation.invitationId, { isLocked: false })
-      if (error instanceof Error && error.name !== 'ValidationError') {
+      if (!(error instanceof ValidationError)) {
         traceErrorSDK(error, 'DocsInvitationsDriveSDK')
       }
       throw error

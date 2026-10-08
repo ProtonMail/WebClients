@@ -53,7 +53,7 @@ import { isPrivateNodeMeta } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { isDefaultDocumentName } from '@proton/shared/lib/docs/utils/isDefaultDocumentName'
-import { traceError } from '@proton/shared/lib/helpers/sentry'
+import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
 import { useApplication } from '~/utils/application-context'
 import { constructDriveFolderUrl } from '~/utils/open-drive-folder'
@@ -337,7 +337,7 @@ export function DocumentTitleDropdown({
         to = constructDriveFolderUrl(node.parentNodeId, shareId, sharedWithMe)
       } catch (error) {
         // Fall back to Drive root
-        traceError(error)
+        traceErrorSDK(error, 'DocsDriveCompatSDK')
       }
     }
 
