@@ -1280,6 +1280,9 @@
       "Got it": [
         "Am înțeles"
       ],
+      "Got it, connect my Gmail": [
+        "Am înțeles, conectez contul Gmail"
+      ],
       "Grant access": [
         "Aprobare acces"
       ],
@@ -1405,6 +1408,9 @@
       ],
       "Learn about recovery options": [
         "Aflați despre opțiunile de recuperare"
+      ],
+      "Learn how this works": [
+        "Aflați cum funcționează"
       ],
       "Learn more": [
         "Detalii"
@@ -1906,9 +1912,6 @@
       ],
       "Set as default": [
         "Setare ca implicită"
-      ],
-      "Set as default mail application": [
-        "Setare ca aplicație de e-mail implicită"
       ],
       "Set catch-all": [
         "Setare adresă de agregare"
@@ -2436,6 +2439,12 @@
       "Domains": [
         "Domenii"
       ],
+      "Managed Service Provider": [
+        "Furnizor de servicii gestionate"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizațiile care dispun de modulul „Furnizor de servicii gestionate” pot crea și gestiona organizații subsidiare."
+      ],
       "Servers": [
         "Servere"
       ],
@@ -2566,6 +2575,18 @@
       ],
       "3 new admin roles": [
         "3 roluri noi de administrator"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Atribuiți roluri de administrator grupurilor. Gestionați accesul pentru mai mulți utilizatori simultan și actualizați-l automat atunci când aceștia se alătură grupului sau îl părăsesc."
+      ],
+      "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
+        "Atribuiți roluri administrative specifice. Oferiți fiecărui administrator doar accesul necesar, pentru a limita impactul conturilor compromise și al erorilor accidentale."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "Alegeți dintre trei noi roluri de administrator. Fiecare administrator primește doar accesul de care are nevoie."
+      ],
+      "Choose from two new admin roles. Each admin receives only the access they need.": [
+        "Alegeți dintre două noi roluri de administrator. Fiecare administrator primește doar accesul de care are nevoie."
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
@@ -2788,6 +2809,9 @@
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Încercați-l gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
       ],
+      "Up to ${ TRIAL_MAX_USERS } users, during the trial period": [
+        "Până la ${ TRIAL_MAX_USERS } utilizatori, pe durata perioadei de probare"
+      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
         "Când anulați, perioada de probă gratuită nu va fi transformată într-un abonament plătit, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de probă."
       ],
@@ -2814,6 +2838,9 @@
       ],
       "You have reached the trial limit.": [
         "Ați atins limita perioadei de evaluare."
+      ],
+      "Your trial ends on ${ trialEndDate }. Add a payment method whenever you’re ready to keep using all ${ planTitle } features. You’ll only be charged once it’s added.": [
+        "Perioada de probare se încheie la ${ trialEndDate }. Adăugați o metodă de plată oricând doriți pentru a continua să utilizați toate funcțiile din ${ planTitle }. Taxarea se aplică doar după adăugarea metodei de plată."
       ]
     },
     "b2b_trials_Action": {
@@ -3298,8 +3325,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicați ${ MAIL_APP_NAME } Desktop"
+      "${ appName } Desktop application": [
+        "Aplicația desktop ${ appName }"
       ]
     },
     "Bug category": {
@@ -3442,8 +3469,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicatele din importările anterioare vor fi omise. Anulați sau importați mesajele mai vechi în setările din ${ PRODUCT_NAMES.EASY_SWITCH }."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Cele mai recente e-mailuri vor fi importate primele. Cele importate deja nu vor mai fi copiate."
       ]
     },
     "Calendar access select label": {
@@ -5283,12 +5310,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } în ${ DRIVE_APP_NAME } vă permite să lucrați împreună cu alte persoane într-un mediu sigur și criptat."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } nu este aplicația de e-mail implicită."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } este aplicația de e-mail implicită."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } vă păstrează datele companiei în siguranță și vă permite să trimiteți mesaje criptate oricui."
       ],
@@ -5894,12 +5915,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave sau anterioară"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -7464,9 +7479,6 @@
       ],
       "Invalid private key file": [
         "Fișier cheie privată nevalid."
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Cod de resetare nevalid. Actualizați pagina și reîncercați."
       ],
       "Invalid Sieve code": [
         "Cod Sieve nevalid."
@@ -9499,6 +9511,9 @@
       "Folders": [
         "Foldere"
       ],
+      "Good to know before you connect": [
+        "Bine de știut înainte de conectare"
+      ],
       "IP address": [
         "Adresa IP"
       ],
@@ -10507,6 +10522,9 @@
       "**${ appName }** is not supported.": [
         "Aplicația **${ appName }** nu este compatibilă."
       ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** este utilizată și pentru a vă conecta la un cont ${ BRAND_NAME } separat, din afara ${ MAIL_APP_NAME }."
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**Activați conservările automate** pentru liniștea personală."
       ],
@@ -11291,9 +11309,6 @@
       "default email address": [
         "adresa de e-mail implicită"
       ],
-      "Default email application": [
-        "Aplicația de e-mail implicită"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Ștergeți orice alte înregistrări MX sau asigurați-vă că prioritatea pentru ${ MAIL_APP_NAME } are cel mai mic număr."
       ],
@@ -11835,6 +11850,9 @@
       "here": [
         "aici"
       ],
+      "Here's what happens when you continue:": [
+        "Iată ce se va întâmpla după ce continuați:"
+      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Ascunde informațiile de identificare încărcând conținutul de la distanță prin intermediul unui proxy. Opțiunea de stocare conținut ca atașament."
       ],
@@ -12372,6 +12390,9 @@
       "Next billing date": [
         "Data facturii următoare"
       ],
+      "Next time you sign in to your other account": [
+        "Data viitoare când vă conectați la celălalt cont"
+      ],
       "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
         "În continuare, conectați-vă la Google Drive și permiteți ca ${ BRAND_NAME } să acceseze Google Drive. Folderele și fișierele vor fi importate în ${ DRIVE_APP_NAME }."
       ],
@@ -12440,6 +12461,9 @@
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Nu a fost detectat corect? Alegeți furnizorul din listă."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Nimic nu se schimbă în celălalt cont al ${ BRAND_NAME }."
       ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
@@ -12934,9 +12958,6 @@
       ],
       "Session timed out": [
         "Sesiunea a expirat"
-      ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
       ],
       "Set password": [
         "Setare parolă"
@@ -13916,9 +13937,6 @@
       "When enabled, members cannot opt out of password check-ins in their own settings.": [
         "Când este activată, membrii nu pot renunța la verificările parolei în propriile setări."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Când e activată, se va verifica dacă ${ MAIL_APP_NAME } este aplicația de e-mail implicită și vă va notifica dacă nu e."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Când activați SAML pentru ${ appName } în furnizorul de identitate, vi se poate solicita să utilizați adresa URL de apel invers (ACS) și ID-ul emitentului. Doar copiați și lipiți datele de mai jos în câmpurile furnizorului de identitate."
       ],
@@ -14255,6 +14273,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate. Aceasta va dezactiva și recuperarea pe bază de dispozitiv."
       ],
+      "You'll choose a new username": [
+        "Veți alege un nume de utilizator nou."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
       ],
@@ -14268,6 +14289,9 @@
         "Se va factura apoi la fiecare ${ renewCycle } lună cu ${ renewAmountStr }. Puteți anula oricând.",
         "Se va factura apoi la fiecare ${ renewCycle } luni cu ${ renewAmountStr }. Puteți anula oricând.",
         "Se va factura apoi la fiecare ${ renewCycle } de luni cu ${ renewAmountStr }. Puteți anula oricând."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "O veți folosi pentru a vă autentifica în viitor. Aceasta este singura schimbare."
       ],
       "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
         "Urmează să vă conectați la contul ${ BRAND_NAME } cu această adresă:"
@@ -14357,6 +14381,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Probarea gratuită a fost convertită cu un abonament lunar. Data lui de reînnoire este ${ nextBillingDate }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Contul Gmail vi se conectează la această adresă ${ MAIL_APP_NAME }."
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Google Drive s-ar putea să fie gol sau să conțină fișiere nesuportate."
@@ -16558,6 +16585,9 @@
       ],
       "Start weekday": [
         "Prima zi a săptămânii"
+      ],
+      "Start with your most recent messages": [
+        "Începeți cu cele mai recente mesaje personale"
       ],
       "Starts with": [
         "Începe cu"
@@ -26427,9 +26457,6 @@
       ],
       "Change second password": [
         "Modificare parolă secundară"
-      ],
-      "Check your default mail application": [
-        "Verificați aplicația implicită de e-mail"
       ],
       "Choose a deployment method": [
         "Alegeți o metodă de implementare"

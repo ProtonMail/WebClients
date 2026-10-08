@@ -1551,9 +1551,6 @@
       "Set as default": [
         "Als standaard instellen"
       ],
-      "Set as default mail application": [
-        "Instellen als standaard e-mailtoepassing"
-      ],
       "Set catch-all": [
         "Stel catch-all in"
       ],
@@ -2849,11 +2846,6 @@
         "De laatste versie kan niet worden gevonden"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktop-app"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } probleem"
@@ -2991,11 +2983,6 @@
       ],
       "Take a tour": [
         "Volg een rondleiding"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicaten van eerdere importen worden overgeslagen. Maak dit ongedaan of importeer oudere berichten in de instellingen van ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -4799,12 +4786,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } is niet uw standaard e-mailtoepassing."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } is uw standaard e-mailtoepassing."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } houdt uw bedrijfsgegevens veilig en laat u versleutelde e-mails verzenden naar iedereen."
       ],
@@ -5381,12 +5362,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave of ouder"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6919,9 +6894,6 @@
       "Invalid private key file": [
         "Ongeldig privé-sleutel bestand"
       ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Ongeldige reset token. Vraag een andere token aan en probeer het opnieuw."
-      ],
       "Invalid Sieve code": [
         "Ongeldige Sieve code"
       ],
@@ -7353,6 +7325,9 @@
       "There was an error, please try again.": [
         "Er is een fout opgetreden, probeert u het nog eens."
       ],
+      "This code or link is no longer valid. Please try again.": [
+        "Deze code of link is niet langer geldig. Probeer het opnieuw."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
       ],
@@ -7529,6 +7504,9 @@
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Uw wachtwoord kan niet opnieuw worden ingesteld. Probeer het opnieuw."
       ],
       "Zero keys reactivated": [
         "Nul sleutels gereactiveerd"
@@ -10506,9 +10484,6 @@
       "default email address": [
         "standaard e-mailadres"
       ],
-      "Default email application": [
-        "Standaard e-mailapplicatie"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Verwijder alle andere MX records of zorg ervoor dat ${ MAIL_APP_NAME } zijn prioriteit het laagste getal is."
       ],
@@ -12045,9 +12020,6 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Stel ${ MAIL_APP_NAME } in als uw standaard e-mailapplicatie. ${ MAIL_APP_NAME } opent automatisch wanneer u op een e-maillink klikt."
-      ],
       "Set password": [
         "Wachtwoord instellen"
       ],
@@ -12147,6 +12119,9 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Er is iets misgegaan. Probeer het opnieuw of neem contact op met de klantenondersteuning."
+      ],
+      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
+        "Binnenkort voert u uw e-mailadres (of gebruikersnaam) en wachtwoord in 2 aparte stappen in, in plaats van op 1 pagina."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO."
@@ -12936,6 +12911,9 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
+      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
+        "We wijzigen de inlogpagina van ${ BRAND_NAME }. Uw wachtwoord en apparaten blijven hetzelfde. ${ learnMore }"
+      ],
       "Web sessions detected:": [
         "Websessies gedetecteerd:"
       ],
@@ -12962,9 +12940,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Indien uitgeschakeld, voorkomt dit dat externe afbeeldingen worden geladen zonder dat u het weet."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Indien ingeschakeld, controleren we of ${ MAIL_APP_NAME } uw standaard e-mailtoepassing is en stellen we u op de hoogte als dit niet het geval is."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Wanneer u SAML inschakelt voor ${ appName } in uw identiteitsprovider, kunt u worden gevraagd om de callback (ACS) URL en uitgevende ID te gebruiken. Kopieer en plak onderstaande gegevens in de velden van uw identiteitsprovider."
@@ -13384,6 +13359,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "De e-mails van uw organisatie worden beschermd met end-to-end encryptie met behulp van de organisatiesleutel. Deze vingerafdruk kan worden gebruikt om te controleren of alle beheerders in uw account dezelfde sleutel hebben."
+      ],
+      "Your password and devices stay the same.": [
+        "Uw wachtwoord en apparaten blijven hetzelfde."
       ],
       "Your payment details are encrypted and secure": [
         "Uw betalingsgegevens zijn versleuteld en veilig"
@@ -24763,9 +24741,6 @@
       "Change second password": [
         "Verander tweede wachtwoord"
       ],
-      "Check your default mail application": [
-        "Controleer uw standaard e-mailtoepassing"
-      ],
       "Choose a deployment method": [
         "Kies een implementatiemethode"
       ],
@@ -26029,6 +26004,9 @@
       ],
       "Signed-in reset": [
         "Aanmeldingsherstel"
+      ],
+      "Signing in is changing": [
+        "Inloggen verandert"
       ],
       "Simplify email distribution": [
         "Vereenvoudig de e-maildistributie"

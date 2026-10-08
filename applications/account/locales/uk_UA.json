@@ -1527,9 +1527,6 @@
       "Set as default": [
         "Встановити типовим"
       ],
-      "Set as default mail application": [
-        "Встановити як типову програму для роботи з поштою"
-      ],
       "Set catch-all": [
         "Встановити catch-all"
       ],
@@ -2825,11 +2822,6 @@
         "Не вдалося знайти найновішу версію"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Програма ${ MAIL_APP_NAME } для комп'ютера"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Проблема з ${ LUMO_SHORT_APP_NAME }"
@@ -2967,11 +2959,6 @@
       ],
       "Take a tour": [
         "Показати знайомство"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Дублікати з попередніх імпортів будуть пропущені. Скасуйте дію або імпортуйте старіші повідомлення в налаштуваннях ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -4786,12 +4773,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дає змогу працювати разом з іншими в безпечному, зашифрованому середовищі."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } не є вашою типовою програмою для роботи з поштою."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } — ваша типова програма для роботи з поштою."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } зберігає ваші бізнес-дані в безпеці та дозволяє надсилати зашифровану електронну пошту будь-кому."
       ],
@@ -5375,12 +5356,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave або раніша версія"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6911,9 +6886,6 @@
       ],
       "Invalid private key file": [
         "Недійсний файл приватного ключа"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Недійсний токен скидання. Будь ласка, оновіть сторінку та спробуйте знову."
       ],
       "Invalid Sieve code": [
         "Неприпустимий код Sieve"
@@ -10557,9 +10529,6 @@
       "default email address": [
         "типова поштова адреса"
       ],
-      "Default email application": [
-        "Типова програма електронної пошти"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Видаліть будь-які інші MX-записи або впевніться, що встановлено найнижче число пріоритету ${ MAIL_APP_NAME }."
       ],
@@ -12039,9 +12008,6 @@
       "Session timed out": [
         "Сеанс завершився"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Встановити ${ MAIL_APP_NAME } типовим поштовим застосунком. ${ MAIL_APP_NAME } відкриватиметься автоматично після натискання на поштове посилання."
-      ],
       "Set password": [
         "Встановити пароль"
       ],
@@ -12920,9 +12886,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Якщо вимкнено, це запобігає завантаженню віддалених зображень без вашого відома."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Якщо увімкнено, ми перевірятимемо, чи є ${ MAIL_APP_NAME } вашою типовою програмою для роботи з поштою, і сповіщатимемо вас, якщо це не так."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Увімкнувши SAML для ${ appName } у свого провайдера ідентифікації, ви можете отримати запит на використання URL-адреси для зворотного виклику (ACS) та ID видавця. Просто скопіюйте і вставте наведені нижче дані в поля вашого провайдера ідентифікації."
@@ -24830,9 +24793,6 @@
       ],
       "Change second password": [
         "Змініть другий пароль"
-      ],
-      "Check your default mail application": [
-        "Перевірте свою типову програму для роботи з поштою"
       ],
       "Choose a provider": [
         "Виберіть постачальника послуг"

@@ -1524,9 +1524,6 @@
       "Set as default": [
         "I-set bilang default"
       ],
-      "Set as default mail application": [
-        "I-set bilang default na mail application"
-      ],
       "Set catch-all": [
         "I-set ang catch-all"
       ],
@@ -2788,11 +2785,6 @@
         "Nabigong hanapin ang pinakabagong bersyon"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Desktop application ng ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema sa ${ LUMO_SHORT_APP_NAME }"
@@ -2930,11 +2922,6 @@
       ],
       "Take a tour": [
         "Mag-tour"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Lalaktawan ang mga duplicate mula sa mga nakaraang pag-import. I-undo o i-import ang mas lumang mga mensahe sa mga setting ng ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -4725,12 +4712,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Pinapayagan ka ng ${ DOCS_SHORT_APP_NAME } sa ${ DRIVE_APP_NAME } na makipagtulungan sa iba sa isang secure at naka-encrypt na environment."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "Hindi ang ${ MAIL_APP_NAME } ang iyong default na mail application."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "Ang ${ MAIL_APP_NAME } ay ang iyong default na mail application."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "Pinapanatiling ligtas ng ${ MAIL_APP_NAME } ang data ng iyong negosyo at hinahayaan kang magpadala ng naka-encrypt na email sa kahit sino."
       ],
@@ -5304,12 +5285,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave o mas luma"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6718,9 +6693,6 @@
       ],
       "Invalid private key file": [
         "Hindi valid na pribadong key file"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Hindi valid na reset token. Pakisariwa ang pahina at subukang muli."
       ],
       "Invalid Sieve code": [
         "Hindi valid na Sieve code"
@@ -10063,9 +10035,6 @@
       "default email address": [
         "default na email address"
       ],
-      "Default email application": [
-        "Default na application ng email"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "I-delete ang anumang ibang MX record o tiyaking ang Priority ng ${ MAIL_APP_NAME } ang pinakamababang numero."
       ],
@@ -11518,9 +11487,6 @@
       "Session timed out": [
         "Nag-time out ang session"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "I-set ang ${ MAIL_APP_NAME } bilang default na email application. Awtomatikong magbubukas ang ${ MAIL_APP_NAME } kapag nag-click ng link ng email."
-      ],
       "Set password": [
         "I-set ang password"
       ],
@@ -12357,9 +12323,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Kapag hindi pinagana, pinipigilan nito ang mga remote na larawan na mag-load nang hindi mo nalalaman."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Kapag pinagana, susuriin namin kung ang ${ MAIL_APP_NAME } ay ang iyong default na mail application at aabisuhan ka kung hindi."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Kapag pinagagana ang SAML para sa ${ appName } sa iyong identity provider, maaaring hilingin sa iyo na gamitin ang callback (ACS) URL at ID ng issuer. I-copy-paste lang ang data sa ibaba sa mga field ng iyong identity provider."
@@ -23875,9 +23838,6 @@
       ],
       "Change second password": [
         "Palitan ang pangalawang password"
-      ],
-      "Check your default mail application": [
-        "Suriin ang iyong default na mail application"
       ],
       "Choose a provider": [
         "Pumili ng provider"

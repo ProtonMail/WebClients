@@ -1524,9 +1524,6 @@
       "Set as default": [
         "Установить по умолчанию"
       ],
-      "Set as default mail application": [
-        "Установить как почтовое приложение по умолчанию"
-      ],
       "Set catch-all": [
         "Установить прием всей почты домена"
       ],
@@ -2813,11 +2810,6 @@
         "Не удалось найти последнюю версию"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } для ПК"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Проблема с ${ LUMO_SHORT_APP_NAME }"
@@ -2955,11 +2947,6 @@
       ],
       "Take a tour": [
         "Ознакомительный тур"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Дубликаты из предыдущих импортов будут пропущены. Вы можете отменить импорт или импортировать более старые сообщения в настройках ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -4774,12 +4761,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } в ${ DRIVE_APP_NAME } позволяет вам работать вместе с другими людьми в защищенной и зашифрованной среде."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } не является вашим почтовым приложением по умолчанию."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } является вашим почтовым приложением по умолчанию."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } обеспечивает безопасность ваших коммерческих данных и позволяет отправлять зашифрованные электронные письма кому угодно."
       ],
@@ -5363,12 +5344,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave или более ранняя версия"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6797,9 +6772,6 @@
       ],
       "Invalid private key file": [
         "Недопустимый файл закрытого ключа"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Недействительный токен сброса. Пожалуйста, обновите страницу и попробуйте еще раз."
       ],
       "Invalid Sieve code": [
         "Недопустимый код Sieve"
@@ -10282,9 +10254,6 @@
       "default email address": [
         "адрес эл. почты по умолчанию"
       ],
-      "Default email application": [
-        "Приложение электронной почты по умолчанию"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
       ],
@@ -11755,9 +11724,6 @@
       "Session timed out": [
         "Время сеанса истекло"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Установите ${ MAIL_APP_NAME } в качестве почтового приложения по умолчанию. Приложение ${ MAIL_APP_NAME } будет открываться автоматически при нажатии на ссылку электронной почты."
-      ],
       "Set password": [
         "Установить пароль"
       ],
@@ -12606,9 +12572,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Если отключено, это предотвращает загрузку удаленных изображений без вашего ведома."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "При включении этой функции мы будем проверять, является ли ${ MAIL_APP_NAME } вашим почтовым приложением по умолчанию, и уведомлять вас, если это не так."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "При включении SAML для ${ appName } у поставщика личных данных вам может быть предложено использовать URL обратного вызова (ACS) и ID эмитента. Просто скопируйте и вставьте приведенные ниже данные в поля поставщика личных данных."
@@ -24523,9 +24486,6 @@
       ],
       "Change second password": [
         "Изменить второй пароль"
-      ],
-      "Check your default mail application": [
-        "Проверить почтовое приложение по умолчанию"
       ],
       "Choose a provider": [
         "Выберите провайдера"

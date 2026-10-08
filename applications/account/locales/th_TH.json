@@ -1524,9 +1524,6 @@
       "Set as default": [
         "ตั้งเป็นค่าเริ่มต้น"
       ],
-      "Set as default mail application": [
-        "ตั้งเป็นแอปพลิเคชันอีเมลเริ่มต้น"
-      ],
       "Set catch-all": [
         "ตั้งค่าฟีเจอร์ catch-all"
       ],
@@ -2774,11 +2771,6 @@
         "ไม่พบเวอร์ชันล่าสุด"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "แอปพลิเคชั่น ${ MAIL_APP_NAME } บนเดสก์ท็อป"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "ปัญหา ${ LUMO_SHORT_APP_NAME }"
@@ -2916,11 +2908,6 @@
       ],
       "Take a tour": [
         "ชมแนะนำการใช้งาน"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "จะข้ามข้อมูลที่ซ้ำกันจากการนำเข้าครั้งก่อนหน้า สามารถเลิกทำหรือนำเข้าข้อความเก่าในการตั้งค่า ${ PRODUCT_NAMES.EASY_SWITCH }"
       ]
     },
     "Calendar access select label": {
@@ -4699,12 +4686,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } ใน ${ DRIVE_APP_NAME } ช่วยให้ทำงานร่วมกับผู้อื่นได้ในสภาพแวดล้อมที่ปลอดภัยและเข้ารหัส"
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } ไม่ใช่แอปพลิเคชันอีเมลเริ่มต้น"
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } เป็นแอปพลิเคชันอีเมลเริ่มต้น"
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } รักษาความปลอดภัยของข้อมูลธุรกิจและช่วยให้ส่งอีเมลที่เข้ารหัสลับถึงใครก็ได้"
       ],
@@ -5273,12 +5254,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave หรือเก่ากว่า"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6677,9 +6652,6 @@
       ],
       "Invalid private key file": [
         "ไฟล์คีย์ส่วนตัวไม่ถูกต้อง"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "โทเค็นรีเซ็ตไม่ถูกต้อง โปรดรีเฟรชหน้าเว็บและลองอีกครั้ง"
       ],
       "Invalid Sieve code": [
         "รหัส Sieve ไม่ถูกต้อง"
@@ -9952,9 +9924,6 @@
       "default email address": [
         "ที่อยู่อีเมลหลัก"
       ],
-      "Default email application": [
-        "แอปพลิเคชั่นอีเมลค่าเริ่มต้น"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "ลบระเบียน MX อื่นๆ หรือตรวจสอบให้แน่ใจว่าลำดับความสำคัญของ ${ MAIL_APP_NAME } เป็นตัวเลขต่ำที่สุด"
       ],
@@ -11398,9 +11367,6 @@
       "Session timed out": [
         "เซสชันหมดเวลา"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "ตั้ง ${ MAIL_APP_NAME } เป็นแอปพลิเคชันอีเมลเริ่มต้น ${ MAIL_APP_NAME } จะเปิดขึ้นโดยอัตโนมัติเมื่อคลิกลิงก์อีเมล"
-      ],
       "Set password": [
         "ตั้งค่ารหัสผ่าน"
       ],
@@ -12231,9 +12197,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "เมื่อปิดใช้งาน จะป้องกันไม่ให้โหลดรูปภาพระยะไกลโดยที่คุณไม่ทราบ"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "เมื่อเปิดใช้งาน จะมีการตรวจสอบว่า ${ MAIL_APP_NAME } เป็นแอปพลิเคชันอีเมลเริ่มต้นหรือไม่ และแจ้งเตือนหากไม่ใช่"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "เมื่อเปิดใช้งาน SAML สำหรับ ${ appName } ในผู้ให้บริการข้อมูลระบุตัวตน คุณอาจได้รับแจ้งให้ใช้ Callback (ACS) URL และ Issuer ID เพียงคัดลอกและวางข้อมูลด้านล่างลงในช่องข้อมูลของผู้ให้บริการข้อมูลระบุตัวตน"
@@ -23572,9 +23535,6 @@
       ],
       "Change second password": [
         "เปลี่ยนรหัสผ่านที่สอง"
-      ],
-      "Check your default mail application": [
-        "ตรวจสอบแอปพลิเคชันอีเมลเริ่มต้น"
       ],
       "Choose a provider": [
         "เลือกผู้ให้บริการ"

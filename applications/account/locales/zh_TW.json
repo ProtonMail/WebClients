@@ -1533,9 +1533,6 @@
       "Set as default": [
         "設為預設值"
       ],
-      "Set as default mail application": [
-        "設定為預設電子郵件應用程式"
-      ],
       "Set catch-all": [
         "設定全部擷取"
       ],
@@ -2789,11 +2786,6 @@
         "找不到最新版本"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }桌面應用程式"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } 疑難問題"
@@ -2931,11 +2923,6 @@
       ],
       "Take a tour": [
         "瀏覽"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "來自先前匯入的重複項目將被略過。可在 ${ PRODUCT_NAMES.EASY_SWITCH } 設定中復原或匯入較舊的訊息。"
       ]
     },
     "Calendar access select label": {
@@ -4720,12 +4707,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME } 中的 ${ DOCS_SHORT_APP_NAME } 讓您能在安全且已加密的環境中與他人協同工作。"
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } 不是您的預設電子郵件應用程式。"
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } 是您的預設電子郵件應用程式。"
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } 確保您的商務資料安全，並允許您向任何人傳送加密電子郵件。"
       ],
@@ -5297,12 +5278,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave 或更早版本"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6752,9 +6727,6 @@
       ],
       "Invalid private key file": [
         "無效的私有金鑰檔案"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "無效的重設權杖。請重新整理頁面並重試。"
       ],
       "Invalid Sieve code": [
         "Sieve 代碼無效"
@@ -10158,9 +10130,6 @@
       "default email address": [
         "預設電子信箱地址"
       ],
-      "Default email application": [
-        "預設郵件應用程式"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "刪除其他 MX 紀錄或確保 ${ MAIL_APP_NAME } 的優先順序是最低的數字。"
       ],
@@ -11619,9 +11588,6 @@
       "Session timed out": [
         "工作階段已逾時"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "將 ${ MAIL_APP_NAME } 設為您預設郵件應用程式。當您點擊電郵位址連結時，${ MAIL_APP_NAME } 將會自動開啟。"
-      ],
       "Set password": [
         "設定密碼"
       ],
@@ -12464,9 +12430,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "停用時，這可防止遠端圖片在您不知情的情況下被載入。"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "啟用時，我們將檢查 ${ MAIL_APP_NAME } 是否為您的預設電子郵件應用程式，如果不是，將會通知您。"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "當前往您的身分提供者為 ${ appName } 啟用 SAML 時，可能會提示您使用回呼 (ACS) URL 和簽發者 ID。只需複製下方資料並在您的身分提供者提示的欄位中貼上即可。"
@@ -23955,9 +23918,6 @@
       ],
       "Change second password": [
         "變更第二密碼"
-      ],
-      "Check your default mail application": [
-        "檢查您的預設電子郵件應用程式"
       ],
       "Choose a deployment method": [
         "選擇您的部署方式"

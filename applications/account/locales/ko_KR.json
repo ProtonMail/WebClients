@@ -1901,9 +1901,6 @@
       "Set as default": [
         "기본값으로 설정"
       ],
-      "Set as default mail application": [
-        "기본 메일 어플리케이션으로 설정"
-      ],
       "Set catch-all": [
         "Catch-all 설정"
       ],
@@ -3222,11 +3219,6 @@
         "최신 버전 찾기 실패"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } 문제"
@@ -3364,11 +3356,6 @@
       ],
       "Take a tour": [
         "둘러보기"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "기존에 불러온 항목 중 중복되는 항목은 생략됩니다. ${ PRODUCT_NAMES.EASY_SWITCH } 설정에서 실행 취소하거나 더 오래된 메시지를 불러올 수 있습니다."
       ]
     },
     "Calendar access select label": {
@@ -5177,12 +5164,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME }의 ${ DOCS_SHORT_APP_NAME }를 사용하면 안전하고 암호화된 환경에서 다른 사람들과 함께 작업할 수 있습니다."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME }이 기본 메일 어플리케이션이 아닙니다"
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME }이 기본 메일 애플리케이션으로 설정되어 있습니다."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME }이 비즈니스 데이터를 안전하게 보호하고 모두가 암호화된 이메일을 전송하도록 해드립니다."
       ],
@@ -5775,12 +5756,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave 및 이전 버전"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -7325,9 +7300,6 @@
       ],
       "Invalid private key file": [
         "유효하지 않은 개인 키 파일"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "재설정 토큰이 유효하지 않습니다. 페이지를 새로고침하고 다시 시도해 주세요."
       ],
       "Invalid Sieve code": [
         "유효하지 않은 Sieve 코드"
@@ -10987,9 +10959,6 @@
       "default email address": [
         "기본 이메일 주소"
       ],
-      "Default email application": [
-        "기본 이메일 애플리케이션"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "${ MAIL_APP_NAME }이 가장 낮은 숫자인지 확인하거나 아니면 다른 MX 기록을 삭제하세요."
       ],
@@ -12610,9 +12579,6 @@
       "Session timed out": [
         "세션 시간 초과됨"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요. 이메일 링크를 클릭하면 ${ MAIL_APP_NAME }이 자동으로 열립니다."
-      ],
       "Set password": [
         "비밀번호 설정"
       ],
@@ -13575,9 +13541,6 @@
       ],
       "When enabled, members cannot opt out of password check-ins in their own settings.": [
         "활성화되면, 구성원들은 각자의 설정에서 비밀번호 확인 요청을 해제할 수 없습니다."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "활성화시 ${ MAIL_APP_NAME }이 회원님의 기본 메일 애플리케이션인지 확인 및 설정이 되어 있지 않다면 알려드려요."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "사용자의 제공자로 부터 ${ appName }을 위한 SAML 활성화 시,  콜백 URL (callback, ACS라고 함) 및 issuer ID를 사용하라는 안내창이 표시될 수 있습니다. 아래의 데이터를 제공자 입력란에 복사 후 붙여넣기를 하면 됩니다."
@@ -25630,9 +25593,6 @@
       ],
       "Change second password": [
         "2차 비밀번호 변경"
-      ],
-      "Check your default mail application": [
-        "기본 메일 어플리케이션 확인"
       ],
       "Choose a deployment method": [
         "배포 수단 선택"
