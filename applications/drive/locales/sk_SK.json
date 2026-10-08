@@ -1400,6 +1400,9 @@
       ],
       "Switch to ${ planName }": [
         "Prejsť na ${ planName }"
+      ],
+      "Detach": [
+        "Odpojiť"
       ]
     },
     "Action: Docs": {
@@ -1539,6 +1542,12 @@
         "${ quantity } vlastné domény",
         "${ quantity } vlastných domén",
         "${ quantity } vlastných domén"
+      ],
+      "Managed Service Provider": [
+        "Poskytovateľ spravovaných služieb"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizácie s doplnkom „Poskytovateľ spravovaných služieb“ môžu vytvárať a spravovať dcérske organizácie."
       ]
     },
     "Alert": {
@@ -1841,6 +1850,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } desktopová aplikácia"
+      ],
+      "${ appName } Desktop application": [
+        "Desktopová aplikácia ${ appName }"
       ]
     },
     "Bug category": {
@@ -4624,6 +4636,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nesprávne druhé heslo. Skúste to znova, prosím."
+      ],
+      "Not enough browser storage": [
+        "Nedostatočný úložný priestor v prehliadači"
       ]
     },
     "error": {
@@ -8332,6 +8347,9 @@
       ],
       "No payment is required.": [
         "Nie je potrebné žiadne platba."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
       ]
     },
     "info": {

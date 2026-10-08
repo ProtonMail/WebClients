@@ -1292,6 +1292,9 @@
       ],
       "More info": [
         "Več informacij"
+      ],
+      "Detach": [
+        "Odpni"
       ]
     },
     "Actions": {
@@ -1681,6 +1684,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } Namizna aplikacija"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Namizna aplikacija"
       ]
     },
     "Bug category": {
@@ -4223,6 +4229,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nepravilno drugo geslo. Poskusite znova."
+      ],
+      "Not enough browser storage": [
+        "V brskalniku ni dovolj prostora za shranjevanje"
       ]
     },
     "error": {
@@ -7559,6 +7568,9 @@
       ],
       "Do you remember your password?": [
         "Se še spomnite svojega gesla?"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Trenutno ni dosegljivo zaradi visokega povpraševanja. Poskusite znova kasneje."
       ]
     },
     "info": {
