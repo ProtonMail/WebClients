@@ -15,6 +15,7 @@ import {
     masterKeyRetrying,
 } from '../redux/slices/core/credentials';
 import { updateEligibilityStatus } from '../redux/slices/meta/eligibilityStatus';
+import { addDataLossWarning } from '../redux/slices/meta/errors';
 import type { LumoDispatch } from '../redux/store';
 import type { LumoThunkArguments } from '../redux/thunk';
 import { LumoApi } from '../remote/api';
@@ -386,6 +387,29 @@ const initializeLumoCritical = (userKeys: UserKeysOnly, uid: string, envelopePro
                 const resolution = await resolveMasterKeysBundle(lumoApi, userKeys, masterKeyEnvelopes, () =>
                     dispatch(loadAddressKeys())
                 );
+
+                if (resolution.outcome === 'none_decrypted') {
+                    // None of the existing envelopes can be decrypted with any key we have. This is
+                    // expected after a password reset performed without a data-recovery method: the
+                    // old keys that wrapped these envelopes are gone for good, and no amount of
+                    // retrying will change that. Rather than leaving the user permanently stuck behind
+                    // an undismissable banner (LUMO-853), mint a fresh master key so the app is usable
+                    // again — old conversations stay undecryptable (and are reported as such
+                    // individually), but new ones work normally.
+                    try {
+                        console.warn(
+                            'All master key envelopes are undecryptable with the available account keys; minting a new master key so Lumo remains usable. Pre-existing data is unrecoverable.'
+                        );
+                        const freshMasterKeysBundle = await createAndPushMasterKeysBundle(lumoApi, userKeys);
+                        dispatch(addMasterKey(freshMasterKeysBundle));
+                        dispatch(addDataLossWarning());
+                        return { eligibility, masterKeysBundle: freshMasterKeysBundle };
+                    } catch (error) {
+                        console.error('Failed to mint a replacement master key after undecryptable envelopes', error);
+                        // Fall through to the generic failure below; the UI still needs to report
+                        // *something* if we can't even get the user a usable key.
+                    }
+                }
 
                 if (resolution.outcome !== 'success') {
                     dispatch(masterKeyFailed(masterKeyResolutionFailure(resolution)));
