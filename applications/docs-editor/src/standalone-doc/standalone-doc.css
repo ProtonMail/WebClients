@@ -1,0 +1,52 @@
+html,
+body,
+.app-root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+}
+
+.standalone-doc-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 10px 18px;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border-weak);
+  background: var(--background-norm);
+  color: var(--text-norm);
+  font:
+    14px system-ui,
+    sans-serif;
+}
+
+.standalone-doc-header output {
+  margin-right: auto;
+  color: var(--text-weak);
+}
+
+.standalone-doc-header label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.standalone-doc-header select {
+  padding: 4px 8px;
+  border: 1px solid var(--border-weak);
+  border-radius: 4px;
+  background: var(--background-norm);
+  color: var(--text-norm);
+}
+
+.standalone-doc-editor {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}

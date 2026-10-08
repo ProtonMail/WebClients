@@ -9,3 +9,7 @@ More information can be found in the design doc here: https://confluence.protont
 ## Standalone Sheet development
 
 See [STANDALONE_SHEET.md](./src/standalone-sheet/STANDALONE_SHEET.md) for a localhost entry that runs the Sheets editor without the Docs shell or RTS.
+
+## Standalone Docs development
+
+See [STANDALONE_DOC.md](./src/standalone-doc/STANDALONE_DOC.md) for a localhost entry that runs Docs with an in-memory document and no parent bridge or RTS.
