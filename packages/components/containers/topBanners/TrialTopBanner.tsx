@@ -1,9 +1,10 @@
-import { type ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { fromUnixTime, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -164,16 +165,27 @@ const TrialTopBannerPerSubscription = ({ app, subscription }: { app: APP_NAMES; 
     const { APP_NAME } = useConfig();
     const isVpn = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
-    const trialInfo = getTrialInfoForSingleSubscription(subscription);
+    const [entitlementCatalog, loadingEntitlementCatalog] = useEntitlementCatalog();
+    const trialInfo = useMemo(
+        () => getTrialInfoForSingleSubscription(entitlementCatalog, subscription),
+        [entitlementCatalog, subscription]
+    );
 
-    let topBanner = undefined;
-    if (trialInfo.isB2BTrial) {
-        topBanner = <B2BTrialTopBanner subscription={subscription} />;
-    } else if (trialInfo.isReferralTrial) {
-        topBanner = <ReferralTopBanner app={app} subscription={subscription} />;
-    } else if (trialInfo.isTrial && !isVpn && app) {
-        topBanner = <LegacyReferralTopBanner fromApp={app} subscription={subscription} />;
-    }
+    const topBanner = (() => {
+        if (loadingEntitlementCatalog) {
+            return undefined;
+        }
+        if (trialInfo.isB2BTrial) {
+            return <B2BTrialTopBanner subscription={subscription} />;
+        }
+        if (trialInfo.isReferralTrial) {
+            return <ReferralTopBanner app={app} subscription={subscription} />;
+        }
+        if (trialInfo.isTrial && !isVpn && app) {
+            return <LegacyReferralTopBanner fromApp={app} subscription={subscription} />;
+        }
+        return undefined;
+    })();
 
     return <TrialCanceledModalWrapper>{topBanner}</TrialCanceledModalWrapper>;
 };

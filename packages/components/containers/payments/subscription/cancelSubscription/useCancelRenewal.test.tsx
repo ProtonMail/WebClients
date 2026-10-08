@@ -1,10 +1,13 @@
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { changeRenewState } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { Renew } from '@proton/payments/core/subscription/constants';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import useEventManager from '../../../../hooks/useEventManager';
@@ -18,6 +21,7 @@ jest.mock('../../../../hooks/useEventManager');
 jest.mock('@proton/app-context/useNotifications');
 jest.mock('@proton/account/subscription/hooks');
 jest.mock('@proton/account/organization/hooks');
+jest.mock('@proton/account/entitlementCatalog/hooks');
 
 const mockApi = jest.fn().mockResolvedValue({});
 const mockEventManagerCall = jest.fn().mockResolvedValue(undefined);
@@ -32,6 +36,10 @@ jest.mocked(useNotifications).mockReturnValue({
 } as any);
 jest.mocked(useSubscription).mockReturnValue([{} as any, false]);
 jest.mocked(useOrganization).mockReturnValue([{} as any, false]);
+jest.mocked(useEntitlementCatalog).mockReturnValue([
+    buildEntitlementCatalog({ [PLANS.BUNDLE_PRO_2024]: [EntitlementName.Business] }),
+    false,
+]);
 
 const feedback: FeedbackDowngradeFormData = {
     Reason: 'DIFFERENT_ACCOUNT',

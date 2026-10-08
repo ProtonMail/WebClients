@@ -1,5 +1,4 @@
-import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
-import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
+import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import { getLanguageCode } from '@proton/shared/lib/i18n/helper';
 
 // The survey is only for orgs with more than this many users.
@@ -12,7 +11,7 @@ export const ADMIN_CONSOLE_SURVEY_MIN_USERS = 10;
 const ADMIN_CONSOLE_SURVEY_LANGUAGES = ['en', 'de'];
 
 interface Params {
-    entitlements: EntitlementChecks;
+    entitlements: EntitlementChecksForOrgAndUser;
     /** Number of users actually in the organization, not the seats purchased. */
     usedMembers: number;
     /** The language the UI is currently displayed in, e.g. `en_US` or `de_DE`. */
@@ -24,13 +23,10 @@ interface Params {
  * page is only reachable with the `account.user.read` permission, so everyone who sees it is already an admin.
  */
 export const getIsAdminConsoleSurveyEligible = ({ entitlements, usedMembers, localeCode }: Params) => {
-    // The spec targets the B2B Pass, VPN and Workspace plans. `orgIsBusiness` alone would also match business plans
-    // that are not in the study (Mail, Drive, Meet, Lumo), so we additionally require a VPN or Pass entitlement.
-    const isEligiblePlan =
-        entitlements.orgIsBusiness && (entitlements.orgHasVpn || !!entitlements.quantityOrg(EntitlementName.FlagsPass));
-
+    // The spec targets the B2B Pass, VPN and Workspace plans. `isBusiness` alone would also match business plans
+    // that are not in the study (Mail, Drive, Meet, Lumo), so the plan must also include VPN or Pass.
     return (
-        isEligiblePlan &&
+        entitlements.isVpnOrPassBusiness &&
         usedMembers > ADMIN_CONSOLE_SURVEY_MIN_USERS &&
         ADMIN_CONSOLE_SURVEY_LANGUAGES.includes(getLanguageCode(localeCode))
     );

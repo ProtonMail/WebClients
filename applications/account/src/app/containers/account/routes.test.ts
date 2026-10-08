@@ -1,9 +1,10 @@
 import { buildUser } from '@proton/account/testing/buildUser';
 import { getOrgPermissions } from '@proton/account/userPermissions';
-import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
+import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import { hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { APPS } from '@proton/shared/lib/constants';
 
 import type { AccountRecoveryRouterFlags, AccountRouterParams, Flags } from '../../content/router-params';
@@ -55,7 +56,7 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         app: APPS.PROTONMAIL,
         user: buildUser(),
         subscription: { Renew: Renew.Enabled } as Subscription,
-        entitlements: createEntitlementResolver(undefined),
+        entitlements: createEntitlementResolverForOrgAndUser(buildEntitlementCatalog(), undefined, []),
         recoveryNotification: undefined,
         accountRecoveryRouterFlags,
         organization: undefined,

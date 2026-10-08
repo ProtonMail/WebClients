@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -21,7 +22,8 @@ export const useCancelRenewal = () => {
     const eventManager = useEventManager();
     const { createNotification, hideNotification } = useNotifications();
     const [subscription] = useSubscription();
-    const { isB2BTrial } = getTrialInfoForSingleSubscription(subscription);
+    const [entitlementCatalog] = useEntitlementCatalog();
+    const { isB2BTrial } = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
 
     const cancelSubscriptionRenewal = async (feedback: FeedbackDowngradeFormData, refreshState = true) => {
         let cancelNotificationId;

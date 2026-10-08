@@ -11,6 +11,7 @@ import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -153,6 +154,7 @@ describe('SubscriptionContainer', () => {
                 VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
             },
             initialBillingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+            entitlementCatalog: buildEntitlementCatalog(),
         };
     });
 

@@ -3,6 +3,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { BilledUserModal } from '@proton/payments-ui/client-extensions/billed-user/index';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
+import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import { getAvailableSubscriptionActions, getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
@@ -39,6 +40,7 @@ interface Props {
     paymentStatus: PaymentStatus;
     modalState: ModalStateProps;
     subscriptionProps: OpenCallbackProps;
+    entitlementCatalog: EntitlementCatalog;
 }
 
 const isOverridablableStep = (step: SUBSCRIPTION_STEPS): step is SubscriptionOverridableStep =>
@@ -53,6 +55,7 @@ const SubscriptionModal = ({
     freePlan,
     organization,
     paymentStatus,
+    entitlementCatalog,
     modalState,
     subscriptionProps,
 }: Props) => {
@@ -158,6 +161,7 @@ const SubscriptionModal = ({
             mode={mode}
             currency={currency}
             paymentStatus={paymentStatus}
+            entitlementCatalog={entitlementCatalog}
             upsellRef={upsellRef}
             // Post subscription has advantage over config
             disableThanksStep={postSubscriptionProps.disableThanksStep ?? rest.disableThanksStep}

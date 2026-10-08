@@ -21,6 +21,7 @@ import {
 } from '../constants';
 import { hasLifetimeCoupon } from '../coupons';
 import { isRegionalCurrency } from '../currencies';
+import type { EntitlementCatalog } from '../entitlements/interface';
 import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
 import { getSupportedAddons, hasAddonFromPlanIDs, isAddonType } from '../plan/addons';
 import { getPlansLimit, getPlansQuantity } from '../plan/feature-limits';
@@ -221,19 +222,21 @@ export const shouldPassIsTrial = ({
     newCycle,
     downgradeIsTrial,
     subscription: subscriptionParam,
+    entitlementCatalog,
 }: {
     plansMap: PlansMap;
     subscription: Subscription | FreeSubscription | undefined;
     newPlanIDs: PlanIDs;
     newCycle: CYCLE;
     downgradeIsTrial: boolean;
+    entitlementCatalog: EntitlementCatalog | undefined;
 }) => {
     const subscription = subscriptionParam?.UpcomingSubscription ?? subscriptionParam;
     if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
 
-    if (!getTrialInfoForSingleSubscription(subscription).isB2BTrial) {
+    if (!getTrialInfoForSingleSubscription(entitlementCatalog, subscription).isB2BTrial) {
         return false;
     }
 

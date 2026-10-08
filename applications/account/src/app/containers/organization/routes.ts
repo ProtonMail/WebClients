@@ -97,7 +97,7 @@ export const getOrganizationAppRoutes = ({
         !!permissions['account.activity_log.read'];
 
     const canShowB2BConnectionEvents =
-        entitlements.orgHasVpnActivityMonitor &&
+        entitlements.hasVpnActivityMonitor &&
         app === APPS.PROTONVPN_SETTINGS &&
         permissions['account.activity_log.read'] &&
         isOrgConfigured;
@@ -112,7 +112,7 @@ export const getOrganizationAppRoutes = ({
     const canShowGroupsSection =
         (permissions['account.group.read'] || !!isGroupOwner) &&
         !!organization &&
-        (hasGroups || isPassEssentials || (hasActiveOrganizationKey && entitlements.orgHasGroups));
+        (hasGroups || isPassEssentials || (hasActiveOrganizationKey && entitlements.hasGroups));
 
     const hasUsedMembers = (organization?.UsedMembers ?? 0) > 1;
     const canShowUsersAndAddressesSection =
@@ -318,7 +318,7 @@ export const getOrganizationAppRoutes = ({
             icon: IcServers,
             available:
                 permissions['account.gateway.read'] &&
-                (entitlements.orgHasMaxDedicatedIps || getHasVpnGatewaysUpsellPlan(subscription)),
+                (entitlements.hasMaxDedicatedIps || getHasVpnGatewaysUpsellPlan(subscription)),
             subsections: [
                 {
                     id: 'servers',
@@ -335,7 +335,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Shared servers`,
             to: '/shared-servers',
             icon: IcEarth,
-            available: permissions['account.shared_server.read'] && entitlements.orgHasVpnLocationFilter,
+            available: permissions['account.shared_server.read'] && entitlements.hasVpnLocationFilter,
             subsections: [
                 {
                     id: 'servers',

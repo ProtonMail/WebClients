@@ -1,16 +1,26 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { useTrialInfo } from './useTrialInfo';
 
 jest.mock('@proton/account/subscription/hooks');
+jest.mock('@proton/account/entitlementCatalog/hooks');
 
 describe('useTrialInfo', () => {
+    const entitlementCatalog = buildEntitlementCatalog({
+        [PLANS.BUNDLE]: [],
+        [PLANS.BUNDLE_PRO_2024]: [EntitlementName.Business],
+    });
+
     beforeEach(() => {
         jest.clearAllMocks();
+        (useEntitlementCatalog as jest.Mock).mockReturnValue([entitlementCatalog, false]);
     });
 
     it('returns {} when the subscription is unavailable', () => {
@@ -47,7 +57,10 @@ describe('useTrialInfo', () => {
     });
 
     it('returns B2B trial information based on the account subscription plan', () => {
-        (useSubscription as jest.Mock).mockReturnValue([buildSubscription(PLANS.BUNDLE_PRO, { IsTrial: true }), false]);
+        (useSubscription as jest.Mock).mockReturnValue([
+            buildSubscription(PLANS.BUNDLE_PRO_2024, { IsTrial: true }),
+            false,
+        ]);
 
         const { result } = renderHook(() => useTrialInfo());
 

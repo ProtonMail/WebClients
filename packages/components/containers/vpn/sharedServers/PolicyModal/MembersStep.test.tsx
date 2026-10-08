@@ -5,8 +5,8 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 
 import MembersStep from './MembersStep';
 
-jest.mock('@proton/payments-ui/entitlements/hooks', () => ({
-    useEntitlementChecks: jest.fn().mockReturnValue([{ orgHasGroups: true }, false]),
+jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: jest.fn().mockReturnValue([{ hasGroups: true }, false]),
 }));
 
 describe('MembersStep', () => {

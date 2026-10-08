@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -129,6 +130,7 @@ const SubscribeAccount = ({
 
     const [subscription, loadingSubscription] = useSubscription();
     const [plansResult, loadingPlans] = usePlans();
+    const [entitlementCatalog, loadingEntitlementCatalog] = useEntitlementCatalog();
     const plans = plansResult?.plans || [];
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [organization, loadingOrganization] = useOrganization();
@@ -163,8 +165,10 @@ const SubscribeAccount = ({
         loadingSubscription ||
         loadingPlans ||
         loadingOrganization ||
+        loadingEntitlementCatalog ||
         !paymentStatus ||
-        !initialBillingAddress
+        !initialBillingAddress ||
+        !entitlementCatalog
     ) {
         return loader;
     }
@@ -388,6 +392,7 @@ const SubscribeAccount = ({
                                     onUnsubscribed={handleSuccess}
                                     onCancel={handleClose}
                                     paymentStatus={paymentStatus}
+                                    entitlementCatalog={entitlementCatalog}
                                     initialBillingAddress={initialBillingAddress}
                                     trial={trial}
                                     onCheck={(data) => {

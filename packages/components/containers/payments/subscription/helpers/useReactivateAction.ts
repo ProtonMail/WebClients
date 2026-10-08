@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -29,6 +30,7 @@ export const useReactivateAction = (row: SubscriptionRow): DropdownActionProps[]
     const eventManager = useEventManager();
     const { createNotification } = useNotifications();
     const getPaymentMethods = useGetPaymentMethods();
+    const [entitlementCatalog] = useEntitlementCatalog();
 
     return [
         showReactivate && {
@@ -48,7 +50,7 @@ export const useReactivateAction = (row: SubscriptionRow): DropdownActionProps[]
                     // delinquency state on renewal attempt, which we don't want. Hence, we make this check here and ask
                     // this cohort to provide a payment method before reactivating.
                     if (
-                        getTrialInfoForSingleSubscription(subscription).isReferralTrial &&
+                        getTrialInfoForSingleSubscription(entitlementCatalog, subscription).isReferralTrial &&
                         paymentMethods.length === 0
                     ) {
                         createNotification({

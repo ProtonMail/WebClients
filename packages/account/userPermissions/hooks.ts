@@ -1,10 +1,7 @@
-import { useMemo } from 'react';
-
-import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
 import { createHooks } from '@proton/redux-utilities/hooks';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useAllEntitlements } from '../entitlements/hooks';
+import { useEntitlementChecksForOrgAndUser } from '../entitlementCatalog/hooks';
 import { useOrganization } from '../organization/hooks';
 import { selectUserPermissions, userPermissionsThunk } from './index';
 
@@ -20,8 +17,7 @@ export enum AdminRolesUIState {
 
 export const useAdminRolesUI = (): [AdminRolesUIState, boolean] => {
     const [userPermissions, loadingUserPermissions] = useUserPermissions();
-    const [allEntitlements, loadingEntitlements] = useAllEntitlements();
-    const entitlements = useMemo(() => createEntitlementResolver(allEntitlements), [allEntitlements]);
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const [organization, loadingOrganization] = useOrganization();
     const isAdminRolesWithMspEnabled = useFlag('AdminRolesWithMSP');
 
@@ -33,5 +29,5 @@ export const useAdminRolesUI = (): [AdminRolesUIState, boolean] => {
         return [AdminRolesUIState.Hidden, loading];
     }
 
-    return [entitlements.orgHasAdminRoles ? AdminRolesUIState.Enabled : AdminRolesUIState.Disabled, loading];
+    return [entitlements.hasAdminRoles ? AdminRolesUIState.Enabled : AdminRolesUIState.Disabled, loading];
 };

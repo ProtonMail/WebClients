@@ -2,12 +2,16 @@ import { buildUser } from '@proton/account/testing/buildUser';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { Renew, SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { getSubscriptionRenewData, getSubscriptionRows } from './getSubscriptionRows';
 
-const getRows = (user: UserModel, subscription: Subscription) => getSubscriptionRows(user, [subscription]);
+const entitlementCatalog = buildEntitlementCatalog();
+
+const getRows = (user: UserModel, subscription: Subscription) =>
+    getSubscriptionRows(user, [subscription], entitlementCatalog);
 
 describe('getSubscriptionRows', () => {
     const paidUser = buildUser({ isPaid: true, isFree: false, hasPassLifetime: false });
@@ -79,7 +83,7 @@ describe('getSubscriptionRows', () => {
         const first = withId(buildSubscription({ planName: PLANS.BUNDLE, cycle: CYCLE.YEARLY, currency: 'EUR' }), 'a');
         const second = withId(buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'EUR' }), 'b');
 
-        const rows = getSubscriptionRows(paidUser, [first, second]);
+        const rows = getSubscriptionRows(paidUser, [first, second], entitlementCatalog);
 
         expect(rows.map((r) => r.kind)).toEqual(['current', 'current']);
         expect(rows.map((r) => r.id)).toEqual(['a-current', 'b-current']);
@@ -91,7 +95,7 @@ describe('getSubscriptionRows', () => {
         const first: Subscription = { ...withMembers(3, 'a'), UpcomingSubscription: firstUpcoming };
         const second: Subscription = { ...withMembers(4, 'b'), UpcomingSubscription: secondUpcoming };
 
-        const rows = getSubscriptionRows(paidUser, [first, second]);
+        const rows = getSubscriptionRows(paidUser, [first, second], entitlementCatalog);
 
         expect(rows.map((r) => r.kind)).toEqual(['current', 'upcoming', 'current', 'upcoming']);
         expect(rows[3].subscription).toBe(secondUpcoming);

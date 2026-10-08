@@ -12,6 +12,7 @@ import { getModelState } from '@proton/account/tests';
 import { ApiContext } from '@proton/app-context/apiContext';
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { getPaymentStatusState, getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
@@ -126,6 +127,7 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             organizationKey: getModelState({} as CachedOrganizationKey),
             userInvitations: getModelState([]),
             plans: getModelState({ plans: [], freePlan: FREE_PLAN }),
+            entitlementCatalog: getModelState(buildEntitlementCatalog()),
             features: {},
             importerConfig: getModelState({} as ApiEnvironmentConfig),
             ...preloadedState,
