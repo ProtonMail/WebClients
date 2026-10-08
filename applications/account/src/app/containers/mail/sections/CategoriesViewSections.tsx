@@ -31,7 +31,6 @@ export const CategoriesViewSections = () => {
     const dispatch = useDispatch();
     const [modal, setModal, renderModal] = useModalState();
 
-    const showBadgeSettings = useFlag('MailRecordLastUnseenIncomingMessageEventID');
     const isReloadDisabled = useFlag('InboxDesktopCategoryViewSettingsToggleReloadDisabled');
 
     const [mailSettings] = useMailSettings();
@@ -93,7 +92,7 @@ export const CategoriesViewSections = () => {
         <>
             <div className="categories-section">
                 <CategoryViewToggle />
-                {showBadgeSettings && mailSettings.MailCategoryView && <CategoriesUnreadCountToggle />}
+                {mailSettings.MailCategoryView && <CategoriesUnreadCountToggle />}
                 <div
                     className={clsx(
                         'border border-weak rounded-xl',

@@ -298,7 +298,6 @@ export enum MailFeatureFlag {
     CategoryReportUnreadCountDisabled = 'CategoryReportUnreadCountDisabled',
     CategoryView = 'CategoryView',
     CategoryViewVariant = 'CategoryViewVariant',
-    MailRecordLastUnseenIncomingMessageEventID = 'MailRecordLastUnseenIncomingMessageEventID',
     MailStoreDebugMode = 'MailStoreDebugMode',
     // Attempt to fix the unability to save/send drafts on huge accounts
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
