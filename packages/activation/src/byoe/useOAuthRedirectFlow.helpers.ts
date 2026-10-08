@@ -17,7 +17,7 @@ export const storeOAuthRedirectState = (state: OAuthRedirectState) => {
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 };
 
-export const clearOAuthRedirectState = () => {
+const clearOAuthRedirectState = () => {
     sessionStorage.removeItem(STORAGE_KEY);
 };
 
