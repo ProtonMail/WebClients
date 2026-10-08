@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
+import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -15,9 +17,11 @@ import '../MobileSettings.scss';
 
 interface Props {
     layout: (children: React.ReactNode, props?: any) => React.ReactNode;
+    /** Native app URL to hand control back to once the address is connected. */
+    redirect: string | undefined;
 }
 
-export const BYOEMobile = ({ layout }: Props) => {
+export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
     const { state, toggle } = useToggle(true);
 
     const { createNotification } = useNotifications();
@@ -26,7 +30,7 @@ export const BYOEMobile = ({ layout }: Props) => {
         createNotification({ text: 'Not implemented yet' });
     };
 
-    return layout(
+    return (
         <div className="mobile-settings">
             <MobileSection>
                 <MobileSectionRow stackContent>
@@ -64,7 +68,17 @@ export const BYOEMobile = ({ layout }: Props) => {
                     >{c('Action').t`Connect and import`}</Button>
                 </MobileSectionRow>
             </MobileSection>
-        </div>,
+        </div>
+    );
+};
+
+export const BYOEMobile = ({ layout, redirect }: Props) => {
+    return layout(
+        <EasySwitchStoreProvider>
+            <EasySwitchStoreInitializer>
+                <BYOEMobileContent redirect={redirect} />
+            </EasySwitchStoreInitializer>
+        </EasySwitchStoreProvider>,
         { className: 'overflow-auto' }
     );
 };
