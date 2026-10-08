@@ -1780,6 +1780,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Applikation för stationär dator ${ appName }"
       ]
     },
     "Bug category": {
@@ -7891,6 +7894,15 @@
       ],
       "No payment is required.": [
         "Ingen betalning krävs."
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
+      ],
+      "1 device per user": [
+        "1 enhet per användare"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tillfälligt otillgänglig på grund av hög efterfrågan. Försök igen senare."
       ]
     },
     "info": {
@@ -10903,6 +10915,9 @@
       ],
       "Your subscription renews soon": [
         "Din prenumeration förnyas snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sista chansen att få din första månad med ${ plan } till detta pris."
       ]
     },
     "Offer fearue": {
@@ -11496,6 +11511,9 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Din valuta har ändrats till euro (€) eftersom ${ IDEAL_WERO_BRAND_NAME } endast stöder betalningar i euro."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ]
     },
     "Payments.Error": {
