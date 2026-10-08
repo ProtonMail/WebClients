@@ -1,4 +1,4 @@
-import { Result } from '@proton/docs-shared'
+import { Result } from './Result'
 
 export const sanitizeUrl = (url: string): Result<string> => {
   if (url.length === 0) {

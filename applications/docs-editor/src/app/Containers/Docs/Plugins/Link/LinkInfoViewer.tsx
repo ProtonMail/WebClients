@@ -14,7 +14,7 @@ import { createPortal } from 'react-dom'
 import { c } from 'ttag'
 import { useDocsDependencies } from '../../DocsDependenciesProvider'
 import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
-import { sanitizeUrl } from '../../../../Utils/sanitizeUrl'
+import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { LINK_CHANGE_COMMAND } from './LinkPlugin'
 
