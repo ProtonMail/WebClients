@@ -1,12 +1,13 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
+import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
 import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import type { ShareResult } from '@proton/drive'
 import { generateNodeUid, getDrive } from '@proton/drive'
 import { isPrivateNodeMeta } from '@proton/drive-store/lib/NodeMeta'
-import { addSentryBreadcrumb, SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
+import { addSentryBreadcrumb } from '@proton/shared/lib/helpers/sentry'
 import { useEffect, useRef } from 'react'
 import { useApplication } from '~/utils/application-context'
 
@@ -90,27 +91,13 @@ export function replaceAddress({
 }
 
 export function reportChangeAddressError(error: any, breadcrumb: Record<string, any>) {
-  if (error instanceof Error && error.name === 'AbortError') {
-    return
-  }
-
-  const errorMessage = 'Failed to change URL in address bar after changing public sharing'
-
-  const errorWithCurrentStack = new Error(errorMessage)
-  errorWithCurrentStack.cause = error
-
   addSentryBreadcrumb({
     category: 'docs',
     level: 'warning',
     message: 'Failure in useChangeAddressWhenPubliclyShared',
     data: breadcrumb,
   })
-  traceError(errorWithCurrentStack, {
-    tags: {
-      initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-      feature: 'DocsSharingModalDriveSDK',
-    },
-  })
+  traceErrorSDK(error, 'DocsSharingModalDriveSDK')
 }
 
 // We are transitioning from toggle OFF to ON

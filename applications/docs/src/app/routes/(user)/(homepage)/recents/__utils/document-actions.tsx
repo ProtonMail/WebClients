@@ -16,7 +16,7 @@ import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { c } from 'ttag'
 import { deleteDocument, reportTrashError } from '@proton/docs-core/lib/DriveSDK/trash'
 import { trashAndNotify, restoreAndNotify, handleRestoreError } from '~/drive-sdk/trash-restore-notify'
-import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
+import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
 
 export type DocumentActionsContextValue = {
   open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
@@ -124,12 +124,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
             text: <span className="text-pre-wrap">{successNotificationText}</span>,
           })
         } catch (error) {
-          traceError(error, {
-            tags: {
-              initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-              feature: 'DocsRenameWithDriveSDK',
-            },
-          })
+          traceErrorSDK(error, 'DocsRenameWithDriveSDK')
           throw error
         }
       } else {

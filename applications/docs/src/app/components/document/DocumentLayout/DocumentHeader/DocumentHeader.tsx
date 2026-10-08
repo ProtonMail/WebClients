@@ -190,7 +190,10 @@ function DocsHeaderForDocument({
         const shareId = replaceDriveCompat ? await getShareId(nodeMeta) : await compat.getShareId(nodeMeta)
         setShareId(shareId)
       } catch (error) {
-        traceError(error)
+        // SDK getShareId traces errors itself
+        if (!replaceDriveCompat) {
+          traceError(error)
+        }
       }
     }
 

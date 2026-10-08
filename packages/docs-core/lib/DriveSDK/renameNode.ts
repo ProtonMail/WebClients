@@ -1,6 +1,6 @@
 import { generateNodeUid, getDrive } from '@proton/drive'
 import type { NodeMeta } from '@proton/docs-shared'
-import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
+import { traceErrorSDK } from './traceErrorSDK'
 
 export async function renameNode(nodeMeta: NodeMeta, newName: string) {
   const drive = getDrive()
@@ -10,12 +10,7 @@ export async function renameNode(nodeMeta: NodeMeta, newName: string) {
   try {
     await drive.renameNode(nodeUid, newName)
   } catch (error) {
-    traceError(error, {
-      tags: {
-        initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-        feature: 'DocsRenameWithDriveSDK',
-      },
-    })
+    traceErrorSDK(error, 'DocsRenameWithDriveSDK')
     throw error
   }
 }
