@@ -1,7 +1,6 @@
 export enum FeatureFlag {
     APPVERSION_EXTENSION_DISABLED = "InboxDesktopAppVersionExtensionDisabled",
     ELECTRON_OS_VERSION_UPDATE_CONSTRAINTS_DISABLED = "InboxDesktopElectronAndOsVersionUpdateConstraintsDisabled",
-    AUTH_GATED_SHORTCUTS_ENABLED = "InboxDesktopAuthGatedShortcutsEnabled",
     LOADER_STUCK_STATE_RECOVERY_DISABLED = "InboxDesktopLoaderStuckStateRecoveryDisabled",
 
     // Only used for testing.
