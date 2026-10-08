@@ -6,6 +6,7 @@ import { MasterKeyBanner } from '../components/MasterKeyBanner';
 import HighLoadWarning from '../components/Notifications/HighLoadWarning';
 import { RightDrawer } from '../components/RightDrawer';
 import { useGuestMigrationNotification } from '../components/useGuestMigrationNotification';
+import { useDataLossWarningNotification } from '../hooks/useDataLossWarningNotification';
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
 import { useResourceLimitNotifications } from '../hooks/useResourceLimitNotifications';
 import { DragAreaProvider } from '../providers/DragAreaProvider';
@@ -30,6 +31,7 @@ const MainLayoutContent = ({ children }: Props) => {
 
     useGuestMigrationNotification();
     useResourceLimitNotifications();
+    useDataLossWarningNotification();
     useNativeSidebarLayoutApi();
 
     useKeyboardShortcuts({ onOpenSearch: openSearchModal });

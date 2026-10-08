@@ -35,6 +35,18 @@ export interface ResourceLimitError {
     timestamp: number;
 }
 
+/**
+ * Raised when the master key could not be recovered from any existing envelope (typically a
+ * password reset without a data-recovery method, which permanently destroys the old keys) and a
+ * fresh master key was minted so the app stays usable. Surfaced once as a dismissible toast —
+ * unlike `MasterKeyBanner`, which blocks on a genuine, ongoing failure, this is informational: the
+ * user is back up and running, but their pre-reset data is unrecoverable.
+ */
+interface DataLossWarning {
+    id: string;
+    timestamp: number;
+}
+
 export type DebugLimitOverride = 'approaching' | 'at' | null;
 
 export interface DebugLimitOverrideState {
@@ -48,6 +60,7 @@ interface ErrorState {
     conversationErrors: Record<ConversationId, ConversationError[]>;
     tierErrors: TierError[];
     resourceLimitErrors: ResourceLimitError[];
+    dataLossWarnings: DataLossWarning[];
     // Dev-only: lets the Debug View force the resource-limit banner state.
     debugLimitOverrides: Record<ResourceLimitType, DebugLimitOverrideState>;
 }
@@ -56,6 +69,7 @@ const initialState: ErrorState = {
     conversationErrors: {},
     tierErrors: [],
     resourceLimitErrors: [],
+    dataLossWarnings: [],
     debugLimitOverrides: {
         messages: { override: null },
         assets: { override: null },
@@ -137,6 +151,17 @@ const errorsSlice = createSlice({
             state.resourceLimitErrors = state.resourceLimitErrors.filter((e) => e.id !== action.payload);
         },
 
+        addDataLossWarning: (state) => {
+            state.dataLossWarnings.push({
+                id: crypto.randomUUID(),
+                timestamp: Date.now(),
+            });
+        },
+
+        dismissDataLossWarning: (state, action: PayloadAction<string>) => {
+            state.dataLossWarnings = state.dataLossWarnings.filter((w) => w.id !== action.payload);
+        },
+
         setDebugLimitOverride: (
             state,
             action: PayloadAction<{
@@ -172,6 +197,8 @@ export const {
     clearTierErrors,
     addResourceLimitError,
     dismissResourceLimitError,
+    addDataLossWarning,
+    dismissDataLossWarning,
     setDebugLimitOverride,
     clearAllDebugLimitOverrides,
 } = errorsSlice.actions;
@@ -194,6 +221,11 @@ export const selectHasTierErrors = createSelector(
 export const selectResourceLimitErrors = createSelector(
     [selectErrorsState],
     (errorsState) => errorsState.resourceLimitErrors
+);
+
+export const selectDataLossWarnings = createSelector(
+    [selectErrorsState],
+    (errorsState) => errorsState.dataLossWarnings
 );
 
 export const selectDebugLimitOverride =
