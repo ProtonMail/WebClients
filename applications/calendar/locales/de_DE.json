@@ -341,6 +341,9 @@
       "Display navigation bar": [
         "Navigationsleiste anzeigen"
       ],
+      "Don't show this offer again": [
+        "Dieses Angebot nicht erneut anzeigen"
+      ],
       "Done": [
         "Fertig"
       ],
@@ -893,6 +896,9 @@
       "Skip verification": [
         "Überprüfung überspringen"
       ],
+      "Special Offer": [
+        "Sonderangebot"
+      ],
       "Start import": [
         "Importvorgang starten"
       ],
@@ -1392,8 +1398,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Desktopanwendung"
+      "${ appName } Desktop application": [
+        "${ appName } Desktopanwendung"
       ]
     },
     "Bug category": {
@@ -5495,6 +5501,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Werbetreibende verfolgen dein Surfverhalten, um gezielte Werbung anzuzeigen. ${ VPN_APP_NAME } blockiert Tracker und Werbung, macht deine Verbindung schneller und verbessert dein Online-Erlebnis."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Nach dem Aktualisieren werden Sie möglicherweise aufgefordert, ein Passwort einzugeben. Geben Sie das Passwort ein, mit dem Sie Ihren Mac entsperren, und klicken Sie anschließend auf „Immer zulassen“, um angemeldet zu bleiben. ${ learnMore }"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
       ],
@@ -5725,6 +5734,9 @@
       ],
       "Discard changes?": [
         "Änderungen verwerfen?"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Entdecke die neuen Funktionen, die freigeschaltet wurden, und probiere sie gleich aus!"
@@ -6212,6 +6224,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Bitte ${ MAIL_APP_NAME } aktualisieren, um die App weiterhin nutzen zu können. ${ downloadUpdate }"
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
       ],
@@ -6357,6 +6372,9 @@
       ],
       "Take control of your digital life": [
         "Die Kontrolle über dein digitales Leben übernehmen"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Vorübergehend wegen hoher Nachfrage nicht verfügbar. Bitte versuche es später nochmals."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
