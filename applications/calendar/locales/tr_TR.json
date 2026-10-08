@@ -1046,6 +1046,12 @@
       ],
       "Switch to ${ planName }": [
         "${ planName } tarifesine geç"
+      ],
+      "Don't show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
+      "Special Offer": [
+        "Özel teklif"
       ]
     },
     "action": {
@@ -7050,6 +7056,18 @@
       ],
       "No payment is required.": [
         "Herhangi bir ödeme gerekmez."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Güncellemeden sonra Mac bilgisayarınız parolayı yazmanızı isteyebilir. Mac bilgisayarınızın kilidini açmak için kullandığınız parolayı yazın, ardından oturumunuzun açık kalması için Her zaman izin ver üzerine tıklayın. ${ learnMore }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret ile yenilenir."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Kullanmayı sürdürmek için lütfen ${ MAIL_APP_NAME } uygulamasını güncelleyin. ${ downloadUpdate }"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ]
     },
     "info": {

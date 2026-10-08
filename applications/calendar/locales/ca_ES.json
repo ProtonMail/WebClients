@@ -1046,6 +1046,12 @@
       ],
       "Switch to ${ planName }": [
         "Canvia a ${ planName }"
+      ],
+      "Don't show this offer again": [
+        "No em torneu a mostrar aquesta oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
       ]
     },
     "action": {
@@ -7050,6 +7056,18 @@
       ],
       "No payment is required.": [
         "No es requereix cap pagament."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Després de l'actualització, pot ser que el vostre Mac us demani una contrasenya. Escriviu la que feu servir per desbloquejar-lo i, a continuació, feu clic a Permet sempre per mantenir la sessió iniciada. ${ learnMore }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en el preu mensual estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan finalitzi el cicle de facturació."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualitzeu ${ MAIL_APP_NAME } per continuar utilitzant l'aplicació. ${ downloadUpdate }"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporalment no disponible a causa de l'alta demanda. Torneu-ho a provar més tard."
       ]
     },
     "info": {
@@ -8096,8 +8114,8 @@
     },
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
-        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
-        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+        "${ MEET_APP_NAME } (per a ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per a ${ quantity } usuaris)"
       ],
       "${ MEET_APP_NAME } license": [
         "Llicència de ${ MEET_APP_NAME }"
