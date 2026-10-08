@@ -33,7 +33,7 @@ import { $generateNodesFromDOM } from '@lexical/html'
 import { TablePlugin } from './TablePlugin'
 import { mergedCellsHTML, TablesWithUnalignedRowsAndColumns } from './__mocks__/TestTables'
 import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text'
-import DocumentEditorTheme from '../../../../Theme/Theme'
+import DocumentEditorTheme from '../../theme/Theme'
 import { EditorStateProvider } from '../../../EditorStateProvider'
 import { EditorSystemMode } from '@proton/docs-shared'
 
