@@ -12,7 +12,7 @@ export const InAppNotificationModal = WithInAppNotification(({ setNotificationSt
     const { content } = notification;
 
     return (
-        <PassModal className="overflow-auto" size="small" open>
+        <PassModal className="overflow-auto" size="small" open data-testid="modal:auto-open">
             <ModalTwoHeader
                 className="w-full"
                 hasClose={false}
@@ -51,6 +51,7 @@ export const InAppNotificationModal = WithInAppNotification(({ setNotificationSt
                     color="weak"
                     shape="solid"
                     size="large"
+                    data-testid="modal:dismiss"
                     onClick={() => setNotificationState(InAppNotificationState.DISMISSED)}
                     pill
                 >
