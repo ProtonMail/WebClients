@@ -33,3 +33,95 @@ im.$media-expressions: $media-expressions;
 		flex: 1 0 auto;
 	}
 }
+
+.prejoin-page {
+	isolation: isolate;
+
+	// Opaque equivalent of the banner's translucent gradient over `--background-norm`, so the glows
+	// don't shine through it.
+	.open-desktop-app-banner {
+		background: linear-gradient(270deg, #211f35 0%, #1c1a2e 100%);
+	}
+}
+
+// Glow positions come from the 1440×900 design frame: centers scale with each axis, sizes scale to cover
+// the viewport so the glows keep their shape on any aspect ratio.
+.prejoin-background {
+	--prejoin-glow-unit: max(100vw / 1440, 100vh / 900);
+
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	z-index: -1;
+	pointer-events: none;
+}
+
+.prejoin-glow {
+	position: absolute;
+	inset-block-start: var(--glow-y);
+	inset-inline-start: var(--glow-x);
+	inline-size: calc(var(--glow-w) * var(--prejoin-glow-unit));
+	block-size: calc(var(--glow-h) * var(--prejoin-glow-unit));
+	border-radius: 50%;
+	background: radial-gradient(
+		100% 100% at 0 0,
+		rgb(var(--glow-color) / var(--glow-alpha)) 0%,
+		rgb(var(--glow-color) / calc(var(--glow-alpha) * 0.35)) 60%,
+		rgb(var(--glow-color) / 0) 100%
+	);
+	opacity: var(--glow-opacity, 0.8);
+	filter: blur(calc(var(--glow-blur) * var(--prejoin-glow-unit)));
+	transform: translate(-50%, -50%);
+
+	&--norm {
+		--glow-x: 72.92%;
+		--glow-y: 38.89%;
+		--glow-w: 1100;
+		--glow-h: 1100;
+		--glow-color: 150 138 239;
+		--glow-alpha: 0.55;
+		--glow-opacity: 0.6;
+		--glow-blur: 50;
+	}
+
+	&--ground {
+		--glow-x: 50%;
+		--glow-y: 116.67%;
+		--glow-w: 1500;
+		--glow-h: 600;
+		--glow-color: 13 8 32;
+		--glow-alpha: 0.7;
+		--glow-opacity: 1;
+		--glow-blur: 65;
+	}
+
+	&--deep {
+		--glow-x: 72.92%;
+		--glow-y: 55.56%;
+		--glow-w: 900;
+		--glow-h: 900;
+		--glow-color: 76 43 252;
+		--glow-alpha: 0.34;
+		--glow-blur: 60;
+	}
+
+	&--bot {
+		--glow-x: 31.39%;
+		--glow-y: 77.78%;
+		--glow-w: 1100;
+		--glow-h: 700;
+		--glow-color: 149 129 255;
+		--glow-alpha: 0.32;
+		--glow-blur: 65;
+	}
+
+	&--main {
+		--glow-x: 31.39%;
+		--glow-y: 22.22%;
+		--glow-w: 1100;
+		--glow-h: 1100;
+		--glow-color: 185 171 255;
+		--glow-alpha: 0.45;
+		--glow-blur: 55;
+	}
+}
