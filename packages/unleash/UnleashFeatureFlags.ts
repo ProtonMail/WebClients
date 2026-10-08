@@ -144,7 +144,6 @@ export enum CommonFeatureFlag {
     OrganizationLevelEasySwitch = 'OrganizationLevelEasySwitch',
     PassSimpleLoginLifetimeOffer = 'PassSimpleLoginLifetimeOffer',
     PingOMatic = 'PingOMatic',
-    Q3Sale2026FreeToUnlimitedSecondPopup = 'Q3Sale2026FreeToUnlimitedSecondPopup',
     ReferralExpansionDiscover = 'ReferralExpansionDiscover',
     ReferralFreeUsersDiscover = 'ReferralFreeUsersDiscover',
     ScribeAdminSetting = 'ScribeAdminSetting',

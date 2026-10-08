@@ -10,14 +10,9 @@ import type { Optional } from '@proton/shared/lib/interfaces';
 
 import type { PlanCardFeatureIcon } from '../payments/features/interface';
 import type { OfferProduct } from './helpers/getOfferProduct';
-import type { Q3Sale2026OfferId } from './operations/q3Sale2026offers';
 
 export type OfferId =
-    | 'go-unlimited-2022'
-    | 'mail-trial-2023'
-    | 'pass-family-plan-2024-yearly'
-    | 'unlimited-to-duo-discounted'
-    | Q3Sale2026OfferId;
+    'go-unlimited-2022' | 'mail-trial-2023' | 'pass-family-plan-2024-yearly' | 'unlimited-to-duo-discounted';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 

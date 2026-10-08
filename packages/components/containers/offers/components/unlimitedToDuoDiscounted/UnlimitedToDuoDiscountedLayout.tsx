@@ -17,9 +17,8 @@ import OfferDisableButton from '../shared/OfferDisableButton';
 import './UnlimitedToDuoDiscountedLayout.scss';
 
 /**
- * The discounted Unlimited -> Duo modal. Close to the Q3 sale layout, but the header carries a
- * discount badge and the plan lockup rather than a headline, so it has its own component instead of
- * growing conditionals inside a shared campaign layout.
+ * The discounted Unlimited -> Duo modal. The header carries a discount badge and the plan lockup
+ * rather than a headline.
  */
 export function UnlimitedToDuoDiscountedLayout({ offer, currency, onSelectDeal, onCloseModal }: OfferLayoutProps) {
     const { APP_NAME } = useConfig();
