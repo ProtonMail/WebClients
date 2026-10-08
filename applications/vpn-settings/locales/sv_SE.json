@@ -829,6 +829,9 @@
       "Got it": [
         "Förstått"
       ],
+      "Got it, connect my Gmail": [
+        "Jag förstår, anslut min Gmail"
+      ],
       "Group owner": [
         "Gruppägare"
       ],
@@ -909,6 +912,9 @@
       ],
       "Learn about recovery options": [
         "Lär dig om återställningsalternativ"
+      ],
+      "Learn how this works": [
+        "Lär dig hur detta fungerar"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -2176,8 +2182,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Applikation för stationär dator ${ appName }"
       ]
     },
     "Bug category": {
@@ -2305,11 +2311,6 @@
       ],
       "Take a tour": [
         "Ta en rundtur"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Dubbletter från tidigare importer kommer att hoppas över. Ångra eller importera äldre meddelanden i inställningarna för ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -4087,12 +4088,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave eller tidigare"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -5033,9 +5028,6 @@
       ],
       "Invalid private key file": [
         "Ogiltig privat nyckelfil"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Ogiltig återställningstoken. Uppdatera sidan och försök igen."
       ],
       "Invalid URL": [
         "Ogiltig URL"
@@ -7250,6 +7242,9 @@
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } användare hittades",
         "${ total } användare hittades"
@@ -7340,6 +7335,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
         "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
+      ],
+      "1 device per user": [
+        "1 enhet per användare"
       ],
       "1 vault per user": [
         "1 valv per användare"
@@ -8206,6 +8204,9 @@
       "here": [
         "här"
       ],
+      "Here's what happens when you continue:": [
+        "Här är vad som händer när du fortsätter:"
+      ],
       "High Priority": [
         "Hög prioritet"
       ],
@@ -8600,6 +8601,9 @@
       ],
       "Next billing date": [
         "Nästa faktureringsdatum"
+      ],
+      "Next time you sign in to your other account": [
+        "Nästa gång du loggar in på ditt andra konto"
       ],
       "No addresses exist": [
         "Inga adresser finns"
@@ -9962,6 +9966,9 @@
       "Your free trial includes 1 dedicated server.": [
         "Din gratis provperiod inkluderar 1 dedikerad server."
       ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Din Gmail ansluter till denna ${ MAIL_APP_NAME }-adress"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information är säker hos oss. Vi kommer endast kontakta dig när det krävs för att tillhandahålla våra tjänster."
       ],
@@ -10142,6 +10149,9 @@
     "Invoice state display as badge": {
       "Gifted": [
         "Gåva"
+      ],
+      "Open": [
+        "Öppna"
       ],
       "Paid": [
         "Betald"
@@ -13307,6 +13317,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sista chansen att få din första månad med ${ plan } till detta pris."
+      ],
       "Last day to save": [
         "Sista dagen att spara"
       ],
@@ -13989,6 +14002,9 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betala med ${ IDEAL_WERO_BRAND_NAME }"

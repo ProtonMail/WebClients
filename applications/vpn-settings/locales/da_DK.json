@@ -859,6 +859,9 @@
       "Got it": [
         "Forstået"
       ],
+      "Got it, connect my Gmail": [
+        "Forstået, forbind min Gmail"
+      ],
       "Group owner": [
         "Gruppeejer"
       ],
@@ -939,6 +942,9 @@
       ],
       "Learn about recovery options": [
         "Lær mere om muligheder for gendannelse"
+      ],
+      "Learn how this works": [
+        "Forstå hvordan det fungerer"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -1719,6 +1725,12 @@
       "Domains": [
         "Domæner"
       ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisationer med tilføjelsen Managed Service Provider kan oprette og administrere underorganisationer."
+      ],
       "Servers": [
         "Servere"
       ],
@@ -1849,6 +1861,18 @@
       ],
       "3 new admin roles": [
         "3 nye admin-roller"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Tildel administratorroller til grupper. Administrer adgang for mange brugere på én gang, og opdater den automatisk, når folk tilmelder sig eller går."
+      ],
+      "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
+        "Tildel specifikke administratorroller. Giv hver administrator kun den adgang, de har brug for så virkningen af kompromitterede konti og utilsigtede fejl begrænses."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "Vælg mellem tre nye administratorroller. Hver administrator modtager kun den adgang, de har brug for."
+      ],
+      "Choose from two new admin roles. Each admin receives only the access they need.": [
+        "Vælg mellem to nye administratorroller. Hver administrator modtager kun den adgang, de har brug for."
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
@@ -2244,8 +2268,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } skrivebordsapp"
+      "${ appName } Desktop application": [
+        "${ appName } skrivebordsapp"
       ]
     },
     "Bug category": {
@@ -2376,8 +2400,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importer ældre beskeder i indstillingerne for ${ PRODUCT_NAMES.EASY_SWITCH }."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Dine nyeste e-mails bliver importeret først. E-mails, du allerede har importeret, kopieres ikke igen."
       ]
     },
     "Cancellation upsell": {
@@ -4161,12 +4185,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave eller tidligere"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -5129,9 +5147,6 @@
       "Invalid private key file": [
         "Ugyldig privatnøglefil"
       ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Ugyldigt nulstillingstoken. Opdater siden og prøv igen."
-      ],
       "Invalid URL": [
         "Ugyldig URL"
       ],
@@ -5519,6 +5534,9 @@
       "There was an error, please try again.": [
         "Der opstod en fejl, prøv igen."
       ],
+      "This code or link is no longer valid. Please try again.": [
+        "Koden eller linket er ikke længere gyldigt. Prøv igen."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
       ],
@@ -5674,6 +5692,9 @@
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Din adgangskode kunne ikke nulstilles. Prøv igen."
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
@@ -6708,6 +6729,9 @@
       "Event": [
         "Begivenhed"
       ],
+      "Good to know before you connect": [
+        "Nyttigt at vide før du forbinder"
+      ],
       "IP address": [
         "IP-adresse"
       ],
@@ -7440,6 +7464,9 @@
       ],
       "(formerly Twitter)": [
         "(tidligere Twitter)"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** bruges også til at logge ind på en separat ${ BRAND_NAME }-konto, udenfor ${ MAIL_APP_NAME }."
       ],
       "**Enable automatic backups** for peace of mind": [
         "**Aktivér automatiske sikkerhedskopier** for at få ro i sjælen"
@@ -8362,6 +8389,9 @@
       "here": [
         "her"
       ],
+      "Here's what happens when you continue:": [
+        "Dette sker når du fortsætter:"
+      ],
       "High Priority": [
         "Høj prioritet"
       ],
@@ -8766,6 +8796,9 @@
       "Next billing date": [
         "Næste faktureringsdato"
       ],
+      "Next time you sign in to your other account": [
+        "Næste gang du logger ind på din anden konto"
+      ],
       "No addresses exist": [
         "Ingen adresser findes"
       ],
@@ -8795,6 +8828,9 @@
       ],
       "No users to display": [
         "Ingen brugere"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Intet ændrer sig i din anden ${ BRAND_NAME }-konto."
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
@@ -9238,6 +9274,9 @@
       ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Nogle servere vises muligvis ikke på listen ovenfor. Søg med servernavn (f.eks. AT#62) for at finde dem."
+      ],
+      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
+        "Snart vil du skulle indtaste din e-mailadresse (eller brugernavn) og adgangskode i 2 separate trin, i stedet for på én side."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
@@ -9871,6 +9910,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
+      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
+        "Vi ændrer ${ BRAND_NAME }s log-ind side. Din adgangskode og dine enheder forbliver uændrede. ${ learnMore }"
+      ],
       "Web sessions detected:": [
         "Websessioner fundet:"
       ],
@@ -10129,6 +10171,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Det er ikke muligt at gendanne låste data ved hjælp af dine downloadede gendannelsesfiler. Dette deaktiverer også enhedsbaseret gendannelse."
       ],
+      "You'll choose a new username": [
+        "Du vælger et nyt brugernavn"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du vil modtage kreditten 1 måned efter at din ven abonnerer på et årligt abonnement, og 2 måneder efter de abonnerer på et månedligt abonnement."
       ],
@@ -10141,6 +10186,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du vil derefter blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }. Du kan til enhver tid annullere.",
         "Du vil derefter blive faktureret hver ${ renewCycle } måned til ${ renewAmountStr }. Du kan annullere når som helst."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Du vil bruge den til, at logge ind fremover. Det er den eneste ændring."
       ],
       "You're now signed in on your TV.": [
         "Du er nu logget ind på dit TV."
@@ -10203,6 +10251,9 @@
       "Your free trial includes 1 dedicated server.": [
         "Din gratis prøveperiode inkluderer 1 dedikeret server."
       ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Din Gmail forbindes til denne ${ MAIL_APP_NAME }-adresse"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information er sikker hos os. Vi kontakter dig kun når det er nødvendigt for at levere vores tjenester."
       ],
@@ -10223,6 +10274,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Din organisations e-mails er beskyttet med end-to-end-kryptering ved brug af organisationsnøglen. Dette fingeraftryk kan bruges til at kontrollere, at alle administratorer på din konto har den samme nøgle."
+      ],
+      "Your password and devices stay the same.": [
+        "Din adgangskode og dine enheder forbliver uændrede."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Dine betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
@@ -19358,6 +19412,9 @@
       ],
       "Signed-in reset": [
         "Nulstilling logget ind"
+      ],
+      "Signing in is changing": [
+        "Måden du logger ind på ændrer sig"
       ],
       "Simplify email distribution": [
         "Forenkl e-maildistribution"

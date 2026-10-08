@@ -1880,11 +1880,6 @@
         "機密データを扱いますか？"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } デスクトップアプリ"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } の不具合"
@@ -2010,11 +2005,6 @@
       ],
       "Take a tour": [
         "ツアーを開始"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "以前のインポートとの重複はスキップされます。元に戻す、またはより古いメッセージをインポートするには、${ PRODUCT_NAMES.EASY_SWITCH }設定に移動してください。"
       ]
     },
     "Cancellation upsell": {
@@ -3755,12 +3745,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave 以前"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -4619,9 +4603,6 @@
       ],
       "Invalid private key file": [
         "無効な秘密鍵ファイル"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "無効なリセットトークンです。ページを再読み込みして、もう一度お試しください。"
       ],
       "Invalid URL": [
         "無効なURL"

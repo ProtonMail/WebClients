@@ -859,6 +859,9 @@
       "Got it": [
         "Зразумела"
       ],
+      "Got it, connect my Gmail": [
+        "Зразумела. Падключыць мой Gmail"
+      ],
       "Group owner": [
         "Уладальнік групы"
       ],
@@ -939,6 +942,9 @@
       ],
       "Learn about recovery options": [
         "Даведацца аб варыянтах аднаўлення"
+      ],
+      "Learn how this works": [
+        "Паказаць як гэта працуе"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -2256,11 +2262,6 @@
         "Працуеце з канфідэнцыяльнымі данымі?"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Праблема ${ LUMO_SHORT_APP_NAME }"
@@ -2386,11 +2387,6 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Дублікаты ад папярэдняга імпартавання будуць прапушчаны. Адрабленне або імпартаванне больш старых паведамленняў у наладах ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -4196,12 +4192,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave або больш ранняя версія"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -5183,9 +5173,6 @@
       ],
       "Invalid private key file": [
         "Памылковы файл закрытага ключа"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Памылковы токен скідання. Абнавіце старонку і паўтарыце спробу."
       ],
       "Invalid URL": [
         "Памылковы URL-адрас"

@@ -2268,8 +2268,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Desktopanwendung"
+      "${ appName } Desktop application": [
+        "${ appName } Desktopanwendung"
       ]
     },
     "Bug category": {
@@ -2400,8 +2400,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikate aus früheren Importen werden übersprungen. In den Einstellungen von ${ PRODUCT_NAMES.EASY_SWITCH } kannst du den Vorgang rückgängig machen oder ältere Nachrichten importieren."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Dein neuesten E-Mails werden zuerst importiert. E-Mails, die bereits importiert wurden, werden nicht erneut kopiert."
       ]
     },
     "Cancellation upsell": {
@@ -4185,12 +4185,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave oder älter"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -5153,9 +5147,6 @@
       "Invalid private key file": [
         "Ungültige private Schlüsseldatei"
       ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Ungültiges Token zum Zurücksetzen. Bitte aktualisiere die Seite und versuche es erneut."
-      ],
       "Invalid URL": [
         "Ungültige URL"
       ],
@@ -5543,6 +5534,9 @@
       "There was an error, please try again.": [
         "Es ist ein Fehler aufgetreten. Bitte versuche es erneut."
       ],
+      "This code or link is no longer valid. Please try again.": [
+        "Dieser Code oder Link ist nicht mehr gültig. Bitte versuche es erneut."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
       ],
@@ -5698,6 +5692,9 @@
       ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Das Passwort konnte nicht zurückgesetzt werden. Bitte versuche es erneut."
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
@@ -9275,6 +9272,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Einige Server erscheinen möglicherweise nicht in der obigen Liste. Suche nach Servernamen (z. B. AT#62), um sie zu finden."
       ],
+      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
+        "In Kürze werden deine E-Mail-Adresse (oder dein Benutzername) und dein Passwort in zwei separaten Schritten statt auf einer einzigen Seite eingegeben."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
       ],
@@ -9907,6 +9907,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
+      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
+        "Proton hat die Anmeldeseite von ${ BRAND_NAME } überarbeitet. Dein Passwort und deine Geräte bleiben unverändert. ${ learnMore }"
+      ],
       "Web sessions detected:": [
         "Web-Sitzungen erkannt:"
       ],
@@ -10268,6 +10271,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Die E-Mails deiner Organisation werden durch eine Ende-zu-Ende-Verschlüsselung mit dem Organisationsschlüssel geschützt. Dieser Fingerabdruck kann verwendet werden, um sicherzustellen, dass alle Administratoren in deinem Konto einen identischen Schlüssel verwenden."
+      ],
+      "Your password and devices stay the same.": [
+        "Das Passwort und deine Geräte bleiben unverändert."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Deine Zahlungsdaten sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
@@ -19403,6 +19409,9 @@
       ],
       "Signed-in reset": [
         "Zurücksetzen im angemeldeten Zustand"
+      ],
+      "Signing in is changing": [
+        "Der Anmeldevorgang wurde geändert"
       ],
       "Simplify email distribution": [
         "E-Mail-Verteilung vereinfachen"
