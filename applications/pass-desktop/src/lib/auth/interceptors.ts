@@ -8,6 +8,7 @@ import noop from '@proton/utils/noop';
 import config from '../../app/config';
 import type { PassElectronContext } from '../../types';
 import logger from '../../utils/logger';
+import { isMainWindowEntry } from '../../utils/navigation';
 import { PLATFORM_CLIENT_ID } from '../env';
 import {
     deepLinkAuthCallback,
@@ -32,7 +33,7 @@ export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) =>
 
         contents.addListener('will-navigate', (evt) => {
             // Do nothing if navigating to the bundled web app
-            if (evt.url.startsWith(MAIN_WINDOW_WEBPACK_ENTRY)) return;
+            if (isMainWindowEntry(evt.url)) return;
 
             const url = new URL(evt.url);
 

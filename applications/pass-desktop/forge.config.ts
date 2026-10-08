@@ -14,6 +14,8 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'path';
 
+import type { Maybe } from '@proton/pass/types';
+
 import pkg from './package.json';
 import getExtraResource from './src/utils/extra-resource';
 import mainConfig from './webpack.main.config';
@@ -46,7 +48,8 @@ const windowsPublisher = process.env.WINDOWS_SIGN_PUBLISHER ?? 'CN=Proton AG';
 const toWindowsVersion = (semver: string): string =>
     /^\d+\.\d+\.\d+\.\d+$/.test(semver) ? semver : `${semver.replace(/[-+].*/, '')}.0`;
 
-const buildAppxManifest = (): string => {
+const buildAppxManifest = (): Maybe<string> => {
+    if (process.platform !== 'win32') return undefined;
     const template = readFileSync(path.join(__dirname, 'AppxManifest.xml.in'), 'utf-8');
     const resolved = template
         .replace(/{{Version}}/g, toWindowsVersion(pkg.version))
@@ -90,13 +93,14 @@ const config: ForgeConfig = {
             packageName: `ProtonPass_Setup_${pkg.version}.msix`,
             packageAssets: `${__dirname}/assets`,
             // Use a custom manifest rather than `manifestVariables` because we
-            // need a windows.protocol Extension block to register the
-            // `protonpass://` scheme for external-login deep links — the
-            // built-in template doesn't expose that.
+            // need Extension blocks the built-in template doesn't expose:
+            // windows.protocol for `protonpass://` external-login deep links,
+            // and windows.appExecutionAlias to expose the native-messaging
+            // host as a launchable alias.
             appManifest: buildAppxManifest(),
             // When appManifest is set, electron-windows-msix derives the
             // build-time Windows Kit version from the manifest's MinVersion
-            // (10.0.14393.0 = Windows 1607, our runtime floor). That SDK
+            // (10.0.18362.0 = Windows 10 1903, our runtime floor). That SDK
             // isn't on the CI runner, which only has 10.0.26100.0 installed.
             // Pin explicitly so the runtime floor stays decoupled from the
             // SDK used to package the MSIX.

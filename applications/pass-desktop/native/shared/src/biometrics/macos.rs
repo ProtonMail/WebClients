@@ -1,9 +1,8 @@
-mod check;
-
 use anyhow::{bail, Error, Result};
-use check::generic_check_presence;
 use objc2_local_authentication::{LAContext, LAPolicy};
 use security_framework::passwords::{delete_generic_password, get_generic_password, set_generic_password};
+
+use super::check::generic_check_presence;
 
 pub struct Biometrics {}
 
