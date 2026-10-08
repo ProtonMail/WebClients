@@ -34,7 +34,6 @@ const REDIRECT_PATH = `/lite?action=${SupportedActions.BYOEMobile}`;
 
 export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
     const { state, toggle } = useToggle(true);
-    const [loading, setLoading] = useState(false);
 
     const hasHandledCallbackRef = useRef(false);
 
@@ -46,6 +45,9 @@ export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
         features: [EASY_SWITCH_FEATURES.BYOE],
         redirectPath: REDIRECT_PATH,
     });
+
+    // Already loading when coming back from the provider, so the button never looks idle while we wait for gating
+    const [loading, setLoading] = useState(callback.type === 'code');
 
     // Google sent the user back with an authorization code
     useEffect(() => {
@@ -66,12 +68,16 @@ export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
 
         const createBYOEAddress = async () => {
             setLoading(true);
-            const result = await connectBYOEAddressWithCode({
-                code: callback.code,
-                redirectUri,
-                importEmails: callback.state.importEmails,
-            });
-            setLoading(false);
+            let result;
+            try {
+                result = await connectBYOEAddressWithCode({
+                    code: callback.code,
+                    redirectUri,
+                    importEmails: callback.state.importEmails,
+                });
+            } finally {
+                setLoading(false);
+            }
 
             if (result.status === 'success') {
                 // TODO redirect to native here
@@ -97,6 +103,8 @@ export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
         } else if (outcome === 'free-limit' || outcome === 'paid-limit') {
             createNotification(getGenericLimitReached());
         } else if (outcome === 'ok') {
+            // The page navigates away, the loading state is intentionally never reset
+            setLoading(true);
             startOAuthFlow({ importEmails: state, redirect });
         }
     };
@@ -137,6 +145,7 @@ export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
                         className="rounded-full"
                         onClick={handleConnect}
                         loading={loading}
+                        disabled={isLoadingGating || loading}
                     >{c('Action').t`Connect and import`}</Button>
                 </MobileSectionRow>
             </MobileSection>
