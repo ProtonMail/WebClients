@@ -3,6 +3,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { markChatMessagesAsSeen } from '@proton/meet/store/slices/chatAndReactionsSlice';
@@ -56,6 +57,9 @@ export const Chat = () => {
     const sideBarState = useMeetSelector(selectSideBarState);
 
     const isChatOpen = sideBarState[MeetingSideBars.Chat];
+
+    const { viewportWidth } = useActiveBreakpoint();
+    const isSmallScreen = viewportWidth['<=small'];
 
     const focusedMessageId = useMeetSelector(selectChatFocusedMessageId);
 
@@ -319,8 +323,10 @@ export const Chat = () => {
                             style={{ '--w-custom': '3rem', '--h-custom': '3rem' }}
                         />
                         <div className="text-center color-disabled">
-                            {c('Info')
-                                .t`This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.`}
+                            {isSmallScreen
+                                ? c('Info').t`End to end encrypted chat`
+                                : c('Info')
+                                      .t`This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.`}
                         </div>
                     </div>
                 )}
