@@ -1553,7 +1553,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Confia en aquesta clau",
+        "Confia en aquestes claus"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -8302,8 +8303,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -10136,6 +10136,12 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "El vostre Gmail es connecta a aquesta adreça de ${ MAIL_APP_NAME }"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Després de l'actualització, pot ser que el vostre Mac us demani una contrasenya. Escriviu la que feu servir per desbloquejar-lo i, a continuació, feu clic a Permet sempre per mantenir la sessió iniciada. ${ learnMore }"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualitzeu ${ MAIL_APP_NAME } per continuar utilitzant l'aplicació. ${ downloadUpdate }"
       ]
     },
     "info": {
@@ -11958,8 +11964,8 @@
     },
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
-        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
-        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+        "${ MEET_APP_NAME } (per a ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per a ${ quantity } usuaris)"
       ],
       "${ MEET_APP_NAME } license": [
         "Llicència de ${ MEET_APP_NAME }"
@@ -13736,7 +13742,7 @@
         "28 del mes"
       ],
       "29th of the month": [
-        "el dia 29 del mes"
+        "29 del mes"
       ],
       "2nd of the month": [
         "2 del mes"
@@ -16908,7 +16914,7 @@
         "Confirmeu l'adreça del destinatari?"
       ],
       "Connect a Gmail address": [
-        "Connecteu una adreça de Gmail"
+        "Connecta una adreça de Gmail"
       ],
       "Connect apps and devices": [
         "Connecteu aplicacions i dispositius"
@@ -17512,7 +17518,7 @@
         "Refineu les categories"
       ],
       "Remove forwarding address": [
-        "Esborreu l'adreça de reenviament"
+        "Esborra l'adreça de reenviament"
       ],
       "Remove from list?": [
         "Voleu eliminar-lo de la llista?"

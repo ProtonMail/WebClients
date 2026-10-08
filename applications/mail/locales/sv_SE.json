@@ -1550,7 +1550,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2281,6 +2282,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "Applikation för stationär dator ${ appName }"
       ]
     },
     "Bug category": {
@@ -8168,8 +8172,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9894,6 +9897,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Din Gmail ansluter till denna ${ MAIL_APP_NAME }-adress"
+      ],
+      "1 device per user": [
+        "1 enhet per användare"
       ]
     },
     "info": {
