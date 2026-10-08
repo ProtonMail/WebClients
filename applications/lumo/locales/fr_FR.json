@@ -668,8 +668,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Application de bureau ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Application de bureau ${ appName }"
       ]
     },
     "Bug category": {
@@ -1295,6 +1295,9 @@
       "Adjust the size of text across the app": [
         "Régler la taille du texte dans l'ensemble de l'application"
       ],
+      "Allow ${ LUMO_SHORT_APP_NAME } to create artifacts in the side panel when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
+        "Autorise ${ LUMO_SHORT_APP_NAME } à créer des artefacts dans le panneau latéral quand cela est approprié. C'est la configuration par défaut de toutes les discussions ; vous pouvez la modifier pour une discussion unique dans le menu Outils."
+      ],
       "Always enable web search for new conversations": [
         "Toujours activer la recherche web pour les nouvelles conversations"
       ],
@@ -1881,6 +1884,9 @@
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Pour chaque jour, jetons moyens par appel API (jetons ÷ appels, ou 0 si aucun appel)."
+      ],
+      "For this chat": [
+        "Pour cette discussion"
       ],
       "Free accounts keep chat history for 7 days from when a chat was created.": [
         "Les comptes gratuits conservent l'historique des discussions pendant 7 jours à compter de la création de la discussion."
@@ -2575,8 +2581,26 @@
       ]
     },
     "collider_2025: Spotlight": {
+      "Artifacts are now on by default": [
+        "Les artefacts sont maintenant activés par défaut"
+      ],
       "Create artifacts with ${ LUMO_SHORT_APP_NAME }": [
         "Créez des artefacts avec ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Longer documents, code and slides open here so you can edit and download them.": [
+        "Les documents plus longs, le code et les présentations s'ouvrent ici pour que vous puissiez les modifier et les télécharger."
+      ],
+      "Longer documents, code and slides open here so you can edit, download or save them to Drive.": [
+        "Les documents plus longs, le code et les présentations s'ouvrent ici pour que vous puissiez les modifier, les télécharger ou les enregistrer dans Drive."
+      ],
+      "Settings": [
+        "Paramètres"
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat, or in ${ settings } for all chats.": [
+        "Pour arrêter cela, désactivez ${ createArtifact } dans ${ tools } pour cette discussion, ou dans ${ settings } pour toutes les discussions."
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat.": [
+        "Pour arrêter cela, désactivez ${ createArtifact } dans ${ tools } pour cette discussion."
       ],
       "Turn ideas into documents, code, and more. Open Tools to get started.": [
         "Transformer les idées en documents, code, et plus. Ouvrir Outils pour commencer."
@@ -2690,6 +2714,9 @@
       ],
       "Auto update memory": [
         "Mise à jour automatique de la mémoire"
+      ],
+      "Automatic Create Artifact": [
+        "Création automatique d'artefacts"
       ],
       "Automatic web search": [
         "Recherche web automatique"
@@ -3432,20 +3459,6 @@
       ],
       "Writing Assistant": [
         "Assistant d'écriture"
-      ]
-    },
-    "collider_2025:Artifact placeholder": {
-      "Create a 5-slide deck on password managers with a bar chart": [
-        "Créer une présentation en 5 slides sur les gestionnaires de mots de passe en incluant un graphique à barres"
-      ],
-      "Create a self-contained HTML pomodoro timer": [
-        "Créer un minuteur pomodoro autonome en HTML"
-      ],
-      "Write a professional email declining a meeting": [
-        "Écrire un message professionnel déclinant une réunion"
-      ],
-      "Write a Python script to dedupe a CSV by email": [
-        "Écrire un script en Python pour dédupliquer un CSV par message"
       ]
     },
     "collider_2025:Badge": {
