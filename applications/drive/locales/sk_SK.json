@@ -369,6 +369,9 @@
       "Deselect all": [
         "Zrušiť výber všetkého"
       ],
+      "Detach": [
+        "Odpojiť"
+      ],
       "Details": [
         "Detaily"
       ],
@@ -1417,6 +1420,12 @@
       "Domains": [
         "Domény"
       ],
+      "Managed Service Provider": [
+        "Poskytovateľ spravovaných služieb"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizácie s doplnkom „Poskytovateľ spravovaných služieb“ môžu vytvárať a spravovať dcérske organizácie."
+      ],
       "Servers": [
         "Servery"
       ],
@@ -1602,8 +1611,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktopová aplikácia"
+      "${ appName } Desktop application": [
+        "Desktopová aplikácia ${ appName }"
       ]
     },
     "Bug category": {
@@ -3743,6 +3752,9 @@
       ],
       "Not a valid number": [
         "Neplatné číslo"
+      ],
+      "Not enough browser storage": [
+        "Nedostatočný úložný priestor v prehliadači"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Jeden z kontaktov nemá emailovú adresu: ${ noEmailsContactNamesList }",
@@ -6752,6 +6764,9 @@
       ],
       "Symbols (#$&)": [
         "Znaky (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."

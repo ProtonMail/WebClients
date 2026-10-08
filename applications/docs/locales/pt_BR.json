@@ -1164,11 +1164,6 @@
         "O espaço de armazenamento é compartilhado entre todos os serviços da ${ BRAND_NAME }."
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicativo para computador do ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema no ${ LUMO_SHORT_APP_NAME }"
@@ -5223,6 +5218,9 @@
       "Symbols (#$&)": [
         "Símbolos (#$&)"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporariamente indisponível devido à alta demanda. Tente novamente mais tarde."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
       ],
@@ -7888,11 +7886,17 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (sem impostos)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } está disponível apenas nos planos empresariais."
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Valor devido após a avaliação em ${ formattedDate }"
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Ao trocar, você concorda com nossos ${ termsLink }."
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Escolha as contas de wallet adicionais antes de trocar seu plano."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "O preço da renovação está sujeito a alterações de acordo com os ${ termsAndConditionsLink }."
@@ -7933,8 +7937,14 @@
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Esse plano não suporta membros na sua conta."
+      ],
       "Trial plans don’t support dedicated IPs.": [
         "Os planos de avaliação não suportam IPs dedicados."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Os planos de avaliação não suportam licenças de Scribe."
       ]
     },
     "PGP key encryption warning": {

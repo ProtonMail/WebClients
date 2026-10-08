@@ -359,6 +359,9 @@
       "Deselect all": [
         "Alle abwählen"
       ],
+      "Detach": [
+        "Trennen"
+      ],
       "Details": [
         "Details"
       ],
@@ -1568,8 +1571,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Desktopanwendung"
+      "${ appName } Desktop application": [
+        "${ appName } Desktopanwendung"
       ]
     },
     "Bug category": {
@@ -3691,6 +3694,9 @@
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
+      ],
+      "Not enough browser storage": [
+        "Nicht genügend Speicherplatz im Browser"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Einer der Kontakte hat keine E-Mail-Adresse: ${ noEmailsContactNamesList }",
@@ -6570,6 +6576,9 @@
       ],
       "Symbols (#$&)": [
         "Symbole (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Vorübergehend wegen hoher Nachfrage nicht verfügbar. Bitte versuche es später nochmals."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."

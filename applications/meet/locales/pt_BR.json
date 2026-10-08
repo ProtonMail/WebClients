@@ -957,11 +957,6 @@
         "Conectado via modo de retransmissão TURN devido às restrições da sua rede. Isso pode aumentar a latência e afetar a qualidade da chamada."
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicativo para computador do ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema no ${ LUMO_SHORT_APP_NAME }"
@@ -2528,9 +2523,6 @@
       " and ": [
         " e "
       ],
-      "${ deviceLabel } is available again": [
-        "${ deviceLabel } está disponível de novo"
-      ],
       "${ maxParticipants } participant limit reached": [
         "Limite de ${ maxParticipants } participantes atingido"
       ],
@@ -3348,35 +3340,14 @@
       "Your browser or device isn’t supported": [
         "Seu navegador ou dispositivo não é suportado"
       ],
-      "Your camera was disconnected. Now using ${ deviceLabel }.": [
-        "Sua câmera foi desconectada. Agora está sendo usado o ${ deviceLabel }."
-      ],
-      "Your device was disconnected. Now using ${ deviceLabel }.": [
-        "Seu dispositivo foi desconectado. Agora está sendo usado o ${ deviceLabel }."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
       ],
       "Your meeting is ready": [
         "Sua reunião está pronta"
       ],
-      "Your microphone and camera were disconnected. Now using other devices.": [
-        "Seu microfone e câmera foram desconectados. Agora, outros dispositivos estão sendo usados."
-      ],
-      "Your microphone and speaker were disconnected. Now using other devices.": [
-        "Seu microfone e alto-falante foram desconectados. Agora, outros dispositivos estão sendo usados."
-      ],
-      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
-        "Seu microfone foi desconectado. Agora está sendo usado o ${ deviceLabel }."
-      ],
-      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
-        "Seu microfone, alto-falante e câmera foram desconectados. Agora, outros dispositivos estão sendo usados."
-      ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
-      ],
-      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
-        "Seu alto-falante foi desconectado. Agora está sendo usado o ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Você está prestes a abrir um link em uma nova guia. Certifique-se de que o site seja confiável antes de continuar."

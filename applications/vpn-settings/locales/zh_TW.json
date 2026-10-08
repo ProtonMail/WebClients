@@ -1892,11 +1892,6 @@
         "處理敏感資料嗎？"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }桌面應用程式"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } 疑難問題"
@@ -2022,11 +2017,6 @@
       ],
       "Take a tour": [
         "瀏覽"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "來自先前匯入的重複項目將被略過。可在 ${ PRODUCT_NAMES.EASY_SWITCH } 設定中復原或匯入較舊的訊息。"
       ]
     },
     "Cancellation upsell": {
@@ -3776,12 +3766,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave 或更早版本"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -4670,9 +4654,6 @@
       ],
       "Invalid private key file": [
         "無效的私有金鑰檔案"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "無效的重設權杖。請重新整理頁面並重試。"
       ],
       "Invalid URL": [
         "URL 無效"

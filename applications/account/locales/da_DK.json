@@ -1280,6 +1280,9 @@
       "Got it": [
         "Forstået"
       ],
+      "Got it, connect my Gmail": [
+        "Forstået, forbind min Gmail"
+      ],
       "Grant access": [
         "Giv adgang"
       ],
@@ -1405,6 +1408,9 @@
       ],
       "Learn about recovery options": [
         "Lær mere om muligheder for gendannelse"
+      ],
+      "Learn how this works": [
+        "Forstå hvordan det fungerer"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -1906,9 +1912,6 @@
       ],
       "Set as default": [
         "Angiv som standard"
-      ],
-      "Set as default mail application": [
-        "Indstil som standard mailapplikation"
       ],
       "Set catch-all": [
         "Vælg catch-all"
@@ -2425,6 +2428,12 @@
       "Domains": [
         "Domæner"
       ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisationer med tilføjelsen Managed Service Provider kan oprette og administrere underorganisationer."
+      ],
       "Servers": [
         "Servere"
       ],
@@ -2555,6 +2564,18 @@
       ],
       "3 new admin roles": [
         "3 nye admin-roller"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Tildel administratorroller til grupper. Administrer adgang for mange brugere på én gang, og opdater den automatisk, når folk tilmelder sig eller går."
+      ],
+      "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
+        "Tildel specifikke administratorroller. Giv hver administrator kun den adgang, de har brug for så virkningen af kompromitterede konti og utilsigtede fejl begrænses."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "Vælg mellem tre nye administratorroller. Hver administrator modtager kun den adgang, de har brug for."
+      ],
+      "Choose from two new admin roles. Each admin receives only the access they need.": [
+        "Vælg mellem to nye administratorroller. Hver administrator modtager kun den adgang, de har brug for."
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
@@ -2776,6 +2797,9 @@
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Gratis afprøvning i ${ TRIAL_DURATION_DAYS } dage"
       ],
+      "Up to ${ TRIAL_MAX_USERS } users, during the trial period": [
+        "Op til ${ TRIAL_MAX_USERS } brugere i prøveperioden"
+      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
         "Afmelder du, vil din gratis prøveperiode ikke blive konverteret til et betalt abonnement, men du kan stadig nyde dine fordelene af abonnementet indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til gratis abonnement."
       ],
@@ -2802,6 +2826,9 @@
       ],
       "You have reached the trial limit.": [
         "Du har nået grænsen for prøveversionen."
+      ],
+      "Your trial ends on ${ trialEndDate }. Add a payment method whenever you’re ready to keep using all ${ planTitle } features. You’ll only be charged once it’s added.": [
+        "Din prøveperiode slutter den ${ trialEndDate }. Tilføj en betalingsmetode så snart du er klar til at fortsætte med at bruge alle funktionerne i ${ planTitle }. Du bliver først opkrævet, når den er tilføjet."
       ]
     },
     "b2b_trials_Action": {
@@ -3278,8 +3305,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } skrivebordsapp"
+      "${ appName } Desktop application": [
+        "${ appName } skrivebordsapp"
       ]
     },
     "Bug category": {
@@ -3422,8 +3449,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Dubletter fra tidligere importer vil blive sprunget over. Fortryd eller importer ældre beskeder i indstillingerne for ${ PRODUCT_NAMES.EASY_SWITCH }."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Dine nyeste e-mails bliver importeret først. E-mails, du allerede har importeret, kopieres ikke igen."
       ]
     },
     "Calendar access select label": {
@@ -5250,12 +5277,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } giver dig mulighed for at samarbejde med andre i et sikkert, krypteret miljø."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } er ikke din standard mailapplikation."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } er din standard mailapplikation."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } holder din virksomhedsdata sikker og lader dig sende krypterede e-mails til alle."
       ],
@@ -5856,12 +5877,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave eller tidligere"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -7417,9 +7432,6 @@
       "Invalid private key file": [
         "Ugyldig privatnøglefil"
       ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Ugyldigt nulstillingstoken. Opdater siden og prøv igen."
-      ],
       "Invalid Sieve code": [
         "Ugyldig Sieve-kode"
       ],
@@ -7868,6 +7880,9 @@
       "There was an error, please try again.": [
         "Der opstod en fejl, prøv igen."
       ],
+      "This code or link is no longer valid. Please try again.": [
+        "Koden eller linket er ikke længere gyldigt. Prøv igen."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
       ],
@@ -8044,6 +8059,9 @@
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Din adgangskode kunne ikke nulstilles. Prøv igen."
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
@@ -9429,6 +9447,9 @@
       "Folders": [
         "Mapper"
       ],
+      "Good to know before you connect": [
+        "Nyttigt at vide før du forbinder"
+      ],
       "IP address": [
         "IP-adresse"
       ],
@@ -10398,6 +10419,9 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** understøttes ikke."
       ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** bruges også til at logge ind på en separat ${ BRAND_NAME }-konto, udenfor ${ MAIL_APP_NAME }."
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**Aktivér automatiske sikkerhedskopier** for at få ro i sjælen"
       ],
@@ -11168,9 +11192,6 @@
       "default email address": [
         "standard e-mailadresse"
       ],
-      "Default email application": [
-        "Standardprogram til mails"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }s prioritet har det laveste tal."
       ],
@@ -11710,6 +11731,9 @@
       "here": [
         "her"
       ],
+      "Here's what happens when you continue:": [
+        "Dette sker når du fortsætter:"
+      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skjuler identifikationsoplysninger ved at indlæse eksternt indhold via en proxy. Mulighed for at gemme indhold som vedhæftede filer."
       ],
@@ -12244,6 +12268,9 @@
       "Next billing date": [
         "Næste faktureringsdato"
       ],
+      "Next time you sign in to your other account": [
+        "Næste gang du logger ind på din anden konto"
+      ],
       "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
         "Log derefter ind på din Google-konto og giv ${ BRAND_NAME } adgang til Google Drive. Vi importerer dine filer og mapper til ${ DRIVE_APP_NAME }."
       ],
@@ -12312,6 +12339,9 @@
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Er det ikke rigtigt registeret? Vælg din udbyder fra listen."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Intet ændrer sig i din anden ${ BRAND_NAME }-konto."
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
@@ -12803,9 +12833,6 @@
       "Session timed out": [
         "Session er udløbet"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Indstil ${ MAIL_APP_NAME } som din standard e-mail-applikation. ${ MAIL_APP_NAME } vil åbne automatisk, når du klikker på et e-mail-link."
-      ],
       "Set password": [
         "Indstil adgangskode"
       ],
@@ -12914,6 +12941,9 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Noget gik galt. Prøv igen eller kontakt kundesupport."
+      ],
+      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
+        "Snart vil du skulle indtaste din e-mailadresse (eller brugernavn) og adgangskode i 2 separate trin, i stedet for på én side."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
@@ -13743,6 +13773,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
+      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
+        "Vi ændrer ${ BRAND_NAME }s log-ind side. Din adgangskode og dine enheder forbliver uændrede. ${ learnMore }"
+      ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Vi har bemærket at nogle brugere ikke har oprettet deres ${ BRAND_NAME }-konti."
       ],
@@ -13781,9 +13814,6 @@
       ],
       "When enabled, members cannot opt out of password check-ins in their own settings.": [
         "Medlemmer kan ikke afmelde sig adgangskodetjek i deres egne indstillinger, når dette er aktiveret."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Hvis aktiveret, vil vi kontrollere, om ${ MAIL_APP_NAME } er din standard mailapplikation, og give dig besked, hvis det ikke er tilfældet."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ved aktivering af SAML for ${ appName } i din identitetsudbyder, kan du blive bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Kopier og indsæt blot nedenstående data i din identitetsudbyders felter."
@@ -14112,6 +14142,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Det er ikke muligt at gendanne låste data ved hjælp af dine downloadede gendannelsesfiler. Dette deaktiverer også enhedsbaseret gendannelse."
       ],
+      "You'll choose a new username": [
+        "Du vælger et nyt brugernavn"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du vil modtage kreditten 1 måned efter at din ven abonnerer på et årligt abonnement, og 2 måneder efter de abonnerer på et månedligt abonnement."
       ],
@@ -14124,6 +14157,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du vil derefter blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }. Du kan til enhver tid annullere.",
         "Du vil derefter blive faktureret hver ${ renewCycle } måned til ${ renewAmountStr }. Du kan annullere når som helst."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Du vil bruge den til, at logge ind fremover. Det er den eneste ændring."
       ],
       "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
         "Du er ved at logge ind på din ${ BRAND_NAME }-konto på denne adresse:"
@@ -14213,6 +14249,9 @@
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveperiode blev konverteret til et månedligt abonnement. Din fornyelsesdato er ${ nextBillingDate }."
       ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Din Gmail forbindes til denne ${ MAIL_APP_NAME }-adresse"
+      ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Din Google Drive er muligvis tom, eller indeholder kun filer, som ikke understøttes."
       ],
@@ -14236,6 +14275,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Din organisations e-mails er beskyttet med end-to-end-kryptering ved brug af organisationsnøglen. Dette fingeraftryk kan bruges til at kontrollere, at alle administratorer på din konto har den samme nøgle."
+      ],
+      "Your password and devices stay the same.": [
+        "Din adgangskode og dine enheder forbliver uændrede."
       ],
       "Your payment details are encrypted and secure": [
         "Dine betalingsoplysninger er krypteret og sikre"
@@ -16403,6 +16445,9 @@
       ],
       "Start weekday": [
         "Første ugedag"
+      ],
+      "Start with your most recent messages": [
+        "Start med dine seneste beskeder"
       ],
       "Starts with": [
         "Begynder med"
@@ -26109,9 +26154,6 @@
       "Change second password": [
         "Ændr anden adgangskode"
       ],
-      "Check your default mail application": [
-        "Tjek din standard mailapplikation"
-      ],
       "Choose a deployment method": [
         "Vælg en metode til udrulning"
       ],
@@ -27468,6 +27510,9 @@
       ],
       "Signed-in reset": [
         "Nulstilling logget ind"
+      ],
+      "Signing in is changing": [
+        "Måden du logger ind på ændrer sig"
       ],
       "Simplify email distribution": [
         "Forenkl e-maildistribution"

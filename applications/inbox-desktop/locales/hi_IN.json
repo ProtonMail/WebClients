@@ -12,12 +12,12 @@
         "बाहरी यूआरएल खोलें"
       ],
       "The protocol ${ parsedProtocol } is not allowed. Do you want to open the external url?": [
-        "प्रोटोकॉल ${ parsedProtocol } की अनुमति नहीं है। क्या आप बाहरी यूआरएल खोलना चाहते हैं?"
+        "प्रोटोकॉल ${ parsedProtocol } की अनुमति नहीं है। क्या बाहरी URL खोलना है?"
       ]
     },
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
-        "\"अभी वापिस शुरु करें और प्रोफाइल करें\" ऐप को तुरंत वापिस शुरु करें कर देगा और एक स्टार्टअप प्रोफाइल कैप्चर करेगा।\n\n\"अगली बार लॉन्च होने पर प्रोफाइल करें\" अगली बार जब आप ऐप खोलेंगे तो प्रोफाइल करेगा। रीबूट के बाद स्टार्टअप स्पीड मापने के लिए इसका उपयोग करें।"
+        "\"अभी रीस्टार्ट करें और प्रोफाइल करें\" ऐप को तुरंत रीस्टार्ट कर देगा और एक स्टार्टअप प्रोफाइल कैप्चर करेगा।\n\n\"अगली बार लॉन्च होने पर प्रोफाइल करें\" अगली बार ऐप खोले जाने पर प्रोफाइल करेगा। रीबूट के बाद स्टार्टअप स्पीड मापने के लिए इसका उपयोग करें।"
       ],
       "About ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } के बारे में"
@@ -110,10 +110,10 @@
         "रिलोड"
       ],
       "Restart and profile now": [
-        "अभी वापिस शुरु करें और प्रोफाइल करें"
+        "अभी रीस्टार्ट करें और प्रोफाइल करें"
       ],
       "Restart with logging": [
-        "लॉगिंग के साथ वापिस शुरु करें"
+        "लॉगिंग के साथ रीस्टार्ट करें"
       ],
       "Select All": [
         "सब चुनें"
@@ -140,7 +140,7 @@
         "${ appName } पर स्विच करें"
       ],
       "These logs help us diagnose issues. The app will restart to apply the change.": [
-        "ये लॉग समस्याओं का निदान करने में हमारी सहायता करते हैं। बदलाव को लागू करने के लिए ऐप वापिस शुरु करें होगा।"
+        "ये लॉग समस्याओं का निदान करने में हमारी सहायता करते हैं। बदलाव को लागू करने के लिए ऐप रीस्टार्ट होगा।"
       ],
       "This will measure how long the app takes to start and save a report to your logs folder.": [
         "यह मापेगा कि ऐप शुरू होने में कितना समय लेता है और आपके लॉग फोल्डर में एक रिपोर्ट सहेजता है।"
@@ -235,10 +235,10 @@
     },
     "Error dialog": {
       "${ MAIL_APP_NAME } - Unexpected error": [
-        "${ MAIL_APP_NAME } - अप्रत्याशित एरर"
+        "${ MAIL_APP_NAME } - अप्रत्याशित गड़बड़ी"
       ],
       "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
-        "एक एरर के कारण, ${ MAIL_APP_NAME } ऐप बंद हो जाएगा। इसे दोबारा चलाने का प्रयास करें और यदि समस्या बनी रहती है, तो हमसे संपर्क करें। एरर के बारे में जानकारी एप्लीकेशन लॉग में पाई जा सकती है।"
+        "एक गड़बड़ी के कारण, ${ MAIL_APP_NAME } ऐप बंद हो जाएगा। इसे दोबारा चलाने का प्रयास करें और यदि समस्या बनी रहती है, तो हमसे संपर्क करें। गड़बड़ी के बारे में जानकारी एप्लीकेशन लॉग में पाई जा सकती है।"
       ]
     },
     "error screen": {

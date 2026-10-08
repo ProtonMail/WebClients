@@ -1280,6 +1280,9 @@
       "Got it": [
         "Зразумела"
       ],
+      "Got it, connect my Gmail": [
+        "Зразумела. Падключыць мой Gmail"
+      ],
       "Grant access": [
         "Даць доступ"
       ],
@@ -1405,6 +1408,9 @@
       ],
       "Learn about recovery options": [
         "Даведацца аб варыянтах аднаўлення"
+      ],
+      "Learn how this works": [
+        "Паказаць як гэта працуе"
       ],
       "Learn more": [
         "Даведацца больш"
@@ -1906,9 +1912,6 @@
       ],
       "Set as default": [
         "Задаць як прадвызначаную"
-      ],
-      "Set as default mail application": [
-        "Задаць у якасці прадвызначанай паштовай праграмы"
       ],
       "Set catch-all": [
         "Задаць адрас для ўсёй пошты дамена"
@@ -3290,11 +3293,6 @@
         "Не ўдалося знайсці апошнюю версію"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Праблема ${ LUMO_SHORT_APP_NAME }"
@@ -3432,11 +3430,6 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Дублікаты ад папярэдняга імпартавання будуць прапушчаны. Адрабленне або імпартаванне больш старых паведамленняў у наладах ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -5289,12 +5282,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным і зашыфраваным асяроддзі."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } не з'яўляецца вашай прадвызначанай паштовай праграмай."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } з'яўляецца вашай прадвызначанай паштовай праграмай."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } захоўвае вашы дзелавыя даныя ў бяспецы і дазваляе адпраўляць зашыфраваныя лісты любому карыстальніку."
       ],
@@ -5887,12 +5874,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave або больш ранняя версія"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -7464,9 +7445,6 @@
       ],
       "Invalid private key file": [
         "Памылковы файл закрытага ключа"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Памылковы токен скідання. Абнавіце старонку і паўтарыце спробу."
       ],
       "Invalid Sieve code": [
         "Памылковы код Sieve"
@@ -11318,9 +11296,6 @@
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
       ],
-      "Default email application": [
-        "Прадвызначаная праграма электроннай пошты"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Выдаліце ​​ўсе іншыя запісы MX або пераканайцеся, што ${ MAIL_APP_NAME } мае самае нізкае значэнне ў полі прыярытэту."
       ],
@@ -12944,9 +12919,6 @@
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Задаць ${ MAIL_APP_NAME } у якасці прадвызначанай паштовай праграмы. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку электроннай пошты."
-      ],
       "Set password": [
         "Задаць пароль"
       ],
@@ -13906,9 +13878,6 @@
       ],
       "When enabled, members cannot opt out of password check-ins in their own settings.": [
         "Калі гэтая функцыя ўключана, удзельнікі не могуць адмовіцца ад рэгістрацыі пароляў у сваіх наладах."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Калі ўключана, то будзе адбывацца праверка, ці з'яўляецца ${ MAIL_APP_NAME } вашай прадвызначанай паштовай праграмай і калі гэта не так, то вы атрымаеце апавяшчэнне аб гэтым."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
@@ -26514,9 +26483,6 @@
       ],
       "Change second password": [
         "Змяніць другі пароль"
-      ],
-      "Check your default mail application": [
-        "Праверце сваю прадвызначаную паштовую праграму"
       ],
       "Choose a deployment method": [
         "Выберыце спосаб разгортвання"

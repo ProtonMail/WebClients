@@ -859,6 +859,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "Got it, connect my Gmail": [
+        "Rozumiem, prepojiť s mojím Gmailom"
+      ],
       "Group owner": [
         "Vlastník skupiny"
       ],
@@ -939,6 +942,9 @@
       ],
       "Learn about recovery options": [
         "Zistite viac o možnostiach obnovy"
+      ],
+      "Learn how this works": [
+        "Zistite, ako to funguje"
       ],
       "Learn more": [
         "Zistiť viac"
@@ -1741,6 +1747,12 @@
       "Domains": [
         "Domény"
       ],
+      "Managed Service Provider": [
+        "Poskytovateľ spravovaných služieb"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizácie s doplnkom „Poskytovateľ spravovaných služieb“ môžu vytvárať a spravovať dcérske organizácie."
+      ],
       "Servers": [
         "Servery"
       ],
@@ -1871,6 +1883,18 @@
       ],
       "3 new admin roles": [
         "3 nové správcovské pozície"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Priraďte skupinám správcovské pozície. Spravujte prístup pre viacerých používateľov naraz a automaticky ho aktualizujte, keď sa používatelia pripoja alebo odídu."
+      ],
+      "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
+        "Priraďte konkrétne správcovské pozície. Každému správcovi udeľte len taký prístup, aký potrebuje, aby ste obmedzili dopad kompromitovaných účtov a náhodných chýb."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "Vyberte si z troch nových správcovských pozícií. Každý správca dostane len také oprávnenia, aké potrebuje."
+      ],
+      "Choose from two new admin roles. Each admin receives only the access they need.": [
+        "Vyberte si z dvoch nových správcovských pozícií. Každý správca dostane len také oprávnenia, aké potrebuje."
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
@@ -2284,8 +2308,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktopová aplikácia"
+      "${ appName } Desktop application": [
+        "Desktopová aplikácia ${ appName }"
       ]
     },
     "Bug category": {
@@ -2416,8 +2440,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikáty z predchádzajúcich importov budú preskočené. V nastaveniach ${ PRODUCT_NAMES.EASY_SWITCH } môžu byť staršie správy vrátené späť alebo importované."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Najskôr sa načítajú vaše najnovšie emaily. Emaily, ktoré ste už načítali, sa nebudú kopírovať znovu."
       ]
     },
     "Cancellation upsell": {
@@ -4223,12 +4247,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave or earlier"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -5210,9 +5228,6 @@
       ],
       "Invalid private key file": [
         "Neplatný súbor súkromného kľúča"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Neplatný token na obnovenie. Obnovte stránku a skúste to znova, prosím."
       ],
       "Invalid URL": [
         "Neplatná URL"
@@ -6833,6 +6848,9 @@
       "Event": [
         "Udalosť"
       ],
+      "Good to know before you connect": [
+        "Čo je dobré vedieť pred pripojením"
+      ],
       "IP address": [
         "IP adresa"
       ],
@@ -7637,6 +7655,9 @@
       ],
       "(formerly Twitter)": [
         "(bývalý Twitter)"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** sa používa aj na prihlásenie do samostatného účtu ${ BRAND_NAME } mimo aplikácie ${ MAIL_APP_NAME }."
       ],
       "**Enable automatic backups** for peace of mind": [
         "**Povoliť automatické zálohy** pre pokoj v duši"
@@ -8589,6 +8610,9 @@
       "here": [
         "tu"
       ],
+      "Here's what happens when you continue:": [
+        "V prípade, že budete pokračovať, udeje sa nasledovné:"
+      ],
       "High Priority": [
         "Vysoká priorita"
       ],
@@ -8997,6 +9021,9 @@
       "Next billing date": [
         "Dátum ďalšej fakturácie"
       ],
+      "Next time you sign in to your other account": [
+        "Keď sa nabudúce prihlásite do vášho druhého účtu"
+      ],
       "No addresses exist": [
         "Neexistujú žiadne adresy"
       ],
@@ -9026,6 +9053,9 @@
       ],
       "No users to display": [
         "Nie sú žiadni používatelia na zobrazenie"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Na vašich ostatných ${ BRAND_NAME } účtoch sa nič nemení."
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -10398,6 +10428,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Pomocou stiahnutých súborov na obnovu nebudete môcť obnoviť uzamknuté údaje. Tým sa zakáže aj obnovenie na základe zariadenia."
       ],
+      "You'll choose a new username": [
+        "Vyberiete si nové používateľské meno"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
       ],
@@ -10412,6 +10445,9 @@
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Odteraz ho budete používať na prihlásenie. To je jediná zmena."
       ],
       "You're now signed in on your TV.": [
         "Teraz ste prihlásený/-á v televízii."
@@ -10475,6 +10511,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Vaša bezplatná skúšobná verzia zahŕňa 1 vyhradený server."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Váš Gmail sa pripája k tejto adrese ${ MAIL_APP_NAME }"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informácie sú u nás v bezpečí. Budeme vás kontaktovať len vtedy, keď to bude potrebné na poskytovanie našich služieb."

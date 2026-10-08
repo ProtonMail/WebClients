@@ -441,6 +441,9 @@
       "Deselect all messages": [
         "Alle berichten deselecteren"
       ],
+      "Detach": [
+        "Losmaken"
+      ],
       "Details": [
         "Details"
       ],
@@ -458,6 +461,9 @@
       ],
       "Display navigation bar": [
         "Navigatiebalk weergeven"
+      ],
+      "Don't show this offer again": [
+        "Toon deze aanbieding niet opnieuw"
       ],
       "Done": [
         "Klaar"
@@ -1541,7 +1547,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -2138,11 +2145,6 @@
         "Jaarlijks"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktop-app"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } probleem"
@@ -2268,11 +2270,6 @@
       ],
       "Take a tour": [
         "Volg een rondleiding"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicaten van eerdere importen worden overgeslagen. Maak dit ongedaan of importeer oudere berichten in de instellingen van ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -7210,6 +7207,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Adverteerders volgen uw internetgedrag om gerichte advertenties te tonen. ${ VPN_APP_NAME } blokkeert trackers en advertenties, maakt uw verbinding sneller en verbetert uw online ervaring."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Na de update kan uw Mac om een ​​wachtwoord vragen. Typ het wachtwoord dat u gebruikt om uw Mac te ontgrendelen en klik vervolgens op Altijd toestaan ​​om aangemeld te blijven. ${ learnMore }"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
       ],
@@ -7571,6 +7571,9 @@
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Wist u dat? We hebben speciaal voor u een korter e-mailadres gereserveerd. Dit is uw gebruikersnaam gevolgd door \"@${ PM_DOMAIN }\"."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Ontdek nieuwe functies ontgrendeld en begin direct met het gebruik ervan!"
@@ -7977,8 +7980,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8391,6 +8393,9 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Update ${ MAIL_APP_NAME } om de app te blijven gebruiken. ${ downloadUpdate }"
       ],
       "Please use another browser or download the file.": [
         "Gebruik een andere browser of download het bestand."
@@ -9094,14 +9099,8 @@
       "Turn off auto-reply": [
         "Zet automatisch antwoorden uit"
       ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Uitschakelen om alleen te zoeken op datum, naam, e-mailadres of onderwerpregel. Ga naar Instellingen om de inhoud van zoekberichten uit te schakelen (en berichten te verwijderen die zijn gedownload om deze functie in te schakelen)."
-      ],
       "Turn off your away message": [
         "Zet uw afwezigheidsbericht uit"
-      ],
-      "Turn on to search the content of your messages": [
-        "Zet aan om de inhoud van uw berichten te doorzoeken"
       ],
       "Turn on your away message": [
         "Zet uw afwezigheidsbericht aan"

@@ -2388,8 +2388,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Namizna aplikacija"
+      "${ appName } Desktop application": [
+        "${ appName } Namizna aplikacija"
       ]
     },
     "Bug category": {
@@ -2520,6 +2520,11 @@
       ],
       "Take a tour": [
         "Oglejte si"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Najprej bodo uvožene vaša najnovejše e-poštna sporočila. Tista, ki ste jih že uvozili, se ne bodo ponovno kopirala."
       ]
     },
     "Calendar access select label": {
@@ -4537,12 +4542,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave ali starejši"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -8427,9 +8426,6 @@
       "default email address": [
         "privzeti e-poštni naslov"
       ],
-      "Default email application": [
-        "Privzeta aplikacija za e-pošto"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Izbrišite druge zapise MX ali poskrbite, da je prioriteta ${ MAIL_APP_NAME } najnižja številka."
       ],
@@ -9545,9 +9541,6 @@
       ],
       "Session timed out": [
         "Seja je potekla"
-      ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Nastavite ${ MAIL_APP_NAME } kot privzeto aplikacijo za e-pošto. ${ MAIL_APP_NAME } se bo samodejno odprl, ko boste kliknili povezavo e-pošte."
       ],
       "Set password": [
         "Nastavi geslo"
@@ -12086,6 +12079,9 @@
       ],
       "Start date": [
         "Začetni datum"
+      ],
+      "Start with your most recent messages": [
+        "Začnite z najnovejšimi sporočili"
       ],
       "Starts with": [
         "Se začne z"

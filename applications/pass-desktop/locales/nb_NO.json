@@ -884,11 +884,6 @@
         "Avinstaller ${ PASS_APP_NAME }"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-skrivebordsapplikasjon"
-      ]
-    },
     "Button": {
       "More info": [
         "Mer informasjon"
@@ -2240,8 +2235,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"

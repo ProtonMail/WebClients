@@ -529,6 +529,12 @@
       "Domains": [
         "Domenii"
       ],
+      "Managed Service Provider": [
+        "Furnizor de servicii gestionate"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizațiile care dispun de modulul „Furnizor de servicii gestionate” pot crea și gestiona organizații subsidiare."
+      ],
       "Servers": [
         "Servere"
       ],
@@ -922,8 +928,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicați ${ MAIL_APP_NAME } Desktop"
+      "${ appName } Desktop application": [
+        "Aplicația desktop ${ appName }"
       ]
     },
     "Bug category": {

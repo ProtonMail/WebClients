@@ -1514,7 +1514,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -2095,11 +2096,6 @@
         "Anual"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema con ${ LUMO_SHORT_APP_NAME }"
@@ -2225,11 +2221,6 @@
       ],
       "Take a tour": [
         "Explora ahora"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Se omitirán los duplicados de importaciones anteriores. Deshaz o importa mensajes más antiguos en los ajustes de ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -7541,8 +7532,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8503,12 +8493,6 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
-      ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Desactívala para buscar únicamente por fecha, nombre, dirección de correo electrónico o asunto. Para desactivar el contenido de los mensajes de búsqueda (y eliminar los mensajes descargados para activar esta función), ve a Configuración."
-      ],
-      "Turn on to search the content of your messages": [
-        "Actívala para buscar en el contenido de sus mensajes."
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "No se puede acceder a las capacidades de almacenamiento en este navegador. Necesitamos este acceso para activar la búsqueda de contenido en los mensajes."

@@ -32,6 +32,23 @@
         "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Allow list": [
+        "Daftar izin"
+      ],
+      "Audit log": [
+        "Log audit"
+      ],
+      "Dark mode": [
+        "Mode gelap"
+      ],
+      "Light mode": [
+        "Mode terang"
+      ],
+      "Telemetry": [
+        "Telemetri"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Akun"
@@ -725,6 +742,9 @@
       "Mark as resolved": [
         "Tandai terselesaikan"
       ],
+      "Migrate": [
+        "Migrasi"
+      ],
       "More benefits": [
         "Lebih banyak manfaat"
       ],
@@ -1280,6 +1300,9 @@
       "View all reports": [
         "Lihat seluruh laporan"
       ],
+      "View guide": [
+        "Lihat panduan"
+      ],
       "View invoice": [
         "Lihat faktur"
       ],
@@ -1809,6 +1832,11 @@
         "Tahunan"
       ]
     },
+    "Billing type": {
+      "Prepaid": [
+        "Prabayar"
+      ]
+    },
     "Blog": {
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Kebijakan tanpa log ${ VPN_APP_NAME } VPN telah dibuktikan oleh hasil audit eksternal"
@@ -1878,11 +1906,6 @@
       ],
       "Working with sensitive data?": [
         "Bekerja dengan data yang sensitif?"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikasi Desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -2012,11 +2035,6 @@
         "Ikuti tur kami"
       ]
     },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplikat dari impor sebelumnya akan dilewati. Urungkan atau impor pesan yang lebih lama di pengaturan ${ PRODUCT_NAMES.EASY_SWITCH }."
-      ]
-    },
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "Ruang penyimpanan ${ maxSpaceTB }"
@@ -2071,11 +2089,17 @@
       "${ users } user": [
         "${ users } pengguna"
       ],
+      "Amount due": [
+        "Jumlah yang dibayar"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
       "Subtotal for ${ cycle } month": [
         "Subtotal untuk ${ cycle } bulan"
+      ],
+      "Summary": [
+        "Ringkasan"
       ],
       "Total": [
         "Total"
@@ -3755,12 +3779,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave atau lebih lama"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -4598,9 +4616,6 @@
       ],
       "Invalid private key file": [
         "File kunci pribadi tidak valid"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Token atur ulang tidak valid. Silakan muat ulang halaman dan coba lagi."
       ],
       "Invalid URL": [
         "URL tidak valid"
@@ -5758,6 +5773,17 @@
         "Terabita"
       ]
     },
+    "Filter": {
+      "All": [
+        "Semua"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Pending": [
+        "Tertunda"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } berhasil diperbarui"
@@ -6352,11 +6378,17 @@
       ]
     },
     "Import status": {
+      "Has errors": [
+        "Memiliki kesalahan"
+      ],
       "In progress": [
         "Sedang berlangsung"
       ],
       "Migrated": [
         "Dimigrasikan"
+      ],
+      "Pending": [
+        "Tertunda"
       ]
     },
     "Import warning": {
@@ -8825,6 +8857,9 @@
       "X": [
         "X"
       ],
+      "You": [
+        "Anda"
+      ],
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
       ],
@@ -9231,6 +9266,9 @@
       "Gifted": [
         "Dihadiahkan"
       ],
+      "Open": [
+        "Buka"
+      ],
       "Paid": [
         "Lunas"
       ],
@@ -9494,6 +9532,9 @@
       ],
       "City": [
         "Kota"
+      ],
+      "Client": [
+        "Klien"
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
@@ -10184,6 +10225,9 @@
       ],
       "Unlimited": [
         "Tidak terbatas"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
       ],
       "Upload 1 or more encryption keys": [
         "Unggah setidaknya 1 kunci enkripsi"
@@ -10927,6 +10971,11 @@
       ],
       "Sign in": [
         "Masuk"
+      ]
+    },
+    "Members table usage": {
+      "Yesterday": [
+        "Kemarin"
       ]
     },
     "Message": {
@@ -12141,6 +12190,11 @@
         "Daftar periksa pemulihan"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Coba sekarang"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } telah dinonaktifkan"
@@ -12550,6 +12604,14 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Paket Anda meliputi ruang penyimpanan tambahan hingga ${ humanReadableAvailableSpace }."
+      ]
+    },
+    "organization key reset": {
+      "Reset key": [
+        "Atur ulang kunci"
+      ],
+      "See users": [
+        "Lihat pengguna"
       ]
     },
     "Organization logo upload": {
@@ -13320,6 +13382,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Tingkatkan ke ${ upsellPlanTitle }"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
       ]
     },
     "Property type": {
@@ -15222,6 +15304,9 @@
       "Sign-in requested on another device. Was it you?": [
         "Terdapat permintaan entri masuk pada perangkat lainnya. Apakah ini Anda?"
       ],
+      "Signing in": [
+        "Masuk"
+      ],
       "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
         "Single sign-on dapat tidak berfungsi dengan benar tanpa identitas organisasi. Atur identitas organisasi Anda untuk memastikan autentikasi yang terjamin."
       ],
@@ -15300,6 +15385,9 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Membatalkan langganan Anda, mohon menunggu"
+      ],
+      "Enabled": [
+        "Diaktifkan"
       ]
     },
     "Status": {
@@ -16273,6 +16361,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Pengguna"
       ]
     },
     "TableHeader": {
@@ -17687,6 +17778,9 @@
       "What is the dark web?": [
         "Apa itu dark web?"
       ],
+      "Windows": [
+        "Windows"
+      ],
       "Wipe all logs?": [
         "Hapus seluruh log?"
       ],
@@ -17795,11 +17889,17 @@
       ]
     },
     "Title subscription": {
+      "Billing": [
+        "Pembayaran"
+      ],
       "End date": [
         "Tanggal berakhir"
       ],
       "Plan": [
         "Paket"
+      ],
+      "Start date": [
+        "Tanggal mulai"
       ],
       "Status": [
         "Status"
@@ -18402,6 +18502,15 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Undangan terkirim, menunggu balasan dari anggota yang diundang"
+      ],
+      "Invited": [
+        "Diundang"
+      ],
+      "Pending": [
+        "Tertunda"
+      ],
+      "Requested": [
+        "Diminta"
       ],
       "SSO user provided by your identity provider": [
         "Pengguna SSO disediakan oleh penyedia identitas Anda"

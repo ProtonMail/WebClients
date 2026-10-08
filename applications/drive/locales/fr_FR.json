@@ -318,6 +318,9 @@
       "Deselect all": [
         "Tout désélectionner"
       ],
+      "Detach": [
+        "Détacher"
+      ],
       "Details": [
         "Détails"
       ],
@@ -1364,8 +1367,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Application de bureau ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Application de bureau ${ appName }"
       ]
     },
     "Bug category": {
@@ -3383,6 +3386,9 @@
       ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
+      ],
+      "Not enough browser storage": [
+        "L'espace de stockage du navigateur est insuffisant"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "L'un des contacts n'a pas d'adresse e-mail : ${ noEmailsContactNamesList }",
@@ -5746,6 +5752,9 @@
       ],
       "Symbols (#$&)": [
         "Symboles (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporairement indisponible à cause d'une forte demande. Veuillez réessayer ultérieurement."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."

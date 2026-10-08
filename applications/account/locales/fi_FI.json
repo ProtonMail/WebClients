@@ -1601,9 +1601,6 @@
       "Set as default": [
         "Aseta oletukseksi"
       ],
-      "Set as default mail application": [
-        "Aseta oletussähköpostisovellukseksi"
-      ],
       "Set catch-all": [
         "Aseta nappaa kaikki"
       ],
@@ -2880,11 +2877,6 @@
         "Viimeisimmän version tarkastus epäonnistui"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }in työpöytäsovellus"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME }-ongelma"
@@ -3022,11 +3014,6 @@
       ],
       "Take a tour": [
         "Katso esittely"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Aikaisemmista tuonneista peräisin olevat kaksoiskappaleet ohitetaan. Voit peruuttaa toiminnon tai tuoda vanhempia viestejä ${ PRODUCT_NAMES.EASY_SWITCH } -asetuksissa."
       ]
     },
     "Calendar access select label": {
@@ -4820,12 +4807,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } ${ DRIVE_APP_NAME }ssä antaa sinun työskennellä yhdessä muiden kanssa, turvallisessa ja salatussa ympäristössä."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } ei ole oletussähköpostisovelluksesi."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } on oletussähköpostisovelluksesi."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } pitää yrityksenne tiedot turvassa ja antaa teidän lähettää salattuja sähköposteja kenelle tahansa."
       ],
@@ -5399,12 +5380,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave or vanhempi"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6822,9 +6797,6 @@
       ],
       "Invalid private key file": [
         "Virheellinen yksityinen avaintiedosto"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Virheellinen palautustunniste. Päivitä sivu ja yritä uudelleen."
       ],
       "Invalid Sieve code": [
         "Virheellinen Sieve-koodi"
@@ -10238,9 +10210,6 @@
       "default email address": [
         "oletussähköpostiosoite"
       ],
-      "Default email application": [
-        "Sähköpostin oletussovellus"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Poista kaikki muut MX-tietueet tai varmista, että ${ MAIL_APP_NAME }in painotus on pienin numero."
       ],
@@ -11723,9 +11692,6 @@
       "Session timed out": [
         "Istunto aikakatkaistiin"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Aseta ${ MAIL_APP_NAME } oletussähköpostisovellukseksi. ${ MAIL_APP_NAME } avautuu automaattisesti sähköpostilinkkiä klikatessasi."
-      ],
       "Set password": [
         "Aseta salasana"
       ],
@@ -12586,9 +12552,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Kun tämä asetus on poistettu käytöstä, se estää etäkuvien latautumisen ilman tietoisuuttasi."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Kun tämä on sallittu, tarkistamme onko ${ MAIL_APP_NAME } oletus sähköpostisovellus ja ilmoitamme, jos ei ole."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetintarjoajaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetintarjoajasi soveltuviin tietokenttiin."
@@ -24289,9 +24252,6 @@
       ],
       "Change second password": [
         "Vaihda toinen salasana"
-      ],
-      "Check your default mail application": [
-        "Tarkista oletussähköpostisovelluksesi"
       ],
       "Choose a provider": [
         "Valitse tarjoaja"

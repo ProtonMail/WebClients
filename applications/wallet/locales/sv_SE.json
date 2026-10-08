@@ -906,8 +906,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Applikation för stationär dator ${ appName }"
       ]
     },
     "Bug category": {
@@ -2821,6 +2821,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
         "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
+      ],
+      "1 device per user": [
+        "1 enhet per användare"
       ],
       "1 vault per user": [
         "1 valv per användare"
@@ -4830,6 +4833,9 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betala med ${ IDEAL_WERO_BRAND_NAME }"

@@ -677,8 +677,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Desktopanwendung"
+      "${ appName } Desktop application": [
+        "${ appName } Desktopanwendung"
       ]
     },
     "Bug category": {
@@ -1120,9 +1120,6 @@
       "Continue": [
         "Fortfahren"
       ],
-      "Create artifact": [
-        "Artefakt erstellen"
-      ],
       "Create image": [
         "Bild erstellen"
       ],
@@ -1345,6 +1342,9 @@
       ],
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "Sobald du fortfährst, wird Apertus im Modellmenü als ausgewähltes Modell angezeigt. Über dieses Menü kannst du jederzeit zu einem anderen Modell wechseln."
+      ],
+      "Allow ${ LUMO_SHORT_APP_NAME } to create artifacts in the side panel when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
+        "Ermögliche ${ LUMO_SHORT_APP_NAME }, bei Bedarf Elemente im Seitenbereich zu erstellen. Dies ist die Standardeinstellung für alle Chats; Diese können für einen einzelnen Chat über das Menü „Extras“ geändert werden."
       ],
       "Always enable web search for new conversations": [
         "Immer Websuche für neue Unterhaltungen aktivieren"
@@ -1962,6 +1962,9 @@
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Pro Tag werden die durchschnittlichen Token pro API-Aufruf berechnet (Token ÷ Aufrufe, oder 0, wenn keine Aufrufe)."
+      ],
+      "For this chat": [
+        "Für diesen Chat"
       ],
       "Free accounts keep chat history for 7 days from when a chat was created.": [
         "Kostenlose Konten behalten den Chatverlauf für 7 Tage ab der Erstellung des Chats."
@@ -2671,8 +2674,26 @@
       ]
     },
     "collider_2025: Spotlight": {
+      "Artifacts are now on by default": [
+        "Artefakte sind nun standardmäßig aktiviert"
+      ],
       "Create artifacts with ${ LUMO_SHORT_APP_NAME }": [
         "Artefakt mit ${ LUMO_SHORT_APP_NAME } erstellen"
+      ],
+      "Longer documents, code and slides open here so you can edit and download them.": [
+        "Längere Dokumente, Programmcode und Präsentationen können hier geöffnet werden, sodass diese bearbeitet und heruntergeladen werden können."
+      ],
+      "Longer documents, code and slides open here so you can edit, download or save them to Drive.": [
+        "Längere Dokumente, Code und Präsentation werden hier geöffnet, sodass Sie sie bearbeiten, herunterladen oder in Drive speichern können."
+      ],
+      "Settings": [
+        "Einstellungen"
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat, or in ${ settings } for all chats.": [
+        "Um dies zu verhindern, deaktiviere ${ createArtifact } in ${ tools } für diesen Chat oder in ${ settings } für alle Chats."
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat.": [
+        "Um dies zu verhindern, deaktiviere ${ createArtifact } in ${ tools } für diesen Chat."
       ],
       "Turn ideas into documents, code, and more. Open Tools to get started.": [
         "Verwandle Ideen in Dokumente, Code und vieles mehr. Öffne «Tools», um loszulegen."
@@ -2786,6 +2807,9 @@
       ],
       "Auto update memory": [
         "Erinnerungen automatisch aktualisieren"
+      ],
+      "Automatic Create Artifact": [
+        "Artefakt automatisch erstellen"
       ],
       "Automatic web search": [
         "Automatische Websuche"
@@ -3561,20 +3585,6 @@
       ],
       "Writing Assistant": [
         "Schreibassistent"
-      ]
-    },
-    "collider_2025:Artifact placeholder": {
-      "Create a 5-slide deck on password managers with a bar chart": [
-        "Erstelle eine Präsentation mit 5 Folien zum Thema Passwortmanager mit einem Balkendiagramm"
-      ],
-      "Create a self-contained HTML pomodoro timer": [
-        "Erstelle einen eigenständigen HTML-Pomodoro-Timer"
-      ],
-      "Write a professional email declining a meeting": [
-        "Verfasse eine professionelle E-Mail, in der du ein Meeting ablehnst"
-      ],
-      "Write a Python script to dedupe a CSV by email": [
-        "Schreibe ein Python-Skript, um eine CSV-Datei basierend auf E-Mail-Adressen zu bereinigen"
       ]
     },
     "collider_2025:Badge": {

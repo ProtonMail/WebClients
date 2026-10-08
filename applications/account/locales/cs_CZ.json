@@ -1524,9 +1524,6 @@
       "Set as default": [
         "Nastavit jako výchozí"
       ],
-      "Set as default mail application": [
-        "Nastavit jako výchozí e-mailovou aplikaci"
-      ],
       "Set catch-all": [
         "Nastavení doménového koše"
       ],
@@ -2816,11 +2813,6 @@
         "Nepodařilo se najít nejnovější verzi"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktopová aplikace"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problém s ${ LUMO_SHORT_APP_NAME }"
@@ -2958,11 +2950,6 @@
       ],
       "Take a tour": [
         "Absolvovat prohlídku"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicity z předchozích importů budou přeskočeny. Akci můžete vzít zpět nebo importovat starší zprávy v nastavení ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Calendar access select label": {
@@ -4777,12 +4764,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožní spolupracovat s ostatními v bezpečném a šifrovaném prostředí."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "Aplikace ${ MAIL_APP_NAME } není vaše výchozí e-mailová aplikace."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "Aplikace ${ MAIL_APP_NAME } je vaše výchozí e-mailová aplikace."
-      ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } uchovává vaše firemní data v bezpečí a umožňuje posílat šifrované e-maily komukoli."
       ],
@@ -5366,12 +5347,6 @@
       ],
       "macOS Big Sur": [
         "macOS Big Sur"
-      ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave nebo starší"
       ],
       "macOS Monterey": [
         "macOS Monterey"
@@ -6800,9 +6775,6 @@
       ],
       "Invalid private key file": [
         "Neplatný soubor soukromého klíče"
-      ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Neplatný token pro resetování. Obnovte prosím stránku a zkuste to znovu."
       ],
       "Invalid Sieve code": [
         "Neplatný Sieve kód"
@@ -10285,9 +10257,6 @@
       "default email address": [
         "výchozí e-mailová adresa"
       ],
-      "Default email application": [
-        "Výchozí e-mailová aplikace"
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ${ MAIL_APP_NAME } záznam má nejnižší prioritu."
       ],
@@ -11758,9 +11727,6 @@
       "Session timed out": [
         "Relace vypršela"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci. ${ MAIL_APP_NAME } se automaticky otevře po kliknutí na e-mailový odkaz."
-      ],
       "Set password": [
         "Nastavte heslo"
       ],
@@ -12609,9 +12575,6 @@
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Pokud je deaktivováno, zabraňuje načítání vzdálených obrázků bez vašeho vědomí."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Pokud je tato možnost aktivována, zkontrolujeme, zda je ${ MAIL_APP_NAME } vaše výchozí e-mailová aplikace, a pokud tomu tak nebude, upozorníme vás."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Při povolování SAML pro ${ appName } u poskytovatele identit můžete být vyzváni k použití zpětné adresy URL (ACS) a ID vydavatele. Níže uvedené údaje stačí zkopírovat a vložit do polí poskytovatele identit."
@@ -24529,9 +24492,6 @@
       ],
       "Change second password": [
         "Změnit druhé heslo"
-      ],
-      "Check your default mail application": [
-        "Zkontrolujte svou výchozí e-mailovou aplikaci"
       ],
       "Choose a provider": [
         "Vybrat poskytovatele"

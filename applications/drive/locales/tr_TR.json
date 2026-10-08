@@ -359,6 +359,9 @@
       "Deselect all": [
         "Tümünü bırak"
       ],
+      "Detach": [
+        "Ayır"
+      ],
       "Details": [
         "Bilgiler"
       ],
@@ -1568,8 +1571,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      "${ appName } Desktop application": [
+        "${ appName } bilgisayar uygulaması"
       ]
     },
     "Bug category": {
@@ -3691,6 +3694,9 @@
       ],
       "Not a valid number": [
         "Numara geçerli değil"
+      ],
+      "Not enough browser storage": [
+        "Tarayıcı depolama alanı yetersiz"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Kişilerden birinin e-posta adresi yok: ${ noEmailsContactNamesList }",
@@ -6570,6 +6576,9 @@
       ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -11030,7 +11039,7 @@
         "Siber tehditlere karşı gelişmiş koruma"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret üzerinden yenilenir."
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
       ]
     },
     "q3campaign2026: Info, Calendar first": {
@@ -13650,7 +13659,7 @@
         "Geçerli tarifenizdeki tüm ücretli özellikler"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret ile yenilenir."
       ]
     },
     "tryduo2026: Title": {

@@ -1943,11 +1943,6 @@
         "Werkt u met gevoelige gegevens?"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktop-app"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } probleem"
@@ -2073,11 +2068,6 @@
       ],
       "Take a tour": [
         "Volg een rondleiding"
-      ]
-    },
-    "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Duplicaten van eerdere importen worden overgeslagen. Maak dit ongedaan of importeer oudere berichten in de instellingen van ${ PRODUCT_NAMES.EASY_SWITCH }."
       ]
     },
     "Cancellation upsell": {
@@ -3844,12 +3834,6 @@
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
-      "macOS Catalina": [
-        "macOS Catalina"
-      ],
-      "macOS Mojave or earlier": [
-        "macOS Mojave of ouder"
-      ],
       "macOS Monterey": [
         "macOS Monterey"
       ],
@@ -4812,9 +4796,6 @@
       "Invalid private key file": [
         "Ongeldig privé-sleutel bestand"
       ],
-      "Invalid reset token. Please refresh the page and try again.": [
-        "Ongeldige reset token. Vraag een andere token aan en probeer het opnieuw."
-      ],
       "Invalid URL": [
         "Ongeldige URL"
       ],
@@ -5191,6 +5172,9 @@
       "There was an error, please try again.": [
         "Er is een fout opgetreden, probeert u het nog eens."
       ],
+      "This code or link is no longer valid. Please try again.": [
+        "Deze code of link is niet langer geldig. Probeer het opnieuw."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
       ],
@@ -5346,6 +5330,9 @@
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Uw wachtwoord kan niet opnieuw worden ingesteld. Probeer het opnieuw."
       ],
       "Zero keys reactivated": [
         "Nul sleutels gereactiveerd"
@@ -8812,6 +8799,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Sommige servers verschijnen mogelijk niet in de bovenstaande lijst. Zoek op servernaam (bijv. AT#62) om ze te vinden."
       ],
+      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
+        "Binnenkort voert u uw e-mailadres (of gebruikersnaam) en wachtwoord in 2 aparte stappen in, in plaats van op 1 pagina."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO."
       ],
@@ -9422,6 +9412,9 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
+      "We're changing the ${ BRAND_NAME } sign-in page. Your password and devices stay the same. ${ learnMore }": [
+        "We wijzigen de inlogpagina van ${ BRAND_NAME }. Uw wachtwoord en apparaten blijven hetzelfde. ${ learnMore }"
+      ],
       "Web sessions detected:": [
         "Websessies gedetecteerd:"
       ],
@@ -9762,6 +9755,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "De e-mails van uw organisatie worden beschermd met end-to-end encryptie met behulp van de organisatiesleutel. Deze vingerafdruk kan worden gebruikt om te controleren of alle beheerders in uw account dezelfde sleutel hebben."
+      ],
+      "Your password and devices stay the same.": [
+        "Uw wachtwoord en apparaten blijven hetzelfde."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Uw betalingsgegevens zijn beschermd met TLS encryptie en Zwitserse privacywetten."
@@ -18558,6 +18554,9 @@
       ],
       "Signed-in reset": [
         "Aanmeldingsherstel"
+      ],
+      "Signing in is changing": [
+        "Inloggen verandert"
       ],
       "Simplify email distribution": [
         "Vereenvoudig de e-maildistributie"

@@ -304,10 +304,10 @@
         "Crea una reunió"
       ],
       "Debug devices": [
-        "Dispositius de depuració"
+        "Depura els dispositius"
       ],
       "Debug overlay": [
-        "Superposició de la depuració"
+        "Depura la superposició"
       ],
       "Delete": [
         "Elimina"
@@ -451,7 +451,7 @@
         "Expulsa ${ participantName }"
       ],
       "Layout": [
-        "Disseny"
+        "Disposició"
       ],
       "Leave": [
         "Surt"
@@ -663,7 +663,7 @@
         "Preferències"
       ],
       "Share screen": [
-        "Compartir la pantalla"
+        "Comparteix la pantalla"
       ],
       "Show captions": [
         "Mostra els subtítols"
@@ -793,9 +793,6 @@
       ],
       "Use camera": [
         "Utilitza la càmera"
-      ],
-      "Use it": [
-        "Utilitza'l"
       ],
       "Use microphone": [
         "Utilitza el micròfon"
@@ -992,8 +989,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Aplicació d'escriptori de ${ appName }"
       ]
     },
     "Bug category": {
@@ -2637,9 +2634,6 @@
       " and ": [
         " i "
       ],
-      "${ deviceLabel } is available again": [
-        "${ deviceLabel } torna a estar disponible"
-      ],
       "${ maxParticipants } participant limit reached": [
         "S'ha arribat al límit de ${ maxParticipants } participants"
       ],
@@ -3135,13 +3129,22 @@
         "No s'ha detectat cap altaveu"
       ],
       "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
-        "S'ha desactivat la cancel·lació de soroll perquè el vostre dispositiu té problemes de rendiment. Podeu tornar-la a activar a la configuració d'àudio."
+        "S'ha desactivat la cancel·lació de soroll perquè el dispositiu té problemes de rendiment. Podeu tornar-la a activar a les preferències d'àudio."
       ],
       "Not sent, check your connection.": [
         "No s'ha enviat. Comproveu la connexió."
       ],
       "notify everyone here": [
         "notificar-ho a tothom aquí"
+      ],
+      "Now using ${ first } and ${ second }.": [
+        "Ara s'estan utilitzant ${ first } i ${ second }."
+      ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "Ara s'estan utilitzant ${ first }, ${ second } i ${ third }."
+      ],
+      "Now using ${ first }.": [
+        "Ara s'està utilitzant ${ first }."
       ],
       "Only meetings you created appear here": [
         "Només les reunions que heu creat apareixen aquí"
@@ -3266,6 +3269,27 @@
       "Select a speaker": [
         "Selecciona un altaveu"
       ],
+      "Selected camera has disconnected.": [
+        "La càmera seleccionada s'ha desconnectat."
+      ],
+      "Selected devices have disconnected.": [
+        "Els dispositius seleccionats s'han desconnectat."
+      ],
+      "Selected microphone and camera have disconnected.": [
+        "El micròfon i la càmera seleccionats s'han desconnectat."
+      ],
+      "Selected microphone and speaker have disconnected.": [
+        "El micròfon i l'altaveu seleccionats s'han desconnectat."
+      ],
+      "Selected microphone has disconnected.": [
+        "El micròfon seleccionat s'ha desconnectat."
+      ],
+      "Selected speaker and camera have disconnected.": [
+        "L'altaveu i la càmera seleccionats s'han desconnectat."
+      ],
+      "Selected speaker has disconnected.": [
+        "L'altaveu seleccionat s'ha desconnectat."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
@@ -3312,7 +3336,7 @@
         "Gràcies per unir-vos-hi."
       ],
       "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
-        "El servei de subtitulació utilitza l'àudio de la reunió. Els subtítols només són visibles per a vosaltres i no es desen."
+        "El servei de subtitulació utilitza l'àudio de la reunió. Els subtítols només són visibles per a vós i no es desen."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "L'amfitrió us ha tret d'aquesta reunió. Si ha estat un error, demaneu-li que us torni a convidar."
@@ -3503,38 +3527,14 @@
       "Your browser or device isn’t supported": [
         "El vostre navegador o dispositiu no és compatible"
       ],
-      "Your camera was disconnected. Now using ${ deviceLabel }.": [
-        "S'ha desconnectat la vostra càmera. Ara s'està utilitzant\n ${ deviceLabel }."
-      ],
-      "Your device was disconnected. Now using ${ deviceLabel }.": [
-        "S'ha desconnectat el vostre dispositiu. Ara s'està utilitzant ${ deviceLabel }."
-      ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
       "Your meeting is ready": [
         "La reunió està a punt"
       ],
-      "Your microphone and camera were disconnected. Now using other devices.": [
-        "El micròfon i la càmera estaven desconnectats. Ara s'estan utilitzant altres dispositius."
-      ],
-      "Your microphone and speaker were disconnected. Now using other devices.": [
-        "S'han desconnectat el micròfon i l'altaveu. Ara es fan servir altres dispositius."
-      ],
-      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
-        "S'ha desconnectat el micròfon. Ara s'està utilitzant ${ deviceLabel }."
-      ],
-      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
-        "S'han desconnectat el micròfon, l'altaveu i la càmera. Ara es fan servir altres dispositius."
-      ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your speaker and camera were disconnected. Now using other devices.": [
-        "S'han desconnectat el vostre altaveu i la vostra càmera. Ara s'estan utilitzant altres dispositius."
-      ],
-      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
-        "S'ha desconnectat el vostre altaveu. Ara s'està utilitzant ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Esteu a punt d'obrir un enllaç en una pestanya nova. Assegureu-vos que confieu en el lloc web abans de continuar."

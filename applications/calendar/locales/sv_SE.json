@@ -893,6 +893,9 @@
       "Skip verification": [
         "Hoppa över verifiering"
       ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ],
       "Start import": [
         "Starta import"
       ],
@@ -1383,8 +1386,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Applikation för stationär dator ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Applikation för stationär dator ${ appName }"
       ]
     },
     "Bug category": {
@@ -5341,6 +5344,9 @@
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
+      ],
       "${ total } user found": [
         "${ total } användare hittades",
         "${ total } användare hittades"
@@ -5383,6 +5389,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
         "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
+      ],
+      "1 device per user": [
+        "1 enhet per användare"
       ],
       "1 vault per user": [
         "1 valv per användare"
@@ -6303,6 +6312,9 @@
       ],
       "Take control of your digital life": [
         "Ta kontroll över ditt digitala liv"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Tillfälligt otillgänglig på grund av hög efterfrågan. Försök igen senare."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
@@ -9325,6 +9337,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Sista chansen att få 80 % rabatt på din första månad med ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Sista chansen att få din första månad med ${ plan } till detta pris."
+      ],
       "Last day to save": [
         "Sista dagen att spara"
       ],
@@ -9760,6 +9775,9 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betala med ${ IDEAL_WERO_BRAND_NAME }"

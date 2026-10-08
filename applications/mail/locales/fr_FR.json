@@ -447,6 +447,9 @@
       "Deselect all messages": [
         "Désélectionner tous les messages"
       ],
+      "Detach": [
+        "Détacher"
+      ],
       "Details": [
         "Détails"
       ],
@@ -464,6 +467,9 @@
       ],
       "Display navigation bar": [
         "Afficher la barre de navigation"
+      ],
+      "Don't show this offer again": [
+        "Ne plus afficher cette offre"
       ],
       "Done": [
         "Terminé"
@@ -1559,7 +1565,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -2173,8 +2180,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Application de bureau ${ MAIL_APP_NAME }"
+      "${ appName } Desktop application": [
+        "Application de bureau ${ appName }"
       ]
     },
     "Bug category": {
@@ -2305,8 +2312,8 @@
       ]
     },
     "BYOE": {
-      "Duplicates from previous imports will be skipped. Undo or import older messages in ${ PRODUCT_NAMES.EASY_SWITCH } settings.": [
-        "Les doublons provenant d'importations précédentes seront ignorés. Vous pouvez annuler l'opération ou importer des messages plus anciens dans les paramètres de ${ PRODUCT_NAMES.EASY_SWITCH }."
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Vos messages les plus récents seront importés en premier. Les messages que vous avez déjà importés ne seront pas copiés à nouveau."
       ]
     },
     "Calendar attachment tooltip": {
@@ -7172,6 +7179,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Les annonceurs suivent votre navigation pour afficher des publicités ciblées. ${ VPN_APP_NAME } bloque les traqueurs et les publicités, rendant votre connexion plus rapide et améliorant votre expérience en ligne."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Après avoir effectué la mise à jour, votre Mac pourrait demander un mot de passe. Saisissez le mot de passe que vous utilisez pour déverrouiller votre Mac, puis cliquez Toujours Autoriser pour rester connecté. ${ learnMore }"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "L'assistant qui grâce à l'IA vous permet de rédiger des e-mails de meilleure qualité, rapidement et sans effort."
       ],
@@ -7545,6 +7555,9 @@
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Le saviez-vous ? Nous avons réservé une adresse e-mail plus courte juste pour vous. Celle-ci est votre nom d'utilisateur suivi de « @${ PM_DOMAIN } »."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Découvrez les nouvelles fonctionnalités disponibles et utilisez-les dès maintenant !"
@@ -7984,8 +7997,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8425,6 +8437,9 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Veuillez mettre à jour ${ MAIL_APP_NAME } pour continuer à utiliser l'application. ${ downloadUpdate }"
       ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
@@ -9167,14 +9182,8 @@
       "Turn off auto-reply": [
         "Désactiver la réponse automatique"
       ],
-      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Désactivez cette option pour faire des recherches uniquement par date, nom, adresse e-mail ou objet du message. Pour désactiver la recherche dans le contenu des messages (et supprimer les messages qui ont été téléchargés pour permettre cette fonctionnalité), accédez aux paramètres."
-      ],
       "Turn off your away message": [
         "Désactivez votre message d'absence"
-      ],
-      "Turn on to search the content of your messages": [
-        "Activer pour rechercher dans le contenu de vos messages"
       ],
       "Turn on your away message": [
         "Activez votre message d'absence"

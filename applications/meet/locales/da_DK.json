@@ -243,6 +243,9 @@
       "Change password": [
         "Skift adgangskode"
       ],
+      "Chat": [
+        "Chat"
+      ],
       "Chat with us": [
         "Chat med os"
       ],
@@ -299,6 +302,12 @@
       ],
       "Create meeting": [
         "Opret møde"
+      ],
+      "Debug devices": [
+        "Fejlfind enheder"
+      ],
+      "Debug overlay": [
+        "Debug overlay"
       ],
       "Delete": [
         "Slet"
@@ -441,6 +450,9 @@
       "Kick out ${ participantName }": [
         "Fjern ${ participantName }"
       ],
+      "Layout": [
+        "Layout"
+      ],
       "Leave": [
         "Forlad"
       ],
@@ -458,6 +470,9 @@
       ],
       "Lower hand": [
         "Sænk hånden"
+      ],
+      "Meeting info": [
+        "Mødeinfo"
       ],
       "Meeting timer": [
         "Mødetimer"
@@ -500,6 +515,9 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Åbn omtale fra ${ senderName } i chatten"
+      ],
+      "Participants": [
+        "Deltagere"
       ],
       "Participants join after you approve them": [
         "Deltagere tilslutter sig efter du har godkendt dem"
@@ -546,6 +564,9 @@
       ],
       "Record": [
         "Optag"
+      ],
+      "Recording": [
+        "Optager"
       ],
       "Recording your microphone...": [
         "Optager din mikrofon..."
@@ -641,6 +662,12 @@
       "Settings": [
         "Indstillinger"
       ],
+      "Share screen": [
+        "Del skærm"
+      ],
+      "Show captions": [
+        "Vis undertekster"
+      ],
       "Show options": [
         "Vis valgmuligheder"
       ],
@@ -734,6 +761,9 @@
       "The current link will stop working.": [
         "Det nuværende link vil holde op med at virke."
       ],
+      "Transcription": [
+        "Transskription"
+      ],
       "Try again": [
         "Prøv igen"
       ],
@@ -763,9 +793,6 @@
       ],
       "Use camera": [
         "Brug kamera"
-      ],
-      "Use it": [
-        "Brug denne"
       ],
       "Use microphone": [
         "Brug mikrofon"
@@ -962,8 +989,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } skrivebordsapp"
+      "${ appName } Desktop application": [
+        "${ appName } skrivebordsapp"
       ]
     },
     "Bug category": {
@@ -2607,9 +2634,6 @@
       " and ": [
         " og "
       ],
-      "${ deviceLabel } is available again": [
-        "${ deviceLabel } er tilgængelig igen"
-      ],
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants }-deltagergrænsen er nået"
       ],
@@ -3050,6 +3074,9 @@
       "Microphone permission denied": [
         "Mikrofontilladelse nægtet"
       ],
+      "More options": [
+        "Flere muligheder"
+      ],
       "Mute microphone": [
         "Slå mikrofonen fra"
       ],
@@ -3101,11 +3128,23 @@
       "No speaker detected": [
         "Ingen højttaler registreret"
       ],
+      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
+        "Støjreduktion blev slået fra, da din enhed oplever problemer med ydeevnen. Du kan slå den til igen i lydindstillinger."
+      ],
       "Not sent, check your connection.": [
         "Ikke sendt, tjek din forbindelse."
       ],
       "notify everyone here": [
         "giv besked til alle"
+      ],
+      "Now using ${ first } and ${ second }.": [
+        "Bruger nu ${ first } og ${ second }."
+      ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "Bruger nu ${ first }, ${ second } og ${ third }."
+      ],
+      "Now using ${ first }.": [
+        "Bruger nu ${ first }."
       ],
       "Only meetings you created appear here": [
         "Kun møder oprettet af dig vises her"
@@ -3230,6 +3269,27 @@
       "Select a speaker": [
         "Vælg en højttaler"
       ],
+      "Selected camera has disconnected.": [
+        "Det valgte kamera er blevet frakoblet."
+      ],
+      "Selected devices have disconnected.": [
+        "De valgte enheder er blevet frakoblet."
+      ],
+      "Selected microphone and camera have disconnected.": [
+        "Den valgte mikrofon og det valgte kamera er blevet frakoblet."
+      ],
+      "Selected microphone and speaker have disconnected.": [
+        "Den valgte mikrofon og højtaler er blevet frakoblet."
+      ],
+      "Selected microphone has disconnected.": [
+        "Den valgte mikrofon er blevet frakoblet."
+      ],
+      "Selected speaker and camera have disconnected.": [
+        "Den valgte højtaler og det valgte kamera er blevet frakoblet."
+      ],
+      "Selected speaker has disconnected.": [
+        "Den valgte højtaler er blevet frakoblet."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
@@ -3241,6 +3301,12 @@
       ],
       "Share screen": [
         "Del skærm"
+      ],
+      "Share this link to invite others. You can also find it anytime under Meeting info in the More options menu.": [
+        "Del dette link for at invitere andre. Du kan også finde det under \"Mødeinfo\" i menuen \"Flere muligheder\" når som helst."
+      ],
+      "Show live captions?": [
+        "Vis live undertekster?"
       ],
       "Sign in": [
         "Log ind"
@@ -3268,6 +3334,9 @@
       ],
       "Thank you for joining.": [
         "Tak for at deltage."
+      ],
+      "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
+        "Tjenesten, der genererer undertekster, anvender mødelyden. Undertekster er kun synlige for dig, og gemmes ikke."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Værten har fjernet dig fra dette møde. Hvis det var en fejl, kan du bede værten om at invitere dig igen."
@@ -3458,38 +3527,14 @@
       "Your browser or device isn’t supported": [
         "Din browser eller enhed understøttes ikke"
       ],
-      "Your camera was disconnected. Now using ${ deviceLabel }.": [
-        "Dit kamera blev afbrudt. Bruger nu ${ deviceLabel }."
-      ],
-      "Your device was disconnected. Now using ${ deviceLabel }.": [
-        "Din enhed blev afbrudt. Bruger nu ${ deviceLabel }."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
       "Your meeting is ready": [
         "Dit møde er klar"
       ],
-      "Your microphone and camera were disconnected. Now using other devices.": [
-        "Din mikrofon og dit kamera blev afbrudt. Der bruges nu andre enheder."
-      ],
-      "Your microphone and speaker were disconnected. Now using other devices.": [
-        "Din mikrofon og højtaler blev afbrudt. Der bruges nu andre enheder."
-      ],
-      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
-        "Din mikrofon blev afbrudt. Bruger nu ${ deviceLabel }."
-      ],
-      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
-        "Din mikrofon, højtaler og dit kamera blev afbrudt. Der bruges nu andre enheder."
-      ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
-      ],
-      "Your speaker and camera were disconnected. Now using other devices.": [
-        "Din højtaler og dit kamera blev afbrudt. Der bruges nu andre enheder."
-      ],
-      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
-        "Din højtaler blev afbrudt. Bruger nu ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Du er ved at åbne et link i en ny fane. Vær sikker på, at webstedet er troværdigt, før du fortsætter."
@@ -3592,6 +3637,9 @@
       ],
       "Does not repeat": [
         "Gentages ikke"
+      ],
+      "Don’t show this message again": [
+        "Vis ikke igen"
       ],
       "Download .ics": [
         "Download .ics"
@@ -4287,6 +4335,9 @@
       "Meeting": [
         "Møde"
       ],
+      "Meeting actions": [
+        "Mødehandlinger"
+      ],
       "Meeting created": [
         "Møde oprettet"
       ],
@@ -4334,6 +4385,9 @@
       ],
       "Publications": [
         "Publikationer"
+      ],
+      "Quick reactions": [
+        "Hurtige reaktioner"
       ],
       "Reconnection Testing": [
         "Test af genoprettelse af forbindelsen"
