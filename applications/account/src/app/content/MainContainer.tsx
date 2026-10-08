@@ -208,7 +208,6 @@ const MainContainer = () => {
     const { viewportWidth } = useActiveBreakpoint();
 
     const showThemeSelection = useShowThemeSelection();
-    const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
@@ -304,7 +303,6 @@ const MainContainer = () => {
 
     const flags: Flags = {
         canDisplayNonPrivateEmailPhone,
-        isUserGroupsNoCustomDomainEnabled,
         isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
         isZoomIntegrationEnabled: !isZoomIntegrationDisabled,
         isProtonMeetIntegrationEnabled,

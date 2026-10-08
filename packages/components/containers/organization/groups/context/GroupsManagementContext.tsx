@@ -31,13 +31,11 @@ import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/fo
 import type { EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces/GroupMember';
-import { useFlag } from '@proton/unleash/useFlag';
 import setsContainSameElements from '@proton/utils/setsContainSameElements';
 
 import Loader from '../../../../components/loader/Loader';
 import useErrorHandler from '../../../../hooks/useErrorHandler';
 import { useResumeRoleAssignment } from '../../../members/rolesAndPermissions/useResumeRoleAssignment';
-import canUseGroups from '../canUseGroups';
 import useGroupAvailableAddressDomains from '../hooks/useGroupAvailableAddressDomains';
 import shouldShowMail from '../shouldShowMail';
 import { GROUPS_RESTRICTION_REASON, GROUPS_STATE } from '../types';
@@ -58,7 +56,6 @@ const INITIAL_FORM_VALUES = (organization?: Organization): GroupFormData => ({
 
 const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const [organization] = useOrganization();
-    const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
     const [entitlements, loadingEntitlements] = useEntitlementChecks();
 
     const handleError = useErrorHandler();
@@ -104,7 +101,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         }
     };
     const [groupsProtonMeDomain] = useGroupsProtonMeDomain();
-    const { primarySuggestion, invalidGroupSuggestion, loading: loadingDomains } = useGroupAvailableAddressDomains();
+    const { primarySuggestion, loading: loadingDomains } = useGroupAvailableAddressDomains();
 
     const addressToMemberMap = useMemo(() => {
         const value: { [id: string]: EnhancedMember | undefined } = {};
@@ -450,12 +447,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         });
 
     const getRestrictedBy = (): GroupsRestriction => {
-        const isPlanUnsupported =
-            (invalidGroupSuggestion && filteredGroups.length > 0) ||
-            !canUseGroups(organization.PlanName, {
-                orgHasGroupsEntitlement: entitlements.orgHasGroups,
-                isUserGroupsNoCustomDomainEnabled,
-            });
+        const isPlanUnsupported = !entitlements.orgHasGroups;
 
         if (isPlanUnsupported) {
             return { reason: GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED };

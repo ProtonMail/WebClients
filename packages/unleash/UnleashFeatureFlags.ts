@@ -13,7 +13,6 @@ enum AccountB2BFeatureFlag {
     SsoForPbs = 'SsoForPbs',
     SyncOwnerRoleClientKillSwitch = 'SyncOwnerRoleClientKillSwitch',
     UserGroupsGroupOwner = 'UserGroupsGroupOwner',
-    UserGroupsNoCustomDomain = 'UserGroupsNoCustomDomain',
     UserGroupsScimGroups = 'UserGroupsScimGroups',
 }
 

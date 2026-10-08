@@ -13,7 +13,6 @@ import type { EnhancedGroup, Group } from '@proton/shared/lib/interfaces';
 
 import GroupItem from './GroupItem';
 import { useGroupsManagement } from './context/GroupsManagementContext';
-import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
 import { GROUPS_RESTRICTION_REASON, GROUPS_STATE, PANEL_HEADER_HEIGHT } from './types';
 
 // Sort by natural order e.g. [1, 10, 11, 2] -> [1, 2, 10, 11]
@@ -32,11 +31,9 @@ const getSortedGroups = (input: string, groups: EnhancedGroup[]) => {
 
 const GroupList = () => {
     const { restrictedBy, uiState, groups, selectedGroup, actions, getSerializedGroup } = useGroupsManagement();
-    const { hasUsableDomain } = useGroupAvailableAddressDomains();
     const [{ permissions }] = useUserPermissions();
     const canCreateGroup =
         !!permissions?.['account.group.create'] &&
-        hasUsableDomain &&
         [GROUPS_RESTRICTION_REASON.NONE, GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT].includes(
             restrictedBy.reason
         );

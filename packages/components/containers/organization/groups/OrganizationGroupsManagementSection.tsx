@@ -17,7 +17,6 @@ import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import SettingsLink from '../../../components/link/SettingsLink';
 import SettingsPageTitle from '../../account/SettingsPageTitle';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
@@ -29,7 +28,6 @@ import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import ScimSetupBannerAndModal from '../ScimSetupBannerAndModal';
 import GroupsMemberManagementPanel from './components/GroupsMemberManagementPanel';
 import { useGroupsManagement, withGroupsManagementContext } from './context/GroupsManagementContext';
-import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
 import shouldShowMail from './shouldShowMail';
 import { GROUPS_RESTRICTION_REASON } from './types';
 
@@ -55,8 +53,6 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
 
     const canShowAdminRolesModal =
         adminRolesUIState === AdminRolesUIState.Enabled && !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
-
-    const { hasUsableDomain, invalidGroupSuggestion } = useGroupAvailableAddressDomains();
 
     useEffect(() => {
         // On plans without the groups feature (e.g. Pass Essentials, shown as an upsell
@@ -109,10 +105,6 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
         );
     }
 
-    const linkToDomainPage = (
-        <SettingsLink key="link-to-domain-page" path="/domain-names">{c('Action').t`Domain name`}</SettingsLink>
-    );
-
     const showMailFeatures = shouldShowMail(organization?.PlanName);
     const mailDescription = c('Info')
         .t`With groups, you can quickly and easily send emails to all the people in a specified group.`;
@@ -126,12 +118,6 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
                 <SettingsParagraph className="flex flex-column flex-nowrap" learnMoreUrl={groupsKbUrl}>
                     {showMailFeatures ? mailDescription : genericDescription}
                 </SettingsParagraph>
-                {!hasUsableDomain && (
-                    <SettingsParagraph>
-                        {c('Info')
-                            .jt`A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${linkToDomainPage}.`}
-                    </SettingsParagraph>
-                )}
             </div>
 
             {restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED ? (
@@ -149,17 +135,13 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
                 <ScimSetupBannerAndModal />
             )}
 
-            {(hasUsableDomain || invalidGroupSuggestion) && (
-                <>
-                    <RoleAssignmentPausedBanner
-                        roleAssignmentSource={ROLE_SOURCE.GROUP}
-                        pausedCount={groups.filter((group) => group.requiresOrgKeyPromotion).length}
-                        isResuming={restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT}
-                        onToggle={() => actions.onToggleRoleAssignments()}
-                    />
-                    <GroupsMemberManagementPanel />
-                </>
-            )}
+            <RoleAssignmentPausedBanner
+                roleAssignmentSource={ROLE_SOURCE.GROUP}
+                pausedCount={groups.filter((group) => group.requiresOrgKeyPromotion).length}
+                isResuming={restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT}
+                onToggle={() => actions.onToggleRoleAssignments()}
+            />
+            <GroupsMemberManagementPanel />
             <AdminRolesOnboardingModal
                 variant="group"
                 open={canShowAdminRolesModal}
