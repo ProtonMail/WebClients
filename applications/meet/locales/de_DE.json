@@ -794,9 +794,6 @@
       "Use camera": [
         "Kamera verwenden"
       ],
-      "Use it": [
-        "Einsetzen"
-      ],
       "Use microphone": [
         "Mikrofon benutzen"
       ],
@@ -992,8 +989,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Desktopanwendung"
+      "${ appName } Desktop application": [
+        "${ appName } Desktopanwendung"
       ]
     },
     "Bug category": {
@@ -2637,9 +2634,6 @@
       " and ": [
         " und "
       ],
-      "${ deviceLabel } is available again": [
-        "${ deviceLabel } ist wieder verfügbar"
-      ],
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants } Teilnehmerlimit erreicht"
       ],
@@ -3143,6 +3137,15 @@
       "notify everyone here": [
         "Alle hier benachrichtigen"
       ],
+      "Now using ${ first } and ${ second }.": [
+        "Jetzt werden ${ first } und ${ second } verwendet."
+      ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "Jetzt werden ${ first }, ${ second } und ${ third } verwendet."
+      ],
+      "Now using ${ first }.": [
+        "Jetzt verwendet ${ first }."
+      ],
       "Only meetings you created appear here": [
         "Nur Meetings, die du erstellt hast, werden hier angezeigt"
       ],
@@ -3265,6 +3268,27 @@
       ],
       "Select a speaker": [
         "Lautsprecher auswählen"
+      ],
+      "Selected camera has disconnected.": [
+        "Die Verbindung zur ausgewählten Kamera wurde getrennt."
+      ],
+      "Selected devices have disconnected.": [
+        "Die Verbindung zu den ausgewählten Geräten wurde getrennt."
+      ],
+      "Selected microphone and camera have disconnected.": [
+        "Das ausgewählte Mikrofon und die ausgewählte Kamera wurden getrennt."
+      ],
+      "Selected microphone and speaker have disconnected.": [
+        "Die Verbindungen zum ausgewählten Mikrofon und Lautsprecher wurden getrennt."
+      ],
+      "Selected microphone has disconnected.": [
+        "Die Verbindung zum ausgewählten Mikrofon wurde getrennt."
+      ],
+      "Selected speaker and camera have disconnected.": [
+        "Die Verbindung zum gewählten Lautsprecher und zur Kamera wurde getrennt."
+      ],
+      "Selected speaker has disconnected.": [
+        "Die Verbindung zum ausgewählten Lautsprecher wurde getrennt."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -3503,38 +3527,14 @@
       "Your browser or device isn’t supported": [
         "Dein Browser oder Gerät wird nicht unterstützt"
       ],
-      "Your camera was disconnected. Now using ${ deviceLabel }.": [
-        "Deine Kamera wurde getrennt. Es wird nun ${ deviceLabel } verwendet."
-      ],
-      "Your device was disconnected. Now using ${ deviceLabel }.": [
-        "Dein Gerät wurde getrennt. Es wird nun ${ deviceLabel } verwendet."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your meeting is ready": [
         "Dein Meeting ist bereit"
       ],
-      "Your microphone and camera were disconnected. Now using other devices.": [
-        "Dein Mikrofon und deine Kamera wurden getrennt. Es werden nun andere Geräte verwendet."
-      ],
-      "Your microphone and speaker were disconnected. Now using other devices.": [
-        "Dein Mikrofon und dein Lautsprecher wurden getrennt. Es werden nun andere Geräte verwendet."
-      ],
-      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
-        "Dein Mikrofon wurde getrennt. Es wird nun ${ deviceLabel } verwendet."
-      ],
-      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
-        "Dein Mikrofon, dein Lautsprecher und deine Kamera wurden getrennt. Es werden nun andere Geräte verwendet."
-      ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
-      ],
-      "Your speaker and camera were disconnected. Now using other devices.": [
-        "Dein Lautsprecher und deine Kamera wurden getrennt. Es werden nun andere Geräte verwendet."
-      ],
-      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
-        "Dein Lautsprecher wurde getrennt. Es wird nun ${ deviceLabel } verwendet."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Du bist dabei, einen Link in einem neuen Tab zu öffnen. Stelle sicher, dass du der Website vertraust, bevor du fortfährst."

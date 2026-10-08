@@ -794,9 +794,6 @@
       "Use camera": [
         "Kamerayı aç"
       ],
-      "Use it": [
-        "Onu kullan"
-      ],
       "Use microphone": [
         "Mikrofonu aç"
       ],
@@ -992,8 +989,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      "${ appName } Desktop application": [
+        "${ appName } bilgisayar uygulaması"
       ]
     },
     "Bug category": {
@@ -2637,9 +2634,6 @@
       " and ": [
         " ve "
       ],
-      "${ deviceLabel } is available again": [
-        "${ deviceLabel } yeniden kullanılabilir oldu"
-      ],
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants } katılımcı sınırına ulaşıldı"
       ],
@@ -3143,6 +3137,15 @@
       "notify everyone here": [
         "buradaki herkese bildir"
       ],
+      "Now using ${ first } and ${ second }.": [
+        "Şu anda ${ first } ve ${ second } kullanılıyor."
+      ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "Şu anda ${ first }, ${ second } ve ${ third } kullanılıyor."
+      ],
+      "Now using ${ first }.": [
+        "Şu anda ${ first } kullanılıyor."
+      ],
       "Only meetings you created appear here": [
         "Burada yalnızca sizin oluşturduğunuz görüşmeler görüntülenir"
       ],
@@ -3265,6 +3268,27 @@
       ],
       "Select a speaker": [
         "Hoparlör seçin"
+      ],
+      "Selected camera has disconnected.": [
+        "Seçilmiş kameranın bağlantısı kesildi."
+      ],
+      "Selected devices have disconnected.": [
+        "Seçilmiş aygıtların bağlantısı kesildi."
+      ],
+      "Selected microphone and camera have disconnected.": [
+        "Seçilmiş mikrofonun ve kameranın bağlantısı kesildi."
+      ],
+      "Selected microphone and speaker have disconnected.": [
+        "Seçilmiş mikrofonun ve hoparlörün bağlantısı kesildi."
+      ],
+      "Selected microphone has disconnected.": [
+        "Seçilmiş mikrofonun bağlantısı kesildi."
+      ],
+      "Selected speaker and camera have disconnected.": [
+        "Seçilmiş hoparlörün ve kameranın bağlantısı kesildi."
+      ],
+      "Selected speaker has disconnected.": [
+        "Seçilmiş hoparlörün bağlantısı kesildi."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
@@ -3503,38 +3527,14 @@
       "Your browser or device isn’t supported": [
         "Tarayıcınız veya aygıtınız desteklenmiyor"
       ],
-      "Your camera was disconnected. Now using ${ deviceLabel }.": [
-        "Kameranızın bağlantısı kesildi. Şimdi ${ deviceLabel } kullanılıyor."
-      ],
-      "Your device was disconnected. Now using ${ deviceLabel }.": [
-        "Aygıtınızın bağlantısı kesildi. Şimdi ${ deviceLabel } kullanıyor."
-      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
       "Your meeting is ready": [
         "Görüşmeniz hazır"
       ],
-      "Your microphone and camera were disconnected. Now using other devices.": [
-        "Mikrofonunuzun ve kameranızın bağlantısı kesildi. Şimdi diğer aygıtlar kullanılıyor."
-      ],
-      "Your microphone and speaker were disconnected. Now using other devices.": [
-        "Mikrofonunuzun ve hoparlörünüzün bağlantısı kesildi. Şimdi diğer aygıtlar kullanılıyor."
-      ],
-      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
-        "Mikrofonunuzun bağlantısı kesildi. Şimdi ${ deviceLabel } kullanılıyor."
-      ],
-      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
-        "Mikrofonunuzun, hoparlörünüzün ve kameranızın bağlantısı kesildi. Şimdi diğer aygıtlar kullanılıyor."
-      ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your speaker and camera were disconnected. Now using other devices.": [
-        "Hoparlörünüzün ve kameranızın bağlantısı kesildi. Şimdi diğer aygıtlar kullanılıyor."
-      ],
-      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
-        "Hoparlörünüzün bağlantısı kesildi. Şimdi ${ deviceLabel } kullanılıyor."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Bir bağlantıyı yeni bir sekmede açmak üzeresiniz. İlerlemeden önce siteye güvendiğinizden emin olun."

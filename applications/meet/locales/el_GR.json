@@ -794,9 +794,6 @@
       "Use camera": [
         "Χρήση κάμερας"
       ],
-      "Use it": [
-        "Χρησιμοποιήστε το"
-      ],
       "Use microphone": [
         "Χρήση μικροφώνου"
       ],
@@ -992,8 +989,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
+      "${ appName } Desktop application": [
+        "${ appName } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Bug category": {
@@ -2637,9 +2634,6 @@
       " and ": [
         " και "
       ],
-      "${ deviceLabel } is available again": [
-        "Το ${ deviceLabel } είναι ξανά διαθέσιμο"
-      ],
       "${ maxParticipants } participant limit reached": [
         "Έχει συμπληρωθεί το όριο των ${ maxParticipants } συμμετεχόντων."
       ],
@@ -3143,6 +3137,15 @@
       "notify everyone here": [
         "ενημέρωσε όλους εδώ."
       ],
+      "Now using ${ first } and ${ second }.": [
+        "Τώρα χρησιμοποιούνται τα ${ first } και ${ second }."
+      ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "Τώρα χρησιμοποιούνται τα ${ first }, ${ second } και ${ third }."
+      ],
+      "Now using ${ first }.": [
+        "Τώρα χρησιμοποιείται το ${ first }."
+      ],
       "Only meetings you created appear here": [
         "Εδώ εμφανίζονται μόνο οι συσκέψεις που έχετε δημιουργήσει εσείς"
       ],
@@ -3265,6 +3268,27 @@
       ],
       "Select a speaker": [
         "Επιλέξτε έναν ομιλητή"
+      ],
+      "Selected camera has disconnected.": [
+        "Η επιλεγμένη κάμερα αποσυνδέθηκε."
+      ],
+      "Selected devices have disconnected.": [
+        "Οι επιλεγμένες συσκευές αποσυνδέθηκαν."
+      ],
+      "Selected microphone and camera have disconnected.": [
+        "Το επιλεγμένο μικρόφωνο και η κάμερα αποσυνδέθηκαν."
+      ],
+      "Selected microphone and speaker have disconnected.": [
+        "Το επιλεγμένο μικρόφωνο και το ηχείο αποσυνδέθηκαν."
+      ],
+      "Selected microphone has disconnected.": [
+        "Το επιλεγμένο μικρόφωνο αποσυνδέθηκε."
+      ],
+      "Selected speaker and camera have disconnected.": [
+        "Το επιλεγμένο μικρόφωνο και το ηχείο αποσυνδέθηκαν."
+      ],
+      "Selected speaker has disconnected.": [
+        "Το επιλεγμένο ηχείο αποσυνδέθηκε."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -3503,38 +3527,14 @@
       "Your browser or device isn’t supported": [
         "Το πρόγραμμα περιήγησης ή η συσκευή σας δεν υποστηρίζεται"
       ],
-      "Your camera was disconnected. Now using ${ deviceLabel }.": [
-        "Η κάμερά σας αποσυνδέθηκε. Τώρα χρησιμοποιείται το ${ deviceLabel }."
-      ],
-      "Your device was disconnected. Now using ${ deviceLabel }.": [
-        "Η συσκευή σας αποσυνδέθηκε. Τώρα χρησιμοποιείται το ${ deviceLabel }."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
       "Your meeting is ready": [
         "Η σύσκεψή σας είναι έτοιμη"
       ],
-      "Your microphone and camera were disconnected. Now using other devices.": [
-        "Το μικρόφωνο και η κάμερά σας αποσυνδέθηκαν. Χρησιμοποιούνται τώρα άλλες συσκευές."
-      ],
-      "Your microphone and speaker were disconnected. Now using other devices.": [
-        "Το μικρόφωνο και το ηχείο σας αποσυνδέθηκαν. Χρησιμοποιούνται τώρα άλλες συσκευές."
-      ],
-      "Your microphone was disconnected. Now using ${ deviceLabel }.": [
-        "Το μικρόφωνό σας αποσυνδέθηκε. Τώρα χρησιμοποιείται το ${ deviceLabel }."
-      ],
-      "Your microphone, speaker and camera were disconnected. Now using other devices.": [
-        "Το μικρόφωνο, το ηχείο και η κάμερά σας αποσυνδέθηκαν. Χρησιμοποιούνται τώρα άλλες συσκευές."
-      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
-      ],
-      "Your speaker and camera were disconnected. Now using other devices.": [
-        "Το ηχείο και η κάμερά σας αποσυνδέθηκαν. Χρησιμοποιούνται τώρα άλλες συσκευές."
-      ],
-      "Your speaker was disconnected. Now using ${ deviceLabel }.": [
-        "Το ηχείο σας αποσυνδέθηκε. Τώρα χρησιμοποιείται το ${ deviceLabel }."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Είστε έτοιμοι να ανοίξετε έναν σύνδεσμο σε νέα καρτέλα. Βεβαιωθείτε ότι εμπιστεύεστε τον ιστότοπο πριν συνεχίσετε."
