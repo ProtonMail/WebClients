@@ -677,8 +677,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      "${ appName } Desktop application": [
+        "${ appName } bilgisayar uygulaması"
       ]
     },
     "Bug category": {
@@ -1120,9 +1120,6 @@
       "Continue": [
         "İlerle"
       ],
-      "Create artifact": [
-        "Yapıt oluştur"
-      ],
       "Create image": [
         "Görsel oluştur"
       ],
@@ -1345,6 +1342,9 @@
       ],
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "İlerlediğinizde, model menüsünde seçilmiş model olarak Apertus görüntülenir. Bu menüden istediğiniz zaman başka bir modele geçebilirsiniz."
+      ],
+      "Allow ${ LUMO_SHORT_APP_NAME } to create artifacts in the side panel when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
+        "Uygun olduğunda ${ LUMO_SHORT_APP_NAME } tarafından yan panoda eserler oluşturulmasına izin verin. Bu davranış, tüm sohbetler için varsayılandır. Araçlar menüsünden tek bir sohbet için değiştirebilirsiniz."
       ],
       "Always enable web search for new conversations": [
         "Yeni yazışmalarda internet araması her zaman açık olsun"
@@ -1962,6 +1962,9 @@
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Günlük API çağrısı başına ortalama kod sayısı (kod sayısı ÷ çağrı sayısı; çağrı yoksa 0)."
+      ],
+      "For this chat": [
+        "Bu sohbet için"
       ],
       "Free accounts keep chat history for 7 days from when a chat was created.": [
         "Ücretsiz hesaplarda, sohbet geçmişi sohbetin oluşturulmasından 7 gün sonrasına kadar saklanır."
@@ -2671,8 +2674,26 @@
       ]
     },
     "collider_2025: Spotlight": {
+      "Artifacts are now on by default": [
+        "Yapıtlar artık varsayılan olarak açık"
+      ],
       "Create artifacts with ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } ile yapıtlar oluşturun"
+      ],
+      "Longer documents, code and slides open here so you can edit and download them.": [
+        "Daha uzun belgeler, kod ve sunumlar burada açılır. Böylece bunları düzenleyebilir ve indirebilirsiniz."
+      ],
+      "Longer documents, code and slides open here so you can edit, download or save them to Drive.": [
+        "Daha uzun belgeler, kod ve sunumlar burada açılır. Böylece bunları düzenleyebilir, indirebilir veya Drive üzerine kaydedebilirsiniz."
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat, or in ${ settings } for all chats.": [
+        "Bunu durdurmak için, bu sohbet için ${ tools } veya tüm sohbetler için ${ settings } içinde ${ createArtifact } özelliğini kapatın."
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat.": [
+        "Bunu durdurmak için, bu sohbet için ${ tools } içinden ${ createArtifact } özelliğini kapatın."
       ],
       "Turn ideas into documents, code, and more. Open Tools to get started.": [
         "Fikirlerinizi belgelere, kodlara ve diğer şeylere dönüştürün. Başlamak için araçlar bölümünü açın."
@@ -2786,6 +2807,9 @@
       ],
       "Auto update memory": [
         "Bellek otomatik olarak güncellensin"
+      ],
+      "Automatic Create Artifact": [
+        "Otomatik yapıt oluştur"
       ],
       "Automatic web search": [
         "Otomatik internet araması"
@@ -3561,20 +3585,6 @@
       ],
       "Writing Assistant": [
         "Yazma yardımcısı"
-      ]
-    },
-    "collider_2025:Artifact placeholder": {
-      "Create a 5-slide deck on password managers with a bar chart": [
-        "Parola yöneticileri ile ilgili bir çubuk çizelgenin bulunduğu 5 slaytlık bir sunum hazırla"
-      ],
-      "Create a self-contained HTML pomodoro timer": [
-        "Bağımsız bir HTML Pomodoro zamanlayıcısı oluştur"
-      ],
-      "Write a professional email declining a meeting": [
-        "Toplantı davetini profesyonelce reddetmek için bir e-posta yaz"
-      ],
-      "Write a Python script to dedupe a CSV by email": [
-        "CSV dosyasını e-posta ile tekilleştirmek için bir Python betiği yaz"
       ]
     },
     "collider_2025:Badge": {
@@ -9913,7 +9923,7 @@
         "Siber tehditlere karşı gelişmiş koruma"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret üzerinden yenilenir."
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
       ]
     },
     "q3campaign2026: Info, Calendar first": {
@@ -10743,7 +10753,7 @@
         "Geçerli tarifenizdeki tüm ücretli özellikler"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret ile yenilenir."
       ]
     },
     "tryduo2026: Title": {

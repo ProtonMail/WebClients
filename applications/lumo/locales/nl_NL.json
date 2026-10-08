@@ -658,11 +658,6 @@
         "Jaarlijks"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktop-app"
-      ]
-    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } probleem"
@@ -1081,9 +1076,6 @@
       "Continue": [
         "Doorgaan"
       ],
-      "Create artifact": [
-        "Maak een artefact"
-      ],
       "Create image": [
         "maak afbeelding"
       ],
@@ -1245,6 +1237,9 @@
       ],
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Voeg uw eigen herinneringen toe, bewerk automatisch gegenereerde gegevens of wis alles op elk gewenst moment. Gegenereerde herinneringen die u bewerkt, worden gepromoveerd tot uw eigen herinneringen."
+      ],
+      "Allow ${ LUMO_SHORT_APP_NAME } to create artifacts in the side panel when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
+        "Sta ${ LUMO_SHORT_APP_NAME } toe om indien nodig artefacten in het zijpaneel te maken. Dit is de standaard voor alle chats; u kunt dit voor een enkele chat wijzigen via het menu Extra."
       ],
       "Always enable web search for new conversations": [
         "Schakel web zoeken altijd in voor nieuwe gesprekken"
@@ -1792,6 +1787,9 @@
       ],
       "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
         "Gemiddeld aantal tokens per API-aanroep per dag (tokens ÷ aanroepen, of 0 indien geen aanroepen)."
+      ],
+      "For this chat": [
+        "Voor dit gesprek"
       ],
       "Free accounts keep chat history for 7 days from when a chat was created.": [
         "Gratis accounts bewaren de chatgeschiedenis gedurende 7 dagen vanaf het moment dat een chat is gemaakt."
@@ -2437,6 +2435,26 @@
         "Personalisatie"
       ]
     },
+    "collider_2025: Spotlight": {
+      "Artifacts are now on by default": [
+        "Artefacten zijn nu standaard ingeschakeld"
+      ],
+      "Longer documents, code and slides open here so you can edit and download them.": [
+        "Langere documenten, code en dia's worden hier geopend, zodat u ze kunt bewerken en downloaden."
+      ],
+      "Longer documents, code and slides open here so you can edit, download or save them to Drive.": [
+        "Langere documenten, code en dia's worden hier geopend, zodat u ze kunt bewerken, downloaden of opslaan in Drive."
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat, or in ${ settings } for all chats.": [
+        "Om dit te stoppen, schakelt u ${ createArtifact } uit in ${ tools } voor deze chat, of in ${ settings } voor alle chats."
+      ],
+      "To stop this, turn off ${ createArtifact } in ${ tools } for this chat.": [
+        "Om dit te stoppen, schakelt u ${ createArtifact } uit in ${ tools } voor deze chat."
+      ]
+    },
     "collider_2025: Status": {
       "Active": [
         "Actief"
@@ -2545,6 +2563,9 @@
       ],
       "Auto update memory": [
         "Geheugen automatisch bijwerken"
+      ],
+      "Automatic Create Artifact": [
+        "Artefact Automatisch Aanmaken"
       ],
       "Automatic web search": [
         "Automatisch zoeken op internet"
