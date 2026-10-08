@@ -1386,6 +1386,9 @@
       ],
       "Switch to ${ planName }": [
         "Skift til ${ planName }"
+      ],
+      "Detach": [
+        "Fjern tilknytning"
       ]
     },
     "Action: Docs": {
@@ -1503,6 +1506,12 @@
       "${ quantity } custom domain": [
         "${ quantity } brugerdefineret domæne",
         "${ quantity } brugerdefinerede domæner"
+      ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisationer med tilføjelsen Managed Service Provider kan oprette og administrere underorganisationer."
       ]
     },
     "Alert": {
@@ -1793,6 +1802,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } skrivebordsapp"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } skrivebordsapp"
       ]
     },
     "Bug category": {
@@ -4546,6 +4558,9 @@
       ],
       "Incorrect second password. Please try again.": [
         "Forkert anden adgangskode. Prøv igen."
+      ],
+      "Not enough browser storage": [
+        "Ikke nok lagerplads i browseren"
       ]
     },
     "error": {
@@ -8080,6 +8095,9 @@
       ],
       "No payment is required.": [
         "Der kræves ingen betaling."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Midlertidigt utilgængelig på grund af høj efterspørgsel. Prøv igen senere."
       ]
     },
     "info": {
