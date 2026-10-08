@@ -11,6 +11,7 @@ import type { LumoDispatch, LumoState } from '../store';
 import type { LumoThunkArguments } from '../thunk';
 import { updateLumoUserSettingsWithAutoSave } from './lumoUserSettingsActions';
 import type { LumoUserSettings, Memory } from './lumoUserSettingsTypes';
+import { setRemoteUserSettingsUndecryptable } from './meta/initialization';
 
 /**
  * Atomically merges `generated` into the latest persisted memories, resetting the
@@ -48,6 +49,21 @@ export const saveLumoUserSettingsToRemote = createAsyncThunk<void, LumoUserSetti
 
         if (!masterKey) {
             throw new Error('Master key not available');
+        }
+
+        if (state.initialization.remoteUserSettingsUndecryptable) {
+            // The remote blob exists but couldn't be decrypted with any key we have (see
+            // `setRemoteUserSettingsUndecryptable`). Saving now would PUT the current (default)
+            // settings over it, permanently destroying data that could still come back if the
+            // user's old account keys are ever recovered through some other path. This is a brief
+            // window, not a permanent lockout: `useDataLossWarningNotification` clears the flag as
+            // soon as the user has been told their data is gone, at which point saves resume
+            // normally. Until then, settings keep working locally for this session; they just
+            // don't round-trip to the server.
+            safeLogger.warn(
+                'Skipping remote user settings save: existing remote blob is undecryptable and must not be overwritten'
+            );
+            return;
         }
 
         try {
@@ -88,7 +104,7 @@ export const loadLumoUserSettingsFromRemote = createAsyncThunk<
     LumoUserSettings | null,
     void,
     { extra: LumoThunkArguments }
->('lumoUserSettings/loadFromRemote', async (_, { extra, getState }) => {
+>('lumoUserSettings/loadFromRemote', async (_, { extra, getState, dispatch }) => {
     const { lumoApi } = extra;
     const state = getState() as LumoState;
     const masterKeysBundle = selectMasterKeysBundle(state);
@@ -109,6 +125,10 @@ export const loadLumoUserSettingsFromRemote = createAsyncThunk<
             );
 
             if (userSettings) {
+                // We got something decryptable, so whatever earlier undecryptable state we were in
+                // no longer applies — it's now safe to save again.
+                dispatch(setRemoteUserSettingsUndecryptable(false));
+
                 const isCoreProtonSettings = 'Email' in userSettings && 'Phone' in userSettings;
                 const isLumoSettings = 'theme' in userSettings && 'personalization' in userSettings;
 
@@ -132,7 +152,13 @@ export const loadLumoUserSettingsFromRemote = createAsyncThunk<
                     return null;
                 }
             } else {
+                // A blob exists server-side but none of our master keys could decrypt it —
+                // typically a password reset without data recovery minted a new master key (see
+                // LUMO-853). The old keys might still come back through some other recovery path,
+                // and the server never deletes the old envelope/blob, so guard against an
+                // auto-save clobbering it until a future load actually succeeds.
                 console.log('LumoUserSettingsThunks: Deserialization returned null/undefined');
+                dispatch(setRemoteUserSettingsUndecryptable(true));
             }
         } else {
             console.log('LumoUserSettingsThunks: No serialized user settings received from API');
