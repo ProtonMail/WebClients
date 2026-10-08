@@ -55,7 +55,7 @@ export class GetDocumentKeys implements UseCaseInterface<GetDocumentKeysResult> 
         : this.compatWrapper.getCompat<DriveCompat>().getDocumentKeys(nodeMeta)
       const addressWithKeysPromise = primaryAddressKeys
         ? Promise.resolve(primaryAddressKeys)
-        : this.compatWrapper.getCompat<DriveCompat>().getPrimaryAddressKeys()
+        : this.compatWrapper.getCompat<DriveCompat>().getMemberAddressKeys(nodeMeta)
       const [documentContentKey, addressWithKeys] = await Promise.all([
         documentContentKeyPromise,
         addressWithKeysPromise,
@@ -103,7 +103,7 @@ export class GetDocumentKeys implements UseCaseInterface<GetDocumentKeysResult> 
     }
 
     const addressWithKeys =
-      primaryAddressKeys ?? (await this.compatWrapper.getCompat<DriveCompat>().getPrimaryAddressKeys())
+      primaryAddressKeys ?? (await this.compatWrapper.getCompat<DriveCompat>().getMemberAddressKeys(nodeMeta))
     if (!addressWithKeys) {
       return Result.fail('No primary address keys found')
     }

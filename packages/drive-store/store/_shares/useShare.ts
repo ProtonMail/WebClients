@@ -199,9 +199,8 @@ export default function useShare() {
     };
 
     /**
-     * getShareCreatorKeys returns the share creator address' keys
+     * getShareCreatorKeys returns your own member address' keys for the share
      * TODO: Change this function name as it doesn't fetch creator key but your own member keys for that share
-     * Also share.adressId can be null
      */
     const getShareCreatorKeys = async (abortSignal: AbortSignal, shareIdOrShare: string | ShareWithKey) => {
         const share =
