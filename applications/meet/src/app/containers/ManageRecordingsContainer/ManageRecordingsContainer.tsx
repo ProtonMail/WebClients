@@ -25,9 +25,9 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConfirmationModal } from '../../components/ConfirmationModal/ConfirmationModal';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
+import { useRecordingDownload } from '../../hooks/useMeetingRecorder/hooks/useRecordingDownload';
 import {
     deleteOpfsRecording,
-    downloadOpfsRecording,
     isDownloadAborted,
     listAllOpfsRecordings,
     listOpfsRecordings,
@@ -39,6 +39,7 @@ const formatDate = (timestamp: number) =>
 
 export const ManageRecordingsContainer = () => {
     const dispatch = useMeetDispatch();
+    const { downloadRecording } = useRecordingDownload();
 
     const { createNotification } = useNotifications();
     const { reportMeetError } = useMeetErrorReporting();
@@ -67,10 +68,7 @@ export const ManageRecordingsContainer = () => {
 
     const handleDownload = async (recording: OpfsRecording) => {
         try {
-            await downloadOpfsRecording(recording);
-            sendMeetDashboardEvent(TelemetryMeetDashboardEvents.recording_downloaded, {
-                sizeBucket: getRecordingSizeBucket(recording.size),
-            });
+            await downloadRecording(recording);
         } catch (error) {
             if (isDownloadAborted(error)) {
                 return;

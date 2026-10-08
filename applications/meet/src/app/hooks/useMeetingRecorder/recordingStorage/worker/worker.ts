@@ -1,5 +1,9 @@
+import { CryptoProxy, type SessionKey } from '@protontech/crypto';
+
 import { createWorkerLogger } from '../../workerLogger';
 import {
+    type FinalizeResponseData,
+    type RecordingEncryption,
     StorageMessageType,
     type StorageWorkerMessage,
     type StorageWorkerResponse,
@@ -8,103 +12,158 @@ import {
 
 const logger = createWorkerLogger('MeetingRecorder/recordingWorker');
 
-interface FileSystemSyncAccessHandle {
-    write(buffer: ArrayBuffer | ArrayBufferView, options?: { at?: number }): number;
-    read(buffer: ArrayBuffer | ArrayBufferView, options?: { at?: number }): number;
-    flush(): void;
-    close(): void;
-    getSize(): number;
-    truncate(newSize: number): void;
-}
-
 const isQuotaExceededError = (error: unknown): boolean =>
     error instanceof DOMException && error.name === 'QuotaExceededError';
 
-// Persists recorded chunks into OPFS. Today this writes one file per session.
-// When we add multi-file rotation + recovery, the public API stays the same:
-// `finalize()` returns the ordered list of files for the session.
+const encryptRecordingStream = async (dataStream: ReadableStream<Uint8Array<ArrayBuffer>>, sessionKey: SessionKey) => {
+    const { messageStream } = await CryptoProxy.encryptMessageStream({
+        binaryDataStream: dataStream,
+        sessionKey,
+        format: 'binary',
+    });
+    return messageStream;
+};
+
+interface OPFSWorkerStorageOptions {
+    onStorageFull: (hasWrittenData: boolean) => void;
+    onWriteError: (error: unknown, hasWrittenData: boolean) => void;
+}
+
+// Persists recorded chunks into a single OPFS file per session.
 class OPFSWorkerStorage {
+    private onStorageFull: (hasWrittenData: boolean) => void;
+    private onWriteError: (error: unknown, hasWrittenData: boolean) => void;
     private root: FileSystemDirectoryHandle | null = null;
     private fileHandle: FileSystemFileHandle | null = null;
-    private writable: FileSystemWritableFileStream | null = null;
     private syncAccessHandle: FileSystemSyncAccessHandle | null = null;
     private filePosition = 0;
     private fileExtension: string = 'webm';
     private fileName: string = '';
     private full = false;
+    private hasWrittenData = false;
+    private writerForDataStreamToEncrypt: WritableStreamDefaultWriter<Uint8Array<ArrayBuffer>> | null = null;
+    private readerForEncryptionStreamToStore: ReadableStreamDefaultReader<Uint8Array<ArrayBuffer>> | null = null;
+    private encryptionStreamReaderPromise: Promise<void> | null = null;
 
-    async init(fileExtension: string, userId: string): Promise<void> {
+    constructor({ onStorageFull, onWriteError }: OPFSWorkerStorageOptions) {
+        this.onStorageFull = onStorageFull;
+        this.onWriteError = onWriteError;
+    }
+
+    async init(fileExtension: string, folder: string, encryption?: RecordingEncryption): Promise<void> {
         this.fileExtension = fileExtension;
         this.fileName = `recording-${Date.now()}.${this.fileExtension}`;
 
+        if (encryption) {
+            // import CryptoApi dynamically on init to make sure the code does not spill outside of the worker;
+            // and so it's easier to catch any loading errors
+            const { Api: CryptoApi } = await import('@protontech/crypto/proxy/endpoint/api.ts');
+            CryptoApi.init({});
+            CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
+        }
+
         const root = await navigator.storage.getDirectory();
         // Namespace recordings under a per-user subdirectory.
-        this.root = await root.getDirectoryHandle(userId, { create: true });
+        this.root = await root.getDirectoryHandle(folder, { create: true });
 
         this.fileHandle = await this.root.getFileHandle(this.fileName, {
             create: true,
         });
 
-        if (typeof this.fileHandle.createSyncAccessHandle === 'function') {
-            this.syncAccessHandle = await this.fileHandle.createSyncAccessHandle();
-            this.filePosition = 0;
-        } else if (typeof this.fileHandle.createWritable === 'function') {
-            this.writable = await this.fileHandle.createWritable();
-        } else {
-            throw new Error('No supported OPFS write API available in worker');
-        }
-    }
-
-    async addChunk(chunkBuffer: ArrayBuffer, position?: number): Promise<boolean> {
-        if (this.full) {
-            return false;
+        if (typeof this.fileHandle.createSyncAccessHandle !== 'function') {
+            throw new Error('createSyncAccessHandle is not available in this worker');
         }
 
-        try {
-            if (this.syncAccessHandle) {
-                const at = position ?? this.filePosition;
-                const bytesWritten = this.syncAccessHandle.write(chunkBuffer, { at });
-                this.filePosition = Math.max(this.filePosition, at + bytesWritten);
-                this.syncAccessHandle.flush();
-            } else if (this.writable) {
-                if (position !== undefined) {
-                    await this.writable.write({ type: 'write', position, data: chunkBuffer });
-                } else {
-                    await this.writable.write(chunkBuffer);
+        this.syncAccessHandle = await this.fileHandle.createSyncAccessHandle();
+        this.filePosition = 0;
+
+        // TransformStreams are supported wherever createSyncAccessHandle, so polyfilling not needed
+        const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>, Uint8Array<ArrayBuffer>>();
+        this.writerForDataStreamToEncrypt = writable.getWriter();
+        const streamToStore = encryption ? await encryptRecordingStream(readable, encryption.sessionKey) : readable;
+
+        this.readerForEncryptionStreamToStore = streamToStore.getReader();
+        this.encryptionStreamReaderPromise = (async () => {
+            try {
+                while (true) {
+                    if (!this.readerForEncryptionStreamToStore) {
+                        throw new Error('Reader is undefined');
+                    }
+                    const { done, value: encryptedChunk } = await this.readerForEncryptionStreamToStore.read();
+                    if (done) {
+                        // closing ops done in `finally`
+                        break;
+                    }
+
+                    if (this.syncAccessHandle) {
+                        if (this.filePosition === 0 && encryption) {
+                            // prepend the session key
+                            this.filePosition += this.syncAccessHandle.write(encryption.encryptedSessionKey, {
+                                at: this.filePosition,
+                            });
+                        }
+                        const bytesWritten = this.syncAccessHandle.write(encryptedChunk, { at: this.filePosition });
+                        this.filePosition += bytesWritten;
+                        this.syncAccessHandle.flush();
+                        this.hasWrittenData = true;
+                    } else {
+                        throw new Error('No sync handle available');
+                    }
                 }
-            } else {
-                throw new Error('No writable stream or sync handle available');
+            } catch (error) {
+                await this.readerForEncryptionStreamToStore?.cancel().catch(() => {});
+                if (isQuotaExceededError(error)) {
+                    this.full = true; // the main thread is expected to call `finalize()`
+                    this.onStorageFull(this.hasWrittenData);
+                } else {
+                    logger.error('Error while writing the recording:', error);
+                    this.onWriteError(error, this.hasWrittenData);
+                }
+            } finally {
+                this.readerForEncryptionStreamToStore?.releaseLock();
+                this.readerForEncryptionStreamToStore = null;
+                this.syncAccessHandle?.close();
+                this.syncAccessHandle = null;
             }
-            return false;
-        } catch (error) {
-            if (isQuotaExceededError(error)) {
-                this.full = true;
-                return true;
-            }
-            throw error;
-        }
+        })();
     }
 
-    // Returns the names of the files that contain this recording, in order.
-    // Closes any pending write handles so the consumer can read them back.
-    async finalize(): Promise<{ fileNames: string[] }> {
-        if (this.writable) {
-            await this.writable.close();
-            this.writable = null;
-        } else if (this.syncAccessHandle) {
-            this.syncAccessHandle.flush();
-            this.syncAccessHandle.close();
-            this.syncAccessHandle = null;
+    async addChunk(chunkBuffer: ArrayBuffer): Promise<void> {
+        if (this.full) {
+            return;
         }
 
-        return { fileNames: [this.fileName] };
+        await this.writerForDataStreamToEncrypt?.write(new Uint8Array(chunkBuffer));
+    }
+
+    // Closes any pending write handles so the consumer can read them back.
+    async finalize(): Promise<FinalizeResponseData> {
+        // `close` will reject if readerForEncryptionStreamToStore was cancelled
+        await this.writerForDataStreamToEncrypt?.close().catch(() => {});
+        this.writerForDataStreamToEncrypt = null;
+        await this.encryptionStreamReaderPromise;
+
+        if (!this.hasWrittenData) {
+            await this.removeFile();
+            return { fileName: null };
+        }
+
+        return { fileName: this.fileName };
     }
 
     async clear(): Promise<void> {
-        if (this.writable) {
-            await this.writable.close();
-            this.writable = null;
-        } else if (this.syncAccessHandle) {
+        // `abort` rejects if the encryption stream reader was already cancelled
+        await this.writerForDataStreamToEncrypt?.abort().catch(() => {});
+        this.writerForDataStreamToEncrypt = null;
+        await this.readerForEncryptionStreamToStore?.cancel().catch(() => {});
+        this.readerForEncryptionStreamToStore = null;
+        await this.encryptionStreamReaderPromise?.catch(() => {});
+
+        await this.removeFile();
+    }
+
+    private async removeFile(): Promise<void> {
+        if (this.syncAccessHandle) {
             this.syncAccessHandle.close();
             this.syncAccessHandle = null;
         }
@@ -114,20 +173,22 @@ class OPFSWorkerStorage {
             this.fileHandle = null;
         }
     }
-
-    close(): void {
-        try {
-            if (this.syncAccessHandle) {
-                this.syncAccessHandle.close();
-                this.syncAccessHandle = null;
-            }
-        } catch (err) {
-            logger.error('Error closing sync handle:', err);
-        }
-    }
 }
 
-const storage = new OPFSWorkerStorage();
+const storage = new OPFSWorkerStorage({
+    onStorageFull: (hasWrittenData) => {
+        const notification: StorageWorkerResponse = { type: StorageWorkerResponseType.STORAGE_FULL, hasWrittenData };
+        self.postMessage(notification);
+    },
+    onWriteError: (error, hasWrittenData) => {
+        const notification: StorageWorkerResponse = {
+            type: StorageWorkerResponseType.WRITE_ERROR,
+            error: error instanceof Error ? error.message : String(error),
+            hasWrittenData,
+        };
+        self.postMessage(notification);
+    },
+});
 
 self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
     const message = event.data;
@@ -136,29 +197,25 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
     try {
         switch (message.type) {
             case StorageMessageType.INIT: {
-                await storage.init(message.data.fileExtension, message.data.userId);
+                await storage.init(message.data.fileExtension, message.data.folder, message.data.encryption);
                 const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
                 self.postMessage(response);
                 break;
             }
 
             case StorageMessageType.ADD_CHUNK: {
-                const becameFull = await storage.addChunk(message.data.chunkBuffer, message.data.position);
-                if (becameFull) {
-                    const notification: StorageWorkerResponse = { type: StorageWorkerResponseType.STORAGE_FULL };
-                    self.postMessage(notification);
-                }
+                await storage.addChunk(message.data.chunkBuffer);
                 const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
                 self.postMessage(response);
                 break;
             }
 
             case StorageMessageType.FINALIZE: {
-                const { fileNames } = await storage.finalize();
+                const { fileName } = await storage.finalize();
                 const response: StorageWorkerResponse = {
                     type: StorageWorkerResponseType.SUCCESS,
                     id,
-                    data: { fileNames },
+                    data: { fileName },
                 };
                 self.postMessage(response);
                 break;
@@ -166,13 +223,6 @@ self.onmessage = async (event: MessageEvent<StorageWorkerMessage>) => {
 
             case StorageMessageType.CLEAR: {
                 await storage.clear();
-                const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
-                self.postMessage(response);
-                break;
-            }
-
-            case StorageMessageType.CLOSE: {
-                storage.close();
                 const response: StorageWorkerResponse = { type: StorageWorkerResponseType.SUCCESS, id };
                 self.postMessage(response);
                 break;
