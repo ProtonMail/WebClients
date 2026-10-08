@@ -1,6 +1,4 @@
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../Components/Dropdown'
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton'
 import { Button } from '@proton/atoms/Button/Button'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
@@ -250,7 +248,7 @@ export function CommentsPanelListComment({
                 pointerEvents: 'auto',
               }}
               className={clsx(
-                'opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100',
+                'opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100 aria-expanded:opacity-100',
                 isFirstComment && 'group-focus-within/thread:opacity-100',
               )}
               content={<Icon data={Icons.threeDotsVertical} size={4.5} alt={c('Label').t`More options`} />}
