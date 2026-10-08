@@ -7,6 +7,11 @@ export enum StorageMessageType {
     CLEAR = 'clear',
 }
 
+export interface RecordingEncryption {
+    encryptedSessionKey: Uint8Array<ArrayBuffer>;
+    sessionKey: SessionKey;
+}
+
 export type StorageWorkerMessage =
     | {
           type: StorageMessageType.INIT;
@@ -14,8 +19,7 @@ export type StorageWorkerMessage =
           data: {
               fileExtension: string;
               folder: string;
-              encryptedSessionKey: Uint8Array<ArrayBuffer>;
-              sessionKey: SessionKey;
+              encryption?: RecordingEncryption;
           };
       }
     | { type: StorageMessageType.ADD_CHUNK; id: string; data: { chunkBuffer: ArrayBuffer } }

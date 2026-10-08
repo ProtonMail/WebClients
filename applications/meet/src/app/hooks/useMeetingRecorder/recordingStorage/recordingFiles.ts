@@ -58,8 +58,8 @@ const collectRecordings = async (directory: FileSystemDirectoryHandle, folder?: 
 const sortNewestFirst = (recordings: OpfsRecording[]): OpfsRecording[] =>
     recordings.sort((a, b) => b.createdAt - a.createdAt);
 
-// Reads the encrypted folder plus the pre-encryption one, so recordings taken before
-// the encryption rollout stay downloadable.
+// Reads both the encrypted and the unencrypted folder, so every recording stays downloadable
+// regardless of whether MeetRecordingEncryption was on when it was taken.
 export const listOpfsRecordings = async (userId: string): Promise<OpfsRecording[]> => {
     const recordings = await Promise.all(
         [getRecordingFolder(userId), userId].map(async (folder) => {
@@ -98,8 +98,7 @@ export const listAllOpfsRecordings = async (): Promise<OpfsRecording[]> => {
     return sortNewestFirst(recordings);
 };
 
-export const getOpfsRecording = async (userId: string, name: string): Promise<OpfsRecording | null> => {
-    const folder = getRecordingFolder(userId);
+export const getOpfsRecording = async (folder: string, name: string): Promise<OpfsRecording | null> => {
     const directory = await getRecordingDirectory(folder);
     if (!directory) {
         return null;

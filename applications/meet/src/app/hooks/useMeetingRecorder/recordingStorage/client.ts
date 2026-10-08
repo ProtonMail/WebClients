@@ -9,6 +9,7 @@ import { getRecordingFolder } from './getRecordingFolder';
 import { getOpfsRecording } from './recordingFiles';
 import {
     type FinalizeResponseData,
+    type RecordingEncryption,
     StorageMessageType,
     type StorageWorkerMessage,
     type StorageWorkerResponse,
@@ -33,6 +34,26 @@ interface RecordingStorageClientOptions {
     onWriteError?: (error: string, hasWrittenData: boolean) => void;
 }
 
+const createRecordingEncryption = async (encryptionKey: PublicKeyReference): Promise<RecordingEncryption> => {
+    const aeadSessionKey = await CryptoProxy.generateSessionKey({
+        config: {
+            /**
+             * An AEAD session key needs to be generated here, to make it possible to safely release
+             * partially decrypted data, if the encrypted file is truncated (e.g. on max storage quota reached).
+             * @dev this setting is not backwards compatible across clients, do not blindly use it elsewhere
+             */
+            aeadProtect: true,
+        },
+    });
+    const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
+        ...aeadSessionKey,
+        encryptionKeys: encryptionKey,
+        format: 'binary',
+    });
+
+    return { sessionKey: aeadSessionKey, encryptedSessionKey };
+};
+
 // Main-thread wrapper around the OPFS recording worker.
 // Use `createRecordingStorageClient` to get an initialized instance.
 export class RecordingStorageClient {
@@ -42,6 +63,7 @@ export class RecordingStorageClient {
     private pendingChunkWrites: Set<Promise<void>> = new Set();
     private fileExtension: string;
     private userId: string;
+    private folder: string = '';
     private onStorageFull?: (hasWrittenData: boolean) => void;
     private onWriteError?: (error: string, hasWrittenData: boolean) => void;
     private storageFull = false;
@@ -54,7 +76,7 @@ export class RecordingStorageClient {
         this.storageFull = false;
     }
 
-    async init(encryptionKey: PublicKeyReference): Promise<void> {
+    async init(encryptionKey?: PublicKeyReference): Promise<void> {
         this.worker = new Worker(new URL('./worker/worker.ts', import.meta.url), {
             type: 'module',
         });
@@ -114,29 +136,14 @@ export class RecordingStorageClient {
             this.pendingMessages.clear();
         };
 
-        const aeadSessionKey = await CryptoProxy.generateSessionKey({
-            config: {
-                /**
-                 * An AEAD session key needs to be generated here, to make it possible to safely release
-                 * partially decrypted data, if the encrypted file is truncated (e.g. on max storage quota reached).
-                 * @dev this setting is not backwards compatible across clients, do not blindly use it elsewhere
-                 */
-                aeadProtect: true,
-            },
-        });
-        const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
-            ...aeadSessionKey,
-            encryptionKeys: encryptionKey,
-            format: 'binary',
-        });
+        this.folder = encryptionKey ? getRecordingFolder(this.userId) : this.userId;
 
         await this.send({
             type: StorageMessageType.INIT,
             data: {
                 fileExtension: this.fileExtension,
-                folder: getRecordingFolder(this.userId),
-                sessionKey: aeadSessionKey,
-                encryptedSessionKey,
+                folder: this.folder,
+                encryption: encryptionKey ? await createRecordingEncryption(encryptionKey) : undefined,
             },
         });
     }
@@ -195,7 +202,7 @@ export class RecordingStorageClient {
             await new Promise((resolve) => setTimeout(resolve, 50));
         }
 
-        return getOpfsRecording(this.userId, fileName);
+        return getOpfsRecording(this.folder, fileName);
     }
 
     async clear(): Promise<void> {
@@ -248,7 +255,7 @@ export class RecordingStorageClient {
 export const createRecordingStorageClient = async ({
     encryptionKey,
     ...options
-}: RecordingStorageClientOptions & { encryptionKey: PublicKeyReference }): Promise<RecordingStorageClient> => {
+}: RecordingStorageClientOptions & { encryptionKey?: PublicKeyReference }): Promise<RecordingStorageClient> => {
     const client = new RecordingStorageClient(options);
     await client.init(encryptionKey);
     return client;
