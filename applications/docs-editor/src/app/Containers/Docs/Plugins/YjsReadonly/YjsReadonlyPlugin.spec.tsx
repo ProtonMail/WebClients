@@ -1,5 +1,5 @@
 import { $getRoot } from 'lexical'
-import * as ReactTestUtils from '../../../../Utils/react-test-utils'
+import * as ReactTestUtils from '../TestUtils/react-test-utils'
 import type { EditorClient } from '../TestUtils/EditorClient'
 import { createEditorClient } from '../TestUtils/EditorClient'
 import type { RtsMessagePayload } from '@proton/docs-shared/lib/Doc/RtsMessagePayload'
