@@ -1,20 +1,17 @@
+import { PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
-import { EntitlementScope, EntitlementType } from '@proton/payments/core/entitlements/interface';
-import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
+import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 
 import { ADMIN_CONSOLE_SURVEY_MIN_USERS, getIsAdminConsoleSurveyEligible } from './adminConsoleSurveyEligibility';
 
 const createEntitlements = (names: EntitlementName[]) =>
-    createEntitlementResolver(
-        makeEntitlements(
-            names.map((Name) => ({
-                Name,
-                Quantity: 1,
-                Type: EntitlementType.Switch,
-                Scope: EntitlementScope.Global,
-            }))
-        )
+    createEntitlementResolverForOrgAndUser(
+        buildEntitlementCatalog({ [PLANS.VPN_BUSINESS]: names }),
+        makeEntitlements(),
+        buildSubscription(PLANS.VPN_BUSINESS)
     );
 
 const eligibleParams = {
@@ -46,6 +43,18 @@ describe('getIsAdminConsoleSurveyEligible', () => {
 
         it('rejects a non-business org even with VPN and Pass', () => {
             const entitlements = createEntitlements([EntitlementName.FlagsVpn, EntitlementName.FlagsPass]);
+            expect(getIsAdminConsoleSurveyEligible({ ...eligibleParams, entitlements })).toBe(false);
+        });
+
+        it('rejects an org where business and VPN come from different subscriptions', () => {
+            const entitlements = createEntitlementResolverForOrgAndUser(
+                buildEntitlementCatalog({
+                    [PLANS.MAIL_PRO]: [EntitlementName.Business],
+                    [PLANS.VPN2024]: [EntitlementName.FlagsVpn],
+                }),
+                makeEntitlements(),
+                buildSubscription(PLANS.MAIL_PRO, { SecondarySubscriptions: [buildSubscription(PLANS.VPN2024)] })
+            );
             expect(getIsAdminConsoleSurveyEligible({ ...eligibleParams, entitlements })).toBe(false);
         });
     });

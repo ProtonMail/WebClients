@@ -1,4 +1,4 @@
-import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
+import type { PayloadAction, SerializedError, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice, miniSerializeError } from '@reduxjs/toolkit';
 
 import { getEntitlements } from '@proton/payments/core/api/api';
@@ -23,11 +23,7 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectEntitlements = (state: EntitlementsState) => state[name];
 
-const initialState: SliceState = getInitialModelState<Model>({
-    UserEntitlements: [],
-    OrganizationEntitlements: [],
-    MemberEntitlements: [],
-});
+const initialState = getInitialModelState<Model>();
 
 const slice = createSlice({
     name,
@@ -42,7 +38,7 @@ const slice = createSlice({
             state.meta.fetchedAt = getFetchedAt();
             state.meta.fetchedEphemeral = getFetchedEphemeral();
         },
-        rejected: (state, action) => {
+        rejected: (state, action: PayloadAction<SerializedError>) => {
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
             state.meta.fetchedEphemeral = getFetchedEphemeral();
@@ -53,22 +49,24 @@ const slice = createSlice({
 const promiseStore = createPromiseStore<Model>();
 const previous = previousSelector(selectEntitlements);
 
+/**
+ * Every existing user has a set of entitlements, so a failed fetch is an outage and not an answer. Serving an empty
+ * set here would read as "every gated feature is off" and show wrong data, so the failure is propagated to the caller.
+ */
 const thunk = ({ api: apiOverride, cache }: { api?: Api; cache?: CacheType } = {}): ThunkAction<
     Promise<Model>,
     EntitlementsState,
     ProtonThunkArguments,
     UnknownAction
 > => {
-    return async (dispatch, getState, extraArgument) => {
+    return (dispatch, getState, extraArgument) => {
         const select = () => {
             return previous({ dispatch, getState, extraArgument });
         };
         const cb = async () => {
             try {
-                const api = apiOverride ?? extraArgument.api;
-
                 dispatch(slice.actions.pending());
-                const entitlements = await getEntitlements(api);
+                const entitlements = await getEntitlements(apiOverride ?? extraArgument.api);
                 dispatch(slice.actions.fulfilled(entitlements));
                 return entitlements;
             } catch (error) {
@@ -77,12 +75,7 @@ const thunk = ({ api: apiOverride, cache }: { api?: Api; cache?: CacheType } = {
             }
         };
 
-        return cacheHelper({
-            store: promiseStore,
-            select,
-            cb,
-            cache,
-        });
+        return cacheHelper({ store: promiseStore, select, cb, cache });
     };
 };
 

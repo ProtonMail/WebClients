@@ -1,12 +1,13 @@
-import { render, within } from '@testing-library/react';
+import { within } from '@testing-library/react';
 
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import { familyUpsell, subscriptionMail, unlimitedUpsell } from '../__mocks__/data';
 import type { Upsell } from '../helpers';
 import UpsellPanels from './UpsellPanels';
 
 describe('UpsellPanel', () => {
     it('should display panels with correct details', async () => {
-        const { container } = render(
+        const { container } = renderWithProviders(
             <UpsellPanels
                 subscription={subscriptionMail}
                 upsells={[

@@ -1,7 +1,7 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { createEntitlementResolver } from '@proton/payments/core/entitlements/resolver';
+import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import {
@@ -15,6 +15,7 @@ import type { Api, KTUserContext, Member, MemberReadyForAutomaticUnprivatization
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
 
+import { type EntitlementCatalogState, entitlementCatalogThunk } from '../entitlementCatalog';
 import { type EntitlementsState, entitlementsThunk } from '../entitlements';
 import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';
@@ -22,6 +23,7 @@ import { type MemberState, memberThunk } from '../member';
 import { getPendingUnprivatizationRequest, memberAcceptUnprivatization } from '../member/actions';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import type { OrganizationRolesState } from '../organizationRoles';
+import { type SubscriptionState, subscriptionThunk } from '../subscription';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import { MemberCreationValidationError, type MembersState, getMemberAddresses } from './index';
@@ -200,14 +202,30 @@ export const unprivatizeSelfForMsp = ({
     api: Api;
 }): ThunkAction<
     Promise<void>,
-    KtState & MemberState & MembersState & OrganizationKeyState & EntitlementsState & OrganizationRolesState,
+    KtState &
+        MemberState &
+        MembersState &
+        OrganizationKeyState &
+        EntitlementsState &
+        OrganizationRolesState &
+        SubscriptionState &
+        EntitlementCatalogState,
     ProtonThunkArguments,
     UnknownAction
 > => {
     return async (dispatch) => {
         try {
-            const entitlements = createEntitlementResolver(await dispatch(entitlementsThunk({ api })));
-            if (!entitlements.orgIsMspEligible) {
+            const [allEntitlements, subscription, entitlementCatalog] = await Promise.all([
+                dispatch(entitlementsThunk()),
+                dispatch(subscriptionThunk()),
+                dispatch(entitlementCatalogThunk()),
+            ]);
+            const entitlements = createEntitlementResolverForOrgAndUser(
+                entitlementCatalog,
+                allEntitlements,
+                subscription
+            );
+            if (!entitlements.isMspEligible) {
                 return;
             }
             const member = await dispatch(memberThunk({ cache: CacheType.None }));

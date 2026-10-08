@@ -9,7 +9,7 @@ import { FREE_PLAN } from '../core/subscription/freePlans';
 import type { Subscription } from '../core/subscription/interface';
 import { getLongTestPlans } from './data-plans';
 import { makeEntitlements } from './makeEntitlements';
-import { getSubscriptionState } from './redux-state';
+import { getEntitlementsState, getSubscriptionState } from './redux-state';
 
 export interface TestPreloadedStateOverrides {
     user?: Partial<UserModel>;
@@ -57,11 +57,7 @@ export const buildPreloadedState = (overrides: TestPreloadedStateOverrides = {})
             error: undefined,
             meta: { fetchedAt: Date.now(), fetchedEphemeral: true as const },
         },
-        entitlements: {
-            value: entitlements ?? makeEntitlements(),
-            error: undefined,
-            meta: { fetchedAt: Date.now(), fetchedEphemeral: true as const },
-        },
+        entitlements: getEntitlementsState(entitlements ?? makeEntitlements()),
         plans: {
             value: { plans, freePlan: FREE_PLAN },
             error: undefined,

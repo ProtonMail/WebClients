@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
@@ -26,14 +26,14 @@ const DisconnectBYOEModal = ({ address, ...rest }: Props) => {
     const dispatch = useDispatch();
     const easySwitchDispatch = useEasySwitchDispatch();
     const [user] = useUser();
-    const [entitlements, loadingEntitlements] = useEntitlementChecks();
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const [addresses] = useAddresses();
 
     // The disable request needs the organisation scope, which non-admin members of an organisation
     // don't have. It's also impossible to disable your only address. In both cases the disconnect
     // runs without the disable step.
     const isBYOEOnlyAccount = getIsBYOEOnlyAccount(addresses);
-    const isOrganisationMember = entitlements.orgIsMultiUser && !isAdmin(user);
+    const isOrganisationMember = entitlements.isMultiUser && !isAdmin(user);
     const skipDisable = isBYOEOnlyAccount || isOrganisationMember;
 
     const handleSubmit = async () => {

@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import { Input } from '@proton/atoms/Input/Input';
@@ -9,7 +10,6 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
-import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -127,12 +127,12 @@ const MembersStep = ({
     applyPolicyTo,
     onChangeApplyPolicyTo,
 }: SharedServersMembersStepProps) => {
-    const [entitlements] = useEntitlementChecks();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
 
-    const allowedToUseGroups = hasActiveOrganizationKey && entitlements.orgHasGroups;
+    const allowedToUseGroups = hasActiveOrganizationKey && entitlements.hasGroups;
     const hasAtLeastOneGroup = (groups?.length ?? 0) > 0;
 
     const canCreateGroupsPolicy = !!organization && (allowedToUseGroups || hasAtLeastOneGroup);

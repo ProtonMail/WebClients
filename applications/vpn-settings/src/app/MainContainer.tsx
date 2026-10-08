@@ -14,6 +14,7 @@ import type {
 } from 'proton-account/src/app/content/router-params';
 import { c } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
@@ -87,7 +88,6 @@ import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
-import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions/AutomaticSubscriptionModal';
 import { APPS, SECURITY_CHECKUP_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
@@ -140,7 +140,7 @@ const MainContainer: FunctionComponent = () => {
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false, false);
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
-    const [entitlements, loadingEntitlements] = useEntitlementChecks();
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
 
     const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();
 

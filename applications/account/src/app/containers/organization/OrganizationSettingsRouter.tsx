@@ -24,7 +24,7 @@ import OrganizationGroupsManagementSection from '@proton/components/containers/o
 import OrganizationRetentionPoliciesSection from '@proton/components/containers/organization/retentionPolicy/OrganizationRetentionPoliciesSection';
 import SsoPage from '@proton/components/containers/organization/sso/SsoPage';
 import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
-import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
+import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import {
@@ -52,7 +52,7 @@ const OrganizationSettingsRouter = ({
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
     organization?: OrganizationExtended;
     onOpenChat?: () => void;
-    entitlements: EntitlementChecks;
+    entitlements: EntitlementChecksForOrgAndUser;
 }) => {
     const onceRef = useRef(false);
     // The setup organization route becomes unavailable post organization setup.

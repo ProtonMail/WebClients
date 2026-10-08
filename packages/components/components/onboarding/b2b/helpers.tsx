@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
+import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import {
     APPS,
     type APP_NAMES,
@@ -45,10 +45,10 @@ import SettingsLink from '../../link/SettingsLink';
 import type { B2BFeaturesID, B2BFeaturesSection, B2BOnboardingFeature } from './interface';
 
 export const getFeatures = (
-    entitlements: EntitlementChecks,
+    entitlements: EntitlementChecksForOrgAndUser,
     onClickCTA?: (item: B2BFeaturesID) => Promise<void>
 ): B2BOnboardingFeature[] => {
-    const canSeeGroupsSection = entitlements.orgHasGroups;
+    const canSeeGroupsSection = entitlements.hasGroups;
 
     return [
         {

@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -78,7 +79,8 @@ const InputLimit = ({ maxLength, value }: { maxLength: number; value: string }) 
 const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngradeContentProps) => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
-    const { isB2BTrial } = getTrialInfoForSingleSubscription(subscription);
+    const [entitlementCatalog] = useEntitlementCatalog();
+    const { isB2BTrial } = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
     const { APP_NAME } = useConfig();
     const { hasB2CAccess, hasB2BAccess } = useFeedbackFirstEligibility();
     const isEligibleForFeedbackFirst = hasB2CAccess || hasB2BAccess;
