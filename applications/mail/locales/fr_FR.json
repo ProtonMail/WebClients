@@ -1550,7 +1550,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -8158,8 +8159,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9920,6 +9920,12 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Votre Gmail se connecte à cette adresse ${ MAIL_APP_NAME }"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Après avoir effectué la mise à jour, votre Mac pourrait demander un mot de passe. Saisissez le mot de passe que vous utilisez pour déverrouiller votre Mac, puis cliquez Toujours Autoriser pour rester connecté. ${ learnMore }"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Veuillez mettre à jour ${ MAIL_APP_NAME } pour continuer à utiliser l'application. ${ downloadUpdate }"
       ]
     },
     "info": {
