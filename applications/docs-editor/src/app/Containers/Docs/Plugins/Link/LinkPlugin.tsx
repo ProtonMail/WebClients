@@ -13,7 +13,7 @@ import {
   PASTE_COMMAND,
 } from 'lexical'
 import { useEffect } from 'react'
-import { sanitizeUrl } from '../../../../Utils/sanitizeUrl'
+import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { mergeRegister } from '@lexical/utils'
 
 export type LinkChangePayload = {

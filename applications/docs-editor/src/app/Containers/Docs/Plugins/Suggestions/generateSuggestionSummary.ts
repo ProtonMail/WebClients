@@ -8,7 +8,6 @@ import { $isImageNode } from '../Image/isImageNode'
 import { $getElementBlockType, blockTypeToBlockName } from '../BlockTypePlugin'
 import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import { $findMatchingParent } from '@lexical/utils'
-import capitalize from '@proton/utils/capitalize'
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 import type { PropertyChangeSuggestionProperties } from './Types'
 
@@ -128,7 +127,7 @@ export function generateSuggestionSummary(
         )
         if (nonInlineParent) {
           const currentAlign = nonInlineParent.getFormatType()
-          content = capitalize(currentAlign) as string
+          content = currentAlign.charAt(0).toUpperCase() + currentAlign.slice(1)
         }
       }
 
