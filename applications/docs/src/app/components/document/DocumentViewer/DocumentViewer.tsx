@@ -50,7 +50,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
 import { isLocalEnvironment } from '@proton/shared/lib/env'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
+import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
 import { useFlagsStatus } from '@proton/unleash/proxy'
 import { useFlag } from '@proton/unleash/useFlag'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
@@ -187,12 +187,7 @@ export function DocumentViewer({
         setCurrentDocumentNode(node)
       })
       .catch((error) => {
-        traceError(error, {
-          tags: {
-            initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-            feature: 'DocsDocumentViewerEventsSDK',
-          },
-        })
+        traceErrorSDK(error, 'DocsDocumentViewerEventsSDK')
       })
   }, [drive, nodeUid, sdkEventsEnabled])
 
@@ -217,12 +212,7 @@ export function DocumentViewer({
           }
         }
       } catch (error) {
-        traceError(error, {
-          tags: {
-            initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-            feature: 'DocsDocumentViewerEventsSDK',
-          },
-        })
+        traceErrorSDK(error, 'DocsDocumentViewerEventsSDK')
       }
     },
     [documentState, drive, nodeUid],
@@ -233,12 +223,7 @@ export function DocumentViewer({
       return
     }
     void eventSubscriber.initialize(currentDocumentNode.treeEventScopeId, [handleEvent]).catch((error) => {
-      traceError(error, {
-        tags: {
-          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-          feature: 'DocsDocumentViewerEventsSDK',
-        },
-      })
+      traceErrorSDK(error, 'DocsDocumentViewerEventsSDK')
     })
     return () => eventSubscriber.reset()
   }, [application.logger, currentDocumentNode, documentState, eventSubscriber, handleEvent, sdkEventsEnabled])

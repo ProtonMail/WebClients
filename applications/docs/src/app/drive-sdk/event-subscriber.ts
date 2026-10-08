@@ -1,5 +1,5 @@
-import { getDrive } from '@proton/drive'
-import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
+import { getDrive, ValidationError } from '@proton/drive'
+import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
 import type { DriveEvent, EventScheduler, ProtonDriveClient } from '@protontech/drive-sdk'
 
 export type SDKEventListener = (event: DriveEvent) => Promise<void>
@@ -106,7 +106,7 @@ class EventSubscriber {
           return // We stopped processing events
         }
         if (eventScope !== this.rootScope && !this.sharedDocumentScopes.has(eventScope)) {
-          traceError(new Error('Recieved event from scope we are not subscribed to'))
+          EventSubscriber.trace(new Error('Recieved event from scope we are not subscribed to'))
           return
         }
         if (event.eventId === this.lastEventPerScope[eventScope]) {
@@ -126,7 +126,7 @@ class EventSubscriber {
         }
       }
     } catch (error) {
-      if (eventScope !== this.rootScope && error instanceof Error && error.name === 'ValidationError') {
+      if (eventScope !== this.rootScope && error instanceof ValidationError) {
         // Most probably user lost access to shared document - unsubscribe
         // This should be handled by special event, but SDK does not have it yet
         const nodeUid = this.sharedDocumentScopes.get(eventScope)
@@ -142,12 +142,7 @@ class EventSubscriber {
   }
 
   private static trace(error: any) {
-    traceError(error, {
-      tags: {
-        initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-        feature: 'EventsSubscription',
-      },
-    })
+    traceErrorSDK(error, 'EventsSubscription')
   }
 }
 

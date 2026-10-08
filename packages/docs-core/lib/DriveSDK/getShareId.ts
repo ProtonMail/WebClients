@@ -1,6 +1,6 @@
 import type { NodeMeta } from '@proton/docs-shared'
 import { generateNodeUid, getDrive } from '@proton/drive'
-import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
+import { traceErrorSDK } from './traceErrorSDK'
 
 export async function getShareId(nodeMeta: NodeMeta): Promise<string> {
   const drive = getDrive()
@@ -16,12 +16,7 @@ export async function getShareId(nodeMeta: NodeMeta): Promise<string> {
 
     return root.deprecatedShareId
   } catch (error) {
-    traceError(error, {
-      tags: {
-        initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-        feature: 'DocsDriveCompatSDK',
-      },
-    })
+    traceErrorSDK(error, 'DocsDriveCompatSDK')
     throw error
   }
 }
