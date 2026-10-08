@@ -341,6 +341,9 @@
       "Display navigation bar": [
         "Mostrar barra de navegação"
       ],
+      "Don't show this offer again": [
+        "Não mostrar mais esta oferta"
+      ],
       "Done": [
         "Concluído"
       ],
@@ -893,6 +896,9 @@
       "Skip verification": [
         "Pular verificação"
       ],
+      "Special Offer": [
+        "Oferta especial"
+      ],
       "Start import": [
         "Iniciar importação"
       ],
@@ -1386,11 +1392,6 @@
       ],
       "Yearly": [
         "Anualmente"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicativo para computador do ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -6295,6 +6296,9 @@
       "Take control of your digital life": [
         "Assuma o controle da sua vida digital"
       ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Temporariamente indisponível devido à alta demanda. Tente novamente mais tarde."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
       ],
@@ -9716,6 +9720,9 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (sem impostos)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } está disponível apenas nos planos empresariais."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% de imposto: ${ taxAmountElement }"
       ],
@@ -9776,6 +9783,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Escolha as contas de wallet adicionais antes de trocar seu plano."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
       ],
@@ -9833,11 +9843,17 @@
       "This payment method will become your new default for all future renewals.": [
         "Este se tornará seu novo método de pagamento padrão para todas as futuras renovações."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Esse plano não suporta membros na sua conta."
+      ],
       "Timeout exceeded": [
         "Tempo limite excedido"
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Os planos de avaliação não suportam IPs dedicados."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Os planos de avaliação não suportam licenças de Scribe."
       ],
       "VAT number": [
         "Número de IVA"

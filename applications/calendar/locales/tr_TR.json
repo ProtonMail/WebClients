@@ -341,6 +341,9 @@
       "Display navigation bar": [
         "Gezinme çubuğunu görüntüle"
       ],
+      "Don't show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
       "Done": [
         "Tamam"
       ],
@@ -893,6 +896,9 @@
       "Skip verification": [
         "Doğrulamayı atla"
       ],
+      "Special Offer": [
+        "Özel teklif"
+      ],
       "Start import": [
         "İçe aktarmayı başlat"
       ],
@@ -1392,8 +1398,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      "${ appName } Desktop application": [
+        "${ appName } bilgisayar uygulaması"
       ]
     },
     "Bug category": {
@@ -5495,6 +5501,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Reklam verenler, hedeflenmiş reklamlar göstermek için gezinme etkinliğinizi izler. ${ VPN_APP_NAME } izleyicileri ve reklamları engelleyerek bağlantınızı hızlandırır ve çevrim içi deneyiminizi iyileştirir."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Güncellemeden sonra Mac bilgisayarınız parolayı yazmanızı isteyebilir. Mac bilgisayarınızın kilidini açmak için kullandığınız parolayı yazın, ardından oturumunuzun açık kalması için Her zaman izin ver üzerine tıklayın. ${ learnMore }"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
       ],
@@ -5725,6 +5734,9 @@
       ],
       "Discard changes?": [
         "Değişiklikler yok sayılsın mı?"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret ile yenilenir."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Erişebileceğiniz yeni özellikleri keşfedin ve hemen kullanmaya başlayın!"
@@ -6212,6 +6224,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Kullanmayı sürdürmek için lütfen ${ MAIL_APP_NAME } uygulamasını güncelleyin. ${ downloadUpdate }"
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
       ],
@@ -6357,6 +6372,9 @@
       ],
       "Take control of your digital life": [
         "Dijital hayatınızın kontrolunu elinize alın"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -10516,7 +10534,7 @@
         "Siber tehditlere karşı gelişmiş koruma"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret üzerinden yenilenir."
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
       ]
     },
     "q3campaign2026: Info, Calendar first": {
@@ -13008,7 +13026,7 @@
         "Geçerli tarifenizdeki tüm ücretli özellikler"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret ile yenilenir."
       ]
     },
     "tryduo2026: Title": {

@@ -341,6 +341,9 @@
       "Display navigation bar": [
         "Fremvis navigationsbjælke"
       ],
+      "Don't show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
       "Done": [
         "Udført"
       ],
@@ -893,6 +896,9 @@
       "Skip verification": [
         "Spring e-mail-verifikation over"
       ],
+      "Special Offer": [
+        "Særtilbud"
+      ],
       "Start import": [
         "Start importering"
       ],
@@ -1158,6 +1164,12 @@
       "Domains": [
         "Domæner"
       ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisationer med tilføjelsen Managed Service Provider kan oprette og administrere underorganisationer."
+      ],
       "Servers": [
         "Servere"
       ],
@@ -1386,8 +1398,8 @@
       ]
     },
     "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } skrivebordsapp"
+      "${ appName } Desktop application": [
+        "${ appName } skrivebordsapp"
       ]
     },
     "Bug category": {
@@ -5489,6 +5501,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Annoncører sporer din browsing for at vise målrettede annoncer. ${ VPN_APP_NAME } blokerer trackere og annoncer, hvilket gør din forbindelse hurtigere og forbedrer din onlineoplevelse."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Mac vil muligvis bede om en adgangskode efter opdateringen. Indtast adgangskoden, som du bruger til at låse op for din Mac, og vælg derefter Tillad altid for at forblive logget ind. ${ learnMore }"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
       ],
@@ -5719,6 +5734,9 @@
       ],
       "Discard changes?": [
         "Kassér ændringer?"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
@@ -6206,6 +6224,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
       ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Opdater ${ MAIL_APP_NAME } for at fortsætte med at bruge appen. ${ downloadUpdate }"
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
       ],
@@ -6351,6 +6372,9 @@
       ],
       "Take control of your digital life": [
         "Tag kontrol over dit digitale liv"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Midlertidigt utilgængelig på grund af høj efterspørgsel. Prøv igen senere."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
