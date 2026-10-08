@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Table, TableBody } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { loadDashboard } from '../../logic/actions';
 import { selectActiveImporterIdsByDate } from '../../logic/importers/importers.selectors';
@@ -21,6 +22,7 @@ const ImportsTable = () => {
     const reportIds = useEasySwitchSelector(selectReportSummaryIdsByDate);
     const activeImporterIds = useEasySwitchSelector(selectActiveImporterIdsByDate);
     const dispatch = useEasySwitchDispatch();
+    const isDriveEnabled = useFlag('EasySwitchB2CForDriveWeb');
 
     const [organizationImports = []] = useImporterOrganizations();
 
@@ -47,8 +49,13 @@ const ImportsTable = () => {
                 </>
             )}
 
-            <div className="mb-2 color-weak">{c('Info')
-                .t`Import show one-time transfers of email, calendars, or contacts into your ${BRAND_NAME} account.`}</div>
+            <div className="mb-2 color-weak">
+                {isDriveEnabled
+                    ? c('Info')
+                          .t`Import show one-time transfers of email, calendars, contacts, or files into your ${BRAND_NAME} account.`
+                    : c('Info')
+                          .t`Import show one-time transfers of email, calendars, or contacts into your ${BRAND_NAME} account.`}
+            </div>
             {reportIds.length === 0 && activeImporterIds.length === 0 ? (
                 <div className="color-weak">{c('Info').t`No import history.`}</div>
             ) : (
