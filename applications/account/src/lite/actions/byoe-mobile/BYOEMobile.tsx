@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useBYOEGating } from '@proton/activation/src/byoe/useBYOEGating';
 import { useConnectBYOEAddress } from '@proton/activation/src/byoe/useConnectBYOEAddress';
 import { useOAuthRedirectFlow } from '@proton/activation/src/byoe/useOAuthRedirectFlow';
+import type { OAuthCallbackResult } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
 import { getBYOEDisabledNotification, getGenericLimitReached } from '@proton/activation/src/constants';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
@@ -33,10 +34,9 @@ interface Props {
 const REDIRECT_PATH = `/lite?action=${SupportedActions.BYOEMobile}`;
 
 export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
-    const { state, toggle } = useToggle(true);
-
     const hasHandledCallbackRef = useRef(false);
 
+    const { state, toggle } = useToggle(true);
     const { createNotification } = useNotifications();
 
     const { checkGating, isLoadingGating } = useBYOEGating();
@@ -49,7 +49,30 @@ export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
     // Already loading when coming back from the provider, so the button never looks idle while we wait for gating
     const [loading, setLoading] = useState(callback.type === 'code');
 
-    // Google sent the user back with an authorization code
+    const handleCallbackCode = async ({ code, state }: Extract<OAuthCallbackResult, { type: 'code' }>) => {
+        setLoading(true);
+        try {
+            const result = await connectBYOEAddressWithCode({
+                code,
+                redirectUri,
+                importEmails: state.importEmails,
+            });
+
+            if (result.status === 'success') {
+                // DAWG-66 redirect to native here
+                createNotification({ text: c('Info').t`Your address was connected` });
+                return;
+            }
+
+            if (result.reason.type === 'already-added') {
+                createNotification({ text: c('Info').t`This address is already linked to another account` });
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Google sent the user back: handle the callback once, as soon as the data it depends on is loaded
     useEffect(() => {
         // The address setup reads the user's addresses and feature status, so they must be loaded first
         if (callback.type === 'none' || isLoadingGating || hasHandledCallbackRef.current) {
@@ -66,33 +89,7 @@ export const BYOEMobileContent = ({ redirect }: Omit<Props, 'layout'>) => {
             return;
         }
 
-        const createBYOEAddress = async () => {
-            setLoading(true);
-            let result;
-            try {
-                result = await connectBYOEAddressWithCode({
-                    code: callback.code,
-                    redirectUri,
-                    importEmails: callback.state.importEmails,
-                });
-            } finally {
-                setLoading(false);
-            }
-
-            if (result.status === 'success') {
-                // TODO redirect to native here
-                createNotification({ text: c('Info').t`Your address was connected` });
-                return;
-            }
-
-            if (result.status === 'failure') {
-                if (result.reason.type === 'already-added') {
-                    createNotification({ text: c('Info').t`This address is already linked to another account` });
-                }
-            }
-        };
-
-        void createBYOEAddress();
+        void handleCallbackCode(callback);
     }, [callback, isLoadingGating]);
 
     // Make sure the user can create a BYOE address, and open the OAuth flow to connect it
