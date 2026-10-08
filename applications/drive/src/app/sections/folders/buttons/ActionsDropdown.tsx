@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { ContextSeparator, Dropdown, DropdownMenu, ToolbarButton } from '@proton/components';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -35,6 +36,8 @@ export const ActionsDropdown = ({ selectedItems, permissions, canShareSelectedIt
     const isOnlyOneItem = selectedItems.length === 1 && !!selectedItem;
     const isOnlyOneFileItem = isOnlyOneItem && !!selectedItem?.isFile;
     const canCopyPublicLink = canShareSelectedItem && !!selectedItem?.isSharedPublicly;
+    const canShowVersionHistory =
+        permissions.canEdit && isOnlyOneFileItem && !isNativeProtonDocsAppFile(selectedItem.mimeType);
 
     const {
         showSharingModal,
@@ -87,12 +90,11 @@ export const ActionsDropdown = ({ selectedItems, permissions, canShareSelectedIt
                         close={close}
                     />
                     {(permissions.canEdit || permissions.canReportAbuse) && <ContextSeparator />}
-                    {permissions.canEdit && isOnlyOneFileItem && selectedItem && (
+                    {canShowVersionHistory && (
                         <>
                             <RevisionsContextButton
                                 nodeUid={selectedItem.uid}
                                 rootShareId={selectedItem.rootShareId}
-                                mediaType={selectedItem.mimeType}
                                 showRevisionsModal={showRevisionsModal}
                                 close={close}
                             />
