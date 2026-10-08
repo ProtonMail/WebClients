@@ -12,7 +12,7 @@ import { useEventManager } from '@proton/components';
 
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 
-export type DriveImportOutcome = 'success' | 'failed';
+export type DriveImportOutcome = 'success' | 'failed' | 'paused';
 
 /**
  * Drive import state for the Easy Switch sidebar entry: whether an import already happened,
@@ -22,7 +22,7 @@ export type DriveImportOutcome = 'success' | 'failed';
 export const useDriveImportStatus = () => {
     const dispatch = useEasySwitchDispatch();
     const { subscribe } = useEventManager();
-    const { isLoaded, isImporting, hasCompletedImport } = useEasySwitchSelector(selectDriveImportStatus);
+    const { isLoaded, isImporting, isPaused, hasCompletedImport } = useEasySwitchSelector(selectDriveImportStatus);
     const oauthStep = useEasySwitchSelector(selectOauthImportStateStep);
     const [outcome, setOutcome] = useState<DriveImportOutcome>();
 
@@ -45,6 +45,12 @@ export const useDriveImportStatus = () => {
                 const reportStates = (ImportReports ?? []).map(
                     ({ ImportReport }) => ImportReport?.Summary?.[ImportType.DRIVE]?.State
                 );
+
+                // Paused only comes from importer events, which already update the importers slice --> no refresh needed.
+                if (importerStates.includes(ApiImporterState.PAUSED)) {
+                    setOutcome('paused');
+                    return;
+                }
 
                 const driveStates = [...importerStates, ...reportStates];
                 const isDone = driveStates.includes(ApiImporterState.DONE);
@@ -102,6 +108,7 @@ export const useDriveImportStatus = () => {
     return {
         isLoaded,
         isImporting,
+        isPaused,
         hasCompletedImport,
         outcome,
         clearOutcome: useCallback(() => setOutcome(undefined), []),

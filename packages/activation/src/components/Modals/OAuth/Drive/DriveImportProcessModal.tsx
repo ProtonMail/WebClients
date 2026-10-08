@@ -12,7 +12,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import useAvailableAddresses from '../../../../hooks/useAvailableAddresses';
 import { IMPORT_ERROR, ImportProvider, ImportType } from '../../../../interface';
-import { resetOauthDraft, submitProducts } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
+import { resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import {
     selectOauthDraftProvider,
     selectOauthImportStateImporterData,
@@ -49,13 +49,20 @@ export const DriveImportProcessModal = () => {
 
     const hasStartedImport = useRef(false);
 
+    const driveError = importerData?.drive?.error;
+    // Not enough storage --> still start the import, the user is only warned. The backend pauses it once the quota is reached.
+    const hasStorageWarning = driveError?.code === IMPORT_ERROR.TOO_SHORT;
+
     useEffect(() => {
-        if (hasStartedImport.current || step !== 'prepare-import' || !importerData || importerData.drive?.error) {
+        if (
+            hasStartedImport.current ||
+            step !== 'prepare-import' ||
+            !importerData ||
+            (driveError && !hasStorageWarning)
+        ) {
             return;
         }
         hasStartedImport.current = true;
-
-        dispatch(submitProducts([ImportType.DRIVE]));
 
         void createImporterTask({
             isLabelMapping: provider === ImportProvider.GOOGLE,
@@ -80,17 +87,16 @@ export const DriveImportProcessModal = () => {
         dispatch(resetOauthDraft());
     };
 
-    const driveError = step === 'prepare-import' ? importerData?.drive?.error : undefined;
-
-    if (driveError?.code === IMPORT_ERROR.TOO_SHORT) {
-        return <DriveImportStorageWarningStep />;
-    } else if (driveError?.code === IMPORT_ERROR.NOT_EXISTS) {
-        return <DriveImportEmptyStep />;
-    } else if (driveError) {
-        return <DriveImportGenericErrorStep message={driveError.message} onClose={handleClose} />;
-    }
-
     const isDone = step === 'success';
+    const blockingError = step === 'prepare-import' && !hasStorageWarning ? driveError : undefined;
+
+    if (isDone && hasStorageWarning) {
+        return <DriveImportStorageWarningStep />;
+    } else if (blockingError?.code === IMPORT_ERROR.NOT_EXISTS) {
+        return <DriveImportEmptyStep />;
+    } else if (blockingError) {
+        return <DriveImportGenericErrorStep message={blockingError.message} onClose={handleClose} />;
+    }
 
     return (
         <DriveStepModal
